@@ -853,6 +853,9 @@ events:
   all_day: true
   category: 予定
   status: scheduled
+  tags:
+  - ランニング
+  - いだてん岱明練習
 - title: Claude Opus 5
   date: '2026-07-24'
   all_day: true
@@ -871,6 +874,9 @@ events:
   all_day: true
   category: 予定
   status: scheduled
+  tags:
+  - ランニング
+  - いだてん岱明練習
 - title: 給与振り込み
   date: '2026-07-24'
   all_day: true
@@ -889,6 +895,9 @@ events:
     朝練コース
     男子12周、女子10周
     流し
+  tags:
+  - ランニング
+  - いだてん岱明練習
 - title: 小泉さん・皆川さん訪問
   date: '2026-07-27'
   all_day: true
@@ -924,6 +933,9 @@ events:
   all_day: true
   category: 予定
   status: scheduled
+  tags:
+  - ランニング
+  - いだてん岱明練習
 - title: 交通費申請
   date: '2026-08-01'
   all_day: true
@@ -947,21 +959,33 @@ events:
   all_day: true
   category: 予定
   status: scheduled
+  tags:
+  - ランニング
+  - いだてん岱明練習
 - title: 岱明朝練
   date: '2026-08-04'
   all_day: true
   category: 予定
   status: scheduled
+  tags:
+  - ランニング
+  - いだてん岱明練習
 - title: 岱明朝練
   date: '2026-08-06'
   all_day: true
   category: 予定
   status: scheduled
+  tags:
+  - ランニング
+  - いだてん岱明練習
 - title: 岱明夕練
   date: '2026-08-10'
   all_day: true
   category: 予定
   status: scheduled
+  tags:
+  - ランニング
+  - いだてん岱明練習
 - title: 夏季休暇
   date: '2026-08-12'
   all_day: true
@@ -972,6 +996,9 @@ events:
   all_day: true
   category: 予定
   status: scheduled
+  tags:
+  - ランニング
+  - いだてん岱明練習
 - title: 夏季休暇
   date: '2026-08-14'
   all_day: true
@@ -982,11 +1009,17 @@ events:
   all_day: true
   category: 予定
   status: scheduled
+  tags:
+  - ランニング
+  - いだてん岱明練習
 - title: 岱明夕練
   date: '2026-08-15'
   all_day: true
   category: 予定
   status: scheduled
+  tags:
+  - ランニング
+  - いだてん岱明練習
 - title: たまなPayデジタル商品券追加販売開始
   date: '2026-08-18'
   all_day: true
@@ -997,6 +1030,9 @@ events:
   all_day: true
   category: 予定
   status: scheduled
+  tags:
+  - ランニング
+  - いだてん岱明練習
 - title: 練習会（岱明）
   date: '2026-08-20'
   all_day: false
@@ -1022,6 +1058,9 @@ events:
   all_day: true
   category: 予定
   status: scheduled
+  tags:
+  - ランニング
+  - いだてん岱明練習
 - title: 岱明中夏休み終了
   date: '2026-08-26'
   all_day: true
