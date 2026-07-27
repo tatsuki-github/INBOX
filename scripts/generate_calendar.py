@@ -415,8 +415,8 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument(
         "--year",
         type=int,
-        required=True,
-        help="対象年（例: 2026）",
+        default=None,
+        help="対象年（例: 2026）。--all-years 指定時は不要",
     )
     parser.add_argument(
         "--input",
@@ -436,31 +436,51 @@ def build_parser() -> argparse.ArgumentParser:
         default=None,
         help="出力ディレクトリ（省略時: out/YYYY）",
     )
+    parser.add_argument(
+        "--all-years",
+        action="store_true",
+        help="input/events.*.yaml があるすべての年を生成（--year 不要）",
+    )
     return parser
 
 
-def main(argv: list[str] | None = None) -> int:
-    args = build_parser().parse_args(argv)
-    year: int = args.year
-    out_dir: Path = args.out_dir or (ROOT / "out" / str(year))
+def discover_years() -> list[int]:
+    years: list[int] = []
+    for path in sorted((ROOT / "input").glob("events.*.yaml")):
+        suffix = path.name.removeprefix("events.").removesuffix(".yaml")
+        if suffix.isdigit():
+            years.append(int(suffix))
+    return years
+
+
+def generate_year(
+    year: int,
+    *,
+    input_path: Path | None,
+    include_holidays: bool,
+    out_dir: Path,
+) -> int:
     out_dir.mkdir(parents=True, exist_ok=True)
 
     groups: list[list[Event]] = []
-    if args.include_holidays:
+    if include_holidays:
         groups.append(holidays_for_year(year))
 
-    input_path: Path | None = args.input
-    if input_path is None:
+    resolved_input = input_path
+    if resolved_input is None:
         candidate = default_input_path(year)
         if candidate.exists():
-            input_path = candidate
+            resolved_input = candidate
 
-    if input_path is not None:
-        groups.append(load_custom_events(input_path, year))
+    if resolved_input is not None:
+        groups.append(load_custom_events(resolved_input, year))
 
     events = merge_events(*groups)
     if not events:
-        print("イベントが0件です。祝日かカスタム予定を追加してください。", file=sys.stderr)
+        print(
+            f"{year}年: イベントが0件です。祝日かカスタム予定を追加してください。",
+            file=sys.stderr,
+        )
         return 1
 
     google_path = out_dir / "google.csv"
@@ -478,6 +498,39 @@ def main(argv: list[str] | None = None) -> int:
     print(f"  Notion: {notion_path}")
     print(f"  Source: {source_path}")
     return 0
+
+
+def main(argv: list[str] | None = None) -> int:
+    args = build_parser().parse_args(argv)
+
+    if args.all_years:
+        years = discover_years()
+        if not years:
+            print("input/events.YYYY.yaml が見つかりません。", file=sys.stderr)
+            return 1
+        exit_code = 0
+        for year in years:
+            code = generate_year(
+                year,
+                input_path=args.input,
+                include_holidays=args.include_holidays,
+                out_dir=(args.out_dir / str(year))
+                if args.out_dir
+                else (ROOT / "out" / str(year)),
+            )
+            exit_code = exit_code or code
+        return exit_code
+
+    if args.year is None:
+        print("--year または --all-years を指定してください。", file=sys.stderr)
+        return 2
+
+    return generate_year(
+        args.year,
+        input_path=args.input,
+        include_holidays=args.include_holidays,
+        out_dir=args.out_dir or (ROOT / "out" / str(args.year)),
+    )
 
 
 if __name__ == "__main__":

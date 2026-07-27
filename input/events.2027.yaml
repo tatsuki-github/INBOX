@@ -1,0 +1,82 @@
+# Notionインポート由来のカスタム予定（2027年）
+# 祝日は scripts/generate_calendar.py が自動追加します。
+# 件数: 15
+year: 2027
+events:
+- title: 岱明中冬休み
+  date: '2026-12-25'
+  all_day: true
+  category: 予定
+  status: scheduled
+  end_date: '2027-01-07'
+- title: 3年公立前期選抜入試
+  date: '2027-02-01'
+  all_day: true
+  category: 予定
+  status: scheduled
+- title: Long-Distance in Omuta
+  date: '2027-02-07'
+  all_day: true
+  category: 予定
+  status: scheduled
+- title: 3年後期期末テスト
+  date: '2027-02-08'
+  all_day: true
+  category: 予定
+  status: scheduled
+- title: 1・2年後期期末テスト
+  date: '2027-02-10'
+  all_day: true
+  category: 予定
+  status: scheduled
+- title: 1・2年後期期末テスト
+  date: '2027-02-12'
+  all_day: true
+  category: 予定
+  status: scheduled
+- title: 第５３回 熊日郡市対抗駅伝
+  date: '2027-02-14'
+  all_day: true
+  category: 予定
+  status: scheduled
+- title: 熊本城マラソン
+  date: '2027-02-21'
+  all_day: true
+  category: 予定
+  status: scheduled
+- title: 第８０回 熊本市民駅伝大会
+  date: '2027-02-27'
+  all_day: true
+  category: 予定
+  status: scheduled
+- title: 岱明中振替休業日
+  date: '2027-03-02'
+  all_day: true
+  category: 予定
+  status: scheduled
+- title: 公立後期入試
+  date: '2027-03-03'
+  all_day: true
+  category: 予定
+  status: scheduled
+  end_date: '2027-03-04'
+- title: 岱明中卒業式
+  date: '2027-03-06'
+  all_day: true
+  category: 予定
+  status: scheduled
+- title: 第７８回 金栗杯玉名ハーフマラソン（ハーフ･10ｋｍ）
+  date: '2027-03-07'
+  all_day: true
+  category: 予定
+  status: scheduled
+- title: 金栗駅伝
+  date: '2027-03-14'
+  all_day: true
+  category: 予定
+  status: scheduled
+- title: さくら記録会
+  date: '2027-03-27'
+  all_day: true
+  category: 予定
+  status: scheduled
