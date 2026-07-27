@@ -19,8 +19,11 @@ pip install -r requirements.txt
 # 2026年（祝日 + input/events.2026.yaml があれば自動マージ）
 python3 scripts/generate_calendar.py --year 2026
 
-# 祝日のみ（カスタムYAMLが無い年、または別パスを指定しない場合）
-python3 scripts/generate_calendar.py --year 2027
+# 全年分を一括生成
+python3 scripts/generate_calendar.py --all-years
+
+# 祝日のみ（カスタムYAMLが無い年）
+python3 scripts/generate_calendar.py --year 2028
 
 # カスタム予定のみ（祝日なし）
 python3 scripts/generate_calendar.py --year 2026 --no-include-holidays --input input/events.2026.yaml
@@ -38,6 +41,8 @@ python3 scripts/generate_calendar.py --year 2026 --input input/events.2026.yaml
 | `out/YYYY/source.csv` | 確認用（共通ビュー。`kind` で event / memo を区別） |
 
 ## 予定・メモの追加
+
+### 手編集
 
 `input/events.2026.yaml` を編集します（雛形: `input/events.YYYY.yaml.example`）。
 
@@ -88,6 +93,15 @@ events:
 | `location` / `private` | 任意 | 場所 / Google Private |
 
 編集後、再度 `python3 scripts/generate_calendar.py --year 2026` を実行してください。
+
+### Notion CSV から一括取り込み
+
+NotionでエクスポートしたCSV（列: 名前, URL, メモ, 場所, 日時）を年ごとのYAMLに変換できます。
+
+```bash
+python3 scripts/import_notion_csv.py --csv path/to/notion_export.csv
+python3 scripts/generate_calendar.py --all-years
+```
 
 ## インポート手順
 
