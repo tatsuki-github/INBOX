@@ -7,7 +7,7 @@ events:
   date: '2026-01-01'
   all_day: true
   category: 予定
-  status: next
+  status: done
   tags:
   - タスク
   - 交通費
@@ -103,7 +103,7 @@ events:
   date: '2026-02-01'
   all_day: true
   category: 予定
-  status: next
+  status: done
   tags:
   - タスク
   - 交通費
@@ -224,7 +224,7 @@ events:
   date: '2026-03-01'
   all_day: true
   category: 予定
-  status: next
+  status: done
   tags:
   - タスク
   - 交通費
@@ -346,7 +346,7 @@ events:
   date: '2026-04-01'
   all_day: true
   category: 予定
-  status: next
+  status: done
   tags:
   - タスク
   - 交通費
@@ -462,7 +462,7 @@ events:
   date: '2026-05-01'
   all_day: true
   category: 予定
-  status: next
+  status: done
   tags:
   - タスク
   - 交通費
@@ -662,7 +662,7 @@ events:
   date: '2026-06-01'
   all_day: true
   category: 予定
-  status: next
+  status: done
   tags:
   - タスク
   - 交通費
@@ -761,7 +761,7 @@ events:
   date: '2026-07-01'
   all_day: true
   category: 予定
-  status: next
+  status: done
   tags:
   - タスク
   - 交通費
