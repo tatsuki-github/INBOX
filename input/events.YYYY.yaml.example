@@ -15,3 +15,8 @@ events:
     end_time: "15:00"
     category: 予定
     location: 本社
+
+  # date を省略すると日付なしメモ
+  - title: 例: あとで調べること
+    category: メモ
+    description: Notion Table ビューで一覧できるメモ

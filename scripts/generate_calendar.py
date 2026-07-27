@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
-"""年次カレンダーCSVを生成する（Googleカレンダー / Notion 向け）。"""
+"""年次カレンダーCSVを生成する（Googleカレンダー / Notion 向け）。
+
+日付付き予定に加え、date を省略した日付なしメモも扱えます。
+メモは Notion / source CSV に含まれ、Googleカレンダー用CSVからは除外されます。
+"""
 
 from __future__ import annotations
 
@@ -20,8 +24,8 @@ ROOT = Path(__file__).resolve().parent.parent
 @dataclass
 class Event:
     title: str
-    start_date: date
-    end_date: date
+    start_date: date | None = None
+    end_date: date | None = None
     all_day: bool = True
     start_time: time | None = None
     end_time: time | None = None
@@ -30,9 +34,16 @@ class Event:
     category: str = ""
     private: bool = False
 
+    @property
+    def is_memo(self) -> bool:
+        """日付がないエントリはメモ扱い。"""
+        return self.start_date is None
+
     def sort_key(self) -> tuple:
+        # 日付なしメモは末尾にまとめる
         return (
-            self.start_date,
+            self.start_date is None,
+            self.start_date or date.max,
             self.start_time or time.min,
             self.title,
         )
@@ -100,10 +111,44 @@ def load_custom_events(path: Path, year: int) -> list[Event]:
 
     events: list[Event] = []
     for raw in data.get("events") or []:
-        if "title" not in raw or "date" not in raw:
-            raise ValueError(f"title と date は必須です: {raw!r}")
+        if "title" not in raw:
+            raise ValueError(f"title は必須です: {raw!r}")
 
-        start = parse_date(raw["date"])
+        raw_date = raw.get("date")
+        is_memo = raw_date is None or raw_date == ""
+
+        # type: memo を明示しても可（date があってもメモ扱いはしない。date 優先）
+        explicit_memo = str(raw.get("type") or "").strip().lower() in {
+            "memo",
+            "note",
+            "メモ",
+        }
+        if explicit_memo and not is_memo:
+            print(
+                f"警告: type=memo だが date があるため予定として扱います: {raw!r}",
+                file=sys.stderr,
+            )
+
+        if is_memo:
+            if raw.get("start_time") or raw.get("end_time") or raw.get("end_date"):
+                raise ValueError(
+                    f"日付なしメモには start_time / end_time / end_date を指定できません: {raw!r}"
+                )
+            events.append(
+                Event(
+                    title=str(raw["title"]),
+                    start_date=None,
+                    end_date=None,
+                    all_day=True,
+                    description=str(raw.get("description") or ""),
+                    location=str(raw.get("location") or ""),
+                    category=str(raw.get("category") or "メモ"),
+                    private=bool(raw.get("private", False)),
+                )
+            )
+            continue
+
+        start = parse_date(raw_date)
         end = parse_date(raw["end_date"]) if raw.get("end_date") else start
         all_day = bool(raw.get("all_day", True))
         start_t = parse_time(raw.get("start_time"))
@@ -138,7 +183,8 @@ def merge_events(*groups: Iterable[Event]) -> list[Event]:
     return merged
 
 
-def write_google_csv(path: Path, events: list[Event]) -> None:
+def write_google_csv(path: Path, events: list[Event]) -> int:
+    """日付付き予定のみ書き出す。戻り値はスキップしたメモ件数。"""
     headers = [
         "Subject",
         "Start Date",
@@ -150,10 +196,14 @@ def write_google_csv(path: Path, events: list[Event]) -> None:
         "Location",
         "Private",
     ]
+    skipped = 0
     with path.open("w", encoding="utf-8", newline="") as f:
         writer = csv.DictWriter(f, fieldnames=headers)
         writer.writeheader()
         for event in events:
+            if event.is_memo or event.start_date is None or event.end_date is None:
+                skipped += 1
+                continue
             row = {
                 "Subject": event.title,
                 "Start Date": format_google_date(event.start_date),
@@ -171,6 +221,7 @@ def write_google_csv(path: Path, events: list[Event]) -> None:
                 if event.end_time:
                     row["End Time"] = format_google_time(event.end_time)
             writer.writerow(row)
+    return skipped
 
 
 def write_notion_csv(path: Path, events: list[Event]) -> None:
@@ -187,14 +238,28 @@ def write_notion_csv(path: Path, events: list[Event]) -> None:
         writer = csv.DictWriter(f, fieldnames=headers)
         writer.writeheader()
         for event in events:
+            if event.is_memo or event.start_date is None:
+                writer.writerow(
+                    {
+                        "Name": event.title,
+                        "Date": "",
+                        "End Date": "",
+                        "Category": event.category,
+                        "Description": event.description,
+                        "Location": event.location,
+                        "All Day": "",
+                    }
+                )
+                continue
+
             date_value = event.start_date.isoformat()
             if not event.all_day and event.start_time:
                 date_value = (
                     f"{event.start_date.isoformat()}"
                     f"T{event.start_time.strftime('%H:%M:%S')}"
                 )
-            end_value = event.end_date.isoformat()
-            if not event.all_day and event.end_time:
+            end_value = event.end_date.isoformat() if event.end_date else ""
+            if not event.all_day and event.end_time and event.end_date:
                 end_value = (
                     f"{event.end_date.isoformat()}"
                     f"T{event.end_time.strftime('%H:%M:%S')}"
@@ -224,6 +289,7 @@ def write_source_csv(path: Path, events: list[Event]) -> None:
         "description",
         "location",
         "private",
+        "kind",
     ]
     with path.open("w", encoding="utf-8", newline="") as f:
         writer = csv.DictWriter(f, fieldnames=headers)
@@ -232,9 +298,11 @@ def write_source_csv(path: Path, events: list[Event]) -> None:
             writer.writerow(
                 {
                     "title": event.title,
-                    "date": event.start_date.isoformat(),
-                    "end_date": event.end_date.isoformat(),
-                    "all_day": "true" if event.all_day else "false",
+                    "date": event.start_date.isoformat() if event.start_date else "",
+                    "end_date": event.end_date.isoformat() if event.end_date else "",
+                    "all_day": ""
+                    if event.is_memo
+                    else ("true" if event.all_day else "false"),
                     "start_time": event.start_time.strftime("%H:%M")
                     if event.start_time
                     else "",
@@ -245,6 +313,7 @@ def write_source_csv(path: Path, events: list[Event]) -> None:
                     "description": event.description,
                     "location": event.location,
                     "private": "true" if event.private else "false",
+                    "kind": "memo" if event.is_memo else "event",
                 }
             )
 
@@ -312,12 +381,14 @@ def main(argv: list[str] | None = None) -> int:
     notion_path = out_dir / "notion.csv"
     source_path = out_dir / "source.csv"
 
-    write_google_csv(google_path, events)
+    skipped_memos = write_google_csv(google_path, events)
     write_notion_csv(notion_path, events)
     write_source_csv(source_path, events)
 
-    print(f"{year}年: {len(events)} 件のイベントを出力しました")
-    print(f"  Google: {google_path}")
+    memo_count = sum(1 for e in events if e.is_memo)
+    event_count = len(events) - memo_count
+    print(f"{year}年: {len(events)} 件（予定 {event_count} / メモ {memo_count}）を出力しました")
+    print(f"  Google: {google_path}（メモ {skipped_memos} 件は除外）")
     print(f"  Notion: {notion_path}")
     print(f"  Source: {source_path}")
     return 0
