@@ -1,6 +1,6 @@
 # カスタム予定・メモ（2027年）
 # 祝日は scripts/generate_calendar.py が自動追加します。
-# 件数: 15
+# 件数: 20
 year: 2027
 events:
 - title: 岱明中冬休み
@@ -9,6 +9,18 @@ events:
   category: 予定
   status: scheduled
   end_date: '2027-01-07'
+- title: 第５回 熊本県高校新人駅伝競走大会（男女）
+  date: '2027-01-30'
+  all_day: true
+  category: 予定
+  status: scheduled
+  tags:
+  - ランニング
+  - 県大会一覧
+  urls:
+  - http://kumariku.com/info/wp-content/uploads/2026/04/b652729b4a1eecb47ebc1e6e01321a6e.pdf
+  location: えがお健康スタジアム
+  description: 熊本県陸上競技大会一覧（2026/5/31版）より追加
 - title: 3年公立前期選抜入試
   date: '2027-02-01'
   all_day: true
@@ -44,6 +56,18 @@ events:
   all_day: true
   category: 予定
   status: scheduled
+- title: 第６９回 金栗記念熊日３０Ｋロードレース（３０ｋｍ）
+  date: '2027-02-21'
+  all_day: true
+  category: 予定
+  status: scheduled
+  tags:
+  - ランニング
+  - 県大会一覧
+  urls:
+  - http://kumariku.com/info/wp-content/uploads/2026/04/b652729b4a1eecb47ebc1e6e01321a6e.pdf
+  location: 熊本城マラソンコース
+  description: 熊本県陸上競技大会一覧（2026/5/31版）より追加
 - title: 第８０回 熊本市民駅伝大会
   date: '2027-02-27'
   all_day: true
@@ -70,11 +94,47 @@ events:
   all_day: true
   category: 予定
   status: scheduled
+- title: 第７回 天草市陸上競技記録会
+  date: '2027-03-13'
+  all_day: true
+  category: 予定
+  status: scheduled
+  tags:
+  - ランニング
+  - 県大会一覧
+  urls:
+  - http://kumariku.com/info/wp-content/uploads/2026/04/b652729b4a1eecb47ebc1e6e01321a6e.pdf
+  location: あましんスタジアム
+  description: 熊本県陸上競技大会一覧（2026/5/31版）より追加
+- title: 第２回 奥球磨女子駅伝大会
+  date: '2027-03-14'
+  all_day: true
+  category: 予定
+  status: scheduled
+  tags:
+  - ランニング
+  - 県大会一覧
+  urls:
+  - http://kumariku.com/info/wp-content/uploads/2026/04/b652729b4a1eecb47ebc1e6e01321a6e.pdf
+  location: 奥球磨
+  description: 熊本県陸上競技大会一覧（2026/5/31版）より追加
 - title: 金栗駅伝
   date: '2027-03-14'
   all_day: true
   category: 予定
   status: scheduled
+- title: 春季熊本陸協記録会
+  date: '2027-03-20'
+  all_day: true
+  category: 予定
+  status: scheduled
+  tags:
+  - ランニング
+  - 県大会一覧
+  urls:
+  - http://kumariku.com/info/wp-content/uploads/2026/04/b652729b4a1eecb47ebc1e6e01321a6e.pdf
+  location: えがお健康スタジアム
+  description: 熊本県陸上競技大会一覧（2026/5/31版）より追加
 - title: さくら記録会
   date: '2027-03-27'
   all_day: true

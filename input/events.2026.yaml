@@ -1,6 +1,6 @@
 # カスタム予定・メモ（2026年）
 # 祝日は scripts/generate_calendar.py が自動追加します。
-# 件数: 258
+# 件数: 281
 year: 2026
 events:
 - title: 資産
@@ -378,6 +378,31 @@ events:
   - http://www.kcrk.jp/i-mode/kiroku/sisen_i/450418/PC/rel026.html
   tags:
   - ランニング
+- title: 第５１回 天草陸上競技選手権大会
+  date: '2026-04-18'
+  all_day: true
+  category: 予定
+  status: scheduled
+  tags:
+  - ランニング
+  - 県大会一覧
+  urls:
+  - http://kumariku.com/info/wp-content/uploads/2026/04/b652729b4a1eecb47ebc1e6e01321a6e.pdf
+  location: あましんスタジアム
+  description: 熊本県陸上競技大会一覧（2026/5/31版）より追加
+  end_date: '2026-04-19'
+- title: 第２７回 谷口睦生杯八代陸上選手権大会
+  date: '2026-04-19'
+  all_day: true
+  category: 予定
+  status: scheduled
+  tags:
+  - ランニング
+  - 県大会一覧
+  urls:
+  - http://kumariku.com/info/wp-content/uploads/2026/04/b652729b4a1eecb47ebc1e6e01321a6e.pdf
+  location: 熊本県営八代
+  description: 熊本県陸上競技大会一覧（2026/5/31版）より追加
 - title: 令和８年度 熊本県陸上競技選手権兼国スポ一次予選
   date: '2026-04-25'
   all_day: true
@@ -388,12 +413,36 @@ events:
   all_day: true
   category: 予定
   status: scheduled
+- title: 第３６回 私学陸上競技大会
+  date: '2026-04-29'
+  all_day: true
+  category: 予定
+  status: scheduled
+  tags:
+  - ランニング
+  - 県大会一覧
+  urls:
+  - http://kumariku.com/info/wp-content/uploads/2026/04/b652729b4a1eecb47ebc1e6e01321a6e.pdf
+  location: 水前寺競技場
+  description: 熊本県陸上競技大会一覧（2026/5/31版）より追加
 - title: 山田飲み会
   date: '2026-05-01'
   all_day: false
   category: 予定
   status: scheduled
   start_time: '10:00'
+- title: 第４５回 熊本市陸上競技選手権大会（長距離種目以外）
+  date: '2026-05-02'
+  all_day: true
+  category: 予定
+  status: scheduled
+  tags:
+  - ランニング
+  - 県大会一覧
+  urls:
+  - http://kumariku.com/info/wp-content/uploads/2026/04/b652729b4a1eecb47ebc1e6e01321a6e.pdf
+  location: えがお健康スタジアム
+  description: 熊本県陸上競技大会一覧（2026/5/31版）より追加
 - title: 自販機でコーヒー買わない開始日
   date: '2026-05-03'
   all_day: true
@@ -404,6 +453,19 @@ events:
   all_day: true
   category: 予定
   status: scheduled
+- title: 第９６回 九州学生陸上競技対抗選手権大会
+  date: '2026-05-08'
+  all_day: true
+  category: 予定
+  status: scheduled
+  tags:
+  - ランニング
+  - 県大会一覧
+  urls:
+  - http://kumariku.com/info/wp-content/uploads/2026/04/b652729b4a1eecb47ebc1e6e01321a6e.pdf
+  location: あましんスタジアム
+  description: 熊本県陸上競技大会一覧（2026/5/31版）より追加
+  end_date: '2026-05-10'
 - title: 保護者会
   date: '2026-05-08'
   all_day: false
@@ -442,11 +504,35 @@ events:
   tags:
   - 地域部活動
   - ランニング
+- title: 第２５回 くまもと障がい者スポーツ大会
+  date: '2026-05-16'
+  all_day: true
+  category: 予定
+  status: scheduled
+  tags:
+  - ランニング
+  - 県大会一覧
+  urls:
+  - http://kumariku.com/info/wp-content/uploads/2026/04/b652729b4a1eecb47ebc1e6e01321a6e.pdf
+  location: えがお健康スタジアム
+  description: 熊本県陸上競技大会一覧（2026/5/31版）より追加
 - title: 岱明中体育大会
   date: '2026-05-17'
   all_day: true
   category: 予定
   status: scheduled
+- title: 第５７回 熊本マスターズ陸上競技記録会
+  date: '2026-05-17'
+  all_day: true
+  category: 予定
+  status: scheduled
+  tags:
+  - ランニング
+  - 県大会一覧
+  urls:
+  - http://kumariku.com/info/wp-content/uploads/2026/04/b652729b4a1eecb47ebc1e6e01321a6e.pdf
+  location: 熊本県営八代
+  description: 熊本県陸上競技大会一覧（2026/5/31版）より追加
 - title: リモート
   date: '2026-05-18'
   all_day: true
@@ -580,6 +666,18 @@ events:
   description: 意識をどう高くするか
   tags:
   - ランニング
+- title: 第４２回 日清カップ全国小学生陸上競技交流大会県予選会
+  date: '2026-06-20'
+  all_day: true
+  category: 予定
+  status: scheduled
+  tags:
+  - ランニング
+  - 県大会一覧
+  urls:
+  - http://kumariku.com/info/wp-content/uploads/2026/04/b652729b4a1eecb47ebc1e6e01321a6e.pdf
+  location: えがお健康スタジアム
+  description: 熊本県陸上競技大会一覧（2026/5/31版）より追加
 - title: 午後休
   date: '2026-06-25'
   all_day: true
@@ -590,6 +688,18 @@ events:
   all_day: true
   category: 予定
   status: scheduled
+- title: 第６回 天草市陸上競技記録会
+  date: '2026-06-27'
+  all_day: true
+  category: 予定
+  status: scheduled
+  tags:
+  - ランニング
+  - 県大会一覧
+  urls:
+  - http://kumariku.com/info/wp-content/uploads/2026/04/b652729b4a1eecb47ebc1e6e01321a6e.pdf
+  location: あましんスタジアム
+  description: 熊本県陸上競技大会一覧（2026/5/31版）より追加
 - title: 荒尾選手権
   date: '2026-06-28'
   all_day: true
@@ -614,6 +724,19 @@ events:
   - http://www.kumariku.org/26/26,7,4long/kyougi.html
   tags:
   - ランニング
+- title: 九州地区大学体育大会陸上競技大会
+  date: '2026-07-04'
+  all_day: true
+  category: 予定
+  status: scheduled
+  tags:
+  - ランニング
+  - 県大会一覧
+  urls:
+  - http://kumariku.com/info/wp-content/uploads/2026/04/b652729b4a1eecb47ebc1e6e01321a6e.pdf
+  location: あましんスタジアム
+  description: 熊本県陸上競技大会一覧（2026/5/31版）より追加
+  end_date: '2026-07-05'
 - title: 第 ２ 回 熊本県長距離記録会
   date: '2026-07-04'
   all_day: true
@@ -626,6 +749,19 @@ events:
   category: 予定
   status: scheduled
   description: 1500mピーキング候補
+- title: 国スポ（青森）熊本県最終選考会
+  date: '2026-07-11'
+  all_day: true
+  category: 予定
+  status: scheduled
+  tags:
+  - ランニング
+  - 県大会一覧
+  urls:
+  - http://kumariku.com/info/wp-content/uploads/2026/04/b652729b4a1eecb47ebc1e6e01321a6e.pdf
+  location: えがお健康スタジアム
+  description: 熊本県陸上競技大会一覧（2026/5/31版）より追加
+  end_date: '2026-07-12'
 - title: 定期期限
   date: '2026-07-13'
   all_day: true
@@ -845,6 +981,18 @@ events:
   all_day: true
   category: 予定
   status: scheduled
+- title: 第５４回 熊本県高校学年別陸上競技大会
+  date: '2026-08-30'
+  all_day: true
+  category: 予定
+  status: scheduled
+  tags:
+  - ランニング
+  - 県大会一覧
+  urls:
+  - http://kumariku.com/info/wp-content/uploads/2026/04/b652729b4a1eecb47ebc1e6e01321a6e.pdf
+  location: えがお健康スタジアム
+  description: 熊本県陸上競技大会一覧（2026/5/31版）より追加
 - title: 練習会（岱明）
   date: '2026-08-30'
   all_day: true
@@ -863,6 +1011,18 @@ events:
   status: scheduled
   start_time: '19:00'
   end_time: '21:00'
+- title: 第３４回 熊本マスターズ選手権大会
+  date: '2026-09-06'
+  all_day: true
+  category: 予定
+  status: scheduled
+  tags:
+  - ランニング
+  - 県大会一覧
+  urls:
+  - http://kumariku.com/info/wp-content/uploads/2026/04/b652729b4a1eecb47ebc1e6e01321a6e.pdf
+  location: 水前寺競技場
+  description: 熊本県陸上競技大会一覧（2026/5/31版）より追加
 - title: 練習会（桃田）
   date: '2026-09-06'
   all_day: false
@@ -890,6 +1050,19 @@ events:
   status: scheduled
   start_time: '19:00'
   end_time: '21:00'
+- title: 第４４回 全九州高校新人陸上大会熊本県予選
+  date: '2026-09-11'
+  all_day: true
+  category: 予定
+  status: scheduled
+  tags:
+  - ランニング
+  - 県大会一覧
+  urls:
+  - http://kumariku.com/info/wp-content/uploads/2026/04/b652729b4a1eecb47ebc1e6e01321a6e.pdf
+  location: えがお健康スタジアム
+  description: 熊本県陸上競技大会一覧（2026/5/31版）より追加
+  end_date: '2026-09-13'
 - title: 練習会（桃田）
   date: '2026-09-13'
   all_day: false
@@ -936,6 +1109,30 @@ events:
   all_day: true
   category: 予定
   status: scheduled
+- title: 第４回 九州小学生交流大会
+  date: '2026-10-03'
+  all_day: true
+  category: 予定
+  status: scheduled
+  tags:
+  - ランニング
+  - 県大会一覧
+  urls:
+  - http://kumariku.com/info/wp-content/uploads/2026/04/b652729b4a1eecb47ebc1e6e01321a6e.pdf
+  location: えがお健康スタジアム
+  description: 熊本県陸上競技大会一覧（2026/5/31版）より追加
+- title: 第５回 奥球磨駅伝大会
+  date: '2026-10-04'
+  all_day: true
+  category: 予定
+  status: scheduled
+  tags:
+  - ランニング
+  - 県大会一覧
+  urls:
+  - http://kumariku.com/info/wp-content/uploads/2026/04/b652729b4a1eecb47ebc1e6e01321a6e.pdf
+  location: 奥球磨
+  description: 熊本県陸上競技大会一覧（2026/5/31版）より追加
 - title: 第 ４回 熊本県長距離記録会
   date: '2026-10-10'
   all_day: true
@@ -962,11 +1159,35 @@ events:
   category: 予定
   status: scheduled
   end_date: '2026-10-18'
+- title: 第５２回 熊日学童オリンピック
+  date: '2026-10-17'
+  all_day: true
+  category: 予定
+  status: scheduled
+  tags:
+  - ランニング
+  - 県大会一覧
+  urls:
+  - http://kumariku.com/info/wp-content/uploads/2026/04/b652729b4a1eecb47ebc1e6e01321a6e.pdf
+  location: えがお健康スタジアム
+  description: 熊本県陸上競技大会一覧（2026/5/31版）より追加
 - title: 岱明中合唱コンクール
   date: '2026-10-23'
   all_day: true
   category: 予定
   status: scheduled
+- title: 秋季熊本陸協記録会
+  date: '2026-10-24'
+  all_day: true
+  category: 予定
+  status: scheduled
+  tags:
+  - ランニング
+  - 県大会一覧
+  urls:
+  - http://kumariku.com/info/wp-content/uploads/2026/04/b652729b4a1eecb47ebc1e6e01321a6e.pdf
+  location: えがお健康スタジアム
+  description: 熊本県陸上競技大会一覧（2026/5/31版）より追加
 - title: 3年間共通テスト
   date: '2026-10-27'
   all_day: true
@@ -988,12 +1209,36 @@ events:
   all_day: true
   category: 予定
   status: scheduled
+- title: 天草スプリント2026
+  date: '2026-11-07'
+  all_day: true
+  category: 予定
+  status: scheduled
+  tags:
+  - ランニング
+  - 県大会一覧
+  urls:
+  - http://kumariku.com/info/wp-content/uploads/2026/04/b652729b4a1eecb47ebc1e6e01321a6e.pdf
+  location: あましんスタジアム
+  description: 熊本県陸上競技大会一覧（2026/5/31版）より追加
 - title: 岱明中後期中間テスト
   date: '2026-11-10'
   all_day: true
   category: 予定
   status: scheduled
   end_date: '2026-11-11'
+- title: 第４回 熊本チャレンジ陸上大会
+  date: '2026-11-14'
+  all_day: true
+  category: 予定
+  status: scheduled
+  tags:
+  - ランニング
+  - 県大会一覧
+  urls:
+  - http://kumariku.com/info/wp-content/uploads/2026/04/b652729b4a1eecb47ebc1e6e01321a6e.pdf
+  location: えがお健康スタジアム
+  description: 熊本県陸上競技大会一覧（2026/5/31版）より追加
 - title: 第７９回 熊本市中長距離選手権大会
   date: '2026-11-21'
   all_day: true
@@ -1010,6 +1255,18 @@ events:
   category: 予定
   status: scheduled
   end_date: '2026-12-03'
+- title: 第５１回 熊本甲佐１０マイル公認ロードレース大会（１０マイル・１０ｋｍ・５ｋｍ）
+  date: '2026-12-06'
+  all_day: true
+  category: 予定
+  status: scheduled
+  tags:
+  - ランニング
+  - 県大会一覧
+  urls:
+  - http://kumariku.com/info/wp-content/uploads/2026/04/b652729b4a1eecb47ebc1e6e01321a6e.pdf
+  location: 熊本甲佐
+  description: 熊本県陸上競技大会一覧（2026/5/31版）より追加
 - title: 岱明中校内駅伝大会
   date: '2026-12-11'
   all_day: true
@@ -1026,12 +1283,36 @@ events:
   category: 予定
   status: scheduled
   end_date: '2026-12-17'
+- title: 第７９回 熊本市ロードレース大会
+  date: '2026-12-19'
+  all_day: true
+  category: 予定
+  status: scheduled
+  tags:
+  - ランニング
+  - 県大会一覧
+  urls:
+  - http://kumariku.com/info/wp-content/uploads/2026/04/b652729b4a1eecb47ebc1e6e01321a6e.pdf
+  location: えがお補助競技場
+  description: 熊本県陸上競技大会一覧（2026/5/31版）より追加
 - title: 岱明中冬休み
   date: '2026-12-25'
   all_day: true
   category: 予定
   status: scheduled
   end_date: '2027-01-07'
+- title: 第６回 益城公認ロードレース大会（５ｋｍ・１０ｋｍ）
+  date: '2026-12-26'
+  all_day: true
+  category: 予定
+  status: scheduled
+  tags:
+  - ランニング
+  - 県大会一覧
+  urls:
+  - http://kumariku.com/info/wp-content/uploads/2026/04/b652729b4a1eecb47ebc1e6e01321a6e.pdf
+  location: ユナイテッドトヨタ キズナパーク益城
+  description: 熊本県陸上競技大会一覧（2026/5/31版）より追加
 - title: Long-Distance end of year
   date: '2026-12-27'
   all_day: true
