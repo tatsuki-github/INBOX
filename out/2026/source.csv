@@ -1,26 +1,27 @@
-title,date,end_date,all_day,start_time,end_time,category,description,location,private,kind
-元日,2026-01-01,2026-01-01,true,,,祝日,日本の祝日,,false,event
-成人の日,2026-01-12,2026-01-12,true,,,祝日,日本の祝日,,false,event
-定例ミーティング,2026-01-15,2026-01-15,false,10:00,11:00,予定,サンプルの時刻付き予定,オンライン,false,event
-建国記念の日,2026-02-11,2026-02-11,true,,,祝日,日本の祝日,,false,event
-天皇誕生日,2026-02-23,2026-02-23,true,,,祝日,日本の祝日,,false,event
-健康診断,2026-03-10,2026-03-10,true,,,予定,サンプルの終日予定,,false,event
-春分の日,2026-03-20,2026-03-20,true,,,祝日,日本の祝日,,false,event
-昭和の日,2026-04-29,2026-04-29,true,,,祝日,日本の祝日,,false,event
-憲法記念日,2026-05-03,2026-05-03,true,,,祝日,日本の祝日,,false,event
-みどりの日,2026-05-04,2026-05-04,true,,,祝日,日本の祝日,,false,event
-こどもの日,2026-05-05,2026-05-05,true,,,祝日,日本の祝日,,false,event
-憲法記念日 振替休日,2026-05-06,2026-05-06,true,,,祝日,日本の祝日,,false,event
-海の日,2026-07-20,2026-07-20,true,,,祝日,日本の祝日,,false,event
-玉名選手権,2026-08-01,2026-08-01,true,,,予定,,,false,event
-山の日,2026-08-11,2026-08-11,true,,,祝日,日本の祝日,,false,event
-敬老の日,2026-09-21,2026-09-21,true,,,祝日,日本の祝日,,false,event
-国民の休日,2026-09-22,2026-09-22,true,,,祝日,日本の祝日,,false,event
-秋分の日,2026-09-23,2026-09-23,true,,,祝日,日本の祝日,,false,event
-スポーツの日,2026-10-12,2026-10-12,true,,,祝日,日本の祝日,,false,event
-文化の日,2026-11-03,2026-11-03,true,,,祝日,日本の祝日,,false,event
-勤労感謝の日,2026-11-23,2026-11-23,true,,,祝日,日本の祝日,,false,event
-買い物リスト,,,,,,メモ,"- 牛乳
+title,date,end_date,all_day,start_time,end_time,category,status,tags,urls,description,location,private,kind
+元日,2026-01-01,2026-01-01,true,,,祝日,,holiday,,日本の祝日,,false,event
+成人の日,2026-01-12,2026-01-12,true,,,祝日,,holiday,,日本の祝日,,false,event
+定例ミーティング,2026-01-15,2026-01-15,false,10:00,11:00,予定,scheduled,"work, meeting",,サンプルの時刻付き予定,オンライン,false,event
+建国記念の日,2026-02-11,2026-02-11,true,,,祝日,,holiday,,日本の祝日,,false,event
+天皇誕生日,2026-02-23,2026-02-23,true,,,祝日,,holiday,,日本の祝日,,false,event
+健康診断,2026-03-10,2026-03-10,true,,,予定,next,"health, personal",https://example.com/health-check,サンプルの終日予定,,false,event
+春分の日,2026-03-20,2026-03-20,true,,,祝日,,holiday,,日本の祝日,,false,event
+昭和の日,2026-04-29,2026-04-29,true,,,祝日,,holiday,,日本の祝日,,false,event
+憲法記念日,2026-05-03,2026-05-03,true,,,祝日,,holiday,,日本の祝日,,false,event
+みどりの日,2026-05-04,2026-05-04,true,,,祝日,,holiday,,日本の祝日,,false,event
+こどもの日,2026-05-05,2026-05-05,true,,,祝日,,holiday,,日本の祝日,,false,event
+憲法記念日 振替休日,2026-05-06,2026-05-06,true,,,祝日,,holiday,,日本の祝日,,false,event
+海の日,2026-07-20,2026-07-20,true,,,祝日,,holiday,,日本の祝日,,false,event
+玉名選手権,2026-08-01,2026-08-01,true,,,予定,scheduled,sports,,,,false,event
+山の日,2026-08-11,2026-08-11,true,,,祝日,,holiday,,日本の祝日,,false,event
+敬老の日,2026-09-21,2026-09-21,true,,,祝日,,holiday,,日本の祝日,,false,event
+国民の休日,2026-09-22,2026-09-22,true,,,祝日,,holiday,,日本の祝日,,false,event
+秋分の日,2026-09-23,2026-09-23,true,,,祝日,,holiday,,日本の祝日,,false,event
+スポーツの日,2026-10-12,2026-10-12,true,,,祝日,,holiday,,日本の祝日,,false,event
+文化の日,2026-11-03,2026-11-03,true,,,祝日,,holiday,,日本の祝日,,false,event
+勤労感謝の日,2026-11-23,2026-11-23,true,,,祝日,,holiday,,日本の祝日,,false,event
+あとで読む記事,,,,,,メモ,inbox,reading,https://example.com/article,週末に読む,,false,memo
+買い物リスト,,,,,,メモ,inbox,errand,,"- 牛乳
 - 卵
 - パン
 ",,false,memo

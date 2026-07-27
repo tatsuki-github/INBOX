@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
-"""年次カレンダーCSVを生成する（Googleカレンダー / Notion 向け）。
+"""年次カレンダー / INBOX CSV を生成する（Googleカレンダー / Notion 向け）。
 
 日付付き予定に加え、date を省略した日付なしメモも扱えます。
+status / tags / urls などの INBOX 用メタデータも出力します。
 メモは Notion / source CSV に含まれ、Googleカレンダー用CSVからは除外されます。
 """
 
@@ -9,8 +10,9 @@ from __future__ import annotations
 
 import argparse
 import csv
+import re
 import sys
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from datetime import date, datetime, time
 from pathlib import Path
 from typing import Iterable
@@ -33,6 +35,9 @@ class Event:
     location: str = ""
     category: str = ""
     private: bool = False
+    status: str = ""
+    tags: list[str] = field(default_factory=list)
+    urls: list[str] = field(default_factory=list)
 
     @property
     def is_memo(self) -> bool:
@@ -47,6 +52,28 @@ class Event:
             self.start_time or time.min,
             self.title,
         )
+
+    def tags_csv(self) -> str:
+        return ", ".join(self.tags)
+
+    def urls_csv(self, sep: str = "\n") -> str:
+        return sep.join(self.urls)
+
+    def google_description(self) -> str:
+        """Google CSV 用。専用列がないメタデータを Description に付与。"""
+        parts: list[str] = []
+        if self.description:
+            parts.append(self.description)
+        meta: list[str] = []
+        if self.status:
+            meta.append(f"Status: {self.status}")
+        if self.tags:
+            meta.append(f"Tags: {self.tags_csv()}")
+        if self.urls:
+            meta.append("URLs:\n" + "\n".join(f"- {u}" for u in self.urls))
+        if meta:
+            parts.append("\n".join(meta))
+        return "\n\n".join(parts)
 
 
 def parse_date(value: str | date) -> date:
@@ -71,6 +98,41 @@ def parse_time(value: str | time | None) -> time | None:
     raise ValueError(f"時刻を解釈できません: {value!r}（HH:MM 形式で指定）")
 
 
+def parse_string_list(value: object, field_name: str) -> list[str]:
+    """tags / urls 用。文字列（カンマ/改行区切り）またはリストを受け付ける。"""
+    if value is None or value == "":
+        return []
+    if isinstance(value, str):
+        parts = re.split(r"[\n,]", value)
+        return [p.strip() for p in parts if p.strip()]
+    if isinstance(value, list):
+        items: list[str] = []
+        for item in value:
+            text = str(item).strip()
+            if text:
+                items.append(text)
+        return items
+    raise ValueError(f"{field_name} は文字列またはリストで指定してください: {value!r}")
+
+
+def parse_status(value: object) -> str:
+    if value is None:
+        return ""
+    return str(value).strip()
+
+
+def parse_inbox_fields(raw: dict) -> tuple[str, list[str], list[str]]:
+    status = parse_status(raw.get("status"))
+    tags = parse_string_list(raw.get("tags"), "tags")
+    urls = parse_string_list(raw.get("urls"), "urls")
+    # 単数形 url も許容
+    if raw.get("url"):
+        for item in parse_string_list(raw.get("url"), "url"):
+            if item not in urls:
+                urls.append(item)
+    return status, tags, urls
+
+
 def format_google_date(d: date) -> str:
     return d.strftime("%m/%d/%Y")
 
@@ -90,6 +152,8 @@ def holidays_for_year(year: int) -> list[Event]:
                 all_day=True,
                 description="日本の祝日",
                 category="祝日",
+                status="",
+                tags=["holiday"],
             )
         )
     return events
@@ -116,6 +180,7 @@ def load_custom_events(path: Path, year: int) -> list[Event]:
 
         raw_date = raw.get("date")
         is_memo = raw_date is None or raw_date == ""
+        status, tags, urls = parse_inbox_fields(raw)
 
         # type: memo を明示しても可（date があってもメモ扱いはしない。date 優先）
         explicit_memo = str(raw.get("type") or "").strip().lower() in {
@@ -144,6 +209,9 @@ def load_custom_events(path: Path, year: int) -> list[Event]:
                     location=str(raw.get("location") or ""),
                     category=str(raw.get("category") or "メモ"),
                     private=bool(raw.get("private", False)),
+                    status=status or "inbox",
+                    tags=tags,
+                    urls=urls,
                 )
             )
             continue
@@ -172,6 +240,9 @@ def load_custom_events(path: Path, year: int) -> list[Event]:
                 location=str(raw.get("location") or ""),
                 category=str(raw.get("category") or "予定"),
                 private=bool(raw.get("private", False)),
+                status=status,
+                tags=tags,
+                urls=urls,
             )
         )
     return events
@@ -211,7 +282,7 @@ def write_google_csv(path: Path, events: list[Event]) -> int:
                 "End Date": format_google_date(event.end_date),
                 "End Time": "",
                 "All Day Event": "True" if event.all_day else "False",
-                "Description": event.description,
+                "Description": event.google_description(),
                 "Location": event.location,
                 "Private": "True" if event.private else "False",
             }
@@ -230,6 +301,9 @@ def write_notion_csv(path: Path, events: list[Event]) -> None:
         "Date",
         "End Date",
         "Category",
+        "Status",
+        "Tags",
+        "URLs",
         "Description",
         "Location",
         "All Day",
@@ -245,6 +319,9 @@ def write_notion_csv(path: Path, events: list[Event]) -> None:
                         "Date": "",
                         "End Date": "",
                         "Category": event.category,
+                        "Status": event.status,
+                        "Tags": event.tags_csv(),
+                        "URLs": event.urls_csv(),
                         "Description": event.description,
                         "Location": event.location,
                         "All Day": "",
@@ -270,6 +347,9 @@ def write_notion_csv(path: Path, events: list[Event]) -> None:
                     "Date": date_value,
                     "End Date": end_value,
                     "Category": event.category,
+                    "Status": event.status,
+                    "Tags": event.tags_csv(),
+                    "URLs": event.urls_csv(),
                     "Description": event.description,
                     "Location": event.location,
                     "All Day": "true" if event.all_day else "false",
@@ -286,6 +366,9 @@ def write_source_csv(path: Path, events: list[Event]) -> None:
         "start_time",
         "end_time",
         "category",
+        "status",
+        "tags",
+        "urls",
         "description",
         "location",
         "private",
@@ -310,6 +393,9 @@ def write_source_csv(path: Path, events: list[Event]) -> None:
                     if event.end_time
                     else "",
                     "category": event.category,
+                    "status": event.status,
+                    "tags": event.tags_csv(),
+                    "urls": event.urls_csv(sep=" | "),
                     "description": event.description,
                     "location": event.location,
                     "private": "true" if event.private else "false",
@@ -324,7 +410,7 @@ def default_input_path(year: int) -> Path:
 
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
-        description="年次カレンダーCSVを Google / Notion 向けに生成します。"
+        description="年次カレンダー / INBOX CSV を Google / Notion 向けに生成します。"
     )
     parser.add_argument(
         "--year",
