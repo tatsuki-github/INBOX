@@ -1,6 +1,6 @@
 # カスタム予定・メモ（2026年）
 # 祝日は scripts/generate_calendar.py が自動追加します。
-# 件数: 257
+# 件数: 258
 year: 2026
 events:
 - title: 資産
@@ -675,6 +675,15 @@ events:
   all_day: true
   category: 予定
   status: scheduled
+- title: 給与振り込み
+  date: '2026-07-24'
+  all_day: true
+  category: 予定
+  status: done
+  tags:
+  - 金額
+  - 給与
+  description: 手取り 251,406円
 - title: 岱明夕練
   date: '2026-07-25'
   all_day: true
