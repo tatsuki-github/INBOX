@@ -1,6 +1,6 @@
 # カスタム予定・メモ（2026年）
 # 祝日は scripts/generate_calendar.py が自動追加します。
-# 件数: 289
+# 件数: 288
 year: 2026
 events:
 - title: 資産
@@ -373,11 +373,15 @@ events:
   all_day: true
   category: 予定
   status: done
-  description: 1500m出場、4:20.52
+  description: |
+    1500m出場、4:20.52
+    第1回長距離記録会
   urls:
   - http://www.kcrk.jp/i-mode/kiroku/sisen_i/450418/PC/rel026.html
   tags:
   - ランニング
+  end_date: '2026-04-19'
+  location: 熊本（えがお）
 - title: 第５１回 天草陸上競技選手権大会
   date: '2026-04-18'
   all_day: true
@@ -431,6 +435,16 @@ events:
   category: 予定
   status: scheduled
   start_time: '10:00'
+- title: 第1回学連競技会
+  date: '2026-05-02'
+  all_day: true
+  category: 予定
+  status: scheduled
+  tags:
+  - ランニング
+  - 学連
+  location: 熊本（えがお）
+  end_date: '2026-05-03'
 - title: 第４５回 熊本市陸上競技選手権大会（長距離種目以外）
   date: '2026-05-02'
   all_day: true
@@ -448,6 +462,15 @@ events:
   all_day: true
   category: 予定
   status: scheduled
+- title: 第42回熊本県陸上競技選手権大会 兼 第75回国民体育大会第1次選考会
+  date: '2026-05-04'
+  all_day: true
+  category: 予定
+  status: scheduled
+  tags:
+  - ランニング
+  location: 熊本（えがお）
+  end_date: '2026-05-06'
 - title: 午後休
   date: '2026-05-07'
   all_day: true
@@ -477,6 +500,15 @@ events:
   all_day: true
   category: 予定
   status: scheduled
+- title: 第1回熊本県陸上競技記録会
+  date: '2026-05-09'
+  all_day: true
+  category: 予定
+  status: scheduled
+  tags:
+  - ランニング
+  location: 熊本（えがお）
+  end_date: '2026-05-10'
 - title: 荒尾記録会
   date: '2026-05-10'
   all_day: true
@@ -564,6 +596,16 @@ events:
   all_day: true
   category: 予定
   status: scheduled
+- title: 第48回九州学生陸上競技対校選手権大会
+  date: '2026-05-22'
+  all_day: true
+  category: 予定
+  status: scheduled
+  tags:
+  - ランニング
+  - 九州インカレ
+  location: 久留米
+  end_date: '2026-05-24'
 - title: 第４１回 熊本県中学校陸上選手権・第２４回中学校混成競技大会
   date: '2026-05-23'
   all_day: true
@@ -597,11 +639,15 @@ events:
   category: 予定
   status: scheduled
   end_date: '2026-05-29'
-- title: 令和８年度 熊本県高等学校総合体育大会陸上競技大会
-  date: '2026-05-31'
+- title: 第73回熊本県高等学校総合体育大会 陸上競技
+  date: '2026-05-29'
   all_day: true
   category: 予定
   status: scheduled
+  tags:
+  - ランニング
+  location: 熊本（えがお）
+  end_date: '2026-06-01'
 - title: 県民体育祭選考会
   date: '2026-05-31'
   all_day: false
@@ -645,6 +691,15 @@ events:
   all_day: true
   category: 予定
   status: scheduled
+- title: 第38回熊本県小学生陸上競技大会 兼 全国小学生陸上競技交流大会予選会
+  date: '2026-06-13'
+  all_day: true
+  category: 予定
+  status: scheduled
+  tags:
+  - ランニング
+  location: 熊本（えがお）
+  end_date: '2026-06-14'
 - title: 第７２回 全日本中学校通信陸上競技大会熊本県大会
   date: '2026-06-13'
   all_day: true
@@ -666,6 +721,15 @@ events:
   description: 意識をどう高くするか
   tags:
   - ランニング
+- title: 第42回熊本県中学校陸上競技選手権大会
+  date: '2026-06-20'
+  all_day: true
+  category: 予定
+  status: scheduled
+  tags:
+  - ランニング
+  location: 熊本（えがお）
+  end_date: '2026-06-21'
 - title: 第４２回 日清カップ全国小学生陸上競技交流大会県予選会
   date: '2026-06-20'
   all_day: true
@@ -688,6 +752,15 @@ events:
   all_day: true
   category: 予定
   status: scheduled
+- title: 第104回日本陸上競技選手権大会
+  date: '2026-06-26'
+  all_day: true
+  category: 予定
+  status: scheduled
+  tags:
+  - ランニング
+  location: 大阪（ヤンマースタジアム長居）
+  end_date: '2026-06-28'
 - title: 第６回 天草市陸上競技記録会
   date: '2026-06-27'
   all_day: true
@@ -874,19 +947,6 @@ events:
   all_day: true
   category: 予定
   status: scheduled
-- title: 第1回九州学生陸上競技記録会
-  date: '2026-08-01'
-  all_day: true
-  category: 予定
-  status: done
-  tags:
-  - ランニング
-  - 学連記録会
-  urls:
-  - http://www.kyugakuren.jp/results/2026/kirokukai_1/rel001.html
-  description: |
-    学連記録会
-    5000m 1組 2位 15:02.34
 - title: 第２７４回 熊本市陸上競技記録会
   date: '2026-08-01'
   all_day: true
@@ -907,18 +967,6 @@ events:
   all_day: true
   category: 予定
   status: scheduled
-- title: 2026国体夏季選考会・第4回熊本県長距離記録会
-  date: '2026-08-08'
-  all_day: true
-  category: 予定
-  status: done
-  tags:
-  - ランニング
-  - ナイタータイム
-  location: えがお健康スタジアム
-  description: |
-    ナイタータイム
-    15:20.31 / 32:21.05 / 09:33.45
 - title: 岱明夕練
   date: '2026-08-10'
   all_day: true
@@ -996,18 +1044,6 @@ events:
   status: scheduled
   start_time: '19:00'
   end_time: '21:00'
-- title: ナイタータイムトライアルin大分
-  date: '2026-08-29'
-  all_day: true
-  category: 予定
-  status: done
-  tags:
-  - ランニング
-  - ナイター
-  location: 大分市営陸上競技場
-  description: |
-    ナイター
-    15:43.21
 - title: 玉名郡ナイター
   date: '2026-08-29'
   all_day: true
@@ -1018,18 +1054,6 @@ events:
   all_day: true
   category: 予定
   status: scheduled
-- title: 2026長崎県ナイター長距離記録会
-  date: '2026-08-30'
-  all_day: true
-  category: 予定
-  status: done
-  tags:
-  - ランニング
-  - ナイタータイム
-  location: トランスコスモススタジアム長崎
-  description: |
-    ナイタータイム
-    15:12.34 / 32:45.67 / 09:40.12
 - title: 第５４回 熊本県高校学年別陸上競技大会
   date: '2026-08-30'
   all_day: true
@@ -1126,21 +1150,6 @@ events:
   status: scheduled
   start_time: '19:00'
   end_time: '21:00'
-- title: 第76回九州学生陸上競技対校選手権大会
-  date: '2026-09-18'
-  end_date: '2026-09-20'
-  all_day: true
-  category: 予定
-  status: done
-  tags:
-  - ランニング
-  - 九州インカレ
-  location: 博多の森陸上競技場
-  description: |
-    九州インカレ
-    5000m 15:05.12
-    10000m 31:55.43
-    3000mSC 09:25.67
 - title: 令和８年度 熊本県民体育祭
   date: '2026-09-19'
   all_day: true
@@ -1235,20 +1244,6 @@ events:
   - http://kumariku.com/info/wp-content/uploads/2026/04/b652729b4a1eecb47ebc1e6e01321a6e.pdf
   location: えがお健康スタジアム
   description: 熊本県陸上競技大会一覧（2026/5/31版）より追加
-- title: 第46回熊本市陸上競技選手権大会
-  date: '2026-10-18'
-  all_day: true
-  category: 予定
-  status: done
-  tags:
-  - ランニング
-  - 市選
-  location: えがお健康スタジアム
-  description: |
-    市選
-    1500m 04:15.23
-    5000m 15:10.56
-    3000mSC 09:30.45
 - title: 岱明中合唱コンクール
   date: '2026-10-23'
   all_day: true
@@ -1277,18 +1272,6 @@ events:
   all_day: true
   category: 予定
   status: scheduled
-- title: 第79回熊本県高等学校駅伝競走大会
-  date: '2026-11-01'
-  all_day: true
-  category: 予定
-  status: scheduled
-  tags:
-  - ランニング
-  - 県駅伝
-  location: えがお健康スタジアム周辺コース
-  urls:
-  - http://www.kumariku.com/result/2026/ekiden/rel001.html
-  description: 県駅伝
 - title: 金栗マラソン
   date: '2026-11-01'
   all_day: true
@@ -1345,18 +1328,6 @@ events:
   category: 予定
   status: scheduled
   end_date: '2026-12-03'
-- title: 第6回熊本県長距離記録会
-  date: '2026-12-06'
-  all_day: true
-  category: 予定
-  status: scheduled
-  tags:
-  - ランニング
-  - 記録会
-  location: えがお健康スタジアム
-  urls:
-  - http://www.kumariku.com/result/2026/kirokukai_6/rel001.html
-  description: 記録会
 - title: 第５１回 熊本甲佐１０マイル公認ロードレース大会（１０マイル・１０ｋｍ・５ｋｍ）
   date: '2026-12-06'
   all_day: true
