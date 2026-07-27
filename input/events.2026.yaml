@@ -1,6 +1,6 @@
 # Notionインポート由来のカスタム予定（2026年）
 # 祝日は scripts/generate_calendar.py が自動追加します。
-# 件数: 159
+# 件数: 160
 year: 2026
 events:
 - title: Amazon Prime更新日
@@ -565,6 +565,14 @@ events:
   category: 予定
   status: scheduled
   end_date: '2026-07-29'
+- title: 酒湊
+  date: '2026-07-27'
+  all_day: true
+  category: 予定
+  status: done
+  urls:
+  - https://www.sakasou.kumamoto.jp/shop/sakasou/
+  description: 訪問記録
 - title: 岱明夕練
   date: '2026-07-31'
   all_day: true
