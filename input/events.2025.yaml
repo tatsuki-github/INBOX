@@ -1,6 +1,6 @@
 # カスタム予定・メモ（2025年）
 # 祝日は scripts/generate_calendar.py が自動追加します。
-# 件数: 146
+# 件数: 147
 year: 2025
 events:
 - title: 会社の飲み会
@@ -679,6 +679,14 @@ events:
   all_day: true
   category: 予定
   status: scheduled
+- title: 資産
+  date: '2025-12-01'
+  all_day: true
+  category: 予定
+  status: scheduled
+  description: '金額: ￥9,730,994'
+  tags:
+  - 金額
 - title: Dさんリモート
   date: '2025-12-02'
   all_day: true

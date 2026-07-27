@@ -127,9 +127,14 @@ def row_to_item(row: dict, *, memo_year: int) -> tuple[dict, set[int]] | None:
 
     parsed = parse_datetime_field(date_field(row))
     description = (row.get("メモ") or "").strip()
+    amount = (row.get("金額") or "").strip()
+    if amount:
+        description = f"{description}\n金額: {amount}".strip() if description else f"金額: {amount}"
     location = (row.get("場所") or "").strip()
     url = (row.get("URL") or "").strip()
     tags = split_tags(row.get("タグ") or "", row.get("領域") or "")
+    if amount and "金額" not in tags:
+        tags.append("金額")
     status_raw = row.get("状態") or ""
 
     if parsed is None:

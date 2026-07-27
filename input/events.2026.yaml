@@ -1,8 +1,16 @@
 # カスタム予定・メモ（2026年）
 # 祝日は scripts/generate_calendar.py が自動追加します。
-# 件数: 248
+# 件数: 257
 year: 2026
 events:
+- title: 資産
+  date: '2026-01-01'
+  all_day: true
+  category: 予定
+  status: scheduled
+  description: '金額: ￥10,164,496'
+  tags:
+  - 金額
 - title: Amazon Prime更新日
   date: '2026-01-02'
   all_day: true
@@ -65,6 +73,14 @@ events:
   category: 予定
   status: scheduled
   start_time: '12:00'
+- title: いだてん岱明謝礼
+  date: '2026-01-30'
+  all_day: true
+  category: 予定
+  status: scheduled
+  description: '金額: ￥17,061'
+  tags:
+  - 金額
 - title: カフェイン断ち
   date: '2026-01-30'
   all_day: true
@@ -75,6 +91,14 @@ events:
   all_day: true
   category: 予定
   status: scheduled
+- title: 資産
+  date: '2026-02-01'
+  all_day: true
+  category: 予定
+  status: scheduled
+  description: '金額: ￥10,007,853'
+  tags:
+  - 金額
 - title: 中学3年公立前期選抜入試
   date: '2026-02-02'
   all_day: true
@@ -172,6 +196,22 @@ events:
   category: 予定
   status: scheduled
   start_time: '12:00'
+- title: 支出
+  date: '2026-02-28'
+  all_day: true
+  category: 予定
+  status: scheduled
+  description: '金額: ￥202,955'
+  tags:
+  - 金額
+- title: 資産
+  date: '2026-03-02'
+  all_day: true
+  category: 予定
+  status: scheduled
+  description: '金額: ￥10,060,836'
+  tags:
+  - 金額
 - title: 中学3年公立後期選抜入試
   date: '2026-03-03'
   all_day: true
@@ -270,11 +310,27 @@ events:
   status: scheduled
   start_time: '12:00'
   description: https://us06web.zoom.us/j/81296033758?pwd=vjqSXFCDiNj8aL76nwRi6j2GuYqTat.1&app_name=iphone_app
+- title: 支出
+  date: '2026-03-31'
+  all_day: true
+  category: 予定
+  status: scheduled
+  description: '金額: ￥41,375'
+  tags:
+  - 金額
 - title: 入社式
   date: '2026-04-01'
   all_day: true
   category: 予定
   status: scheduled
+- title: 資産
+  date: '2026-04-01'
+  all_day: true
+  category: 予定
+  status: scheduled
+  description: '金額: ￥9,839,783'
+  tags:
+  - 金額
 - title: リモート
   date: '2026-04-03'
   all_day: true
@@ -285,6 +341,14 @@ events:
   all_day: true
   category: 予定
   status: scheduled
+- title: いだてん岱明謝礼
+  date: '2026-04-06'
+  all_day: true
+  category: 予定
+  status: scheduled
+  description: '金額: ￥22,448'
+  tags:
+  - 金額
 - title: 第３４回 金栗記念選抜陸上中長距離熊本大会
   date: '2026-04-11'
   all_day: true
@@ -296,6 +360,14 @@ events:
   all_day: true
   category: 予定
   status: scheduled
+- title: 資産
+  date: '2026-04-12'
+  all_day: true
+  category: 予定
+  status: scheduled
+  description: '金額: ￥10,342,400'
+  tags:
+  - 金額
 - title: 第４５回 熊本市陸上競技選手権大会
   date: '2026-04-18'
   all_day: true
