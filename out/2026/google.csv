@@ -1,23 +1,246 @@
 Subject,Start Date,Start Time,End Date,End Time,All Day Event,Description,Location,Private
-元日,01/01/2026,,01/01/2026,,True,日本の祝日,,False
-成人の日,01/12/2026,,01/12/2026,,True,日本の祝日,,False
-定例ミーティング,01/15/2026,10:00 AM,01/15/2026,11:00 AM,False,サンプルの時刻付き予定,オンライン,False
-建国記念の日,02/11/2026,,02/11/2026,,True,日本の祝日,,False
-天皇誕生日,02/23/2026,,02/23/2026,,True,日本の祝日,,False
-健康診断,03/10/2026,,03/10/2026,,True,サンプルの終日予定,,False
-春分の日,03/20/2026,,03/20/2026,,True,日本の祝日,,False
-昭和の日,04/29/2026,,04/29/2026,,True,日本の祝日,,False
-憲法記念日,05/03/2026,,05/03/2026,,True,日本の祝日,,False
-みどりの日,05/04/2026,,05/04/2026,,True,日本の祝日,,False
-こどもの日,05/05/2026,,05/05/2026,,True,日本の祝日,,False
-憲法記念日 振替休日,05/06/2026,,05/06/2026,,True,日本の祝日,,False
-海の日,07/20/2026,,07/20/2026,,True,日本の祝日,,False
-小泉さん・皆川さん訪問,07/27/2026,,07/29/2026,,True,,,False
-玉名選手権,08/01/2026,,08/01/2026,,True,,,False
-山の日,08/11/2026,,08/11/2026,,True,日本の祝日,,False
-敬老の日,09/21/2026,,09/21/2026,,True,日本の祝日,,False
-国民の休日,09/22/2026,,09/22/2026,,True,日本の祝日,,False
-秋分の日,09/23/2026,,09/23/2026,,True,日本の祝日,,False
-スポーツの日,10/12/2026,,10/12/2026,,True,日本の祝日,,False
-文化の日,11/03/2026,,11/03/2026,,True,日本の祝日,,False
-勤労感謝の日,11/23/2026,,11/23/2026,,True,日本の祝日,,False
+元日,01/01/2026,,01/01/2026,,True,"日本の祝日
+
+Tags: holiday",,False
+Amazon Prime更新日,01/02/2026,,01/02/2026,,True,Status: scheduled,,False
+カフェイン断ち,01/05/2026,,01/05/2026,,True,Status: scheduled,,False
+成人の日,01/12/2026,,01/12/2026,,True,"日本の祝日
+
+Tags: holiday",,False
+長洲マラソン,01/12/2026,,01/12/2026,,True,Status: scheduled,,False
+定期期限,01/13/2026,,01/13/2026,,True,Status: scheduled,,False
+コーヒー断ち,01/15/2026,,01/15/2026,,True,Status: scheduled,,False
+Dさんリモート,01/19/2026,,01/19/2026,,True,Status: scheduled,,False
+午後休,01/19/2026,,01/19/2026,,True,Status: scheduled,,False
+岱明中2年修学旅行,01/21/2026,,01/21/2026,,True,Status: scheduled,,False
+カフェイン断ち,01/23/2026,,01/23/2026,,True,Status: scheduled,,False
+玉名駅伝,01/25/2026,,01/25/2026,,True,Status: scheduled,,False
+永井監督を祝う会打ち上げ,01/25/2026,11:00 AM,01/25/2026,,False,Status: scheduled,,False
+福岡ランニング基地MTG,01/29/2026,12:00 PM,01/29/2026,,False,Status: scheduled,,False
+カフェイン断ち,01/30/2026,,01/30/2026,,True,Status: scheduled,,False
+合同練習会,01/31/2026,,01/31/2026,,True,Status: scheduled,,False
+中学3年公立前期選抜入試,02/02/2026,,02/02/2026,,True,Status: scheduled,,False
+コーヒーから緑茶,02/03/2026,,02/03/2026,,True,Status: scheduled,,False
+カフェイン断ち,02/05/2026,,02/05/2026,,True,Status: scheduled,,False
+岱明中3年後期期末テスト,02/05/2026,,02/05/2026,,True,Status: scheduled,,False
+熊日駅伝,02/08/2026,,02/08/2026,,True,Status: scheduled,,False
+Dさんリモート,02/09/2026,,02/09/2026,,True,Status: scheduled,,False
+Stravaフリートライアル終了,02/09/2026,,02/09/2026,,True,Status: scheduled,,False
+有休,02/09/2026,,02/09/2026,,True,Status: scheduled,,False
+中山寛太くん誕生日,02/11/2026,,02/11/2026,,True,Status: scheduled,,False
+建国記念の日,02/11/2026,,02/11/2026,,True,"日本の祝日
+
+Tags: holiday",,False
+岱明中1・2年後期期末テスト,02/12/2026,,02/12/2026,,True,Status: scheduled,,False
+熊本城マラソン,02/15/2026,,02/15/2026,,True,Status: scheduled,,False
+土山リモート,02/17/2026,,02/17/2026,,True,Status: scheduled,,False
+土山リモート,02/18/2026,,02/18/2026,,True,Status: scheduled,,False
+土山リモート,02/19/2026,,02/19/2026,,True,Status: scheduled,,False
+土山リモート,02/20/2026,,02/20/2026,,True,Status: scheduled,,False
+熊日駅伝テレビ放送,02/21/2026,6:00 AM,02/21/2026,,False,Status: scheduled,,False
+玉名いだてんマラソン,02/22/2026,,02/22/2026,,True,Status: scheduled,,False
+天皇誕生日,02/23/2026,,02/23/2026,,True,"日本の祝日
+
+Tags: holiday",,False
+Dさんリモート,02/25/2026,,02/25/2026,,True,Status: scheduled,,False
+福岡ランニング基地MTGtg,02/26/2026,12:00 PM,02/26/2026,,False,Status: scheduled,,False
+中学3年公立後期選抜入試,03/03/2026,,03/03/2026,,True,Status: scheduled,,False
+藤本さんリモート,03/03/2026,,03/03/2026,,True,Status: scheduled,,False
+カフェイン断ち開始日,03/06/2026,,03/06/2026,,True,Status: scheduled,,False
+岱明中卒業式,03/06/2026,,03/06/2026,,True,Status: scheduled,,False
+玉名ハーフマラソン,03/08/2026,,03/08/2026,,True,"https://www.city.tamana.lg.jp/q/aview/1/2924.html
+
+Status: scheduled",,False
+リモート候補,03/13/2026,,03/13/2026,,True,"四方田くんのみ
+
+Status: scheduled",,False
+岱明中陸上部お別れ会,03/15/2026,,03/15/2026,,True,Status: scheduled,,False
+金栗駅伝,03/15/2026,,03/15/2026,,True,"https://sites.google.com/view/tamariku/%E5%A4%A7%E4%BC%9A%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E7%94%B3%E8%BE%BC%E3%81%BF?authuser=0
+
+Status: scheduled",,False
+リモート候補,03/16/2026,,03/16/2026,,True,"ステファニーさんのみ。
+出社した。リモートでも良かった笑。
+
+
+Status: scheduled",,False
+春分の日,03/20/2026,,03/20/2026,,True,"日本の祝日
+
+Tags: holiday",,False
+リモート候補,03/23/2026,,03/23/2026,,True,"ステファニーさんのみ
+
+Status: scheduled",,False
+地域部活動運営会議,03/25/2026,10:00 AM,03/25/2026,,False,Status: scheduled,,False
+福岡ランニング基地MTGtg,03/26/2026,12:00 PM,03/26/2026,,False,Status: scheduled,,False
+会社飲み会,03/27/2026,9:30 AM,03/27/2026,,False,Status: scheduled,,False
+フルハウス熊本,03/28/2026,,03/28/2026,,True,"https://fullhouse.3itsuka.com/#kumamoto
+
+Status: scheduled",,False
+さくら記録会,03/29/2026,,03/29/2026,,True,Status: scheduled,,False
+リモート,03/30/2026,,03/30/2026,,True,Status: scheduled,,False
+カジュアル面談,03/30/2026,12:00 PM,03/30/2026,,False,"https://us06web.zoom.us/j/81296033758?pwd=vjqSXFCDiNj8aL76nwRi6j2GuYqTat.1&app_name=iphone_app
+
+Status: scheduled",,False
+入社式,04/01/2026,,04/01/2026,,True,Status: scheduled,,False
+リモート,04/03/2026,,04/03/2026,,True,Status: scheduled,,False
+第２７２回熊本市陸上競技記録会R8,04/04/2026,,04/04/2026,,True,Status: scheduled,,False
+第３４回 金栗記念選抜陸上中長距離熊本大会,04/11/2026,,04/11/2026,,True,"http://kumariku.com/competition/?id=8968
+
+Status: scheduled",,False
+全九州都市対抗,04/12/2026,,04/12/2026,,True,Status: scheduled,,False
+第４５回 熊本市陸上競技選手権大会,04/18/2026,,04/18/2026,,True,Status: scheduled,,False
+令和８年度 熊本県陸上競技選手権兼国スポ一次予選,04/25/2026,,04/25/2026,,True,Status: scheduled,,False
+大牟田陸上,04/29/2026,,04/29/2026,,True,Status: scheduled,,False
+昭和の日,04/29/2026,,04/29/2026,,True,"日本の祝日
+
+Tags: holiday",,False
+山田飲み会,05/01/2026,10:00 AM,05/01/2026,,False,Status: scheduled,,False
+憲法記念日,05/03/2026,,05/03/2026,,True,"日本の祝日
+
+Tags: holiday",,False
+自販機でコーヒー買わない開始日,05/03/2026,,05/03/2026,,True,Status: scheduled,,False
+みどりの日,05/04/2026,,05/04/2026,,True,"日本の祝日
+
+Tags: holiday",,False
+こどもの日,05/05/2026,,05/05/2026,,True,"日本の祝日
+
+Tags: holiday",,False
+憲法記念日 振替休日,05/06/2026,,05/06/2026,,True,"日本の祝日
+
+Tags: holiday",,False
+午後休,05/07/2026,,05/07/2026,,True,Status: scheduled,,False
+保護者会,05/08/2026,10:00 AM,05/08/2026,,False,Status: scheduled,,False
+第 １ 回 熊本県長距離記録会,05/09/2026,,05/09/2026,,True,Status: scheduled,,False
+荒尾記録会,05/10/2026,,05/10/2026,,True,Status: scheduled,,False
+リモート,05/15/2026,,05/15/2026,,True,Status: scheduled,,False
+地域部活動指導者研修会,05/15/2026,7:00 PM,05/15/2026,8:00 PM,False,Status: scheduled,,False
+岱明中体育大会,05/17/2026,,05/17/2026,,True,Status: scheduled,,False
+リモート,05/18/2026,,05/18/2026,,True,Status: scheduled,,False
+午後休,05/21/2026,,05/21/2026,,True,Status: scheduled,,False
+リモート,05/22/2026,,05/22/2026,,True,Status: scheduled,,False
+第４１回 熊本県中学校陸上選手権・第２４回中学校混成競技大会,05/23/2026,,05/24/2026,,True,"Status: scheduled
+URLs:
+- http://kumariku.com/competition/?id=9281",えがお健康スタジアム(熊本県民総合運動公園陸上競技場),False
+さつき記録会,05/24/2026,,05/24/2026,,True,Status: scheduled,,False
+県民体育祭選考会,05/24/2026,3:00 PM,05/24/2026,5:00 PM,False,Status: scheduled,,False
+岱明中前期確認テスト,05/26/2026,,05/27/2026,,True,Status: scheduled,,False
+新卒結団式,05/28/2026,,05/29/2026,,True,Status: scheduled,,False
+令和８年度 熊本県高等学校総合体育大会陸上競技大会,05/31/2026,,05/31/2026,,True,Status: scheduled,,False
+県民体育祭選考会,05/31/2026,3:00 PM,05/31/2026,5:00 PM,False,Status: scheduled,,False
+交通費申請,06/01/2026,,06/01/2026,,True,Status: scheduled,,False
+第２７３回 熊本市陸上競技記録会,06/06/2026,,06/06/2026,,True,Status: scheduled,,False
+免許更新,06/07/2026,2:10 PM,06/07/2026,2:30 PM,False,"Status: scheduled
+URLs:
+- https://www.pref.kumamoto.jp/site/police/253003.html",熊本県運転免許センター,False
+カフェイン断ち,06/09/2026,,06/09/2026,,True,Status: scheduled,,False
+午後休,06/11/2026,,06/11/2026,,True,Status: scheduled,,False
+第７２回 全日本中学校通信陸上競技大会熊本県大会,06/13/2026,,06/14/2026,,True,Status: scheduled,,False
+歓迎会,06/19/2026,7:00 PM,06/19/2026,9:00 PM,False,Status: scheduled,,False
+午後休,06/25/2026,,06/25/2026,,True,Status: scheduled,,False
+長距離記録会参加費締切,06/25/2026,,06/25/2026,,True,Status: scheduled,,False
+荒尾選手権,06/28/2026,,06/28/2026,,True,Status: scheduled,,False
+交通費申請,07/01/2026,,07/01/2026,,True,Status: scheduled,,False
+業務月報提出,07/01/2026,,07/01/2026,,True,Status: scheduled,,False
+第 ２ 回 熊本県長距離記録会,07/04/2026,,07/04/2026,,True,"1500mピーキング候補
+
+Status: scheduled",,False
+チャレンジゲームズ（午前中開催予定）,07/05/2026,,07/05/2026,,True,"1500mピーキング候補
+
+Status: scheduled",,False
+定期期限,07/13/2026,,07/13/2026,,True,Status: scheduled,,False
+トライアル開始,07/14/2026,,07/14/2026,,True,Status: scheduled,,False
+午後休,07/16/2026,,07/16/2026,,True,Status: scheduled,,False
+令和８年度 熊本県中学校総合体育大会陸上競技大会,07/18/2026,,07/19/2026,,True,Status: scheduled,,False
+岱明中夏休み開始,07/18/2026,,07/18/2026,,True,Status: scheduled,,False
+海の日,07/20/2026,,07/20/2026,,True,"日本の祝日
+
+Tags: holiday",,False
+玉名選手権参加費振込,07/22/2026,,07/22/2026,,True,Status: scheduled,,False
+岱明朝練,07/23/2026,,07/23/2026,,True,Status: scheduled,,False
+Claude Opus 5,07/24/2026,,07/24/2026,,True,"Status: scheduled
+URLs:
+- https://www.anthropic.com/news/claude-opus-5",,False
+ノルウェーメソッド,07/24/2026,,07/24/2026,,True,"「できる限りハードに練習することが、成長につながるわけではありません。 十分な強度で、十分な頻度で、十分な期間継続して練習することが、成長につながるのです。」このメッセージが岱明の設定遅めのポイント練習と調和性が高そうだと感じ、英語の本で5000円くらいしますが購入しました。英語は得意なので問題なし。土山は本気です。
+
+Status: scheduled",,False
+岱明朝練と夕練,07/24/2026,,07/24/2026,,True,Status: scheduled,,False
+岱明夕練,07/25/2026,,07/25/2026,,True,Status: scheduled,,False
+小泉さん・皆川さん訪問,07/27/2026,,07/29/2026,,True,Status: scheduled,,False
+岱明夕練,07/31/2026,,07/31/2026,,True,Status: scheduled,,False
+玉名選手権,08/01/2026,,08/01/2026,,True,Status: scheduled,,False
+第２７４回 熊本市陸上競技記録会,08/01/2026,,08/01/2026,,True,Status: scheduled,,False
+岱明夕練,08/03/2026,,08/03/2026,,True,Status: scheduled,,False
+岱明朝練,08/04/2026,,08/04/2026,,True,Status: scheduled,,False
+岱明朝練,08/06/2026,,08/06/2026,,True,Status: scheduled,,False
+岱明夕練,08/10/2026,,08/10/2026,,True,Status: scheduled,,False
+山の日,08/11/2026,,08/11/2026,,True,"日本の祝日
+
+Tags: holiday",,False
+夏季休暇,08/12/2026,,08/12/2026,,True,Status: scheduled,,False
+岱明夕練,08/12/2026,,08/12/2026,,True,Status: scheduled,,False
+夏季休暇,08/14/2026,,08/14/2026,,True,Status: scheduled,,False
+岱明夕練,08/14/2026,,08/14/2026,,True,Status: scheduled,,False
+岱明夕練,08/15/2026,,08/15/2026,,True,Status: scheduled,,False
+たまなPayデジタル商品券追加販売開始,08/18/2026,,08/18/2026,,True,Status: scheduled,,False
+岱明朝練,08/20/2026,,08/20/2026,,True,Status: scheduled,,False
+練習会（岱明）,08/20/2026,7:00 PM,08/20/2026,9:00 PM,False,Status: scheduled,玉名市岱明中央公園グラウンド,False
+サマー記録会100m（薄暮開催予定）,08/23/2026,,08/23/2026,,True,Status: scheduled,,False
+練習会（桃田）,08/23/2026,7:00 PM,08/23/2026,9:00 PM,False,Status: scheduled,,False
+岱明朝練,08/25/2026,,08/25/2026,,True,Status: scheduled,,False
+岱明中夏休み終了,08/26/2026,,08/26/2026,,True,Status: scheduled,,False
+練習会（岱明）,08/27/2026,7:00 PM,08/27/2026,9:00 PM,False,Status: scheduled,,False
+玉名郡ナイター,08/29/2026,,08/29/2026,,True,Status: scheduled,,False
+第５７回 ジュニアオリンピックU１６陸上競技大会熊本県予選会,08/29/2026,,08/29/2026,,True,Status: scheduled,,False
+練習会（岱明）,08/30/2026,,08/30/2026,,True,Status: scheduled,,False
+岱明中2年生職場体験,09/01/2026,,09/02/2026,,True,Status: scheduled,,False
+練習会（桃田）,09/03/2026,7:00 PM,09/03/2026,9:00 PM,False,Status: scheduled,,False
+練習会（桃田）,09/06/2026,7:00 PM,09/06/2026,9:00 PM,False,Status: scheduled,,False
+練習会（岱明）,09/08/2026,7:00 PM,09/08/2026,9:00 PM,False,Status: scheduled,,False
+岱明中前期期末テスト,09/09/2026,,09/11/2026,,True,Status: scheduled,,False
+練習会（岱明）,09/10/2026,7:00 PM,09/10/2026,9:00 PM,False,Status: scheduled,,False
+練習会（桃田）,09/13/2026,7:00 PM,09/13/2026,9:00 PM,False,Status: scheduled,,False
+練習会（桃田）,09/17/2026,7:00 PM,09/17/2026,9:00 PM,False,Status: scheduled,,False
+令和８年度 熊本県民体育祭,09/19/2026,,09/20/2026,,True,Status: scheduled,,False
+Middle-Distance in Omuta,09/20/2026,,09/20/2026,,True,Status: scheduled,,False
+飯村研究室同窓会,09/20/2026,,09/20/2026,,True,"【日時】2026年9月20日（日） 10:30：受付開始 11:00：パーティー開始 13:00：終了予定時刻  【会場】ホテルメルパルク熊本 【会費】8,000円〜10,000円（人数によって変動いたします。ご了承ください） 【服装】当日は、皆様に肩肘張らず楽しんでいただきたいため、ぜひカジュアルな服装でお気軽にお越しください。
+
+Status: scheduled",,False
+敬老の日,09/21/2026,,09/21/2026,,True,"日本の祝日
+
+Tags: holiday",,False
+第３回 熊本県長距離記録会,09/21/2026,,09/21/2026,,True,Status: scheduled,,False
+国民の休日,09/22/2026,,09/22/2026,,True,"日本の祝日
+
+Tags: holiday",,False
+秋分の日,09/23/2026,,09/23/2026,,True,"日本の祝日
+
+Tags: holiday",,False
+第４回 熊本県中学生ジュニア陸上大会（第３回県ジュニア駅伝大会）,09/26/2026,,09/26/2026,,True,Status: scheduled,,False
+藤本さん結婚式,09/26/2026,,09/26/2026,,True,Status: scheduled,,False
+第 ４回 熊本県長距離記録会,10/10/2026,,10/10/2026,,True,Status: scheduled,,False
+スポーツの日,10/12/2026,,10/12/2026,,True,"日本の祝日
+
+Tags: holiday",,False
+有休,10/14/2026,,10/14/2026,,True,Status: scheduled,,False
+荒玉中体連駅伝,10/14/2026,,10/14/2026,,True,Status: scheduled,,False
+荒玉中体連駅伝予備日,10/15/2026,,10/15/2026,,True,Status: scheduled,,False
+19期合宿,10/16/2026,,10/18/2026,,True,Status: scheduled,,False
+岱明中合唱コンクール,10/23/2026,,10/23/2026,,True,Status: scheduled,,False
+3年間共通テスト,10/27/2026,,10/28/2026,,True,Status: scheduled,,False
+第７９回 熊本県高等学校駅伝競走大会（男女）,10/31/2026,,10/31/2026,,True,Status: scheduled,,False
+金栗マラソン,11/01/2026,,11/01/2026,,True,Status: scheduled,,False
+文化の日,11/03/2026,,11/03/2026,,True,"日本の祝日
+
+Tags: holiday",,False
+熊本県中学男子･女子駅伝大会,11/06/2026,,11/06/2026,,True,Status: scheduled,,False
+岱明中後期中間テスト,11/10/2026,,11/11/2026,,True,Status: scheduled,,False
+第７９回 熊本市中長距離選手権大会,11/21/2026,,11/21/2026,,True,Status: scheduled,,False
+勤労感謝の日,11/23/2026,,11/23/2026,,True,"日本の祝日
+
+Tags: holiday",,False
+玉名市民マラソン,11/29/2026,,11/29/2026,,True,Status: scheduled,,False
+県・市学力調査,12/02/2026,,12/03/2026,,True,Status: scheduled,,False
+岱明中校内駅伝大会,12/11/2026,,12/11/2026,,True,Status: scheduled,,False
+第 ５回 熊本県長距離記録会,12/12/2026,,12/12/2026,,True,Status: scheduled,,False
+岱明中2年生修学旅行,12/15/2026,,12/17/2026,,True,Status: scheduled,,False
+岱明中冬休み,12/25/2026,,01/07/2027,,True,Status: scheduled,,False
+Long-Distance end of year,12/27/2026,,12/27/2026,,True,Status: scheduled,,False
