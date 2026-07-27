@@ -1,8 +1,16 @@
 # カスタム予定・メモ（2026年）
 # 祝日は scripts/generate_calendar.py が自動追加します。
-# 件数: 281
+# 件数: 291
 year: 2026
 events:
+- title: 交通費申請
+  date: '2026-01-01'
+  all_day: true
+  category: 予定
+  status: done
+  tags:
+  - タスク
+  - 交通費
 - title: 資産
   date: '2026-01-01'
   all_day: true
@@ -91,6 +99,14 @@ events:
   all_day: true
   category: 予定
   status: scheduled
+- title: 交通費申請
+  date: '2026-02-01'
+  all_day: true
+  category: 予定
+  status: done
+  tags:
+  - タスク
+  - 交通費
 - title: 資産
   date: '2026-02-01'
   all_day: true
@@ -204,6 +220,14 @@ events:
   description: '金額: ￥202,955'
   tags:
   - 金額
+- title: 交通費申請
+  date: '2026-03-01'
+  all_day: true
+  category: 予定
+  status: done
+  tags:
+  - タスク
+  - 交通費
 - title: 資産
   date: '2026-03-02'
   all_day: true
@@ -318,6 +342,14 @@ events:
   description: '金額: ￥41,375'
   tags:
   - 金額
+- title: 交通費申請
+  date: '2026-04-01'
+  all_day: true
+  category: 予定
+  status: done
+  tags:
+  - タスク
+  - 交通費
 - title: 入社式
   date: '2026-04-01'
   all_day: true
@@ -426,6 +458,14 @@ events:
   - http://kumariku.com/info/wp-content/uploads/2026/04/b652729b4a1eecb47ebc1e6e01321a6e.pdf
   location: 水前寺競技場
   description: 熊本県陸上競技大会一覧（2026/5/31版）より追加
+- title: 交通費申請
+  date: '2026-05-01'
+  all_day: true
+  category: 予定
+  status: done
+  tags:
+  - タスク
+  - 交通費
 - title: 山田飲み会
   date: '2026-05-01'
   all_day: false
@@ -622,7 +662,10 @@ events:
   date: '2026-06-01'
   all_day: true
   category: 予定
-  status: scheduled
+  status: done
+  tags:
+  - タスク
+  - 交通費
 - title: 第２７３回 熊本市陸上競技記録会
   date: '2026-06-06'
   all_day: true
@@ -718,7 +761,10 @@ events:
   date: '2026-07-01'
   all_day: true
   category: 予定
-  status: scheduled
+  status: done
+  tags:
+  - タスク
+  - 交通費
 - title: 業務月報提出
   date: '2026-07-01'
   all_day: true
@@ -878,6 +924,14 @@ events:
   all_day: true
   category: 予定
   status: scheduled
+- title: 交通費申請
+  date: '2026-08-01'
+  all_day: true
+  category: 予定
+  status: next
+  tags:
+  - タスク
+  - 交通費
 - title: 玉名選手権
   date: '2026-08-01'
   all_day: true
@@ -1007,6 +1061,14 @@ events:
   all_day: true
   category: 予定
   status: scheduled
+- title: 交通費申請
+  date: '2026-09-01'
+  all_day: true
+  category: 予定
+  status: next
+  tags:
+  - タスク
+  - 交通費
 - title: 岱明中2年生職場体験
   date: '2026-09-01'
   all_day: true
@@ -1118,6 +1180,14 @@ events:
   all_day: true
   category: 予定
   status: scheduled
+- title: 交通費申請
+  date: '2026-10-01'
+  all_day: true
+  category: 予定
+  status: next
+  tags:
+  - タスク
+  - 交通費
 - title: 第４回 九州小学生交流大会
   date: '2026-10-03'
   all_day: true
@@ -1208,6 +1278,14 @@ events:
   all_day: true
   category: 予定
   status: scheduled
+- title: 交通費申請
+  date: '2026-11-01'
+  all_day: true
+  category: 予定
+  status: next
+  tags:
+  - タスク
+  - 交通費
 - title: 金栗マラソン
   date: '2026-11-01'
   all_day: true
@@ -1258,6 +1336,14 @@ events:
   all_day: true
   category: 予定
   status: scheduled
+- title: 交通費申請
+  date: '2026-12-01'
+  all_day: true
+  category: 予定
+  status: next
+  tags:
+  - タスク
+  - 交通費
 - title: 県・市学力調査
   date: '2026-12-02'
   all_day: true
