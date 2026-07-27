@@ -6,6 +6,8 @@ events:
     end_date: 2026-08-12
     all_day: true
     category: 予定
+    status: scheduled
+    tags: [travel]
     description: 複数日の終日予定
 
   - title: 例: 面談
@@ -14,4 +16,16 @@ events:
     start_time: "14:00"
     end_time: "15:00"
     category: 予定
+    status: next
+    tags: [work]
     location: 本社
+    url: https://example.com/meeting-notes
+
+  # date を省略すると日付なしメモ
+  - title: 例: あとで調べること
+    category: メモ
+    status: inbox
+    tags: [research]
+    urls:
+      - https://example.com/docs
+    description: Notion Table ビューで一覧できるメモ

@@ -1,17 +1,21 @@
-# カスタム予定（2026年）
-# 祝日はスクリプトが自動追加します。ここには自分の予定だけ書いてください。
+# カスタム予定・メモ（2026年）
+# 祝日はスクリプトが自動追加します。ここには自分の予定・メモだけ書いてください。
 #
 # フィールド:
 #   title        必須  件名
-#   date         必須  開始日 (YYYY-MM-DD)
-#   end_date     任意  終了日 (省略時は date と同日)
+#   date         任意  開始日 (YYYY-MM-DD)。省略すると日付なしメモ
+#   end_date     任意  終了日 (省略時は date と同日)。メモには不可
 #   all_day      任意  終日か (デフォルト: true)
 #   start_time   任意  開始時刻 HH:MM（all_day: false のとき必須）
 #   end_time     任意  終了時刻 HH:MM
-#   category     任意  Notion用カテゴリ（デフォルト: 予定）
-#   description  任意  説明
+#   category     任意  Notion用カテゴリ（予定のデフォルト: 予定 / メモのデフォルト: メモ）
+#   status       任意  inbox / next / waiting / done など（メモのデフォルト: inbox）
+#   tags         任意  リストまたはカンマ区切り文字列
+#   urls / url   任意  関連URL（リスト・カンマ区切り・単数 url 可）
+#   description  任意  説明・本文
 #   location     任意  場所
 #   private      任意  Googleの Private（デフォルト: false）
+#   type         任意  memo / note / メモ（date がある場合は予定として扱う）
 
 year: 2026
 events:
@@ -19,6 +23,10 @@ events:
     date: 2026-03-10
     all_day: true
     category: 予定
+    status: next
+    tags: [health, personal]
+    urls:
+      - https://example.com/health-check
     description: サンプルの終日予定
 
   - title: 定例ミーティング
@@ -27,6 +35,8 @@ events:
     start_time: "10:00"
     end_time: "11:00"
     category: 予定
+    status: scheduled
+    tags: [work, meeting]
     location: オンライン
     description: サンプルの時刻付き予定
 
@@ -34,3 +44,23 @@ events:
     date: 2026-08-01
     all_day: true
     category: 予定
+    status: scheduled
+    tags: [sports]
+
+  # date を省略すると日付なしメモ（Notion / source に出力、Google からは除外）
+  - title: 買い物リスト
+    category: メモ
+    status: inbox
+    tags: [errand]
+    description: |
+      - 牛乳
+      - 卵
+      - パン
+
+  - title: あとで読む記事
+    category: メモ
+    status: inbox
+    tags: [reading]
+    urls:
+      - https://example.com/article
+    description: 週末に読む
