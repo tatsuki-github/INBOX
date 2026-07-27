@@ -1,0 +1,14 @@
+# カスタム予定・メモ（2020年）
+# 祝日は scripts/generate_calendar.py が自動追加します。
+# 件数: 1
+year: 2020
+events:
+- title: 800mPB
+  date: '2020-11-15'
+  all_day: true
+  category: 予定
+  status: scheduled
+  urls:
+  - http://www.kumariku.org/20/kekka/20201115rikkyou/rel235.html
+  tags:
+  - ランニング

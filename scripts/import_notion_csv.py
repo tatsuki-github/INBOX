@@ -1,5 +1,12 @@
 #!/usr/bin/env python3
-"""NotionエクスポートCSVを input/events.YYYY.yaml に取り込む。"""
+"""NotionエクスポートCSVを input/events.YYYY.yaml に取り込む。
+
+対応フォーマット:
+- カレンダー系: 名前, 日時, メモ, 場所, URL, タグ
+- INBOX系: 名前, 日付, メモ, URL, タグ, 状態, 領域
+
+日付がある行は予定、ない行は日付なしメモとして取り込みます。
+"""
 
 from __future__ import annotations
 
@@ -7,7 +14,7 @@ import argparse
 import csv
 import re
 from collections import defaultdict
-from datetime import date, datetime, time
+from datetime import date, time
 from pathlib import Path
 
 import yaml
@@ -16,6 +23,18 @@ ROOT = Path(__file__).resolve().parent.parent
 
 DATE_RE = re.compile(r"(\d{4})年(\d{1,2})月(\d{1,2})日")
 TIME_RE = re.compile(r"(\d{1,2}):(\d{2})")
+
+STATUS_MAP = {
+    "完了": "done",
+    "済": "done",
+    "done": "done",
+    "未着手": "inbox",
+    "未対応": "inbox",
+    "inbox": "inbox",
+    "next": "next",
+    "waiting": "waiting",
+    "scheduled": "scheduled",
+}
 
 
 class LiteralStr(str):
@@ -27,6 +46,12 @@ def literal_representer(dumper: yaml.Dumper, data: LiteralStr):
 
 
 yaml.add_representer(LiteralStr, literal_representer)
+
+
+def maybe_literal(text: str) -> str | LiteralStr:
+    if "\n" in text:
+        return LiteralStr(text if text.endswith("\n") else text + "\n")
+    return text
 
 
 def parse_datetime_field(raw: str) -> dict | None:
@@ -69,74 +94,129 @@ def parse_datetime_field(raw: str) -> dict | None:
     }
 
 
-def build_description(memo: str) -> str:
-    return (memo or "").strip()
+def split_tags(*values: str) -> list[str]:
+    tags: list[str] = []
+    seen: set[str] = set()
+    for value in values:
+        text = (value or "").strip()
+        if not text:
+            continue
+        for part in re.split(r"[,、/\n]", text):
+            tag = part.strip()
+            if tag and tag not in seen:
+                seen.add(tag)
+                tags.append(tag)
+    return tags
 
 
-def row_to_event(row: dict) -> dict | None:
+def map_status(raw: str, *, is_memo: bool) -> str:
+    text = (raw or "").strip()
+    if not text:
+        return "inbox" if is_memo else "scheduled"
+    return STATUS_MAP.get(text, text)
+
+
+def date_field(row: dict) -> str:
+    return (row.get("日時") or row.get("日付") or "").strip()
+
+
+def row_to_item(row: dict, *, memo_year: int) -> tuple[dict, set[int]] | None:
     title = (row.get("名前") or "").strip()
-    parsed = parse_datetime_field(row.get("日時") or "")
-    if not title or not parsed:
+    if not title:
         return None
 
-    event: dict = {
+    parsed = parse_datetime_field(date_field(row))
+    description = (row.get("メモ") or "").strip()
+    location = (row.get("場所") or "").strip()
+    url = (row.get("URL") or "").strip()
+    tags = split_tags(row.get("タグ") or "", row.get("領域") or "")
+    status_raw = row.get("状態") or ""
+
+    if parsed is None:
+        item: dict = {
+            "title": title,
+            "category": "メモ",
+            "status": map_status(status_raw, is_memo=True),
+        }
+        if description:
+            item["description"] = maybe_literal(description)
+        if url:
+            item["urls"] = [url]
+        if tags:
+            item["tags"] = tags
+        return item, {memo_year}
+
+    item = {
         "title": title,
         "date": parsed["start_date"].isoformat(),
         "all_day": parsed["all_day"],
         "category": "予定",
-        "status": "scheduled",
+        "status": map_status(status_raw, is_memo=False),
     }
-
     if parsed["end_date"] != parsed["start_date"]:
-        event["end_date"] = parsed["end_date"].isoformat()
-
+        item["end_date"] = parsed["end_date"].isoformat()
     if not parsed["all_day"]:
-        event["start_time"] = parsed["start_time"].strftime("%H:%M")
+        item["start_time"] = parsed["start_time"].strftime("%H:%M")
         if parsed["end_time"]:
-            event["end_time"] = parsed["end_time"].strftime("%H:%M")
-
-    description = build_description(row.get("メモ") or "")
+            item["end_time"] = parsed["end_time"].strftime("%H:%M")
     if description:
-        event["description"] = (
-            LiteralStr(description + "\n") if "\n" in description else description
-        )
-
-    location = (row.get("場所") or "").strip()
+        item["description"] = maybe_literal(description)
     if location:
-        event["location"] = location
-
-    url = (row.get("URL") or "").strip()
+        item["location"] = location
     if url:
-        event["urls"] = [url]
-
-    tags = (row.get("タグ") or "").strip()
+        item["urls"] = [url]
     if tags:
-        event["tags"] = [t.strip() for t in re.split(r"[,、]", tags) if t.strip()]
+        item["tags"] = tags
 
-    return event
+    years = {parsed["start_date"].year, parsed["end_date"].year}
+    return item, years
 
 
-def years_for_event(event: dict) -> set[int]:
-    start = date.fromisoformat(event["date"])
-    end = date.fromisoformat(event["end_date"]) if event.get("end_date") else start
-    return {start.year, end.year}
+def item_key(item: dict) -> tuple:
+    desc = item.get("description") or ""
+    if isinstance(desc, str):
+        desc = desc.strip()
+    return (
+        item.get("title", ""),
+        item.get("date", ""),
+        item.get("end_date", ""),
+        item.get("start_time", ""),
+        item.get("end_time", ""),
+        item.get("location", ""),
+        desc,
+        tuple(item.get("urls") or []),
+    )
+
+
+def load_existing_events(path: Path) -> list[dict]:
+    if not path.exists():
+        return []
+    with path.open(encoding="utf-8") as f:
+        data = yaml.safe_load(f) or {}
+    return list(data.get("events") or [])
 
 
 def write_year_yaml(path: Path, year: int, events: list[dict]) -> None:
     events_sorted = sorted(
         events,
         key=lambda e: (
-            e["date"],
+            e.get("date") is None or e.get("date") == "",
+            e.get("date") or "9999-99-99",
             e.get("start_time") or "",
-            e["title"],
+            e.get("title") or "",
         ),
     )
+    for event in events_sorted:
+        desc = event.get("description")
+        if isinstance(desc, str) and "\n" in desc and not isinstance(desc, LiteralStr):
+            event["description"] = maybe_literal(desc)
+
     payload = {
         "year": year,
         "events": events_sorted,
     }
     header = (
-        f"# Notionインポート由来のカスタム予定（{year}年）\n"
+        f"# カスタム予定・メモ（{year}年）\n"
         "# 祝日は scripts/generate_calendar.py が自動追加します。\n"
         f"# 件数: {len(events_sorted)}\n"
     )
@@ -152,67 +232,105 @@ def write_year_yaml(path: Path, year: int, events: list[dict]) -> None:
         )
 
 
-def import_csv(csv_path: Path, out_dir: Path) -> dict[int, int]:
+def import_csv(
+    csv_path: Path,
+    out_dir: Path,
+    *,
+    merge: bool,
+    memo_year: int,
+) -> dict[int, tuple[int, int]]:
+    """戻り値: year -> (total_count, newly_added_count)"""
     with csv_path.open(encoding="utf-8-sig", newline="") as f:
         rows = list(csv.DictReader(f))
 
-    by_year: dict[int, list[dict]] = defaultdict(list)
-    seen_by_year: dict[int, set[tuple]] = defaultdict(set)
+    incoming: dict[int, list[dict]] = defaultdict(list)
+    seen_incoming: dict[int, set[tuple]] = defaultdict(set)
 
     for row in rows:
-        event = row_to_event(row)
-        if not event:
+        result = row_to_item(row, memo_year=memo_year)
+        if not result:
             continue
-        for year in years_for_event(event):
-            key = (
-                event["title"],
-                event["date"],
-                event.get("end_date", ""),
-                event.get("start_time", ""),
-                event.get("end_time", ""),
-                event.get("location", ""),
-                event.get("description", ""),
-            )
-            if key in seen_by_year[year]:
+        item, years = result
+        for year in years:
+            key = item_key(item)
+            if key in seen_incoming[year]:
                 continue
-            seen_by_year[year].add(key)
-            by_year[year].append(event)
+            seen_incoming[year].add(key)
+            incoming[year].append(item)
 
     out_dir.mkdir(parents=True, exist_ok=True)
-    counts: dict[int, int] = {}
-    for year, events in sorted(by_year.items()):
+    results: dict[int, tuple[int, int]] = {}
+
+    years = set(incoming)
+    if merge:
+        for path in out_dir.glob("events.*.yaml"):
+            suffix = path.name.removeprefix("events.").removesuffix(".yaml")
+            if suffix.isdigit():
+                years.add(int(suffix))
+
+    for year in sorted(years):
         path = out_dir / f"events.{year}.yaml"
-        write_year_yaml(path, year, events)
-        counts[year] = len(events)
-    return counts
+        existing = load_existing_events(path) if merge else []
+        existing_keys = {item_key(e) for e in existing}
+        added = 0
+        merged = list(existing)
+        for item in incoming.get(year, []):
+            key = item_key(item)
+            if key in existing_keys:
+                continue
+            existing_keys.add(key)
+            merged.append(item)
+            added += 1
+        write_year_yaml(path, year, merged)
+        results[year] = (len(merged), added)
+
+    return results
 
 
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
-        description="NotionカレンダーCSVを年ごとの YAML に変換します。"
+        description="Notion CSV（予定・INBOXメモ）を年ごとの YAML に変換します。"
     )
-    parser.add_argument(
-        "--csv",
-        type=Path,
-        required=True,
-        help="NotionエクスポートのCSVパス",
-    )
+    parser.add_argument("--csv", type=Path, required=True, help="NotionエクスポートのCSVパス")
     parser.add_argument(
         "--out-dir",
         type=Path,
         default=ROOT / "input",
         help="YAML出力先（デフォルト: input/）",
     )
+    parser.add_argument(
+        "--merge",
+        action=argparse.BooleanOptionalAction,
+        default=True,
+        help="既存 YAML に追記マージする（デフォルト: する）",
+    )
+    parser.add_argument(
+        "--memo-year",
+        type=int,
+        default=date.today().year,
+        help="日付なしメモの配置年（デフォルト: 今年）",
+    )
     return parser
 
 
 def main(argv: list[str] | None = None) -> int:
     args = build_parser().parse_args(argv)
-    counts = import_csv(args.csv, args.out_dir)
-    total = sum(counts.values())
-    print(f"取り込み完了: {total} 件（年をまたぐ予定は複数年に重複配置）")
-    for year, count in counts.items():
-        print(f"  {year}: {count} 件 -> {args.out_dir / f'events.{year}.yaml'}")
+    results = import_csv(
+        args.csv,
+        args.out_dir,
+        merge=args.merge,
+        memo_year=args.memo_year,
+    )
+    added_total = sum(a for _, a in results.values())
+    print(
+        f"取り込み完了: 新規 {added_total} 件"
+        f"（merge={'on' if args.merge else 'off'}, メモ配置年={args.memo_year}）"
+    )
+    for year, (total, added) in results.items():
+        print(
+            f"  {year}: 合計 {total} 件（+{added}）"
+            f" -> {args.out_dir / f'events.{year}.yaml'}"
+        )
     return 0
 
 

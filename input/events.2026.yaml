@@ -1,6 +1,6 @@
-# Notionインポート由来のカスタム予定（2026年）
+# カスタム予定・メモ（2026年）
 # 祝日は scripts/generate_calendar.py が自動追加します。
-# 件数: 162
+# 件数: 248
 year: 2026
 events:
 - title: Amazon Prime更新日
@@ -355,6 +355,16 @@ events:
   status: scheduled
   start_time: '19:00'
   end_time: '20:00'
+- title: 地域部活動研修
+  date: '2026-05-15'
+  all_day: false
+  category: 予定
+  status: scheduled
+  start_time: '19:00'
+  description: 謝金は2ヶ月まとめて銀行へ振り込む。名簿は5月末までに様式に入力して提出。年会費2000円。入部金年間12000円（前期6000円、後期6000円）。オンライン決済は6月以降に。社会体育施設は19時以降は一般の社会体育クラブ扱い。教員免許、地域部活動代表者は1300円/h、その他は1100円/h。日時、場所、指導者名、指導内容。原則土日3時間・月5回程度の支払いになるが、土日祝日に活動した分は全部必ず記入。中体連共催の大会は大会名の横に共催と記入。子育て支援課
+  tags:
+  - 地域部活動
+  - ランニング
 - title: 岱明中体育大会
   date: '2026-05-17'
   all_day: true
@@ -365,6 +375,22 @@ events:
   all_day: true
   category: 予定
   status: scheduled
+- title: 2XU
+  date: '2026-05-21'
+  all_day: true
+  category: 予定
+  status: scheduled
+  description: XSを購入
+  urls:
+  - https://jp.2xu.com/products/light-speed-react-compression-shorts-ma7050b-mens-black-white-reflective?variant=43135613239452
+- title: Nike Miler
+  date: '2026-05-21'
+  all_day: true
+  category: 予定
+  status: scheduled
+  description: Sを購入
+  urls:
+  - https://www.supersports.com/ja-jp/xebio/products/A-10906581901/
 - title: 午後休
   date: '2026-05-21'
   all_day: true
@@ -432,6 +458,12 @@ events:
   status: scheduled
 - title: 免許更新
   date: '2026-06-07'
+  all_day: true
+  category: 予定
+  status: scheduled
+  description: 14:10〜15:40くらいかかった。スムーズっちゃスムーズ。
+- title: 免許更新
+  date: '2026-06-07'
   all_day: false
   category: 予定
   status: scheduled
@@ -463,6 +495,14 @@ events:
   status: scheduled
   start_time: '19:00'
   end_time: '21:00'
+- title: 山田飲み会
+  date: '2026-06-20'
+  all_day: true
+  category: 予定
+  status: scheduled
+  description: 意識をどう高くするか
+  tags:
+  - ランニング
 - title: 午後休
   date: '2026-06-25'
   all_day: true
@@ -488,6 +528,15 @@ events:
   all_day: true
   category: 予定
   status: scheduled
+- title: 2026年度第２回熊本県長距離記録会
+  date: '2026-07-04'
+  all_day: true
+  category: 予定
+  status: scheduled
+  urls:
+  - http://www.kumariku.org/26/26,7,4long/kyougi.html
+  tags:
+  - ランニング
 - title: 第 ２ 回 熊本県長距離記録会
   date: '2026-07-04'
   all_day: true
@@ -902,3 +951,622 @@ events:
   all_day: true
   category: 予定
   status: scheduled
+- title: 1500mの予想
+  category: メモ
+  status: inbox
+  description: タータンではない場合の練習の1000mのタイム
+  tags:
+  - ランニング
+- title: 2019年全中陸上で活躍した選手達の3年後は？！
+  category: メモ
+  status: inbox
+  urls:
+  - https://runnersjournaljp.livedoor.blog/archives/32117198.html
+  tags:
+  - 伸び代
+  - ランニング
+- title: 2020全国男子駅伝に見る全中陸上優勝者達の現在
+  category: メモ
+  status: inbox
+  urls:
+  - https://runnersjournaljp.livedoor.blog/archives/21885501.html
+  tags:
+  - 伸び代
+  - ランニング
+- title: 2026年度陸連登録番号
+  category: メモ
+  status: inbox
+  description: '3170'
+  tags:
+  - ランニング
+- title: 3000m予想タイム
+  category: メモ
+  status: inbox
+  description: 1000m×3本のレスト400mの疾走タイム合計+5〜10秒
+  tags:
+  - ランニング
+- title: 3000m障害で日本人初の表彰台を目指す-三浦龍司さん
+  category: メモ
+  status: inbox
+  urls:
+  - https://www.sportsjourney.jp/ja/highlights/4023/
+  tags:
+  - 伸び代
+  - ランニング
+- title: 3年間で速くなった選手のプロンプト
+  category: メモ
+  status: inbox
+  description: 3年間のデータがある熊本県の中学生の中で、男子で言えば3年で1500m4分15秒切り、3000m9分10秒切り、女子で言えば3年で800m2分24秒切り、1500m5分切りを達成している選手の3年間の記録の推移をグラフにして。
+  tags:
+  - ランニング
+- title: ASICS HYPER RACER
+  category: メモ
+  status: inbox
+  urls:
+  - https://www.asics.com/jp/ja-jp/hyper-racer/p/1093A233-002.html?width=STANDARD
+  tags:
+  - 厚底規定クリアシューズ
+  - ランニング
+- title: Notion バックアップコード
+  category: メモ
+  status: inbox
+  description: |
+    FWZ5-F83B
+    EQU3-ADD8
+    EJUL-XZMF
+    0KCX-ZWRG
+    J38V-R2XT
+    J2A9-SLEP
+- title: PUMA プロピオ ニトロ
+  category: メモ
+  status: inbox
+  urls:
+  - https://jp.puma.com/jp/ja/pd/%E3%83%A1%E3%83%B3%E3%82%BA-%E3%83%97%E3%83%AD%E3%83%94%E3%82%AA-%E3%83%8B%E3%83%88%E3%83%AD-%E3%83%A9%E3%83%B3%E3%83%8B%E3%83%B3%E3%82%B0%E3%82%B7%E3%83%A5%E3%83%BC%E3%82%BA/311428
+  tags:
+  - 厚底規定クリアシューズ
+  - ランニング
+- title: SaaSについて
+  category: メモ
+  status: inbox
+  description: コンテキストと使いやすさ
+  tags:
+  - 開発
+- title: TDDで段階的に実装して
+  category: メモ
+  status: inbox
+  tags:
+  - 開発
+- title: The NORWEGIAN METHOD APPLIED
+  category: メモ
+  status: inbox
+  tags:
+  - ランニング
+- title: urls.csv2024
+  category: メモ
+  status: inbox
+  tags:
+  - ランニング
+- title: urls.csv2025
+  category: メモ
+  status: inbox
+  tags:
+  - ランニング
+- title: 「あの子は伸びる」は何を見て言っているのでしょうか？
+  category: メモ
+  status: inbox
+  urls:
+  - https://youtu.be/cmGtD12XLNo?si=fRKNsMz4AUboWFJg
+  tags:
+  - ランニング
+- title: 「中高生の憧れ」“世界”の田中希実、じつはインターハイ優勝経験がなかった！ 全国女子駅伝に向けて「憧れるのはいいと思うんですけど…」
+  category: メモ
+  status: inbox
+  urls:
+  - https://number.bunshun.jp/articles/-/860324?page=1#
+  tags:
+  - 伸び代
+  - ランニング
+- title: 【System of Arthur Lydiard Vol.6】リディアード・トレーニング①有酸素能力発達の走り込み
+  category: メモ
+  status: inbox
+  urls:
+  - https://www.bbm-japan.com/article/detail/5976?page=2
+  tags:
+  - ランニング
+- title: 【東京世界陸上】落合晃が800ｍ日本記録更新の前にドン底を味わった日「悔しくて１週間ぐらい走れませんでした」
+  category: メモ
+  status: inbox
+  urls:
+  - https://sportiva.shueisha.co.jp/clm/othersports/rikujo/2025/09/12/800/
+  tags:
+  - 伸び代
+  - ランニング
+- title: 【第2回】トレーニング設計の科学：カレンダーを捨てよ。ファンネル理論と適応の順序
+  category: メモ
+  status: inbox
+  urls:
+  - https://www.youtube.com/watch?v=6pEE2Q-JxPo&t=1s
+  tags:
+  - ピーキング
+  - ランニング
+- title: なるべくバックエンドで処理させるように変更
+  category: メモ
+  status: done
+  tags:
+  - 開発
+- title: アイリスオーヤマ ドラム式洗濯機 洗濯8kg 乾燥5kg ブラック DKC85A1-B
+  category: メモ
+  status: inbox
+  urls:
+  - https://www.amazon.co.jp/dp/B0CKWWH948?pd_rd_i=B0CKWWH948&pd_rd_w=Oa3ax&content-id=amzn1.sym.f293be60-50b7-49bc-95e8-931faf86ed1e&pf_rd_p=f293be60-50b7-49bc-95e8-931faf86ed1e&pf_rd_r=JNY7XJNFZSG8R11M16DE&pd_rd_wg=ylJaM&pd_rd_r=a3b5db41-e3f1-4ff2-a574-b1384b8955f8&sp_csd=d2lkZ2V0TmFtZT1zcF9kZXRhaWw&th=1&linkCode=sl1&tag=gachimoto3-22&linkId=be3fa2d42d15607f990cdf6f33fb48ca&language=ja_JP&ref_=as_li_ss_tl
+  tags:
+  - 生活
+- title: アディダス アディゼロ RC 6
+  category: メモ
+  status: inbox
+  urls:
+  - https://www.adidas.jp/%E3%82%A2%E3%83%87%E3%82%A3%E3%82%BC%E3%83%AD-rc-6-adizero-rc-6/JP6559.html
+  tags:
+  - 厚底規定クリアシューズ
+  - ランニング
+- title: インターバル
+  category: メモ
+  status: inbox
+  tags:
+  - ランニング
+- title: オーシャントリコ　クレイ
+  category: メモ
+  status: inbox
+  description: ワックス
+  urls:
+  - https://oceantrico.com/product/clay/
+- title: ケガ時の練習
+  category: メモ
+  status: inbox
+  description: 自分は痛みを我慢してまで走らせるとかは絶対させない。とりあえず休ませて様子見。その後、そうでもなかったということもあるけど、それを繰り返すうちにその生徒の傾向が見えてくる。長距離記録会は惜しくもDNSの山﨑が昨日の部活で真っ先に「ケガ酷くなかったです」とキラキラした目で報告してきた。先は長い。
+  tags:
+  - ランニング
+- title: ジョンの山ランさんのインターバル講座
+  category: メモ
+  status: inbox
+  tags:
+  - インターバル
+  - ランニング
+- title: ジョンの山ランさんの乳酸セミナー
+  category: メモ
+  status: inbox
+  tags:
+  - ランニング
+- title: セキュリティチェック
+  category: メモ
+  status: inbox
+  tags:
+  - 開発
+- title: データベース精度
+  category: メモ
+  status: inbox
+  description: 農山さんは一般。有明高専が有明中に分類されている。
+  tags:
+  - ランニング
+- title: 'ニューバランス Fu
+
+    elCell Pvlse v1'
+  category: メモ
+  status: inbox
+  urls:
+  - https://shop.newbalance.jp/pd/MFCNPV1-50698.html
+  tags:
+  - 厚底規定クリアシューズ
+  - ランニング
+- title: マイナンバー
+  category: メモ
+  status: inbox
+  description: MYNUM3132
+- title: ミズノ デュエルソニック 4
+  category: メモ
+  status: inbox
+  urls:
+  - https://jpn.mizuno.com/ec/disp/attgrp/U1GD2570/
+  tags:
+  - 厚底規定クリアシューズ
+  - ランニング
+- title: ミズノ デュエルフラッシュ
+  category: メモ
+  status: inbox
+  urls:
+  - https://jpn.mizuno.com/ec/disp/attgrp/U1GD2360/?pid=dicstf_waveduel_flash
+  tags:
+  - 厚底規定クリアシューズ
+  - ランニング
+- title: ミズノ デュエルフラッシュ2
+  category: メモ
+  status: inbox
+  urls:
+  - https://jpn.mizuno.com/ec/disp/attgrp/U1GD2560/?pid=dicstf_waveduel_flash2
+  tags:
+  - 厚底規定クリアシューズ
+  - ランニング
+- title: メニコンマジック(90枚入) 1箱(1日使い捨て コンタクトレンズ) 【BC】8.6 【PWR】-3.50
+  category: メモ
+  status: inbox
+  description: コンタクト
+  urls:
+  - https://www.amazon.co.jp/gp/aw/d/B08RDD5FHJ?psc=1&ref=ppx_pop_mob_b_asin_title
+- title: ランキング作成プロンプト
+  category: メモ
+  status: inbox
+  description: 所属別3000m予想タイム上位ランキング表（男子は6人、女子は5人の平均と内訳）を作成したい。3000mのタイムがあれば3000mのSB、1500mのタイムがあればSBの+15秒/kmで3000mの予想タイムを算出、3000mも1500mもなければ800mのSBから+10秒/kmして1500mの予想タイムを算出、その後さらにそのタイムを+15秒/kmで3000mの予想タイムを算出して。 男女別に出して。
+  tags:
+  - ランニング
+- title: 一括操作
+  category: メモ
+  status: inbox
+  description: |
+    一括操作モード切替ボタンを追加する。デフォルトは無効とする。
+
+
+    一括操作モードが有効な場合のみ各行にチェックボックスを表示し、複数選択および全選択を可能とする。
+
+
+    単一選択状態から一括操作モードへ切り替えた場合、選択中ファイルと同一拡張子を持つシステム内の全ファイルを自動選択する。
+
+
+    一括操作モードでは同一拡張子のファイルのみ選択可能とし、異なる拡張子のファイルは選択不可とする。
+
+
+    一括操作モードを解除した場合は、一括操作開始前の単一選択状態へ復元する。
+
+
+    一括操作モードでは全選択機能を提供し、対象拡張子を持つシステム内の全ファイルを選択できる。
+
+
+    選択されたファイル群に対してベクトル化の詳細オプションを一括適用できる。
+  tags:
+  - 開発
+- title: 中1女子
+  category: メモ
+  status: inbox
+  description: 中1のシーズンベスト8位まで2003〜2026年度。3割くらいは中1のベストを上回るタイムで中2、中3で1度も走れていない。高校でも続けてた人は伸びてる or 1500に完全シフトして伸びていら傾向にある。女子は自分からガンガンやるような子は少ないから、指導者がアクセル踏み過ぎないように注意を払う必要があると自分は考える。
+  tags:
+  - ランニング
+- title: 中体連
+  category: メモ
+  status: inbox
+  tags:
+  - ランニング
+- title: 中体連2026 申し合わせ事項
+  category: メモ
+  status: inbox
+  tags:
+  - ランニング
+- title: 中体連前日
+  category: メモ
+  status: inbox
+  description: |
+    松野か村上が突っ込んで失速する動画1つでも見つかるかなと思って検索してみたら、これだけ見つかった笑
+    今は最後まで粘れるようになったな。
+    あと、この曲いいよね
+    土日は全員最後まで諦めずに岱明魂🔥
+  tags:
+  - ランニング
+- title: 中尾快叶
+  category: メモ
+  status: inbox
+  description: 素直
+  tags:
+  - ランニング
+- title: 予想ペース
+  category: メモ
+  status: inbox
+  description: |
+    【中長距離の簡易換算モデル】
+
+    800m
+    ↓ +5秒/km
+    1000m
+    ↓ +5秒/km
+    1500m
+    ↓ +15秒/km
+    3000m
+    ↓ +5秒/km
+    5000m
+    ↓ +6秒/km
+    10000m
+    ↓ +5秒/km
+    ハーフマラソン
+
+
+    【種目ごとの換算目安】
+
+    1000m
+    ＝ 800mの平均ペース +5秒/km
+
+    1500m
+    ＝ 1000mの平均ペース +5秒/km
+    ＝ 800mの平均ペース +10秒/km
+
+    3000m
+    ＝ 1500mの平均ペース +15秒/km
+    ＝ 1500m ×2 +30秒
+
+    5000m
+    ＝ 3000mの平均ペース +5秒/km
+    ＝ 1500mの平均ペース +20秒/km
+
+    10000m
+    ＝ 5000mの平均ペース +6秒/km
+
+    ハーフマラソン
+    ＝ 10000mの平均ペース +5秒/km
+    ＝ 5000mの平均ペース +10〜11秒/km
+
+
+    【見方】
+
+    換算より短い距離が強い
+    → スピード型
+
+    換算より長い距離が強い
+    → 持久型
+
+
+    【例】
+
+    1500m 5:00（3:20/km）の場合
+
+    800m    → 約2:32
+    1000m   → 約3:15
+    3000m   → 約10:45
+    5000m   → 約18:20
+    10000m  → 約37:40
+    ハーフ → 約1:22〜1:24
+  tags:
+  - ランニング
+- title: 伸び代について
+  category: メモ
+  status: inbox
+  description: |
+    伸び代を考えるなら、小中学時代は過度な走り込み、連日の高負荷練習や痛みのある状態での練習、厳しく細かい指導はしなくてもいい、いや、しない方がいいと思っている。
+    長期積立投資みたいに、リスクを抑えた練習や生活を淡々と継続することが、やがて大きなリターンを生むと。
+
+
+    小中学生だからたまにはサボりたいし、他人に反抗したくなるし、お菓子も食べたいし、遊びたいと思う。
+    ただ、これが常態化すると当然マイナスのリターンになるので、その頻度を観察して多ければ指導する必要がある。いや、あえてスルーして小さく失敗させるのもアリ？
+
+
+    高校以降で適切にリスクをとれるようになる、リスクのある環境に行ったら、またひと伸び。指導する上で目先の数字や目標に縛られすぎず、ローリスク思考（ゼロリスクではない）を重視。
+  tags:
+  - ランニング
+- title: 免許更新Web予約
+  category: メモ
+  status: inbox
+  urls:
+  - https://www.pref.kumamoto.jp/site/police/220475.html
+- title: 全中選手プロンプト
+  category: メモ
+  status: inbox
+  description: 山田　晄雅(3)ﾔﾏﾀﾞ ｺｳｶﾞ西合志中8:42.85SRC 217544菊地　颯太(3)ｷｸﾁ ｿｳﾀ西合志南中8:45.09SRC 3151880松本　瑛誠(3)ﾏﾂﾓﾄ ｴｲｾｲ新和中8:46.52SRC 4221477龍野　翔太郎(3)ﾀﾂﾉ ｼｮｳﾀﾛｳ県立八代中8:46.72SRC 523258松岡　輝雅(3)ﾏﾂｵｶ ﾋｶﾞ米野岳中8:48.92SRC 6181885根岸　夏生(3)ﾈｷﾞｼ ｶｲ牛深中8:49.25SRC 7213874原田　芽(3)ﾊﾗﾀﾞ ｲﾌﾞｷNJAC8:49.78SRC 8201001米原　凛人(3)ﾖﾈﾊﾗ ﾘﾝﾄ下益城城南中8:50.14SRC 9193408津田　郁将(3)ﾂﾀﾞ ﾌﾐﾕｷアスリートワーク8:52.41SRC 1014999吉岡　道雄(3)ﾖｼｵｶ ﾐﾁｵ下益城城南中8:53.97SRC 11133244隈部　侑成(3)ｸﾏﾍﾞ ﾕｳｾｲ金栗PROJECT8:54.61SRC
+  tags:
+  - ランニング
+- title: 南本幸治郎
+  category: メモ
+  status: inbox
+  description: 伸び代しかない
+  tags:
+  - ランニング
+- title: 地域部活動保険
+  category: メモ
+  status: inbox
+  description: 年会費2000円、180日以外の通院（90日）が対象、事故報告を30日以内、必要に応じて状況調査、事故報告書の提出、保険会社から連絡があり、見舞金の振り込み、病院窓口では玉名市子ども医療費助成制度（無料）を活用（窓口では支払わない）。玉名市外の病院では、窓口で支払い後、玉名市子育て支援課に連絡、移動中の事故（交通事故の場合は自動車保険が優先）や物損にも対応。学校部活動での怪我はスポーツ振興センターが適応される。病院窓口では医療費を支払い、養護教諭へ報告後、医療費の振込
+  tags:
+  - 地域部活動
+  - ランニング
+- title: 地域部活動入金
+  category: メモ
+  status: inbox
+  description: 保険代2000円 + 前期6000円 + 後期6000円 = 12000円
+  tags:
+  - 地域部活動
+  - ランニング
+- title: 地域部活動謝金
+  category: メモ
+  status: inbox
+  description: 2ヶ月分まとめて銀行へ振り込む、教員免許、地域部活動代表指導者は時給1300円、上記以外の地域部活動指導者は1100円、原則土日3時間、月5回程度の支払いにやるが、土日祝日に活動した分は全部必ず記入
+  tags:
+  - 地域部活動
+  - ランニング
+- title: 塚原優衣
+  category: メモ
+  status: inbox
+  description: 頑張り屋さん
+  tags:
+  - ランニング
+- title: 増岡里俐
+  category: メモ
+  status: inbox
+  description: 礼儀正しい
+  tags:
+  - ランニング
+- title: 夏休みの練習
+  category: メモ
+  status: inbox
+  description: 朝練に行く日。6時半に軽くご飯を食べる。7時半から9時前まで練習。帰って着替えて9:37の電車に乗る。19:30もしくは20:11の電車で帰る。夕練に行く日はリモートなので同じ。
+  tags:
+  - ランニング
+- title: 大会レポートプロンプト
+  category: メモ
+  status: inbox
+  description: 大会名を指定して、その大会のレポートPDFを所属ごとに作成するプログラムを追加したい。タイムや着順、先頭との差、SB更新者と更新率などをまとめたい。
+  tags:
+  - ランニング
+- title: 山本哲瑠
+  category: メモ
+  status: inbox
+  description: |
+    前の方でゴールできた時に乗る
+    安定感もあるが、たまに1発がある
+  tags:
+  - ランニング
+- title: 山﨑莉奈
+  category: メモ
+  status: inbox
+  description: 心技体が良くて、伸びそう。長距離記録会は惜しいDNSだった。ただ、7/11の部活で挨拶の直後に「ケガ酷くなかったです」と笑顔で報告してきた。
+  tags:
+  - ランニング
+- title: 岱明ノルウェーメソッド
+  category: メモ
+  status: inbox
+  description: 300m66秒、30秒その場休憩を6〜12本
+  tags:
+  - ランニング
+- title: 岱明女子歴代800m
+  category: メモ
+  status: inbox
+  description: |
+    2004年　城戸智恵子さん 3年 2:22.69
+    2005年　井上智世さん 3年 2:16.25
+    2012年　大道志歩さん 1年 2:21.86
+    2013年　前田明佳里さん 2年 2:35.01
+    2013年　中川葉月さん 2年 2:35.43
+    2014年　田上真愛さん 1年 2:30.04
+    2014年　中嶋遙菜さん 3年 2:36.48
+    2015年　三村奈々さん 1年 2:34.70
+    2015年　中嶋瞳花さん 2年 2:35.64
+    2018年　土山静里佳 3年 2:25.47
+    2019年　前田優花さん 3年 2:25.67
+    2022年　福島まひる 3年 2:23.87
+    2026年　村上咲稀 3年 2:20.11
+  tags:
+  - ランニング
+- title: 村上咲稀
+  category: メモ
+  status: inbox
+  description: 本番に強い。中体連前に右腰の辺りを痛めた。高校でも続けるとのことだったので、今回は無理をせずに休んで一発にかける。スタート出遅れたけど、一気に2番手までいった。
+  tags:
+  - ランニング
+- title: 松本空羽
+  category: メモ
+  status: inbox
+  description: コツコツ型
+  tags:
+  - ランニング
+- title: 松野凛空
+  category: メモ
+  status: inbox
+  description: 積極的
+  tags:
+  - ランニング
+- title: 正しい判断とは
+  category: メモ
+  status: inbox
+  urls:
+  - https://youtu.be/R-pqe7n-Uug?si=u2swkS5EHMqFDXY2
+- title: 洛南高校動きづくり
+  category: メモ
+  status: inbox
+  urls:
+  - https://youtu.be/EQXz7EwqOcI?si=jvX9XVN4OlDTmaDH
+  tags:
+  - ランニング
+- title: 田上颯人
+  category: メモ
+  status: inbox
+  description: スマートに走る
+  tags:
+  - ランニング
+- title: 田中智稀
+  category: メモ
+  status: inbox
+  description: スピードはある
+  tags:
+  - ランニング
+- title: 福岡ランナーズ基地断り
+  category: メモ
+  status: inbox
+  description: 自分にメリットがない、他にやりたいことや案件がある
+  tags:
+  - ランニング
+- title: 管理人ごせんは「長距離のセット練習について」どう考えているのか？（最後まで無料で読めます）
+  category: メモ
+  status: inbox
+  urls:
+  - https://note.com/gosen1207/n/n667794943491
+  tags:
+  - ランニング
+- title: 納期がなぜ生産性をぶち壊しにしているのか？
+  category: メモ
+  status: inbox
+  urls:
+  - https://note.com/simplearchitect/n/nda228e2be785?sub_rt=share_pw
+  tags:
+  - 開発
+- title: 育成力プロンプト
+  category: メモ
+  status: inbox
+  description: |
+    2025年から2026年にかけての各所属ごとの全ての生徒の記録の推移を性別・種目ごとにグラフで出して
+    その上で、伸び率や全員を伸ばせているかという観点で所属ごとの育成力ランキングを作成して。
+  tags:
+  - ランニング
+- title: 荒玉クラブ所属生徒の中学校
+  category: メモ
+  status: inbox
+  description: 荒尾玉名中体連は学校単位で開催されるので、クラブの生徒を学校に振り分けたい。以下のようにして、分からない生徒は今後徐々にはっきりさせるので、一旦不明に分類されるように。
+  tags:
+  - ランニング
+- title: 荒玉競合分析
+  category: メモ
+  status: inbox
+  tags:
+  - ランニング
+- title: 角田亜美
+  category: メモ
+  status: inbox
+  description: |
+    気持ちが強くもないし、弱くもない
+    あんまり速くない組で前の方で勝負させた方がいいかも
+  tags:
+  - ランニング
+- title: 通信陸上2026反省
+  category: メモ
+  status: inbox
+  description: 時計を気にする生徒がいた。
+  tags:
+  - ランニング
+- title: 運転免許証
+  category: メモ
+  status: inbox
+  description: 1930 3211
+- title: 顧客MTG
+  category: メモ
+  status: inbox
+  description: 会社概要
+  tags:
+  - 開発
+- title: 高校総体2018 5000m
+  category: メモ
+  status: inbox
+  urls:
+  - http://www.kumariku.org/18/kekka/18,6,1soutai/rel105.html
+  tags:
+  - ランニング
+- title: 高田麻由
+  category: メモ
+  status: inbox
+  description: |
+    怪我していなければ練習を全てこなす
+    速くなりたいという気持ちはある
+  tags:
+  - ランニング
+- title: 髪型
+  category: メモ
+  status: inbox
+  description: 横と後ろは9mm、上5cmくらい残す、前髪は眉にかからないくらい
+- title: ２０１８年度　高校生特集　～井川　龍人（イガワ　リュウト）～
+  category: メモ
+  status: inbox
+  urls:
+  - https://blog.sat-ekiden.info/2019/03/26/10863/amp/
+  tags:
+  - 伸び代
+  - ランニング

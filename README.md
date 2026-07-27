@@ -96,10 +96,18 @@ events:
 
 ### Notion CSV から一括取り込み
 
-NotionでエクスポートしたCSV（列: 名前, URL, メモ, 場所, 日時）を年ごとのYAMLに変換できます。
+NotionでエクスポートしたCSVを年ごとのYAMLに変換できます。
+
+対応列の例:
+
+- カレンダー系: `名前`, `日時`, `メモ`, `場所`, `URL`, `タグ`
+- INBOX系: `名前`, `日付`, `メモ`, `URL`, `タグ`, `状態`, `領域`
+
+`日付`/`日時` がある行は予定、空の行は日付なしメモとして取り込みます（メモは `--memo-year` の年ファイルへ）。
 
 ```bash
-python3 scripts/import_notion_csv.py --csv path/to/notion_export.csv
+# 既存データに追記マージ（デフォルト）
+python3 scripts/import_notion_csv.py --csv path/to/notion_export.csv --memo-year 2026
 python3 scripts/generate_calendar.py --all-years
 ```
 
