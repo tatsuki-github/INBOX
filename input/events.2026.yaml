@@ -1,0 +1,36 @@
+# カスタム予定（2026年）
+# 祝日はスクリプトが自動追加します。ここには自分の予定だけ書いてください。
+#
+# フィールド:
+#   title        必須  件名
+#   date         必須  開始日 (YYYY-MM-DD)
+#   end_date     任意  終了日 (省略時は date と同日)
+#   all_day      任意  終日か (デフォルト: true)
+#   start_time   任意  開始時刻 HH:MM（all_day: false のとき必須）
+#   end_time     任意  終了時刻 HH:MM
+#   category     任意  Notion用カテゴリ（デフォルト: 予定）
+#   description  任意  説明
+#   location     任意  場所
+#   private      任意  Googleの Private（デフォルト: false）
+
+year: 2026
+events:
+  - title: 健康診断
+    date: 2026-03-10
+    all_day: true
+    category: 予定
+    description: サンプルの終日予定
+
+  - title: 定例ミーティング
+    date: 2026-01-15
+    all_day: false
+    start_time: "10:00"
+    end_time: "11:00"
+    category: 予定
+    location: オンライン
+    description: サンプルの時刻付き予定
+
+  - title: 玉名選手権
+    date: 2026-08-01
+    all_day: true
+    category: 予定

@@ -1,0 +1,17 @@
+# コピーして events.2026.yaml のように年を付けて使います。
+year: 2026
+events:
+  - title: 例: 旅行
+    date: 2026-08-10
+    end_date: 2026-08-12
+    all_day: true
+    category: 予定
+    description: 複数日の終日予定
+
+  - title: 例: 面談
+    date: 2026-04-01
+    all_day: false
+    start_time: "14:00"
+    end_time: "15:00"
+    category: 予定
+    location: 本社
