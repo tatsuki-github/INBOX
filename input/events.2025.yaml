@@ -1,8 +1,60 @@
 # カスタム予定・メモ（2025年）
 # 祝日は scripts/generate_calendar.py が自動追加します。
-# 件数: 178
+# 件数: 195
 year: 2025
 events:
+- title: 自分の練習
+  date: '2025-01-01'
+  all_day: true
+  category: 予定
+  status: done
+  tags:
+  - ランニング
+  - 自分の練習
+  description: |-
+    ペース: k/4'15
+    距離: 7.06km
+    時間: 30'00
+    負荷: 56
+- title: 自分の練習
+  date: '2025-01-02'
+  all_day: true
+  category: 予定
+  status: done
+  tags:
+  - ランニング
+  - 自分の練習
+  description: |-
+    ペース: k/4'17
+    距離: 9.34km
+    時間: 40'00
+    負荷: 86
+- title: 自分の練習
+  date: '2025-01-03'
+  all_day: true
+  category: 予定
+  status: done
+  tags:
+  - ランニング
+  - 自分の練習
+  description: |-
+    ペース: k/4'23
+    距離: 6.85km
+    時間: 30'00
+    負荷: 58
+- title: 自分の練習
+  date: '2025-01-06'
+  all_day: true
+  category: 予定
+  status: done
+  tags:
+  - ランニング
+  - 自分の練習
+  description: |-
+    ペース: k/4'25
+    距離: 6.80km
+    時間: 30'00
+    負荷: 61
 - title: 会社の飲み会
   date: '2025-01-10'
   all_day: true
@@ -115,6 +167,19 @@ events:
   all_day: true
   category: 予定
   status: scheduled
+- title: 自分の練習
+  date: '2025-04-29'
+  all_day: true
+  category: 予定
+  status: done
+  tags:
+  - ランニング
+  - 自分の練習
+  description: |-
+    ペース: k/4'27
+    距離: 8.50km
+    時間: 37'53
+    負荷: 81
 - title: 藤本さんリモート
   date: '2025-05-07'
   all_day: true
@@ -141,11 +206,76 @@ events:
   all_day: true
   category: 予定
   status: scheduled
+- title: 自分の練習
+  date: '2025-05-12'
+  all_day: true
+  category: 予定
+  status: done
+  tags:
+  - ランニング
+  - 自分の練習
+  description: |-
+    ペース: k/4'35
+    距離: 10.00km
+    時間: 45'57
+    負荷: 83
+- title: 自分の練習
+  date: '2025-05-13'
+  all_day: true
+  category: 予定
+  status: done
+  tags:
+  - ランニング
+  - 自分の練習
+  description: |-
+    ペース: k/4'26
+    距離: 6.76km
+    時間: 30'00
+    負荷: 50
+- title: 自分の練習
+  date: '2025-05-14'
+  all_day: true
+  category: 予定
+  status: done
+  tags:
+  - ランニング
+  - 自分の練習
+  description: |-
+    ペース: k/4'23
+    距離: 6.85km
+    時間: 30'00
+    負荷: 64
 - title: 午後休
   date: '2025-05-16'
   all_day: true
   category: 予定
   status: scheduled
+- title: 自分の練習
+  date: '2025-05-16'
+  all_day: true
+  category: 予定
+  status: done
+  tags:
+  - ランニング
+  - 自分の練習
+  description: |-
+    ペース: k/4'18
+    距離: 4.65km
+    時間: 20'00
+    負荷: 55
+- title: 自分の練習
+  date: '2025-05-17'
+  all_day: true
+  category: 予定
+  status: done
+  tags:
+  - ランニング
+  - 自分の練習
+  description: |-
+    ペース: k/4'18
+    距離: 6.97km
+    時間: 30'00
+    負荷: 52
 - title: 岱明中体育大会
   date: '2025-05-18'
   all_day: true
@@ -157,11 +287,37 @@ events:
   category: 予定
   status: scheduled
   start_time: '10:00'
+- title: 自分の練習
+  date: '2025-05-22'
+  all_day: true
+  category: 予定
+  status: done
+  tags:
+  - ランニング
+  - 自分の練習
+  description: |-
+    ペース: k/4'21
+    距離: 6.90km
+    時間: 30'00
+    負荷: 51
 - title: 熊本市陸上競技記録会
   date: '2025-05-24'
   all_day: true
   category: 予定
   status: scheduled
+- title: 自分の練習
+  date: '2025-05-24'
+  all_day: true
+  category: 予定
+  status: done
+  tags:
+  - ランニング
+  - 自分の練習
+  description: |-
+    ペース: k/4'20
+    距離: 6.92km
+    時間: 30'00
+    負荷: 60
 - title: 県民体育祭予選会
   date: '2025-05-25'
   all_day: true
@@ -172,21 +328,86 @@ events:
   all_day: true
   category: 予定
   status: scheduled
+- title: 自分の練習
+  date: '2025-05-27'
+  all_day: true
+  category: 予定
+  status: done
+  tags:
+  - ランニング
+  - 自分の練習
+  description: |-
+    ペース: k/4'27
+    距離: 8.01km
+    時間: 35'35
+    負荷: 50
 - title: 熊本県高校総体
   date: '2025-05-30'
   all_day: true
   category: 予定
   status: scheduled
+- title: 自分の練習
+  date: '2025-05-30'
+  all_day: true
+  category: 予定
+  status: done
+  tags:
+  - ランニング
+  - 自分の練習
+  description: |-
+    ペース: k/4'16
+    距離: 8.12km
+    時間: 35'01
+    負荷: 48
+- title: 自分の練習
+  date: '2025-06-01'
+  all_day: true
+  category: 予定
+  status: done
+  tags:
+  - ランニング
+  - 自分の練習
+  description: |-
+    ペース: k/4'17
+    距離: 6.99km
+    時間: 30'00
+    負荷: 53
 - title: Dさんリモート
   date: '2025-06-03'
   all_day: true
   category: 予定
   status: scheduled
+- title: 自分の練習
+  date: '2025-06-03'
+  all_day: true
+  category: 予定
+  status: done
+  tags:
+  - ランニング
+  - 自分の練習
+  description: |-
+    ペース: k/4'18
+    距離: 6.97km
+    時間: 30'00
+    負荷: 72
 - title: Dさんリモート
   date: '2025-06-04'
   all_day: true
   category: 予定
   status: scheduled
+- title: 自分の練習
+  date: '2025-06-04'
+  all_day: true
+  category: 予定
+  status: done
+  tags:
+  - ランニング
+  - 自分の練習
+  description: |-
+    ペース: k/4'24
+    距離: 10.01km
+    時間: 43'59
+    負荷: 131
 - title: 岱明練習
   date: '2025-06-05'
   all_day: true
@@ -194,7 +415,7 @@ events:
   status: scheduled
   tags:
   - ランニング
-  - 練習
+  - 岱明練習
   description: |-
     動きづくり
     ジョグ 男子8周、女子6周 1周2'22〜25
@@ -226,7 +447,7 @@ events:
   status: scheduled
   tags:
   - ランニング
-  - 練習
+  - 岱明練習
   description: |-
     動きづくり
     6周ジョグ
@@ -267,7 +488,7 @@ events:
   status: scheduled
   tags:
   - ランニング
-  - 練習
+  - 岱明練習
   description: |-
     動きづくり
     ジョグ（クロカン、男子5kmを1周2'30、女子4kmを1周2'45）
@@ -291,7 +512,7 @@ events:
   status: scheduled
   tags:
   - ランニング
-  - 練習
+  - 岱明練習
   description: |-
     動きづくり
     6周ジョグ(クロカン)
@@ -322,7 +543,7 @@ events:
   status: scheduled
   tags:
   - ランニング
-  - 練習
+  - 岱明練習
   description: |-
     動きづくり
     ジョグ 男子8周、女子6周 1周男子2'30、女子3'00
@@ -350,7 +571,7 @@ events:
   status: scheduled
   tags:
   - ランニング
-  - 練習
+  - 岱明練習
   description: |-
     動きづくり
     ジョグ 男子6周、女子5周
@@ -363,7 +584,7 @@ events:
   status: scheduled
   tags:
   - ランニング
-  - 練習
+  - 岱明練習
   description: |-
     動きづくり
     ジョグ 男子6周、女子5周
@@ -433,7 +654,7 @@ events:
   status: scheduled
   tags:
   - ランニング
-  - 練習
+  - 岱明練習
   description: |-
     動きづくり
     ジョグ 男子10周、女子8周
@@ -445,7 +666,7 @@ events:
   status: scheduled
   tags:
   - ランニング
-  - 練習
+  - 岱明練習
   description: |-
     動きづくり
     ジョグ 男子6周、女子5周
@@ -463,7 +684,7 @@ events:
   status: scheduled
   tags:
   - ランニング
-  - 練習
+  - 岱明練習
   description: |-
     動きづくり
     男子12周、高田10周、他の女子8周
@@ -487,7 +708,7 @@ events:
   status: scheduled
   tags:
   - ランニング
-  - 練習
+  - 岱明練習
   description: |-
     動きづくり
     男子12周、高田・村上10周、他の女子8周
@@ -522,7 +743,7 @@ events:
   status: scheduled
   tags:
   - ランニング
-  - 練習
+  - 岱明練習
   description: |-
     動きづくり
     男子12周、女子10周
@@ -536,7 +757,7 @@ events:
   status: scheduled
   tags:
   - ランニング
-  - 練習
+  - 岱明練習
   description: |-
     動きづくり
     男子6周、女子5周
@@ -664,7 +885,7 @@ events:
   status: scheduled
   tags:
   - ランニング
-  - 練習
+  - 岱明練習
   description: |-
     4周 2:22-2:24-2:26-2:21
     男子3周+2周(1周1:50、実際は1:45)、女子2周+2周(1周2:10、実際は2:00)
@@ -680,7 +901,7 @@ events:
   status: scheduled
   tags:
   - ランニング
-  - 練習
+  - 岱明練習
   description: |-
     動きづくり
     10周2:21-2:25-2:24-2:15-2:14-2:20-2:15-2:11-2:05-1:56（5.11km、k/4:24）
@@ -719,7 +940,7 @@ events:
   status: scheduled
   tags:
   - ランニング
-  - 練習
+  - 岱明練習
   description: |-
     動きづくり
     男子12周、女子10周
@@ -752,7 +973,7 @@ events:
   status: scheduled
   tags:
   - ランニング
-  - 練習
+  - 岱明練習
   description: |-
     動きづくり
     男子12周、女子10周
@@ -791,7 +1012,7 @@ events:
   status: scheduled
   tags:
   - ランニング
-  - 練習
+  - 岱明練習
   description: |-
     動きづくり
     男子12周、女子10周
@@ -809,7 +1030,7 @@ events:
   status: scheduled
   tags:
   - ランニング
-  - 練習
+  - 岱明練習
   description: |-
     動きづくり
     4周
@@ -838,7 +1059,7 @@ events:
   status: scheduled
   tags:
   - ランニング
-  - 練習
+  - 岱明練習
   description: |-
     欠席者 松岡
     動きづくり
@@ -869,7 +1090,7 @@ events:
   status: scheduled
   tags:
   - ランニング
-  - 練習
+  - 岱明練習
   description: |-
     欠席者 田上、角田、高田、松本
     動きづくり
@@ -916,7 +1137,7 @@ events:
   status: scheduled
   tags:
   - ランニング
-  - 練習
+  - 岱明練習
   description: |-
     欠席者 松岡、塚原、村上、高田、増岡
     動きづくり
@@ -935,7 +1156,7 @@ events:
   status: scheduled
   tags:
   - ランニング
-  - 練習
+  - 岱明練習
   description: |-
     欠席者 村上、高田、松岡
     動きづくり
@@ -961,7 +1182,7 @@ events:
   status: scheduled
   tags:
   - ランニング
-  - 練習
+  - 岱明練習
   description: |-
     欠席者 松岡、松本、山本
     動きづくり
@@ -986,7 +1207,7 @@ events:
   status: scheduled
   tags:
   - ランニング
-  - 練習
+  - 岱明練習
   description: |-
     欠席者 松岡、塚原、高田
     動きづくり
@@ -1022,7 +1243,7 @@ events:
   status: scheduled
   tags:
   - ランニング
-  - 練習
+  - 岱明練習
   description: |-
     欠席者 松野、塚原、松本
     動きづくり
@@ -1078,7 +1299,7 @@ events:
   status: scheduled
   tags:
   - ランニング
-  - 練習
+  - 岱明練習
   description: |-
     動きづくり
     10周
@@ -1107,7 +1328,7 @@ events:
   status: scheduled
   tags:
   - ランニング
-  - 練習
+  - 岱明練習
   description: |-
     動きづくり
     校内駅伝コース3周
@@ -1133,7 +1354,7 @@ events:
   status: scheduled
   tags:
   - ランニング
-  - 練習
+  - 岱明練習
   description: |-
     動きづくり
     ロングジョグ女子15周8.4km、男子17周9.53km（48:42、k/5:07）
@@ -1167,7 +1388,7 @@ events:
   status: scheduled
   tags:
   - ランニング
-  - 練習
+  - 岱明練習
   description: |-
     動きづくり
     6周
@@ -1194,7 +1415,7 @@ events:
   status: scheduled
   tags:
   - ランニング
-  - 練習
+  - 岱明練習
   description: |-
     動きづくり
     10周

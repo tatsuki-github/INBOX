@@ -1,6 +1,6 @@
 # カスタム予定・メモ（2024年）
 # 祝日は scripts/generate_calendar.py が自動追加します。
-# 件数: 82
+# 件数: 86
 year: 2024
 events:
 - title: 長洲マラソン
@@ -74,6 +74,18 @@ events:
   all_day: true
   category: 予定
   status: scheduled
+- title: 自分の練習
+  date: '2024-04-14'
+  all_day: true
+  category: 予定
+  status: done
+  tags:
+  - ランニング
+  - 自分の練習
+  description: |-
+    ペース: k/4'15
+    距離: 7.05km
+    時間: 30'00
 - title: 飲み会
   date: '2024-04-19'
   all_day: true
@@ -418,6 +430,32 @@ events:
   all_day: true
   category: 予定
   status: scheduled
+- title: 自分の練習
+  date: '2024-12-24'
+  all_day: true
+  category: 予定
+  status: done
+  tags:
+  - ランニング
+  - 自分の練習
+  description: |-
+    ペース: k/4'30
+    距離: 8.01km
+    時間: 36'00
+    負荷: 61
+- title: 自分の練習
+  date: '2024-12-27'
+  all_day: true
+  category: 予定
+  status: done
+  tags:
+  - ランニング
+  - 自分の練習
+  description: |-
+    ペース: k/4'20
+    距離: 6.91km
+    時間: 30'00
+    負荷: 101
 - title: 年末年始休暇
   date: '2024-12-28'
   all_day: true
@@ -428,6 +466,19 @@ events:
   all_day: true
   category: 予定
   status: scheduled
+- title: 自分の練習
+  date: '2024-12-30'
+  all_day: true
+  category: 予定
+  status: done
+  tags:
+  - ランニング
+  - 自分の練習
+  description: |-
+    ペース: k/4'17
+    距離: 7.00km
+    時間: 30'00
+    負荷: 56
 - title: ロリポップ契約終了日
   date: '2024-12-31'
   all_day: true
