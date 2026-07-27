@@ -29,3 +29,8 @@ events:
     category: 予定
     location: オンライン
     description: サンプルの時刻付き予定
+
+  - title: 玉名選手権
+    date: 2026-08-01
+    all_day: true
+    category: 予定
