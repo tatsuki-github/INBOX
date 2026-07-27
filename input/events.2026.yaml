@@ -372,7 +372,12 @@ events:
   date: '2026-04-18'
   all_day: true
   category: 予定
-  status: scheduled
+  status: done
+  description: 1500m出場、4:20.52
+  urls:
+  - http://www.kcrk.jp/i-mode/kiroku/sisen_i/450418/PC/rel026.html
+  tags:
+  - ランニング
 - title: 令和８年度 熊本県陸上競技選手権兼国スポ一次予選
   date: '2026-04-25'
   all_day: true
