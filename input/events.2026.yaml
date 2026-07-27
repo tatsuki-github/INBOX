@@ -1,6 +1,6 @@
 # Notionインポート由来のカスタム予定（2026年）
 # 祝日は scripts/generate_calendar.py が自動追加します。
-# 件数: 161
+# 件数: 162
 year: 2026
 events:
 - title: Amazon Prime更新日
@@ -585,6 +585,14 @@ events:
   urls:
   - https://www.sakasou.kumamoto.jp/shop/sakasou/
   description: 訪問記録
+- title: 帰りの電車
+  date: '2026-07-27'
+  all_day: false
+  start_time: '21:27'
+  end_time: '21:54'
+  category: 予定
+  status: done
+  description: 上熊本-玉名
 - title: 岱明夕練
   date: '2026-07-31'
   all_day: true
