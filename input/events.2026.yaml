@@ -1,6 +1,6 @@
 # カスタム予定・メモ（2026年）
 # 祝日は scripts/generate_calendar.py が自動追加します。
-# 件数: 291
+# 件数: 293
 year: 2026
 events:
 - title: 交通費申請
@@ -937,6 +937,14 @@ events:
   tags:
   - 地震
   description: M7.1、最大震度7
+- title: 岱明夕練
+  date: '2026-07-29'
+  all_day: true
+  category: 予定
+  status: scheduled
+  tags:
+  - ランニング
+  - いだてん岱明練習
 - title: 岱明夕練
   date: '2026-07-31'
   all_day: true
