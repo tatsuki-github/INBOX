@@ -928,6 +928,15 @@ events:
   category: 予定
   status: done
   description: 上熊本-玉名
+- title: 熊本県熊本地方を震源とする地震
+  date: '2026-07-28'
+  all_day: false
+  start_time: '16:27'
+  category: 予定
+  status: scheduled
+  tags:
+  - 地震
+  description: M7.1、最大震度7
 - title: 岱明夕練
   date: '2026-07-31'
   all_day: true
