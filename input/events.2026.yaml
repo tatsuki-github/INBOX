@@ -843,51 +843,11 @@ events:
   all_day: true
   category: 予定
   status: scheduled
-- title: 岱明朝練
-  date: '2026-07-22'
-  all_day: false
-  start_time: '08:00'
-  end_time: '09:30'
-  category: 予定
-  status: scheduled
-  tags:
-  - ランニング
-  - いだてん岱明練習
 - title: 玉名選手権参加費振込
   date: '2026-07-22'
   all_day: true
   category: 予定
   status: scheduled
-- title: 岱明夕練
-  date: '2026-07-23'
-  all_day: false
-  start_time: '18:00'
-  end_time: '19:30'
-  category: 予定
-  status: scheduled
-  tags:
-  - ランニング
-  - いだてん岱明練習
-- title: 岱明朝練
-  date: '2026-07-24'
-  all_day: false
-  start_time: '08:00'
-  end_time: '09:30'
-  category: 予定
-  status: scheduled
-  tags:
-  - ランニング
-  - いだてん岱明練習
-- title: 岱明夕練
-  date: '2026-07-24'
-  all_day: false
-  start_time: '18:00'
-  end_time: '19:30'
-  category: 予定
-  status: scheduled
-  tags:
-  - ランニング
-  - いだてん岱明練習
 - title: Claude Opus 5
   date: '2026-07-24'
   all_day: true
@@ -910,38 +870,6 @@ events:
   - 金額
   - 給与
   description: 手取り 251,406円
-- title: 岱明夕練
-  date: '2026-07-25'
-  all_day: true
-  category: 予定
-  status: scheduled
-  description: |
-    朝練コース
-    男子12周、女子10周
-    流し
-  tags:
-  - ランニング
-  - いだてん岱明練習
-- title: 岱明朝練
-  date: '2026-07-27'
-  all_day: false
-  start_time: '08:00'
-  end_time: '09:30'
-  category: 予定
-  status: scheduled
-  tags:
-  - ランニング
-  - いだてん岱明練習
-- title: 岱明夕練
-  date: '2026-07-27'
-  all_day: false
-  start_time: '18:00'
-  end_time: '19:30'
-  category: 予定
-  status: scheduled
-  tags:
-  - ランニング
-  - いだてん岱明練習
 - title: 小泉さん・皆川さん訪問
   date: '2026-07-27'
   all_day: true
@@ -972,16 +900,6 @@ events:
   category: 予定
   status: done
   description: 上熊本-玉名
-- title: 岱明朝練
-  date: '2026-07-28'
-  all_day: false
-  start_time: '08:00'
-  end_time: '09:30'
-  category: 予定
-  status: scheduled
-  tags:
-  - ランニング
-  - いだてん岱明練習
 - title: 熊本県熊本地方を震源とする地震
   date: '2026-07-28'
   all_day: false
@@ -991,46 +909,6 @@ events:
   tags:
   - 地震
   description: M7.1、最大震度7
-- title: 岱明朝練
-  date: '2026-07-29'
-  all_day: false
-  start_time: '08:00'
-  end_time: '09:30'
-  category: 予定
-  status: scheduled
-  tags:
-  - ランニング
-  - いだてん岱明練習
-- title: 岱明夕練
-  date: '2026-07-29'
-  all_day: false
-  start_time: '18:00'
-  end_time: '19:30'
-  category: 予定
-  status: scheduled
-  tags:
-  - ランニング
-  - いだてん岱明練習
-- title: 岱明朝練
-  date: '2026-07-31'
-  all_day: false
-  start_time: '08:00'
-  end_time: '09:30'
-  category: 予定
-  status: scheduled
-  tags:
-  - ランニング
-  - いだてん岱明練習
-- title: 岱明夕練
-  date: '2026-07-31'
-  all_day: false
-  start_time: '18:00'
-  end_time: '19:30'
-  category: 予定
-  status: scheduled
-  tags:
-  - ランニング
-  - いだてん岱明練習
 - title: 交通費申請
   date: '2026-08-01'
   all_day: true
@@ -1053,191 +931,21 @@ events:
   all_day: true
   category: 予定
   status: scheduled
-- title: 岱明朝練
-  date: '2026-08-03'
-  all_day: false
-  start_time: '08:00'
-  end_time: '09:30'
-  category: 予定
-  status: scheduled
-  tags:
-  - ランニング
-  - いだてん岱明練習
-- title: 岱明夕練
-  date: '2026-08-03'
-  all_day: false
-  start_time: '18:00'
-  end_time: '19:30'
-  category: 予定
-  status: scheduled
-  tags:
-  - ランニング
-  - いだてん岱明練習
-- title: 岱明朝練
-  date: '2026-08-04'
-  all_day: false
-  start_time: '08:00'
-  end_time: '09:30'
-  category: 予定
-  status: scheduled
-  tags:
-  - ランニング
-  - いだてん岱明練習
-- title: 岱明夕練
-  date: '2026-08-05'
-  all_day: false
-  start_time: '18:00'
-  end_time: '19:30'
-  category: 予定
-  status: scheduled
-  tags:
-  - ランニング
-  - いだてん岱明練習
-- title: 岱明朝練
-  date: '2026-08-06'
-  all_day: false
-  start_time: '08:00'
-  end_time: '09:30'
-  category: 予定
-  status: scheduled
-  tags:
-  - ランニング
-  - いだてん岱明練習
-- title: 岱明朝練
-  date: '2026-08-07'
-  all_day: false
-  start_time: '08:00'
-  end_time: '09:30'
-  category: 予定
-  status: scheduled
-  tags:
-  - ランニング
-  - いだてん岱明練習
-- title: 岱明夕練
-  date: '2026-08-07'
-  all_day: false
-  start_time: '18:00'
-  end_time: '19:30'
-  category: 予定
-  status: scheduled
-  tags:
-  - ランニング
-  - いだてん岱明練習
-- title: 岱明夕練
-  date: '2026-08-08'
-  all_day: false
-  start_time: '18:00'
-  end_time: '19:30'
-  category: 予定
-  status: scheduled
-  tags:
-  - ランニング
-  - いだてん岱明練習
-- title: 岱明朝練
-  date: '2026-08-10'
-  all_day: false
-  start_time: '08:00'
-  end_time: '09:30'
-  category: 予定
-  status: scheduled
-  tags:
-  - ランニング
-  - いだてん岱明練習
-- title: 岱明夕練
-  date: '2026-08-10'
-  all_day: false
-  start_time: '18:00'
-  end_time: '19:30'
-  category: 予定
-  status: scheduled
-  tags:
-  - ランニング
-  - いだてん岱明練習
-- title: 岱明夕練
-  date: '2026-08-12'
-  all_day: false
-  start_time: '18:00'
-  end_time: '19:30'
-  category: 予定
-  status: scheduled
-  tags:
-  - ランニング
-  - いだてん岱明練習
 - title: 夏季休暇
   date: '2026-08-12'
   all_day: true
   category: 予定
   status: scheduled
-- title: 岱明夕練
-  date: '2026-08-14'
-  all_day: false
-  start_time: '18:00'
-  end_time: '19:30'
-  category: 予定
-  status: scheduled
-  tags:
-  - ランニング
-  - いだてん岱明練習
 - title: 夏季休暇
   date: '2026-08-14'
   all_day: true
   category: 予定
   status: scheduled
-- title: 岱明夕練
-  date: '2026-08-15'
-  all_day: false
-  start_time: '18:00'
-  end_time: '19:30'
-  category: 予定
-  status: scheduled
-  tags:
-  - ランニング
-  - いだてん岱明練習
-- title: 岱明朝練
-  date: '2026-08-18'
-  all_day: false
-  start_time: '08:00'
-  end_time: '09:30'
-  category: 予定
-  status: scheduled
-  tags:
-  - ランニング
-  - いだてん岱明練習
-- title: 岱明夕練
-  date: '2026-08-18'
-  all_day: false
-  start_time: '18:00'
-  end_time: '19:30'
-  category: 予定
-  status: scheduled
-  tags:
-  - ランニング
-  - いだてん岱明練習
 - title: たまなPayデジタル商品券追加販売開始
   date: '2026-08-18'
   all_day: true
   category: 予定
   status: scheduled
-- title: 岱明朝練
-  date: '2026-08-20'
-  all_day: false
-  start_time: '08:00'
-  end_time: '09:30'
-  category: 予定
-  status: scheduled
-  tags:
-  - ランニング
-  - いだてん岱明練習
-- title: 岱明夕練
-  date: '2026-08-20'
-  all_day: false
-  start_time: '18:00'
-  end_time: '19:30'
-  category: 予定
-  status: scheduled
-  tags:
-  - ランニング
-  - いだてん岱明練習
 - title: 練習会（岱明）
   date: '2026-08-20'
   all_day: false
@@ -1246,36 +954,6 @@ events:
   start_time: '19:00'
   end_time: '21:00'
   location: 玉名市岱明中央公園グラウンド
-- title: 岱明朝練
-  date: '2026-08-21'
-  all_day: false
-  start_time: '08:00'
-  end_time: '09:30'
-  category: 予定
-  status: scheduled
-  tags:
-  - ランニング
-  - いだてん岱明練習
-- title: 岱明朝練
-  date: '2026-08-22'
-  all_day: false
-  start_time: '08:00'
-  end_time: '09:30'
-  category: 予定
-  status: scheduled
-  tags:
-  - ランニング
-  - いだてん岱明練習
-- title: 岱明夕練
-  date: '2026-08-22'
-  all_day: false
-  start_time: '18:00'
-  end_time: '19:30'
-  category: 予定
-  status: scheduled
-  tags:
-  - ランニング
-  - いだてん岱明練習
 - title: サマー記録会100m（薄暮開催予定）
   date: '2026-08-23'
   all_day: true
@@ -1288,46 +966,6 @@ events:
   status: scheduled
   start_time: '19:00'
   end_time: '21:00'
-- title: 岱明夕練
-  date: '2026-08-24'
-  all_day: false
-  start_time: '18:00'
-  end_time: '19:30'
-  category: 予定
-  status: scheduled
-  tags:
-  - ランニング
-  - いだてん岱明練習
-- title: 岱明朝練
-  date: '2026-08-25'
-  all_day: false
-  start_time: '08:00'
-  end_time: '09:30'
-  category: 予定
-  status: scheduled
-  tags:
-  - ランニング
-  - いだてん岱明練習
-- title: 岱明夕練
-  date: '2026-08-25'
-  all_day: false
-  start_time: '18:00'
-  end_time: '19:30'
-  category: 予定
-  status: scheduled
-  tags:
-  - ランニング
-  - いだてん岱明練習
-- title: 岱明朝練
-  date: '2026-08-26'
-  all_day: false
-  start_time: '08:00'
-  end_time: '09:30'
-  category: 予定
-  status: scheduled
-  tags:
-  - ランニング
-  - いだてん岱明練習
 - title: 岱明中夏休み終了
   date: '2026-08-26'
   all_day: true
@@ -2349,3 +1987,425 @@ events:
   tags:
   - 伸び代
   - ランニング
+
+# 岱明中陸上部（長距離）夏期休業日部活動計画（令和8年度）
+- title: 三者面談（3年）
+  date: '2026-07-21'
+  all_day: true
+  category: 予定
+  status: scheduled
+- title: 三者面談（3年）
+  date: '2026-07-22'
+  all_day: true
+  category: 予定
+  status: scheduled
+- title: 三者面談（3年）
+  date: '2026-07-23'
+  all_day: true
+  category: 予定
+  status: scheduled
+- title: 三者面談（3年）学校保健講演会
+  date: '2026-07-24'
+  all_day: true
+  category: 予定
+  status: scheduled
+- title: 三者面談（3年）
+  date: '2026-07-27'
+  all_day: true
+  category: 予定
+  status: scheduled
+- title: 三者面談（3年）
+  date: '2026-07-28'
+  all_day: true
+  category: 予定
+  status: scheduled
+- title: 学校閉庁日
+  date: '2026-08-10'
+  all_day: true
+  category: 予定
+  status: scheduled
+- title: 学校閉庁日
+  date: '2026-08-12'
+  all_day: true
+  category: 予定
+  status: scheduled
+- title: 学校閉庁日
+  date: '2026-08-13'
+  all_day: true
+  category: 予定
+  status: scheduled
+- title: 学校閉庁日
+  date: '2026-08-14'
+  all_day: true
+  category: 予定
+  status: scheduled
+- title: 職員会議・校内研
+  date: '2026-08-18'
+  all_day: true
+  category: 予定
+  status: scheduled
+- title: 2・3年課題提出日
+  date: '2026-08-19'
+  all_day: true
+  category: 予定
+  status: scheduled
+- title: 1年課題提出日
+  date: '2026-08-20'
+  all_day: true
+  category: 予定
+  status: scheduled
+- title: 1年課題提出日
+  date: '2026-08-21'
+  all_day: true
+  category: 予定
+  status: scheduled
+- title: 玉名市人権教育研究大会
+  date: '2026-08-22'
+  all_day: true
+  category: 予定
+  status: scheduled
+- title: 夏期休業最終日
+  date: '2026-08-26'
+  all_day: true
+  category: 予定
+  status: scheduled
+- title: 岱明夕練
+  date: '2026-07-22'
+  all_day: false
+  start_time: '18:00'
+  end_time: '19:30'
+  category: 予定
+  status: scheduled
+  tags:
+  - ランニング
+  - いだてん岱明練習
+- title: 岱明朝練
+  date: '2026-07-23'
+  all_day: false
+  start_time: '08:00'
+  end_time: '09:30'
+  category: 予定
+  status: scheduled
+  tags:
+  - ランニング
+  - いだてん岱明練習
+- title: 岱明朝練
+  date: '2026-07-24'
+  all_day: false
+  start_time: '08:00'
+  end_time: '09:30'
+  category: 予定
+  status: scheduled
+  tags:
+  - ランニング
+  - いだてん岱明練習
+- title: 岱明夕練
+  date: '2026-07-24'
+  all_day: false
+  start_time: '18:00'
+  end_time: '19:30'
+  category: 予定
+  status: scheduled
+  tags:
+  - ランニング
+  - いだてん岱明練習
+- title: 岱明朝練
+  date: '2026-07-27'
+  all_day: false
+  start_time: '08:00'
+  end_time: '09:30'
+  category: 予定
+  status: scheduled
+  tags:
+  - ランニング
+  - いだてん岱明練習
+- title: 岱明夕練
+  date: '2026-07-27'
+  all_day: false
+  start_time: '18:00'
+  end_time: '19:30'
+  category: 予定
+  status: scheduled
+  tags:
+  - ランニング
+  - いだてん岱明練習
+- title: 岱明朝練
+  date: '2026-07-28'
+  all_day: false
+  start_time: '08:00'
+  end_time: '09:30'
+  category: 予定
+  status: scheduled
+  tags:
+  - ランニング
+  - いだてん岱明練習
+- title: 岱明夕練
+  date: '2026-07-29'
+  all_day: false
+  start_time: '18:00'
+  end_time: '19:30'
+  category: 予定
+  status: scheduled
+  tags:
+  - ランニング
+  - いだてん岱明練習
+- title: 岱明朝練
+  date: '2026-07-31'
+  all_day: false
+  start_time: '08:00'
+  end_time: '09:30'
+  category: 予定
+  status: scheduled
+  tags:
+  - ランニング
+  - いだてん岱明練習
+- title: 岱明朝練
+  date: '2026-08-03'
+  all_day: false
+  start_time: '08:00'
+  end_time: '09:30'
+  category: 予定
+  status: scheduled
+  tags:
+  - ランニング
+  - いだてん岱明練習
+- title: 岱明夕練
+  date: '2026-08-03'
+  all_day: false
+  start_time: '18:00'
+  end_time: '19:30'
+  category: 予定
+  status: scheduled
+  tags:
+  - ランニング
+  - いだてん岱明練習
+- title: 岱明朝練
+  date: '2026-08-04'
+  all_day: false
+  start_time: '08:00'
+  end_time: '09:30'
+  category: 予定
+  status: scheduled
+  tags:
+  - ランニング
+  - いだてん岱明練習
+- title: 岱明夕練
+  date: '2026-08-05'
+  all_day: false
+  start_time: '18:00'
+  end_time: '19:30'
+  category: 予定
+  status: scheduled
+  tags:
+  - ランニング
+  - いだてん岱明練習
+- title: 岱明朝練
+  date: '2026-08-06'
+  all_day: false
+  start_time: '08:00'
+  end_time: '09:30'
+  category: 予定
+  status: scheduled
+  tags:
+  - ランニング
+  - いだてん岱明練習
+- title: 岱明朝練
+  date: '2026-08-07'
+  all_day: false
+  start_time: '08:00'
+  end_time: '09:30'
+  category: 予定
+  status: scheduled
+  tags:
+  - ランニング
+  - いだてん岱明練習
+- title: 岱明夕練
+  date: '2026-08-07'
+  all_day: false
+  start_time: '18:00'
+  end_time: '19:30'
+  category: 予定
+  status: scheduled
+  tags:
+  - ランニング
+  - いだてん岱明練習
+- title: 岱明夕練
+  date: '2026-08-08'
+  all_day: false
+  start_time: '18:00'
+  end_time: '19:30'
+  category: 予定
+  status: scheduled
+  tags:
+  - ランニング
+  - いだてん岱明練習
+- title: 岱明朝練
+  date: '2026-08-10'
+  all_day: false
+  start_time: '08:00'
+  end_time: '09:30'
+  category: 予定
+  status: scheduled
+  tags:
+  - ランニング
+  - いだてん岱明練習
+- title: 岱明夕練
+  date: '2026-08-10'
+  all_day: false
+  start_time: '18:00'
+  end_time: '19:30'
+  category: 予定
+  status: scheduled
+  tags:
+  - ランニング
+  - いだてん岱明練習
+- title: 岱明夕練
+  date: '2026-08-12'
+  all_day: false
+  start_time: '18:00'
+  end_time: '19:30'
+  category: 予定
+  status: scheduled
+  tags:
+  - ランニング
+  - いだてん岱明練習
+- title: 岱明夕練
+  date: '2026-08-14'
+  all_day: false
+  start_time: '18:00'
+  end_time: '19:30'
+  category: 予定
+  status: scheduled
+  tags:
+  - ランニング
+  - いだてん岱明練習
+- title: 岱明夕練
+  date: '2026-08-15'
+  all_day: false
+  start_time: '18:00'
+  end_time: '19:30'
+  category: 予定
+  status: scheduled
+  tags:
+  - ランニング
+  - いだてん岱明練習
+- title: 岱明朝練
+  date: '2026-08-17'
+  all_day: false
+  start_time: '08:00'
+  end_time: '09:30'
+  category: 予定
+  status: scheduled
+  tags:
+  - ランニング
+  - いだてん岱明練習
+- title: 岱明夕練
+  date: '2026-08-17'
+  all_day: false
+  start_time: '18:00'
+  end_time: '19:30'
+  category: 予定
+  status: scheduled
+  tags:
+  - ランニング
+  - いだてん岱明練習
+- title: 岱明朝練
+  date: '2026-08-19'
+  all_day: false
+  start_time: '08:00'
+  end_time: '09:30'
+  category: 予定
+  status: scheduled
+  tags:
+  - ランニング
+  - いだてん岱明練習
+- title: 岱明夕練
+  date: '2026-08-19'
+  all_day: false
+  start_time: '18:00'
+  end_time: '19:30'
+  category: 予定
+  status: scheduled
+  tags:
+  - ランニング
+  - いだてん岱明練習
+- title: 岱明朝練
+  date: '2026-08-20'
+  all_day: false
+  start_time: '08:00'
+  end_time: '09:30'
+  category: 予定
+  status: scheduled
+  tags:
+  - ランニング
+  - いだてん岱明練習
+- title: 岱明朝練
+  date: '2026-08-21'
+  all_day: false
+  start_time: '08:00'
+  end_time: '09:30'
+  category: 予定
+  status: scheduled
+  tags:
+  - ランニング
+  - いだてん岱明練習
+- title: 岱明夕練
+  date: '2026-08-21'
+  all_day: false
+  start_time: '18:00'
+  end_time: '19:30'
+  category: 予定
+  status: scheduled
+  tags:
+  - ランニング
+  - いだてん岱明練習
+- title: 岱明夕練
+  date: '2026-08-22'
+  all_day: false
+  start_time: '18:00'
+  end_time: '19:30'
+  category: 予定
+  status: scheduled
+  tags:
+  - ランニング
+  - いだてん岱明練習
+- title: 岱明朝練
+  date: '2026-08-24'
+  all_day: false
+  start_time: '08:00'
+  end_time: '09:30'
+  category: 予定
+  status: scheduled
+  tags:
+  - ランニング
+  - いだてん岱明練習
+- title: 岱明夕練
+  date: '2026-08-24'
+  all_day: false
+  start_time: '18:00'
+  end_time: '19:30'
+  category: 予定
+  status: scheduled
+  tags:
+  - ランニング
+  - いだてん岱明練習
+- title: 岱明朝練
+  date: '2026-08-25'
+  all_day: false
+  start_time: '08:00'
+  end_time: '09:30'
+  category: 予定
+  status: scheduled
+  tags:
+  - ランニング
+  - いだてん岱明練習
+- title: 岱明夕練
+  date: '2026-08-26'
+  all_day: false
+  start_time: '18:00'
+  end_time: '19:30'
+  category: 予定
+  status: scheduled
+  tags:
+  - ランニング
+  - いだてん岱明練習
