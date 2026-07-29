@@ -1,6 +1,6 @@
 # カスタム予定・メモ（2026年）
 # 祝日は scripts/generate_calendar.py が自動追加します。
-# 件数: 343
+# 件数: 338
 year: 2026
 events:
 - title: 交通費申請
@@ -975,15 +975,7 @@ events:
   all_day: true
   category: 予定
   status: scheduled
-- title: 岱明朝練
-  date: '2026-08-02'
-  all_day: true
-  category: 予定
-  status: scheduled
-  tags:
-  - ランニング
-  - いだてん岱明練習
-- title: 岱明夕練
+- title: 岱明練習休み
   date: '2026-08-02'
   all_day: true
   category: 予定
@@ -1021,7 +1013,7 @@ events:
   tags:
   - ランニング
   - いだてん岱明練習
-- title: 岱明夕練
+- title: 岱明練習休み
   date: '2026-08-04'
   all_day: true
   category: 予定
@@ -1029,7 +1021,7 @@ events:
   tags:
   - ランニング
   - いだてん岱明練習
-- title: 岱明朝練
+- title: 岱明練習休み
   date: '2026-08-05'
   all_day: true
   category: 予定
@@ -1057,7 +1049,7 @@ events:
   tags:
   - ランニング
   - いだてん岱明練習
-- title: 岱明夕練
+- title: 岱明練習休み
   date: '2026-08-06'
   all_day: true
   category: 予定
@@ -1085,7 +1077,7 @@ events:
   tags:
   - ランニング
   - いだてん岱明練習
-- title: 岱明朝練
+- title: 岱明練習休み
   date: '2026-08-08'
   all_day: true
   category: 予定
@@ -1103,15 +1095,7 @@ events:
   tags:
   - ランニング
   - いだてん岱明練習
-- title: 岱明朝練
-  date: '2026-08-09'
-  all_day: true
-  category: 予定
-  status: scheduled
-  tags:
-  - ランニング
-  - いだてん岱明練習
-- title: 岱明夕練
+- title: 岱明練習休み
   date: '2026-08-09'
   all_day: true
   category: 予定
@@ -1144,15 +1128,7 @@ events:
   tags:
   - ランニング
   - いだてん岱明練習
-- title: 岱明朝練
-  date: '2026-08-11'
-  all_day: true
-  category: 予定
-  status: scheduled
-  tags:
-  - ランニング
-  - いだてん岱明練習
-- title: 岱明夕練
+- title: 岱明練習休み
   date: '2026-08-11'
   all_day: true
   category: 予定
@@ -1170,7 +1146,7 @@ events:
   all_day: true
   category: 予定
   status: scheduled
-- title: 岱明朝練
+- title: 岱明練習休み
   date: '2026-08-12'
   all_day: true
   category: 予定
@@ -1193,15 +1169,7 @@ events:
   all_day: true
   category: 予定
   status: scheduled
-- title: 岱明朝練
-  date: '2026-08-13'
-  all_day: true
-  category: 予定
-  status: scheduled
-  tags:
-  - ランニング
-  - いだてん岱明練習
-- title: 岱明夕練
+- title: 岱明練習休み
   date: '2026-08-13'
   all_day: true
   category: 予定
@@ -1219,7 +1187,7 @@ events:
   all_day: true
   category: 予定
   status: scheduled
-- title: 岱明朝練
+- title: 岱明練習休み
   date: '2026-08-14'
   all_day: true
   category: 予定
@@ -1237,7 +1205,7 @@ events:
   tags:
   - ランニング
   - いだてん岱明練習
-- title: 岱明朝練
+- title: 岱明練習休み
   date: '2026-08-15'
   all_day: true
   category: 予定
@@ -1255,15 +1223,7 @@ events:
   tags:
   - ランニング
   - いだてん岱明練習
-- title: 岱明朝練
-  date: '2026-08-16'
-  all_day: true
-  category: 予定
-  status: scheduled
-  tags:
-  - ランニング
-  - いだてん岱明練習
-- title: 岱明夕練
+- title: 岱明練習休み
   date: '2026-08-16'
   all_day: true
   category: 予定
@@ -1301,15 +1261,7 @@ events:
   all_day: true
   category: 予定
   status: scheduled
-- title: 岱明朝練
-  date: '2026-08-18'
-  all_day: true
-  category: 予定
-  status: scheduled
-  tags:
-  - ランニング
-  - いだてん岱明練習
-- title: 岱明夕練
+- title: 岱明練習休み
   date: '2026-08-18'
   all_day: true
   category: 予定
@@ -1395,7 +1347,7 @@ events:
   all_day: true
   category: 予定
   status: scheduled
-- title: 岱明朝練
+- title: 岱明練習休み
   date: '2026-08-22'
   all_day: true
   category: 予定
@@ -1418,7 +1370,7 @@ events:
   all_day: true
   category: 予定
   status: scheduled
-- title: 岱明朝練
+- title: 岱明練習休み
   date: '2026-08-23'
   all_day: true
   category: 予定
@@ -1463,7 +1415,7 @@ events:
   tags:
   - ランニング
   - いだてん岱明練習
-- title: 岱明夕練
+- title: 岱明練習休み
   date: '2026-08-25'
   all_day: true
   category: 予定
@@ -1476,7 +1428,7 @@ events:
   all_day: true
   category: 予定
   status: scheduled
-- title: 岱明朝練
+- title: 岱明練習休み
   date: '2026-08-26'
   all_day: true
   category: 予定
