@@ -1,6 +1,6 @@
 # カスタム予定・メモ（2026年）
 # 祝日は scripts/generate_calendar.py が自動追加します。
-# 件数: 338
+# 件数: 369
 year: 2026
 events:
 - title: 交通費申請
@@ -64,17 +64,17 @@ events:
   all_day: true
   category: 予定
   status: scheduled
-- title: 玉名駅伝
-  date: '2026-01-25'
-  all_day: true
-  category: 予定
-  status: scheduled
 - title: 永井監督を祝う会打ち上げ
   date: '2026-01-25'
   all_day: false
   category: 予定
   status: scheduled
   start_time: '11:00'
+- title: 玉名駅伝
+  date: '2026-01-25'
+  all_day: true
+  category: 予定
+  status: scheduled
 - title: 福岡ランニング基地MTG
   date: '2026-01-29'
   all_day: false
@@ -284,9 +284,11 @@ events:
   all_day: true
   category: 予定
   status: scheduled
-  description: |
-    ステファニーさんのみ。
+  description: 'ステファニーさんのみ。
+
     出社した。リモートでも良かった笑。
+
+    '
 - title: リモート候補
   date: '2026-03-23'
   all_day: true
@@ -322,11 +324,6 @@ events:
   all_day: true
   category: 予定
   status: scheduled
-- title: リモート
-  date: '2026-03-30'
-  all_day: true
-  category: 予定
-  status: scheduled
 - title: カジュアル面談
   date: '2026-03-30'
   all_day: false
@@ -334,6 +331,11 @@ events:
   status: scheduled
   start_time: '12:00'
   description: https://us06web.zoom.us/j/81296033758?pwd=vjqSXFCDiNj8aL76nwRi6j2GuYqTat.1&app_name=iphone_app
+- title: リモート
+  date: '2026-03-30'
+  all_day: true
+  category: 予定
+  status: scheduled
 - title: 支出
   date: '2026-03-31'
   all_day: true
@@ -458,6 +460,12 @@ events:
   - http://kumariku.com/info/wp-content/uploads/2026/04/b652729b4a1eecb47ebc1e6e01321a6e.pdf
   location: 水前寺競技場
   description: 熊本県陸上競技大会一覧（2026/5/31版）より追加
+- title: 山田飲み会
+  date: '2026-05-01'
+  all_day: false
+  category: 予定
+  status: scheduled
+  start_time: '10:00'
 - title: 交通費申請
   date: '2026-05-01'
   all_day: true
@@ -466,12 +474,6 @@ events:
   tags:
   - タスク
   - 交通費
-- title: 山田飲み会
-  date: '2026-05-01'
-  all_day: false
-  category: 予定
-  status: scheduled
-  start_time: '10:00'
 - title: 第４５回 熊本市陸上競技選手権大会（長距離種目以外）
   date: '2026-05-02'
   all_day: true
@@ -494,6 +496,12 @@ events:
   all_day: true
   category: 予定
   status: scheduled
+- title: 保護者会
+  date: '2026-05-08'
+  all_day: false
+  category: 予定
+  status: scheduled
+  start_time: '10:00'
 - title: 第９６回 九州学生陸上競技対抗選手権大会
   date: '2026-05-08'
   all_day: true
@@ -507,12 +515,6 @@ events:
   location: あましんスタジアム
   description: 熊本県陸上競技大会一覧（2026/5/31版）より追加
   end_date: '2026-05-10'
-- title: 保護者会
-  date: '2026-05-08'
-  all_day: false
-  category: 予定
-  status: scheduled
-  start_time: '10:00'
 - title: 第 １ 回 熊本県長距離記録会
   date: '2026-05-09'
   all_day: true
@@ -520,11 +522,6 @@ events:
   status: scheduled
 - title: 荒尾記録会
   date: '2026-05-10'
-  all_day: true
-  category: 予定
-  status: scheduled
-- title: リモート
-  date: '2026-05-15'
   all_day: true
   category: 予定
   status: scheduled
@@ -545,6 +542,11 @@ events:
   tags:
   - 地域部活動
   - ランニング
+- title: リモート
+  date: '2026-05-15'
+  all_day: true
+  category: 予定
+  status: scheduled
 - title: 第２５回 くまもと障がい者スポーツ大会
   date: '2026-05-16'
   all_day: true
@@ -614,11 +616,6 @@ events:
   location: えがお健康スタジアム(熊本県民総合運動公園陸上競技場)
   urls:
   - http://kumariku.com/competition/?id=9281
-- title: さつき記録会
-  date: '2026-05-24'
-  all_day: true
-  category: 予定
-  status: scheduled
 - title: 県民体育祭選考会
   date: '2026-05-24'
   all_day: false
@@ -626,6 +623,11 @@ events:
   status: scheduled
   start_time: '15:00'
   end_time: '17:00'
+- title: さつき記録会
+  date: '2026-05-24'
+  all_day: true
+  category: 予定
+  status: scheduled
 - title: 岱明中前期確認テスト
   date: '2026-05-26'
   all_day: true
@@ -673,12 +675,6 @@ events:
   status: scheduled
 - title: 免許更新
   date: '2026-06-07'
-  all_day: true
-  category: 予定
-  status: scheduled
-  description: 14:10〜15:40くらいかかった。スムーズっちゃスムーズ。
-- title: 免許更新
-  date: '2026-06-07'
   all_day: false
   category: 予定
   status: scheduled
@@ -687,6 +683,12 @@ events:
   location: 熊本県運転免許センター
   urls:
   - https://www.pref.kumamoto.jp/site/police/253003.html
+- title: 免許更新
+  date: '2026-06-07'
+  all_day: true
+  category: 予定
+  status: scheduled
+  description: 14:10〜15:40くらいかかった。スムーズっちゃスムーズ。
 - title: カフェイン断ち
   date: '2026-06-09'
   all_day: true
@@ -832,14 +834,75 @@ events:
   all_day: true
   category: 予定
   status: scheduled
-- title: 令和８年度 熊本県中学校総合体育大会陸上競技大会
+- title: 岱明中夏休み開始
   date: '2026-07-18'
   all_day: true
   category: 予定
   status: scheduled
-  end_date: '2026-07-19'
-- title: 岱明中夏休み開始
+- title: 県中体連
   date: '2026-07-18'
+  all_day: true
+  category: 予定
+  status: scheduled
+  end_date: '2026-07-20'
+  description: 令和８年度 熊本県中学校総合体育大会陸上競技大会
+- title: 岱明朝練休み
+  date: '2026-07-20'
+  category: 予定
+  status: scheduled
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  all_day: true
+- title: 岱明夕練休み
+  date: '2026-07-20'
+  category: 予定
+  status: scheduled
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  all_day: true
+- title: 岱明朝練休み
+  date: '2026-07-21'
+  category: 予定
+  status: scheduled
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  all_day: true
+- title: 岱明夕練休み
+  date: '2026-07-21'
+  category: 予定
+  status: scheduled
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  all_day: true
+- title: 三者面談（3年）
+  date: '2026-07-21'
+  all_day: true
+  category: 予定
+  status: scheduled
+- title: 岱明朝練休み
+  date: '2026-07-22'
+  category: 予定
+  status: scheduled
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  all_day: true
+- title: 岱明夕練
+  date: '2026-07-22'
+  category: 予定
+  status: scheduled
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  all_day: false
+  start_time: '18:00'
+  end_time: '19:30'
+- title: 三者面談（3年）
+  date: '2026-07-22'
   all_day: true
   category: 予定
   status: scheduled
@@ -848,14 +911,49 @@ events:
   all_day: true
   category: 予定
   status: scheduled
-- title: 岱明朝練
+- title: 岱明夕練休み
   date: '2026-07-23'
-  all_day: true
   category: 予定
   status: scheduled
   tags:
   - ランニング
   - いだてん岱明練習
+  all_day: true
+- title: 岱明朝練
+  date: '2026-07-23'
+  category: 予定
+  status: scheduled
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  all_day: false
+  start_time: 08:00
+  end_time: 09:30
+- title: 三者面談（3年）
+  date: '2026-07-23'
+  all_day: true
+  category: 予定
+  status: scheduled
+- title: 岱明朝練
+  date: '2026-07-24'
+  category: 予定
+  status: scheduled
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  all_day: false
+  start_time: 08:00
+  end_time: 09:30
+- title: 岱明夕練
+  date: '2026-07-24'
+  category: 予定
+  status: scheduled
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  all_day: false
+  start_time: '18:00'
+  end_time: '19:30'
 - title: Claude Opus 5
   date: '2026-07-24'
   all_day: true
@@ -869,14 +967,16 @@ events:
   category: 予定
   status: scheduled
   description: 「できる限りハードに練習することが、成長につながるわけではありません。 十分な強度で、十分な頻度で、十分な期間継続して練習することが、成長につながるのです。」このメッセージが岱明の設定遅めのポイント練習と調和性が高そうだと感じ、英語の本で5000円くらいしますが購入しました。英語は得意なので問題なし。土山は本気です。
-- title: 岱明朝練と夕練
+- title: 三者面談（3年）
   date: '2026-07-24'
   all_day: true
   category: 予定
   status: scheduled
-  tags:
-  - ランニング
-  - いだてん岱明練習
+- title: 学校保健講演会
+  date: '2026-07-24'
+  all_day: true
+  category: 予定
+  status: scheduled
 - title: 給与振り込み
   date: '2026-07-24'
   all_day: true
@@ -886,18 +986,71 @@ events:
   - 金額
   - 給与
   description: 手取り 251,406円
-- title: 岱明夕練
+- title: 岱明朝練休み
   date: '2026-07-25'
-  all_day: true
   category: 予定
   status: scheduled
-  description: |
-    朝練コース
-    男子12周、女子10周
-    流し
   tags:
   - ランニング
   - いだてん岱明練習
+  all_day: true
+- title: 岱明夕練休み
+  date: '2026-07-25'
+  category: 予定
+  status: scheduled
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  all_day: true
+- title: 岱明朝練休み
+  date: '2026-07-26'
+  category: 予定
+  status: scheduled
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  all_day: true
+- title: 岱明夕練休み
+  date: '2026-07-26'
+  category: 予定
+  status: scheduled
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  all_day: true
+- title: 岱明朝練
+  date: '2026-07-27'
+  category: 予定
+  status: scheduled
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  all_day: false
+  start_time: 08:00
+  end_time: 09:30
+- title: 岱明夕練
+  date: '2026-07-27'
+  category: 予定
+  status: scheduled
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  all_day: false
+  start_time: '18:00'
+  end_time: '19:30'
+- title: 帰りの電車
+  date: '2026-07-27'
+  all_day: false
+  start_time: '21:27'
+  end_time: '21:54'
+  category: 予定
+  status: done
+  description: 上熊本-玉名
+- title: 三者面談（3年）
+  date: '2026-07-27'
+  all_day: true
+  category: 予定
+  status: scheduled
 - title: 小泉さん・皆川さん訪問
   date: '2026-07-27'
   all_day: true
@@ -920,14 +1073,24 @@ events:
   urls:
   - https://www.sakasou.kumamoto.jp/shop/sakasou/
   description: 訪問記録
-- title: 帰りの電車
-  date: '2026-07-27'
-  all_day: false
-  start_time: '21:27'
-  end_time: '21:54'
+- title: 岱明夕練休み
+  date: '2026-07-28'
   category: 予定
-  status: done
-  description: 上熊本-玉名
+  status: scheduled
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  all_day: true
+- title: 岱明朝練
+  date: '2026-07-28'
+  category: 予定
+  status: scheduled
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  all_day: false
+  start_time: 08:00
+  end_time: 09:30
 - title: 熊本県熊本地方を震源とする地震
   date: '2026-07-28'
   all_day: false
@@ -937,22 +1100,63 @@ events:
   tags:
   - 地震
   description: M7.1、最大震度7
+- title: 三者面談（3年）
+  date: '2026-07-28'
+  all_day: true
+  category: 予定
+  status: scheduled
+- title: 岱明朝練休み
+  date: '2026-07-29'
+  category: 予定
+  status: scheduled
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  all_day: true
 - title: 岱明夕練
   date: '2026-07-29'
-  all_day: true
   category: 予定
   status: scheduled
   tags:
   - ランニング
   - いだてん岱明練習
-- title: 岱明夕練
+  all_day: false
+  start_time: '18:00'
+  end_time: '19:30'
+- title: 岱明朝練休み
+  date: '2026-07-30'
+  category: 予定
+  status: scheduled
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  all_day: true
+- title: 岱明夕練休み
+  date: '2026-07-30'
+  category: 予定
+  status: scheduled
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  all_day: true
+- title: 岱明夕練休み
   date: '2026-07-31'
-  all_day: true
   category: 予定
   status: scheduled
   tags:
   - ランニング
   - いだてん岱明練習
+  all_day: true
+- title: 岱明朝練
+  date: '2026-07-31'
+  category: 予定
+  status: scheduled
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  all_day: false
+  start_time: 08:00
+  end_time: 09:30
 - title: 交通費申請
   date: '2026-08-01'
   all_day: true
@@ -975,340 +1179,383 @@ events:
   all_day: true
   category: 予定
   status: scheduled
-- title: 岱明練習休み
+- title: 岱明朝練休み
   date: '2026-08-02'
-  all_day: true
   category: 予定
   status: scheduled
   tags:
   - ランニング
   - いだてん岱明練習
+  all_day: true
+- title: 岱明夕練休み
+  date: '2026-08-02'
+  category: 予定
+  status: scheduled
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  all_day: true
 - title: 岱明朝練
   date: '2026-08-03'
-  all_day: false
   category: 予定
   status: scheduled
-  start_time: '08:00'
-  end_time: '09:30'
   tags:
   - ランニング
   - いだてん岱明練習
+  all_day: false
+  start_time: 08:00
+  end_time: 09:30
 - title: 岱明夕練
   date: '2026-08-03'
-  all_day: false
   category: 予定
   status: scheduled
-  start_time: '18:00'
-  end_time: '19:30'
   tags:
   - ランニング
   - いだてん岱明練習
+  all_day: false
+  start_time: '18:00'
+  end_time: '19:30'
+- title: 岱明夕練休み
+  date: '2026-08-04'
+  category: 予定
+  status: scheduled
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  all_day: true
 - title: 岱明朝練
   date: '2026-08-04'
+  category: 予定
+  status: scheduled
+  tags:
+  - ランニング
+  - いだてん岱明練習
   all_day: false
-  category: 予定
-  status: scheduled
-  start_time: '08:00'
-  end_time: '09:30'
-  tags:
-  - ランニング
-  - いだてん岱明練習
-- title: 岱明練習休み
-  date: '2026-08-04'
-  all_day: true
-  category: 予定
-  status: scheduled
-  tags:
-  - ランニング
-  - いだてん岱明練習
-- title: 岱明練習休み
+  start_time: 08:00
+  end_time: 09:30
+- title: 岱明朝練休み
   date: '2026-08-05'
-  all_day: true
   category: 予定
   status: scheduled
   tags:
   - ランニング
   - いだてん岱明練習
+  all_day: true
 - title: 岱明夕練
   date: '2026-08-05'
-  all_day: false
   category: 予定
   status: scheduled
-  start_time: '18:00'
-  end_time: '19:30'
   tags:
   - ランニング
   - いだてん岱明練習
+  all_day: false
+  start_time: '18:00'
+  end_time: '19:30'
+- title: 岱明夕練休み
+  date: '2026-08-06'
+  category: 予定
+  status: scheduled
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  all_day: true
 - title: 岱明朝練
   date: '2026-08-06'
+  category: 予定
+  status: scheduled
+  tags:
+  - ランニング
+  - いだてん岱明練習
   all_day: false
-  category: 予定
-  status: scheduled
-  start_time: '08:00'
-  end_time: '09:30'
-  tags:
-  - ランニング
-  - いだてん岱明練習
-- title: 岱明練習休み
-  date: '2026-08-06'
-  all_day: true
-  category: 予定
-  status: scheduled
-  tags:
-  - ランニング
-  - いだてん岱明練習
+  start_time: 08:00
+  end_time: 09:30
 - title: 岱明朝練
   date: '2026-08-07'
-  all_day: false
   category: 予定
   status: scheduled
-  start_time: '08:00'
-  end_time: '09:30'
   tags:
   - ランニング
   - いだてん岱明練習
+  all_day: false
+  start_time: 08:00
+  end_time: 09:30
 - title: 岱明夕練
   date: '2026-08-07'
-  all_day: false
   category: 予定
   status: scheduled
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  all_day: false
   start_time: '18:00'
   end_time: '19:30'
-  tags:
-  - ランニング
-  - いだてん岱明練習
-- title: 岱明練習休み
+- title: 岱明朝練休み
   date: '2026-08-08'
-  all_day: true
   category: 予定
   status: scheduled
   tags:
   - ランニング
   - いだてん岱明練習
+  all_day: true
 - title: 岱明夕練
   date: '2026-08-08'
-  all_day: false
   category: 予定
   status: scheduled
-  start_time: '18:00'
-  end_time: '19:30'
   tags:
   - ランニング
   - いだてん岱明練習
-- title: 岱明練習休み
+  all_day: false
+  start_time: '18:00'
+  end_time: '19:30'
+- title: 岱明朝練休み
   date: '2026-08-09'
-  all_day: true
   category: 予定
   status: scheduled
   tags:
   - ランニング
   - いだてん岱明練習
+  all_day: true
+- title: 岱明夕練休み
+  date: '2026-08-09'
+  category: 予定
+  status: scheduled
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  all_day: true
+- title: 岱明朝練
+  date: '2026-08-10'
+  category: 予定
+  status: scheduled
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  all_day: false
+  start_time: 08:00
+  end_time: 09:30
+- title: 岱明夕練
+  date: '2026-08-10'
+  category: 予定
+  status: scheduled
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  all_day: false
+  start_time: '18:00'
+  end_time: '19:30'
 - title: 学校閉庁日
   date: '2026-08-10'
   all_day: true
   category: 予定
   status: scheduled
-- title: 岱明朝練
-  date: '2026-08-10'
-  all_day: false
-  category: 予定
-  status: scheduled
-  start_time: '08:00'
-  end_time: '09:30'
-  tags:
-  - ランニング
-  - いだてん岱明練習
-- title: 岱明夕練
-  date: '2026-08-10'
-  all_day: false
-  category: 予定
-  status: scheduled
-  start_time: '18:00'
-  end_time: '19:30'
-  tags:
-  - ランニング
-  - いだてん岱明練習
-- title: 岱明練習休み
+- title: 岱明朝練休み
   date: '2026-08-11'
-  all_day: true
   category: 予定
   status: scheduled
   tags:
   - ランニング
   - いだてん岱明練習
-- title: 学校閉庁日
-  date: '2026-08-12'
   all_day: true
+- title: 岱明夕練休み
+  date: '2026-08-11'
   category: 予定
   status: scheduled
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  all_day: true
+- title: 岱明朝練休み
+  date: '2026-08-12'
+  category: 予定
+  status: scheduled
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  all_day: true
+- title: 岱明夕練
+  date: '2026-08-12'
+  category: 予定
+  status: scheduled
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  all_day: false
+  start_time: '18:00'
+  end_time: '19:30'
 - title: 夏季休暇
   date: '2026-08-12'
   all_day: true
   category: 予定
   status: scheduled
-- title: 岱明練習休み
+- title: 学校閉庁日
   date: '2026-08-12'
   all_day: true
+  category: 予定
+  status: scheduled
+- title: 岱明朝練休み
+  date: '2026-08-13'
   category: 予定
   status: scheduled
   tags:
   - ランニング
   - いだてん岱明練習
-- title: 岱明夕練
-  date: '2026-08-12'
-  all_day: false
+  all_day: true
+- title: 岱明夕練休み
+  date: '2026-08-13'
   category: 予定
   status: scheduled
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  all_day: true
+- title: 学校閉庁日
+  date: '2026-08-13'
+  all_day: true
+  category: 予定
+  status: scheduled
+- title: 岱明朝練休み
+  date: '2026-08-14'
+  category: 予定
+  status: scheduled
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  all_day: true
+- title: 岱明夕練
+  date: '2026-08-14'
+  category: 予定
+  status: scheduled
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  all_day: false
   start_time: '18:00'
   end_time: '19:30'
-  tags:
-  - ランニング
-  - いだてん岱明練習
-- title: 学校閉庁日
-  date: '2026-08-13'
-  all_day: true
-  category: 予定
-  status: scheduled
-- title: 岱明練習休み
-  date: '2026-08-13'
-  all_day: true
-  category: 予定
-  status: scheduled
-  tags:
-  - ランニング
-  - いだてん岱明練習
-- title: 学校閉庁日
-  date: '2026-08-14'
-  all_day: true
-  category: 予定
-  status: scheduled
 - title: 夏季休暇
   date: '2026-08-14'
   all_day: true
   category: 予定
   status: scheduled
-- title: 岱明練習休み
+- title: 学校閉庁日
   date: '2026-08-14'
   all_day: true
   category: 予定
   status: scheduled
-  tags:
-  - ランニング
-  - いだてん岱明練習
-- title: 岱明夕練
-  date: '2026-08-14'
-  all_day: false
+- title: 岱明朝練休み
+  date: '2026-08-15'
   category: 予定
   status: scheduled
-  start_time: '18:00'
-  end_time: '19:30'
   tags:
   - ランニング
   - いだてん岱明練習
-- title: 岱明練習休み
-  date: '2026-08-15'
   all_day: true
-  category: 予定
-  status: scheduled
-  tags:
-  - ランニング
-  - いだてん岱明練習
 - title: 岱明夕練
   date: '2026-08-15'
-  all_day: false
   category: 予定
   status: scheduled
-  start_time: '18:00'
-  end_time: '19:30'
   tags:
   - ランニング
   - いだてん岱明練習
-- title: 岱明練習休み
+  all_day: false
+  start_time: '18:00'
+  end_time: '19:30'
+- title: 岱明朝練休み
   date: '2026-08-16'
-  all_day: true
   category: 予定
   status: scheduled
   tags:
   - ランニング
   - いだてん岱明練習
+  all_day: true
+- title: 岱明夕練休み
+  date: '2026-08-16'
+  category: 予定
+  status: scheduled
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  all_day: true
 - title: 岱明朝練
   date: '2026-08-17'
-  all_day: false
   category: 予定
   status: scheduled
-  start_time: '08:00'
-  end_time: '09:30'
   tags:
   - ランニング
   - いだてん岱明練習
+  all_day: false
+  start_time: 08:00
+  end_time: 09:30
 - title: 岱明夕練
   date: '2026-08-17'
-  all_day: false
   category: 予定
   status: scheduled
-  start_time: '18:00'
-  end_time: '19:30'
   tags:
   - ランニング
   - いだてん岱明練習
-- title: 職員会議・校内研
+  all_day: false
+  start_time: '18:00'
+  end_time: '19:30'
+- title: 岱明朝練休み
   date: '2026-08-18'
-  all_day: true
   category: 予定
   status: scheduled
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  all_day: true
+- title: 岱明夕練休み
+  date: '2026-08-18'
+  category: 予定
+  status: scheduled
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  all_day: true
 - title: たまなPayデジタル商品券追加販売開始
   date: '2026-08-18'
   all_day: true
   category: 予定
   status: scheduled
-- title: 岱明練習休み
+- title: 職員会議・校内研
   date: '2026-08-18'
   all_day: true
+  category: 予定
+  status: scheduled
+- title: 岱明朝練
+  date: '2026-08-19'
   category: 予定
   status: scheduled
   tags:
   - ランニング
   - いだてん岱明練習
+  all_day: false
+  start_time: 08:00
+  end_time: 09:30
+- title: 岱明夕練
+  date: '2026-08-19'
+  category: 予定
+  status: scheduled
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  all_day: false
+  start_time: '18:00'
+  end_time: '19:30'
 - title: 2，3年課題提出日
   date: '2026-08-19'
   all_day: true
   category: 予定
   status: scheduled
 - title: 岱明朝練
-  date: '2026-08-19'
-  all_day: false
-  category: 予定
-  status: scheduled
-  start_time: '08:00'
-  end_time: '09:30'
-  tags:
-  - ランニング
-  - いだてん岱明練習
-- title: 岱明夕練
-  date: '2026-08-19'
-  all_day: false
-  category: 予定
-  status: scheduled
-  start_time: '18:00'
-  end_time: '19:30'
-  tags:
-  - ランニング
-  - いだてん岱明練習
-- title: 1年課題提出日
   date: '2026-08-20'
-  all_day: true
   category: 予定
   status: scheduled
-- title: 岱明朝練
-  date: '2026-08-20'
-  all_day: false
-  category: 予定
-  status: scheduled
-  start_time: '08:00'
-  end_time: '09:30'
   tags:
   - ランニング
   - いだてん岱明練習
+  all_day: false
+  start_time: 08:00
+  end_time: 09:30
 - title: 練習会（岱明）
   date: '2026-08-20'
   all_day: false
@@ -1318,66 +1565,66 @@ events:
   end_time: '21:00'
   location: 玉名市岱明中央公園グラウンド
 - title: 1年課題提出日
-  date: '2026-08-21'
+  date: '2026-08-20'
   all_day: true
   category: 予定
   status: scheduled
 - title: 岱明朝練
   date: '2026-08-21'
-  all_day: false
   category: 予定
   status: scheduled
-  start_time: '08:00'
-  end_time: '09:30'
   tags:
   - ランニング
   - いだてん岱明練習
+  all_day: false
+  start_time: 08:00
+  end_time: 09:30
 - title: 岱明夕練
   date: '2026-08-21'
-  all_day: false
   category: 予定
   status: scheduled
-  start_time: '18:00'
-  end_time: '19:30'
   tags:
   - ランニング
   - いだてん岱明練習
+  all_day: false
+  start_time: '18:00'
+  end_time: '19:30'
+- title: 1年課題提出日
+  date: '2026-08-21'
+  all_day: true
+  category: 予定
+  status: scheduled
+- title: 岱明朝練休み
+  date: '2026-08-22'
+  category: 予定
+  status: scheduled
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  all_day: true
+- title: 岱明夕練
+  date: '2026-08-22'
+  category: 予定
+  status: scheduled
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  all_day: false
+  start_time: '18:00'
+  end_time: '19:30'
 - title: 玉名市人権教育研究大会
   date: '2026-08-22'
   all_day: true
   category: 予定
   status: scheduled
-- title: 岱明練習休み
-  date: '2026-08-22'
-  all_day: true
-  category: 予定
-  status: scheduled
-  tags:
-  - ランニング
-  - いだてん岱明練習
-- title: 岱明夕練
-  date: '2026-08-22'
-  all_day: false
-  category: 予定
-  status: scheduled
-  start_time: '18:00'
-  end_time: '19:30'
-  tags:
-  - ランニング
-  - いだてん岱明練習
-- title: サマー記録会100m（薄暮開催予定）
+- title: 岱明朝練休み
   date: '2026-08-23'
-  all_day: true
-  category: 予定
-  status: scheduled
-- title: 岱明練習休み
-  date: '2026-08-23'
-  all_day: true
   category: 予定
   status: scheduled
   tags:
   - ランニング
   - いだてん岱明練習
+  all_day: true
 - title: 練習会（桃田）
   date: '2026-08-23'
   all_day: false
@@ -1385,67 +1632,72 @@ events:
   status: scheduled
   start_time: '19:00'
   end_time: '21:00'
-- title: 岱明朝練
-  date: '2026-08-24'
-  all_day: false
-  category: 予定
-  status: scheduled
-  start_time: '08:00'
-  end_time: '09:30'
-  tags:
-  - ランニング
-  - いだてん岱明練習
-- title: 岱明夕練
-  date: '2026-08-24'
-  all_day: false
-  category: 予定
-  status: scheduled
-  start_time: '18:00'
-  end_time: '19:30'
-  tags:
-  - ランニング
-  - いだてん岱明練習
-- title: 岱明朝練
-  date: '2026-08-25'
-  all_day: false
-  category: 予定
-  status: scheduled
-  start_time: '08:00'
-  end_time: '09:30'
-  tags:
-  - ランニング
-  - いだてん岱明練習
-- title: 岱明練習休み
-  date: '2026-08-25'
+- title: サマー記録会100m（薄暮開催予定）
+  date: '2026-08-23'
   all_day: true
   category: 予定
   status: scheduled
+- title: 岱明朝練
+  date: '2026-08-24'
+  category: 予定
+  status: scheduled
   tags:
   - ランニング
   - いだてん岱明練習
+  all_day: false
+  start_time: 08:00
+  end_time: 09:30
+- title: 岱明夕練
+  date: '2026-08-24'
+  category: 予定
+  status: scheduled
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  all_day: false
+  start_time: '18:00'
+  end_time: '19:30'
+- title: 岱明夕練休み
+  date: '2026-08-25'
+  category: 予定
+  status: scheduled
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  all_day: true
+- title: 岱明朝練
+  date: '2026-08-25'
+  category: 予定
+  status: scheduled
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  all_day: false
+  start_time: 08:00
+  end_time: 09:30
+- title: 岱明朝練休み
+  date: '2026-08-26'
+  category: 予定
+  status: scheduled
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  all_day: true
+- title: 岱明夕練
+  date: '2026-08-26'
+  category: 予定
+  status: scheduled
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  all_day: false
+  start_time: '18:00'
+  end_time: '19:30'
 - title: 夏期休業最終日
   date: '2026-08-26'
   all_day: true
   category: 予定
   status: scheduled
-- title: 岱明練習休み
-  date: '2026-08-26'
-  all_day: true
-  category: 予定
-  status: scheduled
-  tags:
-  - ランニング
-  - いだてん岱明練習
-- title: 岱明夕練
-  date: '2026-08-26'
-  all_day: false
-  category: 予定
-  status: scheduled
-  start_time: '18:00'
-  end_time: '19:30'
-  tags:
-  - ランニング
-  - いだてん岱明練習
 - title: 練習会（岱明）
   date: '2026-08-27'
   all_day: false
@@ -1501,6 +1753,13 @@ events:
   status: scheduled
   start_time: '19:00'
   end_time: '21:00'
+- title: 練習会（桃田）
+  date: '2026-09-06'
+  all_day: false
+  category: 予定
+  status: scheduled
+  start_time: '19:00'
+  end_time: '21:00'
 - title: 第３４回 熊本マスターズ選手権大会
   date: '2026-09-06'
   all_day: true
@@ -1513,13 +1772,6 @@ events:
   - http://kumariku.com/info/wp-content/uploads/2026/04/b652729b4a1eecb47ebc1e6e01321a6e.pdf
   location: 水前寺競技場
   description: 熊本県陸上競技大会一覧（2026/5/31版）より追加
-- title: 練習会（桃田）
-  date: '2026-09-06'
-  all_day: false
-  category: 予定
-  status: scheduled
-  start_time: '19:00'
-  end_time: '21:00'
 - title: 練習会（岱明）
   date: '2026-09-08'
   all_day: false
@@ -1573,6 +1825,18 @@ events:
   category: 予定
   status: scheduled
   description: 29歳以下1500m 17:30〜
+- title: 飯村研究室同窓会
+  date: '2026-09-20'
+  all_day: false
+  start_time: '13:00'
+  category: 予定
+  status: scheduled
+  description: 【日時】2026年9月20日（日） 13:00〜（終了未定）  【会場】ホテルメルパルク熊本 【会費】8,000円〜10,000円（人数によって変動いたします。ご了承ください） 【服装】当日は、皆様に肩肘張らず楽しんでいただきたいため、ぜひカジュアルな服装でお気軽にお越しください。
+- title: Middle-Distance in Omuta
+  date: '2026-09-20'
+  all_day: true
+  category: 予定
+  status: scheduled
 - title: 令和８年度 熊本県民体育祭 2日目
   date: '2026-09-20'
   all_day: true
@@ -1583,18 +1847,6 @@ events:
   all_day: true
   category: 予定
   status: scheduled
-- title: Middle-Distance in Omuta
-  date: '2026-09-20'
-  all_day: true
-  category: 予定
-  status: scheduled
-- title: 飯村研究室同窓会
-  date: '2026-09-20'
-  all_day: false
-  start_time: '13:00'
-  category: 予定
-  status: scheduled
-  description: 【日時】2026年9月20日（日） 13:00〜（終了未定）  【会場】ホテルメルパルク熊本 【会費】8,000円〜10,000円（人数によって変動いたします。ご了承ください） 【服装】当日は、皆様に肩肘張らず楽しんでいただきたいため、ぜひカジュアルな服装でお気軽にお越しください。
 - title: 第３回 熊本県長距離記録会
   date: '2026-09-21'
   all_day: true
@@ -1902,13 +2154,19 @@ events:
 - title: Notion バックアップコード
   category: メモ
   status: inbox
-  description: |
-    FWZ5-F83B
+  description: 'FWZ5-F83B
+
     EQU3-ADD8
+
     EJUL-XZMF
+
     0KCX-ZWRG
+
     J38V-R2XT
+
     J2A9-SLEP
+
+    '
 - title: PUMA プロピオ ニトロ
   category: メモ
   status: inbox
@@ -2087,32 +2345,40 @@ events:
 - title: ランキング作成プロンプト
   category: メモ
   status: inbox
-  description: 所属別3000m予想タイム上位ランキング表（男子は6人、女子は5人の平均と内訳）を作成したい。3000mのタイムがあれば3000mのSB、1500mのタイムがあればSBの+15秒/kmで3000mの予想タイムを算出、3000mも1500mもなければ800mのSBから+10秒/kmして1500mの予想タイムを算出、その後さらにそのタイムを+15秒/kmで3000mの予想タイムを算出して。 男女別に出して。
+  description: 所属別3000m予想タイム上位ランキング表（男子は6人、女子は5人の平均と内訳）を作成したい。3000mのタイムがあれば3000mのSB、1500mのタイムがあればSBの+15秒/kmで3000mの予想タイムを算出、3000mも1500mもなければ800mのSBから+10秒/kmして1500mの予想タイムを算出、その後さらにそのタイムを+15秒/kmで3000mの予想タイムを算出して。
+    男女別に出して。
   tags:
   - ランニング
 - title: 一括操作
   category: メモ
   status: inbox
-  description: |
-    一括操作モード切替ボタンを追加する。デフォルトは無効とする。
+  description: '一括操作モード切替ボタンを追加する。デフォルトは無効とする。
+
 
 
     一括操作モードが有効な場合のみ各行にチェックボックスを表示し、複数選択および全選択を可能とする。
 
 
+
     単一選択状態から一括操作モードへ切り替えた場合、選択中ファイルと同一拡張子を持つシステム内の全ファイルを自動選択する。
+
 
 
     一括操作モードでは同一拡張子のファイルのみ選択可能とし、異なる拡張子のファイルは選択不可とする。
 
 
+
     一括操作モードを解除した場合は、一括操作開始前の単一選択状態へ復元する。
+
 
 
     一括操作モードでは全選択機能を提供し、対象拡張子を持つシステム内の全ファイルを選択できる。
 
 
+
     選択されたファイル群に対してベクトル化の詳細オプションを一括適用できる。
+
+    '
   tags:
   - 開発
 - title: 中1女子
@@ -2134,11 +2400,15 @@ events:
 - title: 中体連前日
   category: メモ
   status: inbox
-  description: |
-    松野か村上が突っ込んで失速する動画1つでも見つかるかなと思って検索してみたら、これだけ見つかった笑
+  description: '松野か村上が突っ込んで失速する動画1つでも見つかるかなと思って検索してみたら、これだけ見つかった笑
+
     今は最後まで粘れるようになったな。
+
     あと、この曲いいよね
+
     土日は全員最後まで諦めずに岱明魂🔥
+
+    '
   tags:
   - ランニング
 - title: 中尾快叶
@@ -2150,83 +2420,132 @@ events:
 - title: 予想ペース
   category: メモ
   status: inbox
-  description: |
-    【中長距離の簡易換算モデル】
+  description: '【中長距離の簡易換算モデル】
+
 
     800m
+
     ↓ +5秒/km
+
     1000m
+
     ↓ +5秒/km
+
     1500m
+
     ↓ +15秒/km
+
     3000m
+
     ↓ +5秒/km
+
     5000m
+
     ↓ +6秒/km
+
     10000m
+
     ↓ +5秒/km
+
     ハーフマラソン
+
 
 
     【種目ごとの換算目安】
 
+
     1000m
+
     ＝ 800mの平均ペース +5秒/km
 
+
     1500m
+
     ＝ 1000mの平均ペース +5秒/km
+
     ＝ 800mの平均ペース +10秒/km
 
+
     3000m
+
     ＝ 1500mの平均ペース +15秒/km
+
     ＝ 1500m ×2 +30秒
 
+
     5000m
+
     ＝ 3000mの平均ペース +5秒/km
+
     ＝ 1500mの平均ペース +20秒/km
 
+
     10000m
+
     ＝ 5000mの平均ペース +6秒/km
 
+
     ハーフマラソン
+
     ＝ 10000mの平均ペース +5秒/km
+
     ＝ 5000mの平均ペース +10〜11秒/km
+
 
 
     【見方】
 
+
     換算より短い距離が強い
+
     → スピード型
 
+
     換算より長い距離が強い
+
     → 持久型
+
 
 
     【例】
 
+
     1500m 5:00（3:20/km）の場合
 
+
     800m    → 約2:32
+
     1000m   → 約3:15
+
     3000m   → 約10:45
+
     5000m   → 約18:20
+
     10000m  → 約37:40
+
     ハーフ → 約1:22〜1:24
+
+    '
   tags:
   - ランニング
 - title: 伸び代について
   category: メモ
   status: inbox
-  description: |
-    伸び代を考えるなら、小中学時代は過度な走り込み、連日の高負荷練習や痛みのある状態での練習、厳しく細かい指導はしなくてもいい、いや、しない方がいいと思っている。
+  description: '伸び代を考えるなら、小中学時代は過度な走り込み、連日の高負荷練習や痛みのある状態での練習、厳しく細かい指導はしなくてもいい、いや、しない方がいいと思っている。
+
     長期積立投資みたいに、リスクを抑えた練習や生活を淡々と継続することが、やがて大きなリターンを生むと。
 
 
+
     小中学生だからたまにはサボりたいし、他人に反抗したくなるし、お菓子も食べたいし、遊びたいと思う。
+
     ただ、これが常態化すると当然マイナスのリターンになるので、その頻度を観察して多ければ指導する必要がある。いや、あえてスルーして小さく失敗させるのもアリ？
 
 
+
     高校以降で適切にリスクをとれるようになる、リスクのある環境に行ったら、またひと伸び。指導する上で目先の数字や目標に縛られすぎず、ローリスク思考（ゼロリスクではない）を重視。
+
+    '
   tags:
   - ランニング
 - title: 免許更新Web予約
@@ -2237,7 +2556,10 @@ events:
 - title: 全中選手プロンプト
   category: メモ
   status: inbox
-  description: 山田　晄雅(3)ﾔﾏﾀﾞ ｺｳｶﾞ西合志中8:42.85SRC 217544菊地　颯太(3)ｷｸﾁ ｿｳﾀ西合志南中8:45.09SRC 3151880松本　瑛誠(3)ﾏﾂﾓﾄ ｴｲｾｲ新和中8:46.52SRC 4221477龍野　翔太郎(3)ﾀﾂﾉ ｼｮｳﾀﾛｳ県立八代中8:46.72SRC 523258松岡　輝雅(3)ﾏﾂｵｶ ﾋｶﾞ米野岳中8:48.92SRC 6181885根岸　夏生(3)ﾈｷﾞｼ ｶｲ牛深中8:49.25SRC 7213874原田　芽(3)ﾊﾗﾀﾞ ｲﾌﾞｷNJAC8:49.78SRC 8201001米原　凛人(3)ﾖﾈﾊﾗ ﾘﾝﾄ下益城城南中8:50.14SRC 9193408津田　郁将(3)ﾂﾀﾞ ﾌﾐﾕｷアスリートワーク8:52.41SRC 1014999吉岡　道雄(3)ﾖｼｵｶ ﾐﾁｵ下益城城南中8:53.97SRC 11133244隈部　侑成(3)ｸﾏﾍﾞ ﾕｳｾｲ金栗PROJECT8:54.61SRC
+  description: 山田　晄雅(3)ﾔﾏﾀﾞ ｺｳｶﾞ西合志中8:42.85SRC 217544菊地　颯太(3)ｷｸﾁ ｿｳﾀ西合志南中8:45.09SRC 3151880松本　瑛誠(3)ﾏﾂﾓﾄ ｴｲｾｲ新和中8:46.52SRC 4221477龍野　翔太郎(3)ﾀﾂﾉ
+    ｼｮｳﾀﾛｳ県立八代中8:46.72SRC 523258松岡　輝雅(3)ﾏﾂｵｶ ﾋｶﾞ米野岳中8:48.92SRC 6181885根岸　夏生(3)ﾈｷﾞｼ ｶｲ牛深中8:49.25SRC 7213874原田　芽(3)ﾊﾗﾀﾞ ｲﾌﾞｷNJAC8:49.78SRC 8201001米原　凛人(3)ﾖﾈﾊﾗ
+    ﾘﾝﾄ下益城城南中8:50.14SRC 9193408津田　郁将(3)ﾂﾀﾞ ﾌﾐﾕｷアスリートワーク8:52.41SRC 1014999吉岡　道雄(3)ﾖｼｵｶ ﾐﾁｵ下益城城南中8:53.97SRC 11133244隈部　侑成(3)ｸﾏﾍﾞ
+    ﾕｳｾｲ金栗PROJECT8:54.61SRC
   tags:
   - ランニング
 - title: 南本幸治郎
@@ -2294,9 +2616,11 @@ events:
 - title: 山本哲瑠
   category: メモ
   status: inbox
-  description: |
-    前の方でゴールできた時に乗る
+  description: '前の方でゴールできた時に乗る
+
     安定感もあるが、たまに1発がある
+
+    '
   tags:
   - ランニング
 - title: 山﨑莉奈
@@ -2314,20 +2638,33 @@ events:
 - title: 岱明女子歴代800m
   category: メモ
   status: inbox
-  description: |
-    2004年　城戸智恵子さん 3年 2:22.69
+  description: '2004年　城戸智恵子さん 3年 2:22.69
+
     2005年　井上智世さん 3年 2:16.25
+
     2012年　大道志歩さん 1年 2:21.86
+
     2013年　前田明佳里さん 2年 2:35.01
+
     2013年　中川葉月さん 2年 2:35.43
+
     2014年　田上真愛さん 1年 2:30.04
+
     2014年　中嶋遙菜さん 3年 2:36.48
+
     2015年　三村奈々さん 1年 2:34.70
+
     2015年　中嶋瞳花さん 2年 2:35.64
+
     2018年　土山静里佳 3年 2:25.47
+
     2019年　前田優花さん 3年 2:25.67
+
     2022年　福島まひる 3年 2:23.87
+
     2026年　村上咲稀 3年 2:20.11
+
+    '
   tags:
   - ランニング
 - title: 村上咲稀
@@ -2395,9 +2732,11 @@ events:
 - title: 育成力プロンプト
   category: メモ
   status: inbox
-  description: |
-    2025年から2026年にかけての各所属ごとの全ての生徒の記録の推移を性別・種目ごとにグラフで出して
+  description: '2025年から2026年にかけての各所属ごとの全ての生徒の記録の推移を性別・種目ごとにグラフで出して
+
     その上で、伸び率や全員を伸ばせているかという観点で所属ごとの育成力ランキングを作成して。
+
+    '
   tags:
   - ランニング
 - title: 荒玉クラブ所属生徒の中学校
@@ -2414,9 +2753,11 @@ events:
 - title: 角田亜美
   category: メモ
   status: inbox
-  description: |
-    気持ちが強くもないし、弱くもない
+  description: '気持ちが強くもないし、弱くもない
+
     あんまり速くない組で前の方で勝負させた方がいいかも
+
+    '
   tags:
   - ランニング
 - title: 通信陸上2026反省
@@ -2445,9 +2786,11 @@ events:
 - title: 高田麻由
   category: メモ
   status: inbox
-  description: |
-    怪我していなければ練習を全てこなす
+  description: '怪我していなければ練習を全てこなす
+
     速くなりたいという気持ちはある
+
+    '
   tags:
   - ランニング
 - title: 髪型
