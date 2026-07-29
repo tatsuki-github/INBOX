@@ -1208,12 +1208,17 @@ events:
   status: scheduled
   start_time: '19:00'
   end_time: '21:00'
-- title: 令和８年度 熊本県民体育祭
+- title: 令和８年度 熊本県民体育祭 1日目
   date: '2026-09-19'
   all_day: true
   category: 予定
   status: scheduled
-  end_date: '2026-09-20'
+  description: 29歳以下1500m 17:30〜
+- title: 令和８年度 熊本県民体育祭 2日目
+  date: '2026-09-20'
+  all_day: true
+  category: 予定
+  status: scheduled
 - title: Middle-Distance in Omuta
   date: '2026-09-20'
   all_day: true
