@@ -39,6 +39,7 @@ python3 scripts/generate_calendar.py --year 2026 --input input/events.2026.yaml
 | `out/YYYY/google.csv` | Googleカレンダー用（**日付付きのみ**。メモは除外。status/tags/urls は Description に付記） |
 | `out/YYYY/notion.csv` | Notion用（予定 + メモ + Status / Tags / URLs 列） |
 | `out/YYYY/source.csv` | 確認用（共通ビュー。`kind` で event / memo を区別） |
+| `out/YYYY/calendar.md` | GitHub閲覧用（月次 Markdown カレンダー。予定がある日のみ表示） |
 
 ## 予定・メモの追加
 
@@ -93,6 +94,12 @@ events:
 | `location` / `private` | 任意 | 場所 / Google Private |
 
 編集後、再度 `python3 scripts/generate_calendar.py --year 2026` を実行してください。
+
+### GitHub でカレンダー形式で見る
+
+`out/YYYY/calendar.md` を GitHub 上で開くと、月ごとの表形式で予定を確認できます。
+予定がある日だけが表示され、時刻付き予定は `HH:MM` 付き、説明は1行目が括弧内に付きます。
+日付なしメモは末尾の「日付なしメモ」節に一覧表示されます。
 
 ### Notion CSV から一括取り込み
 

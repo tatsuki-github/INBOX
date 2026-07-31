@@ -13,7 +13,7 @@ import csv
 import re
 import sys
 from dataclasses import dataclass, field
-from datetime import date, datetime, time
+from datetime import date, datetime, time, timedelta
 from pathlib import Path
 from typing import Iterable
 
@@ -404,6 +404,114 @@ def write_source_csv(path: Path, events: list[Event]) -> None:
             )
 
 
+WEEKDAY_JA = ("月", "火", "水", "木", "金", "土", "日")
+
+
+def escape_markdown_table_cell(text: str) -> str:
+    """Markdown 表セル内のパイプ・改行をエスケープする。"""
+    return text.replace("|", "\\|").replace("\n", " ").strip()
+
+
+def event_occurrence_dates(event: Event, year: int) -> list[date]:
+    """イベントが表示される日付の一覧（複数日イベントは各日を展開）。"""
+    if event.is_memo or event.start_date is None or event.end_date is None:
+        return []
+
+    start = max(event.start_date, date(year, 1, 1))
+    end = min(event.end_date, date(year, 12, 31))
+    if start > end:
+        return []
+
+    days: list[date] = []
+    current = start
+    while current <= end:
+        days.append(current)
+        current += timedelta(days=1)
+    return days
+
+
+def format_markdown_event_line(event: Event) -> str:
+    """1件の予定を Markdown 表用の1行テキストに整形する。"""
+    title = event.title.strip()
+    description = event.description.strip().splitlines()[0] if event.description.strip() else ""
+
+    if not event.all_day and event.start_time:
+        line = f"{event.start_time.strftime('%H:%M')} {title}"
+    else:
+        line = title
+
+    if description:
+        line = f"{line}（{description}）"
+    return line
+
+
+def group_events_by_date(events: list[Event], year: int) -> dict[date, list[Event]]:
+    """年の各日付に、その日に表示すべきイベントを割り当てる。"""
+    grouped: dict[date, list[Event]] = {}
+    for event in events:
+        for day in event_occurrence_dates(event, year):
+            grouped.setdefault(day, []).append(event)
+
+    for day_events in grouped.values():
+        day_events.sort(
+            key=lambda event: (
+                event.all_day,
+                event.start_time or time.min,
+                event.title,
+            )
+        )
+    return grouped
+
+
+def render_markdown_calendar(events: list[Event], year: int) -> str:
+    """年次 Markdown カレンダー本文を生成する。"""
+    grouped = group_events_by_date(events, year)
+    memos = [event for event in events if event.is_memo]
+
+    lines = [f"# {year}年カレンダー", ""]
+
+    for month in range(1, 13):
+        month_days = [
+            day
+            for day in sorted(grouped)
+            if day.year == year and day.month == month
+        ]
+        if not month_days:
+            continue
+
+        lines.append(f"## {year}年{month}月")
+        lines.append("")
+        lines.append("| 日 | 曜 | 予定 |")
+        lines.append("| --- | --- | --- |")
+
+        for day in month_days:
+            weekday = WEEKDAY_JA[day.weekday()]
+            entries = " / ".join(
+                format_markdown_event_line(event) for event in grouped[day]
+            )
+            lines.append(
+                f"| {day.day} | {weekday} | {escape_markdown_table_cell(entries)} |"
+            )
+        lines.append("")
+
+    if memos:
+        lines.append("## 日付なしメモ")
+        lines.append("")
+        for memo in memos:
+            line = memo.title
+            if memo.description.strip():
+                first_line = memo.description.strip().splitlines()[0]
+                line = f"{line} — {first_line}"
+            lines.append(f"- {escape_markdown_table_cell(line)}")
+        lines.append("")
+
+    return "\n".join(lines).rstrip() + "\n"
+
+
+def write_markdown_calendar(path: Path, events: list[Event], year: int) -> None:
+    path.write_text(render_markdown_calendar(events, year), encoding="utf-8")
+
+
 def default_input_path(year: int) -> Path:
     return ROOT / "input" / f"events.{year}.yaml"
 
@@ -486,10 +594,12 @@ def generate_year(
     google_path = out_dir / "google.csv"
     notion_path = out_dir / "notion.csv"
     source_path = out_dir / "source.csv"
+    calendar_path = out_dir / "calendar.md"
 
     skipped_memos = write_google_csv(google_path, events)
     write_notion_csv(notion_path, events)
     write_source_csv(source_path, events)
+    write_markdown_calendar(calendar_path, events, year)
 
     memo_count = sum(1 for e in events if e.is_memo)
     event_count = len(events) - memo_count
@@ -497,6 +607,7 @@ def generate_year(
     print(f"  Google: {google_path}（メモ {skipped_memos} 件は除外）")
     print(f"  Notion: {notion_path}")
     print(f"  Source: {source_path}")
+    print(f"  Calendar: {calendar_path}")
     return 0
 
 
