@@ -1,6 +1,6 @@
 # カスタム予定・メモ（2023年）
 # 祝日は scripts/generate_calendar.py が自動追加します。
-# 件数: 68
+# 件数: 70
 year: 2023
 events:
 - title: 自分の練習
@@ -224,6 +224,17 @@ events:
   category: 予定
   status: scheduled
   start_time: '10:00'
+- title: 自分の練習
+  date: '2023-09-13'
+  all_day: true
+  category: 予定
+  status: done
+  tags:
+  - ランニング
+  - 自分の練習
+  description: |-
+    400m78〜80で10本
+    間140m40〜45
 - title: 高校新人戦
   date: '2023-09-15'
   all_day: true
@@ -264,6 +275,17 @@ events:
   all_day: true
   category: 予定
   status: scheduled
+- title: 自分の練習
+  date: '2023-09-27'
+  all_day: true
+  category: 予定
+  status: done
+  tags:
+  - ランニング
+  - 自分の練習
+  description: |-
+    400m78で10本
+    間140m40〜45
 - title: 'のレビュー: AZ-104 - Microsoft Azure Administrator - 日本語 (JPN)'
   date: '2023-09-27'
   all_day: false

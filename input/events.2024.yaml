@@ -1,6 +1,6 @@
 # カスタム予定・メモ（2024年）
 # 祝日は scripts/generate_calendar.py が自動追加します。
-# 件数: 86
+# 件数: 92
 year: 2024
 events:
 - title: 長洲マラソン
@@ -75,6 +75,17 @@ events:
   category: 予定
   status: scheduled
 - title: 自分の練習
+  date: '2024-03-30'
+  all_day: true
+  category: 予定
+  status: done
+  tags:
+  - ランニング
+  - 自分の練習
+  description: |-
+    400m80で10本
+    間140m45秒前後
+- title: 自分の練習
   date: '2024-04-14'
   all_day: true
   category: 予定
@@ -91,17 +102,61 @@ events:
   all_day: true
   category: 予定
   status: scheduled
+- title: 自分の練習
+  date: '2024-04-27'
+  all_day: true
+  category: 予定
+  status: done
+  tags:
+  - ランニング
+  - 自分の練習
+  description: |-
+    400m80で14本
+    間140m45〜50
 - title: ガチマナ会
   date: '2024-05-21'
   all_day: false
   category: 予定
   status: scheduled
   start_time: '10:30'
+- title: 自分の練習
+  date: '2024-05-29'
+  all_day: true
+  category: 予定
+  status: done
+  tags:
+  - ランニング
+  - 自分の練習
+  description: |-
+    400m84で10本
+    間140m45〜50
 - title: 高校総体陸上
   date: '2024-05-31'
   all_day: true
   category: 予定
   status: scheduled
+- title: 自分の練習
+  date: '2024-06-02'
+  all_day: true
+  category: 予定
+  status: done
+  tags:
+  - ランニング
+  - 自分の練習
+  description: |-
+    400m80〜82で15本
+    間140m40〜45
+- title: 自分の練習
+  date: '2024-06-05'
+  all_day: true
+  category: 予定
+  status: done
+  tags:
+  - ランニング
+  - 自分の練習
+  description: |-
+    400m80〜82で15本
+    間140m40〜45
 - title: 中学選手権
   date: '2024-06-08'
   all_day: true
@@ -430,6 +485,18 @@ events:
   all_day: true
   category: 予定
   status: scheduled
+- title: 自分の練習
+  date: '2024-12-15'
+  all_day: true
+  category: 予定
+  status: done
+  tags:
+  - ランニング
+  - 自分の練習
+  description: |-
+    400m84で20本
+    間140m40〜45
+    負荷: 127
 - title: 自分の練習
   date: '2024-12-24'
   all_day: true

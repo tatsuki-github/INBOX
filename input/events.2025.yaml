@@ -1,6 +1,6 @@
 # カスタム予定・メモ（2025年）
 # 祝日は scripts/generate_calendar.py が自動追加します。
-# 件数: 195
+# 件数: 198
 year: 2025
 events:
 - title: 自分の練習
@@ -168,6 +168,18 @@ events:
   category: 予定
   status: scheduled
 - title: 自分の練習
+  date: '2025-04-28'
+  all_day: true
+  category: 予定
+  status: done
+  tags:
+  - ランニング
+  - 自分の練習
+  description: |-
+    400m80〜82で8本
+    間100m35
+    負荷: 208
+- title: 自分の練習
   date: '2025-04-29'
   all_day: true
   category: 予定
@@ -180,6 +192,18 @@ events:
     距離: 8.50km
     時間: 37'53
     負荷: 81
+- title: 自分の練習
+  date: '2025-05-04'
+  all_day: true
+  category: 予定
+  status: done
+  tags:
+  - ランニング
+  - 自分の練習
+  description: |-
+    400m82〜84で10本
+    間100m30〜35
+    負荷: 88
 - title: 藤本さんリモート
   date: '2025-05-07'
   all_day: true
@@ -281,6 +305,18 @@ events:
   all_day: true
   category: 予定
   status: scheduled
+- title: 自分の練習
+  date: '2025-05-18'
+  all_day: true
+  category: 予定
+  status: done
+  tags:
+  - ランニング
+  - 自分の練習
+  description: |-
+    400m80〜82で10本
+    間100m30
+    負荷: 59
 - title: 飲み会（水炊き）
   date: '2025-05-20'
   all_day: false
