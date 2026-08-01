@@ -40,6 +40,7 @@ python3 scripts/generate_calendar.py --year 2026 --input input/events.2026.yaml
 | `out/YYYY/notion.csv` | Notion用（予定 + メモ + Status / Tags / URLs 列） |
 | `out/YYYY/source.csv` | 確認用（共通ビュー。`kind` で event / memo を区別） |
 | `out/YYYY/calendar.md` | GitHub閲覧用（月次 Markdown カレンダー。予定がある日のみ表示） |
+| `calendar.md` | **今年**のカレンダー（`out/YYYY/calendar.md` と同一内容をルートにも配置） |
 
 ## 予定・メモの追加
 
@@ -97,7 +98,8 @@ events:
 
 ### GitHub でカレンダー形式で見る
 
-`out/YYYY/calendar.md` を GitHub 上で開くと、月ごとの表形式で予定を確認できます。
+`out/YYYY/calendar.md` またはルートの `calendar.md`（**今年分のみ**）を GitHub 上で開くと、月ごとの表形式で予定を確認できます。
+先頭に月別ジャンプリンクがあり、各月見出しへ移動できます。
 予定がある日だけが表示され、時刻付き予定は `HH:MM` 付き、説明は1行目が括弧内に付きます。
 日付なしメモは末尾の「日付なしメモ」節に一覧表示されます。
 
