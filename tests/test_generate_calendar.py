@@ -13,6 +13,7 @@ from generate_calendar import (  # noqa: E402
     escape_markdown_table_cell,
     event_anchor_id,
     event_occurrence_dates,
+    format_back_to_top_link,
     format_markdown_event_details_block,
     format_markdown_event_details_body,
     format_markdown_event_line,
@@ -22,6 +23,7 @@ from generate_calendar import (  # noqa: E402
     maybe_write_root_calendar,
     memo_anchor_id,
     month_anchor_id,
+    page_top_anchor_id,
     render_markdown_calendar,
     write_markdown_calendar,
 )
@@ -141,6 +143,7 @@ class MarkdownCalendarTests(unittest.TestCase):
             ),
         ]
         rendered = render_markdown_calendar(events, 2026)
+        self.assertIn(f'<a id="{page_top_anchor_id()}"></a>', rendered)
         self.assertIn("# 2026年カレンダー", rendered)
         self.assertIn("[7月](#month-07)", rendered)
         self.assertIn(f'<a id="{month_anchor_id(7)}"></a>', rendered)
@@ -151,6 +154,8 @@ class MarkdownCalendarTests(unittest.TestCase):
         )
         self.assertIn("### 予定詳細", rendered)
         self.assertIn("- **件名**: 岱明夕練", rendered)
+        self.assertIn(f"[↑2026年7月](#{month_anchor_id(7)})", rendered)
+        self.assertIn(format_back_to_top_link(), rendered)
         self.assertIn("各自アップ、600m2本（1500mRP、r=8分）", rendered)
         self.assertIn('<a id="memos"></a>', rendered)
         self.assertIn("## 日付なしメモ", rendered)
