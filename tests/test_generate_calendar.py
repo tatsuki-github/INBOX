@@ -84,7 +84,8 @@ class MarkdownCalendarTests(unittest.TestCase):
         )
         details = format_markdown_event_details_block(event, day, 0)
         self.assertIn(f'<a id="{event_anchor_id(day, 0)}"></a>', details)
-        self.assertIn("#### 18:00 岱明夕練", details)
+        self.assertIn("<details>", details)
+        self.assertIn("<summary>18:00 岱明夕練</summary>", details)
         self.assertIn("- **件名**: 岱明夕練", details)
         self.assertIn("- **開始時刻**: 18:00", details)
         self.assertIn("- **終了時刻**: 21:00", details)
@@ -161,6 +162,7 @@ class MarkdownCalendarTests(unittest.TestCase):
         self.assertIn("## 日付なしメモ", rendered)
         self.assertIn(f"- [買い物リスト](#{memo_anchor_id(0)})", rendered)
         self.assertIn("### メモ詳細", rendered)
+        self.assertIn("<details>", rendered.split("### メモ詳細", 1)[1])
         self.assertIn("- **件名**: 買い物リスト", rendered)
         self.assertIn("- 牛乳", rendered)
 

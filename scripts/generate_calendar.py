@@ -487,6 +487,16 @@ def escape_markdown_table_cell(text: str) -> str:
     return text.replace("|", "\\|").replace("\n", " ").strip()
 
 
+def escape_html(text: str) -> str:
+    """HTML 属性・summary 内の特殊文字をエスケープする。"""
+    return (
+        text.replace("&", "&amp;")
+        .replace("<", "&lt;")
+        .replace(">", "&gt;")
+        .replace('"', "&quot;")
+    )
+
+
 def event_anchor_id(day: date, index: int) -> str:
     """1日の予定一覧から詳細セクションへ飛ぶアンカー ID。"""
     return f"event-{day.strftime('%Y%m%d')}-{index:02d}"
@@ -558,13 +568,15 @@ def format_markdown_event_details_body(event: Event, day: date) -> str:
 
 
 def format_markdown_event_details_block(event: Event, day: date, index: int) -> str:
-    """アンカー付きの予定詳細ブロック（クリック後すぐ全文表示）。"""
+    """アンカー付きの予定詳細ブロック（details で折りたたみ）。"""
     summary = format_markdown_event_summary(event)
     body = format_markdown_event_details_body(event, day)
     return (
-        f'<a id="{event_anchor_id(day, index)}"></a>\n\n'
-        f"#### {summary}\n\n"
-        f"{body}"
+        f'<a id="{event_anchor_id(day, index)}"></a>\n'
+        f"<details>\n"
+        f"<summary>{escape_html(summary)}</summary>\n\n"
+        f"{body}\n\n"
+        f"</details>"
     )
 
 
@@ -584,12 +596,14 @@ def format_markdown_memo_details_body(memo: Event) -> str:
 
 
 def format_markdown_memo_details_block(memo: Event, index: int) -> str:
-    """アンカー付きのメモ詳細ブロック。"""
+    """アンカー付きのメモ詳細ブロック（details で折りたたみ）。"""
     body = format_markdown_memo_details_body(memo)
     return (
-        f'<a id="{memo_anchor_id(index)}"></a>\n\n'
-        f"#### {memo.title.strip()}\n\n"
-        f"{body}"
+        f'<a id="{memo_anchor_id(index)}"></a>\n'
+        f"<details>\n"
+        f"<summary>{escape_html(memo.title.strip())}</summary>\n\n"
+        f"{body}\n\n"
+        f"</details>"
     )
 
 

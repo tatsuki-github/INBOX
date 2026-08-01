@@ -16,8 +16,8 @@
 ### 予定詳細
 
 <a id="event-20230101-00"></a>
-
-#### 元日
+<details>
+<summary>元日</summary>
 
 - **件名**: 元日
 - **表示日**: 2023-01-01
@@ -37,11 +37,13 @@
 
 日本の祝日
 
+</details>
+
 ---
 
 <a id="event-20230102-00"></a>
-
-#### 元日 振替休日
+<details>
+<summary>元日 振替休日</summary>
 
 - **件名**: 元日 振替休日
 - **表示日**: 2023-01-02
@@ -61,11 +63,13 @@
 
 日本の祝日
 
+</details>
+
 ---
 
 <a id="event-20230103-00"></a>
-
-#### 自分の練習
+<details>
+<summary>自分の練習</summary>
 
 - **件名**: 自分の練習
 - **表示日**: 2023-01-03
@@ -86,11 +90,13 @@
 ペース: k/4'21
 距離: 10.00km
 
+</details>
+
 ---
 
 <a id="event-20230109-00"></a>
-
-#### 成人の日
+<details>
+<summary>成人の日</summary>
 
 - **件名**: 成人の日
 - **表示日**: 2023-01-09
@@ -110,6 +116,8 @@
 
 日本の祝日
 
+</details>
+
 [↑2023年1月](#month-01) | [↑ページトップ](#page-top)
 
 <a id="month-02"></a>
@@ -123,8 +131,8 @@
 ### 予定詳細
 
 <a id="event-20230211-00"></a>
-
-#### 建国記念の日
+<details>
+<summary>建国記念の日</summary>
 
 - **件名**: 建国記念の日
 - **表示日**: 2023-02-11
@@ -144,11 +152,13 @@
 
 日本の祝日
 
+</details>
+
 ---
 
 <a id="event-20230223-00"></a>
-
-#### 天皇誕生日
+<details>
+<summary>天皇誕生日</summary>
 
 - **件名**: 天皇誕生日
 - **表示日**: 2023-02-23
@@ -168,6 +178,8 @@
 
 日本の祝日
 
+</details>
+
 [↑2023年2月](#month-02) | [↑ページトップ](#page-top)
 
 <a id="month-03"></a>
@@ -183,8 +195,8 @@
 ### 予定詳細
 
 <a id="event-20230309-00"></a>
-
-#### 23:00 大学立ち入り禁止
+<details>
+<summary>23:00 大学立ち入り禁止</summary>
 
 - **件名**: 大学立ち入り禁止
 - **表示日**: 2023-03-09
@@ -204,11 +216,13 @@
 
 （なし）
 
+</details>
+
 ---
 
 <a id="event-20230321-00"></a>
-
-#### 春分の日
+<details>
+<summary>春分の日</summary>
 
 - **件名**: 春分の日
 - **表示日**: 2023-03-21
@@ -228,11 +242,13 @@
 
 日本の祝日
 
+</details>
+
 ---
 
 <a id="event-20230325-00"></a>
-
-#### 大牟田春季記録会
+<details>
+<summary>大牟田春季記録会</summary>
 
 - **件名**: 大牟田春季記録会
 - **表示日**: 2023-03-25
@@ -252,11 +268,13 @@
 
 （なし）
 
+</details>
+
 ---
 
 <a id="event-20230328-00"></a>
-
-#### 09:00 音楽部会打ち上げ
+<details>
+<summary>09:00 音楽部会打ち上げ</summary>
 
 - **件名**: 音楽部会打ち上げ
 - **表示日**: 2023-03-28
@@ -277,6 +295,8 @@
 https://www.hotpepper.jp/strJ000034086/
 https://www.google.com/maps/place/32%C2%B048'02.2%22N+130%C2%B042'24.2%22E/@32.8006023,130.7067207,18z/data=!4m4!3m3!8m2!3d32.8006023!4d130.7067207?hl=ja
 
+</details>
+
 [↑2023年3月](#month-03) | [↑ページトップ](#page-top)
 
 <a id="month-04"></a>
@@ -292,8 +312,8 @@ https://www.google.com/maps/place/32%C2%B048'02.2%22N+130%C2%B042'24.2%22E/@32.8
 ### 予定詳細
 
 <a id="event-20230402-00"></a>
-
-#### 千葉出張
+<details>
+<summary>千葉出張</summary>
 
 - **件名**: 千葉出張
 - **表示日**: 2023-04-02
@@ -319,11 +339,13 @@ https://www.google.com/maps/place/32%C2%B048'02.2%22N+130%C2%B042'24.2%22E/@32.8
 羽田16:35→熊本18:30 
 アパホテル（西船橋駅前）
 
+</details>
+
 ---
 
 <a id="event-20230427-00"></a>
-
-#### 在宅勤務
+<details>
+<summary>在宅勤務</summary>
 
 - **件名**: 在宅勤務
 - **表示日**: 2023-04-27
@@ -343,11 +365,13 @@ https://www.google.com/maps/place/32%C2%B048'02.2%22N+130%C2%B042'24.2%22E/@32.8
 
 （なし）
 
+</details>
+
 ---
 
 <a id="event-20230428-00"></a>
-
-#### 在宅勤務
+<details>
+<summary>在宅勤務</summary>
 
 - **件名**: 在宅勤務
 - **表示日**: 2023-04-28
@@ -367,11 +391,13 @@ https://www.google.com/maps/place/32%C2%B048'02.2%22N+130%C2%B042'24.2%22E/@32.8
 
 （なし）
 
+</details>
+
 ---
 
 <a id="event-20230429-00"></a>
-
-#### 昭和の日
+<details>
+<summary>昭和の日</summary>
 
 - **件名**: 昭和の日
 - **表示日**: 2023-04-29
@@ -391,6 +417,8 @@ https://www.google.com/maps/place/32%C2%B048'02.2%22N+130%C2%B042'24.2%22E/@32.8
 
 日本の祝日
 
+</details>
+
 [↑2023年4月](#month-04) | [↑ページトップ](#page-top)
 
 <a id="month-05"></a>
@@ -407,8 +435,8 @@ https://www.google.com/maps/place/32%C2%B048'02.2%22N+130%C2%B042'24.2%22E/@32.8
 ### 予定詳細
 
 <a id="event-20230502-00"></a>
-
-#### 在宅勤務
+<details>
+<summary>在宅勤務</summary>
 
 - **件名**: 在宅勤務
 - **表示日**: 2023-05-02
@@ -428,11 +456,13 @@ https://www.google.com/maps/place/32%C2%B048'02.2%22N+130%C2%B042'24.2%22E/@32.8
 
 （なし）
 
+</details>
+
 ---
 
 <a id="event-20230503-00"></a>
-
-#### 憲法記念日
+<details>
+<summary>憲法記念日</summary>
 
 - **件名**: 憲法記念日
 - **表示日**: 2023-05-03
@@ -452,11 +482,13 @@ https://www.google.com/maps/place/32%C2%B048'02.2%22N+130%C2%B042'24.2%22E/@32.8
 
 日本の祝日
 
+</details>
+
 ---
 
 <a id="event-20230504-00"></a>
-
-#### みどりの日
+<details>
+<summary>みどりの日</summary>
 
 - **件名**: みどりの日
 - **表示日**: 2023-05-04
@@ -476,11 +508,13 @@ https://www.google.com/maps/place/32%C2%B048'02.2%22N+130%C2%B042'24.2%22E/@32.8
 
 日本の祝日
 
+</details>
+
 ---
 
 <a id="event-20230505-00"></a>
-
-#### 11:00 fabpro MTG
+<details>
+<summary>11:00 fabpro MTG</summary>
 
 - **件名**: fabpro MTG
 - **表示日**: 2023-05-05
@@ -500,11 +534,13 @@ https://www.google.com/maps/place/32%C2%B048'02.2%22N+130%C2%B042'24.2%22E/@32.8
 
 （なし）
 
+</details>
+
 ---
 
 <a id="event-20230505-01"></a>
-
-#### こどもの日
+<details>
+<summary>こどもの日</summary>
 
 - **件名**: こどもの日
 - **表示日**: 2023-05-05
@@ -524,11 +560,13 @@ https://www.google.com/maps/place/32%C2%B048'02.2%22N+130%C2%B042'24.2%22E/@32.8
 
 日本の祝日
 
+</details>
+
 ---
 
 <a id="event-20230526-00"></a>
-
-#### 03:00 熊本メンバーで昼食
+<details>
+<summary>03:00 熊本メンバーで昼食</summary>
 
 - **件名**: 熊本メンバーで昼食
 - **表示日**: 2023-05-26
@@ -548,6 +586,8 @@ https://www.google.com/maps/place/32%C2%B048'02.2%22N+130%C2%B042'24.2%22E/@32.8
 
 （なし）
 
+</details>
+
 [↑2023年5月](#month-05) | [↑ページトップ](#page-top)
 
 <a id="month-06"></a>
@@ -564,8 +604,8 @@ https://www.google.com/maps/place/32%C2%B048'02.2%22N+130%C2%B042'24.2%22E/@32.8
 ### 予定詳細
 
 <a id="event-20230603-00"></a>
-
-#### 荒尾市陸上競技選手権
+<details>
+<summary>荒尾市陸上競技選手権</summary>
 
 - **件名**: 荒尾市陸上競技選手権
 - **表示日**: 2023-06-03
@@ -585,11 +625,13 @@ https://www.google.com/maps/place/32%C2%B048'02.2%22N+130%C2%B042'24.2%22E/@32.8
 
 （なし）
 
+</details>
+
 ---
 
 <a id="event-20230605-00"></a>
-
-#### 10:00 もんじゃ
+<details>
+<summary>10:00 もんじゃ</summary>
 
 - **件名**: もんじゃ
 - **表示日**: 2023-06-05
@@ -609,11 +651,13 @@ https://www.google.com/maps/place/32%C2%B048'02.2%22N+130%C2%B042'24.2%22E/@32.8
 
 （なし）
 
+</details>
+
 ---
 
 <a id="event-20230610-00"></a>
-
-#### 中学選手権
+<details>
+<summary>中学選手権</summary>
 
 - **件名**: 中学選手権
 - **表示日**: 2023-06-10
@@ -633,11 +677,13 @@ https://www.google.com/maps/place/32%C2%B048'02.2%22N+130%C2%B042'24.2%22E/@32.8
 
 （なし）
 
+</details>
+
 ---
 
 <a id="event-20230618-00"></a>
-
-#### 免許更新
+<details>
+<summary>免許更新</summary>
 
 - **件名**: 免許更新
 - **表示日**: 2023-06-18
@@ -657,11 +703,13 @@ https://www.google.com/maps/place/32%C2%B048'02.2%22N+130%C2%B042'24.2%22E/@32.8
 
 （なし）
 
+</details>
+
 ---
 
 <a id="event-20230624-00"></a>
-
-#### 通信陸上
+<details>
+<summary>通信陸上</summary>
 
 - **件名**: 通信陸上
 - **表示日**: 2023-06-24
@@ -680,6 +728,8 @@ https://www.google.com/maps/place/32%C2%B048'02.2%22N+130%C2%B042'24.2%22E/@32.8
 **説明**
 
 （なし）
+
+</details>
 
 [↑2023年6月](#month-06) | [↑ページトップ](#page-top)
 
@@ -700,8 +750,8 @@ https://www.google.com/maps/place/32%C2%B048'02.2%22N+130%C2%B042'24.2%22E/@32.8
 ### 予定詳細
 
 <a id="event-20230701-00"></a>
-
-#### 熊本県長距離記録会
+<details>
+<summary>熊本県長距離記録会</summary>
 
 - **件名**: 熊本県長距離記録会
 - **表示日**: 2023-07-01
@@ -721,11 +771,13 @@ https://www.google.com/maps/place/32%C2%B048'02.2%22N+130%C2%B042'24.2%22E/@32.8
 
 （なし）
 
+</details>
+
 ---
 
 <a id="event-20230707-00"></a>
-
-#### 12:30 夕食
+<details>
+<summary>12:30 夕食</summary>
 
 - **件名**: 夕食
 - **表示日**: 2023-07-07
@@ -745,11 +797,13 @@ https://www.google.com/maps/place/32%C2%B048'02.2%22N+130%C2%B042'24.2%22E/@32.8
 
 （なし）
 
+</details>
+
 ---
 
 <a id="event-20230708-00"></a>
-
-#### 国体最終選考
+<details>
+<summary>国体最終選考</summary>
 
 - **件名**: 国体最終選考
 - **表示日**: 2023-07-08
@@ -769,11 +823,13 @@ https://www.google.com/maps/place/32%C2%B048'02.2%22N+130%C2%B042'24.2%22E/@32.8
 
 （なし）
 
+</details>
+
 ---
 
 <a id="event-20230709-00"></a>
-
-#### 免許更新予備日
+<details>
+<summary>免許更新予備日</summary>
 
 - **件名**: 免許更新予備日
 - **表示日**: 2023-07-09
@@ -793,11 +849,13 @@ https://www.google.com/maps/place/32%C2%B048'02.2%22N+130%C2%B042'24.2%22E/@32.8
 
 （なし）
 
+</details>
+
 ---
 
 <a id="event-20230717-00"></a>
-
-#### 海の日
+<details>
+<summary>海の日</summary>
 
 - **件名**: 海の日
 - **表示日**: 2023-07-17
@@ -817,11 +875,13 @@ https://www.google.com/maps/place/32%C2%B048'02.2%22N+130%C2%B042'24.2%22E/@32.8
 
 日本の祝日
 
+</details>
+
 ---
 
 <a id="event-20230722-00"></a>
-
-#### 岱明中夏休み開始
+<details>
+<summary>岱明中夏休み開始</summary>
 
 - **件名**: 岱明中夏休み開始
 - **表示日**: 2023-07-22
@@ -841,11 +901,13 @@ https://www.google.com/maps/place/32%C2%B048'02.2%22N+130%C2%B042'24.2%22E/@32.8
 
 （なし）
 
+</details>
+
 ---
 
 <a id="event-20230722-01"></a>
-
-#### 県中体連陸上
+<details>
+<summary>県中体連陸上</summary>
 
 - **件名**: 県中体連陸上
 - **表示日**: 2023-07-22
@@ -865,11 +927,13 @@ https://www.google.com/maps/place/32%C2%B048'02.2%22N+130%C2%B042'24.2%22E/@32.8
 
 （なし）
 
+</details>
+
 ---
 
 <a id="event-20230729-00"></a>
-
-#### 熊本市陸上記録会
+<details>
+<summary>熊本市陸上記録会</summary>
 
 - **件名**: 熊本市陸上記録会
 - **表示日**: 2023-07-29
@@ -889,11 +953,13 @@ https://www.google.com/maps/place/32%C2%B048'02.2%22N+130%C2%B042'24.2%22E/@32.8
 
 （なし）
 
+</details>
+
 ---
 
 <a id="event-20230730-00"></a>
-
-#### 荒尾サマー陸上
+<details>
+<summary>荒尾サマー陸上</summary>
 
 - **件名**: 荒尾サマー陸上
 - **表示日**: 2023-07-30
@@ -912,6 +978,8 @@ https://www.google.com/maps/place/32%C2%B048'02.2%22N+130%C2%B042'24.2%22E/@32.8
 **説明**
 
 （なし）
+
+</details>
 
 [↑2023年7月](#month-07) | [↑ページトップ](#page-top)
 
@@ -933,8 +1001,8 @@ https://www.google.com/maps/place/32%C2%B048'02.2%22N+130%C2%B042'24.2%22E/@32.8
 ### 予定詳細
 
 <a id="event-20230811-00"></a>
-
-#### 山の日
+<details>
+<summary>山の日</summary>
 
 - **件名**: 山の日
 - **表示日**: 2023-08-11
@@ -954,11 +1022,13 @@ https://www.google.com/maps/place/32%C2%B048'02.2%22N+130%C2%B042'24.2%22E/@32.8
 
 日本の祝日
 
+</details>
+
 ---
 
 <a id="event-20230814-00"></a>
-
-#### 休暇日
+<details>
+<summary>休暇日</summary>
 
 - **件名**: 休暇日
 - **表示日**: 2023-08-14
@@ -978,11 +1048,13 @@ https://www.google.com/maps/place/32%C2%B048'02.2%22N+130%C2%B042'24.2%22E/@32.8
 
 （なし）
 
+</details>
+
 ---
 
 <a id="event-20230815-00"></a>
-
-#### 休暇日
+<details>
+<summary>休暇日</summary>
 
 - **件名**: 休暇日
 - **表示日**: 2023-08-15
@@ -1002,11 +1074,13 @@ https://www.google.com/maps/place/32%C2%B048'02.2%22N+130%C2%B042'24.2%22E/@32.8
 
 （なし）
 
+</details>
+
 ---
 
 <a id="event-20230819-00"></a>
-
-#### MDC福岡
+<details>
+<summary>MDC福岡</summary>
 
 - **件名**: MDC福岡
 - **表示日**: 2023-08-19
@@ -1026,11 +1100,13 @@ https://www.google.com/maps/place/32%C2%B048'02.2%22N+130%C2%B042'24.2%22E/@32.8
 
 （なし）
 
+</details>
+
 ---
 
 <a id="event-20230822-00"></a>
-
-#### 10:00 食事会
+<details>
+<summary>10:00 食事会</summary>
 
 - **件名**: 食事会
 - **表示日**: 2023-08-22
@@ -1050,11 +1126,13 @@ https://www.google.com/maps/place/32%C2%B048'02.2%22N+130%C2%B042'24.2%22E/@32.8
 
 （なし）
 
+</details>
+
 ---
 
 <a id="event-20230825-00"></a>
-
-#### 11:00 FABPROミーティング
+<details>
+<summary>11:00 FABPROミーティング</summary>
 
 - **件名**: FABPROミーティング
 - **表示日**: 2023-08-25
@@ -1074,11 +1152,13 @@ https://www.google.com/maps/place/32%C2%B048'02.2%22N+130%C2%B042'24.2%22E/@32.8
 
 （なし）
 
+</details>
+
 ---
 
 <a id="event-20230826-00"></a>
-
-#### 10:00 県大練習会
+<details>
+<summary>10:00 県大練習会</summary>
 
 - **件名**: 県大練習会
 - **表示日**: 2023-08-26
@@ -1098,11 +1178,13 @@ https://www.google.com/maps/place/32%C2%B048'02.2%22N+130%C2%B042'24.2%22E/@32.8
 
 （なし）
 
+</details>
+
 ---
 
 <a id="event-20230826-01"></a>
-
-#### ジュニアオリンピック
+<details>
+<summary>ジュニアオリンピック</summary>
 
 - **件名**: ジュニアオリンピック
 - **表示日**: 2023-08-26
@@ -1122,11 +1204,13 @@ https://www.google.com/maps/place/32%C2%B048'02.2%22N+130%C2%B042'24.2%22E/@32.8
 
 （なし）
 
+</details>
+
 ---
 
 <a id="event-20230827-00"></a>
-
-#### 10:00 県大練習会
+<details>
+<summary>10:00 県大練習会</summary>
 
 - **件名**: 県大練習会
 - **表示日**: 2023-08-27
@@ -1146,11 +1230,13 @@ https://www.google.com/maps/place/32%C2%B048'02.2%22N+130%C2%B042'24.2%22E/@32.8
 
 （なし）
 
+</details>
+
 ---
 
 <a id="event-20230827-01"></a>
-
-#### 岱明中夏休み終了
+<details>
+<summary>岱明中夏休み終了</summary>
 
 - **件名**: 岱明中夏休み終了
 - **表示日**: 2023-08-27
@@ -1170,11 +1256,13 @@ https://www.google.com/maps/place/32%C2%B048'02.2%22N+130%C2%B042'24.2%22E/@32.8
 
 （なし）
 
+</details>
+
 ---
 
 <a id="event-20230830-00"></a>
-
-#### 10:00 県大練習会
+<details>
+<summary>10:00 県大練習会</summary>
 
 - **件名**: 県大練習会
 - **表示日**: 2023-08-30
@@ -1193,6 +1281,8 @@ https://www.google.com/maps/place/32%C2%B048'02.2%22N+130%C2%B042'24.2%22E/@32.8
 **説明**
 
 （なし）
+
+</details>
 
 [↑2023年8月](#month-08) | [↑ページトップ](#page-top)
 
@@ -1219,8 +1309,8 @@ https://www.google.com/maps/place/32%C2%B048'02.2%22N+130%C2%B042'24.2%22E/@32.8
 ### 予定詳細
 
 <a id="event-20230902-00"></a>
-
-#### 学年別陸上
+<details>
+<summary>学年別陸上</summary>
 
 - **件名**: 学年別陸上
 - **表示日**: 2023-09-02
@@ -1240,11 +1330,13 @@ https://www.google.com/maps/place/32%C2%B048'02.2%22N+130%C2%B042'24.2%22E/@32.8
 
 （なし）
 
+</details>
+
 ---
 
 <a id="event-20230903-00"></a>
-
-#### 10:00 県大練習会
+<details>
+<summary>10:00 県大練習会</summary>
 
 - **件名**: 県大練習会
 - **表示日**: 2023-09-03
@@ -1264,11 +1356,13 @@ https://www.google.com/maps/place/32%C2%B048'02.2%22N+130%C2%B042'24.2%22E/@32.8
 
 （なし）
 
+</details>
+
 ---
 
 <a id="event-20230906-00"></a>
-
-#### 10:00 県大練習会
+<details>
+<summary>10:00 県大練習会</summary>
 
 - **件名**: 県大練習会
 - **表示日**: 2023-09-06
@@ -1288,11 +1382,13 @@ https://www.google.com/maps/place/32%C2%B048'02.2%22N+130%C2%B042'24.2%22E/@32.8
 
 （なし）
 
+</details>
+
 ---
 
 <a id="event-20230908-00"></a>
-
-#### 09:30 県民体育祭　結団式
+<details>
+<summary>09:30 県民体育祭　結団式</summary>
 
 - **件名**: 県民体育祭　結団式
 - **表示日**: 2023-09-08
@@ -1312,11 +1408,13 @@ https://www.google.com/maps/place/32%C2%B048'02.2%22N+130%C2%B042'24.2%22E/@32.8
 
 （なし）
 
+</details>
+
 ---
 
 <a id="event-20230910-00"></a>
-
-#### 10:00 県大練習会
+<details>
+<summary>10:00 県大練習会</summary>
 
 - **件名**: 県大練習会
 - **表示日**: 2023-09-10
@@ -1336,11 +1434,13 @@ https://www.google.com/maps/place/32%C2%B048'02.2%22N+130%C2%B042'24.2%22E/@32.8
 
 （なし）
 
+</details>
+
 ---
 
 <a id="event-20230913-00"></a>
-
-#### 10:00 県大練習会
+<details>
+<summary>10:00 県大練習会</summary>
 
 - **件名**: 県大練習会
 - **表示日**: 2023-09-13
@@ -1360,11 +1460,13 @@ https://www.google.com/maps/place/32%C2%B048'02.2%22N+130%C2%B042'24.2%22E/@32.8
 
 （なし）
 
+</details>
+
 ---
 
 <a id="event-20230915-00"></a>
-
-#### 10:00 県大練習会
+<details>
+<summary>10:00 県大練習会</summary>
 
 - **件名**: 県大練習会
 - **表示日**: 2023-09-15
@@ -1384,11 +1486,13 @@ https://www.google.com/maps/place/32%C2%B048'02.2%22N+130%C2%B042'24.2%22E/@32.8
 
 （なし）
 
+</details>
+
 ---
 
 <a id="event-20230915-01"></a>
-
-#### 高校新人戦
+<details>
+<summary>高校新人戦</summary>
 
 - **件名**: 高校新人戦
 - **表示日**: 2023-09-15
@@ -1408,11 +1512,13 @@ https://www.google.com/maps/place/32%C2%B048'02.2%22N+130%C2%B042'24.2%22E/@32.8
 
 （なし）
 
+</details>
+
 ---
 
 <a id="event-20230917-00"></a>
-
-#### 10:00 県大練習会
+<details>
+<summary>10:00 県大練習会</summary>
 
 - **件名**: 県大練習会
 - **表示日**: 2023-09-17
@@ -1432,11 +1538,13 @@ https://www.google.com/maps/place/32%C2%B048'02.2%22N+130%C2%B042'24.2%22E/@32.8
 
 （なし）
 
+</details>
+
 ---
 
 <a id="event-20230918-00"></a>
-
-#### 敬老の日
+<details>
+<summary>敬老の日</summary>
 
 - **件名**: 敬老の日
 - **表示日**: 2023-09-18
@@ -1456,11 +1564,13 @@ https://www.google.com/maps/place/32%C2%B048'02.2%22N+130%C2%B042'24.2%22E/@32.8
 
 日本の祝日
 
+</details>
+
 ---
 
 <a id="event-20230920-00"></a>
-
-#### 10:00 県大練習会
+<details>
+<summary>10:00 県大練習会</summary>
 
 - **件名**: 県大練習会
 - **表示日**: 2023-09-20
@@ -1480,11 +1590,13 @@ https://www.google.com/maps/place/32%C2%B048'02.2%22N+130%C2%B042'24.2%22E/@32.8
 
 （なし）
 
+</details>
+
 ---
 
 <a id="event-20230922-00"></a>
-
-#### 自分の練習
+<details>
+<summary>自分の練習</summary>
 
 - **件名**: 自分の練習
 - **表示日**: 2023-09-22
@@ -1506,11 +1618,13 @@ https://www.google.com/maps/place/32%C2%B048'02.2%22N+130%C2%B042'24.2%22E/@32.8
 距離: 6.82km
 時間: 30'00
 
+</details>
+
 ---
 
 <a id="event-20230923-00"></a>
-
-#### 県民体育祭
+<details>
+<summary>県民体育祭</summary>
 
 - **件名**: 県民体育祭
 - **表示日**: 2023-09-23
@@ -1530,11 +1644,13 @@ https://www.google.com/maps/place/32%C2%B048'02.2%22N+130%C2%B042'24.2%22E/@32.8
 
 （なし）
 
+</details>
+
 ---
 
 <a id="event-20230923-01"></a>
-
-#### 秋分の日
+<details>
+<summary>秋分の日</summary>
 
 - **件名**: 秋分の日
 - **表示日**: 2023-09-23
@@ -1554,11 +1670,13 @@ https://www.google.com/maps/place/32%C2%B048'02.2%22N+130%C2%B042'24.2%22E/@32.8
 
 日本の祝日
 
+</details>
+
 ---
 
 <a id="event-20230927-00"></a>
-
-#### 01:00 のレビュー: AZ-104 - Microsoft Azure Administrator - 日本語 (JPN)
+<details>
+<summary>01:00 のレビュー: AZ-104 - Microsoft Azure Administrator - 日本語 (JPN)</summary>
 
 - **件名**: のレビュー: AZ-104 - Microsoft Azure Administrator - 日本語 (JPN)
 - **表示日**: 2023-09-27
@@ -1583,11 +1701,13 @@ Wビルディング辛島公園5Ｆ パソコンスクールシステムラン�
 
 Confirmation number: 0068-7835-0840
 
+</details>
+
 ---
 
 <a id="event-20230930-00"></a>
-
-#### 中学ジュニア大会
+<details>
+<summary>中学ジュニア大会</summary>
 
 - **件名**: 中学ジュニア大会
 - **表示日**: 2023-09-30
@@ -1607,6 +1727,8 @@ Confirmation number: 0068-7835-0840
 
 （なし）
 
+</details>
+
 [↑2023年9月](#month-09) | [↑ページトップ](#page-top)
 
 <a id="month-10"></a>
@@ -1625,8 +1747,8 @@ Confirmation number: 0068-7835-0840
 ### 予定詳細
 
 <a id="event-20231001-00"></a>
-
-#### 岱明町町民体育祭
+<details>
+<summary>岱明町町民体育祭</summary>
 
 - **件名**: 岱明町町民体育祭
 - **表示日**: 2023-10-01
@@ -1646,11 +1768,13 @@ Confirmation number: 0068-7835-0840
 
 （なし）
 
+</details>
+
 ---
 
 <a id="event-20231004-00"></a>
-
-#### 01:00 のレビュー: AZ-305 - Designing Microsoft Azure Infrastructure Solutions - 日本語 (JPN)
+<details>
+<summary>01:00 のレビュー: AZ-305 - Designing Microsoft Azure Infrastructure Solutions - 日本語 (JPN)</summary>
 
 - **件名**: のレビュー: AZ-305 - Designing Microsoft Azure Infrastructure Solutions - 日本語 (JPN)
 - **表示日**: 2023-10-04
@@ -1675,11 +1799,13 @@ Wビルディング辛島公園5Ｆ パソコンスクールシステムラン�
 
 Confirmation number: 0068-8995-1357
 
+</details>
+
 ---
 
 <a id="event-20231006-00"></a>
-
-#### 10:00 会社の飲み会
+<details>
+<summary>10:00 会社の飲み会</summary>
 
 - **件名**: 会社の飲み会
 - **表示日**: 2023-10-06
@@ -1699,11 +1825,13 @@ Confirmation number: 0068-8995-1357
 
 （なし）
 
+</details>
+
 ---
 
 <a id="event-20231009-00"></a>
-
-#### スポーツの日
+<details>
+<summary>スポーツの日</summary>
 
 - **件名**: スポーツの日
 - **表示日**: 2023-10-09
@@ -1723,11 +1851,13 @@ Confirmation number: 0068-8995-1357
 
 日本の祝日
 
+</details>
+
 ---
 
 <a id="event-20231013-00"></a>
-
-#### 会社合宿
+<details>
+<summary>会社合宿</summary>
 
 - **件名**: 会社合宿
 - **表示日**: 2023-10-13
@@ -1747,11 +1877,13 @@ Confirmation number: 0068-8995-1357
 
 （なし）
 
+</details>
+
 ---
 
 <a id="event-20231016-00"></a>
-
-#### 10:00 Meta Quest 3 おさわり会
+<details>
+<summary>10:00 Meta Quest 3 おさわり会</summary>
 
 - **件名**: Meta Quest 3 おさわり会
 - **表示日**: 2023-10-16
@@ -1771,11 +1903,13 @@ Confirmation number: 0068-8995-1357
 
 （なし）
 
+</details>
+
 ---
 
 <a id="event-20231018-00"></a>
-
-#### 中体連駅伝
+<details>
+<summary>中体連駅伝</summary>
 
 - **件名**: 中体連駅伝
 - **表示日**: 2023-10-18
@@ -1794,6 +1928,8 @@ Confirmation number: 0068-8995-1357
 **説明**
 
 （なし）
+
+</details>
 
 [↑2023年10月](#month-10) | [↑ページトップ](#page-top)
 
@@ -1814,8 +1950,8 @@ Confirmation number: 0068-8995-1357
 ### 予定詳細
 
 <a id="event-20231103-00"></a>
-
-#### 文化の日
+<details>
+<summary>文化の日</summary>
 
 - **件名**: 文化の日
 - **表示日**: 2023-11-03
@@ -1835,11 +1971,13 @@ Confirmation number: 0068-8995-1357
 
 日本の祝日
 
+</details>
+
 ---
 
 <a id="event-20231106-00"></a>
-
-#### 電車運休
+<details>
+<summary>電車運休</summary>
 
 - **件名**: 電車運休
 - **表示日**: 2023-11-06
@@ -1859,11 +1997,13 @@ Confirmation number: 0068-8995-1357
 
 （なし）
 
+</details>
+
 ---
 
 <a id="event-20231112-00"></a>
-
-#### クラスターイベント
+<details>
+<summary>クラスターイベント</summary>
 
 - **件名**: クラスターイベント
 - **表示日**: 2023-11-12
@@ -1883,11 +2023,13 @@ Confirmation number: 0068-8995-1357
 
 （なし）
 
+</details>
+
 ---
 
 <a id="event-20231113-00"></a>
-
-#### 電車運休
+<details>
+<summary>電車運休</summary>
 
 - **件名**: 電車運休
 - **表示日**: 2023-11-13
@@ -1907,11 +2049,13 @@ Confirmation number: 0068-8995-1357
 
 （なし）
 
+</details>
+
 ---
 
 <a id="event-20231119-00"></a>
-
-#### オフラインイベント
+<details>
+<summary>オフラインイベント</summary>
 
 - **件名**: オフラインイベント
 - **表示日**: 2023-11-19
@@ -1931,11 +2075,13 @@ Confirmation number: 0068-8995-1357
 
 （なし）
 
+</details>
+
 ---
 
 <a id="event-20231119-01"></a>
-
-#### リアルイベント
+<details>
+<summary>リアルイベント</summary>
 
 - **件名**: リアルイベント
 - **表示日**: 2023-11-19
@@ -1955,11 +2101,13 @@ Confirmation number: 0068-8995-1357
 
 （なし）
 
+</details>
+
 ---
 
 <a id="event-20231120-00"></a>
-
-#### 電車運休
+<details>
+<summary>電車運休</summary>
 
 - **件名**: 電車運休
 - **表示日**: 2023-11-20
@@ -1979,11 +2127,13 @@ Confirmation number: 0068-8995-1357
 
 （なし）
 
+</details>
+
 ---
 
 <a id="event-20231123-00"></a>
-
-#### 勤労感謝の日
+<details>
+<summary>勤労感謝の日</summary>
 
 - **件名**: 勤労感謝の日
 - **表示日**: 2023-11-23
@@ -2003,11 +2153,13 @@ Confirmation number: 0068-8995-1357
 
 日本の祝日
 
+</details>
+
 ---
 
 <a id="event-20231126-00"></a>
-
-#### 玉名市民マラソン
+<details>
+<summary>玉名市民マラソン</summary>
 
 - **件名**: 玉名市民マラソン
 - **表示日**: 2023-11-26
@@ -2027,6 +2179,8 @@ Confirmation number: 0068-8995-1357
 
 （なし）
 
+</details>
+
 [↑2023年11月](#month-11) | [↑ページトップ](#page-top)
 
 <a id="month-12"></a>
@@ -2045,8 +2199,8 @@ Confirmation number: 0068-8995-1357
 ### 予定詳細
 
 <a id="event-20231209-00"></a>
-
-#### 長距離記録会
+<details>
+<summary>長距離記録会</summary>
 
 - **件名**: 長距離記録会
 - **表示日**: 2023-12-09
@@ -2066,11 +2220,13 @@ Confirmation number: 0068-8995-1357
 
 （なし）
 
+</details>
+
 ---
 
 <a id="event-20231211-00"></a>
-
-#### 22:50 健康診断
+<details>
+<summary>22:50 健康診断</summary>
 
 - **件名**: 健康診断
 - **表示日**: 2023-12-11
@@ -2090,11 +2246,13 @@ Confirmation number: 0068-8995-1357
 
 （なし）
 
+</details>
+
 ---
 
 <a id="event-20231211-01"></a>
-
-#### 自分の練習
+<details>
+<summary>自分の練習</summary>
 
 - **件名**: 自分の練習
 - **表示日**: 2023-12-11
@@ -2115,11 +2273,13 @@ Confirmation number: 0068-8995-1357
 ペース: k/4'30
 距離: 10.27km
 
+</details>
+
 ---
 
 <a id="event-20231213-00"></a>
-
-#### 01:00 のレビュー: AI-102 - Designing and Implementing a Microsoft Azure AI Solution - 日本語 (JPN)
+<details>
+<summary>01:00 のレビュー: AI-102 - Designing and Implementing a Microsoft Azure AI Solution - 日本語 (JPN)</summary>
 
 - **件名**: のレビュー: AI-102 - Designing and Implementing a Microsoft Azure AI Solution - 日本語 (JPN)
 - **表示日**: 2023-12-13
@@ -2144,11 +2304,13 @@ Wビルディング辛島公園5Ｆ パソコンスクールシステムラン�
 
 Confirmation number: 0069-6528-2214
 
+</details>
+
 ---
 
 <a id="event-20231216-00"></a>
-
-#### RKK学童駅伝
+<details>
+<summary>RKK学童駅伝</summary>
 
 - **件名**: RKK学童駅伝
 - **表示日**: 2023-12-16
@@ -2168,11 +2330,13 @@ Confirmation number: 0069-6528-2214
 
 （なし）
 
+</details>
+
 ---
 
 <a id="event-20231220-00"></a>
-
-#### 岱明中校内駅伝
+<details>
+<summary>岱明中校内駅伝</summary>
 
 - **件名**: 岱明中校内駅伝
 - **表示日**: 2023-12-20
@@ -2192,11 +2356,13 @@ Confirmation number: 0069-6528-2214
 
 （なし）
 
+</details>
+
 ---
 
 <a id="event-20231222-00"></a>
-
-#### 自分の練習
+<details>
+<summary>自分の練習</summary>
 
 - **件名**: 自分の練習
 - **表示日**: 2023-12-22
@@ -2217,11 +2383,13 @@ Confirmation number: 0069-6528-2214
 ペース: k/4'13
 距離: 8.67km
 
+</details>
+
 ---
 
 <a id="event-20231223-00"></a>
-
-#### 岱明中冬休み開始
+<details>
+<summary>岱明中冬休み開始</summary>
 
 - **件名**: 岱明中冬休み開始
 - **表示日**: 2023-12-23
@@ -2240,5 +2408,7 @@ Confirmation number: 0069-6528-2214
 **説明**
 
 （なし）
+
+</details>
 
 [↑2023年12月](#month-12) | [↑ページトップ](#page-top)
