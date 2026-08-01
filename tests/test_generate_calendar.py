@@ -11,10 +11,15 @@ sys.path.insert(0, str(ROOT / "scripts"))
 from generate_calendar import (  # noqa: E402
     Event,
     escape_markdown_table_cell,
+    event_anchor_id,
     event_occurrence_dates,
+    format_markdown_event_details_block,
     format_markdown_event_line,
+    format_markdown_event_link,
+    format_markdown_event_summary,
     group_events_by_date,
     maybe_write_root_calendar,
+    memo_anchor_id,
     month_anchor_id,
     render_markdown_calendar,
     write_markdown_calendar,
@@ -49,9 +54,36 @@ class MarkdownCalendarTests(unittest.TestCase):
             description="各自アップ、600m2本（1500mRP、r=8分）",
         )
         self.assertEqual(
-            format_markdown_event_line(event),
-            "18:00 岱明夕練（各自アップ、600m2本（1500mRP、r=8分））",
+            format_markdown_event_summary(event),
+            "18:00 岱明夕練",
         )
+        self.assertEqual(
+            format_markdown_event_line(event),
+            "18:00 岱明夕練",
+        )
+
+    def test_format_markdown_event_link_and_details(self) -> None:
+        event = Event(
+            title="岱明夕練",
+            start_date=date(2026, 7, 31),
+            end_date=date(2026, 7, 31),
+            all_day=False,
+            start_time=time(18, 0),
+            end_time=time(21, 0),
+            status="scheduled",
+            tags=["ランニング"],
+            description="各自アップ、600m2本（1500mRP、r=8分）",
+        )
+        day = date(2026, 7, 31)
+        self.assertEqual(
+            format_markdown_event_link(event, day, 0),
+            f"[18:00 岱明夕練](#{event_anchor_id(day, 0)})",
+        )
+        details = format_markdown_event_details_block(event, day, 0)
+        self.assertIn(f'<a id="{event_anchor_id(day, 0)}"></a>', details)
+        self.assertIn("<details>", details)
+        self.assertIn("各自アップ、600m2本（1500mRP、r=8分）", details)
+        self.assertIn("- **時刻**: 18:00 〜 21:00", details)
 
     def test_group_events_by_date_sorts_timed_before_all_day(self) -> None:
         timed = Event(
@@ -93,10 +125,17 @@ class MarkdownCalendarTests(unittest.TestCase):
         self.assertIn("[7月](#month-07)", rendered)
         self.assertIn(f'<a id="{month_anchor_id(7)}"></a>', rendered)
         self.assertIn("## 2026年7月", rendered)
-        self.assertIn("| 31 | 金 | 18:00 岱明夕練（各自アップ、600m2本（1500mRP、r=8分）） |", rendered)
+        self.assertIn(
+            f"| 31 | 金 | [18:00 岱明夕練](#{event_anchor_id(date(2026, 7, 31), 0)}) |",
+            rendered,
+        )
+        self.assertIn("### 予定詳細", rendered)
+        self.assertIn("各自アップ、600m2本（1500mRP、r=8分）", rendered)
         self.assertIn('<a id="memos"></a>', rendered)
         self.assertIn("## 日付なしメモ", rendered)
-        self.assertIn("- 買い物リスト — - 牛乳", rendered)
+        self.assertIn(f"- [買い物リスト](#{memo_anchor_id(0)})", rendered)
+        self.assertIn("### メモ詳細", rendered)
+        self.assertIn("- 牛乳", rendered)
 
 
 class RootCalendarTests(unittest.TestCase):
