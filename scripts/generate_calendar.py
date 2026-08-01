@@ -405,6 +405,26 @@ def write_source_csv(path: Path, events: list[Event]) -> None:
 
 
 WEEKDAY_JA = ("月", "火", "水", "木", "金", "土", "日")
+MONTH_NAMES_JA = (
+    "",
+    "1月",
+    "2月",
+    "3月",
+    "4月",
+    "5月",
+    "6月",
+    "7月",
+    "8月",
+    "9月",
+    "10月",
+    "11月",
+    "12月",
+)
+
+
+def month_anchor_id(month: int) -> str:
+    """月見出し用のアンカー ID（GitHub 互換）。"""
+    return f"month-{month:02d}"
 
 
 def escape_markdown_table_cell(text: str) -> str:
@@ -468,17 +488,32 @@ def render_markdown_calendar(events: list[Event], year: int) -> str:
     grouped = group_events_by_date(events, year)
     memos = [event for event in events if event.is_memo]
 
+    months_with_events = sorted(
+        {
+            day.month
+            for day in grouped
+            if day.year == year
+        }
+    )
+
     lines = [f"# {year}年カレンダー", ""]
 
-    for month in range(1, 13):
+    if months_with_events:
+        month_links = " | ".join(
+            f"[{MONTH_NAMES_JA[month]}](#{month_anchor_id(month)})"
+            for month in months_with_events
+        )
+        lines.append(month_links)
+        lines.append("")
+
+    for month in months_with_events:
         month_days = [
             day
             for day in sorted(grouped)
             if day.year == year and day.month == month
         ]
-        if not month_days:
-            continue
 
+        lines.append(f'<a id="{month_anchor_id(month)}"></a>')
         lines.append(f"## {year}年{month}月")
         lines.append("")
         lines.append("| 日 | 曜 | 予定 |")
@@ -495,6 +530,7 @@ def render_markdown_calendar(events: list[Event], year: int) -> str:
         lines.append("")
 
     if memos:
+        lines.append('<a id="memos"></a>')
         lines.append("## 日付なしメモ")
         lines.append("")
         for memo in memos:
@@ -510,6 +546,27 @@ def render_markdown_calendar(events: list[Event], year: int) -> str:
 
 def write_markdown_calendar(path: Path, events: list[Event], year: int) -> None:
     path.write_text(render_markdown_calendar(events, year), encoding="utf-8")
+
+
+def root_calendar_path() -> Path:
+    """リポジトリルートの今年用 calendar.md。"""
+    return ROOT / "calendar.md"
+
+
+def maybe_write_root_calendar(
+    events: list[Event],
+    year: int,
+    *,
+    calendar_path: Path,
+    root_path: Path | None = None,
+) -> Path | None:
+    """対象年が今年なら、ルートにも calendar.md を出力する。"""
+    if year != date.today().year:
+        return None
+
+    destination = root_path or root_calendar_path()
+    destination.write_text(calendar_path.read_text(encoding="utf-8"), encoding="utf-8")
+    return destination
 
 
 def default_input_path(year: int) -> Path:
@@ -600,6 +657,7 @@ def generate_year(
     write_notion_csv(notion_path, events)
     write_source_csv(source_path, events)
     write_markdown_calendar(calendar_path, events, year)
+    root_calendar = maybe_write_root_calendar(events, year, calendar_path=calendar_path)
 
     memo_count = sum(1 for e in events if e.is_memo)
     event_count = len(events) - memo_count
@@ -608,6 +666,8 @@ def generate_year(
     print(f"  Notion: {notion_path}")
     print(f"  Source: {source_path}")
     print(f"  Calendar: {calendar_path}")
+    if root_calendar is not None:
+        print(f"  Root calendar: {root_calendar}")
     return 0
 
 
