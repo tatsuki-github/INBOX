@@ -427,6 +427,31 @@ def month_anchor_id(month: int) -> str:
     return f"month-{month:02d}"
 
 
+def page_top_anchor_id() -> str:
+    """ページ先頭へ戻るアンカー ID。"""
+    return "page-top"
+
+
+def format_back_to_top_link() -> str:
+    """ページ先頭へのリンク。"""
+    return f"[↑ページトップ](#{page_top_anchor_id()})"
+
+
+def format_back_to_month_link(year: int, month: int) -> str:
+    """月見出し（カレンダー表）へのリンク。"""
+    return f"[↑{year}年{month}月](#{month_anchor_id(month)})"
+
+
+def format_month_navigation_footer(year: int, month: int) -> str:
+    """月セクション末尾の戻りリンク。"""
+    return " | ".join(
+        [
+            format_back_to_month_link(year, month),
+            format_back_to_top_link(),
+        ]
+    )
+
+
 EMPTY_LABEL = "（なし）"
 
 
@@ -599,7 +624,11 @@ def render_markdown_calendar(events: list[Event], year: int) -> str:
         }
     )
 
-    lines = [f"# {year}年カレンダー", ""]
+    lines = [
+        f'<a id="{page_top_anchor_id()}"></a>',
+        f"# {year}年カレンダー",
+        "",
+    ]
 
     if months_with_events:
         month_links = " | ".join(
@@ -644,6 +673,8 @@ def render_markdown_calendar(events: list[Event], year: int) -> str:
             lines.append("")
             lines.append("\n\n---\n\n".join(month_detail_blocks))
             lines.append("")
+            lines.append(format_month_navigation_footer(year, month))
+            lines.append("")
 
     if memos:
         lines.append('<a id="memos"></a>')
@@ -658,6 +689,8 @@ def render_markdown_calendar(events: list[Event], year: int) -> str:
             format_markdown_memo_details_block(memo, index)
             for index, memo in enumerate(memos)
         ))
+        lines.append("")
+        lines.append(format_back_to_top_link())
         lines.append("")
 
     return "\n".join(lines).rstrip() + "\n"
