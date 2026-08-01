@@ -432,6 +432,26 @@ def escape_markdown_table_cell(text: str) -> str:
     return text.replace("|", "\\|").replace("\n", " ").strip()
 
 
+def escape_html(text: str) -> str:
+    """HTML 属性・summary 内の特殊文字をエスケープする。"""
+    return (
+        text.replace("&", "&amp;")
+        .replace("<", "&lt;")
+        .replace(">", "&gt;")
+        .replace('"', "&quot;")
+    )
+
+
+def event_anchor_id(day: date, index: int) -> str:
+    """1日の予定一覧から詳細セクションへ飛ぶアンカー ID。"""
+    return f"event-{day.strftime('%Y%m%d')}-{index:02d}"
+
+
+def memo_anchor_id(index: int) -> str:
+    """日付なしメモの詳細セクションへ飛ぶアンカー ID。"""
+    return f"memo-{index:04d}"
+
+
 def event_occurrence_dates(event: Event, year: int) -> list[date]:
     """イベントが表示される日付の一覧（複数日イベントは各日を展開）。"""
     if event.is_memo or event.start_date is None or event.end_date is None:
@@ -450,19 +470,111 @@ def event_occurrence_dates(event: Event, year: int) -> list[date]:
     return days
 
 
-def format_markdown_event_line(event: Event) -> str:
-    """1件の予定を Markdown 表用の1行テキストに整形する。"""
+def format_markdown_event_summary(event: Event) -> str:
+    """予定の短い表示名（リンクテキスト・details の summary 用）。"""
     title = event.title.strip()
-    description = event.description.strip().splitlines()[0] if event.description.strip() else ""
-
     if not event.all_day and event.start_time:
-        line = f"{event.start_time.strftime('%H:%M')} {title}"
-    else:
-        line = title
+        return f"{event.start_time.strftime('%H:%M')} {title}"
+    return title
 
-    if description:
-        line = f"{line}（{description}）"
-    return line
+
+def format_markdown_event_line(event: Event) -> str:
+    """後方互換用。短い表示名のみ返す。"""
+    return format_markdown_event_summary(event)
+
+
+def format_markdown_event_link(event: Event, day: date, index: int) -> str:
+    """表セル内の予定リンク。"""
+    summary = format_markdown_event_summary(event)
+    return f"[{escape_markdown_table_cell(summary)}](#{event_anchor_id(day, index)})"
+
+
+def format_event_date_label(event: Event, day: date) -> str:
+    """詳細表示用の日付ラベル。"""
+    if (
+        event.start_date
+        and event.end_date
+        and event.start_date != event.end_date
+    ):
+        return f"{event.start_date.isoformat()} 〜 {event.end_date.isoformat()}"
+    return day.isoformat()
+
+
+def format_markdown_event_details_body(event: Event, day: date) -> str:
+    """予定 1 件分の詳細本文（Markdown）。"""
+    lines: list[str] = [f"- **日付**: {format_event_date_label(event, day)}"]
+
+    if not event.all_day and (event.start_time or event.end_time):
+        if event.start_time and event.end_time:
+            time_label = (
+                f"{event.start_time.strftime('%H:%M')}"
+                f" 〜 {event.end_time.strftime('%H:%M')}"
+            )
+        elif event.start_time:
+            time_label = event.start_time.strftime("%H:%M")
+        else:
+            time_label = event.end_time.strftime("%H:%M") if event.end_time else ""
+        if time_label:
+            lines.append(f"- **時刻**: {time_label}")
+
+    if event.category:
+        lines.append(f"- **カテゴリ**: {event.category}")
+    if event.status:
+        lines.append(f"- **ステータス**: {event.status}")
+    if event.tags:
+        lines.append(f"- **タグ**: {', '.join(event.tags)}")
+    if event.location:
+        lines.append(f"- **場所**: {event.location}")
+    for url in event.urls:
+        lines.append(f"- **URL**: {url}")
+
+    if event.description.strip():
+        lines.extend(["", "**説明**", "", event.description.strip()])
+
+    return "\n".join(lines)
+
+
+def format_markdown_event_details_block(event: Event, day: date, index: int) -> str:
+    """クリックで詳細を開ける HTML details ブロック。"""
+    summary = format_markdown_event_summary(event)
+    body = format_markdown_event_details_body(event, day)
+    return (
+        f'<a id="{event_anchor_id(day, index)}"></a>\n'
+        f"<details>\n"
+        f"<summary>{escape_html(summary)}</summary>\n\n"
+        f"{body}\n\n"
+        f"</details>"
+    )
+
+
+def format_markdown_memo_details_body(memo: Event) -> str:
+    """日付なしメモ 1 件分の詳細本文（Markdown）。"""
+    lines: list[str] = []
+    if memo.category:
+        lines.append(f"- **カテゴリ**: {memo.category}")
+    if memo.status:
+        lines.append(f"- **ステータス**: {memo.status}")
+    if memo.tags:
+        lines.append(f"- **タグ**: {', '.join(memo.tags)}")
+    for url in memo.urls:
+        lines.append(f"- **URL**: {url}")
+    if memo.description.strip():
+        if lines:
+            lines.append("")
+        lines.extend(["**内容**", "", memo.description.strip()])
+    return "\n".join(lines) if lines else "（詳細情報なし）"
+
+
+def format_markdown_memo_details_block(memo: Event, index: int) -> str:
+    """日付なしメモの details ブロック。"""
+    body = format_markdown_memo_details_body(memo)
+    return (
+        f'<a id="{memo_anchor_id(index)}"></a>\n'
+        f"<details>\n"
+        f"<summary>{escape_html(memo.title.strip())}</summary>\n\n"
+        f"{body}\n\n"
+        f"</details>"
+    )
 
 
 def group_events_by_date(events: list[Event], year: int) -> dict[date, list[Event]]:
@@ -522,24 +634,38 @@ def render_markdown_calendar(events: list[Event], year: int) -> str:
         for day in month_days:
             weekday = WEEKDAY_JA[day.weekday()]
             entries = " / ".join(
-                format_markdown_event_line(event) for event in grouped[day]
+                format_markdown_event_link(event, day, index)
+                for index, event in enumerate(grouped[day])
             )
             lines.append(
-                f"| {day.day} | {weekday} | {escape_markdown_table_cell(entries)} |"
+                f"| {day.day} | {weekday} | {entries} |"
             )
         lines.append("")
+
+        month_detail_blocks: list[str] = []
+        for day in month_days:
+            for index, event in enumerate(grouped[day]):
+                month_detail_blocks.append(
+                    format_markdown_event_details_block(event, day, index)
+                )
+        if month_detail_blocks:
+            lines.append("### 予定詳細")
+            lines.append("")
+            lines.extend(month_detail_blocks)
+            lines.append("")
 
     if memos:
         lines.append('<a id="memos"></a>')
         lines.append("## 日付なしメモ")
         lines.append("")
-        for memo in memos:
-            line = memo.title
-            if memo.description.strip():
-                first_line = memo.description.strip().splitlines()[0]
-                line = f"{line} — {first_line}"
-            lines.append(f"- {escape_markdown_table_cell(line)}")
+        for index, memo in enumerate(memos):
+            lines.append(f"- [{escape_markdown_table_cell(memo.title)}](#{memo_anchor_id(index)})")
         lines.append("")
+        lines.append("### メモ詳細")
+        lines.append("")
+        for index, memo in enumerate(memos):
+            lines.append(format_markdown_memo_details_block(memo, index))
+            lines.append("")
 
     return "\n".join(lines).rstrip() + "\n"
 
