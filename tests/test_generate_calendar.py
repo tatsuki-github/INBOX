@@ -14,6 +14,7 @@ from generate_calendar import (  # noqa: E402
     event_anchor_id,
     event_occurrence_dates,
     format_markdown_event_details_block,
+    format_markdown_event_details_body,
     format_markdown_event_line,
     format_markdown_event_link,
     format_markdown_event_summary,
@@ -81,9 +82,28 @@ class MarkdownCalendarTests(unittest.TestCase):
         )
         details = format_markdown_event_details_block(event, day, 0)
         self.assertIn(f'<a id="{event_anchor_id(day, 0)}"></a>', details)
-        self.assertIn("<details>", details)
+        self.assertIn("#### 18:00 岱明夕練", details)
+        self.assertIn("- **件名**: 岱明夕練", details)
+        self.assertIn("- **開始時刻**: 18:00", details)
+        self.assertIn("- **終了時刻**: 21:00", details)
+        self.assertIn("- **ステータス**: scheduled", details)
+        self.assertIn("- **タグ**: ランニング", details)
         self.assertIn("各自アップ、600m2本（1500mRP、r=8分）", details)
-        self.assertIn("- **時刻**: 18:00 〜 21:00", details)
+
+    def test_format_markdown_event_details_shows_all_fields_even_when_empty(self) -> None:
+        event = Event(
+            title="シンプル予定",
+            start_date=date(2026, 1, 1),
+            end_date=date(2026, 1, 1),
+        )
+        body = format_markdown_event_details_body(event, date(2026, 1, 1))
+        self.assertIn("- **件名**: シンプル予定", body)
+        self.assertIn("- **ステータス**: （なし）", body)
+        self.assertIn("- **タグ**: （なし）", body)
+        self.assertIn("- **場所**: （なし）", body)
+        self.assertIn("- **URL**: （なし）", body)
+        self.assertIn("**説明**", body)
+        self.assertIn("（なし）", body)
 
     def test_group_events_by_date_sorts_timed_before_all_day(self) -> None:
         timed = Event(
@@ -130,11 +150,13 @@ class MarkdownCalendarTests(unittest.TestCase):
             rendered,
         )
         self.assertIn("### 予定詳細", rendered)
+        self.assertIn("- **件名**: 岱明夕練", rendered)
         self.assertIn("各自アップ、600m2本（1500mRP、r=8分）", rendered)
         self.assertIn('<a id="memos"></a>', rendered)
         self.assertIn("## 日付なしメモ", rendered)
         self.assertIn(f"- [買い物リスト](#{memo_anchor_id(0)})", rendered)
         self.assertIn("### メモ詳細", rendered)
+        self.assertIn("- **件名**: 買い物リスト", rendered)
         self.assertIn("- 牛乳", rendered)
 
 

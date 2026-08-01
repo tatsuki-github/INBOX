@@ -427,19 +427,39 @@ def month_anchor_id(month: int) -> str:
     return f"month-{month:02d}"
 
 
+EMPTY_LABEL = "（なし）"
+
+
+def display_text(value: str) -> str:
+    """空文字はプレースホルダーに置き換える。"""
+    text = value.strip()
+    return text if text else EMPTY_LABEL
+
+
+def format_list_value(items: list[str]) -> str:
+    """リスト項目を表示用テキストに整形する。"""
+    cleaned = [item.strip() for item in items if item.strip()]
+    return ", ".join(cleaned) if cleaned else EMPTY_LABEL
+
+
+def format_time_value(value: time | None) -> str:
+    """時刻を表示用テキストに整形する。"""
+    return value.strftime("%H:%M") if value else EMPTY_LABEL
+
+
+def format_bool_label(value: bool) -> str:
+    """真偽値を日本語ラベルに変換する。"""
+    return "はい" if value else "いいえ"
+
+
+def format_metadata_lines(pairs: list[tuple[str, str]]) -> list[str]:
+    """メタデータの箇条書き行を生成する。"""
+    return [f"- **{label}**: {display_text(value)}" for label, value in pairs]
+
+
 def escape_markdown_table_cell(text: str) -> str:
     """Markdown 表セル内のパイプ・改行をエスケープする。"""
     return text.replace("|", "\\|").replace("\n", " ").strip()
-
-
-def escape_html(text: str) -> str:
-    """HTML 属性・summary 内の特殊文字をエスケープする。"""
-    return (
-        text.replace("&", "&amp;")
-        .replace("<", "&lt;")
-        .replace(">", "&gt;")
-        .replace('"', "&quot;")
-    )
 
 
 def event_anchor_id(day: date, index: int) -> str:
@@ -489,91 +509,62 @@ def format_markdown_event_link(event: Event, day: date, index: int) -> str:
     return f"[{escape_markdown_table_cell(summary)}](#{event_anchor_id(day, index)})"
 
 
-def format_event_date_label(event: Event, day: date) -> str:
-    """詳細表示用の日付ラベル。"""
-    if (
-        event.start_date
-        and event.end_date
-        and event.start_date != event.end_date
-    ):
-        return f"{event.start_date.isoformat()} 〜 {event.end_date.isoformat()}"
-    return day.isoformat()
-
-
 def format_markdown_event_details_body(event: Event, day: date) -> str:
-    """予定 1 件分の詳細本文（Markdown）。"""
-    lines: list[str] = [f"- **日付**: {format_event_date_label(event, day)}"]
-
-    if not event.all_day and (event.start_time or event.end_time):
-        if event.start_time and event.end_time:
-            time_label = (
-                f"{event.start_time.strftime('%H:%M')}"
-                f" 〜 {event.end_time.strftime('%H:%M')}"
-            )
-        elif event.start_time:
-            time_label = event.start_time.strftime("%H:%M")
-        else:
-            time_label = event.end_time.strftime("%H:%M") if event.end_time else ""
-        if time_label:
-            lines.append(f"- **時刻**: {time_label}")
-
-    if event.category:
-        lines.append(f"- **カテゴリ**: {event.category}")
-    if event.status:
-        lines.append(f"- **ステータス**: {event.status}")
-    if event.tags:
-        lines.append(f"- **タグ**: {', '.join(event.tags)}")
-    if event.location:
-        lines.append(f"- **場所**: {event.location}")
-    for url in event.urls:
-        lines.append(f"- **URL**: {url}")
-
-    if event.description.strip():
-        lines.extend(["", "**説明**", "", event.description.strip()])
-
+    """予定 1 件分の詳細本文（Markdown）。全フィールドを常に表示する。"""
+    lines = format_metadata_lines(
+        [
+            ("件名", event.title.strip()),
+            ("表示日", day.isoformat()),
+            ("開始日", event.start_date.isoformat() if event.start_date else ""),
+            ("終了日", event.end_date.isoformat() if event.end_date else ""),
+            ("終日", format_bool_label(event.all_day)),
+            ("開始時刻", format_time_value(event.start_time)),
+            ("終了時刻", format_time_value(event.end_time)),
+            ("カテゴリ", event.category),
+            ("ステータス", event.status),
+            ("タグ", format_list_value(event.tags)),
+            ("場所", event.location),
+            ("URL", format_list_value(event.urls)),
+            ("非公開", format_bool_label(event.private)),
+        ]
+    )
+    lines.extend(["", "**説明**", "", display_text(event.description)])
     return "\n".join(lines)
 
 
 def format_markdown_event_details_block(event: Event, day: date, index: int) -> str:
-    """クリックで詳細を開ける HTML details ブロック。"""
+    """アンカー付きの予定詳細ブロック（クリック後すぐ全文表示）。"""
     summary = format_markdown_event_summary(event)
     body = format_markdown_event_details_body(event, day)
     return (
-        f'<a id="{event_anchor_id(day, index)}"></a>\n'
-        f"<details>\n"
-        f"<summary>{escape_html(summary)}</summary>\n\n"
-        f"{body}\n\n"
-        f"</details>"
+        f'<a id="{event_anchor_id(day, index)}"></a>\n\n'
+        f"#### {summary}\n\n"
+        f"{body}"
     )
 
 
 def format_markdown_memo_details_body(memo: Event) -> str:
-    """日付なしメモ 1 件分の詳細本文（Markdown）。"""
-    lines: list[str] = []
-    if memo.category:
-        lines.append(f"- **カテゴリ**: {memo.category}")
-    if memo.status:
-        lines.append(f"- **ステータス**: {memo.status}")
-    if memo.tags:
-        lines.append(f"- **タグ**: {', '.join(memo.tags)}")
-    for url in memo.urls:
-        lines.append(f"- **URL**: {url}")
-    if memo.description.strip():
-        if lines:
-            lines.append("")
-        lines.extend(["**内容**", "", memo.description.strip()])
-    return "\n".join(lines) if lines else "（詳細情報なし）"
+    """日付なしメモ 1 件分の詳細本文（Markdown）。全フィールドを常に表示する。"""
+    lines = format_metadata_lines(
+        [
+            ("件名", memo.title.strip()),
+            ("カテゴリ", memo.category),
+            ("ステータス", memo.status),
+            ("タグ", format_list_value(memo.tags)),
+            ("URL", format_list_value(memo.urls)),
+        ]
+    )
+    lines.extend(["", "**内容**", "", display_text(memo.description)])
+    return "\n".join(lines)
 
 
 def format_markdown_memo_details_block(memo: Event, index: int) -> str:
-    """日付なしメモの details ブロック。"""
+    """アンカー付きのメモ詳細ブロック。"""
     body = format_markdown_memo_details_body(memo)
     return (
-        f'<a id="{memo_anchor_id(index)}"></a>\n'
-        f"<details>\n"
-        f"<summary>{escape_html(memo.title.strip())}</summary>\n\n"
-        f"{body}\n\n"
-        f"</details>"
+        f'<a id="{memo_anchor_id(index)}"></a>\n\n'
+        f"#### {memo.title.strip()}\n\n"
+        f"{body}"
     )
 
 
@@ -651,7 +642,7 @@ def render_markdown_calendar(events: list[Event], year: int) -> str:
         if month_detail_blocks:
             lines.append("### 予定詳細")
             lines.append("")
-            lines.extend(month_detail_blocks)
+            lines.append("\n\n---\n\n".join(month_detail_blocks))
             lines.append("")
 
     if memos:
@@ -663,9 +654,11 @@ def render_markdown_calendar(events: list[Event], year: int) -> str:
         lines.append("")
         lines.append("### メモ詳細")
         lines.append("")
-        for index, memo in enumerate(memos):
-            lines.append(format_markdown_memo_details_block(memo, index))
-            lines.append("")
+        lines.append("\n\n---\n\n".join(
+            format_markdown_memo_details_block(memo, index)
+            for index, memo in enumerate(memos)
+        ))
+        lines.append("")
 
     return "\n".join(lines).rstrip() + "\n"
 
