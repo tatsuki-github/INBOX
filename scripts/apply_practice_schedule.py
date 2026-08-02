@@ -31,6 +31,7 @@ SCHEDULES: dict[str, dict[str, dict]] = {
         "2026-07-31": {"morning": "timed", "evening": "dot"},
     },
     "2026-08": {
+        "2026-08-01": {"morning": None, "evening": "timed"},
         "2026-08-02": {"morning": "dot", "evening": "dot"},
         "2026-08-03": {"morning": "timed", "evening": "timed"},
         "2026-08-04": {"morning": "timed", "evening": "dot"},
