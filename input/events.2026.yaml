@@ -611,11 +611,28 @@ events:
   date: '2026-05-23'
   all_day: true
   category: 予定
-  status: scheduled
+  status: done
   end_date: '2026-05-24'
   location: えがお健康スタジアム(熊本県民総合運動公園陸上競技場)
   urls:
   - http://kumariku.com/competition/?id=9281
+  tags:
+  - ランニング
+  description: |-
+    800m 女子
+    村上咲稀 2:20.11
+    山﨑莉奈 2:36.37
+    増岡里俐 2:38.96
+    角田亜美 2:39.42
+
+    1500m 男子
+    松野凛空 4:23.58
+    山本哲瑠 4:40.40
+    田上颯人 4:44.48
+    松本空羽 5:16.80
+    田中智稀 5:22.83
+    中尾快叶 5:17.72
+    南本幸治郎 5:32.33
 - title: 県民体育祭選考会
   date: '2026-05-24'
   all_day: false
