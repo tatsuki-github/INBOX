@@ -1219,6 +1219,21 @@ events:
   all_day: true
   category: 予定
   status: scheduled
+- title: 岱明夕練
+  date: '2026-08-01'
+  category: 予定
+  status: done
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  all_day: false
+  start_time: '18:00'
+  end_time: '19:30'
+  description: |-
+    動きづくり
+    女子10周
+    男子12周
+    流し2本
 - title: 岱明朝練休み
   date: '2026-08-02'
   category: 予定
