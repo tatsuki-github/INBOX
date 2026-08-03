@@ -1400,15 +1400,6 @@ events:
   - ランニング
   - いだてん岱明練習
   all_day: true
-- title: 荒田
-  date: '2026-08-02'
-  all_day: false
-  start_time: '10:00'
-  end_time: '13:00'
-  category: 予定
-  status: scheduled
-  tags:
-  - 会社
 - title: 岱明朝練
   date: '2026-08-03'
   category: 予定
@@ -1429,6 +1420,15 @@ events:
   all_day: false
   start_time: '18:00'
   end_time: '19:30'
+- title: 荒田
+  date: '2026-08-03'
+  all_day: false
+  start_time: '10:00'
+  end_time: '13:00'
+  category: 予定
+  status: scheduled
+  tags:
+  - 会社
 - title: 岱明夕練休み
   date: '2026-08-04'
   category: 予定
@@ -1447,7 +1447,7 @@ events:
   all_day: false
   start_time: 08:00
   end_time: 09:30
-- title: 寛田
+- title: 荒田
   date: '2026-08-04'
   all_day: false
   start_time: '10:00'
@@ -2181,7 +2181,7 @@ events:
   category: 予定
   status: scheduled
 - title: 石原
-  date: '2026-08-30'
+  date: '2026-08-31'
   all_day: false
   start_time: '09:00'
   end_time: '12:00'
@@ -2190,7 +2190,7 @@ events:
   tags:
   - 会社
 - title: 荒田
-  date: '2026-08-30'
+  date: '2026-08-31'
   all_day: false
   start_time: '10:00'
   end_time: '13:00'
