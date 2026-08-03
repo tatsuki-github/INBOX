@@ -1403,13 +1403,14 @@ events:
 - title: 岱明朝練
   date: '2026-08-03'
   category: 予定
-  status: scheduled
+  status: done
   tags:
   - ランニング
   - いだてん岱明練習
   all_day: false
   start_time: 08:00
   end_time: 09:30
+  description: 45/15の30本（疾走アベ3:59/km）
 - title: 岱明夕練
   date: '2026-08-03'
   category: 予定
