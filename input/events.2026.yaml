@@ -1413,13 +1413,20 @@ events:
 - title: 岱明夕練
   date: '2026-08-03'
   category: 予定
-  status: scheduled
+  status: done
   tags:
   - ランニング
   - いだてん岱明練習
   all_day: false
   start_time: '18:00'
   end_time: '19:30'
+  description: |-
+    各自アップ、300m5本、レスト70秒
+    1本目: 62.4
+    2本目: 60.7
+    3本目: 61.1
+    4本目: 60.8
+    5本目: 60.6
 - title: 荒田
   date: '2026-08-03'
   all_day: false
