@@ -1,6 +1,6 @@
 # カスタム予定・メモ（2026年）
 # 祝日は scripts/generate_calendar.py が自動追加します。
-# 件数: 370
+# 件数: 400
 year: 2026
 events:
 - title: 交通費申請
@@ -1400,6 +1400,15 @@ events:
   - ランニング
   - いだてん岱明練習
   all_day: true
+- title: 荒田
+  date: '2026-08-02'
+  all_day: false
+  start_time: '10:00'
+  end_time: '13:00'
+  category: 予定
+  status: scheduled
+  tags:
+  - 会社
 - title: 岱明朝練
   date: '2026-08-03'
   category: 予定
@@ -1438,6 +1447,24 @@ events:
   all_day: false
   start_time: 08:00
   end_time: 09:30
+- title: 寛田
+  date: '2026-08-04'
+  all_day: false
+  start_time: '10:00'
+  end_time: '13:00'
+  category: 予定
+  status: scheduled
+  tags:
+  - 会社
+- title: 小森
+  date: '2026-08-04'
+  all_day: false
+  start_time: '10:00'
+  end_time: '13:00'
+  category: 予定
+  status: scheduled
+  tags:
+  - 会社
 - title: 岱明朝練休み
   date: '2026-08-05'
   category: 予定
@@ -1456,6 +1483,15 @@ events:
   all_day: false
   start_time: '18:00'
   end_time: '19:30'
+- title: 岩倉
+  date: '2026-08-05'
+  all_day: false
+  start_time: '10:00'
+  end_time: '14:00'
+  category: 予定
+  status: scheduled
+  tags:
+  - 会社
 - title: 岱明夕練休み
   date: '2026-08-06'
   category: 予定
@@ -1474,6 +1510,33 @@ events:
   all_day: false
   start_time: 08:00
   end_time: 09:30
+- title: 荒田
+  date: '2026-08-06'
+  all_day: false
+  start_time: '10:00'
+  end_time: '13:00'
+  category: 予定
+  status: scheduled
+  tags:
+  - 会社
+- title: 岩倉
+  date: '2026-08-06'
+  all_day: false
+  start_time: '10:00'
+  end_time: '14:00'
+  category: 予定
+  status: scheduled
+  tags:
+  - 会社
+- title: 小森
+  date: '2026-08-06'
+  all_day: false
+  start_time: '10:00'
+  end_time: '15:00'
+  category: 予定
+  status: scheduled
+  tags:
+  - 会社
 - title: 岱明朝練
   date: '2026-08-07'
   category: 予定
@@ -1494,6 +1557,15 @@ events:
   all_day: false
   start_time: '18:00'
   end_time: '19:30'
+- title: 川上
+  date: '2026-08-07'
+  all_day: false
+  start_time: '10:00'
+  end_time: '17:00'
+  category: 予定
+  status: scheduled
+  tags:
+  - 会社
 - title: 岱明朝練休み
   date: '2026-08-08'
   category: 予定
@@ -1553,6 +1625,33 @@ events:
   all_day: true
   category: 予定
   status: scheduled
+- title: 杉永
+  date: '2026-08-10'
+  all_day: false
+  start_time: '09:00'
+  end_time: '12:00'
+  category: 予定
+  status: scheduled
+  tags:
+  - 会社
+- title: 荒田
+  date: '2026-08-10'
+  all_day: false
+  start_time: '10:00'
+  end_time: '13:00'
+  category: 予定
+  status: scheduled
+  tags:
+  - 会社
+- title: 川上
+  date: '2026-08-10'
+  all_day: false
+  start_time: '10:00'
+  end_time: '17:00'
+  category: 予定
+  status: scheduled
+  tags:
+  - 会社
 - title: 岱明朝練休み
   date: '2026-08-11'
   category: 予定
@@ -1646,6 +1745,15 @@ events:
   all_day: true
   category: 予定
   status: scheduled
+- title: 川上
+  date: '2026-08-14'
+  all_day: false
+  start_time: '10:00'
+  end_time: '17:00'
+  category: 予定
+  status: scheduled
+  tags:
+  - 会社
 - title: 岱明朝練休み
   date: '2026-08-15'
   category: 予定
@@ -1700,6 +1808,15 @@ events:
   all_day: false
   start_time: '18:00'
   end_time: '19:30'
+- title: 池上
+  date: '2026-08-17'
+  all_day: false
+  start_time: '10:00'
+  end_time: '18:00'
+  category: 予定
+  status: scheduled
+  tags:
+  - 会社
 - title: 岱明朝練休み
   date: '2026-08-18'
   category: 予定
@@ -1799,6 +1916,24 @@ events:
   all_day: true
   category: 予定
   status: scheduled
+- title: 荒田
+  date: '2026-08-21'
+  all_day: false
+  start_time: '10:00'
+  end_time: '13:00'
+  category: 予定
+  status: scheduled
+  tags:
+  - 会社
+- title: 池上
+  date: '2026-08-21'
+  all_day: false
+  start_time: '10:00'
+  end_time: '18:00'
+  category: 予定
+  status: scheduled
+  tags:
+  - 会社
 - title: 岱明朝練休み
   date: '2026-08-22'
   category: 予定
@@ -1880,6 +2015,33 @@ events:
   all_day: false
   start_time: 08:00
   end_time: 09:30
+- title: 石原
+  date: '2026-08-25'
+  all_day: false
+  start_time: '09:00'
+  end_time: '12:00'
+  category: 予定
+  status: scheduled
+  tags:
+  - 会社
+- title: 小森
+  date: '2026-08-25'
+  all_day: false
+  start_time: '10:00'
+  end_time: '15:00'
+  category: 予定
+  status: scheduled
+  tags:
+  - 会社
+- title: 川上
+  date: '2026-08-25'
+  all_day: false
+  start_time: '10:00'
+  end_time: '17:00'
+  category: 予定
+  status: scheduled
+  tags:
+  - 会社
 - title: 岱明朝練休み
   date: '2026-08-26'
   category: 予定
@@ -1903,6 +2065,42 @@ events:
   all_day: true
   category: 予定
   status: scheduled
+- title: 石原
+  date: '2026-08-26'
+  all_day: false
+  start_time: '09:00'
+  end_time: '12:00'
+  category: 予定
+  status: scheduled
+  tags:
+  - 会社
+- title: 荒田
+  date: '2026-08-26'
+  all_day: false
+  start_time: '10:00'
+  end_time: '13:00'
+  category: 予定
+  status: scheduled
+  tags:
+  - 会社
+- title: 岩倉
+  date: '2026-08-26'
+  all_day: false
+  start_time: '10:00'
+  end_time: '14:00'
+  category: 予定
+  status: scheduled
+  tags:
+  - 会社
+- title: 小森
+  date: '2026-08-26'
+  all_day: false
+  start_time: '10:00'
+  end_time: '15:00'
+  category: 予定
+  status: scheduled
+  tags:
+  - 会社
 - title: 練習会（岱明）
   date: '2026-08-27'
   all_day: false
@@ -1910,6 +2108,51 @@ events:
   status: scheduled
   start_time: '19:00'
   end_time: '21:00'
+- title: 石原
+  date: '2026-08-27'
+  all_day: false
+  start_time: '09:00'
+  end_time: '12:00'
+  category: 予定
+  status: scheduled
+  tags:
+  - 会社
+- title: 岩倉
+  date: '2026-08-27'
+  all_day: false
+  start_time: '10:00'
+  end_time: '14:00'
+  category: 予定
+  status: scheduled
+  tags:
+  - 会社
+- title: 小森
+  date: '2026-08-27'
+  all_day: false
+  start_time: '10:00'
+  end_time: '15:00'
+  category: 予定
+  status: scheduled
+  tags:
+  - 会社
+- title: 荒田
+  date: '2026-08-28'
+  all_day: false
+  start_time: '10:00'
+  end_time: '13:00'
+  category: 予定
+  status: scheduled
+  tags:
+  - 会社
+- title: 池上
+  date: '2026-08-28'
+  all_day: false
+  start_time: '10:00'
+  end_time: '18:00'
+  category: 予定
+  status: scheduled
+  tags:
+  - 会社
 - title: 玉名郡ナイター
   date: '2026-08-29'
   all_day: true
@@ -1937,6 +2180,24 @@ events:
   all_day: true
   category: 予定
   status: scheduled
+- title: 石原
+  date: '2026-08-30'
+  all_day: false
+  start_time: '09:00'
+  end_time: '12:00'
+  category: 予定
+  status: scheduled
+  tags:
+  - 会社
+- title: 荒田
+  date: '2026-08-30'
+  all_day: false
+  start_time: '10:00'
+  end_time: '13:00'
+  category: 予定
+  status: scheduled
+  tags:
+  - 会社
 - title: 交通費申請
   date: '2026-09-01'
   all_day: true
