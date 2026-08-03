@@ -1427,6 +1427,16 @@ events:
     3本目: 61.1
     4本目: 60.8
     5本目: 60.6
+- title: ラン
+  date: '2026-08-03'
+  category: 予定
+  status: done
+  tags:
+  - ランニング
+  all_day: false
+  start_time: '19:00'
+  end_time: '20:00'
+  description: 45/15の30本（疾走アベ3:59/km）
 - title: 荒田
   date: '2026-08-03'
   all_day: false
