@@ -11,9 +11,9 @@ events:
   tags:
   - ランニング
   - 自分の練習
-  description: |-
-    ペース: k/4'21
-    距離: 10.00km
+  description: 'ペース: k/4''21
+
+    距離: 10.00km'
 - title: 大学立ち入り禁止
   date: '2023-03-09'
   all_day: false
@@ -31,9 +31,11 @@ events:
   category: 予定
   status: scheduled
   start_time: 09:00
-  description: |
-    https://www.hotpepper.jp/strJ000034086/
-    https://www.google.com/maps/place/32%C2%B048'02.2%22N+130%C2%B042'24.2%22E/@32.8006023,130.7067207,18z/data=!4m4!3m3!8m2!3d32.8006023!4d130.7067207?hl=ja
+  description: 'https://www.hotpepper.jp/strJ000034086/
+
+    https://www.google.com/maps/place/32%C2%B048''02.2%22N+130%C2%B042''24.2%22E/@32.8006023,130.7067207,18z/data=!4m4!3m3!8m2!3d32.8006023!4d130.7067207?hl=ja
+
+    '
 - title: 千葉出張
   date: '2023-04-02'
   all_day: true
@@ -224,17 +226,14 @@ events:
   category: 予定
   status: scheduled
   start_time: '10:00'
-- title: 自分の練習
+- title: 遅めの400mインターバル
   date: '2023-09-13'
   all_day: true
   category: 予定
   status: done
   tags:
-  - ランニング
   - 自分の練習
-  description: |-
-    400m78〜80で10本
-    間140m40〜45
+  description: 400m78〜80で10本　間140m40〜45
 - title: 高校新人戦
   date: '2023-09-15'
   all_day: true
@@ -266,26 +265,24 @@ events:
   tags:
   - ランニング
   - 自分の練習
-  description: |-
-    ペース: k/4'24
+  description: 'ペース: k/4''24
+
     距離: 6.82km
-    時間: 30'00
+
+    時間: 30''00'
 - title: 県民体育祭
   date: '2023-09-23'
   all_day: true
   category: 予定
   status: scheduled
-- title: 自分の練習
+- title: 遅めの400mインターバル
   date: '2023-09-27'
   all_day: true
   category: 予定
   status: done
   tags:
-  - ランニング
   - 自分の練習
-  description: |-
-    400m78で10本
-    間140m40〜45
+  description: 400m78で10本　間140m40〜45
 - title: 'のレビュー: AZ-104 - Microsoft Azure Administrator - 日本語 (JPN)'
   date: '2023-09-27'
   all_day: false
@@ -380,9 +377,9 @@ events:
   tags:
   - ランニング
   - 自分の練習
-  description: |-
-    ペース: k/4'30
-    距離: 10.27km
+  description: 'ペース: k/4''30
+
+    距離: 10.27km'
 - title: 健康診断
   date: '2023-12-11'
   all_day: false
@@ -414,9 +411,9 @@ events:
   tags:
   - ランニング
   - 自分の練習
-  description: |-
-    ペース: k/4'13
-    距離: 8.67km
+  description: 'ペース: k/4''13
+
+    距離: 8.67km'
 - title: 岱明中冬休み開始
   date: '2023-12-23'
   all_day: true
