@@ -1500,6 +1500,17 @@ events:
   all_day: false
   start_time: '18:00'
   end_time: '19:30'
+- title: 自分の練習
+  date: '2026-08-05'
+  category: 予定
+  status: scheduled
+  tags:
+  - ランニング
+  - 自分の練習
+  all_day: false
+  start_time: '19:30'
+  end_time: '20:00'
+  description: 45/15の20本（疾走平均k/3:55）
 - title: 岩倉
   date: '2026-08-05'
   all_day: false
