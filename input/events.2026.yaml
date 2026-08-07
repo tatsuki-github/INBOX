@@ -1,6 +1,6 @@
 # カスタム予定・メモ（2026年）
 # 祝日は scripts/generate_calendar.py が自動追加します。
-# 件数: 400
+# 件数: 401
 year: 2026
 events:
 - title: 交通費申請
@@ -1649,6 +1649,11 @@ events:
   start_time: '18:00'
   end_time: '19:30'
 - title: 学校閉庁日
+  date: '2026-08-10'
+  all_day: true
+  category: 予定
+  status: scheduled
+- title: リモート
   date: '2026-08-10'
   all_day: true
   category: 予定
