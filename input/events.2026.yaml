@@ -1698,13 +1698,14 @@ events:
 - title: 岱明夕練
   date: '2026-08-07'
   category: 予定
-  status: scheduled
+  status: done
   tags:
   - ランニング
   - いだてん岱明練習
   all_day: false
   start_time: '18:00'
   end_time: '19:30'
+  description: 各自ジョグ、300m（男子7本・女子5本）、間1分前後
 - title: 川上
   date: '2026-08-07'
   all_day: false
@@ -1722,6 +1723,17 @@ events:
   - ランニング
   - いだてん岱明練習
   all_day: true
+- title: 自分の練習
+  date: '2026-08-08'
+  category: 予定
+  status: scheduled
+  tags:
+  - ランニング
+  - 自分の練習
+  all_day: false
+  start_time: '16:30'
+  end_time: '17:30'
+  description: 45/15を30本（疾走平均k/3:50）
 - title: 岱明夕練
   date: '2026-08-08'
   category: 予定
@@ -1732,6 +1744,7 @@ events:
   all_day: false
   start_time: '18:00'
   end_time: '19:30'
+  description: 動きづくり、男子14周・女子12周、流し2本
 - title: 岱明朝練休み
   date: '2026-08-09'
   category: 予定
