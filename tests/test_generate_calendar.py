@@ -20,6 +20,7 @@ from generate_calendar import (  # noqa: E402
     format_markdown_event_link,
     format_markdown_event_summary,
     group_events_by_date,
+    load_custom_events,
     maybe_write_root_calendar,
     memo_anchor_id,
     month_anchor_id,
@@ -165,6 +166,35 @@ class MarkdownCalendarTests(unittest.TestCase):
         self.assertIn("<details>", rendered.split("### メモ詳細", 1)[1])
         self.assertIn("- **件名**: 買い物リスト", rendered)
         self.assertIn("- 牛乳", rendered)
+
+
+class DescriptionFileTests(unittest.TestCase):
+    def test_load_custom_events_reads_description_file(self) -> None:
+        import tempfile
+
+        with tempfile.TemporaryDirectory() as tmpdir:
+            tmp = Path(tmpdir)
+            memo_path = tmp / "memo.txt"
+            memo_path.write_text("外部ファイル本文", encoding="utf-8")
+            input_path = tmp / "events.yaml"
+            input_path.write_text(
+                f"""\
+year: 2026
+events:
+  - title: 長文メモ
+    category: メモ
+    description: 先頭説明
+    description_file: {memo_path}
+""",
+                encoding="utf-8",
+            )
+
+            events = load_custom_events(input_path, 2026)
+            self.assertEqual(len(events), 1)
+            self.assertEqual(
+                events[0].description,
+                "先頭説明\n\n外部ファイル本文",
+            )
 
 
 class RootCalendarTests(unittest.TestCase):

@@ -29,3 +29,10 @@ events:
     urls:
       - https://example.com/docs
     description: Notion Table ビューで一覧できるメモ
+
+  # 長文は description_file で外部ファイル参照（description と併用可）
+  - title: 例: 長文メモ
+    category: メモ
+    status: inbox
+    description_file: input/memos/example-long-memo.txt
+    description: 先頭に表示する短い説明

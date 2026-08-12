@@ -133,6 +133,27 @@ def parse_inbox_fields(raw: dict) -> tuple[str, list[str], list[str]]:
     return status, tags, urls
 
 
+def resolve_description(raw: dict) -> str:
+    """description と description_file を解決して本文を返す。"""
+    description = str(raw.get("description") or "")
+    description_file = str(raw.get("description_file") or "").strip()
+    if not description_file:
+        return description
+
+    file_path = Path(description_file)
+    if not file_path.is_absolute():
+        file_path = ROOT / file_path
+    if not file_path.exists():
+        raise FileNotFoundError(
+            f"description_file が見つかりません: {description_file} ({file_path})"
+        )
+
+    file_content = file_path.read_text(encoding="utf-8")
+    if description:
+        return f"{description.rstrip()}\n\n{file_content}"
+    return file_content
+
+
 def format_google_date(d: date) -> str:
     return d.strftime("%m/%d/%Y")
 
@@ -205,7 +226,7 @@ def load_custom_events(path: Path, year: int) -> list[Event]:
                     start_date=None,
                     end_date=None,
                     all_day=True,
-                    description=str(raw.get("description") or ""),
+                    description=resolve_description(raw),
                     location=str(raw.get("location") or ""),
                     category=str(raw.get("category") or "メモ"),
                     private=bool(raw.get("private", False)),
@@ -236,7 +257,7 @@ def load_custom_events(path: Path, year: int) -> list[Event]:
                 all_day=all_day,
                 start_time=start_t,
                 end_time=end_t,
-                description=str(raw.get("description") or ""),
+                description=resolve_description(raw),
                 location=str(raw.get("location") or ""),
                 category=str(raw.get("category") or "予定"),
                 private=bool(raw.get("private", False)),
