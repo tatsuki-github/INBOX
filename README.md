@@ -92,6 +92,7 @@ events:
 | `tags` | 任意 | リスト、またはカンマ区切り文字列 |
 | `urls` / `url` | 任意 | 関連URL（リスト・カンマ区切り・単数 `url` 可） |
 | `description` | 任意 | 説明・メモ本文 |
+| `description_file` | 任意 | 本文を別ファイルから読み込む（`input/` からの相対パス可）。`description` と併用時は説明が先頭に付く |
 | `location` / `private` | 任意 | 場所 / Google Private |
 
 編集後、再度 `python3 scripts/generate_calendar.py --year 2026` を実行してください。
