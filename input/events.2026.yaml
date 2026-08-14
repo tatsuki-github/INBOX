@@ -1905,6 +1905,17 @@ events:
   - ランニング
   - いだてん岱明練習
   all_day: true
+- title: 自分の練習
+  date: '2026-08-14'
+  category: 予定
+  status: done
+  tags:
+  - ランニング
+  - 自分の練習
+  all_day: false
+  start_time: '17:00'
+  end_time: '17:45'
+  description: 45/15を30本（疾走ペース平均k/3:37）
 - title: 岱明夕練
   date: '2026-08-14'
   category: 予定
