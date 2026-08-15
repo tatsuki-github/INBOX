@@ -1,0 +1,3 @@
+{
+  "install": "if ! command -v uv >/dev/null 2>&1; then curl -fsSL https://astral.sh/uv/install.sh | sh; fi && uvx --version >/dev/null"
+}

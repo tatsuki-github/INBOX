@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "intervals-icu": {
+      "type": "stdio",
+      "command": "${workspaceFolder}/.cursor/bin/intervals-icu-mcp.sh",
+      "args": [],
+      "env": {
+        "INTERVALS_ICU_API_KEY": "${env:INTERVALS_ICU_API_KEY}",
+        "INTERVALS_ICU_ATHLETE_ID": "${env:INTERVALS_ICU_ATHLETE_ID}"
+      }
+    }
+  }
+}
