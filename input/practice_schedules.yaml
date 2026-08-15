@@ -1,0 +1,54 @@
+# 朝練・夕練スケジュール（2026年夏期）
+evening_skip_dates:
+  - "2026-08-20"
+  - "2026-08-23"
+
+schedules:
+  "2026-07":
+    "2026-07-18": { morning: null, evening: null }
+    "2026-07-19": { morning: null, evening: null }
+    "2026-07-20": { morning: dot, evening: dot }
+    "2026-07-21": { morning: dot, evening: dot, school: 三者面談（3年） }
+    "2026-07-22": { morning: dot, evening: timed, school: 三者面談（3年） }
+    "2026-07-23": { morning: timed, evening: dot, school: 三者面談（3年） }
+    "2026-07-24":
+      morning: timed
+      evening: timed
+      school:
+        - 三者面談（3年）
+        - 学校保健講演会
+    "2026-07-25": { morning: dot, evening: dot }
+    "2026-07-26": { morning: dot, evening: dot }
+    "2026-07-27": { morning: timed, evening: timed, school: 三者面談（3年） }
+    "2026-07-28": { morning: timed, evening: dot, school: 三者面談（3年） }
+    "2026-07-29": { morning: dot, evening: timed }
+    "2026-07-30": { morning: dot, evening: dot }
+    "2026-07-31": { morning: timed, evening: dot }
+
+  "2026-08":
+    "2026-08-01": { morning: null, evening: timed }
+    "2026-08-02": { morning: dot, evening: dot }
+    "2026-08-03": { morning: timed, evening: timed }
+    "2026-08-04": { morning: timed, evening: dot }
+    "2026-08-05": { morning: dot, evening: timed }
+    "2026-08-06": { morning: timed, evening: dot }
+    "2026-08-07": { morning: timed, evening: timed }
+    "2026-08-08": { morning: dot, evening: timed }
+    "2026-08-09": { morning: dot, evening: dot }
+    "2026-08-10": { morning: timed, evening: timed, school: 学校閉庁日 }
+    "2026-08-11": { morning: dot, evening: dot }
+    "2026-08-12": { morning: dot, evening: timed, school: 学校閉庁日 }
+    "2026-08-13": { morning: dot, evening: dot, school: 学校閉庁日 }
+    "2026-08-14": { morning: dot, evening: timed, school: 学校閉庁日 }
+    "2026-08-15": { morning: dot, evening: timed }
+    "2026-08-16": { morning: dot, evening: dot }
+    "2026-08-17": { morning: timed, evening: timed }
+    "2026-08-18": { morning: dot, evening: dot, school: 職員会議・校内研 }
+    "2026-08-19": { morning: timed, evening: timed, school: 2，3年課題提出日 }
+    "2026-08-20": { morning: timed, evening: null, school: 1年課題提出日 }
+    "2026-08-21": { morning: timed, evening: timed, school: 1年課題提出日 }
+    "2026-08-22": { morning: dot, evening: timed, school: 玉名市人権教育研究大会 }
+    "2026-08-23": { morning: dot, evening: dot }
+    "2026-08-24": { morning: timed, evening: timed }
+    "2026-08-25": { morning: timed, evening: dot }
+    "2026-08-26": { morning: dot, evening: timed, school: 夏期休業最終日 }

@@ -1,0 +1,707 @@
+[
+  {
+    "year": 2026,
+    "date": "2026-07-21",
+    "title": "岱明朝練",
+    "start_time": "08:00",
+    "end_time": "09:30",
+    "status": "scheduled",
+    "tags": [
+      "ランニング",
+      "いだてん岱明練習",
+      "practice:daiming",
+      "session:morning"
+    ],
+    "practice": {
+      "items": []
+    },
+    "parse": {
+      "source": "description",
+      "confidence": "partial",
+      "skipped": [
+        "2.5km×2 — ペース未記載",
+        "2km×2 — ペース未記載"
+      ]
+    },
+    "template_ref": null
+  },
+  {
+    "year": 2026,
+    "date": "2026-07-23",
+    "title": "岱明朝練",
+    "start_time": "08:00",
+    "end_time": "09:30",
+    "status": "scheduled",
+    "tags": [
+      "ランニング",
+      "いだてん岱明練習",
+      "practice:daiming",
+      "session:morning"
+    ],
+    "practice": {
+      "items": []
+    },
+    "parse": {
+      "source": "description",
+      "confidence": "partial",
+      "skipped": [
+        "2.5km×2 — ペース未記載",
+        "2km×2 — ペース未記載"
+      ]
+    },
+    "template_ref": null
+  },
+  {
+    "year": 2026,
+    "date": "2026-07-24",
+    "title": "岱明朝練",
+    "start_time": "08:00",
+    "end_time": "09:30",
+    "status": "scheduled",
+    "tags": [
+      "ランニング",
+      "いだてん岱明練習",
+      "practice:daiming",
+      "session:morning"
+    ],
+    "practice": {
+      "items": []
+    },
+    "parse": {
+      "source": "description",
+      "confidence": "partial",
+      "skipped": [
+        "2.5km×2 — ペース未記載",
+        "2km×2 — ペース未記載"
+      ]
+    },
+    "template_ref": null
+  },
+  {
+    "year": 2026,
+    "date": "2026-07-27",
+    "title": "岱明朝練",
+    "start_time": "08:00",
+    "end_time": "09:30",
+    "status": "scheduled",
+    "tags": [
+      "ランニング",
+      "いだてん岱明練習",
+      "practice:daiming",
+      "session:morning"
+    ],
+    "practice": {
+      "items": []
+    },
+    "parse": {
+      "source": "description",
+      "confidence": "partial",
+      "skipped": [
+        "2.5km×2 — ペース未記載",
+        "2km×2 — ペース未記載"
+      ]
+    },
+    "template_ref": null
+  },
+  {
+    "year": 2026,
+    "date": "2026-07-28",
+    "title": "岱明朝練",
+    "start_time": "08:00",
+    "end_time": "09:30",
+    "status": "scheduled",
+    "tags": [
+      "ランニング",
+      "いだてん岱明練習",
+      "practice:daiming",
+      "session:morning"
+    ],
+    "practice": {
+      "items": []
+    },
+    "parse": {
+      "source": "description",
+      "confidence": "partial",
+      "skipped": [
+        "2.5km×2 — ペース未記載",
+        "2km×2 — ペース未記載"
+      ]
+    },
+    "template_ref": null
+  },
+  {
+    "year": 2026,
+    "date": "2026-07-29",
+    "title": "岱明朝練",
+    "start_time": "08:00",
+    "end_time": "09:30",
+    "status": "scheduled",
+    "tags": [
+      "ランニング",
+      "いだてん岱明練習",
+      "practice:daiming",
+      "session:morning"
+    ],
+    "practice": {
+      "items": []
+    },
+    "parse": {
+      "source": "description",
+      "confidence": "partial",
+      "skipped": [
+        "2.5km×2 — ペース未記載",
+        "2km×2 — ペース未記載"
+      ]
+    },
+    "template_ref": null
+  },
+  {
+    "year": 2026,
+    "date": "2026-07-31",
+    "title": "岱明夕練",
+    "start_time": "18:00",
+    "end_time": "19:30",
+    "status": "scheduled",
+    "tags": [
+      "ランニング",
+      "いだてん岱明練習",
+      "practice:daiming",
+      "session:evening"
+    ],
+    "practice": {
+      "items": [
+        {
+          "type": "interval",
+          "distance_m": 600,
+          "reps": 2,
+          "intensity": "RP"
+        }
+      ]
+    },
+    "parse": {
+      "source": "practice_field",
+      "confidence": "full",
+      "skipped": []
+    },
+    "template_ref": null
+  },
+  {
+    "year": 2026,
+    "date": "2026-07-31",
+    "title": "岱明朝練",
+    "start_time": "08:00",
+    "end_time": "09:30",
+    "status": "scheduled",
+    "tags": [
+      "ランニング",
+      "いだてん岱明練習",
+      "practice:daiming",
+      "session:morning"
+    ],
+    "practice": {
+      "items": []
+    },
+    "parse": {
+      "source": "description",
+      "confidence": "partial",
+      "skipped": [
+        "2.5km×2 — ペース未記載",
+        "2km×2 — ペース未記載"
+      ]
+    },
+    "template_ref": null
+  },
+  {
+    "year": 2026,
+    "date": "2026-08-01",
+    "title": "岱明夕練",
+    "start_time": "18:00",
+    "end_time": "19:30",
+    "status": "done",
+    "tags": [
+      "ランニング",
+      "いだてん岱明練習",
+      "practice:daiming",
+      "session:evening"
+    ],
+    "practice": {
+      "items": [],
+      "warmup": "動きづくり"
+    },
+    "parse": {
+      "source": "description",
+      "confidence": "partial",
+      "skipped": [
+        "流し2本 — ペース未記載"
+      ]
+    },
+    "template_ref": null
+  },
+  {
+    "year": 2026,
+    "date": "2026-08-03",
+    "title": "岱明朝練",
+    "start_time": "08:00",
+    "end_time": "09:30",
+    "status": "scheduled",
+    "tags": [
+      "ランニング",
+      "いだてん岱明練習",
+      "practice:daiming",
+      "session:morning"
+    ],
+    "practice": {
+      "items": []
+    },
+    "parse": {
+      "source": "description",
+      "confidence": "partial",
+      "skipped": [
+        "2.5km×2 — ペース未記載",
+        "2km×2 — ペース未記載"
+      ]
+    },
+    "template_ref": null
+  },
+  {
+    "year": 2026,
+    "date": "2026-08-03",
+    "title": "岱明夕練",
+    "start_time": "18:00",
+    "end_time": "19:30",
+    "status": "done",
+    "tags": [
+      "ランニング",
+      "いだてん岱明練習",
+      "practice:daiming",
+      "session:evening"
+    ],
+    "practice": {
+      "items": [
+        {
+          "type": "set",
+          "segments": [
+            {
+              "distance_m": 300
+            }
+          ],
+          "label": "300m 1本目 300m k/3:28"
+        },
+        {
+          "type": "set",
+          "segments": [
+            {
+              "distance_m": 300
+            }
+          ],
+          "label": "300m 2本目 300m k/3:22"
+        },
+        {
+          "type": "set",
+          "segments": [
+            {
+              "distance_m": 300
+            }
+          ],
+          "label": "300m 3本目 300m k/3:24"
+        },
+        {
+          "type": "set",
+          "segments": [
+            {
+              "distance_m": 300
+            }
+          ],
+          "label": "300m 4本目 300m k/3:23"
+        },
+        {
+          "type": "set",
+          "segments": [
+            {
+              "distance_m": 300
+            }
+          ],
+          "label": "300m 5本目 300m k/3:22"
+        }
+      ]
+    },
+    "parse": {
+      "source": "practice_field",
+      "confidence": "full",
+      "skipped": []
+    },
+    "template_ref": null
+  },
+  {
+    "year": 2026,
+    "date": "2026-08-04",
+    "title": "岱明朝練",
+    "start_time": "08:00",
+    "end_time": "09:30",
+    "status": "scheduled",
+    "tags": [
+      "ランニング",
+      "いだてん岱明練習",
+      "practice:daiming",
+      "session:morning"
+    ],
+    "practice": {
+      "items": []
+    },
+    "parse": {
+      "source": "description",
+      "confidence": "partial",
+      "skipped": [
+        "2.5km×2 — ペース未記載",
+        "2km×2 — ペース未記載"
+      ]
+    },
+    "template_ref": null
+  },
+  {
+    "year": 2026,
+    "date": "2026-08-05",
+    "title": "自分の練習",
+    "start_time": "19:30",
+    "end_time": "20:00",
+    "status": "scheduled",
+    "tags": [
+      "ランニング",
+      "自分の練習",
+      "practice:personal"
+    ],
+    "practice": {
+      "items": []
+    },
+    "parse": {
+      "source": "description",
+      "confidence": "none",
+      "skipped": []
+    },
+    "template_ref": null
+  },
+  {
+    "year": 2026,
+    "date": "2026-08-06",
+    "title": "岱明朝練",
+    "start_time": "08:00",
+    "end_time": "09:30",
+    "status": "scheduled",
+    "tags": [
+      "ランニング",
+      "いだてん岱明練習",
+      "practice:daiming",
+      "session:morning"
+    ],
+    "practice": {
+      "items": []
+    },
+    "parse": {
+      "source": "description",
+      "confidence": "partial",
+      "skipped": [
+        "2.5km×2 — ペース未記載",
+        "2km×2 — ペース未記載"
+      ]
+    },
+    "template_ref": null
+  },
+  {
+    "year": 2026,
+    "date": "2026-08-07",
+    "title": "岱明朝練",
+    "start_time": "08:00",
+    "end_time": "09:30",
+    "status": "scheduled",
+    "tags": [
+      "ランニング",
+      "いだてん岱明練習",
+      "practice:daiming",
+      "session:morning"
+    ],
+    "practice": {
+      "items": []
+    },
+    "parse": {
+      "source": "description",
+      "confidence": "partial",
+      "skipped": [
+        "2.5km×2 — ペース未記載",
+        "2km×2 — ペース未記載"
+      ]
+    },
+    "template_ref": null
+  },
+  {
+    "year": 2026,
+    "date": "2026-08-07",
+    "title": "岱明夕練",
+    "start_time": "18:00",
+    "end_time": "19:30",
+    "status": "done",
+    "tags": [
+      "ランニング",
+      "いだてん岱明練習",
+      "practice:daiming",
+      "session:evening"
+    ],
+    "practice": {
+      "items": []
+    },
+    "parse": {
+      "source": "description",
+      "confidence": "none",
+      "skipped": []
+    },
+    "template_ref": null
+  },
+  {
+    "year": 2026,
+    "date": "2026-08-08",
+    "title": "自分の練習",
+    "start_time": "16:30",
+    "end_time": "17:30",
+    "status": "scheduled",
+    "tags": [
+      "ランニング",
+      "自分の練習",
+      "practice:personal"
+    ],
+    "practice": {
+      "items": []
+    },
+    "parse": {
+      "source": "description",
+      "confidence": "none",
+      "skipped": []
+    },
+    "template_ref": null
+  },
+  {
+    "year": 2026,
+    "date": "2026-08-08",
+    "title": "岱明夕練",
+    "start_time": "18:00",
+    "end_time": "19:30",
+    "status": "scheduled",
+    "tags": [
+      "ランニング",
+      "いだてん岱明練習",
+      "practice:daiming",
+      "session:evening"
+    ],
+    "practice": {
+      "items": []
+    },
+    "parse": {
+      "source": "description",
+      "confidence": "partial",
+      "skipped": [
+        "流し2本 — ペース未記載"
+      ]
+    },
+    "template_ref": null
+  },
+  {
+    "year": 2026,
+    "date": "2026-08-10",
+    "title": "岱明夕練",
+    "start_time": "18:00",
+    "end_time": "19:30",
+    "status": "scheduled",
+    "tags": [
+      "ランニング",
+      "いだてん岱明練習",
+      "practice:daiming",
+      "session:evening"
+    ],
+    "practice": {
+      "items": []
+    },
+    "parse": {
+      "source": "description",
+      "confidence": "partial",
+      "skipped": [
+        "1500mRP+10秒/km — 個人RPのため未換算"
+      ]
+    },
+    "template_ref": null
+  },
+  {
+    "year": 2026,
+    "date": "2026-08-12",
+    "title": "岱明夕練",
+    "start_time": "18:00",
+    "end_time": "19:30",
+    "status": "done",
+    "tags": [
+      "ランニング",
+      "いだてん岱明練習",
+      "practice:daiming",
+      "session:evening"
+    ],
+    "practice": {
+      "items": []
+    },
+    "parse": {
+      "source": "description",
+      "confidence": "partial",
+      "skipped": [
+        "500m1本 — ペース未記載"
+      ]
+    },
+    "template_ref": null
+  },
+  {
+    "year": 2026,
+    "date": "2026-08-14",
+    "title": "自分の練習",
+    "start_time": "17:00",
+    "end_time": "17:45",
+    "status": "done",
+    "tags": [
+      "ランニング",
+      "自分の練習",
+      "practice:personal"
+    ],
+    "practice": {
+      "items": []
+    },
+    "parse": {
+      "source": "description",
+      "confidence": "none",
+      "skipped": []
+    },
+    "template_ref": null
+  },
+  {
+    "year": 2026,
+    "date": "2026-08-14",
+    "title": "岱明夕練",
+    "start_time": "18:00",
+    "end_time": "19:30",
+    "status": "scheduled",
+    "tags": [
+      "ランニング",
+      "いだてん岱明練習",
+      "practice:daiming",
+      "session:evening"
+    ],
+    "practice": {
+      "warmup": "動きづくり",
+      "items": [
+        {
+          "type": "jog",
+          "laps": 6,
+          "distance_km": 3.36,
+          "pace": "k/4:46"
+        },
+        {
+          "type": "jog",
+          "laps": 5,
+          "distance_km": 2.8,
+          "pace": "k/4:46"
+        },
+        {
+          "type": "set",
+          "segments": [
+            {
+              "distance_m": 300
+            }
+          ],
+          "label": "900m （300m57秒組） 900m k/3:10"
+        },
+        {
+          "type": "set",
+          "segments": [
+            {
+              "distance_m": 300
+            }
+          ],
+          "label": "900m （300m63秒組） 900m k/3:30"
+        },
+        {
+          "type": "set",
+          "segments": [
+            {
+              "distance_m": 300
+            }
+          ],
+          "label": "900m （300m69秒組） 900m k/3:50"
+        }
+      ]
+    },
+    "parse": {
+      "source": "practice_field",
+      "confidence": "full",
+      "skipped": []
+    },
+    "template_ref": null
+  },
+  {
+    "year": 2026,
+    "date": null,
+    "title": "練習のバリエーション",
+    "start_time": null,
+    "end_time": null,
+    "status": "scheduled",
+    "tags": [
+      "ランニング",
+      "いだてん岱明練習",
+      "practice:daiming"
+    ],
+    "practice": {
+      "items": []
+    },
+    "parse": {
+      "source": "description",
+      "confidence": "none",
+      "skipped": []
+    },
+    "template_ref": "practice_templates"
+  },
+  {
+    "year": 2026,
+    "date": null,
+    "title": "岱明中 荒玉中体連駅伝（2026-10-14）第一ピーク向けトレーニング計画",
+    "start_time": null,
+    "end_time": null,
+    "status": "inbox",
+    "tags": [
+      "ランニング",
+      "いだてん岱明練習",
+      "practice:daiming"
+    ],
+    "practice": {
+      "items": []
+    },
+    "parse": {
+      "source": "none",
+      "confidence": "none",
+      "skipped": []
+    },
+    "template_ref": null
+  },
+  {
+    "year": 2026,
+    "date": null,
+    "title": "岱明中 陸上長距離 卒業年度別内訳（2019〜2025）",
+    "start_time": null,
+    "end_time": null,
+    "status": "inbox",
+    "tags": [
+      "ランニング",
+      "いだてん岱明練習",
+      "practice:daiming"
+    ],
+    "practice": {
+      "items": []
+    },
+    "parse": {
+      "source": "description",
+      "confidence": "none",
+      "skipped": []
+    },
+    "template_ref": null
+  }
+]

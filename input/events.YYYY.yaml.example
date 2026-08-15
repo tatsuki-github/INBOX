@@ -36,3 +36,24 @@ events:
     status: inbox
     description_file: input/memos/example-long-memo.txt
     description: 先頭に表示する短い説明
+
+  # 練習メニュー（構造化）
+  - title: 例: 岱明夕練
+    date: 2026-08-14
+    all_day: false
+    start_time: "18:00"
+    end_time: "19:30"
+    category: 予定
+    status: scheduled
+    tags: [ランニング, いだてん岱明練習, practice:daiming, session:evening]
+    practice:
+      warmup: 動きづくり
+      items:
+        - type: interval
+          distance_m: 300
+          reps: "6-10"
+          intensity: RP
+          rest_sec: 60
+    description: |
+      動きづくり
+      300m×6〜10（RP、レスト1分）

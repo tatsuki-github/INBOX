@@ -26,6 +26,7 @@ from generate_calendar import (  # noqa: E402
     month_anchor_id,
     page_top_anchor_id,
     render_markdown_calendar,
+    write_events_json,
     write_markdown_calendar,
 )
 
@@ -239,6 +240,26 @@ class RootCalendarTests(unittest.TestCase):
                     root_path=tmp / "unused.md",
                 )
             )
+
+
+class EventsJsonTests(unittest.TestCase):
+    def test_write_events_json_includes_practice(self) -> None:
+        import json
+        import tempfile
+
+        events = [
+            Event(
+                title="岱明夕練",
+                start_date=date(2026, 8, 14),
+                end_date=date(2026, 8, 14),
+                practice={"items": [{"type": "interval", "distance_m": 600}]},
+            )
+        ]
+        with tempfile.TemporaryDirectory() as tmpdir:
+            path = Path(tmpdir) / "events.json"
+            write_events_json(path, events)
+            payload = json.loads(path.read_text(encoding="utf-8"))
+            self.assertEqual(payload[0]["practice"]["items"][0]["distance_m"], 600)
 
 
 if __name__ == "__main__":

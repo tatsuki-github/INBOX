@@ -1,0 +1,77 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/tatsuki-github/INBOX/schemas/practice-item.schema.json",
+  "title": "PracticeItem",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "type": {
+      "type": "string",
+      "enum": ["jog", "interval", "set", "strides", "warmup", "rest", "other"]
+    },
+    "group": {
+      "type": ["string", "null"]
+    },
+    "label": {
+      "type": "string"
+    },
+    "distance_m": {
+      "type": ["number", "null"]
+    },
+    "distance_km": {
+      "type": ["number", "null"]
+    },
+    "distance_km_min": {
+      "type": ["number", "null"]
+    },
+    "distance_km_max": {
+      "type": ["number", "null"]
+    },
+    "laps": {
+      "type": ["integer", "null"]
+    },
+    "reps": {
+      "oneOf": [
+        { "type": "integer", "minimum": 1 },
+        { "type": "string" }
+      ]
+    },
+    "pace": {
+      "type": ["string", "null"],
+      "pattern": "^k/\\d+:\\d{2}$"
+    },
+    "pace_min": {
+      "type": ["string", "null"],
+      "pattern": "^k/\\d+:\\d{2}$"
+    },
+    "pace_max": {
+      "type": ["string", "null"],
+      "pattern": "^k/\\d+:\\d{2}$"
+    },
+    "intensity": {
+      "type": ["string", "null"],
+      "enum": ["E", "T", "I", "R", "RP", "1500mRP", "3000mRP", "GZ", null]
+    },
+    "rest_sec": {
+      "type": ["integer", "null"],
+      "minimum": 0
+    },
+    "rest": {
+      "type": ["string", "null"]
+    },
+    "segments": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "distance_m": { "type": "number" },
+          "pace": { "type": ["string", "null"] },
+          "intensity": { "type": ["string", "null"] }
+        },
+        "required": ["distance_m"]
+      }
+    }
+  },
+  "required": ["type"]
+}

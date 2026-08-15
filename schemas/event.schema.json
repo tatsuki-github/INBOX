@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/tatsuki-github/INBOX/schemas/event.schema.json",
+  "title": "CalendarEvent",
+  "type": "object",
+  "additionalProperties": true,
+  "required": ["title"],
+  "properties": {
+    "title": { "type": "string", "minLength": 1 },
+    "date": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$" },
+    "end_date": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$" },
+    "all_day": { "type": "boolean" },
+    "start_time": { "type": "string", "pattern": "^\\d{2}:\\d{2}$" },
+    "end_time": { "type": "string", "pattern": "^\\d{2}:\\d{2}$" },
+    "category": { "type": "string" },
+    "status": { "type": "string" },
+    "tags": {
+      "oneOf": [
+        { "type": "array", "items": { "type": "string" } },
+        { "type": "string" }
+      ]
+    },
+    "urls": {
+      "oneOf": [
+        { "type": "array", "items": { "type": "string" } },
+        { "type": "string" }
+      ]
+    },
+    "url": { "type": "string" },
+    "description": { "type": "string" },
+    "description_file": { "type": "string" },
+    "location": { "type": "string" },
+    "private": { "type": "boolean" },
+    "template_ref": { "type": "string" },
+    "practice": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "warmup": { "type": "string" },
+        "notes": { "type": "string" },
+        "items": {
+          "type": "array",
+          "items": { "$ref": "practice-item.schema.json" }
+        }
+      },
+      "required": ["items"]
+    }
+  }
+}
