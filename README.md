@@ -124,6 +124,65 @@ python3 scripts/import_notion_csv.py --csv path/to/notion_export.csv --memo-year
 python3 scripts/generate_calendar.py --all-years
 ```
 
+### Strava API から自分の練習を取り込む
+
+[Strava API](https://developers.strava.com/) で自分のアクティビティを取得し、`input/events.YYYY.yaml` に追記できます。重複は Strava のアクティビティ URL で判定します。
+
+#### 1. アプリ作成と環境変数
+
+1. [Strava API 設定](https://www.strava.com/settings/api) でアプリを作成（サブスクリプションが必要）
+2. Authorization Callback Domain に `localhost` を設定
+3. 環境変数を設定:
+
+```bash
+export STRAVA_CLIENT_ID=xxxxx
+export STRAVA_CLIENT_SECRET=xxxxx
+```
+
+#### 2. 初回認可（トークン取得）
+
+```bash
+python3 scripts/import_strava.py auth
+# 表示されたURLをブラウザで開き、認可後のリダイレクトURLから code= をコピー
+python3 scripts/import_strava.py auth --code YOUR_CODE
+```
+
+トークンは `.strava_tokens.json` に保存されます（gitignore 済み。コミットしないでください）。
+
+#### 3. 取り込み → カレンダー再生成
+
+```bash
+# 例: 2026-01-01 以降のアクティビティ
+python3 scripts/import_strava.py import --after 2026-01-01
+
+# Run のみ
+python3 scripts/import_strava.py import --after 2026-08-01 --sport Run
+
+# 書き込まず件数確認
+python3 scripts/import_strava.py import --after 2026-08-01 --dry-run
+
+# カレンダー再生成
+python3 scripts/generate_calendar.py --year 2026
+```
+
+| オプション | 説明 |
+|---|---|
+| `--after` / `--before` | 期間フィルタ（`YYYY-MM-DD`） |
+| `--sport` | `sport_type` で絞り込み（複数可） |
+| `--title-mode` | `personal`（デフォルト: 件名「自分の練習」）/ `strava` / `sport` |
+| `--update` / `--no-update` | 同一 Strava ID の更新（デフォルト: 更新する） |
+| `--from-json` | API の代わりに保存済み JSON 配列を使う |
+
+取り込まれた予定はタグ `自分の練習` / `strava` / 種別名、URL に Strava へのリンク、説明に距離・ペース等を付与します。
+
+定期実行するなら、同梱の GitHub Actions（`.github/workflows/import-strava.yml`）を使えます。
+
+1. ローカルで `auth` を完了し、`.strava_tokens.json` の `refresh_token` を控える
+2. リポジトリ Secrets に `STRAVA_CLIENT_ID` / `STRAVA_CLIENT_SECRET` / `STRAVA_REFRESH_TOKEN` を登録
+3. Actions の **Import Strava practices** を手動実行、または毎日 21:00 JST の schedule を待つ
+
+Strava が refresh_token をローテーションした場合は、ジョブログの注意に従い Secrets を更新してください。
+
 ## インポート手順
 
 ### Googleカレンダー
