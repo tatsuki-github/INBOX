@@ -999,6 +999,8 @@ events:
   tags:
   - ランニング
   - いだてん岱明練習
+  - practice:daiming
+  - session:morning
 - title: 岱明夕練休み
   date: '2026-07-20'
   all_day: true
@@ -1007,6 +1009,8 @@ events:
   tags:
   - ランニング
   - いだてん岱明練習
+  - practice:daiming
+  - session:evening
 - title: 岱明朝練
   date: '2026-07-21'
   all_day: false
@@ -1018,6 +1022,8 @@ events:
   tags:
   - ランニング
   - いだてん岱明練習
+  - practice:daiming
+  - session:morning
 - title: 岱明夕練休み
   date: '2026-07-21'
   all_day: true
@@ -1026,6 +1032,8 @@ events:
   tags:
   - ランニング
   - いだてん岱明練習
+  - practice:daiming
+  - session:evening
 - title: 三者面談（3年）
   date: '2026-07-21'
   all_day: true
@@ -1039,6 +1047,8 @@ events:
   tags:
   - ランニング
   - いだてん岱明練習
+  - practice:daiming
+  - session:morning
 - title: 岱明夕練
   date: '2026-07-22'
   all_day: false
@@ -1049,6 +1059,8 @@ events:
   tags:
   - ランニング
   - いだてん岱明練習
+  - practice:daiming
+  - session:evening
 - title: 三者面談（3年）
   date: '2026-07-22'
   all_day: true
@@ -1067,6 +1079,8 @@ events:
   tags:
   - ランニング
   - いだてん岱明練習
+  - practice:daiming
+  - session:evening
 - title: 岱明朝練
   date: '2026-07-23'
   all_day: false
@@ -1078,6 +1092,8 @@ events:
   tags:
   - ランニング
   - いだてん岱明練習
+  - practice:daiming
+  - session:morning
 - title: 三者面談（3年）
   date: '2026-07-23'
   all_day: true
@@ -1094,6 +1110,8 @@ events:
   tags:
   - ランニング
   - いだてん岱明練習
+  - practice:daiming
+  - session:morning
 - title: 岱明夕練
   date: '2026-07-24'
   all_day: false
@@ -1104,6 +1122,8 @@ events:
   tags:
   - ランニング
   - いだてん岱明練習
+  - practice:daiming
+  - session:evening
 - title: Claude Opus 5
   date: '2026-07-24'
   all_day: true
@@ -1144,6 +1164,8 @@ events:
   tags:
   - ランニング
   - いだてん岱明練習
+  - practice:daiming
+  - session:morning
 - title: 岱明夕練
   date: '2026-07-25'
   all_day: false
@@ -1154,6 +1176,8 @@ events:
   tags:
   - ランニング
   - いだてん岱明練習
+  - practice:daiming
+  - session:evening
 - title: 岱明朝練休み
   date: '2026-07-26'
   all_day: true
@@ -1162,6 +1186,8 @@ events:
   tags:
   - ランニング
   - いだてん岱明練習
+  - practice:daiming
+  - session:morning
 - title: 岱明夕練休み
   date: '2026-07-26'
   all_day: true
@@ -1170,6 +1196,8 @@ events:
   tags:
   - ランニング
   - いだてん岱明練習
+  - practice:daiming
+  - session:evening
 - title: 岱明朝練
   date: '2026-07-27'
   all_day: false
@@ -1181,6 +1209,8 @@ events:
   tags:
   - ランニング
   - いだてん岱明練習
+  - practice:daiming
+  - session:morning
 - title: 岱明夕練
   date: '2026-07-27'
   all_day: false
@@ -1191,6 +1221,8 @@ events:
   tags:
   - ランニング
   - いだてん岱明練習
+  - practice:daiming
+  - session:evening
 - title: 帰りの電車
   date: '2026-07-27'
   all_day: false
@@ -1234,6 +1266,8 @@ events:
   tags:
   - ランニング
   - いだてん岱明練習
+  - practice:daiming
+  - session:evening
 - title: 岱明朝練
   date: '2026-07-28'
   all_day: false
@@ -1245,6 +1279,8 @@ events:
   tags:
   - ランニング
   - いだてん岱明練習
+  - practice:daiming
+  - session:morning
 - title: 熊本県熊本地方を震源とする地震
   date: '2026-07-28'
   all_day: false
@@ -1270,6 +1306,8 @@ events:
   tags:
   - ランニング
   - いだてん岱明練習
+  - practice:daiming
+  - session:morning
 - title: 岱明夕練
   date: '2026-07-29'
   all_day: false
@@ -1280,6 +1318,8 @@ events:
   tags:
   - ランニング
   - いだてん岱明練習
+  - practice:daiming
+  - session:evening
 - title: 岱明朝練休み
   date: '2026-07-30'
   all_day: true
@@ -1288,6 +1328,8 @@ events:
   tags:
   - ランニング
   - いだてん岱明練習
+  - practice:daiming
+  - session:morning
 - title: 岱明夕練休み
   date: '2026-07-30'
   all_day: true
@@ -1296,6 +1338,8 @@ events:
   tags:
   - ランニング
   - いだてん岱明練習
+  - practice:daiming
+  - session:evening
 - title: 岱明夕練
   date: '2026-07-31'
   all_day: false
@@ -1304,11 +1348,30 @@ events:
   start_time: '18:00'
   end_time: '19:30'
   description: |
+    <!-- practice-menu:v1
+    warmup: null
+    items:
+    - type: interval
+      distance_m: 600
+      reps: '2'
+      intensity: RP
+      rest_sec: null
+    -->
+    
     各自アップ、600m2本（1500mRP、r=8分）
-    600m×2（1500mRP）
+    
+    600m×2（RP）
+  practice:
+    items:
+      - type: interval
+        distance_m: 600
+        reps: 2
+        intensity: RP
   tags:
   - ランニング
   - いだてん岱明練習
+  - practice:daiming
+  - session:evening
 - title: 岱明朝練
   date: '2026-07-31'
   all_day: false
@@ -1320,6 +1383,8 @@ events:
   tags:
   - ランニング
   - いだてん岱明練習
+  - practice:daiming
+  - session:morning
 - title: 交通費申請
   date: '2026-08-01'
   all_day: true
@@ -1386,6 +1451,8 @@ events:
   tags:
   - ランニング
   - いだてん岱明練習
+  - practice:daiming
+  - session:evening
 - title: 岱明朝練休み
   date: '2026-08-02'
   all_day: true
@@ -1394,6 +1461,8 @@ events:
   tags:
   - ランニング
   - いだてん岱明練習
+  - practice:daiming
+  - session:morning
 - title: 岱明夕練休み
   date: '2026-08-02'
   all_day: true
@@ -1402,6 +1471,8 @@ events:
   tags:
   - ランニング
   - いだてん岱明練習
+  - practice:daiming
+  - session:evening
 - title: 岱明朝練
   date: '2026-08-03'
   all_day: false
@@ -1413,6 +1484,8 @@ events:
   tags:
   - ランニング
   - いだてん岱明練習
+  - practice:daiming
+  - session:morning
 - title: 岱明夕練
   date: '2026-08-03'
   all_day: false
@@ -1421,16 +1494,70 @@ events:
   start_time: '18:00'
   end_time: '19:30'
   description: |
+    <!-- practice-menu:v1
+    warmup: null
+    items:
+    - type: set
+      group: null
+      segments:
+      - distance_m: 300
+      label: 300m 1本目 300m k/3:28
+    - type: set
+      group: null
+      segments:
+      - distance_m: 300
+      label: 300m 2本目 300m k/3:22
+    - type: set
+      group: null
+      segments:
+      - distance_m: 300
+      label: 300m 3本目 300m k/3:24
+    - type: set
+      group: null
+      segments:
+      - distance_m: 300
+      label: 300m 4本目 300m k/3:23
+    - type: set
+      group: null
+      segments:
+      - distance_m: 300
+      label: 300m 5本目 300m k/3:22
+    -->
+    
     各自アップ、300m5本、レスト70秒
     
-    300m 1本目 300m k/3:28
-    300m 2本目 300m k/3:22
-    300m 3本目 300m k/3:24
-    300m 4本目 300m k/3:23
-    300m 5本目 300m k/3:22
+    300m 1本目 300m k/3:28300m
+    300m 2本目 300m k/3:22300m
+    300m 3本目 300m k/3:24300m
+    300m 4本目 300m k/3:23300m
+    300m 5本目 300m k/3:22300m
+  practice:
+    items:
+      - type: set
+        segments:
+          - distance_m: 300
+        label: '300m 1本目 300m k/3:28'
+      - type: set
+        segments:
+          - distance_m: 300
+        label: '300m 2本目 300m k/3:22'
+      - type: set
+        segments:
+          - distance_m: 300
+        label: '300m 3本目 300m k/3:24'
+      - type: set
+        segments:
+          - distance_m: 300
+        label: '300m 4本目 300m k/3:23'
+      - type: set
+        segments:
+          - distance_m: 300
+        label: '300m 5本目 300m k/3:22'
   tags:
   - ランニング
   - いだてん岱明練習
+  - practice:daiming
+  - session:evening
 - title: ラン
   date: '2026-08-03'
   all_day: false
@@ -1458,6 +1585,8 @@ events:
   tags:
   - ランニング
   - いだてん岱明練習
+  - practice:daiming
+  - session:evening
 - title: 岱明朝練
   date: '2026-08-04'
   all_day: false
@@ -1469,6 +1598,8 @@ events:
   tags:
   - ランニング
   - いだてん岱明練習
+  - practice:daiming
+  - session:morning
 - title: 荒田
   date: '2026-08-04'
   all_day: false
@@ -1495,6 +1626,8 @@ events:
   tags:
   - ランニング
   - いだてん岱明練習
+  - practice:daiming
+  - session:morning
 - title: 岱明夕練
   date: '2026-08-05'
   all_day: false
@@ -1505,6 +1638,8 @@ events:
   tags:
   - ランニング
   - いだてん岱明練習
+  - practice:daiming
+  - session:evening
 - title: 自分の練習
   date: '2026-08-05'
   all_day: false
@@ -1516,6 +1651,7 @@ events:
   tags:
   - ランニング
   - 自分の練習
+  - practice:personal
 - title: 岩倉
   date: '2026-08-05'
   all_day: false
@@ -1533,6 +1669,8 @@ events:
   tags:
   - ランニング
   - いだてん岱明練習
+  - practice:daiming
+  - session:evening
 - title: 岱明朝練
   date: '2026-08-06'
   all_day: false
@@ -1544,6 +1682,8 @@ events:
   tags:
   - ランニング
   - いだてん岱明練習
+  - practice:daiming
+  - session:morning
 - title: 荒田
   date: '2026-08-06'
   all_day: false
@@ -1582,6 +1722,8 @@ events:
   tags:
   - ランニング
   - いだてん岱明練習
+  - practice:daiming
+  - session:morning
 - title: 岱明夕練
   date: '2026-08-07'
   all_day: false
@@ -1593,6 +1735,8 @@ events:
   tags:
   - ランニング
   - いだてん岱明練習
+  - practice:daiming
+  - session:evening
 - title: 川上
   date: '2026-08-07'
   all_day: false
@@ -1610,6 +1754,8 @@ events:
   tags:
   - ランニング
   - いだてん岱明練習
+  - practice:daiming
+  - session:morning
 - title: 自分の練習
   date: '2026-08-08'
   all_day: false
@@ -1621,6 +1767,7 @@ events:
   tags:
   - ランニング
   - 自分の練習
+  - practice:personal
 - title: 岱明夕練
   date: '2026-08-08'
   all_day: false
@@ -1632,6 +1779,8 @@ events:
   tags:
   - ランニング
   - いだてん岱明練習
+  - practice:daiming
+  - session:evening
 - title: 岱明朝練休み
   date: '2026-08-09'
   all_day: true
@@ -1640,6 +1789,8 @@ events:
   tags:
   - ランニング
   - いだてん岱明練習
+  - practice:daiming
+  - session:morning
 - title: 岱明夕練休み
   date: '2026-08-09'
   all_day: true
@@ -1648,6 +1799,8 @@ events:
   tags:
   - ランニング
   - いだてん岱明練習
+  - practice:daiming
+  - session:evening
 - title: 岱明朝練
   date: '2026-08-10'
   all_day: false
@@ -1658,6 +1811,8 @@ events:
   tags:
   - ランニング
   - いだてん岱明練習
+  - practice:daiming
+  - session:morning
 - title: 岱明夕練
   date: '2026-08-10'
   all_day: false
@@ -1672,6 +1827,8 @@ events:
   tags:
   - ランニング
   - いだてん岱明練習
+  - practice:daiming
+  - session:evening
 - title: 学校閉庁日
   date: '2026-08-10'
   all_day: true
@@ -1717,6 +1874,8 @@ events:
   tags:
   - ランニング
   - いだてん岱明練習
+  - practice:daiming
+  - session:morning
 - title: 岱明夕練休み
   date: '2026-08-11'
   all_day: true
@@ -1725,6 +1884,8 @@ events:
   tags:
   - ランニング
   - いだてん岱明練習
+  - practice:daiming
+  - session:evening
 - title: 岱明朝練休み
   date: '2026-08-12'
   all_day: true
@@ -1733,6 +1894,8 @@ events:
   tags:
   - ランニング
   - いだてん岱明練習
+  - practice:daiming
+  - session:morning
 - title: 岱明夕練
   date: '2026-08-12'
   all_day: false
@@ -1744,6 +1907,8 @@ events:
   tags:
   - ランニング
   - いだてん岱明練習
+  - practice:daiming
+  - session:evening
 - title: 夏季休暇
   date: '2026-08-12'
   all_day: true
@@ -1762,6 +1927,8 @@ events:
   tags:
   - ランニング
   - いだてん岱明練習
+  - practice:daiming
+  - session:morning
 - title: 岱明夕練休み
   date: '2026-08-13'
   all_day: true
@@ -1770,6 +1937,8 @@ events:
   tags:
   - ランニング
   - いだてん岱明練習
+  - practice:daiming
+  - session:evening
 - title: 学校閉庁日
   date: '2026-08-13'
   all_day: true
@@ -1783,6 +1952,8 @@ events:
   tags:
   - ランニング
   - いだてん岱明練習
+  - practice:daiming
+  - session:morning
 - title: 自分の練習
   date: '2026-08-14'
   all_day: false
@@ -1794,6 +1965,7 @@ events:
   tags:
   - ランニング
   - 自分の練習
+  - practice:personal
 - title: 岱明夕練
   date: '2026-08-14'
   all_day: false
@@ -1802,16 +1974,71 @@ events:
   start_time: '18:00'
   end_time: '19:30'
   description: |
+    <!-- practice-menu:v1
+    warmup: 動きづくり
+    items:
+    - type: jog
+      group: null
+      laps: 6
+      distance_km: 3.36
+      pace: k/4:46
+    - type: jog
+      group: null
+      laps: 5
+      distance_km: 2.8
+      pace: k/4:46
+    - type: set
+      group: null
+      segments:
+      - distance_m: 300
+      label: 900m （300m57秒組） 900m k/3:10
+    - type: set
+      group: null
+      segments:
+      - distance_m: 300
+      label: 900m （300m63秒組） 900m k/3:30
+    - type: set
+      group: null
+      segments:
+      - distance_m: 300
+      label: 900m （300m69秒組） 900m k/3:50
+    -->
+    
     動きづくり
     
-    ジョグ 男子 3.36km (6周) k/4:46
-    ジョグ 女子 2.8km (5周) k/4:46
-    900m（300m57秒組） 900m k/3:10
-    900m（300m63秒組） 900m k/3:30
-    900m（300m69秒組） 900m k/3:50
+    ジョグ 3.36km (6周) k/4:46
+    ジョグ 2.80km (5周) k/4:46
+    900m （300m57秒組） 900m k/3:10300m
+    900m （300m63秒組） 900m k/3:30300m
+    900m （300m69秒組） 900m k/3:50300m
+  practice:
+    warmup: 動きづくり
+    items:
+      - type: jog
+        laps: 6
+        distance_km: 3.36
+        pace: 'k/4:46'
+      - type: jog
+        laps: 5
+        distance_km: 2.8
+        pace: 'k/4:46'
+      - type: set
+        segments:
+          - distance_m: 300
+        label: '900m （300m57秒組） 900m k/3:10'
+      - type: set
+        segments:
+          - distance_m: 300
+        label: '900m （300m63秒組） 900m k/3:30'
+      - type: set
+        segments:
+          - distance_m: 300
+        label: '900m （300m69秒組） 900m k/3:50'
   tags:
   - ランニング
   - いだてん岱明練習
+  - practice:daiming
+  - session:evening
 - title: 夏季休暇
   date: '2026-08-14'
   all_day: true
@@ -1839,6 +2066,8 @@ events:
   tags:
   - ランニング
   - いだてん岱明練習
+  - practice:daiming
+  - session:morning
 - title: 岱明夕練
   date: '2026-08-15'
   all_day: false
@@ -1849,6 +2078,8 @@ events:
   tags:
   - ランニング
   - いだてん岱明練習
+  - practice:daiming
+  - session:evening
 - title: 岱明朝練休み
   date: '2026-08-16'
   all_day: true
@@ -1857,6 +2088,8 @@ events:
   tags:
   - ランニング
   - いだてん岱明練習
+  - practice:daiming
+  - session:morning
 - title: 岱明夕練休み
   date: '2026-08-16'
   all_day: true
@@ -1865,6 +2098,8 @@ events:
   tags:
   - ランニング
   - いだてん岱明練習
+  - practice:daiming
+  - session:evening
 - title: 岱明朝練
   date: '2026-08-17'
   all_day: false
@@ -1875,6 +2110,8 @@ events:
   tags:
   - ランニング
   - いだてん岱明練習
+  - practice:daiming
+  - session:morning
 - title: 岱明夕練
   date: '2026-08-17'
   all_day: false
@@ -1885,6 +2122,8 @@ events:
   tags:
   - ランニング
   - いだてん岱明練習
+  - practice:daiming
+  - session:evening
 - title: 池上
   date: '2026-08-17'
   all_day: false
@@ -1902,6 +2141,8 @@ events:
   tags:
   - ランニング
   - いだてん岱明練習
+  - practice:daiming
+  - session:morning
 - title: 岱明夕練休み
   date: '2026-08-18'
   all_day: true
@@ -1910,6 +2151,8 @@ events:
   tags:
   - ランニング
   - いだてん岱明練習
+  - practice:daiming
+  - session:evening
 - title: たまなPayデジタル商品券追加販売開始
   date: '2026-08-18'
   all_day: true
@@ -1930,6 +2173,8 @@ events:
   tags:
   - ランニング
   - いだてん岱明練習
+  - practice:daiming
+  - session:morning
 - title: 岱明夕練
   date: '2026-08-19'
   all_day: false
@@ -1940,6 +2185,8 @@ events:
   tags:
   - ランニング
   - いだてん岱明練習
+  - practice:daiming
+  - session:evening
 - title: 2，3年課題提出日
   date: '2026-08-19'
   all_day: true
@@ -1955,6 +2202,8 @@ events:
   tags:
   - ランニング
   - いだてん岱明練習
+  - practice:daiming
+  - session:morning
 - title: 練習会（岱明）
   date: '2026-08-20'
   all_day: false
@@ -1963,6 +2212,8 @@ events:
   start_time: '19:00'
   end_time: '21:00'
   location: 玉名市岱明中央公園グラウンド
+  tags:
+  - practice:daiming
 - title: 1年課題提出日
   date: '2026-08-20'
   all_day: true
@@ -1978,6 +2229,8 @@ events:
   tags:
   - ランニング
   - いだてん岱明練習
+  - practice:daiming
+  - session:morning
 - title: 岱明夕練
   date: '2026-08-21'
   all_day: false
@@ -1988,6 +2241,8 @@ events:
   tags:
   - ランニング
   - いだてん岱明練習
+  - practice:daiming
+  - session:evening
 - title: 1年課題提出日
   date: '2026-08-21'
   all_day: true
@@ -2019,6 +2274,8 @@ events:
   tags:
   - ランニング
   - いだてん岱明練習
+  - practice:daiming
+  - session:morning
 - title: 岱明夕練
   date: '2026-08-22'
   all_day: false
@@ -2029,6 +2286,8 @@ events:
   tags:
   - ランニング
   - いだてん岱明練習
+  - practice:daiming
+  - session:evening
 - title: 玉名市人権教育研究大会
   date: '2026-08-22'
   all_day: true
@@ -2042,6 +2301,8 @@ events:
   tags:
   - ランニング
   - いだてん岱明練習
+  - practice:daiming
+  - session:morning
 - title: 練習会（桃田）
   date: '2026-08-23'
   all_day: false
@@ -2064,6 +2325,8 @@ events:
   tags:
   - ランニング
   - いだてん岱明練習
+  - practice:daiming
+  - session:morning
 - title: 岱明夕練
   date: '2026-08-24'
   all_day: false
@@ -2074,6 +2337,8 @@ events:
   tags:
   - ランニング
   - いだてん岱明練習
+  - practice:daiming
+  - session:evening
 - title: 岱明夕練休み
   date: '2026-08-25'
   all_day: true
@@ -2082,6 +2347,8 @@ events:
   tags:
   - ランニング
   - いだてん岱明練習
+  - practice:daiming
+  - session:evening
 - title: 岱明朝練
   date: '2026-08-25'
   all_day: false
@@ -2092,6 +2359,8 @@ events:
   tags:
   - ランニング
   - いだてん岱明練習
+  - practice:daiming
+  - session:morning
 - title: 石原
   date: '2026-08-25'
   all_day: false
@@ -2127,6 +2396,8 @@ events:
   tags:
   - ランニング
   - いだてん岱明練習
+  - practice:daiming
+  - session:morning
 - title: 岱明夕練
   date: '2026-08-26'
   all_day: false
@@ -2137,6 +2408,8 @@ events:
   tags:
   - ランニング
   - いだてん岱明練習
+  - practice:daiming
+  - session:evening
 - title: 夏期休業最終日
   date: '2026-08-26'
   all_day: true
@@ -2185,6 +2458,8 @@ events:
   status: scheduled
   start_time: '19:00'
   end_time: '21:00'
+  tags:
+  - practice:daiming
 - title: 石原
   date: '2026-08-27'
   all_day: false
@@ -2257,6 +2532,8 @@ events:
   all_day: true
   category: 予定
   status: scheduled
+  tags:
+  - practice:daiming
 - title: 石原
   date: '2026-08-31'
   all_day: false
@@ -2322,6 +2599,8 @@ events:
   status: scheduled
   start_time: '19:00'
   end_time: '21:00'
+  tags:
+  - practice:daiming
 - title: 岱明中前期期末テスト
   date: '2026-09-09'
   end_date: '2026-09-11'
@@ -2335,6 +2614,8 @@ events:
   status: scheduled
   start_time: '19:00'
   end_time: '21:00'
+  tags:
+  - practice:daiming
 - title: 第４４回 全九州高校新人陸上大会熊本県予選
   date: '2026-09-11'
   end_date: '2026-09-13'
@@ -4229,8 +4510,7 @@ events:
   description: 農山さんは一般。有明高専が有明中に分類されている。
   tags:
   - ランニング
-- title: 'ニューバランス Fu
-elCell Pvlse v1'
+- title: ニューバランス Fu elCell Pvlse v1
   category: メモ
   status: inbox
   tags:
@@ -4609,35 +4889,25 @@ elCell Pvlse v1'
 - title: 練習のバリエーション
   category: 予定
   status: scheduled
+  template_ref: practice_templates
   description: |
-    | 種類 | 内容 |
-    | --- | --- |
-    | ジョグ | 男子 4.0〜6.0km k/4:00〜k/4:10 |
-    | ジョグ | 女子 4.0〜6.0km k/4:20〜k/4:30 |
-    | 300m | 300m×6〜10（RP、レスト1分） |
-    | 600m | 600m×3〜5（3000mRP、レスト2分） |
-    | セット | 男子 2100m+900m / 女子 1200m+900m |
-    | 900m | 900m 1本目 k/4:00 / 2本目 k/3:50 / 3本目 k/3:40（レスト3分） |
-    | ロングセット | 男子 2000m+1000m / 女子 1000m×2（レスト5分、通常: 余裕ペース / 本番前: RP付近） |
+    練習メニューテンプレート集。詳細は input/practice_templates.yaml を参照。
+    
+    - jog-male-easy / jog-female-easy
+    - interval-300-rp / interval-600-3000rp
+    - set-male-2100-900 / set-female-1200-900
+    - interval-900-progressive
+    - longset-male-2000-1000 / longset-female-1000x2
   tags:
   - ランニング
   - いだてん岱明練習
+  - practice:daiming
 - title: 45/15のバリエーション
   category: メモ
   status: inbox
+  template_ref: practice_templates
   description: |
-    | 種類 | 内容 |
-    | --- | --- |
-    | 強度進行 | 一定／線形／階段／ピラミッド |
-    | 休憩 | 立ち・歩き／軽いジョグ |
-    | 量 | 15本→30本（8週間） |
-    | コンビネーション変種 | プログレッシブ15–20本 → 2分休 → 最終速度でさらに5本 |
-    | 代替 | 30/30、30/15（復帰・速度制限時） |
-    | ピラミッド変種 | 30↔45↔60秒 |
-    | ブロックセット | 10K→5K→3Kペースの3セット |
-    | コンビネーションラン | 1–2時間イージー直後に45/15を10–15本 |
-    | 周期化 | ベース／特異準備／競技期で本数・強度を変える |
-    | 距離別 | 800–1500は高強度短量、5–10Kは標準、HM/Maraは60/20やコンビラン |
+    45/15 バリエーション集。詳細は input/practice_templates.yaml（norwegian-45-15-*）を参照。
   tags:
   - ランニング
 - title: 岱明女子歴代800m
@@ -5905,6 +6175,7 @@ elCell Pvlse v1'
   tags:
   - ランニング
   - いだてん岱明練習
+  - practice:daiming
 - title: 岱明中 陸上長距離 卒業年度別内訳（2019〜2025）
   category: メモ
   status: inbox
@@ -5973,3 +6244,4 @@ elCell Pvlse v1'
   tags:
   - ランニング
   - いだてん岱明練習
+  - practice:daiming

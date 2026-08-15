@@ -10,17 +10,23 @@ from __future__ import annotations
 
 import argparse
 import csv
+import json
 import re
 import sys
 from dataclasses import dataclass, field
 from datetime import date, datetime, time, timedelta
 from pathlib import Path
-from typing import Iterable
+from typing import Any, Iterable
 
 import jpholiday
 import yaml
 
 ROOT = Path(__file__).resolve().parent.parent
+SCRIPTS_DIR = Path(__file__).resolve().parent
+if str(SCRIPTS_DIR) not in sys.path:
+    sys.path.insert(0, str(SCRIPTS_DIR))
+
+from practice_renderer import render_description as render_practice_description  # noqa: E402
 
 
 @dataclass
@@ -38,6 +44,8 @@ class Event:
     status: str = ""
     tags: list[str] = field(default_factory=list)
     urls: list[str] = field(default_factory=list)
+    practice: dict[str, Any] | None = None
+    template_ref: str = ""
 
     @property
     def is_memo(self) -> bool:
@@ -136,6 +144,10 @@ def parse_inbox_fields(raw: dict) -> tuple[str, list[str], list[str]]:
 def resolve_description(raw: dict) -> str:
     """description と description_file を解決して本文を返す。"""
     description = str(raw.get("description") or "")
+    practice = raw.get("practice")
+    if practice and isinstance(practice, dict) and (practice.get("items") or practice.get("warmup")):
+        if not description.strip():
+            description = render_practice_description(practice)
     description_file = str(raw.get("description_file") or "").strip()
     if not description_file:
         return description
@@ -233,6 +245,8 @@ def load_custom_events(path: Path, year: int) -> list[Event]:
                     status=status or "inbox",
                     tags=tags,
                     urls=urls,
+                    practice=raw.get("practice") if isinstance(raw.get("practice"), dict) else None,
+                    template_ref=str(raw.get("template_ref") or ""),
                 )
             )
             continue
@@ -264,6 +278,8 @@ def load_custom_events(path: Path, year: int) -> list[Event]:
                 status=status,
                 tags=tags,
                 urls=urls,
+                practice=raw.get("practice") if isinstance(raw.get("practice"), dict) else None,
+                template_ref=str(raw.get("template_ref") or ""),
             )
         )
     return events
@@ -423,6 +439,33 @@ def write_source_csv(path: Path, events: list[Event]) -> None:
                     "kind": "memo" if event.is_memo else "event",
                 }
             )
+
+
+def write_events_json(path: Path, events: list[Event]) -> None:
+    payload = []
+    for event in events:
+        payload.append(
+            {
+                "title": event.title,
+                "date": event.start_date.isoformat() if event.start_date else None,
+                "end_date": event.end_date.isoformat() if event.end_date else None,
+                "all_day": event.all_day,
+                "start_time": event.start_time.strftime("%H:%M") if event.start_time else None,
+                "end_time": event.end_time.strftime("%H:%M") if event.end_time else None,
+                "category": event.category,
+                "status": event.status,
+                "tags": event.tags,
+                "urls": event.urls,
+                "description": event.description,
+                "location": event.location,
+                "private": event.private,
+                "kind": "memo" if event.is_memo else "event",
+                "practice": event.practice,
+                "template_ref": event.template_ref or None,
+            }
+        )
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
 
 WEEKDAY_JA = ("月", "火", "水", "木", "金", "土", "日")
@@ -838,13 +881,23 @@ def generate_year(
     google_path = out_dir / "google.csv"
     notion_path = out_dir / "notion.csv"
     source_path = out_dir / "source.csv"
+    events_json_path = out_dir / "events.json"
     calendar_path = out_dir / "calendar.md"
 
     skipped_memos = write_google_csv(google_path, events)
     write_notion_csv(notion_path, events)
     write_source_csv(source_path, events)
+    write_events_json(events_json_path, events)
     write_markdown_calendar(calendar_path, events, year)
     root_calendar = maybe_write_root_calendar(events, year, calendar_path=calendar_path)
+
+    try:
+        from export_practice import generate_for_year, generate_kpace_global
+
+        generate_for_year(year, out_dir=out_dir)
+        generate_kpace_global([year])
+    except Exception as exc:
+        print(f"警告: 練習エクスポートに失敗: {exc}", file=sys.stderr)
 
     memo_count = sum(1 for e in events if e.is_memo)
     event_count = len(events) - memo_count
@@ -852,6 +905,8 @@ def generate_year(
     print(f"  Google: {google_path}（メモ {skipped_memos} 件は除外）")
     print(f"  Notion: {notion_path}")
     print(f"  Source: {source_path}")
+    print(f"  Events JSON: {events_json_path}")
+    print(f"  Practice: {out_dir / 'practice.json'}")
     print(f"  Calendar: {calendar_path}")
     if root_calendar is not None:
         print(f"  Root calendar: {root_calendar}")

@@ -40,6 +40,11 @@ python3 scripts/generate_calendar.py --year 2026 --input input/events.2026.yaml
 | `out/YYYY/notion.csv` | Notion用（予定 + メモ + Status / Tags / URLs 列） |
 | `out/YYYY/source.csv` | 確認用（共通ビュー。`kind` で event / memo を区別） |
 | `out/YYYY/calendar.md` | GitHub閲覧用（月次 Markdown カレンダー。予定がある日のみ表示） |
+| `out/YYYY/events.json` | 全イベント JSON（`practice` フィールド含む） |
+| `out/YYYY/practice.json` | 練習イベント + パース状態 |
+| `out/YYYY/practice_items.csv` | 1行 = 1メニュー項目（分析用） |
+| `out/YYYY/practice-summary.md` | 月別集計・未パース一覧 |
+| `out/daiming-practice-menus-kpace.md` | 岱明練習 k/pace 一覧 |
 | `calendar.md` | **今年**のカレンダー（`out/YYYY/calendar.md` と同一内容をルートにも配置） |
 
 ## 予定・メモの追加
@@ -96,6 +101,53 @@ events:
 | `location` / `private` | 任意 | 場所 / Google Private |
 
 編集後、再度 `python3 scripts/generate_calendar.py --year 2026` を実行してください。
+
+### 岱明練習（構造化メニュー）
+
+練習メニューは `practice` フィールドで構造化できます（`description` は表示用）。
+
+```yaml
+  - title: 岱明夕練
+    date: 2026-08-14
+    all_day: false
+    start_time: "18:00"
+    end_time: "19:30"
+    category: 予定
+    status: scheduled
+    tags: [ランニング, いだてん岱明練習, practice:daiming, session:evening]
+    practice:
+      warmup: 動きづくり
+      items:
+        - type: interval
+          distance_m: 600
+          reps: 2
+          intensity: 1500mRP
+          rest_sec: 480
+    description: |
+      動きづくり
+      600m×2（1500mRP、レスト8分）
+```
+
+関連ファイル:
+
+- `input/practice_templates.yaml` — メニューテンプレート集
+- `input/practice_schedules.yaml` — 朝練/夕練スケジュール
+- `docs/data-model.md` — データ辞書
+
+```bash
+# 練習タグ正規化
+python3 scripts/normalize_practice_tags.py --apply --year 2026
+
+# description から practice をバックフィル（2025–2026）
+python3 scripts/backfill_practice.py --dry-run --year 2026
+python3 scripts/backfill_practice.py --apply --year 2026
+
+# YAML lint（JSON Schema）
+python3 scripts/lint_events.py --year 2026
+
+# 練習データのみエクスポート
+python3 scripts/export_practice.py --year 2026
+```
 
 ### GitHub でカレンダー形式で見る
 

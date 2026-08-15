@@ -1,0 +1,138 @@
+# 練習メニューテンプレート（日付なしカタログ）
+templates:
+  - id: jog-male-easy
+    label: ジョグ（男子）
+    practice:
+      items:
+        - type: jog
+          group: 男子
+          distance_km_min: 4.0
+          distance_km_max: 6.0
+          pace_min: k/4:00
+          pace_max: k/4:10
+
+  - id: jog-female-easy
+    label: ジョグ（女子）
+    practice:
+      items:
+        - type: jog
+          group: 女子
+          distance_km_min: 4.0
+          distance_km_max: 6.0
+          pace_min: k/4:20
+          pace_max: k/4:30
+
+  - id: interval-300-rp
+    label: 300mショートインターバル
+    practice:
+      items:
+        - type: interval
+          distance_m: 300
+          reps: "6-10"
+          intensity: RP
+          rest_sec: 60
+
+  - id: interval-600-3000rp
+    label: 600mインターバル
+    practice:
+      items:
+        - type: interval
+          distance_m: 600
+          reps: "3-5"
+          intensity: 3000mRP
+          rest_sec: 120
+
+  - id: set-male-2100-900
+    label: 男子セット 2100m+900m
+    practice:
+      items:
+        - type: set
+          group: 男子
+          segments:
+            - distance_m: 2100
+            - distance_m: 900
+
+  - id: set-female-1200-900
+    label: 女子セット 1200m+900m
+    practice:
+      items:
+        - type: set
+          group: 女子
+          segments:
+            - distance_m: 1200
+            - distance_m: 900
+
+  - id: interval-900-progressive
+    label: 900m 3本（プログレッシブ）
+    practice:
+      items:
+        - type: interval
+          distance_m: 900
+          reps: 1
+          pace: k/4:00
+          rep_index: 1
+          rest_sec: 180
+        - type: interval
+          distance_m: 900
+          reps: 1
+          pace: k/3:50
+          rep_index: 2
+          rest_sec: 180
+        - type: interval
+          distance_m: 900
+          reps: 1
+          pace: k/3:40
+          rep_index: 3
+          rest_sec: 180
+
+  - id: longset-male-2000-1000
+    label: 男子ロングセット 2000m+1000m
+    practice:
+      items:
+        - type: set
+          group: 男子
+          segments:
+            - distance_m: 2000
+            - distance_m: 1000
+          rest_sec: 300
+          label: 通常: 余裕ペース / 本番前: RP付近
+
+  - id: longset-female-1000x2
+    label: 女子ロングセット 1000m×2
+    practice:
+      items:
+        - type: interval
+          group: 女子
+          distance_m: 1000
+          reps: 2
+          rest_sec: 300
+          label: 通常: 余裕ペース / 本番前: RP付近
+
+  - id: norwegian-45-15-base
+    label: 45/15 基本
+    practice:
+      notes: 15–30 × (45秒走 / 15秒休)
+      items:
+        - type: interval
+          label: 45/15
+          reps: "15-30"
+          intensity: T
+
+  - id: norwegian-45-15-combo
+    label: 45/15 コンビネーション変種
+    practice:
+      items:
+        - type: interval
+          label: プログレッシブ15–20本 → 2分休 → 最終速度で5本
+          intensity: T
+
+  - id: norwegian-45-15-combination-run
+    label: 45/15 コンビネーションラン
+    practice:
+      items:
+        - type: jog
+          label: 1–2時間イージー
+        - type: interval
+          label: 45/15
+          reps: "10-15"
+          intensity: T

@@ -16,6 +16,7 @@ events:
   tags:
   - ランニング
   - 自分の練習
+  - practice:personal
 - title: 自分の練習
   date: '2025-01-02'
   all_day: true
@@ -29,6 +30,7 @@ events:
   tags:
   - ランニング
   - 自分の練習
+  - practice:personal
 - title: 自分の練習
   date: '2025-01-03'
   all_day: true
@@ -42,6 +44,7 @@ events:
   tags:
   - ランニング
   - 自分の練習
+  - practice:personal
 - title: 自分の練習
   date: '2025-01-06'
   all_day: true
@@ -55,6 +58,7 @@ events:
   tags:
   - ランニング
   - 自分の練習
+  - practice:personal
 - title: 会社の飲み会
   date: '2025-01-10'
   all_day: true
@@ -175,6 +179,7 @@ events:
   description: 400m80〜82で8本　間100m35、負荷208
   tags:
   - 自分の練習
+  - practice:personal
 - title: 自分の練習
   date: '2025-04-29'
   all_day: true
@@ -188,6 +193,7 @@ events:
   tags:
   - ランニング
   - 自分の練習
+  - practice:personal
 - title: 遅めの400mインターバル
   date: '2025-05-04'
   all_day: true
@@ -196,6 +202,7 @@ events:
   description: 400m82〜84で10本　間100m30〜35、負荷88
   tags:
   - 自分の練習
+  - practice:personal
 - title: 藤本さんリモート
   date: '2025-05-07'
   all_day: true
@@ -235,6 +242,7 @@ events:
   tags:
   - ランニング
   - 自分の練習
+  - practice:personal
 - title: 自分の練習
   date: '2025-05-13'
   all_day: true
@@ -248,6 +256,7 @@ events:
   tags:
   - ランニング
   - 自分の練習
+  - practice:personal
 - title: 自分の練習
   date: '2025-05-14'
   all_day: true
@@ -261,6 +270,7 @@ events:
   tags:
   - ランニング
   - 自分の練習
+  - practice:personal
 - title: 午後休
   date: '2025-05-16'
   all_day: true
@@ -279,6 +289,7 @@ events:
   tags:
   - ランニング
   - 自分の練習
+  - practice:personal
 - title: 自分の練習
   date: '2025-05-17'
   all_day: true
@@ -292,6 +303,7 @@ events:
   tags:
   - ランニング
   - 自分の練習
+  - practice:personal
 - title: 岱明中体育大会
   date: '2025-05-18'
   all_day: true
@@ -305,6 +317,7 @@ events:
   description: 400m80〜82で10本　間100m30、負荷59
   tags:
   - 自分の練習
+  - practice:personal
 - title: 飲み会（水炊き）
   date: '2025-05-20'
   all_day: false
@@ -324,6 +337,7 @@ events:
   tags:
   - ランニング
   - 自分の練習
+  - practice:personal
 - title: 熊本市陸上競技記録会
   date: '2025-05-24'
   all_day: true
@@ -342,6 +356,7 @@ events:
   tags:
   - ランニング
   - 自分の練習
+  - practice:personal
 - title: 県民体育祭予選会
   date: '2025-05-25'
   all_day: true
@@ -365,6 +380,7 @@ events:
   tags:
   - ランニング
   - 自分の練習
+  - practice:personal
 - title: 熊本県高校総体
   date: '2025-05-30'
   all_day: true
@@ -383,6 +399,7 @@ events:
   tags:
   - ランニング
   - 自分の練習
+  - practice:personal
 - title: 自分の練習
   date: '2025-06-01'
   all_day: true
@@ -396,6 +413,7 @@ events:
   tags:
   - ランニング
   - 自分の練習
+  - practice:personal
 - title: Dさんリモート
   date: '2025-06-03'
   all_day: true
@@ -414,6 +432,7 @@ events:
   tags:
   - ランニング
   - 自分の練習
+  - practice:personal
 - title: Dさんリモート
   date: '2025-06-04'
   all_day: true
@@ -432,20 +451,47 @@ events:
   tags:
   - ランニング
   - 自分の練習
+  - practice:personal
 - title: いだてん岱明練習
   date: '2025-06-05'
   all_day: true
   category: 予定
   status: scheduled
   description: |
-    動きづくり
-    200m2本
+    <!-- practice-menu:v1
+    warmup: 動きづくり
+    items:
+    - type: jog
+      group: null
+      laps: 8
+      distance_km: 4.48
+      pace: k/4:16
+    - type: jog
+      group: null
+      laps: 6
+      distance_km: 3.36
+      pace: k/4:16
+    -->
     
-    ジョグ 男子 4.48km (8周) k/4:16
-    ジョグ 女子 3.36km (6周) k/4:16
+    動きづくり
+    
+    ジョグ 4.48km (8周) k/4:16
+    ジョグ 3.36km (6周) k/4:16
+  practice:
+    warmup: 動きづくり
+    items:
+      - type: jog
+        laps: 8
+        distance_km: 4.48
+        pace: 'k/4:16'
+      - type: jog
+        laps: 6
+        distance_km: 3.36
+        pace: 'k/4:16'
   tags:
   - ランニング
   - いだてん岱明練習
+  - practice:daiming
 - title: 藤本さん・Dさん・土山リモート
   date: '2025-06-05'
   all_day: true
@@ -472,14 +518,98 @@ events:
   category: 予定
   status: scheduled
   description: |
+    <!-- practice-menu:v1
+    warmup: 動きづくり
+    items:
+    - type: set
+      group: null
+      segments:
+      - distance_m: 600
+      - distance_m: 300
+      - distance_m: 300
+      label: 800m組 600m+300m 600m k/3:30 / 300m k/3:10
+    - type: set
+      group: null
+      segments:
+      - distance_m: 900
+      - distance_m: 600
+      - distance_m: 600
+      label: 1500m組 900m+600m 900m k/3:30 / 600m k/3:10
+    - type: set
+      group: null
+      segments:
+      - distance_m: 600
+      - distance_m: 300
+      label: 800m組 600m+300m k/3:30 / 300m k/3:10
+    - type: set
+      group: null
+      segments:
+      - distance_m: 900
+      - distance_m: 600
+      label: 1500m組 900m+600m k/3:30 / 600m k/3:10
+    - type: set
+      group: null
+      segments:
+      - distance_m: 600
+      - distance_m: 300
+      label: 800m組 600m+300m 600m k/3:10 / 300m k/3:30
+    - type: set
+      group: null
+      segments:
+      - distance_m: 900
+      - distance_m: 600
+      label: 1500m組 900m+600m 900m k/3:10 / 600m k/3:30
+    -->
+    
     動きづくり
+    
     間は他の組がやっている時間
     
-    800m組 600m+300m 600m k/3:30 / 300m k/3:10
-    1500m組 900m+600m 900m k/3:30 / 600m k/3:10
+    800m組 600m+300m 600m k/3:30 / 300m k/3:10600m / 300m / 300m
+    1500m組 900m+600m 900m k/3:30 / 600m k/3:10900m / 600m / 600m
+    800m組 600m+300m k/3:30 / 300m k/3:10600m / 300m
+    1500m組 900m+600m k/3:30 / 600m k/3:10900m / 600m
+    800m組 600m+300m 600m k/3:10 / 300m k/3:30600m / 300m
+    1500m組 900m+600m 900m k/3:10 / 600m k/3:30900m / 600m
+  practice:
+    warmup: 動きづくり
+    items:
+      - type: set
+        segments:
+          - distance_m: 600
+          - distance_m: 300
+          - distance_m: 300
+        label: '800m組 600m+300m 600m k/3:30 / 300m k/3:10'
+      - type: set
+        segments:
+          - distance_m: 900
+          - distance_m: 600
+          - distance_m: 600
+        label: '1500m組 900m+600m 900m k/3:30 / 600m k/3:10'
+      - type: set
+        segments:
+          - distance_m: 600
+          - distance_m: 300
+        label: '800m組 600m+300m k/3:30 / 300m k/3:10'
+      - type: set
+        segments:
+          - distance_m: 900
+          - distance_m: 600
+        label: '1500m組 900m+600m k/3:30 / 600m k/3:10'
+      - type: set
+        segments:
+          - distance_m: 600
+          - distance_m: 300
+        label: '800m組 600m+300m 600m k/3:10 / 300m k/3:30'
+      - type: set
+        segments:
+          - distance_m: 900
+          - distance_m: 600
+        label: '1500m組 900m+600m 900m k/3:10 / 600m k/3:30'
   tags:
   - ランニング
   - いだてん岱明練習
+  - practice:daiming
 - title: コーヒーにお金を使わない期間開始
   date: '2025-06-22'
   all_day: true
@@ -512,14 +642,36 @@ events:
   category: 予定
   status: scheduled
   description: |
+    <!-- practice-menu:v1
+    warmup: 動きづくり
+    items:
+    - type: jog
+      group: null
+      distance_km: 5.0
+      pace: k/4:28
+    - type: jog
+      group: null
+      distance_km: 4.0
+      pace: k/4:55
+    -->
+    
     動きづくり
     
-    ジョグ 男子（クロカン） 5km k/4:28
-    ジョグ 女子（クロカン） 4km k/4:55
-    坂道走3本 120mくらい
+    ジョグ 5.00km k/4:28
+    ジョグ 4.00km k/4:55
+  practice:
+    warmup: 動きづくり
+    items:
+      - type: jog
+        distance_km: 5.0
+        pace: 'k/4:28'
+      - type: jog
+        distance_km: 4.0
+        pace: 'k/4:55'
   tags:
   - ランニング
   - いだてん岱明練習
+  - practice:daiming
 - title: 熊本県長距離記録会
   date: '2025-07-05'
   all_day: true
@@ -532,15 +684,98 @@ events:
   category: 予定
   status: scheduled
   description: |
+    <!-- practice-menu:v1
+    warmup: 動きづくり
+    items:
+    - type: set
+      group: null
+      segments:
+      - distance_m: 600
+      - distance_m: 300
+      - distance_m: 300
+      label: 1500m組 600m+300m 600m k/3:10 / 300m k/3:00
+    - type: set
+      group: null
+      segments:
+      - distance_m: 300
+      - distance_m: 300
+      label: 800m組 300m+300m k/3:00
+    - type: set
+      group: null
+      segments:
+      - distance_m: 900
+      - distance_m: 300
+      - distance_m: 300
+      label: 3000m組 900m+300m 900m k/3:20 / 300m k/3:00
+    - type: set
+      group: null
+      segments:
+      - distance_m: 600
+      - distance_m: 300
+      label: 1500m組 600m+300m k/3:10 / 300m k/3:00
+    - type: set
+      group: null
+      segments:
+      - distance_m: 900
+      - distance_m: 300
+      label: 3000m組 900m+300m k/3:20 / 300m k/3:00
+    - type: set
+      group: null
+      segments:
+      - distance_m: 600
+      - distance_m: 300
+      label: 1500m組 600m+300m 600m k/3:00 / 300m k/3:10
+    -->
+    
     動きづくり
+    
     間は他の組がやっている時間
     
-    1500m組 600m+300m 600m k/3:10 / 300m k/3:00
-    800m組 300m+300m k/3:00
-    3000m組 900m+300m 900m k/3:20 / 300m k/3:00
+    1500m組 600m+300m 600m k/3:10 / 300m k/3:00600m / 300m / 300m
+    800m組 300m+300m k/3:00300m / 300m
+    3000m組 900m+300m 900m k/3:20 / 300m k/3:00900m / 300m / 300m
+    1500m組 600m+300m k/3:10 / 300m k/3:00600m / 300m
+    3000m組 900m+300m k/3:20 / 300m k/3:00900m / 300m
+    1500m組 600m+300m 600m k/3:00 / 300m k/3:10600m / 300m
+  practice:
+    warmup: 動きづくり
+    items:
+      - type: set
+        segments:
+          - distance_m: 600
+          - distance_m: 300
+          - distance_m: 300
+        label: '1500m組 600m+300m 600m k/3:10 / 300m k/3:00'
+      - type: set
+        segments:
+          - distance_m: 300
+          - distance_m: 300
+        label: '800m組 300m+300m k/3:00'
+      - type: set
+        segments:
+          - distance_m: 900
+          - distance_m: 300
+          - distance_m: 300
+        label: '3000m組 900m+300m 900m k/3:20 / 300m k/3:00'
+      - type: set
+        segments:
+          - distance_m: 600
+          - distance_m: 300
+        label: '1500m組 600m+300m k/3:10 / 300m k/3:00'
+      - type: set
+        segments:
+          - distance_m: 900
+          - distance_m: 300
+        label: '3000m組 900m+300m k/3:20 / 300m k/3:00'
+      - type: set
+        segments:
+          - distance_m: 600
+          - distance_m: 300
+        label: '1500m組 600m+300m 600m k/3:00 / 300m k/3:10'
   tags:
   - ランニング
   - いだてん岱明練習
+  - practice:daiming
 - title: 国体スポーツ最終選考
   date: '2025-07-12'
   all_day: true
@@ -563,14 +798,40 @@ events:
   category: 予定
   status: scheduled
   description: |
-    動きづくり
-    200m2本
+    <!-- practice-menu:v1
+    warmup: 動きづくり
+    items:
+    - type: jog
+      group: null
+      laps: 8
+      distance_km: 4.48
+      pace: k/4:28
+    - type: jog
+      group: null
+      laps: 6
+      distance_km: 3.36
+      pace: k/5:21
+    -->
     
-    ジョグ 男子 4.48km (8周) k/4:28
-    ジョグ 女子 3.36km (6周) k/5:21
+    動きづくり
+    
+    ジョグ 4.48km (8周) k/4:28
+    ジョグ 3.36km (6周) k/5:21
+  practice:
+    warmup: 動きづくり
+    items:
+      - type: jog
+        laps: 8
+        distance_km: 4.48
+        pace: 'k/4:28'
+      - type: jog
+        laps: 6
+        distance_km: 3.36
+        pace: 'k/5:21'
   tags:
   - ランニング
   - いだてん岱明練習
+  - practice:daiming
 - title: 岱明中夏休み
   date: '2025-07-19'
   all_day: true
@@ -598,13 +859,44 @@ events:
   category: 予定
   status: scheduled
   description: |
+    <!-- practice-menu:v1
+    warmup: 動きづくり
+    items:
+    - type: set
+      group: null
+      segments:
+      - distance_m: 300
+      - distance_m: 300
+      label: 600m （300m63秒/300m組） 600m k/3:30
+    - type: set
+      group: null
+      segments:
+      - distance_m: 300
+      - distance_m: 300
+      label: 600m （300m69秒/300m組） 600m k/3:50
+    -->
+    
     動きづくり
     
-    600m（300m63秒/300m組） 600m k/3:30
-    600m（300m69秒/300m組） 600m k/3:50
+    600m （300m63秒/300m組） 600m k/3:30300m / 300m
+    600m （300m69秒/300m組） 600m k/3:50300m / 300m
+  practice:
+    warmup: 動きづくり
+    items:
+      - type: set
+        segments:
+          - distance_m: 300
+          - distance_m: 300
+        label: '600m （300m63秒/300m組） 600m k/3:30'
+      - type: set
+        segments:
+          - distance_m: 300
+          - distance_m: 300
+        label: '600m （300m69秒/300m組） 600m k/3:50'
   tags:
   - ランニング
   - いだてん岱明練習
+  - practice:daiming
 - title: いだてん岱明練習
   date: '2025-07-28'
   all_day: true
@@ -616,6 +908,7 @@ events:
   tags:
   - ランニング
   - いだてん岱明練習
+  - practice:daiming
 - title: カフェイン断ち開始
   date: '2025-07-29'
   all_day: true
@@ -701,29 +994,110 @@ events:
   category: 予定
   status: scheduled
   description: |
+    <!-- practice-menu:v1
+    warmup: 動きづくり
+    items:
+    - type: jog
+      group: null
+      laps: 10
+      distance_km: 6.29
+      pace: k/4:39
+    -->
+    
     動きづくり
     
-    ジョグ 10周 6.29km k/4:39
+    ジョグ 5.60km (10周) k/4:39
+  practice:
+    warmup: 動きづくり
+    items:
+      - type: jog
+        laps: 10
+        distance_km: 6.29
+        pace: 'k/4:39'
   tags:
   - ランニング
   - いだてん岱明練習
+  - practice:daiming
 - title: いだてん岱明練習（午後）
   date: '2025-08-07'
   all_day: true
   category: 予定
   status: scheduled
   description: |
+    <!-- practice-menu:v1
+    warmup: 動きづくり
+    items:
+    - type: set
+      group: null
+      segments:
+      - distance_m: 900
+      label: 男子900m 1本目 900m k/4:00
+    - type: set
+      group: null
+      segments:
+      - distance_m: 600
+      label: 女子600m 1本目 600m k/4:00
+    - type: set
+      group: null
+      segments:
+      - distance_m: 900
+      label: 男子900m 2本目 900m k/3:50
+    - type: set
+      group: null
+      segments:
+      - distance_m: 600
+      label: 女子600m 2本目 600m k/3:50
+    - type: set
+      group: null
+      segments:
+      - distance_m: 900
+      label: 男子900m 3本目 900m k/3:40
+    - type: set
+      group: null
+      segments:
+      - distance_m: 600
+      label: 女子600m 3本目 600m k/3:40
+    -->
+    
     動きづくり
     
-    男子900m 1本目 900m k/4:00
-    女子600m 1本目 600m k/4:00
-    男子900m 2本目 900m k/3:50
-    女子600m 2本目 600m k/3:50
-    男子900m 3本目 900m k/3:40
-    女子600m 3本目 600m k/3:40
+    男子900m 1本目 900m k/4:00900m
+    女子600m 1本目 600m k/4:00600m
+    男子900m 2本目 900m k/3:50900m
+    女子600m 2本目 600m k/3:50600m
+    男子900m 3本目 900m k/3:40900m
+    女子600m 3本目 600m k/3:40600m
+  practice:
+    warmup: 動きづくり
+    items:
+      - type: set
+        segments:
+          - distance_m: 900
+        label: '男子900m 1本目 900m k/4:00'
+      - type: set
+        segments:
+          - distance_m: 600
+        label: '女子600m 1本目 600m k/4:00'
+      - type: set
+        segments:
+          - distance_m: 900
+        label: '男子900m 2本目 900m k/3:50'
+      - type: set
+        segments:
+          - distance_m: 600
+        label: '女子600m 2本目 600m k/3:50'
+      - type: set
+        segments:
+          - distance_m: 900
+        label: '男子900m 3本目 900m k/3:40'
+      - type: set
+        segments:
+          - distance_m: 600
+        label: '女子600m 3本目 600m k/3:40'
   tags:
   - ランニング
   - いだてん岱明練習
+  - practice:daiming
 - title: 夏季休暇
   date: '2025-08-07'
   all_day: true
@@ -735,13 +1109,32 @@ events:
   category: 予定
   status: scheduled
   description: |
+    <!-- practice-menu:v1
+    warmup: 動きづくり
+    items:
+    - type: jog
+      group: null
+      laps: 12
+      distance_km: 6.29
+      pace: k/4:39
+    -->
+    
     動きづくり
+    
     流し
     
-    ジョグ 12周 6.29km k/4:39
+    ジョグ 6.72km (12周) k/4:39
+  practice:
+    warmup: 動きづくり
+    items:
+      - type: jog
+        laps: 12
+        distance_km: 6.29
+        pace: 'k/4:39'
   tags:
   - ランニング
   - いだてん岱明練習
+  - practice:daiming
 - title: カフェイン断ち開始
   date: '2025-08-09'
   all_day: true
@@ -758,13 +1151,32 @@ events:
   category: 予定
   status: scheduled
   description: |
+    <!-- practice-menu:v1
+    warmup: 動きづくり
+    items:
+    - type: jog
+      group: null
+      laps: 12
+      distance_km: 6.26
+      pace: k/4:55
+    -->
+    
     動きづくり
+    
     流し
     
-    ジョグ 12周 6.26km k/4:55
+    ジョグ 6.72km (12周) k/4:55
+  practice:
+    warmup: 動きづくり
+    items:
+      - type: jog
+        laps: 12
+        distance_km: 6.26
+        pace: 'k/4:55'
   tags:
   - ランニング
   - いだてん岱明練習
+  - practice:daiming
 - title: 夏季休暇
   date: '2025-08-12'
   all_day: true
@@ -792,27 +1204,82 @@ events:
   category: 予定
   status: scheduled
   description: |
+    <!-- practice-menu:v1
+    warmup: 動きづくり
+    items:
+    - type: jog
+      group: null
+      laps: 12
+      distance_km: 6.13
+      pace: k/4:44
+    -->
+    
     動きづくり
+    
     流し
     
-    ジョグ 12周 6.13km k/4:44
+    ジョグ 6.72km (12周) k/4:44
+  practice:
+    warmup: 動きづくり
+    items:
+      - type: jog
+        laps: 12
+        distance_km: 6.13
+        pace: 'k/4:44'
   tags:
   - ランニング
   - いだてん岱明練習
+  - practice:daiming
 - title: いだてん岱明練習（午後）
   date: '2025-08-21'
   all_day: true
   category: 予定
   status: scheduled
   description: |
+    <!-- practice-menu:v1
+    warmup: 動きづくり
+    items:
+    - type: jog
+      group: null
+      laps: 6
+      distance_km: 3.36
+      pace: k/4:18
+    - type: set
+      group: null
+      segments:
+      - distance_m: 200
+      label: 200m ×5 男子 200m×5 k/3:10〜k/3:20
+    - type: set
+      group: null
+      segments:
+      - distance_m: 200
+      label: 200m ×5 女子 200m×5 k/3:30〜k/3:40
+    -->
+    
     動きづくり
     
-    ジョグ 6周 3.36km (6周) k/4:18
-    200m×5 男子 200m×5 k/3:10〜k/3:20
-    200m×5 女子 200m×5 k/3:30〜k/3:40
+    ジョグ 3.36km (6周) k/4:18
+    200m ×5 男子 200m×5 k/3:10〜k/3:20200m
+    200m ×5 女子 200m×5 k/3:30〜k/3:40200m
+  practice:
+    warmup: 動きづくり
+    items:
+      - type: jog
+        laps: 6
+        distance_km: 3.36
+        pace: 'k/4:18'
+      - type: set
+        segments:
+          - distance_m: 200
+        label: '200m ×5 男子 200m×5 k/3:10〜k/3:20'
+      - type: set
+        segments:
+          - distance_m: 200
+        label: '200m ×5 女子 200m×5 k/3:30〜k/3:40'
   tags:
   - ランニング
   - いだてん岱明練習
+  - practice:daiming
 - title: 土山リモート
   date: '2025-08-21'
   all_day: true
@@ -867,6 +1334,8 @@ events:
   category: 予定
   status: scheduled
   start_time: '10:00'
+  tags:
+  - practice:daiming
 - title: 玉名郡ナイター陸上
   date: '2025-08-30'
   all_day: true
@@ -971,27 +1440,103 @@ events:
   category: 予定
   status: scheduled
   description: |
-    ジョグ 4周 2.24km (4周) k/3:52
-    男子 追加2周（設定） 1.12km (2周) k/3:16
-    男子 追加2周（実際） 1.12km (2周) k/3:07
-    女子 追加2周（設定） 1.12km (2周) k/3:52
-    女子 追加2周（実際） 1.12km (2周) k/3:34
+    <!-- practice-menu:v1
+    warmup: null
+    items:
+    - type: jog
+      group: null
+      laps: 4
+      distance_km: 2.24
+      pace: k/3:52
+    - type: set
+      group: 男子
+      segments:
+      - distance_m: 1120
+      label: 男子 追加2周（設定） 1.12km (2周) k/3:16
+    - type: set
+      group: 男子
+      segments:
+      - distance_m: 1120
+      label: 男子 追加2周（実際） 1.12km (2周) k/3:07
+    - type: set
+      group: 女子
+      segments:
+      - distance_m: 1120
+      label: 女子 追加2周（設定） 1.12km (2周) k/3:52
+    - type: set
+      group: 女子
+      segments:
+      - distance_m: 1120
+      label: 女子 追加2周（実際） 1.12km (2周) k/3:34
+    -->
+    
+    ジョグ 2.24km (4周) k/3:52
+    男子 追加2周（設定） 1.12km (2周) k/3:161120m
+    男子 追加2周（実際） 1.12km (2周) k/3:071120m
+    女子 追加2周（設定） 1.12km (2周) k/3:521120m
+    女子 追加2周（実際） 1.12km (2周) k/3:341120m
+  practice:
+    items:
+      - type: jog
+        laps: 4
+        distance_km: 2.24
+        pace: 'k/3:52'
+      - type: set
+        group: 男子
+        segments:
+          - distance_m: 1120
+        label: '男子 追加2周（設定） 1.12km (2周) k/3:16'
+      - type: set
+        group: 男子
+        segments:
+          - distance_m: 1120
+        label: '男子 追加2周（実際） 1.12km (2周) k/3:07'
+      - type: set
+        group: 女子
+        segments:
+          - distance_m: 1120
+        label: '女子 追加2周（設定） 1.12km (2周) k/3:52'
+      - type: set
+        group: 女子
+        segments:
+          - distance_m: 1120
+        label: '女子 追加2周（実際） 1.12km (2周) k/3:34'
   tags:
   - ランニング
   - いだてん岱明練習
+  - practice:daiming
 - title: いだてん岱明練習
   date: '2025-09-16'
   all_day: true
   category: 予定
   status: scheduled
   description: |
+    <!-- practice-menu:v1
+    warmup: 動きづくり
+    items:
+    - type: jog
+      group: null
+      laps: 10
+      distance_km: 5.11
+      pace: k/4:24
+    -->
+    
     動きづくり
+    
     流し
     
-    ジョグ 10周 5.11km k/4:24
+    ジョグ 5.60km (10周) k/4:24
+  practice:
+    warmup: 動きづくり
+    items:
+      - type: jog
+        laps: 10
+        distance_km: 5.11
+        pace: 'k/4:24'
   tags:
   - ランニング
   - いだてん岱明練習
+  - practice:daiming
 - title: 午後休
   date: '2025-09-16'
   all_day: true
@@ -1053,13 +1598,32 @@ events:
   category: 予定
   status: scheduled
   description: |
+    <!-- practice-menu:v1
+    warmup: 動きづくり
+    items:
+    - type: jog
+      group: null
+      laps: 12
+      distance_km: 6.34
+      pace: k/4:23
+    -->
+    
     動きづくり
+    
     流し
     
-    ジョグ 12周 6.34km k/4:23
+    ジョグ 6.72km (12周) k/4:23
+  practice:
+    warmup: 動きづくり
+    items:
+      - type: jog
+        laps: 12
+        distance_km: 6.34
+        pace: 'k/4:23'
   tags:
   - ランニング
   - いだてん岱明練習
+  - practice:daiming
 - title: 中学生ジュニア駅伝大会
   date: '2025-09-27'
   all_day: true
@@ -1117,13 +1681,32 @@ events:
   category: 予定
   status: scheduled
   description: |
+    <!-- practice-menu:v1
+    warmup: 動きづくり
+    items:
+    - type: jog
+      group: null
+      laps: 12
+      distance_km: 6.3
+      pace: k/4:39
+    -->
+    
     動きづくり
+    
     流し
     
-    ジョグ 12周 6.30km k/4:39
+    ジョグ 6.72km (12周) k/4:39
+  practice:
+    warmup: 動きづくり
+    items:
+      - type: jog
+        laps: 12
+        distance_km: 6.3
+        pace: 'k/4:39'
   tags:
   - ランニング
   - いだてん岱明練習
+  - practice:daiming
 - title: カフェイン断ち開始
   date: '2025-10-04'
   all_day: true
@@ -1161,13 +1744,32 @@ events:
   category: 予定
   status: scheduled
   description: |
+    <!-- practice-menu:v1
+    warmup: 動きづくり
+    items:
+    - type: jog
+      group: null
+      laps: 12
+      distance_km: 6.23
+      pace: k/4:19
+    -->
+    
     動きづくり
+    
     流し
     
-    ジョグ 12周 6.23km k/4:19
+    ジョグ 6.72km (12周) k/4:19
+  practice:
+    warmup: 動きづくり
+    items:
+      - type: jog
+        laps: 12
+        distance_km: 6.23
+        pace: 'k/4:19'
   tags:
   - ランニング
   - いだてん岱明練習
+  - practice:daiming
 - title: 熊本県長距離記録会
   date: '2025-10-11'
   all_day: true
@@ -1179,14 +1781,45 @@ events:
   category: 予定
   status: scheduled
   description: |
+    <!-- practice-menu:v1
+    warmup: 動きづくり
+    items:
+    - type: jog
+      group: null
+      laps: 4
+      distance_km: 2.24
+      pace: k/3:45
+    - type: set
+      group: 男子
+      segments:
+      - distance_m: 1000
+      - distance_m: 500
+      - distance_m: 500
+      label: 男子 1000m+500m 1000m k/3:20 / 500m k/2:48
+    -->
+    
     動きづくり
     
-    ジョグ 4周 2.24km (4周) k/3:45
-    男子 1000m+500m 1000m k/3:20 / 500m k/2:48
-    女子 500m+500m 1本目 k/3:30 / 2本目 k/3:22
+    ジョグ 2.24km (4周) k/3:45
+    男子 1000m+500m 1000m k/3:20 / 500m k/2:481000m / 500m / 500m
+  practice:
+    warmup: 動きづくり
+    items:
+      - type: jog
+        laps: 4
+        distance_km: 2.24
+        pace: 'k/3:45'
+      - type: set
+        group: 男子
+        segments:
+          - distance_m: 1000
+          - distance_m: 500
+          - distance_m: 500
+        label: '男子 1000m+500m 1000m k/3:20 / 500m k/2:48'
   tags:
   - ランニング
   - いだてん岱明練習
+  - practice:daiming
 - title: 合宿休
   date: '2025-10-15'
   all_day: true
@@ -1227,15 +1860,34 @@ events:
   category: 予定
   status: scheduled
   description: |
-    欠席者 松岡
+    <!-- practice-menu:v1
+    warmup: 動きづくり
+    items:
+    - type: jog
+      group: null
+      laps: 10
+      distance_km: 4.95
+      pace: k/5:07
+    -->
+    
     動きづくり
+    
+    欠席者 松岡
     流し2本
     中体連駅伝明け最初の練習。1名は連絡があり、欠席だったが、その他は全員参加。休み明けと、一体感を高めるために男女固まっての練習。小学生1名含め、全員が最後まで完走。3年が抜け、ジョグ中はかなり静かになっていた。あまりに静かだったので、自分が話を展開することもあった。寒くなってきたため、上着を持ってくるよう伝えた。ディズニーのお土産も配った。メリハリのハリを改善しつつも、岱明のこれまでの良さでもあるメリも大事にしてほしい。
     
-    ジョグ 10周 4.95km k/5:07
+    ジョグ 5.60km (10周) k/5:07
+  practice:
+    warmup: 動きづくり
+    items:
+      - type: jog
+        laps: 10
+        distance_km: 4.95
+        pace: 'k/5:07'
   tags:
   - ランニング
   - いだてん岱明練習
+  - practice:daiming
 - title: 有休
   date: '2025-10-20'
   all_day: true
@@ -1258,14 +1910,33 @@ events:
   category: 予定
   status: scheduled
   description: |
-    欠席者 田上、角田、高田、松本
+    <!-- practice-menu:v1
+    warmup: 動きづくり
+    items:
+    - type: jog
+      group: null
+      laps: 6
+      distance_km: 3.1
+      pace: k/4:02
+    -->
+    
     動きづくり
+    
+    欠席者 田上、角田、高田、松本
     欠席者多めの中、動きづくりはいつもよりしっかりとやれていた印象だった。ダウンジョグも一体感持ってやってほしい。11〜1月は日の入りが早いため、6時間授業の場合は学校で速く短く、5時間やそれより早い場合はゆっくり長く、土日祝日で実施する日はスピード練習
     
-    ジョグ 6周 3.10km k/4:02
+    ジョグ 3.36km (6周) k/4:02
+  practice:
+    warmup: 動きづくり
+    items:
+      - type: jog
+        laps: 6
+        distance_km: 3.1
+        pace: 'k/4:02'
   tags:
   - ランニング
   - いだてん岱明練習
+  - practice:daiming
 - title: 熊本県秋季陸上記録会
   date: '2025-10-25'
   all_day: true
@@ -1303,14 +1974,33 @@ events:
   category: 予定
   status: scheduled
   description: |
-    欠席者 松岡、塚原、村上、高田、増岡
+    <!-- practice-menu:v1
+    warmup: 動きづくり
+    items:
+    - type: jog
+      group: null
+      laps: 12
+      distance_km: 6.13
+      pace: k/4:59
+    -->
+    
     動きづくり
+    
+    欠席者 松岡、塚原、村上、高田、増岡
     ゆっくりめだったため、リタイアが一人もおらず、全員完走。このペースで男子は8km、女子は7kmをまずいけたら。
     
-    ジョグ 12周 6.13km k/4:59
+    ジョグ 6.72km (12周) k/4:59
+  practice:
+    warmup: 動きづくり
+    items:
+      - type: jog
+        laps: 12
+        distance_km: 6.13
+        pace: 'k/4:59'
   tags:
   - ランニング
   - いだてん岱明練習
+  - practice:daiming
 - title: 県高校駅伝
   date: '2025-11-01'
   all_day: true
@@ -1322,18 +2012,73 @@ events:
   category: 予定
   status: scheduled
   description: |
-    欠席者 村上、高田、松岡
+    <!-- practice-menu:v1
+    warmup: 動きづくり
+    items:
+    - type: jog
+      group: null
+      laps: 6
+      distance_km: 3.08
+      pace: k/4:03
+    - type: set
+      group: null
+      segments:
+      - distance_m: 300
+      label: 300m 1本目 300m k/3:23
+    - type: set
+      group: null
+      segments:
+      - distance_m: 300
+      label: 300m 2本目 300m k/3:17
+    - type: set
+      group: null
+      segments:
+      - distance_m: 300
+      label: 300m 3本目 300m k/3:13
+    - type: set
+      group: null
+      segments:
+      - distance_m: 300
+      label: 300m 4本目 300m k/3:00
+    -->
+    
     動きづくり
+    
+    欠席者 村上、高田、松岡
     キロ4で3kmが楽になれば、5km20分ではいけそう。まだインターバルの間をしっかりとしたジョグで繋げるようになるまでは時間がかかりそう。角田、塚原はスピードに課題。
     
-    ジョグ 6周 3.08km k/4:03
-    300m 1本目 300m k/3:23
-    300m 2本目 300m k/3:17
-    300m 3本目 300m k/3:13
-    300m 4本目 300m k/3:00
+    ジョグ 3.36km (6周) k/4:03
+    300m 1本目 300m k/3:23300m
+    300m 2本目 300m k/3:17300m
+    300m 3本目 300m k/3:13300m
+    300m 4本目 300m k/3:00300m
+  practice:
+    warmup: 動きづくり
+    items:
+      - type: jog
+        laps: 6
+        distance_km: 3.08
+        pace: 'k/4:03'
+      - type: set
+        segments:
+          - distance_m: 300
+        label: '300m 1本目 300m k/3:23'
+      - type: set
+        segments:
+          - distance_m: 300
+        label: '300m 2本目 300m k/3:17'
+      - type: set
+        segments:
+          - distance_m: 300
+        label: '300m 3本目 300m k/3:13'
+      - type: set
+        segments:
+          - distance_m: 300
+        label: '300m 4本目 300m k/3:00'
   tags:
   - ランニング
   - いだてん岱明練習
+  - practice:daiming
 - title: 県中体連駅伝大会
   date: '2025-11-07'
   all_day: true
@@ -1345,18 +2090,109 @@ events:
   category: 予定
   status: scheduled
   description: |
-    欠席者 松岡、松本、山本
+    <!-- practice-menu:v1
+    warmup: 動きづくり
+    items:
+    - type: jog
+      group: null
+      laps: 6
+      distance_km: 3.17
+      pace: k/5:02
+    - type: set
+      group: null
+      segments:
+      - distance_m: 300
+      label: 600m ×2（54秒/300m組） 600m×2 k/3:00
+    - type: set
+      group: null
+      segments:
+      - distance_m: 300
+      label: 600m ×2（57秒/300m組） 600m×2 k/3:10
+    - type: set
+      group: null
+      segments:
+      - distance_m: 300
+      label: 600m ×2（60秒/300m組） 600m×2 k/3:20
+    - type: set
+      group: null
+      segments:
+      - distance_m: 300
+      label: 600m ×2（63秒/300m組） 600m×2 k/3:30
+    - type: interval
+      distance_m: 600
+      reps: '2'
+      intensity: null
+      rest_sec: null
+    - type: interval
+      distance_m: 600
+      reps: '2'
+      intensity: null
+      rest_sec: null
+    - type: interval
+      distance_m: 600
+      reps: '2'
+      intensity: null
+      rest_sec: null
+    - type: interval
+      distance_m: 600
+      reps: '2'
+      intensity: null
+      rest_sec: null
+    -->
+    
     動きづくり
+    
+    欠席者 松岡、松本、山本
     最初のアップは3周目から外を回るようになったため、ラップが落ちる。ショートカットしがちだったが、砂場の外を回って欲しい。600は全員設定より速いタイムでいけていた。特に松野は2セット目は51-52で回った。最後にみかんを配った。すぐになくなったので、もっと持ってきてもいいかも。
     
-    ジョグ 6周 3.17km k/5:02
-    600m×2（54秒/300m組） 600m×2 k/3:00
-    600m×2（57秒/300m組） 600m×2 k/3:10
-    600m×2（60秒/300m組） 600m×2 k/3:20
-    600m×2（63秒/300m組） 600m×2 k/3:30
+    ジョグ 3.36km (6周) k/5:02
+    600m ×2（54秒/300m組） 600m×2 k/3:00300m
+    600m ×2（57秒/300m組） 600m×2 k/3:10300m
+    600m ×2（60秒/300m組） 600m×2 k/3:20300m
+    600m ×2（63秒/300m組） 600m×2 k/3:30300m
+    600m×2
+    600m×2
+    600m×2
+    600m×2
+  practice:
+    warmup: 動きづくり
+    items:
+      - type: jog
+        laps: 6
+        distance_km: 3.17
+        pace: 'k/5:02'
+      - type: set
+        segments:
+          - distance_m: 300
+        label: '600m ×2（54秒/300m組） 600m×2 k/3:00'
+      - type: set
+        segments:
+          - distance_m: 300
+        label: '600m ×2（57秒/300m組） 600m×2 k/3:10'
+      - type: set
+        segments:
+          - distance_m: 300
+        label: '600m ×2（60秒/300m組） 600m×2 k/3:20'
+      - type: set
+        segments:
+          - distance_m: 300
+        label: '600m ×2（63秒/300m組） 600m×2 k/3:30'
+      - type: interval
+        distance_m: 600
+        reps: 2
+      - type: interval
+        distance_m: 600
+        reps: 2
+      - type: interval
+        distance_m: 600
+        reps: 2
+      - type: interval
+        distance_m: 600
+        reps: 2
   tags:
   - ランニング
   - いだてん岱明練習
+  - practice:daiming
 - title: コーヒー買わない開始日
   date: '2025-11-08'
   all_day: true
@@ -1378,25 +2214,34 @@ events:
   category: 予定
   status: scheduled
   description: |
-    欠席者 松岡、塚原、高田
+    <!-- practice-menu:v1
+    warmup: 動きづくり
+    items:
+    - type: jog
+      group: null
+      laps: 6
+      distance_km: 3.26
+      pace: k/5:08
+    -->
+    
     動きづくり
+    
+    欠席者 松岡、塚原、高田
     土山は900m4本走ったが、生徒によって3+3+3、3+3+2、3+2+2、3+1+1といった具合。間は3分。
     村上は3本目を2周。田上は60で3本のラストは上げられていた。松野は最後も3周いった。次回以降は、各自の周回を増やすか、1本目66からの4本目54の3秒ずつ上げなどができれば。塚原は疲労骨折手前だったとのこと。オーバーワークにならずにコツコツと負荷を高めていきたい。
     
-    ジョグ 6周 3.26km k/5:08
-    900m 1本目（300m通過） 300m k/4:00
-    900m 1本目（300m通過） 300m k/3:58
-    900m 1本目（300m通過） 300m k/4:06
-    900m 2本目（300m通過） 300m k/3:39
-    900m 3本目（300m通過） 300m k/3:21
-    900m 3本目（300m通過） 300m k/3:14
-    900m 3本目（300m通過） 300m k/3:20
-    900m 4本目（300m通過） 300m k/2:59
-    900m 4本目（300m通過） 300m k/3:06
-    900m 4本目（300m通過） 300m k/3:02
+    ジョグ 3.36km (6周) k/5:08
+  practice:
+    warmup: 動きづくり
+    items:
+      - type: jog
+        laps: 6
+        distance_km: 3.26
+        pace: 'k/5:08'
   tags:
   - ランニング
   - いだてん岱明練習
+  - practice:daiming
 - title: 永井監督勇退を祝う会MTG
   date: '2025-11-15'
   all_day: false
@@ -1419,18 +2264,77 @@ events:
   category: 予定
   status: scheduled
   description: |
-    欠席者 松野、塚原、松本
+    <!-- practice-menu:v1
+    warmup: 動きづくり
+    items:
+    - type: jog
+      group: null
+      laps: 6
+      distance_km: 3.22
+      pace: k/5:16
+    - type: set
+      group: B組
+      segments:
+      - distance_m: 2100
+      label: B組 2100m 2100m k/4:00
+    - type: set
+      group: B組
+      segments:
+      - distance_m: 900
+      label: B組 900m 900m k/3:50
+    - type: set
+      group: A組
+      segments:
+      - distance_m: 2100
+      label: A組 2100m 2100m k/3:40
+    - type: set
+      group: A組
+      segments:
+      - distance_m: 900
+      label: A組 900m 900m k/3:30
+    -->
+    
     動きづくり
+    
+    欠席者 松野、塚原、松本
     設定にゆとりを持って走れる生徒が多く、そういう生徒は自分より前を走っていた。
     
-    ジョグ 6周 3.22km k/5:16
-    B組 2100m 2100m k/4:00
-    B組 900m 900m k/3:50
-    A組 2100m 2100m k/3:40
-    A組 900m 900m k/3:30
+    ジョグ 3.36km (6周) k/5:16
+    B組 2100m 2100m k/4:002100m
+    B組 900m 900m k/3:50900m
+    A組 2100m 2100m k/3:402100m
+    A組 900m 900m k/3:30900m
+  practice:
+    warmup: 動きづくり
+    items:
+      - type: jog
+        laps: 6
+        distance_km: 3.22
+        pace: 'k/5:16'
+      - type: set
+        group: B組
+        segments:
+          - distance_m: 2100
+        label: 'B組 2100m 2100m k/4:00'
+      - type: set
+        group: B組
+        segments:
+          - distance_m: 900
+        label: 'B組 900m 900m k/3:50'
+      - type: set
+        group: A組
+        segments:
+          - distance_m: 2100
+        label: 'A組 2100m 2100m k/3:40'
+      - type: set
+        group: A組
+        segments:
+          - distance_m: 900
+        label: 'A組 900m 900m k/3:30'
   tags:
   - ランニング
   - いだてん岱明練習
+  - practice:daiming
 - title: 玉名市民マラソン
   date: '2025-11-30'
   all_day: true
@@ -1475,15 +2379,87 @@ events:
   category: 予定
   status: scheduled
   description: |
+    <!-- practice-menu:v1
+    warmup: 動きづくり
+    items:
+    - type: jog
+      group: null
+      laps: 10
+      distance_km: 5.6
+      pace: k/5:02
+    - type: set
+      group: null
+      segments:
+      - distance_m: 300
+      label: 600m ×1（57秒/300m組） 600m k/3:10
+    - type: set
+      group: null
+      segments:
+      - distance_m: 300
+      label: 600m ×1（60秒/300m組） 600m k/3:20
+    - type: set
+      group: null
+      segments:
+      - distance_m: 300
+      label: 600m ×1（63秒/300m組） 600m k/3:30
+    - type: interval
+      distance_m: 600
+      reps: '1'
+      intensity: null
+      rest_sec: null
+    - type: interval
+      distance_m: 600
+      reps: '1'
+      intensity: null
+      rest_sec: null
+    - type: interval
+      distance_m: 600
+      reps: '1'
+      intensity: null
+      rest_sec: null
+    -->
+    
     動きづくり
     
-    ジョグ 10周 5.60km (10周) k/5:02
-    600m×1（57秒/300m組） 600m k/3:10
-    600m×1（60秒/300m組） 600m k/3:20
-    600m×1（63秒/300m組） 600m k/3:30
+    ジョグ 5.60km (10周) k/5:02
+    600m ×1（57秒/300m組） 600m k/3:10300m
+    600m ×1（60秒/300m組） 600m k/3:20300m
+    600m ×1（63秒/300m組） 600m k/3:30300m
+    600m×1
+    600m×1
+    600m×1
+  practice:
+    warmup: 動きづくり
+    items:
+      - type: jog
+        laps: 10
+        distance_km: 5.6
+        pace: 'k/5:02'
+      - type: set
+        segments:
+          - distance_m: 300
+        label: '600m ×1（57秒/300m組） 600m k/3:10'
+      - type: set
+        segments:
+          - distance_m: 300
+        label: '600m ×1（60秒/300m組） 600m k/3:20'
+      - type: set
+        segments:
+          - distance_m: 300
+        label: '600m ×1（63秒/300m組） 600m k/3:30'
+      - type: interval
+        distance_m: 600
+        reps: 1
+      - type: interval
+        distance_m: 600
+        reps: 1
+      - type: interval
+        distance_m: 600
+        reps: 1
   tags:
   - ランニング
   - いだてん岱明練習
+  - practice:daiming
 - title: 熊本県長距離記録会
   date: '2025-12-06'
   all_day: true
@@ -1506,14 +2482,44 @@ events:
   category: 予定
   status: scheduled
   description: |
+    <!-- practice-menu:v1
+    warmup: 動きづくり
+    items:
+    - type: jog
+      group: null
+      laps: 3
+      distance_km: 2.93
+      pace: k/4:32
+    - type: set
+      group: null
+      segments:
+      - distance_m: 300
+      - distance_m: 300
+      label: 600m +300m 900m 600m k/3:00 / 300m k/3:20
+    -->
+    
     動きづくり
+    
     たくさん走る日と質が高い日は分けた方が心身にかかる負荷を分散できそう。
     
-    ジョグ 3周 2.93km k/4:32
-    600m+300m 900m 600m k/3:00 / 300m k/3:20
+    ジョグ 1.68km (3周) k/4:32
+    600m +300m 900m 600m k/3:00 / 300m k/3:20300m / 300m
+  practice:
+    warmup: 動きづくり
+    items:
+      - type: jog
+        laps: 3
+        distance_km: 2.93
+        pace: 'k/4:32'
+      - type: set
+        segments:
+          - distance_m: 300
+          - distance_m: 300
+        label: '600m +300m 900m 600m k/3:00 / 300m k/3:20'
   tags:
   - ランニング
   - いだてん岱明練習
+  - practice:daiming
 - title: 岱明陸上忘年会
   date: '2025-12-13'
   all_day: false
@@ -1531,15 +2537,43 @@ events:
   category: 予定
   status: scheduled
   description: |
+    <!-- practice-menu:v1
+    warmup: 動きづくり
+    items:
+    - type: jog
+      group: null
+      laps: 15
+      distance_km: 8.4
+      pace: k/5:07
+    - type: jog
+      group: null
+      laps: 17
+      distance_km: 9.53
+      pace: k/5:07
+    -->
+    
     動きづくり
+    
     流し
     最初は長いかなと感じたが、無事完走。長く走れるようになってきている。本田くんが最後まで完走したのにはびっくりした。ケガにはお互い注意を払いたい。
     
-    ロングジョグ 女子 8.4km (15周) k/5:07
-    ロングジョグ 男子 9.53km (17周) k/5:07
+    ジョグ 8.40km (15周) k/5:07
+    ジョグ 9.52km (17周) k/5:07
+  practice:
+    warmup: 動きづくり
+    items:
+      - type: jog
+        laps: 15
+        distance_km: 8.4
+        pace: 'k/5:07'
+      - type: jog
+        laps: 17
+        distance_km: 9.53
+        pace: 'k/5:07'
   tags:
   - ランニング
   - いだてん岱明練習
+  - practice:daiming
 - title: 永井監督を祝う会MTG
   date: '2025-12-20'
   all_day: false
@@ -1567,15 +2601,58 @@ events:
   category: 予定
   status: scheduled
   description: |
+    <!-- practice-menu:v1
+    warmup: 動きづくり
+    items:
+    - type: jog
+      group: null
+      laps: 6
+      distance_km: 3.33
+      pace: k/5:03
+    - type: set
+      group: 男子
+      segments:
+      - distance_m: 1680
+      - distance_m: 1120
+      label: 男子 1680m+1120m 2800m 2:10組 k/3:52 / 1:55組 k/3:25
+    - type: set
+      group: 女子
+      segments:
+      - distance_m: 1120
+      - distance_m: 560
+      label: 女子 1120m+560m 1680m 2:10組 k/3:52 / 1:55組 k/3:25
+    -->
+    
     動きづくり
+    
     2:10秒組は少しキツそうだった。田上はほぼできていた。松野と山本もほぼいけていた。松野はスタミナに課題。山本は離れても粘れる。
     
-    ジョグ 6周 3.33km k/5:03
-    男子 1680m+1120m 2800m 2:10組 k/3:52 / 1:55組 k/3:25
-    女子 1120m+560m 1680m 2:10組 k/3:52 / 1:55組 k/3:25
+    ジョグ 3.36km (6周) k/5:03
+    男子 1680m+1120m 2800m 2:10組 k/3:52 / 1:55組 k/3:251680m / 1120m
+    女子 1120m+560m 1680m 2:10組 k/3:52 / 1:55組 k/3:251120m / 560m
+  practice:
+    warmup: 動きづくり
+    items:
+      - type: jog
+        laps: 6
+        distance_km: 3.33
+        pace: 'k/5:03'
+      - type: set
+        group: 男子
+        segments:
+          - distance_m: 1680
+          - distance_m: 1120
+        label: '男子 1680m+1120m 2800m 2:10組 k/3:52 / 1:55組 k/3:25'
+      - type: set
+        group: 女子
+        segments:
+          - distance_m: 1120
+          - distance_m: 560
+        label: '女子 1120m+560m 1680m 2:10組 k/3:52 / 1:55組 k/3:25'
   tags:
   - ランニング
   - いだてん岱明練習
+  - practice:daiming
 - title: 年末年始休暇
   date: '2025-12-27'
   all_day: true
@@ -1593,13 +2670,32 @@ events:
   category: 予定
   status: scheduled
   description: |
+    <!-- practice-menu:v1
+    warmup: 動きづくり
+    items:
+    - type: jog
+      group: null
+      laps: 10
+      distance_km: 5.53
+      pace: k/4:51
+    -->
+    
     動きづくり
+    
     流し4本
     
-    ジョグ 10周 5.53km k/4:51
+    ジョグ 5.60km (10周) k/4:51
+  practice:
+    warmup: 動きづくり
+    items:
+      - type: jog
+        laps: 10
+        distance_km: 5.53
+        pace: 'k/4:51'
   tags:
   - ランニング
   - いだてん岱明練習
+  - practice:daiming
 - title: 玉名市選考会
   date: '2025-12-30'
   all_day: true
@@ -1613,6 +2709,7 @@ events:
   description: 8本、83-43-83-44-83-43-83-43-83-43-82-44-83-46-83
   tags:
   - 自分の練習
+  - practice:personal
 - title: 遅めの400mインターバル
   date: '2025-11-09'
   all_day: true
@@ -1621,6 +2718,7 @@ events:
   description: 12本、83-41-83-41-83-41-82-41-83-42-83-42-83-42-82-42-82-42-82-42-82-44-81
   tags:
   - 自分の練習
+  - practice:personal
 - title: 遅めの400mインターバル
   date: '2025-11-11'
   all_day: true
@@ -1629,6 +2727,7 @@ events:
   description: 15本、84-44-84-43-83-42-84-42-83-43-83-44-83-43-82-43-82-45-81-44-83-42-82-44-82-43-82-43-80
   tags:
   - 自分の練習
+  - practice:personal
 - title: 遅めの400mインターバル
   date: '2025-11-26'
   all_day: true
@@ -1637,6 +2736,7 @@ events:
   description: 10本、84-38-83-36-84-40-84-37-85-41-84-38-85-41-84-40-85-40-84
   tags:
   - 自分の練習
+  - practice:personal
 - title: 遅めの400mインターバル
   date: '2025-12-14'
   all_day: true
@@ -1645,6 +2745,7 @@ events:
   description: 20本、83-42-83-44-83-44-83-44-84-43-83-44-84-44-83-42-84-46-83-43-84-43-83-43-84-44-83-44-83-44-83-44-83-43-83-43-83-44-82
   tags:
   - 自分の練習
+  - practice:personal
 - title: 遅めの400mインターバル
   date: '2025-12-16'
   all_day: true
@@ -1653,3 +2754,4 @@ events:
   description: 12本、84-45-83-45-84-44-83-43-84-43-84-44-84-44-83-45-84-46-83-47-85-49-84
   tags:
   - 自分の練習
+  - practice:personal
