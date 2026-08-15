@@ -66,33 +66,11 @@ templates:
           intensity: GZ
           rest_sec: 50
 
-  - id: evening-light-600-300
-    label: 夕練 軽いポイント 600m+300m（GZ）
+  - id: evening-light-900x1
+    label: 夕練 軽いポイント 900m×1（GZ）
     practice:
       warmup: 動きづくり
-      notes: 軽いポイント。900mセットにはしない
-      items:
-        - type: jog
-          group: 男子
-          laps: 6
-          distance_km: 3.36
-          pace: k/4:50
-        - type: jog
-          group: 女子
-          laps: 5
-          distance_km: 2.8
-          pace: k/5:00
-        - type: set
-          intensity: GZ
-          segments:
-            - distance_m: 600
-            - distance_m: 300
-
-  - id: evening-light-200x6
-    label: 夕練 軽いポイント 200m×6（GZ）
-    practice:
-      warmup: 動きづくり
-      notes: 軽いポイント。指導者不在時の自主メニュー可
+      notes: 軽いポイント。1本のみ。追い込む禁止
       items:
         - type: jog
           group: 男子
@@ -105,10 +83,9 @@ templates:
           distance_km: 2.8
           pace: k/5:00
         - type: interval
-          distance_m: 200
-          reps: 6
+          distance_m: 900
+          reps: 1
           intensity: GZ
-          rest_sec: 60
 
   - id: interval-300-rp
     label: 300mショートインターバル

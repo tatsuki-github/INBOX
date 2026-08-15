@@ -1101,7 +1101,7 @@
     ],
     "practice": {
       "warmup": "動きづくり",
-      "notes": "軽いポイント。900mセットにはしない",
+      "notes": "軽いポイント。1本のみ。追い込む禁止",
       "items": [
         {
           "type": "jog",
@@ -1118,17 +1118,10 @@
           "pace": "k/5:00"
         },
         {
-          "type": "set",
-          "segments": [
-            {
-              "distance_m": 600,
-              "intensity": "GZ"
-            },
-            {
-              "distance_m": 300,
-              "intensity": "GZ"
-            }
-          ]
+          "type": "interval",
+          "distance_m": 900,
+          "reps": 1,
+          "intensity": "GZ"
         }
       ]
     },
@@ -1137,7 +1130,7 @@
       "confidence": "full",
       "skipped": []
     },
-    "template_ref": "evening-light-600-300"
+    "template_ref": "evening-light-900x1"
   },
   {
     "year": 2026,
@@ -1172,10 +1165,10 @@
         },
         {
           "type": "interval",
-          "distance_m": 200,
-          "reps": 6,
+          "distance_m": 600,
+          "reps": 2,
           "intensity": "GZ",
-          "rest_sec": 60
+          "rest_sec": 180
         }
       ]
     },
@@ -1184,7 +1177,7 @@
       "confidence": "full",
       "skipped": []
     },
-    "template_ref": "evening-light-200x6"
+    "template_ref": "evening-light-600x2"
   },
   {
     "year": 2026,
@@ -1322,7 +1315,7 @@
     ],
     "practice": {
       "warmup": "動きづくり",
-      "notes": "軽いポイント。勝ちにいかない。1本目は設定より遅め",
+      "notes": "軽いポイント。1本のみ。追い込む禁止",
       "items": [
         {
           "type": "jog",
@@ -1340,10 +1333,9 @@
         },
         {
           "type": "interval",
-          "distance_m": 600,
-          "reps": 2,
-          "intensity": "GZ",
-          "rest_sec": 180
+          "distance_m": 900,
+          "reps": 1,
+          "intensity": "GZ"
         }
       ]
     },
@@ -1352,7 +1344,7 @@
       "confidence": "full",
       "skipped": []
     },
-    "template_ref": "evening-light-600x2"
+    "template_ref": "evening-light-900x1"
   },
   {
     "year": 2026,
