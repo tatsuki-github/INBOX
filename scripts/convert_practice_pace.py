@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""岱明練習メニューを k/M:SS 表記に変換して一覧出力する。
+"""岱明練習メニューを k/M:SS 表記に変換して一覧出力・YAML反映する。
 
 - トラック1周 = 560m
 - 距離と時間の両方が判明する項目のみ変換
@@ -7,6 +7,7 @@
 
 from __future__ import annotations
 
+import argparse
 import re
 import sys
 from dataclasses import dataclass, field
@@ -280,8 +281,192 @@ def convert(session: Session, desc: str) -> None:
     if "1500mペース+10秒" in d:
         session.skipped.append("1500mRP+10秒/km — 個人RPのため未換算")
     for kw in ("200m2本", "100m流し", "流し2本", "流し4本", "500m1本", "坂道走", "2.5km×2", "2km×2"):
-        if kw in d and not session.items:
+        if kw in d:
             session.skipped.append(f"{kw} — ペース未記載")
+
+
+APPLY_YEARS = [2025, 2026]
+
+PACE_DATA_RE = re.compile(
+    r"(\d+[:']\d{2}(?:-\d+[:']\d{2})+)|"
+    r"(\d+\.?\d*km)|"
+    r"(300m|600m|900m|200m|800m|1500m|3000m|500m|1000m|2100m|1120m|1680m)|"
+    r"(800m組|1500m組|3000m組)|"
+    r"(ペース)|"
+    r"(1周)|"
+    r"(ジョグ)|"
+    r"(\d+周)|"
+    r"(土山のラップ)|"
+    r"(^\d+本目)|"
+    r"(^[\d:\.\'-]+$)|"
+    r"(各自アップ)|"
+    r"(各自ジョグ)|"
+    r"(^B\s+\d)|"
+    r"(^A\s+\d)|"
+    r"(560m\s*2[:']40)|"
+    r"(スピード練習)",
+    re.MULTILINE,
+)
+
+
+def is_pace_data_line(line: str) -> bool:
+    s = line.strip()
+    if not s:
+        return False
+    if "。" in s and len(s) >= 25:
+        return False
+    if re.fullmatch(r"(200m\d+本|100m流し\d+本|流し\d+本|500m\d+本|各自アップ.*|各自ジョグ.*)", s):
+        return False
+    if PACE_DATA_RE.search(s):
+        return True
+    if re.fullmatch(r"\d+本目:\s*[\d.]+", s):
+        return True
+    if re.fullmatch(r"[\d.\-]+", s):
+        return True
+    return False
+
+
+def is_note_line(line: str) -> bool:
+    s = line.strip()
+    if not s:
+        return False
+    if s in {"動きづくり", "流し", "スピード練習"}:
+        return True
+    if s.startswith("欠席者"):
+        return True
+    if s.startswith("間は") or s.startswith("※"):
+        return True
+    if "。" in s and len(s) >= 20:
+        return True
+    if any(k in s for k in ("キロ4で", "みかん", "ケガ", "小学生", "リタイア", "完走", "休み明け")):
+        return True
+    # 距離のみ・ペース未記載のメニュー
+    if re.fullmatch(r"(各自アップ|各自ジョグ|200m\d+本|100m流し\d+本|流し\d+本|500m\d+本|"
+                    r"男子\d+周|女子\d+周|男子\d+周、.*|600m2本.*|300m.*本.*|"
+                    r"動きづくり.*|2\.5km×2|2km×2).*", s):
+        return not is_pace_data_line(s) or "RP" in s or "ペース" in s
+    return False
+
+
+def format_item_line(item: Item) -> str:
+    return f"{item.menu} {item.distance} {item.pace}"
+
+
+def build_description(session: Session, original: str) -> str:
+    notes: list[str] = []
+    for line in original.splitlines():
+        s = line.strip()
+        if not s:
+            continue
+        if is_note_line(s) or ("。" in s and len(s) >= 20):
+            if not is_pace_data_line(s):
+                notes.append(s)
+
+    lines: list[str] = list(notes)
+    if session.items:
+        if lines:
+            lines.append("")
+        lines.extend(format_item_line(i) for i in session.items)
+
+    for line in original.splitlines():
+        s = line.strip()
+        if not s or s in lines:
+            continue
+        if is_pace_data_line(s) or ("。" in s and len(s) >= 20):
+            continue
+        if re.search(r"(200m|100m流し|流し\d|500m|2\.5km|2km|600m2本|300m\d|各自|坂道)", s):
+            if s not in lines:
+                lines.append(s)
+
+    for sk in session.skipped:
+        plain = sk.split("—")[0].strip()
+        if plain and plain not in lines and plain not in original:
+            lines.append(plain)
+
+    return "\n".join(lines).strip()
+
+
+def apply_to_yaml(years: list[int] | None = None) -> int:
+    years = years or APPLY_YEARS
+    updated = 0
+    for year in years:
+        path = INPUT_DIR / f"events.{year}.yaml"
+        if not path.exists():
+            continue
+        text = path.read_text(encoding="utf-8")
+        data = yaml.safe_load(text)
+        for ev in data.get("events", []):
+            if not is_practice(ev):
+                continue
+            desc = (ev.get("description") or "").strip()
+            if not desc or len(desc) > 8000:
+                continue
+            session = Session(ev.get("date") or "", ev.get("title", ""), year)
+            convert(session, desc)
+            if not session.items and not session.skipped:
+                continue
+            new_desc = build_description(session, desc)
+            if new_desc and new_desc != desc:
+                ev["description"] = new_desc
+                updated += 1
+        write_events_yaml(path, data)
+        print(f"Updated {path}")
+    print(f"Descriptions updated: {updated}")
+    return updated
+
+
+def yaml_scalar(value: str) -> str:
+    s = str(value)
+    if "\n" in s or ":" in s or s.startswith("'") or s.startswith('"'):
+        return "'" + s.replace("'", "''") + "'"
+    return s
+
+
+def dump_event(ev: dict) -> str:
+    lines = [f"- title: {yaml_scalar(ev['title'])}"]
+    for key in [
+        "date", "end_date", "all_day", "category", "status",
+        "start_time", "end_time", "location", "description", "tags", "urls",
+    ]:
+        if key not in ev:
+            continue
+        val = ev[key]
+        if key == "tags":
+            lines.append("  tags:")
+            for t in val:
+                lines.append(f"  - {t}")
+        elif key == "urls":
+            lines.append("  urls:")
+            for u in val:
+                lines.append(f"  - {u}")
+        elif key == "description":
+            s = str(val)
+            if "\n" in s:
+                lines.append("  description: |")
+                for row in s.splitlines():
+                    lines.append(f"    {row}")
+            elif ":" in s or "'" in s:
+                lines.append(f"  description: '{s.replace(chr(39), chr(39) * 2)}'")
+            else:
+                lines.append(f"  description: {s}")
+        elif isinstance(val, bool):
+            lines.append(f"  {key}: {'true' if val else 'false'}")
+        elif key in {"date", "end_date", "start_time", "end_time"}:
+            lines.append(f"  {key}: '{val}'")
+        else:
+            lines.append(f"  {key}: {yaml_scalar(str(val))}")
+    return "\n".join(lines)
+
+
+def write_events_yaml(path: Path, data: dict) -> None:
+    text = path.read_text(encoding="utf-8")
+    header_match = re.match(r"((?:#.*\n)*)", text)
+    header = header_match.group(1) if header_match else ""
+    count = len(data["events"])
+    header = re.sub(r"^# 件数: \d+", f"# 件数: {count}", header, count=1, flags=re.MULTILINE)
+    body = ["events:"]
+    body.extend(dump_event(ev) for ev in data["events"])
+    path.write_text(header + "year: " + str(data["year"]) + "\n" + "\n".join(body) + "\n", encoding="utf-8")
 
 
 def is_practice(ev: dict) -> bool:
@@ -349,6 +534,14 @@ def render(sessions: list[Session]) -> str:
 
 
 def main() -> int:
+    parser = argparse.ArgumentParser(description="岱明練習メニューを k/表記に変換")
+    parser.add_argument("--apply", action="store_true", help="input/events.*.yaml の description を更新")
+    parser.add_argument("--year", type=int, action="append", help="--apply 時の対象年（省略時 2025,2026）")
+    args = parser.parse_args()
+
+    if args.apply:
+        apply_to_yaml(args.year or APPLY_YEARS)
+
     sessions = load_all()
     OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
     OUTPUT_PATH.write_text(render(sessions), encoding="utf-8")
