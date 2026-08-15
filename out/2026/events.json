@@ -4781,11 +4781,38 @@
       "session:evening"
     ],
     "urls": [],
-    "description": "",
+    "description": "動きづくり\n\nジョグ 男子 3.36km (6周) k/4:45\nジョグ 女子 2.8km (5周) k/4:45\n\n300m×3（1500mRP、レスト70秒）\n",
     "location": "",
     "private": false,
     "kind": "event",
-    "practice": null,
+    "practice": {
+      "warmup": "動きづくり",
+      "items": [
+        {
+          "type": "jog",
+          "group": "男子",
+          "distance_m": 3360,
+          "distance_km": 3.36,
+          "laps": 6,
+          "pace": "k/4:45"
+        },
+        {
+          "type": "jog",
+          "group": "女子",
+          "distance_m": 2800,
+          "distance_km": 2.8,
+          "laps": 5,
+          "pace": "k/4:45"
+        },
+        {
+          "type": "interval",
+          "distance_m": 300,
+          "reps": 3,
+          "intensity": "1500mRP",
+          "rest_sec": 70
+        }
+      ]
+    },
     "template_ref": null
   },
   {
