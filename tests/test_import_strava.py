@@ -7,6 +7,7 @@ import unittest
 from datetime import datetime, timezone
 from pathlib import Path
 from unittest import mock
+from urllib.error import HTTPError
 
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "scripts"))
@@ -215,6 +216,29 @@ class ClientTests(unittest.TestCase):
                 items = client.list_activities(per_page=2)
             self.assertEqual([i["id"] for i in items], [1, 2, 3])
             self.assertEqual(len(calls), 2)
+
+
+class HttpJsonTests(unittest.TestCase):
+    def test_inactive_application_message(self) -> None:
+        body = (
+            b'{"message":"Forbidden","errors":'
+            b'[{"resource":"Application","field":"Status","code":"Inactive"}]}'
+        )
+        fp = mock.Mock()
+        fp.read.return_value = body
+        err = HTTPError(
+            "https://www.strava.com/api/v3/athlete",
+            403,
+            "Forbidden",
+            hdrs=None,
+            fp=fp,
+        )
+        with mock.patch("urllib.request.urlopen", side_effect=err):
+            with self.assertRaises(RuntimeError) as ctx:
+                strava.http_json("GET", "https://www.strava.com/api/v3/athlete")
+        msg = str(ctx.exception)
+        self.assertIn("Inactive", msg)
+        self.assertIn("www.strava.com/settings/api", msg)
 
 
 class CliTests(unittest.TestCase):

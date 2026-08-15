@@ -113,6 +113,20 @@ def http_json(
             return json.loads(body)
     except urllib.error.HTTPError as exc:
         detail = exc.read().decode("utf-8", errors="replace")
+        inactive = (
+            exc.code == 403
+            and "Application" in detail
+            and "Inactive" in detail
+        )
+        if inactive:
+            raise RuntimeError(
+                "Strava API アプリが Inactive のためリクエストが拒否されました。\n"
+                "https://www.strava.com/settings/api でアプリを再有効化するか、"
+                "新規作成して STRAVA_CLIENT_ID / STRAVA_CLIENT_SECRET を更新し、\n"
+                "`python3 scripts/import_strava.py auth` で再認可して "
+                "STRAVA_REFRESH_TOKEN も更新してください。\n"
+                f"詳細: HTTP {exc.code} {url}: {detail}"
+            ) from exc
         raise RuntimeError(f"HTTP {exc.code} {url}: {detail}") from exc
 
 
