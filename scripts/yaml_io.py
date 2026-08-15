@@ -56,6 +56,10 @@ def _dump_practice(practice: dict[str, Any], indent: str) -> list[str]:
     for key in ("warmup", "notes"):
         if practice.get(key):
             lines.extend(_dump_scalar(key, practice[key], sub))
+    if practice.get("absentees") is not None:
+        lines.append(f"{sub}absentees:")
+        for name in practice["absentees"]:
+            lines.append(f"{sub}  - {yaml_scalar(str(name))}")
     items = practice.get("items") or []
     if items:
         lines.append(f"{sub}items:")

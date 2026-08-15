@@ -1879,6 +1879,8 @@ events:
     ジョグ 5.60km (10周) k/5:07
   practice:
     warmup: 動きづくり
+    absentees:
+      - 松岡
     items:
       - type: jog
         laps: 10
@@ -1928,6 +1930,11 @@ events:
     ジョグ 3.36km (6周) k/4:02
   practice:
     warmup: 動きづくり
+    absentees:
+      - 田上
+      - 角田
+      - 高田
+      - 松本
     items:
       - type: jog
         laps: 6
@@ -1992,6 +1999,12 @@ events:
     ジョグ 6.72km (12周) k/4:59
   practice:
     warmup: 動きづくり
+    absentees:
+      - 松岡
+      - 塚原
+      - 村上
+      - 高田
+      - 増岡
     items:
       - type: jog
         laps: 12
@@ -2054,6 +2067,10 @@ events:
     300m 4本目 300m k/3:00300m
   practice:
     warmup: 動きづくり
+    absentees:
+      - 村上
+      - 高田
+      - 松岡
     items:
       - type: jog
         laps: 6
@@ -2156,6 +2173,10 @@ events:
     600m×2
   practice:
     warmup: 動きづくり
+    absentees:
+      - 松岡
+      - 松本
+      - 山本
     items:
       - type: jog
         laps: 6
@@ -2233,6 +2254,10 @@ events:
     ジョグ 3.36km (6周) k/5:08
   practice:
     warmup: 動きづくり
+    absentees:
+      - 松岡
+      - 塚原
+      - 高田
     items:
       - type: jog
         laps: 6
@@ -2306,6 +2331,10 @@ events:
     A組 900m 900m k/3:30900m
   practice:
     warmup: 動きづくり
+    absentees:
+      - 松野
+      - 塚原
+      - 松本
     items:
       - type: jog
         laps: 6

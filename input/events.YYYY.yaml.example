@@ -48,6 +48,7 @@ events:
     tags: [ランニング, いだてん岱明練習, practice:daiming, session:evening]
     practice:
       warmup: 動きづくり
+      absentees: [松野, 塚原]
       items:
         - type: interval
           distance_m: 300
@@ -56,4 +57,5 @@ events:
           rest_sec: 60
     description: |
       動きづくり
+      欠席者 松野、塚原
       300m×6〜10（RP、レスト1分）

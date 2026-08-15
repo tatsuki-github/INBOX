@@ -9,6 +9,7 @@ import yaml
 
 from practice_models import LAP_M, LegacyItem, ParseResult, empty_practice
 from practice_renderer import HTML_COMMENT_RE
+from practice_utils import extract_absentees_from_text, parse_absentees_line
 
 # --- k/pace helpers (from convert_practice_pace) ---
 
@@ -163,17 +164,38 @@ def extract_note_lines(desc: str) -> list[str]:
     return notes
 
 
+def _practice_dict(
+    *,
+    warmup: str | None = None,
+    notes: str | None = None,
+    absentees: list[str] | None = None,
+    items: list[dict[str, Any]],
+) -> dict[str, Any]:
+    practice: dict[str, Any] = {"items": items}
+    if warmup:
+        practice["warmup"] = warmup
+    if notes:
+        practice["notes"] = notes
+    if absentees is not None:
+        practice["absentees"] = absentees
+    return practice
+
+
 def parse_practice_field(raw: dict[str, Any] | None) -> dict[str, Any] | None:
     if not raw or not isinstance(raw, dict):
         return None
     items = raw.get("items")
     if not items:
         return None
-    return {
-        "warmup": raw.get("warmup"),
-        "notes": raw.get("notes"),
-        "items": list(items),
-    }
+    absentees = raw.get("absentees")
+    if absentees is not None:
+        absentees = list(absentees)
+    return _practice_dict(
+        warmup=raw.get("warmup"),
+        notes=raw.get("notes"),
+        absentees=absentees,
+        items=list(items),
+    )
 
 
 def parse_html_comment(desc: str) -> dict[str, Any] | None:
@@ -186,11 +208,15 @@ def parse_html_comment(desc: str) -> dict[str, Any] | None:
         return None
     if not isinstance(data, dict) or not data.get("items"):
         return None
-    return {
-        "warmup": data.get("warmup"),
-        "notes": data.get("notes"),
-        "items": list(data["items"]),
-    }
+    absentees = data.get("absentees")
+    if absentees is not None:
+        absentees = list(absentees)
+    return _practice_dict(
+        warmup=data.get("warmup"),
+        notes=data.get("notes"),
+        absentees=absentees,
+        items=list(data["items"]),
+    )
 
 
 def _parse_distance_m(dist: str) -> int | None:
@@ -333,6 +359,12 @@ def regex_practice_items(desc: str) -> list[dict[str, Any]]:
 
 def description_to_practice(desc: str) -> ParseResult:
     notes = extract_note_lines(desc)
+    absentees = extract_absentees_from_text(desc)
+    filtered_notes: list[str] = []
+    for n in notes:
+        if parse_absentees_line(n) is not None:
+            continue
+        filtered_notes.append(n)
     legacy = LegacySession()
     convert_description(legacy, desc)
     regex_items = regex_practice_items(desc)
@@ -341,7 +373,7 @@ def description_to_practice(desc: str) -> ParseResult:
         practice_items.extend(regex_items)
 
     warmup = None
-    for n in notes:
+    for n in filtered_notes:
         if n in {"動きづくり", "流し", "スピード練習"}:
             warmup = n
             break
@@ -354,10 +386,11 @@ def description_to_practice(desc: str) -> ParseResult:
     elif legacy.skipped:
         confidence = "partial"
 
-    practice = empty_practice()
-    if warmup:
-        practice["warmup"] = warmup
-    practice["items"] = practice_items
+    practice = _practice_dict(
+        warmup=warmup,
+        absentees=absentees,
+        items=practice_items,
+    )
 
     return ParseResult(
         practice=practice,
@@ -365,7 +398,7 @@ def description_to_practice(desc: str) -> ParseResult:
         skipped=legacy.skipped,
         source="description",
         confidence=confidence,
-        note_lines=[n for n in notes if n != warmup],
+        note_lines=[n for n in filtered_notes if n != warmup],
     )
 
 
@@ -373,11 +406,17 @@ def parse_event(ev: dict) -> ParseResult:
     if ev.get("practice"):
         pf = parse_practice_field(ev["practice"])
         if pf:
+            if pf.get("absentees") is None:
+                extracted = extract_absentees_from_text(ev.get("description") or "")
+                if extracted is not None:
+                    pf["absentees"] = extracted
+            note_lines = extract_note_lines(ev.get("description") or "")
+            note_lines = [n for n in note_lines if parse_absentees_line(n) is None]
             return ParseResult(
                 practice=pf,
                 source="practice_field",
                 confidence="full",
-                note_lines=extract_note_lines(ev.get("description") or ""),
+                note_lines=note_lines,
             )
 
     desc = (ev.get("description") or "").strip()

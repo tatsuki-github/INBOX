@@ -75,6 +75,8 @@ def flatten_items(record: dict[str, Any]) -> list[dict[str, Any]]:
     rows: list[dict[str, Any]] = []
     practice = record.get("practice") or {}
     parse = record.get("parse") or {}
+    absentees = practice.get("absentees")
+    absentees_str = "、".join(absentees) if absentees else ""
     for item in practice.get("items") or []:
         rows.append(
             {
@@ -92,11 +94,28 @@ def flatten_items(record: dict[str, Any]) -> list[dict[str, Any]]:
                 "rest_sec": item.get("rest_sec") or "",
                 "rest": item.get("rest") or "",
                 "label": item.get("label") or "",
+                "absentees": absentees_str,
                 "parse_source": parse.get("source") or "",
                 "parse_confidence": parse.get("confidence") or "",
             }
         )
     return rows
+
+
+def flatten_absentees(record: dict[str, Any]) -> list[dict[str, Any]]:
+    practice = record.get("practice") or {}
+    absentees = practice.get("absentees")
+    if not absentees:
+        return []
+    return [
+        {
+            "year": record.get("year"),
+            "date": record.get("date") or "",
+            "title": record.get("title") or "",
+            "name": name,
+        }
+        for name in absentees
+    ]
 
 
 def write_practice_json(path: Path, records: list[dict[str, Any]]) -> None:
@@ -111,8 +130,20 @@ def write_practice_items_csv(path: Path, records: list[dict[str, Any]]) -> None:
     headers = [
         "year", "date", "title", "type", "group", "distance_m", "distance_km",
         "laps", "reps", "pace", "intensity", "rest_sec", "rest", "label",
-        "parse_source", "parse_confidence",
+        "absentees", "parse_source", "parse_confidence",
     ]
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with path.open("w", encoding="utf-8", newline="") as f:
+        writer = csv.DictWriter(f, fieldnames=headers)
+        writer.writeheader()
+        writer.writerows(rows)
+
+
+def write_practice_absentees_csv(path: Path, records: list[dict[str, Any]]) -> None:
+    rows: list[dict[str, Any]] = []
+    for rec in records:
+        rows.extend(flatten_absentees(rec))
+    headers = ["year", "date", "title", "name"]
     path.parent.mkdir(parents=True, exist_ok=True)
     with path.open("w", encoding="utf-8", newline="") as f:
         writer = csv.DictWriter(f, fieldnames=headers)
@@ -144,7 +175,14 @@ def render_kpace_markdown(all_records: list[dict[str, Any]]) -> str:
             title = rec.get("title") or ""
             parse = rec.get("parse") or {}
             conf = parse.get("confidence") or "none"
-            lines += [f"### {date} {title}", "", f"- **parsed**: {conf} ({parse.get('source', 'none')})", ""]
+            absentees = (rec.get("practice") or {}).get("absentees")
+            absentee_note = ""
+            if absentees is not None:
+                absentee_note = "なし" if not absentees else "、".join(absentees)
+            lines += [f"### {date} {title}", "", f"- **parsed**: {conf} ({parse.get('source', 'none')})"]
+            if absentee_note:
+                lines += [f"- **absentees**: {absentee_note}"]
+            lines += [""]
             items = (rec.get("practice") or {}).get("items") or []
             if items:
                 lines += ["| type | group | detail | pace |", "|---|---|---|---|"]
@@ -231,10 +269,12 @@ def generate_for_year(year: int, *, out_dir: Path | None = None) -> dict[str, Pa
     outputs = {
         "practice_json": target / "practice.json",
         "practice_csv": target / "practice_items.csv",
+        "practice_absentees_csv": target / "practice_absentees.csv",
         "summary_md": target / "practice-summary.md",
     }
     write_practice_json(outputs["practice_json"], records)
     write_practice_items_csv(outputs["practice_csv"], records)
+    write_practice_absentees_csv(outputs["practice_absentees_csv"], records)
     templates = load_templates()
     outputs["summary_md"].write_text(render_summary_md(records, year, templates), encoding="utf-8")
     return outputs

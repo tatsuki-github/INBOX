@@ -10,7 +10,9 @@ ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "scripts"))
 
 from export_practice import (  # noqa: E402
+    flatten_absentees,
     practice_records_from_events,
+    write_practice_absentees_csv,
     write_practice_items_csv,
     write_practice_json,
 )
@@ -25,6 +27,7 @@ class ExportPracticeTests(unittest.TestCase):
                 "tags": ["いだてん岱明練習"],
                 "practice": {
                     "warmup": "動きづくり",
+                    "absentees": ["松野"],
                     "items": [{"type": "interval", "distance_m": 900, "pace": "k/3:10"}],
                 },
             }
@@ -42,6 +45,12 @@ class ExportPracticeTests(unittest.TestCase):
             csv_text = csv_path.read_text(encoding="utf-8")
             self.assertIn("distance_m", csv_text)
             self.assertIn("900", csv_text)
+            self.assertIn("松野", csv_text)
+            absentee_rows = flatten_absentees(records[0])
+            self.assertEqual(absentee_rows[0]["name"], "松野")
+            absentees_path = tmp / "practice_absentees.csv"
+            write_practice_absentees_csv(absentees_path, records)
+            self.assertIn("松野", absentees_path.read_text(encoding="utf-8"))
 
 
 if __name__ == "__main__":
