@@ -13,15 +13,26 @@
       "session:morning"
     ],
     "practice": {
-      "items": []
+      "warmup": "動きづくり",
+      "items": [
+        {
+          "type": "interval",
+          "group": "男子",
+          "distance_km": 2.5,
+          "reps": 2
+        },
+        {
+          "type": "interval",
+          "group": "女子",
+          "distance_km": 2.0,
+          "reps": 2
+        }
+      ]
     },
     "parse": {
-      "source": "description",
-      "confidence": "partial",
-      "skipped": [
-        "2.5km×2 — ペース未記載",
-        "2km×2 — ペース未記載"
-      ]
+      "source": "practice_field",
+      "confidence": "full",
+      "skipped": []
     },
     "template_ref": null
   },
@@ -39,15 +50,26 @@
       "session:morning"
     ],
     "practice": {
-      "items": []
+      "warmup": "動きづくり",
+      "items": [
+        {
+          "type": "interval",
+          "group": "男子",
+          "distance_km": 2.5,
+          "reps": 2
+        },
+        {
+          "type": "interval",
+          "group": "女子",
+          "distance_km": 2.0,
+          "reps": 2
+        }
+      ]
     },
     "parse": {
-      "source": "description",
-      "confidence": "partial",
-      "skipped": [
-        "2.5km×2 — ペース未記載",
-        "2km×2 — ペース未記載"
-      ]
+      "source": "practice_field",
+      "confidence": "full",
+      "skipped": []
     },
     "template_ref": null
   },
@@ -65,15 +87,26 @@
       "session:morning"
     ],
     "practice": {
-      "items": []
+      "warmup": "動きづくり",
+      "items": [
+        {
+          "type": "interval",
+          "group": "男子",
+          "distance_km": 2.5,
+          "reps": 2
+        },
+        {
+          "type": "interval",
+          "group": "女子",
+          "distance_km": 2.0,
+          "reps": 2
+        }
+      ]
     },
     "parse": {
-      "source": "description",
-      "confidence": "partial",
-      "skipped": [
-        "2.5km×2 — ペース未記載",
-        "2km×2 — ペース未記載"
-      ]
+      "source": "practice_field",
+      "confidence": "full",
+      "skipped": []
     },
     "template_ref": null
   },
@@ -91,15 +124,26 @@
       "session:morning"
     ],
     "practice": {
-      "items": []
+      "warmup": "動きづくり",
+      "items": [
+        {
+          "type": "interval",
+          "group": "男子",
+          "distance_km": 2.5,
+          "reps": 2
+        },
+        {
+          "type": "interval",
+          "group": "女子",
+          "distance_km": 2.0,
+          "reps": 2
+        }
+      ]
     },
     "parse": {
-      "source": "description",
-      "confidence": "partial",
-      "skipped": [
-        "2.5km×2 — ペース未記載",
-        "2km×2 — ペース未記載"
-      ]
+      "source": "practice_field",
+      "confidence": "full",
+      "skipped": []
     },
     "template_ref": null
   },
@@ -117,15 +161,26 @@
       "session:morning"
     ],
     "practice": {
-      "items": []
+      "warmup": "動きづくり",
+      "items": [
+        {
+          "type": "interval",
+          "group": "男子",
+          "distance_km": 2.5,
+          "reps": 2
+        },
+        {
+          "type": "interval",
+          "group": "女子",
+          "distance_km": 2.0,
+          "reps": 2
+        }
+      ]
     },
     "parse": {
-      "source": "description",
-      "confidence": "partial",
-      "skipped": [
-        "2.5km×2 — ペース未記載",
-        "2km×2 — ペース未記載"
-      ]
+      "source": "practice_field",
+      "confidence": "full",
+      "skipped": []
     },
     "template_ref": null
   },
@@ -143,15 +198,26 @@
       "session:morning"
     ],
     "practice": {
-      "items": []
+      "warmup": "動きづくり",
+      "items": [
+        {
+          "type": "interval",
+          "group": "男子",
+          "distance_km": 2.5,
+          "reps": 2
+        },
+        {
+          "type": "interval",
+          "group": "女子",
+          "distance_km": 2.0,
+          "reps": 2
+        }
+      ]
     },
     "parse": {
-      "source": "description",
-      "confidence": "partial",
-      "skipped": [
-        "2.5km×2 — ペース未記載",
-        "2km×2 — ペース未記載"
-      ]
+      "source": "practice_field",
+      "confidence": "full",
+      "skipped": []
     },
     "template_ref": null
   },
@@ -199,15 +265,26 @@
       "session:morning"
     ],
     "practice": {
-      "items": []
+      "warmup": "動きづくり",
+      "items": [
+        {
+          "type": "interval",
+          "group": "男子",
+          "distance_km": 2.5,
+          "reps": 2
+        },
+        {
+          "type": "interval",
+          "group": "女子",
+          "distance_km": 2.0,
+          "reps": 2
+        }
+      ]
     },
     "parse": {
-      "source": "description",
-      "confidence": "partial",
-      "skipped": [
-        "2.5km×2 — ペース未記載",
-        "2km×2 — ペース未記載"
-      ]
+      "source": "practice_field",
+      "confidence": "full",
+      "skipped": []
     },
     "template_ref": null
   },
@@ -251,15 +328,26 @@
       "session:morning"
     ],
     "practice": {
-      "items": []
+      "warmup": "動きづくり",
+      "items": [
+        {
+          "type": "interval",
+          "group": "男子",
+          "distance_km": 2.5,
+          "reps": 2
+        },
+        {
+          "type": "interval",
+          "group": "女子",
+          "distance_km": 2.0,
+          "reps": 2
+        }
+      ]
     },
     "parse": {
-      "source": "description",
-      "confidence": "partial",
-      "skipped": [
-        "2.5km×2 — ペース未記載",
-        "2km×2 — ペース未記載"
-      ]
+      "source": "practice_field",
+      "confidence": "full",
+      "skipped": []
     },
     "template_ref": null
   },
@@ -346,15 +434,26 @@
       "session:morning"
     ],
     "practice": {
-      "items": []
+      "warmup": "動きづくり",
+      "items": [
+        {
+          "type": "interval",
+          "group": "男子",
+          "distance_km": 2.5,
+          "reps": 2
+        },
+        {
+          "type": "interval",
+          "group": "女子",
+          "distance_km": 2.0,
+          "reps": 2
+        }
+      ]
     },
     "parse": {
-      "source": "description",
-      "confidence": "partial",
-      "skipped": [
-        "2.5km×2 — ペース未記載",
-        "2km×2 — ペース未記載"
-      ]
+      "source": "practice_field",
+      "confidence": "full",
+      "skipped": []
     },
     "template_ref": null
   },
@@ -394,15 +493,26 @@
       "session:morning"
     ],
     "practice": {
-      "items": []
+      "warmup": "動きづくり",
+      "items": [
+        {
+          "type": "interval",
+          "group": "男子",
+          "distance_km": 2.5,
+          "reps": 2
+        },
+        {
+          "type": "interval",
+          "group": "女子",
+          "distance_km": 2.0,
+          "reps": 2
+        }
+      ]
     },
     "parse": {
-      "source": "description",
-      "confidence": "partial",
-      "skipped": [
-        "2.5km×2 — ペース未記載",
-        "2km×2 — ペース未記載"
-      ]
+      "source": "practice_field",
+      "confidence": "full",
+      "skipped": []
     },
     "template_ref": null
   },
@@ -420,15 +530,26 @@
       "session:morning"
     ],
     "practice": {
-      "items": []
+      "warmup": "動きづくり",
+      "items": [
+        {
+          "type": "interval",
+          "group": "男子",
+          "distance_km": 2.5,
+          "reps": 2
+        },
+        {
+          "type": "interval",
+          "group": "女子",
+          "distance_km": 2.0,
+          "reps": 2
+        }
+      ]
     },
     "parse": {
-      "source": "description",
-      "confidence": "partial",
-      "skipped": [
-        "2.5km×2 — ペース未記載",
-        "2km×2 — ペース未記載"
-      ]
+      "source": "practice_field",
+      "confidence": "full",
+      "skipped": []
     },
     "template_ref": null
   },
@@ -499,6 +620,43 @@
       "skipped": [
         "流し2本 — ペース未記載"
       ]
+    },
+    "template_ref": null
+  },
+  {
+    "year": 2026,
+    "date": "2026-08-10",
+    "title": "岱明朝練",
+    "start_time": "08:00",
+    "end_time": "09:30",
+    "status": "scheduled",
+    "tags": [
+      "ランニング",
+      "いだてん岱明練習",
+      "practice:daiming",
+      "session:morning"
+    ],
+    "practice": {
+      "warmup": "動きづくり",
+      "items": [
+        {
+          "type": "interval",
+          "group": "男子",
+          "distance_km": 2.5,
+          "reps": 2
+        },
+        {
+          "type": "interval",
+          "group": "女子",
+          "distance_km": 2.0,
+          "reps": 2
+        }
+      ]
+    },
+    "parse": {
+      "source": "practice_field",
+      "confidence": "full",
+      "skipped": []
     },
     "template_ref": null
   },
@@ -676,6 +834,228 @@
           "reps": 3,
           "intensity": "1500mRP",
           "rest_sec": 70
+        }
+      ]
+    },
+    "parse": {
+      "source": "practice_field",
+      "confidence": "full",
+      "skipped": []
+    },
+    "template_ref": null
+  },
+  {
+    "year": 2026,
+    "date": "2026-08-17",
+    "title": "岱明朝練",
+    "start_time": "08:00",
+    "end_time": "09:30",
+    "status": "scheduled",
+    "tags": [
+      "ランニング",
+      "いだてん岱明練習",
+      "practice:daiming",
+      "session:morning"
+    ],
+    "practice": {
+      "warmup": "動きづくり",
+      "items": [
+        {
+          "type": "interval",
+          "group": "男子",
+          "distance_km": 2.5,
+          "reps": 2
+        },
+        {
+          "type": "interval",
+          "group": "女子",
+          "distance_km": 2.0,
+          "reps": 2
+        }
+      ]
+    },
+    "parse": {
+      "source": "practice_field",
+      "confidence": "full",
+      "skipped": []
+    },
+    "template_ref": null
+  },
+  {
+    "year": 2026,
+    "date": "2026-08-19",
+    "title": "岱明朝練",
+    "start_time": "08:00",
+    "end_time": "09:30",
+    "status": "scheduled",
+    "tags": [
+      "ランニング",
+      "いだてん岱明練習",
+      "practice:daiming",
+      "session:morning"
+    ],
+    "practice": {
+      "warmup": "動きづくり",
+      "items": [
+        {
+          "type": "interval",
+          "group": "男子",
+          "distance_km": 2.5,
+          "reps": 2
+        },
+        {
+          "type": "interval",
+          "group": "女子",
+          "distance_km": 2.0,
+          "reps": 2
+        }
+      ]
+    },
+    "parse": {
+      "source": "practice_field",
+      "confidence": "full",
+      "skipped": []
+    },
+    "template_ref": null
+  },
+  {
+    "year": 2026,
+    "date": "2026-08-20",
+    "title": "岱明朝練",
+    "start_time": "08:00",
+    "end_time": "09:30",
+    "status": "scheduled",
+    "tags": [
+      "ランニング",
+      "いだてん岱明練習",
+      "practice:daiming",
+      "session:morning"
+    ],
+    "practice": {
+      "warmup": "動きづくり",
+      "items": [
+        {
+          "type": "interval",
+          "group": "男子",
+          "distance_km": 2.5,
+          "reps": 2
+        },
+        {
+          "type": "interval",
+          "group": "女子",
+          "distance_km": 2.0,
+          "reps": 2
+        }
+      ]
+    },
+    "parse": {
+      "source": "practice_field",
+      "confidence": "full",
+      "skipped": []
+    },
+    "template_ref": null
+  },
+  {
+    "year": 2026,
+    "date": "2026-08-21",
+    "title": "岱明朝練",
+    "start_time": "08:00",
+    "end_time": "09:30",
+    "status": "scheduled",
+    "tags": [
+      "ランニング",
+      "いだてん岱明練習",
+      "practice:daiming",
+      "session:morning"
+    ],
+    "practice": {
+      "warmup": "動きづくり",
+      "items": [
+        {
+          "type": "interval",
+          "group": "男子",
+          "distance_km": 2.5,
+          "reps": 2
+        },
+        {
+          "type": "interval",
+          "group": "女子",
+          "distance_km": 2.0,
+          "reps": 2
+        }
+      ]
+    },
+    "parse": {
+      "source": "practice_field",
+      "confidence": "full",
+      "skipped": []
+    },
+    "template_ref": null
+  },
+  {
+    "year": 2026,
+    "date": "2026-08-24",
+    "title": "岱明朝練",
+    "start_time": "08:00",
+    "end_time": "09:30",
+    "status": "scheduled",
+    "tags": [
+      "ランニング",
+      "いだてん岱明練習",
+      "practice:daiming",
+      "session:morning"
+    ],
+    "practice": {
+      "warmup": "動きづくり",
+      "items": [
+        {
+          "type": "interval",
+          "group": "男子",
+          "distance_km": 2.5,
+          "reps": 2
+        },
+        {
+          "type": "interval",
+          "group": "女子",
+          "distance_km": 2.0,
+          "reps": 2
+        }
+      ]
+    },
+    "parse": {
+      "source": "practice_field",
+      "confidence": "full",
+      "skipped": []
+    },
+    "template_ref": null
+  },
+  {
+    "year": 2026,
+    "date": "2026-08-25",
+    "title": "岱明朝練",
+    "start_time": "08:00",
+    "end_time": "09:30",
+    "status": "scheduled",
+    "tags": [
+      "ランニング",
+      "いだてん岱明練習",
+      "practice:daiming",
+      "session:morning"
+    ],
+    "practice": {
+      "warmup": "動きづくり",
+      "items": [
+        {
+          "type": "interval",
+          "group": "男子",
+          "distance_km": 2.5,
+          "reps": 2
+        },
+        {
+          "type": "interval",
+          "group": "女子",
+          "distance_km": 2.0,
+          "reps": 2
         }
       ]
     },

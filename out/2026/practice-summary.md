@@ -4,7 +4,7 @@
 
 | type | count |
 |---|---|
-| interval | 2 |
+| interval | 38 |
 | jog | 4 |
 | set | 8 |
 
@@ -12,32 +12,39 @@
 
 ### 2026-07
 
-- 2026-07-21 岱明朝練 (0 items, partial)
-- 2026-07-23 岱明朝練 (0 items, partial)
-- 2026-07-24 岱明朝練 (0 items, partial)
-- 2026-07-27 岱明朝練 (0 items, partial)
-- 2026-07-28 岱明朝練 (0 items, partial)
-- 2026-07-29 岱明朝練 (0 items, partial)
+- 2026-07-21 岱明朝練 (2 items, full)
+- 2026-07-23 岱明朝練 (2 items, full)
+- 2026-07-24 岱明朝練 (2 items, full)
+- 2026-07-27 岱明朝練 (2 items, full)
+- 2026-07-28 岱明朝練 (2 items, full)
+- 2026-07-29 岱明朝練 (2 items, full)
 - 2026-07-31 岱明夕練 (1 items, full)
-- 2026-07-31 岱明朝練 (0 items, partial)
+- 2026-07-31 岱明朝練 (2 items, full)
 
 ### 2026-08
 
 - 2026-08-01 岱明夕練 (0 items, partial)
 - 2026-08-03 岱明夕練 (5 items, full)
-- 2026-08-03 岱明朝練 (0 items, partial)
-- 2026-08-04 岱明朝練 (0 items, partial)
+- 2026-08-03 岱明朝練 (2 items, full)
+- 2026-08-04 岱明朝練 (2 items, full)
 - 2026-08-05 自分の練習 (0 items, none)
-- 2026-08-06 岱明朝練 (0 items, partial)
+- 2026-08-06 岱明朝練 (2 items, full)
 - 2026-08-07 岱明夕練 (0 items, none)
-- 2026-08-07 岱明朝練 (0 items, partial)
+- 2026-08-07 岱明朝練 (2 items, full)
 - 2026-08-08 岱明夕練 (0 items, partial)
 - 2026-08-08 自分の練習 (0 items, none)
 - 2026-08-10 岱明夕練 (0 items, partial)
+- 2026-08-10 岱明朝練 (2 items, full)
 - 2026-08-12 岱明夕練 (0 items, partial)
 - 2026-08-14 岱明夕練 (5 items, full)
 - 2026-08-14 自分の練習 (0 items, none)
 - 2026-08-15 岱明夕練 (3 items, full)
+- 2026-08-17 岱明朝練 (2 items, full)
+- 2026-08-19 岱明朝練 (2 items, full)
+- 2026-08-20 岱明朝練 (2 items, full)
+- 2026-08-21 岱明朝練 (2 items, full)
+- 2026-08-24 岱明朝練 (2 items, full)
+- 2026-08-25 岱明朝練 (2 items, full)
 
 ### （日付なし）
 
@@ -47,19 +54,8 @@
 
 ## 未パース / 項目なし
 
-- 2026-07-21 岱明朝練 — partial
-- 2026-07-23 岱明朝練 — partial
-- 2026-07-24 岱明朝練 — partial
-- 2026-07-27 岱明朝練 — partial
-- 2026-07-28 岱明朝練 — partial
-- 2026-07-29 岱明朝練 — partial
-- 2026-07-31 岱明朝練 — partial
 - 2026-08-01 岱明夕練 — partial
-- 2026-08-03 岱明朝練 — partial
-- 2026-08-04 岱明朝練 — partial
 - 2026-08-05 自分の練習 — none
-- 2026-08-06 岱明朝練 — partial
-- 2026-08-07 岱明朝練 — partial
 - 2026-08-07 岱明夕練 — none
 - 2026-08-08 自分の練習 — none
 - 2026-08-08 岱明夕練 — partial
