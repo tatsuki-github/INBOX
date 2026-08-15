@@ -883,6 +883,53 @@
   },
   {
     "year": 2026,
+    "date": "2026-08-17",
+    "title": "岱明夕練",
+    "start_time": "18:00",
+    "end_time": "19:30",
+    "status": "scheduled",
+    "tags": [
+      "ランニング",
+      "いだてん岱明練習",
+      "practice:daiming",
+      "session:evening"
+    ],
+    "practice": {
+      "warmup": "動きづくり",
+      "notes": "軽いポイント。勝ちにいかない。1本目は設定より遅め",
+      "items": [
+        {
+          "type": "jog",
+          "group": "男子",
+          "laps": 6,
+          "distance_km": 3.36,
+          "pace": "k/4:50"
+        },
+        {
+          "type": "jog",
+          "group": "女子",
+          "laps": 5,
+          "distance_km": 2.8,
+          "pace": "k/5:00"
+        },
+        {
+          "type": "interval",
+          "distance_m": 600,
+          "reps": 2,
+          "intensity": "GZ",
+          "rest_sec": 180
+        }
+      ]
+    },
+    "parse": {
+      "source": "practice_field",
+      "confidence": "full",
+      "skipped": []
+    },
+    "template_ref": "evening-light-600x2"
+  },
+  {
+    "year": 2026,
     "date": "2026-08-19",
     "title": "岱明朝練",
     "start_time": "08:00",
@@ -917,6 +964,53 @@
       "skipped": []
     },
     "template_ref": null
+  },
+  {
+    "year": 2026,
+    "date": "2026-08-19",
+    "title": "岱明夕練",
+    "start_time": "18:00",
+    "end_time": "19:30",
+    "status": "scheduled",
+    "tags": [
+      "ランニング",
+      "いだてん岱明練習",
+      "practice:daiming",
+      "session:evening"
+    ],
+    "practice": {
+      "warmup": "動きづくり",
+      "notes": "軽いポイント。本数を増やさない",
+      "items": [
+        {
+          "type": "jog",
+          "group": "男子",
+          "laps": 6,
+          "distance_km": 3.36,
+          "pace": "k/4:50"
+        },
+        {
+          "type": "jog",
+          "group": "女子",
+          "laps": 5,
+          "distance_km": 2.8,
+          "pace": "k/5:00"
+        },
+        {
+          "type": "interval",
+          "distance_m": 300,
+          "reps": 4,
+          "intensity": "GZ",
+          "rest_sec": 50
+        }
+      ]
+    },
+    "parse": {
+      "source": "practice_field",
+      "confidence": "full",
+      "skipped": []
+    },
+    "template_ref": "evening-light-300x4"
   },
   {
     "year": 2026,
@@ -994,6 +1088,106 @@
   },
   {
     "year": 2026,
+    "date": "2026-08-21",
+    "title": "岱明夕練",
+    "start_time": "18:00",
+    "end_time": "19:30",
+    "status": "scheduled",
+    "tags": [
+      "ランニング",
+      "いだてん岱明練習",
+      "practice:daiming",
+      "session:evening"
+    ],
+    "practice": {
+      "warmup": "動きづくり",
+      "notes": "軽いポイント。900mセットにはしない",
+      "items": [
+        {
+          "type": "jog",
+          "group": "男子",
+          "laps": 6,
+          "distance_km": 3.36,
+          "pace": "k/4:50"
+        },
+        {
+          "type": "jog",
+          "group": "女子",
+          "laps": 5,
+          "distance_km": 2.8,
+          "pace": "k/5:00"
+        },
+        {
+          "type": "set",
+          "segments": [
+            {
+              "distance_m": 600,
+              "intensity": "GZ"
+            },
+            {
+              "distance_m": 300,
+              "intensity": "GZ"
+            }
+          ]
+        }
+      ]
+    },
+    "parse": {
+      "source": "practice_field",
+      "confidence": "full",
+      "skipped": []
+    },
+    "template_ref": "evening-light-600-300"
+  },
+  {
+    "year": 2026,
+    "date": "2026-08-22",
+    "title": "岱明夕練",
+    "start_time": "18:00",
+    "end_time": "19:30",
+    "status": "scheduled",
+    "tags": [
+      "ランニング",
+      "いだてん岱明練習",
+      "practice:daiming",
+      "session:evening"
+    ],
+    "practice": {
+      "warmup": "動きづくり",
+      "notes": "軽いポイント。指導者不在時の自主メニュー可",
+      "items": [
+        {
+          "type": "jog",
+          "group": "男子",
+          "laps": 6,
+          "distance_km": 3.36,
+          "pace": "k/4:50"
+        },
+        {
+          "type": "jog",
+          "group": "女子",
+          "laps": 5,
+          "distance_km": 2.8,
+          "pace": "k/5:00"
+        },
+        {
+          "type": "interval",
+          "distance_m": 200,
+          "reps": 6,
+          "intensity": "GZ",
+          "rest_sec": 60
+        }
+      ]
+    },
+    "parse": {
+      "source": "practice_field",
+      "confidence": "full",
+      "skipped": []
+    },
+    "template_ref": "evening-light-200x6"
+  },
+  {
+    "year": 2026,
     "date": "2026-08-24",
     "title": "岱明朝練",
     "start_time": "08:00",
@@ -1031,6 +1225,53 @@
   },
   {
     "year": 2026,
+    "date": "2026-08-24",
+    "title": "岱明夕練",
+    "start_time": "18:00",
+    "end_time": "19:30",
+    "status": "scheduled",
+    "tags": [
+      "ランニング",
+      "いだてん岱明練習",
+      "practice:daiming",
+      "session:evening"
+    ],
+    "practice": {
+      "warmup": "動きづくり",
+      "notes": "軽いポイント。本数を増やさない",
+      "items": [
+        {
+          "type": "jog",
+          "group": "男子",
+          "laps": 6,
+          "distance_km": 3.36,
+          "pace": "k/4:50"
+        },
+        {
+          "type": "jog",
+          "group": "女子",
+          "laps": 5,
+          "distance_km": 2.8,
+          "pace": "k/5:00"
+        },
+        {
+          "type": "interval",
+          "distance_m": 300,
+          "reps": 4,
+          "intensity": "GZ",
+          "rest_sec": 50
+        }
+      ]
+    },
+    "parse": {
+      "source": "practice_field",
+      "confidence": "full",
+      "skipped": []
+    },
+    "template_ref": "evening-light-300x4"
+  },
+  {
+    "year": 2026,
     "date": "2026-08-25",
     "title": "岱明朝練",
     "start_time": "08:00",
@@ -1065,6 +1306,53 @@
       "skipped": []
     },
     "template_ref": null
+  },
+  {
+    "year": 2026,
+    "date": "2026-08-26",
+    "title": "岱明夕練",
+    "start_time": "18:00",
+    "end_time": "19:30",
+    "status": "scheduled",
+    "tags": [
+      "ランニング",
+      "いだてん岱明練習",
+      "practice:daiming",
+      "session:evening"
+    ],
+    "practice": {
+      "warmup": "動きづくり",
+      "notes": "軽いポイント。勝ちにいかない。1本目は設定より遅め",
+      "items": [
+        {
+          "type": "jog",
+          "group": "男子",
+          "laps": 6,
+          "distance_km": 3.36,
+          "pace": "k/4:50"
+        },
+        {
+          "type": "jog",
+          "group": "女子",
+          "laps": 5,
+          "distance_km": 2.8,
+          "pace": "k/5:00"
+        },
+        {
+          "type": "interval",
+          "distance_m": 600,
+          "reps": 2,
+          "intensity": "GZ",
+          "rest_sec": 180
+        }
+      ]
+    },
+    "parse": {
+      "source": "practice_field",
+      "confidence": "full",
+      "skipped": []
+    },
+    "template_ref": "evening-light-600x2"
   },
   {
     "year": 2026,
