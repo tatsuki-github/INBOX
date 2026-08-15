@@ -798,6 +798,16 @@
 | jog | 女子 | 2800m | k/4:45 |
 | interval |  | 300m | 1500mRP |
 
+### 2026-08-17 岱明夕練
+
+- **parsed**: full (practice_field)
+
+| type | group | detail | pace |
+|---|---|---|---|
+| jog | 男子 | 3.36km | k/4:50 |
+| jog | 女子 | 2.8km | k/5:00 |
+| interval |  | 600m | GZ |
+
 ### 2026-08-17 岱明朝練
 
 - **parsed**: full (practice_field)
@@ -806,6 +816,16 @@
 |---|---|---|---|
 | interval | 男子 | 2.5km |  |
 | interval | 女子 | 2.0km |  |
+
+### 2026-08-19 岱明夕練
+
+- **parsed**: full (practice_field)
+
+| type | group | detail | pace |
+|---|---|---|---|
+| jog | 男子 | 3.36km | k/4:50 |
+| jog | 女子 | 2.8km | k/5:00 |
+| interval |  | 300m | GZ |
 
 ### 2026-08-19 岱明朝練
 
@@ -825,6 +845,16 @@
 | interval | 男子 | 2.5km |  |
 | interval | 女子 | 2.0km |  |
 
+### 2026-08-21 岱明夕練
+
+- **parsed**: full (practice_field)
+
+| type | group | detail | pace |
+|---|---|---|---|
+| jog | 男子 | 3.36km | k/4:50 |
+| jog | 女子 | 2.8km | k/5:00 |
+| interval |  | 900m | GZ |
+
 ### 2026-08-21 岱明朝練
 
 - **parsed**: full (practice_field)
@@ -833,6 +863,26 @@
 |---|---|---|---|
 | interval | 男子 | 2.5km |  |
 | interval | 女子 | 2.0km |  |
+
+### 2026-08-22 岱明夕練
+
+- **parsed**: full (practice_field)
+
+| type | group | detail | pace |
+|---|---|---|---|
+| jog | 男子 | 3.36km | k/4:50 |
+| jog | 女子 | 2.8km | k/5:00 |
+| interval |  | 600m | GZ |
+
+### 2026-08-24 岱明夕練
+
+- **parsed**: full (practice_field)
+
+| type | group | detail | pace |
+|---|---|---|---|
+| jog | 男子 | 3.36km | k/4:50 |
+| jog | 女子 | 2.8km | k/5:00 |
+| interval |  | 300m | GZ |
 
 ### 2026-08-24 岱明朝練
 
@@ -851,6 +901,16 @@
 |---|---|---|---|
 | interval | 男子 | 2.5km |  |
 | interval | 女子 | 2.0km |  |
+
+### 2026-08-26 岱明夕練
+
+- **parsed**: full (practice_field)
+
+| type | group | detail | pace |
+|---|---|---|---|
+| jog | 男子 | 3.36km | k/4:50 |
+| jog | 女子 | 2.8km | k/5:00 |
+| interval |  | 900m | GZ |
 
 ### （日付なし） 岱明中 荒玉中体連駅伝（2026-10-14）第一ピーク向けトレーニング計画
 

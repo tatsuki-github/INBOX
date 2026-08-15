@@ -131,6 +131,9 @@
 
 - `jog-male-easy` — ジョグ（男子）
 - `jog-female-easy` — ジョグ（女子）
+- `evening-light-600x2` — 夕練 軽いポイント 600m×2（GZ）
+- `evening-light-300x4` — 夕練 軽いポイント 300m×4（GZ）
+- `evening-light-900x1` — 夕練 軽いポイント 900m×1（GZ）
 - `interval-300-rp` — 300mショートインターバル
 - `interval-600-3000rp` — 600mインターバル
 - `set-male-2100-900` — 男子セット 2100m+900m

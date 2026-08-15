@@ -4,8 +4,8 @@
 
 | type | count |
 |---|---|
-| interval | 38 |
-| jog | 4 |
+| interval | 44 |
+| jog | 16 |
 | set | 8 |
 
 ## 月別セッション
@@ -39,12 +39,18 @@
 - 2026-08-14 岱明夕練 (5 items, full)
 - 2026-08-14 自分の練習 (0 items, none)
 - 2026-08-15 岱明夕練 (3 items, full)
+- 2026-08-17 岱明夕練 (3 items, full)
 - 2026-08-17 岱明朝練 (2 items, full)
+- 2026-08-19 岱明夕練 (3 items, full)
 - 2026-08-19 岱明朝練 (2 items, full)
 - 2026-08-20 岱明朝練 (2 items, full)
+- 2026-08-21 岱明夕練 (3 items, full)
 - 2026-08-21 岱明朝練 (2 items, full)
+- 2026-08-22 岱明夕練 (3 items, full)
+- 2026-08-24 岱明夕練 (3 items, full)
 - 2026-08-24 岱明朝練 (2 items, full)
 - 2026-08-25 岱明朝練 (2 items, full)
+- 2026-08-26 岱明夕練 (3 items, full)
 
 ### （日付なし）
 
@@ -70,6 +76,9 @@
 
 - `jog-male-easy` — ジョグ（男子）
 - `jog-female-easy` — ジョグ（女子）
+- `evening-light-600x2` — 夕練 軽いポイント 600m×2（GZ）
+- `evening-light-300x4` — 夕練 軽いポイント 300m×4（GZ）
+- `evening-light-900x1` — 夕練 軽いポイント 900m×1（GZ）
 - `interval-300-rp` — 300mショートインターバル
 - `interval-600-3000rp` — 600mインターバル
 - `set-male-2100-900` — 男子セット 2100m+900m

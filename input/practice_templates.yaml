@@ -22,6 +22,71 @@ templates:
           pace_min: k/4:20
           pace_max: k/4:30
 
+  - id: evening-light-600x2
+    label: 夕練 軽いポイント 600m×2（GZ）
+    practice:
+      warmup: 動きづくり
+      notes: 軽いポイント。勝ちにいかない。1本目は設定より遅め
+      items:
+        - type: jog
+          group: 男子
+          laps: 6
+          distance_km: 3.36
+          pace: k/4:50
+        - type: jog
+          group: 女子
+          laps: 5
+          distance_km: 2.8
+          pace: k/5:00
+        - type: interval
+          distance_m: 600
+          reps: 2
+          intensity: GZ
+          rest_sec: 180
+
+  - id: evening-light-300x4
+    label: 夕練 軽いポイント 300m×4（GZ）
+    practice:
+      warmup: 動きづくり
+      notes: 軽いポイント。本数を増やさない
+      items:
+        - type: jog
+          group: 男子
+          laps: 6
+          distance_km: 3.36
+          pace: k/4:50
+        - type: jog
+          group: 女子
+          laps: 5
+          distance_km: 2.8
+          pace: k/5:00
+        - type: interval
+          distance_m: 300
+          reps: 4
+          intensity: GZ
+          rest_sec: 50
+
+  - id: evening-light-900x1
+    label: 夕練 軽いポイント 900m×1（GZ）
+    practice:
+      warmup: 動きづくり
+      notes: 軽いポイント。1本のみ。追い込む禁止
+      items:
+        - type: jog
+          group: 男子
+          laps: 6
+          distance_km: 3.36
+          pace: k/4:50
+        - type: jog
+          group: 女子
+          laps: 5
+          distance_km: 2.8
+          pace: k/5:00
+        - type: interval
+          distance_m: 900
+          reps: 1
+          intensity: GZ
+
   - id: interval-300-rp
     label: 300mショートインターバル
     practice:
