@@ -22,6 +22,26 @@ templates:
           pace_min: k/4:20
           pace_max: k/4:30
 
+  - id: jog-male-3360
+    label: ジョグ（男子 3360m）
+    practice:
+      items:
+        - type: jog
+          group: 男子
+          laps: 6
+          distance_m: 3360
+          pace: k/4:20
+
+  - id: jog-female-2800
+    label: ジョグ（女子 2800m）
+    practice:
+      items:
+        - type: jog
+          group: 女子
+          laps: 5
+          distance_m: 2800
+          pace: k/4:30
+
   - id: evening-light-600x2
     label: 夕練 軽いポイント 600m×2（GZ）
     practice:

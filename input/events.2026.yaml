@@ -5318,12 +5318,18 @@ events:
   template_ref: practice_templates
   description: |
     練習メニューテンプレート集。詳細は input/practice_templates.yaml を参照。
-    
-    - jog-male-easy / jog-female-easy
-    - interval-300-rp / interval-600-3000rp
-    - set-male-2100-900 / set-female-1200-900
-    - interval-900-progressive
-    - longset-male-2000-1000 / longset-female-1000x2
+
+    | 種類 | 内容 |
+    | --- | --- |
+    | ジョグ | 男子 4.0〜6.0km k/4:00〜k/4:10 |
+    | ジョグ | 女子 4.0〜6.0km k/4:20〜k/4:30 |
+    | ジョグ | 男子 3360m k/4:20 |
+    | ジョグ | 女子 2800m k/4:30 |
+    | 300m | 300m×6〜10（RP、レスト1分） |
+    | 600m | 600m×3〜5（3000mRP、レスト2分） |
+    | セット | 男子 2100m+900m / 女子 1200m+900m |
+    | 900m | 900m 1本目 k/4:00 / 2本目 k/3:50 / 3本目 k/3:40（レスト3分） |
+    | ロングセット | 男子 2000m+1000m / 女子 1000m×2（レスト5分、通常: 余裕ペース / 本番前: RP付近） |
   tags:
   - ランニング
   - いだてん岱明練習
