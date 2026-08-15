@@ -1359,11 +1359,75 @@
       "practice:daiming"
     ],
     "practice": {
-      "items": []
+      "items": [
+        {
+          "type": "interval",
+          "distance_m": 300,
+          "reps": "6〜10",
+          "intensity": "RP",
+          "rest_sec": 60
+        },
+        {
+          "type": "interval",
+          "distance_m": 600,
+          "reps": "3〜5",
+          "intensity": "RP",
+          "rest_sec": 120
+        },
+        {
+          "type": "interval",
+          "distance_m": 1000,
+          "reps": "2",
+          "intensity": "RP",
+          "rest_sec": 300
+        },
+        {
+          "type": "set",
+          "group": "男子",
+          "segments": [
+            {
+              "distance_m": 2100
+            },
+            {
+              "distance_m": 900
+            }
+          ]
+        },
+        {
+          "type": "set",
+          "group": "女子",
+          "segments": [
+            {
+              "distance_m": 1200
+            },
+            {
+              "distance_m": 900
+            }
+          ]
+        },
+        {
+          "type": "set",
+          "group": "男子",
+          "segments": [
+            {
+              "distance_m": 2000
+            },
+            {
+              "distance_m": 1000
+            }
+          ]
+        },
+        {
+          "type": "interval",
+          "group": "女子",
+          "distance_m": 1000,
+          "reps": 2
+        }
+      ]
     },
     "parse": {
       "source": "description",
-      "confidence": "none",
+      "confidence": "full",
       "skipped": []
     },
     "template_ref": "practice_templates"

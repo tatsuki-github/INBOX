@@ -67,3 +67,10 @@ year,date,title,type,group,distance_m,distance_km,laps,reps,pace,intensity,rest_
 2026,2026-08-26,岱明夕練,jog,男子,,3.36,6,,k/4:50,,,,,,practice_field,full
 2026,2026-08-26,岱明夕練,jog,女子,,2.8,5,,k/5:00,,,,,,practice_field,full
 2026,2026-08-26,岱明夕練,interval,,900,,,1,,GZ,,,,,practice_field,full
+2026,,練習のバリエーション,interval,,300,,,6〜10,,RP,60,,,,description,full
+2026,,練習のバリエーション,interval,,600,,,3〜5,,RP,120,,,,description,full
+2026,,練習のバリエーション,interval,,1000,,,2,,RP,300,,,,description,full
+2026,,練習のバリエーション,set,男子,,,,,,,,,,,description,full
+2026,,練習のバリエーション,set,女子,,,,,,,,,,,description,full
+2026,,練習のバリエーション,set,男子,,,,,,,,,,,description,full
+2026,,練習のバリエーション,interval,女子,1000,,,2,,,,,,,description,full
