@@ -4,3 +4,5 @@ __pycache__/
 venv/
 *.egg-info/
 .DS_Store
+.strava_tokens.json
+.strava_tokens.json.tmp

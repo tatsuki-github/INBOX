@@ -1,0 +1,105 @@
+# Strava のアクティビティをカレンダー YAML に取り込み、Markdown を再生成する。
+# 必要な Secrets:
+#   STRAVA_CLIENT_ID
+#   STRAVA_CLIENT_SECRET
+#   STRAVA_REFRESH_TOKEN
+#
+# 初回はローカルで `python3 scripts/import_strava.py auth --code ...` を実行し、
+# .strava_tokens.json の refresh_token を Secrets に登録してください。
+# Strava は refresh_token をローテーションすることがあるため、
+# ジョブログに更新通知が出たら Secrets を差し替えてください。
+
+name: Import Strava practices
+
+on:
+  schedule:
+    # 毎日 21:00 JST (= 12:00 UTC)
+    - cron: "0 12 * * *"
+  workflow_dispatch:
+    inputs:
+      after:
+        description: "取り込み開始日 (YYYY-MM-DD)。空なら直近14日"
+        required: false
+        default: ""
+      sport:
+        description: "sport_type（空なら全て。例: Run）"
+        required: false
+        default: ""
+
+permissions:
+  contents: write
+
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    env:
+      STRAVA_CLIENT_ID: ${{ secrets.STRAVA_CLIENT_ID }}
+      STRAVA_CLIENT_SECRET: ${{ secrets.STRAVA_CLIENT_SECRET }}
+      STRAVA_REFRESH_TOKEN: ${{ secrets.STRAVA_REFRESH_TOKEN }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Require Strava secrets
+        run: |
+          if [ -z "$STRAVA_CLIENT_ID" ] || [ -z "$STRAVA_CLIENT_SECRET" ] || [ -z "$STRAVA_REFRESH_TOKEN" ]; then
+            echo "STRAVA_CLIENT_ID / STRAVA_CLIENT_SECRET / STRAVA_REFRESH_TOKEN が未設定のためスキップします。"
+            echo "リポジトリの Settings → Secrets and variables → Actions に登録してください。"
+            exit 0
+          fi
+          echo "secrets_ok=1" >> "$GITHUB_ENV"
+
+      - name: Set up Python
+        if: env.secrets_ok == '1'
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        if: env.secrets_ok == '1'
+        run: pip install -r requirements.txt
+
+      - name: Resolve after date
+        if: env.secrets_ok == '1'
+        id: range
+        run: |
+          if [ -n "${{ inputs.after }}" ]; then
+            echo "after=${{ inputs.after }}" >> "$GITHUB_OUTPUT"
+          else
+            echo "after=$(date -u -d '14 days ago' +%F)" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Import from Strava
+        if: env.secrets_ok == '1'
+        run: |
+          ARGS=(import --after "${{ steps.range.outputs.after }}" --title-mode personal)
+          if [ -n "${{ inputs.sport }}" ]; then
+            ARGS+=(--sport "${{ inputs.sport }}")
+          fi
+          python3 scripts/import_strava.py "${ARGS[@]}"
+
+      - name: Regenerate calendars for touched years
+        if: env.secrets_ok == '1'
+        run: |
+          mapfile -t FILES < <(git diff --name-only -- 'input/events.*.yaml' || true)
+          if [ ${#FILES[@]} -eq 0 ]; then
+            echo "YAML に変更なし。再生成をスキップします。"
+            exit 0
+          fi
+          for f in "${FILES[@]}"; do
+            year=$(basename "$f" | sed -E 's/events\.([0-9]{4})\.yaml/\1/')
+            python3 scripts/generate_calendar.py --year "$year"
+          done
+
+      - name: Commit and push if changed
+        if: env.secrets_ok == '1'
+        run: |
+          if git diff --quiet && git diff --cached --quiet; then
+            echo "コミットする変更はありません。"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add input/events.*.yaml out calendar.md || true
+          git commit -m "chore: Strava 練習をカレンダーに取り込む"
+          git push
