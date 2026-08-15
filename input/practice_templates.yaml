@@ -95,7 +95,7 @@ templates:
             - distance_m: 2000
             - distance_m: 1000
           rest_sec: 300
-          label: 通常: 余裕ペース / 本番前: RP付近
+          label: "通常: 余裕ペース / 本番前: RP付近"
 
   - id: longset-female-1000x2
     label: 女子ロングセット 1000m×2
@@ -106,12 +106,12 @@ templates:
           distance_m: 1000
           reps: 2
           rest_sec: 300
-          label: 通常: 余裕ペース / 本番前: RP付近
+          label: "通常: 余裕ペース / 本番前: RP付近"
 
   - id: norwegian-45-15-base
     label: 45/15 基本
     practice:
-      notes: 15–30 × (45秒走 / 15秒休)
+      notes: "15–30 × (45秒走 / 15秒休)"
       items:
         - type: interval
           label: 45/15
