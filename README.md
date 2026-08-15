@@ -42,7 +42,8 @@ python3 scripts/generate_calendar.py --year 2026 --input input/events.2026.yaml
 | `out/YYYY/calendar.md` | GitHub閲覧用（月次 Markdown カレンダー。予定がある日のみ表示） |
 | `out/YYYY/events.json` | 全イベント JSON（`practice` フィールド含む） |
 | `out/YYYY/practice.json` | 練習イベント + パース状態 |
-| `out/YYYY/practice_items.csv` | 1行 = 1メニュー項目（分析用） |
+| `out/YYYY/practice_items.csv` | 1行 = 1メニュー項目（`absentees` 列付き） |
+| `out/YYYY/practice_absentees.csv` | 1行 = 1欠席者（セッション×選手） |
 | `out/YYYY/practice-summary.md` | 月別集計・未パース一覧 |
 | `out/daiming-practice-menus-kpace.md` | 岱明練習 k/pace 一覧 |
 | `calendar.md` | **今年**のカレンダー（`out/YYYY/calendar.md` と同一内容をルートにも配置） |
@@ -117,6 +118,7 @@ events:
     tags: [ランニング, いだてん岱明練習, practice:daiming, session:evening]
     practice:
       warmup: 動きづくり
+      absentees: [松野, 塚原]  # 任意。空配列 [] = 欠席者なし
       items:
         - type: interval
           distance_m: 600
@@ -141,6 +143,10 @@ python3 scripts/normalize_practice_tags.py --apply --year 2026
 # description から practice をバックフィル（2025–2026）
 python3 scripts/backfill_practice.py --dry-run --year 2026
 python3 scripts/backfill_practice.py --apply --year 2026
+
+# description から practice.absentees をバックフィル
+python3 scripts/backfill_absentees.py --dry-run --year 2025
+python3 scripts/backfill_absentees.py --apply --year 2025
 
 # YAML lint（JSON Schema）
 python3 scripts/lint_events.py --year 2026

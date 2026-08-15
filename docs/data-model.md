@@ -27,7 +27,8 @@ INBOX / 年次カレンダーシステムのデータ構造と、岱明練習の
 ```yaml
 practice:
   warmup: 動きづくり
-  notes: 欠席者メモ（任意）
+  notes: コーチメモ（任意）
+  absentees: [松野, 塚原]  # 欠席者名リスト（任意、空配列=欠席者なし）
   items:
     - type: jog
       group: 男子
@@ -94,7 +95,8 @@ practice:
 |---|---|
 | `out/YYYY/events.json` | 全イベント（JSON） |
 | `out/YYYY/practice.json` | 練習イベント + パース状態 |
-| `out/YYYY/practice_items.csv` | 1行 = 1メニュー項目 |
+| `out/YYYY/practice_items.csv` | 1行 = 1メニュー項目（`absentees` 列付き） |
+| `out/YYYY/practice_absentees.csv` | 1行 = 1欠席者（セッション×選手） |
 | `out/YYYY/practice-summary.md` | 月別集計・未パース一覧 |
 | `out/daiming-practice-menus-kpace.md` | k/pace 換算一覧 |
 

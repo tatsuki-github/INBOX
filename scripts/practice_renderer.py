@@ -7,6 +7,7 @@ import re
 from typing import Any
 
 from practice_models import LAP_M, LegacyItem
+from practice_utils import format_absentees, parse_absentees_line
 
 HTML_COMMENT_RE = re.compile(
     r"<!--\s*practice-menu:v1\s*\n([\s\S]*?)\n\s*-->",
@@ -93,9 +94,11 @@ def strip_html_comment(description: str) -> str:
 
 def embed_html_comment(practice: dict[str, Any], description: str) -> str:
     body = description.strip()
-    payload = {"warmup": practice.get("warmup"), "items": practice.get("items") or []}
+    payload: dict[str, Any] = {"warmup": practice.get("warmup"), "items": practice.get("items") or []}
     if practice.get("notes"):
         payload["notes"] = practice["notes"]
+    if practice.get("absentees") is not None:
+        payload["absentees"] = practice["absentees"]
     comment_lines = ["<!-- practice-menu:v1"]
     import yaml as _yaml
 
@@ -119,10 +122,17 @@ def render_description(
     warmup = practice.get("warmup")
     if warmup:
         lines.append(warmup)
-    if note_lines:
+    absentee_line = format_absentees(practice.get("absentees"))
+    if absentee_line:
         if lines:
             lines.append("")
-        lines.extend(note_lines)
+        lines.append(absentee_line)
+    if note_lines:
+        filtered_notes = [n for n in note_lines if parse_absentees_line(n) is None]
+        if filtered_notes:
+            if lines:
+                lines.append("")
+            lines.extend(filtered_notes)
     items = practice.get("items") or []
     rendered_items: list[str] = []
     if items:

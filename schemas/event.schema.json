@@ -38,6 +38,10 @@
       "properties": {
         "warmup": { "type": "string" },
         "notes": { "type": "string" },
+        "absentees": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 }
+        },
         "items": {
           "type": "array",
           "items": { "$ref": "practice-item.schema.json" }

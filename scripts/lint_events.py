@@ -72,6 +72,14 @@ def validate_practice_block(title: str, practice: dict) -> list[str]:
         pace = item.get("pace")
         if pace and not re.fullmatch(r"k/\d+:\d{2}", pace):
             errors.append(f"{title}: pace 形式不正 {pace}")
+    absentees = practice.get("absentees")
+    if absentees is not None:
+        if not isinstance(absentees, list):
+            errors.append(f"{title}: absentees は配列である必要があります")
+        else:
+            for idx, name in enumerate(absentees):
+                if not isinstance(name, str) or not name.strip():
+                    errors.append(f"{title}: absentees[{idx}] が空です")
     return errors
 
 
