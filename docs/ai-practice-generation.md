@@ -82,3 +82,7 @@ python3 scripts/explain_practice.py --question "なぜ夕練はGZ？" --dry-run
 | 種目不明 | 900m×1 RP（現場シートで種目確認） |
 
 練習会・研究大会は大会に数えない。**練習会は生徒が基本不参加のため疲労・テーパーにも使わない**（記録会の翌日は追い込み禁止のまま）。
+
+## 大会翌日
+
+前日が記録会・選手権・駅伝・ナイターなら `post-race-rest`：**部の練習は休み**。自主練も E まで。設定は `input/ai_generation_rules.yaml` の `daiming.post_race`。

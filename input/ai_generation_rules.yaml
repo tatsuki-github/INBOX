@@ -39,3 +39,8 @@ abort:
 # いだてん岱明の生徒は練習会に基本不参加。疲労・テーパー判定に使わない。
 daiming:
   practice_meets_affect_load: false
+  # 大会翌日: 部の練習は休み。自主練は E まで（ポイント・閾値禁止）。
+  post_race:
+    enabled: true
+    team_practice: rest
+    self_practice_max: E

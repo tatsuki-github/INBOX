@@ -10,6 +10,10 @@ from .config import AIConfig, load_config
 from .creative_rules import apply_template_base, load_rules
 from .intensity_distribution import format_session_header, session_intensity_from_practice
 from .llm_client import LLMClient, create_llm_client, extract_json_object
+from .post_race_rules import (
+    build_post_race_rest_practice,
+    should_apply_post_race_rest,
+)
 from .pre_race_stimulus import (
     build_pre_race_practice,
     prefer_longer_1500_from_query,
@@ -68,6 +72,38 @@ def _default_notes_for_template(template: TemplateMatch, query: str) -> str | No
     return None
 
 
+def _post_race_template(query: str, session_ctx: SessionContext | None) -> TemplateMatch | None:
+    if session_ctx is None:
+        return None
+    if not should_apply_post_race_rest(
+        prev_race=session_ctx.prev_race,
+        query=query,
+    ):
+        return None
+    practice = build_post_race_rest_practice(
+        prev_race_title=session_ctx.prev_race_title,
+    )
+    match = select_template_by_id("post-race-rest")
+    label = "大会翌日休み（自主練Eまで）"
+    if match is None:
+        return TemplateMatch(
+            template_id="post-race-rest",
+            label=label,
+            score=100.0,
+            practice=practice,
+        )
+    merged = dict(match.practice)
+    merged["notes"] = practice["notes"]
+    merged["items"] = practice["items"]
+    merged["warmup"] = practice.get("warmup")
+    return TemplateMatch(
+        template_id="post-race-rest",
+        label=label,
+        score=100.0,
+        practice=merged,
+    )
+
+
 def _pre_race_template(query: str, session_ctx: SessionContext | None) -> TemplateMatch | None:
     if session_ctx is None:
         return None
@@ -121,7 +157,12 @@ def generate_practice(
     rules = load_rules()
     metadata = GenerationMetadata(is_experiment=is_experiment, dry_run=dry_run)
 
-    template = template or _pre_race_template(query, session_ctx) or select_best_template(query)
+    template = (
+        template
+        or _post_race_template(query, session_ctx)
+        or _pre_race_template(query, session_ctx)
+        or select_best_template(query)
+    )
     if template is None:
         return GenerationResult(
             practice={"items": []},

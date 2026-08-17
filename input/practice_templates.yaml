@@ -201,6 +201,14 @@ templates:
           reps: 1
           intensity: RP
 
+  - id: post-race-rest
+    label: 大会翌日休み（自主練Eまで）
+    practice:
+      notes: |
+        前日が大会のため、いだてん岱明の練習は基本休み。
+        自主練する場合もE（会話しながら）まで。ポイント・閾値・RPは禁止。
+      items: []
+
   - id: interval-600-3000rp
     label: 600mインターバル
     practice:

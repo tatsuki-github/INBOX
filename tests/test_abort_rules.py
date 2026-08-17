@@ -52,3 +52,17 @@ def test_race_in_two_days_adds_single_rep_rule():
     rules = build_abort_rules(ctx, practice)
     assert any(r["when"] == "大会2日前のRP刺激" for r in rules)
     assert any("1本のみ" in r["then"] for r in rules)
+
+
+def test_prev_race_adds_rest_day_abort():
+    ctx = SessionContext(
+        date="2026-08-30",
+        session="evening",
+        weekday="日",
+        prev_race=True,
+        prev_race_title="玉名郡ナイター中・長距離記録会",
+    )
+    practice = {"items": []}
+    rules = build_abort_rules(ctx, practice)
+    assert any(r["when"] == "前日が大会" for r in rules)
+    assert any("自主練もEまで" in r["then"] for r in rules)

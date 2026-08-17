@@ -44,3 +44,9 @@ def test_weekly_overrides_two_days_before_chutaoren():
     assert intervals[0]["distance_m"] == 600
     assert intervals[0]["reps"] == 1
     assert intervals[0]["intensity"] == "RP"
+
+
+def test_weekly_overrides_day_after_race_to_rest():
+    plan = plan_week_auto("2026-08-24", dry_run=True)
+    sunday = next(d for d in plan.days if d.date == "2026-08-30")
+    assert sunday.template_id == "post-race-rest"
