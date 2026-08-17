@@ -7,7 +7,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
 
-from update_golden_zone_tables import build_block, parse_pace, split_time
+from ai.pace_calculator import build_block, parse_pace, split_time
 
 
 def test_parse_pace():

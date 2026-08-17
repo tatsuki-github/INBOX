@@ -117,3 +117,26 @@ items:
 ```
 
 パース優先度: `practice` フィールド > HTML コメント > `description` 自由文。
+
+## AI 生成メタデータ
+
+AI 生成 CLI（[`docs/ai-practice-generation.md`](ai-practice-generation.md)）利用時:
+
+| フィールド | 説明 |
+|---|---|
+| `template_ref` | 参照した [`practice_templates.yaml`](../input/practice_templates.yaml) の ID |
+| `practice` | 生成結果（lint 通過済み） |
+
+CLI 出力 JSON の `metadata` 例:
+
+```yaml
+metadata:
+  template_id: evening-light-600x2
+  template_ids: [evening-light-600x2]
+  attempts: 1
+  llm_used: false
+  dry_run: true
+  is_experiment: false
+```
+
+週1 実験セッションは `notes` が `【実験】` で始まること（[`input/ai_generation_rules.yaml`](../input/ai_generation_rules.yaml)）。
