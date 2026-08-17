@@ -40,3 +40,33 @@ def test_withhold_without_template():
 
 def test_adopt_on_normal_evening():
     assert decide_confidence(ok=True, template_id="evening-light-300x4", is_experiment=False, ctx=None) == "adopt"
+
+
+def test_sheet_flags_race_in_two_days():
+    from ai.session_context import SessionContext, RacePreview
+
+    match = select_best_template("大会2日前 RP刺激 600m")
+    assert match is not None
+    ctx = SessionContext(
+        date="2026-08-21",
+        session="evening",
+        weekday="金",
+        race_in_two_days=True,
+        next_race_in_two_days=RacePreview(
+            date="2026-08-23",
+            title="熊本県中学校選手権 800m",
+            events=["800m"],
+        ),
+    )
+    sheet = build_coach_sheet(
+        match.practice,
+        ctx=ctx,
+        session="evening",
+        ok=True,
+        template_id="pre-race-rp-600",
+    )
+    text = sheet.render()
+    assert "2日後" in text
+    assert "800m" in text
+    assert sheet.confidence == "review"
+    assert any("出場種目" in line for line in sheet.checklist)

@@ -21,6 +21,7 @@ from .creative_rules import (
     validate_fixed_constraints,
     validate_template_diff,
 )
+from .pre_race_stimulus import validate_pre_race_practice
 
 
 @dataclass
@@ -40,6 +41,7 @@ def validate_practice(
     base_items: list[dict[str, Any]] | None = None,
     rules: GenerationRules | None = None,
     is_experiment: bool = False,
+    template_id: str | None = None,
 ) -> ValidationResult:
     rules = rules or load_rules()
     errors: list[str] = []
@@ -55,6 +57,7 @@ def validate_practice(
                 is_experiment=is_experiment,
             )
         )
+    errors.extend(validate_pre_race_practice(practice, template_id))
     return ValidationResult(ok=not errors, errors=errors)
 
 

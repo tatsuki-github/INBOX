@@ -26,3 +26,16 @@ def test_prev_meet_adds_jog_only_rule():
     assert any("湿度" in w for w in whens)
     assert any("雨" in w for w in whens)
     assert any("1本目" in w for w in whens)
+
+
+def test_race_in_two_days_adds_single_rep_rule():
+    ctx = SessionContext(
+        date="2026-07-16",
+        session="evening",
+        weekday="木",
+        race_in_two_days=True,
+    )
+    practice = {"items": [{"type": "interval", "distance_m": 600, "reps": 1, "intensity": "RP"}]}
+    rules = build_abort_rules(ctx, practice)
+    assert any(r["when"] == "大会2日前のRP刺激" for r in rules)
+    assert any("1本のみ" in r["then"] for r in rules)

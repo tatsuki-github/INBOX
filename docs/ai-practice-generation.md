@@ -68,3 +68,16 @@ python3 scripts/explain_practice.py --question "なぜ夕練はGZ？" --dry-run
 - [001-ai-practice-generation-architecture.md](adr/001-ai-practice-generation-architecture.md)
 - [002-norwegian-method-integration.md](adr/002-norwegian-method-integration.md)
 - [004-coach-ready-practice-sheet.md](adr/004-coach-ready-practice-sheet.md)
+- [005-pre-race-rp-stimulus.md](adr/005-pre-race-rp-stimulus.md)
+
+## 大会2日前の RP 刺激
+
+`--date` が大会の2日前（夕練）なら、クエリより先に RP 1本を選ぶ。連続疾走は 1000m まで。
+
+| 2日後の種目 | 刺激 |
+|---|---|
+| 800m | 600m×1 RP |
+| 1500m | 900m×1 RP（入力に 1000 があれば 1000m×1） |
+| 種目不明 | 900m×1 RP（現場シートで種目確認） |
+
+練習会・研究大会は大会に数えない。翌日が練習会/記録会のときは入れない。

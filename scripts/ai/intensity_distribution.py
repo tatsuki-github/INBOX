@@ -71,6 +71,30 @@ TEMPLATE_PROFILES: dict[str, dict[str, Any]] = {
         "high": 12,
         "role": "High: X-session",
     },
+    "pre-race-rp-300": {
+        "easy": 25,
+        "threshold": 0,
+        "high": 6,
+        "role": "High: pre-race RP stimulus",
+    },
+    "pre-race-rp-600": {
+        "easy": 25,
+        "threshold": 0,
+        "high": 8,
+        "role": "High: pre-race RP stimulus",
+    },
+    "pre-race-rp-900": {
+        "easy": 25,
+        "threshold": 0,
+        "high": 10,
+        "role": "High: pre-race RP stimulus",
+    },
+    "pre-race-rp-1000": {
+        "easy": 25,
+        "threshold": 0,
+        "high": 11,
+        "role": "High: pre-race RP stimulus",
+    },
     "interval-600-3000rp": {
         "easy": 20,
         "threshold": 16,

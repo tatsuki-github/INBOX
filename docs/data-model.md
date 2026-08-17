@@ -150,4 +150,6 @@ practice:
   abort_if:
     - when: 練習会翌日で脚が重い
       then: ジョグのみ
+    - when: 大会2日前のRP刺激
+      then: 1本のみ。本数を増やさない。勝ちにいかない
 ```

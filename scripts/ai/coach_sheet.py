@@ -80,6 +80,8 @@ def _build_header(ctx: SessionContext | None, session: str, confidence: Confiden
     prev = _neighbor_label(ctx.prev_titles, ctx.prev_meet, False)
     next_label = _neighbor_label(ctx.next_titles, ctx.next_meet, ctx.next_race)
     lines.append(f"前後: 前日={prev} / 翌日={next_label}")
+    if ctx.race_in_two_days and ctx.next_race_in_two_days:
+        lines.append(f"2日後: {ctx.next_race_in_two_days.title}")
     weather_line = _format_weather(ctx.weather)
     if weather_line:
         lines.append(f"天候: {weather_line}")
@@ -118,7 +120,7 @@ def decide_confidence(
         return "withhold"
     if is_experiment:
         return "review"
-    if ctx and (ctx.prev_meet or ctx.next_meet or ctx.next_race):
+    if ctx and (ctx.prev_meet or ctx.next_meet or ctx.next_race or ctx.race_in_two_days):
         return "review"
     weather = (ctx.weather if ctx else None) or {}
     humidity = weather.get("humidity_pct")
@@ -163,6 +165,10 @@ def build_coach_sheet(
         apply_parts.extend(["", str(notes)])
     description_for_apply = "\n".join(p for p in apply_parts if p).strip() + "\n"
     checklist = ["例外グループ（特定選手だけ距離変更など）があれば手で追記"]
+    if ctx and ctx.race_in_two_days:
+        checklist.append(
+            "出場種目を確認（800m→600m×1 / 1500m→900m×1または1000m×1）。連続は1000mまで"
+        )
     sheet = CoachSheet(
         header=_build_header(ctx, session, confidence),
         readout=readout,

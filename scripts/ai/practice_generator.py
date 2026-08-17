@@ -10,8 +10,15 @@ from .config import AIConfig, load_config
 from .creative_rules import apply_template_base, load_rules
 from .intensity_distribution import format_session_header, session_intensity_from_practice
 from .llm_client import LLMClient, create_llm_client, extract_json_object
+from .pre_race_stimulus import (
+    build_pre_race_practice,
+    prefer_longer_1500_from_query,
+    should_apply_pre_race_stimulus,
+    stimulus_for_events,
+)
 from .prompt_builder import build_practice_system_prompt, build_practice_user_prompt
-from .template_selector import TemplateMatch, select_best_template
+from .session_context import SessionContext
+from .template_selector import TemplateMatch, select_best_template, select_template_by_id
 from .validator import RetryState, validate_practice
 
 
@@ -61,6 +68,43 @@ def _default_notes_for_template(template: TemplateMatch, query: str) -> str | No
     return None
 
 
+def _pre_race_template(query: str, session_ctx: SessionContext | None) -> TemplateMatch | None:
+    if session_ctx is None:
+        return None
+    if not should_apply_pre_race_stimulus(
+        race_in_two_days=session_ctx.race_in_two_days,
+        next_race=session_ctx.next_race,
+        next_meet=session_ctx.next_meet,
+        session=session_ctx.session,
+        query=query,
+    ):
+        return None
+    preview = session_ctx.next_race_in_two_days
+    stimulus = stimulus_for_events(
+        preview.events if preview else [],
+        prefer_longer_1500=prefer_longer_1500_from_query(query),
+    )
+    match = select_template_by_id(stimulus.template_id)
+    practice = build_pre_race_practice(stimulus)
+    if match is None:
+        return TemplateMatch(
+            template_id=stimulus.template_id,
+            label=stimulus.label,
+            score=100.0,
+            practice=practice,
+        )
+    merged = dict(match.practice)
+    merged["notes"] = stimulus.notes
+    merged["items"] = practice["items"]
+    merged["warmup"] = practice.get("warmup") or merged.get("warmup")
+    return TemplateMatch(
+        template_id=match.template_id,
+        label=match.label,
+        score=match.score,
+        practice=merged,
+    )
+
+
 def generate_practice(
     query: str,
     *,
@@ -71,12 +115,13 @@ def generate_practice(
     dry_run: bool = False,
     is_experiment: bool = False,
     t_pace: str | None = "4:01",
+    session_ctx: SessionContext | None = None,
 ) -> GenerationResult:
     config = config or load_config()
     rules = load_rules()
     metadata = GenerationMetadata(is_experiment=is_experiment, dry_run=dry_run)
 
-    template = template or select_best_template(query)
+    template = template or _pre_race_template(query, session_ctx) or select_best_template(query)
     if template is None:
         return GenerationResult(
             practice={"items": []},
@@ -117,6 +162,7 @@ def generate_practice(
             base_items=base_items,
             rules=rules,
             is_experiment=is_experiment,
+            template_id=template.template_id,
         )
         metadata.attempts = 1
         _attach_intensity_meta(base_practice)
@@ -149,6 +195,7 @@ def generate_practice(
             base_items=base_items,
             rules=rules,
             is_experiment=is_experiment,
+            template_id=template.template_id,
         )
         if validation.ok:
             metadata.attempts = retry.attempt + 1
@@ -173,6 +220,7 @@ def generate_practice_auto(
     dry_run: bool = False,
     is_experiment: bool = False,
     t_pace: str | None = "4:01",
+    session_ctx: SessionContext | None = None,
 ) -> GenerationResult:
     config = load_config()
     llm = None if dry_run else create_llm_client(config)
@@ -184,4 +232,5 @@ def generate_practice_auto(
         dry_run=dry_run or llm is None,
         is_experiment=is_experiment,
         t_pace=t_pace,
+        session_ctx=session_ctx,
     )

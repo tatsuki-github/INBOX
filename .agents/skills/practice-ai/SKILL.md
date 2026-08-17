@@ -35,10 +35,12 @@ metadata:
 2. **創作は notes/warmup** — コーチの意図・状況判断
 3. **lint 必須** — `validate_practice_block` 通過まで最大 3 回再生成
 4. **ペースは LLM 禁止** — [`scripts/ai/pace_calculator.py`](../../scripts/ai/pace_calculator.py)
+5. **大会2日前は RP 1本** — 800m→600m、1500m→900m（または1000m）。連続≤1000m。練習会は対象外
 6. **現場1枚** — 読み上げ文 + 秒タイム + 切上げ。選手名は推測しない
 7. **`--apply`** — `description` と `practice` を同時更新。`withhold` は拒否
 
 - [docs/adr/004-coach-ready-practice-sheet.md](../../docs/adr/004-coach-ready-practice-sheet.md)
+- [docs/adr/005-pre-race-rp-stimulus.md](../../docs/adr/005-pre-race-rp-stimulus.md)
 
 ## 週1 実験
 

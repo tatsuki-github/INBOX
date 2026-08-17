@@ -11,6 +11,7 @@ from practice_utils import tags_list
 from yaml_io import load_events_yaml
 
 from .config import INPUT_DIR
+from .pre_race_stimulus import is_championship_race, parse_race_events
 
 WEEKDAYS = "月火水木金土日"
 
@@ -20,6 +21,13 @@ class NeighborSummary:
     date: str
     title: str
     weather: dict[str, Any] | None = None
+
+
+@dataclass(frozen=True)
+class RacePreview:
+    date: str
+    title: str
+    events: list[str] = field(default_factory=list)
 
 
 @dataclass
@@ -35,6 +43,8 @@ class SessionContext:
     prev_meet: bool = False
     next_meet: bool = False
     next_race: bool = False
+    race_in_two_days: bool = False
+    next_race_in_two_days: RacePreview | None = None
     prev_titles: list[str] = field(default_factory=list)
     next_titles: list[str] = field(default_factory=list)
 
@@ -57,6 +67,36 @@ def _is_meet(title: str) -> bool:
 
 def _is_race(title: str) -> bool:
     return "記録会" in title or "選手権" in title
+
+
+def _unique(items: list[str]) -> list[str]:
+    seen: set[str] = set()
+    out: list[str] = []
+    for item in items:
+        if item in seen:
+            continue
+        seen.add(item)
+        out.append(item)
+    return out
+
+
+def _race_preview_on(events: list[dict[str, Any]], iso_date: str) -> RacePreview | None:
+    previews: list[RacePreview] = []
+    for ev in events:
+        if ev.get("date") != iso_date:
+            continue
+        title = ev.get("title") or ""
+        description = ev.get("description") or ""
+        if not is_championship_race(title, description):
+            continue
+        parsed = parse_race_events(f"{title}\n{description}")
+        previews.append(RacePreview(date=iso_date, title=title, events=parsed))
+    if not previews:
+        return None
+    merged: list[str] = []
+    for preview in previews:
+        merged.extend(preview.events)
+    return RacePreview(date=iso_date, title=previews[0].title, events=_unique(merged))
 
 
 def _session_of(ev: dict[str, Any]) -> str | None:
@@ -111,9 +151,11 @@ def load_session_context(
 
     prev_day = (target_day - timedelta(days=1)).isoformat()
     next_day = (target_day + timedelta(days=1)).isoformat()
+    two_days = (target_day + timedelta(days=2)).isoformat()
     prev_meet = any(_is_meet(t) for n in neighbors if n.date == prev_day for t in [n.title])
     next_meet = any(_is_meet(t) for n in neighbors if n.date == next_day for t in [n.title])
     next_race = any(_is_race(t) for n in neighbors if n.date == next_day for t in [n.title])
+    race_preview = _race_preview_on(events, two_days)
 
     weather = (target or {}).get("weather") if target else None
     if weather is None:
@@ -134,6 +176,8 @@ def load_session_context(
         prev_meet=prev_meet,
         next_meet=next_meet,
         next_race=next_race,
+        race_in_two_days=race_preview is not None,
+        next_race_in_two_days=race_preview,
         prev_titles=prev_titles,
         next_titles=next_titles,
     )

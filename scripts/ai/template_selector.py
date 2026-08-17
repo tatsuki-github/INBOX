@@ -105,6 +105,20 @@ def select_templates(
     return scored[:top_k]
 
 
+def select_template_by_id(template_id: str, *, path: Path | None = None) -> TemplateMatch | None:
+    for tpl in load_templates(path):
+        tid = tpl.get("id")
+        if tid != template_id:
+            continue
+        return TemplateMatch(
+            template_id=tid,
+            label=tpl.get("label") or tid,
+            score=100.0,
+            practice=tpl.get("practice") or {"items": []},
+        )
+    return None
+
+
 def select_best_template(query: str, *, path: Path | None = None) -> TemplateMatch | None:
     matches = select_templates(query, path=path, top_k=1)
     if not matches or matches[0].score <= 0:

@@ -117,6 +117,90 @@ templates:
           intensity: RP
           rest_sec: 60
 
+  - id: pre-race-rp-300
+    label: 大会2日前 RP刺激 300m×1
+    practice:
+      warmup: 動きづくり
+      notes: 大会2日前のRP刺激。勝ちにいかない。1本のみ。連続疾走は1000mまで。
+      items:
+        - type: jog
+          group: 男子
+          laps: 6
+          distance_km: 3.36
+          pace: k/4:50
+        - type: jog
+          group: 女子
+          laps: 5
+          distance_km: 2.8
+          pace: k/5:00
+        - type: interval
+          distance_m: 300
+          reps: 1
+          intensity: RP
+
+  - id: pre-race-rp-600
+    label: 大会2日前 RP刺激 600m×1
+    practice:
+      warmup: 動きづくり
+      notes: 大会2日前のRP刺激。勝ちにいかない。1本のみ。連続疾走は1000mまで。
+      items:
+        - type: jog
+          group: 男子
+          laps: 6
+          distance_km: 3.36
+          pace: k/4:50
+        - type: jog
+          group: 女子
+          laps: 5
+          distance_km: 2.8
+          pace: k/5:00
+        - type: interval
+          distance_m: 600
+          reps: 1
+          intensity: RP
+
+  - id: pre-race-rp-900
+    label: 大会2日前 RP刺激 900m×1
+    practice:
+      warmup: 動きづくり
+      notes: 大会2日前のRP刺激。勝ちにいかない。1本のみ。連続疾走は1000mまで。
+      items:
+        - type: jog
+          group: 男子
+          laps: 6
+          distance_km: 3.36
+          pace: k/4:50
+        - type: jog
+          group: 女子
+          laps: 5
+          distance_km: 2.8
+          pace: k/5:00
+        - type: interval
+          distance_m: 900
+          reps: 1
+          intensity: RP
+
+  - id: pre-race-rp-1000
+    label: 大会2日前 RP刺激 1000m×1
+    practice:
+      warmup: 動きづくり
+      notes: 大会2日前のRP刺激。勝ちにいかない。1本のみ。連続疾走は1000mまで。
+      items:
+        - type: jog
+          group: 男子
+          laps: 6
+          distance_km: 3.36
+          pace: k/4:50
+        - type: jog
+          group: 女子
+          laps: 5
+          distance_km: 2.8
+          pace: k/5:00
+        - type: interval
+          distance_m: 1000
+          reps: 1
+          intensity: RP
+
   - id: interval-600-3000rp
     label: 600mインターバル
     practice:

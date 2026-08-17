@@ -42,6 +42,13 @@ def build_abort_rules(
         rules.append({"when": "練習会翌日で脚が重い", "then": "ジョグのみ"})
     if ctx and (ctx.next_meet or ctx.next_race):
         rules.append({"when": "翌日が練習会または記録会", "then": "追い込み禁止。本数を増やさない"})
+    if ctx and ctx.race_in_two_days:
+        rules.append(
+            {
+                "when": "大会2日前のRP刺激",
+                "then": "1本のみ。本数を増やさない。勝ちにいかない",
+            }
+        )
 
     weather = (ctx.weather if ctx else None) or {}
     humidity = weather.get("humidity_pct")

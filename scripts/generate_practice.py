@@ -92,17 +92,18 @@ def main(argv: list[str] | None = None) -> int:
     title = args.title or SESSION_TITLES[args.session]
     year = args.year or (int(args.date[:4]) if args.date else None)
 
+    ctx = None
+    if args.date:
+        ctx = load_session_context(args.date, session=args.session, year=year)
+
     result = generate_practice_auto(
         args.input,
         title=title,
         dry_run=args.dry_run,
         is_experiment=args.experiment,
         t_pace=args.t_pace,
+        session_ctx=ctx,
     )
-
-    ctx = None
-    if args.date:
-        ctx = load_session_context(args.date, session=args.session, year=year)
 
     sheet = build_coach_sheet(
         result.practice,

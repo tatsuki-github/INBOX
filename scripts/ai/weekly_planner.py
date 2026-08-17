@@ -101,6 +101,31 @@ def _template_match_by_id(template_id: str, templates: list[dict[str, Any]]) -> 
     return None
 
 
+def _apply_pre_race_calendar_overrides(days: list[DayPlan]) -> None:
+    from .pre_race_stimulus import should_apply_pre_race_stimulus, stimulus_for_events
+    from .session_context import load_session_context
+    from .template_selector import select_template_by_id
+
+    for day in days:
+        ctx = load_session_context(day.date, session="evening", year=int(day.date[:4]))
+        if not should_apply_pre_race_stimulus(
+            race_in_two_days=ctx.race_in_two_days,
+            next_race=ctx.next_race,
+            next_meet=ctx.next_meet,
+            session="evening",
+            query=day.coach_note or "",
+        ):
+            continue
+        preview = ctx.next_race_in_two_days
+        stimulus = stimulus_for_events(preview.events if preview else [])
+        if select_template_by_id(stimulus.template_id) is None:
+            continue
+        day.template_id = stimulus.template_id
+        day.title = stimulus.label
+        day.coach_note = stimulus.notes
+        day.is_experiment = False
+
+
 def plan_week(
     week_start: str,
     *,
@@ -139,6 +164,7 @@ def plan_week(
             plan = _fallback_week_plan(week_start, templates)
             plan.errors.append(f"LLM weekly plan parse failed: {exc}")
 
+    _apply_pre_race_calendar_overrides(plan.days)
     plan.errors.extend(_validate_weekly_balance(plan.days))
 
     for day in plan.days:
@@ -150,11 +176,14 @@ def plan_week(
             continue
         from .template_selector import TemplateMatch
 
+        practice = copy.deepcopy(tpl.get("practice") or {"items": []})
+        if day.coach_note and str(day.template_id).startswith("pre-race-rp-"):
+            practice["notes"] = day.coach_note
         match = TemplateMatch(
             template_id=day.template_id,
             label=tpl.get("label") or day.template_id,
             score=1.0,
-            practice=tpl.get("practice") or {"items": []},
+            practice=practice,
         )
         query = day.coach_note or day.title or day.template_id
         if day.is_experiment:
