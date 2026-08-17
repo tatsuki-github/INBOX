@@ -29,6 +29,9 @@ def main(argv: list[str] | None = None) -> int:
     payload = {
         "week_start": plan.week_start,
         "weekly_theme": plan.weekly_theme,
+        "intensity_distribution": (
+            plan.intensity.as_dict() if plan.intensity else None
+        ),
         "days": [
             {
                 "date": d.date,
@@ -36,6 +39,12 @@ def main(argv: list[str] | None = None) -> int:
                 "template_id": d.template_id,
                 "is_experiment": d.is_experiment,
                 "coach_note": d.coach_note,
+                "intensity_role": (
+                    d.generation.metadata.intensity_role if d.generation else None
+                ),
+                "intensity_header": (
+                    d.generation.metadata.intensity_header if d.generation else None
+                ),
                 "practice": d.generation.practice if d.generation else None,
                 "errors": d.generation.errors if d.generation else [],
             }

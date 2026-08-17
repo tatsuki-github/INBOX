@@ -68,6 +68,9 @@ def main(argv: list[str] | None = None) -> int:
     )
 
     output = {
+        "intensity_header": result.metadata.intensity_header,
+        "intensity_role": result.metadata.intensity_role,
+        "intensity_minutes": result.metadata.intensity_minutes,
         "practice": result.practice,
         "metadata": {
             "template_id": result.metadata.template_id,

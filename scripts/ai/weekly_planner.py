@@ -8,6 +8,11 @@ from datetime import date, timedelta
 from typing import Any
 
 from .config import load_config
+from .intensity_distribution import (
+    WeeklyIntensitySummary,
+    summarize_week_intensity,
+    validate_weekly_intensity,
+)
 from .llm_client import LLMClient, create_llm_client, extract_json_object
 from .practice_generator import GenerationResult, generate_practice
 from .prompt_builder import build_weekly_system_prompt, build_weekly_user_prompt
@@ -31,6 +36,7 @@ class WeeklyPlan:
     weekly_theme: str
     days: list[DayPlan] = field(default_factory=list)
     errors: list[str] = field(default_factory=list)
+    intensity: WeeklyIntensitySummary | None = None
 
     @property
     def ok(self) -> bool:
@@ -48,29 +54,21 @@ def _validate_weekly_balance(days: list[DayPlan]) -> list[str]:
     if experiments > 1:
         errors.append(f"at most 1 experiment per week, got {experiments}")
 
-    gz_evening_streak = 0
-    for day in days:
-        tpl = day.template_id or ""
-        is_gz_evening = tpl.startswith("evening-light")
-        if is_gz_evening:
-            gz_evening_streak += 1
-            if gz_evening_streak >= 3:
-                errors.append(f"too many consecutive GZ evening sessions from {day.date}")
-        else:
-            gz_evening_streak = 0
+    errors.extend(validate_weekly_intensity(days))
     return errors
 
 
 def _fallback_week_plan(week_start: str, templates: list[dict[str, Any]]) -> WeeklyPlan:
     dates = _week_dates(week_start)
     catalog = {t["id"]: t for t in templates if t.get("id")}
+    # Easy-heavy week: Threshold ~20–25% via Main + Support (not GZ count)
     default_ids = [
         "jog-male-easy",
         None,
-        "evening-light-600x2",
-        None,
         "evening-light-300x4",
         None,
+        "evening-light-600x2",
+        "jog-female-easy",
         None,
     ]
     days: list[DayPlan] = []
@@ -87,11 +85,13 @@ def _fallback_week_plan(week_start: str, templates: list[dict[str, Any]]) -> Wee
                 is_experiment=False,
             )
         )
-    return WeeklyPlan(
+    plan = WeeklyPlan(
         week_start=week_start,
-        weekly_theme="閾値下での精度と継続性（Norwegian Method）",
+        weekly_theme="Easy 60–65% / Threshold 20–30% — 精度と継続性（Norwegian Method）",
         days=days,
     )
+    plan.intensity = summarize_week_intensity(plan.days)
+    return plan
 
 
 def _template_match_by_id(template_id: str, templates: list[dict[str, Any]]) -> dict[str, Any] | None:
@@ -171,6 +171,7 @@ def plan_week(
         if not result.ok:
             plan.errors.extend([f"{day.date}: {e}" for e in result.errors])
 
+    plan.intensity = summarize_week_intensity(plan.days, use_practice=True)
     return plan
 
 

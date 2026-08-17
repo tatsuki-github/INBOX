@@ -9,6 +9,10 @@ from typing import Any
 import yaml
 
 from .config import PROMPTS_DIR
+from .intensity_distribution import (
+    distribution_guidance_for_prompt,
+    distribution_targets_for_output,
+)
 from .norwegian_rules import principles_for_prompt
 from .pace_calculator import build_block
 from .template_selector import TemplateMatch
@@ -63,6 +67,8 @@ def build_weekly_user_prompt(
     payload: dict[str, Any] = {
         "week_start": week_start,
         "template_catalog": catalog,
+        "intensity_distribution_targets": distribution_targets_for_output(),
+        "planning_priority": distribution_guidance_for_prompt(),
     }
     if guidance:
         payload["coach_guidance"] = guidance

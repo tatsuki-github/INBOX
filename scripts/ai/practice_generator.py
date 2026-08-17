@@ -8,6 +8,7 @@ from typing import Any
 
 from .config import AIConfig, load_config
 from .creative_rules import apply_template_base, load_rules
+from .intensity_distribution import format_session_header, session_intensity_from_practice
 from .llm_client import LLMClient, create_llm_client, extract_json_object
 from .prompt_builder import build_practice_system_prompt, build_practice_user_prompt
 from .template_selector import TemplateMatch, select_best_template
@@ -22,6 +23,9 @@ class GenerationMetadata:
     attempts: int = 0
     llm_used: bool = False
     dry_run: bool = False
+    intensity_role: str | None = None
+    intensity_minutes: dict[str, float] | None = None
+    intensity_header: str | None = None
 
 
 @dataclass
@@ -85,6 +89,17 @@ def generate_practice(
     base_practice = apply_template_base(template.practice)
     base_items = copy.deepcopy(base_practice.get("items") or [])
 
+    def _attach_intensity_meta(practice: dict[str, Any]) -> None:
+        session = session_intensity_from_practice(
+            "",
+            title,
+            template.template_id,
+            practice,
+        )
+        metadata.intensity_role = session.role
+        metadata.intensity_minutes = session.minutes.as_dict()
+        metadata.intensity_header = format_session_header(template.template_id, practice)
+
     if dry_run or llm is None:
         if not base_practice.get("notes"):
             note = _default_notes_for_template(template, query)
@@ -104,6 +119,7 @@ def generate_practice(
             is_experiment=is_experiment,
         )
         metadata.attempts = 1
+        _attach_intensity_meta(base_practice)
         return GenerationResult(
             practice=base_practice,
             metadata=metadata,
@@ -136,6 +152,7 @@ def generate_practice(
         )
         if validation.ok:
             metadata.attempts = retry.attempt + 1
+            _attach_intensity_meta(practice)
             return GenerationResult(practice=practice, metadata=metadata)
 
         retry.record_failure(validation.errors)

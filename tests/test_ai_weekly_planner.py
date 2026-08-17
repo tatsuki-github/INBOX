@@ -15,6 +15,15 @@ def test_weekly_dry_run_has_seven_days():
     plan = plan_week_auto("2026-03-09", dry_run=True)
     assert len(plan.days) == 7
     assert plan.weekly_theme
+    assert plan.intensity is not None
+    assert plan.intensity.share_pct["easy"] >= 55.0
+
+
+def test_weekly_dry_run_includes_intensity_distribution():
+    plan = plan_week_auto("2026-03-09", dry_run=True)
+    dist = plan.intensity.as_dict()
+    assert dist["target"]["easy"] == "60–65%"
+    assert dist["share_pct"]["easy"] >= 55.0
 
 
 def test_validate_weekly_balance_rejects_many_experiments():

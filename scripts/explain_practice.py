@@ -11,6 +11,7 @@ SCRIPTS_DIR = Path(__file__).resolve().parent
 if str(SCRIPTS_DIR) not in sys.path:
     sys.path.insert(0, str(SCRIPTS_DIR))
 
+from ai.intensity_distribution import distribution_guidance_for_prompt
 from ai.config import load_config  # noqa: E402
 from ai.llm_client import create_llm_client  # noqa: E402
 from ai.prompt_builder import build_explain_system_prompt, build_explain_user_prompt  # noqa: E402
@@ -23,10 +24,7 @@ def explain_offline(question: str, context_chunks: list[str]) -> str:
         preview = chunk[:400].replace("\n", " ")
         lines.append(f"{idx}. {preview}...")
     lines.append("")
-    lines.append(
-        "Norwegian Method: GZ は閾値直下の狭い帯。精度・抑制・継続性を優先し、"
-        "グレーゾーンと生存インターバルを避ける。"
-    )
+    lines.append(distribution_guidance_for_prompt())
     return "\n".join(lines)
 
 

@@ -13,6 +13,8 @@ from ai.norwegian_rules import NORWEGIAN_TEMPLATE_IDS, principles_for_prompt, re
 def test_principles_for_prompt_includes_golden_zone():
     text = principles_for_prompt()
     assert "Golden Zone" in text or "GZ" in text
+    assert "60–65%" in text
+    assert "20–30%" in text
 
 
 def test_recommend_intensity_evening():

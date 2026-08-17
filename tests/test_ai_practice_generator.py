@@ -18,6 +18,9 @@ def test_dry_run_generates_valid_practice():
     assert result.ok
     assert result.metadata.template_id == "evening-light-600x2"
     assert result.practice.get("items")
+    assert result.metadata.intensity_role == "Threshold: Main quality"
+    assert result.metadata.intensity_header
+    assert result.metadata.intensity_minutes
 
 
 def test_llm_merge_with_mock():

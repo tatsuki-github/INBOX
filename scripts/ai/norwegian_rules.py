@@ -4,6 +4,8 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 
+from .intensity_distribution import distribution_guidance_for_prompt
+
 
 @dataclass(frozen=True)
 class NorwegianPrinciple:
@@ -77,7 +79,13 @@ NORWEGIAN_TEMPLATE_IDS = frozenset(
 
 
 def principles_for_prompt() -> str:
-    lines = ["# Norwegian Method 原則（Marius Bakken）", ""]
+    lines = [
+        "# Norwegian Method 原則（Marius Bakken）",
+        "",
+        distribution_guidance_for_prompt(),
+        "",
+        "## その他の原則",
+    ]
     for p in PRINCIPLES:
         lines.append(f"- **{p.title}** ({p.chapter}): {p.summary}")
     return "\n".join(lines)
