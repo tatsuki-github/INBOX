@@ -52,11 +52,19 @@ GZ_OFFSET = {
     "vlong": (18, 25),
 }
 
-CATEGORY_LABEL = {
-    "short": "短（〜3分）",
-    "medium": "中（4〜5分）",
-    "long": "長（6〜8分）",
-    "vlong": "超長（9〜15分）",
+# Interval duration bands (Norwegian Method Ch.2 / Ch.5)
+CATEGORY_TIME = {
+    "short": "〜3分",
+    "medium": "4〜5分",
+    "long": "6〜8分",
+    "vlong": "9〜15分",
+}
+
+T_NOTE = {
+    "short": "T-7〜5秒/km",
+    "medium": "Tペース",
+    "long": "T+5〜7秒/km",
+    "vlong": "T+7〜10秒/km",
 }
 
 BLOCK_START = "【ノルウェー式ゴールデンゾーン】"
@@ -108,16 +116,7 @@ def build_block(t_pace_str: str) -> str:
     for dist in DISTANCES_M:
         cat = CATEGORY[dist]
         if cat != current_cat:
-            t_lo, t_hi = T_OFFSET[cat]
-            if cat == "short":
-                note = f"{CATEGORY_LABEL[cat]} T-7〜5秒/km"
-            elif cat == "medium":
-                note = f"{CATEGORY_LABEL[cat]} Tペース"
-            elif cat == "long":
-                note = f"{CATEGORY_LABEL[cat]} T+5〜7秒/km"
-            else:
-                note = f"{CATEGORY_LABEL[cat]} T+7〜10秒/km"
-            lines.append(note)
+            lines.append(f"{CATEGORY_TIME[cat]} {T_NOTE[cat]}")
             current_cat = cat
 
         t_lo, t_hi = T_OFFSET[cat]
@@ -134,8 +133,7 @@ def build_block(t_pace_str: str) -> str:
         cat = CATEGORY[dist]
         if cat != current_cat:
             gz_lo, gz_hi = GZ_OFFSET[cat]
-            note = f"{CATEGORY_LABEL[cat]} T+{gz_lo}〜{gz_hi}秒/km"
-            lines.append(note)
+            lines.append(f"{CATEGORY_TIME[cat]} T+{gz_lo}〜{gz_hi}秒/km")
             current_cat = cat
 
         gz_lo, gz_hi = GZ_OFFSET[cat]
