@@ -48,6 +48,22 @@
         }
       },
       "required": ["items"]
+    },
+    "weather": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "location": { "type": "string" },
+        "observed_at": { "type": "string" },
+        "condition": { "type": "string" },
+        "temperature_c": { "type": "number" },
+        "humidity_pct": { "type": "integer" },
+        "wind_direction": { "type": "string" },
+        "wind_speed_kmh": { "type": "number" },
+        "precipitation_mm": { "type": "number" },
+        "source": { "type": "string" },
+        "fetched_at": { "type": "string" }
+      }
     }
   }
 }

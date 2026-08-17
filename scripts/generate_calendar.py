@@ -27,6 +27,7 @@ if str(SCRIPTS_DIR) not in sys.path:
     sys.path.insert(0, str(SCRIPTS_DIR))
 
 from practice_renderer import render_description as render_practice_description  # noqa: E402
+from weather_utils import format_weather_detail_lines, format_weather_summary  # noqa: E402
 
 
 @dataclass
@@ -46,6 +47,7 @@ class Event:
     urls: list[str] = field(default_factory=list)
     practice: dict[str, Any] | None = None
     template_ref: str = ""
+    weather: dict[str, Any] | None = None
 
     @property
     def is_memo(self) -> bool:
@@ -72,6 +74,9 @@ class Event:
         parts: list[str] = []
         if self.description:
             parts.append(self.description)
+        weather_summary = format_weather_summary(self.weather)
+        if weather_summary:
+            parts.append(weather_summary)
         meta: list[str] = []
         if self.status:
             meta.append(f"Status: {self.status}")
@@ -247,6 +252,7 @@ def load_custom_events(path: Path, year: int) -> list[Event]:
                     urls=urls,
                     practice=raw.get("practice") if isinstance(raw.get("practice"), dict) else None,
                     template_ref=str(raw.get("template_ref") or ""),
+                    weather=raw.get("weather") if isinstance(raw.get("weather"), dict) else None,
                 )
             )
             continue
@@ -280,6 +286,7 @@ def load_custom_events(path: Path, year: int) -> list[Event]:
                 urls=urls,
                 practice=raw.get("practice") if isinstance(raw.get("practice"), dict) else None,
                 template_ref=str(raw.get("template_ref") or ""),
+                weather=raw.get("weather") if isinstance(raw.get("weather"), dict) else None,
             )
         )
     return events
@@ -462,6 +469,7 @@ def write_events_json(path: Path, events: list[Event]) -> None:
                 "kind": "memo" if event.is_memo else "event",
                 "practice": event.practice,
                 "template_ref": event.template_ref or None,
+                "weather": event.weather,
             }
         )
     path.parent.mkdir(parents=True, exist_ok=True)
@@ -627,6 +635,7 @@ def format_markdown_event_details_body(event: Event, day: date) -> str:
             ("非公開", format_bool_label(event.private)),
         ]
     )
+    lines.extend(format_weather_detail_lines(event.weather))
     lines.extend(["", "**説明**", "", display_text(event.description)])
     return "\n".join(lines)
 

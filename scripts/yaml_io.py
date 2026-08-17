@@ -20,6 +20,7 @@ EVENT_DUMP_KEYS = [
     "template_ref",
     "description",
     "practice",
+    "weather",
     "tags",
     "urls",
 ]
@@ -81,6 +82,32 @@ def _dump_practice(practice: dict[str, Any], indent: str) -> list[str]:
     return lines
 
 
+def _dump_weather(weather: dict[str, Any], indent: str) -> list[str]:
+    lines = [f"{indent}weather:"]
+    sub = indent + "  "
+    key_order = (
+        "location",
+        "observed_at",
+        "condition",
+        "temperature_c",
+        "humidity_pct",
+        "wind_direction",
+        "wind_speed_kmh",
+        "precipitation_mm",
+        "source",
+        "fetched_at",
+    )
+    seen = set()
+    for key in key_order:
+        if key in weather and weather[key] is not None:
+            lines.extend(_dump_scalar(key, weather[key], sub))
+            seen.add(key)
+    for key, val in weather.items():
+        if key not in seen and val is not None:
+            lines.extend(_dump_scalar(key, val, sub))
+    return lines
+
+
 def dump_event(ev: dict) -> str:
     lines = [f"- title: {yaml_scalar(ev['title'])}"]
     for key in EVENT_DUMP_KEYS:
@@ -89,6 +116,8 @@ def dump_event(ev: dict) -> str:
         val = ev[key]
         if key == "practice" and isinstance(val, dict):
             lines.extend(_dump_practice(val, "  "))
+        elif key == "weather" and isinstance(val, dict):
+            lines.extend(_dump_weather(val, "  "))
         elif key == "tags":
             lines.append("  tags:")
             for t in val:
