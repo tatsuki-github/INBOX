@@ -4,8 +4,8 @@
 
 | type | count |
 |---|---|
-| interval | 48 |
-| jog | 16 |
+| interval | 49 |
+| jog | 14 |
 | set | 11 |
 
 ## 月別セッション
@@ -39,7 +39,7 @@
 - 2026-08-14 岱明夕練 (5 items, full)
 - 2026-08-14 自分の練習 (0 items, none)
 - 2026-08-15 岱明夕練 (3 items, full)
-- 2026-08-17 岱明夕練 (3 items, full)
+- 2026-08-17 岱明夕練 (2 items, full)
 - 2026-08-17 岱明朝練 (2 items, full)
 - 2026-08-19 岱明夕練 (3 items, full)
 - 2026-08-19 岱明朝練 (2 items, full)
