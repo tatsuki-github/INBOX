@@ -101,6 +101,23 @@ def _template_match_by_id(template_id: str, templates: list[dict[str, Any]]) -> 
     return None
 
 
+def _apply_post_race_calendar_overrides(days: list[DayPlan]) -> None:
+    from .post_race_rules import should_apply_post_race_rest
+    from .session_context import load_session_context
+    from .template_selector import select_template_by_id
+
+    for day in days:
+        ctx = load_session_context(day.date, session="evening", year=int(day.date[:4]))
+        if not should_apply_post_race_rest(prev_race=ctx.prev_race, query=day.coach_note or ""):
+            continue
+        if select_template_by_id("post-race-rest") is None:
+            continue
+        day.template_id = "post-race-rest"
+        day.title = "大会翌日休み（自主練Eまで）"
+        day.coach_note = ctx.prev_race_title
+        day.is_experiment = False
+
+
 def _apply_pre_race_calendar_overrides(days: list[DayPlan]) -> None:
     from .pre_race_stimulus import should_apply_pre_race_stimulus, stimulus_for_events
     from .session_context import load_session_context
@@ -165,6 +182,7 @@ def plan_week(
             plan.errors.append(f"LLM weekly plan parse failed: {exc}")
 
     _apply_pre_race_calendar_overrides(plan.days)
+    _apply_post_race_calendar_overrides(plan.days)
     plan.errors.extend(_validate_weekly_balance(plan.days))
 
     for day in plan.days:

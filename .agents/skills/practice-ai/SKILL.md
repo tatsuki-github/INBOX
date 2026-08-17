@@ -37,12 +37,14 @@ metadata:
 4. **ペースは LLM 禁止** — [`scripts/ai/pace_calculator.py`](../../scripts/ai/pace_calculator.py)
 5. **大会2日前は RP 1本** — 800m→600m、1500m→900m（または1000m）。連続≤1000m
 6. **練習会は負荷に数えない** — いだてん岱明は基本不参加。記録会の疲労・テーパーだけ見る
-7. **現場1枚** — 読み上げ文 + 秒タイム + 切上げ。選手名は推測しない
+7. **大会翌日は休み** — 部練習は休み。自主練も E まで（`post-race-rest` テンプレ）
+8. **現場1枚** — 読み上げ文 + 秒タイム + 切上げ。選手名は推測しない
 8. **`--apply`** — `description` と `practice` を同時更新。`withhold` は拒否
 
 - [docs/adr/004-coach-ready-practice-sheet.md](../../docs/adr/004-coach-ready-practice-sheet.md)
 - [docs/adr/005-pre-race-rp-stimulus.md](../../docs/adr/005-pre-race-rp-stimulus.md)
 - [docs/adr/006-practice-meets-not-load.md](../../docs/adr/006-practice-meets-not-load.md)
+- [docs/adr/007-post-race-rest.md](../../docs/adr/007-post-race-rest.md)
 
 ## 週1 実験
 

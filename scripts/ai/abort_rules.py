@@ -40,6 +40,13 @@ def build_abort_rules(
 
     if ctx and ctx.next_race:
         rules.append({"when": "翌日が記録会", "then": "追い込み禁止。本数を増やさない"})
+    if ctx and ctx.prev_race:
+        rules.append(
+            {
+                "when": "前日が大会",
+                "then": "いだてん岱明の練習は休み。自主練もEまで",
+            }
+        )
     if ctx and ctx.race_in_two_days:
         rules.append(
             {

@@ -67,6 +67,12 @@ def _neighbor_label(titles: list[str], meet: bool, race: bool) -> str:
     return "—"
 
 
+def _prev_day_label(ctx: SessionContext) -> str:
+    if ctx.prev_race and ctx.prev_race_title:
+        return ctx.prev_race_title
+    return _neighbor_label(ctx.prev_titles, ctx.prev_meet, False)
+
+
 def _build_header(ctx: SessionContext | None, session: str, confidence: Confidence) -> str:
     if ctx is None:
         return f"【{SESSION_LABEL.get(session, session)}】\n信頼度: {confidence}"
@@ -77,7 +83,7 @@ def _build_header(ctx: SessionContext | None, session: str, confidence: Confiden
     elif ctx.start_time:
         clock = f" {ctx.start_time}"
     lines = [f"【{ctx.date}（{ctx.weekday}）{label}{clock}】"]
-    prev = _neighbor_label(ctx.prev_titles, ctx.prev_meet, False)
+    prev = _prev_day_label(ctx)
     next_label = _neighbor_label(ctx.next_titles, ctx.next_meet, ctx.next_race)
     lines.append(f"前後: 前日={prev} / 翌日={next_label}")
     if ctx.race_in_two_days and ctx.next_race_in_two_days:
@@ -120,7 +126,7 @@ def decide_confidence(
         return "withhold"
     if is_experiment:
         return "review"
-    if ctx and (ctx.next_race or ctx.race_in_two_days):
+    if ctx and (ctx.next_race or ctx.race_in_two_days or ctx.prev_race):
         return "review"
     weather = (ctx.weather if ctx else None) or {}
     humidity = weather.get("humidity_pct")
@@ -169,6 +175,8 @@ def build_coach_sheet(
         checklist.append(
             "出場種目を確認（800m→600m×1 / 1500m→900m×1または1000m×1）。連続は1000mまで"
         )
+    if ctx and ctx.prev_race:
+        checklist.append("前日が大会 → 今日は休み。自主練する選手もEまで")
     sheet = CoachSheet(
         header=_build_header(ctx, session, confidence),
         readout=readout,

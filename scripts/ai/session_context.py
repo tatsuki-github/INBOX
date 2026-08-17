@@ -12,6 +12,7 @@ from yaml_io import load_events_yaml
 
 from .attendance_rules import counts_as_load_meet
 from .config import INPUT_DIR
+from .post_race_rules import is_daiming_race_event
 from .pre_race_stimulus import is_championship_race, parse_race_events
 
 WEEKDAYS = "月火水木金土日"
@@ -44,6 +45,8 @@ class SessionContext:
     prev_meet: bool = False
     next_meet: bool = False
     next_race: bool = False
+    prev_race: bool = False
+    prev_race_title: str | None = None
     race_in_two_days: bool = False
     next_race_in_two_days: RacePreview | None = None
     prev_titles: list[str] = field(default_factory=list)
@@ -82,14 +85,19 @@ def _unique(items: list[str]) -> list[str]:
     return out
 
 
-def _race_preview_on(events: list[dict[str, Any]], iso_date: str) -> RacePreview | None:
+def _race_preview_on(
+    events: list[dict[str, Any]],
+    iso_date: str,
+    *,
+    race_filter=is_championship_race,
+) -> RacePreview | None:
     previews: list[RacePreview] = []
     for ev in events:
         if ev.get("date") != iso_date:
             continue
         title = ev.get("title") or ""
         description = ev.get("description") or ""
-        if not is_championship_race(title, description):
+        if not race_filter(title, description):
             continue
         parsed = parse_race_events(f"{title}\n{description}")
         previews.append(RacePreview(date=iso_date, title=title, events=parsed))
@@ -158,6 +166,11 @@ def load_session_context(
     next_meet = any(_is_meet(t) for n in neighbors if n.date == next_day for t in [n.title])
     next_race = any(_is_race(t) for n in neighbors if n.date == next_day for t in [n.title])
     race_preview = _race_preview_on(events, two_days)
+    prev_race_preview = _race_preview_on(
+        events,
+        prev_day,
+        race_filter=is_daiming_race_event,
+    )
 
     weather = (target or {}).get("weather") if target else None
     if weather is None:
@@ -178,6 +191,8 @@ def load_session_context(
         prev_meet=prev_meet,
         next_meet=next_meet,
         next_race=next_race,
+        prev_race=prev_race_preview is not None,
+        prev_race_title=prev_race_preview.title if prev_race_preview else None,
         race_in_two_days=race_preview is not None,
         next_race_in_two_days=race_preview,
         prev_titles=prev_titles,
