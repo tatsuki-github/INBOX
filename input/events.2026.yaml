@@ -2362,18 +2362,6 @@ events:
   status: scheduled
   start_time: '08:00'
   end_time: '09:30'
-  description: 動きづくり、男子2.5km×2、女子2km×2
-  practice:
-    warmup: 動きづくり
-    items:
-      - type: interval
-        group: 男子
-        distance_km: 2.5
-        reps: 2
-      - type: interval
-        group: 女子
-        distance_km: 2.0
-        reps: 2
   tags:
   - ランニング
   - いだてん岱明練習
@@ -2386,34 +2374,6 @@ events:
   status: scheduled
   start_time: '18:00'
   end_time: '19:30'
-  template_ref: evening-light-300x4
-  description: |
-    動きづくり
-    
-    ジョグ 男子 3.36km (6周) k/4:50
-    ジョグ 女子 2.8km (5周) k/5:00
-    300m×4（GZ、レスト50秒）
-    
-    軽いポイント。本数を増やさない。課題・集中欠如→300m×2
-  practice:
-    warmup: 動きづくり
-    notes: 軽いポイント。本数を増やさない
-    items:
-      - type: jog
-        group: 男子
-        laps: 6
-        distance_km: 3.36
-        pace: 'k/4:50'
-      - type: jog
-        group: 女子
-        laps: 5
-        distance_km: 2.8
-        pace: 'k/5:00'
-      - type: interval
-        distance_m: 300
-        reps: 4
-        intensity: GZ
-        rest_sec: 50
   tags:
   - ランニング
   - いだてん岱明練習
@@ -2431,18 +2391,6 @@ events:
   status: scheduled
   start_time: '08:00'
   end_time: '09:30'
-  description: 動きづくり、男子2.5km×2、女子2km×2
-  practice:
-    warmup: 動きづくり
-    items:
-      - type: interval
-        group: 男子
-        distance_km: 2.5
-        reps: 2
-      - type: interval
-        group: 女子
-        distance_km: 2.0
-        reps: 2
   tags:
   - ランニング
   - いだてん岱明練習
@@ -2470,18 +2418,6 @@ events:
   status: scheduled
   start_time: '08:00'
   end_time: '09:30'
-  description: 動きづくり、男子2.5km×2、女子2km×2
-  practice:
-    warmup: 動きづくり
-    items:
-      - type: interval
-        group: 男子
-        distance_km: 2.5
-        reps: 2
-      - type: interval
-        group: 女子
-        distance_km: 2.0
-        reps: 2
   tags:
   - ランニング
   - いだてん岱明練習
@@ -2494,33 +2430,6 @@ events:
   status: scheduled
   start_time: '18:00'
   end_time: '19:30'
-  template_ref: evening-light-900x1
-  description: |
-    動きづくり
-    
-    ジョグ 男子 3.36km (6周) k/4:50
-    ジョグ 女子 2.8km (5周) k/5:00
-    900m×1（GZ）
-    
-    軽いポイント。1本のみ。追い込む禁止
-  practice:
-    warmup: 動きづくり
-    notes: 軽いポイント。1本のみ。追い込む禁止
-    items:
-      - type: jog
-        group: 男子
-        laps: 6
-        distance_km: 3.36
-        pace: 'k/4:50'
-      - type: jog
-        group: 女子
-        laps: 5
-        distance_km: 2.8
-        pace: 'k/5:00'
-      - type: interval
-        distance_m: 900
-        reps: 1
-        intensity: GZ
   tags:
   - ランニング
   - いだてん岱明練習
@@ -2566,34 +2475,6 @@ events:
   status: scheduled
   start_time: '18:00'
   end_time: '19:30'
-  template_ref: evening-light-600x2
-  description: |
-    動きづくり
-    
-    ジョグ 男子 3.36km (6周) k/4:50
-    ジョグ 女子 2.8km (5周) k/5:00
-    600m×2（GZ、レスト3分）
-    
-    軽いポイント。指導者不在ならこのメニューで自主実施。集まりが悪い→家庭15–20分E
-  practice:
-    warmup: 動きづくり
-    notes: 軽いポイント。指導者不在時の自主メニュー可
-    items:
-      - type: jog
-        group: 男子
-        laps: 6
-        distance_km: 3.36
-        pace: 'k/4:50'
-      - type: jog
-        group: 女子
-        laps: 5
-        distance_km: 2.8
-        pace: 'k/5:00'
-      - type: interval
-        distance_m: 600
-        reps: 2
-        intensity: GZ
-        rest_sec: 180
   tags:
   - ランニング
   - いだてん岱明練習
@@ -2633,18 +2514,6 @@ events:
   status: scheduled
   start_time: '08:00'
   end_time: '09:30'
-  description: 動きづくり、男子2.5km×2、女子2km×2
-  practice:
-    warmup: 動きづくり
-    items:
-      - type: interval
-        group: 男子
-        distance_km: 2.5
-        reps: 2
-      - type: interval
-        group: 女子
-        distance_km: 2.0
-        reps: 2
   tags:
   - ランニング
   - いだてん岱明練習
@@ -2657,34 +2526,6 @@ events:
   status: scheduled
   start_time: '18:00'
   end_time: '19:30'
-  template_ref: evening-light-300x4
-  description: |
-    動きづくり
-    
-    ジョグ 男子 3.36km (6周) k/4:50
-    ジョグ 女子 2.8km (5周) k/5:00
-    300m×4（GZ、レスト50秒）
-    
-    軽いポイント。本数を増やさない
-  practice:
-    warmup: 動きづくり
-    notes: 軽いポイント。本数を増やさない
-    items:
-      - type: jog
-        group: 男子
-        laps: 6
-        distance_km: 3.36
-        pace: 'k/4:50'
-      - type: jog
-        group: 女子
-        laps: 5
-        distance_km: 2.8
-        pace: 'k/5:00'
-      - type: interval
-        distance_m: 300
-        reps: 4
-        intensity: GZ
-        rest_sec: 50
   tags:
   - ランニング
   - いだてん岱明練習
@@ -2707,18 +2548,6 @@ events:
   status: scheduled
   start_time: '08:00'
   end_time: '09:30'
-  description: 動きづくり、男子2.5km×2、女子2km×2
-  practice:
-    warmup: 動きづくり
-    items:
-      - type: interval
-        group: 男子
-        distance_km: 2.5
-        reps: 2
-      - type: interval
-        group: 女子
-        distance_km: 2.0
-        reps: 2
   tags:
   - ランニング
   - いだてん岱明練習
@@ -6576,44 +6405,6 @@ events:
     
     #### 2026-08-18（火）— 休み（職員会議日）
     - 休養。課題提出前の学習優先でも可。
-    
-    #### 2026-08-19（水）— 朝夕 / 課題提出
-    - **朝**: 標準朝練。  
-    - **夕**: 動きづくり＋ジョグ6/5周＋**軽いポイント 300m×4（レスト50秒）**。  
-    - **目的**: 短いGZ。本数を増やさない。  
-    - **強度**: 通常GZより1〜2秒遅め可。  
-    - **変更**: 課題・暑さで集中欠如→300m×2。
-    
-    #### 2026-08-20（木）— 朝＋練習会（岱明）19:00
-    - **朝**: E 3–4km（短め）。  
-    - **練習会**: **量の日に振替**。E中心。質が組まれていても岱明方針で「勝ちにいかない」。  
-    - **目的**: 社会的刺激＋有酸素。  
-    - **変更**: 前日質の疲労強→練習会欠席 or ジョグのみ参加。
-    
-    #### 2026-08-21（金）— 朝夕
-    - **朝**: 標準朝練。  
-    - **夕**: 動きづくり＋ジョグ6/5周＋**軽いポイント 900m×1（GZ）**。  
-    - **目的**: 閾値の短時間。1本のみ。  
-    - **強度**: 抑えめ。追い込む禁止。  
-    - **変更**: 崩れたらジョグで終了。
-    
-    #### 2026-08-22（土）— 夕
-    - **夕**: 動きづくり＋ジョグ6/5周＋**軽いポイント 600m×2（GZ、レスト3分）**。  
-    - 人権教育研究大会日で指導者不在もありうる→このメニューで自主実施。  
-    - **変更**: 集まりが悪い→家庭15–20分E。
-    
-    #### 2026-08-23（日）— 練習会（桃田）or 休み
-    - 記録会（100m薄暮）出場者以外は**E or 休養**。  
-    - 100m出場は短距離刺激として許容、長距離質は入れない。
-    
-    #### 2026-08-24（月）— 朝夕 【P2開始】
-    - **朝**: 標準朝練。  
-    - **夕**: 動きづくり＋ジョグ6/5周＋**軽いポイント 300m×4**。  
-    - **目的**: 蓄積期も夕は軽いポイントで統一。
-    
-    #### 2026-08-25（火）— 朝のみ（夕休）
-    - **朝**: E 4–5km。  
-    - **目的**: 低強度のみ。質は水〜金に集約。
     
     #### 2026-08-26（水）— 夕 / 夏期休業最終日
     - **夕**: 動きづくり＋ジョグ6/5周＋**軽いポイント 900m×1（GZ）**。  
