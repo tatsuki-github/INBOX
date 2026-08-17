@@ -895,29 +895,24 @@
       "session:evening"
     ],
     "practice": {
-      "warmup": "動きづくり",
-      "notes": "軽いポイント。勝ちにいかない。1本目は設定より遅め",
       "items": [
         {
-          "type": "jog",
+          "type": "interval",
           "group": "男子",
-          "laps": 6,
-          "distance_km": 3.36,
-          "pace": "k/4:50"
-        },
-        {
-          "type": "jog",
-          "group": "女子",
-          "laps": 5,
-          "distance_km": 2.8,
-          "pace": "k/5:00"
+          "distance_m": 200,
+          "reps": 10,
+          "pace_min": "k/3:30",
+          "pace_max": "k/3:40",
+          "rest_sec": 15
         },
         {
           "type": "interval",
-          "distance_m": 600,
-          "reps": 2,
-          "intensity": "GZ",
-          "rest_sec": 180
+          "group": "女子",
+          "distance_m": 200,
+          "reps": 10,
+          "pace_min": "k/4:00",
+          "pace_max": "k/4:10",
+          "rest_sec": 15
         }
       ]
     },
@@ -926,7 +921,7 @@
       "confidence": "full",
       "skipped": []
     },
-    "template_ref": "evening-light-600x2"
+    "template_ref": null
   },
   {
     "year": 2026,
