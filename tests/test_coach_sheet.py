@@ -28,7 +28,7 @@ def test_sheet_includes_split_and_abort_for_aug21():
     assert "18:00" in text
     assert "目安" in text
     assert "切上げ" in text
-    assert "練習会" in text
+    assert "練習会" not in text
     assert sheet.confidence == "review"
     assert "切上げ" in sheet.description_for_apply
     assert "信頼度" not in sheet.description_for_apply

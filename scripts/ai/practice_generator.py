@@ -74,7 +74,7 @@ def _pre_race_template(query: str, session_ctx: SessionContext | None) -> Templa
     if not should_apply_pre_race_stimulus(
         race_in_two_days=session_ctx.race_in_two_days,
         next_race=session_ctx.next_race,
-        next_meet=session_ctx.next_meet,
+        next_meet=False,
         session=session_ctx.session,
         query=query,
     ):

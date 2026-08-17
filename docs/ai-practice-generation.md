@@ -69,6 +69,7 @@ python3 scripts/explain_practice.py --question "なぜ夕練はGZ？" --dry-run
 - [002-norwegian-method-integration.md](adr/002-norwegian-method-integration.md)
 - [004-coach-ready-practice-sheet.md](adr/004-coach-ready-practice-sheet.md)
 - [005-pre-race-rp-stimulus.md](adr/005-pre-race-rp-stimulus.md)
+- [006-practice-meets-not-load.md](adr/006-practice-meets-not-load.md)
 
 ## 大会2日前の RP 刺激
 
@@ -80,4 +81,4 @@ python3 scripts/explain_practice.py --question "なぜ夕練はGZ？" --dry-run
 | 1500m | 900m×1 RP（入力に 1000 があれば 1000m×1） |
 | 種目不明 | 900m×1 RP（現場シートで種目確認） |
 
-練習会・研究大会は大会に数えない。翌日が練習会/記録会のときは入れない。
+練習会・研究大会は大会に数えない。**練習会は生徒が基本不参加のため疲労・テーパーにも使わない**（記録会の翌日は追い込み禁止のまま）。

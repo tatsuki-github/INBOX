@@ -12,7 +12,7 @@ AI 練習計画生成は LLM 依存部分と決定論的部分が混在する。
 
 | 分類 | 対象 | 手法 |
 |---|---|---|
-| ドメイン | `creative_rules`, `template_selector`, `pace_calculator`, `validator`, `pre_race_stimulus` | pytest TDD |
+| ドメイン | `creative_rules`, `template_selector`, `pace_calculator`, `validator`, `pre_race_stimulus`, `attendance_rules` | pytest TDD |
 | オーケストレータ | `practice_generator`, `weekly_planner` | MockLLMClient |
 | RAG | `chunker`, `BM25Retriever` | 固定フィクスチャ + tmp_path |
 | CLI | `generate_practice.py` 等 | subprocess（将来） |

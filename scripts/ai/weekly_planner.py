@@ -111,7 +111,7 @@ def _apply_pre_race_calendar_overrides(days: list[DayPlan]) -> None:
         if not should_apply_pre_race_stimulus(
             race_in_two_days=ctx.race_in_two_days,
             next_race=ctx.next_race,
-            next_meet=ctx.next_meet,
+            next_meet=False,
             session="evening",
             query=day.coach_note or "",
         ):

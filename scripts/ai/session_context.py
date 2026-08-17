@@ -10,6 +10,7 @@ from typing import Any
 from practice_utils import tags_list
 from yaml_io import load_events_yaml
 
+from .attendance_rules import counts_as_load_meet
 from .config import INPUT_DIR
 from .pre_race_stimulus import is_championship_race, parse_race_events
 
@@ -62,7 +63,8 @@ def _is_relevant(ev: dict[str, Any]) -> bool:
 
 
 def _is_meet(title: str) -> bool:
-    return "練習会" in title
+    """Load-affecting meet. 練習会は岱明生徒が基本不参加のため常に False。"""
+    return counts_as_load_meet(title)
 
 
 def _is_race(title: str) -> bool:

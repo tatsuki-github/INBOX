@@ -142,12 +142,21 @@ def test_july16_is_two_days_before_chutaoren() -> None:
     assert "1500m" in ctx.next_race_in_two_days.events
 
 
-def test_skip_when_tomorrow_is_already_a_meet() -> None:
+def test_practice_meet_tomorrow_does_not_block_pre_race() -> None:
     assert (
         should_apply_pre_race_stimulus(
             race_in_two_days=True,
             next_race=False,
             next_meet=True,
+            session="evening",
+        )
+        is True
+    )
+    assert (
+        should_apply_pre_race_stimulus(
+            race_in_two_days=True,
+            next_race=True,
+            next_meet=False,
             session="evening",
         )
         is False

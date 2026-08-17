@@ -135,7 +135,7 @@ def should_apply_pre_race_stimulus(
         return False
     if session != "evening":
         return False
-    if next_race or next_meet:
+    if next_race:
         return False
     return not any(token in query for token in SKIP_QUERY_TOKENS)
 

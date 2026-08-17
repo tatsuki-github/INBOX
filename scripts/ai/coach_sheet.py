@@ -120,7 +120,7 @@ def decide_confidence(
         return "withhold"
     if is_experiment:
         return "review"
-    if ctx and (ctx.prev_meet or ctx.next_meet or ctx.next_race or ctx.race_in_two_days):
+    if ctx and (ctx.next_race or ctx.race_in_two_days):
         return "review"
     weather = (ctx.weather if ctx else None) or {}
     humidity = weather.get("humidity_pct")

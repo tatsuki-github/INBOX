@@ -148,8 +148,6 @@ metadata:
 ```yaml
 practice:
   abort_if:
-    - when: 練習会翌日で脚が重い
-      then: ジョグのみ
-    - when: 大会2日前のRP刺激
-      then: 1本のみ。本数を増やさない。勝ちにいかない
+    - when: 翌日が記録会
+      then: 追い込み禁止。本数を増やさない
 ```

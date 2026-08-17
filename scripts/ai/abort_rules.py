@@ -38,10 +38,8 @@ def build_abort_rules(
     items = practice.get("items") or []
     has_gz = any(item.get("intensity") == "GZ" for item in items)
 
-    if ctx and ctx.prev_meet:
-        rules.append({"when": "練習会翌日で脚が重い", "then": "ジョグのみ"})
-    if ctx and (ctx.next_meet or ctx.next_race):
-        rules.append({"when": "翌日が練習会または記録会", "then": "追い込み禁止。本数を増やさない"})
+    if ctx and ctx.next_race:
+        rules.append({"when": "翌日が記録会", "then": "追い込み禁止。本数を増やさない"})
     if ctx and ctx.race_in_two_days:
         rules.append(
             {

@@ -13,7 +13,7 @@ AI 生成の `practice` YAML は lint 可能だが、指導者はグラウンド
 1. **既定出力は現場1枚**（ヘッダ + 読み上げ文 + 切上げ + 確認）。`--format yaml|json` は機械用として残す
 2. **秒タイム**は LLM 禁止。[`pace_calculator.py`](../../scripts/ai/pace_calculator.py) で GZ/T を距離別秒レンジにする
 3. **読み上げ文**は LLM 禁止。[`practice_renderer.py`](../../scripts/practice_renderer.py) を土台にする
-4. **切上げ**は決定論ルール（練習会前後・湿度・降水・気温）
+4. **切上げ**は決定論ルール（記録会前後・湿度・降水・気温）。練習会は負荷に数えない（ADR 006）
 5. **`--apply`** は `practice` と `description`（読み上げ + 切上げ）を同時更新。信頼度ヘッダはカレンダーに書かない
 6. 選手名の例外は推測せず、確認チェックリストのみ
 

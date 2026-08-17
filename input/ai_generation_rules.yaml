@@ -35,3 +35,7 @@ abort:
   precipitation_mm: 1.0
   temperature_c: 32
   late_split_sec: 8
+
+# いだてん岱明の生徒は練習会に基本不参加。疲労・テーパー判定に使わない。
+daiming:
+  practice_meets_affect_load: false
