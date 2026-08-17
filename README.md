@@ -209,7 +209,7 @@ python3 scripts/generate_calendar.py --all-years
 自然言語から `practice` YAML を生成（テンプレ参照 + lint + Norwegian Method）。詳細: [`docs/ai-practice-generation.md`](docs/ai-practice-generation.md)
 
 ```bash
-python3 scripts/generate_practice.py --input "夕練、600m×2、軽め" --dry-run
+python3 scripts/generate_practice.py --input "夕練、軽いポイント" --date 2026-08-21 --dry-run
 python3 scripts/generate_weekly_plan.py --week 2026-03-09 --dry-run
 python3 scripts/build_rag_index.py
 ```

@@ -29,3 +29,9 @@ creative:
 template_required_intensities:
   - I
   - R
+
+abort:
+  humidity_pct: 85
+  precipitation_mm: 1.0
+  temperature_c: 32
+  late_split_sec: 8

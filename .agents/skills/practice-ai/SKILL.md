@@ -21,9 +21,11 @@ metadata:
 
 | タスク | コマンド |
 |:---|:---|
-| 単日生成（LLM なし） | `python3 scripts/generate_practice.py --input "..." --dry-run` |
-| 単日生成（LLM） | `ANTHROPIC_API_KEY=... python3 scripts/generate_practice.py --input "..."` |
-| 週次計画 | `python3 scripts/generate_weekly_plan.py --week YYYY-MM-DD --dry-run` |
+| 単日生成（現場1枚） | `python3 scripts/generate_practice.py --input "夕練 軽め" --date 2026-08-21 --dry-run` |
+| 単日生成（LLM なし YAML） | `python3 scripts/generate_practice.py --input "..." --dry-run --format yaml` |
+| 単日生成（LLM） | `ANTHROPIC_API_KEY=... python3 scripts/generate_practice.py --input "..." --date YYYY-MM-DD` |
+| カレンダーへ採用 | `python3 scripts/generate_practice.py --input "..." --date YYYY-MM-DD --apply` |
+| 週次計画 | `python3 scripts/generate_weekly_plan.py --week YYYY-MM-DD --dry-run --format sheet` |
 | 説明 | `python3 scripts/explain_practice.py --question "..." --dry-run` |
 | RAG 索引 | `python3 scripts/build_rag_index.py` |
 
@@ -33,7 +35,10 @@ metadata:
 2. **創作は notes/warmup** — コーチの意図・状況判断
 3. **lint 必須** — `validate_practice_block` 通過まで最大 3 回再生成
 4. **ペースは LLM 禁止** — [`scripts/ai/pace_calculator.py`](../../scripts/ai/pace_calculator.py)
-5. **Norwegian Method** — GZ（Ch.2）、45/15（Ch.5-8）、precision/restraint/continuity
+6. **現場1枚** — 読み上げ文 + 秒タイム + 切上げ。選手名は推測しない
+7. **`--apply`** — `description` と `practice` を同時更新。`withhold` は拒否
+
+- [docs/adr/004-coach-ready-practice-sheet.md](../../docs/adr/004-coach-ready-practice-sheet.md)
 
 ## 週1 実験
 

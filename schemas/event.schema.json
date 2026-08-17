@@ -42,6 +42,18 @@
           "type": "array",
           "items": { "type": "string", "minLength": 1 }
         },
+        "abort_if": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "when": { "type": "string" },
+              "then": { "type": "string" }
+            },
+            "required": ["when", "then"]
+          }
+        },
         "items": {
           "type": "array",
           "items": { "$ref": "practice-item.schema.json" }

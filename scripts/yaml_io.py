@@ -61,6 +61,11 @@ def _dump_practice(practice: dict[str, Any], indent: str) -> list[str]:
         lines.append(f"{sub}absentees:")
         for name in practice["absentees"]:
             lines.append(f"{sub}  - {yaml_scalar(str(name))}")
+    if practice.get("abort_if"):
+        lines.append(f"{sub}abort_if:")
+        for rule in practice["abort_if"]:
+            lines.append(f"{sub}  - when: {yaml_scalar(str(rule.get('when', '')))}")
+            lines.append(f"{sub}    then: {yaml_scalar(str(rule.get('then', '')))}")
     items = practice.get("items") or []
     if items:
         lines.append(f"{sub}items:")

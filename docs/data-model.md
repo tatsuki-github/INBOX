@@ -140,3 +140,14 @@ metadata:
 ```
 
 週1 実験セッションは `notes` が `【実験】` で始まること（[`input/ai_generation_rules.yaml`](../input/ai_generation_rules.yaml)）。
+
+### 現場1枚 / `abort_if`
+
+`--apply` は読み上げ文 + 切上げを `description` に書き、`practice.abort_if`（任意）に構造化切上げを保存する。信頼度ヘッダはカレンダーに書かない。
+
+```yaml
+practice:
+  abort_if:
+    - when: 練習会翌日で脚が重い
+      then: ジョグのみ
+```
