@@ -996,6 +996,17 @@ events:
   all_day: true
   category: 予定
   status: scheduled
+  weather:
+    location: 玉名市
+    observed_at: '2026-07-20T08:00'
+    condition: 晴れ
+    temperature_c: 28.2
+    humidity_pct: 92
+    wind_direction: 南
+    wind_speed_kmh: 7.0
+    precipitation_mm: 0.0
+    source: open-meteo
+    fetched_at: '2026-08-17T12:28:06+00:00'
   tags:
   - ランニング
   - いだてん岱明練習
@@ -1006,6 +1017,17 @@ events:
   all_day: true
   category: 予定
   status: scheduled
+  weather:
+    location: 玉名市
+    observed_at: '2026-07-20T18:00'
+    condition: 快晴
+    temperature_c: 32.4
+    humidity_pct: 63
+    wind_direction: 西
+    wind_speed_kmh: 5.5
+    precipitation_mm: 0.0
+    source: open-meteo
+    fetched_at: '2026-08-17T12:28:06+00:00'
   tags:
   - ランニング
   - いだてん岱明練習
@@ -1030,6 +1052,17 @@ events:
         group: 女子
         distance_km: 2.0
         reps: 2
+  weather:
+    location: 玉名市
+    observed_at: '2026-07-21T08:00'
+    condition: 霧雨（弱）
+    temperature_c: 27.3
+    humidity_pct: 95
+    wind_direction: 南東
+    wind_speed_kmh: 2.6
+    precipitation_mm: 0.1
+    source: open-meteo
+    fetched_at: '2026-08-17T12:28:06+00:00'
   tags:
   - ランニング
   - いだてん岱明練習
@@ -1040,6 +1073,17 @@ events:
   all_day: true
   category: 予定
   status: scheduled
+  weather:
+    location: 玉名市
+    observed_at: '2026-07-21T18:00'
+    condition: 快晴
+    temperature_c: 32.1
+    humidity_pct: 63
+    wind_direction: 西
+    wind_speed_kmh: 6.0
+    precipitation_mm: 0.0
+    source: open-meteo
+    fetched_at: '2026-08-17T12:28:06+00:00'
   tags:
   - ランニング
   - いだてん岱明練習
@@ -1055,6 +1099,17 @@ events:
   all_day: true
   category: 予定
   status: scheduled
+  weather:
+    location: 玉名市
+    observed_at: '2026-07-22T08:00'
+    condition: 霧雨（弱）
+    temperature_c: 29.4
+    humidity_pct: 79
+    wind_direction: 東南東
+    wind_speed_kmh: 3.0
+    precipitation_mm: 0.1
+    source: open-meteo
+    fetched_at: '2026-08-17T12:28:06+00:00'
   tags:
   - ランニング
   - いだてん岱明練習
@@ -1067,6 +1122,17 @@ events:
   status: scheduled
   start_time: '18:00'
   end_time: '19:30'
+  weather:
+    location: 玉名市
+    observed_at: '2026-07-22T18:00'
+    condition: 快晴
+    temperature_c: 32.9
+    humidity_pct: 53
+    wind_direction: 南西
+    wind_speed_kmh: 3.0
+    precipitation_mm: 0.0
+    source: open-meteo
+    fetched_at: '2026-08-17T12:28:06+00:00'
   tags:
   - ランニング
   - いだてん岱明練習
@@ -1087,6 +1153,17 @@ events:
   all_day: true
   category: 予定
   status: scheduled
+  weather:
+    location: 玉名市
+    observed_at: '2026-07-23T18:00'
+    condition: 晴れ
+    temperature_c: 31.6
+    humidity_pct: 62
+    wind_direction: 西南西
+    wind_speed_kmh: 10.7
+    precipitation_mm: 0.0
+    source: open-meteo
+    fetched_at: '2026-08-17T12:28:06+00:00'
   tags:
   - ランニング
   - いだてん岱明練習
@@ -1111,6 +1188,17 @@ events:
         group: 女子
         distance_km: 2.0
         reps: 2
+  weather:
+    location: 玉名市
+    observed_at: '2026-07-23T08:00'
+    condition: 晴れ
+    temperature_c: 28.6
+    humidity_pct: 86
+    wind_direction: 南東
+    wind_speed_kmh: 3.3
+    precipitation_mm: 0.0
+    source: open-meteo
+    fetched_at: '2026-08-17T12:28:06+00:00'
   tags:
   - ランニング
   - いだてん岱明練習
@@ -1140,6 +1228,17 @@ events:
         group: 女子
         distance_km: 2.0
         reps: 2
+  weather:
+    location: 玉名市
+    observed_at: '2026-07-24T08:00'
+    condition: 霧雨（弱）
+    temperature_c: 29.3
+    humidity_pct: 81
+    wind_direction: 東南東
+    wind_speed_kmh: 1.2
+    precipitation_mm: 0.1
+    source: open-meteo
+    fetched_at: '2026-08-17T12:28:06+00:00'
   tags:
   - ランニング
   - いだてん岱明練習
@@ -1152,6 +1251,17 @@ events:
   status: scheduled
   start_time: '18:00'
   end_time: '19:30'
+  weather:
+    location: 玉名市
+    observed_at: '2026-07-24T18:00'
+    condition: 快晴
+    temperature_c: 33.0
+    humidity_pct: 58
+    wind_direction: 西
+    wind_speed_kmh: 7.8
+    precipitation_mm: 0.0
+    source: open-meteo
+    fetched_at: '2026-08-17T12:28:06+00:00'
   tags:
   - ランニング
   - いだてん岱明練習
@@ -1194,6 +1304,17 @@ events:
   all_day: true
   category: 予定
   status: scheduled
+  weather:
+    location: 玉名市
+    observed_at: '2026-07-25T08:00'
+    condition: 快晴
+    temperature_c: 29.4
+    humidity_pct: 76
+    wind_direction: 南東
+    wind_speed_kmh: 2.2
+    precipitation_mm: 0.0
+    source: open-meteo
+    fetched_at: '2026-08-17T12:28:06+00:00'
   tags:
   - ランニング
   - いだてん岱明練習
@@ -1206,6 +1327,17 @@ events:
   status: scheduled
   start_time: '18:00'
   end_time: '19:30'
+  weather:
+    location: 玉名市
+    observed_at: '2026-07-25T18:00'
+    condition: 曇り
+    temperature_c: 32.5
+    humidity_pct: 62
+    wind_direction: 西北西
+    wind_speed_kmh: 9.4
+    precipitation_mm: 0.0
+    source: open-meteo
+    fetched_at: '2026-08-17T12:28:06+00:00'
   tags:
   - ランニング
   - いだてん岱明練習
@@ -1216,6 +1348,17 @@ events:
   all_day: true
   category: 予定
   status: scheduled
+  weather:
+    location: 玉名市
+    observed_at: '2026-07-26T08:00'
+    condition: 曇り
+    temperature_c: 28.5
+    humidity_pct: 81
+    wind_direction: 東南東
+    wind_speed_kmh: 2.8
+    precipitation_mm: 0.0
+    source: open-meteo
+    fetched_at: '2026-08-17T12:28:06+00:00'
   tags:
   - ランニング
   - いだてん岱明練習
@@ -1226,6 +1369,17 @@ events:
   all_day: true
   category: 予定
   status: scheduled
+  weather:
+    location: 玉名市
+    observed_at: '2026-07-26T18:00'
+    condition: 快晴
+    temperature_c: 33.5
+    humidity_pct: 60
+    wind_direction: 西北西
+    wind_speed_kmh: 6.5
+    precipitation_mm: 0.0
+    source: open-meteo
+    fetched_at: '2026-08-17T12:28:06+00:00'
   tags:
   - ランニング
   - いだてん岱明練習
@@ -1250,6 +1404,17 @@ events:
         group: 女子
         distance_km: 2.0
         reps: 2
+  weather:
+    location: 玉名市
+    observed_at: '2026-07-27T08:00'
+    condition: 晴れ
+    temperature_c: 30.2
+    humidity_pct: 79
+    wind_direction: 東
+    wind_speed_kmh: 2.2
+    precipitation_mm: 0.0
+    source: open-meteo
+    fetched_at: '2026-08-17T12:28:06+00:00'
   tags:
   - ランニング
   - いだてん岱明練習
@@ -1262,6 +1427,17 @@ events:
   status: scheduled
   start_time: '18:00'
   end_time: '19:30'
+  weather:
+    location: 玉名市
+    observed_at: '2026-07-27T18:00'
+    condition: 曇り
+    temperature_c: 34.9
+    humidity_pct: 51
+    wind_direction: 西南西
+    wind_speed_kmh: 4.6
+    precipitation_mm: 0.0
+    source: open-meteo
+    fetched_at: '2026-08-17T12:28:06+00:00'
   tags:
   - ランニング
   - いだてん岱明練習
@@ -1307,6 +1483,17 @@ events:
   all_day: true
   category: 予定
   status: scheduled
+  weather:
+    location: 玉名市
+    observed_at: '2026-07-28T18:00'
+    condition: 一部曇り
+    temperature_c: 33.2
+    humidity_pct: 60
+    wind_direction: 西北西
+    wind_speed_kmh: 8.7
+    precipitation_mm: 0.0
+    source: open-meteo
+    fetched_at: '2026-08-17T12:28:06+00:00'
   tags:
   - ランニング
   - いだてん岱明練習
@@ -1331,6 +1518,17 @@ events:
         group: 女子
         distance_km: 2.0
         reps: 2
+  weather:
+    location: 玉名市
+    observed_at: '2026-07-28T08:00'
+    condition: 一部曇り
+    temperature_c: 30.4
+    humidity_pct: 76
+    wind_direction: 西
+    wind_speed_kmh: 2.2
+    precipitation_mm: 0.0
+    source: open-meteo
+    fetched_at: '2026-08-17T12:28:06+00:00'
   tags:
   - ランニング
   - いだてん岱明練習
@@ -1369,6 +1567,17 @@ events:
         group: 女子
         distance_km: 2.0
         reps: 2
+  weather:
+    location: 玉名市
+    observed_at: '2026-07-29T08:00'
+    condition: 霧雨（弱）
+    temperature_c: 29.2
+    humidity_pct: 78
+    wind_direction: 南西
+    wind_speed_kmh: 5.0
+    precipitation_mm: 0.2
+    source: open-meteo
+    fetched_at: '2026-08-17T12:28:06+00:00'
   tags:
   - ランニング
   - いだてん岱明練習
@@ -1381,6 +1590,17 @@ events:
   status: scheduled
   start_time: '18:00'
   end_time: '19:30'
+  weather:
+    location: 玉名市
+    observed_at: '2026-07-29T18:00'
+    condition: 一部曇り
+    temperature_c: 32.1
+    humidity_pct: 56
+    wind_direction: 西南西
+    wind_speed_kmh: 10.1
+    precipitation_mm: 0.0
+    source: open-meteo
+    fetched_at: '2026-08-17T12:28:06+00:00'
   tags:
   - ランニング
   - いだてん岱明練習
@@ -1391,6 +1611,17 @@ events:
   all_day: true
   category: 予定
   status: scheduled
+  weather:
+    location: 玉名市
+    observed_at: '2026-07-30T08:00'
+    condition: 曇り
+    temperature_c: 29.3
+    humidity_pct: 76
+    wind_direction: 南西
+    wind_speed_kmh: 3.9
+    precipitation_mm: 0.0
+    source: open-meteo
+    fetched_at: '2026-08-17T12:28:06+00:00'
   tags:
   - ランニング
   - いだてん岱明練習
@@ -1401,6 +1632,17 @@ events:
   all_day: true
   category: 予定
   status: scheduled
+  weather:
+    location: 玉名市
+    observed_at: '2026-07-30T18:00'
+    condition: 快晴
+    temperature_c: 31.5
+    humidity_pct: 55
+    wind_direction: 西
+    wind_speed_kmh: 13.9
+    precipitation_mm: 0.0
+    source: open-meteo
+    fetched_at: '2026-08-17T12:28:06+00:00'
   tags:
   - ランニング
   - いだてん岱明練習
@@ -1433,6 +1675,17 @@ events:
         distance_m: 600
         reps: 2
         intensity: RP
+  weather:
+    location: 玉名市
+    observed_at: '2026-07-31T18:00'
+    condition: 快晴
+    temperature_c: 32.0
+    humidity_pct: 60
+    wind_direction: 西南西
+    wind_speed_kmh: 13.2
+    precipitation_mm: 0.0
+    source: open-meteo
+    fetched_at: '2026-08-17T12:28:06+00:00'
   tags:
   - ランニング
   - いだてん岱明練習
@@ -1457,6 +1710,17 @@ events:
         group: 女子
         distance_km: 2.0
         reps: 2
+  weather:
+    location: 玉名市
+    observed_at: '2026-07-31T08:00'
+    condition: 晴れ
+    temperature_c: 28.3
+    humidity_pct: 76
+    wind_direction: 南東
+    wind_speed_kmh: 3.9
+    precipitation_mm: 0.0
+    source: open-meteo
+    fetched_at: '2026-08-17T12:28:06+00:00'
   tags:
   - ランニング
   - いだてん岱明練習
@@ -1525,6 +1789,17 @@ events:
   description: |
     動きづくり
     流し2本
+  weather:
+    location: 玉名市
+    observed_at: '2026-08-01T18:00'
+    condition: 晴れ
+    temperature_c: 32.9
+    humidity_pct: 63
+    wind_direction: 西南西
+    wind_speed_kmh: 14.7
+    precipitation_mm: 0.0
+    source: open-meteo
+    fetched_at: '2026-08-17T12:28:06+00:00'
   tags:
   - ランニング
   - いだてん岱明練習
@@ -1535,6 +1810,17 @@ events:
   all_day: true
   category: 予定
   status: scheduled
+  weather:
+    location: 玉名市
+    observed_at: '2026-08-02T08:00'
+    condition: 一部曇り
+    temperature_c: 29.5
+    humidity_pct: 76
+    wind_direction: 東
+    wind_speed_kmh: 2.9
+    precipitation_mm: 0.0
+    source: open-meteo
+    fetched_at: '2026-08-17T12:28:06+00:00'
   tags:
   - ランニング
   - いだてん岱明練習
@@ -1545,6 +1831,17 @@ events:
   all_day: true
   category: 予定
   status: scheduled
+  weather:
+    location: 玉名市
+    observed_at: '2026-08-02T18:00'
+    condition: 一部曇り
+    temperature_c: 34.6
+    humidity_pct: 56
+    wind_direction: 西北西
+    wind_speed_kmh: 11.9
+    precipitation_mm: 0.0
+    source: open-meteo
+    fetched_at: '2026-08-17T12:28:06+00:00'
   tags:
   - ランニング
   - いだてん岱明練習
@@ -1569,6 +1866,17 @@ events:
         group: 女子
         distance_km: 2.0
         reps: 2
+  weather:
+    location: 玉名市
+    observed_at: '2026-08-03T08:00'
+    condition: 晴れ
+    temperature_c: 31.1
+    humidity_pct: 68
+    wind_direction: 東北東
+    wind_speed_kmh: 3.7
+    precipitation_mm: 0.0
+    source: open-meteo
+    fetched_at: '2026-08-17T12:28:06+00:00'
   tags:
   - ランニング
   - いだてん岱明練習
@@ -1641,6 +1949,17 @@ events:
         segments:
           - distance_m: 300
         label: '300m 5本目 300m k/3:22'
+  weather:
+    location: 玉名市
+    observed_at: '2026-08-03T18:00'
+    condition: 快晴
+    temperature_c: 35.9
+    humidity_pct: 47
+    wind_direction: 東南東
+    wind_speed_kmh: 5.8
+    precipitation_mm: 0.0
+    source: open-meteo
+    fetched_at: '2026-08-17T12:28:06+00:00'
   tags:
   - ランニング
   - いだてん岱明練習
@@ -1670,6 +1989,17 @@ events:
   all_day: true
   category: 予定
   status: scheduled
+  weather:
+    location: 玉名市
+    observed_at: '2026-08-04T18:00'
+    condition: 晴れ
+    temperature_c: 33.4
+    humidity_pct: 59
+    wind_direction: 北東
+    wind_speed_kmh: 5.9
+    precipitation_mm: 0.0
+    source: open-meteo
+    fetched_at: '2026-08-17T12:28:06+00:00'
   tags:
   - ランニング
   - いだてん岱明練習
@@ -1694,6 +2024,17 @@ events:
         group: 女子
         distance_km: 2.0
         reps: 2
+  weather:
+    location: 玉名市
+    observed_at: '2026-08-04T08:00'
+    condition: 快晴
+    temperature_c: 31.0
+    humidity_pct: 70
+    wind_direction: 東北東
+    wind_speed_kmh: 1.0
+    precipitation_mm: 0.0
+    source: open-meteo
+    fetched_at: '2026-08-17T12:28:06+00:00'
   tags:
   - ランニング
   - いだてん岱明練習
@@ -1722,6 +2063,17 @@ events:
   all_day: true
   category: 予定
   status: scheduled
+  weather:
+    location: 玉名市
+    observed_at: '2026-08-05T08:00'
+    condition: 晴れ
+    temperature_c: 29.8
+    humidity_pct: 67
+    wind_direction: 東
+    wind_speed_kmh: 7.9
+    precipitation_mm: 0.0
+    source: open-meteo
+    fetched_at: '2026-08-17T12:28:06+00:00'
   tags:
   - ランニング
   - いだてん岱明練習
@@ -1734,6 +2086,17 @@ events:
   status: scheduled
   start_time: '18:00'
   end_time: '19:30'
+  weather:
+    location: 玉名市
+    observed_at: '2026-08-05T18:00'
+    condition: 快晴
+    temperature_c: 33.7
+    humidity_pct: 43
+    wind_direction: 東
+    wind_speed_kmh: 15.4
+    precipitation_mm: 0.0
+    source: open-meteo
+    fetched_at: '2026-08-17T12:28:06+00:00'
   tags:
   - ランニング
   - いだてん岱明練習
@@ -1765,6 +2128,17 @@ events:
   all_day: true
   category: 予定
   status: scheduled
+  weather:
+    location: 玉名市
+    observed_at: '2026-08-06T18:00'
+    condition: 曇り
+    temperature_c: 32.7
+    humidity_pct: 51
+    wind_direction: 東
+    wind_speed_kmh: 19.0
+    precipitation_mm: 0.0
+    source: open-meteo
+    fetched_at: '2026-08-17T12:28:06+00:00'
   tags:
   - ランニング
   - いだてん岱明練習
@@ -1789,6 +2163,17 @@ events:
         group: 女子
         distance_km: 2.0
         reps: 2
+  weather:
+    location: 玉名市
+    observed_at: '2026-08-06T08:00'
+    condition: 快晴
+    temperature_c: 30.6
+    humidity_pct: 61
+    wind_direction: 北北東
+    wind_speed_kmh: 8.8
+    precipitation_mm: 0.0
+    source: open-meteo
+    fetched_at: '2026-08-17T12:28:06+00:00'
   tags:
   - ランニング
   - いだてん岱明練習
@@ -1840,6 +2225,17 @@ events:
         group: 女子
         distance_km: 2.0
         reps: 2
+  weather:
+    location: 玉名市
+    observed_at: '2026-08-07T08:00'
+    condition: 曇り
+    temperature_c: 29.9
+    humidity_pct: 66
+    wind_direction: 東北東
+    wind_speed_kmh: 16.3
+    precipitation_mm: 0.0
+    source: open-meteo
+    fetched_at: '2026-08-17T12:28:06+00:00'
   tags:
   - ランニング
   - いだてん岱明練習
@@ -1853,6 +2249,17 @@ events:
   start_time: '18:00'
   end_time: '19:30'
   description: 各自ジョグ、300m（男子7本・女子5本）、間1分前後
+  weather:
+    location: 玉名市
+    observed_at: '2026-08-07T18:00'
+    condition: 曇り
+    temperature_c: 31.5
+    humidity_pct: 61
+    wind_direction: 東北東
+    wind_speed_kmh: 15.0
+    precipitation_mm: 0.0
+    source: open-meteo
+    fetched_at: '2026-08-17T12:28:06+00:00'
   tags:
   - ランニング
   - いだてん岱明練習
@@ -1872,6 +2279,17 @@ events:
   all_day: true
   category: 予定
   status: scheduled
+  weather:
+    location: 玉名市
+    observed_at: '2026-08-08T08:00'
+    condition: 一部曇り
+    temperature_c: 29.5
+    humidity_pct: 66
+    wind_direction: 北東
+    wind_speed_kmh: 11.0
+    precipitation_mm: 0.0
+    source: open-meteo
+    fetched_at: '2026-08-17T12:28:06+00:00'
   tags:
   - ランニング
   - いだてん岱明練習
@@ -1897,6 +2315,17 @@ events:
   start_time: '18:00'
   end_time: '19:30'
   description: 動きづくり、男子14周・女子12周、流し2本
+  weather:
+    location: 玉名市
+    observed_at: '2026-08-08T18:00'
+    condition: 一部曇り
+    temperature_c: 31.1
+    humidity_pct: 49
+    wind_direction: 東北東
+    wind_speed_kmh: 15.0
+    precipitation_mm: 0.0
+    source: open-meteo
+    fetched_at: '2026-08-17T12:28:06+00:00'
   tags:
   - ランニング
   - いだてん岱明練習
@@ -1907,6 +2336,17 @@ events:
   all_day: true
   category: 予定
   status: scheduled
+  weather:
+    location: 玉名市
+    observed_at: '2026-08-09T08:00'
+    condition: 曇り
+    temperature_c: 28.3
+    humidity_pct: 67
+    wind_direction: 東
+    wind_speed_kmh: 8.0
+    precipitation_mm: 0.0
+    source: open-meteo
+    fetched_at: '2026-08-17T12:28:06+00:00'
   tags:
   - ランニング
   - いだてん岱明練習
@@ -1917,6 +2357,17 @@ events:
   all_day: true
   category: 予定
   status: scheduled
+  weather:
+    location: 玉名市
+    observed_at: '2026-08-09T18:00'
+    condition: 曇り
+    temperature_c: 31.4
+    humidity_pct: 49
+    wind_direction: 東南東
+    wind_speed_kmh: 12.4
+    precipitation_mm: 0.0
+    source: open-meteo
+    fetched_at: '2026-08-17T12:28:06+00:00'
   tags:
   - ランニング
   - いだてん岱明練習
@@ -1941,6 +2392,17 @@ events:
         group: 女子
         distance_km: 2.0
         reps: 2
+  weather:
+    location: 玉名市
+    observed_at: '2026-08-10T08:00'
+    condition: 曇り
+    temperature_c: 27.2
+    humidity_pct: 68
+    wind_direction: 東北東
+    wind_speed_kmh: 5.3
+    precipitation_mm: 0.0
+    source: open-meteo
+    fetched_at: '2026-08-17T12:28:06+00:00'
   tags:
   - ランニング
   - いだてん岱明練習
@@ -1957,6 +2419,17 @@ events:
     各自ジョグ、男子と村上は600m2本、村上以外の女子は300m2本（目標1500mペース+10秒/km）
     南本は足首に少し痛みがあるが、走って温めると痛くないとのこと。高田は腰の痛みは少し治っているとのこと。両者とも走れた。中尾は少し疲労が溜まっているかも。松野と田上は大丈夫そう。
     1500mRP+10秒/km
+  weather:
+    location: 玉名市
+    observed_at: '2026-08-10T18:00'
+    condition: 曇り
+    temperature_c: 32.3
+    humidity_pct: 51
+    wind_direction: 北西
+    wind_speed_kmh: 4.2
+    precipitation_mm: 0.0
+    source: open-meteo
+    fetched_at: '2026-08-17T12:28:06+00:00'
   tags:
   - ランニング
   - いだてん岱明練習
@@ -2004,6 +2477,17 @@ events:
   all_day: true
   category: 予定
   status: scheduled
+  weather:
+    location: 玉名市
+    observed_at: '2026-08-11T08:00'
+    condition: 曇り
+    temperature_c: 28.4
+    humidity_pct: 67
+    wind_direction: 東北東
+    wind_speed_kmh: 3.5
+    precipitation_mm: 0.0
+    source: open-meteo
+    fetched_at: '2026-08-17T12:28:06+00:00'
   tags:
   - ランニング
   - いだてん岱明練習
@@ -2014,6 +2498,17 @@ events:
   all_day: true
   category: 予定
   status: scheduled
+  weather:
+    location: 玉名市
+    observed_at: '2026-08-11T18:00'
+    condition: 快晴
+    temperature_c: 30.9
+    humidity_pct: 45
+    wind_direction: 北北西
+    wind_speed_kmh: 21.1
+    precipitation_mm: 0.0
+    source: open-meteo
+    fetched_at: '2026-08-17T12:28:06+00:00'
   tags:
   - ランニング
   - いだてん岱明練習
@@ -2024,6 +2519,17 @@ events:
   all_day: true
   category: 予定
   status: scheduled
+  weather:
+    location: 玉名市
+    observed_at: '2026-08-12T08:00'
+    condition: 快晴
+    temperature_c: 25.3
+    humidity_pct: 60
+    wind_direction: 北
+    wind_speed_kmh: 4.7
+    precipitation_mm: 0.0
+    source: open-meteo
+    fetched_at: '2026-08-17T12:28:06+00:00'
   tags:
   - ランニング
   - いだてん岱明練習
@@ -2037,6 +2543,17 @@ events:
   start_time: '18:00'
   end_time: '19:30'
   description: 動きづくり、男子12周・女子10周ジョグ、500m1本
+  weather:
+    location: 玉名市
+    observed_at: '2026-08-12T18:00'
+    condition: 快晴
+    temperature_c: 31.2
+    humidity_pct: 51
+    wind_direction: 北北西
+    wind_speed_kmh: 17.7
+    precipitation_mm: 0.0
+    source: open-meteo
+    fetched_at: '2026-08-17T12:28:06+00:00'
   tags:
   - ランニング
   - いだてん岱明練習
@@ -2057,6 +2574,17 @@ events:
   all_day: true
   category: 予定
   status: scheduled
+  weather:
+    location: 玉名市
+    observed_at: '2026-08-13T08:00'
+    condition: 晴れ
+    temperature_c: 26.8
+    humidity_pct: 76
+    wind_direction: 東
+    wind_speed_kmh: 2.3
+    precipitation_mm: 0.0
+    source: open-meteo
+    fetched_at: '2026-08-17T12:28:06+00:00'
   tags:
   - ランニング
   - いだてん岱明練習
@@ -2067,6 +2595,17 @@ events:
   all_day: true
   category: 予定
   status: scheduled
+  weather:
+    location: 玉名市
+    observed_at: '2026-08-13T18:00'
+    condition: 快晴
+    temperature_c: 30.9
+    humidity_pct: 47
+    wind_direction: 西南西
+    wind_speed_kmh: 12.4
+    precipitation_mm: 0.0
+    source: open-meteo
+    fetched_at: '2026-08-17T12:28:06+00:00'
   tags:
   - ランニング
   - いだてん岱明練習
@@ -2082,6 +2621,17 @@ events:
   all_day: true
   category: 予定
   status: scheduled
+  weather:
+    location: 玉名市
+    observed_at: '2026-08-14T08:00'
+    condition: 快晴
+    temperature_c: 25.8
+    humidity_pct: 87
+    wind_direction: 東北東
+    wind_speed_kmh: 4.1
+    precipitation_mm: 0.0
+    source: open-meteo
+    fetched_at: '2026-08-17T12:28:06+00:00'
   tags:
   - ランニング
   - いだてん岱明練習
@@ -2167,6 +2717,17 @@ events:
         segments:
           - distance_m: 300
         label: '900m （300m69秒組） 900m k/3:50'
+  weather:
+    location: 玉名市
+    observed_at: '2026-08-14T18:00'
+    condition: 曇り
+    temperature_c: 31.4
+    humidity_pct: 49
+    wind_direction: 西南西
+    wind_speed_kmh: 12.0
+    precipitation_mm: 0.0
+    source: open-meteo
+    fetched_at: '2026-08-17T12:28:06+00:00'
   tags:
   - ランニング
   - いだてん岱明練習
@@ -2196,6 +2757,17 @@ events:
   all_day: true
   category: 予定
   status: scheduled
+  weather:
+    location: 玉名市
+    observed_at: '2026-08-15T08:00'
+    condition: 曇り
+    temperature_c: 27.1
+    humidity_pct: 80
+    wind_direction: 東
+    wind_speed_kmh: 2.0
+    precipitation_mm: 0.0
+    source: open-meteo
+    fetched_at: '2026-08-17T12:28:06+00:00'
   tags:
   - ランニング
   - いだてん岱明練習
@@ -2235,6 +2807,17 @@ events:
         reps: 3
         intensity: 1500mRP
         rest_sec: 70
+  weather:
+    location: 玉名市
+    observed_at: '2026-08-15T18:00'
+    condition: 曇り
+    temperature_c: 31.0
+    humidity_pct: 50
+    wind_direction: 西
+    wind_speed_kmh: 9.9
+    precipitation_mm: 0.0
+    source: open-meteo
+    fetched_at: '2026-08-17T12:28:06+00:00'
   tags:
   - ランニング
   - いだてん岱明練習
@@ -2245,6 +2828,17 @@ events:
   all_day: true
   category: 予定
   status: scheduled
+  weather:
+    location: 玉名市
+    observed_at: '2026-08-16T08:00'
+    condition: 曇り
+    temperature_c: 25.9
+    humidity_pct: 80
+    wind_direction: 北東
+    wind_speed_kmh: 4.6
+    precipitation_mm: 0.0
+    source: open-meteo
+    fetched_at: '2026-08-17T12:28:06+00:00'
   tags:
   - ランニング
   - いだてん岱明練習
@@ -2255,6 +2849,17 @@ events:
   all_day: true
   category: 予定
   status: scheduled
+  weather:
+    location: 玉名市
+    observed_at: '2026-08-16T18:00'
+    condition: 曇り
+    temperature_c: 30.0
+    humidity_pct: 64
+    wind_direction: 西
+    wind_speed_kmh: 14.4
+    precipitation_mm: 0.0
+    source: open-meteo
+    fetched_at: '2026-08-17T12:28:06+00:00'
   tags:
   - ランニング
   - いだてん岱明練習
@@ -2279,6 +2884,17 @@ events:
         group: 女子
         distance_km: 2.0
         reps: 2
+  weather:
+    location: 玉名市
+    observed_at: '2026-08-17T08:00'
+    condition: 一部曇り
+    temperature_c: 25.6
+    humidity_pct: 80
+    wind_direction: 東南東
+    wind_speed_kmh: 3.9
+    precipitation_mm: 0.0
+    source: open-meteo
+    fetched_at: '2026-08-17T12:28:06+00:00'
   tags:
   - ランニング
   - いだてん岱明練習
@@ -2311,6 +2927,17 @@ events:
         pace_min: 'k/4:00'
         pace_max: 'k/4:10'
         rest_sec: 15
+  weather:
+    location: 玉名市
+    observed_at: '2026-08-17T18:00'
+    condition: 霧雨（弱）
+    temperature_c: 27.7
+    humidity_pct: 85
+    wind_direction: 北西
+    wind_speed_kmh: 5.1
+    precipitation_mm: 0.1
+    source: open-meteo
+    fetched_at: '2026-08-17T12:28:06+00:00'
   tags:
   - ランニング
   - いだてん岱明練習
@@ -2330,6 +2957,17 @@ events:
   all_day: true
   category: 予定
   status: scheduled
+  weather:
+    location: 玉名市
+    observed_at: '2026-08-18T08:00'
+    condition: 晴れ
+    temperature_c: 25.4
+    humidity_pct: 92
+    wind_direction: 東
+    wind_speed_kmh: 1.8
+    precipitation_mm: 0.0
+    source: open-meteo
+    fetched_at: '2026-08-17T12:28:06+00:00'
   tags:
   - ランニング
   - いだてん岱明練習
@@ -2340,6 +2978,17 @@ events:
   all_day: true
   category: 予定
   status: scheduled
+  weather:
+    location: 玉名市
+    observed_at: '2026-08-18T18:00'
+    condition: 晴れ
+    temperature_c: 29.6
+    humidity_pct: 71
+    wind_direction: 西北西
+    wind_speed_kmh: 2.4
+    precipitation_mm: 0.0
+    source: open-meteo
+    fetched_at: '2026-08-17T12:28:06+00:00'
   tags:
   - ランニング
   - いだてん岱明練習
@@ -2362,6 +3011,17 @@ events:
   status: scheduled
   start_time: '08:00'
   end_time: '09:30'
+  weather:
+    location: 玉名市
+    observed_at: '2026-08-19T08:00'
+    condition: 快晴
+    temperature_c: 26.7
+    humidity_pct: 79
+    wind_direction: 北東
+    wind_speed_kmh: 3.8
+    precipitation_mm: 0.0
+    source: open-meteo
+    fetched_at: '2026-08-17T12:28:06+00:00'
   tags:
   - ランニング
   - いだてん岱明練習
@@ -2374,6 +3034,17 @@ events:
   status: scheduled
   start_time: '18:00'
   end_time: '19:30'
+  weather:
+    location: 玉名市
+    observed_at: '2026-08-19T18:00'
+    condition: 一部曇り
+    temperature_c: 31.3
+    humidity_pct: 58
+    wind_direction: 西
+    wind_speed_kmh: 0.7
+    precipitation_mm: 0.0
+    source: open-meteo
+    fetched_at: '2026-08-17T12:28:06+00:00'
   tags:
   - ランニング
   - いだてん岱明練習
@@ -2391,6 +3062,17 @@ events:
   status: scheduled
   start_time: '08:00'
   end_time: '09:30'
+  weather:
+    location: 玉名市
+    observed_at: '2026-08-20T08:00'
+    condition: 晴れ
+    temperature_c: 27.4
+    humidity_pct: 81
+    wind_direction: 東北東
+    wind_speed_kmh: 1.9
+    precipitation_mm: 0.0
+    source: open-meteo
+    fetched_at: '2026-08-17T12:28:06+00:00'
   tags:
   - ランニング
   - いだてん岱明練習
@@ -2404,6 +3086,17 @@ events:
   start_time: '19:00'
   end_time: '21:00'
   location: 玉名市岱明中央公園グラウンド
+  weather:
+    location: 玉名市
+    observed_at: '2026-08-20T19:00'
+    condition: 霧雨（弱）
+    temperature_c: 28.7
+    humidity_pct: 80
+    wind_direction: 南南西
+    wind_speed_kmh: 9.3
+    precipitation_mm: 0.4
+    source: open-meteo
+    fetched_at: '2026-08-17T12:28:06+00:00'
   tags:
   - practice:daiming
 - title: 1年課題提出日
@@ -2418,6 +3111,17 @@ events:
   status: scheduled
   start_time: '08:00'
   end_time: '09:30'
+  weather:
+    location: 玉名市
+    observed_at: '2026-08-21T08:00'
+    condition: 快晴
+    temperature_c: 27.6
+    humidity_pct: 86
+    wind_direction: 北西
+    wind_speed_kmh: 0.6
+    precipitation_mm: 0.0
+    source: open-meteo
+    fetched_at: '2026-08-17T12:28:06+00:00'
   tags:
   - ランニング
   - いだてん岱明練習
@@ -2430,6 +3134,17 @@ events:
   status: scheduled
   start_time: '18:00'
   end_time: '19:30'
+  weather:
+    location: 玉名市
+    observed_at: '2026-08-21T18:00'
+    condition: にわか雨（弱）
+    temperature_c: 27.2
+    humidity_pct: 93
+    wind_direction: 東
+    wind_speed_kmh: 4.4
+    precipitation_mm: 1.3
+    source: open-meteo
+    fetched_at: '2026-08-17T12:28:06+00:00'
   tags:
   - ランニング
   - いだてん岱明練習
@@ -2463,6 +3178,17 @@ events:
   all_day: true
   category: 予定
   status: scheduled
+  weather:
+    location: 玉名市
+    observed_at: '2026-08-22T08:00'
+    condition: 快晴
+    temperature_c: 27.1
+    humidity_pct: 87
+    wind_direction: 東
+    wind_speed_kmh: 1.8
+    precipitation_mm: 0.0
+    source: open-meteo
+    fetched_at: '2026-08-17T12:28:06+00:00'
   tags:
   - ランニング
   - いだてん岱明練習
@@ -2475,6 +3201,17 @@ events:
   status: scheduled
   start_time: '18:00'
   end_time: '19:30'
+  weather:
+    location: 玉名市
+    observed_at: '2026-08-22T18:00'
+    condition: 一部曇り
+    temperature_c: 32.2
+    humidity_pct: 59
+    wind_direction: 西
+    wind_speed_kmh: 5.5
+    precipitation_mm: 0.0
+    source: open-meteo
+    fetched_at: '2026-08-17T12:28:06+00:00'
   tags:
   - ランニング
   - いだてん岱明練習
@@ -2490,6 +3227,17 @@ events:
   all_day: true
   category: 予定
   status: scheduled
+  weather:
+    location: 玉名市
+    observed_at: '2026-08-23T08:00'
+    condition: 霧雨（弱）
+    temperature_c: 27.8
+    humidity_pct: 86
+    wind_direction: 南南東
+    wind_speed_kmh: 5.5
+    precipitation_mm: 0.1
+    source: open-meteo
+    fetched_at: '2026-08-17T12:28:06+00:00'
   tags:
   - ランニング
   - いだてん岱明練習
@@ -2514,6 +3262,17 @@ events:
   status: scheduled
   start_time: '08:00'
   end_time: '09:30'
+  weather:
+    location: 玉名市
+    observed_at: '2026-08-24T08:00'
+    condition: 霧雨（弱）
+    temperature_c: 28.2
+    humidity_pct: 83
+    wind_direction: 南南西
+    wind_speed_kmh: 6.8
+    precipitation_mm: 0.1
+    source: open-meteo
+    fetched_at: '2026-08-17T12:28:06+00:00'
   tags:
   - ランニング
   - いだてん岱明練習
@@ -2526,6 +3285,17 @@ events:
   status: scheduled
   start_time: '18:00'
   end_time: '19:30'
+  weather:
+    location: 玉名市
+    observed_at: '2026-08-24T18:00'
+    condition: 晴れ
+    temperature_c: 31.7
+    humidity_pct: 62
+    wind_direction: 西
+    wind_speed_kmh: 8.8
+    precipitation_mm: 0.0
+    source: open-meteo
+    fetched_at: '2026-08-17T12:28:06+00:00'
   tags:
   - ランニング
   - いだてん岱明練習
@@ -2536,6 +3306,17 @@ events:
   all_day: true
   category: 予定
   status: scheduled
+  weather:
+    location: 玉名市
+    observed_at: '2026-08-25T18:00'
+    condition: 霧雨（弱）
+    temperature_c: 30.9
+    humidity_pct: 73
+    wind_direction: 西北西
+    wind_speed_kmh: 6.7
+    precipitation_mm: 0.4
+    source: open-meteo
+    fetched_at: '2026-08-17T12:28:06+00:00'
   tags:
   - ランニング
   - いだてん岱明練習
@@ -2548,6 +3329,17 @@ events:
   status: scheduled
   start_time: '08:00'
   end_time: '09:30'
+  weather:
+    location: 玉名市
+    observed_at: '2026-08-25T08:00'
+    condition: 霧雨（弱）
+    temperature_c: 28.6
+    humidity_pct: 81
+    wind_direction: 南西
+    wind_speed_kmh: 0.6
+    precipitation_mm: 0.1
+    source: open-meteo
+    fetched_at: '2026-08-17T12:28:06+00:00'
   tags:
   - ランニング
   - いだてん岱明練習
@@ -2585,6 +3377,17 @@ events:
   all_day: true
   category: 予定
   status: scheduled
+  weather:
+    location: 玉名市
+    observed_at: '2026-08-26T08:00'
+    condition: 晴れ
+    temperature_c: 28.9
+    humidity_pct: 81
+    wind_direction: 東北東
+    wind_speed_kmh: 2.3
+    precipitation_mm: 0.0
+    source: open-meteo
+    fetched_at: '2026-08-17T12:28:06+00:00'
   tags:
   - ランニング
   - いだてん岱明練習
@@ -2624,6 +3427,17 @@ events:
         distance_m: 900
         reps: 1
         intensity: GZ
+  weather:
+    location: 玉名市
+    observed_at: '2026-08-26T18:00'
+    condition: 快晴
+    temperature_c: 32.2
+    humidity_pct: 60
+    wind_direction: 西
+    wind_speed_kmh: 3.4
+    precipitation_mm: 0.0
+    source: open-meteo
+    fetched_at: '2026-08-17T12:28:06+00:00'
   tags:
   - ランニング
   - いだてん岱明練習
@@ -2677,6 +3491,17 @@ events:
   status: scheduled
   start_time: '19:00'
   end_time: '21:00'
+  weather:
+    location: 玉名市
+    observed_at: '2026-08-27T19:00'
+    condition: 霧雨（弱）
+    temperature_c: 29.0
+    humidity_pct: 81
+    wind_direction: 東
+    wind_speed_kmh: 2.7
+    precipitation_mm: 0.3
+    source: open-meteo
+    fetched_at: '2026-08-17T12:28:06+00:00'
   tags:
   - practice:daiming
 - title: 石原
@@ -2779,6 +3604,17 @@ events:
   all_day: true
   category: 予定
   status: scheduled
+  weather:
+    location: 玉名市
+    observed_at: '2026-08-30T12:00'
+    condition: 一部曇り
+    temperature_c: 28.4
+    humidity_pct: 57
+    wind_direction: 北北西
+    wind_speed_kmh: 5.9
+    precipitation_mm: 0.0
+    source: open-meteo
+    fetched_at: '2026-08-17T12:28:06+00:00'
   tags:
   - practice:daiming
 - title: 石原
