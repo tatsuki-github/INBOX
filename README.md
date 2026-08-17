@@ -204,6 +204,16 @@ python3 scripts/generate_calendar.py --all-years
    - `URLs` → URL または Text（複数行の場合は Text）
 4. Calendar ビュー（日付あり）と Table / List ビュー（メモ含む）を用意
 
+## AI 練習計画生成
+
+自然言語から `practice` YAML を生成（テンプレ参照 + lint + Norwegian Method）。詳細: [`docs/ai-practice-generation.md`](docs/ai-practice-generation.md)
+
+```bash
+python3 scripts/generate_practice.py --input "夕練、600m×2、軽め" --dry-run
+python3 scripts/generate_weekly_plan.py --week 2026-03-09 --dry-run
+python3 scripts/build_rag_index.py
+```
+
 ## 注意
 
 - Google と Notion で日付形式が異なるため、CSVは別ファイルです

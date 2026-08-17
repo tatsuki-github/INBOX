@@ -1,0 +1,31 @@
+# AI 練習計画生成 — 固定/可変/創作レイヤー定義
+
+fixed:
+  pace_format: "k/M:SS"
+  track_lap_m: 560
+  male_jog_laps: 6
+  female_jog_laps: 5
+  male_jog_distance_m: 3360
+  female_jog_distance_m: 2800
+
+variable:
+  reps_delta: 2
+  pace_delta_sec_per_km: 10
+  rest_sec_delta: 30
+
+creative:
+  fields:
+    - warmup
+    - notes
+    - weekly_theme
+  weekly_experiment:
+    max_per_week: 1
+    forbidden_intensities:
+      - I
+      - R
+    max_new_items: 2
+    require_notes_prefix: "【実験】"
+
+template_required_intensities:
+  - I
+  - R
