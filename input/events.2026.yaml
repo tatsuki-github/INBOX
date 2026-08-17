@@ -3011,6 +3011,18 @@ events:
   status: scheduled
   start_time: '08:00'
   end_time: '09:30'
+  description: 動きづくり、男子2.5km×2、女子2km×2
+  practice:
+    warmup: 動きづくり
+    items:
+      - type: interval
+        group: 男子
+        distance_km: 2.5
+        reps: 2
+      - type: interval
+        group: 女子
+        distance_km: 2.0
+        reps: 2
   weather:
     location: 玉名市
     observed_at: '2026-08-19T08:00'
@@ -3062,6 +3074,18 @@ events:
   status: scheduled
   start_time: '08:00'
   end_time: '09:30'
+  description: 動きづくり、男子2.5km×2、女子2km×2
+  practice:
+    warmup: 動きづくり
+    items:
+      - type: interval
+        group: 男子
+        distance_km: 2.5
+        reps: 2
+      - type: interval
+        group: 女子
+        distance_km: 2.0
+        reps: 2
   weather:
     location: 玉名市
     observed_at: '2026-08-20T08:00'
@@ -3111,6 +3135,18 @@ events:
   status: scheduled
   start_time: '08:00'
   end_time: '09:30'
+  description: 動きづくり、男子2.5km×2、女子2km×2
+  practice:
+    warmup: 動きづくり
+    items:
+      - type: interval
+        group: 男子
+        distance_km: 2.5
+        reps: 2
+      - type: interval
+        group: 女子
+        distance_km: 2.0
+        reps: 2
   weather:
     location: 玉名市
     observed_at: '2026-08-21T08:00'
@@ -3262,6 +3298,18 @@ events:
   status: scheduled
   start_time: '08:00'
   end_time: '09:30'
+  description: 動きづくり、男子2.5km×2、女子2km×2
+  practice:
+    warmup: 動きづくり
+    items:
+      - type: interval
+        group: 男子
+        distance_km: 2.5
+        reps: 2
+      - type: interval
+        group: 女子
+        distance_km: 2.0
+        reps: 2
   weather:
     location: 玉名市
     observed_at: '2026-08-24T08:00'
@@ -3329,6 +3377,18 @@ events:
   status: scheduled
   start_time: '08:00'
   end_time: '09:30'
+  description: 動きづくり、男子2.5km×2、女子2km×2
+  practice:
+    warmup: 動きづくり
+    items:
+      - type: interval
+        group: 男子
+        distance_km: 2.5
+        reps: 2
+      - type: interval
+        group: 女子
+        distance_km: 2.0
+        reps: 2
   weather:
     location: 玉名市
     observed_at: '2026-08-25T08:00'
