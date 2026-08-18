@@ -2952,6 +2952,18 @@ events:
   end_time: '18:00'
   tags:
   - 会社
+- title: 自分の練習
+  date: '2026-08-17'
+  all_day: false
+  category: 予定
+  status: done
+  start_time: '19:25'
+  end_time: '20:15'
+  description: '45/15の30本（疾走アベk/3:41）'
+  tags:
+  - ランニング
+  - 自分の練習
+  - practice:personal
 - title: 岱明朝練休み
   date: '2026-08-18'
   all_day: true

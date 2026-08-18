@@ -6023,6 +6023,29 @@
     }
   },
   {
+    "title": "自分の練習",
+    "date": "2026-08-17",
+    "end_date": "2026-08-17",
+    "all_day": false,
+    "start_time": "19:25",
+    "end_time": "20:15",
+    "category": "予定",
+    "status": "done",
+    "tags": [
+      "ランニング",
+      "自分の練習",
+      "practice:personal"
+    ],
+    "urls": [],
+    "description": "45/15の30本（疾走アベk/3:41）",
+    "location": "",
+    "private": false,
+    "kind": "event",
+    "practice": null,
+    "template_ref": null,
+    "weather": null
+  },
+  {
     "title": "たまなPayデジタル商品券追加販売開始",
     "date": "2026-08-18",
     "end_date": "2026-08-18",
@@ -6165,11 +6188,27 @@
       "session:morning"
     ],
     "urls": [],
-    "description": "",
+    "description": "動きづくり、男子2.5km×2、女子2km×2",
     "location": "",
     "private": false,
     "kind": "event",
-    "practice": null,
+    "practice": {
+      "warmup": "動きづくり",
+      "items": [
+        {
+          "type": "interval",
+          "group": "男子",
+          "distance_km": 2.5,
+          "reps": 2
+        },
+        {
+          "type": "interval",
+          "group": "女子",
+          "distance_km": 2.0,
+          "reps": 2
+        }
+      ]
+    },
     "template_ref": null,
     "weather": {
       "location": "玉名市",
@@ -6254,11 +6293,27 @@
       "session:morning"
     ],
     "urls": [],
-    "description": "",
+    "description": "動きづくり、男子2.5km×2、女子2km×2",
     "location": "",
     "private": false,
     "kind": "event",
-    "practice": null,
+    "practice": {
+      "warmup": "動きづくり",
+      "items": [
+        {
+          "type": "interval",
+          "group": "男子",
+          "distance_km": 2.5,
+          "reps": 2
+        },
+        {
+          "type": "interval",
+          "group": "女子",
+          "distance_km": 2.0,
+          "reps": 2
+        }
+      ]
+    },
     "template_ref": null,
     "weather": {
       "location": "玉名市",
@@ -6340,11 +6395,27 @@
       "session:morning"
     ],
     "urls": [],
-    "description": "",
+    "description": "動きづくり、男子2.5km×2、女子2km×2",
     "location": "",
     "private": false,
     "kind": "event",
-    "practice": null,
+    "practice": {
+      "warmup": "動きづくり",
+      "items": [
+        {
+          "type": "interval",
+          "group": "男子",
+          "distance_km": 2.5,
+          "reps": 2
+        },
+        {
+          "type": "interval",
+          "group": "女子",
+          "distance_km": 2.0,
+          "reps": 2
+        }
+      ]
+    },
     "template_ref": null,
     "weather": {
       "location": "玉名市",
@@ -6614,11 +6685,27 @@
       "session:morning"
     ],
     "urls": [],
-    "description": "",
+    "description": "動きづくり、男子2.5km×2、女子2km×2",
     "location": "",
     "private": false,
     "kind": "event",
-    "practice": null,
+    "practice": {
+      "warmup": "動きづくり",
+      "items": [
+        {
+          "type": "interval",
+          "group": "男子",
+          "distance_km": 2.5,
+          "reps": 2
+        },
+        {
+          "type": "interval",
+          "group": "女子",
+          "distance_km": 2.0,
+          "reps": 2
+        }
+      ]
+    },
     "template_ref": null,
     "weather": {
       "location": "玉名市",
@@ -6719,11 +6806,27 @@
       "session:morning"
     ],
     "urls": [],
-    "description": "",
+    "description": "動きづくり、男子2.5km×2、女子2km×2",
     "location": "",
     "private": false,
     "kind": "event",
-    "practice": null,
+    "practice": {
+      "warmup": "動きづくり",
+      "items": [
+        {
+          "type": "interval",
+          "group": "男子",
+          "distance_km": 2.5,
+          "reps": 2
+        },
+        {
+          "type": "interval",
+          "group": "女子",
+          "distance_km": 2.0,
+          "reps": 2
+        }
+      ]
+    },
     "template_ref": null,
     "weather": {
       "location": "玉名市",
