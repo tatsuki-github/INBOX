@@ -925,6 +925,213 @@
   },
   {
     "year": 2026,
+    "date": "2026-08-17",
+    "title": "自分の練習",
+    "start_time": "19:25",
+    "end_time": "20:15",
+    "status": "done",
+    "tags": [
+      "ランニング",
+      "自分の練習",
+      "practice:personal"
+    ],
+    "practice": {
+      "items": []
+    },
+    "parse": {
+      "source": "description",
+      "confidence": "none",
+      "skipped": []
+    },
+    "template_ref": null
+  },
+  {
+    "year": 2026,
+    "date": "2026-08-19",
+    "title": "岱明朝練",
+    "start_time": "08:00",
+    "end_time": "09:30",
+    "status": "scheduled",
+    "tags": [
+      "ランニング",
+      "いだてん岱明練習",
+      "practice:daiming",
+      "session:morning"
+    ],
+    "practice": {
+      "warmup": "動きづくり",
+      "items": [
+        {
+          "type": "interval",
+          "group": "男子",
+          "distance_km": 2.5,
+          "reps": 2
+        },
+        {
+          "type": "interval",
+          "group": "女子",
+          "distance_km": 2.0,
+          "reps": 2
+        }
+      ]
+    },
+    "parse": {
+      "source": "practice_field",
+      "confidence": "full",
+      "skipped": []
+    },
+    "template_ref": null
+  },
+  {
+    "year": 2026,
+    "date": "2026-08-20",
+    "title": "岱明朝練",
+    "start_time": "08:00",
+    "end_time": "09:30",
+    "status": "scheduled",
+    "tags": [
+      "ランニング",
+      "いだてん岱明練習",
+      "practice:daiming",
+      "session:morning"
+    ],
+    "practice": {
+      "warmup": "動きづくり",
+      "items": [
+        {
+          "type": "interval",
+          "group": "男子",
+          "distance_km": 2.5,
+          "reps": 2
+        },
+        {
+          "type": "interval",
+          "group": "女子",
+          "distance_km": 2.0,
+          "reps": 2
+        }
+      ]
+    },
+    "parse": {
+      "source": "practice_field",
+      "confidence": "full",
+      "skipped": []
+    },
+    "template_ref": null
+  },
+  {
+    "year": 2026,
+    "date": "2026-08-21",
+    "title": "岱明朝練",
+    "start_time": "08:00",
+    "end_time": "09:30",
+    "status": "scheduled",
+    "tags": [
+      "ランニング",
+      "いだてん岱明練習",
+      "practice:daiming",
+      "session:morning"
+    ],
+    "practice": {
+      "warmup": "動きづくり",
+      "items": [
+        {
+          "type": "interval",
+          "group": "男子",
+          "distance_km": 2.5,
+          "reps": 2
+        },
+        {
+          "type": "interval",
+          "group": "女子",
+          "distance_km": 2.0,
+          "reps": 2
+        }
+      ]
+    },
+    "parse": {
+      "source": "practice_field",
+      "confidence": "full",
+      "skipped": []
+    },
+    "template_ref": null
+  },
+  {
+    "year": 2026,
+    "date": "2026-08-24",
+    "title": "岱明朝練",
+    "start_time": "08:00",
+    "end_time": "09:30",
+    "status": "scheduled",
+    "tags": [
+      "ランニング",
+      "いだてん岱明練習",
+      "practice:daiming",
+      "session:morning"
+    ],
+    "practice": {
+      "warmup": "動きづくり",
+      "items": [
+        {
+          "type": "interval",
+          "group": "男子",
+          "distance_km": 2.5,
+          "reps": 2
+        },
+        {
+          "type": "interval",
+          "group": "女子",
+          "distance_km": 2.0,
+          "reps": 2
+        }
+      ]
+    },
+    "parse": {
+      "source": "practice_field",
+      "confidence": "full",
+      "skipped": []
+    },
+    "template_ref": null
+  },
+  {
+    "year": 2026,
+    "date": "2026-08-25",
+    "title": "岱明朝練",
+    "start_time": "08:00",
+    "end_time": "09:30",
+    "status": "scheduled",
+    "tags": [
+      "ランニング",
+      "いだてん岱明練習",
+      "practice:daiming",
+      "session:morning"
+    ],
+    "practice": {
+      "warmup": "動きづくり",
+      "items": [
+        {
+          "type": "interval",
+          "group": "男子",
+          "distance_km": 2.5,
+          "reps": 2
+        },
+        {
+          "type": "interval",
+          "group": "女子",
+          "distance_km": 2.0,
+          "reps": 2
+        }
+      ]
+    },
+    "parse": {
+      "source": "practice_field",
+      "confidence": "full",
+      "skipped": []
+    },
+    "template_ref": null
+  },
+  {
+    "year": 2026,
     "date": "2026-08-26",
     "title": "岱明夕練",
     "start_time": "18:00",
