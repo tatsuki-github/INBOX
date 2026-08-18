@@ -6173,12 +6173,12 @@
     "weather": null
   },
   {
-    "title": "岱明朝練",
+    "title": "岱明朝練休み",
     "date": "2026-08-19",
     "end_date": "2026-08-19",
-    "all_day": false,
-    "start_time": "08:00",
-    "end_time": "09:30",
+    "all_day": true,
+    "start_time": null,
+    "end_time": null,
     "category": "予定",
     "status": "scheduled",
     "tags": [
@@ -6188,27 +6188,11 @@
       "session:morning"
     ],
     "urls": [],
-    "description": "動きづくり、男子2.5km×2、女子2km×2",
+    "description": "",
     "location": "",
     "private": false,
     "kind": "event",
-    "practice": {
-      "warmup": "動きづくり",
-      "items": [
-        {
-          "type": "interval",
-          "group": "男子",
-          "distance_km": 2.5,
-          "reps": 2
-        },
-        {
-          "type": "interval",
-          "group": "女子",
-          "distance_km": 2.0,
-          "reps": 2
-        }
-      ]
-    },
+    "practice": null,
     "template_ref": null,
     "weather": {
       "location": "玉名市",

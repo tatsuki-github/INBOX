@@ -4,7 +4,7 @@
 
 | type | count |
 |---|---|
-| interval | 45 |
+| interval | 43 |
 | jog | 6 |
 | set | 11 |
 
@@ -42,7 +42,6 @@
 - 2026-08-17 岱明夕練 (2 items, full)
 - 2026-08-17 岱明朝練 (2 items, full)
 - 2026-08-17 自分の練習 (0 items, none)
-- 2026-08-19 岱明朝練 (2 items, full)
 - 2026-08-20 岱明朝練 (2 items, full)
 - 2026-08-21 岱明朝練 (2 items, full)
 - 2026-08-24 岱明朝練 (2 items, full)
