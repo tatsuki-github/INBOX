@@ -44,7 +44,7 @@ schedules:
     "2026-08-16": { morning: dot, evening: dot }
     "2026-08-17": { morning: timed, evening: timed }
     "2026-08-18": { morning: dot, evening: dot, school: 職員会議・校内研 }
-    "2026-08-19": { morning: timed, evening: timed, school: 2，3年課題提出日 }
+    "2026-08-19": { morning: dot, evening: timed, school: 2，3年課題提出日 }
     "2026-08-20": { morning: timed, evening: null, school: 1年課題提出日 }
     "2026-08-21": { morning: timed, evening: timed, school: 1年課題提出日 }
     "2026-08-22": { morning: dot, evening: timed, school: 玉名市人権教育研究大会 }
