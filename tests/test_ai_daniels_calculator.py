@@ -50,6 +50,7 @@ def test_gz_slower_than_daniels_t():
     assert f"T+8" in result["golden_zone_block"]
     # GZ must be slower than T (Norwegian sub-threshold)
     assert "600m:" in result["golden_zone_block"]
+    assert "k/" in result["golden_zone_block"]
 
 
 def test_calculate_from_t_pace():

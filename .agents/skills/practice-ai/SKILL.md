@@ -37,7 +37,7 @@ metadata:
 2. **創作は notes/warmup** — コーチの意図・状況判断
 3. **lint 必須** — `validate_practice_block` 通過まで最大 3 回再生成
 4. **ペースは LLM 禁止** — [`scripts/ai/daniels_calculator.py`](../../scripts/ai/daniels_calculator.py) → [`pace_calculator.py`](../../scripts/ai/pace_calculator.py)
-5. **GZ / サブ閾値の質問** — 必ず `daniels_pace.py` を実行。10K 換算・Web 概算禁止 → [daniels-gz-guide.md](references/daniels-gz-guide.md)
+5. **GZ / サブ閾値の質問** — 必ず `daniels_pace.py` を実行。10K 換算・Web 概算禁止 → [daniels-gz-guide.md](references/daniels-gz-guide.md)。**回答には各 GZ 距離の 1km 平均ペース（`k/M:SS` 形式）を必ず含める**
 6. **大会2日前は RP 1本** — 800m→600m、1500m→900m（または1000m）。連続≤1000m
 7. **練習会は負荷に数えない** — いだてん岱明は基本不参加。記録会の疲労・テーパーだけ見る
 8. **大会翌日は休み** — 部練習は休み。自主練も E まで（`post-race-rest` テンプレ）
@@ -62,7 +62,8 @@ metadata:
 
 1. **必ず** `python3 scripts/daniels_pace.py --race <距離> <タイム>` を実行
 2. 出力の VDOT・T ペース・GZ ブロックをそのまま根拠に回答
-3. 10K 換算・頭算・Web 検索でペースを推定しない
+3. **各 GZ 距離の行に `k/M:SS`（1km 平均ペース）を必ず含める** — 秒数だけの回答は不可
+4. 10K 換算・頭算・Web 検索でペースを推定しない
 
 詳細: [references/daniels-gz-guide.md](references/daniels-gz-guide.md)
 

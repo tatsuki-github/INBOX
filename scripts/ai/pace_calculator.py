@@ -109,6 +109,12 @@ def gz_pace_k_format(t_pace_str: str, distance_m: int) -> tuple[str, str]:
     return f"k/{fmt_pace(lo)}", f"k/{fmt_pace(hi)}"
 
 
+def fmt_k_pace_range(pace_lo_sec: int, pace_hi_sec: int) -> str:
+    k_lo = f"k/{fmt_pace(pace_lo_sec)}"
+    k_hi = f"k/{fmt_pace(pace_hi_sec)}"
+    return k_lo if pace_lo_sec == pace_hi_sec else f"{k_lo}〜{k_hi}"
+
+
 def build_block(t_pace_str: str) -> str:
     t_sec = parse_pace(t_pace_str)
     lines = [
@@ -144,7 +150,8 @@ def build_block(t_pace_str: str) -> str:
         pace_lo = t_sec + gz_lo
         pace_hi = t_sec + gz_hi
         time_str = fmt_range(split_time(pace_lo, dist), split_time(pace_hi, dist), dist)
-        lines.append(f"{dist}m: {time_str}")
+        k_str = fmt_k_pace_range(pace_lo, pace_hi)
+        lines.append(f"{dist}m: {time_str} {k_str}")
 
     return "\n".join(lines)
 
