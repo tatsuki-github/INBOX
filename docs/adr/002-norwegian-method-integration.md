@@ -17,7 +17,7 @@ AI 練習計画生成では Norwegian Method（Marius Bakken *The Norwegian Meth
 
 ## Consequences
 
-- GZ/T ペースは Daniels T から決定論的に導出
+- GZ/T ペースは Daniels T から決定論的に導出（VDOT 計算は ADR 008 / `daniels_calculator.py`）
 - 説明・週テーマは RAG + LLM、数値はコード
 
 ## Alternatives Considered

@@ -59,14 +59,18 @@ python3 scripts/explain_practice.py --question "なぜ夕練はGZ？" --dry-run
 
 ## Norwegian Method
 
-- ペース: [`scripts/ai/pace_calculator.py`](../scripts/ai/pace_calculator.py)（Bakken Ch.2/Ch.5）
+- VDOT / Daniels: [`scripts/ai/daniels_calculator.py`](../scripts/ai/daniels_calculator.py) + [`scripts/daniels_pace.py`](../scripts/daniels_pace.py)
+- GZ/T 距離別: [`scripts/ai/pace_calculator.py`](../scripts/ai/pace_calculator.py)（Bakken Ch.2/Ch.5）
 - 原則: [`scripts/ai/norwegian_rules.py`](../scripts/ai/norwegian_rules.py)
 - ソース: `input/memos/norwegian_method_applied_full.txt`
+
+**GZ / サブ閾値の質問**: 必ず `python3 scripts/daniels_pace.py --race <距離> <タイム>` を実行してから回答する。
 
 ## ADR
 
 - [001-ai-practice-generation-architecture.md](adr/001-ai-practice-generation-architecture.md)
 - [002-norwegian-method-integration.md](adr/002-norwegian-method-integration.md)
+- [008-daniels-vdot-gz-guidance.md](adr/008-daniels-vdot-gz-guidance.md)
 - [004-coach-ready-practice-sheet.md](adr/004-coach-ready-practice-sheet.md)
 - [005-pre-race-rp-stimulus.md](adr/005-pre-race-rp-stimulus.md)
 - [006-practice-meets-not-load.md](adr/006-practice-meets-not-load.md)
