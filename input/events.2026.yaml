@@ -3996,6 +3996,11 @@ events:
   tags:
   - 岱明中
   - 学校行事
+- title: 午後休
+  date: '2026-09-17'
+  all_day: true
+  category: 予定
+  status: scheduled
 - title: 岱明中 A日課（5時間）
   date: '2026-09-18'
   all_day: true
@@ -4198,6 +4203,11 @@ events:
   tags:
   - 岱明中
   - 学校行事
+- title: 有休
+  date: '2026-09-29'
+  all_day: true
+  category: 予定
+  status: scheduled
 - title: 岱明中 B日課（6時間）
   date: '2026-09-30'
   all_day: true
