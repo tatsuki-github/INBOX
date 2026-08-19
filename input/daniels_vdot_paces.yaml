@@ -1,0 +1,16 @@
+# Jack Daniels Running Formula (3rd ed.) training paces in sec/mile.
+# Interpolate linearly between integer VDOT rows.
+# Used by scripts/ai/daniels_calculator.py — do not edit without re-running tests.
+
+vdot_paces_sec_per_mile:
+  30: {e_lo: 739, e_hi: 823, m: 649, t: 619, i: 565, r: 523}
+  35: {e_lo: 667, e_hi: 744, m: 586, t: 559, i: 511, r: 472}
+  40: {e_lo: 610, e_hi: 681, m: 537, t: 511, i: 467, r: 431}
+  45: {e_lo: 554, e_hi: 618, m: 487, t: 465, i: 424, r: 392}
+  50: {e_lo: 494, e_hi: 549, m: 426, t: 411, i: 376, r: 356}
+  55: {e_lo: 458, e_hi: 509, m: 395, t: 380, i: 348, r: 328}
+  60: {e_lo: 426, e_hi: 474, m: 366, t: 354, i: 325, r: 305}
+  65: {e_lo: 400, e_hi: 444, m: 344, t: 332, i: 304, r: 284}
+  70: {e_lo: 376, e_hi: 418, m: 322, t: 310, i: 283, r: 263}
+  75: {e_lo: 354, e_hi: 394, m: 302, t: 291, i: 266, r: 247}
+  80: {e_lo: 334, e_hi: 372, m: 285, t: 274, i: 251, r: 233}
