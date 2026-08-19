@@ -947,6 +947,57 @@
   },
   {
     "year": 2026,
+    "date": "2026-08-19",
+    "title": "岱明夕練",
+    "start_time": "18:00",
+    "end_time": "19:30",
+    "status": "scheduled",
+    "tags": [
+      "ランニング",
+      "いだてん岱明練習",
+      "practice:daiming",
+      "session:evening"
+    ],
+    "practice": {
+      "warmup": "動きづくり",
+      "absentees": [
+        "田中"
+      ],
+      "items": [
+        {
+          "type": "jog",
+          "group": "男子",
+          "distance_m": 3360,
+          "distance_km": 3.36,
+          "laps": 6,
+          "pace": "k/4:49"
+        },
+        {
+          "type": "jog",
+          "group": "女子",
+          "distance_m": 2800,
+          "distance_km": 2.8,
+          "laps": 5,
+          "pace": "k/4:49"
+        },
+        {
+          "type": "interval",
+          "distance_m": 500,
+          "reps": 2,
+          "intensity": "1500mRP",
+          "rest_sec": 420
+        }
+      ]
+    },
+    "parse": {
+      "source": "practice_field",
+      "confidence": "full",
+      "skipped": []
+    },
+    "template_ref": null
+  },
+  {
+    "year": 2026,
     "date": "2026-08-20",
     "title": "岱明朝練",
     "start_time": "08:00",
