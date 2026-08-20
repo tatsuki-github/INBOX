@@ -3138,7 +3138,7 @@ events:
   start_time: '19:00'
   end_time: '21:00'
   location: 玉名市岱明中央公園グラウンド
-  description: 県民スポーツ大会中止に伴い練習会も中止
+  description: 第81回熊本県民スポーツ大会（9/19-9/20）中止に伴い、本番までの玉名市練習会をすべて中止
   tags:
   - 中止
 - title: 1年課題提出日
@@ -3271,15 +3271,6 @@ events:
   - いだてん岱明練習
   - practice:daiming
   - session:evening
-- title: 県民スポーツ大会（中止）
-  date: '2026-08-20'
-  end_date: '2026-08-22'
-  all_day: true
-  category: 予定
-  status: done
-  description: 開催中止のため練習会（19:00）もすべて中止
-  tags:
-  - 中止
 - title: 玉名市人権教育研究大会
   date: '2026-08-22'
   all_day: true
@@ -3313,7 +3304,7 @@ events:
   status: done
   start_time: '19:00'
   end_time: '21:00'
-  description: 県民スポーツ大会中止に伴い練習会も中止
+  description: 第81回熊本県民スポーツ大会（9/19-9/20）中止に伴い、本番までの玉名市練習会をすべて中止
   tags:
   - 中止
 - title: サマー記録会100m（薄暮開催予定）
@@ -3574,26 +3565,16 @@ events:
   end_time: '15:00'
   tags:
   - 会社
-- title: 練習会（岱明）
+- title: 練習会（岱明）（県民スポーツ大会中止に伴い中止）
   date: '2026-08-27'
   all_day: false
   category: 予定
-  status: scheduled
+  status: done
   start_time: '19:00'
   end_time: '21:00'
-  weather:
-    location: 玉名市
-    observed_at: '2026-08-27T19:00'
-    condition: 霧雨（弱）
-    temperature_c: 30.2
-    humidity_pct: 76
-    wind_direction: 南西
-    wind_speed_kmh: 9.9
-    precipitation_mm: 0.4
-    source: open-meteo
-    fetched_at: '2026-08-19T12:10:55+00:00'
+  description: 第81回熊本県民スポーツ大会（9/19-9/20）中止に伴い、本番までの玉名市練習会をすべて中止
   tags:
-  - practice:daiming
+  - 中止
 - title: 石原
   date: '2026-08-27'
   all_day: false
@@ -3689,24 +3670,14 @@ events:
   - 県大会一覧
   urls:
   - http://kumariku.com/info/wp-content/uploads/2026/04/b652729b4a1eecb47ebc1e6e01321a6e.pdf
-- title: 練習会（岱明）
+- title: 練習会（岱明）（県民スポーツ大会中止に伴い中止）
   date: '2026-08-30'
   all_day: true
   category: 予定
-  status: scheduled
-  weather:
-    location: 玉名市
-    observed_at: '2026-08-30T12:00'
-    condition: 快晴
-    temperature_c: 33.4
-    humidity_pct: 57
-    wind_direction: 南西
-    wind_speed_kmh: 4.5
-    precipitation_mm: 0.0
-    source: open-meteo
-    fetched_at: '2026-08-19T12:10:55+00:00'
+  status: done
+  description: 第81回熊本県民スポーツ大会（9/19-9/20）中止に伴い、本番までの玉名市練習会をすべて中止
   tags:
-  - practice:daiming
+  - 中止
 - title: 石原
   date: '2026-08-31'
   all_day: false
@@ -3765,13 +3736,16 @@ events:
   tags:
   - 岱明中
   - 学校行事
-- title: 練習会（桃田）
+- title: 練習会（桃田）（県民スポーツ大会中止に伴い中止）
   date: '2026-09-03'
   all_day: false
   category: 予定
-  status: scheduled
+  status: done
   start_time: '19:00'
   end_time: '21:00'
+  description: 第81回熊本県民スポーツ大会（9/19-9/20）中止に伴い、本番までの玉名市練習会をすべて中止
+  tags:
+  - 中止
 - title: 岱明中 A日課（6時間）
   date: '2026-09-03'
   all_day: true
@@ -3806,13 +3780,16 @@ events:
   tags:
   - 岱明中
   - 学校行事
-- title: 練習会（桃田）
+- title: 練習会（桃田）（県民スポーツ大会中止に伴い中止）
   date: '2026-09-06'
   all_day: false
   category: 予定
-  status: scheduled
+  status: done
   start_time: '19:00'
   end_time: '21:00'
+  description: 第81回熊本県民スポーツ大会（9/19-9/20）中止に伴い、本番までの玉名市練習会をすべて中止
+  tags:
+  - 中止
 - title: 第３４回 熊本マスターズ選手権大会
   date: '2026-09-06'
   all_day: true
@@ -3845,15 +3822,16 @@ events:
   tags:
   - 岱明中
   - 学校行事
-- title: 練習会（岱明）
+- title: 練習会（岱明）（県民スポーツ大会中止に伴い中止）
   date: '2026-09-08'
   all_day: false
   category: 予定
-  status: scheduled
+  status: done
   start_time: '19:00'
   end_time: '21:00'
+  description: 第81回熊本県民スポーツ大会（9/19-9/20）中止に伴い、本番までの玉名市練習会をすべて中止
   tags:
-  - practice:daiming
+  - 中止
 - title: 岱明中 A日課（6時間）
   date: '2026-09-08'
   all_day: true
@@ -3885,15 +3863,16 @@ events:
   tags:
   - 岱明中
   - 学校行事
-- title: 練習会（岱明）
+- title: 練習会（岱明）（県民スポーツ大会中止に伴い中止）
   date: '2026-09-10'
   all_day: false
   category: 予定
-  status: scheduled
+  status: done
   start_time: '19:00'
   end_time: '21:00'
+  description: 第81回熊本県民スポーツ大会（9/19-9/20）中止に伴い、本番までの玉名市練習会をすべて中止
   tags:
-  - practice:daiming
+  - 中止
 - title: 岱明中 B日課（特別・4時間授業・掃除あり）
   date: '2026-09-10'
   all_day: true
@@ -3933,13 +3912,16 @@ events:
   tags:
   - 岱明中
   - 学校行事
-- title: 練習会（桃田）
+- title: 練習会（桃田）（県民スポーツ大会中止に伴い中止）
   date: '2026-09-13'
   all_day: false
   category: 予定
-  status: scheduled
+  status: done
   start_time: '19:00'
   end_time: '21:00'
+  description: 第81回熊本県民スポーツ大会（9/19-9/20）中止に伴い、本番までの玉名市練習会をすべて中止
+  tags:
+  - 中止
 - title: 岱明中 A日課（5時間）
   date: '2026-09-14'
   all_day: true
@@ -3978,13 +3960,16 @@ events:
   tags:
   - 岱明中
   - 学校行事
-- title: 練習会（桃田）
+- title: 練習会（桃田）（県民スポーツ大会中止に伴い中止）
   date: '2026-09-17'
   all_day: false
   category: 予定
-  status: scheduled
+  status: done
   start_time: '19:00'
   end_time: '21:00'
+  description: 第81回熊本県民スポーツ大会（9/19-9/20）中止に伴い、本番までの玉名市練習会をすべて中止
+  tags:
+  - 中止
 - title: 岱明中 授業6時間（日課の表記なし）
   date: '2026-09-17'
   all_day: true
@@ -4016,12 +4001,14 @@ events:
   tags:
   - 岱明中
   - 学校行事
-- title: 令和８年度 熊本県民体育祭 1日目
+- title: 令和８年度 熊本県民体育祭 1日目（中止）
   date: '2026-09-19'
   all_day: true
   category: 予定
-  status: scheduled
-  description: '29歳以下1500m 17:30〜'
+  status: done
+  description: '29歳以下1500m 17:30〜 ※開催中止'
+  tags:
+  - 中止
 - title: 飯村研究室同窓会
   date: '2026-09-20'
   all_day: false
@@ -4034,11 +4021,14 @@ events:
   all_day: true
   category: 予定
   status: scheduled
-- title: 令和８年度 熊本県民体育祭 2日目
+- title: 令和８年度 熊本県民体育祭 2日目（中止）
   date: '2026-09-20'
   all_day: true
   category: 予定
-  status: scheduled
+  status: done
+  description: 開催中止
+  tags:
+  - 中止
 - title: 第12回　中学駅伝金栗四三生誕の地なごみ大会
   date: '2026-09-20'
   all_day: true

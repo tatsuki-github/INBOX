@@ -1212,6 +1212,86 @@
   },
   {
     "year": 2026,
+    "date": "2026-08-27",
+    "title": "練習会（岱明）（県民スポーツ大会中止に伴い中止）",
+    "start_time": "19:00",
+    "end_time": "21:00",
+    "status": "done",
+    "tags": [
+      "中止"
+    ],
+    "practice": {
+      "items": []
+    },
+    "parse": {
+      "source": "description",
+      "confidence": "none",
+      "skipped": []
+    },
+    "template_ref": null
+  },
+  {
+    "year": 2026,
+    "date": "2026-08-30",
+    "title": "練習会（岱明）（県民スポーツ大会中止に伴い中止）",
+    "start_time": null,
+    "end_time": null,
+    "status": "done",
+    "tags": [
+      "中止"
+    ],
+    "practice": {
+      "items": []
+    },
+    "parse": {
+      "source": "description",
+      "confidence": "none",
+      "skipped": []
+    },
+    "template_ref": null
+  },
+  {
+    "year": 2026,
+    "date": "2026-09-08",
+    "title": "練習会（岱明）（県民スポーツ大会中止に伴い中止）",
+    "start_time": "19:00",
+    "end_time": "21:00",
+    "status": "done",
+    "tags": [
+      "中止"
+    ],
+    "practice": {
+      "items": []
+    },
+    "parse": {
+      "source": "description",
+      "confidence": "none",
+      "skipped": []
+    },
+    "template_ref": null
+  },
+  {
+    "year": 2026,
+    "date": "2026-09-10",
+    "title": "練習会（岱明）（県民スポーツ大会中止に伴い中止）",
+    "start_time": "19:00",
+    "end_time": "21:00",
+    "status": "done",
+    "tags": [
+      "中止"
+    ],
+    "practice": {
+      "items": []
+    },
+    "parse": {
+      "source": "description",
+      "confidence": "none",
+      "skipped": []
+    },
+    "template_ref": null
+  },
+  {
+    "year": 2026,
     "date": null,
     "title": "練習のバリエーション",
     "start_time": null,

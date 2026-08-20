@@ -6292,27 +6292,6 @@
     "weather": null
   },
   {
-    "title": "県民スポーツ大会（中止）",
-    "date": "2026-08-20",
-    "end_date": "2026-08-22",
-    "all_day": true,
-    "start_time": null,
-    "end_time": null,
-    "category": "予定",
-    "status": "done",
-    "tags": [
-      "中止"
-    ],
-    "urls": [],
-    "description": "開催中止のため練習会（19:00）もすべて中止",
-    "location": "",
-    "private": false,
-    "kind": "event",
-    "practice": null,
-    "template_ref": null,
-    "weather": null
-  },
-  {
     "title": "岱明朝練",
     "date": "2026-08-20",
     "end_date": "2026-08-20",
@@ -6376,7 +6355,7 @@
       "中止"
     ],
     "urls": [],
-    "description": "県民スポーツ大会中止に伴い練習会も中止",
+    "description": "第81回熊本県民スポーツ大会（9/19-9/20）中止に伴い、本番までの玉名市練習会をすべて中止",
     "location": "玉名市岱明中央公園グラウンド",
     "private": false,
     "kind": "event",
@@ -6687,7 +6666,7 @@
       "中止"
     ],
     "urls": [],
-    "description": "県民スポーツ大会中止に伴い練習会も中止",
+    "description": "第81回熊本県民スポーツ大会（9/19-9/20）中止に伴い、本番までの玉名市練習会をすべて中止",
     "location": "",
     "private": false,
     "kind": "event",
@@ -7192,36 +7171,25 @@
     "weather": null
   },
   {
-    "title": "練習会（岱明）",
+    "title": "練習会（岱明）（県民スポーツ大会中止に伴い中止）",
     "date": "2026-08-27",
     "end_date": "2026-08-27",
     "all_day": false,
     "start_time": "19:00",
     "end_time": "21:00",
     "category": "予定",
-    "status": "scheduled",
+    "status": "done",
     "tags": [
-      "practice:daiming"
+      "中止"
     ],
     "urls": [],
-    "description": "",
+    "description": "第81回熊本県民スポーツ大会（9/19-9/20）中止に伴い、本番までの玉名市練習会をすべて中止",
     "location": "",
     "private": false,
     "kind": "event",
     "practice": null,
     "template_ref": null,
-    "weather": {
-      "location": "玉名市",
-      "observed_at": "2026-08-27T19:00",
-      "condition": "霧雨（弱）",
-      "temperature_c": 30.2,
-      "humidity_pct": 76,
-      "wind_direction": "南西",
-      "wind_speed_kmh": 9.9,
-      "precipitation_mm": 0.4,
-      "source": "open-meteo",
-      "fetched_at": "2026-08-19T12:10:55+00:00"
-    }
+    "weather": null
   },
   {
     "title": "池上",
@@ -7330,36 +7298,25 @@
     "weather": null
   },
   {
-    "title": "練習会（岱明）",
+    "title": "練習会（岱明）（県民スポーツ大会中止に伴い中止）",
     "date": "2026-08-30",
     "end_date": "2026-08-30",
     "all_day": true,
     "start_time": null,
     "end_time": null,
     "category": "予定",
-    "status": "scheduled",
+    "status": "done",
     "tags": [
-      "practice:daiming"
+      "中止"
     ],
     "urls": [],
-    "description": "",
+    "description": "第81回熊本県民スポーツ大会（9/19-9/20）中止に伴い、本番までの玉名市練習会をすべて中止",
     "location": "",
     "private": false,
     "kind": "event",
     "practice": null,
     "template_ref": null,
-    "weather": {
-      "location": "玉名市",
-      "observed_at": "2026-08-30T12:00",
-      "condition": "快晴",
-      "temperature_c": 33.4,
-      "humidity_pct": 57,
-      "wind_direction": "南西",
-      "wind_speed_kmh": 4.5,
-      "precipitation_mm": 0.0,
-      "source": "open-meteo",
-      "fetched_at": "2026-08-19T12:10:55+00:00"
-    }
+    "weather": null
   },
   {
     "title": "石原",
@@ -7511,17 +7468,19 @@
     "weather": null
   },
   {
-    "title": "練習会（桃田）",
+    "title": "練習会（桃田）（県民スポーツ大会中止に伴い中止）",
     "date": "2026-09-03",
     "end_date": "2026-09-03",
     "all_day": false,
     "start_time": "19:00",
     "end_time": "21:00",
     "category": "予定",
-    "status": "scheduled",
-    "tags": [],
+    "status": "done",
+    "tags": [
+      "中止"
+    ],
     "urls": [],
-    "description": "",
+    "description": "第81回熊本県民スポーツ大会（9/19-9/20）中止に伴い、本番までの玉名市練習会をすべて中止",
     "location": "",
     "private": false,
     "kind": "event",
@@ -7620,17 +7579,19 @@
     "weather": null
   },
   {
-    "title": "練習会（桃田）",
+    "title": "練習会（桃田）（県民スポーツ大会中止に伴い中止）",
     "date": "2026-09-06",
     "end_date": "2026-09-06",
     "all_day": false,
     "start_time": "19:00",
     "end_time": "21:00",
     "category": "予定",
-    "status": "scheduled",
-    "tags": [],
+    "status": "done",
+    "tags": [
+      "中止"
+    ],
     "urls": [],
-    "description": "",
+    "description": "第81回熊本県民スポーツ大会（9/19-9/20）中止に伴い、本番までの玉名市練習会をすべて中止",
     "location": "",
     "private": false,
     "kind": "event",
@@ -7683,19 +7644,19 @@
     "weather": null
   },
   {
-    "title": "練習会（岱明）",
+    "title": "練習会（岱明）（県民スポーツ大会中止に伴い中止）",
     "date": "2026-09-08",
     "end_date": "2026-09-08",
     "all_day": false,
     "start_time": "19:00",
     "end_time": "21:00",
     "category": "予定",
-    "status": "scheduled",
+    "status": "done",
     "tags": [
-      "practice:daiming"
+      "中止"
     ],
     "urls": [],
-    "description": "",
+    "description": "第81回熊本県民スポーツ大会（9/19-9/20）中止に伴い、本番までの玉名市練習会をすべて中止",
     "location": "",
     "private": false,
     "kind": "event",
@@ -7767,19 +7728,19 @@
     "weather": null
   },
   {
-    "title": "練習会（岱明）",
+    "title": "練習会（岱明）（県民スポーツ大会中止に伴い中止）",
     "date": "2026-09-10",
     "end_date": "2026-09-10",
     "all_day": false,
     "start_time": "19:00",
     "end_time": "21:00",
     "category": "予定",
-    "status": "scheduled",
+    "status": "done",
     "tags": [
-      "practice:daiming"
+      "中止"
     ],
     "urls": [],
-    "description": "",
+    "description": "第81回熊本県民スポーツ大会（9/19-9/20）中止に伴い、本番までの玉名市練習会をすべて中止",
     "location": "",
     "private": false,
     "kind": "event",
@@ -7834,17 +7795,19 @@
     "weather": null
   },
   {
-    "title": "練習会（桃田）",
+    "title": "練習会（桃田）（県民スポーツ大会中止に伴い中止）",
     "date": "2026-09-13",
     "end_date": "2026-09-13",
     "all_day": false,
     "start_time": "19:00",
     "end_time": "21:00",
     "category": "予定",
-    "status": "scheduled",
-    "tags": [],
+    "status": "done",
+    "tags": [
+      "中止"
+    ],
     "urls": [],
-    "description": "",
+    "description": "第81回熊本県民スポーツ大会（9/19-9/20）中止に伴い、本番までの玉名市練習会をすべて中止",
     "location": "",
     "private": false,
     "kind": "event",
@@ -7960,17 +7923,19 @@
     "weather": null
   },
   {
-    "title": "練習会（桃田）",
+    "title": "練習会（桃田）（県民スポーツ大会中止に伴い中止）",
     "date": "2026-09-17",
     "end_date": "2026-09-17",
     "all_day": false,
     "start_time": "19:00",
     "end_time": "21:00",
     "category": "予定",
-    "status": "scheduled",
-    "tags": [],
+    "status": "done",
+    "tags": [
+      "中止"
+    ],
     "urls": [],
-    "description": "",
+    "description": "第81回熊本県民スポーツ大会（9/19-9/20）中止に伴い、本番までの玉名市練習会をすべて中止",
     "location": "",
     "private": false,
     "kind": "event",
@@ -8001,17 +7966,19 @@
     "weather": null
   },
   {
-    "title": "令和８年度 熊本県民体育祭 1日目",
+    "title": "令和８年度 熊本県民体育祭 1日目（中止）",
     "date": "2026-09-19",
     "end_date": "2026-09-19",
     "all_day": true,
     "start_time": null,
     "end_time": null,
     "category": "予定",
-    "status": "scheduled",
-    "tags": [],
+    "status": "done",
+    "tags": [
+      "中止"
+    ],
     "urls": [],
-    "description": "29歳以下1500m 17:30〜",
+    "description": "29歳以下1500m 17:30〜 ※開催中止",
     "location": "",
     "private": false,
     "kind": "event",
@@ -8039,17 +8006,19 @@
     "weather": null
   },
   {
-    "title": "令和８年度 熊本県民体育祭 2日目",
+    "title": "令和８年度 熊本県民体育祭 2日目（中止）",
     "date": "2026-09-20",
     "end_date": "2026-09-20",
     "all_day": true,
     "start_time": null,
     "end_time": null,
     "category": "予定",
-    "status": "scheduled",
-    "tags": [],
+    "status": "done",
+    "tags": [
+      "中止"
+    ],
     "urls": [],
-    "description": "",
+    "description": "開催中止",
     "location": "",
     "private": false,
     "kind": "event",
