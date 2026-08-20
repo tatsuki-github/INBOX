@@ -3141,6 +3141,18 @@ events:
   description: 第81回熊本県民スポーツ大会（9/19-9/20）中止に伴い、本番までの玉名市練習会をすべて中止
   tags:
   - 中止
+- title: 自分の練習
+  date: '2026-08-20'
+  all_day: false
+  category: 予定
+  status: scheduled
+  start_time: '19:30'
+  end_time: '20:30'
+  description: '45/15の30本（疾走アベk/3:40）'
+  tags:
+  - ランニング
+  - 自分の練習
+  - practice:personal
 - title: 1年課題提出日
   date: '2026-08-20'
   all_day: true
