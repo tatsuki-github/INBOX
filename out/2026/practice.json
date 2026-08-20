@@ -1035,6 +1035,26 @@
   },
   {
     "year": 2026,
+    "date": "2026-08-20",
+    "title": "練習会（岱明）（県民スポーツ大会中止に伴い中止）",
+    "start_time": "19:00",
+    "end_time": "21:00",
+    "status": "done",
+    "tags": [
+      "中止"
+    ],
+    "practice": {
+      "items": []
+    },
+    "parse": {
+      "source": "description",
+      "confidence": "none",
+      "skipped": []
+    },
+    "template_ref": null
+  },
+  {
+    "year": 2026,
     "date": "2026-08-21",
     "title": "岱明朝練",
     "start_time": "08:00",

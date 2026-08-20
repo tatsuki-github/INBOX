@@ -6292,6 +6292,27 @@
     "weather": null
   },
   {
+    "title": "県民スポーツ大会（中止）",
+    "date": "2026-08-20",
+    "end_date": "2026-08-22",
+    "all_day": true,
+    "start_time": null,
+    "end_time": null,
+    "category": "予定",
+    "status": "done",
+    "tags": [
+      "中止"
+    ],
+    "urls": [],
+    "description": "開催中止のため練習会（19:00）もすべて中止",
+    "location": "",
+    "private": false,
+    "kind": "event",
+    "practice": null,
+    "template_ref": null,
+    "weather": null
+  },
+  {
     "title": "岱明朝練",
     "date": "2026-08-20",
     "end_date": "2026-08-20",
@@ -6343,36 +6364,25 @@
     }
   },
   {
-    "title": "練習会（岱明）",
+    "title": "練習会（岱明）（県民スポーツ大会中止に伴い中止）",
     "date": "2026-08-20",
     "end_date": "2026-08-20",
     "all_day": false,
     "start_time": "19:00",
     "end_time": "21:00",
     "category": "予定",
-    "status": "scheduled",
+    "status": "done",
     "tags": [
-      "practice:daiming"
+      "中止"
     ],
     "urls": [],
-    "description": "",
+    "description": "県民スポーツ大会中止に伴い練習会も中止",
     "location": "玉名市岱明中央公園グラウンド",
     "private": false,
     "kind": "event",
     "practice": null,
     "template_ref": null,
-    "weather": {
-      "location": "玉名市",
-      "observed_at": "2026-08-20T19:00",
-      "condition": "曇り",
-      "temperature_c": 28.2,
-      "humidity_pct": 88,
-      "wind_direction": "東北東",
-      "wind_speed_kmh": 4.6,
-      "precipitation_mm": 0.0,
-      "source": "open-meteo",
-      "fetched_at": "2026-08-19T12:10:55+00:00"
-    }
+    "weather": null
   },
   {
     "title": "1年課題提出日",
@@ -6665,17 +6675,19 @@
     }
   },
   {
-    "title": "練習会（桃田）",
+    "title": "練習会（桃田）（県民スポーツ大会中止に伴い中止）",
     "date": "2026-08-23",
     "end_date": "2026-08-23",
     "all_day": false,
     "start_time": "19:00",
     "end_time": "21:00",
     "category": "予定",
-    "status": "scheduled",
-    "tags": [],
+    "status": "done",
+    "tags": [
+      "中止"
+    ],
     "urls": [],
-    "description": "",
+    "description": "県民スポーツ大会中止に伴い練習会も中止",
     "location": "",
     "private": false,
     "kind": "event",
