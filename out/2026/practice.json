@@ -1114,6 +1114,64 @@
   },
   {
     "year": 2026,
+    "date": "2026-08-22",
+    "title": "岱明夕練",
+    "start_time": "18:00",
+    "end_time": "19:30",
+    "status": "scheduled",
+    "tags": [
+      "ランニング",
+      "いだてん岱明練習",
+      "practice:daiming",
+      "session:evening"
+    ],
+    "practice": {
+      "warmup": "動きづくり",
+      "notes": "900mは1500mRP〜RP+10秒/km。1本のみ。追い込み禁止。",
+      "items": [
+        {
+          "type": "jog",
+          "group": "男子",
+          "distance_m": 3360,
+          "distance_km": 3.36,
+          "laps": 6,
+          "pace": "k/4:42"
+        },
+        {
+          "type": "jog",
+          "group": "女子",
+          "distance_m": 2800,
+          "distance_km": 2.8,
+          "laps": 5,
+          "pace": "k/4:42"
+        },
+        {
+          "type": "interval",
+          "distance_m": 900,
+          "reps": 1,
+          "intensity": "1500mRP"
+        }
+      ],
+      "abort_if": [
+        {
+          "when": "翌日が記録会",
+          "then": "追い込み禁止。本数を増やさない"
+        },
+        {
+          "when": "雨が強い / 雷",
+          "then": "短縮または中止"
+        }
+      ]
+    },
+    "parse": {
+      "source": "practice_field",
+      "confidence": "full",
+      "skipped": []
+    },
+    "template_ref": null
+  },
+  {
+    "year": 2026,
     "date": "2026-08-24",
     "title": "岱明朝練",
     "start_time": "08:00",
