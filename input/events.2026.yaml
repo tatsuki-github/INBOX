@@ -3402,6 +3402,27 @@ events:
   status: scheduled
   start_time: '18:00'
   end_time: '19:30'
+  description: |
+    <!-- practice-menu:v1
+    warmup: null
+    items:
+    - type: interval
+      distance_m: 300
+      reps: '2'
+      intensity: RP
+      rest_sec: 120
+    -->
+    
+    各自アップ、300m×2本（800mRP、レスト2分）
+    
+    300m×2（800mRP）
+  practice:
+    items:
+      - type: interval
+        distance_m: 300
+        reps: 2
+        intensity: RP
+        rest_sec: 120
   weather:
     location: 玉名市
     observed_at: '2026-08-24T18:00'
