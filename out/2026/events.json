@@ -7332,10 +7332,12 @@
     "start_time": null,
     "end_time": null,
     "category": "予定",
-    "status": "scheduled",
-    "tags": [],
+    "status": "done",
+    "tags": [
+      "ランニング"
+    ],
     "urls": [],
-    "description": "",
+    "description": "1000m 女子\n村上咲稀 3年 3:15.56\n",
     "location": "",
     "private": false,
     "kind": "event",
