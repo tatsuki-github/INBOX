@@ -6801,11 +6801,21 @@
       "session:evening"
     ],
     "urls": [],
-    "description": "",
+    "description": "<!-- practice-menu:v1\nwarmup: null\nitems:\n- type: interval\n  distance_m: 300\n  reps: '2'\n  intensity: RP\n  rest_sec: 120\n-->\n\n各自アップ、300m×2本（800mRP、レスト2分）\n\n300m×2（800mRP）\n",
     "location": "",
     "private": false,
     "kind": "event",
-    "practice": null,
+    "practice": {
+      "items": [
+        {
+          "type": "interval",
+          "distance_m": 300,
+          "reps": 2,
+          "intensity": "RP",
+          "rest_sec": 120
+        }
+      ]
+    },
     "template_ref": null,
     "weather": {
       "location": "玉名市",
@@ -7301,12 +7311,12 @@
     "start_time": null,
     "end_time": null,
     "category": "予定",
-    "status": "scheduled",
+    "status": "done",
     "tags": [
       "ランニング"
     ],
     "urls": [],
-    "description": "玉名郡ナイター中・長距離記録会（出場予定）\n集合 16:00 和水町総合グラウンド\n所属 岱明中学校 / 責任者 熊澤正博\n申込締切 2026-08-19（水）\n\n男子 1500m\n3年 松野凛空　4:22（中学代表）\n2年 山本哲瑠　4:30\n2年 田上颯人　4:37\n2年 松本空羽　5:11\n2年 田中智稀　5:15\n1年 中尾快叶　5:03（中学1年）\n1年 南本幸治郎　5:23\n1年 嶋田匠眞　5:50\n\n女子 1500m\n3年 高田麻由　5:09\n2年 角田亜美　5:31\n2年 増岡里俐　5:34\n1年 山﨑莉奈　5:35\n\n女子 800m\n2年 塚原優衣　2:47\n2年 柴尾希乃　3:10\n",
+    "description": "玉名郡ナイター中・長距離記録会\n集合 16:00 和水町総合グラウンド\n所属 岱明中学校 / 責任者 熊澤正博\n\n1500m 男子\n松野凛空 3年 4:29.8 1位 SB\n田上颯人 2年 4:33.6 3位 SB\n山本哲瑠 2年 4:40.5\n中尾快叶 1年 5:10.1\n松本空羽 2年 5:21.1\n南本幸治郎 1年 5:24.8\n田中智稀 2年 5:28.6\n嶋田匠眞 1年 5:37.6 SB\n\n1500m 女子\n高田麻由 3年 5:28.7\n山﨑莉奈 1年 5:28.8 SB\n角田亜美 2年 5:36.8\n増岡里俐 2年 5:55.5\n\n800m 女子\n塚原優衣 2年 2:51.5\n柴尾希乃 2年 DNS\n",
     "location": "和水町総合グラウンド",
     "private": false,
     "kind": "event",
@@ -7322,10 +7332,12 @@
     "start_time": null,
     "end_time": null,
     "category": "予定",
-    "status": "scheduled",
-    "tags": [],
+    "status": "done",
+    "tags": [
+      "ランニング"
+    ],
     "urls": [],
-    "description": "",
+    "description": "1000m 女子\n村上咲稀 3年 3:15.56\n",
     "location": "",
     "private": false,
     "kind": "event",

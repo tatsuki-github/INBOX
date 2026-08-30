@@ -1209,6 +1209,37 @@
   },
   {
     "year": 2026,
+    "date": "2026-08-24",
+    "title": "岱明夕練",
+    "start_time": "18:00",
+    "end_time": "19:30",
+    "status": "scheduled",
+    "tags": [
+      "ランニング",
+      "いだてん岱明練習",
+      "practice:daiming",
+      "session:evening"
+    ],
+    "practice": {
+      "items": [
+        {
+          "type": "interval",
+          "distance_m": 300,
+          "reps": 2,
+          "intensity": "RP",
+          "rest_sec": 120
+        }
+      ]
+    },
+    "parse": {
+      "source": "practice_field",
+      "confidence": "full",
+      "skipped": []
+    },
+    "template_ref": null
+  },
+  {
+    "year": 2026,
     "date": "2026-08-25",
     "title": "岱明朝練",
     "start_time": "08:00",
