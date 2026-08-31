@@ -3751,6 +3751,64 @@ events:
   description: 第81回熊本県民スポーツ大会（9/19-9/20）中止に伴い、本番までの玉名市練習会をすべて中止
   tags:
   - 中止
+- title: 岱明夕練
+  date: '2026-08-31'
+  all_day: false
+  category: 予定
+  status: scheduled
+  start_time: '17:00'
+  end_time: '18:30'
+  description: |
+    <!-- practice-menu:v1
+    warmup: 動きづくり
+    items:
+    - type: jog
+      group: 男子
+      laps: 14
+      distance_m: 7840
+      distance_km: 7.84
+      pace: k/5:26
+      intensity: E
+    - type: jog
+      group: 女子
+      distance_m: 6960
+      distance_km: 6.96
+      pace: k/5:26
+      intensity: E
+    - type: strides
+      reps: 2
+      label: 流し2本
+    -->
+    
+    動きづくり
+    
+    ジョグ 男子 7.84km (14周) k/5:26
+    ジョグ 女子 6.96km k/5:26
+    流し2本
+  practice:
+    warmup: 動きづくり
+    items:
+      - type: jog
+        group: 男子
+        laps: 14
+        distance_m: 7840
+        distance_km: 7.84
+        pace: 'k/5:26'
+        intensity: E
+      - type: jog
+        group: 女子
+        distance_m: 6960
+        distance_km: 6.96
+        pace: 'k/5:26'
+        intensity: E
+      - type: strides
+        reps: 2
+        label: 流し2本
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  - practice:daiming
+  - session:evening
 - title: 石原
   date: '2026-08-31'
   all_day: false
@@ -7714,8 +7772,8 @@ events:
     - E中心。週まとめの社会的回。
     
     #### 2026-08-31（月）— 夕
-    - 動きづくり＋E6周＋流し4。  
-    - **目的**: 回復的。
+    - 動きづくり＋ジョグ（男子7840m・女子6960m k/5:26）＋流し2。  
+    - **目的**: 回復的ロングE。
     
     #### 2026-09-01（火）— 夕 【職場体験開始・2年】
     - **短GZ**: 300m×8–10（休憩45秒）。体験生徒は夜の体調見てE or 休。  

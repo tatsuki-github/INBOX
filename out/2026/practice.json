@@ -1363,6 +1363,53 @@
   },
   {
     "year": 2026,
+    "date": "2026-08-31",
+    "title": "岱明夕練",
+    "start_time": "17:00",
+    "end_time": "18:30",
+    "status": "scheduled",
+    "tags": [
+      "ランニング",
+      "いだてん岱明練習",
+      "practice:daiming",
+      "session:evening"
+    ],
+    "practice": {
+      "warmup": "動きづくり",
+      "items": [
+        {
+          "type": "jog",
+          "group": "男子",
+          "laps": 14,
+          "distance_m": 7840,
+          "distance_km": 7.84,
+          "pace": "k/5:26",
+          "intensity": "E"
+        },
+        {
+          "type": "jog",
+          "group": "女子",
+          "distance_m": 6960,
+          "distance_km": 6.96,
+          "pace": "k/5:26",
+          "intensity": "E"
+        },
+        {
+          "type": "strides",
+          "reps": 2,
+          "label": "流し2本"
+        }
+      ]
+    },
+    "parse": {
+      "source": "practice_field",
+      "confidence": "full",
+      "skipped": []
+    },
+    "template_ref": null
+  },
+  {
+    "year": 2026,
     "date": "2026-09-08",
     "title": "練習会（岱明）（県民スポーツ大会中止に伴い中止）",
     "start_time": "19:00",
