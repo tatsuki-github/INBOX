@@ -1363,6 +1363,28 @@
   },
   {
     "year": 2026,
+    "date": "2026-08-30",
+    "title": "自分の練習",
+    "start_time": "18:30",
+    "end_time": "20:00",
+    "status": "done",
+    "tags": [
+      "ランニング",
+      "自分の練習",
+      "practice:personal"
+    ],
+    "practice": {
+      "items": []
+    },
+    "parse": {
+      "source": "description",
+      "confidence": "none",
+      "skipped": []
+    },
+    "template_ref": null
+  },
+  {
+    "year": 2026,
     "date": "2026-08-31",
     "title": "岱明夕練",
     "start_time": "17:00",
