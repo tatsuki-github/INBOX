@@ -52,3 +52,8 @@ schedules:
     "2026-08-24": { morning: timed, evening: timed }
     "2026-08-25": { morning: timed, evening: dot }
     "2026-08-26": { morning: dot, evening: timed, school: 夏期休業最終日 }
+    "2026-08-27": { morning: dot, evening: dot }
+    "2026-08-28": { morning: dot, evening: timed }
+    "2026-08-29": { morning: null, evening: null }
+    "2026-08-30": { morning: null, evening: null }
+    "2026-08-31": { morning: dot, evening: timed }

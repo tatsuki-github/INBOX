@@ -1174,6 +1174,36 @@ Tags: 中止",,False
 Tags: 会社",,False
 荒田,08/31/2026,10:00 AM,08/31/2026,1:00 PM,False,"Status: scheduled
 Tags: 会社",,False
+岱明夕練,08/31/2026,5:00 PM,08/31/2026,6:30 PM,False,"<!-- practice-menu:v1
+warmup: 動きづくり
+items:
+- type: jog
+  group: 男子
+  laps: 14
+  distance_m: 7840
+  distance_km: 7.84
+  pace: k/5:26
+  intensity: E
+- type: jog
+  group: 女子
+  distance_m: 6960
+  distance_km: 6.96
+  pace: k/5:26
+  intensity: E
+- type: strides
+  reps: 2
+  label: 流し2本
+-->
+
+動きづくり
+
+ジョグ 男子 7.84km (14周) k/5:26
+ジョグ 女子 6.96km k/5:26
+流し2本
+
+
+Status: scheduled
+Tags: ランニング, いだてん岱明練習, practice:daiming, session:evening",,False
 交通費申請,09/01/2026,,09/01/2026,,True,"Status: next
 Tags: タスク, 交通費",,False
 岱明中 A日課（6時間）,09/01/2026,,09/01/2026,,True,"【校内行事】2年職場体験学習（1日目）／ＩＣＴ支援員訪問（午後）
