@@ -30,11 +30,11 @@ class WeatherUtilsTests(unittest.TestCase):
 
     def test_infer_observation_time(self) -> None:
         self.assertEqual(
-            infer_observation_time({"title": "岱明朝練", "tags": ["session:morning"]}),
+            infer_observation_time({"title": "いだてん岱明朝練", "tags": ["session:morning"]}),
             time(8, 0),
         )
         self.assertEqual(
-            infer_observation_time({"title": "岱明夕練", "start_time": "18:00"}),
+            infer_observation_time({"title": "いだてん岱明夕練", "start_time": "18:00"}),
             time(18, 0),
         )
 

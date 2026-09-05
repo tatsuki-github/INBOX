@@ -22,12 +22,12 @@ from yaml_io import dump_event
 PRACTICE_TAGS = ["ランニング", "いだてん岱明練習"]
 
 PRACTICE_TITLES = {
-    "岱明朝練",
-    "岱明夕練",
-    "岱明朝練休み",
-    "岱明夕練休み",
-    "岱明練習休み",
-    "岱明朝練と夕練",
+    "いだてん岱明朝練",
+    "いだてん岱明夕練",
+    "いだてん岱明朝練休み",
+    "いだてん岱明夕練休み",
+    "いだてん岱明練習休み",
+    "いだてん岱明朝練と夕練",
 }
 
 
@@ -66,7 +66,10 @@ def school_event(title: str, date: str) -> dict:
 
 def build_practice(date: str, spec: dict, evening_skip: set[str]) -> list[dict]:
     out: list[dict] = []
-    for key, dot_t, time_t in [("morning", "岱明朝練休み", "岱明朝練"), ("evening", "岱明夕練休み", "岱明夕練")]:
+    for key, dot_t, time_t in [
+        ("morning", "いだてん岱明朝練休み", "いだてん岱明朝練"),
+        ("evening", "いだてん岱明夕練休み", "いだてん岱明夕練"),
+    ]:
         kind = spec.get(key)
         if kind is None or (key == "evening" and date in evening_skip):
             continue
@@ -80,7 +83,7 @@ def event_rank(ev: dict) -> tuple:
         p = 0
     elif "夕練休み" in title:
         p = 1
-    elif title in {"岱明朝練", "岱明夕練"}:
+    elif title in {"いだてん岱明朝練", "いだてん岱明夕練"}:
         p = 2
     elif title in PRACTICE_TITLES:
         p = 3

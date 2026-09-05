@@ -12,12 +12,12 @@ import generate_practice as gp
 
 def test_event_matches_evening_tag():
     ev = {
-        "title": "岱明夕練",
+        "title": "いだてん岱明夕練",
         "date": "2026-08-21",
         "tags": ["practice:daiming", "session:evening"],
     }
-    assert gp._event_matches(ev, "2026-08-21", "岱明夕練", "evening")
-    assert not gp._event_matches(ev, "2026-08-22", "岱明夕練", "evening")
+    assert gp._event_matches(ev, "2026-08-21", "いだてん岱明夕練", "evening")
+    assert not gp._event_matches(ev, "2026-08-22", "いだてん岱明夕練", "evening")
 
 
 def test_apply_writes_description(tmp_path, monkeypatch):
@@ -36,14 +36,14 @@ def test_apply_writes_description(tmp_path, monkeypatch):
     gp._apply_to_events(
         2026,
         "2026-08-21",
-        "岱明夕練",
+        "いだてん岱明夕練",
         practice,
         "evening-light-300x4",
         "動きづくり\n\n300m×4（GZ）\n",
         "evening",
     )
     data = load_events_yaml(dest)
-    ev = next(e for e in data["events"] if e.get("date") == "2026-08-21" and e.get("title") == "岱明夕練")
+    ev = next(e for e in data["events"] if e.get("date") == "2026-08-21" and e.get("title") == "いだてん岱明夕練")
     assert ev["practice"]["items"][0]["distance_m"] == 300
     assert "300m" in ev["description"]
     assert ev.get("template_ref") == "evening-light-300x4"

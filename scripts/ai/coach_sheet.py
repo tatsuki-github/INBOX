@@ -14,7 +14,7 @@ from .split_times import annotate_interval_line
 
 Confidence = Literal["adopt", "review", "withhold"]
 
-SESSION_LABEL = {"morning": "岱明朝練", "evening": "岱明夕練"}
+SESSION_LABEL = {"morning": "いだてん岱明朝練", "evening": "いだてん岱明夕練"}
 
 
 @dataclass

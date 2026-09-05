@@ -71,7 +71,7 @@ items:
 
     def test_parse_kpace_description(self) -> None:
         ev = {
-            "title": "岱明夕練",
+            "title": "いだてん岱明夕練",
             "tags": ["いだてん岱明練習"],
             "description": "動きづくり\n\nジョグ 男子 3.36km (6周) k/4:46\n900m（300m57秒組） 900m k/3:10",
         }
@@ -81,7 +81,7 @@ items:
 
     def test_parse_rp_interval(self) -> None:
         ev = {
-            "title": "岱明夕練",
+            "title": "いだてん岱明夕練",
             "tags": ["いだてん岱明練習"],
             "description": "600m×2（1500mRP、r=8分）",
         }

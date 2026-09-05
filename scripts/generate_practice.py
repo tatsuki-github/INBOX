@@ -23,7 +23,7 @@ from yaml_io import load_events_yaml, write_events_yaml  # noqa: E402
 ROOT = SCRIPTS_DIR.parent
 INPUT_DIR = ROOT / "input"
 
-SESSION_TITLES = {"morning": "岱明朝練", "evening": "岱明夕練"}
+SESSION_TITLES = {"morning": "いだてん岱明朝練", "evening": "いだてん岱明夕練"}
 SESSION_TAGS = {"morning": "session:morning", "evening": "session:evening"}
 
 

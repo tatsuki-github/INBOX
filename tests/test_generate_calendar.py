@@ -51,7 +51,7 @@ class MarkdownCalendarTests(unittest.TestCase):
 
     def test_format_markdown_event_line_timed_with_description(self) -> None:
         event = Event(
-            title="岱明夕練",
+            title="いだてん岱明夕練",
             start_date=date(2026, 7, 31),
             end_date=date(2026, 7, 31),
             all_day=False,
@@ -60,16 +60,16 @@ class MarkdownCalendarTests(unittest.TestCase):
         )
         self.assertEqual(
             format_markdown_event_summary(event),
-            "18:00 岱明夕練",
+            "18:00 いだてん岱明夕練",
         )
         self.assertEqual(
             format_markdown_event_line(event),
-            "18:00 岱明夕練",
+            "18:00 いだてん岱明夕練",
         )
 
     def test_format_markdown_event_link_and_details(self) -> None:
         event = Event(
-            title="岱明夕練",
+            title="いだてん岱明夕練",
             start_date=date(2026, 7, 31),
             end_date=date(2026, 7, 31),
             all_day=False,
@@ -82,13 +82,13 @@ class MarkdownCalendarTests(unittest.TestCase):
         day = date(2026, 7, 31)
         self.assertEqual(
             format_markdown_event_link(event, day, 0),
-            f"[18:00 岱明夕練](#{event_anchor_id(day, 0)})",
+            f"[18:00 いだてん岱明夕練](#{event_anchor_id(day, 0)})",
         )
         details = format_markdown_event_details_block(event, day, 0)
         self.assertIn(f'<a id="{event_anchor_id(day, 0)}"></a>', details)
         self.assertIn("<details>", details)
-        self.assertIn("<summary>18:00 岱明夕練</summary>", details)
-        self.assertIn("- **件名**: 岱明夕練", details)
+        self.assertIn("<summary>18:00 いだてん岱明夕練</summary>", details)
+        self.assertIn("- **件名**: いだてん岱明夕練", details)
         self.assertIn("- **開始時刻**: 18:00", details)
         self.assertIn("- **終了時刻**: 21:00", details)
         self.assertIn("- **ステータス**: scheduled", details)
@@ -131,7 +131,7 @@ class MarkdownCalendarTests(unittest.TestCase):
     def test_render_markdown_calendar_includes_month_and_memo_section(self) -> None:
         events = [
             Event(
-                title="岱明夕練",
+                title="いだてん岱明夕練",
                 start_date=date(2026, 7, 31),
                 end_date=date(2026, 7, 31),
                 all_day=False,
@@ -152,11 +152,11 @@ class MarkdownCalendarTests(unittest.TestCase):
         self.assertIn(f'<a id="{month_anchor_id(7)}"></a>', rendered)
         self.assertIn("## 2026年7月", rendered)
         self.assertIn(
-            f"| 31 | 金 | [18:00 岱明夕練](#{event_anchor_id(date(2026, 7, 31), 0)}) |",
+            f"| 31 | 金 | [18:00 いだてん岱明夕練](#{event_anchor_id(date(2026, 7, 31), 0)}) |",
             rendered,
         )
         self.assertIn("### 予定詳細", rendered)
-        self.assertIn("- **件名**: 岱明夕練", rendered)
+        self.assertIn("- **件名**: いだてん岱明夕練", rendered)
         self.assertIn(f"[↑2026年7月](#{month_anchor_id(7)})", rendered)
         self.assertIn(format_back_to_top_link(), rendered)
         self.assertIn("各自アップ、600m2本（1500mRP、r=8分）", rendered)
@@ -249,7 +249,7 @@ class EventsJsonTests(unittest.TestCase):
 
         events = [
             Event(
-                title="岱明夕練",
+                title="いだてん岱明夕練",
                 start_date=date(2026, 8, 14),
                 end_date=date(2026, 8, 14),
                 practice={"items": [{"type": "interval", "distance_m": 600}]},

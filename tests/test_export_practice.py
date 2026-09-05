@@ -22,7 +22,7 @@ class ExportPracticeTests(unittest.TestCase):
     def test_export_json_and_csv(self) -> None:
         events = [
             {
-                "title": "岱明夕練",
+                "title": "いだてん岱明夕練",
                 "date": "2026-08-14",
                 "tags": ["いだてん岱明練習"],
                 "practice": {
@@ -41,7 +41,7 @@ class ExportPracticeTests(unittest.TestCase):
             write_practice_json(json_path, records)
             write_practice_items_csv(csv_path, records)
             data = json.loads(json_path.read_text(encoding="utf-8"))
-            self.assertEqual(data[0]["title"], "岱明夕練")
+            self.assertEqual(data[0]["title"], "いだてん岱明夕練")
             csv_text = csv_path.read_text(encoding="utf-8")
             self.assertIn("distance_m", csv_text)
             self.assertIn("900", csv_text)
