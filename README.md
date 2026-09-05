@@ -108,7 +108,7 @@ events:
 練習メニューは `practice` フィールドで構造化できます（`description` は表示用）。
 
 ```yaml
-  - title: 岱明夕練
+  - title: いだてん岱明夕練
     date: 2026-08-14
     all_day: false
     start_time: "18:00"

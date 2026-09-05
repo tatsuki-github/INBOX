@@ -24,7 +24,7 @@ def test_sheet_includes_split_and_abort_for_aug21():
         template_id=match.template_id,
     )
     text = sheet.render()
-    assert "岱明夕練" in text
+    assert "いだてん岱明夕練" in text
     assert "18:00" in text
     assert "目安" in text
     assert "切上げ" in text

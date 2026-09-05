@@ -7,12 +7,12 @@ import re
 PRACTICE_TAGS = ["ランニング", "いだてん岱明練習"]
 
 PRACTICE_TITLES = {
-    "岱明朝練",
-    "岱明夕練",
-    "岱明朝練休み",
-    "岱明夕練休み",
-    "岱明練習休み",
-    "岱明朝練と夕練",
+    "いだてん岱明朝練",
+    "いだてん岱明夕練",
+    "いだてん岱明朝練休み",
+    "いだてん岱明夕練休み",
+    "いだてん岱明練習休み",
+    "いだてん岱明朝練と夕練",
 }
 
 
@@ -28,7 +28,7 @@ def is_practice_event(ev: dict) -> bool:
     tags = tags_list(ev)
     if "いだてん岱明練習" in tags:
         return True
-    if title in {"岱明夕練", "岱明朝練"}:
+    if title in {"いだてん岱明夕練", "いだてん岱明朝練"}:
         return True
     if title in PRACTICE_TITLES:
         return True

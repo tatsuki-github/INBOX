@@ -111,9 +111,10 @@ def _race_preview_on(
 
 def _session_of(ev: dict[str, Any]) -> str | None:
     tags = tags_list(ev)
-    if "session:morning" in tags or (ev.get("title") or "").startswith("岱明朝練"):
+    title = ev.get("title") or ""
+    if "session:morning" in tags or "朝練" in title:
         return "morning"
-    if "session:evening" in tags or (ev.get("title") or "").startswith("岱明夕練"):
+    if "session:evening" in tags or "夕練" in title:
         return "evening"
     return None
 

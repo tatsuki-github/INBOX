@@ -97,7 +97,7 @@ def test_championship_keywords_exclude_false_positives() -> None:
 
 def test_session_context_detects_race_in_two_days() -> None:
     events = [
-        {"title": "岱明夕練", "date": "2026-08-21", "tags": ["practice:daiming", "session:evening"]},
+        {"title": "いだてん岱明夕練", "date": "2026-08-21", "tags": ["practice:daiming", "session:evening"]},
         {
             "title": "熊本県中学校総合体育大会 1500m",
             "date": "2026-08-23",
@@ -113,7 +113,7 @@ def test_session_context_detects_race_in_two_days() -> None:
 
 def test_session_context_ignores_practice_meet_as_championship() -> None:
     events = [
-        {"title": "岱明夕練", "date": "2026-08-21", "tags": ["practice:daiming", "session:evening"]},
+        {"title": "いだてん岱明夕練", "date": "2026-08-21", "tags": ["practice:daiming", "session:evening"]},
         {
             "title": "練習会（桃田）",
             "date": "2026-08-23",
@@ -193,7 +193,7 @@ def test_practice_meet_tomorrow_does_not_block_pre_race() -> None:
 
 def test_generate_practice_uses_pre_race_template_when_race_in_two_days() -> None:
     events = [
-        {"title": "岱明夕練", "date": "2026-08-21", "tags": ["practice:daiming", "session:evening"]},
+        {"title": "いだてん岱明夕練", "date": "2026-08-21", "tags": ["practice:daiming", "session:evening"]},
         {"title": "熊本県中学校選手権 800m", "date": "2026-08-23"},
     ]
     ctx = load_session_context("2026-08-21", session="evening", events=events)
