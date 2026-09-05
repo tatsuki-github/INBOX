@@ -1432,6 +1432,82 @@
   },
   {
     "year": 2026,
+    "date": "2026-09-05",
+    "title": "いだてん岱明練習",
+    "start_time": "09:00",
+    "end_time": "10:30",
+    "status": "done",
+    "tags": [
+      "ランニング",
+      "いだてん岱明練習",
+      "practice:daiming"
+    ],
+    "practice": {
+      "warmup": "動きづくり",
+      "notes": "トラックは野球使用のため外周（アップダウンあり、2周弱）。600m超のポイントは今まで少なく、設定は目標ペースより少し遅め・間約6分。",
+      "absentees": [
+        "高田"
+      ],
+      "items": [
+        {
+          "type": "jog",
+          "group": "男子",
+          "laps": 6,
+          "distance_m": 3360,
+          "distance_km": 3.36,
+          "pace": "k/4:51"
+        },
+        {
+          "type": "jog",
+          "group": "女子",
+          "laps": 5,
+          "distance_m": 2800,
+          "distance_km": 2.8,
+          "pace": "k/4:51"
+        },
+        {
+          "type": "interval",
+          "group": "3:20組（3km）",
+          "distance_m": 1000,
+          "reps": 3,
+          "pace": "k/3:20",
+          "rest_sec": 360
+        },
+        {
+          "type": "interval",
+          "group": "3:40組（3km）",
+          "distance_m": 1000,
+          "reps": 3,
+          "pace": "k/3:40",
+          "rest_sec": 360
+        },
+        {
+          "type": "interval",
+          "group": "3:50組",
+          "distance_m": 1000,
+          "reps": 2,
+          "pace": "k/3:50",
+          "rest_sec": 360
+        },
+        {
+          "type": "interval",
+          "group": "4:00組",
+          "distance_m": 1000,
+          "reps": 2,
+          "pace": "k/4:00",
+          "rest_sec": 360
+        }
+      ]
+    },
+    "parse": {
+      "source": "practice_field",
+      "confidence": "full",
+      "skipped": []
+    },
+    "template_ref": null
+  },
+  {
+    "year": 2026,
     "date": "2026-09-08",
     "title": "練習会（岱明）（県民スポーツ大会中止に伴い中止）",
     "start_time": "19:00",
