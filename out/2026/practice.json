@@ -1635,7 +1635,7 @@
   {
     "year": 2026,
     "date": null,
-    "title": "岱明中 荒玉中体連駅伝（2026-10-14）残り練習計画【再生成 2026-09-07】",
+    "title": "岱明中 荒玉中体連駅伝（2026-10-14）残り練習計画【スタミナ増＋直前RP】",
     "start_time": null,
     "end_time": null,
     "status": "inbox",
@@ -1643,14 +1643,30 @@
       "ランニング",
       "いだてん岱明練習",
       "practice:daiming",
-      "駅伝"
+      "駅伝",
+      "スタミナ"
     ],
     "practice": {
-      "items": []
+      "items": [
+        {
+          "type": "interval",
+          "distance_m": 1000,
+          "reps": "3",
+          "intensity": "GZ",
+          "rest_sec": null
+        },
+        {
+          "type": "interval",
+          "distance_m": 1000,
+          "reps": "3",
+          "intensity": null,
+          "rest_sec": null
+        }
+      ]
     },
     "parse": {
-      "source": "none",
-      "confidence": "none",
+      "source": "description",
+      "confidence": "full",
       "skipped": []
     },
     "template_ref": null
