@@ -1128,6 +1128,16 @@
     "practice": {
       "warmup": "動きづくり",
       "notes": "900mは1500mRP〜RP+10秒/km。1本のみ。追い込み禁止。",
+      "abort_if": [
+        {
+          "when": "翌日が記録会",
+          "then": "追い込み禁止。本数を増やさない"
+        },
+        {
+          "when": "雨が強い / 雷",
+          "then": "短縮または中止"
+        }
+      ],
       "items": [
         {
           "type": "jog",
@@ -1150,16 +1160,6 @@
           "distance_m": 900,
           "reps": 1,
           "intensity": "1500mRP"
-        }
-      ],
-      "abort_if": [
-        {
-          "when": "翌日が記録会",
-          "then": "追い込み禁止。本数を増やさない"
-        },
-        {
-          "when": "雨が強い / 雷",
-          "then": "短縮または中止"
         }
       ]
     },
@@ -1635,20 +1635,22 @@
   {
     "year": 2026,
     "date": null,
-    "title": "岱明中 荒玉中体連駅伝（2026-10-14）第一ピーク向けトレーニング計画",
+    "title": "岱明中 荒玉中体連駅伝（2026-10-14）残り練習計画【部活カレンダー準拠】",
     "start_time": null,
     "end_time": null,
     "status": "inbox",
     "tags": [
       "ランニング",
       "いだてん岱明練習",
-      "practice:daiming"
+      "practice:daiming",
+      "駅伝",
+      "スタミナ"
     ],
     "practice": {
       "items": []
     },
     "parse": {
-      "source": "none",
+      "source": "description",
       "confidence": "none",
       "skipped": []
     },
