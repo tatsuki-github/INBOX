@@ -15,6 +15,7 @@ from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.ttfonts import TTFont
 from reportlab.platypus import Paragraph, SimpleDocTemplate, Spacer, Table, TableStyle
 
+from arato_tamana_ranking import GenderRankingTable, compute_affiliation_rankings, format_seconds
 from arato_tamana_records import AffiliationSection, RecordRow, shorten_url
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -65,6 +66,46 @@ def _record_display(row: RecordRow, cell_style: ParagraphStyle) -> list[Any]:
         row.date,
         url_cell,
     ]
+
+
+def _format_average(value: float | None) -> str:
+    if value is None:
+        return "—"
+    return format_seconds(value)
+
+
+def _build_ranking_table(table: GenderRankingTable, font_name: str) -> Table:
+    headers = ["順位", "所属", "人数"] + [f"上位{n}人平均" for n in table.top_ns]
+    col_widths = [12 * mm, 42 * mm, 12 * mm] + [24 * mm] * len(table.top_ns)
+    data: list[list[Any]] = [headers]
+    for entry in table.entries:
+        row = [
+            str(entry.rank),
+            entry.affiliation,
+            str(entry.athlete_count),
+        ]
+        row.extend(_format_average(entry.averages.get(n)) for n in table.top_ns)
+        data.append(row)
+
+    ranking_table = Table(data, colWidths=col_widths, repeatRows=1)
+    ranking_table.setStyle(
+        TableStyle(
+            [
+                ("FONT", (0, 0), (-1, -1), font_name, 8),
+                ("FONT", (0, 0), (-1, 0), font_name, 9),
+                ("BACKGROUND", (0, 0), (-1, 0), colors.HexColor("#E8EEF4")),
+                ("GRID", (0, 0), (-1, -1), 0.25, colors.HexColor("#CCCCCC")),
+                ("VALIGN", (0, 0), (-1, -1), "MIDDLE"),
+                ("ALIGN", (0, 0), (0, -1), "CENTER"),
+                ("ALIGN", (2, 0), (2, -1), "CENTER"),
+                ("LEFTPADDING", (0, 0), (-1, -1), 4),
+                ("RIGHTPADDING", (0, 0), (-1, -1), 4),
+                ("TOPPADDING", (0, 0), (-1, -1), 3),
+                ("BOTTOMPADDING", (0, 0), (-1, -1), 3),
+            ]
+        )
+    )
+    return ranking_table
 
 
 def _build_table(rows: list[RecordRow], font_name: str) -> Table:
@@ -155,11 +196,31 @@ def build_pdf(
         spaceAfter=4,
         textColor=colors.HexColor("#333333"),
     )
+    ranking_section_style = ParagraphStyle(
+        "RankingSectionJP",
+        parent=styles["Heading2"],
+        fontName=font_name,
+        fontSize=13,
+        leading=18,
+        spaceBefore=8,
+        spaceAfter=6,
+        textColor=colors.HexColor("#1A1A1A"),
+    )
+    ranking_note_style = ParagraphStyle(
+        "RankingNoteJP",
+        parent=styles["Normal"],
+        fontName=font_name,
+        fontSize=8,
+        leading=11,
+        textColor=colors.HexColor("#666666"),
+        spaceAfter=4,
+    )
 
     from arato_tamana_records import group_records_by_gender
 
     total_records = sum(len(section.records) for section in sections)
     generated_at = datetime.now().strftime("%Y-%m-%d %H:%M")
+    boys_ranking, girls_ranking = compute_affiliation_rankings(sections)
 
     story: list[Any] = [
         Paragraph(title, title_style),
@@ -167,6 +228,18 @@ def build_pdf(
             f"生成日時: {generated_at}　｜　所属数: {len(sections)}　｜　記録数: {total_records}",
             meta_style,
         ),
+        Spacer(1, 4 * mm),
+        Paragraph("所属別ランキング（3000m 予想タイム）", ranking_section_style),
+        Paragraph(
+            "各選手の 3000m SB → 1500m SB（+15秒/km換算）→ 800m SB（+10秒/km→1500m→3000m）"
+            " の順で予想タイムを算出し、所属内の上位平均で順位付けしています。",
+            ranking_note_style,
+        ),
+        Paragraph("男子", gender_style),
+        _build_ranking_table(boys_ranking, font_name),
+        Spacer(1, 3 * mm),
+        Paragraph("女子", gender_style),
+        _build_ranking_table(girls_ranking, font_name),
         Spacer(1, 6 * mm),
     ]
 
