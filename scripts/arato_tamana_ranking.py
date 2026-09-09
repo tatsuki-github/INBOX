@@ -9,8 +9,13 @@ from arato_tamana_records import AffiliationSection, RecordRow
 
 BOYS_TOP_NS = (4, 5, 6)
 GIRLS_TOP_NS = (3, 4, 5)
+BOYS_MIN_ATHLETES = BOYS_TOP_NS[-1]
+GIRLS_MIN_ATHLETES = GIRLS_TOP_NS[-1]
 RANKING_GENDERS = ("男子", "女子")
-TOP_N_NOTE = "男子は上位4/5/6人平均、女子は上位3/4/5人平均です。"
+TOP_N_NOTE = (
+    "男子は上位4/5/6人平均（6人未満の所属は対象外）、"
+    "女子は上位3/4/5人平均（5人未満の所属は対象外）です。"
+)
 
 
 @dataclass
@@ -98,10 +103,10 @@ def project_3000m_seconds(rows: list[RecordRow]) -> float | None:
 
 
 def top_n_average(seconds: list[float], n: int) -> float | None:
-    if not seconds or n <= 0:
+    if n <= 0 or len(seconds) < n:
         return None
     top = sorted(seconds)[:n]
-    return sum(top) / len(top)
+    return sum(top) / n
 
 
 def _values_for_gender(
@@ -134,19 +139,24 @@ def _build_gender_table(
 
     for section in sections:
         values = _values_for_gender(section.records, gender, value_fn)
+        if len(values) < primary_n:
+            continue
         averages = {n: top_n_average(values, n) for n in top_ns}
+        sort_key = averages.get(primary_n)
+        if sort_key is None:
+            continue
         entries.append(
             AffiliationRankingEntry(
                 affiliation=section.affiliation,
                 athlete_count=len(values),
                 averages=averages,
-                sort_key=averages.get(primary_n),
+                sort_key=sort_key,
             )
         )
 
     ranked = sorted(
         entries,
-        key=lambda entry: (entry.sort_key is None, entry.sort_key or 999999.0, entry.affiliation),
+        key=lambda entry: (entry.sort_key, entry.affiliation),
     )
     for idx, entry in enumerate(ranked, start=1):
         entry.rank = idx

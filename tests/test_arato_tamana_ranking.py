@@ -58,8 +58,9 @@ def test_project_3000m_prefers_actual_3000m():
     assert projected == 540.0
 
 
-def test_top_n_average_uses_available_when_fewer():
-    assert top_n_average([500.0, 520.0, 540.0], 6) == (500.0 + 520.0 + 540.0) / 3
+def test_top_n_average_requires_full_n():
+    assert top_n_average([500.0, 520.0, 540.0], 6) is None
+    assert top_n_average([500.0, 520.0, 540.0, 560.0], 4) == (500.0 + 520.0 + 540.0 + 560.0) / 4
 
 
 def test_best_seconds_at_distance_prefers_sb():
@@ -87,9 +88,31 @@ def test_compute_all_affiliation_rankings_includes_actual_distances():
     categories = compute_all_affiliation_rankings([section])
     keys = [category.spec.key for category in categories]
     assert keys == ["800m", "1500m", "3000m", "3000m-projected"]
-    assert categories[0].boys.entries[0].athlete_count == 1
-    assert categories[1].boys.entries[0].athlete_count == 1
-    assert categories[2].boys.entries[0].athlete_count == 1
+    assert categories[0].boys.entries == []
+    assert categories[1].boys.entries == []
+    assert categories[2].boys.entries == []
+
+
+def test_excludes_affiliation_below_minimum_athletes():
+    def projected_row(name: str, seconds: float) -> RecordRow:
+        return _row(
+            name=name,
+            distance="3000m",
+            record_seconds=seconds,
+            time_text=format_seconds(seconds),
+        )
+
+    enough = AffiliationSection(
+        affiliation="十分所属",
+        records=[projected_row(str(i), 500.0 + i) for i in range(6)],
+    )
+    too_few = AffiliationSection(
+        affiliation="不足所属",
+        records=[projected_row(str(i), 600.0 + i) for i in range(5)],
+    )
+    boys, _girls = compute_affiliation_rankings([too_few, enough])
+    assert [entry.affiliation for entry in boys.entries] == ["十分所属"]
+    assert boys.entries[0].rank == 1
 
 
 def test_compute_affiliation_rankings_orders_by_primary_average():

@@ -217,7 +217,8 @@ def _all_rankings_story(
         Paragraph("所属別ランキング", styles["section"]),
         Paragraph(
             "800m / 1500m / 3000m の実記録と 3000m 予想タイムを、"
-            "所属ごとに上位平均で順位付けしています。",
+            "所属ごとに上位平均で順位付けしています。"
+            " 男子6人未満・女子5人未満の所属は掲載しません。",
             styles["note"],
         ),
         Spacer(1, 2 * mm),
