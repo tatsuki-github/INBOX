@@ -1,0 +1,55 @@
+# 荒尾・玉名地区 中学生記録 PDF 生成設定
+
+year: 2026
+title: "2026年度 荒尾玉名中学生 記録一覧"
+
+notion_database_id: "3bca38e8-3034-839c-b6b6-0106bd5eb1da"
+
+output:
+  pdf: out/analysis/2026年度_荒尾玉名中学生記録一覧.pdf
+  cache: out/analysis/notion_records_2026.json
+
+prefecture: "熊本県"
+include_empty_prefecture: true
+
+# Notion「荒尾玉名男子/女子」ビュー準拠（SB採用フィルタは使わない）
+affiliation_keywords:
+  - 岱明
+  - 玉名
+  - ATRC
+  - 天水
+  - 金栗
+  - 附
+  - 長洲
+  - 南関
+  - 玉東クラブ
+  - 有明
+  - 荒尾
+  - 玉陵
+  - 玉南
+
+extra_names:
+  - 福島志帆
+  - 内野沙笑
+  - 戸谷美月
+  - 清藤結唯
+  - 居石華音
+  - 今村昇磨
+  - 邊春共弥
+  - 草野瑠唯
+
+exclude_name_keywords:
+  - 有尾明莉
+  - 秀島恋莉
+
+exclude_when_affiliation_contains: 金栗
+
+columns:
+  - 名前
+  - 学年
+  - 性別
+  - 距離
+  - 記録
+  - SB
+  - 日付
+  - URL

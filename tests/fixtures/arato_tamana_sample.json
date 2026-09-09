@@ -1,0 +1,81 @@
+[
+  {
+    "name": "今村昇磨",
+    "affiliation": "ATRC",
+    "grade": 3,
+    "gender": "男子",
+    "distance": "800m",
+    "time_text": "2:15.70",
+    "sb_text": "2:15.70",
+    "sb_adopted": true,
+    "date": "2026/06/13",
+    "url": "http://www.kumariku.org/26/26,6,13tsushin/rel175.html",
+    "record_seconds": 135.7
+  },
+  {
+    "name": "今村昇磨",
+    "affiliation": "ATRC",
+    "grade": 3,
+    "gender": "男子",
+    "distance": "1500m",
+    "time_text": "4:45.00",
+    "sb_text": "",
+    "sb_adopted": false,
+    "date": "2026/05/09",
+    "url": "http://www.kumariku.org/example1500.html",
+    "record_seconds": 285.0
+  },
+  {
+    "name": "村上咲稀",
+    "affiliation": "岱明中",
+    "grade": 3,
+    "gender": "女子",
+    "distance": "800m",
+    "time_text": "2:33.50",
+    "sb_text": "2:33.50",
+    "sb_adopted": true,
+    "date": "2026/06/28",
+    "url": "http://www.kumariku.org/example800.html",
+    "record_seconds": 153.5
+  },
+  {
+    "name": "有尾明莉",
+    "affiliation": "金栗PROJECT",
+    "grade": 2,
+    "gender": "女子",
+    "distance": "800m",
+    "time_text": "2:40.00",
+    "sb_text": "",
+    "sb_adopted": false,
+    "date": "2026/04/01",
+    "url": "",
+    "record_seconds": 160.0
+  },
+  {
+    "name": "福島志帆",
+    "affiliation": "外部クラブ",
+    "grade": 2,
+    "gender": "女子",
+    "distance": "1500m",
+    "time_text": "5:10.00",
+    "sb_text": "5:10.00",
+    "sb_adopted": true,
+    "date": "2026/03/15",
+    "url": "http://example.com/fukushima",
+    "record_seconds": 310.0
+  },
+  {
+    "name": "他県選手",
+    "affiliation": "玉名中",
+    "grade": 1,
+    "gender": "男子",
+    "distance": "800m",
+    "time_text": "2:20.00",
+    "sb_text": "",
+    "sb_adopted": false,
+    "date": "2026/02/01",
+    "url": "",
+    "record_seconds": 140.0,
+    "prefecture": "福岡県"
+  }
+]

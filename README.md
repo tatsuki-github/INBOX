@@ -204,6 +204,57 @@ python3 scripts/generate_calendar.py --all-years
    - `URLs` → URL または Text（複数行の場合は Text）
 4. Calendar ビュー（日付あり）と Table / List ビュー（メモ含む）を用意
 
+## 荒尾・玉名 中学生記録 PDF
+
+Notion「2026年度中学生記録」から荒尾・玉名地区の全記録（SB採用フィルタなし）を取得し、所属別に整理した PDF を生成します。
+
+### 前提
+
+1. [Notion Integration](https://www.notion.so/my-integrations) を作成し、対象データベースへ接続
+2. 環境変数 `NOTION_TOKEN` に Integration Token を設定
+
+```bash
+export NOTION_TOKEN=secret_xxxxxxxx
+```
+
+### 実行
+
+```bash
+# Notion から取得 → PDF 生成
+python3 scripts/generate_arato_tamana_pdf.py
+
+# 設定・出力先を指定
+python3 scripts/generate_arato_tamana_pdf.py \
+  --config input/arato_tamana_report.yaml \
+  --output out/analysis/2026年度_荒尾玉名中学生記録一覧.pdf
+
+# 取得結果をキャッシュして再利用
+python3 scripts/generate_arato_tamana_pdf.py \
+  --cache out/analysis/notion_records_2026.json
+
+# キャッシュから PDF のみ再生成（オフライン）
+python3 scripts/generate_arato_tamana_pdf.py \
+  --from-cache out/analysis/notion_records_2026.json
+```
+
+出力: `out/analysis/2026年度_荒尾玉名中学生記録一覧.pdf`
+
+| 列 | 内容 |
+|---|---|
+| 名前 / 学年 / 性別 / 距離 / 記録 / SB / 日付 / URL | Notion の各列。`SB採用=true` の行は記録に `★` 付与 |
+
+### Google Drive へのアップロード
+
+PDF はリポジトリ内に生成されます。Drive の「分析」フォルダへは手動でアップロードしてください。
+
+- [分析フォルダ（Google Drive）](https://drive.google.com/drive/folders/18J1Yy52SRn1oB23I0jOoCrbiXwIZTqpC)
+
+### テスト
+
+```bash
+python3 -m pytest tests/test_arato_tamana_records.py -q
+```
+
 ## AI 練習計画生成
 
 自然言語から `practice` YAML を生成（テンプレ参照 + lint + Norwegian Method）。詳細: [`docs/ai-practice-generation.md`](docs/ai-practice-generation.md)
