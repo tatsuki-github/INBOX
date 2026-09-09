@@ -15,8 +15,35 @@ from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.ttfonts import TTFont
 from reportlab.platypus import PageBreak, Paragraph, SimpleDocTemplate, Spacer, Table, TableStyle
 
-from arato_tamana_ranking import GenderRankingTable, compute_affiliation_rankings, format_seconds
+from arato_tamana_ranking import (
+    GenderRankingTable,
+    compute_affiliation_rankings,
+    format_seconds,
+)
 from arato_tamana_records import AffiliationSection, RecordRow, shorten_url
+
+
+class _BookmarkDocTemplate(SimpleDocTemplate):
+    """見出し Paragraph に PDF しおり（ブックマーク）を付与する。"""
+
+    def __init__(self, *args: Any, bookmark_targets: dict[str, tuple[str, int]] | None = None, **kwargs: Any):
+        super().__init__(*args, **kwargs)
+        self._bookmark_targets = bookmark_targets or {}
+        self._bookmarked: set[str] = set()
+
+    def afterFlowable(self, flowable: Any) -> None:
+        if not isinstance(flowable, Paragraph):
+            return
+        text = flowable.getPlainText()
+        target = self._bookmark_targets.get(text)
+        if target is None:
+            return
+        anchor, level = target
+        if anchor in self._bookmarked:
+            return
+        self.canv.bookmarkPage(anchor)
+        self.canv.addOutlineEntry(text, anchor, level, 0)
+        self._bookmarked.add(anchor)
 
 ROOT = Path(__file__).resolve().parent.parent
 DEFAULT_FONT = ROOT / "assets" / "fonts" / "NotoSansJP-Regular.ttf"
@@ -87,6 +114,86 @@ def _ranking_cell(
     if align != "left":
         return Paragraph(f'<para align="{align}">{content}</para>', style)
     return Paragraph(content, style)
+
+
+def _ranking_paragraph_styles(font_name: str) -> dict[str, ParagraphStyle]:
+    styles = getSampleStyleSheet()
+    return {
+        "section": ParagraphStyle(
+            "RankingSectionJP",
+            parent=styles["Heading2"],
+            fontName=font_name,
+            fontSize=13,
+            leading=18,
+            spaceBefore=8,
+            spaceAfter=6,
+            textColor=colors.HexColor("#1A1A1A"),
+        ),
+        "note": ParagraphStyle(
+            "RankingNoteJP",
+            parent=styles["Normal"],
+            fontName=font_name,
+            fontSize=8,
+            leading=11,
+            textColor=colors.HexColor("#666666"),
+            spaceAfter=4,
+        ),
+        "gender": ParagraphStyle(
+            "RankingGenderJP",
+            parent=styles["Heading3"],
+            fontName=font_name,
+            fontSize=11,
+            leading=15,
+            spaceBefore=4,
+            spaceAfter=4,
+            textColor=colors.HexColor("#333333"),
+        ),
+        "header": ParagraphStyle(
+            "RankingTableHeaderJP",
+            fontName=font_name,
+            fontSize=9,
+            leading=11,
+            textColor=colors.HexColor("#1A1A1A"),
+        ),
+        "cell": ParagraphStyle(
+            "RankingTableCellJP",
+            fontName=font_name,
+            fontSize=8,
+            leading=10,
+            textColor=colors.HexColor("#1A1A1A"),
+        ),
+    }
+
+
+def _ranking_story(
+    boys_ranking: GenderRankingTable,
+    girls_ranking: GenderRankingTable,
+    styles: dict[str, ParagraphStyle],
+    *,
+    page_break_before_girls: bool = True,
+) -> list[Any]:
+    story: list[Any] = [
+        Paragraph("所属別ランキング（3000m 予想タイム）", styles["section"]),
+        Paragraph(
+            "各選手の 3000m SB → 1500m SB（+15秒/km換算）→ 800m SB（+10秒/km→1500m→3000m）"
+            " の順で予想タイムを算出し、所属内の上位平均で順位付けしています。"
+            " 男子は上位4/5/6人平均、女子は上位3/4/5人平均です。",
+            styles["note"],
+        ),
+        Paragraph("男子ランキング", styles["gender"]),
+        _build_ranking_table(boys_ranking, styles["header"], styles["cell"]),
+    ]
+    if page_break_before_girls:
+        story.append(PageBreak())
+    else:
+        story.append(Spacer(1, 4 * mm))
+    story.extend(
+        [
+            Paragraph("女子ランキング", styles["gender"]),
+            _build_ranking_table(girls_ranking, styles["header"], styles["cell"]),
+        ]
+    )
+    return story
 
 
 def _build_ranking_table(
@@ -163,6 +270,74 @@ def _build_table(rows: list[RecordRow], font_name: str) -> Table:
     return table
 
 
+def _doc_template(output_path: Path, title: str, *, bookmarks: dict[str, tuple[str, int]] | None = None) -> SimpleDocTemplate:
+    return _BookmarkDocTemplate(
+        str(output_path),
+        pagesize=landscape(A4),
+        leftMargin=12 * mm,
+        rightMargin=12 * mm,
+        topMargin=14 * mm,
+        bottomMargin=14 * mm,
+        title=title,
+        bookmark_targets=bookmarks,
+    )
+
+
+def build_ranking_pdf(
+    sections: list[AffiliationSection],
+    output_path: Path,
+    title: str,
+    font_path: Path | None = None,
+) -> Path:
+    """所属別ランキングのみの PDF（2ページ）を生成する。"""
+    font_name = register_font(font_path)
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+
+    boys_ranking, girls_ranking = compute_affiliation_rankings(sections)
+    ranking_styles = _ranking_paragraph_styles(font_name)
+    generated_at = datetime.now().strftime("%Y-%m-%d %H:%M")
+
+    styles = getSampleStyleSheet()
+    title_style = ParagraphStyle(
+        "RankingTitleJP",
+        parent=styles["Title"],
+        fontName=font_name,
+        fontSize=18,
+        leading=24,
+        spaceAfter=8,
+    )
+    meta_style = ParagraphStyle(
+        "RankingMetaJP",
+        parent=styles["Normal"],
+        fontName=font_name,
+        fontSize=10,
+        leading=14,
+        textColor=colors.HexColor("#444444"),
+        spaceAfter=6,
+    )
+
+    doc = _doc_template(
+        output_path,
+        title,
+        bookmarks={
+            "所属別ランキング（3000m 予想タイム）": ("ranking", 0),
+            "男子ランキング": ("boys-ranking", 1),
+            "女子ランキング": ("girls-ranking", 1),
+        },
+    )
+    story: list[Any] = [
+        Paragraph(title, title_style),
+        Paragraph(
+            f"生成日時: {generated_at}　｜　所属数: {len(sections)}",
+            meta_style,
+        ),
+        Spacer(1, 4 * mm),
+        *_ranking_story(boys_ranking, girls_ranking, ranking_styles),
+    ]
+    doc.build(story)
+    return output_path
+
+
 def build_pdf(
     sections: list[AffiliationSection],
     output_path: Path,
@@ -172,14 +347,15 @@ def build_pdf(
     font_name = register_font(font_path)
     output_path.parent.mkdir(parents=True, exist_ok=True)
 
-    doc = SimpleDocTemplate(
-        str(output_path),
-        pagesize=landscape(A4),
-        leftMargin=12 * mm,
-        rightMargin=12 * mm,
-        topMargin=14 * mm,
-        bottomMargin=14 * mm,
-        title=title,
+    doc = _doc_template(
+        output_path,
+        title,
+        bookmarks={
+            "所属別ランキング（3000m 予想タイム）": ("ranking", 0),
+            "男子ランキング": ("boys-ranking", 1),
+            "女子ランキング": ("girls-ranking", 1),
+            "所属別 全記録一覧": ("records", 0),
+        },
     )
 
     styles = getSampleStyleSheet()
@@ -220,8 +396,8 @@ def build_pdf(
         spaceAfter=4,
         textColor=colors.HexColor("#333333"),
     )
-    ranking_section_style = ParagraphStyle(
-        "RankingSectionJP",
+    records_section_style = ParagraphStyle(
+        "RecordsSectionJP",
         parent=styles["Heading2"],
         fontName=font_name,
         fontSize=13,
@@ -230,29 +406,7 @@ def build_pdf(
         spaceAfter=6,
         textColor=colors.HexColor("#1A1A1A"),
     )
-    ranking_note_style = ParagraphStyle(
-        "RankingNoteJP",
-        parent=styles["Normal"],
-        fontName=font_name,
-        fontSize=8,
-        leading=11,
-        textColor=colors.HexColor("#666666"),
-        spaceAfter=4,
-    )
-    ranking_header_style = ParagraphStyle(
-        "RankingTableHeaderJP",
-        fontName=font_name,
-        fontSize=9,
-        leading=11,
-        textColor=colors.HexColor("#1A1A1A"),
-    )
-    ranking_cell_style = ParagraphStyle(
-        "RankingTableCellJP",
-        fontName=font_name,
-        fontSize=8,
-        leading=10,
-        textColor=colors.HexColor("#1A1A1A"),
-    )
+    ranking_styles = _ranking_paragraph_styles(font_name)
 
     from arato_tamana_records import group_records_by_gender
 
@@ -266,21 +420,14 @@ def build_pdf(
             f"生成日時: {generated_at}　｜　所属数: {len(sections)}　｜　記録数: {total_records}",
             meta_style,
         ),
-        Spacer(1, 4 * mm),
-        Paragraph("所属別ランキング（3000m 予想タイム）", ranking_section_style),
         Paragraph(
-            "各選手の 3000m SB → 1500m SB（+15秒/km換算）→ 800m SB（+10秒/km→1500m→3000m）"
-            " の順で予想タイムを算出し、所属内の上位平均で順位付けしています。"
-            " 男子は上位4/5/6人平均、女子は上位3/4/5人平均です。",
-            ranking_note_style,
+            "1〜2ページ: 所属別ランキング　｜　3ページ以降: 全記録一覧",
+            meta_style,
         ),
-        Paragraph("男子", gender_style),
-        _build_ranking_table(boys_ranking, ranking_header_style, ranking_cell_style),
         Spacer(1, 4 * mm),
-        Paragraph("女子", gender_style),
-        _build_ranking_table(girls_ranking, ranking_header_style, ranking_cell_style),
+        *_ranking_story(boys_ranking, girls_ranking, ranking_styles),
         PageBreak(),
-        Paragraph("所属別 全記録一覧", ranking_section_style),
+        Paragraph("所属別 全記録一覧", records_section_style),
         Spacer(1, 4 * mm),
     ]
 

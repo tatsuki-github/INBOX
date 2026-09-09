@@ -11,7 +11,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "scripts"))
 
-from arato_tamana_pdf import build_pdf
+from arato_tamana_pdf import build_pdf, build_ranking_pdf
 from arato_tamana_records import (
     DEFAULT_CONFIG,
     fetch_filtered_records,
@@ -64,8 +64,13 @@ def main() -> int:
     config = load_config(args.config)
 
     output_path = args.output or ROOT / config["output"]["pdf"]
+    ranking_output_path = ROOT / config["output"].get(
+        "ranking_pdf",
+        output_path.with_name(output_path.stem + "_所属別ランキング.pdf"),
+    )
     cache_path = args.cache or ROOT / config["output"]["cache"]
     title = config.get("title", "荒尾玉名中学生 記録一覧")
+    ranking_title = config.get("ranking_title", f"{title} — 所属別ランキング")
 
     if args.from_cache:
         records = load_cache(args.from_cache)
@@ -87,7 +92,11 @@ def main() -> int:
 
     sections = group_by_affiliation(records)
     pdf_path = build_pdf(sections, output_path, title, font_path=args.font)
+    ranking_path = build_ranking_pdf(
+        sections, ranking_output_path, ranking_title, font_path=args.font
+    )
     print(f"PDF 生成: {pdf_path} ({len(sections)}所属 / {len(records)}件)")
+    print(f"ランキング PDF: {ranking_path}")
     return 0
 
 

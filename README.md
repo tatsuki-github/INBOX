@@ -237,9 +237,19 @@ python3 scripts/generate_arato_tamana_pdf.py \
   --from-cache out/analysis/notion_records_2026.json
 ```
 
-出力: `out/analysis/2026年度_荒尾玉名中学生記録一覧.pdf`
+出力:
 
-PDF 先頭に **所属別ランキング（3000m 予想タイム）** を掲載します。
+| ファイル | 内容 |
+|---|---|
+| `out/analysis/2026年度_荒尾玉名中学生記録一覧.pdf` | ランキング（1〜2ページ）+ 全記録一覧 |
+| `out/analysis/2026年度_荒尾玉名中学生_所属別ランキング.pdf` | **ランキングのみ**（男子1ページ・女子1ページ） |
+
+GitHub から直接ダウンロード:
+
+- [記録一覧 PDF（ランキング付き）](https://github.com/tatsuki-github/INBOX/raw/main/out/analysis/2026年度_荒尾玉名中学生記録一覧.pdf)
+- [所属別ランキング PDF（ランキングのみ）](https://github.com/tatsuki-github/INBOX/raw/main/out/analysis/2026年度_荒尾玉名中学生_所属別ランキング.pdf)
+
+PDF 先頭（1〜2ページ）に **所属別ランキング（3000m 予想タイム）** を掲載します。
 
 | 性別 | 平均列 |
 |---|---|
@@ -254,9 +264,10 @@ PDF 先頭に **所属別ランキング（3000m 予想タイム）** を掲載�
 
 ### Google Drive へのアップロード
 
-PDF はリポジトリ内に生成されます。Drive の「分析」フォルダへは手動でアップロードしてください。
+PDF はリポジトリ内に生成されます。Drive の「分析」フォルダへは **最新版を上書きアップロード** してください（古いファイルのままだとランキングが表示されません）。
 
 - [分析フォルダ（Google Drive）](https://drive.google.com/drive/folders/18J1Yy52SRn1oB23I0jOoCrbiXwIZTqpC)
+- 推奨: 上記2ファイル（記録一覧 + 所属別ランキング）を両方アップロード
 
 ### テスト
 

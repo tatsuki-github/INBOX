@@ -7,7 +7,10 @@ notion_database_id: "3bca38e8-3034-839c-b6b6-0106bd5eb1da"
 
 output:
   pdf: out/analysis/2026年度_荒尾玉名中学生記録一覧.pdf
+  ranking_pdf: out/analysis/2026年度_荒尾玉名中学生_所属別ランキング.pdf
   cache: out/analysis/notion_records_2026.json
+
+ranking_title: "2026年度 荒尾玉名中学生 所属別ランキング"
 
 prefecture: "熊本県"
 include_empty_prefecture: true

@@ -11,7 +11,7 @@ import pytest
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "scripts"))
 
-from arato_tamana_pdf import build_pdf
+from arato_tamana_pdf import build_pdf, build_ranking_pdf
 from arato_tamana_records import (
     RecordRow,
     filter_rows,
@@ -130,7 +130,29 @@ def test_build_pdf_smoke(tmp_path, sample_rows):
     try:
         from pypdf import PdfReader
 
-        page_text = PdfReader(str(out)).pages[0].extract_text() or ""
+        reader = PdfReader(str(out))
+        page_text = reader.pages[0].extract_text() or ""
         assert "所属別ランキング" in page_text
+        assert "男子ランキング" in page_text
+        page2_text = reader.pages[1].extract_text() or ""
+        assert "女子ランキング" in page2_text
+    except ImportError:
+        pass
+
+
+def test_build_ranking_pdf_smoke(tmp_path, sample_rows):
+    filtered = filter_rows(sample_rows, load_config())
+    sections = group_by_affiliation(filtered)
+    out = tmp_path / "ranking.pdf"
+    build_ranking_pdf(sections, out, "テスト ランキング")
+    assert out.exists()
+    assert out.stat().st_size > 500
+    try:
+        from pypdf import PdfReader
+
+        reader = PdfReader(str(out))
+        assert len(reader.pages) == 2
+        assert "男子ランキング" in (reader.pages[0].extract_text() or "")
+        assert "女子ランキング" in (reader.pages[1].extract_text() or "")
     except ImportError:
         pass
