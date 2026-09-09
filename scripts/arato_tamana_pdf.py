@@ -5,6 +5,7 @@ from __future__ import annotations
 from datetime import datetime
 from pathlib import Path
 from typing import Any
+from xml.sax.saxutils import escape
 
 from reportlab.lib import colors
 from reportlab.lib.pagesizes import A4, landscape
@@ -39,13 +40,23 @@ def register_font(font_path: Path | None = None) -> str:
     return FALLBACK_FONT
 
 
-def _record_display(row: RecordRow) -> list[str]:
+def _record_display(row: RecordRow, cell_style: ParagraphStyle) -> list[Any]:
     time_display = row.time_text
     if row.sb_adopted and time_display and "★" not in time_display:
         time_display = f"{time_display} ★"
     grade = "" if row.grade is None else str(row.grade)
     sb = row.sb_text if row.sb_adopted else ""
-    url_label = shorten_url(row.url) if row.url else ""
+
+    if row.url:
+        label = escape(shorten_url(row.url))
+        href = escape(row.url, {'"': "&quot;"})
+        url_cell: Any = Paragraph(
+            f'<a href="{href}" color="#1A56DB">{label}</a>',
+            cell_style,
+        )
+    else:
+        url_cell = ""
+
     return [
         row.name,
         grade,
@@ -54,37 +65,38 @@ def _record_display(row: RecordRow) -> list[str]:
         time_display,
         sb,
         row.date,
-        url_label,
+        url_cell,
     ]
 
 
 def _build_table(rows: list[RecordRow], font_name: str) -> Table:
+    cell_style = ParagraphStyle(
+        "TableCell",
+        fontName=font_name,
+        fontSize=8,
+        leading=10,
+    )
     data: list[list[Any]] = [COLUMNS]
-    link_rows: list[tuple[int, str]] = []
-    for idx, row in enumerate(rows, start=1):
-        data.append(_record_display(row))
-        if row.url:
-            link_rows.append((idx, row.url))
+    for row in rows:
+        data.append(_record_display(row, cell_style))
 
     table = Table(data, colWidths=COL_WIDTHS, repeatRows=1)
-    style_commands = [
-        ("FONT", (0, 0), (-1, -1), font_name, 8),
-        ("FONT", (0, 0), (-1, 0), font_name, 9),
-        ("BACKGROUND", (0, 0), (-1, 0), colors.HexColor("#E8EEF4")),
-        ("TEXTCOLOR", (0, 0), (-1, 0), colors.HexColor("#1A1A1A")),
-        ("GRID", (0, 0), (-1, -1), 0.25, colors.HexColor("#CCCCCC")),
-        ("VALIGN", (0, 0), (-1, -1), "MIDDLE"),
-        ("LEFTPADDING", (0, 0), (-1, -1), 4),
-        ("RIGHTPADDING", (0, 0), (-1, -1), 4),
-        ("TOPPADDING", (0, 0), (-1, -1), 3),
-        ("BOTTOMPADDING", (0, 0), (-1, -1), 3),
-    ]
-    url_col = len(COLUMNS) - 1
-    for row_idx, url in link_rows:
-        style_commands.append(("TEXTCOLOR", (url_col, row_idx), (url_col, row_idx), colors.HexColor("#1A56DB")))
-        style_commands.append(("LINK", (url_col, row_idx), (url_col, row_idx), url))
-
-    table.setStyle(TableStyle(style_commands))
+    table.setStyle(
+        TableStyle(
+            [
+                ("FONT", (0, 0), (-1, -1), font_name, 8),
+                ("FONT", (0, 0), (-1, 0), font_name, 9),
+                ("BACKGROUND", (0, 0), (-1, 0), colors.HexColor("#E8EEF4")),
+                ("TEXTCOLOR", (0, 0), (-1, 0), colors.HexColor("#1A1A1A")),
+                ("GRID", (0, 0), (-1, -1), 0.25, colors.HexColor("#CCCCCC")),
+                ("VALIGN", (0, 0), (-1, -1), "MIDDLE"),
+                ("LEFTPADDING", (0, 0), (-1, -1), 4),
+                ("RIGHTPADDING", (0, 0), (-1, -1), 4),
+                ("TOPPADDING", (0, 0), (-1, -1), 3),
+                ("BOTTOMPADDING", (0, 0), (-1, -1), 3),
+            ]
+        )
+    )
     return table
 
 
@@ -135,6 +147,18 @@ def build_pdf(
         spaceAfter=6,
         textColor=colors.HexColor("#1A1A1A"),
     )
+    gender_style = ParagraphStyle(
+        "GenderJP",
+        parent=styles["Heading3"],
+        fontName=font_name,
+        fontSize=11,
+        leading=15,
+        spaceBefore=4,
+        spaceAfter=4,
+        textColor=colors.HexColor("#333333"),
+    )
+
+    from arato_tamana_records import group_records_by_gender
 
     total_records = sum(len(section.records) for section in sections)
     generated_at = datetime.now().strftime("%Y-%m-%d %H:%M")
@@ -152,8 +176,11 @@ def build_pdf(
         story.append(
             Paragraph(f"{section.affiliation}（{len(section.records)}件）", section_style)
         )
-        story.append(_build_table(section.records, font_name))
-        story.append(Spacer(1, 4 * mm))
+        for gender, gender_rows in group_records_by_gender(section.records):
+            story.append(Paragraph(f"{gender}（{len(gender_rows)}件）", gender_style))
+            story.append(_build_table(gender_rows, font_name))
+            story.append(Spacer(1, 2 * mm))
+        story.append(Spacer(1, 2 * mm))
 
     doc.build(story)
     return output_path
