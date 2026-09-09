@@ -127,3 +127,10 @@ def test_build_pdf_smoke(tmp_path, sample_rows):
     assert out.exists()
     assert out.stat().st_size > 1000
     assert b"/URI" in out.read_bytes()
+    try:
+        from pypdf import PdfReader
+
+        page_text = PdfReader(str(out)).pages[0].extract_text() or ""
+        assert "所属別ランキング" in page_text
+    except ImportError:
+        pass

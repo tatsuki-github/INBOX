@@ -13,7 +13,7 @@ from reportlab.lib.styles import ParagraphStyle, getSampleStyleSheet
 from reportlab.lib.units import mm
 from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.ttfonts import TTFont
-from reportlab.platypus import Paragraph, SimpleDocTemplate, Spacer, Table, TableStyle
+from reportlab.platypus import PageBreak, Paragraph, SimpleDocTemplate, Spacer, Table, TableStyle
 
 from arato_tamana_ranking import GenderRankingTable, compute_affiliation_rankings, format_seconds
 from arato_tamana_records import AffiliationSection, RecordRow, shorten_url
@@ -74,34 +74,58 @@ def _format_average(value: float | None) -> str:
     return format_seconds(value)
 
 
-def _build_ranking_table(table: GenderRankingTable, font_name: str) -> Table:
+def _ranking_cell(
+    text: str,
+    style: ParagraphStyle,
+    *,
+    header: bool = False,
+    align: str = "left",
+) -> Paragraph:
+    content = escape(str(text))
+    if header:
+        content = f"<b>{content}</b>"
+    if align != "left":
+        return Paragraph(f'<para align="{align}">{content}</para>', style)
+    return Paragraph(content, style)
+
+
+def _build_ranking_table(
+    table: GenderRankingTable,
+    header_style: ParagraphStyle,
+    cell_style: ParagraphStyle,
+) -> Table:
     headers = ["順位", "所属", "人数"] + [f"上位{n}人平均" for n in table.top_ns]
-    col_widths = [12 * mm, 42 * mm, 12 * mm] + [24 * mm] * len(table.top_ns)
-    data: list[list[Any]] = [headers]
-    for entry in table.entries:
-        row = [
-            str(entry.rank),
-            entry.affiliation,
-            str(entry.athlete_count),
+    col_widths = [12 * mm, 46 * mm, 12 * mm] + [26 * mm] * len(table.top_ns)
+    data: list[list[Any]] = [
+        [
+            _ranking_cell(h, header_style, header=True, align="center" if i != 1 else "left")
+            for i, h in enumerate(headers)
         ]
-        row.extend(_format_average(entry.averages.get(n)) for n in table.top_ns)
-        data.append(row)
+    ]
+    for entry in table.entries:
+        data.append(
+            [
+                _ranking_cell(entry.rank, cell_style, align="center"),
+                _ranking_cell(entry.affiliation, cell_style),
+                _ranking_cell(entry.athlete_count, cell_style, align="center"),
+                *[
+                    _ranking_cell(_format_average(entry.averages.get(n)), cell_style, align="center")
+                    for n in table.top_ns
+                ],
+            ]
+        )
 
     ranking_table = Table(data, colWidths=col_widths, repeatRows=1)
     ranking_table.setStyle(
         TableStyle(
             [
-                ("FONT", (0, 0), (-1, -1), font_name, 8),
-                ("FONT", (0, 0), (-1, 0), font_name, 9),
                 ("BACKGROUND", (0, 0), (-1, 0), colors.HexColor("#E8EEF4")),
                 ("GRID", (0, 0), (-1, -1), 0.25, colors.HexColor("#CCCCCC")),
                 ("VALIGN", (0, 0), (-1, -1), "MIDDLE"),
-                ("ALIGN", (0, 0), (0, -1), "CENTER"),
-                ("ALIGN", (2, 0), (2, -1), "CENTER"),
                 ("LEFTPADDING", (0, 0), (-1, -1), 4),
                 ("RIGHTPADDING", (0, 0), (-1, -1), 4),
-                ("TOPPADDING", (0, 0), (-1, -1), 3),
-                ("BOTTOMPADDING", (0, 0), (-1, -1), 3),
+                ("TOPPADDING", (0, 0), (-1, -1), 4),
+                ("BOTTOMPADDING", (0, 0), (-1, -1), 4),
             ]
         )
     )
@@ -215,6 +239,20 @@ def build_pdf(
         textColor=colors.HexColor("#666666"),
         spaceAfter=4,
     )
+    ranking_header_style = ParagraphStyle(
+        "RankingTableHeaderJP",
+        fontName=font_name,
+        fontSize=9,
+        leading=11,
+        textColor=colors.HexColor("#1A1A1A"),
+    )
+    ranking_cell_style = ParagraphStyle(
+        "RankingTableCellJP",
+        fontName=font_name,
+        fontSize=8,
+        leading=10,
+        textColor=colors.HexColor("#1A1A1A"),
+    )
 
     from arato_tamana_records import group_records_by_gender
 
@@ -232,15 +270,18 @@ def build_pdf(
         Paragraph("所属別ランキング（3000m 予想タイム）", ranking_section_style),
         Paragraph(
             "各選手の 3000m SB → 1500m SB（+15秒/km換算）→ 800m SB（+10秒/km→1500m→3000m）"
-            " の順で予想タイムを算出し、所属内の上位平均で順位付けしています。",
+            " の順で予想タイムを算出し、所属内の上位平均で順位付けしています。"
+            " 男子は上位4/5/6人平均、女子は上位3/4/5人平均です。",
             ranking_note_style,
         ),
         Paragraph("男子", gender_style),
-        _build_ranking_table(boys_ranking, font_name),
-        Spacer(1, 3 * mm),
+        _build_ranking_table(boys_ranking, ranking_header_style, ranking_cell_style),
+        Spacer(1, 4 * mm),
         Paragraph("女子", gender_style),
-        _build_ranking_table(girls_ranking, font_name),
-        Spacer(1, 6 * mm),
+        _build_ranking_table(girls_ranking, ranking_header_style, ranking_cell_style),
+        PageBreak(),
+        Paragraph("所属別 全記録一覧", ranking_section_style),
+        Spacer(1, 4 * mm),
     ]
 
     for section in sections:
