@@ -16,8 +16,9 @@ from reportlab.pdfbase.ttfonts import TTFont
 from reportlab.platypus import PageBreak, Paragraph, SimpleDocTemplate, Spacer, Table, TableStyle
 
 from arato_tamana_ranking import (
+    CategoryRankings,
     GenderRankingTable,
-    compute_affiliation_rankings,
+    compute_all_affiliation_rankings,
     format_seconds,
 )
 from arato_tamana_records import AffiliationSection, RecordRow, shorten_url
@@ -165,7 +166,7 @@ def _ranking_paragraph_styles(font_name: str) -> dict[str, ParagraphStyle]:
     }
 
 
-def _ranking_story(
+def _gender_ranking_block(
     boys_ranking: GenderRankingTable,
     girls_ranking: GenderRankingTable,
     styles: dict[str, ParagraphStyle],
@@ -173,14 +174,7 @@ def _ranking_story(
     page_break_before_girls: bool = True,
 ) -> list[Any]:
     story: list[Any] = [
-        Paragraph("所属別ランキング（3000m 予想タイム）", styles["section"]),
-        Paragraph(
-            "各選手の 3000m SB → 1500m SB（+15秒/km換算）→ 800m SB（+10秒/km→1500m→3000m）"
-            " の順で予想タイムを算出し、所属内の上位平均で順位付けしています。"
-            " 男子は上位4/5/6人平均、女子は上位3/4/5人平均です。",
-            styles["note"],
-        ),
-        Paragraph("男子ランキング", styles["gender"]),
+        Paragraph("男子", styles["gender"]),
         _build_ranking_table(boys_ranking, styles["header"], styles["cell"]),
     ]
     if page_break_before_girls:
@@ -189,11 +183,56 @@ def _ranking_story(
         story.append(Spacer(1, 4 * mm))
     story.extend(
         [
-            Paragraph("女子ランキング", styles["gender"]),
+            Paragraph("女子", styles["gender"]),
             _build_ranking_table(girls_ranking, styles["header"], styles["cell"]),
         ]
     )
     return story
+
+
+def _category_ranking_story(
+    category: CategoryRankings,
+    styles: dict[str, ParagraphStyle],
+    *,
+    page_break_before: bool = False,
+) -> list[Any]:
+    story: list[Any] = []
+    if page_break_before:
+        story.append(PageBreak())
+    story.extend(
+        [
+            Paragraph(category.spec.title, styles["section"]),
+            Paragraph(category.spec.note, styles["note"]),
+            *_gender_ranking_block(category.boys, category.girls, styles),
+        ]
+    )
+    return story
+
+
+def _all_rankings_story(
+    categories: list[CategoryRankings],
+    styles: dict[str, ParagraphStyle],
+) -> list[Any]:
+    story: list[Any] = [
+        Paragraph("所属別ランキング", styles["section"]),
+        Paragraph(
+            "800m / 1500m / 3000m の実記録と 3000m 予想タイムを、"
+            "所属ごとに上位平均で順位付けしています。",
+            styles["note"],
+        ),
+        Spacer(1, 2 * mm),
+    ]
+    for idx, category in enumerate(categories):
+        story.extend(_category_ranking_story(category, styles, page_break_before=idx > 0))
+    return story
+
+
+def _ranking_bookmarks(categories: list[CategoryRankings]) -> dict[str, tuple[str, int]]:
+    bookmarks: dict[str, tuple[str, int]] = {"所属別ランキング": ("ranking-index", 0)}
+    for category in categories:
+        bookmarks[category.spec.title] = (f"ranking-{category.spec.key}", 1)
+    bookmarks["所属別 全記録一覧"] = ("records", 0)
+    return bookmarks
 
 
 def _build_ranking_table(
@@ -289,11 +328,11 @@ def build_ranking_pdf(
     title: str,
     font_path: Path | None = None,
 ) -> Path:
-    """所属別ランキングのみの PDF（2ページ）を生成する。"""
+    """所属別ランキングのみの PDF を生成する。"""
     font_name = register_font(font_path)
     output_path.parent.mkdir(parents=True, exist_ok=True)
 
-    boys_ranking, girls_ranking = compute_affiliation_rankings(sections)
+    categories = compute_all_affiliation_rankings(sections)
     ranking_styles = _ranking_paragraph_styles(font_name)
     generated_at = datetime.now().strftime("%Y-%m-%d %H:%M")
 
@@ -319,11 +358,7 @@ def build_ranking_pdf(
     doc = _doc_template(
         output_path,
         title,
-        bookmarks={
-            "所属別ランキング（3000m 予想タイム）": ("ranking", 0),
-            "男子ランキング": ("boys-ranking", 1),
-            "女子ランキング": ("girls-ranking", 1),
-        },
+        bookmarks=_ranking_bookmarks(categories),
     )
     story: list[Any] = [
         Paragraph(title, title_style),
@@ -332,7 +367,7 @@ def build_ranking_pdf(
             meta_style,
         ),
         Spacer(1, 4 * mm),
-        *_ranking_story(boys_ranking, girls_ranking, ranking_styles),
+        *_all_rankings_story(categories, ranking_styles),
     ]
     doc.build(story)
     return output_path
@@ -347,15 +382,11 @@ def build_pdf(
     font_name = register_font(font_path)
     output_path.parent.mkdir(parents=True, exist_ok=True)
 
+    categories = compute_all_affiliation_rankings(sections)
     doc = _doc_template(
         output_path,
         title,
-        bookmarks={
-            "所属別ランキング（3000m 予想タイム）": ("ranking", 0),
-            "男子ランキング": ("boys-ranking", 1),
-            "女子ランキング": ("girls-ranking", 1),
-            "所属別 全記録一覧": ("records", 0),
-        },
+        bookmarks=_ranking_bookmarks(categories),
     )
 
     styles = getSampleStyleSheet()
@@ -412,7 +443,7 @@ def build_pdf(
 
     total_records = sum(len(section.records) for section in sections)
     generated_at = datetime.now().strftime("%Y-%m-%d %H:%M")
-    boys_ranking, girls_ranking = compute_affiliation_rankings(sections)
+    ranking_page_count = len(categories) * 2
 
     story: list[Any] = [
         Paragraph(title, title_style),
@@ -421,11 +452,12 @@ def build_pdf(
             meta_style,
         ),
         Paragraph(
-            "1〜2ページ: 所属別ランキング　｜　3ページ以降: 全記録一覧",
+            f"1〜{ranking_page_count}ページ: 所属別ランキング（800m/1500m/3000m 実記録 + 3000m 予想）"
+            "　｜　以降: 全記録一覧",
             meta_style,
         ),
         Spacer(1, 4 * mm),
-        *_ranking_story(boys_ranking, girls_ranking, ranking_styles),
+        *_all_rankings_story(categories, ranking_styles),
         PageBreak(),
         Paragraph("所属別 全記録一覧", records_section_style),
         Spacer(1, 4 * mm),

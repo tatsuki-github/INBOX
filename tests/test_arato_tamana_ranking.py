@@ -9,7 +9,9 @@ ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "scripts"))
 
 from arato_tamana_ranking import (
+    best_seconds_at_distance,
     compute_affiliation_rankings,
+    compute_all_affiliation_rankings,
     format_seconds,
     project_3000m_seconds,
     top_n_average,
@@ -58,6 +60,36 @@ def test_project_3000m_prefers_actual_3000m():
 
 def test_top_n_average_uses_available_when_fewer():
     assert top_n_average([500.0, 520.0, 540.0], 6) == (500.0 + 520.0 + 540.0) / 3
+
+
+def test_best_seconds_at_distance_prefers_sb():
+    rows = [
+        _row(distance="800m", record_seconds=130.0, sb_adopted=False),
+        _row(distance="800m", record_seconds=120.0, sb_adopted=True),
+    ]
+    assert best_seconds_at_distance(rows, "800m") == 120.0
+
+
+def test_best_seconds_at_distance_falls_back_to_best():
+    rows = [_row(distance="1500m", record_seconds=280.0, sb_adopted=False)]
+    assert best_seconds_at_distance(rows, "1500m") == 280.0
+
+
+def test_compute_all_affiliation_rankings_includes_actual_distances():
+    section = AffiliationSection(
+        affiliation="テスト中",
+        records=[
+            _row(name="A", distance="800m", record_seconds=130.0),
+            _row(name="B", distance="1500m", record_seconds=280.0),
+            _row(name="C", distance="3000m", record_seconds=600.0),
+        ],
+    )
+    categories = compute_all_affiliation_rankings([section])
+    keys = [category.spec.key for category in categories]
+    assert keys == ["800m", "1500m", "3000m", "3000m-projected"]
+    assert categories[0].boys.entries[0].athlete_count == 1
+    assert categories[1].boys.entries[0].athlete_count == 1
+    assert categories[2].boys.entries[0].athlete_count == 1
 
 
 def test_compute_affiliation_rankings_orders_by_primary_average():

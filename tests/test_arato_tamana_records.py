@@ -131,11 +131,11 @@ def test_build_pdf_smoke(tmp_path, sample_rows):
         from pypdf import PdfReader
 
         reader = PdfReader(str(out))
-        page_text = reader.pages[0].extract_text() or ""
-        assert "所属別ランキング" in page_text
-        assert "男子ランキング" in page_text
-        page2_text = reader.pages[1].extract_text() or ""
-        assert "女子ランキング" in page2_text
+        all_text = "\n".join((page.extract_text() or "") for page in reader.pages[:10])
+        assert "800m 実記録" in all_text
+        assert "1500m 実記録" in all_text
+        assert "3000m 実記録" in all_text
+        assert "3000m 予想タイム" in all_text
     except ImportError:
         pass
 
@@ -151,8 +151,9 @@ def test_build_ranking_pdf_smoke(tmp_path, sample_rows):
         from pypdf import PdfReader
 
         reader = PdfReader(str(out))
-        assert len(reader.pages) == 2
-        assert "男子ランキング" in (reader.pages[0].extract_text() or "")
-        assert "女子ランキング" in (reader.pages[1].extract_text() or "")
+        assert len(reader.pages) >= 4
+        all_text = "\n".join((page.extract_text() or "") for page in reader.pages)
+        assert "800m 実記録" in all_text
+        assert "3000m 予想タイム" in all_text
     except ImportError:
         pass
