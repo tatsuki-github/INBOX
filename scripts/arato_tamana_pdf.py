@@ -22,8 +22,8 @@ DEFAULT_FONT = ROOT / "assets" / "fonts" / "NotoSansJP-Regular.ttf"
 FONT_NAME = "NotoSansJP"
 FALLBACK_FONT = "HeiseiKakuGo-W5"
 
-COLUMNS = ["名前", "学年", "性別", "距離", "記録", "SB", "日付", "URL"]
-COL_WIDTHS = [28 * mm, 12 * mm, 12 * mm, 16 * mm, 22 * mm, 18 * mm, 22 * mm, 42 * mm]
+COLUMNS = ["名前", "学年", "性別", "距離", "記録", "日付", "URL"]
+COL_WIDTHS = [28 * mm, 12 * mm, 12 * mm, 16 * mm, 24 * mm, 24 * mm, 48 * mm]
 
 
 def register_font(font_path: Path | None = None) -> str:
@@ -45,7 +45,6 @@ def _record_display(row: RecordRow, cell_style: ParagraphStyle) -> list[Any]:
     if row.sb_adopted and time_display and "★" not in time_display:
         time_display = f"{time_display} ★"
     grade = "" if row.grade is None else str(row.grade)
-    sb = row.sb_text if row.sb_adopted else ""
 
     if row.url:
         label = escape(shorten_url(row.url))
@@ -63,7 +62,6 @@ def _record_display(row: RecordRow, cell_style: ParagraphStyle) -> list[Any]:
         row.gender,
         row.distance,
         time_display,
-        sb,
         row.date,
         url_cell,
     ]
