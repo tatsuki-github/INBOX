@@ -241,7 +241,7 @@ python3 scripts/generate_arato_tamana_pdf.py \
 
 | 列 | 内容 |
 |---|---|
-| 名前 / 学年 / 性別 / 距離 / 記録 / SB / 日付 / URL | Notion の各列。`SB採用=true` の行は記録に `★` 付与 |
+| 名前 / 学年 / 性別 / 距離 / 記録 / 日付 / URL | Notion の各列。`SB採用=true` の行は記録に `★` 付与 |
 
 ### Google Drive へのアップロード
 
