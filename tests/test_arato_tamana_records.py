@@ -16,6 +16,7 @@ from arato_tamana_records import (
     RecordRow,
     filter_rows,
     group_by_affiliation,
+    group_records_by_gender,
     load_cache,
     load_config,
     matches_arato_tamana,
@@ -84,6 +85,25 @@ def test_group_by_affiliation(sample_rows):
     assert len(atrc.records) == 2
 
 
+def test_sort_records_groups_gender_before_name():
+    rows = [
+        RecordRow(name="B", affiliation="岱明中", grade=2, gender="女子", distance="800m", time_text="2:30", sb_text="", sb_adopted=False, date="2026/01/02", url=""),
+        RecordRow(name="A", affiliation="岱明中", grade=2, gender="男子", distance="800m", time_text="2:00", sb_text="", sb_adopted=False, date="2026/01/01", url=""),
+    ]
+    sorted_rows = sort_records(rows)
+    assert [row.gender for row in sorted_rows] == ["男子", "女子"]
+
+
+def test_group_records_by_gender():
+    rows = [
+        RecordRow(name="B", affiliation="岱明中", grade=2, gender="女子", distance="800m", time_text="2:30", sb_text="", sb_adopted=False, date="2026/01/02", url=""),
+        RecordRow(name="A", affiliation="岱明中", grade=2, gender="男子", distance="800m", time_text="2:00", sb_text="", sb_adopted=False, date="2026/01/01", url=""),
+    ]
+    groups = group_records_by_gender(rows)
+    assert [label for label, _ in groups] == ["男子", "女子"]
+    assert groups[0][1][0].name == "A"
+
+
 def test_shorten_url():
     url = "http://www.kumariku.org/26/26,6,13tsushin/rel175.html"
     short = shorten_url(url, max_len=20)
@@ -106,3 +126,4 @@ def test_build_pdf_smoke(tmp_path, sample_rows):
     build_pdf(sections, out, "テスト PDF")
     assert out.exists()
     assert out.stat().st_size > 1000
+    assert b"/URI" in out.read_bytes()

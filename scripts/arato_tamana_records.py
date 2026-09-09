@@ -14,6 +14,7 @@ ROOT = Path(__file__).resolve().parent.parent
 DEFAULT_CONFIG = ROOT / "input" / "arato_tamana_report.yaml"
 
 DISTANCE_ORDER = {"800m": 0, "1500m": 1, "3000m": 2, "3000mSC": 3}
+GENDER_ORDER = {"男子": 0, "女子": 1}
 SCHOOL_AFFILIATION_HINTS = ("中", "附")
 
 
@@ -194,9 +195,21 @@ def sort_records(records: list[RecordRow]) -> list[RecordRow]:
         y, mo, d = _parse_date_key(row.date)
         dist = DISTANCE_ORDER.get(row.distance, 99)
         seconds = row.record_seconds if row.record_seconds is not None else 99999.0
-        return (row.name, y, mo, d, dist, seconds)
+        gender = GENDER_ORDER.get(row.gender, 99)
+        return (gender, row.name, y, mo, d, dist, seconds)
 
     return sorted(records, key=key)
+
+
+def group_records_by_gender(records: list[RecordRow]) -> list[tuple[str, list[RecordRow]]]:
+    """所属内で男子→女子の順にグループ化する。"""
+    groups: dict[str, list[RecordRow]] = {}
+    for row in records:
+        gender = row.gender or "（性別不明）"
+        groups.setdefault(gender, []).append(row)
+
+    ordered_genders = sorted(groups.keys(), key=lambda g: GENDER_ORDER.get(g, 99))
+    return [(gender, sort_records(groups[gender])) for gender in ordered_genders]
 
 
 def _affiliation_sort_key(affiliation: str, count: int) -> tuple:
