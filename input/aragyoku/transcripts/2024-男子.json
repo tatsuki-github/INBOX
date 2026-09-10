@@ -1,0 +1,1226 @@
+{
+  "year": 2024,
+  "gender": "男子",
+  "date": "2024-10-16",
+  "source_drive_id": "1alWK5XLEUuv0YXM_KLNg9NHfhi_5sYxI",
+  "legs": [
+    {
+      "leg": 1,
+      "distance_km": 3.0
+    },
+    {
+      "leg": 2,
+      "distance_km": 2.0
+    },
+    {
+      "leg": 3,
+      "distance_km": 2.0
+    },
+    {
+      "leg": 4,
+      "distance_km": 2.0
+    },
+    {
+      "leg": 5,
+      "distance_km": 2.0
+    },
+    {
+      "leg": 6,
+      "distance_km": 3.0
+    }
+  ],
+  "teams": [
+    {
+      "rank": 1,
+      "team": "南関",
+      "total": "56:38",
+      "legs": [
+        {
+          "leg": 1,
+          "name": "坂梨天飛",
+          "grade": 3,
+          "split": "9:16",
+          "cumulative": "9:16",
+          "passing_rank": 2,
+          "split_rank": 2,
+          "split_record": false,
+          "status": "ok",
+          "raw_name_grade": "坂梨天飛(3)"
+        },
+        {
+          "leg": 2,
+          "name": "重田一輝",
+          "grade": 3,
+          "split": "9:23",
+          "cumulative": "18:39",
+          "passing_rank": 2,
+          "split_rank": 2,
+          "split_record": false,
+          "status": "ok",
+          "raw_name_grade": "重田一輝(3)"
+        },
+        {
+          "leg": 3,
+          "name": "奈良原優",
+          "grade": 3,
+          "split": "9:48",
+          "cumulative": "28:27",
+          "passing_rank": 2,
+          "split_rank": 3,
+          "split_record": false,
+          "status": "ok",
+          "raw_name_grade": "奈良原優(3)"
+        },
+        {
+          "leg": 4,
+          "name": "田崎空汰",
+          "grade": 3,
+          "split": "9:13",
+          "cumulative": "37:40",
+          "passing_rank": 1,
+          "split_rank": 1,
+          "split_record": true,
+          "status": "ok",
+          "raw_name_grade": "田崎空汰(3)"
+        },
+        {
+          "leg": 5,
+          "name": "内田健太",
+          "grade": 3,
+          "split": "9:47",
+          "cumulative": "47:27",
+          "passing_rank": 1,
+          "split_rank": 4,
+          "split_record": false,
+          "status": "ok",
+          "raw_name_grade": "内田健太(3)"
+        },
+        {
+          "leg": 6,
+          "name": "高木悠人",
+          "grade": 3,
+          "split": "9:11",
+          "cumulative": "56:38",
+          "passing_rank": 1,
+          "split_rank": 1,
+          "split_record": true,
+          "status": "ok",
+          "raw_name_grade": "高木悠人(3)"
+        }
+      ]
+    },
+    {
+      "rank": 2,
+      "team": "玉高附属",
+      "total": "58:13",
+      "legs": [
+        {
+          "leg": 1,
+          "name": "草野愛斗",
+          "grade": 3,
+          "split": "9:21",
+          "cumulative": "9:21",
+          "passing_rank": 5,
+          "split_rank": 5,
+          "split_record": false,
+          "status": "ok",
+          "raw_name_grade": "草野愛斗(3)"
+        },
+        {
+          "leg": 2,
+          "name": "草野理唯",
+          "grade": 1,
+          "split": "9:31",
+          "cumulative": "18:52",
+          "passing_rank": 3,
+          "split_rank": 4,
+          "split_record": false,
+          "status": "ok",
+          "raw_name_grade": "草野理唯(1)"
+        },
+        {
+          "leg": 3,
+          "name": "亀井遼希",
+          "grade": 3,
+          "split": "9:24",
+          "cumulative": "28:16",
+          "passing_rank": 1,
+          "split_rank": 1,
+          "split_record": true,
+          "status": "ok",
+          "raw_name_grade": "亀井遼希(3)"
+        },
+        {
+          "leg": 4,
+          "name": "星先理一",
+          "grade": 3,
+          "split": "10:40",
+          "cumulative": "38:56",
+          "passing_rank": 2,
+          "split_rank": 5,
+          "split_record": false,
+          "status": "ok",
+          "raw_name_grade": "星先理一(3)"
+        },
+        {
+          "leg": 5,
+          "name": "秋原康秀",
+          "grade": 1,
+          "split": "9:42",
+          "cumulative": "48:38",
+          "passing_rank": 2,
+          "split_rank": 3,
+          "split_record": false,
+          "status": "ok",
+          "raw_name_grade": "秋原康秀(1)"
+        },
+        {
+          "leg": 6,
+          "name": "内野遥翔",
+          "grade": 1,
+          "split": "9:35",
+          "cumulative": "58:13",
+          "passing_rank": 2,
+          "split_rank": 3,
+          "split_record": false,
+          "status": "ok",
+          "raw_name_grade": "内野遥翔(1)"
+        }
+      ]
+    },
+    {
+      "rank": 3,
+      "team": "菊水",
+      "total": "58:56",
+      "legs": [
+        {
+          "leg": 1,
+          "name": "隈部侑成",
+          "grade": 1,
+          "split": "9:30",
+          "cumulative": "9:30",
+          "passing_rank": 9,
+          "split_rank": 9,
+          "split_record": false,
+          "status": "ok",
+          "raw_name_grade": "隈部侑成(1)"
+        },
+        {
+          "leg": 2,
+          "name": "木村弘毅",
+          "grade": 3,
+          "split": "9:34",
+          "cumulative": "19:04",
+          "passing_rank": 6,
+          "split_rank": 5,
+          "split_record": false,
+          "status": "ok",
+          "raw_name_grade": "木村弘毅(3)"
+        },
+        {
+          "leg": 3,
+          "name": "近藤弘樹",
+          "grade": 2,
+          "split": "10:42",
+          "cumulative": "29:46",
+          "passing_rank": 8,
+          "split_rank": 10,
+          "split_record": false,
+          "status": "ok",
+          "raw_name_grade": "近藤弘樹(2)"
+        },
+        {
+          "leg": 4,
+          "name": "辻本愛琉",
+          "grade": 2,
+          "split": "9:35",
+          "cumulative": "39:21",
+          "passing_rank": 3,
+          "split_rank": 2,
+          "split_record": false,
+          "status": "ok",
+          "raw_name_grade": "辻本愛琉(2)"
+        },
+        {
+          "leg": 5,
+          "name": "丸山白虎",
+          "grade": 2,
+          "split": "9:41",
+          "cumulative": "49:02",
+          "passing_rank": 3,
+          "split_rank": 2,
+          "split_record": false,
+          "status": "ok",
+          "raw_name_grade": "丸山白虎(2)"
+        },
+        {
+          "leg": 6,
+          "name": "石原健哉斗",
+          "grade": 2,
+          "split": "9:54",
+          "cumulative": "58:56",
+          "passing_rank": 3,
+          "split_rank": 5,
+          "split_record": false,
+          "status": "ok",
+          "raw_name_grade": "石原健哉斗(2)"
+        }
+      ]
+    },
+    {
+      "rank": 4,
+      "team": "荒尾海陽",
+      "total": "59:27",
+      "legs": [
+        {
+          "leg": 1,
+          "name": "吉田唯人",
+          "grade": 3,
+          "split": "9:29",
+          "cumulative": "9:29",
+          "passing_rank": 8,
+          "split_rank": 8,
+          "split_record": false,
+          "status": "ok",
+          "raw_name_grade": "吉田唯人(3)"
+        },
+        {
+          "leg": 2,
+          "name": "葛城拓馬",
+          "grade": 3,
+          "split": "9:48",
+          "cumulative": "19:17",
+          "passing_rank": 8,
+          "split_rank": 9,
+          "split_record": false,
+          "status": "ok",
+          "raw_name_grade": "葛城拓馬(3)"
+        },
+        {
+          "leg": 3,
+          "name": "坂口翔仁",
+          "grade": 3,
+          "split": "9:27",
+          "cumulative": "28:44",
+          "passing_rank": 4,
+          "split_rank": 2,
+          "split_record": false,
+          "status": "ok",
+          "raw_name_grade": "坂口翔仁(3)"
+        },
+        {
+          "leg": 4,
+          "name": "岸田望空",
+          "grade": 3,
+          "split": "11:02",
+          "cumulative": "39:46",
+          "passing_rank": 6,
+          "split_rank": 10,
+          "split_record": false,
+          "status": "ok",
+          "raw_name_grade": "岸田望空(3)"
+        },
+        {
+          "leg": 5,
+          "name": "宮崎忠清",
+          "grade": 3,
+          "split": "9:47",
+          "cumulative": "49:33",
+          "passing_rank": 4,
+          "split_rank": 4,
+          "split_record": false,
+          "status": "ok",
+          "raw_name_grade": "宮崎忠清(3)"
+        },
+        {
+          "leg": 6,
+          "name": "本山惣晴",
+          "grade": 3,
+          "split": "9:54",
+          "cumulative": "59:27",
+          "passing_rank": 4,
+          "split_rank": 5,
+          "split_record": false,
+          "status": "ok",
+          "raw_name_grade": "本山惣晴(3)"
+        }
+      ]
+    },
+    {
+      "rank": 5,
+      "team": "三加和",
+      "total": "59:43",
+      "legs": [
+        {
+          "leg": 1,
+          "name": "市村一朗",
+          "grade": 3,
+          "split": "9:51",
+          "cumulative": "9:51",
+          "passing_rank": 13,
+          "split_rank": 13,
+          "split_record": false,
+          "status": "ok",
+          "raw_name_grade": "市村一朗(3)"
+        },
+        {
+          "leg": 2,
+          "name": "荒木琉琉",
+          "grade": 3,
+          "split": "8:41",
+          "cumulative": "18:32",
+          "passing_rank": 1,
+          "split_rank": 1,
+          "split_record": true,
+          "status": "ok",
+          "raw_name_grade": "荒木琉琉(3)"
+        },
+        {
+          "leg": 3,
+          "name": "山下瑛人",
+          "grade": 2,
+          "split": "10:03",
+          "cumulative": "28:35",
+          "passing_rank": 3,
+          "split_rank": 5,
+          "split_record": false,
+          "status": "ok",
+          "raw_name_grade": "山下瑛人(2)"
+        },
+        {
+          "leg": 4,
+          "name": "福山凌央",
+          "grade": 3,
+          "split": "11:04",
+          "cumulative": "39:39",
+          "passing_rank": 4,
+          "split_rank": 11,
+          "split_record": false,
+          "status": "ok",
+          "raw_name_grade": "福山凌央(3)"
+        },
+        {
+          "leg": 5,
+          "name": "鍋島司",
+          "grade": 3,
+          "split": "10:34",
+          "cumulative": "50:13",
+          "passing_rank": 7,
+          "split_rank": 13,
+          "split_record": false,
+          "status": "ok",
+          "raw_name_grade": "鍋島司(3)"
+        },
+        {
+          "leg": 6,
+          "name": "北原汰一",
+          "grade": 3,
+          "split": "9:30",
+          "cumulative": "59:43",
+          "passing_rank": 5,
+          "split_rank": 2,
+          "split_record": false,
+          "status": "ok",
+          "raw_name_grade": "北原汰一(3)"
+        }
+      ]
+    },
+    {
+      "rank": 6,
+      "team": "長洲",
+      "total": "60:00",
+      "legs": [
+        {
+          "leg": 1,
+          "name": "猿渡結斗",
+          "grade": 3,
+          "split": "9:25",
+          "cumulative": "9:25",
+          "passing_rank": 6,
+          "split_rank": 6,
+          "split_record": false,
+          "status": "ok",
+          "raw_name_grade": "猿渡結斗(3)"
+        },
+        {
+          "leg": 2,
+          "name": "村上涼童",
+          "grade": 3,
+          "split": "9:51",
+          "cumulative": "19:16",
+          "passing_rank": 7,
+          "split_rank": 10,
+          "split_record": false,
+          "status": "ok",
+          "raw_name_grade": "村上涼童(3)"
+        },
+        {
+          "leg": 3,
+          "name": "前畑慶千羽",
+          "grade": 3,
+          "split": "10:04",
+          "cumulative": "29:20",
+          "passing_rank": 6,
+          "split_rank": 6,
+          "split_record": false,
+          "status": "ok",
+          "raw_name_grade": "前畑慶千羽(3)"
+        },
+        {
+          "leg": 4,
+          "name": "森永温大",
+          "grade": 3,
+          "split": "10:33",
+          "cumulative": "39:53",
+          "passing_rank": 7,
+          "split_rank": 4,
+          "split_record": false,
+          "status": "ok",
+          "raw_name_grade": "森永温大(3)"
+        },
+        {
+          "leg": 5,
+          "name": "村上煌心",
+          "grade": 3,
+          "split": "9:53",
+          "cumulative": "49:46",
+          "passing_rank": 5,
+          "split_rank": 6,
+          "split_record": false,
+          "status": "ok",
+          "raw_name_grade": "村上煌心(3)"
+        },
+        {
+          "leg": 6,
+          "name": "濱北佑斗",
+          "grade": 2,
+          "split": "10:14",
+          "cumulative": "60:00",
+          "passing_rank": 6,
+          "split_rank": 9,
+          "split_record": false,
+          "status": "ok",
+          "raw_name_grade": "濱北佑斗(2)"
+        }
+      ]
+    },
+    {
+      "rank": 7,
+      "team": "玉名",
+      "total": "60:12",
+      "legs": [
+        {
+          "leg": 1,
+          "name": "神之田幸太郎",
+          "grade": 3,
+          "split": "9:28",
+          "cumulative": "9:28",
+          "passing_rank": 7,
+          "split_rank": 7,
+          "split_record": false,
+          "status": "ok",
+          "raw_name_grade": "神之田幸太郎(3)"
+        },
+        {
+          "leg": 2,
+          "name": "杉本光",
+          "grade": 2,
+          "split": "9:30",
+          "cumulative": "18:58",
+          "passing_rank": 4,
+          "split_rank": 3,
+          "split_record": false,
+          "status": "ok",
+          "raw_name_grade": "杉本光(2)"
+        },
+        {
+          "leg": 3,
+          "name": "河野壮太",
+          "grade": 1,
+          "split": "9:57",
+          "cumulative": "28:55",
+          "passing_rank": 5,
+          "split_rank": 4,
+          "split_record": false,
+          "status": "ok",
+          "raw_name_grade": "河野壮太(1)"
+        },
+        {
+          "leg": 4,
+          "name": "山本大翔",
+          "grade": 3,
+          "split": "10:46",
+          "cumulative": "39:41",
+          "passing_rank": 5,
+          "split_rank": 6,
+          "split_record": false,
+          "status": "ok",
+          "raw_name_grade": "山本大翔(3)"
+        },
+        {
+          "leg": 5,
+          "name": "隈元陽太",
+          "grade": 2,
+          "split": "10:06",
+          "cumulative": "49:47",
+          "passing_rank": 6,
+          "split_rank": 8,
+          "split_record": false,
+          "status": "ok",
+          "raw_name_grade": "隈元陽太(2)"
+        },
+        {
+          "leg": 6,
+          "name": "中原和真",
+          "grade": 3,
+          "split": "10:25",
+          "cumulative": "60:12",
+          "passing_rank": 7,
+          "split_rank": 13,
+          "split_record": false,
+          "status": "ok",
+          "raw_name_grade": "中原和真(3)"
+        }
+      ]
+    },
+    {
+      "rank": 8,
+      "team": "荒尾四",
+      "total": "60:49",
+      "legs": [
+        {
+          "leg": 1,
+          "name": "吉田慶仁",
+          "grade": 3,
+          "split": "9:40",
+          "cumulative": "9:40",
+          "passing_rank": 10,
+          "split_rank": 10,
+          "split_record": false,
+          "status": "ok",
+          "raw_name_grade": "吉田慶仁(3)"
+        },
+        {
+          "leg": 2,
+          "name": "岸森耀",
+          "grade": 3,
+          "split": "9:42",
+          "cumulative": "19:22",
+          "passing_rank": 11,
+          "split_rank": 7,
+          "split_record": false,
+          "status": "ok",
+          "raw_name_grade": "岸森耀(3)"
+        },
+        {
+          "leg": 3,
+          "name": "松村陸汰",
+          "grade": 2,
+          "split": "10:42",
+          "cumulative": "30:04",
+          "passing_rank": 12,
+          "split_rank": 10,
+          "split_record": false,
+          "status": "ok",
+          "raw_name_grade": "松村陸汰(2)"
+        },
+        {
+          "leg": 4,
+          "name": "藤原絢己",
+          "grade": 1,
+          "split": "10:47",
+          "cumulative": "40:51",
+          "passing_rank": 8,
+          "split_rank": 7,
+          "split_record": false,
+          "status": "ok",
+          "raw_name_grade": "藤原絢己(1)"
+        },
+        {
+          "leg": 5,
+          "name": "本戸優貴",
+          "grade": 2,
+          "split": "10:04",
+          "cumulative": "50:55",
+          "passing_rank": 8,
+          "split_rank": 7,
+          "split_record": false,
+          "status": "ok",
+          "raw_name_grade": "本戸優貴(2)"
+        },
+        {
+          "leg": 6,
+          "name": "猿渡勇雅",
+          "grade": 3,
+          "split": "9:54",
+          "cumulative": "60:49",
+          "passing_rank": 8,
+          "split_rank": 5,
+          "split_record": false,
+          "status": "ok",
+          "raw_name_grade": "猿渡勇雅(3)"
+        }
+      ]
+    },
+    {
+      "rank": 9,
+      "team": "荒尾三",
+      "total": "61:15",
+      "legs": [
+        {
+          "leg": 1,
+          "name": "江口大尊",
+          "grade": 2,
+          "split": "9:18",
+          "cumulative": "9:18",
+          "passing_rank": 4,
+          "split_rank": 4,
+          "split_record": false,
+          "status": "ok",
+          "raw_name_grade": "江口大尊(2)"
+        },
+        {
+          "leg": 2,
+          "name": "落合陸来",
+          "grade": 3,
+          "split": "10:57",
+          "cumulative": "20:15",
+          "passing_rank": 13,
+          "split_rank": 15,
+          "split_record": false,
+          "status": "ok",
+          "raw_name_grade": "落合陸来(3)"
+        },
+        {
+          "leg": 3,
+          "name": "中村桜士郎",
+          "grade": 3,
+          "split": "10:45",
+          "cumulative": "31:00",
+          "passing_rank": 13,
+          "split_rank": 12,
+          "split_record": false,
+          "status": "ok",
+          "raw_name_grade": "中村桜士郎(3)"
+        },
+        {
+          "leg": 4,
+          "name": "池田希",
+          "grade": 2,
+          "split": "10:53",
+          "cumulative": "41:53",
+          "passing_rank": 13,
+          "split_rank": 8,
+          "split_record": false,
+          "status": "ok",
+          "raw_name_grade": "池田希(2)"
+        },
+        {
+          "leg": 5,
+          "name": "永尾海斗",
+          "grade": 3,
+          "split": "9:38",
+          "cumulative": "51:31",
+          "passing_rank": 11,
+          "split_rank": 1,
+          "split_record": true,
+          "status": "ok",
+          "raw_name_grade": "永尾海斗(3)"
+        },
+        {
+          "leg": 6,
+          "name": "徳永大河",
+          "grade": 3,
+          "split": "9:44",
+          "cumulative": "61:15",
+          "passing_rank": 9,
+          "split_rank": 4,
+          "split_record": false,
+          "status": "ok",
+          "raw_name_grade": "徳永大河(3)"
+        }
+      ]
+    },
+    {
+      "rank": 10,
+      "team": "玉南",
+      "total": "61:25",
+      "legs": [
+        {
+          "leg": 1,
+          "name": "村上晄誠",
+          "grade": 3,
+          "split": "9:53",
+          "cumulative": "9:53",
+          "passing_rank": 14,
+          "split_rank": 14,
+          "split_record": false,
+          "status": "ok",
+          "raw_name_grade": "村上晄誠(3)"
+        },
+        {
+          "leg": 2,
+          "name": "湯川吏葵",
+          "grade": 2,
+          "split": "9:43",
+          "cumulative": "19:36",
+          "passing_rank": 12,
+          "split_rank": 8,
+          "split_record": false,
+          "status": "ok",
+          "raw_name_grade": "湯川吏葵(2)"
+        },
+        {
+          "leg": 3,
+          "name": "山内理登",
+          "grade": 2,
+          "split": "10:11",
+          "cumulative": "29:47",
+          "passing_rank": 9,
+          "split_rank": 7,
+          "split_record": false,
+          "status": "ok",
+          "raw_name_grade": "山内理登(2)"
+        },
+        {
+          "leg": 4,
+          "name": "木下幹都",
+          "grade": 2,
+          "split": "11:04",
+          "cumulative": "40:51",
+          "passing_rank": 8,
+          "split_rank": 11,
+          "split_record": false,
+          "status": "ok",
+          "raw_name_grade": "木下幹都(2)"
+        },
+        {
+          "leg": 5,
+          "name": "吉川鳳星朗",
+          "grade": 3,
+          "split": "10:33",
+          "cumulative": "51:24",
+          "passing_rank": 9,
+          "split_rank": 12,
+          "split_record": false,
+          "status": "ok",
+          "raw_name_grade": "吉川鳳星朗(3)"
+        },
+        {
+          "leg": 6,
+          "name": "栗原海唯",
+          "grade": 2,
+          "split": "10:01",
+          "cumulative": "61:25",
+          "passing_rank": 10,
+          "split_rank": 8,
+          "split_record": false,
+          "status": "ok",
+          "raw_name_grade": "栗原海唯(2)"
+        }
+      ]
+    },
+    {
+      "rank": 11,
+      "team": "有明",
+      "total": "61:49",
+      "legs": [
+        {
+          "leg": 1,
+          "name": "米村和真",
+          "grade": 3,
+          "split": "9:01",
+          "cumulative": "9:01",
+          "passing_rank": 1,
+          "split_rank": 1,
+          "split_record": true,
+          "status": "ok",
+          "raw_name_grade": "米村和真(3)"
+        },
+        {
+          "leg": 2,
+          "name": "竹下響佑",
+          "grade": 2,
+          "split": "10:02",
+          "cumulative": "19:03",
+          "passing_rank": 5,
+          "split_rank": 12,
+          "split_record": false,
+          "status": "ok",
+          "raw_name_grade": "竹下響佑(2)"
+        },
+        {
+          "leg": 3,
+          "name": "熊本翔太",
+          "grade": 3,
+          "split": "10:56",
+          "cumulative": "29:59",
+          "passing_rank": 11,
+          "split_rank": 14,
+          "split_record": false,
+          "status": "ok",
+          "raw_name_grade": "熊本翔太(3)"
+        },
+        {
+          "leg": 4,
+          "name": "堀尾友輝",
+          "grade": 3,
+          "split": "11:05",
+          "cumulative": "41:04",
+          "passing_rank": 10,
+          "split_rank": 13,
+          "split_record": false,
+          "status": "ok",
+          "raw_name_grade": "堀尾友輝(3)"
+        },
+        {
+          "leg": 5,
+          "name": "松村瑠",
+          "grade": 3,
+          "split": "10:25",
+          "cumulative": "51:29",
+          "passing_rank": 10,
+          "split_rank": 11,
+          "split_record": false,
+          "status": "ok",
+          "raw_name_grade": "松村瑠(3)"
+        },
+        {
+          "leg": 6,
+          "name": "坂本琉静",
+          "grade": 3,
+          "split": "10:20",
+          "cumulative": "61:49",
+          "passing_rank": 11,
+          "split_rank": 11,
+          "split_record": false,
+          "status": "ok",
+          "raw_name_grade": "坂本琉静(3)"
+        }
+      ]
+    },
+    {
+      "rank": 12,
+      "team": "玉陵",
+      "total": "62:19",
+      "legs": [
+        {
+          "leg": 1,
+          "name": "黒石楓摩",
+          "grade": 2,
+          "split": "9:42",
+          "cumulative": "9:42",
+          "passing_rank": 11,
+          "split_rank": 11,
+          "split_record": false,
+          "status": "ok",
+          "raw_name_grade": "黒石楓摩(2)"
+        },
+        {
+          "leg": 2,
+          "name": "辛嶋大宙",
+          "grade": 1,
+          "split": "10:38",
+          "cumulative": "20:20",
+          "passing_rank": 15,
+          "split_rank": 14,
+          "split_record": false,
+          "status": "ok",
+          "raw_name_grade": "辛嶋大宙(1)"
+        },
+        {
+          "leg": 3,
+          "name": "永田来夢",
+          "grade": 1,
+          "split": "10:58",
+          "cumulative": "31:18",
+          "passing_rank": 15,
+          "split_rank": 15,
+          "split_record": false,
+          "status": "ok",
+          "raw_name_grade": "永田来夢(1)"
+        },
+        {
+          "leg": 4,
+          "name": "一瀬彪真",
+          "grade": 2,
+          "split": "10:10",
+          "cumulative": "41:28",
+          "passing_rank": 11,
+          "split_rank": 3,
+          "split_record": false,
+          "status": "ok",
+          "raw_name_grade": "一瀬彪真(2)"
+        },
+        {
+          "leg": 5,
+          "name": "高岡ひなた",
+          "grade": 2,
+          "split": "10:34",
+          "cumulative": "52:02",
+          "passing_rank": 12,
+          "split_rank": 13,
+          "split_record": false,
+          "status": "ok",
+          "raw_name_grade": "高岡ひなた(2)"
+        },
+        {
+          "leg": 6,
+          "name": "浅野彰太",
+          "grade": 2,
+          "split": "10:17",
+          "cumulative": "62:19",
+          "passing_rank": 12,
+          "split_rank": 10,
+          "split_record": false,
+          "status": "ok",
+          "raw_name_grade": "浅野彰太(2)"
+        }
+      ]
+    },
+    {
+      "rank": 13,
+      "team": "玉東",
+      "total": "63:03",
+      "legs": [
+        {
+          "leg": 1,
+          "name": "大城戸秀亮",
+          "grade": 2,
+          "split": "10:20",
+          "cumulative": "10:20",
+          "passing_rank": 15,
+          "split_rank": 15,
+          "split_record": false,
+          "status": "ok",
+          "raw_name_grade": "大城戸秀亮(2)"
+        },
+        {
+          "leg": 2,
+          "name": "山戸柊横",
+          "grade": 2,
+          "split": "9:56",
+          "cumulative": "20:16",
+          "passing_rank": 14,
+          "split_rank": 11,
+          "split_record": false,
+          "status": "ok",
+          "raw_name_grade": "山戸柊横(2)"
+        },
+        {
+          "leg": 3,
+          "name": "大塚正統",
+          "grade": 2,
+          "split": "10:46",
+          "cumulative": "31:02",
+          "passing_rank": 14,
+          "split_rank": 13,
+          "split_record": false,
+          "status": "ok",
+          "raw_name_grade": "大塚正統(2)"
+        },
+        {
+          "leg": 4,
+          "name": "高瀬暖人",
+          "grade": 3,
+          "split": "11:00",
+          "cumulative": "42:02",
+          "passing_rank": 14,
+          "split_rank": 9,
+          "split_record": false,
+          "status": "ok",
+          "raw_name_grade": "高瀬暖人(3)"
+        },
+        {
+          "leg": 5,
+          "name": "龍光輝",
+          "grade": 3,
+          "split": "10:12",
+          "cumulative": "52:14",
+          "passing_rank": 13,
+          "split_rank": 9,
+          "split_record": false,
+          "status": "ok",
+          "raw_name_grade": "龍光輝(3)"
+        },
+        {
+          "leg": 6,
+          "name": "稲生剛士",
+          "grade": 3,
+          "split": "10:49",
+          "cumulative": "63:03",
+          "passing_rank": 13,
+          "split_rank": 14,
+          "split_record": false,
+          "status": "ok",
+          "raw_name_grade": "稲生剛士(3)"
+        }
+      ]
+    },
+    {
+      "rank": 14,
+      "team": "天水",
+      "total": "63:40",
+      "legs": [
+        {
+          "leg": 1,
+          "name": "山本悠斗",
+          "grade": 2,
+          "split": "9:45",
+          "cumulative": "9:45",
+          "passing_rank": 12,
+          "split_rank": 12,
+          "split_record": false,
+          "status": "ok",
+          "raw_name_grade": "山本悠斗(2)"
+        },
+        {
+          "leg": 2,
+          "name": "大久保太晴",
+          "grade": 3,
+          "split": "9:35",
+          "cumulative": "19:20",
+          "passing_rank": 9,
+          "split_rank": 6,
+          "split_record": false,
+          "status": "ok",
+          "raw_name_grade": "大久保太晴(3)"
+        },
+        {
+          "leg": 3,
+          "name": "木村幹太",
+          "grade": 1,
+          "split": "10:35",
+          "cumulative": "29:55",
+          "passing_rank": 10,
+          "split_rank": 9,
+          "split_record": false,
+          "status": "ok",
+          "raw_name_grade": "木村幹太(1)"
+        },
+        {
+          "leg": 4,
+          "name": "田上遥睦",
+          "grade": 2,
+          "split": "11:57",
+          "cumulative": "41:52",
+          "passing_rank": 12,
+          "split_rank": 14,
+          "split_record": false,
+          "status": "ok",
+          "raw_name_grade": "田上遥睦(2)"
+        },
+        {
+          "leg": 5,
+          "name": "中村七星",
+          "grade": 1,
+          "split": "10:45",
+          "cumulative": "52:37",
+          "passing_rank": 14,
+          "split_rank": 15,
+          "split_record": false,
+          "status": "ok",
+          "raw_name_grade": "中村七星(1)"
+        },
+        {
+          "leg": 6,
+          "name": "中山楓晴",
+          "grade": 1,
+          "split": "11:03",
+          "cumulative": "63:40",
+          "passing_rank": 14,
+          "split_rank": 15,
+          "split_record": false,
+          "status": "ok",
+          "raw_name_grade": "中山楓晴(1)"
+        }
+      ]
+    },
+    {
+      "rank": 15,
+      "team": "岱明",
+      "total": "65:15",
+      "legs": [
+        {
+          "leg": 1,
+          "name": "根本和樹",
+          "grade": 3,
+          "split": "9:17",
+          "cumulative": "9:17",
+          "passing_rank": 3,
+          "split_rank": 3,
+          "split_record": false,
+          "status": "ok",
+          "raw_name_grade": "根本和樹(3)"
+        },
+        {
+          "leg": 2,
+          "name": "満田樹生",
+          "grade": 3,
+          "split": "10:04",
+          "cumulative": "19:21",
+          "passing_rank": 10,
+          "split_rank": 13,
+          "split_record": false,
+          "status": "ok",
+          "raw_name_grade": "満田樹生(3)"
+        },
+        {
+          "leg": 3,
+          "name": "今村昇磨",
+          "grade": 1,
+          "split": "10:17",
+          "cumulative": "29:38",
+          "passing_rank": 7,
+          "split_rank": 8,
+          "split_record": false,
+          "status": "ok",
+          "raw_name_grade": "今村昇磨(1)"
+        },
+        {
+          "leg": 4,
+          "name": "田上侑雷",
+          "grade": 3,
+          "split": "14:55",
+          "cumulative": "44:33",
+          "passing_rank": 15,
+          "split_rank": 15,
+          "split_record": false,
+          "status": "ok",
+          "raw_name_grade": "田上侑雷(3)"
+        },
+        {
+          "leg": 5,
+          "name": "松野凛空",
+          "grade": 3,
+          "split": "10:22",
+          "cumulative": "54:55",
+          "passing_rank": 15,
+          "split_rank": 10,
+          "split_record": false,
+          "status": "ok",
+          "raw_name_grade": "松野凛空(3)"
+        },
+        {
+          "leg": 6,
+          "name": "倉田裕斗",
+          "grade": 2,
+          "split": "10:20",
+          "cumulative": "65:15",
+          "passing_rank": 15,
+          "split_rank": 11,
+          "split_record": false,
+          "status": "ok",
+          "raw_name_grade": "倉田裕斗(2)"
+        }
+      ]
+    }
+  ],
+  "ocr_notes": [
+    "PXL_20241016 image verification; ranks derived from splits"
+  ],
+  "daimyo": {
+    "rank": 15,
+    "total": "1:05:15"
+  }
+}
