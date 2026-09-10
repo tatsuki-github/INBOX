@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import csv
+import hashlib
 import sys
 from pathlib import Path
 
@@ -44,13 +45,19 @@ def test_build_year_uses_complete_season_file(year: int) -> None:
     assert len(rows) == adopted_count
     assert all(row["カテゴリー"] == "中学生" for row in rows)
     assert all(row["SB採用"] == "__YES__" for row in rows)
+    assert status["source_sha256"] == hashlib.sha256(
+        (builder.SOURCE_DIR / f"{year}-single-table.csv").read_bytes()
+    ).hexdigest()
+    assert status["output_sha256"] == hashlib.sha256(
+        builder.serialize_rows(rows).encode("utf-8")
+    ).hexdigest()
 
 
-def test_build_year_keeps_next_calendar_year_as_same_season() -> None:
-    rows, status = builder.build_year(2012)
+def test_build_year_keeps_rows_in_filename_year_regardless_of_date() -> None:
+    rows, status = builder.build_year(2018)
 
-    assert status["calendar_years"] == ["2012", "2013"]
-    assert any(row["日付"].startswith("2013/") for row in rows)
+    assert status["calendar_years"] == ["2018", "2019"]
+    assert any(row["日付"].startswith("2019/04/") for row in rows)
 
 
 def test_load_csv_rows_rejects_missing_required_columns(tmp_path: Path) -> None:
@@ -67,3 +74,9 @@ def test_load_csv_rows_rejects_missing_required_columns(tmp_path: Path) -> None:
 def test_build_year_rejects_unsupported_year() -> None:
     with pytest.raises(ValueError, match="Unsupported year"):
         builder.build_year(2011)
+
+
+@pytest.mark.parametrize("value", ["yes", "__YES__", "1", "", None])
+def test_unknown_sb_flag_is_rejected(value: object) -> None:
+    with pytest.raises(ValueError, match="invalid SB採用 value"):
+        builder.is_sb_adopted(value)

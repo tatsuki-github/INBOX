@@ -1,6 +1,6 @@
 # 中学生 SB（Season Best）— t-tsuchiyama パイプライン
 
-所有者: `t-tsuchiyama@ilab.pu-kumamoto.ac.jp`（Drive / Notion 記録パイプライン。GitHub 公開リポではない）
+出典: t-tsuchiyama の Drive / Notion 記録パイプライン（GitHub 公開リポではない）
 
 正本は外部サービス。本ディレクトリは探索用スナップショット。
 
@@ -31,13 +31,13 @@
 | 2025 | 7,395 | 2,662 |
 | 2026 | 8,063 | 3,981 |
 
-各年度の `YYYY-sb-adopted.status.json` に入力行数、SB採用行数、収録された暦年、
-元CSVに含まれる Unicode 置換文字（`�`）の行数を記録する。年度はファイル名で判定し、
-翌年1〜3月の記録も元ファイルの年度に保持する。
+各年度の `YYYY-sb-adopted.status.json` に入力・出力のSHA-256、入力行数、
+SB採用行数、収録された暦年、元CSVに含まれる Unicode 置換文字（`�`）の行数を記録する。
+年度はファイル名を正本とし、行の日付にかかわらず元ファイルの年度に保持する。
 
 ## ソース（Drive 生データ）
 
-[`../drive/personal/t-tsuchiyama/sb/`](../drive/personal/t-tsuchiyama/sb/)
+[`../../drive/personal/t-tsuchiyama/sb/`](../../drive/personal/t-tsuchiyama/sb/)
 
 - `SBデータベース.csv` — 全カテゴリ 4900（中学生 1371）
 - `中学生SB.csv` — 中学生フィルタ
@@ -50,6 +50,12 @@
 python3 scripts/build_middle_school_sb_by_year.py
 ```
 
+## 公開情報の取り扱い
+
+収録対象は競技団体等が公開した大会結果に含まれる氏名・所属・記録に限定する。
+連絡先、住所、認証情報など大会結果に不要な個人情報は収録しない。
+原サイトで訂正・削除された場合は元CSVを更新し、再生成する。
+
 ## 設計
 
-[`docs/adr/012-middle-school-sb-all-years.md`](../../../docs/adr/012-middle-school-sb-all-years.md)
+[`docs/adr/012-middle-school-sb-all-years.md`](../../../../docs/adr/012-middle-school-sb-all-years.md)

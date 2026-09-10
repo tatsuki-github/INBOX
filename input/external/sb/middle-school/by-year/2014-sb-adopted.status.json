@@ -1,8 +1,10 @@
 {
   "year": 2014,
   "source": "input/external/drive/personal/t-tsuchiyama/sb/by-year/2014-single-table.csv",
+  "source_sha256": "1d729f840d3fb76187b96ba0d76d107e9765b36aa43caaa187c7e31ca433774a",
   "source_row_count": 4750,
   "sb_adopted_count": 2139,
+  "output_sha256": "44d775f0b658a5ca18cf1c0c471ddfe3c8dfd3daf1de482eda9000d6c1608d84",
   "complete": true,
   "source_status": "complete",
   "calendar_years": [
@@ -10,5 +12,5 @@
     "2015"
   ],
   "replacement_character_rows": 0,
-  "note": "年度はファイル名（シーズン）を正本とし、翌年1〜3月の日付も同年度に保持"
+  "note": "年度はファイル名を正本とし、行の日付にかかわらず元ファイルの年度に保持"
 }

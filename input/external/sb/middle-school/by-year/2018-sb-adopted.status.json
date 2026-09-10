@@ -1,8 +1,10 @@
 {
   "year": 2018,
   "source": "input/external/drive/personal/t-tsuchiyama/sb/by-year/2018-single-table.csv",
+  "source_sha256": "e92902c27f57837321deca99fec10708b59e148e0fc44df3307be67a0fb9991b",
   "source_row_count": 5885,
   "sb_adopted_count": 2168,
+  "output_sha256": "032f2d18ddf93ef1e1d0ea5543ba27fc1ed659a8af2f0e1c9db00c03e64337cf",
   "complete": true,
   "source_status": "complete",
   "calendar_years": [
@@ -10,5 +12,5 @@
     "2019"
   ],
   "replacement_character_rows": 0,
-  "note": "年度はファイル名（シーズン）を正本とし、翌年1〜3月の日付も同年度に保持"
+  "note": "年度はファイル名を正本とし、行の日付にかかわらず元ファイルの年度に保持"
 }

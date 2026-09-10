@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import csv
+import hashlib
 import json
 import sys
 from pathlib import Path
@@ -118,6 +119,9 @@ def test_middle_school_sb_year_artifacts_and_index():
         assert status.get("complete") is True
         assert len(rows) == expected_count
         assert all(row.get("SB採用") == "__YES__" for row in rows)
+        source_path = ROOT / status["source"]
+        assert status["source_sha256"] == hashlib.sha256(source_path.read_bytes()).hexdigest()
+        assert status["output_sha256"] == hashlib.sha256(data_path.read_bytes()).hexdigest()
     drive_sb = EXTERNAL / "drive" / "personal" / "t-tsuchiyama" / "sb"
     assert (drive_sb / "SBデータベース.csv").is_file()
     assert (drive_sb / "中学生SB.csv").is_file()

@@ -13,6 +13,7 @@ from __future__ import annotations
 
 import argparse
 import csv
+import hashlib
 import json
 from pathlib import Path
 from typing import Any
@@ -42,10 +43,15 @@ REQUIRED_FIELDS = {
 def is_sb_adopted(value: Any) -> bool:
     if value is True:
         return True
-    if value is False or value is None:
+    if value is False:
         return False
-    text = str(value).strip().lower()
-    return text in {"true", "__yes__", "yes", "1"}
+    if isinstance(value, str):
+        text = value.strip().lower()
+        if text == "true":
+            return True
+        if text == "false":
+            return False
+    raise ValueError(f"invalid SB採用 value: {value!r}")
 
 
 def normalize_sb_flag(value: Any) -> str:
@@ -57,6 +63,10 @@ def normalize_row(row: dict[str, Any]) -> dict[str, Any]:
     out["選手距離キー"] = str(out.get("選手距離キー", "")).replace("\\|", "|")
     out["SB採用"] = normalize_sb_flag(out.get("SB採用"))
     return out
+
+
+def serialize_rows(rows: list[dict[str, Any]]) -> str:
+    return json.dumps(rows, ensure_ascii=False, indent=2) + "\n"
 
 
 def load_csv_rows(path: Path) -> list[dict[str, Any]]:
@@ -84,14 +94,24 @@ def build_year(year: int) -> tuple[list[dict[str, Any]], dict[str, Any]]:
     if invalid_categories:
         raise ValueError(f"{source_path}: non-middle-school categories: {invalid_categories}")
 
-    rows = [normalize_row(row) for row in source_rows if is_sb_adopted(row.get("SB採用"))]
+    rows: list[dict[str, Any]] = []
+    for line_number, row in enumerate(source_rows, start=2):
+        try:
+            adopted = is_sb_adopted(row.get("SB採用"))
+        except ValueError as exc:
+            raise ValueError(f"{source_path}:{line_number}: {exc}") from exc
+        if adopted:
+            rows.append(normalize_row(row))
     rows.sort(key=lambda r: (r.get("日付", ""), r.get("名前", ""), r.get("距離", "")))
 
+    output_text = serialize_rows(rows)
     status: dict[str, Any] = {
         "year": year,
         "source": str(source_path.relative_to(ROOT)),
+        "source_sha256": hashlib.sha256(source_path.read_bytes()).hexdigest(),
         "source_row_count": len(source_rows),
         "sb_adopted_count": len(rows),
+        "output_sha256": hashlib.sha256(output_text.encode("utf-8")).hexdigest(),
         "complete": True,
         "source_status": "complete",
         "calendar_years": sorted(
@@ -100,7 +120,7 @@ def build_year(year: int) -> tuple[list[dict[str, Any]], dict[str, Any]]:
         "replacement_character_rows": sum(
             "\ufffd" in "".join(str(value) for value in row.values()) for row in source_rows
         ),
-        "note": "年度はファイル名（シーズン）を正本とし、翌年1〜3月の日付も同年度に保持",
+        "note": "年度はファイル名を正本とし、行の日付にかかわらず元ファイルの年度に保持",
     }
     return rows, status
 
@@ -110,7 +130,7 @@ def write_year(year: int, rows: list[dict[str, Any]], status: dict[str, Any]) ->
     json_path = OUT_DIR / f"{year}-sb-adopted.json"
     status_path = OUT_DIR / f"{year}-sb-adopted.status.json"
     json_path.write_text(
-        json.dumps(rows, ensure_ascii=False, indent=2) + "\n",
+        serialize_rows(rows),
         encoding="utf-8",
     )
     status_path.write_text(
