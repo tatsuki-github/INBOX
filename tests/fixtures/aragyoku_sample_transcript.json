@@ -1,0 +1,63 @@
+{
+  "year": 2025,
+  "gender": "女子",
+  "date": "2025-10-15",
+  "source_drive_id": "test-drive-id",
+  "teams": [
+    {
+      "rank": 1,
+      "team": "玉名",
+      "total": "20:00",
+      "legs": [
+        {
+          "leg": 1,
+          "name": "A",
+          "grade": 2,
+          "split": "10:00",
+          "cumulative": "10:00",
+          "passing_rank": 1,
+          "split_rank": 1,
+          "status": "ok"
+        },
+        {
+          "leg": 2,
+          "name": "B",
+          "grade": 2,
+          "split": "10:00",
+          "cumulative": "20:00",
+          "passing_rank": 1,
+          "split_rank": 2,
+          "status": "ok"
+        }
+      ]
+    },
+    {
+      "rank": 2,
+      "team": "南関",
+      "total": "20:30",
+      "legs": [
+        {
+          "leg": 1,
+          "name": "C",
+          "grade": 3,
+          "split": "10:15",
+          "cumulative": "10:15",
+          "passing_rank": 2,
+          "split_rank": 2,
+          "status": "ok"
+        },
+        {
+          "leg": 2,
+          "name": "D",
+          "grade": 3,
+          "split": "10:15",
+          "cumulative": "20:30",
+          "passing_rank": 2,
+          "split_rank": 1,
+          "status": "ok"
+        }
+      ]
+    }
+  ],
+  "ocr_notes": ["fixture: 2-leg sample for unit tests"]
+}
