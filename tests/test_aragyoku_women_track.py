@@ -15,6 +15,7 @@ from aragyoku_women_track import (  # noqa: E402
     build_joined,
     filter_records_for_athlete,
     format_seconds,
+    load_wide_like_csv,
     norm_name,
     parse_time_to_seconds,
     parse_truthy,
@@ -23,7 +24,15 @@ from aragyoku_women_track import (  # noqa: E402
     school_overlap,
     seasons_for_ekiden_year,
 )
-from aragyoku_women_pdf import athlete_rows, build_pdf, build_styles, register_font  # noqa: E402
+from aragyoku_women_pdf import (  # noqa: E402
+    athlete_rows,
+    build_pdf,
+    build_styles,
+    link_para,
+    mark_with_link,
+    register_font,
+    shorten_url,
+)
 
 
 def test_time_helpers() -> None:
@@ -31,7 +40,12 @@ def test_time_helpers() -> None:
     assert parse_time_to_seconds("2:31.44") == 151.44
     assert parse_time_to_seconds("1:60") is None
     assert parse_time_to_seconds("1:02:99") is None
+    assert parse_time_to_seconds("0") is None
+    assert parse_time_to_seconds("999999999999999999999999999") is None
     assert format_seconds(616) == "10:16"
+    assert format_seconds(-1) is None
+    assert format_seconds(float("nan")) is None
+    assert format_seconds(float("inf")) is None
     assert norm_name("内田　愛祐") == "内田愛祐"
     assert school_overlap("玉名", "玉名中")
     assert not school_overlap("荒尾三", "荒尾四")
@@ -39,6 +53,21 @@ def test_time_helpers() -> None:
     assert seasons_for_ekiden_year(2025) == ["2025"]
     assert parse_truthy("__YES__")
     assert not parse_truthy("__NO__")
+
+
+def test_invalid_track_source_row_fails_fast() -> None:
+    with tempfile.TemporaryDirectory() as tmp:
+        path = Path(tmp) / "bad.csv"
+        path.write_text(
+            "性別,名前,所属,800mSB\n女子,不正記録,玉名中,1:99\n",
+            encoding="utf-8",
+        )
+        try:
+            load_wide_like_csv(path, "test", "2025")
+        except ValueError as exc:
+            assert "不正記録" in str(exc)
+        else:
+            raise AssertionError("invalid source row must fail")
 
 
 def test_track_records_never_leak_across_years() -> None:
@@ -215,10 +244,19 @@ def test_pdf_generation_and_same_mark_labels() -> None:
     text = rows[1][5].getPlainText()
     assert "SB 2:30.00" in text
     assert "直 2:30.00" in text
+    assert shorten_url("https://example.com/path") == "example.com/path"
+    assert link_para("https://example.com", styles["cell"]).getPlainText() == "example.com"
+    assert (
+        mark_with_link(
+            {"mark": "2:30.00", "url": "https://example.com"}, styles["cell"]
+        ).getPlainText()
+        == "2:30.00"
+    )
 
 
 if __name__ == "__main__":
     test_time_helpers()
+    test_invalid_track_source_row_fails_fast()
     test_track_records_never_leak_across_years()
     test_aggregate_sb_is_not_reported_as_recent_record()
     test_non_adopted_record_is_not_reported_as_sb()

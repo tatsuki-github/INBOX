@@ -12,6 +12,7 @@ from __future__ import annotations
 
 import csv
 import json
+import math
 import re
 import unicodedata
 from pathlib import Path
@@ -32,6 +33,8 @@ OUT_CSV = ROOT / "out/analysis/aragyoku_women_track_joined.csv"
 
 TRACK_EVENTS = ("800m", "1000m", "1500m", "3000m")
 TRUE_VALUES = {"1", "true", "yes", "y", "__yes__"}
+NON_RESULT_MARKS = {"DNS", "DNF", "DQ"}
+MAX_TRACK_SECONDS = 24 * 60 * 60
 
 # メタの区間距離（km）に合わせた簡易換算係数（トラック記録秒 → 駅伝区間目安秒）
 EKIDEN_GUIDE = {
@@ -76,24 +79,27 @@ def parse_time_to_seconds(raw: str | None) -> float | None:
         return None
     s = s.replace("'", ":").replace("’", ":").replace("″", "").replace('"', "")
     if re.fullmatch(r"\d+(\.\d+)?", s):
-        return float(s)
+        value = float(s)
+        return value if 0 < value <= MAX_TRACK_SECONDS and math.isfinite(value) else None
     m = re.fullmatch(r"(\d+):(\d{2})(?:\.(\d+))?", s)
     if m:
         mins, secs, frac = m.group(1), m.group(2), m.group(3) or "0"
         if int(secs) >= 60:
             return None
-        return int(mins) * 60 + int(secs) + float(f"0.{frac}")
+        value = int(mins) * 60 + int(secs) + float(f"0.{frac}")
+        return value if 0 < value <= MAX_TRACK_SECONDS else None
     m = re.fullmatch(r"(\d+):(\d{2}):(\d{2})(?:\.(\d+))?", s)
     if m:
         h, mins, secs, frac = m.group(1), m.group(2), m.group(3), m.group(4) or "0"
         if int(mins) >= 60 or int(secs) >= 60:
             return None
-        return int(h) * 3600 + int(mins) * 60 + int(secs) + float(f"0.{frac}")
+        value = int(h) * 3600 + int(mins) * 60 + int(secs) + float(f"0.{frac}")
+        return value if 0 < value <= MAX_TRACK_SECONDS else None
     return None
 
 
 def format_seconds(sec: float | None) -> str | None:
-    if sec is None:
+    if sec is None or not math.isfinite(sec) or not 0 < sec <= MAX_TRACK_SECONDS:
         return None
     mins = int(sec // 60)
     rem = sec - mins * 60
@@ -205,7 +211,7 @@ def load_wide_like_csv(
                     continue
                 sec = parse_time_to_seconds(mark)
                 if sec is None:
-                    continue
+                    raise ValueError(f"invalid track mark in {path}: {name} {event}={mark!r}")
                 url = (row.get(f"{event}SB参考") or "").strip() or None
                 by_name.setdefault(name, []).append(
                     {
@@ -236,9 +242,12 @@ def _preferred_url(*candidates: str | None) -> str | None:
 
 def load_by_year_json() -> dict[str, list[dict[str, Any]]]:
     by_name: dict[str, list[dict[str, Any]]] = {}
-    paths = sorted(BY_YEAR_DIR.glob("*-sb-adopted.json"))
-    if not paths:
-        raise FileNotFoundError(f"required track sources are missing: {BY_YEAR_DIR}")
+    paths = [BY_YEAR_DIR / f"{year}-sb-adopted.json" for year in (2024, 2025, 2026)]
+    missing = [path for path in paths if not path.exists()]
+    if missing:
+        raise FileNotFoundError(
+            "required track sources are missing: " + ", ".join(str(path) for path in missing)
+        )
     for path in paths:
         season = path.name.split("-")[0]
         try:
@@ -259,11 +268,13 @@ def load_by_year_json() -> dict[str, list[dict[str, Any]]]:
             mark = (row.get("記録") or "").strip()
             sec = row.get("SB秒") or row.get("記録秒") or parse_time_to_seconds(mark)
             if sec is None:
-                continue
+                raise ValueError(f"invalid track mark in {path}: {name} {event}={mark!r}")
             try:
                 sec = float(sec)
             except (TypeError, ValueError):
-                continue
+                raise ValueError(f"invalid track seconds in {path}: {name} {event}={sec!r}")
+            if not math.isfinite(sec) or not 0 < sec <= MAX_TRACK_SECONDS:
+                raise ValueError(f"invalid track seconds in {path}: {name} {event}={sec!r}")
             url = _preferred_url(row.get("参考"), row.get("url"))
             by_name.setdefault(name, []).append(
                 {
@@ -304,6 +315,8 @@ def load_notion_rows() -> dict[str, list[dict[str, Any]]]:
                     continue
                 name = norm_name(row.get("name") or "")
                 mark = (row.get("time_text") or "").strip()
+                if mark in NON_RESULT_MARKS:
+                    continue
                 sec = row.get("record_seconds") or parse_time_to_seconds(mark)
                 school = (row.get("affiliation") or "").strip()
                 grade = row.get("grade") or ""
@@ -319,7 +332,7 @@ def load_notion_rows() -> dict[str, list[dict[str, Any]]]:
                     continue
                 name = norm_name(row.get("名前") or "")
                 mark = (row.get("記録") or "").strip()
-                if mark in {"DNS", "DNF", "DQ"}:
+                if mark in NON_RESULT_MARKS:
                     continue
                 sec = row.get("記録秒") or parse_time_to_seconds(mark)
                 school = (row.get("所属") or "").strip()
@@ -329,11 +342,15 @@ def load_notion_rows() -> dict[str, list[dict[str, Any]]]:
                 is_sb = parse_truthy(row.get("SB採用"))
                 meet = (row.get("大会名") or "").strip() or None
             if not name or sec is None:
+                if name:
+                    raise ValueError(f"invalid track mark in {path}: {name} {event}={mark!r}")
                 continue
             try:
                 sec = float(sec)
             except (TypeError, ValueError):
-                continue
+                raise ValueError(f"invalid track seconds in {path}: {name} {event}={sec!r}")
+            if not math.isfinite(sec) or not 0 < sec <= MAX_TRACK_SECONDS:
+                raise ValueError(f"invalid track seconds in {path}: {name} {event}={sec!r}")
             by_name.setdefault(name, []).append(
                 {
                     "source": f"notion_{season}",
@@ -521,6 +538,9 @@ def build_joined() -> dict[str, Any]:
                 "teams": teams_out,
             }
         )
+
+    if stats["athletes"] == 0:
+        raise ValueError("ekiden source has no athlete rows")
 
     return {
         "meta": {
