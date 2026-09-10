@@ -1,0 +1,5636 @@
+{
+  "meta": {
+    "title": "荒玉（玉名荒尾）中体連駅伝・女子・上位4校 トラック走力突合",
+    "years": [
+      2025,
+      2024,
+      2023,
+      2022,
+      2021,
+      2020,
+      2019,
+      2018,
+      2017,
+      2016,
+      2015,
+      2013,
+      2012
+    ],
+    "missing_years": [
+      2014
+    ],
+    "stats": {
+      "athletes": 260,
+      "with_any_track": 46,
+      "with_sb": 46,
+      "with_url": 46
+    },
+    "guide_note": "駅伝目安はトラック記録の簡易距離換算であり、コース・気象・タスキ条件は含みません。",
+    "drive_source_note": "区間オーダーは Google Drive「荒玉駅伝歴代」結果画像の OCR に基づく。",
+    "sources": {
+      "ekiden": "input/aragyoku/women_top4_2012_2025.json",
+      "wide_sb": "input/external/sb/middle-school/wide/中学生SB.csv",
+      "output_reg": "input/external/drive/personal/t-tsuchiyama/sb/output_reg_中学生_女子.csv",
+      "by_year": "input/external/sb/middle-school/by-year",
+      "notion": [
+        "input/external/notion/databases/2024年度中学生/rows.json",
+        "input/external/notion/databases/2025年度中学生記録/rows.json",
+        "input/external/notion/databases/2026年度中学生記録/rows.json"
+      ]
+    }
+  },
+  "years": [
+    {
+      "year": 2025,
+      "sb_seasons": [
+        "2026",
+        "2025",
+        "2024"
+      ],
+      "date": "2025-10-15",
+      "venue": null,
+      "source_file_id": "1-qackGYGwVuX6LikAryfiCLRmwgNVkWK",
+      "source_confidence": null,
+      "teams": [
+        {
+          "rank": 1,
+          "school": "玉名",
+          "total_mark": "41:58",
+          "total_seconds": 2518.0,
+          "athletes": [
+            {
+              "leg": 1,
+              "name": "川原芽吹",
+              "grade": 2,
+              "ekiden_mark": "10:16",
+              "ekiden_seconds": 616.0,
+              "cumulative": "10:16",
+              "track_events": {
+                "800m": {
+                  "sb": {
+                    "mark": "2:38.25",
+                    "seconds": 158.25,
+                    "meet": null,
+                    "meet_date": "2026/07/19",
+                    "url": "http://www.kumariku.org/26/26,7,18chutairen/rel136.html",
+                    "season": "2026",
+                    "source": "by_year_2026"
+                  },
+                  "recent": {
+                    "mark": "2:38.25",
+                    "seconds": 158.25,
+                    "meet": null,
+                    "meet_date": "2026/07/19",
+                    "url": "http://www.kumariku.org/26/26,7,18chutairen/rel136.html",
+                    "season": "2026",
+                    "source": "by_year_2026"
+                  }
+                },
+                "1500m": {
+                  "sb": {
+                    "mark": "5:07.72",
+                    "seconds": 307.72,
+                    "meet": "第７７回熊本市中長距離陸上競技選手権大会",
+                    "meet_date": "2024/11/23",
+                    "url": "http://www.kcrk.jp/i-mode/kiroku/tyuutyoukyori/77/PC/rel072.html",
+                    "season": "2024",
+                    "source": "by_year_2024"
+                  },
+                  "recent": {
+                    "mark": "5:07.72",
+                    "seconds": 307.72,
+                    "meet": "第７７回熊本市中長距離陸上競技選手権大会",
+                    "meet_date": "2024/11/23",
+                    "url": "http://www.kcrk.jp/i-mode/kiroku/tyuutyoukyori/77/PC/rel072.html",
+                    "season": "2024",
+                    "source": "by_year_2024"
+                  }
+                }
+              },
+              "ekiden_estimate": {
+                "from_event": "1500m",
+                "from_mark": "5:07.72",
+                "from_seconds": 307.72,
+                "factor": 2.15,
+                "estimated_seconds": 661.6,
+                "estimated_mark": "11:01.60",
+                "note": "1500m 5:07.72 × 2.15 ≈ 11:01.60（簡易換算）"
+              },
+              "match_count": 11
+            },
+            {
+              "leg": 2,
+              "name": "内田愛祐",
+              "grade": 2,
+              "ekiden_mark": "6:43",
+              "ekiden_seconds": 403.0,
+              "cumulative": "16:59",
+              "track_events": {
+                "800m": {
+                  "sb": {
+                    "mark": "2:30.47",
+                    "seconds": 150.47,
+                    "meet": "第２６９回　熊本市陸上競技記録会",
+                    "meet_date": "2025/08/09",
+                    "url": "http://www.kcrk.jp/i-mode/kiroku/269/PC/rel113.html",
+                    "season": "2025",
+                    "source": "by_year_2025"
+                  },
+                  "recent": {
+                    "mark": "2:31.47",
+                    "seconds": 151.47,
+                    "meet": "中長距離選手権",
+                    "meet_date": "2025/11/23",
+                    "url": "http://www.kcrk.jp/i-mode/kiroku/tyuutyoukyori/78/PC/rel041.html",
+                    "season": "2025",
+                    "source": "notion_2025"
+                  }
+                },
+                "1500m": {
+                  "sb": {
+                    "mark": "5:07.92",
+                    "seconds": 307.92,
+                    "meet": "中学選手権",
+                    "meet_date": "2025/06/07",
+                    "url": "http://www.kumariku.org/25/25,6,7chugaku/rel030.html",
+                    "season": "2025",
+                    "source": "by_year_2025"
+                  },
+                  "recent": {
+                    "mark": "5:10.73",
+                    "seconds": 310.73,
+                    "meet": "熊本県中学校総合体育大会　陸上競技大会",
+                    "meet_date": "2025/07/19",
+                    "url": "http://www.kumariku.org/25/25,7,19chugaku/rel180.html",
+                    "season": "2025",
+                    "source": "notion_2025"
+                  }
+                }
+              },
+              "ekiden_estimate": {
+                "from_event": "1500m",
+                "from_mark": "5:07.92",
+                "from_seconds": 307.92,
+                "factor": 1.28,
+                "estimated_seconds": 394.1,
+                "estimated_mark": "6:34.14",
+                "note": "1500m 5:07.92 × 1.28 ≈ 6:34.14（簡易換算）"
+              },
+              "match_count": 26
+            },
+            {
+              "leg": 3,
+              "name": "辻美空",
+              "grade": 3,
+              "ekiden_mark": "6:59",
+              "ekiden_seconds": 419.0,
+              "cumulative": "23:58",
+              "track_events": {
+                "800m": {
+                  "sb": {
+                    "mark": "2:19.37",
+                    "seconds": 139.37,
+                    "meet": "令和6年度　熊本県中学校総合体育大会　陸上競技大会",
+                    "meet_date": "2024/07/21",
+                    "url": "http://www.kumariku.org/24/24,7,20chutairen/rel189.html",
+                    "season": "2024",
+                    "source": "by_year_2024"
+                  },
+                  "recent": {
+                    "mark": "2:26.23",
+                    "seconds": 146.23,
+                    "meet": "第７７回熊本市中長距離陸上競技選手権大会",
+                    "meet_date": "2024/11/23",
+                    "url": "http://www.kcrk.jp/i-mode/kiroku/tyuutyoukyori/77/PC/rel055.html",
+                    "season": "2024",
+                    "source": "notion_2024"
+                  }
+                },
+                "1500m": {
+                  "sb": {
+                    "mark": "5:06.81",
+                    "seconds": 306.81,
+                    "meet": "2024.7.6　第二回熊本県長距離記録会",
+                    "meet_date": "2024/07/06",
+                    "url": "http://www.kumariku.org/24/24,7,6long&jump/rel020.html",
+                    "season": "2024",
+                    "source": "by_year_2024"
+                  },
+                  "recent": {
+                    "mark": "5:13.64",
+                    "seconds": 313.64,
+                    "meet": "2024.12.7　第四回熊本県長距離記録会",
+                    "meet_date": "2024/12/07",
+                    "url": "http://www.kumariku.org/24/24,12,7long/rel022.html",
+                    "season": "2024",
+                    "source": "notion_2024"
+                  }
+                }
+              },
+              "ekiden_estimate": {
+                "from_event": "1500m",
+                "from_mark": "5:06.81",
+                "from_seconds": 306.81,
+                "factor": 1.4,
+                "estimated_seconds": 429.5,
+                "estimated_mark": "7:09.53",
+                "note": "1500m 5:06.81 × 1.4 ≈ 7:09.53（簡易換算）"
+              },
+              "match_count": 18
+            },
+            {
+              "leg": 4,
+              "name": "内田千惺",
+              "grade": 3,
+              "ekiden_mark": "6:56",
+              "ekiden_seconds": 416.0,
+              "cumulative": "30:54",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 5,
+              "name": "水本星夏",
+              "grade": 2,
+              "ekiden_mark": "11:04",
+              "ekiden_seconds": 664.0,
+              "cumulative": "41:58",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            }
+          ]
+        },
+        {
+          "rank": 2,
+          "school": "南関",
+          "total_mark": "43:45",
+          "total_seconds": 2625.0,
+          "athletes": [
+            {
+              "leg": 1,
+              "name": "稗島葵音",
+              "grade": 3,
+              "ekiden_mark": "11:00",
+              "ekiden_seconds": 660.0,
+              "cumulative": "11:00",
+              "track_events": {
+                "800m": {
+                  "sb": {
+                    "mark": "2:35.52",
+                    "seconds": 155.52,
+                    "meet": "第２５回谷口睦生杯八代選手権大会",
+                    "meet_date": "2024/04/28",
+                    "url": "http://www.kumariku.org/24/24,4,28yatsushiro/rel115.html",
+                    "season": "2024",
+                    "source": "by_year_2024"
+                  },
+                  "recent": {
+                    "mark": "2:35.52",
+                    "seconds": 155.52,
+                    "meet": "第２５回谷口睦生杯八代選手権大会",
+                    "meet_date": "2024/04/28",
+                    "url": "http://www.kumariku.org/24/24,4,28yatsushiro/rel115.html",
+                    "season": "2024",
+                    "source": "by_year_2024"
+                  }
+                },
+                "1500m": {
+                  "sb": {
+                    "mark": "4:53.03",
+                    "seconds": 293.03,
+                    "meet": "2024.7.6　第二回熊本県長距離記録会",
+                    "meet_date": "2024/07/06",
+                    "url": "http://www.kumariku.org/24/24,7,6long&jump/rel020.html",
+                    "season": "2024",
+                    "source": "by_year_2024"
+                  },
+                  "recent": {
+                    "mark": "4:58.78",
+                    "seconds": 298.78,
+                    "meet": "令和6年度　熊本県中学校総合体育大会　陸上競技大会",
+                    "meet_date": "2024/07/20",
+                    "url": "http://www.kumariku.org/24/24,7,20chutairen/rel155.html",
+                    "season": "2024",
+                    "source": "notion_2024"
+                  }
+                },
+                "3000m": {
+                  "sb": {
+                    "mark": "10:44.15",
+                    "seconds": 644.15,
+                    "meet": "2024.12.7　第四回熊本県長距離記録会",
+                    "meet_date": "2024/12/07",
+                    "url": "http://www.kumariku.org/24/24,12,7long/rel024.html",
+                    "season": "2024",
+                    "source": "by_year_2024"
+                  },
+                  "recent": {
+                    "mark": "10:44.15",
+                    "seconds": 644.15,
+                    "meet": "2024.12.7　第四回熊本県長距離記録会",
+                    "meet_date": "2024/12/07",
+                    "url": "http://www.kumariku.org/24/24,12,7long/rel024.html",
+                    "season": "2024",
+                    "source": "by_year_2024"
+                  }
+                }
+              },
+              "ekiden_estimate": {
+                "from_event": "3000m",
+                "from_mark": "10:44.15",
+                "from_seconds": 644.15,
+                "factor": 1.0,
+                "estimated_seconds": 644.1,
+                "estimated_mark": "10:44.15",
+                "note": "3000m 10:44.15 × 1.0 ≈ 10:44.15（簡易換算）"
+              },
+              "match_count": 12
+            },
+            {
+              "leg": 2,
+              "name": "米田美空",
+              "grade": 2,
+              "ekiden_mark": "7:12",
+              "ekiden_seconds": 432.0,
+              "cumulative": "18:12",
+              "track_events": {
+                "800m": {
+                  "sb": {
+                    "mark": "2:41.28",
+                    "seconds": 161.28,
+                    "meet": "第４５回熊本市陸上競技選手権大会中長距離の部",
+                    "meet_date": "2026/04/18",
+                    "url": "http://www.kcrk.jp/i-mode/kiroku/sisen_i/450418/PC/rel005.html",
+                    "season": "2026",
+                    "source": "by_year_2026"
+                  },
+                  "recent": {
+                    "mark": "2:41.35",
+                    "seconds": 161.35,
+                    "meet": null,
+                    "meet_date": "2026/07/19",
+                    "url": "http://www.kumariku.org/26/26,7,18chutairen/rel134.html",
+                    "season": "2026",
+                    "source": "notion_2026"
+                  }
+                },
+                "1500m": {
+                  "sb": {
+                    "mark": "5:24.65",
+                    "seconds": 324.65,
+                    "meet": "2024.7.6　第二回熊本県長距離記録会",
+                    "meet_date": "2024/07/06",
+                    "url": "http://www.kumariku.org/24/24,7,6long&jump/rel019.html",
+                    "season": "2024",
+                    "source": "by_year_2024"
+                  },
+                  "recent": {
+                    "mark": "5:24.65",
+                    "seconds": 324.65,
+                    "meet": "2024.7.6　第二回熊本県長距離記録会",
+                    "meet_date": "2024/07/06",
+                    "url": "http://www.kumariku.org/24/24,7,6long&jump/rel019.html",
+                    "season": "2024",
+                    "source": "by_year_2024"
+                  }
+                }
+              },
+              "ekiden_estimate": {
+                "from_event": "1500m",
+                "from_mark": "5:24.65",
+                "from_seconds": 324.65,
+                "factor": 1.28,
+                "estimated_seconds": 415.6,
+                "estimated_mark": "6:55.55",
+                "note": "1500m 5:24.65 × 1.28 ≈ 6:55.55（簡易換算）"
+              },
+              "match_count": 14
+            },
+            {
+              "leg": 3,
+              "name": "福山結衣",
+              "grade": 1,
+              "ekiden_mark": "6:57",
+              "ekiden_seconds": 417.0,
+              "cumulative": "25:09",
+              "track_events": {
+                "800m": {
+                  "sb": {
+                    "mark": "2:28.50",
+                    "seconds": 148.5,
+                    "meet": null,
+                    "meet_date": "2026/07/19",
+                    "url": "http://www.kumariku.org/26/26,7,18chutairen/rel130.html",
+                    "season": "2026",
+                    "source": "by_year_2026"
+                  },
+                  "recent": {
+                    "mark": "2:28.50",
+                    "seconds": 148.5,
+                    "meet": null,
+                    "meet_date": "2026/07/19",
+                    "url": "http://www.kumariku.org/26/26,7,18chutairen/rel130.html",
+                    "season": "2026",
+                    "source": "by_year_2026"
+                  }
+                },
+                "1500m": {
+                  "sb": {
+                    "mark": "5:16.58",
+                    "seconds": 316.58,
+                    "meet": null,
+                    "meet_date": null,
+                    "url": "http://www.kumariku.org/25/25,7,5long&jump/rel019.html",
+                    "season": null,
+                    "source": "wide_sb"
+                  },
+                  "recent": {
+                    "mark": "5:16.58",
+                    "seconds": 316.58,
+                    "meet": null,
+                    "meet_date": null,
+                    "url": "http://www.kumariku.org/25/25,7,5long&jump/rel019.html",
+                    "season": null,
+                    "source": "wide_sb"
+                  }
+                }
+              },
+              "ekiden_estimate": {
+                "from_event": "1500m",
+                "from_mark": "5:16.58",
+                "from_seconds": 316.58,
+                "factor": 1.4,
+                "estimated_seconds": 443.2,
+                "estimated_mark": "7:23.21",
+                "note": "1500m 5:16.58 × 1.4 ≈ 7:23.21（簡易換算）"
+              },
+              "match_count": 5
+            },
+            {
+              "leg": 4,
+              "name": "堀田稔々",
+              "grade": 2,
+              "ekiden_mark": "7:24",
+              "ekiden_seconds": 444.0,
+              "cumulative": "32:33",
+              "track_events": {
+                "800m": {
+                  "sb": {
+                    "mark": "2:33.22",
+                    "seconds": 153.22,
+                    "meet": null,
+                    "meet_date": "2026/05/24",
+                    "url": "http://www.kumariku.org/26/26,5,23chugaku/rel174.html",
+                    "season": "2026",
+                    "source": "by_year_2026"
+                  },
+                  "recent": {
+                    "mark": "2:33.22",
+                    "seconds": 153.22,
+                    "meet": null,
+                    "meet_date": "2026/05/24",
+                    "url": "http://www.kumariku.org/26/26,5,23chugaku/rel174.html",
+                    "season": "2026",
+                    "source": "by_year_2026"
+                  }
+                },
+                "1500m": {
+                  "sb": {
+                    "mark": "5:11.61",
+                    "seconds": 311.61,
+                    "meet": "令和８年度　熊本陸上競技選手権大会　兼　国スポ一次予選会",
+                    "meet_date": "2026/04/25",
+                    "url": "http://www.kumariku.org/26/26,4,25kensen/rel051.html",
+                    "season": "2026",
+                    "source": "by_year_2026"
+                  },
+                  "recent": {
+                    "mark": "5:18.00",
+                    "seconds": 318.0,
+                    "meet": null,
+                    "meet_date": "2026/07/18",
+                    "url": "http://www.kumariku.org/26/26,7,18chutairen/rel138.html",
+                    "season": "2026",
+                    "source": "notion_2026"
+                  }
+                }
+              },
+              "ekiden_estimate": {
+                "from_event": "1500m",
+                "from_mark": "5:11.61",
+                "from_seconds": 311.61,
+                "factor": 1.4,
+                "estimated_seconds": 436.3,
+                "estimated_mark": "7:16.25",
+                "note": "1500m 5:11.61 × 1.4 ≈ 7:16.25（簡易換算）"
+              },
+              "match_count": 21
+            },
+            {
+              "leg": 5,
+              "name": "平山果朋",
+              "grade": 3,
+              "ekiden_mark": "11:12",
+              "ekiden_seconds": 672.0,
+              "cumulative": "43:45",
+              "track_events": {
+                "800m": {
+                  "sb": {
+                    "mark": "2:34.12",
+                    "seconds": 154.12,
+                    "meet": "第２５回谷口睦生杯八代選手権大会",
+                    "meet_date": "2024/04/28",
+                    "url": "http://www.kumariku.org/24/24,4,28yatsushiro/rel115.html",
+                    "season": "2024",
+                    "source": "by_year_2024"
+                  },
+                  "recent": {
+                    "mark": "2:34.12",
+                    "seconds": 154.12,
+                    "meet": "第２５回谷口睦生杯八代選手権大会",
+                    "meet_date": "2024/04/28",
+                    "url": "http://www.kumariku.org/24/24,4,28yatsushiro/rel115.html",
+                    "season": "2024",
+                    "source": "by_year_2024"
+                  }
+                },
+                "1500m": {
+                  "sb": {
+                    "mark": "5:01.59",
+                    "seconds": 301.59,
+                    "meet": "令和6年度　熊本県中学校総合体育大会　陸上競技大会",
+                    "meet_date": "2024/07/20",
+                    "url": "http://www.kumariku.org/24/24,7,20chutairen/rel155.html",
+                    "season": "2024",
+                    "source": "by_year_2024"
+                  },
+                  "recent": {
+                    "mark": "5:01.59",
+                    "seconds": 301.59,
+                    "meet": "令和6年度　熊本県中学校総合体育大会　陸上競技大会",
+                    "meet_date": "2024/07/20",
+                    "url": "http://www.kumariku.org/24/24,7,20chutairen/rel155.html",
+                    "season": "2024",
+                    "source": "by_year_2024"
+                  }
+                }
+              },
+              "ekiden_estimate": {
+                "from_event": "1500m",
+                "from_mark": "5:01.59",
+                "from_seconds": 301.59,
+                "factor": 2.15,
+                "estimated_seconds": 648.4,
+                "estimated_mark": "10:48.42",
+                "note": "1500m 5:01.59 × 2.15 ≈ 10:48.42（簡易換算）"
+              },
+              "match_count": 11
+            }
+          ]
+        },
+        {
+          "rank": 3,
+          "school": "玉東",
+          "total_mark": "44:24",
+          "total_seconds": 2664.0,
+          "athletes": [
+            {
+              "leg": 1,
+              "name": "坂村優奈",
+              "grade": 3,
+              "ekiden_mark": "11:03",
+              "ekiden_seconds": 663.0,
+              "cumulative": "11:03",
+              "track_events": {
+                "800m": {
+                  "sb": {
+                    "mark": "2:29.99",
+                    "seconds": 149.99,
+                    "meet": "令和6年度　第38回熊本県中学校陸上競技選手権大会",
+                    "meet_date": "2024/06/09",
+                    "url": "http://www.kumariku.org/24/24,6,08chugaku/rel124.html",
+                    "season": "2024",
+                    "source": "by_year_2024"
+                  },
+                  "recent": {
+                    "mark": "2:37.97",
+                    "seconds": 157.97,
+                    "meet": "陸協春季熊本陸協記録会",
+                    "meet_date": "2025/03/22",
+                    "url": "http://www.kumariku.org/24/25,3,22rikkyo/rel253.html",
+                    "season": "2024",
+                    "source": "notion_2024"
+                  }
+                }
+              },
+              "ekiden_estimate": {
+                "from_event": "800m",
+                "from_mark": "2:29.99",
+                "from_seconds": 149.99,
+                "factor": 4.3,
+                "estimated_seconds": 645.0,
+                "estimated_mark": "10:44.96",
+                "note": "800m 2:29.99 × 4.3 ≈ 10:44.96（簡易換算）"
+              },
+              "match_count": 7
+            },
+            {
+              "leg": 2,
+              "name": "榎本佳澄",
+              "grade": 2,
+              "ekiden_mark": "7:04",
+              "ekiden_seconds": 424.0,
+              "cumulative": "18:07",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 3,
+              "name": "藤野四季",
+              "grade": 3,
+              "ekiden_mark": "7:32",
+              "ekiden_seconds": 452.0,
+              "cumulative": "25:39",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 4,
+              "name": "伊牟田百香",
+              "grade": 3,
+              "ekiden_mark": "7:37",
+              "ekiden_seconds": 457.0,
+              "cumulative": "33:16",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 5,
+              "name": "上村百叶",
+              "grade": 2,
+              "ekiden_mark": "11:08",
+              "ekiden_seconds": 668.0,
+              "cumulative": "44:24",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            }
+          ]
+        },
+        {
+          "rank": 4,
+          "school": "長洲",
+          "total_mark": "44:33",
+          "total_seconds": 2673.0,
+          "athletes": [
+            {
+              "leg": 1,
+              "name": "中村羽音",
+              "grade": 2,
+              "ekiden_mark": "11:08",
+              "ekiden_seconds": 668.0,
+              "cumulative": "11:08",
+              "track_events": {
+                "800m": {
+                  "sb": {
+                    "mark": "2:24.44",
+                    "seconds": 144.44,
+                    "meet": null,
+                    "meet_date": "2026/07/19",
+                    "url": "http://www.kumariku.org/26/26,7,18chutairen/rel134.html",
+                    "season": "2026",
+                    "source": "by_year_2026"
+                  },
+                  "recent": {
+                    "mark": "2:24.44",
+                    "seconds": 144.44,
+                    "meet": null,
+                    "meet_date": "2026/07/19",
+                    "url": "http://www.kumariku.org/26/26,7,18chutairen/rel134.html",
+                    "season": "2026",
+                    "source": "by_year_2026"
+                  }
+                },
+                "1500m": {
+                  "sb": {
+                    "mark": "5:13.41",
+                    "seconds": 313.41,
+                    "meet": null,
+                    "meet_date": "2026/05/23",
+                    "url": "http://www.kumariku.org/26/26,5,23chugaku/rel160.html",
+                    "season": "2026",
+                    "source": "notion_2026"
+                  },
+                  "recent": {
+                    "mark": "5:13.41",
+                    "seconds": 313.41,
+                    "meet": null,
+                    "meet_date": "2026/05/23",
+                    "url": "http://www.kumariku.org/26/26,5,23chugaku/rel160.html",
+                    "season": "2026",
+                    "source": "notion_2026"
+                  }
+                }
+              },
+              "ekiden_estimate": {
+                "from_event": "1500m",
+                "from_mark": "5:13.41",
+                "from_seconds": 313.41,
+                "factor": 2.15,
+                "estimated_seconds": 673.8,
+                "estimated_mark": "11:13.83",
+                "note": "1500m 5:13.41 × 2.15 ≈ 11:13.83（簡易換算）"
+              },
+              "match_count": 17
+            },
+            {
+              "leg": 2,
+              "name": "山川綾",
+              "grade": 1,
+              "ekiden_mark": "7:03",
+              "ekiden_seconds": 423.0,
+              "cumulative": "18:11",
+              "track_events": {
+                "800m": {
+                  "sb": {
+                    "mark": "2:26.83",
+                    "seconds": 146.83,
+                    "meet": null,
+                    "meet_date": "2026/06/14",
+                    "url": "http://www.kumariku.org/26/26,6,13tsushin/rel201.html",
+                    "season": "2026",
+                    "source": "notion_2026"
+                  },
+                  "recent": {
+                    "mark": "2:30.20",
+                    "seconds": 150.2,
+                    "meet": null,
+                    "meet_date": "2026/07/19",
+                    "url": "http://www.kumariku.org/26/26,7,18chutairen/rel130.html",
+                    "season": "2026",
+                    "source": "notion_2026"
+                  }
+                },
+                "1500m": {
+                  "sb": {
+                    "mark": "5:22.32",
+                    "seconds": 322.32,
+                    "meet": null,
+                    "meet_date": "2026/05/09",
+                    "url": "http://www.kumariku.org/26/26,5,9long/rel026.html",
+                    "season": "2026",
+                    "source": "by_year_2026"
+                  },
+                  "recent": {
+                    "mark": "5:22.32",
+                    "seconds": 322.32,
+                    "meet": null,
+                    "meet_date": "2026/05/09",
+                    "url": "http://www.kumariku.org/26/26,5,9long/rel026.html",
+                    "season": "2026",
+                    "source": "by_year_2026"
+                  }
+                }
+              },
+              "ekiden_estimate": {
+                "from_event": "1500m",
+                "from_mark": "5:22.32",
+                "from_seconds": 322.32,
+                "factor": 1.28,
+                "estimated_seconds": 412.6,
+                "estimated_mark": "6:52.57",
+                "note": "1500m 5:22.32 × 1.28 ≈ 6:52.57（簡易換算）"
+              },
+              "match_count": 14
+            },
+            {
+              "leg": 3,
+              "name": "濱北愛",
+              "grade": 1,
+              "ekiden_mark": "7:13",
+              "ekiden_seconds": 433.0,
+              "cumulative": "25:24",
+              "track_events": {
+                "800m": {
+                  "sb": {
+                    "mark": "2:38.06",
+                    "seconds": 158.06,
+                    "meet": "第２７２回　熊本市陸上競技記録会",
+                    "meet_date": "2026/04/04",
+                    "url": "http://www.kcrk.jp/i-mode/kiroku/272/PC/rel062.html",
+                    "season": "2026",
+                    "source": "by_year_2026"
+                  },
+                  "recent": {
+                    "mark": "2:38.06",
+                    "seconds": 158.06,
+                    "meet": "第２７２回　熊本市陸上競技記録会",
+                    "meet_date": "2026/04/04",
+                    "url": "http://www.kcrk.jp/i-mode/kiroku/272/PC/rel062.html",
+                    "season": "2026",
+                    "source": "by_year_2026"
+                  }
+                },
+                "1500m": {
+                  "sb": {
+                    "mark": "5:20.72",
+                    "seconds": 320.72,
+                    "meet": "第五回熊本県長距離記録会",
+                    "meet_date": "2025/12/13",
+                    "url": "http://www.kumariku.org/25/25,12,13long/rel022.html",
+                    "season": "2025",
+                    "source": "by_year_2025"
+                  },
+                  "recent": {
+                    "mark": "5:20.72",
+                    "seconds": 320.72,
+                    "meet": "第五回熊本県長距離記録会",
+                    "meet_date": "2025/12/13",
+                    "url": "http://www.kumariku.org/25/25,12,13long/rel022.html",
+                    "season": "2025",
+                    "source": "by_year_2025"
+                  }
+                }
+              },
+              "ekiden_estimate": {
+                "from_event": "1500m",
+                "from_mark": "5:20.72",
+                "from_seconds": 320.72,
+                "factor": 1.4,
+                "estimated_seconds": 449.0,
+                "estimated_mark": "7:29.01",
+                "note": "1500m 5:20.72 × 1.4 ≈ 7:29.01（簡易換算）"
+              },
+              "match_count": 13
+            },
+            {
+              "leg": 4,
+              "name": "村里唯花",
+              "grade": 2,
+              "ekiden_mark": "7:53",
+              "ekiden_seconds": 473.0,
+              "cumulative": "33:17",
+              "track_events": {
+                "800m": {
+                  "sb": {
+                    "mark": "2:49.00",
+                    "seconds": 169.0,
+                    "meet": null,
+                    "meet_date": "2026/06/14",
+                    "url": "http://www.kumariku.org/26/26,6,13tsushin/rel207.html",
+                    "season": "2026",
+                    "source": "by_year_2026"
+                  },
+                  "recent": {
+                    "mark": "2:49.09",
+                    "seconds": 169.09,
+                    "meet": null,
+                    "meet_date": "2026/07/19",
+                    "url": "http://www.kumariku.org/26/26,7,18chutairen/rel135.html",
+                    "season": "2026",
+                    "source": "notion_2026"
+                  }
+                },
+                "1500m": {
+                  "sb": {
+                    "mark": "5:55.03",
+                    "seconds": 355.03,
+                    "meet": "2024.7.6　第二回熊本県長距離記録会",
+                    "meet_date": "2024/07/06",
+                    "url": "http://www.kumariku.org/24/24,7,6long&jump/rel018.html",
+                    "season": "2024",
+                    "source": "by_year_2024"
+                  },
+                  "recent": {
+                    "mark": "5:55.03",
+                    "seconds": 355.03,
+                    "meet": "2024.7.6　第二回熊本県長距離記録会",
+                    "meet_date": "2024/07/06",
+                    "url": "http://www.kumariku.org/24/24,7,6long&jump/rel018.html",
+                    "season": "2024",
+                    "source": "by_year_2024"
+                  }
+                }
+              },
+              "ekiden_estimate": {
+                "from_event": "1500m",
+                "from_mark": "5:55.03",
+                "from_seconds": 355.03,
+                "factor": 1.4,
+                "estimated_seconds": 497.0,
+                "estimated_mark": "8:17.04",
+                "note": "1500m 5:55.03 × 1.4 ≈ 8:17.04（簡易換算）"
+              },
+              "match_count": 10
+            },
+            {
+              "leg": 5,
+              "name": "猿渡愛梨",
+              "grade": 2,
+              "ekiden_mark": "11:16",
+              "ekiden_seconds": 676.0,
+              "cumulative": "44:33",
+              "track_events": {
+                "800m": {
+                  "sb": {
+                    "mark": "2:35.90",
+                    "seconds": 155.9,
+                    "meet": null,
+                    "meet_date": "2026/07/19",
+                    "url": "http://www.kumariku.org/26/26,7,18chutairen/rel134.html",
+                    "season": "2026",
+                    "source": "by_year_2026"
+                  },
+                  "recent": {
+                    "mark": "2:35.90",
+                    "seconds": 155.9,
+                    "meet": null,
+                    "meet_date": "2026/07/19",
+                    "url": "http://www.kumariku.org/26/26,7,18chutairen/rel134.html",
+                    "season": "2026",
+                    "source": "by_year_2026"
+                  }
+                },
+                "1500m": {
+                  "sb": {
+                    "mark": "5:16.77",
+                    "seconds": 316.77,
+                    "meet": null,
+                    "meet_date": "2026/07/04",
+                    "url": "http://www.kumariku.org/26/26,7,4long/rel033.html",
+                    "season": "2026",
+                    "source": "notion_2026"
+                  },
+                  "recent": {
+                    "mark": "5:16.77",
+                    "seconds": 316.77,
+                    "meet": null,
+                    "meet_date": "2026/07/04",
+                    "url": "http://www.kumariku.org/26/26,7,4long/rel033.html",
+                    "season": "2026",
+                    "source": "notion_2026"
+                  }
+                }
+              },
+              "ekiden_estimate": {
+                "from_event": "1500m",
+                "from_mark": "5:16.77",
+                "from_seconds": 316.77,
+                "factor": 2.15,
+                "estimated_seconds": 681.1,
+                "estimated_mark": "11:21.06",
+                "note": "1500m 5:16.77 × 2.15 ≈ 11:21.06（簡易換算）"
+              },
+              "match_count": 29
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "year": 2024,
+      "sb_seasons": [
+        "2025",
+        "2024",
+        "2023"
+      ],
+      "date": "2024-10-18",
+      "venue": null,
+      "source_file_id": "1WDoNUHfL23mTudpm_-eUIbyeMn3EGtZg",
+      "source_confidence": null,
+      "teams": [
+        {
+          "rank": 1,
+          "school": "南関",
+          "total_mark": "42:25",
+          "total_seconds": 2545.0,
+          "athletes": [
+            {
+              "leg": 1,
+              "name": "田畑結愛",
+              "grade": 3,
+              "ekiden_mark": "11:01",
+              "ekiden_seconds": 661.0,
+              "cumulative": "11:01",
+              "track_events": {
+                "800m": {
+                  "sb": {
+                    "mark": "2:26.80",
+                    "seconds": 146.8,
+                    "meet": "令和6年度　第38回熊本県中学校陸上競技選手権大会",
+                    "meet_date": "2024/06/09",
+                    "url": "http://www.kumariku.org/24/24,6,08chugaku/rel127.html",
+                    "season": "2024",
+                    "source": "by_year_2024"
+                  },
+                  "recent": {
+                    "mark": "2:28.81",
+                    "seconds": 148.81,
+                    "meet": "第70回全日本中学校通信陸上競技大会熊本県大会",
+                    "meet_date": "2024/06/23",
+                    "url": "http://www.kumariku.org/24/24,6,22tsushin/rel185.html",
+                    "season": "2024",
+                    "source": "notion_2024"
+                  }
+                },
+                "1500m": {
+                  "sb": {
+                    "mark": "4:51.75",
+                    "seconds": 291.75,
+                    "meet": "令和6年度　熊本県中学校総合体育大会　陸上競技大会",
+                    "meet_date": "2024/07/20",
+                    "url": "http://www.kumariku.org/24/24,7,20chutairen/rel155.html",
+                    "season": "2024",
+                    "source": "by_year_2024"
+                  },
+                  "recent": {
+                    "mark": "4:51.75",
+                    "seconds": 291.75,
+                    "meet": "令和6年度　熊本県中学校総合体育大会　陸上競技大会",
+                    "meet_date": "2024/07/20",
+                    "url": "http://www.kumariku.org/24/24,7,20chutairen/rel155.html",
+                    "season": "2024",
+                    "source": "by_year_2024"
+                  }
+                },
+                "3000m": {
+                  "sb": {
+                    "mark": "10:28.83",
+                    "seconds": 628.83,
+                    "meet": "2024.12.7　第四回熊本県長距離記録会",
+                    "meet_date": "2024/12/07",
+                    "url": "http://www.kumariku.org/24/24,12,7long/rel024.html",
+                    "season": "2024",
+                    "source": "by_year_2024"
+                  },
+                  "recent": {
+                    "mark": "10:28.83",
+                    "seconds": 628.83,
+                    "meet": "2024.12.7　第四回熊本県長距離記録会",
+                    "meet_date": "2024/12/07",
+                    "url": "http://www.kumariku.org/24/24,12,7long/rel024.html",
+                    "season": "2024",
+                    "source": "by_year_2024"
+                  }
+                }
+              },
+              "ekiden_estimate": {
+                "from_event": "3000m",
+                "from_mark": "10:28.83",
+                "from_seconds": 628.83,
+                "factor": 1.0,
+                "estimated_seconds": 628.8,
+                "estimated_mark": "10:28.83",
+                "note": "3000m 10:28.83 × 1.0 ≈ 10:28.83（簡易換算）"
+              },
+              "match_count": 11
+            },
+            {
+              "leg": 2,
+              "name": "米田美空",
+              "grade": 1,
+              "ekiden_mark": "6:49",
+              "ekiden_seconds": 409.0,
+              "cumulative": "17:50",
+              "track_events": {
+                "800m": {
+                  "sb": {
+                    "mark": "2:33.55",
+                    "seconds": 153.55,
+                    "meet": "令和6年度　熊本県中学校総合体育大会　陸上競技大会",
+                    "meet_date": "2024/07/21",
+                    "url": "http://www.kumariku.org/24/24,7,20chutairen/rel146.html",
+                    "season": "2024",
+                    "source": "by_year_2024"
+                  },
+                  "recent": {
+                    "mark": "2:33.55",
+                    "seconds": 153.55,
+                    "meet": "令和6年度　熊本県中学校総合体育大会　陸上競技大会",
+                    "meet_date": "2024/07/21",
+                    "url": "http://www.kumariku.org/24/24,7,20chutairen/rel146.html",
+                    "season": "2024",
+                    "source": "by_year_2024"
+                  }
+                },
+                "1500m": {
+                  "sb": {
+                    "mark": "5:24.65",
+                    "seconds": 324.65,
+                    "meet": "2024.7.6　第二回熊本県長距離記録会",
+                    "meet_date": "2024/07/06",
+                    "url": "http://www.kumariku.org/24/24,7,6long&jump/rel019.html",
+                    "season": "2024",
+                    "source": "by_year_2024"
+                  },
+                  "recent": {
+                    "mark": "5:24.65",
+                    "seconds": 324.65,
+                    "meet": "2024.7.6　第二回熊本県長距離記録会",
+                    "meet_date": "2024/07/06",
+                    "url": "http://www.kumariku.org/24/24,7,6long&jump/rel019.html",
+                    "season": "2024",
+                    "source": "by_year_2024"
+                  }
+                }
+              },
+              "ekiden_estimate": {
+                "from_event": "1500m",
+                "from_mark": "5:24.65",
+                "from_seconds": 324.65,
+                "factor": 1.28,
+                "estimated_seconds": 415.6,
+                "estimated_mark": "6:55.55",
+                "note": "1500m 5:24.65 × 1.28 ≈ 6:55.55（簡易換算）"
+              },
+              "match_count": 14
+            },
+            {
+              "leg": 3,
+              "name": "川下結音",
+              "grade": 3,
+              "ekiden_mark": "7:02",
+              "ekiden_seconds": 422.0,
+              "cumulative": "24:52",
+              "track_events": {
+                "800m": {
+                  "sb": {
+                    "mark": "2:32.98",
+                    "seconds": 152.98,
+                    "meet": "令和6年度　第38回熊本県中学校陸上競技選手権大会",
+                    "meet_date": "2024/06/09",
+                    "url": "http://www.kumariku.org/24/24,6,08chugaku/rel127.html",
+                    "season": "2024",
+                    "source": "by_year_2024"
+                  },
+                  "recent": {
+                    "mark": "2:32.98",
+                    "seconds": 152.98,
+                    "meet": "令和6年度　第38回熊本県中学校陸上競技選手権大会",
+                    "meet_date": "2024/06/09",
+                    "url": "http://www.kumariku.org/24/24,6,08chugaku/rel127.html",
+                    "season": "2024",
+                    "source": "by_year_2024"
+                  }
+                },
+                "1500m": {
+                  "sb": {
+                    "mark": "5:10.27",
+                    "seconds": 310.27,
+                    "meet": "２０２４年度　第４３回熊本市陸上競技選手権大会",
+                    "meet_date": "2024/05/04",
+                    "url": "http://www.kcrk.jp/i-mode/kiroku/sisen_i/43/PC/rel157.html",
+                    "season": "2024",
+                    "source": "by_year_2024"
+                  },
+                  "recent": {
+                    "mark": "5:16.34",
+                    "seconds": 316.34,
+                    "meet": "2024.12.7　第四回熊本県長距離記録会",
+                    "meet_date": "2024/12/07",
+                    "url": "http://www.kumariku.org/24/24,12,7long/rel022.html",
+                    "season": "2024",
+                    "source": "notion_2024"
+                  }
+                }
+              },
+              "ekiden_estimate": {
+                "from_event": "1500m",
+                "from_mark": "5:10.27",
+                "from_seconds": 310.27,
+                "factor": 1.4,
+                "estimated_seconds": 434.4,
+                "estimated_mark": "7:14.38",
+                "note": "1500m 5:10.27 × 1.4 ≈ 7:14.38（簡易換算）"
+              },
+              "match_count": 7
+            },
+            {
+              "leg": 4,
+              "name": "稗島葵音",
+              "grade": 2,
+              "ekiden_mark": "6:58",
+              "ekiden_seconds": 418.0,
+              "cumulative": "31:50",
+              "track_events": {
+                "800m": {
+                  "sb": {
+                    "mark": "2:35.52",
+                    "seconds": 155.52,
+                    "meet": "第２５回谷口睦生杯八代選手権大会",
+                    "meet_date": "2024/04/28",
+                    "url": "http://www.kumariku.org/24/24,4,28yatsushiro/rel115.html",
+                    "season": "2024",
+                    "source": "by_year_2024"
+                  },
+                  "recent": {
+                    "mark": "2:35.52",
+                    "seconds": 155.52,
+                    "meet": "第２５回谷口睦生杯八代選手権大会",
+                    "meet_date": "2024/04/28",
+                    "url": "http://www.kumariku.org/24/24,4,28yatsushiro/rel115.html",
+                    "season": "2024",
+                    "source": "by_year_2024"
+                  }
+                },
+                "1500m": {
+                  "sb": {
+                    "mark": "4:53.03",
+                    "seconds": 293.03,
+                    "meet": "2024.7.6　第二回熊本県長距離記録会",
+                    "meet_date": "2024/07/06",
+                    "url": "http://www.kumariku.org/24/24,7,6long&jump/rel020.html",
+                    "season": "2024",
+                    "source": "by_year_2024"
+                  },
+                  "recent": {
+                    "mark": "4:58.78",
+                    "seconds": 298.78,
+                    "meet": "令和6年度　熊本県中学校総合体育大会　陸上競技大会",
+                    "meet_date": "2024/07/20",
+                    "url": "http://www.kumariku.org/24/24,7,20chutairen/rel155.html",
+                    "season": "2024",
+                    "source": "notion_2024"
+                  }
+                },
+                "3000m": {
+                  "sb": {
+                    "mark": "10:44.15",
+                    "seconds": 644.15,
+                    "meet": "2024.12.7　第四回熊本県長距離記録会",
+                    "meet_date": "2024/12/07",
+                    "url": "http://www.kumariku.org/24/24,12,7long/rel024.html",
+                    "season": "2024",
+                    "source": "by_year_2024"
+                  },
+                  "recent": {
+                    "mark": "10:44.15",
+                    "seconds": 644.15,
+                    "meet": "2024.12.7　第四回熊本県長距離記録会",
+                    "meet_date": "2024/12/07",
+                    "url": "http://www.kumariku.org/24/24,12,7long/rel024.html",
+                    "season": "2024",
+                    "source": "by_year_2024"
+                  }
+                }
+              },
+              "ekiden_estimate": {
+                "from_event": "1500m",
+                "from_mark": "4:53.03",
+                "from_seconds": 293.03,
+                "factor": 1.4,
+                "estimated_seconds": 410.2,
+                "estimated_mark": "6:50.24",
+                "note": "1500m 4:53.03 × 1.4 ≈ 6:50.24（簡易換算）"
+              },
+              "match_count": 12
+            },
+            {
+              "leg": 5,
+              "name": "平山果朋",
+              "grade": 2,
+              "ekiden_mark": "10:35",
+              "ekiden_seconds": 635.0,
+              "cumulative": "42:25",
+              "track_events": {
+                "800m": {
+                  "sb": {
+                    "mark": "2:34.12",
+                    "seconds": 154.12,
+                    "meet": "第２５回谷口睦生杯八代選手権大会",
+                    "meet_date": "2024/04/28",
+                    "url": "http://www.kumariku.org/24/24,4,28yatsushiro/rel115.html",
+                    "season": "2024",
+                    "source": "by_year_2024"
+                  },
+                  "recent": {
+                    "mark": "2:34.12",
+                    "seconds": 154.12,
+                    "meet": "第２５回谷口睦生杯八代選手権大会",
+                    "meet_date": "2024/04/28",
+                    "url": "http://www.kumariku.org/24/24,4,28yatsushiro/rel115.html",
+                    "season": "2024",
+                    "source": "by_year_2024"
+                  }
+                },
+                "1500m": {
+                  "sb": {
+                    "mark": "5:01.59",
+                    "seconds": 301.59,
+                    "meet": "令和6年度　熊本県中学校総合体育大会　陸上競技大会",
+                    "meet_date": "2024/07/20",
+                    "url": "http://www.kumariku.org/24/24,7,20chutairen/rel155.html",
+                    "season": "2024",
+                    "source": "by_year_2024"
+                  },
+                  "recent": {
+                    "mark": "5:01.59",
+                    "seconds": 301.59,
+                    "meet": "令和6年度　熊本県中学校総合体育大会　陸上競技大会",
+                    "meet_date": "2024/07/20",
+                    "url": "http://www.kumariku.org/24/24,7,20chutairen/rel155.html",
+                    "season": "2024",
+                    "source": "by_year_2024"
+                  }
+                }
+              },
+              "ekiden_estimate": {
+                "from_event": "1500m",
+                "from_mark": "5:01.59",
+                "from_seconds": 301.59,
+                "factor": 2.15,
+                "estimated_seconds": 648.4,
+                "estimated_mark": "10:48.42",
+                "note": "1500m 5:01.59 × 2.15 ≈ 10:48.42（簡易換算）"
+              },
+              "match_count": 11
+            }
+          ]
+        },
+        {
+          "rank": 2,
+          "school": "荒尾三",
+          "total_mark": "42:36",
+          "total_seconds": 2556.0,
+          "athletes": [
+            {
+              "leg": 1,
+              "name": "内野花笑",
+              "grade": 3,
+              "ekiden_mark": "10:55",
+              "ekiden_seconds": 655.0,
+              "cumulative": "10:55",
+              "track_events": {
+                "800m": {
+                  "sb": {
+                    "mark": "2:29.61",
+                    "seconds": 149.61,
+                    "meet": "令和6年度　第38回熊本県中学校陸上競技選手権大会",
+                    "meet_date": "2024/06/09",
+                    "url": "http://www.kumariku.org/24/24,6,08chugaku/rel127.html",
+                    "season": "2024",
+                    "source": "by_year_2024"
+                  },
+                  "recent": {
+                    "mark": "2:29.92",
+                    "seconds": 149.92,
+                    "meet": "第70回全日本中学校通信陸上競技大会熊本県大会",
+                    "meet_date": "2024/06/23",
+                    "url": "http://www.kumariku.org/24/24,6,22tsushin/rel185.html",
+                    "season": "2024",
+                    "source": "notion_2024"
+                  }
+                },
+                "1500m": {
+                  "sb": {
+                    "mark": "5:14.20",
+                    "seconds": 314.2,
+                    "meet": "令和6年度　熊本県中学校総合体育大会　陸上競技大会",
+                    "meet_date": "2024/07/20",
+                    "url": "http://www.kumariku.org/24/24,7,20chutairen/rel156.html",
+                    "season": "2024",
+                    "source": "by_year_2024"
+                  },
+                  "recent": {
+                    "mark": "5:14.20",
+                    "seconds": 314.2,
+                    "meet": "令和6年度　熊本県中学校総合体育大会　陸上競技大会",
+                    "meet_date": "2024/07/20",
+                    "url": "http://www.kumariku.org/24/24,7,20chutairen/rel156.html",
+                    "season": "2024",
+                    "source": "by_year_2024"
+                  }
+                }
+              },
+              "ekiden_estimate": {
+                "from_event": "1500m",
+                "from_mark": "5:14.20",
+                "from_seconds": 314.2,
+                "factor": 2.15,
+                "estimated_seconds": 675.5,
+                "estimated_mark": "11:15.53",
+                "note": "1500m 5:14.20 × 2.15 ≈ 11:15.53（簡易換算）"
+              },
+              "match_count": 7
+            },
+            {
+              "leg": 2,
+              "name": "庄山瑠那",
+              "grade": 1,
+              "ekiden_mark": "6:25",
+              "ekiden_seconds": 385.0,
+              "cumulative": "17:20",
+              "track_events": {
+                "800m": {
+                  "sb": {
+                    "mark": "2:20.52",
+                    "seconds": 140.52,
+                    "meet": null,
+                    "meet_date": null,
+                    "url": "http://www.kumariku.org/25/25,7,19chugaku/rel210.html",
+                    "season": null,
+                    "source": "wide_sb"
+                  },
+                  "recent": {
+                    "mark": "2:20.52",
+                    "seconds": 140.52,
+                    "meet": null,
+                    "meet_date": null,
+                    "url": "http://www.kumariku.org/25/25,7,19chugaku/rel210.html",
+                    "season": null,
+                    "source": "wide_sb"
+                  }
+                },
+                "1500m": {
+                  "sb": {
+                    "mark": "4:41.77",
+                    "seconds": 281.77,
+                    "meet": null,
+                    "meet_date": null,
+                    "url": "http://www.kumariku.org/25/25,6,7chugaku/rel030.html",
+                    "season": null,
+                    "source": "wide_sb"
+                  },
+                  "recent": {
+                    "mark": "4:41.77",
+                    "seconds": 281.77,
+                    "meet": null,
+                    "meet_date": null,
+                    "url": "http://www.kumariku.org/25/25,6,7chugaku/rel030.html",
+                    "season": null,
+                    "source": "wide_sb"
+                  }
+                }
+              },
+              "ekiden_estimate": {
+                "from_event": "1500m",
+                "from_mark": "4:41.77",
+                "from_seconds": 281.77,
+                "factor": 1.28,
+                "estimated_seconds": 360.7,
+                "estimated_mark": "6:00.67",
+                "note": "1500m 4:41.77 × 1.28 ≈ 6:00.67（簡易換算）"
+              },
+              "match_count": 17
+            },
+            {
+              "leg": 3,
+              "name": "山道咲空",
+              "grade": 2,
+              "ekiden_mark": "7:09",
+              "ekiden_seconds": 429.0,
+              "cumulative": "24:29",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 4,
+              "name": "吉本琉音",
+              "grade": 2,
+              "ekiden_mark": "7:25",
+              "ekiden_seconds": 445.0,
+              "cumulative": "31:54",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 5,
+              "name": "中尾美空",
+              "grade": 3,
+              "ekiden_mark": "10:42",
+              "ekiden_seconds": 642.0,
+              "cumulative": "42:36",
+              "track_events": {
+                "1500m": {
+                  "sb": {
+                    "mark": "5:05.95",
+                    "seconds": 305.95,
+                    "meet": "第70回全日本中学校通信陸上競技大会熊本県大会",
+                    "meet_date": "2024/06/22",
+                    "url": "http://www.kumariku.org/24/24,6,22tsushin/rel188.html",
+                    "season": "2024",
+                    "source": "by_year_2024"
+                  },
+                  "recent": {
+                    "mark": "5:05.95",
+                    "seconds": 305.95,
+                    "meet": "第70回全日本中学校通信陸上競技大会熊本県大会",
+                    "meet_date": "2024/06/22",
+                    "url": "http://www.kumariku.org/24/24,6,22tsushin/rel188.html",
+                    "season": "2024",
+                    "source": "by_year_2024"
+                  }
+                }
+              },
+              "ekiden_estimate": {
+                "from_event": "1500m",
+                "from_mark": "5:05.95",
+                "from_seconds": 305.95,
+                "factor": 2.15,
+                "estimated_seconds": 657.8,
+                "estimated_mark": "10:57.79",
+                "note": "1500m 5:05.95 × 2.15 ≈ 10:57.79（簡易換算）"
+              },
+              "match_count": 2
+            }
+          ]
+        },
+        {
+          "rank": 3,
+          "school": "玉名",
+          "total_mark": "43:02",
+          "total_seconds": 2582.0,
+          "athletes": [
+            {
+              "leg": 1,
+              "name": "東果凛",
+              "grade": 3,
+              "ekiden_mark": "10:27",
+              "ekiden_seconds": 627.0,
+              "cumulative": "10:27",
+              "track_events": {
+                "800m": {
+                  "sb": {
+                    "mark": "2:17.26",
+                    "seconds": 137.26,
+                    "meet": "令和6年度　熊本県中学校総合体育大会　陸上競技大会",
+                    "meet_date": "2024/07/21",
+                    "url": "http://www.kumariku.org/24/24,7,20chutairen/rel191.html",
+                    "season": "2024",
+                    "source": "by_year_2024"
+                  },
+                  "recent": {
+                    "mark": "2:31.14",
+                    "seconds": 151.14,
+                    "meet": "第２６７回　熊本市陸上競技記録会",
+                    "meet_date": "2024/07/27",
+                    "url": "http://www.kcrk.jp/i-mode/kiroku/267/PC/rel127.html",
+                    "season": "2024",
+                    "source": "notion_2024"
+                  }
+                },
+                "1500m": {
+                  "sb": {
+                    "mark": "4:56.41",
+                    "seconds": 296.41,
+                    "meet": "Middle Distnce in Omuta",
+                    "meet_date": "2024/09/22",
+                    "url": "https://omuta.meet7.org/cgi/menu.cgi?menu=2&base=20240922&mode=\"_2_8_4_2_3__5_\"&r_n=豎ｺ蜍�&dopt=1&cs=2&exit=0",
+                    "season": "2024",
+                    "source": "by_year_2024"
+                  },
+                  "recent": {
+                    "mark": "4:56.41",
+                    "seconds": 296.41,
+                    "meet": "Middle Distnce in Omuta",
+                    "meet_date": "2024/09/22",
+                    "url": "https://omuta.meet7.org/cgi/menu.cgi?menu=2&base=20240922&mode=\"_2_8_4_2_3__5_\"&r_n=豎ｺ蜍�&dopt=1&cs=2&exit=0",
+                    "season": "2024",
+                    "source": "by_year_2024"
+                  }
+                }
+              },
+              "ekiden_estimate": {
+                "from_event": "1500m",
+                "from_mark": "4:56.41",
+                "from_seconds": 296.41,
+                "factor": 2.15,
+                "estimated_seconds": 637.3,
+                "estimated_mark": "10:37.28",
+                "note": "1500m 4:56.41 × 2.15 ≈ 10:37.28（簡易換算）"
+              },
+              "match_count": 17
+            },
+            {
+              "leg": 2,
+              "name": "辻美空",
+              "grade": 2,
+              "ekiden_mark": "6:51",
+              "ekiden_seconds": 411.0,
+              "cumulative": "17:18",
+              "track_events": {
+                "800m": {
+                  "sb": {
+                    "mark": "2:19.37",
+                    "seconds": 139.37,
+                    "meet": "令和6年度　熊本県中学校総合体育大会　陸上競技大会",
+                    "meet_date": "2024/07/21",
+                    "url": "http://www.kumariku.org/24/24,7,20chutairen/rel189.html",
+                    "season": "2024",
+                    "source": "by_year_2024"
+                  },
+                  "recent": {
+                    "mark": "2:26.23",
+                    "seconds": 146.23,
+                    "meet": "第７７回熊本市中長距離陸上競技選手権大会",
+                    "meet_date": "2024/11/23",
+                    "url": "http://www.kcrk.jp/i-mode/kiroku/tyuutyoukyori/77/PC/rel055.html",
+                    "season": "2024",
+                    "source": "notion_2024"
+                  }
+                },
+                "1500m": {
+                  "sb": {
+                    "mark": "5:06.81",
+                    "seconds": 306.81,
+                    "meet": "2024.7.6　第二回熊本県長距離記録会",
+                    "meet_date": "2024/07/06",
+                    "url": "http://www.kumariku.org/24/24,7,6long&jump/rel020.html",
+                    "season": "2024",
+                    "source": "by_year_2024"
+                  },
+                  "recent": {
+                    "mark": "5:13.64",
+                    "seconds": 313.64,
+                    "meet": "2024.12.7　第四回熊本県長距離記録会",
+                    "meet_date": "2024/12/07",
+                    "url": "http://www.kumariku.org/24/24,12,7long/rel022.html",
+                    "season": "2024",
+                    "source": "notion_2024"
+                  }
+                }
+              },
+              "ekiden_estimate": {
+                "from_event": "1500m",
+                "from_mark": "5:06.81",
+                "from_seconds": 306.81,
+                "factor": 1.28,
+                "estimated_seconds": 392.7,
+                "estimated_mark": "6:32.72",
+                "note": "1500m 5:06.81 × 1.28 ≈ 6:32.72（簡易換算）"
+              },
+              "match_count": 18
+            },
+            {
+              "leg": 3,
+              "name": "川原芽吹",
+              "grade": 1,
+              "ekiden_mark": "6:53",
+              "ekiden_seconds": 413.0,
+              "cumulative": "24:11",
+              "track_events": {
+                "800m": {
+                  "sb": {
+                    "mark": "2:37.23",
+                    "seconds": 157.23,
+                    "meet": "第２６６回　熊本市陸上競技記録会",
+                    "meet_date": "2024/05/25",
+                    "url": "http://www.kcrk.jp/i-mode/kiroku/266/PC/rel115.html",
+                    "season": "2024",
+                    "source": "by_year_2024"
+                  },
+                  "recent": {
+                    "mark": "2:38.48",
+                    "seconds": 158.48,
+                    "meet": "令和6年度　熊本県中学校総合体育大会　陸上競技大会",
+                    "meet_date": "2024/07/21",
+                    "url": "http://www.kumariku.org/24/24,7,20chutairen/rel146.html",
+                    "season": "2024",
+                    "source": "notion_2024"
+                  }
+                },
+                "1500m": {
+                  "sb": {
+                    "mark": "5:07.72",
+                    "seconds": 307.72,
+                    "meet": "第７７回熊本市中長距離陸上競技選手権大会",
+                    "meet_date": "2024/11/23",
+                    "url": "http://www.kcrk.jp/i-mode/kiroku/tyuutyoukyori/77/PC/rel072.html",
+                    "season": "2024",
+                    "source": "by_year_2024"
+                  },
+                  "recent": {
+                    "mark": "5:07.72",
+                    "seconds": 307.72,
+                    "meet": "第７７回熊本市中長距離陸上競技選手権大会",
+                    "meet_date": "2024/11/23",
+                    "url": "http://www.kcrk.jp/i-mode/kiroku/tyuutyoukyori/77/PC/rel072.html",
+                    "season": "2024",
+                    "source": "by_year_2024"
+                  }
+                }
+              },
+              "ekiden_estimate": {
+                "from_event": "1500m",
+                "from_mark": "5:07.72",
+                "from_seconds": 307.72,
+                "factor": 1.4,
+                "estimated_seconds": 430.8,
+                "estimated_mark": "7:10.81",
+                "note": "1500m 5:07.72 × 1.4 ≈ 7:10.81（簡易換算）"
+              },
+              "match_count": 11
+            },
+            {
+              "leg": 4,
+              "name": "堺菜々美",
+              "grade": 3,
+              "ekiden_mark": "7:32",
+              "ekiden_seconds": 452.0,
+              "cumulative": "31:43",
+              "track_events": {
+                "800m": {
+                  "sb": {
+                    "mark": "2:46.05",
+                    "seconds": 166.05,
+                    "meet": "2024　大牟田陸上競技大会",
+                    "meet_date": "2024/04/29",
+                    "url": "https://omuta.meet7.org/cgi/menu.cgi?menu=2&base=20240429&mode=\"_5_4_4_4_3__5_\"&r_n=豎ｺ蜍�&dopt=1&cs=2&exit=0",
+                    "season": "2024",
+                    "source": "by_year_2024"
+                  },
+                  "recent": {
+                    "mark": "2:46.05",
+                    "seconds": 166.05,
+                    "meet": "2024　大牟田陸上競技大会",
+                    "meet_date": "2024/04/29",
+                    "url": "https://omuta.meet7.org/cgi/menu.cgi?menu=2&base=20240429&mode=\"_5_4_4_4_3__5_\"&r_n=豎ｺ蜍�&dopt=1&cs=2&exit=0",
+                    "season": "2024",
+                    "source": "by_year_2024"
+                  }
+                },
+                "1500m": {
+                  "sb": {
+                    "mark": "5:19.90",
+                    "seconds": 319.9,
+                    "meet": "第70回全日本中学校通信陸上競技大会熊本県大会",
+                    "meet_date": "2024/06/22",
+                    "url": "http://www.kumariku.org/24/24,6,22tsushin/rel189.html",
+                    "season": "2024",
+                    "source": "by_year_2024"
+                  },
+                  "recent": {
+                    "mark": "5:22.47",
+                    "seconds": 322.47,
+                    "meet": "Middle Distnce in Omuta",
+                    "meet_date": "2024/09/22",
+                    "url": "https://omuta.meet7.org/cgi/menu.cgi?menu=2&base=20240922&mode=\"_2_8_4_1_3__5_\"&r_n=豎ｺ蜍�&dopt=1&cs=2&exit=0",
+                    "season": "2024",
+                    "source": "notion_2024"
+                  }
+                }
+              },
+              "ekiden_estimate": {
+                "from_event": "1500m",
+                "from_mark": "5:19.90",
+                "from_seconds": 319.9,
+                "factor": 1.4,
+                "estimated_seconds": 447.9,
+                "estimated_mark": "7:27.86",
+                "note": "1500m 5:19.90 × 1.4 ≈ 7:27.86（簡易換算）"
+              },
+              "match_count": 13
+            },
+            {
+              "leg": 5,
+              "name": "内田愛祐",
+              "grade": 1,
+              "ekiden_mark": "11:19",
+              "ekiden_seconds": 679.0,
+              "cumulative": "43:02",
+              "track_events": {
+                "800m": {
+                  "sb": {
+                    "mark": "2:30.47",
+                    "seconds": 150.47,
+                    "meet": "第２６９回　熊本市陸上競技記録会",
+                    "meet_date": "2025/08/09",
+                    "url": "http://www.kcrk.jp/i-mode/kiroku/269/PC/rel113.html",
+                    "season": "2025",
+                    "source": "by_year_2025"
+                  },
+                  "recent": {
+                    "mark": "2:31.47",
+                    "seconds": 151.47,
+                    "meet": "中長距離選手権",
+                    "meet_date": "2025/11/23",
+                    "url": "http://www.kcrk.jp/i-mode/kiroku/tyuutyoukyori/78/PC/rel041.html",
+                    "season": "2025",
+                    "source": "notion_2025"
+                  }
+                },
+                "1500m": {
+                  "sb": {
+                    "mark": "5:07.92",
+                    "seconds": 307.92,
+                    "meet": "中学選手権",
+                    "meet_date": "2025/06/07",
+                    "url": "http://www.kumariku.org/25/25,6,7chugaku/rel030.html",
+                    "season": "2025",
+                    "source": "by_year_2025"
+                  },
+                  "recent": {
+                    "mark": "5:10.73",
+                    "seconds": 310.73,
+                    "meet": "熊本県中学校総合体育大会　陸上競技大会",
+                    "meet_date": "2025/07/19",
+                    "url": "http://www.kumariku.org/25/25,7,19chugaku/rel180.html",
+                    "season": "2025",
+                    "source": "notion_2025"
+                  }
+                }
+              },
+              "ekiden_estimate": {
+                "from_event": "1500m",
+                "from_mark": "5:07.92",
+                "from_seconds": 307.92,
+                "factor": 2.15,
+                "estimated_seconds": 662.0,
+                "estimated_mark": "11:02.03",
+                "note": "1500m 5:07.92 × 2.15 ≈ 11:02.03（簡易換算）"
+              },
+              "match_count": 26
+            }
+          ]
+        },
+        {
+          "rank": 4,
+          "school": "長洲",
+          "total_mark": "43:21",
+          "total_seconds": 2601.0,
+          "athletes": [
+            {
+              "leg": 1,
+              "name": "福田みさ",
+              "grade": 3,
+              "ekiden_mark": "10:17",
+              "ekiden_seconds": 617.0,
+              "cumulative": "10:17",
+              "track_events": {
+                "1500m": {
+                  "sb": {
+                    "mark": "4:52.64",
+                    "seconds": 292.64,
+                    "meet": "令和６年度　熊本陸上競技選手権大会",
+                    "meet_date": "2024/04/20",
+                    "url": "http://www.kumariku.org/24/24,4,20kensen/rel071.html",
+                    "season": "2024",
+                    "source": "by_year_2024"
+                  },
+                  "recent": {
+                    "mark": "4:59.25",
+                    "seconds": 299.25,
+                    "meet": "令和6年度　熊本県中学校総合体育大会　陸上競技大会",
+                    "meet_date": "2024/07/20",
+                    "url": "http://www.kumariku.org/24/24,7,20chutairen/rel155.html",
+                    "season": "2024",
+                    "source": "notion_2024"
+                  }
+                }
+              },
+              "ekiden_estimate": {
+                "from_event": "1500m",
+                "from_mark": "4:52.64",
+                "from_seconds": 292.64,
+                "factor": 2.15,
+                "estimated_seconds": 629.2,
+                "estimated_mark": "10:29.18",
+                "note": "1500m 4:52.64 × 2.15 ≈ 10:29.18（簡易換算）"
+              },
+              "match_count": 9
+            },
+            {
+              "leg": 2,
+              "name": "中村羽音",
+              "grade": 1,
+              "ekiden_mark": "6:43",
+              "ekiden_seconds": 403.0,
+              "cumulative": "17:00",
+              "track_events": {
+                "800m": {
+                  "sb": {
+                    "mark": "2:31.72",
+                    "seconds": 151.72,
+                    "meet": "令和6年度　熊本県中学校総合体育大会　陸上競技大会",
+                    "meet_date": "2024/07/21",
+                    "url": "http://www.kumariku.org/24/24,7,20chutairen/rel146.html",
+                    "season": "2024",
+                    "source": "by_year_2024"
+                  },
+                  "recent": {
+                    "mark": "2:31.72",
+                    "seconds": 151.72,
+                    "meet": "令和6年度　熊本県中学校総合体育大会　陸上競技大会",
+                    "meet_date": "2024/07/21",
+                    "url": "http://www.kumariku.org/24/24,7,20chutairen/rel146.html",
+                    "season": "2024",
+                    "source": "by_year_2024"
+                  }
+                },
+                "1500m": {
+                  "sb": {
+                    "mark": "5:24.94",
+                    "seconds": 324.94,
+                    "meet": "2024.7.6　第二回熊本県長距離記録会",
+                    "meet_date": "2024/07/06",
+                    "url": "http://www.kumariku.org/24/24,7,6long&jump/rel019.html",
+                    "season": "2024",
+                    "source": "by_year_2024"
+                  },
+                  "recent": {
+                    "mark": "5:24.94",
+                    "seconds": 324.94,
+                    "meet": "2024.7.6　第二回熊本県長距離記録会",
+                    "meet_date": "2024/07/06",
+                    "url": "http://www.kumariku.org/24/24,7,6long&jump/rel019.html",
+                    "season": "2024",
+                    "source": "by_year_2024"
+                  }
+                }
+              },
+              "ekiden_estimate": {
+                "from_event": "1500m",
+                "from_mark": "5:24.94",
+                "from_seconds": 324.94,
+                "factor": 1.28,
+                "estimated_seconds": 415.9,
+                "estimated_mark": "6:55.92",
+                "note": "1500m 5:24.94 × 1.28 ≈ 6:55.92（簡易換算）"
+              },
+              "match_count": 17
+            },
+            {
+              "leg": 3,
+              "name": "猿渡愛梨",
+              "grade": 1,
+              "ekiden_mark": "7:09",
+              "ekiden_seconds": 429.0,
+              "cumulative": "24:09",
+              "track_events": {
+                "800m": {
+                  "sb": {
+                    "mark": "2:37.17",
+                    "seconds": 157.17,
+                    "meet": "第２７０回　熊本市陸上競技記録会",
+                    "meet_date": "2025/08/16",
+                    "url": "http://www.kcrk.jp/i-mode/kiroku/270/PC/rel020.html",
+                    "season": "2025",
+                    "source": "by_year_2025"
+                  },
+                  "recent": {
+                    "mark": "2:37.17",
+                    "seconds": 157.17,
+                    "meet": "第２７０回　熊本市陸上競技記録会",
+                    "meet_date": "2025/08/16",
+                    "url": "http://www.kcrk.jp/i-mode/kiroku/270/PC/rel020.html",
+                    "season": "2025",
+                    "source": "by_year_2025"
+                  }
+                },
+                "1500m": {
+                  "sb": {
+                    "mark": "5:16.18",
+                    "seconds": 316.18,
+                    "meet": "第２７１回　熊本市陸上競技記録会",
+                    "meet_date": "2025/08/23",
+                    "url": "http://www.kcrk.jp/i-mode/kiroku/271/PC/rel060.html",
+                    "season": "2025",
+                    "source": "by_year_2025"
+                  },
+                  "recent": {
+                    "mark": "5:16.57",
+                    "seconds": 316.57,
+                    "meet": "中長距離選手権",
+                    "meet_date": "2025/11/23",
+                    "url": "http://www.kcrk.jp/i-mode/kiroku/tyuutyoukyori/78/PC/rel058.html",
+                    "season": "2025",
+                    "source": "notion_2025"
+                  }
+                }
+              },
+              "ekiden_estimate": {
+                "from_event": "1500m",
+                "from_mark": "5:16.18",
+                "from_seconds": 316.18,
+                "factor": 1.4,
+                "estimated_seconds": 442.7,
+                "estimated_mark": "7:22.65",
+                "note": "1500m 5:16.18 × 1.4 ≈ 7:22.65（簡易換算）"
+              },
+              "match_count": 29
+            },
+            {
+              "leg": 4,
+              "name": "池田早希",
+              "grade": 3,
+              "ekiden_mark": "7:44",
+              "ekiden_seconds": 464.0,
+              "cumulative": "31:53",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 5,
+              "name": "中島美羽",
+              "grade": 3,
+              "ekiden_mark": "11:28",
+              "ekiden_seconds": 688.0,
+              "cumulative": "43:21",
+              "track_events": {
+                "1500m": {
+                  "sb": {
+                    "mark": "5:07.85",
+                    "seconds": 307.85,
+                    "meet": "第２６６回　熊本市陸上競技記録会",
+                    "meet_date": "2024/05/25",
+                    "url": "http://www.kcrk.jp/i-mode/kiroku/266/PC/rel129.html",
+                    "season": "2024",
+                    "source": "by_year_2024"
+                  },
+                  "recent": {
+                    "mark": "5:13.70",
+                    "seconds": 313.7,
+                    "meet": "第２６８回　熊本市陸上競技記録会",
+                    "meet_date": "2024/10/05",
+                    "url": "http://www.kcrk.jp/i-mode/kiroku/268/PC/rel103.html",
+                    "season": "2024",
+                    "source": "notion_2024"
+                  }
+                }
+              },
+              "ekiden_estimate": {
+                "from_event": "1500m",
+                "from_mark": "5:07.85",
+                "from_seconds": 307.85,
+                "factor": 2.15,
+                "estimated_seconds": 661.9,
+                "estimated_mark": "11:01.88",
+                "note": "1500m 5:07.85 × 2.15 ≈ 11:01.88（簡易換算）"
+              },
+              "match_count": 9
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "year": 2023,
+      "sb_seasons": [
+        "2024",
+        "2023",
+        "2022"
+      ],
+      "date": "2023-10-18",
+      "venue": null,
+      "source_file_id": "1FEhuWOmRsolozWeSkP4KPDTh68-MwpyV",
+      "source_confidence": null,
+      "teams": [
+        {
+          "rank": 1,
+          "school": "荒尾三",
+          "total_mark": "42:32",
+          "total_seconds": 2552.0,
+          "athletes": [
+            {
+              "leg": 1,
+              "name": "内野花笑",
+              "grade": 2,
+              "ekiden_mark": "10:30",
+              "ekiden_seconds": 630.0,
+              "cumulative": "10:30",
+              "track_events": {
+                "800m": {
+                  "sb": {
+                    "mark": "2:29.61",
+                    "seconds": 149.61,
+                    "meet": "令和6年度　第38回熊本県中学校陸上競技選手権大会",
+                    "meet_date": "2024/06/09",
+                    "url": "http://www.kumariku.org/24/24,6,08chugaku/rel127.html",
+                    "season": "2024",
+                    "source": "by_year_2024"
+                  },
+                  "recent": {
+                    "mark": "2:29.92",
+                    "seconds": 149.92,
+                    "meet": "第70回全日本中学校通信陸上競技大会熊本県大会",
+                    "meet_date": "2024/06/23",
+                    "url": "http://www.kumariku.org/24/24,6,22tsushin/rel185.html",
+                    "season": "2024",
+                    "source": "notion_2024"
+                  }
+                },
+                "1500m": {
+                  "sb": {
+                    "mark": "5:14.20",
+                    "seconds": 314.2,
+                    "meet": "令和6年度　熊本県中学校総合体育大会　陸上競技大会",
+                    "meet_date": "2024/07/20",
+                    "url": "http://www.kumariku.org/24/24,7,20chutairen/rel156.html",
+                    "season": "2024",
+                    "source": "by_year_2024"
+                  },
+                  "recent": {
+                    "mark": "5:14.20",
+                    "seconds": 314.2,
+                    "meet": "令和6年度　熊本県中学校総合体育大会　陸上競技大会",
+                    "meet_date": "2024/07/20",
+                    "url": "http://www.kumariku.org/24/24,7,20chutairen/rel156.html",
+                    "season": "2024",
+                    "source": "by_year_2024"
+                  }
+                }
+              },
+              "ekiden_estimate": {
+                "from_event": "1500m",
+                "from_mark": "5:14.20",
+                "from_seconds": 314.2,
+                "factor": 2.15,
+                "estimated_seconds": 675.5,
+                "estimated_mark": "11:15.53",
+                "note": "1500m 5:14.20 × 2.15 ≈ 11:15.53（簡易換算）"
+              },
+              "match_count": 7
+            },
+            {
+              "leg": 2,
+              "name": "山道咲空",
+              "grade": 1,
+              "ekiden_mark": "6:34",
+              "ekiden_seconds": 394.0,
+              "cumulative": "17:04",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 3,
+              "name": "田尻明",
+              "grade": 3,
+              "ekiden_mark": "7:16",
+              "ekiden_seconds": 436.0,
+              "cumulative": "24:20",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 4,
+              "name": "柿本和花",
+              "grade": 3,
+              "ekiden_mark": "7:34",
+              "ekiden_seconds": 454.0,
+              "cumulative": "31:54",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 5,
+              "name": "中尾美空",
+              "grade": 2,
+              "ekiden_mark": "10:38",
+              "ekiden_seconds": 638.0,
+              "cumulative": "42:32",
+              "track_events": {
+                "1500m": {
+                  "sb": {
+                    "mark": "5:05.95",
+                    "seconds": 305.95,
+                    "meet": "第70回全日本中学校通信陸上競技大会熊本県大会",
+                    "meet_date": "2024/06/22",
+                    "url": "http://www.kumariku.org/24/24,6,22tsushin/rel188.html",
+                    "season": "2024",
+                    "source": "by_year_2024"
+                  },
+                  "recent": {
+                    "mark": "5:05.95",
+                    "seconds": 305.95,
+                    "meet": "第70回全日本中学校通信陸上競技大会熊本県大会",
+                    "meet_date": "2024/06/22",
+                    "url": "http://www.kumariku.org/24/24,6,22tsushin/rel188.html",
+                    "season": "2024",
+                    "source": "by_year_2024"
+                  }
+                }
+              },
+              "ekiden_estimate": {
+                "from_event": "1500m",
+                "from_mark": "5:05.95",
+                "from_seconds": 305.95,
+                "factor": 2.15,
+                "estimated_seconds": 657.8,
+                "estimated_mark": "10:57.79",
+                "note": "1500m 5:05.95 × 2.15 ≈ 10:57.79（簡易換算）"
+              },
+              "match_count": 2
+            }
+          ]
+        },
+        {
+          "rank": 2,
+          "school": "荒尾四",
+          "total_mark": "42:45",
+          "total_seconds": 2565.0,
+          "athletes": [
+            {
+              "leg": 1,
+              "name": "松山悠南",
+              "grade": 3,
+              "ekiden_mark": "9:59",
+              "ekiden_seconds": 599.0,
+              "cumulative": "9:59",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 2,
+              "name": "中尾杏朱",
+              "grade": 2,
+              "ekiden_mark": "6:49",
+              "ekiden_seconds": 409.0,
+              "cumulative": "16:48",
+              "track_events": {
+                "800m": {
+                  "sb": {
+                    "mark": "2:33.67",
+                    "seconds": 153.67,
+                    "meet": null,
+                    "meet_date": null,
+                    "url": "http://www.kcrk.jp/i-mode/kiroku/272/PC/rel062.html",
+                    "season": null,
+                    "source": "output_reg"
+                  },
+                  "recent": {
+                    "mark": "2:33.67",
+                    "seconds": 153.67,
+                    "meet": null,
+                    "meet_date": null,
+                    "url": "http://www.kcrk.jp/i-mode/kiroku/272/PC/rel062.html",
+                    "season": null,
+                    "source": "output_reg"
+                  }
+                },
+                "1500m": {
+                  "sb": {
+                    "mark": "5:05.09",
+                    "seconds": 305.09,
+                    "meet": null,
+                    "meet_date": null,
+                    "url": "http://www.kumariku.org/26/26,4,25kensen/rel051.html",
+                    "season": null,
+                    "source": "output_reg"
+                  },
+                  "recent": {
+                    "mark": "5:05.09",
+                    "seconds": 305.09,
+                    "meet": null,
+                    "meet_date": null,
+                    "url": "http://www.kumariku.org/26/26,4,25kensen/rel051.html",
+                    "season": null,
+                    "source": "output_reg"
+                  }
+                }
+              },
+              "ekiden_estimate": {
+                "from_event": "1500m",
+                "from_mark": "5:05.09",
+                "from_seconds": 305.09,
+                "factor": 1.28,
+                "estimated_seconds": 390.5,
+                "estimated_mark": "6:30.52",
+                "note": "1500m 5:05.09 × 1.28 ≈ 6:30.52（簡易換算）"
+              },
+              "match_count": 16
+            },
+            {
+              "leg": 3,
+              "name": "宮本奈英",
+              "grade": 1,
+              "ekiden_mark": "7:35",
+              "ekiden_seconds": 455.0,
+              "cumulative": "24:23",
+              "track_events": {
+                "800m": {
+                  "sb": {
+                    "mark": "2:48.08",
+                    "seconds": 168.08,
+                    "meet": "２０２４年度　第４３回熊本市陸上競技選手権大会",
+                    "meet_date": "2024/05/04",
+                    "url": "http://www.kcrk.jp/i-mode/kiroku/sisen_i/43/PC/rel126.html",
+                    "season": "2024",
+                    "source": "by_year_2024"
+                  },
+                  "recent": {
+                    "mark": "2:48.08",
+                    "seconds": 168.08,
+                    "meet": "２０２４年度　第４３回熊本市陸上競技選手権大会",
+                    "meet_date": "2024/05/04",
+                    "url": "http://www.kcrk.jp/i-mode/kiroku/sisen_i/43/PC/rel126.html",
+                    "season": "2024",
+                    "source": "by_year_2024"
+                  }
+                },
+                "1500m": {
+                  "sb": {
+                    "mark": "5:36.09",
+                    "seconds": 336.09,
+                    "meet": "令和6年度　第38回熊本県中学校陸上競技選手権大会",
+                    "meet_date": "2024/06/08",
+                    "url": "http://www.kumariku.org/24/24,6,08chugaku/rel149.html",
+                    "season": "2024",
+                    "source": "by_year_2024"
+                  },
+                  "recent": {
+                    "mark": "5:36.09",
+                    "seconds": 336.09,
+                    "meet": "令和6年度　第38回熊本県中学校陸上競技選手権大会",
+                    "meet_date": "2024/06/08",
+                    "url": "http://www.kumariku.org/24/24,6,08chugaku/rel149.html",
+                    "season": "2024",
+                    "source": "by_year_2024"
+                  }
+                }
+              },
+              "ekiden_estimate": {
+                "from_event": "1500m",
+                "from_mark": "5:36.09",
+                "from_seconds": 336.09,
+                "factor": 1.4,
+                "estimated_seconds": 470.5,
+                "estimated_mark": "7:50.53",
+                "note": "1500m 5:36.09 × 1.4 ≈ 7:50.53（簡易換算）"
+              },
+              "match_count": 4
+            },
+            {
+              "leg": 4,
+              "name": "高田春陽",
+              "grade": 2,
+              "ekiden_mark": "7:43",
+              "ekiden_seconds": 463.0,
+              "cumulative": "32:06",
+              "track_events": {
+                "1500m": {
+                  "sb": {
+                    "mark": "5:41.67",
+                    "seconds": 341.67,
+                    "meet": "令和6年度　第38回熊本県中学校陸上競技選手権大会",
+                    "meet_date": "2024/06/08",
+                    "url": "http://www.kumariku.org/24/24,6,08chugaku/rel148.html",
+                    "season": "2024",
+                    "source": "by_year_2024"
+                  },
+                  "recent": {
+                    "mark": "5:41.67",
+                    "seconds": 341.67,
+                    "meet": "令和6年度　第38回熊本県中学校陸上競技選手権大会",
+                    "meet_date": "2024/06/08",
+                    "url": "http://www.kumariku.org/24/24,6,08chugaku/rel148.html",
+                    "season": "2024",
+                    "source": "by_year_2024"
+                  }
+                }
+              },
+              "ekiden_estimate": {
+                "from_event": "1500m",
+                "from_mark": "5:41.67",
+                "from_seconds": 341.67,
+                "factor": 1.4,
+                "estimated_seconds": 478.3,
+                "estimated_mark": "7:58.34",
+                "note": "1500m 5:41.67 × 1.4 ≈ 7:58.34（簡易換算）"
+              },
+              "match_count": 2
+            },
+            {
+              "leg": 5,
+              "name": "松山杏海",
+              "grade": 1,
+              "ekiden_mark": "10:39",
+              "ekiden_seconds": 639.0,
+              "cumulative": "42:45",
+              "track_events": {
+                "800m": {
+                  "sb": {
+                    "mark": "2:20.90",
+                    "seconds": 140.9,
+                    "meet": "令和6年度　熊本県中学校総合体育大会　陸上競技大会",
+                    "meet_date": "2024/07/21",
+                    "url": "http://www.kumariku.org/24/24,7,20chutairen/rel189.html",
+                    "season": "2024",
+                    "source": "by_year_2024"
+                  },
+                  "recent": {
+                    "mark": "2:20.90",
+                    "seconds": 140.9,
+                    "meet": "令和6年度　熊本県中学校総合体育大会　陸上競技大会",
+                    "meet_date": "2024/07/21",
+                    "url": "http://www.kumariku.org/24/24,7,20chutairen/rel189.html",
+                    "season": "2024",
+                    "source": "by_year_2024"
+                  }
+                },
+                "1500m": {
+                  "sb": {
+                    "mark": "4:53.24",
+                    "seconds": 293.24,
+                    "meet": "第32回　金栗記念選抜陸上中長距離熊本大会",
+                    "meet_date": "2024/04/13",
+                    "url": "http://www.kumariku.org/24/24,4,13kanaguri/rel014.html",
+                    "season": "2024",
+                    "source": "by_year_2024"
+                  },
+                  "recent": {
+                    "mark": "4:56.05",
+                    "seconds": 296.05,
+                    "meet": "２０２４年度　第４３回熊本市陸上競技選手権大会",
+                    "meet_date": "2024/05/04",
+                    "url": "http://www.kcrk.jp/i-mode/kiroku/sisen_i/43/PC/rel158.html",
+                    "season": "2024",
+                    "source": "notion_2024"
+                  }
+                }
+              },
+              "ekiden_estimate": {
+                "from_event": "1500m",
+                "from_mark": "4:53.24",
+                "from_seconds": 293.24,
+                "factor": 2.15,
+                "estimated_seconds": 630.5,
+                "estimated_mark": "10:30.47",
+                "note": "1500m 4:53.24 × 2.15 ≈ 10:30.47（簡易換算）"
+              },
+              "match_count": 9
+            }
+          ]
+        },
+        {
+          "rank": 3,
+          "school": "玉名",
+          "total_mark": "43:31",
+          "total_seconds": 2611.0,
+          "athletes": [
+            {
+              "leg": 1,
+              "name": "東果凛",
+              "grade": 2,
+              "ekiden_mark": "11:00",
+              "ekiden_seconds": 660.0,
+              "cumulative": "11:00",
+              "track_events": {
+                "800m": {
+                  "sb": {
+                    "mark": "2:17.26",
+                    "seconds": 137.26,
+                    "meet": "令和6年度　熊本県中学校総合体育大会　陸上競技大会",
+                    "meet_date": "2024/07/21",
+                    "url": "http://www.kumariku.org/24/24,7,20chutairen/rel191.html",
+                    "season": "2024",
+                    "source": "by_year_2024"
+                  },
+                  "recent": {
+                    "mark": "2:31.14",
+                    "seconds": 151.14,
+                    "meet": "第２６７回　熊本市陸上競技記録会",
+                    "meet_date": "2024/07/27",
+                    "url": "http://www.kcrk.jp/i-mode/kiroku/267/PC/rel127.html",
+                    "season": "2024",
+                    "source": "notion_2024"
+                  }
+                },
+                "1500m": {
+                  "sb": {
+                    "mark": "4:56.41",
+                    "seconds": 296.41,
+                    "meet": "Middle Distnce in Omuta",
+                    "meet_date": "2024/09/22",
+                    "url": "https://omuta.meet7.org/cgi/menu.cgi?menu=2&base=20240922&mode=\"_2_8_4_2_3__5_\"&r_n=豎ｺ蜍�&dopt=1&cs=2&exit=0",
+                    "season": "2024",
+                    "source": "by_year_2024"
+                  },
+                  "recent": {
+                    "mark": "4:56.41",
+                    "seconds": 296.41,
+                    "meet": "Middle Distnce in Omuta",
+                    "meet_date": "2024/09/22",
+                    "url": "https://omuta.meet7.org/cgi/menu.cgi?menu=2&base=20240922&mode=\"_2_8_4_2_3__5_\"&r_n=豎ｺ蜍�&dopt=1&cs=2&exit=0",
+                    "season": "2024",
+                    "source": "by_year_2024"
+                  }
+                }
+              },
+              "ekiden_estimate": {
+                "from_event": "1500m",
+                "from_mark": "4:56.41",
+                "from_seconds": 296.41,
+                "factor": 2.15,
+                "estimated_seconds": 637.3,
+                "estimated_mark": "10:37.28",
+                "note": "1500m 4:56.41 × 2.15 ≈ 10:37.28（簡易換算）"
+              },
+              "match_count": 17
+            },
+            {
+              "leg": 2,
+              "name": "高木心菜",
+              "grade": 3,
+              "ekiden_mark": "6:38",
+              "ekiden_seconds": 398.0,
+              "cumulative": "17:38",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 3,
+              "name": "辻美空",
+              "grade": 1,
+              "ekiden_mark": "7:15",
+              "ekiden_seconds": 435.0,
+              "cumulative": "24:53",
+              "track_events": {
+                "800m": {
+                  "sb": {
+                    "mark": "2:19.37",
+                    "seconds": 139.37,
+                    "meet": "令和6年度　熊本県中学校総合体育大会　陸上競技大会",
+                    "meet_date": "2024/07/21",
+                    "url": "http://www.kumariku.org/24/24,7,20chutairen/rel189.html",
+                    "season": "2024",
+                    "source": "by_year_2024"
+                  },
+                  "recent": {
+                    "mark": "2:26.23",
+                    "seconds": 146.23,
+                    "meet": "第７７回熊本市中長距離陸上競技選手権大会",
+                    "meet_date": "2024/11/23",
+                    "url": "http://www.kcrk.jp/i-mode/kiroku/tyuutyoukyori/77/PC/rel055.html",
+                    "season": "2024",
+                    "source": "notion_2024"
+                  }
+                },
+                "1500m": {
+                  "sb": {
+                    "mark": "5:06.81",
+                    "seconds": 306.81,
+                    "meet": "2024.7.6　第二回熊本県長距離記録会",
+                    "meet_date": "2024/07/06",
+                    "url": "http://www.kumariku.org/24/24,7,6long&jump/rel020.html",
+                    "season": "2024",
+                    "source": "by_year_2024"
+                  },
+                  "recent": {
+                    "mark": "5:13.64",
+                    "seconds": 313.64,
+                    "meet": "2024.12.7　第四回熊本県長距離記録会",
+                    "meet_date": "2024/12/07",
+                    "url": "http://www.kumariku.org/24/24,12,7long/rel022.html",
+                    "season": "2024",
+                    "source": "notion_2024"
+                  }
+                }
+              },
+              "ekiden_estimate": {
+                "from_event": "1500m",
+                "from_mark": "5:06.81",
+                "from_seconds": 306.81,
+                "factor": 1.4,
+                "estimated_seconds": 429.5,
+                "estimated_mark": "7:09.53",
+                "note": "1500m 5:06.81 × 1.4 ≈ 7:09.53（簡易換算）"
+              },
+              "match_count": 18
+            },
+            {
+              "leg": 4,
+              "name": "三嶋悠里",
+              "grade": 3,
+              "ekiden_mark": "7:20",
+              "ekiden_seconds": 440.0,
+              "cumulative": "32:13",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 5,
+              "name": "西澤葵",
+              "grade": 3,
+              "ekiden_mark": "11:18",
+              "ekiden_seconds": 678.0,
+              "cumulative": "43:31",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            }
+          ]
+        },
+        {
+          "rank": 4,
+          "school": "荒尾海陽",
+          "total_mark": "43:55",
+          "total_seconds": 2635.0,
+          "athletes": [
+            {
+              "leg": 1,
+              "name": "本山怜実",
+              "grade": 3,
+              "ekiden_mark": "10:54",
+              "ekiden_seconds": 654.0,
+              "cumulative": "10:54",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 2,
+              "name": "中西萌唯",
+              "grade": 2,
+              "ekiden_mark": "7:07",
+              "ekiden_seconds": 427.0,
+              "cumulative": "18:01",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 3,
+              "name": "片山佳音",
+              "grade": 1,
+              "ekiden_mark": "7:11",
+              "ekiden_seconds": 431.0,
+              "cumulative": "25:12",
+              "track_events": {
+                "800m": {
+                  "sb": {
+                    "mark": "2:23.59",
+                    "seconds": 143.59,
+                    "meet": "令和6年度　第38回熊本県中学校陸上競技選手権大会",
+                    "meet_date": "2024/06/09",
+                    "url": "http://www.kumariku.org/24/24,6,08chugaku/rel123.html",
+                    "season": "2024",
+                    "source": "by_year_2024"
+                  },
+                  "recent": {
+                    "mark": "2:34.11",
+                    "seconds": 154.11,
+                    "meet": "第３回会熊本県チャレンジ陸上大会",
+                    "meet_date": "2024/11/09",
+                    "url": "http://www.kumariku.org/24/24,11,9challenge/rel178.html",
+                    "season": "2024",
+                    "source": "notion_2024"
+                  }
+                }
+              },
+              "ekiden_estimate": {
+                "from_event": "800m",
+                "from_mark": "2:23.59",
+                "from_seconds": 143.59,
+                "factor": 2.75,
+                "estimated_seconds": 394.9,
+                "estimated_mark": "6:34.87",
+                "note": "800m 2:23.59 × 2.75 ≈ 6:34.87（簡易換算）"
+              },
+              "match_count": 7
+            },
+            {
+              "leg": 4,
+              "name": "時任幸菜",
+              "grade": 2,
+              "ekiden_mark": "7:28",
+              "ekiden_seconds": 448.0,
+              "cumulative": "32:40",
+              "track_events": {
+                "800m": {
+                  "sb": {
+                    "mark": "2:54.04",
+                    "seconds": 174.04,
+                    "meet": "令和6年度　熊本県中学校総合体育大会　陸上競技大会",
+                    "meet_date": "2024/07/21",
+                    "url": "http://www.kumariku.org/24/24,7,20chutairen/rel153.html",
+                    "season": "2024",
+                    "source": "by_year_2024"
+                  },
+                  "recent": {
+                    "mark": "2:54.04",
+                    "seconds": 174.04,
+                    "meet": "令和6年度　熊本県中学校総合体育大会　陸上競技大会",
+                    "meet_date": "2024/07/21",
+                    "url": "http://www.kumariku.org/24/24,7,20chutairen/rel153.html",
+                    "season": "2024",
+                    "source": "by_year_2024"
+                  }
+                },
+                "1500m": {
+                  "sb": {
+                    "mark": "5:30.51",
+                    "seconds": 330.51,
+                    "meet": "２０２４年度　第４３回熊本市陸上競技選手権大会",
+                    "meet_date": "2024/05/04",
+                    "url": "http://www.kcrk.jp/i-mode/kiroku/sisen_i/43/PC/rel157.html",
+                    "season": "2024",
+                    "source": "by_year_2024"
+                  },
+                  "recent": {
+                    "mark": "5:46.37",
+                    "seconds": 346.37,
+                    "meet": "2024.7.6　第二回熊本県長距離記録会",
+                    "meet_date": "2024/07/06",
+                    "url": "http://www.kumariku.org/24/24,7,6long&jump/rel019.html",
+                    "season": "2024",
+                    "source": "notion_2024"
+                  }
+                }
+              },
+              "ekiden_estimate": {
+                "from_event": "1500m",
+                "from_mark": "5:30.51",
+                "from_seconds": 330.51,
+                "factor": 1.4,
+                "estimated_seconds": 462.7,
+                "estimated_mark": "7:42.71",
+                "note": "1500m 5:30.51 × 1.4 ≈ 7:42.71（簡易換算）"
+              },
+              "match_count": 7
+            },
+            {
+              "leg": 5,
+              "name": "武重安奈",
+              "grade": 3,
+              "ekiden_mark": "11:15",
+              "ekiden_seconds": 675.0,
+              "cumulative": "43:55",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "year": 2022,
+      "sb_seasons": [
+        "2023",
+        "2022",
+        "2021"
+      ],
+      "date": "2022-10-19",
+      "venue": null,
+      "source_file_id": "1LdY-YqIIx-57im7jTSTud5qzEBIm0hkA",
+      "source_confidence": null,
+      "teams": [
+        {
+          "rank": 1,
+          "school": "長洲",
+          "total_mark": "41:58",
+          "total_seconds": 2518.0,
+          "athletes": [
+            {
+              "leg": 1,
+              "name": "西川侑里",
+              "grade": 3,
+              "ekiden_mark": "9:46",
+              "ekiden_seconds": 586.0,
+              "cumulative": "9:46",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 2,
+              "name": "濱口葵",
+              "grade": 2,
+              "ekiden_mark": "7:05",
+              "ekiden_seconds": 425.0,
+              "cumulative": "16:51",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 3,
+              "name": "藤本千尋",
+              "grade": 3,
+              "ekiden_mark": "7:16",
+              "ekiden_seconds": 436.0,
+              "cumulative": "24:07",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 4,
+              "name": "中島愛那",
+              "grade": 1,
+              "ekiden_mark": "6:58",
+              "ekiden_seconds": 418.0,
+              "cumulative": "31:05",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 5,
+              "name": "福田みさ",
+              "grade": 1,
+              "ekiden_mark": "10:53",
+              "ekiden_seconds": 653.0,
+              "cumulative": "41:58",
+              "track_events": {
+                "1500m": {
+                  "sb": {
+                    "mark": "4:52.64",
+                    "seconds": 292.64,
+                    "meet": "令和６年度　熊本陸上競技選手権大会",
+                    "meet_date": "2024/04/20",
+                    "url": "http://www.kumariku.org/24/24,4,20kensen/rel071.html",
+                    "season": "2024",
+                    "source": "by_year_2024"
+                  },
+                  "recent": {
+                    "mark": "4:59.25",
+                    "seconds": 299.25,
+                    "meet": "令和6年度　熊本県中学校総合体育大会　陸上競技大会",
+                    "meet_date": "2024/07/20",
+                    "url": "http://www.kumariku.org/24/24,7,20chutairen/rel155.html",
+                    "season": "2024",
+                    "source": "notion_2024"
+                  }
+                }
+              },
+              "ekiden_estimate": {
+                "from_event": "1500m",
+                "from_mark": "4:52.64",
+                "from_seconds": 292.64,
+                "factor": 2.15,
+                "estimated_seconds": 629.2,
+                "estimated_mark": "10:29.18",
+                "note": "1500m 4:52.64 × 2.15 ≈ 10:29.18（簡易換算）"
+              },
+              "match_count": 9
+            }
+          ]
+        },
+        {
+          "rank": 2,
+          "school": "荒尾四",
+          "total_mark": "43:31",
+          "total_seconds": 2611.0,
+          "athletes": [
+            {
+              "leg": 1,
+              "name": "松山悠南",
+              "grade": 2,
+              "ekiden_mark": "10:09",
+              "ekiden_seconds": 609.0,
+              "cumulative": "10:09",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 2,
+              "name": "中尾杏朱",
+              "grade": 1,
+              "ekiden_mark": "7:14",
+              "ekiden_seconds": 434.0,
+              "cumulative": "17:23",
+              "track_events": {
+                "800m": {
+                  "sb": {
+                    "mark": "2:33.67",
+                    "seconds": 153.67,
+                    "meet": null,
+                    "meet_date": null,
+                    "url": "http://www.kcrk.jp/i-mode/kiroku/272/PC/rel062.html",
+                    "season": null,
+                    "source": "output_reg"
+                  },
+                  "recent": {
+                    "mark": "2:33.67",
+                    "seconds": 153.67,
+                    "meet": null,
+                    "meet_date": null,
+                    "url": "http://www.kcrk.jp/i-mode/kiroku/272/PC/rel062.html",
+                    "season": null,
+                    "source": "output_reg"
+                  }
+                },
+                "1500m": {
+                  "sb": {
+                    "mark": "5:05.09",
+                    "seconds": 305.09,
+                    "meet": null,
+                    "meet_date": null,
+                    "url": "http://www.kumariku.org/26/26,4,25kensen/rel051.html",
+                    "season": null,
+                    "source": "output_reg"
+                  },
+                  "recent": {
+                    "mark": "5:05.09",
+                    "seconds": 305.09,
+                    "meet": null,
+                    "meet_date": null,
+                    "url": "http://www.kumariku.org/26/26,4,25kensen/rel051.html",
+                    "season": null,
+                    "source": "output_reg"
+                  }
+                }
+              },
+              "ekiden_estimate": {
+                "from_event": "1500m",
+                "from_mark": "5:05.09",
+                "from_seconds": 305.09,
+                "factor": 1.28,
+                "estimated_seconds": 390.5,
+                "estimated_mark": "6:30.52",
+                "note": "1500m 5:05.09 × 1.28 ≈ 6:30.52（簡易換算）"
+              },
+              "match_count": 16
+            },
+            {
+              "leg": 3,
+              "name": "上田歩",
+              "grade": 1,
+              "ekiden_mark": "7:27",
+              "ekiden_seconds": 447.0,
+              "cumulative": "24:50",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 4,
+              "name": "高田春陽",
+              "grade": 1,
+              "ekiden_mark": "8:01",
+              "ekiden_seconds": 481.0,
+              "cumulative": "32:51",
+              "track_events": {
+                "1500m": {
+                  "sb": {
+                    "mark": "5:41.67",
+                    "seconds": 341.67,
+                    "meet": "令和6年度　第38回熊本県中学校陸上競技選手権大会",
+                    "meet_date": "2024/06/08",
+                    "url": "http://www.kumariku.org/24/24,6,08chugaku/rel148.html",
+                    "season": "2024",
+                    "source": "by_year_2024"
+                  },
+                  "recent": {
+                    "mark": "5:41.67",
+                    "seconds": 341.67,
+                    "meet": "令和6年度　第38回熊本県中学校陸上競技選手権大会",
+                    "meet_date": "2024/06/08",
+                    "url": "http://www.kumariku.org/24/24,6,08chugaku/rel148.html",
+                    "season": "2024",
+                    "source": "by_year_2024"
+                  }
+                }
+              },
+              "ekiden_estimate": {
+                "from_event": "1500m",
+                "from_mark": "5:41.67",
+                "from_seconds": 341.67,
+                "factor": 1.4,
+                "estimated_seconds": 478.3,
+                "estimated_mark": "7:58.34",
+                "note": "1500m 5:41.67 × 1.4 ≈ 7:58.34（簡易換算）"
+              },
+              "match_count": 2
+            },
+            {
+              "leg": 5,
+              "name": "嘉富雅",
+              "grade": 3,
+              "ekiden_mark": "10:40",
+              "ekiden_seconds": 640.0,
+              "cumulative": "43:31",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            }
+          ]
+        },
+        {
+          "rank": 3,
+          "school": "荒尾海陽",
+          "total_mark": "43:59",
+          "total_seconds": 2639.0,
+          "athletes": [
+            {
+              "leg": 1,
+              "name": "塚本実彩貴",
+              "grade": 3,
+              "ekiden_mark": "11:36",
+              "ekiden_seconds": 696.0,
+              "cumulative": "11:36",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 2,
+              "name": "杉本幸希",
+              "grade": 2,
+              "ekiden_mark": "6:55",
+              "ekiden_seconds": 415.0,
+              "cumulative": "18:31",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 3,
+              "name": "本山怜実",
+              "grade": 2,
+              "ekiden_mark": "7:05",
+              "ekiden_seconds": 425.0,
+              "cumulative": "25:36",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 4,
+              "name": "時任幸菜",
+              "grade": 1,
+              "ekiden_mark": "7:35",
+              "ekiden_seconds": 455.0,
+              "cumulative": "33:11",
+              "track_events": {
+                "800m": {
+                  "sb": {
+                    "mark": "2:54.04",
+                    "seconds": 174.04,
+                    "meet": "令和6年度　熊本県中学校総合体育大会　陸上競技大会",
+                    "meet_date": "2024/07/21",
+                    "url": "http://www.kumariku.org/24/24,7,20chutairen/rel153.html",
+                    "season": "2024",
+                    "source": "by_year_2024"
+                  },
+                  "recent": {
+                    "mark": "2:54.04",
+                    "seconds": 174.04,
+                    "meet": "令和6年度　熊本県中学校総合体育大会　陸上競技大会",
+                    "meet_date": "2024/07/21",
+                    "url": "http://www.kumariku.org/24/24,7,20chutairen/rel153.html",
+                    "season": "2024",
+                    "source": "by_year_2024"
+                  }
+                },
+                "1500m": {
+                  "sb": {
+                    "mark": "5:30.51",
+                    "seconds": 330.51,
+                    "meet": "２０２４年度　第４３回熊本市陸上競技選手権大会",
+                    "meet_date": "2024/05/04",
+                    "url": "http://www.kcrk.jp/i-mode/kiroku/sisen_i/43/PC/rel157.html",
+                    "season": "2024",
+                    "source": "by_year_2024"
+                  },
+                  "recent": {
+                    "mark": "5:46.37",
+                    "seconds": 346.37,
+                    "meet": "2024.7.6　第二回熊本県長距離記録会",
+                    "meet_date": "2024/07/06",
+                    "url": "http://www.kumariku.org/24/24,7,6long&jump/rel019.html",
+                    "season": "2024",
+                    "source": "notion_2024"
+                  }
+                }
+              },
+              "ekiden_estimate": {
+                "from_event": "1500m",
+                "from_mark": "5:30.51",
+                "from_seconds": 330.51,
+                "factor": 1.4,
+                "estimated_seconds": 462.7,
+                "estimated_mark": "7:42.71",
+                "note": "1500m 5:30.51 × 1.4 ≈ 7:42.71（簡易換算）"
+              },
+              "match_count": 7
+            },
+            {
+              "leg": 5,
+              "name": "武重安奈",
+              "grade": 2,
+              "ekiden_mark": "10:48",
+              "ekiden_seconds": 648.0,
+              "cumulative": "43:59",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            }
+          ]
+        },
+        {
+          "rank": 4,
+          "school": "荒尾三",
+          "total_mark": "44:17",
+          "total_seconds": 2657.0,
+          "athletes": [
+            {
+              "leg": 1,
+              "name": "吉里紗和",
+              "grade": 3,
+              "ekiden_mark": "10:32",
+              "ekiden_seconds": 632.0,
+              "cumulative": "10:32",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 2,
+              "name": "松本りおな",
+              "grade": 3,
+              "ekiden_mark": "6:56",
+              "ekiden_seconds": 416.0,
+              "cumulative": "17:28",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 3,
+              "name": "内野花笑",
+              "grade": 1,
+              "ekiden_mark": "7:06",
+              "ekiden_seconds": 426.0,
+              "cumulative": "24:34",
+              "track_events": {
+                "800m": {
+                  "sb": {
+                    "mark": "2:29.61",
+                    "seconds": 149.61,
+                    "meet": "令和6年度　第38回熊本県中学校陸上競技選手権大会",
+                    "meet_date": "2024/06/09",
+                    "url": "http://www.kumariku.org/24/24,6,08chugaku/rel127.html",
+                    "season": "2024",
+                    "source": "by_year_2024"
+                  },
+                  "recent": {
+                    "mark": "2:29.92",
+                    "seconds": 149.92,
+                    "meet": "第70回全日本中学校通信陸上競技大会熊本県大会",
+                    "meet_date": "2024/06/23",
+                    "url": "http://www.kumariku.org/24/24,6,22tsushin/rel185.html",
+                    "season": "2024",
+                    "source": "notion_2024"
+                  }
+                },
+                "1500m": {
+                  "sb": {
+                    "mark": "5:14.20",
+                    "seconds": 314.2,
+                    "meet": "令和6年度　熊本県中学校総合体育大会　陸上競技大会",
+                    "meet_date": "2024/07/20",
+                    "url": "http://www.kumariku.org/24/24,7,20chutairen/rel156.html",
+                    "season": "2024",
+                    "source": "by_year_2024"
+                  },
+                  "recent": {
+                    "mark": "5:14.20",
+                    "seconds": 314.2,
+                    "meet": "令和6年度　熊本県中学校総合体育大会　陸上競技大会",
+                    "meet_date": "2024/07/20",
+                    "url": "http://www.kumariku.org/24/24,7,20chutairen/rel156.html",
+                    "season": "2024",
+                    "source": "by_year_2024"
+                  }
+                }
+              },
+              "ekiden_estimate": {
+                "from_event": "1500m",
+                "from_mark": "5:14.20",
+                "from_seconds": 314.2,
+                "factor": 1.4,
+                "estimated_seconds": 439.9,
+                "estimated_mark": "7:19.88",
+                "note": "1500m 5:14.20 × 1.4 ≈ 7:19.88（簡易換算）"
+              },
+              "match_count": 7
+            },
+            {
+              "leg": 4,
+              "name": "柿本和花",
+              "grade": 2,
+              "ekiden_mark": "7:29",
+              "ekiden_seconds": 449.0,
+              "cumulative": "32:03",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 5,
+              "name": "田尻明",
+              "grade": 2,
+              "ekiden_mark": "12:14",
+              "ekiden_seconds": 734.0,
+              "cumulative": "44:17",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "year": 2021,
+      "sb_seasons": [
+        "2022",
+        "2021",
+        "2020"
+      ],
+      "date": "2021-10-20",
+      "venue": null,
+      "source_file_id": "1t4xKLNQph4mcdKzdXj3NqGxmKG-Y8PPo",
+      "source_confidence": null,
+      "teams": [
+        {
+          "rank": 1,
+          "school": "荒尾四",
+          "total_mark": "43:11",
+          "total_seconds": 2591.0,
+          "athletes": [
+            {
+              "leg": 1,
+              "name": "松山悠南",
+              "grade": 1,
+              "ekiden_mark": "10:18",
+              "ekiden_seconds": 618.0,
+              "cumulative": "10:18",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 2,
+              "name": "松山美結",
+              "grade": 3,
+              "ekiden_mark": "6:23",
+              "ekiden_seconds": 383.0,
+              "cumulative": "16:41",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 3,
+              "name": "島添真理",
+              "grade": 3,
+              "ekiden_mark": "7:33",
+              "ekiden_seconds": 453.0,
+              "cumulative": "24:14",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 4,
+              "name": "島添真実",
+              "grade": 3,
+              "ekiden_mark": "7:55",
+              "ekiden_seconds": 475.0,
+              "cumulative": "32:09",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 5,
+              "name": "嘉富雅",
+              "grade": 2,
+              "ekiden_mark": "11:02",
+              "ekiden_seconds": 662.0,
+              "cumulative": "43:11",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            }
+          ]
+        },
+        {
+          "rank": 2,
+          "school": "荒尾三",
+          "total_mark": "43:34",
+          "total_seconds": 2614.0,
+          "athletes": [
+            {
+              "leg": 1,
+              "name": "吉里紗和",
+              "grade": 2,
+              "ekiden_mark": "10:51",
+              "ekiden_seconds": 651.0,
+              "cumulative": "10:51",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 2,
+              "name": "藤好心愛",
+              "grade": 2,
+              "ekiden_mark": "6:57",
+              "ekiden_seconds": 417.0,
+              "cumulative": "17:48",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 3,
+              "name": "松本りおな",
+              "grade": 2,
+              "ekiden_mark": "7:12",
+              "ekiden_seconds": 432.0,
+              "cumulative": "25:00",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 4,
+              "name": "飯川紗良",
+              "grade": 3,
+              "ekiden_mark": "7:26",
+              "ekiden_seconds": 446.0,
+              "cumulative": "32:26",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 5,
+              "name": "一木優咲",
+              "grade": 3,
+              "ekiden_mark": "11:08",
+              "ekiden_seconds": 668.0,
+              "cumulative": "43:34",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            }
+          ]
+        },
+        {
+          "rank": 3,
+          "school": "荒尾海陽",
+          "total_mark": "43:42",
+          "total_seconds": 2622.0,
+          "athletes": [
+            {
+              "leg": 1,
+              "name": "本山怜実",
+              "grade": 1,
+              "ekiden_mark": "10:30",
+              "ekiden_seconds": 630.0,
+              "cumulative": "10:30",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 2,
+              "name": "杉本幸希",
+              "grade": 1,
+              "ekiden_mark": "7:02",
+              "ekiden_seconds": 422.0,
+              "cumulative": "17:32",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 3,
+              "name": "武重安奈",
+              "grade": 1,
+              "ekiden_mark": "6:51",
+              "ekiden_seconds": 411.0,
+              "cumulative": "24:23",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 4,
+              "name": "前田紗希",
+              "grade": 3,
+              "ekiden_mark": "7:44",
+              "ekiden_seconds": 464.0,
+              "cumulative": "32:07",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 5,
+              "name": "塚本実彩貴",
+              "grade": 2,
+              "ekiden_mark": "11:35",
+              "ekiden_seconds": 695.0,
+              "cumulative": "43:42",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            }
+          ]
+        },
+        {
+          "rank": 4,
+          "school": "菊水",
+          "total_mark": "43:58",
+          "total_seconds": 2638.0,
+          "athletes": [
+            {
+              "leg": 1,
+              "name": "嶋田晴日",
+              "grade": 3,
+              "ekiden_mark": "10:10",
+              "ekiden_seconds": 610.0,
+              "cumulative": "10:10",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 2,
+              "name": "坂本葉音",
+              "grade": 3,
+              "ekiden_mark": "6:22",
+              "ekiden_seconds": 382.0,
+              "cumulative": "16:32",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 3,
+              "name": "越地優菜",
+              "grade": 2,
+              "ekiden_mark": "7:35",
+              "ekiden_seconds": 455.0,
+              "cumulative": "24:07",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 4,
+              "name": "牧野菜々香",
+              "grade": 2,
+              "ekiden_mark": "8:31",
+              "ekiden_seconds": 511.0,
+              "cumulative": "32:38",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 5,
+              "name": "近藤七海",
+              "grade": 2,
+              "ekiden_mark": "11:20",
+              "ekiden_seconds": 680.0,
+              "cumulative": "43:58",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "year": 2020,
+      "sb_seasons": [
+        "2021",
+        "2020",
+        "2019"
+      ],
+      "date": "2020-10-21",
+      "venue": null,
+      "source_file_id": "1pbX4GwUm7_TebtyZZlMo4U8BHu_OPWmP",
+      "source_confidence": null,
+      "teams": [
+        {
+          "rank": 1,
+          "school": "玉名",
+          "total_mark": "42:56",
+          "total_seconds": 2576.0,
+          "athletes": [
+            {
+              "leg": 1,
+              "name": "片山美瑞愛",
+              "grade": 2,
+              "ekiden_mark": "10:30",
+              "ekiden_seconds": 630.0,
+              "cumulative": "10:30",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 2,
+              "name": "平井咲良",
+              "grade": 3,
+              "ekiden_mark": "6:22",
+              "ekiden_seconds": 382.0,
+              "cumulative": "16:52",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 3,
+              "name": "峠美咲希",
+              "grade": 3,
+              "ekiden_mark": "7:04",
+              "ekiden_seconds": 424.0,
+              "cumulative": "23:56",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 4,
+              "name": "徳永理子",
+              "grade": 2,
+              "ekiden_mark": "7:31",
+              "ekiden_seconds": 451.0,
+              "cumulative": "31:27",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 5,
+              "name": "藤戸花菜",
+              "grade": 3,
+              "ekiden_mark": "11:29",
+              "ekiden_seconds": 689.0,
+              "cumulative": "42:56",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            }
+          ]
+        },
+        {
+          "rank": 2,
+          "school": "荒尾三",
+          "total_mark": "43:49",
+          "total_seconds": 2629.0,
+          "athletes": [
+            {
+              "leg": 1,
+              "name": "藤田菜々美",
+              "grade": 3,
+              "ekiden_mark": "10:43",
+              "ekiden_seconds": 643.0,
+              "cumulative": "10:43",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 2,
+              "name": "吉里紗和",
+              "grade": 1,
+              "ekiden_mark": "7:02",
+              "ekiden_seconds": 422.0,
+              "cumulative": "17:45",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 3,
+              "name": "一木優咲",
+              "grade": 2,
+              "ekiden_mark": "6:57",
+              "ekiden_seconds": 417.0,
+              "cumulative": "24:42",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 4,
+              "name": "安田咲和",
+              "grade": 3,
+              "ekiden_mark": "7:41",
+              "ekiden_seconds": 461.0,
+              "cumulative": "32:23",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 5,
+              "name": "飯川紗良",
+              "grade": 2,
+              "ekiden_mark": "11:26",
+              "ekiden_seconds": 686.0,
+              "cumulative": "43:49",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            }
+          ]
+        },
+        {
+          "rank": 3,
+          "school": "長洲",
+          "total_mark": "44:21",
+          "total_seconds": 2661.0,
+          "athletes": [
+            {
+              "leg": 1,
+              "name": "西川侑里",
+              "grade": 1,
+              "ekiden_mark": "9:58",
+              "ekiden_seconds": 598.0,
+              "cumulative": "9:58",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 2,
+              "name": "横尾悠",
+              "grade": 2,
+              "ekiden_mark": "6:47",
+              "ekiden_seconds": 407.0,
+              "cumulative": "16:45",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 3,
+              "name": "高松春花",
+              "grade": 1,
+              "ekiden_mark": "7:42",
+              "ekiden_seconds": 462.0,
+              "cumulative": "24:27",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 4,
+              "name": "草野しずく",
+              "grade": 3,
+              "ekiden_mark": "7:42",
+              "ekiden_seconds": 462.0,
+              "cumulative": "32:09",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 5,
+              "name": "近藤楓",
+              "grade": 3,
+              "ekiden_mark": "12:12",
+              "ekiden_seconds": 732.0,
+              "cumulative": "44:21",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            }
+          ]
+        },
+        {
+          "rank": 4,
+          "school": "菊水",
+          "total_mark": "44:54",
+          "total_seconds": 2694.0,
+          "athletes": [
+            {
+              "leg": 1,
+              "name": "柴尾香澄",
+              "grade": 3,
+              "ekiden_mark": "10:22",
+              "ekiden_seconds": 622.0,
+              "cumulative": "10:22",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 2,
+              "name": "嶋田晴日",
+              "grade": 2,
+              "ekiden_mark": "6:24",
+              "ekiden_seconds": 384.0,
+              "cumulative": "16:46",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 3,
+              "name": "石原杏南",
+              "grade": 1,
+              "ekiden_mark": "8:10",
+              "ekiden_seconds": 490.0,
+              "cumulative": "24:56",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 4,
+              "name": "佐藤杏",
+              "grade": 1,
+              "ekiden_mark": "7:52",
+              "ekiden_seconds": 472.0,
+              "cumulative": "32:48",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 5,
+              "name": "坂本葉音",
+              "grade": 2,
+              "ekiden_mark": "12:06",
+              "ekiden_seconds": 726.0,
+              "cumulative": "44:54",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "year": 2019,
+      "sb_seasons": [
+        "2020",
+        "2019",
+        "2018"
+      ],
+      "date": "2019-11-16",
+      "venue": null,
+      "source_file_id": "1-m4jAOxnRixZLOkolym7idoBH7S6WBTN",
+      "source_confidence": null,
+      "teams": [
+        {
+          "rank": 1,
+          "school": "玉名",
+          "total_mark": "41:31",
+          "total_seconds": 2491.0,
+          "athletes": [
+            {
+              "leg": 1,
+              "name": "堀愛菜",
+              "grade": 3,
+              "ekiden_mark": "10:05",
+              "ekiden_seconds": 605.0,
+              "cumulative": "10:05",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 2,
+              "name": "松本明城",
+              "grade": 3,
+              "ekiden_mark": "6:15",
+              "ekiden_seconds": 375.0,
+              "cumulative": "16:20",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 3,
+              "name": "田上未来",
+              "grade": 3,
+              "ekiden_mark": "6:44",
+              "ekiden_seconds": 404.0,
+              "cumulative": "23:04",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 4,
+              "name": "山田侑奈",
+              "grade": 3,
+              "ekiden_mark": "7:18",
+              "ekiden_seconds": 438.0,
+              "cumulative": "30:22",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 5,
+              "name": "峠美咲希",
+              "grade": 2,
+              "ekiden_mark": "11:09",
+              "ekiden_seconds": 669.0,
+              "cumulative": "41:31",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            }
+          ]
+        },
+        {
+          "rank": 2,
+          "school": "菊水",
+          "total_mark": "42:09",
+          "total_seconds": 2529.0,
+          "athletes": [
+            {
+              "leg": 1,
+              "name": "柴尾香澄",
+              "grade": 2,
+              "ekiden_mark": "10:43",
+              "ekiden_seconds": 643.0,
+              "cumulative": "10:43",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 2,
+              "name": "嶋田晴日",
+              "grade": 1,
+              "ekiden_mark": "6:34",
+              "ekiden_seconds": 394.0,
+              "cumulative": "17:17",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 3,
+              "name": "藤本喬子",
+              "grade": 3,
+              "ekiden_mark": "7:05",
+              "ekiden_seconds": 425.0,
+              "cumulative": "24:22",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 4,
+              "name": "坂本葉音",
+              "grade": 1,
+              "ekiden_mark": "7:24",
+              "ekiden_seconds": 444.0,
+              "cumulative": "31:46",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 5,
+              "name": "坂本華",
+              "grade": 3,
+              "ekiden_mark": "10:23",
+              "ekiden_seconds": 623.0,
+              "cumulative": "42:09",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            }
+          ]
+        },
+        {
+          "rank": 3,
+          "school": "腹栄",
+          "total_mark": "43:59",
+          "total_seconds": 2639.0,
+          "athletes": [
+            {
+              "leg": 1,
+              "name": "植原華望",
+              "grade": 2,
+              "ekiden_mark": "10:42",
+              "ekiden_seconds": 642.0,
+              "cumulative": "10:42",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 2,
+              "name": "田川華妃",
+              "grade": 3,
+              "ekiden_mark": "7:05",
+              "ekiden_seconds": 425.0,
+              "cumulative": "17:47",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 3,
+              "name": "田上遥",
+              "grade": 3,
+              "ekiden_mark": "7:03",
+              "ekiden_seconds": 423.0,
+              "cumulative": "24:50",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 4,
+              "name": "荒木心音",
+              "grade": 2,
+              "ekiden_mark": "7:21",
+              "ekiden_seconds": 441.0,
+              "cumulative": "32:11",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 5,
+              "name": "古賀葵",
+              "grade": 3,
+              "ekiden_mark": "11:48",
+              "ekiden_seconds": 708.0,
+              "cumulative": "43:59",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            }
+          ]
+        },
+        {
+          "rank": 4,
+          "school": "荒尾三",
+          "total_mark": "44:24",
+          "total_seconds": 2664.0,
+          "athletes": [
+            {
+              "leg": 1,
+              "name": "沖愛凛",
+              "grade": 3,
+              "ekiden_mark": "11:15",
+              "ekiden_seconds": 675.0,
+              "cumulative": "11:15",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 2,
+              "name": "佐藤ちゆら",
+              "grade": 2,
+              "ekiden_mark": "6:50",
+              "ekiden_seconds": 410.0,
+              "cumulative": "18:05",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 3,
+              "name": "一木優咲",
+              "grade": 1,
+              "ekiden_mark": "7:07",
+              "ekiden_seconds": 427.0,
+              "cumulative": "25:12",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 4,
+              "name": "安田咲和",
+              "grade": 1,
+              "ekiden_mark": "7:34",
+              "ekiden_seconds": 454.0,
+              "cumulative": "32:46",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 5,
+              "name": "藤田菜々美",
+              "grade": 2,
+              "ekiden_mark": "11:38",
+              "ekiden_seconds": 698.0,
+              "cumulative": "44:24",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "year": 2018,
+      "sb_seasons": [
+        "2019",
+        "2018",
+        "2017"
+      ],
+      "date": "2018-10-17",
+      "venue": null,
+      "source_file_id": "1SpSxcvlMeVJ_w9sV1D559ki112DVfvII",
+      "source_confidence": null,
+      "teams": [
+        {
+          "rank": 1,
+          "school": "玉名",
+          "total_mark": "41:46",
+          "total_seconds": 2506.0,
+          "athletes": [
+            {
+              "leg": 1,
+              "name": "後藤凜",
+              "grade": 2,
+              "ekiden_mark": "10:17",
+              "ekiden_seconds": 617.0,
+              "cumulative": "10:17",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 2,
+              "name": "松本明城",
+              "grade": 2,
+              "ekiden_mark": "6:26",
+              "ekiden_seconds": 386.0,
+              "cumulative": "16:43",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 3,
+              "name": "濱崎麻那",
+              "grade": 2,
+              "ekiden_mark": "6:52",
+              "ekiden_seconds": 412.0,
+              "cumulative": "23:35",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 4,
+              "name": "本田結里",
+              "grade": 1,
+              "ekiden_mark": "7:25",
+              "ekiden_seconds": 445.0,
+              "cumulative": "31:00",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 5,
+              "name": "坂田未来",
+              "grade": 2,
+              "ekiden_mark": "10:46",
+              "ekiden_seconds": 646.0,
+              "cumulative": "41:46",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            }
+          ]
+        },
+        {
+          "rank": 2,
+          "school": "菊水",
+          "total_mark": "42:22",
+          "total_seconds": 2542.0,
+          "athletes": [
+            {
+              "leg": 1,
+              "name": "坂本華",
+              "grade": 2,
+              "ekiden_mark": "10:25",
+              "ekiden_seconds": 625.0,
+              "cumulative": "10:25",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 2,
+              "name": "池田愛海",
+              "grade": 2,
+              "ekiden_mark": "6:40",
+              "ekiden_seconds": 400.0,
+              "cumulative": "17:05",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 3,
+              "name": "柴尾香澄",
+              "grade": 1,
+              "ekiden_mark": "7:02",
+              "ekiden_seconds": 422.0,
+              "cumulative": "24:07",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 4,
+              "name": "前瀬あかり",
+              "grade": 2,
+              "ekiden_mark": "7:24",
+              "ekiden_seconds": 444.0,
+              "cumulative": "31:31",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 5,
+              "name": "藤本喬子",
+              "grade": 2,
+              "ekiden_mark": "10:51",
+              "ekiden_seconds": 651.0,
+              "cumulative": "42:22",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            }
+          ]
+        },
+        {
+          "rank": 3,
+          "school": "腹栄",
+          "total_mark": "43:00",
+          "total_seconds": 2580.0,
+          "athletes": [
+            {
+              "leg": 1,
+              "name": "荒木心音",
+              "grade": 1,
+              "ekiden_mark": "11:04",
+              "ekiden_seconds": 664.0,
+              "cumulative": "11:04",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 2,
+              "name": "前田葵侑",
+              "grade": 2,
+              "ekiden_mark": "6:42",
+              "ekiden_seconds": 402.0,
+              "cumulative": "17:46",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 3,
+              "name": "田上遥",
+              "grade": 2,
+              "ekiden_mark": "7:01",
+              "ekiden_seconds": 421.0,
+              "cumulative": "24:47",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 4,
+              "name": "植原華望",
+              "grade": 1,
+              "ekiden_mark": "7:07",
+              "ekiden_seconds": 427.0,
+              "cumulative": "31:54",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 5,
+              "name": "古賀葵",
+              "grade": 2,
+              "ekiden_mark": "11:06",
+              "ekiden_seconds": 666.0,
+              "cumulative": "43:00",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            }
+          ]
+        },
+        {
+          "rank": 4,
+          "school": "荒尾四",
+          "total_mark": "43:31",
+          "total_seconds": 2611.0,
+          "athletes": [
+            {
+              "leg": 1,
+              "name": "前田琳香",
+              "grade": 2,
+              "ekiden_mark": "10:12",
+              "ekiden_seconds": 612.0,
+              "cumulative": "10:12",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 2,
+              "name": "大江莉奈",
+              "grade": 3,
+              "ekiden_mark": "7:18",
+              "ekiden_seconds": 438.0,
+              "cumulative": "17:30",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 3,
+              "name": "藤本佑菜",
+              "grade": 3,
+              "ekiden_mark": "7:22",
+              "ekiden_seconds": 442.0,
+              "cumulative": "24:52",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 4,
+              "name": "前田紗歩",
+              "grade": 3,
+              "ekiden_mark": "7:56",
+              "ekiden_seconds": 476.0,
+              "cumulative": "32:48",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 5,
+              "name": "小嶋弥渚",
+              "grade": 3,
+              "ekiden_mark": "10:43",
+              "ekiden_seconds": 643.0,
+              "cumulative": "43:31",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "year": 2017,
+      "sb_seasons": [
+        "2018",
+        "2017",
+        "2016"
+      ],
+      "date": "2017-10-18",
+      "venue": null,
+      "source_file_id": "1txCmMkoQMiayxCCaH9iUm5LyDcM-zZ5u",
+      "source_confidence": null,
+      "teams": [
+        {
+          "rank": 1,
+          "school": "玉名",
+          "total_mark": "41:21",
+          "total_seconds": 2481.0,
+          "athletes": [
+            {
+              "leg": 1,
+              "name": "清田真帆",
+              "grade": 3,
+              "ekiden_mark": "10:15",
+              "ekiden_seconds": 615.0,
+              "cumulative": "10:15",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 2,
+              "name": "萩尾花月",
+              "grade": 3,
+              "ekiden_mark": "6:15",
+              "ekiden_seconds": 375.0,
+              "cumulative": "16:30",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 3,
+              "name": "松本明城",
+              "grade": 1,
+              "ekiden_mark": "6:58",
+              "ekiden_seconds": 418.0,
+              "cumulative": "23:28",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 4,
+              "name": "堀愛菜",
+              "grade": 1,
+              "ekiden_mark": "7:07",
+              "ekiden_seconds": 427.0,
+              "cumulative": "30:35",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 5,
+              "name": "中尾比菜",
+              "grade": 3,
+              "ekiden_mark": "10:46",
+              "ekiden_seconds": 646.0,
+              "cumulative": "41:21",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            }
+          ]
+        },
+        {
+          "rank": 2,
+          "school": "荒尾三",
+          "total_mark": "42:02",
+          "total_seconds": 2522.0,
+          "athletes": [
+            {
+              "leg": 1,
+              "name": "大中千尋",
+              "grade": 3,
+              "ekiden_mark": "10:09",
+              "ekiden_seconds": 609.0,
+              "cumulative": "10:09",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 2,
+              "name": "沖愛凛",
+              "grade": 1,
+              "ekiden_mark": "6:25",
+              "ekiden_seconds": 385.0,
+              "cumulative": "16:34",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 3,
+              "name": "堀秋璃",
+              "grade": 3,
+              "ekiden_mark": "7:04",
+              "ekiden_seconds": 424.0,
+              "cumulative": "23:38",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 4,
+              "name": "荒川夏凛",
+              "grade": 3,
+              "ekiden_mark": "7:24",
+              "ekiden_seconds": 444.0,
+              "cumulative": "31:02",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 5,
+              "name": "浦浜実里",
+              "grade": 3,
+              "ekiden_mark": "11:00",
+              "ekiden_seconds": 660.0,
+              "cumulative": "42:02",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            }
+          ]
+        },
+        {
+          "rank": 3,
+          "school": "菊水",
+          "total_mark": "43:08",
+          "total_seconds": 2588.0,
+          "athletes": [
+            {
+              "leg": 1,
+              "name": "坂井陽香",
+              "grade": 3,
+              "ekiden_mark": "11:00",
+              "ekiden_seconds": 660.0,
+              "cumulative": "11:00",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 2,
+              "name": "坂本華",
+              "grade": 1,
+              "ekiden_mark": "6:29",
+              "ekiden_seconds": 389.0,
+              "cumulative": "17:29",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 3,
+              "name": "藤本喬子",
+              "grade": 1,
+              "ekiden_mark": "7:05",
+              "ekiden_seconds": 425.0,
+              "cumulative": "24:34",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 4,
+              "name": "坂本あずみ",
+              "grade": 3,
+              "ekiden_mark": "7:27",
+              "ekiden_seconds": 447.0,
+              "cumulative": "32:01",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 5,
+              "name": "柴尾知美",
+              "grade": 2,
+              "ekiden_mark": "11:07",
+              "ekiden_seconds": 667.0,
+              "cumulative": "43:08",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            }
+          ]
+        },
+        {
+          "rank": 4,
+          "school": "岱明",
+          "total_mark": "43:29",
+          "total_seconds": 2609.0,
+          "athletes": [
+            {
+              "leg": 1,
+              "name": "前田優花",
+              "grade": 1,
+              "ekiden_mark": "10:57",
+              "ekiden_seconds": 657.0,
+              "cumulative": "10:57",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 2,
+              "name": "辻湖羽来",
+              "grade": 3,
+              "ekiden_mark": "6:41",
+              "ekiden_seconds": 401.0,
+              "cumulative": "17:38",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 3,
+              "name": "榎本妃恵",
+              "grade": 3,
+              "ekiden_mark": "7:15",
+              "ekiden_seconds": 435.0,
+              "cumulative": "24:53",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 4,
+              "name": "土山静里佳",
+              "grade": 2,
+              "ekiden_mark": "7:27",
+              "ekiden_seconds": 447.0,
+              "cumulative": "32:20",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 5,
+              "name": "三村奈々",
+              "grade": 3,
+              "ekiden_mark": "11:09",
+              "ekiden_seconds": 669.0,
+              "cumulative": "43:29",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "year": 2016,
+      "sb_seasons": [
+        "2017",
+        "2016",
+        "2015"
+      ],
+      "date": "2016-10-19",
+      "venue": null,
+      "source_file_id": "1LhUyOckCQI2Ne3OEOIbQmMq4tZf5KzeR",
+      "source_confidence": null,
+      "teams": [
+        {
+          "rank": 1,
+          "school": "荒尾三",
+          "total_mark": "40:59",
+          "total_seconds": 2459.0,
+          "athletes": [
+            {
+              "leg": 1,
+              "name": "大中千尋",
+              "grade": 2,
+              "ekiden_mark": "10:10",
+              "ekiden_seconds": 610.0,
+              "cumulative": "10:10",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 2,
+              "name": "堀秋璃",
+              "grade": 2,
+              "ekiden_mark": "6:33",
+              "ekiden_seconds": 393.0,
+              "cumulative": "16:43",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 3,
+              "name": "荒川夏凛",
+              "grade": 2,
+              "ekiden_mark": "6:55",
+              "ekiden_seconds": 415.0,
+              "cumulative": "23:38",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 4,
+              "name": "浦浜実里",
+              "grade": 2,
+              "ekiden_mark": "6:42",
+              "ekiden_seconds": 402.0,
+              "cumulative": "30:20",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 5,
+              "name": "牧野颯姫",
+              "grade": 3,
+              "ekiden_mark": "10:39",
+              "ekiden_seconds": 639.0,
+              "cumulative": "40:59",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            }
+          ]
+        },
+        {
+          "rank": 2,
+          "school": "玉名",
+          "total_mark": "41:10",
+          "total_seconds": 2470.0,
+          "athletes": [
+            {
+              "leg": 1,
+              "name": "濱崎菜",
+              "grade": 3,
+              "ekiden_mark": "10:22",
+              "ekiden_seconds": 622.0,
+              "cumulative": "10:22",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 2,
+              "name": "宮本花穂",
+              "grade": 3,
+              "ekiden_mark": "6:31",
+              "ekiden_seconds": 391.0,
+              "cumulative": "16:53",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 3,
+              "name": "中尾比菜",
+              "grade": 2,
+              "ekiden_mark": "6:46",
+              "ekiden_seconds": 406.0,
+              "cumulative": "23:39",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 4,
+              "name": "清田真帆",
+              "grade": 2,
+              "ekiden_mark": "6:48",
+              "ekiden_seconds": 408.0,
+              "cumulative": "30:27",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 5,
+              "name": "早野真菜",
+              "grade": 3,
+              "ekiden_mark": "10:43",
+              "ekiden_seconds": 643.0,
+              "cumulative": "41:10",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            }
+          ]
+        },
+        {
+          "rank": 3,
+          "school": "南関",
+          "total_mark": "41:43",
+          "total_seconds": 2503.0,
+          "athletes": [
+            {
+              "leg": 1,
+              "name": "津留萌花",
+              "grade": 3,
+              "ekiden_mark": "10:35",
+              "ekiden_seconds": 635.0,
+              "cumulative": "10:35",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 2,
+              "name": "門田咲耶",
+              "grade": 1,
+              "ekiden_mark": "6:31",
+              "ekiden_seconds": 391.0,
+              "cumulative": "17:06",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 3,
+              "name": "島崎乃々佳",
+              "grade": 1,
+              "ekiden_mark": "6:55",
+              "ekiden_seconds": 415.0,
+              "cumulative": "24:01",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 4,
+              "name": "高椋琳菜",
+              "grade": 3,
+              "ekiden_mark": "7:08",
+              "ekiden_seconds": 428.0,
+              "cumulative": "31:09",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 5,
+              "name": "原賀藍実",
+              "grade": 3,
+              "ekiden_mark": "10:34",
+              "ekiden_seconds": 634.0,
+              "cumulative": "41:43",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            }
+          ]
+        },
+        {
+          "rank": 4,
+          "school": "岱明",
+          "total_mark": "43:02",
+          "total_seconds": 2582.0,
+          "athletes": [
+            {
+              "leg": 1,
+              "name": "田上真愛",
+              "grade": 3,
+              "ekiden_mark": "10:29",
+              "ekiden_seconds": 629.0,
+              "cumulative": "10:29",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 2,
+              "name": "土山静里佳",
+              "grade": 3,
+              "ekiden_mark": "6:35",
+              "ekiden_seconds": 395.0,
+              "cumulative": "17:04",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 3,
+              "name": "東華菜",
+              "grade": 3,
+              "ekiden_mark": "7:04",
+              "ekiden_seconds": 424.0,
+              "cumulative": "24:08",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 4,
+              "name": "辻湖羽来",
+              "grade": 2,
+              "ekiden_mark": "7:15",
+              "ekiden_seconds": 435.0,
+              "cumulative": "31:23",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 5,
+              "name": "三村奈々",
+              "grade": 2,
+              "ekiden_mark": "11:39",
+              "ekiden_seconds": 699.0,
+              "cumulative": "43:02",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "year": 2015,
+      "sb_seasons": [
+        "2016",
+        "2015",
+        "2014"
+      ],
+      "date": "2015-10-21",
+      "venue": null,
+      "source_file_id": "17gakFQA2vfltUyFgLkmy0FrWC8NnKdYv",
+      "source_confidence": null,
+      "teams": [
+        {
+          "rank": 1,
+          "school": "玉名",
+          "total_mark": "41:31",
+          "total_seconds": 2491.0,
+          "athletes": [
+            {
+              "leg": 1,
+              "name": "関知夏子",
+              "grade": 3,
+              "ekiden_mark": "10:14",
+              "ekiden_seconds": 614.0,
+              "cumulative": "10:14",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 2,
+              "name": "田上綾乃",
+              "grade": 3,
+              "ekiden_mark": "6:26",
+              "ekiden_seconds": 386.0,
+              "cumulative": "16:40",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 3,
+              "name": "笠井葉央",
+              "grade": 3,
+              "ekiden_mark": "6:54",
+              "ekiden_seconds": 414.0,
+              "cumulative": "23:34",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 4,
+              "name": "清田真帆",
+              "grade": 1,
+              "ekiden_mark": "7:06",
+              "ekiden_seconds": 426.0,
+              "cumulative": "30:40",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 5,
+              "name": "塩山桃花",
+              "grade": 2,
+              "ekiden_mark": "10:51",
+              "ekiden_seconds": 651.0,
+              "cumulative": "41:31",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            }
+          ]
+        },
+        {
+          "rank": 2,
+          "school": "荒尾三",
+          "total_mark": "42:39",
+          "total_seconds": 2559.0,
+          "athletes": [
+            {
+              "leg": 1,
+              "name": "大中千尋",
+              "grade": 1,
+              "ekiden_mark": "10:23",
+              "ekiden_seconds": 623.0,
+              "cumulative": "10:23",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 2,
+              "name": "荒川夏凛",
+              "grade": 1,
+              "ekiden_mark": "6:45",
+              "ekiden_seconds": 405.0,
+              "cumulative": "17:08",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 3,
+              "name": "藤本実百",
+              "grade": 2,
+              "ekiden_mark": "6:59",
+              "ekiden_seconds": 419.0,
+              "cumulative": "24:07",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 4,
+              "name": "石橋美優",
+              "grade": 1,
+              "ekiden_mark": "7:20",
+              "ekiden_seconds": 440.0,
+              "cumulative": "31:27",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 5,
+              "name": "牧野颯姫",
+              "grade": 2,
+              "ekiden_mark": "11:12",
+              "ekiden_seconds": 672.0,
+              "cumulative": "42:39",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            }
+          ]
+        },
+        {
+          "rank": 3,
+          "school": "南関",
+          "total_mark": "43:17",
+          "total_seconds": 2597.0,
+          "athletes": [
+            {
+              "leg": 1,
+              "name": "原賀藍実",
+              "grade": 2,
+              "ekiden_mark": "11:00",
+              "ekiden_seconds": 660.0,
+              "cumulative": "11:00",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 2,
+              "name": "高椋琳菜",
+              "grade": 2,
+              "ekiden_mark": "6:59",
+              "ekiden_seconds": 419.0,
+              "cumulative": "17:59",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 3,
+              "name": "津留萌花",
+              "grade": 2,
+              "ekiden_mark": "6:45",
+              "ekiden_seconds": 405.0,
+              "cumulative": "24:44",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 4,
+              "name": "川上悠花",
+              "grade": 3,
+              "ekiden_mark": "7:33",
+              "ekiden_seconds": 453.0,
+              "cumulative": "32:17",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 5,
+              "name": "島崎乃々佳",
+              "grade": 2,
+              "ekiden_mark": "11:00",
+              "ekiden_seconds": 660.0,
+              "cumulative": "43:17",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            }
+          ]
+        },
+        {
+          "rank": 4,
+          "school": "岱明",
+          "total_mark": "43:36",
+          "total_seconds": 2616.0,
+          "athletes": [
+            {
+              "leg": 1,
+              "name": "東華菜",
+              "grade": 2,
+              "ekiden_mark": "10:41",
+              "ekiden_seconds": 641.0,
+              "cumulative": "10:41",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 2,
+              "name": "田上真愛",
+              "grade": 2,
+              "ekiden_mark": "6:51",
+              "ekiden_seconds": 411.0,
+              "cumulative": "17:32",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 3,
+              "name": "下田紗知",
+              "grade": 3,
+              "ekiden_mark": "7:10",
+              "ekiden_seconds": 430.0,
+              "cumulative": "24:42",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 4,
+              "name": "宮内果歩",
+              "grade": 3,
+              "ekiden_mark": "7:36",
+              "ekiden_seconds": 456.0,
+              "cumulative": "32:18",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 5,
+              "name": "三村奈々",
+              "grade": 1,
+              "ekiden_mark": "11:18",
+              "ekiden_seconds": 678.0,
+              "cumulative": "43:36",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "year": 2013,
+      "sb_seasons": [
+        "2014",
+        "2013",
+        "2012"
+      ],
+      "date": null,
+      "venue": null,
+      "source_file_id": "1YFXOLciLrpuMD8lvGVQ0oImq1uZLg1Ep",
+      "source_confidence": null,
+      "teams": [
+        {
+          "rank": 1,
+          "school": "玉名",
+          "total_mark": "41:03",
+          "total_seconds": 2463.0,
+          "athletes": [
+            {
+              "leg": 1,
+              "name": "森澤耶乃",
+              "grade": 3,
+              "ekiden_mark": "10:09",
+              "ekiden_seconds": 609.0,
+              "cumulative": "10:09",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 2,
+              "name": "碩結里",
+              "grade": 3,
+              "ekiden_mark": "6:26",
+              "ekiden_seconds": 386.0,
+              "cumulative": "16:35",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 3,
+              "name": "塩山莉央",
+              "grade": 3,
+              "ekiden_mark": "6:53",
+              "ekiden_seconds": 413.0,
+              "cumulative": "23:28",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 4,
+              "name": "川本和",
+              "grade": 3,
+              "ekiden_mark": "7:09",
+              "ekiden_seconds": 429.0,
+              "cumulative": "30:37",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 5,
+              "name": "上戸真鈴",
+              "grade": 3,
+              "ekiden_mark": "10:26",
+              "ekiden_seconds": 626.0,
+              "cumulative": "41:03",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            }
+          ]
+        },
+        {
+          "rank": 2,
+          "school": "荒尾海陽",
+          "total_mark": "42:42",
+          "total_seconds": 2562.0,
+          "athletes": [
+            {
+              "leg": 1,
+              "name": "東美瑠希",
+              "grade": 3,
+              "ekiden_mark": "10:41",
+              "ekiden_seconds": 641.0,
+              "cumulative": "10:41",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 2,
+              "name": "吉本絵理",
+              "grade": 3,
+              "ekiden_mark": "6:47",
+              "ekiden_seconds": 407.0,
+              "cumulative": "17:28",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 3,
+              "name": "吉岡愛馨",
+              "grade": 2,
+              "ekiden_mark": "6:41",
+              "ekiden_seconds": 401.0,
+              "cumulative": "24:09",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 4,
+              "name": "伊木田優衣",
+              "grade": 3,
+              "ekiden_mark": "7:42",
+              "ekiden_seconds": 462.0,
+              "cumulative": "31:51",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 5,
+              "name": "西川二千花",
+              "grade": 2,
+              "ekiden_mark": "10:51",
+              "ekiden_seconds": 651.0,
+              "cumulative": "42:42",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            }
+          ]
+        },
+        {
+          "rank": 3,
+          "school": "南関",
+          "total_mark": "42:51",
+          "total_seconds": 2571.0,
+          "athletes": [
+            {
+              "leg": 1,
+              "name": "嶋永有紗",
+              "grade": 3,
+              "ekiden_mark": "10:33",
+              "ekiden_seconds": 633.0,
+              "cumulative": "10:33",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 2,
+              "name": "原有紀",
+              "grade": 3,
+              "ekiden_mark": "6:38",
+              "ekiden_seconds": 398.0,
+              "cumulative": "17:11",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 3,
+              "name": "武田彩花",
+              "grade": 2,
+              "ekiden_mark": "6:53",
+              "ekiden_seconds": 413.0,
+              "cumulative": "24:04",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 4,
+              "name": "松本佑夏",
+              "grade": 2,
+              "ekiden_mark": "7:33",
+              "ekiden_seconds": 453.0,
+              "cumulative": "31:37",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 5,
+              "name": "嶋村里穂",
+              "grade": 2,
+              "ekiden_mark": "11:14",
+              "ekiden_seconds": 674.0,
+              "cumulative": "42:51",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            }
+          ]
+        },
+        {
+          "rank": 4,
+          "school": "荒尾三",
+          "total_mark": "42:51",
+          "total_seconds": 2571.0,
+          "athletes": [
+            {
+              "leg": 1,
+              "name": "関琴美",
+              "grade": 2,
+              "ekiden_mark": "10:40",
+              "ekiden_seconds": 640.0,
+              "cumulative": "10:40",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 2,
+              "name": "杉山恵菜",
+              "grade": 2,
+              "ekiden_mark": "6:47",
+              "ekiden_seconds": 407.0,
+              "cumulative": "17:27",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 3,
+              "name": "中村真央",
+              "grade": 3,
+              "ekiden_mark": "7:12",
+              "ekiden_seconds": 432.0,
+              "cumulative": "24:39",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 4,
+              "name": "栗原美瑞希",
+              "grade": 3,
+              "ekiden_mark": "7:25",
+              "ekiden_seconds": 445.0,
+              "cumulative": "32:04",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 5,
+              "name": "森綴美香",
+              "grade": 2,
+              "ekiden_mark": "10:47",
+              "ekiden_seconds": 647.0,
+              "cumulative": "42:51",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "year": 2012,
+      "sb_seasons": [
+        "2013",
+        "2012",
+        "2011"
+      ],
+      "date": null,
+      "venue": null,
+      "source_file_id": "1AONIAmzyv-oVZ8RI1x4gIOtBkQVNgEts",
+      "source_confidence": null,
+      "teams": [
+        {
+          "rank": 1,
+          "school": "玉名",
+          "total_mark": "41:07",
+          "total_seconds": 2467.0,
+          "athletes": [
+            {
+              "leg": 1,
+              "name": "猿渡睦月",
+              "grade": 2,
+              "ekiden_mark": "10:18",
+              "ekiden_seconds": 618.0,
+              "cumulative": "10:18",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 2,
+              "name": "西澤弥乃",
+              "grade": 2,
+              "ekiden_mark": "6:18",
+              "ekiden_seconds": 378.0,
+              "cumulative": "16:36",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 3,
+              "name": "川本和",
+              "grade": 2,
+              "ekiden_mark": "6:46",
+              "ekiden_seconds": 406.0,
+              "cumulative": "23:22",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 4,
+              "name": "塩山莉央",
+              "grade": 2,
+              "ekiden_mark": "7:09",
+              "ekiden_seconds": 429.0,
+              "cumulative": "30:31",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 5,
+              "name": "上戸真鈴",
+              "grade": 2,
+              "ekiden_mark": "10:36",
+              "ekiden_seconds": 636.0,
+              "cumulative": "41:07",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            }
+          ]
+        },
+        {
+          "rank": 2,
+          "school": "岱明",
+          "total_mark": "42:41",
+          "total_seconds": 2561.0,
+          "athletes": [
+            {
+              "leg": 1,
+              "name": "大濱志歩",
+              "grade": 1,
+              "ekiden_mark": "10:17",
+              "ekiden_seconds": 617.0,
+              "cumulative": "10:17",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 2,
+              "name": "前田明日香",
+              "grade": 1,
+              "ekiden_mark": "6:43",
+              "ekiden_seconds": 403.0,
+              "cumulative": "17:00",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 3,
+              "name": "中川菜月",
+              "grade": 1,
+              "ekiden_mark": "7:12",
+              "ekiden_seconds": 432.0,
+              "cumulative": "24:12",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 4,
+              "name": "鎌田愛貴",
+              "grade": 2,
+              "ekiden_mark": "7:22",
+              "ekiden_seconds": 442.0,
+              "cumulative": "31:34",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 5,
+              "name": "田上愛佳",
+              "grade": 3,
+              "ekiden_mark": "11:07",
+              "ekiden_seconds": 667.0,
+              "cumulative": "42:41",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            }
+          ]
+        },
+        {
+          "rank": 3,
+          "school": "荒尾海陽",
+          "total_mark": "42:59",
+          "total_seconds": 2579.0,
+          "athletes": [
+            {
+              "leg": 1,
+              "name": "東美瑠希",
+              "grade": 2,
+              "ekiden_mark": "10:45",
+              "ekiden_seconds": 645.0,
+              "cumulative": "10:45",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 2,
+              "name": "古本結理",
+              "grade": 2,
+              "ekiden_mark": "6:55",
+              "ekiden_seconds": 415.0,
+              "cumulative": "17:40",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 3,
+              "name": "吉岡憂希",
+              "grade": 2,
+              "ekiden_mark": "6:51",
+              "ekiden_seconds": 411.0,
+              "cumulative": "24:31",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 4,
+              "name": "谷本アンナ",
+              "grade": 3,
+              "ekiden_mark": "7:17",
+              "ekiden_seconds": 437.0,
+              "cumulative": "31:48",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 5,
+              "name": "伊木田優衣",
+              "grade": 2,
+              "ekiden_mark": "11:11",
+              "ekiden_seconds": 671.0,
+              "cumulative": "42:59",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            }
+          ]
+        },
+        {
+          "rank": 4,
+          "school": "南関",
+          "total_mark": "43:24",
+          "total_seconds": 2604.0,
+          "athletes": [
+            {
+              "leg": 1,
+              "name": "嶋永有紗",
+              "grade": 2,
+              "ekiden_mark": "10:21",
+              "ekiden_seconds": 621.0,
+              "cumulative": "10:21",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 2,
+              "name": "津留有希子",
+              "grade": 2,
+              "ekiden_mark": "7:13",
+              "ekiden_seconds": 433.0,
+              "cumulative": "17:34",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 3,
+              "name": "嶋村梨那",
+              "grade": 1,
+              "ekiden_mark": "6:56",
+              "ekiden_seconds": 416.0,
+              "cumulative": "24:30",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 4,
+              "name": "武田彩花",
+              "grade": 1,
+              "ekiden_mark": "7:16",
+              "ekiden_seconds": 436.0,
+              "cumulative": "31:46",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            },
+            {
+              "leg": 5,
+              "name": "原有紀",
+              "grade": 2,
+              "ekiden_mark": "11:38",
+              "ekiden_seconds": 698.0,
+              "cumulative": "43:24",
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 0
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
