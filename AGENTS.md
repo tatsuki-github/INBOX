@@ -38,7 +38,8 @@
 
 Notion・Google ドライブ由来のスナップショットは `input/external/` にある。
 探索はまず `input/external/INDEX.md`（および drive/notion/github の INDEX）から。
-詳細: `docs/adr/010-external-idaten-import.md`
+画像・OCR は `media-manifest.json` と KG の `MediaAsset`（特に `topic:ekiden`）を辿る。
+詳細: `docs/adr/010-external-idaten-import.md` / `docs/adr/011-idaten-media-ocr-kg.md`
 
 ## 関連ドキュメント
 

@@ -85,6 +85,7 @@ def _score_node(node: dict[str, Any], q_tokens: list[str], query: str) -> float:
         "Template": 1.1,
         "Entity": 1.0,
         "Year": 1.0,
+        "MediaAsset": 1.35,
     }
     score *= boost.get(node_type, 1.0)
     return score

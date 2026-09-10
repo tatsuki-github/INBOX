@@ -6,7 +6,9 @@ Source:
 
 ## Import policy applied
 - Google Docs → `.md`; Sheets → `.csv` (text preferred).
-- PDFs / images / videos → metadata stub `.md` + Drive `viewUrl` (no PDF binaries; ADR 010).
+- 分析 PDF（≤8MB）はバイナリ＋`.ocr.md`（ADR 011）。その他大型 PDF は stub。
+- フォト**画像**はバイナリ保存、**動画**は stub。
+- 駅伝歴代画像は Notion media 側（Drive `荒玉駅伝歴代` は空のため待機）。
 - 記録データベース/印刷用 stubbed (CSV present).
 - Notionバックアップ / 荒玉駅伝歴代: empty.
 - Skipped: Index.zip, Colab, 学習指導要領, ランナーズバイブル (not in roots).

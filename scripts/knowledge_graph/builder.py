@@ -54,6 +54,21 @@ SOURCE_GLOBS: list[tuple[str, list[str], str]] = [
         ["athlete_records"],
         "Notion 2026 中学生記録スナップショット",
     ),
+    (
+        "input/external/media-manifest.json",
+        ["ekiden", "athlete_records", "practice"],
+        "外部メディア索引（画像・OCR・PDF パス）",
+    ),
+    (
+        "input/external/notion/media/ekiden-history/INDEX.md",
+        ["ekiden", "athlete_records"],
+        "荒玉中体連駅伝歴代の画像・OCR 入口",
+    ),
+    (
+        "input/external/notion/databases/荒玉中体連駅伝歴代/rows.json",
+        ["ekiden", "athlete_records"],
+        "荒玉中体連駅伝歴代（岱明順位・記録）",
+    ),
 ]
 
 LIGHTWEIGHT_SUFFIXES = {".csv", ".pdf", ".jpg", ".jpeg", ".png", ".gif", ".webp"}
@@ -68,6 +83,7 @@ TOPIC_DEFS: list[tuple[str, str, str]] = [
     ("pace", "ペース", "k/pace・VDOT・GZ 表"),
     ("injury", "ケガ / RRI", "ランニング障害・回復エビデンス"),
     ("meta", "リポジトリ運用", "README・生成パイプライン"),
+    ("ekiden", "荒玉駅伝", "歴代結果画像・OCR・戦略・分析（勝つための一次情報）"),
 ]
 
 QUERY_HINTS: list[tuple[str, str, list[str]]] = [
@@ -100,6 +116,16 @@ QUERY_HINTS: list[tuple[str, str, list[str]]] = [
         "AI で練習を作るには？",
         "ai-practice-generation.md と prompts / rules",
         ["topic:ai"],
+    ),
+    (
+        "荒玉駅伝の歴代は？",
+        "駅伝歴代 rows + media-manifest + ocr/*.md（画像パスがあれば原画を読む）",
+        [
+            "topic:ekiden",
+            "source:input/external/notion/databases/荒玉中体連駅伝歴代/rows.json",
+            "source:input/external/media-manifest.json",
+            "source:input/external/notion/media/ekiden-history/INDEX.md",
+        ],
     ),
 ]
 
@@ -278,6 +304,103 @@ def _tags_from_events(year: int) -> set[str]:
             if isinstance(tag, str) and tag.strip():
                 tags.add(tag.strip())
     return tags
+
+
+def _register_external_media(
+    nodes: dict[str, dict[str, Any]],
+    edges: set[tuple[str, str, str]],
+) -> None:
+    """Register MediaAsset nodes from media-manifest so LLMs can follow local paths."""
+    manifest_path = ROOT / "input" / "external" / "media-manifest.json"
+    if not manifest_path.exists():
+        return
+    try:
+        data = json.loads(manifest_path.read_text(encoding="utf-8"))
+    except json.JSONDecodeError:
+        return
+    items = data.get("items") if isinstance(data, dict) else None
+    if not isinstance(items, list):
+        return
+
+    for item in items:
+        if not isinstance(item, dict):
+            continue
+        topic = str(item.get("topic") or "meta")
+        topics = [topic]
+        if topic == "ekiden":
+            topics.append("athlete_records")
+        elif topic == "analysis":
+            topics.extend(["ekiden", "athlete_records"])
+        elif topic == "photo":
+            topics.append("practice")
+
+        stem = str(item.get("stem") or "media")
+        local = item.get("local_path")
+        ocr = item.get("ocr_path")
+        binary = bool(item.get("binary_saved"))
+        refs: list[str] = []
+        for candidate in (local, ocr, item.get("meta_path")):
+            if not candidate:
+                continue
+            p = Path(str(candidate))
+            if p.is_absolute():
+                try:
+                    refs.append(p.resolve().relative_to(ROOT.resolve()).as_posix())
+                except ValueError:
+                    refs.append(p.as_posix())
+            else:
+                refs.append(p.as_posix())
+        if not refs:
+            continue
+        # Prefer OCR / readable path in hint
+        ocr_rel = None
+        if ocr:
+            op = Path(str(ocr))
+            try:
+                ocr_rel = (
+                    op.resolve().relative_to(ROOT.resolve()).as_posix()
+                    if op.is_absolute()
+                    else op.as_posix()
+                )
+            except ValueError:
+                ocr_rel = op.as_posix()
+        hint_bits = [
+            f"topic={topic}",
+            "binary=yes" if binary else "binary=pending",
+        ]
+        if ocr_rel:
+            hint_bits.append(f"ocr={ocr_rel}")
+        if item.get("notion_page_url"):
+            hint_bits.append("notion添付あり")
+        label = stem
+        if item.get("year") and item.get("gender"):
+            label = f"荒玉駅伝 {item['year']} {item['gender']}"
+        elif topic == "analysis":
+            label = f"分析 {stem}"
+        elif topic == "photo":
+            label = f"フォト {item.get('event_folder') or ''}/{stem}".strip("/")
+
+        mid = f"media:{topic}:{stem}"
+        _add_node(
+            nodes,
+            _node(
+                mid,
+                "MediaAsset",
+                label,
+                topics=topics,
+                refs=refs,
+                hint="; ".join(hint_bits),
+            ),
+        )
+        for t in topics:
+            _add_edge(edges, f"topic:{t}", mid, "search_here")
+        # Point MediaAsset at the manifest / INDEX hubs (avoid exploding Source nodes per photo)
+        if "source:input/external/media-manifest.json" in nodes:
+            _add_edge(edges, mid, "source:input/external/media-manifest.json", "documented_in")
+        if topic == "ekiden" and "source:input/external/notion/media/ekiden-history/INDEX.md" in nodes:
+            _add_edge(edges, mid, "source:input/external/notion/media/ekiden-history/INDEX.md", "see_also")
+        if topic == "ekiden" and "source:input/external/notion/databases/荒玉中体連駅伝歴代/rows.json" in nodes:
+            _add_edge(edges, mid, "source:input/external/notion/databases/荒玉中体連駅伝歴代/rows.json", "derived_from")
 
 
 def build_knowledge_graph(*, generated_at: str | None = None) -> dict[str, Any]:
@@ -538,6 +661,9 @@ def build_knowledge_graph(*, generated_at: str | None = None) -> dict[str, Any]:
         _add_edge(edges, "topic:practice", nid, "related_to")
         if aff:
             _add_edge(edges, "topic:athlete_records", nid, "related_to")
+
+    # External media (images / OCR / analysis PDFs) — paths for LLM follow-up reads
+    _register_external_media(nodes, edges)
 
     # Query hints
     for idx, (label, hint, targets) in enumerate(QUERY_HINTS):

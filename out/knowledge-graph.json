@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated_at": "2026-09-10T09:17:39Z",
+  "generated_at": "2026-09-10T10:17:10Z",
   "nodes": [
     {
       "id": "entity:athlete:中尾快叶",
@@ -1177,6 +1177,835 @@
       "hint": "2027 年次カレンダーと練習のハブ"
     },
     {
+      "id": "media:analysis:2026年度荒玉男子",
+      "type": "MediaAsset",
+      "label": "分析 2026年度荒玉男子",
+      "topics": [
+        "analysis",
+        "athlete_records",
+        "ekiden"
+      ],
+      "refs": [
+        "input/external/drive/shared/分析/2026年度荒玉男子.ocr.md",
+        "input/external/drive/shared/分析/2026年度荒玉男子.pdf"
+      ],
+      "hint": "topic=analysis; binary=yes; ocr=input/external/drive/shared/分析/2026年度荒玉男子.ocr.md"
+    },
+    {
+      "id": "media:analysis:2026年荒玉女子",
+      "type": "MediaAsset",
+      "label": "分析 2026年荒玉女子",
+      "topics": [
+        "analysis",
+        "athlete_records",
+        "ekiden"
+      ],
+      "refs": [
+        "input/external/drive/shared/分析/2026年荒玉女子.ocr.md",
+        "input/external/drive/shared/分析/2026年荒玉女子.pdf"
+      ],
+      "hint": "topic=analysis; binary=yes; ocr=input/external/drive/shared/分析/2026年荒玉女子.ocr.md"
+    },
+    {
+      "id": "media:analysis:関係図_2026",
+      "type": "MediaAsset",
+      "label": "分析 関係図_2026",
+      "topics": [
+        "analysis",
+        "athlete_records",
+        "ekiden"
+      ],
+      "refs": [
+        "input/external/drive/shared/分析/関係図_2026.ocr.md",
+        "input/external/drive/shared/分析/関係図_2026.pdf"
+      ],
+      "hint": "topic=analysis; binary=yes; ocr=input/external/drive/shared/分析/関係図_2026.ocr.md"
+    },
+    {
+      "id": "media:ekiden:2012-女子",
+      "type": "MediaAsset",
+      "label": "荒玉駅伝 2012 女子",
+      "topics": [
+        "athlete_records",
+        "ekiden"
+      ],
+      "refs": [
+        "input/external/notion/media/ekiden-history/2012-女子.meta.json",
+        "input/external/notion/media/ekiden-history/ocr/2012-女子.md"
+      ],
+      "hint": "topic=ekiden; binary=pending; ocr=input/external/notion/media/ekiden-history/ocr/2012-女子.md; notion添付あり"
+    },
+    {
+      "id": "media:ekiden:2012-男子",
+      "type": "MediaAsset",
+      "label": "荒玉駅伝 2012 男子",
+      "topics": [
+        "athlete_records",
+        "ekiden"
+      ],
+      "refs": [
+        "input/external/notion/media/ekiden-history/2012-男子.meta.json",
+        "input/external/notion/media/ekiden-history/ocr/2012-男子.md"
+      ],
+      "hint": "topic=ekiden; binary=pending; ocr=input/external/notion/media/ekiden-history/ocr/2012-男子.md; notion添付あり"
+    },
+    {
+      "id": "media:ekiden:2013-女子",
+      "type": "MediaAsset",
+      "label": "荒玉駅伝 2013 女子",
+      "topics": [
+        "athlete_records",
+        "ekiden"
+      ],
+      "refs": [
+        "input/external/notion/media/ekiden-history/2013-女子.meta.json",
+        "input/external/notion/media/ekiden-history/ocr/2013-女子.md"
+      ],
+      "hint": "topic=ekiden; binary=pending; ocr=input/external/notion/media/ekiden-history/ocr/2013-女子.md; notion添付あり"
+    },
+    {
+      "id": "media:ekiden:2013-男子",
+      "type": "MediaAsset",
+      "label": "荒玉駅伝 2013 男子",
+      "topics": [
+        "athlete_records",
+        "ekiden"
+      ],
+      "refs": [
+        "input/external/notion/media/ekiden-history/2013-男子.meta.json",
+        "input/external/notion/media/ekiden-history/ocr/2013-男子.md"
+      ],
+      "hint": "topic=ekiden; binary=pending; ocr=input/external/notion/media/ekiden-history/ocr/2013-男子.md; notion添付あり"
+    },
+    {
+      "id": "media:ekiden:2014-男子",
+      "type": "MediaAsset",
+      "label": "荒玉駅伝 2014 男子",
+      "topics": [
+        "athlete_records",
+        "ekiden"
+      ],
+      "refs": [
+        "input/external/notion/media/ekiden-history/2014-男子.meta.json",
+        "input/external/notion/media/ekiden-history/ocr/2014-男子.md"
+      ],
+      "hint": "topic=ekiden; binary=pending; ocr=input/external/notion/media/ekiden-history/ocr/2014-男子.md; notion添付あり"
+    },
+    {
+      "id": "media:ekiden:2015-女子",
+      "type": "MediaAsset",
+      "label": "荒玉駅伝 2015 女子",
+      "topics": [
+        "athlete_records",
+        "ekiden"
+      ],
+      "refs": [
+        "input/external/notion/media/ekiden-history/2015-女子.meta.json",
+        "input/external/notion/media/ekiden-history/ocr/2015-女子.md"
+      ],
+      "hint": "topic=ekiden; binary=pending; ocr=input/external/notion/media/ekiden-history/ocr/2015-女子.md; notion添付あり"
+    },
+    {
+      "id": "media:ekiden:2015-男子",
+      "type": "MediaAsset",
+      "label": "荒玉駅伝 2015 男子",
+      "topics": [
+        "athlete_records",
+        "ekiden"
+      ],
+      "refs": [
+        "input/external/notion/media/ekiden-history/2015-男子.meta.json",
+        "input/external/notion/media/ekiden-history/ocr/2015-男子.md"
+      ],
+      "hint": "topic=ekiden; binary=pending; ocr=input/external/notion/media/ekiden-history/ocr/2015-男子.md; notion添付あり"
+    },
+    {
+      "id": "media:ekiden:2016-女子",
+      "type": "MediaAsset",
+      "label": "荒玉駅伝 2016 女子",
+      "topics": [
+        "athlete_records",
+        "ekiden"
+      ],
+      "refs": [
+        "input/external/notion/media/ekiden-history/2016-女子.meta.json",
+        "input/external/notion/media/ekiden-history/ocr/2016-女子.md"
+      ],
+      "hint": "topic=ekiden; binary=pending; ocr=input/external/notion/media/ekiden-history/ocr/2016-女子.md; notion添付あり"
+    },
+    {
+      "id": "media:ekiden:2016-男子",
+      "type": "MediaAsset",
+      "label": "荒玉駅伝 2016 男子",
+      "topics": [
+        "athlete_records",
+        "ekiden"
+      ],
+      "refs": [
+        "input/external/notion/media/ekiden-history/2016-男子.meta.json",
+        "input/external/notion/media/ekiden-history/ocr/2016-男子.md"
+      ],
+      "hint": "topic=ekiden; binary=pending; ocr=input/external/notion/media/ekiden-history/ocr/2016-男子.md; notion添付あり"
+    },
+    {
+      "id": "media:ekiden:2017-女子",
+      "type": "MediaAsset",
+      "label": "荒玉駅伝 2017 女子",
+      "topics": [
+        "athlete_records",
+        "ekiden"
+      ],
+      "refs": [
+        "input/external/notion/media/ekiden-history/2017-女子.meta.json",
+        "input/external/notion/media/ekiden-history/ocr/2017-女子.md"
+      ],
+      "hint": "topic=ekiden; binary=pending; ocr=input/external/notion/media/ekiden-history/ocr/2017-女子.md; notion添付あり"
+    },
+    {
+      "id": "media:ekiden:2017-男子",
+      "type": "MediaAsset",
+      "label": "荒玉駅伝 2017 男子",
+      "topics": [
+        "athlete_records",
+        "ekiden"
+      ],
+      "refs": [
+        "input/external/notion/media/ekiden-history/2017-男子.meta.json",
+        "input/external/notion/media/ekiden-history/ocr/2017-男子.md"
+      ],
+      "hint": "topic=ekiden; binary=pending; ocr=input/external/notion/media/ekiden-history/ocr/2017-男子.md; notion添付あり"
+    },
+    {
+      "id": "media:ekiden:2018-女子",
+      "type": "MediaAsset",
+      "label": "荒玉駅伝 2018 女子",
+      "topics": [
+        "athlete_records",
+        "ekiden"
+      ],
+      "refs": [
+        "input/external/notion/media/ekiden-history/2018-女子.meta.json",
+        "input/external/notion/media/ekiden-history/ocr/2018-女子.md"
+      ],
+      "hint": "topic=ekiden; binary=pending; ocr=input/external/notion/media/ekiden-history/ocr/2018-女子.md; notion添付あり"
+    },
+    {
+      "id": "media:ekiden:2018-男子",
+      "type": "MediaAsset",
+      "label": "荒玉駅伝 2018 男子",
+      "topics": [
+        "athlete_records",
+        "ekiden"
+      ],
+      "refs": [
+        "input/external/notion/media/ekiden-history/2018-男子.meta.json",
+        "input/external/notion/media/ekiden-history/ocr/2018-男子.md"
+      ],
+      "hint": "topic=ekiden; binary=pending; ocr=input/external/notion/media/ekiden-history/ocr/2018-男子.md; notion添付あり"
+    },
+    {
+      "id": "media:ekiden:2019-女子",
+      "type": "MediaAsset",
+      "label": "荒玉駅伝 2019 女子",
+      "topics": [
+        "athlete_records",
+        "ekiden"
+      ],
+      "refs": [
+        "input/external/notion/media/ekiden-history/2019-女子.meta.json",
+        "input/external/notion/media/ekiden-history/ocr/2019-女子.md"
+      ],
+      "hint": "topic=ekiden; binary=pending; ocr=input/external/notion/media/ekiden-history/ocr/2019-女子.md; notion添付あり"
+    },
+    {
+      "id": "media:ekiden:2019-男子",
+      "type": "MediaAsset",
+      "label": "荒玉駅伝 2019 男子",
+      "topics": [
+        "athlete_records",
+        "ekiden"
+      ],
+      "refs": [
+        "input/external/notion/media/ekiden-history/2019-男子.meta.json",
+        "input/external/notion/media/ekiden-history/ocr/2019-男子.md"
+      ],
+      "hint": "topic=ekiden; binary=pending; ocr=input/external/notion/media/ekiden-history/ocr/2019-男子.md; notion添付あり"
+    },
+    {
+      "id": "media:ekiden:2020-女子",
+      "type": "MediaAsset",
+      "label": "荒玉駅伝 2020 女子",
+      "topics": [
+        "athlete_records",
+        "ekiden"
+      ],
+      "refs": [
+        "input/external/notion/media/ekiden-history/2020-女子.meta.json",
+        "input/external/notion/media/ekiden-history/ocr/2020-女子.md"
+      ],
+      "hint": "topic=ekiden; binary=pending; ocr=input/external/notion/media/ekiden-history/ocr/2020-女子.md; notion添付あり"
+    },
+    {
+      "id": "media:ekiden:2020-男子",
+      "type": "MediaAsset",
+      "label": "荒玉駅伝 2020 男子",
+      "topics": [
+        "athlete_records",
+        "ekiden"
+      ],
+      "refs": [
+        "input/external/notion/media/ekiden-history/2020-男子.meta.json",
+        "input/external/notion/media/ekiden-history/ocr/2020-男子.md"
+      ],
+      "hint": "topic=ekiden; binary=pending; ocr=input/external/notion/media/ekiden-history/ocr/2020-男子.md; notion添付あり"
+    },
+    {
+      "id": "media:ekiden:2021-女子",
+      "type": "MediaAsset",
+      "label": "荒玉駅伝 2021 女子",
+      "topics": [
+        "athlete_records",
+        "ekiden"
+      ],
+      "refs": [
+        "input/external/notion/media/ekiden-history/2021-女子.meta.json",
+        "input/external/notion/media/ekiden-history/ocr/2021-女子.md"
+      ],
+      "hint": "topic=ekiden; binary=pending; ocr=input/external/notion/media/ekiden-history/ocr/2021-女子.md; notion添付あり"
+    },
+    {
+      "id": "media:ekiden:2021-男子",
+      "type": "MediaAsset",
+      "label": "荒玉駅伝 2021 男子",
+      "topics": [
+        "athlete_records",
+        "ekiden"
+      ],
+      "refs": [
+        "input/external/notion/media/ekiden-history/2021-男子.meta.json",
+        "input/external/notion/media/ekiden-history/ocr/2021-男子.md"
+      ],
+      "hint": "topic=ekiden; binary=pending; ocr=input/external/notion/media/ekiden-history/ocr/2021-男子.md; notion添付あり"
+    },
+    {
+      "id": "media:ekiden:2022-女子",
+      "type": "MediaAsset",
+      "label": "荒玉駅伝 2022 女子",
+      "topics": [
+        "athlete_records",
+        "ekiden"
+      ],
+      "refs": [
+        "input/external/notion/media/ekiden-history/2022-女子.meta.json",
+        "input/external/notion/media/ekiden-history/ocr/2022-女子.md"
+      ],
+      "hint": "topic=ekiden; binary=pending; ocr=input/external/notion/media/ekiden-history/ocr/2022-女子.md; notion添付あり"
+    },
+    {
+      "id": "media:ekiden:2022-男子",
+      "type": "MediaAsset",
+      "label": "荒玉駅伝 2022 男子",
+      "topics": [
+        "athlete_records",
+        "ekiden"
+      ],
+      "refs": [
+        "input/external/notion/media/ekiden-history/2022-男子.meta.json",
+        "input/external/notion/media/ekiden-history/ocr/2022-男子.md"
+      ],
+      "hint": "topic=ekiden; binary=pending; ocr=input/external/notion/media/ekiden-history/ocr/2022-男子.md; notion添付あり"
+    },
+    {
+      "id": "media:ekiden:2023-女子",
+      "type": "MediaAsset",
+      "label": "荒玉駅伝 2023 女子",
+      "topics": [
+        "athlete_records",
+        "ekiden"
+      ],
+      "refs": [
+        "input/external/notion/media/ekiden-history/2023-女子.meta.json",
+        "input/external/notion/media/ekiden-history/ocr/2023-女子.md"
+      ],
+      "hint": "topic=ekiden; binary=pending; ocr=input/external/notion/media/ekiden-history/ocr/2023-女子.md; notion添付あり"
+    },
+    {
+      "id": "media:ekiden:2023-男子",
+      "type": "MediaAsset",
+      "label": "荒玉駅伝 2023 男子",
+      "topics": [
+        "athlete_records",
+        "ekiden"
+      ],
+      "refs": [
+        "input/external/notion/media/ekiden-history/2023-男子.meta.json",
+        "input/external/notion/media/ekiden-history/ocr/2023-男子.md"
+      ],
+      "hint": "topic=ekiden; binary=pending; ocr=input/external/notion/media/ekiden-history/ocr/2023-男子.md; notion添付あり"
+    },
+    {
+      "id": "media:ekiden:2024-女子",
+      "type": "MediaAsset",
+      "label": "荒玉駅伝 2024 女子",
+      "topics": [
+        "athlete_records",
+        "ekiden"
+      ],
+      "refs": [
+        "input/external/notion/media/ekiden-history/2024-女子.meta.json",
+        "input/external/notion/media/ekiden-history/ocr/2024-女子.md"
+      ],
+      "hint": "topic=ekiden; binary=pending; ocr=input/external/notion/media/ekiden-history/ocr/2024-女子.md; notion添付あり"
+    },
+    {
+      "id": "media:ekiden:2024-男子",
+      "type": "MediaAsset",
+      "label": "荒玉駅伝 2024 男子",
+      "topics": [
+        "athlete_records",
+        "ekiden"
+      ],
+      "refs": [
+        "input/external/notion/media/ekiden-history/2024-男子.meta.json",
+        "input/external/notion/media/ekiden-history/ocr/2024-男子.md"
+      ],
+      "hint": "topic=ekiden; binary=pending; ocr=input/external/notion/media/ekiden-history/ocr/2024-男子.md; notion添付あり"
+    },
+    {
+      "id": "media:ekiden:2025-女子",
+      "type": "MediaAsset",
+      "label": "荒玉駅伝 2025 女子",
+      "topics": [
+        "athlete_records",
+        "ekiden"
+      ],
+      "refs": [
+        "input/external/notion/media/ekiden-history/2025-女子.meta.json",
+        "input/external/notion/media/ekiden-history/ocr/2025-女子.md"
+      ],
+      "hint": "topic=ekiden; binary=pending; ocr=input/external/notion/media/ekiden-history/ocr/2025-女子.md; notion添付あり"
+    },
+    {
+      "id": "media:ekiden:2025-男子",
+      "type": "MediaAsset",
+      "label": "荒玉駅伝 2025 男子",
+      "topics": [
+        "athlete_records",
+        "ekiden"
+      ],
+      "refs": [
+        "input/external/notion/media/ekiden-history/2025-男子.meta.json",
+        "input/external/notion/media/ekiden-history/ocr/2025-男子.md"
+      ],
+      "hint": "topic=ekiden; binary=pending; ocr=input/external/notion/media/ekiden-history/ocr/2025-男子.md; notion添付あり"
+    },
+    {
+      "id": "media:photo:1748942808411",
+      "type": "MediaAsset",
+      "label": "フォト 20250531_玉名市練習会/1748942808411",
+      "topics": [
+        "photo",
+        "practice"
+      ],
+      "refs": [
+        "input/external/drive/shared/フォト/20250531_玉名市練習会/1748942808411.jpg",
+        "input/external/drive/shared/フォト/20250531_玉名市練習会/1748942808411.jpg.md"
+      ],
+      "hint": "topic=photo; binary=yes; ocr=input/external/drive/shared/フォト/20250531_玉名市練習会/1748942808411.jpg.md"
+    },
+    {
+      "id": "media:photo:1748942808599",
+      "type": "MediaAsset",
+      "label": "フォト 20250531_玉名市練習会/1748942808599",
+      "topics": [
+        "photo",
+        "practice"
+      ],
+      "refs": [
+        "input/external/drive/shared/フォト/20250531_玉名市練習会/1748942808599.jpg",
+        "input/external/drive/shared/フォト/20250531_玉名市練習会/1748942808599.jpg.md"
+      ],
+      "hint": "topic=photo; binary=yes; ocr=input/external/drive/shared/フォト/20250531_玉名市練習会/1748942808599.jpg.md"
+    },
+    {
+      "id": "media:photo:1748942808656",
+      "type": "MediaAsset",
+      "label": "フォト 20250531_玉名市練習会/1748942808656",
+      "topics": [
+        "photo",
+        "practice"
+      ],
+      "refs": [
+        "input/external/drive/shared/フォト/20250531_玉名市練習会/1748942808656.jpg",
+        "input/external/drive/shared/フォト/20250531_玉名市練習会/1748942808656.jpg.md"
+      ],
+      "hint": "topic=photo; binary=yes; ocr=input/external/drive/shared/フォト/20250531_玉名市練習会/1748942808656.jpg.md"
+    },
+    {
+      "id": "media:photo:1748942808688",
+      "type": "MediaAsset",
+      "label": "フォト 20250531_玉名市練習会/1748942808688",
+      "topics": [
+        "photo",
+        "practice"
+      ],
+      "refs": [
+        "input/external/drive/shared/フォト/20250531_玉名市練習会/1748942808688.jpg",
+        "input/external/drive/shared/フォト/20250531_玉名市練習会/1748942808688.jpg.md"
+      ],
+      "hint": "topic=photo; binary=yes; ocr=input/external/drive/shared/フォト/20250531_玉名市練習会/1748942808688.jpg.md"
+    },
+    {
+      "id": "media:photo:1748942808721",
+      "type": "MediaAsset",
+      "label": "フォト 20250531_玉名市練習会/1748942808721",
+      "topics": [
+        "photo",
+        "practice"
+      ],
+      "refs": [
+        "input/external/drive/shared/フォト/20250531_玉名市練習会/1748942808721.jpg",
+        "input/external/drive/shared/フォト/20250531_玉名市練習会/1748942808721.jpg.md"
+      ],
+      "hint": "topic=photo; binary=yes; ocr=input/external/drive/shared/フォト/20250531_玉名市練習会/1748942808721.jpg.md"
+    },
+    {
+      "id": "media:photo:1750558888023",
+      "type": "MediaAsset",
+      "label": "フォト 20250621_玉名市練習会/1750558888023",
+      "topics": [
+        "photo",
+        "practice"
+      ],
+      "refs": [
+        "input/external/drive/shared/フォト/20250621_玉名市練習会/1750558888023.jpg",
+        "input/external/drive/shared/フォト/20250621_玉名市練習会/1750558888023.jpg.md"
+      ],
+      "hint": "topic=photo; binary=yes; ocr=input/external/drive/shared/フォト/20250621_玉名市練習会/1750558888023.jpg.md"
+    },
+    {
+      "id": "media:photo:1750558888159",
+      "type": "MediaAsset",
+      "label": "フォト 20250621_玉名市練習会/1750558888159",
+      "topics": [
+        "photo",
+        "practice"
+      ],
+      "refs": [
+        "input/external/drive/shared/フォト/20250621_玉名市練習会/1750558888159.jpg",
+        "input/external/drive/shared/フォト/20250621_玉名市練習会/1750558888159.jpg.md"
+      ],
+      "hint": "topic=photo; binary=yes; ocr=input/external/drive/shared/フォト/20250621_玉名市練習会/1750558888159.jpg.md"
+    },
+    {
+      "id": "media:photo:1750558888198",
+      "type": "MediaAsset",
+      "label": "フォト 20250621_玉名市練習会/1750558888198",
+      "topics": [
+        "photo",
+        "practice"
+      ],
+      "refs": [
+        "input/external/drive/shared/フォト/20250621_玉名市練習会/1750558888198.jpg",
+        "input/external/drive/shared/フォト/20250621_玉名市練習会/1750558888198.jpg.md"
+      ],
+      "hint": "topic=photo; binary=yes; ocr=input/external/drive/shared/フォト/20250621_玉名市練習会/1750558888198.jpg.md"
+    },
+    {
+      "id": "media:photo:1750558888227",
+      "type": "MediaAsset",
+      "label": "フォト 20250621_玉名市練習会/1750558888227",
+      "topics": [
+        "photo",
+        "practice"
+      ],
+      "refs": [
+        "input/external/drive/shared/フォト/20250621_玉名市練習会/1750558888227.jpg",
+        "input/external/drive/shared/フォト/20250621_玉名市練習会/1750558888227.jpg.md"
+      ],
+      "hint": "topic=photo; binary=yes; ocr=input/external/drive/shared/フォト/20250621_玉名市練習会/1750558888227.jpg.md"
+    },
+    {
+      "id": "media:photo:1750558888250",
+      "type": "MediaAsset",
+      "label": "フォト 20250621_玉名市練習会/1750558888250",
+      "topics": [
+        "photo",
+        "practice"
+      ],
+      "refs": [
+        "input/external/drive/shared/フォト/20250621_玉名市練習会/1750558888250.jpg",
+        "input/external/drive/shared/フォト/20250621_玉名市練習会/1750558888250.jpg.md"
+      ],
+      "hint": "topic=photo; binary=yes; ocr=input/external/drive/shared/フォト/20250621_玉名市練習会/1750558888250.jpg.md"
+    },
+    {
+      "id": "media:photo:1750558888279",
+      "type": "MediaAsset",
+      "label": "フォト 20250621_玉名市練習会/1750558888279",
+      "topics": [
+        "photo",
+        "practice"
+      ],
+      "refs": [
+        "input/external/drive/shared/フォト/20250621_玉名市練習会/1750558888279.jpg",
+        "input/external/drive/shared/フォト/20250621_玉名市練習会/1750558888279.jpg.md"
+      ],
+      "hint": "topic=photo; binary=yes; ocr=input/external/drive/shared/フォト/20250621_玉名市練習会/1750558888279.jpg.md"
+    },
+    {
+      "id": "media:photo:1750558888302",
+      "type": "MediaAsset",
+      "label": "フォト 20250621_玉名市練習会/1750558888302",
+      "topics": [
+        "photo",
+        "practice"
+      ],
+      "refs": [
+        "input/external/drive/shared/フォト/20250621_玉名市練習会/1750558888302.jpg",
+        "input/external/drive/shared/フォト/20250621_玉名市練習会/1750558888302.jpg.md"
+      ],
+      "hint": "topic=photo; binary=yes; ocr=input/external/drive/shared/フォト/20250621_玉名市練習会/1750558888302.jpg.md"
+    },
+    {
+      "id": "media:photo:1750558888325",
+      "type": "MediaAsset",
+      "label": "フォト 20250621_玉名市練習会/1750558888325",
+      "topics": [
+        "photo",
+        "practice"
+      ],
+      "refs": [
+        "input/external/drive/shared/フォト/20250621_玉名市練習会/1750558888325.jpg",
+        "input/external/drive/shared/フォト/20250621_玉名市練習会/1750558888325.jpg.md"
+      ],
+      "hint": "topic=photo; binary=yes; ocr=input/external/drive/shared/フォト/20250621_玉名市練習会/1750558888325.jpg.md"
+    },
+    {
+      "id": "media:photo:1752386144927",
+      "type": "MediaAsset",
+      "label": "フォト 20250712_玉名市練習会/1752386144927",
+      "topics": [
+        "photo",
+        "practice"
+      ],
+      "refs": [
+        "input/external/drive/shared/フォト/20250712_玉名市練習会/1752386144927.jpg",
+        "input/external/drive/shared/フォト/20250712_玉名市練習会/1752386144927.jpg.md"
+      ],
+      "hint": "topic=photo; binary=yes; ocr=input/external/drive/shared/フォト/20250712_玉名市練習会/1752386144927.jpg.md"
+    },
+    {
+      "id": "media:photo:1752386145062",
+      "type": "MediaAsset",
+      "label": "フォト 20250712_玉名市練習会/1752386145062",
+      "topics": [
+        "photo",
+        "practice"
+      ],
+      "refs": [
+        "input/external/drive/shared/フォト/20250712_玉名市練習会/1752386145062.jpg",
+        "input/external/drive/shared/フォト/20250712_玉名市練習会/1752386145062.jpg.md"
+      ],
+      "hint": "topic=photo; binary=yes; ocr=input/external/drive/shared/フォト/20250712_玉名市練習会/1752386145062.jpg.md"
+    },
+    {
+      "id": "media:photo:1752386145107",
+      "type": "MediaAsset",
+      "label": "フォト 20250712_玉名市練習会/1752386145107",
+      "topics": [
+        "photo",
+        "practice"
+      ],
+      "refs": [
+        "input/external/drive/shared/フォト/20250712_玉名市練習会/1752386145107.jpg",
+        "input/external/drive/shared/フォト/20250712_玉名市練習会/1752386145107.jpg.md"
+      ],
+      "hint": "topic=photo; binary=yes; ocr=input/external/drive/shared/フォト/20250712_玉名市練習会/1752386145107.jpg.md"
+    },
+    {
+      "id": "media:photo:1752386185287",
+      "type": "MediaAsset",
+      "label": "フォト 20250712_玉名市練習会/1752386185287",
+      "topics": [
+        "photo",
+        "practice"
+      ],
+      "refs": [
+        "input/external/drive/shared/フォト/20250712_玉名市練習会/1752386185287.jpg",
+        "input/external/drive/shared/フォト/20250712_玉名市練習会/1752386185287.jpg.md"
+      ],
+      "hint": "topic=photo; binary=yes; ocr=input/external/drive/shared/フォト/20250712_玉名市練習会/1752386185287.jpg.md"
+    },
+    {
+      "id": "media:photo:1752386185349",
+      "type": "MediaAsset",
+      "label": "フォト 20250712_玉名市練習会/1752386185349",
+      "topics": [
+        "photo",
+        "practice"
+      ],
+      "refs": [
+        "input/external/drive/shared/フォト/20250712_玉名市練習会/1752386185349.jpg",
+        "input/external/drive/shared/フォト/20250712_玉名市練習会/1752386185349.jpg.md"
+      ],
+      "hint": "topic=photo; binary=yes; ocr=input/external/drive/shared/フォト/20250712_玉名市練習会/1752386185349.jpg.md"
+    },
+    {
+      "id": "media:photo:1752386185389",
+      "type": "MediaAsset",
+      "label": "フォト 20250712_玉名市練習会/1752386185389",
+      "topics": [
+        "photo",
+        "practice"
+      ],
+      "refs": [
+        "input/external/drive/shared/フォト/20250712_玉名市練習会/1752386185389.jpg",
+        "input/external/drive/shared/フォト/20250712_玉名市練習会/1752386185389.jpg.md"
+      ],
+      "hint": "topic=photo; binary=yes; ocr=input/external/drive/shared/フォト/20250712_玉名市練習会/1752386185389.jpg.md"
+    },
+    {
+      "id": "media:photo:1752386185424",
+      "type": "MediaAsset",
+      "label": "フォト 20250712_玉名市練習会/1752386185424",
+      "topics": [
+        "photo",
+        "practice"
+      ],
+      "refs": [
+        "input/external/drive/shared/フォト/20250712_玉名市練習会/1752386185424.jpg",
+        "input/external/drive/shared/フォト/20250712_玉名市練習会/1752386185424.jpg.md"
+      ],
+      "hint": "topic=photo; binary=yes; ocr=input/external/drive/shared/フォト/20250712_玉名市練習会/1752386185424.jpg.md"
+    },
+    {
+      "id": "media:photo:IMG_0051",
+      "type": "MediaAsset",
+      "label": "フォト 20250927_ジュニア駅伝/IMG_0051",
+      "topics": [
+        "photo",
+        "practice"
+      ],
+      "refs": [
+        "input/external/drive/shared/フォト/20250927_ジュニア駅伝/IMG_0051.JPG",
+        "input/external/drive/shared/フォト/20250927_ジュニア駅伝/IMG_0051.JPG.md"
+      ],
+      "hint": "topic=photo; binary=yes; ocr=input/external/drive/shared/フォト/20250927_ジュニア駅伝/IMG_0051.JPG.md"
+    },
+    {
+      "id": "media:photo:IMG_0052",
+      "type": "MediaAsset",
+      "label": "フォト 20250927_ジュニア駅伝/IMG_0052",
+      "topics": [
+        "photo",
+        "practice"
+      ],
+      "refs": [
+        "input/external/drive/shared/フォト/20250927_ジュニア駅伝/IMG_0052.JPG",
+        "input/external/drive/shared/フォト/20250927_ジュニア駅伝/IMG_0052.JPG.md"
+      ],
+      "hint": "topic=photo; binary=yes; ocr=input/external/drive/shared/フォト/20250927_ジュニア駅伝/IMG_0052.JPG.md"
+    },
+    {
+      "id": "media:photo:IMG_0053",
+      "type": "MediaAsset",
+      "label": "フォト 20250927_ジュニア駅伝/IMG_0053",
+      "topics": [
+        "photo",
+        "practice"
+      ],
+      "refs": [
+        "input/external/drive/shared/フォト/20250927_ジュニア駅伝/IMG_0053.JPG",
+        "input/external/drive/shared/フォト/20250927_ジュニア駅伝/IMG_0053.JPG.md"
+      ],
+      "hint": "topic=photo; binary=yes; ocr=input/external/drive/shared/フォト/20250927_ジュニア駅伝/IMG_0053.JPG.md"
+    },
+    {
+      "id": "media:photo:IMG_0054",
+      "type": "MediaAsset",
+      "label": "フォト 20250927_ジュニア駅伝/IMG_0054",
+      "topics": [
+        "photo",
+        "practice"
+      ],
+      "refs": [
+        "input/external/drive/shared/フォト/20250927_ジュニア駅伝/IMG_0054.JPG",
+        "input/external/drive/shared/フォト/20250927_ジュニア駅伝/IMG_0054.JPG.md"
+      ],
+      "hint": "topic=photo; binary=yes; ocr=input/external/drive/shared/フォト/20250927_ジュニア駅伝/IMG_0054.JPG.md"
+    },
+    {
+      "id": "media:photo:IMG_0055",
+      "type": "MediaAsset",
+      "label": "フォト 20250927_ジュニア駅伝/IMG_0055",
+      "topics": [
+        "photo",
+        "practice"
+      ],
+      "refs": [
+        "input/external/drive/shared/フォト/20250927_ジュニア駅伝/IMG_0055.JPG",
+        "input/external/drive/shared/フォト/20250927_ジュニア駅伝/IMG_0055.JPG.md"
+      ],
+      "hint": "topic=photo; binary=yes; ocr=input/external/drive/shared/フォト/20250927_ジュニア駅伝/IMG_0055.JPG.md"
+    },
+    {
+      "id": "media:photo:IMG_0056",
+      "type": "MediaAsset",
+      "label": "フォト 20250927_ジュニア駅伝/IMG_0056",
+      "topics": [
+        "photo",
+        "practice"
+      ],
+      "refs": [
+        "input/external/drive/shared/フォト/20250927_ジュニア駅伝/IMG_0056.JPG",
+        "input/external/drive/shared/フォト/20250927_ジュニア駅伝/IMG_0056.JPG.md"
+      ],
+      "hint": "topic=photo; binary=yes; ocr=input/external/drive/shared/フォト/20250927_ジュニア駅伝/IMG_0056.JPG.md"
+    },
+    {
+      "id": "media:photo:IMG_0057",
+      "type": "MediaAsset",
+      "label": "フォト 20250927_ジュニア駅伝/IMG_0057",
+      "topics": [
+        "photo",
+        "practice"
+      ],
+      "refs": [
+        "input/external/drive/shared/フォト/20250927_ジュニア駅伝/IMG_0057.JPG",
+        "input/external/drive/shared/フォト/20250927_ジュニア駅伝/IMG_0057.JPG.md"
+      ],
+      "hint": "topic=photo; binary=yes; ocr=input/external/drive/shared/フォト/20250927_ジュニア駅伝/IMG_0057.JPG.md"
+    },
+    {
+      "id": "media:photo:IMG_0058",
+      "type": "MediaAsset",
+      "label": "フォト 20250927_ジュニア駅伝/IMG_0058",
+      "topics": [
+        "photo",
+        "practice"
+      ],
+      "refs": [
+        "input/external/drive/shared/フォト/20250927_ジュニア駅伝/IMG_0058.JPG",
+        "input/external/drive/shared/フォト/20250927_ジュニア駅伝/IMG_0058.JPG.md"
+      ],
+      "hint": "topic=photo; binary=yes; ocr=input/external/drive/shared/フォト/20250927_ジュニア駅伝/IMG_0058.JPG.md"
+    },
+    {
+      "id": "media:photo:IMG_0059",
+      "type": "MediaAsset",
+      "label": "フォト 20250927_ジュニア駅伝/IMG_0059",
+      "topics": [
+        "photo",
+        "practice"
+      ],
+      "refs": [
+        "input/external/drive/shared/フォト/20250927_ジュニア駅伝/IMG_0059.JPG",
+        "input/external/drive/shared/フォト/20250927_ジュニア駅伝/IMG_0059.JPG.md"
+      ],
+      "hint": "topic=photo; binary=yes; ocr=input/external/drive/shared/フォト/20250927_ジュニア駅伝/IMG_0059.JPG.md"
+    },
+    {
       "id": "query:0:練習メニューの中身は？",
       "type": "QueryHint",
       "label": "練習メニューの中身は？",
@@ -1223,6 +2052,14 @@
       "topics": [],
       "refs": [],
       "hint": "ai-practice-generation.md と prompts / rules"
+    },
+    {
+      "id": "query:6:荒玉駅伝の歴代は？",
+      "type": "QueryHint",
+      "label": "荒玉駅伝の歴代は？",
+      "topics": [],
+      "refs": [],
+      "hint": "駅伝歴代 rows + media-manifest + ocr/*.md（画像パスがあれば原画を読む）"
     },
     {
       "id": "source:README.md",
@@ -1389,6 +2226,20 @@
         "docs/adr/010-external-idaten-import.md"
       ],
       "hint": "ADR: 010-external-idaten-import"
+    },
+    {
+      "id": "source:docs/adr/011-idaten-media-ocr-kg.md",
+      "type": "Source",
+      "label": "011-idaten-media-ocr-kg.md",
+      "topics": [
+        "ai",
+        "meta",
+        "practice"
+      ],
+      "refs": [
+        "docs/adr/011-idaten-media-ocr-kg.md"
+      ],
+      "hint": "ADR: 011-idaten-media-ocr-kg"
     },
     {
       "id": "source:docs/ai-practice-generation.md",
@@ -1616,6 +2467,20 @@
       "hint": "関連リポジトリ調査（対象外含む）"
     },
     {
+      "id": "source:input/external/media-manifest.json",
+      "type": "Source",
+      "label": "media-manifest.json",
+      "topics": [
+        "athlete_records",
+        "ekiden",
+        "practice"
+      ],
+      "refs": [
+        "input/external/media-manifest.json"
+      ],
+      "hint": "外部メディア索引（画像・OCR・PDF パス）"
+    },
+    {
       "id": "source:input/external/notion/INDEX.md",
       "type": "Source",
       "label": "INDEX.md",
@@ -1653,6 +2518,32 @@
         "input/external/notion/databases/いだてん岱明生徒/rows.json"
       ],
       "hint": "Notion 生徒 DB スナップショット"
+    },
+    {
+      "id": "source:input/external/notion/databases/荒玉中体連駅伝歴代/rows.json",
+      "type": "Source",
+      "label": "rows.json",
+      "topics": [
+        "athlete_records",
+        "ekiden"
+      ],
+      "refs": [
+        "input/external/notion/databases/荒玉中体連駅伝歴代/rows.json"
+      ],
+      "hint": "荒玉中体連駅伝歴代（岱明順位・記録）"
+    },
+    {
+      "id": "source:input/external/notion/media/ekiden-history/INDEX.md",
+      "type": "Source",
+      "label": "INDEX.md",
+      "topics": [
+        "athlete_records",
+        "ekiden"
+      ],
+      "refs": [
+        "input/external/notion/media/ekiden-history/INDEX.md"
+      ],
+      "hint": "荒玉中体連駅伝歴代の画像・OCR 入口"
     },
     {
       "id": "source:input/memos/daiming-club-calendar-2026-09.jpg",
@@ -2672,6 +3563,16 @@
       ],
       "refs": [],
       "hint": "年次予定・メモ・祝日の入口"
+    },
+    {
+      "id": "topic:ekiden",
+      "type": "Topic",
+      "label": "荒玉駅伝",
+      "topics": [
+        "ekiden"
+      ],
+      "refs": [],
+      "hint": "歴代結果画像・OCR・戦略・分析（勝つための一次情報）"
     },
     {
       "id": "topic:injury",
@@ -3776,6 +4677,571 @@
       "rel": "search_here"
     },
     {
+      "from": "media:analysis:2026年度荒玉男子",
+      "to": "source:input/external/media-manifest.json",
+      "rel": "documented_in"
+    },
+    {
+      "from": "media:analysis:2026年荒玉女子",
+      "to": "source:input/external/media-manifest.json",
+      "rel": "documented_in"
+    },
+    {
+      "from": "media:analysis:関係図_2026",
+      "to": "source:input/external/media-manifest.json",
+      "rel": "documented_in"
+    },
+    {
+      "from": "media:ekiden:2012-女子",
+      "to": "source:input/external/media-manifest.json",
+      "rel": "documented_in"
+    },
+    {
+      "from": "media:ekiden:2012-女子",
+      "to": "source:input/external/notion/databases/荒玉中体連駅伝歴代/rows.json",
+      "rel": "derived_from"
+    },
+    {
+      "from": "media:ekiden:2012-女子",
+      "to": "source:input/external/notion/media/ekiden-history/INDEX.md",
+      "rel": "see_also"
+    },
+    {
+      "from": "media:ekiden:2012-男子",
+      "to": "source:input/external/media-manifest.json",
+      "rel": "documented_in"
+    },
+    {
+      "from": "media:ekiden:2012-男子",
+      "to": "source:input/external/notion/databases/荒玉中体連駅伝歴代/rows.json",
+      "rel": "derived_from"
+    },
+    {
+      "from": "media:ekiden:2012-男子",
+      "to": "source:input/external/notion/media/ekiden-history/INDEX.md",
+      "rel": "see_also"
+    },
+    {
+      "from": "media:ekiden:2013-女子",
+      "to": "source:input/external/media-manifest.json",
+      "rel": "documented_in"
+    },
+    {
+      "from": "media:ekiden:2013-女子",
+      "to": "source:input/external/notion/databases/荒玉中体連駅伝歴代/rows.json",
+      "rel": "derived_from"
+    },
+    {
+      "from": "media:ekiden:2013-女子",
+      "to": "source:input/external/notion/media/ekiden-history/INDEX.md",
+      "rel": "see_also"
+    },
+    {
+      "from": "media:ekiden:2013-男子",
+      "to": "source:input/external/media-manifest.json",
+      "rel": "documented_in"
+    },
+    {
+      "from": "media:ekiden:2013-男子",
+      "to": "source:input/external/notion/databases/荒玉中体連駅伝歴代/rows.json",
+      "rel": "derived_from"
+    },
+    {
+      "from": "media:ekiden:2013-男子",
+      "to": "source:input/external/notion/media/ekiden-history/INDEX.md",
+      "rel": "see_also"
+    },
+    {
+      "from": "media:ekiden:2014-男子",
+      "to": "source:input/external/media-manifest.json",
+      "rel": "documented_in"
+    },
+    {
+      "from": "media:ekiden:2014-男子",
+      "to": "source:input/external/notion/databases/荒玉中体連駅伝歴代/rows.json",
+      "rel": "derived_from"
+    },
+    {
+      "from": "media:ekiden:2014-男子",
+      "to": "source:input/external/notion/media/ekiden-history/INDEX.md",
+      "rel": "see_also"
+    },
+    {
+      "from": "media:ekiden:2015-女子",
+      "to": "source:input/external/media-manifest.json",
+      "rel": "documented_in"
+    },
+    {
+      "from": "media:ekiden:2015-女子",
+      "to": "source:input/external/notion/databases/荒玉中体連駅伝歴代/rows.json",
+      "rel": "derived_from"
+    },
+    {
+      "from": "media:ekiden:2015-女子",
+      "to": "source:input/external/notion/media/ekiden-history/INDEX.md",
+      "rel": "see_also"
+    },
+    {
+      "from": "media:ekiden:2015-男子",
+      "to": "source:input/external/media-manifest.json",
+      "rel": "documented_in"
+    },
+    {
+      "from": "media:ekiden:2015-男子",
+      "to": "source:input/external/notion/databases/荒玉中体連駅伝歴代/rows.json",
+      "rel": "derived_from"
+    },
+    {
+      "from": "media:ekiden:2015-男子",
+      "to": "source:input/external/notion/media/ekiden-history/INDEX.md",
+      "rel": "see_also"
+    },
+    {
+      "from": "media:ekiden:2016-女子",
+      "to": "source:input/external/media-manifest.json",
+      "rel": "documented_in"
+    },
+    {
+      "from": "media:ekiden:2016-女子",
+      "to": "source:input/external/notion/databases/荒玉中体連駅伝歴代/rows.json",
+      "rel": "derived_from"
+    },
+    {
+      "from": "media:ekiden:2016-女子",
+      "to": "source:input/external/notion/media/ekiden-history/INDEX.md",
+      "rel": "see_also"
+    },
+    {
+      "from": "media:ekiden:2016-男子",
+      "to": "source:input/external/media-manifest.json",
+      "rel": "documented_in"
+    },
+    {
+      "from": "media:ekiden:2016-男子",
+      "to": "source:input/external/notion/databases/荒玉中体連駅伝歴代/rows.json",
+      "rel": "derived_from"
+    },
+    {
+      "from": "media:ekiden:2016-男子",
+      "to": "source:input/external/notion/media/ekiden-history/INDEX.md",
+      "rel": "see_also"
+    },
+    {
+      "from": "media:ekiden:2017-女子",
+      "to": "source:input/external/media-manifest.json",
+      "rel": "documented_in"
+    },
+    {
+      "from": "media:ekiden:2017-女子",
+      "to": "source:input/external/notion/databases/荒玉中体連駅伝歴代/rows.json",
+      "rel": "derived_from"
+    },
+    {
+      "from": "media:ekiden:2017-女子",
+      "to": "source:input/external/notion/media/ekiden-history/INDEX.md",
+      "rel": "see_also"
+    },
+    {
+      "from": "media:ekiden:2017-男子",
+      "to": "source:input/external/media-manifest.json",
+      "rel": "documented_in"
+    },
+    {
+      "from": "media:ekiden:2017-男子",
+      "to": "source:input/external/notion/databases/荒玉中体連駅伝歴代/rows.json",
+      "rel": "derived_from"
+    },
+    {
+      "from": "media:ekiden:2017-男子",
+      "to": "source:input/external/notion/media/ekiden-history/INDEX.md",
+      "rel": "see_also"
+    },
+    {
+      "from": "media:ekiden:2018-女子",
+      "to": "source:input/external/media-manifest.json",
+      "rel": "documented_in"
+    },
+    {
+      "from": "media:ekiden:2018-女子",
+      "to": "source:input/external/notion/databases/荒玉中体連駅伝歴代/rows.json",
+      "rel": "derived_from"
+    },
+    {
+      "from": "media:ekiden:2018-女子",
+      "to": "source:input/external/notion/media/ekiden-history/INDEX.md",
+      "rel": "see_also"
+    },
+    {
+      "from": "media:ekiden:2018-男子",
+      "to": "source:input/external/media-manifest.json",
+      "rel": "documented_in"
+    },
+    {
+      "from": "media:ekiden:2018-男子",
+      "to": "source:input/external/notion/databases/荒玉中体連駅伝歴代/rows.json",
+      "rel": "derived_from"
+    },
+    {
+      "from": "media:ekiden:2018-男子",
+      "to": "source:input/external/notion/media/ekiden-history/INDEX.md",
+      "rel": "see_also"
+    },
+    {
+      "from": "media:ekiden:2019-女子",
+      "to": "source:input/external/media-manifest.json",
+      "rel": "documented_in"
+    },
+    {
+      "from": "media:ekiden:2019-女子",
+      "to": "source:input/external/notion/databases/荒玉中体連駅伝歴代/rows.json",
+      "rel": "derived_from"
+    },
+    {
+      "from": "media:ekiden:2019-女子",
+      "to": "source:input/external/notion/media/ekiden-history/INDEX.md",
+      "rel": "see_also"
+    },
+    {
+      "from": "media:ekiden:2019-男子",
+      "to": "source:input/external/media-manifest.json",
+      "rel": "documented_in"
+    },
+    {
+      "from": "media:ekiden:2019-男子",
+      "to": "source:input/external/notion/databases/荒玉中体連駅伝歴代/rows.json",
+      "rel": "derived_from"
+    },
+    {
+      "from": "media:ekiden:2019-男子",
+      "to": "source:input/external/notion/media/ekiden-history/INDEX.md",
+      "rel": "see_also"
+    },
+    {
+      "from": "media:ekiden:2020-女子",
+      "to": "source:input/external/media-manifest.json",
+      "rel": "documented_in"
+    },
+    {
+      "from": "media:ekiden:2020-女子",
+      "to": "source:input/external/notion/databases/荒玉中体連駅伝歴代/rows.json",
+      "rel": "derived_from"
+    },
+    {
+      "from": "media:ekiden:2020-女子",
+      "to": "source:input/external/notion/media/ekiden-history/INDEX.md",
+      "rel": "see_also"
+    },
+    {
+      "from": "media:ekiden:2020-男子",
+      "to": "source:input/external/media-manifest.json",
+      "rel": "documented_in"
+    },
+    {
+      "from": "media:ekiden:2020-男子",
+      "to": "source:input/external/notion/databases/荒玉中体連駅伝歴代/rows.json",
+      "rel": "derived_from"
+    },
+    {
+      "from": "media:ekiden:2020-男子",
+      "to": "source:input/external/notion/media/ekiden-history/INDEX.md",
+      "rel": "see_also"
+    },
+    {
+      "from": "media:ekiden:2021-女子",
+      "to": "source:input/external/media-manifest.json",
+      "rel": "documented_in"
+    },
+    {
+      "from": "media:ekiden:2021-女子",
+      "to": "source:input/external/notion/databases/荒玉中体連駅伝歴代/rows.json",
+      "rel": "derived_from"
+    },
+    {
+      "from": "media:ekiden:2021-女子",
+      "to": "source:input/external/notion/media/ekiden-history/INDEX.md",
+      "rel": "see_also"
+    },
+    {
+      "from": "media:ekiden:2021-男子",
+      "to": "source:input/external/media-manifest.json",
+      "rel": "documented_in"
+    },
+    {
+      "from": "media:ekiden:2021-男子",
+      "to": "source:input/external/notion/databases/荒玉中体連駅伝歴代/rows.json",
+      "rel": "derived_from"
+    },
+    {
+      "from": "media:ekiden:2021-男子",
+      "to": "source:input/external/notion/media/ekiden-history/INDEX.md",
+      "rel": "see_also"
+    },
+    {
+      "from": "media:ekiden:2022-女子",
+      "to": "source:input/external/media-manifest.json",
+      "rel": "documented_in"
+    },
+    {
+      "from": "media:ekiden:2022-女子",
+      "to": "source:input/external/notion/databases/荒玉中体連駅伝歴代/rows.json",
+      "rel": "derived_from"
+    },
+    {
+      "from": "media:ekiden:2022-女子",
+      "to": "source:input/external/notion/media/ekiden-history/INDEX.md",
+      "rel": "see_also"
+    },
+    {
+      "from": "media:ekiden:2022-男子",
+      "to": "source:input/external/media-manifest.json",
+      "rel": "documented_in"
+    },
+    {
+      "from": "media:ekiden:2022-男子",
+      "to": "source:input/external/notion/databases/荒玉中体連駅伝歴代/rows.json",
+      "rel": "derived_from"
+    },
+    {
+      "from": "media:ekiden:2022-男子",
+      "to": "source:input/external/notion/media/ekiden-history/INDEX.md",
+      "rel": "see_also"
+    },
+    {
+      "from": "media:ekiden:2023-女子",
+      "to": "source:input/external/media-manifest.json",
+      "rel": "documented_in"
+    },
+    {
+      "from": "media:ekiden:2023-女子",
+      "to": "source:input/external/notion/databases/荒玉中体連駅伝歴代/rows.json",
+      "rel": "derived_from"
+    },
+    {
+      "from": "media:ekiden:2023-女子",
+      "to": "source:input/external/notion/media/ekiden-history/INDEX.md",
+      "rel": "see_also"
+    },
+    {
+      "from": "media:ekiden:2023-男子",
+      "to": "source:input/external/media-manifest.json",
+      "rel": "documented_in"
+    },
+    {
+      "from": "media:ekiden:2023-男子",
+      "to": "source:input/external/notion/databases/荒玉中体連駅伝歴代/rows.json",
+      "rel": "derived_from"
+    },
+    {
+      "from": "media:ekiden:2023-男子",
+      "to": "source:input/external/notion/media/ekiden-history/INDEX.md",
+      "rel": "see_also"
+    },
+    {
+      "from": "media:ekiden:2024-女子",
+      "to": "source:input/external/media-manifest.json",
+      "rel": "documented_in"
+    },
+    {
+      "from": "media:ekiden:2024-女子",
+      "to": "source:input/external/notion/databases/荒玉中体連駅伝歴代/rows.json",
+      "rel": "derived_from"
+    },
+    {
+      "from": "media:ekiden:2024-女子",
+      "to": "source:input/external/notion/media/ekiden-history/INDEX.md",
+      "rel": "see_also"
+    },
+    {
+      "from": "media:ekiden:2024-男子",
+      "to": "source:input/external/media-manifest.json",
+      "rel": "documented_in"
+    },
+    {
+      "from": "media:ekiden:2024-男子",
+      "to": "source:input/external/notion/databases/荒玉中体連駅伝歴代/rows.json",
+      "rel": "derived_from"
+    },
+    {
+      "from": "media:ekiden:2024-男子",
+      "to": "source:input/external/notion/media/ekiden-history/INDEX.md",
+      "rel": "see_also"
+    },
+    {
+      "from": "media:ekiden:2025-女子",
+      "to": "source:input/external/media-manifest.json",
+      "rel": "documented_in"
+    },
+    {
+      "from": "media:ekiden:2025-女子",
+      "to": "source:input/external/notion/databases/荒玉中体連駅伝歴代/rows.json",
+      "rel": "derived_from"
+    },
+    {
+      "from": "media:ekiden:2025-女子",
+      "to": "source:input/external/notion/media/ekiden-history/INDEX.md",
+      "rel": "see_also"
+    },
+    {
+      "from": "media:ekiden:2025-男子",
+      "to": "source:input/external/media-manifest.json",
+      "rel": "documented_in"
+    },
+    {
+      "from": "media:ekiden:2025-男子",
+      "to": "source:input/external/notion/databases/荒玉中体連駅伝歴代/rows.json",
+      "rel": "derived_from"
+    },
+    {
+      "from": "media:ekiden:2025-男子",
+      "to": "source:input/external/notion/media/ekiden-history/INDEX.md",
+      "rel": "see_also"
+    },
+    {
+      "from": "media:photo:1748942808411",
+      "to": "source:input/external/media-manifest.json",
+      "rel": "documented_in"
+    },
+    {
+      "from": "media:photo:1748942808599",
+      "to": "source:input/external/media-manifest.json",
+      "rel": "documented_in"
+    },
+    {
+      "from": "media:photo:1748942808656",
+      "to": "source:input/external/media-manifest.json",
+      "rel": "documented_in"
+    },
+    {
+      "from": "media:photo:1748942808688",
+      "to": "source:input/external/media-manifest.json",
+      "rel": "documented_in"
+    },
+    {
+      "from": "media:photo:1748942808721",
+      "to": "source:input/external/media-manifest.json",
+      "rel": "documented_in"
+    },
+    {
+      "from": "media:photo:1750558888023",
+      "to": "source:input/external/media-manifest.json",
+      "rel": "documented_in"
+    },
+    {
+      "from": "media:photo:1750558888159",
+      "to": "source:input/external/media-manifest.json",
+      "rel": "documented_in"
+    },
+    {
+      "from": "media:photo:1750558888198",
+      "to": "source:input/external/media-manifest.json",
+      "rel": "documented_in"
+    },
+    {
+      "from": "media:photo:1750558888227",
+      "to": "source:input/external/media-manifest.json",
+      "rel": "documented_in"
+    },
+    {
+      "from": "media:photo:1750558888250",
+      "to": "source:input/external/media-manifest.json",
+      "rel": "documented_in"
+    },
+    {
+      "from": "media:photo:1750558888279",
+      "to": "source:input/external/media-manifest.json",
+      "rel": "documented_in"
+    },
+    {
+      "from": "media:photo:1750558888302",
+      "to": "source:input/external/media-manifest.json",
+      "rel": "documented_in"
+    },
+    {
+      "from": "media:photo:1750558888325",
+      "to": "source:input/external/media-manifest.json",
+      "rel": "documented_in"
+    },
+    {
+      "from": "media:photo:1752386144927",
+      "to": "source:input/external/media-manifest.json",
+      "rel": "documented_in"
+    },
+    {
+      "from": "media:photo:1752386145062",
+      "to": "source:input/external/media-manifest.json",
+      "rel": "documented_in"
+    },
+    {
+      "from": "media:photo:1752386145107",
+      "to": "source:input/external/media-manifest.json",
+      "rel": "documented_in"
+    },
+    {
+      "from": "media:photo:1752386185287",
+      "to": "source:input/external/media-manifest.json",
+      "rel": "documented_in"
+    },
+    {
+      "from": "media:photo:1752386185349",
+      "to": "source:input/external/media-manifest.json",
+      "rel": "documented_in"
+    },
+    {
+      "from": "media:photo:1752386185389",
+      "to": "source:input/external/media-manifest.json",
+      "rel": "documented_in"
+    },
+    {
+      "from": "media:photo:1752386185424",
+      "to": "source:input/external/media-manifest.json",
+      "rel": "documented_in"
+    },
+    {
+      "from": "media:photo:IMG_0051",
+      "to": "source:input/external/media-manifest.json",
+      "rel": "documented_in"
+    },
+    {
+      "from": "media:photo:IMG_0052",
+      "to": "source:input/external/media-manifest.json",
+      "rel": "documented_in"
+    },
+    {
+      "from": "media:photo:IMG_0053",
+      "to": "source:input/external/media-manifest.json",
+      "rel": "documented_in"
+    },
+    {
+      "from": "media:photo:IMG_0054",
+      "to": "source:input/external/media-manifest.json",
+      "rel": "documented_in"
+    },
+    {
+      "from": "media:photo:IMG_0055",
+      "to": "source:input/external/media-manifest.json",
+      "rel": "documented_in"
+    },
+    {
+      "from": "media:photo:IMG_0056",
+      "to": "source:input/external/media-manifest.json",
+      "rel": "documented_in"
+    },
+    {
+      "from": "media:photo:IMG_0057",
+      "to": "source:input/external/media-manifest.json",
+      "rel": "documented_in"
+    },
+    {
+      "from": "media:photo:IMG_0058",
+      "to": "source:input/external/media-manifest.json",
+      "rel": "documented_in"
+    },
+    {
+      "from": "media:photo:IMG_0059",
+      "to": "source:input/external/media-manifest.json",
+      "rel": "documented_in"
+    },
+    {
       "from": "query:0:練習メニューの中身は？",
       "to": "source:input/practice_templates.yaml",
       "rel": "search_here"
@@ -3813,6 +5279,26 @@
     {
       "from": "query:5:AI で練習を作るには？",
       "to": "topic:ai",
+      "rel": "search_here"
+    },
+    {
+      "from": "query:6:荒玉駅伝の歴代は？",
+      "to": "source:input/external/media-manifest.json",
+      "rel": "search_here"
+    },
+    {
+      "from": "query:6:荒玉駅伝の歴代は？",
+      "to": "source:input/external/notion/databases/荒玉中体連駅伝歴代/rows.json",
+      "rel": "search_here"
+    },
+    {
+      "from": "query:6:荒玉駅伝の歴代は？",
+      "to": "source:input/external/notion/media/ekiden-history/INDEX.md",
+      "rel": "search_here"
+    },
+    {
+      "from": "query:6:荒玉駅伝の歴代は？",
+      "to": "topic:ekiden",
       "rel": "search_here"
     },
     {
@@ -3863,6 +5349,11 @@
     {
       "from": "source:docs/ai-practice-generation.md",
       "to": "source:docs/adr/010-external-idaten-import.md",
+      "rel": "see_also"
+    },
+    {
+      "from": "source:docs/ai-practice-generation.md",
+      "to": "source:docs/adr/011-idaten-media-ocr-kg.md",
       "rel": "see_also"
     },
     {
@@ -4232,6 +5723,11 @@
     },
     {
       "from": "topic:ai",
+      "to": "source:docs/adr/011-idaten-media-ocr-kg.md",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:ai",
       "to": "source:docs/ai-practice-generation.md",
       "rel": "search_here"
     },
@@ -4332,6 +5828,156 @@
     },
     {
       "from": "topic:athlete_records",
+      "to": "media:analysis:2026年度荒玉男子",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:athlete_records",
+      "to": "media:analysis:2026年荒玉女子",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:athlete_records",
+      "to": "media:analysis:関係図_2026",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:athlete_records",
+      "to": "media:ekiden:2012-女子",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:athlete_records",
+      "to": "media:ekiden:2012-男子",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:athlete_records",
+      "to": "media:ekiden:2013-女子",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:athlete_records",
+      "to": "media:ekiden:2013-男子",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:athlete_records",
+      "to": "media:ekiden:2014-男子",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:athlete_records",
+      "to": "media:ekiden:2015-女子",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:athlete_records",
+      "to": "media:ekiden:2015-男子",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:athlete_records",
+      "to": "media:ekiden:2016-女子",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:athlete_records",
+      "to": "media:ekiden:2016-男子",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:athlete_records",
+      "to": "media:ekiden:2017-女子",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:athlete_records",
+      "to": "media:ekiden:2017-男子",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:athlete_records",
+      "to": "media:ekiden:2018-女子",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:athlete_records",
+      "to": "media:ekiden:2018-男子",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:athlete_records",
+      "to": "media:ekiden:2019-女子",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:athlete_records",
+      "to": "media:ekiden:2019-男子",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:athlete_records",
+      "to": "media:ekiden:2020-女子",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:athlete_records",
+      "to": "media:ekiden:2020-男子",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:athlete_records",
+      "to": "media:ekiden:2021-女子",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:athlete_records",
+      "to": "media:ekiden:2021-男子",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:athlete_records",
+      "to": "media:ekiden:2022-女子",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:athlete_records",
+      "to": "media:ekiden:2022-男子",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:athlete_records",
+      "to": "media:ekiden:2023-女子",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:athlete_records",
+      "to": "media:ekiden:2023-男子",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:athlete_records",
+      "to": "media:ekiden:2024-女子",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:athlete_records",
+      "to": "media:ekiden:2024-男子",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:athlete_records",
+      "to": "media:ekiden:2025-女子",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:athlete_records",
+      "to": "media:ekiden:2025-男子",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:athlete_records",
       "to": "source:input/arato_tamana_report.yaml",
       "rel": "search_here"
     },
@@ -4352,6 +5998,11 @@
     },
     {
       "from": "topic:athlete_records",
+      "to": "source:input/external/media-manifest.json",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:athlete_records",
       "to": "source:input/external/notion/INDEX.md",
       "rel": "search_here"
     },
@@ -4363,6 +6014,16 @@
     {
       "from": "topic:athlete_records",
       "to": "source:input/external/notion/databases/いだてん岱明生徒/rows.json",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:athlete_records",
+      "to": "source:input/external/notion/databases/荒玉中体連駅伝歴代/rows.json",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:athlete_records",
+      "to": "source:input/external/notion/media/ekiden-history/INDEX.md",
       "rel": "search_here"
     },
     {
@@ -4611,6 +6272,171 @@
       "rel": "search_here"
     },
     {
+      "from": "topic:ekiden",
+      "to": "media:analysis:2026年度荒玉男子",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:ekiden",
+      "to": "media:analysis:2026年荒玉女子",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:ekiden",
+      "to": "media:analysis:関係図_2026",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:ekiden",
+      "to": "media:ekiden:2012-女子",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:ekiden",
+      "to": "media:ekiden:2012-男子",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:ekiden",
+      "to": "media:ekiden:2013-女子",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:ekiden",
+      "to": "media:ekiden:2013-男子",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:ekiden",
+      "to": "media:ekiden:2014-男子",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:ekiden",
+      "to": "media:ekiden:2015-女子",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:ekiden",
+      "to": "media:ekiden:2015-男子",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:ekiden",
+      "to": "media:ekiden:2016-女子",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:ekiden",
+      "to": "media:ekiden:2016-男子",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:ekiden",
+      "to": "media:ekiden:2017-女子",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:ekiden",
+      "to": "media:ekiden:2017-男子",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:ekiden",
+      "to": "media:ekiden:2018-女子",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:ekiden",
+      "to": "media:ekiden:2018-男子",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:ekiden",
+      "to": "media:ekiden:2019-女子",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:ekiden",
+      "to": "media:ekiden:2019-男子",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:ekiden",
+      "to": "media:ekiden:2020-女子",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:ekiden",
+      "to": "media:ekiden:2020-男子",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:ekiden",
+      "to": "media:ekiden:2021-女子",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:ekiden",
+      "to": "media:ekiden:2021-男子",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:ekiden",
+      "to": "media:ekiden:2022-女子",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:ekiden",
+      "to": "media:ekiden:2022-男子",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:ekiden",
+      "to": "media:ekiden:2023-女子",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:ekiden",
+      "to": "media:ekiden:2023-男子",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:ekiden",
+      "to": "media:ekiden:2024-女子",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:ekiden",
+      "to": "media:ekiden:2024-男子",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:ekiden",
+      "to": "media:ekiden:2025-女子",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:ekiden",
+      "to": "media:ekiden:2025-男子",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:ekiden",
+      "to": "source:input/external/media-manifest.json",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:ekiden",
+      "to": "source:input/external/notion/databases/荒玉中体連駅伝歴代/rows.json",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:ekiden",
+      "to": "source:input/external/notion/media/ekiden-history/INDEX.md",
+      "rel": "search_here"
+    },
+    {
       "from": "topic:injury",
       "to": "source:input/external/notion/INDEX.md",
       "rel": "search_here"
@@ -4683,6 +6509,11 @@
     {
       "from": "topic:meta",
       "to": "source:docs/adr/010-external-idaten-import.md",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:meta",
+      "to": "source:docs/adr/011-idaten-media-ocr-kg.md",
       "rel": "search_here"
     },
     {
@@ -4977,6 +6808,151 @@
     },
     {
       "from": "topic:practice",
+      "to": "media:photo:1748942808411",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:practice",
+      "to": "media:photo:1748942808599",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:practice",
+      "to": "media:photo:1748942808656",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:practice",
+      "to": "media:photo:1748942808688",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:practice",
+      "to": "media:photo:1748942808721",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:practice",
+      "to": "media:photo:1750558888023",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:practice",
+      "to": "media:photo:1750558888159",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:practice",
+      "to": "media:photo:1750558888198",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:practice",
+      "to": "media:photo:1750558888227",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:practice",
+      "to": "media:photo:1750558888250",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:practice",
+      "to": "media:photo:1750558888279",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:practice",
+      "to": "media:photo:1750558888302",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:practice",
+      "to": "media:photo:1750558888325",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:practice",
+      "to": "media:photo:1752386144927",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:practice",
+      "to": "media:photo:1752386145062",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:practice",
+      "to": "media:photo:1752386145107",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:practice",
+      "to": "media:photo:1752386185287",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:practice",
+      "to": "media:photo:1752386185349",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:practice",
+      "to": "media:photo:1752386185389",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:practice",
+      "to": "media:photo:1752386185424",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:practice",
+      "to": "media:photo:IMG_0051",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:practice",
+      "to": "media:photo:IMG_0052",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:practice",
+      "to": "media:photo:IMG_0053",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:practice",
+      "to": "media:photo:IMG_0054",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:practice",
+      "to": "media:photo:IMG_0055",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:practice",
+      "to": "media:photo:IMG_0056",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:practice",
+      "to": "media:photo:IMG_0057",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:practice",
+      "to": "media:photo:IMG_0058",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:practice",
+      "to": "media:photo:IMG_0059",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:practice",
       "to": "source:README.md",
       "rel": "search_here"
     },
@@ -5028,6 +7004,11 @@
     {
       "from": "topic:practice",
       "to": "source:docs/adr/010-external-idaten-import.md",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:practice",
+      "to": "source:docs/adr/011-idaten-media-ocr-kg.md",
       "rel": "search_here"
     },
     {
@@ -5098,6 +7079,11 @@
     {
       "from": "topic:practice",
       "to": "source:input/external/drive/shared/練習/練習の記録.md",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:practice",
+      "to": "source:input/external/media-manifest.json",
       "rel": "search_here"
     },
     {
