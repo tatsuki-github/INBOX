@@ -34,6 +34,12 @@
 - CI: `.github/workflows/knowledge-graph.yml` がコミット済み KG の鮮度を `--check` で検証する。
   ソースを変えたら KG を再生成してコミットすること。
 
+## 外部データ（いだてん岱明）
+
+Notion・Google ドライブ由来のスナップショットは `input/external/` にある。
+探索はまず `input/external/INDEX.md`（および drive/notion/github の INDEX）から。
+詳細: `docs/adr/010-external-idaten-import.md`
+
 ## 関連ドキュメント
 
 - `README.md`（ナレッジグラフ節）

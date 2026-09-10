@@ -30,6 +30,30 @@ SOURCE_GLOBS: list[tuple[str, list[str], str]] = [
     ("input/daniels_vdot_paces.yaml", ["pace", "danish", "norwegian"], "Daniels VDOT ペース表"),
     ("input/arato_tamana_report.yaml", ["athlete_records", "arato"], "荒尾・玉名記録 PDF 設定"),
     ("out/daiming-practice-menus-kpace.md", ["practice", "pace"], "岱明練習 k/pace 横断一覧"),
+    ("input/external/INDEX.md", ["meta", "practice", "athlete_records"], "外部ソース（Drive/Notion/GitHub）取り込み目録"),
+    ("input/external/drive/INDEX.md", ["practice", "athlete_records", "meta"], "Google ドライブいだてん関連スナップショット"),
+    ("input/external/notion/INDEX.md", ["practice", "athlete_records", "injury"], "Notion いだてん岱明スナップショット"),
+    ("input/external/github/INDEX.md", ["meta"], "関連リポジトリ調査（対象外含む）"),
+    (
+        "input/external/drive/shared/練習/練習の記録.md",
+        ["practice"],
+        "共有ドライブ練習ログ（2025）",
+    ),
+    (
+        "input/external/drive/shared/名簿/2025年度_岱明中学校陸上競技部_部員名簿.csv",
+        ["practice", "athlete_records"],
+        "2025 岱明部員名簿",
+    ),
+    (
+        "input/external/notion/databases/いだてん岱明生徒/rows.json",
+        ["practice", "athlete_records"],
+        "Notion 生徒 DB スナップショット",
+    ),
+    (
+        "input/external/notion/databases/2026年度中学生記録/rows.json",
+        ["athlete_records"],
+        "Notion 2026 中学生記録スナップショット",
+    ),
 ]
 
 LIGHTWEIGHT_SUFFIXES = {".csv", ".pdf", ".jpg", ".jpeg", ".png", ".gif", ".webp"}

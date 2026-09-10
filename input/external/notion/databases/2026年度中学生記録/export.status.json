@@ -1,0 +1,10 @@
+{
+  "database": "2026年度中学生記録",
+  "row_count": 755,
+  "complete": false,
+  "partial": true,
+  "has_more": true,
+  "next_cursor": null,
+  "note": "list of 755 rows from prior export + analysis; full DB incomplete. See also rows_daimyo_view.json (76 complete 岱明中 view).",
+  "daimyo_view_rows": 76
+}
