@@ -1138,10 +1138,11 @@
     }
   ],
   "ocr_notes": [
-    "Full board transcription from result image; 14 teams"
+    "Full board transcription from result image; 14 teams",
+    "daimyo rank: board=6 notion=7 (board canonical; total board=64:55 notion=1:06:13)"
   ],
   "daimyo": {
-    "rank": 7,
-    "total": "1:06:13"
+    "rank": 6,
+    "total": "64:55"
   }
 }

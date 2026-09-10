@@ -47,7 +47,7 @@ def _five_leg_sample() -> dict:
                         "split": "10:00",
                         "cumulative": "20:00",
                         "passing_rank": 1,
-                        "split_rank": 2,
+                        "split_rank": 1,
                     },
                     {
                         "leg": 3,
@@ -99,7 +99,7 @@ def _five_leg_sample() -> dict:
                         "split": "11:00",
                         "cumulative": "22:00",
                         "passing_rank": 2,
-                        "split_rank": 1,
+                        "split_rank": 2,
                     },
                     {
                         "leg": 3,

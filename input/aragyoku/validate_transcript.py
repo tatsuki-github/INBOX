@@ -64,6 +64,9 @@ def validate_team_order(year_entry: dict) -> list[str]:
         notes.append(f"ranks not 1..N: {ranks}")
     totals = []
     for team in teams:
+        final_leg = team["legs"][-1]
+        if final_leg.get("status") in {"dnf", "dns"}:
+            continue
         total_s = parse_time_to_seconds(team.get("total"))
         if total_s is not None:
             totals.append((team["rank"], total_s))
@@ -76,25 +79,39 @@ def validate_team_order(year_entry: dict) -> list[str]:
     return notes
 
 
+def _daimyo_board_canonical(year_entry: dict) -> bool:
+    """True when ocr_notes records board-vs-Notion daimyo discrepancy (board is canonical)."""
+    for note in year_entry.get("ocr_notes") or []:
+        text = str(note).lower()
+        if "notion rank" in text or "board canonical" in text:
+            return True
+    return False
+
+
 def validate_daimyo_anchor(year_entry: dict, year: int, gender: str) -> list[str]:
     """V-9 daimyo rank/total vs Notion rows.json."""
     notes: list[str] = []
     anchor = notion_anchor(year, gender)
     if not anchor:
         return notes
+    skip_notion = _daimyo_board_canonical(year_entry)
     daimyo = year_entry.get("daimyo") or {}
     daimyo_team = next((t for t in year_entry["teams"] if school_key(t["team"]) == "岱明"), None)
     if daimyo_team:
         expected_rank = anchor.get("岱明の順位")
-        if expected_rank is not None and daimyo_team["rank"] != expected_rank:
+        if (
+            not skip_notion
+            and expected_rank is not None
+            and daimyo_team["rank"] != expected_rank
+        ):
             notes.append(f"daimyo rank: team={daimyo_team['rank']} notion={expected_rank}")
         expected_total = anchor.get("岱明の記録")
-        if expected_total:
+        if expected_total and not skip_notion:
             exp_s = parse_time_to_seconds(expected_total)
             got_s = parse_time_to_seconds(daimyo_team.get("total"))
             if exp_s is not None and got_s is not None and exp_s != got_s:
                 notes.append(f"daimyo total: team={daimyo_team['total']} notion={expected_total}")
-    if daimyo:
+    if daimyo and not skip_notion:
         if anchor.get("岱明の順位") is not None and daimyo.get("rank") != anchor["岱明の順位"]:
             notes.append(f"daimyo.rank meta mismatch notion={anchor['岱明の順位']}")
         if anchor.get("岱明の記録"):

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-10T10:14:56.635868+00:00",
+  "generated_at": "2026-09-10T22:11:45.056929+00:00",
   "purpose": "荒玉駅伝勝利のためのいだてん岱明メディア索引。KG がパスを辿り LLM が画像/OCRを読む。",
   "summary": {
     "ekiden_pages": 27,
@@ -21,7 +21,12 @@
       "binary_saved": false,
       "notion_page_url": "https://app.notion.com/p/3d3a38e8303480319e39de08907b4829",
       "source_attachment_id": "attachment:18bf7a69-ad84-40c6-80ae-f10989833ccd:image.png",
-      "kind": "image+structured_ocr"
+      "kind": "image+structured_ocr",
+      "transcript_path": "input/aragyoku/transcripts/2012-女子.json",
+      "schema": "full-transcript-v1",
+      "team_count": 16,
+      "source_drive_id": "1AONIAmzyv-oVZ8RI1x4gIOtBkQVNgEts",
+      "full_board_ocr": true
     },
     {
       "topic": "ekiden",
@@ -34,7 +39,12 @@
       "binary_saved": false,
       "notion_page_url": "https://app.notion.com/p/3d3a38e83034802aa47ac70b2b080865",
       "source_attachment_id": "attachment:a389939b-c24a-4c4d-8465-320c12e569bd:image.png",
-      "kind": "image+structured_ocr"
+      "kind": "image+structured_ocr",
+      "transcript_path": "input/aragyoku/transcripts/2012-男子.json",
+      "schema": "full-transcript-v1",
+      "team_count": 16,
+      "source_drive_id": "15dRgSdWM6dOBkX-batIvOEignRDJ9vTP",
+      "full_board_ocr": true
     },
     {
       "topic": "ekiden",
@@ -47,7 +57,12 @@
       "binary_saved": false,
       "notion_page_url": "https://app.notion.com/p/3d3a38e8303480209051e73041413b42",
       "source_attachment_id": "attachment:1e00d16e-f9b2-48ab-aa86-cc9af7bd0e64:image.png",
-      "kind": "image+structured_ocr"
+      "kind": "image+structured_ocr",
+      "transcript_path": "input/aragyoku/transcripts/2013-女子.json",
+      "schema": "full-transcript-v1",
+      "team_count": 16,
+      "source_drive_id": "1YFXOLciLrpuMD8lvGVQ0oImq1uZLg1Ep",
+      "full_board_ocr": true
     },
     {
       "topic": "ekiden",
@@ -60,7 +75,12 @@
       "binary_saved": false,
       "notion_page_url": "https://app.notion.com/p/3d3a38e8303480bb8578c4872c730563",
       "source_attachment_id": "attachment:66c8aaba-e822-46e0-890f-2aa06b62f9f1:image.png",
-      "kind": "image+structured_ocr"
+      "kind": "image+structured_ocr",
+      "transcript_path": "input/aragyoku/transcripts/2013-男子.json",
+      "schema": "full-transcript-v1",
+      "team_count": 16,
+      "source_drive_id": "1SxCLZVuz-FeLKzsjsMCfPZhTj4GAtFuR",
+      "full_board_ocr": true
     },
     {
       "topic": "ekiden",
@@ -73,7 +93,12 @@
       "binary_saved": false,
       "notion_page_url": "https://app.notion.com/p/3d3a38e830348002b5bde8d1c36233ca",
       "source_attachment_id": "attachment:2efaf514-bef4-446a-b6e2-f39b7bc85e9c:image.png",
-      "kind": "image+structured_ocr"
+      "kind": "image+structured_ocr",
+      "transcript_path": "input/aragyoku/transcripts/2014-男子.json",
+      "schema": "full-transcript-v1",
+      "team_count": 16,
+      "source_drive_id": "1PsRvWmJMYr3BT6BnRkxzsFvJqS2Cc5du",
+      "full_board_ocr": true
     },
     {
       "topic": "ekiden",
@@ -86,7 +111,12 @@
       "binary_saved": false,
       "notion_page_url": "https://app.notion.com/p/3d3a38e8303480039644f680c1f7c47d",
       "source_attachment_id": "attachment:e22e26f9-4264-405d-b192-ed3f79c53949:image.png",
-      "kind": "image+structured_ocr"
+      "kind": "image+structured_ocr",
+      "transcript_path": "input/aragyoku/transcripts/2015-女子.json",
+      "schema": "full-transcript-v1",
+      "team_count": 16,
+      "source_drive_id": "17gakFQA2vfltUyFgLkmy0FrWC8NnKdYv",
+      "full_board_ocr": true
     },
     {
       "topic": "ekiden",
@@ -99,7 +129,12 @@
       "binary_saved": false,
       "notion_page_url": "https://app.notion.com/p/3d3a38e83034809094e8e090289253e4",
       "source_attachment_id": "attachment:e9da8a94-341b-4116-9e6e-77ccdebe375d:image.png",
-      "kind": "image+structured_ocr"
+      "kind": "image+structured_ocr",
+      "transcript_path": "input/aragyoku/transcripts/2015-男子.json",
+      "schema": "full-transcript-v1",
+      "team_count": 12,
+      "source_drive_id": "1cs3-zzGVkVcqWENzjBRK1VUSQ84KV8I2",
+      "full_board_ocr": true
     },
     {
       "topic": "ekiden",
@@ -112,7 +147,12 @@
       "binary_saved": false,
       "notion_page_url": "https://app.notion.com/p/3d3a38e83034808db2c2ec3861bdb42b",
       "source_attachment_id": "attachment:4a00c589-97fe-45c5-bbec-5e1ef702f365:image.png",
-      "kind": "image+structured_ocr"
+      "kind": "image+structured_ocr",
+      "transcript_path": "input/aragyoku/transcripts/2016-女子.json",
+      "schema": "full-transcript-v1",
+      "team_count": 16,
+      "source_drive_id": "1LhUyOckCQI2Ne3OEOIbQmMq4tZf5KzeR",
+      "full_board_ocr": true
     },
     {
       "topic": "ekiden",
@@ -125,7 +165,12 @@
       "binary_saved": false,
       "notion_page_url": "https://app.notion.com/p/3d3a38e8303480d88605fc0488cfdd1f",
       "source_attachment_id": "attachment:29bfc4d6-1cd4-45bd-b1fa-71a7396af315:image.png",
-      "kind": "image+structured_ocr"
+      "kind": "image+structured_ocr",
+      "transcript_path": "input/aragyoku/transcripts/2016-男子.json",
+      "schema": "full-transcript-v1",
+      "team_count": 14,
+      "source_drive_id": "1yq9bXt48tgdXfAO7GcrGmNGXAGXL1n9G",
+      "full_board_ocr": true
     },
     {
       "topic": "ekiden",
@@ -138,7 +183,12 @@
       "binary_saved": false,
       "notion_page_url": "https://app.notion.com/p/3d3a38e8303480a0b052f97ff603b2d0",
       "source_attachment_id": "attachment:ec953169-1d52-4221-b148-96669b759e76:image.png",
-      "kind": "image+structured_ocr"
+      "kind": "image+structured_ocr",
+      "transcript_path": "input/aragyoku/transcripts/2017-女子.json",
+      "schema": "full-transcript-v1",
+      "team_count": 16,
+      "source_drive_id": "1txCmMkoQMiayxCCaH9iUm5LyDcM-zZ5u",
+      "full_board_ocr": true
     },
     {
       "topic": "ekiden",
@@ -151,7 +201,12 @@
       "binary_saved": false,
       "notion_page_url": "https://app.notion.com/p/3d3a38e83034806882faea2020ca86be",
       "source_attachment_id": "attachment:c3af0dcf-d630-4472-8aae-96ee8d0d168e:image.png",
-      "kind": "image+structured_ocr"
+      "kind": "image+structured_ocr",
+      "transcript_path": "input/aragyoku/transcripts/2017-男子.json",
+      "schema": "full-transcript-v1",
+      "team_count": 16,
+      "source_drive_id": "166D0h_QMSc8__Bp6sti5Y4BpUbRq7jj2",
+      "full_board_ocr": true
     },
     {
       "topic": "ekiden",
@@ -164,7 +219,12 @@
       "binary_saved": false,
       "notion_page_url": "https://app.notion.com/p/3d3a38e83034805587afd55e3a037885",
       "source_attachment_id": "attachment:a5f03851-0b47-4817-8187-53bea70b4f9a:image.png",
-      "kind": "image+structured_ocr"
+      "kind": "image+structured_ocr",
+      "transcript_path": "input/aragyoku/transcripts/2018-女子.json",
+      "schema": "full-transcript-v1",
+      "team_count": 16,
+      "source_drive_id": "1SpSxcvlMeVJ_w9sV1D559ki112DVfvII",
+      "full_board_ocr": true
     },
     {
       "topic": "ekiden",
@@ -177,7 +237,12 @@
       "binary_saved": false,
       "notion_page_url": "https://app.notion.com/p/3d3a38e8303480cfafdaf25fa75482ae",
       "source_attachment_id": "attachment:5e5fc2dd-9f0a-43f1-8bbc-4105286b9758:image.png",
-      "kind": "image+structured_ocr"
+      "kind": "image+structured_ocr",
+      "transcript_path": "input/aragyoku/transcripts/2018-男子.json",
+      "schema": "full-transcript-v1",
+      "team_count": 16,
+      "source_drive_id": "12HQC3VWqldTdM7lZirfZ5ttwFUHQbSxM",
+      "full_board_ocr": true
     },
     {
       "topic": "ekiden",
@@ -190,7 +255,12 @@
       "binary_saved": false,
       "notion_page_url": "https://app.notion.com/p/3d3a38e8303480caaca2e97b06e7f1a8",
       "source_attachment_id": "attachment:c76418f2-709a-474b-bc56-d60d847009a2:image.png",
-      "kind": "image+structured_ocr"
+      "kind": "image+structured_ocr",
+      "transcript_path": "input/aragyoku/transcripts/2019-女子.json",
+      "schema": "full-transcript-v1",
+      "team_count": 16,
+      "source_drive_id": "1-m4jAOxnRixZLOkolym7idoBH7S6WBTN",
+      "full_board_ocr": true
     },
     {
       "topic": "ekiden",
@@ -203,7 +273,12 @@
       "binary_saved": false,
       "notion_page_url": "https://app.notion.com/p/3d3a38e83034808f9fc3e24e000c5cc2",
       "source_attachment_id": "attachment:5cc692cd-17f3-4d86-b539-1b1684f80a70:image.png",
-      "kind": "image+structured_ocr"
+      "kind": "image+structured_ocr",
+      "transcript_path": "input/aragyoku/transcripts/2019-男子.json",
+      "schema": "full-transcript-v1",
+      "team_count": 16,
+      "source_drive_id": "1oA03VIK-3t_A_BVhBQugkH9rZOcy05m5",
+      "full_board_ocr": true
     },
     {
       "topic": "ekiden",
@@ -216,7 +291,12 @@
       "binary_saved": false,
       "notion_page_url": "https://app.notion.com/p/3d3a38e83034807a928fe2318a61e37d",
       "source_attachment_id": "attachment:ec8f56bb-3788-415d-b10f-07c6519be957:image.png",
-      "kind": "image+structured_ocr"
+      "kind": "image+structured_ocr",
+      "transcript_path": "input/aragyoku/transcripts/2020-女子.json",
+      "schema": "full-transcript-v1",
+      "team_count": 16,
+      "source_drive_id": "1pbX4GwUm7_TebtyZZlMo4U8BHu_OPWmP",
+      "full_board_ocr": true
     },
     {
       "topic": "ekiden",
@@ -229,7 +309,12 @@
       "binary_saved": false,
       "notion_page_url": "https://app.notion.com/p/3d3a38e83034804bb0aff188218f8cf4",
       "source_attachment_id": "attachment:551f9c60-bbf0-407c-b3d7-e0cd2cd29cff:image.png",
-      "kind": "image+structured_ocr"
+      "kind": "image+structured_ocr",
+      "transcript_path": "input/aragyoku/transcripts/2020-男子.json",
+      "schema": "full-transcript-v1",
+      "team_count": 16,
+      "source_drive_id": "15uHGQSpOnTq-bilRrV8pa9A4dE_rBe10",
+      "full_board_ocr": true
     },
     {
       "topic": "ekiden",
@@ -242,7 +327,12 @@
       "binary_saved": false,
       "notion_page_url": "https://app.notion.com/p/3d3a38e8303480a68cd4eae39043ddcf",
       "source_attachment_id": "attachment:ddaa395c-17b7-4684-af38-dce67932eeae:image.png",
-      "kind": "image+structured_ocr"
+      "kind": "image+structured_ocr",
+      "transcript_path": "input/aragyoku/transcripts/2021-女子.json",
+      "schema": "full-transcript-v1",
+      "team_count": 16,
+      "source_drive_id": "1t4xKLNQph4mcdKzdXj3NqGxmKG-Y8PPo",
+      "full_board_ocr": true
     },
     {
       "topic": "ekiden",
@@ -255,7 +345,12 @@
       "binary_saved": false,
       "notion_page_url": "https://app.notion.com/p/3d3a38e830348040834bf9ef33231453",
       "source_attachment_id": "attachment:49ddab62-498e-40e2-9d7d-2cee3074b214:image.png",
-      "kind": "image+structured_ocr"
+      "kind": "image+structured_ocr",
+      "transcript_path": "input/aragyoku/transcripts/2021-男子.json",
+      "schema": "full-transcript-v1",
+      "team_count": 16,
+      "source_drive_id": "1bQ5ap_Q02bzsnSrbTBhZg19BjsAxmGFy",
+      "full_board_ocr": true
     },
     {
       "topic": "ekiden",
@@ -268,7 +363,12 @@
       "binary_saved": false,
       "notion_page_url": "https://app.notion.com/p/3d3a38e830348033940ee9dccf8e2bed",
       "source_attachment_id": "attachment:eaf69c20-5376-4398-910b-a97bb5993c92:image.png",
-      "kind": "image+structured_ocr"
+      "kind": "image+structured_ocr",
+      "transcript_path": "input/aragyoku/transcripts/2022-女子.json",
+      "schema": "full-transcript-v1",
+      "team_count": 16,
+      "source_drive_id": "1LdY-YqIIx-57im7jTSTud5qzEBIm0hkA",
+      "full_board_ocr": true
     },
     {
       "topic": "ekiden",
@@ -281,7 +381,12 @@
       "binary_saved": false,
       "notion_page_url": "https://app.notion.com/p/3d3a38e8303480ee875fe381d045dd5e",
       "source_attachment_id": "attachment:8504b516-bf57-411d-b10c-95d376b4f751:image.png",
-      "kind": "image+structured_ocr"
+      "kind": "image+structured_ocr",
+      "transcript_path": "input/aragyoku/transcripts/2022-男子.json",
+      "schema": "full-transcript-v1",
+      "team_count": 14,
+      "source_drive_id": "1Oe-lkWKsDBjYi1FIGh4S-el3OVPtd0-Y",
+      "full_board_ocr": true
     },
     {
       "topic": "ekiden",
@@ -294,7 +399,12 @@
       "binary_saved": false,
       "notion_page_url": "https://app.notion.com/p/3d3a38e8303480429823e68f2a52e2f0",
       "source_attachment_id": "attachment:d190bb10-5074-4fd6-a9fe-e738c413dd51:image.png",
-      "kind": "image+structured_ocr"
+      "kind": "image+structured_ocr",
+      "transcript_path": "input/aragyoku/transcripts/2023-女子.json",
+      "schema": "full-transcript-v1",
+      "team_count": 15,
+      "source_drive_id": "1FEhuWOmRsolozWeSkP4KPDTh68-MwpyV",
+      "full_board_ocr": true
     },
     {
       "topic": "ekiden",
@@ -307,7 +417,12 @@
       "binary_saved": false,
       "notion_page_url": "https://app.notion.com/p/3d3a38e830348081a304f320fe6e0c21",
       "source_attachment_id": "attachment:1d7e6525-2942-42dd-8610-17d7987a7371:image.png",
-      "kind": "image+structured_ocr"
+      "kind": "image+structured_ocr",
+      "transcript_path": "input/aragyoku/transcripts/2023-男子.json",
+      "schema": "full-transcript-v1",
+      "team_count": 15,
+      "source_drive_id": "1rRcKJy64GTA1a9Y_l9MSmixYZ8hXKFOX",
+      "full_board_ocr": true
     },
     {
       "topic": "ekiden",
@@ -320,7 +435,12 @@
       "binary_saved": false,
       "notion_page_url": "https://app.notion.com/p/3d3a38e8303480a6aa75e666c4010c33",
       "source_attachment_id": "attachment:19df0e4a-3a41-4b9d-ae28-a3d833268c02:image.png",
-      "kind": "image+structured_ocr"
+      "kind": "image+structured_ocr",
+      "transcript_path": "input/aragyoku/transcripts/2024-女子.json",
+      "schema": "full-transcript-v1",
+      "team_count": 15,
+      "source_drive_id": "1WDoNUHfL23mTudpm_-eUIbyeMn3EGtZg",
+      "full_board_ocr": true
     },
     {
       "topic": "ekiden",
@@ -333,7 +453,12 @@
       "binary_saved": false,
       "notion_page_url": "https://app.notion.com/p/3d3a38e8303480728aa5eb6b9f867d19",
       "source_attachment_id": "attachment:14697ee3-f926-4644-857f-79a8629626ed:image.png",
-      "kind": "image+structured_ocr"
+      "kind": "image+structured_ocr",
+      "transcript_path": "input/aragyoku/transcripts/2024-男子.json",
+      "schema": "full-transcript-v1",
+      "team_count": 15,
+      "source_drive_id": "1alWK5XLEUuv0YXM_KLNg9NHfhi_5sYxI",
+      "full_board_ocr": true
     },
     {
       "topic": "ekiden",
@@ -346,7 +471,12 @@
       "binary_saved": false,
       "notion_page_url": "https://app.notion.com/p/3d3a38e830348010a680f2d7c60f8f67",
       "source_attachment_id": "attachment:488fb43f-0a91-48d0-8034-c2388526068f:image.png",
-      "kind": "image+structured_ocr"
+      "kind": "image+structured_ocr",
+      "transcript_path": "input/aragyoku/transcripts/2025-女子.json",
+      "schema": "full-transcript-v1",
+      "team_count": 15,
+      "source_drive_id": "1-qackGYGwVuX6LikAryfiCLRmwgNVkWK",
+      "full_board_ocr": true
     },
     {
       "topic": "ekiden",
@@ -359,7 +489,12 @@
       "binary_saved": false,
       "notion_page_url": "https://app.notion.com/p/3d3a38e83034807db9ecc892080dca31",
       "source_attachment_id": "attachment:2c24d4d0-8ee7-43da-917f-9d89e42f927d:image.png",
-      "kind": "image+structured_ocr"
+      "kind": "image+structured_ocr",
+      "transcript_path": "input/aragyoku/transcripts/2025-男子.json",
+      "schema": "full-transcript-v1",
+      "team_count": 15,
+      "source_drive_id": "19vNfBOKKX0dnx2RZM_iBJdnH04N97JBy",
+      "full_board_ocr": true
     },
     {
       "topic": "analysis",

@@ -42,13 +42,13 @@
       "corrected_cells": 9,
       "csv_reconciled_cells": 33,
       "csv_reconciliation_rule": "同年度CSVの女子・中学生を学校・学年・継続年度・走力で照合し、一意に本人と判断できる表記はCSVを優先",
-      "csv_reconciliation_source": "input/aragyoku/women_top4_csv_reconciliations.json"
+      "csv_reconciliation_source": "input/aragyoku/reconciliations/women_csv_reconciliations.json"
     },
     "stats": {
       "athletes": 390,
-      "with_any_track": 212,
-      "with_sb": 212,
-      "with_url": 212
+      "with_any_track": 217,
+      "with_sb": 217,
+      "with_url": 217
     },
     "guide_note": "「駅伝」は大会当日の区間走結果（道路コース）です。女子は1〜5区がそれぞれ約3.0km・1.855km・2.0km・2.0km・3.0kmで、トラック種目（800m/1500m/3000m）とは距離・路面・気象・タスキ条件が異なります。トラックSB/直近は同年の走力指標として並記していますが、短い種目が強い選手ほど長い区間では相対的に伸び、逆も起こります。数式による換算ではなく、実際の駅伝タイムとトラック走力の両方を見て判断してください。",
     "drive_source_note": "駅伝記録は Google Drive「荒玉駅伝歴代」の結果画像と全セルを目視照合済み。ただし2014年女子の原画像は同フォルダ内で確認できず、未掲載。選手名は同年度の中学生女子トラック記録CSVと照合し、表記が競合する場合はCSVを優先。トラック記録は2012〜2026年度CSVのうち、駅伝と同じ年度だけを参照。学校以外のクラブ所属（ATRC, NJAC, 長洲JRC, 金栗PROJECT 等）も、駅伝選手と同姓同名かつ学年が矛盾しない場合は同一人物として取り込む。",
@@ -3602,6 +3602,64 @@
         },
         {
           "rank": 5,
+          "school": "玉名",
+          "total_mark": "44:19",
+          "total_seconds": 2659.0,
+          "athletes": [
+            {
+              "leg": 1,
+              "name": "佐々木結",
+              "grade": 3,
+              "ekiden_mark": "11:15",
+              "ekiden_seconds": 675.0,
+              "cumulative": "11:15",
+              "track_events": {},
+              "match_count": 0
+            },
+            {
+              "leg": 2,
+              "name": "高木心菜",
+              "grade": 3,
+              "ekiden_mark": "6:47",
+              "ekiden_seconds": 407.0,
+              "cumulative": "18:02",
+              "track_events": {},
+              "match_count": 0
+            },
+            {
+              "leg": 3,
+              "name": "内田千惺",
+              "grade": 2,
+              "ekiden_mark": "7:11",
+              "ekiden_seconds": 431.0,
+              "cumulative": "25:13",
+              "track_events": {},
+              "match_count": 0
+            },
+            {
+              "leg": 4,
+              "name": "三嶋悠里",
+              "grade": 2,
+              "ekiden_mark": "7:21",
+              "ekiden_seconds": 441.0,
+              "cumulative": "32:34",
+              "track_events": {},
+              "match_count": 0
+            },
+            {
+              "leg": 5,
+              "name": "西澤葵",
+              "grade": 2,
+              "ekiden_mark": "11:45",
+              "ekiden_seconds": 705.0,
+              "cumulative": "44:19",
+              "track_events": {},
+              "match_count": 0
+            }
+          ]
+        },
+        {
+          "rank": 6,
           "school": "有明",
           "total_mark": "44:49",
           "total_seconds": 2689.0,
@@ -3685,64 +3743,6 @@
                 }
               },
               "match_count": 1
-            }
-          ]
-        },
-        {
-          "rank": 6,
-          "school": "玉高附属",
-          "total_mark": "45:12",
-          "total_seconds": 2712.0,
-          "athletes": [
-            {
-              "leg": 1,
-              "name": "鹿子木歩",
-              "grade": 1,
-              "ekiden_mark": "10:55",
-              "ekiden_seconds": 655.0,
-              "cumulative": "10:55",
-              "track_events": {},
-              "match_count": 0
-            },
-            {
-              "leg": 2,
-              "name": "坂口穂波",
-              "grade": 1,
-              "ekiden_mark": "7:11",
-              "ekiden_seconds": 431.0,
-              "cumulative": "18:06",
-              "track_events": {},
-              "match_count": 0
-            },
-            {
-              "leg": 3,
-              "name": "大木夏帆",
-              "grade": 2,
-              "ekiden_mark": "6:58",
-              "ekiden_seconds": 418.0,
-              "cumulative": "25:04",
-              "track_events": {},
-              "match_count": 0
-            },
-            {
-              "leg": 4,
-              "name": "中岡希海",
-              "grade": 3,
-              "ekiden_mark": "8:02",
-              "ekiden_seconds": 482.0,
-              "cumulative": "33:06",
-              "track_events": {},
-              "match_count": 0
-            },
-            {
-              "leg": 5,
-              "name": "松岡粧音",
-              "grade": 2,
-              "ekiden_mark": "12:06",
-              "ekiden_seconds": 726.0,
-              "cumulative": "45:12",
-              "track_events": {},
-              "match_count": 0
             }
           ]
         }
@@ -7988,6 +7988,107 @@
         },
         {
           "rank": 5,
+          "school": "玉南",
+          "total_mark": "43:54",
+          "total_seconds": 2634.0,
+          "athletes": [
+            {
+              "leg": 1,
+              "name": "長沼優香",
+              "grade": 3,
+              "ekiden_mark": "10:09",
+              "ekiden_seconds": 609.0,
+              "cumulative": "10:09",
+              "track_events": {
+                "800m": {
+                  "sb": {
+                    "mark": "2:22.09",
+                    "seconds": 142.09,
+                    "meet": "第４７回　ジュニアオリンピック陸上競技選手権大会",
+                    "meet_date": "2016/08/28",
+                    "url": "http://www.kumariku.org/16/kekka/16,8,27junior/rel179.html",
+                    "season": "2016",
+                    "source": "by_year_2016",
+                    "school": "玉東クラブ",
+                    "grade": "3"
+                  },
+                  "recent": null
+                },
+                "1500m": {
+                  "sb": {
+                    "mark": "4:52.03",
+                    "seconds": 292.03,
+                    "meet": "平成２８年度　第３１回熊本県中学校陸上競技選手権大会",
+                    "meet_date": "2016/06/11",
+                    "url": "http://www.kumariku.org/16/kekka/16,6,11chugaku/rel005.html",
+                    "season": "2016",
+                    "source": "by_year_2016",
+                    "school": "玉東クラブ",
+                    "grade": "3"
+                  },
+                  "recent": null
+                },
+                "3000m": {
+                  "sb": {
+                    "mark": "10:51.91",
+                    "seconds": 651.91,
+                    "meet": "第６９回熊本市中長距離選手権大会",
+                    "meet_date": "2016/11/19",
+                    "url": "http://www.kcrk.jp/i-mode/kiroku/251/PC/rel115.html",
+                    "season": "2016",
+                    "source": "by_year_2016",
+                    "school": "玉東クラブ",
+                    "grade": "3"
+                  },
+                  "recent": null
+                }
+              },
+              "match_count": 3
+            },
+            {
+              "leg": 2,
+              "name": "前田遥香",
+              "grade": 2,
+              "ekiden_mark": "6:57",
+              "ekiden_seconds": 417.0,
+              "cumulative": "17:06",
+              "track_events": {},
+              "match_count": 0
+            },
+            {
+              "leg": 3,
+              "name": "土山琴乃",
+              "grade": 2,
+              "ekiden_mark": "7:28",
+              "ekiden_seconds": 448.0,
+              "cumulative": "24:34",
+              "track_events": {},
+              "match_count": 0
+            },
+            {
+              "leg": 4,
+              "name": "清田紗帆",
+              "grade": 1,
+              "ekiden_mark": "7:32",
+              "ekiden_seconds": 452.0,
+              "cumulative": "32:06",
+              "track_events": {},
+              "match_count": 0
+            },
+            {
+              "leg": 5,
+              "name": "坂村有澄",
+              "grade": 1,
+              "ekiden_mark": "11:48",
+              "ekiden_seconds": 708.0,
+              "cumulative": "43:54",
+              "track_events": {},
+              "match_count": 0
+            }
+          ]
+        },
+        {
+          "rank": 6,
           "school": "玉東",
           "total_mark": "44:04",
           "total_seconds": 2644.0,
@@ -8082,122 +8183,6 @@
               "ekiden_mark": "11:58",
               "ekiden_seconds": 718.0,
               "cumulative": "44:04",
-              "track_events": {},
-              "match_count": 0
-            }
-          ]
-        },
-        {
-          "rank": 6,
-          "school": "荒尾海陽",
-          "total_mark": "44:27",
-          "total_seconds": 2667.0,
-          "athletes": [
-            {
-              "leg": 1,
-              "name": "榎本百花",
-              "grade": 3,
-              "ekiden_mark": "10:47",
-              "ekiden_seconds": 647.0,
-              "cumulative": "10:47",
-              "track_events": {
-                "800m": {
-                  "sb": {
-                    "mark": "2:28.56",
-                    "seconds": 148.56,
-                    "meet": "平成２８年度　第３１回熊本県中学校陸上競技選手権大会",
-                    "meet_date": "2016/06/12",
-                    "url": "http://www.kumariku.org/16/kekka/16,6,11chugaku/rel107.html",
-                    "season": "2016",
-                    "source": "by_year_2016",
-                    "school": "荒尾海陽中",
-                    "grade": "3"
-                  },
-                  "recent": null
-                },
-                "1500m": {
-                  "sb": {
-                    "mark": "5:12.03",
-                    "seconds": 312.03,
-                    "meet": "２０１６年度　金栗記念選抜中長距離",
-                    "meet_date": "2016/04/02",
-                    "url": "http://www.kumariku.org/16/kekka/16,4,2kanaguri/rel024.html",
-                    "season": "2016",
-                    "source": "by_year_2016",
-                    "school": "荒尾海陽中",
-                    "grade": "3"
-                  },
-                  "recent": null
-                }
-              },
-              "match_count": 2
-            },
-            {
-              "leg": 2,
-              "name": "坂村美羽",
-              "grade": 1,
-              "ekiden_mark": "7:18",
-              "ekiden_seconds": 438.0,
-              "cumulative": "18:05",
-              "track_events": {},
-              "match_count": 0
-            },
-            {
-              "leg": 3,
-              "name": "山麻椰",
-              "grade": 3,
-              "ekiden_mark": "7:08",
-              "ekiden_seconds": 428.0,
-              "cumulative": "25:13",
-              "track_events": {},
-              "match_count": 0
-            },
-            {
-              "leg": 4,
-              "name": "前田由菜",
-              "grade": 3,
-              "ekiden_mark": "7:45",
-              "ekiden_seconds": 465.0,
-              "cumulative": "32:58",
-              "track_events": {
-                "800m": {
-                  "sb": {
-                    "mark": "2:36.93",
-                    "seconds": 156.93,
-                    "meet": "第４７回　ジュニアオリンピック陸上競技選手権大会",
-                    "meet_date": "2016/08/28",
-                    "url": "http://www.kumariku.org/16/kekka/16,8,27junior/rel180.html",
-                    "season": "2016",
-                    "source": "by_year_2016",
-                    "school": "荒尾海陽中",
-                    "grade": "3"
-                  },
-                  "recent": null
-                },
-                "1500m": {
-                  "sb": {
-                    "mark": "5:32.39",
-                    "seconds": 332.39,
-                    "meet": "第62回全日本中学校通信陸上競技大会熊本県大会",
-                    "meet_date": "2016/07/26",
-                    "url": "http://www.kumariku.org/16/kekka/16,7,26tsushin/rel116.html",
-                    "season": "2016",
-                    "source": "by_year_2016",
-                    "school": "荒尾海陽中",
-                    "grade": "3"
-                  },
-                  "recent": null
-                }
-              },
-              "match_count": 2
-            },
-            {
-              "leg": 5,
-              "name": "龍野美沙紀",
-              "grade": 3,
-              "ekiden_mark": "11:29",
-              "ekiden_seconds": 689.0,
-              "cumulative": "44:27",
               "track_events": {},
               "match_count": 0
             }
@@ -8756,6 +8741,122 @@
         },
         {
           "rank": 5,
+          "school": "玉東",
+          "total_mark": "43:46",
+          "total_seconds": 2626.0,
+          "athletes": [
+            {
+              "leg": 1,
+              "name": "長沼優香",
+              "grade": 2,
+              "ekiden_mark": "10:18",
+              "ekiden_seconds": 618.0,
+              "cumulative": "10:18",
+              "track_events": {
+                "800m": {
+                  "sb": {
+                    "mark": "2:24.44",
+                    "seconds": 144.44,
+                    "meet": "平成２７年度　熊本県中体連陸上競技大会",
+                    "meet_date": "2015/10/03",
+                    "url": "http://www.kumariku.org/15/kekka/10,3chugaku/rel076.html",
+                    "season": "2015",
+                    "source": "by_year_2015",
+                    "school": "玉東クラブ",
+                    "grade": "2"
+                  },
+                  "recent": null
+                },
+                "1500m": {
+                  "sb": {
+                    "mark": "4:55.99",
+                    "seconds": 295.99,
+                    "meet": "第４６回　ジュニアオリンピック陸上競技選手権大会",
+                    "meet_date": "2015/08/29",
+                    "url": "http://www.kumariku.org/15/kekka/8,29juniorolympic/rel160.html",
+                    "season": "2015",
+                    "source": "by_year_2015",
+                    "school": "玉東クラブ",
+                    "grade": "2"
+                  },
+                  "recent": null
+                }
+              },
+              "match_count": 2
+            },
+            {
+              "leg": 2,
+              "name": "長嶺汐莉",
+              "grade": 1,
+              "ekiden_mark": "6:56",
+              "ekiden_seconds": 416.0,
+              "cumulative": "17:14",
+              "track_events": {},
+              "match_count": 0
+            },
+            {
+              "leg": 3,
+              "name": "坂村有澄",
+              "grade": 1,
+              "ekiden_mark": "7:22",
+              "ekiden_seconds": 442.0,
+              "cumulative": "24:36",
+              "track_events": {},
+              "match_count": 0
+            },
+            {
+              "leg": 4,
+              "name": "清田紗帆",
+              "grade": 2,
+              "ekiden_mark": "7:30",
+              "ekiden_seconds": 450.0,
+              "cumulative": "32:06",
+              "track_events": {
+                "800m": {
+                  "sb": {
+                    "mark": "2:41.27",
+                    "seconds": 161.27,
+                    "meet": "平成２７年度　第３０回熊本県中学校陸上競技選手権大会",
+                    "meet_date": "2015/06/07",
+                    "url": "http://www.kumariku.org/15/kekka/6,6JHsenshuken/rel126.html",
+                    "season": "2015",
+                    "source": "by_year_2015",
+                    "school": "玉東クラブ",
+                    "grade": "2"
+                  },
+                  "recent": null
+                },
+                "1500m": {
+                  "sb": {
+                    "mark": "5:48.74",
+                    "seconds": 348.74,
+                    "meet": "第４６回　ジュニアオリンピック陸上競技選手権大会",
+                    "meet_date": "2015/08/29",
+                    "url": "http://www.kumariku.org/15/kekka/8,29juniorolympic/rel165.html",
+                    "season": "2015",
+                    "source": "by_year_2015",
+                    "school": "玉東クラブ",
+                    "grade": "2"
+                  },
+                  "recent": null
+                }
+              },
+              "match_count": 2
+            },
+            {
+              "leg": 5,
+              "name": "前田遥香",
+              "grade": 1,
+              "ekiden_mark": "11:40",
+              "ekiden_seconds": 700.0,
+              "cumulative": "43:46",
+              "track_events": {},
+              "match_count": 0
+            }
+          ]
+        },
+        {
+          "rank": 6,
           "school": "菊水",
           "total_mark": "44:39",
           "total_seconds": 2679.0,
@@ -8811,64 +8912,6 @@
               "match_count": 0
             }
           ]
-        },
-        {
-          "rank": 6,
-          "school": "五陵",
-          "total_mark": "45:11",
-          "total_seconds": 2711.0,
-          "athletes": [
-            {
-              "leg": 1,
-              "name": "榎本美佑",
-              "grade": 2,
-              "ekiden_mark": "10:43",
-              "ekiden_seconds": 643.0,
-              "cumulative": "10:43",
-              "track_events": {},
-              "match_count": 0
-            },
-            {
-              "leg": 2,
-              "name": "松崎睦実",
-              "grade": 2,
-              "ekiden_mark": "7:05",
-              "ekiden_seconds": 425.0,
-              "cumulative": "17:48",
-              "track_events": {},
-              "match_count": 0
-            },
-            {
-              "leg": 3,
-              "name": "森川育",
-              "grade": 2,
-              "ekiden_mark": "7:22",
-              "ekiden_seconds": 442.0,
-              "cumulative": "25:10",
-              "track_events": {},
-              "match_count": 0
-            },
-            {
-              "leg": 4,
-              "name": "荒木悠伽",
-              "grade": 2,
-              "ekiden_mark": "7:50",
-              "ekiden_seconds": 470.0,
-              "cumulative": "33:00",
-              "track_events": {},
-              "match_count": 0
-            },
-            {
-              "leg": 5,
-              "name": "本田里奈",
-              "grade": 3,
-              "ekiden_mark": "12:11",
-              "ekiden_seconds": 731.0,
-              "cumulative": "45:11",
-              "track_events": {},
-              "match_count": 0
-            }
-          ]
         }
       ]
     },
@@ -8877,7 +8920,7 @@
       "sb_seasons": [
         "2013"
       ],
-      "date": null,
+      "date": "2013-10-23",
       "venue": null,
       "source_file_id": "1YFXOLciLrpuMD8lvGVQ0oImq1uZLg1Ep",
       "source_confidence": "verified",
@@ -9521,6 +9564,138 @@
         },
         {
           "rank": 5,
+          "school": "岱明",
+          "total_mark": "43:25",
+          "total_seconds": 2605.0,
+          "athletes": [
+            {
+              "leg": 1,
+              "name": "大道志歩",
+              "grade": 3,
+              "ekiden_mark": "10:32",
+              "ekiden_seconds": 632.0,
+              "cumulative": "10:32",
+              "track_events": {},
+              "match_count": 0
+            },
+            {
+              "leg": 2,
+              "name": "中川葉月",
+              "grade": 2,
+              "ekiden_mark": "6:57",
+              "ekiden_seconds": 417.0,
+              "cumulative": "17:29",
+              "track_events": {
+                "800m": {
+                  "sb": {
+                    "mark": "2:35.43",
+                    "seconds": 155.43,
+                    "meet": "平成２５年度　第２８回熊本県中学校陸上競技選手権大会兼　第１２回混成競技大会",
+                    "meet_date": "2013/06/08",
+                    "url": "http://www.kumariku.org/13/kekka/6,8chugaku/REL089.HTM",
+                    "season": "2013",
+                    "source": "by_year_2013",
+                    "school": "岱明中",
+                    "grade": "2"
+                  },
+                  "recent": null
+                }
+              },
+              "match_count": 1
+            },
+            {
+              "leg": 3,
+              "name": "竹本彩夏",
+              "grade": 3,
+              "ekiden_mark": "7:08",
+              "ekiden_seconds": 428.0,
+              "cumulative": "24:37",
+              "track_events": {
+                "800m": {
+                  "sb": {
+                    "mark": "2:31.30",
+                    "seconds": 151.3,
+                    "meet": "第５９回全日本中学校通信陸上競技大会熊本県大会",
+                    "meet_date": "2013/07/20",
+                    "url": "http://www.kumariku.org/13/kekka/7,20tuushin/REL131.HTM",
+                    "season": "2013",
+                    "source": "by_year_2013",
+                    "school": "岱明中",
+                    "grade": "3"
+                  },
+                  "recent": null
+                }
+              },
+              "match_count": 1
+            },
+            {
+              "leg": 4,
+              "name": "植田愛美",
+              "grade": 3,
+              "ekiden_mark": "7:24",
+              "ekiden_seconds": 444.0,
+              "cumulative": "32:01",
+              "track_events": {
+                "800m": {
+                  "sb": {
+                    "mark": "2:35.20",
+                    "seconds": 155.2,
+                    "meet": "第５９回全日本中学校通信陸上競技大会熊本県大会",
+                    "meet_date": "2013/07/20",
+                    "url": "http://www.kumariku.org/13/kekka/7,20tuushin/REL130.HTM",
+                    "season": "2013",
+                    "source": "by_year_2013",
+                    "school": "岱明中",
+                    "grade": "3"
+                  },
+                  "recent": null
+                }
+              },
+              "match_count": 1
+            },
+            {
+              "leg": 5,
+              "name": "前田明佳里",
+              "grade": 2,
+              "ekiden_mark": "11:24",
+              "ekiden_seconds": 684.0,
+              "cumulative": "43:25",
+              "track_events": {
+                "800m": {
+                  "sb": {
+                    "mark": "2:35.01",
+                    "seconds": 155.01,
+                    "meet": "平成２５年度　第２８回熊本県中学校陸上競技選手権大会兼　第１２回混成競技大会",
+                    "meet_date": "2013/06/08",
+                    "url": "http://www.kumariku.org/13/kekka/6,8chugaku/REL089.HTM",
+                    "season": "2013",
+                    "source": "by_year_2013",
+                    "school": "岱明中",
+                    "grade": "2"
+                  },
+                  "recent": null
+                },
+                "1500m": {
+                  "sb": {
+                    "mark": "5:17.41",
+                    "seconds": 317.41,
+                    "meet": "第４４回　ジュニアオリンピック陸上競技選手権大会熊本県予選会",
+                    "meet_date": "2013/08/24",
+                    "url": "http://www.kumariku.org/13/kekka/8,24junior/REL050.HTM",
+                    "season": "2013",
+                    "source": "by_year_2013",
+                    "school": "岱明中",
+                    "grade": "2"
+                  },
+                  "recent": null
+                }
+              },
+              "match_count": 2
+            }
+          ]
+        },
+        {
+          "rank": 6,
           "school": "菊水",
           "total_mark": "44:39",
           "total_seconds": 2679.0,
@@ -9634,64 +9809,6 @@
               "match_count": 0
             }
           ]
-        },
-        {
-          "rank": 6,
-          "school": "五陵",
-          "total_mark": "45:11",
-          "total_seconds": 2711.0,
-          "athletes": [
-            {
-              "leg": 1,
-              "name": "榎本美佑",
-              "grade": 2,
-              "ekiden_mark": "10:43",
-              "ekiden_seconds": 643.0,
-              "cumulative": "10:43",
-              "track_events": {},
-              "match_count": 0
-            },
-            {
-              "leg": 2,
-              "name": "松崎睦実",
-              "grade": 2,
-              "ekiden_mark": "7:05",
-              "ekiden_seconds": 425.0,
-              "cumulative": "17:48",
-              "track_events": {},
-              "match_count": 0
-            },
-            {
-              "leg": 3,
-              "name": "森川育",
-              "grade": 2,
-              "ekiden_mark": "7:22",
-              "ekiden_seconds": 442.0,
-              "cumulative": "25:10",
-              "track_events": {},
-              "match_count": 0
-            },
-            {
-              "leg": 4,
-              "name": "荒木悠伽",
-              "grade": 2,
-              "ekiden_mark": "7:50",
-              "ekiden_seconds": 470.0,
-              "cumulative": "33:00",
-              "track_events": {},
-              "match_count": 0
-            },
-            {
-              "leg": 5,
-              "name": "本田里奈",
-              "grade": 3,
-              "ekiden_mark": "12:11",
-              "ekiden_seconds": 731.0,
-              "cumulative": "45:11",
-              "track_events": {},
-              "match_count": 0
-            }
-          ]
         }
       ]
     },
@@ -9700,7 +9817,7 @@
       "sb_seasons": [
         "2012"
       ],
-      "date": null,
+      "date": "2012-10-24",
       "venue": null,
       "source_file_id": "1AONIAmzyv-oVZ8RI1x4gIOtBkQVNgEts",
       "source_confidence": "verified",

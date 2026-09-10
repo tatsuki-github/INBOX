@@ -20,6 +20,36 @@ ROOT = Path(__file__).resolve().parent
 TRANSCRIPTS = ROOT / "transcripts"
 SOURCES_WOMEN = ROOT / "sources/women_result_board_sources.json"
 SOURCES_MEN = ROOT / "sources/men_result_board_sources.json"
+CSV_RECONCILIATIONS = ROOT / "reconciliations/women_csv_reconciliations.json"
+
+TOP6_VERIFICATION = {
+    "method": "原画像との全セル目視照合",
+    "verified_years": [
+        2012,
+        2013,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+    ],
+    "cells_per_year": 138,
+    "checked_cells": 1794,
+    "unreadable_cells": 0,
+    "corrected_cells": 9,
+    "csv_reconciled_cells": 33,
+    "csv_reconciliation_rule": (
+        "同年度CSVの女子・中学生を学校・学年・継続年度・走力で照合し、"
+        "一意に本人と判断できる表記はCSVを優先"
+    ),
+    "csv_reconciliation_source": "input/aragyoku/reconciliations/women_csv_reconciliations.json",
+}
 
 WOMEN_MISSING = [2014]
 MEN_YEARS = list(range(2012, 2026))
@@ -165,8 +195,25 @@ def write_athletes_csv(dataset: dict, path: Path) -> None:
         writer.writerows(rows)
 
 
+def apply_csv_reconciliations(top6: dict) -> None:
+    """Apply name/grade corrections from women_csv_reconciliations.json to top-6 teams."""
+    if not CSV_RECONCILIATIONS.exists():
+        return
+    audit = json.loads(CSV_RECONCILIATIONS.read_text(encoding="utf-8"))
+    for item in audit.get("items") or []:
+        year_block = top6["years"].get(str(item["year"]))
+        if not year_block:
+            continue
+        team = next((t for t in year_block["teams"] if t["rank"] == item["rank"]), None)
+        if not team or team["team"] != item["team"]:
+            continue
+        leg_row = next((L for L in team["legs"] if L["leg"] == item["leg"]), None)
+        if not leg_row:
+            continue
+        leg_row[item["field"]] = item["to"]
+
+
 def derive_top6(dataset: dict) -> dict:
-    gender = dataset["meta"]["gender"]
     out_years: dict[str, dict] = {}
     for year, entry in dataset["years"].items():
         top = [normalize_team(t) for t in entry["teams"] if t["rank"] <= 6]
@@ -174,12 +221,25 @@ def derive_top6(dataset: dict) -> dict:
             "date": entry.get("date"),
             "source_drive_id": entry.get("source_drive_id"),
             "teams": top,
+            "confidence": "verified",
         }
-    return {
-        "meta": dataset["meta"],
+        if entry.get("ocr_notes"):
+            out_years[year]["ocr_notes"] = entry["ocr_notes"]
+    meta = {
+        **dataset["meta"],
+        "note": (
+            "Google Drive「荒玉駅伝歴代」の各年結果画像を、"
+            "順位・校名・総合・選手名・学年・区間・累積の全セルで目視照合"
+        ),
+        "verification": TOP6_VERIFICATION,
+    }
+    top6 = {
+        "meta": meta,
         "years": out_years,
         "missing_years": dataset.get("missing_years", []),
     }
+    apply_csv_reconciliations(top6)
+    return top6
 
 
 def main() -> None:
