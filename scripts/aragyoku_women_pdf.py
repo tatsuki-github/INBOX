@@ -212,12 +212,10 @@ def athlete_rows(team: dict[str, Any], styles: dict[str, ParagraphStyle]) -> lis
         Paragraph("<b>選手</b>", styles["cell"]),
         Paragraph("<b>学年</b>", styles["cell"]),
         Paragraph("<b>駅伝</b>", styles["cell"]),
-        Paragraph("<b>目安</b>", styles["cell"]),
         Paragraph("<b>800 SB/直近</b>", styles["cell"]),
         Paragraph("<b>1000 SB/直近</b>", styles["cell"]),
         Paragraph("<b>1500 SB/直近</b>", styles["cell"]),
         Paragraph("<b>3000 SB/直近</b>", styles["cell"]),
-        Paragraph("<b>換算メモ</b>", styles["cell"]),
     ]
     rows = [header]
     for ath in team.get("athletes") or []:
@@ -246,7 +244,6 @@ def athlete_rows(team: dict[str, Any], styles: dict[str, ParagraphStyle]) -> lis
                 return Paragraph("—", styles["cell_small"])
             return Paragraph("<br/>".join(parts), styles["cell_small"])
 
-        est = ath.get("ekiden_estimate") or {}
         grade = ath.get("grade")
         rows.append(
             [
@@ -254,12 +251,10 @@ def athlete_rows(team: dict[str, Any], styles: dict[str, ParagraphStyle]) -> lis
                 Paragraph(escape(ath.get("name") or ""), styles["cell"]),
                 Paragraph("" if grade in (None, "") else str(grade), styles["cell"]),
                 Paragraph(escape(ath.get("ekiden_mark") or "—"), styles["cell"]),
-                Paragraph(escape(est.get("estimated_mark") or "—"), styles["cell"]),
                 pair("800m"),
                 pair("1000m"),
                 pair("1500m"),
                 pair("3000m"),
-                Paragraph(escape(est.get("note") or "—"), styles["cell_small"]),
             ]
         )
     return rows
@@ -290,15 +285,13 @@ def year_section(yblock: dict[str, Any], styles: dict[str, ParagraphStyle], font
 
     col_widths = [
         8 * mm,
-        22 * mm,
+        24 * mm,
         10 * mm,
-        14 * mm,
-        14 * mm,
-        25 * mm,
-        25 * mm,
-        25 * mm,
-        25 * mm,
-        45 * mm,
+        16 * mm,
+        32 * mm,
+        32 * mm,
+        32 * mm,
+        32 * mm,
     ]
 
     for team in yblock.get("teams") or []:

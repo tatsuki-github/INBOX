@@ -302,7 +302,10 @@ def test_pdf_generation_and_same_mark_labels() -> None:
         },
         styles,
     )
-    text = rows[1][5].getPlainText()
+    header_text = "".join(cell.getPlainText() for cell in rows[0])
+    assert "目安" not in header_text
+    assert "換算メモ" not in header_text
+    text = rows[1][4].getPlainText()
     assert "SB 2:30.00" in text
     assert "直 2:30.00" in text
     assert shorten_url("https://example.com/path") == "example.com/path"

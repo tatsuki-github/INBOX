@@ -568,7 +568,13 @@ def build_joined() -> dict[str, Any]:
             "missing_years": top4.get("missing_years") or top4.get("meta", {}).get("missing_years") or [2014],
             "verification": top4.get("meta", {}).get("verification") or {},
             "stats": stats,
-            "guide_note": "駅伝目安はトラック記録の簡易距離換算であり、コース・気象・タスキ条件は含みません。",
+            "guide_note": (
+                "「駅伝」は大会当日の区間走結果（道路コース）です。女子は1〜5区がそれぞれ"
+                "約3.0km・1.855km・2.0km・2.0km・3.0kmで、トラック種目（800m/1000m/1500m/3000m）"
+                "とは距離・路面・気象・タスキ条件が異なります。トラックSB/直近は同年の走力指標として"
+                "並記していますが、短い種目が強い選手ほど長い区間では相対的に伸び、逆も起こります。"
+                "数式による換算ではなく、実際の駅伝タイムとトラック走力の両方を見て判断してください。"
+            ),
             "drive_source_note": (
                 "駅伝記録は Google Drive「荒玉駅伝歴代」の結果画像と全セルを目視照合済み。"
                 "ただし2014年女子の原画像は同フォルダ内で確認できず、未掲載。"
