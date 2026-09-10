@@ -365,6 +365,13 @@ def pick_sb(records: list[dict[str, Any]], seasons: list[str], event: str) -> di
             and r.get("is_sb") is True
         ]
         if cands:
+            csv_cands = [
+                record
+                for record in cands
+                if str(record.get("source") or "").startswith("by_year_")
+            ]
+            if csv_cands:
+                cands = csv_cands
             return min(cands, key=lambda r: r["seconds"])
     return None
 

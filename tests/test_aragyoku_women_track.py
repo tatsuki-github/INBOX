@@ -201,6 +201,35 @@ def test_non_adopted_record_is_not_reported_as_sb() -> None:
     assert pick_recent(records, ["2025"], "800m")["mark"] == "2:20.00"
 
 
+def test_same_year_csv_is_preferred_over_legacy_aggregate() -> None:
+    records = [
+        {
+            "source": "wide_sb",
+            "event": "1500m",
+            "season": "2025",
+            "seconds": 300.0,
+            "mark": "5:00.00",
+            "school": "玉名中",
+            "grade": "",
+            "is_sb": True,
+        },
+        {
+            "source": "by_year_2025",
+            "event": "1500m",
+            "season": "2025",
+            "seconds": 301.0,
+            "mark": "5:01.00",
+            "school": "玉名中",
+            "grade": "3",
+            "is_sb": True,
+        },
+    ]
+    selected = pick_sb(records, ["2025"], "1500m")
+    assert selected is not None
+    assert selected["source"] == "by_year_2025"
+    assert selected["grade"] == "3"
+
+
 def test_grade_evidence_excludes_same_name_different_athlete() -> None:
     records = [
         {
