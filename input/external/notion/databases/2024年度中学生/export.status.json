@@ -1,0 +1,16 @@
+{
+  "database": "2024年度中学生",
+  "row_count": 6922,
+  "full_view_row_count": 6922,
+  "sb_row_count": 2460,
+  "complete": true,
+  "partial": false,
+  "has_more": false,
+  "next_cursor": null,
+  "sb_view_complete": true,
+  "rows_content": "all_fetched",
+  "expected_total_approx": 6922,
+  "expected_sb_approx": 2460,
+  "note": "全て view paginated to completion via Notion MCP view mode (page_size=100).",
+  "exportedAt": "2026-09-10T10:48:41Z"
+}
