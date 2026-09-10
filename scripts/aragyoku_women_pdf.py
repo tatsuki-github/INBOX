@@ -173,7 +173,8 @@ def cover_page(data: dict[str, Any], styles: dict[str, ParagraphStyle]) -> list[
     story.append(
         Paragraph(
             "タイムの青字は大会結果URLへのリンクです。クリックでブラウザが開きます。"
-            " 古い年度は中学生SB DBに未収録のため空欄になります。",
+            " 2012〜2023年は利用可能なトラック記録資料がないため空欄です。"
+            " 2025年のトラックDBは収録途中です。",
             styles["note"],
         )
     )
@@ -195,6 +196,7 @@ def athlete_rows(team: dict[str, Any], styles: dict[str, ParagraphStyle]) -> lis
         Paragraph("<b>駅伝</b>", styles["cell"]),
         Paragraph("<b>目安</b>", styles["cell"]),
         Paragraph("<b>800 SB/直近</b>", styles["cell"]),
+        Paragraph("<b>1000 SB/直近</b>", styles["cell"]),
         Paragraph("<b>1500 SB/直近</b>", styles["cell"]),
         Paragraph("<b>3000 SB/直近</b>", styles["cell"]),
         Paragraph("<b>換算メモ</b>", styles["cell"]),
@@ -238,6 +240,7 @@ def athlete_rows(team: dict[str, Any], styles: dict[str, ParagraphStyle]) -> lis
                 Paragraph(escape(ath.get("ekiden_mark") or "—"), styles["cell"]),
                 Paragraph(escape(est.get("estimated_mark") or "—"), styles["cell"]),
                 pair("800m"),
+                pair("1000m"),
                 pair("1500m"),
                 pair("3000m"),
                 Paragraph(escape(est.get("note") or "—"), styles["cell_small"]),
@@ -258,7 +261,7 @@ def year_section(yblock: dict[str, Any], styles: dict[str, ParagraphStyle], font
     story.append(Paragraph(escape(title), styles["h1"]))
     notes = []
     if conf:
-        notes.append(f"OCR信頼度: {conf}")
+        notes.append(f"画像照合: {conf}")
     if drive_id:
         drive_url = f"https://drive.google.com/file/d/{drive_id}/view"
         href = escape(drive_url, {'"': "&quot;"})
@@ -269,7 +272,18 @@ def year_section(yblock: dict[str, Any], styles: dict[str, ParagraphStyle], font
     if notes:
         story.append(Paragraph(" ／ ".join(notes), styles["note"]))
 
-    col_widths = [8 * mm, 22 * mm, 10 * mm, 14 * mm, 14 * mm, 28 * mm, 28 * mm, 28 * mm, 55 * mm]
+    col_widths = [
+        8 * mm,
+        22 * mm,
+        10 * mm,
+        14 * mm,
+        14 * mm,
+        25 * mm,
+        25 * mm,
+        25 * mm,
+        25 * mm,
+        45 * mm,
+    ]
 
     for team in yblock.get("teams") or []:
         school = team.get("school") or ""
@@ -310,6 +324,19 @@ def year_section(yblock: dict[str, Any], styles: dict[str, ParagraphStyle], font
     return story
 
 
+def missing_year_section(year: int, styles: dict[str, ParagraphStyle]) -> list[Any]:
+    return [
+        Paragraph(f"{year}年 玉名荒尾中体連駅伝・女子", styles["h1"]),
+        Paragraph(
+            "Google Drive「荒玉駅伝歴代」および公開Web情報を確認しましたが、"
+            "女子結果の原資料を確認できませんでした。"
+            "検証不能な値を補完せず、この年の上位4校・各区間記録・トラック記録は未掲載とします。",
+            styles["body"],
+        ),
+        PageBreak(),
+    ]
+
+
 def build_pdf(data: dict[str, Any], output: Path, font_path: Path | None = None) -> Path:
     font_name = register_font(font_path)
     styles = build_styles(font_name)
@@ -326,8 +353,14 @@ def build_pdf(data: dict[str, Any], output: Path, font_path: Path | None = None)
     )
     story: list[Any] = []
     story.extend(cover_page(data, styles))
-    for yblock in data.get("years") or []:
-        story.extend(year_section(yblock, styles, font_name))
+    year_blocks = {int(y["year"]): y for y in data.get("years") or []}
+    missing_years = {int(year) for year in data.get("meta", {}).get("missing_years") or []}
+    all_years = sorted(set(year_blocks) | missing_years, reverse=True)
+    for year in all_years:
+        if year in year_blocks:
+            story.extend(year_section(year_blocks[year], styles, font_name))
+        else:
+            story.extend(missing_year_section(year, styles))
     if story and isinstance(story[-1], PageBreak):
         story.pop()
     doc.build(story)

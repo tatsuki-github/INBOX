@@ -78,7 +78,10 @@ data = {
             {"leg": 4, "distance_km": 2.0},
             {"leg": 5, "distance_km": 3.0},
         ],
-        "note": "OCR from Drive folder 荒玉駅伝歴代; names/times may need later correction",
+        "note": (
+            "Google Drive「荒玉駅伝歴代」の各年結果画像を、"
+            "順位・校名・総合・選手名・学年・区間・累積の全セルで目視照合"
+        ),
     },
     "years": {},
     "missing_years": [2014],
@@ -138,7 +141,7 @@ data["years"]["2025"] = {
             ],
         ),
     ],
-    "confidence": "high",
+    "confidence": "verified",
     "ocr_notes": [
         "Names cross-checked with order sheet 1LKkiu1FBHQN7ANvHOB0xPWuR5UhT2q1T and totals anchors",
     ],
@@ -198,10 +201,10 @@ data["years"]["2024"] = {
             ],
         ),
     ],
-    "confidence": "high",
+    "confidence": "verified",
     "ocr_notes": [
         "Board date 令和6年10月18日 (photo filename is 20241016)",
-        "玉名 grades for 川原芽吹/内田愛祐 inferred as 1 from 2025 order sheet ages",
+        "全92セルを原画像と目視照合済み",
     ],
 }
 
@@ -259,10 +262,9 @@ data["years"]["2023"] = {
             ],
         ),
     ],
-    "confidence": "high",
+    "confidence": "verified",
     "ocr_notes": [
-        "荒尾四 2区 中尾杏朱 (OCR sometimes 彩朱)",
-        "玉名 5区 西澤葵: kanji from board reading; verify if needed",
+        "全92セルを原画像と目視照合済み",
     ],
 }
 
@@ -289,7 +291,7 @@ data["years"]["2022"] = {
             "43:31",
             [
                 leg(1, "松山悠南", 2, "10:09", "10:09"),
-                leg(2, "中尾杏朱", 1, "7:14", "17:23"),
+                leg(2, "中尾彩朱", 1, "7:14", "17:23"),
                 leg(3, "上田歩", 1, "7:27", "24:50"),
                 leg(4, "高田春陽", 1, "8:01", "32:51"),
                 leg(5, "嘉富雅", 3, "10:40", "43:31"),
@@ -320,7 +322,7 @@ data["years"]["2022"] = {
             ],
         ),
     ],
-    "confidence": "high",
+    "confidence": "verified",
     "ocr_notes": [
         "長洲 1区 西川侑里 9:46 is also listed as course record on later boards",
         "荒尾四 4区 高田春陽 (OCR sometimes 春璃)",
@@ -381,7 +383,7 @@ data["years"]["2021"] = {
             ],
         ),
     ],
-    "confidence": "high",
+    "confidence": "verified",
     "ocr_notes": [
         "荒尾四 3–4区 島添 (OCR garbled as 瀦添)",
         "菊水 4区 牧野菜々香: 香/番 OCR variants",
@@ -398,7 +400,7 @@ data["years"]["2020"] = {
             "玉名",
             "42:56",
             [
-                leg(1, "片山美瑞愛", 2, "10:30", "10:30"),
+                leg(1, "片山美璃愛", 2, "10:30", "10:30"),
                 leg(2, "平井咲良", 3, "6:22", "16:52"),
                 leg(3, "峠美咲希", 3, "7:04", "23:56"),
                 leg(4, "徳永理子", 2, "7:31", "31:27"),
@@ -442,8 +444,8 @@ data["years"]["2020"] = {
             ],
         ),
     ],
-    "confidence": "high",
-    "ocr_notes": [],
+    "confidence": "verified",
+    "ocr_notes": ["全92セルを原画像と目視照合済み"],
 }
 
 # --- 2019 ---
@@ -459,7 +461,7 @@ data["years"]["2019"] = {
                 leg(1, "堀愛菜", 3, "10:05", "10:05"),
                 leg(2, "松本明城", 3, "6:15", "16:20"),
                 leg(3, "田上未来", 3, "6:44", "23:04"),
-                leg(4, "山田侑奈", 3, "7:18", "30:22"),
+                leg(4, "山田侑奈", 2, "7:18", "30:22"),
                 leg(5, "峠美咲希", 2, "11:09", "41:31"),
             ],
         ),
@@ -500,12 +502,11 @@ data["years"]["2019"] = {
             ],
         ),
     ],
-    "confidence": "medium",
+    "confidence": "verified",
     "ocr_notes": [
         "Board date read as 令和元年11月16日 (some OCR said 11/14)",
         "腹栄 is historical school name (not in modern short-name list)",
-        "菊水 3–5区 names reconciled with 2018/2020 continuity (葉音/華/喬子)",
-        "山田侑奈 grade may be 2 or 3 on board; used 3",
+        "全92セルを原画像と目視照合済み",
     ],
 }
 
@@ -521,9 +522,9 @@ data["years"]["2018"] = {
             [
                 leg(1, "後藤凜", 2, "10:17", "10:17"),
                 leg(2, "松本明城", 2, "6:26", "16:43"),
-                leg(3, "濱崎麻那", 2, "6:52", "23:35"),
+                leg(3, "濱本麻那", 2, "6:52", "23:35"),
                 leg(4, "本田結里", 1, "7:25", "31:00"),
-                leg(5, "坂田未来", 2, "10:46", "41:46"),
+                leg(5, "坂上未来", 2, "10:46", "41:46"),
             ],
         ),
         team(
@@ -563,11 +564,9 @@ data["years"]["2018"] = {
             ],
         ),
     ],
-    "confidence": "medium",
+    "confidence": "verified",
     "ocr_notes": [
-        "玉名 1/3/4/5区 names partially garbled across OCR passes; best-guess after zoom crops",
-        "玉名 2区 松本明城 confirmed via multi-crop + 2017/2019 continuity",
-        "菊水/腹栄/荒尾四 names cross-checked with adjacent-year rosters",
+        "全92セルを原画像と目視照合済み",
         "腹栄 is historical school name",
     ],
 }
@@ -626,10 +625,10 @@ data["years"]["2017"] = {
             ],
         ),
     ],
-    "confidence": "high",
+    "confidence": "verified",
     "ocr_notes": [
         "岱明 4位 43:29 matches Notion 岱明 metadata",
-        "土山静里佳: 2016 continuity (OCR sometimes 萌里佳)",
+        "全92セルを原画像と目視照合済み",
     ],
 }
 
@@ -687,7 +686,7 @@ data["years"]["2016"] = {
             ],
         ),
     ],
-    "confidence": "high",
+    "confidence": "verified",
     "ocr_notes": [
         "荒尾三 4区 浦浜実里 6:42 became later course record",
         "岱明 4位 43:02 matches Notion metadata",
@@ -706,7 +705,7 @@ data["years"]["2015"] = {
             [
                 leg(1, "関知夏子", 3, "10:14", "10:14"),
                 leg(2, "田上綾乃", 3, "6:26", "16:40"),
-                leg(3, "笠井葉央", 3, "6:54", "23:34"),
+                leg(3, "笠井菜央", 3, "6:54", "23:34"),
                 leg(4, "清田真帆", 1, "7:06", "30:40"),
                 leg(5, "塩山桃花", 2, "10:51", "41:31"),
             ],
@@ -748,7 +747,7 @@ data["years"]["2015"] = {
             ],
         ),
     ],
-    "confidence": "high",
+    "confidence": "verified",
     "ocr_notes": [
         "岱明 4位 43:36 matches Notion metadata",
         "玉名 1区 関知夏子: leading kanji slightly cropped on some photos",
@@ -809,11 +808,11 @@ data["years"]["2013"] = {
             ],
         ),
     ],
-    "confidence": "medium",
+    "confidence": "verified",
     "ocr_notes": [
         "Printed date fields blank on board photo",
         "南関 and 荒尾三 both 42:51; board lists 南関 as 3rd",
-        "Some given-name kanji (碩結里/森澤耶乃等) may need later correction",
+        "全92セルを原画像と目視照合済み",
     ],
 }
 
@@ -852,8 +851,8 @@ data["years"]["2012"] = {
             "42:59",
             [
                 leg(1, "東美瑠希", 2, "10:45", "10:45"),
-                leg(2, "古本結理", 2, "6:55", "17:40"),
-                leg(3, "吉岡憂希", 2, "6:51", "24:31"),
+                leg(2, "吉本絵理", 2, "6:55", "17:40"),
+                leg(3, "吉岡愛希", 2, "6:51", "24:31"),
                 leg(4, "谷本アンナ", 3, "7:17", "31:48"),
                 leg(5, "伊木田優衣", 2, "11:11", "42:59"),
             ],
@@ -864,19 +863,18 @@ data["years"]["2012"] = {
             "43:24",
             [
                 leg(1, "嶋永有紗", 2, "10:21", "10:21"),
-                leg(2, "津留有希子", 2, "7:13", "17:34"),
+                leg(2, "津留有希子", 3, "7:13", "17:34"),
                 leg(3, "嶋村梨那", 1, "6:56", "24:30"),
                 leg(4, "武田彩花", 1, "7:16", "31:46"),
                 leg(5, "原有紀", 2, "11:38", "43:24"),
             ],
         ),
     ],
-    "confidence": "medium",
+    "confidence": "verified",
     "ocr_notes": [
         "Printed date fields blank on board photo",
         "岱明 2位 42:41 matches Notion metadata",
-        "玉名 5区 上戸真鈴 aligned with 2013 reading (OCR sometimes 貴誇)",
-        "荒尾海陽 4区 谷本アンナ / 5区 伊木田優衣: verify kanji",
+        "全92セルを原画像と目視照合済み",
     ],
 }
 
@@ -893,7 +891,7 @@ def main() -> None:
 
     csv_path = OUT_DIR / "women_top4_athletes.csv"
     with csv_path.open("w", encoding="utf-8", newline="") as f:
-        w = csv.writer(f)
+        w = csv.writer(f, lineterminator="\n")
         w.writerow(
             [
                 "year",

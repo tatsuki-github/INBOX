@@ -21,12 +21,12 @@
     ],
     "stats": {
       "athletes": 260,
-      "with_any_track": 46,
-      "with_sb": 46,
-      "with_url": 46
+      "with_any_track": 29,
+      "with_sb": 29,
+      "with_url": 29
     },
     "guide_note": "駅伝目安はトラック記録の簡易距離換算であり、コース・気象・タスキ条件は含みません。",
-    "drive_source_note": "区間オーダーは Google Drive「荒玉駅伝歴代」結果画像の OCR に基づく。",
+    "drive_source_note": "駅伝記録は Google Drive「荒玉駅伝歴代」の結果画像と全セルを目視照合済み。ただし2014年女子の原画像は同フォルダ内で確認できず、未掲載。トラック記録は同じ暦年のみを参照し、2012〜2023年は利用可能な記録資料がないため空欄。2024年は収録DB、2025年は収録途中のDBおよびSB一覧に基づく。",
     "sources": {
       "ekiden": "input/aragyoku/women_top4_2012_2025.json",
       "wide_sb": "input/external/sb/middle-school/wide/中学生SB.csv",
@@ -43,14 +43,12 @@
     {
       "year": 2025,
       "sb_seasons": [
-        "2026",
-        "2025",
-        "2024"
+        "2025"
       ],
       "date": "2025-10-15",
       "venue": null,
       "source_file_id": "1-qackGYGwVuX6LikAryfiCLRmwgNVkWK",
-      "source_confidence": null,
+      "source_confidence": "verified",
       "teams": [
         {
           "rank": 1,
@@ -68,53 +66,37 @@
               "track_events": {
                 "800m": {
                   "sb": {
-                    "mark": "2:38.25",
-                    "seconds": 158.25,
+                    "mark": "2:23.70",
+                    "seconds": 143.7,
                     "meet": null,
-                    "meet_date": "2026/07/19",
-                    "url": "http://www.kumariku.org/26/26,7,18chutairen/rel136.html",
-                    "season": "2026",
-                    "source": "by_year_2026"
+                    "meet_date": null,
+                    "url": "http://www.kumariku.org/25/25,7,19chugaku/rel171.html",
+                    "season": "2025",
+                    "source": "wide_sb"
                   },
-                  "recent": {
-                    "mark": "2:38.25",
-                    "seconds": 158.25,
-                    "meet": null,
-                    "meet_date": "2026/07/19",
-                    "url": "http://www.kumariku.org/26/26,7,18chutairen/rel136.html",
-                    "season": "2026",
-                    "source": "by_year_2026"
-                  }
+                  "recent": null
                 },
                 "1500m": {
                   "sb": {
-                    "mark": "5:07.72",
-                    "seconds": 307.72,
-                    "meet": "第７７回熊本市中長距離陸上競技選手権大会",
-                    "meet_date": "2024/11/23",
-                    "url": "http://www.kcrk.jp/i-mode/kiroku/tyuutyoukyori/77/PC/rel072.html",
-                    "season": "2024",
-                    "source": "by_year_2024"
+                    "mark": "4:59.07",
+                    "seconds": 299.07,
+                    "meet": null,
+                    "meet_date": null,
+                    "url": "http://www.kcrk.jp/i-mode/kiroku/269/PC/rel125.html",
+                    "season": "2025",
+                    "source": "wide_sb"
                   },
-                  "recent": {
-                    "mark": "5:07.72",
-                    "seconds": 307.72,
-                    "meet": "第７７回熊本市中長距離陸上競技選手権大会",
-                    "meet_date": "2024/11/23",
-                    "url": "http://www.kcrk.jp/i-mode/kiroku/tyuutyoukyori/77/PC/rel072.html",
-                    "season": "2024",
-                    "source": "by_year_2024"
-                  }
+                  "recent": null
                 }
               },
               "ekiden_estimate": {
                 "from_event": "1500m",
-                "from_mark": "5:07.72",
-                "from_seconds": 307.72,
+                "from_mark": "4:59.07",
+                "from_seconds": 299.07,
                 "factor": 2.15,
-                "estimated_seconds": 661.6,
-                "estimated_mark": "11:01.60",
-                "note": "1500m 5:07.72 × 2.15 ≈ 11:01.60（簡易換算）"
+                "estimated_seconds": 643.0,
+                "estimated_mark": "10:43.00",
+                "note": "1500m 4:59.07 × 2.15 ≈ 10:43.00（簡易換算）"
               },
               "match_count": 11
             },
@@ -130,11 +112,11 @@
                   "sb": {
                     "mark": "2:30.47",
                     "seconds": 150.47,
-                    "meet": "第２６９回　熊本市陸上競技記録会",
-                    "meet_date": "2025/08/09",
+                    "meet": null,
+                    "meet_date": null,
                     "url": "http://www.kcrk.jp/i-mode/kiroku/269/PC/rel113.html",
                     "season": "2025",
-                    "source": "by_year_2025"
+                    "source": "wide_sb"
                   },
                   "recent": {
                     "mark": "2:31.47",
@@ -150,11 +132,11 @@
                   "sb": {
                     "mark": "5:07.92",
                     "seconds": 307.92,
-                    "meet": "中学選手権",
-                    "meet_date": "2025/06/07",
+                    "meet": null,
+                    "meet_date": null,
                     "url": "http://www.kumariku.org/25/25,6,7chugaku/rel030.html",
                     "season": "2025",
-                    "source": "by_year_2025"
+                    "source": "wide_sb"
                   },
                   "recent": {
                     "mark": "5:10.73",
@@ -188,53 +170,37 @@
               "track_events": {
                 "800m": {
                   "sb": {
-                    "mark": "2:19.37",
-                    "seconds": 139.37,
-                    "meet": "令和6年度　熊本県中学校総合体育大会　陸上競技大会",
-                    "meet_date": "2024/07/21",
-                    "url": "http://www.kumariku.org/24/24,7,20chutairen/rel189.html",
-                    "season": "2024",
-                    "source": "by_year_2024"
+                    "mark": "2:20.11",
+                    "seconds": 140.11,
+                    "meet": null,
+                    "meet_date": null,
+                    "url": "http://www.kumariku.org/25/25,7,19chugaku/rel213.html",
+                    "season": "2025",
+                    "source": "wide_sb"
                   },
-                  "recent": {
-                    "mark": "2:26.23",
-                    "seconds": 146.23,
-                    "meet": "第７７回熊本市中長距離陸上競技選手権大会",
-                    "meet_date": "2024/11/23",
-                    "url": "http://www.kcrk.jp/i-mode/kiroku/tyuutyoukyori/77/PC/rel055.html",
-                    "season": "2024",
-                    "source": "notion_2024"
-                  }
+                  "recent": null
                 },
                 "1500m": {
                   "sb": {
-                    "mark": "5:06.81",
-                    "seconds": 306.81,
-                    "meet": "2024.7.6　第二回熊本県長距離記録会",
-                    "meet_date": "2024/07/06",
-                    "url": "http://www.kumariku.org/24/24,7,6long&jump/rel020.html",
-                    "season": "2024",
-                    "source": "by_year_2024"
+                    "mark": "5:08.30",
+                    "seconds": 308.3,
+                    "meet": null,
+                    "meet_date": null,
+                    "url": "http://www.kumariku.org/25/25,7,5long&jump/rel020.html",
+                    "season": "2025",
+                    "source": "wide_sb"
                   },
-                  "recent": {
-                    "mark": "5:13.64",
-                    "seconds": 313.64,
-                    "meet": "2024.12.7　第四回熊本県長距離記録会",
-                    "meet_date": "2024/12/07",
-                    "url": "http://www.kumariku.org/24/24,12,7long/rel022.html",
-                    "season": "2024",
-                    "source": "notion_2024"
-                  }
+                  "recent": null
                 }
               },
               "ekiden_estimate": {
                 "from_event": "1500m",
-                "from_mark": "5:06.81",
-                "from_seconds": 306.81,
+                "from_mark": "5:08.30",
+                "from_seconds": 308.3,
                 "factor": 1.4,
-                "estimated_seconds": 429.5,
-                "estimated_mark": "7:09.53",
-                "note": "1500m 5:06.81 × 1.4 ≈ 7:09.53（簡易換算）"
+                "estimated_seconds": 431.6,
+                "estimated_mark": "7:11.62",
+                "note": "1500m 5:08.30 × 1.4 ≈ 7:11.62（簡易換算）"
               },
               "match_count": 18
             },
@@ -276,75 +242,27 @@
               "ekiden_seconds": 660.0,
               "cumulative": "11:00",
               "track_events": {
-                "800m": {
-                  "sb": {
-                    "mark": "2:35.52",
-                    "seconds": 155.52,
-                    "meet": "第２５回谷口睦生杯八代選手権大会",
-                    "meet_date": "2024/04/28",
-                    "url": "http://www.kumariku.org/24/24,4,28yatsushiro/rel115.html",
-                    "season": "2024",
-                    "source": "by_year_2024"
-                  },
-                  "recent": {
-                    "mark": "2:35.52",
-                    "seconds": 155.52,
-                    "meet": "第２５回谷口睦生杯八代選手権大会",
-                    "meet_date": "2024/04/28",
-                    "url": "http://www.kumariku.org/24/24,4,28yatsushiro/rel115.html",
-                    "season": "2024",
-                    "source": "by_year_2024"
-                  }
-                },
                 "1500m": {
                   "sb": {
-                    "mark": "4:53.03",
-                    "seconds": 293.03,
-                    "meet": "2024.7.6　第二回熊本県長距離記録会",
-                    "meet_date": "2024/07/06",
-                    "url": "http://www.kumariku.org/24/24,7,6long&jump/rel020.html",
-                    "season": "2024",
-                    "source": "by_year_2024"
+                    "mark": "5:02.49",
+                    "seconds": 302.49,
+                    "meet": null,
+                    "meet_date": null,
+                    "url": "http://www.kumariku.org/25/25,4,26kensen/rel060.html",
+                    "season": "2025",
+                    "source": "wide_sb"
                   },
-                  "recent": {
-                    "mark": "4:58.78",
-                    "seconds": 298.78,
-                    "meet": "令和6年度　熊本県中学校総合体育大会　陸上競技大会",
-                    "meet_date": "2024/07/20",
-                    "url": "http://www.kumariku.org/24/24,7,20chutairen/rel155.html",
-                    "season": "2024",
-                    "source": "notion_2024"
-                  }
-                },
-                "3000m": {
-                  "sb": {
-                    "mark": "10:44.15",
-                    "seconds": 644.15,
-                    "meet": "2024.12.7　第四回熊本県長距離記録会",
-                    "meet_date": "2024/12/07",
-                    "url": "http://www.kumariku.org/24/24,12,7long/rel024.html",
-                    "season": "2024",
-                    "source": "by_year_2024"
-                  },
-                  "recent": {
-                    "mark": "10:44.15",
-                    "seconds": 644.15,
-                    "meet": "2024.12.7　第四回熊本県長距離記録会",
-                    "meet_date": "2024/12/07",
-                    "url": "http://www.kumariku.org/24/24,12,7long/rel024.html",
-                    "season": "2024",
-                    "source": "by_year_2024"
-                  }
+                  "recent": null
                 }
               },
               "ekiden_estimate": {
-                "from_event": "3000m",
-                "from_mark": "10:44.15",
-                "from_seconds": 644.15,
-                "factor": 1.0,
-                "estimated_seconds": 644.1,
-                "estimated_mark": "10:44.15",
-                "note": "3000m 10:44.15 × 1.0 ≈ 10:44.15（簡易換算）"
+                "from_event": "1500m",
+                "from_mark": "5:02.49",
+                "from_seconds": 302.49,
+                "factor": 2.15,
+                "estimated_seconds": 650.4,
+                "estimated_mark": "10:50.35",
+                "note": "1500m 5:02.49 × 2.15 ≈ 10:50.35（簡易換算）"
               },
               "match_count": 12
             },
@@ -358,53 +276,25 @@
               "track_events": {
                 "800m": {
                   "sb": {
-                    "mark": "2:41.28",
-                    "seconds": 161.28,
-                    "meet": "第４５回熊本市陸上競技選手権大会中長距離の部",
-                    "meet_date": "2026/04/18",
-                    "url": "http://www.kcrk.jp/i-mode/kiroku/sisen_i/450418/PC/rel005.html",
-                    "season": "2026",
-                    "source": "by_year_2026"
-                  },
-                  "recent": {
-                    "mark": "2:41.35",
-                    "seconds": 161.35,
+                    "mark": "2:31.79",
+                    "seconds": 151.79,
                     "meet": null,
-                    "meet_date": "2026/07/19",
-                    "url": "http://www.kumariku.org/26/26,7,18chutairen/rel134.html",
-                    "season": "2026",
-                    "source": "notion_2026"
-                  }
-                },
-                "1500m": {
-                  "sb": {
-                    "mark": "5:24.65",
-                    "seconds": 324.65,
-                    "meet": "2024.7.6　第二回熊本県長距離記録会",
-                    "meet_date": "2024/07/06",
-                    "url": "http://www.kumariku.org/24/24,7,6long&jump/rel019.html",
-                    "season": "2024",
-                    "source": "by_year_2024"
+                    "meet_date": null,
+                    "url": "http://www.kcrk.jp/i-mode/kiroku/269/PC/rel114.html",
+                    "season": "2025",
+                    "source": "wide_sb"
                   },
-                  "recent": {
-                    "mark": "5:24.65",
-                    "seconds": 324.65,
-                    "meet": "2024.7.6　第二回熊本県長距離記録会",
-                    "meet_date": "2024/07/06",
-                    "url": "http://www.kumariku.org/24/24,7,6long&jump/rel019.html",
-                    "season": "2024",
-                    "source": "by_year_2024"
-                  }
+                  "recent": null
                 }
               },
               "ekiden_estimate": {
-                "from_event": "1500m",
-                "from_mark": "5:24.65",
-                "from_seconds": 324.65,
-                "factor": 1.28,
-                "estimated_seconds": 415.6,
-                "estimated_mark": "6:55.55",
-                "note": "1500m 5:24.65 × 1.28 ≈ 6:55.55（簡易換算）"
+                "from_event": "800m",
+                "from_mark": "2:31.79",
+                "from_seconds": 151.79,
+                "factor": 2.5,
+                "estimated_seconds": 379.5,
+                "estimated_mark": "6:19.47",
+                "note": "800m 2:31.79 × 2.5 ≈ 6:19.47（簡易換算）"
               },
               "match_count": 14
             },
@@ -418,23 +308,15 @@
               "track_events": {
                 "800m": {
                   "sb": {
-                    "mark": "2:28.50",
-                    "seconds": 148.5,
+                    "mark": "2:32.17",
+                    "seconds": 152.17,
                     "meet": null,
-                    "meet_date": "2026/07/19",
-                    "url": "http://www.kumariku.org/26/26,7,18chutairen/rel130.html",
-                    "season": "2026",
-                    "source": "by_year_2026"
+                    "meet_date": null,
+                    "url": "http://www.kumariku.org/25/25,7,19chugaku/rel168.html",
+                    "season": "2025",
+                    "source": "wide_sb"
                   },
-                  "recent": {
-                    "mark": "2:28.50",
-                    "seconds": 148.5,
-                    "meet": null,
-                    "meet_date": "2026/07/19",
-                    "url": "http://www.kumariku.org/26/26,7,18chutairen/rel130.html",
-                    "season": "2026",
-                    "source": "by_year_2026"
-                  }
+                  "recent": null
                 },
                 "1500m": {
                   "sb": {
@@ -443,18 +325,10 @@
                     "meet": null,
                     "meet_date": null,
                     "url": "http://www.kumariku.org/25/25,7,5long&jump/rel019.html",
-                    "season": null,
+                    "season": "2025",
                     "source": "wide_sb"
                   },
-                  "recent": {
-                    "mark": "5:16.58",
-                    "seconds": 316.58,
-                    "meet": null,
-                    "meet_date": null,
-                    "url": "http://www.kumariku.org/25/25,7,5long&jump/rel019.html",
-                    "season": null,
-                    "source": "wide_sb"
-                  }
+                  "recent": null
                 }
               },
               "ekiden_estimate": {
@@ -478,53 +352,37 @@
               "track_events": {
                 "800m": {
                   "sb": {
-                    "mark": "2:33.22",
-                    "seconds": 153.22,
+                    "mark": "2:31.85",
+                    "seconds": 151.85,
                     "meet": null,
-                    "meet_date": "2026/05/24",
-                    "url": "http://www.kumariku.org/26/26,5,23chugaku/rel174.html",
-                    "season": "2026",
-                    "source": "by_year_2026"
+                    "meet_date": null,
+                    "url": "http://www.kcrk.jp/i-mode/kiroku/269/PC/rel113.html",
+                    "season": "2025",
+                    "source": "wide_sb"
                   },
-                  "recent": {
-                    "mark": "2:33.22",
-                    "seconds": 153.22,
-                    "meet": null,
-                    "meet_date": "2026/05/24",
-                    "url": "http://www.kumariku.org/26/26,5,23chugaku/rel174.html",
-                    "season": "2026",
-                    "source": "by_year_2026"
-                  }
+                  "recent": null
                 },
                 "1500m": {
                   "sb": {
-                    "mark": "5:11.61",
-                    "seconds": 311.61,
-                    "meet": "令和８年度　熊本陸上競技選手権大会　兼　国スポ一次予選会",
-                    "meet_date": "2026/04/25",
-                    "url": "http://www.kumariku.org/26/26,4,25kensen/rel051.html",
-                    "season": "2026",
-                    "source": "by_year_2026"
-                  },
-                  "recent": {
-                    "mark": "5:18.00",
-                    "seconds": 318.0,
+                    "mark": "5:06.86",
+                    "seconds": 306.86,
                     "meet": null,
-                    "meet_date": "2026/07/18",
-                    "url": "http://www.kumariku.org/26/26,7,18chutairen/rel138.html",
-                    "season": "2026",
-                    "source": "notion_2026"
-                  }
+                    "meet_date": null,
+                    "url": "http://www.kumariku.org/25/25,7,19chugaku/rel180.html",
+                    "season": "2025",
+                    "source": "wide_sb"
+                  },
+                  "recent": null
                 }
               },
               "ekiden_estimate": {
                 "from_event": "1500m",
-                "from_mark": "5:11.61",
-                "from_seconds": 311.61,
+                "from_mark": "5:06.86",
+                "from_seconds": 306.86,
                 "factor": 1.4,
-                "estimated_seconds": 436.3,
-                "estimated_mark": "7:16.25",
-                "note": "1500m 5:11.61 × 1.4 ≈ 7:16.25（簡易換算）"
+                "estimated_seconds": 429.6,
+                "estimated_mark": "7:09.60",
+                "note": "1500m 5:06.86 × 1.4 ≈ 7:09.60（簡易換算）"
               },
               "match_count": 21
             },
@@ -538,53 +396,37 @@
               "track_events": {
                 "800m": {
                   "sb": {
-                    "mark": "2:34.12",
-                    "seconds": 154.12,
-                    "meet": "第２５回谷口睦生杯八代選手権大会",
-                    "meet_date": "2024/04/28",
-                    "url": "http://www.kumariku.org/24/24,4,28yatsushiro/rel115.html",
-                    "season": "2024",
-                    "source": "by_year_2024"
+                    "mark": "2:34.59",
+                    "seconds": 154.59,
+                    "meet": null,
+                    "meet_date": null,
+                    "url": "http://www.kcrk.jp/i-mode/kiroku/sisen_i/44/PC/rel007.html",
+                    "season": "2025",
+                    "source": "wide_sb"
                   },
-                  "recent": {
-                    "mark": "2:34.12",
-                    "seconds": 154.12,
-                    "meet": "第２５回谷口睦生杯八代選手権大会",
-                    "meet_date": "2024/04/28",
-                    "url": "http://www.kumariku.org/24/24,4,28yatsushiro/rel115.html",
-                    "season": "2024",
-                    "source": "by_year_2024"
-                  }
+                  "recent": null
                 },
                 "1500m": {
                   "sb": {
-                    "mark": "5:01.59",
-                    "seconds": 301.59,
-                    "meet": "令和6年度　熊本県中学校総合体育大会　陸上競技大会",
-                    "meet_date": "2024/07/20",
-                    "url": "http://www.kumariku.org/24/24,7,20chutairen/rel155.html",
-                    "season": "2024",
-                    "source": "by_year_2024"
+                    "mark": "4:58.31",
+                    "seconds": 298.31,
+                    "meet": null,
+                    "meet_date": null,
+                    "url": "http://www.kumariku.org/25/25,6,7chugaku/rel030.html",
+                    "season": "2025",
+                    "source": "wide_sb"
                   },
-                  "recent": {
-                    "mark": "5:01.59",
-                    "seconds": 301.59,
-                    "meet": "令和6年度　熊本県中学校総合体育大会　陸上競技大会",
-                    "meet_date": "2024/07/20",
-                    "url": "http://www.kumariku.org/24/24,7,20chutairen/rel155.html",
-                    "season": "2024",
-                    "source": "by_year_2024"
-                  }
+                  "recent": null
                 }
               },
               "ekiden_estimate": {
                 "from_event": "1500m",
-                "from_mark": "5:01.59",
-                "from_seconds": 301.59,
+                "from_mark": "4:58.31",
+                "from_seconds": 298.31,
                 "factor": 2.15,
-                "estimated_seconds": 648.4,
-                "estimated_mark": "10:48.42",
-                "note": "1500m 5:01.59 × 2.15 ≈ 10:48.42（簡易換算）"
+                "estimated_seconds": 641.4,
+                "estimated_mark": "10:41.37",
+                "note": "1500m 4:58.31 × 2.15 ≈ 10:41.37（簡易換算）"
               },
               "match_count": 11
             }
@@ -606,33 +448,25 @@
               "track_events": {
                 "800m": {
                   "sb": {
-                    "mark": "2:29.99",
-                    "seconds": 149.99,
-                    "meet": "令和6年度　第38回熊本県中学校陸上競技選手権大会",
-                    "meet_date": "2024/06/09",
-                    "url": "http://www.kumariku.org/24/24,6,08chugaku/rel124.html",
-                    "season": "2024",
-                    "source": "by_year_2024"
+                    "mark": "2:26.91",
+                    "seconds": 146.91,
+                    "meet": null,
+                    "meet_date": null,
+                    "url": "http://www.kumariku.org/25/25,6,28tsushin/rel181.html",
+                    "season": "2025",
+                    "source": "wide_sb"
                   },
-                  "recent": {
-                    "mark": "2:37.97",
-                    "seconds": 157.97,
-                    "meet": "陸協春季熊本陸協記録会",
-                    "meet_date": "2025/03/22",
-                    "url": "http://www.kumariku.org/24/25,3,22rikkyo/rel253.html",
-                    "season": "2024",
-                    "source": "notion_2024"
-                  }
+                  "recent": null
                 }
               },
               "ekiden_estimate": {
                 "from_event": "800m",
-                "from_mark": "2:29.99",
-                "from_seconds": 149.99,
+                "from_mark": "2:26.91",
+                "from_seconds": 146.91,
                 "factor": 4.3,
-                "estimated_seconds": 645.0,
-                "estimated_mark": "10:44.96",
-                "note": "800m 2:29.99 × 4.3 ≈ 10:44.96（簡易換算）"
+                "estimated_seconds": 631.7,
+                "estimated_mark": "10:31.71",
+                "note": "800m 2:26.91 × 4.3 ≈ 10:31.71（簡易換算）"
               },
               "match_count": 7
             },
@@ -698,53 +532,37 @@
               "track_events": {
                 "800m": {
                   "sb": {
-                    "mark": "2:24.44",
-                    "seconds": 144.44,
+                    "mark": "2:23.44",
+                    "seconds": 143.44,
                     "meet": null,
-                    "meet_date": "2026/07/19",
-                    "url": "http://www.kumariku.org/26/26,7,18chutairen/rel134.html",
-                    "season": "2026",
-                    "source": "by_year_2026"
+                    "meet_date": null,
+                    "url": "http://www.kumariku.org/25/25,6,28tsushin/rel174.html",
+                    "season": "2025",
+                    "source": "wide_sb"
                   },
-                  "recent": {
-                    "mark": "2:24.44",
-                    "seconds": 144.44,
-                    "meet": null,
-                    "meet_date": "2026/07/19",
-                    "url": "http://www.kumariku.org/26/26,7,18chutairen/rel134.html",
-                    "season": "2026",
-                    "source": "by_year_2026"
-                  }
+                  "recent": null
                 },
                 "1500m": {
                   "sb": {
-                    "mark": "5:13.41",
-                    "seconds": 313.41,
+                    "mark": "5:01.74",
+                    "seconds": 301.74,
                     "meet": null,
-                    "meet_date": "2026/05/23",
-                    "url": "http://www.kumariku.org/26/26,5,23chugaku/rel160.html",
-                    "season": "2026",
-                    "source": "notion_2026"
+                    "meet_date": null,
+                    "url": "http://www.kcrk.jp/i-mode/kiroku/271/PC/rel060.html",
+                    "season": "2025",
+                    "source": "wide_sb"
                   },
-                  "recent": {
-                    "mark": "5:13.41",
-                    "seconds": 313.41,
-                    "meet": null,
-                    "meet_date": "2026/05/23",
-                    "url": "http://www.kumariku.org/26/26,5,23chugaku/rel160.html",
-                    "season": "2026",
-                    "source": "notion_2026"
-                  }
+                  "recent": null
                 }
               },
               "ekiden_estimate": {
                 "from_event": "1500m",
-                "from_mark": "5:13.41",
-                "from_seconds": 313.41,
+                "from_mark": "5:01.74",
+                "from_seconds": 301.74,
                 "factor": 2.15,
-                "estimated_seconds": 673.8,
-                "estimated_mark": "11:13.83",
-                "note": "1500m 5:13.41 × 2.15 ≈ 11:13.83（簡易換算）"
+                "estimated_seconds": 648.7,
+                "estimated_mark": "10:48.74",
+                "note": "1500m 5:01.74 × 2.15 ≈ 10:48.74（簡易換算）"
               },
               "match_count": 17
             },
@@ -758,53 +576,33 @@
               "track_events": {
                 "800m": {
                   "sb": {
-                    "mark": "2:26.83",
-                    "seconds": 146.83,
+                    "mark": "2:31.22",
+                    "seconds": 151.22,
                     "meet": null,
-                    "meet_date": "2026/06/14",
-                    "url": "http://www.kumariku.org/26/26,6,13tsushin/rel201.html",
-                    "season": "2026",
-                    "source": "notion_2026"
+                    "meet_date": null,
+                    "url": "http://www.kumariku.org/25/25,6,28tsushin/rel170.html",
+                    "season": "2025",
+                    "source": "wide_sb"
                   },
                   "recent": {
-                    "mark": "2:30.20",
-                    "seconds": 150.2,
-                    "meet": null,
-                    "meet_date": "2026/07/19",
-                    "url": "http://www.kumariku.org/26/26,7,18chutairen/rel130.html",
-                    "season": "2026",
-                    "source": "notion_2026"
-                  }
-                },
-                "1500m": {
-                  "sb": {
-                    "mark": "5:22.32",
-                    "seconds": 322.32,
-                    "meet": null,
-                    "meet_date": "2026/05/09",
-                    "url": "http://www.kumariku.org/26/26,5,9long/rel026.html",
-                    "season": "2026",
-                    "source": "by_year_2026"
-                  },
-                  "recent": {
-                    "mark": "5:22.32",
-                    "seconds": 322.32,
-                    "meet": null,
-                    "meet_date": "2026/05/09",
-                    "url": "http://www.kumariku.org/26/26,5,9long/rel026.html",
-                    "season": "2026",
-                    "source": "by_year_2026"
+                    "mark": "2:38.06",
+                    "seconds": 158.06,
+                    "meet": "中長距離選手権",
+                    "meet_date": "2025/11/23",
+                    "url": "http://www.kcrk.jp/i-mode/kiroku/tyuutyoukyori/78/PC/rel041.html",
+                    "season": "2025",
+                    "source": "notion_2025"
                   }
                 }
               },
               "ekiden_estimate": {
-                "from_event": "1500m",
-                "from_mark": "5:22.32",
-                "from_seconds": 322.32,
-                "factor": 1.28,
-                "estimated_seconds": 412.6,
-                "estimated_mark": "6:52.57",
-                "note": "1500m 5:22.32 × 1.28 ≈ 6:52.57（簡易換算）"
+                "from_event": "800m",
+                "from_mark": "2:31.22",
+                "from_seconds": 151.22,
+                "factor": 2.5,
+                "estimated_seconds": 378.1,
+                "estimated_mark": "6:18.05",
+                "note": "800m 2:31.22 × 2.5 ≈ 6:18.05（簡易換算）"
               },
               "match_count": 14
             },
@@ -818,33 +616,33 @@
               "track_events": {
                 "800m": {
                   "sb": {
-                    "mark": "2:38.06",
-                    "seconds": 158.06,
-                    "meet": "第２７２回　熊本市陸上競技記録会",
-                    "meet_date": "2026/04/04",
-                    "url": "http://www.kcrk.jp/i-mode/kiroku/272/PC/rel062.html",
-                    "season": "2026",
-                    "source": "by_year_2026"
+                    "mark": "2:30.87",
+                    "seconds": 150.87,
+                    "meet": null,
+                    "meet_date": null,
+                    "url": "http://www.kumariku.org/25/25,6,28tsushin/rel170.html",
+                    "season": "2025",
+                    "source": "wide_sb"
                   },
                   "recent": {
-                    "mark": "2:38.06",
-                    "seconds": 158.06,
-                    "meet": "第２７２回　熊本市陸上競技記録会",
-                    "meet_date": "2026/04/04",
-                    "url": "http://www.kcrk.jp/i-mode/kiroku/272/PC/rel062.html",
-                    "season": "2026",
-                    "source": "by_year_2026"
+                    "mark": "2:33.22",
+                    "seconds": 153.22,
+                    "meet": "第４回会熊本県チャレンジ陸上大会",
+                    "meet_date": "2025/11/15",
+                    "url": "http://www.kumariku.org/25/25,11,15challenge/rel216.html",
+                    "season": "2025",
+                    "source": "notion_2025"
                   }
                 },
                 "1500m": {
                   "sb": {
                     "mark": "5:20.72",
                     "seconds": 320.72,
-                    "meet": "第五回熊本県長距離記録会",
-                    "meet_date": "2025/12/13",
+                    "meet": null,
+                    "meet_date": null,
                     "url": "http://www.kumariku.org/25/25,12,13long/rel022.html",
                     "season": "2025",
-                    "source": "by_year_2025"
+                    "source": "wide_sb"
                   },
                   "recent": {
                     "mark": "5:20.72",
@@ -853,7 +651,7 @@
                     "meet_date": "2025/12/13",
                     "url": "http://www.kumariku.org/25/25,12,13long/rel022.html",
                     "season": "2025",
-                    "source": "by_year_2025"
+                    "source": "notion_2025"
                   }
                 }
               },
@@ -875,57 +673,8 @@
               "ekiden_mark": "7:53",
               "ekiden_seconds": 473.0,
               "cumulative": "33:17",
-              "track_events": {
-                "800m": {
-                  "sb": {
-                    "mark": "2:49.00",
-                    "seconds": 169.0,
-                    "meet": null,
-                    "meet_date": "2026/06/14",
-                    "url": "http://www.kumariku.org/26/26,6,13tsushin/rel207.html",
-                    "season": "2026",
-                    "source": "by_year_2026"
-                  },
-                  "recent": {
-                    "mark": "2:49.09",
-                    "seconds": 169.09,
-                    "meet": null,
-                    "meet_date": "2026/07/19",
-                    "url": "http://www.kumariku.org/26/26,7,18chutairen/rel135.html",
-                    "season": "2026",
-                    "source": "notion_2026"
-                  }
-                },
-                "1500m": {
-                  "sb": {
-                    "mark": "5:55.03",
-                    "seconds": 355.03,
-                    "meet": "2024.7.6　第二回熊本県長距離記録会",
-                    "meet_date": "2024/07/06",
-                    "url": "http://www.kumariku.org/24/24,7,6long&jump/rel018.html",
-                    "season": "2024",
-                    "source": "by_year_2024"
-                  },
-                  "recent": {
-                    "mark": "5:55.03",
-                    "seconds": 355.03,
-                    "meet": "2024.7.6　第二回熊本県長距離記録会",
-                    "meet_date": "2024/07/06",
-                    "url": "http://www.kumariku.org/24/24,7,6long&jump/rel018.html",
-                    "season": "2024",
-                    "source": "by_year_2024"
-                  }
-                }
-              },
-              "ekiden_estimate": {
-                "from_event": "1500m",
-                "from_mark": "5:55.03",
-                "from_seconds": 355.03,
-                "factor": 1.4,
-                "estimated_seconds": 497.0,
-                "estimated_mark": "8:17.04",
-                "note": "1500m 5:55.03 × 1.4 ≈ 8:17.04（簡易換算）"
-              },
+              "track_events": {},
+              "ekiden_estimate": null,
               "match_count": 10
             },
             {
@@ -938,53 +687,53 @@
               "track_events": {
                 "800m": {
                   "sb": {
-                    "mark": "2:35.90",
-                    "seconds": 155.9,
+                    "mark": "2:37.17",
+                    "seconds": 157.17,
                     "meet": null,
-                    "meet_date": "2026/07/19",
-                    "url": "http://www.kumariku.org/26/26,7,18chutairen/rel134.html",
-                    "season": "2026",
-                    "source": "by_year_2026"
+                    "meet_date": null,
+                    "url": "http://www.kcrk.jp/i-mode/kiroku/270/PC/rel020.html",
+                    "season": "2025",
+                    "source": "wide_sb"
                   },
                   "recent": {
-                    "mark": "2:35.90",
-                    "seconds": 155.9,
-                    "meet": null,
-                    "meet_date": "2026/07/19",
-                    "url": "http://www.kumariku.org/26/26,7,18chutairen/rel134.html",
-                    "season": "2026",
-                    "source": "by_year_2026"
+                    "mark": "2:37.17",
+                    "seconds": 157.17,
+                    "meet": "第２７０回　熊本市陸上競技記録会",
+                    "meet_date": "2025/08/16",
+                    "url": "http://www.kcrk.jp/i-mode/kiroku/270/PC/rel020.html",
+                    "season": "2025",
+                    "source": "notion_2025"
                   }
                 },
                 "1500m": {
                   "sb": {
-                    "mark": "5:16.77",
-                    "seconds": 316.77,
+                    "mark": "5:16.18",
+                    "seconds": 316.18,
                     "meet": null,
-                    "meet_date": "2026/07/04",
-                    "url": "http://www.kumariku.org/26/26,7,4long/rel033.html",
-                    "season": "2026",
-                    "source": "notion_2026"
+                    "meet_date": null,
+                    "url": "http://www.kcrk.jp/i-mode/kiroku/271/PC/rel060.html",
+                    "season": "2025",
+                    "source": "wide_sb"
                   },
                   "recent": {
-                    "mark": "5:16.77",
-                    "seconds": 316.77,
-                    "meet": null,
-                    "meet_date": "2026/07/04",
-                    "url": "http://www.kumariku.org/26/26,7,4long/rel033.html",
-                    "season": "2026",
-                    "source": "notion_2026"
+                    "mark": "5:16.57",
+                    "seconds": 316.57,
+                    "meet": "中長距離選手権",
+                    "meet_date": "2025/11/23",
+                    "url": "http://www.kcrk.jp/i-mode/kiroku/tyuutyoukyori/78/PC/rel058.html",
+                    "season": "2025",
+                    "source": "notion_2025"
                   }
                 }
               },
               "ekiden_estimate": {
                 "from_event": "1500m",
-                "from_mark": "5:16.77",
-                "from_seconds": 316.77,
+                "from_mark": "5:16.18",
+                "from_seconds": 316.18,
                 "factor": 2.15,
-                "estimated_seconds": 681.1,
-                "estimated_mark": "11:21.06",
-                "note": "1500m 5:16.77 × 2.15 ≈ 11:21.06（簡易換算）"
+                "estimated_seconds": 679.8,
+                "estimated_mark": "11:19.79",
+                "note": "1500m 5:16.18 × 2.15 ≈ 11:19.79（簡易換算）"
               },
               "match_count": 29
             }
@@ -995,14 +744,12 @@
     {
       "year": 2024,
       "sb_seasons": [
-        "2025",
-        "2024",
-        "2023"
+        "2024"
       ],
       "date": "2024-10-18",
       "venue": null,
       "source_file_id": "1WDoNUHfL23mTudpm_-eUIbyeMn3EGtZg",
-      "source_confidence": null,
+      "source_confidence": "verified",
       "teams": [
         {
           "rank": 1,
@@ -1055,7 +802,7 @@
                     "meet_date": "2024/07/20",
                     "url": "http://www.kumariku.org/24/24,7,20chutairen/rel155.html",
                     "season": "2024",
-                    "source": "by_year_2024"
+                    "source": "notion_2024"
                   }
                 },
                 "3000m": {
@@ -1075,7 +822,7 @@
                     "meet_date": "2024/12/07",
                     "url": "http://www.kumariku.org/24/24,12,7long/rel024.html",
                     "season": "2024",
-                    "source": "by_year_2024"
+                    "source": "notion_2024"
                   }
                 }
               },
@@ -1115,7 +862,7 @@
                     "meet_date": "2024/07/21",
                     "url": "http://www.kumariku.org/24/24,7,20chutairen/rel146.html",
                     "season": "2024",
-                    "source": "by_year_2024"
+                    "source": "notion_2024"
                   }
                 },
                 "1500m": {
@@ -1135,7 +882,7 @@
                     "meet_date": "2024/07/06",
                     "url": "http://www.kumariku.org/24/24,7,6long&jump/rel019.html",
                     "season": "2024",
-                    "source": "by_year_2024"
+                    "source": "notion_2024"
                   }
                 }
               },
@@ -1175,7 +922,7 @@
                     "meet_date": "2024/06/09",
                     "url": "http://www.kumariku.org/24/24,6,08chugaku/rel127.html",
                     "season": "2024",
-                    "source": "by_year_2024"
+                    "source": "notion_2024"
                   }
                 },
                 "1500m": {
@@ -1235,7 +982,7 @@
                     "meet_date": "2024/04/28",
                     "url": "http://www.kumariku.org/24/24,4,28yatsushiro/rel115.html",
                     "season": "2024",
-                    "source": "by_year_2024"
+                    "source": "notion_2024"
                   }
                 },
                 "1500m": {
@@ -1275,7 +1022,7 @@
                     "meet_date": "2024/12/07",
                     "url": "http://www.kumariku.org/24/24,12,7long/rel024.html",
                     "season": "2024",
-                    "source": "by_year_2024"
+                    "source": "notion_2024"
                   }
                 }
               },
@@ -1315,7 +1062,7 @@
                     "meet_date": "2024/04/28",
                     "url": "http://www.kumariku.org/24/24,4,28yatsushiro/rel115.html",
                     "season": "2024",
-                    "source": "by_year_2024"
+                    "source": "notion_2024"
                   }
                 },
                 "1500m": {
@@ -1335,7 +1082,7 @@
                     "meet_date": "2024/07/20",
                     "url": "http://www.kumariku.org/24/24,7,20chutairen/rel155.html",
                     "season": "2024",
-                    "source": "by_year_2024"
+                    "source": "notion_2024"
                   }
                 }
               },
@@ -1403,7 +1150,7 @@
                     "meet_date": "2024/07/20",
                     "url": "http://www.kumariku.org/24/24,7,20chutairen/rel156.html",
                     "season": "2024",
-                    "source": "by_year_2024"
+                    "source": "notion_2024"
                   }
                 }
               },
@@ -1425,57 +1172,8 @@
               "ekiden_mark": "6:25",
               "ekiden_seconds": 385.0,
               "cumulative": "17:20",
-              "track_events": {
-                "800m": {
-                  "sb": {
-                    "mark": "2:20.52",
-                    "seconds": 140.52,
-                    "meet": null,
-                    "meet_date": null,
-                    "url": "http://www.kumariku.org/25/25,7,19chugaku/rel210.html",
-                    "season": null,
-                    "source": "wide_sb"
-                  },
-                  "recent": {
-                    "mark": "2:20.52",
-                    "seconds": 140.52,
-                    "meet": null,
-                    "meet_date": null,
-                    "url": "http://www.kumariku.org/25/25,7,19chugaku/rel210.html",
-                    "season": null,
-                    "source": "wide_sb"
-                  }
-                },
-                "1500m": {
-                  "sb": {
-                    "mark": "4:41.77",
-                    "seconds": 281.77,
-                    "meet": null,
-                    "meet_date": null,
-                    "url": "http://www.kumariku.org/25/25,6,7chugaku/rel030.html",
-                    "season": null,
-                    "source": "wide_sb"
-                  },
-                  "recent": {
-                    "mark": "4:41.77",
-                    "seconds": 281.77,
-                    "meet": null,
-                    "meet_date": null,
-                    "url": "http://www.kumariku.org/25/25,6,7chugaku/rel030.html",
-                    "season": null,
-                    "source": "wide_sb"
-                  }
-                }
-              },
-              "ekiden_estimate": {
-                "from_event": "1500m",
-                "from_mark": "4:41.77",
-                "from_seconds": 281.77,
-                "factor": 1.28,
-                "estimated_seconds": 360.7,
-                "estimated_mark": "6:00.67",
-                "note": "1500m 4:41.77 × 1.28 ≈ 6:00.67（簡易換算）"
-              },
+              "track_events": {},
+              "ekiden_estimate": null,
               "match_count": 17
             },
             {
@@ -1525,7 +1223,7 @@
                     "meet_date": "2024/06/22",
                     "url": "http://www.kumariku.org/24/24,6,22tsushin/rel188.html",
                     "season": "2024",
-                    "source": "by_year_2024"
+                    "source": "notion_2024"
                   }
                 }
               },
@@ -1593,7 +1291,7 @@
                     "meet_date": "2024/09/22",
                     "url": "https://omuta.meet7.org/cgi/menu.cgi?menu=2&base=20240922&mode=\"_2_8_4_2_3__5_\"&r_n=豎ｺ蜍�&dopt=1&cs=2&exit=0",
                     "season": "2024",
-                    "source": "by_year_2024"
+                    "source": "notion_2024"
                   }
                 }
               },
@@ -1713,7 +1411,7 @@
                     "meet_date": "2024/11/23",
                     "url": "http://www.kcrk.jp/i-mode/kiroku/tyuutyoukyori/77/PC/rel072.html",
                     "season": "2024",
-                    "source": "by_year_2024"
+                    "source": "notion_2024"
                   }
                 }
               },
@@ -1753,7 +1451,7 @@
                     "meet_date": "2024/04/29",
                     "url": "https://omuta.meet7.org/cgi/menu.cgi?menu=2&base=20240429&mode=\"_5_4_4_4_3__5_\"&r_n=豎ｺ蜍�&dopt=1&cs=2&exit=0",
                     "season": "2024",
-                    "source": "by_year_2024"
+                    "source": "notion_2024"
                   }
                 },
                 "1500m": {
@@ -1798,53 +1496,53 @@
               "track_events": {
                 "800m": {
                   "sb": {
-                    "mark": "2:30.47",
-                    "seconds": 150.47,
-                    "meet": "第２６９回　熊本市陸上競技記録会",
-                    "meet_date": "2025/08/09",
-                    "url": "http://www.kcrk.jp/i-mode/kiroku/269/PC/rel113.html",
-                    "season": "2025",
-                    "source": "by_year_2025"
+                    "mark": "2:31.58",
+                    "seconds": 151.58,
+                    "meet": "第２６７回　熊本市陸上競技記録会",
+                    "meet_date": "2024/07/27",
+                    "url": "http://www.kcrk.jp/i-mode/kiroku/267/PC/rel127.html",
+                    "season": "2024",
+                    "source": "by_year_2024"
                   },
                   "recent": {
-                    "mark": "2:31.47",
-                    "seconds": 151.47,
-                    "meet": "中長距離選手権",
-                    "meet_date": "2025/11/23",
-                    "url": "http://www.kcrk.jp/i-mode/kiroku/tyuutyoukyori/78/PC/rel041.html",
-                    "season": "2025",
-                    "source": "notion_2025"
+                    "mark": "2:31.58",
+                    "seconds": 151.58,
+                    "meet": "第２６７回　熊本市陸上競技記録会",
+                    "meet_date": "2024/07/27",
+                    "url": "http://www.kcrk.jp/i-mode/kiroku/267/PC/rel127.html",
+                    "season": "2024",
+                    "source": "notion_2024"
                   }
                 },
                 "1500m": {
                   "sb": {
-                    "mark": "5:07.92",
-                    "seconds": 307.92,
-                    "meet": "中学選手権",
-                    "meet_date": "2025/06/07",
-                    "url": "http://www.kumariku.org/25/25,6,7chugaku/rel030.html",
-                    "season": "2025",
-                    "source": "by_year_2025"
+                    "mark": "5:03.48",
+                    "seconds": 303.48,
+                    "meet": "Middle Distnce in Omuta",
+                    "meet_date": "2024/09/22",
+                    "url": "https://omuta.meet7.org/cgi/menu.cgi?menu=2&base=20240922&mode=\"_2_8_4_2_3__5_\"&r_n=豎ｺ蜍�&dopt=1&cs=2&exit=0",
+                    "season": "2024",
+                    "source": "by_year_2024"
                   },
                   "recent": {
-                    "mark": "5:10.73",
-                    "seconds": 310.73,
-                    "meet": "熊本県中学校総合体育大会　陸上競技大会",
-                    "meet_date": "2025/07/19",
-                    "url": "http://www.kumariku.org/25/25,7,19chugaku/rel180.html",
-                    "season": "2025",
-                    "source": "notion_2025"
+                    "mark": "5:13.82",
+                    "seconds": 313.82,
+                    "meet": "2024.12.7　第四回熊本県長距離記録会",
+                    "meet_date": "2024/12/07",
+                    "url": "http://www.kumariku.org/24/24,12,7long/rel022.html",
+                    "season": "2024",
+                    "source": "notion_2024"
                   }
                 }
               },
               "ekiden_estimate": {
                 "from_event": "1500m",
-                "from_mark": "5:07.92",
-                "from_seconds": 307.92,
+                "from_mark": "5:03.48",
+                "from_seconds": 303.48,
                 "factor": 2.15,
-                "estimated_seconds": 662.0,
-                "estimated_mark": "11:02.03",
-                "note": "1500m 5:07.92 × 2.15 ≈ 11:02.03（簡易換算）"
+                "estimated_seconds": 652.5,
+                "estimated_mark": "10:52.48",
+                "note": "1500m 5:03.48 × 2.15 ≈ 10:52.48（簡易換算）"
               },
               "match_count": 26
             }
@@ -1921,7 +1619,7 @@
                     "meet_date": "2024/07/21",
                     "url": "http://www.kumariku.org/24/24,7,20chutairen/rel146.html",
                     "season": "2024",
-                    "source": "by_year_2024"
+                    "source": "notion_2024"
                   }
                 },
                 "1500m": {
@@ -1941,7 +1639,7 @@
                     "meet_date": "2024/07/06",
                     "url": "http://www.kumariku.org/24/24,7,6long&jump/rel019.html",
                     "season": "2024",
-                    "source": "by_year_2024"
+                    "source": "notion_2024"
                   }
                 }
               },
@@ -1966,53 +1664,53 @@
               "track_events": {
                 "800m": {
                   "sb": {
-                    "mark": "2:37.17",
-                    "seconds": 157.17,
-                    "meet": "第２７０回　熊本市陸上競技記録会",
-                    "meet_date": "2025/08/16",
-                    "url": "http://www.kcrk.jp/i-mode/kiroku/270/PC/rel020.html",
-                    "season": "2025",
-                    "source": "by_year_2025"
+                    "mark": "2:38.92",
+                    "seconds": 158.92,
+                    "meet": "Middle Distnce in Omuta",
+                    "meet_date": "2024/09/22",
+                    "url": "https://omuta.meet7.org/cgi/menu.cgi?menu=2&base=20240922&mode=\"_2_6_4_2_3__5_\"&r_n=豎ｺ蜍�&dopt=1&cs=2&exit=0",
+                    "season": "2024",
+                    "source": "by_year_2024"
                   },
                   "recent": {
-                    "mark": "2:37.17",
-                    "seconds": 157.17,
-                    "meet": "第２７０回　熊本市陸上競技記録会",
-                    "meet_date": "2025/08/16",
-                    "url": "http://www.kcrk.jp/i-mode/kiroku/270/PC/rel020.html",
-                    "season": "2025",
-                    "source": "by_year_2025"
+                    "mark": "2:38.92",
+                    "seconds": 158.92,
+                    "meet": "Middle Distnce in Omuta",
+                    "meet_date": "2024/09/22",
+                    "url": "https://omuta.meet7.org/cgi/menu.cgi?menu=2&base=20240922&mode=\"_2_6_4_2_3__5_\"&r_n=豎ｺ蜍�&dopt=1&cs=2&exit=0",
+                    "season": "2024",
+                    "source": "notion_2024"
                   }
                 },
                 "1500m": {
                   "sb": {
-                    "mark": "5:16.18",
-                    "seconds": 316.18,
-                    "meet": "第２７１回　熊本市陸上競技記録会",
-                    "meet_date": "2025/08/23",
-                    "url": "http://www.kcrk.jp/i-mode/kiroku/271/PC/rel060.html",
-                    "season": "2025",
-                    "source": "by_year_2025"
+                    "mark": "5:27.73",
+                    "seconds": 327.73,
+                    "meet": "第７７回熊本市中長距離陸上競技選手権大会",
+                    "meet_date": "2024/11/23",
+                    "url": "http://www.kcrk.jp/i-mode/kiroku/tyuutyoukyori/77/PC/rel071.html",
+                    "season": "2024",
+                    "source": "by_year_2024"
                   },
                   "recent": {
-                    "mark": "5:16.57",
-                    "seconds": 316.57,
-                    "meet": "中長距離選手権",
-                    "meet_date": "2025/11/23",
-                    "url": "http://www.kcrk.jp/i-mode/kiroku/tyuutyoukyori/78/PC/rel058.html",
-                    "season": "2025",
-                    "source": "notion_2025"
+                    "mark": "5:27.73",
+                    "seconds": 327.73,
+                    "meet": "第７７回熊本市中長距離陸上競技選手権大会",
+                    "meet_date": "2024/11/23",
+                    "url": "http://www.kcrk.jp/i-mode/kiroku/tyuutyoukyori/77/PC/rel071.html",
+                    "season": "2024",
+                    "source": "notion_2024"
                   }
                 }
               },
               "ekiden_estimate": {
                 "from_event": "1500m",
-                "from_mark": "5:16.18",
-                "from_seconds": 316.18,
+                "from_mark": "5:27.73",
+                "from_seconds": 327.73,
                 "factor": 1.4,
-                "estimated_seconds": 442.7,
-                "estimated_mark": "7:22.65",
-                "note": "1500m 5:16.18 × 1.4 ≈ 7:22.65（簡易換算）"
+                "estimated_seconds": 458.8,
+                "estimated_mark": "7:38.82",
+                "note": "1500m 5:27.73 × 1.4 ≈ 7:38.82（簡易換算）"
               },
               "match_count": 29
             },
@@ -2074,14 +1772,12 @@
     {
       "year": 2023,
       "sb_seasons": [
-        "2024",
-        "2023",
-        "2022"
+        "2023"
       ],
       "date": "2023-10-18",
       "venue": null,
       "source_file_id": "1FEhuWOmRsolozWeSkP4KPDTh68-MwpyV",
-      "source_confidence": null,
+      "source_confidence": "verified",
       "teams": [
         {
           "rank": 1,
@@ -2096,57 +1792,8 @@
               "ekiden_mark": "10:30",
               "ekiden_seconds": 630.0,
               "cumulative": "10:30",
-              "track_events": {
-                "800m": {
-                  "sb": {
-                    "mark": "2:29.61",
-                    "seconds": 149.61,
-                    "meet": "令和6年度　第38回熊本県中学校陸上競技選手権大会",
-                    "meet_date": "2024/06/09",
-                    "url": "http://www.kumariku.org/24/24,6,08chugaku/rel127.html",
-                    "season": "2024",
-                    "source": "by_year_2024"
-                  },
-                  "recent": {
-                    "mark": "2:29.92",
-                    "seconds": 149.92,
-                    "meet": "第70回全日本中学校通信陸上競技大会熊本県大会",
-                    "meet_date": "2024/06/23",
-                    "url": "http://www.kumariku.org/24/24,6,22tsushin/rel185.html",
-                    "season": "2024",
-                    "source": "notion_2024"
-                  }
-                },
-                "1500m": {
-                  "sb": {
-                    "mark": "5:14.20",
-                    "seconds": 314.2,
-                    "meet": "令和6年度　熊本県中学校総合体育大会　陸上競技大会",
-                    "meet_date": "2024/07/20",
-                    "url": "http://www.kumariku.org/24/24,7,20chutairen/rel156.html",
-                    "season": "2024",
-                    "source": "by_year_2024"
-                  },
-                  "recent": {
-                    "mark": "5:14.20",
-                    "seconds": 314.2,
-                    "meet": "令和6年度　熊本県中学校総合体育大会　陸上競技大会",
-                    "meet_date": "2024/07/20",
-                    "url": "http://www.kumariku.org/24/24,7,20chutairen/rel156.html",
-                    "season": "2024",
-                    "source": "by_year_2024"
-                  }
-                }
-              },
-              "ekiden_estimate": {
-                "from_event": "1500m",
-                "from_mark": "5:14.20",
-                "from_seconds": 314.2,
-                "factor": 2.15,
-                "estimated_seconds": 675.5,
-                "estimated_mark": "11:15.53",
-                "note": "1500m 5:14.20 × 2.15 ≈ 11:15.53（簡易換算）"
-              },
+              "track_events": {},
+              "ekiden_estimate": null,
               "match_count": 7
             },
             {
@@ -2189,37 +1836,8 @@
               "ekiden_mark": "10:38",
               "ekiden_seconds": 638.0,
               "cumulative": "42:32",
-              "track_events": {
-                "1500m": {
-                  "sb": {
-                    "mark": "5:05.95",
-                    "seconds": 305.95,
-                    "meet": "第70回全日本中学校通信陸上競技大会熊本県大会",
-                    "meet_date": "2024/06/22",
-                    "url": "http://www.kumariku.org/24/24,6,22tsushin/rel188.html",
-                    "season": "2024",
-                    "source": "by_year_2024"
-                  },
-                  "recent": {
-                    "mark": "5:05.95",
-                    "seconds": 305.95,
-                    "meet": "第70回全日本中学校通信陸上競技大会熊本県大会",
-                    "meet_date": "2024/06/22",
-                    "url": "http://www.kumariku.org/24/24,6,22tsushin/rel188.html",
-                    "season": "2024",
-                    "source": "by_year_2024"
-                  }
-                }
-              },
-              "ekiden_estimate": {
-                "from_event": "1500m",
-                "from_mark": "5:05.95",
-                "from_seconds": 305.95,
-                "factor": 2.15,
-                "estimated_seconds": 657.8,
-                "estimated_mark": "10:57.79",
-                "note": "1500m 5:05.95 × 2.15 ≈ 10:57.79（簡易換算）"
-              },
+              "track_events": {},
+              "ekiden_estimate": null,
               "match_count": 2
             }
           ]
@@ -2248,57 +1866,8 @@
               "ekiden_mark": "6:49",
               "ekiden_seconds": 409.0,
               "cumulative": "16:48",
-              "track_events": {
-                "800m": {
-                  "sb": {
-                    "mark": "2:33.67",
-                    "seconds": 153.67,
-                    "meet": null,
-                    "meet_date": null,
-                    "url": "http://www.kcrk.jp/i-mode/kiroku/272/PC/rel062.html",
-                    "season": null,
-                    "source": "output_reg"
-                  },
-                  "recent": {
-                    "mark": "2:33.67",
-                    "seconds": 153.67,
-                    "meet": null,
-                    "meet_date": null,
-                    "url": "http://www.kcrk.jp/i-mode/kiroku/272/PC/rel062.html",
-                    "season": null,
-                    "source": "output_reg"
-                  }
-                },
-                "1500m": {
-                  "sb": {
-                    "mark": "5:05.09",
-                    "seconds": 305.09,
-                    "meet": null,
-                    "meet_date": null,
-                    "url": "http://www.kumariku.org/26/26,4,25kensen/rel051.html",
-                    "season": null,
-                    "source": "output_reg"
-                  },
-                  "recent": {
-                    "mark": "5:05.09",
-                    "seconds": 305.09,
-                    "meet": null,
-                    "meet_date": null,
-                    "url": "http://www.kumariku.org/26/26,4,25kensen/rel051.html",
-                    "season": null,
-                    "source": "output_reg"
-                  }
-                }
-              },
-              "ekiden_estimate": {
-                "from_event": "1500m",
-                "from_mark": "5:05.09",
-                "from_seconds": 305.09,
-                "factor": 1.28,
-                "estimated_seconds": 390.5,
-                "estimated_mark": "6:30.52",
-                "note": "1500m 5:05.09 × 1.28 ≈ 6:30.52（簡易換算）"
-              },
+              "track_events": {},
+              "ekiden_estimate": null,
               "match_count": 16
             },
             {
@@ -2308,57 +1877,8 @@
               "ekiden_mark": "7:35",
               "ekiden_seconds": 455.0,
               "cumulative": "24:23",
-              "track_events": {
-                "800m": {
-                  "sb": {
-                    "mark": "2:48.08",
-                    "seconds": 168.08,
-                    "meet": "２０２４年度　第４３回熊本市陸上競技選手権大会",
-                    "meet_date": "2024/05/04",
-                    "url": "http://www.kcrk.jp/i-mode/kiroku/sisen_i/43/PC/rel126.html",
-                    "season": "2024",
-                    "source": "by_year_2024"
-                  },
-                  "recent": {
-                    "mark": "2:48.08",
-                    "seconds": 168.08,
-                    "meet": "２０２４年度　第４３回熊本市陸上競技選手権大会",
-                    "meet_date": "2024/05/04",
-                    "url": "http://www.kcrk.jp/i-mode/kiroku/sisen_i/43/PC/rel126.html",
-                    "season": "2024",
-                    "source": "by_year_2024"
-                  }
-                },
-                "1500m": {
-                  "sb": {
-                    "mark": "5:36.09",
-                    "seconds": 336.09,
-                    "meet": "令和6年度　第38回熊本県中学校陸上競技選手権大会",
-                    "meet_date": "2024/06/08",
-                    "url": "http://www.kumariku.org/24/24,6,08chugaku/rel149.html",
-                    "season": "2024",
-                    "source": "by_year_2024"
-                  },
-                  "recent": {
-                    "mark": "5:36.09",
-                    "seconds": 336.09,
-                    "meet": "令和6年度　第38回熊本県中学校陸上競技選手権大会",
-                    "meet_date": "2024/06/08",
-                    "url": "http://www.kumariku.org/24/24,6,08chugaku/rel149.html",
-                    "season": "2024",
-                    "source": "by_year_2024"
-                  }
-                }
-              },
-              "ekiden_estimate": {
-                "from_event": "1500m",
-                "from_mark": "5:36.09",
-                "from_seconds": 336.09,
-                "factor": 1.4,
-                "estimated_seconds": 470.5,
-                "estimated_mark": "7:50.53",
-                "note": "1500m 5:36.09 × 1.4 ≈ 7:50.53（簡易換算）"
-              },
+              "track_events": {},
+              "ekiden_estimate": null,
               "match_count": 4
             },
             {
@@ -2368,37 +1888,8 @@
               "ekiden_mark": "7:43",
               "ekiden_seconds": 463.0,
               "cumulative": "32:06",
-              "track_events": {
-                "1500m": {
-                  "sb": {
-                    "mark": "5:41.67",
-                    "seconds": 341.67,
-                    "meet": "令和6年度　第38回熊本県中学校陸上競技選手権大会",
-                    "meet_date": "2024/06/08",
-                    "url": "http://www.kumariku.org/24/24,6,08chugaku/rel148.html",
-                    "season": "2024",
-                    "source": "by_year_2024"
-                  },
-                  "recent": {
-                    "mark": "5:41.67",
-                    "seconds": 341.67,
-                    "meet": "令和6年度　第38回熊本県中学校陸上競技選手権大会",
-                    "meet_date": "2024/06/08",
-                    "url": "http://www.kumariku.org/24/24,6,08chugaku/rel148.html",
-                    "season": "2024",
-                    "source": "by_year_2024"
-                  }
-                }
-              },
-              "ekiden_estimate": {
-                "from_event": "1500m",
-                "from_mark": "5:41.67",
-                "from_seconds": 341.67,
-                "factor": 1.4,
-                "estimated_seconds": 478.3,
-                "estimated_mark": "7:58.34",
-                "note": "1500m 5:41.67 × 1.4 ≈ 7:58.34（簡易換算）"
-              },
+              "track_events": {},
+              "ekiden_estimate": null,
               "match_count": 2
             },
             {
@@ -2408,57 +1899,8 @@
               "ekiden_mark": "10:39",
               "ekiden_seconds": 639.0,
               "cumulative": "42:45",
-              "track_events": {
-                "800m": {
-                  "sb": {
-                    "mark": "2:20.90",
-                    "seconds": 140.9,
-                    "meet": "令和6年度　熊本県中学校総合体育大会　陸上競技大会",
-                    "meet_date": "2024/07/21",
-                    "url": "http://www.kumariku.org/24/24,7,20chutairen/rel189.html",
-                    "season": "2024",
-                    "source": "by_year_2024"
-                  },
-                  "recent": {
-                    "mark": "2:20.90",
-                    "seconds": 140.9,
-                    "meet": "令和6年度　熊本県中学校総合体育大会　陸上競技大会",
-                    "meet_date": "2024/07/21",
-                    "url": "http://www.kumariku.org/24/24,7,20chutairen/rel189.html",
-                    "season": "2024",
-                    "source": "by_year_2024"
-                  }
-                },
-                "1500m": {
-                  "sb": {
-                    "mark": "4:53.24",
-                    "seconds": 293.24,
-                    "meet": "第32回　金栗記念選抜陸上中長距離熊本大会",
-                    "meet_date": "2024/04/13",
-                    "url": "http://www.kumariku.org/24/24,4,13kanaguri/rel014.html",
-                    "season": "2024",
-                    "source": "by_year_2024"
-                  },
-                  "recent": {
-                    "mark": "4:56.05",
-                    "seconds": 296.05,
-                    "meet": "２０２４年度　第４３回熊本市陸上競技選手権大会",
-                    "meet_date": "2024/05/04",
-                    "url": "http://www.kcrk.jp/i-mode/kiroku/sisen_i/43/PC/rel158.html",
-                    "season": "2024",
-                    "source": "notion_2024"
-                  }
-                }
-              },
-              "ekiden_estimate": {
-                "from_event": "1500m",
-                "from_mark": "4:53.24",
-                "from_seconds": 293.24,
-                "factor": 2.15,
-                "estimated_seconds": 630.5,
-                "estimated_mark": "10:30.47",
-                "note": "1500m 4:53.24 × 2.15 ≈ 10:30.47（簡易換算）"
-              },
+              "track_events": {},
+              "ekiden_estimate": null,
               "match_count": 9
             }
           ]
@@ -2476,57 +1918,8 @@
               "ekiden_mark": "11:00",
               "ekiden_seconds": 660.0,
               "cumulative": "11:00",
-              "track_events": {
-                "800m": {
-                  "sb": {
-                    "mark": "2:17.26",
-                    "seconds": 137.26,
-                    "meet": "令和6年度　熊本県中学校総合体育大会　陸上競技大会",
-                    "meet_date": "2024/07/21",
-                    "url": "http://www.kumariku.org/24/24,7,20chutairen/rel191.html",
-                    "season": "2024",
-                    "source": "by_year_2024"
-                  },
-                  "recent": {
-                    "mark": "2:31.14",
-                    "seconds": 151.14,
-                    "meet": "第２６７回　熊本市陸上競技記録会",
-                    "meet_date": "2024/07/27",
-                    "url": "http://www.kcrk.jp/i-mode/kiroku/267/PC/rel127.html",
-                    "season": "2024",
-                    "source": "notion_2024"
-                  }
-                },
-                "1500m": {
-                  "sb": {
-                    "mark": "4:56.41",
-                    "seconds": 296.41,
-                    "meet": "Middle Distnce in Omuta",
-                    "meet_date": "2024/09/22",
-                    "url": "https://omuta.meet7.org/cgi/menu.cgi?menu=2&base=20240922&mode=\"_2_8_4_2_3__5_\"&r_n=豎ｺ蜍�&dopt=1&cs=2&exit=0",
-                    "season": "2024",
-                    "source": "by_year_2024"
-                  },
-                  "recent": {
-                    "mark": "4:56.41",
-                    "seconds": 296.41,
-                    "meet": "Middle Distnce in Omuta",
-                    "meet_date": "2024/09/22",
-                    "url": "https://omuta.meet7.org/cgi/menu.cgi?menu=2&base=20240922&mode=\"_2_8_4_2_3__5_\"&r_n=豎ｺ蜍�&dopt=1&cs=2&exit=0",
-                    "season": "2024",
-                    "source": "by_year_2024"
-                  }
-                }
-              },
-              "ekiden_estimate": {
-                "from_event": "1500m",
-                "from_mark": "4:56.41",
-                "from_seconds": 296.41,
-                "factor": 2.15,
-                "estimated_seconds": 637.3,
-                "estimated_mark": "10:37.28",
-                "note": "1500m 4:56.41 × 2.15 ≈ 10:37.28（簡易換算）"
-              },
+              "track_events": {},
+              "ekiden_estimate": null,
               "match_count": 17
             },
             {
@@ -2547,57 +1940,8 @@
               "ekiden_mark": "7:15",
               "ekiden_seconds": 435.0,
               "cumulative": "24:53",
-              "track_events": {
-                "800m": {
-                  "sb": {
-                    "mark": "2:19.37",
-                    "seconds": 139.37,
-                    "meet": "令和6年度　熊本県中学校総合体育大会　陸上競技大会",
-                    "meet_date": "2024/07/21",
-                    "url": "http://www.kumariku.org/24/24,7,20chutairen/rel189.html",
-                    "season": "2024",
-                    "source": "by_year_2024"
-                  },
-                  "recent": {
-                    "mark": "2:26.23",
-                    "seconds": 146.23,
-                    "meet": "第７７回熊本市中長距離陸上競技選手権大会",
-                    "meet_date": "2024/11/23",
-                    "url": "http://www.kcrk.jp/i-mode/kiroku/tyuutyoukyori/77/PC/rel055.html",
-                    "season": "2024",
-                    "source": "notion_2024"
-                  }
-                },
-                "1500m": {
-                  "sb": {
-                    "mark": "5:06.81",
-                    "seconds": 306.81,
-                    "meet": "2024.7.6　第二回熊本県長距離記録会",
-                    "meet_date": "2024/07/06",
-                    "url": "http://www.kumariku.org/24/24,7,6long&jump/rel020.html",
-                    "season": "2024",
-                    "source": "by_year_2024"
-                  },
-                  "recent": {
-                    "mark": "5:13.64",
-                    "seconds": 313.64,
-                    "meet": "2024.12.7　第四回熊本県長距離記録会",
-                    "meet_date": "2024/12/07",
-                    "url": "http://www.kumariku.org/24/24,12,7long/rel022.html",
-                    "season": "2024",
-                    "source": "notion_2024"
-                  }
-                }
-              },
-              "ekiden_estimate": {
-                "from_event": "1500m",
-                "from_mark": "5:06.81",
-                "from_seconds": 306.81,
-                "factor": 1.4,
-                "estimated_seconds": 429.5,
-                "estimated_mark": "7:09.53",
-                "note": "1500m 5:06.81 × 1.4 ≈ 7:09.53（簡易換算）"
-              },
+              "track_events": {},
+              "ekiden_estimate": null,
               "match_count": 18
             },
             {
@@ -2659,37 +2003,8 @@
               "ekiden_mark": "7:11",
               "ekiden_seconds": 431.0,
               "cumulative": "25:12",
-              "track_events": {
-                "800m": {
-                  "sb": {
-                    "mark": "2:23.59",
-                    "seconds": 143.59,
-                    "meet": "令和6年度　第38回熊本県中学校陸上競技選手権大会",
-                    "meet_date": "2024/06/09",
-                    "url": "http://www.kumariku.org/24/24,6,08chugaku/rel123.html",
-                    "season": "2024",
-                    "source": "by_year_2024"
-                  },
-                  "recent": {
-                    "mark": "2:34.11",
-                    "seconds": 154.11,
-                    "meet": "第３回会熊本県チャレンジ陸上大会",
-                    "meet_date": "2024/11/09",
-                    "url": "http://www.kumariku.org/24/24,11,9challenge/rel178.html",
-                    "season": "2024",
-                    "source": "notion_2024"
-                  }
-                }
-              },
-              "ekiden_estimate": {
-                "from_event": "800m",
-                "from_mark": "2:23.59",
-                "from_seconds": 143.59,
-                "factor": 2.75,
-                "estimated_seconds": 394.9,
-                "estimated_mark": "6:34.87",
-                "note": "800m 2:23.59 × 2.75 ≈ 6:34.87（簡易換算）"
-              },
+              "track_events": {},
+              "ekiden_estimate": null,
               "match_count": 7
             },
             {
@@ -2699,57 +2014,8 @@
               "ekiden_mark": "7:28",
               "ekiden_seconds": 448.0,
               "cumulative": "32:40",
-              "track_events": {
-                "800m": {
-                  "sb": {
-                    "mark": "2:54.04",
-                    "seconds": 174.04,
-                    "meet": "令和6年度　熊本県中学校総合体育大会　陸上競技大会",
-                    "meet_date": "2024/07/21",
-                    "url": "http://www.kumariku.org/24/24,7,20chutairen/rel153.html",
-                    "season": "2024",
-                    "source": "by_year_2024"
-                  },
-                  "recent": {
-                    "mark": "2:54.04",
-                    "seconds": 174.04,
-                    "meet": "令和6年度　熊本県中学校総合体育大会　陸上競技大会",
-                    "meet_date": "2024/07/21",
-                    "url": "http://www.kumariku.org/24/24,7,20chutairen/rel153.html",
-                    "season": "2024",
-                    "source": "by_year_2024"
-                  }
-                },
-                "1500m": {
-                  "sb": {
-                    "mark": "5:30.51",
-                    "seconds": 330.51,
-                    "meet": "２０２４年度　第４３回熊本市陸上競技選手権大会",
-                    "meet_date": "2024/05/04",
-                    "url": "http://www.kcrk.jp/i-mode/kiroku/sisen_i/43/PC/rel157.html",
-                    "season": "2024",
-                    "source": "by_year_2024"
-                  },
-                  "recent": {
-                    "mark": "5:46.37",
-                    "seconds": 346.37,
-                    "meet": "2024.7.6　第二回熊本県長距離記録会",
-                    "meet_date": "2024/07/06",
-                    "url": "http://www.kumariku.org/24/24,7,6long&jump/rel019.html",
-                    "season": "2024",
-                    "source": "notion_2024"
-                  }
-                }
-              },
-              "ekiden_estimate": {
-                "from_event": "1500m",
-                "from_mark": "5:30.51",
-                "from_seconds": 330.51,
-                "factor": 1.4,
-                "estimated_seconds": 462.7,
-                "estimated_mark": "7:42.71",
-                "note": "1500m 5:30.51 × 1.4 ≈ 7:42.71（簡易換算）"
-              },
+              "track_events": {},
+              "ekiden_estimate": null,
               "match_count": 7
             },
             {
@@ -2770,14 +2036,12 @@
     {
       "year": 2022,
       "sb_seasons": [
-        "2023",
-        "2022",
-        "2021"
+        "2022"
       ],
       "date": "2022-10-19",
       "venue": null,
       "source_file_id": "1LdY-YqIIx-57im7jTSTud5qzEBIm0hkA",
-      "source_confidence": null,
+      "source_confidence": "verified",
       "teams": [
         {
           "rank": 1,
@@ -2836,37 +2100,8 @@
               "ekiden_mark": "10:53",
               "ekiden_seconds": 653.0,
               "cumulative": "41:58",
-              "track_events": {
-                "1500m": {
-                  "sb": {
-                    "mark": "4:52.64",
-                    "seconds": 292.64,
-                    "meet": "令和６年度　熊本陸上競技選手権大会",
-                    "meet_date": "2024/04/20",
-                    "url": "http://www.kumariku.org/24/24,4,20kensen/rel071.html",
-                    "season": "2024",
-                    "source": "by_year_2024"
-                  },
-                  "recent": {
-                    "mark": "4:59.25",
-                    "seconds": 299.25,
-                    "meet": "令和6年度　熊本県中学校総合体育大会　陸上競技大会",
-                    "meet_date": "2024/07/20",
-                    "url": "http://www.kumariku.org/24/24,7,20chutairen/rel155.html",
-                    "season": "2024",
-                    "source": "notion_2024"
-                  }
-                }
-              },
-              "ekiden_estimate": {
-                "from_event": "1500m",
-                "from_mark": "4:52.64",
-                "from_seconds": 292.64,
-                "factor": 2.15,
-                "estimated_seconds": 629.2,
-                "estimated_mark": "10:29.18",
-                "note": "1500m 4:52.64 × 2.15 ≈ 10:29.18（簡易換算）"
-              },
+              "track_events": {},
+              "ekiden_estimate": null,
               "match_count": 9
             }
           ]
@@ -2890,63 +2125,14 @@
             },
             {
               "leg": 2,
-              "name": "中尾杏朱",
+              "name": "中尾彩朱",
               "grade": 1,
               "ekiden_mark": "7:14",
               "ekiden_seconds": 434.0,
               "cumulative": "17:23",
-              "track_events": {
-                "800m": {
-                  "sb": {
-                    "mark": "2:33.67",
-                    "seconds": 153.67,
-                    "meet": null,
-                    "meet_date": null,
-                    "url": "http://www.kcrk.jp/i-mode/kiroku/272/PC/rel062.html",
-                    "season": null,
-                    "source": "output_reg"
-                  },
-                  "recent": {
-                    "mark": "2:33.67",
-                    "seconds": 153.67,
-                    "meet": null,
-                    "meet_date": null,
-                    "url": "http://www.kcrk.jp/i-mode/kiroku/272/PC/rel062.html",
-                    "season": null,
-                    "source": "output_reg"
-                  }
-                },
-                "1500m": {
-                  "sb": {
-                    "mark": "5:05.09",
-                    "seconds": 305.09,
-                    "meet": null,
-                    "meet_date": null,
-                    "url": "http://www.kumariku.org/26/26,4,25kensen/rel051.html",
-                    "season": null,
-                    "source": "output_reg"
-                  },
-                  "recent": {
-                    "mark": "5:05.09",
-                    "seconds": 305.09,
-                    "meet": null,
-                    "meet_date": null,
-                    "url": "http://www.kumariku.org/26/26,4,25kensen/rel051.html",
-                    "season": null,
-                    "source": "output_reg"
-                  }
-                }
-              },
-              "ekiden_estimate": {
-                "from_event": "1500m",
-                "from_mark": "5:05.09",
-                "from_seconds": 305.09,
-                "factor": 1.28,
-                "estimated_seconds": 390.5,
-                "estimated_mark": "6:30.52",
-                "note": "1500m 5:05.09 × 1.28 ≈ 6:30.52（簡易換算）"
-              },
-              "match_count": 16
+              "track_events": {},
+              "ekiden_estimate": null,
+              "match_count": 6
             },
             {
               "leg": 3,
@@ -2966,37 +2152,8 @@
               "ekiden_mark": "8:01",
               "ekiden_seconds": 481.0,
               "cumulative": "32:51",
-              "track_events": {
-                "1500m": {
-                  "sb": {
-                    "mark": "5:41.67",
-                    "seconds": 341.67,
-                    "meet": "令和6年度　第38回熊本県中学校陸上競技選手権大会",
-                    "meet_date": "2024/06/08",
-                    "url": "http://www.kumariku.org/24/24,6,08chugaku/rel148.html",
-                    "season": "2024",
-                    "source": "by_year_2024"
-                  },
-                  "recent": {
-                    "mark": "5:41.67",
-                    "seconds": 341.67,
-                    "meet": "令和6年度　第38回熊本県中学校陸上競技選手権大会",
-                    "meet_date": "2024/06/08",
-                    "url": "http://www.kumariku.org/24/24,6,08chugaku/rel148.html",
-                    "season": "2024",
-                    "source": "by_year_2024"
-                  }
-                }
-              },
-              "ekiden_estimate": {
-                "from_event": "1500m",
-                "from_mark": "5:41.67",
-                "from_seconds": 341.67,
-                "factor": 1.4,
-                "estimated_seconds": 478.3,
-                "estimated_mark": "7:58.34",
-                "note": "1500m 5:41.67 × 1.4 ≈ 7:58.34（簡易換算）"
-              },
+              "track_events": {},
+              "ekiden_estimate": null,
               "match_count": 2
             },
             {
@@ -3058,57 +2215,8 @@
               "ekiden_mark": "7:35",
               "ekiden_seconds": 455.0,
               "cumulative": "33:11",
-              "track_events": {
-                "800m": {
-                  "sb": {
-                    "mark": "2:54.04",
-                    "seconds": 174.04,
-                    "meet": "令和6年度　熊本県中学校総合体育大会　陸上競技大会",
-                    "meet_date": "2024/07/21",
-                    "url": "http://www.kumariku.org/24/24,7,20chutairen/rel153.html",
-                    "season": "2024",
-                    "source": "by_year_2024"
-                  },
-                  "recent": {
-                    "mark": "2:54.04",
-                    "seconds": 174.04,
-                    "meet": "令和6年度　熊本県中学校総合体育大会　陸上競技大会",
-                    "meet_date": "2024/07/21",
-                    "url": "http://www.kumariku.org/24/24,7,20chutairen/rel153.html",
-                    "season": "2024",
-                    "source": "by_year_2024"
-                  }
-                },
-                "1500m": {
-                  "sb": {
-                    "mark": "5:30.51",
-                    "seconds": 330.51,
-                    "meet": "２０２４年度　第４３回熊本市陸上競技選手権大会",
-                    "meet_date": "2024/05/04",
-                    "url": "http://www.kcrk.jp/i-mode/kiroku/sisen_i/43/PC/rel157.html",
-                    "season": "2024",
-                    "source": "by_year_2024"
-                  },
-                  "recent": {
-                    "mark": "5:46.37",
-                    "seconds": 346.37,
-                    "meet": "2024.7.6　第二回熊本県長距離記録会",
-                    "meet_date": "2024/07/06",
-                    "url": "http://www.kumariku.org/24/24,7,6long&jump/rel019.html",
-                    "season": "2024",
-                    "source": "notion_2024"
-                  }
-                }
-              },
-              "ekiden_estimate": {
-                "from_event": "1500m",
-                "from_mark": "5:30.51",
-                "from_seconds": 330.51,
-                "factor": 1.4,
-                "estimated_seconds": 462.7,
-                "estimated_mark": "7:42.71",
-                "note": "1500m 5:30.51 × 1.4 ≈ 7:42.71（簡易換算）"
-              },
+              "track_events": {},
+              "ekiden_estimate": null,
               "match_count": 7
             },
             {
@@ -3159,57 +2267,8 @@
               "ekiden_mark": "7:06",
               "ekiden_seconds": 426.0,
               "cumulative": "24:34",
-              "track_events": {
-                "800m": {
-                  "sb": {
-                    "mark": "2:29.61",
-                    "seconds": 149.61,
-                    "meet": "令和6年度　第38回熊本県中学校陸上競技選手権大会",
-                    "meet_date": "2024/06/09",
-                    "url": "http://www.kumariku.org/24/24,6,08chugaku/rel127.html",
-                    "season": "2024",
-                    "source": "by_year_2024"
-                  },
-                  "recent": {
-                    "mark": "2:29.92",
-                    "seconds": 149.92,
-                    "meet": "第70回全日本中学校通信陸上競技大会熊本県大会",
-                    "meet_date": "2024/06/23",
-                    "url": "http://www.kumariku.org/24/24,6,22tsushin/rel185.html",
-                    "season": "2024",
-                    "source": "notion_2024"
-                  }
-                },
-                "1500m": {
-                  "sb": {
-                    "mark": "5:14.20",
-                    "seconds": 314.2,
-                    "meet": "令和6年度　熊本県中学校総合体育大会　陸上競技大会",
-                    "meet_date": "2024/07/20",
-                    "url": "http://www.kumariku.org/24/24,7,20chutairen/rel156.html",
-                    "season": "2024",
-                    "source": "by_year_2024"
-                  },
-                  "recent": {
-                    "mark": "5:14.20",
-                    "seconds": 314.2,
-                    "meet": "令和6年度　熊本県中学校総合体育大会　陸上競技大会",
-                    "meet_date": "2024/07/20",
-                    "url": "http://www.kumariku.org/24/24,7,20chutairen/rel156.html",
-                    "season": "2024",
-                    "source": "by_year_2024"
-                  }
-                }
-              },
-              "ekiden_estimate": {
-                "from_event": "1500m",
-                "from_mark": "5:14.20",
-                "from_seconds": 314.2,
-                "factor": 1.4,
-                "estimated_seconds": 439.9,
-                "estimated_mark": "7:19.88",
-                "note": "1500m 5:14.20 × 1.4 ≈ 7:19.88（簡易換算）"
-              },
+              "track_events": {},
+              "ekiden_estimate": null,
               "match_count": 7
             },
             {
@@ -3241,14 +2300,12 @@
     {
       "year": 2021,
       "sb_seasons": [
-        "2022",
-        "2021",
-        "2020"
+        "2021"
       ],
       "date": "2021-10-20",
       "venue": null,
       "source_file_id": "1t4xKLNQph4mcdKzdXj3NqGxmKG-Y8PPo",
-      "source_confidence": null,
+      "source_confidence": "verified",
       "teams": [
         {
           "rank": 1,
@@ -3507,14 +2564,12 @@
     {
       "year": 2020,
       "sb_seasons": [
-        "2021",
-        "2020",
-        "2019"
+        "2020"
       ],
       "date": "2020-10-21",
       "venue": null,
       "source_file_id": "1pbX4GwUm7_TebtyZZlMo4U8BHu_OPWmP",
-      "source_confidence": null,
+      "source_confidence": "verified",
       "teams": [
         {
           "rank": 1,
@@ -3524,7 +2579,7 @@
           "athletes": [
             {
               "leg": 1,
-              "name": "片山美瑞愛",
+              "name": "片山美璃愛",
               "grade": 2,
               "ekiden_mark": "10:30",
               "ekiden_seconds": 630.0,
@@ -3773,14 +2828,12 @@
     {
       "year": 2019,
       "sb_seasons": [
-        "2020",
-        "2019",
-        "2018"
+        "2019"
       ],
       "date": "2019-11-16",
       "venue": null,
       "source_file_id": "1-m4jAOxnRixZLOkolym7idoBH7S6WBTN",
-      "source_confidence": null,
+      "source_confidence": "verified",
       "teams": [
         {
           "rank": 1,
@@ -3824,7 +2877,7 @@
             {
               "leg": 4,
               "name": "山田侑奈",
-              "grade": 3,
+              "grade": 2,
               "ekiden_mark": "7:18",
               "ekiden_seconds": 438.0,
               "cumulative": "30:22",
@@ -4039,14 +3092,12 @@
     {
       "year": 2018,
       "sb_seasons": [
-        "2019",
-        "2018",
-        "2017"
+        "2018"
       ],
       "date": "2018-10-17",
       "venue": null,
       "source_file_id": "1SpSxcvlMeVJ_w9sV1D559ki112DVfvII",
-      "source_confidence": null,
+      "source_confidence": "verified",
       "teams": [
         {
           "rank": 1,
@@ -4078,7 +3129,7 @@
             },
             {
               "leg": 3,
-              "name": "濱崎麻那",
+              "name": "濱本麻那",
               "grade": 2,
               "ekiden_mark": "6:52",
               "ekiden_seconds": 412.0,
@@ -4100,7 +3151,7 @@
             },
             {
               "leg": 5,
-              "name": "坂田未来",
+              "name": "坂上未来",
               "grade": 2,
               "ekiden_mark": "10:46",
               "ekiden_seconds": 646.0,
@@ -4305,14 +3356,12 @@
     {
       "year": 2017,
       "sb_seasons": [
-        "2018",
-        "2017",
-        "2016"
+        "2017"
       ],
       "date": "2017-10-18",
       "venue": null,
       "source_file_id": "1txCmMkoQMiayxCCaH9iUm5LyDcM-zZ5u",
-      "source_confidence": null,
+      "source_confidence": "verified",
       "teams": [
         {
           "rank": 1,
@@ -4571,14 +3620,12 @@
     {
       "year": 2016,
       "sb_seasons": [
-        "2017",
-        "2016",
-        "2015"
+        "2016"
       ],
       "date": "2016-10-19",
       "venue": null,
       "source_file_id": "1LhUyOckCQI2Ne3OEOIbQmMq4tZf5KzeR",
-      "source_confidence": null,
+      "source_confidence": "verified",
       "teams": [
         {
           "rank": 1,
@@ -4837,14 +3884,12 @@
     {
       "year": 2015,
       "sb_seasons": [
-        "2016",
-        "2015",
-        "2014"
+        "2015"
       ],
       "date": "2015-10-21",
       "venue": null,
       "source_file_id": "17gakFQA2vfltUyFgLkmy0FrWC8NnKdYv",
-      "source_confidence": null,
+      "source_confidence": "verified",
       "teams": [
         {
           "rank": 1,
@@ -4876,7 +3921,7 @@
             },
             {
               "leg": 3,
-              "name": "笠井葉央",
+              "name": "笠井菜央",
               "grade": 3,
               "ekiden_mark": "6:54",
               "ekiden_seconds": 414.0,
@@ -5103,14 +4148,12 @@
     {
       "year": 2013,
       "sb_seasons": [
-        "2014",
-        "2013",
-        "2012"
+        "2013"
       ],
       "date": null,
       "venue": null,
       "source_file_id": "1YFXOLciLrpuMD8lvGVQ0oImq1uZLg1Ep",
-      "source_confidence": null,
+      "source_confidence": "verified",
       "teams": [
         {
           "rank": 1,
@@ -5369,14 +4412,12 @@
     {
       "year": 2012,
       "sb_seasons": [
-        "2013",
-        "2012",
-        "2011"
+        "2012"
       ],
       "date": null,
       "venue": null,
       "source_file_id": "1AONIAmzyv-oVZ8RI1x4gIOtBkQVNgEts",
-      "source_confidence": null,
+      "source_confidence": "verified",
       "teams": [
         {
           "rank": 1,
@@ -5523,7 +4564,7 @@
             },
             {
               "leg": 2,
-              "name": "古本結理",
+              "name": "吉本絵理",
               "grade": 2,
               "ekiden_mark": "6:55",
               "ekiden_seconds": 415.0,
@@ -5534,7 +4575,7 @@
             },
             {
               "leg": 3,
-              "name": "吉岡憂希",
+              "name": "吉岡愛希",
               "grade": 2,
               "ekiden_mark": "6:51",
               "ekiden_seconds": 411.0,
@@ -5587,7 +4628,7 @@
             {
               "leg": 2,
               "name": "津留有希子",
-              "grade": 2,
+              "grade": 3,
               "ekiden_mark": "7:13",
               "ekiden_seconds": 433.0,
               "cumulative": "17:34",

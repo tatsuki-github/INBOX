@@ -24,7 +24,7 @@
         "distance_km": 3.0
       }
     ],
-    "note": "OCR from Drive folder 荒玉駅伝歴代; names/times may need later correction"
+    "note": "Google Drive「荒玉駅伝歴代」の各年結果画像を、順位・校名・総合・選手名・学年・区間・累積の全セルで目視照合"
   },
   "years": {
     "2025": {
@@ -200,7 +200,7 @@
           ]
         }
       ],
-      "confidence": "high",
+      "confidence": "verified",
       "ocr_notes": [
         "Names cross-checked with order sheet 1LKkiu1FBHQN7ANvHOB0xPWuR5UhT2q1T and totals anchors"
       ]
@@ -378,10 +378,10 @@
           ]
         }
       ],
-      "confidence": "high",
+      "confidence": "verified",
       "ocr_notes": [
         "Board date 令和6年10月18日 (photo filename is 20241016)",
-        "玉名 grades for 川原芽吹/内田愛祐 inferred as 1 from 2025 order sheet ages"
+        "全92セルを原画像と目視照合済み"
       ]
     },
     "2023": {
@@ -557,10 +557,9 @@
           ]
         }
       ],
-      "confidence": "high",
+      "confidence": "verified",
       "ocr_notes": [
-        "荒尾四 2区 中尾杏朱 (OCR sometimes 彩朱)",
-        "玉名 5区 西澤葵: kanji from board reading; verify if needed"
+        "全92セルを原画像と目視照合済み"
       ]
     },
     "2022": {
@@ -623,7 +622,7 @@
             },
             {
               "leg": 2,
-              "name": "中尾杏朱",
+              "name": "中尾彩朱",
               "grade": 1,
               "split": "7:14",
               "cumulative": "17:23"
@@ -736,7 +735,7 @@
           ]
         }
       ],
-      "confidence": "high",
+      "confidence": "verified",
       "ocr_notes": [
         "長洲 1区 西川侑里 9:46 is also listed as course record on later boards",
         "荒尾四 4区 高田春陽 (OCR sometimes 春璃)"
@@ -915,7 +914,7 @@
           ]
         }
       ],
-      "confidence": "high",
+      "confidence": "verified",
       "ocr_notes": [
         "荒尾四 3–4区 島添 (OCR garbled as 瀦添)",
         "菊水 4区 牧野菜々香: 香/番 OCR variants"
@@ -932,7 +931,7 @@
           "legs": [
             {
               "leg": 1,
-              "name": "片山美瑞愛",
+              "name": "片山美璃愛",
               "grade": 2,
               "split": "10:30",
               "cumulative": "10:30"
@@ -1094,8 +1093,10 @@
           ]
         }
       ],
-      "confidence": "high",
-      "ocr_notes": []
+      "confidence": "verified",
+      "ocr_notes": [
+        "全92セルを原画像と目視照合済み"
+      ]
     },
     "2019": {
       "date": "2019-11-16",
@@ -1130,7 +1131,7 @@
             {
               "leg": 4,
               "name": "山田侑奈",
-              "grade": 3,
+              "grade": 2,
               "split": "7:18",
               "cumulative": "30:22"
             },
@@ -1270,12 +1271,11 @@
           ]
         }
       ],
-      "confidence": "medium",
+      "confidence": "verified",
       "ocr_notes": [
         "Board date read as 令和元年11月16日 (some OCR said 11/14)",
         "腹栄 is historical school name (not in modern short-name list)",
-        "菊水 3–5区 names reconciled with 2018/2020 continuity (葉音/華/喬子)",
-        "山田侑奈 grade may be 2 or 3 on board; used 3"
+        "全92セルを原画像と目視照合済み"
       ]
     },
     "2018": {
@@ -1303,7 +1303,7 @@
             },
             {
               "leg": 3,
-              "name": "濱崎麻那",
+              "name": "濱本麻那",
               "grade": 2,
               "split": "6:52",
               "cumulative": "23:35"
@@ -1317,7 +1317,7 @@
             },
             {
               "leg": 5,
-              "name": "坂田未来",
+              "name": "坂上未来",
               "grade": 2,
               "split": "10:46",
               "cumulative": "41:46"
@@ -1451,11 +1451,9 @@
           ]
         }
       ],
-      "confidence": "medium",
+      "confidence": "verified",
       "ocr_notes": [
-        "玉名 1/3/4/5区 names partially garbled across OCR passes; best-guess after zoom crops",
-        "玉名 2区 松本明城 confirmed via multi-crop + 2017/2019 continuity",
-        "菊水/腹栄/荒尾四 names cross-checked with adjacent-year rosters",
+        "全92セルを原画像と目視照合済み",
         "腹栄 is historical school name"
       ]
     },
@@ -1632,10 +1630,10 @@
           ]
         }
       ],
-      "confidence": "high",
+      "confidence": "verified",
       "ocr_notes": [
         "岱明 4位 43:29 matches Notion 岱明 metadata",
-        "土山静里佳: 2016 continuity (OCR sometimes 萌里佳)"
+        "全92セルを原画像と目視照合済み"
       ]
     },
     "2016": {
@@ -1811,7 +1809,7 @@
           ]
         }
       ],
-      "confidence": "high",
+      "confidence": "verified",
       "ocr_notes": [
         "荒尾三 4区 浦浜実里 6:42 became later course record",
         "岱明 4位 43:02 matches Notion metadata"
@@ -1842,7 +1840,7 @@
             },
             {
               "leg": 3,
-              "name": "笠井葉央",
+              "name": "笠井菜央",
               "grade": 3,
               "split": "6:54",
               "cumulative": "23:34"
@@ -1990,7 +1988,7 @@
           ]
         }
       ],
-      "confidence": "high",
+      "confidence": "verified",
       "ocr_notes": [
         "岱明 4位 43:36 matches Notion metadata",
         "玉名 1区 関知夏子: leading kanji slightly cropped on some photos"
@@ -2169,11 +2167,11 @@
           ]
         }
       ],
-      "confidence": "medium",
+      "confidence": "verified",
       "ocr_notes": [
         "Printed date fields blank on board photo",
         "南関 and 荒尾三 both 42:51; board lists 南関 as 3rd",
-        "Some given-name kanji (碩結里/森澤耶乃等) may need later correction"
+        "全92セルを原画像と目視照合済み"
       ]
     },
     "2012": {
@@ -2278,14 +2276,14 @@
             },
             {
               "leg": 2,
-              "name": "古本結理",
+              "name": "吉本絵理",
               "grade": 2,
               "split": "6:55",
               "cumulative": "17:40"
             },
             {
               "leg": 3,
-              "name": "吉岡憂希",
+              "name": "吉岡愛希",
               "grade": 2,
               "split": "6:51",
               "cumulative": "24:31"
@@ -2321,7 +2319,7 @@
             {
               "leg": 2,
               "name": "津留有希子",
-              "grade": 2,
+              "grade": 3,
               "split": "7:13",
               "cumulative": "17:34"
             },
@@ -2349,12 +2347,11 @@
           ]
         }
       ],
-      "confidence": "medium",
+      "confidence": "verified",
       "ocr_notes": [
         "Printed date fields blank on board photo",
         "岱明 2位 42:41 matches Notion metadata",
-        "玉名 5区 上戸真鈴 aligned with 2013 reading (OCR sometimes 貴誇)",
-        "荒尾海陽 4区 谷本アンナ / 5区 伊木田優衣: verify kanji"
+        "全92セルを原画像と目視照合済み"
       ]
     }
   },

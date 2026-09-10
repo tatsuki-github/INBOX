@@ -106,15 +106,13 @@ def school_overlap(a: str, b: str) -> bool:
 
 
 def seasons_for_ekiden_year(year: int) -> list[str]:
-    """駅伝年（多くは10月）に対する参照シーズン優先順。
-
-    学年年度 Y+1（例: 2026年度 = 2025年4月〜）を最優先し、
-    同年・前年の by-year / wide をフォールバックする。
-    """
-    return [str(year + 1), str(year), str(year - 1), ""]
+    """駅伝と同じ暦年のトラック記録だけを参照する。"""
+    return [str(year)]
 
 
-def load_wide_like_csv(path: Path, source: str) -> dict[str, list[dict[str, Any]]]:
+def load_wide_like_csv(
+    path: Path, source: str, season: str
+) -> dict[str, list[dict[str, Any]]]:
     by_name: dict[str, list[dict[str, Any]]] = {}
     if not path.exists():
         return by_name
@@ -138,7 +136,7 @@ def load_wide_like_csv(path: Path, source: str) -> dict[str, list[dict[str, Any]
                 by_name.setdefault(name, []).append(
                     {
                         "source": source,
-                        "season": "",
+                        "season": season,
                         "school": school,
                         "grade": "",
                         "event": event,
@@ -148,6 +146,7 @@ def load_wide_like_csv(path: Path, source: str) -> dict[str, list[dict[str, Any]
                         "meet_date": None,
                         "url": url,
                         "is_sb": True,
+                        "is_aggregate": True,
                     }
                 )
     return by_name
@@ -202,6 +201,7 @@ def load_by_year_json() -> dict[str, list[dict[str, Any]]]:
                     "meet_date": (row.get("日付") or "").strip() or None,
                     "url": url,
                     "is_sb": bool(row.get("SB採用")),
+                    "is_aggregate": True,
                 }
             )
     return by_name
@@ -270,6 +270,7 @@ def load_notion_rows() -> dict[str, list[dict[str, Any]]]:
                     "meet_date": meet_date,
                     "url": url,
                     "is_sb": is_sb,
+                    "is_aggregate": False,
                 }
             )
     return by_name
@@ -288,33 +289,27 @@ def pick_sb(records: list[dict[str, Any]], seasons: list[str], event: str) -> di
         cands = [
             r
             for r in records
-            if r.get("event") == event and r.get("is_sb") and (r.get("season") or "") == season
+            if r.get("event") == event and (r.get("season") or "") == season
         ]
         if cands:
             return min(cands, key=lambda r: r["seconds"])
-    cands = [r for r in records if r.get("event") == event and r.get("is_sb")]
-    if cands:
-        return min(cands, key=lambda r: r["seconds"])
-    cands = [r for r in records if r.get("event") == event]
-    if cands:
-        return min(cands, key=lambda r: r["seconds"])
     return None
 
 
 def pick_recent(records: list[dict[str, Any]], seasons: list[str], event: str) -> dict[str, Any] | None:
     for season in seasons:
-        cands = [r for r in records if r.get("event") == event and (r.get("season") or "") == season]
+        cands = [
+            r
+            for r in records
+            if r.get("event") == event
+            and (r.get("season") or "") == season
+            and not r.get("is_aggregate")
+        ]
         dated = [r for r in cands if r.get("meet_date")]
         if dated:
             return max(dated, key=lambda r: r.get("meet_date") or "")
         if cands:
             return min(cands, key=lambda r: r["seconds"])
-    dated = [r for r in records if r.get("event") == event and r.get("meet_date")]
-    if dated:
-        return max(dated, key=lambda r: r.get("meet_date") or "")
-    cands = [r for r in records if r.get("event") == event]
-    if cands:
-        return min(cands, key=lambda r: r["seconds"])
     return None
 
 
@@ -356,8 +351,10 @@ def pack_mark(rec: dict[str, Any] | None) -> dict[str, Any] | None:
 
 def build_joined() -> dict[str, Any]:
     top4 = json.loads(TOP4_JSON.read_text(encoding="utf-8"))
-    wide = load_wide_like_csv(WIDE_SB, "wide_sb")
-    oreg = load_wide_like_csv(OUTPUT_REG, "output_reg")
+    # ワイドSBは2025年度、output_regは2026年度のスナップショット。
+    # 年度を持たない形式なので、他年度へのフォールバックには絶対に使わない。
+    wide = load_wide_like_csv(WIDE_SB, "wide_sb", "2025")
+    oreg = load_wide_like_csv(OUTPUT_REG, "output_reg", "2026")
     by_year = load_by_year_json()
     notion = load_notion_rows()
     all_recs = merge_records(wide, oreg, by_year, notion)
@@ -442,7 +439,8 @@ def build_joined() -> dict[str, Any]:
                 "date": yblock.get("date"),
                 "venue": yblock.get("venue"),
                 "source_file_id": yblock.get("source_drive_id") or yblock.get("source_file_id"),
-                "source_confidence": yblock.get("source_confidence"),
+                "source_confidence": yblock.get("confidence")
+                or yblock.get("source_confidence"),
                 "teams": teams_out,
             }
         )
@@ -454,7 +452,12 @@ def build_joined() -> dict[str, Any]:
             "missing_years": top4.get("missing_years") or top4.get("meta", {}).get("missing_years") or [2014],
             "stats": stats,
             "guide_note": "駅伝目安はトラック記録の簡易距離換算であり、コース・気象・タスキ条件は含みません。",
-            "drive_source_note": "区間オーダーは Google Drive「荒玉駅伝歴代」結果画像の OCR に基づく。",
+            "drive_source_note": (
+                "駅伝記録は Google Drive「荒玉駅伝歴代」の結果画像と全セルを目視照合済み。"
+                "ただし2014年女子の原画像は同フォルダ内で確認できず、未掲載。"
+                "トラック記録は同じ暦年のみを参照し、2012〜2023年は利用可能な記録資料がないため空欄。"
+                "2024年は収録DB、2025年は収録途中のDBおよびSB一覧に基づく。"
+            ),
             "sources": {
                 "ekiden": str(TOP4_JSON.relative_to(ROOT)),
                 "wide_sb": str(WIDE_SB.relative_to(ROOT)),
@@ -496,7 +499,7 @@ def write_csv(data: dict[str, Any]) -> None:
     if not rows:
         return
     with OUT_CSV.open("w", encoding="utf-8", newline="") as f:
-        w = csv.DictWriter(f, fieldnames=list(rows[0].keys()))
+        w = csv.DictWriter(f, fieldnames=list(rows[0].keys()), lineterminator="\n")
         w.writeheader()
         w.writerows(rows)
 
