@@ -35,6 +35,10 @@ TRACK_EVENTS = ("800m", "1500m", "3000m")
 TRUE_VALUES = {"1", "true", "yes", "y", "__yes__"}
 NON_RESULT_MARKS = {"DNS", "DNF", "DQ"}
 MAX_TRACK_SECONDS = 24 * 60 * 60
+SCHOOL_ALIASES = {
+    "荒尾第三": "荒尾三",
+    "荒尾第四": "荒尾四",
+}
 
 def norm_name(s: str) -> str:
     s = unicodedata.normalize("NFKC", s or "")
@@ -45,8 +49,9 @@ def norm_school(s: str) -> str:
     value = norm_name(s)
     for suffix in ("中学校", "中"):
         if value.endswith(suffix):
-            return value[: -len(suffix)]
-    return value
+            value = value[: -len(suffix)]
+            break
+    return SCHOOL_ALIASES.get(value, value)
 
 
 def parse_time_to_seconds(raw: str | None) -> float | None:

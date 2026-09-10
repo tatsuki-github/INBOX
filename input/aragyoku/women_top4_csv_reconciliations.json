@@ -4,8 +4,6 @@
   "items": [
     {"year": 2012, "rank": 1, "team": "玉名", "leg": 2, "field": "name", "from": "西澤弥乃", "to": "森澤彩乃", "csv_grade": 2, "csv_rows": 4, "evidence": "玉名中2年で4記録。翌2013年も玉名中3年で6記録があり、駅伝側の森澤耶乃と継続一致。旧名はCSVにない。"},
     {"year": 2012, "rank": 2, "team": "岱明", "leg": 1, "field": "name", "from": "大濱志歩", "to": "大道志歩", "csv_grade": 1, "csv_rows": 6, "evidence": "岱明中1年で6記録、同じ志歩かつ一文字違い。800m 2:22.94は駅伝1区10:17の走力とも整合。旧名はCSVにない。"},
-    {"year": 2012, "rank": 2, "team": "岱明", "leg": 2, "field": "name", "from": "前田明日香", "to": "前田明佳里", "csv_grade": 1, "csv_rows": 2, "evidence": "岱明中1年で同姓かつ明で始まる候補は前田明佳里のみ。800m 2:35台は駅伝2区6:43と整合し、旧名はCSVにない。"},
-    {"year": 2012, "rank": 2, "team": "岱明", "leg": 4, "field": "name", "from": "鎌田愛貴", "to": "植田愛美", "csv_grade": 2, "csv_rows": 3, "evidence": "岱明中2年で3記録。1500m 5:22台は駅伝4区7:22と整合。別候補の田中愛美は1500m 6:10で走力が不整合、旧名はCSVにない。"},
     {"year": 2012, "rank": 4, "team": "南関", "leg": 3, "field": "name", "from": "嶋村梨那", "to": "嶋村里恩", "csv_grade": 1, "csv_rows": 3, "evidence": "南関中1年で同姓候補は嶋村里恩のみ。翌2013年も南関中2年で4記録があり継続一致。旧名はCSVにない。"},
 
     {"year": 2013, "rank": 1, "team": "玉名", "leg": 1, "field": "name", "from": "森澤耶乃", "to": "森澤彩乃", "csv_grade": 3, "csv_rows": 6, "evidence": "玉名中3年で6記録。前年の玉名中2年から継続し、一文字違い。3000m 10:23.21は駅伝1区10:09と整合。"},
@@ -14,12 +12,17 @@
     {"year": 2013, "rank": 4, "team": "荒尾三", "leg": 1, "field": "name", "from": "関琴美", "to": "開琴美", "csv_grade": 2, "csv_rows": 3, "evidence": "荒尾三中2年で同じ琴美の候補は開琴美のみ。一文字違いで旧名はCSVにない。"},
 
     {"year": 2015, "rank": 1, "team": "玉名", "leg": 1, "field": "name", "from": "関知夏子", "to": "關知夏子", "csv_grade": 3, "csv_rows": 6, "evidence": "玉名中3年で6記録。関と關の字体差のみで旧字体のCSV表記を優先。"},
+    {"year": 2015, "rank": 2, "team": "荒尾三", "leg": 2, "field": "name", "from": "荒川夏凛", "to": "荒川夏凜", "csv_year": 2017, "csv_grade": 3, "csv_rows": 2, "evidence": "2015年1年・2016年2年・2017年3年と同校で継続。2017年CSVの荒川夏凜2記録を字体の正本とする。"},
     {"year": 2015, "rank": 3, "team": "南関", "leg": 5, "field": "name", "from": "島崎乃々佳", "to": "島﨑乃々佳", "csv_grade": 2, "csv_rows": 6, "evidence": "南関中2年で6記録。崎と﨑の字体差のみでCSV表記を優先。"},
+    {"year": 2016, "rank": 1, "team": "荒尾三", "leg": 3, "field": "name", "from": "荒川夏凛", "to": "荒川夏凜", "csv_year": 2017, "csv_grade": 3, "csv_rows": 2, "evidence": "2015年1年・2016年2年・2017年3年と同校で継続。2017年CSVの荒川夏凜2記録を字体の正本とする。"},
     {"year": 2016, "rank": 3, "team": "南関", "leg": 3, "field": "name", "from": "島崎乃々佳", "to": "島﨑乃々佳", "csv_grade": 3, "csv_rows": 3, "evidence": "南関中3年で3記録。前年の同校2年から継続し、崎と﨑の字体差のみ。"},
+    {"year": 2017, "rank": 2, "team": "荒尾三", "leg": 2, "field": "name", "from": "沖愛凛", "to": "沖愛凜", "csv_year": 2018, "csv_grade": 2, "csv_rows": 1, "evidence": "2017年1年・2018年2年・2019年3年と同校で継続。2018年CSVの沖愛凜を字体の正本とする。"},
     {"year": 2017, "rank": 2, "team": "荒尾三", "leg": 4, "field": "name", "from": "荒川夏凛", "to": "荒川夏凜", "csv_grade": 3, "csv_rows": 2, "evidence": "荒尾三中3年で2記録。凛と凜の字体差のみでCSV表記を優先。"},
-    {"year": 2018, "rank": 1, "team": "玉名", "leg": 3, "field": "name", "from": "濱本麻那", "to": "境田麻那", "csv_grade": 2, "csv_rows": 7, "evidence": "玉名中2年で同じ麻那は境田麻那のみ、7記録。800m 2:23.90は駅伝3区6:52と整合し、旧名はCSVにない。"},
     {"year": 2018, "rank": 1, "team": "玉名", "leg": 5, "field": "name", "from": "坂上未来", "to": "田上未来", "csv_grade": 2, "csv_rows": 4, "evidence": "玉名中2年で4記録。同じ未来かつ一文字違いで旧名はCSVにない。"},
     {"year": 2018, "rank": 2, "team": "菊水", "leg": 4, "field": "name", "from": "前瀬あかり", "to": "前淵あかり", "csv_grade": 2, "csv_rows": 6, "evidence": "菊水中2年で6記録。同じ前・あかりかつ一文字違いで旧名はCSVにない。"},
+    {"year": 2019, "rank": 4, "team": "荒尾三", "leg": 1, "field": "name", "from": "沖愛凛", "to": "沖愛凜", "csv_year": 2018, "csv_grade": 2, "csv_rows": 1, "evidence": "2017年1年・2018年2年・2019年3年と同校で継続。2018年CSVの沖愛凜を字体の正本とする。"},
+    {"year": 2023, "rank": 2, "team": "荒尾四", "leg": 2, "field": "name", "from": "中尾杏朱", "to": "中尾彩朱", "csv_grade": 2, "csv_rows": 5, "evidence": "荒尾第四中2年で5記録。2022年1年・2024年3年にも同じ中尾彩朱があり、学年進行が一致。"},
+    {"year": 2023, "rank": 2, "team": "荒尾四", "leg": 4, "field": "name", "from": "高田春陽", "to": "髙田春陽", "csv_grade": 2, "csv_rows": 5, "evidence": "荒尾第四中2年で5記録、2024年3年でも3記録。高と髙の字体差で学年進行も一致。"},
 
     {"year": 2016, "rank": 3, "team": "南関", "leg": 3, "field": "grade", "from": 1, "to": 3, "csv_grade": 3, "csv_rows": 3, "evidence": "2015年CSV・駅伝は2年、2016年CSVの主要3記録は3年で学年進行が一致。CSV内の2年表記2件より前後年度整合を優先。"},
     {"year": 2016, "rank": 4, "team": "岱明", "leg": 2, "field": "grade", "from": 3, "to": 1, "csv_grade": 1, "csv_rows": 4, "evidence": "2016年CSVは4記録すべて岱明中1年、2017年駅伝は2年で学年進行も一致。"},

@@ -53,6 +53,7 @@ def test_time_helpers() -> None:
     assert format_seconds(float("inf")) is None
     assert norm_name("内田　愛祐") == "内田愛祐"
     assert school_overlap("玉名", "玉名中")
+    assert school_overlap("荒尾四", "荒尾第四中")
     assert not school_overlap("荒尾三", "荒尾四")
     assert not school_overlap("玉東", "玉東クラブ")
     assert not school_overlap("長洲", "長洲JRC")
@@ -302,8 +303,8 @@ def test_corrected_transcriptions_are_preserved() -> None:
 
     assert athlete(2012, 1, 2)["name"] == "森澤彩乃"
     assert athlete(2012, 2, 1)["name"] == "大道志歩"
-    assert athlete(2012, 2, 2)["name"] == "前田明佳里"
-    assert athlete(2012, 2, 4)["name"] == "植田愛美"
+    assert athlete(2012, 2, 2)["name"] == "前田明日香"
+    assert athlete(2012, 2, 4)["name"] == "鎌田愛貴"
     assert athlete(2012, 4, 3)["name"] == "嶋村里恩"
     assert athlete(2012, 4, 2)["grade"] == 3
     assert athlete(2013, 1, 1)["name"] == "森澤彩乃"
@@ -311,12 +312,18 @@ def test_corrected_transcriptions_are_preserved() -> None:
     assert athlete(2013, 3, 5)["name"] == "嶋村里恩"
     assert athlete(2013, 4, 1)["name"] == "開琴美"
     assert athlete(2015, 1, 1)["name"] == "關知夏子"
+    assert athlete(2015, 2, 2)["name"] == "荒川夏凜"
     assert athlete(2015, 3, 5)["name"] == "島﨑乃々佳"
+    assert athlete(2016, 1, 3)["name"] == "荒川夏凜"
     assert athlete(2016, 3, 3)["name"] == "島﨑乃々佳"
+    assert athlete(2017, 2, 2)["name"] == "沖愛凜"
     assert athlete(2017, 2, 4)["name"] == "荒川夏凜"
-    assert athlete(2018, 1, 3)["name"] == "境田麻那"
+    assert athlete(2018, 1, 3)["name"] == "濱本麻那"
     assert athlete(2018, 1, 5)["name"] == "田上未来"
     assert athlete(2018, 2, 4)["name"] == "前淵あかり"
+    assert athlete(2019, 4, 1)["name"] == "沖愛凜"
+    assert athlete(2023, 2, 2)["name"] == "中尾彩朱"
+    assert athlete(2023, 2, 4)["name"] == "髙田春陽"
 
     assert athlete(2016, 3, 3)["grade"] == 3
     assert athlete(2016, 4, 2)["grade"] == 1
@@ -330,8 +337,6 @@ def test_csv_reconciled_athletes_have_same_year_track_matches() -> None:
     corrected = {
         (2012, "森澤彩乃"),
         (2012, "大道志歩"),
-        (2012, "前田明佳里"),
-        (2012, "植田愛美"),
         (2012, "嶋村里恩"),
         (2013, "森澤彩乃"),
         (2013, "磧結里"),
@@ -341,9 +346,10 @@ def test_csv_reconciled_athletes_have_same_year_track_matches() -> None:
         (2015, "島﨑乃々佳"),
         (2016, "島﨑乃々佳"),
         (2017, "荒川夏凜"),
-        (2018, "境田麻那"),
         (2018, "田上未来"),
         (2018, "前淵あかり"),
+        (2023, "中尾彩朱"),
+        (2023, "髙田春陽"),
     }
     matched = {
         (year_block["year"], athlete["name"])
@@ -353,7 +359,7 @@ def test_csv_reconciled_athletes_have_same_year_track_matches() -> None:
         if athlete["match_count"] > 0
     }
     assert corrected <= matched
-    assert data["meta"]["verification"]["csv_reconciled_cells"] == 21
+    assert data["meta"]["verification"]["csv_reconciled_cells"] == 24
 
 
 def test_reconciliation_manifest_validates_against_raw_csv() -> None:

@@ -11,14 +11,19 @@ from pathlib import Path
 OUT_DIR = Path(__file__).resolve().parent
 ROOT = OUT_DIR.parents[1]
 CSV_RECONCILIATIONS = OUT_DIR / "women_top4_csv_reconciliations.json"
+SCHOOL_ALIASES = {
+    "荒尾第三": "荒尾三",
+    "荒尾第四": "荒尾四",
+}
 
 
 def school_key(value: str) -> str:
     normalized = unicodedata.normalize("NFKC", value or "").replace(" ", "").replace("　", "")
     for suffix in ("中学校", "中"):
         if normalized.endswith(suffix):
-            return normalized[: -len(suffix)]
-    return normalized
+            normalized = normalized[: -len(suffix)]
+            break
+    return SCHOOL_ALIASES.get(normalized, normalized)
 
 
 def leg(n: int, name, grade, split: str, cumulative: str) -> dict:
@@ -70,6 +75,18 @@ def validate_csv_reconciliations(dataset: dict) -> None:
 
     seen: set[tuple[int, int, int, str]] = set()
     rows_by_year: dict[int, list[dict[str, str]]] = {}
+
+    def rows_for(year: int) -> list[dict[str, str]]:
+        if year not in rows_by_year:
+            source = (
+                ROOT
+                / "input/external/drive/personal/t-tsuchiyama/sb/by-year"
+                / f"{year}-single-table.csv"
+            )
+            with source.open(encoding="utf-8-sig", newline="") as f:
+                rows_by_year[year] = list(csv.DictReader(f))
+        return rows_by_year[year]
+
     for item in items:
         key = (item["year"], item["rank"], item["leg"], item["field"])
         assert key not in seen, key
@@ -82,19 +99,10 @@ def validate_csv_reconciliations(dataset: dict) -> None:
         assert athlete[item["field"]] == item["to"], (key, athlete[item["field"]], item["to"])
         assert item.get("evidence"), key
 
-        year = item["year"]
-        if year not in rows_by_year:
-            source = (
-                ROOT
-                / "input/external/drive/personal/t-tsuchiyama/sb/by-year"
-                / f"{year}-single-table.csv"
-            )
-            with source.open(encoding="utf-8-sig", newline="") as f:
-                rows_by_year[year] = list(csv.DictReader(f))
-
+        evidence_year = item.get("csv_year", item["year"])
         matches = [
             row
-            for row in rows_by_year[year]
+            for row in rows_for(evidence_year)
             if row.get("性別") == "女子"
             and row.get("カテゴリー") == "中学生"
             and row.get("名前") == athlete["name"]
@@ -107,12 +115,12 @@ def validate_csv_reconciliations(dataset: dict) -> None:
         if item["field"] == "name":
             old_matches = [
                 row
-                for row in rows_by_year[year]
+                for row in rows_for(item["year"])
                 if row.get("性別") == "女子"
                 and row.get("カテゴリー") == "中学生"
                 and row.get("名前") == item["from"]
                 and school_key(item["team"]) == school_key(row.get("所属") or "")
-                and row.get("学年") == str(item["csv_grade"])
+                and row.get("学年") == str(athlete["grade"])
             ]
             assert not old_matches, (key, item["from"])
 
@@ -169,7 +177,7 @@ data = {
             "checked_cells": 1196,
             "unreadable_cells": 0,
             "corrected_cells": 9,
-            "csv_reconciled_cells": 21,
+            "csv_reconciled_cells": 24,
             "csv_reconciliation_rule": (
                 "同年度CSVの女子・中学生を学校・学年・継続年度・走力で照合し、"
                 "一意に本人と判断できる表記はCSVを優先"
@@ -327,9 +335,9 @@ data["years"]["2023"] = {
             "42:45",
             [
                 leg(1, "松山悠南", 3, "9:59", "9:59"),
-                leg(2, "中尾杏朱", 2, "6:49", "16:48"),
+                leg(2, "中尾彩朱", 2, "6:49", "16:48"),
                 leg(3, "宮本奈英", 1, "7:35", "24:23"),
-                leg(4, "高田春陽", 2, "7:43", "32:06"),
+                leg(4, "髙田春陽", 2, "7:43", "32:06"),
                 leg(5, "松山杏海", 1, "10:39", "42:45"),
             ],
         ),
@@ -590,7 +598,7 @@ data["years"]["2019"] = {
             "荒尾三",
             "44:24",
             [
-                leg(1, "沖愛凛", 3, "11:15", "11:15"),
+                leg(1, "沖愛凜", 3, "11:15", "11:15"),
                 leg(2, "佐藤ちゆら", 2, "6:50", "18:05"),
                 leg(3, "一木優咲", 1, "7:07", "25:12"),
                 leg(4, "安田咲和", 2, "7:34", "32:46"),
@@ -618,7 +626,7 @@ data["years"]["2018"] = {
             [
                 leg(1, "後藤凜", 2, "10:17", "10:17"),
                 leg(2, "松本明城", 2, "6:26", "16:43"),
-                leg(3, "境田麻那", 2, "6:52", "23:35"),
+                leg(3, "濱本麻那", 2, "6:52", "23:35"),
                 leg(4, "本田結里", 1, "7:25", "31:00"),
                 leg(5, "田上未来", 2, "10:46", "41:46"),
             ],
@@ -690,7 +698,7 @@ data["years"]["2017"] = {
             "42:02",
             [
                 leg(1, "大中千尋", 3, "10:09", "10:09"),
-                leg(2, "沖愛凛", 1, "6:25", "16:34"),
+                leg(2, "沖愛凜", 1, "6:25", "16:34"),
                 leg(3, "堀秋璃", 3, "7:04", "23:38"),
                 leg(4, "荒川夏凜", 3, "7:24", "31:02"),
                 leg(5, "浦浜実里", 3, "11:00", "42:02"),
@@ -740,7 +748,7 @@ data["years"]["2016"] = {
             [
                 leg(1, "大中千尋", 2, "10:10", "10:10"),
                 leg(2, "堀秋璃", 2, "6:33", "16:43"),
-                leg(3, "荒川夏凛", 2, "6:55", "23:38"),
+                leg(3, "荒川夏凜", 2, "6:55", "23:38"),
                 leg(4, "浦浜実里", 2, "6:42", "30:20"),
                 leg(5, "牧野颯姫", 3, "10:39", "40:59"),
             ],
@@ -812,7 +820,7 @@ data["years"]["2015"] = {
             "42:39",
             [
                 leg(1, "大中千尋", 1, "10:23", "10:23"),
-                leg(2, "荒川夏凛", 1, "6:45", "17:08"),
+                leg(2, "荒川夏凜", 1, "6:45", "17:08"),
                 leg(3, "藤本実百", 2, "6:59", "24:07"),
                 leg(4, "石橋美優", 1, "7:20", "31:27"),
                 leg(5, "牧野颯姫", 2, "11:12", "42:39"),
@@ -935,9 +943,9 @@ data["years"]["2012"] = {
             "42:41",
             [
                 leg(1, "大道志歩", 1, "10:17", "10:17"),
-                leg(2, "前田明佳里", 1, "6:43", "17:00"),
+                leg(2, "前田明日香", 1, "6:43", "17:00"),
                 leg(3, "中川菜月", 1, "7:12", "24:12"),
-                leg(4, "植田愛美", 2, "7:22", "31:34"),
+                leg(4, "鎌田愛貴", 2, "7:22", "31:34"),
                 leg(5, "田上愛佳", 3, "11:07", "42:41"),
             ],
         ),

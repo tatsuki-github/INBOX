@@ -46,7 +46,7 @@
       "checked_cells": 1196,
       "unreadable_cells": 0,
       "corrected_cells": 9,
-      "csv_reconciled_cells": 21,
+      "csv_reconciled_cells": 24,
       "csv_reconciliation_rule": "同年度CSVの女子・中学生を学校・学年・継続年度・走力で照合し、一意に本人と判断できる表記はCSVを優先",
       "csv_reconciliation_source": "input/aragyoku/women_top4_csv_reconciliations.json"
     }
@@ -469,7 +469,7 @@
             },
             {
               "leg": 2,
-              "name": "中尾杏朱",
+              "name": "中尾彩朱",
               "grade": 2,
               "split": "6:49",
               "cumulative": "16:48"
@@ -483,7 +483,7 @@
             },
             {
               "leg": 4,
-              "name": "高田春陽",
+              "name": "髙田春陽",
               "grade": 2,
               "split": "7:43",
               "cumulative": "32:06"
@@ -1260,7 +1260,7 @@
           "legs": [
             {
               "leg": 1,
-              "name": "沖愛凛",
+              "name": "沖愛凜",
               "grade": 3,
               "split": "11:15",
               "cumulative": "11:15"
@@ -1328,7 +1328,7 @@
             },
             {
               "leg": 3,
-              "name": "境田麻那",
+              "name": "濱本麻那",
               "grade": 2,
               "split": "6:52",
               "cumulative": "23:35"
@@ -1542,7 +1542,7 @@
             },
             {
               "leg": 2,
-              "name": "沖愛凛",
+              "name": "沖愛凜",
               "grade": 1,
               "split": "6:25",
               "cumulative": "16:34"
@@ -1686,7 +1686,7 @@
             },
             {
               "leg": 3,
-              "name": "荒川夏凛",
+              "name": "荒川夏凜",
               "grade": 2,
               "split": "6:55",
               "cumulative": "23:38"
@@ -1900,7 +1900,7 @@
             },
             {
               "leg": 2,
-              "name": "荒川夏凛",
+              "name": "荒川夏凜",
               "grade": 1,
               "split": "6:45",
               "cumulative": "17:08"
@@ -2259,7 +2259,7 @@
             },
             {
               "leg": 2,
-              "name": "前田明佳里",
+              "name": "前田明日香",
               "grade": 1,
               "split": "6:43",
               "cumulative": "17:00"
@@ -2273,7 +2273,7 @@
             },
             {
               "leg": 4,
-              "name": "植田愛美",
+              "name": "鎌田愛貴",
               "grade": 2,
               "split": "7:22",
               "cumulative": "31:34"
