@@ -17,7 +17,15 @@ from reportlab.lib.styles import ParagraphStyle, getSampleStyleSheet
 from reportlab.lib.units import mm
 from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.ttfonts import TTFont
-from reportlab.platypus import PageBreak, Paragraph, SimpleDocTemplate, Spacer, Table, TableStyle
+from reportlab.platypus import (
+    KeepTogether,
+    PageBreak,
+    Paragraph,
+    SimpleDocTemplate,
+    Spacer,
+    Table,
+    TableStyle,
+)
 
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_JOINED = ROOT / "out/analysis/aragyoku_women_track_joined.json"
@@ -288,11 +296,9 @@ def year_section(yblock: dict[str, Any], styles: dict[str, ParagraphStyle], font
     for team in yblock.get("teams") or []:
         school = team.get("school") or ""
         total = team.get("total_mark") or "—"
-        story.append(
-            Paragraph(
-                escape(f"{team.get('rank')}位　{school}　総合 {total}"),
-                styles["h2"],
-            )
+        heading = Paragraph(
+            escape(f"{team.get('rank')}位　{school}　総合 {total}"),
+            styles["h2"],
         )
         data = athlete_rows(team, styles)
         table = Table(data, colWidths=col_widths, repeatRows=1)
@@ -317,8 +323,7 @@ def year_section(yblock: dict[str, Any], styles: dict[str, ParagraphStyle], font
                 ]
             )
         )
-        story.append(table)
-        story.append(Spacer(1, 3 * mm))
+        story.append(KeepTogether([heading, table, Spacer(1, 3 * mm)]))
 
     story.append(PageBreak())
     return story
