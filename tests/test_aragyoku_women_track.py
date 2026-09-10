@@ -15,6 +15,7 @@ sys.path.insert(0, str(ROOT / "scripts"))
 from aragyoku_women_track import (  # noqa: E402
     TRACK_EVENTS,
     build_joined,
+    fact_check_joined,
     filter_records_for_athlete,
     format_seconds,
     is_club_affiliation,
@@ -22,6 +23,7 @@ from aragyoku_women_track import (  # noqa: E402
     load_notion_rows,
     load_wide_like_csv,
     norm_name,
+    norm_school,
     parse_time_to_seconds,
     parse_truthy,
     pick_recent,
@@ -55,7 +57,10 @@ def test_time_helpers() -> None:
     assert norm_name("内田　愛祐") == "内田愛祐"
     assert school_overlap("玉名", "玉名中")
     assert school_overlap("玉名", "玉名(玉)")
+    assert school_overlap("玉名", "ﾀﾏﾅﾁｭｳ玉名中")
+    assert norm_school("ﾀﾏﾅﾁｭｳ玉名中") == "玉名"
     assert school_overlap("荒尾海陽", "荒尾海陽(玉)")
+    assert is_club_affiliation("ＮＪＡＣ", "長洲")
     assert school_overlap("荒尾四", "荒尾第四中")
     assert not school_overlap("荒尾三", "荒尾四")
     assert not school_overlap("玉東", "玉東クラブ")
@@ -428,6 +433,12 @@ def test_csv_reconciled_athletes_have_same_year_track_matches() -> None:
 def test_reconciliation_manifest_validates_against_raw_csv() -> None:
     module = runpy.run_path(str(ROOT / "input/aragyoku/build_women_top4.py"))
     module["validate_csv_reconciliations"](module["data"])
+
+
+def test_fact_check_joined_passes() -> None:
+    data = build_joined()
+    issues = fact_check_joined(data)
+    assert issues == [], "\n".join(issues)
 
 
 def test_joined_artifact_exists() -> None:

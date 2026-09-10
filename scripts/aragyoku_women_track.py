@@ -52,6 +52,8 @@ def norm_name(s: str) -> str:
 def norm_school(s: str) -> str:
     value = norm_name(s)
     value = re.sub(r"\([^)]*\)", "", value)
+    # Notion 由来の「ﾀﾏﾅﾁｭｳ玉名中」→「玉名」など、先頭カタカナ接頭辞を除去
+    value = re.sub(r"^[ァ-ヶー・]+", "", value)
     for suffix in ("中学校", "中"):
         if value.endswith(suffix):
             value = value[: -len(suffix)]
@@ -624,8 +626,85 @@ def write_csv(data: dict[str, Any]) -> None:
         w.writerows(rows)
 
 
+def fact_check_joined(data: dict[str, Any] | None = None) -> list[str]:
+    """突合結果の整合性を検証し、問題があれば説明文字列のリストを返す。"""
+    issues: list[str] = []
+    data = data or build_joined()
+    wide = load_wide_like_csv(WIDE_SB, "wide_sb", "2025")
+    oreg = load_wide_like_csv(OUTPUT_REG, "output_reg", "2026")
+    by_year = load_by_year_json()
+    notion = load_notion_rows()
+    all_recs = merge_records(wide, oreg, by_year, notion)
+
+    for yblock in data["years"]:
+        year = yblock["year"]
+        seasons = seasons_for_ekiden_year(year)
+        for team in yblock["teams"]:
+            school = team["school"]
+            for ath in team["athletes"]:
+                nn = norm_name(ath["name"])
+                recs = filter_records_for_athlete(
+                    list(all_recs.get(nn, [])), year, school, ath.get("grade")
+                )
+                for event, payload in (ath.get("track_events") or {}).items():
+                    for kind in ("sb", "recent"):
+                        shown = (payload or {}).get(kind)
+                        if not shown:
+                            continue
+                        if shown.get("season") != str(year):
+                            issues.append(
+                                f"{year} {school} {ath['name']} {event} {kind}: "
+                                f"season={shown.get('season')}"
+                            )
+                        expected = (
+                            pick_sb(recs, seasons, event)
+                            if kind == "sb"
+                            else pick_recent(recs, seasons, event)
+                        )
+                        if expected and shown.get("mark") != expected.get("mark"):
+                            issues.append(
+                                f"{year} {school} {ath['name']} {event} {kind}: "
+                                f"shown={shown.get('mark')} expected={expected.get('mark')}"
+                            )
+                        aff = shown.get("school") or ""
+                        if aff and not school_overlap(school, aff) and not is_club_affiliation(
+                            aff, school
+                        ):
+                            issues.append(
+                                f"{year} {school} {ath['name']}: "
+                                f"unclassified affiliation {aff!r}"
+                            )
+                        if (
+                            kind == "sb"
+                            and str(shown.get("source") or "").startswith("by_year_")
+                        ):
+                            source_rows = [
+                                r
+                                for r in by_year.get(nn, [])
+                                if str(r.get("season")) == str(year)
+                                and r.get("event") == event
+                                and r.get("is_sb")
+                            ]
+                            if not source_rows:
+                                issues.append(
+                                    f"{year} {school} {ath['name']} {event}: "
+                                    "SB missing in by_year source"
+                                )
+                            else:
+                                best = min(source_rows, key=lambda r: r["seconds"])
+                                if shown.get("mark") != best.get("mark"):
+                                    issues.append(
+                                        f"{year} {ath['name']} {event}: "
+                                        f"SB {shown.get('mark')} != csv {best.get('mark')}"
+                                    )
+    return issues
+
+
 def main() -> None:
     data = build_joined()
+    issues = fact_check_joined(data)
+    if issues:
+        raise SystemExit("fact check failed:\n" + "\n".join(issues))
     OUT_JSON.parent.mkdir(parents=True, exist_ok=True)
     OUT_JSON.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     write_csv(data)
