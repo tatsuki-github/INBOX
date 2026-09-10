@@ -45,7 +45,9 @@
       "cells_per_year": 92,
       "checked_cells": 1196,
       "unreadable_cells": 0,
-      "corrected_cells": 9
+      "corrected_cells": 9,
+      "csv_reconciled_cells": 21,
+      "csv_reconciliation_rule": "同年度CSVの女子・中学生を学校・学年・継続年度・走力で照合し、一意に本人と判断できる表記はCSVを優先"
     }
   },
   "years": {
@@ -68,7 +70,7 @@
             {
               "leg": 2,
               "name": "内田愛祐",
-              "grade": 2,
+              "grade": 3,
               "split": "6:43",
               "cumulative": "16:59"
             },
@@ -351,7 +353,7 @@
             {
               "leg": 5,
               "name": "内田愛祐",
-              "grade": 1,
+              "grade": 2,
               "split": "11:19",
               "cumulative": "43:02"
             }
@@ -1279,7 +1281,7 @@
             {
               "leg": 4,
               "name": "安田咲和",
-              "grade": 1,
+              "grade": 2,
               "split": "7:34",
               "cumulative": "32:46"
             },
@@ -1325,7 +1327,7 @@
             },
             {
               "leg": 3,
-              "name": "濱本麻那",
+              "name": "境田麻那",
               "grade": 2,
               "split": "6:52",
               "cumulative": "23:35"
@@ -1339,7 +1341,7 @@
             },
             {
               "leg": 5,
-              "name": "坂上未来",
+              "name": "田上未来",
               "grade": 2,
               "split": "10:46",
               "cumulative": "41:46"
@@ -1374,7 +1376,7 @@
             },
             {
               "leg": 4,
-              "name": "前瀬あかり",
+              "name": "前淵あかり",
               "grade": 2,
               "split": "7:24",
               "cumulative": "31:31"
@@ -1553,7 +1555,7 @@
             },
             {
               "leg": 4,
-              "name": "荒川夏凛",
+              "name": "荒川夏凜",
               "grade": 3,
               "split": "7:24",
               "cumulative": "31:02"
@@ -1767,8 +1769,8 @@
             },
             {
               "leg": 3,
-              "name": "島崎乃々佳",
-              "grade": 1,
+              "name": "島﨑乃々佳",
+              "grade": 3,
               "split": "6:55",
               "cumulative": "24:01"
             },
@@ -1803,7 +1805,7 @@
             {
               "leg": 2,
               "name": "土山静里佳",
-              "grade": 3,
+              "grade": 1,
               "split": "6:35",
               "cumulative": "17:04"
             },
@@ -1848,7 +1850,7 @@
           "legs": [
             {
               "leg": 1,
-              "name": "関知夏子",
+              "name": "關知夏子",
               "grade": 3,
               "split": "10:14",
               "cumulative": "10:14"
@@ -1960,7 +1962,7 @@
             },
             {
               "leg": 5,
-              "name": "島崎乃々佳",
+              "name": "島﨑乃々佳",
               "grade": 2,
               "split": "11:00",
               "cumulative": "43:17"
@@ -2013,7 +2015,7 @@
       "confidence": "verified",
       "ocr_notes": [
         "岱明 4位 43:36 matches Notion metadata",
-        "玉名 1区 関知夏子: leading kanji slightly cropped on some photos"
+        "玉名 1区 關知夏子: 同年度CSV表記を優先（画像では先頭漢字が一部欠けている）"
       ]
     },
     "2013": {
@@ -2027,14 +2029,14 @@
           "legs": [
             {
               "leg": 1,
-              "name": "森澤耶乃",
+              "name": "森澤彩乃",
               "grade": 3,
               "split": "10:09",
               "cumulative": "10:09"
             },
             {
               "leg": 2,
-              "name": "碩結里",
+              "name": "磧結里",
               "grade": 3,
               "split": "6:26",
               "cumulative": "16:35"
@@ -2139,7 +2141,7 @@
             },
             {
               "leg": 5,
-              "name": "嶋村里穂",
+              "name": "嶋村里恩",
               "grade": 2,
               "split": "11:14",
               "cumulative": "42:51"
@@ -2153,7 +2155,7 @@
           "legs": [
             {
               "leg": 1,
-              "name": "関琴美",
+              "name": "開琴美",
               "grade": 2,
               "split": "10:40",
               "cumulative": "10:40"
@@ -2214,7 +2216,7 @@
             },
             {
               "leg": 2,
-              "name": "西澤弥乃",
+              "name": "森澤彩乃",
               "grade": 2,
               "split": "6:18",
               "cumulative": "16:36"
@@ -2249,14 +2251,14 @@
           "legs": [
             {
               "leg": 1,
-              "name": "大濱志歩",
+              "name": "大道志歩",
               "grade": 1,
               "split": "10:17",
               "cumulative": "10:17"
             },
             {
               "leg": 2,
-              "name": "前田明日香",
+              "name": "前田明佳里",
               "grade": 1,
               "split": "6:43",
               "cumulative": "17:00"
@@ -2270,7 +2272,7 @@
             },
             {
               "leg": 4,
-              "name": "鎌田愛貴",
+              "name": "植田愛美",
               "grade": 2,
               "split": "7:22",
               "cumulative": "31:34"
@@ -2347,7 +2349,7 @@
             },
             {
               "leg": 3,
-              "name": "嶋村梨那",
+              "name": "嶋村里恩",
               "grade": 1,
               "split": "6:56",
               "cumulative": "24:30"
