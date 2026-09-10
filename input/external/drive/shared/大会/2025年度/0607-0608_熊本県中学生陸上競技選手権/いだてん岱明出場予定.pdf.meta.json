@@ -2,9 +2,11 @@
   "id": "13SW2mg8VIqNtC9TYKJxjD2NXag0nO0G-",
   "title": "いだてん岱明出場予定.pdf",
   "mimeType": "application/pdf",
-  "fileSize": "34636",
   "viewUrl": "https://drive.google.com/file/d/13SW2mg8VIqNtC9TYKJxjD2NXag0nO0G-/view?usp=drivesdk",
   "parentId": "1PT_antiggHN2a3Pmoze4xS1VTMMpD2e1",
-  "modifiedTime": "",
-  "stubReason": "binary deferred; use viewUrl"
+  "modifiedTime": "2025-06-07T02:53:57.515Z",
+  "status": "stub",
+  "importedAs": null,
+  "skipReason": "Binary .pdf (34636 bytes) not committed; viewUrl only (ADR 010)",
+  "fileSize": 34636
 }

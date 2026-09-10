@@ -2,9 +2,11 @@
   "id": "1FVOuaIVKroQp6Ij43mTENmcq5MYWOoVx",
   "title": "要項.pdf",
   "mimeType": "application/pdf",
-  "fileSize": "105235",
   "viewUrl": "https://drive.google.com/file/d/1FVOuaIVKroQp6Ij43mTENmcq5MYWOoVx/view?usp=drivesdk",
   "parentId": "1779L2nrg7nDxnCP44MkrPsBno_vMAJKe",
-  "modifiedTime": "",
-  "stubReason": "binary deferred; use viewUrl"
+  "modifiedTime": "2025-11-18T12:29:35.549Z",
+  "status": "stub",
+  "importedAs": null,
+  "skipReason": "Binary .pdf (105235 bytes) not committed; viewUrl only (ADR 010)",
+  "fileSize": 105235
 }
