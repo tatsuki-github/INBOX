@@ -56,7 +56,17 @@ python3 scripts/generate_calendar.py --year 2026 --input input/events.2026.yaml
 リポジトリ全体の「何がどこにあるか」を `out/knowledge-graph.json` に保持します。
 全文の複製ではなく、**短いヒント + 参照パス + エンティティリンク**です。回答時はまずここを見て探索先を決め、ヒットしたファイルの周辺コンテキストで答えます（運用は [`AGENTS.md`](AGENTS.md)）。
 
-ブラウザで構造を確認する場合は `out/knowledge-graph.html` を開いてください（種別フィルタ・検索・ノード詳細）。
+ブラウザで構造を確認する場合:
+
+```bash
+# 推奨（ローカル HTTP。GitHub 上のプレビューでは動きません）
+python3 scripts/open_knowledge_graph.py
+
+# または生成後に out/knowledge-graph.html をブラウザで直接開く
+python3 scripts/build_knowledge_graph.py
+```
+
+`out/knowledge-graph.html` は種別フィルタ・検索・ノード詳細に対応。CDN が使えない環境では一覧ビューにフォールバックします。
 
 ```bash
 # 手動再生成（JSON + min + HTML）

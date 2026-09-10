@@ -50,8 +50,12 @@ def test_write_and_check_roundtrip(tmp_path: Path):
     assert 'id="kg-search"' in html_text
     assert 'id="kg-filters"' in html_text
     assert 'id="kg-detail"' in html_text
+    assert 'id="list-fallback"' in html_text
+    assert "open_knowledge_graph.py" in html_text
     assert "vis-network" in html_text
-    assert '"version": 1' in html_text or '"version":1' in html_text
+    assert '"version":1' in html_text or '"version": 1' in html_text
+    # Embedded JSON must be script-safe
+    assert "</script>" not in html_text.split('id="kg-data"', 1)[1].split("</script>", 1)[0]
 
 
 def test_html_renderer_embeds_graph():

@@ -21,9 +21,16 @@ TYPE_COLORS = {
 }
 
 
+def _embed_json(data: Any) -> str:
+    """JSON safe to embed inside a <script> tag."""
+    raw = json.dumps(data, ensure_ascii=False, separators=(",", ":"))
+    # Prevent early </script> termination and HTML parsing issues
+    return raw.replace("<", "\\u003c").replace(">", "\\u003e").replace("&", "\\u0026")
+
+
 def render_knowledge_graph_html(graph: dict[str, Any]) -> str:
-    payload = json.dumps(graph, ensure_ascii=False)
-    colors = json.dumps(TYPE_COLORS, ensure_ascii=False)
+    payload = _embed_json(graph)
+    colors = _embed_json(TYPE_COLORS)
     node_count = len(graph.get("nodes") or [])
     edge_count = len(graph.get("edges") or [])
     generated = graph.get("generated_at") or ""
@@ -33,7 +40,6 @@ def render_knowledge_graph_html(graph: dict[str, Any]) -> str:
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>INBOX Knowledge Graph</title>
-  <script src="https://unpkg.com/vis-network@9.1.9/standalone/umd/vis-network.min.js"></script>
   <style>
     :root {{
       --bg: #12161a;
@@ -43,6 +49,7 @@ def render_knowledge_graph_html(graph: dict[str, Any]) -> str:
       --line: #2a343c;
       --accent: #3d8f7a;
       --focus: #c4a35a;
+      --warn: #7a5a20;
     }}
     * {{ box-sizing: border-box; }}
     html, body {{
@@ -54,9 +61,28 @@ def render_knowledge_graph_html(graph: dict[str, Any]) -> str:
     }}
     body {{
       display: grid;
-      grid-template-rows: auto 1fr;
+      grid-template-rows: auto auto 1fr;
       min-height: 100%;
     }}
+    .banner {{
+      padding: 0.55rem 1rem;
+      background: #243018;
+      border-bottom: 1px solid #3a4a30;
+      color: #d7e2c8;
+      font-size: 0.8rem;
+      line-height: 1.45;
+    }}
+    .banner code {{
+      background: #152018;
+      padding: 0.1rem 0.35rem;
+      border-radius: 3px;
+    }}
+    .banner.warn {{
+      background: #3a2a12;
+      border-bottom-color: #5a4020;
+      color: #f0d9a8;
+    }}
+    .banner[hidden] {{ display: none; }}
     header {{
       display: flex;
       flex-wrap: wrap;
@@ -123,6 +149,7 @@ def render_knowledge_graph_html(graph: dict[str, Any]) -> str:
       min-height: 0;
     }}
     #network {{
+      position: relative;
       min-height: 0;
       height: 100%;
       border-right: 1px solid var(--line);
@@ -130,6 +157,42 @@ def render_knowledge_graph_html(graph: dict[str, Any]) -> str:
         radial-gradient(ellipse at 20% 10%, rgba(61, 143, 122, 0.08), transparent 45%),
         radial-gradient(ellipse at 80% 90%, rgba(196, 163, 90, 0.05), transparent 40%),
         var(--bg);
+    }}
+    #graph-canvas {{
+      position: absolute;
+      inset: 0;
+    }}
+    #list-fallback {{
+      position: absolute;
+      inset: 0;
+      overflow: auto;
+      padding: 0.75rem 1rem;
+    }}
+    #list-fallback[hidden] {{ display: none; }}
+    #list-fallback h2 {{
+      margin: 0 0 0.5rem;
+      font-size: 0.9rem;
+    }}
+    #node-list {{
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }}
+    #node-list li {{
+      padding: 0.45rem 0.5rem;
+      border-bottom: 1px solid var(--line);
+      cursor: pointer;
+    }}
+    #node-list li:hover, #node-list li.active {{
+      background: #222a32;
+    }}
+    #node-list .row-title {{
+      font-size: 0.85rem;
+    }}
+    #node-list .row-hint {{
+      color: var(--muted);
+      font-size: 0.75rem;
+      margin-top: 0.15rem;
     }}
     aside {{
       padding: 1rem;
@@ -184,6 +247,14 @@ def render_knowledge_graph_html(graph: dict[str, Any]) -> str:
   </style>
 </head>
 <body>
+  <div class="banner" id="open-help">
+    GitHub のファイル画面ではグラフは動きません。ローカルでこの HTML をブラウザで開くか、
+    <code>python3 scripts/open_knowledge_graph.py</code> で http 配信してください。
+  </div>
+  <div class="banner warn" id="cdn-help" hidden>
+    グラフ描画ライブラリ（CDN）を読み込めませんでした。下の一覧ビューは使えます。
+    オフラインの場合はネット接続後に再読み込みするか、上記の open スクリプトを使ってください。
+  </div>
   <header>
     <div>
       <h1>INBOX Knowledge Graph</h1>
@@ -195,7 +266,13 @@ def render_knowledge_graph_html(graph: dict[str, Any]) -> str:
     </div>
   </header>
   <main>
-    <div id="network" role="img" aria-label="ナレッジグラフ可視化"></div>
+    <div id="network" role="img" aria-label="ナレッジグラフ可視化">
+      <div id="graph-canvas"></div>
+      <div id="list-fallback">
+        <h2>ノード一覧（CDN 不要）</h2>
+        <ul id="node-list"></ul>
+      </div>
+    </div>
     <aside id="kg-detail">
       <p class="empty">ノードをクリックすると hint と refs を表示します。</p>
       <div class="stats" id="kg-stats"></div>
@@ -205,10 +282,18 @@ def render_knowledge_graph_html(graph: dict[str, Any]) -> str:
   <script id="kg-colors" type="application/json">{colors}</script>
   <script>
     (function () {{
-      const graph = JSON.parse(document.getElementById("kg-data").textContent);
-      const colors = JSON.parse(document.getElementById("kg-colors").textContent);
+      function parseEmbedded(id) {{
+        const el = document.getElementById(id);
+        return JSON.parse(el.textContent);
+      }}
+      const graph = parseEmbedded("kg-data");
+      const colors = parseEmbedded("kg-colors");
+      const byId = Object.fromEntries((graph.nodes || []).map((n) => [n.id, n]));
       const types = [...new Set((graph.nodes || []).map((n) => n.type))].sort();
       const enabled = Object.fromEntries(types.map((t) => [t, true]));
+      let query = "";
+      let network = null;
+      let useGraph = false;
 
       const filterRoot = document.getElementById("kg-filters");
       types.forEach((t) => {{
@@ -232,81 +317,24 @@ def render_knowledge_graph_html(graph: dict[str, Any]) -> str:
         }});
       }});
 
-      const byId = Object.fromEntries((graph.nodes || []).map((n) => [n.id, n]));
-      let query = "";
+      function escapeHtml(s) {{
+        return String(s)
+          .replace(/&/g, "&amp;")
+          .replace(/</g, "&lt;")
+          .replace(/>/g, "&gt;")
+          .replace(/"/g, "&quot;");
+      }}
 
-      function visibleIds() {{
+      function visibleNodes() {{
         const q = query.trim().toLowerCase();
-        const ids = new Set();
-        for (const n of graph.nodes || []) {{
-          if (!enabled[n.type]) continue;
-          if (!q) {{
-            ids.add(n.id);
-            continue;
-          }}
+        return (graph.nodes || []).filter((n) => {{
+          if (!enabled[n.type]) return false;
+          if (!q) return true;
           const blob = [n.id, n.label, n.hint, ...(n.topics || []), ...(n.refs || [])]
             .join(" ")
             .toLowerCase();
-          if (blob.includes(q)) ids.add(n.id);
-        }}
-        return ids;
-      }}
-
-      function toVis(ids) {{
-        const nodes = [...ids].map((id) => {{
-          const n = byId[id];
-          return {{
-            id: n.id,
-            label: n.label || n.id,
-            title: (n.hint || "") + "\\n" + (n.refs || []).join("\\n"),
-            color: {{
-              background: colors[n.type] || "#666",
-              border: "#0e1214",
-              highlight: {{ background: colors[n.type] || "#666", border: "#c4a35a" }},
-            }},
-            font: {{ color: "#0e1214", size: 12, face: "IBM Plex Sans" }},
-            shape: n.type === "Topic" ? "box" : n.type === "Source" ? "dot" : "ellipse",
-            size: n.type === "Topic" ? 18 : n.type === "Athlete" ? 14 : 12,
-          }};
+          return blob.includes(q);
         }});
-        const edges = (graph.edges || [])
-          .filter((e) => ids.has(e.from) && ids.has(e.to))
-          .map((e, i) => ({{
-            id: "e" + i,
-            from: e.from,
-            to: e.to,
-            label: e.rel,
-            font: {{ size: 8, color: "#8a9690", strokeWidth: 0 }},
-            color: {{ color: "#3a4650", highlight: "#c4a35a" }},
-            arrows: "to",
-            smooth: {{ type: "continuous" }},
-          }}));
-        return {{ nodes, edges }};
-      }}
-
-      const container = document.getElementById("network");
-      const network = new vis.Network(
-        container,
-        {{ nodes: new vis.DataSet([]), edges: new vis.DataSet([]) }},
-        {{
-          interaction: {{ hover: true, tooltipDelay: 120, multiselect: false }},
-          physics: {{
-            barnesHut: {{ gravitationalConstant: -12000, springLength: 120, springConstant: 0.02 }},
-            stabilization: {{ iterations: 120 }},
-          }},
-          edges: {{ width: 1 }},
-        }}
-      );
-
-      function redraw() {{
-        const ids = visibleIds();
-        const data = toVis(ids);
-        network.setData({{
-          nodes: new vis.DataSet(data.nodes),
-          edges: new vis.DataSet(data.edges),
-        }});
-        document.getElementById("kg-stats").textContent =
-          "表示中: " + data.nodes.length + " nodes / " + data.edges.length + " edges";
       }}
 
       function showDetail(id) {{
@@ -320,7 +348,7 @@ def render_knowledge_graph_html(graph: dict[str, Any]) -> str:
           .map((r) => "<li><code>" + escapeHtml(r) + "</code></li>")
           .join("");
         aside.innerHTML =
-          '<h2>' +
+          "<h2>" +
           escapeHtml(n.label || n.id) +
           ' <span class="badge" style="background:' +
           (colors[n.type] || "#888") +
@@ -332,26 +360,157 @@ def render_knowledge_graph_html(graph: dict[str, Any]) -> str:
           "</div>" +
           (refs ? '<ul class="refs">' + refs + "</ul>" : '<p class="empty">refs なし</p>') +
           '<div class="stats" id="kg-stats"></div>';
+        document.querySelectorAll("#node-list li").forEach((li) => {{
+          li.classList.toggle("active", li.dataset.id === id);
+        }});
       }}
 
-      function escapeHtml(s) {{
-        return String(s)
-          .replace(/&/g, "&amp;")
-          .replace(/</g, "&lt;")
-          .replace(/>/g, "&gt;")
-          .replace(/"/g, "&quot;");
+      function renderList(nodes) {{
+        const ul = document.getElementById("node-list");
+        ul.innerHTML = "";
+        nodes.slice(0, 500).forEach((n) => {{
+          const li = document.createElement("li");
+          li.dataset.id = n.id;
+          li.innerHTML =
+            '<div class="row-title"><span class="badge" style="background:' +
+            (colors[n.type] || "#888") +
+            '">' +
+            escapeHtml(n.type) +
+            "</span> " +
+            escapeHtml(n.label || n.id) +
+            '</div><div class="row-hint">' +
+            escapeHtml(n.hint || "") +
+            "</div>";
+          li.addEventListener("click", () => showDetail(n.id));
+          ul.appendChild(li);
+        }});
       }}
 
-      network.on("click", (params) => {{
-        if (params.nodes && params.nodes[0]) showDetail(params.nodes[0]);
-      }});
+      function toVis(nodes) {{
+        const ids = new Set(nodes.map((n) => n.id));
+        const visNodes = nodes.map((n) => ({{
+          id: n.id,
+          label: n.label || n.id,
+          title: (n.hint || "") + "\\n" + (n.refs || []).join("\\n"),
+          color: {{
+            background: colors[n.type] || "#666",
+            border: "#0e1214",
+            highlight: {{ background: colors[n.type] || "#666", border: "#c4a35a" }},
+          }},
+          font: {{ color: "#0e1214", size: 12 }},
+          shape: n.type === "Topic" ? "box" : n.type === "Source" ? "dot" : "ellipse",
+          size: n.type === "Topic" ? 18 : n.type === "Athlete" ? 14 : 12,
+        }}));
+        const edges = (graph.edges || [])
+          .filter((e) => ids.has(e.from) && ids.has(e.to))
+          .map((e, i) => ({{
+            id: "e" + i,
+            from: e.from,
+            to: e.to,
+            label: e.rel,
+            font: {{ size: 8, color: "#8a9690", strokeWidth: 0 }},
+            color: {{ color: "#3a4650", highlight: "#c4a35a" }},
+            arrows: "to",
+            smooth: {{ type: "continuous" }},
+          }}));
+        return {{ nodes: visNodes, edges }};
+      }}
+
+      function redraw() {{
+        const nodes = visibleNodes();
+        renderList(nodes);
+        const edgeCount = (graph.edges || []).filter((e) => {{
+          const ids = new Set(nodes.map((n) => n.id));
+          return ids.has(e.from) && ids.has(e.to);
+        }}).length;
+        const stats = document.getElementById("kg-stats");
+        if (stats) {{
+          stats.textContent =
+            "表示中: " + nodes.length + " nodes / " + edgeCount + " edges" +
+            (useGraph ? " · graph mode" : " · list mode");
+        }}
+        if (useGraph && network && window.vis) {{
+          const data = toVis(nodes);
+          network.setData({{
+            nodes: new vis.DataSet(data.nodes),
+            edges: new vis.DataSet(data.edges),
+          }});
+        }}
+      }}
+
+      function enableGraphMode() {{
+        useGraph = true;
+        document.getElementById("list-fallback").hidden = true;
+        document.getElementById("cdn-help").hidden = true;
+        const container = document.getElementById("graph-canvas");
+        network = new vis.Network(
+          container,
+          {{ nodes: new vis.DataSet([]), edges: new vis.DataSet([]) }},
+          {{
+            interaction: {{ hover: true, tooltipDelay: 120 }},
+            physics: {{
+              barnesHut: {{ gravitationalConstant: -12000, springLength: 120, springConstant: 0.02 }},
+              stabilization: {{ iterations: 120 }},
+            }},
+            edges: {{ width: 1 }},
+          }}
+        );
+        network.on("click", (params) => {{
+          if (params.nodes && params.nodes[0]) showDetail(params.nodes[0]);
+        }});
+        redraw();
+      }}
+
+      function enableListMode(reason) {{
+        useGraph = false;
+        document.getElementById("list-fallback").hidden = false;
+        document.getElementById("cdn-help").hidden = false;
+        if (reason) {{
+          document.getElementById("cdn-help").textContent =
+            "グラフ描画ライブラリを読み込めませんでした（" + reason + "）。一覧ビューで探索できます。";
+        }}
+        redraw();
+      }}
+
+      function loadScript(src) {{
+        return new Promise((resolve, reject) => {{
+          const s = document.createElement("script");
+          s.src = src;
+          s.async = true;
+          s.onload = () => resolve(src);
+          s.onerror = () => reject(new Error(src));
+          document.head.appendChild(s);
+        }});
+      }}
+
+      const cdns = [
+        "https://cdn.jsdelivr.net/npm/vis-network@9.1.9/standalone/umd/vis-network.min.js",
+        "https://unpkg.com/vis-network@9.1.9/standalone/umd/vis-network.min.js",
+      ];
 
       document.getElementById("kg-search").addEventListener("input", (ev) => {{
         query = ev.target.value || "";
         redraw();
       }});
 
-      redraw();
+      // Always paint list first so something works even before CDN
+      enableListMode();
+
+      (async function loadVis() {{
+        let lastErr = null;
+        for (const src of cdns) {{
+          try {{
+            await loadScript(src);
+            if (window.vis && window.vis.Network) {{
+              enableGraphMode();
+              return;
+            }}
+          }} catch (err) {{
+            lastErr = err;
+          }}
+        }}
+        enableListMode(lastErr ? String(lastErr.message || lastErr) : "vis missing");
+      }})();
     }})();
   </script>
 </body>
