@@ -54,6 +54,8 @@ def test_time_helpers() -> None:
     assert norm_name("内田　愛祐") == "内田愛祐"
     assert school_overlap("玉名", "玉名中")
     assert not school_overlap("荒尾三", "荒尾四")
+    assert not school_overlap("玉東", "玉東クラブ")
+    assert not school_overlap("長洲", "長洲JRC")
     assert not school_overlap("玉名", "")
     assert seasons_for_ekiden_year(2025) == ["2025"]
     assert parse_truthy("__YES__")
@@ -252,7 +254,7 @@ def test_grade_evidence_excludes_same_name_different_athlete() -> None:
     club_only = [
         {
             "season": "2025",
-            "school": "クラブチーム",
+            "school": "玉名クラブ",
             "grade": "3",
             "event": "800m",
         }

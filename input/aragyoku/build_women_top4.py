@@ -5,11 +5,20 @@ from __future__ import annotations
 
 import csv
 import json
+import unicodedata
 from pathlib import Path
 
 OUT_DIR = Path(__file__).resolve().parent
 ROOT = OUT_DIR.parents[1]
 CSV_RECONCILIATIONS = OUT_DIR / "women_top4_csv_reconciliations.json"
+
+
+def school_key(value: str) -> str:
+    normalized = unicodedata.normalize("NFKC", value or "").replace(" ", "").replace("　", "")
+    for suffix in ("中学校", "中"):
+        if normalized.endswith(suffix):
+            return normalized[: -len(suffix)]
+    return normalized
 
 
 def leg(n: int, name, grade, split: str, cumulative: str) -> dict:
@@ -89,7 +98,7 @@ def validate_csv_reconciliations(dataset: dict) -> None:
             if row.get("性別") == "女子"
             and row.get("カテゴリー") == "中学生"
             and row.get("名前") == athlete["name"]
-            and item["team"] in (row.get("所属") or "")
+            and school_key(item["team"]) == school_key(row.get("所属") or "")
             and row.get("学年") == str(item["csv_grade"])
             and "\ufffd" not in (row.get("名前") or "")
         ]
@@ -102,7 +111,7 @@ def validate_csv_reconciliations(dataset: dict) -> None:
                 if row.get("性別") == "女子"
                 and row.get("カテゴリー") == "中学生"
                 and row.get("名前") == item["from"]
-                and item["team"] in (row.get("所属") or "")
+                and school_key(item["team"]) == school_key(row.get("所属") or "")
                 and row.get("学年") == str(item["csv_grade"])
             ]
             assert not old_matches, (key, item["from"])

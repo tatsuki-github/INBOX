@@ -18,9 +18,9 @@
 |:---|:---|
 | 1 | `test_middle_school_wide_sb_csv` |
 | 2 | `test_middle_school_sb_year_artifacts_and_index` |
-| 3 | `test_all_year_source_csvs_are_preserved` + INDEX 存在 |
-| 4 | `test_all_year_generated_counts_and_hashes` |
-| 5 | `test_knowledge_graph_registers_middle_school_sb` |
+| 3 | `test_middle_school_sb_year_artifacts_and_index` + INDEX 存在 |
+| 4 | `test_build_year_uses_complete_season_file` + status SHA-256検証 |
+| 5 | `test_knowledge_graph_registers_external_sources` |
 
 ## In / Out
 

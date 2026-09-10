@@ -41,6 +41,14 @@ def norm_name(s: str) -> str:
     return s.replace("\u3000", "").replace(" ", "").replace("　", "")
 
 
+def norm_school(s: str) -> str:
+    value = norm_name(s)
+    for suffix in ("中学校", "中"):
+        if value.endswith(suffix):
+            return value[: -len(suffix)]
+    return value
+
+
 def parse_time_to_seconds(raw: str | None) -> float | None:
     if raw is None:
         return None
@@ -100,11 +108,11 @@ def validate_record_seconds(mark: str, raw_seconds: Any, context: str) -> float:
 
 
 def school_overlap(a: str, b: str) -> bool:
-    a_n = norm_name(a).replace("中", "")
-    b_n = norm_name(b).replace("中", "")
+    a_n = norm_school(a)
+    b_n = norm_school(b)
     if not a_n or not b_n:
         return False
-    return a_n in b_n or b_n in a_n
+    return a_n == b_n
 
 
 def parse_truthy(value: Any) -> bool:

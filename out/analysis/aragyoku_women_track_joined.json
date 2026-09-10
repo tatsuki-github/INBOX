@@ -46,9 +46,9 @@
     },
     "stats": {
       "athletes": 260,
-      "with_any_track": 147,
-      "with_sb": 147,
-      "with_url": 147
+      "with_any_track": 140,
+      "with_sb": 140,
+      "with_url": 140
     },
     "guide_note": "「駅伝」は大会当日の区間走結果（道路コース）です。女子は1〜5区がそれぞれ約3.0km・1.855km・2.0km・2.0km・3.0kmで、トラック種目（800m/1500m/3000m）とは距離・路面・気象・タスキ条件が異なります。トラックSB/直近は同年の走力指標として並記していますが、短い種目が強い選手ほど長い区間では相対的に伸び、逆も起こります。数式による換算ではなく、実際の駅伝タイムとトラック走力の両方を見て判断してください。",
     "drive_source_note": "駅伝記録は Google Drive「荒玉駅伝歴代」の結果画像と全セルを目視照合済み。ただし2014年女子の原画像は同フォルダ内で確認できず、未掲載。選手名は同年度の中学生女子トラック記録CSVと照合し、表記が競合する場合はCSVを優先。トラック記録は2012〜2026年度CSVのうち、駅伝と同じ年度だけを参照。",
@@ -154,17 +154,7 @@
                     "school": "玉名中",
                     "grade": "3"
                   },
-                  "recent": {
-                    "mark": "2:31.47",
-                    "seconds": 151.47,
-                    "meet": "中長距離選手権",
-                    "meet_date": "2025/11/23",
-                    "url": "http://www.kcrk.jp/i-mode/kiroku/tyuutyoukyori/78/PC/rel041.html",
-                    "season": "2025",
-                    "source": "notion_2025",
-                    "school": "ﾀﾏﾅﾁｭｳ玉名中",
-                    "grade": null
-                  }
+                  "recent": null
                 },
                 "1500m": {
                   "sb": {
@@ -178,20 +168,10 @@
                     "school": "玉名中",
                     "grade": "3"
                   },
-                  "recent": {
-                    "mark": "5:10.73",
-                    "seconds": 310.73,
-                    "meet": "熊本県中学校総合体育大会　陸上競技大会",
-                    "meet_date": "2025/07/19",
-                    "url": "http://www.kumariku.org/25/25,7,19chugaku/rel180.html",
-                    "season": "2025",
-                    "source": "notion_2025",
-                    "school": "ﾀﾏﾅﾁｭｳ玉名中",
-                    "grade": null
-                  }
+                  "recent": null
                 }
               },
-              "match_count": 11
+              "match_count": 4
             },
             {
               "leg": 3,
@@ -446,18 +426,18 @@
                   "sb": {
                     "mark": "2:26.91",
                     "seconds": 146.91,
-                    "meet": "第71回全日本中学校通信陸上競技大会熊本県大会",
-                    "meet_date": "2025/06/29",
+                    "meet": null,
+                    "meet_date": null,
                     "url": "http://www.kumariku.org/25/25,6,28tsushin/rel181.html",
                     "season": "2025",
-                    "source": "by_year_2025",
-                    "school": "玉東クラブ",
-                    "grade": "3"
+                    "source": "wide_sb",
+                    "school": "玉東中",
+                    "grade": null
                   },
                   "recent": null
                 }
               },
-              "match_count": 2
+              "match_count": 1
             },
             {
               "leg": 2,
@@ -1982,51 +1962,8 @@
               "ekiden_mark": "9:46",
               "ekiden_seconds": 586.0,
               "cumulative": "9:46",
-              "track_events": {
-                "800m": {
-                  "sb": {
-                    "mark": "2:16.32",
-                    "seconds": 136.32,
-                    "meet": "令和4年度　第３６回熊本県中学校陸上競技選手権大会",
-                    "meet_date": "2022/06/12",
-                    "url": "http://www.kumariku.org/22/kekka/22,6,11chugaku/rel122.html",
-                    "season": "2022",
-                    "source": "by_year_2022",
-                    "school": "長洲JRC",
-                    "grade": "3"
-                  },
-                  "recent": null
-                },
-                "1500m": {
-                  "sb": {
-                    "mark": "4:32.99",
-                    "seconds": 272.99,
-                    "meet": "令和4年度　熊本県中体連陸上競技大会",
-                    "meet_date": "2022/10/01",
-                    "url": "http://www.kumariku.org/22/kekka/22,10,1chutairen/rel054.html",
-                    "season": "2022",
-                    "source": "by_year_2022",
-                    "school": "長洲JRC",
-                    "grade": "3"
-                  },
-                  "recent": null
-                },
-                "3000m": {
-                  "sb": {
-                    "mark": "9:57.54",
-                    "seconds": 597.54,
-                    "meet": "第１回会熊本県チャレンジ陸上大会",
-                    "meet_date": "2022/11/19",
-                    "url": "http://www.kumariku.org/22/kekka/22,11,19challenge/rel019.html",
-                    "season": "2022",
-                    "source": "by_year_2022",
-                    "school": "長洲JRC",
-                    "grade": "3"
-                  },
-                  "recent": null
-                }
-              },
-              "match_count": 3
+              "track_events": {},
+              "match_count": 0
             },
             {
               "leg": 2,
@@ -2109,37 +2046,8 @@
               "ekiden_mark": "10:53",
               "ekiden_seconds": 653.0,
               "cumulative": "41:58",
-              "track_events": {
-                "800m": {
-                  "sb": {
-                    "mark": "2:28.43",
-                    "seconds": 148.43,
-                    "meet": "大牟田小中学生記録会",
-                    "meet_date": "2022/05/22",
-                    "url": "https://omuta.meet7.org/cgi/menu.cgi?menu=2&base=20220522&mode=\"_5_4_4_2_3__5_\"&r_n=豎ｺ蜍�&dopt=1&cs=2&exit=0",
-                    "season": "2022",
-                    "source": "by_year_2022",
-                    "school": "長洲JRC",
-                    "grade": "1"
-                  },
-                  "recent": null
-                },
-                "1500m": {
-                  "sb": {
-                    "mark": "4:49.41",
-                    "seconds": 289.41,
-                    "meet": "第１７回熊本タイムトライアル",
-                    "meet_date": "2022/06/25",
-                    "url": "http://www.kcrk.jp/i-mode/kiroku/toraiaru/17/PC/rel005.html",
-                    "season": "2022",
-                    "source": "by_year_2022",
-                    "school": "長洲JRC",
-                    "grade": "1"
-                  },
-                  "recent": null
-                }
-              },
-              "match_count": 2
+              "track_events": {},
+              "match_count": 0
             }
           ]
         },
@@ -2670,23 +2578,8 @@
               "ekiden_mark": "6:51",
               "ekiden_seconds": 411.0,
               "cumulative": "24:23",
-              "track_events": {
-                "800m": {
-                  "sb": {
-                    "mark": "2:29.23",
-                    "seconds": 149.23,
-                    "meet": "令和３年度　熊本県中体連陸上競技大会",
-                    "meet_date": "2021/10/02",
-                    "url": "http://www.kumariku.org/21/kekka/21,10,2chutairen/rel051.html",
-                    "season": "2021",
-                    "source": "by_year_2021",
-                    "school": "荒尾海陽(玉)",
-                    "grade": "1"
-                  },
-                  "recent": null
-                }
-              },
-              "match_count": 1
+              "track_events": {},
+              "match_count": 0
             },
             {
               "leg": 4,
@@ -3026,51 +2919,8 @@
               "ekiden_mark": "9:58",
               "ekiden_seconds": 598.0,
               "cumulative": "9:58",
-              "track_events": {
-                "800m": {
-                  "sb": {
-                    "mark": "2:16.68",
-                    "seconds": 136.68,
-                    "meet": "陸協春季熊本陸協記録会",
-                    "meet_date": "2021/03/21",
-                    "url": "http://www.kumariku.org/20/kekka/20200321rikkyou/rel195.html",
-                    "season": "2020",
-                    "source": "by_year_2020",
-                    "school": "長洲JRC",
-                    "grade": "1"
-                  },
-                  "recent": null
-                },
-                "1500m": {
-                  "sb": {
-                    "mark": "4:36.33",
-                    "seconds": 276.33,
-                    "meet": "第１３回熊本タイムトライアル",
-                    "meet_date": "2020/09/26",
-                    "url": "http://www.kcrk.jp/i-mode/kiroku/toraiaru/13/PC/rel004.html",
-                    "season": "2020",
-                    "source": "by_year_2020",
-                    "school": "長洲JRC",
-                    "grade": "1"
-                  },
-                  "recent": null
-                },
-                "3000m": {
-                  "sb": {
-                    "mark": "10:09.93",
-                    "seconds": 609.93,
-                    "meet": "２０２０年度　第４回熊本県長距離記録会",
-                    "meet_date": "2020/12/12",
-                    "url": "http://www.kumariku.org/20/kekka/20201212long/rel027.html",
-                    "season": "2020",
-                    "source": "by_year_2020",
-                    "school": "長洲JRC",
-                    "grade": "1"
-                  },
-                  "recent": null
-                }
-              },
-              "match_count": 3
+              "track_events": {},
+              "match_count": 0
             },
             {
               "leg": 2,
@@ -3094,20 +2944,6 @@
                   },
                   "recent": null
                 },
-                "1500m": {
-                  "sb": {
-                    "mark": "5:19.57",
-                    "seconds": 319.57,
-                    "meet": "第１３回熊本タイムトライアル",
-                    "meet_date": "2020/09/26",
-                    "url": "http://www.kcrk.jp/i-mode/kiroku/toraiaru/13/PC/rel003.html",
-                    "season": "2020",
-                    "source": "by_year_2020",
-                    "school": "長洲JRC",
-                    "grade": "2"
-                  },
-                  "recent": null
-                },
                 "3000m": {
                   "sb": {
                     "mark": "12:12.52",
@@ -3123,7 +2959,7 @@
                   "recent": null
                 }
               },
-              "match_count": 3
+              "match_count": 2
             },
             {
               "leg": 3,
@@ -4280,23 +4116,8 @@
               "ekiden_mark": "6:15",
               "ekiden_seconds": 375.0,
               "cumulative": "16:30",
-              "track_events": {
-                "800m": {
-                  "sb": {
-                    "mark": "2:23.42",
-                    "seconds": 143.42,
-                    "meet": "平成２９年度　熊本県中体連陸上競技大会",
-                    "meet_date": "2017/09/30",
-                    "url": "http://www.kumariku.org/17/kekka/17,9,30chugaku/rel077.html",
-                    "season": "2017",
-                    "source": "by_year_2017",
-                    "school": "玉名(玉)",
-                    "grade": "3"
-                  },
-                  "recent": null
-                }
-              },
-              "match_count": 1
+              "track_events": {},
+              "match_count": 0
             },
             {
               "leg": 3,
@@ -5591,23 +5412,8 @@
               "ekiden_mark": "7:06",
               "ekiden_seconds": 426.0,
               "cumulative": "30:40",
-              "track_events": {
-                "800m": {
-                  "sb": {
-                    "mark": "2:27.21",
-                    "seconds": 147.21,
-                    "meet": "平成２７年度　熊本県中体連陸上競技大会",
-                    "meet_date": "2015/10/03",
-                    "url": "http://www.kumariku.org/15/kekka/10,3chugaku/rel075.html",
-                    "season": "2015",
-                    "source": "by_year_2015",
-                    "school": "玉名(玉)",
-                    "grade": "1"
-                  },
-                  "recent": null
-                }
-              },
-              "match_count": 1
+              "track_events": {},
+              "match_count": 0
             },
             {
               "leg": 5,
@@ -6695,23 +6501,8 @@
               "ekiden_mark": "6:46",
               "ekiden_seconds": 406.0,
               "cumulative": "23:22",
-              "track_events": {
-                "800m": {
-                  "sb": {
-                    "mark": "2:27.73",
-                    "seconds": 147.73,
-                    "meet": "平成２４年度　熊本県中体連陸上競技大会",
-                    "meet_date": "2012/10/06",
-                    "url": "http://www.kumariku.org/12/kekka/10,6chutairen/REL038.HTM",
-                    "season": "2012",
-                    "source": "by_year_2012",
-                    "school": "玉名(玉)",
-                    "grade": "2"
-                  },
-                  "recent": null
-                }
-              },
-              "match_count": 1
+              "track_events": {},
+              "match_count": 0
             },
             {
               "leg": 4,
