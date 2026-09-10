@@ -20,7 +20,7 @@
 | 2 | `test_middle_school_sb_year_artifacts_and_index` |
 | 3 | `test_middle_school_sb_year_artifacts_and_index` + INDEX 存在 |
 | 4 | `test_build_year_uses_complete_season_file` + status SHA-256検証 |
-| 5 | `test_knowledge_graph_registers_external_sources` |
+| 5 | `test_knowledge_graph_registers_middle_school_sb` |
 
 ## In / Out
 
