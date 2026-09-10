@@ -11,8 +11,8 @@
 ## Counts
 
 - Database directories: **16**
-  - complete: **9**
-  - partial: **5**（2024年度中学生 含む）
+  - complete: **10**
+  - partial: **4**
   - schema-only: **2**
 - Pages: **11** (`pages/<slug>.md` + `.meta.json`)
 
@@ -20,7 +20,7 @@
 
 | slug | status | rows | schema | notes |
 |---|---|---:|:---:|---|
-| `2024年度中学生` | partial | 進行中 | ✅ | view ページング中。SB採用 → `sb/middle-school/by-year/2024-sb-adopted.json` | fetch_raw.md |
+| `2024年度中学生` | complete | 6922 | ✅ | view 全件取得完了。SB採用 2460行 → `sb/middle-school/by-year/2024-sb-adopted.json` | fetch_raw.md |
 | `2025年度sb` | partial | 700 | ✅ | has_more → rows.json next_cursor。ワイド相当 |
 | `2025年度中学生記録` | partial | 1100 | ✅ | has_more → rows.json next_cursor | fetch_raw.md |
 | `2025年度中学生記録v2` | schema_only | 0 | ✅ | fetch_raw.md |
@@ -57,7 +57,6 @@
 
 - query_data_sources SQL/rows mode hit workspace usage limit → continued with unlimited view mode
 - notion-ai-search unavailable (used notion-search / list_* / fetch / query view)
-- 2024年度中学生: view 全件ページング中（目標 ~6922 / SB採用 ~2460）
 - 2025年度中学生記録: partial (1100+ rows; has_more; next_cursor in rows.json)
 - 2026年度高校生記録: partial (800+ rows; has_more)
 - 2025年度sb: partial (700+ rows; has_more)
@@ -70,7 +69,6 @@
 
 ## Resume cursors (partial)
 
-- `2024年度中学生`: see `databases/2024年度中学生/export.status.json`
 - `2025年度sb`: `s:mcp_non_archived_48aaa9e2-efed-43b6-87d6-0c5c903f8aa3:340a38e8-3034-8158-9f85-ffff6cf3249f`
 - `2025年度中学生記録`: `s:mcp_non_archived_ae0c3bc9-bda7-40e0-a6e2-1b95c1dcb502:355a38e8-3034-8141-9552-f94f6369109e`
 - `2026年度中学生記録`: `None`

@@ -1,13 +1,13 @@
 {
   "year": 2024,
   "source": "notion/databases/2024年度中学生/rows.json",
-  "source_status": "partial",
-  "source_row_count": 1200,
-  "sb_adopted_count": 1212,
-  "sb_view_row_count": 1000,
-  "sb_view_complete": false,
-  "full_view_complete": false,
-  "complete": false,
-  "note": "export-SB採用 view + 全て view pagination via Notion MCP view mode",
-  "exportedAt": "2026-09-10T10:31:44Z"
+  "source_status": "complete",
+  "source_row_count": 6922,
+  "sb_adopted_count": 2460,
+  "sb_view_row_count": 2460,
+  "sb_view_complete": true,
+  "full_view_complete": true,
+  "complete": true,
+  "note": "SB採用=__YES__ rows; full 全て view export complete (6922).",
+  "exportedAt": "2026-09-10T10:48:41Z"
 }

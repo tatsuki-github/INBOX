@@ -9,7 +9,7 @@
 | パス | 形式 | 内容 | 完全性 |
 |:---|:---|:---|:---|
 | [`wide/中学生SB.csv`](wide/中学生SB.csv) | ワイド（選手×距離） | Drive `SBデータベース` の `カテゴリー=中学生`（1371 行） | **complete**（現行シーズン正本） |
-| [`by-year/2024-sb-adopted.json`](by-year/2024-sb-adopted.json) | 長形式 SB採用 | Notion `2024年度中学生` の SB採用行 | エクスポート進行中（status 参照） |
+| [`by-year/2024-sb-adopted.json`](by-year/2024-sb-adopted.json) | 長形式 SB採用 | Notion `2024年度中学生` の SB採用行 | **complete**（2460 / 6922行から抽出） |
 | [`by-year/2025-sb-adopted.json`](by-year/2025-sb-adopted.json) | 長形式 SB採用 | Notion `2025年度中学生記録` partial から抽出 | **partial**（403 / 目標 ~2505） |
 | [`by-year/2026-sb-adopted.json`](by-year/2026-sb-adopted.json) | 長形式 SB採用 | Drive + `output_reg` + Notion 補完 | **complete**（635） |
 | [`by-year/2026-reg-sb.csv`](by-year/2026-reg-sb.csv) | 長形式 | Drive `output_reg_中学生_single_table` 由来 | complete |

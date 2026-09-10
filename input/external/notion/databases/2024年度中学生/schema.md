@@ -1,6 +1,6 @@
 # 2024年度中学生
 
-- URL: https://app.notion.com/p/ac3a38e8303482809c23819bb097e85d?pvs=204
+- URL: https://app.notion.com/p/ac3a38e8303482809c23819bb097e85d
 - Data source: `collection://5eea38e8-3034-821a-8600-07636ed83ac4`
 
 ## Views
@@ -36,6 +36,8 @@
 - `view://9a1a38e8-3034-82ac-bdc3-0898815a1505`
 - `view://a48a38e8-3034-82fa-95da-0888c117cdc7`
 - `view://acaa38e8-3034-8276-9d9a-884d87c25c6e`
+- `view://3d7a38e8-3034-8123-832c-000c3594376e`
+- `view://3d7a38e8-3034-81e1-9e64-000cb4c595ce`
 
 ## Properties
 | Name | Type |
@@ -62,3 +64,33 @@
 | 距離 | select |
 | 選手距離キー | text |
 | 都道府県 | select |
+
+## SQLite
+```sql
+CREATE TABLE IF NOT EXISTS "collection://5eea38e8-3034-821a-8600-07636ed83ac4" (
+	url TEXT UNIQUE,
+	createdTime TEXT, -- ISO-8601 datetime string, automatically set. This is the canonical time for when the page was created.
+	"SB" TEXT,
+	"SB採用" TEXT, -- "__YES__" = true, "__NO__" = false, NULL defaults to false
+	"SB秒" FLOAT,
+	"カテゴリー" TEXT, -- one of ["中学生"]
+	"スタート時間" TEXT,
+	"レーン" FLOAT,
+	"先頭とのタイム差" FLOAT,
+	"参考" TEXT,
+	"名前" TEXT,
+	"大会名" TEXT,
+	"学年" FLOAT,
+	"性別" TEXT, -- one of ["女子", "男子"]
+	"所属" TEXT,
+	"日付" TEXT,
+	"組" FLOAT,
+	"組人数" FLOAT,
+	"組着順" FLOAT,
+	"記録" TEXT,
+	"記録秒" FLOAT,
+	"距離" TEXT, -- one of ["800m", "1500m", "3000m", "3000mSC", "5000m", "10000m", "5km", "10km", "3km"]
+	"選手距離キー" TEXT,
+	"都道府県" TEXT -- one of ["熊本県", "鹿児島県", "大分県", "宮崎県", "福岡県", "佐賀県", "山口県", "沖縄県", "長崎県", "福島県"]
+)
+```
