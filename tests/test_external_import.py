@@ -69,3 +69,43 @@ def test_knowledge_graph_registers_external_sources():
     assert "source:input/external/drive/INDEX.md" in ids
     assert "source:input/external/notion/INDEX.md" in ids
     assert any("input/external" in n["id"] for n in graph["nodes"] if n["type"] == "Source")
+
+
+def test_middle_school_wide_sb_csv():
+    path = EXTERNAL / "sb" / "middle-school" / "wide" / "中学生SB.csv"
+    assert path.is_file()
+    with path.open(encoding="utf-8-sig") as f:
+        reader = csv.DictReader(f)
+        header = reader.fieldnames or []
+        rows = list(reader)
+    assert "名前" in header and "カテゴリー" in header
+    assert any(h.endswith("SB") for h in header)
+    assert len(rows) >= 1000
+    assert all(r.get("カテゴリー") == "中学生" for r in rows)
+
+
+def test_middle_school_sb_year_artifacts_and_index():
+    index = (EXTERNAL / "sb" / "middle-school" / "INDEX.md").read_text(encoding="utf-8")
+    assert "wide" in index and "by-year" in index
+    by_year = EXTERNAL / "sb" / "middle-school" / "by-year"
+    for year in (2025, 2026):
+        status_path = by_year / f"{year}-sb-adopted.status.json"
+        data_path = by_year / f"{year}-sb-adopted.json"
+        assert status_path.is_file(), year
+        assert data_path.is_file(), year
+        status = json.loads(status_path.read_text(encoding="utf-8"))
+        rows = json.loads(data_path.read_text(encoding="utf-8"))
+        assert status.get("year") == year
+        assert isinstance(rows, list) and len(rows) >= 100
+        assert status.get("sb_adopted_count") == len(rows)
+    drive_sb = EXTERNAL / "drive" / "personal" / "t-tsuchiyama" / "sb"
+    assert (drive_sb / "SBデータベース.csv").is_file()
+    assert (drive_sb / "中学生SB.csv").is_file()
+
+
+def test_knowledge_graph_registers_middle_school_sb():
+    graph = build_knowledge_graph(generated_at="2026-01-01T00:00:00Z")
+    ids = {n["id"] for n in graph["nodes"]}
+    assert "source:input/external/sb/middle-school/INDEX.md" in ids
+    assert "source:input/external/sb/middle-school/wide/中学生SB.csv" in ids
+    assert "source:docs/adr/012-middle-school-sb-all-years.md" in ids

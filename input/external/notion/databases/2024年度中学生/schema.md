@@ -1,0 +1,64 @@
+# 2024年度中学生
+
+- URL: https://app.notion.com/p/ac3a38e8303482809c23819bb097e85d?pvs=204
+- Data source: `collection://5eea38e8-3034-821a-8600-07636ed83ac4`
+
+## Views
+- `view://e68a38e8-3034-8382-b8d1-0841d0be40b5`
+- `view://5b3a38e8-3034-83df-b713-88871786d98c`
+- `view://c86a38e8-3034-827c-9cf7-08cf624bbf18`
+- `view://3b1a38e8-3034-82ad-907d-0819a58a0a39`
+- `view://19aa38e8-3034-82b3-b9d8-0835d88fa6c5`
+- `view://f59a38e8-3034-831e-a096-089c2efda09f`
+- `view://15ca38e8-3034-83dd-9467-8898cc67119c`
+- `view://b3aa38e8-3034-824b-aac1-88f364c171ed`
+- `view://10aa38e8-3034-834f-bb76-086ba35d14df`
+- `view://c85a38e8-3034-83c6-85a3-08cd3a655288`
+- `view://d28a38e8-3034-835b-aa72-88a6502bbf6c`
+- `view://a5da38e8-3034-8357-84ba-0864399961a3`
+- `view://23da38e8-3034-829b-a0ea-08ce379ca30c`
+- `view://f95a38e8-3034-8382-bfd7-08a212b390d2`
+- `view://d20a38e8-3034-83d8-8494-08f0b678a72d`
+- `view://ccea38e8-3034-834c-87e6-88255c77b479`
+- `view://8cca38e8-3034-828a-abdc-88266009c407`
+- `view://4e0a38e8-3034-829e-8ce0-88aaeaee5915`
+- `view://f4ca38e8-3034-83f4-a93d-88e2e1c7f933`
+- `view://a30a38e8-3034-8352-bbba-088cf27663a9`
+- `view://4eaa38e8-3034-8399-9e20-08f0eb7dc658`
+- `view://b76a38e8-3034-8395-ae37-0821a78610a9`
+- `view://26ba38e8-3034-83e8-a3c4-887382eebeb2`
+- `view://425a38e8-3034-83f7-9077-88da63665f8e`
+- `view://aeca38e8-3034-8367-b122-086ef6f1dca0`
+- `view://847a38e8-3034-83a8-bb27-08ea55a174a4`
+- `view://3eea38e8-3034-829d-96e6-08828f45abbc`
+- `view://87da38e8-3034-8312-bb86-08b7de25183d`
+- `view://5efa38e8-3034-8294-a8d5-884c834d84df`
+- `view://9a1a38e8-3034-82ac-bdc3-0898815a1505`
+- `view://a48a38e8-3034-82fa-95da-0888c117cdc7`
+- `view://acaa38e8-3034-8276-9d9a-884d87c25c6e`
+
+## Properties
+| Name | Type |
+|------|------|
+| SB | text |
+| SB採用 | checkbox |
+| SB秒 | number |
+| カテゴリー | select |
+| スタート時間 | select |
+| レーン | number |
+| 先頭とのタイム差 | number |
+| 参考 | url |
+| 名前 | title |
+| 大会名 | select |
+| 学年 | number |
+| 性別 | select |
+| 所属 | text |
+| 日付 | text |
+| 組 | number |
+| 組人数 | number |
+| 組着順 | number |
+| 記録 | text |
+| 記録秒 | number |
+| 距離 | select |
+| 選手距離キー | text |
+| 都道府県 | select |

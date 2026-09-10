@@ -1,0 +1,10 @@
+{
+  "year": 2025,
+  "source": "notion/databases/2025年度中学生記録/rows.json",
+  "source_status": "partial",
+  "source_row_count": 1100,
+  "sb_adopted_count": 403,
+  "complete": false,
+  "note": "Notion MCP SQL 上限のため既存 partial から抽出。全件は Drive wide SB / 再エクスポート待ち。",
+  "exportedAt": "2026-09-10T10:24:08Z"
+}
