@@ -134,8 +134,21 @@ def mark_split_records(teams: list[dict]) -> None:
             leg_row["split_record"] = team["team"] in best[1]
 
 
+def normalize_finish_ranks(teams: list[dict]) -> list[dict]:
+    """Reassign rank 1..N by ascending total time."""
+    from lib.ranks import parse_time_to_seconds
+
+    ordered = sorted(
+        teams,
+        key=lambda t: parse_time_to_seconds(t.get("total")) or 10**9,
+    )
+    return [{**team, "rank": idx} for idx, team in enumerate(ordered, 1)]
+
+
 def build_year(year: int, payload: dict) -> dict:
     teams = [build_team(t) for t in payload["teams"]]
+    if payload.get("reorder_by_total"):
+        teams = normalize_finish_ranks(teams)
     mark_split_records(teams)
     src = SOURCES.get(str(year), {})
     drive_id = src.get("id") if isinstance(src, dict) else src

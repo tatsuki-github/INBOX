@@ -34,7 +34,14 @@ def main() -> None:
     for year in YEARS:
         mod = load_year_module(year)
         write_ocr_raw(year, mod.OCR_RAW)
-        entry = build_year(year, {"teams": mod.TEAMS, "ocr_notes": getattr(mod, "NOTES", None)})
+        entry = build_year(
+            year,
+            {
+                "teams": mod.TEAMS,
+                "ocr_notes": getattr(mod, "NOTES", None),
+                "reorder_by_total": year <= 2017,
+            },
+        )
         enriched = apply_board_ranks_from_computed(
             enrich_teams(entry["teams"], 6), 6
         )
