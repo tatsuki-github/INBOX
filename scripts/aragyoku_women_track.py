@@ -39,6 +39,10 @@ SCHOOL_ALIASES = {
     "荒尾第三": "荒尾三",
     "荒尾第四": "荒尾四",
 }
+# 荒玉中体連女子駅伝 上位4校で登場する中学校（他校所属の記録はクラブ扱いにしない）
+ARAGYOKU_SCHOOLS = frozenset(
+    {"南関", "岱明", "玉名", "玉東", "腹栄", "荒尾三", "荒尾四", "荒尾海陽", "菊水", "長洲"}
+)
 
 def norm_name(s: str) -> str:
     s = unicodedata.normalize("NFKC", s or "")
@@ -47,6 +51,7 @@ def norm_name(s: str) -> str:
 
 def norm_school(s: str) -> str:
     value = norm_name(s)
+    value = re.sub(r"\([^)]*\)", "", value)
     for suffix in ("中学校", "中"):
         if value.endswith(suffix):
             value = value[: -len(suffix)]
@@ -120,6 +125,21 @@ def school_overlap(a: str, b: str) -> bool:
     return a_n == b_n
 
 
+def is_aragyoku_school_affiliation(affiliation: str) -> bool:
+    """荒玉エリアの中学校所属か（他校の記録をクラブ扱いで混ぜないため）。"""
+    aff = norm_school(affiliation)
+    if not aff:
+        return False
+    return any(school_overlap(school, aff) for school in ARAGYOKU_SCHOOLS)
+
+
+def is_club_affiliation(affiliation: str, ekiden_school: str) -> bool:
+    """駅伝校以外のクラブ・プロジェクト所属か（ATRC, NJAC, 長洲JRC 等）。"""
+    if school_overlap(ekiden_school, affiliation):
+        return False
+    return not is_aragyoku_school_affiliation(affiliation)
+
+
 def parse_truthy(value: Any) -> bool:
     if isinstance(value, bool):
         return value
@@ -174,8 +194,27 @@ def filter_records_for_athlete(
     school_matches = [
         r for r in same_year if school_overlap(school, str(r.get("school") or ""))
     ]
-    # 同名選手をクラブ所属だけで駅伝校へ結び付けない。学校との明示的一致を必須にする。
-    return school_matches
+    club_matches = [
+        r
+        for r in same_year
+        if is_club_affiliation(str(r.get("school") or ""), school)
+    ]
+    seen: set[tuple[Any, ...]] = set()
+    merged: list[dict[str, Any]] = []
+    for record in school_matches + club_matches:
+        key = (
+            record.get("source"),
+            record.get("season"),
+            record.get("school"),
+            record.get("event"),
+            record.get("mark"),
+            record.get("meet_date"),
+        )
+        if key in seen:
+            continue
+        seen.add(key)
+        merged.append(record)
+    return merged
 
 
 def seasons_for_ekiden_year(year: int) -> list[str]:
@@ -538,6 +577,8 @@ def build_joined() -> dict[str, Any]:
                 "ただし2014年女子の原画像は同フォルダ内で確認できず、未掲載。"
                 "選手名は同年度の中学生女子トラック記録CSVと照合し、表記が競合する場合はCSVを優先。"
                 "トラック記録は2012〜2026年度CSVのうち、駅伝と同じ年度だけを参照。"
+                "学校以外のクラブ所属（ATRC, NJAC, 長洲JRC, 金栗PROJECT 等）も、"
+                "駅伝選手と同姓同名かつ学年が矛盾しない場合は同一人物として取り込む。"
             ),
             "sources": {
                 "ekiden": str(TOP4_JSON.relative_to(ROOT)),

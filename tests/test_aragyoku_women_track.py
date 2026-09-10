@@ -17,6 +17,7 @@ from aragyoku_women_track import (  # noqa: E402
     build_joined,
     filter_records_for_athlete,
     format_seconds,
+    is_club_affiliation,
     load_by_year_json,
     load_notion_rows,
     load_wide_like_csv,
@@ -53,10 +54,18 @@ def test_time_helpers() -> None:
     assert format_seconds(float("inf")) is None
     assert norm_name("内田　愛祐") == "内田愛祐"
     assert school_overlap("玉名", "玉名中")
+    assert school_overlap("玉名", "玉名(玉)")
+    assert school_overlap("荒尾海陽", "荒尾海陽(玉)")
     assert school_overlap("荒尾四", "荒尾第四中")
     assert not school_overlap("荒尾三", "荒尾四")
     assert not school_overlap("玉東", "玉東クラブ")
     assert not school_overlap("長洲", "長洲JRC")
+    assert is_club_affiliation("ATRC", "長洲")
+    assert is_club_affiliation("NJAC", "長洲")
+    assert is_club_affiliation("長洲JRC", "長洲")
+    assert is_club_affiliation("金栗PROJECT", "玉名")
+    assert not is_club_affiliation("菊水", "玉名")
+    assert not is_club_affiliation("玉名", "玉名")
     assert not school_overlap("玉名", "")
     assert seasons_for_ekiden_year(2025) == ["2025"]
     assert parse_truthy("__YES__")
@@ -260,7 +269,61 @@ def test_grade_evidence_excludes_same_name_different_athlete() -> None:
             "event": "800m",
         }
     ]
-    assert filter_records_for_athlete(club_only, 2025, "玉名", 3) == []
+    assert len(filter_records_for_athlete(club_only, 2025, "玉名", 3)) == 1
+
+    other_school = [
+        {
+            "season": "2025",
+            "school": "菊水",
+            "grade": "3",
+            "event": "800m",
+        }
+    ]
+    assert filter_records_for_athlete(other_school, 2025, "玉名", 3) == []
+
+
+def test_club_affiliation_records_are_linked_for_same_name() -> None:
+    atrc = [
+        {
+            "season": "2025",
+            "school": "ATRC",
+            "grade": "2",
+            "event": "800m",
+            "mark": "2:37.17",
+        },
+        {
+            "season": "2025",
+            "school": "ATRC",
+            "grade": "2",
+            "event": "1500m",
+            "mark": "5:16.18",
+        },
+    ]
+    assert len(filter_records_for_athlete(atrc, 2025, "長洲", 2)) == 2
+
+    njac = [
+        {
+            "season": "2025",
+            "school": "NJAC",
+            "grade": "1",
+            "event": "800m",
+            "mark": "2:30.87",
+        }
+    ]
+    assert len(filter_records_for_athlete(njac, 2025, "長洲", 1)) == 1
+
+    data = build_joined()
+    athlete = next(
+        a
+        for y in data["years"]
+        if y["year"] == 2025
+        for t in y["teams"]
+        if t["school"] == "長洲"
+        for a in t["athletes"]
+        if a["name"] == "猿渡愛梨"
+    )
+    assert athlete["track_events"]["800m"]["sb"]["school"] == "ATRC"
+    assert athlete["track_events"]["1500m"]["sb"]["school"] == "ATRC"
 
 
 def test_build_joined_has_2025_top4() -> None:
