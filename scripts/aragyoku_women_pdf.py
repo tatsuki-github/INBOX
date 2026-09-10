@@ -147,6 +147,7 @@ def build_styles(font_name: str) -> dict[str, ParagraphStyle]:
 def cover_page(data: dict[str, Any], styles: dict[str, ParagraphStyle]) -> list[Any]:
     meta = data["meta"]
     stats = meta.get("stats") or {}
+    verification = meta.get("verification") or {}
     story: list[Any] = []
     story.append(Paragraph(escape(meta.get("title") or "荒玉女子駅伝トラック走力"), styles["title"]))
     story.append(
@@ -165,6 +166,15 @@ def cover_page(data: dict[str, Any], styles: dict[str, ParagraphStyle]) -> list[
             styles["body"],
         )
     )
+    if verification:
+        story.append(
+            Paragraph(
+                f"原画像照合 {verification.get('checked_cells', 0)}セル / "
+                f"判読不能 {verification.get('unreadable_cells', 0)} / "
+                f"訂正 {verification.get('corrected_cells', 0)}",
+                styles["body"],
+            )
+        )
     story.append(Spacer(1, 4 * mm))
     story.append(
         Paragraph(
@@ -225,15 +235,13 @@ def athlete_rows(team: dict[str, Any], styles: dict[str, ParagraphStyle]) -> lis
                 else:
                     parts.append(f'SB {escape(sb["mark"])}')
             if recent and recent.get("mark"):
-                same = sb and sb.get("mark") == recent.get("mark") and sb.get("url") == recent.get("url")
-                if not same:
-                    if recent.get("url"):
-                        href = escape(recent["url"], {'"': "&quot;"})
-                        parts.append(
-                            f'直 <a href="{href}" color="#1A56DB">{escape(recent["mark"])}</a>'
-                        )
-                    else:
-                        parts.append(f'直 {escape(recent["mark"])}')
+                if recent.get("url"):
+                    href = escape(recent["url"], {'"': "&quot;"})
+                    parts.append(
+                        f'直 <a href="{href}" color="#1A56DB">{escape(recent["mark"])}</a>'
+                    )
+                else:
+                    parts.append(f'直 {escape(recent["mark"])}')
             if not parts:
                 return Paragraph("—", styles["cell_small"])
             return Paragraph("<br/>".join(parts), styles["cell_small"])

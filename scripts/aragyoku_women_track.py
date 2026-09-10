@@ -31,6 +31,7 @@ OUT_JSON = ROOT / "out/analysis/aragyoku_women_track_joined.json"
 OUT_CSV = ROOT / "out/analysis/aragyoku_women_track_joined.csv"
 
 TRACK_EVENTS = ("800m", "1000m", "1500m", "3000m")
+TRUE_VALUES = {"1", "true", "yes", "y", "__yes__"}
 
 # メタの区間距離（km）に合わせた簡易換算係数（トラック記録秒 → 駅伝区間目安秒）
 EKIDEN_GUIDE = {
@@ -79,10 +80,14 @@ def parse_time_to_seconds(raw: str | None) -> float | None:
     m = re.fullmatch(r"(\d+):(\d{2})(?:\.(\d+))?", s)
     if m:
         mins, secs, frac = m.group(1), m.group(2), m.group(3) or "0"
+        if int(secs) >= 60:
+            return None
         return int(mins) * 60 + int(secs) + float(f"0.{frac}")
     m = re.fullmatch(r"(\d+):(\d{2}):(\d{2})(?:\.(\d+))?", s)
     if m:
         h, mins, secs, frac = m.group(1), m.group(2), m.group(3), m.group(4) or "0"
+        if int(mins) >= 60 or int(secs) >= 60:
+            return None
         return int(h) * 3600 + int(mins) * 60 + int(secs) + float(f"0.{frac}")
     return None
 
@@ -101,8 +106,77 @@ def school_overlap(a: str, b: str) -> bool:
     a_n = norm_name(a).replace("中", "")
     b_n = norm_name(b).replace("中", "")
     if not a_n or not b_n:
-        return True
-    return a_n in b_n or b_n in a_n or a_n[:2] == b_n[:2]
+        return False
+    return a_n in b_n or b_n in a_n
+
+
+def parse_truthy(value: Any) -> bool:
+    if isinstance(value, bool):
+        return value
+    if isinstance(value, (int, float)):
+        return value == 1
+    return str(value or "").strip().lower() in TRUE_VALUES
+
+
+def _grade_number(value: Any) -> int | None:
+    try:
+        grade = int(str(value).strip())
+    except (TypeError, ValueError):
+        return None
+    return grade if 1 <= grade <= 3 else None
+
+
+def _looks_like_school(affiliation: str) -> bool:
+    value = norm_name(affiliation)
+    return "中" in value or any(
+        token in value
+        for token in ("玉名", "荒尾", "南関", "長洲", "岱明", "菊水", "腹栄", "玉東")
+    )
+
+
+def filter_records_for_athlete(
+    records: list[dict[str, Any]], year: int, school: str, grade: Any
+) -> list[dict[str, Any]]:
+    """同名別人を除外し、同一暦年の本人と裏付けられる記録だけを返す。"""
+    season = str(year)
+    same_year = [r for r in records if str(r.get("season") or "") == season]
+    athlete_grade = _grade_number(grade)
+
+    if athlete_grade is not None:
+        projected_grades: set[int] = set()
+        for record in records:
+            source_grade = _grade_number(record.get("grade"))
+            try:
+                source_year = int(str(record.get("season") or ""))
+            except ValueError:
+                continue
+            if source_grade is None:
+                continue
+            projected = source_grade + year - source_year
+            if 1 <= projected <= 3:
+                projected_grades.add(projected)
+
+        if projected_grades and athlete_grade not in projected_grades:
+            return []
+        if len(projected_grades) > 1:
+            same_year = [
+                r for r in same_year if _grade_number(r.get("grade")) == athlete_grade
+            ]
+        else:
+            same_year = [
+                r
+                for r in same_year
+                if _grade_number(r.get("grade")) in (None, athlete_grade)
+            ]
+
+    school_matches = [
+        r for r in same_year if school_overlap(school, str(r.get("school") or ""))
+    ]
+    if school_matches:
+        return school_matches
+    if any(_looks_like_school(str(r.get("school") or "")) for r in same_year):
+        return []
+    return same_year
 
 
 def seasons_for_ekiden_year(year: int) -> list[str]:
@@ -115,7 +189,7 @@ def load_wide_like_csv(
 ) -> dict[str, list[dict[str, Any]]]:
     by_name: dict[str, list[dict[str, Any]]] = {}
     if not path.exists():
-        return by_name
+        raise FileNotFoundError(f"required track source is missing: {path}")
     with path.open(encoding="utf-8-sig", newline="") as f:
         reader = csv.DictReader(f)
         for row in reader:
@@ -162,14 +236,17 @@ def _preferred_url(*candidates: str | None) -> str | None:
 
 def load_by_year_json() -> dict[str, list[dict[str, Any]]]:
     by_name: dict[str, list[dict[str, Any]]] = {}
-    for path in sorted(BY_YEAR_DIR.glob("*-sb-adopted.json")):
+    paths = sorted(BY_YEAR_DIR.glob("*-sb-adopted.json"))
+    if not paths:
+        raise FileNotFoundError(f"required track sources are missing: {BY_YEAR_DIR}")
+    for path in paths:
         season = path.name.split("-")[0]
         try:
             rows = json.loads(path.read_text(encoding="utf-8"))
-        except json.JSONDecodeError:
-            continue
+        except json.JSONDecodeError as exc:
+            raise ValueError(f"invalid track JSON: {path}") from exc
         if not isinstance(rows, list):
-            continue
+            raise ValueError(f"track JSON must contain a list: {path}")
         for row in rows:
             if row.get("性別") != "女子":
                 continue
@@ -200,7 +277,7 @@ def load_by_year_json() -> dict[str, list[dict[str, Any]]]:
                     "meet": (row.get("大会名") or "").strip() or None,
                     "meet_date": (row.get("日付") or "").strip() or None,
                     "url": url,
-                    "is_sb": bool(row.get("SB採用")),
+                    "is_sb": parse_truthy(row.get("SB採用")),
                     "is_aggregate": True,
                 }
             )
@@ -211,13 +288,13 @@ def load_notion_rows() -> dict[str, list[dict[str, Any]]]:
     by_name: dict[str, list[dict[str, Any]]] = {}
     for path, season, kind in NOTION_DBS:
         if not path.exists():
-            continue
+            raise FileNotFoundError(f"required track source is missing: {path}")
         try:
             rows = json.loads(path.read_text(encoding="utf-8"))
-        except json.JSONDecodeError:
-            continue
+        except json.JSONDecodeError as exc:
+            raise ValueError(f"invalid track JSON: {path}") from exc
         if not isinstance(rows, list):
-            continue
+            raise ValueError(f"track JSON must contain a list: {path}")
         for row in rows:
             if kind == "modern":
                 if row.get("gender") != "女子":
@@ -232,7 +309,7 @@ def load_notion_rows() -> dict[str, list[dict[str, Any]]]:
                 grade = row.get("grade") or ""
                 meet_date = (row.get("date") or "").strip() or None
                 url = _preferred_url(row.get("url"))
-                is_sb = bool(row.get("sb_adopted"))
+                is_sb = parse_truthy(row.get("sb_adopted"))
                 meet = None
             else:
                 if row.get("性別") != "女子":
@@ -249,7 +326,7 @@ def load_notion_rows() -> dict[str, list[dict[str, Any]]]:
                 grade = row.get("学年") or ""
                 meet_date = (row.get("日付") or "").strip() or None
                 url = _preferred_url(row.get("参考"), row.get("url"))
-                is_sb = bool(row.get("SB採用"))
+                is_sb = parse_truthy(row.get("SB採用"))
                 meet = (row.get("大会名") or "").strip() or None
             if not name or sec is None:
                 continue
@@ -290,6 +367,7 @@ def pick_sb(records: list[dict[str, Any]], seasons: list[str], event: str) -> di
             r
             for r in records
             if r.get("event") == event and (r.get("season") or "") == season
+            and r.get("is_sb") is True
         ]
         if cands:
             return min(cands, key=lambda r: r["seconds"])
@@ -363,6 +441,8 @@ def build_joined() -> dict[str, Any]:
     stats = {"athletes": 0, "with_any_track": 0, "with_sb": 0, "with_url": 0}
 
     year_keys = sorted((top4.get("years") or {}).keys(), reverse=True)
+    if not year_keys:
+        raise ValueError("ekiden source has no year data")
     for ykey in year_keys:
         yblock = top4["years"][ykey]
         year = int(ykey)
@@ -375,12 +455,9 @@ def build_joined() -> dict[str, Any]:
                 stats["athletes"] += 1
                 name = ath["name"]
                 nn = norm_name(name)
-                recs = list(all_recs.get(nn, []))
-                # 学校一致を優先。クラブ所属のみの場合は氏名一致をフォールバック
-                filtered = [r for r in recs if school_overlap(school, r.get("school") or "")]
-                if filtered:
-                    recs = filtered
-                # else: keep all name matches (club affiliation etc.)
+                recs = filter_records_for_athlete(
+                    list(all_recs.get(nn, [])), year, school, ath.get("grade")
+                )
 
                 events_payload: dict[str, Any] = {}
                 has_sb = False
@@ -450,6 +527,7 @@ def build_joined() -> dict[str, Any]:
             "title": "荒玉（玉名荒尾）中体連駅伝・女子・上位4校 トラック走力突合",
             "years": [y["year"] for y in years_out],
             "missing_years": top4.get("missing_years") or top4.get("meta", {}).get("missing_years") or [2014],
+            "verification": top4.get("meta", {}).get("verification") or {},
             "stats": stats,
             "guide_note": "駅伝目安はトラック記録の簡易距離換算であり、コース・気象・タスキ条件は含みません。",
             "drive_source_note": (
@@ -497,7 +575,7 @@ def write_csv(data: dict[str, Any]) -> None:
                     row[f"{event}_recent_url"] = recent.get("url") or ""
                 rows.append(row)
     if not rows:
-        return
+        raise ValueError("joined data has no athlete rows")
     with OUT_CSV.open("w", encoding="utf-8", newline="") as f:
         w = csv.DictWriter(f, fieldnames=list(rows[0].keys()), lineterminator="\n")
         w.writeheader()

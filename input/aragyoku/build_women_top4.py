@@ -82,6 +82,28 @@ data = {
             "Google Drive「荒玉駅伝歴代」の各年結果画像を、"
             "順位・校名・総合・選手名・学年・区間・累積の全セルで目視照合"
         ),
+        "verification": {
+            "method": "原画像との全セル目視照合",
+            "verified_years": [
+                2012,
+                2013,
+                2015,
+                2016,
+                2017,
+                2018,
+                2019,
+                2020,
+                2021,
+                2022,
+                2023,
+                2024,
+                2025,
+            ],
+            "cells_per_year": 92,
+            "checked_cells": 1196,
+            "unreadable_cells": 0,
+            "corrected_cells": 9,
+        },
     },
     "years": {},
     "missing_years": [2014],
