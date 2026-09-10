@@ -13,6 +13,6 @@
 - 市販書籍 PDF 全文 → メタスタブのみ
 - フォトフォルダの画像バイナリ → リンクのみ
 - Colab / 学習指導要領 / Index.zip → 対象外
-- Notion `query_data_sources` 上限時 → search+fetch で主要行を補完
+- Notion `query_data_sources` 上限時 → view モード＋search/fetch で補完（一部 DB は partial。詳細は notion/INDEX.md）
 
 設計: [`docs/adr/010-external-idaten-import.md`](../../docs/adr/010-external-idaten-import.md)
