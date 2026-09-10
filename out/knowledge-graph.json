@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated_at": "2026-09-10T11:53:30Z",
+  "generated_at": "2026-09-10T12:49:10Z",
   "nodes": [
     {
       "id": "entity:athlete:中尾快叶",
@@ -1406,6 +1406,20 @@
       "hint": "ADR: 012-middle-school-sb-all-years"
     },
     {
+      "id": "source:docs/adr/013-aragyoku-csv-name-reconciliation.md",
+      "type": "Source",
+      "label": "013-aragyoku-csv-name-reconciliation.md",
+      "topics": [
+        "ai",
+        "meta",
+        "practice"
+      ],
+      "refs": [
+        "docs/adr/013-aragyoku-csv-name-reconciliation.md"
+      ],
+      "hint": "ADR: 013-aragyoku-csv-name-reconciliation"
+    },
+    {
       "id": "source:docs/ai-practice-generation.md",
       "type": "Source",
       "label": "ai-practice-generation.md",
@@ -2557,6 +2571,18 @@
         "out/analysis/notion_records_2026.json"
       ],
       "hint": "荒尾・玉名中学生記録行（Notion 由来 JSON）"
+    },
+    {
+      "id": "source:out/analysis/荒玉女子駅伝_上位4校_トラック走力.pdf",
+      "type": "Source",
+      "label": "荒玉女子駅伝_上位4校_トラック走力.pdf",
+      "topics": [
+        "athlete_records"
+      ],
+      "refs": [
+        "out/analysis/荒玉女子駅伝_上位4校_トラック走力.pdf"
+      ],
+      "hint": "記録 PDF（参照のみ）: 荒玉女子駅伝_上位4校_トラック走力.pdf"
     },
     {
       "id": "source:out/daiming-practice-menus-kpace.md",
@@ -3911,6 +3937,11 @@
       "rel": "see_also"
     },
     {
+      "from": "source:docs/ai-practice-generation.md",
+      "to": "source:docs/adr/013-aragyoku-csv-name-reconciliation.md",
+      "rel": "see_also"
+    },
+    {
       "from": "source:out/2020/calendar.md",
       "to": "source:input/events.2020.yaml",
       "rel": "derived_from"
@@ -4282,6 +4313,11 @@
     },
     {
       "from": "topic:ai",
+      "to": "source:docs/adr/013-aragyoku-csv-name-reconciliation.md",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:ai",
       "to": "source:docs/ai-practice-generation.md",
       "rel": "search_here"
     },
@@ -4443,6 +4479,11 @@
     {
       "from": "topic:athlete_records",
       "to": "source:out/analysis/notion_records_2026.json",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:athlete_records",
+      "to": "source:out/analysis/荒玉女子駅伝_上位4校_トラック走力.pdf",
       "rel": "search_here"
     },
     {
@@ -4753,6 +4794,11 @@
     {
       "from": "topic:meta",
       "to": "source:docs/adr/012-middle-school-sb-all-years.md",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:meta",
+      "to": "source:docs/adr/013-aragyoku-csv-name-reconciliation.md",
       "rel": "search_here"
     },
     {
@@ -5108,6 +5154,11 @@
     {
       "from": "topic:practice",
       "to": "source:docs/adr/012-middle-school-sb-all-years.md",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:practice",
+      "to": "source:docs/adr/013-aragyoku-csv-name-reconciliation.md",
       "rel": "search_here"
     },
     {
