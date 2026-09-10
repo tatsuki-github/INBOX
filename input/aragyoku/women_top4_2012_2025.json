@@ -47,7 +47,8 @@
       "unreadable_cells": 0,
       "corrected_cells": 9,
       "csv_reconciled_cells": 21,
-      "csv_reconciliation_rule": "同年度CSVの女子・中学生を学校・学年・継続年度・走力で照合し、一意に本人と判断できる表記はCSVを優先"
+      "csv_reconciliation_rule": "同年度CSVの女子・中学生を学校・学年・継続年度・走力で照合し、一意に本人と判断できる表記はCSVを優先",
+      "csv_reconciliation_source": "input/aragyoku/women_top4_csv_reconciliations.json"
     }
   },
   "years": {

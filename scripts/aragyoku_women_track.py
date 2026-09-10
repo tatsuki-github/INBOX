@@ -36,36 +36,6 @@ TRUE_VALUES = {"1", "true", "yes", "y", "__yes__"}
 NON_RESULT_MARKS = {"DNS", "DNF", "DQ"}
 MAX_TRACK_SECONDS = 24 * 60 * 60
 
-# メタの区間距離（km）に合わせた簡易換算係数（トラック記録秒 → 駅伝区間目安秒）
-EKIDEN_GUIDE = {
-    1: {
-        "label": "1区 3.0km",
-        "prefer": ["3000m", "1500m", "800m"],
-        "scale_from": {"3000m": 1.0, "1500m": 2.15, "800m": 4.30},
-    },
-    2: {
-        "label": "2区 1.855km",
-        "prefer": ["1500m", "800m", "3000m"],
-        "scale_from": {"1500m": 1.28, "800m": 2.50, "3000m": 0.64},
-    },
-    3: {
-        "label": "3区 2.0km",
-        "prefer": ["1500m", "800m", "3000m"],
-        "scale_from": {"1500m": 1.40, "800m": 2.75, "3000m": 0.68},
-    },
-    4: {
-        "label": "4区 2.0km",
-        "prefer": ["1500m", "800m", "3000m"],
-        "scale_from": {"1500m": 1.40, "800m": 2.75, "3000m": 0.68},
-    },
-    5: {
-        "label": "5区 3.0km",
-        "prefer": ["3000m", "1500m", "800m"],
-        "scale_from": {"3000m": 1.0, "1500m": 2.15, "800m": 4.30},
-    },
-}
-
-
 def norm_name(s: str) -> str:
     s = unicodedata.normalize("NFKC", s or "")
     return s.replace("\u3000", "").replace(" ", "").replace("　", "")
@@ -153,14 +123,6 @@ def _grade_number(value: Any) -> int | None:
     return grade if 1 <= grade <= 3 else None
 
 
-def _looks_like_school(affiliation: str) -> bool:
-    value = norm_name(affiliation)
-    return "中" in value or any(
-        token in value
-        for token in ("玉名", "荒尾", "南関", "長洲", "岱明", "菊水", "腹栄", "玉東")
-    )
-
-
 def filter_records_for_athlete(
     records: list[dict[str, Any]], year: int, school: str, grade: Any
 ) -> list[dict[str, Any]]:
@@ -199,11 +161,8 @@ def filter_records_for_athlete(
     school_matches = [
         r for r in same_year if school_overlap(school, str(r.get("school") or ""))
     ]
-    if school_matches:
-        return school_matches
-    if any(_looks_like_school(str(r.get("school") or "")) for r in same_year):
-        return []
-    return same_year
+    # 同名選手をクラブ所属だけで駅伝校へ結び付けない。学校との明示的一致を必須にする。
+    return school_matches
 
 
 def seasons_for_ekiden_year(year: int) -> list[str]:
@@ -427,28 +386,6 @@ def pick_recent(records: list[dict[str, Any]], seasons: list[str], event: str) -
     return None
 
 
-def estimate_ekiden(leg: int, records: list[dict[str, Any]], seasons: list[str]) -> dict[str, Any] | None:
-    guide = EKIDEN_GUIDE[leg]
-    for event in guide["prefer"]:
-        sb = pick_sb(records, seasons, event)
-        if not sb:
-            continue
-        factor = guide["scale_from"].get(event)
-        if not factor:
-            continue
-        est = sb["seconds"] * factor
-        return {
-            "from_event": event,
-            "from_mark": sb["mark"],
-            "from_seconds": sb["seconds"],
-            "factor": factor,
-            "estimated_seconds": round(est, 1),
-            "estimated_mark": format_seconds(est),
-            "note": f"{event} {sb['mark']} × {factor} ≈ {format_seconds(est)}（簡易換算）",
-        }
-    return None
-
-
 def pack_mark(rec: dict[str, Any] | None) -> dict[str, Any] | None:
     if not rec:
         return None
@@ -460,6 +397,8 @@ def pack_mark(rec: dict[str, Any] | None) -> dict[str, Any] | None:
         "url": rec.get("url"),
         "season": rec.get("season") or None,
         "source": rec.get("source"),
+        "school": rec.get("school") or None,
+        "grade": rec.get("grade") or None,
     }
 
 
@@ -532,7 +471,6 @@ def build_joined() -> dict[str, Any]:
                         "ekiden_seconds": parse_time_to_seconds(ekiden_mark),
                         "cumulative": ath.get("cumulative"),
                         "track_events": events_payload,
-                        "ekiden_estimate": estimate_ekiden(ath["leg"], recs, seasons),
                         "match_count": len(recs),
                     }
                 )
@@ -607,8 +545,6 @@ def write_csv(data: dict[str, Any]) -> None:
                     "name": ath["name"],
                     "grade": ath.get("grade") or "",
                     "ekiden_mark": ath.get("ekiden_mark") or "",
-                    "estimate": (ath.get("ekiden_estimate") or {}).get("estimated_mark") or "",
-                    "estimate_note": (ath.get("ekiden_estimate") or {}).get("note") or "",
                 }
                 for event in TRACK_EVENTS:
                     ev = (ath.get("track_events") or {}).get(event) or {}

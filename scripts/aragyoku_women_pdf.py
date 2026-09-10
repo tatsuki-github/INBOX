@@ -6,7 +6,6 @@ from __future__ import annotations
 import argparse
 import json
 import sys
-from datetime import datetime
 from pathlib import Path
 from typing import Any
 from xml.sax.saxutils import escape
@@ -17,6 +16,7 @@ from reportlab.lib.styles import ParagraphStyle, getSampleStyleSheet
 from reportlab.lib.units import mm
 from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.ttfonts import TTFont
+from reportlab.pdfgen.canvas import Canvas
 from reportlab.platypus import (
     KeepTogether,
     PageBreak,
@@ -33,6 +33,14 @@ DEFAULT_PDF = ROOT / "out/analysis/荒玉女子駅伝_上位4校_トラック走
 DEFAULT_FONT = ROOT / "assets/fonts/NotoSansJP-Regular.ttf"
 FONT_NAME = "NotoSansJP"
 FALLBACK_FONT = "HeiseiKakuGo-W5"
+
+
+class InvariantCanvas(Canvas):
+    """再生成のたびにPDFメタデータ時刻が変わることを防ぐ。"""
+
+    def __init__(self, *args: Any, **kwargs: Any) -> None:
+        kwargs["invariant"] = 1
+        super().__init__(*args, **kwargs)
 
 def register_font(font_path: Path | None = None) -> str:
     path = font_path or DEFAULT_FONT
@@ -189,12 +197,6 @@ def cover_page(data: dict[str, Any], styles: dict[str, ParagraphStyle]) -> list[
         Paragraph(
             "タイムの青字は大会結果URLへのリンクです。クリックでブラウザが開きます。"
             " トラックSBは同年度CSVの中学生女子データを使用しています。",
-            styles["note"],
-        )
-    )
-    story.append(
-        Paragraph(
-            f"生成日時: {datetime.now().strftime('%Y-%m-%d %H:%M')}",
             styles["note"],
         )
     )
@@ -362,7 +364,7 @@ def build_pdf(data: dict[str, Any], output: Path, font_path: Path | None = None)
             story.extend(missing_year_section(year, styles))
     if story and isinstance(story[-1], PageBreak):
         story.pop()
-    doc.build(story)
+    doc.build(story, canvasmaker=InvariantCanvas)
     return output
 
 

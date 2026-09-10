@@ -7,9 +7,10 @@
 ## 受け入れ条件
 
 1. ワイド中学生 SB（≥1000 行、カテゴリー=中学生）が `sb/middle-school/wide/` にある  
-2. 2024/2025/2026 の by-year SB採用アーティファクト（または status で partial 明示）がある  
-3. Drive 生 CSV が `drive/personal/t-tsuchiyama/sb/` にあり INDEX から辿れる  
-4. KG に SB INDEX / ワイド CSV / ADR 012 が Source 登録される  
+2. 2012〜2026年の15年度すべてに by-year SB採用JSONとstatusがある  
+3. 15件の年度別生CSVが `drive/personal/t-tsuchiyama/sb/by-year/` にあり INDEX から辿れる  
+4. 各年度の件数・SHA-256・年度境界をテストで検証できる  
+5. KG に SB INDEX / ワイド CSV / ADR 012 が Source 登録される  
 
 ## テストマッピング
 
@@ -17,8 +18,9 @@
 |:---|:---|
 | 1 | `test_middle_school_wide_sb_csv` |
 | 2 | `test_middle_school_sb_year_artifacts_and_index` |
-| 3 | 同上 + INDEX 存在 |
-| 4 | `test_knowledge_graph_registers_middle_school_sb` |
+| 3 | `test_all_year_source_csvs_are_preserved` + INDEX 存在 |
+| 4 | `test_all_year_generated_counts_and_hashes` |
+| 5 | `test_knowledge_graph_registers_middle_school_sb` |
 
 ## In / Out
 

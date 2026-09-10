@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import json
+import runpy
 import sys
 import tempfile
 from pathlib import Path
@@ -219,6 +220,16 @@ def test_grade_evidence_excludes_same_name_different_athlete() -> None:
     assert filter_records_for_athlete(records, 2025, "玉名", 2) == []
     assert len(filter_records_for_athlete(records, 2025, "玉名", 3)) == 1
 
+    club_only = [
+        {
+            "season": "2025",
+            "school": "クラブチーム",
+            "grade": "3",
+            "event": "800m",
+        }
+    ]
+    assert filter_records_for_athlete(club_only, 2025, "玉名", 3) == []
+
 
 def test_build_joined_has_2025_top4() -> None:
     data = build_joined()
@@ -314,6 +325,11 @@ def test_csv_reconciled_athletes_have_same_year_track_matches() -> None:
     assert data["meta"]["verification"]["csv_reconciled_cells"] == 21
 
 
+def test_reconciliation_manifest_validates_against_raw_csv() -> None:
+    module = runpy.run_path(str(ROOT / "input/aragyoku/build_women_top4.py"))
+    module["validate_csv_reconciliations"](module["data"])
+
+
 def test_joined_artifact_exists() -> None:
     path = ROOT / "out/analysis/aragyoku_women_track_joined.json"
     assert path.exists(), "run scripts/aragyoku_women_track.py first"
@@ -334,10 +350,23 @@ def test_pdf_generation_and_same_mark_labels() -> None:
         for team in year["teams"]
         for athlete in team["athletes"]
     )
+    first_mark = next(
+        event["sb"]
+        for year in data["years"]
+        for team in year["teams"]
+        for athlete in team["athletes"]
+        for event in athlete["track_events"].values()
+        if event.get("sb")
+    )
+    assert first_mark["school"]
+    assert first_mark["grade"]
     with tempfile.TemporaryDirectory() as tmp:
-        output = Path(tmp) / "report.pdf"
-        build_pdf(data, output)
-        assert output.stat().st_size > 0
+        output1 = Path(tmp) / "report-1.pdf"
+        output2 = Path(tmp) / "report-2.pdf"
+        build_pdf(data, output1)
+        build_pdf(data, output2)
+        assert output1.stat().st_size > 0
+        assert output1.read_bytes() == output2.read_bytes()
 
     styles = build_styles(register_font())
     rows = athlete_rows(
@@ -386,6 +415,7 @@ if __name__ == "__main__":
     test_build_joined_has_2025_top4()
     test_corrected_transcriptions_are_preserved()
     test_csv_reconciled_athletes_have_same_year_track_matches()
+    test_reconciliation_manifest_validates_against_raw_csv()
     test_joined_artifact_exists()
     test_pdf_generation_and_same_mark_labels()
     print("ok")

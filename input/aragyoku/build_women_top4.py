@@ -8,6 +8,8 @@ import json
 from pathlib import Path
 
 OUT_DIR = Path(__file__).resolve().parent
+ROOT = OUT_DIR.parents[1]
+CSV_RECONCILIATIONS = OUT_DIR / "women_top4_csv_reconciliations.json"
 
 
 def leg(n: int, name, grade, split: str, cumulative: str) -> dict:
@@ -49,6 +51,61 @@ def validate_year(year: str, entry: dict) -> list[str]:
         if prev != total_s:
             notes.append(f"{year} {t['team']}: final cum != total {t['total']}")
     return notes
+
+
+def validate_csv_reconciliations(dataset: dict) -> None:
+    audit = json.loads(CSV_RECONCILIATIONS.read_text(encoding="utf-8"))
+    items = audit.get("items") or []
+    expected = dataset["meta"]["verification"]["csv_reconciled_cells"]
+    assert len(items) == expected, (len(items), expected)
+
+    seen: set[tuple[int, int, int, str]] = set()
+    rows_by_year: dict[int, list[dict[str, str]]] = {}
+    for item in items:
+        key = (item["year"], item["rank"], item["leg"], item["field"])
+        assert key not in seen, key
+        seen.add(key)
+
+        year_block = dataset["years"][str(item["year"])]
+        selected_team = next(t for t in year_block["teams"] if t["rank"] == item["rank"])
+        assert selected_team["team"] == item["team"], key
+        athlete = next(L for L in selected_team["legs"] if L["leg"] == item["leg"])
+        assert athlete[item["field"]] == item["to"], (key, athlete[item["field"]], item["to"])
+        assert item.get("evidence"), key
+
+        year = item["year"]
+        if year not in rows_by_year:
+            source = (
+                ROOT
+                / "input/external/drive/personal/t-tsuchiyama/sb/by-year"
+                / f"{year}-single-table.csv"
+            )
+            with source.open(encoding="utf-8-sig", newline="") as f:
+                rows_by_year[year] = list(csv.DictReader(f))
+
+        matches = [
+            row
+            for row in rows_by_year[year]
+            if row.get("性別") == "女子"
+            and row.get("カテゴリー") == "中学生"
+            and row.get("名前") == athlete["name"]
+            and item["team"] in (row.get("所属") or "")
+            and row.get("学年") == str(item["csv_grade"])
+            and "\ufffd" not in (row.get("名前") or "")
+        ]
+        assert len(matches) == item["csv_rows"], (key, len(matches), item["csv_rows"])
+
+        if item["field"] == "name":
+            old_matches = [
+                row
+                for row in rows_by_year[year]
+                if row.get("性別") == "女子"
+                and row.get("カテゴリー") == "中学生"
+                and row.get("名前") == item["from"]
+                and item["team"] in (row.get("所属") or "")
+                and row.get("学年") == str(item["csv_grade"])
+            ]
+            assert not old_matches, (key, item["from"])
 
 
 SOURCES = {
@@ -107,6 +164,9 @@ data = {
             "csv_reconciliation_rule": (
                 "同年度CSVの女子・中学生を学校・学年・継続年度・走力で照合し、"
                 "一意に本人と判断できる表記はCSVを優先"
+            ),
+            "csv_reconciliation_source": (
+                "input/aragyoku/women_top4_csv_reconciliations.json"
             ),
         },
     },
@@ -912,6 +972,7 @@ def main() -> None:
         all_notes.extend(validate_year(year, entry))
     if all_notes:
         raise SystemExit("validation failed:\n" + "\n".join(all_notes))
+    validate_csv_reconciliations(data)
 
     json_path = OUT_DIR / "women_top4_2012_2025.json"
     json_path.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
