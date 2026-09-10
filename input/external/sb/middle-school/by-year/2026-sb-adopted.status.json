@@ -1,17 +1,13 @@
 {
   "year": 2026,
-  "sources": [
-    "drive/shared/記録データベース/2026年度/中学生記録.csv",
-    "drive/personal/t-tsuchiyama/sb/output_reg_中学生_single_table.csv",
-    "notion/databases/2026年度中学生記録/rows.json"
-  ],
-  "sb_adopted_count": 635,
-  "breakdown": {
-    "drive": 494,
-    "output_reg": 494,
-    "notion_partial": 238
-  },
+  "source": "input/external/drive/personal/t-tsuchiyama/sb/by-year/2026-single-table.csv",
+  "source_row_count": 8063,
+  "sb_adopted_count": 3981,
   "complete": true,
-  "note": "Drive CSV + t-tsuchiyama output_reg を主とし Notion partial で補完",
-  "exportedAt": "2026-09-10T10:24:08Z"
+  "source_status": "complete",
+  "calendar_years": [
+    "2026"
+  ],
+  "replacement_character_rows": 510,
+  "note": "年度はファイル名（シーズン）を正本とし、翌年1〜3月の日付も同年度に保持"
 }

@@ -1,14 +1,14 @@
 {
-  "year": 2024,
-  "source": "input/external/drive/personal/t-tsuchiyama/sb/by-year/2024-single-table.csv",
-  "source_row_count": 6649,
+  "year": 2023,
+  "source": "input/external/drive/personal/t-tsuchiyama/sb/by-year/2023-single-table.csv",
+  "source_row_count": 6463,
   "sb_adopted_count": 2267,
   "complete": true,
   "source_status": "complete",
   "calendar_years": [
-    "2024",
-    "2025"
+    "2023",
+    "2024"
   ],
-  "replacement_character_rows": 583,
+  "replacement_character_rows": 935,
   "note": "年度はファイル名（シーズン）を正本とし、翌年1〜3月の日付も同年度に保持"
 }

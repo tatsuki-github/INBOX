@@ -88,7 +88,24 @@ def test_middle_school_sb_year_artifacts_and_index():
     index = (EXTERNAL / "sb" / "middle-school" / "INDEX.md").read_text(encoding="utf-8")
     assert "wide" in index and "by-year" in index
     by_year = EXTERNAL / "sb" / "middle-school" / "by-year"
-    for year in (2024, 2025, 2026):
+    expected_counts = {
+        2012: 2180,
+        2013: 2046,
+        2014: 2139,
+        2015: 2181,
+        2016: 2021,
+        2017: 2431,
+        2018: 2168,
+        2019: 2065,
+        2020: 1407,
+        2021: 1968,
+        2022: 2300,
+        2023: 2267,
+        2024: 2267,
+        2025: 2662,
+        2026: 3981,
+    }
+    for year, expected_count in expected_counts.items():
         status_path = by_year / f"{year}-sb-adopted.status.json"
         data_path = by_year / f"{year}-sb-adopted.json"
         assert status_path.is_file(), year
@@ -98,13 +115,16 @@ def test_middle_school_sb_year_artifacts_and_index():
         assert status.get("year") == year
         assert isinstance(rows, list) and len(rows) >= 100
         assert status.get("sb_adopted_count") == len(rows)
-        if year == 2024:
-            assert status.get("complete") is True
-            assert status.get("source_row_count") == 6922
-            assert len(rows) == 2460
+        assert status.get("complete") is True
+        assert len(rows) == expected_count
+        assert all(row.get("SB採用") == "__YES__" for row in rows)
     drive_sb = EXTERNAL / "drive" / "personal" / "t-tsuchiyama" / "sb"
     assert (drive_sb / "SBデータベース.csv").is_file()
     assert (drive_sb / "中学生SB.csv").is_file()
+    assert all(
+        (drive_sb / "by-year" / f"{year}-single-table.csv").is_file()
+        for year in expected_counts
+    )
 
 
 def test_knowledge_graph_registers_middle_school_sb():

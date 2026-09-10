@@ -1,0 +1,13 @@
+{
+  "year": 2015,
+  "source": "input/external/drive/personal/t-tsuchiyama/sb/by-year/2015-single-table.csv",
+  "source_row_count": 5252,
+  "sb_adopted_count": 2181,
+  "complete": true,
+  "source_status": "complete",
+  "calendar_years": [
+    "2015"
+  ],
+  "replacement_character_rows": 0,
+  "note": "年度はファイル名（シーズン）を正本とし、翌年1〜3月の日付も同年度に保持"
+}

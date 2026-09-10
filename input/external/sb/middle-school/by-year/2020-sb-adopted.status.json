@@ -1,0 +1,14 @@
+{
+  "year": 2020,
+  "source": "input/external/drive/personal/t-tsuchiyama/sb/by-year/2020-single-table.csv",
+  "source_row_count": 3119,
+  "sb_adopted_count": 1407,
+  "complete": true,
+  "source_status": "complete",
+  "calendar_years": [
+    "2020",
+    "2021"
+  ],
+  "replacement_character_rows": 0,
+  "note": "年度はファイル名（シーズン）を正本とし、翌年1〜3月の日付も同年度に保持"
+}
