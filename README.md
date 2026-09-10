@@ -46,7 +46,47 @@ python3 scripts/generate_calendar.py --year 2026 --input input/events.2026.yaml
 | `out/YYYY/practice_absentees.csv` | 1行 = 1欠席者（セッション×選手） |
 | `out/YYYY/practice-summary.md` | 月別集計・未パース一覧 |
 | `out/daiming-practice-menus-kpace.md` | 岱明練習 k/pace 一覧 |
+| `out/knowledge-graph.json` | リポジトリ検索ルート地図（ナレッジグラフ。カレンダー生成後に自動更新） |
+| `out/knowledge-graph.min.json` | 同上の圧縮版（LLM 投入用） |
+| `out/knowledge-graph.html` | 同上のブラウザ可視化（vis-network。データ埋め込み） |
+| `out/knowledge-graph.pdf` | 同上の印刷用 PDF スナップショット（ノード一覧） |
 | `calendar.md` | **今年**のカレンダー（`out/YYYY/calendar.md` と同一内容をルートにも配置） |
+
+## ナレッジグラフ（検索ルート地図）
+
+リポジトリ全体の「何がどこにあるか」を `out/knowledge-graph.json` に保持します。
+全文の複製ではなく、**短いヒント + 参照パス + エンティティリンク**です。回答時はまずここを見て探索先を決め、ヒットしたファイルの周辺コンテキストで答えます（運用は [`AGENTS.md`](AGENTS.md)）。
+
+ブラウザで構造を確認する場合:
+
+```bash
+# 推奨（ローカル HTTP。GitHub 上のプレビューでは動きません）
+python3 scripts/open_knowledge_graph.py
+
+# または生成後に out/knowledge-graph.html をブラウザで直接開く
+python3 scripts/build_knowledge_graph.py
+```
+
+`out/knowledge-graph.html` は種別フィルタ・検索・ノード詳細に対応。CDN が使えない環境では一覧ビューにフォールバックします。
+同じ生成で `out/knowledge-graph.pdf`（印刷用ノード一覧）も出力されます。
+
+- HTML: [`out/knowledge-graph.html`](out/knowledge-graph.html)
+- PDF: [`out/knowledge-graph.pdf`](out/knowledge-graph.pdf)
+
+```bash
+# 手動再生成（JSON + min + HTML + PDF）
+python3 scripts/build_knowledge_graph.py
+
+# クエリ → 参照パス + 近傍コンテキスト
+python3 scripts/query_knowledge_graph.py --question "松野の欠席は？"
+
+# CI 用: コミット済み KG が最新か検証
+python3 scripts/build_knowledge_graph.py --check
+```
+
+`generate_calendar.py` 成功後にも自動再生成されます。ソースや生成物を変えたら KG を更新してコミットしてください。
+
+設計メモ: [`docs/adr/009-knowledge-graph-html-viz.md`](docs/adr/009-knowledge-graph-html-viz.md)
 
 ## 予定・メモの追加
 
