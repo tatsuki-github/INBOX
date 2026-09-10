@@ -40,15 +40,15 @@
       "checked_cells": 1196,
       "unreadable_cells": 0,
       "corrected_cells": 9,
-      "csv_reconciled_cells": 24,
+      "csv_reconciled_cells": 27,
       "csv_reconciliation_rule": "同年度CSVの女子・中学生を学校・学年・継続年度・走力で照合し、一意に本人と判断できる表記はCSVを優先",
       "csv_reconciliation_source": "input/aragyoku/women_top4_csv_reconciliations.json"
     },
     "stats": {
       "athletes": 260,
-      "with_any_track": 174,
-      "with_sb": 174,
-      "with_url": 174
+      "with_any_track": 176,
+      "with_sb": 176,
+      "with_url": 176
     },
     "guide_note": "「駅伝」は大会当日の区間走結果（道路コース）です。女子は1〜5区がそれぞれ約3.0km・1.855km・2.0km・2.0km・3.0kmで、トラック種目（800m/1500m/3000m）とは距離・路面・気象・タスキ条件が異なります。トラックSB/直近は同年の走力指標として並記していますが、短い種目が強い選手ほど長い区間では相対的に伸び、逆も起こります。数式による換算ではなく、実際の駅伝タイムとトラック走力の両方を見て判断してください。",
     "drive_source_note": "駅伝記録は Google Drive「荒玉駅伝歴代」の結果画像と全セルを目視照合済み。ただし2014年女子の原画像は同フォルダ内で確認できず、未掲載。選手名は同年度の中学生女子トラック記録CSVと照合し、表記が競合する場合はCSVを優先。トラック記録は2012〜2026年度CSVのうち、駅伝と同じ年度だけを参照。学校以外のクラブ所属（ATRC, NJAC, 長洲JRC, 金栗PROJECT 等）も、駅伝選手と同姓同名かつ学年が矛盾しない場合は同一人物として取り込む。",
@@ -7673,17 +7673,32 @@
             },
             {
               "leg": 2,
-              "name": "前田明日香",
+              "name": "前田明佳里",
               "grade": 1,
               "ekiden_mark": "6:43",
               "ekiden_seconds": 403.0,
               "cumulative": "17:00",
-              "track_events": {},
-              "match_count": 0
+              "track_events": {
+                "800m": {
+                  "sb": {
+                    "mark": "2:35.83",
+                    "seconds": 155.83,
+                    "meet": "第４３回　ジュニアオリンピック陸上競技選手権大会熊本県予選会",
+                    "meet_date": "2012/08/25",
+                    "url": "http://www.kumariku.org/12/kekka/8,25junior/REL100.HTM",
+                    "season": "2012",
+                    "source": "by_year_2012",
+                    "school": "岱明中",
+                    "grade": "1"
+                  },
+                  "recent": null
+                }
+              },
+              "match_count": 1
             },
             {
               "leg": 3,
-              "name": "中川菜月",
+              "name": "中川葉月",
               "grade": 1,
               "ekiden_mark": "7:12",
               "ekiden_seconds": 432.0,
@@ -7693,13 +7708,28 @@
             },
             {
               "leg": 4,
-              "name": "鎌田愛貴",
+              "name": "植田愛美",
               "grade": 2,
               "ekiden_mark": "7:22",
               "ekiden_seconds": 442.0,
               "cumulative": "31:34",
-              "track_events": {},
-              "match_count": 0
+              "track_events": {
+                "1500m": {
+                  "sb": {
+                    "mark": "5:22.39",
+                    "seconds": 322.39,
+                    "meet": "第４３回　ジュニアオリンピック陸上競技選手権大会熊本県予選会",
+                    "meet_date": "2012/08/25",
+                    "url": "http://www.kumariku.org/12/kekka/8,25junior/REL136.HTM",
+                    "season": "2012",
+                    "source": "by_year_2012",
+                    "school": "岱明中",
+                    "grade": "2"
+                  },
+                  "recent": null
+                }
+              },
+              "match_count": 1
             },
             {
               "leg": 5,

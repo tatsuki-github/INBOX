@@ -371,8 +371,10 @@ def test_corrected_transcriptions_are_preserved() -> None:
 
     assert athlete(2012, 1, 2)["name"] == "森澤彩乃"
     assert athlete(2012, 2, 1)["name"] == "大道志歩"
-    assert athlete(2012, 2, 2)["name"] == "前田明日香"
-    assert athlete(2012, 2, 4)["name"] == "鎌田愛貴"
+    assert athlete(2012, 2, 2)["name"] == "前田明佳里"
+    assert athlete(2012, 2, 3)["name"] == "中川葉月"
+    assert athlete(2012, 2, 4)["name"] == "植田愛美"
+    assert athlete(2012, 2, 5)["name"] == "田上愛佳"
     assert athlete(2012, 4, 3)["name"] == "嶋村里恩"
     assert athlete(2012, 4, 2)["grade"] == 3
     assert athlete(2013, 1, 1)["name"] == "森澤彩乃"
@@ -427,7 +429,7 @@ def test_csv_reconciled_athletes_have_same_year_track_matches() -> None:
         if athlete["match_count"] > 0
     }
     assert corrected <= matched
-    assert data["meta"]["verification"]["csv_reconciled_cells"] == 24
+    assert data["meta"]["verification"]["csv_reconciled_cells"] == 27
 
 
 def test_reconciliation_manifest_validates_against_raw_csv() -> None:

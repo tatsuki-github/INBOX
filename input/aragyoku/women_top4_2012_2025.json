@@ -46,7 +46,7 @@
       "checked_cells": 1196,
       "unreadable_cells": 0,
       "corrected_cells": 9,
-      "csv_reconciled_cells": 24,
+      "csv_reconciled_cells": 27,
       "csv_reconciliation_rule": "同年度CSVの女子・中学生を学校・学年・継続年度・走力で照合し、一意に本人と判断できる表記はCSVを優先",
       "csv_reconciliation_source": "input/aragyoku/women_top4_csv_reconciliations.json"
     }
@@ -2259,21 +2259,21 @@
             },
             {
               "leg": 2,
-              "name": "前田明日香",
+              "name": "前田明佳里",
               "grade": 1,
               "split": "6:43",
               "cumulative": "17:00"
             },
             {
               "leg": 3,
-              "name": "中川菜月",
+              "name": "中川葉月",
               "grade": 1,
               "split": "7:12",
               "cumulative": "24:12"
             },
             {
               "leg": 4,
-              "name": "鎌田愛貴",
+              "name": "植田愛美",
               "grade": 2,
               "split": "7:22",
               "cumulative": "31:34"

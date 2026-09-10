@@ -4,6 +4,9 @@
   "items": [
     {"year": 2012, "rank": 1, "team": "玉名", "leg": 2, "field": "name", "from": "西澤弥乃", "to": "森澤彩乃", "csv_grade": 2, "csv_rows": 4, "evidence": "玉名中2年で4記録。翌2013年も玉名中3年で6記録があり、駅伝側の森澤耶乃と継続一致。旧名はCSVにない。"},
     {"year": 2012, "rank": 2, "team": "岱明", "leg": 1, "field": "name", "from": "大濱志歩", "to": "大道志歩", "csv_grade": 1, "csv_rows": 6, "evidence": "岱明中1年で6記録、同じ志歩かつ一文字違い。800m 2:22.94は駅伝1区10:17の走力とも整合。旧名はCSVにない。"},
+    {"year": 2012, "rank": 2, "team": "岱明", "leg": 2, "field": "name", "from": "前田明日香", "to": "前田明佳里", "csv_grade": 1, "csv_rows": 2, "evidence": "2012年CSVは岱明中1年で2記録。2013年駅伝・CSVでも前田明佳里が岱明2年として継続。明日香はCSVにない。"},
+    {"year": 2012, "rank": 2, "team": "岱明", "leg": 3, "field": "name", "from": "中川菜月", "to": "中川葉月", "csv_grade": 2, "csv_year": 2013, "csv_rows": 3, "evidence": "2013年岱明中2年で3記録。2012年結果表は菜月表記だが、翌年以降の正本は葉月。2012年は1年で区間3区に走る。"},
+    {"year": 2012, "rank": 2, "team": "岱明", "leg": 4, "field": "name", "from": "鎌田愛貴", "to": "植田愛美", "csv_grade": 2, "csv_rows": 3, "evidence": "2012年CSVは岱明中2年で3記録。2013年も岱明中3年で継続。鎌田愛貴はCSVにない。"},
     {"year": 2012, "rank": 4, "team": "南関", "leg": 3, "field": "name", "from": "嶋村梨那", "to": "嶋村里恩", "csv_grade": 1, "csv_rows": 3, "evidence": "南関中1年で同姓候補は嶋村里恩のみ。翌2013年も南関中2年で4記録があり継続一致。旧名はCSVにない。"},
 
     {"year": 2013, "rank": 1, "team": "玉名", "leg": 1, "field": "name", "from": "森澤耶乃", "to": "森澤彩乃", "csv_grade": 3, "csv_rows": 6, "evidence": "玉名中3年で6記録。前年の玉名中2年から継続し、一文字違い。3000m 10:23.21は駅伝1区10:09と整合。"},
