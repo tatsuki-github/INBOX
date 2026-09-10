@@ -14,6 +14,7 @@
    - 可視化: `out/knowledge-graph.html`（構造確認用）
      - GitHub のファイル画面では動きません
      - 推奨: `python3 scripts/open_knowledge_graph.py`
+   - 印刷用: `out/knowledge-graph.pdf`（HTML と同タイミングで生成）
    - または実行:  
      `python3 scripts/query_knowledge_graph.py --question "<ユーザーの問い>"`
 2. 返ってきた **refs（ファイルパス）** を優先して開く。

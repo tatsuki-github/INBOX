@@ -862,13 +862,14 @@ def _rebuild_knowledge_graph() -> None:
     try:
         from knowledge_graph.builder import write_knowledge_graph
 
-        path, min_path, html_path, graph = write_knowledge_graph()
+        path, min_path, html_path, pdf_path, graph = write_knowledge_graph()
         print(
             f"  Knowledge graph: {path} "
             f"({len(graph.get('nodes') or [])} nodes, {len(graph.get('edges') or [])} edges)"
         )
         print(f"  Knowledge graph (min): {min_path}")
         print(f"  Knowledge graph (html): {html_path}")
+        print(f"  Knowledge graph (pdf): {pdf_path}")
     except Exception as exc:
         print(f"警告: ナレッジグラフ再生成に失敗: {exc}", file=sys.stderr)
 

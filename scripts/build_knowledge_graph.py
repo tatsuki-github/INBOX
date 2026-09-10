@@ -16,6 +16,7 @@ from knowledge_graph.builder import (  # noqa: E402
     KG_HTML_PATH,
     KG_MIN_PATH,
     KG_PATH,
+    KG_PDF_PATH,
     ROOT,
     build_knowledge_graph,
     normalize_graph_for_compare,
@@ -42,6 +43,12 @@ def main(argv: list[str] | None = None) -> int:
         type=Path,
         default=KG_HTML_PATH,
         help="Output path for visualization HTML",
+    )
+    parser.add_argument(
+        "--pdf-out",
+        type=Path,
+        default=KG_PDF_PATH,
+        help="Output path for printable PDF snapshot",
     )
     parser.add_argument(
         "--check",
@@ -81,18 +88,26 @@ def main(argv: list[str] | None = None) -> int:
         if 'id="kg-data"' not in html or "vis-network" not in html:
             print(f"HTML visualization looks incomplete: {args.html_out}", file=sys.stderr)
             return 1
-        print(f"OK: {args.out} matches fresh build; HTML present")
+        if not args.pdf_out.exists():
+            print(f"Missing visualization PDF: {args.pdf_out}", file=sys.stderr)
+            return 1
+        if not args.pdf_out.read_bytes().startswith(b"%PDF"):
+            print(f"PDF visualization looks incomplete: {args.pdf_out}", file=sys.stderr)
+            return 1
+        print(f"OK: {args.out} matches fresh build; HTML and PDF present")
         return 0
 
-    path, min_path, html_path, graph = write_knowledge_graph(
+    path, min_path, html_path, pdf_path, graph = write_knowledge_graph(
         args.out,
         min_path=args.min_out,
         html_path=args.html_out,
+        pdf_path=args.pdf_out,
         generated_at=args.generated_at,
     )
     print(f"Wrote {path.relative_to(ROOT)} ({len(graph['nodes'])} nodes, {len(graph['edges'])} edges)")
     print(f"Wrote {min_path.relative_to(ROOT)}")
     print(f"Wrote {html_path.relative_to(ROOT)}")
+    print(f"Wrote {pdf_path.relative_to(ROOT)}")
     return 0
 
 

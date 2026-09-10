@@ -34,13 +34,15 @@ def test_write_and_check_roundtrip(tmp_path: Path):
     out = tmp_path / "knowledge-graph.json"
     mini = tmp_path / "knowledge-graph.min.json"
     html = tmp_path / "knowledge-graph.html"
-    path, min_path, html_path, graph = write_knowledge_graph(
+    pdf = tmp_path / "knowledge-graph.pdf"
+    path, min_path, html_path, pdf_path, graph = write_knowledge_graph(
         out,
         min_path=mini,
         html_path=html,
+        pdf_path=pdf,
         generated_at="2026-01-01T00:00:00Z",
     )
-    assert path.exists() and min_path.exists() and html_path.exists()
+    assert path.exists() and min_path.exists() and html_path.exists() and pdf_path.exists()
     committed = json.loads(path.read_text(encoding="utf-8"))
     fresh = build_knowledge_graph(generated_at=committed["generated_at"])
     assert normalize_graph_for_compare(committed) == normalize_graph_for_compare(fresh)
@@ -56,6 +58,8 @@ def test_write_and_check_roundtrip(tmp_path: Path):
     assert '"version":1' in html_text or '"version": 1' in html_text
     # Embedded JSON must be script-safe
     assert "</script>" not in html_text.split('id="kg-data"', 1)[1].split("</script>", 1)[0]
+    assert pdf_path.read_bytes().startswith(b"%PDF")
+    assert pdf_path.stat().st_size > 1000
 
 
 def test_html_renderer_embeds_graph():
@@ -66,6 +70,17 @@ def test_html_renderer_embeds_graph():
     assert "INBOX Knowledge Graph" in html
     assert "application/json" in html
     assert any(n["id"] in html for n in graph["nodes"][:3])
+
+
+def test_pdf_renderer_writes_japanese_snapshot(tmp_path: Path):
+    from knowledge_graph.pdf_renderer import write_knowledge_graph_pdf
+
+    graph = build_knowledge_graph(generated_at="2026-01-01T00:00:00Z")
+    pdf_path = write_knowledge_graph_pdf(graph, tmp_path / "kg.pdf")
+    data = pdf_path.read_bytes()
+    assert data.startswith(b"%PDF")
+    assert b"INBOX" in data or b"/Type" in data
+    assert pdf_path.stat().st_size > 2000
 
 
 def test_query_routes_athlete_to_absentee_refs():

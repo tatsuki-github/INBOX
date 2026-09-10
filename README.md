@@ -49,6 +49,7 @@ python3 scripts/generate_calendar.py --year 2026 --input input/events.2026.yaml
 | `out/knowledge-graph.json` | リポジトリ検索ルート地図（ナレッジグラフ。カレンダー生成後に自動更新） |
 | `out/knowledge-graph.min.json` | 同上の圧縮版（LLM 投入用） |
 | `out/knowledge-graph.html` | 同上のブラウザ可視化（vis-network。データ埋め込み） |
+| `out/knowledge-graph.pdf` | 同上の印刷用 PDF スナップショット（ノード一覧） |
 | `calendar.md` | **今年**のカレンダー（`out/YYYY/calendar.md` と同一内容をルートにも配置） |
 
 ## ナレッジグラフ（検索ルート地図）
@@ -67,9 +68,13 @@ python3 scripts/build_knowledge_graph.py
 ```
 
 `out/knowledge-graph.html` は種別フィルタ・検索・ノード詳細に対応。CDN が使えない環境では一覧ビューにフォールバックします。
+同じ生成で `out/knowledge-graph.pdf`（印刷用ノード一覧）も出力されます。
+
+- HTML: [`out/knowledge-graph.html`](out/knowledge-graph.html)
+- PDF: [`out/knowledge-graph.pdf`](out/knowledge-graph.pdf)
 
 ```bash
-# 手動再生成（JSON + min + HTML）
+# 手動再生成（JSON + min + HTML + PDF）
 python3 scripts/build_knowledge_graph.py
 
 # クエリ → 参照パス + 近傍コンテキスト
