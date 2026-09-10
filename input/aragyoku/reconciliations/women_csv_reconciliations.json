@@ -1,0 +1,42 @@
+{
+  "rule": "同年度CSVの女子・中学生を学校・学年・前後年度・走力で照合し、一意に本人と判断できる場合だけCSVを優先する。CSVにないことだけでは変更しない。",
+  "excluded": "Unicode置換文字 U+FFFD を含む行は根拠に使わない。",
+  "items": [
+    {"year": 2012, "rank": 1, "team": "玉名", "leg": 2, "field": "name", "from": "西澤弥乃", "to": "森澤彩乃", "csv_grade": 2, "csv_rows": 4, "evidence": "玉名中2年で4記録。翌2013年も玉名中3年で6記録があり、駅伝側の森澤耶乃と継続一致。旧名はCSVにない。"},
+    {"year": 2012, "rank": 2, "team": "岱明", "leg": 1, "field": "name", "from": "大濱志歩", "to": "大道志歩", "csv_grade": 1, "csv_rows": 6, "evidence": "岱明中1年で6記録、同じ志歩かつ一文字違い。800m 2:22.94は駅伝1区10:17の走力とも整合。旧名はCSVにない。"},
+    {"year": 2012, "rank": 2, "team": "岱明", "leg": 2, "field": "name", "from": "前田明日香", "to": "前田明佳里", "csv_grade": 1, "csv_rows": 2, "evidence": "2012年CSVは岱明中1年で2記録。2013年駅伝・CSVでも前田明佳里が岱明2年として継続。明日香はCSVにない。"},
+    {"year": 2012, "rank": 2, "team": "岱明", "leg": 3, "field": "name", "from": "中川菜月", "to": "中川葉月", "csv_grade": 2, "csv_year": 2013, "csv_rows": 3, "evidence": "2013年岱明中2年で3記録。2012年結果表は菜月表記だが、翌年以降の正本は葉月。2012年は1年で区間3区に走る。"},
+    {"year": 2012, "rank": 2, "team": "岱明", "leg": 4, "field": "name", "from": "鎌田愛貴", "to": "植田愛美", "csv_grade": 2, "csv_rows": 3, "evidence": "2012年CSVは岱明中2年で3記録。2013年も岱明中3年で継続。鎌田愛貴はCSVにない。"},
+    {"year": 2012, "rank": 4, "team": "南関", "leg": 3, "field": "name", "from": "嶋村梨那", "to": "嶋村里恩", "csv_grade": 1, "csv_rows": 3, "evidence": "南関中1年で同姓候補は嶋村里恩のみ。翌2013年も南関中2年で4記録があり継続一致。旧名はCSVにない。"},
+    {"year": 2012, "rank": 1, "team": "玉名", "leg": 1, "field": "name", "from": "猿渡睦月", "to": "磧結里", "csv_grade": 2, "csv_rows": 5, "evidence": "2012年CSVは玉名中2年で5記録。2013年駅伝2区にも磧結里が継続。猿渡睦月はCSVにない。"},
+    {"year": 2012, "rank": 3, "team": "荒尾海陽", "leg": 3, "field": "name", "from": "吉岡愛希", "to": "吉岡愛琴", "csv_grade": 3, "csv_year": 2014, "csv_rows": 1, "evidence": "2014年CSVは荒尾海陽中3年で1記録。2012〜2013年駅伝の愛希・愛馨表記は同一選手の誤読。旧名はCSVにない。"},
+
+    {"year": 2013, "rank": 1, "team": "玉名", "leg": 1, "field": "name", "from": "森澤耶乃", "to": "森澤彩乃", "csv_grade": 3, "csv_rows": 6, "evidence": "玉名中3年で6記録。前年の玉名中2年から継続し、一文字違い。3000m 10:23.21は駅伝1区10:09と整合。"},
+    {"year": 2013, "rank": 1, "team": "玉名", "leg": 2, "field": "name", "from": "碩結里", "to": "磧結里", "csv_grade": 3, "csv_rows": 6, "evidence": "玉名中3年で6記録。同じ結里かつ異体字に近い一文字違いで、旧名はCSVにない。"},
+    {"year": 2013, "rank": 3, "team": "南関", "leg": 5, "field": "name", "from": "嶋村里穂", "to": "嶋村里恩", "csv_grade": 2, "csv_rows": 4, "evidence": "南関中2年で4記録。前年の南関中1年から継続し、一文字違い。旧名はCSVにない。"},
+    {"year": 2013, "rank": 4, "team": "荒尾三", "leg": 1, "field": "name", "from": "関琴美", "to": "開琴美", "csv_grade": 2, "csv_rows": 3, "evidence": "荒尾三中2年で同じ琴美の候補は開琴美のみ。一文字違いで旧名はCSVにない。"},
+    {"year": 2013, "rank": 2, "team": "荒尾海陽", "leg": 3, "field": "name", "from": "吉岡愛馨", "to": "吉岡愛琴", "csv_grade": 3, "csv_year": 2014, "csv_rows": 1, "evidence": "2014年CSVは荒尾海陽中3年で1記録。前年の愛希表記と同一選手。愛馨はCSVにない。"},
+    {"year": 2013, "rank": 2, "team": "荒尾海陽", "leg": 3, "field": "grade", "from": 2, "to": 3, "csv_grade": 3, "csv_year": 2014, "csv_rows": 1, "evidence": "2012年2年からの学年進行に合わせ3年に修正。2014年CSVも3年。"},
+
+    {"year": 2015, "rank": 1, "team": "玉名", "leg": 1, "field": "name", "from": "関知夏子", "to": "關知夏子", "csv_grade": 3, "csv_rows": 6, "evidence": "玉名中3年で6記録。関と關の字体差のみで旧字体のCSV表記を優先。"},
+    {"year": 2015, "rank": 2, "team": "荒尾三", "leg": 2, "field": "name", "from": "荒川夏凛", "to": "荒川夏凜", "csv_year": 2017, "csv_grade": 3, "csv_rows": 2, "evidence": "2015年1年・2016年2年・2017年3年と同校で継続。2017年CSVの荒川夏凜2記録を字体の正本とする。"},
+    {"year": 2015, "rank": 3, "team": "南関", "leg": 5, "field": "name", "from": "島崎乃々佳", "to": "島﨑乃々佳", "csv_grade": 2, "csv_rows": 6, "evidence": "南関中2年で6記録。崎と﨑の字体差のみでCSV表記を優先。"},
+    {"year": 2016, "rank": 1, "team": "荒尾三", "leg": 3, "field": "name", "from": "荒川夏凛", "to": "荒川夏凜", "csv_year": 2017, "csv_grade": 3, "csv_rows": 2, "evidence": "2015年1年・2016年2年・2017年3年と同校で継続。2017年CSVの荒川夏凜2記録を字体の正本とする。"},
+    {"year": 2016, "rank": 3, "team": "南関", "leg": 3, "field": "name", "from": "島崎乃々佳", "to": "島﨑乃々佳", "csv_grade": 3, "csv_rows": 3, "evidence": "南関中3年で3記録。前年の同校2年から継続し、崎と﨑の字体差のみ。"},
+    {"year": 2017, "rank": 2, "team": "荒尾三", "leg": 2, "field": "name", "from": "沖愛凛", "to": "沖愛凜", "csv_year": 2018, "csv_grade": 2, "csv_rows": 1, "evidence": "2017年1年・2018年2年・2019年3年と同校で継続。2018年CSVの沖愛凜を字体の正本とする。"},
+    {"year": 2017, "rank": 2, "team": "荒尾三", "leg": 4, "field": "name", "from": "荒川夏凛", "to": "荒川夏凜", "csv_grade": 3, "csv_rows": 2, "evidence": "荒尾三中3年で2記録。凛と凜の字体差のみでCSV表記を優先。"},
+    {"year": 2018, "rank": 1, "team": "玉名", "leg": 5, "field": "name", "from": "坂上未来", "to": "田上未来", "csv_grade": 2, "csv_rows": 4, "evidence": "玉名中2年で4記録。同じ未来かつ一文字違いで旧名はCSVにない。"},
+    {"year": 2018, "rank": 2, "team": "菊水", "leg": 4, "field": "name", "from": "前瀬あかり", "to": "前淵あかり", "csv_grade": 2, "csv_rows": 6, "evidence": "菊水中2年で6記録。同じ前・あかりかつ一文字違いで旧名はCSVにない。"},
+    {"year": 2018, "rank": 1, "team": "玉名", "leg": 4, "field": "name", "from": "本田結里", "to": "本田悠薫", "csv_grade": 1, "csv_rows": 5, "evidence": "玉名中1年で5記録。2019年も玉名中2年で継続。結里はCSVにない。"},
+    {"year": 2018, "rank": 3, "team": "腹栄", "leg": 3, "field": "name", "from": "田上遥", "to": "田川華妃", "csv_grade": 2, "csv_rows": 2, "evidence": "腹栄中2年で2記録。2019年駅伝2区の田川華妃と継続。田上遥はCSVにない。"},
+    {"year": 2019, "rank": 4, "team": "荒尾三", "leg": 1, "field": "name", "from": "沖愛凛", "to": "沖愛凜", "csv_year": 2018, "csv_grade": 2, "csv_rows": 1, "evidence": "2017年1年・2018年2年・2019年3年と同校で継続。2018年CSVの沖愛凜を字体の正本とする。"},
+    {"year": 2023, "rank": 2, "team": "荒尾四", "leg": 2, "field": "name", "from": "中尾杏朱", "to": "中尾彩朱", "csv_grade": 2, "csv_rows": 5, "evidence": "荒尾第四中2年で5記録。2022年1年・2024年3年にも同じ中尾彩朱があり、学年進行が一致。"},
+    {"year": 2023, "rank": 2, "team": "荒尾四", "leg": 4, "field": "name", "from": "高田春陽", "to": "髙田春陽", "csv_grade": 2, "csv_rows": 5, "evidence": "荒尾第四中2年で5記録、2024年3年でも3記録。高と髙の字体差で学年進行も一致。"},
+
+    {"year": 2016, "rank": 3, "team": "南関", "leg": 3, "field": "grade", "from": 1, "to": 3, "csv_grade": 3, "csv_rows": 3, "evidence": "2015年CSV・駅伝は2年、2016年CSVの主要3記録は3年で学年進行が一致。CSV内の2年表記2件より前後年度整合を優先。"},
+    {"year": 2016, "rank": 4, "team": "岱明", "leg": 2, "field": "grade", "from": 3, "to": 1, "csv_grade": 1, "csv_rows": 4, "evidence": "2016年CSVは4記録すべて岱明中1年、2017年駅伝は2年で学年進行も一致。"},
+    {"year": 2019, "rank": 4, "team": "荒尾三", "leg": 4, "field": "grade", "from": 1, "to": 2, "csv_grade": 2, "csv_rows": 4, "evidence": "2019年CSVは4記録すべて荒尾三中2年、2020年駅伝は3年で学年進行も一致。"},
+    {"year": 2024, "rank": 3, "team": "玉名", "leg": 5, "field": "grade", "from": 1, "to": 2, "csv_grade": 2, "csv_rows": 10, "evidence": "2024年CSVは10記録すべて玉名中2年、2025年CSVは3年で継続一致。"},
+    {"year": 2025, "rank": 1, "team": "玉名", "leg": 2, "field": "grade", "from": 2, "to": 3, "csv_grade": 3, "csv_rows": 9, "evidence": "2025年CSVは9記録すべて玉名中3年、2024年CSVの2年から学年進行も一致。"}
+  ]
+}
