@@ -97,10 +97,11 @@ Notion / Google ドライブ / 関連リポジトリから取り込んだスナ�
 | [`input/external/INDEX.md`](input/external/INDEX.md) | 全体目録 |
 | `input/external/drive/` | 共有・個人ドライブ（練習ログ・名簿・記録 CSV 等） |
 | `input/external/notion/` | DB schema / rows（生徒・記録・駅伝戦略など） |
+| `input/external/sb/middle-school/` | t-tsuchiyama 中学生 SB（ワイド＋年度別） |
 | `input/external/github/` | 他リポ調査（INBOX 以外は対象外） |
 
 巨大 PDF・写真バイナリはメタ／リンクのみ。カレンダー予定の正本は引き続き `input/events.*.yaml`。
-設計: [`docs/adr/010-external-idaten-import.md`](docs/adr/010-external-idaten-import.md)
+設計: [`docs/adr/010-external-idaten-import.md`](docs/adr/010-external-idaten-import.md) / [`docs/adr/012-middle-school-sb-all-years.md`](docs/adr/012-middle-school-sb-all-years.md)
 
 ## 予定・メモの追加
 

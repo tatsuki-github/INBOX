@@ -1,13 +1,16 @@
 {
   "year": 2024,
-  "source": "notion/databases/2024年度中学生/rows.json",
-  "source_status": "complete",
-  "source_row_count": 6922,
-  "sb_adopted_count": 2460,
-  "sb_view_row_count": 2460,
-  "sb_view_complete": true,
-  "full_view_complete": true,
+  "source": "input/external/drive/personal/t-tsuchiyama/sb/by-year/2024-single-table.csv",
+  "source_sha256": "cfe611d0a280bb17dbaee6afada59785e843d86444ff57c4b8d5ee1c3b86b3cd",
+  "source_row_count": 6649,
+  "sb_adopted_count": 2267,
+  "output_sha256": "9b0ce65674a9e3f95d8679e528489c69b3024cd8240ef23c7ce8d386441ccf80",
   "complete": true,
-  "note": "SB採用=__YES__ rows; full 全て view export complete (6922).",
-  "exportedAt": "2026-09-10T10:48:41Z"
+  "source_status": "complete",
+  "calendar_years": [
+    "2024",
+    "2025"
+  ],
+  "replacement_character_rows": 583,
+  "note": "年度はファイル名を正本とし、行の日付にかかわらず元ファイルの年度に保持"
 }

@@ -1,0 +1,16 @@
+{
+  "year": 2023,
+  "source": "input/external/drive/personal/t-tsuchiyama/sb/by-year/2023-single-table.csv",
+  "source_sha256": "68680dd340cb72eaa99d5604c78de4ab7fb285f96f2d3a21eaa66c2c038a15ab",
+  "source_row_count": 6463,
+  "sb_adopted_count": 2267,
+  "output_sha256": "ca993fce820fef4a16d1ac7d9d468b527e3d088de19aca36bdef428ca3cc114b",
+  "complete": true,
+  "source_status": "complete",
+  "calendar_years": [
+    "2023",
+    "2024"
+  ],
+  "replacement_character_rows": 935,
+  "note": "年度はファイル名を正本とし、行の日付にかかわらず元ファイルの年度に保持"
+}

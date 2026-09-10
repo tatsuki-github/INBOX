@@ -1,0 +1,16 @@
+{
+  "year": 2013,
+  "source": "input/external/drive/personal/t-tsuchiyama/sb/by-year/2013-single-table.csv",
+  "source_sha256": "6c15f4cac8a5be7e21f68bc8b694c93c4e844457eb16ce4e54c853679f7185e0",
+  "source_row_count": 4219,
+  "sb_adopted_count": 2046,
+  "output_sha256": "402181b0c12241b54f5de93a445b65ed53988794fc484c42bb61fdaa9d68a854",
+  "complete": true,
+  "source_status": "complete",
+  "calendar_years": [
+    "2013",
+    "2014"
+  ],
+  "replacement_character_rows": 0,
+  "note": "年度はファイル名を正本とし、行の日付にかかわらず元ファイルの年度に保持"
+}
