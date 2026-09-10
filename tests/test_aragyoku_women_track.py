@@ -15,6 +15,8 @@ from aragyoku_women_track import (  # noqa: E402
     build_joined,
     filter_records_for_athlete,
     format_seconds,
+    load_by_year_json,
+    load_notion_rows,
     load_wide_like_csv,
     norm_name,
     parse_time_to_seconds,
@@ -23,6 +25,7 @@ from aragyoku_women_track import (  # noqa: E402
     pick_sb,
     school_overlap,
     seasons_for_ekiden_year,
+    validate_record_seconds,
 )
 from aragyoku_women_pdf import (  # noqa: E402
     athlete_rows,
@@ -53,6 +56,19 @@ def test_time_helpers() -> None:
     assert seasons_for_ekiden_year(2025) == ["2025"]
     assert parse_truthy("__YES__")
     assert not parse_truthy("__NO__")
+    assert validate_record_seconds("2:30.00", 150, "test") == 150
+    try:
+        validate_record_seconds("1:99", 150, "test")
+    except ValueError as exc:
+        assert "invalid track mark" in str(exc)
+    else:
+        raise AssertionError("invalid textual mark must fail")
+    try:
+        validate_record_seconds("2:30.00", 151, "test")
+    except ValueError as exc:
+        assert "mismatch" in str(exc)
+    else:
+        raise AssertionError("mark/seconds mismatch must fail")
 
 
 def test_invalid_track_source_row_fails_fast() -> None:
@@ -68,6 +84,51 @@ def test_invalid_track_source_row_fails_fast() -> None:
             assert "不正記録" in str(exc)
         else:
             raise AssertionError("invalid source row must fail")
+
+        empty_dir = Path(tmp) / "empty"
+        empty_dir.mkdir()
+        try:
+            load_by_year_json(empty_dir)
+        except FileNotFoundError:
+            pass
+        else:
+            raise AssertionError("missing yearly sources must fail")
+
+        yearly_dir = Path(tmp) / "yearly"
+        yearly_dir.mkdir()
+        for year in (2024, 2025, 2026):
+            (yearly_dir / f"{year}-sb-adopted.json").write_text("[]", encoding="utf-8")
+        (yearly_dir / "2025-sb-adopted.json").write_text("{", encoding="utf-8")
+        try:
+            load_by_year_json(yearly_dir)
+        except ValueError as exc:
+            assert "invalid track JSON" in str(exc)
+        else:
+            raise AssertionError("invalid yearly JSON must fail")
+
+        notion_path = Path(tmp) / "notion.json"
+        notion_path.write_text(
+            json.dumps(
+                [
+                    {
+                        "性別": "女子",
+                        "距離": "800m",
+                        "名前": "不一致記録",
+                        "記録": "2:30.00",
+                        "記録秒": 151,
+                        "SB採用": "__YES__",
+                    }
+                ],
+                ensure_ascii=False,
+            ),
+            encoding="utf-8",
+        )
+        try:
+            load_notion_rows([(notion_path, "2025", "legacy")])
+        except ValueError as exc:
+            assert "mismatch" in str(exc)
+        else:
+            raise AssertionError("Notion mark/seconds mismatch must fail")
 
 
 def test_track_records_never_leak_across_years() -> None:

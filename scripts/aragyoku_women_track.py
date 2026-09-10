@@ -108,6 +108,27 @@ def format_seconds(sec: float | None) -> str | None:
     return f"{mins}:{rem:05.2f}"
 
 
+def validate_record_seconds(mark: str, raw_seconds: Any, context: str) -> float:
+    parsed = parse_time_to_seconds(mark) if mark else None
+    if mark and parsed is None:
+        raise ValueError(f"invalid track mark in {context}: {mark!r}")
+    if raw_seconds in (None, ""):
+        if parsed is None:
+            raise ValueError(f"track mark and seconds are missing in {context}")
+        return parsed
+    try:
+        seconds = float(raw_seconds)
+    except (TypeError, ValueError) as exc:
+        raise ValueError(f"invalid track seconds in {context}: {raw_seconds!r}") from exc
+    if not math.isfinite(seconds) or not 0 < seconds <= MAX_TRACK_SECONDS:
+        raise ValueError(f"invalid track seconds in {context}: {raw_seconds!r}")
+    if parsed is not None and abs(parsed - seconds) > 0.01:
+        raise ValueError(
+            f"track mark/seconds mismatch in {context}: {mark!r} != {raw_seconds!r}"
+        )
+    return seconds
+
+
 def school_overlap(a: str, b: str) -> bool:
     a_n = norm_name(a).replace("中", "")
     b_n = norm_name(b).replace("中", "")
@@ -240,9 +261,9 @@ def _preferred_url(*candidates: str | None) -> str | None:
     return urls[0] if urls else None
 
 
-def load_by_year_json() -> dict[str, list[dict[str, Any]]]:
+def load_by_year_json(directory: Path = BY_YEAR_DIR) -> dict[str, list[dict[str, Any]]]:
     by_name: dict[str, list[dict[str, Any]]] = {}
-    paths = [BY_YEAR_DIR / f"{year}-sb-adopted.json" for year in (2024, 2025, 2026)]
+    paths = [directory / f"{year}-sb-adopted.json" for year in (2024, 2025, 2026)]
     missing = [path for path in paths if not path.exists()]
     if missing:
         raise FileNotFoundError(
@@ -266,15 +287,11 @@ def load_by_year_json() -> dict[str, list[dict[str, Any]]]:
             if not name:
                 continue
             mark = (row.get("記録") or "").strip()
-            sec = row.get("SB秒") or row.get("記録秒") or parse_time_to_seconds(mark)
-            if sec is None:
-                raise ValueError(f"invalid track mark in {path}: {name} {event}={mark!r}")
-            try:
-                sec = float(sec)
-            except (TypeError, ValueError):
-                raise ValueError(f"invalid track seconds in {path}: {name} {event}={sec!r}")
-            if not math.isfinite(sec) or not 0 < sec <= MAX_TRACK_SECONDS:
-                raise ValueError(f"invalid track seconds in {path}: {name} {event}={sec!r}")
+            sec = validate_record_seconds(
+                mark,
+                row.get("記録秒"),
+                f"{path}: {name} {event}",
+            )
             url = _preferred_url(row.get("参考"), row.get("url"))
             by_name.setdefault(name, []).append(
                 {
@@ -295,9 +312,11 @@ def load_by_year_json() -> dict[str, list[dict[str, Any]]]:
     return by_name
 
 
-def load_notion_rows() -> dict[str, list[dict[str, Any]]]:
+def load_notion_rows(
+    databases: list[tuple[Path, str, str]] = NOTION_DBS,
+) -> dict[str, list[dict[str, Any]]]:
     by_name: dict[str, list[dict[str, Any]]] = {}
-    for path, season, kind in NOTION_DBS:
+    for path, season, kind in databases:
         if not path.exists():
             raise FileNotFoundError(f"required track source is missing: {path}")
         try:
@@ -317,7 +336,11 @@ def load_notion_rows() -> dict[str, list[dict[str, Any]]]:
                 mark = (row.get("time_text") or "").strip()
                 if mark in NON_RESULT_MARKS:
                     continue
-                sec = row.get("record_seconds") or parse_time_to_seconds(mark)
+                sec = validate_record_seconds(
+                    mark,
+                    row.get("record_seconds"),
+                    f"{path}: {name} {event}",
+                )
                 school = (row.get("affiliation") or "").strip()
                 grade = row.get("grade") or ""
                 meet_date = (row.get("date") or "").strip() or None
@@ -334,23 +357,19 @@ def load_notion_rows() -> dict[str, list[dict[str, Any]]]:
                 mark = (row.get("記録") or "").strip()
                 if mark in NON_RESULT_MARKS:
                     continue
-                sec = row.get("記録秒") or parse_time_to_seconds(mark)
+                sec = validate_record_seconds(
+                    mark,
+                    row.get("記録秒"),
+                    f"{path}: {name} {event}",
+                )
                 school = (row.get("所属") or "").strip()
                 grade = row.get("学年") or ""
                 meet_date = (row.get("日付") or "").strip() or None
                 url = _preferred_url(row.get("参考"), row.get("url"))
                 is_sb = parse_truthy(row.get("SB採用"))
                 meet = (row.get("大会名") or "").strip() or None
-            if not name or sec is None:
-                if name:
-                    raise ValueError(f"invalid track mark in {path}: {name} {event}={mark!r}")
+            if not name:
                 continue
-            try:
-                sec = float(sec)
-            except (TypeError, ValueError):
-                raise ValueError(f"invalid track seconds in {path}: {name} {event}={sec!r}")
-            if not math.isfinite(sec) or not 0 < sec <= MAX_TRACK_SECONDS:
-                raise ValueError(f"invalid track seconds in {path}: {name} {event}={sec!r}")
             by_name.setdefault(name, []).append(
                 {
                     "source": f"notion_{season}",
