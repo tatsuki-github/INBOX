@@ -13,6 +13,7 @@ if str(SCRIPTS_DIR) not in sys.path:
     sys.path.insert(0, str(SCRIPTS_DIR))
 
 from knowledge_graph.builder import (  # noqa: E402
+    KG_HTML_PATH,
     KG_MIN_PATH,
     KG_PATH,
     ROOT,
@@ -37,6 +38,12 @@ def main(argv: list[str] | None = None) -> int:
         help="Output path for minified JSON",
     )
     parser.add_argument(
+        "--html-out",
+        type=Path,
+        default=KG_HTML_PATH,
+        help="Output path for visualization HTML",
+    )
+    parser.add_argument(
         "--check",
         action="store_true",
         help="Verify committed graph matches a fresh build (ignores generated_at)",
@@ -59,7 +66,6 @@ def main(argv: list[str] | None = None) -> int:
                 "Knowledge graph is stale. Run: python3 scripts/build_knowledge_graph.py",
                 file=sys.stderr,
             )
-            # Write a quick summary of size diffs for debugging
             print(
                 f"committed nodes={len(committed.get('nodes') or [])} "
                 f"edges={len(committed.get('edges') or [])}; "
@@ -68,16 +74,25 @@ def main(argv: list[str] | None = None) -> int:
                 file=sys.stderr,
             )
             return 1
-        print(f"OK: {args.out} matches fresh build")
+        if not args.html_out.exists():
+            print(f"Missing visualization HTML: {args.html_out}", file=sys.stderr)
+            return 1
+        html = args.html_out.read_text(encoding="utf-8")
+        if 'id="kg-data"' not in html or "vis-network" not in html:
+            print(f"HTML visualization looks incomplete: {args.html_out}", file=sys.stderr)
+            return 1
+        print(f"OK: {args.out} matches fresh build; HTML present")
         return 0
 
-    path, min_path, graph = write_knowledge_graph(
+    path, min_path, html_path, graph = write_knowledge_graph(
         args.out,
         min_path=args.min_out,
+        html_path=args.html_out,
         generated_at=args.generated_at,
     )
     print(f"Wrote {path.relative_to(ROOT)} ({len(graph['nodes'])} nodes, {len(graph['edges'])} edges)")
     print(f"Wrote {min_path.relative_to(ROOT)}")
+    print(f"Wrote {html_path.relative_to(ROOT)}")
     return 0
 
 

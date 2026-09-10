@@ -33,12 +33,35 @@ def test_build_knowledge_graph_has_topics_and_sources():
 def test_write_and_check_roundtrip(tmp_path: Path):
     out = tmp_path / "knowledge-graph.json"
     mini = tmp_path / "knowledge-graph.min.json"
-    path, min_path, graph = write_knowledge_graph(out, min_path=mini, generated_at="2026-01-01T00:00:00Z")
-    assert path.exists() and min_path.exists()
+    html = tmp_path / "knowledge-graph.html"
+    path, min_path, html_path, graph = write_knowledge_graph(
+        out,
+        min_path=mini,
+        html_path=html,
+        generated_at="2026-01-01T00:00:00Z",
+    )
+    assert path.exists() and min_path.exists() and html_path.exists()
     committed = json.loads(path.read_text(encoding="utf-8"))
     fresh = build_knowledge_graph(generated_at=committed["generated_at"])
     assert normalize_graph_for_compare(committed) == normalize_graph_for_compare(fresh)
     assert len(json.loads(min_path.read_text(encoding="utf-8"))["nodes"]) == len(graph["nodes"])
+    html_text = html_path.read_text(encoding="utf-8")
+    assert 'id="kg-data"' in html_text
+    assert 'id="kg-search"' in html_text
+    assert 'id="kg-filters"' in html_text
+    assert 'id="kg-detail"' in html_text
+    assert "vis-network" in html_text
+    assert '"version": 1' in html_text or '"version":1' in html_text
+
+
+def test_html_renderer_embeds_graph():
+    from knowledge_graph.html_renderer import render_knowledge_graph_html
+
+    graph = build_knowledge_graph(generated_at="2026-01-01T00:00:00Z")
+    html = render_knowledge_graph_html(graph)
+    assert "INBOX Knowledge Graph" in html
+    assert "application/json" in html
+    assert any(n["id"] in html for n in graph["nodes"][:3])
 
 
 def test_query_routes_athlete_to_absentee_refs():

@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated_at": "2026-09-10T08:44:55Z",
+  "generated_at": "2026-09-10T08:50:17Z",
   "nodes": [
     {
       "id": "entity:athlete:中尾快叶",
@@ -1361,6 +1361,20 @@
         "docs/adr/008-daniels-vdot-gz-guidance.md"
       ],
       "hint": "ADR: 008-daniels-vdot-gz-guidance"
+    },
+    {
+      "id": "source:docs/adr/009-knowledge-graph-html-viz.md",
+      "type": "Source",
+      "label": "009-knowledge-graph-html-viz.md",
+      "topics": [
+        "ai",
+        "meta",
+        "practice"
+      ],
+      "refs": [
+        "docs/adr/009-knowledge-graph-html-viz.md"
+      ],
+      "hint": "ADR: 009-knowledge-graph-html-viz"
     },
     {
       "id": "source:docs/ai-practice-generation.md",
@@ -3724,6 +3738,11 @@
       "rel": "see_also"
     },
     {
+      "from": "source:docs/ai-practice-generation.md",
+      "to": "source:docs/adr/009-knowledge-graph-html-viz.md",
+      "rel": "see_also"
+    },
+    {
       "from": "source:out/2020/calendar.md",
       "to": "source:input/events.2020.yaml",
       "rel": "derived_from"
@@ -4076,6 +4095,11 @@
     {
       "from": "topic:ai",
       "to": "source:docs/adr/008-daniels-vdot-gz-guidance.md",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:ai",
+      "to": "source:docs/adr/009-knowledge-graph-html-viz.md",
       "rel": "search_here"
     },
     {
@@ -4489,6 +4513,11 @@
       "rel": "search_here"
     },
     {
+      "from": "topic:meta",
+      "to": "source:docs/adr/009-knowledge-graph-html-viz.md",
+      "rel": "search_here"
+    },
+    {
       "from": "topic:norwegian",
       "to": "source:docs/ai-practice-generation.md",
       "rel": "search_here"
@@ -4806,6 +4835,11 @@
     {
       "from": "topic:practice",
       "to": "source:docs/adr/008-daniels-vdot-gz-guidance.md",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:practice",
+      "to": "source:docs/adr/009-knowledge-graph-html-viz.md",
       "rel": "search_here"
     },
     {

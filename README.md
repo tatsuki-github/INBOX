@@ -48,6 +48,7 @@ python3 scripts/generate_calendar.py --year 2026 --input input/events.2026.yaml
 | `out/daiming-practice-menus-kpace.md` | 岱明練習 k/pace 一覧 |
 | `out/knowledge-graph.json` | リポジトリ検索ルート地図（ナレッジグラフ。カレンダー生成後に自動更新） |
 | `out/knowledge-graph.min.json` | 同上の圧縮版（LLM 投入用） |
+| `out/knowledge-graph.html` | 同上のブラウザ可視化（vis-network。データ埋め込み） |
 | `calendar.md` | **今年**のカレンダー（`out/YYYY/calendar.md` と同一内容をルートにも配置） |
 
 ## ナレッジグラフ（検索ルート地図）
@@ -55,8 +56,10 @@ python3 scripts/generate_calendar.py --year 2026 --input input/events.2026.yaml
 リポジトリ全体の「何がどこにあるか」を `out/knowledge-graph.json` に保持します。
 全文の複製ではなく、**短いヒント + 参照パス + エンティティリンク**です。回答時はまずここを見て探索先を決め、ヒットしたファイルの周辺コンテキストで答えます（運用は [`AGENTS.md`](AGENTS.md)）。
 
+ブラウザで構造を確認する場合は `out/knowledge-graph.html` を開いてください（種別フィルタ・検索・ノード詳細）。
+
 ```bash
-# 手動再生成
+# 手動再生成（JSON + min + HTML）
 python3 scripts/build_knowledge_graph.py
 
 # クエリ → 参照パス + 近傍コンテキスト
@@ -67,6 +70,8 @@ python3 scripts/build_knowledge_graph.py --check
 ```
 
 `generate_calendar.py` 成功後にも自動再生成されます。ソースや生成物を変えたら KG を更新してコミットしてください。
+
+設計メモ: [`docs/adr/009-knowledge-graph-html-viz.md`](docs/adr/009-knowledge-graph-html-viz.md)
 
 ## 予定・メモの追加
 

@@ -15,6 +15,7 @@ import yaml
 ROOT = Path(__file__).resolve().parent.parent.parent
 KG_PATH = ROOT / "out" / "knowledge-graph.json"
 KG_MIN_PATH = ROOT / "out" / "knowledge-graph.min.json"
+KG_HTML_PATH = ROOT / "out" / "knowledge-graph.html"
 
 SOURCE_GLOBS: list[tuple[str, list[str], str]] = [
     # (glob_or_path relative, topics, hint)
@@ -576,12 +577,17 @@ def write_knowledge_graph(
     path: Path | None = None,
     *,
     min_path: Path | None = None,
+    html_path: Path | None = None,
     generated_at: str | None = None,
-) -> tuple[Path, Path, dict[str, Any]]:
+) -> tuple[Path, Path, Path, dict[str, Any]]:
+    from .html_renderer import write_knowledge_graph_html
+
     path = path or KG_PATH
     min_path = min_path or KG_MIN_PATH
+    html_path = html_path or KG_HTML_PATH
     graph = build_knowledge_graph(generated_at=generated_at)
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(graph, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     min_path.write_text(json.dumps(graph, ensure_ascii=False, separators=(",", ":")) + "\n", encoding="utf-8")
-    return path, min_path, graph
+    html_out = write_knowledge_graph_html(graph, html_path)
+    return path, min_path, html_out, graph

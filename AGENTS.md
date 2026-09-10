@@ -11,6 +11,7 @@
 
 1. まずナレッジグラフを使う。
    - 読む: `out/knowledge-graph.json`
+   - 可視化: `out/knowledge-graph.html`（構造確認用）
    - または実行:  
      `python3 scripts/query_knowledge_graph.py --question "<ユーザーの問い>"`
 2. 返ってきた **refs（ファイルパス）** を優先して開く。
