@@ -46,10 +46,9 @@ def is_sb_adopted(value: Any) -> bool:
     if value is False:
         return False
     if isinstance(value, str):
-        text = value.strip().lower()
-        if text == "true":
+        if value == "true":
             return True
-        if text == "false":
+        if value == "false":
             return False
     raise ValueError(f"invalid SB採用 value: {value!r}")
 

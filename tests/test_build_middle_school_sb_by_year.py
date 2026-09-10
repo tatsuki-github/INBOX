@@ -76,7 +76,10 @@ def test_build_year_rejects_unsupported_year() -> None:
         builder.build_year(2011)
 
 
-@pytest.mark.parametrize("value", ["yes", "__YES__", "1", "", None])
+@pytest.mark.parametrize(
+    "value",
+    ["yes", "__YES__", "1", "", None, "TRUE", "False", " true", "false "],
+)
 def test_unknown_sb_flag_is_rejected(value: object) -> None:
     with pytest.raises(ValueError, match="invalid SB採用 value"):
         builder.is_sb_adopted(value)
