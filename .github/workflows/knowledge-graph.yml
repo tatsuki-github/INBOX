@@ -1,0 +1,40 @@
+name: Knowledge Graph
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Validate knowledge graph is up to date
+        run: python3 scripts/build_knowledge_graph.py --check
+
+      - name: Schema-validate knowledge graph
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          from jsonschema import Draft202012Validator
+
+          schema = json.loads(Path("schemas/knowledge-graph.schema.json").read_text(encoding="utf-8"))
+          graph = json.loads(Path("out/knowledge-graph.json").read_text(encoding="utf-8"))
+          Draft202012Validator(schema).validate(graph)
+          print("schema OK", len(graph["nodes"]), "nodes", len(graph["edges"]), "edges")
+          PY
+
+      - name: Unit tests (knowledge graph)
+        run: python3 -m pytest tests/test_knowledge_graph.py -q

@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/tatsuki-github/INBOX/schemas/knowledge-graph.schema.json",
+  "title": "RepoKnowledgeGraph",
+  "description": "Repository routing map for LLM retrieval (hints + refs, not full content).",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["version", "generated_at", "nodes", "edges"],
+  "properties": {
+    "version": { "type": "integer", "const": 1 },
+    "generated_at": { "type": "string", "minLength": 1 },
+    "nodes": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/node" }
+    },
+    "edges": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/edge" }
+    }
+  },
+  "$defs": {
+    "node": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "type", "label", "topics", "refs", "hint"],
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "type": {
+          "type": "string",
+          "enum": ["Source", "Topic", "Entity", "QueryHint", "Athlete", "Year", "Template"]
+        },
+        "label": { "type": "string" },
+        "topics": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "refs": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "hint": { "type": "string" }
+      }
+    },
+    "edge": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["from", "to", "rel"],
+      "properties": {
+        "from": { "type": "string", "minLength": 1 },
+        "to": { "type": "string", "minLength": 1 },
+        "rel": {
+          "type": "string",
+          "enum": [
+            "search_here",
+            "derived_from",
+            "mentioned_in",
+            "related_to",
+            "see_also",
+            "documented_in"
+          ]
+        }
+      }
+    }
+  }
+}

@@ -857,6 +857,21 @@ def discover_years() -> list[int]:
     return years
 
 
+def _rebuild_knowledge_graph() -> None:
+    """Refresh repo routing map after calendar/practice outputs change."""
+    try:
+        from knowledge_graph.builder import write_knowledge_graph
+
+        path, min_path, graph = write_knowledge_graph()
+        print(
+            f"  Knowledge graph: {path} "
+            f"({len(graph.get('nodes') or [])} nodes, {len(graph.get('edges') or [])} edges)"
+        )
+        print(f"  Knowledge graph (min): {min_path}")
+    except Exception as exc:
+        print(f"警告: ナレッジグラフ再生成に失敗: {exc}", file=sys.stderr)
+
+
 def generate_year(
     year: int,
     *,
@@ -941,18 +956,23 @@ def main(argv: list[str] | None = None) -> int:
                 else (ROOT / "out" / str(year)),
             )
             exit_code = exit_code or code
+        if exit_code == 0:
+            _rebuild_knowledge_graph()
         return exit_code
 
     if args.year is None:
         print("--year または --all-years を指定してください。", file=sys.stderr)
         return 2
 
-    return generate_year(
+    code = generate_year(
         args.year,
         input_path=args.input,
         include_holidays=args.include_holidays,
         out_dir=args.out_dir or (ROOT / "out" / str(args.year)),
     )
+    if code == 0:
+        _rebuild_knowledge_graph()
+    return code
 
 
 if __name__ == "__main__":
