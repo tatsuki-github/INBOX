@@ -34,9 +34,6 @@ DEFAULT_FONT = ROOT / "assets/fonts/NotoSansJP-Regular.ttf"
 FONT_NAME = "NotoSansJP"
 FALLBACK_FONT = "HeiseiKakuGo-W5"
 
-EVENTS = ("800m", "1000m", "1500m", "3000m")
-
-
 def register_font(font_path: Path | None = None) -> str:
     path = font_path or DEFAULT_FONT
     if path.exists() and path.suffix.lower() in {".ttf", ".ttc"}:
@@ -191,8 +188,7 @@ def cover_page(data: dict[str, Any], styles: dict[str, ParagraphStyle]) -> list[
     story.append(
         Paragraph(
             "タイムの青字は大会結果URLへのリンクです。クリックでブラウザが開きます。"
-            " 2012〜2023年は利用可能なトラック記録資料がないため空欄です。"
-            " 2025年のトラックDBは収録途中です。",
+            " トラックSBは同年度CSVの中学生女子データを使用しています。",
             styles["note"],
         )
     )
@@ -213,7 +209,6 @@ def athlete_rows(team: dict[str, Any], styles: dict[str, ParagraphStyle]) -> lis
         Paragraph("<b>学年</b>", styles["cell"]),
         Paragraph("<b>駅伝</b>", styles["cell"]),
         Paragraph("<b>800 SB/直近</b>", styles["cell"]),
-        Paragraph("<b>1000 SB/直近</b>", styles["cell"]),
         Paragraph("<b>1500 SB/直近</b>", styles["cell"]),
         Paragraph("<b>3000 SB/直近</b>", styles["cell"]),
     ]
@@ -252,7 +247,6 @@ def athlete_rows(team: dict[str, Any], styles: dict[str, ParagraphStyle]) -> lis
                 Paragraph("" if grade in (None, "") else str(grade), styles["cell"]),
                 Paragraph(escape(ath.get("ekiden_mark") or "—"), styles["cell"]),
                 pair("800m"),
-                pair("1000m"),
                 pair("1500m"),
                 pair("3000m"),
             ]
@@ -288,10 +282,9 @@ def year_section(yblock: dict[str, Any], styles: dict[str, ParagraphStyle], font
         24 * mm,
         10 * mm,
         16 * mm,
-        32 * mm,
-        32 * mm,
-        32 * mm,
-        32 * mm,
+        43 * mm,
+        43 * mm,
+        43 * mm,
     ]
 
     for team in yblock.get("teams") or []:

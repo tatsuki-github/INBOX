@@ -4,7 +4,7 @@
 データソース:
 - input/aragyoku/women_top4_2012_2025.json（Drive結果ボードOCR）
 - input/external/sb/middle-school/wide/中学生SB.csv
-- input/external/sb/middle-school/by-year/{2024,2025,2026}-sb-adopted.json
+- input/external/sb/middle-school/by-year/{2012..2026}-sb-adopted.json
 - input/external/drive/personal/t-tsuchiyama/sb/output_reg_中学生_女子.csv
 """
 
@@ -31,7 +31,7 @@ NOTION_DBS = [
 OUT_JSON = ROOT / "out/analysis/aragyoku_women_track_joined.json"
 OUT_CSV = ROOT / "out/analysis/aragyoku_women_track_joined.csv"
 
-TRACK_EVENTS = ("800m", "1000m", "1500m", "3000m")
+TRACK_EVENTS = ("800m", "1500m", "3000m")
 TRUE_VALUES = {"1", "true", "yes", "y", "__yes__"}
 NON_RESULT_MARKS = {"DNS", "DNF", "DQ"}
 MAX_TRACK_SECONDS = 24 * 60 * 60
@@ -40,28 +40,28 @@ MAX_TRACK_SECONDS = 24 * 60 * 60
 EKIDEN_GUIDE = {
     1: {
         "label": "1区 3.0km",
-        "prefer": ["3000m", "1500m", "1000m", "800m"],
-        "scale_from": {"3000m": 1.0, "1500m": 2.15, "1000m": 3.35, "800m": 4.30},
+        "prefer": ["3000m", "1500m", "800m"],
+        "scale_from": {"3000m": 1.0, "1500m": 2.15, "800m": 4.30},
     },
     2: {
         "label": "2区 1.855km",
-        "prefer": ["1500m", "1000m", "800m", "3000m"],
-        "scale_from": {"1500m": 1.28, "1000m": 1.95, "800m": 2.50, "3000m": 0.64},
+        "prefer": ["1500m", "800m", "3000m"],
+        "scale_from": {"1500m": 1.28, "800m": 2.50, "3000m": 0.64},
     },
     3: {
         "label": "3区 2.0km",
-        "prefer": ["1500m", "1000m", "800m", "3000m"],
-        "scale_from": {"1500m": 1.40, "1000m": 2.15, "800m": 2.75, "3000m": 0.68},
+        "prefer": ["1500m", "800m", "3000m"],
+        "scale_from": {"1500m": 1.40, "800m": 2.75, "3000m": 0.68},
     },
     4: {
         "label": "4区 2.0km",
-        "prefer": ["1500m", "1000m", "800m", "3000m"],
-        "scale_from": {"1500m": 1.40, "1000m": 2.15, "800m": 2.75, "3000m": 0.68},
+        "prefer": ["1500m", "800m", "3000m"],
+        "scale_from": {"1500m": 1.40, "800m": 2.75, "3000m": 0.68},
     },
     5: {
         "label": "5区 3.0km",
-        "prefer": ["3000m", "1500m", "1000m", "800m"],
-        "scale_from": {"3000m": 1.0, "1500m": 2.15, "1000m": 3.35, "800m": 4.30},
+        "prefer": ["3000m", "1500m", "800m"],
+        "scale_from": {"3000m": 1.0, "1500m": 2.15, "800m": 4.30},
     },
 }
 
@@ -207,7 +207,7 @@ def filter_records_for_athlete(
 
 
 def seasons_for_ekiden_year(year: int) -> list[str]:
-    """駅伝と同じ暦年のトラック記録だけを参照する。"""
+    """駅伝と同じ年度ファイルのトラック記録だけを参照する。"""
     return [str(year)]
 
 
@@ -263,7 +263,7 @@ def _preferred_url(*candidates: str | None) -> str | None:
 
 def load_by_year_json(directory: Path = BY_YEAR_DIR) -> dict[str, list[dict[str, Any]]]:
     by_name: dict[str, list[dict[str, Any]]] = {}
-    paths = [directory / f"{year}-sb-adopted.json" for year in (2024, 2025, 2026)]
+    paths = [directory / f"{year}-sb-adopted.json" for year in range(2012, 2027)]
     missing = [path for path in paths if not path.exists()]
     if missing:
         raise FileNotFoundError(
@@ -278,7 +278,7 @@ def load_by_year_json(directory: Path = BY_YEAR_DIR) -> dict[str, list[dict[str,
         if not isinstance(rows, list):
             raise ValueError(f"track JSON must contain a list: {path}")
         for row in rows:
-            if row.get("性別") != "女子":
+            if row.get("性別") != "女子" or row.get("カテゴリー") != "中学生":
                 continue
             event = (row.get("距離") or "").strip()
             if event not in TRACK_EVENTS:
@@ -298,7 +298,7 @@ def load_by_year_json(directory: Path = BY_YEAR_DIR) -> dict[str, list[dict[str,
                     "source": f"by_year_{season}",
                     "season": season,
                     "school": (row.get("所属") or "").strip(),
-                    "grade": "",
+                    "grade": str(row.get("学年") or "").strip(),
                     "event": event,
                     "mark": mark or format_seconds(sec) or "",
                     "seconds": sec,
@@ -466,7 +466,7 @@ def pack_mark(rec: dict[str, Any] | None) -> dict[str, Any] | None:
 def build_joined() -> dict[str, Any]:
     top4 = json.loads(TOP4_JSON.read_text(encoding="utf-8"))
     # ワイドSBは2025年度、output_regは2026年度のスナップショット。
-    # 年度を持たない形式なので、他年度へのフォールバックには絶対に使わない。
+    # 年度を持たない形式なので、他年度へのフォールバックには使わない。
     wide = load_wide_like_csv(WIDE_SB, "wide_sb", "2025")
     oreg = load_wide_like_csv(OUTPUT_REG, "output_reg", "2026")
     by_year = load_by_year_json()
@@ -570,7 +570,7 @@ def build_joined() -> dict[str, Any]:
             "stats": stats,
             "guide_note": (
                 "「駅伝」は大会当日の区間走結果（道路コース）です。女子は1〜5区がそれぞれ"
-                "約3.0km・1.855km・2.0km・2.0km・3.0kmで、トラック種目（800m/1000m/1500m/3000m）"
+                "約3.0km・1.855km・2.0km・2.0km・3.0kmで、トラック種目（800m/1500m/3000m）"
                 "とは距離・路面・気象・タスキ条件が異なります。トラックSB/直近は同年の走力指標として"
                 "並記していますが、短い種目が強い選手ほど長い区間では相対的に伸び、逆も起こります。"
                 "数式による換算ではなく、実際の駅伝タイムとトラック走力の両方を見て判断してください。"
@@ -578,8 +578,8 @@ def build_joined() -> dict[str, Any]:
             "drive_source_note": (
                 "駅伝記録は Google Drive「荒玉駅伝歴代」の結果画像と全セルを目視照合済み。"
                 "ただし2014年女子の原画像は同フォルダ内で確認できず、未掲載。"
-                "トラック記録は同じ暦年のみを参照し、2012〜2023年は利用可能な記録資料がないため空欄。"
-                "2024年は収録DB、2025年は収録途中のDBおよびSB一覧に基づく。"
+                "選手名は同年度の中学生女子トラック記録CSVと照合し、表記が競合する場合はCSVを優先。"
+                "トラック記録は2012〜2026年度CSVのうち、駅伝と同じ年度だけを参照。"
             ),
             "sources": {
                 "ekiden": str(TOP4_JSON.relative_to(ROOT)),

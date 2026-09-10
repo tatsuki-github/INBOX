@@ -12,6 +12,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
 from aragyoku_women_track import (  # noqa: E402
+    TRACK_EVENTS,
     build_joined,
     filter_records_for_athlete,
     format_seconds,
@@ -96,7 +97,7 @@ def test_invalid_track_source_row_fails_fast() -> None:
 
         yearly_dir = Path(tmp) / "yearly"
         yearly_dir.mkdir()
-        for year in (2024, 2025, 2026):
+        for year in range(2012, 2027):
             (yearly_dir / f"{year}-sb-adopted.json").write_text("[]", encoding="utf-8")
         (yearly_dir / "2025-sb-adopted.json").write_text("{", encoding="utf-8")
         try:
@@ -257,15 +258,60 @@ def test_corrected_transcriptions_are_preserved() -> None:
         team = next(t for t in year_block["teams"] if t["rank"] == rank)
         return next(a for a in team["athletes"] if a["leg"] == leg)
 
-    assert athlete(2012, 3, 2)["name"] == "吉本絵理"
-    assert athlete(2012, 3, 3)["name"] == "吉岡愛希"
+    assert athlete(2012, 1, 2)["name"] == "森澤彩乃"
+    assert athlete(2012, 2, 1)["name"] == "大道志歩"
+    assert athlete(2012, 2, 2)["name"] == "前田明佳里"
+    assert athlete(2012, 2, 4)["name"] == "植田愛美"
+    assert athlete(2012, 4, 3)["name"] == "嶋村里恩"
     assert athlete(2012, 4, 2)["grade"] == 3
-    assert athlete(2015, 1, 3)["name"] == "笠井菜央"
-    assert athlete(2018, 1, 3)["name"] == "濱本麻那"
-    assert athlete(2018, 1, 5)["name"] == "坂上未来"
-    assert athlete(2019, 1, 4)["grade"] == 2
-    assert athlete(2020, 1, 1)["name"] == "片山美璃愛"
-    assert athlete(2022, 2, 2)["name"] == "中尾彩朱"
+    assert athlete(2013, 1, 1)["name"] == "森澤彩乃"
+    assert athlete(2013, 1, 2)["name"] == "磧結里"
+    assert athlete(2013, 3, 5)["name"] == "嶋村里恩"
+    assert athlete(2013, 4, 1)["name"] == "開琴美"
+    assert athlete(2015, 1, 1)["name"] == "關知夏子"
+    assert athlete(2015, 3, 5)["name"] == "島﨑乃々佳"
+    assert athlete(2016, 3, 3)["name"] == "島﨑乃々佳"
+    assert athlete(2017, 2, 4)["name"] == "荒川夏凜"
+    assert athlete(2018, 1, 3)["name"] == "境田麻那"
+    assert athlete(2018, 1, 5)["name"] == "田上未来"
+    assert athlete(2018, 2, 4)["name"] == "前淵あかり"
+
+    assert athlete(2016, 3, 3)["grade"] == 3
+    assert athlete(2016, 4, 2)["grade"] == 1
+    assert athlete(2019, 4, 4)["grade"] == 2
+    assert athlete(2024, 3, 5)["grade"] == 2
+    assert athlete(2025, 1, 2)["grade"] == 3
+
+
+def test_csv_reconciled_athletes_have_same_year_track_matches() -> None:
+    data = build_joined()
+    corrected = {
+        (2012, "森澤彩乃"),
+        (2012, "大道志歩"),
+        (2012, "前田明佳里"),
+        (2012, "植田愛美"),
+        (2012, "嶋村里恩"),
+        (2013, "森澤彩乃"),
+        (2013, "磧結里"),
+        (2013, "嶋村里恩"),
+        (2013, "開琴美"),
+        (2015, "關知夏子"),
+        (2015, "島﨑乃々佳"),
+        (2016, "島﨑乃々佳"),
+        (2017, "荒川夏凜"),
+        (2018, "境田麻那"),
+        (2018, "田上未来"),
+        (2018, "前淵あかり"),
+    }
+    matched = {
+        (year_block["year"], athlete["name"])
+        for year_block in data["years"]
+        for team in year_block["teams"]
+        for athlete in team["athletes"]
+        if athlete["match_count"] > 0
+    }
+    assert corrected <= matched
+    assert data["meta"]["verification"]["csv_reconciled_cells"] == 21
 
 
 def test_joined_artifact_exists() -> None:
@@ -273,10 +319,21 @@ def test_joined_artifact_exists() -> None:
     assert path.exists(), "run scripts/aragyoku_women_track.py first"
     data = json.loads(path.read_text(encoding="utf-8"))
     assert data == build_joined()
+    csv_header = (
+        ROOT / "out/analysis/aragyoku_women_track_joined.csv"
+    ).read_text(encoding="utf-8").splitlines()[0]
+    assert "1000m" not in csv_header
 
 
 def test_pdf_generation_and_same_mark_labels() -> None:
     data = build_joined()
+    assert TRACK_EVENTS == ("800m", "1500m", "3000m")
+    assert all(
+        "1000m" not in athlete["track_events"]
+        for year in data["years"]
+        for team in year["teams"]
+        for athlete in team["athletes"]
+    )
     with tempfile.TemporaryDirectory() as tmp:
         output = Path(tmp) / "report.pdf"
         build_pdf(data, output)
@@ -305,6 +362,7 @@ def test_pdf_generation_and_same_mark_labels() -> None:
     header_text = "".join(cell.getPlainText() for cell in rows[0])
     assert "目安" not in header_text
     assert "換算メモ" not in header_text
+    assert "1000" not in header_text
     text = rows[1][4].getPlainText()
     assert "SB 2:30.00" in text
     assert "直 2:30.00" in text
@@ -327,6 +385,7 @@ if __name__ == "__main__":
     test_grade_evidence_excludes_same_name_different_athlete()
     test_build_joined_has_2025_top4()
     test_corrected_transcriptions_are_preserved()
+    test_csv_reconciled_athletes_have_same_year_track_matches()
     test_joined_artifact_exists()
     test_pdf_generation_and_same_mark_labels()
     print("ok")
