@@ -72,3 +72,7 @@
 - `2026年度中学生記録`: `None`
 - `2026年度高校生記録`: `s:mcp_non_archived_1735c5e7-b163-4483-bcfe-fad849840694:39ba38e8-3034-81f2-880a-ca22bbdb2694`
 
+## Media
+
+- 荒玉駅伝歴代: [`media/ekiden-history/INDEX.md`](media/ekiden-history/INDEX.md)（構造化 OCR 27・画像バイナリは追従）
+- 全体索引: [`../media-manifest.json`](../media-manifest.json)

@@ -1,9 +1,15 @@
 # フォト
 
-Photos and videos are out of scope for text import.
+共有ドライブ「フォト」の画像バイナリをローカル保存（ADR 011）。動画はメタスタブのみ。
 
-- Shared Drive folder: [フォト](https://drive.google.com/drive/folders/1T8TFLnPpERek0rjhpgR7-mC_bitcGcGy)
-- Folder id: `1T8TFLnPpERek0rjhpgR7-mC_bitcGcGy`
-- Parent shared drive: `0APcRf6IAzVPGUk9PVA`
+- Shared Drive: [フォト](https://drive.google.com/drive/folders/1T8TFLnPpERek0rjhpgR7-mC_bitcGcGy)
+- 索引: [`../../../media-manifest.json`](../../../media-manifest.json)
 
-Subfolders (玉名市練習会 / ジュニア駅伝 等) remain on Drive; do not commit media binaries into this repository.
+## フォルダ
+
+| フォルダ | 内容 |
+|:---|:---|
+| `20250531_玉名市練習会` | 練習会写真・動画スタブ |
+| `20250621_玉名市練習会` | 同上 |
+| `20250712_玉名市練習会` | 同上 |
+| `20250927_ジュニア駅伝` | 駅伝関連写真（優先） |

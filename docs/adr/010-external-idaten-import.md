@@ -9,6 +9,7 @@
 3. テキスト化可能な Google Docs/Sheets は MD/CSV で保存。巨大 PDF（>8MB）や市販書籍はメタデータスタブのみ。
 4. Notion DB は schema + rows JSON を保存。カレンダー全件は既存 YAML 正本と重複するため INDEX リンク優先、差分補完のみ。
 5. knowledge-graph の Source に `input/external/**` と INDEX を登録する。
+6. **メディア例外（詳細は ADR 011）**: 荒玉駅伝結果画像・分析 PDF・フォト画像はバイナリ＋OCR を保存し、KG の `MediaAsset` からパス参照する。
 
 ## 不採用
 | 案 | 理由 |

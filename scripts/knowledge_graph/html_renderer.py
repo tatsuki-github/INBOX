@@ -18,6 +18,7 @@ TYPE_COLORS = {
     "QueryHint": "#3f7a3f",
     "Year": "#2f6f8f",
     "Template": "#9a5a2a",
+    "MediaAsset": "#8a4f6d",
 }
 
 

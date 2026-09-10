@@ -69,3 +69,32 @@ def test_knowledge_graph_registers_external_sources():
     assert "source:input/external/drive/INDEX.md" in ids
     assert "source:input/external/notion/INDEX.md" in ids
     assert any("input/external" in n["id"] for n in graph["nodes"] if n["type"] == "Source")
+
+
+def test_media_manifest_and_ekiden_ocr():
+    manifest = json.loads((EXTERNAL / "media-manifest.json").read_text(encoding="utf-8"))
+    assert manifest["summary"]["ekiden_ocr"] >= 27
+    assert manifest["summary"]["analysis_pdfs"] >= 3
+    assert manifest["summary"]["photo_binaries"] >= 1
+    ocr_dir = EXTERNAL / "notion" / "media" / "ekiden-history" / "ocr"
+    assert ocr_dir.is_dir()
+    assert len(list(ocr_dir.glob("*.md"))) >= 27
+    sample = (ocr_dir / "2025-男子.md").read_text(encoding="utf-8")
+    assert "岱明" in sample and "順位" in sample
+    analysis = EXTERNAL / "drive" / "shared" / "分析"
+    assert (analysis / "関係図_2026.pdf").is_file()
+    assert (analysis / "関係図_2026.ocr.md").is_file()
+
+
+def test_knowledge_graph_registers_media_assets_and_ekiden_topic():
+    graph = build_knowledge_graph(generated_at="2026-01-01T00:00:00Z")
+    ids = {n["id"] for n in graph["nodes"]}
+    assert "topic:ekiden" in ids
+    assert "source:input/external/media-manifest.json" in ids
+    media_nodes = [n for n in graph["nodes"] if n["type"] == "MediaAsset"]
+    assert len(media_nodes) >= 20
+    ekiden_media = [n for n in media_nodes if n["id"].startswith("media:ekiden:")]
+    assert len(ekiden_media) >= 20
+    # LLM がパスを辿れること
+    assert any(n.get("refs") for n in ekiden_media)
+    assert any("ocr/" in (n.get("hint") or "") or any("ocr" in r for r in n.get("refs") or []) for n in ekiden_media)
