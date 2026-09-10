@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated_at": "2026-09-10T09:02:38Z",
+  "generated_at": "2026-09-10T09:17:39Z",
   "nodes": [
     {
       "id": "entity:athlete:中尾快叶",
@@ -1377,6 +1377,20 @@
       "hint": "ADR: 009-knowledge-graph-html-viz"
     },
     {
+      "id": "source:docs/adr/010-external-idaten-import.md",
+      "type": "Source",
+      "label": "010-external-idaten-import.md",
+      "topics": [
+        "ai",
+        "meta",
+        "practice"
+      ],
+      "refs": [
+        "docs/adr/010-external-idaten-import.md"
+      ],
+      "hint": "ADR: 010-external-idaten-import"
+    },
+    {
       "id": "source:docs/ai-practice-generation.md",
       "type": "Source",
       "label": "ai-practice-generation.md",
@@ -1535,6 +1549,110 @@
         "input/events.2027.yaml"
       ],
       "hint": "2027年イベント正本（practice 含む）"
+    },
+    {
+      "id": "source:input/external/INDEX.md",
+      "type": "Source",
+      "label": "INDEX.md",
+      "topics": [
+        "athlete_records",
+        "meta",
+        "practice"
+      ],
+      "refs": [
+        "input/external/INDEX.md"
+      ],
+      "hint": "外部ソース（Drive/Notion/GitHub）取り込み目録"
+    },
+    {
+      "id": "source:input/external/drive/INDEX.md",
+      "type": "Source",
+      "label": "INDEX.md",
+      "topics": [
+        "athlete_records",
+        "meta",
+        "practice"
+      ],
+      "refs": [
+        "input/external/drive/INDEX.md"
+      ],
+      "hint": "Google ドライブいだてん関連スナップショット"
+    },
+    {
+      "id": "source:input/external/drive/shared/名簿/2025年度_岱明中学校陸上競技部_部員名簿.csv",
+      "type": "Source",
+      "label": "2025年度_岱明中学校陸上競技部_部員名簿.csv",
+      "topics": [
+        "athlete_records",
+        "practice"
+      ],
+      "refs": [
+        "input/external/drive/shared/名簿/2025年度_岱明中学校陸上競技部_部員名簿.csv"
+      ],
+      "hint": "2025 岱明部員名簿"
+    },
+    {
+      "id": "source:input/external/drive/shared/練習/練習の記録.md",
+      "type": "Source",
+      "label": "練習の記録.md",
+      "topics": [
+        "practice"
+      ],
+      "refs": [
+        "input/external/drive/shared/練習/練習の記録.md"
+      ],
+      "hint": "共有ドライブ練習ログ（2025）"
+    },
+    {
+      "id": "source:input/external/github/INDEX.md",
+      "type": "Source",
+      "label": "INDEX.md",
+      "topics": [
+        "meta"
+      ],
+      "refs": [
+        "input/external/github/INDEX.md"
+      ],
+      "hint": "関連リポジトリ調査（対象外含む）"
+    },
+    {
+      "id": "source:input/external/notion/INDEX.md",
+      "type": "Source",
+      "label": "INDEX.md",
+      "topics": [
+        "athlete_records",
+        "injury",
+        "practice"
+      ],
+      "refs": [
+        "input/external/notion/INDEX.md"
+      ],
+      "hint": "Notion いだてん岱明スナップショット"
+    },
+    {
+      "id": "source:input/external/notion/databases/2026年度中学生記録/rows.json",
+      "type": "Source",
+      "label": "rows.json",
+      "topics": [
+        "athlete_records"
+      ],
+      "refs": [
+        "input/external/notion/databases/2026年度中学生記録/rows.json"
+      ],
+      "hint": "Notion 2026 中学生記録スナップショット"
+    },
+    {
+      "id": "source:input/external/notion/databases/いだてん岱明生徒/rows.json",
+      "type": "Source",
+      "label": "rows.json",
+      "topics": [
+        "athlete_records",
+        "practice"
+      ],
+      "refs": [
+        "input/external/notion/databases/いだてん岱明生徒/rows.json"
+      ],
+      "hint": "Notion 生徒 DB スナップショット"
     },
     {
       "id": "source:input/memos/daiming-club-calendar-2026-09.jpg",
@@ -3743,6 +3861,11 @@
       "rel": "see_also"
     },
     {
+      "from": "source:docs/ai-practice-generation.md",
+      "to": "source:docs/adr/010-external-idaten-import.md",
+      "rel": "see_also"
+    },
+    {
       "from": "source:out/2020/calendar.md",
       "to": "source:input/events.2020.yaml",
       "rel": "derived_from"
@@ -4104,6 +4227,11 @@
     },
     {
       "from": "topic:ai",
+      "to": "source:docs/adr/010-external-idaten-import.md",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:ai",
       "to": "source:docs/ai-practice-generation.md",
       "rel": "search_here"
     },
@@ -4205,6 +4333,36 @@
     {
       "from": "topic:athlete_records",
       "to": "source:input/arato_tamana_report.yaml",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:athlete_records",
+      "to": "source:input/external/INDEX.md",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:athlete_records",
+      "to": "source:input/external/drive/INDEX.md",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:athlete_records",
+      "to": "source:input/external/drive/shared/名簿/2025年度_岱明中学校陸上競技部_部員名簿.csv",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:athlete_records",
+      "to": "source:input/external/notion/INDEX.md",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:athlete_records",
+      "to": "source:input/external/notion/databases/2026年度中学生記録/rows.json",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:athlete_records",
+      "to": "source:input/external/notion/databases/いだてん岱明生徒/rows.json",
       "rel": "search_here"
     },
     {
@@ -4454,6 +4612,11 @@
     },
     {
       "from": "topic:injury",
+      "to": "source:input/external/notion/INDEX.md",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:injury",
       "to": "source:input/memos/rri_healing_evidence_review.md",
       "rel": "search_here"
     },
@@ -4515,6 +4678,26 @@
     {
       "from": "topic:meta",
       "to": "source:docs/adr/009-knowledge-graph-html-viz.md",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:meta",
+      "to": "source:docs/adr/010-external-idaten-import.md",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:meta",
+      "to": "source:input/external/INDEX.md",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:meta",
+      "to": "source:input/external/drive/INDEX.md",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:meta",
+      "to": "source:input/external/github/INDEX.md",
       "rel": "search_here"
     },
     {
@@ -4844,6 +5027,11 @@
     },
     {
       "from": "topic:practice",
+      "to": "source:docs/adr/010-external-idaten-import.md",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:practice",
       "to": "source:docs/ai-practice-generation.md",
       "rel": "search_here"
     },
@@ -4890,6 +5078,36 @@
     {
       "from": "topic:practice",
       "to": "source:input/events.2027.yaml",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:practice",
+      "to": "source:input/external/INDEX.md",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:practice",
+      "to": "source:input/external/drive/INDEX.md",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:practice",
+      "to": "source:input/external/drive/shared/名簿/2025年度_岱明中学校陸上競技部_部員名簿.csv",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:practice",
+      "to": "source:input/external/drive/shared/練習/練習の記録.md",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:practice",
+      "to": "source:input/external/notion/INDEX.md",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:practice",
+      "to": "source:input/external/notion/databases/いだてん岱明生徒/rows.json",
       "rel": "search_here"
     },
     {

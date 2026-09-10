@@ -1,0 +1,6 @@
+{
+  "url": "https://app.notion.com/p/3d3a38e830348036be5af24d3a50c01d?pvs=204",
+  "data_source_url": "collection://3d3a38e8-3034-800e-9e5b-000b23350b79",
+  "view_url": "view://3d3a38e8-3034-802f-9a5b-000cc98582f3",
+  "sqlite": "CREATE TABLE IF NOT EXISTS \"collection://3d3a38e8-3034-800e-9e5b-000b23350b79\" (\n\turl TEXT UNIQUE,\n\tcreatedTime TEXT,\n\t\"名前\" TEXT\n)"
+}
