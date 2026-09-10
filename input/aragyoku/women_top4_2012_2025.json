@@ -46,7 +46,7 @@
       "checked_cells": 1196,
       "unreadable_cells": 0,
       "corrected_cells": 9,
-      "csv_reconciled_cells": 27,
+      "csv_reconciled_cells": 33,
       "csv_reconciliation_rule": "同年度CSVの女子・中学生を学校・学年・継続年度・走力で照合し、一意に本人と判断できる表記はCSVを優先",
       "csv_reconciliation_source": "input/aragyoku/women_top4_csv_reconciliations.json"
     }
@@ -1335,7 +1335,7 @@
             },
             {
               "leg": 4,
-              "name": "本田結里",
+              "name": "本田悠薫",
               "grade": 1,
               "split": "7:25",
               "cumulative": "31:00"
@@ -1412,7 +1412,7 @@
             },
             {
               "leg": 3,
-              "name": "田上遥",
+              "name": "田川華妃",
               "grade": 2,
               "split": "7:01",
               "cumulative": "24:47"
@@ -2086,8 +2086,8 @@
             },
             {
               "leg": 3,
-              "name": "吉岡愛馨",
-              "grade": 2,
+              "name": "吉岡愛琴",
+              "grade": 3,
               "split": "6:41",
               "cumulative": "24:09"
             },
@@ -2210,7 +2210,7 @@
           "legs": [
             {
               "leg": 1,
-              "name": "猿渡睦月",
+              "name": "磧結里",
               "grade": 2,
               "split": "10:18",
               "cumulative": "10:18"
@@ -2308,7 +2308,7 @@
             },
             {
               "leg": 3,
-              "name": "吉岡愛希",
+              "name": "吉岡愛琴",
               "grade": 2,
               "split": "6:51",
               "cumulative": "24:31"

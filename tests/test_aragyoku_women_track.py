@@ -369,6 +369,7 @@ def test_corrected_transcriptions_are_preserved() -> None:
         team = next(t for t in year_block["teams"] if t["rank"] == rank)
         return next(a for a in team["athletes"] if a["leg"] == leg)
 
+    assert athlete(2012, 1, 1)["name"] == "磧結里"
     assert athlete(2012, 1, 2)["name"] == "森澤彩乃"
     assert athlete(2012, 2, 1)["name"] == "大道志歩"
     assert athlete(2012, 2, 2)["name"] == "前田明佳里"
@@ -381,6 +382,9 @@ def test_corrected_transcriptions_are_preserved() -> None:
     assert athlete(2013, 1, 2)["name"] == "磧結里"
     assert athlete(2013, 3, 5)["name"] == "嶋村里恩"
     assert athlete(2013, 4, 1)["name"] == "開琴美"
+    assert athlete(2012, 3, 3)["name"] == "吉岡愛琴"
+    assert athlete(2013, 2, 3)["name"] == "吉岡愛琴"
+    assert athlete(2013, 2, 3)["grade"] == 3
     assert athlete(2015, 1, 1)["name"] == "關知夏子"
     assert athlete(2015, 2, 2)["name"] == "荒川夏凜"
     assert athlete(2015, 3, 5)["name"] == "島﨑乃々佳"
@@ -389,7 +393,9 @@ def test_corrected_transcriptions_are_preserved() -> None:
     assert athlete(2017, 2, 2)["name"] == "沖愛凜"
     assert athlete(2017, 2, 4)["name"] == "荒川夏凜"
     assert athlete(2018, 1, 3)["name"] == "濱本麻那"
+    assert athlete(2018, 1, 4)["name"] == "本田悠薫"
     assert athlete(2018, 1, 5)["name"] == "田上未来"
+    assert athlete(2018, 3, 3)["name"] == "田川華妃"
     assert athlete(2018, 2, 4)["name"] == "前淵あかり"
     assert athlete(2019, 4, 1)["name"] == "沖愛凜"
     assert athlete(2023, 2, 2)["name"] == "中尾彩朱"
@@ -408,6 +414,7 @@ def test_csv_reconciled_athletes_have_same_year_track_matches() -> None:
         (2012, "森澤彩乃"),
         (2012, "大道志歩"),
         (2012, "嶋村里恩"),
+        (2012, "磧結里"),
         (2013, "森澤彩乃"),
         (2013, "磧結里"),
         (2013, "嶋村里恩"),
@@ -418,6 +425,8 @@ def test_csv_reconciled_athletes_have_same_year_track_matches() -> None:
         (2017, "荒川夏凜"),
         (2018, "田上未来"),
         (2018, "前淵あかり"),
+        (2018, "本田悠薫"),
+        (2018, "田川華妃"),
         (2023, "中尾彩朱"),
         (2023, "髙田春陽"),
     }
@@ -429,7 +438,7 @@ def test_csv_reconciled_athletes_have_same_year_track_matches() -> None:
         if athlete["match_count"] > 0
     }
     assert corrected <= matched
-    assert data["meta"]["verification"]["csv_reconciled_cells"] == 27
+    assert data["meta"]["verification"]["csv_reconciled_cells"] == 33
 
 
 def test_reconciliation_manifest_validates_against_raw_csv() -> None:

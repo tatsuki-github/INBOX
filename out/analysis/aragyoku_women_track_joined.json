@@ -40,15 +40,15 @@
       "checked_cells": 1196,
       "unreadable_cells": 0,
       "corrected_cells": 9,
-      "csv_reconciled_cells": 27,
+      "csv_reconciled_cells": 33,
       "csv_reconciliation_rule": "同年度CSVの女子・中学生を学校・学年・継続年度・走力で照合し、一意に本人と判断できる表記はCSVを優先",
       "csv_reconciliation_source": "input/aragyoku/women_top4_csv_reconciliations.json"
     },
     "stats": {
       "athletes": 260,
-      "with_any_track": 176,
-      "with_sb": 176,
-      "with_url": 176
+      "with_any_track": 179,
+      "with_sb": 179,
+      "with_url": 179
     },
     "guide_note": "「駅伝」は大会当日の区間走結果（道路コース）です。女子は1〜5区がそれぞれ約3.0km・1.855km・2.0km・2.0km・3.0kmで、トラック種目（800m/1500m/3000m）とは距離・路面・気象・タスキ条件が異なります。トラックSB/直近は同年の走力指標として並記していますが、短い種目が強い選手ほど長い区間では相対的に伸び、逆も起こります。数式による換算ではなく、実際の駅伝タイムとトラック走力の両方を見て判断してください。",
     "drive_source_note": "駅伝記録は Google Drive「荒玉駅伝歴代」の結果画像と全セルを目視照合済み。ただし2014年女子の原画像は同フォルダ内で確認できず、未掲載。選手名は同年度の中学生女子トラック記録CSVと照合し、表記が競合する場合はCSVを優先。トラック記録は2012〜2026年度CSVのうち、駅伝と同じ年度だけを参照。学校以外のクラブ所属（ATRC, NJAC, 長洲JRC, 金栗PROJECT 等）も、駅伝選手と同姓同名かつ学年が矛盾しない場合は同一人物として取り込む。",
@@ -4678,13 +4678,42 @@
             },
             {
               "leg": 4,
-              "name": "本田結里",
+              "name": "本田悠薫",
               "grade": 1,
               "ekiden_mark": "7:25",
               "ekiden_seconds": 445.0,
               "cumulative": "31:00",
-              "track_events": {},
-              "match_count": 0
+              "track_events": {
+                "800m": {
+                  "sb": {
+                    "mark": "2:36.44",
+                    "seconds": 156.44,
+                    "meet": "第４９回　ジュニアオリンピック陸上競技選手権大会",
+                    "meet_date": "2018/08/26",
+                    "url": "http://www.kumariku.org/18/kekka/18,8,25junior/rel172.html",
+                    "season": "2018",
+                    "source": "by_year_2018",
+                    "school": "玉名中",
+                    "grade": "1"
+                  },
+                  "recent": null
+                },
+                "1500m": {
+                  "sb": {
+                    "mark": "5:26.89",
+                    "seconds": 326.89,
+                    "meet": "第１２回熊本県陸上競技記録会兼国体二次予選会",
+                    "meet_date": "2018/06/24",
+                    "url": "http://www.kumariku.org/18/kekka/18,6,24rikkyou/rel026.html",
+                    "season": "2018",
+                    "source": "by_year_2018",
+                    "school": "玉名中",
+                    "grade": "1"
+                  },
+                  "recent": null
+                }
+              },
+              "match_count": 2
             },
             {
               "leg": 5,
@@ -4959,13 +4988,42 @@
             },
             {
               "leg": 3,
-              "name": "田上遥",
+              "name": "田川華妃",
               "grade": 2,
               "ekiden_mark": "7:01",
               "ekiden_seconds": 421.0,
               "cumulative": "24:47",
-              "track_events": {},
-              "match_count": 0
+              "track_events": {
+                "800m": {
+                  "sb": {
+                    "mark": "2:29.32",
+                    "seconds": 149.32,
+                    "meet": "第64回全日本中学校通信陸上競技大会熊本県大会",
+                    "meet_date": "2018/07/15",
+                    "url": "http://www.kumariku.org/18/kekka/18,7,14tuusin/rel102.html",
+                    "season": "2018",
+                    "source": "by_year_2018",
+                    "school": "腹栄中",
+                    "grade": "2"
+                  },
+                  "recent": null
+                },
+                "1500m": {
+                  "sb": {
+                    "mark": "5:28.04",
+                    "seconds": 328.04,
+                    "meet": "第４９回　ジュニアオリンピック陸上競技選手権大会",
+                    "meet_date": "2018/08/26",
+                    "url": "http://www.kumariku.org/18/kekka/18,8,25junior/rel182.html",
+                    "season": "2018",
+                    "source": "by_year_2018",
+                    "school": "腹栄中",
+                    "grade": "2"
+                  },
+                  "recent": null
+                }
+              },
+              "match_count": 2
             },
             {
               "leg": 4,
@@ -7161,8 +7219,8 @@
             },
             {
               "leg": 3,
-              "name": "吉岡愛馨",
-              "grade": 2,
+              "name": "吉岡愛琴",
+              "grade": 3,
               "ekiden_mark": "6:41",
               "ekiden_seconds": 401.0,
               "cumulative": "24:09",
@@ -7530,13 +7588,42 @@
           "athletes": [
             {
               "leg": 1,
-              "name": "猿渡睦月",
+              "name": "磧結里",
               "grade": 2,
               "ekiden_mark": "10:18",
               "ekiden_seconds": 618.0,
               "cumulative": "10:18",
-              "track_events": {},
-              "match_count": 0
+              "track_events": {
+                "800m": {
+                  "sb": {
+                    "mark": "2:21.88",
+                    "seconds": 141.88,
+                    "meet": "第５８回全日本中学校通信陸上競技大会熊本県大会",
+                    "meet_date": "2012/07/21",
+                    "url": "http://www.kumariku.org/12/kekka/7,21tsushin/REL066.HTM",
+                    "season": "2012",
+                    "source": "by_year_2012",
+                    "school": "玉名中",
+                    "grade": "2"
+                  },
+                  "recent": null
+                },
+                "1500m": {
+                  "sb": {
+                    "mark": "4:47.44",
+                    "seconds": 287.44,
+                    "meet": "平成２４年度　熊本県中体連陸上競技大会",
+                    "meet_date": "2012/10/06",
+                    "url": "http://www.kumariku.org/12/kekka/10,6chutairen/REL005.HTM",
+                    "season": "2012",
+                    "source": "by_year_2012",
+                    "school": "玉名中",
+                    "grade": "2"
+                  },
+                  "recent": null
+                }
+              },
+              "match_count": 2
             },
             {
               "leg": 2,
@@ -7829,7 +7916,7 @@
             },
             {
               "leg": 3,
-              "name": "吉岡愛希",
+              "name": "吉岡愛琴",
               "grade": 2,
               "ekiden_mark": "6:51",
               "ekiden_seconds": 411.0,
