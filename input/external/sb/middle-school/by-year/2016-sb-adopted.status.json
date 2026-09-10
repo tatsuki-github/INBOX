@@ -1,0 +1,16 @@
+{
+  "year": 2016,
+  "source": "input/external/drive/personal/t-tsuchiyama/sb/by-year/2016-single-table.csv",
+  "source_sha256": "d2579534b06410b017812f6de57ab978c83fbd59f2689fb5e35dfef45606afc1",
+  "source_row_count": 3991,
+  "sb_adopted_count": 2021,
+  "output_sha256": "fefc1ef7c3b8ef0e6bce92a290f29ec67fbced92708cce8d9a9a0c3c11e3938e",
+  "complete": true,
+  "source_status": "complete",
+  "calendar_years": [
+    "2016",
+    "2017"
+  ],
+  "replacement_character_rows": 0,
+  "note": "年度はファイル名を正本とし、行の日付にかかわらず元ファイルの年度に保持"
+}

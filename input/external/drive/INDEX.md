@@ -12,15 +12,27 @@ Source:
 - 記録データベース/印刷用 stubbed (CSV present).
 - Notionバックアップ / 荒玉駅伝歴代: empty.
 - Skipped: Index.zip, Colab, 学習指導要領, ランナーズバイブル (not in roots).
+- **追補**: `personal/t-tsuchiyama/sb/` — 所有者 t-tsuchiyama の中学生 SB CSV（ADR 012）。正規化先は [`../sb/middle-school/`](../sb/middle-school/INDEX.md)。
 
 ## Summary
-- Content files: **211**
-- Sidecar `.meta.json`: **212**
-- Saved (full text): **61**
+- Content files: **211** + t-tsuchiyama SB 一式（別カウント。下表追記）
+- Sidecar `.meta.json`: **212** + SB メタ
+- Saved (full text): **61** + SB CSV
 - Stubs (metadata + viewUrl): **150**
-- Total content bytes: **1,215,249** (1.16 MiB)
+- Total content bytes: **1,215,249** (1.16 MiB) + SB 約 2.5 MiB
 - By type: `{'markdown-doc': 49, 'csv': 12, 'pdf-stub': 78, 'md-stub': 19, 'media-stub': 53}`
 
+## t-tsuchiyama SB（追補）
+
+| Path | Title | Status | Drive URL |
+|---|---|---|---|
+| `personal/t-tsuchiyama/sb/SBデータベース.csv` | SBデータベース | saved | https://docs.google.com/spreadsheets/d/1eLkU3YgXolKZL4MLdhWcUdbJ1W3Xf6AMNcxzQr7i9jA/edit |
+| `personal/t-tsuchiyama/sb/中学生SB.csv` | 中学生SB | saved | （SBデータベース フィルタ） |
+| `personal/t-tsuchiyama/sb/output_all.csv` | output_all.csv | saved | https://drive.google.com/file/d/1ZXVviaRz9L6LqFsS9bIEf33kGcJWHe8S/view |
+| `personal/t-tsuchiyama/sb/output_all_中学生.csv` | output_all 中学生 | saved | （フィルタ） |
+| `personal/t-tsuchiyama/sb/output_reg_中学生_single_table.csv` | output_reg 中学生 | saved | https://drive.google.com/file/d/1i6gLfxcMJwaHenV8EI_xkAy6cl-WkIQ8/view |
+| `personal/t-tsuchiyama/sb/output_reg_中学生_男子.csv` | output_reg 男子 | saved | https://drive.google.com/file/d/1Ojg97ON73IrM480HpdAfQCwQ2x4FOtJr/view |
+| `personal/t-tsuchiyama/sb/output_reg_中学生_女子.csv` | output_reg 女子 | saved | https://drive.google.com/file/d/1lghf0GIa2euMEiObj8KPkOC2mFWKlbS6/view |
 
 ## Files (212)
 

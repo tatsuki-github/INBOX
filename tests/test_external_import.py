@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import csv
+import hashlib
 import json
 import sys
 from pathlib import Path
@@ -98,3 +99,70 @@ def test_knowledge_graph_registers_media_assets_and_ekiden_topic():
     # LLM がパスを辿れること
     assert any(n.get("refs") for n in ekiden_media)
     assert any("ocr/" in (n.get("hint") or "") or any("ocr" in r for r in n.get("refs") or []) for n in ekiden_media)
+
+
+def test_middle_school_wide_sb_csv():
+    path = EXTERNAL / "sb" / "middle-school" / "wide" / "中学生SB.csv"
+    assert path.is_file()
+    with path.open(encoding="utf-8-sig") as f:
+        reader = csv.DictReader(f)
+        header = reader.fieldnames or []
+        rows = list(reader)
+    assert "名前" in header and "カテゴリー" in header
+    assert any(h.endswith("SB") for h in header)
+    assert len(rows) >= 1000
+    assert all(r.get("カテゴリー") == "中学生" for r in rows)
+
+
+def test_middle_school_sb_year_artifacts_and_index():
+    index = (EXTERNAL / "sb" / "middle-school" / "INDEX.md").read_text(encoding="utf-8")
+    assert "wide" in index and "by-year" in index
+    by_year = EXTERNAL / "sb" / "middle-school" / "by-year"
+    expected_counts = {
+        2012: 2180,
+        2013: 2046,
+        2014: 2139,
+        2015: 2181,
+        2016: 2021,
+        2017: 2431,
+        2018: 2168,
+        2019: 2065,
+        2020: 1407,
+        2021: 1968,
+        2022: 2300,
+        2023: 2267,
+        2024: 2267,
+        2025: 2662,
+        2026: 3981,
+    }
+    for year, expected_count in expected_counts.items():
+        status_path = by_year / f"{year}-sb-adopted.status.json"
+        data_path = by_year / f"{year}-sb-adopted.json"
+        assert status_path.is_file(), year
+        assert data_path.is_file(), year
+        status = json.loads(status_path.read_text(encoding="utf-8"))
+        rows = json.loads(data_path.read_text(encoding="utf-8"))
+        assert status.get("year") == year
+        assert isinstance(rows, list) and len(rows) >= 100
+        assert status.get("sb_adopted_count") == len(rows)
+        assert status.get("complete") is True
+        assert len(rows) == expected_count
+        assert all(row.get("SB採用") == "__YES__" for row in rows)
+        source_path = ROOT / status["source"]
+        assert status["source_sha256"] == hashlib.sha256(source_path.read_bytes()).hexdigest()
+        assert status["output_sha256"] == hashlib.sha256(data_path.read_bytes()).hexdigest()
+    drive_sb = EXTERNAL / "drive" / "personal" / "t-tsuchiyama" / "sb"
+    assert (drive_sb / "SBデータベース.csv").is_file()
+    assert (drive_sb / "中学生SB.csv").is_file()
+    assert all(
+        (drive_sb / "by-year" / f"{year}-single-table.csv").is_file()
+        for year in expected_counts
+    )
+
+
+def test_knowledge_graph_registers_middle_school_sb():
+    graph = build_knowledge_graph(generated_at="2026-01-01T00:00:00Z")
+    ids = {n["id"] for n in graph["nodes"]}
+    assert "source:input/external/sb/middle-school/INDEX.md" in ids
+    assert "source:input/external/sb/middle-school/wide/中学生SB.csv" in ids
+    assert "source:docs/adr/012-middle-school-sb-all-years.md" in ids

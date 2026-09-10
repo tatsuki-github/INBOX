@@ -69,6 +69,21 @@ SOURCE_GLOBS: list[tuple[str, list[str], str]] = [
         ["ekiden", "athlete_records"],
         "荒玉中体連駅伝歴代（岱明順位・記録）",
     ),
+    (
+        "input/external/sb/middle-school/INDEX.md",
+        ["athlete_records", "meta"],
+        "t-tsuchiyama 中学生 SB（ワイド＋年度別）目録",
+    ),
+    (
+        "input/external/sb/middle-school/wide/中学生SB.csv",
+        ["athlete_records"],
+        "中学生ワイド SB（Drive SBデータベース）",
+    ),
+    (
+        "docs/adr/012-middle-school-sb-all-years.md",
+        ["athlete_records", "meta"],
+        "中学生 SB 全年度取り込み ADR",
+    ),
 ]
 
 LIGHTWEIGHT_SUFFIXES = {".csv", ".pdf", ".jpg", ".jpeg", ".png", ".gif", ".webp"}
@@ -76,7 +91,7 @@ LIGHTWEIGHT_SUFFIXES = {".csv", ".pdf", ".jpg", ".jpeg", ".png", ".gif", ".webp"
 TOPIC_DEFS: list[tuple[str, str, str]] = [
     ("calendar", "カレンダー / 予定", "年次予定・メモ・祝日の入口"),
     ("practice", "岱明練習", "practice ブロック・メニュー・欠席・テンプレ"),
-    ("athlete_records", "選手記録", "荒尾・玉名中学生記録・所属ランキング"),
+    ("athlete_records", "選手記録", "荒尾・玉名・中学生 SB・所属ランキング"),
     ("norwegian", "Norwegian Method", "GZ/閾値・VDOT・原則メモ"),
     ("ai", "AI 練習生成", "プロンプト・ルール・週次/単日生成"),
     ("schema", "スキーマ", "JSON Schema とデータモデル"),

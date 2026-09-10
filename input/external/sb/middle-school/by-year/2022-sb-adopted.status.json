@@ -1,0 +1,16 @@
+{
+  "year": 2022,
+  "source": "input/external/drive/personal/t-tsuchiyama/sb/by-year/2022-single-table.csv",
+  "source_sha256": "bf26bb3db5015830552df75b9907cdc1a19e08ce83cbb62608211871104c8524",
+  "source_row_count": 5406,
+  "sb_adopted_count": 2300,
+  "output_sha256": "cc81375d9d982d6d4559f96d1b93c7b4eb3b094d1e257d0764efecb345abd283",
+  "complete": true,
+  "source_status": "complete",
+  "calendar_years": [
+    "2022",
+    "2023"
+  ],
+  "replacement_character_rows": 1121,
+  "note": "年度はファイル名を正本とし、行の日付にかかわらず元ファイルの年度に保持"
+}
