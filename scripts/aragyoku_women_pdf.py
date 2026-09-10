@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""荒玉女子駅伝 上位4校 × トラック走力 PDF レポート生成。"""
+"""荒玉女子駅伝 上位6校 × トラック走力 PDF レポート生成。"""
 
 from __future__ import annotations
 
@@ -29,7 +29,7 @@ from reportlab.platypus import (
 
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_JOINED = ROOT / "out/analysis/aragyoku_women_track_joined.json"
-DEFAULT_PDF = ROOT / "out/analysis/荒玉女子駅伝_上位4校_トラック走力.pdf"
+DEFAULT_PDF = ROOT / "out/analysis/荒玉女子駅伝_上位6校_トラック走力.pdf"
 DEFAULT_FONT = ROOT / "assets/fonts/NotoSansJP-Regular.ttf"
 FONT_NAME = "NotoSansJP"
 FALLBACK_FONT = "HeiseiKakuGo-W5"
@@ -262,7 +262,7 @@ def year_section(yblock: dict[str, Any], styles: dict[str, ParagraphStyle], font
     date = yblock.get("date") or ""
     conf = yblock.get("source_confidence") or ""
     drive_id = yblock.get("source_file_id") or ""
-    title = f"{year}年 玉名荒尾中体連駅伝・女子 上位4校"
+    title = f"{year}年 玉名荒尾中体連駅伝・女子 上位6校"
     if date:
         title += f"（{date}）"
     story.append(Paragraph(escape(title), styles["h1"]))
@@ -331,7 +331,7 @@ def missing_year_section(year: int, styles: dict[str, ParagraphStyle]) -> list[A
         Paragraph(
             "Google Drive「荒玉駅伝歴代」および公開Web情報を確認しましたが、"
             "女子結果の原資料を確認できませんでした。"
-            "検証不能な値を補完せず、この年の上位4校・各区間記録・トラック記録は未掲載とします。",
+            "検証不能な値を補完せず、この年の上位6校・各区間記録・トラック記録は未掲載とします。",
             styles["body"],
         ),
         PageBreak(),

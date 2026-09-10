@@ -331,13 +331,13 @@ def test_club_affiliation_records_are_linked_for_same_name() -> None:
     assert athlete["track_events"]["1500m"]["sb"]["school"] == "ATRC"
 
 
-def test_build_joined_has_2025_top4() -> None:
+def test_build_joined_has_2025_top6() -> None:
     data = build_joined()
-    assert data["meta"]["stats"]["athletes"] == 260
+    assert data["meta"]["stats"]["athletes"] == 390
     assert 2014 in data["meta"]["missing_years"]
     assert all(y["source_confidence"] == "verified" for y in data["years"])
     y2025 = next(y for y in data["years"] if y["year"] == 2025)
-    assert len(y2025["teams"]) == 4
+    assert len(y2025["teams"]) == 6
     first = y2025["teams"][0]
     assert first["school"] == "玉名"
     assert first["total_mark"] == "41:58"
@@ -346,7 +346,7 @@ def test_build_joined_has_2025_top4() -> None:
     assert y2025["source_confidence"] == "verified"
     # 近年は一定数ヒットし、年度外記録は混入しない
     verification = data["meta"]["verification"]
-    assert verification["checked_cells"] == 1196
+    assert verification["checked_cells"] == 1794
     assert verification["unreadable_cells"] == 0
     assert verification["corrected_cells"] == 9
     assert data["meta"]["stats"]["with_any_track"] > 0
@@ -442,7 +442,7 @@ def test_csv_reconciled_athletes_have_same_year_track_matches() -> None:
 
 
 def test_reconciliation_manifest_validates_against_raw_csv() -> None:
-    module = runpy.run_path(str(ROOT / "input/aragyoku/build_women_top4.py"))
+    module = runpy.run_path(str(ROOT / "input/aragyoku/build_women_top6.py"))
     module["validate_csv_reconciliations"](module["data"])
 
 
@@ -534,7 +534,7 @@ if __name__ == "__main__":
     test_aggregate_sb_is_not_reported_as_recent_record()
     test_non_adopted_record_is_not_reported_as_sb()
     test_grade_evidence_excludes_same_name_different_athlete()
-    test_build_joined_has_2025_top4()
+    test_build_joined_has_2025_top6()
     test_corrected_transcriptions_are_preserved()
     test_csv_reconciled_athletes_have_same_year_track_matches()
     test_reconciliation_manifest_validates_against_raw_csv()

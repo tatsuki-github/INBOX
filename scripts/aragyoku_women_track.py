@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-"""荒玉女子駅伝 上位4校 × トラックSB/直近 突合。
+"""荒玉女子駅伝 上位6校 × トラックSB/直近 突合。
 
 データソース:
-- input/aragyoku/women_top4_2012_2025.json（Drive結果ボードOCR）
+- input/aragyoku/women_top6_2012_2025.json（Drive結果ボードOCR）
 - input/external/sb/middle-school/wide/中学生SB.csv
 - input/external/sb/middle-school/by-year/{2012..2026}-sb-adopted.json
 - input/external/drive/personal/t-tsuchiyama/sb/output_reg_中学生_女子.csv
@@ -19,7 +19,7 @@ from pathlib import Path
 from typing import Any
 
 ROOT = Path(__file__).resolve().parents[1]
-TOP4_JSON = ROOT / "input/aragyoku/women_top4_2012_2025.json"
+TOP6_JSON = ROOT / "input/aragyoku/women_top6_2012_2025.json"
 WIDE_SB = ROOT / "input/external/sb/middle-school/wide/中学生SB.csv"
 OUTPUT_REG = ROOT / "input/external/drive/personal/t-tsuchiyama/sb/output_reg_中学生_女子.csv"
 BY_YEAR_DIR = ROOT / "input/external/sb/middle-school/by-year"
@@ -39,9 +39,25 @@ SCHOOL_ALIASES = {
     "荒尾第三": "荒尾三",
     "荒尾第四": "荒尾四",
 }
-# 荒玉中体連女子駅伝 上位4校で登場する中学校（他校所属の記録はクラブ扱いにしない）
+# 荒玉中体連女子駅伝 上位6校で登場する中学校（他校所属の記録はクラブ扱いにしない）
 ARAGYOKU_SCHOOLS = frozenset(
-    {"南関", "岱明", "玉名", "玉東", "腹栄", "荒尾三", "荒尾四", "荒尾海陽", "菊水", "長洲"}
+    {
+        "南関",
+        "岱明",
+        "玉名",
+        "玉東",
+        "腹栄",
+        "荒尾三",
+        "荒尾四",
+        "荒尾海陽",
+        "菊水",
+        "長洲",
+        "合津",
+        "玉高附属",
+        "三加和",
+        "五陵",
+        "有明",
+    }
 )
 
 def norm_name(s: str) -> str:
@@ -464,7 +480,7 @@ def pack_mark(rec: dict[str, Any] | None) -> dict[str, Any] | None:
 
 
 def build_joined() -> dict[str, Any]:
-    top4 = json.loads(TOP4_JSON.read_text(encoding="utf-8"))
+    top6 = json.loads(TOP6_JSON.read_text(encoding="utf-8"))
     # ワイドSBは2025年度、output_regは2026年度のスナップショット。
     # 年度を持たない形式なので、他年度へのフォールバックには使わない。
     wide = load_wide_like_csv(WIDE_SB, "wide_sb", "2025")
@@ -476,11 +492,11 @@ def build_joined() -> dict[str, Any]:
     years_out: list[dict[str, Any]] = []
     stats = {"athletes": 0, "with_any_track": 0, "with_sb": 0, "with_url": 0}
 
-    year_keys = sorted((top4.get("years") or {}).keys(), reverse=True)
+    year_keys = sorted((top6.get("years") or {}).keys(), reverse=True)
     if not year_keys:
         raise ValueError("ekiden source has no year data")
     for ykey in year_keys:
-        yblock = top4["years"][ykey]
+        yblock = top6["years"][ykey]
         year = int(ykey)
         seasons = seasons_for_ekiden_year(year)
         teams_out = []
@@ -562,10 +578,10 @@ def build_joined() -> dict[str, Any]:
 
     return {
         "meta": {
-            "title": "荒玉（玉名荒尾）中体連駅伝・女子・上位4校 トラック走力突合",
+            "title": "荒玉（玉名荒尾）中体連駅伝・女子・上位6校 トラック走力突合",
             "years": [y["year"] for y in years_out],
-            "missing_years": top4.get("missing_years") or top4.get("meta", {}).get("missing_years") or [2014],
-            "verification": top4.get("meta", {}).get("verification") or {},
+            "missing_years": top6.get("missing_years") or top6.get("meta", {}).get("missing_years") or [2014],
+            "verification": top6.get("meta", {}).get("verification") or {},
             "stats": stats,
             "guide_note": (
                 "「駅伝」は大会当日の区間走結果（道路コース）です。女子は1〜5区がそれぞれ"
@@ -583,7 +599,7 @@ def build_joined() -> dict[str, Any]:
                 "駅伝選手と同姓同名かつ学年が矛盾しない場合は同一人物として取り込む。"
             ),
             "sources": {
-                "ekiden": str(TOP4_JSON.relative_to(ROOT)),
+                "ekiden": str(TOP6_JSON.relative_to(ROOT)),
                 "wide_sb": str(WIDE_SB.relative_to(ROOT)),
                 "output_reg": str(OUTPUT_REG.relative_to(ROOT)),
                 "by_year": str(BY_YEAR_DIR.relative_to(ROOT)),
