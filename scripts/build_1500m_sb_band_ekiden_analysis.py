@@ -76,12 +76,13 @@ def load_ekiden() -> dict[tuple[int, str, str], list[dict]]:
         data = json.loads(path.read_text())
         for year_text, y in data.get("years", {}).items():
             year = int(year_text)
+            distance_by_leg = {x["leg"]: x["distance_km"] for x in y.get("legs", [])}
             for team in y.get("teams", []):
               for leg in team.get("legs", []):
                 name = leg.get("name")
                 sec = parse_sec(leg.get("split"))
                 if name and sec is not None:
-                    out.setdefault((year, gender, norm(name)), []).append({"team": team.get("team"), "leg": leg.get("leg"), "distance_km": leg_distance(gender, leg.get("leg")), "time": leg.get("split"), "sec": sec, "rank": leg.get("split_rank"), "team_rank": team.get("rank"), "total": team.get("total")})
+                    out.setdefault((year, gender, norm(name)), []).append({"team": team.get("team"), "leg": leg.get("leg"), "distance_km": distance_by_leg.get(leg.get("leg")), "time": leg.get("split"), "sec": sec, "rank": leg.get("split_rank"), "team_rank": team.get("rank"), "total": team.get("total")})
     return out
 
 

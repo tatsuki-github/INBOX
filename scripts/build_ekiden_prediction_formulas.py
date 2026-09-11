@@ -15,10 +15,6 @@ EKIDEN_DIR = ROOT / "input/aragyoku/transcripts"
 OUT_DIR = ROOT / "out/analysis/ekiden-prediction"
 
 EVENT_DISTANCE = {"800m": 800.0, "1500m": 1500.0}
-LEG_DISTANCE = {
-    "男子": {1: 3.0, 2: 2.855, 3: 2.855, 4: 2.855, 5: 2.855, 6: 3.0},
-    "女子": {1: 3.0, 2: 1.855, 3: 2.0, 4: 2.0, 5: 3.0},
-}
 RIEGEL_EXPONENT = 1.06
 
 
@@ -76,10 +72,11 @@ def load_ekiden() -> dict[tuple[int, str, str], list[dict]]:
             continue
         year, gender = int(m.group(1)), m.group(2)
         data = json.loads(p.read_text())
+        distance_by_leg = {x["leg"]: x["distance_km"] for x in data.get("legs", [])}
         for team in data.get("teams", []):
             for leg in team.get("legs", []):
                 leg_no = leg.get("leg")
-                distance = LEG_DISTANCE.get(gender, {}).get(leg_no)
+                distance = distance_by_leg.get(leg_no)
                 value = sec(leg.get("split"))
                 if distance is None or value is None:
                     continue

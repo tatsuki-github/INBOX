@@ -12,6 +12,7 @@ from lib.schema import (
     ATHLETE_CSV_COLUMNS,
     default_legs_for_gender,
     leg_count_for_gender,
+    men_leg_distances_for_year,
     normalize_team,
 )
 from validate_transcript import assert_valid_year, notion_anchor
@@ -114,7 +115,7 @@ def build_year_entry(year: int, gender: str, transcript: dict, source_id: str | 
         "date": transcript.get("date") or _event_dates()[gender].get(str(year)),
         "source_drive_id": transcript.get("source_drive_id") or source_id,
         "team_count": len(teams),
-        "legs": transcript.get("legs") or default_legs_for_gender(gender),
+        "legs": transcript.get("legs") or (men_leg_distances_for_year(year) if gender == "男子" else default_legs_for_gender(gender)),
         "teams": teams,
     }
     if anchor:
@@ -155,7 +156,7 @@ def build_dataset(gender: str) -> dict:
         "meta": {
             "event": "玉名荒尾中体連駅伝",
             "gender": gender,
-            "legs": default_legs_for_gender(gender),
+            "legs": men_leg_distances_for_year(years[next(iter(years))]["year"]) if gender == "男子" and years else default_legs_for_gender(gender),
             "schema": "full-transcript-v1",
         },
         "years": years,
