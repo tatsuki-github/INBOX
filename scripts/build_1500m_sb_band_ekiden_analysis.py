@@ -88,7 +88,7 @@ def load_ekiden() -> dict[tuple[int, str, str], list[dict]]:
 def leg_distance(gender: str, leg: int | None) -> float | None:
     if gender == "女子":
         return {1: 3.0, 2: 1.855, 3: 2.0, 4: 2.0, 5: 3.0}.get(leg)
-    return {1: 3.0, 2: 2.0, 3: 2.0, 4: 2.0, 5: 2.0, 6: 3.0}.get(leg)
+    return {1: 3.0, 2: 2.855, 3: 2.855, 4: 2.855, 5: 2.855, 6: 3.0}.get(leg)
 
 
 def main() -> None:
