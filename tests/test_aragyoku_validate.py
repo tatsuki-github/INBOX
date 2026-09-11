@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import json
+import re
 import sys
 from pathlib import Path
 
@@ -168,8 +169,33 @@ def test_validate_times_catches_bad_cumulative() -> None:
     assert any("cum" in n for n in notes)
 
 
+def test_validate_year_catches_duplicate_school() -> None:
+    year = _five_leg_sample()
+    year["teams"][1]["team"] = "玉名"
+    notes = validate_year_transcript(year, year=2025, gender="女子")
+    assert any("duplicate schools" in note for note in notes)
+
+
 def test_fixture_transcript_file() -> None:
     fixture = json.loads(
         (ROOT / "tests/fixtures/aragyoku_sample_transcript.json").read_text(encoding="utf-8")
     )
     assert fixture["teams"][0]["legs"][0]["split_rank"] == 1
+
+
+def test_unknown_status_allows_unreadable_source_cells() -> None:
+    year = _five_leg_sample()
+    leg = year["teams"][0]["legs"][0]
+    leg.update({"name": "unknown", "grade": None, "split": None, "cumulative": None, "status": "unknown"})
+    notes = validate_year_transcript(year, year=2025, gender="女子")
+    assert not any("missing time" in note for note in notes)
+
+
+def test_result_image_names_are_consistent() -> None:
+    images = sorted((ARAGYOKU / "images").iterdir())
+    pattern = re.compile(
+        r"^\d{4}_(?:male|female|unknown)_tamana-aragyochu-ekiden_"
+        r"(?:overall-results|open-results)_\d{2}\.(?:jpg|jpeg|png)$"
+    )
+    assert len(images) == 28
+    assert all(pattern.fullmatch(path.name) for path in images)

@@ -70,7 +70,7 @@ def _event_dates() -> dict[str, dict[str, str]]:
         "2022": "2022-10-19",
         "2021": "2021-10-20",
         "2020": "2020-10-21",
-        "2019": "2019-11-16",
+        "2019": "2019-10-16",
         "2018": "2018-10-17",
         "2017": "2017-10-18",
         "2016": "2016-10-19",
@@ -85,7 +85,7 @@ def _event_dates() -> dict[str, dict[str, str]]:
         "2022": "2022-10-19",
         "2021": "2021-10-20",
         "2020": "2020-10-21",
-        "2019": "2019-11-16",
+        "2019": "2019-10-16",
         "2018": "2018-10-17",
         "2017": "2017-10-18",
         "2016": "2016-10-19",
@@ -190,7 +190,7 @@ def write_athletes_csv(dataset: dict, path: Path) -> None:
                     }
                 )
     with path.open("w", encoding="utf-8", newline="") as f:
-        writer = csv.DictWriter(f, fieldnames=ATHLETE_CSV_COLUMNS)
+        writer = csv.DictWriter(f, fieldnames=ATHLETE_CSV_COLUMNS, lineterminator="\n")
         writer.writeheader()
         writer.writerows(rows)
 
@@ -242,6 +242,35 @@ def derive_top6(dataset: dict) -> dict:
     return top6
 
 
+def derive_top4(top6: dict) -> dict:
+    top4 = json.loads(json.dumps(top6, ensure_ascii=False))
+    for entry in top4["years"].values():
+        entry["teams"] = [team for team in entry["teams"] if team["rank"] <= 4]
+    return top4
+
+
+def write_top_athletes_csv(dataset: dict, path: Path) -> None:
+    columns = ["year", "rank", "team", "total", "leg", "name", "grade", "split", "cumulative", "source_drive_id"]
+    with path.open("w", encoding="utf-8", newline="") as f:
+        writer = csv.DictWriter(f, fieldnames=columns, lineterminator="\n")
+        writer.writeheader()
+        for year, entry in sorted(dataset["years"].items(), key=lambda item: int(item[0]), reverse=True):
+            for team in entry["teams"]:
+                for leg in team["legs"]:
+                    writer.writerow({
+                        "year": year,
+                        "rank": team["rank"],
+                        "team": team["team"],
+                        "total": team["total"],
+                        "leg": leg["leg"],
+                        "name": leg.get("name"),
+                        "grade": leg.get("grade"),
+                        "split": leg.get("split"),
+                        "cumulative": leg.get("cumulative"),
+                        "source_drive_id": entry.get("source_drive_id"),
+                    })
+
+
 def main() -> None:
     women = build_dataset("女子")
     men = build_dataset("男子")
@@ -257,6 +286,13 @@ def main() -> None:
     top6 = derive_top6(women)
     top6_path = ROOT / "women_top6_2012_2025.json"
     top6_path.write_text(json.dumps(top6, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    write_top_athletes_csv(top6, ROOT / "women_top6_athletes.csv")
+
+    top4 = derive_top4(top6)
+    (ROOT / "women_top4_2012_2025.json").write_text(
+        json.dumps(top4, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
+    )
+    write_top_athletes_csv(top4, ROOT / "women_top4_athletes.csv")
 
     print("women years", len(women["years"]), "missing", women["missing_years"])
     print("men years", len(men["years"]), "missing", men["missing_years"])

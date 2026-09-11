@@ -700,7 +700,7 @@ data["years"]["2020"] = {
 
 # --- 2019 ---
 data["years"]["2019"] = {
-    "date": "2019-11-16",
+    "date": "2019-10-16",
     "source_drive_id": SOURCES["2019"],
     "teams": [
         team(

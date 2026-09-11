@@ -26,7 +26,7 @@ MEN_DATES = {
     "2022": "2022-10-19",
     "2021": "2021-10-20",
     "2020": "2020-10-21",
-    "2019": "2019-11-16",
+    "2019": "2019-10-16",
     "2018": "2018-10-17",
     "2017": "2017-10-18",
     "2016": "2016-10-19",
@@ -61,7 +61,9 @@ def normalize_school(name: str) -> str:
     return SCHOOL_NORMALIZE.get(key, key)
 
 
-def normalize_time(value: str) -> str:
+def normalize_time(value: str | None) -> str | None:
+    if value is None:
+        return None
     text = (value or "").strip().replace("'", ":").replace('"', "").replace("''", "")
     text = text.replace("°", ":").replace("′", ":").replace("″", "")
     text = text.replace(" ", "")

@@ -1023,8 +1023,8 @@
               "grade": 2,
               "split": "11:00",
               "cumulative": "11:00",
-              "passing_rank": 8,
-              "split_rank": 8,
+              "passing_rank": 7,
+              "split_rank": 7,
               "split_record": null,
               "status": "ok",
               "raw_name_grade": "原賀藍実 2"
@@ -1035,8 +1035,8 @@
               "grade": 2,
               "split": "6:59",
               "cumulative": "17:59",
-              "passing_rank": 8,
-              "split_rank": 7,
+              "passing_rank": 7,
+              "split_rank": 6,
               "split_record": null,
               "status": "ok",
               "raw_name_grade": "高椋琳菜 2"
@@ -1060,7 +1060,7 @@
               "split": "7:33",
               "cumulative": "32:17",
               "passing_rank": 4,
-              "split_rank": 4,
+              "split_rank": 5,
               "split_record": null,
               "status": "ok",
               "raw_name_grade": "川上悠花 3"
@@ -1127,7 +1127,7 @@
               "split": "7:36",
               "cumulative": "32:18",
               "passing_rank": 5,
-              "split_rank": 5,
+              "split_rank": 6,
               "split_record": null,
               "status": "ok",
               "raw_name_grade": "宮内果歩 3"
@@ -1170,7 +1170,7 @@
               "split": "6:56",
               "cumulative": "17:14",
               "passing_rank": 3,
-              "split_rank": 6,
+              "split_rank": 5,
               "split_record": null,
               "status": "ok",
               "raw_name_grade": "長嶺汐莉 1"
@@ -1194,7 +1194,7 @@
               "split": "7:30",
               "cumulative": "32:06",
               "passing_rank": 3,
-              "split_rank": 3,
+              "split_rank": 4,
               "split_record": null,
               "status": "ok",
               "raw_name_grade": "清田紗帆 2"
@@ -1206,7 +1206,7 @@
               "split": "11:40",
               "cumulative": "43:46",
               "passing_rank": 5,
-              "split_rank": 7,
+              "split_rank": 6,
               "split_record": null,
               "status": "ok",
               "raw_name_grade": "前田遥香 1"
@@ -1215,73 +1215,76 @@
         },
         {
           "rank": 6,
-          "team": "菊水",
-          "total": "44:39",
+          "team": "荒尾海陽",
+          "total": "44:53",
           "legs": [
             {
               "leg": 1,
-              "name": "一番ケ瀬美空",
+              "name": "榎本百花",
               "grade": 2,
-              "split": "11:07",
-              "cumulative": "11:07",
-              "passing_rank": 10,
-              "split_rank": 10,
+              "split": "10:48",
+              "cumulative": "10:48",
+              "passing_rank": 5,
+              "split_rank": 5,
               "split_record": null,
               "status": "ok",
-              "raw_name_grade": "一番ケ瀬美空 2"
+              "raw_name_grade": "榎本百花 2"
             },
             {
               "leg": 2,
-              "name": "大山優衣",
-              "grade": 2,
-              "split": "6:55",
-              "cumulative": "18:02",
-              "passing_rank": 9,
-              "split_rank": 4,
+              "name": "田中若葉",
+              "grade": 3,
+              "split": "7:03",
+              "cumulative": "17:51",
+              "passing_rank": 6,
+              "split_rank": 8,
               "split_record": null,
               "status": "ok",
-              "raw_name_grade": "大山優衣 2"
+              "raw_name_grade": "田中若葉 3"
             },
             {
               "leg": 3,
-              "name": "山住真由",
-              "grade": 2,
-              "split": "7:20",
-              "cumulative": "25:22",
-              "passing_rank": 8,
-              "split_rank": 7,
-              "split_record": null,
-              "status": "ok",
-              "raw_name_grade": "山住真由 2"
-            },
-            {
-              "leg": 4,
-              "name": "齊木愛菜",
+              "name": "川口愛優菜",
               "grade": 3,
-              "split": "7:51",
-              "cumulative": "33:13",
-              "passing_rank": 8,
-              "split_rank": 11,
-              "split_record": null,
-              "status": "ok",
-              "raw_name_grade": "齊木愛菜 3"
-            },
-            {
-              "leg": 5,
-              "name": "下津晴子",
-              "grade": 1,
-              "split": "11:26",
-              "cumulative": "44:39",
+              "split": "7:10",
+              "cumulative": "25:01",
               "passing_rank": 6,
               "split_rank": 5,
               "split_record": null,
               "status": "ok",
-              "raw_name_grade": "下津晴子 1"
+              "raw_name_grade": "川口愛優菜 3"
+            },
+            {
+              "leg": 4,
+              "name": "山嵜麻椰",
+              "grade": 2,
+              "split": "7:48",
+              "cumulative": "32:49",
+              "passing_rank": 6,
+              "split_rank": 9,
+              "split_record": null,
+              "status": "ok",
+              "raw_name_grade": "山嵜麻椰 2"
+            },
+            {
+              "leg": 5,
+              "name": "東亜優",
+              "grade": 3,
+              "split": "12:04",
+              "cumulative": "44:53",
+              "passing_rank": 6,
+              "split_rank": 11,
+              "split_record": null,
+              "status": "ok",
+              "raw_name_grade": "東亜優 3"
             }
           ]
         }
       ],
-      "confidence": "verified"
+      "confidence": "verified",
+      "ocr_notes": [
+        "Result-board row-by-row transcription; the previously inserted 2014 row was removed and the omitted 腹栄 row restored."
+      ]
     },
     "2016": {
       "date": "2016-10-19",
@@ -2511,7 +2514,7 @@
       "confidence": "verified"
     },
     "2019": {
-      "date": "2019-11-16",
+      "date": "2019-10-16",
       "source_drive_id": "1-m4jAOxnRixZLOkolym7idoBH7S6WBTN",
       "teams": [
         {
@@ -3313,7 +3316,7 @@
             },
             {
               "leg": 5,
-              "name": "松嶋一常",
+              "name": "松嶋一希",
               "grade": 2,
               "split": "12:17",
               "cumulative": "45:54",
@@ -3321,7 +3324,7 @@
               "split_rank": 12,
               "split_record": false,
               "status": "ok",
-              "raw_name_grade": "松嶋一常2"
+              "raw_name_grade": "松嶋一希(2)"
             }
           ]
         }
@@ -4177,7 +4180,7 @@
               "split_rank": 3,
               "split_record": false,
               "status": "ok",
-              "raw_name_grade": "内野花笑2"
+              "raw_name_grade": "内野花笑(2)"
             },
             {
               "leg": 2,
@@ -4189,7 +4192,7 @@
               "split_rank": 1,
               "split_record": false,
               "status": "ok",
-              "raw_name_grade": "山道咲空1"
+              "raw_name_grade": "山道咲空(1)"
             },
             {
               "leg": 3,
@@ -4201,7 +4204,7 @@
               "split_rank": 4,
               "split_record": false,
               "status": "ok",
-              "raw_name_grade": "田尻明3"
+              "raw_name_grade": "田尻明(3)"
             },
             {
               "leg": 4,
@@ -4213,7 +4216,7 @@
               "split_rank": 4,
               "split_record": false,
               "status": "ok",
-              "raw_name_grade": "柿本和花3"
+              "raw_name_grade": "柿本和花(3)"
             },
             {
               "leg": 5,
@@ -4225,7 +4228,7 @@
               "split_rank": 1,
               "split_record": false,
               "status": "ok",
-              "raw_name_grade": "中尾美空2"
+              "raw_name_grade": "中尾美空(2)"
             }
           ]
         },
@@ -4244,7 +4247,7 @@
               "split_rank": 1,
               "split_record": false,
               "status": "ok",
-              "raw_name_grade": "松山悠南3"
+              "raw_name_grade": "松山悠南(3)"
             },
             {
               "leg": 2,
@@ -4256,7 +4259,7 @@
               "split_rank": 3,
               "split_record": false,
               "status": "ok",
-              "raw_name_grade": "中尾彩朱2"
+              "raw_name_grade": "中尾彩朱(2)"
             },
             {
               "leg": 3,
@@ -4268,7 +4271,7 @@
               "split_rank": 7,
               "split_record": false,
               "status": "ok",
-              "raw_name_grade": "宮本奈英1"
+              "raw_name_grade": "宮本奈英(1)"
             },
             {
               "leg": 4,
@@ -4280,7 +4283,7 @@
               "split_rank": 5,
               "split_record": false,
               "status": "ok",
-              "raw_name_grade": "髙田春陽2"
+              "raw_name_grade": "髙田春陽(2)"
             },
             {
               "leg": 5,
@@ -4292,7 +4295,7 @@
               "split_rank": 2,
               "split_record": false,
               "status": "ok",
-              "raw_name_grade": "松山杏海1"
+              "raw_name_grade": "松山杏海(1)"
             }
           ]
         },
@@ -4311,7 +4314,7 @@
               "split_rank": 6,
               "split_record": false,
               "status": "ok",
-              "raw_name_grade": "東果凛2"
+              "raw_name_grade": "東果凛(2)"
             },
             {
               "leg": 2,
@@ -4323,7 +4326,7 @@
               "split_rank": 2,
               "split_record": false,
               "status": "ok",
-              "raw_name_grade": "高木心菜3"
+              "raw_name_grade": "高木心菜(3)"
             },
             {
               "leg": 3,
@@ -4335,7 +4338,7 @@
               "split_rank": 3,
               "split_record": false,
               "status": "ok",
-              "raw_name_grade": "辻美空1"
+              "raw_name_grade": "辻美空(1)"
             },
             {
               "leg": 4,
@@ -4347,7 +4350,7 @@
               "split_rank": 1,
               "split_record": false,
               "status": "ok",
-              "raw_name_grade": "三嶋悠里3"
+              "raw_name_grade": "三嶋悠里(3)"
             },
             {
               "leg": 5,
@@ -4359,7 +4362,7 @@
               "split_rank": 4,
               "split_record": false,
               "status": "ok",
-              "raw_name_grade": "西澤葵3"
+              "raw_name_grade": "西澤葵(3)"
             }
           ]
         },
@@ -4378,7 +4381,7 @@
               "split_rank": 5,
               "split_record": false,
               "status": "ok",
-              "raw_name_grade": "本山怜実3"
+              "raw_name_grade": "本山怜実(3)"
             },
             {
               "leg": 2,
@@ -4390,7 +4393,7 @@
               "split_rank": 6,
               "split_record": false,
               "status": "ok",
-              "raw_name_grade": "中西萌唯2"
+              "raw_name_grade": "中西萌唯(2)"
             },
             {
               "leg": 3,
@@ -4402,7 +4405,7 @@
               "split_rank": 2,
               "split_record": false,
               "status": "ok",
-              "raw_name_grade": "片山佳音1"
+              "raw_name_grade": "片山佳音(1)"
             },
             {
               "leg": 4,
@@ -4414,7 +4417,7 @@
               "split_rank": 2,
               "split_record": false,
               "status": "ok",
-              "raw_name_grade": "時任幸菜2"
+              "raw_name_grade": "時任幸菜(2)"
             },
             {
               "leg": 5,
@@ -4426,7 +4429,7 @@
               "split_rank": 3,
               "split_record": false,
               "status": "ok",
-              "raw_name_grade": "武重安奈3"
+              "raw_name_grade": "武重安奈(3)"
             }
           ]
         },
@@ -4445,31 +4448,31 @@
               "split_rank": 8,
               "split_record": false,
               "status": "ok",
-              "raw_name_grade": "田畑結愛3"
+              "raw_name_grade": "田畑結愛(3)"
             },
             {
               "leg": 2,
               "name": "平山果朋",
-              "grade": 2,
+              "grade": 1,
               "split": "6:55",
               "cumulative": "18:13",
               "passing_rank": 7,
               "split_rank": 4,
               "split_record": false,
               "status": "ok",
-              "raw_name_grade": "平山果朋2"
+              "raw_name_grade": "平山果朋(1)"
             },
             {
               "leg": 3,
               "name": "坂本杏奈",
-              "grade": 1,
+              "grade": 3,
               "split": "7:20",
               "cumulative": "25:33",
               "passing_rank": 6,
               "split_rank": 5,
               "split_record": false,
               "status": "ok",
-              "raw_name_grade": "坂本杏奈1"
+              "raw_name_grade": "坂本杏奈(3)"
             },
             {
               "leg": 4,
@@ -4481,19 +4484,19 @@
               "split_rank": 2,
               "split_record": false,
               "status": "ok",
-              "raw_name_grade": "三良礼愛3"
+              "raw_name_grade": "三良礼愛(3)"
             },
             {
               "leg": 5,
               "name": "川下結音",
-              "grade": 3,
+              "grade": 2,
               "split": "11:57",
               "cumulative": "44:58",
               "passing_rank": 5,
               "split_rank": 7,
               "split_record": false,
               "status": "ok",
-              "raw_name_grade": "川下結音3"
+              "raw_name_grade": "川下結音(2)"
             }
           ]
         },
@@ -4505,62 +4508,62 @@
             {
               "leg": 1,
               "name": "鹿子木歩",
-              "grade": 3,
+              "grade": 1,
               "split": "10:33",
               "cumulative": "10:33",
               "passing_rank": 4,
               "split_rank": 4,
               "split_record": false,
               "status": "ok",
-              "raw_name_grade": "鹿子木歩3"
+              "raw_name_grade": "鹿子木歩(1)"
             },
             {
               "leg": 2,
               "name": "坂口穂波",
-              "grade": 1,
+              "grade": 3,
               "split": "6:59",
               "cumulative": "17:32",
               "passing_rank": 3,
               "split_rank": 5,
               "split_record": false,
               "status": "ok",
-              "raw_name_grade": "坂口穂波1"
+              "raw_name_grade": "坂口穂波(3)"
             },
             {
               "leg": 3,
               "name": "大木夏帆",
-              "grade": 3,
+              "grade": 2,
               "split": "7:06",
               "cumulative": "24:38",
               "passing_rank": 3,
               "split_rank": 1,
               "split_record": false,
               "status": "ok",
-              "raw_name_grade": "大木夏帆3"
+              "raw_name_grade": "大木夏帆(2)"
             },
             {
               "leg": 4,
               "name": "小山にこり",
-              "grade": 2,
+              "grade": 1,
               "split": "8:33",
               "cumulative": "33:11",
               "passing_rank": 6,
               "split_rank": 11,
               "split_record": false,
               "status": "ok",
-              "raw_name_grade": "小山にこり2"
+              "raw_name_grade": "小山にこり(1)"
             },
             {
               "leg": 5,
-              "name": "出村紗雪",
-              "grade": 1,
+              "name": "中岡希海",
+              "grade": 2,
               "split": "12:08",
               "cumulative": "45:19",
               "passing_rank": 6,
               "split_rank": 9,
               "split_record": false,
               "status": "ok",
-              "raw_name_grade": "出村紗雪1"
+              "raw_name_grade": "中岡希海(2)"
             }
           ]
         }
@@ -5003,7 +5006,7 @@
               "split_rank": 2,
               "split_record": false,
               "status": "ok",
-              "raw_name_grade": "川原芽吹2"
+              "raw_name_grade": "川原芽吹(2)"
             },
             {
               "leg": 2,
@@ -5015,7 +5018,7 @@
               "split_rank": 1,
               "split_record": false,
               "status": "ok",
-              "raw_name_grade": "内田愛祐3"
+              "raw_name_grade": "内田愛祐(3)"
             },
             {
               "leg": 3,
@@ -5027,7 +5030,7 @@
               "split_rank": 2,
               "split_record": false,
               "status": "ok",
-              "raw_name_grade": "辻美空3"
+              "raw_name_grade": "辻美空(3)"
             },
             {
               "leg": 4,
@@ -5039,7 +5042,7 @@
               "split_rank": 1,
               "split_record": false,
               "status": "ok",
-              "raw_name_grade": "内田千惺3"
+              "raw_name_grade": "内田千惺(3)"
             },
             {
               "leg": 5,
@@ -5051,7 +5054,7 @@
               "split_rank": 2,
               "split_record": false,
               "status": "ok",
-              "raw_name_grade": "水本星夏2"
+              "raw_name_grade": "水本星夏(2)"
             }
           ]
         },
@@ -5070,7 +5073,7 @@
               "split_rank": 6,
               "split_record": false,
               "status": "ok",
-              "raw_name_grade": "稗島葵音3"
+              "raw_name_grade": "稗島葵音(3)"
             },
             {
               "leg": 2,
@@ -5082,7 +5085,7 @@
               "split_rank": 9,
               "split_record": false,
               "status": "ok",
-              "raw_name_grade": "米田美空2"
+              "raw_name_grade": "米田美空(2)"
             },
             {
               "leg": 3,
@@ -5094,7 +5097,7 @@
               "split_rank": 1,
               "split_record": false,
               "status": "ok",
-              "raw_name_grade": "福山結衣1"
+              "raw_name_grade": "福山結衣(1)"
             },
             {
               "leg": 4,
@@ -5106,7 +5109,7 @@
               "split_rank": 3,
               "split_record": false,
               "status": "ok",
-              "raw_name_grade": "堀田稔々2"
+              "raw_name_grade": "堀田稔々(2)"
             },
             {
               "leg": 5,
@@ -5118,7 +5121,7 @@
               "split_rank": 4,
               "split_record": false,
               "status": "ok",
-              "raw_name_grade": "平山果朋3"
+              "raw_name_grade": "平山果朋(3)"
             }
           ]
         },
@@ -5137,7 +5140,7 @@
               "split_rank": 8,
               "split_record": false,
               "status": "ok",
-              "raw_name_grade": "坂村優奈3"
+              "raw_name_grade": "坂村優奈(3)"
             },
             {
               "leg": 2,
@@ -5149,7 +5152,7 @@
               "split_rank": 5,
               "split_record": false,
               "status": "ok",
-              "raw_name_grade": "榎本佳澄2"
+              "raw_name_grade": "榎本佳澄(2)"
             },
             {
               "leg": 3,
@@ -5161,7 +5164,7 @@
               "split_rank": 4,
               "split_record": false,
               "status": "ok",
-              "raw_name_grade": "藤野四季3"
+              "raw_name_grade": "藤野四季(3)"
             },
             {
               "leg": 4,
@@ -5173,7 +5176,7 @@
               "split_rank": 4,
               "split_record": false,
               "status": "ok",
-              "raw_name_grade": "伊牟田百香3"
+              "raw_name_grade": "伊牟田百香(3)"
             },
             {
               "leg": 5,
@@ -5185,7 +5188,7 @@
               "split_rank": 3,
               "split_record": false,
               "status": "ok",
-              "raw_name_grade": "上村百叶2"
+              "raw_name_grade": "上村百叶(2)"
             }
           ]
         },
@@ -5204,7 +5207,7 @@
               "split_rank": 9,
               "split_record": false,
               "status": "ok",
-              "raw_name_grade": "中村羽音2"
+              "raw_name_grade": "中村羽音(2)"
             },
             {
               "leg": 2,
@@ -5216,11 +5219,11 @@
               "split_rank": 4,
               "split_record": false,
               "status": "ok",
-              "raw_name_grade": "山川綾1"
+              "raw_name_grade": "山川綾(1)"
             },
             {
               "leg": 3,
-              "name": "濱北愛",
+              "name": "濵北愛",
               "grade": 1,
               "split": "7:13",
               "cumulative": "25:24",
@@ -5228,7 +5231,7 @@
               "split_rank": 3,
               "split_record": false,
               "status": "ok",
-              "raw_name_grade": "濱北愛1"
+              "raw_name_grade": "濵北愛(1)"
             },
             {
               "leg": 4,
@@ -5240,7 +5243,7 @@
               "split_rank": 7,
               "split_record": false,
               "status": "ok",
-              "raw_name_grade": "村里唯花2"
+              "raw_name_grade": "村里唯花(2)"
             },
             {
               "leg": 5,
@@ -5252,7 +5255,7 @@
               "split_rank": 5,
               "split_record": false,
               "status": "ok",
-              "raw_name_grade": "猿渡愛梨2"
+              "raw_name_grade": "猿渡愛梨(2)"
             }
           ]
         },
@@ -5264,26 +5267,26 @@
             {
               "leg": 1,
               "name": "福島志帆",
-              "grade": 3,
+              "grade": 1,
               "split": "11:15",
               "cumulative": "11:15",
               "passing_rank": 11,
               "split_rank": 11,
               "split_record": false,
               "status": "ok",
-              "raw_name_grade": "福島志帆3"
+              "raw_name_grade": "福島志帆(1)"
             },
             {
               "leg": 2,
               "name": "山道咲空",
-              "grade": 1,
+              "grade": 3,
               "split": "6:56",
               "cumulative": "18:11",
               "passing_rank": 6,
               "split_rank": 2,
               "split_record": false,
               "status": "ok",
-              "raw_name_grade": "山道咲空1"
+              "raw_name_grade": "山道咲空(3)"
             },
             {
               "leg": 3,
@@ -5295,37 +5298,37 @@
               "split_rank": 5,
               "split_record": false,
               "status": "ok",
-              "raw_name_grade": "吉本琉音3"
+              "raw_name_grade": "吉本琉音(3)"
             },
             {
               "leg": 4,
               "name": "佐藤妃葵",
-              "grade": 3,
+              "grade": 2,
               "split": "7:23",
               "cumulative": "33:07",
               "passing_rank": 3,
               "split_rank": 2,
               "split_record": false,
               "status": "ok",
-              "raw_name_grade": "佐藤妃葵3"
+              "raw_name_grade": "佐藤妃葵(2)"
             },
             {
               "leg": 5,
-              "name": "内野花笑",
-              "grade": 2,
+              "name": "内野沙笑",
+              "grade": 1,
               "split": "11:49",
               "cumulative": "44:56",
               "passing_rank": 5,
               "split_rank": 7,
               "split_record": false,
               "status": "ok",
-              "raw_name_grade": "内野花笑2"
+              "raw_name_grade": "内野沙笑(1)"
             }
           ]
         },
         {
           "rank": 6,
-          "team": "合津",
+          "team": "荒尾四",
           "total": "45:09",
           "legs": [
             {
@@ -5338,7 +5341,7 @@
               "split_rank": 5,
               "split_record": false,
               "status": "ok",
-              "raw_name_grade": "松山杏海3"
+              "raw_name_grade": "松山杏海(3)"
             },
             {
               "leg": 2,
@@ -5350,19 +5353,19 @@
               "split_rank": 10,
               "split_record": false,
               "status": "ok",
-              "raw_name_grade": "宮本奈留3"
+              "raw_name_grade": "宮本奈留(3)"
             },
             {
               "leg": 3,
               "name": "宮本奈英",
-              "grade": 1,
+              "grade": 3,
               "split": "7:46",
               "cumulative": "25:36",
               "passing_rank": 5,
               "split_rank": 9,
               "split_record": false,
               "status": "ok",
-              "raw_name_grade": "宮本奈英1"
+              "raw_name_grade": "宮本奈英(3)"
             },
             {
               "leg": 4,
@@ -5374,19 +5377,19 @@
               "split_rank": 6,
               "split_record": false,
               "status": "ok",
-              "raw_name_grade": "池田結衣3"
+              "raw_name_grade": "池田結衣(3)"
             },
             {
               "leg": 5,
-              "name": "中尾彩朱",
-              "grade": 3,
+              "name": "中尾杏朱",
+              "grade": 1,
               "split": "11:49",
               "cumulative": "45:09",
               "passing_rank": 6,
               "split_rank": 7,
               "split_record": false,
               "status": "ok",
-              "raw_name_grade": "中尾彩朱3"
+              "raw_name_grade": "中尾杏朱(1)"
             }
           ]
         }

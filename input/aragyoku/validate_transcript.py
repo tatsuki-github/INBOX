@@ -39,7 +39,7 @@ def validate_times(year_entry: dict, leg_count: int) -> list[str]:
             cum_s = parse_time_to_seconds(leg_row.get("cumulative"))
             split_s = parse_time_to_seconds(leg_row.get("split"))
             if cum_s is None or split_s is None:
-                if leg_row.get("status") not in {"dnf", "dns"}:
+                if leg_row.get("status") not in {"dnf", "dns", "unknown"}:
                     notes.append(f"{team['team']} leg{leg_row['leg']}: missing time")
                 continue
             if prev and cum_s != prev + split_s:
@@ -55,13 +55,17 @@ def validate_times(year_entry: dict, leg_count: int) -> list[str]:
 
 
 def validate_team_order(year_entry: dict) -> list[str]:
-    """V-3 rank sequence and total monotonicity."""
+    """V-3 rank sequence, unique schools, and total monotonicity."""
     notes: list[str] = []
     teams = year_entry["teams"]
     ranks = [t["rank"] for t in teams]
     expected = list(range(1, len(teams) + 1))
     if ranks != expected:
         notes.append(f"ranks not 1..N: {ranks}")
+    school_keys = [school_key(team["team"]) for team in teams]
+    duplicate_schools = sorted({key for key in school_keys if school_keys.count(key) > 1})
+    if duplicate_schools:
+        notes.append(f"duplicate schools: {duplicate_schools}")
     totals = []
     for team in teams:
         final_leg = team["legs"][-1]
