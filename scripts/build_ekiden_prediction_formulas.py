@@ -103,23 +103,40 @@ def build_rows(event: str, gender: str, sb: dict, ekiden: dict) -> list[dict]:
 def make_html(event: str, gender: str, rows: list[dict], out: Path) -> None:
     by_distance = {}
     for r in rows:
-        by_distance.setdefault(r["distance"], []).append(r["ratio"])
-    coeff = {d: quantile(vals, 0.9) for d, vals in by_distance.items()}
+        if event == "1500m":
+            r["simple_base"] = r["sb"] * r["distance"] * 1000 / 1500
+            by_distance.setdefault(r["distance"], []).append(r["time"] - r["simple_base"])
+        else:
+            by_distance.setdefault(r["distance"], []).append(r["ratio"])
+    coeff = {d: quantile(vals, 0.8) for d, vals in by_distance.items()}
     summary = f"{gender} / {event} / 突合 {len(rows)}件 / 区間 {len(coeff)}種類"
     formulas = []
     for d in sorted(coeff):
         n = len(by_distance[d])
-        formulas.append(f"<tr><td>{d:g}km</td><td>{n}</td><td>{coeff[d]:.4f}</td><td>予測秒 = SB秒 × ({d:g}km ÷ {EVENT_DISTANCE[event]:g}m)^{RIEGEL_EXPONENT:.2f} × {coeff[d]:.4f}</td></tr>")
+        if event == "1500m":
+            formula = f"予測秒 = SB秒 × ({d:g}km ÷ 1.5km) + {coeff[d]:.2f}秒"
+            value = f"{coeff[d]:.2f}秒"
+        else:
+            formula = f"予測秒 = SB秒 × ({d:g}km ÷ {EVENT_DISTANCE[event]:g}m)^{RIEGEL_EXPONENT:.2f} × {coeff[d]:.4f}"
+            value = f"{coeff[d]:.4f}"
+        formulas.append(f"<tr><td>{d:g}km</td><td>{n}</td><td>{value}</td><td>{formula}</td></tr>")
     examples = []
     for sb_sec in [120.0, 150.0, 180.0, 270.0, 300.0]:
         for d in sorted(coeff):
-            pred = sb_sec * (d * 1000 / EVENT_DISTANCE[event]) ** RIEGEL_EXPONENT * coeff[d]
+            if event == "1500m":
+                pred = sb_sec * d * 1000 / 1500 + coeff[d]
+            else:
+                pred = sb_sec * (d * 1000 / EVENT_DISTANCE[event]) ** RIEGEL_EXPONENT * coeff[d]
             examples.append(f"<tr><td>{fmt(sb_sec)}</td><td>{d:g}km</td><td>{fmt(pred)}</td></tr>")
     detail = []
     for r in sorted(rows, key=lambda x: (x["distance"], x["year"], x["name"])):
-        pred = r["baseline"] * coeff[r["distance"]]
+        pred = r["simple_base"] + coeff[r["distance"]] if event == "1500m" else r["baseline"] * coeff[r["distance"]]
         detail.append("<tr>" + "".join(f"<td>{html.escape(str(v))}</td>" for v in [r["year"], r["name"], r["school"], fmt(r["sb"]), f"{r['distance']:g}km", f"{r['leg']}区", fmt(r["time"]), fmt(pred), f"{r['time']-pred:+.1f}"]) + "</tr>")
-    doc = f'''<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{gender} {event} 駅伝予測式</title><style>body{{font-family:system-ui,-apple-system,sans-serif;background:#f7f8fa;color:#1f2937;margin:0}}main{{max-width:1400px;margin:auto;padding:32px}}h1{{margin-bottom:8px}}h2{{margin-top:28px}}.summary,.note,.formula{{background:white;border:1px solid #dfe3e8;border-radius:12px;padding:16px;margin:16px 0}}.note{{background:#fffdf3;border-left:4px solid #c9961a}}table{{border-collapse:collapse;width:100%;background:white;white-space:nowrap;font-size:14px}}th,td{{padding:8px 10px;border-bottom:1px solid #edf0f2;text-align:left}}th{{background:#eef2f5;position:sticky;top:0}}.wrap{{overflow:auto;border:1px solid #dfe3e8;border-radius:12px}}code{{font-size:1.05em}}</style></head><body><main><h1>{gender} {event}：駅伝区間予測式</h1><p>{summary}</p><div class="note"><strong>90%設定：</strong>実績タイム ÷ Riegel基準値の90パーセンタイルを係数に採用。過去の突合データの約90%が、この予測タイム以下に収まるようにしています。</div><div class="formula"><code>予測秒 = SB秒 × (駅伝距離 ÷ {EVENT_DISTANCE[event]:g}m)^{RIEGEL_EXPONENT:.2f} × 区間係数</code><br>※駅伝距離は、男子3km/2.855km、女子3km/1.855km/2kmの区分で計算。</div><h2>区間別係数</h2><div class="wrap"><table><thead><tr><th>駅伝距離</th><th>サンプル数</th><th>90%係数</th><th>式</th></tr></thead><tbody>{''.join(formulas)}</tbody></table></div><h2>計算例</h2><div class="wrap"><table><thead><tr><th>SB</th><th>駅伝距離</th><th>予測タイム</th></tr></thead><tbody>{''.join(examples)}</tbody></table></div><h2>突合データ</h2><div class="wrap"><table><thead><tr><th>年度</th><th>選手</th><th>所属</th><th>{event} SB</th><th>駅伝距離</th><th>区間</th><th>実績</th><th>90%予測</th><th>実績−予測</th></tr></thead><tbody>{''.join(detail)}</tbody></table></div><p>注：トラックSBと駅伝は路面・コース・気象・タスキ条件が異なります。係数はこのリポジトリ内の過去データに基づく目安です。</p></main></body></html>'''
+    if event == "1500m":
+        formula_text = "予測秒 = SB秒 × (駅伝距離 ÷ 1500m) + X秒"
+    else:
+        formula_text = f"予測秒 = SB秒 × (駅伝距離 ÷ {EVENT_DISTANCE[event]:g}m)^{RIEGEL_EXPONENT:.2f} × 区間係数"
+    doc = f'''<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{gender} {event} 駅伝予測式</title><style>body{{font-family:system-ui,-apple-system,sans-serif;background:#f7f8fa;color:#1f2937;margin:0}}main{{max-width:1400px;margin:auto;padding:32px}}h1{{margin-bottom:8px}}h2{{margin-top:28px}}.summary,.note,.formula{{background:white;border:1px solid #dfe3e8;border-radius:12px;padding:16px;margin:16px 0}}.note{{background:#fffdf3;border-left:4px solid #c9961a}}table{{border-collapse:collapse;width:100%;background:white;white-space:nowrap;font-size:14px}}th,td{{padding:8px 10px;border-bottom:1px solid #edf0f2;text-align:left}}th{{background:#eef2f5;position:sticky;top:0}}.wrap{{overflow:auto;border:1px solid #dfe3e8;border-radius:12px}}code{{font-size:1.05em}}</style></head><body><main><h1>{gender} {event}：駅伝区間予測式</h1><p>{summary}</p><div class="note"><strong>80%設定：</strong>過去実績の残差または比率の80パーセンタイルを採用し、過去データの約80%が予測タイム以内に収まる設定です。</div><div class="formula"><code>{formula_text}</code><br>※駅伝距離は、男子3km/2.855km、女子3km/1.855km/2kmの区分で計算。</div><h2>区間別係数</h2><div class="wrap"><table><thead><tr><th>駅伝距離</th><th>サンプル数</th><th>{'X秒（80%残差）' if event == '1500m' else '80%係数'}</th><th>式</th></tr></thead><tbody>{''.join(formulas)}</tbody></table></div><h2>計算例</h2><div class="wrap"><table><thead><tr><th>SB</th><th>駅伝距離</th><th>予測タイム</th></tr></thead><tbody>{''.join(examples)}</tbody></table></div><h2>突合データ</h2><div class="wrap"><table><thead><tr><th>年度</th><th>選手</th><th>所属</th><th>{event} SB</th><th>駅伝距離</th><th>区間</th><th>実績</th><th>80%予測</th><th>実績−予測</th></tr></thead><tbody>{''.join(detail)}</tbody></table></div><p>注：トラックSBと駅伝は路面・コース・気象・タスキ条件が異なります。係数はこのリポジトリ内の過去データに基づく目安です。</p></main></body></html>'''
     out.write_text(doc, encoding="utf-8")
 
 
