@@ -13,7 +13,8 @@ WOMEN_LEG_DISTANCES = [
     {"leg": 5, "distance_km": 3.0},
 ]
 
-# Standard men's course (6 legs); per-year overrides allowed in transcript meta.
+# Legacy fallback only. Analyses must use men_leg_distances_for_year(), which
+# applies the year-specific course definition documented in docs/.
 MEN_LEG_DISTANCES = [
     {"leg": 1, "distance_km": 3.0},
     {"leg": 2, "distance_km": 2.0},
@@ -22,6 +23,29 @@ MEN_LEG_DISTANCES = [
     {"leg": 5, "distance_km": 2.0},
     {"leg": 6, "distance_km": 3.0},
 ]
+
+MEN_LEG_DISTANCES_2023_OR_EARLIER = [
+    {"leg": 1, "distance_km": 3.95},
+    {"leg": 2, "distance_km": 3.05},
+    {"leg": 3, "distance_km": 2.855},
+    {"leg": 4, "distance_km": 2.855},
+    {"leg": 5, "distance_km": 3.0},
+    {"leg": 6, "distance_km": 4.0},
+]
+
+MEN_LEG_DISTANCES_2024_OR_LATER = [
+    {"leg": 1, "distance_km": 3.0},
+    {"leg": 2, "distance_km": 2.855},
+    {"leg": 3, "distance_km": 3.0},
+    {"leg": 4, "distance_km": 3.0},
+    {"leg": 5, "distance_km": 2.855},
+    {"leg": 6, "distance_km": 3.0},
+]
+
+
+def men_leg_distances_for_year(year: int) -> list[dict]:
+    """Return the user-confirmed men's course definition for a given year."""
+    return list(MEN_LEG_DISTANCES_2023_OR_EARLIER if year <= 2023 else MEN_LEG_DISTANCES_2024_OR_LATER)
 
 ATHLETE_CSV_COLUMNS = [
     "year",

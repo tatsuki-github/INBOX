@@ -65,6 +65,11 @@ SOURCE_GLOBS: list[tuple[str, list[str], str]] = [
         "荒玉中体連駅伝歴代の画像・OCR 入口",
     ),
     (
+        "docs/aragyoku-ekiden-distance-definitions.md",
+        ["ekiden", "schema", "athlete_records"],
+        "荒玉駅伝の年度別・男女別区間距離の正本定義",
+    ),
+    (
         "input/external/notion/databases/荒玉中体連駅伝歴代/rows.json",
         ["ekiden", "athlete_records"],
         "荒玉中体連駅伝歴代（岱明順位・記録）",
@@ -141,6 +146,11 @@ QUERY_HINTS: list[tuple[str, str, list[str]]] = [
             "source:input/external/media-manifest.json",
             "source:input/external/notion/media/ekiden-history/INDEX.md",
         ],
+    ),
+    (
+        "荒玉駅伝の区間距離は？",
+        "docs/aragyoku-ekiden-distance-definitions.md の年度別・男女別区間距離定義を優先する",
+        ["topic:ekiden", "source:docs/aragyoku-ekiden-distance-definitions.md"],
     ),
 ]
 

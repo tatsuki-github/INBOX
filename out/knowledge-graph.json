@@ -3699,6 +3699,22 @@
       ],
       "refs": [],
       "hint": "JSON Schema とデータモデル"
+    },
+    {
+      "id": "source:docs/aragyoku-ekiden-distance-definitions.md",
+      "type": "Source",
+      "label": "aragyoku-ekiden-distance-definitions.md",
+      "topics": ["athlete_records", "ekiden", "schema"],
+      "refs": ["docs/aragyoku-ekiden-distance-definitions.md"],
+      "hint": "荒玉駅伝の年度別・男女別区間距離の正本定義"
+    },
+    {
+      "id": "query:7:荒玉駅伝の区間距離は？",
+      "type": "QueryHint",
+      "label": "荒玉駅伝の区間距離は？",
+      "topics": [],
+      "refs": [],
+      "hint": "docs/aragyoku-ekiden-distance-definitions.md の年度別・男女別区間距離定義を優先する"
     }
   ],
   "edges": [
@@ -5365,6 +5381,26 @@
     {
       "from": "query:6:荒玉駅伝の歴代は？",
       "to": "topic:ekiden",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:athlete_records",
+      "to": "source:docs/aragyoku-ekiden-distance-definitions.md",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:ekiden",
+      "to": "source:docs/aragyoku-ekiden-distance-definitions.md",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:schema",
+      "to": "source:docs/aragyoku-ekiden-distance-definitions.md",
+      "rel": "search_here"
+    },
+    {
+      "from": "query:7:荒玉駅伝の区間距離は？",
+      "to": "source:docs/aragyoku-ekiden-distance-definitions.md",
       "rel": "search_here"
     },
     {
