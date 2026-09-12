@@ -5,27 +5,27 @@
     "legs": [
       {
         "leg": 1,
-        "distance_km": 3.0
+        "distance_km": 3
       },
       {
         "leg": 2,
-        "distance_km": 2.0
+        "distance_km": 2
       },
       {
         "leg": 3,
-        "distance_km": 2.0
+        "distance_km": 2
       },
       {
         "leg": 4,
-        "distance_km": 2.0
+        "distance_km": 2
       },
       {
         "leg": 5,
-        "distance_km": 2.0
+        "distance_km": 2
       },
       {
         "leg": 6,
-        "distance_km": 3.0
+        "distance_km": 3
       }
     ],
     "schema": "full-transcript-v1"
@@ -6859,97 +6859,73 @@
               "leg": 1,
               "name": "unknown",
               "grade": null,
-              "split": null,
-              "cumulative": null,
-              "passing_rank": null,
-              "split_rank": null,
+              "split": "12:41",
+              "cumulative": "12:41",
+              "passing_rank": 3,
+              "split_rank": 3,
               "split_record": false,
-              "status": "unknown",
-              "raw_name_grade": "unknown",
-              "computed": {
-                "split_rank": null,
-                "passing_rank": null
-              }
+              "status": "ok",
+              "raw_name_grade": "unknown"
             },
             {
               "leg": 2,
               "name": "unknown",
               "grade": null,
-              "split": null,
-              "cumulative": null,
-              "passing_rank": null,
-              "split_rank": null,
+              "split": "9:34",
+              "cumulative": "22:15",
+              "passing_rank": 4,
+              "split_rank": 2,
               "split_record": false,
-              "status": "unknown",
-              "raw_name_grade": "unknown",
-              "computed": {
-                "split_rank": null,
-                "passing_rank": null
-              }
+              "status": "ok",
+              "raw_name_grade": "unknown"
             },
             {
               "leg": 3,
               "name": "unknown",
               "grade": null,
-              "split": null,
-              "cumulative": null,
-              "passing_rank": null,
-              "split_rank": null,
-              "split_record": false,
-              "status": "unknown",
-              "raw_name_grade": "unknown",
-              "computed": {
-                "split_rank": null,
-                "passing_rank": null
-              }
+              "split": "8:53",
+              "cumulative": "31:08",
+              "passing_rank": 1,
+              "split_rank": 1,
+              "split_record": true,
+              "status": "ok",
+              "raw_name_grade": "unknown"
             },
             {
               "leg": 4,
               "name": "unknown",
               "grade": null,
-              "split": null,
-              "cumulative": null,
-              "passing_rank": null,
-              "split_rank": null,
-              "split_record": false,
-              "status": "unknown",
-              "raw_name_grade": "unknown",
-              "computed": {
-                "split_rank": null,
-                "passing_rank": null
-              }
+              "split": "9:22",
+              "cumulative": "40:30",
+              "passing_rank": 1,
+              "split_rank": 1,
+              "split_record": true,
+              "status": "ok",
+              "raw_name_grade": "unknown"
             },
             {
               "leg": 5,
               "name": "unknown",
               "grade": null,
-              "split": null,
-              "cumulative": null,
-              "passing_rank": null,
-              "split_rank": null,
+              "split": "9:40",
+              "cumulative": "50:10",
+              "passing_rank": 1,
+              "split_rank": 2,
               "split_record": false,
-              "status": "unknown",
-              "raw_name_grade": "unknown",
-              "computed": {
-                "split_rank": null,
-                "passing_rank": null
-              }
+              "status": "ok",
+              "raw_name_grade": "unknown"
             },
             {
               "leg": 6,
               "name": "unknown",
               "grade": null,
-              "split": null,
-              "cumulative": null,
-              "passing_rank": null,
-              "split_rank": null,
-              "split_record": false,
-              "status": "unknown",
-              "raw_name_grade": "unknown",
-              "computed": {
-                "split_rank": null,
-                "passing_rank": null
-              }
+              "split": "12:43",
+              "cumulative": "62:53",
+              "passing_rank": 1,
+              "split_rank": 1,
+              "split_record": true,
+              "status": "ok",
+              "raw_name_grade": "unknown"
             }
           ]
         },
@@ -6962,97 +6938,73 @@
               "leg": 1,
               "name": "unknown",
               "grade": null,
-              "split": null,
-              "cumulative": null,
-              "passing_rank": null,
-              "split_rank": null,
-              "split_record": false,
-              "status": "unknown",
-              "raw_name_grade": "unknown",
-              "computed": {
-                "split_rank": null,
-                "passing_rank": null
-              }
+              "split": "12:32",
+              "cumulative": "12:32",
+              "passing_rank": 1,
+              "split_rank": 1,
+              "split_record": true,
+              "status": "ok",
+              "raw_name_grade": "unknown"
             },
             {
               "leg": 2,
               "name": "unknown",
               "grade": null,
-              "split": null,
-              "cumulative": null,
-              "passing_rank": null,
-              "split_rank": null,
+              "split": "9:37",
+              "cumulative": "22:09",
+              "passing_rank": 2,
+              "split_rank": 4,
               "split_record": false,
-              "status": "unknown",
-              "raw_name_grade": "unknown",
-              "computed": {
-                "split_rank": null,
-                "passing_rank": null
-              }
+              "status": "ok",
+              "raw_name_grade": "unknown"
             },
             {
               "leg": 3,
               "name": "unknown",
               "grade": null,
-              "split": null,
-              "cumulative": null,
-              "passing_rank": null,
-              "split_rank": null,
+              "split": "9:01",
+              "cumulative": "31:10",
+              "passing_rank": 2,
+              "split_rank": 2,
               "split_record": false,
-              "status": "unknown",
-              "raw_name_grade": "unknown",
-              "computed": {
-                "split_rank": null,
-                "passing_rank": null
-              }
+              "status": "ok",
+              "raw_name_grade": "unknown"
             },
             {
               "leg": 4,
               "name": "unknown",
               "grade": null,
-              "split": null,
-              "cumulative": null,
-              "passing_rank": null,
-              "split_rank": null,
+              "split": "9:30",
+              "cumulative": "40:40",
+              "passing_rank": 2,
+              "split_rank": 3,
               "split_record": false,
-              "status": "unknown",
-              "raw_name_grade": "unknown",
-              "computed": {
-                "split_rank": null,
-                "passing_rank": null
-              }
+              "status": "ok",
+              "raw_name_grade": "unknown"
             },
             {
               "leg": 5,
               "name": "unknown",
               "grade": null,
-              "split": null,
-              "cumulative": null,
-              "passing_rank": null,
-              "split_rank": null,
+              "split": "9:42",
+              "cumulative": "50:22",
+              "passing_rank": 2,
+              "split_rank": 3,
               "split_record": false,
-              "status": "unknown",
-              "raw_name_grade": "unknown",
-              "computed": {
-                "split_rank": null,
-                "passing_rank": null
-              }
+              "status": "ok",
+              "raw_name_grade": "unknown"
             },
             {
               "leg": 6,
               "name": "unknown",
               "grade": null,
-              "split": null,
-              "cumulative": null,
-              "passing_rank": null,
-              "split_rank": null,
-              "split_record": false,
-              "status": "unknown",
-              "raw_name_grade": "unknown",
-              "computed": {
-                "split_rank": null,
-                "passing_rank": null
-              }
+              "split": "12:43",
+              "cumulative": "63:05",
+              "passing_rank": 2,
+              "split_rank": 1,
+              "split_record": true,
+              "status": "ok",
+              "raw_name_grade": "unknown"
             }
           ]
         },
@@ -7065,97 +7017,73 @@
               "leg": 1,
               "name": "unknown",
               "grade": null,
-              "split": null,
-              "cumulative": null,
-              "passing_rank": null,
-              "split_rank": null,
+              "split": "12:43",
+              "cumulative": "12:43",
+              "passing_rank": 5,
+              "split_rank": 5,
               "split_record": false,
-              "status": "unknown",
-              "raw_name_grade": "unknown",
-              "computed": {
-                "split_rank": null,
-                "passing_rank": null
-              }
+              "status": "ok",
+              "raw_name_grade": "unknown"
             },
             {
               "leg": 2,
               "name": "unknown",
               "grade": null,
-              "split": null,
-              "cumulative": null,
-              "passing_rank": null,
-              "split_rank": null,
-              "split_record": false,
-              "status": "unknown",
-              "raw_name_grade": "unknown",
-              "computed": {
-                "split_rank": null,
-                "passing_rank": null
-              }
+              "split": "9:25",
+              "cumulative": "22:08",
+              "passing_rank": 1,
+              "split_rank": 1,
+              "split_record": true,
+              "status": "ok",
+              "raw_name_grade": "unknown"
             },
             {
               "leg": 3,
               "name": "unknown",
               "grade": null,
-              "split": null,
-              "cumulative": null,
-              "passing_rank": null,
-              "split_rank": null,
+              "split": "9:11",
+              "cumulative": "31:19",
+              "passing_rank": 3,
+              "split_rank": 3,
               "split_record": false,
-              "status": "unknown",
-              "raw_name_grade": "unknown",
-              "computed": {
-                "split_rank": null,
-                "passing_rank": null
-              }
+              "status": "ok",
+              "raw_name_grade": "unknown"
             },
             {
               "leg": 4,
               "name": "unknown",
               "grade": null,
-              "split": null,
-              "cumulative": null,
-              "passing_rank": null,
-              "split_rank": null,
+              "split": "9:25",
+              "cumulative": "40:44",
+              "passing_rank": 3,
+              "split_rank": 2,
               "split_record": false,
-              "status": "unknown",
-              "raw_name_grade": "unknown",
-              "computed": {
-                "split_rank": null,
-                "passing_rank": null
-              }
+              "status": "ok",
+              "raw_name_grade": "unknown"
             },
             {
               "leg": 5,
               "name": "unknown",
               "grade": null,
-              "split": null,
-              "cumulative": null,
-              "passing_rank": null,
-              "split_rank": null,
+              "split": "9:44",
+              "cumulative": "50:28",
+              "passing_rank": 3,
+              "split_rank": 4,
               "split_record": false,
-              "status": "unknown",
-              "raw_name_grade": "unknown",
-              "computed": {
-                "split_rank": null,
-                "passing_rank": null
-              }
+              "status": "ok",
+              "raw_name_grade": "unknown"
             },
             {
               "leg": 6,
               "name": "unknown",
               "grade": null,
-              "split": null,
-              "cumulative": null,
-              "passing_rank": null,
-              "split_rank": null,
+              "split": "13:01",
+              "cumulative": "63:29",
+              "passing_rank": 3,
+              "split_rank": 3,
               "split_record": false,
-              "status": "unknown",
-              "raw_name_grade": "unknown",
-              "computed": {
-                "split_rank": null,
-                "passing_rank": null
-              }
+              "status": "ok",
+              "raw_name_grade": "unknown"
             }
           ]
         },
@@ -7168,97 +7096,73 @@
               "leg": 1,
               "name": "unknown",
               "grade": null,
-              "split": null,
-              "cumulative": null,
-              "passing_rank": null,
-              "split_rank": null,
+              "split": "12:55",
+              "cumulative": "12:55",
+              "passing_rank": 6,
+              "split_rank": 6,
               "split_record": false,
-              "status": "unknown",
-              "raw_name_grade": "unknown",
-              "computed": {
-                "split_rank": null,
-                "passing_rank": null
-              }
+              "status": "ok",
+              "raw_name_grade": "unknown"
             },
             {
               "leg": 2,
               "name": "unknown",
               "grade": null,
-              "split": null,
-              "cumulative": null,
-              "passing_rank": null,
-              "split_rank": null,
+              "split": "9:40",
+              "cumulative": "22:35",
+              "passing_rank": 5,
+              "split_rank": 5,
               "split_record": false,
-              "status": "unknown",
-              "raw_name_grade": "unknown",
-              "computed": {
-                "split_rank": null,
-                "passing_rank": null
-              }
+              "status": "ok",
+              "raw_name_grade": "unknown"
             },
             {
               "leg": 3,
               "name": "unknown",
               "grade": null,
-              "split": null,
-              "cumulative": null,
-              "passing_rank": null,
-              "split_rank": null,
+              "split": "9:14",
+              "cumulative": "31:49",
+              "passing_rank": 5,
+              "split_rank": 5,
               "split_record": false,
-              "status": "unknown",
-              "raw_name_grade": "unknown",
-              "computed": {
-                "split_rank": null,
-                "passing_rank": null
-              }
+              "status": "ok",
+              "raw_name_grade": "unknown"
             },
             {
               "leg": 4,
               "name": "unknown",
               "grade": null,
-              "split": null,
-              "cumulative": null,
-              "passing_rank": null,
-              "split_rank": null,
+              "split": "9:39",
+              "cumulative": "41:28",
+              "passing_rank": 5,
+              "split_rank": 6,
               "split_record": false,
-              "status": "unknown",
-              "raw_name_grade": "unknown",
-              "computed": {
-                "split_rank": null,
-                "passing_rank": null
-              }
+              "status": "ok",
+              "raw_name_grade": "unknown"
             },
             {
               "leg": 5,
               "name": "unknown",
               "grade": null,
-              "split": null,
-              "cumulative": null,
-              "passing_rank": null,
-              "split_rank": null,
-              "split_record": false,
-              "status": "unknown",
-              "raw_name_grade": "unknown",
-              "computed": {
-                "split_rank": null,
-                "passing_rank": null
-              }
+              "split": "9:37",
+              "cumulative": "51:05",
+              "passing_rank": 4,
+              "split_rank": 1,
+              "split_record": true,
+              "status": "ok",
+              "raw_name_grade": "unknown"
             },
             {
               "leg": 6,
               "name": "unknown",
               "grade": null,
-              "split": null,
-              "cumulative": null,
-              "passing_rank": null,
-              "split_rank": null,
+              "split": "13:14",
+              "cumulative": "64:19",
+              "passing_rank": 4,
+              "split_rank": 4,
               "split_record": false,
-              "status": "unknown",
-              "raw_name_grade": "unknown",
-              "computed": {
-                "split_rank": null,
-                "passing_rank": null
-              }
+              "status": "ok",
+              "raw_name_grade": "unknown"
             }
           ]
         },
@@ -7271,97 +7175,73 @@
               "leg": 1,
               "name": "unknown",
               "grade": null,
-              "split": null,
-              "cumulative": null,
-              "passing_rank": null,
-              "split_rank": null,
+              "split": "12:37",
+              "cumulative": "12:37",
+              "passing_rank": 2,
+              "split_rank": 2,
               "split_record": false,
-              "status": "unknown",
-              "raw_name_grade": "unknown",
-              "computed": {
-                "split_rank": null,
-                "passing_rank": null
-              }
+              "status": "ok",
+              "raw_name_grade": "unknown"
             },
             {
               "leg": 2,
               "name": "unknown",
               "grade": null,
-              "split": null,
-              "cumulative": null,
-              "passing_rank": null,
-              "split_rank": null,
+              "split": "9:36",
+              "cumulative": "22:13",
+              "passing_rank": 3,
+              "split_rank": 3,
               "split_record": false,
-              "status": "unknown",
-              "raw_name_grade": "unknown",
-              "computed": {
-                "split_rank": null,
-                "passing_rank": null
-              }
+              "status": "ok",
+              "raw_name_grade": "unknown"
             },
             {
               "leg": 3,
               "name": "unknown",
               "grade": null,
-              "split": null,
-              "cumulative": null,
-              "passing_rank": null,
-              "split_rank": null,
+              "split": "9:24",
+              "cumulative": "31:37",
+              "passing_rank": 4,
+              "split_rank": 7,
               "split_record": false,
-              "status": "unknown",
-              "raw_name_grade": "unknown",
-              "computed": {
-                "split_rank": null,
-                "passing_rank": null
-              }
+              "status": "ok",
+              "raw_name_grade": "unknown"
             },
             {
               "leg": 4,
               "name": "unknown",
               "grade": null,
-              "split": null,
-              "cumulative": null,
-              "passing_rank": null,
-              "split_rank": null,
+              "split": "9:47",
+              "cumulative": "41:24",
+              "passing_rank": 4,
+              "split_rank": 9,
               "split_record": false,
-              "status": "unknown",
-              "raw_name_grade": "unknown",
-              "computed": {
-                "split_rank": null,
-                "passing_rank": null
-              }
+              "status": "ok",
+              "raw_name_grade": "unknown"
             },
             {
               "leg": 5,
               "name": "unknown",
               "grade": null,
-              "split": null,
-              "cumulative": null,
-              "passing_rank": null,
-              "split_rank": null,
+              "split": "9:50",
+              "cumulative": "51:14",
+              "passing_rank": 5,
+              "split_rank": 5,
               "split_record": false,
-              "status": "unknown",
-              "raw_name_grade": "unknown",
-              "computed": {
-                "split_rank": null,
-                "passing_rank": null
-              }
+              "status": "ok",
+              "raw_name_grade": "unknown"
             },
             {
               "leg": 6,
               "name": "unknown",
               "grade": null,
-              "split": null,
-              "cumulative": null,
-              "passing_rank": null,
-              "split_rank": null,
+              "split": "13:29",
+              "cumulative": "64:43",
+              "passing_rank": 5,
+              "split_rank": 6,
               "split_record": false,
-              "status": "unknown",
-              "raw_name_grade": "unknown",
-              "computed": {
-                "split_rank": null,
-                "passing_rank": null
-              }
+              "status": "ok",
+              "raw_name_grade": "unknown"
             }
           ]
         },
@@ -7374,97 +7254,73 @@
               "leg": 1,
               "name": "unknown",
               "grade": null,
-              "split": null,
-              "cumulative": null,
-              "passing_rank": null,
-              "split_rank": null,
+              "split": "12:42",
+              "cumulative": "12:42",
+              "passing_rank": 4,
+              "split_rank": 4,
               "split_record": false,
-              "status": "unknown",
-              "raw_name_grade": "unknown",
-              "computed": {
-                "split_rank": null,
-                "passing_rank": null
-              }
+              "status": "ok",
+              "raw_name_grade": "unknown"
             },
             {
               "leg": 2,
               "name": "unknown",
               "grade": null,
-              "split": null,
-              "cumulative": null,
-              "passing_rank": null,
-              "split_rank": null,
+              "split": "10:01",
+              "cumulative": "22:43",
+              "passing_rank": 6,
+              "split_rank": 8,
               "split_record": false,
-              "status": "unknown",
-              "raw_name_grade": "unknown",
-              "computed": {
-                "split_rank": null,
-                "passing_rank": null
-              }
+              "status": "ok",
+              "raw_name_grade": "unknown"
             },
             {
               "leg": 3,
               "name": "unknown",
               "grade": null,
-              "split": null,
-              "cumulative": null,
-              "passing_rank": null,
-              "split_rank": null,
+              "split": "9:28",
+              "cumulative": "32:11",
+              "passing_rank": 6,
+              "split_rank": 8,
               "split_record": false,
-              "status": "unknown",
-              "raw_name_grade": "unknown",
-              "computed": {
-                "split_rank": null,
-                "passing_rank": null
-              }
+              "status": "ok",
+              "raw_name_grade": "unknown"
             },
             {
               "leg": 4,
               "name": "unknown",
               "grade": null,
-              "split": null,
-              "cumulative": null,
-              "passing_rank": null,
-              "split_rank": null,
+              "split": "9:33",
+              "cumulative": "41:44",
+              "passing_rank": 6,
+              "split_rank": 4,
               "split_record": false,
-              "status": "unknown",
-              "raw_name_grade": "unknown",
-              "computed": {
-                "split_rank": null,
-                "passing_rank": null
-              }
+              "status": "ok",
+              "raw_name_grade": "unknown"
             },
             {
               "leg": 5,
               "name": "unknown",
               "grade": null,
-              "split": null,
-              "cumulative": null,
-              "passing_rank": null,
-              "split_rank": null,
+              "split": "9:57",
+              "cumulative": "51:41",
+              "passing_rank": 6,
+              "split_rank": 6,
               "split_record": false,
-              "status": "unknown",
-              "raw_name_grade": "unknown",
-              "computed": {
-                "split_rank": null,
-                "passing_rank": null
-              }
+              "status": "ok",
+              "raw_name_grade": "unknown"
             },
             {
               "leg": 6,
               "name": "unknown",
               "grade": null,
-              "split": null,
-              "cumulative": null,
-              "passing_rank": null,
-              "split_rank": null,
+              "split": "13:14",
+              "cumulative": "64:55",
+              "passing_rank": 6,
+              "split_rank": 4,
               "split_record": false,
-              "status": "unknown",
-              "raw_name_grade": "unknown",
-              "computed": {
-                "split_rank": null,
-                "passing_rank": null
-              }
+              "status": "ok",
+              "raw_name_grade": "unknown"
             }
           ]
         },
@@ -7477,97 +7333,73 @@
               "leg": 1,
               "name": "unknown",
               "grade": null,
-              "split": null,
-              "cumulative": null,
-              "passing_rank": null,
-              "split_rank": null,
+              "split": "13:13",
+              "cumulative": "13:13",
+              "passing_rank": 8,
+              "split_rank": 8,
               "split_record": false,
-              "status": "unknown",
-              "raw_name_grade": "unknown",
-              "computed": {
-                "split_rank": null,
-                "passing_rank": null
-              }
+              "status": "ok",
+              "raw_name_grade": "unknown"
             },
             {
               "leg": 2,
               "name": "unknown",
               "grade": null,
-              "split": null,
-              "cumulative": null,
-              "passing_rank": null,
-              "split_rank": null,
+              "split": "9:55",
+              "cumulative": "23:08",
+              "passing_rank": 7,
+              "split_rank": 7,
               "split_record": false,
-              "status": "unknown",
-              "raw_name_grade": "unknown",
-              "computed": {
-                "split_rank": null,
-                "passing_rank": null
-              }
+              "status": "ok",
+              "raw_name_grade": "unknown"
             },
             {
               "leg": 3,
               "name": "unknown",
               "grade": null,
-              "split": null,
-              "cumulative": null,
-              "passing_rank": null,
-              "split_rank": null,
+              "split": "9:11",
+              "cumulative": "32:19",
+              "passing_rank": 7,
+              "split_rank": 3,
               "split_record": false,
-              "status": "unknown",
-              "raw_name_grade": "unknown",
-              "computed": {
-                "split_rank": null,
-                "passing_rank": null
-              }
+              "status": "ok",
+              "raw_name_grade": "unknown"
             },
             {
               "leg": 4,
               "name": "unknown",
               "grade": null,
-              "split": null,
-              "cumulative": null,
-              "passing_rank": null,
-              "split_rank": null,
+              "split": "9:33",
+              "cumulative": "41:52",
+              "passing_rank": 7,
+              "split_rank": 4,
               "split_record": false,
-              "status": "unknown",
-              "raw_name_grade": "unknown",
-              "computed": {
-                "split_rank": null,
-                "passing_rank": null
-              }
+              "status": "ok",
+              "raw_name_grade": "unknown"
             },
             {
               "leg": 5,
               "name": "unknown",
               "grade": null,
-              "split": null,
-              "cumulative": null,
-              "passing_rank": null,
-              "split_rank": null,
+              "split": "10:09",
+              "cumulative": "52:01",
+              "passing_rank": 7,
+              "split_rank": 8,
               "split_record": false,
-              "status": "unknown",
-              "raw_name_grade": "unknown",
-              "computed": {
-                "split_rank": null,
-                "passing_rank": null
-              }
+              "status": "ok",
+              "raw_name_grade": "unknown"
             },
             {
               "leg": 6,
               "name": "unknown",
               "grade": null,
-              "split": null,
-              "cumulative": null,
-              "passing_rank": null,
-              "split_rank": null,
+              "split": "14:12",
+              "cumulative": "66:13",
+              "passing_rank": 7,
+              "split_rank": 12,
               "split_record": false,
-              "status": "unknown",
-              "raw_name_grade": "unknown",
-              "computed": {
-                "split_rank": null,
-                "passing_rank": null
-              }
+              "status": "ok",
+              "raw_name_grade": "unknown"
             }
           ]
         },
@@ -7580,97 +7412,73 @@
               "leg": 1,
               "name": "unknown",
               "grade": null,
-              "split": null,
-              "cumulative": null,
-              "passing_rank": null,
-              "split_rank": null,
+              "split": "13:16",
+              "cumulative": "13:16",
+              "passing_rank": 9,
+              "split_rank": 9,
               "split_record": false,
-              "status": "unknown",
-              "raw_name_grade": "unknown",
-              "computed": {
-                "split_rank": null,
-                "passing_rank": null
-              }
+              "status": "ok",
+              "raw_name_grade": "unknown"
             },
             {
               "leg": 2,
               "name": "unknown",
               "grade": null,
-              "split": null,
-              "cumulative": null,
-              "passing_rank": null,
-              "split_rank": null,
+              "split": "9:54",
+              "cumulative": "23:10",
+              "passing_rank": 8,
+              "split_rank": 6,
               "split_record": false,
-              "status": "unknown",
-              "raw_name_grade": "unknown",
-              "computed": {
-                "split_rank": null,
-                "passing_rank": null
-              }
+              "status": "ok",
+              "raw_name_grade": "unknown"
             },
             {
               "leg": 3,
               "name": "unknown",
               "grade": null,
-              "split": null,
-              "cumulative": null,
-              "passing_rank": null,
-              "split_rank": null,
+              "split": "9:22",
+              "cumulative": "32:32",
+              "passing_rank": 8,
+              "split_rank": 6,
               "split_record": false,
-              "status": "unknown",
-              "raw_name_grade": "unknown",
-              "computed": {
-                "split_rank": null,
-                "passing_rank": null
-              }
+              "status": "ok",
+              "raw_name_grade": "unknown"
             },
             {
               "leg": 4,
               "name": "unknown",
               "grade": null,
-              "split": null,
-              "cumulative": null,
-              "passing_rank": null,
-              "split_rank": null,
+              "split": "9:45",
+              "cumulative": "42:17",
+              "passing_rank": 8,
+              "split_rank": 7,
               "split_record": false,
-              "status": "unknown",
-              "raw_name_grade": "unknown",
-              "computed": {
-                "split_rank": null,
-                "passing_rank": null
-              }
+              "status": "ok",
+              "raw_name_grade": "unknown"
             },
             {
               "leg": 5,
               "name": "unknown",
               "grade": null,
-              "split": null,
-              "cumulative": null,
-              "passing_rank": null,
-              "split_rank": null,
+              "split": "10:08",
+              "cumulative": "52:25",
+              "passing_rank": 8,
+              "split_rank": 7,
               "split_record": false,
-              "status": "unknown",
-              "raw_name_grade": "unknown",
-              "computed": {
-                "split_rank": null,
-                "passing_rank": null
-              }
+              "status": "ok",
+              "raw_name_grade": "unknown"
             },
             {
               "leg": 6,
               "name": "unknown",
               "grade": null,
-              "split": null,
-              "cumulative": null,
-              "passing_rank": null,
-              "split_rank": null,
+              "split": "14:00",
+              "cumulative": "66:25",
+              "passing_rank": 8,
+              "split_rank": 10,
               "split_record": false,
-              "status": "unknown",
-              "raw_name_grade": "unknown",
-              "computed": {
-                "split_rank": null,
-                "passing_rank": null
-              }
+              "status": "ok",
+              "raw_name_grade": "unknown"
             }
           ]
         },
@@ -7683,97 +7491,73 @@
               "leg": 1,
               "name": "unknown",
               "grade": null,
-              "split": null,
-              "cumulative": null,
-              "passing_rank": null,
-              "split_rank": null,
+              "split": "13:24",
+              "cumulative": "13:24",
+              "passing_rank": 10,
+              "split_rank": 10,
               "split_record": false,
-              "status": "unknown",
-              "raw_name_grade": "unknown",
-              "computed": {
-                "split_rank": null,
-                "passing_rank": null
-              }
+              "status": "ok",
+              "raw_name_grade": "unknown"
             },
             {
               "leg": 2,
               "name": "unknown",
               "grade": null,
-              "split": null,
-              "cumulative": null,
-              "passing_rank": null,
-              "split_rank": null,
+              "split": "10:05",
+              "cumulative": "23:29",
+              "passing_rank": 9,
+              "split_rank": 9,
               "split_record": false,
-              "status": "unknown",
-              "raw_name_grade": "unknown",
-              "computed": {
-                "split_rank": null,
-                "passing_rank": null
-              }
+              "status": "ok",
+              "raw_name_grade": "unknown"
             },
             {
               "leg": 3,
               "name": "unknown",
               "grade": null,
-              "split": null,
-              "cumulative": null,
-              "passing_rank": null,
-              "split_rank": null,
+              "split": "9:37",
+              "cumulative": "33:06",
+              "passing_rank": 9,
+              "split_rank": 9,
               "split_record": false,
-              "status": "unknown",
-              "raw_name_grade": "unknown",
-              "computed": {
-                "split_rank": null,
-                "passing_rank": null
-              }
+              "status": "ok",
+              "raw_name_grade": "unknown"
             },
             {
               "leg": 4,
               "name": "unknown",
               "grade": null,
-              "split": null,
-              "cumulative": null,
-              "passing_rank": null,
-              "split_rank": null,
+              "split": "9:45",
+              "cumulative": "42:51",
+              "passing_rank": 9,
+              "split_rank": 7,
               "split_record": false,
-              "status": "unknown",
-              "raw_name_grade": "unknown",
-              "computed": {
-                "split_rank": null,
-                "passing_rank": null
-              }
+              "status": "ok",
+              "raw_name_grade": "unknown"
             },
             {
               "leg": 5,
               "name": "unknown",
               "grade": null,
-              "split": null,
-              "cumulative": null,
-              "passing_rank": null,
-              "split_rank": null,
+              "split": "10:39",
+              "cumulative": "53:30",
+              "passing_rank": 9,
+              "split_rank": 13,
               "split_record": false,
-              "status": "unknown",
-              "raw_name_grade": "unknown",
-              "computed": {
-                "split_rank": null,
-                "passing_rank": null
-              }
+              "status": "ok",
+              "raw_name_grade": "unknown"
             },
             {
               "leg": 6,
               "name": "unknown",
               "grade": null,
-              "split": null,
-              "cumulative": null,
-              "passing_rank": null,
-              "split_rank": null,
+              "split": "13:30",
+              "cumulative": "67:00",
+              "passing_rank": 9,
+              "split_rank": 7,
               "split_record": false,
-              "status": "unknown",
-              "raw_name_grade": "unknown",
-              "computed": {
-                "split_rank": null,
-                "passing_rank": null
-              }
+              "status": "ok",
+              "raw_name_grade": "unknown"
             }
           ]
         },
@@ -7786,97 +7570,73 @@
               "leg": 1,
               "name": "unknown",
               "grade": null,
-              "split": null,
-              "cumulative": null,
-              "passing_rank": null,
-              "split_rank": null,
+              "split": "12:55",
+              "cumulative": "12:55",
+              "passing_rank": 6,
+              "split_rank": 6,
               "split_record": false,
-              "status": "unknown",
-              "raw_name_grade": "unknown",
-              "computed": {
-                "split_rank": null,
-                "passing_rank": null
-              }
+              "status": "ok",
+              "raw_name_grade": "unknown"
             },
             {
               "leg": 2,
               "name": "unknown",
               "grade": null,
-              "split": null,
-              "cumulative": null,
-              "passing_rank": null,
-              "split_rank": null,
+              "split": "10:52",
+              "cumulative": "23:47",
+              "passing_rank": 11,
+              "split_rank": 14,
               "split_record": false,
-              "status": "unknown",
-              "raw_name_grade": "unknown",
-              "computed": {
-                "split_rank": null,
-                "passing_rank": null
-              }
+              "status": "ok",
+              "raw_name_grade": "unknown"
             },
             {
               "leg": 3,
               "name": "unknown",
               "grade": null,
-              "split": null,
-              "cumulative": null,
-              "passing_rank": null,
-              "split_rank": null,
+              "split": "9:52",
+              "cumulative": "33:39",
+              "passing_rank": 11,
+              "split_rank": 13,
               "split_record": false,
-              "status": "unknown",
-              "raw_name_grade": "unknown",
-              "computed": {
-                "split_rank": null,
-                "passing_rank": null
-              }
+              "status": "ok",
+              "raw_name_grade": "unknown"
             },
             {
               "leg": 4,
               "name": "unknown",
               "grade": null,
-              "split": null,
-              "cumulative": null,
-              "passing_rank": null,
-              "split_rank": null,
+              "split": "10:07",
+              "cumulative": "43:46",
+              "passing_rank": 11,
+              "split_rank": 12,
               "split_record": false,
-              "status": "unknown",
-              "raw_name_grade": "unknown",
-              "computed": {
-                "split_rank": null,
-                "passing_rank": null
-              }
+              "status": "ok",
+              "raw_name_grade": "unknown"
             },
             {
               "leg": 5,
               "name": "unknown",
               "grade": null,
-              "split": null,
-              "cumulative": null,
-              "passing_rank": null,
-              "split_rank": null,
+              "split": "10:12",
+              "cumulative": "53:58",
+              "passing_rank": 10,
+              "split_rank": 9,
               "split_record": false,
-              "status": "unknown",
-              "raw_name_grade": "unknown",
-              "computed": {
-                "split_rank": null,
-                "passing_rank": null
-              }
+              "status": "ok",
+              "raw_name_grade": "unknown"
             },
             {
               "leg": 6,
               "name": "unknown",
               "grade": null,
-              "split": null,
-              "cumulative": null,
-              "passing_rank": null,
-              "split_rank": null,
+              "split": "13:57",
+              "cumulative": "67:55",
+              "passing_rank": 10,
+              "split_rank": 9,
               "split_record": false,
-              "status": "unknown",
-              "raw_name_grade": "unknown",
-              "computed": {
-                "split_rank": null,
-                "passing_rank": null
-              }
+              "status": "ok",
+              "raw_name_grade": "unknown"
             }
           ]
         },
@@ -7889,97 +7649,73 @@
               "leg": 1,
               "name": "unknown",
               "grade": null,
-              "split": null,
-              "cumulative": null,
-              "passing_rank": null,
-              "split_rank": null,
+              "split": "13:32",
+              "cumulative": "13:32",
+              "passing_rank": 13,
+              "split_rank": 13,
               "split_record": false,
-              "status": "unknown",
-              "raw_name_grade": "unknown",
-              "computed": {
-                "split_rank": null,
-                "passing_rank": null
-              }
+              "status": "ok",
+              "raw_name_grade": "unknown"
             },
             {
               "leg": 2,
               "name": "unknown",
               "grade": null,
-              "split": null,
-              "cumulative": null,
-              "passing_rank": null,
-              "split_rank": null,
+              "split": "10:09",
+              "cumulative": "23:41",
+              "passing_rank": 10,
+              "split_rank": 10,
               "split_record": false,
-              "status": "unknown",
-              "raw_name_grade": "unknown",
-              "computed": {
-                "split_rank": null,
-                "passing_rank": null
-              }
+              "status": "ok",
+              "raw_name_grade": "unknown"
             },
             {
               "leg": 3,
               "name": "unknown",
               "grade": null,
-              "split": null,
-              "cumulative": null,
-              "passing_rank": null,
-              "split_rank": null,
+              "split": "9:43",
+              "cumulative": "33:24",
+              "passing_rank": 10,
+              "split_rank": 10,
               "split_record": false,
-              "status": "unknown",
-              "raw_name_grade": "unknown",
-              "computed": {
-                "split_rank": null,
-                "passing_rank": null
-              }
+              "status": "ok",
+              "raw_name_grade": "unknown"
             },
             {
               "leg": 4,
               "name": "unknown",
               "grade": null,
-              "split": null,
-              "cumulative": null,
-              "passing_rank": null,
-              "split_rank": null,
+              "split": "9:54",
+              "cumulative": "43:18",
+              "passing_rank": 10,
+              "split_rank": 11,
               "split_record": false,
-              "status": "unknown",
-              "raw_name_grade": "unknown",
-              "computed": {
-                "split_rank": null,
-                "passing_rank": null
-              }
+              "status": "ok",
+              "raw_name_grade": "unknown"
             },
             {
               "leg": 5,
               "name": "unknown",
               "grade": null,
-              "split": null,
-              "cumulative": null,
-              "passing_rank": null,
-              "split_rank": null,
+              "split": "10:41",
+              "cumulative": "53:59",
+              "passing_rank": 11,
+              "split_rank": 14,
               "split_record": false,
-              "status": "unknown",
-              "raw_name_grade": "unknown",
-              "computed": {
-                "split_rank": null,
-                "passing_rank": null
-              }
+              "status": "ok",
+              "raw_name_grade": "unknown"
             },
             {
               "leg": 6,
               "name": "unknown",
               "grade": null,
-              "split": null,
-              "cumulative": null,
-              "passing_rank": null,
-              "split_rank": null,
+              "split": "14:31",
+              "cumulative": "68:30",
+              "passing_rank": 11,
+              "split_rank": 14,
               "split_record": false,
-              "status": "unknown",
-              "raw_name_grade": "unknown",
-              "computed": {
-                "split_rank": null,
-                "passing_rank": null
-              }
+              "status": "ok",
+              "raw_name_grade": "unknown"
             }
           ]
         },
@@ -7992,97 +7728,73 @@
               "leg": 1,
               "name": "unknown",
               "grade": null,
-              "split": null,
-              "cumulative": null,
-              "passing_rank": null,
-              "split_rank": null,
+              "split": "13:26",
+              "cumulative": "13:26",
+              "passing_rank": 11,
+              "split_rank": 11,
               "split_record": false,
-              "status": "unknown",
-              "raw_name_grade": "unknown",
-              "computed": {
-                "split_rank": null,
-                "passing_rank": null
-              }
+              "status": "ok",
+              "raw_name_grade": "unknown"
             },
             {
               "leg": 2,
               "name": "unknown",
               "grade": null,
-              "split": null,
-              "cumulative": null,
-              "passing_rank": null,
-              "split_rank": null,
+              "split": "10:44",
+              "cumulative": "24:10",
+              "passing_rank": 12,
+              "split_rank": 12,
               "split_record": false,
-              "status": "unknown",
-              "raw_name_grade": "unknown",
-              "computed": {
-                "split_rank": null,
-                "passing_rank": null
-              }
+              "status": "ok",
+              "raw_name_grade": "unknown"
             },
             {
               "leg": 3,
               "name": "unknown",
               "grade": null,
-              "split": null,
-              "cumulative": null,
-              "passing_rank": null,
-              "split_rank": null,
+              "split": "10:13",
+              "cumulative": "34:23",
+              "passing_rank": 12,
+              "split_rank": 15,
               "split_record": false,
-              "status": "unknown",
-              "raw_name_grade": "unknown",
-              "computed": {
-                "split_rank": null,
-                "passing_rank": null
-              }
+              "status": "ok",
+              "raw_name_grade": "unknown"
             },
             {
               "leg": 4,
               "name": "unknown",
               "grade": null,
-              "split": null,
-              "cumulative": null,
-              "passing_rank": null,
-              "split_rank": null,
+              "split": "9:53",
+              "cumulative": "44:16",
+              "passing_rank": 12,
+              "split_rank": 10,
               "split_record": false,
-              "status": "unknown",
-              "raw_name_grade": "unknown",
-              "computed": {
-                "split_rank": null,
-                "passing_rank": null
-              }
+              "status": "ok",
+              "raw_name_grade": "unknown"
             },
             {
               "leg": 5,
               "name": "unknown",
               "grade": null,
-              "split": null,
-              "cumulative": null,
-              "passing_rank": null,
-              "split_rank": null,
+              "split": "10:22",
+              "cumulative": "54:38",
+              "passing_rank": 12,
+              "split_rank": 11,
               "split_record": false,
-              "status": "unknown",
-              "raw_name_grade": "unknown",
-              "computed": {
-                "split_rank": null,
-                "passing_rank": null
-              }
+              "status": "ok",
+              "raw_name_grade": "unknown"
             },
             {
               "leg": 6,
               "name": "unknown",
               "grade": null,
-              "split": null,
-              "cumulative": null,
-              "passing_rank": null,
-              "split_rank": null,
+              "split": "14:12",
+              "cumulative": "68:50",
+              "passing_rank": 12,
+              "split_rank": 12,
               "split_record": false,
-              "status": "unknown",
-              "raw_name_grade": "unknown",
-              "computed": {
-                "split_rank": null,
-                "passing_rank": null
-              }
+              "status": "ok",
+              "raw_name_grade": "unknown"
             }
           ]
         },
@@ -8095,97 +7807,73 @@
               "leg": 1,
               "name": "unknown",
               "grade": null,
-              "split": null,
-              "cumulative": null,
-              "passing_rank": null,
-              "split_rank": null,
+              "split": "13:49",
+              "cumulative": "13:49",
+              "passing_rank": 14,
+              "split_rank": 14,
               "split_record": false,
-              "status": "unknown",
-              "raw_name_grade": "unknown",
-              "computed": {
-                "split_rank": null,
-                "passing_rank": null
-              }
+              "status": "ok",
+              "raw_name_grade": "unknown"
             },
             {
               "leg": 2,
               "name": "unknown",
               "grade": null,
-              "split": null,
-              "cumulative": null,
-              "passing_rank": null,
-              "split_rank": null,
+              "split": "10:35",
+              "cumulative": "24:24",
+              "passing_rank": 14,
+              "split_rank": 11,
               "split_record": false,
-              "status": "unknown",
-              "raw_name_grade": "unknown",
-              "computed": {
-                "split_rank": null,
-                "passing_rank": null
-              }
+              "status": "ok",
+              "raw_name_grade": "unknown"
             },
             {
               "leg": 3,
               "name": "unknown",
               "grade": null,
-              "split": null,
-              "cumulative": null,
-              "passing_rank": null,
-              "split_rank": null,
+              "split": "10:10",
+              "cumulative": "34:34",
+              "passing_rank": 13,
+              "split_rank": 14,
               "split_record": false,
-              "status": "unknown",
-              "raw_name_grade": "unknown",
-              "computed": {
-                "split_rank": null,
-                "passing_rank": null
-              }
+              "status": "ok",
+              "raw_name_grade": "unknown"
             },
             {
               "leg": 4,
               "name": "unknown",
               "grade": null,
-              "split": null,
-              "cumulative": null,
-              "passing_rank": null,
-              "split_rank": null,
+              "split": "10:08",
+              "cumulative": "44:42",
+              "passing_rank": 13,
+              "split_rank": 13,
               "split_record": false,
-              "status": "unknown",
-              "raw_name_grade": "unknown",
-              "computed": {
-                "split_rank": null,
-                "passing_rank": null
-              }
+              "status": "ok",
+              "raw_name_grade": "unknown"
             },
             {
               "leg": 5,
               "name": "unknown",
               "grade": null,
-              "split": null,
-              "cumulative": null,
-              "passing_rank": null,
-              "split_rank": null,
+              "split": "10:26",
+              "cumulative": "55:08",
+              "passing_rank": 13,
+              "split_rank": 12,
               "split_record": false,
-              "status": "unknown",
-              "raw_name_grade": "unknown",
-              "computed": {
-                "split_rank": null,
-                "passing_rank": null
-              }
+              "status": "ok",
+              "raw_name_grade": "unknown"
             },
             {
               "leg": 6,
               "name": "unknown",
               "grade": null,
-              "split": null,
-              "cumulative": null,
-              "passing_rank": null,
-              "split_rank": null,
+              "split": "14:11",
+              "cumulative": "69:19",
+              "passing_rank": 13,
+              "split_rank": 11,
               "split_record": false,
-              "status": "unknown",
-              "raw_name_grade": "unknown",
-              "computed": {
-                "split_rank": null,
-                "passing_rank": null
-              }
+              "status": "ok",
+              "raw_name_grade": "unknown"
             }
           ]
         },
@@ -8198,97 +7886,73 @@
               "leg": 1,
               "name": "unknown",
               "grade": null,
-              "split": null,
-              "cumulative": null,
-              "passing_rank": null,
-              "split_rank": null,
+              "split": "13:27",
+              "cumulative": "13:27",
+              "passing_rank": 12,
+              "split_rank": 12,
               "split_record": false,
-              "status": "unknown",
-              "raw_name_grade": "unknown",
-              "computed": {
-                "split_rank": null,
-                "passing_rank": null
-              }
+              "status": "ok",
+              "raw_name_grade": "unknown"
             },
             {
               "leg": 2,
               "name": "unknown",
               "grade": null,
-              "split": null,
-              "cumulative": null,
-              "passing_rank": null,
-              "split_rank": null,
+              "split": "10:51",
+              "cumulative": "24:18",
+              "passing_rank": 13,
+              "split_rank": 13,
               "split_record": false,
-              "status": "unknown",
-              "raw_name_grade": "unknown",
-              "computed": {
-                "split_rank": null,
-                "passing_rank": null
-              }
+              "status": "ok",
+              "raw_name_grade": "unknown"
             },
             {
               "leg": 3,
               "name": "unknown",
               "grade": null,
-              "split": null,
-              "cumulative": null,
-              "passing_rank": null,
-              "split_rank": null,
+              "split": "10:21",
+              "cumulative": "34:39",
+              "passing_rank": 14,
+              "split_rank": 16,
               "split_record": false,
-              "status": "unknown",
-              "raw_name_grade": "unknown",
-              "computed": {
-                "split_rank": null,
-                "passing_rank": null
-              }
+              "status": "ok",
+              "raw_name_grade": "unknown"
             },
             {
               "leg": 4,
               "name": "unknown",
               "grade": null,
-              "split": null,
-              "cumulative": null,
-              "passing_rank": null,
-              "split_rank": null,
+              "split": "10:42",
+              "cumulative": "45:21",
+              "passing_rank": 14,
+              "split_rank": 15,
               "split_record": false,
-              "status": "unknown",
-              "raw_name_grade": "unknown",
-              "computed": {
-                "split_rank": null,
-                "passing_rank": null
-              }
+              "status": "ok",
+              "raw_name_grade": "unknown"
             },
             {
               "leg": 5,
               "name": "unknown",
               "grade": null,
-              "split": null,
-              "cumulative": null,
-              "passing_rank": null,
-              "split_rank": null,
+              "split": "11:06",
+              "cumulative": "56:27",
+              "passing_rank": 15,
+              "split_rank": 15,
               "split_record": false,
-              "status": "unknown",
-              "raw_name_grade": "unknown",
-              "computed": {
-                "split_rank": null,
-                "passing_rank": null
-              }
+              "status": "ok",
+              "raw_name_grade": "unknown"
             },
             {
               "leg": 6,
               "name": "unknown",
               "grade": null,
-              "split": null,
-              "cumulative": null,
-              "passing_rank": null,
-              "split_rank": null,
+              "split": "13:54",
+              "cumulative": "70:21",
+              "passing_rank": 14,
+              "split_rank": 8,
               "split_record": false,
-              "status": "unknown",
-              "raw_name_grade": "unknown",
-              "computed": {
-                "split_rank": null,
-                "passing_rank": null
-              }
+              "status": "ok",
+              "raw_name_grade": "unknown"
             }
           ]
         },
@@ -8301,97 +7965,73 @@
               "leg": 1,
               "name": "unknown",
               "grade": null,
-              "split": null,
-              "cumulative": null,
-              "passing_rank": null,
-              "split_rank": null,
+              "split": "15:03",
+              "cumulative": "15:03",
+              "passing_rank": 16,
+              "split_rank": 16,
               "split_record": false,
-              "status": "unknown",
-              "raw_name_grade": "unknown",
-              "computed": {
-                "split_rank": null,
-                "passing_rank": null
-              }
+              "status": "ok",
+              "raw_name_grade": "unknown"
             },
             {
               "leg": 2,
               "name": "unknown",
               "grade": null,
-              "split": null,
-              "cumulative": null,
-              "passing_rank": null,
-              "split_rank": null,
+              "split": "10:52",
+              "cumulative": "25:55",
+              "passing_rank": 16,
+              "split_rank": 14,
               "split_record": false,
-              "status": "unknown",
-              "raw_name_grade": "unknown",
-              "computed": {
-                "split_rank": null,
-                "passing_rank": null
-              }
+              "status": "ok",
+              "raw_name_grade": "unknown"
             },
             {
               "leg": 3,
               "name": "unknown",
               "grade": null,
-              "split": null,
-              "cumulative": null,
-              "passing_rank": null,
-              "split_rank": null,
+              "split": "9:48",
+              "cumulative": "35:43",
+              "passing_rank": 16,
+              "split_rank": 11,
               "split_record": false,
-              "status": "unknown",
-              "raw_name_grade": "unknown",
-              "computed": {
-                "split_rank": null,
-                "passing_rank": null
-              }
+              "status": "ok",
+              "raw_name_grade": "unknown"
             },
             {
               "leg": 4,
               "name": "unknown",
               "grade": null,
-              "split": null,
-              "cumulative": null,
-              "passing_rank": null,
-              "split_rank": null,
+              "split": "10:19",
+              "cumulative": "46:02",
+              "passing_rank": 15,
+              "split_rank": 14,
               "split_record": false,
-              "status": "unknown",
-              "raw_name_grade": "unknown",
-              "computed": {
-                "split_rank": null,
-                "passing_rank": null
-              }
+              "status": "ok",
+              "raw_name_grade": "unknown"
             },
             {
               "leg": 5,
               "name": "unknown",
               "grade": null,
-              "split": null,
-              "cumulative": null,
-              "passing_rank": null,
-              "split_rank": null,
+              "split": "10:21",
+              "cumulative": "56:23",
+              "passing_rank": 14,
+              "split_rank": 10,
               "split_record": false,
-              "status": "unknown",
-              "raw_name_grade": "unknown",
-              "computed": {
-                "split_rank": null,
-                "passing_rank": null
-              }
+              "status": "ok",
+              "raw_name_grade": "unknown"
             },
             {
               "leg": 6,
               "name": "unknown",
               "grade": null,
-              "split": null,
-              "cumulative": null,
-              "passing_rank": null,
-              "split_rank": null,
+              "split": "15:02",
+              "cumulative": "71:25",
+              "passing_rank": 15,
+              "split_rank": 15,
               "split_record": false,
-              "status": "unknown",
-              "raw_name_grade": "unknown",
-              "computed": {
-                "split_rank": null,
-                "passing_rank": null
-              }
+              "status": "ok",
+              "raw_name_grade": "unknown"
             }
           ]
         },
@@ -8404,97 +8044,73 @@
               "leg": 1,
               "name": "unknown",
               "grade": null,
-              "split": null,
-              "cumulative": null,
-              "passing_rank": null,
-              "split_rank": null,
+              "split": "14:32",
+              "cumulative": "14:32",
+              "passing_rank": 15,
+              "split_rank": 15,
               "split_record": false,
-              "status": "unknown",
-              "raw_name_grade": "unknown",
-              "computed": {
-                "split_rank": null,
-                "passing_rank": null
-              }
+              "status": "ok",
+              "raw_name_grade": "unknown"
             },
             {
               "leg": 2,
               "name": "unknown",
               "grade": null,
-              "split": null,
-              "cumulative": null,
-              "passing_rank": null,
-              "split_rank": null,
+              "split": "11:09",
+              "cumulative": "25:41",
+              "passing_rank": 15,
+              "split_rank": 16,
               "split_record": false,
-              "status": "unknown",
-              "raw_name_grade": "unknown",
-              "computed": {
-                "split_rank": null,
-                "passing_rank": null
-              }
+              "status": "ok",
+              "raw_name_grade": "unknown"
             },
             {
               "leg": 3,
               "name": "unknown",
               "grade": null,
-              "split": null,
-              "cumulative": null,
-              "passing_rank": null,
-              "split_rank": null,
+              "split": "9:49",
+              "cumulative": "35:30",
+              "passing_rank": 15,
+              "split_rank": 12,
               "split_record": false,
-              "status": "unknown",
-              "raw_name_grade": "unknown",
-              "computed": {
-                "split_rank": null,
-                "passing_rank": null
-              }
+              "status": "ok",
+              "raw_name_grade": "unknown"
             },
             {
               "leg": 4,
               "name": "unknown",
               "grade": null,
-              "split": null,
-              "cumulative": null,
-              "passing_rank": null,
-              "split_rank": null,
+              "split": "10:53",
+              "cumulative": "46:23",
+              "passing_rank": 16,
+              "split_rank": 16,
               "split_record": false,
-              "status": "unknown",
-              "raw_name_grade": "unknown",
-              "computed": {
-                "split_rank": null,
-                "passing_rank": null
-              }
+              "status": "ok",
+              "raw_name_grade": "unknown"
             },
             {
               "leg": 5,
               "name": "unknown",
               "grade": null,
-              "split": null,
-              "cumulative": null,
-              "passing_rank": null,
-              "split_rank": null,
+              "split": "13:19",
+              "cumulative": "59:42",
+              "passing_rank": 16,
+              "split_rank": 16,
               "split_record": false,
-              "status": "unknown",
-              "raw_name_grade": "unknown",
-              "computed": {
-                "split_rank": null,
-                "passing_rank": null
-              }
+              "status": "ok",
+              "raw_name_grade": "unknown"
             },
             {
               "leg": 6,
               "name": "unknown",
               "grade": null,
-              "split": null,
-              "cumulative": null,
-              "passing_rank": null,
-              "split_rank": null,
+              "split": "15:41",
+              "cumulative": "75:23",
+              "passing_rank": 16,
+              "split_rank": 16,
               "split_record": false,
-              "status": "unknown",
-              "raw_name_grade": "unknown",
-              "computed": {
-                "split_rank": null,
-                "passing_rank": null
-              }
+              "status": "ok",
+              "raw_name_grade": "unknown"
             }
           ]
         }
