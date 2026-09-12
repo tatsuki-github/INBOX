@@ -2,11 +2,9 @@
   "id": "17wQY9f09Y6qPsp1rHkGGoiVMIs7QuuXA",
   "title": "2026年度荒玉男子.pdf",
   "mimeType": "application/pdf",
-  "viewUrl": "https://drive.google.com/file/d/17wQY9f09Y6qPsp1rHkGGoiVMIs7QuuXA/view",
-  "status": "stub",
-  "importedAs": null,
-  "skipReason": "Multi-MB PDF binary not imported; meta+viewUrl only (ADR 010)",
+  "fileSize": "3201946",
+  "viewUrl": "https://drive.google.com/file/d/17wQY9f09Y6qPsp1rHkGGoiVMIs7QuuXA/view?usp=drivesdk",
   "parentId": "18J1Yy52SRn1oB23I0jOoCrbiXwIZTqpC",
-  "fileSize": 3201946,
-  "stubReason": "binary deferred; use viewUrl"
+  "modifiedTime": "2026-09-10T03:22:24.271Z",
+  "stubReason": "PDF binary deferred; prefer Drive viewUrl (OCR text unusable)"
 }

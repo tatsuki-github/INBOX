@@ -2,11 +2,9 @@
   "id": "1RGwybNbQXJPRLmsy53tufqWZEuTH_SIP",
   "title": "運営会議案内.pdf",
   "mimeType": "application/pdf",
+  "fileSize": "97895",
   "viewUrl": "https://drive.google.com/file/d/1RGwybNbQXJPRLmsy53tufqWZEuTH_SIP/view?usp=drivesdk",
-  "status": "stub",
-  "importedAs": "運営会議案内.pdf.md",
-  "skipReason": "PDF binary not imported; searchable stub + viewUrl (ADR 010)",
   "parentId": "1MRUdQyGa7ps_ZjAONYdMJu-WkbZRZBdg",
-  "fileSize": 97895,
-  "modifiedTime": "2025-10-08T09:03:05.135Z"
+  "modifiedTime": "2025-10-08T12:00:00Z",
+  "stubReason": "PDF binary deferred; use viewUrl"
 }

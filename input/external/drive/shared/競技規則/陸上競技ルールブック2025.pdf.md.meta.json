@@ -2,11 +2,9 @@
   "id": "1UXixVRjyJCG8g25RdaAFLfl0gVtLDxEg",
   "title": "陸上競技ルールブック2025.pdf",
   "mimeType": "application/pdf",
-  "viewUrl": "https://drive.google.com/file/d/1UXixVRjyJCG8g25RdaAFLfl0gVtLDxEg/view",
-  "status": "skipped",
-  "importedAs": null,
-  "skipReason": "Commercial rulebook PDF; skipped full text per import policy (ADR 010 / phase1 OOS)",
+  "fileSize": "4661552",
+  "viewUrl": "https://drive.google.com/file/d/1UXixVRjyJCG8g25RdaAFLfl0gVtLDxEg/view?usp=drivesdk",
   "parentId": "10qRi9mEamvFPkPj2a9wi6Msyfp6dhdwZ",
-  "fileSize": 4661552,
-  "stubReason": "binary deferred; use viewUrl"
+  "modifiedTime": "2025-05-19T13:07:11Z",
+  "stubReason": "large PDF (~4.6MB); binary deferred; use viewUrl"
 }
