@@ -18,6 +18,25 @@ TOP_N_NOTE = (
 )
 
 
+def merge_school_analysis_sections(
+    sections: list[AffiliationSection],
+    affiliation_overrides: dict[str, str] | None = None,
+) -> list[AffiliationSection]:
+    """学校単位の分析用に、指定された所属を学校へ集約する。
+
+    元の記録行の affiliation は変更しない。これは集計単位だけを補正するための処理。
+    """
+    overrides = affiliation_overrides or {}
+    grouped: dict[str, list[RecordRow]] = {}
+    for section in sections:
+        key = overrides.get(section.affiliation, section.affiliation)
+        grouped.setdefault(key, []).extend(section.records)
+    return [
+        AffiliationSection(affiliation=affiliation, records=records)
+        for affiliation, records in grouped.items()
+    ]
+
+
 @dataclass
 class AffiliationRankingEntry:
     affiliation: str
@@ -216,8 +235,10 @@ RANKING_CATEGORY_SPECS: tuple[RankingCategorySpec, ...] = (
 
 def compute_all_affiliation_rankings(
     sections: list[AffiliationSection],
+    affiliation_overrides: dict[str, str] | None = None,
 ) -> list[CategoryRankings]:
-    return [_build_category_rankings(sections, spec) for spec in RANKING_CATEGORY_SPECS]
+    analysis_sections = merge_school_analysis_sections(sections, affiliation_overrides)
+    return [_build_category_rankings(analysis_sections, spec) for spec in RANKING_CATEGORY_SPECS]
 
 
 def compute_affiliation_rankings(
