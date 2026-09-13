@@ -93,7 +93,11 @@ def main() -> int:
     sections = group_by_affiliation(records)
     pdf_path = build_pdf(sections, output_path, title, font_path=args.font)
     ranking_path = build_ranking_pdf(
-        sections, ranking_output_path, ranking_title, font_path=args.font
+        sections,
+        ranking_output_path,
+        ranking_title,
+        font_path=args.font,
+        affiliation_overrides=config.get("school_analysis_affiliation_overrides"),
     )
     print(f"PDF 生成: {pdf_path} ({len(sections)}所属 / {len(records)}件)")
     print(f"ランキング PDF: {ranking_path}")
