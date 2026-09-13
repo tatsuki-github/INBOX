@@ -212,13 +212,19 @@ def _category_ranking_story(
 def _all_rankings_story(
     categories: list[CategoryRankings],
     styles: dict[str, ParagraphStyle],
+    affiliation_overrides: dict[str, str] | None = None,
 ) -> list[Any]:
+    override_note = ""
+    if affiliation_overrides:
+        pairs = "、".join(f"{source}は{target}として集計" for source, target in affiliation_overrides.items())
+        override_note = f" 学校単位の集計では、{pairs}。"
     story: list[Any] = [
         Paragraph("所属別ランキング", styles["section"]),
         Paragraph(
             "800m / 1500m / 3000m の実記録と 3000m 予想タイムを、"
             "所属ごとに上位平均で順位付けしています。"
-            " 男子6人未満・女子5人未満の所属は掲載しません。",
+            " 男子6人未満・女子5人未満の所属は掲載しません。"
+            + override_note,
             styles["note"],
         ),
         Spacer(1, 2 * mm),
@@ -328,12 +334,13 @@ def build_ranking_pdf(
     output_path: Path,
     title: str,
     font_path: Path | None = None,
+    affiliation_overrides: dict[str, str] | None = None,
 ) -> Path:
     """所属別ランキングのみの PDF を生成する。"""
     font_name = register_font(font_path)
     output_path.parent.mkdir(parents=True, exist_ok=True)
 
-    categories = compute_all_affiliation_rankings(sections)
+    categories = compute_all_affiliation_rankings(sections, affiliation_overrides)
     ranking_styles = _ranking_paragraph_styles(font_name)
     generated_at = datetime.now().strftime("%Y-%m-%d %H:%M")
 
@@ -368,7 +375,7 @@ def build_ranking_pdf(
             meta_style,
         ),
         Spacer(1, 4 * mm),
-        *_all_rankings_story(categories, ranking_styles),
+        *_all_rankings_story(categories, ranking_styles, affiliation_overrides),
     ]
     doc.build(story)
     return output_path
