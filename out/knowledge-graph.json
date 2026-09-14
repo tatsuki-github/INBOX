@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated_at": "2026-09-10T13:08:29Z",
+  "generated_at": "2026-09-14T03:10:45Z",
   "nodes": [
     {
       "id": "entity:athlete:中尾快叶",
@@ -2062,6 +2062,14 @@
       "hint": "駅伝歴代 rows + media-manifest + ocr/*.md（画像パスがあれば原画を読む）"
     },
     {
+      "id": "query:7:荒玉駅伝の区間距離は？",
+      "type": "QueryHint",
+      "label": "荒玉駅伝の区間距離は？",
+      "topics": [],
+      "refs": [],
+      "hint": "docs/aragyoku-ekiden-distance-definitions.md の年度別・男女別区間距離定義を優先する"
+    },
+    {
       "id": "source:README.md",
       "type": "Source",
       "label": "README.md",
@@ -2271,6 +2279,20 @@
       "hint": "ADR: 013-aragyoku-csv-name-reconciliation"
     },
     {
+      "id": "source:docs/adr/014-aragyoku-full-transcript-schema.md",
+      "type": "Source",
+      "label": "014-aragyoku-full-transcript-schema.md",
+      "topics": [
+        "ai",
+        "meta",
+        "practice"
+      ],
+      "refs": [
+        "docs/adr/014-aragyoku-full-transcript-schema.md"
+      ],
+      "hint": "ADR: 014-aragyoku-full-transcript-schema"
+    },
+    {
       "id": "source:docs/ai-practice-generation.md",
       "type": "Source",
       "label": "ai-practice-generation.md",
@@ -2283,6 +2305,20 @@
         "docs/ai-practice-generation.md"
       ],
       "hint": "AI 練習生成・RAG・ADR 入口"
+    },
+    {
+      "id": "source:docs/aragyoku-ekiden-distance-definitions.md",
+      "type": "Source",
+      "label": "aragyoku-ekiden-distance-definitions.md",
+      "topics": [
+        "athlete_records",
+        "ekiden",
+        "schema"
+      ],
+      "refs": [
+        "docs/aragyoku-ekiden-distance-definitions.md"
+      ],
+      "hint": "荒玉駅伝の年度別・男女別区間距離の正本定義"
     },
     {
       "id": "source:docs/data-model.md",
@@ -3476,6 +3512,30 @@
       "hint": "記録 PDF（参照のみ）: 荒玉女子駅伝_上位4校_トラック走力.pdf"
     },
     {
+      "id": "source:out/analysis/荒玉女子駅伝_上位6校_トラック走力.pdf",
+      "type": "Source",
+      "label": "荒玉女子駅伝_上位6校_トラック走力.pdf",
+      "topics": [
+        "athlete_records"
+      ],
+      "refs": [
+        "out/analysis/荒玉女子駅伝_上位6校_トラック走力.pdf"
+      ],
+      "hint": "記録 PDF（参照のみ）: 荒玉女子駅伝_上位6校_トラック走力.pdf"
+    },
+    {
+      "id": "source:out/analysis/荒玉男子駅伝_上位6校.pdf",
+      "type": "Source",
+      "label": "荒玉男子駅伝_上位6校.pdf",
+      "topics": [
+        "athlete_records"
+      ],
+      "refs": [
+        "out/analysis/荒玉男子駅伝_上位6校.pdf"
+      ],
+      "hint": "記録 PDF（参照のみ）: 荒玉男子駅伝_上位6校.pdf"
+    },
+    {
       "id": "source:out/daiming-practice-menus-kpace.md",
       "type": "Source",
       "label": "daiming-practice-menus-kpace.md",
@@ -3699,22 +3759,6 @@
       ],
       "refs": [],
       "hint": "JSON Schema とデータモデル"
-    },
-    {
-      "id": "source:docs/aragyoku-ekiden-distance-definitions.md",
-      "type": "Source",
-      "label": "aragyoku-ekiden-distance-definitions.md",
-      "topics": ["athlete_records", "ekiden", "schema"],
-      "refs": ["docs/aragyoku-ekiden-distance-definitions.md"],
-      "hint": "荒玉駅伝の年度別・男女別区間距離の正本定義"
-    },
-    {
-      "id": "query:7:荒玉駅伝の区間距離は？",
-      "type": "QueryHint",
-      "label": "荒玉駅伝の区間距離は？",
-      "topics": [],
-      "refs": [],
-      "hint": "docs/aragyoku-ekiden-distance-definitions.md の年度別・男女別区間距離定義を優先する"
     }
   ],
   "edges": [
@@ -5384,23 +5428,13 @@
       "rel": "search_here"
     },
     {
-      "from": "topic:athlete_records",
-      "to": "source:docs/aragyoku-ekiden-distance-definitions.md",
-      "rel": "search_here"
-    },
-    {
-      "from": "topic:ekiden",
-      "to": "source:docs/aragyoku-ekiden-distance-definitions.md",
-      "rel": "search_here"
-    },
-    {
-      "from": "topic:schema",
+      "from": "query:7:荒玉駅伝の区間距離は？",
       "to": "source:docs/aragyoku-ekiden-distance-definitions.md",
       "rel": "search_here"
     },
     {
       "from": "query:7:荒玉駅伝の区間距離は？",
-      "to": "source:docs/aragyoku-ekiden-distance-definitions.md",
+      "to": "topic:ekiden",
       "rel": "search_here"
     },
     {
@@ -5466,6 +5500,11 @@
     {
       "from": "source:docs/ai-practice-generation.md",
       "to": "source:docs/adr/013-aragyoku-csv-name-reconciliation.md",
+      "rel": "see_also"
+    },
+    {
+      "from": "source:docs/ai-practice-generation.md",
+      "to": "source:docs/adr/014-aragyoku-full-transcript-schema.md",
       "rel": "see_also"
     },
     {
@@ -5850,6 +5889,11 @@
     },
     {
       "from": "topic:ai",
+      "to": "source:docs/adr/014-aragyoku-full-transcript-schema.md",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:ai",
       "to": "source:docs/ai-practice-generation.md",
       "rel": "search_here"
     },
@@ -6105,6 +6149,11 @@
     },
     {
       "from": "topic:athlete_records",
+      "to": "source:docs/aragyoku-ekiden-distance-definitions.md",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:athlete_records",
       "to": "source:input/arato_tamana_report.yaml",
       "rel": "search_here"
     },
@@ -6181,6 +6230,16 @@
     {
       "from": "topic:athlete_records",
       "to": "source:out/analysis/荒玉女子駅伝_上位4校_トラック走力.pdf",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:athlete_records",
+      "to": "source:out/analysis/荒玉女子駅伝_上位6校_トラック走力.pdf",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:athlete_records",
+      "to": "source:out/analysis/荒玉男子駅伝_上位6校.pdf",
       "rel": "search_here"
     },
     {
@@ -6565,6 +6624,11 @@
     },
     {
       "from": "topic:ekiden",
+      "to": "source:docs/aragyoku-ekiden-distance-definitions.md",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:ekiden",
       "to": "source:input/external/media-manifest.json",
       "rel": "search_here"
     },
@@ -6666,6 +6730,11 @@
     {
       "from": "topic:meta",
       "to": "source:docs/adr/013-aragyoku-csv-name-reconciliation.md",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:meta",
+      "to": "source:docs/adr/014-aragyoku-full-transcript-schema.md",
       "rel": "search_here"
     },
     {
@@ -7180,6 +7249,11 @@
     },
     {
       "from": "topic:practice",
+      "to": "source:docs/adr/014-aragyoku-full-transcript-schema.md",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:practice",
       "to": "source:docs/ai-practice-generation.md",
       "rel": "search_here"
     },
@@ -7446,6 +7520,11 @@
     {
       "from": "topic:practice",
       "to": "source:prompts/system-weekly-plan.md",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:schema",
+      "to": "source:docs/aragyoku-ekiden-distance-definitions.md",
       "rel": "search_here"
     },
     {
