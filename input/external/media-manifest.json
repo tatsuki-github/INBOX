@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-10T22:11:45.056929+00:00",
+  "generated_at": "2026-09-14T04:51:41.196504+00:00",
   "purpose": "荒玉駅伝勝利のためのいだてん岱明メディア索引。KG がパスを辿り LLM が画像/OCRを読む。",
   "summary": {
     "ekiden_pages": 27,
@@ -132,7 +132,7 @@
       "kind": "image+structured_ocr",
       "transcript_path": "input/aragyoku/transcripts/2015-男子.json",
       "schema": "full-transcript-v1",
-      "team_count": 12,
+      "team_count": 16,
       "source_drive_id": "1cs3-zzGVkVcqWENzjBRK1VUSQ84KV8I2",
       "full_board_ocr": true
     },
@@ -168,7 +168,7 @@
       "kind": "image+structured_ocr",
       "transcript_path": "input/aragyoku/transcripts/2016-男子.json",
       "schema": "full-transcript-v1",
-      "team_count": 14,
+      "team_count": 16,
       "source_drive_id": "1yq9bXt48tgdXfAO7GcrGmNGXAGXL1n9G",
       "full_board_ocr": true
     },
@@ -277,7 +277,7 @@
       "transcript_path": "input/aragyoku/transcripts/2019-男子.json",
       "schema": "full-transcript-v1",
       "team_count": 16,
-      "source_drive_id": "1oA03VIK-3t_A_BVhBQugkH9rZOcy05m5",
+      "source_drive_id": "13Mr2rUaOW3hCoYf5FPiA_zHMssTswZ2K",
       "full_board_ocr": true
     },
     {

@@ -35,8 +35,11 @@ def _fmt_note(leg: dict) -> str:
 
 
 def _team_table(team: dict) -> str:
+    title = f"### {team['rank']}位 {team['team']}"
+    if team.get("total"):
+        title += f" {team['total']}"
     lines = [
-        f"### {team['rank']}位 {team['team']} {team['total']}",
+        title,
         "",
         "| 区 | 選手 | 学年 | 区間 | 累計 | 通過順位 | 区間順位 | 注釈 |",
         "|---:|:---|:---:|:---:|:---:|:---:|:---:|:---|",
