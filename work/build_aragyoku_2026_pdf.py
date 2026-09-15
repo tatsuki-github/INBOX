@@ -797,6 +797,81 @@ def rank_change_table_rows(records, direction):
     return rows
 
 
+def second_place_pace_profile(dataset, gender):
+    """Historical pace distribution for the second-placed team, not a target guarantee."""
+    points, paces = [], []
+    for year_s, entry in sorted(dataset['years'].items()):
+        second = next((team for team in teams_with_times(entry) if team['rank'] == 2), None)
+        if second:
+            sec_per_km = secs(second['total']) / sum(distance(year_s, gender))
+            points.append((int(year_s), sec_per_km))
+            paces.append(sec_per_km)
+    current_km = 17.710 if gender == '男子' else 11.855
+    bands = []
+    for label, quantile in [('速い側25%', .25), ('中央値', .50), ('遅い側75%', .75)]:
+        value = percentile(paces, quantile)
+        bands.append([label, f'{value:.1f}秒/km', fmt(value * current_km)])
+    return points, paces, bands
+
+
+def second_checkpoint_profile(dataset, gender):
+    """Where eventual second-place teams stood at every valid exchange."""
+    leg_count = 6 if gender == '男子' else 5
+    labels, top_two, top_three, average_rank, sample = [], [], [], [], []
+    for leg_no in range(1, leg_count + 1):
+        values = []
+        for entry in dataset['years'].values():
+            second = next((team for team in entry['teams'] if team.get('rank') == 2), None)
+            leg = next((item for item in second['legs'] if item.get('leg') == leg_no), None) if second else None
+            if leg and isinstance(leg.get('passing_rank'), int):
+                values.append(leg['passing_rank'])
+        labels.append(f'{leg_no}区後')
+        sample.append(len(values))
+        top_two.append(100 * sum(rank <= 2 for rank in values) / len(values) if values else 0)
+        top_three.append(100 * sum(rank <= 3 for rank in values) / len(values) if values else 0)
+        average_rank.append(mean(values) if values else 0)
+    return labels, top_two, top_three, average_rank, sample
+
+
+def second_leg_profile(dataset, gender):
+    """Split-rank distribution of historical second-place teams by leg."""
+    leg_count = 6 if gender == '男子' else 5
+    labels, top_three, top_five, med_rank, sample = [], [], [], [], []
+    for leg_no in range(1, leg_count + 1):
+        values = []
+        for entry in dataset['years'].values():
+            second = next((team for team in entry['teams'] if team.get('rank') == 2), None)
+            leg = next((item for item in second['legs'] if item.get('leg') == leg_no), None) if second else None
+            if leg and isinstance(leg.get('split_rank'), int):
+                values.append(leg['split_rank'])
+        labels.append(f'{leg_no}区')
+        sample.append(len(values))
+        top_three.append(100 * sum(rank <= 3 for rank in values) / len(values) if values else 0)
+        top_five.append(100 * sum(rank <= 5 for rank in values) / len(values) if values else 0)
+        med_rank.append(median(values) if values else 0)
+    return labels, top_three, top_five, med_rank, sample
+
+
+def second_boundary_margins(dataset, gender):
+    """Distance-normalised margins around second place by year."""
+    first_gap, third_gap = [], []
+    for year_s, entry in sorted(dataset['years'].items()):
+        by_rank = {team['rank']: team for team in teams_with_times(entry)}
+        if all(rank in by_rank for rank in (1, 2, 3)):
+            km = sum(distance(year_s, gender))
+            first_gap.append((int(year_s), (secs(by_rank[2]['total']) - secs(by_rank[1]['total'])) / km))
+            third_gap.append((int(year_s), (secs(by_rank[3]['total']) - secs(by_rank[2]['total'])) / km))
+    return first_gap, third_gap
+
+
+def margin_summary_rows(first_gap, third_gap):
+    rows = [['差の方向', '標本', '25%点', '中央値', '75%点', '≤5秒/km']]
+    for label, points in [('優勝との差', first_gap), ('3位との差', third_gap)]:
+        values = [value for _, value in points]
+        rows.append([label, str(len(values)), f'{percentile(values, .25):.1f}', f'{median(values):.1f}', f'{percentile(values, .75):.1f}', f'{sum(value <= 5 for value in values)}/{len(values)}'])
+    return rows
+
+
 def provenance_diagram():
     """A compact vector map of what flows into decisions, without implying causality."""
     width, height = 176*mm, 105*mm
@@ -837,6 +912,14 @@ def story():
     women_gains, women_losses = extreme_rank_changes(women, '女子')
     men_gap_rows, men_gap_values = gap_profile(men, '男子')
     women_gap_rows, women_gap_values = gap_profile(women, '女子')
+    men_second_pace, _, men_second_bands = second_place_pace_profile(men, '男子')
+    women_second_pace, _, women_second_bands = second_place_pace_profile(women, '女子')
+    men_second_checkpoint = second_checkpoint_profile(men, '男子')
+    women_second_checkpoint = second_checkpoint_profile(women, '女子')
+    men_second_leg = second_leg_profile(men, '男子')
+    women_second_leg = second_leg_profile(women, '女子')
+    men_second_margins = second_boundary_margins(men, '男子')
+    women_second_margins = second_boundary_margins(women, '女子')
     st=[]
     # Cover
     st += [Spacer(1, 28*mm), rich('ARAGYOKU EKIDEN 2026', 'cover'), rich('荒玉駅伝2026 徹底対策', 'cover'),
@@ -1025,6 +1108,39 @@ def story():
            vbar_chart('女子: 隣接順位の総合ペース差（中央値）', ['1-2位','2-3位','3-4位','4-5位','5-6位'], [women_gap_values], ['中央値'], '縦軸: 秒/km（小さいほど接戦）', height=61*mm),
            table([['順位帯','標本','25%点','中央値','75%点','≤5秒/km'], *women_gap_rows], [26*mm,22*mm,27*mm,27*mm,27*mm,34*mm]),
            chart_note('秒/kmの差は年度間比較のための補正です。実際のタスキ差は総秒差で確認し、同じペース差でもコース距離と中継状況で意味が変わります。'),
+           source_note(['input/aragyoku/men_full_2012_2025.json','input/aragyoku/women_full_2012_2025.json','docs/aragyoku-ekiden-distance-definitions.md']), PageBreak()]
+
+    st += [heading('4.16 県駅伝出場圏: 2位到達ラインの見方'),
+           P('この章では、依頼時に示された「2位まで県駅伝に出場できる」という前提で、歴代2位チームの実測を分析します。出場枠は年度の大会要項で必ず再確認してください。2位のタイムは競技力・天候・人数・コース条件で変わるため、ここでは必達値ではなく距離補正済みの到達ラインとして扱います。'),
+           vbar_chart('男子: 歴代2位の総合ペース（年度別）', [str(year) for year, _ in men_second_pace], [[value for _, value in men_second_pace]], ['2位ペース'], '縦軸: 秒/km（低いほど速い）', height=65*mm),
+           vbar_chart('女子: 歴代2位の総合ペース（年度別）', [str(year) for year, _ in women_second_pace], [[value for _, value in women_second_pace]], ['2位ペース'], '縦軸: 秒/km（低いほど速い）', height=65*mm),
+           table([['部門','帯','2位のペース','現行コース換算の参考総合'], *[['男子', *row] for row in men_second_bands], *[['女子', *row] for row in women_second_bands]], [20*mm,30*mm,45*mm,55*mm]),
+           callout('2位を狙う条件', '最初に置くべきは「2位の歴史的なペース帯」と「3位との境界」です。PB合計だけで到達を決めず、次ページ以降の中継位置、区間順位、終盤の差を同じオーダー案で照合します。', colors.HexColor('#E8F3EC')),
+           source_note(['input/aragyoku/men_full_2012_2025.json','input/aragyoku/women_full_2012_2025.json','docs/aragyoku-ekiden-distance-definitions.md']), PageBreak()]
+
+    st += [heading('4.17 2位チームは中継でどの位置にいたか'),
+           P('各年度の最終2位チームだけを取り出し、中継順位を集計しました。「中継2位以内」は県駅伝出場圏内にいる割合、「中継3位以内」は圏外からの逆転余地も含めた近接位置の割合です。最終区間後の100%は定義上の確認値です。'),
+           vbar_chart('男子: 最終2位チームの中継位置', men_second_checkpoint[0], [men_second_checkpoint[1], men_second_checkpoint[2]], ['中継2位以内','中継3位以内'], '縦軸: 割合（%）', height=68*mm, value_min=0, value_max=100),
+           vbar_chart('女子: 最終2位チームの中継位置', women_second_checkpoint[0], [women_second_checkpoint[1], women_second_checkpoint[2]], ['中継2位以内','中継3位以内'], '縦軸: 割合（%）', height=68*mm, value_min=0, value_max=100),
+           table([['部門','区間後','標本','2位チームの平均通過順位'], *[['男子', label, str(sample), f'{rank:.2f}位'] for label, sample, rank in zip(men_second_checkpoint[0], men_second_checkpoint[4], men_second_checkpoint[3])], *[['女子', label, str(sample), f'{rank:.2f}位'] for label, sample, rank in zip(women_second_checkpoint[0], women_second_checkpoint[4], women_second_checkpoint[3])]], [22*mm,30*mm,28*mm,58*mm]),
+           chart_note('歴代2位チームにも中継3位以下からの到達例があります。序盤の順位だけを失敗と読まず、差・集団・区間適性・終盤の残りを確認します。'),
+           source_note(['input/aragyoku/men_full_2012_2025.json','input/aragyoku/women_full_2012_2025.json']), PageBreak()]
+
+    st += [heading('4.18 2位チームの区間順位: 速さより「揃え方」を見る'),
+           P('歴代の最終2位チームについて、各区間が区間順位3位以内・5位以内に入った割合を示します。これは「全区間で上位3位が必要」という条件ではありません。むしろ、1区間の大きな後退を残りの区間でどう補ったかを実測から確認する補助指標です。'),
+           vbar_chart('男子: 2位チームの区間順位の分布', men_second_leg[0], [men_second_leg[1], men_second_leg[2]], ['区間3位以内','区間5位以内'], '縦軸: 割合（%）', height=68*mm, value_min=0, value_max=100),
+           vbar_chart('女子: 2位チームの区間順位の分布', women_second_leg[0], [women_second_leg[1], women_second_leg[2]], ['区間3位以内','区間5位以内'], '縦軸: 割合（%）', height=68*mm, value_min=0, value_max=100),
+           table([['部門','区間','標本','区間順位の中央値'], *[['男子', label, str(sample), f'{rank:.1f}位'] for label, sample, rank in zip(men_second_leg[0], men_second_leg[4], men_second_leg[3])], *[['女子', label, str(sample), f'{rank:.1f}位'] for label, sample, rank in zip(women_second_leg[0], women_second_leg[4], women_second_leg[3])]], [22*mm,30*mm,28*mm,58*mm]),
+           callout('編成への使い方', '2位の再現条件は、最速選手を一人置くことではなく、区間順位の極端な落ち込みを管理することです。候補ごとにPB、3km相当TT、過去の単独走、後半低下、補員との差を分けて採点します。', colors.HexColor('#EAF3FA')),
+           source_note(['input/aragyoku/men_full_2012_2025.json','input/aragyoku/women_full_2012_2025.json']), PageBreak()]
+
+    st += [heading('4.19 2位の境界: 優勝との差と3位との差'),
+           P('最終2位を基準に、優勝との差と3位との差を年度別に秒/kmで表示します。3位との差が小さい年ほど、2位の出場圏を守るには終盤の順位・受け渡し・失速管理の相対的重要性が高まります。ただし差が大きい/小さい原因はこの図だけでは決まりません。'),
+           line_chart('男子: 2位の前後差（年度別）', [men_second_margins[0], men_second_margins[1]], ['優勝との差','3位との差'], '縦軸: 秒/km（小さいほど接戦）', height=68*mm),
+           table(margin_summary_rows(*men_second_margins), [38*mm,22*mm,27*mm,27*mm,27*mm,35*mm]),
+           line_chart('女子: 2位の前後差（年度別）', [women_second_margins[0], women_second_margins[1]], ['優勝との差','3位との差'], '縦軸: 秒/km（小さいほど接戦）', height=68*mm),
+           table(margin_summary_rows(*women_second_margins), [38*mm,22*mm,27*mm,27*mm,27*mm,35*mm]),
+           chart_note('目標を「優勝との差」だけで作らず、必ず「3位との差」も同時に確認します。2位を守るための想定は、総合見込み、最終区間前の位置、補員投入時の差の3条件で作成します。'),
            source_note(['input/aragyoku/men_full_2012_2025.json','input/aragyoku/women_full_2012_2025.json','docs/aragyoku-ekiden-distance-definitions.md']), PageBreak()]
 
     # selection / race plan
