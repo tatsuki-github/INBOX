@@ -38,7 +38,7 @@ export function CourseVideoPlayer({ src, className }: Props) {
   return (
     <video
       ref={videoRef}
-      className={className}
+      className={className ?? "course-video"}
       controls
       onPlay={handlePlay}
       playsInline
