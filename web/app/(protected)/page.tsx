@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from "react";
 
-import { CourseVideoPlayer } from "./CourseVideoPlayer";
+import { CourseVideoPlayer } from "../CourseVideoPlayer";
 
 type Division = "女子" | "男子";
 type CourseVideo = { division: Division; leg: number; distance: string; file: string; route: string; note: string };
