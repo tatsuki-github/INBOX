@@ -5,3 +5,9 @@ venv/
 *.egg-info/
 .DS_Store
 out/ai/rag_index.json
+
+# Next.js (web/)
+node_modules/
+.next/
+web/.env*.local
+web/.vercel
