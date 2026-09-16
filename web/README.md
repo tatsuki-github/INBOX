@@ -1,19 +1,19 @@
 # Web (Next.js)
 
-Vercel でホスティングする最小の Next.js アプリです。現時点の表示は **Hello World** のみです。
+荒玉駅伝2026 コース動画ライブラリ（Next.js App Router）。
 
 ## ローカル
 
 ```bash
 cd web
 cp .env.example .env.local
-# BASIC_AUTH_USER / BASIC_AUTH_PASSWORD を必要に応じて変更
+# AUTH_SECRET / BASIC_AUTH_USER / BASIC_AUTH_PASSWORD を設定
 npm install
 npm run dev
 ```
 
-ブラウザで `http://localhost:3000` を開き、Basic 認証ダイアログに `.env.local` の値を入力します。
-認証は `proxy.ts` で全ルートに適用されます。
+ブラウザで `http://localhost:3000` を開き、`/login` でユーザー名・パスワード（`.env.local` の Basic 認証用値）を入力します。
+認証は [Auth.js](https://authjs.dev/)（Credentials）と `proxy.ts` で全ルートに適用されます。
 
 ## Vercel
 
@@ -21,6 +21,7 @@ npm run dev
 2. Framework Preset: **Next.js**（自動検出）
 3. Build Command / Output Directory: **デフォルトのまま**（Output Directory は空）
 4. Environment Variables:
+   - `AUTH_SECRET`（必須。例: `openssl rand -base64 32`）
    - `BASIC_AUTH_USER`
    - `BASIC_AUTH_PASSWORD`
 5. Deploy / Redeploy
