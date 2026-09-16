@@ -9,7 +9,7 @@
 
 ## Web（Vercel）
 
-リポジトリ直下に Next.js アプリがあります（現時点は Hello World）。Vercel の **Root Directory は空（リポジトリ直下）**。Basic 認証用の環境変数は `BASIC_AUTH_USER` / `BASIC_AUTH_PASSWORD`。詳細は [`docs/web-vercel.md`](docs/web-vercel.md)。
+[`web/`](web/) に Next.js アプリがあります（現時点は Hello World）。Vercel の **Root Directory** は `web`。Basic 認証用の環境変数は `BASIC_AUTH_USER` / `BASIC_AUTH_PASSWORD`。詳細は [`web/README.md`](web/README.md)。
 
 ## セットアップ
 
