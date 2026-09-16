@@ -2,6 +2,8 @@
 
 import { useMemo, useState } from "react";
 
+import { CourseVideoPlayer } from "./CourseVideoPlayer";
+
 type Division = "女子" | "男子";
 type CourseVideo = { division: Division; leg: number; distance: string; file: string; route: string; note: string };
 
@@ -40,7 +42,7 @@ export default function Home() {
         </div>
         <div className="video-grid">
           {filteredVideos.map((video) => <article className="video-card" key={`${video.division}-${video.leg}`}>
-            <div className="video-frame"><video controls preload="metadata" playsInline src={video.file} /><span className={`division-badge ${video.division === "女子" ? "women" : "men"}`}>{video.division}</span></div>
+            <div className="video-frame"><CourseVideoPlayer src={video.file} /><span className={`division-badge ${video.division === "女子" ? "women" : "men"}`}>{video.division}</span></div>
             <div className="card-body"><div className="card-kicker">{video.division} {video.leg}区</div><h3>{video.distance}<span>{video.route}</span></h3><p>{video.note}</p></div>
           </article>)}
         </div>
