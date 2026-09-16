@@ -39,5 +39,14 @@ h2 { margin:9px 0 0; font-size:clamp(28px,4vw,42px); letter-spacing:-.06em; }
 .method-grid strong { font-size:16px; }
 .method-grid p { grid-column:2; margin:6px 0 0; color:var(--muted); font-size:13px; line-height:1.7; }
 footer { padding:34px 3px 0; color:var(--muted); font:11px "DM Mono",monospace; }
+.login-shell { min-height:100vh; display:grid; place-items:center; padding:24px; }
+.login-card { width:min(420px,100%); padding:36px 32px; border:1px solid var(--line); border-radius:22px; background:#fff; box-shadow:0 14px 34px rgba(23,51,57,.08); }
+.login-card h1 { margin:12px 0 10px; font-size:32px; letter-spacing:-.05em; }
+.login-copy { margin:0 0 22px; color:var(--muted); font-size:14px; line-height:1.7; }
+.login-form { display:grid; gap:14px; }
+.login-form label { display:grid; gap:6px; font-size:13px; font-weight:600; }
+.login-form input { border:1px solid var(--line); border-radius:12px; padding:12px 14px; font:inherit; }
+.login-form button { margin-top:6px; border:0; border-radius:999px; padding:12px 18px; color:#fff; font-weight:700; background:linear-gradient(120deg,#153d48,#0c2833); cursor:pointer; }
+.login-error { margin:0; color:#b42318; font-size:13px; line-height:1.6; }
 @media (max-width:900px) { .site-shell{padding:18px}.hero{padding:48px 30px}.video-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.method{grid-template-columns:1fr;gap:30px} }
 @media (max-width:580px) { .hero{min-height:500px;padding:42px 24px}.hero-stats{flex-wrap:wrap;gap:18px}.section-heading{align-items:start;flex-direction:column}.video-grid{grid-template-columns:1fr;gap:18px}.video-card{display:grid;grid-template-columns:42% 58%}.video-frame{aspect-ratio:9 / 16}.card-body{align-self:center;padding:16px}.card-body p{min-height:auto}.method{padding:34px 26px} }
