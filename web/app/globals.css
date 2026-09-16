@@ -22,8 +22,19 @@ h2 { margin:9px 0 0; font-size:clamp(28px,4vw,42px); letter-spacing:-.06em; }
 .video-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:24px; }
 .video-card { overflow:hidden; border:1px solid var(--line); border-radius:18px; background:#fff; box-shadow:0 10px 25px rgba(23,51,57,.05); transition:transform .2s ease,box-shadow .2s ease; }
 .video-card:hover { transform:translateY(-4px); box-shadow:0 16px 32px rgba(23,51,57,.12); }
-.video-frame { position:relative; aspect-ratio:9 / 16; background:#d5dfdc; }
-.video-frame video { display:block; width:100%; height:100%; object-fit:cover; }
+.video-frame { position:relative; aspect-ratio:9 / 16; background:#0c2833; }
+.video-frame video,
+.course-video { display:block; width:100%; height:100%; object-fit:contain; object-position:center; background:#0c2833; }
+.course-video:fullscreen,
+.course-video:-webkit-full-screen {
+  width:100%;
+  height:100%;
+  max-width:100vw;
+  max-height:100vh;
+  object-fit:contain;
+  object-position:center;
+  background:#0c2833;
+}
 .division-badge { position:absolute; top:12px; left:12px; padding:5px 10px; border-radius:99px; color:#fff; font:500 11px "DM Mono",monospace; letter-spacing:.1em; background:rgba(16,37,48,.86); }
 .division-badge.women { background:rgba(165,85,91,.9); }
 .division-badge.men { background:rgba(31,100,112,.92); }
