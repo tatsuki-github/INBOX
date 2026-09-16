@@ -13,15 +13,20 @@ npm run dev
 ```
 
 ブラウザで `http://localhost:3000` を開き、Basic 認証ダイアログに `.env.local` の値を入力します。
-認証は `proxy.ts`（Next.js のリクエスト入口）で全ルートに適用されます。
+認証は `proxy.ts` で全ルートに適用されます。
 
 ## Vercel
 
-1. このリポジトリを Import
-2. **Root Directory** を `web` に設定（Settings → General → Root Directory）
-3. Environment Variables を設定（Production / Preview 推奨）:
+1. **Root Directory** = `web`（Settings → Build and Deployment）
+2. Framework Preset: **Next.js**（自動検出）
+3. Build Command / Output Directory: **デフォルトのまま**（Output Directory は空）
+4. Environment Variables:
    - `BASIC_AUTH_USER`
    - `BASIC_AUTH_PASSWORD`
-4. Deploy
+5. Deploy / Redeploy
 
-Framework Preset は Next.js（自動検出）で問題ありません。
+### 404 NOT_FOUND / Root Directory does not exist
+
+- Root Directory が `web` 以外 → `web` に直す
+- Output Directory を触っている → 空に戻す
+- 変更後は **Clear cache and Redeploy**
