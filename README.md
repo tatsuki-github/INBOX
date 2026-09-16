@@ -7,6 +7,10 @@
 - `input/events.YYYY.yaml` に自分の予定・メモを追加可能
 - 出力は年フォルダごと（`out/YYYY/`）
 
+## Web（Vercel）
+
+[`web/`](web/) に Next.js アプリがあります（現時点は Hello World）。Vercel の **Root Directory** は `web`。Basic 認証用の環境変数は `BASIC_AUTH_USER` / `BASIC_AUTH_PASSWORD`。詳細は [`web/README.md`](web/README.md)。
+
 ## セットアップ
 
 ```bash
