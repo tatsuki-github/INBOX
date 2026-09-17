@@ -199,3 +199,103 @@ id,category,year,gender,question,answer,explanation,source,source_field
 198,大会資料の傾向,2019,男子,【大会資料の傾向】男子2019年の文字起こしでは、優勝校の総合記録が63:00と記載されている。 ○か×か。,×,2019年男子の優勝校totalはnullで、63:00ではない。,input/aragyoku/transcripts/,teams[rank=1].total for 2019 男子
 199,大会資料の傾向,2022,男子・女子,【大会資料の傾向】2022年は男子が14チーム、女子が16チームで、男子の方が2チーム少ない。 ○か×か。,○,2022年のteams.lengthは男子14、女子16。,input/aragyoku/transcripts/,teams.length for 2022 男女
 200,大会資料の傾向,2022,男子・女子,【大会資料の傾向】2022年は男子と女子がともに16チームで、参加校数は同じである。 ○か×か。,×,2022年は男子14、女子16で同数ではない。,input/aragyoku/transcripts/,teams.length for 2022 男女
+201,区間記録・挑戦,2012,男子,【区間記録・挑戦】2012年男子は、区間記録フラグが6件ある。 ○か×か。,○,split_record=true を数えると6件。,input/aragyoku/transcripts/2012-男子.json,teams[].legs[].split_record
+202,区間記録・挑戦,2012,男子,【区間記録・挑戦】2012年男子は、区間記録フラグが5件ある。 ○か×か。,×,split_record=true は6件。,input/aragyoku/transcripts/2012-男子.json,teams[].legs[].split_record
+203,区間記録・挑戦,2013,男子,【区間記録・挑戦】2013年男子は、区間記録フラグが7件ある。 ○か×か。,○,split_record=true を数えると7件。,input/aragyoku/transcripts/2013-男子.json,teams[].legs[].split_record
+204,区間記録・挑戦,2013,男子,【区間記録・挑戦】2013年男子は、区間記録フラグが6件ある。 ○か×か。,×,split_record=true は7件。,input/aragyoku/transcripts/2013-男子.json,teams[].legs[].split_record
+205,区間記録・挑戦,2016,男子,【区間記録・挑戦】2016年男子は、区間記録フラグが7件ある。 ○か×か。,○,split_record=true を数えると7件。,input/aragyoku/transcripts/2016-男子.json,teams[].legs[].split_record
+206,区間記録・挑戦,2016,男子,【区間記録・挑戦】2016年男子は、区間記録フラグが6件ある。 ○か×か。,×,split_record=true は7件。,input/aragyoku/transcripts/2016-男子.json,teams[].legs[].split_record
+207,区間記録・挑戦,2021,男子,【区間記録・挑戦】2021年男子は、区間記録フラグが7件ある。 ○か×か。,○,split_record=true を数えると7件。,input/aragyoku/transcripts/2021-男子.json,teams[].legs[].split_record
+208,区間記録・挑戦,2021,男子,【区間記録・挑戦】2021年男子は、区間記録フラグが6件ある。 ○か×か。,×,split_record=true は7件。,input/aragyoku/transcripts/2021-男子.json,teams[].legs[].split_record
+209,区間記録・挑戦,2012,女子,【区間記録・挑戦】2012年女子は、5区すべてに区間記録フラグが付いている。 ○か×か。,○,split_record=true は5件で、5区すべてに1件ずつ。,input/aragyoku/transcripts/2012-女子.json,teams[].legs[].split_record
+210,区間記録・挑戦,2012,女子,【区間記録・挑戦】2012年女子は、4区にしか区間記録フラグが付いていない。 ○か×か。,×,split_record=true は5件で、5区すべてに1件ずつ。,input/aragyoku/transcripts/2012-女子.json,teams[].legs[].split_record
+211,区間記録・挑戦,2013,女子,【区間記録・挑戦】2013年女子は、5区すべてに区間記録フラグが付いている。 ○か×か。,○,split_record=true は5件で、5区すべてに1件ずつ。,input/aragyoku/transcripts/2013-女子.json,teams[].legs[].split_record
+212,区間記録・挑戦,2013,女子,【区間記録・挑戦】2013年女子は、4区にしか区間記録フラグが付いていない。 ○か×か。,×,split_record=true は5件で、5区すべてに1件ずつ。,input/aragyoku/transcripts/2013-女子.json,teams[].legs[].split_record
+213,区間記録・挑戦,2015,女子,【区間記録・挑戦】2015年女子は、5区すべてに区間記録フラグが付いている。 ○か×か。,○,split_record=true は5件で、5区すべてに1件ずつ。,input/aragyoku/transcripts/2015-女子.json,teams[].legs[].split_record
+214,区間記録・挑戦,2015,女子,【区間記録・挑戦】2015年女子は、4区にしか区間記録フラグが付いていない。 ○か×か。,×,split_record=true は5件で、5区すべてに1件ずつ。,input/aragyoku/transcripts/2015-女子.json,teams[].legs[].split_record
+215,区間記録・挑戦,2016,女子,【区間記録・挑戦】2016年女子は、5区すべてに区間記録フラグが付いている。 ○か×か。,○,split_record=true は5件で、5区すべてに1件ずつ。,input/aragyoku/transcripts/2016-女子.json,teams[].legs[].split_record
+216,区間記録・挑戦,2016,女子,【区間記録・挑戦】2016年女子は、4区にしか区間記録フラグが付いていない。 ○か×か。,×,split_record=true は5件で、5区すべてに1件ずつ。,input/aragyoku/transcripts/2016-女子.json,teams[].legs[].split_record
+217,区間記録・挑戦,2017,女子,【区間記録・挑戦】2017年女子は、5区すべてに区間記録フラグが付いている。 ○か×か。,○,split_record=true は5件で、5区すべてに1件ずつ。,input/aragyoku/transcripts/2017-女子.json,teams[].legs[].split_record
+218,区間記録・挑戦,2017,女子,【区間記録・挑戦】2017年女子は、4区にしか区間記録フラグが付いていない。 ○か×か。,×,split_record=true は5件で、5区すべてに1件ずつ。,input/aragyoku/transcripts/2017-女子.json,teams[].legs[].split_record
+219,区間記録・挑戦,2018,女子,【区間記録・挑戦】2018年女子は、5区すべてに区間記録フラグが付いている。 ○か×か。,○,split_record=true は5件で、5区すべてに1件ずつ。,input/aragyoku/transcripts/2018-女子.json,teams[].legs[].split_record
+220,区間記録・挑戦,2018,女子,【区間記録・挑戦】2018年女子は、4区にしか区間記録フラグが付いていない。 ○か×か。,×,split_record=true は5件で、5区すべてに1件ずつ。,input/aragyoku/transcripts/2018-女子.json,teams[].legs[].split_record
+221,区間記録・挑戦,2019,女子,【区間記録・挑戦】2019年女子は、5区すべてに区間記録フラグが付いている。 ○か×か。,○,split_record=true は5件で、5区すべてに1件ずつ。,input/aragyoku/transcripts/2019-女子.json,teams[].legs[].split_record
+222,区間記録・挑戦,2019,女子,【区間記録・挑戦】2019年女子は、4区にしか区間記録フラグが付いていない。 ○か×か。,×,split_record=true は5件で、5区すべてに1件ずつ。,input/aragyoku/transcripts/2019-女子.json,teams[].legs[].split_record
+223,区間記録・挑戦,2019,男子,【区間記録・挑戦】2019年男子は、区間記録フラグが0件である。 ○か×か。,○,split_record=true を数えると0件。,input/aragyoku/transcripts/2019-男子.json,teams[].legs[].split_record
+224,区間記録・挑戦,2019,男子,【区間記録・挑戦】2019年男子は、区間記録フラグが1件である。 ○か×か。,×,split_record=true は0件。,input/aragyoku/transcripts/2019-男子.json,teams[].legs[].split_record
+225,区間記録・挑戦,2020,女子,【区間記録・挑戦】2020年女子は、区間記録フラグが1件である。 ○か×か。,○,split_record=true を数えると1件。,input/aragyoku/transcripts/2020-女子.json,teams[].legs[].split_record
+226,区間記録・挑戦,2020,女子,【区間記録・挑戦】2020年女子は、区間記録フラグが2件である。 ○か×か。,×,split_record=true は1件。,input/aragyoku/transcripts/2020-女子.json,teams[].legs[].split_record
+227,区間記録・挑戦,2012-2025,男子,【区間記録・挑戦】歴代文字起こしで男子1区の最速タイムは9:01である。 ○か×か。,○,2024年の有明が9:01。,input/aragyoku/transcripts/2024-男子.json,teams[].legs[leg].split
+228,区間記録・挑戦,2012-2025,男子,【区間記録・挑戦】歴代文字起こしで男子1区の最速タイムは9:02である。 ○か×か。,×,最速は9:01で、9:02ではない。,input/aragyoku/transcripts/2024-男子.json,teams[].legs[leg].split
+229,区間記録・挑戦,2012-2025,男子,【区間記録・挑戦】歴代文字起こしで男子2区の最速タイムは8:37である。 ○か×か。,○,2025年の天水が8:37。,input/aragyoku/transcripts/2025-男子.json,teams[].legs[leg].split
+230,区間記録・挑戦,2012-2025,男子,【区間記録・挑戦】歴代文字起こしで男子2区の最速タイムは8:38である。 ○か×か。,×,最速は8:37で、8:38ではない。,input/aragyoku/transcripts/2025-男子.json,teams[].legs[leg].split
+231,区間記録・挑戦,2012-2025,男子,【区間記録・挑戦】歴代文字起こしで男子3区の最速タイムは8:41である。 ○か×か。,○,2017年の玉名が8:41。,input/aragyoku/transcripts/2017-男子.json,teams[].legs[leg].split
+232,区間記録・挑戦,2012-2025,男子,【区間記録・挑戦】歴代文字起こしで男子3区の最速タイムは8:42である。 ○か×か。,×,最速は8:41で、8:42ではない。,input/aragyoku/transcripts/2017-男子.json,teams[].legs[leg].split
+233,区間記録・挑戦,2012-2025,男子,【区間記録・挑戦】歴代文字起こしで男子4区の最速タイムは9:13である。 ○か×か。,○,2024年の南関が9:13。,input/aragyoku/transcripts/2024-男子.json,teams[].legs[leg].split
+234,区間記録・挑戦,2012-2025,男子,【区間記録・挑戦】歴代文字起こしで男子4区の最速タイムは9:14である。 ○か×か。,×,最速は9:13で、9:14ではない。,input/aragyoku/transcripts/2024-男子.json,teams[].legs[leg].split
+235,区間記録・挑戦,2012-2025,男子,【区間記録・挑戦】歴代文字起こしで男子5区の最速タイムは9:27である。 ○か×か。,○,2017年の菊水が9:27。,input/aragyoku/transcripts/2017-男子.json,teams[].legs[leg].split
+236,区間記録・挑戦,2012-2025,男子,【区間記録・挑戦】歴代文字起こしで男子5区の最速タイムは9:28である。 ○か×か。,×,最速は9:27で、9:28ではない。,input/aragyoku/transcripts/2017-男子.json,teams[].legs[leg].split
+237,区間記録・挑戦,2012-2025,男子,【区間記録・挑戦】歴代文字起こしで男子6区の最速タイムは9:11である。 ○か×か。,○,2024年の南関が9:11。,input/aragyoku/transcripts/2024-男子.json,teams[].legs[leg].split
+238,区間記録・挑戦,2012-2025,男子,【区間記録・挑戦】歴代文字起こしで男子6区の最速タイムは9:12である。 ○か×か。,×,最速は9:11で、9:12ではない。,input/aragyoku/transcripts/2024-男子.json,teams[].legs[leg].split
+239,区間記録・挑戦,2012-2025,女子,【区間記録・挑戦】歴代文字起こしで女子1区の最速タイムは9:46である。 ○か×か。,○,2022年の長洲が9:46。,input/aragyoku/transcripts/2022-女子.json,teams[].legs[leg].split
+240,区間記録・挑戦,2012-2025,女子,【区間記録・挑戦】歴代文字起こしで女子1区の最速タイムは9:47である。 ○か×か。,×,最速は9:46で、9:47ではない。,input/aragyoku/transcripts/2022-女子.json,teams[].legs[leg].split
+241,区間記録・挑戦,2012-2025,女子,【区間記録・挑戦】歴代文字起こしで女子2区の最速タイムは6:15である。 ○か×か。,○,2017年の玉名が6:15。,input/aragyoku/transcripts/2017-女子.json,teams[].legs[leg].split
+242,区間記録・挑戦,2012-2025,女子,【区間記録・挑戦】歴代文字起こしで女子2区の最速タイムは6:16である。 ○か×か。,×,最速は6:15で、6:16ではない。,input/aragyoku/transcripts/2017-女子.json,teams[].legs[leg].split
+243,区間記録・挑戦,2012-2025,女子,【区間記録・挑戦】歴代文字起こしで女子3区の最速タイムは6:41である。 ○か×か。,○,2013年の荒尾海陽が6:41。,input/aragyoku/transcripts/2013-女子.json,teams[].legs[leg].split
+244,区間記録・挑戦,2012-2025,女子,【区間記録・挑戦】歴代文字起こしで女子3区の最速タイムは6:42である。 ○か×か。,×,最速は6:41で、6:42ではない。,input/aragyoku/transcripts/2013-女子.json,teams[].legs[leg].split
+245,区間記録・挑戦,2012-2025,女子,【区間記録・挑戦】歴代文字起こしで女子4区の最速タイムは6:42である。 ○か×か。,○,2016年の荒尾三が6:42。,input/aragyoku/transcripts/2016-女子.json,teams[].legs[leg].split
+246,区間記録・挑戦,2012-2025,女子,【区間記録・挑戦】歴代文字起こしで女子4区の最速タイムは6:43である。 ○か×か。,×,最速は6:42で、6:43ではない。,input/aragyoku/transcripts/2016-女子.json,teams[].legs[leg].split
+247,区間記録・挑戦,2012-2025,女子,【区間記録・挑戦】歴代文字起こしで女子5区の最速タイムは10:14である。 ○か×か。,○,2019年の玉陵が10:14。,input/aragyoku/transcripts/2019-女子.json,teams[].legs[leg].split
+248,区間記録・挑戦,2012-2025,女子,【区間記録・挑戦】歴代文字起こしで女子5区の最速タイムは10:15である。 ○か×か。,×,最速は10:14で、10:15ではない。,input/aragyoku/transcripts/2019-女子.json,teams[].legs[leg].split
+249,区間記録・挑戦,2012,男子,【区間記録・挑戦】2012年男子3区の区間記録は岱明の9:11である。 ○か×か。,○,区間記録フラグは岱明（総合5位）の9:11。,input/aragyoku/transcripts/2012-男子.json,teams[team=岱明].legs[leg=3].split_record
+250,区間記録・挑戦,2012,男子,【区間記録・挑戦】2012年男子3区の区間記録は岱明の9:12である。 ○か×か。,×,実際の区間記録は9:11で、9:12ではない。,input/aragyoku/transcripts/2012-男子.json,teams[team=岱明].legs[leg=3].split_record
+251,区間記録・挑戦,2016,男子,【区間記録・挑戦】2016年男子1区の区間記録は南関の12:32である。 ○か×か。,○,区間記録フラグは南関（総合2位）の12:32。,input/aragyoku/transcripts/2016-男子.json,teams[team=南関].legs[leg=1].split_record
+252,区間記録・挑戦,2016,男子,【区間記録・挑戦】2016年男子1区の区間記録は南関の12:33である。 ○か×か。,×,実際の区間記録は12:32で、12:33ではない。,input/aragyoku/transcripts/2016-男子.json,teams[team=南関].legs[leg=1].split_record
+253,区間記録・挑戦,2024,男子,【区間記録・挑戦】2024年男子1区の区間記録は有明の9:01である。 ○か×か。,○,区間記録フラグは有明（総合11位）の9:01。,input/aragyoku/transcripts/2024-男子.json,teams[team=有明].legs[leg=1].split_record
+254,区間記録・挑戦,2024,男子,【区間記録・挑戦】2024年男子1区の区間記録は有明の9:02である。 ○か×か。,×,実際の区間記録は9:01で、9:02ではない。,input/aragyoku/transcripts/2024-男子.json,teams[team=有明].legs[leg=1].split_record
+255,区間記録・挑戦,2025,男子,【区間記録・挑戦】2025年男子2区の区間記録は天水の8:37である。 ○か×か。,○,区間記録フラグは天水（総合14位）の8:37。,input/aragyoku/transcripts/2025-男子.json,teams[team=天水].legs[leg=2].split_record
+256,区間記録・挑戦,2025,男子,【区間記録・挑戦】2025年男子2区の区間記録は天水の8:38である。 ○か×か。,×,実際の区間記録は8:37で、8:38ではない。,input/aragyoku/transcripts/2025-男子.json,teams[team=天水].legs[leg=2].split_record
+257,区間記録・挑戦,2017,男子,【区間記録・挑戦】2017年男子3区の区間記録は玉名の8:41である。 ○か×か。,○,区間記録フラグは玉名（総合1位）の8:41。,input/aragyoku/transcripts/2017-男子.json,teams[team=玉名].legs[leg=3].split_record
+258,区間記録・挑戦,2017,男子,【区間記録・挑戦】2017年男子3区の区間記録は玉名の8:42である。 ○か×か。,×,実際の区間記録は8:41で、8:42ではない。,input/aragyoku/transcripts/2017-男子.json,teams[team=玉名].legs[leg=3].split_record
+259,区間記録・挑戦,2024,男子,【区間記録・挑戦】2024年男子4区の区間記録は南関の9:13である。 ○か×か。,○,区間記録フラグは南関（総合1位）の9:13。,input/aragyoku/transcripts/2024-男子.json,teams[team=南関].legs[leg=4].split_record
+260,区間記録・挑戦,2024,男子,【区間記録・挑戦】2024年男子4区の区間記録は南関の9:14である。 ○か×か。,×,実際の区間記録は9:13で、9:14ではない。,input/aragyoku/transcripts/2024-男子.json,teams[team=南関].legs[leg=4].split_record
+261,区間記録・挑戦,2017,男子,【区間記録・挑戦】2017年男子5区の区間記録は菊水の9:27である。 ○か×か。,○,区間記録フラグは菊水（総合2位）の9:27。,input/aragyoku/transcripts/2017-男子.json,teams[team=菊水].legs[leg=5].split_record
+262,区間記録・挑戦,2017,男子,【区間記録・挑戦】2017年男子5区の区間記録は菊水の9:28である。 ○か×か。,×,実際の区間記録は9:27で、9:28ではない。,input/aragyoku/transcripts/2017-男子.json,teams[team=菊水].legs[leg=5].split_record
+263,区間記録・挑戦,2023,男子,【区間記録・挑戦】2023年男子5区の区間記録は南関の9:27である。 ○か×か。,○,区間記録フラグは南関（総合3位）の9:27。,input/aragyoku/transcripts/2023-男子.json,teams[team=南関].legs[leg=5].split_record
+264,区間記録・挑戦,2023,男子,【区間記録・挑戦】2023年男子5区の区間記録は南関の9:28である。 ○か×か。,×,実際の区間記録は9:27で、9:28ではない。,input/aragyoku/transcripts/2023-男子.json,teams[team=南関].legs[leg=5].split_record
+265,区間記録・挑戦,2019,女子,【区間記録・挑戦】2019年女子5区の区間記録は玉陵の10:14である。 ○か×か。,○,区間記録フラグは玉陵（総合13位）の10:14。,input/aragyoku/transcripts/2019-女子.json,teams[team=玉陵].legs[leg=5].split_record
+266,区間記録・挑戦,2019,女子,【区間記録・挑戦】2019年女子5区の区間記録は玉陵の10:15である。 ○か×か。,×,実際の区間記録は10:14で、10:15ではない。,input/aragyoku/transcripts/2019-女子.json,teams[team=玉陵].legs[leg=5].split_record
+267,区間記録・挑戦,2022,女子,【区間記録・挑戦】2022年女子1区の区間記録は長洲の9:46である。 ○か×か。,○,区間記録フラグは長洲（総合1位）の9:46。,input/aragyoku/transcripts/2022-女子.json,teams[team=長洲].legs[leg=1].split_record
+268,区間記録・挑戦,2022,女子,【区間記録・挑戦】2022年女子1区の区間記録は長洲の9:47である。 ○か×か。,×,実際の区間記録は9:46で、9:47ではない。,input/aragyoku/transcripts/2022-女子.json,teams[team=長洲].legs[leg=1].split_record
+269,区間記録・挑戦,2017・2019,女子,【区間記録・挑戦】女子2区の区間記録6:15は、2017年と2019年の2大会で出ている。 ○か×か。,○,2017年と2019年の女子2区がともに6:15。,input/aragyoku/transcripts/2017-女子.json,teams[].legs[leg=2].split_record for 2017・2019 女子
+270,区間記録・挑戦,2017・2019,女子,【区間記録・挑戦】女子2区の区間記録6:15は、2017年だけで出ている。 ○か×か。,×,2019年にも6:15がある。,input/aragyoku/transcripts/2017-女子.json,teams[].legs[leg=2].split_record for 2017・2019 女子
+271,区間記録・挑戦,2017・2023,男子,【区間記録・挑戦】男子5区の区間記録9:27は、2017年と2023年の2大会で出ている。 ○か×か。,○,2017年菊水と2023年南関の男子5区がともに9:27。,input/aragyoku/transcripts/2017-男子.json,teams[].legs[leg=5].split_record for 2017・2023 男子
+272,区間記録・挑戦,2017・2023,男子,【区間記録・挑戦】男子5区の区間記録9:27は、2017年だけで出ている。 ○か×か。,×,2023年にも9:27がある。,input/aragyoku/transcripts/2017-男子.json,teams[].legs[leg=5].split_record for 2017・2023 男子
+273,区間記録・挑戦,2012-2025,男子,【区間記録・挑戦】男子の区間記録フラグは、玉名の方が菊水より多い。 ○か×か。,○,玉名18件、菊水17件。,input/aragyoku/transcripts/2012-男子.json,teams[].legs[].split_record by team across 男子 transcripts
+274,区間記録・挑戦,2012-2025,男子,【区間記録・挑戦】男子の区間記録フラグは、菊水の方が玉名より多い。 ○か×か。,×,玉名の方が1件多い。,input/aragyoku/transcripts/2012-男子.json,teams[].legs[].split_record by team across 男子 transcripts
+275,区間記録・挑戦,2012-2025,女子,【区間記録・挑戦】女子の区間記録フラグは、玉名が24件で最多である。 ○か×か。,○,玉名24件で最多。,input/aragyoku/transcripts/2012-女子.json,teams[].legs[].split_record by team across 女子 transcripts
+276,区間記録・挑戦,2012-2025,女子,【区間記録・挑戦】女子の区間記録フラグは、玉名が23件で最多である。 ○か×か。,×,玉名は24件。,input/aragyoku/transcripts/2012-女子.json,teams[].legs[].split_record by team across 女子 transcripts
+277,区間記録・挑戦,2012-2025,男女,【区間記録・挑戦】男子の区間記録フラグ総数は81件で、女子の37件より多い。 ○か×か。,○,男子81件、女子37件。,input/aragyoku/transcripts/2012-男子.json,teams[].legs[].split_record across all transcripts
+278,区間記録・挑戦,2012-2025,男女,【区間記録・挑戦】女子の区間記録フラグ総数は37件で、男子の81件より多い。 ○か×か。,×,男子の方が多い。,input/aragyoku/transcripts/2012-男子.json,teams[].legs[].split_record across all transcripts
+279,区間記録・挑戦,2025,男子,【区間記録・挑戦】2025年男子2区の区間記録は、総合14位の天水が出している。 ○か×か。,○,天水は総合14位で、2区のsplit_record=true。,input/aragyoku/transcripts/2025-男子.json,teams[team=天水].rank and legs[leg=2].split_record
+280,区間記録・挑戦,2025,男子,【区間記録・挑戦】2025年男子2区の区間記録は、総合1位の学校が出している。 ○か×か。,×,区間記録は天水（総合14位）。,input/aragyoku/transcripts/2025-男子.json,teams[team=天水].rank and legs[leg=2].split_record
+281,区間記録・挑戦,2019,女子,【区間記録・挑戦】2019年女子5区の区間記録は、総合13位の玉陵が出している。 ○か×か。,○,玉陵は総合13位で、5区のsplit_record=true。,input/aragyoku/transcripts/2019-女子.json,teams[team=玉陵].rank and legs[leg=5].split_record
+282,区間記録・挑戦,2019,女子,【区間記録・挑戦】2019年女子5区の区間記録は、総合1位の学校が出している。 ○か×か。,×,区間記録は玉陵（総合13位）。,input/aragyoku/transcripts/2019-女子.json,teams[team=玉陵].rank and legs[leg=5].split_record
+283,区間記録・挑戦,2024,男子,【区間記録・挑戦】2024年男子1区の区間記録は、総合11位の有明が出している。 ○か×か。,○,有明は総合11位で、1区のsplit_record=true。,input/aragyoku/transcripts/2024-男子.json,teams[team=有明].rank and legs[leg=1].split_record
+284,区間記録・挑戦,2024,男子,【区間記録・挑戦】2024年男子1区の区間記録は、総合1位の学校が出している。 ○か×か。,×,区間記録は有明（総合11位）。,input/aragyoku/transcripts/2024-男子.json,teams[team=有明].rank and legs[leg=1].split_record
+285,区間記録・挑戦,2012,男子,【区間記録・挑戦】2012年男子3区の区間記録は、優勝校ではない岱明が出している。 ○か×か。,○,岱明は総合5位で、優勝校ではない。,input/aragyoku/transcripts/2012-男子.json,teams[team=岱明].rank and legs[leg=3].split_record
+286,区間記録・挑戦,2012,男子,【区間記録・挑戦】2012年男子3区の区間記録は、優勝校が出している。 ○か×か。,×,区間記録は岱明（総合5位）。,input/aragyoku/transcripts/2012-男子.json,teams[team=岱明].rank and legs[leg=3].split_record
+287,区間記録・挑戦,2016,男子,【区間記録・挑戦】2016年男子1区の区間記録は、優勝校ではない南関が出している。 ○か×か。,○,南関は総合2位で、優勝校ではない。,input/aragyoku/transcripts/2016-男子.json,teams[team=南関].rank and legs[leg=1].split_record
+288,区間記録・挑戦,2016,男子,【区間記録・挑戦】2016年男子1区の区間記録は、優勝校が出している。 ○か×か。,×,区間記録は南関（総合2位）。,input/aragyoku/transcripts/2016-男子.json,teams[team=南関].rank and legs[leg=1].split_record
+289,区間記録・挑戦,2017,男子,【区間記録・挑戦】2017年男子3区の区間記録は、優勝校の玉名が出している。 ○か×か。,○,玉名は総合1位で、3区のsplit_record=true。,input/aragyoku/transcripts/2017-男子.json,teams[team=玉名].rank and legs[leg=3].split_record
+290,区間記録・挑戦,2017,男子,【区間記録・挑戦】2017年男子3区の区間記録は、優勝校ではない学校が出している。 ○か×か。,×,区間記録は玉名（総合1位）。,input/aragyoku/transcripts/2017-男子.json,teams[team=玉名].rank and legs[leg=3].split_record
+291,区間記録・挑戦,2024,男子,【区間記録・挑戦】2024年男子4区の区間記録は、優勝校の南関が出している。 ○か×か。,○,南関は総合1位で、4区のsplit_record=true。,input/aragyoku/transcripts/2024-男子.json,teams[team=南関].rank and legs[leg=4].split_record
+292,区間記録・挑戦,2024,男子,【区間記録・挑戦】2024年男子4区の区間記録は、優勝校ではない学校が出している。 ○か×か。,×,区間記録は南関（総合1位）。,input/aragyoku/transcripts/2024-男子.json,teams[team=南関].rank and legs[leg=4].split_record
+293,区間記録・挑戦,2012,女子,【区間記録・挑戦】2012年女子2区の区間記録は、優勝校の玉名が出している。 ○か×か。,○,玉名は総合1位で、2区のsplit_record=true。,input/aragyoku/transcripts/2012-女子.json,teams[team=玉名].rank and legs[leg=2].split_record
+294,区間記録・挑戦,2012,女子,【区間記録・挑戦】2012年女子2区の区間記録は、優勝校ではない学校が出している。 ○か×か。,×,区間記録は玉名（総合1位）。,input/aragyoku/transcripts/2012-女子.json,teams[team=玉名].rank and legs[leg=2].split_record
+295,区間記録・挑戦,2022,女子,【区間記録・挑戦】2022年女子1区の区間記録は、優勝校の長洲が出している。 ○か×か。,○,長洲は総合1位で、1区のsplit_record=true。,input/aragyoku/transcripts/2022-女子.json,teams[team=長洲].rank and legs[leg=1].split_record
+296,区間記録・挑戦,2022,女子,【区間記録・挑戦】2022年女子1区の区間記録は、優勝校ではない学校が出している。 ○か×か。,×,区間記録は長洲（総合1位）。,input/aragyoku/transcripts/2022-女子.json,teams[team=長洲].rank and legs[leg=1].split_record
+297,区間記録・挑戦,2012-2025,男女,【区間記録・挑戦】区間記録フラグは、優勝校だけでなく総合順位が下位の学校にも付いている。 ○か×か。,○,2025年男子2区は総合14位の天水、2019年女子5区は総合13位の玉陵。,input/aragyoku/transcripts/2025-男子.json,teams[].rank and legs[].split_record across all transcripts
+298,区間記録・挑戦,2012-2025,男女,【区間記録・挑戦】区間記録フラグは、毎回必ず優勝校にだけ付いている。 ○か×か。,×,下位校にも区間記録フラグがある。,input/aragyoku/transcripts/2025-男子.json,teams[].rank and legs[].split_record across all transcripts
+299,区間記録・挑戦,2012-2025,男女,【区間記録・挑戦】このCSVでいう区間記録は、各年度の結果表でその区間が最速だったことを示すsplit_recordに基づく。 ○か×か。,○,V-8の定義は、同じ大会・同じ区間内での最速タイムとの整合。,input/aragyoku/transcripts/2012-男子.json,split_record definition in annual transcript JSON
+300,区間記録・挑戦,2012-2025,男女,【区間記録・挑戦】このCSVでいう区間記録は、必ず2012〜2025年を通じた公式コース新記録を意味する。 ○か×か。,×,年度横断の公式コース新記録とは区別している。,input/aragyoku/transcripts/2012-男子.json,split_record definition in annual transcript JSON
