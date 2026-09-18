@@ -1054,10 +1054,27 @@ def build_knowledge_graph(*, generated_at: str | None = None) -> dict[str, Any]:
 
 def normalize_graph_for_compare(graph: dict[str, Any]) -> dict[str, Any]:
     """Drop volatile fields for CI equality checks."""
+    nodes = []
+    for n in graph.get("nodes") or []:
+        node = dict(n)
+        if isinstance(node.get("refs"), list):
+            node["refs"] = sorted(str(x) for x in node["refs"])
+        if isinstance(node.get("topics"), list):
+            node["topics"] = sorted(str(x) for x in node["topics"])
+        nodes.append(node)
+    nodes.sort(key=lambda n: str(n.get("id") or ""))
+    edges = sorted(
+        (dict(e) for e in (graph.get("edges") or [])),
+        key=lambda e: (
+            str(e.get("from") or ""),
+            str(e.get("to") or ""),
+            str(e.get("type") or ""),
+        ),
+    )
     return {
         "version": graph.get("version"),
-        "nodes": graph.get("nodes") or [],
-        "edges": graph.get("edges") or [],
+        "nodes": nodes,
+        "edges": edges,
     }
 
 
