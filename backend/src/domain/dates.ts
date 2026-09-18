@@ -1,4 +1,4 @@
-/** Date mention normalization for calendar / meet queries. */
+/** Date mention normalization for calendar / meet / relative-year queries. */
 
 export type DateMention = {
   year: number;
@@ -74,15 +74,48 @@ export function looksLikeDateQuestion(text: string): boolean {
 }
 
 /**
- * Append ISO + MMDD tokens so BM25 / KG can match folder names like `0920_…`
- * and calendar lines like `2026-09-20`.
+ * Resolve relative year words and explicit YYYY年 into calendar years.
+ * Example (defaultYear=2026): 去年 → 2025, 今年 → 2026, おととし → 2024.
+ */
+export function resolveRelativeYears(
+  text: string,
+  defaultYear: number = new Date().getFullYear(),
+): number[] {
+  const years = new Set<number>();
+  if (/今年/.test(text)) years.add(defaultYear);
+  if (/去年|昨年/.test(text)) years.add(defaultYear - 1);
+  if (/おととし|一昨年/.test(text)) years.add(defaultYear - 2);
+  for (const m of text.matchAll(/\b(20\d{2})\s*年?/g)) {
+    years.add(Number(m[1]));
+  }
+  return [...years].sort((a, b) => b - a);
+}
+
+/**
+ * Append ISO + MMDD + relative/explicit year tokens so BM25 / KG can match
+ * folder names like `0920_…`, calendar lines like `2026-09-20`, and
+ * `aragyoku/transcripts/2025-男子.json` for 「去年の荒玉」.
  */
 export function expandDateQuery(
   question: string,
   defaultYear: number = new Date().getFullYear(),
 ): string {
+  const extras: string[] = [];
+  for (const y of resolveRelativeYears(question, defaultYear)) {
+    extras.push(String(y), `${y}年`);
+  }
   const mentions = parseDateMentions(question, defaultYear);
-  if (mentions.length === 0) return question;
-  const extras = mentions.flatMap((m) => [m.iso, m.mmdd]);
-  return `${question} ${extras.join(" ")}`.trim();
+  for (const m of mentions) {
+    extras.push(m.iso, m.mmdd);
+  }
+  if (extras.length === 0) return question;
+  // Dedupe while preserving order
+  const seen = new Set<string>();
+  const unique: string[] = [];
+  for (const e of extras) {
+    if (seen.has(e)) continue;
+    seen.add(e);
+    unique.push(e);
+  }
+  return `${question} ${unique.join(" ")}`.trim();
 }

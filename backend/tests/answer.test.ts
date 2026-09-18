@@ -134,4 +134,28 @@ describe("answerQuestion", () => {
       expect(result.text).not.toMatch(/根拠|ekiden-ocr|\.md/);
     }
   });
+
+  it("puts 2025 winners in context for 去年の荒玉駅伝の優勝校", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    let userPrompt = "";
+    const result = await answerQuestion("去年の荒玉駅伝の優勝校は？", {
+      skipRouter: true,
+      defaultYear: 2026,
+      llm: {
+        complete: async (_sys, user) => {
+          userPrompt = user;
+          return "男子は菊水、女子は玉名です。";
+        },
+      },
+    });
+    expect(result.kind).toBe("answered");
+    // Context must include 2025 winner facts (菊水 / 玉名) from transcripts or winners summary
+    expect(userPrompt).toMatch(/2025/);
+    expect(userPrompt).toMatch(/菊水/);
+    expect(userPrompt).toMatch(/玉名/);
+    if (result.kind === "answered") {
+      expect(result.sources.some((s) => s.includes("aragyoku") || s.includes("2025"))).toBe(true);
+    }
+  });
 });

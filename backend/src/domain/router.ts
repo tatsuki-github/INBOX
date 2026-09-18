@@ -13,11 +13,14 @@ export type RouteDecision = {
 
 function buildRouterSystemPrompt(): string {
   return [
-    "あなたはいだてん岱明 Q&A の検索ルーターです。",
+    "あなたはリポジトリ知識コーパス Q&A の検索ルーターです。",
     "候補ソース一覧から、質問に答えるために読むべき source パスだけを選んでください。",
     "必ず次の JSON のみを返してください（説明文禁止）:",
     '{"sources":["corpus/相対パス"],"focus":"短い焦点","reason":"短い理由"}',
-    "sources は候補に含まれるパスだけ。最大 12 件。日付質問なら calendar と該当大会フォルダを優先。抜け漏れ防止のため関連ソースを多めに選ぶ。",
+    "sources は候補に含まれるパスだけ。最大 12 件。",
+    "日付質問なら calendar と該当大会フォルダを優先。",
+    "荒玉・優勝・歴代なら aragyoku/transcripts・aragyoku/winners-by-year.md・該当年の ekiden-ocr を優先（古い年の OCR を全部選ばない）。",
+    "抜け漏れ防止のため関連ソースを多めに選ぶ。",
   ].join("\n");
 }
 
@@ -62,6 +65,25 @@ function parseRouterJson(raw: string): { sources: string[]; focus: string; reaso
   }
 }
 
+function sourcePreferScore(source: string, question: string): number {
+  const years = [...question.matchAll(/\b(20\d{2})\b/g)].map((m) => m[1]!);
+  let score = 0;
+  if (source.includes("winners-by-year")) score += 80;
+  if (source.startsWith("aragyoku/transcripts/")) score += 60;
+  if (source.startsWith("aragyoku/")) score += 40;
+  if (source === "aragyoku") score += 35;
+  if (/優勝|歴代|荒玉/.test(question) && source.startsWith("ekiden-ocr/")) score += 10;
+  for (const y of years) {
+    if (source.includes(y)) score += 50;
+  }
+  // Deprioritize old OCR years when the question already specifies a year
+  if (years.length > 0 && source.startsWith("ekiden-ocr/") && !years.some((y) => source.includes(y))) {
+    score -= 40;
+  }
+  if (/予定|大会/.test(question) && source.includes("calendar")) score += 30;
+  return score;
+}
+
 function fallbackRoute(question: string, kg: KgQueryResult): RouteDecision {
   const sources = [...kg.corpus_sources];
   // Date / meet queries: always include calendar + drive-text 大会 when available via BM25 later;
@@ -69,6 +91,7 @@ function fallbackRoute(question: string, kg: KgQueryResult): RouteDecision {
   if (!sources.includes("calendar/events.daiming.yaml") && /予定|大会|\d{1,2}\/\d{1,2}|月.*日/.test(question)) {
     sources.unshift("calendar/events.daiming.yaml");
   }
+  sources.sort((a, b) => sourcePreferScore(b, question) - sourcePreferScore(a, question));
   return {
     sources: sources.slice(0, 12),
     focus: question.slice(0, 80),
