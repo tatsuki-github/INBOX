@@ -9,6 +9,8 @@ const optionalNonEmpty = z.preprocess(
 const envSchema = z.object({
   LINE_CHANNEL_SECRET: optionalNonEmpty,
   LINE_CHANNEL_ACCESS_TOKEN: optionalNonEmpty,
+  /** Comma-separated LINE userIds that receive no bot replies. */
+  LINE_DENIED_USER_IDS: z.string().optional(),
   AI_PROVIDER: z.enum(["gemini", "openai", "anthropic"]).default("gemini"),
   GEMINI_API_KEY: optionalNonEmpty,
   OPENAI_API_KEY: optionalNonEmpty,
