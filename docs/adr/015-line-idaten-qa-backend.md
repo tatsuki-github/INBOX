@@ -12,7 +12,7 @@ Messaging API バックエンドが無い。回答範囲を岱明以外に広げ
 2. **単一コーパス** `input/idaten-corpus/` を `scripts/build_idaten_corpus.py` でテキストのみ集約する。ランタイムは `backend/data/rag_index.json`（BM25）だけを読み、他リポジトリパスは読まない。
 3. **スコープガード**でいだてん岱明以外の質問を拒否し、LLM に投げない。
 4. LINE Messaging API: `POST /webhook` で署名検証（HMAC-SHA256）後、同期 reply。非テキストは定型案内。
-5. LLM は `AI_PROVIDER` = `openai` | `anthropic`（任意。未設定時はオフライン抜粋回答）。
+5. LLM は既定で **Gemini Developer API（無料枠）** — `AI_PROVIDER=gemini`、モデル `gemini-2.5-flash-lite`、`GEMINI_API_KEY`（Google AI Studio）。未設定時はオフライン抜粋。`openai` / `anthropic` も切替可能。
 
 ## 不採用
 

@@ -9,7 +9,8 @@ const optionalNonEmpty = z.preprocess(
 const envSchema = z.object({
   LINE_CHANNEL_SECRET: optionalNonEmpty,
   LINE_CHANNEL_ACCESS_TOKEN: optionalNonEmpty,
-  AI_PROVIDER: z.enum(["openai", "anthropic"]).default("openai"),
+  AI_PROVIDER: z.enum(["gemini", "openai", "anthropic"]).default("gemini"),
+  GEMINI_API_KEY: optionalNonEmpty,
   OPENAI_API_KEY: optionalNonEmpty,
   ANTHROPIC_API_KEY: optionalNonEmpty,
   PORT: z.coerce.number().default(3001),
@@ -27,6 +28,9 @@ export function hasLineCredentials(config: AppConfig): boolean {
 }
 
 export function hasLlmCredentials(config: AppConfig): boolean {
+  if (config.AI_PROVIDER === "gemini") {
+    return Boolean(config.GEMINI_API_KEY);
+  }
   if (config.AI_PROVIDER === "anthropic") {
     return Boolean(config.ANTHROPIC_API_KEY);
   }

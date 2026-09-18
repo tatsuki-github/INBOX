@@ -13,7 +13,7 @@ app.listen(config.PORT, () => {
   if (!config.LINE_CHANNEL_SECRET || !config.LINE_CHANNEL_ACCESS_TOKEN) {
     console.log("LINE credentials not set — /webhook returns 503 until configured in .env");
   }
-  if (!config.OPENAI_API_KEY && !config.ANTHROPIC_API_KEY) {
+  if (!config.GEMINI_API_KEY && !config.OPENAI_API_KEY && !config.ANTHROPIC_API_KEY) {
     console.log("LLM API key not set — answers use offline corpus excerpts");
   }
 });
