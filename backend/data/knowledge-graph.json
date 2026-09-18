@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated_at": "2026-09-18T08:32:32Z",
+  "generated_at": "2026-09-18T08:38:31Z",
   "nodes": [
     {
       "id": "corpus:analysis-ocr",
@@ -634,6 +634,18 @@
         "input/events.2026.yaml"
       ],
       "hint": "イベントタグ `いだてん岱明練習`"
+    },
+    {
+      "id": "entity:tag:なごみ駅伝",
+      "type": "Entity",
+      "label": "なごみ駅伝",
+      "topics": [
+        "calendar"
+      ],
+      "refs": [
+        "input/events.2026.yaml"
+      ],
+      "hint": "イベントタグ `なごみ駅伝`"
     },
     {
       "id": "entity:tag:インターバル",
@@ -2633,9 +2645,10 @@
       ],
       "refs": [
         "input/idaten-corpus/drive-text/大会/2026年度/0920_中学駅伝金栗四三生誕の地なごみ大会",
+        "input/idaten-corpus/drive-text/大会/2026年度/0920_中学駅伝金栗四三生誕の地なごみ大会/当日スケジュール.md",
         "input/idaten-corpus/drive-text/大会/2026年度/0920_中学駅伝金栗四三生誕の地なごみ大会/開催要項.md"
       ],
-      "hint": "2026年度 大会「0920_中学駅伝金栗四三生誕の地なごみ大会」。日付キー MMDD=0920。ファイル: 開催要項.md。 内容: 大会名: 第12回　中学駅伝金栗四三生誕の地なごみ大会 / 日付: 2026-09-20 / ステータス: scheduled / 第12回 中学駅伝金栗四三生誕の地なごみ大会 開催要項 / 1．主催 / 和水町陸上競技協会、一般社団法人K-PROJECT / 2．後援 / 和水"
+      "hint": "2026年度 大会「0920_中学駅伝金栗四三生誕の地なごみ大会」。日付キー MMDD=0920。ファイル: 当日スケジュール.md, 開催要項.md。 内容: 大会名: 第12回　中学駅伝金栗四三生誕の地なごみ大会 / 日付: 2026-09-20 / ステータス: scheduled / 第12回 中学駅伝金栗四三生誕の地なごみ大会 開催要項 / 1．主催 / 和水町陸上競技協会、一般社団法人K-PROJECT / 2．後援 / 和水"
     },
     {
       "id": "meet:2026年度:0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）",
@@ -5333,6 +5346,11 @@
     },
     {
       "from": "entity:tag:いだてん岱明練習",
+      "to": "source:input/events.2026.yaml",
+      "rel": "mentioned_in"
+    },
+    {
+      "from": "entity:tag:なごみ駅伝",
       "to": "source:input/events.2026.yaml",
       "rel": "mentioned_in"
     },

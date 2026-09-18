@@ -420,6 +420,7 @@
 - `input/external/drive/shared/大会/2026年度/0829_玉名郡ナイター中・長距離記録会/参加者メモ.md.meta.json` → `drive-text/大会/2026年度/0829_玉名郡ナイター中・長距離記録会/参加者メモ.md.meta.json`
 - `input/external/drive/shared/大会/2026年度/0829_玉名郡ナイター中・長距離記録会/結果.md` → `drive-text/大会/2026年度/0829_玉名郡ナイター中・長距離記録会/結果.md`
 - `input/external/drive/shared/大会/2026年度/0829_玉名郡ナイター中・長距離記録会/結果.md.meta.json` → `drive-text/大会/2026年度/0829_玉名郡ナイター中・長距離記録会/結果.md.meta.json`
+- `input/external/drive/shared/大会/2026年度/0920_中学駅伝金栗四三生誕の地なごみ大会/当日スケジュール.md` → `drive-text/大会/2026年度/0920_中学駅伝金栗四三生誕の地なごみ大会/当日スケジュール.md`
 - `input/external/drive/shared/大会/2026年度/0920_中学駅伝金栗四三生誕の地なごみ大会/開催要項.md` → `drive-text/大会/2026年度/0920_中学駅伝金栗四三生誕の地なごみ大会/開催要項.md`
 - `input/external/drive/shared/大会/2026年度/0920_中学駅伝金栗四三生誕の地なごみ大会/開催要項.md.meta.json` → `drive-text/大会/2026年度/0920_中学駅伝金栗四三生誕の地なごみ大会/開催要項.md.meta.json`
 - `input/external/drive/shared/大会/2026年度/0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）/概要.md` → `drive-text/大会/2026年度/0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）/概要.md`
