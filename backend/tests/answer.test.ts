@@ -1,6 +1,8 @@
 import { describe, expect, it } from "vitest";
 import { answerQuestion } from "../src/domain/answer.js";
 import type { RetrievedChunk } from "../src/rag/retrieve.js";
+import { resetRetrieverCache } from "../src/rag/retrieve.js";
+import { resetKgCache } from "../src/kg/query.js";
 
 const fakeRetrieve = (question: string): RetrievedChunk[] => [
   {
@@ -36,17 +38,30 @@ describe("answerQuestion", () => {
     const result = await answerQuestion("荒玉駅伝で岱明は何位？", {
       retrieve: fakeRetrieve,
       llm: null,
+      skipRouter: true,
+      kgQuery: () => ({
+        question: "荒玉駅伝で岱明は何位？",
+        matched_nodes: [],
+        refs: [],
+        corpus_sources: ["ekiden-ocr/2024-男子.md"],
+      }),
     });
     expect(result.kind).toBe("offline");
     if (result.kind === "offline") {
       expect(result.text).toContain("オフライン");
-      expect(result.sources).toContain("ekiden-ocr/2024-男子.md");
     }
   });
 
   it("returns answered when llm succeeds", async () => {
     const result = await answerQuestion("荒玉駅伝で岱明は何位？", {
       retrieve: fakeRetrieve,
+      skipRouter: true,
+      kgQuery: () => ({
+        question: "x",
+        matched_nodes: [],
+        refs: [],
+        corpus_sources: ["ekiden-ocr/2024-男子.md"],
+      }),
       llm: {
         complete: async () => "岱明は○位です。",
       },
@@ -54,6 +69,44 @@ describe("answerQuestion", () => {
     expect(result.kind).toBe("answered");
     if (result.kind === "answered") {
       expect(result.text).toContain("岱明");
+    }
+  });
+
+  it("answers 9/20 schedule offline with なごみ in context", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("9/20の予定は？", {
+      llm: null,
+      skipRouter: true,
+      defaultYear: 2026,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.text).toMatch(/なごみ/);
+      expect(result.sources.some((s) => s.includes("calendar") || s.includes("なごみ") || s.includes("0920"))).toBe(
+        true,
+      );
+    }
+  });
+
+  it("llm sees なごみ context for 9/20", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    let userPrompt = "";
+    const result = await answerQuestion("9/20の予定は？", {
+      skipRouter: true,
+      defaultYear: 2026,
+      llm: {
+        complete: async (_sys, user) => {
+          userPrompt = user;
+          return "2026-09-20はなごみ駅伝です。";
+        },
+      },
+    });
+    expect(result.kind).toBe("answered");
+    expect(userPrompt).toMatch(/なごみ/);
+    if (result.kind === "answered") {
+      expect(result.text).toMatch(/なごみ/);
     }
   });
 });

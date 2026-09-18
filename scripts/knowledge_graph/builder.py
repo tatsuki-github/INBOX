@@ -133,6 +133,11 @@ QUERY_HINTS: list[tuple[str, str, list[str]]] = [
         ["topic:calendar"],
     ),
     (
+        "〇月〇日の予定は？",
+        "日付を YYYY-MM-DD / MMDD に正規化し events YAML と drive-text/大会/ の開催要項を見る",
+        ["topic:calendar"],
+    ),
+    (
         "AI で練習を作るには？",
         "ai-practice-generation.md と prompts / rules",
         ["topic:ai"],

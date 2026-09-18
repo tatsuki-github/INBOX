@@ -24,4 +24,17 @@ describe("classifyScope", () => {
     expect(classifyScope("").kind).toBe("out_of_scope");
     expect(classifyScope("こんにちは").kind).toBe("out_of_scope");
   });
+
+  it("accepts bare date schedule questions", () => {
+    const d = classifyScope("9/20の予定は？");
+    expect(d.kind).toBe("in_scope");
+    if (d.kind === "in_scope") {
+      expect(d.reason === "date_question" || d.reason.startsWith("keyword:")).toBe(true);
+    }
+  });
+
+  it("accepts なごみ / 大会 keywords", () => {
+    expect(classifyScope("なごみ駅伝の距離は？").kind).toBe("in_scope");
+    expect(classifyScope("次の大会はいつ？").kind).toBe("in_scope");
+  });
 });
