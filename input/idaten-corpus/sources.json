@@ -449,6 +449,18 @@
     "corpus": "repo-docs/adr/019-meet-naming-convention.md"
   },
   {
+    "source": "docs/adr/020-meet-result-urls.md",
+    "corpus": "repo-docs/adr/020-meet-result-urls.md"
+  },
+  {
+    "source": "docs/adr/021-clarify-concrete-examples.md",
+    "corpus": "repo-docs/adr/021-clarify-concrete-examples.md"
+  },
+  {
+    "source": "docs/adr/022-sb-csv-row-qa.md",
+    "corpus": "repo-docs/adr/022-sb-csv-row-qa.md"
+  },
+  {
     "source": "docs/idaten-import/phase0-media-ocr.md",
     "corpus": "repo-docs/idaten-import/phase0-media-ocr.md"
   },
@@ -491,6 +503,14 @@
   {
     "source": "docs/implementation-flow/aragyoku-trial-run-calendar/phase-5-6.md",
     "corpus": "repo-docs/implementation-flow/aragyoku-trial-run-calendar/phase-5-6.md"
+  },
+  {
+    "source": "docs/implementation-flow/clarify-concrete-examples/phase-0.md",
+    "corpus": "repo-docs/implementation-flow/clarify-concrete-examples/phase-0.md"
+  },
+  {
+    "source": "docs/implementation-flow/clarify-concrete-examples/phase-5-6.md",
+    "corpus": "repo-docs/implementation-flow/clarify-concrete-examples/phase-5-6.md"
   },
   {
     "source": "docs/implementation-flow/idaten-sb-all-years/phase-0.md",
@@ -545,6 +565,30 @@
     "corpus": "repo-docs/implementation-flow/meet-naming-convention/phase-1.md"
   },
   {
+    "source": "docs/implementation-flow/meet-naming-convention/phase-5-6.md",
+    "corpus": "repo-docs/implementation-flow/meet-naming-convention/phase-5-6.md"
+  },
+  {
+    "source": "docs/implementation-flow/meet-result-urls/phase-0.md",
+    "corpus": "repo-docs/implementation-flow/meet-result-urls/phase-0.md"
+  },
+  {
+    "source": "docs/implementation-flow/meet-result-urls/phase-1.md",
+    "corpus": "repo-docs/implementation-flow/meet-result-urls/phase-1.md"
+  },
+  {
+    "source": "docs/implementation-flow/meet-result-urls/phase-3.md",
+    "corpus": "repo-docs/implementation-flow/meet-result-urls/phase-3.md"
+  },
+  {
+    "source": "docs/implementation-flow/meet-result-urls/phase-5.md",
+    "corpus": "repo-docs/implementation-flow/meet-result-urls/phase-5.md"
+  },
+  {
+    "source": "docs/implementation-flow/meet-result-urls/phase-6.md",
+    "corpus": "repo-docs/implementation-flow/meet-result-urls/phase-6.md"
+  },
+  {
     "source": "docs/implementation-flow/missing-info-ask-coach/phase-0-6.md",
     "corpus": "repo-docs/implementation-flow/missing-info-ask-coach/phase-0-6.md"
   },
@@ -559,6 +603,14 @@
   {
     "source": "docs/implementation-flow/nagomi-2026-program-entry/phase-5-6.md",
     "corpus": "repo-docs/implementation-flow/nagomi-2026-program-entry/phase-5-6.md"
+  },
+  {
+    "source": "docs/implementation-flow/sb-csv-row-qa/phase-0.md",
+    "corpus": "repo-docs/implementation-flow/sb-csv-row-qa/phase-0.md"
+  },
+  {
+    "source": "docs/implementation-flow/sb-csv-row-qa/phase-5-6.md",
+    "corpus": "repo-docs/implementation-flow/sb-csv-row-qa/phase-5-6.md"
   },
   {
     "source": "docs/implementation-flow/tamana-practice-bbq-2026-09-22/phase-0.md",
@@ -1874,8 +1926,8 @@
   },
   {
     "source": "input/external/sb/middle-school/wide/中学生SB.csv",
-    "corpus": "sb/中学生SB_岱明.csv",
-    "note": "filtered 10 rows"
+    "corpus": "sb/中学生SB.csv",
+    "note": "full middle-school SB (1371 data rows)"
   },
   {
     "source": "docs/adr/010-external-idaten-import.md",

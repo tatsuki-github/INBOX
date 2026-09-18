@@ -486,10 +486,10 @@ def _register_idaten_corpus(
         ("repo-docs", ["schema", "meta", "ai"], "docs/ 配下の Markdown（ADR・データモデル等）"),
         ("calendar", ["calendar", "practice"], "岱明フィルタ済み events.daiming.yaml"),
         ("practice", ["practice"], "練習 JSON / menus / absentees 抜粋"),
-        ("sb", ["athlete_records"], "中学生 SB（岱明関連）"),
+        ("sb", ["athlete_records"], "中学生 SB（全所属・wide CSV 行単位）"),
         ("notion-db", ["practice", "athlete_records", "ekiden", "injury"], "Notion DB スナップショット"),
         ("notion-pages", ["practice", "meta"], "Notion ページ Markdown"),
-        ("drive-text", ["ekiden", "practice", "calendar"], "Drive テキスト（大会開催要項・結果・個人メモ）"),
+        ("drive-text", ["ekiden", "practice", "calendar", "athlete_records"], "Drive テキスト（大会・記録データベース・個人メモ）"),
         ("docs", ["ekiden", "schema", "meta"], "関連 ADR・区間距離定義のコピー"),
     ]
     for dirname, topics, base_hint in dir_specs:

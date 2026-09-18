@@ -27,6 +27,25 @@ describe("classifyScope", () => {
     }
   });
 
+  it("refuses clearly unrelated chat hard", () => {
+    for (const q of [
+      "プログラミングの宿題手伝って",
+      "トランプ大統領について",
+      "野球の試合結果は？",
+      "英語翻訳して",
+      "占いして",
+      "漫画のおすすめは？",
+      "今日の夕食のおすすめは？",
+      "AIで小説書いて",
+      "競馬の予想して",
+      "暗号通貨いくら？",
+      "恋の相談乗って",
+    ]) {
+      const d = classifyScope(q);
+      expect(d.kind, q).toBe("out_of_scope");
+    }
+  });
+
   it("refuses empty", () => {
     expect(classifyScope("").kind).toBe("out_of_scope");
   });

@@ -130,6 +130,19 @@ export function mapRefToCorpusSource(ref: string): string | null {
     return "media-manifest.slim.json";
   }
 
+  // Middle-school SB wide CSV (all schools)
+  if (
+    p === "input/external/sb/middle-school/wide/中学生SB.csv" ||
+    p === "input/external/sb/middle-school/wide" ||
+    p === "input/external/sb/middle-school" ||
+    p === "input/idaten-corpus/sb"
+  ) {
+    return "sb/中学生SB.csv";
+  }
+  if (p.startsWith("input/external/sb/")) {
+    return "sb/";
+  }
+
   return null;
 }
 

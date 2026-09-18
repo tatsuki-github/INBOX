@@ -102,6 +102,31 @@ function sortMeetDriveSources(sources: string[], query: string): string[] {
   );
 }
 
+/** Prefer SB / 記録データベース sources for athlete-record questions. */
+function boostAthleteRecordSources(query: string, baseSources: string[]): string[] {
+  if (
+    !/自己ベスト|ベストタイム|自己記録|\bSB\b|\bPB\b|ベスト記録|記録|タイム|何分|何秒|800m?|1500m?|3000m?|5000m?/.test(
+      query,
+    )
+  ) {
+    return baseSources;
+  }
+  const out: string[] = [];
+  const seen = new Set<string>();
+  const push = (s: string) => {
+    if (!s || seen.has(s)) return;
+    seen.add(s);
+    out.push(s);
+  };
+  push("sb/中学生SB.csv");
+  push("sb/");
+  for (const s of findSourcesContaining(["SB", "記録"], { prefix: "drive-text/記録データベース/", limit: 12 })) {
+    push(s);
+  }
+  for (const s of baseSources) push(s);
+  return out;
+}
+
 /**
  * Meet-aware source boost.
  * - 荒玉 / bare 駅伝 / 優勝・歴代 → aragyoku transcripts for resolved years
@@ -221,10 +246,13 @@ export async function answerQuestion(
 
   const route = deps.skipRouter
     ? {
-        sources: boostMeetYearSources(
-          expanded,
-          boostDateMeetSources(expanded, kg.corpus_sources),
-          year,
+        sources: boostAthleteRecordSources(
+          question,
+          boostMeetYearSources(
+            expanded,
+            boostDateMeetSources(expanded, kg.corpus_sources),
+            year,
+          ),
         ).slice(0, DEFAULT_ROUTE_SOURCES),
         focus: question,
         reason: "skip_router",
@@ -232,10 +260,13 @@ export async function answerQuestion(
       }
     : await routeSources(expanded, kg, deps.llm);
 
-  const preferredSources = boostMeetYearSources(
-    expanded,
-    boostDateMeetSources(expanded, route.sources),
-    year,
+  const preferredSources = boostAthleteRecordSources(
+    question,
+    boostMeetYearSources(
+      expanded,
+      boostDateMeetSources(expanded, route.sources),
+      year,
+    ),
   ).slice(0, DEFAULT_ROUTE_SOURCES);
 
   const fromSources = retrieveBySources(preferredSources, {

@@ -10,6 +10,7 @@ describe("isUnderspecifiedPersonalBestQuestion", () => {
     expect(isUnderspecifiedPersonalBestQuestion("自分の自己ベストは？")).toBe(true);
     expect(isUnderspecifiedPersonalBestQuestion("自己ベストは？")).toBe(true);
     expect(isUnderspecifiedPersonalBestQuestion("SB教えて")).toBe(true);
+    expect(isUnderspecifiedPersonalBestQuestion("最新の自己ベストは？")).toBe(true);
   });
 
   it("allows concrete named questions", () => {

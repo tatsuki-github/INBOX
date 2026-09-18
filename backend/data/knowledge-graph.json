@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated_at": "2026-09-18T09:58:41Z",
+  "generated_at": "2026-09-18T10:26:02Z",
   "nodes": [
     {
       "id": "corpus:analysis-ocr",
@@ -60,6 +60,7 @@
       "type": "Entity",
       "label": "コーパス/drive-text",
       "topics": [
+        "athlete_records",
         "calendar",
         "ekiden",
         "practice"
@@ -67,7 +68,7 @@
       "refs": [
         "input/idaten-corpus/drive-text"
       ],
-      "hint": "Drive テキスト（大会開催要項・結果・個人メモ）. 例: personal, 名簿, 大会, 練習, 記録データベース"
+      "hint": "Drive テキスト（大会・記録データベース・個人メモ）. 例: personal, 名簿, 大会, 練習, 記録データベース"
     },
     {
       "id": "corpus:ekiden-ocr",
@@ -160,7 +161,7 @@
       "refs": [
         "input/idaten-corpus/sb"
       ],
-      "hint": "中学生 SB（岱明関連）. 例: 中学生SB_岱明.csv"
+      "hint": "中学生 SB（全所属・wide CSV 行単位）. 例: 中学生SB.csv"
     },
     {
       "id": "entity:athlete:中尾快叶",
@@ -201,8 +202,8 @@
       ],
       "refs": [
         "out/analysis/notion_records_2026.json",
-        "input/events.2025.yaml",
-        "out/2025/practice_absentees.csv"
+        "out/2025/practice_absentees.csv",
+        "input/events.2025.yaml"
       ],
       "hint": "部員エンティティ"
     },
@@ -217,8 +218,8 @@
       ],
       "refs": [
         "out/analysis/notion_records_2026.json",
-        "input/events.2025.yaml",
-        "out/2025/practice_absentees.csv"
+        "out/2025/practice_absentees.csv",
+        "input/events.2025.yaml"
       ],
       "hint": "所属:岱明中"
     },
@@ -233,8 +234,8 @@
       ],
       "refs": [
         "out/analysis/notion_records_2026.json",
-        "input/events.2025.yaml",
-        "out/2025/practice_absentees.csv"
+        "out/2025/practice_absentees.csv",
+        "input/events.2025.yaml"
       ],
       "hint": "部員エンティティ"
     },
@@ -249,8 +250,8 @@
       ],
       "refs": [
         "out/analysis/notion_records_2026.json",
-        "input/events.2025.yaml",
-        "out/2025/practice_absentees.csv"
+        "out/2025/practice_absentees.csv",
+        "input/events.2025.yaml"
       ],
       "hint": "所属:岱明中"
     },
@@ -265,8 +266,8 @@
       ],
       "refs": [
         "out/analysis/notion_records_2026.json",
-        "input/events.2025.yaml",
-        "out/2025/practice_absentees.csv"
+        "out/2025/practice_absentees.csv",
+        "input/events.2025.yaml"
       ],
       "hint": "部員エンティティ"
     },
@@ -281,8 +282,8 @@
       ],
       "refs": [
         "out/analysis/notion_records_2026.json",
-        "input/events.2025.yaml",
-        "out/2025/practice_absentees.csv"
+        "out/2025/practice_absentees.csv",
+        "input/events.2025.yaml"
       ],
       "hint": "所属:岱明中"
     },
@@ -325,8 +326,8 @@
       ],
       "refs": [
         "out/analysis/notion_records_2026.json",
-        "input/events.2025.yaml",
-        "out/2025/practice_absentees.csv"
+        "out/2025/practice_absentees.csv",
+        "input/events.2025.yaml"
       ],
       "hint": "部員エンティティ"
     },
@@ -341,8 +342,8 @@
       ],
       "refs": [
         "out/analysis/notion_records_2026.json",
-        "input/events.2025.yaml",
-        "out/2025/practice_absentees.csv"
+        "out/2025/practice_absentees.csv",
+        "input/events.2025.yaml"
       ],
       "hint": "所属:岱明中"
     },
@@ -356,8 +357,8 @@
         "practice"
       ],
       "refs": [
-        "input/events.2025.yaml",
-        "out/2025/practice_absentees.csv"
+        "out/2025/practice_absentees.csv",
+        "input/events.2025.yaml"
       ],
       "hint": "部員エンティティ"
     },
@@ -372,8 +373,8 @@
       ],
       "refs": [
         "out/analysis/notion_records_2026.json",
-        "input/events.2025.yaml",
-        "out/2025/practice_absentees.csv"
+        "out/2025/practice_absentees.csv",
+        "input/events.2025.yaml"
       ],
       "hint": "部員エンティティ"
     },
@@ -388,8 +389,8 @@
       ],
       "refs": [
         "out/analysis/notion_records_2026.json",
-        "input/events.2025.yaml",
-        "out/2025/practice_absentees.csv"
+        "out/2025/practice_absentees.csv",
+        "input/events.2025.yaml"
       ],
       "hint": "所属:岱明中"
     },
@@ -404,8 +405,8 @@
       ],
       "refs": [
         "out/analysis/notion_records_2026.json",
-        "input/events.2025.yaml",
-        "out/2025/practice_absentees.csv"
+        "out/2025/practice_absentees.csv",
+        "input/events.2025.yaml"
       ],
       "hint": "部員エンティティ"
     },
@@ -420,8 +421,8 @@
       ],
       "refs": [
         "out/analysis/notion_records_2026.json",
-        "input/events.2025.yaml",
-        "out/2025/practice_absentees.csv"
+        "out/2025/practice_absentees.csv",
+        "input/events.2025.yaml"
       ],
       "hint": "所属:岱明中"
     },
@@ -436,8 +437,8 @@
       ],
       "refs": [
         "out/analysis/notion_records_2026.json",
-        "input/events.2025.yaml",
-        "out/2025/practice_absentees.csv"
+        "out/2025/practice_absentees.csv",
+        "input/events.2025.yaml"
       ],
       "hint": "部員エンティティ"
     },
@@ -452,8 +453,8 @@
       ],
       "refs": [
         "out/analysis/notion_records_2026.json",
-        "input/events.2025.yaml",
-        "out/2025/practice_absentees.csv"
+        "out/2025/practice_absentees.csv",
+        "input/events.2025.yaml"
       ],
       "hint": "所属:岱明中"
     },
@@ -500,8 +501,8 @@
       ],
       "refs": [
         "out/analysis/notion_records_2026.json",
-        "input/events.2025.yaml",
-        "out/2025/practice_absentees.csv"
+        "out/2025/practice_absentees.csv",
+        "input/events.2025.yaml"
       ],
       "hint": "部員エンティティ"
     },
@@ -516,8 +517,8 @@
       ],
       "refs": [
         "out/analysis/notion_records_2026.json",
-        "input/events.2025.yaml",
-        "out/2025/practice_absentees.csv"
+        "out/2025/practice_absentees.csv",
+        "input/events.2025.yaml"
       ],
       "hint": "所属:岱明中"
     },
@@ -531,10 +532,10 @@
         "practice"
       ],
       "refs": [
-        "input/events.2025.yaml",
         "out/analysis/notion_records_2026.json",
-        "input/events.2026.yaml",
         "out/2026/practice_absentees.csv",
+        "input/events.2025.yaml",
+        "input/events.2026.yaml",
         "out/2025/practice_absentees.csv"
       ],
       "hint": "部員エンティティ"
@@ -549,10 +550,10 @@
         "practice"
       ],
       "refs": [
-        "input/events.2025.yaml",
         "out/analysis/notion_records_2026.json",
-        "input/events.2026.yaml",
         "out/2026/practice_absentees.csv",
+        "input/events.2025.yaml",
+        "input/events.2026.yaml",
         "out/2025/practice_absentees.csv"
       ],
       "hint": "所属:岱明中"
@@ -3216,6 +3217,34 @@
       "hint": "ADR: 019-meet-naming-convention"
     },
     {
+      "id": "source:docs/adr/020-meet-result-urls.md",
+      "type": "Source",
+      "label": "020-meet-result-urls.md",
+      "topics": [
+        "ai",
+        "meta",
+        "practice"
+      ],
+      "refs": [
+        "docs/adr/020-meet-result-urls.md"
+      ],
+      "hint": "ADR: 020-meet-result-urls"
+    },
+    {
+      "id": "source:docs/adr/021-clarify-concrete-examples.md",
+      "type": "Source",
+      "label": "021-clarify-concrete-examples.md",
+      "topics": [
+        "ai",
+        "meta",
+        "practice"
+      ],
+      "refs": [
+        "docs/adr/021-clarify-concrete-examples.md"
+      ],
+      "hint": "ADR: 021-clarify-concrete-examples"
+    },
+    {
       "id": "source:docs/ai-practice-generation.md",
       "type": "Source",
       "label": "ai-practice-generation.md",
@@ -3632,6 +3661,7 @@
       "type": "Source",
       "label": "drive-text",
       "topics": [
+        "athlete_records",
         "calendar",
         "ekiden",
         "practice"
@@ -3639,7 +3669,7 @@
       "refs": [
         "input/idaten-corpus/drive-text"
       ],
-      "hint": "Drive テキスト（大会開催要項・結果・個人メモ）. 例: personal, 名簿, 大会, 練習, 記録データベース"
+      "hint": "Drive テキスト（大会・記録データベース・個人メモ）. 例: personal, 名簿, 大会, 練習, 記録データベース"
     },
     {
       "id": "source:input/idaten-corpus/drive-text/大会/INDEX.md",
@@ -3925,7 +3955,7 @@
       "refs": [
         "input/idaten-corpus/sb"
       ],
-      "hint": "中学生 SB（岱明関連）. 例: 中学生SB_岱明.csv"
+      "hint": "中学生 SB（全所属・wide CSV 行単位）. 例: 中学生SB.csv"
     },
     {
       "id": "source:input/memos/daiming-club-calendar-2026-09.jpg",
@@ -7120,6 +7150,16 @@
       "rel": "see_also"
     },
     {
+      "from": "source:docs/ai-practice-generation.md",
+      "to": "source:docs/adr/020-meet-result-urls.md",
+      "rel": "see_also"
+    },
+    {
+      "from": "source:docs/ai-practice-generation.md",
+      "to": "source:docs/adr/021-clarify-concrete-examples.md",
+      "rel": "see_also"
+    },
+    {
       "from": "source:out/2020/calendar.md",
       "to": "source:input/events.2020.yaml",
       "rel": "derived_from"
@@ -7536,6 +7576,16 @@
     },
     {
       "from": "topic:ai",
+      "to": "source:docs/adr/020-meet-result-urls.md",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:ai",
+      "to": "source:docs/adr/021-clarify-concrete-examples.md",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:ai",
       "to": "source:docs/ai-practice-generation.md",
       "rel": "search_here"
     },
@@ -7577,6 +7627,11 @@
     {
       "from": "topic:athlete_records",
       "to": "corpus:aragyoku",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:athlete_records",
+      "to": "corpus:drive-text",
       "rel": "search_here"
     },
     {
@@ -7902,6 +7957,11 @@
     {
       "from": "topic:athlete_records",
       "to": "source:input/idaten-corpus/aragyoku",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:athlete_records",
+      "to": "source:input/idaten-corpus/drive-text",
       "rel": "search_here"
     },
     {
@@ -9041,6 +9101,16 @@
     },
     {
       "from": "topic:meta",
+      "to": "source:docs/adr/020-meet-result-urls.md",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:meta",
+      "to": "source:docs/adr/021-clarify-concrete-examples.md",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:meta",
       "to": "source:input/external/INDEX.md",
       "rel": "search_here"
     },
@@ -9622,6 +9692,16 @@
     {
       "from": "topic:practice",
       "to": "source:docs/adr/019-meet-naming-convention.md",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:practice",
+      "to": "source:docs/adr/020-meet-result-urls.md",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:practice",
+      "to": "source:docs/adr/021-clarify-concrete-examples.md",
       "rel": "search_here"
     },
     {

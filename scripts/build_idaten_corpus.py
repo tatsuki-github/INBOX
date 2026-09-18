@@ -176,25 +176,25 @@ def _extract_practice(sources: list[dict[str, str]]) -> None:
 
 
 def _extract_sb(sources: list[dict[str, str]]) -> None:
+    """Copy full middle-school SB wide CSV (all schools, not 岱明-only)."""
     sb_src = EXTERNAL / "sb" / "middle-school" / "wide" / "中学生SB.csv"
     if not sb_src.exists():
         return
-    lines = sb_src.read_text(encoding="utf-8", errors="replace").splitlines()
-    if not lines:
-        return
-    header = lines[0]
-    kept = [header]
-    for line in lines[1:]:
-        if "岱明" in line:
-            kept.append(line)
-    dest = CORPUS_DIR / "sb" / "中学生SB_岱明.csv"
+    dest = CORPUS_DIR / "sb" / "中学生SB.csv"
     dest.parent.mkdir(parents=True, exist_ok=True)
-    dest.write_text("\n".join(kept) + "\n", encoding="utf-8")
+    # Drop legacy 岱明-only extract if present
+    legacy = CORPUS_DIR / "sb" / "中学生SB_岱明.csv"
+    if legacy.exists():
+        legacy.unlink()
+    text = sb_src.read_text(encoding="utf-8-sig", errors="replace")
+    # Normalize to utf-8 without BOM for stable chunking
+    dest.write_text(text, encoding="utf-8")
+    row_count = max(0, text.count("\n") - 1)
     sources.append(
         {
             "source": str(sb_src.relative_to(ROOT)),
             "corpus": str(dest.relative_to(CORPUS_DIR)),
-            "note": f"filtered {len(kept) - 1} rows",
+            "note": f"full middle-school SB ({row_count} data rows)",
         }
     )
 
@@ -325,7 +325,8 @@ def _build_corpus() -> list[dict[str, str]]:
                 "- `repo-docs/` — docs 配下の Markdown",
                 "- `notion-db/` / `notion-pages/` — Notion スナップショット",
                 "- `drive-text/` — Drive テキスト",
-                "- `calendar/` / `practice/` / `sb/` — 岱明フィルタ済み予定・練習・SB",
+                "- `calendar/` / `practice/` — 岱明フィルタ済み予定・練習",
+                "- `sb/` — 中学生 SB（全所属。Drive SBデータベース wide）",
                 "- `docs/` — 関連 ADR・定義（抜粋）",
                 "",
                 f"ファイル数（SOURCES）: {len(sources)}",
@@ -413,11 +414,18 @@ def _chunk_aragyoku_transcript(path: Path, rel: str) -> list[dict[str, Any]]:
     year = data.get("year")
     gender = data.get("gender")
     teams = [t for t in (data.get("teams") or []) if isinstance(t, dict)]
+    legs = [L for L in (data.get("legs") or []) if isinstance(L, dict)]
     out: list[dict[str, Any]] = []
     winner = next((t for t in teams if t.get("rank") in (1, "1")), None)
     summary_parts = [
         f"{year}年 荒玉中体連駅伝 {gender} 結果要約。",
     ]
+    if legs:
+        dist = "、".join(
+            f"{L.get('leg')}区{L.get('distance_km')}km" for L in legs if L.get("distance_km") is not None
+        )
+        if dist:
+            summary_parts.append(f"距離構成（区間距離）: {dist}。")
     if winner:
         summary_parts.append(
             f"優勝校（1位）は「{winner.get('team')}」（総合 {winner.get('total', '')}）。"
@@ -492,10 +500,55 @@ def _iter_corpus_files() -> Iterator[Path]:
         yield path
 
 
+def _chunk_csv_rows(path: Path, rel: str) -> list[dict[str, Any]]:
+    """One chunk per CSV data row (header repeated) so athlete names stay searchable."""
+    import csv
+    from io import StringIO
+
+    raw = path.read_text(encoding="utf-8-sig", errors="replace")
+    try:
+        rows = list(csv.reader(StringIO(raw)))
+    except csv.Error:
+        return []
+    if not rows:
+        return []
+    header = rows[0]
+    header_line = ",".join(header)
+    out: list[dict[str, Any]] = []
+    for idx, row in enumerate(rows[1:]):
+        if not any((c or "").strip() for c in row):
+            continue
+        # Pad/truncate to header width for stable joins
+        cells = list(row) + [""] * max(0, len(header) - len(row))
+        cells = cells[: len(header)]
+        line = ",".join(cells)
+        text = f"{header_line}\n{line}"
+        if len(text) > MAX_CHUNK_CHARS:
+            text = text[:MAX_CHUNK_CHARS]
+        out.append(
+            {
+                "id": f"{rel}:{idx}",
+                "source": rel,
+                "text": text,
+                "metadata": {
+                    "path": f"input/idaten-corpus/{rel}",
+                    "index": idx,
+                    "kind": "csv_row",
+                },
+            }
+        )
+    return out
+
+
 def _chunk_file(path: Path) -> list[dict[str, Any]]:
     rel = str(path.relative_to(CORPUS_DIR)).replace("\\", "/")
     if rel.startswith("aragyoku/transcripts/") and path.suffix.lower() == ".json":
         return _chunk_aragyoku_transcript(path, rel)
+    # Row-level CSV for SB + 記録データベース (athlete / meet result tables)
+    if path.suffix.lower() == ".csv" and (
+        rel.startswith("sb/") or rel.startswith("drive-text/記録データベース/")
+    ):
+        return _chunk_csv_rows(path, rel)
     raw = path.read_text(encoding="utf-8", errors="replace")
     if path.suffix.lower() == ".json":
         try:
