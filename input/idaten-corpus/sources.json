@@ -437,6 +437,18 @@
     "corpus": "repo-docs/adr/014-aragyoku-full-transcript-schema.md"
   },
   {
+    "source": "docs/adr/017-meet-disambiguation-kg.md",
+    "corpus": "repo-docs/adr/017-meet-disambiguation-kg.md"
+  },
+  {
+    "source": "docs/adr/018-line-denied-user-ids.md",
+    "corpus": "repo-docs/adr/018-line-denied-user-ids.md"
+  },
+  {
+    "source": "docs/adr/019-meet-naming-convention.md",
+    "corpus": "repo-docs/adr/019-meet-naming-convention.md"
+  },
+  {
     "source": "docs/idaten-import/phase0-media-ocr.md",
     "corpus": "repo-docs/idaten-import/phase0-media-ocr.md"
   },
@@ -489,6 +501,14 @@
     "corpus": "repo-docs/implementation-flow/idaten-sb-all-years/phase-1.md"
   },
   {
+    "source": "docs/implementation-flow/line-deny-list/phase-0.md",
+    "corpus": "repo-docs/implementation-flow/line-deny-list/phase-0.md"
+  },
+  {
+    "source": "docs/implementation-flow/line-deny-list/phase-5-6.md",
+    "corpus": "repo-docs/implementation-flow/line-deny-list/phase-5-6.md"
+  },
+  {
     "source": "docs/implementation-flow/line-idaten-bot/phase-0.md",
     "corpus": "repo-docs/implementation-flow/line-idaten-bot/phase-0.md"
   },
@@ -503,6 +523,30 @@
   {
     "source": "docs/implementation-flow/line-idaten-bot/phase-3.md",
     "corpus": "repo-docs/implementation-flow/line-idaten-bot/phase-3.md"
+  },
+  {
+    "source": "docs/implementation-flow/meet-disambiguation-kg/phase-0.md",
+    "corpus": "repo-docs/implementation-flow/meet-disambiguation-kg/phase-0.md"
+  },
+  {
+    "source": "docs/implementation-flow/meet-disambiguation-kg/phase-1.md",
+    "corpus": "repo-docs/implementation-flow/meet-disambiguation-kg/phase-1.md"
+  },
+  {
+    "source": "docs/implementation-flow/meet-disambiguation-kg/phase-5-6.md",
+    "corpus": "repo-docs/implementation-flow/meet-disambiguation-kg/phase-5-6.md"
+  },
+  {
+    "source": "docs/implementation-flow/meet-naming-convention/phase-0.md",
+    "corpus": "repo-docs/implementation-flow/meet-naming-convention/phase-0.md"
+  },
+  {
+    "source": "docs/implementation-flow/meet-naming-convention/phase-1.md",
+    "corpus": "repo-docs/implementation-flow/meet-naming-convention/phase-1.md"
+  },
+  {
+    "source": "docs/implementation-flow/missing-info-ask-coach/phase-0-6.md",
+    "corpus": "repo-docs/implementation-flow/missing-info-ask-coach/phase-0-6.md"
   },
   {
     "source": "docs/implementation-flow/nagomi-2026-program-entry/phase-0.md",
@@ -523,6 +567,10 @@
   {
     "source": "docs/implementation-flow/tamana-practice-bbq-2026-09-22/phase-1.md",
     "corpus": "repo-docs/implementation-flow/tamana-practice-bbq-2026-09-22/phase-1.md"
+  },
+  {
+    "source": "docs/implementation-flow/tamana-practice-bbq-2026-09-22/phase-5-6.md",
+    "corpus": "repo-docs/implementation-flow/tamana-practice-bbq-2026-09-22/phase-5-6.md"
   },
   {
     "source": "docs/kg-html-phase0.md",
@@ -849,12 +897,12 @@
     "corpus": "drive-text/記録データベース/印刷用/選手権と通信のタイム差.md.meta.json"
   },
   {
-    "source": "input/external/drive/shared/大会/2025年度/0228_熊本市駅伝/結果.md",
-    "corpus": "drive-text/大会/2025年度/0228_熊本市駅伝/結果.md"
+    "source": "input/external/drive/shared/大会/2025年度/0228_熊本市駅伝/岱明の結果.md",
+    "corpus": "drive-text/大会/2025年度/0228_熊本市駅伝/岱明の結果.md"
   },
   {
-    "source": "input/external/drive/shared/大会/2025年度/0228_熊本市駅伝/結果.md.meta.json",
-    "corpus": "drive-text/大会/2025年度/0228_熊本市駅伝/結果.md.meta.json"
+    "source": "input/external/drive/shared/大会/2025年度/0228_熊本市駅伝/岱明の結果.md.meta.json",
+    "corpus": "drive-text/大会/2025年度/0228_熊本市駅伝/岱明の結果.md.meta.json"
   },
   {
     "source": "input/external/drive/shared/大会/2025年度/0315_金栗駅伝/記録.md",
@@ -889,14 +937,6 @@
     "corpus": "drive-text/大会/2025年度/0419_第４４回熊本市陸上競技選手権/要項.pdf.md.meta.json"
   },
   {
-    "source": "input/external/drive/shared/大会/2025年度/0607-0608_熊本県中学生陸上競技選手権/いだてん岱明出場予定.pdf.md",
-    "corpus": "drive-text/大会/2025年度/0607-0608_熊本県中学生陸上競技選手権/いだてん岱明出場予定.pdf.md"
-  },
-  {
-    "source": "input/external/drive/shared/大会/2025年度/0607-0608_熊本県中学生陸上競技選手権/いだてん岱明出場予定.pdf.md.meta.json",
-    "corpus": "drive-text/大会/2025年度/0607-0608_熊本県中学生陸上競技選手権/いだてん岱明出場予定.pdf.md.meta.json"
-  },
-  {
     "source": "input/external/drive/shared/大会/2025年度/0607-0608_熊本県中学生陸上競技選手権/スタートリスト.pdf.md",
     "corpus": "drive-text/大会/2025年度/0607-0608_熊本県中学生陸上競技選手権/スタートリスト.pdf.md"
   },
@@ -921,12 +961,28 @@
     "corpus": "drive-text/大会/2025年度/0607-0608_熊本県中学生陸上競技選手権/実施要項.pdf.md.meta.json"
   },
   {
-    "source": "input/external/drive/shared/大会/2025年度/0607-0608_熊本県中学生陸上競技選手権/岱明中参加計画.pdf.md",
-    "corpus": "drive-text/大会/2025年度/0607-0608_熊本県中学生陸上競技選手権/岱明中参加計画.pdf.md"
+    "source": "input/external/drive/shared/大会/2025年度/0607-0608_熊本県中学生陸上競技選手権/岱明の出場予定.pdf.md",
+    "corpus": "drive-text/大会/2025年度/0607-0608_熊本県中学生陸上競技選手権/岱明の出場予定.pdf.md"
   },
   {
-    "source": "input/external/drive/shared/大会/2025年度/0607-0608_熊本県中学生陸上競技選手権/岱明中参加計画.pdf.md.meta.json",
-    "corpus": "drive-text/大会/2025年度/0607-0608_熊本県中学生陸上競技選手権/岱明中参加計画.pdf.md.meta.json"
+    "source": "input/external/drive/shared/大会/2025年度/0607-0608_熊本県中学生陸上競技選手権/岱明の出場予定.pdf.md.meta.json",
+    "corpus": "drive-text/大会/2025年度/0607-0608_熊本県中学生陸上競技選手権/岱明の出場予定.pdf.md.meta.json"
+  },
+  {
+    "source": "input/external/drive/shared/大会/2025年度/0607-0608_熊本県中学生陸上競技選手権/岱明の参加計画.pdf.md",
+    "corpus": "drive-text/大会/2025年度/0607-0608_熊本県中学生陸上競技選手権/岱明の参加計画.pdf.md"
+  },
+  {
+    "source": "input/external/drive/shared/大会/2025年度/0607-0608_熊本県中学生陸上競技選手権/岱明の参加計画.pdf.md.meta.json",
+    "corpus": "drive-text/大会/2025年度/0607-0608_熊本県中学生陸上競技選手権/岱明の参加計画.pdf.md.meta.json"
+  },
+  {
+    "source": "input/external/drive/shared/大会/2025年度/0607-0608_熊本県中学生陸上競技選手権/岱明の結果.md",
+    "corpus": "drive-text/大会/2025年度/0607-0608_熊本県中学生陸上競技選手権/岱明の結果.md"
+  },
+  {
+    "source": "input/external/drive/shared/大会/2025年度/0607-0608_熊本県中学生陸上競技選手権/岱明の結果.md.meta.json",
+    "corpus": "drive-text/大会/2025年度/0607-0608_熊本県中学生陸上競技選手権/岱明の結果.md.meta.json"
   },
   {
     "source": "input/external/drive/shared/大会/2025年度/0607-0608_熊本県中学生陸上競技選手権/撮影に関する注意事項.pdf.md",
@@ -951,14 +1007,6 @@
   {
     "source": "input/external/drive/shared/大会/2025年度/0607-0608_熊本県中学生陸上競技選手権/競技注意事項.pdf.md.meta.json",
     "corpus": "drive-text/大会/2025年度/0607-0608_熊本県中学生陸上競技選手権/競技注意事項.pdf.md.meta.json"
-  },
-  {
-    "source": "input/external/drive/shared/大会/2025年度/0607-0608_熊本県中学生陸上競技選手権/結果/いだてん岱明の結果.md",
-    "corpus": "drive-text/大会/2025年度/0607-0608_熊本県中学生陸上競技選手権/結果/いだてん岱明の結果.md"
-  },
-  {
-    "source": "input/external/drive/shared/大会/2025年度/0607-0608_熊本県中学生陸上競技選手権/結果/いだてん岱明の結果.md.meta.json",
-    "corpus": "drive-text/大会/2025年度/0607-0608_熊本県中学生陸上競技選手権/結果/いだてん岱明の結果.md.meta.json"
   },
   {
     "source": "input/external/drive/shared/大会/2025年度/0607-0608_熊本県中学生陸上競技選手権/結果/女子1年800mタイムレース総合結果.png.md",
@@ -1057,12 +1105,12 @@
     "corpus": "drive-text/大会/2025年度/0614_荒尾選手権（中止）/大会プログラム.pdf.md.meta.json"
   },
   {
-    "source": "input/external/drive/shared/大会/2025年度/0614_荒尾選手権（中止）/岱明中参加計画.pdf.md",
-    "corpus": "drive-text/大会/2025年度/0614_荒尾選手権（中止）/岱明中参加計画.pdf.md"
+    "source": "input/external/drive/shared/大会/2025年度/0614_荒尾選手権（中止）/岱明の参加計画.pdf.md",
+    "corpus": "drive-text/大会/2025年度/0614_荒尾選手権（中止）/岱明の参加計画.pdf.md"
   },
   {
-    "source": "input/external/drive/shared/大会/2025年度/0614_荒尾選手権（中止）/岱明中参加計画.pdf.md.meta.json",
-    "corpus": "drive-text/大会/2025年度/0614_荒尾選手権（中止）/岱明中参加計画.pdf.md.meta.json"
+    "source": "input/external/drive/shared/大会/2025年度/0614_荒尾選手権（中止）/岱明の参加計画.pdf.md.meta.json",
+    "corpus": "drive-text/大会/2025年度/0614_荒尾選手権（中止）/岱明の参加計画.pdf.md.meta.json"
   },
   {
     "source": "input/external/drive/shared/大会/2025年度/0614_荒尾選手権（中止）/開催要項.pdf.md",
@@ -1071,22 +1119,6 @@
   {
     "source": "input/external/drive/shared/大会/2025年度/0614_荒尾選手権（中止）/開催要項.pdf.md.meta.json",
     "corpus": "drive-text/大会/2025年度/0614_荒尾選手権（中止）/開催要項.pdf.md.meta.json"
-  },
-  {
-    "source": "input/external/drive/shared/大会/2025年度/0628-0629_全日本中学校通信陸上競技大会熊本県大会/いだてん岱明出場予定.md",
-    "corpus": "drive-text/大会/2025年度/0628-0629_全日本中学校通信陸上競技大会熊本県大会/いだてん岱明出場予定.md"
-  },
-  {
-    "source": "input/external/drive/shared/大会/2025年度/0628-0629_全日本中学校通信陸上競技大会熊本県大会/いだてん岱明出場予定.md.meta.json",
-    "corpus": "drive-text/大会/2025年度/0628-0629_全日本中学校通信陸上競技大会熊本県大会/いだてん岱明出場予定.md.meta.json"
-  },
-  {
-    "source": "input/external/drive/shared/大会/2025年度/0628-0629_全日本中学校通信陸上競技大会熊本県大会/いだてん岱明結果.md",
-    "corpus": "drive-text/大会/2025年度/0628-0629_全日本中学校通信陸上競技大会熊本県大会/いだてん岱明結果.md"
-  },
-  {
-    "source": "input/external/drive/shared/大会/2025年度/0628-0629_全日本中学校通信陸上競技大会熊本県大会/いだてん岱明結果.md.meta.json",
-    "corpus": "drive-text/大会/2025年度/0628-0629_全日本中学校通信陸上競技大会熊本県大会/いだてん岱明結果.md.meta.json"
   },
   {
     "source": "input/external/drive/shared/大会/2025年度/0628-0629_全日本中学校通信陸上競技大会熊本県大会/スタートリスト.pdf.md",
@@ -1119,6 +1151,22 @@
   {
     "source": "input/external/drive/shared/大会/2025年度/0628-0629_全日本中学校通信陸上競技大会熊本県大会/大会要項.pdf.md.meta.json",
     "corpus": "drive-text/大会/2025年度/0628-0629_全日本中学校通信陸上競技大会熊本県大会/大会要項.pdf.md.meta.json"
+  },
+  {
+    "source": "input/external/drive/shared/大会/2025年度/0628-0629_全日本中学校通信陸上競技大会熊本県大会/岱明の出場予定.md",
+    "corpus": "drive-text/大会/2025年度/0628-0629_全日本中学校通信陸上競技大会熊本県大会/岱明の出場予定.md"
+  },
+  {
+    "source": "input/external/drive/shared/大会/2025年度/0628-0629_全日本中学校通信陸上競技大会熊本県大会/岱明の出場予定.md.meta.json",
+    "corpus": "drive-text/大会/2025年度/0628-0629_全日本中学校通信陸上競技大会熊本県大会/岱明の出場予定.md.meta.json"
+  },
+  {
+    "source": "input/external/drive/shared/大会/2025年度/0628-0629_全日本中学校通信陸上競技大会熊本県大会/岱明の結果.md",
+    "corpus": "drive-text/大会/2025年度/0628-0629_全日本中学校通信陸上競技大会熊本県大会/岱明の結果.md"
+  },
+  {
+    "source": "input/external/drive/shared/大会/2025年度/0628-0629_全日本中学校通信陸上競技大会熊本県大会/岱明の結果.md.meta.json",
+    "corpus": "drive-text/大会/2025年度/0628-0629_全日本中学校通信陸上競技大会熊本県大会/岱明の結果.md.meta.json"
   },
   {
     "source": "input/external/drive/shared/大会/2025年度/0628-0629_全日本中学校通信陸上競技大会熊本県大会/撮影に関する注意事項.pdf.md",
@@ -1161,14 +1209,6 @@
     "corpus": "drive-text/大会/2025年度/0628-0629_全日本中学校通信陸上競技大会熊本県大会/衣服運搬について.pdf.md.meta.json"
   },
   {
-    "source": "input/external/drive/shared/大会/2025年度/0719-0720_熊本県中学校総合体育大会陸上競技大会/いだてん岱明出場.md",
-    "corpus": "drive-text/大会/2025年度/0719-0720_熊本県中学校総合体育大会陸上競技大会/いだてん岱明出場.md"
-  },
-  {
-    "source": "input/external/drive/shared/大会/2025年度/0719-0720_熊本県中学校総合体育大会陸上競技大会/いだてん岱明出場.md.meta.json",
-    "corpus": "drive-text/大会/2025年度/0719-0720_熊本県中学校総合体育大会陸上競技大会/いだてん岱明出場.md.meta.json"
-  },
-  {
     "source": "input/external/drive/shared/大会/2025年度/0719-0720_熊本県中学校総合体育大会陸上競技大会/ゴール後の導線について.pdf.md",
     "corpus": "drive-text/大会/2025年度/0719-0720_熊本県中学校総合体育大会陸上競技大会/ゴール後の導線について.pdf.md"
   },
@@ -1199,6 +1239,14 @@
   {
     "source": "input/external/drive/shared/大会/2025年度/0719-0720_熊本県中学校総合体育大会陸上競技大会/審判編成.pdf.md.meta.json",
     "corpus": "drive-text/大会/2025年度/0719-0720_熊本県中学校総合体育大会陸上競技大会/審判編成.pdf.md.meta.json"
+  },
+  {
+    "source": "input/external/drive/shared/大会/2025年度/0719-0720_熊本県中学校総合体育大会陸上競技大会/岱明の出場.md",
+    "corpus": "drive-text/大会/2025年度/0719-0720_熊本県中学校総合体育大会陸上競技大会/岱明の出場.md"
+  },
+  {
+    "source": "input/external/drive/shared/大会/2025年度/0719-0720_熊本県中学校総合体育大会陸上競技大会/岱明の出場.md.meta.json",
+    "corpus": "drive-text/大会/2025年度/0719-0720_熊本県中学校総合体育大会陸上競技大会/岱明の出場.md.meta.json"
   },
   {
     "source": "input/external/drive/shared/大会/2025年度/0719-0720_熊本県中学校総合体育大会陸上競技大会/撮影に関する注意事項.pdf.md",
@@ -1233,14 +1281,6 @@
     "corpus": "drive-text/大会/2025年度/0719-0720_熊本県中学校総合体育大会陸上競技大会/練習会場図.pdf.md.meta.json"
   },
   {
-    "source": "input/external/drive/shared/大会/2025年度/0802_玉名選手権/いだてん岱明結果.md",
-    "corpus": "drive-text/大会/2025年度/0802_玉名選手権/いだてん岱明結果.md"
-  },
-  {
-    "source": "input/external/drive/shared/大会/2025年度/0802_玉名選手権/いだてん岱明結果.md.meta.json",
-    "corpus": "drive-text/大会/2025年度/0802_玉名選手権/いだてん岱明結果.md.meta.json"
-  },
-  {
     "source": "input/external/drive/shared/大会/2025年度/0802_玉名選手権/タイムテーブル.pdf.md",
     "corpus": "drive-text/大会/2025年度/0802_玉名選手権/タイムテーブル.pdf.md"
   },
@@ -1255,6 +1295,14 @@
   {
     "source": "input/external/drive/shared/大会/2025年度/0802_玉名選手権/トラック.pdf.md.meta.json",
     "corpus": "drive-text/大会/2025年度/0802_玉名選手権/トラック.pdf.md.meta.json"
+  },
+  {
+    "source": "input/external/drive/shared/大会/2025年度/0802_玉名選手権/岱明の結果.md",
+    "corpus": "drive-text/大会/2025年度/0802_玉名選手権/岱明の結果.md"
+  },
+  {
+    "source": "input/external/drive/shared/大会/2025年度/0802_玉名選手権/岱明の結果.md.meta.json",
+    "corpus": "drive-text/大会/2025年度/0802_玉名選手権/岱明の結果.md.meta.json"
   },
   {
     "source": "input/external/drive/shared/大会/2025年度/0802_玉名選手権/歴代記録.pdf.md",
@@ -1297,12 +1345,12 @@
     "corpus": "drive-text/大会/2025年度/0830_玉名郡ナイター/R7選手リスト.pdf.md.meta.json"
   },
   {
-    "source": "input/external/drive/shared/大会/2025年度/0830_玉名郡ナイター/結果.md",
-    "corpus": "drive-text/大会/2025年度/0830_玉名郡ナイター/結果.md"
+    "source": "input/external/drive/shared/大会/2025年度/0830_玉名郡ナイター/岱明の結果.md",
+    "corpus": "drive-text/大会/2025年度/0830_玉名郡ナイター/岱明の結果.md"
   },
   {
-    "source": "input/external/drive/shared/大会/2025年度/0830_玉名郡ナイター/結果.md.meta.json",
-    "corpus": "drive-text/大会/2025年度/0830_玉名郡ナイター/結果.md.meta.json"
+    "source": "input/external/drive/shared/大会/2025年度/0830_玉名郡ナイター/岱明の結果.md.meta.json",
+    "corpus": "drive-text/大会/2025年度/0830_玉名郡ナイター/岱明の結果.md.meta.json"
   },
   {
     "source": "input/external/drive/shared/大会/2025年度/0921_中学駅伝金栗四三生誕の地なごみ大会/女子の結果.heic.md",
@@ -1441,60 +1489,60 @@
     "corpus": "drive-text/大会/2025年度/0927_第２回熊本県ジュニア駅伝競走大会/結果_男子チャンピオンシップ.pdf.md.meta.json"
   },
   {
-    "source": "input/external/drive/shared/大会/2025年度/1015_玉名荒尾中体連駅伝/参加計画1.pdf.md",
-    "corpus": "drive-text/大会/2025年度/1015_玉名荒尾中体連駅伝/参加計画1.pdf.md"
+    "source": "input/external/drive/shared/大会/2025年度/1015_荒玉中体連駅伝（玉名荒尾）/参加計画1.pdf.md",
+    "corpus": "drive-text/大会/2025年度/1015_荒玉中体連駅伝（玉名荒尾）/参加計画1.pdf.md"
   },
   {
-    "source": "input/external/drive/shared/大会/2025年度/1015_玉名荒尾中体連駅伝/参加計画1.pdf.md.meta.json",
-    "corpus": "drive-text/大会/2025年度/1015_玉名荒尾中体連駅伝/参加計画1.pdf.md.meta.json"
+    "source": "input/external/drive/shared/大会/2025年度/1015_荒玉中体連駅伝（玉名荒尾）/参加計画1.pdf.md.meta.json",
+    "corpus": "drive-text/大会/2025年度/1015_荒玉中体連駅伝（玉名荒尾）/参加計画1.pdf.md.meta.json"
   },
   {
-    "source": "input/external/drive/shared/大会/2025年度/1015_玉名荒尾中体連駅伝/参加計画2.pdf.md",
-    "corpus": "drive-text/大会/2025年度/1015_玉名荒尾中体連駅伝/参加計画2.pdf.md"
+    "source": "input/external/drive/shared/大会/2025年度/1015_荒玉中体連駅伝（玉名荒尾）/参加計画2.pdf.md",
+    "corpus": "drive-text/大会/2025年度/1015_荒玉中体連駅伝（玉名荒尾）/参加計画2.pdf.md"
   },
   {
-    "source": "input/external/drive/shared/大会/2025年度/1015_玉名荒尾中体連駅伝/参加計画2.pdf.md.meta.json",
-    "corpus": "drive-text/大会/2025年度/1015_玉名荒尾中体連駅伝/参加計画2.pdf.md.meta.json"
+    "source": "input/external/drive/shared/大会/2025年度/1015_荒玉中体連駅伝（玉名荒尾）/参加計画2.pdf.md.meta.json",
+    "corpus": "drive-text/大会/2025年度/1015_荒玉中体連駅伝（玉名荒尾）/参加計画2.pdf.md.meta.json"
   },
   {
-    "source": "input/external/drive/shared/大会/2025年度/1015_玉名荒尾中体連駅伝/女子の結果.JPG.md",
-    "corpus": "drive-text/大会/2025年度/1015_玉名荒尾中体連駅伝/女子の結果.JPG.md"
+    "source": "input/external/drive/shared/大会/2025年度/1015_荒玉中体連駅伝（玉名荒尾）/女子の結果.JPG.md",
+    "corpus": "drive-text/大会/2025年度/1015_荒玉中体連駅伝（玉名荒尾）/女子の結果.JPG.md"
   },
   {
-    "source": "input/external/drive/shared/大会/2025年度/1015_玉名荒尾中体連駅伝/女子の結果.JPG.md.meta.json",
-    "corpus": "drive-text/大会/2025年度/1015_玉名荒尾中体連駅伝/女子の結果.JPG.md.meta.json"
+    "source": "input/external/drive/shared/大会/2025年度/1015_荒玉中体連駅伝（玉名荒尾）/女子の結果.JPG.md.meta.json",
+    "corpus": "drive-text/大会/2025年度/1015_荒玉中体連駅伝（玉名荒尾）/女子の結果.JPG.md.meta.json"
   },
   {
-    "source": "input/external/drive/shared/大会/2025年度/1015_玉名荒尾中体連駅伝/女子オーダー.md",
-    "corpus": "drive-text/大会/2025年度/1015_玉名荒尾中体連駅伝/女子オーダー.md"
+    "source": "input/external/drive/shared/大会/2025年度/1015_荒玉中体連駅伝（玉名荒尾）/女子オーダー.md",
+    "corpus": "drive-text/大会/2025年度/1015_荒玉中体連駅伝（玉名荒尾）/女子オーダー.md"
   },
   {
-    "source": "input/external/drive/shared/大会/2025年度/1015_玉名荒尾中体連駅伝/女子オーダー.md.meta.json",
-    "corpus": "drive-text/大会/2025年度/1015_玉名荒尾中体連駅伝/女子オーダー.md.meta.json"
+    "source": "input/external/drive/shared/大会/2025年度/1015_荒玉中体連駅伝（玉名荒尾）/女子オーダー.md.meta.json",
+    "corpus": "drive-text/大会/2025年度/1015_荒玉中体連駅伝（玉名荒尾）/女子オーダー.md.meta.json"
   },
   {
-    "source": "input/external/drive/shared/大会/2025年度/1015_玉名荒尾中体連駅伝/岱明の結果.md",
-    "corpus": "drive-text/大会/2025年度/1015_玉名荒尾中体連駅伝/岱明の結果.md"
+    "source": "input/external/drive/shared/大会/2025年度/1015_荒玉中体連駅伝（玉名荒尾）/岱明の結果.md",
+    "corpus": "drive-text/大会/2025年度/1015_荒玉中体連駅伝（玉名荒尾）/岱明の結果.md"
   },
   {
-    "source": "input/external/drive/shared/大会/2025年度/1015_玉名荒尾中体連駅伝/岱明の結果.md.meta.json",
-    "corpus": "drive-text/大会/2025年度/1015_玉名荒尾中体連駅伝/岱明の結果.md.meta.json"
+    "source": "input/external/drive/shared/大会/2025年度/1015_荒玉中体連駅伝（玉名荒尾）/岱明の結果.md.meta.json",
+    "corpus": "drive-text/大会/2025年度/1015_荒玉中体連駅伝（玉名荒尾）/岱明の結果.md.meta.json"
   },
   {
-    "source": "input/external/drive/shared/大会/2025年度/1015_玉名荒尾中体連駅伝/男子の結果.JPG.md",
-    "corpus": "drive-text/大会/2025年度/1015_玉名荒尾中体連駅伝/男子の結果.JPG.md"
+    "source": "input/external/drive/shared/大会/2025年度/1015_荒玉中体連駅伝（玉名荒尾）/男子の結果.JPG.md",
+    "corpus": "drive-text/大会/2025年度/1015_荒玉中体連駅伝（玉名荒尾）/男子の結果.JPG.md"
   },
   {
-    "source": "input/external/drive/shared/大会/2025年度/1015_玉名荒尾中体連駅伝/男子の結果.JPG.md.meta.json",
-    "corpus": "drive-text/大会/2025年度/1015_玉名荒尾中体連駅伝/男子の結果.JPG.md.meta.json"
+    "source": "input/external/drive/shared/大会/2025年度/1015_荒玉中体連駅伝（玉名荒尾）/男子の結果.JPG.md.meta.json",
+    "corpus": "drive-text/大会/2025年度/1015_荒玉中体連駅伝（玉名荒尾）/男子の結果.JPG.md.meta.json"
   },
   {
-    "source": "input/external/drive/shared/大会/2025年度/1015_玉名荒尾中体連駅伝/男子オーダー.md",
-    "corpus": "drive-text/大会/2025年度/1015_玉名荒尾中体連駅伝/男子オーダー.md"
+    "source": "input/external/drive/shared/大会/2025年度/1015_荒玉中体連駅伝（玉名荒尾）/男子オーダー.md",
+    "corpus": "drive-text/大会/2025年度/1015_荒玉中体連駅伝（玉名荒尾）/男子オーダー.md"
   },
   {
-    "source": "input/external/drive/shared/大会/2025年度/1015_玉名荒尾中体連駅伝/男子オーダー.md.meta.json",
-    "corpus": "drive-text/大会/2025年度/1015_玉名荒尾中体連駅伝/男子オーダー.md.meta.json"
+    "source": "input/external/drive/shared/大会/2025年度/1015_荒玉中体連駅伝（玉名荒尾）/男子オーダー.md.meta.json",
+    "corpus": "drive-text/大会/2025年度/1015_荒玉中体連駅伝（玉名荒尾）/男子オーダー.md.meta.json"
   },
   {
     "source": "input/external/drive/shared/大会/2025年度/1118_熊本市中長距離選手権/スタートリスト.pdf.md",
@@ -1553,12 +1601,12 @@
     "corpus": "drive-text/大会/2025年度/1130_玉名市民マラソン/コース.pdf.md.meta.json"
   },
   {
-    "source": "input/external/drive/shared/大会/2025年度/1130_玉名市民マラソン/玉名市民マラソン_岱明の結果.md",
-    "corpus": "drive-text/大会/2025年度/1130_玉名市民マラソン/玉名市民マラソン_岱明の結果.md"
+    "source": "input/external/drive/shared/大会/2025年度/1130_玉名市民マラソン/岱明の結果.md",
+    "corpus": "drive-text/大会/2025年度/1130_玉名市民マラソン/岱明の結果.md"
   },
   {
-    "source": "input/external/drive/shared/大会/2025年度/1130_玉名市民マラソン/玉名市民マラソン_岱明の結果.md.meta.json",
-    "corpus": "drive-text/大会/2025年度/1130_玉名市民マラソン/玉名市民マラソン_岱明の結果.md.meta.json"
+    "source": "input/external/drive/shared/大会/2025年度/1130_玉名市民マラソン/岱明の結果.md.meta.json",
+    "corpus": "drive-text/大会/2025年度/1130_玉名市民マラソン/岱明の結果.md.meta.json"
   },
   {
     "source": "input/external/drive/shared/大会/2025年度/1130_玉名市民マラソン/要項.pdf.md",
@@ -1601,6 +1649,14 @@
     "corpus": "drive-text/大会/2026年度/0315_金栗駅伝/概要.md.meta.json"
   },
   {
+    "source": "input/external/drive/shared/大会/2026年度/0411_第３４回金栗記念選抜陸上中長距離熊本大会/岱明の結果.md",
+    "corpus": "drive-text/大会/2026年度/0411_第３４回金栗記念選抜陸上中長距離熊本大会/岱明の結果.md"
+  },
+  {
+    "source": "input/external/drive/shared/大会/2026年度/0411_第３４回金栗記念選抜陸上中長距離熊本大会/岱明の結果.md.meta.json",
+    "corpus": "drive-text/大会/2026年度/0411_第３４回金栗記念選抜陸上中長距離熊本大会/岱明の結果.md.meta.json"
+  },
+  {
     "source": "input/external/drive/shared/大会/2026年度/0411_第３４回金栗記念選抜陸上中長距離熊本大会/概要.md",
     "corpus": "drive-text/大会/2026年度/0411_第３４回金栗記念選抜陸上中長距離熊本大会/概要.md"
   },
@@ -1609,68 +1665,60 @@
     "corpus": "drive-text/大会/2026年度/0411_第３４回金栗記念選抜陸上中長距離熊本大会/概要.md.meta.json"
   },
   {
-    "source": "input/external/drive/shared/大会/2026年度/0411_第３４回金栗記念選抜陸上中長距離熊本大会/結果.md",
-    "corpus": "drive-text/大会/2026年度/0411_第３４回金栗記念選抜陸上中長距離熊本大会/結果.md"
+    "source": "input/external/drive/shared/大会/2026年度/0418_第４５回熊本市陸上競技選手権大会/岱明の結果.md",
+    "corpus": "drive-text/大会/2026年度/0418_第４５回熊本市陸上競技選手権大会/岱明の結果.md"
   },
   {
-    "source": "input/external/drive/shared/大会/2026年度/0411_第３４回金栗記念選抜陸上中長距離熊本大会/結果.md.meta.json",
-    "corpus": "drive-text/大会/2026年度/0411_第３４回金栗記念選抜陸上中長距離熊本大会/結果.md.meta.json"
+    "source": "input/external/drive/shared/大会/2026年度/0418_第４５回熊本市陸上競技選手権大会/岱明の結果.md.meta.json",
+    "corpus": "drive-text/大会/2026年度/0418_第４５回熊本市陸上競技選手権大会/岱明の結果.md.meta.json"
   },
   {
-    "source": "input/external/drive/shared/大会/2026年度/0418_第４５回熊本市陸上競技選手権大会/結果.md",
-    "corpus": "drive-text/大会/2026年度/0418_第４５回熊本市陸上競技選手権大会/結果.md"
+    "source": "input/external/drive/shared/大会/2026年度/0509_第１回熊本県長距離記録会/岱明の結果.md",
+    "corpus": "drive-text/大会/2026年度/0509_第１回熊本県長距離記録会/岱明の結果.md"
   },
   {
-    "source": "input/external/drive/shared/大会/2026年度/0418_第４５回熊本市陸上競技選手権大会/結果.md.meta.json",
-    "corpus": "drive-text/大会/2026年度/0418_第４５回熊本市陸上競技選手権大会/結果.md.meta.json"
+    "source": "input/external/drive/shared/大会/2026年度/0509_第１回熊本県長距離記録会/岱明の結果.md.meta.json",
+    "corpus": "drive-text/大会/2026年度/0509_第１回熊本県長距離記録会/岱明の結果.md.meta.json"
   },
   {
-    "source": "input/external/drive/shared/大会/2026年度/0509_第１回熊本県長距離記録会/結果.md",
-    "corpus": "drive-text/大会/2026年度/0509_第１回熊本県長距離記録会/結果.md"
+    "source": "input/external/drive/shared/大会/2026年度/0523-0524_熊本県中学校陸上選手権・混成/岱明の結果.md",
+    "corpus": "drive-text/大会/2026年度/0523-0524_熊本県中学校陸上選手権・混成/岱明の結果.md"
   },
   {
-    "source": "input/external/drive/shared/大会/2026年度/0509_第１回熊本県長距離記録会/結果.md.meta.json",
-    "corpus": "drive-text/大会/2026年度/0509_第１回熊本県長距離記録会/結果.md.meta.json"
+    "source": "input/external/drive/shared/大会/2026年度/0523-0524_熊本県中学校陸上選手権・混成/岱明の結果.md.meta.json",
+    "corpus": "drive-text/大会/2026年度/0523-0524_熊本県中学校陸上選手権・混成/岱明の結果.md.meta.json"
   },
   {
-    "source": "input/external/drive/shared/大会/2026年度/0523-0524_熊本県中学校陸上選手権・混成/結果.md",
-    "corpus": "drive-text/大会/2026年度/0523-0524_熊本県中学校陸上選手権・混成/結果.md"
+    "source": "input/external/drive/shared/大会/2026年度/0613_全日本中学校通信陸上競技大会熊本県大会/岱明の結果.md",
+    "corpus": "drive-text/大会/2026年度/0613_全日本中学校通信陸上競技大会熊本県大会/岱明の結果.md"
   },
   {
-    "source": "input/external/drive/shared/大会/2026年度/0523-0524_熊本県中学校陸上選手権・混成/結果.md.meta.json",
-    "corpus": "drive-text/大会/2026年度/0523-0524_熊本県中学校陸上選手権・混成/結果.md.meta.json"
+    "source": "input/external/drive/shared/大会/2026年度/0613_全日本中学校通信陸上競技大会熊本県大会/岱明の結果.md.meta.json",
+    "corpus": "drive-text/大会/2026年度/0613_全日本中学校通信陸上競技大会熊本県大会/岱明の結果.md.meta.json"
   },
   {
-    "source": "input/external/drive/shared/大会/2026年度/0613_全日本中学校通信陸上競技大会熊本県大会/結果.md",
-    "corpus": "drive-text/大会/2026年度/0613_全日本中学校通信陸上競技大会熊本県大会/結果.md"
+    "source": "input/external/drive/shared/大会/2026年度/0628_荒尾選手権/岱明の結果.md",
+    "corpus": "drive-text/大会/2026年度/0628_荒尾選手権/岱明の結果.md"
   },
   {
-    "source": "input/external/drive/shared/大会/2026年度/0613_全日本中学校通信陸上競技大会熊本県大会/結果.md.meta.json",
-    "corpus": "drive-text/大会/2026年度/0613_全日本中学校通信陸上競技大会熊本県大会/結果.md.meta.json"
+    "source": "input/external/drive/shared/大会/2026年度/0628_荒尾選手権/岱明の結果.md.meta.json",
+    "corpus": "drive-text/大会/2026年度/0628_荒尾選手権/岱明の結果.md.meta.json"
   },
   {
-    "source": "input/external/drive/shared/大会/2026年度/0628_荒尾選手権/結果.md",
-    "corpus": "drive-text/大会/2026年度/0628_荒尾選手権/結果.md"
+    "source": "input/external/drive/shared/大会/2026年度/0704_第２回熊本県長距離記録会/岱明の結果.md",
+    "corpus": "drive-text/大会/2026年度/0704_第２回熊本県長距離記録会/岱明の結果.md"
   },
   {
-    "source": "input/external/drive/shared/大会/2026年度/0628_荒尾選手権/結果.md.meta.json",
-    "corpus": "drive-text/大会/2026年度/0628_荒尾選手権/結果.md.meta.json"
+    "source": "input/external/drive/shared/大会/2026年度/0704_第２回熊本県長距離記録会/岱明の結果.md.meta.json",
+    "corpus": "drive-text/大会/2026年度/0704_第２回熊本県長距離記録会/岱明の結果.md.meta.json"
   },
   {
-    "source": "input/external/drive/shared/大会/2026年度/0704_第２回熊本県長距離記録会/結果.md",
-    "corpus": "drive-text/大会/2026年度/0704_第２回熊本県長距離記録会/結果.md"
+    "source": "input/external/drive/shared/大会/2026年度/0718-0720_熊本県中学校総合体育大会陸上競技大会/岱明の結果.md",
+    "corpus": "drive-text/大会/2026年度/0718-0720_熊本県中学校総合体育大会陸上競技大会/岱明の結果.md"
   },
   {
-    "source": "input/external/drive/shared/大会/2026年度/0704_第２回熊本県長距離記録会/結果.md.meta.json",
-    "corpus": "drive-text/大会/2026年度/0704_第２回熊本県長距離記録会/結果.md.meta.json"
-  },
-  {
-    "source": "input/external/drive/shared/大会/2026年度/0718-0720_熊本県中学校総合体育大会陸上競技大会/結果.md",
-    "corpus": "drive-text/大会/2026年度/0718-0720_熊本県中学校総合体育大会陸上競技大会/結果.md"
-  },
-  {
-    "source": "input/external/drive/shared/大会/2026年度/0718-0720_熊本県中学校総合体育大会陸上競技大会/結果.md.meta.json",
-    "corpus": "drive-text/大会/2026年度/0718-0720_熊本県中学校総合体育大会陸上競技大会/結果.md.meta.json"
+    "source": "input/external/drive/shared/大会/2026年度/0718-0720_熊本県中学校総合体育大会陸上競技大会/岱明の結果.md.meta.json",
+    "corpus": "drive-text/大会/2026年度/0718-0720_熊本県中学校総合体育大会陸上競技大会/岱明の結果.md.meta.json"
   },
   {
     "source": "input/external/drive/shared/大会/2026年度/0801_玉名選手権（中止）/概要.md",
@@ -1681,12 +1729,12 @@
     "corpus": "drive-text/大会/2026年度/0801_玉名選手権（中止）/概要.md.meta.json"
   },
   {
-    "source": "input/external/drive/shared/大会/2026年度/0829_ジュニアオリンピックU16熊本県予選会/結果.md",
-    "corpus": "drive-text/大会/2026年度/0829_ジュニアオリンピックU16熊本県予選会/結果.md"
+    "source": "input/external/drive/shared/大会/2026年度/0829_ジュニアオリンピックU16熊本県予選会/岱明の結果.md",
+    "corpus": "drive-text/大会/2026年度/0829_ジュニアオリンピックU16熊本県予選会/岱明の結果.md"
   },
   {
-    "source": "input/external/drive/shared/大会/2026年度/0829_ジュニアオリンピックU16熊本県予選会/結果.md.meta.json",
-    "corpus": "drive-text/大会/2026年度/0829_ジュニアオリンピックU16熊本県予選会/結果.md.meta.json"
+    "source": "input/external/drive/shared/大会/2026年度/0829_ジュニアオリンピックU16熊本県予選会/岱明の結果.md.meta.json",
+    "corpus": "drive-text/大会/2026年度/0829_ジュニアオリンピックU16熊本県予選会/岱明の結果.md.meta.json"
   },
   {
     "source": "input/external/drive/shared/大会/2026年度/0829_玉名郡ナイター中・長距離記録会/参加者メモ.md",
@@ -1697,12 +1745,12 @@
     "corpus": "drive-text/大会/2026年度/0829_玉名郡ナイター中・長距離記録会/参加者メモ.md.meta.json"
   },
   {
-    "source": "input/external/drive/shared/大会/2026年度/0829_玉名郡ナイター中・長距離記録会/結果.md",
-    "corpus": "drive-text/大会/2026年度/0829_玉名郡ナイター中・長距離記録会/結果.md"
+    "source": "input/external/drive/shared/大会/2026年度/0829_玉名郡ナイター中・長距離記録会/岱明の結果.md",
+    "corpus": "drive-text/大会/2026年度/0829_玉名郡ナイター中・長距離記録会/岱明の結果.md"
   },
   {
-    "source": "input/external/drive/shared/大会/2026年度/0829_玉名郡ナイター中・長距離記録会/結果.md.meta.json",
-    "corpus": "drive-text/大会/2026年度/0829_玉名郡ナイター中・長距離記録会/結果.md.meta.json"
+    "source": "input/external/drive/shared/大会/2026年度/0829_玉名郡ナイター中・長距離記録会/岱明の結果.md.meta.json",
+    "corpus": "drive-text/大会/2026年度/0829_玉名郡ナイター中・長距離記録会/岱明の結果.md.meta.json"
   },
   {
     "source": "input/external/drive/shared/大会/2026年度/0920_中学駅伝金栗四三生誕の地なごみ大会/エントリーリスト.pdf.md",
@@ -1767,6 +1815,10 @@
   {
     "source": "input/external/drive/shared/大会/INDEX.md",
     "corpus": "drive-text/大会/INDEX.md"
+  },
+  {
+    "source": "input/external/drive/shared/大会/NAMING.md",
+    "corpus": "drive-text/大会/NAMING.md"
   },
   {
     "source": "input/external/drive/shared/大会/荒玉駅伝歴代/_EMPTY.md",

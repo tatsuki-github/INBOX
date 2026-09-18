@@ -14,7 +14,7 @@ PDFs (including start lists) are meta stubs only — binaries not committed.
 - [0614_荒尾選手権（中止）](https://drive.google.com/drive/folders/1ZPPJboc_BUiu2thxzlsIUERDlmTBm6Op) (`1ZPPJboc_BUiu2thxzlsIUERDlmTBm6Op`)
 - [0419_第４４回熊本市陸上競技選手権](https://drive.google.com/drive/folders/1uWt8u7xz4htlaAaE_LXrMHqE6wJHkKeM) (`1uWt8u7xz4htlaAaE_LXrMHqE6wJHkKeM`)
 - [0830_玉名郡ナイター](https://drive.google.com/drive/folders/1HG6vHjRUkqe1vMT3r5Vh3spZa3bviFF-) (`1HG6vHjRUkqe1vMT3r5Vh3spZa3bviFF-`)
-- [1015_玉名荒尾中体連駅伝](https://drive.google.com/drive/folders/16wyldCo5M67eTbTKMyNEeC9OPf0tV7KL) (`16wyldCo5M67eTbTKMyNEeC9OPf0tV7KL`)
+- [1015_荒玉中体連駅伝（玉名荒尾）](https://drive.google.com/drive/folders/16wyldCo5M67eTbTKMyNEeC9OPf0tV7KL) (`16wyldCo5M67eTbTKMyNEeC9OPf0tV7KL`)
 - [0802_玉名選手権](https://drive.google.com/drive/folders/1-tQ7fu6h5f0PTxqCtFqadSLyTqdTUfTH) (`1-tQ7fu6h5f0PTxqCtFqadSLyTqdTUfTH`)
 - [1130_玉名市民マラソン](https://drive.google.com/drive/folders/1kpGBjokHgieMg3KIDX4e9lYyk92B8jC0) (`1kpGBjokHgieMg3KIDX4e9lYyk92B8jC0`)
 - [1118_熊本市中長距離選手権](https://drive.google.com/drive/folders/1779L2nrg7nDxnCP44MkrPsBno_vMAJKe) (`1779L2nrg7nDxnCP44MkrPsBno_vMAJKe`)

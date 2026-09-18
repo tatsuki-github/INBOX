@@ -27,4 +27,4 @@
 | 分析 PDF + OCR | ✅ 3 件 | [`drive/shared/分析/`](drive/shared/分析/) |
 | フォト画像 | ✅ 29 件 | [`drive/shared/フォト/`](drive/shared/フォト/) |
 
-設計: [ADR 010](../../docs/adr/010-external-idaten-import.md) / [ADR 011](../../docs/adr/011-idaten-media-ocr-kg.md) / [ADR 012](../../docs/adr/012-middle-school-sb-all-years.md)
+設計: [ADR 010](../../docs/adr/010-external-idaten-import.md) / [ADR 011](../../docs/adr/011-idaten-media-ocr-kg.md) / [ADR 012](../../docs/adr/012-middle-school-sb-all-years.md) / [ADR 019](../../docs/adr/019-meet-naming-convention.md)（大会フォルダ・`岱明の結果.md` 命名）

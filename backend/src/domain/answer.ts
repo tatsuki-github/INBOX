@@ -106,7 +106,7 @@ function boostMeetYearSources(
 
   const kind: MeetKind = detectMeetKind(expandedQuery);
   const years = resolveRelativeYears(expandedQuery, defaultYear);
-  const driveTokens = meetDriveTokens(kind);
+  const driveTokens = meetDriveTokens(kind, expandedQuery);
 
   if (driveTokens.length > 0 && kind !== "aragyoku") {
     const driveHits = sortMeetDriveSources(

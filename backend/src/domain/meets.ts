@@ -40,8 +40,45 @@ export function isAragyokuCorpusSource(source: string): boolean {
   );
 }
 
+/**
+ * Distinctive path tokens for named meets that fall under MeetKind "other".
+ * Longer phrases first so folder matching prefers specific meets.
+ */
+const OTHER_MEET_PATH_PHRASES = [
+  "玉名市民マラソン",
+  "市民マラソン",
+  "玉名選手権",
+  "荒尾選手権",
+  "玉名郡ナイター",
+  "ナイター",
+  "通信陸上",
+  "長距離記録会",
+  "記録会",
+  "陸上競技選手権",
+  "中長距離",
+  "金栗記念",
+  "ジュニアオリンピック",
+  "熊本市駅伝",
+  "玉名駅伝",
+  "熊日駅伝",
+] as const;
+
+/** Path tokens extracted from the user query for MeetKind "other". */
+export function otherMeetDriveTokens(query: string): string[] {
+  const q = query.trim();
+  if (!q) return [];
+  const tokens: string[] = [];
+  for (const phrase of OTHER_MEET_PATH_PHRASES) {
+    if (q.includes(phrase)) tokens.push(phrase);
+  }
+  if (/玉名市/.test(q) && !tokens.some((t) => t.includes("玉名市") || t.includes("市民マラソン"))) {
+    tokens.push("玉名市");
+  }
+  return [...new Set(tokens)];
+}
+
 /** Path tokens to prefer under drive-text/大会/ for each meet kind. */
-export function meetDriveTokens(kind: MeetKind): string[] {
+export function meetDriveTokens(kind: MeetKind, query = ""): string[] {
   switch (kind) {
     case "junior":
       return ["ジュニア"];
@@ -49,6 +86,8 @@ export function meetDriveTokens(kind: MeetKind): string[] {
       return ["なごみ", "金栗"];
     case "aragyoku":
       return ["荒玉", "中体連"];
+    case "other":
+      return otherMeetDriveTokens(query);
     default:
       return [];
   }

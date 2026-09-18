@@ -253,6 +253,18 @@ def _rel(path: Path) -> str:
         return path.as_posix()
 
 
+def _dedupe_preserve(items: Iterable[str]) -> list[str]:
+    """Unique while keeping first-seen order (preferred refs must stay early)."""
+    seen: set[str] = set()
+    out: list[str] = []
+    for item in items:
+        if item in seen:
+            continue
+        seen.add(item)
+        out.append(item)
+    return out
+
+
 def _node(
     node_id: str,
     node_type: str,
@@ -267,7 +279,7 @@ def _node(
         "type": node_type,
         "label": label,
         "topics": sorted(set(topics)),
-        "refs": sorted(set(refs)),
+        "refs": _dedupe_preserve(refs),
         "hint": hint,
     }
 
@@ -282,7 +294,7 @@ def _add_node(nodes: dict[str, dict[str, Any]], node: dict[str, Any]) -> None:
         nodes[node["id"]] = node
         return
     existing["topics"] = sorted(set(existing["topics"]) | set(node["topics"]))
-    existing["refs"] = sorted(set(existing["refs"]) | set(node["refs"]))
+    existing["refs"] = _dedupe_preserve([*existing["refs"], *node["refs"]])
     if node["hint"] and (not existing["hint"] or len(node["hint"]) > len(existing["hint"])):
         existing["hint"] = node["hint"]
 
@@ -601,7 +613,9 @@ def _register_idaten_corpus(
                 preferred_files = [
                     f
                     for f in files
-                    if f in ("岱明の結果.md",) or f.startswith("結果_")
+                    if f == "岱明の結果.md"
+                    or f.startswith("結果_")
+                    or ("岱明" in f and "結果" in f and f.endswith(".md"))
                 ]
                 other_files = [f for f in files if f not in preferred_files]
                 for f in (preferred_files + other_files)[:12]:
