@@ -47,7 +47,12 @@ export function mapRefToCorpusSource(ref: string): string | null {
   // Packaged corpus root
   if (p.startsWith("input/idaten-corpus/")) {
     const rest = p.slice("input/idaten-corpus/".length);
-    return isSafeRelative(rest) && looksLikeCorpusSource(rest) ? rest : null;
+    if (!isSafeRelative(rest)) return null;
+    // Directory hubs → keep as prefix for retrieveBySources prefix match
+    if (looksLikeCorpusSource(rest) || rest.split("/").length <= 2) {
+      return rest.replace(/\/$/, "");
+    }
+    return looksLikeCorpusSource(rest) ? rest : null;
   }
 
   // Calendar events YAML → filtered daiming calendar in corpus

@@ -4,7 +4,7 @@ import { looksLikeDateQuestion, parseDateMentions } from "./dates.js";
 
 export type ScopeDecision =
   | { kind: "in_scope"; reason: string }
-  | { kind: "out_of_scope"; message: string };
+  | { kind: "out_of_scope"; message: string; hard?: boolean };
 
 const IN_SCOPE_KEYWORDS = [
   "いだてん",
@@ -63,7 +63,7 @@ export function classifyScope(question: string): ScopeDecision {
 
   for (const pat of OUT_OF_SCOPE_PATTERNS) {
     if (pat.test(q) && !IN_SCOPE_KEYWORDS.some((k) => q.toLowerCase().includes(k.toLowerCase()))) {
-      return { kind: "out_of_scope", message: OUT_OF_SCOPE_MESSAGE };
+      return { kind: "out_of_scope", message: OUT_OF_SCOPE_MESSAGE, hard: true };
     }
   }
 

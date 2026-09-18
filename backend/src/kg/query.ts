@@ -116,7 +116,7 @@ function scoreNode(node: KgNode, qTokens: string[], query: string): number {
     Source: 1.0,
     Athlete: 1.4,
     Template: 1.1,
-    Entity: 1.0,
+    Entity: 1.25,
     Year: 1.0,
     MediaAsset: 1.35,
   };
@@ -163,8 +163,8 @@ export function queryKnowledgeGraph(
     kgPath?: string;
   },
 ): KgQueryResult {
-  const topK = opts?.topK ?? 8;
-  const expandHops = opts?.expandHops ?? 1;
+  const topK = opts?.topK ?? 16;
+  const expandHops = opts?.expandHops ?? 2;
   const graph = opts?.graph ?? getKnowledgeGraph(opts?.kgPath);
   const nodes = new Map(graph.nodes.map((n) => [n.id, n]));
   const adj = adjacency(graph.edges);
@@ -199,7 +199,9 @@ export function queryKnowledgeGraph(
       [["norwegian", "gz", "閾値", "vdot", "ペース"], "topic:norwegian"],
       [["ai", "生成", "プロンプト"], "topic:ai"],
       [["ケガ", "障害", "rri", "怪我"], "topic:injury"],
-      [["駅伝", "荒玉", "なごみ", "ekiden"], "topic:ekiden"],
+      [["駅伝", "荒玉", "なごみ", "ekiden", "ジュニア", "開催要項", "大会"], "topic:ekiden"],
+      [["名簿", "部員", "生徒"], "topic:practice"],
+      [["sb", "SB", "記録会"], "topic:athlete_records"],
     ];
     const q = question.toLowerCase();
     const fallback: Array<[string, number]> = [];

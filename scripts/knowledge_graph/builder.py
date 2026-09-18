@@ -94,22 +94,38 @@ SOURCE_GLOBS: list[tuple[str, list[str], str]] = [
 LIGHTWEIGHT_SUFFIXES = {".csv", ".pdf", ".jpg", ".jpeg", ".png", ".gif", ".webp"}
 
 TOPIC_DEFS: list[tuple[str, str, str]] = [
-    ("calendar", "カレンダー / 予定", "年次予定・メモ・祝日の入口"),
-    ("practice", "岱明練習", "practice ブロック・メニュー・欠席・テンプレ"),
-    ("athlete_records", "選手記録", "荒尾・玉名・中学生 SB・所属ランキング"),
+    (
+        "calendar",
+        "カレンダー / 予定",
+        "年次予定・メモ・祝日。正本 input/events.*.yaml とコーパス calendar/events.daiming.yaml（岱明フィルタ）",
+    ),
+    (
+        "practice",
+        "岱明練習",
+        "practice ブロック・メニュー・欠席・テンプレ。コーパス practice/ と drive-text/personal・練習ログ",
+    ),
+    (
+        "athlete_records",
+        "選手記録",
+        "荒尾・玉名・中学生 SB・所属ランキング・Notion 生徒/記録 DB。コーパス sb/ notion-db/ analysis-ocr/",
+    ),
     ("norwegian", "Norwegian Method", "GZ/閾値・VDOT・原則メモ"),
     ("ai", "AI 練習生成", "プロンプト・ルール・週次/単日生成"),
     ("schema", "スキーマ", "JSON Schema とデータモデル"),
     ("pace", "ペース", "k/pace・VDOT・GZ 表"),
-    ("injury", "ケガ / RRI", "ランニング障害・回復エビデンス"),
-    ("meta", "リポジトリ運用", "README・生成パイプライン"),
-    ("ekiden", "荒玉駅伝", "歴代結果画像・OCR・戦略・分析（勝つための一次情報）"),
+    ("injury", "ケガ / RRI", "ランニング障害・回復エビデンス・怪我について Notion"),
+    ("meta", "リポジトリ運用", "README・生成パイプライン・idaten-corpus INDEX"),
+    (
+        "ekiden",
+        "駅伝・大会",
+        "荒玉歴代 OCR/構造化、なごみ・ジュニア・玉名・金栗など drive-text/大会/ の開催要項・結果",
+    ),
 ]
 
 QUERY_HINTS: list[tuple[str, str, list[str]]] = [
     (
         "練習メニューの中身は？",
-        "practice 付きイベントと practice.json を見る",
+        "practice 付きイベントと practice.json / practice_templates / コーパス practice/ を見る",
         ["topic:practice", "source:input/practice_templates.yaml"],
     ),
     (
@@ -124,18 +140,18 @@ QUERY_HINTS: list[tuple[str, str, list[str]]] = [
     ),
     (
         "選手の記録は？",
-        "notion_records と荒尾玉名 PDF/設定",
+        "notion_records・荒尾玉名・sb/・analysis-ocr を見る",
         ["topic:athlete_records"],
     ),
     (
         "今日の予定は？",
-        "events YAML / events.json / calendar.md",
+        "events YAML / events.json / calendar.md / calendar/events.daiming.yaml",
         ["topic:calendar"],
     ),
     (
         "〇月〇日の予定は？",
         "日付を YYYY-MM-DD / MMDD に正規化し events YAML と drive-text/大会/ の開催要項を見る",
-        ["topic:calendar"],
+        ["topic:calendar", "topic:ekiden"],
     ),
     (
         "AI で練習を作るには？",
@@ -144,7 +160,7 @@ QUERY_HINTS: list[tuple[str, str, list[str]]] = [
     ),
     (
         "荒玉駅伝の歴代は？",
-        "駅伝歴代 rows + media-manifest + ocr/*.md（画像パスがあれば原画を読む）",
+        "駅伝歴代 rows + media-manifest + ekiden-ocr/*.md + aragyoku/",
         [
             "topic:ekiden",
             "source:input/external/notion/databases/荒玉中体連駅伝歴代/rows.json",
@@ -156,6 +172,36 @@ QUERY_HINTS: list[tuple[str, str, list[str]]] = [
         "荒玉駅伝の区間距離は？",
         "docs/aragyoku-ekiden-distance-definitions.md の年度別・男女別区間距離定義を優先する",
         ["topic:ekiden", "source:docs/aragyoku-ekiden-distance-definitions.md"],
+    ),
+    (
+        "なごみ駅伝は？",
+        "drive-text/大会/*/0920_*なごみ* または 0921_*なごみ* の開催要項・結果を見る",
+        ["topic:ekiden", "topic:calendar"],
+    ),
+    (
+        "部員名簿は？",
+        "Notion いだてん岱明生徒 DB と Drive 名簿 CSV（コーパス notion-db/いだてん岱明生徒）",
+        ["topic:athlete_records", "topic:practice"],
+    ),
+    (
+        "中学生SBは？",
+        "コーパス sb/ と input/external/sb/middle-school/ を見る",
+        ["topic:athlete_records"],
+    ),
+    (
+        "開催要項は？",
+        "drive-text/大会/ 各大会フォルダの開催要項.md を見る",
+        ["topic:ekiden"],
+    ),
+    (
+        "ケガ・障害は？",
+        "injury トピックと Notion 怪我について・RRI メモ",
+        ["topic:injury"],
+    ),
+    (
+        "オーダー・区間は？",
+        "荒玉戦略 Notion・分析 OCR・歴代 OCR を見る",
+        ["topic:ekiden", "topic:athlete_records"],
     ),
 ]
 
@@ -334,6 +380,194 @@ def _tags_from_events(year: int) -> set[str]:
             if isinstance(tag, str) and tag.strip():
                 tags.add(tag.strip())
     return tags
+
+
+def _peek_text_summary(path: Path, *, max_chars: int = 220) -> str:
+    """First meaningful lines of a text file for KG hints (what is written there)."""
+    if not path.is_file():
+        return ""
+    if path.suffix.lower() in {".pdf", ".jpg", ".jpeg", ".png", ".gif", ".webp", ".heic"}:
+        return path.name
+    try:
+        raw = path.read_text(encoding="utf-8", errors="replace")
+    except OSError:
+        return ""
+    lines: list[str] = []
+    for line in raw.splitlines():
+        s = line.strip()
+        if not s or s.startswith("---"):
+            continue
+        lines.append(s.lstrip("#").strip())
+        if sum(len(x) for x in lines) >= max_chars:
+            break
+    joined = " / ".join(lines)
+    return joined[:max_chars]
+
+
+def _register_idaten_corpus(
+    nodes: dict[str, dict[str, Any]],
+    edges: set[tuple[str, str, str]],
+) -> None:
+    """
+    Register LINE corpus hubs + meet folders with content hints so KG routing
+    knows *what is written where* (input/idaten-corpus/).
+    """
+    corpus = ROOT / "input" / "idaten-corpus"
+    if not corpus.is_dir():
+        return
+
+    index = corpus / "INDEX.md"
+    if index.exists():
+        _register_source(
+            nodes,
+            edges,
+            _rel(index),
+            topics=["meta", "calendar", "practice", "ekiden", "athlete_records"],
+            hint="いだてん岱明コーパス目録（LINE Q&A 参照範囲）: " + _peek_text_summary(index, max_chars=180),
+        )
+
+    dir_specs: list[tuple[str, list[str], str]] = [
+        ("ekiden-ocr", ["ekiden", "athlete_records"], "荒玉駅伝歴代の OCR 本文（年×男女）"),
+        ("aragyoku", ["ekiden", "athlete_records"], "荒玉駅伝の構造化 JSON/MD・transcripts"),
+        ("analysis-ocr", ["ekiden", "athlete_records"], "分析 PDF の OCR（所属ランキング等）"),
+        ("calendar", ["calendar", "practice"], "岱明フィルタ済み events.daiming.yaml"),
+        ("practice", ["practice"], "練習 JSON / menus / absentees 抜粋"),
+        ("sb", ["athlete_records"], "中学生 SB（岱明関連）"),
+        ("notion-db", ["practice", "athlete_records", "ekiden", "injury"], "Notion DB スナップショット"),
+        ("notion-pages", ["practice", "meta"], "Notion ページ Markdown"),
+        ("drive-text", ["ekiden", "practice", "calendar"], "Drive テキスト（大会開催要項・結果・個人メモ）"),
+        ("docs", ["ekiden", "schema", "meta"], "関連 ADR・区間距離定義のコピー"),
+    ]
+    for dirname, topics, base_hint in dir_specs:
+        dpath = corpus / dirname
+        if not dpath.is_dir():
+            continue
+        rel = _rel(dpath)
+        # Count text-ish children for hint richness
+        children = [p.name for p in sorted(dpath.iterdir()) if not p.name.startswith(".")][:12]
+        hint = f"{base_hint}. 例: {', '.join(children)}"
+        eid = f"corpus:{dirname}"
+        _add_node(
+            nodes,
+            _node(
+                eid,
+                "Entity",
+                f"コーパス/{dirname}",
+                topics=topics,
+                refs=[rel, f"input/idaten-corpus/{dirname}"],
+                hint=hint,
+            ),
+        )
+        for t in topics:
+            _add_edge(edges, f"topic:{t}", eid, "search_here")
+        # Also register as Source for path scoring
+        _register_source(
+            nodes,
+            edges,
+            f"input/idaten-corpus/{dirname}",
+            topics=topics,
+            hint=hint,
+        )
+
+    # Notion DB folders with content peek
+    notion_db = corpus / "notion-db"
+    if notion_db.is_dir():
+        for sub in sorted(notion_db.iterdir()):
+            if not sub.is_dir():
+                continue
+            rows = sub / "rows.json"
+            hint = f"Notion DB「{sub.name}」"
+            if rows.exists():
+                hint += ": " + _peek_text_summary(rows, max_chars=160)
+            topics = ["athlete_records", "practice"]
+            if "駅伝" in sub.name or "荒玉" in sub.name:
+                topics = ["ekiden", "athlete_records"]
+            if "怪我" in sub.name or "ケガ" in sub.name:
+                topics = ["injury"]
+            if "生徒" in sub.name or "名簿" in sub.name:
+                topics = ["practice", "athlete_records"]
+            _register_source(
+                nodes,
+                edges,
+                _rel(sub),
+                topics=topics,
+                hint=hint,
+            )
+            # Prefer rows.json as concrete ref
+            if rows.exists():
+                _register_source(
+                    nodes,
+                    edges,
+                    _rel(rows),
+                    topics=topics,
+                    hint=hint,
+                )
+
+    # Meet / race folders under drive-text/大会
+    taikai_root = corpus / "drive-text" / "大会"
+    if taikai_root.is_dir():
+        _register_source(
+            nodes,
+            edges,
+            _rel(taikai_root / "INDEX.md") if (taikai_root / "INDEX.md").exists() else _rel(taikai_root),
+            topics=["ekiden", "calendar"],
+            hint="大会フォルダ目録（年度別・開催要項・結果の入口）: "
+            + _peek_text_summary(taikai_root / "INDEX.md", max_chars=160),
+        )
+        for year_dir in sorted(taikai_root.glob("*年度")):
+            if not year_dir.is_dir():
+                continue
+            year_label = year_dir.name
+            for meet_dir in sorted(year_dir.iterdir()):
+                if not meet_dir.is_dir():
+                    continue
+                name = meet_dir.name
+                files = sorted(
+                    p.name
+                    for p in meet_dir.iterdir()
+                    if p.is_file() and not p.name.endswith(".meta.json")
+                )
+                summary_bits: list[str] = []
+                for prefer in ("開催要項.md", "開催要項.pdf.md", "岱明の結果.md"):
+                    cand = meet_dir / prefer
+                    if cand.exists():
+                        summary_bits.append(_peek_text_summary(cand, max_chars=140))
+                        break
+                if not summary_bits and files:
+                    first_md = next((meet_dir / f for f in files if f.endswith(".md")), None)
+                    if first_md and first_md.exists():
+                        summary_bits.append(_peek_text_summary(first_md, max_chars=120))
+                mmdd = ""
+                m = re.match(r"^(\d{4})", name)
+                if m:
+                    mmdd = m.group(1)
+                hint = (
+                    f"{year_label} 大会「{name}」。"
+                    + (f"日付キー MMDD={mmdd}。" if mmdd else "")
+                    + f"ファイル: {', '.join(files[:8])}。"
+                    + (" 内容: " + " ".join(summary_bits) if summary_bits else "")
+                )
+                refs = [_rel(meet_dir)]
+                for f in files[:10]:
+                    refs.append(_rel(meet_dir / f))
+                mid = f"meet:{year_label}:{name[:48]}"
+                _add_node(
+                    nodes,
+                    _node(
+                        mid,
+                        "Entity",
+                        name,
+                        topics=["ekiden", "calendar"],
+                        refs=refs,
+                        hint=hint[:500],
+                    ),
+                )
+                _add_edge(edges, "topic:ekiden", mid, "search_here")
+                _add_edge(edges, "topic:calendar", mid, "see_also")
+                # Link year entity if present
+                ym = re.search(r"(20\d{2})", year_label)
+                if ym:
+                    _add_edge(edges, f"entity:year:{ym.group(1)}", mid, "see_also")
 
 
 def _register_external_media(
@@ -694,6 +928,9 @@ def build_knowledge_graph(*, generated_at: str | None = None) -> dict[str, Any]:
 
     # External media (images / OCR / analysis PDFs) — paths for LLM follow-up reads
     _register_external_media(nodes, edges)
+
+    # LINE いだてんコーパス（内容ヒント付きハブ + 大会フォルダ）
+    _register_idaten_corpus(nodes, edges)
 
     # Query hints
     for idx, (label, hint, targets) in enumerate(QUERY_HINTS):

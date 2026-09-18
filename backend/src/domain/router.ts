@@ -17,7 +17,7 @@ function buildRouterSystemPrompt(): string {
     "候補ソース一覧から、質問に答えるために読むべき source パスだけを選んでください。",
     "必ず次の JSON のみを返してください（説明文禁止）:",
     '{"sources":["corpus/相対パス"],"focus":"短い焦点","reason":"短い理由"}',
-    "sources は候補に含まれるパスだけ。最大 6 件。日付質問なら calendar と該当大会フォルダを優先。",
+    "sources は候補に含まれるパスだけ。最大 12 件。日付質問なら calendar と該当大会フォルダを優先。抜け漏れ防止のため関連ソースを多めに選ぶ。",
   ].join("\n");
 }
 
@@ -70,7 +70,7 @@ function fallbackRoute(question: string, kg: KgQueryResult): RouteDecision {
     sources.unshift("calendar/events.daiming.yaml");
   }
   return {
-    sources: sources.slice(0, 6),
+    sources: sources.slice(0, 12),
     focus: question.slice(0, 80),
     reason: "kg_fallback",
     via: "fallback",
@@ -99,8 +99,8 @@ export async function routeSources(
     if (!parsed) return fallbackRoute(question, kg);
     const sources = parsed.sources
       .map((s) => s.trim())
-      .filter((s) => isAllowedCorpusSource(s) && (allow.has(s) || s.startsWith("drive-text/")))
-      .slice(0, 6);
+      .filter((s) => isAllowedCorpusSource(s) && (allow.has(s) || s.startsWith("drive-text/") || s.startsWith("notion-db/") || s.startsWith("ekiden-ocr/") || s.startsWith("aragyoku/")))
+      .slice(0, 12);
     if (sources.length === 0) return fallbackRoute(question, kg);
     return {
       sources,
