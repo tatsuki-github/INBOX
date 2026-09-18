@@ -6,19 +6,27 @@ Vercel では **別プロジェクト**、Root Directory = `backend`。
 ## ローカル
 
 ```bash
-# コーパス + RAG 索引（リポジトリルートで）
+# コーパス + RAG 索引（リポジトリルートで。初回またはソース更新時）
 python3 scripts/build_idaten_corpus.py
 
 cd backend
 cp .env.example .env
-# LINE_CHANNEL_SECRET / LINE_CHANNEL_ACCESS_TOKEN / OPENAI_API_KEY 等を設定
+# 必要なら .env を編集（LINE / OPENAI）。無くても health とオフライン回答は動く
 npm install
 npm test
 npm run dev
-# http://localhost:3001/health
+# → http://localhost:3001/health
 ```
 
-Webhook は `POST /webhook`。ローカル検証には [ngrok](https://ngrok.com/) 等で HTTPS 公開し、LINE Developers の Webhook URL に設定します。
+`.env` は `dotenv` で自動読み込みされます（コミットしない）。
+
+| 段階 | 必要な設定 |
+|:---|:---|
+| health だけ | なし（`PORT` 既定 3001） |
+| オフライン回答（LLM なし） | なし。スコープ内質問はコーパス抜粋 |
+| LINE 実機 | `LINE_CHANNEL_SECRET` / `LINE_CHANNEL_ACCESS_TOKEN` + ngrok 等 |
+
+Webhook は `POST /webhook`。LINE 実機検証には [ngrok](https://ngrok.com/) 等で HTTPS 公開し、LINE Developers の Webhook URL に設定します。
 
 ## 環境変数
 

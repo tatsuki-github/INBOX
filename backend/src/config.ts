@@ -1,35 +1,20 @@
 import { z } from "zod";
 
-const envSchema = z
-  .object({
-    LINE_CHANNEL_SECRET: z.string().min(1).optional(),
-    LINE_CHANNEL_ACCESS_TOKEN: z.string().min(1).optional(),
-    AI_PROVIDER: z.enum(["openai", "anthropic"]).default("openai"),
-    OPENAI_API_KEY: z.string().optional(),
-    ANTHROPIC_API_KEY: z.string().optional(),
-    PORT: z.coerce.number().default(3001),
-    NODE_ENV: z.string().optional(),
-  })
-  .superRefine((val, ctx) => {
-    if (val.AI_PROVIDER === "openai" && !val.OPENAI_API_KEY && val.NODE_ENV === "production") {
-      ctx.addIssue({
-        code: z.ZodIssueCode.custom,
-        message: "OPENAI_API_KEY required when AI_PROVIDER=openai",
-        path: ["OPENAI_API_KEY"],
-      });
-    }
-    if (
-      val.AI_PROVIDER === "anthropic" &&
-      !val.ANTHROPIC_API_KEY &&
-      val.NODE_ENV === "production"
-    ) {
-      ctx.addIssue({
-        code: z.ZodIssueCode.custom,
-        message: "ANTHROPIC_API_KEY required when AI_PROVIDER=anthropic",
-        path: ["ANTHROPIC_API_KEY"],
-      });
-    }
-  });
+/** Treat missing / blank env as undefined so .env.example copies still boot. */
+const optionalNonEmpty = z.preprocess(
+  (v) => (typeof v === "string" && v.trim() === "" ? undefined : v),
+  z.string().min(1).optional(),
+);
+
+const envSchema = z.object({
+  LINE_CHANNEL_SECRET: optionalNonEmpty,
+  LINE_CHANNEL_ACCESS_TOKEN: optionalNonEmpty,
+  AI_PROVIDER: z.enum(["openai", "anthropic"]).default("openai"),
+  OPENAI_API_KEY: optionalNonEmpty,
+  ANTHROPIC_API_KEY: optionalNonEmpty,
+  PORT: z.coerce.number().default(3001),
+  NODE_ENV: z.string().optional(),
+});
 
 export type AppConfig = z.infer<typeof envSchema>;
 
