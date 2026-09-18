@@ -11,6 +11,7 @@ describe("isUnderspecifiedPersonalBestQuestion", () => {
     expect(isUnderspecifiedPersonalBestQuestion("自己ベストは？")).toBe(true);
     expect(isUnderspecifiedPersonalBestQuestion("SB教えて")).toBe(true);
     expect(isUnderspecifiedPersonalBestQuestion("最新の自己ベストは？")).toBe(true);
+    expect(isUnderspecifiedPersonalBestQuestion("今の自己ベストは？")).toBe(true);
   });
 
   it("allows concrete named questions", () => {
@@ -18,6 +19,18 @@ describe("isUnderspecifiedPersonalBestQuestion", () => {
       false,
     );
     expect(isUnderspecifiedPersonalBestQuestion("石川隼の3000mのSBは？")).toBe(false);
+  });
+
+  it("allows short / compat / latin / kana athlete names with distance", () => {
+    expect(isUnderspecifiedPersonalBestQuestion("森の3000m自己ベストは？")).toBe(false);
+    expect(isUnderspecifiedPersonalBestQuestion("小﨑の3000m自己ベストは？")).toBe(false);
+    expect(isUnderspecifiedPersonalBestQuestion("FESTUSの5000m自己ベストは？")).toBe(
+      false,
+    );
+    expect(isUnderspecifiedPersonalBestQuestion("ヴの3000m自己ベストは？")).toBe(false);
+    expect(isUnderspecifiedPersonalBestQuestion("杉𠮷（STR）の3000m SBは？")).toBe(
+      false,
+    );
   });
 });
 

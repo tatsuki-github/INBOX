@@ -55,6 +55,44 @@ function tokenize(text: string): string[] {
   return out;
 }
 
+/**
+ * Extract athlete-name-like tokens for SB CSV row matching.
+ * Prefers 「Xの」「X（所属）の」 forms; falls back to short leftover CJK/latin.
+ */
+export function extractAthleteNameHints(query: string): string[] {
+  const q = query.trim();
+  const hints: string[] = [];
+  const push = (s: string) => {
+    const t = s.trim();
+    if (!t || t.length > 12) return;
+    if (hints.includes(t)) return;
+    hints.push(t);
+  };
+  const cjk = "[\\u3400-\\u9fff\\uf900-\\ufaff\\u{20000}-\\u{2fa1f}]";
+  const named = q.matchAll(
+    new RegExp(`([A-Za-z]{2,}|[ァ-ヶヴー]{1,8}|${cjk}{1,8})(?:[（(][^）)]{1,24}[）)])?の`, "gu"),
+  );
+  for (const m of named) {
+    const base = m[1]!;
+    if (!/^(自分|私|俺|僕|誰|何|最新|今|今年|去年|昨年|今季|今年度|前回|今回)$/.test(base)) push(base);
+  }
+  return hints;
+}
+
+/** Boost when chunk contains an exact CSV name cell (line-start `Name,`). */
+function csvNameRowBoost(text: string, names: string[]): number {
+  if (names.length === 0) return 0;
+  let boost = 0;
+  for (const name of names) {
+    // Escape regex special chars in names
+    const esc = name.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    if (new RegExp(`(^|\\n)${esc},`, "u").test(text)) {
+      boost += 80;
+    }
+  }
+  return boost;
+}
+
 export class Bm25Retriever {
   private readonly chunks: RagChunk[];
   private readonly docTokens: string[][];
@@ -197,6 +235,7 @@ export function retrieveBySources(
   const maxChunks = opts?.maxChunks ?? 16;
   const query = opts?.query ?? "";
   const qTokens = query ? tokenize(query) : [];
+  const nameHints = query ? extractAthleteNameHints(query) : [];
 
   const bySource = new Map<string, RagChunk[]>();
   for (const chunk of index.chunks) {
@@ -230,6 +269,10 @@ export function retrieveBySources(
           if (/^(0[1-9]|1[0-2])(0[1-9]|[12]\d|3[01])$/.test(t) && (lower.includes(t) || sourceLower.includes(t))) {
             score += 40;
           }
+        }
+        // SB / athlete CSV: prefer exact name row over substring hits (森 vs 森本)
+        if (src.startsWith("sb/") || src.includes("中学生SB") || chunk.source.includes("sb/")) {
+          score += csvNameRowBoost(chunk.text, nameHints);
         }
         return { chunk, score };
       })

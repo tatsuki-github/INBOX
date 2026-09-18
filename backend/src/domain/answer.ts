@@ -16,6 +16,7 @@ import { buildSystemPrompt, buildUserPrompt, MISSING_INFO_MESSAGE } from "../rag
 import { formatForLine } from "../line/format.js";
 import {
   expandWithNeighbors,
+  extractAthleteNameHints,
   findSourcesContaining,
   mergeRetrieved,
   retrieveBySources,
@@ -140,8 +141,15 @@ function boostAthleteRecordSources(query: string, baseSources: string[]): string
   };
   push("sb/中学生SB.csv");
   push("sb/");
-  for (const s of findSourcesContaining(["SB", "記録"], { prefix: "drive-text/記録データベース/", limit: 12 })) {
-    push(s);
+  // Named athlete PB → stick to SB CSV (avoid 3000m予想ランキング drowning short names)
+  const named = extractAthleteNameHints(query).length > 0;
+  if (!named) {
+    for (const s of findSourcesContaining(["SB", "記録"], {
+      prefix: "drive-text/記録データベース/",
+      limit: 12,
+    })) {
+      push(s);
+    }
   }
   for (const s of baseSources) push(s);
   return out;

@@ -1,0 +1,5 @@
+# Local eval artifacts (do not commit)
+results-*.json
+latest.json
+latest-failed.json
+latest-failed-detail.json
