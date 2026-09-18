@@ -3,7 +3,7 @@ import { expandDateQuery, parseDateMentions, resolveRelativeYears } from "./date
 import { matchCannedAnswer } from "./canned.js";
 import { routeSources } from "./router.js";
 import type { LlmClient } from "./llm.js";
-import { buildSystemPrompt, buildUserPrompt } from "../rag/prompt.js";
+import { buildSystemPrompt, buildUserPrompt, MISSING_INFO_MESSAGE } from "../rag/prompt.js";
 import { formatForLine } from "../line/format.js";
 import {
   expandWithNeighbors,
@@ -42,7 +42,7 @@ const DEFAULT_MAX_CHUNKS = 28;
 function offlineAnswer(question: string, retrieved: RetrievedChunk[]): string {
   const lines = ["（オフライン回答）", "", `Q: ${question}`, ""];
   if (retrieved.length === 0) {
-    lines.push("コーパスに情報がありません。");
+    lines.push(MISSING_INFO_MESSAGE);
   } else {
     for (const [i, r] of retrieved.entries()) {
       const preview = r.chunk.text.replace(/\s+/g, " ").slice(0, 280);

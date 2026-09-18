@@ -158,4 +158,45 @@ describe("answerQuestion", () => {
       expect(result.sources.some((s) => s.includes("aragyoku") || s.includes("2025"))).toBe(true);
     }
   });
+
+  it("offline empty retrieval tells user to ask the coach", async () => {
+    const result = await answerQuestion("存在しない架空の大会XYZの詳細は？", {
+      retrieve: () => [],
+      llm: null,
+      skipRouter: true,
+      kgQuery: () => ({
+        question: "x",
+        matched_nodes: [],
+        refs: [],
+        corpus_sources: [],
+      }),
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.text).toContain("コーチに直接聞いてください。");
+      expect(result.text).not.toContain("コーパスに情報がありません");
+    }
+  });
+
+  it("system prompt instructs missing-info coach message", async () => {
+    let systemPrompt = "";
+    await answerQuestion("荒玉駅伝で岱明は何位？", {
+      retrieve: fakeRetrieve,
+      skipRouter: true,
+      kgQuery: () => ({
+        question: "x",
+        matched_nodes: [],
+        refs: [],
+        corpus_sources: ["ekiden-ocr/2024-男子.md"],
+      }),
+      llm: {
+        complete: async (sys) => {
+          systemPrompt = sys;
+          return "ok";
+        },
+      },
+    });
+    expect(systemPrompt).toContain("コーチに直接聞いてください。");
+    expect(systemPrompt).not.toContain("コーパスに情報がありません");
+  });
 });
