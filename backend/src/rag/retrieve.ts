@@ -276,3 +276,60 @@ export function truncateRetrieved(
   }
   return out;
 }
+
+/**
+ * Expand hits with neighboring chunks from the same source (by :N index)
+ * so calendar / long docs don't lose surrounding context.
+ */
+export function expandWithNeighbors(
+  hits: RetrievedChunk[],
+  opts?: { radius?: number; path?: string; maxExtra?: number },
+): RetrievedChunk[] {
+  if (hits.length === 0) return hits;
+  const radius = opts?.radius ?? 2;
+  const maxExtra = opts?.maxExtra ?? 24;
+  const path = opts?.path ?? defaultIndexPath();
+  const index = loadIndex(path);
+
+  const bySource = new Map<string, RagChunk[]>();
+  for (const chunk of index.chunks) {
+    const base = chunkBaseSource(chunk.source);
+    const list = bySource.get(base) ?? [];
+    list.push(chunk);
+    bySource.set(base, list);
+  }
+  for (const [, list] of bySource) {
+    list.sort((a, b) => {
+      const ia = Number((a.id.match(/:(\d+)$/) || [])[1] ?? 0);
+      const ib = Number((b.id.match(/:(\d+)$/) || [])[1] ?? 0);
+      return ia - ib;
+    });
+  }
+
+  const out: RetrievedChunk[] = [];
+  const seen = new Set<string>();
+  let extra = 0;
+  for (const hit of hits) {
+    if (!seen.has(hit.chunk.id)) {
+      seen.add(hit.chunk.id);
+      out.push(hit);
+    }
+    const base = chunkBaseSource(hit.chunk.source);
+    const list = bySource.get(base);
+    if (!list || list.length <= 1) continue;
+    const idx = list.findIndex((c) => c.id === hit.chunk.id);
+    if (idx < 0) continue;
+    for (let d = 1; d <= radius; d += 1) {
+      for (const j of [idx - d, idx + d]) {
+        if (j < 0 || j >= list.length) continue;
+        const chunk = list[j]!;
+        if (seen.has(chunk.id)) continue;
+        if (extra >= maxExtra) break;
+        seen.add(chunk.id);
+        out.push({ chunk, score: hit.score * 0.85 });
+        extra += 1;
+      }
+    }
+  }
+  return out;
+}

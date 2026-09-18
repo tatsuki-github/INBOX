@@ -42,7 +42,7 @@ export function createGeminiClient(apiKey: string, opts?: { fetchImpl?: typeof f
             },
           ],
           generationConfig: {
-            maxOutputTokens: 700,
+            maxOutputTokens: 1200,
             temperature: 0.2,
           },
         }),

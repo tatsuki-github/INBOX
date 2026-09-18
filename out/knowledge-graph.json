@@ -1,7 +1,139 @@
 {
   "version": 1,
-  "generated_at": "2026-09-18T07:47:13Z",
+  "generated_at": "2026-09-18T08:08:05Z",
   "nodes": [
+    {
+      "id": "corpus:analysis-ocr",
+      "type": "Entity",
+      "label": "コーパス/analysis-ocr",
+      "topics": [
+        "athlete_records",
+        "ekiden"
+      ],
+      "refs": [
+        "input/idaten-corpus/analysis-ocr"
+      ],
+      "hint": "分析 PDF の OCR（所属ランキング等）. 例: 2026年度荒玉男子.ocr.md, 2026年荒玉女子.ocr.md, 関係図_2026.ocr.md"
+    },
+    {
+      "id": "corpus:aragyoku",
+      "type": "Entity",
+      "label": "コーパス/aragyoku",
+      "topics": [
+        "athlete_records",
+        "ekiden"
+      ],
+      "refs": [
+        "input/idaten-corpus/aragyoku"
+      ],
+      "hint": "荒玉駅伝の構造化 JSON/MD・transcripts. 例: men_full_2012_2025.json, ocr_raw, quiz, taimei-records-2012-2025.md, transcripts, women_full_2012_2025.json, women_top4_2012_2025.json, women_top6_2012_2025.json"
+    },
+    {
+      "id": "corpus:calendar",
+      "type": "Entity",
+      "label": "コーパス/calendar",
+      "topics": [
+        "calendar",
+        "practice"
+      ],
+      "refs": [
+        "input/idaten-corpus/calendar"
+      ],
+      "hint": "岱明フィルタ済み events.daiming.yaml. 例: events.daiming.yaml"
+    },
+    {
+      "id": "corpus:docs",
+      "type": "Entity",
+      "label": "コーパス/docs",
+      "topics": [
+        "ekiden",
+        "meta",
+        "schema"
+      ],
+      "refs": [
+        "input/idaten-corpus/docs"
+      ],
+      "hint": "関連 ADR・区間距離定義のコピー. 例: 010-external-idaten-import.md, 011-idaten-media-ocr-kg.md, aragyoku-ekiden-distance-definitions.md"
+    },
+    {
+      "id": "corpus:drive-text",
+      "type": "Entity",
+      "label": "コーパス/drive-text",
+      "topics": [
+        "calendar",
+        "ekiden",
+        "practice"
+      ],
+      "refs": [
+        "input/idaten-corpus/drive-text"
+      ],
+      "hint": "Drive テキスト（大会開催要項・結果・個人メモ）. 例: personal, 名簿, 大会, 練習, 記録データベース"
+    },
+    {
+      "id": "corpus:ekiden-ocr",
+      "type": "Entity",
+      "label": "コーパス/ekiden-ocr",
+      "topics": [
+        "athlete_records",
+        "ekiden"
+      ],
+      "refs": [
+        "input/idaten-corpus/ekiden-ocr"
+      ],
+      "hint": "荒玉駅伝歴代の OCR 本文（年×男女）. 例: 2012-女子.md, 2012-男子.md, 2013-女子.md, 2013-男子.md, 2014-男子.md, 2015-女子.md, 2015-男子.md, 2016-女子.md, 2016-男子.md, 2017-女子.md, 2017-男子.md, 2018-女子.md"
+    },
+    {
+      "id": "corpus:notion-db",
+      "type": "Entity",
+      "label": "コーパス/notion-db",
+      "topics": [
+        "athlete_records",
+        "ekiden",
+        "injury",
+        "practice"
+      ],
+      "refs": [
+        "input/idaten-corpus/notion-db"
+      ],
+      "hint": "Notion DB スナップショット. 例: いだてん岱明の未来, いだてん岱明生徒, 動きづくり, 怪我について, 練習のバリエーション, 荒玉中体連駅伝戦略, 荒玉中体連駅伝歴代"
+    },
+    {
+      "id": "corpus:notion-pages",
+      "type": "Entity",
+      "label": "コーパス/notion-pages",
+      "topics": [
+        "meta",
+        "practice"
+      ],
+      "refs": [
+        "input/idaten-corpus/notion-pages"
+      ],
+      "hint": "Notion ページ Markdown. 例: 2025-男子.md, ekiden-history, ノルウェーメソッド-inbox.md, ノルウェーメソッド.md, 岱明ノルウェーメソッド.md, 岱明朝練と夕練.md"
+    },
+    {
+      "id": "corpus:practice",
+      "type": "Entity",
+      "label": "コーパス/practice",
+      "topics": [
+        "practice"
+      ],
+      "refs": [
+        "input/idaten-corpus/practice"
+      ],
+      "hint": "練習 JSON / menus / absentees 抜粋. 例: daiming-practice-menus-kpace.md, practice.2025.json, practice.2026.json"
+    },
+    {
+      "id": "corpus:sb",
+      "type": "Entity",
+      "label": "コーパス/sb",
+      "topics": [
+        "athlete_records"
+      ],
+      "refs": [
+        "input/idaten-corpus/sb"
+      ],
+      "hint": "中学生 SB（岱明関連）. 例: 中学生SB_岱明.csv"
+    },
     {
       "id": "entity:athlete:中尾快叶",
       "type": "Athlete",
@@ -2006,12 +2138,594 @@
       "hint": "topic=photo; binary=yes; ocr=input/external/drive/shared/フォト/20250927_ジュニア駅伝/IMG_0059.JPG.md"
     },
     {
+      "id": "meet:2025年度:0228_熊本市駅伝",
+      "type": "Entity",
+      "label": "0228_熊本市駅伝",
+      "topics": [
+        "calendar",
+        "ekiden"
+      ],
+      "refs": [
+        "input/idaten-corpus/drive-text/大会/2025年度/0228_熊本市駅伝",
+        "input/idaten-corpus/drive-text/大会/2025年度/0228_熊本市駅伝/結果.md"
+      ],
+      "hint": "2025年度 大会「0228_熊本市駅伝」。日付キー MMDD=0228。ファイル: 結果.md。 内容: 手元計測 / 男子　3km×5区間 / 山本　9:48 / 松野　10:07 / 田中　11:19 / 松本　11:20 / 田上　11:09 / 女子　2km×5区間 / 女子は4人でOP参加、実際の距離は1.84kmくらい / 村上　6"
+    },
+    {
+      "id": "meet:2025年度:0315_金栗駅伝",
+      "type": "Entity",
+      "label": "0315_金栗駅伝",
+      "topics": [
+        "calendar",
+        "ekiden"
+      ],
+      "refs": [
+        "input/idaten-corpus/drive-text/大会/2025年度/0315_金栗駅伝",
+        "input/idaten-corpus/drive-text/大会/2025年度/0315_金栗駅伝/記録.md"
+      ],
+      "hint": "2025年度 大会「0315_金栗駅伝」。日付キー MMDD=0315。ファイル: 記録.md。 内容: 20分前招集 / 10時スタート / 岱明中A 総合1位 51:03 / 1区2.7km 山本哲瑠 9:18 通過1位、区間1位 / 2区2.4km 田上颯人 8:35 通過1位、区間2位 / 3区2.0km 村上咲稀 7:21 通過1位、"
+    },
+    {
+      "id": "meet:2025年度:0419_第４４回熊本市陸上競技選手権",
+      "type": "Entity",
+      "label": "0419_第４４回熊本市陸上競技選手権",
+      "topics": [
+        "calendar",
+        "ekiden"
+      ],
+      "refs": [
+        "input/idaten-corpus/drive-text/大会/2025年度/0419_第４４回熊本市陸上競技選手権",
+        "input/idaten-corpus/drive-text/大会/2025年度/0419_第４４回熊本市陸上競技選手権/女子中学1500m結果.mht.md",
+        "input/idaten-corpus/drive-text/大会/2025年度/0419_第４４回熊本市陸上競技選手権/男子中学1500m結果.mht.md",
+        "input/idaten-corpus/drive-text/大会/2025年度/0419_第４４回熊本市陸上競技選手権/要項.pdf.md"
+      ],
+      "hint": "2025年度 大会「0419_第４４回熊本市陸上競技選手権」。日付キー MMDD=0419。ファイル: 女子中学1500m結果.mht.md, 男子中学1500m結果.mht.md, 要項.pdf.md。 内容: 女子中学 １５００ｍ ﾀｲﾑﾚｰｽ総合結果.mht / - **id**: `1LXazqRV54XFAkCJtLd_TkVE09eVb0DRL` / - **mimeType**: `multipart/related` / - **fi"
+    },
+    {
+      "id": "meet:2025年度:0607-0608_熊本県中学生陸上競技選手権",
+      "type": "Entity",
+      "label": "0607-0608_熊本県中学生陸上競技選手権",
+      "topics": [
+        "calendar",
+        "ekiden"
+      ],
+      "refs": [
+        "input/idaten-corpus/drive-text/大会/2025年度/0607-0608_熊本県中学生陸上競技選手権",
+        "input/idaten-corpus/drive-text/大会/2025年度/0607-0608_熊本県中学生陸上競技選手権/いだてん岱明出場予定.pdf.md",
+        "input/idaten-corpus/drive-text/大会/2025年度/0607-0608_熊本県中学生陸上競技選手権/スタートリスト.pdf.md",
+        "input/idaten-corpus/drive-text/大会/2025年度/0607-0608_熊本県中学生陸上競技選手権/タイムテーブル.pdf.md",
+        "input/idaten-corpus/drive-text/大会/2025年度/0607-0608_熊本県中学生陸上競技選手権/実施要項.pdf.md",
+        "input/idaten-corpus/drive-text/大会/2025年度/0607-0608_熊本県中学生陸上競技選手権/岱明中参加計画.pdf.md",
+        "input/idaten-corpus/drive-text/大会/2025年度/0607-0608_熊本県中学生陸上競技選手権/撮影に関する注意事項.pdf.md",
+        "input/idaten-corpus/drive-text/大会/2025年度/0607-0608_熊本県中学生陸上競技選手権/申し合わせ事項.pdf.md",
+        "input/idaten-corpus/drive-text/大会/2025年度/0607-0608_熊本県中学生陸上競技選手権/競技注意事項.pdf.md",
+        "input/idaten-corpus/drive-text/大会/2025年度/0607-0608_熊本県中学生陸上競技選手権/練習会場図.pdf.md",
+        "input/idaten-corpus/drive-text/大会/2025年度/0607-0608_熊本県中学生陸上競技選手権/衣服運搬について.pdf.md"
+      ],
+      "hint": "2025年度 大会「0607-0608_熊本県中学生陸上競技選手権」。日付キー MMDD=0607。ファイル: いだてん岱明出場予定.pdf.md, スタートリスト.pdf.md, タイムテーブル.pdf.md, 実施要項.pdf.md, 岱明中参加計画.pdf.md, 撮影に関する注意事項.pdf.md, 申し合わせ事項.pdf.md, 競技注意事項.pdf.md。 内容: いだてん岱明出場予定.pdf / - **id**: `13SW2mg8VIqNtC9TYKJxjD2NXag0nO0G-` / - **mimeType**: `application/pdf` / - **fileSize**: 346"
+    },
+    {
+      "id": "meet:2025年度:0614_荒尾選手権（中止）",
+      "type": "Entity",
+      "label": "0614_荒尾選手権（中止）",
+      "topics": [
+        "calendar",
+        "ekiden"
+      ],
+      "refs": [
+        "input/idaten-corpus/drive-text/大会/2025年度/0614_荒尾選手権（中止）",
+        "input/idaten-corpus/drive-text/大会/2025年度/0614_荒尾選手権（中止）/大会プログラム.pdf.md",
+        "input/idaten-corpus/drive-text/大会/2025年度/0614_荒尾選手権（中止）/岱明中参加計画.pdf.md",
+        "input/idaten-corpus/drive-text/大会/2025年度/0614_荒尾選手権（中止）/開催要項.pdf.md"
+      ],
+      "hint": "2025年度 大会「0614_荒尾選手権（中止）」。日付キー MMDD=0614。ファイル: 大会プログラム.pdf.md, 岱明中参加計画.pdf.md, 開催要項.pdf.md。 内容: 開催要項.pdf / - **id**: `1AVzqzWhgWu2TF6PuYusH49gi2bUFXZNv` / - **mimeType**: `application/pdf` / - **fileSize**: 298931 / - **viewUrl**: https"
+    },
+    {
+      "id": "meet:2025年度:0628-0629_全日本中学校通信陸上競技大会熊本県大会",
+      "type": "Entity",
+      "label": "0628-0629_全日本中学校通信陸上競技大会熊本県大会",
+      "topics": [
+        "calendar",
+        "ekiden"
+      ],
+      "refs": [
+        "input/idaten-corpus/drive-text/大会/2025年度/0628-0629_全日本中学校通信陸上競技大会熊本県大会",
+        "input/idaten-corpus/drive-text/大会/2025年度/0628-0629_全日本中学校通信陸上競技大会熊本県大会/いだてん岱明出場予定.md",
+        "input/idaten-corpus/drive-text/大会/2025年度/0628-0629_全日本中学校通信陸上競技大会熊本県大会/いだてん岱明結果.md",
+        "input/idaten-corpus/drive-text/大会/2025年度/0628-0629_全日本中学校通信陸上競技大会熊本県大会/スタートリスト.pdf.md",
+        "input/idaten-corpus/drive-text/大会/2025年度/0628-0629_全日本中学校通信陸上競技大会熊本県大会/タイムテーブル.md",
+        "input/idaten-corpus/drive-text/大会/2025年度/0628-0629_全日本中学校通信陸上競技大会熊本県大会/リレー・オーダー用紙.pdf.md",
+        "input/idaten-corpus/drive-text/大会/2025年度/0628-0629_全日本中学校通信陸上競技大会熊本県大会/大会要項.pdf.md",
+        "input/idaten-corpus/drive-text/大会/2025年度/0628-0629_全日本中学校通信陸上競技大会熊本県大会/撮影に関する注意事項.pdf.md",
+        "input/idaten-corpus/drive-text/大会/2025年度/0628-0629_全日本中学校通信陸上競技大会熊本県大会/申し合わせ事項.pdf.md",
+        "input/idaten-corpus/drive-text/大会/2025年度/0628-0629_全日本中学校通信陸上競技大会熊本県大会/競技注意事項.pdf.md",
+        "input/idaten-corpus/drive-text/大会/2025年度/0628-0629_全日本中学校通信陸上競技大会熊本県大会/練習会場図.pdf.md"
+      ],
+      "hint": "2025年度 大会「0628-0629_全日本中学校通信陸上競技大会熊本県大会」。日付キー MMDD=0628。ファイル: いだてん岱明出場予定.md, いだてん岱明結果.md, スタートリスト.pdf.md, タイムテーブル.md, リレー・オーダー用紙.pdf.md, 大会要項.pdf.md, 撮影に関する注意事項.pdf.md, 申し合わせ事項.pdf.md。 内容: 6/28 / 男子共通3000m / 2組目9:15〜 / 31レーン　倉田裕斗 / 32レーン　案浦竜士 / 女子共通1500m / 2組目9:30〜 / 6レーン　高田麻由 / 男子1年1500m / 1組目14:50〜 / 13レーン"
+    },
+    {
+      "id": "meet:2025年度:0719-0720_熊本県中学校総合体育大会陸上競技大会",
+      "type": "Entity",
+      "label": "0719-0720_熊本県中学校総合体育大会陸上競技大会",
+      "topics": [
+        "calendar",
+        "ekiden"
+      ],
+      "refs": [
+        "input/idaten-corpus/drive-text/大会/2025年度/0719-0720_熊本県中学校総合体育大会陸上競技大会",
+        "input/idaten-corpus/drive-text/大会/2025年度/0719-0720_熊本県中学校総合体育大会陸上競技大会/いだてん岱明出場.md",
+        "input/idaten-corpus/drive-text/大会/2025年度/0719-0720_熊本県中学校総合体育大会陸上競技大会/ゴール後の導線について.pdf.md",
+        "input/idaten-corpus/drive-text/大会/2025年度/0719-0720_熊本県中学校総合体育大会陸上競技大会/スタートリスト.pdf.md",
+        "input/idaten-corpus/drive-text/大会/2025年度/0719-0720_熊本県中学校総合体育大会陸上競技大会/タイムテーブル.pdf.md",
+        "input/idaten-corpus/drive-text/大会/2025年度/0719-0720_熊本県中学校総合体育大会陸上競技大会/審判編成.pdf.md",
+        "input/idaten-corpus/drive-text/大会/2025年度/0719-0720_熊本県中学校総合体育大会陸上競技大会/撮影に関する注意事項.pdf.md",
+        "input/idaten-corpus/drive-text/大会/2025年度/0719-0720_熊本県中学校総合体育大会陸上競技大会/申し合わせ・掃除分担.pdf.md",
+        "input/idaten-corpus/drive-text/大会/2025年度/0719-0720_熊本県中学校総合体育大会陸上競技大会/競技注意事項.pdf.md",
+        "input/idaten-corpus/drive-text/大会/2025年度/0719-0720_熊本県中学校総合体育大会陸上競技大会/練習会場図.pdf.md"
+      ],
+      "hint": "2025年度 大会「0719-0720_熊本県中学校総合体育大会陸上競技大会」。日付キー MMDD=0719。ファイル: いだてん岱明出場.md, ゴール後の導線について.pdf.md, スタートリスト.pdf.md, タイムテーブル.pdf.md, 審判編成.pdf.md, 撮影に関する注意事項.pdf.md, 申し合わせ・掃除分担.pdf.md, 競技注意事項.pdf.md。 内容: 19日 / 男子共通3000m　9:15〜 / 2組　15レーン　倉田裕斗 / 10:30.33　組18着 / 女子共通1500m　9:30〜 / 2組　9レーン　高田麻由 / 5:16.84　組13着 / 男子共通800m　10:35〜 "
+    },
+    {
+      "id": "meet:2025年度:0802_玉名選手権",
+      "type": "Entity",
+      "label": "0802_玉名選手権",
+      "topics": [
+        "calendar",
+        "ekiden"
+      ],
+      "refs": [
+        "input/idaten-corpus/drive-text/大会/2025年度/0802_玉名選手権",
+        "input/idaten-corpus/drive-text/大会/2025年度/0802_玉名選手権/いだてん岱明結果.md",
+        "input/idaten-corpus/drive-text/大会/2025年度/0802_玉名選手権/タイムテーブル.pdf.md",
+        "input/idaten-corpus/drive-text/大会/2025年度/0802_玉名選手権/トラック.pdf.md",
+        "input/idaten-corpus/drive-text/大会/2025年度/0802_玉名選手権/歴代記録.pdf.md",
+        "input/idaten-corpus/drive-text/大会/2025年度/0802_玉名選手権/要項.pdf.md",
+        "input/idaten-corpus/drive-text/大会/2025年度/0802_玉名選手権/跳躍.pdf.md"
+      ],
+      "hint": "2025年度 大会「0802_玉名選手権」。日付キー MMDD=0802。ファイル: いだてん岱明結果.md, タイムテーブル.pdf.md, トラック.pdf.md, 歴代記録.pdf.md, 要項.pdf.md, 跳躍.pdf.md。 内容: 100m / 小学男子 / 中尾快斗　14.54　PB相当 / 800m / 小学男子 / 中尾快斗　2:40.0　PB相当 / 中1女子 / 角田亜美　2:48.2 / 塚原優衣　2:49.1 / 中学代表女子 / 角田里奈　2:48.7"
+    },
+    {
+      "id": "meet:2025年度:0830_玉名郡ナイター",
+      "type": "Entity",
+      "label": "0830_玉名郡ナイター",
+      "topics": [
+        "calendar",
+        "ekiden"
+      ],
+      "refs": [
+        "input/idaten-corpus/drive-text/大会/2025年度/0830_玉名郡ナイター",
+        "input/idaten-corpus/drive-text/大会/2025年度/0830_玉名郡ナイター/R7タイムテーブル.pdf.md",
+        "input/idaten-corpus/drive-text/大会/2025年度/0830_玉名郡ナイター/R7選手リスト.pdf.md",
+        "input/idaten-corpus/drive-text/大会/2025年度/0830_玉名郡ナイター/結果.md"
+      ],
+      "hint": "2025年度 大会「0830_玉名郡ナイター」。日付キー MMDD=0830。ファイル: R7タイムテーブル.pdf.md, R7選手リスト.pdf.md, 結果.md。 内容: ★③R7タイムテーブル.pdf / - **id**: `1PACfxpcUIZWp2xqICu-oTAhvbhKibErX` / - **mimeType**: `application/pdf` / - **fileSize**: 67"
+    },
+    {
+      "id": "meet:2025年度:0921_中学駅伝金栗四三生誕の地なごみ大会",
+      "type": "Entity",
+      "label": "0921_中学駅伝金栗四三生誕の地なごみ大会",
+      "topics": [
+        "calendar",
+        "ekiden"
+      ],
+      "refs": [
+        "input/idaten-corpus/drive-text/大会/2025年度/0921_中学駅伝金栗四三生誕の地なごみ大会",
+        "input/idaten-corpus/drive-text/大会/2025年度/0921_中学駅伝金栗四三生誕の地なごみ大会/女子の結果.heic.md",
+        "input/idaten-corpus/drive-text/大会/2025年度/0921_中学駅伝金栗四三生誕の地なごみ大会/岱明の結果.md",
+        "input/idaten-corpus/drive-text/大会/2025年度/0921_中学駅伝金栗四三生誕の地なごみ大会/男子の結果1.pdf.md",
+        "input/idaten-corpus/drive-text/大会/2025年度/0921_中学駅伝金栗四三生誕の地なごみ大会/男子の結果2.pdf.md",
+        "input/idaten-corpus/drive-text/大会/2025年度/0921_中学駅伝金栗四三生誕の地なごみ大会/開催要項.pdf.md"
+      ],
+      "hint": "2025年度 大会「0921_中学駅伝金栗四三生誕の地なごみ大会」。日付キー MMDD=0921。ファイル: 女子の結果.heic.md, 岱明の結果.md, 男子の結果1.pdf.md, 男子の結果2.pdf.md, 開催要項.pdf.md。 内容: 開催要項.pdf / - **id**: `1OmlzLChKKck3d2IYPXF5rsWMS4T0XXFJ` / - **mimeType**: `application/pdf` / - **fileSize**: 1455659 / - **viewUrl**: http"
+    },
+    {
+      "id": "meet:2025年度:0927_第２回熊本県ジュニア駅伝競走大会",
+      "type": "Entity",
+      "label": "0927_第２回熊本県ジュニア駅伝競走大会",
+      "topics": [
+        "calendar",
+        "ekiden"
+      ],
+      "refs": [
+        "input/idaten-corpus/drive-text/大会/2025年度/0927_第２回熊本県ジュニア駅伝競走大会",
+        "input/idaten-corpus/drive-text/大会/2025年度/0927_第２回熊本県ジュニア駅伝競走大会/会場図及び注意事項等.pdf.md",
+        "input/idaten-corpus/drive-text/大会/2025年度/0927_第２回熊本県ジュニア駅伝競走大会/女子チャレンジ_スタートリスト.pdf.md",
+        "input/idaten-corpus/drive-text/大会/2025年度/0927_第２回熊本県ジュニア駅伝競走大会/女子チャンピオンシップ_スタートリスト.pdf.md",
+        "input/idaten-corpus/drive-text/大会/2025年度/0927_第２回熊本県ジュニア駅伝競走大会/岱明の結果.md",
+        "input/idaten-corpus/drive-text/大会/2025年度/0927_第２回熊本県ジュニア駅伝競走大会/男子チャレンジ_スタートリスト.pdf.md",
+        "input/idaten-corpus/drive-text/大会/2025年度/0927_第２回熊本県ジュニア駅伝競走大会/男子チャンピオンシップ_スタートリスト.pdf.md",
+        "input/idaten-corpus/drive-text/大会/2025年度/0927_第２回熊本県ジュニア駅伝競走大会/結果_女子オープン.pdf.md",
+        "input/idaten-corpus/drive-text/大会/2025年度/0927_第２回熊本県ジュニア駅伝競走大会/結果_女子チャレンジ.pdf.md",
+        "input/idaten-corpus/drive-text/大会/2025年度/0927_第２回熊本県ジュニア駅伝競走大会/結果_女子チャンピオンシップ.pdf.md",
+        "input/idaten-corpus/drive-text/大会/2025年度/0927_第２回熊本県ジュニア駅伝競走大会/結果_男子オープン.pdf.md"
+      ],
+      "hint": "2025年度 大会「0927_第２回熊本県ジュニア駅伝競走大会」。日付キー MMDD=0927。ファイル: 会場図及び注意事項等.pdf.md, 女子チャレンジ_スタートリスト.pdf.md, 女子チャンピオンシップ_スタートリスト.pdf.md, 岱明の結果.md, 男子チャレンジ_スタートリスト.pdf.md, 男子チャンピオンシップ_スタートリスト.pdf.md, 結果_女子オープン.pdf.md, 結果_女子チャレンジ.pdf.md。 内容: 女子 / チャレンジの部　優勝　36分47秒 / 1区　2.7km 村上咲稀　9分37秒　区間3位 / 2区　2.3km 高田麻由　8分38秒　区間2位 / 3区　2.3km 角田里奈　9分39秒　区間12位 / 4区　2.3km 増岡里俐　8分53秒　区間3位 / オープン　2"
+    },
+    {
+      "id": "meet:2025年度:1015_玉名荒尾中体連駅伝",
+      "type": "Entity",
+      "label": "1015_玉名荒尾中体連駅伝",
+      "topics": [
+        "calendar",
+        "ekiden"
+      ],
+      "refs": [
+        "input/idaten-corpus/drive-text/大会/2025年度/1015_玉名荒尾中体連駅伝",
+        "input/idaten-corpus/drive-text/大会/2025年度/1015_玉名荒尾中体連駅伝/参加計画1.pdf.md",
+        "input/idaten-corpus/drive-text/大会/2025年度/1015_玉名荒尾中体連駅伝/参加計画2.pdf.md",
+        "input/idaten-corpus/drive-text/大会/2025年度/1015_玉名荒尾中体連駅伝/女子の結果.JPG.md",
+        "input/idaten-corpus/drive-text/大会/2025年度/1015_玉名荒尾中体連駅伝/女子オーダー.md",
+        "input/idaten-corpus/drive-text/大会/2025年度/1015_玉名荒尾中体連駅伝/岱明の結果.md",
+        "input/idaten-corpus/drive-text/大会/2025年度/1015_玉名荒尾中体連駅伝/男子の結果.JPG.md",
+        "input/idaten-corpus/drive-text/大会/2025年度/1015_玉名荒尾中体連駅伝/男子オーダー.md"
+      ],
+      "hint": "2025年度 大会「1015_玉名荒尾中体連駅伝」。日付キー MMDD=1015。ファイル: 参加計画1.pdf.md, 参加計画2.pdf.md, 女子の結果.JPG.md, 女子オーダー.md, 岱明の結果.md, 男子の結果.JPG.md, 男子オーダー.md。 内容: 女子 / 45:22 総合7位（昨年は45:06の6位、昨年の6位相等、2位とは1分37秒、3位とは58秒差） / 1区　村上咲稀2　7位通過　11:02  区間7位 / 2区　増岡里俐1　4位通過　7:01   区間3位 / 3区　角田亜美1　8位通過　7:44   区間8位 "
+    },
+    {
+      "id": "meet:2025年度:1118_熊本市中長距離選手権",
+      "type": "Entity",
+      "label": "1118_熊本市中長距離選手権",
+      "topics": [
+        "calendar",
+        "ekiden"
+      ],
+      "refs": [
+        "input/idaten-corpus/drive-text/大会/2025年度/1118_熊本市中長距離選手権",
+        "input/idaten-corpus/drive-text/大会/2025年度/1118_熊本市中長距離選手権/スタートリスト.pdf.md",
+        "input/idaten-corpus/drive-text/大会/2025年度/1118_熊本市中長距離選手権/岱明の結果.md",
+        "input/idaten-corpus/drive-text/大会/2025年度/1118_熊本市中長距離選手権/岱明の計画.JPG.md",
+        "input/idaten-corpus/drive-text/大会/2025年度/1118_熊本市中長距離選手権/競技日程・注意事項・審判他.pdf.md",
+        "input/idaten-corpus/drive-text/大会/2025年度/1118_熊本市中長距離選手権/要項.pdf.md"
+      ],
+      "hint": "2025年度 大会「1118_熊本市中長距離選手権」。日付キー MMDD=1118。ファイル: スタートリスト.pdf.md, 岱明の結果.md, 岱明の計画.JPG.md, 競技日程・注意事項・審判他.pdf.md, 要項.pdf.md。 内容: 全員1500m / 男子 / 1組目 / ラップ（岱明の先頭）　1:25-1:33-0:48-1:50 / 田中智稀1　5:37.12 / 松本空羽1　5:36.54   PB / 松岡崇二朗1   5:54.97 / 3組目 / ラップ　1:15-1:23-1:22-57 / "
+    },
+    {
+      "id": "meet:2025年度:1130_玉名市民マラソン",
+      "type": "Entity",
+      "label": "1130_玉名市民マラソン",
+      "topics": [
+        "calendar",
+        "ekiden"
+      ],
+      "refs": [
+        "input/idaten-corpus/drive-text/大会/2025年度/1130_玉名市民マラソン",
+        "input/idaten-corpus/drive-text/大会/2025年度/1130_玉名市民マラソン/IMG_0247.JPG.md",
+        "input/idaten-corpus/drive-text/大会/2025年度/1130_玉名市民マラソン/コース.pdf.md",
+        "input/idaten-corpus/drive-text/大会/2025年度/1130_玉名市民マラソン/玉名市民マラソン_岱明の結果.md",
+        "input/idaten-corpus/drive-text/大会/2025年度/1130_玉名市民マラソン/要項.pdf.md",
+        "input/idaten-corpus/drive-text/大会/2025年度/1130_玉名市民マラソン/駐車券.pdf.md"
+      ],
+      "hint": "2025年度 大会「1130_玉名市民マラソン」。日付キー MMDD=1130。ファイル: IMG_0247.JPG.md, コース.pdf.md, 玉名市民マラソン_岱明の結果.md, 要項.pdf.md, 駐車券.pdf.md。 内容: IMG_0247.JPG / - **id**: `1aXsWXo1zVnUE8evOCTtsgguAi2cTqIih` / - **mimeType**: `image/jpeg` / - **fileSize**: 117754 / -"
+    },
+    {
+      "id": "meet:2026年度:0125_玉名駅伝",
+      "type": "Entity",
+      "label": "0125_玉名駅伝",
+      "topics": [
+        "calendar",
+        "ekiden"
+      ],
+      "refs": [
+        "input/idaten-corpus/drive-text/大会/2026年度/0125_玉名駅伝",
+        "input/idaten-corpus/drive-text/大会/2026年度/0125_玉名駅伝/概要.md"
+      ],
+      "hint": "2026年度 大会「0125_玉名駅伝」。日付キー MMDD=0125。ファイル: 概要.md。 内容: 大会名: 玉名駅伝 / 日付: 2026-01-25 / ステータス: scheduled / （カレンダーより作成。詳細・結果は追記予定）"
+    },
+    {
+      "id": "meet:2026年度:0208_熊日駅伝",
+      "type": "Entity",
+      "label": "0208_熊日駅伝",
+      "topics": [
+        "calendar",
+        "ekiden"
+      ],
+      "refs": [
+        "input/idaten-corpus/drive-text/大会/2026年度/0208_熊日駅伝",
+        "input/idaten-corpus/drive-text/大会/2026年度/0208_熊日駅伝/概要.md"
+      ],
+      "hint": "2026年度 大会「0208_熊日駅伝」。日付キー MMDD=0208。ファイル: 概要.md。 内容: 大会名: 熊日駅伝 / 日付: 2026-02-08 / ステータス: scheduled / （カレンダーより作成。詳細・結果は追記予定）"
+    },
+    {
+      "id": "meet:2026年度:0315_金栗駅伝",
+      "type": "Entity",
+      "label": "0315_金栗駅伝",
+      "topics": [
+        "calendar",
+        "ekiden"
+      ],
+      "refs": [
+        "input/idaten-corpus/drive-text/大会/2026年度/0315_金栗駅伝",
+        "input/idaten-corpus/drive-text/大会/2026年度/0315_金栗駅伝/概要.md"
+      ],
+      "hint": "2026年度 大会「0315_金栗駅伝」。日付キー MMDD=0315。ファイル: 概要.md。 内容: 大会名: 金栗駅伝 / 日付: 2026-03-15 / ステータス: scheduled / （カレンダーより作成。詳細・結果は追記予定）"
+    },
+    {
+      "id": "meet:2026年度:0411_第３４回金栗記念選抜陸上中長距離熊本大会",
+      "type": "Entity",
+      "label": "0411_第３４回金栗記念選抜陸上中長距離熊本大会",
+      "topics": [
+        "calendar",
+        "ekiden"
+      ],
+      "refs": [
+        "input/idaten-corpus/drive-text/大会/2026年度/0411_第３４回金栗記念選抜陸上中長距離熊本大会",
+        "input/idaten-corpus/drive-text/大会/2026年度/0411_第３４回金栗記念選抜陸上中長距離熊本大会/概要.md",
+        "input/idaten-corpus/drive-text/大会/2026年度/0411_第３４回金栗記念選抜陸上中長距離熊本大会/結果.md"
+      ],
+      "hint": "2026年度 大会「0411_第３４回金栗記念選抜陸上中長距離熊本大会」。日付キー MMDD=0411。ファイル: 概要.md, 結果.md。 内容: 大会名: 第３４回 金栗記念選抜陸上中長距離熊本大会 / 日付: 2026-04-11 / ステータス: done / タグ: ランニング / 日本グランプリシリーズ第１戦（中長距離）。金栗駅伝（3/15）とは別大会。"
+    },
+    {
+      "id": "meet:2026年度:0418_第４５回熊本市陸上競技選手権大会",
+      "type": "Entity",
+      "label": "0418_第４５回熊本市陸上競技選手権大会",
+      "topics": [
+        "calendar",
+        "ekiden"
+      ],
+      "refs": [
+        "input/idaten-corpus/drive-text/大会/2026年度/0418_第４５回熊本市陸上競技選手権大会",
+        "input/idaten-corpus/drive-text/大会/2026年度/0418_第４５回熊本市陸上競技選手権大会/結果.md"
+      ],
+      "hint": "2026年度 大会「0418_第４５回熊本市陸上競技選手権大会」。日付キー MMDD=0418。ファイル: 結果.md。 内容: 大会名: ２０２６年度 第４５回熊本市陸上競技選手権大会 / 日付: 2026-04-18 / ステータス: done / タグ: ランニング / 800m 女子 / 塚原優衣 2年 2:47.47 2組9位 / 角田亜美 2年 2:46."
+    },
+    {
+      "id": "meet:2026年度:0509_第１回熊本県長距離記録会",
+      "type": "Entity",
+      "label": "0509_第１回熊本県長距離記録会",
+      "topics": [
+        "calendar",
+        "ekiden"
+      ],
+      "refs": [
+        "input/idaten-corpus/drive-text/大会/2026年度/0509_第１回熊本県長距離記録会",
+        "input/idaten-corpus/drive-text/大会/2026年度/0509_第１回熊本県長距離記録会/結果.md"
+      ],
+      "hint": "2026年度 大会「0509_第１回熊本県長距離記録会」。日付キー MMDD=0509。ファイル: 結果.md。 内容: 大会名: 第１回熊本県長距離記録会 / 日付: 2026-05-09 / ステータス: done / タグ: ランニング / 1500m 男子 / 松野凛空 3年 4:25.40 9組1位 PB / 田上颯人 2年 4:52.76 4組1位"
+    },
+    {
+      "id": "meet:2026年度:0523-0524_熊本県中学校陸上選手権・混成",
+      "type": "Entity",
+      "label": "0523-0524_熊本県中学校陸上選手権・混成",
+      "topics": [
+        "calendar",
+        "ekiden"
+      ],
+      "refs": [
+        "input/idaten-corpus/drive-text/大会/2026年度/0523-0524_熊本県中学校陸上選手権・混成",
+        "input/idaten-corpus/drive-text/大会/2026年度/0523-0524_熊本県中学校陸上選手権・混成/結果.md"
+      ],
+      "hint": "2026年度 大会「0523-0524_熊本県中学校陸上選手権・混成」。日付キー MMDD=0523。ファイル: 結果.md。 内容: 大会名: 令和8年度 第40回熊本県中学校陸上競技選手権大会 兼 第24回混成競技大会 / 日付: 2026-05-23〜2026-05-24 / ステータス: done / 場所: えがお健康スタジアム(熊本県民総合運動公園陸上競技場) "
+    },
+    {
+      "id": "meet:2026年度:0613_全日本中学校通信陸上競技大会熊本県大会",
+      "type": "Entity",
+      "label": "0613_全日本中学校通信陸上競技大会熊本県大会",
+      "topics": [
+        "calendar",
+        "ekiden"
+      ],
+      "refs": [
+        "input/idaten-corpus/drive-text/大会/2026年度/0613_全日本中学校通信陸上競技大会熊本県大会",
+        "input/idaten-corpus/drive-text/大会/2026年度/0613_全日本中学校通信陸上競技大会熊本県大会/結果.md"
+      ],
+      "hint": "2026年度 大会「0613_全日本中学校通信陸上競技大会熊本県大会」。日付キー MMDD=0613。ファイル: 結果.md。 内容: 大会名: 第72回全日本中学校通信陸上競技大会熊本県大会 / 日付: 2026-06-13〜2026-06-14 / ステータス: done / タグ: ランニング / 800m 女子（6/14） / 村上咲稀 3年 2:20.45 1組3"
+    },
+    {
+      "id": "meet:2026年度:0628_荒尾選手権",
+      "type": "Entity",
+      "label": "0628_荒尾選手権",
+      "topics": [
+        "calendar",
+        "ekiden"
+      ],
+      "refs": [
+        "input/idaten-corpus/drive-text/大会/2026年度/0628_荒尾選手権",
+        "input/idaten-corpus/drive-text/大会/2026年度/0628_荒尾選手権/結果.md"
+      ],
+      "hint": "2026年度 大会「0628_荒尾選手権」。日付キー MMDD=0628。ファイル: 結果.md。 内容: 大会名: 荒尾選手権 / 日付: 2026-06-28 / ステータス: done / タグ: ランニング / 中学男子1500m【決勝】 / 1位 田上颯人 2年 4'48\"08 / 2位 松本空羽 2年 5'37\"26 / 3位 南本幸"
+    },
+    {
+      "id": "meet:2026年度:0704_第２回熊本県長距離記録会",
+      "type": "Entity",
+      "label": "0704_第２回熊本県長距離記録会",
+      "topics": [
+        "calendar",
+        "ekiden"
+      ],
+      "refs": [
+        "input/idaten-corpus/drive-text/大会/2026年度/0704_第２回熊本県長距離記録会",
+        "input/idaten-corpus/drive-text/大会/2026年度/0704_第２回熊本県長距離記録会/結果.md"
+      ],
+      "hint": "2026年度 大会「0704_第２回熊本県長距離記録会」。日付キー MMDD=0704。ファイル: 結果.md。 内容: 大会名: 2026.7.4 第２回熊本県長距離記録会 / 日付: 2026-07-04 / ステータス: done / URL: http://www.kumariku.org/26/26,7,4long/kyougi.html / タグ:"
+    },
+    {
+      "id": "meet:2026年度:0718-0720_熊本県中学校総合体育大会陸上競技大会",
+      "type": "Entity",
+      "label": "0718-0720_熊本県中学校総合体育大会陸上競技大会",
+      "topics": [
+        "calendar",
+        "ekiden"
+      ],
+      "refs": [
+        "input/idaten-corpus/drive-text/大会/2026年度/0718-0720_熊本県中学校総合体育大会陸上競技大会",
+        "input/idaten-corpus/drive-text/大会/2026年度/0718-0720_熊本県中学校総合体育大会陸上競技大会/結果.md"
+      ],
+      "hint": "2026年度 大会「0718-0720_熊本県中学校総合体育大会陸上競技大会」。日付キー MMDD=0718。ファイル: 結果.md。 内容: 大会名: 令和8年度 熊本県中学校総合体育大会 陸上競技大会 / 日付: 2026-07-18〜2026-07-20 / ステータス: done / タグ: ランニング / 800m 女子（7/19） / 山﨑莉奈 1年 2:32.23 2"
+    },
+    {
+      "id": "meet:2026年度:0801_玉名選手権（中止）",
+      "type": "Entity",
+      "label": "0801_玉名選手権（中止）",
+      "topics": [
+        "calendar",
+        "ekiden"
+      ],
+      "refs": [
+        "input/idaten-corpus/drive-text/大会/2026年度/0801_玉名選手権（中止）",
+        "input/idaten-corpus/drive-text/大会/2026年度/0801_玉名選手権（中止）/概要.md"
+      ],
+      "hint": "2026年度 大会「0801_玉名選手権（中止）」。日付キー MMDD=0801。ファイル: 概要.md。 内容: 大会名: 玉名選手権（7/28の地震により中止） / 日付: 2026-08-01 / ステータス: done / タグ: ランニング, 中止 / 2026-07-28 熊本県熊本地方を震源とする地震（M7.1・最大震度7）のため中止"
+    },
+    {
+      "id": "meet:2026年度:0829_ジュニアオリンピックU16熊本県予選会",
+      "type": "Entity",
+      "label": "0829_ジュニアオリンピックU16熊本県予選会",
+      "topics": [
+        "calendar",
+        "ekiden"
+      ],
+      "refs": [
+        "input/idaten-corpus/drive-text/大会/2026年度/0829_ジュニアオリンピックU16熊本県予選会",
+        "input/idaten-corpus/drive-text/大会/2026年度/0829_ジュニアオリンピックU16熊本県予選会/結果.md"
+      ],
+      "hint": "2026年度 大会「0829_ジュニアオリンピックU16熊本県予選会」。日付キー MMDD=0829。ファイル: 結果.md。 内容: 大会名: 第５７回 ジュニアオリンピックU１６陸上競技大会熊本県予選会 / 日付: 2026-08-29 / ステータス: done / タグ: ランニング / 1000m 女子 / 村上咲稀 3年 3:15.56"
+    },
+    {
+      "id": "meet:2026年度:0829_玉名郡ナイター中・長距離記録会",
+      "type": "Entity",
+      "label": "0829_玉名郡ナイター中・長距離記録会",
+      "topics": [
+        "calendar",
+        "ekiden"
+      ],
+      "refs": [
+        "input/idaten-corpus/drive-text/大会/2026年度/0829_玉名郡ナイター中・長距離記録会",
+        "input/idaten-corpus/drive-text/大会/2026年度/0829_玉名郡ナイター中・長距離記録会/参加者メモ.md",
+        "input/idaten-corpus/drive-text/大会/2026年度/0829_玉名郡ナイター中・長距離記録会/結果.md"
+      ],
+      "hint": "2026年度 大会「0829_玉名郡ナイター中・長距離記録会」。日付キー MMDD=0829。ファイル: 参加者メモ.md, 結果.md。 内容: 溝上恭佑　南関中1 ？ / 廣田翼　玉名附中1 ？ / 中岡良介　玉名附中1 ？ / 飯塚湧　玉名附中1　2:46.36 / 松永康惺　玉名附中1 5:12.22 / 北村春磨　ATRC1 4:39.06 / 宮崎晃仁　ATRC1 4:59"
+    },
+    {
+      "id": "meet:2026年度:0920_中学駅伝金栗四三生誕の地なごみ大会",
+      "type": "Entity",
+      "label": "0920_中学駅伝金栗四三生誕の地なごみ大会",
+      "topics": [
+        "calendar",
+        "ekiden"
+      ],
+      "refs": [
+        "input/idaten-corpus/drive-text/大会/2026年度/0920_中学駅伝金栗四三生誕の地なごみ大会",
+        "input/idaten-corpus/drive-text/大会/2026年度/0920_中学駅伝金栗四三生誕の地なごみ大会/開催要項.md"
+      ],
+      "hint": "2026年度 大会「0920_中学駅伝金栗四三生誕の地なごみ大会」。日付キー MMDD=0920。ファイル: 開催要項.md。 内容: 大会名: 第12回　中学駅伝金栗四三生誕の地なごみ大会 / 日付: 2026-09-20 / ステータス: scheduled / 第12回 中学駅伝金栗四三生誕の地なごみ大会 開催要項 / 1．主催 / 和水町陸上競技協会、一般社団法人K-PROJECT / 2．後援 / 和水"
+    },
+    {
+      "id": "meet:2026年度:0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）",
+      "type": "Entity",
+      "label": "0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）",
+      "topics": [
+        "calendar",
+        "ekiden"
+      ],
+      "refs": [
+        "input/idaten-corpus/drive-text/大会/2026年度/0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）",
+        "input/idaten-corpus/drive-text/大会/2026年度/0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）/概要.md"
+      ],
+      "hint": "2026年度 大会「0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）」。日付キー MMDD=0926。ファイル: 概要.md。 内容: 大会名: 第４回 熊本県中学生ジュニア陸上大会（第３回県ジュニア駅伝大会） / 日付: 2026-09-26 / ステータス: scheduled / （カレンダーより作成。詳細・結果は追記予定）"
+    },
+    {
+      "id": "meet:2026年度:1010_第４回熊本県長距離記録会",
+      "type": "Entity",
+      "label": "1010_第４回熊本県長距離記録会",
+      "topics": [
+        "calendar",
+        "ekiden"
+      ],
+      "refs": [
+        "input/idaten-corpus/drive-text/大会/2026年度/1010_第４回熊本県長距離記録会",
+        "input/idaten-corpus/drive-text/大会/2026年度/1010_第４回熊本県長距離記録会/概要.md"
+      ],
+      "hint": "2026年度 大会「1010_第４回熊本県長距離記録会」。日付キー MMDD=1010。ファイル: 概要.md。 内容: 大会名: 第 ４回 熊本県長距離記録会 / 日付: 2026-10-10 / ステータス: scheduled / （カレンダーより作成。詳細・結果は追記予定）"
+    },
+    {
+      "id": "meet:2026年度:1014-1015_荒玉中体連駅伝",
+      "type": "Entity",
+      "label": "1014-1015_荒玉中体連駅伝",
+      "topics": [
+        "calendar",
+        "ekiden"
+      ],
+      "refs": [
+        "input/idaten-corpus/drive-text/大会/2026年度/1014-1015_荒玉中体連駅伝",
+        "input/idaten-corpus/drive-text/大会/2026年度/1014-1015_荒玉中体連駅伝/概要.md"
+      ],
+      "hint": "2026年度 大会「1014-1015_荒玉中体連駅伝」。日付キー MMDD=1014。ファイル: 概要.md。 内容: 大会名: 荒玉中体連駅伝 / 日付: 2026-10-14 / ステータス: scheduled / （カレンダーより作成。詳細・結果は追記予定）"
+    },
+    {
+      "id": "meet:2026年度:1211_岱明中校内駅伝大会",
+      "type": "Entity",
+      "label": "1211_岱明中校内駅伝大会",
+      "topics": [
+        "calendar",
+        "ekiden"
+      ],
+      "refs": [
+        "input/idaten-corpus/drive-text/大会/2026年度/1211_岱明中校内駅伝大会",
+        "input/idaten-corpus/drive-text/大会/2026年度/1211_岱明中校内駅伝大会/概要.md"
+      ],
+      "hint": "2026年度 大会「1211_岱明中校内駅伝大会」。日付キー MMDD=1211。ファイル: 概要.md。 内容: 大会名: 岱明中校内駅伝大会 / 日付: 2026-12-11 / ステータス: scheduled / （カレンダーより作成。詳細・結果は追記予定）"
+    },
+    {
+      "id": "meet:2026年度:1212_第５回熊本県長距離記録会",
+      "type": "Entity",
+      "label": "1212_第５回熊本県長距離記録会",
+      "topics": [
+        "calendar",
+        "ekiden"
+      ],
+      "refs": [
+        "input/idaten-corpus/drive-text/大会/2026年度/1212_第５回熊本県長距離記録会",
+        "input/idaten-corpus/drive-text/大会/2026年度/1212_第５回熊本県長距離記録会/概要.md"
+      ],
+      "hint": "2026年度 大会「1212_第５回熊本県長距離記録会」。日付キー MMDD=1212。ファイル: 概要.md。 内容: 大会名: 第 ５回 熊本県長距離記録会 / 日付: 2026-12-12 / ステータス: scheduled / （カレンダーより作成。詳細・結果は追記予定）"
+    },
+    {
       "id": "query:0:練習メニューの中身は？",
       "type": "QueryHint",
       "label": "練習メニューの中身は？",
       "topics": [],
       "refs": [],
-      "hint": "practice 付きイベントと practice.json を見る"
+      "hint": "practice 付きイベントと practice.json / practice_templates / コーパス practice/ を見る"
+    },
+    {
+      "id": "query:10:部員名簿は？",
+      "type": "QueryHint",
+      "label": "部員名簿は？",
+      "topics": [],
+      "refs": [],
+      "hint": "Notion いだてん岱明生徒 DB と Drive 名簿 CSV（コーパス notion-db/いだてん岱明生徒）"
+    },
+    {
+      "id": "query:11:中学生SBは？",
+      "type": "QueryHint",
+      "label": "中学生SBは？",
+      "topics": [],
+      "refs": [],
+      "hint": "コーパス sb/ と input/external/sb/middle-school/ を見る"
+    },
+    {
+      "id": "query:12:開催要項は？",
+      "type": "QueryHint",
+      "label": "開催要項は？",
+      "topics": [],
+      "refs": [],
+      "hint": "drive-text/大会/ 各大会フォルダの開催要項.md を見る"
+    },
+    {
+      "id": "query:13:ケガ・障害は？",
+      "type": "QueryHint",
+      "label": "ケガ・障害は？",
+      "topics": [],
+      "refs": [],
+      "hint": "injury トピックと Notion 怪我について・RRI メモ"
+    },
+    {
+      "id": "query:14:オーダー・区間は？",
+      "type": "QueryHint",
+      "label": "オーダー・区間は？",
+      "topics": [],
+      "refs": [],
+      "hint": "荒玉戦略 Notion・分析 OCR・歴代 OCR を見る"
     },
     {
       "id": "query:1:欠席者は誰？",
@@ -2035,7 +2749,7 @@
       "label": "選手の記録は？",
       "topics": [],
       "refs": [],
-      "hint": "notion_records と荒尾玉名 PDF/設定"
+      "hint": "notion_records・荒尾玉名・sb/・analysis-ocr を見る"
     },
     {
       "id": "query:4:今日の予定は？",
@@ -2043,7 +2757,7 @@
       "label": "今日の予定は？",
       "topics": [],
       "refs": [],
-      "hint": "events YAML / events.json / calendar.md"
+      "hint": "events YAML / events.json / calendar.md / calendar/events.daiming.yaml"
     },
     {
       "id": "query:5:〇月〇日の予定は？",
@@ -2067,7 +2781,7 @@
       "label": "荒玉駅伝の歴代は？",
       "topics": [],
       "refs": [],
-      "hint": "駅伝歴代 rows + media-manifest + ocr/*.md（画像パスがあれば原画を読む）"
+      "hint": "駅伝歴代 rows + media-manifest + ekiden-ocr/*.md + aragyoku/"
     },
     {
       "id": "query:8:荒玉駅伝の区間距離は？",
@@ -2076,6 +2790,14 @@
       "topics": [],
       "refs": [],
       "hint": "docs/aragyoku-ekiden-distance-definitions.md の年度別・男女別区間距離定義を優先する"
+    },
+    {
+      "id": "query:9:なごみ駅伝は？",
+      "type": "QueryHint",
+      "label": "なごみ駅伝は？",
+      "topics": [],
+      "refs": [],
+      "hint": "drive-text/大会/*/0920_*なごみ* または 0921_*なごみ* の開催要項・結果を見る"
     },
     {
       "id": "source:README.md",
@@ -2313,6 +3035,20 @@
         "docs/adr/015-line-idaten-qa-backend.md"
       ],
       "hint": "ADR: 015-line-idaten-qa-backend"
+    },
+    {
+      "id": "source:docs/adr/016-kg-first-idaten-qa.md",
+      "type": "Source",
+      "label": "016-kg-first-idaten-qa.md",
+      "topics": [
+        "ai",
+        "meta",
+        "practice"
+      ],
+      "refs": [
+        "docs/adr/016-kg-first-idaten-qa.md"
+      ],
+      "hint": "ADR: 016-kg-first-idaten-qa"
     },
     {
       "id": "source:docs/ai-practice-generation.md",
@@ -2656,6 +3392,347 @@
         "input/external/sb/middle-school/wide/中学生SB.csv"
       ],
       "hint": "中学生ワイド SB（Drive SBデータベース）"
+    },
+    {
+      "id": "source:input/idaten-corpus/INDEX.md",
+      "type": "Source",
+      "label": "INDEX.md",
+      "topics": [
+        "athlete_records",
+        "calendar",
+        "ekiden",
+        "meta",
+        "practice"
+      ],
+      "refs": [
+        "input/idaten-corpus/INDEX.md"
+      ],
+      "hint": "いだてん岱明コーパス目録（LINE Q&A 参照範囲）: いだてん岱明コーパス（単一フォルダ） / LINE Q&A バックエンドが参照するテキスト専用コーパス。 / バイナリ（画像・PDF）は含めない。再生成: `python3 scripts/build_idaten_corpus.py` / ディレクトリ / - `ekiden-ocr/` — 荒玉駅伝歴代 OCR / - `analysis-ocr/` —"
+    },
+    {
+      "id": "source:input/idaten-corpus/analysis-ocr",
+      "type": "Source",
+      "label": "analysis-ocr",
+      "topics": [
+        "athlete_records",
+        "ekiden"
+      ],
+      "refs": [
+        "input/idaten-corpus/analysis-ocr"
+      ],
+      "hint": "分析 PDF の OCR（所属ランキング等）. 例: 2026年度荒玉男子.ocr.md, 2026年荒玉女子.ocr.md, 関係図_2026.ocr.md"
+    },
+    {
+      "id": "source:input/idaten-corpus/aragyoku",
+      "type": "Source",
+      "label": "aragyoku",
+      "topics": [
+        "athlete_records",
+        "ekiden"
+      ],
+      "refs": [
+        "input/idaten-corpus/aragyoku"
+      ],
+      "hint": "荒玉駅伝の構造化 JSON/MD・transcripts. 例: men_full_2012_2025.json, ocr_raw, quiz, taimei-records-2012-2025.md, transcripts, women_full_2012_2025.json, women_top4_2012_2025.json, women_top6_2012_2025.json"
+    },
+    {
+      "id": "source:input/idaten-corpus/calendar",
+      "type": "Source",
+      "label": "calendar",
+      "topics": [
+        "calendar",
+        "practice"
+      ],
+      "refs": [
+        "input/idaten-corpus/calendar"
+      ],
+      "hint": "岱明フィルタ済み events.daiming.yaml. 例: events.daiming.yaml"
+    },
+    {
+      "id": "source:input/idaten-corpus/docs",
+      "type": "Source",
+      "label": "docs",
+      "topics": [
+        "ekiden",
+        "meta",
+        "schema"
+      ],
+      "refs": [
+        "input/idaten-corpus/docs"
+      ],
+      "hint": "関連 ADR・区間距離定義のコピー. 例: 010-external-idaten-import.md, 011-idaten-media-ocr-kg.md, aragyoku-ekiden-distance-definitions.md"
+    },
+    {
+      "id": "source:input/idaten-corpus/drive-text",
+      "type": "Source",
+      "label": "drive-text",
+      "topics": [
+        "calendar",
+        "ekiden",
+        "practice"
+      ],
+      "refs": [
+        "input/idaten-corpus/drive-text"
+      ],
+      "hint": "Drive テキスト（大会開催要項・結果・個人メモ）. 例: personal, 名簿, 大会, 練習, 記録データベース"
+    },
+    {
+      "id": "source:input/idaten-corpus/drive-text/大会/INDEX.md",
+      "type": "Source",
+      "label": "INDEX.md",
+      "topics": [
+        "calendar",
+        "ekiden"
+      ],
+      "refs": [
+        "input/idaten-corpus/drive-text/大会/INDEX.md"
+      ],
+      "hint": "大会フォルダ目録（年度別・開催要項・結果の入口）: 大会フォルダ目録 / Parent: [大会](https://drive.google.com/drive/folders/1Lgxl2sRmqTohwA7HYy_dHk6tI_cHPpPx) (`1Lgxl2sRmqTohwA7HYy_dHk6tI_cHPpPx`) / Text Google Docs/Sheet"
+    },
+    {
+      "id": "source:input/idaten-corpus/ekiden-ocr",
+      "type": "Source",
+      "label": "ekiden-ocr",
+      "topics": [
+        "athlete_records",
+        "ekiden"
+      ],
+      "refs": [
+        "input/idaten-corpus/ekiden-ocr"
+      ],
+      "hint": "荒玉駅伝歴代の OCR 本文（年×男女）. 例: 2012-女子.md, 2012-男子.md, 2013-女子.md, 2013-男子.md, 2014-男子.md, 2015-女子.md, 2015-男子.md, 2016-女子.md, 2016-男子.md, 2017-女子.md, 2017-男子.md, 2018-女子.md"
+    },
+    {
+      "id": "source:input/idaten-corpus/notion-db",
+      "type": "Source",
+      "label": "notion-db",
+      "topics": [
+        "athlete_records",
+        "ekiden",
+        "injury",
+        "practice"
+      ],
+      "refs": [
+        "input/idaten-corpus/notion-db"
+      ],
+      "hint": "Notion DB スナップショット. 例: いだてん岱明の未来, いだてん岱明生徒, 動きづくり, 怪我について, 練習のバリエーション, 荒玉中体連駅伝戦略, 荒玉中体連駅伝歴代"
+    },
+    {
+      "id": "source:input/idaten-corpus/notion-db/いだてん岱明の未来",
+      "type": "Source",
+      "label": "いだてん岱明の未来",
+      "topics": [
+        "athlete_records",
+        "practice"
+      ],
+      "refs": [
+        "input/idaten-corpus/notion-db/いだてん岱明の未来"
+      ],
+      "hint": "Notion DB「いだてん岱明の未来」: [ / { / \"名前\": \"自分が見れる火木土曜ポイント、その他はジョグで他の人に見てもらうか各自ジョグ\", / \"url\": \"https://app.notion.com/3d3a38e830348059bc41fdfcc36b059e\" / } / ]"
+    },
+    {
+      "id": "source:input/idaten-corpus/notion-db/いだてん岱明の未来/rows.json",
+      "type": "Source",
+      "label": "rows.json",
+      "topics": [
+        "athlete_records",
+        "practice"
+      ],
+      "refs": [
+        "input/idaten-corpus/notion-db/いだてん岱明の未来/rows.json"
+      ],
+      "hint": "Notion DB「いだてん岱明の未来」: [ / { / \"名前\": \"自分が見れる火木土曜ポイント、その他はジョグで他の人に見てもらうか各自ジョグ\", / \"url\": \"https://app.notion.com/3d3a38e830348059bc41fdfcc36b059e\" / } / ]"
+    },
+    {
+      "id": "source:input/idaten-corpus/notion-db/いだてん岱明生徒",
+      "type": "Source",
+      "label": "いだてん岱明生徒",
+      "topics": [
+        "athlete_records",
+        "practice"
+      ],
+      "refs": [
+        "input/idaten-corpus/notion-db/いだてん岱明生徒"
+      ],
+      "hint": "Notion DB「いだてん岱明生徒」: [ / { / \"id\": \"3d3a38e8-3034-80ec-808f-c85991c1188a\", / \"url\": \"https://app.notion.com/3d3a38e8303480ec808fc85991c1188a\", / \"createdTime\": \"2026-09-06 07:30:36Z"
+    },
+    {
+      "id": "source:input/idaten-corpus/notion-db/いだてん岱明生徒/rows.json",
+      "type": "Source",
+      "label": "rows.json",
+      "topics": [
+        "athlete_records",
+        "practice"
+      ],
+      "refs": [
+        "input/idaten-corpus/notion-db/いだてん岱明生徒/rows.json"
+      ],
+      "hint": "Notion DB「いだてん岱明生徒」: [ / { / \"id\": \"3d3a38e8-3034-80ec-808f-c85991c1188a\", / \"url\": \"https://app.notion.com/3d3a38e8303480ec808fc85991c1188a\", / \"createdTime\": \"2026-09-06 07:30:36Z"
+    },
+    {
+      "id": "source:input/idaten-corpus/notion-db/動きづくり",
+      "type": "Source",
+      "label": "動きづくり",
+      "topics": [
+        "athlete_records",
+        "practice"
+      ],
+      "refs": [
+        "input/idaten-corpus/notion-db/動きづくり"
+      ],
+      "hint": "Notion DB「動きづくり」: [ / { / \"url\": \"https://app.notion.com/p/3d3a38e830348076a74bfaa3a8115903\", / \"名前\": \"洛南高校 動きづくり\", / \"URL\": \"https://youtu.be/EQXz7EwqOcI?si=V6sLSV2Gt-HVqUDo\" / "
+    },
+    {
+      "id": "source:input/idaten-corpus/notion-db/動きづくり/rows.json",
+      "type": "Source",
+      "label": "rows.json",
+      "topics": [
+        "athlete_records",
+        "practice"
+      ],
+      "refs": [
+        "input/idaten-corpus/notion-db/動きづくり/rows.json"
+      ],
+      "hint": "Notion DB「動きづくり」: [ / { / \"url\": \"https://app.notion.com/p/3d3a38e830348076a74bfaa3a8115903\", / \"名前\": \"洛南高校 動きづくり\", / \"URL\": \"https://youtu.be/EQXz7EwqOcI?si=V6sLSV2Gt-HVqUDo\" / "
+    },
+    {
+      "id": "source:input/idaten-corpus/notion-db/怪我について",
+      "type": "Source",
+      "label": "怪我について",
+      "topics": [
+        "injury"
+      ],
+      "refs": [
+        "input/idaten-corpus/notion-db/怪我について"
+      ],
+      "hint": "Notion DB「怪我について」: [ / { / \"url\": \"https://app.notion.com/p/3d3a38e83034809cac1fc096b974429b\", / \"名前\": \"怪我の因子ランキング\", / \"テキスト\": \"1. 過去の12ヶ月以内の怪我\\n2. 単一セッション走行距離スパイク（過去30日最長比>10%）\\n"
+    },
+    {
+      "id": "source:input/idaten-corpus/notion-db/怪我について/rows.json",
+      "type": "Source",
+      "label": "rows.json",
+      "topics": [
+        "injury"
+      ],
+      "refs": [
+        "input/idaten-corpus/notion-db/怪我について/rows.json"
+      ],
+      "hint": "Notion DB「怪我について」: [ / { / \"url\": \"https://app.notion.com/p/3d3a38e83034809cac1fc096b974429b\", / \"名前\": \"怪我の因子ランキング\", / \"テキスト\": \"1. 過去の12ヶ月以内の怪我\\n2. 単一セッション走行距離スパイク（過去30日最長比>10%）\\n"
+    },
+    {
+      "id": "source:input/idaten-corpus/notion-db/練習のバリエーション",
+      "type": "Source",
+      "label": "練習のバリエーション",
+      "topics": [
+        "athlete_records",
+        "practice"
+      ],
+      "refs": [
+        "input/idaten-corpus/notion-db/練習のバリエーション"
+      ],
+      "hint": "Notion DB「練習のバリエーション」: [ / { / \"url\": \"https://app.notion.com/p/3d3a38e8303480ae867fe35f1f01816c\", / \"名前\": \"600mRPのインターバル\", / \"設定\": \"3〜5本\" / }, / { / \"url\": \"https://app.notion.com/p/"
+    },
+    {
+      "id": "source:input/idaten-corpus/notion-db/練習のバリエーション/rows.json",
+      "type": "Source",
+      "label": "rows.json",
+      "topics": [
+        "athlete_records",
+        "practice"
+      ],
+      "refs": [
+        "input/idaten-corpus/notion-db/練習のバリエーション/rows.json"
+      ],
+      "hint": "Notion DB「練習のバリエーション」: [ / { / \"url\": \"https://app.notion.com/p/3d3a38e8303480ae867fe35f1f01816c\", / \"名前\": \"600mRPのインターバル\", / \"設定\": \"3〜5本\" / }, / { / \"url\": \"https://app.notion.com/p/"
+    },
+    {
+      "id": "source:input/idaten-corpus/notion-db/荒玉中体連駅伝戦略",
+      "type": "Source",
+      "label": "荒玉中体連駅伝戦略",
+      "topics": [
+        "athlete_records",
+        "ekiden"
+      ],
+      "refs": [
+        "input/idaten-corpus/notion-db/荒玉中体連駅伝戦略"
+      ],
+      "hint": "Notion DB「荒玉中体連駅伝戦略」: [ / { / \"url\": \"https://app.notion.com/p/3d4a38e83034813bb071f3971c133bdd\", / \"名前\": \"運用チェック（毎週）\", / \"テキスト\": \"痛みを抱えて走らせていないか／質は週2以下か（レース含む）／練習会中止の空白を質で埋めすぎていないか／"
+    },
+    {
+      "id": "source:input/idaten-corpus/notion-db/荒玉中体連駅伝戦略/rows.json",
+      "type": "Source",
+      "label": "rows.json",
+      "topics": [
+        "athlete_records",
+        "ekiden"
+      ],
+      "refs": [
+        "input/idaten-corpus/notion-db/荒玉中体連駅伝戦略/rows.json"
+      ],
+      "hint": "Notion DB「荒玉中体連駅伝戦略」: [ / { / \"url\": \"https://app.notion.com/p/3d4a38e83034813bb071f3971c133bdd\", / \"名前\": \"運用チェック（毎週）\", / \"テキスト\": \"痛みを抱えて走らせていないか／質は週2以下か（レース含む）／練習会中止の空白を質で埋めすぎていないか／"
+    },
+    {
+      "id": "source:input/idaten-corpus/notion-db/荒玉中体連駅伝歴代",
+      "type": "Source",
+      "label": "荒玉中体連駅伝歴代",
+      "topics": [
+        "athlete_records",
+        "ekiden"
+      ],
+      "refs": [
+        "input/idaten-corpus/notion-db/荒玉中体連駅伝歴代"
+      ],
+      "hint": "Notion DB「荒玉中体連駅伝歴代」: [ / { / \"名前\": \"2025 男子\", / \"岱明の記録\": \"59:08\", / \"岱明の順位\": 6, / \"2位の平均ペース\": \"3:16\", / \"スタート時間付近の気温\": 29, / \"url\": \"https://app.notion.com/p/3d3a38e83034807db9ecc89"
+    },
+    {
+      "id": "source:input/idaten-corpus/notion-db/荒玉中体連駅伝歴代/rows.json",
+      "type": "Source",
+      "label": "rows.json",
+      "topics": [
+        "athlete_records",
+        "ekiden"
+      ],
+      "refs": [
+        "input/idaten-corpus/notion-db/荒玉中体連駅伝歴代/rows.json"
+      ],
+      "hint": "Notion DB「荒玉中体連駅伝歴代」: [ / { / \"名前\": \"2025 男子\", / \"岱明の記録\": \"59:08\", / \"岱明の順位\": 6, / \"2位の平均ペース\": \"3:16\", / \"スタート時間付近の気温\": 29, / \"url\": \"https://app.notion.com/p/3d3a38e83034807db9ecc89"
+    },
+    {
+      "id": "source:input/idaten-corpus/notion-pages",
+      "type": "Source",
+      "label": "notion-pages",
+      "topics": [
+        "meta",
+        "practice"
+      ],
+      "refs": [
+        "input/idaten-corpus/notion-pages"
+      ],
+      "hint": "Notion ページ Markdown. 例: 2025-男子.md, ekiden-history, ノルウェーメソッド-inbox.md, ノルウェーメソッド.md, 岱明ノルウェーメソッド.md, 岱明朝練と夕練.md"
+    },
+    {
+      "id": "source:input/idaten-corpus/practice",
+      "type": "Source",
+      "label": "practice",
+      "topics": [
+        "practice"
+      ],
+      "refs": [
+        "input/idaten-corpus/practice"
+      ],
+      "hint": "練習 JSON / menus / absentees 抜粋. 例: daiming-practice-menus-kpace.md, practice.2025.json, practice.2026.json"
+    },
+    {
+      "id": "source:input/idaten-corpus/sb",
+      "type": "Source",
+      "label": "sb",
+      "topics": [
+        "athlete_records"
+      ],
+      "refs": [
+        "input/idaten-corpus/sb"
+      ],
+      "hint": "中学生 SB（岱明関連）. 例: 中学生SB_岱明.csv"
     },
     {
       "id": "source:input/memos/daiming-club-calendar-2026-09.jpg",
@@ -3700,7 +4777,7 @@
         "athlete_records"
       ],
       "refs": [],
-      "hint": "荒尾・玉名・中学生 SB・所属ランキング"
+      "hint": "荒尾・玉名・中学生 SB・所属ランキング・Notion 生徒/記録 DB。コーパス sb/ notion-db/ analysis-ocr/"
     },
     {
       "id": "topic:calendar",
@@ -3710,17 +4787,17 @@
         "calendar"
       ],
       "refs": [],
-      "hint": "年次予定・メモ・祝日の入口"
+      "hint": "年次予定・メモ・祝日。正本 input/events.*.yaml とコーパス calendar/events.daiming.yaml（岱明フィルタ）"
     },
     {
       "id": "topic:ekiden",
       "type": "Topic",
-      "label": "荒玉駅伝",
+      "label": "駅伝・大会",
       "topics": [
         "ekiden"
       ],
       "refs": [],
-      "hint": "歴代結果画像・OCR・戦略・分析（勝つための一次情報）"
+      "hint": "荒玉歴代 OCR/構造化、なごみ・ジュニア・玉名・金栗など drive-text/大会/ の開催要項・結果"
     },
     {
       "id": "topic:injury",
@@ -3730,7 +4807,7 @@
         "injury"
       ],
       "refs": [],
-      "hint": "ランニング障害・回復エビデンス"
+      "hint": "ランニング障害・回復エビデンス・怪我について Notion"
     },
     {
       "id": "topic:meta",
@@ -3740,7 +4817,7 @@
         "meta"
       ],
       "refs": [],
-      "hint": "README・生成パイプライン"
+      "hint": "README・生成パイプライン・idaten-corpus INDEX"
     },
     {
       "id": "topic:norwegian",
@@ -3770,7 +4847,7 @@
         "practice"
       ],
       "refs": [],
-      "hint": "practice ブロック・メニュー・欠席・テンプレ"
+      "hint": "practice ブロック・メニュー・欠席・テンプレ。コーパス practice/ と drive-text/personal・練習ログ"
     },
     {
       "id": "topic:schema",
@@ -4676,6 +5753,76 @@
     },
     {
       "from": "entity:year:2025",
+      "to": "meet:2025年度:0228_熊本市駅伝",
+      "rel": "see_also"
+    },
+    {
+      "from": "entity:year:2025",
+      "to": "meet:2025年度:0315_金栗駅伝",
+      "rel": "see_also"
+    },
+    {
+      "from": "entity:year:2025",
+      "to": "meet:2025年度:0419_第４４回熊本市陸上競技選手権",
+      "rel": "see_also"
+    },
+    {
+      "from": "entity:year:2025",
+      "to": "meet:2025年度:0607-0608_熊本県中学生陸上競技選手権",
+      "rel": "see_also"
+    },
+    {
+      "from": "entity:year:2025",
+      "to": "meet:2025年度:0614_荒尾選手権（中止）",
+      "rel": "see_also"
+    },
+    {
+      "from": "entity:year:2025",
+      "to": "meet:2025年度:0628-0629_全日本中学校通信陸上競技大会熊本県大会",
+      "rel": "see_also"
+    },
+    {
+      "from": "entity:year:2025",
+      "to": "meet:2025年度:0719-0720_熊本県中学校総合体育大会陸上競技大会",
+      "rel": "see_also"
+    },
+    {
+      "from": "entity:year:2025",
+      "to": "meet:2025年度:0802_玉名選手権",
+      "rel": "see_also"
+    },
+    {
+      "from": "entity:year:2025",
+      "to": "meet:2025年度:0830_玉名郡ナイター",
+      "rel": "see_also"
+    },
+    {
+      "from": "entity:year:2025",
+      "to": "meet:2025年度:0921_中学駅伝金栗四三生誕の地なごみ大会",
+      "rel": "see_also"
+    },
+    {
+      "from": "entity:year:2025",
+      "to": "meet:2025年度:0927_第２回熊本県ジュニア駅伝競走大会",
+      "rel": "see_also"
+    },
+    {
+      "from": "entity:year:2025",
+      "to": "meet:2025年度:1015_玉名荒尾中体連駅伝",
+      "rel": "see_also"
+    },
+    {
+      "from": "entity:year:2025",
+      "to": "meet:2025年度:1118_熊本市中長距離選手権",
+      "rel": "see_also"
+    },
+    {
+      "from": "entity:year:2025",
+      "to": "meet:2025年度:1130_玉名市民マラソン",
+      "rel": "see_also"
+    },
+    {
+      "from": "entity:year:2025",
       "to": "source:input/events.2025.yaml",
       "rel": "search_here"
     },
@@ -4723,6 +5870,106 @@
       "from": "entity:year:2025",
       "to": "source:out/2025/source.csv",
       "rel": "search_here"
+    },
+    {
+      "from": "entity:year:2026",
+      "to": "meet:2026年度:0125_玉名駅伝",
+      "rel": "see_also"
+    },
+    {
+      "from": "entity:year:2026",
+      "to": "meet:2026年度:0208_熊日駅伝",
+      "rel": "see_also"
+    },
+    {
+      "from": "entity:year:2026",
+      "to": "meet:2026年度:0315_金栗駅伝",
+      "rel": "see_also"
+    },
+    {
+      "from": "entity:year:2026",
+      "to": "meet:2026年度:0411_第３４回金栗記念選抜陸上中長距離熊本大会",
+      "rel": "see_also"
+    },
+    {
+      "from": "entity:year:2026",
+      "to": "meet:2026年度:0418_第４５回熊本市陸上競技選手権大会",
+      "rel": "see_also"
+    },
+    {
+      "from": "entity:year:2026",
+      "to": "meet:2026年度:0509_第１回熊本県長距離記録会",
+      "rel": "see_also"
+    },
+    {
+      "from": "entity:year:2026",
+      "to": "meet:2026年度:0523-0524_熊本県中学校陸上選手権・混成",
+      "rel": "see_also"
+    },
+    {
+      "from": "entity:year:2026",
+      "to": "meet:2026年度:0613_全日本中学校通信陸上競技大会熊本県大会",
+      "rel": "see_also"
+    },
+    {
+      "from": "entity:year:2026",
+      "to": "meet:2026年度:0628_荒尾選手権",
+      "rel": "see_also"
+    },
+    {
+      "from": "entity:year:2026",
+      "to": "meet:2026年度:0704_第２回熊本県長距離記録会",
+      "rel": "see_also"
+    },
+    {
+      "from": "entity:year:2026",
+      "to": "meet:2026年度:0718-0720_熊本県中学校総合体育大会陸上競技大会",
+      "rel": "see_also"
+    },
+    {
+      "from": "entity:year:2026",
+      "to": "meet:2026年度:0801_玉名選手権（中止）",
+      "rel": "see_also"
+    },
+    {
+      "from": "entity:year:2026",
+      "to": "meet:2026年度:0829_ジュニアオリンピックU16熊本県予選会",
+      "rel": "see_also"
+    },
+    {
+      "from": "entity:year:2026",
+      "to": "meet:2026年度:0829_玉名郡ナイター中・長距離記録会",
+      "rel": "see_also"
+    },
+    {
+      "from": "entity:year:2026",
+      "to": "meet:2026年度:0920_中学駅伝金栗四三生誕の地なごみ大会",
+      "rel": "see_also"
+    },
+    {
+      "from": "entity:year:2026",
+      "to": "meet:2026年度:0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）",
+      "rel": "see_also"
+    },
+    {
+      "from": "entity:year:2026",
+      "to": "meet:2026年度:1010_第４回熊本県長距離記録会",
+      "rel": "see_also"
+    },
+    {
+      "from": "entity:year:2026",
+      "to": "meet:2026年度:1014-1015_荒玉中体連駅伝",
+      "rel": "see_also"
+    },
+    {
+      "from": "entity:year:2026",
+      "to": "meet:2026年度:1211_岱明中校内駅伝大会",
+      "rel": "see_also"
+    },
+    {
+      "from": "entity:year:2026",
+      "to": "meet:2026年度:1212_第５回熊本県長距離記録会",
+      "rel": "see_also"
     },
     {
       "from": "entity:year:2026",
@@ -5400,6 +6647,41 @@
       "rel": "search_here"
     },
     {
+      "from": "query:10:部員名簿は？",
+      "to": "topic:athlete_records",
+      "rel": "search_here"
+    },
+    {
+      "from": "query:10:部員名簿は？",
+      "to": "topic:practice",
+      "rel": "search_here"
+    },
+    {
+      "from": "query:11:中学生SBは？",
+      "to": "topic:athlete_records",
+      "rel": "search_here"
+    },
+    {
+      "from": "query:12:開催要項は？",
+      "to": "topic:ekiden",
+      "rel": "search_here"
+    },
+    {
+      "from": "query:13:ケガ・障害は？",
+      "to": "topic:injury",
+      "rel": "search_here"
+    },
+    {
+      "from": "query:14:オーダー・区間は？",
+      "to": "topic:athlete_records",
+      "rel": "search_here"
+    },
+    {
+      "from": "query:14:オーダー・区間は？",
+      "to": "topic:ekiden",
+      "rel": "search_here"
+    },
+    {
       "from": "query:1:欠席者は誰？",
       "to": "topic:practice",
       "rel": "search_here"
@@ -5427,6 +6709,11 @@
     {
       "from": "query:5:〇月〇日の予定は？",
       "to": "topic:calendar",
+      "rel": "search_here"
+    },
+    {
+      "from": "query:5:〇月〇日の予定は？",
+      "to": "topic:ekiden",
       "rel": "search_here"
     },
     {
@@ -5461,6 +6748,16 @@
     },
     {
       "from": "query:8:荒玉駅伝の区間距離は？",
+      "to": "topic:ekiden",
+      "rel": "search_here"
+    },
+    {
+      "from": "query:9:なごみ駅伝は？",
+      "to": "topic:calendar",
+      "rel": "search_here"
+    },
+    {
+      "from": "query:9:なごみ駅伝は？",
       "to": "topic:ekiden",
       "rel": "search_here"
     },
@@ -5537,6 +6834,11 @@
     {
       "from": "source:docs/ai-practice-generation.md",
       "to": "source:docs/adr/015-line-idaten-qa-backend.md",
+      "rel": "see_also"
+    },
+    {
+      "from": "source:docs/ai-practice-generation.md",
+      "to": "source:docs/adr/016-kg-first-idaten-qa.md",
       "rel": "see_also"
     },
     {
@@ -5931,6 +7233,11 @@
     },
     {
       "from": "topic:ai",
+      "to": "source:docs/adr/016-kg-first-idaten-qa.md",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:ai",
       "to": "source:docs/ai-practice-generation.md",
       "rel": "search_here"
     },
@@ -5957,6 +7264,31 @@
     {
       "from": "topic:ai",
       "to": "source:prompts/system-weekly-plan.md",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:athlete_records",
+      "to": "corpus:analysis-ocr",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:athlete_records",
+      "to": "corpus:aragyoku",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:athlete_records",
+      "to": "corpus:ekiden-ocr",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:athlete_records",
+      "to": "corpus:notion-db",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:athlete_records",
+      "to": "corpus:sb",
       "rel": "search_here"
     },
     {
@@ -6251,6 +7583,96 @@
     },
     {
       "from": "topic:athlete_records",
+      "to": "source:input/idaten-corpus/INDEX.md",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:athlete_records",
+      "to": "source:input/idaten-corpus/analysis-ocr",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:athlete_records",
+      "to": "source:input/idaten-corpus/aragyoku",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:athlete_records",
+      "to": "source:input/idaten-corpus/ekiden-ocr",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:athlete_records",
+      "to": "source:input/idaten-corpus/notion-db",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:athlete_records",
+      "to": "source:input/idaten-corpus/notion-db/いだてん岱明の未来",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:athlete_records",
+      "to": "source:input/idaten-corpus/notion-db/いだてん岱明の未来/rows.json",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:athlete_records",
+      "to": "source:input/idaten-corpus/notion-db/いだてん岱明生徒",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:athlete_records",
+      "to": "source:input/idaten-corpus/notion-db/いだてん岱明生徒/rows.json",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:athlete_records",
+      "to": "source:input/idaten-corpus/notion-db/動きづくり",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:athlete_records",
+      "to": "source:input/idaten-corpus/notion-db/動きづくり/rows.json",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:athlete_records",
+      "to": "source:input/idaten-corpus/notion-db/練習のバリエーション",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:athlete_records",
+      "to": "source:input/idaten-corpus/notion-db/練習のバリエーション/rows.json",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:athlete_records",
+      "to": "source:input/idaten-corpus/notion-db/荒玉中体連駅伝戦略",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:athlete_records",
+      "to": "source:input/idaten-corpus/notion-db/荒玉中体連駅伝戦略/rows.json",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:athlete_records",
+      "to": "source:input/idaten-corpus/notion-db/荒玉中体連駅伝歴代",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:athlete_records",
+      "to": "source:input/idaten-corpus/notion-db/荒玉中体連駅伝歴代/rows.json",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:athlete_records",
+      "to": "source:input/idaten-corpus/sb",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:athlete_records",
       "to": "source:out/analysis/2026年度_荒尾玉名中学生_所属別ランキング.pdf",
       "rel": "search_here"
     },
@@ -6278,6 +7700,186 @@
       "from": "topic:athlete_records",
       "to": "source:out/analysis/荒玉男子駅伝_上位6校.pdf",
       "rel": "search_here"
+    },
+    {
+      "from": "topic:calendar",
+      "to": "corpus:calendar",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:calendar",
+      "to": "corpus:drive-text",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:calendar",
+      "to": "meet:2025年度:0228_熊本市駅伝",
+      "rel": "see_also"
+    },
+    {
+      "from": "topic:calendar",
+      "to": "meet:2025年度:0315_金栗駅伝",
+      "rel": "see_also"
+    },
+    {
+      "from": "topic:calendar",
+      "to": "meet:2025年度:0419_第４４回熊本市陸上競技選手権",
+      "rel": "see_also"
+    },
+    {
+      "from": "topic:calendar",
+      "to": "meet:2025年度:0607-0608_熊本県中学生陸上競技選手権",
+      "rel": "see_also"
+    },
+    {
+      "from": "topic:calendar",
+      "to": "meet:2025年度:0614_荒尾選手権（中止）",
+      "rel": "see_also"
+    },
+    {
+      "from": "topic:calendar",
+      "to": "meet:2025年度:0628-0629_全日本中学校通信陸上競技大会熊本県大会",
+      "rel": "see_also"
+    },
+    {
+      "from": "topic:calendar",
+      "to": "meet:2025年度:0719-0720_熊本県中学校総合体育大会陸上競技大会",
+      "rel": "see_also"
+    },
+    {
+      "from": "topic:calendar",
+      "to": "meet:2025年度:0802_玉名選手権",
+      "rel": "see_also"
+    },
+    {
+      "from": "topic:calendar",
+      "to": "meet:2025年度:0830_玉名郡ナイター",
+      "rel": "see_also"
+    },
+    {
+      "from": "topic:calendar",
+      "to": "meet:2025年度:0921_中学駅伝金栗四三生誕の地なごみ大会",
+      "rel": "see_also"
+    },
+    {
+      "from": "topic:calendar",
+      "to": "meet:2025年度:0927_第２回熊本県ジュニア駅伝競走大会",
+      "rel": "see_also"
+    },
+    {
+      "from": "topic:calendar",
+      "to": "meet:2025年度:1015_玉名荒尾中体連駅伝",
+      "rel": "see_also"
+    },
+    {
+      "from": "topic:calendar",
+      "to": "meet:2025年度:1118_熊本市中長距離選手権",
+      "rel": "see_also"
+    },
+    {
+      "from": "topic:calendar",
+      "to": "meet:2025年度:1130_玉名市民マラソン",
+      "rel": "see_also"
+    },
+    {
+      "from": "topic:calendar",
+      "to": "meet:2026年度:0125_玉名駅伝",
+      "rel": "see_also"
+    },
+    {
+      "from": "topic:calendar",
+      "to": "meet:2026年度:0208_熊日駅伝",
+      "rel": "see_also"
+    },
+    {
+      "from": "topic:calendar",
+      "to": "meet:2026年度:0315_金栗駅伝",
+      "rel": "see_also"
+    },
+    {
+      "from": "topic:calendar",
+      "to": "meet:2026年度:0411_第３４回金栗記念選抜陸上中長距離熊本大会",
+      "rel": "see_also"
+    },
+    {
+      "from": "topic:calendar",
+      "to": "meet:2026年度:0418_第４５回熊本市陸上競技選手権大会",
+      "rel": "see_also"
+    },
+    {
+      "from": "topic:calendar",
+      "to": "meet:2026年度:0509_第１回熊本県長距離記録会",
+      "rel": "see_also"
+    },
+    {
+      "from": "topic:calendar",
+      "to": "meet:2026年度:0523-0524_熊本県中学校陸上選手権・混成",
+      "rel": "see_also"
+    },
+    {
+      "from": "topic:calendar",
+      "to": "meet:2026年度:0613_全日本中学校通信陸上競技大会熊本県大会",
+      "rel": "see_also"
+    },
+    {
+      "from": "topic:calendar",
+      "to": "meet:2026年度:0628_荒尾選手権",
+      "rel": "see_also"
+    },
+    {
+      "from": "topic:calendar",
+      "to": "meet:2026年度:0704_第２回熊本県長距離記録会",
+      "rel": "see_also"
+    },
+    {
+      "from": "topic:calendar",
+      "to": "meet:2026年度:0718-0720_熊本県中学校総合体育大会陸上競技大会",
+      "rel": "see_also"
+    },
+    {
+      "from": "topic:calendar",
+      "to": "meet:2026年度:0801_玉名選手権（中止）",
+      "rel": "see_also"
+    },
+    {
+      "from": "topic:calendar",
+      "to": "meet:2026年度:0829_ジュニアオリンピックU16熊本県予選会",
+      "rel": "see_also"
+    },
+    {
+      "from": "topic:calendar",
+      "to": "meet:2026年度:0829_玉名郡ナイター中・長距離記録会",
+      "rel": "see_also"
+    },
+    {
+      "from": "topic:calendar",
+      "to": "meet:2026年度:0920_中学駅伝金栗四三生誕の地なごみ大会",
+      "rel": "see_also"
+    },
+    {
+      "from": "topic:calendar",
+      "to": "meet:2026年度:0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）",
+      "rel": "see_also"
+    },
+    {
+      "from": "topic:calendar",
+      "to": "meet:2026年度:1010_第４回熊本県長距離記録会",
+      "rel": "see_also"
+    },
+    {
+      "from": "topic:calendar",
+      "to": "meet:2026年度:1014-1015_荒玉中体連駅伝",
+      "rel": "see_also"
+    },
+    {
+      "from": "topic:calendar",
+      "to": "meet:2026年度:1211_岱明中校内駅伝大会",
+      "rel": "see_also"
+    },
+    {
+      "from": "topic:calendar",
+      "to": "meet:2026年度:1212_第５回熊本県長距離記録会",
+      "rel": "see_also"
     },
     {
       "from": "topic:calendar",
@@ -6327,6 +7929,26 @@
     {
       "from": "topic:calendar",
       "to": "source:input/events.2027.yaml",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:calendar",
+      "to": "source:input/idaten-corpus/INDEX.md",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:calendar",
+      "to": "source:input/idaten-corpus/calendar",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:calendar",
+      "to": "source:input/idaten-corpus/drive-text",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:calendar",
+      "to": "source:input/idaten-corpus/drive-text/大会/INDEX.md",
       "rel": "search_here"
     },
     {
@@ -6511,6 +8133,36 @@
     },
     {
       "from": "topic:ekiden",
+      "to": "corpus:analysis-ocr",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:ekiden",
+      "to": "corpus:aragyoku",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:ekiden",
+      "to": "corpus:docs",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:ekiden",
+      "to": "corpus:drive-text",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:ekiden",
+      "to": "corpus:ekiden-ocr",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:ekiden",
+      "to": "corpus:notion-db",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:ekiden",
       "to": "media:analysis:2026年度荒玉男子",
       "rel": "search_here"
     },
@@ -6661,6 +8313,176 @@
     },
     {
       "from": "topic:ekiden",
+      "to": "meet:2025年度:0228_熊本市駅伝",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:ekiden",
+      "to": "meet:2025年度:0315_金栗駅伝",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:ekiden",
+      "to": "meet:2025年度:0419_第４４回熊本市陸上競技選手権",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:ekiden",
+      "to": "meet:2025年度:0607-0608_熊本県中学生陸上競技選手権",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:ekiden",
+      "to": "meet:2025年度:0614_荒尾選手権（中止）",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:ekiden",
+      "to": "meet:2025年度:0628-0629_全日本中学校通信陸上競技大会熊本県大会",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:ekiden",
+      "to": "meet:2025年度:0719-0720_熊本県中学校総合体育大会陸上競技大会",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:ekiden",
+      "to": "meet:2025年度:0802_玉名選手権",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:ekiden",
+      "to": "meet:2025年度:0830_玉名郡ナイター",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:ekiden",
+      "to": "meet:2025年度:0921_中学駅伝金栗四三生誕の地なごみ大会",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:ekiden",
+      "to": "meet:2025年度:0927_第２回熊本県ジュニア駅伝競走大会",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:ekiden",
+      "to": "meet:2025年度:1015_玉名荒尾中体連駅伝",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:ekiden",
+      "to": "meet:2025年度:1118_熊本市中長距離選手権",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:ekiden",
+      "to": "meet:2025年度:1130_玉名市民マラソン",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:ekiden",
+      "to": "meet:2026年度:0125_玉名駅伝",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:ekiden",
+      "to": "meet:2026年度:0208_熊日駅伝",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:ekiden",
+      "to": "meet:2026年度:0315_金栗駅伝",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:ekiden",
+      "to": "meet:2026年度:0411_第３４回金栗記念選抜陸上中長距離熊本大会",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:ekiden",
+      "to": "meet:2026年度:0418_第４５回熊本市陸上競技選手権大会",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:ekiden",
+      "to": "meet:2026年度:0509_第１回熊本県長距離記録会",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:ekiden",
+      "to": "meet:2026年度:0523-0524_熊本県中学校陸上選手権・混成",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:ekiden",
+      "to": "meet:2026年度:0613_全日本中学校通信陸上競技大会熊本県大会",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:ekiden",
+      "to": "meet:2026年度:0628_荒尾選手権",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:ekiden",
+      "to": "meet:2026年度:0704_第２回熊本県長距離記録会",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:ekiden",
+      "to": "meet:2026年度:0718-0720_熊本県中学校総合体育大会陸上競技大会",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:ekiden",
+      "to": "meet:2026年度:0801_玉名選手権（中止）",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:ekiden",
+      "to": "meet:2026年度:0829_ジュニアオリンピックU16熊本県予選会",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:ekiden",
+      "to": "meet:2026年度:0829_玉名郡ナイター中・長距離記録会",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:ekiden",
+      "to": "meet:2026年度:0920_中学駅伝金栗四三生誕の地なごみ大会",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:ekiden",
+      "to": "meet:2026年度:0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:ekiden",
+      "to": "meet:2026年度:1010_第４回熊本県長距離記録会",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:ekiden",
+      "to": "meet:2026年度:1014-1015_荒玉中体連駅伝",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:ekiden",
+      "to": "meet:2026年度:1211_岱明中校内駅伝大会",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:ekiden",
+      "to": "meet:2026年度:1212_第５回熊本県長距離記録会",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:ekiden",
       "to": "source:docs/aragyoku-ekiden-distance-definitions.md",
       "rel": "search_here"
     },
@@ -6680,8 +8502,88 @@
       "rel": "search_here"
     },
     {
+      "from": "topic:ekiden",
+      "to": "source:input/idaten-corpus/INDEX.md",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:ekiden",
+      "to": "source:input/idaten-corpus/analysis-ocr",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:ekiden",
+      "to": "source:input/idaten-corpus/aragyoku",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:ekiden",
+      "to": "source:input/idaten-corpus/docs",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:ekiden",
+      "to": "source:input/idaten-corpus/drive-text",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:ekiden",
+      "to": "source:input/idaten-corpus/drive-text/大会/INDEX.md",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:ekiden",
+      "to": "source:input/idaten-corpus/ekiden-ocr",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:ekiden",
+      "to": "source:input/idaten-corpus/notion-db",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:ekiden",
+      "to": "source:input/idaten-corpus/notion-db/荒玉中体連駅伝戦略",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:ekiden",
+      "to": "source:input/idaten-corpus/notion-db/荒玉中体連駅伝戦略/rows.json",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:ekiden",
+      "to": "source:input/idaten-corpus/notion-db/荒玉中体連駅伝歴代",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:ekiden",
+      "to": "source:input/idaten-corpus/notion-db/荒玉中体連駅伝歴代/rows.json",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:injury",
+      "to": "corpus:notion-db",
+      "rel": "search_here"
+    },
+    {
       "from": "topic:injury",
       "to": "source:input/external/notion/INDEX.md",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:injury",
+      "to": "source:input/idaten-corpus/notion-db",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:injury",
+      "to": "source:input/idaten-corpus/notion-db/怪我について",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:injury",
+      "to": "source:input/idaten-corpus/notion-db/怪我について/rows.json",
       "rel": "search_here"
     },
     {
@@ -6697,6 +8599,16 @@
     {
       "from": "topic:injury",
       "to": "source:projects/running-injury-research/stamina-determinants-memo.md",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:meta",
+      "to": "corpus:docs",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:meta",
+      "to": "corpus:notion-pages",
       "rel": "search_here"
     },
     {
@@ -6781,6 +8693,11 @@
     },
     {
       "from": "topic:meta",
+      "to": "source:docs/adr/016-kg-first-idaten-qa.md",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:meta",
       "to": "source:input/external/INDEX.md",
       "rel": "search_here"
     },
@@ -6797,6 +8714,21 @@
     {
       "from": "topic:meta",
       "to": "source:input/external/sb/middle-school/INDEX.md",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:meta",
+      "to": "source:input/idaten-corpus/INDEX.md",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:meta",
+      "to": "source:input/idaten-corpus/docs",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:meta",
+      "to": "source:input/idaten-corpus/notion-pages",
       "rel": "search_here"
     },
     {
@@ -6837,6 +8769,31 @@
     {
       "from": "topic:pace",
       "to": "source:out/daiming-practice-menus-kpace.md",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:practice",
+      "to": "corpus:calendar",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:practice",
+      "to": "corpus:drive-text",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:practice",
+      "to": "corpus:notion-db",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:practice",
+      "to": "corpus:notion-pages",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:practice",
+      "to": "corpus:practice",
       "rel": "search_here"
     },
     {
@@ -7301,6 +9258,11 @@
     },
     {
       "from": "topic:practice",
+      "to": "source:docs/adr/016-kg-first-idaten-qa.md",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:practice",
       "to": "source:docs/ai-practice-generation.md",
       "rel": "search_here"
     },
@@ -7382,6 +9344,76 @@
     {
       "from": "topic:practice",
       "to": "source:input/external/notion/databases/いだてん岱明生徒/rows.json",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:practice",
+      "to": "source:input/idaten-corpus/INDEX.md",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:practice",
+      "to": "source:input/idaten-corpus/calendar",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:practice",
+      "to": "source:input/idaten-corpus/drive-text",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:practice",
+      "to": "source:input/idaten-corpus/notion-db",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:practice",
+      "to": "source:input/idaten-corpus/notion-db/いだてん岱明の未来",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:practice",
+      "to": "source:input/idaten-corpus/notion-db/いだてん岱明の未来/rows.json",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:practice",
+      "to": "source:input/idaten-corpus/notion-db/いだてん岱明生徒",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:practice",
+      "to": "source:input/idaten-corpus/notion-db/いだてん岱明生徒/rows.json",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:practice",
+      "to": "source:input/idaten-corpus/notion-db/動きづくり",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:practice",
+      "to": "source:input/idaten-corpus/notion-db/動きづくり/rows.json",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:practice",
+      "to": "source:input/idaten-corpus/notion-db/練習のバリエーション",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:practice",
+      "to": "source:input/idaten-corpus/notion-db/練習のバリエーション/rows.json",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:practice",
+      "to": "source:input/idaten-corpus/notion-pages",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:practice",
+      "to": "source:input/idaten-corpus/practice",
       "rel": "search_here"
     },
     {
@@ -7571,12 +9603,22 @@
     },
     {
       "from": "topic:schema",
+      "to": "corpus:docs",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:schema",
       "to": "source:docs/aragyoku-ekiden-distance-definitions.md",
       "rel": "search_here"
     },
     {
       "from": "topic:schema",
       "to": "source:docs/data-model.md",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:schema",
+      "to": "source:input/idaten-corpus/docs",
       "rel": "search_here"
     },
     {
