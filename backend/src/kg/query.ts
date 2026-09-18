@@ -89,6 +89,7 @@ function scoreNode(node: KgNode, qTokens: string[], query: string): number {
   const hint = (node.hint || "").toLowerCase();
   const topics = (node.topics || []).join(" ").toLowerCase();
   const refs = (node.refs || []).join(" ").toLowerCase();
+  const id = (node.id || "").toLowerCase();
   const blob = [node.id, label, hint, topics, refs].join(" ").toLowerCase();
   const q = query.toLowerCase().trim();
   let score = 0;
@@ -107,6 +108,16 @@ function scoreNode(node: KgNode, qTokens: string[], query: string): number {
     }
     if (nodeType === "Athlete" || nodeType === "MediaAsset") continue;
     if (blob.includes(tok)) score += tok.length >= 2 ? 2 : 0.5;
+  }
+  // Year tokens in the question strongly prefer matching year media / hubs
+  const yearTokens = qTokens.filter((t) => /^20\d{2}$/.test(t));
+  for (const y of yearTokens) {
+    if (label.includes(y) || id.includes(y) || refs.includes(y) || hint.includes(y)) {
+      score += 12;
+    }
+  }
+  if (/優勝|winner/.test(q) && /優勝|winner|rank|1位|transcript|aragyoku/.test(blob)) {
+    score += 8;
   }
   if (nodeType !== "Athlete" && nodeType !== "MediaAsset" && q && blob.includes(q)) score += 5;
   if (score <= 0) return 0;

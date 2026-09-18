@@ -11,6 +11,8 @@ const CORPUS_PREFIXES = [
   "notion-db/",
   "notion-pages/",
   "analysis-ocr/",
+  "out-analysis/",
+  "repo-docs/",
   "practice/",
   "sb/",
   "docs/",
@@ -87,6 +89,16 @@ export function mapRefToCorpusSource(ref: string): string | null {
   const analysis = "input/external/drive/shared/分析/";
   if (p.startsWith(analysis) && p.endsWith(".md")) {
     return "analysis-ocr/" + p.slice(analysis.length);
+  }
+
+  // Generated analysis under out/analysis → out-analysis/
+  if (p.startsWith("out/analysis/")) {
+    return "out-analysis/" + p.slice("out/analysis/".length);
+  }
+
+  // Broader docs under docs/ → repo-docs/ (or docs/ for top-level copies)
+  if (p.startsWith("docs/") && p.includes("/")) {
+    return "repo-docs/" + p.slice("docs/".length);
   }
 
   // Drive 大会 text

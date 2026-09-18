@@ -47,7 +47,13 @@ ARAGYOKU_FILES = (
 DOC_FILES = (
     ROOT / "docs" / "adr" / "010-external-idaten-import.md",
     ROOT / "docs" / "adr" / "011-idaten-media-ocr-kg.md",
+    ROOT / "docs" / "adr" / "015-line-idaten-qa-backend.md",
+    ROOT / "docs" / "adr" / "016-kg-first-idaten-qa.md",
     ROOT / "docs" / "aragyoku-ekiden-distance-definitions.md",
+    ROOT / "docs" / "data-model.md",
+    ROOT / "docs" / "ai-practice-generation.md",
+    ROOT / "README.md",
+    ROOT / "AGENTS.md",
 )
 
 MAX_CHUNK_CHARS = 900
@@ -216,6 +222,25 @@ def _build_corpus() -> list[dict[str, str]]:
         _copy_tree_text(ARAGYOKU / "ocr_raw", aragyoku_dest / "ocr_raw", sources)
     if (ARAGYOKU / "quiz").is_dir():
         _copy_tree_text(ARAGYOKU / "quiz", aragyoku_dest / "quiz", sources)
+    _write_aragyoku_winners(sources)
+
+    # Repo-wide text: analysis outputs + remaining docs under docs/
+    analysis_src = ROOT / "out" / "analysis"
+    if analysis_src.is_dir():
+        _copy_tree_text(
+            analysis_src,
+            CORPUS_DIR / "out-analysis",
+            sources,
+            name_filter=re.compile(r"\.(md|json)$", re.I),
+        )
+    docs_root = ROOT / "docs"
+    if docs_root.is_dir():
+        for path in sorted(docs_root.rglob("*.md")):
+            rel = path.relative_to(docs_root)
+            # Skip already-copied top-level names into docs/
+            if path in DOC_FILES:
+                continue
+            _copy_file(path, CORPUS_DIR / "repo-docs" / rel, sources)
 
     for db in NOTION_DBS:
         src = EXTERNAL / "notion" / "databases" / db
@@ -285,20 +310,22 @@ def _build_corpus() -> list[dict[str, str]]:
     index_md.write_text(
         "\n".join(
             [
-                "# いだてん岱明コーパス（単一フォルダ）",
+                "# リポジトリ知識コーパス（単一フォルダ）",
                 "",
-                "LINE Q&A バックエンドが参照するテキスト専用コーパス。",
+                "LINE Q&A バックエンドが参照するテキスト専用コーパス（いだてん岱明＋荒玉＋分析＋docs）。",
                 "バイナリ（画像・PDF）は含めない。再生成: `python3 scripts/build_idaten_corpus.py`",
                 "",
                 "## ディレクトリ",
                 "",
                 "- `ekiden-ocr/` — 荒玉駅伝歴代 OCR",
                 "- `analysis-ocr/` — 分析 PDF の OCR",
-                "- `aragyoku/` — 荒玉構造化テキスト",
+                "- `aragyoku/` — 荒玉構造化テキスト・優勝校要約・transcripts",
+                "- `out-analysis/` — `out/analysis` の md/json",
+                "- `repo-docs/` — docs 配下の Markdown",
                 "- `notion-db/` / `notion-pages/` — Notion スナップショット",
                 "- `drive-text/` — Drive テキスト",
                 "- `calendar/` / `practice/` / `sb/` — 岱明フィルタ済み予定・練習・SB",
-                "- `docs/` — 関連 ADR・定義",
+                "- `docs/` — 関連 ADR・定義（抜粋）",
                 "",
                 f"ファイル数（SOURCES）: {len(sources)}",
                 "",
@@ -321,6 +348,111 @@ def _build_corpus() -> list[dict[str, str]]:
         encoding="utf-8",
     )
     return sources
+
+
+def _write_aragyoku_winners(sources: list[dict[str, str]]) -> None:
+    """Derive a BM25-friendly winners table from transcripts (rank=1)."""
+    transcripts = ARAGYOKU / "transcripts"
+    if not transcripts.is_dir():
+        return
+    lines = [
+        "# 荒玉駅伝 年度別優勝校",
+        "",
+        "文字起こし（`input/aragyoku/transcripts/*.json`）の teams[rank=1] に基づく要約。",
+        "「去年の優勝校」など相対年の質問では、質問時点の西暦とこの表の年度を対応づける。",
+        "",
+        "| 年度 | 性別 | 優勝校 | 総合タイム |",
+        "| --- | --- | --- | --- |",
+    ]
+    for path in sorted(transcripts.glob("*.json")):
+        try:
+            data = json.loads(path.read_text(encoding="utf-8"))
+        except (json.JSONDecodeError, OSError):
+            continue
+        if not isinstance(data, dict):
+            continue
+        year = data.get("year")
+        gender = data.get("gender")
+        teams = data.get("teams") or []
+        winner = next(
+            (t for t in teams if isinstance(t, dict) and t.get("rank") in (1, "1")),
+            None,
+        )
+        if not winner:
+            continue
+        team = winner.get("team") or "?"
+        total = winner.get("total") or ""
+        lines.append(f"| {year} | {gender} | {team} | {total} |")
+        # Plain-language line for BM25 (テーブル記号に依存しない)
+        lines.append(
+            f"{year}年荒玉駅伝{gender}の優勝校は「{team}」である（総合 {total}）。1位 {team}。"
+        )
+    if len(lines) <= 7:
+        return
+    dest = CORPUS_DIR / "aragyoku" / "winners-by-year.md"
+    dest.parent.mkdir(parents=True, exist_ok=True)
+    dest.write_text("\n".join(lines) + "\n", encoding="utf-8")
+    sources.append(
+        {
+            "source": "input/aragyoku/transcripts (derived)",
+            "corpus": str(dest.relative_to(CORPUS_DIR)),
+            "note": "winners summary from rank=1",
+        }
+    )
+
+
+def _chunk_aragyoku_transcript(path: Path, rel: str) -> list[dict[str, Any]]:
+    """One summary + per-team chunks so year/winner stay co-located."""
+    try:
+        data = json.loads(path.read_text(encoding="utf-8", errors="replace"))
+    except json.JSONDecodeError:
+        return []
+    if not isinstance(data, dict):
+        return []
+    year = data.get("year")
+    gender = data.get("gender")
+    teams = [t for t in (data.get("teams") or []) if isinstance(t, dict)]
+    out: list[dict[str, Any]] = []
+    winner = next((t for t in teams if t.get("rank") in (1, "1")), None)
+    summary_parts = [
+        f"{year}年 荒玉中体連駅伝 {gender} 結果要約。",
+    ]
+    if winner:
+        summary_parts.append(
+            f"優勝校（1位）は「{winner.get('team')}」（総合 {winner.get('total', '')}）。"
+        )
+    for t in teams[:8]:
+        summary_parts.append(
+            f"{t.get('rank')}位 {t.get('team')} {t.get('total', '')}。"
+        )
+    out.append(
+        {
+            "id": f"{rel}:0",
+            "source": rel,
+            "text": " ".join(summary_parts),
+            "metadata": {"path": f"input/idaten-corpus/{rel}", "index": 0, "kind": "winner_summary"},
+        }
+    )
+    for idx, team in enumerate(teams, start=1):
+        header = (
+            f"{year}年荒玉駅伝{gender} "
+            f"{team.get('rank')}位 {team.get('team')} 総合{team.get('total', '')}"
+        )
+        if team.get("rank") in (1, "1"):
+            header = f"{header} 優勝校"
+        body = json.dumps(team, ensure_ascii=False, indent=2)
+        text = f"{header}\n{body}"
+        if len(text) > MAX_CHUNK_CHARS:
+            text = text[:MAX_CHUNK_CHARS]
+        out.append(
+            {
+                "id": f"{rel}:{idx}",
+                "source": rel,
+                "text": text,
+                "metadata": {"path": f"input/idaten-corpus/{rel}", "index": idx, "kind": "team"},
+            }
+        )
+    return out
 
 
 def _split_paragraphs(text: str, max_chars: int = MAX_CHUNK_CHARS) -> list[str]:
@@ -360,7 +492,9 @@ def _iter_corpus_files() -> Iterator[Path]:
 
 
 def _chunk_file(path: Path) -> list[dict[str, Any]]:
-    rel = str(path.relative_to(CORPUS_DIR))
+    rel = str(path.relative_to(CORPUS_DIR)).replace("\\", "/")
+    if rel.startswith("aragyoku/transcripts/") and path.suffix.lower() == ".json":
+        return _chunk_aragyoku_transcript(path, rel)
     raw = path.read_text(encoding="utf-8", errors="replace")
     if path.suffix.lower() == ".json":
         try:

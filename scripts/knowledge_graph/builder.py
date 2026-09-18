@@ -166,6 +166,24 @@ QUERY_HINTS: list[tuple[str, str, list[str]]] = [
             "source:input/external/notion/databases/荒玉中体連駅伝歴代/rows.json",
             "source:input/external/media-manifest.json",
             "source:input/external/notion/media/ekiden-history/INDEX.md",
+            "corpus:aragyoku",
+        ],
+    ),
+    (
+        "去年の荒玉駅伝の優勝校は？",
+        "相対年を西暦に展開し aragyoku/winners-by-year.md と transcripts/{year}-*.json の rank=1 を読む",
+        [
+            "topic:ekiden",
+            "corpus:aragyoku",
+            "source:input/aragyoku",
+        ],
+    ),
+    (
+        "荒玉駅伝の優勝校は？",
+        "aragyoku/winners-by-year.md と transcripts の teams[rank=1]、ekiden-ocr 該当年",
+        [
+            "topic:ekiden",
+            "corpus:aragyoku",
         ],
     ),
     (
@@ -428,8 +446,10 @@ def _register_idaten_corpus(
 
     dir_specs: list[tuple[str, list[str], str]] = [
         ("ekiden-ocr", ["ekiden", "athlete_records"], "荒玉駅伝歴代の OCR 本文（年×男女）"),
-        ("aragyoku", ["ekiden", "athlete_records"], "荒玉駅伝の構造化 JSON/MD・transcripts"),
+        ("aragyoku", ["ekiden", "athlete_records"], "荒玉駅伝の構造化 JSON/MD・transcripts・winners-by-year"),
         ("analysis-ocr", ["ekiden", "athlete_records"], "分析 PDF の OCR（所属ランキング等）"),
+        ("out-analysis", ["ekiden", "athlete_records", "analysis"], "out/analysis の md/json（ペース分析・関係図など）"),
+        ("repo-docs", ["schema", "meta", "ai"], "docs/ 配下の Markdown（ADR・データモデル等）"),
         ("calendar", ["calendar", "practice"], "岱明フィルタ済み events.daiming.yaml"),
         ("practice", ["practice"], "練習 JSON / menus / absentees 抜粋"),
         ("sb", ["athlete_records"], "中学生 SB（岱明関連）"),

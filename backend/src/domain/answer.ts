@@ -1,5 +1,5 @@
 import { classifyScope, OUT_OF_SCOPE_MESSAGE } from "./scope.js";
-import { expandDateQuery, parseDateMentions } from "./dates.js";
+import { expandDateQuery, parseDateMentions, resolveRelativeYears } from "./dates.js";
 import { routeSources } from "./router.js";
 import type { LlmClient } from "./llm.js";
 import { buildSystemPrompt, buildUserPrompt } from "../rag/prompt.js";
@@ -72,6 +72,39 @@ function boostDateMeetSources(expandedQuery: string, baseSources: string[]): str
   return out;
 }
 
+/** Prefer year-specific aragyoku transcripts / OCR when asking about 荒玉・優勝・歴代. */
+function boostEkidenYearSources(
+  expandedQuery: string,
+  baseSources: string[],
+  defaultYear: number,
+): string[] {
+  const out: string[] = [];
+  const seen = new Set<string>();
+  const push = (s: string) => {
+    if (!s || seen.has(s)) return;
+    seen.add(s);
+    out.push(s);
+  };
+
+  const years = resolveRelativeYears(expandedQuery, defaultYear);
+  const ekidenish = /荒玉|aragyoku|駅伝|優勝|歴代|中体連/.test(expandedQuery);
+  if (ekidenish) {
+    push("aragyoku/winners-by-year.md");
+    for (const y of years) {
+      for (const g of ["男子", "女子"] as const) {
+        push(`aragyoku/transcripts/${y}-${g}.json`);
+        push(`aragyoku/ocr_raw/${y}-${g}.md`);
+        push(`ekiden-ocr/${y}-${g}.md`);
+      }
+    }
+    if (years.length === 0) {
+      push("aragyoku");
+    }
+  }
+  for (const s of baseSources) push(s);
+  return out;
+}
+
 function kgSuggestsInScope(kg: KgQueryResult): boolean {
   if (kg.matched_nodes.some((n) => n.score >= 4)) return true;
   if (
@@ -113,20 +146,22 @@ export async function answerQuestion(
 
   const route = deps.skipRouter
     ? {
-        sources: boostDateMeetSources(expanded, kg.corpus_sources).slice(
-          0,
-          DEFAULT_ROUTE_SOURCES,
-        ),
+        sources: boostEkidenYearSources(
+          expanded,
+          boostDateMeetSources(expanded, kg.corpus_sources),
+          year,
+        ).slice(0, DEFAULT_ROUTE_SOURCES),
         focus: question,
         reason: "skip_router",
         via: "fallback" as const,
       }
     : await routeSources(expanded, kg, deps.llm);
 
-  const preferredSources = boostDateMeetSources(expanded, route.sources).slice(
-    0,
-    DEFAULT_ROUTE_SOURCES,
-  );
+  const preferredSources = boostEkidenYearSources(
+    expanded,
+    boostDateMeetSources(expanded, route.sources),
+    year,
+  ).slice(0, DEFAULT_ROUTE_SOURCES);
 
   const fromSources = retrieveBySources(preferredSources, {
     query: expanded,

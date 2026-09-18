@@ -12,25 +12,28 @@ describe("classifyScope", () => {
     expect(d.kind).toBe("in_scope");
   });
 
-  it("refuses weather questions", () => {
+  it("accepts repo-wide questions without idaten keywords", () => {
+    expect(classifyScope("knowledge graph の用途は？").kind).toBe("in_scope");
+    expect(classifyScope("ADR 016 は何を決めた？").kind).toBe("in_scope");
+    expect(classifyScope("こんにちは").kind).toBe("in_scope");
+  });
+
+  it("refuses weather questions hard", () => {
     const d = classifyScope("今日の天気は？");
     expect(d.kind).toBe("out_of_scope");
     if (d.kind === "out_of_scope") {
+      expect(d.hard).toBe(true);
       expect(d.message).toBe(OUT_OF_SCOPE_MESSAGE);
     }
   });
 
-  it("refuses empty and unrelated", () => {
+  it("refuses empty", () => {
     expect(classifyScope("").kind).toBe("out_of_scope");
-    expect(classifyScope("こんにちは").kind).toBe("out_of_scope");
   });
 
   it("accepts bare date schedule questions", () => {
     const d = classifyScope("9/20の予定は？");
     expect(d.kind).toBe("in_scope");
-    if (d.kind === "in_scope") {
-      expect(d.reason === "date_question" || d.reason.startsWith("keyword:")).toBe(true);
-    }
   });
 
   it("accepts なごみ / 大会 keywords", () => {
