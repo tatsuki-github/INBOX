@@ -3,6 +3,11 @@
 import type { LlmClient } from "./llm.js";
 import type { KgQueryResult } from "../kg/query.js";
 import { isAllowedCorpusSource } from "../kg/mapRefs.js";
+import {
+  detectMeetKind,
+  isAragyokuCorpusSource,
+  meetResultPathBoost,
+} from "./meets.js";
 
 export type RouteDecision = {
   sources: string[];
@@ -19,7 +24,8 @@ function buildRouterSystemPrompt(): string {
     '{"sources":["corpus/相対パス"],"focus":"短い焦点","reason":"短い理由"}',
     "sources は候補に含まれるパスだけ。最大 12 件。",
     "日付質問なら calendar と該当大会フォルダを優先。",
-    "荒玉・優勝・歴代なら aragyoku/transcripts・aragyoku/winners-by-year.md・該当年の ekiden-ocr を優先（古い年の OCR を全部選ばない）。",
+    "ジュニア駅伝・なごみ・金栗など固有大会名があるときは drive-text/大会/ の該大会フォルダのみ選び、荒玉・aragyoku・ekiden-ocr は選ばない。",
+    "明示の荒玉・優勝・歴代なら aragyoku/transcripts・aragyoku/winners-by-year.md・該当年の ekiden-ocr を優先（古い年の OCR を全部選ばない）。",
     "抜け漏れ防止のため関連ソースを多めに選ぶ。",
   ].join("\n");
 }
@@ -67,12 +73,23 @@ function parseRouterJson(raw: string): { sources: string[]; focus: string; reaso
 
 function sourcePreferScore(source: string, question: string): number {
   const years = [...question.matchAll(/\b(20\d{2})\b/g)].map((m) => m[1]!);
+  const kind = detectMeetKind(question);
   let score = 0;
-  if (source.includes("winners-by-year")) score += 80;
-  if (source.startsWith("aragyoku/transcripts/")) score += 60;
-  if (source.startsWith("aragyoku/")) score += 40;
-  if (source === "aragyoku") score += 35;
-  if (/優勝|歴代|荒玉/.test(question) && source.startsWith("ekiden-ocr/")) score += 10;
+
+  if (kind === "junior" || kind === "nagomi" || kind === "other") {
+    if (isAragyokuCorpusSource(source)) score -= 80;
+    if (source.startsWith("drive-text/大会/")) score += 50;
+    score += meetResultPathBoost(source, question);
+    if (kind === "junior" && source.includes("ジュニア")) score += 70;
+    if (kind === "nagomi" && /なごみ|金栗/.test(source)) score += 70;
+  } else if (kind === "aragyoku") {
+    if (source.includes("winners-by-year")) score += 80;
+    if (source.startsWith("aragyoku/transcripts/")) score += 60;
+    if (source.startsWith("aragyoku/")) score += 40;
+    if (source === "aragyoku") score += 35;
+    if (/優勝|歴代|荒玉/.test(question) && source.startsWith("ekiden-ocr/")) score += 10;
+  }
+
   for (const y of years) {
     if (source.includes(y)) score += 50;
   }

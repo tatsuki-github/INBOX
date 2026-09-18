@@ -202,7 +202,19 @@ QUERY_HINTS: list[tuple[str, str, list[str]]] = [
     ),
     (
         "なごみ駅伝は？",
-        "drive-text/大会/*/0920_*なごみ* または 0921_*なごみ* の開催要項・結果を見る",
+        "drive-text/大会/*/0920_*なごみ* または 0921_*なごみ* の開催要項・結果を見る。荒玉・aragyoku は使わない",
+        ["topic:ekiden", "topic:calendar"],
+    ),
+    (
+        "ジュニア駅伝の結果は？",
+        "drive-text/大会/*/*ジュニア駅伝*/岱明の結果.md および 結果_*.pdf.md を見る。"
+        "荒玉・aragyoku・ekiden-ocr は別大会なので選ばない",
+        ["topic:ekiden", "topic:calendar"],
+    ),
+    (
+        "去年のジュニア駅伝の岱明の結果は？",
+        "相対年を西暦に展開し drive-text/大会/{year}年度/*ジュニア*/岱明の結果.md を優先。"
+        "荒玉優勝校・transcripts は使わない",
         ["topic:ekiden", "topic:calendar"],
     ),
     (
@@ -217,7 +229,7 @@ QUERY_HINTS: list[tuple[str, str, list[str]]] = [
     ),
     (
         "開催要項は？",
-        "drive-text/大会/ 各大会フォルダの開催要項.md を見る",
+        "drive-text/大会/ 各大会フォルダの開催要項.md を見る（大会名でフォルダを特定）",
         ["topic:ekiden"],
     ),
     (
@@ -227,7 +239,8 @@ QUERY_HINTS: list[tuple[str, str, list[str]]] = [
     ),
     (
         "オーダー・区間は？",
-        "荒玉戦略 Notion・分析 OCR・歴代 OCR を見る",
+        "荒玉の区間・オーダーなら荒玉戦略 Notion・分析 OCR・歴代 OCR。"
+        "ジュニア・なごみなら該大会フォルダのプログラム・結果を見る",
         ["topic:ekiden", "topic:athlete_records"],
     ),
 ]
@@ -557,7 +570,7 @@ def _register_idaten_corpus(
                     if p.is_file() and not p.name.endswith(".meta.json")
                 )
                 summary_bits: list[str] = []
-                for prefer in ("開催要項.md", "開催要項.pdf.md", "岱明の結果.md"):
+                for prefer in ("岱明の結果.md", "開催要項.md", "開催要項.pdf.md"):
                     cand = meet_dir / prefer
                     if cand.exists():
                         summary_bits.append(_peek_text_summary(cand, max_chars=140))
@@ -570,6 +583,13 @@ def _register_idaten_corpus(
                 m = re.match(r"^(\d{4})", name)
                 if m:
                     mmdd = m.group(1)
+                meet_topics = ["ekiden", "calendar"]
+                if "ジュニア" in name:
+                    meet_topics.append("junior_ekiden")
+                elif "なごみ" in name or "金栗" in name:
+                    meet_topics.append("nagomi")
+                elif "荒玉" in name or "中体連" in name:
+                    meet_topics.append("aragyoku")
                 hint = (
                     f"{year_label} 大会「{name}」。"
                     + (f"日付キー MMDD={mmdd}。" if mmdd else "")
@@ -577,7 +597,14 @@ def _register_idaten_corpus(
                     + (" 内容: " + " ".join(summary_bits) if summary_bits else "")
                 )
                 refs = [_rel(meet_dir)]
-                for f in files[:10]:
+                # Prefer result files early in refs for result-oriented Q&A
+                preferred_files = [
+                    f
+                    for f in files
+                    if f in ("岱明の結果.md",) or f.startswith("結果_")
+                ]
+                other_files = [f for f in files if f not in preferred_files]
+                for f in (preferred_files + other_files)[:12]:
                     refs.append(_rel(meet_dir / f))
                 mid = f"meet:{year_label}:{name[:48]}"
                 _add_node(
@@ -586,7 +613,7 @@ def _register_idaten_corpus(
                         mid,
                         "Entity",
                         name,
-                        topics=["ekiden", "calendar"],
+                        topics=meet_topics,
                         refs=refs,
                         hint=hint[:500],
                     ),

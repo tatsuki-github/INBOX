@@ -1,6 +1,13 @@
 import { classifyScope, OUT_OF_SCOPE_MESSAGE } from "./scope.js";
 import { expandDateQuery, parseDateMentions, resolveRelativeYears } from "./dates.js";
 import { matchCannedAnswer } from "./canned.js";
+import {
+  detectMeetKind,
+  isAragyokuCorpusSource,
+  meetDriveTokens,
+  meetResultPathBoost,
+  type MeetKind,
+} from "./meets.js";
 import { routeSources } from "./router.js";
 import type { LlmClient } from "./llm.js";
 import { buildSystemPrompt, buildUserPrompt, MISSING_INFO_MESSAGE } from "../rag/prompt.js";
@@ -73,8 +80,18 @@ function boostDateMeetSources(expandedQuery: string, baseSources: string[]): str
   return out;
 }
 
-/** Prefer year-specific aragyoku transcripts / OCR when asking about 荒玉・優勝・歴代. */
-function boostEkidenYearSources(
+function sortMeetDriveSources(sources: string[], query: string): string[] {
+  return [...sources].sort(
+    (a, b) => meetResultPathBoost(b, query) - meetResultPathBoost(a, query),
+  );
+}
+
+/**
+ * Meet-aware source boost.
+ * - 荒玉 / bare 駅伝 / 優勝・歴代 → aragyoku transcripts for resolved years
+ * - ジュニア / なごみ 等の固有大会 → drive-text の該大会のみ（荒玉を先頭に入れない）
+ */
+function boostMeetYearSources(
   expandedQuery: string,
   baseSources: string[],
   defaultYear: number,
@@ -87,9 +104,27 @@ function boostEkidenYearSources(
     out.push(s);
   };
 
+  const kind: MeetKind = detectMeetKind(expandedQuery);
   const years = resolveRelativeYears(expandedQuery, defaultYear);
-  const ekidenish = /荒玉|aragyoku|駅伝|優勝|歴代|中体連/.test(expandedQuery);
-  if (ekidenish) {
+  const driveTokens = meetDriveTokens(kind);
+
+  if (driveTokens.length > 0 && kind !== "aragyoku") {
+    const driveHits = sortMeetDriveSources(
+      findSourcesContaining(driveTokens, { prefix: "drive-text/大会/", limit: 16 }),
+      expandedQuery,
+    );
+    for (const s of driveHits) {
+      if (years.length === 0 || years.some((y) => s.includes(String(y)) || s.includes(`${y}年度`))) {
+        push(s);
+      }
+    }
+    // If year filter emptied the list (path uses 年度 folder), retry without year filter
+    if (out.length === 0) {
+      for (const s of driveHits) push(s);
+    }
+  }
+
+  if (kind === "aragyoku") {
     push("aragyoku/winners-by-year.md");
     for (const y of years) {
       for (const g of ["男子", "女子"] as const) {
@@ -102,7 +137,12 @@ function boostEkidenYearSources(
       push("aragyoku");
     }
   }
-  for (const s of baseSources) push(s);
+
+  const rest =
+    kind === "junior" || kind === "nagomi" || kind === "other"
+      ? baseSources.filter((s) => !isAragyokuCorpusSource(s))
+      : baseSources;
+  for (const s of rest) push(s);
   return out;
 }
 
@@ -156,7 +196,7 @@ export async function answerQuestion(
 
   const route = deps.skipRouter
     ? {
-        sources: boostEkidenYearSources(
+        sources: boostMeetYearSources(
           expanded,
           boostDateMeetSources(expanded, kg.corpus_sources),
           year,
@@ -167,7 +207,7 @@ export async function answerQuestion(
       }
     : await routeSources(expanded, kg, deps.llm);
 
-  const preferredSources = boostEkidenYearSources(
+  const preferredSources = boostMeetYearSources(
     expanded,
     boostDateMeetSources(expanded, route.sources),
     year,

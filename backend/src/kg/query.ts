@@ -119,6 +119,22 @@ function scoreNode(node: KgNode, qTokens: string[], query: string): number {
   if (/優勝|winner/.test(q) && /優勝|winner|rank|1位|transcript|aragyoku/.test(blob)) {
     score += 8;
   }
+  // Meet disambiguation: named meets must outrank generic 荒玉 / aragyoku hubs
+  if (/ジュニア/.test(q)) {
+    if (/ジュニア/.test(blob)) score += 22;
+    if (/aragyoku|荒玉|ekiden-ocr|winners-by-year/.test(blob) && !/ジュニア/.test(blob)) {
+      score -= 18;
+    }
+  }
+  if (/なごみ|金栗/.test(q)) {
+    if (/なごみ|金栗/.test(blob)) score += 22;
+    if (/aragyoku|荒玉|ekiden-ocr|winners-by-year/.test(blob) && !/なごみ|金栗/.test(blob)) {
+      score -= 18;
+    }
+  }
+  if (/荒玉|aragyoku|中体連/.test(q) && /荒玉|aragyoku|中体連|ekiden-ocr|winners/.test(blob)) {
+    score += 10;
+  }
   if (nodeType !== "Athlete" && nodeType !== "MediaAsset" && q && blob.includes(q)) score += 5;
   if (score <= 0) return 0;
   const boost: Record<string, number> = {
