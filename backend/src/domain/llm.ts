@@ -1,6 +1,7 @@
 import type { AppConfig } from "../config.js";
 
-export const GEMINI_MODEL = "gemini-2.5-flash-lite";
+/** Free-tier friendly; 2.5-flash-lite is blocked for new API keys (404). */
+export const GEMINI_MODEL = "gemini-3.5-flash-lite";
 
 export type LlmClient = {
   complete(system: string, user: string): Promise<string>;

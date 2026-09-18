@@ -57,7 +57,9 @@ export async function answerQuestion(
       buildUserPrompt(question, retrieved),
     );
     return { kind: "answered", text, sources };
-  } catch {
+  } catch (err) {
+    const msg = err instanceof Error ? err.message : String(err);
+    console.error("answerQuestion llm failed:", msg.slice(0, 300));
     return {
       kind: "error",
       text: "回答生成中にエラーが起きました。しばらくしてから、もう一度短い質問で試してください。",

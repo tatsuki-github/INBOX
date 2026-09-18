@@ -36,7 +36,7 @@ Webhook は `POST /webhook`。LINE 実機検証には [ngrok](https://ngrok.com/
 | `LINE_CHANNEL_SECRET` | 本番 | 署名検証 |
 | `LINE_CHANNEL_ACCESS_TOKEN` | 本番 | reply |
 | `AI_PROVIDER` | 任意 | **`gemini`（既定）** / `openai` / `anthropic` |
-| `GEMINI_API_KEY` | 任意 | Gemini Developer API（無料枠）。モデルは `gemini-2.5-flash-lite` |
+| `GEMINI_API_KEY` | 任意 | Gemini Developer API（無料枠）。モデルは `gemini-3.5-flash-lite` |
 | `OPENAI_API_KEY` / `ANTHROPIC_API_KEY` | 任意 | 他プロバイダ切替時。未設定時はコーパス抜粋のオフライン回答 |
 | `PORT` | 任意 | ローカル listen（既定 3001） |
 
