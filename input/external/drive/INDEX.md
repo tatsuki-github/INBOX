@@ -35,6 +35,7 @@ Snapshot under `input/external/drive/` (ADR 010). Drive remains source of truth.
 
 ### 練習
 - `shared/練習/玉名市練習会/2025-12-30.md` — **imported**
+- `shared/練習/玉名市練習会/2026-09-22.md` — 夏季練習会＆BBQ（公式 tamariku）
 - `shared/練習/練習の記録.csv` — **imported**
 - `shared/練習/練習の記録.md` — **imported**
 - `shared/練習/駅伝試走/2025.pdf.md` — **?**
