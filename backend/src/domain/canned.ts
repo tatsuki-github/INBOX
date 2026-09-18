@@ -15,6 +15,8 @@ export type CannedAnswer = {
 export function isAragyokuCourseVideoQuestion(question: string): boolean {
   const q = question.trim();
   if (!q) return false;
+  // ジュニア・なごみ等は荒玉コース動画の確定回答にしない
+  if (/ジュニア|なごみ|金栗/.test(q)) return false;
   const hasVideo = /動画|映像|ビデオ|ムービー|movie|video/i.test(q);
   const hasCourse = /コース|コース図|ルート|地図|course/i.test(q);
   if (hasCourse && hasVideo) return true;

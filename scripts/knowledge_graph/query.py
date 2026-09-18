@@ -75,6 +75,23 @@ def _score_node(node: dict[str, Any], q_tokens: list[str], query: str) -> float:
             score += 2.0 if len(tok) >= 2 else 0.5
     if node_type != "Athlete" and q and q in blob:
         score += 5.0
+    # Meet disambiguation (keep in sync with backend/src/kg/query.ts)
+    if "ジュニア" in q:
+        if "ジュニア" in blob:
+            score += 22.0
+        if any(x in blob for x in ("aragyoku", "荒玉", "ekiden-ocr", "winners-by-year")) and "ジュニア" not in blob:
+            score -= 18.0
+    if "なごみ" in q or "金栗" in q:
+        if "なごみ" in blob or "金栗" in blob:
+            score += 22.0
+        if any(x in blob for x in ("aragyoku", "荒玉", "ekiden-ocr", "winners-by-year")) and not (
+            "なごみ" in blob or "金栗" in blob
+        ):
+            score -= 18.0
+    if any(x in q for x in ("荒玉", "aragyoku", "中体連")) and any(
+        x in blob for x in ("荒玉", "aragyoku", "中体連", "ekiden-ocr", "winners")
+    ):
+        score += 10.0
     if score <= 0:
         return 0.0
     boost = {

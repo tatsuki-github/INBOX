@@ -14,6 +14,8 @@ describe("canned aragyoku course videos", () => {
     expect(isAragyokuCourseVideoQuestion("駅伝のコース映像を見たい")).toBe(true);
     expect(isAragyokuCourseVideoQuestion("去年の優勝校は？")).toBe(false);
     expect(isAragyokuCourseVideoQuestion("荒玉駅伝で岱明は何位？")).toBe(false);
+    expect(isAragyokuCourseVideoQuestion("ジュニア駅伝のコース動画は？")).toBe(false);
+    expect(isAragyokuCourseVideoQuestion("なごみ駅伝のコース映像")).toBe(false);
   });
 
   it("returns the Drive folder URL", () => {

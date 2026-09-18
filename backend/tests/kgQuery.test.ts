@@ -23,4 +23,16 @@ describe("queryKnowledgeGraph", () => {
         result.corpus_sources.some((s) => s.includes("ekiden") || s.includes("aragyoku")),
     ).toBe(true);
   });
+
+  it("prefers junior meet nodes over aragyoku for ジュニア駅伝", () => {
+    resetKgCache();
+    const expanded = expandDateQuery("去年のジュニア駅伝の岱明の結果は？", 2026);
+    const result = queryKnowledgeGraph(expanded, { kgPath });
+    expect(result.matched_nodes.some((n) => /ジュニア/.test(n.label) || /ジュニア/.test(n.hint))).toBe(
+      true,
+    );
+    expect(
+      result.corpus_sources.some((s) => s.includes("ジュニア") && s.includes("岱明の結果")),
+    ).toBe(true);
+  });
 });

@@ -159,6 +159,50 @@ describe("answerQuestion", () => {
     }
   });
 
+  it("does not return 荒玉 sources for 去年のジュニア駅伝の岱明の結果", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    let userPrompt = "";
+    const result = await answerQuestion("去年のジュニア駅伝の岱明の結果は？", {
+      skipRouter: true,
+      defaultYear: 2026,
+      llm: {
+        complete: async (_sys, user) => {
+          userPrompt = user;
+          return "女子・男子ともチャレンジ優勝です。";
+        },
+      },
+    });
+    expect(result.kind).toBe("answered");
+    if (result.kind === "answered") {
+      expect(result.sources.some((s) => s.includes("ジュニア"))).toBe(true);
+      expect(result.sources.some((s) => s.includes("岱明の結果"))).toBe(true);
+      expect(result.sources.every((s) => !s.startsWith("aragyoku/") && s !== "aragyoku")).toBe(
+        true,
+      );
+      expect(result.sources.every((s) => !s.startsWith("ekiden-ocr/"))).toBe(true);
+    }
+    expect(userPrompt).toMatch(/ジュニア|チャレンジ|36分47秒|45分07秒/);
+    expect(userPrompt).not.toMatch(/winners-by-year|荒玉中体連/);
+  });
+
+  it("does not boost aragyoku for なごみ駅伝 questions", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("なごみ駅伝の開催要項は？", {
+      skipRouter: true,
+      defaultYear: 2026,
+      llm: null,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.sources.some((s) => /なごみ|金栗/.test(s) || s.includes("calendar"))).toBe(
+        true,
+      );
+      expect(result.sources.every((s) => !s.startsWith("aragyoku/transcripts/"))).toBe(true);
+    }
+  });
+
   it("offline empty retrieval tells user to ask the coach", async () => {
     const result = await answerQuestion("存在しない架空の大会XYZの詳細は？", {
       retrieve: () => [],
