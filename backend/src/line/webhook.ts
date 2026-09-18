@@ -1,6 +1,7 @@
 import type { messagingApi } from "@line/bot-sdk";
 import { answerQuestion, type AnswerDeps } from "../domain/answer.js";
 import { NON_TEXT_GUIDANCE, splitLineText } from "./reply.js";
+import { formatForLine } from "./format.js";
 
 export type LineEvent = {
   type: string;
@@ -43,7 +44,7 @@ export async function handleWebhookEvents(
         result.kind === "error"
           ? result.text
           : NON_TEXT_GUIDANCE;
-      const parts = splitLineText(text).slice(0, 5);
+      const parts = splitLineText(formatForLine(text)).slice(0, 5);
       await replyClient.replyMessage({
         replyToken: event.replyToken,
         messages: parts.map((t) => ({ type: "text", text: t })),

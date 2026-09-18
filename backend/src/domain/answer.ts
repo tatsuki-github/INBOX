@@ -3,6 +3,7 @@ import { expandDateQuery, parseDateMentions } from "./dates.js";
 import { routeSources } from "./router.js";
 import type { LlmClient } from "./llm.js";
 import { buildSystemPrompt, buildUserPrompt } from "../rag/prompt.js";
+import { formatForLine } from "../line/format.js";
 import {
   findSourcesContaining,
   mergeRetrieved,
@@ -31,21 +32,16 @@ export type AnswerDeps = {
 };
 
 function offlineAnswer(question: string, retrieved: RetrievedChunk[]): string {
-  const lines = [
-    "（オフライン回答 — LLM 未設定）",
-    "",
-    `Q: ${question}`,
-    "",
-    "関連コーパス:",
-  ];
-  for (const [i, r] of retrieved.entries()) {
-    const preview = r.chunk.text.replace(/\s+/g, " ").slice(0, 280);
-    lines.push(`${i + 1}. [${r.chunk.source}] ${preview}`);
-  }
+  const lines = ["（オフライン回答）", "", `Q: ${question}`, ""];
   if (retrieved.length === 0) {
-    lines.push("(ヒットなし)");
+    lines.push("コーパスに情報がありません。");
+  } else {
+    for (const [i, r] of retrieved.entries()) {
+      const preview = r.chunk.text.replace(/\s+/g, " ").slice(0, 280);
+      lines.push(`${i + 1}. ${preview}`);
+    }
   }
-  return lines.join("\n");
+  return formatForLine(lines.join("\n"));
 }
 
 function boostDateMeetSources(expandedQuery: string, baseSources: string[]): string[] {
@@ -124,7 +120,7 @@ export async function answerQuestion(
       buildSystemPrompt(),
       buildUserPrompt(question + focusNote, merged),
     );
-    return { kind: "answered", text, sources };
+    return { kind: "answered", text: formatForLine(text), sources };
   } catch (err) {
     const msg = err instanceof Error ? err.message : String(err);
     console.error("answerQuestion llm failed:", msg.slice(0, 300));

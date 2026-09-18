@@ -49,6 +49,7 @@ describe("answerQuestion", () => {
     expect(result.kind).toBe("offline");
     if (result.kind === "offline") {
       expect(result.text).toContain("オフライン");
+      expect(result.text).not.toMatch(/ekiden-ocr|calendar\/|\.yaml|\.md/);
     }
   });
 
@@ -105,8 +106,32 @@ describe("answerQuestion", () => {
     });
     expect(result.kind).toBe("answered");
     expect(userPrompt).toMatch(/なごみ/);
+    expect(userPrompt).not.toMatch(/source=/);
     if (result.kind === "answered") {
       expect(result.text).toMatch(/なごみ/);
+    }
+  });
+
+  it("formats llm markdown and strips source footers", async () => {
+    const result = await answerQuestion("荒玉駅伝で岱明は何位？", {
+      retrieve: fakeRetrieve,
+      skipRouter: true,
+      kgQuery: () => ({
+        question: "x",
+        matched_nodes: [],
+        refs: [],
+        corpus_sources: ["ekiden-ocr/2024-男子.md"],
+      }),
+      llm: {
+        complete: async () =>
+          "**岱明は3位**です。\n\n根拠: ekiden-ocr/2024-男子.md",
+      },
+    });
+    expect(result.kind).toBe("answered");
+    if (result.kind === "answered") {
+      expect(result.text).toContain("岱明は3位");
+      expect(result.text).not.toContain("**");
+      expect(result.text).not.toMatch(/根拠|ekiden-ocr|\.md/);
     }
   });
 });
