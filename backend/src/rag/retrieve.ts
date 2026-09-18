@@ -405,10 +405,33 @@ function pathQueryBonus(source: string, query: string): number {
   }
   if (/荒尾|玉名|金栗PROJECT|アスリーツ|所属別/.test(q) && /arato-tamana-teams/.test(s)) bonus += 100;
   if (
-    /岱明|いだてん|銀マット|合同練習|おおはま|三加和|朝練|ナイター|和水|有田|補強|手押し車|分割走|厚底/.test(q) &&
+    /岱明|いだてん|銀マット|合同練習|おおはま|三加和|朝練|ナイター|和水|有田|補強|手押し車|犬歩き|分割走|厚底|地点分担|地点|土山コーチ|柴尾|曜日|集合時間|タイム目安|43分|区間配分|2\.855|2区.*5区|5区.*2区|お別れ会|金栗駅伝|走り納め|体育館前|補強メニュー/.test(
+      q,
+    ) &&
     /line-chats/.test(s)
   ) {
     bonus += 130;
+  }
+  // Ops / coaching LINE beats generic 荒玉 overview when both match
+  if (
+    /地点分担|朝練|銀マット|タイム目安|43分|区間配分|有田|補強|手押し車|犬歩き|2区.*5区|5区.*2区|補強メニュー/.test(
+      q,
+    ) &&
+    /line-chats/.test(s)
+  ) {
+    bonus += 100;
+  }
+  if (/arita-taisho/.test(s) && /有田|補強|手押し車|犬歩き|補強メニュー|43分|タイム目安/.test(q)) {
+    bonus += 120;
+  }
+  if (/daiming-staff/.test(s) && /地点|朝練|2区|5区|2\.855|曜日|7:20/.test(q)) {
+    bonus += 120;
+  }
+  if (
+    /地点分担|タイム目安|43分切り|区間配分イメージ|有田|補強メニュー|2区.*5区|5区.*2区/.test(q) &&
+    /aragyoku-overview|aragyoku-ekiden-distance|average_pace|course-videos|quiz/.test(s)
+  ) {
+    bonus -= 100;
   }
   if ((s.startsWith("sb/") || s.includes("中学生SB")) && /自己ベスト|\bSB\b|\bPB\b|\d+\s*m/.test(q)) {
     bonus += 60;
@@ -430,6 +453,14 @@ function pathQueryPenalty(source: string, query: string): number {
   if (/ジュニア|なごみ|金栗/.test(q) && (/aragyoku|ekiden-ocr/.test(source))) {
     return -100;
   }
+  if (
+    /地点分担|タイム目安|43分|区間配分|有田|補強メニュー|2区.*5区|5区.*2区/.test(q) &&
+    /aragyoku-overview|aragyoku-ekiden-distance|average_pace|course-videos|aragyoku\/quiz/.test(
+      source,
+    )
+  ) {
+    return -120;
+  }
   return 0;
 }
 
@@ -437,6 +468,22 @@ function pathQueryPenalty(source: string, query: string): number {
 function isBlockedCorpusForQuery(source: string, query: string): boolean {
   if (!query) return false;
   const q = query.normalize("NFKC");
+  // LINE ops / coaching digests beat generic 荒玉 overview noise
+  if (
+    /地点分担|タイム目安|43分|区間配分|有田先輩|有田大将|補強メニュー|手押し車|犬歩き|メンタル|楽しさ|本気度|2区.*5区|5区.*2区/.test(
+      q,
+    ) &&
+    (/aragyoku-overview|aragyoku-ekiden-distance|average_pace|course-videos|aragyoku\/quiz|winners-by-year|aragyoku\/transcripts|aragyoku\/ocr|ekiden-ocr|out-analysis\/aragyoku|aragyoku-teams/.test(
+      source,
+    ) ||
+      (/有田先輩|有田大将|補強メニュー|手押し車|犬歩き|メンタル|楽しさ|本気度/.test(q) &&
+        !/line-chats/.test(source) &&
+        /aragyoku|ekiden-ocr|drive-text\/大会|drive-text\/記録|calendar|events\.daiming|repo-docs|docs\/|practice\/|daiming-practice|sb\//.test(
+          source,
+        )))
+  ) {
+    return true;
+  }
   if (!(/ジュニア|なごみ|金栗/.test(q) && !/荒玉|aragyoku|中体連/.test(q))) {
     return false;
   }

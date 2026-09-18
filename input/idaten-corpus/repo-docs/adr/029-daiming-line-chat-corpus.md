@@ -31,8 +31,10 @@
 
 - 代表質問「岱明の銀マットのサイズは？」→ `line-chats` 抜粋（180cm 等）
 - 「有田の補強・分割走」→ `arita-taisho.md`
+- 評価バンク `backend/data/eval-line/` で **46/46 PASS**（2026-09-18）
 - Vitest / pytest で ingest・answer 回帰
 
 ## 関連
 
 - ADR 015（LINE Q&A）、016（KG）、028（荒玉概要）
+- `backend/scripts/eval-line/run.ts`

@@ -30,6 +30,8 @@ function buildRouterSystemPrompt(): string {
     "荒玉の距離・ペース・区間コース質問なら out-analysis/aragyoku-overview.md と docs/aragyoku-ekiden-distance-definitions.md を最優先。",
     "岱明の銀マット・合同練習会・集合場所・朝練・保護者連絡なら out-analysis/line-chats を優先。",
     "有田・補強・分割走・厚底・荒玉準備の指導相談なら out-analysis/line-chats/arita-taisho.md を優先。",
+    "地点分担・朝練曜日・7:20集合など指導者LINE運用は out-analysis/line-chats/daiming-staff.md を優先（荒玉 overview より先）。",
+    "女子43分切り・区間配分イメージ（有田メモ）は arita-taisho.md。歴代結果板と混同しない。",
     "荒尾玉名の所属・トラック記録なら out-analysis/arato-tamana-teams と sb/ を優先。",
     "抜け漏れ防止のため関連ソースを多めに選ぶ。",
   ].join("\n");

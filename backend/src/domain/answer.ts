@@ -71,7 +71,25 @@ function previewForOffline(text: string, question: string, maxChars = 320): stri
       return flat.slice(start, end);
     }
   }
-  // Bare M月D日 → try zero-padded MMDD in ISO-like form already expanded into question
+  // Prefer a window around query keywords (LINE FAQ / coaching digests)
+  const needles = [
+    ...(question.match(
+      /手押し車|犬歩き|分割走|ビルド|ペーラン|楽しさ|本気度|43分|2\.855|7:20|銀マット|地点|補強|厚底|ヴェイパー|メンタル|掛け算/g,
+    ) ?? []),
+    ...((question.match(/[\u3040-\u30ff\u3400-\u9fff]{2,8}/g) ?? []).filter(
+      (t) => t.length >= 2 && !/^(先輩|教えて|ください|どう|なに|何|は|を|の|が)$/.test(t),
+    )),
+  ];
+  let bestIdx = -1;
+  for (const n of needles) {
+    const idx = flat.indexOf(n);
+    if (idx >= 0 && (bestIdx < 0 || idx < bestIdx)) bestIdx = idx;
+  }
+  if (bestIdx >= 0) {
+    const start = Math.max(0, bestIdx - 80);
+    const end = Math.min(flat.length, start + maxChars);
+    return flat.slice(start, end);
+  }
   return flat.slice(0, maxChars);
 }
 
@@ -122,6 +140,15 @@ function sortMeetDriveSources(sources: string[], query: string): string[] {
 
 /** Prefer SB / 記録データベース sources for athlete-record questions. */
 function boostAthleteRecordSources(query: string, baseSources: string[]): string[] {
+  // 有田先輩＝指導相談。選手「有田」の SB/歴代と混同しない
+  if (/有田先輩|有田大将|補強メニュー|手押し車|犬歩き|メンタル|楽しさ|本気度/.test(query)) {
+    return baseSources.filter(
+      (s) =>
+        !/sb\/|記録データベース|3000m予想|aragyoku|ekiden-ocr|practice\/|daiming-practice/.test(
+          s,
+        ),
+    );
+  }
   if (
     !/自己ベスト|ベストタイム|自己記録|\bSB\b|\bPB\b|ベスト記録|記録|タイム|何分|何秒|800m?|1500m?|3000m?|5000m?|荒尾|玉名|所属|チーム|金栗|岱明|南関|天水|長洲|ATRC|アスリーツ/.test(
       query,
@@ -155,13 +182,14 @@ function boostAthleteRecordSources(query: string, baseSources: string[]): string
   return out;
 }
 
-/** Prefer LINE ops digests for 岱明の連絡・集合・マット等. */
+/** Prefer LINE ops digests for 岱明の連絡・集合・マット・朝練・地点分担・有田指導など. */
 function boostDaimingLineSources(query: string, baseSources: string[]): string[] {
-    if (
-    !/岱明|いだてん|銀マット|合同練習|おおはま|三加和|朝練|ナイター|保護者LINE|和水町|有田|補強|手押し車|分割走|厚底|ヴェイパー/.test(
-      query,
-    )
-  ) {
+  const q = query.normalize("NFKC");
+  const lineOps =
+    /岱明|いだてん|銀マット|合同練習|おおはま|三加和|朝練|ナイター|保護者LINE|和水|有田|補強|手押し車|犬歩き|分割走|厚底|ヴェイパー|地点分担|地点|土山コーチ|柴尾|曜日|集合時間|タイム目安|43分|区間配分|補強メニュー|2\.855|2区.*5区|5区.*2区|お別れ会|金栗駅伝|走り納め|体育館前|楽しさ|本気度/.test(
+      q,
+    );
+  if (!lineOps) {
     return baseSources;
   }
   const out: string[] = [];
@@ -171,6 +199,16 @@ function boostDaimingLineSources(query: string, baseSources: string[]): string[]
     seen.add(s);
     out.push(s);
   };
+  // Specific digests first so 荒玉 preferred に埋もれない
+  if (/有田|補強|手押し車|犬歩き|分割走|厚底|ヴェイパー|タイム目安|43分|区間配分|走り納め|楽しさ|本気度|体育館前|2区.*5区|5区.*2区/.test(q)) {
+    push("out-analysis/line-chats/arita-taisho.md");
+  }
+  if (/朝練|曜日|地点分担|地点|土山コーチ|柴尾|2\.855|2区.*5区|5区.*2区|お別れ会|金栗駅伝|7:20|7時20/.test(q)) {
+    push("out-analysis/line-chats/daiming-staff.md");
+  }
+  if (/銀マット|合同練習|おおはま|三加和|和水|保護者|会費|玉名選手権|地震/.test(q)) {
+    push("out-analysis/line-chats/daiming-parents.md");
+  }
   push("out-analysis/line-chats");
   for (const s of baseSources) push(s);
   return out;
@@ -215,8 +253,13 @@ function boostMeetYearSources(
   }
 
   if (kind === "aragyoku") {
+    const lineOpsPrefer =
+      /地点分担|タイム目安|43分|区間配分|有田|補強|朝練|銀マット|手押し車|犬歩き|2区.*5区|5区.*2区|2\.855/.test(
+        expandedQuery,
+      );
     const courseMeta =
-      /ペース|距離|区間|コース|\/km|分でいく|分で走/.test(expandedQuery);
+      /ペース|距離|区間|コース|\/km|分でいく|分で走/.test(expandedQuery) &&
+      !lineOpsPrefer;
     if (courseMeta) {
       // 概要・距離定義を先頭に（区間ペース質問で結果板ノイズに埋もれないように）
       push("out-analysis/aragyoku-overview.md");
@@ -224,18 +267,20 @@ function boostMeetYearSources(
       push("out-analysis/aragyoku_top6_historical_average_pace.md");
       push("aragyoku/course-videos.md");
     }
-    push("out-analysis/aragyoku-teams");
-    push("aragyoku/winners-by-year.md");
-    for (const y of years) {
-      for (const g of ["男子", "女子"] as const) {
-        push(`aragyoku/transcripts/${y}-${g}.json`);
-        push(`aragyoku/ocr_raw/${y}-${g}.md`);
-        push(`ekiden-ocr/${y}-${g}.md`);
-      }
-    }
-    if (years.length === 0 && !courseMeta) {
-      push("aragyoku");
+    if (!lineOpsPrefer) {
       push("out-analysis/aragyoku-teams");
+      push("aragyoku/winners-by-year.md");
+      for (const y of years) {
+        for (const g of ["男子", "女子"] as const) {
+          push(`aragyoku/transcripts/${y}-${g}.json`);
+          push(`aragyoku/ocr_raw/${y}-${g}.md`);
+          push(`ekiden-ocr/${y}-${g}.md`);
+        }
+      }
+      if (years.length === 0 && !courseMeta) {
+        push("aragyoku");
+        push("out-analysis/aragyoku-teams");
+      }
     }
   }
 
@@ -243,7 +288,21 @@ function boostMeetYearSources(
     kind === "junior" || kind === "nagomi" || kind === "other"
       ? baseSources.filter((s) => !isAragyokuCorpusSource(s))
       : baseSources;
-  for (const s of rest) push(s);
+  const lineOpsPreferRest =
+    /地点分担|タイム目安|43分|区間配分|有田|補強|朝練|銀マット|手押し車|犬歩き|2区.*5区|5区.*2区|2\.855/.test(
+      expandedQuery,
+    );
+  for (const s of rest) {
+    if (
+      lineOpsPreferRest &&
+      /aragyoku-overview|aragyoku-ekiden-distance|average_pace|course-videos|aragyoku\/quiz|winners-by-year|aragyoku\/transcripts|ekiden-ocr/.test(
+        s,
+      )
+    ) {
+      continue;
+    }
+    push(s);
+  }
   return out;
 }
 

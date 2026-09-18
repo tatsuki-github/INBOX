@@ -1,0 +1,892 @@
+{
+  "version": 1,
+  "total": 46,
+  "unique": 46,
+  "defaultYear": 2026,
+  "note": "LINE line-chats (parents/staff/arita) uncovered questions",
+  "rounds": [
+    {
+      "id": 1,
+      "theme": "parents-ops",
+      "questions": [
+        {
+          "id": "p01",
+          "q": "岱明の銀マットの長さは？",
+          "expect": {
+            "kinds": [
+              "answered"
+            ],
+            "any_of": [
+              "180cm",
+              "180"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "line-chats"
+            ]
+          }
+        },
+        {
+          "id": "p02",
+          "q": "銀マットの幅は何cmでもいい？",
+          "expect": {
+            "kinds": [
+              "answered"
+            ],
+            "any_of": [
+              "60cm",
+              "60"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "line-chats"
+            ]
+          }
+        },
+        {
+          "id": "p03",
+          "q": "9月22日の玉名市合同練習会の集合場所は？",
+          "expect": {
+            "kinds": [
+              "answered"
+            ],
+            "any_of": [
+              "おおはま",
+              "ふれあいセンター"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "line-chats"
+            ]
+          }
+        },
+        {
+          "id": "p04",
+          "q": "合同練習会の集合時間は？",
+          "expect": {
+            "kinds": [
+              "answered"
+            ],
+            "any_of": [
+              "8時",
+              "午前8"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "line-chats"
+            ]
+          }
+        },
+        {
+          "id": "p05",
+          "q": "なごみ駅伝の集合はどこ？",
+          "expect": {
+            "kinds": [
+              "answered"
+            ],
+            "any_of": [
+              "三加和",
+              "和水"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "line-chats"
+            ]
+          }
+        },
+        {
+          "id": "p06",
+          "q": "玉名選手権はどうなった？",
+          "expect": {
+            "kinds": [
+              "answered"
+            ],
+            "any_of": [
+              "中止"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "line-chats"
+            ]
+          }
+        },
+        {
+          "id": "p07",
+          "q": "合同練習会の会費は？",
+          "expect": {
+            "kinds": [
+              "answered"
+            ],
+            "any_of": [
+              "1000",
+              "2000"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "line-chats"
+            ]
+          }
+        },
+        {
+          "id": "p08",
+          "q": "銀マットの厚みの例は？",
+          "expect": {
+            "kinds": [
+              "answered"
+            ],
+            "any_of": [
+              "15mm",
+              "15"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "line-chats"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "theme": "staff-ops",
+      "questions": [
+        {
+          "id": "s01",
+          "q": "荒玉駅伝の地点分担で土山コーチはどこ？",
+          "expect": {
+            "kinds": [
+              "answered"
+            ],
+            "any_of": [
+              "D地点",
+              "D"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "line-chats"
+            ]
+          }
+        },
+        {
+          "id": "s02",
+          "q": "荒玉の2区と5区の距離は？",
+          "expect": {
+            "kinds": [
+              "answered"
+            ],
+            "any_of": [
+              "2.855"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "line-chats"
+            ]
+          }
+        },
+        {
+          "id": "s03",
+          "q": "岱明の朝練は何曜日？",
+          "expect": {
+            "kinds": [
+              "answered"
+            ],
+            "any_of": [
+              "月・火・木・金",
+              "月火木金",
+              "月・火・木"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "line-chats"
+            ]
+          }
+        },
+        {
+          "id": "s04",
+          "q": "朝練の集合時間は？",
+          "expect": {
+            "kinds": [
+              "answered"
+            ],
+            "any_of": [
+              "7:20",
+              "7時20"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "line-chats"
+            ]
+          }
+        },
+        {
+          "id": "s05",
+          "q": "金栗駅伝はいつ？",
+          "expect": {
+            "kinds": [
+              "answered"
+            ],
+            "any_of": [
+              "2026-03-15",
+              "3/15",
+              "3月15"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "line-chats"
+            ]
+          }
+        },
+        {
+          "id": "s06",
+          "q": "荒玉で柴尾さんの地点分担は？",
+          "expect": {
+            "kinds": [
+              "answered"
+            ],
+            "any_of": [
+              "A地点",
+              "E地点"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "line-chats"
+            ]
+          }
+        },
+        {
+          "id": "s07",
+          "q": "ジュニア駅伝で今村くんは出られる？",
+          "expect": {
+            "kinds": [
+              "answered"
+            ],
+            "any_of": [
+              "参加可能",
+              "ATRC",
+              "今村"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "line-chats"
+            ]
+          }
+        },
+        {
+          "id": "s08",
+          "q": "3年生お別れ会はいつ？",
+          "expect": {
+            "kinds": [
+              "answered"
+            ],
+            "any_of": [
+              "3/15",
+              "12:30",
+              "お別れ会"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "line-chats"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "theme": "arita-coaching",
+      "questions": [
+        {
+          "id": "a01",
+          "q": "有田先輩が勧める夏のメニュー方針は？",
+          "expect": {
+            "kinds": [
+              "answered"
+            ],
+            "any_of": [
+              "分割走",
+              "ビルド",
+              "ペーラン"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "arita-taisho",
+              "line-chats"
+            ]
+          }
+        },
+        {
+          "id": "a02",
+          "q": "有田先輩の補強メニューは何？",
+          "expect": {
+            "kinds": [
+              "answered"
+            ],
+            "any_of": [
+              "手押し車",
+              "犬歩き"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "arita-taisho"
+            ]
+          }
+        },
+        {
+          "id": "a03",
+          "q": "600mインターバルは慣れてきても何mまで？",
+          "expect": {
+            "kinds": [
+              "answered"
+            ],
+            "any_of": [
+              "800"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "arita-taisho",
+              "line-chats"
+            ]
+          }
+        },
+        {
+          "id": "a04",
+          "q": "有田先輩のメンタルの掛け算は？",
+          "expect": {
+            "kinds": [
+              "answered"
+            ],
+            "any_of": [
+              "楽しさ",
+              "本気度"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "arita-taisho"
+            ]
+          }
+        },
+        {
+          "id": "a05",
+          "q": "女子荒玉の総合タイム目安は？",
+          "expect": {
+            "kinds": [
+              "answered"
+            ],
+            "any_of": [
+              "43分",
+              "43.00",
+              "10:30"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "arita-taisho",
+              "line-chats"
+            ]
+          }
+        },
+        {
+          "id": "a06",
+          "q": "大晦日の試走集合はどこ？",
+          "expect": {
+            "kinds": [
+              "answered"
+            ],
+            "any_of": [
+              "体育館前",
+              "BG",
+              "8時"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "arita-taisho",
+              "line-chats"
+            ]
+          }
+        },
+        {
+          "id": "a07",
+          "q": "有田先輩の厚底シューズの考え方は？",
+          "expect": {
+            "kinds": [
+              "answered"
+            ],
+            "any_of": [
+              "故障予防",
+              "厚底",
+              "ヴェイパー"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "arita-taisho"
+            ]
+          }
+        },
+        {
+          "id": "a08",
+          "q": "駅伝メンバー目安のトラック距離は男女で？",
+          "expect": {
+            "kinds": [
+              "answered"
+            ],
+            "any_of": [
+              "1500",
+              "2000"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "arita-taisho",
+              "line-chats"
+            ]
+          }
+        },
+        {
+          "id": "a09",
+          "q": "女子の3km換算は1500からどうする？",
+          "expect": {
+            "kinds": [
+              "answered"
+            ],
+            "any_of": [
+              "2倍",
+              "＋30",
+              "+30",
+              "30秒"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "arita-taisho"
+            ]
+          }
+        },
+        {
+          "id": "a10",
+          "q": "雨の日に走れない時の有田流は？",
+          "expect": {
+            "kinds": [
+              "answered"
+            ],
+            "any_of": [
+              "タバタ",
+              "補強"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "arita-taisho"
+            ]
+          }
+        },
+        {
+          "id": "a11",
+          "q": "有田大将は岱明の指導にどう関わる？",
+          "expect": {
+            "kinds": [
+              "answered"
+            ],
+            "any_of": [
+              "ゆくゆく",
+              "指導",
+              "24時間"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "arita-taisho"
+            ]
+          }
+        },
+        {
+          "id": "a12",
+          "q": "9/22合同練習会に岱明は何人くらい参加予定？",
+          "expect": {
+            "kinds": [
+              "answered"
+            ],
+            "any_of": [
+              "14",
+              "ほぼ全員",
+              "女子7"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "arita-taisho",
+              "line-chats"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "theme": "phrasing-traps",
+      "questions": [
+        {
+          "id": "t01",
+          "q": "保護者LINEで銀マットのサイズ教えて",
+          "expect": {
+            "kinds": [
+              "answered"
+            ],
+            "any_of": [
+              "180"
+            ],
+            "sources_any": [
+              "line-chats"
+            ]
+          }
+        },
+        {
+          "id": "t02",
+          "q": "和水のなごみは何時集合？",
+          "expect": {
+            "kinds": [
+              "answered"
+            ],
+            "any_of": [
+              "7時",
+              "三加和"
+            ],
+            "sources_any": [
+              "line-chats"
+            ]
+          }
+        },
+        {
+          "id": "t03",
+          "q": "いだてんの朝練は週何回？",
+          "expect": {
+            "kinds": [
+              "answered"
+            ],
+            "any_of": [
+              "月",
+              "火",
+              "木",
+              "金",
+              "4"
+            ],
+            "sources_any": [
+              "line-chats"
+            ]
+          }
+        },
+        {
+          "id": "t04",
+          "q": "有田さんの手押し車って何のため？",
+          "expect": {
+            "kinds": [
+              "answered"
+            ],
+            "any_of": [
+              "体幹",
+              "可動域",
+              "手押し車"
+            ],
+            "sources_any": [
+              "arita-taisho"
+            ]
+          }
+        },
+        {
+          "id": "t05",
+          "q": "荒玉女子43分切りの区間配分イメージは？",
+          "expect": {
+            "kinds": [
+              "answered"
+            ],
+            "any_of": [
+              "10:30",
+              "6:50",
+              "7:20",
+              "11:00"
+            ],
+            "sources_any": [
+              "arita-taisho"
+            ]
+          }
+        },
+        {
+          "id": "t06",
+          "q": "おおはまの合同練習会って会費いくら？",
+          "expect": {
+            "kinds": [
+              "answered"
+            ],
+            "any_of": [
+              "1000",
+              "2000"
+            ],
+            "sources_any": [
+              "line-chats"
+            ]
+          }
+        },
+        {
+          "id": "t07",
+          "q": "地震のあと朝練どうなった？",
+          "expect": {
+            "kinds": [
+              "answered"
+            ],
+            "any_of": [
+              "中止",
+              "朝練"
+            ],
+            "sources_any": [
+              "line-chats"
+            ]
+          }
+        },
+        {
+          "id": "t08",
+          "q": "走り納めと試走は大晦日どうする話だった？",
+          "expect": {
+            "kinds": [
+              "answered"
+            ],
+            "any_of": [
+              "試走",
+              "BG",
+              "走り納め",
+              "8時"
+            ],
+            "sources_any": [
+              "arita-taisho",
+              "line-chats"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "theme": "more-gaps",
+      "questions": [
+        {
+          "id": "g01",
+          "q": "保護者LINEの顧問は誰？",
+          "expect": {
+            "kinds": [
+              "answered"
+            ],
+            "any_of": [
+              "熊澤"
+            ],
+            "sources_any": [
+              "line-chats"
+            ]
+          }
+        },
+        {
+          "id": "g02",
+          "q": "銀マットはどこで買える？",
+          "expect": {
+            "kinds": [
+              "answered"
+            ],
+            "any_of": [
+              "ヨドバシ",
+              "Amazon",
+              "ハンズマン",
+              "通販"
+            ],
+            "sources_any": [
+              "line-chats"
+            ]
+          }
+        },
+        {
+          "id": "g03",
+          "q": "合同練習会の申し込み締切は？",
+          "expect": {
+            "kinds": [
+              "answered"
+            ],
+            "any_of": [
+              "9/10",
+              "9月10"
+            ],
+            "sources_any": [
+              "line-chats"
+            ]
+          }
+        },
+        {
+          "id": "g04",
+          "q": "荒玉で土本先生の地点は？",
+          "expect": {
+            "kinds": [
+              "answered"
+            ],
+            "any_of": [
+              "B地点",
+              "B"
+            ],
+            "sources_any": [
+              "line-chats"
+            ]
+          }
+        },
+        {
+          "id": "g05",
+          "q": "朝練はどこに集合？",
+          "expect": {
+            "kinds": [
+              "answered"
+            ],
+            "any_of": [
+              "新校舎",
+              "運動場"
+            ],
+            "sources_any": [
+              "line-chats"
+            ]
+          }
+        },
+        {
+          "id": "g06",
+          "q": "有田先輩は雨の日どうする？",
+          "expect": {
+            "kinds": [
+              "answered"
+            ],
+            "any_of": [
+              "補強",
+              "タバタ",
+              "走る"
+            ],
+            "sources_any": [
+              "arita-taisho",
+              "line-chats"
+            ]
+          }
+        },
+        {
+          "id": "g07",
+          "q": "駅伝前に鬼ごっこしていい？",
+          "expect": {
+            "kinds": [
+              "answered"
+            ],
+            "any_of": [
+              "ケガ",
+              "やめて",
+              "すんな",
+              "絶対"
+            ],
+            "sources_any": [
+              "arita-taisho",
+              "line-chats"
+            ]
+          }
+        },
+        {
+          "id": "g08",
+          "q": "なごみに岱明は何チーム出す？",
+          "expect": {
+            "kinds": [
+              "answered"
+            ],
+            "any_of": [
+              "2チーム",
+              "男女2",
+              "2チームずつ"
+            ],
+            "sources_any": [
+              "arita-taisho",
+              "line-chats"
+            ]
+          }
+        },
+        {
+          "id": "g09",
+          "q": "熊澤先生は教員引退した？",
+          "expect": {
+            "kinds": [
+              "answered"
+            ],
+            "any_of": [
+              "引退",
+              "異動"
+            ],
+            "sources_any": [
+              "arita-taisho",
+              "line-chats"
+            ]
+          }
+        },
+        {
+          "id": "g10",
+          "q": "大晦日試走は何時集合？",
+          "expect": {
+            "kinds": [
+              "answered"
+            ],
+            "any_of": [
+              "8時",
+              "体育館"
+            ],
+            "sources_any": [
+              "arita-taisho",
+              "line-chats"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}
