@@ -157,8 +157,8 @@ function boostAthleteRecordSources(query: string, baseSources: string[]): string
 
 /** Prefer LINE ops digests for 岱明の連絡・集合・マット等. */
 function boostDaimingLineSources(query: string, baseSources: string[]): string[] {
-  if (
-    !/岱明|いだてん|銀マット|合同練習|おおはま|三加和|朝練|ナイター|保護者LINE|和水町/.test(
+    if (
+    !/岱明|いだてん|銀マット|合同練習|おおはま|三加和|朝練|ナイター|保護者LINE|和水町|有田|補強|手押し車|分割走|厚底|ヴェイパー/.test(
       query,
     )
   ) {

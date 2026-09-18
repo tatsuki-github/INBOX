@@ -139,6 +139,7 @@
 - `out/analysis/arato-tamana-teams/ＮＪＡＣ.md` → `out-analysis/arato-tamana-teams/ＮＪＡＣ.md`
 - `out/analysis/arato-tamana-teams/ﾀﾏﾅﾁｭｳ玉名中.md` → `out-analysis/arato-tamana-teams/ﾀﾏﾅﾁｭｳ玉名中.md`
 - `out/analysis/line-chats/INDEX.md` → `out-analysis/line-chats/INDEX.md`
+- `out/analysis/line-chats/arita-taisho.md` → `out-analysis/line-chats/arita-taisho.md`
 - `out/analysis/line-chats/daiming-parents.md` → `out-analysis/line-chats/daiming-parents.md`
 - `out/analysis/line-chats/daiming-staff.md` → `out-analysis/line-chats/daiming-staff.md`
 - `out/analysis/notion_records_2026.json` → `out-analysis/notion_records_2026.json`

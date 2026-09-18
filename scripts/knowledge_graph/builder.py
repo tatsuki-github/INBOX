@@ -30,6 +30,26 @@ SOURCE_GLOBS: list[tuple[str, list[str], str]] = [
     ("input/daniels_vdot_paces.yaml", ["pace", "danish", "norwegian"], "Daniels VDOT ペース表"),
     ("input/arato_tamana_report.yaml", ["athlete_records", "arato"], "荒尾・玉名記録 PDF 設定"),
     ("out/daiming-practice-menus-kpace.md", ["practice", "pace"], "岱明練習 k/pace 横断一覧"),
+    (
+        "out/analysis/line-chats/INDEX.md",
+        ["practice", "calendar", "ekiden"],
+        "岱明 LINE 衛生化抜粋の目録（保護者・指導者・有田）",
+    ),
+    (
+        "out/analysis/line-chats/daiming-parents.md",
+        ["practice", "calendar"],
+        "保護者 LINE: 銀マット・集合・合同練習・朝練など運用連絡",
+    ),
+    (
+        "out/analysis/line-chats/daiming-staff.md",
+        ["practice", "calendar", "ekiden"],
+        "指導者 LINE: 練習・引率・大会運用",
+    ),
+    (
+        "out/analysis/line-chats/arita-taisho.md",
+        ["practice", "ekiden", "pace"],
+        "有田大将×土山: 分割走・補強・荒玉準備・合同練習の指導相談",
+    ),
     ("input/external/INDEX.md", ["meta", "practice", "athlete_records"], "外部ソース（Drive/Notion/GitHub）取り込み目録"),
     ("input/external/drive/INDEX.md", ["practice", "athlete_records", "meta"], "Google ドライブいだてん関連スナップショット"),
     ("input/external/notion/INDEX.md", ["practice", "athlete_records", "injury"], "Notion いだてん岱明スナップショット"),
@@ -242,6 +262,26 @@ QUERY_HINTS: list[tuple[str, str, list[str]]] = [
         "荒玉の区間・オーダーなら荒玉戦略 Notion・分析 OCR・歴代 OCR。"
         "ジュニア・なごみなら該大会フォルダのプログラム・結果を見る",
         ["topic:ekiden", "topic:athlete_records"],
+    ),
+    (
+        "銀マット・合同練習・保護者連絡は？",
+        "out/analysis/line-chats（parents/staff）を優先。カレンダーに無い一次連絡が多い",
+        [
+            "topic:practice",
+            "topic:calendar",
+            "source:out/analysis/line-chats/daiming-parents.md",
+            "source:out/analysis/line-chats/INDEX.md",
+        ],
+    ),
+    (
+        "有田先輩の練習・補強の考え方は？",
+        "out/analysis/line-chats/arita-taisho.md（分割走・補強・厚底・荒玉目安・合同練習）",
+        [
+            "topic:practice",
+            "topic:ekiden",
+            "source:out/analysis/line-chats/arita-taisho.md",
+            "source:out/analysis/line-chats/INDEX.md",
+        ],
     ),
 ]
 

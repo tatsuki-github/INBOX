@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated_at": "2026-09-18T10:39:17Z",
+  "generated_at": "2026-09-18T13:24:56Z",
   "nodes": [
     {
       "id": "corpus:analysis-ocr",
@@ -123,7 +123,7 @@
       "refs": [
         "input/idaten-corpus/out-analysis"
       ],
-      "hint": "out/analysis の md/json（ペース分析・関係図など）. 例: 2026_men_1500m_pb_school_ranking.md, 2026_women_800m_1500m_pb_school_ranking.md, aragyoku_top6_historical_average_pace.md, aragyoku_women_track_joined.json, notion_records_2026.json"
+      "hint": "out/analysis の md/json（ペース分析・関係図など）. 例: 2026_men_1500m_pb_school_ranking.md, 2026_women_800m_1500m_pb_school_ranking.md, aragyoku-overview.md, aragyoku-teams, aragyoku_top6_historical_average_pace.md, aragyoku_women_track_joined.json, arato-tamana-teams, line-chats, notion_records_2026.json"
     },
     {
       "id": "corpus:practice",
@@ -202,8 +202,8 @@
       ],
       "refs": [
         "out/2025/practice_absentees.csv",
-        "out/analysis/notion_records_2026.json",
-        "input/events.2025.yaml"
+        "input/events.2025.yaml",
+        "out/analysis/notion_records_2026.json"
       ],
       "hint": "部員エンティティ"
     },
@@ -218,8 +218,8 @@
       ],
       "refs": [
         "out/2025/practice_absentees.csv",
-        "out/analysis/notion_records_2026.json",
-        "input/events.2025.yaml"
+        "input/events.2025.yaml",
+        "out/analysis/notion_records_2026.json"
       ],
       "hint": "所属:岱明中"
     },
@@ -234,8 +234,8 @@
       ],
       "refs": [
         "out/2025/practice_absentees.csv",
-        "out/analysis/notion_records_2026.json",
-        "input/events.2025.yaml"
+        "input/events.2025.yaml",
+        "out/analysis/notion_records_2026.json"
       ],
       "hint": "部員エンティティ"
     },
@@ -250,8 +250,8 @@
       ],
       "refs": [
         "out/2025/practice_absentees.csv",
-        "out/analysis/notion_records_2026.json",
-        "input/events.2025.yaml"
+        "input/events.2025.yaml",
+        "out/analysis/notion_records_2026.json"
       ],
       "hint": "所属:岱明中"
     },
@@ -266,8 +266,8 @@
       ],
       "refs": [
         "out/2025/practice_absentees.csv",
-        "out/analysis/notion_records_2026.json",
-        "input/events.2025.yaml"
+        "input/events.2025.yaml",
+        "out/analysis/notion_records_2026.json"
       ],
       "hint": "部員エンティティ"
     },
@@ -282,8 +282,8 @@
       ],
       "refs": [
         "out/2025/practice_absentees.csv",
-        "out/analysis/notion_records_2026.json",
-        "input/events.2025.yaml"
+        "input/events.2025.yaml",
+        "out/analysis/notion_records_2026.json"
       ],
       "hint": "所属:岱明中"
     },
@@ -326,8 +326,8 @@
       ],
       "refs": [
         "out/2025/practice_absentees.csv",
-        "out/analysis/notion_records_2026.json",
-        "input/events.2025.yaml"
+        "input/events.2025.yaml",
+        "out/analysis/notion_records_2026.json"
       ],
       "hint": "部員エンティティ"
     },
@@ -342,8 +342,8 @@
       ],
       "refs": [
         "out/2025/practice_absentees.csv",
-        "out/analysis/notion_records_2026.json",
-        "input/events.2025.yaml"
+        "input/events.2025.yaml",
+        "out/analysis/notion_records_2026.json"
       ],
       "hint": "所属:岱明中"
     },
@@ -373,8 +373,8 @@
       ],
       "refs": [
         "out/2025/practice_absentees.csv",
-        "out/analysis/notion_records_2026.json",
-        "input/events.2025.yaml"
+        "input/events.2025.yaml",
+        "out/analysis/notion_records_2026.json"
       ],
       "hint": "部員エンティティ"
     },
@@ -389,8 +389,8 @@
       ],
       "refs": [
         "out/2025/practice_absentees.csv",
-        "out/analysis/notion_records_2026.json",
-        "input/events.2025.yaml"
+        "input/events.2025.yaml",
+        "out/analysis/notion_records_2026.json"
       ],
       "hint": "所属:岱明中"
     },
@@ -405,8 +405,8 @@
       ],
       "refs": [
         "out/2025/practice_absentees.csv",
-        "out/analysis/notion_records_2026.json",
-        "input/events.2025.yaml"
+        "input/events.2025.yaml",
+        "out/analysis/notion_records_2026.json"
       ],
       "hint": "部員エンティティ"
     },
@@ -421,8 +421,8 @@
       ],
       "refs": [
         "out/2025/practice_absentees.csv",
-        "out/analysis/notion_records_2026.json",
-        "input/events.2025.yaml"
+        "input/events.2025.yaml",
+        "out/analysis/notion_records_2026.json"
       ],
       "hint": "所属:岱明中"
     },
@@ -437,8 +437,8 @@
       ],
       "refs": [
         "out/2025/practice_absentees.csv",
-        "out/analysis/notion_records_2026.json",
-        "input/events.2025.yaml"
+        "input/events.2025.yaml",
+        "out/analysis/notion_records_2026.json"
       ],
       "hint": "部員エンティティ"
     },
@@ -453,8 +453,8 @@
       ],
       "refs": [
         "out/2025/practice_absentees.csv",
-        "out/analysis/notion_records_2026.json",
-        "input/events.2025.yaml"
+        "input/events.2025.yaml",
+        "out/analysis/notion_records_2026.json"
       ],
       "hint": "所属:岱明中"
     },
@@ -468,8 +468,8 @@
         "practice"
       ],
       "refs": [
-        "out/2026/practice_absentees.csv",
         "input/events.2026.yaml",
+        "out/2026/practice_absentees.csv",
         "out/analysis/notion_records_2026.json"
       ],
       "hint": "部員エンティティ"
@@ -484,8 +484,8 @@
         "practice"
       ],
       "refs": [
-        "out/2026/practice_absentees.csv",
         "input/events.2026.yaml",
+        "out/2026/practice_absentees.csv",
         "out/analysis/notion_records_2026.json"
       ],
       "hint": "所属:岱明中"
@@ -501,8 +501,8 @@
       ],
       "refs": [
         "out/2025/practice_absentees.csv",
-        "out/analysis/notion_records_2026.json",
-        "input/events.2025.yaml"
+        "input/events.2025.yaml",
+        "out/analysis/notion_records_2026.json"
       ],
       "hint": "部員エンティティ"
     },
@@ -517,8 +517,8 @@
       ],
       "refs": [
         "out/2025/practice_absentees.csv",
-        "out/analysis/notion_records_2026.json",
-        "input/events.2025.yaml"
+        "input/events.2025.yaml",
+        "out/analysis/notion_records_2026.json"
       ],
       "hint": "所属:岱明中"
     },
@@ -532,11 +532,11 @@
         "practice"
       ],
       "refs": [
-        "out/2025/practice_absentees.csv",
         "out/2026/practice_absentees.csv",
-        "input/events.2025.yaml",
+        "input/events.2026.yaml",
         "out/analysis/notion_records_2026.json",
-        "input/events.2026.yaml"
+        "out/2025/practice_absentees.csv",
+        "input/events.2025.yaml"
       ],
       "hint": "部員エンティティ"
     },
@@ -550,11 +550,11 @@
         "practice"
       ],
       "refs": [
-        "out/2025/practice_absentees.csv",
         "out/2026/practice_absentees.csv",
-        "input/events.2025.yaml",
+        "input/events.2026.yaml",
         "out/analysis/notion_records_2026.json",
-        "input/events.2026.yaml"
+        "out/2025/practice_absentees.csv",
+        "input/events.2025.yaml"
       ],
       "hint": "所属:岱明中"
     },
@@ -2860,6 +2860,22 @@
       "hint": "practice_absentees.csv と events YAML の absentees"
     },
     {
+      "id": "query:20:銀マット・合同練習・保護者連絡は？",
+      "type": "QueryHint",
+      "label": "銀マット・合同練習・保護者連絡は？",
+      "topics": [],
+      "refs": [],
+      "hint": "out/analysis/line-chats（parents/staff）を優先。カレンダーに無い一次連絡が多い"
+    },
+    {
+      "id": "query:21:有田先輩の練習・補強の考え方は？",
+      "type": "QueryHint",
+      "label": "有田先輩の練習・補強の考え方は？",
+      "topics": [],
+      "refs": [],
+      "hint": "out/analysis/line-chats/arita-taisho.md（分割走・補強・厚底・荒玉目安・合同練習）"
+    },
+    {
       "id": "query:2:GZ / 閾値ペースは？",
       "type": "QueryHint",
       "label": "GZ / 閾値ペースは？",
@@ -3271,6 +3287,90 @@
         "docs/adr/023-eval-200q-repo-grounding.md"
       ],
       "hint": "ADR: 023-eval-200q-repo-grounding"
+    },
+    {
+      "id": "source:docs/adr/024-eval-unique-exhausted-qa.md",
+      "type": "Source",
+      "label": "024-eval-unique-exhausted-qa.md",
+      "topics": [
+        "ai",
+        "meta",
+        "practice"
+      ],
+      "refs": [
+        "docs/adr/024-eval-unique-exhausted-qa.md"
+      ],
+      "hint": "ADR: 024-eval-unique-exhausted-qa"
+    },
+    {
+      "id": "source:docs/adr/025-retrieval-precision.md",
+      "type": "Source",
+      "label": "025-retrieval-precision.md",
+      "topics": [
+        "ai",
+        "meta",
+        "practice"
+      ],
+      "refs": [
+        "docs/adr/025-retrieval-precision.md"
+      ],
+      "hint": "ADR: 025-retrieval-precision"
+    },
+    {
+      "id": "source:docs/adr/026-context-100k.md",
+      "type": "Source",
+      "label": "026-context-100k.md",
+      "topics": [
+        "ai",
+        "meta",
+        "practice"
+      ],
+      "refs": [
+        "docs/adr/026-context-100k.md"
+      ],
+      "hint": "ADR: 026-context-100k"
+    },
+    {
+      "id": "source:docs/adr/027-aragyoku-arato-team-markdowns.md",
+      "type": "Source",
+      "label": "027-aragyoku-arato-team-markdowns.md",
+      "topics": [
+        "ai",
+        "meta",
+        "practice"
+      ],
+      "refs": [
+        "docs/adr/027-aragyoku-arato-team-markdowns.md"
+      ],
+      "hint": "ADR: 027-aragyoku-arato-team-markdowns"
+    },
+    {
+      "id": "source:docs/adr/028-aragyoku-overview-pace.md",
+      "type": "Source",
+      "label": "028-aragyoku-overview-pace.md",
+      "topics": [
+        "ai",
+        "meta",
+        "practice"
+      ],
+      "refs": [
+        "docs/adr/028-aragyoku-overview-pace.md"
+      ],
+      "hint": "ADR: 028-aragyoku-overview-pace"
+    },
+    {
+      "id": "source:docs/adr/029-daiming-line-chat-corpus.md",
+      "type": "Source",
+      "label": "029-daiming-line-chat-corpus.md",
+      "topics": [
+        "ai",
+        "meta",
+        "practice"
+      ],
+      "refs": [
+        "docs/adr/029-daiming-line-chat-corpus.md"
+      ],
+      "hint": "ADR: 029-daiming-line-chat-corpus"
     },
     {
       "id": "source:docs/ai-practice-generation.md",
@@ -3945,7 +4045,7 @@
       "refs": [
         "input/idaten-corpus/out-analysis"
       ],
-      "hint": "out/analysis の md/json（ペース分析・関係図など）. 例: 2026_men_1500m_pb_school_ranking.md, 2026_women_800m_1500m_pb_school_ranking.md, aragyoku_top6_historical_average_pace.md, aragyoku_women_track_joined.json, notion_records_2026.json"
+      "hint": "out/analysis の md/json（ペース分析・関係図など）. 例: 2026_men_1500m_pb_school_ranking.md, 2026_women_800m_1500m_pb_school_ranking.md, aragyoku-overview.md, aragyoku-teams, aragyoku_top6_historical_average_pace.md, aragyoku_women_track_joined.json, arato-tamana-teams, line-chats, notion_records_2026.json"
     },
     {
       "id": "source:input/idaten-corpus/practice",
@@ -4836,6 +4936,61 @@
         "out/analysis/2026年度_荒尾玉名中学生記録一覧.pdf"
       ],
       "hint": "記録 PDF（参照のみ）: 2026年度_荒尾玉名中学生記録一覧.pdf"
+    },
+    {
+      "id": "source:out/analysis/line-chats/INDEX.md",
+      "type": "Source",
+      "label": "INDEX.md",
+      "topics": [
+        "calendar",
+        "ekiden",
+        "practice"
+      ],
+      "refs": [
+        "out/analysis/line-chats/INDEX.md"
+      ],
+      "hint": "岱明 LINE 衛生化抜粋の目録（保護者・指導者・有田）"
+    },
+    {
+      "id": "source:out/analysis/line-chats/arita-taisho.md",
+      "type": "Source",
+      "label": "arita-taisho.md",
+      "topics": [
+        "ekiden",
+        "pace",
+        "practice"
+      ],
+      "refs": [
+        "out/analysis/line-chats/arita-taisho.md"
+      ],
+      "hint": "有田大将×土山: 分割走・補強・荒玉準備・合同練習の指導相談"
+    },
+    {
+      "id": "source:out/analysis/line-chats/daiming-parents.md",
+      "type": "Source",
+      "label": "daiming-parents.md",
+      "topics": [
+        "calendar",
+        "practice"
+      ],
+      "refs": [
+        "out/analysis/line-chats/daiming-parents.md"
+      ],
+      "hint": "保護者 LINE: 銀マット・集合・合同練習・朝練など運用連絡"
+    },
+    {
+      "id": "source:out/analysis/line-chats/daiming-staff.md",
+      "type": "Source",
+      "label": "daiming-staff.md",
+      "topics": [
+        "calendar",
+        "ekiden",
+        "practice"
+      ],
+      "refs": [
+        "out/analysis/line-chats/daiming-staff.md"
+      ],
+      "hint": "指導者 LINE: 練習・引率・大会運用"
     },
     {
       "id": "source:out/analysis/notion_records_2026.json",
@@ -7003,6 +7158,46 @@
       "rel": "search_here"
     },
     {
+      "from": "query:20:銀マット・合同練習・保護者連絡は？",
+      "to": "source:out/analysis/line-chats/INDEX.md",
+      "rel": "search_here"
+    },
+    {
+      "from": "query:20:銀マット・合同練習・保護者連絡は？",
+      "to": "source:out/analysis/line-chats/daiming-parents.md",
+      "rel": "search_here"
+    },
+    {
+      "from": "query:20:銀マット・合同練習・保護者連絡は？",
+      "to": "topic:calendar",
+      "rel": "search_here"
+    },
+    {
+      "from": "query:20:銀マット・合同練習・保護者連絡は？",
+      "to": "topic:practice",
+      "rel": "search_here"
+    },
+    {
+      "from": "query:21:有田先輩の練習・補強の考え方は？",
+      "to": "source:out/analysis/line-chats/INDEX.md",
+      "rel": "search_here"
+    },
+    {
+      "from": "query:21:有田先輩の練習・補強の考え方は？",
+      "to": "source:out/analysis/line-chats/arita-taisho.md",
+      "rel": "search_here"
+    },
+    {
+      "from": "query:21:有田先輩の練習・補強の考え方は？",
+      "to": "topic:ekiden",
+      "rel": "search_here"
+    },
+    {
+      "from": "query:21:有田先輩の練習・補強の考え方は？",
+      "to": "topic:practice",
+      "rel": "search_here"
+    },
+    {
       "from": "query:2:GZ / 閾値ペースは？",
       "to": "topic:norwegian",
       "rel": "search_here"
@@ -7195,6 +7390,36 @@
     {
       "from": "source:docs/ai-practice-generation.md",
       "to": "source:docs/adr/023-eval-200q-repo-grounding.md",
+      "rel": "see_also"
+    },
+    {
+      "from": "source:docs/ai-practice-generation.md",
+      "to": "source:docs/adr/024-eval-unique-exhausted-qa.md",
+      "rel": "see_also"
+    },
+    {
+      "from": "source:docs/ai-practice-generation.md",
+      "to": "source:docs/adr/025-retrieval-precision.md",
+      "rel": "see_also"
+    },
+    {
+      "from": "source:docs/ai-practice-generation.md",
+      "to": "source:docs/adr/026-context-100k.md",
+      "rel": "see_also"
+    },
+    {
+      "from": "source:docs/ai-practice-generation.md",
+      "to": "source:docs/adr/027-aragyoku-arato-team-markdowns.md",
+      "rel": "see_also"
+    },
+    {
+      "from": "source:docs/ai-practice-generation.md",
+      "to": "source:docs/adr/028-aragyoku-overview-pace.md",
+      "rel": "see_also"
+    },
+    {
+      "from": "source:docs/ai-practice-generation.md",
+      "to": "source:docs/adr/029-daiming-line-chat-corpus.md",
       "rel": "see_also"
     },
     {
@@ -7630,6 +7855,36 @@
     {
       "from": "topic:ai",
       "to": "source:docs/adr/023-eval-200q-repo-grounding.md",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:ai",
+      "to": "source:docs/adr/024-eval-unique-exhausted-qa.md",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:ai",
+      "to": "source:docs/adr/025-retrieval-precision.md",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:ai",
+      "to": "source:docs/adr/026-context-100k.md",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:ai",
+      "to": "source:docs/adr/027-aragyoku-arato-team-markdowns.md",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:ai",
+      "to": "source:docs/adr/028-aragyoku-overview-pace.md",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:ai",
+      "to": "source:docs/adr/029-daiming-line-chat-corpus.md",
       "rel": "search_here"
     },
     {
@@ -8553,6 +8808,21 @@
       "rel": "search_here"
     },
     {
+      "from": "topic:calendar",
+      "to": "source:out/analysis/line-chats/INDEX.md",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:calendar",
+      "to": "source:out/analysis/line-chats/daiming-parents.md",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:calendar",
+      "to": "source:out/analysis/line-chats/daiming-staff.md",
+      "rel": "search_here"
+    },
+    {
       "from": "topic:ekiden",
       "to": "corpus:analysis-ocr",
       "rel": "search_here"
@@ -8993,6 +9263,21 @@
       "rel": "search_here"
     },
     {
+      "from": "topic:ekiden",
+      "to": "source:out/analysis/line-chats/INDEX.md",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:ekiden",
+      "to": "source:out/analysis/line-chats/arita-taisho.md",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:ekiden",
+      "to": "source:out/analysis/line-chats/daiming-staff.md",
+      "rel": "search_here"
+    },
+    {
       "from": "topic:injury",
       "to": "corpus:notion-db",
       "rel": "search_here"
@@ -9169,6 +9454,36 @@
     },
     {
       "from": "topic:meta",
+      "to": "source:docs/adr/024-eval-unique-exhausted-qa.md",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:meta",
+      "to": "source:docs/adr/025-retrieval-precision.md",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:meta",
+      "to": "source:docs/adr/026-context-100k.md",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:meta",
+      "to": "source:docs/adr/027-aragyoku-arato-team-markdowns.md",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:meta",
+      "to": "source:docs/adr/028-aragyoku-overview-pace.md",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:meta",
+      "to": "source:docs/adr/029-daiming-line-chat-corpus.md",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:meta",
       "to": "source:input/external/INDEX.md",
       "rel": "search_here"
     },
@@ -9240,6 +9555,11 @@
     {
       "from": "topic:pace",
       "to": "source:input/memos/norwegian_method_applied_full.txt",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:pace",
+      "to": "source:out/analysis/line-chats/arita-taisho.md",
       "rel": "search_here"
     },
     {
@@ -9774,6 +10094,36 @@
     },
     {
       "from": "topic:practice",
+      "to": "source:docs/adr/024-eval-unique-exhausted-qa.md",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:practice",
+      "to": "source:docs/adr/025-retrieval-precision.md",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:practice",
+      "to": "source:docs/adr/026-context-100k.md",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:practice",
+      "to": "source:docs/adr/027-aragyoku-arato-team-markdowns.md",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:practice",
+      "to": "source:docs/adr/028-aragyoku-overview-pace.md",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:practice",
+      "to": "source:docs/adr/029-daiming-line-chat-corpus.md",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:practice",
       "to": "source:docs/ai-practice-generation.md",
       "rel": "search_here"
     },
@@ -10085,6 +10435,26 @@
     {
       "from": "topic:practice",
       "to": "source:out/2027/practice_items.csv",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:practice",
+      "to": "source:out/analysis/line-chats/INDEX.md",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:practice",
+      "to": "source:out/analysis/line-chats/arita-taisho.md",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:practice",
+      "to": "source:out/analysis/line-chats/daiming-parents.md",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:practice",
+      "to": "source:out/analysis/line-chats/daiming-staff.md",
       "rel": "search_here"
     },
     {

@@ -329,6 +329,27 @@ describe("answerQuestion", () => {
     }
   });
 
+  it("puts arita-taisho line-chats for 有田の補強・分割走 questions", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    let userPrompt = "";
+    const result = await answerQuestion("有田先輩の補強や分割走の考え方は？", {
+      skipRouter: true,
+      defaultYear: 2026,
+      llm: {
+        complete: async (_sys, user) => {
+          userPrompt = user;
+          return "手押し車・犬歩きと分割走を優先する、とのメモです。";
+        },
+      },
+    });
+    expect(result.kind).toBe("answered");
+    expect(userPrompt).toMatch(/手押し車|犬歩き|分割走/);
+    if (result.kind === "answered") {
+      expect(result.sources.some((s) => s.includes("arita-taisho"))).toBe(true);
+    }
+  });
+
   it("puts arato-tamana team records for 金栗PROJECT 所属記録", async () => {
     resetRetrieverCache();
     resetKgCache();

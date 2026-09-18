@@ -150,6 +150,7 @@ def to_markdown(title: str, saved: str, messages: list[Message], slug: str) -> s
 KNOWN_FILES = {
     "daiming-parents.txt": "daiming-parents.md",
     "daiming-staff.txt": "daiming-staff.md",
+    "arita-taisho.txt": "arita-taisho.md",
 }
 
 
@@ -184,10 +185,12 @@ def main() -> int:
                 "# LINE チャット衛生化抜粋（岱明）",
                 "",
                 "- `daiming-parents.md` — 保護者グループ「岱明中長距離」",
-                "- `daiming-staff.md` — 指導者グループ",
+                "- `daiming-staff.md` — 指導者グループ「まさ　と愉快な仲間達」",
+                "- `arita-taisho.md` — 有田大将（ゆくゆく指導）× 土山の指導・荒玉準備メモ",
                 "",
                 "再生成: `python3 scripts/ingest_line_exports.py`",
                 "生テキストは `input/external/line/raw/`（git 対象外推奨）。",
+                "有田メモは衛生化キュレーション優先（生ログ再生成で上書きしない運用可）。",
                 "",
             ]
         ),

@@ -405,7 +405,7 @@ function pathQueryBonus(source: string, query: string): number {
   }
   if (/荒尾|玉名|金栗PROJECT|アスリーツ|所属別/.test(q) && /arato-tamana-teams/.test(s)) bonus += 100;
   if (
-    /岱明|いだてん|銀マット|合同練習|おおはま|三加和|朝練|ナイター|和水/.test(q) &&
+    /岱明|いだてん|銀マット|合同練習|おおはま|三加和|朝練|ナイター|和水|有田|補強|手押し車|分割走|厚底/.test(q) &&
     /line-chats/.test(s)
   ) {
     bonus += 130;
