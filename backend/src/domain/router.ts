@@ -26,7 +26,8 @@ function buildRouterSystemPrompt(): string {
     `sources は候補に含まれるパスだけ。最大 ${RETRIEVAL_BUDGET.routeSources} 件。`,
     "日付質問なら calendar と該当大会フォルダを優先。",
     "ジュニア駅伝・なごみ・金栗など固有大会名があるときは drive-text/大会/ の該大会フォルダのみ選び、荒玉・aragyoku・ekiden-ocr は選ばない。",
-    "明示の荒玉・優勝・歴代なら aragyoku/transcripts・aragyoku/winners-by-year.md・該当年の ekiden-ocr を優先（古い年の OCR を全部選ばない）。",
+    "明示の荒玉・優勝・歴代・区間・チーム順位なら aragyoku/transcripts・out-analysis/aragyoku-teams・winners-by-year・該当年 ekiden-ocr を優先。",
+    "荒尾玉名の所属・トラック記録なら out-analysis/arato-tamana-teams と sb/ を優先。",
     "抜け漏れ防止のため関連ソースを多めに選ぶ。",
   ].join("\n");
 }
@@ -140,7 +141,7 @@ export async function routeSources(
     if (!parsed) return fallbackRoute(question, kg);
     const sources = parsed.sources
       .map((s) => s.trim())
-      .filter((s) => isAllowedCorpusSource(s) && (allow.has(s) || s.startsWith("drive-text/") || s.startsWith("notion-db/") || s.startsWith("ekiden-ocr/") || s.startsWith("aragyoku/")))
+      .filter((s) => isAllowedCorpusSource(s) && (allow.has(s) || s.startsWith("drive-text/") || s.startsWith("notion-db/") || s.startsWith("ekiden-ocr/") || s.startsWith("aragyoku/") || s.startsWith("out-analysis/")))
       .slice(0, RETRIEVAL_BUDGET.routeSources);
     if (sources.length === 0) return fallbackRoute(question, kg);
     return {

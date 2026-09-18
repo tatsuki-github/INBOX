@@ -1,4 +1,4 @@
-# ADR 023: 想定質問 200 問（10×20）のリポジトリ根拠評価
+# ADR 023: 想定質問のリポジトリ根拠評価（200→1000）
 
 ## 状況
 
@@ -7,20 +7,25 @@ LINE Q&A の回答品質を、散発的な手動確認だけでは担保しに�
 
 ## 決定
 
-1. **評価バンク**: `backend/data/eval-200q/questions.json` に 20 ラウンド × 10 問 = 200 問を固定する（SB・日程・大会 URL・clarify・スコープ外・荒玉・練習・言い換えなど）。
-2. **ランナー**: `backend/scripts/eval-200q/run.ts` が `answerQuestion` を呼び、`any_of` / `forbid` / `kinds` / `sources_any` で合否判定する。
+1. **評価バンク**
+   - 200問: `backend/data/eval-200q/questions.json`（10×20）
+   - 1000問: `backend/data/eval-1000q/questions.json`（10×100）
+2. **ランナー**: `backend/scripts/eval-1000q/run.ts`（および 200q 版）が `answerQuestion` を呼び、`any_of` / `forbid` / `kinds` / `sources_any` で合否判定する。
 3. **既定モードはオフライン根拠検証**（取得抜粋が事実を含むこと）。Gemini 無料枠の 429 を避ける。`--llm` で本番相当の自然文も検証可能。
 4. **不合格から得た改善**（本 ADR 時点）:
-   - スコープ hard 拒否の拡充（雑談・他競技・翻訳など）
+   - スコープ hard 拒否の拡充（雑談・他競技・翻訳・仮想通貨・政治など）
    - clarify: 「最新の自己ベスト」等の時間語を選手名と誤認しない
    - 曖昧な「記録を調べたい」も clarify
    - SB ブーストを `1500` / `何分` などにも反応
    - 荒玉 transcripts 要約チャンクに区間距離を含める
+   - 日付質問: ISO トークンを BM25 分割から守り、日程チャンクを強く優先
+   - オフライン抜粋: 質問内 ISO 日付付近のウィンドウを表示
+   - カレンダー評価はコーパス（daiming フィルタ済み）に存在する予定のみを使う
 
 ## 結果
 
-- 2026-09-18: オフライン評価 **200/200 PASS**（各ラウンド 10/10）
-- 再実行: `cd backend && npx tsx scripts/eval-200q/run.ts`
+- 2026-09-18: オフライン評価 **200/200 PASS**、続けて **1000/1000 PASS**
+- 再実行: `cd backend && npx tsx scripts/eval-1000q/run.ts`
 
 ## 関連
 

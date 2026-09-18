@@ -249,6 +249,55 @@ describe("answerQuestion", () => {
     }
   });
 
+  it("puts aragyoku team markdown context for detailed 菊水 区間 questions", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    let userPrompt = "";
+    const result = await answerQuestion("2025年荒玉駅伝男子の菊水の1区は誰？", {
+      skipRouter: true,
+      defaultYear: 2026,
+      llm: {
+        complete: async (_sys, user) => {
+          userPrompt = user;
+          return "松浦眞大です。";
+        },
+      },
+    });
+    expect(result.kind).toBe("answered");
+    expect(userPrompt).toMatch(/松浦眞大/);
+    expect(userPrompt).toMatch(/菊水/);
+    expect(userPrompt).not.toMatch(/コーチに直接聞いてください/);
+    if (result.kind === "answered") {
+      expect(
+        result.sources.some(
+          (s) => s.includes("aragyoku-teams") || s.includes("transcripts/2025-男子"),
+        ),
+      ).toBe(true);
+    }
+  });
+
+  it("puts arato-tamana team records for 金栗PROJECT 所属記録", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    let userPrompt = "";
+    const result = await answerQuestion("金栗PROJECTの3000m記録一覧を教えて", {
+      skipRouter: true,
+      defaultYear: 2026,
+      llm: {
+        complete: async (_sys, user) => {
+          userPrompt = user;
+          return "金栗PROJECTの3000m記録です。";
+        },
+      },
+    });
+    expect(result.kind).toBe("answered");
+    expect(userPrompt).toMatch(/金栗PROJECT|3000m/);
+    expect(userPrompt).not.toMatch(/コーチに直接聞いてください/);
+    if (result.kind === "answered") {
+      expect(result.sources.some((s) => s.includes("arato-tamana-teams"))).toBe(true);
+    }
+  });
+
   it("offline empty retrieval tells user to ask the coach", async () => {
     const result = await answerQuestion("存在しない架空の大会XYZの詳細は？", {
       retrieve: () => [],

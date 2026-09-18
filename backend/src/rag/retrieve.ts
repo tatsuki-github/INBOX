@@ -395,7 +395,8 @@ function pathQueryBonus(source: string, query: string): number {
   let bonus = 0;
   if (/ジュニア/.test(q) && s.includes("ジュニア")) bonus += 120;
   if (/なごみ|金栗/.test(q) && /なごみ|金栗/.test(s)) bonus += 120;
-  if (/荒玉|aragyoku|中体連/.test(q) && /aragyoku|荒玉|ekiden-ocr/.test(s)) bonus += 80;
+  if (/荒玉|aragyoku|中体連/.test(q) && /aragyoku|荒玉|ekiden-ocr|aragyoku-teams/.test(s)) bonus += 80;
+  if (/荒尾|玉名|金栗PROJECT|アスリーツ|所属別/.test(q) && /arato-tamana-teams/.test(s)) bonus += 100;
   if ((s.startsWith("sb/") || s.includes("中学生SB")) && /自己ベスト|\bSB\b|\bPB\b|\d+\s*m/.test(q)) {
     bonus += 60;
   }

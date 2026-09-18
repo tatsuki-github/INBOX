@@ -123,7 +123,7 @@ function sortMeetDriveSources(sources: string[], query: string): string[] {
 /** Prefer SB / 記録データベース sources for athlete-record questions. */
 function boostAthleteRecordSources(query: string, baseSources: string[]): string[] {
   if (
-    !/自己ベスト|ベストタイム|自己記録|\bSB\b|\bPB\b|ベスト記録|記録|タイム|何分|何秒|800m?|1500m?|3000m?|5000m?/.test(
+    !/自己ベスト|ベストタイム|自己記録|\bSB\b|\bPB\b|ベスト記録|記録|タイム|何分|何秒|800m?|1500m?|3000m?|5000m?|荒尾|玉名|所属|チーム|金栗|岱明|南関|天水|長洲|ATRC|アスリーツ/.test(
       query,
     )
   ) {
@@ -136,6 +136,9 @@ function boostAthleteRecordSources(query: string, baseSources: string[]): string
     seen.add(s);
     out.push(s);
   };
+  if (/荒尾|玉名|金栗|岱明|南関|天水|長洲|ATRC|アスリーツ|玉東|有明|荒尾三|荒尾四|海陽|玉陵|玉南|玉高|附中/.test(query)) {
+    push("out-analysis/arato-tamana-teams");
+  }
   push("sb/中学生SB.csv");
   push("sb/");
   // Named athlete PB → stick to SB CSV (avoid 3000m予想ランキング drowning short names)
@@ -191,6 +194,7 @@ function boostMeetYearSources(
   }
 
   if (kind === "aragyoku") {
+    push("out-analysis/aragyoku-teams");
     push("aragyoku/winners-by-year.md");
     for (const y of years) {
       for (const g of ["男子", "女子"] as const) {
@@ -201,6 +205,7 @@ function boostMeetYearSources(
     }
     if (years.length === 0) {
       push("aragyoku");
+      push("out-analysis/aragyoku-teams");
     }
   }
 

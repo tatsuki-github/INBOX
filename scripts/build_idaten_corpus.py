@@ -430,7 +430,7 @@ def _chunk_aragyoku_transcript(path: Path, rel: str) -> list[dict[str, Any]]:
         summary_parts.append(
             f"優勝校（1位）は「{winner.get('team')}」（総合 {winner.get('total', '')}）。"
         )
-    for t in teams[:8]:
+    for t in teams:
         summary_parts.append(
             f"{t.get('rank')}位 {t.get('team')} {t.get('total', '')}。"
         )
@@ -443,13 +443,32 @@ def _chunk_aragyoku_transcript(path: Path, rel: str) -> list[dict[str, Any]]:
         }
     )
     for idx, team in enumerate(teams, start=1):
-        header = (
-            f"{year}年荒玉駅伝{gender} "
-            f"{team.get('rank')}位 {team.get('team')} 総合{team.get('total', '')}"
-        )
-        if team.get("rank") in (1, "1"):
+        team_name = team.get("team") or "?"
+        rank = team.get("rank")
+        total = team.get("total") or ""
+        header = f"{year}年荒玉駅伝{gender} {rank}位 {team_name} 総合{total}"
+        if rank in (1, "1"):
             header = f"{header} 優勝校"
-        body = json.dumps(team, ensure_ascii=False, indent=2)
+        leg_lines: list[str] = []
+        for L in team.get("legs") or []:
+            if not isinstance(L, dict):
+                continue
+            leg_lines.append(
+                f"{L.get('leg')}区 {L.get('name') or '?'}({L.get('grade') or '?'}) "
+                f"区間{L.get('split') or ''} 累計{L.get('cumulative') or ''}"
+            )
+        names = "、".join(
+            str(L.get("name") or "")
+            for L in (team.get("legs") or [])
+            if isinstance(L, dict) and L.get("name")
+        )
+        prose = (
+            f"{year}年の荒玉中体連駅伝（荒玉駅伝）{gender}で"
+            f"「{team_name}」は総合{rank}位・タイム{total}。"
+        )
+        if names:
+            prose += f" 出走選手: {names}。"
+        body = prose + ("\n" + "\n".join(leg_lines) if leg_lines else "")
         text = f"{header}\n{body}"
         if len(text) > MAX_CHUNK_CHARS:
             text = text[:MAX_CHUNK_CHARS]
@@ -583,6 +602,36 @@ def _build_index() -> dict[str, Any]:
 
 
 def main() -> int:
+    # Refresh team markdowns so out-analysis copies stay searchable.
+    gen = ROOT / "scripts" / "generate_team_record_markdowns.py"
+    py_candidates = [
+        Path("/opt/miniconda3/bin/python"),
+        Path(sys.executable),
+    ]
+    ran = False
+    for py in py_candidates:
+        if not py.is_file():
+            continue
+        try:
+            import subprocess
+
+            proc = subprocess.run(
+                [str(py), str(gen)],
+                cwd=str(ROOT),
+                check=False,
+                capture_output=True,
+                text=True,
+            )
+            if proc.returncode == 0:
+                print(proc.stdout.strip().splitlines()[-1] if proc.stdout.strip() else "team markdowns ok")
+                ran = True
+                break
+            print(f"warn: {py} generate failed: {proc.stderr.strip()[:200]}", file=sys.stderr)
+        except Exception as exc:  # pragma: no cover
+            print(f"warn: team markdown generation via {py} failed: {exc}", file=sys.stderr)
+    if not ran:
+        print("warn: team markdown generation skipped", file=sys.stderr)
+
     sources = _build_corpus()
     index = _build_index()
     INDEX_PATH.parent.mkdir(parents=True, exist_ok=True)
