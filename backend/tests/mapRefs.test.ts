@@ -32,4 +32,11 @@ describe("mapRefToCorpusSource", () => {
       "aragyoku/taimei-records-2012-2025.md",
     ]);
   });
+
+  it("maps practice and drive 練習 refs", () => {
+    expect(mapRefToCorpusSource("input/practice/foo.md")).toBe("practice/foo.md");
+    expect(mapRefToCorpusSource("input/external/drive/shared/練習/練習の記録.md")).toBe(
+      "drive-text/練習/練習の記録.md",
+    );
+  });
 });

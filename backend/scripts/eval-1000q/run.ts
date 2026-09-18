@@ -11,6 +11,7 @@ import { fileURLToPath } from "node:url";
 import { loadConfig, hasLlmCredentials } from "../../src/config.js";
 import { createLlmClient } from "../../src/domain/llm.js";
 import { answerQuestion, type AnswerResult } from "../../src/domain/answer.js";
+import { MISSING_INFO_MESSAGE } from "../../src/rag/prompt.js";
 
 loadDotenv();
 
@@ -240,6 +241,9 @@ async function main() {
 
   const passed = results.filter((r) => r.pass).length;
   const failed = results.filter((r) => !r.pass);
+  const missingInfoHits = results.filter((r) =>
+    norm(r.text).includes(norm(MISSING_INFO_MESSAGE.replace(/。$/, ""))),
+  );
   const stamp = new Date().toISOString().replace(/[:.]/g, "-");
   const outPath = join(DATA, `results-${stamp}.json`);
   const summary = {
@@ -248,6 +252,11 @@ async function main() {
     passed,
     failed: failed.length,
     passRate: results.length ? passed / results.length : 0,
+    missingInfo: {
+      count: missingInfoHits.length,
+      rate: results.length ? missingInfoHits.length / results.length : 0,
+      note: "Rate of answers containing コーチに直接聞いてください (MISSING_INFO_MESSAGE).",
+    },
     byRound: Object.fromEntries(
       [...new Set(results.map((r) => r.round))].map((rid) => {
         const rs = results.filter((r) => r.round === rid);
@@ -278,6 +287,9 @@ async function main() {
 
   console.log("\n=== SUMMARY ===");
   console.log(`passed ${passed}/${results.length} (${(summary.passRate * 100).toFixed(1)}%)`);
+  console.log(
+    `missingInfo ${missingInfoHits.length}/${results.length} (${(summary.missingInfo.rate * 100).toFixed(1)}%)`,
+  );
   console.log(`wrote ${outPath}`);
   if (failed.length) {
     console.log("failed ids:", failed.map((f) => f.id).join(", "));

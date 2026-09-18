@@ -130,6 +130,24 @@ export function mapRefToCorpusSource(ref: string): string | null {
     return "media-manifest.slim.json";
   }
 
+  // Practice menus / notes under input/practice → practice/
+  if (p.startsWith("input/practice/")) {
+    return "practice/" + p.slice("input/practice/".length);
+  }
+  if (p.startsWith("out/practice/") || p.startsWith("out/202")) {
+    // Year practice JSON sometimes referenced from KG
+    if (p.includes("practice")) {
+      const base = p.split("/").pop();
+      if (base) return "practice/" + base;
+    }
+  }
+
+  // Drive 練習
+  const renshu = "input/external/drive/shared/練習/";
+  if (p.startsWith(renshu)) {
+    return "drive-text/練習/" + p.slice(renshu.length);
+  }
+
   // Middle-school SB wide CSV (all schools)
   if (
     p === "input/external/sb/middle-school/wide/中学生SB.csv" ||

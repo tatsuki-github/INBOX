@@ -56,9 +56,12 @@ const TOKEN_RE = /[A-Za-z0-9_]+|[\u3040-\u30ff]+|[\u3400-\u9fff]+/gu;
 const PARTICLE_SPLIT = /[のとへをはがでにでもや]+/;
 
 export function tokenizeKg(text: string): string[] {
-  const lower = text.toLowerCase().trim();
-  const tokens: string[] = [];
-  for (const part of lower.split(PARTICLE_SPLIT)) {
+  const lower = text.normalize("NFKC").toLowerCase().trim();
+  // Preserve ISO dates like the RAG tokenizer
+  const isoDates = lower.match(/20\d{2}-\d{2}-\d{2}/g) ?? [];
+  const withoutIso = lower.replace(/20\d{2}-\d{2}-\d{2}/g, " ");
+  const tokens: string[] = [...isoDates];
+  for (const part of withoutIso.split(PARTICLE_SPLIT)) {
     const p = part.trim();
     if (!p) continue;
     const matches = p.match(TOKEN_RE) ?? [];
@@ -106,7 +109,14 @@ function scoreNode(node: KgNode, qTokens: string[], query: string): number {
       score += 3;
       continue;
     }
-    if (nodeType === "Athlete" || nodeType === "MediaAsset") continue;
+    // Athlete: also match affiliation / aliases in hint+refs (not full MediaAsset paths)
+    if (nodeType === "Athlete") {
+      if (tok.length >= 2 && (hint.includes(tok) || refs.includes(tok))) {
+        score += 2;
+      }
+      continue;
+    }
+    if (nodeType === "MediaAsset") continue;
     if (blob.includes(tok)) score += tok.length >= 2 ? 2 : 0.5;
   }
   // Year tokens in the question strongly prefer matching year media / hubs

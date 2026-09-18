@@ -304,7 +304,7 @@ export async function answerQuestion(
   });
   const retrieve = deps.retrieve ?? retrieveContext;
   const fromBm25 = retrieve(expanded, topK);
-  const mergedCore = mergeRetrieved(fromSources, fromBm25, topK);
+  const mergedCore = mergeRetrieved(fromSources, fromBm25, topK, { query: expanded });
   const withNeighbors = expandWithNeighbors(mergedCore, { radius: 2, maxExtra: 32 });
   const merged = truncateRetrieved(withNeighbors, DEFAULT_MAX_CHARS);
   const sources = [

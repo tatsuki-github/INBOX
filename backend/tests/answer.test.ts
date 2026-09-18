@@ -233,6 +233,22 @@ describe("answerQuestion", () => {
     }
   });
 
+  it("hits SB row for short name without の particle", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("森 3000m 自己ベスト", {
+      skipRouter: true,
+      llm: null,
+      defaultYear: 2026,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.sources.some((s) => s.includes("sb/"))).toBe(true);
+      expect(result.text).toMatch(/11:04\.38|森,/);
+      expect(result.text).not.toContain("コーチに直接聞いてください");
+    }
+  });
+
   it("offline empty retrieval tells user to ask the coach", async () => {
     const result = await answerQuestion("存在しない架空の大会XYZの詳細は？", {
       retrieve: () => [],
