@@ -1,16 +1,67 @@
 import type { AppConfig } from "../config.js";
 
+export const GEMINI_MODEL = "gemini-2.5-flash-lite";
+
 export type LlmClient = {
   complete(system: string, user: string): Promise<string>;
 };
 
 export function createLlmClient(config: AppConfig): LlmClient | null {
+  if (config.AI_PROVIDER === "gemini") {
+    if (!config.GEMINI_API_KEY) return null;
+    return createGeminiClient(config.GEMINI_API_KEY);
+  }
   if (config.AI_PROVIDER === "anthropic") {
     if (!config.ANTHROPIC_API_KEY) return null;
     return createAnthropicClient(config.ANTHROPIC_API_KEY);
   }
   if (!config.OPENAI_API_KEY) return null;
   return createOpenAiClient(config.OPENAI_API_KEY);
+}
+
+export function createGeminiClient(apiKey: string, opts?: { fetchImpl?: typeof fetch }): LlmClient {
+  const fetchImpl = opts?.fetchImpl ?? fetch;
+  return {
+    async complete(system, user) {
+      const url = `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent`;
+      const res = await fetchImpl(url, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "x-goog-api-key": apiKey,
+        },
+        body: JSON.stringify({
+          systemInstruction: {
+            parts: [{ text: system }],
+          },
+          contents: [
+            {
+              role: "user",
+              parts: [{ text: user }],
+            },
+          ],
+          generationConfig: {
+            maxOutputTokens: 700,
+            temperature: 0.2,
+          },
+        }),
+      });
+      if (!res.ok) {
+        const body = await res.text();
+        throw new Error(`Gemini error ${res.status}: ${body.slice(0, 200)}`);
+      }
+      const data = (await res.json()) as {
+        candidates?: Array<{
+          content?: { parts?: Array<{ text?: string }> };
+        }>;
+      };
+      const text = data.candidates?.[0]?.content?.parts
+        ?.map((p) => p.text ?? "")
+        .join("")
+        .trim();
+      return text || "回答を生成できませんでした。";
+    },
+  };
 }
 
 function createOpenAiClient(apiKey: string): LlmClient {

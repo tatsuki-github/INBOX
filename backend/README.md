@@ -11,7 +11,7 @@ python3 scripts/build_idaten_corpus.py
 
 cd backend
 cp .env.example .env
-# 必要なら .env を編集（LINE / OPENAI）。無くても health とオフライン回答は動く
+# 必要なら .env を編集（LINE / GEMINI_API_KEY）。無くても health とオフライン回答は動く
 npm install
 npm test
 npm run dev
@@ -24,6 +24,7 @@ npm run dev
 |:---|:---|
 | health だけ | なし（`PORT` 既定 3001） |
 | オフライン回答（LLM なし） | なし。スコープ内質問はコーパス抜粋 |
+| 自然文回答（Gemini 無料枠） | [Google AI Studio](https://aistudio.google.com/apikey) で発行した `GEMINI_API_KEY` |
 | LINE 実機 | `LINE_CHANNEL_SECRET` / `LINE_CHANNEL_ACCESS_TOKEN` + ngrok 等 |
 
 Webhook は `POST /webhook`。LINE 実機検証には [ngrok](https://ngrok.com/) 等で HTTPS 公開し、LINE Developers の Webhook URL に設定します。
@@ -34,18 +35,17 @@ Webhook は `POST /webhook`。LINE 実機検証には [ngrok](https://ngrok.com/
 |:---|:---|:---|
 | `LINE_CHANNEL_SECRET` | 本番 | 署名検証 |
 | `LINE_CHANNEL_ACCESS_TOKEN` | 本番 | reply |
-| `AI_PROVIDER` | 任意 | `openai`（既定）または `anthropic` |
-| `OPENAI_API_KEY` / `ANTHROPIC_API_KEY` | 任意 | 未設定時はコーパス抜粋のオフライン回答 |
+| `AI_PROVIDER` | 任意 | **`gemini`（既定）** / `openai` / `anthropic` |
+| `GEMINI_API_KEY` | 任意 | Gemini Developer API（無料枠）。モデルは `gemini-2.5-flash-lite` |
+| `OPENAI_API_KEY` / `ANTHROPIC_API_KEY` | 任意 | 他プロバイダ切替時。未設定時はコーパス抜粋のオフライン回答 |
 | `PORT` | 任意 | ローカル listen（既定 3001） |
 
 ## Vercel
 
-1. 新規プロジェクトをこのリポジトリに接続
-2. **Root Directory** = `backend`
-3. Framework: Other（`vercel.json` の `@vercel/node` を使用）
-4. 上記環境変数を設定
-5. Deploy 後、Webhook URL: `https://<deployment>/webhook`
-6. LINE Developers で Webhook を有効化し Verify
+1. プロジェクト `idaten-line-backend`（Root Directory = `backend`）
+2. 環境変数: `AI_PROVIDER=gemini`、`GEMINI_API_KEY=...`（＋ LINE キー）
+3. Deploy 後、Webhook URL: `https://idaten-line-backend.vercel.app/webhook`
+4. LINE Developers で Webhook を有効化し Verify
 
 既存の `web/` 用 Vercel プロジェクトとは **分けて**運用します。
 
