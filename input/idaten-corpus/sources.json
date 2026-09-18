@@ -140,6 +140,10 @@
     "corpus": "aragyoku/women_top4_2012_2025.json"
   },
   {
+    "source": "input/aragyoku/course-videos.md",
+    "corpus": "aragyoku/course-videos.md"
+  },
+  {
     "source": "input/aragyoku/transcripts/2012-女子.json",
     "corpus": "aragyoku/transcripts/2012-女子.json"
   },

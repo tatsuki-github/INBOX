@@ -15,4 +15,4 @@ LINE Q&A バックエンドが参照するテキスト専用コーパス（い�
 - `calendar/` / `practice/` / `sb/` — 岱明フィルタ済み予定・練習・SB
 - `docs/` — 関連 ADR・定義（抜粋）
 
-ファイル数（SOURCES）: 455
+ファイル数（SOURCES）: 456

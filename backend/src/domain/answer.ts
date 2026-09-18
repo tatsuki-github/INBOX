@@ -1,5 +1,6 @@
 import { classifyScope, OUT_OF_SCOPE_MESSAGE } from "./scope.js";
 import { expandDateQuery, parseDateMentions, resolveRelativeYears } from "./dates.js";
+import { matchCannedAnswer } from "./canned.js";
 import { routeSources } from "./router.js";
 import type { LlmClient } from "./llm.js";
 import { buildSystemPrompt, buildUserPrompt } from "../rag/prompt.js";
@@ -126,6 +127,15 @@ export async function answerQuestion(
   const year = deps.defaultYear ?? new Date().getFullYear();
   const expanded = expandDateQuery(question, year);
   const topK = deps.topK ?? DEFAULT_TOP_K;
+
+  const canned = matchCannedAnswer(question);
+  if (canned) {
+    return {
+      kind: "answered",
+      text: formatForLine(canned.text),
+      sources: [`canned:${canned.id}`],
+    };
+  }
 
   const kgQuery =
     deps.kgQuery ??

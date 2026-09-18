@@ -35,6 +35,7 @@
 - `input/aragyoku/women_full_2012_2025.json` → `aragyoku/women_full_2012_2025.json`
 - `input/aragyoku/women_top6_2012_2025.json` → `aragyoku/women_top6_2012_2025.json`
 - `input/aragyoku/women_top4_2012_2025.json` → `aragyoku/women_top4_2012_2025.json`
+- `input/aragyoku/course-videos.md` → `aragyoku/course-videos.md`
 - `input/aragyoku/transcripts/2012-女子.json` → `aragyoku/transcripts/2012-女子.json`
 - `input/aragyoku/transcripts/2012-男子.json` → `aragyoku/transcripts/2012-男子.json`
 - `input/aragyoku/transcripts/2013-女子.json` → `aragyoku/transcripts/2013-女子.json`
