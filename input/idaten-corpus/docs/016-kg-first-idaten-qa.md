@@ -18,6 +18,7 @@ ADR 015 の LINE バックエンドは BM25（`rag_index.json`）のみで回答
 8. **スコープ**: 天気・ニュース等のハード拒否以外はリポジトリ知識コーパス全体を対象（いだてん岱明に限定しない）。根拠はコーパス抜粋のみ。
 9. **荒玉優勝校**: `aragyoku/winners-by-year.md`（transcripts の rank=1 派生）と該当年 `transcripts/{year}-*.json` を優先取得。古い ekiden-ocr 年でコンテキストを埋めない。
 10. **確定回答（canned）**: 「荒玉のコース動画」など運用上リンクが固定の質問は LLM を経由せず `domain/canned.ts` で URL を返す。
+11. **大会種別ディスambiguation**: ジュニア・なごみ等の固有大会名がある質問では aragyoku / ekiden-ocr を先頭ブーストしない（ADR 017）。
 
 ## 不採用
 

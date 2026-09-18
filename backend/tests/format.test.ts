@@ -28,4 +28,12 @@ describe("formatForLine", () => {
   it("strips fenced code markers", () => {
     expect(formatForLine("```\n距離 3km\n```")).toBe("距離 3km");
   });
+
+  it("keeps bare result-page URLs", () => {
+    const raw =
+      "要点\n\n結果ページ:\nhttp://www.kcrk.jp/i-mode/kiroku/sisen_i/450418/PC/rel026.html";
+    expect(formatForLine(raw)).toContain(
+      "http://www.kcrk.jp/i-mode/kiroku/sisen_i/450418/PC/rel026.html",
+    );
+  });
 });

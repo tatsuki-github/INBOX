@@ -1,6 +1,7 @@
 import { classifyScope, OUT_OF_SCOPE_MESSAGE } from "./scope.js";
 import { expandDateQuery, parseDateMentions, resolveRelativeYears } from "./dates.js";
 import { matchCannedAnswer } from "./canned.js";
+import { matchClarifyAnswer } from "./clarify.js";
 import {
   detectMeetKind,
   isAragyokuCorpusSource,
@@ -8,6 +9,7 @@ import {
   meetResultPathBoost,
   type MeetKind,
 } from "./meets.js";
+import { withMeetResultUrls, type MeetResultUrlEntry } from "./meetResultUrls.js";
 import { routeSources } from "./router.js";
 import type { LlmClient } from "./llm.js";
 import { buildSystemPrompt, buildUserPrompt, MISSING_INFO_MESSAGE } from "../rag/prompt.js";
@@ -38,6 +40,8 @@ export type AnswerDeps = {
   /** Skip router LLM (use KG fallback sources) */
   skipRouter?: boolean;
   defaultYear?: number;
+  /** Inject meet result URL index (tests / overrides) */
+  meetResultUrls?: MeetResultUrlEntry[];
 };
 
 const DEFAULT_TOP_K = 16;
@@ -45,6 +49,18 @@ const DEFAULT_MAX_CHARS = 28000;
 const DEFAULT_ROUTE_SOURCES = 14;
 const DEFAULT_PER_SOURCE = 6;
 const DEFAULT_MAX_CHUNKS = 28;
+
+function finalizeAnswerText(
+  text: string,
+  question: string,
+  deps: AnswerDeps,
+): string {
+  const formatted = formatForLine(text);
+  return withMeetResultUrls(formatted, question, {
+    entries: deps.meetResultUrls,
+    defaultYear: deps.defaultYear ?? new Date().getFullYear(),
+  });
+}
 
 function offlineAnswer(question: string, retrieved: RetrievedChunk[]): string {
   const lines = ["（オフライン回答）", "", `Q: ${question}`, ""];
@@ -177,6 +193,15 @@ export async function answerQuestion(
     };
   }
 
+  const clarify = matchClarifyAnswer(question);
+  if (clarify) {
+    return {
+      kind: "answered",
+      text: formatForLine(clarify.text),
+      sources: [`clarify:${clarify.id}`],
+    };
+  }
+
   const kgQuery =
     deps.kgQuery ??
     ((q: string) => queryKnowledgeGraph(q, { topK: 16, expandHops: 2 }));
@@ -233,7 +258,11 @@ export async function answerQuestion(
   ];
 
   if (!deps.llm) {
-    return { kind: "offline", text: offlineAnswer(question, merged), sources };
+    return {
+      kind: "offline",
+      text: finalizeAnswerText(offlineAnswer(question, merged), question, deps),
+      sources,
+    };
   }
 
   try {
@@ -243,7 +272,11 @@ export async function answerQuestion(
       buildSystemPrompt(),
       buildUserPrompt(question + focusNote, merged),
     );
-    return { kind: "answered", text: formatForLine(text), sources };
+    return {
+      kind: "answered",
+      text: finalizeAnswerText(text, question, deps),
+      sources,
+    };
   } catch (err) {
     const msg = err instanceof Error ? err.message : String(err);
     console.error("answerQuestion llm failed:", msg.slice(0, 300));

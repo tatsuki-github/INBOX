@@ -1,0 +1,113 @@
+{
+  "version": 1,
+  "generated_from": [
+    "input/idaten-corpus/drive-text/記録データベース/**/*.csv",
+    "out/*/source.csv"
+  ],
+  "meets": [
+    {
+      "title": "第39回熊本県中学校陸上競技選手権大会",
+      "date": "2025-06-08",
+      "year": 2025,
+      "urls": [
+        "http://www.kumariku.org/25/25,6,7chugaku/rel039.html",
+        "http://www.kumariku.org/25/25,6,7chugaku/rel044.html",
+        "http://www.kumariku.org/25/25,6,7chugaku/rel043.html"
+      ]
+    },
+    {
+      "title": "第71回全日本中学校通信陸上競技大会",
+      "date": "2025-06-28",
+      "year": 2025,
+      "urls": [
+        "http://www.kumariku.org/25/25,6,28tsushin/rel101.html",
+        "http://www.kumariku.org/25/25,6,28tsushin/rel100.html",
+        "http://www.kumariku.org/25/25,6,28tsushin/rel187.html"
+      ]
+    },
+    {
+      "title": "県中体連",
+      "date": "2025-07-20",
+      "year": 2025,
+      "urls": [
+        "http://www.kumariku.org/25/25,7,19chugaku/rel113.html",
+        "http://www.kumariku.org/25/25,7,19chugaku/rel112.html",
+        "http://www.kumariku.org/25/25,7,19chugaku/rel181.html"
+      ]
+    },
+    {
+      "title": "第２７２回　熊本市陸上競技記録会",
+      "date": "2026-04-04",
+      "year": 2026,
+      "urls": [
+        "http://www.kcrk.jp/i-mode/kiroku/272/PC/rel062.html",
+        "http://www.kcrk.jp/i-mode/kiroku/272/PC/rel068.html",
+        "http://www.kcrk.jp/i-mode/kiroku/272/PC/rel073.html"
+      ]
+    },
+    {
+      "title": "第３４回　金栗記念選抜陸上中長距離熊本大会日本グランプリシリーズ第１戦 熊本大会",
+      "date": "2026-04-11",
+      "year": 2026,
+      "urls": [
+        "http://www.kumariku.org/26/26,4,11kanaguri/rel012.html",
+        "http://www.kumariku.org/26/26,4,11kanaguri/rel011.html",
+        "http://www.kumariku.org/26/26,4,11kanaguri/rel013.html"
+      ]
+    },
+    {
+      "title": "第79回　全九州都市対抗陸上競技大会",
+      "date": "2026-04-12",
+      "year": 2026,
+      "urls": [
+        "https://omuta.meet7.org/cgi/menu.cgi?menu=2&base=20260412&mode=\"_2_4_4_0_0_(0)_5_\"&r_n=豎ｺ蜍�&exit=0",
+        "https://omuta.meet7.org/cgi/menu.cgi?menu=2&base=20260412&mode=\"_1_6_4_0_0_(0)_5_\"&r_n=豎ｺ蜍�&exit=0",
+        "https://omuta.meet7.org/cgi/menu.cgi?menu=2&base=20260412&mode=\"_2_6_4_0_0_(0)_5_\"&r_n=豎ｺ蜍�&exit=0"
+      ]
+    },
+    {
+      "title": "第４５回 熊本市陸上競技選手権大会",
+      "date": "2026-04-18",
+      "year": 2026,
+      "urls": [
+        "http://www.kcrk.jp/i-mode/kiroku/sisen_i/450418/PC/rel026.html"
+      ]
+    },
+    {
+      "title": "第４５回熊本市陸上競技選手権大会中長距離の部",
+      "date": "2026-04-18",
+      "year": 2026,
+      "urls": [
+        "http://www.kcrk.jp/i-mode/kiroku/sisen_i/450418/PC/rel027.html",
+        "http://www.kcrk.jp/i-mode/kiroku/sisen_i/450418/PC/rel013.html",
+        "http://www.kcrk.jp/i-mode/kiroku/sisen_i/450418/PC/rel017.html"
+      ]
+    },
+    {
+      "title": "令和８年度　熊本陸上競技選手権大会　兼　国スポ一次予選会",
+      "date": "2026-04-25",
+      "year": 2026,
+      "urls": [
+        "http://www.kumariku.org/26/26,4,25kensen/rel103.html",
+        "http://www.kumariku.org/26/26,4,25kensen/rel051.html",
+        "http://www.kumariku.org/26/26,4,25kensen/rel052.html"
+      ]
+    },
+    {
+      "title": "第４１回 熊本県中学校陸上選手権・第２４回中学校混成競技大会",
+      "date": "2026-05-23",
+      "year": 2026,
+      "urls": [
+        "http://kumariku.com/competition/?id=9281"
+      ]
+    },
+    {
+      "title": "2026年度第２回熊本県長距離記録会",
+      "date": "2026-07-04",
+      "year": 2026,
+      "urls": [
+        "http://www.kumariku.org/26/26,7,4long/kyougi.html"
+      ]
+    }
+  ]
+}

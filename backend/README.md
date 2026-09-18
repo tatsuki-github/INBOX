@@ -70,6 +70,8 @@ Webhook は `POST /webhook`。LINE 実機検証には [ngrok](https://ngrok.com/
 - 正本フォルダ: [`input/idaten-corpus/`](../input/idaten-corpus/)（テキストのみ）
 - デプロイ同梱索引: [`data/rag_index.json`](data/rag_index.json)
 - デプロイ同梱 KG: [`data/knowledge-graph.json`](data/knowledge-graph.json)（探索地図。本文ではない）
+- 大会結果 URL 索引: [`data/meet-result-urls.json`](data/meet-result-urls.json)（記録 CSV / `source.csv` 由来。再生成は `python3 scripts/build_meet_result_urls.py`）
+- 曖昧な自己ベスト質問は [`src/domain/clarify.ts`](src/domain/clarify.ts) が具体的な質問例を返す（ADR 021）
 - ランタイムは上記以外のパスを読まない（スコープ漏洩防止）
 - コーパス再生成: `python3 scripts/build_idaten_corpus.py`（リポジトリルート）
 - KG 再生成 + 同梱: `uv run python scripts/build_knowledge_graph.py && uv run python scripts/sync_backend_kg.py`

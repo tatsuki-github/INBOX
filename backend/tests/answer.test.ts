@@ -73,6 +73,36 @@ describe("answerQuestion", () => {
     }
   });
 
+  it("appends CSV result URLs after formatting", async () => {
+    const result = await answerQuestion("熊本市選手権の結果は？", {
+      retrieve: () => [],
+      skipRouter: true,
+      defaultYear: 2026,
+      meetResultUrls: [
+        {
+          title: "第４５回熊本市陸上競技選手権大会中長距離の部",
+          date: "2026-04-18",
+          year: 2026,
+          urls: ["http://www.kcrk.jp/i-mode/kiroku/sisen_i/450418/PC/rel026.html"],
+        },
+      ],
+      kgQuery: () => ({
+        question: "x",
+        matched_nodes: [],
+        refs: [],
+        corpus_sources: [],
+      }),
+      llm: {
+        complete: async () => "男子1500mは松野が走りました。",
+      },
+    });
+    expect(result.kind).toBe("answered");
+    if (result.kind === "answered") {
+      expect(result.text).toContain("結果ページ:");
+      expect(result.text).toContain("sisen_i/450418");
+    }
+  });
+
   it("answers 9/20 schedule offline with なごみ in context", async () => {
     resetRetrieverCache();
     resetKgCache();

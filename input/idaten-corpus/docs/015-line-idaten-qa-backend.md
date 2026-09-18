@@ -38,3 +38,4 @@ Messaging API バックエンドが無い。回答範囲を岱明以外に広げ
 - `backend/` + Vitest 緑
 - コーパス再生成手順を `backend/README.md` に記載
 - 関連: ADR 010 / 011、`docs/implementation-flow/line-idaten-bot/`
+- コーパスに無い事実のユーザー向け文言は「コーチに直接聞いてください。」（`MISSING_INFO_MESSAGE`）。天気等のハード拒否は別定型。
