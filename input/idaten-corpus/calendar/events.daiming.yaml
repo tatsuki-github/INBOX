@@ -1,0 +1,4080 @@
+events:
+- title: 岱明中陸上部お別れ会
+  date: '2025-03-08'
+  all_day: true
+  category: 予定
+  status: scheduled
+- title: いだてん岱明保護者会
+  date: '2025-04-15'
+  all_day: false
+  category: 予定
+  status: scheduled
+  start_time: '10:00'
+- title: 岱明中陸上部保護者会
+  date: '2025-05-08'
+  all_day: false
+  category: 予定
+  status: scheduled
+  start_time: '10:00'
+- title: 岱明中体育大会
+  date: '2025-05-18'
+  all_day: true
+  category: 予定
+  status: scheduled
+- title: いだてん岱明練習
+  date: '2025-06-05'
+  all_day: true
+  category: 予定
+  status: scheduled
+  description: "<!-- practice-menu:v1\nwarmup: 動きづくり\nitems:\n- type: jog\n  group:\
+    \ null\n  laps: 8\n  distance_km: 4.48\n  pace: k/4:16\n- type: jog\n  group:\
+    \ null\n  laps: 6\n  distance_km: 3.36\n  pace: k/4:16\n-->\n\n動きづくり\n\nジョグ 4.48km\
+    \ (8周) k/4:16\nジョグ 3.36km (6周) k/4:16\n"
+  practice:
+    warmup: 動きづくり
+    items:
+    - type: jog
+      laps: 8
+      distance_km: 4.48
+      pace: k/4:16
+    - type: jog
+      laps: 6
+      distance_km: 3.36
+      pace: k/4:16
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  - practice:daiming
+- title: いだてん岱明練習
+  date: '2025-06-21'
+  all_day: true
+  category: 予定
+  status: scheduled
+  description: "<!-- practice-menu:v1\nwarmup: 動きづくり\nitems:\n- type: set\n  group:\
+    \ null\n  segments:\n  - distance_m: 600\n  - distance_m: 300\n  - distance_m:\
+    \ 300\n  label: 800m組 600m+300m 600m k/3:30 / 300m k/3:10\n- type: set\n  group:\
+    \ null\n  segments:\n  - distance_m: 900\n  - distance_m: 600\n  - distance_m:\
+    \ 600\n  label: 1500m組 900m+600m 900m k/3:30 / 600m k/3:10\n- type: set\n  group:\
+    \ null\n  segments:\n  - distance_m: 600\n  - distance_m: 300\n  label: 800m組\
+    \ 600m+300m k/3:30 / 300m k/3:10\n- type: set\n  group: null\n  segments:\n  -\
+    \ distance_m: 900\n  - distance_m: 600\n  label: 1500m組 900m+600m k/3:30 / 600m\
+    \ k/3:10\n- type: set\n  group: null\n  segments:\n  - distance_m: 600\n  - distance_m:\
+    \ 300\n  label: 800m組 600m+300m 600m k/3:10 / 300m k/3:30\n- type: set\n  group:\
+    \ null\n  segments:\n  - distance_m: 900\n  - distance_m: 600\n  label: 1500m組\
+    \ 900m+600m 900m k/3:10 / 600m k/3:30\n-->\n\n動きづくり\n\n間は他の組がやっている時間\n\n800m組\
+    \ 600m+300m 600m k/3:30 / 300m k/3:10600m / 300m / 300m\n1500m組 900m+600m 900m\
+    \ k/3:30 / 600m k/3:10900m / 600m / 600m\n800m組 600m+300m k/3:30 / 300m k/3:10600m\
+    \ / 300m\n1500m組 900m+600m k/3:30 / 600m k/3:10900m / 600m\n800m組 600m+300m 600m\
+    \ k/3:10 / 300m k/3:30600m / 300m\n1500m組 900m+600m 900m k/3:10 / 600m k/3:30900m\
+    \ / 600m\n"
+  practice:
+    warmup: 動きづくり
+    items:
+    - type: set
+      segments:
+      - distance_m: 600
+      - distance_m: 300
+      - distance_m: 300
+      label: 800m組 600m+300m 600m k/3:30 / 300m k/3:10
+    - type: set
+      segments:
+      - distance_m: 900
+      - distance_m: 600
+      - distance_m: 600
+      label: 1500m組 900m+600m 900m k/3:30 / 600m k/3:10
+    - type: set
+      segments:
+      - distance_m: 600
+      - distance_m: 300
+      label: 800m組 600m+300m k/3:30 / 300m k/3:10
+    - type: set
+      segments:
+      - distance_m: 900
+      - distance_m: 600
+      label: 1500m組 900m+600m k/3:30 / 600m k/3:10
+    - type: set
+      segments:
+      - distance_m: 600
+      - distance_m: 300
+      label: 800m組 600m+300m 600m k/3:10 / 300m k/3:30
+    - type: set
+      segments:
+      - distance_m: 900
+      - distance_m: 600
+      label: 1500m組 900m+600m 900m k/3:10 / 600m k/3:30
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  - practice:daiming
+- title: 岱明中3年第1回実力テスト
+  date: '2025-07-01'
+  all_day: true
+  category: 予定
+  status: scheduled
+- title: いだてん岱明練習
+  date: '2025-07-05'
+  all_day: true
+  category: 予定
+  status: scheduled
+  description: "<!-- practice-menu:v1\nwarmup: 動きづくり\nitems:\n- type: jog\n  group:\
+    \ null\n  distance_km: 5.0\n  pace: k/4:28\n- type: jog\n  group: null\n  distance_km:\
+    \ 4.0\n  pace: k/4:55\n-->\n\n動きづくり\n\nジョグ 5.00km k/4:28\nジョグ 4.00km k/4:55\n"
+  practice:
+    warmup: 動きづくり
+    items:
+    - type: jog
+      distance_km: 5.0
+      pace: k/4:28
+    - type: jog
+      distance_km: 4.0
+      pace: k/4:55
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  - practice:daiming
+- title: いだてん岱明練習
+  date: '2025-07-12'
+  all_day: true
+  category: 予定
+  status: scheduled
+  description: "<!-- practice-menu:v1\nwarmup: 動きづくり\nitems:\n- type: set\n  group:\
+    \ null\n  segments:\n  - distance_m: 600\n  - distance_m: 300\n  - distance_m:\
+    \ 300\n  label: 1500m組 600m+300m 600m k/3:10 / 300m k/3:00\n- type: set\n  group:\
+    \ null\n  segments:\n  - distance_m: 300\n  - distance_m: 300\n  label: 800m組\
+    \ 300m+300m k/3:00\n- type: set\n  group: null\n  segments:\n  - distance_m: 900\n\
+    \  - distance_m: 300\n  - distance_m: 300\n  label: 3000m組 900m+300m 900m k/3:20\
+    \ / 300m k/3:00\n- type: set\n  group: null\n  segments:\n  - distance_m: 600\n\
+    \  - distance_m: 300\n  label: 1500m組 600m+300m k/3:10 / 300m k/3:00\n- type:\
+    \ set\n  group: null\n  segments:\n  - distance_m: 900\n  - distance_m: 300\n\
+    \  label: 3000m組 900m+300m k/3:20 / 300m k/3:00\n- type: set\n  group: null\n\
+    \  segments:\n  - distance_m: 600\n  - distance_m: 300\n  label: 1500m組 600m+300m\
+    \ 600m k/3:00 / 300m k/3:10\n-->\n\n動きづくり\n\n間は他の組がやっている時間\n\n1500m組 600m+300m\
+    \ 600m k/3:10 / 300m k/3:00600m / 300m / 300m\n800m組 300m+300m k/3:00300m / 300m\n\
+    3000m組 900m+300m 900m k/3:20 / 300m k/3:00900m / 300m / 300m\n1500m組 600m+300m\
+    \ k/3:10 / 300m k/3:00600m / 300m\n3000m組 900m+300m k/3:20 / 300m k/3:00900m /\
+    \ 300m\n1500m組 600m+300m 600m k/3:00 / 300m k/3:10600m / 300m\n"
+  practice:
+    warmup: 動きづくり
+    items:
+    - type: set
+      segments:
+      - distance_m: 600
+      - distance_m: 300
+      - distance_m: 300
+      label: 1500m組 600m+300m 600m k/3:10 / 300m k/3:00
+    - type: set
+      segments:
+      - distance_m: 300
+      - distance_m: 300
+      label: 800m組 300m+300m k/3:00
+    - type: set
+      segments:
+      - distance_m: 900
+      - distance_m: 300
+      - distance_m: 300
+      label: 3000m組 900m+300m 900m k/3:20 / 300m k/3:00
+    - type: set
+      segments:
+      - distance_m: 600
+      - distance_m: 300
+      label: 1500m組 600m+300m k/3:10 / 300m k/3:00
+    - type: set
+      segments:
+      - distance_m: 900
+      - distance_m: 300
+      label: 3000m組 900m+300m k/3:20 / 300m k/3:00
+    - type: set
+      segments:
+      - distance_m: 600
+      - distance_m: 300
+      label: 1500m組 600m+300m 600m k/3:00 / 300m k/3:10
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  - practice:daiming
+- title: いだてん岱明練習
+  date: '2025-07-19'
+  all_day: true
+  category: 予定
+  status: scheduled
+  description: "<!-- practice-menu:v1\nwarmup: 動きづくり\nitems:\n- type: jog\n  group:\
+    \ null\n  laps: 8\n  distance_km: 4.48\n  pace: k/4:28\n- type: jog\n  group:\
+    \ null\n  laps: 6\n  distance_km: 3.36\n  pace: k/5:21\n-->\n\n動きづくり\n\nジョグ 4.48km\
+    \ (8周) k/4:28\nジョグ 3.36km (6周) k/5:21\n"
+  practice:
+    warmup: 動きづくり
+    items:
+    - type: jog
+      laps: 8
+      distance_km: 4.48
+      pace: k/4:28
+    - type: jog
+      laps: 6
+      distance_km: 3.36
+      pace: k/5:21
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  - practice:daiming
+- title: 岱明中夏休み
+  date: '2025-07-19'
+  all_day: true
+  category: 予定
+  status: scheduled
+- title: いだてん岱明練習
+  date: '2025-07-26'
+  all_day: true
+  category: 予定
+  status: scheduled
+  description: "<!-- practice-menu:v1\nwarmup: 動きづくり\nitems:\n- type: set\n  group:\
+    \ null\n  segments:\n  - distance_m: 300\n  - distance_m: 300\n  label: 600m （300m63秒/300m組）\
+    \ 600m k/3:30\n- type: set\n  group: null\n  segments:\n  - distance_m: 300\n\
+    \  - distance_m: 300\n  label: 600m （300m69秒/300m組） 600m k/3:50\n-->\n\n動きづくり\n\
+    \n600m （300m63秒/300m組） 600m k/3:30300m / 300m\n600m （300m69秒/300m組） 600m k/3:50300m\
+    \ / 300m\n"
+  practice:
+    warmup: 動きづくり
+    items:
+    - type: set
+      segments:
+      - distance_m: 300
+      - distance_m: 300
+      label: 600m （300m63秒/300m組） 600m k/3:30
+    - type: set
+      segments:
+      - distance_m: 300
+      - distance_m: 300
+      label: 600m （300m69秒/300m組） 600m k/3:50
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  - practice:daiming
+- title: いだてん岱明練習
+  date: '2025-07-28'
+  all_day: true
+  category: 予定
+  status: scheduled
+  description: '動きづくり
+
+    100m流し4本
+
+    '
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  - practice:daiming
+- title: いだてん岱明練習（午前）
+  date: '2025-08-07'
+  all_day: true
+  category: 予定
+  status: scheduled
+  description: "<!-- practice-menu:v1\nwarmup: 動きづくり\nitems:\n- type: jog\n  group:\
+    \ null\n  laps: 10\n  distance_km: 6.29\n  pace: k/4:39\n-->\n\n動きづくり\n\nジョグ 5.60km\
+    \ (10周) k/4:39\n"
+  practice:
+    warmup: 動きづくり
+    items:
+    - type: jog
+      laps: 10
+      distance_km: 6.29
+      pace: k/4:39
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  - practice:daiming
+- title: いだてん岱明練習（午後）
+  date: '2025-08-07'
+  all_day: true
+  category: 予定
+  status: scheduled
+  description: "<!-- practice-menu:v1\nwarmup: 動きづくり\nitems:\n- type: set\n  group:\
+    \ null\n  segments:\n  - distance_m: 900\n  label: 男子900m 1本目 900m k/4:00\n- type:\
+    \ set\n  group: null\n  segments:\n  - distance_m: 600\n  label: 女子600m 1本目 600m\
+    \ k/4:00\n- type: set\n  group: null\n  segments:\n  - distance_m: 900\n  label:\
+    \ 男子900m 2本目 900m k/3:50\n- type: set\n  group: null\n  segments:\n  - distance_m:\
+    \ 600\n  label: 女子600m 2本目 600m k/3:50\n- type: set\n  group: null\n  segments:\n\
+    \  - distance_m: 900\n  label: 男子900m 3本目 900m k/3:40\n- type: set\n  group: null\n\
+    \  segments:\n  - distance_m: 600\n  label: 女子600m 3本目 600m k/3:40\n-->\n\n動きづくり\n\
+    \n男子900m 1本目 900m k/4:00900m\n女子600m 1本目 600m k/4:00600m\n男子900m 2本目 900m k/3:50900m\n\
+    女子600m 2本目 600m k/3:50600m\n男子900m 3本目 900m k/3:40900m\n女子600m 3本目 600m k/3:40600m\n"
+  practice:
+    warmup: 動きづくり
+    items:
+    - type: set
+      segments:
+      - distance_m: 900
+      label: 男子900m 1本目 900m k/4:00
+    - type: set
+      segments:
+      - distance_m: 600
+      label: 女子600m 1本目 600m k/4:00
+    - type: set
+      segments:
+      - distance_m: 900
+      label: 男子900m 2本目 900m k/3:50
+    - type: set
+      segments:
+      - distance_m: 600
+      label: 女子600m 2本目 600m k/3:50
+    - type: set
+      segments:
+      - distance_m: 900
+      label: 男子900m 3本目 900m k/3:40
+    - type: set
+      segments:
+      - distance_m: 600
+      label: 女子600m 3本目 600m k/3:40
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  - practice:daiming
+- title: いだてん岱明練習
+  date: '2025-08-09'
+  all_day: true
+  category: 予定
+  status: scheduled
+  description: "<!-- practice-menu:v1\nwarmup: 動きづくり\nitems:\n- type: jog\n  group:\
+    \ null\n  laps: 12\n  distance_km: 6.29\n  pace: k/4:39\n-->\n\n動きづくり\n\n流し\n\n\
+    ジョグ 6.72km (12周) k/4:39\n"
+  practice:
+    warmup: 動きづくり
+    items:
+    - type: jog
+      laps: 12
+      distance_km: 6.29
+      pace: k/4:39
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  - practice:daiming
+- title: いだてん岱明練習
+  date: '2025-08-12'
+  all_day: true
+  category: 予定
+  status: scheduled
+  description: "<!-- practice-menu:v1\nwarmup: 動きづくり\nitems:\n- type: jog\n  group:\
+    \ null\n  laps: 12\n  distance_km: 6.26\n  pace: k/4:55\n-->\n\n動きづくり\n\n流し\n\n\
+    ジョグ 6.72km (12周) k/4:55\n"
+  practice:
+    warmup: 動きづくり
+    items:
+    - type: jog
+      laps: 12
+      distance_km: 6.26
+      pace: k/4:55
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  - practice:daiming
+- title: 岱明中同窓会
+  date: '2025-08-16'
+  all_day: false
+  category: 予定
+  status: scheduled
+  start_time: 08:30
+- title: いだてん岱明練習（午前）
+  date: '2025-08-21'
+  all_day: true
+  category: 予定
+  status: scheduled
+  description: "<!-- practice-menu:v1\nwarmup: 動きづくり\nitems:\n- type: jog\n  group:\
+    \ null\n  laps: 12\n  distance_km: 6.13\n  pace: k/4:44\n-->\n\n動きづくり\n\n流し\n\n\
+    ジョグ 6.72km (12周) k/4:44\n"
+  practice:
+    warmup: 動きづくり
+    items:
+    - type: jog
+      laps: 12
+      distance_km: 6.13
+      pace: k/4:44
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  - practice:daiming
+- title: いだてん岱明練習（午後）
+  date: '2025-08-21'
+  all_day: true
+  category: 予定
+  status: scheduled
+  description: "<!-- practice-menu:v1\nwarmup: 動きづくり\nitems:\n- type: jog\n  group:\
+    \ null\n  laps: 6\n  distance_km: 3.36\n  pace: k/4:18\n- type: set\n  group:\
+    \ null\n  segments:\n  - distance_m: 200\n  label: 200m ×5 男子 200m×5 k/3:10〜k/3:20\n\
+    - type: set\n  group: null\n  segments:\n  - distance_m: 200\n  label: 200m ×5\
+    \ 女子 200m×5 k/3:30〜k/3:40\n-->\n\n動きづくり\n\nジョグ 3.36km (6周) k/4:18\n200m ×5 男子\
+    \ 200m×5 k/3:10〜k/3:20200m\n200m ×5 女子 200m×5 k/3:30〜k/3:40200m\n"
+  practice:
+    warmup: 動きづくり
+    items:
+    - type: jog
+      laps: 6
+      distance_km: 3.36
+      pace: k/4:18
+    - type: set
+      segments:
+      - distance_m: 200
+      label: 200m ×5 男子 200m×5 k/3:10〜k/3:20
+    - type: set
+      segments:
+      - distance_m: 200
+      label: 200m ×5 女子 200m×5 k/3:30〜k/3:40
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  - practice:daiming
+- title: 岱明中3年第2回実力テスト
+  date: '2025-08-28'
+  all_day: true
+  category: 予定
+  status: scheduled
+- title: 玉名市練習会(岱明)
+  date: '2025-08-28'
+  all_day: false
+  category: 予定
+  status: scheduled
+  start_time: '10:00'
+  tags:
+  - practice:daiming
+- title: 岱明中2年職場体験
+  date: '2025-09-02'
+  all_day: true
+  category: 予定
+  status: scheduled
+- title: 岱明中前期期末テスト
+  date: '2025-09-10'
+  all_day: true
+  category: 予定
+  status: scheduled
+- title: いだてん岱明練習
+  date: '2025-09-15'
+  all_day: true
+  category: 予定
+  status: scheduled
+  description: "<!-- practice-menu:v1\nwarmup: null\nitems:\n- type: jog\n  group:\
+    \ null\n  laps: 4\n  distance_km: 2.24\n  pace: k/3:52\n- type: set\n  group:\
+    \ 男子\n  segments:\n  - distance_m: 1120\n  label: 男子 追加2周（設定） 1.12km (2周) k/3:16\n\
+    - type: set\n  group: 男子\n  segments:\n  - distance_m: 1120\n  label: 男子 追加2周（実際）\
+    \ 1.12km (2周) k/3:07\n- type: set\n  group: 女子\n  segments:\n  - distance_m: 1120\n\
+    \  label: 女子 追加2周（設定） 1.12km (2周) k/3:52\n- type: set\n  group: 女子\n  segments:\n\
+    \  - distance_m: 1120\n  label: 女子 追加2周（実際） 1.12km (2周) k/3:34\n-->\n\nジョグ 2.24km\
+    \ (4周) k/3:52\n男子 追加2周（設定） 1.12km (2周) k/3:161120m\n男子 追加2周（実際） 1.12km (2周) k/3:071120m\n\
+    女子 追加2周（設定） 1.12km (2周) k/3:521120m\n女子 追加2周（実際） 1.12km (2周) k/3:341120m\n"
+  practice:
+    items:
+    - type: jog
+      laps: 4
+      distance_km: 2.24
+      pace: k/3:52
+    - type: set
+      group: 男子
+      segments:
+      - distance_m: 1120
+      label: 男子 追加2周（設定） 1.12km (2周) k/3:16
+    - type: set
+      group: 男子
+      segments:
+      - distance_m: 1120
+      label: 男子 追加2周（実際） 1.12km (2周) k/3:07
+    - type: set
+      group: 女子
+      segments:
+      - distance_m: 1120
+      label: 女子 追加2周（設定） 1.12km (2周) k/3:52
+    - type: set
+      group: 女子
+      segments:
+      - distance_m: 1120
+      label: 女子 追加2周（実際） 1.12km (2周) k/3:34
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  - practice:daiming
+- title: いだてん岱明練習
+  date: '2025-09-16'
+  all_day: true
+  category: 予定
+  status: scheduled
+  description: "<!-- practice-menu:v1\nwarmup: 動きづくり\nitems:\n- type: jog\n  group:\
+    \ null\n  laps: 10\n  distance_km: 5.11\n  pace: k/4:24\n-->\n\n動きづくり\n\n流し\n\n\
+    ジョグ 5.60km (10周) k/4:24\n"
+  practice:
+    warmup: 動きづくり
+    items:
+    - type: jog
+      laps: 10
+      distance_km: 5.11
+      pace: k/4:24
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  - practice:daiming
+- title: いだてん岱明練習
+  date: '2025-09-23'
+  all_day: true
+  category: 予定
+  status: scheduled
+  description: "<!-- practice-menu:v1\nwarmup: 動きづくり\nitems:\n- type: jog\n  group:\
+    \ null\n  laps: 12\n  distance_km: 6.34\n  pace: k/4:23\n-->\n\n動きづくり\n\n流し\n\n\
+    ジョグ 6.72km (12周) k/4:23\n"
+  practice:
+    warmup: 動きづくり
+    items:
+    - type: jog
+      laps: 12
+      distance_km: 6.34
+      pace: k/4:23
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  - practice:daiming
+- title: 岱明駅伝試走
+  date: '2025-10-02'
+  all_day: true
+  category: 予定
+  status: scheduled
+- title: いだてん岱明練習
+  date: '2025-10-04'
+  all_day: true
+  category: 予定
+  status: scheduled
+  description: "<!-- practice-menu:v1\nwarmup: 動きづくり\nitems:\n- type: jog\n  group:\
+    \ null\n  laps: 12\n  distance_km: 6.3\n  pace: k/4:39\n-->\n\n動きづくり\n\n流し\n\n\
+    ジョグ 6.72km (12周) k/4:39\n"
+  practice:
+    warmup: 動きづくり
+    items:
+    - type: jog
+      laps: 12
+      distance_km: 6.3
+      pace: k/4:39
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  - practice:daiming
+- title: 岱明駅伝試走
+  date: '2025-10-08'
+  all_day: true
+  category: 予定
+  status: scheduled
+- title: いだてん岱明練習
+  date: '2025-10-11'
+  all_day: true
+  category: 予定
+  status: scheduled
+  description: "<!-- practice-menu:v1\nwarmup: 動きづくり\nitems:\n- type: jog\n  group:\
+    \ null\n  laps: 12\n  distance_km: 6.23\n  pace: k/4:19\n-->\n\n動きづくり\n\n流し\n\n\
+    ジョグ 6.72km (12周) k/4:19\n"
+  practice:
+    warmup: 動きづくり
+    items:
+    - type: jog
+      laps: 12
+      distance_km: 6.23
+      pace: k/4:19
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  - practice:daiming
+- title: いだてん岱明練習
+  date: '2025-10-13'
+  all_day: true
+  category: 予定
+  status: scheduled
+  description: "<!-- practice-menu:v1\nwarmup: 動きづくり\nitems:\n- type: jog\n  group:\
+    \ null\n  laps: 4\n  distance_km: 2.24\n  pace: k/3:45\n- type: set\n  group:\
+    \ 男子\n  segments:\n  - distance_m: 1000\n  - distance_m: 500\n  - distance_m:\
+    \ 500\n  label: 男子 1000m+500m 1000m k/3:20 / 500m k/2:48\n-->\n\n動きづくり\n\nジョグ\
+    \ 2.24km (4周) k/3:45\n男子 1000m+500m 1000m k/3:20 / 500m k/2:481000m / 500m / 500m\n"
+  practice:
+    warmup: 動きづくり
+    items:
+    - type: jog
+      laps: 4
+      distance_km: 2.24
+      pace: k/3:45
+    - type: set
+      group: 男子
+      segments:
+      - distance_m: 1000
+      - distance_m: 500
+      - distance_m: 500
+      label: 男子 1000m+500m 1000m k/3:20 / 500m k/2:48
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  - practice:daiming
+- title: いだてん岱明練習
+  date: '2025-10-20'
+  all_day: true
+  category: 予定
+  status: scheduled
+  description: "<!-- practice-menu:v1\nwarmup: 動きづくり\nitems:\n- type: jog\n  group:\
+    \ null\n  laps: 10\n  distance_km: 4.95\n  pace: k/5:07\n-->\n\n動きづくり\n\n欠席者 松岡\n\
+    流し2本\n中体連駅伝明け最初の練習。1名は連絡があり、欠席だったが、その他は全員参加。休み明けと、一体感を高めるために男女固まっての練習。小学生1名含め、全員が最後まで完走。3年が抜け、ジョグ中はかなり静かになっていた。あまりに静かだったので、自分が話を展開することもあった。寒くなってきたため、上着を持ってくるよう伝えた。ディズニーのお土産も配った。メリハリのハリを改善しつつも、岱明のこれまでの良さでもあるメリも大事にしてほしい。\n\
+    \nジョグ 5.60km (10周) k/5:07\n"
+  practice:
+    warmup: 動きづくり
+    absentees:
+    - 松岡
+    items:
+    - type: jog
+      laps: 10
+      distance_km: 4.95
+      pace: k/5:07
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  - practice:daiming
+- title: 岱明中合唱コンクール
+  date: '2025-10-24'
+  all_day: true
+  category: 予定
+  status: scheduled
+- title: いだてん岱明練習
+  date: '2025-10-25'
+  all_day: true
+  category: 予定
+  status: scheduled
+  description: "<!-- practice-menu:v1\nwarmup: 動きづくり\nitems:\n- type: jog\n  group:\
+    \ null\n  laps: 6\n  distance_km: 3.1\n  pace: k/4:02\n-->\n\n動きづくり\n\n欠席者 田上、角田、高田、松本\n\
+    欠席者多めの中、動きづくりはいつもよりしっかりとやれていた印象だった。ダウンジョグも一体感持ってやってほしい。11〜1月は日の入りが早いため、6時間授業の場合は学校で速く短く、5時間やそれより早い場合はゆっくり長く、土日祝日で実施する日はスピード練習\n\
+    \nジョグ 3.36km (6周) k/4:02\n"
+  practice:
+    warmup: 動きづくり
+    absentees:
+    - 田上
+    - 角田
+    - 高田
+    - 松本
+    items:
+    - type: jog
+      laps: 6
+      distance_km: 3.1
+      pace: k/4:02
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  - practice:daiming
+- title: いだてん岱明練習
+  date: '2025-11-01'
+  all_day: true
+  category: 予定
+  status: scheduled
+  description: "<!-- practice-menu:v1\nwarmup: 動きづくり\nitems:\n- type: jog\n  group:\
+    \ null\n  laps: 12\n  distance_km: 6.13\n  pace: k/4:59\n-->\n\n動きづくり\n\n欠席者 松岡、塚原、村上、高田、増岡\n\
+    ゆっくりめだったため、リタイアが一人もおらず、全員完走。このペースで男子は8km、女子は7kmをまずいけたら。\n\nジョグ 6.72km (12周) k/4:59\n"
+  practice:
+    warmup: 動きづくり
+    absentees:
+    - 松岡
+    - 塚原
+    - 村上
+    - 高田
+    - 増岡
+    items:
+    - type: jog
+      laps: 12
+      distance_km: 6.13
+      pace: k/4:59
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  - practice:daiming
+- title: いだてん岱明練習
+  date: '2025-11-03'
+  all_day: true
+  category: 予定
+  status: scheduled
+  description: "<!-- practice-menu:v1\nwarmup: 動きづくり\nitems:\n- type: jog\n  group:\
+    \ null\n  laps: 6\n  distance_km: 3.08\n  pace: k/4:03\n- type: set\n  group:\
+    \ null\n  segments:\n  - distance_m: 300\n  label: 300m 1本目 300m k/3:23\n- type:\
+    \ set\n  group: null\n  segments:\n  - distance_m: 300\n  label: 300m 2本目 300m\
+    \ k/3:17\n- type: set\n  group: null\n  segments:\n  - distance_m: 300\n  label:\
+    \ 300m 3本目 300m k/3:13\n- type: set\n  group: null\n  segments:\n  - distance_m:\
+    \ 300\n  label: 300m 4本目 300m k/3:00\n-->\n\n動きづくり\n\n欠席者 村上、高田、松岡\nキロ4で3kmが楽になれば、5km20分ではいけそう。まだインターバルの間をしっかりとしたジョグで繋げるようになるまでは時間がかかりそう。角田、塚原はスピードに課題。\n\
+    \nジョグ 3.36km (6周) k/4:03\n300m 1本目 300m k/3:23300m\n300m 2本目 300m k/3:17300m\n\
+    300m 3本目 300m k/3:13300m\n300m 4本目 300m k/3:00300m\n"
+  practice:
+    warmup: 動きづくり
+    absentees:
+    - 村上
+    - 高田
+    - 松岡
+    items:
+    - type: jog
+      laps: 6
+      distance_km: 3.08
+      pace: k/4:03
+    - type: set
+      segments:
+      - distance_m: 300
+      label: 300m 1本目 300m k/3:23
+    - type: set
+      segments:
+      - distance_m: 300
+      label: 300m 2本目 300m k/3:17
+    - type: set
+      segments:
+      - distance_m: 300
+      label: 300m 3本目 300m k/3:13
+    - type: set
+      segments:
+      - distance_m: 300
+      label: 300m 4本目 300m k/3:00
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  - practice:daiming
+- title: いだてん岱明練習
+  date: '2025-11-08'
+  all_day: true
+  category: 予定
+  status: scheduled
+  description: "<!-- practice-menu:v1\nwarmup: 動きづくり\nitems:\n- type: jog\n  group:\
+    \ null\n  laps: 6\n  distance_km: 3.17\n  pace: k/5:02\n- type: set\n  group:\
+    \ null\n  segments:\n  - distance_m: 300\n  label: 600m ×2（54秒/300m組） 600m×2 k/3:00\n\
+    - type: set\n  group: null\n  segments:\n  - distance_m: 300\n  label: 600m ×2（57秒/300m組）\
+    \ 600m×2 k/3:10\n- type: set\n  group: null\n  segments:\n  - distance_m: 300\n\
+    \  label: 600m ×2（60秒/300m組） 600m×2 k/3:20\n- type: set\n  group: null\n  segments:\n\
+    \  - distance_m: 300\n  label: 600m ×2（63秒/300m組） 600m×2 k/3:30\n- type: interval\n\
+    \  distance_m: 600\n  reps: '2'\n  intensity: null\n  rest_sec: null\n- type:\
+    \ interval\n  distance_m: 600\n  reps: '2'\n  intensity: null\n  rest_sec: null\n\
+    - type: interval\n  distance_m: 600\n  reps: '2'\n  intensity: null\n  rest_sec:\
+    \ null\n- type: interval\n  distance_m: 600\n  reps: '2'\n  intensity: null\n\
+    \  rest_sec: null\n-->\n\n動きづくり\n\n欠席者 松岡、松本、山本\n最初のアップは3周目から外を回るようになったため、ラップが落ちる。ショートカットしがちだったが、砂場の外を回って欲しい。600は全員設定より速いタイムでいけていた。特に松野は2セット目は51-52で回った。最後にみかんを配った。すぐになくなったので、もっと持ってきてもいいかも。\n\
+    \nジョグ 3.36km (6周) k/5:02\n600m ×2（54秒/300m組） 600m×2 k/3:00300m\n600m ×2（57秒/300m組）\
+    \ 600m×2 k/3:10300m\n600m ×2（60秒/300m組） 600m×2 k/3:20300m\n600m ×2（63秒/300m組）\
+    \ 600m×2 k/3:30300m\n600m×2\n600m×2\n600m×2\n600m×2\n"
+  practice:
+    warmup: 動きづくり
+    absentees:
+    - 松岡
+    - 松本
+    - 山本
+    items:
+    - type: jog
+      laps: 6
+      distance_km: 3.17
+      pace: k/5:02
+    - type: set
+      segments:
+      - distance_m: 300
+      label: 600m ×2（54秒/300m組） 600m×2 k/3:00
+    - type: set
+      segments:
+      - distance_m: 300
+      label: 600m ×2（57秒/300m組） 600m×2 k/3:10
+    - type: set
+      segments:
+      - distance_m: 300
+      label: 600m ×2（60秒/300m組） 600m×2 k/3:20
+    - type: set
+      segments:
+      - distance_m: 300
+      label: 600m ×2（63秒/300m組） 600m×2 k/3:30
+    - type: interval
+      distance_m: 600
+      reps: 2
+    - type: interval
+      distance_m: 600
+      reps: 2
+    - type: interval
+      distance_m: 600
+      reps: 2
+    - type: interval
+      distance_m: 600
+      reps: 2
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  - practice:daiming
+- title: 岱明中後期中間テスト
+  date: '2025-11-11'
+  all_day: true
+  category: 予定
+  status: scheduled
+- title: いだてん岱明練習
+  date: '2025-11-15'
+  all_day: true
+  category: 予定
+  status: scheduled
+  description: "<!-- practice-menu:v1\nwarmup: 動きづくり\nitems:\n- type: jog\n  group:\
+    \ null\n  laps: 6\n  distance_km: 3.26\n  pace: k/5:08\n-->\n\n動きづくり\n\n欠席者 松岡、塚原、高田\n\
+    土山は900m4本走ったが、生徒によって3+3+3、3+3+2、3+2+2、3+1+1といった具合。間は3分。\n村上は3本目を2周。田上は60で3本のラストは上げられていた。松野は最後も3周いった。次回以降は、各自の周回を増やすか、1本目66からの4本目54の3秒ずつ上げなどができれば。塚原は疲労骨折手前だったとのこと。オーバーワークにならずにコツコツと負荷を高めていきたい。\n\
+    \nジョグ 3.36km (6周) k/5:08\n"
+  practice:
+    warmup: 動きづくり
+    absentees:
+    - 松岡
+    - 塚原
+    - 高田
+    items:
+    - type: jog
+      laps: 6
+      distance_km: 3.26
+      pace: k/5:08
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  - practice:daiming
+- title: いだてん岱明練習
+  date: '2025-11-24'
+  all_day: true
+  category: 予定
+  status: scheduled
+  description: "<!-- practice-menu:v1\nwarmup: 動きづくり\nitems:\n- type: jog\n  group:\
+    \ null\n  laps: 6\n  distance_km: 3.22\n  pace: k/5:16\n- type: set\n  group:\
+    \ B組\n  segments:\n  - distance_m: 2100\n  label: B組 2100m 2100m k/4:00\n- type:\
+    \ set\n  group: B組\n  segments:\n  - distance_m: 900\n  label: B組 900m 900m k/3:50\n\
+    - type: set\n  group: A組\n  segments:\n  - distance_m: 2100\n  label: A組 2100m\
+    \ 2100m k/3:40\n- type: set\n  group: A組\n  segments:\n  - distance_m: 900\n \
+    \ label: A組 900m 900m k/3:30\n-->\n\n動きづくり\n\n欠席者 松野、塚原、松本\n設定にゆとりを持って走れる生徒が多く、そういう生徒は自分より前を走っていた。\n\
+    \nジョグ 3.36km (6周) k/5:16\nB組 2100m 2100m k/4:002100m\nB組 900m 900m k/3:50900m\n\
+    A組 2100m 2100m k/3:402100m\nA組 900m 900m k/3:30900m\n"
+  practice:
+    warmup: 動きづくり
+    absentees:
+    - 松野
+    - 塚原
+    - 松本
+    items:
+    - type: jog
+      laps: 6
+      distance_km: 3.22
+      pace: k/5:16
+    - type: set
+      group: B組
+      segments:
+      - distance_m: 2100
+      label: B組 2100m 2100m k/4:00
+    - type: set
+      group: B組
+      segments:
+      - distance_m: 900
+      label: B組 900m 900m k/3:50
+    - type: set
+      group: A組
+      segments:
+      - distance_m: 2100
+      label: A組 2100m 2100m k/3:40
+    - type: set
+      group: A組
+      segments:
+      - distance_m: 900
+      label: A組 900m 900m k/3:30
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  - practice:daiming
+- title: 岱明中県・市学力調査
+  date: '2025-12-03'
+  all_day: true
+  category: 予定
+  status: scheduled
+- title: いだてん岱明練習
+  date: '2025-12-06'
+  all_day: true
+  category: 予定
+  status: scheduled
+  description: "<!-- practice-menu:v1\nwarmup: 動きづくり\nitems:\n- type: jog\n  group:\
+    \ null\n  laps: 10\n  distance_km: 5.6\n  pace: k/5:02\n- type: set\n  group:\
+    \ null\n  segments:\n  - distance_m: 300\n  label: 600m ×1（57秒/300m組） 600m k/3:10\n\
+    - type: set\n  group: null\n  segments:\n  - distance_m: 300\n  label: 600m ×1（60秒/300m組）\
+    \ 600m k/3:20\n- type: set\n  group: null\n  segments:\n  - distance_m: 300\n\
+    \  label: 600m ×1（63秒/300m組） 600m k/3:30\n- type: interval\n  distance_m: 600\n\
+    \  reps: '1'\n  intensity: null\n  rest_sec: null\n- type: interval\n  distance_m:\
+    \ 600\n  reps: '1'\n  intensity: null\n  rest_sec: null\n- type: interval\n  distance_m:\
+    \ 600\n  reps: '1'\n  intensity: null\n  rest_sec: null\n-->\n\n動きづくり\n\nジョグ 5.60km\
+    \ (10周) k/5:02\n600m ×1（57秒/300m組） 600m k/3:10300m\n600m ×1（60秒/300m組） 600m k/3:20300m\n\
+    600m ×1（63秒/300m組） 600m k/3:30300m\n600m×1\n600m×1\n600m×1\n"
+  practice:
+    warmup: 動きづくり
+    items:
+    - type: jog
+      laps: 10
+      distance_km: 5.6
+      pace: k/5:02
+    - type: set
+      segments:
+      - distance_m: 300
+      label: 600m ×1（57秒/300m組） 600m k/3:10
+    - type: set
+      segments:
+      - distance_m: 300
+      label: 600m ×1（60秒/300m組） 600m k/3:20
+    - type: set
+      segments:
+      - distance_m: 300
+      label: 600m ×1（63秒/300m組） 600m k/3:30
+    - type: interval
+      distance_m: 600
+      reps: 1
+    - type: interval
+      distance_m: 600
+      reps: 1
+    - type: interval
+      distance_m: 600
+      reps: 1
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  - practice:daiming
+- title: いだてん岱明練習
+  date: '2025-12-13'
+  all_day: true
+  category: 予定
+  status: scheduled
+  description: "<!-- practice-menu:v1\nwarmup: 動きづくり\nitems:\n- type: jog\n  group:\
+    \ null\n  laps: 3\n  distance_km: 2.93\n  pace: k/4:32\n- type: set\n  group:\
+    \ null\n  segments:\n  - distance_m: 300\n  - distance_m: 300\n  label: 600m +300m\
+    \ 900m 600m k/3:00 / 300m k/3:20\n-->\n\n動きづくり\n\nたくさん走る日と質が高い日は分けた方が心身にかかる負荷を分散できそう。\n\
+    \nジョグ 1.68km (3周) k/4:32\n600m +300m 900m 600m k/3:00 / 300m k/3:20300m / 300m\n"
+  practice:
+    warmup: 動きづくり
+    items:
+    - type: jog
+      laps: 3
+      distance_km: 2.93
+      pace: k/4:32
+    - type: set
+      segments:
+      - distance_m: 300
+      - distance_m: 300
+      label: 600m +300m 900m 600m k/3:00 / 300m k/3:20
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  - practice:daiming
+- title: 岱明陸上忘年会
+  date: '2025-12-13'
+  all_day: false
+  category: 予定
+  status: scheduled
+  start_time: '10:00'
+- title: 岱明中校内駅伝大会
+  date: '2025-12-15'
+  all_day: true
+  category: 予定
+  status: scheduled
+- title: いだてん岱明練習
+  date: '2025-12-20'
+  all_day: true
+  category: 予定
+  status: scheduled
+  description: "<!-- practice-menu:v1\nwarmup: 動きづくり\nitems:\n- type: jog\n  group:\
+    \ null\n  laps: 15\n  distance_km: 8.4\n  pace: k/5:07\n- type: jog\n  group:\
+    \ null\n  laps: 17\n  distance_km: 9.53\n  pace: k/5:07\n-->\n\n動きづくり\n\n流し\n\
+    最初は長いかなと感じたが、無事完走。長く走れるようになってきている。本田くんが最後まで完走したのにはびっくりした。ケガにはお互い注意を払いたい。\n\nジョグ\
+    \ 8.40km (15周) k/5:07\nジョグ 9.52km (17周) k/5:07\n"
+  practice:
+    warmup: 動きづくり
+    items:
+    - type: jog
+      laps: 15
+      distance_km: 8.4
+      pace: k/5:07
+    - type: jog
+      laps: 17
+      distance_km: 9.53
+      pace: k/5:07
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  - practice:daiming
+- title: 岱明中冬休み
+  date: '2025-12-25'
+  all_day: true
+  category: 予定
+  status: scheduled
+- title: いだてん岱明練習
+  date: '2025-12-27'
+  all_day: true
+  category: 予定
+  status: scheduled
+  description: "<!-- practice-menu:v1\nwarmup: 動きづくり\nitems:\n- type: jog\n  group:\
+    \ null\n  laps: 6\n  distance_km: 3.33\n  pace: k/5:03\n- type: set\n  group:\
+    \ 男子\n  segments:\n  - distance_m: 1680\n  - distance_m: 1120\n  label: 男子 1680m+1120m\
+    \ 2800m 2:10組 k/3:52 / 1:55組 k/3:25\n- type: set\n  group: 女子\n  segments:\n \
+    \ - distance_m: 1120\n  - distance_m: 560\n  label: 女子 1120m+560m 1680m 2:10組\
+    \ k/3:52 / 1:55組 k/3:25\n-->\n\n動きづくり\n\n2:10秒組は少しキツそうだった。田上はほぼできていた。松野と山本もほぼいけていた。松野はスタミナに課題。山本は離れても粘れる。\n\
+    \nジョグ 3.36km (6周) k/5:03\n男子 1680m+1120m 2800m 2:10組 k/3:52 / 1:55組 k/3:251680m\
+    \ / 1120m\n女子 1120m+560m 1680m 2:10組 k/3:52 / 1:55組 k/3:251120m / 560m\n"
+  practice:
+    warmup: 動きづくり
+    items:
+    - type: jog
+      laps: 6
+      distance_km: 3.33
+      pace: k/5:03
+    - type: set
+      group: 男子
+      segments:
+      - distance_m: 1680
+      - distance_m: 1120
+      label: 男子 1680m+1120m 2800m 2:10組 k/3:52 / 1:55組 k/3:25
+    - type: set
+      group: 女子
+      segments:
+      - distance_m: 1120
+      - distance_m: 560
+      label: 女子 1120m+560m 1680m 2:10組 k/3:52 / 1:55組 k/3:25
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  - practice:daiming
+- title: いだてん岱明練習
+  date: '2025-12-29'
+  all_day: true
+  category: 予定
+  status: scheduled
+  description: "<!-- practice-menu:v1\nwarmup: 動きづくり\nitems:\n- type: jog\n  group:\
+    \ null\n  laps: 10\n  distance_km: 5.53\n  pace: k/4:51\n-->\n\n動きづくり\n\n流し4本\n\
+    \nジョグ 5.60km (10周) k/4:51\n"
+  practice:
+    warmup: 動きづくり
+    items:
+    - type: jog
+      laps: 10
+      distance_km: 5.53
+      pace: k/4:51
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  - practice:daiming
+- title: 岱明中2年修学旅行
+  date: '2026-01-21'
+  all_day: true
+  category: 予定
+  status: scheduled
+- title: いだてん岱明謝礼
+  date: '2026-01-30'
+  all_day: true
+  category: 予定
+  status: scheduled
+  description: '金額: ￥17,061'
+  tags:
+  - 金額
+- title: 岱明中3年後期期末テスト
+  date: '2026-02-05'
+  all_day: true
+  category: 予定
+  status: scheduled
+- title: 岱明中1・2年後期期末テスト
+  date: '2026-02-12'
+  all_day: true
+  category: 予定
+  status: scheduled
+- title: 岱明中卒業式
+  date: '2026-03-06'
+  all_day: true
+  category: 予定
+  status: scheduled
+- title: 岱明中陸上部お別れ会
+  date: '2026-03-15'
+  all_day: true
+  category: 予定
+  status: scheduled
+- title: いだてん岱明謝礼
+  date: '2026-04-06'
+  all_day: true
+  category: 予定
+  status: scheduled
+  description: '金額: ￥22,448'
+  tags:
+  - 金額
+- title: 岱明中体育大会
+  date: '2026-05-17'
+  all_day: true
+  category: 予定
+  status: scheduled
+- title: 岱明中前期確認テスト
+  date: '2026-05-26'
+  end_date: '2026-05-27'
+  all_day: true
+  category: 予定
+  status: scheduled
+- title: 岱明中夏休み開始
+  date: '2026-07-18'
+  all_day: true
+  category: 予定
+  status: scheduled
+- title: いだてん岱明朝練休み
+  date: '2026-07-20'
+  all_day: true
+  category: 予定
+  status: scheduled
+  weather:
+    location: 玉名市
+    observed_at: 2026-07-20T08:00
+    condition: 晴れ
+    temperature_c: 28.2
+    humidity_pct: 92
+    wind_direction: 南
+    wind_speed_kmh: 7.0
+    precipitation_mm: 0.0
+    source: open-meteo
+    fetched_at: '2026-08-17T12:28:06+00:00'
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  - practice:daiming
+  - session:morning
+- title: いだてん岱明夕練休み
+  date: '2026-07-20'
+  all_day: true
+  category: 予定
+  status: scheduled
+  weather:
+    location: 玉名市
+    observed_at: 2026-07-20T18:00
+    condition: 快晴
+    temperature_c: 32.4
+    humidity_pct: 63
+    wind_direction: 西
+    wind_speed_kmh: 5.5
+    precipitation_mm: 0.0
+    source: open-meteo
+    fetched_at: '2026-08-17T12:28:06+00:00'
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  - practice:daiming
+  - session:evening
+- title: いだてん岱明朝練
+  date: '2026-07-21'
+  all_day: false
+  category: 予定
+  status: scheduled
+  start_time: 08:00
+  end_time: 09:30
+  description: 動きづくり、男子2.5km×2、女子2km×2
+  practice:
+    warmup: 動きづくり
+    items:
+    - type: interval
+      group: 男子
+      distance_km: 2.5
+      reps: 2
+    - type: interval
+      group: 女子
+      distance_km: 2.0
+      reps: 2
+  weather:
+    location: 玉名市
+    observed_at: 2026-07-21T08:00
+    condition: 霧雨（弱）
+    temperature_c: 27.3
+    humidity_pct: 95
+    wind_direction: 南東
+    wind_speed_kmh: 2.6
+    precipitation_mm: 0.1
+    source: open-meteo
+    fetched_at: '2026-08-17T12:28:06+00:00'
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  - practice:daiming
+  - session:morning
+- title: いだてん岱明夕練休み
+  date: '2026-07-21'
+  all_day: true
+  category: 予定
+  status: scheduled
+  weather:
+    location: 玉名市
+    observed_at: 2026-07-21T18:00
+    condition: 快晴
+    temperature_c: 32.1
+    humidity_pct: 63
+    wind_direction: 西
+    wind_speed_kmh: 6.0
+    precipitation_mm: 0.0
+    source: open-meteo
+    fetched_at: '2026-08-17T12:28:06+00:00'
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  - practice:daiming
+  - session:evening
+- title: いだてん岱明朝練休み
+  date: '2026-07-22'
+  all_day: true
+  category: 予定
+  status: scheduled
+  weather:
+    location: 玉名市
+    observed_at: 2026-07-22T08:00
+    condition: 霧雨（弱）
+    temperature_c: 29.4
+    humidity_pct: 79
+    wind_direction: 東南東
+    wind_speed_kmh: 3.0
+    precipitation_mm: 0.1
+    source: open-meteo
+    fetched_at: '2026-08-17T12:28:06+00:00'
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  - practice:daiming
+  - session:morning
+- title: いだてん岱明夕練
+  date: '2026-07-22'
+  all_day: false
+  category: 予定
+  status: scheduled
+  start_time: '18:00'
+  end_time: '19:30'
+  weather:
+    location: 玉名市
+    observed_at: 2026-07-22T18:00
+    condition: 快晴
+    temperature_c: 32.9
+    humidity_pct: 53
+    wind_direction: 南西
+    wind_speed_kmh: 3.0
+    precipitation_mm: 0.0
+    source: open-meteo
+    fetched_at: '2026-08-17T12:28:06+00:00'
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  - practice:daiming
+  - session:evening
+- title: いだてん岱明夕練休み
+  date: '2026-07-23'
+  all_day: true
+  category: 予定
+  status: scheduled
+  weather:
+    location: 玉名市
+    observed_at: 2026-07-23T18:00
+    condition: 晴れ
+    temperature_c: 31.6
+    humidity_pct: 62
+    wind_direction: 西南西
+    wind_speed_kmh: 10.7
+    precipitation_mm: 0.0
+    source: open-meteo
+    fetched_at: '2026-08-17T12:28:06+00:00'
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  - practice:daiming
+  - session:evening
+- title: いだてん岱明朝練
+  date: '2026-07-23'
+  all_day: false
+  category: 予定
+  status: scheduled
+  start_time: 08:00
+  end_time: 09:30
+  description: 動きづくり、男子2.5km×2、女子2km×2
+  practice:
+    warmup: 動きづくり
+    items:
+    - type: interval
+      group: 男子
+      distance_km: 2.5
+      reps: 2
+    - type: interval
+      group: 女子
+      distance_km: 2.0
+      reps: 2
+  weather:
+    location: 玉名市
+    observed_at: 2026-07-23T08:00
+    condition: 晴れ
+    temperature_c: 28.6
+    humidity_pct: 86
+    wind_direction: 南東
+    wind_speed_kmh: 3.3
+    precipitation_mm: 0.0
+    source: open-meteo
+    fetched_at: '2026-08-17T12:28:06+00:00'
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  - practice:daiming
+  - session:morning
+- title: いだてん岱明朝練
+  date: '2026-07-24'
+  all_day: false
+  category: 予定
+  status: scheduled
+  start_time: 08:00
+  end_time: 09:30
+  description: 動きづくり、男子2.5km×2、女子2km×2
+  practice:
+    warmup: 動きづくり
+    items:
+    - type: interval
+      group: 男子
+      distance_km: 2.5
+      reps: 2
+    - type: interval
+      group: 女子
+      distance_km: 2.0
+      reps: 2
+  weather:
+    location: 玉名市
+    observed_at: 2026-07-24T08:00
+    condition: 霧雨（弱）
+    temperature_c: 29.3
+    humidity_pct: 81
+    wind_direction: 東南東
+    wind_speed_kmh: 1.2
+    precipitation_mm: 0.1
+    source: open-meteo
+    fetched_at: '2026-08-17T12:28:06+00:00'
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  - practice:daiming
+  - session:morning
+- title: いだてん岱明夕練
+  date: '2026-07-24'
+  all_day: false
+  category: 予定
+  status: scheduled
+  start_time: '18:00'
+  end_time: '19:30'
+  weather:
+    location: 玉名市
+    observed_at: 2026-07-24T18:00
+    condition: 快晴
+    temperature_c: 33.0
+    humidity_pct: 58
+    wind_direction: 西
+    wind_speed_kmh: 7.8
+    precipitation_mm: 0.0
+    source: open-meteo
+    fetched_at: '2026-08-17T12:28:06+00:00'
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  - practice:daiming
+  - session:evening
+- title: いだてん岱明朝練休み
+  date: '2026-07-25'
+  all_day: true
+  category: 予定
+  status: scheduled
+  weather:
+    location: 玉名市
+    observed_at: 2026-07-25T08:00
+    condition: 快晴
+    temperature_c: 29.4
+    humidity_pct: 76
+    wind_direction: 南東
+    wind_speed_kmh: 2.2
+    precipitation_mm: 0.0
+    source: open-meteo
+    fetched_at: '2026-08-17T12:28:06+00:00'
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  - practice:daiming
+  - session:morning
+- title: いだてん岱明夕練
+  date: '2026-07-25'
+  all_day: false
+  category: 予定
+  status: scheduled
+  start_time: '18:00'
+  end_time: '19:30'
+  weather:
+    location: 玉名市
+    observed_at: 2026-07-25T18:00
+    condition: 曇り
+    temperature_c: 32.5
+    humidity_pct: 62
+    wind_direction: 西北西
+    wind_speed_kmh: 9.4
+    precipitation_mm: 0.0
+    source: open-meteo
+    fetched_at: '2026-08-17T12:28:06+00:00'
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  - practice:daiming
+  - session:evening
+- title: いだてん岱明朝練休み
+  date: '2026-07-26'
+  all_day: true
+  category: 予定
+  status: scheduled
+  weather:
+    location: 玉名市
+    observed_at: 2026-07-26T08:00
+    condition: 曇り
+    temperature_c: 28.5
+    humidity_pct: 81
+    wind_direction: 東南東
+    wind_speed_kmh: 2.8
+    precipitation_mm: 0.0
+    source: open-meteo
+    fetched_at: '2026-08-17T12:28:06+00:00'
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  - practice:daiming
+  - session:morning
+- title: いだてん岱明夕練休み
+  date: '2026-07-26'
+  all_day: true
+  category: 予定
+  status: scheduled
+  weather:
+    location: 玉名市
+    observed_at: 2026-07-26T18:00
+    condition: 快晴
+    temperature_c: 33.5
+    humidity_pct: 60
+    wind_direction: 西北西
+    wind_speed_kmh: 6.5
+    precipitation_mm: 0.0
+    source: open-meteo
+    fetched_at: '2026-08-17T12:28:06+00:00'
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  - practice:daiming
+  - session:evening
+- title: いだてん岱明朝練
+  date: '2026-07-27'
+  all_day: false
+  category: 予定
+  status: scheduled
+  start_time: 08:00
+  end_time: 09:30
+  description: 動きづくり、男子2.5km×2、女子2km×2
+  practice:
+    warmup: 動きづくり
+    items:
+    - type: interval
+      group: 男子
+      distance_km: 2.5
+      reps: 2
+    - type: interval
+      group: 女子
+      distance_km: 2.0
+      reps: 2
+  weather:
+    location: 玉名市
+    observed_at: 2026-07-27T08:00
+    condition: 晴れ
+    temperature_c: 30.2
+    humidity_pct: 79
+    wind_direction: 東
+    wind_speed_kmh: 2.2
+    precipitation_mm: 0.0
+    source: open-meteo
+    fetched_at: '2026-08-17T12:28:06+00:00'
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  - practice:daiming
+  - session:morning
+- title: いだてん岱明夕練
+  date: '2026-07-27'
+  all_day: false
+  category: 予定
+  status: scheduled
+  start_time: '18:00'
+  end_time: '19:30'
+  weather:
+    location: 玉名市
+    observed_at: 2026-07-27T18:00
+    condition: 曇り
+    temperature_c: 34.9
+    humidity_pct: 51
+    wind_direction: 西南西
+    wind_speed_kmh: 4.6
+    precipitation_mm: 0.0
+    source: open-meteo
+    fetched_at: '2026-08-17T12:28:06+00:00'
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  - practice:daiming
+  - session:evening
+- title: いだてん岱明夕練休み
+  date: '2026-07-28'
+  all_day: true
+  category: 予定
+  status: scheduled
+  weather:
+    location: 玉名市
+    observed_at: 2026-07-28T18:00
+    condition: 一部曇り
+    temperature_c: 33.2
+    humidity_pct: 60
+    wind_direction: 西北西
+    wind_speed_kmh: 8.7
+    precipitation_mm: 0.0
+    source: open-meteo
+    fetched_at: '2026-08-17T12:28:06+00:00'
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  - practice:daiming
+  - session:evening
+- title: いだてん岱明朝練
+  date: '2026-07-28'
+  all_day: false
+  category: 予定
+  status: scheduled
+  start_time: 08:00
+  end_time: 09:30
+  description: 動きづくり、男子2.5km×2、女子2km×2
+  practice:
+    warmup: 動きづくり
+    items:
+    - type: interval
+      group: 男子
+      distance_km: 2.5
+      reps: 2
+    - type: interval
+      group: 女子
+      distance_km: 2.0
+      reps: 2
+  weather:
+    location: 玉名市
+    observed_at: 2026-07-28T08:00
+    condition: 一部曇り
+    temperature_c: 30.4
+    humidity_pct: 76
+    wind_direction: 西
+    wind_speed_kmh: 2.2
+    precipitation_mm: 0.0
+    source: open-meteo
+    fetched_at: '2026-08-17T12:28:06+00:00'
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  - practice:daiming
+  - session:morning
+- title: いだてん岱明朝練
+  date: '2026-07-29'
+  all_day: false
+  category: 予定
+  status: scheduled
+  start_time: 08:00
+  end_time: 09:30
+  description: 動きづくり、男子2.5km×2、女子2km×2
+  practice:
+    warmup: 動きづくり
+    items:
+    - type: interval
+      group: 男子
+      distance_km: 2.5
+      reps: 2
+    - type: interval
+      group: 女子
+      distance_km: 2.0
+      reps: 2
+  weather:
+    location: 玉名市
+    observed_at: 2026-07-29T08:00
+    condition: 霧雨（弱）
+    temperature_c: 29.2
+    humidity_pct: 78
+    wind_direction: 南西
+    wind_speed_kmh: 5.0
+    precipitation_mm: 0.2
+    source: open-meteo
+    fetched_at: '2026-08-17T12:28:06+00:00'
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  - practice:daiming
+  - session:morning
+- title: いだてん岱明夕練
+  date: '2026-07-29'
+  all_day: false
+  category: 予定
+  status: scheduled
+  start_time: '18:00'
+  end_time: '19:30'
+  weather:
+    location: 玉名市
+    observed_at: 2026-07-29T18:00
+    condition: 一部曇り
+    temperature_c: 32.1
+    humidity_pct: 56
+    wind_direction: 西南西
+    wind_speed_kmh: 10.1
+    precipitation_mm: 0.0
+    source: open-meteo
+    fetched_at: '2026-08-17T12:28:06+00:00'
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  - practice:daiming
+  - session:evening
+- title: いだてん岱明朝練休み
+  date: '2026-07-30'
+  all_day: true
+  category: 予定
+  status: scheduled
+  weather:
+    location: 玉名市
+    observed_at: 2026-07-30T08:00
+    condition: 曇り
+    temperature_c: 29.3
+    humidity_pct: 76
+    wind_direction: 南西
+    wind_speed_kmh: 3.9
+    precipitation_mm: 0.0
+    source: open-meteo
+    fetched_at: '2026-08-17T12:28:06+00:00'
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  - practice:daiming
+  - session:morning
+- title: いだてん岱明夕練休み
+  date: '2026-07-30'
+  all_day: true
+  category: 予定
+  status: scheduled
+  weather:
+    location: 玉名市
+    observed_at: 2026-07-30T18:00
+    condition: 快晴
+    temperature_c: 31.5
+    humidity_pct: 55
+    wind_direction: 西
+    wind_speed_kmh: 13.9
+    precipitation_mm: 0.0
+    source: open-meteo
+    fetched_at: '2026-08-17T12:28:06+00:00'
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  - practice:daiming
+  - session:evening
+- title: いだてん岱明夕練
+  date: '2026-07-31'
+  all_day: false
+  category: 予定
+  status: scheduled
+  start_time: '18:00'
+  end_time: '19:30'
+  description: "<!-- practice-menu:v1\nwarmup: null\nitems:\n- type: interval\n  distance_m:\
+    \ 600\n  reps: '2'\n  intensity: RP\n  rest_sec: null\n-->\n\n各自アップ、600m2本（1500mRP、r=8分）\n\
+    \n600m×2（RP）\n"
+  practice:
+    items:
+    - type: interval
+      distance_m: 600
+      reps: 2
+      intensity: RP
+  weather:
+    location: 玉名市
+    observed_at: 2026-07-31T18:00
+    condition: 快晴
+    temperature_c: 32.0
+    humidity_pct: 60
+    wind_direction: 西南西
+    wind_speed_kmh: 13.2
+    precipitation_mm: 0.0
+    source: open-meteo
+    fetched_at: '2026-08-17T12:28:06+00:00'
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  - practice:daiming
+  - session:evening
+- title: いだてん岱明朝練
+  date: '2026-07-31'
+  all_day: false
+  category: 予定
+  status: scheduled
+  start_time: 08:00
+  end_time: 09:30
+  description: 動きづくり、男子2.5km×2、女子2km×2
+  practice:
+    warmup: 動きづくり
+    items:
+    - type: interval
+      group: 男子
+      distance_km: 2.5
+      reps: 2
+    - type: interval
+      group: 女子
+      distance_km: 2.0
+      reps: 2
+  weather:
+    location: 玉名市
+    observed_at: 2026-07-31T08:00
+    condition: 晴れ
+    temperature_c: 28.3
+    humidity_pct: 76
+    wind_direction: 南東
+    wind_speed_kmh: 3.9
+    precipitation_mm: 0.0
+    source: open-meteo
+    fetched_at: '2026-08-17T12:28:06+00:00'
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  - practice:daiming
+  - session:morning
+- title: いだてん岱明夕練
+  date: '2026-08-01'
+  all_day: false
+  category: 予定
+  status: done
+  start_time: '18:00'
+  end_time: '19:30'
+  description: '動きづくり
+
+    流し2本
+
+    '
+  weather:
+    location: 玉名市
+    observed_at: 2026-08-01T18:00
+    condition: 晴れ
+    temperature_c: 32.9
+    humidity_pct: 63
+    wind_direction: 西南西
+    wind_speed_kmh: 14.7
+    precipitation_mm: 0.0
+    source: open-meteo
+    fetched_at: '2026-08-19T12:10:55+00:00'
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  - practice:daiming
+  - session:evening
+- title: いだてん岱明朝練休み
+  date: '2026-08-02'
+  all_day: true
+  category: 予定
+  status: scheduled
+  weather:
+    location: 玉名市
+    observed_at: 2026-08-02T08:00
+    condition: 一部曇り
+    temperature_c: 29.5
+    humidity_pct: 76
+    wind_direction: 東
+    wind_speed_kmh: 2.9
+    precipitation_mm: 0.0
+    source: open-meteo
+    fetched_at: '2026-08-19T12:10:55+00:00'
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  - practice:daiming
+  - session:morning
+- title: いだてん岱明夕練休み
+  date: '2026-08-02'
+  all_day: true
+  category: 予定
+  status: scheduled
+  weather:
+    location: 玉名市
+    observed_at: 2026-08-02T18:00
+    condition: 一部曇り
+    temperature_c: 34.6
+    humidity_pct: 56
+    wind_direction: 西北西
+    wind_speed_kmh: 11.9
+    precipitation_mm: 0.0
+    source: open-meteo
+    fetched_at: '2026-08-19T12:10:55+00:00'
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  - practice:daiming
+  - session:evening
+- title: いだてん岱明朝練
+  date: '2026-08-03'
+  all_day: false
+  category: 予定
+  status: scheduled
+  start_time: 08:00
+  end_time: 09:30
+  description: 動きづくり、男子2.5km×2、女子2km×2
+  practice:
+    warmup: 動きづくり
+    items:
+    - type: interval
+      group: 男子
+      distance_km: 2.5
+      reps: 2
+    - type: interval
+      group: 女子
+      distance_km: 2.0
+      reps: 2
+  weather:
+    location: 玉名市
+    observed_at: 2026-08-03T08:00
+    condition: 晴れ
+    temperature_c: 31.1
+    humidity_pct: 68
+    wind_direction: 東北東
+    wind_speed_kmh: 3.7
+    precipitation_mm: 0.0
+    source: open-meteo
+    fetched_at: '2026-08-19T12:10:55+00:00'
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  - practice:daiming
+  - session:morning
+- title: いだてん岱明夕練
+  date: '2026-08-03'
+  all_day: false
+  category: 予定
+  status: done
+  start_time: '18:00'
+  end_time: '19:30'
+  description: "<!-- practice-menu:v1\nwarmup: null\nitems:\n- type: set\n  group:\
+    \ null\n  segments:\n  - distance_m: 300\n  label: 300m 1本目 300m k/3:28\n- type:\
+    \ set\n  group: null\n  segments:\n  - distance_m: 300\n  label: 300m 2本目 300m\
+    \ k/3:22\n- type: set\n  group: null\n  segments:\n  - distance_m: 300\n  label:\
+    \ 300m 3本目 300m k/3:24\n- type: set\n  group: null\n  segments:\n  - distance_m:\
+    \ 300\n  label: 300m 4本目 300m k/3:23\n- type: set\n  group: null\n  segments:\n\
+    \  - distance_m: 300\n  label: 300m 5本目 300m k/3:22\n-->\n\n各自アップ、300m5本、レスト70秒\n\
+    \n300m 1本目 300m k/3:28300m\n300m 2本目 300m k/3:22300m\n300m 3本目 300m k/3:24300m\n\
+    300m 4本目 300m k/3:23300m\n300m 5本目 300m k/3:22300m\n"
+  practice:
+    items:
+    - type: set
+      segments:
+      - distance_m: 300
+      label: 300m 1本目 300m k/3:28
+    - type: set
+      segments:
+      - distance_m: 300
+      label: 300m 2本目 300m k/3:22
+    - type: set
+      segments:
+      - distance_m: 300
+      label: 300m 3本目 300m k/3:24
+    - type: set
+      segments:
+      - distance_m: 300
+      label: 300m 4本目 300m k/3:23
+    - type: set
+      segments:
+      - distance_m: 300
+      label: 300m 5本目 300m k/3:22
+  weather:
+    location: 玉名市
+    observed_at: 2026-08-03T18:00
+    condition: 快晴
+    temperature_c: 35.9
+    humidity_pct: 47
+    wind_direction: 東南東
+    wind_speed_kmh: 5.8
+    precipitation_mm: 0.0
+    source: open-meteo
+    fetched_at: '2026-08-19T12:10:55+00:00'
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  - practice:daiming
+  - session:evening
+- title: いだてん岱明夕練休み
+  date: '2026-08-04'
+  all_day: true
+  category: 予定
+  status: scheduled
+  weather:
+    location: 玉名市
+    observed_at: 2026-08-04T18:00
+    condition: 晴れ
+    temperature_c: 33.4
+    humidity_pct: 59
+    wind_direction: 北東
+    wind_speed_kmh: 5.9
+    precipitation_mm: 0.0
+    source: open-meteo
+    fetched_at: '2026-08-19T12:10:55+00:00'
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  - practice:daiming
+  - session:evening
+- title: いだてん岱明朝練
+  date: '2026-08-04'
+  all_day: false
+  category: 予定
+  status: scheduled
+  start_time: 08:00
+  end_time: 09:30
+  description: 動きづくり、男子2.5km×2、女子2km×2
+  practice:
+    warmup: 動きづくり
+    items:
+    - type: interval
+      group: 男子
+      distance_km: 2.5
+      reps: 2
+    - type: interval
+      group: 女子
+      distance_km: 2.0
+      reps: 2
+  weather:
+    location: 玉名市
+    observed_at: 2026-08-04T08:00
+    condition: 快晴
+    temperature_c: 31.0
+    humidity_pct: 70
+    wind_direction: 東北東
+    wind_speed_kmh: 1.0
+    precipitation_mm: 0.0
+    source: open-meteo
+    fetched_at: '2026-08-19T12:10:55+00:00'
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  - practice:daiming
+  - session:morning
+- title: いだてん岱明朝練休み
+  date: '2026-08-05'
+  all_day: true
+  category: 予定
+  status: scheduled
+  weather:
+    location: 玉名市
+    observed_at: 2026-08-05T08:00
+    condition: 晴れ
+    temperature_c: 29.8
+    humidity_pct: 67
+    wind_direction: 東
+    wind_speed_kmh: 7.9
+    precipitation_mm: 0.0
+    source: open-meteo
+    fetched_at: '2026-08-19T12:10:55+00:00'
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  - practice:daiming
+  - session:morning
+- title: いだてん岱明夕練
+  date: '2026-08-05'
+  all_day: false
+  category: 予定
+  status: scheduled
+  start_time: '18:00'
+  end_time: '19:30'
+  weather:
+    location: 玉名市
+    observed_at: 2026-08-05T18:00
+    condition: 快晴
+    temperature_c: 33.7
+    humidity_pct: 43
+    wind_direction: 東
+    wind_speed_kmh: 15.4
+    precipitation_mm: 0.0
+    source: open-meteo
+    fetched_at: '2026-08-19T12:10:55+00:00'
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  - practice:daiming
+  - session:evening
+- title: いだてん岱明夕練休み
+  date: '2026-08-06'
+  all_day: true
+  category: 予定
+  status: scheduled
+  weather:
+    location: 玉名市
+    observed_at: 2026-08-06T18:00
+    condition: 曇り
+    temperature_c: 32.7
+    humidity_pct: 51
+    wind_direction: 東
+    wind_speed_kmh: 19.0
+    precipitation_mm: 0.0
+    source: open-meteo
+    fetched_at: '2026-08-19T12:10:55+00:00'
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  - practice:daiming
+  - session:evening
+- title: いだてん岱明朝練
+  date: '2026-08-06'
+  all_day: false
+  category: 予定
+  status: scheduled
+  start_time: 08:00
+  end_time: 09:30
+  description: 動きづくり、男子2.5km×2、女子2km×2
+  practice:
+    warmup: 動きづくり
+    items:
+    - type: interval
+      group: 男子
+      distance_km: 2.5
+      reps: 2
+    - type: interval
+      group: 女子
+      distance_km: 2.0
+      reps: 2
+  weather:
+    location: 玉名市
+    observed_at: 2026-08-06T08:00
+    condition: 快晴
+    temperature_c: 30.6
+    humidity_pct: 61
+    wind_direction: 北北東
+    wind_speed_kmh: 8.8
+    precipitation_mm: 0.0
+    source: open-meteo
+    fetched_at: '2026-08-19T12:10:55+00:00'
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  - practice:daiming
+  - session:morning
+- title: いだてん岱明朝練
+  date: '2026-08-07'
+  all_day: false
+  category: 予定
+  status: scheduled
+  start_time: 08:00
+  end_time: 09:30
+  description: 動きづくり、男子2.5km×2、女子2km×2
+  practice:
+    warmup: 動きづくり
+    items:
+    - type: interval
+      group: 男子
+      distance_km: 2.5
+      reps: 2
+    - type: interval
+      group: 女子
+      distance_km: 2.0
+      reps: 2
+  weather:
+    location: 玉名市
+    observed_at: 2026-08-07T08:00
+    condition: 曇り
+    temperature_c: 29.9
+    humidity_pct: 66
+    wind_direction: 東北東
+    wind_speed_kmh: 16.3
+    precipitation_mm: 0.0
+    source: open-meteo
+    fetched_at: '2026-08-19T12:10:55+00:00'
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  - practice:daiming
+  - session:morning
+- title: いだてん岱明夕練
+  date: '2026-08-07'
+  all_day: false
+  category: 予定
+  status: done
+  start_time: '18:00'
+  end_time: '19:30'
+  description: 各自ジョグ、300m（男子7本・女子5本）、間1分前後
+  weather:
+    location: 玉名市
+    observed_at: 2026-08-07T18:00
+    condition: 曇り
+    temperature_c: 31.5
+    humidity_pct: 61
+    wind_direction: 東北東
+    wind_speed_kmh: 15.0
+    precipitation_mm: 0.0
+    source: open-meteo
+    fetched_at: '2026-08-19T12:10:55+00:00'
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  - practice:daiming
+  - session:evening
+- title: いだてん岱明朝練休み
+  date: '2026-08-08'
+  all_day: true
+  category: 予定
+  status: scheduled
+  weather:
+    location: 玉名市
+    observed_at: 2026-08-08T08:00
+    condition: 一部曇り
+    temperature_c: 29.5
+    humidity_pct: 66
+    wind_direction: 北東
+    wind_speed_kmh: 11.0
+    precipitation_mm: 0.0
+    source: open-meteo
+    fetched_at: '2026-08-19T12:10:55+00:00'
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  - practice:daiming
+  - session:morning
+- title: いだてん岱明夕練
+  date: '2026-08-08'
+  all_day: false
+  category: 予定
+  status: scheduled
+  start_time: '18:00'
+  end_time: '19:30'
+  description: 動きづくり、男子14周・女子12周、流し2本
+  weather:
+    location: 玉名市
+    observed_at: 2026-08-08T18:00
+    condition: 一部曇り
+    temperature_c: 31.1
+    humidity_pct: 49
+    wind_direction: 東北東
+    wind_speed_kmh: 15.0
+    precipitation_mm: 0.0
+    source: open-meteo
+    fetched_at: '2026-08-19T12:10:55+00:00'
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  - practice:daiming
+  - session:evening
+- title: いだてん岱明朝練休み
+  date: '2026-08-09'
+  all_day: true
+  category: 予定
+  status: scheduled
+  weather:
+    location: 玉名市
+    observed_at: 2026-08-09T08:00
+    condition: 曇り
+    temperature_c: 28.3
+    humidity_pct: 67
+    wind_direction: 東
+    wind_speed_kmh: 8.0
+    precipitation_mm: 0.0
+    source: open-meteo
+    fetched_at: '2026-08-19T12:10:55+00:00'
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  - practice:daiming
+  - session:morning
+- title: いだてん岱明夕練休み
+  date: '2026-08-09'
+  all_day: true
+  category: 予定
+  status: scheduled
+  weather:
+    location: 玉名市
+    observed_at: 2026-08-09T18:00
+    condition: 曇り
+    temperature_c: 31.4
+    humidity_pct: 49
+    wind_direction: 東南東
+    wind_speed_kmh: 12.4
+    precipitation_mm: 0.0
+    source: open-meteo
+    fetched_at: '2026-08-19T12:10:55+00:00'
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  - practice:daiming
+  - session:evening
+- title: いだてん岱明朝練
+  date: '2026-08-10'
+  all_day: false
+  category: 予定
+  status: scheduled
+  start_time: 08:00
+  end_time: 09:30
+  description: 動きづくり、男子2.5km×2、女子2km×2
+  practice:
+    warmup: 動きづくり
+    items:
+    - type: interval
+      group: 男子
+      distance_km: 2.5
+      reps: 2
+    - type: interval
+      group: 女子
+      distance_km: 2.0
+      reps: 2
+  weather:
+    location: 玉名市
+    observed_at: 2026-08-10T08:00
+    condition: 曇り
+    temperature_c: 27.2
+    humidity_pct: 68
+    wind_direction: 東北東
+    wind_speed_kmh: 5.3
+    precipitation_mm: 0.0
+    source: open-meteo
+    fetched_at: '2026-08-19T12:10:55+00:00'
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  - practice:daiming
+  - session:morning
+- title: いだてん岱明夕練
+  date: '2026-08-10'
+  all_day: false
+  category: 予定
+  status: scheduled
+  start_time: '18:00'
+  end_time: '19:30'
+  description: '各自ジョグ、男子と村上は600m2本、村上以外の女子は300m2本（目標1500mペース+10秒/km）
+
+    南本は足首に少し痛みがあるが、走って温めると痛くないとのこと。高田は腰の痛みは少し治っているとのこと。両者とも走れた。中尾は少し疲労が溜まっているかも。松野と田上は大丈夫そう。
+
+    1500mRP+10秒/km
+
+    '
+  weather:
+    location: 玉名市
+    observed_at: 2026-08-10T18:00
+    condition: 曇り
+    temperature_c: 32.3
+    humidity_pct: 51
+    wind_direction: 北西
+    wind_speed_kmh: 4.2
+    precipitation_mm: 0.0
+    source: open-meteo
+    fetched_at: '2026-08-19T12:10:55+00:00'
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  - practice:daiming
+  - session:evening
+- title: いだてん岱明朝練休み
+  date: '2026-08-11'
+  all_day: true
+  category: 予定
+  status: scheduled
+  weather:
+    location: 玉名市
+    observed_at: 2026-08-11T08:00
+    condition: 曇り
+    temperature_c: 28.4
+    humidity_pct: 67
+    wind_direction: 東北東
+    wind_speed_kmh: 3.5
+    precipitation_mm: 0.0
+    source: open-meteo
+    fetched_at: '2026-08-19T12:10:55+00:00'
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  - practice:daiming
+  - session:morning
+- title: いだてん岱明夕練休み
+  date: '2026-08-11'
+  all_day: true
+  category: 予定
+  status: scheduled
+  weather:
+    location: 玉名市
+    observed_at: 2026-08-11T18:00
+    condition: 快晴
+    temperature_c: 30.9
+    humidity_pct: 45
+    wind_direction: 北北西
+    wind_speed_kmh: 21.1
+    precipitation_mm: 0.0
+    source: open-meteo
+    fetched_at: '2026-08-19T12:10:55+00:00'
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  - practice:daiming
+  - session:evening
+- title: いだてん岱明朝練休み
+  date: '2026-08-12'
+  all_day: true
+  category: 予定
+  status: scheduled
+  weather:
+    location: 玉名市
+    observed_at: 2026-08-12T08:00
+    condition: 快晴
+    temperature_c: 25.3
+    humidity_pct: 60
+    wind_direction: 北
+    wind_speed_kmh: 4.7
+    precipitation_mm: 0.0
+    source: open-meteo
+    fetched_at: '2026-08-19T12:10:55+00:00'
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  - practice:daiming
+  - session:morning
+- title: いだてん岱明夕練
+  date: '2026-08-12'
+  all_day: false
+  category: 予定
+  status: done
+  start_time: '18:00'
+  end_time: '19:30'
+  description: 動きづくり、男子12周・女子10周ジョグ、500m1本
+  weather:
+    location: 玉名市
+    observed_at: 2026-08-12T18:00
+    condition: 快晴
+    temperature_c: 31.2
+    humidity_pct: 51
+    wind_direction: 北北西
+    wind_speed_kmh: 17.7
+    precipitation_mm: 0.0
+    source: open-meteo
+    fetched_at: '2026-08-19T12:10:55+00:00'
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  - practice:daiming
+  - session:evening
+- title: いだてん岱明朝練休み
+  date: '2026-08-13'
+  all_day: true
+  category: 予定
+  status: scheduled
+  weather:
+    location: 玉名市
+    observed_at: 2026-08-13T08:00
+    condition: 晴れ
+    temperature_c: 26.8
+    humidity_pct: 76
+    wind_direction: 東
+    wind_speed_kmh: 2.3
+    precipitation_mm: 0.0
+    source: open-meteo
+    fetched_at: '2026-08-19T12:10:55+00:00'
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  - practice:daiming
+  - session:morning
+- title: いだてん岱明夕練休み
+  date: '2026-08-13'
+  all_day: true
+  category: 予定
+  status: scheduled
+  weather:
+    location: 玉名市
+    observed_at: 2026-08-13T18:00
+    condition: 快晴
+    temperature_c: 30.9
+    humidity_pct: 47
+    wind_direction: 西南西
+    wind_speed_kmh: 12.4
+    precipitation_mm: 0.0
+    source: open-meteo
+    fetched_at: '2026-08-19T12:10:55+00:00'
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  - practice:daiming
+  - session:evening
+- title: いだてん岱明朝練休み
+  date: '2026-08-14'
+  all_day: true
+  category: 予定
+  status: scheduled
+  weather:
+    location: 玉名市
+    observed_at: 2026-08-14T08:00
+    condition: 快晴
+    temperature_c: 25.8
+    humidity_pct: 87
+    wind_direction: 東北東
+    wind_speed_kmh: 4.1
+    precipitation_mm: 0.0
+    source: open-meteo
+    fetched_at: '2026-08-19T12:10:55+00:00'
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  - practice:daiming
+  - session:morning
+- title: いだてん岱明夕練
+  date: '2026-08-14'
+  all_day: false
+  category: 予定
+  status: scheduled
+  start_time: '18:00'
+  end_time: '19:30'
+  description: "<!-- practice-menu:v1\nwarmup: 動きづくり\nitems:\n- type: jog\n  group:\
+    \ null\n  laps: 6\n  distance_km: 3.36\n  pace: k/4:46\n- type: jog\n  group:\
+    \ null\n  laps: 5\n  distance_km: 2.8\n  pace: k/4:46\n- type: set\n  group: null\n\
+    \  segments:\n  - distance_m: 300\n  label: 900m （300m57秒組） 900m k/3:10\n- type:\
+    \ set\n  group: null\n  segments:\n  - distance_m: 300\n  label: 900m （300m63秒組）\
+    \ 900m k/3:30\n- type: set\n  group: null\n  segments:\n  - distance_m: 300\n\
+    \  label: 900m （300m69秒組） 900m k/3:50\n-->\n\n動きづくり\n\nジョグ 3.36km (6周) k/4:46\n\
+    ジョグ 2.80km (5周) k/4:46\n900m （300m57秒組） 900m k/3:10300m\n900m （300m63秒組） 900m\
+    \ k/3:30300m\n900m （300m69秒組） 900m k/3:50300m\n"
+  practice:
+    warmup: 動きづくり
+    items:
+    - type: jog
+      laps: 6
+      distance_km: 3.36
+      pace: k/4:46
+    - type: jog
+      laps: 5
+      distance_km: 2.8
+      pace: k/4:46
+    - type: set
+      segments:
+      - distance_m: 300
+      label: 900m （300m57秒組） 900m k/3:10
+    - type: set
+      segments:
+      - distance_m: 300
+      label: 900m （300m63秒組） 900m k/3:30
+    - type: set
+      segments:
+      - distance_m: 300
+      label: 900m （300m69秒組） 900m k/3:50
+  weather:
+    location: 玉名市
+    observed_at: 2026-08-14T18:00
+    condition: 曇り
+    temperature_c: 31.4
+    humidity_pct: 49
+    wind_direction: 西南西
+    wind_speed_kmh: 12.0
+    precipitation_mm: 0.0
+    source: open-meteo
+    fetched_at: '2026-08-19T12:10:55+00:00'
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  - practice:daiming
+  - session:evening
+- title: いだてん岱明朝練休み
+  date: '2026-08-15'
+  all_day: true
+  category: 予定
+  status: scheduled
+  weather:
+    location: 玉名市
+    observed_at: 2026-08-15T08:00
+    condition: 曇り
+    temperature_c: 27.1
+    humidity_pct: 80
+    wind_direction: 東
+    wind_speed_kmh: 2.0
+    precipitation_mm: 0.0
+    source: open-meteo
+    fetched_at: '2026-08-19T12:10:55+00:00'
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  - practice:daiming
+  - session:morning
+- title: いだてん岱明夕練
+  date: '2026-08-15'
+  all_day: false
+  category: 予定
+  status: scheduled
+  start_time: '18:00'
+  end_time: '19:30'
+  description: '動きづくり
+
+
+    ジョグ 男子 3.36km (6周) k/4:45
+
+    ジョグ 女子 2.8km (5周) k/4:45
+
+
+    300m×3（1500mRP、レスト70秒）
+
+    '
+  practice:
+    warmup: 動きづくり
+    items:
+    - type: jog
+      group: 男子
+      distance_m: 3360
+      distance_km: 3.36
+      laps: 6
+      pace: k/4:45
+    - type: jog
+      group: 女子
+      distance_m: 2800
+      distance_km: 2.8
+      laps: 5
+      pace: k/4:45
+    - type: interval
+      distance_m: 300
+      reps: 3
+      intensity: 1500mRP
+      rest_sec: 70
+  weather:
+    location: 玉名市
+    observed_at: 2026-08-15T18:00
+    condition: 曇り
+    temperature_c: 31.0
+    humidity_pct: 50
+    wind_direction: 西
+    wind_speed_kmh: 9.9
+    precipitation_mm: 0.0
+    source: open-meteo
+    fetched_at: '2026-08-19T12:10:55+00:00'
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  - practice:daiming
+  - session:evening
+- title: いだてん岱明朝練休み
+  date: '2026-08-16'
+  all_day: true
+  category: 予定
+  status: scheduled
+  weather:
+    location: 玉名市
+    observed_at: 2026-08-16T08:00
+    condition: 曇り
+    temperature_c: 25.9
+    humidity_pct: 80
+    wind_direction: 北東
+    wind_speed_kmh: 4.6
+    precipitation_mm: 0.0
+    source: open-meteo
+    fetched_at: '2026-08-19T12:10:55+00:00'
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  - practice:daiming
+  - session:morning
+- title: いだてん岱明夕練休み
+  date: '2026-08-16'
+  all_day: true
+  category: 予定
+  status: scheduled
+  weather:
+    location: 玉名市
+    observed_at: 2026-08-16T18:00
+    condition: 曇り
+    temperature_c: 30.0
+    humidity_pct: 64
+    wind_direction: 西
+    wind_speed_kmh: 14.4
+    precipitation_mm: 0.0
+    source: open-meteo
+    fetched_at: '2026-08-19T12:10:55+00:00'
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  - practice:daiming
+  - session:evening
+- title: いだてん岱明朝練
+  date: '2026-08-17'
+  all_day: false
+  category: 予定
+  status: scheduled
+  start_time: 08:00
+  end_time: 09:30
+  description: 動きづくり、男子2.5km×2、女子2km×2
+  practice:
+    warmup: 動きづくり
+    items:
+    - type: interval
+      group: 男子
+      distance_km: 2.5
+      reps: 2
+    - type: interval
+      group: 女子
+      distance_km: 2.0
+      reps: 2
+  weather:
+    location: 玉名市
+    observed_at: 2026-08-17T08:00
+    condition: 曇り
+    temperature_c: 26.9
+    humidity_pct: 82
+    wind_direction: 東
+    wind_speed_kmh: 5.1
+    precipitation_mm: 0.0
+    source: open-meteo
+    fetched_at: '2026-08-19T12:10:55+00:00'
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  - practice:daiming
+  - session:morning
+- title: いだてん岱明夕練
+  date: '2026-08-17'
+  all_day: false
+  category: 予定
+  status: scheduled
+  start_time: '18:00'
+  end_time: '19:30'
+  description: '各自ジョグ200m10本（レスト15秒）
+
+    男子 k/3:30〜k/3:40
+
+    女子 k/4:00〜k/4:10
+
+    '
+  practice:
+    items:
+    - type: interval
+      group: 男子
+      distance_m: 200
+      reps: 10
+      pace_min: k/3:30
+      pace_max: k/3:40
+      rest_sec: 15
+    - type: interval
+      group: 女子
+      distance_m: 200
+      reps: 10
+      pace_min: k/4:00
+      pace_max: k/4:10
+      rest_sec: 15
+  weather:
+    location: 玉名市
+    observed_at: 2026-08-17T18:00
+    condition: 霧雨（弱）
+    temperature_c: 30.1
+    humidity_pct: 65
+    wind_direction: 西北西
+    wind_speed_kmh: 10.8
+    precipitation_mm: 0.2
+    source: open-meteo
+    fetched_at: '2026-08-19T12:10:55+00:00'
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  - practice:daiming
+  - session:evening
+- title: いだてん岱明朝練休み
+  date: '2026-08-18'
+  all_day: true
+  category: 予定
+  status: scheduled
+  weather:
+    location: 玉名市
+    observed_at: 2026-08-18T08:00
+    condition: 霧雨（弱）
+    temperature_c: 27.1
+    humidity_pct: 87
+    wind_direction: 東北東
+    wind_speed_kmh: 3.9
+    precipitation_mm: 0.1
+    source: open-meteo
+    fetched_at: '2026-08-19T12:10:55+00:00'
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  - practice:daiming
+  - session:morning
+- title: いだてん岱明夕練休み
+  date: '2026-08-18'
+  all_day: true
+  category: 予定
+  status: scheduled
+  weather:
+    location: 玉名市
+    observed_at: 2026-08-18T18:00
+    condition: 一部曇り
+    temperature_c: 32.9
+    humidity_pct: 48
+    wind_direction: 西南西
+    wind_speed_kmh: 8.0
+    precipitation_mm: 0.0
+    source: open-meteo
+    fetched_at: '2026-08-19T12:10:55+00:00'
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  - practice:daiming
+  - session:evening
+- title: いだてん岱明朝練休み
+  date: '2026-08-19'
+  all_day: true
+  category: 予定
+  status: scheduled
+  weather:
+    location: 玉名市
+    observed_at: 2026-08-19T08:00
+    condition: 快晴
+    temperature_c: 27.0
+    humidity_pct: 77
+    wind_direction: 東北東
+    wind_speed_kmh: 4.3
+    precipitation_mm: 0.0
+    source: open-meteo
+    fetched_at: '2026-08-19T12:10:55+00:00'
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  - practice:daiming
+  - session:morning
+- title: いだてん岱明夕練
+  date: '2026-08-19'
+  all_day: false
+  category: 予定
+  status: scheduled
+  start_time: '18:00'
+  end_time: '19:30'
+  description: '動きづくり
+
+
+    欠席者 田中
+
+
+    ジョグ 男子 3.36km (6周) k/4:49
+
+    ジョグ 女子 2.80km (5周) k/4:49
+
+    500m×2（1500mRP）、レスト7分
+
+    '
+  practice:
+    warmup: 動きづくり
+    absentees:
+    - 田中
+    items:
+    - type: jog
+      group: 男子
+      distance_m: 3360
+      distance_km: 3.36
+      laps: 6
+      pace: k/4:49
+    - type: jog
+      group: 女子
+      distance_m: 2800
+      distance_km: 2.8
+      laps: 5
+      pace: k/4:49
+    - type: interval
+      distance_m: 500
+      reps: 2
+      intensity: 1500mRP
+      rest_sec: 420
+  weather:
+    location: 玉名市
+    observed_at: 2026-08-19T18:00
+    condition: 一部曇り
+    temperature_c: 32.1
+    humidity_pct: 52
+    wind_direction: 南
+    wind_speed_kmh: 3.3
+    precipitation_mm: 0.0
+    source: open-meteo
+    fetched_at: '2026-08-19T12:10:55+00:00'
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  - practice:daiming
+  - session:evening
+- title: いだてん岱明朝練
+  date: '2026-08-20'
+  all_day: false
+  category: 予定
+  status: scheduled
+  start_time: 08:00
+  end_time: 09:30
+  description: 動きづくり、男子2.5km×2、女子2km×2
+  practice:
+    warmup: 動きづくり
+    items:
+    - type: interval
+      group: 男子
+      distance_km: 2.5
+      reps: 2
+    - type: interval
+      group: 女子
+      distance_km: 2.0
+      reps: 2
+  weather:
+    location: 玉名市
+    observed_at: 2026-08-20T08:00
+    condition: 晴れ
+    temperature_c: 27.6
+    humidity_pct: 81
+    wind_direction: 北東
+    wind_speed_kmh: 3.1
+    precipitation_mm: 0.0
+    source: open-meteo
+    fetched_at: '2026-08-19T12:10:55+00:00'
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  - practice:daiming
+  - session:morning
+- title: 練習会（岱明）（県民スポーツ大会中止に伴い中止）
+  date: '2026-08-20'
+  all_day: false
+  category: 予定
+  status: done
+  start_time: '19:00'
+  end_time: '21:00'
+  location: 玉名市岱明中央公園グラウンド
+  description: 第81回熊本県民スポーツ大会（9/19-9/20）中止に伴い、本番までの玉名市練習会をすべて中止
+  tags:
+  - 中止
+- title: いだてん岱明朝練
+  date: '2026-08-21'
+  all_day: false
+  category: 予定
+  status: scheduled
+  start_time: 08:00
+  end_time: 09:30
+  description: 動きづくり、男子2.5km×2、女子2km×2
+  practice:
+    warmup: 動きづくり
+    items:
+    - type: interval
+      group: 男子
+      distance_km: 2.5
+      reps: 2
+    - type: interval
+      group: 女子
+      distance_km: 2.0
+      reps: 2
+  weather:
+    location: 玉名市
+    observed_at: 2026-08-21T08:00
+    condition: 快晴
+    temperature_c: 27.6
+    humidity_pct: 88
+    wind_direction: 東
+    wind_speed_kmh: 3.3
+    precipitation_mm: 0.0
+    source: open-meteo
+    fetched_at: '2026-08-19T12:10:55+00:00'
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  - practice:daiming
+  - session:morning
+- title: いだてん岱明夕練
+  date: '2026-08-21'
+  all_day: false
+  category: 予定
+  status: scheduled
+  start_time: '18:00'
+  end_time: '19:30'
+  weather:
+    location: 玉名市
+    observed_at: 2026-08-21T18:00
+    condition: 一部曇り
+    temperature_c: 29.5
+    humidity_pct: 80
+    wind_direction: 南西
+    wind_speed_kmh: 5.1
+    precipitation_mm: 0.0
+    source: open-meteo
+    fetched_at: '2026-08-19T12:10:55+00:00'
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  - practice:daiming
+  - session:evening
+- title: いだてん岱明朝練休み
+  date: '2026-08-22'
+  all_day: true
+  category: 予定
+  status: scheduled
+  weather:
+    location: 玉名市
+    observed_at: 2026-08-22T08:00
+    condition: 晴れ
+    temperature_c: 26.7
+    humidity_pct: 93
+    wind_direction: 東
+    wind_speed_kmh: 3.2
+    precipitation_mm: 0.0
+    source: open-meteo
+    fetched_at: '2026-08-19T12:10:55+00:00'
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  - practice:daiming
+  - session:morning
+- title: いだてん岱明夕練
+  date: '2026-08-22'
+  all_day: false
+  category: 予定
+  status: scheduled
+  start_time: '18:00'
+  end_time: '19:30'
+  description: '動きづくり
+
+
+    ジョグ 男子 3.36km (6周) k/4:42
+
+    ジョグ 女子 2.80km (5周) k/4:42
+
+    900m×1（1500mRP〜RP+10秒/km）
+
+
+    切上げ
+
+    - 翌日が記録会 → 追い込み禁止。本数を増やさない
+
+    - 雨が強い / 雷 → 短縮または中止
+
+    900mは1500mRP〜RP+10秒/km。1本のみ。追い込み禁止。
+
+    '
+  practice:
+    warmup: 動きづくり
+    notes: 900mは1500mRP〜RP+10秒/km。1本のみ。追い込み禁止。
+    abort_if:
+    - when: 翌日が記録会
+      then: 追い込み禁止。本数を増やさない
+    - when: 雨が強い / 雷
+      then: 短縮または中止
+    items:
+    - type: jog
+      group: 男子
+      distance_m: 3360
+      distance_km: 3.36
+      laps: 6
+      pace: k/4:42
+    - type: jog
+      group: 女子
+      distance_m: 2800
+      distance_km: 2.8
+      laps: 5
+      pace: k/4:42
+    - type: interval
+      distance_m: 900
+      reps: 1
+      intensity: 1500mRP
+  weather:
+    location: 玉名市
+    observed_at: 2026-08-22T18:00
+    condition: 霧雨（中）
+    temperature_c: 30.1
+    humidity_pct: 74
+    wind_direction: 西南西
+    wind_speed_kmh: 6.6
+    precipitation_mm: 0.9
+    source: open-meteo
+    fetched_at: '2026-08-19T12:10:55+00:00'
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  - practice:daiming
+  - session:evening
+- title: いだてん岱明朝練休み
+  date: '2026-08-23'
+  all_day: true
+  category: 予定
+  status: scheduled
+  weather:
+    location: 玉名市
+    observed_at: 2026-08-23T08:00
+    condition: 一部曇り
+    temperature_c: 28.4
+    humidity_pct: 76
+    wind_direction: 東南東
+    wind_speed_kmh: 4.2
+    precipitation_mm: 0.0
+    source: open-meteo
+    fetched_at: '2026-08-19T12:10:55+00:00'
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  - practice:daiming
+  - session:morning
+- title: いだてん岱明朝練
+  date: '2026-08-24'
+  all_day: false
+  category: 予定
+  status: scheduled
+  start_time: 08:00
+  end_time: 09:30
+  description: 動きづくり、男子2.5km×2、女子2km×2
+  practice:
+    warmup: 動きづくり
+    items:
+    - type: interval
+      group: 男子
+      distance_km: 2.5
+      reps: 2
+    - type: interval
+      group: 女子
+      distance_km: 2.0
+      reps: 2
+  weather:
+    location: 玉名市
+    observed_at: 2026-08-24T08:00
+    condition: 一部曇り
+    temperature_c: 26.9
+    humidity_pct: 90
+    wind_direction: 北
+    wind_speed_kmh: 1.1
+    precipitation_mm: 0.0
+    source: open-meteo
+    fetched_at: '2026-08-19T12:10:55+00:00'
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  - practice:daiming
+  - session:morning
+- title: いだてん岱明夕練
+  date: '2026-08-24'
+  all_day: false
+  category: 予定
+  status: scheduled
+  start_time: '18:00'
+  end_time: '19:30'
+  description: "<!-- practice-menu:v1\nwarmup: null\nitems:\n- type: interval\n  distance_m:\
+    \ 300\n  reps: '2'\n  intensity: RP\n  rest_sec: 120\n-->\n\n各自アップ、300m×2本（800mRP、レスト2分）\n\
+    \n300m×2（800mRP）\n"
+  practice:
+    items:
+    - type: interval
+      distance_m: 300
+      reps: 2
+      intensity: RP
+      rest_sec: 120
+  weather:
+    location: 玉名市
+    observed_at: 2026-08-24T18:00
+    condition: 晴れ
+    temperature_c: 31.1
+    humidity_pct: 68
+    wind_direction: 西南西
+    wind_speed_kmh: 9.8
+    precipitation_mm: 0.0
+    source: open-meteo
+    fetched_at: '2026-08-19T12:10:55+00:00'
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  - practice:daiming
+  - session:evening
+- title: いだてん岱明夕練休み
+  date: '2026-08-25'
+  all_day: true
+  category: 予定
+  status: scheduled
+  weather:
+    location: 玉名市
+    observed_at: 2026-08-25T18:00
+    condition: 快晴
+    temperature_c: 31.7
+    humidity_pct: 58
+    wind_direction: 西北西
+    wind_speed_kmh: 7.8
+    precipitation_mm: 0.0
+    source: open-meteo
+    fetched_at: '2026-08-19T12:10:55+00:00'
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  - practice:daiming
+  - session:evening
+- title: いだてん岱明朝練
+  date: '2026-08-25'
+  all_day: false
+  category: 予定
+  status: scheduled
+  start_time: 08:00
+  end_time: 09:30
+  description: 動きづくり、男子2.5km×2、女子2km×2
+  practice:
+    warmup: 動きづくり
+    items:
+    - type: interval
+      group: 男子
+      distance_km: 2.5
+      reps: 2
+    - type: interval
+      group: 女子
+      distance_km: 2.0
+      reps: 2
+  weather:
+    location: 玉名市
+    observed_at: 2026-08-25T08:00
+    condition: 快晴
+    temperature_c: 28.7
+    humidity_pct: 80
+    wind_direction: 東
+    wind_speed_kmh: 1.8
+    precipitation_mm: 0.0
+    source: open-meteo
+    fetched_at: '2026-08-19T12:10:55+00:00'
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  - practice:daiming
+  - session:morning
+- title: いだてん岱明朝練休み
+  date: '2026-08-26'
+  all_day: true
+  category: 予定
+  status: scheduled
+  weather:
+    location: 玉名市
+    observed_at: 2026-08-26T08:00
+    condition: 快晴
+    temperature_c: 28.7
+    humidity_pct: 80
+    wind_direction: 南東
+    wind_speed_kmh: 4.6
+    precipitation_mm: 0.0
+    source: open-meteo
+    fetched_at: '2026-08-19T12:10:55+00:00'
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  - practice:daiming
+  - session:morning
+- title: いだてん岱明夕練
+  date: '2026-08-26'
+  all_day: false
+  category: 予定
+  status: scheduled
+  start_time: '18:00'
+  end_time: '19:30'
+  template_ref: evening-light-900x1
+  description: '動きづくり
+
+
+    ジョグ 男子 3.36km (6周) k/4:50
+
+    ジョグ 女子 2.8km (5周) k/5:00
+
+    900m×1（GZ）
+
+
+    軽いポイント。「最後だから追い込む」禁止
+
+    '
+  practice:
+    warmup: 動きづくり
+    notes: 軽いポイント。1本のみ。追い込む禁止
+    items:
+    - type: jog
+      group: 男子
+      laps: 6
+      distance_km: 3.36
+      pace: k/4:50
+    - type: jog
+      group: 女子
+      laps: 5
+      distance_km: 2.8
+      pace: k/5:00
+    - type: interval
+      distance_m: 900
+      reps: 1
+      intensity: GZ
+  weather:
+    location: 玉名市
+    observed_at: 2026-08-26T18:00
+    condition: 一部曇り
+    temperature_c: 32.9
+    humidity_pct: 57
+    wind_direction: 西
+    wind_speed_kmh: 6.0
+    precipitation_mm: 0.0
+    source: open-meteo
+    fetched_at: '2026-08-19T12:10:55+00:00'
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  - practice:daiming
+  - session:evening
+- title: 練習会（岱明）（県民スポーツ大会中止に伴い中止）
+  date: '2026-08-27'
+  all_day: false
+  category: 予定
+  status: done
+  start_time: '19:00'
+  end_time: '21:00'
+  description: 第81回熊本県民スポーツ大会（9/19-9/20）中止に伴い、本番までの玉名市練習会をすべて中止
+  tags:
+  - 中止
+- title: 練習会（岱明）（県民スポーツ大会中止に伴い中止）
+  date: '2026-08-30'
+  all_day: true
+  category: 予定
+  status: done
+  description: 第81回熊本県民スポーツ大会（9/19-9/20）中止に伴い、本番までの玉名市練習会をすべて中止
+  tags:
+  - 中止
+- title: いだてん岱明夕練
+  date: '2026-08-31'
+  all_day: false
+  category: 予定
+  status: scheduled
+  start_time: '17:00'
+  end_time: '18:30'
+  description: "<!-- practice-menu:v1\nwarmup: 動きづくり\nitems:\n- type: jog\n  group:\
+    \ 男子\n  laps: 14\n  distance_m: 7840\n  distance_km: 7.84\n  pace: k/5:26\n  intensity:\
+    \ E\n- type: jog\n  group: 女子\n  distance_m: 6960\n  distance_km: 6.96\n  pace:\
+    \ k/5:26\n  intensity: E\n- type: strides\n  reps: 2\n  label: 流し2本\n-->\n\n動きづくり\n\
+    \nジョグ 男子 7.84km (14周) k/5:26\nジョグ 女子 6.96km k/5:26\n流し2本\n"
+  practice:
+    warmup: 動きづくり
+    items:
+    - type: jog
+      group: 男子
+      laps: 14
+      distance_m: 7840
+      distance_km: 7.84
+      pace: k/5:26
+      intensity: E
+    - type: jog
+      group: 女子
+      distance_m: 6960
+      distance_km: 6.96
+      pace: k/5:26
+      intensity: E
+    - type: strides
+      reps: 2
+      label: 流し2本
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  - practice:daiming
+  - session:evening
+- title: 岱明中2年生職場体験
+  date: '2026-09-01'
+  end_date: '2026-09-02'
+  all_day: true
+  category: 予定
+  status: scheduled
+- title: 岱明中 A日課（6時間）
+  date: '2026-09-01'
+  all_day: true
+  category: 予定
+  status: scheduled
+  description: '【校内行事】2年職場体験学習（1日目）／ＩＣＴ支援員訪問（午後）
+
+    【授業】6時間（1〜6限すべて総合）
+
+    【給食】△（2年は職場体験のためなし）
+
+    【校外行事】第2回岱明中学校区小中一貫教育推進委員会（15:30～16:30高道小）【末藤・宮本】
+
+    '
+  tags:
+  - 岱明中
+  - 学校行事
+- title: 岱明中 B日課（6時間）
+  date: '2026-09-02'
+  all_day: true
+  category: 予定
+  status: scheduled
+  description: '【校内行事】2年職場体験学習（2日目）／※巡回相談（1日）
+
+    【授業】6時間（1〜6限すべて総合）
+
+    【給食】△（2年は職場体験のためなし）
+
+    【校外行事】荒尾・玉名地区学校事務研究協議会研修会（14:00～和水町中央公民館）【丹生】／玉名市校長会議（9:00～市役所4階 第2委員会室）【宮本】
+
+    '
+  tags:
+  - 岱明中
+  - 学校行事
+- title: 岱明中 A日課（6時間）
+  date: '2026-09-03'
+  all_day: true
+  category: 予定
+  status: scheduled
+  description: '【校内行事】⑤⑥2年総合「お礼状書き」
+
+    【授業】6時間（1〜4限 授業、5・6限 総合）
+
+    【給食】あり
+
+    '
+  tags:
+  - 岱明中
+  - 学校行事
+- title: 岱明中 A日課（5時間）
+  date: '2026-09-04'
+  all_day: true
+  category: 予定
+  status: scheduled
+  description: '【校内行事】フッ化物洗口／山下ＳＣ来校
+
+    【授業】5時間（6限なし）
+
+    【給食】あり
+
+    【校外行事】県中学校体育連盟第2回県総務理事・専門部会合同会（9:30～12:00熊本市）【小松】
+
+    '
+  tags:
+  - 岱明中
+  - 学校行事
+- title: 家庭学習強化週間（岱明中）
+  date: '2026-09-05'
+  end_date: '2026-09-11'
+  all_day: true
+  category: 予定
+  status: scheduled
+  tags:
+  - 岱明中
+  - 学校行事
+- title: いだてん岱明練習
+  date: '2026-09-05'
+  all_day: false
+  category: 予定
+  status: done
+  start_time: 09:00
+  end_time: '10:30'
+  description: "<!-- practice-menu:v1\nwarmup: 動きづくり\nitems:\n- type: jog\n  group:\
+    \ 男子\n  laps: 6\n  distance_m: 3360\n  distance_km: 3.36\n  pace: k/4:51\n- type:\
+    \ jog\n  group: 女子\n  laps: 5\n  distance_m: 2800\n  distance_km: 2.8\n  pace:\
+    \ k/4:51\n- type: interval\n  group: 3:20組（3km）\n  distance_m: 1000\n  reps: 3\n\
+    \  pace: k/3:20\n  rest_sec: 360\n- type: interval\n  group: 3:40組（3km）\n  distance_m:\
+    \ 1000\n  reps: 3\n  pace: k/3:40\n  rest_sec: 360\n- type: interval\n  group:\
+    \ 3:50組\n  distance_m: 1000\n  reps: 2\n  pace: k/3:50\n  rest_sec: 360\n- type:\
+    \ interval\n  group: 4:00組\n  distance_m: 1000\n  reps: 2\n  pace: k/4:00\n  rest_sec:\
+    \ 360\n-->\n\n動きづくり\n\n欠席者 高田（腰・左足痛のためメニュー不参加。酷くはなっていない）\n\nジョグ 男子 3.36km (6周)\
+    \ k/4:51\nジョグ 女子 2.80km (5周) k/4:51\n\n3:20 / 3:40 / 3:50 / 4:00 の4グループ。3km組 1000m×3、2km組\
+    \ 1000m×2。\nトラックは野球使用のため外周（アップダウンあり、2周弱）。600m超のポイントは今まで少なく、設定は目標ペースより少し遅め・間約6分。\n\
+    \n【3:15–3:20組】松野・田上・山本 — 3本こなした（k/3:15–3:20）。3km組は2000m+1000mへ移行したい。\n\n【3:40組】村上＋1年男子2名\
+    \ — 全員設定（k/3:40）より速い。最遅の村上で3:33–3:39–3:34。\n・村上: 貧血検査の紙確認（Hb 13.8）。1週間後にフェリチン等の詳細結果。以前の結果は破棄済みのため、今後は写真保存を伝達。同じ病院なら先生に言えば過去結果も入手可。今日は無理をしている感じではなく、これから仕上げていける。\n\
+    \n【3:50組】増岡・角田・山﨑・塚原（村上除く）— 柴尾コーチが1本目をk/3:43に変更。\n・1本目: 増岡・角田・山﨑は3:43、塚原のみ3:50。\n\
+    ・2本目: 増岡のみ3:47でこなす。増岡以外は500mで離脱。ナイター（5:28）の悔しさで増岡は気合い十分。\n・山﨑: 1本目後に足痛訴え、今日は1本で終了。ナイター前なので無理はさせないが、痛みに敏感すぎる面もあり、コミュニケーションを取りながら調整する。\n\
+    ・角田・塚原: 目安が分かった。\n\n【未消化】山﨑・角田。1本目が速かったこともあるが、増岡がこなせているので、足の痛み・準備・気持ちの問題と見る。\n\
+    \n【所感】増岡・村上は上がりそう。男子の勢いは止まらない。当日に全員が大崩れしないのが難しく、今までもそこに苦しんできた。やるだけやってみる。\n"
+  practice:
+    warmup: 動きづくり
+    notes: トラックは野球使用のため外周（アップダウンあり、2周弱）。600m超のポイントは今まで少なく、設定は目標ペースより少し遅め・間約6分。
+    absentees:
+    - 高田
+    items:
+    - type: jog
+      group: 男子
+      laps: 6
+      distance_m: 3360
+      distance_km: 3.36
+      pace: k/4:51
+    - type: jog
+      group: 女子
+      laps: 5
+      distance_m: 2800
+      distance_km: 2.8
+      pace: k/4:51
+    - type: interval
+      group: 3:20組（3km）
+      distance_m: 1000
+      reps: 3
+      pace: k/3:20
+      rest_sec: 360
+    - type: interval
+      group: 3:40組（3km）
+      distance_m: 1000
+      reps: 3
+      pace: k/3:40
+      rest_sec: 360
+    - type: interval
+      group: 3:50組
+      distance_m: 1000
+      reps: 2
+      pace: k/3:50
+      rest_sec: 360
+    - type: interval
+      group: 4:00組
+      distance_m: 1000
+      reps: 2
+      pace: k/4:00
+      rest_sec: 360
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  - practice:daiming
+- title: 家庭の日・読書の日／校内メディアコントロールデー（岱明中）
+  date: '2026-09-06'
+  all_day: true
+  category: 予定
+  status: scheduled
+  tags:
+  - 岱明中
+  - 学校行事
+- title: 岱明中 A日課（5時間）
+  date: '2026-09-07'
+  all_day: true
+  category: 予定
+  status: scheduled
+  description: '【校内行事】すこやかチェック／ＩＣＴ支援員訪問（午後）
+
+    【授業】5時間（6限なし）
+
+    【給食】あり
+
+    '
+  tags:
+  - 岱明中
+  - 学校行事
+- title: 練習会（岱明）（県民スポーツ大会中止に伴い中止）
+  date: '2026-09-08'
+  all_day: false
+  category: 予定
+  status: done
+  start_time: '19:00'
+  end_time: '21:00'
+  description: 第81回熊本県民スポーツ大会（9/19-9/20）中止に伴い、本番までの玉名市練習会をすべて中止
+  tags:
+  - 中止
+- title: 岱明中 A日課（6時間）
+  date: '2026-09-08'
+  all_day: true
+  category: 予定
+  status: scheduled
+  description: '【校内行事】（記載なし）
+
+    【授業】6時間（行事予定表に時間数の明記なし。通常のA日課として6時間）
+
+    【給食】あり
+
+    '
+  tags:
+  - 岱明中
+  - 学校行事
+- title: 岱明中前期期末テスト
+  date: '2026-09-09'
+  end_date: '2026-09-11'
+  all_day: true
+  category: 予定
+  status: scheduled
+- title: 岱明中 B日課（特別・4時間授業）
+  date: '2026-09-09'
+  all_day: true
+  category: 予定
+  status: scheduled
+  description: '【校内行事】前期期末テスト（1日目）
+
+    【授業】4時間（5・6限なし）
+
+    【給食】あり
+
+    【校外行事】玉東町立木葉小校内研（15:55～木葉小）【宮本】
+
+    '
+  tags:
+  - 岱明中
+  - 学校行事
+- title: 練習会（岱明）（県民スポーツ大会中止に伴い中止）
+  date: '2026-09-10'
+  all_day: false
+  category: 予定
+  status: done
+  start_time: '19:00'
+  end_time: '21:00'
+  description: 第81回熊本県民スポーツ大会（9/19-9/20）中止に伴い、本番までの玉名市練習会をすべて中止
+  tags:
+  - 中止
+- title: 岱明中 B日課（特別・4時間授業・掃除あり）
+  date: '2026-09-10'
+  all_day: true
+  category: 予定
+  status: scheduled
+  description: '【校内行事】前期期末テスト（2日目）
+
+    【授業】4時間（5・6限なし）
+
+    【給食】あり
+
+    【校外行事】第1回学力向上推進委員会（15:00～オンライン）【小西・土本】／玉名荒尾中体連第4回理事会・学校代表者会（13:00～有明中）【古閑】
+
+    '
+  tags:
+  - 岱明中
+  - 学校行事
+- title: 岱明中 A日課（特別・5時間）
+  date: '2026-09-11'
+  all_day: true
+  category: 予定
+  status: scheduled
+  description: '【校内行事】前期期末テスト（3日目）／フッ化物洗口／校内研／ＩＣＴ支援員訪問（午前）
+
+    【授業】5時間（特別日課）
+
+    【給食】あり
+
+    【校外行事】岱明中校区小中学校運営協議会学習会（14:00～16:00鍋小）／岱明中校区校長会（16:00～16:30鍋小）【宮本】
+
+    '
+  tags:
+  - 岱明中
+  - 学校行事
+- title: 岱明中 A日課（5時間）
+  date: '2026-09-14'
+  all_day: true
+  category: 予定
+  status: scheduled
+  description: '【校内行事】山下ＳＣ来校／⑤大研（音楽：関田先生）／⑥校内研／※読書週間（～9/30）
+
+    【授業】5時間（5限は大研＝研究授業、6限は校内研）
+
+    【給食】あり
+
+    '
+  tags:
+  - 岱明中
+  - 学校行事
+- title: 岱明中 A日課（6時間）
+  date: '2026-09-15'
+  all_day: true
+  category: 予定
+  status: scheduled
+  description: '【校内行事】②不登校対策委員会／◇教育事務所ミニ訪問（午後）
+
+    【授業】6時間（行事予定表に時間数の明記なし。通常のA日課として6時間）
+
+    【給食】あり
+
+    【校外行事】第1回岱明学校給食センター給食担当者会議（15:30～岱明学校給食センター）
+
+    '
+  tags:
+  - 岱明中
+  - 学校行事
+- title: 岱明中 B日課（6時間）
+  date: '2026-09-16'
+  all_day: true
+  category: 予定
+  status: scheduled
+  description: '【校内行事】3年生校内高校説明会
+
+    【授業】6時間（行事予定表に時間数の明記なし。通常のB日課として6時間）
+
+    【給食】あり
+
+    【校外行事】玉名荒尾教育会社会委員会教科等研修会（授業）の事前研修会（15:30～長洲中）／玉名荒尾教育会科学部会Bブロック『科学研究物及び発明工夫展』審査（15:00～横島小）
+
+    '
+  tags:
+  - 岱明中
+  - 学校行事
+- title: 岱明中 授業6時間（日課の表記なし）
+  date: '2026-09-17'
+  all_day: true
+  category: 予定
+  status: scheduled
+  description: '【校内行事】3年生校内高校説明会／ＩＣＴ支援員訪問（終日）
+
+    【授業】6時間（1〜4限 授業、5・6限 総合。行事予定表に日課・時間数の明記なし）
+
+    【給食】あり
+
+    【校外行事】初任者研修における「特別支援学級研修」（9:30～荒尾支援学校）【関田・岩田】
+
+    '
+  tags:
+  - 岱明中
+  - 学校行事
+- title: 岱明中 A日課（5時間）
+  date: '2026-09-18'
+  all_day: true
+  category: 予定
+  status: scheduled
+  description: '【校内行事】フッ化物洗口／職員会議
+
+    【授業】5時間
+
+    【給食】あり
+
+    【校外行事】管内熊本県立高等学校等入試要項説明会（14:30～参集とオンライン）【上田】／初任者研修における「特別支援学級研修」（9:30～荒尾支援学校）【関田・岩田】
+
+    '
+  tags:
+  - 岱明中
+  - 学校行事
+- title: 岱明中 B日課（6時間）
+  date: '2026-09-24'
+  all_day: true
+  category: 予定
+  status: scheduled
+  description: '【校内行事】⑥給食集会／生徒会委員会／ＩＣＴ支援員訪問（午後）
+
+    【授業】6時間（6限は給食集会。行事予定表に時間数の明記なし）
+
+    【給食】あり
+
+    【校外行事】玉名荒尾教育会中体研委員会第2回推進委員会（15:30～長洲中）【古閑】／玉名荒尾教育会科学部会『科学研究物及び発明工夫展』審査（14:00～南関三小）／玉名市学校人権・同和教育研究会第2回主任会（15:00～やまとみらいセンター）【手島】
+
+    '
+  tags:
+  - 岱明中
+  - 学校行事
+- title: 岱明中 A日課（6時間）
+  date: '2026-09-25'
+  all_day: true
+  category: 予定
+  status: scheduled
+  description: '【校内行事】フッ化物洗口／⑤⑥1年「性に関する指導」／◆前期評定メモ
+
+    【授業】6時間（5・6限は1年「性に関する指導」。行事予定表に時間数の明記なし）
+
+    【給食】あり
+
+    【校外行事】玉名荒尾教育会科学部会『科学研究物及び発明工夫展』作品搬入・審査（14:00～南関三小）／令和8年度玉名荒尾地区私立高等学校等合同説明会（13:30～荒尾文化センター）【上田】
+
+    '
+  tags:
+  - 岱明中
+  - 学校行事
+- title: 科学研究物及び発明工夫展 一般公開1日目（南関三小）
+  date: '2026-09-26'
+  all_day: true
+  category: 予定
+  status: scheduled
+  description: '玉名荒尾教育会科学部会『科学研究物及び発明工夫展』一般公開1日目（10:00～南関三小）
+
+    ※岱明中9月行事予定表の校外行事欄より
+
+    '
+  tags:
+  - 岱明中
+  - 学校行事
+- title: 科学研究物及び発明工夫展 一般公開2日目（南関三小）
+  date: '2026-09-27'
+  all_day: true
+  category: 予定
+  status: scheduled
+  description: '玉名荒尾教育会科学部会『科学研究物及び発明工夫展』一般公開2日目（10:00～南関三小）
+
+    ※岱明中9月行事予定表の校外行事欄より
+
+    '
+  tags:
+  - 岱明中
+  - 学校行事
+- title: 岱明中 A日課（特別・5時間）
+  date: '2026-09-28'
+  all_day: true
+  category: 予定
+  status: scheduled
+  description: '【校内行事】読み聞かせ／玉名市教育委員会総合訪問／⑤授業参観／帰りの会・全体会
+
+    【授業】5時間（5限は授業参観）
+
+    【給食】あり
+
+    【校外行事】玉名荒尾教育会科学部会『科学研究物及び発明工夫展』作品搬出（8:30～南関三小）
+
+    '
+  tags:
+  - 岱明中
+  - 学校行事
+- title: 岱明中 A日課（6時間）
+  date: '2026-09-29'
+  all_day: true
+  category: 予定
+  status: scheduled
+  description: '【校内行事】駅伝試走（午前）
+
+    【授業】6時間（行事予定表に時間数の明記なし。通常のA日課として6時間）
+
+    【給食】あり
+
+    【校外行事】玉名荒尾校長会議（16:00～岱明防災コミュニティセンター）【宮本】／玉名市教頭・主幹教諭会議（14:00～市役所4階 第2委員会室）【石川・末藤】
+
+    '
+  tags:
+  - 岱明中
+  - 学校行事
+- title: 岱明中 B日課（6時間）
+  date: '2026-09-30'
+  all_day: true
+  category: 予定
+  status: scheduled
+  description: '【校内行事】研究部会／ＩＣＴ支援員訪問（午前）
+
+    【授業】6時間（行事予定表に時間数の明記なし。通常のB日課として6時間）
+
+    【給食】あり
+
+    【校外行事】玉名荒尾教育道徳委員会推進委員会教科等研修会（授業研）の事前研修会及び第2回推進委員会（15:30～南関一小）【坂口】
+
+    '
+  tags:
+  - 岱明中
+  - 学校行事
+- title: 岱明中合唱コンクール
+  date: '2026-10-23'
+  all_day: true
+  category: 予定
+  status: scheduled
+- title: 岱明中後期中間テスト
+  date: '2026-11-10'
+  end_date: '2026-11-11'
+  all_day: true
+  category: 予定
+  status: scheduled
+- title: 岱明中校内駅伝大会
+  date: '2026-12-11'
+  all_day: true
+  category: 予定
+  status: scheduled
+- title: 岱明中2年生修学旅行
+  date: '2026-12-15'
+  end_date: '2026-12-17'
+  all_day: true
+  category: 予定
+  status: scheduled
+- title: 岱明中冬休み
+  date: '2026-12-25'
+  end_date: '2027-01-07'
+  all_day: true
+  category: 予定
+  status: scheduled
+- title: 岱明ノルウェーメソッド
+  category: メモ
+  status: inbox
+  description: 300m66秒、30秒その場休憩を6〜12本
+  tags:
+  - ランニング
+- title: 練習のバリエーション
+  category: 予定
+  status: scheduled
+  template_ref: practice_templates
+  description: '練習メニューテンプレート集。詳細は input/practice_templates.yaml を参照。
+
+
+    | 種類 | 内容 |
+
+    | --- | --- |
+
+    | ジョグ | 男子 4.0〜6.0km k/4:00〜k/4:10 |
+
+    | ジョグ | 女子 4.0〜6.0km k/4:20〜k/4:30 |
+
+    | ジョグ | 男子 3360m k/4:20 |
+
+    | ジョグ | 女子 2800m k/4:30 |
+
+    | 300m | 300m×6〜10（RP、レスト1分） |
+
+    | 600m | 600m×3〜5（3000mRP、レスト2分） |
+
+    | セット | 男子 2100m+900m / 女子 1200m+900m |
+
+    | 900m | 900m 1本目 k/4:00 / 2本目 k/3:50 / 3本目 k/3:40（レスト3分） |
+
+    | ロングセット | 男子 2000m+1000m / 女子 1000m×2（レスト5分、通常: 余裕ペース / 本番前: RP付近） |
+
+    '
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  - practice:daiming
+- title: 岱明女子歴代800m
+  category: メモ
+  status: inbox
+  description: '2004年　城戸智恵子さん 3年 2:22.69
+
+    2005年　井上智世さん 3年 2:16.25
+
+    2012年　大道志歩さん 1年 2:21.86
+
+    2013年　前田明佳里さん 2年 2:35.01
+
+    2013年　中川葉月さん 2年 2:35.43
+
+    2014年　田上真愛さん 1年 2:30.04
+
+    2014年　中嶋遙菜さん 3年 2:36.48
+
+    2015年　三村奈々さん 1年 2:34.70
+
+    2015年　中嶋瞳花さん 2年 2:35.64
+
+    2018年　土山静里佳 3年 2:25.47
+
+    2019年　前田優花さん 3年 2:25.67
+
+    2022年　福島まひる 3年 2:23.87
+
+    2026年　村上咲稀 3年 2:20.11
+
+    '
+  tags:
+  - ランニング
+- title: 岱明中 荒玉中体連駅伝（2026-10-14）残り練習計画【部活カレンダー準拠】
+  category: メモ
+  status: inbox
+  description: "# 岱明中 荒玉中体連駅伝（2026-10-14）残り練習計画【部活カレンダー準拠】\n\n**対象期間**: 2026-09-07\
+    \ 〜 2026-10-14  \n**第一ピーク**: 2026-10-14 荒玉中体連駅伝（予備日 10-15）  \n**方針**: スタミナ不足 →\
+    \ **〜10/2 スタミナ厚め**／**10/5〜 直前RP**  \n**部活枠**: 玉名市地域部活動【岱明中】陸上（長距離）  \n- **平日 BG練習**:\
+    \ 17:00–18:30  \n- **休日（土・祝）BG練習**: 9:00–10:30  \n- **部活なしの日**: **休養 or 自主練**（質の自主練は原則禁止。するなら短いEのみ）\n\
+    \n---\n\n## 0. 部活リズム（確定／想定）\n\n### 9月（地域部活カレンダーより確定）\n\n| 区分 | 日付 |\n|---|---|\n\
+    | **BG練習** | 11, 12, 14, 15, 17, 18, 19, 22, 24, 25, 28, 29 |\n| **テスト休** | 7,\
+    \ 8, 10 |\n| **休み（敬老の日）** | 21 |\n| **大会** | 20 なごみ駅／26 ジュニア |\n| **部活なし（水・日など）**\
+    \ | 9, 13, 16, 23, 27, 30 ほか空欄日 |\n\n※ **水曜日は部活なし**（9月通月）。日曜も大会以外なし。\n\n### 10月（同リズム想定：月・火・木・金・土）\n\
+    \n| 区分 | 日付（〜14） |\n|---|---|\n| **BG想定** | 1, 2, 3, 5, 6, 8, 9, 10, 13 |\n| **部活なし**\
+    \ | 4（日）, 7（水）, 11（日） |\n| **スポーツの日 12** | 9月の敬老の日同様 **休み想定**（実施なら9:00–10:30の極軽）\
+    \ |\n| **大会** | 14 荒玉中体連駅伝 |\n\n---\n\n## A. 結論\n\n- **質メニューは BG練習日にだけ置く**（水・日・テスト休にポイントを入れない）\
+    \  \n- スタミナの山: **9/15・9/24（非Jr）・9/29・10/2**  \n- 直前RP: **10/6・10/9**（＋12/13は触る程度）\
+    \  \n- なごみ前日 **9/19 は部活あり** → 完全休養ではなく **極軽調整**\n\n---\n\n## B. グループ目安\n\n| 組\
+    \ | 例 | スタミナGZ/km | 区間RP/km |\n|---|---|---|---|\n| A | 松野・田上・山本 | 3:20–3:30 |\
+    \ 3:15–3:25 |\n| B | 村上・好調1年 | 3:35–3:45 | 3:30–3:40 |\n| C | 増岡・角田・山﨑・塚原 | 3:50–4:05\
+    \ | 3:45–4:00 |\n| D | 高田・痛み・導入 | E優先 | RP強制しない |\n\n---\n\n## C. 日別メニュー（本番まで）\n\
+    \n凡例: **BG**=部活実施／**休**=部活なし（休養or自主練E）／**St**=スタミナ／**RP**=レースペース\n\n### 2026-09-07（月）テスト休\
+    \ — 休養\n- 部活なし。学習・睡眠。自主練するなら15分Eまで。\n\n### 2026-09-08（火）テスト休 — 休養\n- 同上。質禁止。\n\
+    \n### 2026-09-09（水）部活なし — 休養\n- 水は通年オフ。走らないでよい。\n\n### 2026-09-10（木）テスト休 — 休養\n\
+    - 15–20分Eまで可。質禁止。\n\n### 2026-09-11（金）BG 17:00–18:30 — 再起動\n- 動きづくり＋ジョグ短＋**600m×3\
+    \ GZ**（間長め、1本目遅め）  \n- 疲れ強い → E＋流し。痛み組はEのみ。\n\n### 2026-09-12（土）BG 9:00–10:30\
+    \ — **ロングE（スタミナ土台）**\n- 男10–14周／女8–12周、会話ペース一定（ラスト上げ禁止）＋流し2。\n\n### 2026-09-13（日）部活なし\
+    \ — 休養\n- 必須なし。どうしても走るなら30分E（自主練）。\n\n---\n\n### 2026-09-14（月）BG 17:00–18:30 —\
+    \ 【St】持続GZ\n- ジョグ短＋持続  \n  - A: **2000–2500m GZ**／B: **1800–2000**／C: **1200–1500**／D:\
+    \ 800–1000 or E  \n- RPE5–6。終わって普通に話せる。\n\n### 2026-09-15（火）BG 17:00–18:30 — 【St】1000系（週メイン）\n\
+    - A: **1000×3**（間3–4分）or 1200+800  \n- B: 1000×3（やや遅め）／C: 1000×2 or 800×3／D: 600×3\
+    \ or E  \n- 1本目からRP禁止。\n\n### 2026-09-16（水）部活なし — 休養\n- ※旧「ロングE」は **9/17** に移した。水に質を置かない。\n\
+    \n### 2026-09-17（木）BG 17:00–18:30 — **ロングE（量）**\n- 男12–14周／女10–12周 E＋流し2。グレーゾーン禁止。\n\
+    \n### 2026-09-18（金）BG 17:00–18:30 — 開花（短）\n- 2–3kmE＋流し3＋加速200×2。スタミナ負荷なし。\n\n\
+    ### 2026-09-19（土）BG 9:00–10:30 — **極軽調整**（なごみ前日）\n- 部活日のため完全休養にはしない。  \n- 動きづくり＋2kmE＋流し2–3。計測追い込み禁止。\
+    \  \n- 体調悪い子は参加してアップのみ／早退可。\n\n### 2026-09-20（日）— **なごみ駅伝**\n- 男3km×4／女2km×4。序盤突っ込み禁止。後半の落ち＝スタミナ課題の確認。\n\
+    \n### 2026-09-21（月）休み（敬老の日）— 回復休養\n- 記録会全力スキップ。完全休養推奨。\n\n---\n\n### 2026-09-22（火）BG\
+    \ 17:00–18:30 — 回復E\n- なごみ+2日。Eジョグ＋流し2。ポイント化しない。  \n- ※BBQ等がある場合も強度はE固定。\n\n###\
+    \ 2026-09-23（水）部活なし — 休養\n\n### 2026-09-24（木）BG 17:00–18:30 — 【St】分岐\n- **Jr非出場**:\
+    \ **1000×3 GZ** or **2000m持続GZ**  \n- **Jr出場予定**: E＋流しのみ\n\n### 2026-09-25（金）BG\
+    \ 17:00–18:30 — 調整＋量\n- Jr出場: 短刺激（200×3）or E  \n- **非出場: ロングE寄り**（周回多め／可能ならロード感覚のE）\n\
+    \n### 2026-09-26（土）— **県ジュニア駅伝**\n- 出場＝レース。非出場で部活代替がある場合のみ **1000×3 or 2000+1000\
+    \ GZ**（体調良好者）。なければ休養。\n\n### 2026-09-27（日）部活なし — 回復休養\n\n---\n\n### 2026-09-28（月）BG\
+    \ 17:00–18:30 — E＋フォーム\n- 丁寧な動きづくり＋E。スタミナC導入。\n\n### 2026-09-29（火）BG 17:00–18:30\
+    \ — **ロード・スタミナ持続（重要）**\n- 可能なら校外平坦。距離優先。  \n  - 男 **4–5km連続**（RPより20–25秒/km遅い）／女\
+    \ **3–4km**  \n- 雨・危険 → トラック1000×3–4 GZ。  \n- ※水がオフなので、この火がスタミナの柱。\n\n### 2026-09-30（水）部活なし\
+    \ — 休養\n\n---\n\n### 2026-10-01（木）BG 17:00–18:30 — E／補強\n- E 5–6km（会話）または体幹。質の走り込み禁止。\n\
+    \n### 2026-10-02（金）BG 17:00–18:30 — **最終スタミナハード（重要）**\n- A: **2000 GZ + 1000 GZ**（間5–6分）。余裕あれば300\
+    \ RP弱×1のみ  \n- B: 1600+800 等／C: 1000+600+400／D: 600×3–4 or E  \n- これ以降に長いGZは積まない。80%消化で成功。\n\
+    \n### 2026-10-03（土）BG 9:00–10:30 — 試走確認 or E\n- コース確認走（ペース挑戦禁止）。不可ならE30分。\n\n\
+    ### 2026-10-04（日）部活なし — **休養**（奥球磨スキップ）\n\n### 2026-10-05（月）BG 17:00–18:30 — 活性\n\
+    - E3km＋流し4。長い刺激なし。\n\n### 2026-10-06（火）BG 17:00–18:30 — **RP本刺激（重要）**\n- A: **1000×1\
+    \ RP** or **600×2 RP**／B: 800–1000×1／C: 600×1–2／D: 300–400×2  \n- 本数最小。スタミナ積み増し禁止。余力を残して切る。\n\
+    \n### 2026-10-07（水）部活なし — 休養\n\n### 2026-10-08（木）BG 17:00–18:30 — E短\n- 3–4kmE＋体幹。睡眠優先でも可（短時間参加）。\n\
+    \n### 2026-10-09（金）BG 17:00–18:30 — **RP短セット**\n- **400×3** or **300×4**（区間RP感、間長め）＋流し2。総量少。\n\
+    \n### 2026-10-10（土）BG 9:00–10:30 — 調整E\n- **E20分＋流し**のみ。記録会全力スキップ。\n\n### 2026-10-11（日）部活なし\
+    \ — 完全休養\n- オーダー・補給確認。\n\n### 2026-10-12（月）スポーツの日 — **休み想定**\n- 9月敬老の日と同様オフ想定。実施なら\
+    \ 9:00–10:30 で 2kmE＋200–300×2 RP触りまで。  \n- オフなら完全休養でよい（前日火にRP済み）。\n\n### 2026-10-13（火）BG\
+    \ 17:00–18:30 — 前日\n- 動きづくり＋1.5–2.5kmE＋ストライド3＋スタート短。計測追い込み禁止。\n\n### 2026-10-14（水）—\
+    \ **荒玉中体連駅伝（本番）**\n- ※普段水曜オフだが大会日。アップ短縮→本番。予備日なら13相当を再実施。\n\n---\n\n## D. 運用ルール（部活カレンダー版）\n\
+    \n1. **ポイントはBG日だけ** — 水・日・テスト休・祝休みに質を足さない  \n2. **部活なし＝休養が基本** — 自主練は短いEまで。スタミナ不足を理由に水・日へ質を逃がさない（故障リスク）\
+    \  \n3. **質は週≤2**（レースは1枠）  \n4. **〜10/2 スタミナ／10/5〜 RP**  \n5. 痛みは即E/中止\n\n---\n\
+    \n## E. BG日だけの早見（本番まで）\n\n| 日付 | 枠 | メニュー要約 |\n|---|---|---|\n| 9/11 金 | 17:00\
+    \ | 600×3 GZ |\n| 9/12 土 | 9:00 | ロングE |\n| 9/14 月 | 17:00 | 持続GZ |\n| 9/15 火\
+    \ | 17:00 | 1000系 St |\n| 9/17 木 | 17:00 | ロングE |\n| 9/18 金 | 17:00 | 開花短 |\n\
+    | 9/19 土 | 9:00 | 極軽調整 |\n| 9/20 日 | 大会 | なごみ |\n| 9/22 火 | 17:00 | 回復E |\n| 9/24\
+    \ 木 | 17:00 | 長GZ（非Jr） |\n| 9/25 金 | 17:00 | ロングE／Jr調整 |\n| 9/26 土 | 大会 | ジュニア\
+    \ |\n| 9/28 月 | 17:00 | E＋フォーム |\n| 9/29 火 | 17:00 | ロード持続 St |\n| 10/1 木 | 17:00\
+    \ | E |\n| 10/2 金 | 17:00 | 2000+1000 最終St |\n| 10/3 土 | 9:00 | 試走/E |\n| 10/5\
+    \ 月 | 17:00 | 活性 |\n| 10/6 火 | 17:00 | RP本刺激 |\n| 10/8 木 | 17:00 | E短 |\n| 10/9\
+    \ 金 | 17:00 | RP短 |\n| 10/10 土 | 9:00 | E20分 |\n| 10/13 火 | 17:00 | 前日 |\n| 10/14\
+    \ 水 | 大会 | **本番** |\n\n---\n\n*改訂: 2026-09-07／部活カレンダー（9月確定・10月同リズム想定）に整合。スタミナ増＋直前RPは維持。*\n"
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  - practice:daiming
+  - 駅伝
+  - スタミナ
+- title: 岱明中 陸上長距離 卒業年度別内訳（2019〜2025）
+  category: メモ
+  status: inbox
+  description: '# 岱明中 陸上長距離 卒業年度別内訳（2019〜2025）
+
+
+    - 出典: 大会出場記録（`output_YYYY_中学生_single_table.csv`）
+
+    - 卒業年度 = 中学3年時の年度
+
+    - ※ = 3年出場記録がなく、最終学年から推定
+
+    - 卒業済合計: **40名**（男子22 / 女子18）
+
+
+    ## サマリー
+
+
+    | 卒業年度 | 計 | 男 | 女 |
+
+    |---------|----|----|----|
+
+    | 2019 | 10 | 5 | 5 |
+
+    | 2020 | 1 | 1 | 0 |
+
+    | 2021 | 10 | 5 | 5 |
+
+    | 2022 | 2 | 0 | 2 |
+
+    | 2023 | 4 | 2 | 2 |
+
+    | 2024 | 6 | 4 | 2 |
+
+    | 2025 | 7 | 5 | 2 |
+
+
+    ## 2019年度卒業（10名）
+
+
+    - 男子（5）: 吉村綺星、坂上大河、岩本浩二、滝本享矢、田上諒
+
+    - 女子（5）: 前田優花、宮本真那、尾方こむぎ、平田若菜、柴尾綾乃
+
+
+    ## 2020年度卒業（1名）
+
+
+    - 男子（1）: 西村翔多※
+
+    - 女子（0）: なし
+
+
+    ## 2021年度卒業（10名）
+
+
+    - 男子（5）: 吉村綺輝、松倉叶空、案浦広修、大廣祐仁、田村大珠
+
+    - 女子（5）: 松嶋一希、田中蓮、濵崎結菜、西本莉奈、加藤礼梛※
+
+
+    ## 2022年度卒業（2名）
+
+
+    - 男子（0）: なし
+
+    - 女子（2）: 福島まひる、髙田麻那
+
+
+    ## 2023年度卒業（4名）
+
+
+    - 男子（2）: 西山綾大、松倉涼太
+
+    - 女子（2）: 大川華※、田中彩智※
+
+
+    ## 2024年度卒業（6名）
+
+
+    - 男子（4）: 南本和顕、片山幹太、田上侑蕾、正田崇仁
+
+    - 女子（2）: 瀧下那奈、福島まりん
+
+
+    ## 2025年度卒業（7名）
+
+
+    - 男子（5）: 佐藤央琉、倉田裕斗、案浦竜士、中島優心※、吉村優兎※
+
+    - 女子（2）: 角田里奈、本田和奏※
+
+
+    ## 参考（在学中・卒業見込み）
+
+
+    | 卒業年度 | 計 | 男 | 女 | メンバー |
+
+    |---------|----|----|----|----------|
+
+    | 2026（現3年） | 3 | 1 | 2 | 男: 松野凛空／女: 村上咲稀、高田麻由 |
+
+    | 2027見込み | 8 | 5 | 3 | 男: 山本哲瑠、田上颯人、田中智稀、松本空羽、松岡崇二朗※／女: 増岡里俐、角田亜美、塚原優衣 |
+
+    | 2028見込み | 4 | 3 | 1 | 男: 中尾快叶、南本幸治郎、嶋田匠眞／女: 山﨑莉奈 |
+
+    '
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  - practice:daiming
+- title: 岱明中 2026年9月行事予定メモ（授業日数・給食回数・10月予定）
+  category: メモ
+  status: inbox
+  description: '出典: 令和8年度9月行事予定（玉名市立岱明中学校、2026/8/19版）
+
+
+    【9月の授業日数】19日
+
+    　→ 1, 2, 3, 4, 7, 8, 9, 10, 11, 14, 15, 16, 17, 18, 24, 25, 28, 29, 30日
+
+
+    【9月の給食回数】1・3年 19回／2年 17回
+
+    　→ 2年は9/1・9/2の職場体験学習分が2回少ない（給食欄が△の日）
+
+
+    【授業時間数のまとめ】
+
+    - 6時間: 1, 2, 3, 8, 15, 16, 17, 24, 25, 29, 30日
+
+    - 5時間: 4, 7, 11（特別）, 14, 18, 28（特別）日
+
+    - 4時間: 9, 10日（前期期末テスト、特別日課）
+
+    ※（　）内の時間数が行事予定表に明記されていない日は、通常のA日課／B日課として6時間と判断
+
+
+    【10月行事予定（下段欄・判読できた範囲）】
+
+    - 校内実力テスト（1日）
+
+    - 英語検定、フッ化物洗口、通知表配付〆切
+
+    - メディアコントロールデー（4日）
+
+    - 読み聞かせ、大研、校内研（5日）
+
+    - 前期終業式、校内研（9日）
+
+    - 後期始業式、不登校対策委員会（13日）
+
+    - 玉名荒尾中体連駅伝大会（14日）／予備日（15日）
+
+    - フッ化物洗口、職員会議、選挙管理委員会（16日）
+
+    - フッ化物洗口（22日）
+
+    - 合唱コンクール（23日）
+
+    - 熊本県人権子ども集会（24日）
+
+    - 校内研、読み聞かせ、生徒会役員選挙公示・立候補者受付開始（26日）
+
+    - 3年共通テスト（27、28日）
+
+    - 3年教育相談（29、30日）
+
+    - 立候補者受付終了、フッ化物洗口、生徒会委員会（30日）
+
+
+    【確定済み（2026/8/19 原本照合）】
+
+    - 9/2「※巡回相談（1日）」
+
+    - 9/4・9/14「山下ＳＣ来校」
+
+    - 9/6「校内メディアコントロールデー」
+
+    - 9/11 校外行事の会場は「鍋小」
+
+    - 9/14「※読書週間（～9/30）」
+
+    - 9/16「社会委員会」／9/18「入試要項説明会」／9/24「中体研委員会」／9/30「道徳委員会」
+
+    - 9/30 校外行事の会場は「南関一小」
+
+    - 9/10「【小西・土本】」／9/28「玉名市教育委員会総合訪問」／9/4 県中学校体育連盟の件名
+
+
+    【未確定・要確認箇所】
+
+    - 9/17・9/18 校外行事の研修名「特別支援学級研修」か「特別支援教育研修」か
+
+    - 9/17・9/18 校外行事の担当者「【関田・岩田】」（関田／岡田）
+
+    - 9/24 校外行事3件目の会場「やまとみらいセンター」と担当者「【手島】」
+
+    - 10月欄は細字のため一部判読不能（1日の行事名、5日の大研担当者、13日の式名、16日「後期プレ会」、19日「管内一斉研修会」）
+
+    '
+  tags:
+  - 岱明中
+  - 学校行事
+filter: daiming

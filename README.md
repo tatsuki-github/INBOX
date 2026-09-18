@@ -11,6 +11,10 @@
 
 [`web/`](web/) に Next.js アプリ（荒玉駅伝コース動画ライブラリ）があります。Vercel の **Root Directory** は `web`。認証は Auth.js（Credentials）。環境変数は `AUTH_SECRET` / `BASIC_AUTH_USER` / `BASIC_AUTH_PASSWORD`。詳細は [`web/README.md`](web/README.md)。
 
+## Backend（LINE / Vercel）
+
+[`backend/`](backend/) にいだてん岱明専用の LINE Q&A（Express）があります。**別 Vercel プロジェクト**で Root Directory = `backend`。コーパスは [`input/idaten-corpus/`](input/idaten-corpus/)（再生成: `python3 scripts/build_idaten_corpus.py`）。詳細は [`backend/README.md`](backend/README.md) と [ADR 015](docs/adr/015-line-idaten-qa-backend.md)。
+
 ## セットアップ
 
 ```bash
