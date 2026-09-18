@@ -553,6 +553,18 @@
     "corpus": "out-analysis/arato-tamana-teams/ﾀﾏﾅﾁｭｳ玉名中.md"
   },
   {
+    "source": "out/analysis/line-chats/INDEX.md",
+    "corpus": "out-analysis/line-chats/INDEX.md"
+  },
+  {
+    "source": "out/analysis/line-chats/daiming-parents.md",
+    "corpus": "out-analysis/line-chats/daiming-parents.md"
+  },
+  {
+    "source": "out/analysis/line-chats/daiming-staff.md",
+    "corpus": "out-analysis/line-chats/daiming-staff.md"
+  },
+  {
     "source": "out/analysis/notion_records_2026.json",
     "corpus": "out-analysis/notion_records_2026.json"
   },
@@ -651,6 +663,10 @@
   {
     "source": "docs/adr/028-aragyoku-overview-pace.md",
     "corpus": "repo-docs/adr/028-aragyoku-overview-pace.md"
+  },
+  {
+    "source": "docs/adr/029-daiming-line-chat-corpus.md",
+    "corpus": "repo-docs/adr/029-daiming-line-chat-corpus.md"
   },
   {
     "source": "docs/idaten-import/phase0-media-ocr.md",

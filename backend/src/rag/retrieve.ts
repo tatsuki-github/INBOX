@@ -404,6 +404,12 @@ function pathQueryBonus(source: string, query: string): number {
     bonus += 140;
   }
   if (/荒尾|玉名|金栗PROJECT|アスリーツ|所属別/.test(q) && /arato-tamana-teams/.test(s)) bonus += 100;
+  if (
+    /岱明|いだてん|銀マット|合同練習|おおはま|三加和|朝練|ナイター|和水/.test(q) &&
+    /line-chats/.test(s)
+  ) {
+    bonus += 130;
+  }
   if ((s.startsWith("sb/") || s.includes("中学生SB")) && /自己ベスト|\bSB\b|\bPB\b|\d+\s*m/.test(q)) {
     bonus += 60;
   }

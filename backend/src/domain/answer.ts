@@ -155,6 +155,27 @@ function boostAthleteRecordSources(query: string, baseSources: string[]): string
   return out;
 }
 
+/** Prefer LINE ops digests for 岱明の連絡・集合・マット等. */
+function boostDaimingLineSources(query: string, baseSources: string[]): string[] {
+  if (
+    !/岱明|いだてん|銀マット|合同練習|おおはま|三加和|朝練|ナイター|保護者LINE|和水町/.test(
+      query,
+    )
+  ) {
+    return baseSources;
+  }
+  const out: string[] = [];
+  const seen = new Set<string>();
+  const push = (s: string) => {
+    if (!s || seen.has(s)) return;
+    seen.add(s);
+    out.push(s);
+  };
+  push("out-analysis/line-chats");
+  for (const s of baseSources) push(s);
+  return out;
+}
+
 /**
  * Meet-aware source boost.
  * - 荒玉 / bare 駅伝 / 優勝・歴代 → aragyoku transcripts for resolved years
@@ -285,12 +306,15 @@ export async function answerQuestion(
 
   const route = deps.skipRouter
     ? {
-        sources: boostAthleteRecordSources(
+        sources: boostDaimingLineSources(
           question,
-          boostMeetYearSources(
-            expanded,
-            boostDateMeetSources(expanded, kg.corpus_sources),
-            year,
+          boostAthleteRecordSources(
+            question,
+            boostMeetYearSources(
+              expanded,
+              boostDateMeetSources(expanded, kg.corpus_sources),
+              year,
+            ),
           ),
         ).slice(0, RETRIEVAL_BUDGET.routeSources),
         focus: question,
@@ -299,12 +323,15 @@ export async function answerQuestion(
       }
     : await routeSources(expanded, kg, deps.llm);
 
-  const preferredSources = boostAthleteRecordSources(
+  const preferredSources = boostDaimingLineSources(
     question,
-    boostMeetYearSources(
-      expanded,
-      boostDateMeetSources(expanded, route.sources),
-      year,
+    boostAthleteRecordSources(
+      question,
+      boostMeetYearSources(
+        expanded,
+        boostDateMeetSources(expanded, route.sources),
+        year,
+      ),
     ),
   ).slice(0, RETRIEVAL_BUDGET.routeSources);
 

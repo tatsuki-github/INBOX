@@ -308,6 +308,27 @@ describe("answerQuestion", () => {
     }
   });
 
+  it("puts line-chats context for 銀マット / 合同練習 questions", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    let userPrompt = "";
+    const result = await answerQuestion("岱明の銀マットのサイズは？", {
+      skipRouter: true,
+      defaultYear: 2026,
+      llm: {
+        complete: async (_sys, user) => {
+          userPrompt = user;
+          return "長さ180cm、幅60cmでも可です。";
+        },
+      },
+    });
+    expect(result.kind).toBe("answered");
+    expect(userPrompt).toMatch(/180cm|銀マット/);
+    if (result.kind === "answered") {
+      expect(result.sources.some((s) => s.includes("line-chats"))).toBe(true);
+    }
+  });
+
   it("puts arato-tamana team records for 金栗PROJECT 所属記録", async () => {
     resetRetrieverCache();
     resetKgCache();

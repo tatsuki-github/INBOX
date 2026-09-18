@@ -6,6 +6,9 @@ venv/
 .DS_Store
 out/ai/rag_index.json
 
+# LINE 生トーク（PII 含む可能性）— 衛生化済みは out/analysis/line-chats/
+input/external/line/raw/
+
 # Next.js (web/)
 node_modules/
 .next/

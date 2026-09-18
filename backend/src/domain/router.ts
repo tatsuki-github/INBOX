@@ -28,6 +28,7 @@ function buildRouterSystemPrompt(): string {
     "ジュニア駅伝・なごみ・金栗など固有大会名があるときは drive-text/大会/ の該大会フォルダのみ選び、荒玉・aragyoku・ekiden-ocr は選ばない。",
     "明示の荒玉・優勝・歴代・区間・チーム順位なら aragyoku/transcripts・out-analysis/aragyoku-teams・winners-by-year・該当年 ekiden-ocr を優先。",
     "荒玉の距離・ペース・区間コース質問なら out-analysis/aragyoku-overview.md と docs/aragyoku-ekiden-distance-definitions.md を最優先。",
+    "岱明の銀マット・合同練習会・集合場所・朝練・保護者連絡なら out-analysis/line-chats を優先。",
     "荒尾玉名の所属・トラック記録なら out-analysis/arato-tamana-teams と sb/ を優先。",
     "抜け漏れ防止のため関連ソースを多めに選ぶ。",
   ].join("\n");
