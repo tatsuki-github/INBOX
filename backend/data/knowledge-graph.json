@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated_at": "2026-09-18T08:28:03Z",
+  "generated_at": "2026-09-18T08:32:32Z",
   "nodes": [
     {
       "id": "corpus:analysis-ocr",
@@ -26,7 +26,7 @@
       "refs": [
         "input/idaten-corpus/aragyoku"
       ],
-      "hint": "荒玉駅伝の構造化 JSON/MD・transcripts・winners-by-year. 例: men_full_2012_2025.json, ocr_raw, quiz, taimei-records-2012-2025.md, transcripts, winners-by-year.md, women_full_2012_2025.json, women_top4_2012_2025.json, women_top6_2012_2025.json"
+      "hint": "荒玉駅伝の構造化 JSON/MD・transcripts・winners-by-year・course-videos. 例: course-videos.md, men_full_2012_2025.json, ocr_raw, quiz, taimei-records-2012-2025.md, transcripts, winners-by-year.md, women_full_2012_2025.json, women_top4_2012_2025.json, women_top6_2012_2025.json"
     },
     {
       "id": "corpus:calendar",
@@ -2716,7 +2716,15 @@
       "hint": "practice 付きイベントと practice.json / practice_templates / コーパス practice/ を見る"
     },
     {
-      "id": "query:10:荒玉駅伝の区間距離は？",
+      "id": "query:10:荒玉駅伝の優勝校は？",
+      "type": "QueryHint",
+      "label": "荒玉駅伝の優勝校は？",
+      "topics": [],
+      "refs": [],
+      "hint": "aragyoku/winners-by-year.md と transcripts の teams[rank=1]、ekiden-ocr 該当年"
+    },
+    {
+      "id": "query:11:荒玉駅伝の区間距離は？",
       "type": "QueryHint",
       "label": "荒玉駅伝の区間距離は？",
       "topics": [],
@@ -2724,7 +2732,7 @@
       "hint": "docs/aragyoku-ekiden-distance-definitions.md の年度別・男女別区間距離定義を優先する"
     },
     {
-      "id": "query:11:なごみ駅伝は？",
+      "id": "query:12:なごみ駅伝は？",
       "type": "QueryHint",
       "label": "なごみ駅伝は？",
       "topics": [],
@@ -2732,7 +2740,7 @@
       "hint": "drive-text/大会/*/0920_*なごみ* または 0921_*なごみ* の開催要項・結果を見る"
     },
     {
-      "id": "query:12:部員名簿は？",
+      "id": "query:13:部員名簿は？",
       "type": "QueryHint",
       "label": "部員名簿は？",
       "topics": [],
@@ -2740,7 +2748,7 @@
       "hint": "Notion いだてん岱明生徒 DB と Drive 名簿 CSV（コーパス notion-db/いだてん岱明生徒）"
     },
     {
-      "id": "query:13:中学生SBは？",
+      "id": "query:14:中学生SBは？",
       "type": "QueryHint",
       "label": "中学生SBは？",
       "topics": [],
@@ -2748,7 +2756,7 @@
       "hint": "コーパス sb/ と input/external/sb/middle-school/ を見る"
     },
     {
-      "id": "query:14:開催要項は？",
+      "id": "query:15:開催要項は？",
       "type": "QueryHint",
       "label": "開催要項は？",
       "topics": [],
@@ -2756,7 +2764,7 @@
       "hint": "drive-text/大会/ 各大会フォルダの開催要項.md を見る"
     },
     {
-      "id": "query:15:ケガ・障害は？",
+      "id": "query:16:ケガ・障害は？",
       "type": "QueryHint",
       "label": "ケガ・障害は？",
       "topics": [],
@@ -2764,7 +2772,7 @@
       "hint": "injury トピックと Notion 怪我について・RRI メモ"
     },
     {
-      "id": "query:16:オーダー・区間は？",
+      "id": "query:17:オーダー・区間は？",
       "type": "QueryHint",
       "label": "オーダー・区間は？",
       "topics": [],
@@ -2836,12 +2844,12 @@
       "hint": "相対年を西暦に展開し aragyoku/winners-by-year.md と transcripts/{year}-*.json の rank=1 を読む"
     },
     {
-      "id": "query:9:荒玉駅伝の優勝校は？",
+      "id": "query:9:荒玉駅伝のコース動画は？",
       "type": "QueryHint",
-      "label": "荒玉駅伝の優勝校は？",
+      "label": "荒玉駅伝のコース動画は？",
       "topics": [],
       "refs": [],
-      "hint": "aragyoku/winners-by-year.md と transcripts の teams[rank=1]、ekiden-ocr 該当年"
+      "hint": "aragyoku/course-videos.md の Google ドライブフォルダ URL を返す（確定回答）"
     },
     {
       "id": "source:README.md",
@@ -3477,7 +3485,7 @@
       "refs": [
         "input/idaten-corpus/aragyoku"
       ],
-      "hint": "荒玉駅伝の構造化 JSON/MD・transcripts・winners-by-year. 例: men_full_2012_2025.json, ocr_raw, quiz, taimei-records-2012-2025.md, transcripts, winners-by-year.md, women_full_2012_2025.json, women_top4_2012_2025.json, women_top6_2012_2025.json"
+      "hint": "荒玉駅伝の構造化 JSON/MD・transcripts・winners-by-year・course-videos. 例: course-videos.md, men_full_2012_2025.json, ocr_raw, quiz, taimei-records-2012-2025.md, transcripts, winners-by-year.md, women_full_2012_2025.json, women_top4_2012_2025.json, women_top6_2012_2025.json"
     },
     {
       "id": "source:input/idaten-corpus/calendar",
@@ -6719,57 +6727,67 @@
       "rel": "search_here"
     },
     {
-      "from": "query:10:荒玉駅伝の区間距離は？",
+      "from": "query:10:荒玉駅伝の優勝校は？",
+      "to": "corpus:aragyoku",
+      "rel": "search_here"
+    },
+    {
+      "from": "query:10:荒玉駅伝の優勝校は？",
+      "to": "topic:ekiden",
+      "rel": "search_here"
+    },
+    {
+      "from": "query:11:荒玉駅伝の区間距離は？",
       "to": "source:docs/aragyoku-ekiden-distance-definitions.md",
       "rel": "search_here"
     },
     {
-      "from": "query:10:荒玉駅伝の区間距離は？",
+      "from": "query:11:荒玉駅伝の区間距離は？",
       "to": "topic:ekiden",
       "rel": "search_here"
     },
     {
-      "from": "query:11:なごみ駅伝は？",
+      "from": "query:12:なごみ駅伝は？",
       "to": "topic:calendar",
       "rel": "search_here"
     },
     {
-      "from": "query:11:なごみ駅伝は？",
+      "from": "query:12:なごみ駅伝は？",
       "to": "topic:ekiden",
       "rel": "search_here"
     },
     {
-      "from": "query:12:部員名簿は？",
+      "from": "query:13:部員名簿は？",
       "to": "topic:athlete_records",
       "rel": "search_here"
     },
     {
-      "from": "query:12:部員名簿は？",
+      "from": "query:13:部員名簿は？",
       "to": "topic:practice",
       "rel": "search_here"
     },
     {
-      "from": "query:13:中学生SBは？",
+      "from": "query:14:中学生SBは？",
       "to": "topic:athlete_records",
       "rel": "search_here"
     },
     {
-      "from": "query:14:開催要項は？",
+      "from": "query:15:開催要項は？",
       "to": "topic:ekiden",
       "rel": "search_here"
     },
     {
-      "from": "query:15:ケガ・障害は？",
+      "from": "query:16:ケガ・障害は？",
       "to": "topic:injury",
       "rel": "search_here"
     },
     {
-      "from": "query:16:オーダー・区間は？",
+      "from": "query:17:オーダー・区間は？",
       "to": "topic:athlete_records",
       "rel": "search_here"
     },
     {
-      "from": "query:16:オーダー・区間は？",
+      "from": "query:17:オーダー・区間は？",
       "to": "topic:ekiden",
       "rel": "search_here"
     },
@@ -6849,12 +6867,12 @@
       "rel": "search_here"
     },
     {
-      "from": "query:9:荒玉駅伝の優勝校は？",
+      "from": "query:9:荒玉駅伝のコース動画は？",
       "to": "corpus:aragyoku",
       "rel": "search_here"
     },
     {
-      "from": "query:9:荒玉駅伝の優勝校は？",
+      "from": "query:9:荒玉駅伝のコース動画は？",
       "to": "topic:ekiden",
       "rel": "search_here"
     },

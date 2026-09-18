@@ -179,6 +179,15 @@ QUERY_HINTS: list[tuple[str, str, list[str]]] = [
         ],
     ),
     (
+        "荒玉駅伝のコース動画は？",
+        "aragyoku/course-videos.md の Google ドライブフォルダ URL を返す（確定回答）",
+        [
+            "topic:ekiden",
+            "corpus:aragyoku",
+            "source:input/aragyoku",
+        ],
+    ),
+    (
         "荒玉駅伝の優勝校は？",
         "aragyoku/winners-by-year.md と transcripts の teams[rank=1]、ekiden-ocr 該当年",
         [
@@ -446,7 +455,7 @@ def _register_idaten_corpus(
 
     dir_specs: list[tuple[str, list[str], str]] = [
         ("ekiden-ocr", ["ekiden", "athlete_records"], "荒玉駅伝歴代の OCR 本文（年×男女）"),
-        ("aragyoku", ["ekiden", "athlete_records"], "荒玉駅伝の構造化 JSON/MD・transcripts・winners-by-year"),
+        ("aragyoku", ["ekiden", "athlete_records"], "荒玉駅伝の構造化 JSON/MD・transcripts・winners-by-year・course-videos"),
         ("analysis-ocr", ["ekiden", "athlete_records"], "分析 PDF の OCR（所属ランキング等）"),
         ("out-analysis", ["ekiden", "athlete_records", "analysis"], "out/analysis の md/json（ペース分析・関係図など）"),
         ("repo-docs", ["schema", "meta", "ai"], "docs/ 配下の Markdown（ADR・データモデル等）"),
