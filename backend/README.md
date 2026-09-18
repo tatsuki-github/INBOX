@@ -35,10 +35,26 @@ Webhook は `POST /webhook`。LINE 実機検証には [ngrok](https://ngrok.com/
 |:---|:---|:---|
 | `LINE_CHANNEL_SECRET` | 本番 | 署名検証 |
 | `LINE_CHANNEL_ACCESS_TOKEN` | 本番 | reply |
+| `LINE_DENIED_USER_IDS` | 任意 | カンマ区切りの `userId`。載っているユーザーには **無応答**（LLM も呼ばない） |
 | `AI_PROVIDER` | 任意 | **`gemini`（既定）** / `openai` / `anthropic` |
 | `GEMINI_API_KEY` | 任意 | Gemini Developer API（無料枠）。モデルは `gemini-3.5-flash-lite` |
 | `OPENAI_API_KEY` / `ANTHROPIC_API_KEY` | 任意 | 他プロバイダ切替時。未設定時はコーパス抜粋のオフライン回答 |
 | `PORT` | 任意 | ローカル listen（既定 3001） |
+
+## 拒否リスト（Vercel Logs → env）
+
+公式アカウント側から友だちを削除・ブロックできないため、アプリ側で拒否する。
+
+1. 対象ユーザーがボットに何かメッセージを送る
+2. Vercel → Project **`idaten-line-backend`** → **Logs** で次を検索する  
+   - `line message userId=` … 受信（本文はログに出さない）  
+   - `line denied userId=` … 拒否して無応答にしたとき
+3. Production の環境変数 `LINE_DENIED_USER_IDS` に `U...` をカンマ区切りで追加し、反映を待つ
+4. 以降その ID は reply されない
+
+補助: Messaging API `GET /v2/bot/followers/ids` で友だち ID 一覧も取得できる（表示名は別途 profile API）。
+
+設計: [ADR 018](../docs/adr/018-line-denied-user-ids.md)
 
 ## Vercel
 
@@ -78,11 +94,12 @@ Webhook は `POST /webhook`。LINE 実機検証には [ngrok](https://ngrok.com/
 ## セキュリティ / プライバシー
 
 - 生徒名簿等の PII を含む。LINE は関係者向けチャネル前提。
-- アプリログにユーザー ID・質問本文を出さない。
+- 運用のため **userId のみ** Runtime Logs に出す（`line message userId=` / `line denied userId=`）。**質問本文は出さない**。
 - 署名不正は 401。
 
 ## 設計
 
 - [ADR 015](../docs/adr/015-line-idaten-qa-backend.md)
 - [ADR 016](../docs/adr/016-kg-first-idaten-qa.md)
+- [ADR 018](../docs/adr/018-line-denied-user-ids.md)（userId 拒否リスト）
 - [Phase 0](../docs/implementation-flow/line-idaten-bot/phase-0.md)

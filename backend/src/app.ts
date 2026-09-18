@@ -1,6 +1,7 @@
 import express, { type Request, type Response } from "express";
 import { messagingApi } from "@line/bot-sdk";
 import { hasLineCredentials, hasLlmCredentials, loadConfig, type AppConfig } from "./config.js";
+import { parseDeniedUserIds } from "./domain/deny.js";
 import { createLlmClient } from "./domain/llm.js";
 import { verifyLineSignature } from "./line/signature.js";
 import { handleWebhookEvents, type LineWebhookBody, type ReplyClient } from "./line/webhook.js";
@@ -20,6 +21,7 @@ function rawBodySaver(
 
 export function createApp(options: AppOptions = {}) {
   const config = options.config ?? loadConfig();
+  const deniedUserIds = parseDeniedUserIds(config.LINE_DENIED_USER_IDS);
   const app = express();
 
   app.get("/health", (_req, res) => {
@@ -63,7 +65,10 @@ export function createApp(options: AppOptions = {}) {
       const llm = hasLlmCredentials(config) ? createLlmClient(config) : null;
 
       try {
-        await handleWebhookEvents(req.body as LineWebhookBody, replyClient, { llm });
+        await handleWebhookEvents(req.body as LineWebhookBody, replyClient, {
+          llm,
+          deniedUserIds,
+        });
         res.status(200).json({ ok: true });
       } catch {
         // Always 200 to LINE after signature OK to avoid retries storms when reply fails
