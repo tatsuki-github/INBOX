@@ -94,6 +94,7 @@
 - `input/aragyoku/transcripts (derived)` → `aragyoku/winners-by-year.md` (winners summary from rank=1)
 - `out/analysis/2026_men_1500m_pb_school_ranking.md` → `out-analysis/2026_men_1500m_pb_school_ranking.md`
 - `out/analysis/2026_women_800m_1500m_pb_school_ranking.md` → `out-analysis/2026_women_800m_1500m_pb_school_ranking.md`
+- `out/analysis/aragyoku-overview.md` → `out-analysis/aragyoku-overview.md`
 - `out/analysis/aragyoku-teams/INDEX.md` → `out-analysis/aragyoku-teams/INDEX.md`
 - `out/analysis/aragyoku-teams/三加和.md` → `out-analysis/aragyoku-teams/三加和.md`
 - `out/analysis/aragyoku-teams/南関.md` → `out-analysis/aragyoku-teams/南関.md`
@@ -160,6 +161,8 @@
 - `docs/adr/024-eval-unique-exhausted-qa.md` → `repo-docs/adr/024-eval-unique-exhausted-qa.md`
 - `docs/adr/025-retrieval-precision.md` → `repo-docs/adr/025-retrieval-precision.md`
 - `docs/adr/026-context-100k.md` → `repo-docs/adr/026-context-100k.md`
+- `docs/adr/027-aragyoku-arato-team-markdowns.md` → `repo-docs/adr/027-aragyoku-arato-team-markdowns.md`
+- `docs/adr/028-aragyoku-overview-pace.md` → `repo-docs/adr/028-aragyoku-overview-pace.md`
 - `docs/idaten-import/phase0-media-ocr.md` → `repo-docs/idaten-import/phase0-media-ocr.md`
 - `docs/idaten-import/phase0-work-type.md` → `repo-docs/idaten-import/phase0-work-type.md`
 - `docs/idaten-import/phase1-media-ocr.md` → `repo-docs/idaten-import/phase1-media-ocr.md`

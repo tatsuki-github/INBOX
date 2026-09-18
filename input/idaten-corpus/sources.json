@@ -377,6 +377,10 @@
     "corpus": "out-analysis/2026_women_800m_1500m_pb_school_ranking.md"
   },
   {
+    "source": "out/analysis/aragyoku-overview.md",
+    "corpus": "out-analysis/aragyoku-overview.md"
+  },
+  {
     "source": "out/analysis/aragyoku-teams/INDEX.md",
     "corpus": "out-analysis/aragyoku-teams/INDEX.md"
   },
@@ -639,6 +643,14 @@
   {
     "source": "docs/adr/026-context-100k.md",
     "corpus": "repo-docs/adr/026-context-100k.md"
+  },
+  {
+    "source": "docs/adr/027-aragyoku-arato-team-markdowns.md",
+    "corpus": "repo-docs/adr/027-aragyoku-arato-team-markdowns.md"
+  },
+  {
+    "source": "docs/adr/028-aragyoku-overview-pace.md",
+    "corpus": "repo-docs/adr/028-aragyoku-overview-pace.md"
   },
   {
     "source": "docs/idaten-import/phase0-media-ocr.md",

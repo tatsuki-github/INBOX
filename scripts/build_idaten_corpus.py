@@ -602,35 +602,40 @@ def _build_index() -> dict[str, Any]:
 
 
 def main() -> int:
-    # Refresh team markdowns so out-analysis copies stay searchable.
-    gen = ROOT / "scripts" / "generate_team_record_markdowns.py"
+    # Refresh analysis markdowns so out-analysis copies stay searchable.
+    gen_scripts = [
+        ROOT / "scripts" / "generate_team_record_markdowns.py",
+        ROOT / "scripts" / "generate_aragyoku_overview.py",
+    ]
     py_candidates = [
         Path("/opt/miniconda3/bin/python"),
         Path(sys.executable),
     ]
-    ran = False
-    for py in py_candidates:
-        if not py.is_file():
-            continue
-        try:
-            import subprocess
+    for gen in gen_scripts:
+        ran = False
+        for py in py_candidates:
+            if not py.is_file():
+                continue
+            try:
+                import subprocess
 
-            proc = subprocess.run(
-                [str(py), str(gen)],
-                cwd=str(ROOT),
-                check=False,
-                capture_output=True,
-                text=True,
-            )
-            if proc.returncode == 0:
-                print(proc.stdout.strip().splitlines()[-1] if proc.stdout.strip() else "team markdowns ok")
-                ran = True
-                break
-            print(f"warn: {py} generate failed: {proc.stderr.strip()[:200]}", file=sys.stderr)
-        except Exception as exc:  # pragma: no cover
-            print(f"warn: team markdown generation via {py} failed: {exc}", file=sys.stderr)
-    if not ran:
-        print("warn: team markdown generation skipped", file=sys.stderr)
+                proc = subprocess.run(
+                    [str(py), str(gen)],
+                    cwd=str(ROOT),
+                    check=False,
+                    capture_output=True,
+                    text=True,
+                )
+                if proc.returncode == 0:
+                    last = proc.stdout.strip().splitlines()[-1] if proc.stdout.strip() else f"{gen.name} ok"
+                    print(last)
+                    ran = True
+                    break
+                print(f"warn: {py} {gen.name} failed: {proc.stderr.strip()[:200]}", file=sys.stderr)
+            except Exception as exc:  # pragma: no cover
+                print(f"warn: {gen.name} via {py} failed: {exc}", file=sys.stderr)
+        if not ran:
+            print(f"warn: {gen.name} skipped", file=sys.stderr)
 
     sources = _build_corpus()
     index = _build_index()

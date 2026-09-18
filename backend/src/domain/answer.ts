@@ -194,6 +194,15 @@ function boostMeetYearSources(
   }
 
   if (kind === "aragyoku") {
+    const courseMeta =
+      /ペース|距離|区間|コース|\/km|分でいく|分で走/.test(expandedQuery);
+    if (courseMeta) {
+      // 概要・距離定義を先頭に（区間ペース質問で結果板ノイズに埋もれないように）
+      push("out-analysis/aragyoku-overview.md");
+      push("docs/aragyoku-ekiden-distance-definitions.md");
+      push("out-analysis/aragyoku_top6_historical_average_pace.md");
+      push("aragyoku/course-videos.md");
+    }
     push("out-analysis/aragyoku-teams");
     push("aragyoku/winners-by-year.md");
     for (const y of years) {
@@ -203,7 +212,7 @@ function boostMeetYearSources(
         push(`ekiden-ocr/${y}-${g}.md`);
       }
     }
-    if (years.length === 0) {
+    if (years.length === 0 && !courseMeta) {
       push("aragyoku");
       push("out-analysis/aragyoku-teams");
     }

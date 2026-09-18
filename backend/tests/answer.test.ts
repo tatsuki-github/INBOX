@@ -276,6 +276,38 @@ describe("answerQuestion", () => {
     }
   });
 
+  it("puts aragyoku overview for 男子2区 ペース questions", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    let userPrompt = "";
+    const result = await answerQuestion(
+      "荒玉駅伝の男子2区を9分でいくとペースはどれくらい？",
+      {
+        skipRouter: true,
+        defaultYear: 2026,
+        llm: {
+          complete: async (_sys, user) => {
+            userPrompt = user;
+            return "現行男子2区は2.855kmなので、9:00は約3:09/kmです。";
+          },
+        },
+      },
+    );
+    expect(result.kind).toBe("answered");
+    expect(userPrompt).toMatch(/3:09\.1\/km|2\.855km/);
+    expect(userPrompt).toMatch(/ペース|男子2区/);
+    expect(userPrompt).not.toMatch(/コーチに直接聞いてください/);
+    if (result.kind === "answered") {
+      expect(
+        result.sources.some(
+          (s) =>
+            s.includes("aragyoku-overview") ||
+            s.includes("aragyoku-ekiden-distance-definitions"),
+        ),
+      ).toBe(true);
+    }
+  });
+
   it("puts arato-tamana team records for 金栗PROJECT 所属記録", async () => {
     resetRetrieverCache();
     resetKgCache();
