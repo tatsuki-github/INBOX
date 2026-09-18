@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated_at": "2026-09-18T13:37:22Z",
+  "generated_at": "2026-09-18T13:50:16Z",
   "nodes": [
     {
       "id": "corpus:analysis-ocr",
@@ -118,12 +118,15 @@
       "topics": [
         "analysis",
         "athlete_records",
-        "ekiden"
+        "calendar",
+        "ekiden",
+        "pace",
+        "practice"
       ],
       "refs": [
         "input/idaten-corpus/out-analysis"
       ],
-      "hint": "out/analysis の md/json（ペース分析・関係図など）. 例: 2026_men_1500m_pb_school_ranking.md, 2026_women_800m_1500m_pb_school_ranking.md, aragyoku-overview.md, aragyoku-teams, aragyoku_top6_historical_average_pace.md, aragyoku_women_track_joined.json, arato-tamana-teams, line-chats, notion_records_2026.json"
+      "hint": "out/analysis の md/json（ペース分析・LINE 衛生化・関係図など）. 例: 2026_men_1500m_pb_school_ranking.md, 2026_women_800m_1500m_pb_school_ranking.md, aragyoku-overview.md, aragyoku-teams, aragyoku_top6_historical_average_pace.md, aragyoku_women_track_joined.json, arato-tamana-teams, line-chats, notion_records_2026.json"
     },
     {
       "id": "corpus:practice",
@@ -468,8 +471,8 @@
         "practice"
       ],
       "refs": [
-        "out/analysis/notion_records_2026.json",
         "input/events.2026.yaml",
+        "out/analysis/notion_records_2026.json",
         "out/2026/practice_absentees.csv"
       ],
       "hint": "部員エンティティ"
@@ -484,8 +487,8 @@
         "practice"
       ],
       "refs": [
-        "out/analysis/notion_records_2026.json",
         "input/events.2026.yaml",
+        "out/analysis/notion_records_2026.json",
         "out/2026/practice_absentees.csv"
       ],
       "hint": "所属:岱明中"
@@ -532,10 +535,10 @@
         "practice"
       ],
       "refs": [
-        "input/events.2026.yaml",
-        "out/2026/practice_absentees.csv",
-        "input/events.2025.yaml",
         "out/analysis/notion_records_2026.json",
+        "input/events.2026.yaml",
+        "input/events.2025.yaml",
+        "out/2026/practice_absentees.csv",
         "out/2025/practice_absentees.csv"
       ],
       "hint": "部員エンティティ"
@@ -550,10 +553,10 @@
         "practice"
       ],
       "refs": [
-        "input/events.2026.yaml",
-        "out/2026/practice_absentees.csv",
-        "input/events.2025.yaml",
         "out/analysis/notion_records_2026.json",
+        "input/events.2026.yaml",
+        "input/events.2025.yaml",
+        "out/2026/practice_absentees.csv",
         "out/2025/practice_absentees.csv"
       ],
       "hint": "所属:岱明中"
@@ -2767,176 +2770,336 @@
       "id": "query:0:練習メニューの中身は？",
       "type": "QueryHint",
       "label": "練習メニューの中身は？",
-      "topics": [],
-      "refs": [],
+      "topics": [
+        "practice"
+      ],
+      "refs": [
+        "input/practice_templates.yaml",
+        "input/idaten-corpus/practice",
+        "out/2026/practice.json",
+        "out/daiming-practice-menus-kpace.md"
+      ],
       "hint": "practice 付きイベントと practice.json / practice_templates / コーパス practice/ を見る"
     },
     {
       "id": "query:10:荒玉駅伝の優勝校は？",
       "type": "QueryHint",
       "label": "荒玉駅伝の優勝校は？",
-      "topics": [],
-      "refs": [],
+      "topics": [
+        "ekiden"
+      ],
+      "refs": [
+        "input/idaten-corpus/aragyoku",
+        "input/idaten-corpus/aragyoku/winners-by-year.md",
+        "out/analysis/aragyoku-overview.md"
+      ],
       "hint": "aragyoku/winners-by-year.md と transcripts の teams[rank=1]、ekiden-ocr 該当年"
     },
     {
       "id": "query:11:荒玉駅伝の区間距離は？",
       "type": "QueryHint",
       "label": "荒玉駅伝の区間距離は？",
-      "topics": [],
-      "refs": [],
+      "topics": [
+        "ekiden"
+      ],
+      "refs": [
+        "docs/aragyoku-ekiden-distance-definitions.md",
+        "out/analysis/aragyoku-overview.md",
+        "input/idaten-corpus/aragyoku"
+      ],
       "hint": "docs/aragyoku-ekiden-distance-definitions.md の年度別・男女別区間距離定義を優先する"
     },
     {
       "id": "query:12:なごみ駅伝は？",
       "type": "QueryHint",
       "label": "なごみ駅伝は？",
-      "topics": [],
-      "refs": [],
+      "topics": [
+        "calendar",
+        "ekiden"
+      ],
+      "refs": [
+        "input/idaten-corpus/drive-text",
+        "input/idaten-corpus/calendar",
+        "input/events.2026.yaml"
+      ],
       "hint": "drive-text/大会/*/0920_*なごみ* または 0921_*なごみ* の開催要項・結果を見る。荒玉・aragyoku は使わない"
     },
     {
       "id": "query:13:ジュニア駅伝の結果は？",
       "type": "QueryHint",
       "label": "ジュニア駅伝の結果は？",
-      "topics": [],
-      "refs": [],
+      "topics": [
+        "calendar",
+        "ekiden"
+      ],
+      "refs": [
+        "input/idaten-corpus/drive-text"
+      ],
       "hint": "drive-text/大会/*/*ジュニア駅伝*/岱明の結果.md および 結果_*.pdf.md を見る。荒玉・aragyoku・ekiden-ocr は別大会なので選ばない"
     },
     {
       "id": "query:14:去年のジュニア駅伝の岱明の結果は？",
       "type": "QueryHint",
       "label": "去年のジュニア駅伝の岱明の結果は？",
-      "topics": [],
-      "refs": [],
+      "topics": [
+        "calendar",
+        "ekiden"
+      ],
+      "refs": [
+        "input/idaten-corpus/drive-text"
+      ],
       "hint": "相対年を西暦に展開し drive-text/大会/{year}年度/*ジュニア*/岱明の結果.md を優先。荒玉優勝校・transcripts は使わない"
     },
     {
       "id": "query:15:部員名簿は？",
       "type": "QueryHint",
       "label": "部員名簿は？",
-      "topics": [],
-      "refs": [],
+      "topics": [
+        "athlete_records",
+        "practice"
+      ],
+      "refs": [
+        "input/idaten-corpus/notion-db",
+        "input/idaten-corpus/notion-db/いだてん岱明生徒",
+        "input/external/notion/databases/いだてん岱明生徒/rows.json",
+        "input/external/drive/shared/名簿/2025年度_岱明中学校陸上競技部_部員名簿.csv"
+      ],
       "hint": "Notion いだてん岱明生徒 DB と Drive 名簿 CSV（コーパス notion-db/いだてん岱明生徒）"
     },
     {
       "id": "query:16:中学生SBは？",
       "type": "QueryHint",
       "label": "中学生SBは？",
-      "topics": [],
-      "refs": [],
+      "topics": [
+        "athlete_records"
+      ],
+      "refs": [
+        "input/idaten-corpus/sb",
+        "input/external/sb/middle-school/wide/中学生SB.csv",
+        "input/external/sb/middle-school/INDEX.md",
+        "docs/adr/012-middle-school-sb-all-years.md"
+      ],
       "hint": "コーパス sb/ と input/external/sb/middle-school/ を見る"
     },
     {
       "id": "query:17:開催要項は？",
       "type": "QueryHint",
       "label": "開催要項は？",
-      "topics": [],
-      "refs": [],
+      "topics": [
+        "ekiden"
+      ],
+      "refs": [
+        "input/idaten-corpus/drive-text"
+      ],
       "hint": "drive-text/大会/ 各大会フォルダの開催要項.md を見る（大会名でフォルダを特定）"
     },
     {
       "id": "query:18:ケガ・障害は？",
       "type": "QueryHint",
       "label": "ケガ・障害は？",
-      "topics": [],
-      "refs": [],
+      "topics": [
+        "injury"
+      ],
+      "refs": [
+        "input/idaten-corpus/notion-db",
+        "input/memos/rri_healing_evidence_review.md",
+        "input/external/notion/INDEX.md"
+      ],
       "hint": "injury トピックと Notion 怪我について・RRI メモ"
     },
     {
       "id": "query:19:オーダー・区間は？",
       "type": "QueryHint",
       "label": "オーダー・区間は？",
-      "topics": [],
-      "refs": [],
+      "topics": [
+        "athlete_records",
+        "ekiden"
+      ],
+      "refs": [
+        "out/analysis/aragyoku-overview.md",
+        "docs/aragyoku-ekiden-distance-definitions.md",
+        "input/idaten-corpus/aragyoku",
+        "input/idaten-corpus/drive-text",
+        "input/idaten-corpus/analysis-ocr"
+      ],
       "hint": "荒玉の区間・オーダーなら荒玉戦略 Notion・分析 OCR・歴代 OCR。ジュニア・なごみなら該大会フォルダのプログラム・結果を見る"
     },
     {
       "id": "query:1:欠席者は誰？",
       "type": "QueryHint",
       "label": "欠席者は誰？",
-      "topics": [],
-      "refs": [],
+      "topics": [
+        "practice"
+      ],
+      "refs": [
+        "out/2026/practice_absentees.csv",
+        "input/events.2026.yaml",
+        "input/idaten-corpus/practice"
+      ],
       "hint": "practice_absentees.csv と events YAML の absentees"
     },
     {
       "id": "query:20:銀マット・合同練習・保護者連絡は？",
       "type": "QueryHint",
       "label": "銀マット・合同練習・保護者連絡は？",
-      "topics": [],
-      "refs": [],
+      "topics": [
+        "calendar",
+        "practice"
+      ],
+      "refs": [
+        "out/analysis/line-chats/daiming-parents.md",
+        "out/analysis/line-chats/daiming-staff.md",
+        "out/analysis/line-chats/INDEX.md",
+        "input/idaten-corpus/out-analysis"
+      ],
       "hint": "out/analysis/line-chats（parents/staff）を優先。カレンダーに無い一次連絡が多い"
     },
     {
       "id": "query:21:有田先輩の練習・補強の考え方は？",
       "type": "QueryHint",
       "label": "有田先輩の練習・補強の考え方は？",
-      "topics": [],
-      "refs": [],
+      "topics": [
+        "ekiden",
+        "practice"
+      ],
+      "refs": [
+        "out/analysis/line-chats/arita-taisho.md",
+        "out/analysis/line-chats/INDEX.md",
+        "input/idaten-corpus/out-analysis"
+      ],
       "hint": "out/analysis/line-chats/arita-taisho.md（分割走・補強・厚底・荒玉目安・合同練習）"
+    },
+    {
+      "id": "query:22:玉名の天気データはどう更新する？",
+      "type": "QueryHint",
+      "label": "玉名の天気データはどう更新する？",
+      "topics": [
+        "calendar",
+        "meta"
+      ],
+      "refs": [
+        "docs/tamana-weather.md",
+        "input/idaten-corpus/repo-docs"
+      ],
+      "hint": "docs/tamana-weather.md（Open-Meteo・tamana-forecast・更新間隔）"
     },
     {
       "id": "query:2:GZ / 閾値ペースは？",
       "type": "QueryHint",
       "label": "GZ / 閾値ペースは？",
-      "topics": [],
-      "refs": [],
+      "topics": [
+        "norwegian",
+        "pace"
+      ],
+      "refs": [
+        "input/daniels_vdot_paces.yaml",
+        "docs/adr/008-daniels-vdot-gz-guidance.md",
+        "docs/adr/002-norwegian-method-integration.md",
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
       "hint": "Norwegian メモ + daniels_pace / VDOT 表"
     },
     {
       "id": "query:3:選手の記録は？",
       "type": "QueryHint",
       "label": "選手の記録は？",
-      "topics": [],
-      "refs": [],
+      "topics": [
+        "athlete_records"
+      ],
+      "refs": [
+        "input/idaten-corpus/sb",
+        "input/idaten-corpus/notion-db",
+        "input/idaten-corpus/analysis-ocr",
+        "input/external/sb/middle-school/wide/中学生SB.csv"
+      ],
       "hint": "notion_records・荒尾玉名・sb/・analysis-ocr を見る"
     },
     {
       "id": "query:4:今日の予定は？",
       "type": "QueryHint",
       "label": "今日の予定は？",
-      "topics": [],
-      "refs": [],
+      "topics": [
+        "calendar"
+      ],
+      "refs": [
+        "input/events.2026.yaml",
+        "calendar.md",
+        "input/idaten-corpus/calendar"
+      ],
       "hint": "events YAML / events.json / calendar.md / calendar/events.daiming.yaml"
     },
     {
       "id": "query:5:〇月〇日の予定は？",
       "type": "QueryHint",
       "label": "〇月〇日の予定は？",
-      "topics": [],
-      "refs": [],
+      "topics": [
+        "calendar",
+        "ekiden"
+      ],
+      "refs": [
+        "input/events.2026.yaml",
+        "input/idaten-corpus/calendar",
+        "input/idaten-corpus/drive-text"
+      ],
       "hint": "日付を YYYY-MM-DD / MMDD に正規化し events YAML と drive-text/大会/ の開催要項を見る"
     },
     {
       "id": "query:6:AI で練習を作るには？",
       "type": "QueryHint",
       "label": "AI で練習を作るには？",
-      "topics": [],
-      "refs": [],
+      "topics": [
+        "ai"
+      ],
+      "refs": [
+        "docs/ai-practice-generation.md",
+        "input/ai_generation_rules.yaml",
+        "input/idaten-corpus/repo-docs"
+      ],
       "hint": "ai-practice-generation.md と prompts / rules"
     },
     {
       "id": "query:7:荒玉駅伝の歴代は？",
       "type": "QueryHint",
       "label": "荒玉駅伝の歴代は？",
-      "topics": [],
-      "refs": [],
+      "topics": [
+        "ekiden"
+      ],
+      "refs": [
+        "input/external/notion/databases/荒玉中体連駅伝歴代/rows.json",
+        "input/external/media-manifest.json",
+        "input/external/notion/media/ekiden-history/INDEX.md",
+        "input/idaten-corpus/aragyoku",
+        "input/idaten-corpus/ekiden-ocr",
+        "out/analysis/aragyoku-overview.md"
+      ],
       "hint": "駅伝歴代 rows + media-manifest + ekiden-ocr/*.md + aragyoku/"
     },
     {
       "id": "query:8:去年の荒玉駅伝の優勝校は？",
       "type": "QueryHint",
       "label": "去年の荒玉駅伝の優勝校は？",
-      "topics": [],
-      "refs": [],
+      "topics": [
+        "ekiden"
+      ],
+      "refs": [
+        "input/idaten-corpus/aragyoku",
+        "input/idaten-corpus/aragyoku/winners-by-year.md",
+        "out/analysis/aragyoku-overview.md"
+      ],
       "hint": "相対年を西暦に展開し aragyoku/winners-by-year.md と transcripts/{year}-*.json の rank=1 を読む"
     },
     {
       "id": "query:9:荒玉駅伝のコース動画は？",
       "type": "QueryHint",
       "label": "荒玉駅伝のコース動画は？",
-      "topics": [],
-      "refs": [],
+      "topics": [
+        "ekiden"
+      ],
+      "refs": [
+        "input/idaten-corpus/aragyoku",
+        "input/aragyoku/course-videos.md",
+        "input/idaten-corpus/aragyoku/course-videos.md"
+      ],
       "hint": "aragyoku/course-videos.md の Google ドライブフォルダ URL を返す（確定回答）"
     },
     {
@@ -2986,6 +3149,8 @@
       "topics": [
         "ai",
         "meta",
+        "norwegian",
+        "pace",
         "practice"
       ],
       "refs": [
@@ -3070,12 +3235,14 @@
       "topics": [
         "ai",
         "meta",
+        "norwegian",
+        "pace",
         "practice"
       ],
       "refs": [
         "docs/adr/008-daniels-vdot-gz-guidance.md"
       ],
-      "hint": "ADR: 008-daniels-vdot-gz-guidance"
+      "hint": "Daniels VDOT → T → GZ の算出と CLI 規約"
     },
     {
       "id": "source:docs/adr/009-knowledge-graph-html-viz.md",
@@ -3373,6 +3540,34 @@
       "hint": "ADR: 029-daiming-line-chat-corpus"
     },
     {
+      "id": "source:docs/adr/030-cross-corpus-gap-crush.md",
+      "type": "Source",
+      "label": "030-cross-corpus-gap-crush.md",
+      "topics": [
+        "ai",
+        "meta",
+        "practice"
+      ],
+      "refs": [
+        "docs/adr/030-cross-corpus-gap-crush.md"
+      ],
+      "hint": "ADR: 030-cross-corpus-gap-crush"
+    },
+    {
+      "id": "source:docs/adr/031-kg-queryhint-source-hubs.md",
+      "type": "Source",
+      "label": "031-kg-queryhint-source-hubs.md",
+      "topics": [
+        "ai",
+        "meta",
+        "practice"
+      ],
+      "refs": [
+        "docs/adr/031-kg-queryhint-source-hubs.md"
+      ],
+      "hint": "ADR: 031-kg-queryhint-source-hubs"
+    },
+    {
       "id": "source:docs/ai-practice-generation.md",
       "type": "Source",
       "label": "ai-practice-generation.md",
@@ -3415,6 +3610,19 @@
       "hint": "イベント/練習のデータ辞書"
     },
     {
+      "id": "source:docs/tamana-weather.md",
+      "type": "Source",
+      "label": "tamana-weather.md",
+      "topics": [
+        "calendar",
+        "meta"
+      ],
+      "refs": [
+        "docs/tamana-weather.md"
+      ],
+      "hint": "玉名天気データの更新手順（Open-Meteo / weather/tamana-forecast）"
+    },
+    {
       "id": "source:input/ai_generation_rules.yaml",
       "type": "Source",
       "label": "ai_generation_rules.yaml",
@@ -3427,6 +3635,18 @@
         "input/ai_generation_rules.yaml"
       ],
       "hint": "AI 固定/可変/創作ルール"
+    },
+    {
+      "id": "source:input/aragyoku/course-videos.md",
+      "type": "Source",
+      "label": "course-videos.md",
+      "topics": [
+        "ekiden"
+      ],
+      "refs": [
+        "input/aragyoku/course-videos.md"
+      ],
+      "hint": "荒玉駅伝コース動画の Google ドライブ URL"
     },
     {
       "id": "source:input/arato_tamana_report.yaml",
@@ -3758,6 +3978,30 @@
       "hint": "荒玉駅伝の構造化 JSON/MD・transcripts・winners-by-year・course-videos. 例: course-videos.md, men_full_2012_2025.json, ocr_raw, quiz, taimei-records-2012-2025.md, transcripts, winners-by-year.md, women_full_2012_2025.json, women_top4_2012_2025.json, women_top6_2012_2025.json"
     },
     {
+      "id": "source:input/idaten-corpus/aragyoku/course-videos.md",
+      "type": "Source",
+      "label": "course-videos.md",
+      "topics": [
+        "ekiden"
+      ],
+      "refs": [
+        "input/idaten-corpus/aragyoku/course-videos.md"
+      ],
+      "hint": "荒玉コース動画案内（コーパスコピー）"
+    },
+    {
+      "id": "source:input/idaten-corpus/aragyoku/winners-by-year.md",
+      "type": "Source",
+      "label": "winners-by-year.md",
+      "topics": [
+        "ekiden"
+      ],
+      "refs": [
+        "input/idaten-corpus/aragyoku/winners-by-year.md"
+      ],
+      "hint": "荒玉駅伝 年度別優勝校（コーパス）"
+    },
+    {
       "id": "source:input/idaten-corpus/calendar",
       "type": "Source",
       "label": "calendar",
@@ -4040,12 +4284,15 @@
       "topics": [
         "analysis",
         "athlete_records",
-        "ekiden"
+        "calendar",
+        "ekiden",
+        "pace",
+        "practice"
       ],
       "refs": [
         "input/idaten-corpus/out-analysis"
       ],
-      "hint": "out/analysis の md/json（ペース分析・関係図など）. 例: 2026_men_1500m_pb_school_ranking.md, 2026_women_800m_1500m_pb_school_ranking.md, aragyoku-overview.md, aragyoku-teams, aragyoku_top6_historical_average_pace.md, aragyoku_women_track_joined.json, arato-tamana-teams, line-chats, notion_records_2026.json"
+      "hint": "out/analysis の md/json（ペース分析・LINE 衛生化・関係図など）. 例: 2026_men_1500m_pb_school_ranking.md, 2026_women_800m_1500m_pb_school_ranking.md, aragyoku-overview.md, aragyoku-teams, aragyoku_top6_historical_average_pace.md, aragyoku_women_track_joined.json, arato-tamana-teams, line-chats, notion_records_2026.json"
     },
     {
       "id": "source:input/idaten-corpus/practice",
@@ -4936,6 +5183,32 @@
         "out/analysis/2026年度_荒尾玉名中学生記録一覧.pdf"
       ],
       "hint": "記録 PDF（参照のみ）: 2026年度_荒尾玉名中学生記録一覧.pdf"
+    },
+    {
+      "id": "source:out/analysis/aragyoku-overview.md",
+      "type": "Source",
+      "label": "aragyoku-overview.md",
+      "topics": [
+        "ekiden",
+        "pace"
+      ],
+      "refs": [
+        "out/analysis/aragyoku-overview.md"
+      ],
+      "hint": "荒玉駅伝概要（区間距離・使い方・現行/旧コース）"
+    },
+    {
+      "id": "source:out/analysis/aragyoku_top6_historical_average_pace.md",
+      "type": "Source",
+      "label": "aragyoku_top6_historical_average_pace.md",
+      "topics": [
+        "ekiden",
+        "pace"
+      ],
+      "refs": [
+        "out/analysis/aragyoku_top6_historical_average_pace.md"
+      ],
+      "hint": "荒玉総合1〜6位の年度別平均ペース"
     },
     {
       "id": "source:out/analysis/line-chats/INDEX.md",
@@ -7059,8 +7332,23 @@
     },
     {
       "from": "query:0:練習メニューの中身は？",
-      "to": "source:input/practice_templates.yaml",
+      "to": "corpus:practice",
       "rel": "search_here"
+    },
+    {
+      "from": "query:0:練習メニューの中身は？",
+      "to": "source:input/practice_templates.yaml",
+      "rel": "documented_in"
+    },
+    {
+      "from": "query:0:練習メニューの中身は？",
+      "to": "source:out/2026/practice.json",
+      "rel": "documented_in"
+    },
+    {
+      "from": "query:0:練習メニューの中身は？",
+      "to": "source:out/daiming-practice-menus-kpace.md",
+      "rel": "documented_in"
     },
     {
       "from": "query:0:練習メニューの中身は？",
@@ -7074,13 +7362,33 @@
     },
     {
       "from": "query:10:荒玉駅伝の優勝校は？",
+      "to": "source:input/idaten-corpus/aragyoku/winners-by-year.md",
+      "rel": "documented_in"
+    },
+    {
+      "from": "query:10:荒玉駅伝の優勝校は？",
+      "to": "source:out/analysis/aragyoku-overview.md",
+      "rel": "documented_in"
+    },
+    {
+      "from": "query:10:荒玉駅伝の優勝校は？",
       "to": "topic:ekiden",
+      "rel": "search_here"
+    },
+    {
+      "from": "query:11:荒玉駅伝の区間距離は？",
+      "to": "corpus:aragyoku",
       "rel": "search_here"
     },
     {
       "from": "query:11:荒玉駅伝の区間距離は？",
       "to": "source:docs/aragyoku-ekiden-distance-definitions.md",
-      "rel": "search_here"
+      "rel": "documented_in"
+    },
+    {
+      "from": "query:11:荒玉駅伝の区間距離は？",
+      "to": "source:out/analysis/aragyoku-overview.md",
+      "rel": "documented_in"
     },
     {
       "from": "query:11:荒玉駅伝の区間距離は？",
@@ -7089,6 +7397,21 @@
     },
     {
       "from": "query:12:なごみ駅伝は？",
+      "to": "corpus:calendar",
+      "rel": "search_here"
+    },
+    {
+      "from": "query:12:なごみ駅伝は？",
+      "to": "corpus:drive-text",
+      "rel": "search_here"
+    },
+    {
+      "from": "query:12:なごみ駅伝は？",
+      "to": "source:input/events.2026.yaml",
+      "rel": "documented_in"
+    },
+    {
+      "from": "query:12:なごみ駅伝は？",
       "to": "topic:calendar",
       "rel": "search_here"
     },
@@ -7099,6 +7422,11 @@
     },
     {
       "from": "query:13:ジュニア駅伝の結果は？",
+      "to": "corpus:drive-text",
+      "rel": "search_here"
+    },
+    {
+      "from": "query:13:ジュニア駅伝の結果は？",
       "to": "topic:calendar",
       "rel": "search_here"
     },
@@ -7109,6 +7437,11 @@
     },
     {
       "from": "query:14:去年のジュニア駅伝の岱明の結果は？",
+      "to": "corpus:drive-text",
+      "rel": "search_here"
+    },
+    {
+      "from": "query:14:去年のジュニア駅伝の岱明の結果は？",
       "to": "topic:calendar",
       "rel": "search_here"
     },
@@ -7116,6 +7449,26 @@
       "from": "query:14:去年のジュニア駅伝の岱明の結果は？",
       "to": "topic:ekiden",
       "rel": "search_here"
+    },
+    {
+      "from": "query:15:部員名簿は？",
+      "to": "corpus:notion-db",
+      "rel": "search_here"
+    },
+    {
+      "from": "query:15:部員名簿は？",
+      "to": "source:input/external/drive/shared/名簿/2025年度_岱明中学校陸上競技部_部員名簿.csv",
+      "rel": "documented_in"
+    },
+    {
+      "from": "query:15:部員名簿は？",
+      "to": "source:input/external/notion/databases/いだてん岱明生徒/rows.json",
+      "rel": "documented_in"
+    },
+    {
+      "from": "query:15:部員名簿は？",
+      "to": "source:input/idaten-corpus/notion-db/いだてん岱明生徒",
+      "rel": "documented_in"
     },
     {
       "from": "query:15:部員名簿は？",
@@ -7129,7 +7482,32 @@
     },
     {
       "from": "query:16:中学生SBは？",
+      "to": "corpus:sb",
+      "rel": "search_here"
+    },
+    {
+      "from": "query:16:中学生SBは？",
+      "to": "source:docs/adr/012-middle-school-sb-all-years.md",
+      "rel": "documented_in"
+    },
+    {
+      "from": "query:16:中学生SBは？",
+      "to": "source:input/external/sb/middle-school/INDEX.md",
+      "rel": "documented_in"
+    },
+    {
+      "from": "query:16:中学生SBは？",
+      "to": "source:input/external/sb/middle-school/wide/中学生SB.csv",
+      "rel": "documented_in"
+    },
+    {
+      "from": "query:16:中学生SBは？",
       "to": "topic:athlete_records",
+      "rel": "search_here"
+    },
+    {
+      "from": "query:17:開催要項は？",
+      "to": "corpus:drive-text",
       "rel": "search_here"
     },
     {
@@ -7139,8 +7517,48 @@
     },
     {
       "from": "query:18:ケガ・障害は？",
+      "to": "corpus:notion-db",
+      "rel": "search_here"
+    },
+    {
+      "from": "query:18:ケガ・障害は？",
+      "to": "source:input/external/notion/INDEX.md",
+      "rel": "documented_in"
+    },
+    {
+      "from": "query:18:ケガ・障害は？",
+      "to": "source:input/memos/rri_healing_evidence_review.md",
+      "rel": "documented_in"
+    },
+    {
+      "from": "query:18:ケガ・障害は？",
       "to": "topic:injury",
       "rel": "search_here"
+    },
+    {
+      "from": "query:19:オーダー・区間は？",
+      "to": "corpus:analysis-ocr",
+      "rel": "search_here"
+    },
+    {
+      "from": "query:19:オーダー・区間は？",
+      "to": "corpus:aragyoku",
+      "rel": "search_here"
+    },
+    {
+      "from": "query:19:オーダー・区間は？",
+      "to": "corpus:drive-text",
+      "rel": "search_here"
+    },
+    {
+      "from": "query:19:オーダー・区間は？",
+      "to": "source:docs/aragyoku-ekiden-distance-definitions.md",
+      "rel": "documented_in"
+    },
+    {
+      "from": "query:19:オーダー・区間は？",
+      "to": "source:out/analysis/aragyoku-overview.md",
+      "rel": "documented_in"
     },
     {
       "from": "query:19:オーダー・区間は？",
@@ -7154,18 +7572,43 @@
     },
     {
       "from": "query:1:欠席者は誰？",
+      "to": "corpus:practice",
+      "rel": "search_here"
+    },
+    {
+      "from": "query:1:欠席者は誰？",
+      "to": "source:input/events.2026.yaml",
+      "rel": "documented_in"
+    },
+    {
+      "from": "query:1:欠席者は誰？",
+      "to": "source:out/2026/practice_absentees.csv",
+      "rel": "documented_in"
+    },
+    {
+      "from": "query:1:欠席者は誰？",
       "to": "topic:practice",
       "rel": "search_here"
     },
     {
       "from": "query:20:銀マット・合同練習・保護者連絡は？",
-      "to": "source:out/analysis/line-chats/INDEX.md",
+      "to": "corpus:out-analysis",
       "rel": "search_here"
     },
     {
       "from": "query:20:銀マット・合同練習・保護者連絡は？",
+      "to": "source:out/analysis/line-chats/INDEX.md",
+      "rel": "documented_in"
+    },
+    {
+      "from": "query:20:銀マット・合同練習・保護者連絡は？",
       "to": "source:out/analysis/line-chats/daiming-parents.md",
-      "rel": "search_here"
+      "rel": "documented_in"
+    },
+    {
+      "from": "query:20:銀マット・合同練習・保護者連絡は？",
+      "to": "source:out/analysis/line-chats/daiming-staff.md",
+      "rel": "documented_in"
     },
     {
       "from": "query:20:銀マット・合同練習・保護者連絡は？",
@@ -7179,13 +7622,18 @@
     },
     {
       "from": "query:21:有田先輩の練習・補強の考え方は？",
-      "to": "source:out/analysis/line-chats/INDEX.md",
+      "to": "corpus:out-analysis",
       "rel": "search_here"
     },
     {
       "from": "query:21:有田先輩の練習・補強の考え方は？",
+      "to": "source:out/analysis/line-chats/INDEX.md",
+      "rel": "documented_in"
+    },
+    {
+      "from": "query:21:有田先輩の練習・補強の考え方は？",
       "to": "source:out/analysis/line-chats/arita-taisho.md",
-      "rel": "search_here"
+      "rel": "documented_in"
     },
     {
       "from": "query:21:有田先輩の練習・補強の考え方は？",
@@ -7196,6 +7644,46 @@
       "from": "query:21:有田先輩の練習・補強の考え方は？",
       "to": "topic:practice",
       "rel": "search_here"
+    },
+    {
+      "from": "query:22:玉名の天気データはどう更新する？",
+      "to": "corpus:repo-docs",
+      "rel": "search_here"
+    },
+    {
+      "from": "query:22:玉名の天気データはどう更新する？",
+      "to": "source:docs/tamana-weather.md",
+      "rel": "documented_in"
+    },
+    {
+      "from": "query:22:玉名の天気データはどう更新する？",
+      "to": "topic:calendar",
+      "rel": "search_here"
+    },
+    {
+      "from": "query:22:玉名の天気データはどう更新する？",
+      "to": "topic:meta",
+      "rel": "search_here"
+    },
+    {
+      "from": "query:2:GZ / 閾値ペースは？",
+      "to": "source:docs/adr/002-norwegian-method-integration.md",
+      "rel": "documented_in"
+    },
+    {
+      "from": "query:2:GZ / 閾値ペースは？",
+      "to": "source:docs/adr/008-daniels-vdot-gz-guidance.md",
+      "rel": "documented_in"
+    },
+    {
+      "from": "query:2:GZ / 閾値ペースは？",
+      "to": "source:input/daniels_vdot_paces.yaml",
+      "rel": "documented_in"
+    },
+    {
+      "from": "query:2:GZ / 閾値ペースは？",
+      "to": "source:input/memos/norwegian_method_applied_full.txt",
+      "rel": "documented_in"
     },
     {
       "from": "query:2:GZ / 閾値ペースは？",
@@ -7209,13 +7697,63 @@
     },
     {
       "from": "query:3:選手の記録は？",
+      "to": "corpus:analysis-ocr",
+      "rel": "search_here"
+    },
+    {
+      "from": "query:3:選手の記録は？",
+      "to": "corpus:notion-db",
+      "rel": "search_here"
+    },
+    {
+      "from": "query:3:選手の記録は？",
+      "to": "corpus:sb",
+      "rel": "search_here"
+    },
+    {
+      "from": "query:3:選手の記録は？",
+      "to": "source:input/external/sb/middle-school/wide/中学生SB.csv",
+      "rel": "documented_in"
+    },
+    {
+      "from": "query:3:選手の記録は？",
       "to": "topic:athlete_records",
       "rel": "search_here"
     },
     {
       "from": "query:4:今日の予定は？",
+      "to": "corpus:calendar",
+      "rel": "search_here"
+    },
+    {
+      "from": "query:4:今日の予定は？",
+      "to": "source:calendar.md",
+      "rel": "documented_in"
+    },
+    {
+      "from": "query:4:今日の予定は？",
+      "to": "source:input/events.2026.yaml",
+      "rel": "documented_in"
+    },
+    {
+      "from": "query:4:今日の予定は？",
       "to": "topic:calendar",
       "rel": "search_here"
+    },
+    {
+      "from": "query:5:〇月〇日の予定は？",
+      "to": "corpus:calendar",
+      "rel": "search_here"
+    },
+    {
+      "from": "query:5:〇月〇日の予定は？",
+      "to": "corpus:drive-text",
+      "rel": "search_here"
+    },
+    {
+      "from": "query:5:〇月〇日の予定は？",
+      "to": "source:input/events.2026.yaml",
+      "rel": "documented_in"
     },
     {
       "from": "query:5:〇月〇日の予定は？",
@@ -7229,6 +7767,21 @@
     },
     {
       "from": "query:6:AI で練習を作るには？",
+      "to": "corpus:repo-docs",
+      "rel": "search_here"
+    },
+    {
+      "from": "query:6:AI で練習を作るには？",
+      "to": "source:docs/ai-practice-generation.md",
+      "rel": "documented_in"
+    },
+    {
+      "from": "query:6:AI で練習を作るには？",
+      "to": "source:input/ai_generation_rules.yaml",
+      "rel": "documented_in"
+    },
+    {
+      "from": "query:6:AI で練習を作るには？",
       "to": "topic:ai",
       "rel": "search_here"
     },
@@ -7239,18 +7792,28 @@
     },
     {
       "from": "query:7:荒玉駅伝の歴代は？",
-      "to": "source:input/external/media-manifest.json",
+      "to": "corpus:ekiden-ocr",
       "rel": "search_here"
+    },
+    {
+      "from": "query:7:荒玉駅伝の歴代は？",
+      "to": "source:input/external/media-manifest.json",
+      "rel": "documented_in"
     },
     {
       "from": "query:7:荒玉駅伝の歴代は？",
       "to": "source:input/external/notion/databases/荒玉中体連駅伝歴代/rows.json",
-      "rel": "search_here"
+      "rel": "documented_in"
     },
     {
       "from": "query:7:荒玉駅伝の歴代は？",
       "to": "source:input/external/notion/media/ekiden-history/INDEX.md",
-      "rel": "search_here"
+      "rel": "documented_in"
+    },
+    {
+      "from": "query:7:荒玉駅伝の歴代は？",
+      "to": "source:out/analysis/aragyoku-overview.md",
+      "rel": "documented_in"
     },
     {
       "from": "query:7:荒玉駅伝の歴代は？",
@@ -7261,6 +7824,16 @@
       "from": "query:8:去年の荒玉駅伝の優勝校は？",
       "to": "corpus:aragyoku",
       "rel": "search_here"
+    },
+    {
+      "from": "query:8:去年の荒玉駅伝の優勝校は？",
+      "to": "source:input/idaten-corpus/aragyoku/winners-by-year.md",
+      "rel": "documented_in"
+    },
+    {
+      "from": "query:8:去年の荒玉駅伝の優勝校は？",
+      "to": "source:out/analysis/aragyoku-overview.md",
+      "rel": "documented_in"
     },
     {
       "from": "query:8:去年の荒玉駅伝の優勝校は？",
@@ -7271,6 +7844,16 @@
       "from": "query:9:荒玉駅伝のコース動画は？",
       "to": "corpus:aragyoku",
       "rel": "search_here"
+    },
+    {
+      "from": "query:9:荒玉駅伝のコース動画は？",
+      "to": "source:input/aragyoku/course-videos.md",
+      "rel": "documented_in"
+    },
+    {
+      "from": "query:9:荒玉駅伝のコース動画は？",
+      "to": "source:input/idaten-corpus/aragyoku/course-videos.md",
+      "rel": "documented_in"
     },
     {
       "from": "query:9:荒玉駅伝のコース動画は？",
@@ -7420,6 +8003,16 @@
     {
       "from": "source:docs/ai-practice-generation.md",
       "to": "source:docs/adr/029-daiming-line-chat-corpus.md",
+      "rel": "see_also"
+    },
+    {
+      "from": "source:docs/ai-practice-generation.md",
+      "to": "source:docs/adr/030-cross-corpus-gap-crush.md",
+      "rel": "see_also"
+    },
+    {
+      "from": "source:docs/ai-practice-generation.md",
+      "to": "source:docs/adr/031-kg-queryhint-source-hubs.md",
       "rel": "see_also"
     },
     {
@@ -7885,6 +8478,16 @@
     {
       "from": "topic:ai",
       "to": "source:docs/adr/029-daiming-line-chat-corpus.md",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:ai",
+      "to": "source:docs/adr/030-cross-corpus-gap-crush.md",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:ai",
+      "to": "source:docs/adr/031-kg-queryhint-source-hubs.md",
       "rel": "search_here"
     },
     {
@@ -8389,6 +8992,11 @@
     },
     {
       "from": "topic:calendar",
+      "to": "corpus:out-analysis",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:calendar",
       "to": "meet:2025年度:0228_熊本市駅伝",
       "rel": "see_also"
     },
@@ -8574,6 +9182,16 @@
     },
     {
       "from": "topic:calendar",
+      "to": "source:docs/tamana-weather.md",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:calendar",
+      "to": "source:docs/tamana-weather.md",
+      "rel": "see_also"
+    },
+    {
+      "from": "topic:calendar",
       "to": "source:input/events.2020.yaml",
       "rel": "search_here"
     },
@@ -8625,6 +9243,11 @@
     {
       "from": "topic:calendar",
       "to": "source:input/idaten-corpus/drive-text/大会/INDEX.md",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:calendar",
+      "to": "source:input/idaten-corpus/out-analysis",
       "rel": "search_here"
     },
     {
@@ -9184,6 +9807,11 @@
     },
     {
       "from": "topic:ekiden",
+      "to": "source:input/aragyoku/course-videos.md",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:ekiden",
       "to": "source:input/external/media-manifest.json",
       "rel": "search_here"
     },
@@ -9210,6 +9838,16 @@
     {
       "from": "topic:ekiden",
       "to": "source:input/idaten-corpus/aragyoku",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:ekiden",
+      "to": "source:input/idaten-corpus/aragyoku/course-videos.md",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:ekiden",
+      "to": "source:input/idaten-corpus/aragyoku/winners-by-year.md",
       "rel": "search_here"
     },
     {
@@ -9264,6 +9902,16 @@
     },
     {
       "from": "topic:ekiden",
+      "to": "source:out/analysis/aragyoku-overview.md",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:ekiden",
+      "to": "source:out/analysis/aragyoku_top6_historical_average_pace.md",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:ekiden",
       "to": "source:out/analysis/line-chats/INDEX.md",
       "rel": "search_here"
     },
@@ -9280,6 +9928,11 @@
     {
       "from": "topic:injury",
       "to": "corpus:notion-db",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:injury",
+      "to": "corpus:notion-pages",
       "rel": "search_here"
     },
     {
@@ -9484,6 +10137,26 @@
     },
     {
       "from": "topic:meta",
+      "to": "source:docs/adr/030-cross-corpus-gap-crush.md",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:meta",
+      "to": "source:docs/adr/031-kg-queryhint-source-hubs.md",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:meta",
+      "to": "source:docs/tamana-weather.md",
+      "rel": "documented_in"
+    },
+    {
+      "from": "topic:meta",
+      "to": "source:docs/tamana-weather.md",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:meta",
       "to": "source:input/external/INDEX.md",
       "rel": "search_here"
     },
@@ -9524,6 +10197,36 @@
     },
     {
       "from": "topic:norwegian",
+      "to": "corpus:notion-pages",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:norwegian",
+      "to": "corpus:practice",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:norwegian",
+      "to": "corpus:repo-docs",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:norwegian",
+      "to": "source:docs/adr/002-norwegian-method-integration.md",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:norwegian",
+      "to": "source:docs/adr/008-daniels-vdot-gz-guidance.md",
+      "rel": "documented_in"
+    },
+    {
+      "from": "topic:norwegian",
+      "to": "source:docs/adr/008-daniels-vdot-gz-guidance.md",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:norwegian",
       "to": "source:docs/ai-practice-generation.md",
       "rel": "search_here"
     },
@@ -9544,7 +10247,42 @@
     },
     {
       "from": "topic:pace",
+      "to": "corpus:out-analysis",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:pace",
+      "to": "corpus:practice",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:pace",
+      "to": "corpus:repo-docs",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:pace",
+      "to": "source:docs/adr/002-norwegian-method-integration.md",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:pace",
+      "to": "source:docs/adr/008-daniels-vdot-gz-guidance.md",
+      "rel": "documented_in"
+    },
+    {
+      "from": "topic:pace",
+      "to": "source:docs/adr/008-daniels-vdot-gz-guidance.md",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:pace",
       "to": "source:input/daniels_vdot_paces.yaml",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:pace",
+      "to": "source:input/idaten-corpus/out-analysis",
       "rel": "search_here"
     },
     {
@@ -9555,6 +10293,16 @@
     {
       "from": "topic:pace",
       "to": "source:input/memos/norwegian_method_applied_full.txt",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:pace",
+      "to": "source:out/analysis/aragyoku-overview.md",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:pace",
+      "to": "source:out/analysis/aragyoku_top6_historical_average_pace.md",
       "rel": "search_here"
     },
     {
@@ -9585,6 +10333,11 @@
     {
       "from": "topic:practice",
       "to": "corpus:notion-pages",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:practice",
+      "to": "corpus:out-analysis",
       "rel": "search_here"
     },
     {
@@ -10124,6 +10877,16 @@
     },
     {
       "from": "topic:practice",
+      "to": "source:docs/adr/030-cross-corpus-gap-crush.md",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:practice",
+      "to": "source:docs/adr/031-kg-queryhint-source-hubs.md",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:practice",
       "to": "source:docs/ai-practice-generation.md",
       "rel": "search_here"
     },
@@ -10270,6 +11033,11 @@
     {
       "from": "topic:practice",
       "to": "source:input/idaten-corpus/notion-pages",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:practice",
+      "to": "source:input/idaten-corpus/out-analysis",
       "rel": "search_here"
     },
     {

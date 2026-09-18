@@ -35,4 +35,23 @@ describe("queryKnowledgeGraph", () => {
       result.corpus_sources.some((s) => s.includes("ジュニア") && s.includes("岱明の結果")),
     ).toBe(true);
   });
+
+  it("QueryHint GZ routes to Daniels/ADR sources (not Topic-only)", () => {
+    resetKgCache();
+    const result = queryKnowledgeGraph("GZ / 閾値ペースは？", { kgPath });
+    const blob = [
+      ...result.matched_nodes.flatMap((n) => [n.id, ...(n.refs ?? [])]),
+      ...result.corpus_sources,
+    ].join("\n");
+    expect(blob).toMatch(/daniels_vdot_paces|008-daniels|norwegian_method/i);
+  });
+
+  it("Topic norwegian expands to repo-docs corpus hub", () => {
+    resetKgCache();
+    const result = queryKnowledgeGraph("Norwegian Method の原則は？", { kgPath });
+    expect(
+      result.matched_nodes.some((n) => n.id === "corpus:repo-docs" || n.id === "topic:norwegian") ||
+        result.corpus_sources.some((s) => s.includes("repo-docs") || s.includes("norwegian")),
+    ).toBe(true);
+  });
 });

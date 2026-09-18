@@ -109,6 +109,46 @@ SOURCE_GLOBS: list[tuple[str, list[str], str]] = [
         ["athlete_records", "meta"],
         "中学生 SB 全年度取り込み ADR",
     ),
+    (
+        "docs/adr/002-norwegian-method-integration.md",
+        ["norwegian", "pace", "ai", "practice"],
+        "Norwegian Method 統合（GZ/T はコードで決定論）",
+    ),
+    (
+        "docs/adr/008-daniels-vdot-gz-guidance.md",
+        ["norwegian", "pace", "ai"],
+        "Daniels VDOT → T → GZ の算出と CLI 規約",
+    ),
+    (
+        "docs/tamana-weather.md",
+        ["meta", "calendar"],
+        "玉名天気データの更新手順（Open-Meteo / weather/tamana-forecast）",
+    ),
+    (
+        "out/analysis/aragyoku-overview.md",
+        ["ekiden", "pace"],
+        "荒玉駅伝概要（区間距離・使い方・現行/旧コース）",
+    ),
+    (
+        "out/analysis/aragyoku_top6_historical_average_pace.md",
+        ["ekiden", "pace"],
+        "荒玉総合1〜6位の年度別平均ペース",
+    ),
+    (
+        "input/aragyoku/course-videos.md",
+        ["ekiden"],
+        "荒玉駅伝コース動画の Google ドライブ URL",
+    ),
+    (
+        "input/idaten-corpus/aragyoku/winners-by-year.md",
+        ["ekiden"],
+        "荒玉駅伝 年度別優勝校（コーパス）",
+    ),
+    (
+        "input/idaten-corpus/aragyoku/course-videos.md",
+        ["ekiden"],
+        "荒玉コース動画案内（コーパスコピー）",
+    ),
 ]
 
 LIGHTWEIGHT_SUFFIXES = {".csv", ".pdf", ".jpg", ".jpeg", ".png", ".gif", ".webp"}
@@ -146,37 +186,77 @@ QUERY_HINTS: list[tuple[str, str, list[str]]] = [
     (
         "練習メニューの中身は？",
         "practice 付きイベントと practice.json / practice_templates / コーパス practice/ を見る",
-        ["topic:practice", "source:input/practice_templates.yaml"],
+        [
+            "topic:practice",
+            "source:input/practice_templates.yaml",
+            "corpus:practice",
+            "source:out/2026/practice.json",
+            "source:out/daiming-practice-menus-kpace.md",
+        ],
     ),
     (
         "欠席者は誰？",
         "practice_absentees.csv と events YAML の absentees",
-        ["topic:practice"],
+        [
+            "topic:practice",
+            "source:out/2026/practice_absentees.csv",
+            "source:input/events.2026.yaml",
+            "corpus:practice",
+        ],
     ),
     (
         "GZ / 閾値ペースは？",
         "Norwegian メモ + daniels_pace / VDOT 表",
-        ["topic:norwegian", "topic:pace"],
+        [
+            "topic:norwegian",
+            "topic:pace",
+            "source:input/daniels_vdot_paces.yaml",
+            "source:docs/adr/008-daniels-vdot-gz-guidance.md",
+            "source:docs/adr/002-norwegian-method-integration.md",
+            "source:input/memos/norwegian_method_applied_full.txt",
+        ],
     ),
     (
         "選手の記録は？",
         "notion_records・荒尾玉名・sb/・analysis-ocr を見る",
-        ["topic:athlete_records"],
+        [
+            "topic:athlete_records",
+            "corpus:sb",
+            "corpus:notion-db",
+            "corpus:analysis-ocr",
+            "source:input/external/sb/middle-school/wide/中学生SB.csv",
+        ],
     ),
     (
         "今日の予定は？",
         "events YAML / events.json / calendar.md / calendar/events.daiming.yaml",
-        ["topic:calendar"],
+        [
+            "topic:calendar",
+            "source:input/events.2026.yaml",
+            "source:calendar.md",
+            "corpus:calendar",
+        ],
     ),
     (
         "〇月〇日の予定は？",
         "日付を YYYY-MM-DD / MMDD に正規化し events YAML と drive-text/大会/ の開催要項を見る",
-        ["topic:calendar", "topic:ekiden"],
+        [
+            "topic:calendar",
+            "topic:ekiden",
+            "source:input/events.2026.yaml",
+            "corpus:calendar",
+            "corpus:drive-text",
+        ],
     ),
     (
         "AI で練習を作るには？",
         "ai-practice-generation.md と prompts / rules",
-        ["topic:ai"],
+        [
+            "topic:ai",
+            "source:docs/ai-practice-generation.md",
+            "source:input/ai_generation_rules.yaml",
+            "corpus:repo-docs",
+        ],
     ),
     (
         "荒玉駅伝の歴代は？",
@@ -187,6 +267,8 @@ QUERY_HINTS: list[tuple[str, str, list[str]]] = [
             "source:input/external/media-manifest.json",
             "source:input/external/notion/media/ekiden-history/INDEX.md",
             "corpus:aragyoku",
+            "corpus:ekiden-ocr",
+            "source:out/analysis/aragyoku-overview.md",
         ],
     ),
     (
@@ -195,7 +277,8 @@ QUERY_HINTS: list[tuple[str, str, list[str]]] = [
         [
             "topic:ekiden",
             "corpus:aragyoku",
-            "source:input/aragyoku",
+            "source:input/idaten-corpus/aragyoku/winners-by-year.md",
+            "source:out/analysis/aragyoku-overview.md",
         ],
     ),
     (
@@ -204,7 +287,8 @@ QUERY_HINTS: list[tuple[str, str, list[str]]] = [
         [
             "topic:ekiden",
             "corpus:aragyoku",
-            "source:input/aragyoku",
+            "source:input/aragyoku/course-videos.md",
+            "source:input/idaten-corpus/aragyoku/course-videos.md",
         ],
     ),
     (
@@ -213,55 +297,105 @@ QUERY_HINTS: list[tuple[str, str, list[str]]] = [
         [
             "topic:ekiden",
             "corpus:aragyoku",
+            "source:input/idaten-corpus/aragyoku/winners-by-year.md",
+            "source:out/analysis/aragyoku-overview.md",
         ],
     ),
     (
         "荒玉駅伝の区間距離は？",
         "docs/aragyoku-ekiden-distance-definitions.md の年度別・男女別区間距離定義を優先する",
-        ["topic:ekiden", "source:docs/aragyoku-ekiden-distance-definitions.md"],
+        [
+            "topic:ekiden",
+            "source:docs/aragyoku-ekiden-distance-definitions.md",
+            "source:out/analysis/aragyoku-overview.md",
+            "corpus:aragyoku",
+        ],
     ),
     (
         "なごみ駅伝は？",
         "drive-text/大会/*/0920_*なごみ* または 0921_*なごみ* の開催要項・結果を見る。荒玉・aragyoku は使わない",
-        ["topic:ekiden", "topic:calendar"],
+        [
+            "topic:ekiden",
+            "topic:calendar",
+            "corpus:drive-text",
+            "corpus:calendar",
+            "source:input/events.2026.yaml",
+        ],
     ),
     (
         "ジュニア駅伝の結果は？",
         "drive-text/大会/*/*ジュニア駅伝*/岱明の結果.md および 結果_*.pdf.md を見る。"
         "荒玉・aragyoku・ekiden-ocr は別大会なので選ばない",
-        ["topic:ekiden", "topic:calendar"],
+        [
+            "topic:ekiden",
+            "topic:calendar",
+            "corpus:drive-text",
+        ],
     ),
     (
         "去年のジュニア駅伝の岱明の結果は？",
         "相対年を西暦に展開し drive-text/大会/{year}年度/*ジュニア*/岱明の結果.md を優先。"
         "荒玉優勝校・transcripts は使わない",
-        ["topic:ekiden", "topic:calendar"],
+        [
+            "topic:ekiden",
+            "topic:calendar",
+            "corpus:drive-text",
+        ],
     ),
     (
         "部員名簿は？",
         "Notion いだてん岱明生徒 DB と Drive 名簿 CSV（コーパス notion-db/いだてん岱明生徒）",
-        ["topic:athlete_records", "topic:practice"],
+        [
+            "topic:athlete_records",
+            "topic:practice",
+            "corpus:notion-db",
+            "source:input/idaten-corpus/notion-db/いだてん岱明生徒",
+            "source:input/external/notion/databases/いだてん岱明生徒/rows.json",
+            "source:input/external/drive/shared/名簿/2025年度_岱明中学校陸上競技部_部員名簿.csv",
+        ],
     ),
     (
         "中学生SBは？",
         "コーパス sb/ と input/external/sb/middle-school/ を見る",
-        ["topic:athlete_records"],
+        [
+            "topic:athlete_records",
+            "corpus:sb",
+            "source:input/external/sb/middle-school/wide/中学生SB.csv",
+            "source:input/external/sb/middle-school/INDEX.md",
+            "source:docs/adr/012-middle-school-sb-all-years.md",
+        ],
     ),
     (
         "開催要項は？",
         "drive-text/大会/ 各大会フォルダの開催要項.md を見る（大会名でフォルダを特定）",
-        ["topic:ekiden"],
+        [
+            "topic:ekiden",
+            "corpus:drive-text",
+        ],
     ),
     (
         "ケガ・障害は？",
         "injury トピックと Notion 怪我について・RRI メモ",
-        ["topic:injury"],
+        [
+            "topic:injury",
+            "corpus:notion-db",
+            "source:input/memos/rri_healing_evidence_review.md",
+            "source:input/external/notion/INDEX.md",
+        ],
     ),
     (
         "オーダー・区間は？",
         "荒玉の区間・オーダーなら荒玉戦略 Notion・分析 OCR・歴代 OCR。"
         "ジュニア・なごみなら該大会フォルダのプログラム・結果を見る",
-        ["topic:ekiden", "topic:athlete_records"],
+        [
+            "topic:ekiden",
+            "topic:athlete_records",
+            "source:out/analysis/aragyoku-overview.md",
+            "source:docs/aragyoku-ekiden-distance-definitions.md",
+            "corpus:aragyoku",
+            "corpus:drive-text",
+            "corpus:analysis-ocr",
+        ],
     ),
     (
         "銀マット・合同練習・保護者連絡は？",
@@ -270,7 +404,9 @@ QUERY_HINTS: list[tuple[str, str, list[str]]] = [
             "topic:practice",
             "topic:calendar",
             "source:out/analysis/line-chats/daiming-parents.md",
+            "source:out/analysis/line-chats/daiming-staff.md",
             "source:out/analysis/line-chats/INDEX.md",
+            "corpus:out-analysis",
         ],
     ),
     (
@@ -281,8 +417,35 @@ QUERY_HINTS: list[tuple[str, str, list[str]]] = [
             "topic:ekiden",
             "source:out/analysis/line-chats/arita-taisho.md",
             "source:out/analysis/line-chats/INDEX.md",
+            "corpus:out-analysis",
         ],
     ),
+    (
+        "玉名の天気データはどう更新する？",
+        "docs/tamana-weather.md（Open-Meteo・tamana-forecast・更新間隔）",
+        [
+            "topic:meta",
+            "topic:calendar",
+            "source:docs/tamana-weather.md",
+            "corpus:repo-docs",
+        ],
+    ),
+]
+
+# Explicit Topic → corpus hub links that auto topic-tagging can miss.
+TOPIC_CORPUS_HUBS: list[tuple[str, str]] = [
+    ("topic:norwegian", "corpus:repo-docs"),
+    ("topic:norwegian", "corpus:practice"),
+    ("topic:norwegian", "corpus:notion-pages"),
+    ("topic:pace", "corpus:practice"),
+    ("topic:pace", "corpus:repo-docs"),
+    ("topic:pace", "corpus:out-analysis"),
+    ("topic:practice", "corpus:out-analysis"),
+    ("topic:meta", "corpus:docs"),
+    ("topic:meta", "corpus:repo-docs"),
+    ("topic:injury", "corpus:notion-pages"),
+    ("topic:ekiden", "corpus:out-analysis"),
+    ("topic:calendar", "corpus:out-analysis"),
 ]
 
 
@@ -522,7 +685,7 @@ def _register_idaten_corpus(
         ("ekiden-ocr", ["ekiden", "athlete_records"], "荒玉駅伝歴代の OCR 本文（年×男女）"),
         ("aragyoku", ["ekiden", "athlete_records"], "荒玉駅伝の構造化 JSON/MD・transcripts・winners-by-year・course-videos"),
         ("analysis-ocr", ["ekiden", "athlete_records"], "分析 PDF の OCR（所属ランキング等）"),
-        ("out-analysis", ["ekiden", "athlete_records", "analysis"], "out/analysis の md/json（ペース分析・関係図など）"),
+        ("out-analysis", ["ekiden", "athlete_records", "analysis", "practice", "pace", "calendar"], "out/analysis の md/json（ペース分析・LINE 衛生化・関係図など）"),
         ("repo-docs", ["schema", "meta", "ai"], "docs/ 配下の Markdown（ADR・データモデル等）"),
         ("calendar", ["calendar", "practice"], "岱明フィルタ済み events.daiming.yaml"),
         ("practice", ["practice"], "練習 JSON / menus / absentees 抜粋"),
@@ -1042,25 +1205,42 @@ def build_knowledge_graph(*, generated_at: str | None = None) -> dict[str, Any]:
     # LINE いだてんコーパス（内容ヒント付きハブ + 大会フォルダ）
     _register_idaten_corpus(nodes, edges)
 
-    # Query hints
+    # Query hints — prefer concrete Source/corpus; attach refs for 0-hop routing
     for idx, (label, hint, targets) in enumerate(QUERY_HINTS):
         qid = f"query:{idx}:{label[:24]}"
+        q_refs: list[str] = []
+        q_topics: list[str] = []
+        for target in targets:
+            if target.startswith("topic:"):
+                q_topics.append(target[len("topic:") :])
+            elif target in nodes:
+                for ref in nodes[target].get("refs") or []:
+                    q_refs.append(ref)
         _add_node(
             nodes,
             _node(
                 qid,
                 "QueryHint",
                 label,
-                topics=[],
-                refs=[],
+                topics=q_topics,
+                refs=q_refs,
                 hint=hint,
             ),
         )
         for target in targets:
-            if target in nodes:
+            if target.startswith("topic:"):
                 _add_edge(edges, qid, target, "search_here")
-            elif target.startswith("topic:"):
-                _add_edge(edges, qid, target, "search_here")
+                continue
+            if target not in nodes:
+                continue
+            # Source docs: documented_in; corpus hubs: search_here
+            rel = "documented_in" if target.startswith("source:") else "search_here"
+            _add_edge(edges, qid, target, rel)
+
+    # Topic ↔ corpus hub insurance links
+    for topic_id, hub_id in TOPIC_CORPUS_HUBS:
+        if topic_id in nodes and hub_id in nodes:
+            _add_edge(edges, topic_id, hub_id, "search_here")
 
     # Cross-links
     if "source:input/daniels_vdot_paces.yaml" in nodes:
@@ -1068,6 +1248,32 @@ def build_knowledge_graph(*, generated_at: str | None = None) -> dict[str, Any]:
             edges,
             "topic:norwegian",
             "source:input/daniels_vdot_paces.yaml",
+            "see_also",
+        )
+    if "source:docs/adr/008-daniels-vdot-gz-guidance.md" in nodes:
+        _add_edge(
+            edges,
+            "topic:norwegian",
+            "source:docs/adr/008-daniels-vdot-gz-guidance.md",
+            "documented_in",
+        )
+        _add_edge(
+            edges,
+            "topic:pace",
+            "source:docs/adr/008-daniels-vdot-gz-guidance.md",
+            "documented_in",
+        )
+    if "source:docs/tamana-weather.md" in nodes:
+        _add_edge(
+            edges,
+            "topic:meta",
+            "source:docs/tamana-weather.md",
+            "documented_in",
+        )
+        _add_edge(
+            edges,
+            "topic:calendar",
+            "source:docs/tamana-weather.md",
             "see_also",
         )
     if "source:input/memos/norwegian_method_applied_full.txt" in nodes:
