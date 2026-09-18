@@ -1,13 +1,18 @@
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { describe, expect, it } from "vitest";
+import { RETRIEVAL_BUDGET } from "../src/domain/answer.js";
 import {
   Bm25Retriever,
+  expandWithNeighbors,
   extractAthleteNameHints,
   loadIndex,
   mergeRetrieved,
   resetRetrieverCache,
+  retrieveBySources,
+  retrieveContext,
   tokenize,
+  truncateRetrieved,
   type RagChunk,
   type RetrievedChunk,
 } from "../src/rag/retrieve.js";
@@ -74,6 +79,84 @@ describe("mergeRetrieved", () => {
     const bm25 = [hit("noise", 12, "3000m予想タイム")];
     const merged = mergeRetrieved(preferred, bm25, 2);
     expect(merged[0]!.chunk.id).toBe("name-row");
+  });
+
+  it("drops aragyoku BM25 hits for ジュニア queries even with wide topK", () => {
+    const preferred = [hit("jr", 10, "ジュニア結果", "drive-text/大会/2025年度/ジュニア/岱明の結果.md")];
+    const bm25 = [
+      hit("arag", 50, "荒玉優勝", "aragyoku/winners-by-year.md"),
+      hit("ocr", 40, "OCR", "ekiden-ocr/2025-男子.md"),
+    ];
+    const merged = mergeRetrieved(preferred, bm25, 64, {
+      query: "去年のジュニア駅伝の岱明の結果",
+    });
+    expect(merged.every((m) => !m.chunk.source.startsWith("aragyoku/"))).toBe(true);
+    expect(merged.every((m) => !m.chunk.source.startsWith("ekiden-ocr/"))).toBe(true);
+    expect(merged.some((m) => m.chunk.id === "jr")).toBe(true);
+  });
+
+  it("drops chunks that quote the coach refuse template", () => {
+    const preferred = [hit("fact", 10, "玉名市練習会をすべて中止", "calendar/events.daiming.yaml")];
+    const bm25 = [
+      hit("meta", 99, "無いことはコーチに直接聞いてください。と答える", "docs/adr/025.md"),
+    ];
+    const merged = mergeRetrieved(preferred, bm25, 64, {
+      query: "県民スポーツ大会中止に伴う練習会",
+    });
+    expect(merged.map((m) => m.chunk.id)).toEqual(["fact"]);
+  });
+});
+
+describe("RETRIEVAL_BUDGET 100k", () => {
+  it("caps context at 100000 chars and fills most of the budget", () => {
+    expect(RETRIEVAL_BUDGET.maxChars).toBe(100_000);
+    const capacity = RETRIEVAL_BUDGET.topK + RETRIEVAL_BUDGET.neighborMaxExtra;
+    expect(capacity * 500).toBeGreaterThanOrEqual(100_000);
+
+    const hits = Array.from({ length: 300 }, (_, i) =>
+      hit(`c${i}`, 100 - i * 0.01, "あ".repeat(500), `src/${i % 20}`),
+    );
+    const out = truncateRetrieved(hits, RETRIEVAL_BUDGET.maxChars);
+    const used = out.reduce((sum, r) => sum + r.chunk.text.length, 0);
+    expect(used).toBeLessThanOrEqual(100_000);
+    expect(used).toBeGreaterThan(90_000);
+    expect(out.length).toBeGreaterThan(150);
+  });
+
+  it("widened retrieve+merge+neighbors exceed the old 28k ceiling before truncate", () => {
+    resetRetrieverCache();
+    const query = "なごみ駅伝 開催要項 結果 ジュニア 荒玉 予定 練習";
+    const sources = [
+      "calendar/events.daiming.yaml",
+      "drive-text/大会",
+      "sb/中学生SB.csv",
+      "aragyoku",
+      "ekiden-ocr",
+      "practice",
+      "notion-db",
+      "repo-docs",
+    ];
+    const fromSources = retrieveBySources(sources, {
+      query,
+      path: indexPath,
+      perSource: RETRIEVAL_BUDGET.perSource,
+      maxChunks: RETRIEVAL_BUDGET.maxChunks,
+    });
+    const fromBm25 = retrieveContext(query, RETRIEVAL_BUDGET.topK, indexPath);
+    const merged = mergeRetrieved(fromSources, fromBm25, RETRIEVAL_BUDGET.topK, {
+      query,
+    });
+    const withNeighbors = expandWithNeighbors(merged, {
+      path: indexPath,
+      radius: RETRIEVAL_BUDGET.neighborRadius,
+      maxExtra: RETRIEVAL_BUDGET.neighborMaxExtra,
+    });
+    const before = withNeighbors.reduce((sum, r) => sum + r.chunk.text.length, 0);
+    expect(before).toBeGreaterThan(28_000);
+    const truncated = truncateRetrieved(withNeighbors, RETRIEVAL_BUDGET.maxChars);
+    const used = truncated.reduce((sum, r) => sum + r.chunk.text.length, 0);
+    expect(used).toBeLessThanOrEqual(RETRIEVAL_BUDGET.maxChars);
+    expect(used).toBeGreaterThan(28_000);
   });
 });
 

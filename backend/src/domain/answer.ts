@@ -25,6 +25,9 @@ import {
   type RetrievedChunk,
 } from "../rag/retrieve.js";
 import { queryKnowledgeGraph, type KgQueryResult } from "../kg/query.js";
+import { RETRIEVAL_BUDGET } from "../rag/budget.js";
+
+export { RETRIEVAL_BUDGET } from "../rag/budget.js";
 
 export type AnswerResult =
   | { kind: "refused"; text: string }
@@ -44,12 +47,6 @@ export type AnswerDeps = {
   /** Inject meet result URL index (tests / overrides) */
   meetResultUrls?: MeetResultUrlEntry[];
 };
-
-const DEFAULT_TOP_K = 16;
-const DEFAULT_MAX_CHARS = 28000;
-const DEFAULT_ROUTE_SOURCES = 14;
-const DEFAULT_PER_SOURCE = 6;
-const DEFAULT_MAX_CHUNKS = 28;
 
 function finalizeAnswerText(
   text: string,
@@ -235,7 +232,7 @@ export async function answerQuestion(
 ): Promise<AnswerResult> {
   const year = deps.defaultYear ?? new Date().getFullYear();
   const expanded = expandDateQuery(question, year);
-  const topK = deps.topK ?? DEFAULT_TOP_K;
+  const topK = deps.topK ?? RETRIEVAL_BUDGET.topK;
 
   const canned = matchCannedAnswer(question);
   if (canned) {
@@ -281,7 +278,7 @@ export async function answerQuestion(
             boostDateMeetSources(expanded, kg.corpus_sources),
             year,
           ),
-        ).slice(0, DEFAULT_ROUTE_SOURCES),
+        ).slice(0, RETRIEVAL_BUDGET.routeSources),
         focus: question,
         reason: "skip_router",
         via: "fallback" as const,
@@ -295,18 +292,22 @@ export async function answerQuestion(
       boostDateMeetSources(expanded, route.sources),
       year,
     ),
-  ).slice(0, DEFAULT_ROUTE_SOURCES);
+  ).slice(0, RETRIEVAL_BUDGET.routeSources);
 
   const fromSources = retrieveBySources(preferredSources, {
     query: expanded,
-    perSource: DEFAULT_PER_SOURCE,
-    maxChunks: DEFAULT_MAX_CHUNKS,
+    perSource: RETRIEVAL_BUDGET.perSource,
+    maxChunks: RETRIEVAL_BUDGET.maxChunks,
   });
   const retrieve = deps.retrieve ?? retrieveContext;
   const fromBm25 = retrieve(expanded, topK);
   const mergedCore = mergeRetrieved(fromSources, fromBm25, topK, { query: expanded });
-  const withNeighbors = expandWithNeighbors(mergedCore, { radius: 2, maxExtra: 32 });
-  const merged = truncateRetrieved(withNeighbors, DEFAULT_MAX_CHARS);
+  const withNeighbors = expandWithNeighbors(mergedCore, {
+    radius: RETRIEVAL_BUDGET.neighborRadius,
+    maxExtra: RETRIEVAL_BUDGET.neighborMaxExtra,
+    query: expanded,
+  });
+  const merged = truncateRetrieved(withNeighbors, RETRIEVAL_BUDGET.maxChars);
   const sources = [
     ...new Set(
       merged.map((r) => {

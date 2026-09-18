@@ -8,6 +8,7 @@ import {
   isAragyokuCorpusSource,
   meetResultPathBoost,
 } from "./meets.js";
+import { RETRIEVAL_BUDGET } from "../rag/budget.js";
 
 export type RouteDecision = {
   sources: string[];
@@ -22,7 +23,7 @@ function buildRouterSystemPrompt(): string {
     "候補ソース一覧から、質問に答えるために読むべき source パスだけを選んでください。",
     "必ず次の JSON のみを返してください（説明文禁止）:",
     '{"sources":["corpus/相対パス"],"focus":"短い焦点","reason":"短い理由"}',
-    "sources は候補に含まれるパスだけ。最大 12 件。",
+    `sources は候補に含まれるパスだけ。最大 ${RETRIEVAL_BUDGET.routeSources} 件。`,
     "日付質問なら calendar と該当大会フォルダを優先。",
     "ジュニア駅伝・なごみ・金栗など固有大会名があるときは drive-text/大会/ の該大会フォルダのみ選び、荒玉・aragyoku・ekiden-ocr は選ばない。",
     "明示の荒玉・優勝・歴代なら aragyoku/transcripts・aragyoku/winners-by-year.md・該当年の ekiden-ocr を優先（古い年の OCR を全部選ばない）。",
@@ -35,7 +36,7 @@ function buildRouterUserPrompt(question: string, kg: KgQueryResult): string {
     .slice(0, 10)
     .map((n) => `- ${n.id} (${n.type}) ${n.label}: ${n.hint}`)
     .join("\n");
-  const sources = kg.corpus_sources.slice(0, 24).join("\n");
+  const sources = kg.corpus_sources.slice(0, RETRIEVAL_BUDGET.routeSources).join("\n");
   return [
     `質問: ${question}`,
     "",
@@ -110,7 +111,7 @@ function fallbackRoute(question: string, kg: KgQueryResult): RouteDecision {
   }
   sources.sort((a, b) => sourcePreferScore(b, question) - sourcePreferScore(a, question));
   return {
-    sources: sources.slice(0, 12),
+    sources: sources.slice(0, RETRIEVAL_BUDGET.routeSources),
     focus: question.slice(0, 80),
     reason: "kg_fallback",
     via: "fallback",
@@ -140,7 +141,7 @@ export async function routeSources(
     const sources = parsed.sources
       .map((s) => s.trim())
       .filter((s) => isAllowedCorpusSource(s) && (allow.has(s) || s.startsWith("drive-text/") || s.startsWith("notion-db/") || s.startsWith("ekiden-ocr/") || s.startsWith("aragyoku/")))
-      .slice(0, 12);
+      .slice(0, RETRIEVAL_BUDGET.routeSources);
     if (sources.length === 0) return fallbackRoute(question, kg);
     return {
       sources,

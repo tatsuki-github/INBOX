@@ -348,8 +348,8 @@ export function retrieveBySources(
   if (sources.length === 0) return [];
   const path = opts?.path ?? defaultIndexPath();
   const index = loadIndex(path);
-  const perSource = opts?.perSource ?? 4;
-  const maxChunks = opts?.maxChunks ?? 16;
+  const perSource = opts?.perSource ?? 12;
+  const maxChunks = opts?.maxChunks ?? 96;
   const query = opts?.query ?? "";
   const qTokens = query ? tokenize(query) : [];
   const nameHints = query ? extractAthleteNameHints(query) : [];
@@ -419,6 +419,62 @@ function pathQueryPenalty(source: string, query: string): number {
   return 0;
 }
 
+/** Drop aragyoku/OCR/wrong-meet noise for named non-aragyoku meets (wide topK must not reintroduce them). */
+function isBlockedCorpusForQuery(source: string, query: string): boolean {
+  if (!query) return false;
+  const q = query.normalize("NFKC");
+  if (!(/ジュニア|なごみ|金栗/.test(q) && !/荒玉|aragyoku|中体連/.test(q))) {
+    return false;
+  }
+  if (
+    source === "aragyoku" ||
+    source.startsWith("aragyoku/") ||
+    source.startsWith("ekiden-ocr/") ||
+    source.startsWith("repo-docs/") ||
+    source.startsWith("docs/")
+  ) {
+    return true;
+  }
+  if (/notion-db\/.*荒玉/.test(source) || source.startsWith("notion-pages/ekiden-history")) {
+    return true;
+  }
+  if (/analysis-ocr|out-analysis/.test(source) && /荒玉/.test(source)) {
+    return true;
+  }
+  // Wrong meet folder under drive-text/大会 (岱明の結果 is common across meets)
+  if (/drive-text\/大会/.test(source)) {
+    if (/ジュニア/.test(q) && !/ジュニア/.test(source)) return true;
+    if (/なごみ|金栗/.test(q) && !/ジュニア/.test(q) && !/なごみ|金栗/.test(source)) return true;
+  }
+  return false;
+}
+
+/** Meta docs that quote the refuse template must not pollute answer context. */
+function isRefuseTemplateNoise(text: string): boolean {
+  return text.includes("コーチに直接聞いてください");
+}
+
+/** Text-level guard: practice calendars / misc docs quoting 荒玉 must not fill junior/nagomi context. */
+function isBlockedChunkForQuery(chunk: { source: string; text: string }, query: string): boolean {
+  if (isRefuseTemplateNoise(chunk.text)) return true;
+  if (isBlockedCorpusForQuery(chunk.source, query)) return true;
+  if (!query) return false;
+  const q = query.normalize("NFKC");
+  if (!(/ジュニア|なごみ|金栗/.test(q) && !/荒玉|aragyoku|中体連/.test(q))) return false;
+  if (/ジュニア/.test(q) && /荒玉中体連|winners-by-year/.test(chunk.text) && !/ジュニア/.test(chunk.source)) {
+    return true;
+  }
+  if (
+    /なごみ|金栗/.test(q) &&
+    !/ジュニア/.test(q) &&
+    /荒玉中体連|winners-by-year/.test(chunk.text) &&
+    !/なごみ|金栗/.test(chunk.source)
+  ) {
+    return true;
+  }
+  return false;
+}
+
 /**
  * Merge routed (primary) and BM25 (secondary) hits by score fusion.
  * Weak preferred no longer gets a flat +1000 that drowns strong BM25.
@@ -433,6 +489,7 @@ export function mergeRetrieved(
   const byId = new Map<string, RetrievedChunk>();
 
   const upsert = (r: RetrievedChunk, extra: number) => {
+    if (isBlockedChunkForQuery(r.chunk, query)) return;
     const nextScore = r.score + extra;
     const prev = byId.get(r.chunk.id);
     if (!prev || nextScore > prev.score) {
@@ -457,7 +514,7 @@ export function mergeRetrieved(
 /** Truncate retrieved texts to a character budget for LLM context. */
 export function truncateRetrieved(
   retrieved: RetrievedChunk[],
-  maxChars = 14000,
+  maxChars = 100_000,
 ): RetrievedChunk[] {
   const out: RetrievedChunk[] = [];
   let used = 0;
@@ -483,12 +540,13 @@ export function truncateRetrieved(
  */
 export function expandWithNeighbors(
   hits: RetrievedChunk[],
-  opts?: { radius?: number; path?: string; maxExtra?: number },
+  opts?: { radius?: number; path?: string; maxExtra?: number; query?: string },
 ): RetrievedChunk[] {
   if (hits.length === 0) return hits;
   const radius = opts?.radius ?? 2;
-  const maxExtra = opts?.maxExtra ?? 24;
+  const maxExtra = opts?.maxExtra ?? 160;
   const path = opts?.path ?? defaultIndexPath();
+  const query = opts?.query ?? "";
   const index = loadIndex(path);
 
   const bySource = new Map<string, RagChunk[]>();
@@ -524,6 +582,7 @@ export function expandWithNeighbors(
         if (j < 0 || j >= list.length) continue;
         const chunk = list[j]!;
         if (seen.has(chunk.id)) continue;
+        if (isBlockedChunkForQuery(chunk, query)) continue;
         if (extra >= maxExtra) break;
         seen.add(chunk.id);
         out.push({ chunk, score: hit.score * 0.85 });
