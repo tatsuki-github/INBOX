@@ -36,4 +36,10 @@ describe("formatForLine", () => {
       "http://www.kcrk.jp/i-mode/kiroku/sisen_i/450418/PC/rel026.html",
     );
   });
+
+  it("preserves snake_case identifiers (not italic)", () => {
+    expect(formatForLine("practice_meets_affect_load の設定値は？")).toContain(
+      "practice_meets_affect_load",
+    );
+  });
 });

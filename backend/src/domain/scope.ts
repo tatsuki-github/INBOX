@@ -4,6 +4,13 @@ export type ScopeDecision =
   | { kind: "in_scope"; reason: string }
   | { kind: "out_of_scope"; message: string; hard?: boolean };
 
+/**
+ * Repo-grounded weather ops (docs/tamana-weather.md) stay in scope.
+ * Live "今日の天気は？" etc. still hard-refuse via /天気/.
+ */
+const REPO_WEATHER_ALLOW =
+  /天気データ|天気の更新|どう更新|update_tamana_weather|Open-Meteo|tamana-forecast|tamana-weather|天気ファイル|1時間間隔|3時間間隔|保存先/;
+
 /** Hard refuse — external live data / unrelated chat, even if other tokens appear. */
 const HARD_OUT_OF_SCOPE_PATTERNS = [
   /天気/,
@@ -104,7 +111,10 @@ export function classifyScope(question: string): ScopeDecision {
     return { kind: "out_of_scope", message: OUT_OF_SCOPE_MESSAGE };
   }
 
+  const allowRepoWeather = REPO_WEATHER_ALLOW.test(q);
+
   for (const pat of HARD_OUT_OF_SCOPE_PATTERNS) {
+    if (pat.source === "天気" && allowRepoWeather) continue;
     if (pat.test(q)) {
       return { kind: "out_of_scope", message: OUT_OF_SCOPE_MESSAGE, hard: true };
     }

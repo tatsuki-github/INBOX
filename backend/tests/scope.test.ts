@@ -27,6 +27,12 @@ describe("classifyScope", () => {
     }
   });
 
+  it("allows repo-grounded weather data docs", () => {
+    expect(classifyScope("玉名の天気データはどう更新する？").kind).toBe("in_scope");
+    expect(classifyScope("天気予報の保存先ファイルは？").kind).toBe("in_scope");
+    expect(classifyScope("玉名天気は何日前から1時間間隔になる？").kind).toBe("in_scope");
+  });
+
   it("refuses clearly unrelated chat hard", () => {
     for (const q of [
       "プログラミングの宿題手伝って",

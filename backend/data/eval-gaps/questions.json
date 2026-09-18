@@ -1,0 +1,913 @@
+{
+  "version": 1,
+  "total": 50,
+  "unique": 50,
+  "defaultYear": 2026,
+  "note": "Cross-corpus gaps beyond LINE: practice, aragyoku distances, Norwegian/GZ, course videos, weather ops, rankings",
+  "rounds": [
+    {
+      "id": 1,
+      "theme": "practice-ops",
+      "questions": [
+        {
+          "id": "pr01",
+          "q": "岱明のトラック1周は何メートル？",
+          "expect": {
+            "kinds": [
+              "answered"
+            ],
+            "any_of": [
+              "560m",
+              "560"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ]
+          }
+        },
+        {
+          "id": "pr02",
+          "q": "男子ジョグのテンプレートペースは？",
+          "expect": {
+            "kinds": [
+              "answered"
+            ],
+            "any_of": [
+              "k/4:00",
+              "4:00",
+              "4:10"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ]
+          }
+        },
+        {
+          "id": "pr03",
+          "q": "女子ジョグのテンプレートペースは？",
+          "expect": {
+            "kinds": [
+              "answered"
+            ],
+            "any_of": [
+              "k/4:20",
+              "4:20",
+              "4:30"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ]
+          }
+        },
+        {
+          "id": "pr04",
+          "q": "2026年7月23日の朝練メニューは？",
+          "expect": {
+            "kinds": [
+              "answered"
+            ],
+            "any_of": [
+              "2.5km",
+              "2km",
+              "男子",
+              "女子"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ]
+          }
+        },
+        {
+          "id": "pr05",
+          "q": "岱明ノルウェーメソッドの300mメニューは？",
+          "expect": {
+            "kinds": [
+              "answered"
+            ],
+            "any_of": [
+              "66秒",
+              "30秒",
+              "6〜12",
+              "6~12"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ]
+          }
+        },
+        {
+          "id": "pr06",
+          "q": "1500mが4分20秒のときのGZ目安は？",
+          "expect": {
+            "kinds": [
+              "answered"
+            ],
+            "any_of": [
+              "VDOT",
+              "3:29",
+              "2:10",
+              "GZ",
+              "ゴールデン"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "theme": "aragyoku-distance",
+      "questions": [
+        {
+          "id": "ad01",
+          "q": "荒玉駅伝の男子1区の距離は？（現行）",
+          "expect": {
+            "kinds": [
+              "answered"
+            ],
+            "any_of": [
+              "3.00km",
+              "3km",
+              "3.0km"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ]
+          }
+        },
+        {
+          "id": "ad02",
+          "q": "荒玉男子2区は何km？（2024年以降）",
+          "expect": {
+            "kinds": [
+              "answered"
+            ],
+            "any_of": [
+              "2.855",
+              "2.855km"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ]
+          }
+        },
+        {
+          "id": "ad03",
+          "q": "荒玉女子2区の距離は？",
+          "expect": {
+            "kinds": [
+              "answered"
+            ],
+            "any_of": [
+              "1.855",
+              "1.855km"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ]
+          }
+        },
+        {
+          "id": "ad04",
+          "q": "荒玉男子1区は2023年以前だと何km？",
+          "expect": {
+            "kinds": [
+              "answered"
+            ],
+            "any_of": [
+              "3.95",
+              "3.95km"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ]
+          }
+        },
+        {
+          "id": "ad05",
+          "q": "荒玉男子の現行コース合計距離は？",
+          "expect": {
+            "kinds": [
+              "answered"
+            ],
+            "any_of": [
+              "17.71",
+              "17.710"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ]
+          }
+        },
+        {
+          "id": "ad06",
+          "q": "荒玉男子の2023年以前の合計距離は？",
+          "expect": {
+            "kinds": [
+              "answered"
+            ],
+            "any_of": [
+              "19.71",
+              "19.710"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ]
+          }
+        },
+        {
+          "id": "ad07",
+          "q": "荒玉男子は何区間？女子は何区間？",
+          "expect": {
+            "kinds": [
+              "answered"
+            ],
+            "all_of": [
+              "6",
+              "5"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ]
+          }
+        },
+        {
+          "id": "ad08",
+          "q": "荒玉のコース動画はどこ？",
+          "expect": {
+            "kinds": [
+              "answered"
+            ],
+            "any_of": [
+              "drive.google.com",
+              "1-VT1Ip6okMCL7zcyHspnheqh8J49D0Gh",
+              "コース動画"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "theme": "pace-history",
+      "questions": [
+        {
+          "id": "ph01",
+          "q": "荒玉男子2023年の総合1〜6位の平均ペースは？",
+          "expect": {
+            "kinds": [
+              "answered"
+            ],
+            "any_of": [
+              "3:15.4",
+              "3:15"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ]
+          }
+        },
+        {
+          "id": "ph02",
+          "q": "荒玉男子2024年トップ6の平均ペースは？",
+          "expect": {
+            "kinds": [
+              "answered"
+            ],
+            "any_of": [
+              "3:19.3",
+              "3:19"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ]
+          }
+        },
+        {
+          "id": "ph03",
+          "q": "荒玉男子2016年トップ6の平均ペースは？",
+          "expect": {
+            "kinds": [
+              "answered"
+            ],
+            "any_of": [
+              "3:14.5",
+              "3:14"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "theme": "weather-calendar",
+      "questions": [
+        {
+          "id": "wc01",
+          "q": "玉名の天気データはどう更新する？",
+          "expect": {
+            "kinds": [
+              "answered"
+            ],
+            "any_of": [
+              "update_tamana_weather",
+              "Open-Meteo",
+              "weather/tamana"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ]
+          }
+        },
+        {
+          "id": "wc02",
+          "q": "天気予報の保存先ファイルは？",
+          "expect": {
+            "kinds": [
+              "answered"
+            ],
+            "any_of": [
+              "tamana-forecast.json",
+              "tamana-forecast.csv",
+              "weather/"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ]
+          }
+        },
+        {
+          "id": "wc03",
+          "q": "カレンダー生成のコマンドは？",
+          "expect": {
+            "kinds": [
+              "answered"
+            ],
+            "any_of": [
+              "generate_calendar",
+              "generate_calendar.py"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "theme": "ranking-analysis",
+      "questions": [
+        {
+          "id": "rk01",
+          "q": "2026年男子1500mの学校別PBランキングはある？",
+          "expect": {
+            "kinds": [
+              "answered"
+            ],
+            "any_of": [
+              "1500m",
+              "学校",
+              "PB",
+              "ランキング",
+              "順位"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ]
+          }
+        },
+        {
+          "id": "rk02",
+          "q": "2026年女子800m・1500mの学校別ランキングは？",
+          "expect": {
+            "kinds": [
+              "answered"
+            ],
+            "any_of": [
+              "800m",
+              "1500m",
+              "女子",
+              "学校"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "theme": "edge-routing",
+      "questions": [
+        {
+          "id": "er01",
+          "q": "荒玉駅伝とは何？",
+          "expect": {
+            "kinds": [
+              "answered"
+            ],
+            "any_of": [
+              "中体連",
+              "玉名",
+              "荒尾",
+              "6区間",
+              "5区間"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ]
+          }
+        },
+        {
+          "id": "er02",
+          "q": "荒玉男子5区の距離（現行）は？",
+          "expect": {
+            "kinds": [
+              "answered"
+            ],
+            "any_of": [
+              "2.855",
+              "2.855km"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ]
+          }
+        },
+        {
+          "id": "er03",
+          "q": "荒玉女子1区の距離は？",
+          "expect": {
+            "kinds": [
+              "answered"
+            ],
+            "any_of": [
+              "3.00km",
+              "3km",
+              "3.0km"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ]
+          }
+        },
+        {
+          "id": "er04",
+          "q": "GZペースはどう計算する？",
+          "expect": {
+            "kinds": [
+              "answered"
+            ],
+            "any_of": [
+              "Daniels",
+              "VDOT",
+              "daniels_pace",
+              "Tペース",
+              "閾値"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ]
+          }
+        },
+        {
+          "id": "er05",
+          "q": "練習メニューの距離とペースのk表記一覧はどこ？",
+          "expect": {
+            "kinds": [
+              "answered"
+            ],
+            "any_of": [
+              "kpace",
+              "k/表記",
+              "daiming-practice-menus",
+              "練習メニュー"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ]
+          }
+        },
+        {
+          "id": "er06",
+          "q": "荒玉男子6区は2023年以前だと何km？",
+          "expect": {
+            "kinds": [
+              "answered"
+            ],
+            "any_of": [
+              "4.00km",
+              "4km",
+              "4.0km"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ]
+          }
+        },
+        {
+          "id": "er07",
+          "q": "トラック6周の男子ジョグ距離は？",
+          "expect": {
+            "kinds": [
+              "answered"
+            ],
+            "any_of": [
+              "3360",
+              "3360m"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ]
+          }
+        },
+        {
+          "id": "er08",
+          "q": "女子ジョグ2800mテンプレートのペースは？",
+          "expect": {
+            "kinds": [
+              "answered"
+            ],
+            "any_of": [
+              "k/4:30",
+              "4:30",
+              "2800"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "theme": "more-gaps",
+      "questions": [
+        {
+          "id": "mg01",
+          "q": "荒玉の距離定義の正本ドキュメントは？",
+          "expect": {
+            "kinds": [
+              "answered"
+            ],
+            "any_of": [
+              "aragyoku-ekiden-distance-definitions",
+              "区間距離定義",
+              "距離定義"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ]
+          }
+        },
+        {
+          "id": "mg02",
+          "q": "荒玉コース動画のGoogleドライブURLを教えて",
+          "expect": {
+            "kinds": [
+              "answered"
+            ],
+            "any_of": [
+              "drive.google.com",
+              "1-VT1Ip6okMCL7zcyHspnheqh8J49D0Gh"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ]
+          }
+        },
+        {
+          "id": "mg03",
+          "q": "VDOTからTペースを出すCLIは？",
+          "expect": {
+            "kinds": [
+              "answered"
+            ],
+            "any_of": [
+              "daniels_pace",
+              "daniels_pace.py",
+              "daniels_calculator"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ]
+          }
+        },
+        {
+          "id": "mg04",
+          "q": "1500m 4:20のVDOTはいくつ？",
+          "expect": {
+            "kinds": [
+              "answered"
+            ],
+            "any_of": [
+              "64.0",
+              "64",
+              "VDOT 64"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ]
+          }
+        },
+        {
+          "id": "mg05",
+          "q": "玉名天気は何日前から1時間間隔になる？",
+          "expect": {
+            "kinds": [
+              "answered"
+            ],
+            "any_of": [
+              "2日",
+              "2日以内",
+              "今日から2"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ]
+          }
+        },
+        {
+          "id": "mg06",
+          "q": "荒玉女子の区間数は？",
+          "expect": {
+            "kinds": [
+              "answered"
+            ],
+            "any_of": [
+              "5区間",
+              "5区"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "theme": "ops-adr-meets",
+      "questions": [
+        {
+          "id": "oa01",
+          "q": "練習会は岱明の負荷に数える？",
+          "expect": {
+            "kinds": [
+              "answered"
+            ],
+            "any_of": [
+              "数えない",
+              "不参加",
+              "false",
+              "practice_meets_affect_load"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ]
+          }
+        },
+        {
+          "id": "oa02",
+          "q": "Norwegian Methodのペース計算はどこでやる？",
+          "expect": {
+            "kinds": [
+              "answered"
+            ],
+            "any_of": [
+              "pace_calculator",
+              "Daniels",
+              "GZ",
+              "決定論"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ]
+          }
+        },
+        {
+          "id": "oa03",
+          "q": "大会結果のURLはどう付ける？",
+          "expect": {
+            "kinds": [
+              "answered"
+            ],
+            "any_of": [
+              "meet-result-urls",
+              "withMeetResultUrls",
+              "結果ページ",
+              "build_meet_result_urls"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ]
+          }
+        },
+        {
+          "id": "oa04",
+          "q": "なごみ駅伝の集合時刻は？",
+          "expect": {
+            "kinds": [
+              "answered"
+            ],
+            "any_of": [
+              "7:00",
+              "7時",
+              "午前7"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ]
+          }
+        },
+        {
+          "id": "oa05",
+          "q": "ジュニア駅伝の質問で荒玉結果を返すべき？",
+          "expect": {
+            "kinds": [
+              "answered"
+            ],
+            "any_of": [
+              "荒玉",
+              "ディスambiguation",
+              "ジュニア",
+              "ブーストしない",
+              "返さない"
+            ],
+            "forbid": []
+          }
+        },
+        {
+          "id": "oa06",
+          "q": "9/20の予定は？",
+          "expect": {
+            "kinds": [
+              "answered"
+            ],
+            "any_of": [
+              "なごみ",
+              "金栗",
+              "駅伝"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ]
+          }
+        },
+        {
+          "id": "oa07",
+          "q": "norwegian-45-15テンプレは何のセッション？",
+          "expect": {
+            "kinds": [
+              "answered"
+            ],
+            "any_of": [
+              "GZ",
+              "ゴールデン",
+              "閾値",
+              "Norwegian",
+              "ノルウェー"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ]
+          }
+        },
+        {
+          "id": "oa08",
+          "q": "記録会の翌日の負荷方針は？",
+          "expect": {
+            "kinds": [
+              "answered"
+            ],
+            "any_of": [
+              "ジョグ",
+              "追い込み",
+              "記録会",
+              "テーパー",
+              "休息"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ]
+          }
+        },
+        {
+          "id": "oa09",
+          "q": "ADR 006で決めたことは？",
+          "expect": {
+            "kinds": [
+              "answered"
+            ],
+            "any_of": [
+              "練習会",
+              "負荷",
+              "数えない",
+              "不参加"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ]
+          }
+        },
+        {
+          "id": "oa10",
+          "q": "2026年7月21日朝練の男子インターバル距離は？",
+          "expect": {
+            "kinds": [
+              "answered"
+            ],
+            "any_of": [
+              "2.5",
+              "2.5km"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "theme": "crush-round3",
+      "questions": [
+        {
+          "id": "cr01",
+          "q": "practice_meets_affect_load の設定値は？",
+          "expect": {
+            "kinds": [
+              "answered"
+            ],
+            "any_of": [
+              "false",
+              "数えない",
+              "不参加",
+              "practice_meets_affect_load"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ]
+          }
+        },
+        {
+          "id": "cr02",
+          "q": "夕練は何時から？",
+          "expect": {
+            "kinds": [
+              "answered"
+            ],
+            "any_of": [
+              "18:00",
+              "18時",
+              "午後6"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ]
+          }
+        },
+        {
+          "id": "cr03",
+          "q": "いだてん岱明の夕練開始時刻の目安は？",
+          "expect": {
+            "kinds": [
+              "answered"
+            ],
+            "any_of": [
+              "18:00",
+              "18時"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ]
+          }
+        },
+        {
+          "id": "cr04",
+          "q": "今日の天気は？",
+          "expect": {
+            "kinds": [
+              "refused"
+            ],
+            "any_of": [
+              "対象外",
+              "天気"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

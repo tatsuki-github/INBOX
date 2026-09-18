@@ -33,13 +33,23 @@ export function formatForLine(text: string): string {
   // Headings
   t = t.replace(/^#{1,6}\s+/gm, "");
 
-  // Bold / italic / strike
+  // Bold / italic / strike — protect snake_case ids (practice_meets_affect_load)
+  // so single-underscore italic does not eat identifiers.
+  const snakePlaceholders = new Map<string, string>();
+  t = t.replace(/\b[A-Za-z][A-Za-z0-9]*(?:_[A-Za-z0-9]+)+\b/g, (m) => {
+    const key = `\u0000SNAKE${snakePlaceholders.size}\u0000`;
+    snakePlaceholders.set(key, m);
+    return key;
+  });
   t = t.replace(/\*\*(.+?)\*\*/g, "$1");
   t = t.replace(/__(.+?)__/g, "$1");
   t = t.replace(/(?<!\*)\*(?!\*)(.+?)(?<!\*)\*(?!\*)/g, "$1");
   t = t.replace(/(?<!_)_(?!_)(.+?)(?<!_)_(?!_)/g, "$1");
   t = t.replace(/~~(.+?)~~/g, "$1");
   t = t.replace(/`([^`]+)`/g, "$1");
+  for (const [key, value] of snakePlaceholders) {
+    t = t.split(key).join(value);
+  }
 
   // Links / images
   t = t.replace(/!\[([^\]]*)\]\([^)]+\)/g, "$1");

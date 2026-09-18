@@ -437,6 +437,19 @@ function pathQueryBonus(source: string, query: string): number {
     bonus += 60;
   }
   if (s.includes("calendar") && /予定|大会|\d{4}-\d{2}-\d{2}|月.*日/.test(q)) bonus += 60;
+  if (
+    /夕練/.test(q) &&
+    /何時|開始|時刻|スタート|から/.test(q) &&
+    (/practice\//.test(s) || /calendar/.test(s) || /events\.daiming/.test(s))
+  ) {
+    bonus += 140;
+  }
+  if (
+    /practice_meets|affect_load|負荷に数え/.test(q) &&
+    /006-practice-meets|ai_generation_rules|ai-practice-generation/.test(s)
+  ) {
+    bonus += 160;
+  }
   if (/ドライブ|drive-text\/大会/.test(s) && /結果|大会|駅伝/.test(q) && /大会\//.test(s)) {
     bonus += 40;
   }

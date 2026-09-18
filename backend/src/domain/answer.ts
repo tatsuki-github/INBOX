@@ -71,6 +71,18 @@ function previewForOffline(text: string, question: string, maxChars = 320): stri
       return flat.slice(start, end);
     }
   }
+  // Prefer year rows in tables (e.g. "| 2023 |" average-pace digests) over title hits
+  const years = question.match(/20\d{2}/g) ?? [];
+  for (const y of years) {
+    for (const needle of [`| ${y} |`, `|${y}|`, ` ${y}年`, y]) {
+      const idx = flat.indexOf(needle);
+      if (idx >= 0) {
+        const start = Math.max(0, idx - 40);
+        const end = Math.min(flat.length, start + maxChars);
+        return flat.slice(start, end);
+      }
+    }
+  }
   // Prefer a window around query keywords (LINE FAQ / coaching digests)
   const needles = [
     ...(question.match(
@@ -185,13 +197,6 @@ function boostAthleteRecordSources(query: string, baseSources: string[]): string
 /** Prefer LINE ops digests for 岱明の連絡・集合・マット・朝練・地点分担・有田指導など. */
 function boostDaimingLineSources(query: string, baseSources: string[]): string[] {
   const q = query.normalize("NFKC");
-  const lineOps =
-    /岱明|いだてん|銀マット|合同練習|おおはま|三加和|朝練|ナイター|保護者LINE|和水|有田|補強|手押し車|犬歩き|分割走|厚底|ヴェイパー|地点分担|地点|土山コーチ|柴尾|曜日|集合時間|タイム目安|43分|区間配分|補強メニュー|2\.855|2区.*5区|5区.*2区|お別れ会|金栗駅伝|走り納め|体育館前|楽しさ|本気度/.test(
-      q,
-    );
-  if (!lineOps) {
-    return baseSources;
-  }
   const out: string[] = [];
   const seen = new Set<string>();
   const push = (s: string) => {
@@ -199,6 +204,24 @@ function boostDaimingLineSources(query: string, baseSources: string[]): string[]
     seen.add(s);
     out.push(s);
   };
+
+  if (/practice_meets|affect_load|負荷に数え/.test(q)) {
+    push("repo-docs/adr/006-practice-meets-not-load.md");
+    push("docs/adr/006-practice-meets-not-load.md");
+    push("docs/ai-practice-generation.md");
+  }
+  if (/夕練/.test(q) && /何時|開始|時刻|スタート|から/.test(q)) {
+    push("practice/practice.2026.json");
+    push("calendar/events.daiming.yaml");
+  }
+
+  const lineOps =
+    /岱明|いだてん|銀マット|合同練習|おおはま|三加和|朝練|ナイター|保護者LINE|和水|有田|補強|手押し車|犬歩き|分割走|厚底|ヴェイパー|地点分担|地点|土山コーチ|柴尾|曜日|集合時間|タイム目安|43分|区間配分|補強メニュー|2\.855|2区.*5区|5区.*2区|お別れ会|金栗駅伝|走り納め|体育館前|楽しさ|本気度/.test(
+      q,
+    );
+  if (!lineOps && out.length === 0) {
+    return baseSources;
+  }
   // Specific digests first so 荒玉 preferred に埋もれない
   if (/有田|補強|手押し車|犬歩き|分割走|厚底|ヴェイパー|タイム目安|43分|区間配分|走り納め|楽しさ|本気度|体育館前|2区.*5区|5区.*2区/.test(q)) {
     push("out-analysis/line-chats/arita-taisho.md");
@@ -209,7 +232,9 @@ function boostDaimingLineSources(query: string, baseSources: string[]): string[]
   if (/銀マット|合同練習|おおはま|三加和|和水|保護者|会費|玉名選手権|地震/.test(q)) {
     push("out-analysis/line-chats/daiming-parents.md");
   }
-  push("out-analysis/line-chats");
+  if (lineOps) {
+    push("out-analysis/line-chats");
+  }
   for (const s of baseSources) push(s);
   return out;
 }
