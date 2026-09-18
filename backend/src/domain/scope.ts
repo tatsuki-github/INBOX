@@ -1,5 +1,7 @@
 /** Scope guard: only いだてん岱明 topics. */
 
+import { looksLikeDateQuestion, parseDateMentions } from "./dates.js";
+
 export type ScopeDecision =
   | { kind: "in_scope"; reason: string }
   | { kind: "out_of_scope"; message: string };
@@ -28,6 +30,16 @@ const IN_SCOPE_KEYWORDS = [
   "gz",
   "サブ閾値",
   "norwegian",
+  // Schedule / meet vocabulary (dedicated LINE bot)
+  "予定",
+  "カレンダー",
+  "大会",
+  "なごみ",
+  "ジュニア",
+  "部活",
+  "メニュー",
+  "開催要項",
+  "試合",
 ] as const;
 
 const OUT_OF_SCOPE_PATTERNS = [
@@ -59,6 +71,11 @@ export function classifyScope(question: string): ScopeDecision {
   const hit = IN_SCOPE_KEYWORDS.find((k) => lower.includes(k.toLowerCase()));
   if (hit) {
     return { kind: "in_scope", reason: `keyword:${hit}` };
+  }
+
+  // Date-like questions → calendar / meet lookup for this dedicated bot
+  if (parseDateMentions(q).length > 0 || looksLikeDateQuestion(q)) {
+    return { kind: "in_scope", reason: "date_question" };
   }
 
   // Ambiguous short questions: treat as out of scope (refuse rather than hallucinate)

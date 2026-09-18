@@ -143,3 +143,136 @@ export function retrieveContext(
 ): RetrievedChunk[] {
   return getRetriever(path).search(query, topK);
 }
+
+function chunkBaseSource(source: string): string {
+  // ids may be "path:offset" — take path before last :digit only when pattern matches
+  const m = source.match(/^(.*):\d+$/);
+  return m ? m[1]! : source;
+}
+
+/** Discover drive-text/大会 sources whose path contains any of the given tokens (e.g. 0920). */
+export function findSourcesContaining(
+  tokens: string[],
+  opts?: { prefix?: string; path?: string; limit?: number },
+): string[] {
+  if (tokens.length === 0) return [];
+  const path = opts?.path ?? defaultIndexPath();
+  const prefix = opts?.prefix ?? "drive-text/大会/";
+  const limit = opts?.limit ?? 8;
+  const index = loadIndex(path);
+  const found: string[] = [];
+  const seen = new Set<string>();
+  for (const chunk of index.chunks) {
+    const base = chunkBaseSource(chunk.source);
+    if (!base.startsWith(prefix)) continue;
+    const lower = base.toLowerCase();
+    if (!tokens.some((t) => t && lower.includes(t.toLowerCase()))) continue;
+    if (seen.has(base)) continue;
+    seen.add(base);
+    found.push(base);
+    if (found.length >= limit) break;
+  }
+  return found;
+}
+
+/** Fetch chunks whose source matches any of the given corpus sources (prefix OK). */
+export function retrieveBySources(
+  sources: string[],
+  opts?: {
+    query?: string;
+    perSource?: number;
+    maxChunks?: number;
+    path?: string;
+  },
+): RetrievedChunk[] {
+  if (sources.length === 0) return [];
+  const path = opts?.path ?? defaultIndexPath();
+  const index = loadIndex(path);
+  const perSource = opts?.perSource ?? 4;
+  const maxChunks = opts?.maxChunks ?? 16;
+  const query = opts?.query ?? "";
+  const qTokens = query ? tokenize(query) : [];
+
+  const bySource = new Map<string, RagChunk[]>();
+  for (const chunk of index.chunks) {
+    const base = chunkBaseSource(chunk.source);
+    const matched = sources.find((s) => base === s || base.startsWith(s + "/"));
+    if (!matched) continue;
+    const list = bySource.get(matched) ?? [];
+    list.push(chunk);
+    bySource.set(matched, list);
+  }
+
+  const scored: RetrievedChunk[] = [];
+  for (const src of sources) {
+    const chunks = bySource.get(src) ?? [];
+    const ranked = chunks
+      .map((chunk) => {
+        let score = 0.1;
+        const lower = chunk.text.toLowerCase();
+        const sourceLower = chunk.source.toLowerCase();
+        if (qTokens.length > 0) {
+          for (const t of qTokens) {
+            if (lower.includes(t) || sourceLower.includes(t)) score += 1;
+          }
+        }
+        // Exact ISO date / MMDD folder hits are decisive for schedule questions
+        for (const t of qTokens) {
+          if (/^\d{4}-\d{2}-\d{2}$/.test(t) && lower.includes(t)) score += 20;
+          if (/^\d{4}$/.test(t) && sourceLower.includes(t)) score += 15;
+        }
+        return { chunk, score };
+      })
+      .sort((a, b) => b.score - a.score)
+      .slice(0, perSource);
+    scored.push(...ranked);
+  }
+
+  scored.sort((a, b) => b.score - a.score);
+  return scored.slice(0, maxChunks);
+}
+
+/** Merge KG-sourced chunks with BM25 hits; keep primary first, then fill with secondary. */
+export function mergeRetrieved(
+  primary: RetrievedChunk[],
+  secondary: RetrievedChunk[],
+  topK = 10,
+): RetrievedChunk[] {
+  const out: RetrievedChunk[] = [];
+  const seen = new Set<string>();
+  for (const r of primary) {
+    if (seen.has(r.chunk.id)) continue;
+    seen.add(r.chunk.id);
+    // Prefer routed sources strongly over raw BM25
+    out.push({ ...r, score: r.score + 1000 });
+  }
+  for (const r of secondary) {
+    if (seen.has(r.chunk.id)) continue;
+    seen.add(r.chunk.id);
+    out.push(r);
+  }
+  return out.sort((a, b) => b.score - a.score).slice(0, topK);
+}
+
+/** Truncate retrieved texts to a character budget for LLM context. */
+export function truncateRetrieved(
+  retrieved: RetrievedChunk[],
+  maxChars = 14000,
+): RetrievedChunk[] {
+  const out: RetrievedChunk[] = [];
+  let used = 0;
+  for (const r of retrieved) {
+    const len = r.chunk.text.length;
+    if (used + len > maxChars && out.length > 0) break;
+    if (used + len > maxChars) {
+      out.push({
+        ...r,
+        chunk: { ...r.chunk, text: r.chunk.text.slice(0, Math.max(0, maxChars - used)) },
+      });
+      break;
+    }
+    out.push(r);
+    used += len;
+  }
+  return out;
+}

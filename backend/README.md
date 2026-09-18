@@ -53,12 +53,25 @@ Webhook は `POST /webhook`。LINE 実機検証には [ngrok](https://ngrok.com/
 
 - 正本フォルダ: [`input/idaten-corpus/`](../input/idaten-corpus/)（テキストのみ）
 - デプロイ同梱索引: [`data/rag_index.json`](data/rag_index.json)
+- デプロイ同梱 KG: [`data/knowledge-graph.json`](data/knowledge-graph.json)（探索地図。本文ではない）
 - ランタイムは上記以外のパスを読まない（スコープ漏洩防止）
-- 再生成: `python3 scripts/build_idaten_corpus.py` 後にコミット
+- コーパス再生成: `python3 scripts/build_idaten_corpus.py`（リポジトリルート）
+- KG 再生成 + 同梱: `uv run python scripts/build_knowledge_graph.py && uv run python scripts/sync_backend_kg.py`
+- 鮮度確認: `uv run python scripts/sync_backend_kg.py --check`
+
+## 回答の流れ（KG 先行）
+
+1. スコープ判定（日付・予定・大会も受理）
+2. 日付正規化（`9/20` → `2026-09-20` / `0920`）
+3. KG で候補ノード・corpus source を決定（必要なら Router LLM）
+4. `rag_index` から該当 source の抜粋 + BM25 補助
+5. Answer LLM（Gemini）が抜粋のみで回答
+
+設計: [ADR 015](../docs/adr/015-line-idaten-qa-backend.md) / [ADR 016](../docs/adr/016-kg-first-idaten-qa.md)
 
 ## 回答範囲
 
-**答える**: いだてん岱明の練習・駅伝・記録・名簿などコーパス内の内容  
+**答える**: いだてん岱明の練習・駅伝・記録・名簿・大会予定などコーパス内の内容  
 **答えない**: 天気・一般雑談など（定型拒否）
 
 ## セキュリティ / プライバシー
@@ -70,4 +83,5 @@ Webhook は `POST /webhook`。LINE 実機検証には [ngrok](https://ngrok.com/
 ## 設計
 
 - [ADR 015](../docs/adr/015-line-idaten-qa-backend.md)
+- [ADR 016](../docs/adr/016-kg-first-idaten-qa.md)
 - [Phase 0](../docs/implementation-flow/line-idaten-bot/phase-0.md)
