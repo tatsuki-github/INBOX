@@ -30,13 +30,18 @@ export function defaultIndexPath(): string {
 
 function tokenize(text: string): string[] {
   const lower = text.toLowerCase();
+  // Keep ISO dates intact before general tokenization (schedule matching).
+  const isoDates = lower.match(/20\d{2}-\d{2}-\d{2}/g) ?? [];
+  const withoutIso = lower.replace(/20\d{2}-\d{2}-\d{2}/g, " ");
   // Keep CJK runs and alnum tokens
-  const tokens = lower.match(/[\p{Script=Han}\p{Script=Hiragana}\p{Script=Katakana}]+|[\w\d]+/gu);
+  const tokens = withoutIso.match(
+    /[\p{Script=Han}\p{Script=Hiragana}\p{Script=Katakana}]+|[\w\d]+/gu,
+  );
+  const out: string[] = [...isoDates];
   if (!tokens) {
-    return [];
+    return out;
   }
   // Further split long CJK into bigrams for better recall
-  const out: string[] = [];
   for (const t of tokens) {
     if (/[\p{Script=Han}\p{Script=Hiragana}\p{Script=Katakana}]/u.test(t) && t.length > 1) {
       out.push(t);
@@ -216,10 +221,15 @@ export function retrieveBySources(
             if (lower.includes(t) || sourceLower.includes(t)) score += 1;
           }
         }
-        // Exact ISO date / MMDD folder hits are decisive for schedule questions
+        // Exact ISO date / MMDD hits are decisive for schedule questions
         for (const t of qTokens) {
-          if (/^\d{4}-\d{2}-\d{2}$/.test(t) && lower.includes(t)) score += 20;
-          if (/^\d{4}$/.test(t) && sourceLower.includes(t)) score += 15;
+          if (/^\d{4}-\d{2}-\d{2}$/.test(t) && lower.includes(t)) score += 500;
+          // Year folder / text (2026)
+          if (/^20\d{2}$/.test(t) && (lower.includes(t) || sourceLower.includes(t))) score += 15;
+          // MMDD token (0205) from expandDateQuery
+          if (/^(0[1-9]|1[0-2])(0[1-9]|[12]\d|3[01])$/.test(t) && (lower.includes(t) || sourceLower.includes(t))) {
+            score += 40;
+          }
         }
         return { chunk, score };
       })

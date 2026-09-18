@@ -40,6 +40,13 @@ describe("classifyScope", () => {
       "競馬の予想して",
       "暗号通貨いくら？",
       "恋の相談乗って",
+      "仮想通貨いくら",
+      "Rust書いて",
+      "ゴルフの試合結果は？",
+      "Geminiとは",
+      "四柱推命して",
+      "小説おすすめは？",
+      "内閣について",
     ]) {
       const d = classifyScope(q);
       expect(d.kind, q).toBe("out_of_scope");

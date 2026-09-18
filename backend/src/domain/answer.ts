@@ -62,13 +62,33 @@ function finalizeAnswerText(
   });
 }
 
-function offlineAnswer(question: string, retrieved: RetrievedChunk[]): string {
+function previewForOffline(text: string, question: string, maxChars = 320): string {
+  const flat = text.replace(/\s+/g, " ");
+  const isos = question.match(/20\d{2}-\d{2}-\d{2}/g) ?? [];
+  for (const iso of isos) {
+    const idx = flat.indexOf(iso);
+    if (idx >= 0) {
+      const start = Math.max(0, idx - 140);
+      const end = Math.min(flat.length, idx + 180);
+      return flat.slice(start, end);
+    }
+  }
+  // Bare M月D日 → try zero-padded MMDD in ISO-like form already expanded into question
+  return flat.slice(0, maxChars);
+}
+
+function offlineAnswer(
+  question: string,
+  retrieved: RetrievedChunk[],
+  previewQuery?: string,
+): string {
   const lines = ["（オフライン回答）", "", `Q: ${question}`, ""];
   if (retrieved.length === 0) {
     lines.push(MISSING_INFO_MESSAGE);
   } else {
+    const hint = previewQuery ?? question;
     for (const [i, r] of retrieved.entries()) {
-      const preview = r.chunk.text.replace(/\s+/g, " ").slice(0, 280);
+      const preview = previewForOffline(r.chunk.text, hint);
       lines.push(`${i + 1}. ${preview}`);
     }
   }
@@ -291,7 +311,7 @@ export async function answerQuestion(
   if (!deps.llm) {
     return {
       kind: "offline",
-      text: finalizeAnswerText(offlineAnswer(question, merged), question, deps),
+      text: finalizeAnswerText(offlineAnswer(question, merged, expanded), question, deps),
       sources,
     };
   }

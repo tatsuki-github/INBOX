@@ -73,7 +73,7 @@ Webhook は `POST /webhook`。LINE 実機検証には [ngrok](https://ngrok.com/
 - 大会結果 URL 索引: [`data/meet-result-urls.json`](data/meet-result-urls.json)（記録 CSV / `source.csv` 由来。再生成は `python3 scripts/build_meet_result_urls.py`）
 - 曖昧な自己ベスト質問は [`src/domain/clarify.ts`](src/domain/clarify.ts) が具体的な質問例を返す（ADR 021）
 - 中学生 SB: コーパス `sb/中学生SB.csv` は **全所属・行単位チャンク**（ADR 022）。再生成は `uv run python scripts/build_idaten_corpus.py`
-- 想定質問 200 問の根拠評価: `npx tsx scripts/eval-200q/run.ts`（ADR 023）
+- 想定質問の根拠評価: `npx tsx scripts/eval-1000q/run.ts`（1000問）/ `eval-200q`（200問）（ADR 023）
 - ランタイムは上記以外のパスを読まない（スコープ漏洩防止）
 - コーパス再生成: `python3 scripts/build_idaten_corpus.py`（リポジトリルート）
 - KG 再生成 + 同梱: `uv run python scripts/build_knowledge_graph.py && uv run python scripts/sync_backend_kg.py`
