@@ -369,6 +369,14 @@
     "note": "winners summary from rank=1"
   },
   {
+    "source": "out/analysis/2026_aragyoku_men_1500m_sb_individual_top20.md",
+    "corpus": "out-analysis/2026_aragyoku_men_1500m_sb_individual_top20.md"
+  },
+  {
+    "source": "out/analysis/2026_aragyoku_men_3000m_sb_ranking.md",
+    "corpus": "out-analysis/2026_aragyoku_men_3000m_sb_ranking.md"
+  },
+  {
     "source": "out/analysis/2026_men_1500m_pb_school_ranking.md",
     "corpus": "out-analysis/2026_men_1500m_pb_school_ranking.md"
   },
@@ -451,6 +459,10 @@
   {
     "source": "out/analysis/aragyoku-teams/長洲.md",
     "corpus": "out-analysis/aragyoku-teams/長洲.md"
+  },
+  {
+    "source": "out/analysis/aragyoku_top2_finish_counts.md",
+    "corpus": "out-analysis/aragyoku_top2_finish_counts.md"
   },
   {
     "source": "out/analysis/aragyoku_top6_historical_average_pace.md",
@@ -551,6 +563,10 @@
   {
     "source": "out/analysis/arato-tamana-teams/ﾀﾏﾅﾁｭｳ玉名中.md",
     "corpus": "out-analysis/arato-tamana-teams/ﾀﾏﾅﾁｭｳ玉名中.md"
+  },
+  {
+    "source": "out/analysis/athletes/takada-mana.md",
+    "corpus": "out-analysis/athletes/takada-mana.md"
   },
   {
     "source": "out/analysis/line-chats/INDEX.md",
@@ -671,6 +687,18 @@
   {
     "source": "docs/adr/029-daiming-line-chat-corpus.md",
     "corpus": "repo-docs/adr/029-daiming-line-chat-corpus.md"
+  },
+  {
+    "source": "docs/adr/030-cross-corpus-gap-crush.md",
+    "corpus": "repo-docs/adr/030-cross-corpus-gap-crush.md"
+  },
+  {
+    "source": "docs/adr/031-kg-queryhint-source-hubs.md",
+    "corpus": "repo-docs/adr/031-kg-queryhint-source-hubs.md"
+  },
+  {
+    "source": "docs/adr/032-athlete-name-ranking-retrieval.md",
+    "corpus": "repo-docs/adr/032-athlete-name-ranking-retrieval.md"
   },
   {
     "source": "docs/idaten-import/phase0-media-ocr.md",
@@ -2140,6 +2168,11 @@
     "source": "input/external/sb/middle-school/wide/中学生SB.csv",
     "corpus": "sb/中学生SB.csv",
     "note": "full middle-school SB (1371 data rows)"
+  },
+  {
+    "source": "input/external/drive/personal/t-tsuchiyama/sb/SBデータベース.csv",
+    "corpus": "sb/SBデータベース.csv",
+    "note": "personal SB database HS+MS (4900 data rows)"
   },
   {
     "source": "docs/adr/010-external-idaten-import.md",

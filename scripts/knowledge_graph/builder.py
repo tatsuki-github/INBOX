@@ -135,6 +135,31 @@ SOURCE_GLOBS: list[tuple[str, list[str], str]] = [
         "荒玉総合1〜6位の年度別平均ペース",
     ),
     (
+        "out/analysis/aragyoku_top2_finish_counts.md",
+        ["ekiden"],
+        "荒玉駅伝 総合2位以内の学校と回数（男女合算・男女別）",
+    ),
+    (
+        "out/analysis/2026_aragyoku_men_3000m_sb_ranking.md",
+        ["athlete_records", "ekiden"],
+        "荒玉地区 男子3000m SBランキング（2026）",
+    ),
+    (
+        "out/analysis/2026_aragyoku_men_1500m_sb_individual_top20.md",
+        ["athlete_records", "ekiden"],
+        "荒玉地区 男子1500m SB 個人トップ20（2026）",
+    ),
+    (
+        "out/analysis/athletes/takada-mana.md",
+        ["athlete_records"],
+        "高田麻那（文徳高）SB。高田麻由（岱明）とは別人",
+    ),
+    (
+        "out/analysis/arato-tamana-teams/ATRC.md",
+        ["athlete_records"],
+        "ATRC 所属選手のトラック記録一覧",
+    ),
+    (
         "input/aragyoku/course-videos.md",
         ["ekiden"],
         "荒玉駅伝コース動画の Google ドライブ URL",
@@ -269,6 +294,58 @@ QUERY_HINTS: list[tuple[str, str, list[str]]] = [
             "corpus:aragyoku",
             "corpus:ekiden-ocr",
             "source:out/analysis/aragyoku-overview.md",
+        ],
+    ),
+    (
+        "荒玉駅伝で2位までに入った学校と回数は？",
+        "out/analysis/aragyoku_top2_finish_counts.md を正本として読む（男女合算・男女別）",
+        [
+            "topic:ekiden",
+            "source:out/analysis/aragyoku_top2_finish_counts.md",
+            "source:input/idaten-corpus/aragyoku/winners-by-year.md",
+            "corpus:aragyoku",
+            "corpus:out-analysis",
+        ],
+    ),
+    (
+        "荒玉地区で3000mが一番速いのは？",
+        "out/analysis/2026_aragyoku_men_3000m_sb_ranking.md の1位（隈部侑成）を返す",
+        [
+            "topic:athlete_records",
+            "topic:ekiden",
+            "source:out/analysis/2026_aragyoku_men_3000m_sb_ranking.md",
+            "corpus:out-analysis",
+            "corpus:sb",
+        ],
+    ),
+    (
+        "今年の荒玉地区の男子1500mSBランキングトップ20は？",
+        "out/analysis/2026_aragyoku_men_1500m_sb_individual_top20.md を正本として返す",
+        [
+            "topic:athlete_records",
+            "topic:ekiden",
+            "source:out/analysis/2026_aragyoku_men_1500m_sb_individual_top20.md",
+            "corpus:out-analysis",
+            "corpus:sb",
+        ],
+    ),
+    (
+        "ATRCの選手の全記録は？",
+        "out/analysis/arato-tamana-teams/ATRC.md を優先（所属別全記録ダイジェスト）",
+        [
+            "topic:athlete_records",
+            "source:out/analysis/arato-tamana-teams/ATRC.md",
+            "corpus:out-analysis",
+        ],
+    ),
+    (
+        "高田麻那の記録は？",
+        "out/analysis/athletes/takada-mana.md と sb/SBデータベース.csv。高田麻由（岱明）と混同しない",
+        [
+            "topic:athlete_records",
+            "source:out/analysis/athletes/takada-mana.md",
+            "corpus:sb",
+            "corpus:out-analysis",
         ],
     ),
     (

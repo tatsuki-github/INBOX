@@ -150,8 +150,35 @@ export function csvNameRowBoost(text: string, names: string[]): number {
     if (new RegExp(`(^|\\n)${esc},`, "u").test(text)) {
       boost += 80;
     }
+    // Exact full-name hit anywhere (markdown tables / digests)
+    if (name.length >= 3 && text.includes(name)) {
+      boost += 120;
+    }
   }
   return boost;
+}
+
+/**
+ * Penalize near-homonym athletes (高田麻由 when query is 高田麻那).
+ * Only when the query has a full CJK name (≥3 chars) that is absent from the chunk,
+ * but a same-family-name different given-name appears.
+ */
+export function nearHomonymNamePenalty(text: string, names: string[]): number {
+  let penalty = 0;
+  for (const name of names) {
+    if (!/^[\u3400-\u9fff]{3,8}$/u.test(name)) continue;
+    if (text.includes(name)) continue;
+    const family = name.slice(0, 2);
+    // Look for family+different given (2–3 more kanji) in table cells
+    const re = new RegExp(`${family}[\\u3400-\\u9fff]{1,3}`, "gu");
+    for (const m of text.matchAll(re)) {
+      if (m[0] !== name) {
+        penalty -= 100;
+        break;
+      }
+    }
+  }
+  return penalty;
 }
 
 function scoreChunkAgainstQuery(
@@ -192,6 +219,7 @@ function scoreChunkAgainstQuery(
     chunk.source.includes("中学生SB");
   if (isSb || nameHints.length > 0) {
     score += csvNameRowBoost(chunk.text, nameHints);
+    score += nearHomonymNamePenalty(chunk.text, nameHints);
   }
   return score;
 }
@@ -249,6 +277,7 @@ export class Bm25Retriever {
       }
       const chunk = this.chunks[i]!;
       score += csvNameRowBoost(chunk.text, nameHints);
+      score += nearHomonymNamePenalty(chunk.text, nameHints);
       const lower = chunk.text.toLowerCase();
       const sourceLower = chunk.source.toLowerCase();
       for (const t of qTokens) {
@@ -450,6 +479,35 @@ function pathQueryBonus(source: string, query: string): number {
   ) {
     bonus += 160;
   }
+  if (
+    /\bATRC\b|ＡＴＲＣ/.test(q) &&
+    /arato-tamana-teams\/ATRC\.md|personal\/ATRC\.md/.test(s)
+  ) {
+    bonus += 200;
+  }
+  if (
+    /3000m|3000ｍ/.test(q) &&
+    /速い|一番|最速|ランキング|SB|自己ベスト/.test(q) &&
+    /3000m_sb_ranking|notion_records_2026|arato-tamana-teams/.test(s)
+  ) {
+    bonus += 180;
+  }
+  if (
+    /1500m|1500ｍ/.test(q) &&
+    /トップ\s*20|ランキング|SB|自己ベスト|荒玉地区/.test(q) &&
+    /1500m_sb_individual_top20|1500m_pb_school_ranking|notion_records_2026/.test(s)
+  ) {
+    bonus += 180;
+  }
+  if (
+    /2位まで|総合2位|優勝.*回数|2位以内/.test(q) &&
+    /top2_finish_counts|winners-by-year/.test(s)
+  ) {
+    bonus += 200;
+  }
+  if (/高田麻那/.test(q) && /takada-mana|athletes\/takada|SBデータベース/.test(s)) {
+    bonus += 250;
+  }
   if (/ドライブ|drive-text\/大会/.test(s) && /結果|大会|駅伝/.test(q) && /大会\//.test(s)) {
     bonus += 40;
   }
@@ -466,6 +524,12 @@ function pathQueryPenalty(source: string, query: string): number {
   if (/ジュニア|なごみ|金栗/.test(q) && (/aragyoku|ekiden-ocr/.test(source))) {
     return -100;
   }
+  // 高田麻那 ≠ 岱明の同姓別人: demote 岱明/駅伝板 when asking for 麻那
+  if (/高田麻那/.test(q) && !/takada-mana|SBデータベース/.test(source)) {
+    if (/岱明中|aragyoku\/|ekiden-ocr\/|ocr_raw|women_800m_1500m/.test(source)) {
+      return -200;
+    }
+  }
   if (
     /地点分担|タイム目安|43分|区間配分|有田|補強メニュー|2区.*5区|5区.*2区/.test(q) &&
     /aragyoku-overview|aragyoku-ekiden-distance|average_pace|course-videos|aragyoku\/quiz/.test(
@@ -481,6 +545,10 @@ function pathQueryPenalty(source: string, query: string): number {
 function isBlockedCorpusForQuery(source: string, query: string): boolean {
   if (!query) return false;
   const q = query.normalize("NFKC");
+  // Empty Drive stubs must not fill ranking / history answers
+  if (/_EMPTY\.md|export\.status\.json/.test(source)) {
+    return true;
+  }
   // LINE ops / coaching digests beat generic 荒玉 overview noise
   if (
     /地点分担|タイム目安|43分|区間配分|有田先輩|有田大将|補強メニュー|手押し車|犬歩き|メンタル|楽しさ|本気度|2区.*5区|5区.*2区/.test(

@@ -92,6 +92,8 @@
 - `input/aragyoku/ocr_raw/2025-男子.md` → `aragyoku/ocr_raw/2025-男子.md`
 - `input/aragyoku/quiz/荒玉駅伝○×クイズ.csv` → `aragyoku/quiz/荒玉駅伝○×クイズ.csv`
 - `input/aragyoku/transcripts (derived)` → `aragyoku/winners-by-year.md` (winners summary from rank=1)
+- `out/analysis/2026_aragyoku_men_1500m_sb_individual_top20.md` → `out-analysis/2026_aragyoku_men_1500m_sb_individual_top20.md`
+- `out/analysis/2026_aragyoku_men_3000m_sb_ranking.md` → `out-analysis/2026_aragyoku_men_3000m_sb_ranking.md`
 - `out/analysis/2026_men_1500m_pb_school_ranking.md` → `out-analysis/2026_men_1500m_pb_school_ranking.md`
 - `out/analysis/2026_women_800m_1500m_pb_school_ranking.md` → `out-analysis/2026_women_800m_1500m_pb_school_ranking.md`
 - `out/analysis/aragyoku-overview.md` → `out-analysis/aragyoku-overview.md`
@@ -113,6 +115,7 @@
 - `out/analysis/aragyoku-teams/荒尾海陽.md` → `out-analysis/aragyoku-teams/荒尾海陽.md`
 - `out/analysis/aragyoku-teams/菊水.md` → `out-analysis/aragyoku-teams/菊水.md`
 - `out/analysis/aragyoku-teams/長洲.md` → `out-analysis/aragyoku-teams/長洲.md`
+- `out/analysis/aragyoku_top2_finish_counts.md` → `out-analysis/aragyoku_top2_finish_counts.md`
 - `out/analysis/aragyoku_top6_historical_average_pace.md` → `out-analysis/aragyoku_top6_historical_average_pace.md`
 - `out/analysis/aragyoku_women_track_joined.json` → `out-analysis/aragyoku_women_track_joined.json`
 - `out/analysis/arato-tamana-teams/ATRC.md` → `out-analysis/arato-tamana-teams/ATRC.md`
@@ -138,6 +141,7 @@
 - `out/analysis/arato-tamana-teams/長洲中.md` → `out-analysis/arato-tamana-teams/長洲中.md`
 - `out/analysis/arato-tamana-teams/ＮＪＡＣ.md` → `out-analysis/arato-tamana-teams/ＮＪＡＣ.md`
 - `out/analysis/arato-tamana-teams/ﾀﾏﾅﾁｭｳ玉名中.md` → `out-analysis/arato-tamana-teams/ﾀﾏﾅﾁｭｳ玉名中.md`
+- `out/analysis/athletes/takada-mana.md` → `out-analysis/athletes/takada-mana.md`
 - `out/analysis/line-chats/INDEX.md` → `out-analysis/line-chats/INDEX.md`
 - `out/analysis/line-chats/arita-taisho.md` → `out-analysis/line-chats/arita-taisho.md`
 - `out/analysis/line-chats/daiming-parents.md` → `out-analysis/line-chats/daiming-parents.md`
@@ -168,6 +172,9 @@
 - `docs/adr/027-aragyoku-arato-team-markdowns.md` → `repo-docs/adr/027-aragyoku-arato-team-markdowns.md`
 - `docs/adr/028-aragyoku-overview-pace.md` → `repo-docs/adr/028-aragyoku-overview-pace.md`
 - `docs/adr/029-daiming-line-chat-corpus.md` → `repo-docs/adr/029-daiming-line-chat-corpus.md`
+- `docs/adr/030-cross-corpus-gap-crush.md` → `repo-docs/adr/030-cross-corpus-gap-crush.md`
+- `docs/adr/031-kg-queryhint-source-hubs.md` → `repo-docs/adr/031-kg-queryhint-source-hubs.md`
+- `docs/adr/032-athlete-name-ranking-retrieval.md` → `repo-docs/adr/032-athlete-name-ranking-retrieval.md`
 - `docs/idaten-import/phase0-media-ocr.md` → `repo-docs/idaten-import/phase0-media-ocr.md`
 - `docs/idaten-import/phase0-work-type.md` → `repo-docs/idaten-import/phase0-work-type.md`
 - `docs/idaten-import/phase1-media-ocr.md` → `repo-docs/idaten-import/phase1-media-ocr.md`
@@ -534,6 +541,7 @@
 - `out/2026/practice.json` → `practice/practice.2026.json` (filtered 41 items)
 - `out/daiming-practice-menus-kpace.md` → `practice/daiming-practice-menus-kpace.md`
 - `input/external/sb/middle-school/wide/中学生SB.csv` → `sb/中学生SB.csv` (full middle-school SB (1371 data rows))
+- `input/external/drive/personal/t-tsuchiyama/sb/SBデータベース.csv` → `sb/SBデータベース.csv` (personal SB database HS+MS (4900 data rows))
 - `docs/adr/010-external-idaten-import.md` → `docs/010-external-idaten-import.md`
 - `docs/adr/011-idaten-media-ocr-kg.md` → `docs/011-idaten-media-ocr-kg.md`
 - `docs/adr/015-line-idaten-qa-backend.md` → `docs/015-line-idaten-qa-backend.md`

@@ -176,27 +176,50 @@ def _extract_practice(sources: list[dict[str, str]]) -> None:
 
 
 def _extract_sb(sources: list[dict[str, str]]) -> None:
-    """Copy full middle-school SB wide CSV (all schools, not 岱明-only)."""
-    sb_src = EXTERNAL / "sb" / "middle-school" / "wide" / "中学生SB.csv"
-    if not sb_src.exists():
-        return
-    dest = CORPUS_DIR / "sb" / "中学生SB.csv"
-    dest.parent.mkdir(parents=True, exist_ok=True)
+    """Copy middle-school wide SB + personal SB DB (HS athletes e.g. 高田麻那)."""
+    dest_dir = CORPUS_DIR / "sb"
+    dest_dir.mkdir(parents=True, exist_ok=True)
     # Drop legacy 岱明-only extract if present
-    legacy = CORPUS_DIR / "sb" / "中学生SB_岱明.csv"
+    legacy = dest_dir / "中学生SB_岱明.csv"
     if legacy.exists():
         legacy.unlink()
-    text = sb_src.read_text(encoding="utf-8-sig", errors="replace")
-    # Normalize to utf-8 without BOM for stable chunking
-    dest.write_text(text, encoding="utf-8")
-    row_count = max(0, text.count("\n") - 1)
-    sources.append(
-        {
-            "source": str(sb_src.relative_to(ROOT)),
-            "corpus": str(dest.relative_to(CORPUS_DIR)),
-            "note": f"full middle-school SB ({row_count} data rows)",
-        }
+
+    sb_src = EXTERNAL / "sb" / "middle-school" / "wide" / "中学生SB.csv"
+    if sb_src.exists():
+        dest = dest_dir / "中学生SB.csv"
+        text = sb_src.read_text(encoding="utf-8-sig", errors="replace")
+        # Normalize to utf-8 without BOM for stable chunking
+        dest.write_text(text, encoding="utf-8")
+        row_count = max(0, text.count("\n") - 1)
+        sources.append(
+            {
+                "source": str(sb_src.relative_to(ROOT)),
+                "corpus": str(dest.relative_to(CORPUS_DIR)),
+                "note": f"full middle-school SB ({row_count} data rows)",
+            }
+        )
+
+    # Personal SB database includes high-school athletes absent from 中学生SB.csv
+    personal_sb = (
+        EXTERNAL
+        / "drive"
+        / "personal"
+        / "t-tsuchiyama"
+        / "sb"
+        / "SBデータベース.csv"
     )
+    if personal_sb.exists():
+        dest = dest_dir / "SBデータベース.csv"
+        text = personal_sb.read_text(encoding="utf-8-sig", errors="replace")
+        dest.write_text(text, encoding="utf-8")
+        row_count = max(0, text.count("\n") - 1)
+        sources.append(
+            {
+                "source": str(personal_sb.relative_to(ROOT)),
+                "corpus": str(dest.relative_to(CORPUS_DIR)),
+                "note": f"personal SB database HS+MS ({row_count} data rows)",
+            }
+        )
 
 
 def _build_corpus() -> list[dict[str, str]]:

@@ -372,6 +372,94 @@ describe("answerQuestion", () => {
     }
   });
 
+  it("answers 高田麻那 from digest without 高田麻由", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("高田麻那の記録", {
+      skipRouter: true,
+      defaultYear: 2026,
+      llm: null,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.text).toMatch(/5:21\.76|11:05\.84|文徳/);
+      expect(result.text).not.toContain("コーチに直接聞いてください");
+      // Digest may mention 麻由 as “別人” — forbid presenting 麻由 as the subject athlete row
+      expect(result.text).not.toMatch(/高田麻由,岱明|高田麻由（選手）|^[^\n]*高田麻由[^\n]*自己ベスト/m);
+      expect(
+        result.sources.some(
+          (s) => s.includes("takada-mana") || s.includes("SBデータベース"),
+        ),
+      ).toBe(true);
+      expect(result.sources.some((s) => s.includes("takada-mana"))).toBe(true);
+    }
+  });
+
+  it("answers 荒玉 2位まで school counts from top2 digest", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("荒玉駅伝の2位までに入ったことがある学校と回数", {
+      skipRouter: true,
+      defaultYear: 2026,
+      llm: null,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.text).toMatch(/玉名/);
+      expect(result.text).toMatch(/15/);
+      expect(result.text).toMatch(/荒尾三|菊水/);
+      expect(result.text).not.toContain("コーチに直接聞いてください");
+      expect(result.sources.some((s) => s.includes("top2_finish_counts"))).toBe(true);
+    }
+  });
+
+  it("answers 荒玉地区 3000m fastest from ranking digest", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("荒玉地区で3000mが1番速いのは？", {
+      skipRouter: true,
+      defaultYear: 2026,
+      llm: null,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.text).toMatch(/隈部侑成|8:54\.61/);
+      expect(result.text).not.toContain("コーチに直接聞いてください");
+    }
+  });
+
+  it("answers 男子1500m SB top20 from individual ranking digest", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("今年の荒玉地区の男子1500mSBランキングトップ20", {
+      skipRouter: true,
+      defaultYear: 2026,
+      llm: null,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.text).toMatch(/隈部侑成/);
+      expect(result.text).toMatch(/4:11\.60/);
+      expect(result.text).not.toContain("コーチに直接聞いてください");
+    }
+  });
+
+  it("answers ATRC full records from team digest", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("ATRCの選手の全記録", {
+      skipRouter: true,
+      defaultYear: 2026,
+      llm: null,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.text).toMatch(/ATRC|800m|1500m/);
+      expect(result.text).not.toContain("コーチに直接聞いてください");
+      expect(result.sources.some((s) => /ATRC/.test(s))).toBe(true);
+    }
+  });
+
   it("offline empty retrieval tells user to ask the coach", async () => {
     const result = await answerQuestion("存在しない架空の大会XYZの詳細は？", {
       retrieve: () => [],

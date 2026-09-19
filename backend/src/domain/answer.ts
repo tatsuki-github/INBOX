@@ -60,14 +60,29 @@ function finalizeAnswerText(
   });
 }
 
-function previewForOffline(text: string, question: string, maxChars = 320): string {
+function offlinePreviewBudget(question: string): number {
+  const q = question.normalize("NFKC");
+  // Rankings / full team records / win-count tables need wide windows
+  if (
+    /ランキング|トップ\s*\d+|全記録|全件|一覧|回数|2位まで|2位以内|最速|一番速/.test(q)
+  ) {
+    return 2400;
+  }
+  if (/自己ベスト|記録|\bSB\b|\bPB\b|何分|タイム/.test(q)) {
+    return 900;
+  }
+  return 320;
+}
+
+function previewForOffline(text: string, question: string, maxChars?: number): string {
+  const budget = maxChars ?? offlinePreviewBudget(question);
   const flat = text.replace(/\s+/g, " ");
   const isos = question.match(/20\d{2}-\d{2}-\d{2}/g) ?? [];
   for (const iso of isos) {
     const idx = flat.indexOf(iso);
     if (idx >= 0) {
       const start = Math.max(0, idx - 140);
-      const end = Math.min(flat.length, idx + 180);
+      const end = Math.min(flat.length, idx + Math.max(180, budget - 140));
       return flat.slice(start, end);
     }
   }
@@ -78,15 +93,15 @@ function previewForOffline(text: string, question: string, maxChars = 320): stri
       const idx = flat.indexOf(needle);
       if (idx >= 0) {
         const start = Math.max(0, idx - 40);
-        const end = Math.min(flat.length, start + maxChars);
+        const end = Math.min(flat.length, start + budget);
         return flat.slice(start, end);
       }
     }
   }
-  // Prefer a window around query keywords (LINE FAQ / coaching digests)
+  // Prefer a window around query keywords (LINE FAQ / coaching digests / athlete digests)
   const needles = [
     ...(question.match(
-      /手押し車|犬歩き|分割走|ビルド|ペーラン|楽しさ|本気度|43分|2\.855|7:20|銀マット|地点|補強|厚底|ヴェイパー|メンタル|掛け算/g,
+      /手押し車|犬歩き|分割走|ビルド|ペーラン|楽しさ|本気度|43分|2\.855|7:20|銀マット|地点|補強|厚底|ヴェイパー|メンタル|掛け算|高田麻那|高田麻由|隈部|ATRC|3000m|1500m|2位まで/g,
     ) ?? []),
     ...((question.match(/[\u3040-\u30ff\u3400-\u9fff]{2,8}/g) ?? []).filter(
       (t) => t.length >= 2 && !/^(先輩|教えて|ください|どう|なに|何|は|を|の|が)$/.test(t),
@@ -99,10 +114,10 @@ function previewForOffline(text: string, question: string, maxChars = 320): stri
   }
   if (bestIdx >= 0) {
     const start = Math.max(0, bestIdx - 80);
-    const end = Math.min(flat.length, start + maxChars);
+    const end = Math.min(flat.length, start + budget);
     return flat.slice(start, end);
   }
-  return flat.slice(0, maxChars);
+  return flat.slice(0, budget);
 }
 
 function offlineAnswer(
@@ -152,8 +167,9 @@ function sortMeetDriveSources(sources: string[], query: string): string[] {
 
 /** Prefer SB / 記録データベース sources for athlete-record questions. */
 function boostAthleteRecordSources(query: string, baseSources: string[]): string[] {
+  const q = query.normalize("NFKC");
   // 有田先輩＝指導相談。選手「有田」の SB/歴代と混同しない
-  if (/有田先輩|有田大将|補強メニュー|手押し車|犬歩き|メンタル|楽しさ|本気度/.test(query)) {
+  if (/有田先輩|有田大将|補強メニュー|手押し車|犬歩き|メンタル|楽しさ|本気度/.test(q)) {
     return baseSources.filter(
       (s) =>
         !/sb\/|記録データベース|3000m予想|aragyoku|ekiden-ocr|practice\/|daiming-practice/.test(
@@ -162,8 +178,8 @@ function boostAthleteRecordSources(query: string, baseSources: string[]): string
     );
   }
   if (
-    !/自己ベスト|ベストタイム|自己記録|\bSB\b|\bPB\b|ベスト記録|記録|タイム|何分|何秒|800m?|1500m?|3000m?|5000m?|荒尾|玉名|所属|チーム|金栗|岱明|南関|天水|長洲|ATRC|アスリーツ/.test(
-      query,
+    !/自己ベスト|ベストタイム|自己記録|\bSB\b|\bPB\b|ベスト記録|記録|タイム|何分|何秒|800m?|1500m?|3000m?|5000m?|荒尾|玉名|所属|チーム|金栗|岱明|南関|天水|長洲|ATRC|アスリーツ|ランキング|最速|一番速|トップ\s*\d+|全記録|回数|2位まで/.test(
+      q,
     )
   ) {
     return baseSources;
@@ -175,13 +191,35 @@ function boostAthleteRecordSources(query: string, baseSources: string[]): string
     seen.add(s);
     out.push(s);
   };
-  if (/荒尾|玉名|金栗|岱明|南関|天水|長洲|ATRC|アスリーツ|玉東|有明|荒尾三|荒尾四|海陽|玉陵|玉南|玉高|附中/.test(query)) {
+  // Exact athlete digests first (near-homonym safe)
+  if (/高田麻那/.test(q)) {
+    push("out-analysis/athletes/takada-mana.md");
+    push("sb/SBデータベース.csv");
+  }
+  if (
+    /3000m|3000ｍ/.test(q) &&
+    /速い|一番|最速|ランキング|SB|自己ベスト|荒玉/.test(q)
+  ) {
+    push("out-analysis/2026_aragyoku_men_3000m_sb_ranking.md");
+  }
+  if (
+    /1500m|1500ｍ/.test(q) &&
+    /トップ\s*20|ランキング|SB|自己ベスト|荒玉/.test(q)
+  ) {
+    push("out-analysis/2026_aragyoku_men_1500m_sb_individual_top20.md");
+  }
+  if (/\bATRC\b|ＡＴＲＣ/.test(q) && /記録|全記録|一覧|SB|タイム|選手/.test(q)) {
+    push("out-analysis/arato-tamana-teams/ATRC.md");
+    push("drive-text/personal/ATRC.md");
+  }
+  if (/荒尾|玉名|金栗|岱明|南関|天水|長洲|ATRC|アスリーツ|玉東|有明|荒尾三|荒尾四|海陽|玉陵|玉南|玉高|附中/.test(q)) {
     push("out-analysis/arato-tamana-teams");
   }
   push("sb/中学生SB.csv");
+  push("sb/SBデータベース.csv");
   push("sb/");
   // Named athlete PB → stick to SB CSV (avoid 3000m予想ランキング drowning short names)
-  const named = extractAthleteNameHints(query).length > 0;
+  const named = extractAthleteNameHints(q).length > 0;
   if (!named) {
     for (const s of findSourcesContaining(["SB", "記録"], {
       prefix: "drive-text/記録データベース/",
@@ -285,6 +323,10 @@ function boostMeetYearSources(
     const courseMeta =
       /ペース|距離|区間|コース|\/km|分でいく|分で走/.test(expandedQuery) &&
       !lineOpsPrefer;
+    if (/2位まで|2位以内|総合2位|優勝.*回数|回数/.test(expandedQuery)) {
+      push("out-analysis/aragyoku_top2_finish_counts.md");
+      push("aragyoku/winners-by-year.md");
+    }
     if (courseMeta) {
       // 概要・距離定義を先頭に（区間ペース質問で結果板ノイズに埋もれないように）
       push("out-analysis/aragyoku-overview.md");

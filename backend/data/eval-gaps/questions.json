@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "total": 50,
-  "unique": 50,
+  "total": 55,
+  "unique": 55,
   "defaultYear": 2026,
   "note": "Cross-corpus gaps beyond LINE: practice, aragyoku distances, Norwegian/GZ, course videos, weather ops, rankings",
   "rounds": [
@@ -904,6 +904,119 @@
             "any_of": [
               "対象外",
               "天気"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "theme": "name-disambiguation-rankings",
+      "questions": [
+        {
+          "id": "nr01",
+          "q": "高田麻那の記録",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "5:21.76",
+              "11:05.84",
+              "文徳"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "takada-mana",
+              "SBデータベース"
+            ]
+          }
+        },
+        {
+          "id": "nr02",
+          "q": "荒玉駅伝の2位までに入ったことがある学校と回数",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "玉名",
+              "15",
+              "荒尾三",
+              "9"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "top2_finish_counts"
+            ]
+          }
+        },
+        {
+          "id": "nr03",
+          "q": "荒玉地区で3000mが1番速いのは？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "隈部侑成",
+              "8:54.61"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "3000m_sb_ranking"
+            ]
+          }
+        },
+        {
+          "id": "nr04",
+          "q": "今年の荒玉地区の男子1500mSBランキングトップ20",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "隈部侑成",
+              "4:11.60",
+              "石川隼"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "1500m_sb_individual_top20"
+            ]
+          }
+        },
+        {
+          "id": "nr05",
+          "q": "ATRCの選手の全記録",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "ATRC",
+              "石川隼",
+              "米谷慶吾",
+              "800m"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "arato-tamana-teams/ATRC"
             ]
           }
         }

@@ -167,9 +167,25 @@ describe("extractAthleteNameHints", () => {
     expect(extractAthleteNameHints("森の3000m自己ベストは？")).toContain("森");
   });
 
+  it("extracts full CJK athlete names before の記録", () => {
+    expect(extractAthleteNameHints("高田麻那の記録")).toContain("高田麻那");
+  });
+
   it("ignores temporal pronouns", () => {
     expect(extractAthleteNameHints("今の自己ベストは？")).not.toContain("今");
     expect(extractAthleteNameHints("最新の自己ベストは？")).not.toContain("最新");
+  });
+});
+
+describe("near-homonym name scoring", () => {
+  it("boosts exact name and penalizes same-family different given name", async () => {
+    const { csvNameRowBoost, nearHomonymNamePenalty } = await import("../src/rag/retrieve.js");
+    const mana = "高田麻那";
+    const mayuText = "高田麻由,岱明中,女子,中学生,,4:50.00";
+    const manaText = "高田麻那,文徳高,女子,高校生,,5:21.76,,11:05.84";
+    expect(csvNameRowBoost(manaText, [mana])).toBeGreaterThan(100);
+    expect(nearHomonymNamePenalty(mayuText, [mana])).toBeLessThan(0);
+    expect(nearHomonymNamePenalty(manaText, [mana])).toBe(0);
   });
 });
 
