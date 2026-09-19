@@ -63,6 +63,14 @@ Webhook は `POST /webhook`。LINE 実機検証には [ngrok](https://ngrok.com/
 3. Deploy 後、Webhook URL: `https://idaten-line-backend.vercel.app/webhook`
 4. LINE Developers で Webhook を有効化し Verify
 
+ローカルで CLI を使うときは、誤って別名プロジェクト（例: `backend`）にリンクしないこと。
+
+```bash
+cd backend
+npx vercel link --yes --project idaten-line-backend --scope tatsukitsuchiyama-gmailcoms-projects
+# → .vercel/project.json の projectName が idaten-line-backend であること
+```
+
 既存の `web/` 用 Vercel プロジェクトとは **分けて**運用します。
 
 ## コーパス規約
