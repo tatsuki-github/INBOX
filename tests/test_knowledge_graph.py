@@ -147,6 +147,34 @@ def test_query_routes_kanaguri_project_not_nagomi():
     assert not any("なごみ" in (n.get("label") or "") for n in top)
 
 
+def test_query_routes_unnamed_leg_not_start_list():
+    graph = build_knowledge_graph(generated_at="2026-01-01T00:00:00Z")
+    result = query_knowledge_graph(
+        "案浦竜士は何区を走った？",
+        graph=graph,
+        include_context=False,
+    )
+    joined = " ".join(result["refs"])
+    assert "aragyoku-teams" in joined
+    first = result["refs"][0] if result["refs"] else ""
+    assert "スタートリスト" not in first
+    assert "通信陸上" not in first
+
+
+def test_query_routes_nagomi_order_not_kanaguri_ekiden():
+    graph = build_knowledge_graph(generated_at="2026-01-01T00:00:00Z")
+    result = query_knowledge_graph(
+        "なごみ駅伝の岱明男子1区は誰？",
+        graph=graph,
+        include_context=False,
+    )
+    joined = " ".join(result["refs"])
+    assert "なごみ" in joined
+    first = result["refs"][0] if result["refs"] else ""
+    assert "0315_金栗駅伝" not in first
+    assert "金栗記念" not in first
+
+
 def test_schema_validation_if_jsonschema_available():
     jsonschema = pytest.importorskip("jsonschema")
     schema = json.loads((ROOT / "schemas" / "knowledge-graph.schema.json").read_text(encoding="utf-8"))

@@ -7,6 +7,8 @@ import { readFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { mapRefsToCorpusSources } from "./mapRefs.js";
+import { isLegAthleteQuestion } from "../domain/legs.js";
+import { isKanaguriEkidenQuestion, isNagomiMeetQuestion } from "../domain/meets.js";
 
 export type KgNode = {
   id: string;
@@ -86,13 +88,9 @@ export function tokenizeKg(text: string): string[] {
   return out;
 }
 
-/** Lowercased query: 金栗PROJECT 所属 vs 金栗駅伝（なごみ） */
+/** Lowercased query: 金栗PROJECT 所属 vs なごみ大会 */
 function isKanaguriProjectQuery(q: string): boolean {
   return /金栗project|金栗プロジェクト/.test(q);
-}
-
-function isNagomiMeetQuery(q: string): boolean {
-  return /なごみ/.test(q) || (/金栗/.test(q) && !isKanaguriProjectQuery(q));
 }
 
 function scoreNode(node: KgNode, qTokens: string[], query: string): number {
@@ -145,16 +143,18 @@ function scoreNode(node: KgNode, qTokens: string[], query: string): number {
       score -= 18;
     }
   }
-  // 金栗駅伝 = なごみ。金栗PROJECT は所属トラック正本でありなごみではない
+  // なごみ大会 ≠ 金栗駅伝 ≠ 金栗記念 ≠ 金栗PROJECT
   const kanaguriProjectQ = isKanaguriProjectQuery(q);
-  const nagomiQ = isNagomiMeetQuery(q);
-  if (nagomiQ) {
-    const nagomiBlob =
-      /なごみ/.test(blob) || (/金栗/.test(blob) && !/金栗project|金栗プロジェクト/.test(blob));
-    if (nagomiBlob) score += 22;
-    if (/aragyoku|荒玉|ekiden-ocr|winners-by-year/.test(blob) && !/なごみ|金栗/.test(blob)) {
+  if (isNagomiMeetQuestion(query)) {
+    if (/なごみ/.test(blob)) score += 22;
+    if (/金栗駅伝|金栗記念/.test(blob) && !/なごみ/.test(blob)) score -= 20;
+    if (/aragyoku|荒玉|ekiden-ocr|winners-by-year/.test(blob) && !/なごみ/.test(blob)) {
       score -= 18;
     }
+  }
+  if (isKanaguriEkidenQuestion(query)) {
+    if (/金栗駅伝/.test(blob)) score += 22;
+    if (/なごみ大会|なごみ/.test(blob) && !/金栗駅伝/.test(blob)) score -= 16;
   }
   if (kanaguriProjectQ && /金栗project|金栗プロジェクト|arato-tamana-teams/.test(blob)) {
     score += 18;
@@ -178,6 +178,21 @@ function scoreNode(node: KgNode, qTokens: string[], query: string): number {
   }
   if (/トラック/.test(q) && /1周|一周|周長|何メートル|何ｍ/.test(q) && /kpace|data-model|560/.test(blob)) {
     score += 14;
+  }
+  if (isLegAthleteQuestion(query)) {
+    if (isNagomiMeetQuestion(query)) {
+      if (/なごみ/.test(blob) && /オーダー|区間/.test(blob)) score += 20;
+      if (/なごみ/.test(blob)) score += 18;
+      if (/aragyoku-teams|focus_teams/.test(blob)) score -= 16;
+    } else if (!/ジュニア/.test(q)) {
+      if (/aragyoku-teams|focus_teams/.test(blob)) score += 18;
+      if (
+        /スタートリスト|タイムテーブル|通信陸上/.test(blob) &&
+        !/aragyoku-teams|focus_teams/.test(blob)
+      ) {
+        score -= 16;
+      }
+    }
   }
   if (nodeType !== "Athlete" && nodeType !== "MediaAsset" && q && blob.includes(q)) score += 5;
   if (score <= 0) return 0;

@@ -1,6 +1,8 @@
 import { readFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
+import { isLegAthleteQuestion } from "../domain/legs.js";
+import { isKanaguriEkidenQuestion, isNagomiMeetQuestion } from "../domain/meets.js";
 
 export type RagChunk = {
   id: string;
@@ -136,6 +138,10 @@ export function extractAthleteNameHints(query: string): string[] {
       "giu",
     ),
   )) {
+    push(m[1]!);
+  }
+  // 「案浦竜士は何区を走った？」「倉田裕斗は2025年何区？」
+  for (const m of q.matchAll(new RegExp(`(${nameTok})は.{0,20}何区`, "gu"))) {
     push(m[1]!);
   }
   return hints;
@@ -278,6 +284,9 @@ export class Bm25Retriever {
       const chunk = this.chunks[i]!;
       score += csvNameRowBoost(chunk.text, nameHints);
       score += nearHomonymNamePenalty(chunk.text, nameHints);
+      for (const name of nameHints) {
+        if (name.length >= 2 && chunk.text.includes(name)) score += 120;
+      }
       const lower = chunk.text.toLowerCase();
       const sourceLower = chunk.source.toLowerCase();
       for (const t of qTokens) {
@@ -354,8 +363,34 @@ export function findSourcesContaining(
   for (const chunk of index.chunks) {
     const base = chunkBaseSource(chunk.source);
     if (!base.startsWith(prefix)) continue;
+    if (base.includes(".meta.json")) continue;
     const lower = base.toLowerCase();
     if (!tokens.some((t) => t && lower.includes(t.toLowerCase()))) continue;
+    if (seen.has(base)) continue;
+    seen.add(base);
+    found.push(base);
+    if (found.length >= limit) break;
+  }
+  return found;
+}
+
+/** Find corpus sources whose chunk text contains any needle (not path tokens). */
+export function findSourcesWithText(
+  needles: string[],
+  opts?: { prefix?: string; path?: string; limit?: number },
+): string[] {
+  const tokens = needles.map((n) => n.trim()).filter((n) => n.length >= 2);
+  if (tokens.length === 0) return [];
+  const path = opts?.path ?? defaultIndexPath();
+  const prefix = opts?.prefix ?? "";
+  const limit = opts?.limit ?? 8;
+  const index = loadIndex(path);
+  const found: string[] = [];
+  const seen = new Set<string>();
+  for (const chunk of index.chunks) {
+    const base = chunkBaseSource(chunk.source);
+    if (prefix && !base.startsWith(prefix)) continue;
+    if (!tokens.some((t) => chunk.text.includes(t))) continue;
     if (seen.has(base)) continue;
     seen.add(base);
     found.push(base);
@@ -471,7 +506,16 @@ function pathQueryBonus(source: string, query: string): number {
   const s = source;
   let bonus = 0;
   if (/ジュニア/.test(q) && s.includes("ジュニア")) bonus += 120;
-  if (/なごみ|金栗/.test(q) && /なごみ|金栗/.test(s)) bonus += 120;
+  if (isNagomiMeetQuestion(q) && /なごみ/.test(s)) bonus += 120;
+  if (
+    isNagomiMeetQuestion(q) &&
+    /区間オーダーリスト/.test(s) &&
+    /オーダー|\d区|何区|誰/.test(q)
+  ) {
+    bonus += 200;
+  }
+  if (isKanaguriEkidenQuestion(q) && /金栗駅伝/.test(s)) bonus += 120;
+  if (/金栗記念/.test(q) && !isNagomiMeetQuestion(q) && /金栗記念/.test(s)) bonus += 120;
   if (/荒玉|aragyoku|中体連/.test(q) && /aragyoku|荒玉|ekiden-ocr|aragyoku-teams/.test(s)) bonus += 80;
   if (
     /荒玉|aragyoku|中体連/.test(q) &&
@@ -517,11 +561,8 @@ function pathQueryBonus(source: string, query: string): number {
     bonus += 140;
   }
   if (/荒尾|玉名|金栗PROJECT|アスリーツ|所属別/.test(q) && /arato-tamana-teams/.test(s)) bonus += 100;
-  // 「○区は誰」結果質問では LINE を上げない（2区/5区距離メモと衝突するため）
-  const legAthleteQ =
-    !/地点分担|2\.855|朝練|銀マット|タイム目安|43分|区間配分|補強メニュー/.test(q) &&
-    (/\d区は誰|\d区の選手|\d区ランナー|何区は誰|区間選手/.test(q) ||
-      (/\d区/.test(q) && /誰|選手|ランナー|走った|区間タイム|区間順/.test(q)));
+  // 「○区は誰」「何区を走った」結果質問では LINE を上げない（2区/5区距離メモと衝突するため）
+  const legAthleteQ = isLegAthleteQuestion(q);
   if (
     !legAthleteQ &&
     /岱明|いだてん|銀マット|合同練習|おおはま|三加和|朝練|ナイター|和水|有田|補強|手押し車|犬歩き|分割走|厚底|地点分担|地点|土山コーチ|柴尾|曜日|集合時間|タイム目安|43分|区間配分|2\.855|2区.*5区|5区.*2区|お別れ会|金栗駅伝|走り納め|体育館前|補強メニュー/.test(
@@ -553,10 +594,12 @@ function pathQueryBonus(source: string, query: string): number {
   }
   if (
     legAthleteQ &&
-    /荒玉|駅伝|男子|女子|20\d{2}/.test(q) &&
     /aragyoku-teams\/|aragyoku_2024_2025_focus_teams|ekiden-ocr|aragyoku\/transcripts/.test(s)
   ) {
     bonus += 200;
+  }
+  if (legAthleteQ && /スタートリスト|タイムテーブル|通信陸上/.test(s)) {
+    bonus -= 240;
   }
   if (
     /地点分担|タイム目安|43分切り|区間配分イメージ|有田|補強メニュー|2区.*5区|5区.*2区/.test(q) &&
@@ -678,6 +721,9 @@ function pathQueryPenalty(source: string, query: string): number {
   if (/ジュニア|なごみ|金栗/.test(q) && (/aragyoku|ekiden-ocr/.test(source))) {
     return -100;
   }
+  if (isNagomiMeetQuestion(q) && /aragyoku-teams|focus_teams/.test(source)) {
+    return -200;
+  }
   // 高田麻那 ≠ 岱明の同姓別人: demote 岱明/駅伝板 when asking for 麻那
   if (/高田麻那/.test(q) && !/takada-mana|SBデータベース/.test(source)) {
     if (/岱明中|aragyoku\/|ekiden-ocr\/|ocr_raw|women_800m_1500m/.test(source)) {
@@ -693,13 +739,15 @@ function pathQueryPenalty(source: string, query: string): number {
     return -120;
   }
   // Race-leg athlete Q: demote LINE ops digests that mention 2区/5区距離
-  if (
-    /line-chats/.test(source) &&
-    !/地点分担|2\.855|朝練|銀マット|タイム目安|43分|区間配分|補強メニュー/.test(q) &&
-    (/\d区は誰|\d区の選手|\d区ランナー|何区は誰|区間選手/.test(q) ||
-      (/\d区/.test(q) && /誰|選手|ランナー|走った|区間タイム|区間順/.test(q)))
-  ) {
+  if (/line-chats/.test(source) && isLegAthleteQuestion(q)) {
     return -220;
+  }
+  if (
+    isLegAthleteQuestion(q) &&
+    !/ジュニア|なごみ|金栗|通信大会|通信陸上/.test(q) &&
+    /スタートリスト|タイムテーブル|通信陸上/.test(source)
+  ) {
+    return -240;
   }
   // 優勝差・学校別平均は meet_records / SB CSV より分析正本へ
   if (
@@ -731,6 +779,15 @@ function pathQueryPenalty(source: string, query: string): number {
 function isBlockedCorpusForQuery(source: string, query: string): boolean {
   if (!query) return false;
   const q = query.normalize("NFKC");
+  if (/\.meta\.json/.test(source)) return true;
+  // 大会名なしの区間選手質問: 通信陸上スタートリストは正本ではない
+  if (
+    isLegAthleteQuestion(q) &&
+    !/ジュニア|なごみ|金栗四三|通信大会|通信陸上/.test(q) &&
+    /スタートリスト|タイムテーブル|通信陸上/.test(source)
+  ) {
+    return true;
+  }
   // 区間賞・区間順位: 分析深掘り・優勝表・歴代記録ボードは正本と混同しやすいので除外
   if (
     /区間賞|区間1位|区間一位|区間順/.test(q) &&
@@ -766,7 +823,12 @@ function isBlockedCorpusForQuery(source: string, query: string): boolean {
   ) {
     return true;
   }
-  if (!(/ジュニア|なごみ|金栗/.test(q) && !/荒玉|aragyoku|中体連/.test(q))) {
+  const namedNonAragyoku =
+    /ジュニア/.test(q) ||
+    isNagomiMeetQuestion(q) ||
+    isKanaguriEkidenQuestion(q) ||
+    /金栗記念/.test(q);
+  if (!(namedNonAragyoku && !/荒玉|aragyoku|中体連/.test(q))) {
     return false;
   }
   if (
@@ -787,7 +849,9 @@ function isBlockedCorpusForQuery(source: string, query: string): boolean {
   // Wrong meet folder under drive-text/大会 (岱明の結果 is common across meets)
   if (/drive-text\/大会/.test(source)) {
     if (/ジュニア/.test(q) && !/ジュニア/.test(source)) return true;
-    if (/なごみ|金栗/.test(q) && !/ジュニア/.test(q) && !/なごみ|金栗/.test(source)) return true;
+    if (isNagomiMeetQuestion(q) && !/なごみ/.test(source)) return true;
+    if (isKanaguriEkidenQuestion(q) && !/金栗駅伝/.test(source)) return true;
+    if (/金栗記念/.test(q) && !isNagomiMeetQuestion(q) && !/金栗記念/.test(source)) return true;
   }
   return false;
 }
@@ -808,10 +872,10 @@ function isBlockedChunkForQuery(chunk: { source: string; text: string }, query: 
     return true;
   }
   if (
-    /なごみ|金栗/.test(q) &&
+    isNagomiMeetQuestion(q) &&
     !/ジュニア/.test(q) &&
     /荒玉中体連|winners-by-year/.test(chunk.text) &&
-    !/なごみ|金栗/.test(chunk.source)
+    !/なごみ/.test(chunk.source)
   ) {
     return true;
   }
@@ -839,6 +903,19 @@ function digestPinForQuery(chunk: RagChunk, query: string): number {
   }
   if (/区間賞|区間1位|区間一位|区間順/.test(qn) && /aragyoku_leg_awards/.test(base)) {
     return 900;
+  }
+  if (isNagomiMeetQuestion(qn) && /区間オーダーリスト/.test(base) && /オーダー|\d区|何区|誰/.test(qn)) {
+    return 800;
+  }
+  if (
+    isLegAthleteQuestion(qn) &&
+    !isNagomiMeetQuestion(qn) &&
+    !/ジュニア/.test(qn) &&
+    /aragyoku-teams\/[^/]+\.md$|focus_teams/.test(base)
+  ) {
+    const names = extractAthleteNameHints(qn);
+    if (names.some((n) => chunk.text.includes(n))) return 700;
+    return 200;
   }
   if (/トラック/.test(qn) && /1周|一周|周長|何メートル/.test(qn)) {
     if (/daiming-practice-menus-kpace|data-model\.md/.test(chunk.source)) {

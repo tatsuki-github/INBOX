@@ -2,6 +2,7 @@ import { classifyScope, OUT_OF_SCOPE_MESSAGE } from "./scope.js";
 import { expandDateQuery, parseDateMentions, resolveRelativeYears } from "./dates.js";
 import { matchCannedAnswer } from "./canned.js";
 import { matchClarifyAnswer } from "./clarify.js";
+import { isLegAthleteQuestion } from "./legs.js";
 import {
   detectMeetKind,
   isAragyokuCorpusSource,
@@ -18,6 +19,7 @@ import {
   expandWithNeighbors,
   extractAthleteNameHints,
   findSourcesContaining,
+  findSourcesWithText,
   isExhaustiveListQuery,
   mergeRetrieved,
   retrieveBySources,
@@ -60,18 +62,6 @@ function finalizeAnswerText(
     entries: deps.meetResultUrls,
     defaultYear: deps.defaultYear ?? new Date().getFullYear(),
   });
-}
-
-/** Race-result 「○区は誰」— not LINE ops about 2区/5区距離. */
-function isLegAthleteQuestion(question: string): boolean {
-  const q = question.normalize("NFKC");
-  if (/地点分担|2\.855|朝練|銀マット|タイム目安|43分|区間配分|補強メニュー/.test(q)) {
-    return false;
-  }
-  return (
-    /\d区は誰|\d区の選手|\d区ランナー|何区は誰|区間選手/.test(q) ||
-    (/\d区/.test(q) && /誰|選手|ランナー|走った|区間タイム|区間順/.test(q))
-  );
 }
 
 function offlinePreviewBudget(question: string): number {
@@ -178,6 +168,25 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
           const yIdx = flat.lastIndexOf(y, idx);
           if (yIdx >= 0 && yIdx > idx - 400) start = Math.max(0, yIdx - 20);
         }
+        return flat.slice(start, Math.min(flat.length, start + budget));
+      }
+    }
+  }
+  // 「案浦竜士は何区を走った？」→ `| N | 案浦竜士 |` を N区 として明示
+  if (isLegAthleteQuestion(q) && /何区/.test(q)) {
+    const who = q.match(/([\u3400-\u9fff]{2,8})は.{0,20}何区/);
+    if (who) {
+      const name = who[1]!;
+      const escaped = name.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+      const row = flat.match(new RegExp(`\\|\\s*([1-6])\\s*\\|\\s*${escaped}`));
+      if (row && row.index != null) {
+        const start = Math.max(0, row.index - 80);
+        const window = flat.slice(start, Math.min(flat.length, start + budget));
+        return `${row[1]}区 ${name}。 ${window}`;
+      }
+      const phrase = flat.match(new RegExp(`([1-6])区\\s*${escaped}`));
+      if (phrase && phrase.index != null) {
+        const start = Math.max(0, phrase.index - 40);
         return flat.slice(start, Math.min(flat.length, start + budget));
       }
     }
@@ -551,22 +560,34 @@ function boostMeetYearSources(
   };
 
   const kind: MeetKind = detectMeetKind(expandedQuery);
-  const years = resolveRelativeYears(expandedQuery, defaultYear);
+  let years = resolveRelativeYears(expandedQuery, defaultYear);
+  const nagomiOrderQ =
+    kind === "nagomi" &&
+    /オーダー|\d区|何区|区は誰|ランナー/.test(expandedQuery) &&
+    !/結果/.test(expandedQuery);
+  if (years.length === 0 && nagomiOrderQ) {
+    years = [defaultYear];
+  }
   const driveTokens = meetDriveTokens(kind, expandedQuery);
+  const legAthleteQ = isLegAthleteQuestion(expandedQuery);
 
   if (driveTokens.length > 0 && kind !== "aragyoku") {
     const driveHits = sortMeetDriveSources(
-      findSourcesContaining(driveTokens, { prefix: "drive-text/大会/", limit: 16 }),
+      findSourcesContaining(driveTokens, { prefix: "drive-text/大会/", limit: 24 }),
       expandedQuery,
     );
     for (const s of driveHits) {
+      if (/\.meta\.json/.test(s)) continue;
       if (years.length === 0 || years.some((y) => s.includes(String(y)) || s.includes(`${y}年度`))) {
         push(s);
       }
     }
     // If year filter emptied the list (path uses 年度 folder), retry without year filter
     if (out.length === 0) {
-      for (const s of driveHits) push(s);
+      for (const s of driveHits) {
+        if (/\.meta\.json/.test(s)) continue;
+        push(s);
+      }
     }
   }
 
@@ -601,10 +622,17 @@ function boostMeetYearSources(
       push("out-analysis/aragyoku_top6_historical_average_pace.md");
       push("docs/aragyoku-ekiden-distance-definitions.md");
     }
-    // 「○区は誰」は距離質問ではない（区間キーワードだけで overview に流さない）
-    const legAthleteQ =
-      /\d区は誰|\d区の選手|何区は誰|区間選手/.test(expandedQuery) ||
-      (/区/.test(expandedQuery) && /誰|選手名/.test(expandedQuery));
+    // 「○区は誰」「何区を走った」は距離質問ではない
+    if (legAthleteQ) {
+      const names = extractAthleteNameHints(expandedQuery);
+      for (const s of findSourcesWithText(names, {
+        prefix: "out-analysis/aragyoku-teams/",
+        limit: 4,
+      })) {
+        push(s);
+      }
+      push("out-analysis/aragyoku_2024_2025_focus_teams.md");
+    }
     const focusTeamAnalysis =
       /岱明|玉名付属|玉名附属|玉高附属|天水|有明/.test(expandedQuery) &&
       /2024|2025|前年比|深掘り|分析|何位|短縮|区間新|荒玉|優勝との差|優勝差|優勝から/.test(
@@ -676,18 +704,16 @@ function boostMeetYearSources(
     }
     if (!lineOpsPrefer) {
       // Prefer exact team file already pushed; hub only when not a per-team history Q
-      if (
-        !legAwardQ &&
-        !(/過去|歴代|順位/.test(expandedQuery) && out.some((s) => s.includes("aragyoku-teams/")))
-      ) {
+      if (!legAwardQ && !legAthleteQ && !out.some((s) => /aragyoku-teams\/[^/]+\.md$/.test(s))) {
         push("out-analysis/aragyoku-teams");
       }
-      if (!legAwardQ) {
+      if (!legAwardQ && !legAthleteQ) {
         push("aragyoku/winners-by-year.md");
       }
       for (const y of years) {
         for (const g of ["男子", "女子"] as const) {
           // 区間賞質問では transcript JSON を二次ソースとして残す（学年・名前の突合用）
+          if (legAthleteQ) continue;
           push(`aragyoku/transcripts/${y}-${g}.json`);
           if (!legAwardQ) {
             push(`aragyoku/ocr_raw/${y}-${g}.md`);
@@ -695,7 +721,7 @@ function boostMeetYearSources(
           }
         }
       }
-      if (years.length === 0 && !courseMeta && !legAwardQ) {
+      if (years.length === 0 && !courseMeta && !legAwardQ && !legAthleteQ) {
         push("aragyoku");
         if (!out.some((s) => /aragyoku-teams\/[^/]+\.md$/.test(s))) {
           push("out-analysis/aragyoku-teams");
@@ -713,6 +739,9 @@ function boostMeetYearSources(
       expandedQuery,
     );
   for (const s of rest) {
+    if (legAthleteQ) {
+      continue;
+    }
     if (
       lineOpsPreferRest &&
       /aragyoku-overview|aragyoku-ekiden-distance|average_pace|all_teams_average_pace|course-videos|aragyoku\/quiz|winners-by-year|aragyoku\/transcripts|ekiden-ocr/.test(
@@ -895,7 +924,7 @@ export async function answerQuestion(
     fromSources,
     fromBm25,
     exhaustive ? Math.max(topK, fromSources.length, 96) : topK,
-    { query: expanded, preferPrimaryOrder: exhaustive },
+    { query: expanded, preferPrimaryOrder: exhaustive || isLegAthleteQuestion(expanded) },
   );
   const withNeighbors = expandWithNeighbors(mergedCore, {
     radius: exhaustive ? 0 : RETRIEVAL_BUDGET.neighborRadius,

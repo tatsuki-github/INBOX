@@ -95,6 +95,14 @@ describe("queryKnowledgeGraph", () => {
     expect(result.corpus_sources.some((s) => s.includes("aragyoku-teams/菊水.md"))).toBe(true);
   });
 
+  it("routes なごみ 1区 questions to なごみ大会, not 金栗駅伝", () => {
+    resetKgCache();
+    const result = queryKnowledgeGraph("なごみ駅伝の岱明男子1区は誰？", { kgPath });
+    const blob = [...result.corpus_sources, ...result.refs].join("\n");
+    expect(blob).toMatch(/なごみ/);
+    expect(result.corpus_sources[0] ?? "").not.toMatch(/0315_金栗駅伝|金栗記念/);
+  });
+
   it("routes 金栗PROJECT full records to arato-tamana digest, not nagomi hubs", () => {
     resetKgCache();
     const result = queryKnowledgeGraph("金栗PROJECT所属選手の全記録", { kgPath });
@@ -104,6 +112,14 @@ describe("queryKnowledgeGraph", () => {
     const top = result.matched_nodes.slice(0, 8);
     expect(top.some((n) => /なごみ/.test(n.label))).toBe(false);
     expect(result.refs.slice(0, 12).some((r) => r.includes("なごみ"))).toBe(false);
+  });
+
+  it("routes unnamed 何区を走った to aragyoku team digests not スタートリスト", () => {
+    resetKgCache();
+    const result = queryKnowledgeGraph("案浦竜士は何区を走った？", { kgPath });
+    const blob = [...result.corpus_sources, ...result.refs].join("\n");
+    expect(blob).toMatch(/aragyoku-teams/);
+    expect(result.corpus_sources[0] ?? "").not.toMatch(/スタートリスト|通信陸上/);
   });
 
   it("routes track lap questions to practice menus digest", () => {

@@ -22,3 +22,4 @@ crush100-v4 は「荒玉駅伝」付きかつ 1–3 区中心だったため、�
 
 - 地点分担・2.855 距離・朝練の質問は従来どおり line-chats を優先。
 - 短縮形「○年○校○区は誰」は aragyoku-teams / focus が勝つ。
+- 大会名なしの「何区を走った」は [ADR 047](047-unnamed-leg-athlete-routing.md)。

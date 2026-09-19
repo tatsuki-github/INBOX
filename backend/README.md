@@ -115,5 +115,7 @@ npx vercel link --yes --project idaten-line-backend --scope tatsukitsuchiyama-gm
 - [ADR 015](../docs/adr/015-line-idaten-qa-backend.md)
 - [ADR 016](../docs/adr/016-kg-first-idaten-qa.md)
 - [ADR 046](../docs/adr/046-kg-analysis-digest-routing.md)（分析ダイジェストの KG 誘導）
+- [ADR 047](../docs/adr/047-unnamed-leg-athlete-routing.md)（大会名なしの区間選手質問）
+- [ADR 048](../docs/adr/048-nagomi-order-not-kanaguri-ekiden.md)（なごみオーダー ≠ 金栗駅伝）
 - [ADR 018](../docs/adr/018-line-denied-user-ids.md)（userId 拒否リスト）
 - [Phase 0](../docs/implementation-flow/line-idaten-bot/phase-0.md)

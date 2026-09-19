@@ -495,6 +495,17 @@ QUERY_HINTS: list[tuple[str, str, list[str]]] = [
         ],
     ),
     (
+        "選手は何区を走った？",
+        "大会名なしの区間は荒玉チーム正本。スタートリストや通信陸上の出走表ではない",
+        [
+            "topic:ekiden",
+            "source:out/analysis/aragyoku_2024_2025_focus_teams.md",
+            "source:out/analysis/aragyoku-teams/INDEX.md",
+            "corpus:out-analysis",
+            "corpus:aragyoku",
+        ],
+    ),
+    (
         "〇〇中の荒玉駅伝の過去の順位は？",
         "out/analysis/aragyoku-teams/{チーム}.md。玉名付属=玉高附属。区間選手も含む",
         [
@@ -654,13 +665,27 @@ QUERY_HINTS: list[tuple[str, str, list[str]]] = [
     ),
     (
         "なごみ駅伝は？",
-        "drive-text/大会/*/0920_*なごみ* または 0921_*なごみ* の開催要項・結果を見る。荒玉・aragyoku は使わない",
+        "drive-text/大会/*/0920_*なごみ* または 0921_*なごみ* の開催要項・結果・区間オーダーを見る。"
+        "金栗駅伝・金栗記念は別大会。荒玉・aragyoku は使わない",
         [
             "topic:ekiden",
             "topic:calendar",
             "corpus:drive-text",
             "corpus:calendar",
             "source:input/events.2026.yaml",
+            "source:input/idaten-corpus/drive-text/大会/2026年度/0920_中学駅伝金栗四三生誕の地なごみ大会/男子区間オーダーリスト.md",
+            "source:input/idaten-corpus/drive-text/大会/2026年度/0920_中学駅伝金栗四三生誕の地なごみ大会/女子区間オーダーリスト.md",
+        ],
+    ),
+    (
+        "なごみ駅伝の区間オーダーは？",
+        "drive-text/大会/2026年度/0920_*なごみ*/男子区間オーダーリスト.md と 女子区間オーダーリスト.md を優先。"
+        "金栗駅伝・金栗記念は別大会。荒玉は使わない",
+        [
+            "topic:ekiden",
+            "corpus:drive-text",
+            "source:input/idaten-corpus/drive-text/大会/2026年度/0920_中学駅伝金栗四三生誕の地なごみ大会/男子区間オーダーリスト.md",
+            "source:input/idaten-corpus/drive-text/大会/2026年度/0920_中学駅伝金栗四三生誕の地なごみ大会/女子区間オーダーリスト.md",
         ],
     ),
     (
@@ -727,7 +752,7 @@ QUERY_HINTS: list[tuple[str, str, list[str]]] = [
     (
         "オーダー・区間は？",
         "荒玉の区間・オーダーなら荒玉戦略 Notion・分析 OCR・歴代 OCR。"
-        "ジュニア・なごみなら該大会フォルダのプログラム・結果を見る",
+        "なごみなら該大会フォルダの区間オーダーリスト（金栗駅伝は別）。ジュニアは該大会フォルダ",
         [
             "topic:ekiden",
             "topic:athlete_records",

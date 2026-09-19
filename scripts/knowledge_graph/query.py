@@ -47,6 +47,19 @@ def load_graph(path: Path | None = None) -> dict[str, Any]:
     return build_knowledge_graph()
 
 
+def _is_leg_athlete_question(query: str) -> bool:
+    q = query
+    if re.search(r"地点分担|2\.855|朝練|銀マット|タイム目安|43分|区間配分|補強メニュー", q):
+        return False
+    if re.search(r"距離は|何キロ", q) and not re.search(r"誰|選手|ランナー|走った", q):
+        return False
+    if re.search(r"(?:何|\d+)区を?走った|は何区(?:を|？|\?|!|！|$)|何区？", q):
+        return True
+    if re.search(r"\d区は誰|\d区の選手|\d区ランナー|何区は誰|区間選手", q):
+        return True
+    return bool(re.search(r"\d区", q) and re.search(r"誰|選手|ランナー|走った|区間タイム|区間順", q))
+
+
 def _score_node(node: dict[str, Any], q_tokens: list[str], query: str) -> float:
     label = (node.get("label") or "").lower()
     node_type = node.get("type", "")
@@ -86,17 +99,20 @@ def _score_node(node: dict[str, Any], q_tokens: list[str], query: str) -> float:
     ):
         score += 10.0
     kanaguri_project_q = "金栗project" in q or "金栗プロジェクト" in q
-    nagomi_q = "なごみ" in q or ("金栗" in q and not kanaguri_project_q)
+    nagomi_q = "なごみ" in q or "金栗四三" in q
+    kanaguri_ekiden_q = "金栗駅伝" in q and "なごみ" not in q and "金栗四三" not in q
     if nagomi_q:
-        nagomi_blob = "なごみ" in blob or (
-            "金栗" in blob and "金栗project" not in blob and "金栗プロジェクト" not in blob
-        )
-        if nagomi_blob:
+        if "なごみ" in blob:
             score += 22.0
-        if any(x in blob for x in ("aragyoku", "荒玉", "ekiden-ocr", "winners-by-year")) and not (
-            "なごみ" in blob or "金栗" in blob
-        ):
+        if any(x in blob for x in ("金栗駅伝", "金栗記念")) and "なごみ" not in blob:
+            score -= 20.0
+        if any(x in blob for x in ("aragyoku", "荒玉", "ekiden-ocr", "winners-by-year")) and "なごみ" not in blob:
             score -= 18.0
+    if kanaguri_ekiden_q:
+        if "金栗駅伝" in blob:
+            score += 22.0
+        if "なごみ" in blob and "金栗駅伝" not in blob:
+            score -= 16.0
     if kanaguri_project_q and any(x in blob for x in ("金栗project", "金栗プロジェクト", "arato-tamana-teams")):
         score += 18.0
     if any(x in q for x in ("玉名付属", "玉名附属", "付属中")) and any(
@@ -122,6 +138,21 @@ def _score_node(node: dict[str, Any], q_tokens: list[str], query: str) -> float:
     if "トラック" in q and any(x in q for x in ("1周", "一周", "周長", "何メートル", "何ｍ")):
         if any(x in blob for x in ("kpace", "data-model", "560")):
             score += 14.0
+    if _is_leg_athlete_question(query):
+        if nagomi_q:
+            if "なごみ" in blob:
+                score += 18.0
+            if "オーダー" in blob or "区間" in blob:
+                score += 8.0
+            if "aragyoku-teams" in blob or "focus_teams" in blob:
+                score -= 16.0
+        elif "ジュニア" not in q:
+            if "aragyoku-teams" in blob or "focus_teams" in blob:
+                score += 18.0
+            if any(x in blob for x in ("スタートリスト", "タイムテーブル", "通信陸上")) and not (
+                "aragyoku-teams" in blob or "focus_teams" in blob
+            ):
+                score -= 16.0
     if score <= 0:
         return 0.0
     boost = {

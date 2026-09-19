@@ -3,13 +3,17 @@
  * Prevents 「ジュニア駅伝」etc. from being treated as 荒玉.
  */
 
+import { isLegAthleteQuestion } from "./legs.js";
+
 export type MeetKind = "aragyoku" | "junior" | "nagomi" | "other" | "none";
 
 const JUNIOR_RE = /ジュニア|県ジュニア/;
-const NAGOMI_RE = /なごみ|金栗四三|金栗/;
+/** なごみ大会。金栗駅伝・金栗記念は別大会なので含めない */
+const NAGOMI_RE = /なごみ|金栗四三/;
 const ARAGYOKU_EXPLICIT_RE = /荒玉|aragyoku|中体連/;
 /** Other named meets that must not fall through to aragyoku boost */
-const OTHER_MEET_RE = /玉名市|記録会|陸上競技|チャレンジカップ|通信大会|新人大会/;
+const OTHER_MEET_RE =
+  /玉名市|記録会|陸上競技|チャレンジカップ|通信大会|通信陸上|新人大会|金栗駅伝|金栗記念/;
 
 export function detectMeetKind(query: string): MeetKind {
   const q = query.trim();
@@ -36,6 +40,9 @@ export function detectMeetKind(query: string): MeetKind {
   ) {
     return "aragyoku";
   }
+
+  // 「案浦竜士は何区を走った？」— unnamed race-leg defaults to club 荒玉, not 通信陸上
+  if (isLegAthleteQuestion(q)) return "aragyoku";
 
   return "none";
 }
@@ -64,6 +71,8 @@ const OTHER_MEET_PATH_PHRASES = [
   "記録会",
   "陸上競技選手権",
   "中長距離",
+  "金栗駅伝",
+  "金栗記念選抜",
   "金栗記念",
   "ジュニアオリンピック",
   "熊本市駅伝",
@@ -91,7 +100,7 @@ export function meetDriveTokens(kind: MeetKind, query = ""): string[] {
     case "junior":
       return ["ジュニア"];
     case "nagomi":
-      return ["なごみ", "金栗"];
+      return ["なごみ"];
     case "aragyoku":
       return ["荒玉", "中体連"];
     case "other":
@@ -101,13 +110,34 @@ export function meetDriveTokens(kind: MeetKind, query = ""): string[] {
   }
 }
 
+/** なごみ大会（金栗四三生誕の地）。金栗駅伝とは別。 */
+export function isNagomiMeetQuestion(query: string): boolean {
+  return NAGOMI_RE.test(query);
+}
+
+/** 3/15 金栗駅伝。なごみ大会を名乗っていないときだけ。 */
+export function isKanaguriEkidenQuestion(query: string): boolean {
+  return /金栗駅伝/.test(query) && !NAGOMI_RE.test(query);
+}
+
 /** Prefer result files when asking about 結果 / 順位 / 岱明成績. */
 export function meetResultPathBoost(source: string, query: string): number {
+  if (/\.meta\.json/.test(source)) return -200;
+  const orderQ = /オーダー|\d区|何区|区は誰|ランナー/.test(query) && !/結果/.test(query);
+  if (orderQ) {
+    let score = 0;
+    if (/区間オーダーリスト/.test(source)) score += 120;
+    else if (/区間オーダー/.test(source) && !/SB予想|coverage/.test(source)) score += 60;
+    if (/SB予想|coverage\.csv|開催要項|プログラム|エントリーリスト/.test(source)) score -= 50;
+    if (/岱明の結果|結果\.pdf|結果\.heic/.test(source)) score -= 40;
+    if (/金栗駅伝|金栗記念/.test(source) && !/なごみ/.test(source)) score -= 80;
+    return score;
+  }
   let score = 0;
   if (/結果|順位|タイム|成績/.test(query) && /結果|岱明の結果/.test(source)) {
     score += 40;
   }
-  if (/岱明/.test(query) && /岱明の結果/.test(source)) {
+  if (/岱明/.test(query) && /岱明の結果/.test(source) && !/オーダー/.test(query)) {
     score += 60;
   }
   return score;

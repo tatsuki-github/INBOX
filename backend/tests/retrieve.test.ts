@@ -175,6 +175,11 @@ describe("extractAthleteNameHints", () => {
     expect(extractAthleteNameHints("今の自己ベストは？")).not.toContain("今");
     expect(extractAthleteNameHints("最新の自己ベストは？")).not.toContain("最新");
   });
+
+  it("extracts names from unnamed 何区 questions", () => {
+    expect(extractAthleteNameHints("案浦竜士は何区を走った？")).toContain("案浦竜士");
+    expect(extractAthleteNameHints("倉田裕斗は2025年何区？")).toContain("倉田裕斗");
+  });
 });
 
 describe("near-homonym name scoring", () => {

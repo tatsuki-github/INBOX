@@ -444,6 +444,23 @@ describe("answerQuestion", () => {
     }
   });
 
+  it("answers なごみ 岱明男子1区 from 2026 order list, not 金栗駅伝", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("なごみ駅伝の岱明男子1区は誰？", {
+      skipRouter: true,
+      defaultYear: 2026,
+      llm: null,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.text).toMatch(/山本\s*哲瑠/);
+      expect(result.text).not.toContain("コーチに直接聞いてください");
+      expect(result.sources.some((s) => /なごみ.*区間オーダーリスト/.test(s))).toBe(true);
+      expect(result.sources[0]).not.toMatch(/金栗駅伝|金栗記念|\.meta\.json/);
+    }
+  });
+
   it("hits SB row for short name without の particle", async () => {
     resetRetrieverCache();
     resetKgCache();
@@ -548,6 +565,40 @@ describe("answerQuestion", () => {
             s.includes("aragyoku-teams/天水"),
         ),
       ).toBe(true);
+    }
+  });
+
+  it("answers 「案浦竜士は何区を走った」from aragyoku team digest not スタートリスト", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("案浦竜士は何区を走った？", {
+      skipRouter: true,
+      defaultYear: 2026,
+      llm: null,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.text).toContain("案浦竜士");
+      expect(result.text).toMatch(/6区/);
+      expect(result.text).not.toContain("コーチに直接聞いてください");
+      expect(result.sources.some((s) => /aragyoku-teams\/岱明|focus_teams/.test(s))).toBe(true);
+      expect(result.sources[0]).not.toMatch(/スタートリスト|通信陸上/);
+    }
+  });
+
+  it("answers 「佐藤央琉は何区」from 岱明 digest as 4区", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("佐藤央琉は何区？", {
+      skipRouter: true,
+      defaultYear: 2026,
+      llm: null,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.text).toContain("佐藤央琉");
+      expect(result.text).toMatch(/4区/);
+      expect(result.sources.some((s) => /aragyoku-teams\/岱明|focus_teams/.test(s))).toBe(true);
     }
   });
 
