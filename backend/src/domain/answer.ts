@@ -82,7 +82,7 @@ function offlinePreviewBudget(question: string): number {
   }
   // Rankings / full team records / win-count tables need wide windows
   if (
-    /ランキング|トップ\s*\d+|全記録|全件|一覧|回数|2位まで|2位以内|最速|一番速|何位|順位|準優勝|優勝校|過去\s*\d+\s*年|過去5年|平均ペース/.test(
+    /ランキング|トップ\s*\d+|全記録|全件|一覧|回数|2位まで|2位以内|最速|一番速|何位|順位|準優勝|優勝校|過去\s*\d+\s*年|過去5年|平均ペース|区間賞|区間順/.test(
       q,
     )
   ) {
@@ -138,6 +138,25 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
         return flat.slice(start, Math.min(flat.length, start + budget));
       }
     }
+  }
+  // 「○年の区間賞」→ 該当年セクションを優先
+  if (/区間賞|区間順/.test(q)) {
+    const years = q.match(/20\d{2}/g) ?? [];
+    const gender = /女子/.test(q) ? "女子" : /男子/.test(q) ? "男子" : "";
+    const needles: string[] = [];
+    for (const y of years) {
+      if (gender) needles.push(`### ${y}年${gender}`);
+      needles.push(`### ${y}年男子`, `### ${y}年女子`);
+    }
+    needles.push("区間賞", "区間別上位");
+    for (const needle of needles) {
+      const idx = flat.indexOf(needle);
+      if (idx >= 0) {
+        const start = Math.max(0, idx - 20);
+        return flat.slice(start, Math.min(flat.length, start + budget));
+      }
+    }
+    return flat.slice(0, budget);
   }
   const isos = question.match(/20\d{2}-\d{2}-\d{2}/g) ?? [];
   for (const iso of isos) {
@@ -557,16 +576,26 @@ function boostMeetYearSources(
         expandedQuery,
       );
     const meetRecordQ =
-      /大会記録|区間記録|ボード.*記録|総合大会記録|記録保持|歴代記録/.test(expandedQuery);
+      /大会記録|区間記録|ボード.*記録|総合大会記録|記録保持|歴代記録/.test(expandedQuery) &&
+      !/区間賞|区間順/.test(expandedQuery);
+    // 「区間賞」「区間順位」は当日結果正本（歴代区間記録ボードとは別）
+    const legAwardQ =
+      /区間賞|区間1位|区間一位|各区.*賞/.test(expandedQuery) ||
+      (/区間順/.test(expandedQuery) && /荒玉|駅伝|\d区|誰|学年|名前/.test(expandedQuery));
+    if (legAwardQ) {
+      push("out-analysis/aragyoku_leg_awards.md");
+    }
     const courseMeta =
       /ペース|距離|コース|\/km|分でいく|分で走/.test(expandedQuery) &&
       !lineOpsPrefer &&
       !meetRecordQ &&
+      !legAwardQ &&
       !/何位|誰|選手|区間新|前年比|分析/.test(expandedQuery);
     // 「〇位の平均ペース」は計算正本（全チーム）を優先（距離概要より先）
     const rankPaceQ =
       (/平均ペース|\/km/.test(expandedQuery) || (/ペース/.test(expandedQuery) && /位/.test(expandedQuery))) &&
-      /荒玉|駅伝|総合|歴代|過去|位/.test(expandedQuery);
+      /荒玉|駅伝|総合|歴代|過去|位/.test(expandedQuery) &&
+      !legAwardQ;
     if (rankPaceQ) {
       push("out-analysis/aragyoku_all_teams_average_pace.md");
       push("out-analysis/aragyoku_top6_historical_average_pace.md");
@@ -580,7 +609,8 @@ function boostMeetYearSources(
       /岱明|玉名付属|玉名附属|玉高附属|天水|有明/.test(expandedQuery) &&
       /2024|2025|前年比|深掘り|分析|何位|短縮|区間新|荒玉|優勝との差|優勝差|優勝から/.test(
         expandedQuery,
-      );
+      ) &&
+      !legAwardQ;
     const winnerMarginQ = /優勝との差|優勝差|優勝から|優勝まで|離れて/.test(expandedQuery);
     if (focusTeamAnalysis || winnerMarginQ) {
       push("out-analysis/aragyoku_2024_2025_focus_teams.md");
@@ -600,7 +630,9 @@ function boostMeetYearSources(
       push("aragyoku/winners-by-year.md");
     }
     // Exact team history digest for 「〇〇の荒玉駅伝の過去の順位」/ 区間選手 / 優勝差
+    // （区間賞・区間順位の全区間一覧とは別 — leg_awards 正本を優先）
     if (
+      !legAwardQ &&
       (/過去|歴代|順位|2024|2025|分析|優勝との差|優勝差|優勝から/.test(expandedQuery) ||
         focusTeamAnalysis ||
         winnerMarginQ ||
@@ -644,18 +676,26 @@ function boostMeetYearSources(
     }
     if (!lineOpsPrefer) {
       // Prefer exact team file already pushed; hub only when not a per-team history Q
-      if (!(/過去|歴代|順位/.test(expandedQuery) && out.some((s) => s.includes("aragyoku-teams/")))) {
+      if (
+        !legAwardQ &&
+        !(/過去|歴代|順位/.test(expandedQuery) && out.some((s) => s.includes("aragyoku-teams/")))
+      ) {
         push("out-analysis/aragyoku-teams");
       }
-      push("aragyoku/winners-by-year.md");
+      if (!legAwardQ) {
+        push("aragyoku/winners-by-year.md");
+      }
       for (const y of years) {
         for (const g of ["男子", "女子"] as const) {
+          // 区間賞質問では transcript JSON を二次ソースとして残す（学年・名前の突合用）
           push(`aragyoku/transcripts/${y}-${g}.json`);
-          push(`aragyoku/ocr_raw/${y}-${g}.md`);
-          push(`ekiden-ocr/${y}-${g}.md`);
+          if (!legAwardQ) {
+            push(`aragyoku/ocr_raw/${y}-${g}.md`);
+            push(`ekiden-ocr/${y}-${g}.md`);
+          }
         }
       }
-      if (years.length === 0 && !courseMeta) {
+      if (years.length === 0 && !courseMeta && !legAwardQ) {
         push("aragyoku");
         if (!out.some((s) => /aragyoku-teams\/[^/]+\.md$/.test(s))) {
           push("out-analysis/aragyoku-teams");
@@ -732,8 +772,15 @@ export function narrowExhaustiveSources(query: string, sources: string[]): strin
     push("docs/aragyoku-ekiden-distance-definitions.md");
     return out;
   }
-  if (/大会記録|区間記録|ボード/.test(q) && /荒玉|駅伝/.test(q)) {
+  if (/大会記録|区間記録|ボード/.test(q) && /荒玉|駅伝/.test(q) && !/区間賞|区間順/.test(q)) {
     push("out-analysis/aragyoku_meet_records.md");
+    return out;
+  }
+  if (
+    (/区間賞|区間1位|区間一位/.test(q) || /区間順/.test(q)) &&
+    /荒玉|駅伝|\d{4}|区/.test(q)
+  ) {
+    push("out-analysis/aragyoku_leg_awards.md");
     return out;
   }
   if (/\bATRC\b|ＡＴＲＣ/.test(q) && /記録|選手|一覧/.test(q)) {

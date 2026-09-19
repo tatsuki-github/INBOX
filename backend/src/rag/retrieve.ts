@@ -497,14 +497,21 @@ function pathQueryBonus(source: string, query: string): number {
   }
   if (
     /大会記録|区間記録|ボード|記録保持|meet_records/.test(q) &&
+    !/区間賞|区間順/.test(q) &&
     /aragyoku_meet_records/.test(s)
   ) {
     bonus += 180;
   }
   if (
+    (/区間賞|区間1位|区間一位|区間順/.test(q) || (/各区/.test(q) && /賞|上位/.test(q))) &&
+    /aragyoku_leg_awards/.test(s)
+  ) {
+    bonus += 220;
+  }
+  if (
     /荒玉|aragyoku|中体連/.test(q) &&
     /ペース|距離|コース|\/km|分で/.test(q) &&
-    !/大会記録|区間記録|誰|何位/.test(q) &&
+    !/大会記録|区間記録|区間賞|誰|何位/.test(q) &&
     /aragyoku-overview|aragyoku-ekiden-distance|average_pace/.test(s)
   ) {
     bonus += 140;
@@ -701,6 +708,15 @@ function pathQueryPenalty(source: string, query: string): number {
   ) {
     return -180;
   }
+  // 区間賞・区間順位: focus / winners / 歴代記録ボードを下げ、leg_awards を勝たせる
+  if (/区間賞|区間1位|区間一位|区間順/.test(q)) {
+    if (/aragyoku_2024_2025_focus_teams|winners-by-year|aragyoku_meet_records/.test(source)) {
+      return -250;
+    }
+    if (/aragyoku-teams\/|ekiden-ocr|ocr_raw/.test(source) && !/leg_awards/.test(source)) {
+      return -120;
+    }
+  }
   if (
     /上位\s*\d+\s*人平均|上位\d人平均/.test(q) &&
     /800|1500/.test(q) &&
@@ -715,6 +731,13 @@ function pathQueryPenalty(source: string, query: string): number {
 function isBlockedCorpusForQuery(source: string, query: string): boolean {
   if (!query) return false;
   const q = query.normalize("NFKC");
+  // 区間賞・区間順位: 分析深掘り・優勝表・歴代記録ボードは正本と混同しやすいので除外
+  if (
+    /区間賞|区間1位|区間一位|区間順/.test(q) &&
+    /aragyoku_2024_2025_focus_teams|winners-by-year|aragyoku_meet_records/.test(source)
+  ) {
+    return true;
+  }
   // Empty Drive stubs must not fill ranking / history answers
   if (/_EMPTY\.md|export\.status\.json/.test(source)) {
     return true;
@@ -808,11 +831,14 @@ function digestPinForQuery(chunk: RagChunk, query: string): number {
       return 500;
     }
   }
-  if (/過去|歴代|順位/.test(qn) && /荒玉|駅伝/.test(qn)) {
+  if (/過去|歴代|順位/.test(qn) && /荒玉|駅伝/.test(qn) && !/区間賞|区間順/.test(qn)) {
     const stem = base.split("/").pop()?.replace(/\.md$/, "") ?? "";
     if (/aragyoku-teams\/[^/]+\.md$/.test(base) && stem && query.includes(stem)) {
       return 500;
     }
+  }
+  if (/区間賞|区間1位|区間一位|区間順/.test(qn) && /aragyoku_leg_awards/.test(base)) {
+    return 900;
   }
   if (/トラック/.test(qn) && /1周|一周|周長|何メートル/.test(qn)) {
     if (/daiming-practice-menus-kpace|data-model\.md/.test(chunk.source)) {
@@ -825,10 +851,12 @@ function digestPinForQuery(chunk: RagChunk, query: string): number {
     if (/top2_finish_counts/.test(base) && /2位まで|2位以内|回数/.test(qn)) return 900;
     if (/all_teams_average_pace|top6_historical_average_pace/.test(base) && /ペース|\/km/.test(qn))
       return 900;
+    if (/aragyoku_leg_awards/.test(base) && /区間賞|区間順/.test(qn)) return 900;
     if (/arato-tamana-teams\/[^/]+\.md$/.test(base) && /記録|選手|一覧/.test(qn)) return 900;
-    if (/aragyoku-teams\/[^/]+\.md$/.test(base) && /区間|順位|歴代|過去/.test(qn)) return 800;
+    if (/aragyoku-teams\/[^/]+\.md$/.test(base) && /区間|順位|歴代|過去/.test(qn) && !/区間賞/.test(qn))
+      return 800;
     if (/2024_2025_focus_teams/.test(base) && /優勝との差|前年比|深掘り|分析/.test(qn)) return 800;
-    if (/meet_records/.test(base) && /大会記録|区間記録/.test(qn)) return 800;
+    if (/meet_records/.test(base) && /大会記録|区間記録/.test(qn) && !/区間賞/.test(qn)) return 800;
     if (/\.(md|csv|json)$/i.test(base) && !base.endsWith("/") && !/ocr|notion-db|transcripts\//.test(base)) {
       return 400;
     }

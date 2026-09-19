@@ -243,6 +243,47 @@ describe("answerQuestion", () => {
     }
   });
 
+  it("puts leg awards digest for 区間賞 questions", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    let userPrompt = "";
+    const result = await answerQuestion("2025年の荒玉駅伝の区間賞の名前と学年は？", {
+      skipRouter: true,
+      defaultYear: 2026,
+      llm: {
+        complete: async (_sys, user) => {
+          userPrompt = user;
+          return "2025年男子の区間賞は江口大尊（3年）ほかです。";
+        },
+      },
+    });
+    expect(result.kind).toBe("answered");
+    expect(userPrompt).toMatch(/区間賞/);
+    expect(userPrompt).toMatch(/江口大尊/);
+    expect(userPrompt).toMatch(/学年|3/);
+    if (result.kind === "answered") {
+      expect(result.sources[0]).toMatch(/leg_awards/);
+      expect(result.sources.every((s) => !s.includes("meet_records"))).toBe(true);
+      expect(result.sources.every((s) => !s.includes("focus_teams"))).toBe(true);
+    }
+  });
+
+  it("offline preview for 区間賞 hits names and grades", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("2025年の荒玉駅伝の区間賞の名前と学年は？", {
+      skipRouter: true,
+      defaultYear: 2026,
+      llm: null,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.text).toMatch(/江口大尊|山本悠斗|草野瑠唯/);
+      expect(result.text).toMatch(/3|1|2/);
+      expect(result.sources.some((s) => s.includes("leg_awards"))).toBe(true);
+    }
+  });
+
   it("puts all-teams average pace for 〇位の平均ペース questions", async () => {
     resetRetrieverCache();
     resetKgCache();

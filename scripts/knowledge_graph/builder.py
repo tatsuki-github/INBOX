@@ -145,6 +145,11 @@ SOURCE_GLOBS: list[tuple[str, list[str], str]] = [
         "荒玉全チーム・全年度の平均ペース（順位別歴代＋年度別全校）",
     ),
     (
+        "out/analysis/aragyoku_leg_awards.md",
+        ["ekiden", "analysis"],
+        "荒玉区間賞・区間上位（当日結果・名前・学年・所属）",
+    ),
+    (
         "out/analysis/aragyoku_top6_historical_average_pace.md",
         ["ekiden", "pace"],
         "荒玉総合1〜6位の年度別平均ペース（全チーム版の要約）",
@@ -459,6 +464,25 @@ QUERY_HINTS: list[tuple[str, str, list[str]]] = [
             "corpus:aragyoku",
             "source:input/aragyoku/course-videos.md",
             "source:input/idaten-corpus/aragyoku/course-videos.md",
+        ],
+    ),
+    (
+        "2025年の荒玉駅伝の区間賞の名前と学年は？",
+        "aragyoku_leg_awards.md の2025年男女セクション（区間賞＝split_rank1）。大会記録ボードとは別",
+        [
+            "topic:ekiden",
+            "source:out/analysis/aragyoku_leg_awards.md",
+            "corpus:out-analysis",
+            "corpus:aragyoku",
+        ],
+    ),
+    (
+        "荒玉駅伝の区間賞は誰？",
+        "aragyoku_leg_awards.md を正本（当日区間賞・学年・所属）。meet_records の歴代区間記録とは別",
+        [
+            "topic:ekiden",
+            "source:out/analysis/aragyoku_leg_awards.md",
+            "corpus:out-analysis",
         ],
     ),
     (

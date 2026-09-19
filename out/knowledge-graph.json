@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated_at": "2026-09-19T06:02:54Z",
+  "generated_at": "2026-09-19T07:06:23Z",
   "nodes": [
     {
       "id": "corpus:analysis-ocr",
@@ -27,33 +27,6 @@
         "input/idaten-corpus/aragyoku"
       ],
       "hint": "荒玉駅伝の構造化 JSON/MD・transcripts・winners-by-year・course-videos. 例: course-videos.md, men_full_2012_2025.json, ocr_raw, quiz, taimei-records-2012-2025.md, transcripts, winners-by-year.md, women_full_2012_2025.json, women_top4_2012_2025.json, women_top6_2012_2025.json"
-    },
-    {
-      "id": "corpus:calendar",
-      "type": "Entity",
-      "label": "コーパス/calendar",
-      "topics": [
-        "calendar",
-        "practice"
-      ],
-      "refs": [
-        "input/idaten-corpus/calendar"
-      ],
-      "hint": "岱明フィルタ済み events.daiming.yaml. 例: events.daiming.yaml"
-    },
-    {
-      "id": "corpus:docs",
-      "type": "Entity",
-      "label": "コーパス/docs",
-      "topics": [
-        "ekiden",
-        "meta",
-        "schema"
-      ],
-      "refs": [
-        "input/idaten-corpus/docs"
-      ],
-      "hint": "関連 ADR・区間距離定義のコピー. 例: 010-external-idaten-import.md, 011-idaten-media-ocr-kg.md, 015-line-idaten-qa-backend.md, 016-kg-first-idaten-qa.md, AGENTS.md, README.md, ai-practice-generation.md, aragyoku-ekiden-distance-definitions.md, data-model.md"
     },
     {
       "id": "corpus:drive-text",
@@ -126,19 +99,7 @@
       "refs": [
         "input/idaten-corpus/out-analysis"
       ],
-      "hint": "out/analysis の md/json（ペース分析・LINE 衛生化・関係図など）. 例: 2026_aragyoku_men_1500m_sb_individual_top20.md, 2026_aragyoku_men_3000m_sb_ranking.md, 2026_men_1500m_pb_school_ranking.md, 2026_women_800m_1500m_pb_school_ranking.md, aragyoku-overview.md, aragyoku-teams, aragyoku_2024_2025_focus_teams.md, aragyoku_all_teams_average_pace.md, aragyoku_meet_records.md, aragyoku_top2_finish_counts.md, aragyoku_top6_historical_average_pace.md, aragyoku_women_track_joined.json"
-    },
-    {
-      "id": "corpus:practice",
-      "type": "Entity",
-      "label": "コーパス/practice",
-      "topics": [
-        "practice"
-      ],
-      "refs": [
-        "input/idaten-corpus/practice"
-      ],
-      "hint": "練習 JSON / menus / absentees 抜粋. 例: daiming-practice-menus-kpace.md, practice.2025.json, practice.2026.json"
+      "hint": "out/analysis の md/json（ペース分析・LINE 衛生化・関係図など）. 例: 2026_aragyoku_men_1500m_sb_individual_top20.md, 2026_aragyoku_men_3000m_sb_ranking.md, 2026_men_1500m_pb_school_ranking.md, 2026_women_800m_1500m_pb_school_ranking.md, aragyoku-overview.md, aragyoku-teams, aragyoku_2024_2025_focus_teams.md, aragyoku_all_teams_average_pace.md, aragyoku_leg_awards.md, aragyoku_meet_records.md, aragyoku_top2_finish_counts.md, aragyoku_top6_historical_average_pace.md"
     },
     {
       "id": "corpus:repo-docs",
@@ -153,18 +114,6 @@
         "input/idaten-corpus/repo-docs"
       ],
       "hint": "docs/ 配下の Markdown（ADR・データモデル等）. 例: adr, idaten-import, implementation, implementation-flow, kg-html-phase0.md, kg-html-phase1.md, tamana-weather.md"
-    },
-    {
-      "id": "corpus:sb",
-      "type": "Entity",
-      "label": "コーパス/sb",
-      "topics": [
-        "athlete_records"
-      ],
-      "refs": [
-        "input/idaten-corpus/sb"
-      ],
-      "hint": "中学生 SB（全所属・wide CSV 行単位）. 例: SBデータベース.csv, 中学生SB.csv"
     },
     {
       "id": "entity:athlete:中尾快叶",
@@ -471,8 +420,8 @@
         "practice"
       ],
       "refs": [
-        "input/events.2026.yaml",
         "out/2026/practice_absentees.csv",
+        "input/events.2026.yaml",
         "out/analysis/notion_records_2026.json"
       ],
       "hint": "部員エンティティ"
@@ -487,8 +436,8 @@
         "practice"
       ],
       "refs": [
-        "input/events.2026.yaml",
         "out/2026/practice_absentees.csv",
+        "input/events.2026.yaml",
         "out/analysis/notion_records_2026.json"
       ],
       "hint": "所属:岱明中"
@@ -536,10 +485,10 @@
       ],
       "refs": [
         "input/events.2026.yaml",
-        "out/2026/practice_absentees.csv",
-        "out/analysis/notion_records_2026.json",
         "out/2025/practice_absentees.csv",
-        "input/events.2025.yaml"
+        "out/analysis/notion_records_2026.json",
+        "input/events.2025.yaml",
+        "out/2026/practice_absentees.csv"
       ],
       "hint": "部員エンティティ"
     },
@@ -554,10 +503,10 @@
       ],
       "refs": [
         "input/events.2026.yaml",
-        "out/2026/practice_absentees.csv",
-        "out/analysis/notion_records_2026.json",
         "out/2025/practice_absentees.csv",
-        "input/events.2025.yaml"
+        "out/analysis/notion_records_2026.json",
+        "input/events.2025.yaml",
+        "out/2026/practice_absentees.csv"
       ],
       "hint": "所属:岱明中"
     },
@@ -2775,7 +2724,6 @@
       ],
       "refs": [
         "input/practice_templates.yaml",
-        "input/idaten-corpus/practice",
         "out/2026/practice.json",
         "out/daiming-practice-menus-kpace.md"
       ],
@@ -2876,8 +2824,7 @@
       ],
       "refs": [
         "out/analysis/2026_aragyoku_men_3000m_sb_ranking.md",
-        "input/idaten-corpus/out-analysis",
-        "input/idaten-corpus/sb"
+        "input/idaten-corpus/out-analysis"
       ],
       "hint": "out/analysis/2026_aragyoku_men_3000m_sb_ranking.md の1位（隈部侑成）を返す"
     },
@@ -2891,8 +2838,7 @@
       ],
       "refs": [
         "out/analysis/2026_aragyoku_men_1500m_sb_individual_top20.md",
-        "input/idaten-corpus/out-analysis",
-        "input/idaten-corpus/sb"
+        "input/idaten-corpus/out-analysis"
       ],
       "hint": "out/analysis/2026_aragyoku_men_1500m_sb_individual_top20.md を正本として返す"
     },
@@ -2918,7 +2864,6 @@
       ],
       "refs": [
         "out/analysis/athletes/takada-mana.md",
-        "input/idaten-corpus/sb",
         "input/idaten-corpus/out-analysis"
       ],
       "hint": "out/analysis/athletes/takada-mana.md と sb/SBデータベース.csv。高田麻由（岱明）と混同しない"
@@ -2932,8 +2877,7 @@
       ],
       "refs": [
         "out/2026/practice_absentees.csv",
-        "input/events.2026.yaml",
-        "input/idaten-corpus/practice"
+        "input/events.2026.yaml"
       ],
       "hint": "practice_absentees.csv と events YAML の absentees"
     },
@@ -2966,7 +2910,34 @@
       "hint": "aragyoku/course-videos.md の Google ドライブフォルダ URL を返す（確定回答）"
     },
     {
-      "id": "query:22:男子1位の平均ペースは？",
+      "id": "query:22:2025年の荒玉駅伝の区間賞の名前と学年は？",
+      "type": "QueryHint",
+      "label": "2025年の荒玉駅伝の区間賞の名前と学年は？",
+      "topics": [
+        "ekiden"
+      ],
+      "refs": [
+        "out/analysis/aragyoku_leg_awards.md",
+        "input/idaten-corpus/out-analysis",
+        "input/idaten-corpus/aragyoku"
+      ],
+      "hint": "aragyoku_leg_awards.md の2025年男女セクション（区間賞＝split_rank1）。大会記録ボードとは別"
+    },
+    {
+      "id": "query:23:荒玉駅伝の区間賞は誰？",
+      "type": "QueryHint",
+      "label": "荒玉駅伝の区間賞は誰？",
+      "topics": [
+        "ekiden"
+      ],
+      "refs": [
+        "out/analysis/aragyoku_leg_awards.md",
+        "input/idaten-corpus/out-analysis"
+      ],
+      "hint": "aragyoku_leg_awards.md を正本（当日区間賞・学年・所属）。meet_records の歴代区間記録とは別"
+    },
+    {
+      "id": "query:24:男子1位の平均ペースは？",
       "type": "QueryHint",
       "label": "男子1位の平均ペースは？",
       "topics": [
@@ -2981,7 +2952,7 @@
       "hint": "aragyoku_all_teams_average_pace.md の順位別歴代平均ペース（男子）。距離定義で総合÷総距離"
     },
     {
-      "id": "query:23:荒玉駅伝の平均ペースは？",
+      "id": "query:25:荒玉駅伝の平均ペースは？",
       "type": "QueryHint",
       "label": "荒玉駅伝の平均ペースは？",
       "topics": [
@@ -2996,7 +2967,7 @@
       "hint": "全チーム版 aragyoku_all_teams_average_pace.md を正本。上位6位要約は top6_historical_average_pace.md"
     },
     {
-      "id": "query:24:女子の荒玉駅伝の過去5年間の優勝校、準優勝校は？",
+      "id": "query:26:女子の荒玉駅伝の過去5年間の優勝校、準優勝校は？",
       "type": "QueryHint",
       "label": "女子の荒玉駅伝の過去5年間の優勝校、準優勝校は？",
       "topics": [
@@ -3010,7 +2981,7 @@
       "hint": "winners-by-year.md の「女子・直近5年」表（優勝+準優勝）。回数集計の top2_finish_counts だけでは年度別準優勝が欠ける"
     },
     {
-      "id": "query:25:荒玉駅伝の優勝校は？",
+      "id": "query:27:荒玉駅伝の優勝校は？",
       "type": "QueryHint",
       "label": "荒玉駅伝の優勝校は？",
       "topics": [
@@ -3024,7 +2995,7 @@
       "hint": "aragyoku/winners-by-year.md（年度別優勝・準優勝）と transcripts の teams[rank=1/2]、ekiden-ocr 該当年"
     },
     {
-      "id": "query:26:荒玉駅伝の準優勝校は？",
+      "id": "query:28:荒玉駅伝の準優勝校は？",
       "type": "QueryHint",
       "label": "荒玉駅伝の準優勝校は？",
       "topics": [
@@ -3037,46 +3008,17 @@
       "hint": "winners-by-year.md の準優勝校列（rank=2）。top2_finish_counts は回数集計のみで年度一覧には使わない"
     },
     {
-      "id": "query:27:荒玉駅伝の区間距離は？",
+      "id": "query:29:荒玉駅伝の過去の優勝校を全て提示して",
       "type": "QueryHint",
-      "label": "荒玉駅伝の区間距離は？",
+      "label": "荒玉駅伝の過去の優勝校を全て提示して",
       "topics": [
         "ekiden"
       ],
       "refs": [
-        "docs/aragyoku-ekiden-distance-definitions.md",
-        "out/analysis/aragyoku-overview.md",
-        "input/idaten-corpus/aragyoku"
+        "input/idaten-corpus/aragyoku",
+        "input/idaten-corpus/aragyoku/winners-by-year.md"
       ],
-      "hint": "docs/aragyoku-ekiden-distance-definitions.md の年度別・男女別区間距離定義を優先する"
-    },
-    {
-      "id": "query:28:なごみ駅伝は？",
-      "type": "QueryHint",
-      "label": "なごみ駅伝は？",
-      "topics": [
-        "calendar",
-        "ekiden"
-      ],
-      "refs": [
-        "input/idaten-corpus/drive-text",
-        "input/idaten-corpus/calendar",
-        "input/events.2026.yaml"
-      ],
-      "hint": "drive-text/大会/*/0920_*なごみ* または 0921_*なごみ* の開催要項・結果を見る。荒玉・aragyoku は使わない"
-    },
-    {
-      "id": "query:29:ジュニア駅伝の結果は？",
-      "type": "QueryHint",
-      "label": "ジュニア駅伝の結果は？",
-      "topics": [
-        "calendar",
-        "ekiden"
-      ],
-      "refs": [
-        "input/idaten-corpus/drive-text"
-      ],
-      "hint": "drive-text/大会/*/*ジュニア駅伝*/岱明の結果.md および 結果_*.pdf.md を見る。荒玉・aragyoku・ekiden-ocr は別大会なので選ばない"
+      "hint": "「全て提示」系は winners-by-year.md 正本を全文寄りで渡す（OCR/focus 分析に散らさない）"
     },
     {
       "id": "query:2:GZ / 閾値ペースは？",
@@ -3095,7 +3037,62 @@
       "hint": "Norwegian メモ + daniels_pace / VDOT 表"
     },
     {
-      "id": "query:30:去年のジュニア駅伝の岱明の結果は？",
+      "id": "query:30:全チームの平均ペースを全て提示して",
+      "type": "QueryHint",
+      "label": "全チームの平均ペースを全て提示して",
+      "topics": [
+        "ekiden"
+      ],
+      "refs": [
+        "input/idaten-corpus/out-analysis",
+        "out/analysis/aragyoku_all_teams_average_pace.md",
+        "docs/aragyoku-ekiden-distance-definitions.md"
+      ],
+      "hint": "aragyoku_all_teams_average_pace.md を文書順で網羅取得（BM25 散発ヒットにしない）"
+    },
+    {
+      "id": "query:31:荒玉駅伝の区間距離は？",
+      "type": "QueryHint",
+      "label": "荒玉駅伝の区間距離は？",
+      "topics": [
+        "ekiden"
+      ],
+      "refs": [
+        "docs/aragyoku-ekiden-distance-definitions.md",
+        "out/analysis/aragyoku-overview.md",
+        "input/idaten-corpus/aragyoku"
+      ],
+      "hint": "docs/aragyoku-ekiden-distance-definitions.md の年度別・男女別区間距離定義を優先する"
+    },
+    {
+      "id": "query:32:なごみ駅伝は？",
+      "type": "QueryHint",
+      "label": "なごみ駅伝は？",
+      "topics": [
+        "calendar",
+        "ekiden"
+      ],
+      "refs": [
+        "input/idaten-corpus/drive-text",
+        "input/events.2026.yaml"
+      ],
+      "hint": "drive-text/大会/*/0920_*なごみ* または 0921_*なごみ* の開催要項・結果を見る。荒玉・aragyoku は使わない"
+    },
+    {
+      "id": "query:33:ジュニア駅伝の結果は？",
+      "type": "QueryHint",
+      "label": "ジュニア駅伝の結果は？",
+      "topics": [
+        "calendar",
+        "ekiden"
+      ],
+      "refs": [
+        "input/idaten-corpus/drive-text"
+      ],
+      "hint": "drive-text/大会/*/*ジュニア駅伝*/岱明の結果.md および 結果_*.pdf.md を見る。荒玉・aragyoku・ekiden-ocr は別大会なので選ばない"
+    },
+    {
+      "id": "query:34:去年のジュニア駅伝の岱明の結果は？",
       "type": "QueryHint",
       "label": "去年のジュニア駅伝の岱明の結果は？",
       "topics": [
@@ -3108,7 +3105,7 @@
       "hint": "相対年を西暦に展開し drive-text/大会/{year}年度/*ジュニア*/岱明の結果.md を優先。荒玉優勝校・transcripts は使わない"
     },
     {
-      "id": "query:31:部員名簿は？",
+      "id": "query:35:部員名簿は？",
       "type": "QueryHint",
       "label": "部員名簿は？",
       "topics": [
@@ -3124,14 +3121,13 @@
       "hint": "Notion いだてん岱明生徒 DB と Drive 名簿 CSV（コーパス notion-db/いだてん岱明生徒）"
     },
     {
-      "id": "query:32:中学生SBは？",
+      "id": "query:36:中学生SBは？",
       "type": "QueryHint",
       "label": "中学生SBは？",
       "topics": [
         "athlete_records"
       ],
       "refs": [
-        "input/idaten-corpus/sb",
         "input/external/sb/middle-school/wide/中学生SB.csv",
         "input/external/sb/middle-school/INDEX.md",
         "docs/adr/012-middle-school-sb-all-years.md"
@@ -3139,7 +3135,7 @@
       "hint": "コーパス sb/ と input/external/sb/middle-school/ を見る"
     },
     {
-      "id": "query:33:開催要項は？",
+      "id": "query:37:開催要項は？",
       "type": "QueryHint",
       "label": "開催要項は？",
       "topics": [
@@ -3151,7 +3147,7 @@
       "hint": "drive-text/大会/ 各大会フォルダの開催要項.md を見る（大会名でフォルダを特定）"
     },
     {
-      "id": "query:34:ケガ・障害は？",
+      "id": "query:38:ケガ・障害は？",
       "type": "QueryHint",
       "label": "ケガ・障害は？",
       "topics": [
@@ -3165,7 +3161,7 @@
       "hint": "injury トピックと Notion 怪我について・RRI メモ"
     },
     {
-      "id": "query:35:オーダー・区間は？",
+      "id": "query:39:オーダー・区間は？",
       "type": "QueryHint",
       "label": "オーダー・区間は？",
       "topics": [
@@ -3182,7 +3178,21 @@
       "hint": "荒玉の区間・オーダーなら荒玉戦略 Notion・分析 OCR・歴代 OCR。ジュニア・なごみなら該大会フォルダのプログラム・結果を見る"
     },
     {
-      "id": "query:36:銀マット・合同練習・保護者連絡は？",
+      "id": "query:3:選手の記録は？",
+      "type": "QueryHint",
+      "label": "選手の記録は？",
+      "topics": [
+        "athlete_records"
+      ],
+      "refs": [
+        "input/idaten-corpus/notion-db",
+        "input/idaten-corpus/analysis-ocr",
+        "input/external/sb/middle-school/wide/中学生SB.csv"
+      ],
+      "hint": "notion_records・荒尾玉名・sb/・analysis-ocr を見る"
+    },
+    {
+      "id": "query:40:銀マット・合同練習・保護者連絡は？",
       "type": "QueryHint",
       "label": "銀マット・合同練習・保護者連絡は？",
       "topics": [
@@ -3198,7 +3208,7 @@
       "hint": "out/analysis/line-chats（parents/staff）を優先。カレンダーに無い一次連絡が多い"
     },
     {
-      "id": "query:37:有田先輩の練習・補強の考え方は？",
+      "id": "query:41:有田先輩の練習・補強の考え方は？",
       "type": "QueryHint",
       "label": "有田先輩の練習・補強の考え方は？",
       "topics": [
@@ -3213,7 +3223,7 @@
       "hint": "out/analysis/line-chats/arita-taisho.md（分割走・補強・厚底・荒玉目安・合同練習）"
     },
     {
-      "id": "query:38:玉名の天気データはどう更新する？",
+      "id": "query:42:玉名の天気データはどう更新する？",
       "type": "QueryHint",
       "label": "玉名の天気データはどう更新する？",
       "topics": [
@@ -3227,21 +3237,6 @@
       "hint": "docs/tamana-weather.md（Open-Meteo・tamana-forecast・更新間隔）"
     },
     {
-      "id": "query:3:選手の記録は？",
-      "type": "QueryHint",
-      "label": "選手の記録は？",
-      "topics": [
-        "athlete_records"
-      ],
-      "refs": [
-        "input/idaten-corpus/sb",
-        "input/idaten-corpus/notion-db",
-        "input/idaten-corpus/analysis-ocr",
-        "input/external/sb/middle-school/wide/中学生SB.csv"
-      ],
-      "hint": "notion_records・荒尾玉名・sb/・analysis-ocr を見る"
-    },
-    {
       "id": "query:4:今日の予定は？",
       "type": "QueryHint",
       "label": "今日の予定は？",
@@ -3250,8 +3245,7 @@
       ],
       "refs": [
         "input/events.2026.yaml",
-        "calendar.md",
-        "input/idaten-corpus/calendar"
+        "calendar.md"
       ],
       "hint": "events YAML / events.json / calendar.md / calendar/events.daiming.yaml"
     },
@@ -3265,7 +3259,6 @@
       ],
       "refs": [
         "input/events.2026.yaml",
-        "input/idaten-corpus/calendar",
         "input/idaten-corpus/drive-text"
       ],
       "hint": "日付を YYYY-MM-DD / MMDD に正規化し events YAML と drive-text/大会/ の開催要項を見る"
@@ -3921,6 +3914,20 @@
       "hint": "ADR: 040-exhaustive-list-context"
     },
     {
+      "id": "source:docs/adr/041-aragyoku-leg-awards.md",
+      "type": "Source",
+      "label": "041-aragyoku-leg-awards.md",
+      "topics": [
+        "ai",
+        "meta",
+        "practice"
+      ],
+      "refs": [
+        "docs/adr/041-aragyoku-leg-awards.md"
+      ],
+      "hint": "ADR: 041-aragyoku-leg-awards"
+    },
+    {
       "id": "source:docs/ai-practice-generation.md",
       "type": "Source",
       "label": "ai-practice-generation.md",
@@ -4289,22 +4296,6 @@
       "hint": "中学生ワイド SB（Drive SBデータベース）"
     },
     {
-      "id": "source:input/idaten-corpus/INDEX.md",
-      "type": "Source",
-      "label": "INDEX.md",
-      "topics": [
-        "athlete_records",
-        "calendar",
-        "ekiden",
-        "meta",
-        "practice"
-      ],
-      "refs": [
-        "input/idaten-corpus/INDEX.md"
-      ],
-      "hint": "いだてん岱明コーパス目録（LINE Q&A 参照範囲）: リポジトリ知識コーパス（単一フォルダ） / LINE Q&A バックエンドが参照するテキスト専用コーパス（いだてん岱明＋荒玉＋分析＋docs）。 / バイナリ（画像・PDF）は含めない。再生成: `python3 scripts/build_idaten_corpus.py` / ディレクトリ / - `ekiden-ocr/` — 荒玉駅伝歴代 OCR /"
-    },
-    {
       "id": "source:input/idaten-corpus/analysis-ocr",
       "type": "Source",
       "label": "analysis-ocr",
@@ -4353,33 +4344,6 @@
         "input/idaten-corpus/aragyoku/winners-by-year.md"
       ],
       "hint": "荒玉駅伝 年度別優勝・準優勝校（コーパス）"
-    },
-    {
-      "id": "source:input/idaten-corpus/calendar",
-      "type": "Source",
-      "label": "calendar",
-      "topics": [
-        "calendar",
-        "practice"
-      ],
-      "refs": [
-        "input/idaten-corpus/calendar"
-      ],
-      "hint": "岱明フィルタ済み events.daiming.yaml. 例: events.daiming.yaml"
-    },
-    {
-      "id": "source:input/idaten-corpus/docs",
-      "type": "Source",
-      "label": "docs",
-      "topics": [
-        "ekiden",
-        "meta",
-        "schema"
-      ],
-      "refs": [
-        "input/idaten-corpus/docs"
-      ],
-      "hint": "関連 ADR・区間距離定義のコピー. 例: 010-external-idaten-import.md, 011-idaten-media-ocr-kg.md, 015-line-idaten-qa-backend.md, 016-kg-first-idaten-qa.md, AGENTS.md, README.md, ai-practice-generation.md, aragyoku-ekiden-distance-definitions.md, data-model.md"
     },
     {
       "id": "source:input/idaten-corpus/drive-text",
@@ -4645,19 +4609,7 @@
       "refs": [
         "input/idaten-corpus/out-analysis"
       ],
-      "hint": "out/analysis の md/json（ペース分析・LINE 衛生化・関係図など）. 例: 2026_aragyoku_men_1500m_sb_individual_top20.md, 2026_aragyoku_men_3000m_sb_ranking.md, 2026_men_1500m_pb_school_ranking.md, 2026_women_800m_1500m_pb_school_ranking.md, aragyoku-overview.md, aragyoku-teams, aragyoku_2024_2025_focus_teams.md, aragyoku_all_teams_average_pace.md, aragyoku_meet_records.md, aragyoku_top2_finish_counts.md, aragyoku_top6_historical_average_pace.md, aragyoku_women_track_joined.json"
-    },
-    {
-      "id": "source:input/idaten-corpus/practice",
-      "type": "Source",
-      "label": "practice",
-      "topics": [
-        "practice"
-      ],
-      "refs": [
-        "input/idaten-corpus/practice"
-      ],
-      "hint": "練習 JSON / menus / absentees 抜粋. 例: daiming-practice-menus-kpace.md, practice.2025.json, practice.2026.json"
+      "hint": "out/analysis の md/json（ペース分析・LINE 衛生化・関係図など）. 例: 2026_aragyoku_men_1500m_sb_individual_top20.md, 2026_aragyoku_men_3000m_sb_ranking.md, 2026_men_1500m_pb_school_ranking.md, 2026_women_800m_1500m_pb_school_ranking.md, aragyoku-overview.md, aragyoku-teams, aragyoku_2024_2025_focus_teams.md, aragyoku_all_teams_average_pace.md, aragyoku_leg_awards.md, aragyoku_meet_records.md, aragyoku_top2_finish_counts.md, aragyoku_top6_historical_average_pace.md"
     },
     {
       "id": "source:input/idaten-corpus/repo-docs",
@@ -4672,18 +4624,6 @@
         "input/idaten-corpus/repo-docs"
       ],
       "hint": "docs/ 配下の Markdown（ADR・データモデル等）. 例: adr, idaten-import, implementation, implementation-flow, kg-html-phase0.md, kg-html-phase1.md, tamana-weather.md"
-    },
-    {
-      "id": "source:input/idaten-corpus/sb",
-      "type": "Source",
-      "label": "sb",
-      "topics": [
-        "athlete_records"
-      ],
-      "refs": [
-        "input/idaten-corpus/sb"
-      ],
-      "hint": "中学生 SB（全所属・wide CSV 行単位）. 例: SBデータベース.csv, 中学生SB.csv"
     },
     {
       "id": "source:input/memos/daiming-club-calendar-2026-09.jpg",
@@ -5602,6 +5542,19 @@
         "out/analysis/aragyoku_all_teams_average_pace.md"
       ],
       "hint": "荒玉全チーム・全年度の平均ペース（順位別歴代＋年度別全校）"
+    },
+    {
+      "id": "source:out/analysis/aragyoku_leg_awards.md",
+      "type": "Source",
+      "label": "aragyoku_leg_awards.md",
+      "topics": [
+        "analysis",
+        "ekiden"
+      ],
+      "refs": [
+        "out/analysis/aragyoku_leg_awards.md"
+      ],
+      "hint": "荒玉区間賞・区間上位（当日結果・名前・学年・所属）"
     },
     {
       "id": "source:out/analysis/aragyoku_meet_records.md",
@@ -7787,11 +7740,6 @@
     },
     {
       "from": "query:0:練習メニューの中身は？",
-      "to": "corpus:practice",
-      "rel": "search_here"
-    },
-    {
-      "from": "query:0:練習メニューの中身は？",
       "to": "source:input/practice_templates.yaml",
       "rel": "documented_in"
     },
@@ -7942,11 +7890,6 @@
     },
     {
       "from": "query:16:荒玉地区で3000mが一番速いのは？",
-      "to": "corpus:sb",
-      "rel": "search_here"
-    },
-    {
-      "from": "query:16:荒玉地区で3000mが一番速いのは？",
       "to": "source:out/analysis/2026_aragyoku_men_3000m_sb_ranking.md",
       "rel": "documented_in"
     },
@@ -7963,11 +7906,6 @@
     {
       "from": "query:17:今年の荒玉地区の男子1500mSBランキングトッ",
       "to": "corpus:out-analysis",
-      "rel": "search_here"
-    },
-    {
-      "from": "query:17:今年の荒玉地区の男子1500mSBランキングトッ",
-      "to": "corpus:sb",
       "rel": "search_here"
     },
     {
@@ -8007,22 +7945,12 @@
     },
     {
       "from": "query:19:高田麻那の記録は？",
-      "to": "corpus:sb",
-      "rel": "search_here"
-    },
-    {
-      "from": "query:19:高田麻那の記録は？",
       "to": "source:out/analysis/athletes/takada-mana.md",
       "rel": "documented_in"
     },
     {
       "from": "query:19:高田麻那の記録は？",
       "to": "topic:athlete_records",
-      "rel": "search_here"
-    },
-    {
-      "from": "query:1:欠席者は誰？",
-      "to": "corpus:practice",
       "rel": "search_here"
     },
     {
@@ -8081,167 +8009,157 @@
       "rel": "search_here"
     },
     {
-      "from": "query:22:男子1位の平均ペースは？",
-      "to": "corpus:out-analysis",
-      "rel": "search_here"
-    },
-    {
-      "from": "query:22:男子1位の平均ペースは？",
-      "to": "source:docs/aragyoku-ekiden-distance-definitions.md",
-      "rel": "documented_in"
-    },
-    {
-      "from": "query:22:男子1位の平均ペースは？",
-      "to": "source:out/analysis/aragyoku_all_teams_average_pace.md",
-      "rel": "documented_in"
-    },
-    {
-      "from": "query:22:男子1位の平均ペースは？",
-      "to": "source:out/analysis/aragyoku_top6_historical_average_pace.md",
-      "rel": "documented_in"
-    },
-    {
-      "from": "query:22:男子1位の平均ペースは？",
-      "to": "topic:ekiden",
-      "rel": "search_here"
-    },
-    {
-      "from": "query:23:荒玉駅伝の平均ペースは？",
-      "to": "corpus:out-analysis",
-      "rel": "search_here"
-    },
-    {
-      "from": "query:23:荒玉駅伝の平均ペースは？",
-      "to": "source:out/analysis/aragyoku-overview.md",
-      "rel": "documented_in"
-    },
-    {
-      "from": "query:23:荒玉駅伝の平均ペースは？",
-      "to": "source:out/analysis/aragyoku_all_teams_average_pace.md",
-      "rel": "documented_in"
-    },
-    {
-      "from": "query:23:荒玉駅伝の平均ペースは？",
-      "to": "source:out/analysis/aragyoku_top6_historical_average_pace.md",
-      "rel": "documented_in"
-    },
-    {
-      "from": "query:23:荒玉駅伝の平均ペースは？",
-      "to": "topic:ekiden",
-      "rel": "search_here"
-    },
-    {
-      "from": "query:24:女子の荒玉駅伝の過去5年間の優勝校、準優勝校は？",
+      "from": "query:22:2025年の荒玉駅伝の区間賞の名前と学年は？",
       "to": "corpus:aragyoku",
       "rel": "search_here"
     },
     {
-      "from": "query:24:女子の荒玉駅伝の過去5年間の優勝校、準優勝校は？",
+      "from": "query:22:2025年の荒玉駅伝の区間賞の名前と学年は？",
+      "to": "corpus:out-analysis",
+      "rel": "search_here"
+    },
+    {
+      "from": "query:22:2025年の荒玉駅伝の区間賞の名前と学年は？",
+      "to": "source:out/analysis/aragyoku_leg_awards.md",
+      "rel": "documented_in"
+    },
+    {
+      "from": "query:22:2025年の荒玉駅伝の区間賞の名前と学年は？",
+      "to": "topic:ekiden",
+      "rel": "search_here"
+    },
+    {
+      "from": "query:23:荒玉駅伝の区間賞は誰？",
+      "to": "corpus:out-analysis",
+      "rel": "search_here"
+    },
+    {
+      "from": "query:23:荒玉駅伝の区間賞は誰？",
+      "to": "source:out/analysis/aragyoku_leg_awards.md",
+      "rel": "documented_in"
+    },
+    {
+      "from": "query:23:荒玉駅伝の区間賞は誰？",
+      "to": "topic:ekiden",
+      "rel": "search_here"
+    },
+    {
+      "from": "query:24:男子1位の平均ペースは？",
+      "to": "corpus:out-analysis",
+      "rel": "search_here"
+    },
+    {
+      "from": "query:24:男子1位の平均ペースは？",
+      "to": "source:docs/aragyoku-ekiden-distance-definitions.md",
+      "rel": "documented_in"
+    },
+    {
+      "from": "query:24:男子1位の平均ペースは？",
+      "to": "source:out/analysis/aragyoku_all_teams_average_pace.md",
+      "rel": "documented_in"
+    },
+    {
+      "from": "query:24:男子1位の平均ペースは？",
+      "to": "source:out/analysis/aragyoku_top6_historical_average_pace.md",
+      "rel": "documented_in"
+    },
+    {
+      "from": "query:24:男子1位の平均ペースは？",
+      "to": "topic:ekiden",
+      "rel": "search_here"
+    },
+    {
+      "from": "query:25:荒玉駅伝の平均ペースは？",
+      "to": "corpus:out-analysis",
+      "rel": "search_here"
+    },
+    {
+      "from": "query:25:荒玉駅伝の平均ペースは？",
+      "to": "source:out/analysis/aragyoku-overview.md",
+      "rel": "documented_in"
+    },
+    {
+      "from": "query:25:荒玉駅伝の平均ペースは？",
+      "to": "source:out/analysis/aragyoku_all_teams_average_pace.md",
+      "rel": "documented_in"
+    },
+    {
+      "from": "query:25:荒玉駅伝の平均ペースは？",
+      "to": "source:out/analysis/aragyoku_top6_historical_average_pace.md",
+      "rel": "documented_in"
+    },
+    {
+      "from": "query:25:荒玉駅伝の平均ペースは？",
+      "to": "topic:ekiden",
+      "rel": "search_here"
+    },
+    {
+      "from": "query:26:女子の荒玉駅伝の過去5年間の優勝校、準優勝校は？",
+      "to": "corpus:aragyoku",
+      "rel": "search_here"
+    },
+    {
+      "from": "query:26:女子の荒玉駅伝の過去5年間の優勝校、準優勝校は？",
       "to": "source:input/idaten-corpus/aragyoku/winners-by-year.md",
       "rel": "documented_in"
     },
     {
-      "from": "query:24:女子の荒玉駅伝の過去5年間の優勝校、準優勝校は？",
+      "from": "query:26:女子の荒玉駅伝の過去5年間の優勝校、準優勝校は？",
       "to": "source:out/analysis/aragyoku_top2_finish_counts.md",
       "rel": "documented_in"
     },
     {
-      "from": "query:24:女子の荒玉駅伝の過去5年間の優勝校、準優勝校は？",
+      "from": "query:26:女子の荒玉駅伝の過去5年間の優勝校、準優勝校は？",
       "to": "topic:ekiden",
       "rel": "search_here"
     },
     {
-      "from": "query:25:荒玉駅伝の優勝校は？",
+      "from": "query:27:荒玉駅伝の優勝校は？",
       "to": "corpus:aragyoku",
       "rel": "search_here"
     },
     {
-      "from": "query:25:荒玉駅伝の優勝校は？",
+      "from": "query:27:荒玉駅伝の優勝校は？",
       "to": "source:input/idaten-corpus/aragyoku/winners-by-year.md",
       "rel": "documented_in"
     },
     {
-      "from": "query:25:荒玉駅伝の優勝校は？",
+      "from": "query:27:荒玉駅伝の優勝校は？",
       "to": "source:out/analysis/aragyoku-overview.md",
       "rel": "documented_in"
     },
     {
-      "from": "query:25:荒玉駅伝の優勝校は？",
+      "from": "query:27:荒玉駅伝の優勝校は？",
       "to": "topic:ekiden",
       "rel": "search_here"
     },
     {
-      "from": "query:26:荒玉駅伝の準優勝校は？",
+      "from": "query:28:荒玉駅伝の準優勝校は？",
       "to": "corpus:aragyoku",
       "rel": "search_here"
     },
     {
-      "from": "query:26:荒玉駅伝の準優勝校は？",
+      "from": "query:28:荒玉駅伝の準優勝校は？",
       "to": "source:input/idaten-corpus/aragyoku/winners-by-year.md",
       "rel": "documented_in"
     },
     {
-      "from": "query:26:荒玉駅伝の準優勝校は？",
+      "from": "query:28:荒玉駅伝の準優勝校は？",
       "to": "topic:ekiden",
       "rel": "search_here"
     },
     {
-      "from": "query:27:荒玉駅伝の区間距離は？",
+      "from": "query:29:荒玉駅伝の過去の優勝校を全て提示して",
       "to": "corpus:aragyoku",
       "rel": "search_here"
     },
     {
-      "from": "query:27:荒玉駅伝の区間距離は？",
-      "to": "source:docs/aragyoku-ekiden-distance-definitions.md",
+      "from": "query:29:荒玉駅伝の過去の優勝校を全て提示して",
+      "to": "source:input/idaten-corpus/aragyoku/winners-by-year.md",
       "rel": "documented_in"
     },
     {
-      "from": "query:27:荒玉駅伝の区間距離は？",
-      "to": "source:out/analysis/aragyoku-overview.md",
-      "rel": "documented_in"
-    },
-    {
-      "from": "query:27:荒玉駅伝の区間距離は？",
-      "to": "topic:ekiden",
-      "rel": "search_here"
-    },
-    {
-      "from": "query:28:なごみ駅伝は？",
-      "to": "corpus:calendar",
-      "rel": "search_here"
-    },
-    {
-      "from": "query:28:なごみ駅伝は？",
-      "to": "corpus:drive-text",
-      "rel": "search_here"
-    },
-    {
-      "from": "query:28:なごみ駅伝は？",
-      "to": "source:input/events.2026.yaml",
-      "rel": "documented_in"
-    },
-    {
-      "from": "query:28:なごみ駅伝は？",
-      "to": "topic:calendar",
-      "rel": "search_here"
-    },
-    {
-      "from": "query:28:なごみ駅伝は？",
-      "to": "topic:ekiden",
-      "rel": "search_here"
-    },
-    {
-      "from": "query:29:ジュニア駅伝の結果は？",
-      "to": "corpus:drive-text",
-      "rel": "search_here"
-    },
-    {
-      "from": "query:29:ジュニア駅伝の結果は？",
-      "to": "topic:calendar",
-      "rel": "search_here"
-    },
-    {
-      "from": "query:29:ジュニア駅伝の結果は？",
+      "from": "query:29:荒玉駅伝の過去の優勝校を全て提示して",
       "to": "topic:ekiden",
       "rel": "search_here"
     },
@@ -8276,213 +8194,208 @@
       "rel": "search_here"
     },
     {
-      "from": "query:30:去年のジュニア駅伝の岱明の結果は？",
-      "to": "corpus:drive-text",
+      "from": "query:30:全チームの平均ペースを全て提示して",
+      "to": "corpus:out-analysis",
       "rel": "search_here"
     },
     {
-      "from": "query:30:去年のジュニア駅伝の岱明の結果は？",
-      "to": "topic:calendar",
-      "rel": "search_here"
-    },
-    {
-      "from": "query:30:去年のジュニア駅伝の岱明の結果は？",
-      "to": "topic:ekiden",
-      "rel": "search_here"
-    },
-    {
-      "from": "query:31:部員名簿は？",
-      "to": "corpus:notion-db",
-      "rel": "search_here"
-    },
-    {
-      "from": "query:31:部員名簿は？",
-      "to": "source:input/external/drive/shared/名簿/2025年度_岱明中学校陸上競技部_部員名簿.csv",
-      "rel": "documented_in"
-    },
-    {
-      "from": "query:31:部員名簿は？",
-      "to": "source:input/external/notion/databases/いだてん岱明生徒/rows.json",
-      "rel": "documented_in"
-    },
-    {
-      "from": "query:31:部員名簿は？",
-      "to": "source:input/idaten-corpus/notion-db/いだてん岱明生徒",
-      "rel": "documented_in"
-    },
-    {
-      "from": "query:31:部員名簿は？",
-      "to": "topic:athlete_records",
-      "rel": "search_here"
-    },
-    {
-      "from": "query:31:部員名簿は？",
-      "to": "topic:practice",
-      "rel": "search_here"
-    },
-    {
-      "from": "query:32:中学生SBは？",
-      "to": "corpus:sb",
-      "rel": "search_here"
-    },
-    {
-      "from": "query:32:中学生SBは？",
-      "to": "source:docs/adr/012-middle-school-sb-all-years.md",
-      "rel": "documented_in"
-    },
-    {
-      "from": "query:32:中学生SBは？",
-      "to": "source:input/external/sb/middle-school/INDEX.md",
-      "rel": "documented_in"
-    },
-    {
-      "from": "query:32:中学生SBは？",
-      "to": "source:input/external/sb/middle-school/wide/中学生SB.csv",
-      "rel": "documented_in"
-    },
-    {
-      "from": "query:32:中学生SBは？",
-      "to": "topic:athlete_records",
-      "rel": "search_here"
-    },
-    {
-      "from": "query:33:開催要項は？",
-      "to": "corpus:drive-text",
-      "rel": "search_here"
-    },
-    {
-      "from": "query:33:開催要項は？",
-      "to": "topic:ekiden",
-      "rel": "search_here"
-    },
-    {
-      "from": "query:34:ケガ・障害は？",
-      "to": "corpus:notion-db",
-      "rel": "search_here"
-    },
-    {
-      "from": "query:34:ケガ・障害は？",
-      "to": "source:input/external/notion/INDEX.md",
-      "rel": "documented_in"
-    },
-    {
-      "from": "query:34:ケガ・障害は？",
-      "to": "source:input/memos/rri_healing_evidence_review.md",
-      "rel": "documented_in"
-    },
-    {
-      "from": "query:34:ケガ・障害は？",
-      "to": "topic:injury",
-      "rel": "search_here"
-    },
-    {
-      "from": "query:35:オーダー・区間は？",
-      "to": "corpus:analysis-ocr",
-      "rel": "search_here"
-    },
-    {
-      "from": "query:35:オーダー・区間は？",
-      "to": "corpus:aragyoku",
-      "rel": "search_here"
-    },
-    {
-      "from": "query:35:オーダー・区間は？",
-      "to": "corpus:drive-text",
-      "rel": "search_here"
-    },
-    {
-      "from": "query:35:オーダー・区間は？",
+      "from": "query:30:全チームの平均ペースを全て提示して",
       "to": "source:docs/aragyoku-ekiden-distance-definitions.md",
       "rel": "documented_in"
     },
     {
-      "from": "query:35:オーダー・区間は？",
+      "from": "query:30:全チームの平均ペースを全て提示して",
+      "to": "source:out/analysis/aragyoku_all_teams_average_pace.md",
+      "rel": "documented_in"
+    },
+    {
+      "from": "query:30:全チームの平均ペースを全て提示して",
+      "to": "topic:ekiden",
+      "rel": "search_here"
+    },
+    {
+      "from": "query:31:荒玉駅伝の区間距離は？",
+      "to": "corpus:aragyoku",
+      "rel": "search_here"
+    },
+    {
+      "from": "query:31:荒玉駅伝の区間距離は？",
+      "to": "source:docs/aragyoku-ekiden-distance-definitions.md",
+      "rel": "documented_in"
+    },
+    {
+      "from": "query:31:荒玉駅伝の区間距離は？",
       "to": "source:out/analysis/aragyoku-overview.md",
       "rel": "documented_in"
     },
     {
-      "from": "query:35:オーダー・区間は？",
+      "from": "query:31:荒玉駅伝の区間距離は？",
+      "to": "topic:ekiden",
+      "rel": "search_here"
+    },
+    {
+      "from": "query:32:なごみ駅伝は？",
+      "to": "corpus:drive-text",
+      "rel": "search_here"
+    },
+    {
+      "from": "query:32:なごみ駅伝は？",
+      "to": "source:input/events.2026.yaml",
+      "rel": "documented_in"
+    },
+    {
+      "from": "query:32:なごみ駅伝は？",
+      "to": "topic:calendar",
+      "rel": "search_here"
+    },
+    {
+      "from": "query:32:なごみ駅伝は？",
+      "to": "topic:ekiden",
+      "rel": "search_here"
+    },
+    {
+      "from": "query:33:ジュニア駅伝の結果は？",
+      "to": "corpus:drive-text",
+      "rel": "search_here"
+    },
+    {
+      "from": "query:33:ジュニア駅伝の結果は？",
+      "to": "topic:calendar",
+      "rel": "search_here"
+    },
+    {
+      "from": "query:33:ジュニア駅伝の結果は？",
+      "to": "topic:ekiden",
+      "rel": "search_here"
+    },
+    {
+      "from": "query:34:去年のジュニア駅伝の岱明の結果は？",
+      "to": "corpus:drive-text",
+      "rel": "search_here"
+    },
+    {
+      "from": "query:34:去年のジュニア駅伝の岱明の結果は？",
+      "to": "topic:calendar",
+      "rel": "search_here"
+    },
+    {
+      "from": "query:34:去年のジュニア駅伝の岱明の結果は？",
+      "to": "topic:ekiden",
+      "rel": "search_here"
+    },
+    {
+      "from": "query:35:部員名簿は？",
+      "to": "corpus:notion-db",
+      "rel": "search_here"
+    },
+    {
+      "from": "query:35:部員名簿は？",
+      "to": "source:input/external/drive/shared/名簿/2025年度_岱明中学校陸上競技部_部員名簿.csv",
+      "rel": "documented_in"
+    },
+    {
+      "from": "query:35:部員名簿は？",
+      "to": "source:input/external/notion/databases/いだてん岱明生徒/rows.json",
+      "rel": "documented_in"
+    },
+    {
+      "from": "query:35:部員名簿は？",
+      "to": "source:input/idaten-corpus/notion-db/いだてん岱明生徒",
+      "rel": "documented_in"
+    },
+    {
+      "from": "query:35:部員名簿は？",
       "to": "topic:athlete_records",
       "rel": "search_here"
     },
     {
-      "from": "query:35:オーダー・区間は？",
-      "to": "topic:ekiden",
-      "rel": "search_here"
-    },
-    {
-      "from": "query:36:銀マット・合同練習・保護者連絡は？",
-      "to": "corpus:out-analysis",
-      "rel": "search_here"
-    },
-    {
-      "from": "query:36:銀マット・合同練習・保護者連絡は？",
-      "to": "source:out/analysis/line-chats/INDEX.md",
-      "rel": "documented_in"
-    },
-    {
-      "from": "query:36:銀マット・合同練習・保護者連絡は？",
-      "to": "source:out/analysis/line-chats/daiming-parents.md",
-      "rel": "documented_in"
-    },
-    {
-      "from": "query:36:銀マット・合同練習・保護者連絡は？",
-      "to": "source:out/analysis/line-chats/daiming-staff.md",
-      "rel": "documented_in"
-    },
-    {
-      "from": "query:36:銀マット・合同練習・保護者連絡は？",
-      "to": "topic:calendar",
-      "rel": "search_here"
-    },
-    {
-      "from": "query:36:銀マット・合同練習・保護者連絡は？",
+      "from": "query:35:部員名簿は？",
       "to": "topic:practice",
       "rel": "search_here"
     },
     {
-      "from": "query:37:有田先輩の練習・補強の考え方は？",
-      "to": "corpus:out-analysis",
+      "from": "query:36:中学生SBは？",
+      "to": "source:docs/adr/012-middle-school-sb-all-years.md",
+      "rel": "documented_in"
+    },
+    {
+      "from": "query:36:中学生SBは？",
+      "to": "source:input/external/sb/middle-school/INDEX.md",
+      "rel": "documented_in"
+    },
+    {
+      "from": "query:36:中学生SBは？",
+      "to": "source:input/external/sb/middle-school/wide/中学生SB.csv",
+      "rel": "documented_in"
+    },
+    {
+      "from": "query:36:中学生SBは？",
+      "to": "topic:athlete_records",
       "rel": "search_here"
     },
     {
-      "from": "query:37:有田先輩の練習・補強の考え方は？",
-      "to": "source:out/analysis/line-chats/INDEX.md",
-      "rel": "documented_in"
+      "from": "query:37:開催要項は？",
+      "to": "corpus:drive-text",
+      "rel": "search_here"
     },
     {
-      "from": "query:37:有田先輩の練習・補強の考え方は？",
-      "to": "source:out/analysis/line-chats/arita-taisho.md",
-      "rel": "documented_in"
-    },
-    {
-      "from": "query:37:有田先輩の練習・補強の考え方は？",
+      "from": "query:37:開催要項は？",
       "to": "topic:ekiden",
       "rel": "search_here"
     },
     {
-      "from": "query:37:有田先輩の練習・補強の考え方は？",
-      "to": "topic:practice",
+      "from": "query:38:ケガ・障害は？",
+      "to": "corpus:notion-db",
       "rel": "search_here"
     },
     {
-      "from": "query:38:玉名の天気データはどう更新する？",
-      "to": "corpus:repo-docs",
-      "rel": "search_here"
-    },
-    {
-      "from": "query:38:玉名の天気データはどう更新する？",
-      "to": "source:docs/tamana-weather.md",
+      "from": "query:38:ケガ・障害は？",
+      "to": "source:input/external/notion/INDEX.md",
       "rel": "documented_in"
     },
     {
-      "from": "query:38:玉名の天気データはどう更新する？",
-      "to": "topic:calendar",
+      "from": "query:38:ケガ・障害は？",
+      "to": "source:input/memos/rri_healing_evidence_review.md",
+      "rel": "documented_in"
+    },
+    {
+      "from": "query:38:ケガ・障害は？",
+      "to": "topic:injury",
       "rel": "search_here"
     },
     {
-      "from": "query:38:玉名の天気データはどう更新する？",
-      "to": "topic:meta",
+      "from": "query:39:オーダー・区間は？",
+      "to": "corpus:analysis-ocr",
+      "rel": "search_here"
+    },
+    {
+      "from": "query:39:オーダー・区間は？",
+      "to": "corpus:aragyoku",
+      "rel": "search_here"
+    },
+    {
+      "from": "query:39:オーダー・区間は？",
+      "to": "corpus:drive-text",
+      "rel": "search_here"
+    },
+    {
+      "from": "query:39:オーダー・区間は？",
+      "to": "source:docs/aragyoku-ekiden-distance-definitions.md",
+      "rel": "documented_in"
+    },
+    {
+      "from": "query:39:オーダー・区間は？",
+      "to": "source:out/analysis/aragyoku-overview.md",
+      "rel": "documented_in"
+    },
+    {
+      "from": "query:39:オーダー・区間は？",
+      "to": "topic:athlete_records",
+      "rel": "search_here"
+    },
+    {
+      "from": "query:39:オーダー・区間は？",
+      "to": "topic:ekiden",
       "rel": "search_here"
     },
     {
@@ -8497,11 +8410,6 @@
     },
     {
       "from": "query:3:選手の記録は？",
-      "to": "corpus:sb",
-      "rel": "search_here"
-    },
-    {
-      "from": "query:3:選手の記録は？",
       "to": "source:input/external/sb/middle-school/wide/中学生SB.csv",
       "rel": "documented_in"
     },
@@ -8511,8 +8419,78 @@
       "rel": "search_here"
     },
     {
-      "from": "query:4:今日の予定は？",
-      "to": "corpus:calendar",
+      "from": "query:40:銀マット・合同練習・保護者連絡は？",
+      "to": "corpus:out-analysis",
+      "rel": "search_here"
+    },
+    {
+      "from": "query:40:銀マット・合同練習・保護者連絡は？",
+      "to": "source:out/analysis/line-chats/INDEX.md",
+      "rel": "documented_in"
+    },
+    {
+      "from": "query:40:銀マット・合同練習・保護者連絡は？",
+      "to": "source:out/analysis/line-chats/daiming-parents.md",
+      "rel": "documented_in"
+    },
+    {
+      "from": "query:40:銀マット・合同練習・保護者連絡は？",
+      "to": "source:out/analysis/line-chats/daiming-staff.md",
+      "rel": "documented_in"
+    },
+    {
+      "from": "query:40:銀マット・合同練習・保護者連絡は？",
+      "to": "topic:calendar",
+      "rel": "search_here"
+    },
+    {
+      "from": "query:40:銀マット・合同練習・保護者連絡は？",
+      "to": "topic:practice",
+      "rel": "search_here"
+    },
+    {
+      "from": "query:41:有田先輩の練習・補強の考え方は？",
+      "to": "corpus:out-analysis",
+      "rel": "search_here"
+    },
+    {
+      "from": "query:41:有田先輩の練習・補強の考え方は？",
+      "to": "source:out/analysis/line-chats/INDEX.md",
+      "rel": "documented_in"
+    },
+    {
+      "from": "query:41:有田先輩の練習・補強の考え方は？",
+      "to": "source:out/analysis/line-chats/arita-taisho.md",
+      "rel": "documented_in"
+    },
+    {
+      "from": "query:41:有田先輩の練習・補強の考え方は？",
+      "to": "topic:ekiden",
+      "rel": "search_here"
+    },
+    {
+      "from": "query:41:有田先輩の練習・補強の考え方は？",
+      "to": "topic:practice",
+      "rel": "search_here"
+    },
+    {
+      "from": "query:42:玉名の天気データはどう更新する？",
+      "to": "corpus:repo-docs",
+      "rel": "search_here"
+    },
+    {
+      "from": "query:42:玉名の天気データはどう更新する？",
+      "to": "source:docs/tamana-weather.md",
+      "rel": "documented_in"
+    },
+    {
+      "from": "query:42:玉名の天気データはどう更新する？",
+      "to": "topic:calendar",
+      "rel": "search_here"
+    },
+    {
+      "from": "query:42:玉名の天気データはどう更新する？",
+      "to": "topic:meta",
       "rel": "search_here"
     },
     {
@@ -8528,11 +8506,6 @@
     {
       "from": "query:4:今日の予定は？",
       "to": "topic:calendar",
-      "rel": "search_here"
-    },
-    {
-      "from": "query:5:〇月〇日の予定は？",
-      "to": "corpus:calendar",
       "rel": "search_here"
     },
     {
@@ -8848,6 +8821,11 @@
     {
       "from": "source:docs/ai-practice-generation.md",
       "to": "source:docs/adr/040-exhaustive-list-context.md",
+      "rel": "see_also"
+    },
+    {
+      "from": "source:docs/ai-practice-generation.md",
+      "to": "source:docs/adr/041-aragyoku-leg-awards.md",
       "rel": "see_also"
     },
     {
@@ -9372,6 +9350,11 @@
     },
     {
       "from": "topic:ai",
+      "to": "source:docs/adr/041-aragyoku-leg-awards.md",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:ai",
       "to": "source:docs/ai-practice-generation.md",
       "rel": "search_here"
     },
@@ -9433,11 +9416,6 @@
     {
       "from": "topic:athlete_records",
       "to": "corpus:out-analysis",
-      "rel": "search_here"
-    },
-    {
-      "from": "topic:athlete_records",
-      "to": "corpus:sb",
       "rel": "search_here"
     },
     {
@@ -9732,11 +9710,6 @@
     },
     {
       "from": "topic:athlete_records",
-      "to": "source:input/idaten-corpus/INDEX.md",
-      "rel": "search_here"
-    },
-    {
-      "from": "topic:athlete_records",
       "to": "source:input/idaten-corpus/analysis-ocr",
       "rel": "search_here"
     },
@@ -9827,11 +9800,6 @@
     },
     {
       "from": "topic:athlete_records",
-      "to": "source:input/idaten-corpus/sb",
-      "rel": "search_here"
-    },
-    {
-      "from": "topic:athlete_records",
       "to": "source:out/analysis/2026_aragyoku_men_1500m_sb_individual_top20.md",
       "rel": "search_here"
     },
@@ -9878,11 +9846,6 @@
     {
       "from": "topic:athlete_records",
       "to": "source:out/analysis/荒玉男子駅伝_上位6校.pdf",
-      "rel": "search_here"
-    },
-    {
-      "from": "topic:calendar",
-      "to": "corpus:calendar",
       "rel": "search_here"
     },
     {
@@ -10127,16 +10090,6 @@
     },
     {
       "from": "topic:calendar",
-      "to": "source:input/idaten-corpus/INDEX.md",
-      "rel": "search_here"
-    },
-    {
-      "from": "topic:calendar",
-      "to": "source:input/idaten-corpus/calendar",
-      "rel": "search_here"
-    },
-    {
-      "from": "topic:calendar",
       "to": "source:input/idaten-corpus/drive-text",
       "rel": "search_here"
     },
@@ -10353,11 +10306,6 @@
     {
       "from": "topic:ekiden",
       "to": "corpus:aragyoku",
-      "rel": "search_here"
-    },
-    {
-      "from": "topic:ekiden",
-      "to": "corpus:docs",
       "rel": "search_here"
     },
     {
@@ -10727,11 +10675,6 @@
     },
     {
       "from": "topic:ekiden",
-      "to": "source:input/idaten-corpus/INDEX.md",
-      "rel": "search_here"
-    },
-    {
-      "from": "topic:ekiden",
       "to": "source:input/idaten-corpus/analysis-ocr",
       "rel": "search_here"
     },
@@ -10748,11 +10691,6 @@
     {
       "from": "topic:ekiden",
       "to": "source:input/idaten-corpus/aragyoku/winners-by-year.md",
-      "rel": "search_here"
-    },
-    {
-      "from": "topic:ekiden",
-      "to": "source:input/idaten-corpus/docs",
       "rel": "search_here"
     },
     {
@@ -10823,6 +10761,11 @@
     {
       "from": "topic:ekiden",
       "to": "source:out/analysis/aragyoku_all_teams_average_pace.md",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:ekiden",
+      "to": "source:out/analysis/aragyoku_leg_awards.md",
       "rel": "search_here"
     },
     {
@@ -10898,11 +10841,6 @@
     {
       "from": "topic:injury",
       "to": "source:projects/running-injury-research/stamina-determinants-memo.md",
-      "rel": "search_here"
-    },
-    {
-      "from": "topic:meta",
-      "to": "corpus:docs",
       "rel": "search_here"
     },
     {
@@ -11122,6 +11060,11 @@
     },
     {
       "from": "topic:meta",
+      "to": "source:docs/adr/041-aragyoku-leg-awards.md",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:meta",
       "to": "source:docs/tamana-weather.md",
       "rel": "documented_in"
     },
@@ -11152,16 +11095,6 @@
     },
     {
       "from": "topic:meta",
-      "to": "source:input/idaten-corpus/INDEX.md",
-      "rel": "search_here"
-    },
-    {
-      "from": "topic:meta",
-      "to": "source:input/idaten-corpus/docs",
-      "rel": "search_here"
-    },
-    {
-      "from": "topic:meta",
       "to": "source:input/idaten-corpus/notion-pages",
       "rel": "search_here"
     },
@@ -11173,11 +11106,6 @@
     {
       "from": "topic:norwegian",
       "to": "corpus:notion-pages",
-      "rel": "search_here"
-    },
-    {
-      "from": "topic:norwegian",
-      "to": "corpus:practice",
       "rel": "search_here"
     },
     {
@@ -11223,11 +11151,6 @@
     {
       "from": "topic:pace",
       "to": "corpus:out-analysis",
-      "rel": "search_here"
-    },
-    {
-      "from": "topic:pace",
-      "to": "corpus:practice",
       "rel": "search_here"
     },
     {
@@ -11302,11 +11225,6 @@
     },
     {
       "from": "topic:practice",
-      "to": "corpus:calendar",
-      "rel": "search_here"
-    },
-    {
-      "from": "topic:practice",
       "to": "corpus:drive-text",
       "rel": "search_here"
     },
@@ -11323,11 +11241,6 @@
     {
       "from": "topic:practice",
       "to": "corpus:out-analysis",
-      "rel": "search_here"
-    },
-    {
-      "from": "topic:practice",
-      "to": "corpus:practice",
       "rel": "search_here"
     },
     {
@@ -11917,6 +11830,11 @@
     },
     {
       "from": "topic:practice",
+      "to": "source:docs/adr/041-aragyoku-leg-awards.md",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:practice",
       "to": "source:docs/ai-practice-generation.md",
       "rel": "search_here"
     },
@@ -12002,16 +11920,6 @@
     },
     {
       "from": "topic:practice",
-      "to": "source:input/idaten-corpus/INDEX.md",
-      "rel": "search_here"
-    },
-    {
-      "from": "topic:practice",
-      "to": "source:input/idaten-corpus/calendar",
-      "rel": "search_here"
-    },
-    {
-      "from": "topic:practice",
       "to": "source:input/idaten-corpus/drive-text",
       "rel": "search_here"
     },
@@ -12068,11 +11976,6 @@
     {
       "from": "topic:practice",
       "to": "source:input/idaten-corpus/out-analysis",
-      "rel": "search_here"
-    },
-    {
-      "from": "topic:practice",
-      "to": "source:input/idaten-corpus/practice",
       "rel": "search_here"
     },
     {
@@ -12282,11 +12185,6 @@
     },
     {
       "from": "topic:schema",
-      "to": "corpus:docs",
-      "rel": "search_here"
-    },
-    {
-      "from": "topic:schema",
       "to": "corpus:repo-docs",
       "rel": "search_here"
     },
@@ -12298,11 +12196,6 @@
     {
       "from": "topic:schema",
       "to": "source:docs/data-model.md",
-      "rel": "search_here"
-    },
-    {
-      "from": "topic:schema",
-      "to": "source:input/idaten-corpus/docs",
       "rel": "search_here"
     },
     {

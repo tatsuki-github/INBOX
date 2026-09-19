@@ -168,6 +168,7 @@ def build_markdown() -> str:
         "- 2024–2025 深掘り（岱明・玉高附属・天水・有明）: `aragyoku_2024_2025_focus_teams.md`",
         "- 総合上位の歴代平均ペース分析",
         "- **全チーム・全年度の平均ペース**（〇位の平均ペース正本）: `aragyoku_all_teams_average_pace.md`",
+        "- **区間賞・区間上位**（当日結果の名前・学年・所属）: `aragyoku_leg_awards.md`",
         "- チーム別全年記録（aragyoku-teams）",
         "- 年度別優勝校一覧",
         "- コース動画案内",
