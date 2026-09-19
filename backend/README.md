@@ -79,6 +79,7 @@ npx vercel link --yes --project idaten-line-backend --scope tatsukitsuchiyama-gm
 - デプロイ同梱索引: [`data/rag_index.json`](data/rag_index.json)
 - デプロイ同梱 KG: [`data/knowledge-graph.json`](data/knowledge-graph.json)（探索地図。本文ではない）
 - 大会結果 URL 索引: [`data/meet-result-urls.json`](data/meet-result-urls.json)（記録 CSV / `source.csv` 由来。再生成は `python3 scripts/build_meet_result_urls.py`）
+- 荒玉結果ボード画像（LINE Image）: [`data/aragyoku-board-images.json`](data/aragyoku-board-images.json)（`transcripts` の `source_drive_id`。再生成は `python3 scripts/generate_aragyoku_board_images_catalog.py`。ADR 043）
 - 曖昧な自己ベスト質問は [`src/domain/clarify.ts`](src/domain/clarify.ts) が具体的な質問例を返す（ADR 021）
 - 中学生 SB: コーパス `sb/中学生SB.csv` は **全所属・行単位チャンク**（ADR 022）。再生成は `uv run python scripts/build_idaten_corpus.py`
 - 想定質問の根拠評価: `npx tsx scripts/eval-1000q/run.ts`（1000問）/ `eval-200q`（200問）（ADR 023）

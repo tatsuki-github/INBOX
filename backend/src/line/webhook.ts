@@ -1,5 +1,9 @@
 import type { messagingApi } from "@line/bot-sdk";
 import { answerQuestion, type AnswerDeps } from "../domain/answer.js";
+import {
+  selectAragyokuBoardImages,
+  toLineImageMessages,
+} from "../domain/aragyokuBoardImages.js";
 import { isDeniedUserId } from "../domain/deny.js";
 import { NON_TEXT_GUIDANCE, splitLineText } from "./reply.js";
 import { formatForLine } from "./format.js";
@@ -32,6 +36,27 @@ export type WebhookHandleOptions = AnswerDeps & {
   deniedUserIds?: Set<string>;
 };
 
+/** LINE は 1 reply あたり最大 5 メッセージ。テキストを削って画像枠を確保する。 */
+export function buildReplyMessages(
+  text: string,
+  question: string,
+  opts?: { defaultYear?: number; attachBoardImages?: boolean },
+): messagingApi.Message[] {
+  const attach = opts?.attachBoardImages !== false;
+  const images = attach
+    ? toLineImageMessages(
+        selectAragyokuBoardImages(question, { defaultYear: opts?.defaultYear }),
+      )
+    : [];
+  const textSlots = Math.max(1, 5 - images.length);
+  const parts = splitLineText(formatForLine(text)).slice(0, textSlots);
+  const messages: messagingApi.Message[] = parts.map((t) => ({ type: "text", text: t }));
+  for (const img of images) {
+    messages.push(img);
+  }
+  return messages;
+}
+
 export async function handleWebhookEvents(
   body: LineWebhookBody,
   replyClient: ReplyClient,
@@ -40,6 +65,7 @@ export async function handleWebhookEvents(
   const { deniedUserIds = new Set<string>(), ...answerDeps } = options;
   const events = body.events ?? [];
   let handled = 0;
+  const defaultYear = answerDeps.defaultYear ?? new Date().getFullYear();
 
   for (const event of events) {
     if (!event.replyToken) continue;
@@ -65,10 +91,13 @@ export async function handleWebhookEvents(
           result.kind === "error"
             ? result.text
             : NON_TEXT_GUIDANCE;
-        const parts = splitLineText(formatForLine(text)).slice(0, 5);
+        const attachBoardImages = result.kind === "answered" || result.kind === "offline";
         await replyClient.replyMessage({
           replyToken: event.replyToken,
-          messages: parts.map((t) => ({ type: "text", text: t })),
+          messages: buildReplyMessages(text, question, {
+            defaultYear,
+            attachBoardImages,
+          }),
         });
         handled += 1;
         continue;
