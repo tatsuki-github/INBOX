@@ -35,6 +35,7 @@ function buildRouterSystemPrompt(): string {
     "女子43分切り・区間配分イメージ（有田メモ）は arita-taisho.md。歴代結果板と混同しない。",
     "荒尾玉名の所属・トラック記録なら out-analysis/arato-tamana-teams と sb/ を優先。",
     "抜け漏れ防止のため関連ソースを多めに選ぶ。",
+    "「全て」「全部」「すべて提示」など完全列挙の質問では、OCRや広い hub ではなく正本ダイジェスト（winners-by-year / top2 / all_teams_average_pace / arato-tamana-teams 等）を少数に絞る。",
   ].join("\n");
 }
 

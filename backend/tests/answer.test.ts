@@ -286,6 +286,79 @@ describe("answerQuestion", () => {
     }
   });
 
+  it("narrows to winners digest for 優勝校を全て提示して", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    let sysPrompt = "";
+    let userPrompt = "";
+    const result = await answerQuestion("荒玉駅伝の過去の優勝校を全て提示して", {
+      skipRouter: true,
+      defaultYear: 2026,
+      llm: {
+        complete: async (sys, user) => {
+          sysPrompt = sys;
+          userPrompt = user;
+          return "男子・女子の年度別優勝校を列挙します。";
+        },
+      },
+    });
+    expect(result.kind).toBe("answered");
+    if (result.kind === "answered") {
+      expect(result.sources[0]).toMatch(/winners-by-year/);
+      expect(result.sources.every((s) => !s.includes("analysis-ocr"))).toBe(true);
+      expect(result.sources.every((s) => !s.includes("all_teams_average_pace"))).toBe(true);
+    }
+    expect(sysPrompt).toMatch(/完全列挙|漏れなく列挙/);
+    expect(userPrompt).toMatch(/完全提示|省略せず列挙/);
+    expect(userPrompt).toMatch(/優勝/);
+    // Multiple years should be in context (full digest coverage)
+    expect(userPrompt).toMatch(/2012|2013|2024|2025/);
+  });
+
+  it("offline exhaustive winners list uses winners-by-year not focus analysis", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("荒玉駅伝の優勝校を全部出して", {
+      skipRouter: true,
+      defaultYear: 2026,
+      llm: null,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.sources[0]).toMatch(/winners-by-year/);
+      expect(result.text).toMatch(/優勝/);
+      expect(result.text).toMatch(/男子|女子/);
+    }
+  });
+
+  it("exhaustive 平均ペース covers year section from all-teams digest", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    let userPrompt = "";
+    const result = await answerQuestion(
+      "2025年荒玉男子の全チームの平均ペースを全て提示して",
+      {
+        skipRouter: true,
+        defaultYear: 2026,
+        llm: {
+          complete: async (_sys, user) => {
+            userPrompt = user;
+            return "2025年男子の全チーム平均ペースを列挙します。";
+          },
+        },
+      },
+    );
+    expect(result.kind).toBe("answered");
+    if (result.kind === "answered") {
+      expect(result.sources[0]).toMatch(/all_teams_average_pace/);
+    }
+    expect(userPrompt).toMatch(/2025/);
+    expect(userPrompt).toMatch(/平均ペース/);
+    // Several team rows, not just one
+    const paceHits = userPrompt.match(/\d:\d{2}\.\d\/km/g) ?? [];
+    expect(paceHits.length).toBeGreaterThanOrEqual(5);
+  });
+
   it("does not return 荒玉 sources for 去年のジュニア駅伝の岱明の結果", async () => {
     resetRetrieverCache();
     resetKgCache();

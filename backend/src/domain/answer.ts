@@ -18,6 +18,7 @@ import {
   expandWithNeighbors,
   extractAthleteNameHints,
   findSourcesContaining,
+  isExhaustiveListQuery,
   mergeRetrieved,
   retrieveBySources,
   retrieveContext,
@@ -28,6 +29,7 @@ import { queryKnowledgeGraph, type KgQueryResult } from "../kg/query.js";
 import { RETRIEVAL_BUDGET } from "../rag/budget.js";
 
 export { RETRIEVAL_BUDGET } from "../rag/budget.js";
+export { isExhaustiveListQuery } from "../rag/retrieve.js";
 
 export type AnswerResult =
   | { kind: "refused"; text: string }
@@ -74,6 +76,10 @@ function isLegAthleteQuestion(question: string): boolean {
 
 function offlinePreviewBudget(question: string): number {
   const q = question.normalize("NFKC");
+  // 「全て提示」系は正本ダイジェストを広く見せる
+  if (isExhaustiveListQuery(q)) {
+    return 12_000;
+  }
   // Rankings / full team records / win-count tables need wide windows
   if (
     /ランキング|トップ\s*\d+|全記録|全件|一覧|回数|2位まで|2位以内|最速|一番速|何位|順位|準優勝|優勝校|過去\s*\d+\s*年|過去5年|平均ペース/.test(
@@ -98,6 +104,10 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
   const budget = maxChars ?? offlinePreviewBudget(question);
   const flat = text.replace(/\s+/g, " ");
   const q = question.normalize("NFKC");
+  // Exhaustive: keep document head / wide window (do not needle-slice away tables)
+  if (isExhaustiveListQuery(q)) {
+    return flat.slice(0, budget);
+  }
   // Full-record / ranking digests: prefer document head (title + early tables)
   if (/全記録|記録一覧|所属選手|ランキング|トップ\s*\d+|何位/.test(q)) {
     return flat.slice(0, budget);
@@ -690,6 +700,62 @@ function kgSuggestsInScope(kg: KgQueryResult): boolean {
   return kg.corpus_sources.length > 0 && kg.matched_nodes.length > 0;
 }
 
+/**
+ * 「全て提示して」系: 網羅できる正本だけに絞る（OCR/hub を落とす）。
+ * preferred 先頭の exact ファイルを最大 4 件残す。
+ */
+export function narrowExhaustiveSources(query: string, sources: string[]): string[] {
+  const q = query.normalize("NFKC");
+  const out: string[] = [];
+  const seen = new Set<string>();
+  const push = (s: string) => {
+    if (!s || seen.has(s) || out.length >= 4) return;
+    if (!/\.(md|csv|ya?ml|json)$/i.test(s)) return;
+    if (/analysis-ocr|ekiden-ocr|ocr_raw|notion-db|media-manifest|repo-docs\/adr/.test(s)) return;
+    seen.add(s);
+    out.push(s);
+  };
+
+  // Topic pins — one digest that alone can satisfy the full list
+  if (/優勝|準優勝/.test(q) && /荒玉|駅伝|中体連/.test(q) && !/回数|2位まで|2位以内/.test(q)) {
+    push("aragyoku/winners-by-year.md");
+    return out;
+  }
+  if (/2位まで|2位以内|優勝.*回数|回数/.test(q) && /荒玉|駅伝/.test(q)) {
+    push("out-analysis/aragyoku_top2_finish_counts.md");
+    push("aragyoku/winners-by-year.md");
+    return out;
+  }
+  if ((/平均ペース|\/km/.test(q) || (/ペース/.test(q) && /位|チーム|全/.test(q))) && /荒玉|駅伝/.test(q)) {
+    push("out-analysis/aragyoku_all_teams_average_pace.md");
+    push("out-analysis/aragyoku_top6_historical_average_pace.md");
+    push("docs/aragyoku-ekiden-distance-definitions.md");
+    return out;
+  }
+  if (/大会記録|区間記録|ボード/.test(q) && /荒玉|駅伝/.test(q)) {
+    push("out-analysis/aragyoku_meet_records.md");
+    return out;
+  }
+  if (/\bATRC\b|ＡＴＲＣ/.test(q) && /記録|選手|一覧/.test(q)) {
+    push("out-analysis/arato-tamana-teams/ATRC.md");
+    push("drive-text/personal/ATRC.md");
+    return out;
+  }
+  if (/全記録|所属選手|記録一覧/.test(q)) {
+    for (const s of sources) {
+      if (/arato-tamana-teams\/[^/]+\.md$|athletes\/[^/]+\.md$/.test(s)) push(s);
+    }
+    if (out.length > 0) return out;
+  }
+  if (/優勝との差|前年比|深掘り|分析/.test(q) && /2024|2025|岱明|天水|有明|玉高|玉名付属/.test(q)) {
+    push("out-analysis/aragyoku_2024_2025_focus_teams.md");
+    return out;
+  }
+
+  for (const s of sources) push(s);
+  return out.length > 0 ? out : sources.filter((s) => /\.(md|csv|json)$/i.test(s)).slice(0, 4);
+}
+
 export async function answerQuestion(
   question: string,
   deps: AnswerDeps = {},
@@ -697,6 +763,7 @@ export async function answerQuestion(
   const year = deps.defaultYear ?? new Date().getFullYear();
   const expanded = expandDateQuery(question, year);
   const topK = deps.topK ?? RETRIEVAL_BUDGET.topK;
+  const exhaustive = isExhaustiveListQuery(expanded);
 
   const canned = matchCannedAnswer(question);
   if (canned) {
@@ -752,7 +819,7 @@ export async function answerQuestion(
       }
     : await routeSources(expanded, kg, deps.llm);
 
-  const preferredSources = boostDaimingLineSources(
+  let preferredSources = boostDaimingLineSources(
     question,
     boostAthleteRecordSources(
       question,
@@ -764,17 +831,28 @@ export async function answerQuestion(
     ),
   ).slice(0, RETRIEVAL_BUDGET.routeSources);
 
+  if (exhaustive) {
+    preferredSources = narrowExhaustiveSources(expanded, preferredSources);
+  }
+
   const fromSources = retrieveBySources(preferredSources, {
     query: expanded,
-    perSource: RETRIEVAL_BUDGET.perSource,
-    maxChunks: RETRIEVAL_BUDGET.maxChunks,
+    perSource: exhaustive ? 200 : RETRIEVAL_BUDGET.perSource,
+    maxChunks: exhaustive ? 200 : RETRIEVAL_BUDGET.maxChunks,
+    coverage: exhaustive ? "full" : "ranked",
   });
   const retrieve = deps.retrieve ?? retrieveContext;
-  const fromBm25 = retrieve(expanded, topK);
-  const mergedCore = mergeRetrieved(fromSources, fromBm25, topK, { query: expanded });
+  // Exhaustive: preferred digest coverage alone — BM25 OCR/ADR filler drowns the list
+  const fromBm25 = exhaustive ? [] : retrieve(expanded, topK);
+  const mergedCore = mergeRetrieved(
+    fromSources,
+    fromBm25,
+    exhaustive ? Math.max(topK, fromSources.length, 96) : topK,
+    { query: expanded, preferPrimaryOrder: exhaustive },
+  );
   const withNeighbors = expandWithNeighbors(mergedCore, {
-    radius: RETRIEVAL_BUDGET.neighborRadius,
-    maxExtra: RETRIEVAL_BUDGET.neighborMaxExtra,
+    radius: exhaustive ? 0 : RETRIEVAL_BUDGET.neighborRadius,
+    maxExtra: exhaustive ? 0 : RETRIEVAL_BUDGET.neighborMaxExtra,
     query: expanded,
   });
   const merged = truncateRetrieved(withNeighbors, RETRIEVAL_BUDGET.maxChars);
@@ -799,8 +877,8 @@ export async function answerQuestion(
     const focusNote =
       route.focus && route.focus !== question ? `\n検索焦点: ${route.focus}` : "";
     const text = await deps.llm.complete(
-      buildSystemPrompt(),
-      buildUserPrompt(question + focusNote, merged),
+      buildSystemPrompt({ exhaustive }),
+      buildUserPrompt(question + focusNote, merged, { exhaustive }),
     );
     return {
       kind: "answered",

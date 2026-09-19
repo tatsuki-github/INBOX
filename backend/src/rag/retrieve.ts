@@ -364,6 +364,10 @@ export function findSourcesContaining(
   return found;
 }
 
+function chunkIndex(chunk: RagChunk): number {
+  return Number((chunk.id.match(/:(\d+)$/) || chunk.source.match(/:(\d+)$/) || [])[1] ?? 0);
+}
+
 /** Fetch chunks whose source matches any of the given corpus sources (prefix OK). */
 export function retrieveBySources(
   sources: string[],
@@ -372,6 +376,11 @@ export function retrieveBySources(
     perSource?: number;
     maxChunks?: number;
     path?: string;
+    /**
+     * `full`: document order, all chunks up to perSource (for 「全て提示」網羅).
+     * `ranked` (default): BM25 / query scoring.
+     */
+    coverage?: "ranked" | "full";
   },
 ): RetrievedChunk[] {
   if (sources.length === 0) return [];
@@ -380,6 +389,7 @@ export function retrieveBySources(
   const perSource = opts?.perSource ?? 12;
   const maxChunks = opts?.maxChunks ?? 96;
   const query = opts?.query ?? "";
+  const coverage = opts?.coverage ?? "ranked";
   const qTokens = query ? tokenize(query) : [];
   const nameHints = query ? extractAthleteNameHints(query) : [];
 
@@ -401,6 +411,22 @@ export function retrieveBySources(
   for (const src of sources) {
     const chunks = bySource.get(src) ?? [];
     if (chunks.length === 0) continue;
+    // Exact preferred files get a floor so directory-prefix pools cannot drown them
+    const exactFloor =
+      /\.(md|csv|ya?ml|json)$/i.test(src) && !src.endsWith("/") ? 200 : 0;
+
+    if (coverage === "full") {
+      const ordered = [...chunks].sort((a, b) => chunkIndex(a) - chunkIndex(b));
+      for (const [i, c] of ordered.slice(0, perSource).entries()) {
+        // High base + tiny index delta keeps document order after score sort
+        scored.push({
+          chunk: c,
+          score: 5000 - i + exactFloor + pathQueryBonus(c.source, query),
+        });
+      }
+      continue;
+    }
+
     const ranked =
       qTokens.length > 0 || nameHints.length > 0
         ? new Bm25Retriever(chunks).search(query, perSource)
@@ -419,9 +445,6 @@ export function retrieveBySources(
         });
       }
     }
-    // Exact preferred files get a floor so directory-prefix pools cannot drown them
-    const exactFloor =
-      /\.(md|csv|ya?ml|json)$/i.test(src) && !src.endsWith("/") ? 200 : 0;
     for (const r of ranked) {
       scored.push({
         chunk: r.chunk,
@@ -430,6 +453,10 @@ export function retrieveBySources(
     }
   }
 
+  if (coverage === "full") {
+    // Preserve preferred-source order: do not re-sort across sources by raw score
+    return scored.slice(0, maxChunks);
+  }
   scored.sort((a, b) => b.score - a.score);
   return scored.slice(0, maxChunks);
 }
@@ -772,13 +799,59 @@ function isBlockedChunkForQuery(chunk: { source: string; text: string }, query: 
  * Merge routed (primary) and BM25 (secondary) hits by score fusion.
  * Weak preferred no longer gets a flat +1000 that drowns strong BM25.
  */
+function digestPinForQuery(chunk: RagChunk, query: string): number {
+  const qn = query.normalize("NFKC");
+  const base = chunkBaseSource(chunk.source);
+  if (/全記録|所属選手|記録一覧/.test(qn)) {
+    const stem = base.split("/").pop()?.replace(/\.md$/, "") ?? "";
+    if (/arato-tamana-teams\/[^/]+\.md$/.test(base) && stem && query.includes(stem)) {
+      return 500;
+    }
+  }
+  if (/過去|歴代|順位/.test(qn) && /荒玉|駅伝/.test(qn)) {
+    const stem = base.split("/").pop()?.replace(/\.md$/, "") ?? "";
+    if (/aragyoku-teams\/[^/]+\.md$/.test(base) && stem && query.includes(stem)) {
+      return 500;
+    }
+  }
+  if (/トラック/.test(qn) && /1周|一周|周長|何メートル/.test(qn)) {
+    if (/daiming-practice-menus-kpace|data-model\.md/.test(chunk.source)) {
+      return 500;
+    }
+  }
+  // 「全て提示」系: 正本ダイジェストを強くピン（OCR / hub に埋もれない）
+  if (isExhaustiveListQuery(qn)) {
+    if (/winners-by-year/.test(base) && /優勝|準優勝/.test(qn)) return 900;
+    if (/top2_finish_counts/.test(base) && /2位まで|2位以内|回数/.test(qn)) return 900;
+    if (/all_teams_average_pace|top6_historical_average_pace/.test(base) && /ペース|\/km/.test(qn))
+      return 900;
+    if (/arato-tamana-teams\/[^/]+\.md$/.test(base) && /記録|選手|一覧/.test(qn)) return 900;
+    if (/aragyoku-teams\/[^/]+\.md$/.test(base) && /区間|順位|歴代|過去/.test(qn)) return 800;
+    if (/2024_2025_focus_teams/.test(base) && /優勝との差|前年比|深掘り|分析/.test(qn)) return 800;
+    if (/meet_records/.test(base) && /大会記録|区間記録/.test(qn)) return 800;
+    if (/\.(md|csv|json)$/i.test(base) && !base.endsWith("/") && !/ocr|notion-db|transcripts\//.test(base)) {
+      return 400;
+    }
+  }
+  return 0;
+}
+
+/** 「全て / 全部 / すべて提示」など網羅列挙の意図。 */
+export function isExhaustiveListQuery(query: string): boolean {
+  const q = query.normalize("NFKC");
+  return /全て|すべて|全部|残らず|漏れなく|全件|フル(リスト|一覧)|一覧(を|で)?(全部|全て|すべて)|全部(出|教え|提示|列挙|見せ)|全て(出|教え|提示|列挙|見せ)|すべて(出|教え|提示|列挙|見せ)/.test(
+    q,
+  );
+}
+
 export function mergeRetrieved(
   primary: RetrievedChunk[],
   secondary: RetrievedChunk[],
   topK = 10,
-  opts?: { query?: string },
+  opts?: { query?: string; preferPrimaryOrder?: boolean },
 ): RetrievedChunk[] {
   const query = opts?.query ?? "";
+  const preferPrimaryOrder = opts?.preferPrimaryOrder ?? false;
   const byId = new Map<string, RetrievedChunk>();
 
   const upsert = (r: RetrievedChunk, extra: number) => {
@@ -795,56 +868,38 @@ export function mergeRetrieved(
     // Weak preferred (headers / low overlap) only get a tiny routed bonus.
     const strengthBonus = r.score >= 80 ? 50 : r.score >= 40 ? 25 : 5;
     const pathBonus = pathQueryBonus(r.chunk.source, query);
-    // Pin exact team digest chunks for 全記録 / 荒玉歴代順位 questions
-    let pin = 0;
-    const qn = query.normalize("NFKC");
-    if (/全記録|所属選手|記録一覧/.test(qn)) {
-      const base = chunkBaseSource(r.chunk.source);
-      if (/arato-tamana-teams\/[^/]+\.md$/.test(base) && query.includes(base.split("/").pop()!.replace(/\.md$/, ""))) {
-        pin = 500;
-      }
-    }
-    if (/過去|歴代|順位/.test(qn) && /荒玉|駅伝/.test(qn)) {
-      const base = chunkBaseSource(r.chunk.source);
-      const stem = base.split("/").pop()?.replace(/\.md$/, "") ?? "";
-      if (/aragyoku-teams\/[^/]+\.md$/.test(base) && stem && query.includes(stem)) {
-        pin = 500;
-      }
-    }
-    if (/トラック/.test(qn) && /1周|一周|周長|何メートル/.test(qn)) {
-      if (/daiming-practice-menus-kpace|data-model\.md/.test(r.chunk.source)) {
-        pin = 500;
-      }
-    }
+    const pin = digestPinForQuery(r.chunk, query);
     upsert(r, strengthBonus + pathBonus + pin);
   }
   for (const r of secondary) {
     const pathBonus = pathQueryBonus(r.chunk.source, query);
-    let pin = 0;
-    const qn = query.normalize("NFKC");
-    if (/全記録|所属選手|記録一覧/.test(qn)) {
-      const base = chunkBaseSource(r.chunk.source);
-      const stem = base.split("/").pop()?.replace(/\.md$/, "") ?? "";
-      if (/arato-tamana-teams\/[^/]+\.md$/.test(base) && stem && query.includes(stem)) {
-        pin = 500;
-      }
-    }
-    if (/過去|歴代|順位/.test(qn) && /荒玉|駅伝/.test(qn)) {
-      const base = chunkBaseSource(r.chunk.source);
-      const stem = base.split("/").pop()?.replace(/\.md$/, "") ?? "";
-      if (/aragyoku-teams\/[^/]+\.md$/.test(base) && stem && query.includes(stem)) {
-        pin = 500;
-      }
-    }
-    if (/トラック/.test(qn) && /1周|一周|周長|何メートル/.test(qn)) {
-      if (/daiming-practice-menus-kpace|data-model\.md/.test(r.chunk.source)) {
-        pin = 500;
-      }
-    }
-    upsert(r, pathQueryPenalty(r.chunk.source, query) + pathBonus + pin);
+    const pin = digestPinForQuery(r.chunk, query);
+    // Exhaustive: BM25 filler must not outrank full preferred digests
+    const fillerPenalty = preferPrimaryOrder || isExhaustiveListQuery(query) ? -200 : 0;
+    upsert(r, pathQueryPenalty(r.chunk.source, query) + pathBonus + pin + fillerPenalty);
   }
 
-  return [...byId.values()].sort((a, b) => b.score - a.score).slice(0, topK);
+  const merged = [...byId.values()].sort((a, b) => b.score - a.score);
+  if (!preferPrimaryOrder && !isExhaustiveListQuery(query)) {
+    return merged.slice(0, topK);
+  }
+  // Prefer primary document order for exhaustive listings, then fill by score
+  const out: RetrievedChunk[] = [];
+  const seen = new Set<string>();
+  for (const r of primary) {
+    const hit = byId.get(r.chunk.id);
+    if (!hit || seen.has(hit.chunk.id)) continue;
+    seen.add(hit.chunk.id);
+    out.push(hit);
+    if (out.length >= topK) return out;
+  }
+  for (const r of merged) {
+    if (seen.has(r.chunk.id)) continue;
+    seen.add(r.chunk.id);
+    out.push(r);
+    if (out.length >= topK) break;
+  }
+  return out;
 }
 
 /** Truncate retrieved texts to a character budget for LLM context. */

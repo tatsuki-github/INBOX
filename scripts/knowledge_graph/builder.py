@@ -513,6 +513,25 @@ QUERY_HINTS: list[tuple[str, str, list[str]]] = [
         ],
     ),
     (
+        "荒玉駅伝の過去の優勝校を全て提示して",
+        "「全て提示」系は winners-by-year.md 正本を全文寄りで渡す（OCR/focus 分析に散らさない）",
+        [
+            "topic:ekiden",
+            "corpus:aragyoku",
+            "source:input/idaten-corpus/aragyoku/winners-by-year.md",
+        ],
+    ),
+    (
+        "全チームの平均ペースを全て提示して",
+        "aragyoku_all_teams_average_pace.md を文書順で網羅取得（BM25 散発ヒットにしない）",
+        [
+            "topic:ekiden",
+            "corpus:out-analysis",
+            "source:out/analysis/aragyoku_all_teams_average_pace.md",
+            "source:docs/aragyoku-ekiden-distance-definitions.md",
+        ],
+    ),
+    (
         "荒玉駅伝の区間距離は？",
         "docs/aragyoku-ekiden-distance-definitions.md の年度別・男女別区間距離定義を優先する",
         [
