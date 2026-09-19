@@ -603,6 +603,22 @@ function pathQueryBonus(source: string, query: string): number {
   ) {
     bonus += 200;
   }
+  if (
+    /準優勝|優勝校|過去\s*\d+\s*年|過去5年/.test(q) &&
+    /荒玉|駅伝/.test(q) &&
+    /winners-by-year/.test(s)
+  ) {
+    bonus += 260;
+  }
+  // 年度別優勝・準優勝質問では回数集計を下げ、年度表を勝たせる
+  if (
+    /準優勝|優勝校/.test(q) &&
+    /過去|年|歴代/.test(q) &&
+    /top2_finish_counts/.test(s) &&
+    !/回数|2位まで|2位以内/.test(q)
+  ) {
+    bonus -= 120;
+  }
   if (/高田麻那/.test(q) && /takada-mana|athletes\/takada|SBデータベース/.test(s)) {
     bonus += 250;
   }

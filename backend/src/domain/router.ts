@@ -92,6 +92,7 @@ function sourcePreferScore(source: string, question: string): number {
     if (kind === "nagomi" && /なごみ|金栗/.test(source)) score += 70;
   } else if (kind === "aragyoku") {
     if (source.includes("winners-by-year")) score += 80;
+    if (/準優勝|優勝校/.test(question) && source.includes("winners-by-year")) score += 40;
     if (source.startsWith("aragyoku/transcripts/")) score += 60;
     if (source.startsWith("aragyoku/")) score += 40;
     if (source === "aragyoku") score += 35;

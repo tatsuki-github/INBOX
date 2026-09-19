@@ -91,7 +91,7 @@
 - `input/aragyoku/ocr_raw/2025-女子.md` → `aragyoku/ocr_raw/2025-女子.md`
 - `input/aragyoku/ocr_raw/2025-男子.md` → `aragyoku/ocr_raw/2025-男子.md`
 - `input/aragyoku/quiz/荒玉駅伝○×クイズ.csv` → `aragyoku/quiz/荒玉駅伝○×クイズ.csv`
-- `input/aragyoku/transcripts (derived)` → `aragyoku/winners-by-year.md` (winners summary from rank=1)
+- `input/aragyoku/transcripts (derived)` → `aragyoku/winners-by-year.md` (winners + runners-up summary from rank=1/2)
 - `out/analysis/2026_aragyoku_men_1500m_sb_individual_top20.md` → `out-analysis/2026_aragyoku_men_1500m_sb_individual_top20.md`
 - `out/analysis/2026_aragyoku_men_3000m_sb_ranking.md` → `out-analysis/2026_aragyoku_men_3000m_sb_ranking.md`
 - `out/analysis/2026_men_1500m_pb_school_ranking.md` → `out-analysis/2026_men_1500m_pb_school_ranking.md`
@@ -179,6 +179,10 @@
 - `docs/adr/032-athlete-name-ranking-retrieval.md` → `repo-docs/adr/032-athlete-name-ranking-retrieval.md`
 - `docs/adr/033-aragyoku-meet-records.md` → `repo-docs/adr/033-aragyoku-meet-records.md`
 - `docs/adr/034-aragyoku-2024-2025-focus-analysis.md` → `repo-docs/adr/034-aragyoku-2024-2025-focus-analysis.md`
+- `docs/adr/035-aragyoku-leg-athlete-vs-line-ops.md` → `repo-docs/adr/035-aragyoku-leg-athlete-vs-line-ops.md`
+- `docs/adr/036-school-pb-avg-and-winner-margin.md` → `repo-docs/adr/036-school-pb-avg-and-winner-margin.md`
+- `docs/adr/037-daiming-practice-actuals-mode.md` → `repo-docs/adr/037-daiming-practice-actuals-mode.md`
+- `docs/adr/038-aragyoku-winners-runners-up.md` → `repo-docs/adr/038-aragyoku-winners-runners-up.md`
 - `docs/idaten-import/phase0-media-ocr.md` → `repo-docs/idaten-import/phase0-media-ocr.md`
 - `docs/idaten-import/phase0-work-type.md` → `repo-docs/idaten-import/phase0-work-type.md`
 - `docs/idaten-import/phase1-media-ocr.md` → `repo-docs/idaten-import/phase1-media-ocr.md`

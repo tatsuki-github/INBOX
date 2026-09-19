@@ -366,7 +366,7 @@
   {
     "source": "input/aragyoku/transcripts (derived)",
     "corpus": "aragyoku/winners-by-year.md",
-    "note": "winners summary from rank=1"
+    "note": "winners + runners-up summary from rank=1/2"
   },
   {
     "source": "out/analysis/2026_aragyoku_men_1500m_sb_individual_top20.md",
@@ -715,6 +715,22 @@
   {
     "source": "docs/adr/034-aragyoku-2024-2025-focus-analysis.md",
     "corpus": "repo-docs/adr/034-aragyoku-2024-2025-focus-analysis.md"
+  },
+  {
+    "source": "docs/adr/035-aragyoku-leg-athlete-vs-line-ops.md",
+    "corpus": "repo-docs/adr/035-aragyoku-leg-athlete-vs-line-ops.md"
+  },
+  {
+    "source": "docs/adr/036-school-pb-avg-and-winner-margin.md",
+    "corpus": "repo-docs/adr/036-school-pb-avg-and-winner-margin.md"
+  },
+  {
+    "source": "docs/adr/037-daiming-practice-actuals-mode.md",
+    "corpus": "repo-docs/adr/037-daiming-practice-actuals-mode.md"
+  },
+  {
+    "source": "docs/adr/038-aragyoku-winners-runners-up.md",
+    "corpus": "repo-docs/adr/038-aragyoku-winners-runners-up.md"
   },
   {
     "source": "docs/idaten-import/phase0-media-ocr.md",

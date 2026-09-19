@@ -190,6 +190,59 @@ describe("answerQuestion", () => {
     }
   });
 
+  it("covers women runners-up for 過去5年の優勝・準優勝", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    let userPrompt = "";
+    const result = await answerQuestion(
+      "女子の荒玉駅伝の過去5年間の優勝校、準優勝校は？",
+      {
+        skipRouter: true,
+        defaultYear: 2026,
+        llm: {
+          complete: async (_sys, user) => {
+            userPrompt = user;
+            return (
+              "2021荒尾四/荒尾三、2022長洲/荒尾四、2023荒尾三/荒尾四、" +
+              "2024南関/荒尾三、2025玉名/南関です。"
+            );
+          },
+        },
+      },
+    );
+    expect(result.kind).toBe("answered");
+    expect(userPrompt).toMatch(/優勝/);
+    expect(userPrompt).toMatch(/準優勝/);
+    // All five years' runners-up must appear in context (not just winners)
+    expect(userPrompt).toMatch(/荒尾三/);
+    expect(userPrompt).toMatch(/荒尾四/);
+    expect(userPrompt).toMatch(/南関/);
+    expect(userPrompt).toMatch(/長洲/);
+    expect(userPrompt).toMatch(/玉名/);
+    if (result.kind === "answered") {
+      expect(result.sources.some((s) => s.includes("winners-by-year"))).toBe(true);
+    }
+  });
+
+  it("offline preview for 優勝・準優勝 includes runners-up table", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion(
+      "女子の荒玉駅伝の過去5年間の優勝校、準優勝校は？",
+      {
+        skipRouter: true,
+        defaultYear: 2026,
+        llm: null,
+      },
+    );
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.text).toMatch(/準優勝/);
+      expect(result.text).toMatch(/荒尾三|荒尾四|南関/);
+      expect(result.sources.some((s) => s.includes("winners-by-year"))).toBe(true);
+    }
+  });
+
   it("does not return 荒玉 sources for 去年のジュニア駅伝の岱明の結果", async () => {
     resetRetrieverCache();
     resetKgCache();

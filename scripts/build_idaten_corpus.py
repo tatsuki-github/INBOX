@@ -376,54 +376,28 @@ def _build_corpus() -> list[dict[str, str]]:
 
 
 def _write_aragyoku_winners(sources: list[dict[str, str]]) -> None:
-    """Derive a BM25-friendly winners table from transcripts (rank=1)."""
+    """Derive BM25-friendly winners+runners-up table from transcripts (rank=1/2)."""
     transcripts = ARAGYOKU / "transcripts"
     if not transcripts.is_dir():
         return
-    lines = [
-        "# 荒玉駅伝 年度別優勝校",
-        "",
-        "文字起こし（`input/aragyoku/transcripts/*.json`）の teams[rank=1] に基づく要約。",
-        "「去年の優勝校」など相対年の質問では、質問時点の西暦とこの表の年度を対応づける。",
-        "",
-        "| 年度 | 性別 | 優勝校 | 総合タイム |",
-        "| --- | --- | --- | --- |",
-    ]
-    for path in sorted(transcripts.glob("*.json")):
-        try:
-            data = json.loads(path.read_text(encoding="utf-8"))
-        except (json.JSONDecodeError, OSError):
-            continue
-        if not isinstance(data, dict):
-            continue
-        year = data.get("year")
-        gender = data.get("gender")
-        teams = data.get("teams") or []
-        winner = next(
-            (t for t in teams if isinstance(t, dict) and t.get("rank") in (1, "1")),
-            None,
-        )
-        if not winner:
-            continue
-        team = winner.get("team") or "?"
-        total = winner.get("total") or ""
-        lines.append(f"| {year} | {gender} | {team} | {total} |")
-        # Plain-language line for BM25 (テーブル記号に依存しない)
-        lines.append(
-            f"{year}年荒玉駅伝{gender}の優勝校は「{team}」である（総合 {total}）。1位 {team}。"
-        )
-    if len(lines) <= 7:
+    # Prefer shared builder (also writes input/aragyoku + corpus paths).
+    builder = ROOT / "scripts" / "build_aragyoku_winners_by_year.py"
+    if builder.is_file():
+        import runpy
+
+        runpy.run_path(str(builder), run_name="__main__")
+        dest = CORPUS_DIR / "aragyoku" / "winners-by-year.md"
+        if dest.is_file():
+            sources.append(
+                {
+                    "source": "input/aragyoku/transcripts (derived)",
+                    "corpus": str(dest.relative_to(CORPUS_DIR)),
+                    "note": "winners + runners-up summary from rank=1/2",
+                }
+            )
         return
-    dest = CORPUS_DIR / "aragyoku" / "winners-by-year.md"
-    dest.parent.mkdir(parents=True, exist_ok=True)
-    dest.write_text("\n".join(lines) + "\n", encoding="utf-8")
-    sources.append(
-        {
-            "source": "input/aragyoku/transcripts (derived)",
-            "corpus": str(dest.relative_to(CORPUS_DIR)),
-            "note": "winners summary from rank=1",
-        }
-    )
+    # Fallback if builder missing (should not happen in-repo)
+    raise FileNotFoundError(builder)
 
 
 def _chunk_aragyoku_transcript(path: Path, rel: str) -> list[dict[str, Any]]:
@@ -440,6 +414,7 @@ def _chunk_aragyoku_transcript(path: Path, rel: str) -> list[dict[str, Any]]:
     legs = [L for L in (data.get("legs") or []) if isinstance(L, dict)]
     out: list[dict[str, Any]] = []
     winner = next((t for t in teams if t.get("rank") in (1, "1")), None)
+    runner = next((t for t in teams if t.get("rank") in (2, "2")), None)
     summary_parts = [
         f"{year}年 荒玉中体連駅伝 {gender} 結果要約。",
     ]
@@ -452,6 +427,10 @@ def _chunk_aragyoku_transcript(path: Path, rel: str) -> list[dict[str, Any]]:
     if winner:
         summary_parts.append(
             f"優勝校（1位）は「{winner.get('team')}」（総合 {winner.get('total', '')}）。"
+        )
+    if runner:
+        summary_parts.append(
+            f"準優勝校（2位）は「{runner.get('team')}」（総合 {runner.get('total', '')}）。"
         )
     for t in teams:
         summary_parts.append(

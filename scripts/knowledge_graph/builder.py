@@ -177,7 +177,7 @@ SOURCE_GLOBS: list[tuple[str, list[str], str]] = [
     (
         "input/idaten-corpus/aragyoku/winners-by-year.md",
         ["ekiden"],
-        "荒玉駅伝 年度別優勝校（コーパス）",
+        "荒玉駅伝 年度別優勝・準優勝校（コーパス）",
     ),
     (
         "input/idaten-corpus/aragyoku/course-videos.md",
@@ -438,7 +438,7 @@ QUERY_HINTS: list[tuple[str, str, list[str]]] = [
     ),
     (
         "去年の荒玉駅伝の優勝校は？",
-        "相対年を西暦に展開し aragyoku/winners-by-year.md と transcripts/{year}-*.json の rank=1 を読む",
+        "相対年を西暦に展開し aragyoku/winners-by-year.md（優勝+準優勝）と transcripts/{year}-*.json の rank=1/2 を読む",
         [
             "topic:ekiden",
             "corpus:aragyoku",
@@ -457,13 +457,32 @@ QUERY_HINTS: list[tuple[str, str, list[str]]] = [
         ],
     ),
     (
+        "女子の荒玉駅伝の過去5年間の優勝校、準優勝校は？",
+        "winners-by-year.md の「女子・直近5年」表（優勝+準優勝）。回数集計の top2_finish_counts だけでは年度別準優勝が欠ける",
+        [
+            "topic:ekiden",
+            "corpus:aragyoku",
+            "source:input/idaten-corpus/aragyoku/winners-by-year.md",
+            "source:out/analysis/aragyoku_top2_finish_counts.md",
+        ],
+    ),
+    (
         "荒玉駅伝の優勝校は？",
-        "aragyoku/winners-by-year.md と transcripts の teams[rank=1]、ekiden-ocr 該当年",
+        "aragyoku/winners-by-year.md（年度別優勝・準優勝）と transcripts の teams[rank=1/2]、ekiden-ocr 該当年",
         [
             "topic:ekiden",
             "corpus:aragyoku",
             "source:input/idaten-corpus/aragyoku/winners-by-year.md",
             "source:out/analysis/aragyoku-overview.md",
+        ],
+    ),
+    (
+        "荒玉駅伝の準優勝校は？",
+        "winners-by-year.md の準優勝校列（rank=2）。top2_finish_counts は回数集計のみで年度一覧には使わない",
+        [
+            "topic:ekiden",
+            "corpus:aragyoku",
+            "source:input/idaten-corpus/aragyoku/winners-by-year.md",
         ],
     ),
     (

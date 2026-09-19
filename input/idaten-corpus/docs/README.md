@@ -196,7 +196,7 @@ events:
 関連ファイル:
 
 - `input/practice_templates.yaml` — メニューテンプレート集
-- `input/practice_schedules.yaml` — 朝練/夕練スケジュール
+- `input/practice_schedules.yaml` — 朝練/夕練スケジュール（`actuals_mode_from` 以降は実績入力。詳細は `docs/data-model.md` / ADR 037）
 - `docs/data-model.md` — データ辞書
 
 ```bash

@@ -76,7 +76,9 @@ function offlinePreviewBudget(question: string): number {
   const q = question.normalize("NFKC");
   // Rankings / full team records / win-count tables need wide windows
   if (
-    /ランキング|トップ\s*\d+|全記録|全件|一覧|回数|2位まで|2位以内|最速|一番速|何位|順位/.test(q)
+    /ランキング|トップ\s*\d+|全記録|全件|一覧|回数|2位まで|2位以内|最速|一番速|何位|順位|準優勝|優勝校|過去\s*\d+\s*年|過去5年/.test(
+      q,
+    )
   ) {
     return 3600;
   }
@@ -98,6 +100,17 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
   const q = question.normalize("NFKC");
   // Full-record / ranking digests: prefer document head (title + early tables)
   if (/全記録|記録一覧|所属選手|ランキング|トップ\s*\d+|何位/.test(q)) {
+    return flat.slice(0, budget);
+  }
+  // 優勝・準優勝の年度表（直近5年ブロックを先頭に据えた winners-by-year）
+  if (/優勝|準優勝|2位/.test(q) && /荒玉|駅伝|過去/.test(q)) {
+    for (const needle of ["女子・直近5年", "男子・直近5年", "準優勝校", "優勝・準優勝"]) {
+      const idx = flat.indexOf(needle);
+      if (idx >= 0) {
+        const start = Math.max(0, idx - 40);
+        return flat.slice(start, Math.min(flat.length, start + budget));
+      }
+    }
     return flat.slice(0, budget);
   }
   const isos = question.match(/20\d{2}-\d{2}-\d{2}/g) ?? [];
@@ -542,6 +555,13 @@ function boostMeetYearSources(
     }
     if (/2位まで|2位以内|総合2位|優勝.*回数|回数/.test(expandedQuery)) {
       push("out-analysis/aragyoku_top2_finish_counts.md");
+      push("aragyoku/winners-by-year.md");
+    }
+    // 年度別の優勝・準優勝（回数集計ではなく year×school 表）
+    if (
+      /準優勝|優勝校|2位は|2位の学校/.test(expandedQuery) ||
+      (/優勝/.test(expandedQuery) && /過去|歴代|年/.test(expandedQuery))
+    ) {
       push("aragyoku/winners-by-year.md");
     }
     // Exact team history digest for 「〇〇の荒玉駅伝の過去の順位」/ 区間選手 / 優勝差

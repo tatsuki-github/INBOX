@@ -16,7 +16,7 @@ ADR 015 の LINE バックエンドは BM25（`rag_index.json`）のみで回答
 6. **ユーザー向け回答**: コーパス抜粋のみを根拠にするが、パス・ソース名は本文に出さない。LINE は Markdown 非対応のためプレーンテキストで返し、送信前に `formatForLine` で記号を除去する。
 7. **網羅性**: KG にコーパスハブ・大会フォルダ（`meet:*`）を「何が書いてあるか」ヒント付きで登録。検索は topK/近傍チャンク拡大し、抜け漏れを減らす。
 8. **スコープ**: 天気・ニュース等のハード拒否以外はリポジトリ知識コーパス全体を対象（いだてん岱明に限定しない）。根拠はコーパス抜粋のみ。
-9. **荒玉優勝校**: `aragyoku/winners-by-year.md`（transcripts の rank=1 派生）と該当年 `transcripts/{year}-*.json` を優先取得。古い ekiden-ocr 年でコンテキストを埋めない。
+9. **荒玉優勝・準優勝校**: `aragyoku/winners-by-year.md`（transcripts の rank=1/2 派生。直近5年の男女表付き）と該当年 `transcripts/{year}-*.json` を優先取得。回数集計の `aragyoku_top2_finish_counts.md` だけでは年度別準優勝が欠ける。古い ekiden-ocr 年でコンテキストを埋めない。
 10. **確定回答（canned）**: 「荒玉のコース動画」など運用上リンクが固定の質問は LLM を経由せず `domain/canned.ts` で URL を返す。
 11. **大会種別ディスambiguation**: ジュニア・なごみ等の固有大会名がある質問では aragyoku / ekiden-ocr を先頭ブーストしない（ADR 017）。
 
