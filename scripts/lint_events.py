@@ -20,7 +20,8 @@ if str(SCRIPTS_DIR) not in sys.path:
     sys.path.insert(0, str(SCRIPTS_DIR))
 
 from practice_models import INTENSITIES, MACHINE_TAG_PREFIXES, PRACTICE_TYPES
-from practice_utils import is_practice_event, tags_list
+from practice_schedule_meta import actuals_mode_from, is_actuals_mode_date
+from practice_utils import PRACTICE_TITLES, is_practice_event, tags_list
 
 PRACTICE_ITEM_SCHEMA = json.loads((SCHEMAS_DIR / "practice-item.schema.json").read_text(encoding="utf-8"))
 
@@ -83,12 +84,44 @@ def validate_practice_block(title: str, practice: dict) -> list[str]:
     return errors
 
 
+def is_daiming_practice_plan_event(ev: dict) -> bool:
+    """朝練/夕練シェル、または practice 付きのいだてん岱明練習（大会タグのみは除外）。"""
+    title = ev.get("title") or ""
+    if title in PRACTICE_TITLES:
+        return True
+    if not ev.get("practice"):
+        return False
+    tags = tags_list(ev)
+    if "いだてん岱明練習" in tags:
+        return True
+    if ("岱明" in title or "いだてん" in title) and "練習" in title:
+        return True
+    return False
+
+
+def validate_actuals_mode(ev: dict, cutoff: str) -> list[str]:
+    date = ev.get("date")
+    if not date or not is_actuals_mode_date(str(date), cutoff=cutoff):
+        return []
+    if ev.get("status") != "scheduled":
+        return []
+    if not is_daiming_practice_plan_event(ev):
+        return []
+    title = ev.get("title", "?")
+    return [
+        f"{title} ({date}): actuals_mode_from={cutoff} 以降に "
+        f"いだてん岱明の練習メニュー予定（status=scheduled）は置けません。"
+        f"実績は status=done + practice で入力してください"
+    ]
+
+
 def lint_year(year: int, *, strict_practice: bool = True) -> list[str]:
     path = INPUT_DIR / f"events.{year}.yaml"
     if not path.exists():
         return [f"ファイルなし: {path}"]
     data = yaml.safe_load(path.read_text(encoding="utf-8"))
     errors: list[str] = []
+    cutoff = actuals_mode_from()
     for ev in data.get("events") or []:
         title = ev.get("title", "?")
         try:
@@ -96,6 +129,7 @@ def lint_year(year: int, *, strict_practice: bool = True) -> list[str]:
         except jsonschema.ValidationError as exc:
             errors.append(f"{title}: {exc.message}")
         errors.extend(validate_tags(tags_list(ev), title))
+        errors.extend(validate_actuals_mode(ev, cutoff))
         if ev.get("practice") and strict_practice:
             errors.extend(validate_practice_block(title, ev["practice"]))
         if is_practice_event(ev) and ev.get("practice") and ev.get("description"):

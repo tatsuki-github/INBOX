@@ -39,6 +39,12 @@ python3 scripts/generate_practice.py \
 
 秒タイムは T ペース（`--t-pace`、既定 4:01）から決定論的に算出する。
 
+### 実績入力モード（2026-09-19〜）
+
+`input/practice_schedules.yaml` の `actuals_mode_from` 以降は、事前の練習メニュー予定を置かない。
+`--apply` はその日付のイベントを **`status: done`（実績）** として書き込む（予定シェルは作らない）。
+詳細は [`docs/data-model.md`](data-model.md) の「実績入力モード」と [ADR 037](adr/037-daiming-practice-actuals-mode.md)。
+
 ## 週次計画
 
 ```bash

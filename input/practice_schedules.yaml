@@ -1,4 +1,10 @@
 # 朝練・夕練スケジュール（2026年夏期）
+#
+# 2026-09-19 以降はいだてん岱明の練習メニューを「予定」として置かず、
+# 実施後に events YAML へ status: done + practice で実績入力する。
+# apply_practice_schedule.py / lint_events.py が actuals_mode_from を参照する。
+actuals_mode_from: "2026-09-19"
+
 evening_skip_dates:
   - "2026-08-20"
   - "2026-08-23"

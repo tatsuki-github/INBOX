@@ -89,6 +89,33 @@ practice:
 
 `input/practice_schedules.yaml` — 朝練/夕練の開催スケジュール。
 
+### 実績入力モード（`actuals_mode_from`）
+
+`actuals_mode_from`（既定 `2026-09-19`）以降は、いだてん岱明の**練習メニューを予定として置かない**。
+夏期スケジュール（2026-07/08）はクローズ済み。これ以降は実施後に実績を書く。
+
+| 項目 | 内容 |
+|---|---|
+| 削除対象 | `status: scheduled` の朝練/夕練シェル、および日別メニュー計画メモの当日以降 |
+| 残すもの | 大会・玉名市練習会など、メニュー以外の予定 |
+| 実績の書き方 | `status: done` + `practice`（タグに `いだてん岱明練習` / `practice:daiming`） |
+| ガード | `apply_practice_schedule.py` は cutoff 以降を生成しない / `lint_events.py` は予定メニューをエラー |
+
+```yaml
+- title: いだてん岱明練習
+  date: '2026-09-19'
+  status: done
+  tags: [ランニング, いだてん岱明練習, practice:daiming]
+  practice:
+    warmup: 動きづくり
+    items:
+      - type: jog
+        distance_m: 2800
+        pace: k/4:50
+```
+
+`generate_practice.py --apply` も cutoff 以降は `status: done` で書き込む。
+
 ## エクスポート
 
 | ファイル | 用途 |

@@ -17,6 +17,7 @@ if str(SCRIPTS_DIR) not in sys.path:
 from ai.coach_sheet import attach_abort_if, build_coach_sheet  # noqa: E402
 from ai.practice_generator import generate_practice_auto  # noqa: E402
 from ai.session_context import load_session_context  # noqa: E402
+from practice_schedule_meta import is_actuals_mode_date  # noqa: E402
 from practice_utils import tags_list  # noqa: E402
 from yaml_io import load_events_yaml, write_events_yaml  # noqa: E402
 
@@ -51,27 +52,30 @@ def _apply_to_events(
     path = INPUT_DIR / f"events.{year}.yaml"
     data = load_events_yaml(path)
     events = data.setdefault("events", [])
+    as_actual = is_actuals_mode_date(event_date)
     for ev in events:
         if _event_matches(ev, event_date, title, session):
             ev["practice"] = practice
             ev["description"] = description
             if template_id:
                 ev["template_ref"] = template_id
+            if as_actual:
+                ev["status"] = "done"
             write_events_yaml(path, data)
             return
-    tags = ["practice:daiming", SESSION_TAGS[session]]
-    events.append(
-        {
-            "title": title,
-            "date": event_date,
-            "all_day": False,
-            "category": "予定",
-            "tags": tags,
-            "template_ref": template_id,
-            "description": description,
-            "practice": practice,
-        }
-    )
+    tags = ["ランニング", "いだてん岱明練習", "practice:daiming", SESSION_TAGS[session]]
+    new_ev: dict = {
+        "title": title,
+        "date": event_date,
+        "all_day": False,
+        "category": "予定",
+        "status": "done" if as_actual else "scheduled",
+        "tags": tags,
+        "template_ref": template_id,
+        "description": description,
+        "practice": practice,
+    }
+    events.append(new_ev)
     write_events_yaml(path, data)
 
 

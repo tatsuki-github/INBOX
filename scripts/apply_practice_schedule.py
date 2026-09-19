@@ -17,6 +17,7 @@ SCRIPTS_DIR = Path(__file__).resolve().parent
 if str(SCRIPTS_DIR) not in sys.path:
     sys.path.insert(0, str(SCRIPTS_DIR))
 
+from practice_schedule_meta import actuals_mode_from, is_actuals_mode_date  # noqa: E402
 from yaml_io import dump_event
 
 PRACTICE_TAGS = ["ランニング", "いだてん岱明練習"]
@@ -31,12 +32,13 @@ PRACTICE_TITLES = {
 }
 
 
-def load_schedules() -> tuple[dict[str, dict[str, dict]], set[str]]:
+def load_schedules() -> tuple[dict[str, dict[str, dict]], set[str], str]:
     with SCHEDULES_PATH.open(encoding="utf-8") as f:
         data = yaml.safe_load(f) or {}
     schedules = data.get("schedules") or {}
     evening_skip = set(data.get("evening_skip_dates") or [])
-    return schedules, evening_skip
+    cutoff = actuals_mode_from(data)
+    return schedules, evening_skip, cutoff
 
 
 def practice_event(title: str, date: str, kind: str) -> dict:
@@ -94,12 +96,25 @@ def event_rank(ev: dict) -> tuple:
 
 
 def main() -> None:
-    schedules, evening_skip = load_schedules()
+    schedules, evening_skip, cutoff = load_schedules()
     text = YAML_PATH.read_text(encoding="utf-8")
     data = yaml.safe_load(text)
     events: list[dict] = data["events"]
 
-    schedule_dates = {d for s in schedules.values() for d in s}
+    skipped_actuals = sorted(
+        {d for s in schedules.values() for d in s if is_actuals_mode_date(d, cutoff=cutoff)}
+    )
+    if skipped_actuals:
+        print(
+            f"actuals_mode_from={cutoff}: skip schedule dates on/after cutoff "
+            f"({len(skipped_actuals)}): {', '.join(skipped_actuals[:5])}"
+            + ("..." if len(skipped_actuals) > 5 else "")
+        )
+
+    # Only rewrite practice shells for pre-actuals schedule dates.
+    schedule_dates = {
+        d for s in schedules.values() for d in s if not is_actuals_mode_date(d, cutoff=cutoff)
+    }
 
     memos = [e for e in events if not e.get("date")]
     dated = [e for e in events if e.get("date")]
@@ -116,6 +131,8 @@ def main() -> None:
     existing_keys = {(e.get("date"), e.get("title")) for e in dated}
     for sched in schedules.values():
         for date, spec in sched.items():
+            if is_actuals_mode_date(date, cutoff=cutoff):
+                continue
             new_entries.extend(build_practice(date, spec, evening_skip))
             school = spec.get("school")
             if not school:
