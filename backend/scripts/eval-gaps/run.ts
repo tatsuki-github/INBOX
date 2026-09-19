@@ -19,6 +19,9 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, "../..");
 const DATA = join(ROOT, "data/eval-gaps");
 const QUESTIONS_PATH = join(DATA, "questions.json");
+const BANK_OVERRIDE = process.env.EVAL_GAPS_BANK
+  ? join(ROOT, process.env.EVAL_GAPS_BANK)
+  : null;
 
 type Expect = {
   kinds?: Array<"answered" | "refused" | "offline" | "error">;
@@ -157,7 +160,9 @@ async function main() {
   const args = parseArgs(process.argv.slice(2));
   mkdirSync(DATA, { recursive: true });
 
-  const bank = JSON.parse(readFileSync(QUESTIONS_PATH, "utf8")) as Bank;
+  const bankPath = BANK_OVERRIDE && existsSync(BANK_OVERRIDE) ? BANK_OVERRIDE : QUESTIONS_PATH;
+  const bank = JSON.parse(readFileSync(bankPath, "utf8")) as Bank;
+  console.log(`bank: ${bankPath}`);
   let rounds = bank.rounds;
   if (args.round != null) {
     rounds = rounds.filter((r) => r.id === args.round);

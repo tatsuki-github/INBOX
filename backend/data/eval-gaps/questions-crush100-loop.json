@@ -1,0 +1,2106 @@
+{
+  "version": 1,
+  "total": 100,
+  "unique": 100,
+  "defaultYear": 2026,
+  "note": "100 discover/crush loop after hub-prefix fix",
+  "rounds": [
+    {
+      "id": 1,
+      "theme": "crush100-loop",
+      "questions": [
+        {
+          "id": "c_team_ATRC",
+          "q": "ATRC所属選手の全記録一覧は？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "ATRC",
+              "ATRC",
+              "記録"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "arato-tamana-teams/ATRC.md"
+            ]
+          }
+        },
+        {
+          "id": "c_ath_ATRC_0",
+          "q": "ATRCの中山寛大の記録は？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "中山寛大",
+              "2:11.27"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "arato-tamana-teams/ATRC.md",
+              "arato-tamana-teams"
+            ]
+          }
+        },
+        {
+          "id": "c_ath_ATRC_1",
+          "q": "ATRCの中山寛大の記録は？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "中山寛大",
+              "2:11.27"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "arato-tamana-teams/ATRC.md",
+              "arato-tamana-teams"
+            ]
+          }
+        },
+        {
+          "id": "c_team_南関中",
+          "q": "南関中所属選手の全記録一覧は？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "南関中",
+              "南関",
+              "記録"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "arato-tamana-teams/南関中.md"
+            ]
+          }
+        },
+        {
+          "id": "c_ath_南関中_0",
+          "q": "南関中の内田健太の記録は？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "内田健太",
+              "2:14.99"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "arato-tamana-teams/南関中.md",
+              "arato-tamana-teams"
+            ]
+          }
+        },
+        {
+          "id": "c_ath_南関中_1",
+          "q": "南関中の星先一慶の記録は？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "星先一慶",
+              "2:42.77"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "arato-tamana-teams/南関中.md",
+              "arato-tamana-teams"
+            ]
+          }
+        },
+        {
+          "id": "c_team_天水中",
+          "q": "天水中所属選手の全記録一覧は？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "天水中",
+              "天水",
+              "記録"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "arato-tamana-teams/天水中.md"
+            ]
+          }
+        },
+        {
+          "id": "c_ath_天水中_0",
+          "q": "天水中の中山喬晴の記録は？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "中山喬晴",
+              "2:21.17"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "arato-tamana-teams/天水中.md",
+              "arato-tamana-teams"
+            ]
+          }
+        },
+        {
+          "id": "c_ath_天水中_1",
+          "q": "天水中の山本悠斗の記録は？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "山本悠斗",
+              "2:07.35"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "arato-tamana-teams/天水中.md",
+              "arato-tamana-teams"
+            ]
+          }
+        },
+        {
+          "id": "c_team_岱明中",
+          "q": "岱明中所属選手の全記録一覧は？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "岱明中",
+              "岱明",
+              "記録"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "arato-tamana-teams/岱明中.md"
+            ]
+          }
+        },
+        {
+          "id": "c_ath_岱明中_0",
+          "q": "岱明中の中島優心の記録は？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "中島優心",
+              "2:27.01"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "arato-tamana-teams/岱明中.md",
+              "arato-tamana-teams"
+            ]
+          }
+        },
+        {
+          "id": "c_ath_岱明中_1",
+          "q": "岱明中の片山幹太の記録は？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "片山幹太",
+              "2:26.16"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "arato-tamana-teams/岱明中.md",
+              "arato-tamana-teams"
+            ]
+          }
+        },
+        {
+          "id": "c_team_熊本大附中",
+          "q": "熊本大附中所属選手の全記録一覧は？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "熊本大附中",
+              "熊本大附",
+              "記録"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "arato-tamana-teams/熊本大附中.md"
+            ]
+          }
+        },
+        {
+          "id": "c_ath_熊本大附中_0",
+          "q": "熊本大附中の谷本憩の記録は？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "谷本憩",
+              "2:41.51"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "arato-tamana-teams/熊本大附中.md",
+              "arato-tamana-teams"
+            ]
+          }
+        },
+        {
+          "id": "c_ath_熊本大附中_1",
+          "q": "熊本大附中の谷本憩の記録は？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "谷本憩",
+              "2:51.99"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "arato-tamana-teams/熊本大附中.md",
+              "arato-tamana-teams"
+            ]
+          }
+        },
+        {
+          "id": "c_team_玉・有明中",
+          "q": "玉・有明中所属選手の全記録一覧は？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "玉・有明中",
+              "玉・有明",
+              "記録"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "arato-tamana-teams/玉・有明中.md"
+            ]
+          }
+        },
+        {
+          "id": "c_ath_玉・有明中_0",
+          "q": "玉・有明中の上土井智輝の記録は？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "上土井智輝",
+              "2:36.89"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "arato-tamana-teams/玉・有明中.md",
+              "arato-tamana-teams"
+            ]
+          }
+        },
+        {
+          "id": "c_ath_玉・有明中_1",
+          "q": "玉・有明中の上土井咲輝の記録は？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "上土井咲輝",
+              "2:51.15"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "arato-tamana-teams/玉・有明中.md",
+              "arato-tamana-teams"
+            ]
+          }
+        },
+        {
+          "id": "c_team_玉南中",
+          "q": "玉南中所属選手の全記録一覧は？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "玉南中",
+              "玉南",
+              "記録"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "arato-tamana-teams/玉南中.md"
+            ]
+          }
+        },
+        {
+          "id": "c_ath_玉南中_0",
+          "q": "玉南中の前田安佳里の記録は？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "前田安佳里",
+              "2:38.73"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "arato-tamana-teams/玉南中.md",
+              "arato-tamana-teams"
+            ]
+          }
+        },
+        {
+          "id": "c_ath_玉南中_1",
+          "q": "玉南中の前田安佳里の記録は？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "前田安佳里",
+              "2:38.73"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "arato-tamana-teams/玉南中.md",
+              "arato-tamana-teams"
+            ]
+          }
+        },
+        {
+          "id": "c_team_玉名アスリーツ",
+          "q": "玉名アスリーツ所属選手の全記録一覧は？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "玉名アスリーツ",
+              "玉名アスリーツ",
+              "記録"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "arato-tamana-teams/玉名アスリーツ.md"
+            ]
+          }
+        },
+        {
+          "id": "c_ath_玉名アスリーツ_0",
+          "q": "玉名アスリーツの五郎丸壱悟の記録は？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "五郎丸壱悟",
+              "2:54.51"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "arato-tamana-teams/玉名アスリーツ.md",
+              "arato-tamana-teams"
+            ]
+          }
+        },
+        {
+          "id": "c_ath_玉名アスリーツ_1",
+          "q": "玉名アスリーツの内田武尊の記録は？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "内田武尊",
+              "2:30.67"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "arato-tamana-teams/玉名アスリーツ.md",
+              "arato-tamana-teams"
+            ]
+          }
+        },
+        {
+          "id": "c_team_玉名中",
+          "q": "玉名中所属選手の全記録一覧は？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "玉名中",
+              "玉名",
+              "記録"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "arato-tamana-teams/玉名中.md"
+            ]
+          }
+        },
+        {
+          "id": "c_ath_玉名中_0",
+          "q": "玉名中の大野安憧の記録は？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "大野安憧",
+              "2:31.54"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "arato-tamana-teams/玉名中.md",
+              "arato-tamana-teams"
+            ]
+          }
+        },
+        {
+          "id": "c_ath_玉名中_1",
+          "q": "玉名中の隈元陽太の記録は？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "隈元陽太",
+              "2:32.63"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "arato-tamana-teams/玉名中.md",
+              "arato-tamana-teams"
+            ]
+          }
+        },
+        {
+          "id": "c_team_玉名附中",
+          "q": "玉名附中所属選手の全記録一覧は？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "玉名附中",
+              "玉名附",
+              "記録"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "arato-tamana-teams/玉名附中.md"
+            ]
+          }
+        },
+        {
+          "id": "c_ath_玉名附中_0",
+          "q": "玉名附中の中岡希海の記録は？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "中岡希海",
+              "2:49.07"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "arato-tamana-teams/玉名附中.md",
+              "arato-tamana-teams"
+            ]
+          }
+        },
+        {
+          "id": "c_ath_玉名附中_1",
+          "q": "玉名附中の中岡希海の記録は？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "中岡希海",
+              "2:49.07"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "arato-tamana-teams/玉名附中.md",
+              "arato-tamana-teams"
+            ]
+          }
+        },
+        {
+          "id": "c_team_玉名高校附属中",
+          "q": "玉名高校附属中所属選手の全記録一覧は？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "玉名高校附属中",
+              "玉名高校附属",
+              "記録"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "arato-tamana-teams/玉名高校附属中.md"
+            ]
+          }
+        },
+        {
+          "id": "c_ath_玉名高校附属中_0",
+          "q": "玉名高校附属中の坂上蒼空の記録は？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "坂上蒼空",
+              "2:35.54"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "arato-tamana-teams/玉名高校附属中.md",
+              "arato-tamana-teams"
+            ]
+          }
+        },
+        {
+          "id": "c_ath_玉名高校附属中_1",
+          "q": "玉名高校附属中の中岡希海の記録は？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "中岡希海",
+              "2:45.73"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "arato-tamana-teams/玉名高校附属中.md",
+              "arato-tamana-teams"
+            ]
+          }
+        },
+        {
+          "id": "c_team_玉名高附",
+          "q": "玉名高附所属選手の全記録一覧は？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "玉名高附",
+              "玉名高附",
+              "記録"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "arato-tamana-teams/玉名高附.md"
+            ]
+          }
+        },
+        {
+          "id": "c_ath_玉名高附_0",
+          "q": "玉名高附の上田尚摩の記録は？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "上田尚摩",
+              "2:45.02"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "arato-tamana-teams/玉名高附.md",
+              "arato-tamana-teams"
+            ]
+          }
+        },
+        {
+          "id": "c_ath_玉名高附_1",
+          "q": "玉名高附の上田尚摩の記録は？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "上田尚摩",
+              "2:42.37"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "arato-tamana-teams/玉名高附.md",
+              "arato-tamana-teams"
+            ]
+          }
+        },
+        {
+          "id": "c_team_玉東クラブ",
+          "q": "玉東クラブ所属選手の全記録一覧は？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "玉東クラブ",
+              "玉東クラブ",
+              "記録"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "arato-tamana-teams/玉東クラブ.md"
+            ]
+          }
+        },
+        {
+          "id": "c_ath_玉東クラブ_0",
+          "q": "玉東クラブの平井千幹の記録は？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "平井千幹",
+              "2:56.46"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "arato-tamana-teams/玉東クラブ.md",
+              "arato-tamana-teams"
+            ]
+          }
+        },
+        {
+          "id": "c_ath_玉東クラブ_1",
+          "q": "玉東クラブの平井千幹の記録は？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "平井千幹",
+              "2:47.70"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "arato-tamana-teams/玉東クラブ.md",
+              "arato-tamana-teams"
+            ]
+          }
+        },
+        {
+          "id": "c_team_玉陵",
+          "q": "玉陵所属選手の全記録一覧は？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "玉陵",
+              "玉陵",
+              "記録"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "arato-tamana-teams/玉陵.md"
+            ]
+          }
+        },
+        {
+          "id": "c_ath_玉陵_0",
+          "q": "玉陵の居石楓摩の記録は？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "居石楓摩",
+              "2:18.17"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "arato-tamana-teams/玉陵.md",
+              "arato-tamana-teams"
+            ]
+          }
+        },
+        {
+          "id": "c_ath_玉陵_1",
+          "q": "玉陵の居石楓摩の記録は？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "居石楓摩",
+              "2:16.64"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "arato-tamana-teams/玉陵.md",
+              "arato-tamana-teams"
+            ]
+          }
+        },
+        {
+          "id": "c_team_玉陵中",
+          "q": "玉陵中所属選手の全記録一覧は？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "玉陵中",
+              "玉陵",
+              "記録"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "arato-tamana-teams/玉陵中.md"
+            ]
+          }
+        },
+        {
+          "id": "c_ath_玉陵中_0",
+          "q": "玉陵中の松島颯希の記録は？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "松島颯希",
+              "2:55.79"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "arato-tamana-teams/玉陵中.md",
+              "arato-tamana-teams"
+            ]
+          }
+        },
+        {
+          "id": "c_ath_玉陵中_1",
+          "q": "玉陵中の三次福太の記録は？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "三次福太",
+              "5:43.87"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "arato-tamana-teams/玉陵中.md",
+              "arato-tamana-teams"
+            ]
+          }
+        },
+        {
+          "id": "c_team_荒尾三中",
+          "q": "荒尾三中所属選手の全記録一覧は？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "荒尾三中",
+              "荒尾三",
+              "記録"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "arato-tamana-teams/荒尾三中.md"
+            ]
+          }
+        },
+        {
+          "id": "c_ath_荒尾三中_0",
+          "q": "荒尾三中の井形心美の記録は？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "井形心美",
+              "2:46.21"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "arato-tamana-teams/荒尾三中.md",
+              "arato-tamana-teams"
+            ]
+          }
+        },
+        {
+          "id": "c_ath_荒尾三中_1",
+          "q": "荒尾三中の井形心美の記録は？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "井形心美",
+              "2:44.71"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "arato-tamana-teams/荒尾三中.md",
+              "arato-tamana-teams"
+            ]
+          }
+        },
+        {
+          "id": "c_team_荒尾海陽中",
+          "q": "荒尾海陽中所属選手の全記録一覧は？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "荒尾海陽中",
+              "荒尾海陽",
+              "記録"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "arato-tamana-teams/荒尾海陽中.md"
+            ]
+          }
+        },
+        {
+          "id": "c_ath_荒尾海陽中_0",
+          "q": "荒尾海陽中の松井智義の記録は？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "松井智義",
+              "3:09.20"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "arato-tamana-teams/荒尾海陽中.md",
+              "arato-tamana-teams"
+            ]
+          }
+        },
+        {
+          "id": "c_ath_荒尾海陽中_1",
+          "q": "荒尾海陽中の井下絵理奈の記録は？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "井下絵理奈",
+              "2:56.05"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "arato-tamana-teams/荒尾海陽中.md",
+              "arato-tamana-teams"
+            ]
+          }
+        },
+        {
+          "id": "c_team_荒尾第四中",
+          "q": "荒尾第四中所属選手の全記録一覧は？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "荒尾第四中",
+              "荒尾第四",
+              "記録"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "arato-tamana-teams/荒尾第四中.md"
+            ]
+          }
+        },
+        {
+          "id": "c_ath_荒尾第四中_0",
+          "q": "荒尾第四中の中田透和の記録は？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "中田透和",
+              "2:40.24"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "arato-tamana-teams/荒尾第四中.md",
+              "arato-tamana-teams"
+            ]
+          }
+        },
+        {
+          "id": "c_ath_荒尾第四中_1",
+          "q": "荒尾第四中の中田透和の記録は？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "中田透和",
+              "2:42.57"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "arato-tamana-teams/荒尾第四中.md",
+              "arato-tamana-teams"
+            ]
+          }
+        },
+        {
+          "id": "c_team_金栗PROJECT",
+          "q": "金栗PROJECT所属選手の全記録一覧は？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "金栗PROJECT",
+              "金栗PROJECT",
+              "記録"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "arato-tamana-teams/金栗PROJECT.md"
+            ]
+          }
+        },
+        {
+          "id": "c_ath_金栗PROJECT_0",
+          "q": "金栗PROJECTの井上太牙の記録は？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "井上太牙",
+              "2:27.50"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "arato-tamana-teams/金栗PROJECT.md",
+              "arato-tamana-teams"
+            ]
+          }
+        },
+        {
+          "id": "c_ath_金栗PROJECT_1",
+          "q": "金栗PROJECTの井上太牙の記録は？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "井上太牙",
+              "2:28.12"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "arato-tamana-teams/金栗PROJECT.md",
+              "arato-tamana-teams"
+            ]
+          }
+        },
+        {
+          "id": "c_team_長洲中",
+          "q": "長洲中所属選手の全記録一覧は？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "長洲中",
+              "長洲",
+              "記録"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "arato-tamana-teams/長洲中.md"
+            ]
+          }
+        },
+        {
+          "id": "c_ath_長洲中_0",
+          "q": "長洲中の井藤勘助の記録は？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "井藤勘助",
+              "2:27.93"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "arato-tamana-teams/長洲中.md",
+              "arato-tamana-teams"
+            ]
+          }
+        },
+        {
+          "id": "c_ath_長洲中_1",
+          "q": "長洲中の井藤勘助の記録は？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "井藤勘助",
+              "2:23.94"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "arato-tamana-teams/長洲中.md",
+              "arato-tamana-teams"
+            ]
+          }
+        },
+        {
+          "id": "c_team_ＮＪＡＣ",
+          "q": "ＮＪＡＣ所属選手の全記録一覧は？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "ＮＪＡＣ",
+              "ＮＪＡＣ",
+              "記録"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "arato-tamana-teams/ＮＪＡＣ.md"
+            ]
+          }
+        },
+        {
+          "id": "c_rank_3000m_sb_ranking_1",
+          "q": "荒玉地区男子3000mで隈部侑成は何位？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "1",
+              "隈部侑成",
+              "8:54.61"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "3000m_sb_ranking"
+            ]
+          }
+        },
+        {
+          "id": "c_rank_3000m_sb_ranking_2",
+          "q": "荒玉地区男子3000mで松浦眞大は何位？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "2",
+              "松浦眞大",
+              "9:08.80"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "3000m_sb_ranking"
+            ]
+          }
+        },
+        {
+          "id": "c_rank_3000m_sb_ranking_3",
+          "q": "荒玉地区男子3000mで石川隼は何位？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "3",
+              "石川隼",
+              "9:10.97"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "3000m_sb_ranking"
+            ]
+          }
+        },
+        {
+          "id": "c_rank_3000m_sb_ranking_4",
+          "q": "荒玉地区男子3000mで永田來夢は何位？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "4",
+              "永田來夢",
+              "9:22.34"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "3000m_sb_ranking"
+            ]
+          }
+        },
+        {
+          "id": "c_rank_3000m_sb_ranking_5",
+          "q": "荒玉地区男子3000mで田中翔大は何位？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "5",
+              "田中翔大",
+              "9:24.66"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "3000m_sb_ranking"
+            ]
+          }
+        },
+        {
+          "id": "c_rank_3000m_sb_ranking_6",
+          "q": "荒玉地区男子3000mで小倉十和は何位？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "6",
+              "小倉十和",
+              "9:28.13"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "3000m_sb_ranking"
+            ]
+          }
+        },
+        {
+          "id": "c_rank_3000m_sb_ranking_7",
+          "q": "荒玉地区男子3000mで草野瑠唯は何位？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "7",
+              "草野瑠唯",
+              "9:28.42"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "3000m_sb_ranking"
+            ]
+          }
+        },
+        {
+          "id": "c_rank_3000m_sb_ranking_8",
+          "q": "荒玉地区男子3000mで田島航は何位？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "8",
+              "田島航",
+              "9:35.87"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "3000m_sb_ranking"
+            ]
+          }
+        },
+        {
+          "id": "c_rank_3000m_sb_ranking_9",
+          "q": "荒玉地区男子3000mで米谷慶吾は何位？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "9",
+              "米谷慶吾",
+              "9:37.02"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "3000m_sb_ranking"
+            ]
+          }
+        },
+        {
+          "id": "c_rank_3000m_sb_ranking_10",
+          "q": "荒玉地区男子3000mで松野凛空は何位？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "10",
+              "松野凛空",
+              "9:37.84"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "3000m_sb_ranking"
+            ]
+          }
+        },
+        {
+          "id": "c_rank_3000m_sb_ranking_11",
+          "q": "荒玉地区男子3000mで辛嶋大宙は何位？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "11",
+              "辛嶋大宙",
+              "9:38.78"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "3000m_sb_ranking"
+            ]
+          }
+        },
+        {
+          "id": "c_rank_3000m_sb_ranking_12",
+          "q": "荒玉地区男子3000mで村上葉侑は何位？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "12",
+              "村上葉侑",
+              "9:46.66"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "3000m_sb_ranking"
+            ]
+          }
+        },
+        {
+          "id": "c_rank_3000m_sb_ranking_13",
+          "q": "荒玉地区男子3000mで津口晃誠は何位？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "13",
+              "津口晃誠",
+              "9:50.87"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "3000m_sb_ranking"
+            ]
+          }
+        },
+        {
+          "id": "c_rank_3000m_sb_ranking_14",
+          "q": "荒玉地区男子3000mで中岡謙太は何位？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "14",
+              "中岡謙太",
+              "9:51.09"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "3000m_sb_ranking"
+            ]
+          }
+        },
+        {
+          "id": "c_rank_3000m_sb_ranking_15",
+          "q": "荒玉地区男子3000mで藤原尚己は何位？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "15",
+              "藤原尚己",
+              "9:51.26"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "3000m_sb_ranking"
+            ]
+          }
+        },
+        {
+          "id": "c_rank_1500m_sb_individual_top20_1",
+          "q": "荒玉地区男子1500mSBで隈部侑成は何位？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "1",
+              "隈部侑成",
+              "4:11.60"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "1500m_sb_individual_top20"
+            ]
+          }
+        },
+        {
+          "id": "c_rank_1500m_sb_individual_top20_2",
+          "q": "荒玉地区男子1500mSBで石川隼は何位？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "2",
+              "石川隼",
+              "4:15.46"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "1500m_sb_individual_top20"
+            ]
+          }
+        },
+        {
+          "id": "c_rank_1500m_sb_individual_top20_3",
+          "q": "荒玉地区男子1500mSBで松浦眞大は何位？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "3",
+              "松浦眞大",
+              "4:16.39"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "1500m_sb_individual_top20"
+            ]
+          }
+        },
+        {
+          "id": "c_rank_1500m_sb_individual_top20_4",
+          "q": "荒玉地区男子1500mSBで柿本晴仁は何位？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "4",
+              "柿本晴仁",
+              "4:19.41"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "1500m_sb_individual_top20"
+            ]
+          }
+        },
+        {
+          "id": "c_rank_1500m_sb_individual_top20_5",
+          "q": "荒玉地区男子1500mSBで永田來夢は何位？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "5",
+              "永田來夢",
+              "4:20.79"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "1500m_sb_individual_top20"
+            ]
+          }
+        },
+        {
+          "id": "c_rank_1500m_sb_individual_top20_6",
+          "q": "荒玉地区男子1500mSBで草野瑠唯は何位？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "6",
+              "草野瑠唯",
+              "4:21.26"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "1500m_sb_individual_top20"
+            ]
+          }
+        },
+        {
+          "id": "c_rank_1500m_sb_individual_top20_7",
+          "q": "荒玉地区男子1500mSBで辛嶋大宙は何位？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "7",
+              "辛嶋大宙",
+              "4:21.59"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "1500m_sb_individual_top20"
+            ]
+          }
+        },
+        {
+          "id": "c_rank_1500m_sb_individual_top20_8",
+          "q": "荒玉地区男子1500mSBで藤原尚己は何位？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "8",
+              "藤原尚己",
+              "4:21.88"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "1500m_sb_individual_top20"
+            ]
+          }
+        },
+        {
+          "id": "c_rank_1500m_sb_individual_top20_9",
+          "q": "荒玉地区男子1500mSBで小倉十和は何位？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "9",
+              "小倉十和",
+              "4:21.99"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "1500m_sb_individual_top20"
+            ]
+          }
+        },
+        {
+          "id": "c_rank_1500m_sb_individual_top20_10",
+          "q": "荒玉地区男子1500mSBで松野凛空は何位？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "10",
+              "松野凛空",
+              "4:22.33"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "1500m_sb_individual_top20"
+            ]
+          }
+        },
+        {
+          "id": "c_rank_1500m_sb_individual_top20_11",
+          "q": "荒玉地区男子1500mSBで田島航は何位？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "11",
+              "田島航",
+              "4:22.79"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "1500m_sb_individual_top20"
+            ]
+          }
+        },
+        {
+          "id": "c_rank_1500m_sb_individual_top20_12",
+          "q": "荒玉地区男子1500mSBで米谷慶吾は何位？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "12",
+              "米谷慶吾",
+              "4:22.83"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "1500m_sb_individual_top20"
+            ]
+          }
+        },
+        {
+          "id": "c_rank_1500m_sb_individual_top20_13",
+          "q": "荒玉地区男子1500mSBで村上葉侑は何位？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "13",
+              "村上葉侑",
+              "4:24.54"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "1500m_sb_individual_top20"
+            ]
+          }
+        },
+        {
+          "id": "c_rank_1500m_sb_individual_top20_14",
+          "q": "荒玉地区男子1500mSBで田中翔大は何位？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "14",
+              "田中翔大",
+              "4:27.50"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "1500m_sb_individual_top20"
+            ]
+          }
+        },
+        {
+          "id": "c_rank_1500m_sb_individual_top20_15",
+          "q": "荒玉地区男子1500mSBで谷平陽生は何位？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "15",
+              "谷平陽生",
+              "4:28.10"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "1500m_sb_individual_top20"
+            ]
+          }
+        },
+        {
+          "id": "c_t2_玉名",
+          "q": "荒玉駅伝で玉名が2位までに入った回数は何回？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "玉名",
+              "15"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "top2_finish_counts"
+            ]
+          }
+        },
+        {
+          "id": "c_t2_荒尾三",
+          "q": "荒玉駅伝で荒尾三が2位までに入った回数は何回？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "荒尾三",
+              "9"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "top2_finish_counts"
+            ]
+          }
+        },
+        {
+          "id": "c_t2_菊水",
+          "q": "荒玉駅伝で菊水が2位までに入った回数は何回？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "菊水",
+              "8"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "top2_finish_counts"
+            ]
+          }
+        },
+        {
+          "id": "c_t2_荒尾四",
+          "q": "荒玉駅伝で荒尾四が2位までに入った回数は何回？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "荒尾四",
+              "7"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "top2_finish_counts"
+            ]
+          }
+        },
+        {
+          "id": "c_t2_南関",
+          "q": "荒玉駅伝で南関が2位までに入った回数は何回？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "南関",
+              "5"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "top2_finish_counts"
+            ]
+          }
+        },
+        {
+          "id": "c_t2_荒尾海陽",
+          "q": "荒玉駅伝で荒尾海陽が2位までに入った回数は何回？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "荒尾海陽",
+              "4"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "top2_finish_counts"
+            ]
+          }
+        },
+        {
+          "id": "c_t2_岱明",
+          "q": "荒玉駅伝で岱明が2位までに入った回数は何回？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "岱明",
+              "1"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "top2_finish_counts"
+            ]
+          }
+        },
+        {
+          "id": "c_t2_玉東",
+          "q": "荒玉駅伝で玉東が2位までに入った回数は何回？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "玉東",
+              "1"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "top2_finish_counts"
+            ]
+          }
+        },
+        {
+          "id": "c_t2_玉南",
+          "q": "荒玉駅伝で玉南が2位までに入った回数は何回？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "玉南",
+              "1"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "top2_finish_counts"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

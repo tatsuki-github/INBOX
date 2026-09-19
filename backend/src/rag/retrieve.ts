@@ -384,9 +384,13 @@ export function retrieveBySources(
   const nameHints = query ? extractAthleteNameHints(query) : [];
 
   const bySource = new Map<string, RagChunk[]>();
+  // Longer / exact paths first so `out-analysis` does not steal siblings of `…/玉南中.md`
+  const sourcesBySpecificity = [...sources].sort((a, b) => b.length - a.length);
   for (const chunk of index.chunks) {
     const base = chunkBaseSource(chunk.source);
-    const matched = sources.find((s) => base === s || base.startsWith(s + "/"));
+    const matched =
+      sources.find((s) => base === s) ??
+      sourcesBySpecificity.find((s) => base.startsWith(s + "/"));
     if (!matched) continue;
     const list = bySource.get(matched) ?? [];
     list.push(chunk);
@@ -406,7 +410,24 @@ export function retrieveBySources(
               preferSbName: src.startsWith("sb/") || src.includes("中学生SB"),
             }),
           }));
-    scored.push(...ranked);
+    // Exact file routes must not disappear when BM25 score is 0 (tiny digests)
+    if (ranked.length === 0 && !src.endsWith("/") && chunks.length > 0) {
+      for (const c of chunks.slice(0, Math.min(perSource, chunks.length))) {
+        ranked.push({
+          chunk: c,
+          score: 50 + pathQueryBonus(c.source, query),
+        });
+      }
+    }
+    // Exact preferred files get a floor so directory-prefix pools cannot drown them
+    const exactFloor =
+      /\.(md|csv|ya?ml|json)$/i.test(src) && !src.endsWith("/") ? 200 : 0;
+    for (const r of ranked) {
+      scored.push({
+        chunk: r.chunk,
+        score: r.score + exactFloor + pathQueryBonus(r.chunk.source, query),
+      });
+    }
   }
 
   scored.sort((a, b) => b.score - a.score);
@@ -485,9 +506,39 @@ function pathQueryBonus(source: string, query: string): number {
   ) {
     bonus += 200;
   }
+  // Exact team file name in path (longest stem first)
+  if (/全記録|所属選手|記録一覧/.test(q)) {
+    const known = [
+      "玉名高校附属中",
+      "荒尾第四中",
+      "荒尾海陽中",
+      "熊本大附中",
+      "玉・有明中",
+      "玉名アスリーツ",
+      "玉東クラブ",
+      "金栗PROJECT",
+      "荒尾三中",
+      "玉名高附",
+      "玉名附中",
+      "玉陵中",
+      "玉名中",
+      "玉南中",
+      "南関中",
+      "天水中",
+      "岱明中",
+      "長洲中",
+      "ＮＪＡＣ",
+      "ATRC",
+      "玉陵",
+    ];
+    const hit = known.find((stem) => q.includes(stem));
+    if (hit && (s.includes(`arato-tamana-teams/${hit}.md`) || s.endsWith(`/${hit}.md`))) {
+      bonus += 320;
+    }
+  }
   if (
     /3000m|3000ｍ/.test(q) &&
-    /速い|一番|最速|ランキング|SB|自己ベスト/.test(q) &&
+    /速い|一番|最速|ランキング|SB|自己ベスト|何位|順位/.test(q) &&
     /3000m_sb_ranking|notion_records_2026|arato-tamana-teams/.test(s)
   ) {
     bonus += 180;
@@ -547,6 +598,14 @@ function isBlockedCorpusForQuery(source: string, query: string): boolean {
   const q = query.normalize("NFKC");
   // Empty Drive stubs must not fill ranking / history answers
   if (/_EMPTY\.md|export\.status\.json/.test(source)) {
+    return true;
+  }
+  // README / PDF generation howtos must not answer 所属選手の全記録
+  if (
+    /全記録|所属選手|記録一覧|自己ベスト|ランキング|何位/.test(q) &&
+    (/docs\/README\.md|generate_arato_tamana|repo-docs\/README/.test(source) ||
+      source === "docs/README.md")
+  ) {
     return true;
   }
   // LINE ops / coaching digests beat generic 荒玉 overview noise
@@ -644,10 +703,53 @@ export function mergeRetrieved(
     // Weak preferred (headers / low overlap) only get a tiny routed bonus.
     const strengthBonus = r.score >= 80 ? 50 : r.score >= 40 ? 25 : 5;
     const pathBonus = pathQueryBonus(r.chunk.source, query);
-    upsert(r, strengthBonus + pathBonus);
+    // Pin exact team digest chunks for 全記録 / 荒玉歴代順位 questions
+    let pin = 0;
+    const qn = query.normalize("NFKC");
+    if (/全記録|所属選手|記録一覧/.test(qn)) {
+      const base = chunkBaseSource(r.chunk.source);
+      if (/arato-tamana-teams\/[^/]+\.md$/.test(base) && query.includes(base.split("/").pop()!.replace(/\.md$/, ""))) {
+        pin = 500;
+      }
+    }
+    if (/過去|歴代|順位/.test(qn) && /荒玉|駅伝/.test(qn)) {
+      const base = chunkBaseSource(r.chunk.source);
+      const stem = base.split("/").pop()?.replace(/\.md$/, "") ?? "";
+      if (/aragyoku-teams\/[^/]+\.md$/.test(base) && stem && query.includes(stem)) {
+        pin = 500;
+      }
+    }
+    if (/トラック/.test(qn) && /1周|一周|周長|何メートル/.test(qn)) {
+      if (/daiming-practice-menus-kpace|data-model\.md/.test(r.chunk.source)) {
+        pin = 500;
+      }
+    }
+    upsert(r, strengthBonus + pathBonus + pin);
   }
   for (const r of secondary) {
-    upsert(r, pathQueryPenalty(r.chunk.source, query));
+    const pathBonus = pathQueryBonus(r.chunk.source, query);
+    let pin = 0;
+    const qn = query.normalize("NFKC");
+    if (/全記録|所属選手|記録一覧/.test(qn)) {
+      const base = chunkBaseSource(r.chunk.source);
+      const stem = base.split("/").pop()?.replace(/\.md$/, "") ?? "";
+      if (/arato-tamana-teams\/[^/]+\.md$/.test(base) && stem && query.includes(stem)) {
+        pin = 500;
+      }
+    }
+    if (/過去|歴代|順位/.test(qn) && /荒玉|駅伝/.test(qn)) {
+      const base = chunkBaseSource(r.chunk.source);
+      const stem = base.split("/").pop()?.replace(/\.md$/, "") ?? "";
+      if (/aragyoku-teams\/[^/]+\.md$/.test(base) && stem && query.includes(stem)) {
+        pin = 500;
+      }
+    }
+    if (/トラック/.test(qn) && /1周|一周|周長|何メートル/.test(qn)) {
+      if (/daiming-practice-menus-kpace|data-model\.md/.test(r.chunk.source)) {
+        pin = 500;
+      }
+    }
+    upsert(r, pathQueryPenalty(r.chunk.source, query) + pathBonus + pin);
   }
 
   return [...byId.values()].sort((a, b) => b.score - a.score).slice(0, topK);

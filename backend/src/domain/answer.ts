@@ -64,9 +64,9 @@ function offlinePreviewBudget(question: string): number {
   const q = question.normalize("NFKC");
   // Rankings / full team records / win-count tables need wide windows
   if (
-    /ランキング|トップ\s*\d+|全記録|全件|一覧|回数|2位まで|2位以内|最速|一番速/.test(q)
+    /ランキング|トップ\s*\d+|全記録|全件|一覧|回数|2位まで|2位以内|最速|一番速|何位|順位/.test(q)
   ) {
-    return 2400;
+    return 3600;
   }
   if (/自己ベスト|記録|\bSB\b|\bPB\b|何分|タイム/.test(q)) {
     return 900;
@@ -77,6 +77,10 @@ function offlinePreviewBudget(question: string): number {
 function previewForOffline(text: string, question: string, maxChars?: number): string {
   const budget = maxChars ?? offlinePreviewBudget(question);
   const flat = text.replace(/\s+/g, " ");
+  // Full-record / ranking digests: prefer document head (title + early tables)
+  if (/全記録|記録一覧|所属選手|ランキング|トップ\s*\d+|何位/.test(question.normalize("NFKC"))) {
+    return flat.slice(0, budget);
+  }
   const isos = question.match(/20\d{2}-\d{2}-\d{2}/g) ?? [];
   for (const iso of isos) {
     const idx = flat.indexOf(iso);
@@ -196,28 +200,96 @@ function boostAthleteRecordSources(query: string, baseSources: string[]): string
     push("out-analysis/athletes/takada-mana.md");
     push("sb/SBデータベース.csv");
   }
+  if (/\bATRC\b|ＡＴＲＣ/.test(q) && /記録|全記録|一覧|SB|タイム|選手/.test(q)) {
+    push("out-analysis/arato-tamana-teams/ATRC.md");
+    push("drive-text/personal/ATRC.md");
+  }
+  // Exact team digest for 「〇〇中所属選手の全記録」
+  // Longest-first so 「玉名附中」does not also match 「玉名中」.
+  const knownTeamFiles = [
+    "玉名高校附属中",
+    "荒尾第四中",
+    "荒尾海陽中",
+    "熊本大附中",
+    "玉・有明中",
+    "玉名アスリーツ",
+    "玉東クラブ",
+    "金栗PROJECT",
+    "荒尾三中",
+    "玉名高附",
+    "玉名附中",
+    "玉陵中",
+    "玉名中",
+    "玉南中",
+    "南関中",
+    "天水中",
+    "岱明中",
+    "長洲中",
+    "ＮＪＡＣ",
+    "NJAC",
+    "ATRC",
+    "玉陵",
+  ];
+  if (/記録|全記録|一覧|所属|選手/.test(q)) {
+    const hit = knownTeamFiles.find((stem) => q.includes(stem));
+    if (hit) {
+      push(`out-analysis/arato-tamana-teams/${hit}.md`);
+    } else {
+      const teamDigestHit = q.match(
+        /([一-龥ァ-ヶA-Za-z・]{2,10}(?:高校附属中|附中|第四中|三中|海陽中|中))/u,
+      );
+      if (teamDigestHit) {
+        push(`out-analysis/arato-tamana-teams/${teamDigestHit[1]!}.md`);
+      }
+    }
+  }
   if (
     /3000m|3000ｍ/.test(q) &&
-    /速い|一番|最速|ランキング|SB|自己ベスト|荒玉/.test(q)
+    /速い|一番|最速|ランキング|SB|自己ベスト|荒玉|何位|順位/.test(q)
   ) {
     push("out-analysis/2026_aragyoku_men_3000m_sb_ranking.md");
   }
   if (
     /1500m|1500ｍ/.test(q) &&
-    /トップ\s*20|ランキング|SB|自己ベスト|荒玉/.test(q)
+    /トップ\s*20|ランキング|SB|自己ベスト|荒玉|何位|順位/.test(q)
   ) {
     push("out-analysis/2026_aragyoku_men_1500m_sb_individual_top20.md");
   }
-  if (/\bATRC\b|ＡＴＲＣ/.test(q) && /記録|全記録|一覧|SB|タイム|選手/.test(q)) {
-    push("out-analysis/arato-tamana-teams/ATRC.md");
-    push("drive-text/personal/ATRC.md");
+  if (/学校別|所属別/.test(q) && /ランキング|1500|800/.test(q)) {
+    push("out-analysis/2026_men_1500m_pb_school_ranking.md");
+    push("out-analysis/2026_women_800m_1500m_pb_school_ranking.md");
   }
-  if (/荒尾|玉名|金栗|岱明|南関|天水|長洲|ATRC|アスリーツ|玉東|有明|荒尾三|荒尾四|海陽|玉陵|玉南|玉高|附中/.test(q)) {
-    push("out-analysis/arato-tamana-teams");
+  if (/荒尾|玉名|金栗|岱明|南関|天水|長洲|ATRC|アスリーツ|玉東|有明|荒尾三|荒尾四|海陽|玉陵|玉南|玉高|附中|熊本大/.test(q)) {
+    // Prefer exact digest already pushed; only use hub for non-full-record queries
+    if (!/全記録|所属選手|記録一覧/.test(q)) {
+      push("out-analysis/arato-tamana-teams");
+    }
   }
   push("sb/中学生SB.csv");
   push("sb/SBデータベース.csv");
   push("sb/");
+  // 所属全記録は SB CSV で埋めない（exact team digest を優先）
+  // かつ KG の広い hub（out-analysis / drive-text）を足さない —
+  // retrieveBySources の prefix マッチで全チーム digest が流入するため。
+  if (/全記録|所属選手|記録一覧/.test(q)) {
+    const teamOnly = out.filter(
+      (s) =>
+        !s.startsWith("sb/") &&
+        !s.includes("記録データベース/") &&
+        !s.endsWith("/") &&
+        s.includes("/") &&
+        (/\.md$/i.test(s) || /\.csv$/i.test(s)) &&
+        (s.includes("arato-tamana-teams/") ||
+          s.includes("athletes/") ||
+          s.includes("3000m_sb") ||
+          s.includes("1500m_sb") ||
+          s.includes("pb_school") ||
+          s.includes("personal/ATRC")),
+    );
+    if (teamOnly.length > 0) {
+      return teamOnly;
+    }
+  }
   // Named athlete PB → stick to SB CSV (avoid 3000m予想ランキング drowning short names)
   const named = extractAthleteNameHints(q).length > 0;
   if (!named) {
@@ -257,6 +329,26 @@ function boostDaimingLineSources(query: string, baseSources: string[]): string[]
     /岱明|いだてん|銀マット|合同練習|おおはま|三加和|朝練|ナイター|保護者LINE|和水|有田|補強|手押し車|犬歩き|分割走|厚底|ヴェイパー|地点分担|地点|土山コーチ|柴尾|曜日|集合時間|タイム目安|43分|区間配分|補強メニュー|2\.855|2区.*5区|5区.*2区|お別れ会|金栗駅伝|走り納め|体育館前|楽しさ|本気度/.test(
       q,
     );
+  // 所属トラック全記録は line-chats ではなく arato-tamana-teams へ
+  if (/全記録|所属選手|記録一覧/.test(q) && /中|ATRC|PROJECT|アスリーツ|クラブ/.test(q)) {
+    return baseSources;
+  }
+  // トラック周長は practice 正本へ（岱明キーワードで LINE に流さない）
+  if (/トラック/.test(q) && /1周|一周|周長|何メートル|何ｍ/.test(q)) {
+    const trackOut: string[] = [];
+    const trackSeen = new Set<string>();
+    const trackPush = (s: string) => {
+      if (!s || trackSeen.has(s)) return;
+      trackSeen.add(s);
+      trackOut.push(s);
+    };
+    trackPush("practice/daiming-practice-menus-kpace.md");
+    trackPush("docs/data-model.md");
+    for (const s of baseSources) {
+      if (!/line-chats/.test(s)) trackPush(s);
+    }
+    return trackOut;
+  }
   if (!lineOps && out.length === 0) {
     return baseSources;
   }
@@ -327,6 +419,32 @@ function boostMeetYearSources(
       push("out-analysis/aragyoku_top2_finish_counts.md");
       push("aragyoku/winners-by-year.md");
     }
+    // Exact team history digest for 「〇〇の荒玉駅伝の過去の順位」
+    if (/過去|歴代|順位/.test(expandedQuery) && !courseMeta) {
+      const aragyokuTeams = [
+        "荒尾海陽",
+        "玉高附属",
+        "荒尾三",
+        "荒尾四",
+        "三加和",
+        "南関",
+        "天水",
+        "岱明",
+        "有明",
+        "玉南",
+        "玉名",
+        "玉東",
+        "玉陵",
+        "腹栄",
+        "荒尾",
+        "菊水",
+        "長洲",
+      ];
+      const teamHit = aragyokuTeams.find((stem) => expandedQuery.includes(stem));
+      if (teamHit) {
+        push(`out-analysis/aragyoku-teams/${teamHit}.md`);
+      }
+    }
     if (courseMeta) {
       // 概要・距離定義を先頭に（区間ペース質問で結果板ノイズに埋もれないように）
       push("out-analysis/aragyoku-overview.md");
@@ -335,7 +453,10 @@ function boostMeetYearSources(
       push("aragyoku/course-videos.md");
     }
     if (!lineOpsPrefer) {
-      push("out-analysis/aragyoku-teams");
+      // Prefer exact team file already pushed; hub only when not a per-team history Q
+      if (!(/過去|歴代|順位/.test(expandedQuery) && out.some((s) => s.includes("aragyoku-teams/")))) {
+        push("out-analysis/aragyoku-teams");
+      }
       push("aragyoku/winners-by-year.md");
       for (const y of years) {
         for (const g of ["男子", "女子"] as const) {
@@ -346,7 +467,9 @@ function boostMeetYearSources(
       }
       if (years.length === 0 && !courseMeta) {
         push("aragyoku");
-        push("out-analysis/aragyoku-teams");
+        if (!out.some((s) => /aragyoku-teams\/[^/]+\.md$/.test(s))) {
+          push("out-analysis/aragyoku-teams");
+        }
       }
     }
   }
