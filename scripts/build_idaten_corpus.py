@@ -642,6 +642,7 @@ def main() -> int:
         ROOT / "scripts" / "generate_aragyoku_overview.py",
         ROOT / "scripts" / "generate_aragyoku_2024_2025_focus_analysis.py",
         ROOT / "scripts" / "generate_aragyoku_meet_records_markdown.py",
+        ROOT / "scripts" / "generate_aragyoku_all_teams_average_pace.py",
         ROOT / "scripts" / "ingest_line_exports.py",
     ]
     py_candidates = [

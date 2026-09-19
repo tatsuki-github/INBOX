@@ -140,9 +140,14 @@ SOURCE_GLOBS: list[tuple[str, list[str], str]] = [
         "荒玉ボード上部の大会記録・区間記録（meet_records）年別一覧",
     ),
     (
+        "out/analysis/aragyoku_all_teams_average_pace.md",
+        ["ekiden", "pace"],
+        "荒玉全チーム・全年度の平均ペース（順位別歴代＋年度別全校）",
+    ),
+    (
         "out/analysis/aragyoku_top6_historical_average_pace.md",
         ["ekiden", "pace"],
-        "荒玉総合1〜6位の年度別平均ペース",
+        "荒玉総合1〜6位の年度別平均ペース（全チーム版の要約）",
     ),
     (
         "out/analysis/aragyoku_top2_finish_counts.md",
@@ -454,6 +459,28 @@ QUERY_HINTS: list[tuple[str, str, list[str]]] = [
             "corpus:aragyoku",
             "source:input/aragyoku/course-videos.md",
             "source:input/idaten-corpus/aragyoku/course-videos.md",
+        ],
+    ),
+    (
+        "男子1位の平均ペースは？",
+        "aragyoku_all_teams_average_pace.md の順位別歴代平均ペース（男子）。距離定義で総合÷総距離",
+        [
+            "topic:ekiden",
+            "source:out/analysis/aragyoku_all_teams_average_pace.md",
+            "source:out/analysis/aragyoku_top6_historical_average_pace.md",
+            "source:docs/aragyoku-ekiden-distance-definitions.md",
+            "corpus:out-analysis",
+        ],
+    ),
+    (
+        "荒玉駅伝の平均ペースは？",
+        "全チーム版 aragyoku_all_teams_average_pace.md を正本。上位6位要約は top6_historical_average_pace.md",
+        [
+            "topic:ekiden",
+            "source:out/analysis/aragyoku_all_teams_average_pace.md",
+            "source:out/analysis/aragyoku_top6_historical_average_pace.md",
+            "source:out/analysis/aragyoku-overview.md",
+            "corpus:out-analysis",
         ],
     ),
     (

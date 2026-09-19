@@ -243,6 +243,49 @@ describe("answerQuestion", () => {
     }
   });
 
+  it("puts all-teams average pace for 〇位の平均ペース questions", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    let userPrompt = "";
+    const result = await answerQuestion("荒玉駅伝男子1位の平均ペースは？", {
+      skipRouter: true,
+      defaultYear: 2026,
+      llm: {
+        complete: async (_sys, user) => {
+          userPrompt = user;
+          return "男子1位の歴代平均ペースは約3:13/kmです。";
+        },
+      },
+    });
+    expect(result.kind).toBe("answered");
+    expect(userPrompt).toMatch(/平均ペース/);
+    expect(userPrompt).toMatch(/1位/);
+    expect(userPrompt).toMatch(/3:\d{2}/);
+    if (result.kind === "answered") {
+      expect(
+        result.sources.some((s) => s.includes("all_teams_average_pace") || s.includes("top6_historical")),
+      ).toBe(true);
+    }
+  });
+
+  it("offline preview for rank average pace hits the digest", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("女子3位の平均ペースは？", {
+      skipRouter: true,
+      defaultYear: 2026,
+      llm: null,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.text).toMatch(/平均ペース/);
+      expect(result.text).toMatch(/3位/);
+      expect(
+        result.sources.some((s) => s.includes("all_teams_average_pace") || s.includes("average_pace")),
+      ).toBe(true);
+    }
+  });
+
   it("does not return 荒玉 sources for 去年のジュニア駅伝の岱明の結果", async () => {
     resetRetrieverCache();
     resetKgCache();

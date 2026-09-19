@@ -604,11 +604,17 @@ function pathQueryBonus(source: string, query: string): number {
     bonus += 200;
   }
   if (
-    /準優勝|優勝校|過去\s*\d+\s*年|過去5年/.test(q) &&
+    /平均ペース|歴代.*ペース|位.*ペース|ペース.*位/.test(q) &&
     /荒玉|駅伝/.test(q) &&
-    /winners-by-year/.test(s)
+    /all_teams_average_pace|top6_historical_average_pace/.test(s)
   ) {
-    bonus += 260;
+    bonus += 240;
+  }
+  if (
+    /平均ペース|位.*ペース/.test(q) &&
+    /all_teams_average_pace/.test(s)
+  ) {
+    bonus += 80;
   }
   // 年度別優勝・準優勝質問では回数集計を下げ、年度表を勝たせる
   if (

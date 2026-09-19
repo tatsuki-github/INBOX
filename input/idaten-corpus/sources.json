@@ -465,6 +465,10 @@
     "corpus": "out-analysis/aragyoku_2024_2025_focus_teams.md"
   },
   {
+    "source": "out/analysis/aragyoku_all_teams_average_pace.md",
+    "corpus": "out-analysis/aragyoku_all_teams_average_pace.md"
+  },
+  {
     "source": "out/analysis/aragyoku_meet_records.md",
     "corpus": "out-analysis/aragyoku_meet_records.md"
   },
@@ -731,6 +735,10 @@
   {
     "source": "docs/adr/038-aragyoku-winners-runners-up.md",
     "corpus": "repo-docs/adr/038-aragyoku-winners-runners-up.md"
+  },
+  {
+    "source": "docs/adr/039-aragyoku-all-teams-average-pace.md",
+    "corpus": "repo-docs/adr/039-aragyoku-all-teams-average-pace.md"
   },
   {
     "source": "docs/idaten-import/phase0-media-ocr.md",

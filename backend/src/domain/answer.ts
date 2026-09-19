@@ -76,7 +76,7 @@ function offlinePreviewBudget(question: string): number {
   const q = question.normalize("NFKC");
   // Rankings / full team records / win-count tables need wide windows
   if (
-    /ランキング|トップ\s*\d+|全記録|全件|一覧|回数|2位まで|2位以内|最速|一番速|何位|順位|準優勝|優勝校|過去\s*\d+\s*年|過去5年/.test(
+    /ランキング|トップ\s*\d+|全記録|全件|一覧|回数|2位まで|2位以内|最速|一番速|何位|順位|準優勝|優勝校|過去\s*\d+\s*年|過去5年|平均ペース/.test(
       q,
     )
   ) {
@@ -112,6 +112,22 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
       }
     }
     return flat.slice(0, budget);
+  }
+  // 「〇位の平均ペース」→ 順位別歴代表を優先
+  if (/平均ペース|ペース/.test(q) && /位|歴代|過去/.test(q)) {
+    const rankMatch = q.match(/([0-9０-９]+)位/);
+    for (const needle of [
+      rankMatch ? `総合${rankMatch[1]!.normalize("NFKC")}位の歴代平均ペース` : "",
+      "順位別の歴代平均ペース",
+      "全チーム・年度別の平均ペース",
+      "平均ペースは",
+    ].filter(Boolean)) {
+      const idx = flat.indexOf(needle);
+      if (idx >= 0) {
+        const start = Math.max(0, idx - 40);
+        return flat.slice(start, Math.min(flat.length, start + budget));
+      }
+    }
   }
   const isos = question.match(/20\d{2}-\d{2}-\d{2}/g) ?? [];
   for (const iso of isos) {
@@ -537,6 +553,15 @@ function boostMeetYearSources(
       !lineOpsPrefer &&
       !meetRecordQ &&
       !/何位|誰|選手|区間新|前年比|分析/.test(expandedQuery);
+    // 「〇位の平均ペース」は計算正本（全チーム）を優先（距離概要より先）
+    const rankPaceQ =
+      (/平均ペース|\/km/.test(expandedQuery) || (/ペース/.test(expandedQuery) && /位/.test(expandedQuery))) &&
+      /荒玉|駅伝|総合|歴代|過去|位/.test(expandedQuery);
+    if (rankPaceQ) {
+      push("out-analysis/aragyoku_all_teams_average_pace.md");
+      push("out-analysis/aragyoku_top6_historical_average_pace.md");
+      push("docs/aragyoku-ekiden-distance-definitions.md");
+    }
     // 「○区は誰」は距離質問ではない（区間キーワードだけで overview に流さない）
     const legAthleteQ =
       /\d区は誰|\d区の選手|何区は誰|区間選手/.test(expandedQuery) ||
@@ -603,6 +628,7 @@ function boostMeetYearSources(
       // 概要・距離定義を先頭に（区間ペース質問で結果板ノイズに埋もれないように）
       push("out-analysis/aragyoku-overview.md");
       push("docs/aragyoku-ekiden-distance-definitions.md");
+      push("out-analysis/aragyoku_all_teams_average_pace.md");
       push("out-analysis/aragyoku_top6_historical_average_pace.md");
       push("aragyoku/course-videos.md");
     }
@@ -639,7 +665,7 @@ function boostMeetYearSources(
   for (const s of rest) {
     if (
       lineOpsPreferRest &&
-      /aragyoku-overview|aragyoku-ekiden-distance|average_pace|course-videos|aragyoku\/quiz|winners-by-year|aragyoku\/transcripts|ekiden-ocr/.test(
+      /aragyoku-overview|aragyoku-ekiden-distance|average_pace|all_teams_average_pace|course-videos|aragyoku\/quiz|winners-by-year|aragyoku\/transcripts|ekiden-ocr/.test(
         s,
       )
     ) {
