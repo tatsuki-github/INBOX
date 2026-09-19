@@ -4,6 +4,10 @@ import {
   selectAragyokuBoardImages,
   toLineImageMessages,
 } from "../domain/aragyokuBoardImages.js";
+import {
+  selectAragyokuCourseVideos,
+  toLineVideoMessages,
+} from "../domain/aragyokuCourseVideos.js";
 import { isDeniedUserId } from "../domain/deny.js";
 import { NON_TEXT_GUIDANCE, splitLineText } from "./reply.js";
 import { formatForLine } from "./format.js";
@@ -36,23 +40,35 @@ export type WebhookHandleOptions = AnswerDeps & {
   deniedUserIds?: Set<string>;
 };
 
-/** LINE は 1 reply あたり最大 5 メッセージ。テキストを削って画像枠を確保する。 */
+/** LINE は 1 reply あたり最大 5 メッセージ。テキストを削って画像・動画枠を確保する。 */
 export function buildReplyMessages(
   text: string,
   question: string,
-  opts?: { defaultYear?: number; attachBoardImages?: boolean },
+  opts?: {
+    defaultYear?: number;
+    attachBoardImages?: boolean;
+    attachCourseVideos?: boolean;
+  },
 ): messagingApi.Message[] {
-  const attach = opts?.attachBoardImages !== false;
-  const images = attach
+  const attachImages = opts?.attachBoardImages !== false;
+  const attachVideos = opts?.attachCourseVideos !== false;
+  const images = attachImages
     ? toLineImageMessages(
         selectAragyokuBoardImages(question, { defaultYear: opts?.defaultYear }),
       )
     : [];
-  const textSlots = Math.max(1, 5 - images.length);
+  const videos = attachVideos
+    ? toLineVideoMessages(selectAragyokuCourseVideos(question))
+    : [];
+  const mediaCount = images.length + videos.length;
+  const textSlots = Math.max(1, 5 - mediaCount);
   const parts = splitLineText(formatForLine(text)).slice(0, textSlots);
   const messages: messagingApi.Message[] = parts.map((t) => ({ type: "text", text: t }));
   for (const img of images) {
     messages.push(img);
+  }
+  for (const vid of videos) {
+    messages.push(vid);
   }
   return messages;
 }
@@ -91,12 +107,13 @@ export async function handleWebhookEvents(
           result.kind === "error"
             ? result.text
             : NON_TEXT_GUIDANCE;
-        const attachBoardImages = result.kind === "answered" || result.kind === "offline";
+        const attachMedia = result.kind === "answered" || result.kind === "offline";
         await replyClient.replyMessage({
           replyToken: event.replyToken,
           messages: buildReplyMessages(text, question, {
             defaultYear,
-            attachBoardImages,
+            attachBoardImages: attachMedia,
+            attachCourseVideos: attachMedia,
           }),
         });
         handled += 1;

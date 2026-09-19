@@ -42,4 +42,10 @@ describe("formatForLine", () => {
       "practice_meets_affect_load",
     );
   });
+
+  it("preserves Drive folder URLs with underscores", () => {
+    const url =
+      "https://drive.google.com/drive/folders/17MrxiZ_0CsDBgVrS_O3uZm3Oypu70Uoo";
+    expect(formatForLine(`男子: ${url}`)).toContain(url);
+  });
 });

@@ -33,21 +33,23 @@ export function formatForLine(text: string): string {
   // Headings
   t = t.replace(/^#{1,6}\s+/gm, "");
 
-  // Bold / italic / strike — protect snake_case ids (practice_meets_affect_load)
-  // so single-underscore italic does not eat identifiers.
-  const snakePlaceholders = new Map<string, string>();
-  t = t.replace(/\b[A-Za-z][A-Za-z0-9]*(?:_[A-Za-z0-9]+)+\b/g, (m) => {
-    const key = `\u0000SNAKE${snakePlaceholders.size}\u0000`;
-    snakePlaceholders.set(key, m);
+  // Bold / italic / strike — protect URLs and snake_case ids so underscores
+  // in Drive folder IDs / practice_meets_affect_load are not eaten as italic.
+  const placeholders = new Map<string, string>();
+  const protect = (m: string): string => {
+    const key = `\u0000PH${placeholders.size}\u0000`;
+    placeholders.set(key, m);
     return key;
-  });
+  };
+  t = t.replace(/https?:\/\/[^\s<>\]]+/gi, protect);
+  t = t.replace(/\b[A-Za-z][A-Za-z0-9]*(?:_[A-Za-z0-9]+)+\b/g, protect);
   t = t.replace(/\*\*(.+?)\*\*/g, "$1");
   t = t.replace(/__(.+?)__/g, "$1");
   t = t.replace(/(?<!\*)\*(?!\*)(.+?)(?<!\*)\*(?!\*)/g, "$1");
   t = t.replace(/(?<!_)_(?!_)(.+?)(?<!_)_(?!_)/g, "$1");
   t = t.replace(/~~(.+?)~~/g, "$1");
   t = t.replace(/`([^`]+)`/g, "$1");
-  for (const [key, value] of snakePlaceholders) {
+  for (const [key, value] of placeholders) {
     t = t.split(key).join(value);
   }
 
