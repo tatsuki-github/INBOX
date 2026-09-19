@@ -10,6 +10,15 @@
 
 ## QE5 / 検証
 
+- [x] `pytest tests/test_nagomi_2025_sb_vs_actual.py tests/test_knowledge_graph.py scripts/test_nagomi_tamana_nighter_sb.py`（21 passed）
+- [x] KG 再生成 508 nodes / 1423 edges + `sync_backend_kg.py`
+
+## R5 / Phase 6
+
+- Critical=0, Major=0
+- スキャン氏名は SB 照合できた分を校正。残りは成績表表記
+- **Approved**
+
 - [x] `pytest tests/test_nagomi_2025_sb_vs_actual.py`
 - [x] `pytest scripts/test_nagomi_tamana_nighter_sb.py`（2026 デフォルト退行）
 - [ ] `pytest tests/test_knowledge_graph.py`（コーパス再生成後）

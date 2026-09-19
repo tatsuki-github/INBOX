@@ -76,6 +76,8 @@ def test_generated_preview_and_gap_files_exist() -> None:
         assert (meet / name).is_file(), name
     women = (meet / "女子区間オーダー_SB予想.md").read_text(encoding="utf-8")
     assert "as_of: 2025-09-20" in women
+    assert "(通過順)通過予想 / (区間順)区間記録" in women
+    assert " / (" in women  # セル内に通過/区間
     gap = (meet / "予実比較.md").read_text(encoding="utf-8")
     assert "岱明" in gap
     assert "山本哲瑠" in gap
@@ -86,3 +88,5 @@ def test_generated_preview_and_gap_files_exist() -> None:
     assert daimyo["legs"][0]["actual"] == g.parse_seconds("7:06")
     assert daimyo["legs"][0]["pred"] is not None
     assert daimyo["total_delta"] is not None
+    assert daimyo["legs"][0].get("pred_cum_rank") is not None
+    assert daimyo["legs"][0].get("pred_sec_rank") is not None

@@ -785,6 +785,10 @@
     "corpus": "repo-docs/adr/049-nagomi-2025-sb-vs-actual.md"
   },
   {
+    "source": "docs/adr/050-nagomi-sb-pred-passing-ranks.md",
+    "corpus": "repo-docs/adr/050-nagomi-sb-pred-passing-ranks.md"
+  },
+  {
     "source": "docs/idaten-import/phase0-media-ocr.md",
     "corpus": "repo-docs/idaten-import/phase0-media-ocr.md"
   },
@@ -991,6 +995,14 @@
   {
     "source": "docs/implementation-flow/nagomi-order-not-kanaguri/phase-5-6.md",
     "corpus": "repo-docs/implementation-flow/nagomi-order-not-kanaguri/phase-5-6.md"
+  },
+  {
+    "source": "docs/implementation-flow/nagomi-sb-pred-passing-ranks/phase-0.md",
+    "corpus": "repo-docs/implementation-flow/nagomi-sb-pred-passing-ranks/phase-0.md"
+  },
+  {
+    "source": "docs/implementation-flow/nagomi-sb-pred-passing-ranks/phase-5-6.md",
+    "corpus": "repo-docs/implementation-flow/nagomi-sb-pred-passing-ranks/phase-5-6.md"
   },
   {
     "source": "docs/implementation-flow/sb-csv-row-qa/phase-0.md",

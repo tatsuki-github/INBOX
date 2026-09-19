@@ -118,5 +118,6 @@ npx vercel link --yes --project idaten-line-backend --scope tatsukitsuchiyama-gm
 - [ADR 047](../docs/adr/047-unnamed-leg-athlete-routing.md)（大会名なしの区間選手質問）
 - [ADR 048](../docs/adr/048-nagomi-order-not-kanaguri-ekiden.md)（なごみオーダー ≠ 金栗駅伝）
 - [ADR 049](../docs/adr/049-nagomi-2025-sb-vs-actual.md)（2025 なごみ成績とレース前 SB 予実）
+- [ADR 050](../docs/adr/050-nagomi-sb-pred-passing-ranks.md)（SB 予想の通過・区間順位）
 - [ADR 018](../docs/adr/018-line-denied-user-ids.md)（userId 拒否リスト）
 - [Phase 0](../docs/implementation-flow/line-idaten-bot/phase-0.md)

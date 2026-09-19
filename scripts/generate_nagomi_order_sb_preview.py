@@ -492,6 +492,11 @@ def build_gender_report(
             None,
         )
 
+    attach_predicted_leg_ranks(ranked_ref, median, field_suffix="")
+    attach_predicted_leg_ranks(
+        ranked_complete, median=None, complete_only=True, field_suffix="_full"
+    )
+
     return {
         "gender": gender,
         "leg_label": leg_label,
@@ -501,6 +506,80 @@ def build_gender_report(
         "ranked_ref": ranked_ref,
         "median_fill": median,
     }
+
+
+def attach_predicted_leg_ranks(
+    teams: list[dict[str, Any]],
+    median: float | None,
+    *,
+    complete_only: bool = False,
+    field_suffix: str = "",
+) -> None:
+    """対象チーム間で、各区の予想区間順位・通過順位を付ける。
+
+    complete_only=True のときは実SB由来の予想のみ（中央値補完なし）。
+    field_suffix で参考順位用（""）と完全記録用（"_full"）を分離する。
+    """
+    if not teams:
+        return
+    suf = field_suffix
+    usable: list[dict[str, Any]] = []
+    for t in teams:
+        parts: list[float] = []
+        ok = True
+        for det in t["legs"]:
+            if complete_only:
+                if det["pred"] is None:
+                    ok = False
+                    break
+                parts.append(det["pred"])
+            else:
+                if det["pred"] is not None:
+                    parts.append(det["pred"])
+                elif median is not None and det.get("name"):
+                    parts.append(median)
+                else:
+                    ok = False
+                    break
+        if not ok or len(parts) != 4:
+            continue
+        cum = 0.0
+        for det, sec in zip(t["legs"], parts):
+            cum += sec
+            det[f"pred_used{suf}"] = sec
+            det[f"pred_cum{suf}"] = cum
+            det[f"pred_imputed_leg{suf}"] = det["pred"] is None
+        usable.append(t)
+
+    for leg_i in range(4):
+        by_sec = sorted(usable, key=lambda t: t["legs"][leg_i][f"pred_used{suf}"])
+        for rank, t in enumerate(by_sec, start=1):
+            t["legs"][leg_i][f"pred_sec_rank{suf}"] = rank
+        by_cum = sorted(usable, key=lambda t: t["legs"][leg_i][f"pred_cum{suf}"])
+        for rank, t in enumerate(by_cum, start=1):
+            t["legs"][leg_i][f"pred_cum_rank{suf}"] = rank
+
+
+def fmt_leg_pred_cell(det: dict[str, Any], *, places: int = 1, field_suffix: str = "") -> str:
+    """(通過順)通過タイム / (区間順)区間記録。補完区間の区間記録は括弧付き。"""
+    suf = field_suffix
+    sec = det.get(f"pred_used{suf}")
+    if sec is None:
+        if det.get("pred") is not None:
+            return fmt_time(det["pred"], places)
+        return ""
+    cum = det.get(f"pred_cum{suf}")
+    sec_r = det.get(f"pred_sec_rank{suf}")
+    cum_r = det.get(f"pred_cum_rank{suf}")
+    sec_s = fmt_time(sec, places)
+    if det.get(f"pred_imputed_leg{suf}"):
+        sec_s = f"({sec_s})"
+    cum_s = fmt_time(cum, places) if cum is not None else ""
+    if cum_r is not None and sec_r is not None and cum_s:
+        return f"({cum_r}){cum_s} / ({sec_r}){sec_s}"
+    if sec_r is not None:
+        return f"({sec_r}){sec_s}"
+    return sec_s
 
 
 def render_markdown(report: dict[str, Any]) -> str:
@@ -549,6 +628,10 @@ def render_markdown(report: dict[str, Any]) -> str:
     lines.append("- タイムのリンクは当該記録の結果ページ（参考URL）")
     lines.append("- **参考総合順位**: 出走4名そろい、かつ実SB由来の予想が2区間以上。欠落区間は中央値補完（※付き）")
     lines.append("- **完全記録のみ順位**: 4区間すべてに実SB由来の予想があるチームのみ")
+    lines.append(
+        "- **各区セル**: `(通過順)通過予想 / (区間順)区間記録`。"
+        "補完区間の区間記録は括弧付き"
+    )
     if report.get("median_fill") is not None:
         lines.append(f"- 欠測補完中央値: `{fmt_time(report['median_fill'], 1)}` / 区間")
     lines.append("")
@@ -566,12 +649,7 @@ def render_markdown(report: dict[str, Any]) -> str:
             "※" if t.get("imputed") else "",
         ]
         for det in t["legs"]:
-            if det["pred"] is not None:
-                cells.append(fmt_time(det["pred"], 1))
-            elif det["name"]:
-                cells.append(f"({fmt_time(report['median_fill'], 1)})")
-            else:
-                cells.append("")
+            cells.append(fmt_leg_pred_cell(det))
         lines.append("| " + " | ".join(cells) + " |")
     lines.append("")
     lines.append("## 完全記録のみ順位")
@@ -587,7 +665,7 @@ def render_markdown(report: dict[str, Any]) -> str:
             fmt_clock(t["total"]),
         ]
         for det in t["legs"]:
-            cells.append(fmt_time(det["pred"], 1) if det["pred"] is not None else "")
+            cells.append(fmt_leg_pred_cell(det, field_suffix="_full"))
         lines.append("| " + " | ".join(cells) + " |")
     lines.append("")
     lines.append("## チーム別詳細")
@@ -604,15 +682,23 @@ def render_markdown(report: dict[str, Any]) -> str:
         total_s = fmt_clock(t.get("total_ref")) if t.get("total_ref") is not None else "—"
         lines.append(f"### {t['no']}. {t['team']}（総合 {total_s} / {rank_s}）")
         lines.append("")
-        cols = ["区間", "選手", *distances, leg_label, "備考"]
+        cols = ["区間", "選手", *distances, leg_label, "通過予想", "通過順", "区間順", "備考"]
         lines.append("| " + " | ".join(cols) + " |")
         lines.append("| " + " | ".join(["---"] * len(cols)) + " |")
         for det in t["legs"]:
+            cum_s = fmt_time(det.get("pred_cum"), 1) if det.get("pred_cum") is not None else ""
             row = [
                 f"{det['leg']}区",
                 det["name"] or "",
                 *[md_mark(det["marks"].get(d)) for d in distances],
-                fmt_time(det["pred"], 1) if det["pred"] is not None else "",
+                fmt_time(det["pred"], 1) if det["pred"] is not None else (
+                    f"({fmt_time(report['median_fill'], 1)})"
+                    if det.get("name") and report.get("median_fill") is not None and det.get("pred_imputed_leg")
+                    else ""
+                ),
+                cum_s,
+                str(det["pred_cum_rank"]) if det.get("pred_cum_rank") is not None else "",
+                str(det["pred_sec_rank"]) if det.get("pred_sec_rank") is not None else "",
                 det["note"],
             ]
             lines.append("| " + " | ".join(row) + " |")
@@ -623,6 +709,9 @@ def render_markdown(report: dict[str, Any]) -> str:
                     r["name"],
                     *[md_mark(r["marks"].get(d)) for d in distances],
                     fmt_time(r["pred"], 1) if r["pred"] is not None else "",
+                    "",
+                    "",
+                    "",
                     r["note"],
                 ]
                 lines.append("| " + " | ".join(row) + " |")
@@ -670,6 +759,9 @@ def render_pdf(report: dict[str, Any], path: Path) -> None:
     cell = ParagraphStyle(
         "CellJP", parent=styles["Normal"], fontName=font_name, fontSize=6.5, leading=8
     )
+    cell_leg = ParagraphStyle(
+        "CellLegJP", parent=styles["Normal"], fontName=font_name, fontSize=5.5, leading=7
+    )
     link_style = ParagraphStyle(
         "LinkJP", parent=cell, textColor=colors.HexColor("#1A56DB")
     )
@@ -704,7 +796,14 @@ def render_pdf(report: dict[str, Any], path: Path) -> None:
         )
     )
     story.append(p(pdf_title, title_style))
-    story.append(p(pdf_lead + formula, body))
+    story.append(
+        p(
+            pdf_lead
+            + formula
+            + " 各区セルは (通過順)通過予想 / (区間順)区間記録。",
+            body,
+        )
+    )
     story.append(Spacer(1, 4 * mm))
     story.append(p("参考総合順位（※=欠測補完）", h_style))
 
@@ -719,16 +818,11 @@ def render_pdf(report: dict[str, Any], path: Path) -> None:
             Paragraph("※" if t.get("imputed") else "", cell),
         ]
         for d in t["legs"]:
-            if d["pred"] is not None:
-                cells.append(Paragraph(fmt_time(d["pred"], 1), cell))
-            elif d["name"] and report.get("median_fill") is not None:
-                cells.append(Paragraph(f"({fmt_time(report['median_fill'], 1)})", cell))
-            else:
-                cells.append(Paragraph("", cell))
+            cells.append(Paragraph(escape(fmt_leg_pred_cell(d)), cell_leg))
         rank_data.append(cells)
     rank_table = Table(
         rank_data,
-        colWidths=[10 * mm, 9 * mm, 38 * mm, 14 * mm, 8 * mm, 16 * mm, 16 * mm, 16 * mm, 16 * mm],
+        colWidths=[10 * mm, 9 * mm, 32 * mm, 14 * mm, 7 * mm, 30 * mm, 30 * mm, 30 * mm, 30 * mm],
         repeatRows=1,
     )
     rank_table.setStyle(
@@ -756,15 +850,30 @@ def render_pdf(report: dict[str, Any], path: Path) -> None:
             rank_s = "順位対象外"
         total_s = fmt_clock(t.get("total_ref")) if t.get("total_ref") is not None else "—"
         story.append(p(f"{t['no']}. {t['team']}  総合 {total_s} / {rank_s}", h_style))
-        header = ["区間", "選手", *distances, leg_label, "備考"]
+        header = ["区間", "選手", *distances, leg_label, "通過", "通順", "区順", "備考"]
         data: list[list[Any]] = [[Paragraph(escape(h), cell) for h in header]]
         for det in t["legs"]:
+            pred_s = fmt_time(det["pred"], 1) if det["pred"] is not None else ""
+            if not pred_s and det.get("pred_imputed_leg") and det.get("pred_used") is not None:
+                pred_s = f"({fmt_time(det['pred_used'], 1)})"
             data.append(
                 [
                     Paragraph(f"{det['leg']}区", cell),
                     Paragraph(escape(det["name"] or ""), cell),
                     *[time_link(det["marks"].get(d)) for d in distances],
-                    Paragraph(fmt_time(det["pred"], 1) if det["pred"] is not None else "", cell),
+                    Paragraph(pred_s, cell),
+                    Paragraph(
+                        fmt_time(det["pred_cum"], 1) if det.get("pred_cum") is not None else "",
+                        cell,
+                    ),
+                    Paragraph(
+                        str(det["pred_cum_rank"]) if det.get("pred_cum_rank") is not None else "",
+                        cell,
+                    ),
+                    Paragraph(
+                        str(det["pred_sec_rank"]) if det.get("pred_sec_rank") is not None else "",
+                        cell,
+                    ),
                     Paragraph(escape(det["note"] or ""), cell),
                 ]
             )
@@ -775,13 +884,16 @@ def render_pdf(report: dict[str, Any], path: Path) -> None:
                     Paragraph(escape(r["name"]), cell),
                     *[time_link(r["marks"].get(d)) for d in distances],
                     Paragraph(fmt_time(r["pred"], 1) if r["pred"] is not None else "", cell),
+                    Paragraph("", cell),
+                    Paragraph("", cell),
+                    Paragraph("", cell),
                     Paragraph(escape(r["note"] or ""), cell),
                 ]
             )
         if g == "男子":
-            widths = [10 * mm, 28 * mm, 18 * mm, 18 * mm, 18 * mm, 18 * mm, 40 * mm]
+            widths = [9 * mm, 22 * mm, 14 * mm, 14 * mm, 14 * mm, 14 * mm, 14 * mm, 10 * mm, 10 * mm, 28 * mm]
         else:
-            widths = [10 * mm, 30 * mm, 22 * mm, 22 * mm, 18 * mm, 42 * mm]
+            widths = [9 * mm, 24 * mm, 16 * mm, 16 * mm, 14 * mm, 14 * mm, 10 * mm, 10 * mm, 32 * mm]
         tbl = Table(data, colWidths=widths, repeatRows=1)
         tbl.setStyle(
             TableStyle(
@@ -815,7 +927,20 @@ def write_coverage_csv(report: dict[str, Any], path: Path) -> None:
     distances = report["distances"]
     with path.open("w", encoding="utf-8", newline="") as f:
         w = csv.writer(f)
-        w.writerow(["gender", "team", "role", "name", *distances, "pred", "note"])
+        w.writerow(
+            [
+                "gender",
+                "team",
+                "role",
+                "name",
+                *distances,
+                "pred",
+                "pred_cum",
+                "pred_cum_rank",
+                "pred_sec_rank",
+                "note",
+            ]
+        )
         for t in report["teams"]:
             for det in t["legs"]:
                 w.writerow(
@@ -829,6 +954,9 @@ def write_coverage_csv(report: dict[str, Any], path: Path) -> None:
                             for d in distances
                         ],
                         fmt_time(det["pred"], 1) if det["pred"] is not None else "",
+                        fmt_time(det["pred_cum"], 1) if det.get("pred_cum") is not None else "",
+                        det.get("pred_cum_rank") or "",
+                        det.get("pred_sec_rank") or "",
                         det["note"],
                     ]
                 )

@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated_at": "2026-09-19T13:26:16Z",
+  "generated_at": "2026-09-19T13:35:28Z",
   "nodes": [
     {
       "id": "corpus:analysis-ocr",
@@ -204,9 +204,9 @@
         "practice"
       ],
       "refs": [
-        "out/analysis/notion_records_2026.json",
+        "input/events.2025.yaml",
         "out/2025/practice_absentees.csv",
-        "input/events.2025.yaml"
+        "out/analysis/notion_records_2026.json"
       ],
       "hint": "部員エンティティ"
     },
@@ -220,9 +220,9 @@
         "practice"
       ],
       "refs": [
-        "out/analysis/notion_records_2026.json",
+        "input/events.2025.yaml",
         "out/2025/practice_absentees.csv",
-        "input/events.2025.yaml"
+        "out/analysis/notion_records_2026.json"
       ],
       "hint": "所属:岱明中"
     },
@@ -236,9 +236,9 @@
         "practice"
       ],
       "refs": [
-        "out/analysis/notion_records_2026.json",
+        "input/events.2025.yaml",
         "out/2025/practice_absentees.csv",
-        "input/events.2025.yaml"
+        "out/analysis/notion_records_2026.json"
       ],
       "hint": "部員エンティティ"
     },
@@ -252,9 +252,9 @@
         "practice"
       ],
       "refs": [
-        "out/analysis/notion_records_2026.json",
+        "input/events.2025.yaml",
         "out/2025/practice_absentees.csv",
-        "input/events.2025.yaml"
+        "out/analysis/notion_records_2026.json"
       ],
       "hint": "所属:岱明中"
     },
@@ -268,9 +268,9 @@
         "practice"
       ],
       "refs": [
-        "out/analysis/notion_records_2026.json",
+        "input/events.2025.yaml",
         "out/2025/practice_absentees.csv",
-        "input/events.2025.yaml"
+        "out/analysis/notion_records_2026.json"
       ],
       "hint": "部員エンティティ"
     },
@@ -284,9 +284,9 @@
         "practice"
       ],
       "refs": [
-        "out/analysis/notion_records_2026.json",
+        "input/events.2025.yaml",
         "out/2025/practice_absentees.csv",
-        "input/events.2025.yaml"
+        "out/analysis/notion_records_2026.json"
       ],
       "hint": "所属:岱明中"
     },
@@ -328,9 +328,9 @@
         "practice"
       ],
       "refs": [
-        "out/analysis/notion_records_2026.json",
+        "input/events.2025.yaml",
         "out/2025/practice_absentees.csv",
-        "input/events.2025.yaml"
+        "out/analysis/notion_records_2026.json"
       ],
       "hint": "部員エンティティ"
     },
@@ -344,9 +344,9 @@
         "practice"
       ],
       "refs": [
-        "out/analysis/notion_records_2026.json",
+        "input/events.2025.yaml",
         "out/2025/practice_absentees.csv",
-        "input/events.2025.yaml"
+        "out/analysis/notion_records_2026.json"
       ],
       "hint": "所属:岱明中"
     },
@@ -360,8 +360,8 @@
         "practice"
       ],
       "refs": [
-        "out/2025/practice_absentees.csv",
-        "input/events.2025.yaml"
+        "input/events.2025.yaml",
+        "out/2025/practice_absentees.csv"
       ],
       "hint": "部員エンティティ"
     },
@@ -375,9 +375,9 @@
         "practice"
       ],
       "refs": [
-        "out/analysis/notion_records_2026.json",
+        "input/events.2025.yaml",
         "out/2025/practice_absentees.csv",
-        "input/events.2025.yaml"
+        "out/analysis/notion_records_2026.json"
       ],
       "hint": "部員エンティティ"
     },
@@ -391,9 +391,9 @@
         "practice"
       ],
       "refs": [
-        "out/analysis/notion_records_2026.json",
+        "input/events.2025.yaml",
         "out/2025/practice_absentees.csv",
-        "input/events.2025.yaml"
+        "out/analysis/notion_records_2026.json"
       ],
       "hint": "所属:岱明中"
     },
@@ -407,9 +407,9 @@
         "practice"
       ],
       "refs": [
-        "out/analysis/notion_records_2026.json",
+        "input/events.2025.yaml",
         "out/2025/practice_absentees.csv",
-        "input/events.2025.yaml"
+        "out/analysis/notion_records_2026.json"
       ],
       "hint": "部員エンティティ"
     },
@@ -423,9 +423,9 @@
         "practice"
       ],
       "refs": [
-        "out/analysis/notion_records_2026.json",
+        "input/events.2025.yaml",
         "out/2025/practice_absentees.csv",
-        "input/events.2025.yaml"
+        "out/analysis/notion_records_2026.json"
       ],
       "hint": "所属:岱明中"
     },
@@ -439,9 +439,9 @@
         "practice"
       ],
       "refs": [
-        "out/analysis/notion_records_2026.json",
+        "input/events.2025.yaml",
         "out/2025/practice_absentees.csv",
-        "input/events.2025.yaml"
+        "out/analysis/notion_records_2026.json"
       ],
       "hint": "部員エンティティ"
     },
@@ -455,9 +455,9 @@
         "practice"
       ],
       "refs": [
-        "out/analysis/notion_records_2026.json",
+        "input/events.2025.yaml",
         "out/2025/practice_absentees.csv",
-        "input/events.2025.yaml"
+        "out/analysis/notion_records_2026.json"
       ],
       "hint": "所属:岱明中"
     },
@@ -471,9 +471,9 @@
         "practice"
       ],
       "refs": [
+        "out/2026/practice_absentees.csv",
         "input/events.2026.yaml",
-        "out/analysis/notion_records_2026.json",
-        "out/2026/practice_absentees.csv"
+        "out/analysis/notion_records_2026.json"
       ],
       "hint": "部員エンティティ"
     },
@@ -487,9 +487,9 @@
         "practice"
       ],
       "refs": [
+        "out/2026/practice_absentees.csv",
         "input/events.2026.yaml",
-        "out/analysis/notion_records_2026.json",
-        "out/2026/practice_absentees.csv"
+        "out/analysis/notion_records_2026.json"
       ],
       "hint": "所属:岱明中"
     },
@@ -503,9 +503,9 @@
         "practice"
       ],
       "refs": [
-        "out/analysis/notion_records_2026.json",
+        "input/events.2025.yaml",
         "out/2025/practice_absentees.csv",
-        "input/events.2025.yaml"
+        "out/analysis/notion_records_2026.json"
       ],
       "hint": "部員エンティティ"
     },
@@ -519,9 +519,9 @@
         "practice"
       ],
       "refs": [
-        "out/analysis/notion_records_2026.json",
+        "input/events.2025.yaml",
         "out/2025/practice_absentees.csv",
-        "input/events.2025.yaml"
+        "out/analysis/notion_records_2026.json"
       ],
       "hint": "所属:岱明中"
     },
@@ -538,8 +538,8 @@
         "input/events.2026.yaml",
         "out/analysis/notion_records_2026.json",
         "input/events.2025.yaml",
-        "out/2025/practice_absentees.csv",
-        "out/2026/practice_absentees.csv"
+        "out/2026/practice_absentees.csv",
+        "out/2025/practice_absentees.csv"
       ],
       "hint": "部員エンティティ"
     },
@@ -556,8 +556,8 @@
         "input/events.2026.yaml",
         "out/analysis/notion_records_2026.json",
         "input/events.2025.yaml",
-        "out/2025/practice_absentees.csv",
-        "out/2026/practice_absentees.csv"
+        "out/2026/practice_absentees.csv",
+        "out/2025/practice_absentees.csv"
       ],
       "hint": "所属:岱明中"
     },
@@ -4270,6 +4270,20 @@
         "docs/adr/049-nagomi-2025-sb-vs-actual.md"
       ],
       "hint": "ADR: 049-nagomi-2025-sb-vs-actual"
+    },
+    {
+      "id": "source:docs/adr/050-nagomi-sb-pred-passing-ranks.md",
+      "type": "Source",
+      "label": "050-nagomi-sb-pred-passing-ranks.md",
+      "topics": [
+        "ai",
+        "meta",
+        "practice"
+      ],
+      "refs": [
+        "docs/adr/050-nagomi-sb-pred-passing-ranks.md"
+      ],
+      "hint": "ADR: 050-nagomi-sb-pred-passing-ranks"
     },
     {
       "id": "source:docs/ai-practice-generation.md",
@@ -10082,6 +10096,11 @@
       "rel": "see_also"
     },
     {
+      "from": "source:docs/ai-practice-generation.md",
+      "to": "source:docs/adr/050-nagomi-sb-pred-passing-ranks.md",
+      "rel": "see_also"
+    },
+    {
       "from": "source:out/2020/calendar.md",
       "to": "source:input/events.2020.yaml",
       "rel": "derived_from"
@@ -10644,6 +10663,11 @@
     {
       "from": "topic:ai",
       "to": "source:docs/adr/049-nagomi-2025-sb-vs-actual.md",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:ai",
+      "to": "source:docs/adr/050-nagomi-sb-pred-passing-ranks.md",
       "rel": "search_here"
     },
     {
@@ -12748,6 +12772,11 @@
     },
     {
       "from": "topic:meta",
+      "to": "source:docs/adr/050-nagomi-sb-pred-passing-ranks.md",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:meta",
       "to": "source:docs/tamana-weather.md",
       "rel": "documented_in"
     },
@@ -13584,6 +13613,11 @@
     {
       "from": "topic:practice",
       "to": "source:docs/adr/049-nagomi-2025-sb-vs-actual.md",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:practice",
+      "to": "source:docs/adr/050-nagomi-sb-pred-passing-ranks.md",
       "rel": "search_here"
     },
     {
