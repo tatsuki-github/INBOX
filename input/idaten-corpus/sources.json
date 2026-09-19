@@ -765,6 +765,26 @@
     "corpus": "repo-docs/adr/044-aragyoku-line-course-videos.md"
   },
   {
+    "source": "docs/adr/045-nagomi-tamana-nighter-sb.md",
+    "corpus": "repo-docs/adr/045-nagomi-tamana-nighter-sb.md"
+  },
+  {
+    "source": "docs/adr/046-kg-analysis-digest-routing.md",
+    "corpus": "repo-docs/adr/046-kg-analysis-digest-routing.md"
+  },
+  {
+    "source": "docs/adr/047-unnamed-leg-athlete-routing.md",
+    "corpus": "repo-docs/adr/047-unnamed-leg-athlete-routing.md"
+  },
+  {
+    "source": "docs/adr/048-nagomi-order-not-kanaguri-ekiden.md",
+    "corpus": "repo-docs/adr/048-nagomi-order-not-kanaguri-ekiden.md"
+  },
+  {
+    "source": "docs/adr/049-nagomi-2025-sb-vs-actual.md",
+    "corpus": "repo-docs/adr/049-nagomi-2025-sb-vs-actual.md"
+  },
+  {
     "source": "docs/idaten-import/phase0-media-ocr.md",
     "corpus": "repo-docs/idaten-import/phase0-media-ocr.md"
   },
@@ -823,6 +843,38 @@
   {
     "source": "docs/implementation-flow/idaten-sb-all-years/phase-1.md",
     "corpus": "repo-docs/implementation-flow/idaten-sb-all-years/phase-1.md"
+  },
+  {
+    "source": "docs/implementation-flow/kg-backend-accuracy/phase-0.md",
+    "corpus": "repo-docs/implementation-flow/kg-backend-accuracy/phase-0.md"
+  },
+  {
+    "source": "docs/implementation-flow/kg-backend-accuracy/phase-1.md",
+    "corpus": "repo-docs/implementation-flow/kg-backend-accuracy/phase-1.md"
+  },
+  {
+    "source": "docs/implementation-flow/kg-backend-accuracy/phase-3.md",
+    "corpus": "repo-docs/implementation-flow/kg-backend-accuracy/phase-3.md"
+  },
+  {
+    "source": "docs/implementation-flow/kg-backend-accuracy/phase-5-6.md",
+    "corpus": "repo-docs/implementation-flow/kg-backend-accuracy/phase-5-6.md"
+  },
+  {
+    "source": "docs/implementation-flow/leg-who-without-meet-name/phase-0.md",
+    "corpus": "repo-docs/implementation-flow/leg-who-without-meet-name/phase-0.md"
+  },
+  {
+    "source": "docs/implementation-flow/leg-who-without-meet-name/phase-1.md",
+    "corpus": "repo-docs/implementation-flow/leg-who-without-meet-name/phase-1.md"
+  },
+  {
+    "source": "docs/implementation-flow/leg-who-without-meet-name/phase-3.md",
+    "corpus": "repo-docs/implementation-flow/leg-who-without-meet-name/phase-3.md"
+  },
+  {
+    "source": "docs/implementation-flow/leg-who-without-meet-name/phase-5-6.md",
+    "corpus": "repo-docs/implementation-flow/leg-who-without-meet-name/phase-5-6.md"
   },
   {
     "source": "docs/implementation-flow/line-deny-list/phase-0.md",
@@ -897,6 +949,22 @@
     "corpus": "repo-docs/implementation-flow/missing-info-ask-coach/phase-0-6.md"
   },
   {
+    "source": "docs/implementation-flow/nagomi-2025-sb-vs-actual/phase-0.md",
+    "corpus": "repo-docs/implementation-flow/nagomi-2025-sb-vs-actual/phase-0.md"
+  },
+  {
+    "source": "docs/implementation-flow/nagomi-2025-sb-vs-actual/phase-1.md",
+    "corpus": "repo-docs/implementation-flow/nagomi-2025-sb-vs-actual/phase-1.md"
+  },
+  {
+    "source": "docs/implementation-flow/nagomi-2025-sb-vs-actual/phase-3.md",
+    "corpus": "repo-docs/implementation-flow/nagomi-2025-sb-vs-actual/phase-3.md"
+  },
+  {
+    "source": "docs/implementation-flow/nagomi-2025-sb-vs-actual/phase-5-6.md",
+    "corpus": "repo-docs/implementation-flow/nagomi-2025-sb-vs-actual/phase-5-6.md"
+  },
+  {
     "source": "docs/implementation-flow/nagomi-2026-program-entry/phase-0.md",
     "corpus": "repo-docs/implementation-flow/nagomi-2026-program-entry/phase-0.md"
   },
@@ -907,6 +975,22 @@
   {
     "source": "docs/implementation-flow/nagomi-2026-program-entry/phase-5-6.md",
     "corpus": "repo-docs/implementation-flow/nagomi-2026-program-entry/phase-5-6.md"
+  },
+  {
+    "source": "docs/implementation-flow/nagomi-order-not-kanaguri/phase-0.md",
+    "corpus": "repo-docs/implementation-flow/nagomi-order-not-kanaguri/phase-0.md"
+  },
+  {
+    "source": "docs/implementation-flow/nagomi-order-not-kanaguri/phase-1.md",
+    "corpus": "repo-docs/implementation-flow/nagomi-order-not-kanaguri/phase-1.md"
+  },
+  {
+    "source": "docs/implementation-flow/nagomi-order-not-kanaguri/phase-3.md",
+    "corpus": "repo-docs/implementation-flow/nagomi-order-not-kanaguri/phase-3.md"
+  },
+  {
+    "source": "docs/implementation-flow/nagomi-order-not-kanaguri/phase-5-6.md",
+    "corpus": "repo-docs/implementation-flow/nagomi-order-not-kanaguri/phase-5-6.md"
   },
   {
     "source": "docs/implementation-flow/sb-csv-row-qa/phase-0.md",
@@ -1709,6 +1793,10 @@
     "corpus": "drive-text/大会/2025年度/0830_玉名郡ナイター/岱明の結果.md.meta.json"
   },
   {
+    "source": "input/external/drive/shared/大会/2025年度/0921_中学駅伝金栗四三生誕の地なごみ大会/予実比較.md",
+    "corpus": "drive-text/大会/2025年度/0921_中学駅伝金栗四三生誕の地なごみ大会/予実比較.md"
+  },
+  {
     "source": "input/external/drive/shared/大会/2025年度/0921_中学駅伝金栗四三生誕の地なごみ大会/女子の結果.heic.md",
     "corpus": "drive-text/大会/2025年度/0921_中学駅伝金栗四三生誕の地なごみ大会/女子の結果.heic.md"
   },
@@ -1717,12 +1805,28 @@
     "corpus": "drive-text/大会/2025年度/0921_中学駅伝金栗四三生誕の地なごみ大会/女子の結果.heic.md.meta.json"
   },
   {
+    "source": "input/external/drive/shared/大会/2025年度/0921_中学駅伝金栗四三生誕の地なごみ大会/女子区間オーダー_SB予想.md",
+    "corpus": "drive-text/大会/2025年度/0921_中学駅伝金栗四三生誕の地なごみ大会/女子区間オーダー_SB予想.md"
+  },
+  {
+    "source": "input/external/drive/shared/大会/2025年度/0921_中学駅伝金栗四三生誕の地なごみ大会/女子区間オーダー_SB予想_coverage.csv",
+    "corpus": "drive-text/大会/2025年度/0921_中学駅伝金栗四三生誕の地なごみ大会/女子区間オーダー_SB予想_coverage.csv"
+  },
+  {
+    "source": "input/external/drive/shared/大会/2025年度/0921_中学駅伝金栗四三生誕の地なごみ大会/女子成績表.md",
+    "corpus": "drive-text/大会/2025年度/0921_中学駅伝金栗四三生誕の地なごみ大会/女子成績表.md"
+  },
+  {
     "source": "input/external/drive/shared/大会/2025年度/0921_中学駅伝金栗四三生誕の地なごみ大会/岱明の結果.md",
     "corpus": "drive-text/大会/2025年度/0921_中学駅伝金栗四三生誕の地なごみ大会/岱明の結果.md"
   },
   {
     "source": "input/external/drive/shared/大会/2025年度/0921_中学駅伝金栗四三生誕の地なごみ大会/岱明の結果.md.meta.json",
     "corpus": "drive-text/大会/2025年度/0921_中学駅伝金栗四三生誕の地なごみ大会/岱明の結果.md.meta.json"
+  },
+  {
+    "source": "input/external/drive/shared/大会/2025年度/0921_中学駅伝金栗四三生誕の地なごみ大会/成績表.json",
+    "corpus": "drive-text/大会/2025年度/0921_中学駅伝金栗四三生誕の地なごみ大会/成績表.json"
   },
   {
     "source": "input/external/drive/shared/大会/2025年度/0921_中学駅伝金栗四三生誕の地なごみ大会/男子の結果1.pdf.md",
@@ -1739,6 +1843,18 @@
   {
     "source": "input/external/drive/shared/大会/2025年度/0921_中学駅伝金栗四三生誕の地なごみ大会/男子の結果2.pdf.md.meta.json",
     "corpus": "drive-text/大会/2025年度/0921_中学駅伝金栗四三生誕の地なごみ大会/男子の結果2.pdf.md.meta.json"
+  },
+  {
+    "source": "input/external/drive/shared/大会/2025年度/0921_中学駅伝金栗四三生誕の地なごみ大会/男子区間オーダー_SB予想.md",
+    "corpus": "drive-text/大会/2025年度/0921_中学駅伝金栗四三生誕の地なごみ大会/男子区間オーダー_SB予想.md"
+  },
+  {
+    "source": "input/external/drive/shared/大会/2025年度/0921_中学駅伝金栗四三生誕の地なごみ大会/男子区間オーダー_SB予想_coverage.csv",
+    "corpus": "drive-text/大会/2025年度/0921_中学駅伝金栗四三生誕の地なごみ大会/男子区間オーダー_SB予想_coverage.csv"
+  },
+  {
+    "source": "input/external/drive/shared/大会/2025年度/0921_中学駅伝金栗四三生誕の地なごみ大会/男子成績表.md",
+    "corpus": "drive-text/大会/2025年度/0921_中学駅伝金栗四三生誕の地なごみ大会/男子成績表.md"
   },
   {
     "source": "input/external/drive/shared/大会/2025年度/0921_中学駅伝金栗四三生誕の地なごみ大会/開催要項.pdf.md",
@@ -2093,6 +2209,10 @@
     "corpus": "drive-text/大会/2026年度/0829_ジュニアオリンピックU16熊本県予選会/岱明の結果.md.meta.json"
   },
   {
+    "source": "input/external/drive/shared/大会/2026年度/0829_玉名郡ナイター中・長距離記録会/全結果.md",
+    "corpus": "drive-text/大会/2026年度/0829_玉名郡ナイター中・長距離記録会/全結果.md"
+  },
+  {
     "source": "input/external/drive/shared/大会/2026年度/0829_玉名郡ナイター中・長距離記録会/参加者メモ.md",
     "corpus": "drive-text/大会/2026年度/0829_玉名郡ナイター中・長距離記録会/参加者メモ.md"
   },
@@ -2107,6 +2227,10 @@
   {
     "source": "input/external/drive/shared/大会/2026年度/0829_玉名郡ナイター中・長距離記録会/岱明の結果.md.meta.json",
     "corpus": "drive-text/大会/2026年度/0829_玉名郡ナイター中・長距離記録会/岱明の結果.md.meta.json"
+  },
+  {
+    "source": "input/external/drive/shared/大会/2026年度/0829_玉名郡ナイター中・長距離記録会/第25回ナイター中長距離記録会_結果_raw.txt",
+    "corpus": "drive-text/大会/2026年度/0829_玉名郡ナイター中・長距離記録会/第25回ナイター中長距離記録会_結果_raw.txt"
   },
   {
     "source": "input/external/drive/shared/大会/2026年度/0920_中学駅伝金栗四三生誕の地なごみ大会/エントリーリスト.pdf.md",

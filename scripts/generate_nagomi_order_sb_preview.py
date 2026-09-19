@@ -189,9 +189,31 @@ def apply_tamana_nighter_sb(by_name: dict[str, AthleteSB], upsert) -> list[str]:
     return updates
 
 
-def load_sb_index() -> tuple[dict[str, AthleteSB], list[str]]:
-    """正規化氏名 → AthleteSB（距離ごとのベスト）。ナイター更新ログも返す。"""
+def date_on_or_before(date_text: str, as_of: str | None) -> bool:
+    """SB 行の日付が as_of（YYYY-MM-DD / YYYY/MM/DD）以前か。日付欠落は採用する。"""
+    if not as_of:
+        return True
+    raw = str(date_text or "").strip().replace("-", "/")
+    if not raw:
+        return True
+    return raw <= str(as_of).strip().replace("-", "/")
+
+
+def load_sb_index(
+    sb_path: Path | None = None,
+    *,
+    as_of: str | None = None,
+    include_notion: bool = True,
+    include_nighter: bool = True,
+    gender: str | None = None,
+) -> tuple[dict[str, AthleteSB], list[str]]:
+    """正規化氏名 → AthleteSB（距離ごとのベスト）。ナイター更新ログも返す。
+
+    as_of を指定すると、その日以前の記録だけを使う（レース前の公平な予想用）。
+    gender は「男子」「女子」。指定時は性別が一致する行だけ採用する。
+    """
     by_name: dict[str, AthleteSB] = {}
+    adopted_path = sb_path if sb_path is not None else SB_ADOPTED
 
     def upsert(name: str, distance: str, seconds: float, text: str, url: str, date: str, source: str) -> None:
         if distance not in ("800m", "1500m", "3000m") or seconds is None:
@@ -205,9 +227,13 @@ def load_sb_index() -> tuple[dict[str, AthleteSB], list[str]]:
             ath.marks[distance] = Mark(seconds=seconds, text=text, url=url or "", date=date or "", source=source)
 
     # 1) SB adopted JSON（SB採用のみ優先的に、ただし秒は SB秒）
-    if SB_ADOPTED.exists():
-        for r in json.loads(SB_ADOPTED.read_text(encoding="utf-8")):
+    if adopted_path.exists():
+        for r in json.loads(adopted_path.read_text(encoding="utf-8")):
             if r.get("SB採用") not in ("__YES__", True, "true", "TRUE", "yes"):
+                continue
+            if gender and str(r.get("性別") or "") not in ("", gender):
+                continue
+            if not date_on_or_before(str(r.get("日付") or ""), as_of):
                 continue
             sec = parse_seconds(r.get("SB秒") or r.get("SB") or r.get("記録秒"))
             if sec is None:
@@ -224,9 +250,13 @@ def load_sb_index() -> tuple[dict[str, AthleteSB], list[str]]:
             )
 
     # 2) Notion rows（sb_adopted 優先、なければ同距離の最速を後で埋める）
-    if NOTION_ROWS.exists():
+    if include_notion and NOTION_ROWS.exists():
         # first pass: sb_adopted
         for r in json.loads(NOTION_ROWS.read_text(encoding="utf-8")):
+            if gender and str(r.get("gender") or r.get("性別") or "") not in ("", gender):
+                continue
+            if not date_on_or_before(str(r.get("date") or r.get("日付") or ""), as_of):
+                continue
             sec = parse_seconds(r.get("sb_text") or r.get("record_seconds") or r.get("time_text"))
             if sec is None:
                 continue
@@ -244,6 +274,10 @@ def load_sb_index() -> tuple[dict[str, AthleteSB], list[str]]:
             )
         # second pass: fill missing distances with best mark
         for r in json.loads(NOTION_ROWS.read_text(encoding="utf-8")):
+            if gender and str(r.get("gender") or r.get("性別") or "") not in ("", gender):
+                continue
+            if not date_on_or_before(str(r.get("date") or r.get("日付") or ""), as_of):
+                continue
             name = str(r.get("name") or "")
             distance = str(r.get("distance") or "")
             key = norm_name(name)
@@ -257,7 +291,9 @@ def load_sb_index() -> tuple[dict[str, AthleteSB], list[str]]:
             upsert(name, distance, sec, text, str(r.get("url") or ""), str(r.get("date") or ""), "notion-best")
 
     # 3) 玉名郡ナイター（2026-08-29）— 既存SBより速いときだけ上書き
-    nighter_updates = apply_tamana_nighter_sb(by_name, upsert)
+    nighter_updates: list[str] = []
+    if include_nighter:
+        nighter_updates = apply_tamana_nighter_sb(by_name, upsert)
 
     return by_name, nighter_updates
 
@@ -471,11 +507,21 @@ def render_markdown(report: dict[str, Any]) -> str:
     g = report["gender"]
     leg_label = report["leg_label"]
     distances = report["distances"]
+    year = int(report.get("year") or 2026)
+    as_of_note = report.get("as_of_note") or (
+        "as_of: 2026-09-18 オーダー / 2026年度 SB（SB採用優先）+ 玉名郡ナイター更新分"
+    )
+    event_date = report.get("event_date") or "2026-09-20"
+    sb_note = report.get("sb_note") or (
+        "- **SB反映**: `2026-sb-adopted` / Notion に加え、"
+        "玉名郡ナイター全結果（2026-08-29）で既存より速い記録のみ上書き"
+    )
+    heading = report.get("heading") or f"なごみ駅伝{year} {g} 区間オーダー × 今年度SB・予想"
     lines: list[str] = []
-    lines.append(f"# なごみ駅伝2026 {g} 区間オーダー × 今年度SB・予想")
+    lines.append(f"# {heading}")
     lines.append("")
-    lines.append("as_of: 2026-09-18 オーダー / 2026年度 SB（SB採用優先）+ 玉名郡ナイター更新分")
-    lines.append("event_date: 2026-09-20")
+    lines.append(as_of_note)
+    lines.append(f"event_date: {event_date}")
     lines.append("")
     lines.append("## 予測式")
     lines.append("")
@@ -499,10 +545,7 @@ def render_markdown(report: dict[str, Any]) -> str:
             f"- **2km予想（800mフォールバック）**: 1500欠測時のみ "
             f"`SB秒 × (2000/800)^{RIEGEL} × {WOMEN_800_TO_2K_COEF}`"
         )
-    lines.append(
-        "- **SB反映**: `2026-sb-adopted` / Notion に加え、"
-        "玉名郡ナイター全結果（2026-08-29）で既存より速い記録のみ上書き"
-    )
+    lines.append(sb_note)
     lines.append("- タイムのリンクは当該記録の結果ページ（参考URL）")
     lines.append("- **参考総合順位**: 出走4名そろい、かつ実SB由来の予想が2区間以上。欠落区間は中央値補完（※付き）")
     lines.append("- **完全記録のみ順位**: 4区間すべてに実SB由来の予想があるチームのみ")
@@ -647,22 +690,21 @@ def render_pdf(report: dict[str, Any], path: Path) -> None:
     g = report["gender"]
     leg_label = report["leg_label"]
     distances = report["distances"]
-    story.append(p(f"なごみ駅伝2026 {g} オーダー×SB・予想", title_style))
-    story.append(
-        p(
-            f"オーダー 9/18 20:00 / SBは2026年度（SB採用優先）。"
-            f"参考順位は記録欠落区間を中央値補完。"
-            + (
-                f" 男子3km: 1500×2+{MEN_1500_TO_3K_ADD}。3000mが1500換算より{THRESHOLD_SEC:.0f}s超遅い場合は1500換算。"
-                if g == "男子"
-                else (
-                    f" 女子2km: 1500×(2/1.5)+{WOMEN_1500_TO_2K_ADD:.0f}。"
-                    "1500優先（800は欠測時のみ）。"
-                )
-            ),
-            body,
+    pdf_title = report.get("pdf_title") or f"なごみ駅伝2026 {g} オーダー×SB・予想"
+    pdf_lead = report.get("pdf_lead") or (
+        f"オーダー 9/18 20:00 / SBは2026年度（SB採用優先）。"
+        f"参考順位は記録欠落区間を中央値補完。"
+    )
+    formula = (
+        f" 男子3km: 1500×2+{MEN_1500_TO_3K_ADD}。3000mが1500換算より{THRESHOLD_SEC:.0f}s超遅い場合は1500換算。"
+        if g == "男子"
+        else (
+            f" 女子2km: 1500×(2/1.5)+{WOMEN_1500_TO_2K_ADD:.0f}。"
+            "1500優先（800は欠測時のみ）。"
         )
     )
+    story.append(p(pdf_title, title_style))
+    story.append(p(pdf_lead + formula, body))
     story.append(Spacer(1, 4 * mm))
     story.append(p("参考総合順位（※=欠測補完）", h_style))
 

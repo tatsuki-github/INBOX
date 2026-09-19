@@ -1,0 +1,2083 @@
+{
+  "event": {
+    "title": "第11回 中学駅伝金栗四三生誕の地なごみ大会",
+    "date": "2025-09-21",
+    "venue": "和水町三加和公民館前発着周回コース",
+    "output_note": "男子成績表は 2025/09/21 11:13 出力"
+  },
+  "as_of_sb": "2025-09-20",
+  "women": [
+    {
+      "rank": 1,
+      "team": "金栗PROJECT",
+      "total": "27:47",
+      "legs": [
+        {
+          "name": "坂井優花",
+          "grade": 3,
+          "split": "6:32",
+          "split_rank": 1,
+          "cum": "6:32",
+          "cum_rank": 1
+        },
+        {
+          "name": "辻美空",
+          "grade": 3,
+          "split": "7:06",
+          "split_rank": 3,
+          "cum": "13:38",
+          "cum_rank": 2
+        },
+        {
+          "name": "庄山瑠那",
+          "grade": 2,
+          "split": "7:14",
+          "split_rank": 1,
+          "cum": "20:52",
+          "cum_rank": 1
+        },
+        {
+          "name": "居石華音",
+          "grade": 1,
+          "split": "6:55",
+          "split_rank": 1,
+          "cum": "27:47",
+          "cum_rank": 1
+        }
+      ]
+    },
+    {
+      "rank": 2,
+      "team": "長洲",
+      "total": "29:39",
+      "legs": [
+        {
+          "name": "積房愛梨",
+          "grade": 2,
+          "split": "7:14",
+          "split_rank": 5,
+          "cum": "7:14",
+          "cum_rank": 5
+        },
+        {
+          "name": "濱北愛",
+          "grade": 1,
+          "split": "7:28",
+          "split_rank": 5,
+          "cum": "14:42",
+          "cum_rank": 5
+        },
+        {
+          "name": "村里唯花",
+          "grade": 2,
+          "split": "7:58",
+          "split_rank": 5,
+          "cum": "22:40",
+          "cum_rank": 5
+        },
+        {
+          "name": "中村羽音",
+          "grade": 2,
+          "split": "6:59",
+          "split_rank": 2,
+          "cum": "29:39",
+          "cum_rank": 2
+        }
+      ]
+    },
+    {
+      "rank": 3,
+      "team": "荒尾第四",
+      "total": "30:06",
+      "legs": [
+        {
+          "name": "中尾杏朱",
+          "grade": 1,
+          "split": "7:24",
+          "split_rank": 7,
+          "cum": "7:24",
+          "cum_rank": 7
+        },
+        {
+          "name": "松山杏海",
+          "grade": 3,
+          "split": "6:58",
+          "split_rank": 3,
+          "cum": "14:22",
+          "cum_rank": 3
+        },
+        {
+          "name": "宮本奈菜",
+          "grade": 3,
+          "split": "8:05",
+          "split_rank": 8,
+          "cum": "22:27",
+          "cum_rank": 3
+        },
+        {
+          "name": "池田結衣",
+          "grade": 3,
+          "split": "7:39",
+          "split_rank": 7,
+          "cum": "30:06",
+          "cum_rank": 3
+        }
+      ]
+    },
+    {
+      "rank": 4,
+      "team": "南関",
+      "total": "30:12",
+      "legs": [
+        {
+          "name": "稗島琴都",
+          "grade": 3,
+          "split": "7:23",
+          "split_rank": 6,
+          "cum": "7:23",
+          "cum_rank": 6
+        },
+        {
+          "name": "堀山結衣",
+          "grade": 1,
+          "split": "7:22",
+          "split_rank": 4,
+          "cum": "14:45",
+          "cum_rank": 4
+        },
+        {
+          "name": "米田美空",
+          "grade": 2,
+          "split": "8:08",
+          "split_rank": 9,
+          "cum": "22:53",
+          "cum_rank": 4
+        },
+        {
+          "name": "平山結菜",
+          "grade": 3,
+          "split": "7:19",
+          "split_rank": 3,
+          "cum": "30:12",
+          "cum_rank": 4
+        }
+      ]
+    },
+    {
+      "rank": 5,
+      "team": "泗水",
+      "total": "30:22",
+      "legs": [
+        {
+          "name": "三浦瑚珀",
+          "grade": 3,
+          "split": "6:55",
+          "split_rank": 3,
+          "cum": "6:55",
+          "cum_rank": 3
+        },
+        {
+          "name": "松田知隆",
+          "grade": 3,
+          "split": "7:43",
+          "split_rank": 8,
+          "cum": "14:38",
+          "cum_rank": 4
+        },
+        {
+          "name": "吉田真子",
+          "grade": 1,
+          "split": "7:48",
+          "split_rank": 3,
+          "cum": "22:26",
+          "cum_rank": 3
+        },
+        {
+          "name": "上野詩織",
+          "grade": 2,
+          "split": "7:56",
+          "split_rank": 5,
+          "cum": "30:22",
+          "cum_rank": 5
+        }
+      ]
+    },
+    {
+      "rank": 6,
+      "team": "津奈木",
+      "total": "30:26",
+      "legs": [
+        {
+          "name": "吉野紗也香",
+          "grade": 3,
+          "split": "7:26",
+          "split_rank": 9,
+          "cum": "7:26",
+          "cum_rank": 9
+        },
+        {
+          "name": "山口杏莉",
+          "grade": 3,
+          "split": "7:49",
+          "split_rank": 9,
+          "cum": "15:15",
+          "cum_rank": 9
+        },
+        {
+          "name": "林柚花",
+          "grade": 3,
+          "split": "7:40",
+          "split_rank": 7,
+          "cum": "22:55",
+          "cum_rank": 7
+        },
+        {
+          "name": "鳥居樹莉菜",
+          "grade": 2,
+          "split": "7:31",
+          "split_rank": 6,
+          "cum": "30:26",
+          "cum_rank": 6
+        }
+      ]
+    },
+    {
+      "rank": 7,
+      "team": "京陵",
+      "total": "31:14",
+      "legs": [
+        {
+          "name": "平野衣時",
+          "grade": 3,
+          "split": "7:37",
+          "split_rank": 10,
+          "cum": "7:37",
+          "cum_rank": 10
+        },
+        {
+          "name": "小原佳澄",
+          "grade": 2,
+          "split": "8:07",
+          "split_rank": 11,
+          "cum": "15:44",
+          "cum_rank": 11
+        },
+        {
+          "name": "田代みなみ",
+          "grade": 1,
+          "split": "8:00",
+          "split_rank": 7,
+          "cum": "23:44",
+          "cum_rank": 10
+        },
+        {
+          "name": "川崎百香",
+          "grade": 3,
+          "split": "7:30",
+          "split_rank": 4,
+          "cum": "31:14",
+          "cum_rank": 7
+        }
+      ]
+    },
+    {
+      "rank": 8,
+      "team": "岱明",
+      "total": "31:22",
+      "legs": [
+        {
+          "name": "村上咲稀",
+          "grade": 1,
+          "split": "7:06",
+          "split_rank": 4,
+          "cum": "7:06",
+          "cum_rank": 4
+        },
+        {
+          "name": "高田麻由",
+          "grade": 2,
+          "split": "7:37",
+          "split_rank": 7,
+          "cum": "14:43",
+          "cum_rank": 6
+        },
+        {
+          "name": "塚原優衣",
+          "grade": 1,
+          "split": "8:11",
+          "split_rank": 18,
+          "cum": "22:54",
+          "cum_rank": 6
+        },
+        {
+          "name": "角田亜美",
+          "grade": 1,
+          "split": "8:28",
+          "split_rank": 12,
+          "cum": "31:22",
+          "cum_rank": 8
+        }
+      ]
+    },
+    {
+      "rank": 9,
+      "team": "東野A",
+      "total": "31:36",
+      "legs": [
+        {
+          "name": "藤古心夏",
+          "grade": 1,
+          "split": "7:25",
+          "split_rank": 8,
+          "cum": "7:25",
+          "cum_rank": 8
+        },
+        {
+          "name": "渡辺麻美",
+          "grade": 1,
+          "split": "8:10",
+          "split_rank": 13,
+          "cum": "15:35",
+          "cum_rank": 13
+        },
+        {
+          "name": "神園桜華",
+          "grade": 2,
+          "split": "7:59",
+          "split_rank": 8,
+          "cum": "23:34",
+          "cum_rank": 8
+        },
+        {
+          "name": "田上七愛",
+          "grade": 2,
+          "split": "8:02",
+          "split_rank": 9,
+          "cum": "31:36",
+          "cum_rank": 9
+        }
+      ]
+    },
+    {
+      "rank": 10,
+      "team": "西合志",
+      "total": "31:59",
+      "legs": [
+        {
+          "name": "緒岡未彩",
+          "grade": 3,
+          "split": "7:43",
+          "split_rank": 12,
+          "cum": "7:43",
+          "cum_rank": 12
+        },
+        {
+          "name": "石川紗菜",
+          "grade": 2,
+          "split": "7:30",
+          "split_rank": 8,
+          "cum": "15:13",
+          "cum_rank": 8
+        },
+        {
+          "name": "春口結菜",
+          "grade": 1,
+          "split": "8:25",
+          "split_rank": 12,
+          "cum": "23:38",
+          "cum_rank": 9
+        },
+        {
+          "name": "田上千愛",
+          "grade": 2,
+          "split": "8:21",
+          "split_rank": 11,
+          "cum": "31:59",
+          "cum_rank": 10
+        }
+      ]
+    },
+    {
+      "rank": 11,
+      "team": "佐敷",
+      "total": "32:41",
+      "legs": [
+        {
+          "name": "林田和花",
+          "grade": 1,
+          "split": "7:56",
+          "split_rank": 14,
+          "cum": "7:56",
+          "cum_rank": 14
+        },
+        {
+          "name": "福田亜佑",
+          "grade": 3,
+          "split": "7:55",
+          "split_rank": 10,
+          "cum": "15:51",
+          "cum_rank": 12
+        },
+        {
+          "name": "山中心結",
+          "grade": 1,
+          "split": "8:43",
+          "split_rank": 13,
+          "cum": "24:34",
+          "cum_rank": 12
+        },
+        {
+          "name": "山田真綾",
+          "grade": 1,
+          "split": "8:07",
+          "split_rank": 11,
+          "cum": "32:41",
+          "cum_rank": 11
+        }
+      ]
+    },
+    {
+      "rank": 12,
+      "team": "東野B",
+      "total": "33:10",
+      "legs": [
+        {
+          "name": "大竹舞依",
+          "grade": 1,
+          "split": "8:00",
+          "split_rank": 16,
+          "cum": "8:00",
+          "cum_rank": 16
+        },
+        {
+          "name": "伊東ひかり",
+          "grade": 3,
+          "split": "8:30",
+          "split_rank": 15,
+          "cum": "16:30",
+          "cum_rank": 15
+        },
+        {
+          "name": "住吉環李愛",
+          "grade": 2,
+          "split": "7:51",
+          "split_rank": 4,
+          "cum": "24:21",
+          "cum_rank": 11
+        },
+        {
+          "name": "堀井まこ",
+          "grade": 1,
+          "split": "8:49",
+          "split_rank": 15,
+          "cum": "33:10",
+          "cum_rank": 12
+        }
+      ]
+    },
+    {
+      "rank": 13,
+      "team": "合志楓の森",
+      "total": "33:31",
+      "legs": [
+        {
+          "name": "真壁歌妃",
+          "grade": 2,
+          "split": "7:47",
+          "split_rank": 13,
+          "cum": "7:47",
+          "cum_rank": 13
+        },
+        {
+          "name": "石田日向子",
+          "grade": 2,
+          "split": "9:08",
+          "split_rank": 17,
+          "cum": "16:55",
+          "cum_rank": 17
+        },
+        {
+          "name": "土屋実夕",
+          "grade": 1,
+          "split": "9:06",
+          "split_rank": 16,
+          "cum": "26:01",
+          "cum_rank": 16
+        },
+        {
+          "name": "合志明莉",
+          "grade": 2,
+          "split": "7:30",
+          "split_rank": 4,
+          "cum": "33:31",
+          "cum_rank": 13
+        }
+      ]
+    },
+    {
+      "rank": 14,
+      "team": "東野C",
+      "total": "33:40",
+      "legs": [
+        {
+          "name": "福山結愛",
+          "grade": 1,
+          "split": "8:27",
+          "split_rank": 17,
+          "cum": "8:27",
+          "cum_rank": 17
+        },
+        {
+          "name": "高瀬いちは",
+          "grade": 1,
+          "split": "8:21",
+          "split_rank": 14,
+          "cum": "16:48",
+          "cum_rank": 16
+        },
+        {
+          "name": "緒方莉李",
+          "grade": 1,
+          "split": "8:24",
+          "split_rank": 11,
+          "cum": "25:12",
+          "cum_rank": 15
+        },
+        {
+          "name": "堀内琴心",
+          "grade": 2,
+          "split": "8:28",
+          "split_rank": 12,
+          "cum": "33:40",
+          "cum_rank": 14
+        }
+      ]
+    },
+    {
+      "rank": 15,
+      "team": "天水",
+      "total": "33:42",
+      "legs": [
+        {
+          "name": "花谷明優",
+          "grade": 2,
+          "split": "7:57",
+          "split_rank": 15,
+          "cum": "7:57",
+          "cum_rank": 15
+        },
+        {
+          "name": "浦田咲希",
+          "grade": 2,
+          "split": "8:05",
+          "split_rank": 11,
+          "cum": "16:02",
+          "cum_rank": 13
+        },
+        {
+          "name": "荒木優里",
+          "grade": 2,
+          "split": "9:00",
+          "split_rank": 15,
+          "cum": "25:02",
+          "cum_rank": 14
+        },
+        {
+          "name": "竹原晴美",
+          "grade": 2,
+          "split": "8:40",
+          "split_rank": 14,
+          "cum": "33:42",
+          "cum_rank": 15
+        }
+      ]
+    },
+    {
+      "rank": 16,
+      "team": "鹿南",
+      "total": "33:56",
+      "legs": [
+        {
+          "name": "堀川志菜",
+          "grade": 3,
+          "split": "7:38",
+          "split_rank": 11,
+          "cum": "7:38",
+          "cum_rank": 11
+        },
+        {
+          "name": "塚本夏穂",
+          "grade": 2,
+          "split": "8:34",
+          "split_rank": 16,
+          "cum": "16:12",
+          "cum_rank": 14
+        },
+        {
+          "name": "上村ゆず",
+          "grade": 2,
+          "split": "8:43",
+          "split_rank": 13,
+          "cum": "24:55",
+          "cum_rank": 13
+        },
+        {
+          "name": "内田愛実",
+          "grade": 2,
+          "split": "9:01",
+          "split_rank": 16,
+          "cum": "33:56",
+          "cum_rank": 16
+        }
+      ]
+    },
+    {
+      "rank": null,
+      "official": false,
+      "team": "玉名高校付属",
+      "total": null,
+      "legs": [
+        {
+          "name": "大木莉子",
+          "grade": 2,
+          "split": "6:44",
+          "split_rank": 2,
+          "cum": "6:44",
+          "cum_rank": 2
+        },
+        {
+          "name": "恵子歩",
+          "grade": 3,
+          "split": "6:43",
+          "split_rank": 1,
+          "cum": "13:27",
+          "cum_rank": 1
+        },
+        {
+          "name": "",
+          "grade": null,
+          "split": null,
+          "split_rank": null,
+          "cum": null,
+          "cum_rank": null
+        },
+        {
+          "name": "",
+          "grade": null,
+          "split": null,
+          "split_rank": null,
+          "cum": null,
+          "cum_rank": null
+        }
+      ]
+    }
+  ],
+  "men": [
+    {
+      "rank": 1,
+      "team": "金栗PROJECT A",
+      "total": "38:31",
+      "legs": [
+        {
+          "name": "丸山白虎",
+          "grade": 3,
+          "split": "9:41",
+          "split_rank": 4,
+          "cum": "9:41",
+          "cum_rank": 4
+        },
+        {
+          "name": "石原佳維斗",
+          "grade": 3,
+          "split": "9:47",
+          "split_rank": 2,
+          "cum": "19:28",
+          "cum_rank": 1
+        },
+        {
+          "name": "辻本愛琉",
+          "grade": 3,
+          "split": "9:37",
+          "split_rank": 1,
+          "cum": "29:05",
+          "cum_rank": 1
+        },
+        {
+          "name": "隈部侑成",
+          "grade": 2,
+          "split": "9:26",
+          "split_rank": 1,
+          "cum": "38:31",
+          "cum_rank": 1
+        }
+      ]
+    },
+    {
+      "rank": 2,
+      "team": "津奈木A",
+      "total": "40:25",
+      "legs": [
+        {
+          "name": "伊藤陸",
+          "grade": 2,
+          "split": "9:46",
+          "split_rank": 6,
+          "cum": "9:46",
+          "cum_rank": 6
+        },
+        {
+          "name": "濱田悠伸",
+          "grade": 2,
+          "split": "10:11",
+          "split_rank": 7,
+          "cum": "19:57",
+          "cum_rank": 8
+        },
+        {
+          "name": "浦口結仁",
+          "grade": 2,
+          "split": "10:29",
+          "split_rank": 6,
+          "cum": "30:26",
+          "cum_rank": 6
+        },
+        {
+          "name": "野崎雅貴",
+          "grade": 3,
+          "split": "9:59",
+          "split_rank": 4,
+          "cum": "40:25",
+          "cum_rank": 2
+        }
+      ]
+    },
+    {
+      "rank": 3,
+      "team": "玉名高校付属A",
+      "total": "40:38",
+      "legs": [
+        {
+          "name": "草野瑠唯",
+          "grade": 2,
+          "split": "9:40",
+          "split_rank": 3,
+          "cum": "9:40",
+          "cum_rank": 3
+        },
+        {
+          "name": "小倉十和",
+          "grade": 1,
+          "split": "10:05",
+          "split_rank": 4,
+          "cum": "19:45",
+          "cum_rank": 3
+        },
+        {
+          "name": "中岡謙太",
+          "grade": 2,
+          "split": "10:32",
+          "split_rank": 6,
+          "cum": "30:17",
+          "cum_rank": 5
+        },
+        {
+          "name": "秋原康秀",
+          "grade": 2,
+          "split": "10:21",
+          "split_rank": 3,
+          "cum": "40:38",
+          "cum_rank": 3
+        }
+      ]
+    },
+    {
+      "rank": 4,
+      "team": "佐敷A",
+      "total": "40:53",
+      "legs": [
+        {
+          "name": "新村遙",
+          "grade": 3,
+          "split": "9:23",
+          "split_rank": 1,
+          "cum": "9:23",
+          "cum_rank": 1
+        },
+        {
+          "name": "中川若真",
+          "grade": 3,
+          "split": "10:28",
+          "split_rank": 13,
+          "cum": "19:51",
+          "cum_rank": 6
+        },
+        {
+          "name": "田頭玲音",
+          "grade": 3,
+          "split": "10:25",
+          "split_rank": 4,
+          "cum": "30:16",
+          "cum_rank": 4
+        },
+        {
+          "name": "中村颯真",
+          "grade": 3,
+          "split": "10:37",
+          "split_rank": 8,
+          "cum": "40:53",
+          "cum_rank": 4
+        }
+      ]
+    },
+    {
+      "rank": 5,
+      "team": "京陵A",
+      "total": "41:00",
+      "legs": [
+        {
+          "name": "保坂篤人",
+          "grade": 3,
+          "split": "10:36",
+          "split_rank": 21,
+          "cum": "10:36",
+          "cum_rank": 21
+        },
+        {
+          "name": "田中愛冴",
+          "grade": 3,
+          "split": "10:16",
+          "split_rank": 8,
+          "cum": "20:52",
+          "cum_rank": 12
+        },
+        {
+          "name": "平野真守",
+          "grade": 3,
+          "split": "10:41",
+          "split_rank": 9,
+          "cum": "31:33",
+          "cum_rank": 10
+        },
+        {
+          "name": "杉江倖亮",
+          "grade": 3,
+          "split": "9:27",
+          "split_rank": 2,
+          "cum": "41:00",
+          "cum_rank": 5
+        }
+      ]
+    },
+    {
+      "rank": 6,
+      "team": "泗水A",
+      "total": "41:03",
+      "legs": [
+        {
+          "name": "西優翔",
+          "grade": 3,
+          "split": "9:30",
+          "split_rank": 2,
+          "cum": "9:30",
+          "cum_rank": 2
+        },
+        {
+          "name": "田代蒼志",
+          "grade": 3,
+          "split": "10:24",
+          "split_rank": 10,
+          "cum": "19:54",
+          "cum_rank": 7
+        },
+        {
+          "name": "中川琉泉",
+          "grade": 3,
+          "split": "10:33",
+          "split_rank": 7,
+          "cum": "30:27",
+          "cum_rank": 7
+        },
+        {
+          "name": "古荘斗真",
+          "grade": 2,
+          "split": "10:36",
+          "split_rank": 7,
+          "cum": "41:03",
+          "cum_rank": 6
+        }
+      ]
+    },
+    {
+      "rank": 7,
+      "team": "宇土鶴城",
+      "total": "41:39",
+      "legs": [
+        {
+          "name": "中川朝斗",
+          "grade": 3,
+          "split": "9:47",
+          "split_rank": 7,
+          "cum": "9:47",
+          "cum_rank": 7
+        },
+        {
+          "name": "永井楓真",
+          "grade": 3,
+          "split": "9:52",
+          "split_rank": 3,
+          "cum": "19:39",
+          "cum_rank": 2
+        },
+        {
+          "name": "桐本航太郎",
+          "grade": 2,
+          "split": "10:36",
+          "split_rank": 8,
+          "cum": "30:15",
+          "cum_rank": 3
+        },
+        {
+          "name": "本郷陽向",
+          "grade": 3,
+          "split": "11:24",
+          "split_rank": 20,
+          "cum": "41:39",
+          "cum_rank": 7
+        }
+      ]
+    },
+    {
+      "rank": 8,
+      "team": "岱明A",
+      "total": "41:42",
+      "legs": [
+        {
+          "name": "松野凛空",
+          "grade": 2,
+          "split": "10:14",
+          "split_rank": 15,
+          "cum": "10:14",
+          "cum_rank": 15
+        },
+        {
+          "name": "今村昇磨",
+          "grade": 2,
+          "split": "10:05",
+          "split_rank": 4,
+          "cum": "20:19",
+          "cum_rank": 9
+        },
+        {
+          "name": "佐藤央琉",
+          "grade": 3,
+          "split": "10:42",
+          "split_rank": 10,
+          "cum": "31:01",
+          "cum_rank": 9
+        },
+        {
+          "name": "案浦竜士",
+          "grade": 3,
+          "split": "10:41",
+          "split_rank": 10,
+          "cum": "41:42",
+          "cum_rank": 8
+        }
+      ]
+    },
+    {
+      "rank": 9,
+      "team": "一の宮",
+      "total": "41:50",
+      "legs": [
+        {
+          "name": "岩下帝雅",
+          "grade": 3,
+          "split": "9:42",
+          "split_rank": 5,
+          "cum": "9:42",
+          "cum_rank": 5
+        },
+        {
+          "name": "宮本琉翔",
+          "grade": 3,
+          "split": "10:08",
+          "split_rank": 6,
+          "cum": "19:50",
+          "cum_rank": 5
+        },
+        {
+          "name": "都義德",
+          "grade": 3,
+          "split": "10:21",
+          "split_rank": 3,
+          "cum": "30:11",
+          "cum_rank": 2
+        },
+        {
+          "name": "吉良猛尊",
+          "grade": 3,
+          "split": "11:39",
+          "split_rank": 23,
+          "cum": "41:50",
+          "cum_rank": 9
+        }
+      ]
+    },
+    {
+      "rank": 10,
+      "team": "玉名アスリーツA",
+      "total": "42:11",
+      "legs": [
+        {
+          "name": "柿本晴仁",
+          "grade": 1,
+          "split": "10:32",
+          "split_rank": 20,
+          "cum": "10:32",
+          "cum_rank": 20
+        },
+        {
+          "name": "恩田慈希",
+          "grade": 2,
+          "split": "11:57",
+          "split_rank": 31,
+          "cum": "22:29",
+          "cum_rank": 27
+        },
+        {
+          "name": "一瀬彪眞",
+          "grade": 3,
+          "split": "9:58",
+          "split_rank": 2,
+          "cum": "32:27",
+          "cum_rank": 17
+        },
+        {
+          "name": "居石楓摩",
+          "grade": 3,
+          "split": "9:44",
+          "split_rank": 3,
+          "cum": "42:11",
+          "cum_rank": 10
+        }
+      ]
+    },
+    {
+      "rank": 11,
+      "team": "南関A",
+      "total": "42:12",
+      "legs": [
+        {
+          "name": "村上葉侑",
+          "grade": 2,
+          "split": "10:13",
+          "split_rank": 14,
+          "cum": "10:13",
+          "cum_rank": 14
+        },
+        {
+          "name": "永清芯",
+          "grade": 1,
+          "split": "10:40",
+          "split_rank": 14,
+          "cum": "20:53",
+          "cum_rank": 13
+        },
+        {
+          "name": "奥薗慧音",
+          "grade": 3,
+          "split": "11:16",
+          "split_rank": 19,
+          "cum": "32:09",
+          "cum_rank": 15
+        },
+        {
+          "name": "田中翔大",
+          "grade": 2,
+          "split": "10:03",
+          "split_rank": 5,
+          "cum": "42:12",
+          "cum_rank": 11
+        }
+      ]
+    },
+    {
+      "rank": 12,
+      "team": "金栗PROJECT B",
+      "total": "42:40",
+      "legs": [
+        {
+          "name": "松浦眞大",
+          "grade": 1,
+          "split": "10:00",
+          "split_rank": 11,
+          "cum": "10:00",
+          "cum_rank": 11
+        },
+        {
+          "name": "山下瑛大",
+          "grade": 3,
+          "split": "10:24",
+          "split_rank": 10,
+          "cum": "20:24",
+          "cum_rank": 10
+        },
+        {
+          "name": "津口晃誠",
+          "grade": 1,
+          "split": "11:24",
+          "split_rank": 21,
+          "cum": "31:48",
+          "cum_rank": 12
+        },
+        {
+          "name": "近藤弘樹",
+          "grade": 3,
+          "split": "10:52",
+          "split_rank": 11,
+          "cum": "42:40",
+          "cum_rank": 12
+        }
+      ]
+    },
+    {
+      "rank": 13,
+      "team": "天水",
+      "total": "42:51",
+      "legs": [
+        {
+          "name": "木村幹太",
+          "grade": 2,
+          "split": "10:16",
+          "split_rank": 16,
+          "cum": "10:16",
+          "cum_rank": 16
+        },
+        {
+          "name": "山本悠斗",
+          "grade": 3,
+          "split": "9:33",
+          "split_rank": 1,
+          "cum": "19:49",
+          "cum_rank": 4
+        },
+        {
+          "name": "坂口昂輝",
+          "grade": 2,
+          "split": "10:59",
+          "split_rank": 13,
+          "cum": "30:48",
+          "cum_rank": 8
+        },
+        {
+          "name": "田上遥睦",
+          "grade": 3,
+          "split": "12:03",
+          "split_rank": 28,
+          "cum": "42:51",
+          "cum_rank": 13
+        }
+      ]
+    },
+    {
+      "rank": 14,
+      "team": "長洲C",
+      "total": "42:54",
+      "legs": [
+        {
+          "name": "前畑春馬",
+          "grade": 3,
+          "split": "10:21",
+          "split_rank": 18,
+          "cum": "10:21",
+          "cum_rank": 18
+        },
+        {
+          "name": "石川隼",
+          "grade": 2,
+          "split": "10:17",
+          "split_rank": 9,
+          "cum": "20:38",
+          "cum_rank": 11
+        },
+        {
+          "name": "川口来翔",
+          "grade": 3,
+          "split": "11:04",
+          "split_rank": 17,
+          "cum": "31:42",
+          "cum_rank": 11
+        },
+        {
+          "name": "西尾悠良",
+          "grade": 3,
+          "split": "11:12",
+          "split_rank": 14,
+          "cum": "42:54",
+          "cum_rank": 14
+        }
+      ]
+    },
+    {
+      "rank": 15,
+      "team": "東野A",
+      "total": "43:00",
+      "legs": [
+        {
+          "name": "佐々木翔大",
+          "grade": 3,
+          "split": "10:12",
+          "split_rank": 13,
+          "cum": "10:12",
+          "cum_rank": 13
+        },
+        {
+          "name": "井口尊葵",
+          "grade": 1,
+          "split": "11:06",
+          "split_rank": 19,
+          "cum": "21:18",
+          "cum_rank": 16
+        },
+        {
+          "name": "長谷野勇輝",
+          "grade": 2,
+          "split": "10:49",
+          "split_rank": 12,
+          "cum": "32:07",
+          "cum_rank": 14
+        },
+        {
+          "name": "實園優真",
+          "grade": 3,
+          "split": "10:53",
+          "split_rank": 12,
+          "cum": "43:00",
+          "cum_rank": 15
+        }
+      ]
+    },
+    {
+      "rank": 16,
+      "team": "玉名アスリーツB",
+      "total": "43:27",
+      "legs": [
+        {
+          "name": "永田來夢",
+          "grade": 2,
+          "split": "9:50",
+          "split_rank": 9,
+          "cum": "9:50",
+          "cum_rank": 9
+        },
+        {
+          "name": "福村綱余",
+          "grade": 2,
+          "split": "12:00",
+          "split_rank": 33,
+          "cum": "21:50",
+          "cum_rank": 22
+        },
+        {
+          "name": "松島颯希",
+          "grade": 2,
+          "split": "11:00",
+          "split_rank": 15,
+          "cum": "32:50",
+          "cum_rank": 20
+        },
+        {
+          "name": "辛嶋大宙",
+          "grade": 2,
+          "split": "10:37",
+          "split_rank": 8,
+          "cum": "43:27",
+          "cum_rank": 16
+        }
+      ]
+    },
+    {
+      "rank": 17,
+      "team": "荒尾第四B",
+      "total": "44:17",
+      "legs": [
+        {
+          "name": "藤原尚己",
+          "grade": 2,
+          "split": "10:19",
+          "split_rank": 17,
+          "cum": "10:19",
+          "cum_rank": 17
+        },
+        {
+          "name": "北村政人",
+          "grade": 3,
+          "split": "11:02",
+          "split_rank": 18,
+          "cum": "21:21",
+          "cum_rank": 17
+        },
+        {
+          "name": "中田透和",
+          "grade": 2,
+          "split": "11:05",
+          "split_rank": 18,
+          "cum": "32:26",
+          "cum_rank": 16
+        },
+        {
+          "name": "丸尾漣",
+          "grade": 2,
+          "split": "11:51",
+          "split_rank": 27,
+          "cum": "44:17",
+          "cum_rank": 17
+        }
+      ]
+    },
+    {
+      "rank": 18,
+      "team": "長洲A",
+      "total": "44:19",
+      "legs": [
+        {
+          "name": "佐藤駆音",
+          "grade": 2,
+          "split": "10:58",
+          "split_rank": 28,
+          "cum": "10:58",
+          "cum_rank": 28
+        },
+        {
+          "name": "濱北佑斗",
+          "grade": 3,
+          "split": "10:50",
+          "split_rank": 15,
+          "cum": "21:48",
+          "cum_rank": 20
+        },
+        {
+          "name": "中山晃佑",
+          "grade": 3,
+          "split": "10:49",
+          "split_rank": 11,
+          "cum": "32:37",
+          "cum_rank": 18
+        },
+        {
+          "name": "田中虹",
+          "grade": 3,
+          "split": "11:42",
+          "split_rank": 24,
+          "cum": "44:19",
+          "cum_rank": 18
+        }
+      ]
+    },
+    {
+      "rank": 19,
+      "team": "合志楓の森A",
+      "total": "44:32",
+      "legs": [
+        {
+          "name": "髙田航平",
+          "grade": 3,
+          "split": "9:49",
+          "split_rank": 8,
+          "cum": "9:49",
+          "cum_rank": 8
+        },
+        {
+          "name": "稲田大晟",
+          "grade": 2,
+          "split": "11:20",
+          "split_rank": 22,
+          "cum": "21:09",
+          "cum_rank": 15
+        },
+        {
+          "name": "川上尊礼",
+          "grade": 1,
+          "split": "11:33",
+          "split_rank": 23,
+          "cum": "32:42",
+          "cum_rank": 19
+        },
+        {
+          "name": "安藤巧真",
+          "grade": 3,
+          "split": "11:50",
+          "split_rank": 26,
+          "cum": "44:32",
+          "cum_rank": 19
+        }
+      ]
+    },
+    {
+      "rank": 20,
+      "team": "熊本ランプロ・SCC宇城",
+      "total": "44:37",
+      "legs": [
+        {
+          "name": "園田理仁",
+          "grade": 1,
+          "split": "9:51",
+          "split_rank": 10,
+          "cum": "9:51",
+          "cum_rank": 10
+        },
+        {
+          "name": "岩城定乃輔",
+          "grade": 1,
+          "split": "11:45",
+          "split_rank": 27,
+          "cum": "21:36",
+          "cum_rank": 18
+        },
+        {
+          "name": "北原大雅",
+          "grade": 1,
+          "split": "11:25",
+          "split_rank": 22,
+          "cum": "33:01",
+          "cum_rank": 21
+        },
+        {
+          "name": "田中颯介",
+          "grade": 2,
+          "split": "11:36",
+          "split_rank": 22,
+          "cum": "44:37",
+          "cum_rank": 20
+        }
+      ]
+    },
+    {
+      "rank": 21,
+      "team": "長洲B",
+      "total": "45:25",
+      "legs": [
+        {
+          "name": "池田颯真",
+          "grade": 3,
+          "split": "11:23",
+          "split_rank": 31,
+          "cum": "11:23",
+          "cum_rank": 31
+        },
+        {
+          "name": "福田虎之助",
+          "grade": 3,
+          "split": "10:26",
+          "split_rank": 12,
+          "cum": "21:49",
+          "cum_rank": 21
+        },
+        {
+          "name": "清田雅翔",
+          "grade": 3,
+          "split": "11:50",
+          "split_rank": 25,
+          "cum": "33:39",
+          "cum_rank": 22
+        },
+        {
+          "name": "池田拓翔",
+          "grade": 3,
+          "split": "11:46",
+          "split_rank": 25,
+          "cum": "45:25",
+          "cum_rank": 21
+        }
+      ]
+    },
+    {
+      "rank": 22,
+      "team": "泗水B",
+      "total": "45:32",
+      "legs": [
+        {
+          "name": "成田櫂翔",
+          "grade": 3,
+          "split": "10:55",
+          "split_rank": 26,
+          "cum": "10:55",
+          "cum_rank": 26
+        },
+        {
+          "name": "坂井小太郎",
+          "grade": 2,
+          "split": "11:35",
+          "split_rank": 24,
+          "cum": "22:30",
+          "cum_rank": 28
+        },
+        {
+          "name": "久川翔馬",
+          "grade": 3,
+          "split": "11:46",
+          "split_rank": 24,
+          "cum": "34:16",
+          "cum_rank": 24
+        },
+        {
+          "name": "山野紬義",
+          "grade": 3,
+          "split": "11:16",
+          "split_rank": 15,
+          "cum": "45:32",
+          "cum_rank": 22
+        }
+      ]
+    },
+    {
+      "rank": 23,
+      "team": "津奈木B",
+      "total": "45:40",
+      "legs": [
+        {
+          "name": "本春剛",
+          "grade": 1,
+          "split": "10:42",
+          "split_rank": 23,
+          "cum": "10:42",
+          "cum_rank": 23
+        },
+        {
+          "name": "山口怜真",
+          "grade": 1,
+          "split": "11:38",
+          "split_rank": 25,
+          "cum": "22:20",
+          "cum_rank": 25
+        },
+        {
+          "name": "佐々木岳琉",
+          "grade": 1,
+          "split": "11:58",
+          "split_rank": 27,
+          "cum": "34:18",
+          "cum_rank": 25
+        },
+        {
+          "name": "門崎嵐佑",
+          "grade": 3,
+          "split": "11:22",
+          "split_rank": 19,
+          "cum": "45:40",
+          "cum_rank": 23
+        }
+      ]
+    },
+    {
+      "rank": 24,
+      "team": "玉名高校付属B",
+      "total": "46:00",
+      "legs": [
+        {
+          "name": "上田尚摩",
+          "grade": 2,
+          "split": "11:32",
+          "split_rank": 33,
+          "cum": "11:32",
+          "cum_rank": 33
+        },
+        {
+          "name": "田淵友翔",
+          "grade": 2,
+          "split": "11:09",
+          "split_rank": 20,
+          "cum": "22:41",
+          "cum_rank": 30
+        },
+        {
+          "name": "坂上蒼空",
+          "grade": 2,
+          "split": "11:04",
+          "split_rank": 16,
+          "cum": "33:45",
+          "cum_rank": 23
+        },
+        {
+          "name": "邊春共弥",
+          "grade": 1,
+          "split": "12:15",
+          "split_rank": 29,
+          "cum": "46:00",
+          "cum_rank": 24
+        }
+      ]
+    },
+    {
+      "rank": 25,
+      "team": "京陵B",
+      "total": "46:08",
+      "legs": [
+        {
+          "name": "小崎新太",
+          "grade": 3,
+          "split": "10:38",
+          "split_rank": 22,
+          "cum": "10:38",
+          "cum_rank": 22
+        },
+        {
+          "name": "村山翔琉",
+          "grade": 1,
+          "split": "11:48",
+          "split_rank": 29,
+          "cum": "22:26",
+          "cum_rank": 26
+        },
+        {
+          "name": "安達常将",
+          "grade": 1,
+          "split": "12:49",
+          "split_rank": 32,
+          "cum": "35:15",
+          "cum_rank": 31
+        },
+        {
+          "name": "小森謙吾",
+          "grade": 2,
+          "split": "10:53",
+          "split_rank": 12,
+          "cum": "46:08",
+          "cum_rank": 25
+        }
+      ]
+    },
+    {
+      "rank": 26,
+      "team": "玉南A",
+      "total": "46:09",
+      "legs": [
+        {
+          "name": "山内理登",
+          "grade": 3,
+          "split": "10:29",
+          "split_rank": 19,
+          "cum": "10:29",
+          "cum_rank": 19
+        },
+        {
+          "name": "野口慎太郎",
+          "grade": 2,
+          "split": "11:42",
+          "split_rank": 26,
+          "cum": "22:11",
+          "cum_rank": 23
+        },
+        {
+          "name": "竹下優作",
+          "grade": 2,
+          "split": "12:24",
+          "split_rank": 30,
+          "cum": "34:35",
+          "cum_rank": 26
+        },
+        {
+          "name": "中野瑛太",
+          "grade": 2,
+          "split": "11:34",
+          "split_rank": 21,
+          "cum": "46:09",
+          "cum_rank": 26
+        }
+      ]
+    },
+    {
+      "rank": 27,
+      "team": "合志楓の森B",
+      "total": "46:20",
+      "legs": [
+        {
+          "name": "大塚陽太",
+          "grade": 2,
+          "split": "11:17",
+          "split_rank": 30,
+          "cum": "11:17",
+          "cum_rank": 30
+        },
+        {
+          "name": "坂口将太",
+          "grade": 2,
+          "split": "11:18",
+          "split_rank": 21,
+          "cum": "22:35",
+          "cum_rank": 29
+        },
+        {
+          "name": "河野律斗",
+          "grade": 2,
+          "split": "12:24",
+          "split_rank": 30,
+          "cum": "34:59",
+          "cum_rank": 27
+        },
+        {
+          "name": "新永航大",
+          "grade": 2,
+          "split": "11:21",
+          "split_rank": 18,
+          "cum": "46:20",
+          "cum_rank": 27
+        }
+      ]
+    },
+    {
+      "rank": 28,
+      "team": "荒尾第四A",
+      "total": "46:25",
+      "legs": [
+        {
+          "name": "松村隆汰",
+          "grade": 3,
+          "split": "10:04",
+          "split_rank": 12,
+          "cum": "10:04",
+          "cum_rank": 12
+        },
+        {
+          "name": "本戸優真",
+          "grade": 3,
+          "split": "10:59",
+          "split_rank": 17,
+          "cum": "21:03",
+          "cum_rank": 14
+        },
+        {
+          "name": "谷平陽生",
+          "grade": 2,
+          "split": "10:59",
+          "split_rank": 13,
+          "cum": "32:02",
+          "cum_rank": 13
+        },
+        {
+          "name": "前田琉翔",
+          "grade": 2,
+          "split": "14:23",
+          "split_rank": 34,
+          "cum": "46:25",
+          "cum_rank": 28
+        }
+      ]
+    },
+    {
+      "rank": 29,
+      "team": "南関C",
+      "total": "46:30",
+      "legs": [
+        {
+          "name": "大木蒼介",
+          "grade": 1,
+          "split": "11:09",
+          "split_rank": 29,
+          "cum": "11:09",
+          "cum_rank": 29
+        },
+        {
+          "name": "八尋勇翔",
+          "grade": 1,
+          "split": "12:01",
+          "split_rank": 34,
+          "cum": "23:10",
+          "cum_rank": 32
+        },
+        {
+          "name": "大木颯馬",
+          "grade": 1,
+          "split": "12:04",
+          "split_rank": 29,
+          "cum": "35:14",
+          "cum_rank": 30
+        },
+        {
+          "name": "前田煌",
+          "grade": 1,
+          "split": "11:16",
+          "split_rank": 16,
+          "cum": "46:30",
+          "cum_rank": 29
+        }
+      ]
+    },
+    {
+      "rank": 30,
+      "team": "南関B",
+      "total": "46:39",
+      "legs": [
+        {
+          "name": "星先一慶",
+          "grade": 2,
+          "split": "11:35",
+          "split_rank": 34,
+          "cum": "11:35",
+          "cum_rank": 34
+        },
+        {
+          "name": "猿渡元喜",
+          "grade": 1,
+          "split": "11:46",
+          "split_rank": 28,
+          "cum": "23:21",
+          "cum_rank": 33
+        },
+        {
+          "name": "井口大河",
+          "grade": 2,
+          "split": "12:00",
+          "split_rank": 28,
+          "cum": "35:21",
+          "cum_rank": 33
+        },
+        {
+          "name": "本多蒼",
+          "grade": 1,
+          "split": "11:18",
+          "split_rank": 17,
+          "cum": "46:39",
+          "cum_rank": 30
+        }
+      ]
+    },
+    {
+      "rank": 31,
+      "team": "岱明B",
+      "total": "47:37",
+      "legs": [
+        {
+          "name": "山本哲瑠",
+          "grade": 1,
+          "split": "10:48",
+          "split_rank": 24,
+          "cum": "10:48",
+          "cum_rank": 24
+        },
+        {
+          "name": "田上颯人",
+          "grade": 1,
+          "split": "10:55",
+          "split_rank": 16,
+          "cum": "21:43",
+          "cum_rank": 19
+        },
+        {
+          "name": "松岡崇二朗",
+          "grade": 1,
+          "split": "13:17",
+          "split_rank": 34,
+          "cum": "35:00",
+          "cum_rank": 28
+        },
+        {
+          "name": "松本空羽",
+          "grade": 1,
+          "split": "12:37",
+          "split_rank": 31,
+          "cum": "47:37",
+          "cum_rank": 31
+        }
+      ]
+    },
+    {
+      "rank": 32,
+      "team": "玉南B",
+      "total": "47:46",
+      "legs": [
+        {
+          "name": "村上稀琉",
+          "grade": 3,
+          "split": "10:49",
+          "split_rank": 25,
+          "cum": "10:49",
+          "cum_rank": 25
+        },
+        {
+          "name": "前田寛太",
+          "grade": 1,
+          "split": "11:30",
+          "split_rank": 23,
+          "cum": "22:19",
+          "cum_rank": 24
+        },
+        {
+          "name": "田中小羽",
+          "grade": 2,
+          "split": "12:59",
+          "split_rank": 33,
+          "cum": "35:18",
+          "cum_rank": 32
+        },
+        {
+          "name": "深澤永光",
+          "grade": 3,
+          "split": "12:28",
+          "split_rank": 30,
+          "cum": "47:46",
+          "cum_rank": 32
+        }
+      ]
+    },
+    {
+      "rank": 33,
+      "team": "芦北トレジャーA",
+      "total": "48:09",
+      "legs": [
+        {
+          "name": "森山耀斗",
+          "grade": 2,
+          "split": "11:31",
+          "split_rank": 32,
+          "cum": "11:31",
+          "cum_rank": 32
+        },
+        {
+          "name": "馬場大弥",
+          "grade": 3,
+          "split": "12:17",
+          "split_rank": 36,
+          "cum": "23:48",
+          "cum_rank": 35
+        },
+        {
+          "name": "徳永蓮翔",
+          "grade": 1,
+          "split": "11:18",
+          "split_rank": 20,
+          "cum": "35:06",
+          "cum_rank": 29
+        },
+        {
+          "name": "大森光",
+          "grade": 3,
+          "split": "13:03",
+          "split_rank": 33,
+          "cum": "48:09",
+          "cum_rank": 33
+        }
+      ]
+    },
+    {
+      "rank": 34,
+      "team": "東野B",
+      "total": "48:56",
+      "legs": [
+        {
+          "name": "村上明駿",
+          "grade": 2,
+          "split": "10:57",
+          "split_rank": 27,
+          "cum": "10:57",
+          "cum_rank": 27
+        },
+        {
+          "name": "渡邉結太",
+          "grade": 1,
+          "split": "11:58",
+          "split_rank": 32,
+          "cum": "22:55",
+          "cum_rank": 31
+        },
+        {
+          "name": "三田煌季",
+          "grade": 2,
+          "split": "13:23",
+          "split_rank": 35,
+          "cum": "36:18",
+          "cum_rank": 35
+        },
+        {
+          "name": "西小路陽向",
+          "grade": 2,
+          "split": "12:38",
+          "split_rank": 32,
+          "cum": "48:56",
+          "cum_rank": 34
+        }
+      ]
+    },
+    {
+      "rank": null,
+      "official": false,
+      "team": "佐敷B",
+      "total": null,
+      "legs": [
+        {
+          "name": "佐々木文章",
+          "grade": 3,
+          "split": "11:37",
+          "split_rank": 35,
+          "cum": "11:37",
+          "cum_rank": 35
+        },
+        {
+          "name": "横坂叶真",
+          "grade": 3,
+          "split": "12:07",
+          "split_rank": 35,
+          "cum": "23:44",
+          "cum_rank": 34
+        },
+        {
+          "name": "橋本地永",
+          "grade": 3,
+          "split": "11:51",
+          "split_rank": 26,
+          "cum": "35:35",
+          "cum_rank": 34
+        },
+        {
+          "name": "",
+          "grade": null,
+          "split": null,
+          "split_rank": null,
+          "cum": null,
+          "cum_rank": null
+        }
+      ]
+    },
+    {
+      "rank": null,
+      "official": false,
+      "team": "芦北トレジャーB",
+      "total": null,
+      "legs": [
+        {
+          "name": "一原光一郎",
+          "grade": 2,
+          "split": "12:39",
+          "split_rank": 36,
+          "cum": "12:39",
+          "cum_rank": 36
+        },
+        {
+          "name": "新村レオナ",
+          "grade": 1,
+          "split": "11:54",
+          "split_rank": 30,
+          "cum": "24:33",
+          "cum_rank": 36
+        },
+        {
+          "name": "",
+          "grade": null,
+          "split": null,
+          "split_rank": null,
+          "cum": null,
+          "cum_rank": null
+        },
+        {
+          "name": "",
+          "grade": null,
+          "split": null,
+          "split_rank": null,
+          "cum": null,
+          "cum_rank": null
+        }
+      ]
+    }
+  ]
+}

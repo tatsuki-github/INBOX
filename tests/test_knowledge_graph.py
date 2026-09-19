@@ -175,6 +175,21 @@ def test_query_routes_nagomi_order_not_kanaguri_ekiden():
     assert "金栗記念" not in first
 
 
+def test_query_routes_nagomi_2025_results():
+    graph = build_knowledge_graph(generated_at="2026-01-01T00:00:00Z")
+    result = query_knowledge_graph(
+        "2025年のなごみ駅伝の結果は？",
+        graph=graph,
+        include_context=False,
+    )
+    joined = " ".join(result["refs"])
+    assert "2025年度/0921_中学駅伝金栗四三生誕の地なごみ大会" in joined
+    assert "成績表" in joined or "予実比較" in joined
+    first = result["refs"][0] if result["refs"] else ""
+    assert "0315_金栗駅伝" not in first
+    assert "金栗記念" not in first
+
+
 def test_schema_validation_if_jsonschema_available():
     jsonschema = pytest.importorskip("jsonschema")
     schema = json.loads((ROOT / "schemas" / "knowledge-graph.schema.json").read_text(encoding="utf-8"))

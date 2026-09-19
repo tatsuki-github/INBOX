@@ -666,7 +666,7 @@ QUERY_HINTS: list[tuple[str, str, list[str]]] = [
     (
         "なごみ駅伝は？",
         "drive-text/大会/*/0920_*なごみ* または 0921_*なごみ* の開催要項・結果・区間オーダーを見る。"
-        "金栗駅伝・金栗記念は別大会。荒玉・aragyoku は使わない",
+        "2025年度は女子成績表.md / 男子成績表.md / 予実比較.md。金栗駅伝・金栗記念は別大会。荒玉・aragyoku は使わない",
         [
             "topic:ekiden",
             "topic:calendar",
@@ -675,6 +675,21 @@ QUERY_HINTS: list[tuple[str, str, list[str]]] = [
             "source:input/events.2026.yaml",
             "source:input/idaten-corpus/drive-text/大会/2026年度/0920_中学駅伝金栗四三生誕の地なごみ大会/男子区間オーダーリスト.md",
             "source:input/idaten-corpus/drive-text/大会/2026年度/0920_中学駅伝金栗四三生誕の地なごみ大会/女子区間オーダーリスト.md",
+            "source:input/idaten-corpus/drive-text/大会/2025年度/0921_中学駅伝金栗四三生誕の地なごみ大会/女子成績表.md",
+            "source:input/idaten-corpus/drive-text/大会/2025年度/0921_中学駅伝金栗四三生誕の地なごみ大会/男子成績表.md",
+            "source:input/idaten-corpus/drive-text/大会/2025年度/0921_中学駅伝金栗四三生誕の地なごみ大会/予実比較.md",
+        ],
+    ),
+    (
+        "2025年のなごみ駅伝の結果は？",
+        "drive-text/大会/2025年度/0921_*なごみ*/女子成績表.md と 男子成績表.md を見る。予実比較.md はレース前SB予想との差。",
+        [
+            "topic:ekiden",
+            "corpus:drive-text",
+            "source:input/idaten-corpus/drive-text/大会/2025年度/0921_中学駅伝金栗四三生誕の地なごみ大会/女子成績表.md",
+            "source:input/idaten-corpus/drive-text/大会/2025年度/0921_中学駅伝金栗四三生誕の地なごみ大会/男子成績表.md",
+            "source:input/idaten-corpus/drive-text/大会/2025年度/0921_中学駅伝金栗四三生誕の地なごみ大会/予実比較.md",
+            "source:input/idaten-corpus/drive-text/大会/2025年度/0921_中学駅伝金栗四三生誕の地なごみ大会/岱明の結果.md",
         ],
     ),
     (
