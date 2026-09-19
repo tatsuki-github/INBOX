@@ -1,0 +1,2012 @@
+{
+  "version": 1,
+  "total": 100,
+  "unique": 100,
+  "defaultYear": 2026,
+  "note": "crush100-v6: school PB avg + winner margin + LINE/parents + 1500m",
+  "rounds": [
+    {
+      "id": 1,
+      "theme": "crush100-v6",
+      "questions": [
+        {
+          "id": "v6_w800_avg",
+          "q": "女子800mで岱明の上位3人平均は？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "2:28"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "women_800m_1500m_pb_school_ranking"
+            ]
+          }
+        },
+        {
+          "id": "v6_w800_1",
+          "q": "女子800m学校別で1位は？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "長洲"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "women_800m_1500m_pb_school_ranking"
+            ]
+          }
+        },
+        {
+          "id": "v6_w800_ari",
+          "q": "女子800mPB学校別で荒尾三は何位？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "2位",
+              "荒尾三"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "women_800m_1500m_pb_school_ranking"
+            ]
+          }
+        },
+        {
+          "id": "v6_margin_d25",
+          "q": "2025年岱明男子の優勝との差は？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "2:51"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku_2024_2025_focus_teams",
+              "aragyoku-teams/岱明"
+            ]
+          }
+        },
+        {
+          "id": "v6_margin_d24",
+          "q": "2024年岱明男子の優勝差は？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "8:37"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku_2024_2025_focus_teams",
+              "aragyoku-teams/岱明"
+            ]
+          }
+        },
+        {
+          "id": "v6_margin_phr",
+          "q": "岱明男子2025は優勝から何分離れている？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "2:51"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku_2024_2025_focus_teams",
+              "aragyoku-teams/岱明"
+            ]
+          }
+        },
+        {
+          "id": "v6_m1500_1",
+          "q": "男子1500m学校別ランキング1位は？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "玉陵"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "men_1500m_pb_school_ranking"
+            ]
+          }
+        },
+        {
+          "id": "v6_m1500_d",
+          "q": "男子1500m上位4人平均で岱明は何位？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "5位"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "men_1500m_pb_school_ranking"
+            ]
+          }
+        },
+        {
+          "id": "v6_sb1500_1",
+          "q": "荒玉地区1500mSBの1位は誰？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "隈部",
+              "4:11"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "1500m_sb_individual_top20"
+            ]
+          }
+        },
+        {
+          "id": "v6_sb1500_2",
+          "q": "荒玉地区1500mトップ20の2位は？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "石川",
+              "4:15"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "1500m_sb_individual_top20"
+            ]
+          }
+        },
+        {
+          "id": "v6_arita_m",
+          "q": "有田先輩のメンタルの考え方は？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "楽しさ",
+              "本気度"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "arita-taisho",
+              "line-chats"
+            ]
+          }
+        },
+        {
+          "id": "v6_arita_r",
+          "q": "有田先輩の補強メニューは？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "手押し車",
+              "犬歩き"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "arita-taisho",
+              "line-chats"
+            ]
+          }
+        },
+        {
+          "id": "v6_43",
+          "q": "女子荒玉のタイム目安は？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "43分"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "arita-taisho",
+              "line-chats"
+            ]
+          }
+        },
+        {
+          "id": "v6_mat",
+          "q": "銀マットの厚みは？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "15"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "line-chats",
+              "daiming-parents"
+            ]
+          }
+        },
+        {
+          "id": "v6_goudou",
+          "q": "玉名市合同練習会はいつどこ？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "おおはま"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "line-chats",
+              "daiming-parents"
+            ]
+          }
+        },
+        {
+          "id": "v6_fee",
+          "q": "合同練習会の会費は？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "1000"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "line-chats",
+              "daiming-parents"
+            ]
+          }
+        },
+        {
+          "id": "v6_nagomi",
+          "q": "なごみ駅伝の集合場所は？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "和水"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "line-chats"
+            ]
+          }
+        },
+        {
+          "id": "v6_c_pt",
+          "q": "地点分担で熊澤先生はどこ？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "C地点"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "line-chats",
+              "daiming-staff"
+            ]
+          }
+        },
+        {
+          "id": "v6_b_pt",
+          "q": "地点分担で土本先生はどこ？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "B地点"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "line-chats",
+              "daiming-staff"
+            ]
+          }
+        },
+        {
+          "id": "v6_murakami",
+          "q": "村上咲稀の800mPBは？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "2:20"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "women_800m_1500m_pb_school_ranking",
+              "SB"
+            ]
+          }
+        },
+        {
+          "id": "v6_mg_岱明_2024_男",
+          "q": "2024年岱明男子の優勝との差は？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "8:37"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku_2024_2025_focus_teams",
+              "aragyoku-teams/岱明"
+            ]
+          }
+        },
+        {
+          "id": "v6_mg_岱明_2024_女",
+          "q": "2024年岱明女子の優勝との差は？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "2:41"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku_2024_2025_focus_teams",
+              "aragyoku-teams/岱明"
+            ]
+          }
+        },
+        {
+          "id": "v6_mg_岱明_2025_女",
+          "q": "2025年岱明女子の優勝との差は？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "3:24"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku_2024_2025_focus_teams",
+              "aragyoku-teams/岱明"
+            ]
+          }
+        },
+        {
+          "id": "v6_mg_玉高附属_2024_男",
+          "q": "2024年玉高附属男子の優勝との差は？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "1:35"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku_2024_2025_focus_teams",
+              "aragyoku-teams/玉高附属"
+            ]
+          }
+        },
+        {
+          "id": "v6_mg_玉高附属_2025_男",
+          "q": "2025年玉高附属男子の優勝との差は？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "2:20"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku_2024_2025_focus_teams",
+              "aragyoku-teams/玉高附属"
+            ]
+          }
+        },
+        {
+          "id": "v6_mg_玉高附属_2024_女",
+          "q": "2024年玉高附属女子の優勝との差は？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "1:25"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku_2024_2025_focus_teams",
+              "aragyoku-teams/玉高附属"
+            ]
+          }
+        },
+        {
+          "id": "v6_mg_玉高附属_2025_女",
+          "q": "2025年玉高附属女子の優勝との差は？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "4:57"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku_2024_2025_focus_teams",
+              "aragyoku-teams/玉高附属"
+            ]
+          }
+        },
+        {
+          "id": "v6_mg_天水_2024_男",
+          "q": "2024年天水男子の優勝との差は？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "7:02"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku_2024_2025_focus_teams",
+              "aragyoku-teams/天水"
+            ]
+          }
+        },
+        {
+          "id": "v6_mg_天水_2025_男",
+          "q": "2025年天水男子の優勝との差は？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "7:22"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku_2024_2025_focus_teams",
+              "aragyoku-teams/天水"
+            ]
+          }
+        },
+        {
+          "id": "v6_mg_天水_2024_女",
+          "q": "2024年天水女子の優勝との差は？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "7:16"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku_2024_2025_focus_teams",
+              "aragyoku-teams/天水"
+            ]
+          }
+        },
+        {
+          "id": "v6_mg_天水_2025_女",
+          "q": "2025年天水女子の優勝との差は？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "9:31"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku_2024_2025_focus_teams",
+              "aragyoku-teams/天水"
+            ]
+          }
+        },
+        {
+          "id": "v6_mg_有明_2024_男",
+          "q": "2024年有明男子の優勝との差は？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "5:11"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku_2024_2025_focus_teams",
+              "aragyoku-teams/有明"
+            ]
+          }
+        },
+        {
+          "id": "v6_mg_有明_2025_男",
+          "q": "2025年有明男子の優勝との差は？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "6:14"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku_2024_2025_focus_teams",
+              "aragyoku-teams/有明"
+            ]
+          }
+        },
+        {
+          "id": "v6_mg_有明_2024_女",
+          "q": "2024年有明女子の優勝との差は？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "5:32"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku_2024_2025_focus_teams",
+              "aragyoku-teams/有明"
+            ]
+          }
+        },
+        {
+          "id": "v6_mg_有明_2025_女",
+          "q": "2025年有明女子の優勝との差は？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "5:26"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku_2024_2025_focus_teams",
+              "aragyoku-teams/有明"
+            ]
+          }
+        },
+        {
+          "id": "v6_1500_1",
+          "q": "荒玉地区1500mSBの1位は誰？記録は？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "隈部",
+              "4:11"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "1500m_sb_individual_top20"
+            ]
+          }
+        },
+        {
+          "id": "v6_1500_2",
+          "q": "荒玉地区1500mSBの2位は誰？記録は？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "石川",
+              "4:15"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "1500m_sb_individual_top20"
+            ]
+          }
+        },
+        {
+          "id": "v6_1500_3",
+          "q": "荒玉地区1500mSBの3位は誰？記録は？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "松浦",
+              "4:16"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "1500m_sb_individual_top20"
+            ]
+          }
+        },
+        {
+          "id": "v6_1500_4",
+          "q": "荒玉地区1500mSBの4位は誰？記録は？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "柿本",
+              "4:19"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "1500m_sb_individual_top20"
+            ]
+          }
+        },
+        {
+          "id": "v6_1500_5",
+          "q": "荒玉地区1500mSBの5位は誰？記録は？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "永田",
+              "4:20"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "1500m_sb_individual_top20"
+            ]
+          }
+        },
+        {
+          "id": "v6_1500_6",
+          "q": "荒玉地区1500mSBの6位は誰？記録は？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "草野",
+              "4:21"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "1500m_sb_individual_top20"
+            ]
+          }
+        },
+        {
+          "id": "v6_1500_7",
+          "q": "荒玉地区1500mSBの7位は誰？記録は？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "辛嶋",
+              "4:21"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "1500m_sb_individual_top20"
+            ]
+          }
+        },
+        {
+          "id": "v6_1500_8",
+          "q": "荒玉地区1500mSBの8位は誰？記録は？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "藤原",
+              "4:21"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "1500m_sb_individual_top20"
+            ]
+          }
+        },
+        {
+          "id": "v6_1500_9",
+          "q": "荒玉地区1500mSBの9位は誰？記録は？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "小倉",
+              "4:21"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "1500m_sb_individual_top20"
+            ]
+          }
+        },
+        {
+          "id": "v6_1500_10",
+          "q": "荒玉地区1500mSBの10位は誰？記録は？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "松野",
+              "4:22"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "1500m_sb_individual_top20"
+            ]
+          }
+        },
+        {
+          "id": "v6_1500_11",
+          "q": "荒玉地区1500mSBの11位は誰？記録は？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "田島",
+              "4:22"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "1500m_sb_individual_top20"
+            ]
+          }
+        },
+        {
+          "id": "v6_1500_12",
+          "q": "荒玉地区1500mSBの12位は誰？記録は？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "米谷",
+              "4:22"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "1500m_sb_individual_top20"
+            ]
+          }
+        },
+        {
+          "id": "v6_1500_13",
+          "q": "荒玉地区1500mSBの13位は誰？記録は？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "村上",
+              "4:24"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "1500m_sb_individual_top20"
+            ]
+          }
+        },
+        {
+          "id": "v6_1500_14",
+          "q": "荒玉地区1500mSBの14位は誰？記録は？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "田中",
+              "4:27"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "1500m_sb_individual_top20"
+            ]
+          }
+        },
+        {
+          "id": "v6_1500_15",
+          "q": "荒玉地区1500mSBの15位は誰？記録は？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "谷平",
+              "4:28"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "1500m_sb_individual_top20"
+            ]
+          }
+        },
+        {
+          "id": "v6_1500_16",
+          "q": "荒玉地区1500mSBの16位は誰？記録は？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "山本",
+              "4:30"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "1500m_sb_individual_top20"
+            ]
+          }
+        },
+        {
+          "id": "v6_1500_17",
+          "q": "荒玉地区1500mSBの17位は誰？記録は？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "松島",
+              "4:30"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "1500m_sb_individual_top20"
+            ]
+          }
+        },
+        {
+          "id": "v6_1500_18",
+          "q": "荒玉地区1500mSBの18位は誰？記録は？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "津口",
+              "4:30"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "1500m_sb_individual_top20"
+            ]
+          }
+        },
+        {
+          "id": "v6_1500_19",
+          "q": "荒玉地区1500mSBの19位は誰？記録は？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "中田",
+              "4:31"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "1500m_sb_individual_top20"
+            ]
+          }
+        },
+        {
+          "id": "v6_1500_20",
+          "q": "荒玉地区1500mSBの20位は誰？記録は？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "内野",
+              "4:33"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "1500m_sb_individual_top20"
+            ]
+          }
+        },
+        {
+          "id": "v6_leg_岱明_2025_男_L1",
+          "q": "2025年岱明男子1区は誰？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "倉田裕斗"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku-teams/岱明",
+              "aragyoku_2024_2025_focus_teams"
+            ]
+          }
+        },
+        {
+          "id": "v6_leg_岱明_2025_男_L2",
+          "q": "2025年岱明男子2区は誰？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "松野凛空"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku-teams/岱明",
+              "aragyoku_2024_2025_focus_teams"
+            ]
+          }
+        },
+        {
+          "id": "v6_leg_岱明_2025_男_L3",
+          "q": "2025年岱明男子3区は誰？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "今村昇磨"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku-teams/岱明",
+              "aragyoku_2024_2025_focus_teams"
+            ]
+          }
+        },
+        {
+          "id": "v6_leg_岱明_2025_男_L4",
+          "q": "2025年岱明男子4区は誰？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "佐藤央琉"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku-teams/岱明",
+              "aragyoku_2024_2025_focus_teams"
+            ]
+          }
+        },
+        {
+          "id": "v6_leg_岱明_2025_男_L5",
+          "q": "2025年岱明男子5区は誰？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "山本哲瑠"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku-teams/岱明",
+              "aragyoku_2024_2025_focus_teams"
+            ]
+          }
+        },
+        {
+          "id": "v6_leg_岱明_2025_男_L6",
+          "q": "2025年岱明男子6区は誰？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "案浦竜士"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku-teams/岱明",
+              "aragyoku_2024_2025_focus_teams"
+            ]
+          }
+        },
+        {
+          "id": "v6_leg_岱明_2025_女_L1",
+          "q": "2025年岱明女子1区は誰？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "村上咲稀"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku-teams/岱明",
+              "aragyoku_2024_2025_focus_teams"
+            ]
+          }
+        },
+        {
+          "id": "v6_leg_岱明_2025_女_L2",
+          "q": "2025年岱明女子2区は誰？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "増岡里俐"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku-teams/岱明",
+              "aragyoku_2024_2025_focus_teams"
+            ]
+          }
+        },
+        {
+          "id": "v6_leg_岱明_2025_女_L3",
+          "q": "2025年岱明女子3区は誰？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "角田亜美"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku-teams/岱明",
+              "aragyoku_2024_2025_focus_teams"
+            ]
+          }
+        },
+        {
+          "id": "v6_leg_岱明_2025_女_L4",
+          "q": "2025年岱明女子4区は誰？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "塚原優衣"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku-teams/岱明",
+              "aragyoku_2024_2025_focus_teams"
+            ]
+          }
+        },
+        {
+          "id": "v6_leg_岱明_2025_女_L5",
+          "q": "2025年岱明女子5区は誰？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "高田麻由"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku-teams/岱明",
+              "aragyoku_2024_2025_focus_teams"
+            ]
+          }
+        },
+        {
+          "id": "v6_leg_岱明_2024_男_L1",
+          "q": "2024年岱明男子1区は誰？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "根本和樹"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku-teams/岱明",
+              "aragyoku_2024_2025_focus_teams"
+            ]
+          }
+        },
+        {
+          "id": "v6_leg_岱明_2024_男_L2",
+          "q": "2024年岱明男子2区は誰？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "満田樹生"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku-teams/岱明",
+              "aragyoku_2024_2025_focus_teams"
+            ]
+          }
+        },
+        {
+          "id": "v6_leg_岱明_2024_男_L3",
+          "q": "2024年岱明男子3区は誰？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "今村昇磨"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku-teams/岱明",
+              "aragyoku_2024_2025_focus_teams"
+            ]
+          }
+        },
+        {
+          "id": "v6_leg_岱明_2024_男_L4",
+          "q": "2024年岱明男子4区は誰？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "田上侑蕾"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku-teams/岱明",
+              "aragyoku_2024_2025_focus_teams"
+            ]
+          }
+        },
+        {
+          "id": "v6_leg_岱明_2024_男_L5",
+          "q": "2024年岱明男子5区は誰？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "松野凛空"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku-teams/岱明",
+              "aragyoku_2024_2025_focus_teams"
+            ]
+          }
+        },
+        {
+          "id": "v6_leg_岱明_2024_男_L6",
+          "q": "2024年岱明男子6区は誰？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "倉田裕斗"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku-teams/岱明",
+              "aragyoku_2024_2025_focus_teams"
+            ]
+          }
+        },
+        {
+          "id": "v6_leg_岱明_2024_女_L1",
+          "q": "2024年岱明女子1区は誰？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "角田里奈"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku-teams/岱明",
+              "aragyoku_2024_2025_focus_teams"
+            ]
+          }
+        },
+        {
+          "id": "v6_leg_岱明_2024_女_L2",
+          "q": "2024年岱明女子2区は誰？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "瀧下那奈"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku-teams/岱明",
+              "aragyoku_2024_2025_focus_teams"
+            ]
+          }
+        },
+        {
+          "id": "v6_leg_岱明_2024_女_L3",
+          "q": "2024年岱明女子3区は誰？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "高田麻由"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku-teams/岱明",
+              "aragyoku_2024_2025_focus_teams"
+            ]
+          }
+        },
+        {
+          "id": "v6_leg_岱明_2024_女_L4",
+          "q": "2024年岱明女子4区は誰？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "村上咲稀"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku-teams/岱明",
+              "aragyoku_2024_2025_focus_teams"
+            ]
+          }
+        },
+        {
+          "id": "v6_leg_岱明_2024_女_L5",
+          "q": "2024年岱明女子5区は誰？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "福島まりん"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku-teams/岱明",
+              "aragyoku_2024_2025_focus_teams"
+            ]
+          }
+        },
+        {
+          "id": "v6_leg_岱明_2024_女_L6",
+          "q": "2024年岱明女子6区は誰？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "南本和顯"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku-teams/岱明",
+              "aragyoku_2024_2025_focus_teams"
+            ]
+          }
+        },
+        {
+          "id": "v6_leg_天水_2025_男_L1",
+          "q": "2025年天水男子1区は誰？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "木村幹太"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku-teams/天水",
+              "aragyoku_2024_2025_focus_teams"
+            ]
+          }
+        },
+        {
+          "id": "v6_leg_天水_2025_男_L2",
+          "q": "2025年天水男子2区は誰？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "山本悠斗"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku-teams/天水",
+              "aragyoku_2024_2025_focus_teams"
+            ]
+          }
+        },
+        {
+          "id": "v6_leg_天水_2025_男_L3",
+          "q": "2025年天水男子3区は誰？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "坂口昂輝"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku-teams/天水",
+              "aragyoku_2024_2025_focus_teams"
+            ]
+          }
+        },
+        {
+          "id": "v6_leg_天水_2025_男_L4",
+          "q": "2025年天水男子4区は誰？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "花谷勇輝"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku-teams/天水",
+              "aragyoku_2024_2025_focus_teams"
+            ]
+          }
+        },
+        {
+          "id": "v6_leg_天水_2025_男_L5",
+          "q": "2025年天水男子5区は誰？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "村上史晃"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku-teams/天水",
+              "aragyoku_2024_2025_focus_teams"
+            ]
+          }
+        },
+        {
+          "id": "v6_leg_天水_2025_男_L6",
+          "q": "2025年天水男子6区は誰？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "田上遥睦"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku-teams/天水",
+              "aragyoku_2024_2025_focus_teams"
+            ]
+          }
+        },
+        {
+          "id": "v6_leg_天水_2025_女_L1",
+          "q": "2025年天水女子1区は誰？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "浦田咲希"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku-teams/天水",
+              "aragyoku_2024_2025_focus_teams"
+            ]
+          }
+        },
+        {
+          "id": "v6_leg_天水_2025_女_L2",
+          "q": "2025年天水女子2区は誰？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "竹原奈緒美"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku-teams/天水",
+              "aragyoku_2024_2025_focus_teams"
+            ]
+          }
+        },
+        {
+          "id": "v6_leg_天水_2025_女_L3",
+          "q": "2025年天水女子3区は誰？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "竹原晴美"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku-teams/天水",
+              "aragyoku_2024_2025_focus_teams"
+            ]
+          }
+        },
+        {
+          "id": "v6_leg_天水_2025_女_L4",
+          "q": "2025年天水女子4区は誰？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "荒木優里"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku-teams/天水",
+              "aragyoku_2024_2025_focus_teams"
+            ]
+          }
+        },
+        {
+          "id": "v6_leg_天水_2025_女_L5",
+          "q": "2025年天水女子5区は誰？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "花谷明優"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku-teams/天水",
+              "aragyoku_2024_2025_focus_teams"
+            ]
+          }
+        },
+        {
+          "id": "v6_leg_天水_2024_男_L1",
+          "q": "2024年天水男子1区は誰？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "山本悠斗"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku-teams/天水",
+              "aragyoku_2024_2025_focus_teams"
+            ]
+          }
+        },
+        {
+          "id": "v6_leg_天水_2024_男_L2",
+          "q": "2024年天水男子2区は誰？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "大久保太晴"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku-teams/天水",
+              "aragyoku_2024_2025_focus_teams"
+            ]
+          }
+        },
+        {
+          "id": "v6_leg_天水_2024_男_L3",
+          "q": "2024年天水男子3区は誰？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "木村幹太"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku-teams/天水",
+              "aragyoku_2024_2025_focus_teams"
+            ]
+          }
+        },
+        {
+          "id": "v6_leg_天水_2024_男_L4",
+          "q": "2024年天水男子4区は誰？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "田上遥睦"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku-teams/天水",
+              "aragyoku_2024_2025_focus_teams"
+            ]
+          }
+        },
+        {
+          "id": "v6_leg_天水_2024_男_L5",
+          "q": "2024年天水男子5区は誰？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "中村七皇"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku-teams/天水",
+              "aragyoku_2024_2025_focus_teams"
+            ]
+          }
+        },
+        {
+          "id": "v6_leg_天水_2024_男_L6",
+          "q": "2024年天水男子6区は誰？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "中山喬晴"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku-teams/天水",
+              "aragyoku_2024_2025_focus_teams"
+            ]
+          }
+        },
+        {
+          "id": "v6_leg_天水_2024_女_L1",
+          "q": "2024年天水女子1区は誰？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "浦田咲希"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku-teams/天水",
+              "aragyoku_2024_2025_focus_teams"
+            ]
+          }
+        },
+        {
+          "id": "v6_leg_天水_2024_女_L2",
+          "q": "2024年天水女子2区は誰？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "竹原晴美"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku-teams/天水",
+              "aragyoku_2024_2025_focus_teams"
+            ]
+          }
+        },
+        {
+          "id": "v6_leg_天水_2024_女_L3",
+          "q": "2024年天水女子3区は誰？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "花谷明優"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku-teams/天水",
+              "aragyoku_2024_2025_focus_teams"
+            ]
+          }
+        },
+        {
+          "id": "v6_leg_天水_2024_女_L4",
+          "q": "2024年天水女子4区は誰？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "荒木優里"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku-teams/天水",
+              "aragyoku_2024_2025_focus_teams"
+            ]
+          }
+        },
+        {
+          "id": "v6_leg_天水_2024_女_L5",
+          "q": "2024年天水女子5区は誰？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "竹原奈緒美"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku-teams/天水",
+              "aragyoku_2024_2025_focus_teams"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

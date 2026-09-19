@@ -448,10 +448,25 @@ function pathQueryBonus(source: string, query: string): number {
   if (/荒玉|aragyoku|中体連/.test(q) && /aragyoku|荒玉|ekiden-ocr|aragyoku-teams/.test(s)) bonus += 80;
   if (
     /荒玉|aragyoku|中体連/.test(q) &&
-    /2024|2025|前年比|深掘り|分析|岱明|玉名付属|玉高附属|天水|有明/.test(q) &&
+    /2024|2025|前年比|深掘り|分析|岱明|玉名付属|玉高附属|天水|有明|優勝との差|優勝差|優勝から/.test(
+      q,
+    ) &&
     /aragyoku_2024_2025_focus_teams/.test(s)
   ) {
     bonus += 160;
+  }
+  if (
+    /優勝との差|優勝差|優勝から|優勝まで|離れて/.test(q) &&
+    /aragyoku_2024_2025_focus_teams|aragyoku-teams\//.test(s)
+  ) {
+    bonus += 220;
+  }
+  if (
+    /上位\s*\d+\s*人平均|上位\d人平均|学校別|所属別/.test(q) &&
+    /800|1500/.test(q) &&
+    /pb_school_ranking|women_800m_1500m/.test(s)
+  ) {
+    bonus += 220;
   }
   if (
     /大会記録|区間記録|ボード|記録保持|meet_records/.test(q) &&
@@ -629,6 +644,20 @@ function pathQueryPenalty(source: string, query: string): number {
       (/\d区/.test(q) && /誰|選手|ランナー|走った|区間タイム|区間順/.test(q)))
   ) {
     return -220;
+  }
+  // 優勝差・学校別平均は meet_records / SB CSV より分析正本へ
+  if (
+    /優勝との差|優勝差|優勝から|優勝まで|離れて/.test(q) &&
+    /aragyoku_meet_records/.test(source)
+  ) {
+    return -180;
+  }
+  if (
+    /上位\s*\d+\s*人平均|上位\d人平均/.test(q) &&
+    /800|1500/.test(q) &&
+    (source.startsWith("sb/") || /line-chats/.test(source))
+  ) {
+    return -200;
   }
   return 0;
 }

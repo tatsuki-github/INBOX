@@ -83,6 +83,9 @@ function offlinePreviewBudget(question: string): number {
   if (isLegAthleteQuestion(q)) {
     return 1400;
   }
+  if (/優勝との差|優勝差|上位\s*\d+\s*人平均|上位\d人平均|学校別/.test(q)) {
+    return 1600;
+  }
   if (/自己ベスト|記録|\bSB\b|\bPB\b|何分|タイム/.test(q)) {
     return 900;
   }
@@ -104,6 +107,21 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
       const start = Math.max(0, idx - 140);
       const end = Math.min(flat.length, idx + Math.max(180, budget - 140));
       return flat.slice(start, end);
+    }
+  }
+  // 「優勝との差」列を優先（大会記録ボードより focus / team の差表）
+  if (/優勝との差|優勝差|優勝から|優勝まで|離れて/.test(q)) {
+    for (const needle of ["優勝との差", "+2:51", "+8:37", "優勝校"]) {
+      const idx = flat.indexOf(needle);
+      if (idx >= 0) {
+        const years = q.match(/20\d{2}/g) ?? [];
+        let start = Math.max(0, idx - 80);
+        for (const y of years) {
+          const yIdx = flat.lastIndexOf(y, idx);
+          if (yIdx >= 0 && yIdx > idx - 400) start = Math.max(0, yIdx - 20);
+        }
+        return flat.slice(start, Math.min(flat.length, start + budget));
+      }
     }
   }
   // 「2025年岱明男子5区は誰」→ year section + `| 5 | 選手` row (not YoY summary)
@@ -307,15 +325,33 @@ function boostAthleteRecordSources(query: string, baseSources: string[]): string
   ) {
     push("out-analysis/2026_aragyoku_men_1500m_sb_individual_top20.md");
   }
-  if (/学校別|所属別/.test(q) && /ランキング|1500|800/.test(q)) {
-    push("out-analysis/2026_men_1500m_pb_school_ranking.md");
+  // 「女子800mで岱明の上位3人平均」は学校別ランキング正本（SB CSV より先）
+  const schoolPbRankQ =
+    (/学校別|所属別/.test(q) && /ランキング|1500|800|平均/.test(q)) ||
+    (/800m|800ｍ|1500m|1500ｍ/.test(q) &&
+      /上位\s*\d+\s*人平均|上位\d人平均|学校別|所属別/.test(q));
+  if (schoolPbRankQ) {
+    if (/800/.test(q) || /女子/.test(q)) {
+      push("out-analysis/2026_women_800m_1500m_pb_school_ranking.md");
+    }
+    if (/1500/.test(q) || /男子/.test(q) || !/800/.test(q)) {
+      push("out-analysis/2026_men_1500m_pb_school_ranking.md");
+    }
     push("out-analysis/2026_women_800m_1500m_pb_school_ranking.md");
+    push("out-analysis/2026_men_1500m_pb_school_ranking.md");
   }
   if (/荒尾|玉名|金栗|岱明|南関|天水|長洲|ATRC|アスリーツ|玉東|有明|荒尾三|荒尾四|海陽|玉陵|玉南|玉高|附中|熊本大/.test(q)) {
     // Prefer exact digest already pushed; only use hub for non-full-record queries
     if (!/全記録|所属選手|記録一覧/.test(q)) {
       push("out-analysis/arato-tamana-teams");
     }
+  }
+  // 学校別平均ランキングは SB CSV で埋めない
+  if (schoolPbRankQ) {
+    for (const s of baseSources) {
+      if (!s.startsWith("sb/") && !/line-chats/.test(s)) push(s);
+    }
+    return out;
   }
   push("sb/中学生SB.csv");
   push("sb/SBデータベース.csv");
@@ -375,6 +411,18 @@ function boostDaimingLineSources(query: string, baseSources: string[]): string[]
   if (/夕練/.test(q) && /何時|開始|時刻|スタート|から/.test(q)) {
     push("practice/practice.2026.json");
     push("calendar/events.daiming.yaml");
+  }
+
+  // 「2025年岱明男子の優勝との差」は結果分析へ（地点分担 LINE ではない）
+  if (
+    /優勝との差|優勝差|優勝から|優勝まで/.test(q) &&
+    /20\d{2}|荒玉|駅伝|男子|女子|岱明|玉高|天水|有明|南関|菊水/.test(q)
+  ) {
+    return baseSources.filter((s) => !/line-chats/.test(s));
+  }
+  // 学校別トラック平均は LINE ではなく PB ランキングへ
+  if (/上位\s*\d+\s*人平均|上位\d人平均|学校別|所属別/.test(q) && /800|1500|ランキング/.test(q)) {
+    return baseSources.filter((s) => !/line-chats/.test(s));
   }
 
   // 「2025年岱明男子5区は誰」は結果正本へ。地点分担・2.855 距離メモの LINE を先頭にしない
@@ -482,8 +530,11 @@ function boostMeetYearSources(
       (/区/.test(expandedQuery) && /誰|選手名/.test(expandedQuery));
     const focusTeamAnalysis =
       /岱明|玉名付属|玉名附属|玉高附属|天水|有明/.test(expandedQuery) &&
-      /2024|2025|前年比|深掘り|分析|何位|短縮|区間新|荒玉/.test(expandedQuery);
-    if (focusTeamAnalysis) {
+      /2024|2025|前年比|深掘り|分析|何位|短縮|区間新|荒玉|優勝との差|優勝差|優勝から/.test(
+        expandedQuery,
+      );
+    const winnerMarginQ = /優勝との差|優勝差|優勝から|優勝まで|離れて/.test(expandedQuery);
+    if (focusTeamAnalysis || winnerMarginQ) {
       push("out-analysis/aragyoku_2024_2025_focus_teams.md");
     }
     if (meetRecordQ) {
@@ -493,10 +544,11 @@ function boostMeetYearSources(
       push("out-analysis/aragyoku_top2_finish_counts.md");
       push("aragyoku/winners-by-year.md");
     }
-    // Exact team history digest for 「〇〇の荒玉駅伝の過去の順位」/ 区間選手
+    // Exact team history digest for 「〇〇の荒玉駅伝の過去の順位」/ 区間選手 / 優勝差
     if (
-      (/過去|歴代|順位|2024|2025|分析/.test(expandedQuery) ||
+      (/過去|歴代|順位|2024|2025|分析|優勝との差|優勝差|優勝から/.test(expandedQuery) ||
         focusTeamAnalysis ||
+        winnerMarginQ ||
         legAthleteQ) &&
       !courseMeta
     ) {

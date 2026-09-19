@@ -360,6 +360,45 @@ describe("answerQuestion", () => {
     }
   });
 
+  it("answers 女子800m 上位3人平均 from school ranking not SB CSV", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("女子800mで岱明の上位3人平均は？", {
+      skipRouter: true,
+      defaultYear: 2026,
+      llm: null,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.text).toMatch(/2:28/);
+      expect(result.text).not.toContain("コーチに直接聞いてください");
+      expect(result.sources.some((s) => s.includes("women_800m_1500m_pb_school_ranking"))).toBe(
+        true,
+      );
+      expect(result.sources[0]).not.toMatch(/^sb\//);
+    }
+  });
+
+  it("answers 優勝との差 from focus analysis not meet_records board", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("2025年岱明男子の優勝との差は？", {
+      skipRouter: true,
+      defaultYear: 2026,
+      llm: null,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.text).toMatch(/2:51/);
+      expect(result.text).not.toContain("コーチに直接聞いてください");
+      expect(
+        result.sources.some(
+          (s) => s.includes("aragyoku_2024_2025_focus_teams") || s.includes("aragyoku-teams/岱明"),
+        ),
+      ).toBe(true);
+    }
+  });
+
   it("still puts line-chats for 地点分担 / 2.855 questions", async () => {
     resetRetrieverCache();
     resetKgCache();
