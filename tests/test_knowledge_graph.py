@@ -111,6 +111,42 @@ def test_query_routes_gz_to_norwegian_or_pace():
     assert "norwegian" in joined or "daniels" in joined or "pace" in joined or "kpace" in joined
 
 
+def test_query_routes_school_average_to_pb_ranking():
+    graph = build_knowledge_graph(generated_at="2026-01-01T00:00:00Z")
+    result = query_knowledge_graph(
+        "女子800mで岱明の上位3人平均は？",
+        graph=graph,
+        include_context=False,
+    )
+    joined = " ".join(result["refs"]) + " ".join(n["id"] for n in result["matched_nodes"])
+    assert "2026_women_800m_1500m_pb_school_ranking" in joined
+
+
+def test_query_routes_kikui_leg_to_team_digest():
+    graph = build_knowledge_graph(generated_at="2026-01-01T00:00:00Z")
+    result = query_knowledge_graph(
+        "菊水の荒玉駅伝の1区は誰？",
+        graph=graph,
+        include_context=False,
+    )
+    joined = " ".join(result["refs"])
+    assert "aragyoku-teams/菊水.md" in joined
+
+
+def test_query_routes_kanaguri_project_not_nagomi():
+    graph = build_knowledge_graph(generated_at="2026-01-01T00:00:00Z")
+    result = query_knowledge_graph(
+        "金栗PROJECT所属選手の全記録",
+        graph=graph,
+        include_context=False,
+    )
+    joined = " ".join(result["refs"])
+    assert "arato-tamana-teams/金栗PROJECT.md" in joined
+    assert not any("なごみ" in r for r in result["refs"][:12])
+    top = result["matched_nodes"][:8]
+    assert not any("なごみ" in (n.get("label") or "") for n in top)
+
+
 def test_schema_validation_if_jsonschema_available():
     jsonschema = pytest.importorskip("jsonschema")
     schema = json.loads((ROOT / "schemas" / "knowledge-graph.schema.json").read_text(encoding="utf-8"))

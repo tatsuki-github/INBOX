@@ -81,17 +81,47 @@ def _score_node(node: dict[str, Any], q_tokens: list[str], query: str) -> float:
             score += 22.0
         if any(x in blob for x in ("aragyoku", "荒玉", "ekiden-ocr", "winners-by-year")) and "ジュニア" not in blob:
             score -= 18.0
-    if "なごみ" in q or "金栗" in q:
-        if "なごみ" in blob or "金栗" in blob:
+    if any(x in q for x in ("荒玉", "aragyoku", "中体連")) and any(
+        x in blob for x in ("荒玉", "aragyoku", "中体連", "ekiden-ocr", "winners")
+    ):
+        score += 10.0
+    kanaguri_project_q = "金栗project" in q or "金栗プロジェクト" in q
+    nagomi_q = "なごみ" in q or ("金栗" in q and not kanaguri_project_q)
+    if nagomi_q:
+        nagomi_blob = "なごみ" in blob or (
+            "金栗" in blob and "金栗project" not in blob and "金栗プロジェクト" not in blob
+        )
+        if nagomi_blob:
             score += 22.0
         if any(x in blob for x in ("aragyoku", "荒玉", "ekiden-ocr", "winners-by-year")) and not (
             "なごみ" in blob or "金栗" in blob
         ):
             score -= 18.0
-    if any(x in q for x in ("荒玉", "aragyoku", "中体連")) and any(
-        x in blob for x in ("荒玉", "aragyoku", "中体連", "ekiden-ocr", "winners")
+    if kanaguri_project_q and any(x in blob for x in ("金栗project", "金栗プロジェクト", "arato-tamana-teams")):
+        score += 18.0
+    if any(x in q for x in ("玉名付属", "玉名附属", "付属中")) and any(
+        x in blob for x in ("玉高附属", "玉名付属", "玉名附属")
     ):
-        score += 10.0
+        score += 12.0
+    if (("上位" in q and "平均" in q) or "学校別" in q or "所属別" in q) and any(
+        x in q for x in ("800", "1500", "ランキング", "平均")
+    ):
+        if any(x in blob for x in ("pb_school_ranking", "学校別", "上位3人", "上位4人")):
+            score += 18.0
+        if any(x in blob for x in ("sb/", "中学生SB", "SBデータベース")) and "pb_school" not in blob:
+            score -= 8.0
+    if any(x in q for x in ("優勝との差", "優勝差", "優勝から")):
+        if "focus_teams" in blob or "優勝との差" in blob:
+            score += 16.0
+        if ("meet_records" in blob or "大会記録" in blob) and "focus" not in blob:
+            score -= 10.0
+    if any(x in q for x in ("全記録", "記録一覧", "所属選手")) and (
+        "arato-tamana-teams" in blob or "athletes/" in blob
+    ):
+        score += 14.0
+    if "トラック" in q and any(x in q for x in ("1周", "一周", "周長", "何メートル", "何ｍ")):
+        if any(x in blob for x in ("kpace", "data-model", "560")):
+            score += 14.0
     if score <= 0:
         return 0.0
     boost = {

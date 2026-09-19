@@ -39,4 +39,15 @@ describe("mapRefToCorpusSource", () => {
       "drive-text/練習/練習の記録.md",
     );
   });
+
+  it("maps year practice JSON to corpus practice.{year}.json", () => {
+    expect(mapRefToCorpusSource("out/2026/practice.json")).toBe("practice/practice.2026.json");
+    expect(mapRefToCorpusSource("out/2025/practice.json")).toBe("practice/practice.2025.json");
+  });
+
+  it("maps daiming practice menus digest into corpus practice/", () => {
+    expect(mapRefToCorpusSource("out/daiming-practice-menus-kpace.md")).toBe(
+      "practice/daiming-practice-menus-kpace.md",
+    );
+  });
 });

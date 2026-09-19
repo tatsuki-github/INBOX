@@ -91,6 +91,17 @@ export function mapRefToCorpusSource(ref: string): string | null {
     return "analysis-ocr/" + p.slice(analysis.length);
   }
 
+  // Practice menus digest copied into corpus practice/
+  if (p === "out/daiming-practice-menus-kpace.md") {
+    return "practice/daiming-practice-menus-kpace.md";
+  }
+
+  // Year practice JSON is stored as practice/practice.YYYY.json (not practice.json)
+  const yearPracticeJson = p.match(/^out\/(20\d{2})\/practice\.json$/);
+  if (yearPracticeJson) {
+    return `practice/practice.${yearPracticeJson[1]}.json`;
+  }
+
   // Generated analysis under out/analysis → out-analysis/
   if (p.startsWith("out/analysis/")) {
     return "out-analysis/" + p.slice("out/analysis/".length);
@@ -134,9 +145,9 @@ export function mapRefToCorpusSource(ref: string): string | null {
   if (p.startsWith("input/practice/")) {
     return "practice/" + p.slice("input/practice/".length);
   }
-  if (p.startsWith("out/practice/") || p.startsWith("out/202")) {
-    // Year practice JSON sometimes referenced from KG
-    if (p.includes("practice")) {
+  if (p.startsWith("out/practice/") || /^out\/20\d{2}\//.test(p)) {
+    // Remaining year practice artifacts (items/absentees/summary), not practice.json
+    if (p.includes("practice") && !p.endsWith("/practice.json")) {
       const base = p.split("/").pop();
       if (base) return "practice/" + base;
     }

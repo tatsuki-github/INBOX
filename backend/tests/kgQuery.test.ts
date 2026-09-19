@@ -68,4 +68,48 @@ describe("queryKnowledgeGraph", () => {
     ].join("\n");
     expect(blob).toMatch(/aragyoku_2024_2025_focus_teams|玉高附属/);
   });
+
+  it("routes school PB average questions to school ranking digest", () => {
+    resetKgCache();
+    const result = queryKnowledgeGraph("女子800mで岱明の上位3人平均は？", { kgPath });
+    const blob = [
+      ...result.matched_nodes.flatMap((n) => [n.id, ...(n.refs ?? [])]),
+      ...result.corpus_sources,
+    ].join("\n");
+    expect(blob).toMatch(/2026_women_800m_1500m_pb_school_ranking/);
+  });
+
+  it("routes winner-margin questions to focus-team analysis", () => {
+    resetKgCache();
+    const result = queryKnowledgeGraph("2025年岱明男子の優勝との差は？", { kgPath });
+    const blob = [
+      ...result.matched_nodes.flatMap((n) => [n.id, ...(n.refs ?? [])]),
+      ...result.corpus_sources,
+    ].join("\n");
+    expect(blob).toMatch(/aragyoku_2024_2025_focus_teams/);
+  });
+
+  it("routes team-leg questions to the exact aragyoku-teams digest", () => {
+    resetKgCache();
+    const result = queryKnowledgeGraph("菊水の荒玉駅伝の1区は誰？", { kgPath });
+    expect(result.corpus_sources.some((s) => s.includes("aragyoku-teams/菊水.md"))).toBe(true);
+  });
+
+  it("routes 金栗PROJECT full records to arato-tamana digest, not nagomi hubs", () => {
+    resetKgCache();
+    const result = queryKnowledgeGraph("金栗PROJECT所属選手の全記録", { kgPath });
+    expect(result.corpus_sources.some((s) => s.includes("arato-tamana-teams/金栗PROJECT.md"))).toBe(
+      true,
+    );
+    const top = result.matched_nodes.slice(0, 8);
+    expect(top.some((n) => /なごみ/.test(n.label))).toBe(false);
+    expect(result.refs.slice(0, 12).some((r) => r.includes("なごみ"))).toBe(false);
+  });
+
+  it("routes track lap questions to practice menus digest", () => {
+    resetKgCache();
+    const result = queryKnowledgeGraph("岱明のトラック1周は？", { kgPath });
+    const blob = [...result.refs, ...result.corpus_sources].join("\n");
+    expect(blob).toMatch(/daiming-practice-menus-kpace/);
+  });
 });

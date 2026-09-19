@@ -64,6 +64,7 @@ python3 scripts/generate_calendar.py --year 2026 --input input/events.2026.yaml
 
 リポジトリ全体の「何がどこにあるか」を `out/knowledge-graph.json` に保持します。
 全文の複製ではなく、**短いヒント + 参照パス + エンティティリンク**です。回答時はまずここを見て探索先を決め、ヒットしたファイルの周辺コンテキストで答えます（運用は [`AGENTS.md`](AGENTS.md)）。
+`out/analysis/` のチーム別・学校別ダイジェストは Source として自動登録され、LINE backend は `scripts/sync_backend_kg.py` で同梱します（[ADR 046](docs/adr/046-kg-analysis-digest-routing.md)）。
 
 ブラウザで構造を確認する場合:
 

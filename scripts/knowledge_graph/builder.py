@@ -29,7 +29,7 @@ SOURCE_GLOBS: list[tuple[str, list[str], str]] = [
     ("input/ai_generation_rules.yaml", ["ai", "practice", "rules"], "AI 固定/可変/創作ルール"),
     ("input/daniels_vdot_paces.yaml", ["pace", "danish", "norwegian"], "Daniels VDOT ペース表"),
     ("input/arato_tamana_report.yaml", ["athlete_records", "arato"], "荒尾・玉名記録 PDF 設定"),
-    ("out/daiming-practice-menus-kpace.md", ["practice", "pace"], "岱明練習 k/pace 横断一覧"),
+    ("out/daiming-practice-menus-kpace.md", ["practice", "pace"], "岱明練習 k/pace 横断一覧。トラック1周=560m"),
     (
         "out/analysis/line-chats/INDEX.md",
         ["practice", "calendar", "ekiden"],
@@ -170,6 +170,16 @@ SOURCE_GLOBS: list[tuple[str, list[str], str]] = [
         "荒玉地区 男子1500m SB 個人トップ20（2026）",
     ),
     (
+        "out/analysis/2026_men_1500m_pb_school_ranking.md",
+        ["athlete_records"],
+        "男子1500m PB 学校別ランキング（上位4人平均）。SB CSV 行より先に読む",
+    ),
+    (
+        "out/analysis/2026_women_800m_1500m_pb_school_ranking.md",
+        ["athlete_records"],
+        "女子800m/1500m PB 学校別ランキング（上位3人平均）。岱明800m上位3人平均 2:28.81",
+    ),
+    (
         "out/analysis/athletes/takada-mana.md",
         ["athlete_records"],
         "高田麻那（文徳高）SB。高田麻由（岱明）とは別人",
@@ -212,7 +222,7 @@ TOPIC_DEFS: list[tuple[str, str, str]] = [
     (
         "athlete_records",
         "選手記録",
-        "荒尾・玉名・中学生 SB・所属ランキング・Notion 生徒/記録 DB。コーパス sb/ notion-db/ analysis-ocr/",
+        "荒尾・玉名・中学生 SB・学校別PB平均・所属全記録・Notion 生徒/記録 DB。コーパス sb/ out-analysis/ notion-db/",
     ),
     ("norwegian", "Norwegian Method", "GZ/閾値・VDOT・原則メモ"),
     ("ai", "AI 練習生成", "プロンプト・ルール・週次/単日生成"),
@@ -444,6 +454,83 @@ QUERY_HINTS: list[tuple[str, str, list[str]]] = [
             "source:out/analysis/athletes/takada-mana.md",
             "corpus:sb",
             "corpus:out-analysis",
+        ],
+    ),
+    (
+        "女子800mで岱明の上位3人平均は？",
+        "2026_women_800m_1500m_pb_school_ranking.md の学校別上位3人平均（SB CSV より先）",
+        [
+            "topic:athlete_records",
+            "source:out/analysis/2026_women_800m_1500m_pb_school_ranking.md",
+            "corpus:out-analysis",
+        ],
+    ),
+    (
+        "男子1500m学校別ランキングは？",
+        "2026_men_1500m_pb_school_ranking.md の上位4人平均。個人SB行より学校別正本を優先",
+        [
+            "topic:athlete_records",
+            "source:out/analysis/2026_men_1500m_pb_school_ranking.md",
+            "corpus:out-analysis",
+        ],
+    ),
+    (
+        "2025年岱明男子の優勝との差は？",
+        "aragyoku_2024_2025_focus_teams.md の優勝との差列。meet_records ボードではない",
+        [
+            "topic:ekiden",
+            "source:out/analysis/aragyoku_2024_2025_focus_teams.md",
+            "source:out/analysis/aragyoku-teams/岱明.md",
+            "corpus:out-analysis",
+        ],
+    ),
+    (
+        "菊水の荒玉駅伝の1区は誰？",
+        "out/analysis/aragyoku-teams/菊水.md を正本（区間選手）。OCR 散発ヒットにしない",
+        [
+            "topic:ekiden",
+            "source:out/analysis/aragyoku-teams/菊水.md",
+            "source:out/analysis/aragyoku-teams/INDEX.md",
+            "corpus:out-analysis",
+        ],
+    ),
+    (
+        "〇〇中の荒玉駅伝の過去の順位は？",
+        "out/analysis/aragyoku-teams/{チーム}.md。玉名付属=玉高附属。区間選手も含む",
+        [
+            "topic:ekiden",
+            "source:out/analysis/aragyoku-teams/INDEX.md",
+            "corpus:out-analysis",
+        ],
+    ),
+    (
+        "金栗PROJECT所属選手の全記録",
+        "out/analysis/arato-tamana-teams/金栗PROJECT.md。駅伝開催要項フォルダは使わない",
+        [
+            "topic:athlete_records",
+            "source:out/analysis/arato-tamana-teams/金栗PROJECT.md",
+            "source:out/analysis/arato-tamana-teams/INDEX.md",
+            "corpus:out-analysis",
+        ],
+    ),
+    (
+        "南関中の所属選手の記録一覧",
+        "out/analysis/arato-tamana-teams/南関中.md の所属別全記録",
+        [
+            "topic:athlete_records",
+            "source:out/analysis/arato-tamana-teams/南関中.md",
+            "source:out/analysis/arato-tamana-teams/INDEX.md",
+            "corpus:out-analysis",
+        ],
+    ),
+    (
+        "岱明のトラック1周は？",
+        "practice/daiming-practice-menus-kpace.md と docs/data-model.md。1周=560m。LINE 会話は使わない",
+        [
+            "topic:practice",
+            "source:out/daiming-practice-menus-kpace.md",
+            "source:docs/data-model.md",
+            "corpus:practice",
         ],
     ),
     (
@@ -700,7 +787,26 @@ TOPIC_CORPUS_HUBS: list[tuple[str, str]] = [
     ("topic:injury", "corpus:notion-pages"),
     ("topic:ekiden", "corpus:out-analysis"),
     ("topic:calendar", "corpus:out-analysis"),
+    ("topic:athlete_records", "corpus:out-analysis"),
+    ("topic:athlete_records", "corpus:sb"),
+    ("topic:practice", "corpus:practice"),
 ]
+
+# Team digest filenames → spoken aliases (hints + scoring).
+ANALYSIS_TEAM_ALIASES: dict[str, list[str]] = {
+    "玉高附属": ["玉名付属", "玉名附属", "付属中", "玉名高校附属", "玉名附中", "玉名附"],
+    "岱明": ["岱明中", "いだてん岱明"],
+    "岱明中": ["岱明"],
+    "天水": ["天水中"],
+    "天水中": ["天水"],
+    "有明": ["有明中"],
+    "南関": ["南関中"],
+    "南関中": ["南関"],
+    "菊水": ["菊水中"],
+    "長洲": ["長洲中"],
+    "長洲中": ["長洲"],
+    "金栗PROJECT": ["金栗プロジェクト"],
+}
 
 
 def _rel(path: Path) -> str:
@@ -783,6 +889,7 @@ def _register_source(
     topics: list[str],
     hint: str,
     derived_from: str | None = None,
+    label: str | None = None,
 ) -> str:
     sid = _source_id(rel_path)
     _add_node(
@@ -790,12 +897,14 @@ def _register_source(
         _node(
             sid,
             "Source",
-            Path(rel_path).name,
+            label if label else Path(rel_path).name,
             topics=topics,
             refs=[rel_path],
             hint=hint,
         ),
     )
+    if label:
+        nodes[sid]["label"] = label
     for topic in topics:
         _add_edge(edges, f"topic:{topic}", sid, "search_here")
     if derived_from:
@@ -1095,6 +1204,73 @@ def _register_idaten_corpus(
                 ym = re.search(r"(20\d{2})", year_label)
                 if ym:
                     _add_edge(edges, f"entity:year:{ym.group(1)}", mid, "see_also")
+
+
+def _analysis_topics(path: Path) -> list[str]:
+    rel = path.as_posix()
+    parent = path.parent.name
+    name = path.name
+    if parent == "line-chats":
+        return ["practice", "calendar"]
+    if parent == "arato-tamana-teams" or parent == "athletes":
+        return ["athlete_records"]
+    if "pb_school" in name or "_sb_" in name:
+        return ["athlete_records"]
+    if parent == "aragyoku-teams" or "aragyoku" in name:
+        return ["ekiden", "athlete_records"]
+    if "line-chats" in rel:
+        return ["practice", "calendar"]
+    return ["ekiden", "athlete_records"]
+
+
+def _register_analysis_digests(
+    nodes: dict[str, dict[str, Any]],
+    edges: set[tuple[str, str, str]],
+) -> None:
+    """Register out/analysis markdown digests so KG can 0-hop to exact team/ranking files."""
+    analysis = ROOT / "out" / "analysis"
+    if not analysis.is_dir():
+        return
+    team_parents = {"aragyoku-teams", "arato-tamana-teams"}
+    for path in sorted(analysis.rglob("*.md")):
+        rel = _rel(path)
+        parent = path.parent.name
+        is_team = parent in team_parents and path.stem != "INDEX"
+        aliases = ANALYSIS_TEAM_ALIASES.get(path.stem, [])
+        peek = _peek_text_summary(path, max_chars=200)
+        hint_bits: list[str] = []
+        if aliases:
+            hint_bits.append("別名: " + "、".join(aliases))
+        if is_team and parent == "aragyoku-teams":
+            hint_bits.append("荒玉駅伝チーム別歴代（区間選手・順位）")
+        elif is_team:
+            hint_bits.append("荒尾玉名の所属別トラック全記録")
+        if peek:
+            hint_bits.append(peek)
+        hint = "。".join(hint_bits) if hint_bits else path.name
+        label = path.stem if is_team else None
+        sid = _source_id(rel)
+        if sid not in nodes:
+            _register_source(
+                nodes,
+                edges,
+                rel,
+                topics=_analysis_topics(path),
+                hint=hint,
+                label=label,
+            )
+        else:
+            if label:
+                nodes[sid]["label"] = label
+            existing_hint = nodes[sid].get("hint") or ""
+            for extra in hint_bits:
+                if extra and extra not in existing_hint:
+                    existing_hint = extra + "。" + existing_hint
+            nodes[sid]["hint"] = existing_hint
+        if aliases:
+            alias_blob = "、".join(aliases)
+            if alias_blob not in (nodes[sid].get("hint") or ""):
+                nodes[sid]["hint"] = f"別名: {alias_blob}。" + (nodes[sid].get("hint") or "")
 
 
 def _register_external_media(
@@ -1458,6 +1634,9 @@ def build_knowledge_graph(*, generated_at: str | None = None) -> dict[str, Any]:
 
     # LINE いだてんコーパス（内容ヒント付きハブ + 大会フォルダ）
     _register_idaten_corpus(nodes, edges)
+
+    # Generated analysis digests (team / ranking / LINE chats)
+    _register_analysis_digests(nodes, edges)
 
     # Query hints — prefer concrete Source/corpus; attach refs for 0-hop routing
     for idx, (label, hint, targets) in enumerate(QUERY_HINTS):

@@ -86,6 +86,15 @@ export function tokenizeKg(text: string): string[] {
   return out;
 }
 
+/** Lowercased query: 金栗PROJECT 所属 vs 金栗駅伝（なごみ） */
+function isKanaguriProjectQuery(q: string): boolean {
+  return /金栗project|金栗プロジェクト/.test(q);
+}
+
+function isNagomiMeetQuery(q: string): boolean {
+  return /なごみ/.test(q) || (/金栗/.test(q) && !isKanaguriProjectQuery(q));
+}
+
 function scoreNode(node: KgNode, qTokens: string[], query: string): number {
   const label = (node.label || "").toLowerCase();
   const nodeType = node.type;
@@ -136,14 +145,39 @@ function scoreNode(node: KgNode, qTokens: string[], query: string): number {
       score -= 18;
     }
   }
-  if (/なごみ|金栗/.test(q)) {
-    if (/なごみ|金栗/.test(blob)) score += 22;
+  // 金栗駅伝 = なごみ。金栗PROJECT は所属トラック正本でありなごみではない
+  const kanaguriProjectQ = isKanaguriProjectQuery(q);
+  const nagomiQ = isNagomiMeetQuery(q);
+  if (nagomiQ) {
+    const nagomiBlob =
+      /なごみ/.test(blob) || (/金栗/.test(blob) && !/金栗project|金栗プロジェクト/.test(blob));
+    if (nagomiBlob) score += 22;
     if (/aragyoku|荒玉|ekiden-ocr|winners-by-year/.test(blob) && !/なごみ|金栗/.test(blob)) {
       score -= 18;
     }
   }
+  if (kanaguriProjectQ && /金栗project|金栗プロジェクト|arato-tamana-teams/.test(blob)) {
+    score += 18;
+  }
   if (/荒玉|aragyoku|中体連/.test(q) && /荒玉|aragyoku|中体連|ekiden-ocr|winners/.test(blob)) {
     score += 10;
+  }
+  if (/玉名付属|玉名附属|付属中/.test(q) && /玉高附属|玉名付属|玉名附属/.test(blob)) {
+    score += 12;
+  }
+  if (/上位.*平均|学校別|所属別/.test(q) && /800|1500|ランキング|平均/.test(q)) {
+    if (/pb_school_ranking|学校別|上位3人|上位4人/.test(blob)) score += 18;
+    if (/sb\/|中学生SB|SBデータベース/.test(blob) && !/pb_school/.test(blob)) score -= 8;
+  }
+  if (/優勝との差|優勝差|優勝から/.test(q)) {
+    if (/focus_teams|優勝との差/.test(blob)) score += 16;
+    if (/meet_records|大会記録/.test(blob) && !/focus/.test(blob)) score -= 10;
+  }
+  if (/全記録|記録一覧|所属選手/.test(q) && /arato-tamana-teams|athletes\//.test(blob)) {
+    score += 14;
+  }
+  if (/トラック/.test(q) && /1周|一周|周長|何メートル|何ｍ/.test(q) && /kpace|data-model|560/.test(blob)) {
+    score += 14;
   }
   if (nodeType !== "Athlete" && nodeType !== "MediaAsset" && q && blob.includes(q)) score += 5;
   if (score <= 0) return 0;
