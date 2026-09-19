@@ -465,6 +465,38 @@ def _chunk_aragyoku_transcript(path: Path, rel: str) -> list[dict[str, Any]]:
             "metadata": {"path": f"input/idaten-corpus/{rel}", "index": 0, "kind": "winner_summary"},
         }
     )
+    # meet_records (board header) as dedicated searchable chunk
+    mr = data.get("meet_records")
+    if isinstance(mr, dict):
+        mr_parts = [
+            f"{year}年荒玉駅伝{gender}のボード上部・大会記録・区間記録。",
+            f"総合大会記録 { (mr.get('total') or {}).get('time') or '—' }"
+            f"（{(mr.get('total') or {}).get('school') or ''}）。",
+        ]
+        for L in mr.get("legs") or []:
+            if not isinstance(L, dict):
+                continue
+            holders = L.get("holders") or []
+            htxt = "、".join(
+                f"{h.get('name')}（{h.get('school')}）"
+                for h in holders
+                if isinstance(h, dict) and h.get("name")
+            )
+            mr_parts.append(
+                f"{L.get('leg')}区大会区間記録 {L.get('time')} 保持者{htxt or '—'}。"
+            )
+        out.append(
+            {
+                "id": f"{rel}:meet_records",
+                "source": rel,
+                "text": " ".join(mr_parts),
+                "metadata": {
+                    "path": f"input/idaten-corpus/{rel}",
+                    "index": "meet_records",
+                    "kind": "meet_records",
+                },
+            }
+        )
     for idx, team in enumerate(teams, start=1):
         team_name = team.get("team") or "?"
         rank = team.get("rank")
@@ -630,6 +662,7 @@ def main() -> int:
         ROOT / "scripts" / "generate_team_record_markdowns.py",
         ROOT / "scripts" / "generate_aragyoku_overview.py",
         ROOT / "scripts" / "generate_aragyoku_2024_2025_focus_analysis.py",
+        ROOT / "scripts" / "generate_aragyoku_meet_records_markdown.py",
         ROOT / "scripts" / "ingest_line_exports.py",
     ]
     py_candidates = [

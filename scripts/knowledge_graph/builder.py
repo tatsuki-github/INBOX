@@ -135,6 +135,11 @@ SOURCE_GLOBS: list[tuple[str, list[str], str]] = [
         "荒玉2024–2025深掘り（岱明・玉高附属＝玉名付属・天水・有明の区間・前年比）",
     ),
     (
+        "out/analysis/aragyoku_meet_records.md",
+        ["ekiden", "analysis"],
+        "荒玉ボード上部の大会記録・区間記録（meet_records）年別一覧",
+    ),
+    (
         "out/analysis/aragyoku_top6_historical_average_pace.md",
         ["ekiden", "pace"],
         "荒玉総合1〜6位の年度別平均ペース",
@@ -355,6 +360,26 @@ QUERY_HINTS: list[tuple[str, str, list[str]]] = [
             "topic:ekiden",
             "source:out/analysis/aragyoku_2024_2025_focus_teams.md",
             "source:out/analysis/aragyoku-teams/有明.md",
+            "corpus:out-analysis",
+            "corpus:aragyoku",
+        ],
+    ),
+    (
+        "荒玉駅伝の男子2区の大会区間記録は誰？",
+        "out/analysis/aragyoku_meet_records.md を正本（ボード上部・meet_records）。当日区間新とは別",
+        [
+            "topic:ekiden",
+            "source:out/analysis/aragyoku_meet_records.md",
+            "corpus:out-analysis",
+            "corpus:aragyoku",
+        ],
+    ),
+    (
+        "2025年荒玉駅伝男子の総合大会記録は？",
+        "aragyoku_meet_records.md の2025男子（ボード印刷値）。優勝タイムとは別概念の場合あり",
+        [
+            "topic:ekiden",
+            "source:out/analysis/aragyoku_meet_records.md",
             "corpus:out-analysis",
             "corpus:aragyoku",
         ],

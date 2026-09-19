@@ -1,0 +1,2271 @@
+{
+  "version": 1,
+  "total": 100,
+  "unique": 100,
+  "defaultYear": 2026,
+  "note": "crush100-v3: focus 2024/25 + meet_records + team legs",
+  "rounds": [
+    {
+      "id": 1,
+      "theme": "crush100-v3",
+      "questions": [
+        {
+          "id": "f_rank25_岱明_男子",
+          "q": "2025年荒玉駅伝男子の岱明は何位？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "6位",
+              "59:08",
+              "岱明"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku_2024_2025_focus_teams",
+              "aragyoku-teams/岱明"
+            ]
+          }
+        },
+        {
+          "id": "f_rank24_岱明_男子",
+          "q": "2024年荒玉駅伝男子の岱明は何位で総合タイムは？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "15位",
+              "65:15"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku_2024_2025_focus_teams",
+              "aragyoku-teams/岱明"
+            ]
+          }
+        },
+        {
+          "id": "f_yoy_岱明_男子",
+          "q": "2024から2025で荒玉駅伝男子の岱明はどう変わった？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "15位",
+              "6位",
+              "65:15",
+              "59:08"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku_2024_2025_focus_teams",
+              "aragyoku-teams/岱明"
+            ]
+          }
+        },
+        {
+          "id": "f_rank25_岱明_女子",
+          "q": "2025年荒玉駅伝女子の岱明は何位？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "7位",
+              "45:22",
+              "岱明"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku_2024_2025_focus_teams",
+              "aragyoku-teams/岱明"
+            ]
+          }
+        },
+        {
+          "id": "f_rank24_岱明_女子",
+          "q": "2024年荒玉駅伝女子の岱明は何位で総合タイムは？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "6位",
+              "45:06"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku_2024_2025_focus_teams",
+              "aragyoku-teams/岱明"
+            ]
+          }
+        },
+        {
+          "id": "f_yoy_岱明_女子",
+          "q": "2024から2025で荒玉駅伝女子の岱明はどう変わった？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "6位",
+              "7位",
+              "45:06",
+              "45:22"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku_2024_2025_focus_teams",
+              "aragyoku-teams/岱明"
+            ]
+          }
+        },
+        {
+          "id": "f_rank25_玉高附属_男子",
+          "q": "2025年荒玉駅伝男子の玉名付属は何位？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "3位",
+              "58:37",
+              "玉高附属"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku_2024_2025_focus_teams",
+              "aragyoku-teams/玉高附属"
+            ]
+          }
+        },
+        {
+          "id": "f_rank24_玉高附属_男子",
+          "q": "2024年荒玉駅伝男子の玉高附属は何位で総合タイムは？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "2位",
+              "58:13"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku_2024_2025_focus_teams",
+              "aragyoku-teams/玉高附属"
+            ]
+          }
+        },
+        {
+          "id": "f_yoy_玉高附属_男子",
+          "q": "2024から2025で荒玉駅伝男子の玉名付属はどう変わった？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "2位",
+              "3位",
+              "58:13",
+              "58:37"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku_2024_2025_focus_teams",
+              "aragyoku-teams/玉高附属"
+            ]
+          }
+        },
+        {
+          "id": "f_rank25_玉高附属_女子",
+          "q": "2025年荒玉駅伝女子の玉名付属は何位？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "10位",
+              "46:55",
+              "玉高附属"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku_2024_2025_focus_teams",
+              "aragyoku-teams/玉高附属"
+            ]
+          }
+        },
+        {
+          "id": "f_rank24_玉高附属_女子",
+          "q": "2024年荒玉駅伝女子の玉高附属は何位で総合タイムは？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "5位",
+              "43:50"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku_2024_2025_focus_teams",
+              "aragyoku-teams/玉高附属"
+            ]
+          }
+        },
+        {
+          "id": "f_yoy_玉高附属_女子",
+          "q": "2024から2025で荒玉駅伝女子の玉名付属はどう変わった？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "5位",
+              "10位",
+              "43:50",
+              "46:55"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku_2024_2025_focus_teams",
+              "aragyoku-teams/玉高附属"
+            ]
+          }
+        },
+        {
+          "id": "f_rank25_天水_男子",
+          "q": "2025年荒玉駅伝男子の天水は何位？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "14位",
+              "63:39",
+              "天水"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku_2024_2025_focus_teams",
+              "aragyoku-teams/天水"
+            ]
+          }
+        },
+        {
+          "id": "f_rank24_天水_男子",
+          "q": "2024年荒玉駅伝男子の天水は何位で総合タイムは？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "14位",
+              "63:40"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku_2024_2025_focus_teams",
+              "aragyoku-teams/天水"
+            ]
+          }
+        },
+        {
+          "id": "f_yoy_天水_男子",
+          "q": "2024から2025で荒玉駅伝男子の天水はどう変わった？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "14位",
+              "14位",
+              "63:40",
+              "63:39"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku_2024_2025_focus_teams",
+              "aragyoku-teams/天水"
+            ]
+          }
+        },
+        {
+          "id": "f_rank25_天水_女子",
+          "q": "2025年荒玉駅伝女子の天水は何位？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "15位",
+              "51:29",
+              "天水"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku_2024_2025_focus_teams",
+              "aragyoku-teams/天水"
+            ]
+          }
+        },
+        {
+          "id": "f_rank24_天水_女子",
+          "q": "2024年荒玉駅伝女子の天水は何位で総合タイムは？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "14位",
+              "49:41"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku_2024_2025_focus_teams",
+              "aragyoku-teams/天水"
+            ]
+          }
+        },
+        {
+          "id": "f_yoy_天水_女子",
+          "q": "2024から2025で荒玉駅伝女子の天水はどう変わった？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "14位",
+              "15位",
+              "49:41",
+              "51:29"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku_2024_2025_focus_teams",
+              "aragyoku-teams/天水"
+            ]
+          }
+        },
+        {
+          "id": "f_rank25_有明_男子",
+          "q": "2025年荒玉駅伝男子の有明は何位？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "12位",
+              "62:31",
+              "有明"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku_2024_2025_focus_teams",
+              "aragyoku-teams/有明"
+            ]
+          }
+        },
+        {
+          "id": "f_rank24_有明_男子",
+          "q": "2024年荒玉駅伝男子の有明は何位で総合タイムは？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "11位",
+              "61:49"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku_2024_2025_focus_teams",
+              "aragyoku-teams/有明"
+            ]
+          }
+        },
+        {
+          "id": "f_yoy_有明_男子",
+          "q": "2024から2025で荒玉駅伝男子の有明はどう変わった？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "11位",
+              "12位",
+              "61:49",
+              "62:31"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku_2024_2025_focus_teams",
+              "aragyoku-teams/有明"
+            ]
+          }
+        },
+        {
+          "id": "f_rank25_有明_女子",
+          "q": "2025年荒玉駅伝女子の有明は何位？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "12位",
+              "47:24",
+              "有明"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku_2024_2025_focus_teams",
+              "aragyoku-teams/有明"
+            ]
+          }
+        },
+        {
+          "id": "f_rank24_有明_女子",
+          "q": "2024年荒玉駅伝女子の有明は何位で総合タイムは？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "13位",
+              "47:57"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku_2024_2025_focus_teams",
+              "aragyoku-teams/有明"
+            ]
+          }
+        },
+        {
+          "id": "f_yoy_有明_女子",
+          "q": "2024から2025で荒玉駅伝女子の有明はどう変わった？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "13位",
+              "12位",
+              "47:57",
+              "47:24"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku_2024_2025_focus_teams",
+              "aragyoku-teams/有明"
+            ]
+          }
+        },
+        {
+          "id": "f_daimyo_men_up",
+          "q": "2025年荒玉駅伝男子の岱明は前年と比べて何位になった？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "6位",
+              "59:08",
+              "15位"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku_2024_2025_focus_teams",
+              "aragyoku-teams/岱明"
+            ]
+          }
+        },
+        {
+          "id": "f_tensui_record",
+          "q": "天水中の荒玉駅伝で区間新を出したのは誰？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "山本悠斗",
+              "8:37"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku_2024_2025_focus_teams",
+              "aragyoku-teams/天水"
+            ]
+          }
+        },
+        {
+          "id": "f_fuzoku_women",
+          "q": "玉名付属中の荒玉駅伝女子は2024と2025でどうだった？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "5位",
+              "10位",
+              "43:50",
+              "46:55"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku_2024_2025_focus_teams",
+              "aragyoku-teams/玉高附属"
+            ]
+          }
+        },
+        {
+          "id": "f_ariake_men_rec",
+          "q": "2024年荒玉駅伝男子1区の区間新は誰？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "米村和真",
+              "9:01",
+              "有明"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku_2024_2025_focus_teams",
+              "aragyoku-teams/有明",
+              "transcripts/2024-男子"
+            ]
+          }
+        },
+        {
+          "id": "f_fuzoku_kamei",
+          "q": "2024年荒玉駅伝男子3区で区間新の玉高附属の選手は？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "亀井遼希",
+              "9:24"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku_2024_2025_focus_teams",
+              "aragyoku-teams/玉高附属"
+            ]
+          }
+        },
+        {
+          "id": "f_fuzoku_kusano",
+          "q": "2025年荒玉駅伝男子3区区間1位の玉高附属の選手は？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "草野瑠唯",
+              "9:14"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku_2024_2025_focus_teams",
+              "aragyoku-teams/玉高附属"
+            ]
+          }
+        },
+        {
+          "id": "f_winner_2025m",
+          "q": "2025年荒玉駅伝男子の優勝校は？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "菊水",
+              "56:17"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku_2024_2025_focus_teams",
+              "winners-by-year",
+              "transcripts/2025-男子"
+            ]
+          }
+        },
+        {
+          "id": "f_winner_2024w",
+          "q": "2024年荒玉駅伝女子の優勝校は？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "南関",
+              "42:25"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku_2024_2025_focus_teams",
+              "winners-by-year",
+              "transcripts/2024-女子"
+            ]
+          }
+        },
+        {
+          "id": "mr_total_2012_女",
+          "q": "2012年荒玉駅伝女子の大会記録（総合）は？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "40:58",
+              "玉名"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "meet_records",
+              "transcripts/2012-女子",
+              "aragyoku/transcripts"
+            ]
+          }
+        },
+        {
+          "id": "mr_leg_2012_女_1",
+          "q": "2012年荒玉駅伝女子の1区の大会区間記録は誰のタイム？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "9:59",
+              "小柳春菜",
+              "有明"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "meet_records",
+              "transcripts/2012-女子",
+              "aragyoku/transcripts"
+            ]
+          }
+        },
+        {
+          "id": "mr_leg_2012_女_2",
+          "q": "2012年荒玉駅伝女子の2区の大会区間記録は誰のタイム？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "6:08",
+              "井上智世",
+              "岱明"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "meet_records",
+              "transcripts/2012-女子",
+              "aragyoku/transcripts"
+            ]
+          }
+        },
+        {
+          "id": "mr_leg_2012_女_3",
+          "q": "2012年荒玉駅伝女子の3区の大会区間記録は誰のタイム？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "6:38",
+              "小山可奈",
+              "有明"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "meet_records",
+              "transcripts/2012-女子",
+              "aragyoku/transcripts"
+            ]
+          }
+        },
+        {
+          "id": "mr_leg_2012_女_4",
+          "q": "2012年荒玉駅伝女子の4区の大会区間記録は誰のタイム？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "6:49",
+              "東麻美",
+              "岱明"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "meet_records",
+              "transcripts/2012-女子",
+              "aragyoku/transcripts"
+            ]
+          }
+        },
+        {
+          "id": "mr_leg_2012_女_5",
+          "q": "2012年荒玉駅伝女子の5区の大会区間記録は誰のタイム？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "10:15",
+              "井上智世",
+              "岱明"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "meet_records",
+              "transcripts/2012-女子",
+              "aragyoku/transcripts"
+            ]
+          }
+        },
+        {
+          "id": "mr_total_2012_男",
+          "q": "2012年荒玉駅伝男子の大会記録（総合）は？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "63:28",
+              "荒尾海陽"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "meet_records",
+              "transcripts/2012-男子",
+              "aragyoku/transcripts"
+            ]
+          }
+        },
+        {
+          "id": "mr_leg_2012_男_1",
+          "q": "2012年荒玉駅伝男子の1区の大会区間記録は誰のタイム？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "12:28",
+              "一瀬弘樹",
+              "腹栄"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "meet_records",
+              "transcripts/2012-男子",
+              "aragyoku/transcripts"
+            ]
+          }
+        },
+        {
+          "id": "mr_leg_2012_男_2",
+          "q": "2012年荒玉駅伝男子の2区の大会区間記録は誰のタイム？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "9:37",
+              "浅野大希",
+              "玉南"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "meet_records",
+              "transcripts/2012-男子",
+              "aragyoku/transcripts"
+            ]
+          }
+        },
+        {
+          "id": "mr_leg_2012_男_3",
+          "q": "2012年荒玉駅伝男子の3区の大会区間記録は誰のタイム？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "8:54",
+              "鳥山和徳",
+              "荒尾海陽"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "meet_records",
+              "transcripts/2012-男子",
+              "aragyoku/transcripts"
+            ]
+          }
+        },
+        {
+          "id": "mr_leg_2012_男_4",
+          "q": "2012年荒玉駅伝男子の4区の大会区間記録は誰のタイム？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "9:00",
+              "河原誠剛",
+              "岱明"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "meet_records",
+              "transcripts/2012-男子",
+              "aragyoku/transcripts"
+            ]
+          }
+        },
+        {
+          "id": "mr_leg_2012_男_5",
+          "q": "2012年荒玉駅伝男子の5区の大会区間記録は誰のタイム？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "9:19",
+              "宮上翔太",
+              "荒尾三"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "meet_records",
+              "transcripts/2012-男子",
+              "aragyoku/transcripts"
+            ]
+          }
+        },
+        {
+          "id": "mr_leg_2012_男_6",
+          "q": "2012年荒玉駅伝男子の6区の大会区間記録は誰のタイム？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "12:38",
+              "福原雅史",
+              "三加和"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "meet_records",
+              "transcripts/2012-男子",
+              "aragyoku/transcripts"
+            ]
+          }
+        },
+        {
+          "id": "mr_total_2013_女",
+          "q": "2013年荒玉駅伝女子の大会記録（総合）は？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "40:58",
+              "玉名"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "meet_records",
+              "transcripts/2013-女子",
+              "aragyoku/transcripts"
+            ]
+          }
+        },
+        {
+          "id": "mr_leg_2013_女_1",
+          "q": "2013年荒玉駅伝女子の1区の大会区間記録は誰のタイム？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "9:59",
+              "小柳春菜",
+              "有明"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "meet_records",
+              "transcripts/2013-女子",
+              "aragyoku/transcripts"
+            ]
+          }
+        },
+        {
+          "id": "mr_leg_2013_女_2",
+          "q": "2013年荒玉駅伝女子の2区の大会区間記録は誰のタイム？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "6:08",
+              "井上智世",
+              "岱明"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "meet_records",
+              "transcripts/2013-女子",
+              "aragyoku/transcripts"
+            ]
+          }
+        },
+        {
+          "id": "mr_leg_2013_女_3",
+          "q": "2013年荒玉駅伝女子の3区の大会区間記録は誰のタイム？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "6:36",
+              "高木彩加",
+              "三加和"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "meet_records",
+              "transcripts/2013-女子",
+              "aragyoku/transcripts"
+            ]
+          }
+        },
+        {
+          "id": "mr_leg_2013_女_4",
+          "q": "2013年荒玉駅伝女子の4区の大会区間記録は誰のタイム？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "6:49",
+              "東由美",
+              "岱明"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "meet_records",
+              "transcripts/2013-女子",
+              "aragyoku/transcripts"
+            ]
+          }
+        },
+        {
+          "id": "mr_leg_2013_女_5",
+          "q": "2013年荒玉駅伝女子の5区の大会区間記録は誰のタイム？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "10:15",
+              "井上智世",
+              "岱明"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "meet_records",
+              "transcripts/2013-女子",
+              "aragyoku/transcripts"
+            ]
+          }
+        },
+        {
+          "id": "mr_total_2013_男",
+          "q": "2013年荒玉駅伝男子の大会記録（総合）は？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "63:28",
+              "荒尾海陽"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "meet_records",
+              "transcripts/2013-男子",
+              "aragyoku/transcripts"
+            ]
+          }
+        },
+        {
+          "id": "mr_leg_2013_男_1",
+          "q": "2013年荒玉駅伝男子の1区の大会区間記録は誰のタイム？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "12:12",
+              "田上建",
+              "玉名"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "meet_records",
+              "transcripts/2013-男子",
+              "aragyoku/transcripts"
+            ]
+          }
+        },
+        {
+          "id": "mr_leg_2013_男_2",
+          "q": "2013年荒玉駅伝男子の2区の大会区間記録は誰のタイム？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "9:26",
+              "吉田成帆",
+              "玉名"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "meet_records",
+              "transcripts/2013-男子",
+              "aragyoku/transcripts"
+            ]
+          }
+        },
+        {
+          "id": "mr_leg_2013_男_3",
+          "q": "2013年荒玉駅伝男子の3区の大会区間記録は誰のタイム？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "8:54",
+              "鳥山和徳",
+              "荒尾海陽"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "meet_records",
+              "transcripts/2013-男子",
+              "aragyoku/transcripts"
+            ]
+          }
+        },
+        {
+          "id": "mr_leg_2013_男_4",
+          "q": "2013年荒玉駅伝男子の4区の大会区間記録は誰のタイム？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "9:00",
+              "河原誠剛",
+              "岱明"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "meet_records",
+              "transcripts/2013-男子",
+              "aragyoku/transcripts"
+            ]
+          }
+        },
+        {
+          "id": "mr_leg_2013_男_5",
+          "q": "2013年荒玉駅伝男子の5区の大会区間記録は誰のタイム？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "9:19",
+              "宮上翔太",
+              "荒尾三"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "meet_records",
+              "transcripts/2013-男子",
+              "aragyoku/transcripts"
+            ]
+          }
+        },
+        {
+          "id": "mr_leg_2013_男_6",
+          "q": "2013年荒玉駅伝男子の6区の大会区間記録は誰のタイム？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "12:34",
+              "山瀬大成",
+              "玉南"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "meet_records",
+              "transcripts/2013-男子",
+              "aragyoku/transcripts"
+            ]
+          }
+        },
+        {
+          "id": "mr_total_2014_男",
+          "q": "2014年荒玉駅伝男子の大会記録（総合）は？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "63:28",
+              "荒尾海陽"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "meet_records",
+              "transcripts/2014-男子",
+              "aragyoku/transcripts"
+            ]
+          }
+        },
+        {
+          "id": "mr_leg_2014_男_1",
+          "q": "2014年荒玉駅伝男子の1区の大会区間記録は誰のタイム？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "11:50",
+              "田上建",
+              "玉名"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "meet_records",
+              "transcripts/2014-男子",
+              "aragyoku/transcripts"
+            ]
+          }
+        },
+        {
+          "id": "mr_leg_2014_男_2",
+          "q": "2014年荒玉駅伝男子の2区の大会区間記録は誰のタイム？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "9:26",
+              "吉田成帆",
+              "玉名"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "meet_records",
+              "transcripts/2014-男子",
+              "aragyoku/transcripts"
+            ]
+          }
+        },
+        {
+          "id": "mr_leg_2014_男_3",
+          "q": "2014年荒玉駅伝男子の3区の大会区間記録は誰のタイム？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "8:54",
+              "鳥山和徳",
+              "荒尾海陽"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "meet_records",
+              "transcripts/2014-男子",
+              "aragyoku/transcripts"
+            ]
+          }
+        },
+        {
+          "id": "mr_leg_2014_男_4",
+          "q": "2014年荒玉駅伝男子の4区の大会区間記録は誰のタイム？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "9:00",
+              "河原誠剛",
+              "岱明"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "meet_records",
+              "transcripts/2014-男子",
+              "aragyoku/transcripts"
+            ]
+          }
+        },
+        {
+          "id": "mr_leg_2014_男_5",
+          "q": "2014年荒玉駅伝男子の5区の大会区間記録は誰のタイム？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "9:19",
+              "宮上翔太",
+              "荒尾三"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "meet_records",
+              "transcripts/2014-男子",
+              "aragyoku/transcripts"
+            ]
+          }
+        },
+        {
+          "id": "mr_leg_2014_男_6",
+          "q": "2014年荒玉駅伝男子の6区の大会区間記録は誰のタイム？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "12:34",
+              "山瀬大成",
+              "玉南"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "meet_records",
+              "transcripts/2014-男子",
+              "aragyoku/transcripts"
+            ]
+          }
+        },
+        {
+          "id": "mr_total_2015_女",
+          "q": "2015年荒玉駅伝女子の大会記録（総合）は？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "40:58",
+              "玉名"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "meet_records",
+              "transcripts/2015-女子",
+              "aragyoku/transcripts"
+            ]
+          }
+        },
+        {
+          "id": "mr_leg_2015_女_1",
+          "q": "2015年荒玉駅伝女子の1区の大会区間記録は誰のタイム？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "9:59",
+              "小柳春菜",
+              "有明"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "meet_records",
+              "transcripts/2015-女子",
+              "aragyoku/transcripts"
+            ]
+          }
+        },
+        {
+          "id": "mr_leg_2015_女_2",
+          "q": "2015年荒玉駅伝女子の2区の大会区間記録は誰のタイム？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "6:08",
+              "井上智世",
+              "岱明"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "meet_records",
+              "transcripts/2015-女子",
+              "aragyoku/transcripts"
+            ]
+          }
+        },
+        {
+          "id": "mr_leg_2015_女_3",
+          "q": "2015年荒玉駅伝女子の3区の大会区間記録は誰のタイム？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "6:36",
+              "高木彩加",
+              "三加和"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "meet_records",
+              "transcripts/2015-女子",
+              "aragyoku/transcripts"
+            ]
+          }
+        },
+        {
+          "id": "mr_leg_2015_女_4",
+          "q": "2015年荒玉駅伝女子の4区の大会区間記録は誰のタイム？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "6:49",
+              "東由美",
+              "岱明"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "meet_records",
+              "transcripts/2015-女子",
+              "aragyoku/transcripts"
+            ]
+          }
+        },
+        {
+          "id": "mr_leg_2015_女_5",
+          "q": "2015年荒玉駅伝女子の5区の大会区間記録は誰のタイム？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "10:15",
+              "井上智世",
+              "岱明"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "meet_records",
+              "transcripts/2015-女子",
+              "aragyoku/transcripts"
+            ]
+          }
+        },
+        {
+          "id": "mr_total_2015_男",
+          "q": "2015年荒玉駅伝男子の大会記録（総合）は？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "63:03",
+              "玉名"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "meet_records",
+              "transcripts/2015-男子",
+              "aragyoku/transcripts"
+            ]
+          }
+        },
+        {
+          "id": "mr_leg_2015_男_1",
+          "q": "2015年荒玉駅伝男子の1区の大会区間記録は誰のタイム？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "11:50",
+              "田上建",
+              "玉名"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "meet_records",
+              "transcripts/2015-男子",
+              "aragyoku/transcripts"
+            ]
+          }
+        },
+        {
+          "id": "mr_leg_2015_男_2",
+          "q": "2015年荒玉駅伝男子の2区の大会区間記録は誰のタイム？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "9:26",
+              "吉田成帆",
+              "玉名"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "meet_records",
+              "transcripts/2015-男子",
+              "aragyoku/transcripts"
+            ]
+          }
+        },
+        {
+          "id": "mr_leg_2015_男_3",
+          "q": "2015年荒玉駅伝男子の3区の大会区間記録は誰のタイム？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "8:43",
+              "柴尾一樹",
+              "菊水"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "meet_records",
+              "transcripts/2015-男子",
+              "aragyoku/transcripts"
+            ]
+          }
+        },
+        {
+          "id": "mr_leg_2015_男_4",
+          "q": "2015年荒玉駅伝男子の4区の大会区間記録は誰のタイム？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "9:00",
+              "河原誠剛",
+              "岱明"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "meet_records",
+              "transcripts/2015-男子",
+              "aragyoku/transcripts"
+            ]
+          }
+        },
+        {
+          "id": "mr_leg_2015_男_5",
+          "q": "2015年荒玉駅伝男子の5区の大会区間記録は誰のタイム？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "9:19",
+              "宮上翔太",
+              "荒尾三"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "meet_records",
+              "transcripts/2015-男子",
+              "aragyoku/transcripts"
+            ]
+          }
+        },
+        {
+          "id": "mr_leg_2015_男_6",
+          "q": "2015年荒玉駅伝男子の6区の大会区間記録は誰のタイム？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "12:34",
+              "山瀬大成",
+              "玉南"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "meet_records",
+              "transcripts/2015-男子",
+              "aragyoku/transcripts"
+            ]
+          }
+        },
+        {
+          "id": "mr_total_2016_女",
+          "q": "2016年荒玉駅伝女子の大会記録（総合）は？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "40:58",
+              "玉名"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "meet_records",
+              "transcripts/2016-女子",
+              "aragyoku/transcripts"
+            ]
+          }
+        },
+        {
+          "id": "mr_leg_2016_女_1",
+          "q": "2016年荒玉駅伝女子の1区の大会区間記録は誰のタイム？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "9:59",
+              "小柳春菜",
+              "有明"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "meet_records",
+              "transcripts/2016-女子",
+              "aragyoku/transcripts"
+            ]
+          }
+        },
+        {
+          "id": "mr_leg_2016_女_2",
+          "q": "2016年荒玉駅伝女子の2区の大会区間記録は誰のタイム？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "6:08",
+              "井上智世",
+              "岱明"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "meet_records",
+              "transcripts/2016-女子",
+              "aragyoku/transcripts"
+            ]
+          }
+        },
+        {
+          "id": "mr_leg_2016_女_3",
+          "q": "2016年荒玉駅伝女子の3区の大会区間記録は誰のタイム？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "6:36",
+              "高木彩加",
+              "三加和"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "meet_records",
+              "transcripts/2016-女子",
+              "aragyoku/transcripts"
+            ]
+          }
+        },
+        {
+          "id": "mr_leg_2016_女_4",
+          "q": "2016年荒玉駅伝女子の4区の大会区間記録は誰のタイム？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "6:49",
+              "東由美",
+              "岱明"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "meet_records",
+              "transcripts/2016-女子",
+              "aragyoku/transcripts"
+            ]
+          }
+        },
+        {
+          "id": "mr_leg_2016_女_5",
+          "q": "2016年荒玉駅伝女子の5区の大会区間記録は誰のタイム？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "10:15",
+              "井上智世",
+              "岱明"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "meet_records",
+              "transcripts/2016-女子",
+              "aragyoku/transcripts"
+            ]
+          }
+        },
+        {
+          "id": "mr_total_2016_男",
+          "q": "2016年荒玉駅伝男子の大会記録（総合）は？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "63:03",
+              "玉名"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "meet_records",
+              "transcripts/2016-男子",
+              "aragyoku/transcripts"
+            ]
+          }
+        },
+        {
+          "id": "mr_leg_2016_男_1",
+          "q": "2016年荒玉駅伝男子の1区の大会区間記録は誰のタイム？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "11:50",
+              "田上建",
+              "玉名"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "meet_records",
+              "transcripts/2016-男子",
+              "aragyoku/transcripts"
+            ]
+          }
+        },
+        {
+          "id": "mr_leg_2016_男_2",
+          "q": "2016年荒玉駅伝男子の2区の大会区間記録は誰のタイム？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "9:26",
+              "吉田成帆",
+              "玉名"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "meet_records",
+              "transcripts/2016-男子",
+              "aragyoku/transcripts"
+            ]
+          }
+        },
+        {
+          "id": "mr_leg_2016_男_3",
+          "q": "2016年荒玉駅伝男子の3区の大会区間記録は誰のタイム？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "8:43",
+              "柴尾一樹",
+              "菊水"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "meet_records",
+              "transcripts/2016-男子",
+              "aragyoku/transcripts"
+            ]
+          }
+        },
+        {
+          "id": "mr_leg_2016_男_4",
+          "q": "2016年荒玉駅伝男子の4区の大会区間記録は誰のタイム？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "9:00",
+              "河原誠剛",
+              "岱明"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "meet_records",
+              "transcripts/2016-男子",
+              "aragyoku/transcripts"
+            ]
+          }
+        },
+        {
+          "id": "mr_leg_2016_男_5",
+          "q": "2016年荒玉駅伝男子の5区の大会区間記録は誰のタイム？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "9:19",
+              "宮上翔太",
+              "荒尾三"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "meet_records",
+              "transcripts/2016-男子",
+              "aragyoku/transcripts"
+            ]
+          }
+        },
+        {
+          "id": "mr_leg_2016_男_6",
+          "q": "2016年荒玉駅伝男子の6区の大会区間記録は誰のタイム？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "12:34",
+              "山瀬大成",
+              "玉南"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "meet_records",
+              "transcripts/2016-男子",
+              "aragyoku/transcripts"
+            ]
+          }
+        },
+        {
+          "id": "mr_total_2017_女",
+          "q": "2017年荒玉駅伝女子の大会記録（総合）は？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "40:58",
+              "玉名"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "meet_records",
+              "transcripts/2017-女子",
+              "aragyoku/transcripts"
+            ]
+          }
+        },
+        {
+          "id": "mr_leg_2017_女_1",
+          "q": "2017年荒玉駅伝女子の1区の大会区間記録は誰のタイム？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "9:59",
+              "小柳春菜",
+              "有明"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "meet_records",
+              "transcripts/2017-女子",
+              "aragyoku/transcripts"
+            ]
+          }
+        },
+        {
+          "id": "mr_leg_2017_女_2",
+          "q": "2017年荒玉駅伝女子の2区の大会区間記録は誰のタイム？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "6:08",
+              "井上智世",
+              "岱明"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "meet_records",
+              "transcripts/2017-女子",
+              "aragyoku/transcripts"
+            ]
+          }
+        },
+        {
+          "id": "mr_leg_2017_女_3",
+          "q": "2017年荒玉駅伝女子の3区の大会区間記録は誰のタイム？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "6:36",
+              "高木彩加",
+              "三加和"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "meet_records",
+              "transcripts/2017-女子",
+              "aragyoku/transcripts"
+            ]
+          }
+        },
+        {
+          "id": "mr_leg_2017_女_4",
+          "q": "2017年荒玉駅伝女子の4区の大会区間記録は誰のタイム？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "6:42",
+              "浦浜実里",
+              "荒尾三"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "meet_records",
+              "transcripts/2017-女子",
+              "aragyoku/transcripts"
+            ]
+          }
+        },
+        {
+          "id": "mr_leg_2017_女_5",
+          "q": "2017年荒玉駅伝女子の5区の大会区間記録は誰のタイム？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "10:15",
+              "井上智世",
+              "岱明"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "meet_records",
+              "transcripts/2017-女子",
+              "aragyoku/transcripts"
+            ]
+          }
+        },
+        {
+          "id": "mr_total_2017_男",
+          "q": "2017年荒玉駅伝男子の大会記録（総合）は？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "62:53",
+              "菊水"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "meet_records",
+              "transcripts/2017-男子",
+              "aragyoku/transcripts"
+            ]
+          }
+        },
+        {
+          "id": "mr_leg_2017_男_1",
+          "q": "2017年荒玉駅伝男子の1区の大会区間記録は誰のタイム？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "11:50",
+              "田上建",
+              "玉名"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "meet_records",
+              "transcripts/2017-男子",
+              "aragyoku/transcripts"
+            ]
+          }
+        },
+        {
+          "id": "mr_leg_2017_男_2",
+          "q": "2017年荒玉駅伝男子の2区の大会区間記録は誰のタイム？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "any_of": [
+              "9:25",
+              "小山将治",
+              "荒尾三"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "meet_records",
+              "transcripts/2017-男子",
+              "aragyoku/transcripts"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

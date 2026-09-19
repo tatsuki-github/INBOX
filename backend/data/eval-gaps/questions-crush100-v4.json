@@ -1,0 +1,2068 @@
+{
+  "version": 1,
+  "total": 100,
+  "unique": 100,
+  "defaultYear": 2026,
+  "note": "crush100-v4 strict all_of: focus+meet_records+team legs",
+  "rounds": [
+    {
+      "id": 1,
+      "theme": "crush100-v4",
+      "questions": [
+        {
+          "id": "v4_r25_岱明_男子",
+          "q": "2025年荒玉駅伝男子の岱明は何位？総合タイムは？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "6位",
+              "59:08"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku_2024_2025_focus_teams",
+              "aragyoku-teams/岱明"
+            ]
+          }
+        },
+        {
+          "id": "v4_r24_岱明_男子",
+          "q": "2024年荒玉駅伝男子の岱明は何位？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "15位",
+              "65:15"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku_2024_2025_focus_teams",
+              "aragyoku-teams/岱明"
+            ]
+          }
+        },
+        {
+          "id": "v4_r25_岱明_女子",
+          "q": "2025年荒玉駅伝女子の岱明は何位？総合タイムは？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "7位",
+              "45:22"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku_2024_2025_focus_teams",
+              "aragyoku-teams/岱明"
+            ]
+          }
+        },
+        {
+          "id": "v4_r24_岱明_女子",
+          "q": "2024年荒玉駅伝女子の岱明は何位？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "6位",
+              "45:06"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku_2024_2025_focus_teams",
+              "aragyoku-teams/岱明"
+            ]
+          }
+        },
+        {
+          "id": "v4_r25_玉高附属_男子",
+          "q": "2025年荒玉駅伝男子の玉名付属は何位？総合タイムは？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "3位",
+              "58:37"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku_2024_2025_focus_teams",
+              "aragyoku-teams/玉高附属"
+            ]
+          }
+        },
+        {
+          "id": "v4_r24_玉高附属_男子",
+          "q": "2024年荒玉駅伝男子の玉高附属は何位？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "2位",
+              "58:13"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku_2024_2025_focus_teams",
+              "aragyoku-teams/玉高附属"
+            ]
+          }
+        },
+        {
+          "id": "v4_r25_玉高附属_女子",
+          "q": "2025年荒玉駅伝女子の玉名付属は何位？総合タイムは？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "10位",
+              "46:55"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku_2024_2025_focus_teams",
+              "aragyoku-teams/玉高附属"
+            ]
+          }
+        },
+        {
+          "id": "v4_r24_玉高附属_女子",
+          "q": "2024年荒玉駅伝女子の玉高附属は何位？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "5位",
+              "43:50"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku_2024_2025_focus_teams",
+              "aragyoku-teams/玉高附属"
+            ]
+          }
+        },
+        {
+          "id": "v4_r25_天水_男子",
+          "q": "2025年荒玉駅伝男子の天水は何位？総合タイムは？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "14位",
+              "63:39"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku_2024_2025_focus_teams",
+              "aragyoku-teams/天水"
+            ]
+          }
+        },
+        {
+          "id": "v4_r24_天水_男子",
+          "q": "2024年荒玉駅伝男子の天水は何位？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "14位",
+              "63:40"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku_2024_2025_focus_teams",
+              "aragyoku-teams/天水"
+            ]
+          }
+        },
+        {
+          "id": "v4_r25_天水_女子",
+          "q": "2025年荒玉駅伝女子の天水は何位？総合タイムは？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "15位",
+              "51:29"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku_2024_2025_focus_teams",
+              "aragyoku-teams/天水"
+            ]
+          }
+        },
+        {
+          "id": "v4_r24_天水_女子",
+          "q": "2024年荒玉駅伝女子の天水は何位？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "14位",
+              "49:41"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku_2024_2025_focus_teams",
+              "aragyoku-teams/天水"
+            ]
+          }
+        },
+        {
+          "id": "v4_r25_有明_男子",
+          "q": "2025年荒玉駅伝男子の有明は何位？総合タイムは？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "12位",
+              "62:31"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku_2024_2025_focus_teams",
+              "aragyoku-teams/有明"
+            ]
+          }
+        },
+        {
+          "id": "v4_r24_有明_男子",
+          "q": "2024年荒玉駅伝男子の有明は何位？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "11位",
+              "61:49"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku_2024_2025_focus_teams",
+              "aragyoku-teams/有明"
+            ]
+          }
+        },
+        {
+          "id": "v4_r25_有明_女子",
+          "q": "2025年荒玉駅伝女子の有明は何位？総合タイムは？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "12位",
+              "47:24"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku_2024_2025_focus_teams",
+              "aragyoku-teams/有明"
+            ]
+          }
+        },
+        {
+          "id": "v4_r24_有明_女子",
+          "q": "2024年荒玉駅伝女子の有明は何位？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "13位",
+              "47:57"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku_2024_2025_focus_teams",
+              "aragyoku-teams/有明"
+            ]
+          }
+        },
+        {
+          "id": "v4_tensui_sr",
+          "q": "天水中の荒玉駅伝で区間新を出したのは誰でタイムは？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "山本悠斗",
+              "8:37"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku_2024_2025_focus_teams",
+              "aragyoku-teams/天水"
+            ]
+          }
+        },
+        {
+          "id": "v4_daimyo_up",
+          "q": "岱明男子は2024から2025で何位から何位になった？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "15位",
+              "6位",
+              "59:08"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku_2024_2025_focus_teams",
+              "aragyoku-teams/岱明"
+            ]
+          }
+        },
+        {
+          "id": "v4_fuzoku_w",
+          "q": "玉名付属の荒玉女子は2024何位から2025何位？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "5位",
+              "10位"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku_2024_2025_focus_teams",
+              "aragyoku-teams/玉高附属"
+            ]
+          }
+        },
+        {
+          "id": "v4_ariake_rec",
+          "q": "2024年荒玉男子1区で区間新の有明の選手は？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "米村和真",
+              "9:01"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku_2024_2025_focus_teams",
+              "aragyoku-teams/有明"
+            ]
+          }
+        },
+        {
+          "id": "v4_kusano",
+          "q": "2025年荒玉男子3区区間1位の玉高附属は誰？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "草野瑠唯",
+              "9:14"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku_2024_2025_focus_teams",
+              "aragyoku-teams/玉高附属"
+            ]
+          }
+        },
+        {
+          "id": "v4_kamei",
+          "q": "2024年荒玉男子3区区間新の玉高附属は誰？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "亀井遼希",
+              "9:24"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku_2024_2025_focus_teams",
+              "aragyoku-teams/玉高附属"
+            ]
+          }
+        },
+        {
+          "id": "v4_leg_岱明_2025_男_L1",
+          "q": "2025年荒玉駅伝男子の岱明の1区は誰？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "倉田裕斗"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku-teams/岱明",
+              "transcripts/2025-男子"
+            ]
+          }
+        },
+        {
+          "id": "v4_leg_岱明_2025_男_L2",
+          "q": "2025年荒玉駅伝男子の岱明の2区は誰？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "松野凛空"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku-teams/岱明",
+              "transcripts/2025-男子"
+            ]
+          }
+        },
+        {
+          "id": "v4_leg_岱明_2025_男_L3",
+          "q": "2025年荒玉駅伝男子の岱明の3区は誰？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "今村昇磨"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku-teams/岱明",
+              "transcripts/2025-男子"
+            ]
+          }
+        },
+        {
+          "id": "v4_leg_岱明_2025_女_L1",
+          "q": "2025年荒玉駅伝女子の岱明の1区は誰？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "村上咲稀"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku-teams/岱明",
+              "transcripts/2025-女子"
+            ]
+          }
+        },
+        {
+          "id": "v4_leg_岱明_2025_女_L2",
+          "q": "2025年荒玉駅伝女子の岱明の2区は誰？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "増岡里俐"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku-teams/岱明",
+              "transcripts/2025-女子"
+            ]
+          }
+        },
+        {
+          "id": "v4_leg_岱明_2025_女_L3",
+          "q": "2025年荒玉駅伝女子の岱明の3区は誰？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "角田亜美"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku-teams/岱明",
+              "transcripts/2025-女子"
+            ]
+          }
+        },
+        {
+          "id": "v4_leg_岱明_2024_男_L1",
+          "q": "2024年荒玉駅伝男子の岱明の1区は誰？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "根本和樹"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku-teams/岱明",
+              "transcripts/2024-男子"
+            ]
+          }
+        },
+        {
+          "id": "v4_leg_岱明_2024_男_L2",
+          "q": "2024年荒玉駅伝男子の岱明の2区は誰？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "満田樹生"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku-teams/岱明",
+              "transcripts/2024-男子"
+            ]
+          }
+        },
+        {
+          "id": "v4_leg_岱明_2024_男_L3",
+          "q": "2024年荒玉駅伝男子の岱明の3区は誰？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "今村昇磨"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku-teams/岱明",
+              "transcripts/2024-男子"
+            ]
+          }
+        },
+        {
+          "id": "v4_leg_岱明_2024_女_L1",
+          "q": "2024年荒玉駅伝女子の岱明の1区は誰？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "角田里奈"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku-teams/岱明",
+              "transcripts/2024-女子"
+            ]
+          }
+        },
+        {
+          "id": "v4_leg_岱明_2024_女_L2",
+          "q": "2024年荒玉駅伝女子の岱明の2区は誰？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "瀧下那奈"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku-teams/岱明",
+              "transcripts/2024-女子"
+            ]
+          }
+        },
+        {
+          "id": "v4_leg_岱明_2024_女_L3",
+          "q": "2024年荒玉駅伝女子の岱明の3区は誰？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "高田麻由"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku-teams/岱明",
+              "transcripts/2024-女子"
+            ]
+          }
+        },
+        {
+          "id": "v4_leg_玉高附属_2025_男_L1",
+          "q": "2025年荒玉駅伝男子の玉高附属の1区は誰？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "小倉十和"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku-teams/玉高附属",
+              "transcripts/2025-男子"
+            ]
+          }
+        },
+        {
+          "id": "v4_leg_玉高附属_2025_男_L3",
+          "q": "2025年荒玉駅伝男子の玉高附属の3区は誰？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "草野瑠唯"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku-teams/玉高附属",
+              "transcripts/2025-男子"
+            ]
+          }
+        },
+        {
+          "id": "v4_leg_玉高附属_2025_女_L1",
+          "q": "2025年荒玉駅伝女子の玉高附属の1区は誰？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "鹿子木歩"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku-teams/玉高附属",
+              "transcripts/2025-女子"
+            ]
+          }
+        },
+        {
+          "id": "v4_leg_玉高附属_2025_女_L2",
+          "q": "2025年荒玉駅伝女子の玉高附属の2区は誰？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "三吉悠日"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku-teams/玉高附属",
+              "transcripts/2025-女子"
+            ]
+          }
+        },
+        {
+          "id": "v4_leg_玉高附属_2025_女_L3",
+          "q": "2025年荒玉駅伝女子の玉高附属の3区は誰？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "小川にこり"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku-teams/玉高附属",
+              "transcripts/2025-女子"
+            ]
+          }
+        },
+        {
+          "id": "v4_leg_玉高附属_2024_男_L1",
+          "q": "2024年荒玉駅伝男子の玉高附属の1区は誰？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "草野愛斗"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku-teams/玉高附属",
+              "transcripts/2024-男子"
+            ]
+          }
+        },
+        {
+          "id": "v4_leg_玉高附属_2024_男_L2",
+          "q": "2024年荒玉駅伝男子の玉高附属の2区は誰？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "草野瑠唯"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku-teams/玉高附属",
+              "transcripts/2024-男子"
+            ]
+          }
+        },
+        {
+          "id": "v4_leg_玉高附属_2024_男_L3",
+          "q": "2024年荒玉駅伝男子の玉高附属の3区は誰？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "亀井遼希"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku-teams/玉高附属",
+              "transcripts/2024-男子"
+            ]
+          }
+        },
+        {
+          "id": "v4_leg_玉高附属_2024_女_L1",
+          "q": "2024年荒玉駅伝女子の玉高附属の1区は誰？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "鹿子木歩"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku-teams/玉高附属",
+              "transcripts/2024-女子"
+            ]
+          }
+        },
+        {
+          "id": "v4_leg_玉高附属_2024_女_L2",
+          "q": "2024年荒玉駅伝女子の玉高附属の2区は誰？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "小山にこり"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku-teams/玉高附属",
+              "transcripts/2024-女子"
+            ]
+          }
+        },
+        {
+          "id": "v4_leg_玉高附属_2024_女_L3",
+          "q": "2024年荒玉駅伝女子の玉高附属の3区は誰？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "大木夏帆"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku-teams/玉高附属",
+              "transcripts/2024-女子"
+            ]
+          }
+        },
+        {
+          "id": "v4_leg_天水_2025_男_L1",
+          "q": "2025年荒玉駅伝男子の天水の1区は誰？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "木村幹太"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku-teams/天水",
+              "transcripts/2025-男子"
+            ]
+          }
+        },
+        {
+          "id": "v4_leg_天水_2025_男_L2",
+          "q": "2025年荒玉駅伝男子の天水の2区は誰？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "山本悠斗"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku-teams/天水",
+              "transcripts/2025-男子"
+            ]
+          }
+        },
+        {
+          "id": "v4_leg_天水_2025_男_L3",
+          "q": "2025年荒玉駅伝男子の天水の3区は誰？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "坂口昂輝"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku-teams/天水",
+              "transcripts/2025-男子"
+            ]
+          }
+        },
+        {
+          "id": "v4_leg_天水_2025_女_L1",
+          "q": "2025年荒玉駅伝女子の天水の1区は誰？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "浦田咲希"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku-teams/天水",
+              "transcripts/2025-女子"
+            ]
+          }
+        },
+        {
+          "id": "v4_leg_天水_2025_女_L2",
+          "q": "2025年荒玉駅伝女子の天水の2区は誰？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "竹原奈緒美"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku-teams/天水",
+              "transcripts/2025-女子"
+            ]
+          }
+        },
+        {
+          "id": "v4_leg_天水_2025_女_L3",
+          "q": "2025年荒玉駅伝女子の天水の3区は誰？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "竹原晴美"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku-teams/天水",
+              "transcripts/2025-女子"
+            ]
+          }
+        },
+        {
+          "id": "v4_leg_天水_2024_男_L1",
+          "q": "2024年荒玉駅伝男子の天水の1区は誰？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "山本悠斗"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku-teams/天水",
+              "transcripts/2024-男子"
+            ]
+          }
+        },
+        {
+          "id": "v4_leg_天水_2024_男_L2",
+          "q": "2024年荒玉駅伝男子の天水の2区は誰？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "大久保太晴"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku-teams/天水",
+              "transcripts/2024-男子"
+            ]
+          }
+        },
+        {
+          "id": "v4_leg_天水_2024_男_L3",
+          "q": "2024年荒玉駅伝男子の天水の3区は誰？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "木村幹太"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku-teams/天水",
+              "transcripts/2024-男子"
+            ]
+          }
+        },
+        {
+          "id": "v4_leg_天水_2024_女_L1",
+          "q": "2024年荒玉駅伝女子の天水の1区は誰？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "浦田咲希"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku-teams/天水",
+              "transcripts/2024-女子"
+            ]
+          }
+        },
+        {
+          "id": "v4_leg_天水_2024_女_L2",
+          "q": "2024年荒玉駅伝女子の天水の2区は誰？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "竹原晴美"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku-teams/天水",
+              "transcripts/2024-女子"
+            ]
+          }
+        },
+        {
+          "id": "v4_leg_天水_2024_女_L3",
+          "q": "2024年荒玉駅伝女子の天水の3区は誰？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "花谷明優"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku-teams/天水",
+              "transcripts/2024-女子"
+            ]
+          }
+        },
+        {
+          "id": "v4_leg_有明_2025_男_L1",
+          "q": "2025年荒玉駅伝男子の有明の1区は誰？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "竹下響佑"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku-teams/有明",
+              "transcripts/2025-男子"
+            ]
+          }
+        },
+        {
+          "id": "v4_leg_有明_2025_男_L2",
+          "q": "2025年荒玉駅伝男子の有明の2区は誰？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "山本穂也"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku-teams/有明",
+              "transcripts/2025-男子"
+            ]
+          }
+        },
+        {
+          "id": "v4_leg_有明_2025_女_L1",
+          "q": "2025年荒玉駅伝女子の有明の1区は誰？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "上土井咲輝"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku-teams/有明",
+              "transcripts/2025-女子"
+            ]
+          }
+        },
+        {
+          "id": "v4_leg_有明_2025_女_L2",
+          "q": "2025年荒玉駅伝女子の有明の2区は誰？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "溝江杏梨"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku-teams/有明",
+              "transcripts/2025-女子"
+            ]
+          }
+        },
+        {
+          "id": "v4_leg_有明_2025_女_L3",
+          "q": "2025年荒玉駅伝女子の有明の3区は誰？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "井芹志和"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku-teams/有明",
+              "transcripts/2025-女子"
+            ]
+          }
+        },
+        {
+          "id": "v4_leg_有明_2024_男_L1",
+          "q": "2024年荒玉駅伝男子の有明の1区は誰？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "米村和真"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku-teams/有明",
+              "transcripts/2024-男子"
+            ]
+          }
+        },
+        {
+          "id": "v4_leg_有明_2024_男_L2",
+          "q": "2024年荒玉駅伝男子の有明の2区は誰？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "竹下響佑"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku-teams/有明",
+              "transcripts/2024-男子"
+            ]
+          }
+        },
+        {
+          "id": "v4_leg_有明_2024_男_L3",
+          "q": "2024年荒玉駅伝男子の有明の3区は誰？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "熊本翔太"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku-teams/有明",
+              "transcripts/2024-男子"
+            ]
+          }
+        },
+        {
+          "id": "v4_leg_有明_2024_女_L1",
+          "q": "2024年荒玉駅伝女子の有明の1区は誰？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "杉本琉遙"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku-teams/有明",
+              "transcripts/2024-女子"
+            ]
+          }
+        },
+        {
+          "id": "v4_leg_有明_2024_女_L2",
+          "q": "2024年荒玉駅伝女子の有明の2区は誰？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "上土井咲輝"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku-teams/有明",
+              "transcripts/2024-女子"
+            ]
+          }
+        },
+        {
+          "id": "v4_leg_有明_2024_女_L3",
+          "q": "2024年荒玉駅伝女子の有明の3区は誰？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "盛島由来"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku-teams/有明",
+              "transcripts/2024-女子"
+            ]
+          }
+        },
+        {
+          "id": "v4_leg_菊水_2025_男_L1",
+          "q": "2025年荒玉駅伝男子の菊水の1区は誰？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "松浦眞大"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku-teams/菊水",
+              "transcripts/2025-男子"
+            ]
+          }
+        },
+        {
+          "id": "v4_leg_菊水_2025_男_L2",
+          "q": "2025年荒玉駅伝男子の菊水の2区は誰？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "丸山白虎"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku-teams/菊水",
+              "transcripts/2025-男子"
+            ]
+          }
+        },
+        {
+          "id": "v4_mr_t_2025_男",
+          "q": "2025年荒玉駅伝男子の総合大会記録（ボード上部）は何分でどこの学校？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "56:38",
+              "南関"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku_meet_records",
+              "transcripts/2025-男子"
+            ]
+          }
+        },
+        {
+          "id": "v4_mr_l_2025_男_1",
+          "q": "2025年荒玉駅伝男子の1区の大会区間記録は誰？タイムは？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "米村和真",
+              "9:01"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku_meet_records",
+              "transcripts/2025-男子"
+            ]
+          }
+        },
+        {
+          "id": "v4_mr_l_2025_男_2",
+          "q": "2025年荒玉駅伝男子の2区の大会区間記録は誰？タイムは？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "荒木琉偉",
+              "8:41"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku_meet_records",
+              "transcripts/2025-男子"
+            ]
+          }
+        },
+        {
+          "id": "v4_mr_l_2025_男_3",
+          "q": "2025年荒玉駅伝男子の3区の大会区間記録は誰？タイムは？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "亀井遼希",
+              "9:24"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku_meet_records",
+              "transcripts/2025-男子"
+            ]
+          }
+        },
+        {
+          "id": "v4_mr_t_2025_女",
+          "q": "2025年荒玉駅伝女子の総合大会記録（ボード上部）は何分でどこの学校？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "40:58",
+              "玉名"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku_meet_records",
+              "transcripts/2025-女子"
+            ]
+          }
+        },
+        {
+          "id": "v4_mr_l_2025_女_1",
+          "q": "2025年荒玉駅伝女子の1区の大会区間記録は誰？タイムは？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "西川侑里",
+              "9:46"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku_meet_records",
+              "transcripts/2025-女子"
+            ]
+          }
+        },
+        {
+          "id": "v4_mr_l_2025_女_2",
+          "q": "2025年荒玉駅伝女子の2区の大会区間記録は誰？タイムは？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "井上智世",
+              "6:08"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku_meet_records",
+              "transcripts/2025-女子"
+            ]
+          }
+        },
+        {
+          "id": "v4_mr_l_2025_女_3",
+          "q": "2025年荒玉駅伝女子の3区の大会区間記録は誰？タイムは？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "高木彩加",
+              "6:36"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku_meet_records",
+              "transcripts/2025-女子"
+            ]
+          }
+        },
+        {
+          "id": "v4_mr_t_2024_男",
+          "q": "2024年荒玉駅伝男子の総合大会記録（ボード上部）は何分でどこの学校？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "56:38",
+              "南関"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku_meet_records",
+              "transcripts/2024-男子"
+            ]
+          }
+        },
+        {
+          "id": "v4_mr_l_2024_男_1",
+          "q": "2024年荒玉駅伝男子の1区の大会区間記録は誰？タイムは？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "米村和真",
+              "9:01"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku_meet_records",
+              "transcripts/2024-男子"
+            ]
+          }
+        },
+        {
+          "id": "v4_mr_l_2024_男_2",
+          "q": "2024年荒玉駅伝男子の2区の大会区間記録は誰？タイムは？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "荒木琉偉",
+              "8:41"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku_meet_records",
+              "transcripts/2024-男子"
+            ]
+          }
+        },
+        {
+          "id": "v4_mr_l_2024_男_3",
+          "q": "2024年荒玉駅伝男子の3区の大会区間記録は誰？タイムは？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "亀井遼希",
+              "9:24"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku_meet_records",
+              "transcripts/2024-男子"
+            ]
+          }
+        },
+        {
+          "id": "v4_mr_t_2024_女",
+          "q": "2024年荒玉駅伝女子の総合大会記録（ボード上部）は何分でどこの学校？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "40:58",
+              "玉名"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku_meet_records",
+              "transcripts/2024-女子"
+            ]
+          }
+        },
+        {
+          "id": "v4_mr_l_2024_女_1",
+          "q": "2024年荒玉駅伝女子の1区の大会区間記録は誰？タイムは？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "西川侑里",
+              "9:46"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku_meet_records",
+              "transcripts/2024-女子"
+            ]
+          }
+        },
+        {
+          "id": "v4_mr_l_2024_女_2",
+          "q": "2024年荒玉駅伝女子の2区の大会区間記録は誰？タイムは？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "井上智世",
+              "6:08"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku_meet_records",
+              "transcripts/2024-女子"
+            ]
+          }
+        },
+        {
+          "id": "v4_mr_l_2024_女_3",
+          "q": "2024年荒玉駅伝女子の3区の大会区間記録は誰？タイムは？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "高木彩加",
+              "6:36"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku_meet_records",
+              "transcripts/2024-女子"
+            ]
+          }
+        },
+        {
+          "id": "v4_mr_t_2023_男",
+          "q": "2023年荒玉駅伝男子の総合大会記録（ボード上部）は何分でどこの学校？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "62:49",
+              "菊水"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku_meet_records",
+              "transcripts/2023-男子"
+            ]
+          }
+        },
+        {
+          "id": "v4_mr_l_2023_男_1",
+          "q": "2023年荒玉駅伝男子の1区の大会区間記録は誰？タイムは？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "田上建",
+              "11:50"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku_meet_records",
+              "transcripts/2023-男子"
+            ]
+          }
+        },
+        {
+          "id": "v4_mr_l_2023_男_2",
+          "q": "2023年荒玉駅伝男子の2区の大会区間記録は誰？タイムは？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "坂口大翔",
+              "9:09"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku_meet_records",
+              "transcripts/2023-男子"
+            ]
+          }
+        },
+        {
+          "id": "v4_mr_l_2023_男_3",
+          "q": "2023年荒玉駅伝男子の3区の大会区間記録は誰？タイムは？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "岩本信弘",
+              "8:41"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku_meet_records",
+              "transcripts/2023-男子"
+            ]
+          }
+        },
+        {
+          "id": "v4_mr_t_2023_女",
+          "q": "2023年荒玉駅伝女子の総合大会記録（ボード上部）は何分でどこの学校？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "40:58",
+              "玉名"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku_meet_records",
+              "transcripts/2023-女子"
+            ]
+          }
+        },
+        {
+          "id": "v4_mr_l_2023_女_1",
+          "q": "2023年荒玉駅伝女子の1区の大会区間記録は誰？タイムは？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "西川侑里",
+              "9:46"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku_meet_records",
+              "transcripts/2023-女子"
+            ]
+          }
+        },
+        {
+          "id": "v4_mr_l_2023_女_2",
+          "q": "2023年荒玉駅伝女子の2区の大会区間記録は誰？タイムは？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "井上智世",
+              "6:08"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku_meet_records",
+              "transcripts/2023-女子"
+            ]
+          }
+        },
+        {
+          "id": "v4_mr_l_2023_女_3",
+          "q": "2023年荒玉駅伝女子の3区の大会区間記録は誰？タイムは？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "高木彩加",
+              "6:36"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku_meet_records",
+              "transcripts/2023-女子"
+            ]
+          }
+        },
+        {
+          "id": "v4_mr_t_2022_男",
+          "q": "2022年荒玉駅伝男子の総合大会記録（ボード上部）は何分でどこの学校？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "62:49",
+              "菊水"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku_meet_records",
+              "transcripts/2022-男子"
+            ]
+          }
+        },
+        {
+          "id": "v4_mr_l_2022_男_1",
+          "q": "2022年荒玉駅伝男子の1区の大会区間記録は誰？タイムは？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "田上建",
+              "11:50"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku_meet_records",
+              "transcripts/2022-男子"
+            ]
+          }
+        },
+        {
+          "id": "v4_mr_l_2022_男_2",
+          "q": "2022年荒玉駅伝男子の2区の大会区間記録は誰？タイムは？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "坂口大翔",
+              "9:09"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku_meet_records",
+              "transcripts/2022-男子"
+            ]
+          }
+        },
+        {
+          "id": "v4_mr_l_2022_男_3",
+          "q": "2022年荒玉駅伝男子の3区の大会区間記録は誰？タイムは？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "岩本信弘",
+              "8:41"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku_meet_records",
+              "transcripts/2022-男子"
+            ]
+          }
+        },
+        {
+          "id": "v4_mr_t_2022_女",
+          "q": "2022年荒玉駅伝女子の総合大会記録（ボード上部）は何分でどこの学校？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "40:58",
+              "玉名"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku_meet_records",
+              "transcripts/2022-女子"
+            ]
+          }
+        },
+        {
+          "id": "v4_mr_l_2022_女_1",
+          "q": "2022年荒玉駅伝女子の1区の大会区間記録は誰？タイムは？",
+          "expect": {
+            "kinds": [
+              "answered",
+              "offline"
+            ],
+            "all_of": [
+              "山下紗瑛",
+              "9:55"
+            ],
+            "forbid": [
+              "コーチに直接聞いてください"
+            ],
+            "sources_any": [
+              "aragyoku_meet_records",
+              "transcripts/2022-女子"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

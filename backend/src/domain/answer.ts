@@ -412,21 +412,37 @@ function boostMeetYearSources(
       /地点分担|タイム目安|43分|区間配分|有田|補強|朝練|銀マット|手押し車|犬歩き|2区.*5区|5区.*2区|2\.855/.test(
         expandedQuery,
       );
+    const meetRecordQ =
+      /大会記録|区間記録|ボード.*記録|総合大会記録|記録保持|歴代記録/.test(expandedQuery);
     const courseMeta =
-      /ペース|距離|区間|コース|\/km|分でいく|分で走/.test(expandedQuery) &&
-      !lineOpsPrefer;
+      /ペース|距離|コース|\/km|分でいく|分で走/.test(expandedQuery) &&
+      !lineOpsPrefer &&
+      !meetRecordQ &&
+      !/何位|誰|選手|区間新|前年比|分析/.test(expandedQuery);
+    // 「○区は誰」は距離質問ではない（区間キーワードだけで overview に流さない）
+    const legAthleteQ =
+      /\d区は誰|\d区の選手|何区は誰|区間選手/.test(expandedQuery) ||
+      (/区/.test(expandedQuery) && /誰|選手名/.test(expandedQuery));
     const focusTeamAnalysis =
-      /2024|2025|前年比|深掘り|分析/.test(expandedQuery) &&
-      /岱明|玉名付属|玉名附属|玉高附属|天水|有明/.test(expandedQuery);
+      /岱明|玉名付属|玉名附属|玉高附属|天水|有明/.test(expandedQuery) &&
+      /2024|2025|前年比|深掘り|分析|何位|短縮|区間新|荒玉/.test(expandedQuery);
     if (focusTeamAnalysis) {
       push("out-analysis/aragyoku_2024_2025_focus_teams.md");
+    }
+    if (meetRecordQ) {
+      push("out-analysis/aragyoku_meet_records.md");
     }
     if (/2位まで|2位以内|総合2位|優勝.*回数|回数/.test(expandedQuery)) {
       push("out-analysis/aragyoku_top2_finish_counts.md");
       push("aragyoku/winners-by-year.md");
     }
-    // Exact team history digest for 「〇〇の荒玉駅伝の過去の順位」
-    if ((/過去|歴代|順位|2024|2025|分析/.test(expandedQuery) || focusTeamAnalysis) && !courseMeta) {
+    // Exact team history digest for 「〇〇の荒玉駅伝の過去の順位」/ 区間選手
+    if (
+      (/過去|歴代|順位|2024|2025|分析/.test(expandedQuery) ||
+        focusTeamAnalysis ||
+        legAthleteQ) &&
+      !courseMeta
+    ) {
       const aragyokuTeams = [
         "荒尾海陽",
         "玉高附属",

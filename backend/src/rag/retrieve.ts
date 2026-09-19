@@ -454,8 +454,15 @@ function pathQueryBonus(source: string, query: string): number {
     bonus += 160;
   }
   if (
+    /大会記録|区間記録|ボード|記録保持|meet_records/.test(q) &&
+    /aragyoku_meet_records/.test(s)
+  ) {
+    bonus += 180;
+  }
+  if (
     /荒玉|aragyoku|中体連/.test(q) &&
-    /ペース|距離|区間|コース|\/km|分で/.test(q) &&
+    /ペース|距離|コース|\/km|分で/.test(q) &&
+    !/大会記録|区間記録|誰|何位/.test(q) &&
     /aragyoku-overview|aragyoku-ekiden-distance|average_pace/.test(s)
   ) {
     bonus += 140;

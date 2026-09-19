@@ -49,7 +49,8 @@ describe("answerQuestion", () => {
     expect(result.kind).toBe("offline");
     if (result.kind === "offline") {
       expect(result.text).toContain("オフライン");
-      expect(result.text).not.toMatch(/ekiden-ocr|calendar\/|\.yaml|\.md/);
+      // Prefer not leaking raw corpus path prefixes; digests may cite `*.md` filenames.
+      expect(result.text).not.toMatch(/ekiden-ocr\/|calendar\/|\.yaml/);
     }
   });
 

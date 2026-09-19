@@ -116,6 +116,7 @@
 - `out/analysis/aragyoku-teams/菊水.md` → `out-analysis/aragyoku-teams/菊水.md`
 - `out/analysis/aragyoku-teams/長洲.md` → `out-analysis/aragyoku-teams/長洲.md`
 - `out/analysis/aragyoku_2024_2025_focus_teams.md` → `out-analysis/aragyoku_2024_2025_focus_teams.md`
+- `out/analysis/aragyoku_meet_records.md` → `out-analysis/aragyoku_meet_records.md`
 - `out/analysis/aragyoku_top2_finish_counts.md` → `out-analysis/aragyoku_top2_finish_counts.md`
 - `out/analysis/aragyoku_top6_historical_average_pace.md` → `out-analysis/aragyoku_top6_historical_average_pace.md`
 - `out/analysis/aragyoku_women_track_joined.json` → `out-analysis/aragyoku_women_track_joined.json`

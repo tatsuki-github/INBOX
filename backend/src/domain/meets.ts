@@ -29,6 +29,14 @@ export function detectMeetKind(query: string): MeetKind {
   // Bare 駅伝 (club default) — but never when another meet was already matched above
   if (/駅伝/.test(q)) return "aragyoku";
 
+  // Local school + rank/leg without naming another meet → 荒玉 default
+  if (
+    /岱明|玉高附属|玉名付属|玉名附属|天水|有明|菊水|南関|長洲|玉陵|玉東|荒尾三|三加和/.test(q) &&
+    /何位|区|前年比|総合|区間新|大会記録|区間記録/.test(q)
+  ) {
+    return "aragyoku";
+  }
+
   return "none";
 }
 
