@@ -9,7 +9,7 @@
 
 ## Web（Vercel）
 
-[`web/`](web/) に Next.js アプリ（荒玉駅伝コース動画ライブラリ）があります。Vercel の **Root Directory** は `web`。認証は Auth.js（Credentials）。環境変数は `AUTH_SECRET` / `BASIC_AUTH_USER` / `BASIC_AUTH_PASSWORD`。詳細は [`web/README.md`](web/README.md)。
+[`web/`](web/) に Next.js アプリ（荒玉駅伝コース動画ライブラリ）があります。Vercel の **Root Directory** は `web`（プロジェクト名 `inbox`）。**現在は封鎖中**で、コミットしても自動デプロイされない（Paused + `git.deploymentEnabled: false`）。認証は Auth.js（Credentials）。詳細は [`web/README.md`](web/README.md) / [ADR 042](docs/adr/042-web-homepage-deploy-seal.md)。
 
 ## Backend（LINE / Vercel）
 

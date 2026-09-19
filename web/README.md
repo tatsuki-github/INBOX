@@ -17,6 +17,13 @@ npm run dev
 
 ## Vercel
 
+> **封鎖中（2026-09-19〜）**: プロジェクト `inbox`（Root Directory = `web`）は
+> **Paused** かつ Git 自動デプロイ無効（`vercel.json` の `git.deploymentEnabled: false` /
+> `ignoreCommand: exit 0`）。コミットしても `web/` はデプロイされない。
+> LINE 用の `idaten-line-backend` はそのままデプロイされる。再開時は
+> `vercel project resume inbox` と `vercel.json` の git/ignore 解除が必要。詳細は
+> [ADR 042](../docs/adr/042-web-homepage-deploy-seal.md)。
+
 1. **Root Directory** = `web`（Settings → Build and Deployment）
 2. Framework Preset: **Next.js**（自動検出）
 3. Build Command / Output Directory: **デフォルトのまま**（Output Directory は空）
@@ -24,7 +31,7 @@ npm run dev
    - `AUTH_SECRET`（必須。例: `openssl rand -base64 32`）
    - `BASIC_AUTH_USER`
    - `BASIC_AUTH_PASSWORD`
-5. Deploy / Redeploy
+5. Deploy / Redeploy（封鎖中は手動でも本番 traffic は Pause で止まる）
 
 ### 404 NOT_FOUND / Root Directory does not exist
 
