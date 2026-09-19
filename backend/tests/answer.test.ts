@@ -341,6 +341,40 @@ describe("answerQuestion", () => {
     }
   });
 
+  it("answers short 「2025年岱明男子5区は誰」from team digest not LINE", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("2025年岱明男子5区は誰？", {
+      skipRouter: true,
+      defaultYear: 2026,
+      llm: null,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.text).toContain("山本哲瑠");
+      expect(result.text).not.toContain("コーチに直接聞いてください");
+      expect(result.sources.some((s) => /aragyoku-teams\/岱明|focus_teams/.test(s))).toBe(
+        true,
+      );
+      expect(result.sources[0]).not.toMatch(/line-chats/);
+    }
+  });
+
+  it("still puts line-chats for 地点分担 / 2.855 questions", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("荒玉の地点分担で土山はどこ？", {
+      skipRouter: true,
+      defaultYear: 2026,
+      llm: null,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.text).toMatch(/D地点/);
+      expect(result.sources.some((s) => s.includes("line-chats"))).toBe(true);
+    }
+  });
+
   it("puts line-chats context for 銀マット / 合同練習 questions", async () => {
     resetRetrieverCache();
     resetKgCache();

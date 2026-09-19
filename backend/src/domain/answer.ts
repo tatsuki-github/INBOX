@@ -60,6 +60,18 @@ function finalizeAnswerText(
   });
 }
 
+/** Race-result 「○区は誰」— not LINE ops about 2区/5区距離. */
+function isLegAthleteQuestion(question: string): boolean {
+  const q = question.normalize("NFKC");
+  if (/地点分担|2\.855|朝練|銀マット|タイム目安|43分|区間配分|補強メニュー/.test(q)) {
+    return false;
+  }
+  return (
+    /\d区は誰|\d区の選手|\d区ランナー|何区は誰|区間選手/.test(q) ||
+    (/\d区/.test(q) && /誰|選手|ランナー|走った|区間タイム|区間順/.test(q))
+  );
+}
+
 function offlinePreviewBudget(question: string): number {
   const q = question.normalize("NFKC");
   // Rankings / full team records / win-count tables need wide windows
@@ -67,6 +79,9 @@ function offlinePreviewBudget(question: string): number {
     /ランキング|トップ\s*\d+|全記録|全件|一覧|回数|2位まで|2位以内|最速|一番速|何位|順位/.test(q)
   ) {
     return 3600;
+  }
+  if (isLegAthleteQuestion(q)) {
+    return 1400;
   }
   if (/自己ベスト|記録|\bSB\b|\bPB\b|何分|タイム/.test(q)) {
     return 900;
@@ -77,8 +92,9 @@ function offlinePreviewBudget(question: string): number {
 function previewForOffline(text: string, question: string, maxChars?: number): string {
   const budget = maxChars ?? offlinePreviewBudget(question);
   const flat = text.replace(/\s+/g, " ");
+  const q = question.normalize("NFKC");
   // Full-record / ranking digests: prefer document head (title + early tables)
-  if (/全記録|記録一覧|所属選手|ランキング|トップ\s*\d+|何位/.test(question.normalize("NFKC"))) {
+  if (/全記録|記録一覧|所属選手|ランキング|トップ\s*\d+|何位/.test(q)) {
     return flat.slice(0, budget);
   }
   const isos = question.match(/20\d{2}-\d{2}-\d{2}/g) ?? [];
@@ -88,6 +104,42 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
       const start = Math.max(0, idx - 140);
       const end = Math.min(flat.length, idx + Math.max(180, budget - 140));
       return flat.slice(start, end);
+    }
+  }
+  // 「2025年岱明男子5区は誰」→ year section + `| 5 | 選手` row (not YoY summary)
+  const legMatch = q.match(/([1-6])区/);
+  if (legMatch && isLegAthleteQuestion(q)) {
+    const leg = legMatch[1]!;
+    const years = q.match(/20\d{2}/g) ?? [];
+    const yearStarts: number[] = [];
+    for (const y of years) {
+      for (const needle of [
+        `#### ${y}年`,
+        `### ${y}年`,
+        `## ${y}年`,
+        `${y}年 区間`,
+        `${y}年の区間`,
+        `| ${y} |`,
+      ]) {
+        const idx = flat.indexOf(needle);
+        if (idx >= 0) yearStarts.push(idx);
+      }
+    }
+    const searchFrom = yearStarts.length > 0 ? Math.min(...yearStarts) : 0;
+    const rowRe = new RegExp(`\\|\\s*${leg}\\s*\\|\\s*[^|\\d]{1,20}\\|`);
+    const slice = flat.slice(searchFrom);
+    const m = slice.match(rowRe);
+    if (m && m.index != null) {
+      const idx = searchFrom + m.index;
+      const start = Math.max(0, idx - 60);
+      return flat.slice(start, Math.min(flat.length, start + budget));
+    }
+    // Fallback: first `| N |` after year even if name cell is short
+    const loose = slice.match(new RegExp(`\\|\\s*${leg}\\s*\\|`));
+    if (loose && loose.index != null) {
+      const idx = searchFrom + loose.index;
+      const start = Math.max(0, idx - 60);
+      return flat.slice(start, Math.min(flat.length, start + budget));
     }
   }
   // Prefer year rows in tables (e.g. "| 2023 |" average-pace digests) over title hits
@@ -323,6 +375,11 @@ function boostDaimingLineSources(query: string, baseSources: string[]): string[]
   if (/夕練/.test(q) && /何時|開始|時刻|スタート|から/.test(q)) {
     push("practice/practice.2026.json");
     push("calendar/events.daiming.yaml");
+  }
+
+  // 「2025年岱明男子5区は誰」は結果正本へ。地点分担・2.855 距離メモの LINE を先頭にしない
+  if (isLegAthleteQuestion(q)) {
+    return baseSources.filter((s) => !/line-chats/.test(s));
   }
 
   const lineOps =

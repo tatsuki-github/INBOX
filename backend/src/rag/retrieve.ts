@@ -468,7 +468,13 @@ function pathQueryBonus(source: string, query: string): number {
     bonus += 140;
   }
   if (/荒尾|玉名|金栗PROJECT|アスリーツ|所属別/.test(q) && /arato-tamana-teams/.test(s)) bonus += 100;
+  // 「○区は誰」結果質問では LINE を上げない（2区/5区距離メモと衝突するため）
+  const legAthleteQ =
+    !/地点分担|2\.855|朝練|銀マット|タイム目安|43分|区間配分|補強メニュー/.test(q) &&
+    (/\d区は誰|\d区の選手|\d区ランナー|何区は誰|区間選手/.test(q) ||
+      (/\d区/.test(q) && /誰|選手|ランナー|走った|区間タイム|区間順/.test(q)));
   if (
+    !legAthleteQ &&
     /岱明|いだてん|銀マット|合同練習|おおはま|三加和|朝練|ナイター|和水|有田|補強|手押し車|犬歩き|分割走|厚底|地点分担|地点|土山コーチ|柴尾|曜日|集合時間|タイム目安|43分|区間配分|2\.855|2区.*5区|5区.*2区|お別れ会|金栗駅伝|走り納め|体育館前|補強メニュー/.test(
       q,
     ) &&
@@ -488,8 +494,20 @@ function pathQueryBonus(source: string, query: string): number {
   if (/arita-taisho/.test(s) && /有田|補強|手押し車|犬歩き|補強メニュー|43分|タイム目安/.test(q)) {
     bonus += 120;
   }
-  if (/daiming-staff/.test(s) && /地点|朝練|2区|5区|2\.855|曜日|7:20/.test(q)) {
+  // 2区/5区 alone is race-leg wording; require ops markers for staff digest
+  if (
+    /daiming-staff/.test(s) &&
+    /地点分担|地点|朝練|2\.855|曜日|7:20|集合/.test(q) &&
+    !legAthleteQ
+  ) {
     bonus += 120;
+  }
+  if (
+    legAthleteQ &&
+    /荒玉|駅伝|男子|女子|20\d{2}/.test(q) &&
+    /aragyoku-teams\/|aragyoku_2024_2025_focus_teams|ekiden-ocr|aragyoku\/transcripts/.test(s)
+  ) {
+    bonus += 200;
   }
   if (
     /地点分担|タイム目安|43分切り|区間配分イメージ|有田|補強メニュー|2区.*5区|5区.*2区/.test(q) &&
@@ -602,6 +620,15 @@ function pathQueryPenalty(source: string, query: string): number {
     )
   ) {
     return -120;
+  }
+  // Race-leg athlete Q: demote LINE ops digests that mention 2区/5区距離
+  if (
+    /line-chats/.test(source) &&
+    !/地点分担|2\.855|朝練|銀マット|タイム目安|43分|区間配分|補強メニュー/.test(q) &&
+    (/\d区は誰|\d区の選手|\d区ランナー|何区は誰|区間選手/.test(q) ||
+      (/\d区/.test(q) && /誰|選手|ランナー|走った|区間タイム|区間順/.test(q)))
+  ) {
+    return -220;
   }
   return 0;
 }
