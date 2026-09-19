@@ -36,6 +36,8 @@ from arato_tamana_records import (  # noqa: E402
 ARATO_OUT = ROOT / "out" / "analysis" / "arato-tamana-teams"
 ARAGYOKU_OUT = ROOT / "out" / "analysis" / "aragyoku-teams"
 TRANSCRIPTS = ROOT / "input" / "aragyoku" / "transcripts"
+# 2024–2025 深掘り対象（詳細は aragyoku_2024_2025_focus_teams.md）
+FOCUS_YOY_TEAMS = frozenset({"岱明", "玉高附属", "天水", "有明"})
 NOTION_YEAR_SOURCES: list[tuple[str, Path]] = [
     ("2024", ROOT / "input" / "external" / "notion" / "databases" / "2024年度中学生" / "rows.json"),
     ("2025", ROOT / "input" / "external" / "notion" / "databases" / "2025年度中学生記録" / "rows.json"),
@@ -186,6 +188,75 @@ def _format_leg_line(leg: dict[str, Any]) -> str:
     return f"| {num} | {name} | {g} | {split} | {cum} |"
 
 
+def _parse_total_sec(text: Any) -> float | None:
+    if not text:
+        return None
+    parts = str(text).strip().split(":")
+    try:
+        if len(parts) == 2:
+            return int(parts[0]) * 60 + float(parts[1])
+        if len(parts) == 3:
+            return int(parts[0]) * 3600 + int(parts[1]) * 60 + float(parts[2])
+    except (TypeError, ValueError):
+        return None
+    return None
+
+
+def _fmt_delta(sec: float) -> str:
+    if abs(sec) < 0.05:
+        return "±0"
+    sign = "+" if sec > 0 else "-"
+    sec = abs(sec)
+    minutes = int(sec) // 60
+    rem = sec - minutes * 60
+    if minutes:
+        return f"{sign}{minutes}:{rem:05.2f}"
+    return f"{sign}{rem:.2f}s"
+
+
+def render_focus_yoy_section(team: str, entries: list[dict[str, Any]]) -> list[str]:
+    """岱明・玉高附属・天水・有明向けに 2024→2025 前年比を追記する。"""
+    if team not in FOCUS_YOY_TEAMS:
+        return []
+    by_key = {(int(e.get("year") or 0), str(e.get("gender") or "")): e for e in entries}
+    lines = [
+        "## 2024–2025 前年比（深掘り）",
+        "",
+        "詳細分析の正本: `out/analysis/aragyoku_2024_2025_focus_teams.md`。",
+        "「玉名付属中」は transcript 上 **玉高附属** と同一。",
+        "",
+        "| 性別 | 2024 | 2025 | 総合差 | 順位差 |",
+        "|---|---|---|---:|---:|",
+    ]
+    blurbs: list[str] = []
+    for gender in ("男子", "女子"):
+        a = by_key.get((2024, gender))
+        b = by_key.get((2025, gender))
+        if not a or not b:
+            continue
+        sec_a = _parse_total_sec(a.get("total"))
+        sec_b = _parse_total_sec(b.get("total"))
+        delta = (sec_b - sec_a) if sec_a is not None and sec_b is not None else None
+        rank_d = int(a.get("rank") or 0) - int(b.get("rank") or 0)
+        lines.append(
+            f"| {gender} | {a.get('rank')}位 {a.get('total')} | "
+            f"{b.get('rank')}位 {b.get('total')} | "
+            f"{_fmt_delta(delta) if delta is not None else '—'} | {rank_d:+d} |"
+        )
+        blurb = (
+            f"{team}の荒玉駅伝{gender}は2024年{a.get('rank')}位（{a.get('total')}）から"
+            f"2025年{b.get('rank')}位（{b.get('total')}）。"
+        )
+        if delta is not None:
+            blurb += f" 総合差{_fmt_delta(delta)}。"
+        blurbs.append(blurb)
+    lines.append("")
+    lines.extend(blurbs)
+    if blurbs:
+        lines.append("")
+    return lines
+
+
 def render_aragyoku_team_md(team: str, entries: list[dict[str, Any]]) -> str:
     lines = [
         f"# {team} 荒玉駅伝 歴代結果",
@@ -193,6 +264,7 @@ def render_aragyoku_team_md(team: str, entries: list[dict[str, Any]]) -> str:
         "玉名荒尾中体連駅伝（荒玉駅伝）の構造化 transcripts から、チーム単位で全年の結果を整理。",
         "",
     ]
+    lines.extend(render_focus_yoy_section(team, entries))
     # sort by year desc, men then women
     entries = sorted(
         entries,

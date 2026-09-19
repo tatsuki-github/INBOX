@@ -1098,5 +1098,123 @@
         }
       ]
     }
-  ]
+  ],
+  "meet_records": {
+    "total": {
+      "time": "40:58",
+      "year_labels": [
+        "H19"
+      ],
+      "western_years": [
+        2007
+      ],
+      "school": "玉名中",
+      "name": null
+    },
+    "legs": [
+      {
+        "leg": 1,
+        "distance_km": 3.0,
+        "time": "9:59",
+        "holders": [
+          {
+            "name": "小柳春菜",
+            "school": "有明",
+            "year_labels": [
+              "H18"
+            ],
+            "western_years": [
+              2006
+            ]
+          }
+        ]
+      },
+      {
+        "leg": 2,
+        "distance_km": 1.855,
+        "time": "6:08",
+        "holders": [
+          {
+            "name": "井上智世",
+            "school": "岱明",
+            "year_labels": [
+              "H15"
+            ],
+            "western_years": [
+              2003
+            ]
+          }
+        ]
+      },
+      {
+        "leg": 3,
+        "distance_km": 2.0,
+        "time": "6:38",
+        "holders": [
+          {
+            "name": "小山可奈",
+            "school": "有明",
+            "year_labels": [
+              "H15"
+            ],
+            "western_years": [
+              2003
+            ]
+          }
+        ],
+        "alt_holders": [
+          {
+            "time": "6:36",
+            "year_labels": [
+              "H22"
+            ],
+            "name": "熊本梨香",
+            "school": "玉名",
+            "note": "同ボードに並記。翌年以降ヘッダは6:36系統"
+          }
+        ]
+      },
+      {
+        "leg": 4,
+        "distance_km": 2.0,
+        "time": "6:49",
+        "holders": [
+          {
+            "name": "東麻美",
+            "school": "岱明",
+            "year_labels": [
+              "H15"
+            ],
+            "western_years": [
+              2003
+            ]
+          }
+        ]
+      },
+      {
+        "leg": 5,
+        "distance_km": 3.0,
+        "time": "10:15",
+        "holders": [
+          {
+            "name": "井上智世",
+            "school": "岱明",
+            "year_labels": [
+              "H16"
+            ],
+            "western_years": [
+              2004
+            ]
+          }
+        ]
+      }
+    ],
+    "course_era": "women_standard",
+    "source_image": "2012_female_tamana-aragyochu-ekiden_overall-results_01.jpg",
+    "notes": [
+      "3区は6:38(H15)をヘッダ正本とし、並記の6:36(H22 熊本梨香)はalt_holdersへ。",
+      "4区保持者名は東麻美の可能性あり（抽出は東由美）。要目視再確認。",
+      "4区保持者をボード読取で東麻美に補正（東由美から）"
+    ]
+  }
 }

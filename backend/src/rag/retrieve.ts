@@ -448,6 +448,13 @@ function pathQueryBonus(source: string, query: string): number {
   if (/荒玉|aragyoku|中体連/.test(q) && /aragyoku|荒玉|ekiden-ocr|aragyoku-teams/.test(s)) bonus += 80;
   if (
     /荒玉|aragyoku|中体連/.test(q) &&
+    /2024|2025|前年比|深掘り|分析|岱明|玉名付属|玉高附属|天水|有明/.test(q) &&
+    /aragyoku_2024_2025_focus_teams/.test(s)
+  ) {
+    bonus += 160;
+  }
+  if (
+    /荒玉|aragyoku|中体連/.test(q) &&
     /ペース|距離|区間|コース|\/km|分で/.test(q) &&
     /aragyoku-overview|aragyoku-ekiden-distance|average_pace/.test(s)
   ) {

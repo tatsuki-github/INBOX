@@ -28,6 +28,7 @@ function buildRouterSystemPrompt(): string {
     "ジュニア駅伝・なごみ・金栗など固有大会名があるときは drive-text/大会/ の該大会フォルダのみ選び、荒玉・aragyoku・ekiden-ocr は選ばない。",
     "明示の荒玉・優勝・歴代・区間・チーム順位なら aragyoku/transcripts・out-analysis/aragyoku-teams・winners-by-year・該当年 ekiden-ocr を優先。",
     "荒玉の距離・ペース・区間コース質問なら out-analysis/aragyoku-overview.md と docs/aragyoku-ekiden-distance-definitions.md を最優先。",
+    "2024/2025の岱明・玉名付属（玉高附属）・天水・有明の分析・前年比なら out-analysis/aragyoku_2024_2025_focus_teams.md を最優先。",
     "岱明の銀マット・合同練習会・集合場所・朝練・保護者連絡なら out-analysis/line-chats を優先。",
     "有田・補強・分割走・厚底・荒玉準備の指導相談なら out-analysis/line-chats/arita-taisho.md を優先。",
     "地点分担・朝練曜日・7:20集合など指導者LINE運用は out-analysis/line-chats/daiming-staff.md を優先（荒玉 overview より先）。",

@@ -461,6 +461,10 @@
     "corpus": "out-analysis/aragyoku-teams/長洲.md"
   },
   {
+    "source": "out/analysis/aragyoku_2024_2025_focus_teams.md",
+    "corpus": "out-analysis/aragyoku_2024_2025_focus_teams.md"
+  },
+  {
     "source": "out/analysis/aragyoku_top2_finish_counts.md",
     "corpus": "out-analysis/aragyoku_top2_finish_counts.md"
   },
@@ -699,6 +703,14 @@
   {
     "source": "docs/adr/032-athlete-name-ranking-retrieval.md",
     "corpus": "repo-docs/adr/032-athlete-name-ranking-retrieval.md"
+  },
+  {
+    "source": "docs/adr/033-aragyoku-meet-records.md",
+    "corpus": "repo-docs/adr/033-aragyoku-meet-records.md"
+  },
+  {
+    "source": "docs/adr/034-aragyoku-2024-2025-focus-analysis.md",
+    "corpus": "repo-docs/adr/034-aragyoku-2024-2025-focus-analysis.md"
   },
   {
     "source": "docs/idaten-import/phase0-media-ocr.md",

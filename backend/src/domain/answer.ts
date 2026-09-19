@@ -415,12 +415,18 @@ function boostMeetYearSources(
     const courseMeta =
       /ペース|距離|区間|コース|\/km|分でいく|分で走/.test(expandedQuery) &&
       !lineOpsPrefer;
+    const focusTeamAnalysis =
+      /2024|2025|前年比|深掘り|分析/.test(expandedQuery) &&
+      /岱明|玉名付属|玉名附属|玉高附属|天水|有明/.test(expandedQuery);
+    if (focusTeamAnalysis) {
+      push("out-analysis/aragyoku_2024_2025_focus_teams.md");
+    }
     if (/2位まで|2位以内|総合2位|優勝.*回数|回数/.test(expandedQuery)) {
       push("out-analysis/aragyoku_top2_finish_counts.md");
       push("aragyoku/winners-by-year.md");
     }
     // Exact team history digest for 「〇〇の荒玉駅伝の過去の順位」
-    if (/過去|歴代|順位/.test(expandedQuery) && !courseMeta) {
+    if ((/過去|歴代|順位|2024|2025|分析/.test(expandedQuery) || focusTeamAnalysis) && !courseMeta) {
       const aragyokuTeams = [
         "荒尾海陽",
         "玉高附属",
@@ -440,7 +446,10 @@ function boostMeetYearSources(
         "菊水",
         "長洲",
       ];
-      const teamHit = aragyokuTeams.find((stem) => expandedQuery.includes(stem));
+      let teamHit = aragyokuTeams.find((stem) => expandedQuery.includes(stem));
+      if (!teamHit && /玉名付属|玉名附属|玉名附/.test(expandedQuery)) {
+        teamHit = "玉高附属";
+      }
       if (teamHit) {
         push(`out-analysis/aragyoku-teams/${teamHit}.md`);
       }

@@ -1222,5 +1222,129 @@
   "daimyo": {
     "rank": 15,
     "total": "1:05:15"
+  },
+  "meet_records": {
+    "total": {
+      "time": "56:38",
+      "year_labels": [
+        "R6"
+      ],
+      "western_years": [
+        2024
+      ],
+      "school": "南関中",
+      "name": null
+    },
+    "legs": [
+      {
+        "leg": 1,
+        "distance_km": 3.0,
+        "time": "9:01",
+        "holders": [
+          {
+            "name": "米村和真",
+            "school": "有明",
+            "year_labels": [
+              "R6"
+            ],
+            "western_years": [
+              2024
+            ]
+          }
+        ]
+      },
+      {
+        "leg": 2,
+        "distance_km": 2.855,
+        "time": "8:41",
+        "holders": [
+          {
+            "name": "荒木琉偉",
+            "school": "三加和",
+            "year_labels": [
+              "R6"
+            ],
+            "western_years": [
+              2024
+            ]
+          }
+        ]
+      },
+      {
+        "leg": 3,
+        "distance_km": 3.0,
+        "time": "9:24",
+        "holders": [
+          {
+            "name": "亀井遼希",
+            "school": "玉高附属",
+            "year_labels": [
+              "R6"
+            ],
+            "western_years": [
+              2024
+            ]
+          }
+        ]
+      },
+      {
+        "leg": 4,
+        "distance_km": 3.0,
+        "time": "9:13",
+        "holders": [
+          {
+            "name": "田崎空汰",
+            "school": "南関",
+            "year_labels": [
+              "R6"
+            ],
+            "western_years": [
+              2024
+            ]
+          }
+        ]
+      },
+      {
+        "leg": 5,
+        "distance_km": 2.855,
+        "time": "9:38",
+        "holders": [
+          {
+            "name": "永尾海斗",
+            "school": "荒尾三",
+            "year_labels": [
+              "R6"
+            ],
+            "western_years": [
+              2024
+            ]
+          }
+        ]
+      },
+      {
+        "leg": 6,
+        "distance_km": 3.0,
+        "time": "9:11",
+        "holders": [
+          {
+            "name": "高木悠人",
+            "school": "南関",
+            "year_labels": [
+              "R6"
+            ],
+            "western_years": [
+              2024
+            ]
+          }
+        ]
+      }
+    ],
+    "course_era": "men_2024plus",
+    "source_image": "2024_male_tamana-aragyochu-ekiden_overall-results_01.jpg",
+    "notes": [
+      "距離が全面変更（3/2.855/3/3/2.855/3）。ヘッダはR6の新コース記録で埋まっている（当日結果と同値）。",
+      "2区氏名は転写の荒木琉琉を採用（琉璃/琉偉とも読める）。",
+      "2区氏名をボード読取で荒木琉偉に補正"
+    ]
   }
 }

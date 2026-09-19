@@ -1301,5 +1301,127 @@
   "daimyo": {
     "rank": 8,
     "total": "1:08:57"
+  },
+  "meet_records": {
+    "total": {
+      "time": "62:53",
+      "year_labels": [
+        "H28"
+      ],
+      "western_years": [
+        2016
+      ],
+      "school": "菊水中",
+      "name": null
+    },
+    "legs": [
+      {
+        "leg": 1,
+        "distance_km": 3.95,
+        "time": "11:50",
+        "holders": [
+          {
+            "name": "田上建",
+            "school": "玉名",
+            "year_labels": [
+              "H25"
+            ],
+            "western_years": [
+              2013
+            ]
+          }
+        ]
+      },
+      {
+        "leg": 2,
+        "distance_km": 3.05,
+        "time": "9:25",
+        "holders": [
+          {
+            "name": "小山将治",
+            "school": "荒尾三",
+            "year_labels": [
+              "H28"
+            ],
+            "western_years": [
+              2016
+            ]
+          }
+        ]
+      },
+      {
+        "leg": 3,
+        "distance_km": 2.855,
+        "time": "8:41",
+        "holders": [
+          {
+            "name": "岩本信弘",
+            "school": "玉名",
+            "year_labels": [
+              "H29"
+            ],
+            "western_years": [
+              2017
+            ]
+          }
+        ]
+      },
+      {
+        "leg": 4,
+        "distance_km": 2.855,
+        "time": "9:00",
+        "holders": [
+          {
+            "name": "河原誠剛",
+            "school": "岱明",
+            "year_labels": [
+              "H21"
+            ],
+            "western_years": [
+              2009
+            ]
+          }
+        ]
+      },
+      {
+        "leg": 5,
+        "distance_km": 3.0,
+        "time": "9:19",
+        "holders": [
+          {
+            "name": "宮上翔太",
+            "school": "荒尾三",
+            "year_labels": [
+              "H19"
+            ],
+            "western_years": [
+              2007
+            ]
+          }
+        ]
+      },
+      {
+        "leg": 6,
+        "distance_km": 4.0,
+        "time": "12:34",
+        "holders": [
+          {
+            "name": "山瀬大成",
+            "school": "玉南",
+            "year_labels": [
+              "H23"
+            ],
+            "western_years": [
+              2011
+            ]
+          }
+        ]
+      }
+    ],
+    "course_era": "men_pre2024",
+    "source_image": "2018_male_tamana-aragyochu-ekiden_overall-results_01.jpg",
+    "notes": [
+      "3区保持者は2017転写の岩本信弘に合わせた（ボードOCRで坂本/檪木とも誤読されやすい）。"
+    ]
   }
 }

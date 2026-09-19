@@ -1301,5 +1301,127 @@
   "daimyo": {
     "rank": 5,
     "total": "1:06:34"
+  },
+  "meet_records": {
+    "total": {
+      "time": "63:28",
+      "year_labels": [
+        "H23"
+      ],
+      "western_years": [
+        2011
+      ],
+      "school": "荒尾海陽中",
+      "name": null
+    },
+    "legs": [
+      {
+        "leg": 1,
+        "distance_km": 3.95,
+        "time": "12:28",
+        "holders": [
+          {
+            "name": "一瀬弘樹",
+            "school": "腹栄",
+            "year_labels": [
+              "H23"
+            ],
+            "western_years": [
+              2011
+            ]
+          }
+        ]
+      },
+      {
+        "leg": 2,
+        "distance_km": 3.05,
+        "time": "9:37",
+        "holders": [
+          {
+            "name": "浅野大希",
+            "school": "玉南",
+            "year_labels": [
+              "H23"
+            ],
+            "western_years": [
+              2011
+            ]
+          }
+        ]
+      },
+      {
+        "leg": 3,
+        "distance_km": 2.855,
+        "time": "8:54",
+        "holders": [
+          {
+            "name": "鳥山和徳",
+            "school": "荒尾海陽",
+            "year_labels": [
+              "H23"
+            ],
+            "western_years": [
+              2011
+            ]
+          }
+        ]
+      },
+      {
+        "leg": 4,
+        "distance_km": 2.855,
+        "time": "9:00",
+        "holders": [
+          {
+            "name": "河原誠剛",
+            "school": "岱明",
+            "year_labels": [
+              "H21"
+            ],
+            "western_years": [
+              2009
+            ]
+          }
+        ]
+      },
+      {
+        "leg": 5,
+        "distance_km": 3.0,
+        "time": "9:19",
+        "holders": [
+          {
+            "name": "宮上翔太",
+            "school": "荒尾三",
+            "year_labels": [
+              "H19"
+            ],
+            "western_years": [
+              2007
+            ]
+          }
+        ]
+      },
+      {
+        "leg": 6,
+        "distance_km": 4.0,
+        "time": "12:38",
+        "holders": [
+          {
+            "name": "福原雅史",
+            "school": "三加和",
+            "year_labels": [
+              "H14"
+            ],
+            "western_years": [
+              2002
+            ]
+          }
+        ]
+      }
+    ],
+    "course_era": "men_pre2024",
+    "source_image": "2012_male_tamana-aragyochu-ekiden_overall-results_01.jpg",
+    "notes": [
+      "Extracted 新コース row (also lists 旧コース). 1区校名は腹栄（慶誠表記の可能性あり）。"
+    ]
   }
 }

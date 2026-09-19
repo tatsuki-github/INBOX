@@ -1013,5 +1013,118 @@
   "ocr_notes": [
     "全15校; rank15三加和 leg5 DNF (total=leg4累積)",
     "passing_rank/split_rank computed from times (board circled ranks unreadable in OCR)"
-  ]
+  ],
+  "meet_records": {
+    "total": {
+      "time": "40:58",
+      "year_labels": [
+        "H19"
+      ],
+      "western_years": [
+        2007
+      ],
+      "school": "玉名中",
+      "name": null
+    },
+    "legs": [
+      {
+        "leg": 1,
+        "distance_km": 3.0,
+        "time": "9:46",
+        "holders": [
+          {
+            "name": "西川侑里",
+            "school": "長洲",
+            "year_labels": [
+              "R4"
+            ],
+            "western_years": [
+              2022
+            ]
+          }
+        ]
+      },
+      {
+        "leg": 2,
+        "distance_km": 1.855,
+        "time": "6:08",
+        "holders": [
+          {
+            "name": "井上智世",
+            "school": "岱明",
+            "year_labels": [
+              "H15"
+            ],
+            "western_years": [
+              2003
+            ]
+          }
+        ]
+      },
+      {
+        "leg": 3,
+        "distance_km": 2.0,
+        "time": "6:36",
+        "holders": [
+          {
+            "name": "高木彩加",
+            "school": "三加和",
+            "year_labels": [
+              "H18"
+            ],
+            "western_years": [
+              2006
+            ]
+          },
+          {
+            "name": "小柳若菜",
+            "school": "有明",
+            "year_labels": [
+              "H20"
+            ],
+            "western_years": [
+              2008
+            ]
+          }
+        ]
+      },
+      {
+        "leg": 4,
+        "distance_km": 2.0,
+        "time": "6:42",
+        "holders": [
+          {
+            "name": "浦浜実里",
+            "school": "荒尾三",
+            "year_labels": [
+              "H28"
+            ],
+            "western_years": [
+              2016
+            ]
+          }
+        ]
+      },
+      {
+        "leg": 5,
+        "distance_km": 3.0,
+        "time": "10:15",
+        "holders": [
+          {
+            "name": "井上智世",
+            "school": "岱明",
+            "year_labels": [
+              "H16"
+            ],
+            "western_years": [
+              2004
+            ]
+          }
+        ]
+      }
+    ],
+    "course_era": "women_standard",
+    "source_image": "2023_female_tamana-aragyochu-ekiden_overall-results_01.jpg",
+    "notes": []
+  }
 }

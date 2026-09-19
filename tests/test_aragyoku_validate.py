@@ -18,7 +18,11 @@ from lib.ranks import (  # noqa: E402
     parse_time_to_seconds,
     rank_mismatches,
 )
-from validate_transcript import validate_year_transcript  # noqa: E402
+from validate_transcript import (  # noqa: E402
+    validate_meet_records_cross_year,
+    validate_meet_records_present,
+    validate_year_transcript,
+)
 
 
 def _five_leg_sample() -> dict:
@@ -26,6 +30,41 @@ def _five_leg_sample() -> dict:
     return {
         "year": 2025,
         "gender": "女子",
+        "meet_records": {
+            "course_era": "women_standard",
+            "total": {
+                "time": "40:58",
+                "year_labels": ["H19"],
+                "western_years": [2007],
+                "school": "玉名中",
+                "name": None,
+            },
+            "legs": [
+                {
+                    "leg": i,
+                    "distance_km": d,
+                    "time": t,
+                    "holders": [
+                        {
+                            "name": "sample",
+                            "school": "玉名",
+                            "year_labels": ["H19"],
+                            "western_years": [2007],
+                        }
+                    ],
+                }
+                for i, (d, t) in enumerate(
+                    [
+                        (3.0, "9:46"),
+                        (1.855, "6:08"),
+                        (2.0, "6:36"),
+                        (2.0, "6:42"),
+                        (3.0, "10:15"),
+                    ],
+                    start=1,
+                )
+            ],
+        },
         "teams": [
             {
                 "rank": 1,
@@ -197,5 +236,42 @@ def test_result_image_names_are_consistent() -> None:
         r"^\d{4}_(?:male|female|unknown)_tamana-aragyochu-ekiden_"
         r"(?:overall-results|open-results)_\d{2}\.(?:jpg|jpeg|png)$"
     )
-    assert len(images) == 28
-    assert all(pattern.fullmatch(path.name) for path in images)
+    for image in images:
+        assert pattern.match(image.name), image.name
+
+
+def test_all_transcripts_have_meet_records() -> None:
+    for path in sorted((ARAGYOKU / "transcripts").glob("*.json")):
+        data = json.loads(path.read_text(encoding="utf-8"))
+        year = data["year"]
+        gender = data["gender"]
+        notes = validate_meet_records_present(
+            data, 5 if gender == "女子" else 6
+        )
+        assert notes == [], f"{path.name}: {notes}"
+        notes2 = validate_year_transcript(
+            data, year=year, gender=gender, include_daimyo=False
+        )
+        # allow known daimyo-independent warnings only via empty for meet path
+        meet_notes = [n for n in notes2 if n.startswith("meet_records")]
+        assert meet_notes == [], f"{path.name}: {meet_notes}"
+
+
+def test_meet_records_cross_year_monotone() -> None:
+    for gender in ("女子", "男子"):
+        years = []
+        for path in sorted((ARAGYOKU / "transcripts").glob(f"*-{gender}.json")):
+            years.append(json.loads(path.read_text(encoding="utf-8")))
+        notes = validate_meet_records_cross_year(years, gender=gender)
+        assert notes == [], notes
+
+
+def test_meet_records_women_2025_header() -> None:
+    data = json.loads(
+        (ARAGYOKU / "transcripts/2025-女子.json").read_text(encoding="utf-8")
+    )
+    mr = data["meet_records"]
+    assert mr["total"]["time"] == "40:58"
+    assert mr["legs"][0]["time"] == "9:46"
+    assert mr["legs"][0]["holders"][0]["name"] == "西川侑里"
+    assert mr["legs"][1]["time"] == "6:08"

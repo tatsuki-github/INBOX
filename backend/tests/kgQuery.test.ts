@@ -46,12 +46,26 @@ describe("queryKnowledgeGraph", () => {
     expect(blob).toMatch(/daniels_vdot_paces|008-daniels|norwegian_method/i);
   });
 
-  it("Topic norwegian expands to repo-docs corpus hub", () => {
+  it("routes 2024-2025 focus-team aragyoku analysis questions", () => {
     resetKgCache();
-    const result = queryKnowledgeGraph("Norwegian Method の原則は？", { kgPath });
-    expect(
-      result.matched_nodes.some((n) => n.id === "corpus:repo-docs" || n.id === "topic:norwegian") ||
-        result.corpus_sources.some((s) => s.includes("repo-docs") || s.includes("norwegian")),
-    ).toBe(true);
+    const result = queryKnowledgeGraph(
+      "2024年と2025年の荒玉駅伝で岱明・玉名付属・天水・有明はどうだった？",
+      { kgPath },
+    );
+    const blob = [
+      ...result.matched_nodes.flatMap((n) => [n.id, ...(n.refs ?? [])]),
+      ...result.corpus_sources,
+    ].join("\n");
+    expect(blob).toMatch(/aragyoku_2024_2025_focus_teams/);
+  });
+
+  it("routes 玉名付属 alias to 玉高附属 focus analysis", () => {
+    resetKgCache();
+    const result = queryKnowledgeGraph("玉名付属中の荒玉駅伝2024と2025は？", { kgPath });
+    const blob = [
+      ...result.matched_nodes.flatMap((n) => [n.id, ...(n.refs ?? [])]),
+      ...result.corpus_sources,
+    ].join("\n");
+    expect(blob).toMatch(/aragyoku_2024_2025_focus_teams|玉高附属/);
   });
 });

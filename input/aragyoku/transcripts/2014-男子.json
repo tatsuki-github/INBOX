@@ -1298,5 +1298,128 @@
   "ocr_notes": [
     "Result-board row-by-row transcription; unreadable names are unknown",
     "board canonical; Notion rank disagrees with the result board"
-  ]
+  ],
+  "meet_records": {
+    "total": {
+      "time": "63:28",
+      "year_labels": [
+        "H23"
+      ],
+      "western_years": [
+        2011
+      ],
+      "school": "荒尾海陽中",
+      "name": null
+    },
+    "legs": [
+      {
+        "leg": 1,
+        "distance_km": 3.95,
+        "time": "11:50",
+        "holders": [
+          {
+            "name": "田上建",
+            "school": "玉名",
+            "year_labels": [
+              "H25"
+            ],
+            "western_years": [
+              2013
+            ]
+          }
+        ]
+      },
+      {
+        "leg": 2,
+        "distance_km": 3.05,
+        "time": "9:26",
+        "holders": [
+          {
+            "name": "吉田成帆",
+            "school": "玉名",
+            "year_labels": [
+              "H24"
+            ],
+            "western_years": [
+              2012
+            ]
+          }
+        ]
+      },
+      {
+        "leg": 3,
+        "distance_km": 2.855,
+        "time": "8:54",
+        "holders": [
+          {
+            "name": "鳥山和徳",
+            "school": "荒尾海陽",
+            "year_labels": [
+              "H23"
+            ],
+            "western_years": [
+              2011
+            ]
+          }
+        ]
+      },
+      {
+        "leg": 4,
+        "distance_km": 2.855,
+        "time": "9:00",
+        "holders": [
+          {
+            "name": "河原誠剛",
+            "school": "岱明",
+            "year_labels": [
+              "H21"
+            ],
+            "western_years": [
+              2009
+            ]
+          }
+        ]
+      },
+      {
+        "leg": 5,
+        "distance_km": 3.0,
+        "time": "9:19",
+        "holders": [
+          {
+            "name": "宮上翔太",
+            "school": "荒尾三",
+            "year_labels": [
+              "H19"
+            ],
+            "western_years": [
+              2007
+            ]
+          }
+        ]
+      },
+      {
+        "leg": 6,
+        "distance_km": 4.0,
+        "time": "12:34",
+        "holders": [
+          {
+            "name": "山瀬大成",
+            "school": "玉南",
+            "year_labels": [
+              "H23"
+            ],
+            "western_years": [
+              2011
+            ]
+          }
+        ]
+      }
+    ],
+    "course_era": "men_pre2024",
+    "source_image": "2014_male_tamana-aragyochu-ekiden_overall-results_01.jpg",
+    "notes": [
+      "1区はH25・11:50に更新済み。総合はなお63:28のまま（H25で玉名が63:03を出した後でもヘッダ未更新）。",
+      "3区はまだ8:54（H25の柴尾一樹8:43は未反映）。"
+    ]
+  }
 }

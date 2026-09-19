@@ -164,6 +164,75 @@ def validate_split_records(year_entry: dict, leg_count: int) -> list[str]:
     return notes
 
 
+def validate_meet_records_present(year_entry: dict, leg_count: int) -> list[str]:
+    """V-10 board-header 大会/区間記録 must be structured on the transcript."""
+    notes: list[str] = []
+    mr = year_entry.get("meet_records")
+    if not isinstance(mr, dict):
+        return ["meet_records: missing"]
+    total = mr.get("total")
+    if not isinstance(total, dict) or not total.get("time"):
+        notes.append("meet_records.total.time: missing")
+    legs = mr.get("legs")
+    if not isinstance(legs, list) or len(legs) != leg_count:
+        notes.append(f"meet_records.legs: expected {leg_count}, got {0 if not isinstance(legs, list) else len(legs)}")
+        return notes
+    for i, leg in enumerate(legs, start=1):
+        if leg.get("leg") != i:
+            notes.append(f"meet_records.legs[{i-1}].leg: expected {i}, got {leg.get('leg')}")
+        if not leg.get("time"):
+            notes.append(f"meet_records.legs[{i}].time: missing")
+        holders = leg.get("holders")
+        if not isinstance(holders, list) or not holders:
+            notes.append(f"meet_records.legs[{i}].holders: empty")
+    return notes
+
+
+def validate_meet_records_cross_year(
+    years: list[dict],
+    *,
+    gender: str,
+) -> list[str]:
+    """V-11 same course_era: times must not worsen year-to-year (board header).
+
+    Course redesign (men 2023→2024) resets the era and is allowed to jump.
+    """
+    from lib.ranks import parse_time_to_seconds
+
+    notes: list[str] = []
+    prev: dict | None = None
+    for entry in sorted(years, key=lambda e: e["year"]):
+        mr = entry.get("meet_records") or {}
+        if prev is None:
+            prev = entry
+            continue
+        prev_mr = prev.get("meet_records") or {}
+        if mr.get("course_era") != prev_mr.get("course_era"):
+            prev = entry
+            continue
+        # total
+        pt = parse_time_to_seconds((prev_mr.get("total") or {}).get("time"))
+        ct = parse_time_to_seconds((mr.get("total") or {}).get("time"))
+        if pt is not None and ct is not None and ct > pt:
+            notes.append(
+                f"{gender} {prev['year']}→{entry['year']}: total worsened {prev_mr['total']['time']}→{mr['total']['time']}"
+            )
+        prev_legs = {L["leg"]: L for L in prev_mr.get("legs") or []}
+        for leg in mr.get("legs") or []:
+            pl = prev_legs.get(leg["leg"])
+            if not pl:
+                continue
+            ps = parse_time_to_seconds(pl.get("time"))
+            cs = parse_time_to_seconds(leg.get("time"))
+            if ps is not None and cs is not None and cs > ps:
+                notes.append(
+                    f"{gender} {prev['year']}→{entry['year']} leg{leg['leg']}: "
+                    f"worsened {pl['time']}→{leg['time']}"
+                )
+        prev = entry
+    return notes
+
+
 def validate_rank_crosscheck(year_entry: dict, leg_count: int) -> list[str]:
     """V-7 board ranks vs computed ranks."""
     return rank_mismatches(year_entry["teams"], leg_count)
@@ -175,6 +244,7 @@ def validate_year_transcript(
     year: int,
     gender: str,
     include_daimyo: bool = True,
+    require_meet_records: bool = True,
 ) -> list[str]:
     """Run all validation rules; return list of error/warning strings."""
     leg_count = leg_count_for_gender(gender)
@@ -184,6 +254,8 @@ def validate_year_transcript(
     notes.extend(validate_team_order(year_entry))
     notes.extend(validate_rank_crosscheck(year_entry, leg_count))
     notes.extend(validate_split_records(year_entry, leg_count))
+    if require_meet_records:
+        notes.extend(validate_meet_records_present(year_entry, leg_count))
     if include_daimyo:
         notes.extend(validate_daimyo_anchor(year_entry, year, gender))
     return notes

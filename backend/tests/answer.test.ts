@@ -308,6 +308,38 @@ describe("answerQuestion", () => {
     }
   });
 
+  it("puts 2024-2025 focus analysis for 岱明・天水 questions", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    let userPrompt = "";
+    const result = await answerQuestion(
+      "2024年と2025年の荒玉駅伝で岱明男子と天水はどうだった？",
+      {
+        skipRouter: true,
+        defaultYear: 2026,
+        llm: {
+          complete: async (_sys, user) => {
+            userPrompt = user;
+            return "岱明男子は15位から6位へ上昇、天水は2区区間新がありました。";
+          },
+        },
+      },
+    );
+    expect(result.kind).toBe("answered");
+    expect(userPrompt).toMatch(/59:08|6位|山本悠斗|8:37/);
+    expect(userPrompt).not.toMatch(/コーチに直接聞いてください/);
+    if (result.kind === "answered") {
+      expect(
+        result.sources.some(
+          (s) =>
+            s.includes("aragyoku_2024_2025_focus_teams") ||
+            s.includes("aragyoku-teams/岱明") ||
+            s.includes("aragyoku-teams/天水"),
+        ),
+      ).toBe(true);
+    }
+  });
+
   it("puts line-chats context for 銀マット / 合同練習 questions", async () => {
     resetRetrieverCache();
     resetKgCache();

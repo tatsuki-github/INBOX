@@ -13,6 +13,7 @@ Notion 行プロパティ（岱明の順位・記録のみ）に分散してい�
    ビルド成果物（`women_full_*` / `men_full_*`）は transcript を enrich・検証した派生とする。
 2. **スキーマ `full-transcript-v1`** を採用する。
    - 大会メタ: `year`, `gender`, `date`, `source_drive_id`, `legs[]`, `weather`, `pace`, `daimyo`, `ocr_notes`
+   - **ボード上部の大会／区間記録**: `meet_records`（総合 + 各区間の歴代タイム・保持者。詳細は ADR 033）
    - チーム: `rank`, `team`, `total`, `gap_to_leader`, `gap_to_prev`（ボードにあれば）
    - 区間: `leg`, `name`, `grade`, `split`, `cumulative`, `passing_rank`, `split_rank`,
      `split_record`, `status`, `raw_name_grade`, `computed.{split_rank,passing_rank}`

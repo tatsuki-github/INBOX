@@ -130,6 +130,11 @@ SOURCE_GLOBS: list[tuple[str, list[str], str]] = [
         "荒玉駅伝概要（区間距離・使い方・現行/旧コース）",
     ),
     (
+        "out/analysis/aragyoku_2024_2025_focus_teams.md",
+        ["ekiden", "pace", "analysis"],
+        "荒玉2024–2025深掘り（岱明・玉高附属＝玉名付属・天水・有明の区間・前年比）",
+    ),
+    (
         "out/analysis/aragyoku_top6_historical_average_pace.md",
         ["ekiden", "pace"],
         "荒玉総合1〜6位の年度別平均ペース",
@@ -294,6 +299,64 @@ QUERY_HINTS: list[tuple[str, str, list[str]]] = [
             "corpus:aragyoku",
             "corpus:ekiden-ocr",
             "source:out/analysis/aragyoku-overview.md",
+        ],
+    ),
+    (
+        "2024年と2025年の荒玉駅伝で岱明・玉名付属・天水・有明はどうだった？",
+        "out/analysis/aragyoku_2024_2025_focus_teams.md を正本（前年比・区間・区間新）。玉名付属=玉高附属",
+        [
+            "topic:ekiden",
+            "source:out/analysis/aragyoku_2024_2025_focus_teams.md",
+            "source:out/analysis/aragyoku-teams/岱明.md",
+            "source:out/analysis/aragyoku-teams/玉高附属.md",
+            "source:out/analysis/aragyoku-teams/天水.md",
+            "source:out/analysis/aragyoku-teams/有明.md",
+            "corpus:out-analysis",
+            "corpus:aragyoku",
+        ],
+    ),
+    (
+        "2025年荒玉駅伝の岱明男子は何位？",
+        "aragyoku_2024_2025_focus_teams.md と aragyoku-teams/岱明.md（2025男子6位・59:08）",
+        [
+            "topic:ekiden",
+            "source:out/analysis/aragyoku_2024_2025_focus_teams.md",
+            "source:out/analysis/aragyoku-teams/岱明.md",
+            "corpus:out-analysis",
+            "corpus:aragyoku",
+        ],
+    ),
+    (
+        "玉名付属中の荒玉駅伝2024と2025は？",
+        "玉名付属=玉高附属。aragyoku_2024_2025_focus_teams.md と aragyoku-teams/玉高附属.md",
+        [
+            "topic:ekiden",
+            "source:out/analysis/aragyoku_2024_2025_focus_teams.md",
+            "source:out/analysis/aragyoku-teams/玉高附属.md",
+            "corpus:out-analysis",
+            "corpus:aragyoku",
+        ],
+    ),
+    (
+        "天水中の荒玉駅伝で区間新は誰？",
+        "2025男子2区・山本悠斗 8:37（区間新）。正本は aragyoku_2024_2025_focus_teams.md",
+        [
+            "topic:ekiden",
+            "source:out/analysis/aragyoku_2024_2025_focus_teams.md",
+            "source:out/analysis/aragyoku-teams/天水.md",
+            "corpus:out-analysis",
+            "corpus:aragyoku",
+        ],
+    ),
+    (
+        "有明中の荒玉駅伝2024-2025の分析は？",
+        "aragyoku_2024_2025_focus_teams.md の有明節（男子11→12位、女子13→12位、2024男子1区区間新）",
+        [
+            "topic:ekiden",
+            "source:out/analysis/aragyoku_2024_2025_focus_teams.md",
+            "source:out/analysis/aragyoku-teams/有明.md",
+            "corpus:out-analysis",
+            "corpus:aragyoku",
         ],
     ),
     (
