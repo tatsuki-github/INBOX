@@ -2213,6 +2213,24 @@ describe("answerQuestion", () => {
     }
   });
 
+  it("extracts the requested なごみ team result from the actual table", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("2026年なごみ駅伝岱明男子の結果は？", {
+      skipRouter: true,
+      defaultYear: 2026,
+      llm: null,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.text).toContain("岱明A");
+      expect(result.text).toContain("18位");
+      expect(result.text).toContain("42:39");
+      expect(result.text).toContain("岱明B");
+      expect(result.text).not.toContain("予実比較");
+    }
+  });
+
   it("hits SB row for short name without の particle", async () => {
     resetRetrieverCache();
     resetKgCache();

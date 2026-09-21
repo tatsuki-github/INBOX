@@ -866,7 +866,20 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
       return flat.slice(idx, Math.min(sectionEnd, idx + budget));
     }
   }
-  if (/なごみ/.test(q) && /結果|順位/.test(q) && !/予想|SB/.test(q)) {
+  if (/なごみ/.test(q) && /結果|順位|何位/.test(q) && !/予想|SB/.test(q)) {
+    const teamStems = ["岱明", "玉名アスリーツ", "玉名高校附属", "南関", "富合", "ATRC", "NJAC"]
+      .filter((team) => q.includes(team));
+    if (teamStems.length > 0) {
+      const escapedTeams = teamStems.map((team) => team.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"));
+      const rows = [...flat.matchAll(
+        new RegExp(`\\|\\s*(\\d+)\\s*\\|\\s*\\d+\\s*\\|\\s*(${escapedTeams.join("|")}[^|]*)\\|\\s*([^|]+?)\\s*\\|`, "g"),
+      )];
+      if (rows.length > 0) {
+        return `${teamStems.join("・")}の結果: ${rows
+          .map((row) => `${row[1]}位 ${row[2]} ${row[3]}`)
+          .join("、")}。`;
+      }
+    }
     return flat.slice(0, budget);
   }
   if (/合同練習会|おおはま/.test(q)) {
@@ -1291,6 +1304,10 @@ function offlineAnswer(
       !/優勝|準優勝|区間|大会記録|記録保持/.test(question) &&
       !/何位/.test(question) &&
       !/岱明|玉高附属|玉名付属|玉名附属|天水|有明|南関|菊水|玉東|玉陵|長洲|荒尾/.test(question);
+    const nagomiResultLookup =
+      /なごみ/.test(question) &&
+      /結果|順位|何位/.test(question) &&
+      !/予想|SB/.test(question);
     const women800FastestLookup =
       /女子/.test(question) && /800m|800ｍ/.test(question) && /最速|一番速|速い/.test(question);
     const individualTrackFastestLookup =
@@ -1339,13 +1356,23 @@ function offlineAnswer(
       latestTeamRankLookup ||
       teamYearOverYearLookup ||
       resultListLookup ||
+      nagomiResultLookup ||
       women800FastestLookup ||
       individualTrackFastestLookup ||
       kanaguriVenueLookup ||
       kanaguriDate;
     const hint = focusedLookup ? question : previewQuery ?? question;
     if (focusedLookup) {
-      const joined = retrieved.map((r) => r.chunk.text).join("\n");
+      const focusedRetrieved =
+        nagomiResultLookup && /男子|女子/.test(question)
+          ? retrieved.filter((r) =>
+              /(?:男子|女子)成績表\.md$/.test(r.chunk.source) &&
+              r.chunk.source.includes(/女子/.test(question) ? "女子" : "男子"),
+            )
+          : retrieved;
+      const joined = (focusedRetrieved.length > 0 ? focusedRetrieved : retrieved)
+        .map((r) => r.chunk.text)
+        .join("\n");
       const explicitWinnerMatch = explicitWinnerSchoolLookup
         ? joined.match(
             new RegExp(
@@ -2594,7 +2621,7 @@ export async function answerQuestion(
   }
   const nagomiResultQ =
     /なごみ/.test(expanded) &&
-    /結果|順位/.test(expanded) &&
+    /結果|順位|何位/.test(expanded) &&
     !/予想|SB/.test(expanded) &&
     !nagomiLegOrderQ;
   if (nagomiResultQ) {
