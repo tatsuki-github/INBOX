@@ -540,6 +540,21 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
       }
     }
   }
+  if (
+    /区間順位|区間順/.test(q) &&
+    /男子|女子/.test(q) &&
+    !/[1-6]区/.test(q)
+  ) {
+    const gender = /女子/.test(q) ? "女子" : "男子";
+    const requestedYear = q.match(/20\d{2}/)?.[0];
+    const years = [...flat.matchAll(new RegExp(`#### (20\\d{2})年${gender}・区間別上位`, "g"))]
+      .map((match) => match[1]!);
+    const year = requestedYear ?? years.sort((a, b) => Number(b) - Number(a))[0];
+    if (year) {
+      const idx = flat.indexOf(`#### ${year}年${gender}・区間別上位`);
+      if (idx >= 0) return flat.slice(idx, Math.min(flat.length, idx + budget));
+    }
+  }
   if (/区間賞|区間順/.test(q)) {
     const years = q.match(/20\d{2}/g) ?? [];
     const gender = /女子/.test(q) ? "女子" : /男子/.test(q) ? "男子" : "";
@@ -1118,6 +1133,11 @@ function offlineAnswer(
       /男子|女子/.test(question) &&
       /[1-6]区/.test(question) &&
       /区間順位|区間順/.test(question);
+    const allLegRankLookup =
+      /荒玉|駅伝/.test(question) &&
+      /男子|女子/.test(question) &&
+      /区間順位|区間順/.test(question) &&
+      !/[1-6]区/.test(question);
     const winnerTeamLookup =
       /優勝チーム/.test(question) &&
       /荒玉|駅伝/.test(question) &&
@@ -1222,6 +1242,7 @@ function offlineAnswer(
       historicalWinnerLookup ||
       latestLegAwardLookup ||
       legRankLookup ||
+      allLegRankLookup ||
       teamRankLookup ||
       schoolPbRankLookup ||
       trackLapLookup ||
@@ -2107,7 +2128,6 @@ export async function answerQuestion(
   const legRankQuestionQ =
     /荒玉|駅伝/.test(question) &&
     /男子|女子/.test(question) &&
-    /[1-6]区/.test(question) &&
     /区間順位|区間順/.test(question);
   if (legRankQuestionQ) {
     preferredSources = [

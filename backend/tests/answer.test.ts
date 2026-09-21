@@ -1880,6 +1880,23 @@ describe("answerQuestion", () => {
     }
   });
 
+  it("defaults a gendered leg-rank list to the latest full section", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("荒玉男子の区間順位は？", {
+      llm: null,
+      skipRouter: true,
+      defaultYear: 2026,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.sources[0]).toBe("out-analysis/aragyoku_leg_awards.md");
+      expect(result.text).toContain("2025年男子・区間別上位");
+      expect(result.text).toContain("2025年荒玉駅伝男子1区の区間1位");
+      expect(result.text).not.toContain("2024年男子・区間別上位");
+    }
+  });
+
   it("puts all-teams average pace for 〇位の平均ペース questions", async () => {
     resetRetrieverCache();
     resetKgCache();
