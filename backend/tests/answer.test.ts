@@ -230,7 +230,13 @@ describe("answerQuestion", () => {
       expect(result.text).toContain("一次資料:");
       expect(result.text).toContain("女子成績表PDF");
       expect(result.text).toContain("男子成績表PDF");
-      expect(result.text).toContain("raw.githubusercontent.com");
+      expect(result.text).toContain(
+        "https://drive.google.com/file/d/1Z1NPn0w-6O18CrKcv0keqymhv39N9Ydi/view",
+      );
+      expect(result.text).toContain(
+        "https://drive.google.com/file/d/1Yyv2TLVAfSjSE296Q6xrEMm0J2QbQF21/view",
+      );
+      expect(result.text).not.toContain("github.com");
       expect(result.text).toContain("drive.google.com/drive/folders/1k-zW0irJ-OjDjqQwUQLZIs4C6PfuR211");
     }
   });

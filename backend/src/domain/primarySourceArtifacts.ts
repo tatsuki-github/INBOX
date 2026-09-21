@@ -2,7 +2,7 @@
  * Primary source files that can be linked from LINE answers.
  *
  * LINE Messaging API cannot send PDF file messages. These links point to the
- * committed source-file mirror and, where known, the original Drive folder.
+ * public Drive file and, where known, the original Drive folder.
  */
 
 import {
@@ -15,32 +15,20 @@ import {
 export type PrimarySourceArtifact = {
   source: string;
   label: string;
-  rawUrl: string;
+  fileUrl: string;
   originalUrl?: string;
   date: string;
   meet: string;
 };
 
-const RAW_REPOSITORY_BASE = "https://raw.githubusercontent.com/tatsuki-github/INBOX/main";
 const NAGOMI_FOLDER_URL =
   "https://drive.google.com/drive/folders/1k-zW0irJ-OjDjqQwUQLZIs4C6PfuR211";
-
-function encodePath(path: string): string {
-  return path.split("/").map((part) => encodeURIComponent(part)).join("/");
-}
-
-function rawRepositoryUrl(path: string): string {
-  return `${RAW_REPOSITORY_BASE}/${encodePath(path)}`;
-}
-
-const NAGOMI_2026_ROOT =
-  "input/idaten-corpus/drive-text/大会/2026年度/0920_中学駅伝金栗四三生誕の地なごみ大会";
 
 const NAGOMI_2026_ARTIFACTS: PrimarySourceArtifact[] = [
   {
     source: "drive-text/大会/2026年度/0920_中学駅伝金栗四三生誕の地なごみ大会/女子成績表.md",
     label: "女子成績表PDF",
-    rawUrl: rawRepositoryUrl(`${NAGOMI_2026_ROOT}/女子成績表.pdf`),
+    fileUrl: "https://drive.google.com/file/d/1Z1NPn0w-6O18CrKcv0keqymhv39N9Ydi/view",
     originalUrl: NAGOMI_FOLDER_URL,
     date: "2026-09-20",
     meet: "なごみ",
@@ -48,7 +36,7 @@ const NAGOMI_2026_ARTIFACTS: PrimarySourceArtifact[] = [
   {
     source: "drive-text/大会/2026年度/0920_中学駅伝金栗四三生誕の地なごみ大会/男子成績表.md",
     label: "男子成績表PDF",
-    rawUrl: rawRepositoryUrl(`${NAGOMI_2026_ROOT}/男子成績表.pdf`),
+    fileUrl: "https://drive.google.com/file/d/1Yyv2TLVAfSjSE296Q6xrEMm0J2QbQF21/view",
     originalUrl: NAGOMI_FOLDER_URL,
     date: "2026-09-20",
     meet: "なごみ",
@@ -102,9 +90,9 @@ export function appendPrimarySourceLinks(
   const existing = new Set(text.match(/https?:\/\/[^\s]+/gi) ?? []);
   const lines: string[] = [];
   for (const artifact of artifacts) {
-    if (!existing.has(artifact.rawUrl)) {
-      lines.push(`・${artifact.label}: ${artifact.rawUrl}`);
-      existing.add(artifact.rawUrl);
+    if (!existing.has(artifact.fileUrl)) {
+      lines.push(`・${artifact.label}: ${artifact.fileUrl}`);
+      existing.add(artifact.fileUrl);
     }
   }
   const originalUrls = [...new Set(artifacts.map((artifact) => artifact.originalUrl).filter(Boolean))] as string[];

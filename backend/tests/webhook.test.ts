@@ -114,7 +114,10 @@ describe("POST /webhook", () => {
       | undefined;
     const text = arg?.messages.map((message) => message.text ?? "").join("\n") ?? "";
     expect(text).toContain("女子成績表PDF");
-    expect(text).toContain("raw.githubusercontent.com");
+    expect(text).toContain(
+      "https://drive.google.com/file/d/1Z1NPn0w-6O18CrKcv0keqymhv39N9Ydi/view",
+    );
+    expect(text).not.toContain("github.com");
   });
 
   it("replies guidance for non-text message", async () => {
