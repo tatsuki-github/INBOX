@@ -187,6 +187,12 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
       }
     }
   }
+  if (/なごみ/.test(q) && !/男子|女子/.test(q) && /優勝|1位/.test(q)) {
+    const winners = [...flat.matchAll(/###\s*1位\s+No\.\d+\s+(.+?)\s+総合\s+([0-9]+:\d{2})/g)];
+    if (winners.length >= 2) {
+      return `2026年なごみ男子優勝: ${winners[0]![1]}（${winners[0]![2]}）。2026年なごみ女子優勝: ${winners[1]![1]}（${winners[1]![2]}）。`;
+    }
+  }
   if (!/男子|女子/.test(q) && /荒玉|駅伝/.test(q) && /優勝/.test(q) && /準優勝/.test(q)) {
     const pairs = [...flat.matchAll(
       /(20\d{2})年\s*荒玉(?:中体連)?駅伝\s*(男子|女子)[\s\S]{0,220}?優勝校(?:（1位）)?は「([^」]+)」(?:（総合\s*([0-9]+:\d{2})）)?、準優勝校は「([^」]+)」（総合\s*([0-9]+:\d{2}|—)）/g,
@@ -1935,9 +1941,11 @@ function offlineAnswer(
               const winners = [...joined.replace(/\s+/g, " ").matchAll(
                 /\|\s*1\s*\|\s*\d+\s*\|\s*([^|]+?)\s*\|\s*([^|]+?)\s*\|/g,
               )];
-              return winners.length > 0
-                ? `なごみ駅伝の優勝: ${winners.map((row) => `${row[1]!.trim()} ${row[2]!.trim()}`).join("、")}。`
-                : undefined;
+              return winners.length >= 2
+                ? `2026年なごみ男子優勝: ${winners[0]![1]!.trim()}（${winners[0]![2]!.trim()}）。2026年なごみ女子優勝: ${winners[1]![1]!.trim()}（${winners[1]![2]!.trim()}）。`
+                : winners.length > 0
+                  ? `なごみ駅伝の優勝: ${winners.map((row) => `${row[1]!.trim()} ${row[2]!.trim()}`).join("、")}。`
+                  : undefined;
             })()
           : undefined;
       const preview =

@@ -976,6 +976,21 @@ describe("answerQuestion", () => {
     }
   });
 
+  it("labels both genders in an unqualified nagomi winner question", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("なごみ駅伝の優勝校は？", {
+      llm: null,
+      skipRouter: true,
+      defaultYear: 2026,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.text).toContain("2026年なごみ男子優勝: NJAC（38:33）");
+      expect(result.text).toContain("2026年なごみ女子優勝: 金栗PROJECT A（26:55）");
+    }
+  });
+
   it("answers an unqualified sixth-place question for both genders", async () => {
     resetRetrieverCache();
     resetKgCache();
