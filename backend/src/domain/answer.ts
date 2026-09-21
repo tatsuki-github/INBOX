@@ -499,6 +499,19 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
   if (/区間賞|区間順/.test(q)) {
     const years = q.match(/20\d{2}/g) ?? [];
     const gender = /女子/.test(q) ? "女子" : /男子/.test(q) ? "男子" : "";
+    if (years.length === 0 && gender) {
+      const headings = [
+        ...flat.matchAll(new RegExp(`### (20\\d{2})年${gender}`, "g")),
+      ];
+      const latest = headings
+        .sort((a, b) => Number(b[1]) - Number(a[1]))
+        .at(0);
+      if (latest) {
+        const idx = flat.indexOf(latest[0]);
+        const next = flat.indexOf("### ", idx + latest[0].length);
+        return flat.slice(idx, next >= 0 ? next : Math.min(flat.length, idx + budget));
+      }
+    }
     const needles: string[] = [];
     for (const y of years) {
       if (gender) needles.push(`### ${y}年${gender}`);
@@ -968,6 +981,11 @@ function offlineAnswer(
       /荒玉|駅伝/.test(question) &&
       /歴代/.test(question) &&
       /優勝|準優勝/.test(question);
+    const latestLegAwardLookup =
+      /荒玉|駅伝/.test(question) &&
+      /区間賞|区間順/.test(question) &&
+      /男子|女子/.test(question) &&
+      !/20\d{2}/.test(question);
     const winnerTeamLookup =
       /優勝チーム/.test(question) &&
       /荒玉|駅伝/.test(question) &&
@@ -1061,6 +1079,7 @@ function offlineAnswer(
       genericWinnerYearLookup ||
       winnerTeamLookup ||
       historicalWinnerLookup ||
+      latestLegAwardLookup ||
       teamRankLookup ||
       schoolPbRankLookup ||
       trackLapLookup ||

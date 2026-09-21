@@ -1762,6 +1762,23 @@ describe("answerQuestion", () => {
     }
   });
 
+  it("defaults a yearless gendered 区間賞 question to the latest section", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("荒玉男子の区間賞は誰？", {
+      llm: null,
+      skipRouter: true,
+      defaultYear: 2026,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.sources[0]).toBe("out-analysis/aragyoku_leg_awards.md");
+      expect(result.text).toContain("2025年男子");
+      expect(result.text).toContain("江口大尊");
+      expect(result.text).not.toContain("2024年男子");
+    }
+  });
+
   it("puts all-teams average pace for 〇位の平均ペース questions", async () => {
     resetRetrieverCache();
     resetKgCache();
