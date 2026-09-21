@@ -213,6 +213,24 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
       }
     }
   }
+  // For a gender/leg record query, jump to the latest matching board row
+  // rather than showing the digest's opening year or an unrelated table.
+  if (
+    /大会記録|区間記録|ボード.*記録/.test(q) &&
+    /荒玉|駅伝/.test(q) &&
+    /男子.*\d区|女子.*\d区/.test(q)
+  ) {
+    const gender = /男子/.test(q) ? "男子" : "女子";
+    const leg = q.match(/([1-6])区/)?.[1];
+    if (leg) {
+      const needle = `荒玉駅伝${gender}の${leg}区大会区間記録`;
+      const idx = flat.lastIndexOf(needle);
+      if (idx >= 0) {
+        const start = Math.max(0, idx - 120);
+        return flat.slice(start, Math.min(flat.length, start + budget));
+      }
+    }
+  }
   // 「案浦竜士は何区を走った？」→ `| N | 案浦竜士 |` を N区 として明示
   if (isLegAthleteQuestion(q) && /何区/.test(q)) {
     const who = q.match(/([\u3400-\u9fff]{2,8})は.{0,20}何区/);
@@ -370,6 +388,16 @@ function sortMeetDriveSources(sources: string[], query: string): string[] {
 /** Prefer SB / 記録データベース sources for athlete-record questions. */
 function boostAthleteRecordSources(query: string, baseSources: string[]): string[] {
   const q = query.normalize("NFKC");
+  // Meet-record questions have a dedicated board digest. Keep the answer
+  // focused there instead of letting the generic athlete/SB sources win.
+  if (
+    /大会記録|区間記録|ボード.*記録|記録保持|歴代記録/.test(q) &&
+    /荒玉|駅伝/.test(q) &&
+    !/区間賞|区間順/.test(q)
+  ) {
+    const recordDigest = baseSources.find((s) => /aragyoku_meet_records/.test(s));
+    if (recordDigest) return [recordDigest];
+  }
   // 有田先輩＝指導相談。選手「有田」の SB/歴代と混同しない
   if (/有田先輩|有田大将|補強メニュー|手押し車|犬歩き|メンタル|楽しさ|本気度/.test(q)) {
     return baseSources.filter(
