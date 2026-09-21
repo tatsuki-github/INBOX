@@ -292,6 +292,22 @@ describe("answerQuestion", () => {
     }
   });
 
+  it("answers 岱明のトラック周長 from the practice source", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("岱明のトラック1周は何メートル？", {
+      llm: null,
+      skipRouter: true,
+      defaultYear: 2026,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.sources[0]).toBe("practice/daiming-practice-menus-kpace.md");
+      expect(result.text).toContain("560m");
+      expect(result.text).not.toContain("練習メニューの記録なし");
+    }
+  });
+
   it("starts named 地点分担 answers at the staff assignment table", async () => {
     resetRetrieverCache();
     resetKgCache();

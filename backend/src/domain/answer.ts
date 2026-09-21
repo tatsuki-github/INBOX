@@ -160,6 +160,10 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
       }
     }
   }
+  if (/トラック/.test(q) && /1周|一周|周長|何メートル|何ｍ/.test(q)) {
+    const lap = flat.match(/トラック\s*1周\s*=\s*\*{0,2}\s*560m/);
+    if (lap) return lap[0].replace(/\*+/g, "");
+  }
   // Full-record / ranking digests: prefer document head (title + early tables)
   if (
     /全記録|記録一覧|所属選手|ランキング|トップ\s*\d+|何位/.test(q) &&
@@ -704,6 +708,8 @@ function offlineAnswer(
       /上位\s*\d+\s*人平均|上位\d+人平均|学校別|所属別/.test(
         question,
       );
+    const trackLapLookup =
+      /トラック/.test(question) && /1周|一周|周長|何メートル|何ｍ/.test(question);
     const kanaguriDate =
       /金栗駅伝/.test(question) &&
       /いつ|何日|何月|開催月|開催時期/.test(question);
@@ -717,6 +723,7 @@ function offlineAnswer(
       latestFirstPlace ||
       teamRankLookup ||
       schoolPbRankLookup ||
+      trackLapLookup ||
       kanaguriDate;
     const hint = focusedLookup ? question : previewQuery ?? question;
     if (focusedLookup) {
@@ -1679,6 +1686,13 @@ export async function answerQuestion(
       : "out-analysis/2026_women_800m_1500m_pb_school_ranking.md";
     preferredSources = [preferredSources.find((s) => s.endsWith(schoolRanking)) ?? schoolRanking];
   }
+  const trackLapQ = /トラック/.test(expanded) && /1周|一周|周長|何メートル|何ｍ/.test(expanded);
+  if (trackLapQ) {
+    preferredSources = [
+      "practice/daiming-practice-menus-kpace.md",
+      "docs/data-model.md",
+    ];
+  }
   const namedAssignmentQ =
     /地点分担|何地点|どの地点|担当地点|地点(?:は|に|です)/.test(expanded) &&
     /熊澤|土山|柴尾|土本/.test(expanded);
@@ -1721,6 +1735,7 @@ export async function answerQuestion(
     latestRunnerUpQ ||
     latestFirstPlaceQ ||
     schoolPbRankQ ||
+    trackLapQ ||
     teamYearOverYearQ ||
     teamWinnerMarginQ ||
     namedMeetRecordQ ||
@@ -1749,6 +1764,7 @@ export async function answerQuestion(
         latestRunnerUpQ ||
         latestFirstPlaceQ ||
         schoolPbRankQ ||
+        trackLapQ ||
         teamYearOverYearQ ||
         teamWinnerMarginQ ||
         namedMeetRecordQ ||
