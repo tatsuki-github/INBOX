@@ -2069,6 +2069,21 @@ describe("answerQuestion", () => {
     }
   });
 
+  it("keeps named 1500m SB rank questions on the individual ranking digest", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("荒玉地区男子1500mSBで隈部侑成は何位？", {
+      skipRouter: true,
+      defaultYear: 2026,
+      llm: null,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.sources[0]).toBe("out-analysis/2026_aragyoku_men_1500m_sb_individual_top20.md");
+      expect(result.text).toContain("1 | 隈部侑成");
+    }
+  });
+
   it("answers ATRC full records from team digest", async () => {
     resetRetrieverCache();
     resetKgCache();

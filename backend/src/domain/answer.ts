@@ -125,7 +125,7 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
   }
   if (
     /1500m|1500ｍ|800m|800ｍ/.test(q) &&
-    /上位\s*\d+\s*人平均|上位\d+人平均|学校別|所属別|ランキング|何位|順位/.test(q)
+    /上位\s*\d+\s*人平均|上位\d+人平均|学校別|所属別/.test(q)
   ) {
     const count = q.match(/上位\s*(\d+)\s*人平均/)?.[1];
     const school = /玉名付属|玉名附属|玉高附属/.test(q)
@@ -701,7 +701,7 @@ function offlineAnswer(
       );
     const schoolPbRankLookup =
       /1500m|1500ｍ|800m|800ｍ/.test(question) &&
-      /上位\s*\d+\s*人平均|上位\d+人平均|学校別|所属別|ランキング|何位|順位/.test(
+      /上位\s*\d+\s*人平均|上位\d+人平均|学校別|所属別/.test(
         question,
       );
     const kanaguriDate =
@@ -1670,7 +1670,7 @@ export async function answerQuestion(
   }
   const schoolPbRankQ =
     /1500m|1500ｍ|800m|800ｍ/.test(expanded) &&
-    /上位\s*\d+\s*人平均|上位\d+人平均|学校別|所属別|ランキング|何位|順位/.test(
+    /上位\s*\d+\s*人平均|上位\d+人平均|学校別|所属別/.test(
       expanded,
     );
   if (schoolPbRankQ) {
