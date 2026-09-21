@@ -1006,6 +1006,21 @@ describe("answerQuestion", () => {
     }
   });
 
+  it("summarizes the latest nagomi top three by gender", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("なごみ駅伝の上位3校は？", {
+      llm: null,
+      skipRouter: true,
+      defaultYear: 2026,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.text).toContain("2026年なごみ男子: 1位 NJAC（38:33）、2位 金栗PROJECT A（38:49）、3位 ATRC A（39:07）");
+      expect(result.text).toContain("2026年なごみ女子: 1位 金栗PROJECT A（26:55）、2位 ATRC（28:25）、3位 南中ガールズA（29:20）");
+    }
+  });
+
   it("answers an unqualified sixth-place question for both genders", async () => {
     resetRetrieverCache();
     resetKgCache();

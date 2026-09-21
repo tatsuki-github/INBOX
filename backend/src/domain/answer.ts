@@ -184,6 +184,12 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
       return `2026年なごみ男子${rank}位: ${rows[0]![1]!.trim()}（${rows[0]![2]}）。2026年なごみ女子${rank}位: ${rows[1]![1]!.trim()}（${rows[1]![2]}）。`;
     }
   }
+  if (/なごみ/.test(q) && !/男子|女子/.test(q) && /上位\s*3校|上位三校/.test(q)) {
+    const rows = [...flat.matchAll(/\|\s*([1-3])\s*\|\s*\d+\s*\|\s*([^|]+?)\s*\|\s*([0-9]+:\d{2})\s*\|/g)];
+    if (rows.length >= 6) {
+      return `2026年なごみ男子: ${rows.slice(0, 3).map((row) => `${row[1]}位 ${row[2]!.trim()}（${row[3]}）`).join("、")}。2026年なごみ女子: ${rows.slice(3, 6).map((row) => `${row[1]}位 ${row[2]!.trim()}（${row[3]}）`).join("、")}。`;
+    }
+  }
   if (/なごみ/.test(q) && /男子|女子/.test(q)) {
     const rank = q.match(/(\d+)位/)?.[1];
     if (rank) {
@@ -1734,7 +1740,7 @@ function offlineAnswer(
       !/優勝|準優勝|区間|大会記録|記録保持/.test(question);
     const nagomiResultLookup =
       /なごみ/.test(question) &&
-      /結果|順位|何位|\d+位|優勝/.test(question) &&
+      /結果|順位|何位|\d+位|上位\s*3校|上位三校|優勝/.test(question) &&
       !/予想|SB/.test(question);
     const nagomiRankLookup =
       /なごみ/.test(question) &&
@@ -3349,7 +3355,7 @@ export async function answerQuestion(
   }
   const nagomiResultQ =
     /なごみ/.test(expanded) &&
-    /結果|順位|何位|\d+位|優勝/.test(expanded) &&
+    /結果|順位|何位|\d+位|上位\s*3校|上位三校|優勝/.test(expanded) &&
     !/予想|SB/.test(expanded) &&
     !nagomiLegOrderQ;
   const nagomiDateQ =
