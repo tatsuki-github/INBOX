@@ -762,6 +762,22 @@ describe("answerQuestion", () => {
     }
   });
 
+  it("supports Japanese numeral runner-up wording", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("荒玉駅伝の二位は？", {
+      llm: null,
+      skipRouter: true,
+      defaultYear: 2026,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.text).toContain("2025年男子準優勝校: 玉陵（58:02）");
+      expect(result.text).toContain("2025年女子準優勝校: 南関（43:45）");
+      expect(result.text).not.toContain("深掘り分析");
+    }
+  });
+
   it("answers an unqualified first-place question for both genders", async () => {
     resetRetrieverCache();
     resetKgCache();
