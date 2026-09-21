@@ -2380,6 +2380,21 @@ describe("answerQuestion", () => {
     }
   });
 
+  it("routes a dated 荒尾四 result to its team digest", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("荒尾四の2025年結果は？", {
+      skipRouter: true,
+      defaultYear: 2026,
+      llm: null,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.text).toContain("2025年荒玉駅伝男子 荒尾四は10位・総合61:15");
+      expect(result.sources[0]).toContain("aragyoku-teams/荒尾四.md");
+    }
+  });
+
   it("filters dated team results by the requested gender", async () => {
     resetRetrieverCache();
     resetKgCache();

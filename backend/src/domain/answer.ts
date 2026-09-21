@@ -2830,7 +2830,7 @@ export async function answerQuestion(
   const datedTeamResultQ =
     /20\d{2}/.test(expanded) &&
     /結果|成績|順位/.test(expanded) &&
-    /岱明|玉高附属|玉名付属|玉名附属|天水|有明|南関|菊水|玉東|玉陵|長洲/.test(expanded);
+    /荒尾海陽|荒尾三|荒尾四|三加和|玉南|岱明|玉高附属|玉名付属|玉名附属|天水|有明|南関|菊水|玉東|玉陵|長洲/.test(expanded);
   const unqualifiedTeamResultQ =
     !/20\d{2}/.test(question) &&
     /結果|成績|順位/.test(question) &&
