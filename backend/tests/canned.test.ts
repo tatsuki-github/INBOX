@@ -55,6 +55,11 @@ describe("canned help / example questions", () => {
     expect(text).toContain("荒玉男子1区を10分で走るとペースは？");
     expect(text).not.toContain("12分");
     expect(text).not.toContain("銀マット");
+    expect(text).not.toContain("9/20の練習予定");
+    expect(text).toContain("○○/〇〇の大会予定は？");
+    expect(text).not.toMatch(/20(?:0\d|1\d|2[0-3])/); // 直近2年（2024–）以外の西暦年を入れない
+    expect(text).toContain("2024年荒玉男子の優勝チームは？");
+    expect(text).toContain("2025年");
     const exampleLines = text
       .split("\n")
       .filter((l) => l.startsWith("・"))
@@ -75,7 +80,7 @@ describe("canned help / example questions", () => {
       "コース動画",
       "結果ボード",
       "なごみ",
-      "練習",
+      "大会予定",
       "結果URL",
       "自己ベスト",
       "対象外",
