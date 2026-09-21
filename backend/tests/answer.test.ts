@@ -214,6 +214,22 @@ describe("answerQuestion", () => {
     }
   });
 
+  it("uses the current practice note for 合同練習会 without city wording", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("合同練習会の集合時刻は？", {
+      llm: null,
+      skipRouter: true,
+      defaultYear: 2026,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.sources).toEqual(["drive-text/練習/玉名市練習会/2026-09-22.md"]);
+      expect(result.text).toContain("午前 8:00");
+      expect(result.text).not.toContain("2026-01");
+    }
+  });
+
   it("starts 岱明朝練 weekday answers at the staff schedule section", async () => {
     resetRetrieverCache();
     resetKgCache();

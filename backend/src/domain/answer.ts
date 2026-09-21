@@ -212,7 +212,7 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
   // 合同練習会の「いつ・どこ」質問は、保護者LINE要約の冒頭ではなく
   // 予定セクションを見せる。冒頭だけを返すと日付・会場が同じ文書内に
   // あってもオフライン回答から落ちる。
-  if (/玉名市.*練習会|練習会.*玉名市/.test(q)) {
+  if (/玉名市.*練習会|練習会.*玉名市|合同練習会/.test(q)) {
     for (const needle of [
       "# 玉名市練習会",
       "おおはまふれあいセンター",
@@ -488,7 +488,7 @@ function boostDateMeetSources(expandedQuery: string, baseSources: string[]): str
   // otherwise exposes unrelated practice entries first.
   if (
     isDateScheduleQuestion(expandedQuery) &&
-    /玉名市.*練習会|練習会.*玉名市/.test(expandedQuery)
+    /玉名市.*練習会|練習会.*玉名市|合同練習会/.test(expandedQuery)
   ) {
     const year = expandedQuery.match(/20\d{2}/)?.[0];
     const exactPracticeSources = findSourcesContaining(
