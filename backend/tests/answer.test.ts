@@ -369,6 +369,22 @@ describe("answerQuestion", () => {
     }
   });
 
+  it("keeps year-over-year shortening on the named team's digest", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("岱明男子は2024から2025で何分短縮した？", {
+      llm: null,
+      skipRouter: true,
+      defaultYear: 2026,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.sources[0]).toBe("out-analysis/aragyoku-teams/岱明.md");
+      expect(result.text).toContain("-6:07.00");
+      expect(result.text).toContain("59:08");
+    }
+  });
+
   it("llm sees なごみ context for 9/20", async () => {
     resetRetrieverCache();
     resetKgCache();

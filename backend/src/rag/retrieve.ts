@@ -945,6 +945,13 @@ function digestPinForQuery(chunk: RagChunk, query: string): number {
       teamStem === "玉高附属" ? ["玉高附属", "玉名付属", "玉名附属", "玉名附"] : [teamStem];
     if (teamStem && aliases.some((alias) => qn.includes(alias))) return 900;
   }
+  if (
+    /前年比|前年から|短縮|何分/.test(qn) &&
+    /aragyoku-teams\/([^/]+)\.md$/.test(base)
+  ) {
+    const teamStem = base.match(/aragyoku-teams\/([^/]+)\.md$/)?.[1] ?? "";
+    if (teamStem && qn.includes(teamStem)) return 850;
+  }
   if (/トラック/.test(qn) && /1周|一周|周長|何メートル/.test(qn)) {
     if (/daiming-practice-menus-kpace|data-model\.md/.test(chunk.source)) {
       return 500;
