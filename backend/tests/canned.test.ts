@@ -52,6 +52,9 @@ describe("canned help / example questions", () => {
     for (const name of ["今村昇磨", "石川隼", "佐藤央琉", "案浦竜士", "松野凛空"]) {
       expect(text).not.toContain(name);
     }
+    expect(text).toContain("荒玉男子1区を10分で走るとペースは？");
+    expect(text).not.toContain("12分");
+    expect(text).not.toContain("銀マット");
     const exampleLines = text
       .split("\n")
       .filter((l) => l.startsWith("・"))

@@ -1227,7 +1227,14 @@ def _register_idaten_corpus(
                     if p.is_file() and not p.name.endswith(".meta.json")
                 )
                 summary_bits: list[str] = []
-                for prefer in ("岱明の結果.md", "開催要項.md", "開催要項.pdf.md"):
+                for prefer in (
+                    "岱明の結果.md",
+                    "女子成績表.md",
+                    "男子成績表.md",
+                    "成績表.json",
+                    "開催要項.md",
+                    "開催要項.pdf.md",
+                ):
                     cand = meet_dir / prefer
                     if cand.exists():
                         summary_bits.append(_peek_text_summary(cand, max_chars=140))
@@ -1259,6 +1266,13 @@ def _register_idaten_corpus(
                     f
                     for f in files
                     if f == "岱明の結果.md"
+                    or f in {
+                        "女子成績表.md",
+                        "男子成績表.md",
+                        "成績表.json",
+                        "女子成績表.pdf",
+                        "男子成績表.pdf",
+                    }
                     or f.startswith("結果_")
                     or ("岱明" in f and "結果" in f and f.endswith(".md"))
                 ]

@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated_at": "2026-09-21T03:33:32Z",
+  "generated_at": "2026-09-21T05:05:41Z",
   "nodes": [
     {
       "id": "corpus:analysis-ocr",
@@ -204,9 +204,9 @@
         "practice"
       ],
       "refs": [
+        "input/events.2025.yaml",
         "out/analysis/notion_records_2026.json",
-        "out/2025/practice_absentees.csv",
-        "input/events.2025.yaml"
+        "out/2025/practice_absentees.csv"
       ],
       "hint": "部員エンティティ"
     },
@@ -220,9 +220,9 @@
         "practice"
       ],
       "refs": [
+        "input/events.2025.yaml",
         "out/analysis/notion_records_2026.json",
-        "out/2025/practice_absentees.csv",
-        "input/events.2025.yaml"
+        "out/2025/practice_absentees.csv"
       ],
       "hint": "所属:岱明中"
     },
@@ -236,9 +236,9 @@
         "practice"
       ],
       "refs": [
+        "input/events.2025.yaml",
         "out/analysis/notion_records_2026.json",
-        "out/2025/practice_absentees.csv",
-        "input/events.2025.yaml"
+        "out/2025/practice_absentees.csv"
       ],
       "hint": "部員エンティティ"
     },
@@ -252,9 +252,9 @@
         "practice"
       ],
       "refs": [
+        "input/events.2025.yaml",
         "out/analysis/notion_records_2026.json",
-        "out/2025/practice_absentees.csv",
-        "input/events.2025.yaml"
+        "out/2025/practice_absentees.csv"
       ],
       "hint": "所属:岱明中"
     },
@@ -268,9 +268,9 @@
         "practice"
       ],
       "refs": [
+        "input/events.2025.yaml",
         "out/analysis/notion_records_2026.json",
-        "out/2025/practice_absentees.csv",
-        "input/events.2025.yaml"
+        "out/2025/practice_absentees.csv"
       ],
       "hint": "部員エンティティ"
     },
@@ -284,9 +284,9 @@
         "practice"
       ],
       "refs": [
+        "input/events.2025.yaml",
         "out/analysis/notion_records_2026.json",
-        "out/2025/practice_absentees.csv",
-        "input/events.2025.yaml"
+        "out/2025/practice_absentees.csv"
       ],
       "hint": "所属:岱明中"
     },
@@ -328,9 +328,9 @@
         "practice"
       ],
       "refs": [
+        "input/events.2025.yaml",
         "out/analysis/notion_records_2026.json",
-        "out/2025/practice_absentees.csv",
-        "input/events.2025.yaml"
+        "out/2025/practice_absentees.csv"
       ],
       "hint": "部員エンティティ"
     },
@@ -344,9 +344,9 @@
         "practice"
       ],
       "refs": [
+        "input/events.2025.yaml",
         "out/analysis/notion_records_2026.json",
-        "out/2025/practice_absentees.csv",
-        "input/events.2025.yaml"
+        "out/2025/practice_absentees.csv"
       ],
       "hint": "所属:岱明中"
     },
@@ -360,8 +360,8 @@
         "practice"
       ],
       "refs": [
-        "out/2025/practice_absentees.csv",
-        "input/events.2025.yaml"
+        "input/events.2025.yaml",
+        "out/2025/practice_absentees.csv"
       ],
       "hint": "部員エンティティ"
     },
@@ -375,9 +375,9 @@
         "practice"
       ],
       "refs": [
+        "input/events.2025.yaml",
         "out/analysis/notion_records_2026.json",
-        "out/2025/practice_absentees.csv",
-        "input/events.2025.yaml"
+        "out/2025/practice_absentees.csv"
       ],
       "hint": "部員エンティティ"
     },
@@ -391,9 +391,9 @@
         "practice"
       ],
       "refs": [
+        "input/events.2025.yaml",
         "out/analysis/notion_records_2026.json",
-        "out/2025/practice_absentees.csv",
-        "input/events.2025.yaml"
+        "out/2025/practice_absentees.csv"
       ],
       "hint": "所属:岱明中"
     },
@@ -407,9 +407,9 @@
         "practice"
       ],
       "refs": [
+        "input/events.2025.yaml",
         "out/analysis/notion_records_2026.json",
-        "out/2025/practice_absentees.csv",
-        "input/events.2025.yaml"
+        "out/2025/practice_absentees.csv"
       ],
       "hint": "部員エンティティ"
     },
@@ -423,9 +423,9 @@
         "practice"
       ],
       "refs": [
+        "input/events.2025.yaml",
         "out/analysis/notion_records_2026.json",
-        "out/2025/practice_absentees.csv",
-        "input/events.2025.yaml"
+        "out/2025/practice_absentees.csv"
       ],
       "hint": "所属:岱明中"
     },
@@ -439,9 +439,9 @@
         "practice"
       ],
       "refs": [
+        "input/events.2025.yaml",
         "out/analysis/notion_records_2026.json",
-        "out/2025/practice_absentees.csv",
-        "input/events.2025.yaml"
+        "out/2025/practice_absentees.csv"
       ],
       "hint": "部員エンティティ"
     },
@@ -455,9 +455,9 @@
         "practice"
       ],
       "refs": [
+        "input/events.2025.yaml",
         "out/analysis/notion_records_2026.json",
-        "out/2025/practice_absentees.csv",
-        "input/events.2025.yaml"
+        "out/2025/practice_absentees.csv"
       ],
       "hint": "所属:岱明中"
     },
@@ -471,9 +471,9 @@
         "practice"
       ],
       "refs": [
-        "out/analysis/notion_records_2026.json",
         "input/events.2026.yaml",
-        "out/2026/practice_absentees.csv"
+        "out/2026/practice_absentees.csv",
+        "out/analysis/notion_records_2026.json"
       ],
       "hint": "部員エンティティ"
     },
@@ -487,9 +487,9 @@
         "practice"
       ],
       "refs": [
-        "out/analysis/notion_records_2026.json",
         "input/events.2026.yaml",
-        "out/2026/practice_absentees.csv"
+        "out/2026/practice_absentees.csv",
+        "out/analysis/notion_records_2026.json"
       ],
       "hint": "所属:岱明中"
     },
@@ -503,9 +503,9 @@
         "practice"
       ],
       "refs": [
+        "input/events.2025.yaml",
         "out/analysis/notion_records_2026.json",
-        "out/2025/practice_absentees.csv",
-        "input/events.2025.yaml"
+        "out/2025/practice_absentees.csv"
       ],
       "hint": "部員エンティティ"
     },
@@ -519,9 +519,9 @@
         "practice"
       ],
       "refs": [
+        "input/events.2025.yaml",
         "out/analysis/notion_records_2026.json",
-        "out/2025/practice_absentees.csv",
-        "input/events.2025.yaml"
+        "out/2025/practice_absentees.csv"
       ],
       "hint": "所属:岱明中"
     },
@@ -535,11 +535,11 @@
         "practice"
       ],
       "refs": [
-        "out/analysis/notion_records_2026.json",
         "input/events.2026.yaml",
+        "out/2026/practice_absentees.csv",
+        "out/analysis/notion_records_2026.json",
         "input/events.2025.yaml",
-        "out/2025/practice_absentees.csv",
-        "out/2026/practice_absentees.csv"
+        "out/2025/practice_absentees.csv"
       ],
       "hint": "部員エンティティ"
     },
@@ -553,11 +553,11 @@
         "practice"
       ],
       "refs": [
-        "out/analysis/notion_records_2026.json",
         "input/events.2026.yaml",
+        "out/2026/practice_absentees.csv",
+        "out/analysis/notion_records_2026.json",
         "input/events.2025.yaml",
-        "out/2025/practice_absentees.csv",
-        "out/2026/practice_absentees.csv"
+        "out/2025/practice_absentees.csv"
       ],
       "hint": "所属:岱明中"
     },
@@ -2384,18 +2384,18 @@
       ],
       "refs": [
         "input/idaten-corpus/drive-text/大会/2025年度/0921_中学駅伝金栗四三生誕の地なごみ大会",
+        "input/idaten-corpus/drive-text/大会/2025年度/0921_中学駅伝金栗四三生誕の地なごみ大会/女子成績表.md",
         "input/idaten-corpus/drive-text/大会/2025年度/0921_中学駅伝金栗四三生誕の地なごみ大会/岱明の結果.md",
+        "input/idaten-corpus/drive-text/大会/2025年度/0921_中学駅伝金栗四三生誕の地なごみ大会/成績表.json",
+        "input/idaten-corpus/drive-text/大会/2025年度/0921_中学駅伝金栗四三生誕の地なごみ大会/男子成績表.md",
         "input/idaten-corpus/drive-text/大会/2025年度/0921_中学駅伝金栗四三生誕の地なごみ大会/予実比較.html",
         "input/idaten-corpus/drive-text/大会/2025年度/0921_中学駅伝金栗四三生誕の地なごみ大会/予実比較.md",
         "input/idaten-corpus/drive-text/大会/2025年度/0921_中学駅伝金栗四三生誕の地なごみ大会/女子の結果.heic.md",
         "input/idaten-corpus/drive-text/大会/2025年度/0921_中学駅伝金栗四三生誕の地なごみ大会/女子区間オーダー_SB予想.md",
         "input/idaten-corpus/drive-text/大会/2025年度/0921_中学駅伝金栗四三生誕の地なごみ大会/女子区間オーダー_SB予想_coverage.csv",
-        "input/idaten-corpus/drive-text/大会/2025年度/0921_中学駅伝金栗四三生誕の地なごみ大会/女子成績表.md",
-        "input/idaten-corpus/drive-text/大会/2025年度/0921_中学駅伝金栗四三生誕の地なごみ大会/成績表.json",
         "input/idaten-corpus/drive-text/大会/2025年度/0921_中学駅伝金栗四三生誕の地なごみ大会/男子の結果1.pdf.md",
         "input/idaten-corpus/drive-text/大会/2025年度/0921_中学駅伝金栗四三生誕の地なごみ大会/男子の結果2.pdf.md",
-        "input/idaten-corpus/drive-text/大会/2025年度/0921_中学駅伝金栗四三生誕の地なごみ大会/男子区間オーダー_SB予想.md",
-        "input/idaten-corpus/drive-text/大会/2025年度/0921_中学駅伝金栗四三生誕の地なごみ大会/男子区間オーダー_SB予想_coverage.csv"
+        "input/idaten-corpus/drive-text/大会/2025年度/0921_中学駅伝金栗四三生誕の地なごみ大会/男子区間オーダー_SB予想.md"
       ],
       "hint": "2025年度 大会「0921_中学駅伝金栗四三生誕の地なごみ大会」。日付キー MMDD=0921。ファイル: 予実比較.html, 予実比較.md, 女子の結果.heic.md, 女子区間オーダー_SB予想.md, 女子区間オーダー_SB予想_coverage.csv, 女子成績表.md, 岱明の結果.md, 成績表.json。 内容: 女子 / 8位　31:22 / 1区　村上咲稀　7:06 区間4位 / 2区　高田麻由　7:37 区間7位 / 3区　塚原優衣　8:11 区間18位 / 4区　角田亜美　8:28 区間12位 / 男子A / 8位　41:42 / 1区　松野凛空　10:14 区間15位 / 2区　"
     },
@@ -2696,20 +2696,20 @@
       ],
       "refs": [
         "input/idaten-corpus/drive-text/大会/2026年度/0920_中学駅伝金栗四三生誕の地なごみ大会",
+        "input/idaten-corpus/drive-text/大会/2026年度/0920_中学駅伝金栗四三生誕の地なごみ大会/女子成績表.md",
+        "input/idaten-corpus/drive-text/大会/2026年度/0920_中学駅伝金栗四三生誕の地なごみ大会/女子成績表.pdf",
+        "input/idaten-corpus/drive-text/大会/2026年度/0920_中学駅伝金栗四三生誕の地なごみ大会/成績表.json",
+        "input/idaten-corpus/drive-text/大会/2026年度/0920_中学駅伝金栗四三生誕の地なごみ大会/男子成績表.md",
+        "input/idaten-corpus/drive-text/大会/2026年度/0920_中学駅伝金栗四三生誕の地なごみ大会/男子成績表.pdf",
         "input/idaten-corpus/drive-text/大会/2026年度/0920_中学駅伝金栗四三生誕の地なごみ大会/エントリーリスト.pdf.md",
         "input/idaten-corpus/drive-text/大会/2026年度/0920_中学駅伝金栗四三生誕の地なごみ大会/プログラム.pdf.md",
         "input/idaten-corpus/drive-text/大会/2026年度/0920_中学駅伝金栗四三生誕の地なごみ大会/予実比較.html",
         "input/idaten-corpus/drive-text/大会/2026年度/0920_中学駅伝金栗四三生誕の地なごみ大会/予実比較.md",
         "input/idaten-corpus/drive-text/大会/2026年度/0920_中学駅伝金栗四三生誕の地なごみ大会/女子区間オーダー_SB予想.md",
         "input/idaten-corpus/drive-text/大会/2026年度/0920_中学駅伝金栗四三生誕の地なごみ大会/女子区間オーダー_SB予想_coverage.csv",
-        "input/idaten-corpus/drive-text/大会/2026年度/0920_中学駅伝金栗四三生誕の地なごみ大会/女子区間オーダーリスト.md",
-        "input/idaten-corpus/drive-text/大会/2026年度/0920_中学駅伝金栗四三生誕の地なごみ大会/女子成績表.md",
-        "input/idaten-corpus/drive-text/大会/2026年度/0920_中学駅伝金栗四三生誕の地なごみ大会/当日スケジュール.md",
-        "input/idaten-corpus/drive-text/大会/2026年度/0920_中学駅伝金栗四三生誕の地なごみ大会/成績表.json",
-        "input/idaten-corpus/drive-text/大会/2026年度/0920_中学駅伝金栗四三生誕の地なごみ大会/男子区間オーダー_SB予想.md",
-        "input/idaten-corpus/drive-text/大会/2026年度/0920_中学駅伝金栗四三生誕の地なごみ大会/男子区間オーダー_SB予想_coverage.csv"
+        "input/idaten-corpus/drive-text/大会/2026年度/0920_中学駅伝金栗四三生誕の地なごみ大会/女子区間オーダーリスト.md"
       ],
-      "hint": "2026年度 大会「0920_中学駅伝金栗四三生誕の地なごみ大会」。日付キー MMDD=0920。ファイル: エントリーリスト.pdf.md, プログラム.pdf.md, 予実比較.html, 予実比較.md, 女子区間オーダー_SB予想.md, 女子区間オーダー_SB予想_coverage.csv, 女子区間オーダーリスト.md, 女子成績表.md。 内容: 大会名: 第12回　中学駅伝金栗四三生誕の地なごみ大会 / 日付: 2026-09-20 / ステータス: scheduled / 第12回 中学駅伝金栗四三生誕の地なごみ大会 開催要項 / 1．主催 / 和水町陸上競技協会、一般社団法人K-PROJECT / 2．後援 / 和水"
+      "hint": "2026年度 大会「0920_中学駅伝金栗四三生誕の地なごみ大会」。日付キー MMDD=0920。ファイル: エントリーリスト.pdf.md, プログラム.pdf.md, 予実比較.html, 予実比較.md, 女子区間オーダー_SB予想.md, 女子区間オーダー_SB予想_coverage.csv, 女子区間オーダーリスト.md, 女子成績表.jpg。 内容: 第12回 中学駅伝金栗四三生誕の地なごみ大会 女子成績表 / - 日付: 2026-09-20 / - 会場: 和水町三加和公民館前発着周回コース / - 各区 2km / 総合 8km / - 上段: 選手氏名・学年 / 中段: (順位)通過記録 / 下段: (順位)区間記録 "
     },
     {
       "id": "meet:2026年度:0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）",
@@ -4342,6 +4342,20 @@
         "docs/adr/052-nagomi-sb-gap-analysis.md"
       ],
       "hint": "ADR: 052-nagomi-sb-gap-analysis"
+    },
+    {
+      "id": "source:docs/adr/053-line-bot-help-examples.md",
+      "type": "Source",
+      "label": "053-line-bot-help-examples.md",
+      "topics": [
+        "ai",
+        "meta",
+        "practice"
+      ],
+      "refs": [
+        "docs/adr/053-line-bot-help-examples.md"
+      ],
+      "hint": "ADR: 053-line-bot-help-examples"
     },
     {
       "id": "source:docs/ai-practice-generation.md",
@@ -10209,6 +10223,11 @@
       "rel": "see_also"
     },
     {
+      "from": "source:docs/ai-practice-generation.md",
+      "to": "source:docs/adr/053-line-bot-help-examples.md",
+      "rel": "see_also"
+    },
+    {
       "from": "source:out/2020/calendar.md",
       "to": "source:input/events.2020.yaml",
       "rel": "derived_from"
@@ -10786,6 +10805,11 @@
     {
       "from": "topic:ai",
       "to": "source:docs/adr/052-nagomi-sb-gap-analysis.md",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:ai",
+      "to": "source:docs/adr/053-line-bot-help-examples.md",
       "rel": "search_here"
     },
     {
@@ -12905,6 +12929,11 @@
     },
     {
       "from": "topic:meta",
+      "to": "source:docs/adr/053-line-bot-help-examples.md",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:meta",
       "to": "source:docs/tamana-weather.md",
       "rel": "documented_in"
     },
@@ -13756,6 +13785,11 @@
     {
       "from": "topic:practice",
       "to": "source:docs/adr/052-nagomi-sb-gap-analysis.md",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:practice",
+      "to": "source:docs/adr/053-line-bot-help-examples.md",
       "rel": "search_here"
     },
     {
