@@ -231,6 +231,22 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
       }
     }
   }
+  if (/距離|何キロ|何km|何ｍ|何メートル/.test(q) && /[1-6]区|区間/.test(q)) {
+    const leg = q.match(/([1-6])区/)?.[1];
+    const sectionNeedle = /女子/.test(q)
+      ? "### 女子（全年度共通）"
+      : /現行|2024年以降/.test(q)
+        ? "### 男子・2024年以降（現行）"
+        : "## 男子";
+    const sectionStart = flat.indexOf(sectionNeedle);
+    if (leg && sectionStart >= 0) {
+      const row = flat.indexOf(`| ${leg}区 |`, sectionStart);
+      if (row >= 0) {
+        const start = Math.max(sectionStart, row - 70);
+        return flat.slice(start, Math.min(flat.length, start + budget));
+      }
+    }
+  }
   // 「案浦竜士は何区を走った？」→ `| N | 案浦竜士 |` を N区 として明示
   if (isLegAthleteQuestion(q) && /何区/.test(q)) {
     const who = q.match(/([\u3400-\u9fff]{2,8})は.{0,20}何区/);
@@ -688,6 +704,17 @@ function boostMeetYearSources(
   }
   const driveTokens = meetDriveTokens(kind, expandedQuery);
   const legAthleteQ = isLegAthleteQuestion(expandedQuery);
+  const aragyokuDistanceQ =
+    kind === "aragyoku" &&
+    /距離|何キロ|何km|何ｍ|何メートル/.test(expandedQuery) &&
+    /[1-6]区|区間/.test(expandedQuery) &&
+    !/ペース/.test(expandedQuery);
+
+  if (aragyokuDistanceQ) {
+    push("out-analysis/aragyoku-overview.md");
+    push("docs/aragyoku-ekiden-distance-definitions.md");
+    return out;
+  }
 
   if (driveTokens.length > 0 && kind !== "aragyoku") {
     const driveHits = sortMeetDriveSources(
@@ -1067,6 +1094,12 @@ export async function answerQuestion(
     );
   }
 
+  const aragyokuDistanceQ =
+    /荒玉|駅伝/.test(expanded) &&
+    /距離|何キロ|何km|何ｍ|何メートル/.test(expanded) &&
+    /[1-6]区|区間/.test(expanded) &&
+    !/ペース/.test(expanded);
+
   const fromSources = retrieveBySources(preferredSources, {
     query: expanded,
     perSource: exhaustive ? 200 : RETRIEVAL_BUDGET.perSource,
@@ -1079,7 +1112,11 @@ export async function answerQuestion(
   // second global BM25 pass can reintroduce the broad yearly analysis digest
   // and hide the requested team's row.
   const fromBm25 =
-    exhaustive || exactDatedPractice || namedTeamSbList || isLegAthleteQuestion(expanded)
+    exhaustive ||
+    exactDatedPractice ||
+    namedTeamSbList ||
+    isLegAthleteQuestion(expanded) ||
+    aragyokuDistanceQ
       ? []
       : retrieve(expanded, topK);
   const mergedCore = mergeRetrieved(
