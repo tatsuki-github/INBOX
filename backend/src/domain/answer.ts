@@ -279,7 +279,7 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
       return flat.slice(idx, Math.min(flat.length, idx + budget));
     }
   }
-  if (/お別れ会/.test(q) && /いつ|日程|何時|時間|予定|日/.test(q)) {
+  if (/お別れ会/.test(q) && /いつ|日程|何時|時間|時刻|予定|日/.test(q)) {
     for (const needle of ["### 金栗駅伝・お別れ会", "3年生お別れ会"]) {
       const idx = flat.indexOf(needle);
       if (idx >= 0) {
@@ -1461,7 +1461,7 @@ export async function answerQuestion(
     /地点分担|何地点|どの地点|担当地点|地点(?:は|に|です)/.test(expanded) &&
     /熊澤|土山|柴尾|土本/.test(expanded);
   const farewellScheduleQ =
-    /お別れ会/.test(expanded) && /いつ|日程|何時|時間|予定|日/.test(expanded);
+    /お別れ会/.test(expanded) && /いつ|日程|何時|時間|時刻|予定|日/.test(expanded);
   const matSizeQ =
     /銀マット/.test(expanded) && /何センチ|何ミリ|サイズ|長さ|幅|厚み|厚さ|大きさ/.test(expanded);
   const legDistanceQ =

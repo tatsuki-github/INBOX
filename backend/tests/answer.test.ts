@@ -379,6 +379,21 @@ describe("answerQuestion", () => {
     }
   });
 
+  it("recognizes 時刻 as an お別れ会 schedule alias", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("お別れ会の時刻は？", {
+      llm: null,
+      skipRouter: true,
+      defaultYear: 2026,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.text).toContain("3/15 12:30–15:00");
+      expect(result.text).not.toContain("ジュニア駅伝（2026-09）");
+    }
+  });
+
   it("starts 銀マット size answers at the parent size summary", async () => {
     resetRetrieverCache();
     resetKgCache();
