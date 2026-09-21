@@ -1538,6 +1538,14 @@ function offlineAnswer(
     lines.push("荒玉駅伝の区間選手は年度・チームで異なります。年度またはチームを指定してください。");
     return lines.join("\n");
   }
+  if (
+    /荒玉|駅伝/.test(question) &&
+    /区間賞|区間順位/.test(question) &&
+    !/20\d{2}|男子|女子|[1-6]区/.test(question)
+  ) {
+    lines.push("荒玉駅伝の区間賞・区間順位は、年度・性別・区間を指定してください。");
+    return lines.join("\n");
+  }
   if (retrieved.length === 0) {
     if (/金栗駅伝/.test(question) && /結果|順位|優勝校|優勝チーム/.test(question)) {
       lines.push("2026年の金栗駅伝は、正本資料上は開催予定の記録のみで、結果・順位はまだ記載されていません。");
