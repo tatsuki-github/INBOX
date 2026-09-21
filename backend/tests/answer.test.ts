@@ -2441,6 +2441,23 @@ describe("answerQuestion", () => {
     }
   });
 
+  it("lists historical runner-ups instead of defaulting to the latest row", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("荒玉男子の歴代準優勝校は？", {
+      llm: null,
+      skipRouter: true,
+      defaultYear: 2026,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.sources[0]).toBe("aragyoku/winners-by-year.md");
+      expect(result.text).toContain("2012年荒玉駅伝男子の優勝校は「玉名」");
+      expect(result.text).toContain("2025年荒玉駅伝男子の優勝校は「菊水」");
+      expect(result.text).not.toMatch(/^.*2025年荒玉駅伝男子.*\n?1\. .*2025年荒玉駅伝男子/);
+    }
+  });
+
   it("answers 荒玉地区 3000m fastest from ranking digest", async () => {
     resetRetrieverCache();
     resetKgCache();

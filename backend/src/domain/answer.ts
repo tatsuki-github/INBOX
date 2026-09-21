@@ -430,7 +430,8 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
     !/20\d{2}/.test(q) &&
     /準優勝|2位/.test(q) &&
     /荒玉|駅伝/.test(q) &&
-    /男子|女子/.test(q)
+    /男子|女子/.test(q) &&
+    !/過去|歴代/.test(q)
   ) {
     const gender = /女子/.test(q) ? "女子" : "男子";
     const re = new RegExp(`20\\d{2}年荒玉駅伝${gender}の優勝校は[^。]*準優勝校は[^。]+。`, "g");
@@ -1038,7 +1039,7 @@ function offlineAnswer(
       /優勝/.test(question) &&
       /男子|女子/.test(question) &&
       /荒玉|駅伝/.test(question) &&
-      !/差|タイム/.test(question);
+      !/差|タイム|準優勝|2位/.test(question);
     const latestWinnerTime =
       /総合タイム|優勝タイム|優勝.*タイム|タイム.*優勝/.test(question) &&
       /男子|女子/.test(question) &&
@@ -1047,7 +1048,8 @@ function offlineAnswer(
       !/20\d{2}/.test(question) &&
       /準優勝|2位/.test(question) &&
       /男子|女子/.test(question) &&
-      /荒玉|駅伝/.test(question);
+      /荒玉|駅伝/.test(question) &&
+      !/過去|歴代/.test(question);
     const latestFirstPlace =
       !/20\d{2}/.test(question) &&
       /1位/.test(question) &&
@@ -2035,7 +2037,7 @@ export async function answerQuestion(
     /優勝/.test(question) &&
     /男子|女子/.test(question) &&
     /荒玉|駅伝/.test(question) &&
-    !/差|タイム/.test(question);
+    !/差|タイム|準優勝|2位/.test(question);
   const latestWinnerTimeQ =
     /総合タイム|優勝タイム/.test(question) &&
     /男子|女子/.test(question) &&
@@ -2044,7 +2046,8 @@ export async function answerQuestion(
     !/20\d{2}/.test(question) &&
     /準優勝|2位/.test(question) &&
     /男子|女子/.test(question) &&
-    /荒玉|駅伝/.test(question);
+    /荒玉|駅伝/.test(question) &&
+    !/過去|歴代/.test(question);
   const latestFirstPlaceQ =
     !/20\d{2}/.test(question) &&
     /1位/.test(question) &&
@@ -2373,15 +2376,15 @@ export async function answerQuestion(
   const fromSources = retrieveBySources(preferredSources, {
     query: expanded,
     perSource:
-      exhaustive || totalMeetRecordQ || teamFullRecordQ || explicitTeamLegRankQ
+      exhaustive || totalMeetRecordQ || teamFullRecordQ || explicitTeamLegRankQ || historicalWinnerQ
         ? 200
         : RETRIEVAL_BUDGET.perSource,
     maxChunks:
-      exhaustive || totalMeetRecordQ || teamFullRecordQ || explicitTeamLegRankQ
+      exhaustive || totalMeetRecordQ || teamFullRecordQ || explicitTeamLegRankQ || historicalWinnerQ
         ? 200
         : RETRIEVAL_BUDGET.maxChunks,
       coverage:
-      exhaustive || exactDatedPractice || totalMeetRecordQ || teamFullRecordQ || explicitTeamLegRankQ
+      exhaustive || exactDatedPractice || totalMeetRecordQ || teamFullRecordQ || explicitTeamLegRankQ || historicalWinnerQ
         ? "full"
         : "ranked",
   });
@@ -2433,6 +2436,8 @@ export async function answerQuestion(
         ? Math.max(topK, fromSources.length, 96)
       : totalMeetRecordQ
         ? Math.max(topK, fromSources.length)
+        : historicalWinnerQ
+          ? Math.max(topK, fromSources.length, 32)
         : explicitTeamLegRankQ
           ? Math.max(topK, fromSources.length)
         : topK,
