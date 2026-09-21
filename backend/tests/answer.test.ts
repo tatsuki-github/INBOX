@@ -647,6 +647,23 @@ describe("answerQuestion", () => {
     }
   });
 
+  it("defaults a yearless result-list question to the latest transcript year", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("荒玉女子の結果一覧は？", {
+      llm: null,
+      skipRouter: true,
+      defaultYear: 2026,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.sources[0]).toBe("aragyoku/transcripts/2025-女子.json");
+      expect(result.text).toContain("2025年荒玉駅伝女子の結果");
+      expect(result.text).toContain("15位 天水 51:29");
+      expect(result.text).not.toContain("2026年度中学");
+    }
+  });
+
   it("treats 優勝チーム as a winner-school lookup", async () => {
     resetRetrieverCache();
     resetKgCache();
