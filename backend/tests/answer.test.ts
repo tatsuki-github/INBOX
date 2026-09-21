@@ -2458,6 +2458,25 @@ describe("answerQuestion", () => {
     }
   });
 
+  it("reverse-looks up the years a named school won", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("玉名が優勝した年は？", {
+      llm: null,
+      skipRouter: true,
+      defaultYear: 2026,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.sources[0]).toBe("aragyoku/winners-by-year.md");
+      expect(result.text).toContain("玉名が荒玉駅伝で優勝した年:");
+      expect(result.text).toContain("2012年（女子）");
+      expect(result.text).toContain("2012年（男子）");
+      expect(result.text).toContain("2025年（女子）");
+      expect(result.text).not.toContain("中学選手権");
+    }
+  });
+
   it("answers 荒玉地区 3000m fastest from ranking digest", async () => {
     resetRetrieverCache();
     resetKgCache();

@@ -688,6 +688,23 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
     const match = flat.match(new RegExp(`${year}年荒玉駅伝${gender}の優勝校は[^。]+。`));
     if (match) return match[0]!;
   }
+  const winnerYearTeam = [
+    "荒尾海陽", "玉高附属", "荒尾三", "荒尾四", "三加和", "南関", "天水",
+    "岱明", "有明", "玉南", "玉名", "玉東", "玉陵", "腹栄", "荒尾", "菊水", "長洲",
+  ].find((team) => q.includes(team));
+  if (
+    winnerYearTeam &&
+    /優勝/.test(q) &&
+    /何年|歴代|優勝年|優勝した年/.test(q)
+  ) {
+    const escaped = winnerYearTeam.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    const matches = [
+      ...flat.matchAll(new RegExp(`(20\\d{2})年荒玉駅伝(男子|女子)の優勝校は「?${escaped}`, "g")),
+    ];
+    if (matches.length > 0) {
+      return `${winnerYearTeam}が荒玉駅伝で優勝した年: ${matches.map((match) => `${match[1]}年（${match[2]}）`).join("、")}。`;
+    }
+  }
   if (
     /20\d{2}/.test(q) &&
     /準優勝|2位/.test(q) &&
@@ -1072,6 +1089,12 @@ function offlineAnswer(
       /準優勝|2位/.test(question) &&
       /荒玉|駅伝/.test(question) &&
       /男子|女子/.test(question);
+  const winnerYearTeamLookup =
+      /優勝/.test(question) &&
+      /何年|歴代|優勝年|優勝した年/.test(question) &&
+      /荒尾海陽|玉高附属|荒尾三|荒尾四|三加和|南関|天水|岱明|有明|玉南|玉名|玉東|玉陵|腹栄|荒尾|菊水|長洲/.test(
+        question,
+      );
     const genericWinnerYearLookup =
       /優勝校|優勝は/.test(question) &&
       /荒玉|駅伝/.test(question) &&
@@ -1189,6 +1212,7 @@ function offlineAnswer(
       firstPlaceLookup ||
       explicitWinnerSchoolLookup ||
       explicitRunnerUpLookup ||
+      winnerYearTeamLookup ||
       genericWinnerYearLookup ||
       winnerTeamLookup ||
       historicalWinnerLookup ||
@@ -2070,6 +2094,12 @@ export async function answerQuestion(
     /荒玉|駅伝/.test(question) &&
     /歴代/.test(question) &&
     /優勝|準優勝/.test(question);
+  const winnerYearTeamQ =
+    /優勝/.test(question) &&
+    /何年|歴代|優勝年|優勝した年/.test(question) &&
+    /荒尾海陽|玉高附属|荒尾三|荒尾四|三加和|南関|天水|岱明|有明|玉南|玉名|玉東|玉陵|腹栄|荒尾|菊水|長洲/.test(
+      question,
+    );
   const genderLegRecordQ =
     (/荒玉|駅伝|大会区間記録|区間記録|ボード記録/.test(question) ||
       /記録保持者|区間記録/.test(question)) &&
@@ -2149,6 +2179,11 @@ export async function answerQuestion(
     ];
   }
   if (historicalWinnerQ) {
+    preferredSources = [
+      preferredSources.find((s) => /winners-by-year/.test(s)) ?? "aragyoku/winners-by-year.md",
+    ];
+  }
+  if (winnerYearTeamQ) {
     preferredSources = [
       preferredSources.find((s) => /winners-by-year/.test(s)) ?? "aragyoku/winners-by-year.md",
     ];
@@ -2376,15 +2411,15 @@ export async function answerQuestion(
   const fromSources = retrieveBySources(preferredSources, {
     query: expanded,
     perSource:
-      exhaustive || totalMeetRecordQ || teamFullRecordQ || explicitTeamLegRankQ || historicalWinnerQ
+      exhaustive || totalMeetRecordQ || teamFullRecordQ || explicitTeamLegRankQ || historicalWinnerQ || winnerYearTeamQ
         ? 200
         : RETRIEVAL_BUDGET.perSource,
     maxChunks:
-      exhaustive || totalMeetRecordQ || teamFullRecordQ || explicitTeamLegRankQ || historicalWinnerQ
+      exhaustive || totalMeetRecordQ || teamFullRecordQ || explicitTeamLegRankQ || historicalWinnerQ || winnerYearTeamQ
         ? 200
         : RETRIEVAL_BUDGET.maxChunks,
       coverage:
-      exhaustive || exactDatedPractice || totalMeetRecordQ || teamFullRecordQ || explicitTeamLegRankQ || historicalWinnerQ
+      exhaustive || exactDatedPractice || totalMeetRecordQ || teamFullRecordQ || explicitTeamLegRankQ || historicalWinnerQ || winnerYearTeamQ
         ? "full"
         : "ranked",
   });
@@ -2411,6 +2446,7 @@ export async function answerQuestion(
     firstPlaceQ ||
     genericWinnerYearQ ||
     historicalWinnerQ ||
+    winnerYearTeamQ ||
     schoolPbRankQ ||
     trackLapQ ||
     top2CountQ ||
@@ -2438,6 +2474,8 @@ export async function answerQuestion(
         ? Math.max(topK, fromSources.length)
         : historicalWinnerQ
           ? Math.max(topK, fromSources.length, 32)
+        : winnerYearTeamQ
+          ? Math.max(topK, fromSources.length, 32)
         : explicitTeamLegRankQ
           ? Math.max(topK, fromSources.length)
         : topK,
@@ -2456,6 +2494,7 @@ export async function answerQuestion(
         firstPlaceQ ||
         genericWinnerYearQ ||
         historicalWinnerQ ||
+        winnerYearTeamQ ||
         schoolPbRankQ ||
         trackLapQ ||
         top2CountQ ||
@@ -2503,10 +2542,12 @@ export async function answerQuestion(
                   /daiming-parents\.md$/.test(r.chunk.source) &&
                   /### なごみ駅伝/.test(r.chunk.text),
               )
-            : kanaguriVenueQ
+    : kanaguriVenueQ
               ? mergedCoreRaw.filter((r) =>
                   /drive-text\/大会\/2026年度\/0315_金栗駅伝\/概要\.md$/.test(r.chunk.source),
                 )
+              : winnerYearTeamQ
+                ? mergedCoreRaw.filter((r) => /winners-by-year\.md(?::\d+)?$/.test(r.chunk.source))
               : mergedCoreRaw;
   const withNeighbors = expandWithNeighbors(mergedCore, {
     radius:
