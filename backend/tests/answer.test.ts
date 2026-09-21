@@ -2486,6 +2486,22 @@ describe("answerQuestion", () => {
     }
   });
 
+  it("answers an unqualified men 1500m PB question with the fastest record", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("男子1500mの自己ベストは？", {
+      skipRouter: true,
+      defaultYear: 2026,
+      llm: null,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.sources[0]).toBe("out-analysis/2026_aragyoku_men_1500m_sb_individual_top20.md");
+      expect(result.text).toContain("隈部侑成（金栗PROJECT）の4:11.60");
+      expect(result.text).not.toContain("トップ20");
+    }
+  });
+
   it("answers 優勝との差 from focus analysis not meet_records board", async () => {
     resetRetrieverCache();
     resetKgCache();

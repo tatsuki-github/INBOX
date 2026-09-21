@@ -166,7 +166,12 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
       return `女子800mの最速は${fastest.name}（${fastest.school}）の${fastest.time}（${fastest.year}）。`;
     }
   }
-  if (/男子/.test(q) && /1500m|1500ｍ|3000m|3000ｍ/.test(q) && /最速|一番速|速い/.test(q)) {
+  if (
+    /男子/.test(q) &&
+    /1500m|1500ｍ|3000m|3000ｍ/.test(q) &&
+    /最速|一番速|速い/.test(q) ||
+    (/男子/.test(q) && /1500m|1500ｍ|3000m|3000ｍ/.test(q) && /自己ベスト/.test(q) && !/ランキング|トップ/.test(q))
+  ) {
     const distance = q.match(/(1500|3000)m/)?.[1];
     const top = flat.match(/\|\s*1\s*\|\s*([^|]+)\|\s*([^|]+)\|\s*([^|]+)\|/);
     if (distance && top) {
@@ -1283,7 +1288,9 @@ function offlineAnswer(
     const women800FastestLookup =
       /女子/.test(question) && /800m|800ｍ/.test(question) && /最速|一番速|速い/.test(question);
     const individualTrackFastestLookup =
-      /男子/.test(question) && /1500m|1500ｍ|3000m|3000ｍ/.test(question) && /最速|一番速|速い/.test(question);
+      /男子/.test(question) &&
+      /1500m|1500ｍ|3000m|3000ｍ/.test(question) &&
+      (/最速|一番速|速い/.test(question) || (/自己ベスト/.test(question) && !/ランキング|トップ/.test(question)));
     const kanaguriDate =
       /金栗駅伝/.test(question) &&
       /いつ|何日|何月|開催月|開催時期/.test(question);
