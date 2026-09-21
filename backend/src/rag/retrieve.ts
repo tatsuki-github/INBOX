@@ -930,6 +930,9 @@ function digestPinForQuery(chunk: RagChunk, query: string): number {
       teamStem === "玉高附属" ? ["玉高附属", "玉名付属", "玉名附属", "玉名附"] : [teamStem];
     if (teamStem && teamAliases.some((alias) => qn.includes(alias))) return 900;
     const names = extractAthleteNameHints(qn);
+    if (/aragyoku-teams\/[^/]+\.md$/.test(base) && names.some((n) => chunk.text.includes(n))) {
+      return 1100;
+    }
     if (names.some((n) => chunk.text.includes(n))) return 700;
     return 200;
   }

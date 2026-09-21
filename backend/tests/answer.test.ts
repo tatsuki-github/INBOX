@@ -415,6 +415,21 @@ describe("answerQuestion", () => {
     }
   });
 
+  it("prioritizes the team digest for a named runner's yearless team phrase", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("山本悠斗の荒玉2024区間タイムは？", {
+      llm: null,
+      skipRouter: true,
+      defaultYear: 2026,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.sources[0]).toBe("out-analysis/aragyoku-teams/天水.md");
+      expect(result.text).toContain("9:45");
+    }
+  });
+
   it("llm sees なごみ context for 9/20", async () => {
     resetRetrieverCache();
     resetKgCache();

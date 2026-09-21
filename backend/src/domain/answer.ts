@@ -439,6 +439,14 @@ function sortMeetDriveSources(sources: string[], query: string): string[] {
 /** Prefer SB / 記録データベース sources for athlete-record questions. */
 function boostAthleteRecordSources(query: string, baseSources: string[]): string[] {
   const q = query.normalize("NFKC");
+  if (/区間タイム/.test(q)) {
+    const names = extractAthleteNameHints(q);
+    const teamDigest = findSourcesWithText(names, {
+      prefix: "out-analysis/aragyoku-teams/",
+      limit: 1,
+    })[0];
+    if (teamDigest) return [teamDigest];
+  }
   if (/20\d{2}/.test(q) && /男子|女子/.test(q) && /何位|順位/.test(q)) {
     const teamDigest = baseSources.find((s) => {
       const stem = s.match(/aragyoku-teams\/([^/]+)\.md$/)?.[1] ?? "";
