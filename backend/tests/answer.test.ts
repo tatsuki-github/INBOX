@@ -810,6 +810,22 @@ describe("answerQuestion", () => {
     }
   });
 
+  it("answers an unqualified fifth-place question for both genders", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("荒玉駅伝の5位は？", {
+      llm: null,
+      skipRouter: true,
+      defaultYear: 2026,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.text).toContain("2025年男子5位: 荒尾三（58:58）");
+      expect(result.text).toContain("2025年女子5位: 荒尾三（44:56）");
+      expect(result.text).not.toContain("深掘り分析");
+    }
+  });
+
   it("lists all historical winners for a gender-specific 歴代 question", async () => {
     resetRetrieverCache();
     resetKgCache();
