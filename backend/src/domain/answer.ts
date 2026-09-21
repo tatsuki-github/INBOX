@@ -574,6 +574,12 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
     /地点分担|何地点|どの地点|担当地点|地点(?:は|に|です)/.test(q) &&
     /熊澤|土山|柴尾|土本/.test(q)
   ) {
+    const person = ["熊澤", "土山", "柴尾", "土本"].find((name) => q.includes(name));
+    if (person) {
+      const escaped = person.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+      const assignment = flat.match(new RegExp(`${escaped}=\\*{0,2}([^、。]+?)\\*{0,2}(?:、|。)`));
+      if (assignment) return `地点分担（荒玉）: ${person}=${assignment[1]!.replace(/\*/g, "")}。`;
+    }
     const idx = flat.indexOf("地点分担（荒玉）");
     if (idx >= 0) {
       return flat.slice(idx, Math.min(flat.length, idx + budget));
@@ -916,6 +922,9 @@ function offlineAnswer(
       /距離|長さ|どれくらい|何キロ|何km|何m|何ｍ|何メートル/.test(question) &&
       /[1-6]区|区間/.test(question) &&
       !/2区.*5区|5区.*2区/.test(question);
+    const assignmentLookup =
+      /地点分担|何地点|担当地点|地点は/.test(question) &&
+      /熊澤|土山|柴尾|土本/.test(question);
     const top2CountLookup =
       /荒玉|駅伝/.test(question) &&
       /男子/.test(question) &&
@@ -974,6 +983,7 @@ function offlineAnswer(
       schoolPbRankLookup ||
       trackLapLookup ||
       legDistanceLookup ||
+      assignmentLookup ||
       namedLegTimeLookup ||
       teamLegLookup ||
       top2CountLookup ||
