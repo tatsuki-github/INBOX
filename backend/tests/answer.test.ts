@@ -244,6 +244,22 @@ describe("answerQuestion", () => {
     }
   });
 
+  it("routes team year-over-year questions to the focus analysis digest", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("有明女子は前年比でどうなった？", {
+      llm: null,
+      skipRouter: true,
+      defaultYear: 2026,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.sources[0]).toBe("out-analysis/aragyoku_2024_2025_focus_teams.md");
+      expect(result.text).toContain("-33.00s");
+      expect(result.text).toContain("47:24");
+    }
+  });
+
   it("llm sees なごみ context for 9/20", async () => {
     resetRetrieverCache();
     resetKgCache();

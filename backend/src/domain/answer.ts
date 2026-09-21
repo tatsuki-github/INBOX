@@ -388,6 +388,12 @@ function sortMeetDriveSources(sources: string[], query: string): string[] {
 /** Prefer SB / 記録データベース sources for athlete-record questions. */
 function boostAthleteRecordSources(query: string, baseSources: string[]): string[] {
   const q = query.normalize("NFKC");
+  // Year-over-year team questions belong to the 2024–2025 focus digest, not
+  // the broad athlete/media corpus.
+  if (/前年比|前年から|前年度比/.test(q) && /男子|女子/.test(q)) {
+    const focus = baseSources.find((s) => /aragyoku_2024_2025_focus_teams/.test(s));
+    if (focus) return [focus];
+  }
   // A compact year/gender winner query is a meet-result lookup, not an
   // athlete SB lookup, even when it asks for a total time.
   if (/20\d{2}/.test(q) && /優勝/.test(q) && /男子|女子/.test(q) && /総合|タイム/.test(q)) {
