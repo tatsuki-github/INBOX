@@ -172,6 +172,30 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
     const lap = flat.match(/トラック\s*1周\s*=\s*\*{0,2}\s*560m/);
     if (lap) return lap[0].replace(/\*+/g, "");
   }
+  const namedLegTime =
+    !/20\d{2}/.test(q) &&
+    q.match(/(?:の|は|で)([\p{Script=Han}]{2,8})の区間タイム/u);
+  if (namedLegTime) {
+    const name = namedLegTime[1]!;
+    const escaped = name.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    const candidates = [
+      ...flat.matchAll(
+        new RegExp(`\\|\\s*([1-6])\\s*\\|\\s*${escaped}\\s*\\|\\s*\\d+\\s*\\|\\s*([0-9]+:[0-9]{2})\\s*\\|`, "g"),
+      ),
+    ];
+    let best: { year: number; leg: string; time: string } | undefined;
+    for (const candidate of candidates) {
+      const yearText = flat.slice(0, candidate.index ?? 0).match(/20\d{2}年/g)?.at(-1);
+      const year = yearText ? Number(yearText.slice(0, 4)) : 0;
+      if (!best || year >= best.year) {
+        best = { year, leg: candidate[1]!, time: candidate[2]! };
+      }
+    }
+    if (best) {
+      const year = best.year > 0 ? `${best.year}年` : "";
+      return `${year}${best.leg}区 ${name}の区間タイムは${best.time}。`;
+    }
+  }
   // The top-two digest has a gender-specific table. For a "most frequent"
   // question, summarize that table instead of surfacing the latest winners.
   if (
@@ -832,6 +856,10 @@ function offlineAnswer(
       /男子/.test(question) &&
       /2位まで|2位以内|総合2位/.test(question) &&
       /多い|最多|何回|回数/.test(question);
+    const namedLegTimeLookup =
+      !/20\d{2}/.test(question) &&
+      /区間タイム/.test(question) &&
+      /(?:の|は|で)[\p{Script=Han}]{2,8}の区間タイム/u.test(question);
     const teamRunnerUpYearLookup =
       /荒玉|駅伝/.test(question) &&
       /男子/.test(question) &&
@@ -873,6 +901,7 @@ function offlineAnswer(
       teamRankLookup ||
       schoolPbRankLookup ||
       trackLapLookup ||
+      namedLegTimeLookup ||
       top2CountLookup ||
       teamRunnerUpYearLookup ||
       teamFullRecordLookup ||
@@ -1906,6 +1935,10 @@ export async function answerQuestion(
   if (top2CountQ) {
     preferredSources = ["out-analysis/aragyoku_top2_finish_counts.md"];
   }
+  const namedLegTimeQ =
+    !/20\d{2}/.test(expanded) &&
+    /区間タイム/.test(expanded) &&
+    /(?:の|は|で)[\p{Script=Han}]{2,8}の区間タイム/u.test(expanded);
   const teamRunnerUpYearQ =
     /荒玉|駅伝/.test(expanded) &&
     /男子/.test(expanded) &&
@@ -1961,6 +1994,7 @@ export async function answerQuestion(
     schoolPbRankQ ||
     trackLapQ ||
     top2CountQ ||
+    namedLegTimeQ ||
     teamRunnerUpYearQ ||
     teamFullRecordQ ||
     latestTeamRankQ ||
@@ -1996,6 +2030,7 @@ export async function answerQuestion(
         schoolPbRankQ ||
         trackLapQ ||
         top2CountQ ||
+        namedLegTimeQ ||
         teamRunnerUpYearQ ||
         teamFullRecordQ ||
         latestTeamRankQ ||

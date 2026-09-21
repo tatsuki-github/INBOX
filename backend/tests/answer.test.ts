@@ -725,6 +725,8 @@ describe("answerQuestion", () => {
     if (result.kind === "offline") {
       expect(result.sources).toContain("out-analysis/aragyoku-teams/天水.md");
       expect(result.text).toContain("8:37");
+      expect(result.text).toContain("2025年2区 山本悠斗の区間タイムは8:37。");
+      expect(result.text).not.toContain("# 天水 荒玉駅伝 歴代結果");
     }
   });
 
