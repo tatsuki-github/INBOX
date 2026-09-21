@@ -963,6 +963,19 @@ describe("answerQuestion", () => {
     }
   });
 
+  it("summarizes yearless gendered aragyoku winner-time questions", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    for (const [question, expected] of [
+      ["荒玉駅伝女子の優勝タイムは？", "2025年女子優勝校: 玉名（41:58）"],
+      ["荒玉駅伝男子の1位は？", "2025年男子優勝校: 菊水（56:17）"],
+    ]) {
+      const result = await answerQuestion(question, { llm: null, skipRouter: true, defaultYear: 2026 });
+      expect(result.kind).toBe("offline");
+      if (result.kind === "offline") expect(result.text).toContain(expected);
+    }
+  });
+
   it("answers an unqualified sixth-place question for both genders", async () => {
     resetRetrieverCache();
     resetKgCache();

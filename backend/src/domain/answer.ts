@@ -337,6 +337,11 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
     const runnerUp = flat.match(new RegExp(`2025年荒玉駅伝${gender}[\\s\\S]{0,220}?準優勝校は「([^」]+)」(?:（総合\\s*([0-9]+:\\d{2}|—)）)?`));
     if (runnerUp) return `2025年${gender}準優勝校: ${runnerUp[1]}（${runnerUp[2] ?? "—"}）。`;
   }
+  if (/男子|女子/.test(q) && /荒玉|駅伝/.test(q) && /優勝タイム|総合タイム|1位/.test(q) && !/20\d{2}/.test(q)) {
+    const gender = /女子/.test(q) ? "女子" : "男子";
+    const winner = flat.match(new RegExp(`2025年荒玉駅伝${gender}[\\s\\S]{0,180}?優勝校(?:（1位）)?は「([^」]+)」（総合\\s*([0-9]+:\\d{2})）`));
+    if (winner) return `2025年${gender}優勝校: ${winner[1]}（${winner[2]}）。`;
+  }
   if (/男子|女子/.test(q) && /荒玉|駅伝/.test(q) && /(?<!\d)3位/.test(q) && /20\d{2}/.test(q)) {
     const year = q.match(/20\d{2}/)?.[0];
     const gender = /女子/.test(q) ? "女子" : "男子";
