@@ -210,6 +210,18 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
         .join("。 ") + "。";
     }
   }
+  if (!/男子|女子/.test(q) && /荒玉|駅伝/.test(q) && /1位/.test(q)) {
+    const firstPlaces = [...flat.matchAll(
+      /(20\d{2})年\s*荒玉(?:中体連)?駅伝\s*(男子|女子)[\s\S]{0,220}?優勝校は「([^」]+)」（総合\s*([0-9]+:\d{2})）/g,
+    )];
+    if (firstPlaces.length > 0) {
+      const latestYear = Math.max(...firstPlaces.map((firstPlace) => Number(firstPlace[1])));
+      return firstPlaces
+        .filter((firstPlace) => Number(firstPlace[1]) === latestYear)
+        .map((firstPlace) => firstPlace[1] + "年" + firstPlace[2] + "1位: " + firstPlace[3] + "（" + firstPlace[4] + "）")
+        .join("。 ") + "。";
+    }
+  }
   if (/20\d{2}/.test(q) && /結果|成績|順位/.test(q)) {
     const year = q.match(/20\d{2}/)?.[0];
     const team = ["荒尾海陽", "荒尾三", "荒尾四", "三加和", "玉高附属", "玉名", "玉南", "腹栄", "岱明", "天水", "有明", "南関", "菊水", "玉東", "玉陵", "長洲"]
@@ -1401,6 +1413,10 @@ function offlineAnswer(
       /準優勝|2位/.test(question) &&
       /荒玉|駅伝/.test(question) &&
       !/男子|女子|20\d{2}|過去|歴代/.test(question);
+    const unqualifiedFirstPlaceLookup =
+      /1位/.test(question) &&
+      /荒玉|駅伝/.test(question) &&
+      !/男子|女子|20\d{2}|過去|歴代|区間/.test(question);
     const historicalWinnerLookup =
       /荒玉|駅伝/.test(question) &&
       /歴代/.test(question) &&
@@ -1592,6 +1608,7 @@ function offlineAnswer(
       unqualifiedWinnerLookup ||
       unqualifiedWinnerTimeLookup ||
       unqualifiedRunnerUpLookup ||
+      unqualifiedFirstPlaceLookup ||
       winnerTeamLookup ||
       historicalWinnerLookup ||
       latestLegAwardLookup ||
@@ -2556,10 +2573,14 @@ export async function answerQuestion(
       /総合タイム|優勝タイム/.test(question) &&
       /荒玉|駅伝/.test(question) &&
       !/男子|女子|20\d{2}|過去|歴代/.test(question);
-    const unqualifiedRunnerUpQ =
-      /準優勝|2位/.test(question) &&
-      /荒玉|駅伝/.test(question) &&
-      !/男子|女子|20\d{2}|過去|歴代/.test(question);
+  const unqualifiedRunnerUpQ =
+    /準優勝|2位/.test(question) &&
+    /荒玉|駅伝/.test(question) &&
+    !/男子|女子|20\d{2}|過去|歴代/.test(question);
+  const unqualifiedFirstPlaceQ =
+    /1位/.test(question) &&
+    /荒玉|駅伝/.test(question) &&
+    !/男子|女子|20\d{2}|過去|歴代|区間/.test(question);
   const latestRunnerUpQ =
     !/20\d{2}/.test(question) &&
     /準優勝|2位/.test(question) &&
@@ -2734,6 +2755,9 @@ export async function answerQuestion(
     ];
   }
   if (unqualifiedRunnerUpQ) {
+    preferredSources = ["aragyoku/winners-by-year.md"];
+  }
+  if (unqualifiedFirstPlaceQ) {
     preferredSources = ["aragyoku/winners-by-year.md"];
   }
   if (historicalWinnerQ) {
@@ -3136,6 +3160,7 @@ export async function answerQuestion(
     latestWinnerTimeQ ||
     unqualifiedWinnerTimeQ ||
     unqualifiedRunnerUpQ ||
+    unqualifiedFirstPlaceQ ||
     latestRunnerUpQ ||
     latestFirstPlaceQ ||
     firstPlaceQ ||
@@ -3209,6 +3234,7 @@ export async function answerQuestion(
         latestWinnerTimeQ ||
         unqualifiedWinnerTimeQ ||
         unqualifiedRunnerUpQ ||
+        unqualifiedFirstPlaceQ ||
         latestRunnerUpQ ||
         latestFirstPlaceQ ||
         firstPlaceQ ||
