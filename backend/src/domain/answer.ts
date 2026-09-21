@@ -123,6 +123,43 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
   if (isExhaustiveListQuery(q)) {
     return flat.slice(0, budget);
   }
+  if (
+    /1500m|1500ｍ|800m|800ｍ/.test(q) &&
+    /上位\s*\d+\s*人平均|上位\d+人平均|学校別|所属別|ランキング|何位|順位/.test(q)
+  ) {
+    const count = q.match(/上位\s*(\d+)\s*人平均/)?.[1];
+    const school = /玉名付属|玉名附属|玉高附属/.test(q)
+          ? "玉名附中"
+          : /岱明/.test(q)
+            ? "岱明中"
+            : /荒尾三/.test(q)
+              ? "荒尾三中"
+            : /天水/.test(q)
+              ? "天水中"
+          : /有明/.test(q)
+            ? "有明中"
+            : /南関/.test(q)
+              ? "南関中"
+              : /菊水/.test(q)
+                ? "菊水中"
+                : "";
+    if (school) {
+      const heading = count
+        ? `## 上位${count}人平均`
+        : /800m|800ｍ/.test(q)
+          ? "## 800m・上位3人平均"
+          : "## 上位4人平均";
+      const sectionStart = flat.indexOf(heading);
+      const section = sectionStart >= 0 ? flat.slice(sectionStart) : flat;
+      const row = section.match(
+        new RegExp(`\\|\\s*(\\d+)\\s*\\|\\s*${school}\\s*\\|([^|]*)\\|([^|]*)\\|`),
+      );
+      if (row) {
+        const label = count ? `上位${count}人平均` : "学校別平均";
+        return `${row[1]}位 ${school}・${label} ${row[3]?.trim() ?? ""}`;
+      }
+    }
+  }
   // Full-record / ranking digests: prefer document head (title + early tables)
   if (
     /全記録|記録一覧|所属選手|ランキング|トップ\s*\d+|何位/.test(q) &&
@@ -657,6 +694,11 @@ function offlineAnswer(
       /岱明|玉高附属|玉名付属|玉名附属|天水|有明|南関|菊水|玉東|玉陵|長洲/.test(
         question,
       );
+    const schoolPbRankLookup =
+      /1500m|1500ｍ|800m|800ｍ/.test(question) &&
+      /上位\s*\d+\s*人平均|上位\d+人平均|学校別|所属別|ランキング|何位|順位/.test(
+        question,
+      );
     const kanaguriDate =
       /金栗駅伝/.test(question) &&
       /いつ|何日|何月|開催月|開催時期/.test(question);
@@ -669,6 +711,7 @@ function offlineAnswer(
       latestRunnerUp ||
       latestFirstPlace ||
       teamRankLookup ||
+      schoolPbRankLookup ||
       kanaguriDate;
     const hint = focusedLookup ? question : previewQuery ?? question;
     if (focusedLookup) {
@@ -1620,6 +1663,17 @@ export async function answerQuestion(
       preferredSources = [preferredSources.find((s) => s.endsWith(path)) ?? path];
     }
   }
+  const schoolPbRankQ =
+    /1500m|1500ｍ|800m|800ｍ/.test(expanded) &&
+    /上位\s*\d+\s*人平均|上位\d+人平均|学校別|所属別|ランキング|何位|順位/.test(
+      expanded,
+    );
+  if (schoolPbRankQ) {
+    const schoolRanking = /1500m|1500ｍ/.test(expanded)
+      ? "out-analysis/2026_men_1500m_pb_school_ranking.md"
+      : "out-analysis/2026_women_800m_1500m_pb_school_ranking.md";
+    preferredSources = [preferredSources.find((s) => s.endsWith(schoolRanking)) ?? schoolRanking];
+  }
   const namedAssignmentQ =
     /地点分担|何地点|どの地点|担当地点|地点(?:は|に|です)/.test(expanded) &&
     /熊澤|土山|柴尾|土本/.test(expanded);
@@ -1661,6 +1715,7 @@ export async function answerQuestion(
     latestWinnerTimeQ ||
     latestRunnerUpQ ||
     latestFirstPlaceQ ||
+    schoolPbRankQ ||
     teamYearOverYearQ ||
     teamWinnerMarginQ ||
     namedMeetRecordQ ||
@@ -1688,6 +1743,7 @@ export async function answerQuestion(
         latestWinnerTimeQ ||
         latestRunnerUpQ ||
         latestFirstPlaceQ ||
+        schoolPbRankQ ||
         teamYearOverYearQ ||
         teamWinnerMarginQ ||
         namedMeetRecordQ ||

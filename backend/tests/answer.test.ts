@@ -1848,6 +1848,40 @@ describe("answerQuestion", () => {
     }
   });
 
+  it("answers 男子1500m 上位4人平均順位 from the school ranking", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("男子1500m上位4人平均で岱明は何位？", {
+      skipRouter: true,
+      defaultYear: 2026,
+      llm: null,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.sources[0]).toBe("out-analysis/2026_men_1500m_pb_school_ranking.md");
+      expect(result.text).toContain("5位");
+      expect(result.text).toContain("4:30.05");
+      expect(result.text).not.toContain("荒玉駅伝");
+    }
+  });
+
+  it("answers a school-only 女子800m ranking question from the school ranking", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("女子800mPB学校別で荒尾三は何位？", {
+      skipRouter: true,
+      defaultYear: 2026,
+      llm: null,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.sources[0]).toBe("out-analysis/2026_women_800m_1500m_pb_school_ranking.md");
+      expect(result.text).toContain("2位");
+      expect(result.text).toContain("2:27.99");
+      expect(result.text).not.toContain("荒玉駅伝");
+    }
+  });
+
   it("answers 優勝との差 from focus analysis not meet_records board", async () => {
     resetRetrieverCache();
     resetKgCache();
