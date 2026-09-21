@@ -2348,6 +2348,22 @@ describe("answerQuestion", () => {
     }
   });
 
+  it("defaults an unqualified team result question to the latest year", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("岱明の結果は？", {
+      skipRouter: true,
+      defaultYear: 2026,
+      llm: null,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.text).toContain("2025年荒玉駅伝男子 岱明は6位・総合59:08");
+      expect(result.text).toContain("2025年荒玉駅伝女子 岱明は7位・総合45:22");
+      expect(result.text).not.toContain("2024年荒玉駅伝");
+    }
+  });
+
   it("filters dated team results by the requested gender", async () => {
     resetRetrieverCache();
     resetKgCache();
