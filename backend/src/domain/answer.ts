@@ -299,7 +299,7 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
   // For a gender/leg record query, jump to the latest matching board row
   // rather than showing the digest's opening year or an unrelated table.
   if (
-    /大会記録|区間記録|ボード.*記録|記録保持|歴代記録|20\d{2}.*(?:男子|女子).*区.*記録/.test(q) &&
+    /大会記録|区間記録|ボード.*記録|記録保持|歴代記録|20\d{2}.*(?:男子|女子).*区.*記録|(?:男子|女子).*?[1-6]区.*記録/.test(q) &&
     /荒玉|駅伝/.test(q) &&
     /男子.*\d区|女子.*\d区/.test(q)
   ) {
@@ -309,7 +309,9 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
       const needle = `荒玉駅伝${gender}の${leg}区大会区間記録`;
       const idx = flat.lastIndexOf(needle);
       if (idx >= 0) {
-        const start = Math.max(0, idx - 36);
+        const preciseGenderLegRecord =
+          /(?:男子|女子).*?[1-6]区.*記録/.test(q) && !/20\d{2}年/.test(q);
+        const start = preciseGenderLegRecord ? idx : Math.max(0, idx - 36);
         return flat.slice(start, Math.min(flat.length, start + budget));
       }
     }
@@ -564,7 +566,7 @@ function boostAthleteRecordSources(query: string, baseSources: string[]): string
   // Meet-record questions have a dedicated board digest. Keep the answer
   // focused there instead of letting the generic athlete/SB sources win.
   if (
-    /大会記録|区間記録|ボード.*記録|記録保持|歴代記録|20\d{2}.*(?:男子|女子).*区.*記録/.test(q) &&
+    /大会記録|区間記録|ボード.*記録|記録保持|歴代記録|20\d{2}.*(?:男子|女子).*区.*記録|(?:男子|女子).*?[1-6]区.*記録/.test(q) &&
     /荒玉|駅伝/.test(q) &&
     !/区間賞|区間順/.test(q)
   ) {
@@ -895,7 +897,7 @@ function boostMeetYearSources(
         expandedQuery,
       );
     const meetRecordQ =
-      /大会記録|区間記録|ボード.*記録|総合大会記録|記録保持|歴代記録|20\d{2}.*(?:男子|女子).*区.*記録/.test(expandedQuery) &&
+      /大会記録|区間記録|ボード.*記録|総合大会記録|記録保持|歴代記録|20\d{2}.*(?:男子|女子).*区.*記録|(?:男子|女子).*?[1-6]区.*記録/.test(expandedQuery) &&
       !/区間賞|区間順/.test(expandedQuery);
     // 「区間賞」「区間順位」は当日結果正本（歴代区間記録ボードとは別）
     const legAwardQ =
@@ -1122,7 +1124,11 @@ export function narrowExhaustiveSources(query: string, sources: string[]): strin
     push("docs/aragyoku-ekiden-distance-definitions.md");
     return out;
   }
-  if (/大会記録|区間記録|ボード/.test(q) && /荒玉|駅伝/.test(q) && !/区間賞|区間順/.test(q)) {
+  if (
+    /大会記録|区間記録|ボード|(?:男子|女子).*?[1-6]区.*記録/.test(q) &&
+    /荒玉|駅伝/.test(q) &&
+    !/区間賞|区間順/.test(q)
+  ) {
     push("out-analysis/aragyoku_meet_records.md");
     return out;
   }
@@ -1243,6 +1249,12 @@ export async function answerQuestion(
     /男子|女子/.test(question) &&
     /荒玉|駅伝/.test(question) &&
     /優勝校/.test(question);
+  const genderLegRecordQ =
+    /荒玉|駅伝/.test(question) &&
+    /男子|女子/.test(question) &&
+    /[1-6]区/.test(question) &&
+    /記録/.test(question) &&
+    !/区間賞|区間順/.test(question);
   if (compactWinnerQ) {
     preferredSources = [
       preferredSources.find((s) => /winners-by-year/.test(s)) ?? "aragyoku/winners-by-year.md",
@@ -1320,7 +1332,8 @@ export async function answerQuestion(
     kanaguriVenueQ ||
     compactWinnerQ ||
     winnerSchoolQ ||
-    teamYearOverYearQ
+    teamYearOverYearQ ||
+    genderLegRecordQ
       ? []
       : retrieve(expanded, topK);
   const mergedCoreRaw = mergeRetrieved(
@@ -1335,6 +1348,7 @@ export async function answerQuestion(
         compactWinnerQ ||
         winnerSchoolQ ||
         teamYearOverYearQ ||
+        genderLegRecordQ ||
         isLegAthleteQuestion(expanded),
     },
   );

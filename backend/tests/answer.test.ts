@@ -404,6 +404,23 @@ describe("answerQuestion", () => {
     }
   });
 
+  it("routes generic gender/leg record phrasing to the meet-record board", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("荒玉駅伝女子2区の記録は？", {
+      llm: null,
+      skipRouter: true,
+      defaultYear: 2026,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.sources[0]).toBe("out-analysis/aragyoku_meet_records.md");
+      expect(result.text).toContain("女子の2区大会区間記録");
+      expect(result.text).toContain("井上智世");
+      expect(result.text).not.toContain("区間賞・区間順位");
+    }
+  });
+
   it("routes a named runner's 区間タイム to the team race digest", async () => {
     resetRetrieverCache();
     resetKgCache();
