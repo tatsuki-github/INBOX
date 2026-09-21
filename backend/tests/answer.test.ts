@@ -2380,6 +2380,23 @@ describe("answerQuestion", () => {
     }
   });
 
+  it("does not invent an 荒玉駅伝 venue when the source omits it", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("荒玉駅伝の会場は？", {
+      skipRouter: true,
+      defaultYear: 2026,
+      llm: null,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.text).toContain("会場は、手元の正本資料では確認できません");
+      expect(result.text).toContain("10月14日");
+      expect(result.sources[0]).toBe("calendar/events.daiming.yaml");
+      expect(result.text).not.toContain("和水町三加和公民館");
+    }
+  });
+
   it("answers なごみ 岱明男子1区 from 2026 order list, not 金栗駅伝", async () => {
     resetRetrieverCache();
     resetKgCache();

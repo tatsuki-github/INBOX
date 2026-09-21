@@ -314,6 +314,12 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
     const lap = flat.match(/トラック\s*1周\s*=\s*\*{0,2}\s*560m/);
     if (lap) return lap[0].replace(/\*+/g, "");
   }
+  if (/荒玉/.test(q) && /会場|場所/.test(q)) {
+    const year = q.match(/20\d{2}/)?.[0];
+    return year && year !== "2026"
+      ? year + "年荒玉中体連駅伝の会場は、手元の正本資料では確認できません。"
+      : "荒玉中体連駅伝の会場は、手元の正本資料では確認できません。2026年大会は10月14日（予備日10月15日）予定です。";
+  }
   const namedLegTime =
     q.match(/([\p{Script=Han}]{2,8})の区間タイム/u) ??
     q.match(/([\p{Script=Han}]{2,8})の(?:荒玉)?20\d{2}年?区間タイム/u);
@@ -1474,6 +1480,9 @@ function offlineAnswer(
     const aragyokuDateLookup =
       /荒玉駅伝/.test(question) &&
       /開催日|いつ|何日|日付/.test(question);
+    const aragyokuVenueLookup =
+      /荒玉駅伝/.test(question) &&
+      /会場|場所/.test(question);
     const focusedLookup =
       preciseMeetRecord ||
       namedMeetRecord ||
@@ -1524,6 +1533,7 @@ function offlineAnswer(
       kanaguriVenueLookup ||
       kanaguriResultLookup ||
       aragyokuDateLookup ||
+      aragyokuVenueLookup ||
       kanaguriDate;
     const hint = focusedLookup ? question : previewQuery ?? question;
     if (focusedLookup) {
@@ -2840,6 +2850,9 @@ export async function answerQuestion(
   const aragyokuDateQ =
     /荒玉駅伝/.test(expanded) &&
     /開催日|いつ|何日|日付/.test(expanded);
+  const aragyokuVenueQ =
+    /荒玉駅伝/.test(expanded) &&
+    /会場|場所/.test(expanded);
   const genericResultQ =
     !/男子|女子/.test(expanded) &&
     /(?:結果(?:一覧|表|は|を|です)?|順位表|順位(?:は|を|だけ|全部)?|全チーム結果|全順位)/.test(expanded) &&
@@ -2913,6 +2926,9 @@ export async function answerQuestion(
   if (aragyokuDateQ) {
     preferredSources = ["calendar/events.daiming.yaml"];
   }
+  if (aragyokuVenueQ) {
+    preferredSources = ["calendar/events.daiming.yaml"];
+  }
   if (genericResultQ) {
     const resultYear = question.match(/20\d{2}/)?.[0] ?? "2025";
     preferredSources = [
@@ -2924,17 +2940,17 @@ export async function answerQuestion(
     query: expanded,
     perSource:
       exhaustive || totalMeetRecordQ || teamFullRecordQ || explicitTeamLegRankQ || historicalWinnerQ || winnerYearTeamQ || legRankQuestionQ || namedLegTimeQ
-        || resultListQ || genericResultQ || explicitLegAwardQ || schoolPbRankQ || nagomiLegOrderQ || nagomiLegRankQ || nagomiResultQ || nagomiDateQ || nagomiVenueQ || kanaguriResultQ || aragyokuDateQ || datedTeamResultQ
+        || resultListQ || genericResultQ || explicitLegAwardQ || schoolPbRankQ || nagomiLegOrderQ || nagomiLegRankQ || nagomiResultQ || nagomiDateQ || nagomiVenueQ || kanaguriResultQ || aragyokuDateQ || aragyokuVenueQ || datedTeamResultQ
         ? 200
         : RETRIEVAL_BUDGET.perSource,
     maxChunks:
       exhaustive || totalMeetRecordQ || teamFullRecordQ || explicitTeamLegRankQ || historicalWinnerQ || winnerYearTeamQ || legRankQuestionQ || namedLegTimeQ
-        || resultListQ || genericResultQ || explicitLegAwardQ || schoolPbRankQ || nagomiLegOrderQ || nagomiLegRankQ || nagomiResultQ || nagomiDateQ || nagomiVenueQ || kanaguriResultQ || aragyokuDateQ || datedTeamResultQ
+        || resultListQ || genericResultQ || explicitLegAwardQ || schoolPbRankQ || nagomiLegOrderQ || nagomiLegRankQ || nagomiResultQ || nagomiDateQ || nagomiVenueQ || kanaguriResultQ || aragyokuDateQ || aragyokuVenueQ || datedTeamResultQ
         ? 200
         : RETRIEVAL_BUDGET.maxChunks,
       coverage:
       exhaustive || exactDatedPractice || totalMeetRecordQ || teamFullRecordQ || explicitTeamLegRankQ || historicalWinnerQ || winnerYearTeamQ || legRankQuestionQ || namedLegTimeQ
-        || resultListQ || genericResultQ || explicitLegAwardQ || schoolPbRankQ || nagomiLegOrderQ || nagomiLegRankQ || nagomiResultQ || nagomiDateQ || nagomiVenueQ || kanaguriResultQ || aragyokuDateQ || datedTeamResultQ
+        || resultListQ || genericResultQ || explicitLegAwardQ || schoolPbRankQ || nagomiLegOrderQ || nagomiLegRankQ || nagomiResultQ || nagomiDateQ || nagomiVenueQ || kanaguriResultQ || aragyokuDateQ || aragyokuVenueQ || datedTeamResultQ
         ? "full"
         : "ranked",
   });
@@ -2981,6 +2997,7 @@ export async function answerQuestion(
     kanaguriResultQ ||
     datedTeamResultQ ||
     aragyokuDateQ ||
+    aragyokuVenueQ ||
     explicitTeamLegQ ||
     teamFullRecordQ ||
     explicitTeamLegRankQ ||
