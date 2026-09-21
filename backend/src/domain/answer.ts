@@ -307,11 +307,13 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
     const leg = q.match(/([1-6])区/)?.[1];
     if (leg) {
       const needle = `荒玉駅伝${gender}の${leg}区大会区間記録`;
-      const idx = flat.lastIndexOf(needle);
+      const explicitYear = q.match(/20\d{2}年/)?.[0];
+      const preciseNeedle = explicitYear ? `${explicitYear}${needle}` : needle;
+      const idx = flat.lastIndexOf(preciseNeedle);
       if (idx >= 0) {
         const preciseGenderLegRecord =
           /(?:男子|女子).*?[1-6]区.*記録/.test(q) && !/20\d{2}年/.test(q);
-        const start = preciseGenderLegRecord ? idx : Math.max(0, idx - 36);
+        const start = explicitYear || preciseGenderLegRecord ? idx : Math.max(0, idx - 36);
         return flat.slice(start, Math.min(flat.length, start + budget));
       }
     }

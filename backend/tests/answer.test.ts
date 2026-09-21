@@ -437,6 +437,23 @@ describe("answerQuestion", () => {
     }
   });
 
+  it("starts explicit year/leg record answers at the requested board row", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("2025年荒玉駅伝女子2区の記録保持者は？", {
+      llm: null,
+      skipRouter: true,
+      defaultYear: 2026,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.sources[0]).toBe("out-analysis/aragyoku_meet_records.md");
+      expect(result.text).toContain("2025年荒玉駅伝女子の2区大会区間記録");
+      expect(result.text).toContain("井上智世");
+      expect(result.text).not.toContain("2025年荒玉駅伝女子の1区大会区間記録");
+    }
+  });
+
   it("routes a named runner's 区間タイム to the team race digest", async () => {
     resetRetrieverCache();
     resetKgCache();
