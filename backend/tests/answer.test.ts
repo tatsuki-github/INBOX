@@ -1779,6 +1779,23 @@ describe("answerQuestion", () => {
     }
   });
 
+  it("focuses a requested leg-rank section", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("2025年荒玉男子の1区区間順位は？", {
+      llm: null,
+      skipRouter: true,
+      defaultYear: 2026,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.sources[0]).toBe("out-analysis/aragyoku_leg_awards.md");
+      expect(result.text).toContain("2025年荒玉駅伝男子1区の区間1位は江口大尊");
+      expect(result.text).toContain("区間2位は山戸耀輝");
+      expect(result.text).not.toContain("2025年荒玉駅伝男子2区の区間1位");
+    }
+  });
+
   it("puts all-teams average pace for 〇位の平均ペース questions", async () => {
     resetRetrieverCache();
     resetKgCache();

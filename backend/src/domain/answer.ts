@@ -496,6 +496,24 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
     }
   }
   // 「○年の区間賞」→ 該当年セクションを優先
+  const legRankRequest = q.match(/(20\d{2}).*?([1-6])区.*(?:区間順位|区間順)/);
+  if (legRankRequest && /男子|女子/.test(q)) {
+    const year = legRankRequest[1]!;
+    const leg = legRankRequest[2]!;
+    const gender = /女子/.test(q) ? "女子" : "男子";
+    const sectionStart = flat.indexOf(`#### ${year}年${gender}・区間別上位`);
+    if (sectionStart >= 0) {
+      const legStart = flat.indexOf(`**${leg}区**`, sectionStart);
+      if (legStart >= 0) {
+        const remainder = flat.slice(legStart + `**${leg}区**`.length);
+        const nextMatch = remainder.match(/\*\*[1-6]区\*\*/);
+        const next = nextMatch?.index == null
+          ? -1
+          : legStart + `**${leg}区**`.length + nextMatch.index;
+        return flat.slice(legStart, next >= 0 ? next : Math.min(flat.length, legStart + budget));
+      }
+    }
+  }
   if (/区間賞|区間順/.test(q)) {
     const years = q.match(/20\d{2}/g) ?? [];
     const gender = /女子/.test(q) ? "女子" : /男子/.test(q) ? "男子" : "";
@@ -986,6 +1004,11 @@ function offlineAnswer(
       /区間賞|区間順/.test(question) &&
       /男子|女子/.test(question) &&
       !/20\d{2}/.test(question);
+    const legRankLookup =
+      /荒玉|駅伝/.test(question) &&
+      /男子|女子/.test(question) &&
+      /[1-6]区/.test(question) &&
+      /区間順位|区間順/.test(question);
     const winnerTeamLookup =
       /優勝チーム/.test(question) &&
       /荒玉|駅伝/.test(question) &&
@@ -1080,6 +1103,7 @@ function offlineAnswer(
       winnerTeamLookup ||
       historicalWinnerLookup ||
       latestLegAwardLookup ||
+      legRankLookup ||
       teamRankLookup ||
       schoolPbRankLookup ||
       trackLapLookup ||
