@@ -983,6 +983,24 @@ describe("answerQuestion", () => {
     }
   });
 
+  it("answers unqualified tenth-to-twelfth-place questions for both genders", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const expected = [
+      ["荒玉駅伝の10位は？", "2025年男子10位: 荒尾四（61:15）", "2025年女子10位: 玉高附属（46:55）"],
+      ["荒玉駅伝の11位は？", "2025年男子11位: 荒尾海陽（61:15）", "2025年女子11位: 玉南（47:13）"],
+      ["荒玉駅伝の12位は？", "2025年男子12位: 有明（62:31）", "2025年女子12位: 有明（47:24）"],
+    ];
+    for (const [question, male, female] of expected) {
+      const result = await answerQuestion(question, { llm: null, skipRouter: true, defaultYear: 2026 });
+      expect(result.kind).toBe("offline");
+      if (result.kind === "offline") {
+        expect(result.text).toContain(male);
+        expect(result.text).toContain(female);
+      }
+    }
+  });
+
   it("lists all historical winners for a gender-specific 歴代 question", async () => {
     resetRetrieverCache();
     resetKgCache();
