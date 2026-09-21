@@ -127,7 +127,7 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
   const budget = maxChars ?? offlinePreviewBudget(question);
   const flat = text.replace(/\s+/g, " ");
   const q = question.normalize("NFKC");
-  const resultListIntent = /(?:結果一覧|結果表|順位表|順位(?:は|を|だけ|全部)?|全チーム結果|全順位|結果を一覧)/.test(q);
+  const resultListIntent = /(?:結果(?:一覧|表|は|を|です)?|順位表|順位(?:は|を|だけ|全部)?|全チーム結果|全順位|結果を一覧)/.test(q);
   const resultListYear = q.match(/20\d{2}/)?.[0] ?? "2025";
   const resultListGender = q.match(/(男子|女子)/)?.[1];
   if (resultListGender && resultListIntent && /荒玉|駅伝/.test(q)) {
@@ -1239,8 +1239,9 @@ function offlineAnswer(
       ).length === 1;
     const resultListLookup =
       /男子|女子/.test(question) &&
-      /(?:結果一覧|結果表|順位表|順位(?:は|を|だけ|全部)?|全チーム結果|全順位|結果を一覧)/.test(question) &&
+      /(?:結果(?:一覧|表|は|を|です)?|順位表|順位(?:は|を|だけ|全部)?|全チーム結果|全順位|結果を一覧)/.test(question) &&
       /荒玉|駅伝/.test(question) &&
+      !/優勝|準優勝|区間|大会記録|記録保持/.test(question) &&
       !/何位/.test(question) &&
       !/岱明|玉高附属|玉名付属|玉名附属|天水|有明|南関|菊水|玉東|玉陵|長洲|荒尾/.test(question);
     const kanaguriDate =
@@ -2259,8 +2260,9 @@ export async function answerQuestion(
     /前年比|前年から|前年度比/.test(question) && /男子|女子/.test(question);
   const resultListQ =
     /男子|女子/.test(question) &&
-    /(?:結果一覧|結果表|順位表|順位(?:は|を|だけ|全部)?|全チーム結果|全順位|結果を一覧)/.test(question) &&
+    /(?:結果(?:一覧|表|は|を|です)?|順位表|順位(?:は|を|だけ|全部)?|全チーム結果|全順位|結果を一覧)/.test(question) &&
     /荒玉|駅伝/.test(question) &&
+    !/優勝|準優勝|区間|大会記録|記録保持/.test(question) &&
     !/何位/.test(question) &&
     !/岱明|玉高附属|玉名付属|玉名附属|天水|有明|南関|菊水|玉東|玉陵|長洲|荒尾/.test(question);
   if (resultListQ) {
