@@ -732,6 +732,13 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
     if (leg && sectionStart >= 0) {
       const row = flat.indexOf(`| ${leg}区 |`, sectionStart);
       if (row >= 0) {
+        const distance = flat
+          .slice(row)
+          .match(new RegExp(`\\|\\s*${leg}区\\s*\\|\\s*([^|]+?)\\s*\\|`))?.[1]?.trim();
+        if (distance) {
+          const label = /女子/.test(q) ? "女子" : /2023年以前|旧コース|以前/.test(q) ? "旧男子" : "現行男子";
+          return `${label}${leg}区は${distance}。`;
+        }
         const start = Math.max(sectionStart, row - 70);
         return flat.slice(start, Math.min(flat.length, start + budget));
       }
@@ -904,6 +911,11 @@ function offlineAnswer(
       );
     const trackLapLookup =
       /トラック/.test(question) && /1周|一周|周長|何メートル|何ｍ/.test(question);
+    const legDistanceLookup =
+      /荒玉|駅伝/.test(question) &&
+      /距離|長さ|どれくらい|何キロ|何km|何m|何ｍ|何メートル/.test(question) &&
+      /[1-6]区|区間/.test(question) &&
+      !/2区.*5区|5区.*2区/.test(question);
     const top2CountLookup =
       /荒玉|駅伝/.test(question) &&
       /男子/.test(question) &&
@@ -961,6 +973,7 @@ function offlineAnswer(
       teamRankLookup ||
       schoolPbRankLookup ||
       trackLapLookup ||
+      legDistanceLookup ||
       namedLegTimeLookup ||
       teamLegLookup ||
       top2CountLookup ||

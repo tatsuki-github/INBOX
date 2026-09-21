@@ -937,6 +937,8 @@ describe("answerQuestion", () => {
       expect(result.sources[0]).toBe("out-analysis/aragyoku-overview.md");
       expect(result.text).toContain("4区");
       expect(result.text).toContain("3km");
+      expect(result.text).toContain("現行男子4区は3km。");
+      expect(result.text).not.toContain("| 1区 | 3km |");
     }
   });
 
