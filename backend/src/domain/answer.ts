@@ -361,7 +361,7 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
   // rather than showing the digest's opening year or an unrelated table.
   if (
     /大会記録|区間記録|ボード.*記録|記録保持|歴代記録|20\d{2}.*(?:男子|女子).*区.*記録|(?:男子|女子).*?[1-6]区.*記録/.test(q) &&
-    /荒玉|駅伝|大会区間記録/.test(q) &&
+    /荒玉|駅伝|大会区間記録|ボード記録/.test(q) &&
     /男子.*\d区|女子.*\d区/.test(q)
   ) {
     const gender = /男子/.test(q) ? "男子" : "女子";
@@ -676,7 +676,7 @@ function boostAthleteRecordSources(query: string, baseSources: string[]): string
   // focused there instead of letting the generic athlete/SB sources win.
   if (
     /大会記録|区間記録|ボード.*記録|記録保持|歴代記録|20\d{2}.*(?:男子|女子).*区.*記録|(?:男子|女子).*?[1-6]区.*記録/.test(q) &&
-    /荒玉|駅伝|大会区間記録/.test(q) &&
+    /荒玉|駅伝|大会区間記録|ボード記録/.test(q) &&
     !/区間賞|区間順/.test(q)
   ) {
     const recordDigest = baseSources.find((s) => /aragyoku_meet_records/.test(s));
@@ -1369,7 +1369,7 @@ export async function answerQuestion(
     /男子|女子/.test(question) &&
     /荒玉|駅伝/.test(question);
   const genderLegRecordQ =
-    /荒玉|駅伝|大会区間記録|区間記録/.test(question) &&
+    /荒玉|駅伝|大会区間記録|区間記録|ボード記録/.test(question) &&
     /男子|女子/.test(question) &&
     /[1-6]区/.test(question) &&
     /記録/.test(question) &&

@@ -839,6 +839,24 @@ describe("answerQuestion", () => {
     }
   });
 
+  it("recognizes omitted-meet board record phrasing", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("男子4区のボード記録は？", {
+      llm: null,
+      skipRouter: true,
+      defaultYear: 2026,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.sources[0]).toBe("out-analysis/aragyoku_meet_records.md");
+      expect(result.text).toContain("荒玉駅伝男子の4区大会区間記録");
+      expect(result.text).toContain("9:13");
+      expect(result.text).toContain("田崎空汰");
+      expect(result.text).not.toContain("正本は各年 transcript");
+    }
+  });
+
   it("keeps year-over-year shortening on the named team's digest", async () => {
     resetRetrieverCache();
     resetKgCache();
