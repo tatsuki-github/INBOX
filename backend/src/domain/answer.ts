@@ -204,6 +204,28 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
       }
     }
   }
+  if (
+    /前年比|前年から|前年度比|何位から何位|短縮|総合差/.test(q) &&
+    /男子|女子/.test(q)
+  ) {
+    const teams = ["岱明", "玉高附属", "玉名付属", "玉名附属", "天水", "有明"];
+    const hits = teams.filter((team) => q.includes(team));
+    const team = hits.length === 1 ? hits[0] : undefined;
+    const canonical = team === "玉名付属" || team === "玉名附属" ? "玉高附属" : team;
+    const gender = /女子/.test(q) ? "女子" : "男子";
+    if (canonical) {
+      const match = flat.match(
+        new RegExp(`${canonical}の荒玉駅伝${gender}は[^。]+。(?:\\s*総合差[^。]+。)?`),
+      );
+      if (match) return match[0];
+      const row = flat.match(
+        new RegExp(`\\|\\s*${canonical}\\s*\\|\\s*${gender}\\s*\\|([^|]+)\\|([^|]+)\\|([^|]+)\\|([^|]+)\\|`),
+      );
+      if (row) {
+        return `${canonical}${gender}: 2024 ${row[1]!.trim()} → 2025 ${row[2]!.trim()}（総合差${row[3]!.trim()}、順位差${row[4]!.trim()}）。`;
+      }
+    }
+  }
   // Full-record / ranking digests: prefer document head (title + early tables)
   if (
     /全記録|記録一覧|所属選手|ランキング|トップ\s*\d+|何位/.test(q) &&
@@ -767,6 +789,12 @@ function offlineAnswer(
         question,
       ) &&
       !/過去|歴代|前年比|比較/.test(question);
+    const teamYearOverYearLookup =
+      /前年比|前年から|前年度比|何位から何位|短縮|総合差/.test(question) &&
+      /男子|女子/.test(question) &&
+      ["岱明", "玉高附属", "玉名付属", "玉名附属", "天水", "有明"].filter((team) =>
+        question.includes(team),
+      ).length === 1;
     const kanaguriDate =
       /金栗駅伝/.test(question) &&
       /いつ|何日|何月|開催月|開催時期/.test(question);
@@ -783,6 +811,7 @@ function offlineAnswer(
       trackLapLookup ||
       teamFullRecordLookup ||
       latestTeamRankLookup ||
+      teamYearOverYearLookup ||
       kanaguriDate;
     const hint = focusedLookup ? question : previewQuery ?? question;
     if (focusedLookup) {
