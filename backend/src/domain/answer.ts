@@ -275,6 +275,14 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
       }
     }
   }
+  if (/なごみ/.test(q) && /集合|場所|会場/.test(q)) {
+    const idx = flat.indexOf("### なごみ駅伝");
+    if (idx >= 0) {
+      const next = flat.indexOf("### 通信陸上", idx + "### なごみ駅伝".length);
+      const sectionEnd = next >= 0 ? next : flat.length;
+      return flat.slice(idx, Math.min(sectionEnd, idx + budget));
+    }
+  }
   if (/合同練習会|おおはま/.test(q)) {
     for (const needle of [
       "### 玉名市合同練習会",
@@ -1258,6 +1266,7 @@ export async function answerQuestion(
   const legDistanceQ =
     /2区.*5区|5区.*2区/.test(expanded) &&
     /距離|何キロ|何km|何メートル|何m/.test(expanded);
+  const nagomiGatherQ = /なごみ/.test(expanded) && /集合|場所|会場/.test(expanded);
 
   const fromSources = retrieveBySources(preferredSources, {
     query: expanded,
@@ -1312,10 +1321,16 @@ export async function answerQuestion(
                 /daiming-staff\.md$/.test(r.chunk.source) &&
                 /2区と5区の距離|2区と5区は/.test(r.chunk.text),
             )
-          : mergedCoreRaw;
+          : nagomiGatherQ
+            ? mergedCoreRaw.filter(
+                (r) =>
+                  /daiming-parents\.md$/.test(r.chunk.source) &&
+                  /### なごみ駅伝/.test(r.chunk.text),
+              )
+            : mergedCoreRaw;
   const withNeighbors = expandWithNeighbors(mergedCore, {
     radius:
-      exhaustive || namedAssignmentQ || farewellScheduleQ || matSizeQ || legDistanceQ
+      exhaustive || namedAssignmentQ || farewellScheduleQ || matSizeQ || legDistanceQ || nagomiGatherQ
         ? 0
         : RETRIEVAL_BUDGET.neighborRadius,
     maxExtra: exhaustive ? 0 : RETRIEVAL_BUDGET.neighborMaxExtra,

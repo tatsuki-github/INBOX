@@ -352,6 +352,24 @@ describe("answerQuestion", () => {
     }
   });
 
+  it("starts なごみ集合場所 answers at the parent meet section", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("なごみ駅伝の集合場所は？", {
+      llm: null,
+      skipRouter: true,
+      defaultYear: 2026,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.sources).toEqual(["out-analysis/line-chats/daiming-parents.md"]);
+      expect(result.text).toContain("### なごみ駅伝");
+      expect(result.text).toContain("和水町三加和公民館");
+      expect(result.text).toContain("7時集合");
+      expect(result.text).not.toContain("保護者グループ）運用メモ");
+    }
+  });
+
   it("routes a named runner's 区間タイム to the team race digest", async () => {
     resetRetrieverCache();
     resetKgCache();
