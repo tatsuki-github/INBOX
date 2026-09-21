@@ -174,6 +174,18 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
     }).filter(Boolean);
     if (sections.length > 0) return `2025年荒玉駅伝の結果: ${sections.join("。 ")}。`;
   }
+  if (!/男子|女子/.test(q) && /荒玉|駅伝/.test(q) && /優勝校|優勝チーム|優勝は/.test(q)) {
+    const winners = [...flat.matchAll(
+      /(20\d{2})年\s*荒玉(?:中体連)?駅伝\s*(男子|女子)[\s\S]{0,220}?優勝校（1位）は「([^」]+)」（総合\s*([0-9]+:\d{2})）/g,
+    )];
+    if (winners.length > 0) {
+      const latestYear = Math.max(...winners.map((winner) => Number(winner[1])));
+      const latest = winners.filter((winner) => Number(winner[1]) === latestYear);
+      return latest
+        .map((winner) => winner[1] + "年" + winner[2] + "優勝校: " + winner[3] + "（" + winner[4] + "）")
+        .join("。 ") + "。";
+    }
+  }
   if (/20\d{2}/.test(q) && /結果|成績|順位/.test(q)) {
     const year = q.match(/20\d{2}/)?.[0];
     const team = ["荒尾海陽", "荒尾三", "荒尾四", "三加和", "玉高附属", "玉名", "玉南", "腹栄", "岱明", "天水", "有明", "南関", "菊水", "玉東", "玉陵", "長洲"]
@@ -1352,6 +1364,11 @@ function offlineAnswer(
       /荒玉|駅伝/.test(question) &&
       /去年|前年|20\d{2}/.test(question) &&
       !/男子|女子/.test(question);
+    const unqualifiedWinnerLookup =
+      /優勝校|優勝チーム|優勝は/.test(question) &&
+      /荒玉|駅伝/.test(question) &&
+      !/優勝チーム/.test(question) &&
+      !/男子|女子|20\d{2}|過去|歴代/.test(question);
     const historicalWinnerLookup =
       /荒玉|駅伝/.test(question) &&
       /歴代/.test(question) &&
@@ -1540,6 +1557,7 @@ function offlineAnswer(
       explicitRunnerUpLookup ||
       winnerYearTeamLookup ||
       genericWinnerYearLookup ||
+      unqualifiedWinnerLookup ||
       winnerTeamLookup ||
       historicalWinnerLookup ||
       latestLegAwardLookup ||
@@ -2527,6 +2545,11 @@ export async function answerQuestion(
     (/去年|前年|20\d{2}/.test(question) ||
       (/優勝チーム/.test(question) && !/過去|歴代|全て|全部/.test(question))) &&
     !/男子|女子/.test(question);
+  const unqualifiedWinnerQ =
+    /優勝校|優勝チーム|優勝は/.test(question) &&
+    /荒玉|駅伝/.test(question) &&
+    !/優勝チーム/.test(question) &&
+    !/男子|女子|20\d{2}|過去|歴代/.test(question);
   const historicalWinnerQ =
     /荒玉|駅伝/.test(question) &&
     /歴代/.test(question) &&
@@ -2654,6 +2677,12 @@ export async function answerQuestion(
   if (genericWinnerYearQ) {
     preferredSources = [
       preferredSources.find((s) => /winners-by-year/.test(s)) ?? "aragyoku/winners-by-year.md",
+    ];
+  }
+  if (unqualifiedWinnerQ) {
+    preferredSources = [
+      "aragyoku/transcripts/2025-男子.json",
+      "aragyoku/transcripts/2025-女子.json",
     ];
   }
   if (historicalWinnerQ) {
@@ -3058,6 +3087,7 @@ export async function answerQuestion(
     latestFirstPlaceQ ||
     firstPlaceQ ||
     genericWinnerYearQ ||
+    unqualifiedWinnerQ ||
     historicalWinnerQ ||
     winnerYearTeamQ ||
     legRankQuestionQ ||
@@ -3128,6 +3158,7 @@ export async function answerQuestion(
         latestFirstPlaceQ ||
         firstPlaceQ ||
         genericWinnerYearQ ||
+        unqualifiedWinnerQ ||
         historicalWinnerQ ||
         winnerYearTeamQ ||
         legRankQuestionQ ||
