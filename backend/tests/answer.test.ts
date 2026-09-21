@@ -888,6 +888,23 @@ describe("answerQuestion", () => {
     }
   });
 
+  it("recognizes natural-language winner-school wording", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("荒玉駅伝で優勝した学校は？", {
+      llm: null,
+      skipRouter: true,
+      defaultYear: 2026,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.text).toContain("2025年男子優勝校: 菊水");
+      expect(result.text).toContain("2025年女子優勝校: 玉名");
+      expect(result.text).not.toContain("深掘り分析");
+      expect(result.text).not.toContain("2025年荒玉駅伝男子 3位");
+    }
+  });
+
   it("lists all historical winners for a gender-specific 歴代 question", async () => {
     resetRetrieverCache();
     resetKgCache();

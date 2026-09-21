@@ -187,9 +187,9 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
       }
     }
   }
-  if (!/男子|女子/.test(q) && /荒玉|駅伝/.test(q) && /優勝校|優勝チーム|優勝は/.test(q)) {
+  if (!/男子|女子/.test(q) && /荒玉|駅伝/.test(q) && /優勝校|優勝チーム|優勝は|優勝した学校|優勝したチーム/.test(q)) {
     const winners = [...flat.matchAll(
-      /(20\d{2})年\s*荒玉(?:中体連)?駅伝\s*(男子|女子)[\s\S]{0,220}?優勝校（1位）は「([^」]+)」（総合\s*([0-9]+:\d{2})）/g,
+      /(20\d{2})年\s*荒玉(?:中体連)?駅伝\s*(男子|女子)[\s\S]{0,220}?優勝校(?:（1位）)?は「([^」]+)」（総合\s*([0-9]+:\d{2})）/g,
     )];
     if (winners.length > 0) {
       const latestYear = Math.max(...winners.map((winner) => Number(winner[1])));
@@ -201,7 +201,7 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
   }
   if (!/男子|女子/.test(q) && /荒玉|駅伝/.test(q) && /優勝タイム|総合タイム/.test(q)) {
     const winners = [...flat.matchAll(
-      /(20\d{2})年\s*荒玉(?:中体連)?駅伝\s*(男子|女子)[\s\S]{0,220}?優勝校（1位）は「([^」]+)」（総合\s*([0-9]+:\d{2})）/g,
+      /(20\d{2})年\s*荒玉(?:中体連)?駅伝\s*(男子|女子)[\s\S]{0,220}?優勝校(?:（1位）)?は「([^」]+)」（総合\s*([0-9]+:\d{2})）/g,
     )];
     if (winners.length > 0) {
       const latestYear = Math.max(...winners.map((winner) => Number(winner[1])));
@@ -1462,7 +1462,7 @@ function offlineAnswer(
       /去年|前年|20\d{2}/.test(question) &&
       !/男子|女子/.test(question);
     const unqualifiedWinnerLookup =
-      /優勝校|優勝チーム|優勝は/.test(question) &&
+      /優勝校|優勝チーム|優勝は|優勝した学校|優勝したチーム/.test(question) &&
       /荒玉|駅伝/.test(question) &&
       !/優勝チーム/.test(question) &&
       !/男子|女子|20\d{2}|過去|歴代/.test(question);
@@ -2725,7 +2725,7 @@ export async function answerQuestion(
       (/優勝チーム/.test(question) && !/過去|歴代|全て|全部/.test(question))) &&
     !/男子|女子/.test(question);
   const unqualifiedWinnerQ =
-    /優勝校|優勝チーム|優勝は/.test(question) &&
+    /優勝校|優勝チーム|優勝は|優勝した学校|優勝したチーム/.test(question) &&
     /荒玉|駅伝/.test(question) &&
     !/優勝チーム/.test(question) &&
     !/男子|女子|20\d{2}|過去|歴代/.test(question);
@@ -2859,10 +2859,7 @@ export async function answerQuestion(
     ];
   }
   if (unqualifiedWinnerQ) {
-    preferredSources = [
-      "aragyoku/transcripts/2025-男子.json",
-      "aragyoku/transcripts/2025-女子.json",
-    ];
+    preferredSources = ["aragyoku/winners-by-year.md"];
   }
   if (unqualifiedWinnerTimeQ) {
     preferredSources = [
