@@ -2226,6 +2226,23 @@ describe("answerQuestion", () => {
     }
   });
 
+  it("routes なごみ優勝質問 to actual result tables", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("なごみ駅伝の優勝校は？", {
+      skipRouter: true,
+      defaultYear: 2026,
+      llm: null,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.text).toContain("NJAC");
+      expect(result.text).toContain("金栗PROJECT A");
+      expect(result.sources[0]).toContain("男子成績表.md");
+      expect(result.sources.every((source) => !source.includes("SB予想"))).toBe(true);
+    }
+  });
+
   it("answers なごみ 岱明男子1区 from 2026 order list, not 金栗駅伝", async () => {
     resetRetrieverCache();
     resetKgCache();

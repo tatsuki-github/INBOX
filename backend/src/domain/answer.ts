@@ -196,7 +196,7 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
     }
   }
   // Exhaustive: keep document head / wide window (do not needle-slice away tables)
-  if (isExhaustiveListQuery(q)) {
+  if (isExhaustiveListQuery(q) && !(/なごみ/.test(q) && /優勝/.test(q))) {
     return flat.slice(0, budget);
   }
   if (
@@ -880,6 +880,12 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
       return `なごみ駅伝の開催日は${year}年${Number(month)}月${Number(day)}日（${date}）です。`;
     }
   }
+  if (/なごみ/.test(q) && /優勝/.test(q) && !/予想|SB/.test(q)) {
+    const winners = [...flat.matchAll(/\|\s*1\s*\|\s*\d+\s*\|\s*([^|]+?)\s*\|\s*([^|]+?)\s*\|/g)];
+    if (winners.length > 0) {
+      return `なごみ駅伝の優勝: ${winners.map((row) => `${row[1]!.trim()} ${row[2]!.trim()}`).join("、")}。`;
+    }
+  }
   if (/なごみ/.test(q) && /結果|順位|何位/.test(q) && !/予想|SB/.test(q)) {
     const teamStems = ["岱明", "玉名アスリーツ", "玉名高校附属", "南関", "富合", "ATRC", "NJAC"]
       .filter((team) => q.includes(team));
@@ -1320,7 +1326,7 @@ function offlineAnswer(
       !/岱明|玉高附属|玉名付属|玉名附属|天水|有明|南関|菊水|玉東|玉陵|長洲|荒尾/.test(question);
     const nagomiResultLookup =
       /なごみ/.test(question) &&
-      /結果|順位|何位/.test(question) &&
+      /結果|順位|何位|優勝/.test(question) &&
       !/予想|SB/.test(question);
     const nagomiDateLookup =
       /なごみ/.test(question) &&
@@ -1423,8 +1429,19 @@ function offlineAnswer(
             ),
           )?.[0]
         : undefined;
+      const nagomiWinnerPreview =
+        nagomiResultLookup && /優勝/.test(question)
+          ? (() => {
+              const winners = [...joined.replace(/\s+/g, " ").matchAll(
+                /\|\s*1\s*\|\s*\d+\s*\|\s*([^|]+?)\s*\|\s*([^|]+?)\s*\|/g,
+              )];
+              return winners.length > 0
+                ? `なごみ駅伝の優勝: ${winners.map((row) => `${row[1]!.trim()} ${row[2]!.trim()}`).join("、")}。`
+                : undefined;
+            })()
+          : undefined;
       const preview =
-        explicitWinnerMatch?.[0] ?? explicitRunnerMatch?.[0] ?? explicitLegSection ?? previewForOffline(joined, hint);
+        explicitWinnerMatch?.[0] ?? explicitRunnerMatch?.[0] ?? explicitLegSection ?? nagomiWinnerPreview ?? previewForOffline(joined, hint);
       lines.push(`1. ${preview}`);
     } else {
       for (const [i, r] of retrieved.entries()) {
@@ -2656,7 +2673,7 @@ export async function answerQuestion(
   }
   const nagomiResultQ =
     /なごみ/.test(expanded) &&
-    /結果|順位|何位/.test(expanded) &&
+    /結果|順位|何位|優勝/.test(expanded) &&
     !/予想|SB/.test(expanded) &&
     !nagomiLegOrderQ;
   const nagomiDateQ =
