@@ -1339,6 +1339,11 @@ export async function answerQuestion(
     /男子|女子/.test(question) &&
     /荒玉|駅伝/.test(question) &&
     /優勝校/.test(question);
+  const runnerUpQ =
+    /20\d{2}/.test(question) &&
+    /男子|女子/.test(question) &&
+    /荒玉|駅伝/.test(question) &&
+    /2位|準優勝/.test(question);
   const genderLegRecordQ =
     /荒玉|駅伝|大会区間記録|区間記録/.test(question) &&
     /男子|女子/.test(question) &&
@@ -1372,6 +1377,11 @@ export async function answerQuestion(
     ];
   }
   if (winnerSchoolQ) {
+    preferredSources = [
+      preferredSources.find((s) => /winners-by-year/.test(s)) ?? "aragyoku/winners-by-year.md",
+    ];
+  }
+  if (runnerUpQ) {
     preferredSources = [
       preferredSources.find((s) => /winners-by-year/.test(s)) ?? "aragyoku/winners-by-year.md",
     ];
@@ -1454,6 +1464,7 @@ export async function answerQuestion(
     kanaguriVenueQ ||
     compactWinnerQ ||
     winnerSchoolQ ||
+    runnerUpQ ||
     teamYearOverYearQ ||
     teamWinnerMarginQ ||
     namedMeetRecordQ ||
@@ -1476,6 +1487,7 @@ export async function answerQuestion(
         exactDatedPractice ||
         compactWinnerQ ||
         winnerSchoolQ ||
+        runnerUpQ ||
         teamYearOverYearQ ||
         teamWinnerMarginQ ||
         namedMeetRecordQ ||
