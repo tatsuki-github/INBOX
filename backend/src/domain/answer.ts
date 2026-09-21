@@ -866,6 +866,9 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
       return flat.slice(idx, Math.min(sectionEnd, idx + budget));
     }
   }
+  if (/なごみ/.test(q) && /結果|順位/.test(q) && !/予想|SB/.test(q)) {
+    return flat.slice(0, budget);
+  }
   if (/合同練習会|おおはま/.test(q)) {
     for (const needle of [
       "### 玉名市合同練習会",
@@ -2589,21 +2592,35 @@ export async function answerQuestion(
       `drive-text/大会/${orderYear}年度/0920_中学駅伝金栗四三生誕の地なごみ大会/${orderGender}区間オーダーリスト.md`,
     ];
   }
+  const nagomiResultQ =
+    /なごみ/.test(expanded) &&
+    /結果|順位/.test(expanded) &&
+    !/予想|SB/.test(expanded) &&
+    !nagomiLegOrderQ;
+  if (nagomiResultQ) {
+    const resultYear = expanded.match(/20\d{2}/)?.[0] ?? "2026";
+    const resultBase =
+      `drive-text/大会/${resultYear}年度/0920_中学駅伝金栗四三生誕の地なごみ大会`;
+    preferredSources = [
+      `${resultBase}/男子成績表.md`,
+      `${resultBase}/女子成績表.md`,
+    ];
+  }
   const fromSources = retrieveBySources(preferredSources, {
     query: expanded,
     perSource:
       exhaustive || totalMeetRecordQ || teamFullRecordQ || explicitTeamLegRankQ || historicalWinnerQ || winnerYearTeamQ || legRankQuestionQ
-        || resultListQ || explicitLegAwardQ || schoolPbRankQ || nagomiLegOrderQ
+        || resultListQ || explicitLegAwardQ || schoolPbRankQ || nagomiLegOrderQ || nagomiResultQ
         ? 200
         : RETRIEVAL_BUDGET.perSource,
     maxChunks:
       exhaustive || totalMeetRecordQ || teamFullRecordQ || explicitTeamLegRankQ || historicalWinnerQ || winnerYearTeamQ || legRankQuestionQ
-        || resultListQ || explicitLegAwardQ || schoolPbRankQ || nagomiLegOrderQ
+        || resultListQ || explicitLegAwardQ || schoolPbRankQ || nagomiLegOrderQ || nagomiResultQ
         ? 200
         : RETRIEVAL_BUDGET.maxChunks,
       coverage:
       exhaustive || exactDatedPractice || totalMeetRecordQ || teamFullRecordQ || explicitTeamLegRankQ || historicalWinnerQ || winnerYearTeamQ || legRankQuestionQ
-        || resultListQ || explicitLegAwardQ || schoolPbRankQ || nagomiLegOrderQ
+        || resultListQ || explicitLegAwardQ || schoolPbRankQ || nagomiLegOrderQ || nagomiResultQ
         ? "full"
         : "ranked",
   });
@@ -2642,6 +2659,7 @@ export async function answerQuestion(
     teamRunnerUpYearQ ||
     resultListQ ||
     nagomiLegOrderQ ||
+    nagomiResultQ ||
     explicitTeamLegQ ||
     teamFullRecordQ ||
     explicitTeamLegRankQ ||
@@ -2702,6 +2720,7 @@ export async function answerQuestion(
         teamRunnerUpYearQ ||
         resultListQ ||
         nagomiLegOrderQ ||
+        nagomiResultQ ||
         explicitTeamLegQ ||
         teamFullRecordQ ||
         explicitTeamLegRankQ ||

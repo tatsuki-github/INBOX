@@ -2194,6 +2194,25 @@ describe("answerQuestion", () => {
     }
   });
 
+  it("routes a yearless なごみ順位 question to actual result tables", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("なごみ駅伝の順位は？", {
+      skipRouter: true,
+      defaultYear: 2026,
+      llm: null,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.sources[0]).toBe(
+        "drive-text/大会/2026年度/0920_中学駅伝金栗四三生誕の地なごみ大会/男子成績表.md",
+      );
+      expect(result.text).toContain("男子成績表");
+      expect(result.text).toContain("NJAC");
+      expect(result.text).not.toContain("SB予想");
+    }
+  });
+
   it("hits SB row for short name without の particle", async () => {
     resetRetrieverCache();
     resetKgCache();
