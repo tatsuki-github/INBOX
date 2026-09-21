@@ -2435,6 +2435,21 @@ describe("answerQuestion", () => {
     }
   });
 
+  it("states when the 2026 荒玉 result is not recorded yet", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("2026年荒玉駅伝の結果は？", {
+      skipRouter: true,
+      defaultYear: 2026,
+      llm: null,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.text).toContain("結果・順位はまだ記載されていません");
+      expect(result.sources[0]).toContain("1014-1015_荒玉中体連駅伝/概要.md");
+    }
+  });
+
   it("answers なごみ 岱明男子1区 from 2026 order list, not 金栗駅伝", async () => {
     resetRetrieverCache();
     resetKgCache();

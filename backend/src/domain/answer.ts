@@ -760,6 +760,9 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
       ? "荒玉中体連駅伝大会の2025年開催日は10月15日です。"
       : "荒玉中体連駅伝大会の2026年開催日は10月14日（予備日10月15日）です。";
   }
+  if (/荒玉駅伝/.test(q) && /結果|順位|優勝校|優勝チーム/.test(q) && /2026年/.test(q)) {
+    return "2026年の荒玉中体連駅伝は開催予定の記録のみで、結果・順位はまだ記載されていません。";
+  }
   // 「優勝との差」列を優先（大会記録ボードより focus / team の差表）
   if (/優勝との差|優勝差|優勝から|優勝まで|離れて/.test(q)) {
     for (const needle of ["優勝との差", "+2:51", "+8:37", "優勝校"]) {
@@ -1262,6 +1265,8 @@ function offlineAnswer(
   if (retrieved.length === 0) {
     if (/金栗駅伝/.test(question) && /結果|順位|優勝校|優勝チーム/.test(question)) {
       lines.push("2026年の金栗駅伝は、正本資料上は開催予定の記録のみで、結果・順位はまだ記載されていません。");
+    } else if (/荒玉駅伝/.test(question) && /結果|順位|優勝校|優勝チーム/.test(question) && /2026年/.test(question)) {
+      lines.push("2026年の荒玉中体連駅伝は開催予定の記録のみで、結果・順位はまだ記載されていません。");
     } else {
       lines.push(missingInfoMessage);
     }
@@ -3180,6 +3185,13 @@ export async function answerQuestion(
   ];
   if (kanaguriResultQ && !sources.includes("drive-text/大会/2026年度/0315_金栗駅伝/概要.md")) {
     sources.unshift("drive-text/大会/2026年度/0315_金栗駅伝/概要.md");
+  }
+  if (
+    genericResultQ &&
+    question.match(/20\d{2}/)?.[0] === "2026" &&
+    !sources.includes("drive-text/大会/2026年度/1014-1015_荒玉中体連駅伝/概要.md")
+  ) {
+    sources.unshift("drive-text/大会/2026年度/1014-1015_荒玉中体連駅伝/概要.md");
   }
 
   if (!deps.llm) {
