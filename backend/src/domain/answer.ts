@@ -422,6 +422,26 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
     }
   }
   // 優勝・準優勝の年度表（直近5年ブロックを先頭に据えた winners-by-year）
+  if (
+    /優勝校|優勝は/.test(q) &&
+    /荒玉|駅伝/.test(q) &&
+    /去年|前年|20\d{2}/.test(q) &&
+    !/男子|女子/.test(q)
+  ) {
+    const requestedYear = q.match(/20\d{2}/)?.[0];
+    const matches = [
+      ...flat.matchAll(/(20\d{2})年荒玉駅伝(?:男子|女子)の優勝校は[^。]+。/g),
+    ];
+    const targetYear =
+      requestedYear ??
+      (q.includes("去年")
+        ? String(Math.max(...matches.map((match) => Number(match[1]))))
+        : q.includes("前年")
+          ? String(Math.max(...matches.map((match) => Number(match[1]))) - 1)
+          : undefined);
+    const filtered = matches.filter((match) => !targetYear || match[1] === targetYear);
+    if (filtered.length > 0) return filtered.map((match) => match[0]).join(" ");
+  }
   if (/優勝|準優勝|2位/.test(q) && /荒玉|駅伝|過去/.test(q)) {
     const years = q.match(/20\d{2}/g) ?? [];
     const gender = /女子/.test(q) ? "女子" : /男子/.test(q) ? "男子" : "";
@@ -924,6 +944,11 @@ function offlineAnswer(
       /男子|女子/.test(question) &&
       /荒玉|駅伝/.test(question) &&
       !/平均ペース|ランキング/.test(question);
+    const genericWinnerYearLookup =
+      /優勝校|優勝は/.test(question) &&
+      /荒玉|駅伝/.test(question) &&
+      /去年|前年|20\d{2}/.test(question) &&
+      !/男子|女子/.test(question);
     const teamRankLookup =
       /20\d{2}/.test(question) &&
       /男子|女子/.test(question) &&
@@ -1010,6 +1035,7 @@ function offlineAnswer(
       latestWinnerTime ||
       latestRunnerUp ||
       latestFirstPlace ||
+      genericWinnerYearLookup ||
       teamRankLookup ||
       schoolPbRankLookup ||
       trackLapLookup ||
@@ -1855,6 +1881,11 @@ export async function answerQuestion(
     /男子|女子/.test(question) &&
     /荒玉|駅伝/.test(question) &&
     !/平均ペース|ランキング/.test(question);
+  const genericWinnerYearQ =
+    /優勝校|優勝は/.test(question) &&
+    /荒玉|駅伝/.test(question) &&
+    /去年|前年|20\d{2}/.test(question) &&
+    !/男子|女子/.test(question);
   const genderLegRecordQ =
     (/荒玉|駅伝|大会区間記録|区間記録|ボード記録/.test(question) ||
       /記録保持者|区間記録/.test(question)) &&
@@ -1919,6 +1950,11 @@ export async function answerQuestion(
     ];
   }
   if (latestFirstPlaceQ) {
+    preferredSources = [
+      preferredSources.find((s) => /winners-by-year/.test(s)) ?? "aragyoku/winners-by-year.md",
+    ];
+  }
+  if (genericWinnerYearQ) {
     preferredSources = [
       preferredSources.find((s) => /winners-by-year/.test(s)) ?? "aragyoku/winners-by-year.md",
     ];
@@ -2178,6 +2214,7 @@ export async function answerQuestion(
     latestWinnerTimeQ ||
     latestRunnerUpQ ||
     latestFirstPlaceQ ||
+    genericWinnerYearQ ||
     schoolPbRankQ ||
     trackLapQ ||
     top2CountQ ||
@@ -2218,6 +2255,7 @@ export async function answerQuestion(
         latestWinnerTimeQ ||
         latestRunnerUpQ ||
         latestFirstPlaceQ ||
+        genericWinnerYearQ ||
         schoolPbRankQ ||
         trackLapQ ||
         top2CountQ ||
