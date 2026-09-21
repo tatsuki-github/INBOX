@@ -2277,6 +2277,23 @@ describe("answerQuestion", () => {
     }
   });
 
+  it("routes a dated 岱明 result question to the team digest", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("岱明の2025年結果は？", {
+      skipRouter: true,
+      defaultYear: 2026,
+      llm: null,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.text).toContain("2025年荒玉駅伝男子 岱明は6位");
+      expect(result.text).toContain("2025年荒玉駅伝女子 岱明は7位");
+      expect(result.sources[0]).toBe("out-analysis/aragyoku-teams/岱明.md");
+      expect(result.sources.every((source) => !source.includes("daiming-staff"))).toBe(true);
+    }
+  });
+
   it("answers なごみ 岱明男子1区 from 2026 order list, not 金栗駅伝", async () => {
     resetRetrieverCache();
     resetKgCache();
