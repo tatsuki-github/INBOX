@@ -132,11 +132,13 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
     const years = q.match(/20\d{2}/g) ?? [];
     const gender = /女子/.test(q) ? "女子" : /男子/.test(q) ? "男子" : "";
     if (years.length > 0 && gender) {
-      const exactNeedle = `${years[0]}年荒玉駅伝${gender}の優勝校`;
-      const exactIdx = flat.indexOf(exactNeedle);
-      if (exactIdx >= 0) {
-        const start = Math.max(0, exactIdx - 80);
-        return flat.slice(start, Math.min(flat.length, start + budget));
+      for (const year of years) {
+        const exactNeedle = `${year}年荒玉駅伝${gender}の優勝校`;
+        const exactIdx = flat.indexOf(exactNeedle);
+        if (exactIdx >= 0) {
+          const start = Math.max(0, exactIdx - 80);
+          return flat.slice(start, Math.min(flat.length, start + budget));
+        }
       }
     }
     for (const needle of ["女子・直近5年", "男子・直近5年", "準優勝校", "優勝・準優勝"]) {

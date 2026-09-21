@@ -445,6 +445,21 @@ describe("answerQuestion", () => {
     }
   });
 
+  it("finds the explicit year in a compact winner-time question", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("荒玉2025男子の優勝タイムは？", {
+      llm: null,
+      skipRouter: true,
+      defaultYear: 2026,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.text).toContain("2025年荒玉駅伝男子の優勝校は");
+      expect(result.text).toContain("56:17");
+    }
+  });
+
   it("llm sees なごみ context for 9/20", async () => {
     resetRetrieverCache();
     resetKgCache();
