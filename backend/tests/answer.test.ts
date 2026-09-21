@@ -430,6 +430,21 @@ describe("answerQuestion", () => {
     }
   });
 
+  it("recognizes 寸法 as a 銀マット size alias", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("銀マットの寸法は？", {
+      llm: null,
+      skipRouter: true,
+      defaultYear: 2026,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.text).toContain("60×180×15mm");
+      expect(result.text).not.toContain("保護者グループ）運用メモ");
+    }
+  });
+
   it("starts 2区と5区 distance answers at the staff distance summary", async () => {
     resetRetrieverCache();
     resetKgCache();

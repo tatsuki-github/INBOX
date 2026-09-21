@@ -289,7 +289,7 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
       }
     }
   }
-  if (/銀マット/.test(q) && /何センチ|何ミリ|サイズ|長さ|幅|厚み|厚さ|大きさ/.test(q)) {
+  if (/銀マット/.test(q) && /何センチ|何ミリ|サイズ|長さ|幅|厚み|厚さ|大きさ|寸法/.test(q)) {
     for (const needle of ["### 銀マット", "銀マットサイズ"]) {
       const idx = flat.indexOf(needle);
       if (idx >= 0) {
@@ -1463,7 +1463,7 @@ export async function answerQuestion(
   const farewellScheduleQ =
     /お別れ会/.test(expanded) && /いつ|日程|何時|時間|時刻|予定|日/.test(expanded);
   const matSizeQ =
-    /銀マット/.test(expanded) && /何センチ|何ミリ|サイズ|長さ|幅|厚み|厚さ|大きさ/.test(expanded);
+    /銀マット/.test(expanded) && /何センチ|何ミリ|サイズ|長さ|幅|厚み|厚さ|大きさ|寸法/.test(expanded);
   const legDistanceQ =
     /2区.*5区|5区.*2区/.test(expanded) &&
     /距離|何キロ|何km|何メートル|何m/.test(expanded);
