@@ -225,6 +225,16 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
       }
     }
   }
+  // 朝練の曜日質問は、スタッフLINE要約の一般的な先頭ではなく、
+  // 曜日と集合時刻をまとめた定義セクションを先頭にする。
+  if (/朝練/.test(q) && /曜日|いつ|何時|集合/.test(q)) {
+    for (const needle of ["### 朝練のリズム", "朝練は **月・火・木・金**", "朝練"]) {
+      const idx = flat.indexOf(needle);
+      if (idx >= 0) {
+        return flat.slice(idx, Math.min(flat.length, idx + budget));
+      }
+    }
+  }
   if (/合同練習会|おおはま/.test(q)) {
     for (const needle of [
       "### 玉名市合同練習会",

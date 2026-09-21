@@ -197,6 +197,23 @@ describe("answerQuestion", () => {
     }
   });
 
+  it("starts 岱明朝練 weekday answers at the staff schedule section", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("岱明の朝練は何曜日？", {
+      llm: null,
+      skipRouter: true,
+      defaultYear: 2026,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.sources[0]).toBe("out-analysis/line-chats/daiming-staff.md");
+      expect(result.text).toContain("朝練のリズム");
+      expect(result.text).toContain("月・火・木・金");
+      expect(result.text).not.toContain("2025-09: 女子結果");
+    }
+  });
+
   it("routes a named runner's 区間タイム to the team race digest", async () => {
     resetRetrieverCache();
     resetKgCache();
