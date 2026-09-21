@@ -858,6 +858,22 @@ describe("answerQuestion", () => {
     }
   });
 
+  it("supports Japanese numeral fifth-place wording", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("荒玉駅伝の五位は？", {
+      llm: null,
+      skipRouter: true,
+      defaultYear: 2026,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.text).toContain("2025年男子5位: 荒尾三（58:58）");
+      expect(result.text).toContain("2025年女子5位: 荒尾三（44:56）");
+      expect(result.text).not.toContain("深掘り分析");
+    }
+  });
+
   it("answers a gendered nagomi rank question from the official result table", async () => {
     resetRetrieverCache();
     resetKgCache();
