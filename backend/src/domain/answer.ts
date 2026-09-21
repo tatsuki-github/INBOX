@@ -1267,6 +1267,8 @@ export async function answerQuestion(
     /2区.*5区|5区.*2区/.test(expanded) &&
     /距離|何キロ|何km|何メートル|何m/.test(expanded);
   const nagomiGatherQ = /なごみ/.test(expanded) && /集合|場所|会場/.test(expanded);
+  const kanaguriVenueQ =
+    /金栗駅伝/.test(expanded) && /会場|場所/.test(expanded) && !/なごみ/.test(expanded);
 
   const fromSources = retrieveBySources(preferredSources, {
     query: expanded,
@@ -1285,7 +1287,8 @@ export async function answerQuestion(
     namedTeamSbList ||
     isLegAthleteQuestion(expanded) ||
     aragyokuDistanceQ ||
-    compactTeamRankQ
+    compactTeamRankQ ||
+    kanaguriVenueQ
       ? []
       : retrieve(expanded, topK);
   const mergedCoreRaw = mergeRetrieved(
@@ -1327,10 +1330,20 @@ export async function answerQuestion(
                   /daiming-parents\.md$/.test(r.chunk.source) &&
                   /### なごみ駅伝/.test(r.chunk.text),
               )
-            : mergedCoreRaw;
+            : kanaguriVenueQ
+              ? mergedCoreRaw.filter((r) =>
+                  /drive-text\/大会\/2026年度\/0315_金栗駅伝\/概要\.md$/.test(r.chunk.source),
+                )
+              : mergedCoreRaw;
   const withNeighbors = expandWithNeighbors(mergedCore, {
     radius:
-      exhaustive || namedAssignmentQ || farewellScheduleQ || matSizeQ || legDistanceQ || nagomiGatherQ
+      exhaustive ||
+      namedAssignmentQ ||
+      farewellScheduleQ ||
+      matSizeQ ||
+      legDistanceQ ||
+      nagomiGatherQ ||
+      kanaguriVenueQ
         ? 0
         : RETRIEVAL_BUDGET.neighborRadius,
     maxExtra: exhaustive ? 0 : RETRIEVAL_BUDGET.neighborMaxExtra,

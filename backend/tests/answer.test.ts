@@ -370,6 +370,23 @@ describe("answerQuestion", () => {
     }
   });
 
+  it("keeps an unavailable 金栗駅伝 venue answer on the 2026 canonical note", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("金栗駅伝の会場は？", {
+      llm: null,
+      skipRouter: true,
+      defaultYear: 2026,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.sources).toEqual(["drive-text/大会/2026年度/0315_金栗駅伝/概要.md"]);
+      expect(result.text).toContain("金栗駅伝");
+      expect(result.text).toContain("詳細・結果は追記予定");
+      expect(result.text).not.toContain("朝練のリズム");
+    }
+  });
+
   it("routes a named runner's 区間タイム to the team race digest", async () => {
     resetRetrieverCache();
     resetKgCache();
