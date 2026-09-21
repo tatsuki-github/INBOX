@@ -838,6 +838,22 @@ describe("answerQuestion", () => {
     }
   });
 
+  it("keeps an explicit historical winner-time question on its requested year", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("2012年荒玉駅伝男子の優勝タイムは？", {
+      llm: null,
+      skipRouter: true,
+      defaultYear: 2026,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.sources[0]).toBe("aragyoku/winners-by-year.md");
+      expect(result.text).toContain("2012年荒玉駅伝男子の優勝校は「玉名」（総合 63:47）");
+      expect(result.text).not.toContain("2025年荒玉駅伝男子の優勝校は");
+    }
+  });
+
   it("routes yearless 荒玉 runner-up questions to the latest result", async () => {
     resetRetrieverCache();
     resetKgCache();

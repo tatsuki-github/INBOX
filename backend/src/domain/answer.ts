@@ -196,6 +196,11 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
     const re = new RegExp(`20\\d{2}年荒玉駅伝${gender}の優勝校は[^。]+。`, "g");
     const matches = [...flat.matchAll(re)];
     if (matches.length > 0) {
+      const requestedYear = q.match(/20\d{2}/)?.[0];
+      if (requestedYear) {
+        const exact = matches.find((match) => match[0].startsWith(`${requestedYear}年`));
+        if (exact) return exact[0]!;
+      }
       let best = matches[0]!;
       for (const match of matches) {
         if (Number(match[0].slice(0, 4)) >= Number(best[0].slice(0, 4))) best = match;
