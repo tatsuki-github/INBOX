@@ -228,6 +228,22 @@ describe("answerQuestion", () => {
     }
   });
 
+  it("routes compact year/gender winner totals to the winners digest", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("2025女子優勝の玉名の総合タイムは？", {
+      llm: null,
+      skipRouter: true,
+      defaultYear: 2026,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.sources[0]).toBe("aragyoku/winners-by-year.md");
+      expect(result.text).toContain("41:58");
+      expect(result.text).toContain("玉名");
+    }
+  });
+
   it("llm sees なごみ context for 9/20", async () => {
     resetRetrieverCache();
     resetKgCache();

@@ -388,6 +388,12 @@ function sortMeetDriveSources(sources: string[], query: string): string[] {
 /** Prefer SB / 記録データベース sources for athlete-record questions. */
 function boostAthleteRecordSources(query: string, baseSources: string[]): string[] {
   const q = query.normalize("NFKC");
+  // A compact year/gender winner query is a meet-result lookup, not an
+  // athlete SB lookup, even when it asks for a total time.
+  if (/20\d{2}/.test(q) && /優勝/.test(q) && /男子|女子/.test(q) && /総合|タイム/.test(q)) {
+    const winners = baseSources.find((s) => /winners-by-year/.test(s));
+    if (winners) return [winners];
+  }
   // Meet-record questions have a dedicated board digest. Keep the answer
   // focused there instead of letting the generic athlete/SB sources win.
   if (
@@ -782,7 +788,8 @@ function boostMeetYearSources(
     // 年度別の優勝・準優勝（回数集計ではなく year×school 表）
     if (
       /準優勝|優勝校|2位は|2位の学校/.test(expandedQuery) ||
-      (/優勝/.test(expandedQuery) && /過去|歴代|年/.test(expandedQuery))
+      (/優勝/.test(expandedQuery) && /過去|歴代|年/.test(expandedQuery)) ||
+      (/20\d{2}/.test(expandedQuery) && /優勝/.test(expandedQuery) && /男子|女子/.test(expandedQuery))
     ) {
       push("aragyoku/winners-by-year.md");
     }
