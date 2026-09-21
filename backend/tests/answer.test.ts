@@ -322,6 +322,21 @@ describe("answerQuestion", () => {
     }
   });
 
+  it("starts a year/gender winner preview at the matching result sentence", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("2024年荒玉男子の優勝は南関でタイムは？", {
+      llm: null,
+      skipRouter: true,
+      defaultYear: 2026,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.text).toContain("2024年荒玉駅伝男子の優勝校は");
+      expect(result.text).toContain("56:38");
+    }
+  });
+
   it("llm sees なごみ context for 9/20", async () => {
     resetRetrieverCache();
     resetKgCache();
