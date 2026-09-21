@@ -141,7 +141,7 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
       }
     }
   }
-  if (/総合タイム/.test(q) && /荒玉|駅伝/.test(q) && /男子|女子/.test(q)) {
+  if (/総合タイム|優勝タイム/.test(q) && /荒玉|駅伝/.test(q) && /男子|女子/.test(q)) {
     const gender = /女子/.test(q) ? "女子" : "男子";
     const re = new RegExp(`20\\d{2}年荒玉駅伝${gender}の優勝校は[^。]+。`, "g");
     const matches = [...flat.matchAll(re)];
@@ -598,7 +598,7 @@ function offlineAnswer(
       /男子|女子/.test(question) &&
       /荒玉|駅伝/.test(question);
     const latestWinnerTime =
-      /総合タイム/.test(question) &&
+      /総合タイム|優勝タイム/.test(question) &&
       /男子|女子/.test(question) &&
       /荒玉|駅伝/.test(question);
     const latestRunnerUp =
@@ -1429,7 +1429,7 @@ export async function answerQuestion(
     /男子|女子/.test(question) &&
     /荒玉|駅伝/.test(question);
   const latestWinnerTimeQ =
-    /総合タイム/.test(question) &&
+    /総合タイム|優勝タイム/.test(question) &&
     /男子|女子/.test(question) &&
     /荒玉|駅伝/.test(question);
   const latestRunnerUpQ =
