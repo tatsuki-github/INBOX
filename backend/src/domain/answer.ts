@@ -430,7 +430,8 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
   if (
     /優勝校|優勝チーム|優勝は/.test(q) &&
     /荒玉|駅伝/.test(q) &&
-    /去年|前年|20\d{2}/.test(q) &&
+    (/去年|前年|20\d{2}/.test(q) ||
+      (/優勝チーム/.test(q) && !/過去|歴代|全て|全部/.test(q))) &&
     !/男子|女子/.test(q)
   ) {
     const requestedYear = q.match(/20\d{2}/)?.[0];
@@ -443,6 +444,8 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
         ? String(Math.max(...matches.map((match) => Number(match[1]))))
         : q.includes("前年")
           ? String(Math.max(...matches.map((match) => Number(match[1]))) - 1)
+          : /優勝チーム/.test(q)
+            ? String(Math.max(...matches.map((match) => Number(match[1]))))
           : undefined);
     const filtered = matches.filter((match) => !targetYear || match[1] === targetYear);
     if (filtered.length > 0) return filtered.map((match) => match[0]).join(" ");
@@ -957,7 +960,7 @@ function offlineAnswer(
     const winnerTeamLookup =
       /優勝チーム/.test(question) &&
       /荒玉|駅伝/.test(question) &&
-      /男子|女子/.test(question);
+      !/男子|女子|過去|歴代|全て|全部/.test(question);
     const teamRankLookup =
       /20\d{2}/.test(question) &&
       /男子|女子/.test(question) &&
@@ -1894,7 +1897,8 @@ export async function answerQuestion(
   const genericWinnerYearQ =
     /優勝校|優勝チーム|優勝は/.test(question) &&
     /荒玉|駅伝/.test(question) &&
-    /去年|前年|20\d{2}/.test(question) &&
+    (/去年|前年|20\d{2}/.test(question) ||
+      (/優勝チーム/.test(question) && !/過去|歴代|全て|全部/.test(question))) &&
     !/男子|女子/.test(question);
   const genderLegRecordQ =
     (/荒玉|駅伝|大会区間記録|区間記録|ボード記録/.test(question) ||

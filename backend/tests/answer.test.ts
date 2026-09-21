@@ -611,6 +611,23 @@ describe("answerQuestion", () => {
     }
   });
 
+  it("defaults a genderless 優勝チーム question to the latest men and women results", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("荒玉駅伝の優勝チームは？", {
+      llm: null,
+      skipRouter: true,
+      defaultYear: 2026,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.sources[0]).toBe("aragyoku/winners-by-year.md");
+      expect(result.text).toContain("2025年荒玉駅伝女子の優勝校は「玉名」");
+      expect(result.text).toContain("2025年荒玉駅伝男子の優勝校は「菊水」");
+      expect(result.text).not.toContain("2024年荒玉駅伝");
+    }
+  });
+
   it("routes generic gender/leg record phrasing to the meet-record board", async () => {
     resetRetrieverCache();
     resetKgCache();
