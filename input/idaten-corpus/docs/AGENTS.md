@@ -34,6 +34,15 @@
 - CI: `.github/workflows/knowledge-graph.yml` がコミット済み KG の鮮度を `--check` で検証する。
   ソースを変えたら KG を再生成してコミットすること。
 
+### 大会結果をナレッジに追加するとき
+
+成績表（MD/JSON）を Drive・コーパスへ書いたら、**同じ作業でカレンダー正本も更新する**:
+
+1. `input/events.YYYY.yaml` の当該大会を `status: done` にし、description 先頭に岱明結果（＋成績表パス）を載せる。
+2. `python3 scripts/generate_calendar.py --year YYYY` で `out/YYYY/` と KG を再生成する。
+
+なごみ2026 は `scripts/generate_nagomi_2026_results.py` が成績表 dual-write と `events.2026.yaml` 更新をまとめて行う（[ADR 051](docs/adr/051-nagomi-2026-results-transcription.md)）。
+
 ## 外部データ（いだてん岱明）
 
 Notion・Google ドライブ由来のスナップショットは `input/external/` にある。

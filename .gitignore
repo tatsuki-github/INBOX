@@ -6,6 +6,9 @@ venv/
 .DS_Store
 out/ai/rag_index.json
 
+# 大会動画の切り出し・結合成果物（GitHub 100MB 制限を超える）
+out/aragyoku-video-*/
+
 # LINE 生トーク（PII 含む可能性）— 衛生化済みは out/analysis/line-chats/
 input/external/line/raw/
 

@@ -16,7 +16,7 @@ INBOX / 年次カレンダーシステムのデータ構造と、岱明練習の
 | `category` | string | | `予定` / `メモ` / `祝日` |
 | `status` | string | | `scheduled`, `done`, `inbox` 等 |
 | `tags` | string[] | | 分類タグ |
-| `description` | string | | 人間向け表示本文 |
+| `description` | string | | 人間向け表示本文。大会結果を載せた場合は先頭に結果・成績表パスを置き、`status: done` にする（なごみ2026: ADR 051） |
 | `practice` | object | | 機械向け練習メニュー（後述） |
 | `template_ref` | string | | `input/practice_templates.yaml` の参照 ID |
 
