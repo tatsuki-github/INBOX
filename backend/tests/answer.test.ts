@@ -181,6 +181,22 @@ describe("answerQuestion", () => {
     }
   });
 
+  it("routes a title-only 玉名市練習会 venue question to its dated note", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("玉名市練習会の会場は？", {
+      llm: null,
+      skipRouter: true,
+      defaultYear: 2026,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.sources[0]).toBe("drive-text/練習/玉名市練習会/2026-09-22.md");
+      expect(result.text).toContain("おおはまふれあいセンター");
+      expect(result.text).not.toContain("3＋加速200×2");
+    }
+  });
+
   it("routes a named runner's 区間タイム to the team race digest", async () => {
     resetRetrieverCache();
     resetKgCache();

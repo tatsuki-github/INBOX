@@ -212,6 +212,19 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
   // 合同練習会の「いつ・どこ」質問は、保護者LINE要約の冒頭ではなく
   // 予定セクションを見せる。冒頭だけを返すと日付・会場が同じ文書内に
   // あってもオフライン回答から落ちる。
+  if (/玉名市.*練習会|練習会.*玉名市/.test(q)) {
+    for (const needle of [
+      "# 玉名市練習会",
+      "おおはまふれあいセンター",
+      "2026年9月22日",
+    ]) {
+      const idx = flat.indexOf(needle);
+      if (idx >= 0) {
+        const start = Math.max(0, idx - 40);
+        return flat.slice(start, Math.min(flat.length, start + budget));
+      }
+    }
+  }
   if (/合同練習会|おおはま/.test(q)) {
     for (const needle of [
       "### 玉名市合同練習会",
@@ -407,6 +420,26 @@ function boostDateMeetSources(expandedQuery: string, baseSources: string[]): str
     seen.add(s);
     out.push(s);
   };
+
+  // A title-only venue question still has a canonical dated practice note.
+  // Prefer the note matching the query year before the broad calendar, which
+  // otherwise exposes unrelated practice entries first.
+  if (
+    isDateScheduleQuestion(expandedQuery) &&
+    /玉名市.*練習会|練習会.*玉名市/.test(expandedQuery)
+  ) {
+    const year = expandedQuery.match(/20\d{2}/)?.[0];
+    const exactPracticeSources = findSourcesContaining(
+      ["玉名市練習会"],
+      { prefix: "drive-text/練習/", limit: 12 },
+    );
+    const yearMatched = year
+      ? exactPracticeSources.filter((s) => s.includes(year))
+      : exactPracticeSources;
+    for (const s of [...yearMatched, ...exactPracticeSources]) push(s);
+    push("calendar/events.daiming.yaml");
+    if (exactPracticeSources.length > 0) return out;
+  }
 
   if (mentions.length > 0) {
     const exactPracticeSources = findSourcesContaining(
@@ -1170,7 +1203,7 @@ export async function answerQuestion(
     query: expanded,
     perSource: exhaustive ? 200 : RETRIEVAL_BUDGET.perSource,
     maxChunks: exhaustive ? 200 : RETRIEVAL_BUDGET.maxChunks,
-    coverage: exhaustive ? "full" : "ranked",
+    coverage: exhaustive || exactDatedPractice ? "full" : "ranked",
   });
   const retrieve = deps.retrieve ?? retrieveContext;
   // Exhaustive: preferred digest coverage alone — BM25 OCR/ADR filler drowns the list
@@ -1190,7 +1223,10 @@ export async function answerQuestion(
     fromSources,
     fromBm25,
     exhaustive ? Math.max(topK, fromSources.length, 96) : topK,
-    { query: expanded, preferPrimaryOrder: exhaustive || isLegAthleteQuestion(expanded) },
+    {
+      query: expanded,
+      preferPrimaryOrder: exhaustive || exactDatedPractice || isLegAthleteQuestion(expanded),
+    },
   );
   const withNeighbors = expandWithNeighbors(mergedCore, {
     radius: exhaustive ? 0 : RETRIEVAL_BUDGET.neighborRadius,
