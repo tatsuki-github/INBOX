@@ -934,8 +934,9 @@ function digestPinForQuery(chunk: RagChunk, query: string): number {
     return 200;
   }
   if (
-    /荒玉|駅伝/.test(qn) &&
     /何位|総合タイム|総合は|総合/.test(qn) &&
+    /男子|女子/.test(qn) &&
+    /20\d{2}/.test(qn) &&
     /aragyoku-teams\/([^/]+)\.md$/.test(base)
   ) {
     const teamStem = base.match(/aragyoku-teams\/([^/]+)\.md$/)?.[1] ?? "";

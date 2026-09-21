@@ -385,6 +385,21 @@ describe("answerQuestion", () => {
     }
   });
 
+  it("resolves a compact school/year/gender rank question to the team digest", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("玉高附属女子2025は何位？", {
+      llm: null,
+      skipRouter: true,
+      defaultYear: 2026,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.sources[0]).toBe("out-analysis/aragyoku-teams/玉高附属.md");
+      expect(result.text).toContain("10位");
+    }
+  });
+
   it("llm sees なごみ context for 9/20", async () => {
     resetRetrieverCache();
     resetKgCache();

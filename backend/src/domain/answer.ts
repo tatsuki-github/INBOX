@@ -267,7 +267,7 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
       }
     }
   }
-  if (/荒玉|駅伝/.test(q) && /何位|総合タイム|総合は/.test(q) && /20\d{2}/.test(q)) {
+  if (/何位|順位|総合タイム|総合は/.test(q) && /20\d{2}/.test(q) && /男子|女子/.test(q)) {
     const year = q.match(/20\d{2}/)?.[0];
     const gender = /女子/.test(q) ? "女子" : /男子/.test(q) ? "男子" : "";
     const team = /玉名付属|玉名附属|玉名附/.test(q)
