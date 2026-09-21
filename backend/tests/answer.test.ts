@@ -196,6 +196,21 @@ describe("answerQuestion", () => {
     }
   });
 
+  it("recognizes 参加料 as a 合同練習会 fee alias", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("合同練習会の参加料は？", {
+      llm: null,
+      skipRouter: true,
+      defaultYear: 2026,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.text).toContain("学生 1,000円／一般 2,000円");
+      expect(result.text).not.toContain("熊日駅伝に向けた親睦");
+    }
+  });
+
   it("routes a title-only 玉名市練習会 venue question to its dated note", async () => {
     resetRetrieverCache();
     resetKgCache();
