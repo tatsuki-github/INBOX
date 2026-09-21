@@ -220,7 +220,7 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
       return flat.slice(start, end);
     }
   }
-  if (/金栗駅伝/.test(q) && /いつ|何日/.test(q)) {
+  if (/金栗駅伝/.test(q) && /いつ|何日|何月|開催月|開催時期/.test(q)) {
     const date = flat.match(/20\d{2}-\d{2}-\d{2}/)?.[0];
     if (date) {
       const [year, month, day] = date.split("-");
@@ -584,8 +584,16 @@ function offlineAnswer(
       /総合タイム/.test(question) &&
       /男子|女子/.test(question) &&
       /荒玉|駅伝/.test(question);
+    const kanaguriDate =
+      /金栗駅伝/.test(question) &&
+      /いつ|何日|何月|開催月|開催時期/.test(question);
     const focusedLookup =
-      preciseMeetRecord || namedMeetRecord || totalMeetRecord || latestWinner || latestWinnerTime;
+      preciseMeetRecord ||
+      namedMeetRecord ||
+      totalMeetRecord ||
+      latestWinner ||
+      latestWinnerTime ||
+      kanaguriDate;
     const hint = focusedLookup ? question : previewQuery ?? question;
     if (focusedLookup) {
       const preview = previewForOffline(
@@ -1507,7 +1515,7 @@ export async function answerQuestion(
   const nagomiGatherQ = /なごみ/.test(expanded) && /集合|場所|会場/.test(expanded);
   const kanaguriVenueQ =
     /金栗駅伝/.test(expanded) &&
-    /会場|場所|開催日|日付|いつ/.test(expanded) &&
+    /会場|場所|開催日|日付|いつ|何月|開催月|開催時期/.test(expanded) &&
     !/なごみ/.test(expanded);
   const fromSources = retrieveBySources(preferredSources, {
     query: expanded,
