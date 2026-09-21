@@ -498,9 +498,9 @@ function boostDateMeetSources(expandedQuery: string, baseSources: string[]): str
     const yearMatched = year
       ? exactPracticeSources.filter((s) => s.includes(year))
       : exactPracticeSources;
-    for (const s of [...yearMatched, ...exactPracticeSources]) push(s);
-    push("calendar/events.daiming.yaml");
-    if (exactPracticeSources.length > 0) return out;
+    const titleSources = yearMatched.length > 0 ? yearMatched : exactPracticeSources;
+    for (const s of titleSources) push(s);
+    if (titleSources.length > 0) return out;
   }
 
   if (mentions.length > 0) {
