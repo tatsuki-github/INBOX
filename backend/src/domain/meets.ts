@@ -41,6 +41,12 @@ export function detectMeetKind(query: string): MeetKind {
     return "aragyoku";
   }
 
+  // Year + gender + leg + record is an unqualified historical 荒玉-board
+  // query in this corpus (e.g. 「2025男子3区の大会記録」).
+  if (/20\d{2}/.test(q) && /男子|女子/.test(q) && /[1-6]区/.test(q) && /記録/.test(q)) {
+    return "aragyoku";
+  }
+
   // 「案浦竜士は何区を走った？」— unnamed race-leg defaults to club 荒玉, not 通信陸上
   if (isLegAthleteQuestion(q)) return "aragyoku";
 
