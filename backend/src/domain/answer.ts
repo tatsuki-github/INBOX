@@ -166,6 +166,13 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
       return `女子800mの最速は${fastest.name}（${fastest.school}）の${fastest.time}（${fastest.year}）。`;
     }
   }
+  if (/男子/.test(q) && /1500m|1500ｍ|3000m|3000ｍ/.test(q) && /最速|一番速|速い/.test(q)) {
+    const distance = q.match(/(1500|3000)m/)?.[1];
+    const top = flat.match(/\|\s*1\s*\|\s*([^|]+)\|\s*([^|]+)\|\s*([^|]+)\|/);
+    if (distance && top) {
+      return `男子${distance}mの最速は${top[1]!.trim()}（${top[2]!.trim()}）の${top[3]!.trim()}。`;
+    }
+  }
   const paceCalc = q.match(/([1-6])区/) && q.match(/(\d+)分(?:\s*(\d+)秒)?/);
   if (paceCalc && /ペース|\/km|1km|キロあたり/.test(q) && /荒玉|駅伝/.test(q)) {
     const leg = Number(q.match(/([1-6])区/)![1]);
@@ -1275,6 +1282,8 @@ function offlineAnswer(
       !/岱明|玉高附属|玉名付属|玉名附属|天水|有明|南関|菊水|玉東|玉陵|長洲|荒尾/.test(question);
     const women800FastestLookup =
       /女子/.test(question) && /800m|800ｍ/.test(question) && /最速|一番速|速い/.test(question);
+    const individualTrackFastestLookup =
+      /男子/.test(question) && /1500m|1500ｍ|3000m|3000ｍ/.test(question) && /最速|一番速|速い/.test(question);
     const kanaguriDate =
       /金栗駅伝/.test(question) &&
       /いつ|何日|何月|開催月|開催時期/.test(question);
@@ -1316,6 +1325,7 @@ function offlineAnswer(
       teamYearOverYearLookup ||
       resultListLookup ||
       women800FastestLookup ||
+      individualTrackFastestLookup ||
       kanaguriDate;
     const hint = focusedLookup ? question : previewQuery ?? question;
     if (focusedLookup) {
@@ -2201,6 +2211,16 @@ export async function answerQuestion(
     /1500m|1500ｍ/.test(question) &&
     /速い|一番|最速|ランキング|トップ\s*20|SB|自己ベスト/.test(question) &&
     !/学校別|所属別|上位\s*\d+\s*人平均/.test(question);
+  const individual3000TopQ =
+    /3000m|3000ｍ/.test(question) &&
+    /男子/.test(question) &&
+    /速い|一番|最速/.test(question);
+  if (individual3000TopQ) {
+    preferredSources = [
+      preferredSources.find((s) => /3000m_sb_ranking/.test(s)) ??
+        "out-analysis/2026_aragyoku_men_3000m_sb_ranking.md",
+    ];
+  }
   if (individual1500TopQ) {
     preferredSources = [
       preferredSources.find((s) => /1500m_sb_individual_top20/.test(s)) ??
@@ -2577,6 +2597,7 @@ export async function answerQuestion(
     winnerYearTeamQ ||
     legRankQuestionQ ||
     individual1500TopQ ||
+    individual3000TopQ ||
     explicitLegAwardQ ||
     schoolPbRankQ ||
     trackLapQ ||
@@ -2635,6 +2656,7 @@ export async function answerQuestion(
         winnerYearTeamQ ||
         legRankQuestionQ ||
         individual1500TopQ ||
+        individual3000TopQ ||
         explicitLegAwardQ ||
         schoolPbRankQ ||
         trackLapQ ||

@@ -2436,6 +2436,22 @@ describe("answerQuestion", () => {
     }
   });
 
+  it("extracts the fastest men 3000m SB from the ranking digest", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("男子3000mで一番速いのは？", {
+      skipRouter: true,
+      defaultYear: 2026,
+      llm: null,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.sources[0]).toBe("out-analysis/2026_aragyoku_men_3000m_sb_ranking.md");
+      expect(result.text).toContain("隈部侑成（金栗PROJECT）の8:54.61");
+      expect(result.text).not.toContain("荒尾三中");
+    }
+  });
+
   it("answers 優勝との差 from focus analysis not meet_records board", async () => {
     resetRetrieverCache();
     resetKgCache();
