@@ -293,6 +293,14 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
       return fifthPlaces.map((place) => `2025年${place[1]}5位: ${place[2]}（${place[3]}）`).join("。 ") + "。";
     }
   }
+  if (!/男子|女子/.test(q) && /荒玉|駅伝/.test(q) && /6位/.test(q)) {
+    const sixthPlaces = [...flat.matchAll(
+      /2025年荒玉駅伝(男子|女子)\s+6位\s+([^\s]+)\s+総合\s*([0-9]+:\d{2})/g,
+    )];
+    if (sixthPlaces.length >= 2) {
+      return sixthPlaces.map((place) => `2025年${place[1]}6位: ${place[2]}（${place[3]}）`).join("。 ") + "。";
+    }
+  }
   if (/男子|女子/.test(q) && /荒玉|駅伝/.test(q) && /3位/.test(q) && !/20\d{2}/.test(q)) {
     const gender = /女子/.test(q) ? "女子" : "男子";
     const thirdPlace = flat.match(new RegExp(`2025年荒玉駅伝${gender}\\s+3位\\s+([^\\s]+)\\s+総合\\s*([0-9]+:\\d{2})`));
@@ -1524,6 +1532,10 @@ function offlineAnswer(
       /5位/.test(question) &&
       /荒玉|駅伝/.test(question) &&
       !/男子|女子|20\d{2}|過去|歴代|区間/.test(question);
+    const unqualifiedSixthPlaceLookup =
+      /6位/.test(question) &&
+      /荒玉|駅伝/.test(question) &&
+      !/男子|女子|20\d{2}|過去|歴代|区間/.test(question);
     const genderedThirdPlaceLookup =
       /3位/.test(question) &&
       /荒玉|駅伝/.test(question) &&
@@ -1741,6 +1753,7 @@ function offlineAnswer(
       unqualifiedThirdPlaceLookup ||
       unqualifiedFourthPlaceLookup ||
       unqualifiedFifthPlaceLookup ||
+      unqualifiedSixthPlaceLookup ||
       genderedThirdPlaceLookup ||
       genderedFourthFifthPlaceLookup ||
       explicitThirdPlaceLookup ||
@@ -2733,6 +2746,10 @@ export async function answerQuestion(
     /5位/.test(question) &&
     /荒玉|駅伝/.test(question) &&
     !/男子|女子|20\d{2}|過去|歴代|区間/.test(question);
+  const unqualifiedSixthPlaceQ =
+    /6位/.test(question) &&
+    /荒玉|駅伝/.test(question) &&
+    !/男子|女子|20\d{2}|過去|歴代|区間/.test(question);
   const genderedThirdPlaceQ =
     /3位/.test(question) &&
     /荒玉|駅伝/.test(question) &&
@@ -2944,6 +2961,12 @@ export async function answerQuestion(
     ];
   }
   if (unqualifiedFifthPlaceQ) {
+    preferredSources = [
+      "aragyoku/transcripts/2025-男子.json",
+      "aragyoku/transcripts/2025-女子.json",
+    ];
+  }
+  if (unqualifiedSixthPlaceQ) {
     preferredSources = [
       "aragyoku/transcripts/2025-男子.json",
       "aragyoku/transcripts/2025-女子.json",
@@ -3368,6 +3391,7 @@ export async function answerQuestion(
     unqualifiedThirdPlaceQ ||
     unqualifiedFourthPlaceQ ||
     unqualifiedFifthPlaceQ ||
+    unqualifiedSixthPlaceQ ||
     genderedThirdPlaceQ ||
     genderedFourthFifthPlaceQ ||
     explicitThirdPlaceQ ||
@@ -3449,6 +3473,7 @@ export async function answerQuestion(
         unqualifiedThirdPlaceQ ||
         unqualifiedFourthPlaceQ ||
         unqualifiedFifthPlaceQ ||
+        unqualifiedSixthPlaceQ ||
         genderedThirdPlaceQ ||
         genderedFourthFifthPlaceQ ||
         explicitThirdPlaceQ ||

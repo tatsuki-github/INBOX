@@ -950,6 +950,21 @@ describe("answerQuestion", () => {
     }
   });
 
+  it("answers an unqualified sixth-place question for both genders", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("荒玉駅伝の6位は？", {
+      llm: null,
+      skipRouter: true,
+      defaultYear: 2026,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.text).toContain("2025年男子6位: 岱明（59:08）");
+      expect(result.text).toContain("2025年女子6位: 荒尾四（45:09）");
+    }
+  });
+
   it("lists all historical winners for a gender-specific 歴代 question", async () => {
     resetRetrieverCache();
     resetKgCache();
