@@ -659,6 +659,18 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
     }
   }
   if (
+    /20\d{2}/.test(q) &&
+    /優勝校|優勝は|優勝チーム/.test(q) &&
+    /荒玉|駅伝/.test(q) &&
+    /男子|女子/.test(q) &&
+    !/差|タイム/.test(q)
+  ) {
+    const year = q.match(/20\d{2}/)![0];
+    const gender = /女子/.test(q) ? "女子" : "男子";
+    const match = flat.match(new RegExp(`${year}年荒玉駅伝${gender}の優勝校は[^。]+。`));
+    if (match) return match[0]!;
+  }
+  if (
     !/20\d{2}/.test(q) &&
     /1位/.test(q) &&
     /荒玉|駅伝/.test(q) &&
@@ -1019,6 +1031,12 @@ function offlineAnswer(
       /1位/.test(question) &&
       /男子|女子/.test(question) &&
       !/平均ペース|ランキング/.test(question);
+    const explicitWinnerSchoolLookup =
+      /20\d{2}/.test(question) &&
+      /優勝校|優勝は|優勝チーム/.test(question) &&
+      /荒玉|駅伝/.test(question) &&
+      /男子|女子/.test(question) &&
+      !/差|タイム/.test(question);
     const genericWinnerYearLookup =
       /優勝校|優勝は/.test(question) &&
       /荒玉|駅伝/.test(question) &&
@@ -1129,6 +1147,7 @@ function offlineAnswer(
       latestRunnerUp ||
       latestFirstPlace ||
       firstPlaceLookup ||
+      explicitWinnerSchoolLookup ||
       genericWinnerYearLookup ||
       winnerTeamLookup ||
       historicalWinnerLookup ||
@@ -1153,10 +1172,16 @@ function offlineAnswer(
       kanaguriDate;
     const hint = focusedLookup ? question : previewQuery ?? question;
     if (focusedLookup) {
-      const preview = previewForOffline(
-        retrieved.map((r) => r.chunk.text).join("\n"),
-        hint,
-      );
+      const joined = retrieved.map((r) => r.chunk.text).join("\n");
+      const explicitWinnerMatch = explicitWinnerSchoolLookup
+        ? joined.match(
+            new RegExp(
+              `${question.match(/20\d{2}/)?.[0]}年荒玉駅伝${/女子/.test(question) ? "女子" : "男子"}の優勝校は[^。]+。`,
+            ),
+          )
+        : undefined;
+      const preview =
+        explicitWinnerMatch?.[0] ?? previewForOffline(joined, hint);
       lines.push(`1. ${preview}`);
     } else {
       for (const [i, r] of retrieved.entries()) {

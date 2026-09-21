@@ -595,6 +595,23 @@ describe("answerQuestion", () => {
     }
   });
 
+  it("focuses an explicit-year winner-school answer on its result sentence", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("2024年荒玉男子の優勝校は？", {
+      llm: null,
+      skipRouter: true,
+      defaultYear: 2026,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.sources[0]).toBe("aragyoku/winners-by-year.md");
+      expect(result.text).toContain("2024年荒玉駅伝男子の優勝校は「南関」");
+      expect(result.text).not.toContain("2025年荒玉駅伝男子");
+      expect(result.text).not.toContain("深掘り分析");
+    }
+  });
+
   it("treats 優勝チーム as a winner-school lookup", async () => {
     resetRetrieverCache();
     resetKgCache();
