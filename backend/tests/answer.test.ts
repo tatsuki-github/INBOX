@@ -212,6 +212,22 @@ describe("answerQuestion", () => {
     }
   });
 
+  it("prioritizes the named team's digest for a year/team/leg question", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("有明中の荒玉2024男子1区は誰？", {
+      llm: null,
+      skipRouter: true,
+      defaultYear: 2026,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.sources[0]).toBe("out-analysis/aragyoku-teams/有明.md");
+      expect(result.text).toContain("米村和真");
+      expect(result.text).toContain("9:01");
+    }
+  });
+
   it("llm sees なごみ context for 9/20", async () => {
     resetRetrieverCache();
     resetKgCache();

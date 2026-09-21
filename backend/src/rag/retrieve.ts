@@ -505,6 +505,12 @@ function pathQueryBonus(source: string, query: string): number {
   const q = query.normalize("NFKC");
   const s = source;
   let bonus = 0;
+  if (isLegAthleteQuestion(q) && /aragyoku-teams\/([^/]+)\.md$/.test(s)) {
+    const teamStem = s.match(/aragyoku-teams\/([^/]+)\.md$/)?.[1] ?? "";
+    const aliases =
+      teamStem === "玉高附属" ? ["玉高附属", "玉名付属", "玉名附属", "玉名附"] : [teamStem];
+    if (teamStem && aliases.some((alias) => q.includes(alias))) bonus += 1200;
+  }
   if (/ジュニア/.test(q) && s.includes("ジュニア")) bonus += 120;
   if (isNagomiMeetQuestion(q) && /なごみ/.test(s)) bonus += 120;
   if (
@@ -913,6 +919,10 @@ function digestPinForQuery(chunk: RagChunk, query: string): number {
     !/ジュニア/.test(qn) &&
     /aragyoku-teams\/[^/]+\.md$|focus_teams/.test(base)
   ) {
+    const teamStem = base.match(/aragyoku-teams\/([^/]+)\.md$/)?.[1] ?? "";
+    const teamAliases =
+      teamStem === "玉高附属" ? ["玉高附属", "玉名付属", "玉名附属", "玉名附"] : [teamStem];
+    if (teamStem && teamAliases.some((alias) => qn.includes(alias))) return 900;
     const names = extractAthleteNameHints(qn);
     if (names.some((n) => chunk.text.includes(n))) return 700;
     return 200;

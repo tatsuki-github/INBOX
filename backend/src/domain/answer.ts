@@ -730,6 +730,29 @@ function boostMeetYearSources(
     }
     // 「○区は誰」「何区を走った」は距離質問ではない
     if (legAthleteQ) {
+      const teamStem = [
+        "荒尾海陽",
+        "玉高附属",
+        "荒尾三",
+        "荒尾四",
+        "三加和",
+        "南関",
+        "天水",
+        "岱明",
+        "有明",
+        "玉南",
+        "玉名",
+        "玉東",
+        "玉陵",
+        "腹栄",
+        "荒尾",
+        "菊水",
+        "長洲",
+      ].find((stem) => expandedQuery.includes(stem));
+      if (teamStem) push(`out-analysis/aragyoku-teams/${teamStem}.md`);
+      else if (/玉名付属|玉名附属|玉名附/.test(expandedQuery)) {
+        push("out-analysis/aragyoku-teams/玉高附属.md");
+      }
       const names = extractAthleteNameHints(expandedQuery);
       for (const s of findSourcesWithText(names, {
         prefix: "out-analysis/aragyoku-teams/",
@@ -1039,7 +1062,13 @@ export async function answerQuestion(
   });
   const retrieve = deps.retrieve ?? retrieveContext;
   // Exhaustive: preferred digest coverage alone — BM25 OCR/ADR filler drowns the list
-  const fromBm25 = exhaustive || exactDatedPractice || namedTeamSbList ? [] : retrieve(expanded, topK);
+  // Race-leg questions already have a dedicated team/transcript route. A
+  // second global BM25 pass can reintroduce the broad yearly analysis digest
+  // and hide the requested team's row.
+  const fromBm25 =
+    exhaustive || exactDatedPractice || namedTeamSbList || isLegAthleteQuestion(expanded)
+      ? []
+      : retrieve(expanded, topK);
   const mergedCore = mergeRetrieved(
     fromSources,
     fromBm25,
