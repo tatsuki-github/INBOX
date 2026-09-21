@@ -194,6 +194,13 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
       return flat.slice(start, end);
     }
   }
+  if (/金栗駅伝/.test(q) && /いつ|何日/.test(q)) {
+    const date = flat.match(/20\d{2}-\d{2}-\d{2}/)?.[0];
+    if (date) {
+      const [year, month, day] = date.split("-");
+      return flat.replace(date, `${year}年${Number(month)}月${Number(day)}日（${date}）`);
+    }
+  }
   // 「優勝との差」列を優先（大会記録ボードより focus / team の差表）
   if (/優勝との差|優勝差|優勝から|優勝まで|離れて/.test(q)) {
     for (const needle of ["優勝との差", "+2:51", "+8:37", "優勝校"]) {

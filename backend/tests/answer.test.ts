@@ -468,6 +468,20 @@ describe("answerQuestion", () => {
     }
   });
 
+  it("formats a short 金栗駅伝 date question as a calendar date", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("金栗駅伝はいつ？", {
+      llm: null,
+      skipRouter: true,
+      defaultYear: 2026,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.text).toContain("2026年3月15日");
+    }
+  });
+
   it("routes explicit year/gender winner-school questions to winners-by-year", async () => {
     resetRetrieverCache();
     resetKgCache();
