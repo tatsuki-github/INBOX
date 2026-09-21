@@ -2177,6 +2177,23 @@ describe("answerQuestion", () => {
     }
   });
 
+  it("answers the なごみ開催日 from the canonical schedule", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("なごみ駅伝の開催日は？", {
+      skipRouter: true,
+      defaultYear: 2026,
+      llm: null,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.text).toContain("2026年9月20日");
+      expect(result.sources[0]).toContain("当日スケジュール.md");
+      expect(result.text).not.toContain("予想");
+      expect(result.text).not.toContain("2025年度");
+    }
+  });
+
   it("answers なごみ 岱明男子1区 from 2026 order list, not 金栗駅伝", async () => {
     resetRetrieverCache();
     resetKgCache();
