@@ -2277,6 +2277,26 @@ describe("answerQuestion", () => {
     }
   });
 
+  it("summarizes both genders for an unqualified なごみ result query", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("なごみ駅伝の結果は？", {
+      skipRouter: true,
+      defaultYear: 2026,
+      llm: null,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.text).toContain("2026年なごみ駅伝の結果");
+      expect(result.text).toContain("男子:");
+      expect(result.text).toContain("女子:");
+      expect(result.text).toContain("NJAC");
+      expect(result.text).toContain("金栗PROJECT A");
+      expect(result.sources[0]).toContain("男子成績表.md");
+      expect(result.sources[1]).toContain("女子成績表.md");
+    }
+  });
+
   it("answers なごみ区間1位 from actual results, not the order list", async () => {
     resetRetrieverCache();
     resetKgCache();

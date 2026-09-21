@@ -1451,6 +1451,7 @@ function offlineAnswer(
       !/男子|女子/.test(question) &&
       /(?:結果(?:一覧|表|は|を|です)?|順位表|順位(?:は|を|だけ|全部)?|全チーム結果|全順位)/.test(question) &&
       /荒玉|駅伝/.test(question) &&
+      !/なごみ/.test(question) &&
       !/優勝|準優勝|区間|大会記録|記録保持/.test(question);
     const nagomiResultLookup =
       /なごみ/.test(question) &&
@@ -1618,6 +1619,31 @@ function offlineAnswer(
               : undefined;
           })()
         : undefined;
+      const nagomiResultPreview =
+        nagomiResultLookup && !/男子|女子/.test(question) && /結果|順位/.test(question)
+          ? (() => {
+              const grouped = new Map<string, string[]>();
+              for (const result of focusedRetrieved.length > 0 ? focusedRetrieved : retrieved) {
+                const source = result.chunk.source.replace(/:\d+$/, "");
+                const texts = grouped.get(source) ?? [];
+                texts.push(result.chunk.text);
+                grouped.set(source, texts);
+              }
+              const sections = [...grouped.entries()]
+                .map(([source, texts]) => {
+                  const gender = /女子成績表/.test(source) ? "女子" : /男子成績表/.test(source) ? "男子" : "";
+                  return gender ? previewForOffline(texts.join("\n"), question + " " + gender) : "";
+                })
+                .filter(Boolean)
+                .map((preview) => {
+                  const match = preview.match(/^2026年なごみ駅伝(男子|女子)の結果:\s*(.*)$/);
+                  return match ? match[1] + ": " + match[2] : preview;
+                });
+              return sections.length > 0
+                ? "2026年なごみ駅伝の結果: " + sections.join(" ")
+                : undefined;
+            })()
+          : undefined;
       const nagomiWinnerPreview =
         nagomiResultLookup && /優勝/.test(question)
           ? (() => {
@@ -1630,7 +1656,7 @@ function offlineAnswer(
             })()
           : undefined;
       const preview =
-        explicitWinnerMatch?.[0] ?? explicitRunnerMatch?.[0] ?? explicitLegSection ?? nagomiWinnerPreview ?? namedSelfBestPreview ?? aragyokuDatePreview ?? genericResultPreview ?? previewForOffline(joined, hint);
+        explicitWinnerMatch?.[0] ?? explicitRunnerMatch?.[0] ?? explicitLegSection ?? nagomiWinnerPreview ?? namedSelfBestPreview ?? aragyokuDatePreview ?? genericResultPreview ?? nagomiResultPreview ?? previewForOffline(joined, hint);
       lines.push(`1. ${preview}`);
     } else {
       for (const [i, r] of retrieved.entries()) {
@@ -2871,6 +2897,7 @@ export async function answerQuestion(
     !/男子|女子/.test(expanded) &&
     /(?:結果(?:一覧|表|は|を|です)?|順位表|順位(?:は|を|だけ|全部)?|全チーム結果|全順位)/.test(expanded) &&
     /荒玉|駅伝/.test(expanded) &&
+    !/なごみ/.test(expanded) &&
     !/優勝|準優勝|区間|大会記録|記録保持/.test(expanded);
   const nagomiLegRankQ =
     /なごみ/.test(expanded) &&
