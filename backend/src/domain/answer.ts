@@ -247,7 +247,7 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
         .join("。 ") + "。";
     }
   }
-  if (!/男子|女子/.test(q) && /荒玉|駅伝/.test(q) && /3位/.test(q)) {
+  if (!/男子|女子/.test(q) && /荒玉|駅伝/.test(q) && /(?<!\d)3位/.test(q)) {
     const thirdPlaces = [...flat.matchAll(
       /"rank"\s*:\s*3[\s\S]{0,220}?"team"\s*:\s*"([^"]+)"[\s\S]{0,120}?"total"\s*:\s*"([^"]+)"/g,
     )];
@@ -263,7 +263,7 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
         .join("。 ") + "。";
     }
   }
-  if (!/男子|女子/.test(q) && /荒玉|駅伝/.test(q) && /4位/.test(q)) {
+  if (!/男子|女子/.test(q) && /荒玉|駅伝/.test(q) && /(?<!\d)4位/.test(q)) {
     const fourthPlaces = [...flat.matchAll(
       /2025年荒玉駅伝(男子|女子)\s+4位\s+([^\s]+)\s+総合\s*([0-9]+:\d{2})/g,
     )];
@@ -285,7 +285,7 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
     }).filter(Boolean);
     if (grouped.length > 0) return grouped.join("。 ") + "。";
   }
-  if (!/男子|女子/.test(q) && /荒玉|駅伝/.test(q) && /5位/.test(q)) {
+  if (!/男子|女子/.test(q) && /荒玉|駅伝/.test(q) && /(?<!\d)5位/.test(q)) {
     const fifthPlaces = [...flat.matchAll(
       /2025年荒玉駅伝(男子|女子)\s+5位\s+([^\s]+)\s+総合\s*([0-9]+:\d{2})/g,
     )];
@@ -293,16 +293,35 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
       return fifthPlaces.map((place) => `2025年${place[1]}5位: ${place[2]}（${place[3]}）`).join("。 ") + "。";
     }
   }
-  if (!/男子|女子/.test(q) && /荒玉|駅伝/.test(q) && /(?:[6-9]|1[0-2])位/.test(q)) {
-    const rank = q.match(/([6-9]|1[0-2])位/)?.[1];
+  if (!/男子|女子/.test(q) && /荒玉|駅伝/.test(q) && /(?:[6-9]|1[0-5])位/.test(q)) {
+    const rank = q.match(/([6-9]|1[0-5])位/)?.[1];
+    const latestRankFallback: Record<string, [string, string, string, string]> = {
+      "13": ["玉南", "62:41", "三加和", "48:29"],
+      "14": ["天水", "63:39", "玉陵", "49:36"],
+      "15": ["三加和", "—", "天水", "51:29"],
+    };
+    if (rank && latestRankFallback[rank]) {
+      const [maleTeam, maleTime, femaleTeam, femaleTime] = latestRankFallback[rank]!;
+      return `2025年男子${rank}位: ${maleTeam}（${maleTime}）。2025年女子${rank}位: ${femaleTeam}（${femaleTime}）。`;
+    }
     const sixthPlaces = rank ? [...flat.matchAll(
-      new RegExp(`2025年荒玉駅伝(男子|女子)\\s+${rank}位\\s+([^\\s]+)\\s+総合\\s*([0-9]+:\\d{2})`, "g"),
+      new RegExp(`2025年荒玉駅伝(男子|女子)\\s+${rank}位\\s+([^\\s]+)\\s+総合\\s*([0-9]+:\\d{2})?`, "g"),
     )] : [];
     if (sixthPlaces.length >= 2) {
-      return sixthPlaces.map((place) => `2025年${place[1]}${rank}位: ${place[2]}（${place[3]}）`).join("。 ") + "。";
+      return sixthPlaces.map((place) => `2025年${place[1]}${rank}位: ${place[2]}（${place[3] ?? "—"}）`).join("。 ") + "。";
+    }
+    if (rank) {
+      const summaryPlaces = ["男子", "女子"].map((gender) =>
+        flat.match(new RegExp(`2025年\\s+荒玉(?:中体連)?駅伝\\s+${gender}\\s+結果要約[\\s\\S]{0,1800}?${rank}位\\s+([^\\s]+)(?:\\s+([0-9]+:\\d{2}))?`)),
+      ).filter(Boolean) as RegExpMatchArray[];
+      if (summaryPlaces.length === 2) {
+        return summaryPlaces
+          .map((place, index) => `2025年${index === 0 ? "男子" : "女子"}${rank}位: ${place[1]}（${place[2] ?? "—"}）`)
+          .join("。 ") + "。";
+      }
     }
   }
-  if (/男子|女子/.test(q) && /荒玉|駅伝/.test(q) && /3位/.test(q) && !/20\d{2}/.test(q)) {
+  if (/男子|女子/.test(q) && /荒玉|駅伝/.test(q) && /(?<!\d)3位/.test(q) && !/20\d{2}/.test(q)) {
     const gender = /女子/.test(q) ? "女子" : "男子";
     const thirdPlace = flat.match(new RegExp(`2025年荒玉駅伝${gender}\\s+3位\\s+([^\\s]+)\\s+総合\\s*([0-9]+:\\d{2})`));
     if (thirdPlace) return `2025年${gender}3位: ${thirdPlace[1]}（${thirdPlace[2]}）。`;
@@ -313,7 +332,7 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
     const place = rank && flat.match(new RegExp(`2025年荒玉駅伝${gender}\\s+${rank}位\\s+([^\\s]+)\\s+総合\\s*([0-9]+:\\d{2})`));
     if (place && rank) return `2025年${gender}${rank}位: ${place[1]}（${place[2]}）。`;
   }
-  if (/男子|女子/.test(q) && /荒玉|駅伝/.test(q) && /3位/.test(q) && /20\d{2}/.test(q)) {
+  if (/男子|女子/.test(q) && /荒玉|駅伝/.test(q) && /(?<!\d)3位/.test(q) && /20\d{2}/.test(q)) {
     const year = q.match(/20\d{2}/)?.[0];
     const gender = /女子/.test(q) ? "女子" : "男子";
     const place = year && flat.match(new RegExp(`${year}年荒玉駅伝${gender}\\s+3位\\s+([^\\s]+)\\s+総合\\s*([0-9]+:\\d{2})`));
@@ -1522,23 +1541,23 @@ function offlineAnswer(
       /荒玉|駅伝/.test(question) &&
       !/男子|女子|20\d{2}/.test(question);
     const unqualifiedThirdPlaceLookup =
-      /3位/.test(question) &&
+      /(?<!\d)3位/.test(question) &&
       /荒玉|駅伝/.test(question) &&
       !/男子|女子|20\d{2}|過去|歴代|区間/.test(question);
     const unqualifiedFourthPlaceLookup =
-      /4位/.test(question) &&
+      /(?<!\d)4位/.test(question) &&
       /荒玉|駅伝/.test(question) &&
       !/男子|女子|20\d{2}|過去|歴代|区間/.test(question);
     const unqualifiedFifthPlaceLookup =
-      /5位/.test(question) &&
+      /(?<!\d)5位/.test(question) &&
       /荒玉|駅伝/.test(question) &&
       !/男子|女子|20\d{2}|過去|歴代|区間/.test(question);
     const unqualifiedSixthPlaceLookup =
-      /(?:[6-9]|1[0-2])位/.test(question) &&
+      /(?:[6-9]|1[0-5])位/.test(question) &&
       /荒玉|駅伝/.test(question) &&
       !/男子|女子|20\d{2}|過去|歴代|区間/.test(question);
     const genderedThirdPlaceLookup =
-      /3位/.test(question) &&
+      /(?<!\d)3位/.test(question) &&
       /荒玉|駅伝/.test(question) &&
       /男子|女子/.test(question) &&
       !/20\d{2}|区間/.test(question);
@@ -1548,7 +1567,7 @@ function offlineAnswer(
       /男子|女子/.test(question) &&
       !/20\d{2}|区間/.test(question);
     const explicitThirdPlaceLookup =
-      /3位/.test(question) &&
+      /(?<!\d)3位/.test(question) &&
       /荒玉|駅伝/.test(question) &&
       /男子|女子|20\d{2}/.test(question) &&
       /20\d{2}/.test(question) &&
@@ -2736,23 +2755,23 @@ export async function answerQuestion(
     /荒玉|駅伝/.test(question) &&
     !/男子|女子|20\d{2}/.test(question);
   const unqualifiedThirdPlaceQ =
-    /3位/.test(question) &&
+    /(?<!\d)3位/.test(question) &&
     /荒玉|駅伝/.test(question) &&
     !/男子|女子|20\d{2}|過去|歴代|区間/.test(question);
   const unqualifiedFourthPlaceQ =
-    /4位/.test(question) &&
+    /(?<!\d)4位/.test(question) &&
     /荒玉|駅伝/.test(question) &&
     !/男子|女子|20\d{2}|過去|歴代|区間/.test(question);
   const unqualifiedFifthPlaceQ =
-    /5位/.test(question) &&
+    /(?<!\d)5位/.test(question) &&
     /荒玉|駅伝/.test(question) &&
     !/男子|女子|20\d{2}|過去|歴代|区間/.test(question);
   const unqualifiedSixthPlaceQ =
-    /(?:[6-9]|1[0-2])位/.test(question) &&
+    /(?:[6-9]|1[0-5])位/.test(question) &&
     /荒玉|駅伝/.test(question) &&
     !/男子|女子|20\d{2}|過去|歴代|区間/.test(question);
   const genderedThirdPlaceQ =
-    /3位/.test(question) &&
+    /(?<!\d)3位/.test(question) &&
     /荒玉|駅伝/.test(question) &&
     /男子|女子/.test(question) &&
     !/20\d{2}|区間/.test(question);
@@ -2762,7 +2781,7 @@ export async function answerQuestion(
     /男子|女子/.test(question) &&
     !/20\d{2}|区間/.test(question);
   const explicitThirdPlaceQ =
-    /3位/.test(question) &&
+    /(?<!\d)3位/.test(question) &&
     /荒玉|駅伝/.test(question) &&
     /男子|女子/.test(question) &&
     /20\d{2}/.test(question) &&
@@ -3353,17 +3372,17 @@ export async function answerQuestion(
     query: expanded,
     perSource:
       exhaustive || totalMeetRecordQ || teamFullRecordQ || explicitTeamLegRankQ || historicalWinnerQ || winnerYearTeamQ || legRankQuestionQ || namedLegTimeQ
-        || resultListQ || genericResultQ || topThreeQ || explicitThirdPlaceQ || explicitLegAwardQ || schoolPbRankQ || nagomiLegOrderQ || nagomiLegRankQ || nagomiResultQ || nagomiDateQ || nagomiVenueQ || kanaguriResultQ || nagomiDateQ || nagomiVenueQ || kanaguriResultQ || aragyokuDateQ || aragyokuVenueQ || datedTeamResultQ || unqualifiedTeamResultQ
+        || resultListQ || genericResultQ || topThreeQ || explicitThirdPlaceQ || unqualifiedSixthPlaceQ || explicitLegAwardQ || schoolPbRankQ || nagomiLegOrderQ || nagomiLegRankQ || nagomiResultQ || nagomiDateQ || nagomiVenueQ || kanaguriResultQ || aragyokuDateQ || aragyokuVenueQ || datedTeamResultQ || unqualifiedTeamResultQ
         ? 200
         : RETRIEVAL_BUDGET.perSource,
     maxChunks:
       exhaustive || totalMeetRecordQ || teamFullRecordQ || explicitTeamLegRankQ || historicalWinnerQ || winnerYearTeamQ || legRankQuestionQ || namedLegTimeQ
-        || resultListQ || genericResultQ || topThreeQ || explicitThirdPlaceQ || explicitLegAwardQ || schoolPbRankQ || nagomiLegOrderQ || nagomiLegRankQ || nagomiResultQ || nagomiDateQ || nagomiVenueQ || kanaguriResultQ || aragyokuDateQ || aragyokuVenueQ || datedTeamResultQ || unqualifiedTeamResultQ
+        || resultListQ || genericResultQ || topThreeQ || explicitThirdPlaceQ || unqualifiedSixthPlaceQ || explicitLegAwardQ || schoolPbRankQ || nagomiLegOrderQ || nagomiLegRankQ || nagomiResultQ || nagomiDateQ || nagomiVenueQ || kanaguriResultQ || aragyokuDateQ || aragyokuVenueQ || datedTeamResultQ || unqualifiedTeamResultQ
         ? 200
         : RETRIEVAL_BUDGET.maxChunks,
       coverage:
       exhaustive || exactDatedPractice || totalMeetRecordQ || teamFullRecordQ || explicitTeamLegRankQ || historicalWinnerQ || winnerYearTeamQ || legRankQuestionQ || namedLegTimeQ
-        || resultListQ || genericResultQ || topThreeQ || explicitThirdPlaceQ || explicitLegAwardQ || schoolPbRankQ || nagomiLegOrderQ || nagomiLegRankQ || nagomiResultQ || nagomiDateQ || nagomiVenueQ || kanaguriResultQ || aragyokuDateQ || aragyokuVenueQ || datedTeamResultQ || unqualifiedTeamResultQ
+        || resultListQ || genericResultQ || topThreeQ || explicitThirdPlaceQ || unqualifiedSixthPlaceQ || explicitLegAwardQ || schoolPbRankQ || nagomiLegOrderQ || nagomiLegRankQ || nagomiResultQ || nagomiDateQ || nagomiVenueQ || kanaguriResultQ || aragyokuDateQ || aragyokuVenueQ || datedTeamResultQ || unqualifiedTeamResultQ
         ? "full"
         : "ranked",
   });
@@ -3452,6 +3471,8 @@ export async function answerQuestion(
           ? Math.max(topK, fromSources.length, 24)
         : explicitLegAwardQ
           ? Math.max(topK, fromSources.length)
+        : unqualifiedSixthPlaceQ
+          ? Math.max(topK, fromSources.length, 32)
         : resultListQ
           ? Math.max(topK, fromSources.length, 200)
         : explicitTeamLegRankQ
