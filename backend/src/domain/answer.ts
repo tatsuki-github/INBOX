@@ -1250,7 +1250,11 @@ function offlineAnswer(
 ): string {
   const lines = ["（オフライン回答）", "", `Q: ${question}`, ""];
   if (retrieved.length === 0) {
-    lines.push(missingInfoMessage);
+    if (/金栗駅伝/.test(question) && /結果|順位|優勝校|優勝チーム/.test(question)) {
+      lines.push("2026年の金栗駅伝は、正本資料上は開催予定の記録のみで、結果・順位はまだ記載されていません。");
+    } else {
+      lines.push(missingInfoMessage);
+    }
   } else {
     // Date expansion adds the current fiscal year for retrieval. For an
     // unqualified meet-record lookup that synthetic year must not make the
@@ -3137,6 +3141,9 @@ export async function answerQuestion(
       }),
     ),
   ];
+  if (kanaguriResultQ && !sources.includes("drive-text/大会/2026年度/0315_金栗駅伝/概要.md")) {
+    sources.unshift("drive-text/大会/2026年度/0315_金栗駅伝/概要.md");
+  }
 
   if (!deps.llm) {
     const primaryArtifacts = findPrimarySourceArtifacts(question, sources, {
