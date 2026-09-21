@@ -504,6 +504,24 @@ describe("answerQuestion", () => {
     }
   });
 
+  it("starts omitted-meet gender/leg record answers at the board row", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("女子4区の大会区間記録の保持者は？", {
+      llm: null,
+      skipRouter: true,
+      defaultYear: 2026,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.sources[0]).toBe("out-analysis/aragyoku_meet_records.md");
+      expect(result.text).toContain("荒玉駅伝女子の4区大会区間記録");
+      expect(result.text).toContain("浦浜実里");
+      expect(result.text).toContain("6:42");
+      expect(result.text).not.toContain("正本は各年 transcript");
+    }
+  });
+
   it("routes a named runner's 区間タイム to the team race digest", async () => {
     resetRetrieverCache();
     resetKgCache();

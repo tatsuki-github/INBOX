@@ -300,7 +300,7 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
   // rather than showing the digest's opening year or an unrelated table.
   if (
     /大会記録|区間記録|ボード.*記録|記録保持|歴代記録|20\d{2}.*(?:男子|女子).*区.*記録|(?:男子|女子).*?[1-6]区.*記録/.test(q) &&
-    /荒玉|駅伝/.test(q) &&
+    /荒玉|駅伝|大会区間記録/.test(q) &&
     /男子.*\d区|女子.*\d区/.test(q)
   ) {
     const gender = /男子/.test(q) ? "男子" : "女子";
@@ -308,12 +308,27 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
     if (leg) {
       const needle = `荒玉駅伝${gender}の${leg}区大会区間記録`;
       const explicitYear = q.match(/20\d{2}年/)?.[0];
-      const preciseNeedle = explicitYear ? `${explicitYear}${needle}` : needle;
-      const idx = flat.lastIndexOf(preciseNeedle);
+      let idx = -1;
+      if (explicitYear) {
+        idx = flat.indexOf(`${explicitYear}${needle}`);
+      } else {
+        const needleEscaped = needle.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+        const candidates = [...flat.matchAll(new RegExp(`(20\\d{2}年)?${needleEscaped}`, "g"))];
+        let bestYear = -1;
+        for (const candidate of candidates) {
+          const candidateYear = candidate[1] ? Number(candidate[1].slice(0, 4)) : 0;
+          if (candidateYear >= bestYear) {
+            bestYear = candidateYear;
+            idx = candidate.index ?? -1;
+          }
+        }
+      }
       if (idx >= 0) {
         const preciseGenderLegRecord =
           /(?:男子|女子).*?[1-6]区.*記録/.test(q) && !/20\d{2}年/.test(q);
         const start = explicitYear || preciseGenderLegRecord ? idx : Math.max(0, idx - 36);
+        const sentenceEnd = flat.indexOf("。", idx);
+        if (sentenceEnd >= 0) return flat.slice(start, sentenceEnd + 1);
         return flat.slice(start, Math.min(flat.length, start + budget));
       }
     }
@@ -458,10 +473,23 @@ function offlineAnswer(
   if (retrieved.length === 0) {
     lines.push(missingInfoMessage);
   } else {
-    const hint = previewQuery ?? question;
-    for (const [i, r] of retrieved.entries()) {
-      const preview = previewForOffline(r.chunk.text, hint);
-      lines.push(`${i + 1}. ${preview}`);
+    // Date expansion adds the current fiscal year for retrieval. For an
+    // unqualified meet-record lookup that synthetic year must not make the
+    // preview search for a non-existent row and fall back to the document
+    // head; use the user's wording for the precise board-row preview.
+    const preciseMeetRecord = /(?:男子|女子).*?[1-6]区.*記録/.test(question);
+    const hint = preciseMeetRecord ? question : previewQuery ?? question;
+    if (preciseMeetRecord) {
+      const preview = previewForOffline(
+        retrieved.map((r) => r.chunk.text).join("\n"),
+        hint,
+      );
+      lines.push(`1. ${preview}`);
+    } else {
+      for (const [i, r] of retrieved.entries()) {
+        const preview = previewForOffline(r.chunk.text, hint);
+        lines.push(`${i + 1}. ${preview}`);
+      }
     }
   }
   return formatForLine(lines.join("\n"));
@@ -569,7 +597,7 @@ function boostAthleteRecordSources(query: string, baseSources: string[]): string
   // focused there instead of letting the generic athlete/SB sources win.
   if (
     /大会記録|区間記録|ボード.*記録|記録保持|歴代記録|20\d{2}.*(?:男子|女子).*区.*記録|(?:男子|女子).*?[1-6]区.*記録/.test(q) &&
-    /荒玉|駅伝/.test(q) &&
+    /荒玉|駅伝|大会区間記録/.test(q) &&
     !/区間賞|区間順/.test(q)
   ) {
     const recordDigest = baseSources.find((s) => /aragyoku_meet_records/.test(s));
@@ -1252,7 +1280,7 @@ export async function answerQuestion(
     /荒玉|駅伝/.test(question) &&
     /優勝校/.test(question);
   const genderLegRecordQ =
-    /荒玉|駅伝/.test(question) &&
+    /荒玉|駅伝|大会区間記録|区間記録/.test(question) &&
     /男子|女子/.test(question) &&
     /[1-6]区/.test(question) &&
     /記録/.test(question) &&
