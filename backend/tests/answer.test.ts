@@ -214,6 +214,23 @@ describe("answerQuestion", () => {
     }
   });
 
+  it("starts named 地点分担 answers at the staff assignment table", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("地点分担で熊澤先生の場所は？", {
+      llm: null,
+      skipRouter: true,
+      defaultYear: 2026,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.sources[0]).toBe("out-analysis/line-chats/daiming-staff.md");
+      expect(result.text).toContain("地点分担（荒玉）");
+      expect(result.text).toContain("熊澤=C地点");
+      expect(result.text).not.toContain("2026-01");
+    }
+  });
+
   it("routes a named runner's 区間タイム to the team race digest", async () => {
     resetRetrieverCache();
     resetKgCache();

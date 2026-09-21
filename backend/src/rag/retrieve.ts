@@ -901,6 +901,13 @@ function isBlockedChunkForQuery(chunk: { source: string; text: string }, query: 
 function digestPinForQuery(chunk: RagChunk, query: string): number {
   const qn = query.normalize("NFKC");
   const base = chunkBaseSource(chunk.source);
+  if (
+    /地点分担/.test(qn) &&
+    /daiming-staff\.md$/.test(base) &&
+    /地点分担（荒玉）|質問向け地点分担/.test(chunk.text)
+  ) {
+    return 1000;
+  }
   if (/全記録|所属選手|記録一覧/.test(qn)) {
     const stem = base.split("/").pop()?.replace(/\.md$/, "") ?? "";
     if (/arato-tamana-teams\/[^/]+\.md$/.test(base) && stem && query.includes(stem)) {

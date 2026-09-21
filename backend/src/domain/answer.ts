@@ -235,6 +235,12 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
       }
     }
   }
+  if (/地点分担/.test(q) && /熊澤|土山|柴尾|土本/.test(q)) {
+    const idx = flat.indexOf("地点分担（荒玉）");
+    if (idx >= 0) {
+      return flat.slice(idx, Math.min(flat.length, idx + budget));
+    }
+  }
   if (/合同練習会|おおはま/.test(q)) {
     for (const needle of [
       "### 玉名市合同練習会",
@@ -1208,6 +1214,8 @@ export async function answerQuestion(
     /男子|女子/.test(expanded) &&
     /何位|順位/.test(expanded) &&
     /岱明|玉高附属|玉名付属|玉名附属|天水|有明|南関|菊水|玉東|玉陵|長洲/.test(expanded);
+  const namedAssignmentQ =
+    /地点分担/.test(expanded) && /熊澤|土山|柴尾|土本/.test(expanded);
 
   const fromSources = retrieveBySources(preferredSources, {
     query: expanded,
@@ -1229,7 +1237,7 @@ export async function answerQuestion(
     compactTeamRankQ
       ? []
       : retrieve(expanded, topK);
-  const mergedCore = mergeRetrieved(
+  const mergedCoreRaw = mergeRetrieved(
     fromSources,
     fromBm25,
     exhaustive ? Math.max(topK, fromSources.length, 96) : topK,
@@ -1238,8 +1246,15 @@ export async function answerQuestion(
       preferPrimaryOrder: exhaustive || exactDatedPractice || isLegAthleteQuestion(expanded),
     },
   );
+  const mergedCore = namedAssignmentQ
+    ? mergedCoreRaw.filter(
+        (r) =>
+          /daiming-staff\.md$/.test(r.chunk.source) &&
+          /地点分担（荒玉）|質問向け地点分担/.test(r.chunk.text),
+      )
+    : mergedCoreRaw;
   const withNeighbors = expandWithNeighbors(mergedCore, {
-    radius: exhaustive ? 0 : RETRIEVAL_BUDGET.neighborRadius,
+    radius: exhaustive || namedAssignmentQ ? 0 : RETRIEVAL_BUDGET.neighborRadius,
     maxExtra: exhaustive ? 0 : RETRIEVAL_BUDGET.neighborMaxExtra,
     query: expanded,
   });
