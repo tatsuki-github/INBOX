@@ -253,7 +253,7 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
       return flat.slice(start, Math.min(flat.length, start + budget));
     }
   }
-  if (/距離|何キロ|何km|何ｍ|何メートル/.test(q) && /[1-6]区|区間/.test(q)) {
+  if (/距離|長さ|どれくらい|何キロ|何km|何m|何ｍ|何メートル/.test(q) && /[1-6]区|区間/.test(q)) {
     const leg = q.match(/([1-6])区/)?.[1];
     const sectionNeedle = /女子/.test(q)
       ? "### 女子（全年度共通）"
@@ -768,7 +768,7 @@ function boostMeetYearSources(
   const legAthleteQ = isLegAthleteQuestion(expandedQuery);
   const aragyokuDistanceQ =
     kind === "aragyoku" &&
-    /距離|何キロ|何km|何ｍ|何メートル/.test(expandedQuery) &&
+    /距離|長さ|どれくらい|何キロ|何km|何m|何ｍ|何メートル/.test(expandedQuery) &&
     /[1-6]区|区間/.test(expandedQuery) &&
     !/ペース/.test(expandedQuery);
 
@@ -1157,7 +1157,7 @@ export async function answerQuestion(
 
   const aragyokuDistanceQ =
     /荒玉|駅伝/.test(expanded) &&
-    /距離|何キロ|何km|何ｍ|何メートル/.test(expanded) &&
+    /距離|長さ|どれくらい|何キロ|何m|何ｍ|何メートル/.test(expanded) &&
     /[1-6]区|区間/.test(expanded) &&
     !/ペース/.test(expanded);
   const compactTeamRankQ =

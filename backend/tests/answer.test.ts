@@ -475,6 +475,22 @@ describe("answerQuestion", () => {
     }
   });
 
+  it("recognizes 長さ as an 荒玉 leg-distance question", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("今の荒玉男子4区の長さは？", {
+      llm: null,
+      skipRouter: true,
+      defaultYear: 2026,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.sources[0]).toBe("out-analysis/aragyoku-overview.md");
+      expect(result.text).toContain("4区");
+      expect(result.text).toContain("3km");
+    }
+  });
+
   it("llm sees なごみ context for 9/20", async () => {
     resetRetrieverCache();
     resetKgCache();
