@@ -390,6 +390,8 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
   // The fee sits below the date/venue rows in the practice note; anchor the
   // preview on the fee row so a short offline answer does not omit the price.
   if (/練習会/.test(q) && /会費|参加費|参加料|料金|費用/.test(q)) {
+    const fee = flat.match(/会費\s*\|\s*学生\s*1,?000円\s*／\s*一般\s*2,?000円/);
+    if (fee) return "会費: 学生 1,000円／一般 2,000円";
     for (const needle of ["| 会費 |", "学生 1,000円", "学生1000円"]) {
       const idx = flat.indexOf(needle);
       if (idx >= 0) {

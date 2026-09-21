@@ -191,7 +191,10 @@ describe("answerQuestion", () => {
     });
     expect(result.kind).toBe("offline");
     if (result.kind === "offline") {
+      expect(result.sources[0]).toBe("drive-text/練習/玉名市練習会/2026-09-22.md");
+      expect(result.text).toContain("会費: 学生 1,000円／一般 2,000円");
       expect(result.text).toContain("学生 1,000円／一般 2,000円");
+      expect(result.text).not.toContain("申込締切");
       expect(result.text).not.toContain("熊日駅伝に向けた親睦");
     }
   });
