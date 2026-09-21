@@ -1899,6 +1899,23 @@ describe("answerQuestion", () => {
     }
   });
 
+  it("treats 区間1位 as a leg-award lookup", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("2025年荒玉女子の区間1位は？", {
+      llm: null,
+      skipRouter: true,
+      defaultYear: 2026,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.sources[0]).toBe("out-analysis/aragyoku_leg_awards.md");
+      expect(result.text).toContain("2025年女子");
+      expect(result.text).toContain("坂井優花");
+      expect(result.text).not.toContain("2025年男子");
+    }
+  });
+
   it("defaults a yearless gendered 区間賞 question to the latest section", async () => {
     resetRetrieverCache();
     resetKgCache();

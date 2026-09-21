@@ -601,7 +601,7 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
       if (idx >= 0) return flat.slice(idx, Math.min(flat.length, idx + budget));
     }
   }
-  if (/区間賞|区間順/.test(q)) {
+  if (/区間賞|区間順|区間1位|区間一位/.test(q)) {
     const years = q.match(/20\d{2}/g) ?? [];
     const gender = /女子/.test(q) ? "女子" : /男子/.test(q) ? "男子" : "";
     if (years.length === 0 && gender) {
@@ -1176,7 +1176,7 @@ function offlineAnswer(
       !/20\d{2}/.test(question);
     const explicitLegAwardLookup =
       /荒玉|駅伝/.test(question) &&
-      /区間賞/.test(question) &&
+      /区間賞|区間1位|区間一位/.test(question) &&
       /男子|女子/.test(question) &&
       /20\d{2}/.test(question);
     const legRankLookup =
@@ -2169,12 +2169,14 @@ export async function answerQuestion(
     /1位/.test(question) &&
     /男子|女子/.test(question) &&
     /荒玉|駅伝/.test(question) &&
+    !/区間/.test(question) &&
     !/平均ペース|ランキング/.test(question);
   const firstPlaceQ =
     /20\d{2}/.test(question) &&
     /1位/.test(question) &&
     /男子|女子/.test(question) &&
     /荒玉|駅伝/.test(question) &&
+    !/区間/.test(question) &&
     !/平均ペース|ランキング/.test(question);
   const genericWinnerYearQ =
     /優勝校|優勝チーム|優勝は/.test(question) &&
@@ -2199,7 +2201,7 @@ export async function answerQuestion(
   const explicitLegAwardQ =
     /20\d{2}/.test(question) &&
     /荒玉|駅伝/.test(question) &&
-    /区間賞/.test(question) &&
+    /区間賞|区間1位|区間一位/.test(question) &&
     /男子|女子/.test(question);
   if (explicitLegAwardQ) {
     preferredSources = [
