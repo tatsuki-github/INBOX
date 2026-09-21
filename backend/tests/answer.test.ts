@@ -2243,6 +2243,23 @@ describe("answerQuestion", () => {
     }
   });
 
+  it("answers なごみ区間1位 from actual results, not the order list", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("なごみ駅伝の男子1区の区間1位は誰？", {
+      skipRouter: true,
+      defaultYear: 2026,
+      llm: null,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.text).toContain("德永蓮翔");
+      expect(result.text).toContain("9:24");
+      expect(result.sources[0]).toContain("男子成績表.md");
+      expect(result.sources.every((source) => !source.includes("区間オーダーリスト"))).toBe(true);
+    }
+  });
+
   it("answers なごみ 岱明男子1区 from 2026 order list, not 金栗駅伝", async () => {
     resetRetrieverCache();
     resetKgCache();

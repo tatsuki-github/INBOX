@@ -142,6 +142,20 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
       return `${label}: ${rows.map(([rank, [team, total]]) => `${rank}位 ${team} ${total}`).join("、")}。`;
     }
   }
+  if (/なごみ/.test(q) && /区間/.test(q) && /[1-6]区/.test(q) && /(?:\d+位|順位|誰)/.test(q)) {
+    const leg = Number(q.match(/([1-6])区/)?.[1]);
+    const rank = Number(q.match(/区間\s*(\d+)\s*位/)?.[1] ?? (q.match(/(\d+)位/)?.[1] ?? 1));
+    const rows = [...flat.matchAll(
+      /\|\s*\d+\s*\|\s*\d+\s*\|\s*([^|]+?)\s*\|\s*[^|]+\s*\|\s*([^|]+?)\s*\|\s*([^|]+?)\s*\|\s*([^|]+?)\s*\|\s*([^|]+?)\s*\|/g,
+    )];
+    const hit = rows
+      .map((row) => ({ team: row[1]!.trim(), cell: row[leg + 1]! }))
+      .map((row) => ({ ...row, result: row.cell.match(/([^|]+?)\s*\((\d+)\)(\d+:\d{2})/) }))
+      .find((row) => row.result && Number(row.result[2]) === rank);
+    if (hit?.result) {
+      return `なごみ駅伝${leg}区の区間${rank}位: ${hit.result[1]!.trim()}（${hit.team}）${hit.result[3]}。`;
+    }
+  }
   if (/女子/.test(q) && /800m|800ｍ/.test(q) && /最速|一番速|速い/.test(q)) {
     const sectionStart = flat.indexOf("## 800m・上位3人平均");
     const sectionEnd = flat.indexOf("## 800m・上位5人平均", sectionStart + 1);
@@ -886,6 +900,23 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
       return `なごみ駅伝の優勝: ${winners.map((row) => `${row[1]!.trim()} ${row[2]!.trim()}`).join("、")}。`;
     }
   }
+  if (/なごみ/.test(q) && /区間/.test(q) && /[1-6]区/.test(q) && /(?:\d+位|順位|誰)/.test(q)) {
+    const leg = Number(q.match(/([1-6])区/)?.[1]);
+    const rank = Number(q.match(/区間\s*(\d+)\s*位/)?.[1] ?? (q.match(/(\d+)位/)?.[1] ?? 1));
+    const rows = [...flat.matchAll(
+      /\|\s*\d+\s*\|\s*\d+\s*\|\s*([^|]+?)\s*\|\s*[^|]+\s*\|\s*([^|]+?)\s*\|\s*([^|]+?)\s*\|\s*([^|]+?)\s*\|\s*([^|]+?)\s*\|/g,
+    )];
+    const hit = rows
+      .map((row) => ({
+        team: row[1]!.trim(),
+        cell: row[leg + 1]!,
+      }))
+      .map((row) => ({ ...row, result: row.cell.match(/([^|]+?)\s*\((\d+)\)(\d+:\d{2})/) }))
+      .find((row) => row.result && Number(row.result[2]) === rank);
+    if (hit?.result) {
+      return `なごみ駅伝${leg}区の区間${rank}位: ${hit.result[1]!.trim()}（${hit.team}）${hit.result[3]}。`;
+    }
+  }
   if (/なごみ/.test(q) && /結果|順位|何位/.test(q) && !/予想|SB/.test(q)) {
     const teamStems = ["岱明", "玉名アスリーツ", "玉名高校附属", "南関", "富合", "ATRC", "NJAC"]
       .filter((team) => q.includes(team));
@@ -1328,6 +1359,11 @@ function offlineAnswer(
       /なごみ/.test(question) &&
       /結果|順位|何位|優勝/.test(question) &&
       !/予想|SB/.test(question);
+    const nagomiLegRankLookup =
+      /なごみ/.test(question) &&
+      /[1-6]区/.test(question) &&
+      /区間/.test(question) &&
+      /(?:\d+位|順位|誰)/.test(question);
     const nagomiDateLookup =
       /なごみ/.test(question) &&
       /開催日|開催日時|いつ|何日|日付/.test(question) &&
@@ -1389,6 +1425,7 @@ function offlineAnswer(
       teamYearOverYearLookup ||
       resultListLookup ||
       nagomiResultLookup ||
+      nagomiLegRankLookup ||
       nagomiDateLookup ||
       nagomiVenueLookup ||
       women800FastestLookup ||
@@ -1399,7 +1436,7 @@ function offlineAnswer(
     const hint = focusedLookup ? question : previewQuery ?? question;
     if (focusedLookup) {
       const focusedRetrieved =
-        nagomiResultLookup && /男子|女子/.test(question)
+        (nagomiResultLookup || nagomiLegRankLookup) && /男子|女子/.test(question)
           ? retrieved.filter((r) =>
               /(?:男子|女子)成績表\.md$/.test(r.chunk.source) &&
               r.chunk.source.includes(/女子/.test(question) ? "女子" : "男子"),
@@ -2659,11 +2696,24 @@ export async function answerQuestion(
     /結果|順位|優勝校|優勝チーム/.test(expanded) &&
     !/2025年/.test(expanded) &&
     !/なごみ/.test(expanded);
+  const nagomiLegRankQ =
+    /なごみ/.test(expanded) &&
+    /[1-6]区/.test(expanded) &&
+    /区間/.test(expanded) &&
+    /(?:\d+位|順位|誰)/.test(expanded);
   const nagomiLegOrderQ =
     /なごみ/.test(expanded) &&
     /男子|女子/.test(expanded) &&
     /[1-6]区/.test(expanded) &&
-    /誰|選手|ランナー|は誰/.test(expanded);
+    /誰|選手|ランナー|は誰/.test(expanded) &&
+    !nagomiLegRankQ;
+  if (nagomiLegRankQ) {
+    const resultYear = expanded.match(/20\d{2}/)?.[0] ?? "2026";
+    const resultGender = /女子/.test(expanded) ? "女子" : "男子";
+    preferredSources = [
+      `drive-text/大会/${resultYear}年度/0920_中学駅伝金栗四三生誕の地なごみ大会/${resultGender}成績表.md`,
+    ];
+  }
   if (nagomiLegOrderQ) {
     const orderYear = expanded.match(/20\d{2}/)?.[0] ?? "2026";
     const orderGender = /女子/.test(expanded) ? "女子" : "男子";
@@ -2715,17 +2765,17 @@ export async function answerQuestion(
     query: expanded,
     perSource:
       exhaustive || totalMeetRecordQ || teamFullRecordQ || explicitTeamLegRankQ || historicalWinnerQ || winnerYearTeamQ || legRankQuestionQ
-        || resultListQ || explicitLegAwardQ || schoolPbRankQ || nagomiLegOrderQ || nagomiResultQ || nagomiDateQ || nagomiVenueQ || kanaguriResultQ
+        || resultListQ || explicitLegAwardQ || schoolPbRankQ || nagomiLegOrderQ || nagomiLegRankQ || nagomiResultQ || nagomiDateQ || nagomiVenueQ || kanaguriResultQ
         ? 200
         : RETRIEVAL_BUDGET.perSource,
     maxChunks:
       exhaustive || totalMeetRecordQ || teamFullRecordQ || explicitTeamLegRankQ || historicalWinnerQ || winnerYearTeamQ || legRankQuestionQ
-        || resultListQ || explicitLegAwardQ || schoolPbRankQ || nagomiLegOrderQ || nagomiResultQ || nagomiDateQ || nagomiVenueQ || kanaguriResultQ
+        || resultListQ || explicitLegAwardQ || schoolPbRankQ || nagomiLegOrderQ || nagomiLegRankQ || nagomiResultQ || nagomiDateQ || nagomiVenueQ || kanaguriResultQ
         ? 200
         : RETRIEVAL_BUDGET.maxChunks,
       coverage:
       exhaustive || exactDatedPractice || totalMeetRecordQ || teamFullRecordQ || explicitTeamLegRankQ || historicalWinnerQ || winnerYearTeamQ || legRankQuestionQ
-        || resultListQ || explicitLegAwardQ || schoolPbRankQ || nagomiLegOrderQ || nagomiResultQ || nagomiDateQ || nagomiVenueQ || kanaguriResultQ
+        || resultListQ || explicitLegAwardQ || schoolPbRankQ || nagomiLegOrderQ || nagomiLegRankQ || nagomiResultQ || nagomiDateQ || nagomiVenueQ || kanaguriResultQ
         ? "full"
         : "ranked",
   });
@@ -2764,6 +2814,7 @@ export async function answerQuestion(
     teamRunnerUpYearQ ||
     resultListQ ||
     nagomiLegOrderQ ||
+    nagomiLegRankQ ||
     nagomiResultQ ||
     nagomiDateQ ||
     nagomiVenueQ ||
@@ -2828,6 +2879,7 @@ export async function answerQuestion(
         teamRunnerUpYearQ ||
         resultListQ ||
         nagomiLegOrderQ ||
+        nagomiLegRankQ ||
         nagomiResultQ ||
         nagomiDateQ ||
         nagomiVenueQ ||
