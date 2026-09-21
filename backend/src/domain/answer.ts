@@ -601,7 +601,7 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
       if (idx >= 0) return flat.slice(idx, Math.min(flat.length, idx + budget));
     }
   }
-  if (/区間賞|区間順|区間1位|区間一位/.test(q)) {
+  if (/区間賞|区間順|区間[1-3]位|区間一位/.test(q)) {
     const years = q.match(/20\d{2}/g) ?? [];
     const gender = /女子/.test(q) ? "女子" : /男子/.test(q) ? "男子" : "";
     if (years.length === 0 && gender) {
@@ -1176,7 +1176,7 @@ function offlineAnswer(
       !/20\d{2}/.test(question);
     const explicitLegAwardLookup =
       /荒玉|駅伝/.test(question) &&
-      /区間賞|区間1位|区間一位/.test(question) &&
+      /区間賞|区間[1-3]位|区間一位/.test(question) &&
       /男子|女子/.test(question) &&
       /20\d{2}/.test(question);
     const legRankLookup =
@@ -1344,8 +1344,15 @@ function offlineAnswer(
             ),
           )
         : undefined;
+      const explicitLegSection = explicitLegAwardLookup
+        ? joined.match(
+            new RegExp(
+              `### ${question.match(/20\d{2}/)?.[0]}年${/女子/.test(question) ? "女子" : "男子"}[\\s\\S]*?(?=\\s### (?!#)20\\d{2}年|$)`,
+            ),
+          )?.[0]
+        : undefined;
       const preview =
-        explicitWinnerMatch?.[0] ?? explicitRunnerMatch?.[0] ?? previewForOffline(joined, hint);
+        explicitWinnerMatch?.[0] ?? explicitRunnerMatch?.[0] ?? explicitLegSection ?? previewForOffline(joined, hint);
       lines.push(`1. ${preview}`);
     } else {
       for (const [i, r] of retrieved.entries()) {
@@ -1794,7 +1801,7 @@ function boostMeetYearSources(
       !/区間賞|区間順/.test(expandedQuery);
     // 「区間賞」「区間順位」は当日結果正本（歴代区間記録ボードとは別）
     const legAwardQ =
-      /区間賞|区間1位|区間一位|各区.*賞/.test(expandedQuery) ||
+      /区間賞|区間[1-3]位|区間一位|各区.*賞/.test(expandedQuery) ||
       (/区間順/.test(expandedQuery) && /荒玉|駅伝|\d区|誰|学年|名前/.test(expandedQuery));
     if (legAwardQ) {
       push("out-analysis/aragyoku_leg_awards.md");
@@ -2146,6 +2153,7 @@ export async function answerQuestion(
     /20\d{2}/.test(question) &&
     /男子|女子/.test(question) &&
     /荒玉|駅伝/.test(question) &&
+    !/区間/.test(question) &&
     /2位|準優勝/.test(question);
   const latestWinnerQ =
     (/最新|直近|今年/.test(question) ||
@@ -2163,6 +2171,7 @@ export async function answerQuestion(
     /準優勝|2位/.test(question) &&
     /男子|女子/.test(question) &&
     /荒玉|駅伝/.test(question) &&
+    !/区間/.test(question) &&
     !/過去|歴代/.test(question);
   const latestFirstPlaceQ =
     !/20\d{2}/.test(question) &&
@@ -2201,7 +2210,7 @@ export async function answerQuestion(
   const explicitLegAwardQ =
     /20\d{2}/.test(question) &&
     /荒玉|駅伝/.test(question) &&
-    /区間賞|区間1位|区間一位/.test(question) &&
+    /区間賞|区間[1-3]位|区間一位/.test(question) &&
     /男子|女子/.test(question);
   if (explicitLegAwardQ) {
     preferredSources = [
