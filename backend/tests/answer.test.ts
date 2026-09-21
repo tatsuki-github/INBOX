@@ -2116,6 +2116,22 @@ describe("answerQuestion", () => {
     }
   });
 
+  it("keeps a named team's full-record list on its team digest", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("南関中所属選手の全記録一覧は？", {
+      skipRouter: true,
+      defaultYear: 2026,
+      llm: null,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.sources[0]).toBe("out-analysis/arato-tamana-teams/南関中.md");
+      expect(result.text).toContain("内田健太");
+      expect(result.text).toContain("2:14.99");
+    }
+  });
+
   it("offline empty retrieval tells user to ask the coach", async () => {
     const result = await answerQuestion("存在しない架空の大会XYZの詳細は？", {
       retrieve: () => [],

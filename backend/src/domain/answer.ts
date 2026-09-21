@@ -91,6 +91,14 @@ function finalizeAnswerText(
 
 function offlinePreviewBudget(question: string): number {
   const q = question.normalize("NFKC");
+  if (
+    /全記録|所属選手|記録一覧/.test(q) &&
+    /南関中|玉名中|天水中|岱明中|長洲中|玉陵中|玉南中|玉名附中|荒尾三中|荒尾第四中|荒尾海陽中/.test(
+      q,
+    )
+  ) {
+    return 30_000;
+  }
   // 「全て提示」系は正本ダイジェストを広く見せる
   if (isExhaustiveListQuery(q)) {
     return 12_000;
@@ -710,6 +718,11 @@ function offlineAnswer(
       );
     const trackLapLookup =
       /トラック/.test(question) && /1周|一周|周長|何メートル|何ｍ/.test(question);
+    const teamFullRecordLookup =
+      /全記録|所属選手|記録一覧/.test(question) &&
+      /南関中|玉名中|天水中|岱明中|長洲中|玉陵中|玉南中|玉名附中|荒尾三中|荒尾第四中|荒尾海陽中/.test(
+        question,
+      );
     const kanaguriDate =
       /金栗駅伝/.test(question) &&
       /いつ|何日|何月|開催月|開催時期/.test(question);
@@ -724,6 +737,7 @@ function offlineAnswer(
       teamRankLookup ||
       schoolPbRankLookup ||
       trackLapLookup ||
+      teamFullRecordLookup ||
       kanaguriDate;
     const hint = focusedLookup ? question : previewQuery ?? question;
     if (focusedLookup) {
@@ -1629,12 +1643,34 @@ export async function answerQuestion(
   if (teamYearOverYearQ) {
     preferredSources = [
       preferredSources.find((s) => /aragyoku_2024_2025_focus_teams/.test(s)) ??
-        "out-analysis/aragyoku_2024_2025_focus_teams.md",
+      "out-analysis/aragyoku_2024_2025_focus_teams.md",
     ];
   }
 
+  const teamFullRecordQ =
+    /全記録|所属選手|記録一覧/.test(expanded) &&
+    /南関中|玉名中|天水中|岱明中|長洲中|玉陵中|玉南中|玉名附中|荒尾三中|荒尾第四中|荒尾海陽中/.test(
+      expanded,
+    );
+
   if (exhaustive) {
     preferredSources = narrowExhaustiveSources(expanded, preferredSources);
+  }
+  if (teamFullRecordQ) {
+    const team = [
+      "荒尾第四中",
+      "荒尾海陽中",
+      "荒尾三中",
+      "玉名附中",
+      "南関中",
+      "玉名中",
+      "天水中",
+      "岱明中",
+      "長洲中",
+      "玉陵中",
+      "玉南中",
+    ].find((stem) => expanded.includes(stem));
+    if (team) preferredSources = [`out-analysis/arato-tamana-teams/${team}.md`];
   }
 
   const exactDatedPractice =
@@ -1710,9 +1746,9 @@ export async function answerQuestion(
     !/なごみ/.test(expanded);
   const fromSources = retrieveBySources(preferredSources, {
     query: expanded,
-    perSource: exhaustive || totalMeetRecordQ ? 200 : RETRIEVAL_BUDGET.perSource,
-    maxChunks: exhaustive || totalMeetRecordQ ? 200 : RETRIEVAL_BUDGET.maxChunks,
-    coverage: exhaustive || exactDatedPractice || totalMeetRecordQ ? "full" : "ranked",
+    perSource: exhaustive || totalMeetRecordQ || teamFullRecordQ ? 200 : RETRIEVAL_BUDGET.perSource,
+    maxChunks: exhaustive || totalMeetRecordQ || teamFullRecordQ ? 200 : RETRIEVAL_BUDGET.maxChunks,
+    coverage: exhaustive || exactDatedPractice || totalMeetRecordQ || teamFullRecordQ ? "full" : "ranked",
   });
   const retrieve = deps.retrieve ?? retrieveContext;
   // Exhaustive: preferred digest coverage alone — BM25 OCR/ADR filler drowns the list
@@ -1736,6 +1772,7 @@ export async function answerQuestion(
     latestFirstPlaceQ ||
     schoolPbRankQ ||
     trackLapQ ||
+    teamFullRecordQ ||
     teamYearOverYearQ ||
     teamWinnerMarginQ ||
     namedMeetRecordQ ||
@@ -1746,8 +1783,10 @@ export async function answerQuestion(
   const mergedCoreRaw = mergeRetrieved(
     fromSources,
     fromBm25,
-    exhaustive
-      ? Math.max(topK, fromSources.length, 96)
+    teamFullRecordQ
+      ? Math.max(topK, fromSources.length, 200)
+      : exhaustive
+        ? Math.max(topK, fromSources.length, 96)
       : totalMeetRecordQ
         ? Math.max(topK, fromSources.length)
         : topK,
@@ -1765,6 +1804,7 @@ export async function answerQuestion(
         latestFirstPlaceQ ||
         schoolPbRankQ ||
         trackLapQ ||
+        teamFullRecordQ ||
         teamYearOverYearQ ||
         teamWinnerMarginQ ||
         namedMeetRecordQ ||
@@ -1811,6 +1851,7 @@ export async function answerQuestion(
   const withNeighbors = expandWithNeighbors(mergedCore, {
     radius:
       exhaustive ||
+      teamFullRecordQ ||
       namedAssignmentQ ||
       farewellScheduleQ ||
       matSizeQ ||
@@ -1819,7 +1860,7 @@ export async function answerQuestion(
       kanaguriVenueQ
         ? 0
         : RETRIEVAL_BUDGET.neighborRadius,
-    maxExtra: exhaustive ? 0 : RETRIEVAL_BUDGET.neighborMaxExtra,
+    maxExtra: exhaustive || teamFullRecordQ ? 0 : RETRIEVAL_BUDGET.neighborMaxExtra,
     query: expanded,
   });
   const merged = truncateRetrieved(withNeighbors, RETRIEVAL_BUDGET.maxChars);
