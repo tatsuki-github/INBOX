@@ -1033,6 +1033,21 @@ describe("answerQuestion", () => {
     if (result.kind === "offline") expect(result.text).toContain("2026年なごみ女子優勝: 金栗PROJECT A（26:55）");
   });
 
+  it("answers explicit-year lower aragyoku ranks without repeated chunks", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("2025年荒玉男子の13位は？", {
+      llm: null,
+      skipRouter: true,
+      defaultYear: 2026,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.text).toContain("2025年男子13位: 玉南（62:41）");
+      expect(result.text).not.toContain("\n2. 2025年男子13位");
+    }
+  });
+
   it("answers an unqualified sixth-place question for both genders", async () => {
     resetRetrieverCache();
     resetKgCache();
