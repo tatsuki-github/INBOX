@@ -123,6 +123,20 @@ describe("buildReplyMessages", () => {
     expect(messages.every((m) => m.type === "text")).toBe(true);
   });
 
+  it("does not keep the coach fallback when an image is attached", () => {
+    const messages = buildReplyMessages("コーチに直接聞いてください。", "2025年の荒玉駅伝の区間賞は？", {
+      defaultYear: 2026,
+      attachBoardImages: true,
+    });
+    const text = messages
+      .filter((m) => m.type === "text")
+      .map((m) => (m.type === "text" ? m.text : ""))
+      .join("\n");
+    expect(text).not.toContain("コーチに直接聞いてください");
+    expect(text).toContain("画像を表示します。");
+    expect(messages.some((m) => m.type === "image")).toBe(true);
+  });
+
   it("caps combined image and video attachments at two", () => {
     const messages = buildReplyMessages(
       "回答本文です。",

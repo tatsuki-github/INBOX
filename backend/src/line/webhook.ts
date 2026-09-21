@@ -12,6 +12,7 @@ import { isDeniedUserId } from "../domain/deny.js";
 import { NON_TEXT_GUIDANCE, splitLineTextPreservingPrimarySources } from "./reply.js";
 import { formatForLine } from "./format.js";
 import { currentFiscalYear } from "../domain/dates.js";
+import { MISSING_INFO_MESSAGE } from "../rag/prompt.js";
 
 export type LineEvent = {
   type: string;
@@ -66,7 +67,16 @@ export function buildReplyMessages(
   const media = [...images, ...videos].slice(0, 2);
   const mediaCount = media.length;
   const textSlots = Math.max(1, 5 - mediaCount);
-  const parts = splitLineTextPreservingPrimarySources(formatForLine(text), textSlots);
+  const formattedText = formatForLine(text);
+  const mediaAwareText =
+    media.length > 0
+      ? formattedText
+          .split(MISSING_INFO_MESSAGE)
+          .join("")
+          .replace(/\n{3,}/g, "\n\n")
+          .trim() || "画像を表示します。"
+      : formattedText;
+  const parts = splitLineTextPreservingPrimarySources(mediaAwareText, textSlots);
   const messages: messagingApi.Message[] = parts.map((t) => ({ type: "text", text: t }));
   for (const item of media) {
     messages.push(item);
