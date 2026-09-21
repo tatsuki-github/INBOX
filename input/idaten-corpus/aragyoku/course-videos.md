@@ -9,6 +9,8 @@
 | 女子 | https://drive.google.com/drive/folders/1no2bVU7GeyVbXFsCG8V8uwM0IuaFoOhi |
 | 男子 | https://drive.google.com/drive/folders/17MrxiZ_0CsDBgVrS_O3uZm3Oypu70Uoo |
 
+限定公開YouTubeプレイリスト: https://youtube.com/playlist?list=PLfEmEvJWOhLE&si=xNbUO5aLL8ly9axJ
+
 各フォルダに「全区間」と区間別（女子 1〜5区、男子 1〜6区）の mp4 がある。
 
 ## LINE ボット

@@ -182,7 +182,7 @@ export function findMeetResultUrls(
   if (!wantsMeetResultUrl(q)) return [];
 
   const defaultYear = opts?.defaultYear ?? currentFiscalYear();
-  const maxUrls = opts?.maxUrls ?? 3;
+  const maxUrls = Math.min(2, Math.max(0, opts?.maxUrls ?? 2));
   const mentioned = resolveRelativeYears(q, defaultYear);
   const years = mentioned.length > 0 ? mentioned : [defaultYear];
 

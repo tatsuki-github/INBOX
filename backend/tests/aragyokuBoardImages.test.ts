@@ -122,4 +122,14 @@ describe("buildReplyMessages", () => {
     });
     expect(messages.every((m) => m.type === "text")).toBe(true);
   });
+
+  it("caps combined image and video attachments at two", () => {
+    const messages = buildReplyMessages(
+      "回答本文です。",
+      "2025年荒玉駅伝3区の結果とコース動画",
+      { defaultYear: 2026, attachBoardImages: true, attachCourseVideos: true },
+    );
+    const media = messages.filter((m) => m.type === "image" || m.type === "video");
+    expect(media.length).toBeLessThanOrEqual(2);
+  });
 });

@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 import {
   ARAGYOKU_COURSE_VIDEO_MEN_FOLDER_URL,
   ARAGYOKU_COURSE_VIDEO_WOMEN_FOLDER_URL,
+  ARAGYOKU_COURSE_VIDEO_YOUTUBE_PLAYLIST_URL,
   buildHelpExamplesText,
   isAragyokuCourseVideoQuestion,
   isHelpOrExampleQuestion,
@@ -115,12 +116,15 @@ describe("canned aragyoku course videos", () => {
     const men = matchCannedAnswer("荒玉男子のコース動画");
     expect(men?.text).toContain(ARAGYOKU_COURSE_VIDEO_MEN_FOLDER_URL);
     expect(men?.text).not.toContain(ARAGYOKU_COURSE_VIDEO_WOMEN_FOLDER_URL);
+    expect(women?.text).toContain(ARAGYOKU_COURSE_VIDEO_YOUTUBE_PLAYLIST_URL);
+    expect(men?.text).toContain(ARAGYOKU_COURSE_VIDEO_YOUTUBE_PLAYLIST_URL);
   });
 
   it("lists both folders when gender omitted", () => {
     const canned = matchCannedAnswer("荒玉のコース動画を教えて");
     expect(canned?.text).toContain(ARAGYOKU_COURSE_VIDEO_WOMEN_FOLDER_URL);
     expect(canned?.text).toContain(ARAGYOKU_COURSE_VIDEO_MEN_FOLDER_URL);
+    expect(canned?.text).toContain(ARAGYOKU_COURSE_VIDEO_YOUTUBE_PLAYLIST_URL);
   });
 
   it("keeps bare Drive URL after formatForLine", () => {
@@ -128,6 +132,7 @@ describe("canned aragyoku course videos", () => {
     expect(canned).not.toBeNull();
     const formatted = formatForLine(canned!.text);
     expect(formatted).toContain(ARAGYOKU_COURSE_VIDEO_WOMEN_FOLDER_URL);
+    expect(formatted).toContain(ARAGYOKU_COURSE_VIDEO_YOUTUBE_PLAYLIST_URL);
   });
 
   it("answerQuestion short-circuits without LLM", async () => {

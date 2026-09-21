@@ -11,6 +11,7 @@
 
 - 女子: https://drive.google.com/drive/folders/1no2bVU7GeyVbXFsCG8V8uwM0IuaFoOhi
 - 男子: https://drive.google.com/drive/folders/17MrxiZ_0CsDBgVrS_O3uZm3Oypu70Uoo
+- 限定公開YouTubeプレイリスト: https://youtube.com/playlist?list=PLfEmEvJWOhLE&si=xNbUO5aLL8ly9axJ
 
 LINE Messaging API の Video は HTTPS の mp4（≤200MB）とプレビュー画像 URL が必要。
 
@@ -31,8 +32,8 @@ LINE Messaging API の Video は HTTPS の mp4（≤200MB）とプレビュー�
    - 女子のみ → 女子 / それ以外（男子・両方・なし）→ 男子（最大 1 件）
    - `N区` あり → その区間 / なし → 全区間
    - `lineEligible` でない・カタログ無し（例: 女子6区）→ Video なし
-4. `buildReplyMessages` がテキストのあとに Video を最大 1 件付け、合計 ≤ 5。
-5. canned テキストは性別に応じたフォルダ URL（未指定時は男女両方）。
+4. `buildReplyMessages` が画像・Videoを合算で最大 2 件付け、合計 ≤ 5。
+5. canned テキストは性別に応じたフォルダ URL（未指定時は男女両方）と限定公開YouTubeプレイリストを返す。
 6. `answered` / `offline` のみ添付。
 
 ## Consequences

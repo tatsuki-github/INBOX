@@ -41,6 +41,25 @@ describe("findMeetResultUrls", () => {
     expect(urls[0]).toContain("kcrk.jp");
   });
 
+  it("limits result URLs to two by default", () => {
+    const entries: MeetResultUrlEntry[] = [
+      {
+        title: "2026年度熊本市陸上競技選手権大会",
+        year: 2026,
+        urls: ["https://example.test/1", "https://example.test/2", "https://example.test/3"],
+      },
+    ];
+    expect(
+      findMeetResultUrls("2026年熊本市選手権の結果", entries, { defaultYear: 2026 }),
+    ).toHaveLength(2);
+    expect(
+      findMeetResultUrls("2026年熊本市選手権の結果", entries, {
+        defaultYear: 2026,
+        maxUrls: 3,
+      }),
+    ).toHaveLength(2);
+  });
+
   it("returns empty when no meet matches", () => {
     expect(
       findMeetResultUrls("来週の練習メニューは？", SAMPLE, { defaultYear: 2026 }),

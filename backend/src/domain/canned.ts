@@ -11,6 +11,9 @@ export const ARAGYOKU_COURSE_VIDEO_WOMEN_FOLDER_URL =
 export const ARAGYOKU_COURSE_VIDEO_MEN_FOLDER_URL =
   "https://drive.google.com/drive/folders/17MrxiZ_0CsDBgVrS_O3uZm3Oypu70Uoo";
 
+export const ARAGYOKU_COURSE_VIDEO_YOUTUBE_PLAYLIST_URL =
+  "https://youtube.com/playlist?list=PLfEmEvJWOhLE&si=xNbUO5aLL8ly9axJ";
+
 /** @deprecated Use gender-specific folder URLs. Kept for tests that check either URL. */
 export const ARAGYOKU_COURSE_VIDEO_FOLDER_URL = ARAGYOKU_COURSE_VIDEO_MEN_FOLDER_URL;
 
@@ -89,22 +92,26 @@ export function isAragyokuCourseVideoQuestion(question: string): boolean {
 
 function courseVideoCannedText(question: string): string {
   const gender = detectAragyokuBoardGender(question);
+  const youtube = `限定公開YouTubeプレイリスト: ${ARAGYOKU_COURSE_VIDEO_YOUTUBE_PLAYLIST_URL}`;
   if (gender === "女子") {
     return [
       "荒玉駅伝（女子）のコース動画は、次の Google ドライブフォルダにあります。",
       ARAGYOKU_COURSE_VIDEO_WOMEN_FOLDER_URL,
+      youtube,
     ].join("\n");
   }
   if (gender === "男子") {
     return [
       "荒玉駅伝（男子）のコース動画は、次の Google ドライブフォルダにあります。",
       ARAGYOKU_COURSE_VIDEO_MEN_FOLDER_URL,
+      youtube,
     ].join("\n");
   }
   return [
     "荒玉駅伝のコース動画は、次の Google ドライブフォルダにあります。",
     `女子: ${ARAGYOKU_COURSE_VIDEO_WOMEN_FOLDER_URL}`,
     `男子: ${ARAGYOKU_COURSE_VIDEO_MEN_FOLDER_URL}`,
+    youtube,
   ].join("\n");
 }
 

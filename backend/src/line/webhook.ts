@@ -61,15 +61,15 @@ export function buildReplyMessages(
   const videos = attachVideos
     ? toLineVideoMessages(selectAragyokuCourseVideos(question))
     : [];
-  const mediaCount = images.length + videos.length;
+  // Keep result attachments bounded together. Course-video questions still
+  // receive the playlist URL in their canned text.
+  const media = [...images, ...videos].slice(0, 2);
+  const mediaCount = media.length;
   const textSlots = Math.max(1, 5 - mediaCount);
   const parts = splitLineText(formatForLine(text)).slice(0, textSlots);
   const messages: messagingApi.Message[] = parts.map((t) => ({ type: "text", text: t }));
-  for (const img of images) {
-    messages.push(img);
-  }
-  for (const vid of videos) {
-    messages.push(vid);
+  for (const item of media) {
+    messages.push(item);
   }
   return messages;
 }
