@@ -1193,6 +1193,22 @@ describe("answerQuestion", () => {
     }
   });
 
+  it("supports Japanese numeral tenth-place wording", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("荒玉駅伝の十位は？", {
+      llm: null,
+      skipRouter: true,
+      defaultYear: 2026,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.text).toContain("2025年男子10位: 荒尾四（61:15）");
+      expect(result.text).toContain("2025年女子10位: 玉高附属（46:55）");
+      expect(result.text).not.toContain("深掘り分析");
+    }
+  });
+
   it("answers unqualified tenth-to-twelfth-place questions for both genders", async () => {
     resetRetrieverCache();
     resetKgCache();
