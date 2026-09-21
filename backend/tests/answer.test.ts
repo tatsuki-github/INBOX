@@ -301,6 +301,23 @@ describe("answerQuestion", () => {
     }
   });
 
+  it("starts 2区と5区 distance answers at the staff distance summary", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("2区と5区の距離は？", {
+      llm: null,
+      skipRouter: true,
+      defaultYear: 2026,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.sources).toEqual(["out-analysis/line-chats/daiming-staff.md"]);
+      expect(result.text).toContain("2区と5区の距離");
+      expect(result.text).toContain("2.855km");
+      expect(result.text).not.toContain("仲間達）運用メモ");
+    }
+  });
+
   it("routes a named runner's 区間タイム to the team race digest", async () => {
     resetRetrieverCache();
     resetKgCache();

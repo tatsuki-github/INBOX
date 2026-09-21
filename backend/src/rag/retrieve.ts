@@ -922,6 +922,13 @@ function digestPinForQuery(chunk: RagChunk, query: string): number {
   ) {
     return 1000;
   }
+  if (
+    /2区.*5区|5区.*2区/.test(qn) &&
+    /daiming-staff\.md$/.test(base) &&
+    /2区と5区の距離|2区と5区は/.test(chunk.text)
+  ) {
+    return 1000;
+  }
   if (/全記録|所属選手|記録一覧/.test(qn)) {
     const stem = base.split("/").pop()?.replace(/\.md$/, "") ?? "";
     if (/arato-tamana-teams\/[^/]+\.md$/.test(base) && stem && query.includes(stem)) {
