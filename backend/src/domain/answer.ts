@@ -257,7 +257,7 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
         .join("。 ") + "。";
     }
   }
-  if (!/男子|女子/.test(q) && /荒玉|駅伝/.test(q) && /1位/.test(q)) {
+  if (!/男子|女子/.test(q) && /荒玉|駅伝/.test(q) && /1位|一位/.test(q)) {
     const firstPlaces = [...flat.matchAll(
       /(20\d{2})年\s*荒玉(?:中体連)?駅伝\s*(男子|女子)[\s\S]{0,220}?優勝校は「([^」]+)」（総合\s*([0-9]+:\d{2})）/g,
     )];
@@ -1597,7 +1597,7 @@ function offlineAnswer(
       /荒玉|駅伝/.test(question) &&
       !/男子|女子|20\d{2}|過去|歴代/.test(question);
     const unqualifiedFirstPlaceLookup =
-      /1位/.test(question) &&
+      /1位|一位/.test(question) &&
       /荒玉|駅伝/.test(question) &&
       !/男子|女子|20\d{2}|過去|歴代|区間/.test(question);
     const topThreeLookup =
@@ -2822,7 +2822,7 @@ export async function answerQuestion(
     /荒玉|駅伝/.test(question) &&
     !/男子|女子|20\d{2}|過去|歴代/.test(question);
   const unqualifiedFirstPlaceQ =
-    /1位/.test(question) &&
+    /1位|一位/.test(question) &&
     /荒玉|駅伝/.test(question) &&
     !/男子|女子|20\d{2}|過去|歴代|区間/.test(question);
   const topThreeQ =
