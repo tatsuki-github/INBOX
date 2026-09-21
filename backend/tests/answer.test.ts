@@ -1232,6 +1232,22 @@ describe("answerQuestion", () => {
     }
   });
 
+  it("recognizes a team/leg question that omits the meet name", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("菊水の2025男子1区は誰？", {
+      llm: null,
+      skipRouter: true,
+      defaultYear: 2026,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.sources[0]).toBe("out-analysis/aragyoku-teams/菊水.md");
+      expect(result.text).toContain("2025年1区 松浦眞大の区間タイムは9:30。");
+      expect(result.text).not.toContain("優勝校");
+    }
+  });
+
   it("handles the short なごみ集合場所 phrasing", async () => {
     resetRetrieverCache();
     resetKgCache();

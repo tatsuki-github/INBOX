@@ -199,7 +199,10 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
     }
   }
   const teamLeg = q.match(/(20\d{2})年?.*?([1-6])区.*(?:誰|選手|ランナー)/);
-  if (teamLeg && /男子|女子/.test(q) && /荒玉|駅伝/.test(q)) {
+  const knownTeamInQuestion = /荒尾海陽|玉高附属|玉名付属|玉名附属|荒尾三|荒尾四|三加和|南関|天水|岱明|有明|玉南|玉名|玉東|玉陵|腹栄|荒尾|菊水|長洲/.test(
+    q,
+  );
+  if (teamLeg && /男子|女子/.test(q) && (/荒玉|駅伝/.test(q) || knownTeamInQuestion)) {
     const year = teamLeg[1]!;
     const leg = teamLeg[2]!;
     const gender = /女子/.test(q) ? "女子" : "男子";
@@ -881,10 +884,12 @@ function offlineAnswer(
       /[\p{Script=Han}]{2,8}の(?:区間タイム|(?:荒玉)?20\d{2}年?区間タイム)/u.test(question);
     const teamLegLookup =
       /20\d{2}/.test(question) &&
-      /荒玉|駅伝/.test(question) &&
       /男子|女子/.test(question) &&
       /[1-6]区/.test(question) &&
-      /誰|選手|ランナー/.test(question);
+      /誰|選手|ランナー/.test(question) &&
+      /荒尾海陽|玉高附属|玉名付属|玉名附属|荒尾三|荒尾四|三加和|南関|天水|岱明|有明|玉南|玉名|玉東|玉陵|腹栄|荒尾|菊水|長洲/.test(
+        question,
+      );
     const teamRunnerUpYearLookup =
       /荒玉|駅伝/.test(question) &&
       /男子/.test(question) &&
@@ -1915,10 +1920,12 @@ export async function answerQuestion(
   }
   const explicitTeamLegQ =
     /20\d{2}/.test(expanded) &&
-    /荒玉|駅伝/.test(expanded) &&
     /男子|女子/.test(expanded) &&
     /[1-6]区/.test(expanded) &&
-    /誰|選手|ランナー/.test(expanded);
+    /誰|選手|ランナー/.test(expanded) &&
+    /荒尾海陽|玉高附属|玉名付属|玉名附属|荒尾三|荒尾四|三加和|南関|天水|岱明|有明|玉南|玉名|玉東|玉陵|腹栄|荒尾|菊水|長洲/.test(
+      expanded,
+    );
   if (explicitTeamLegQ) {
     const team = [
       "荒尾海陽",
