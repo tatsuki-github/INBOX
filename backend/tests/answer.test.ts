@@ -2345,6 +2345,25 @@ describe("answerQuestion", () => {
     }
   });
 
+  it("routes an unqualified 荒玉結果 question to both result transcripts", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("荒玉駅伝の結果は？", {
+      skipRouter: true,
+      defaultYear: 2026,
+      llm: null,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.text).toContain("2025年荒玉駅伝の結果");
+      expect(result.text).toContain("男子:");
+      expect(result.text).toContain("女子:");
+      expect(result.text).toContain("菊水");
+      expect(result.text).toContain("玉名");
+      expect(result.sources[0]).toBe("aragyoku/transcripts/2025-男子.json");
+    }
+  });
+
   it("answers なごみ 岱明男子1区 from 2026 order list, not 金栗駅伝", async () => {
     resetRetrieverCache();
     resetKgCache();
