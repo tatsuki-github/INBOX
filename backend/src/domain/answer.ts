@@ -198,6 +198,24 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
       return `${year}${best.leg}区 ${name}の区間タイムは${best.time}。`;
     }
   }
+  const teamLeg = q.match(/(20\d{2})年?.*?([1-6])区.*(?:誰|選手|ランナー)/);
+  if (teamLeg && /男子|女子/.test(q) && /荒玉|駅伝/.test(q)) {
+    const year = teamLeg[1]!;
+    const leg = teamLeg[2]!;
+    const gender = /女子/.test(q) ? "女子" : "男子";
+    const start = [
+      `## ${year}年 ${gender}`,
+      `### ${year}年 ${gender}`,
+      `#### ${year}年 ${gender}`,
+    ]
+      .map((heading) => flat.indexOf(heading))
+      .find((index) => index >= 0) ?? flat.indexOf(`${year}年`);
+    const section = start >= 0 ? flat.slice(start) : flat;
+    const row = section.match(
+      new RegExp(`\\|\\s*${leg}\\s*\\|\\s*([^|]+?)\\s*\\|\\s*\\d+\\s*\\|\\s*([0-9]+:[0-9]{2})\\s*\\|`),
+    );
+    if (row) return `${year}年${leg}区 ${row[1]!.trim()}の区間タイムは${row[2]}。`;
+  }
   // The top-two digest has a gender-specific table. For a "most frequent"
   // question, summarize that table instead of surfacing the latest winners.
   if (
@@ -861,6 +879,12 @@ function offlineAnswer(
     const namedLegTimeLookup =
       /区間タイム/.test(question) &&
       /[\p{Script=Han}]{2,8}の(?:区間タイム|(?:荒玉)?20\d{2}年?区間タイム)/u.test(question);
+    const teamLegLookup =
+      /20\d{2}/.test(question) &&
+      /荒玉|駅伝/.test(question) &&
+      /男子|女子/.test(question) &&
+      /[1-6]区/.test(question) &&
+      /誰|選手|ランナー/.test(question);
     const teamRunnerUpYearLookup =
       /荒玉|駅伝/.test(question) &&
       /男子/.test(question) &&
@@ -903,6 +927,7 @@ function offlineAnswer(
       schoolPbRankLookup ||
       trackLapLookup ||
       namedLegTimeLookup ||
+      teamLegLookup ||
       top2CountLookup ||
       teamRunnerUpYearLookup ||
       teamFullRecordLookup ||
@@ -1888,6 +1913,34 @@ export async function answerQuestion(
       preferredSources = [preferredSources.find((s) => s.endsWith(path)) ?? path];
     }
   }
+  const explicitTeamLegQ =
+    /20\d{2}/.test(expanded) &&
+    /荒玉|駅伝/.test(expanded) &&
+    /男子|女子/.test(expanded) &&
+    /[1-6]区/.test(expanded) &&
+    /誰|選手|ランナー/.test(expanded);
+  if (explicitTeamLegQ) {
+    const team = [
+      "荒尾海陽",
+      "玉高附属",
+      "荒尾三",
+      "荒尾四",
+      "三加和",
+      "南関",
+      "天水",
+      "岱明",
+      "有明",
+      "玉南",
+      "玉名",
+      "玉東",
+      "玉陵",
+      "腹栄",
+      "荒尾",
+      "菊水",
+      "長洲",
+    ].find((stem) => expanded.includes(stem));
+    if (team) preferredSources = [`out-analysis/aragyoku-teams/${team}.md`];
+  }
   const latestTeamRankQ =
     !/20\d{2}/.test(expanded) &&
     /何位|順位/.test(expanded) &&
@@ -1996,6 +2049,7 @@ export async function answerQuestion(
     top2CountQ ||
     namedLegTimeQ ||
     teamRunnerUpYearQ ||
+    explicitTeamLegQ ||
     teamFullRecordQ ||
     latestTeamRankQ ||
     teamYearOverYearQ ||
@@ -2032,6 +2086,7 @@ export async function answerQuestion(
         top2CountQ ||
         namedLegTimeQ ||
         teamRunnerUpYearQ ||
+        explicitTeamLegQ ||
         teamFullRecordQ ||
         latestTeamRankQ ||
         teamYearOverYearQ ||

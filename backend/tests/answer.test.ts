@@ -1216,6 +1216,22 @@ describe("answerQuestion", () => {
     }
   });
 
+  it("focuses an explicit 荒玉 year/team/leg athlete question", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("有明中の荒玉2024男子1区は誰？", {
+      llm: null,
+      skipRouter: true,
+      defaultYear: 2026,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.sources[0]).toBe("out-analysis/aragyoku-teams/有明.md");
+      expect(result.text).toContain("2024年1区 米村和真の区間タイムは9:01。");
+      expect(result.text).not.toContain("2024年荒玉駅伝男子 有明は11位");
+    }
+  });
+
   it("handles the short なごみ集合場所 phrasing", async () => {
     resetRetrieverCache();
     resetKgCache();
