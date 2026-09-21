@@ -1152,6 +1152,22 @@ describe("answerQuestion", () => {
     }
   });
 
+  it("answers a year-to-year seconds-faster question concisely", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("有明女子は2024から2025で何秒速くなった？", {
+      llm: null,
+      skipRouter: true,
+      defaultYear: 2026,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.sources[0]).toBe("out-analysis/aragyoku_2024_2025_focus_teams.md");
+      expect(result.text).toContain("有明女子は33.00秒短縮（2025年のほうが速い）。");
+      expect(result.text).not.toContain("順位差+1");
+    }
+  });
+
   it("routes combined total-time and winner-margin phrasing to focus analysis", async () => {
     resetRetrieverCache();
     resetKgCache();

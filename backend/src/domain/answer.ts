@@ -321,7 +321,7 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
     }
   }
   if (
-    /前年比|前年から|前年度比|何位から何位|短縮|総合差/.test(q) &&
+    /前年比|前年から|前年度比|何位から何位|短縮|総合差|20\d{2}から20\d{2}|何秒.*速く|何分.*短縮|速くなった/.test(q) &&
     /男子|女子/.test(q)
   ) {
     const teams = ["岱明", "玉高附属", "玉名付属", "玉名附属", "天水", "有明"];
@@ -333,11 +333,21 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
       const match = flat.match(
         new RegExp(`${canonical}の荒玉駅伝${gender}は[^。]+。(?:\\s*総合差[^。]+。)?`),
       );
-      if (match) return match[0];
+      if (match) {
+        const faster = match[0].match(/総合差-([0-9.]+)s/);
+        if (/何秒.*速く|何分.*短縮|速くなった/.test(q) && faster) {
+          return `${canonical}${gender}は${faster[1]}秒短縮（2025年のほうが速い）。`;
+        }
+        return match[0];
+      }
       const row = flat.match(
         new RegExp(`\\|\\s*${canonical}\\s*\\|\\s*${gender}\\s*\\|([^|]+)\\|([^|]+)\\|([^|]+)\\|([^|]+)\\|`),
       );
       if (row) {
+        const faster = row[3]!.trim().match(/-([0-9.]+)s/);
+        if (/何秒.*速く|何分.*短縮|速くなった/.test(q) && faster) {
+          return `${canonical}${gender}は${faster[1]}秒短縮（2025年のほうが速い）。`;
+        }
         return `${canonical}${gender}: 2024 ${row[1]!.trim()} → 2025 ${row[2]!.trim()}（総合差${row[3]!.trim()}、順位差${row[4]!.trim()}）。`;
       }
     }
@@ -932,7 +942,7 @@ function offlineAnswer(
       ) &&
       !/過去|歴代|前年比|比較/.test(question);
     const teamYearOverYearLookup =
-      /前年比|前年から|前年度比|何位から何位|短縮|総合差/.test(question) &&
+      /前年比|前年から|前年度比|何位から何位|短縮|総合差|20\d{2}から20\d{2}|何秒.*速く|何分.*短縮|速くなった/.test(question) &&
       /男子|女子/.test(question) &&
       ["岱明", "玉高附属", "玉名付属", "玉名附属", "天水", "有明"].filter((team) =>
         question.includes(team),
@@ -1064,7 +1074,7 @@ function boostAthleteRecordSources(query: string, baseSources: string[]): string
   }
   // Year-over-year team questions belong to the 2024–2025 focus digest, not
   // the broad athlete/media corpus.
-  if (/前年比|前年から|前年度比/.test(q) && /男子|女子/.test(q)) {
+  if (/前年比|前年から|前年度比|20\d{2}から20\d{2}|何秒.*速く|何分.*短縮|速くなった/.test(q) && /男子|女子/.test(q)) {
     const focus = baseSources.find((s) => /aragyoku_2024_2025_focus_teams/.test(s));
     if (focus) return [focus];
   }
