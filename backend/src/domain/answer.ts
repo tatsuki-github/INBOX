@@ -2577,21 +2577,33 @@ export async function answerQuestion(
     /金栗駅伝/.test(expanded) &&
     /会場|場所|開催日|日付|いつ|何月|開催月|開催時期/.test(expanded) &&
     !/なごみ/.test(expanded);
+  const nagomiLegOrderQ =
+    /なごみ/.test(expanded) &&
+    /男子|女子/.test(expanded) &&
+    /[1-6]区/.test(expanded) &&
+    /誰|選手|ランナー|は誰/.test(expanded);
+  if (nagomiLegOrderQ) {
+    const orderYear = expanded.match(/20\d{2}/)?.[0] ?? "2026";
+    const orderGender = /女子/.test(expanded) ? "女子" : "男子";
+    preferredSources = [
+      `drive-text/大会/${orderYear}年度/0920_中学駅伝金栗四三生誕の地なごみ大会/${orderGender}区間オーダーリスト.md`,
+    ];
+  }
   const fromSources = retrieveBySources(preferredSources, {
     query: expanded,
     perSource:
       exhaustive || totalMeetRecordQ || teamFullRecordQ || explicitTeamLegRankQ || historicalWinnerQ || winnerYearTeamQ || legRankQuestionQ
-        || resultListQ || explicitLegAwardQ || schoolPbRankQ
+        || resultListQ || explicitLegAwardQ || schoolPbRankQ || nagomiLegOrderQ
         ? 200
         : RETRIEVAL_BUDGET.perSource,
     maxChunks:
       exhaustive || totalMeetRecordQ || teamFullRecordQ || explicitTeamLegRankQ || historicalWinnerQ || winnerYearTeamQ || legRankQuestionQ
-        || resultListQ || explicitLegAwardQ || schoolPbRankQ
+        || resultListQ || explicitLegAwardQ || schoolPbRankQ || nagomiLegOrderQ
         ? 200
         : RETRIEVAL_BUDGET.maxChunks,
       coverage:
       exhaustive || exactDatedPractice || totalMeetRecordQ || teamFullRecordQ || explicitTeamLegRankQ || historicalWinnerQ || winnerYearTeamQ || legRankQuestionQ
-        || resultListQ || explicitLegAwardQ || schoolPbRankQ
+        || resultListQ || explicitLegAwardQ || schoolPbRankQ || nagomiLegOrderQ
         ? "full"
         : "ranked",
   });
@@ -2629,6 +2641,7 @@ export async function answerQuestion(
     namedLegTimeQ ||
     teamRunnerUpYearQ ||
     resultListQ ||
+    nagomiLegOrderQ ||
     explicitTeamLegQ ||
     teamFullRecordQ ||
     explicitTeamLegRankQ ||
@@ -2688,6 +2701,7 @@ export async function answerQuestion(
         namedLegTimeQ ||
         teamRunnerUpYearQ ||
         resultListQ ||
+        nagomiLegOrderQ ||
         explicitTeamLegQ ||
         teamFullRecordQ ||
         explicitTeamLegRankQ ||
