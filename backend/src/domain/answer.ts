@@ -463,9 +463,10 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
         }
       }
     }
-    if (gender && /歴代/.test(q)) {
+    if (/歴代/.test(q)) {
+      const genderPattern = gender ? gender : "(?:男子|女子)";
       const matches = [
-        ...flat.matchAll(new RegExp(`20\\d{2}年荒玉駅伝${gender}の優勝校は[^。]+。`, "g")),
+        ...flat.matchAll(new RegExp(`20\\d{2}年荒玉駅伝${genderPattern}の優勝校は[^。]+。`, "g")),
       ];
       if (matches.length > 0) return matches.map((match) => match[0]).join(" ");
     }
@@ -966,8 +967,7 @@ function offlineAnswer(
     const historicalWinnerLookup =
       /荒玉|駅伝/.test(question) &&
       /歴代/.test(question) &&
-      /優勝|準優勝/.test(question) &&
-      /男子|女子/.test(question);
+      /優勝|準優勝/.test(question);
     const winnerTeamLookup =
       /優勝チーム/.test(question) &&
       /荒玉|駅伝/.test(question) &&
@@ -1912,6 +1912,10 @@ export async function answerQuestion(
     (/去年|前年|20\d{2}/.test(question) ||
       (/優勝チーム/.test(question) && !/過去|歴代|全て|全部/.test(question))) &&
     !/男子|女子/.test(question);
+  const historicalWinnerQ =
+    /荒玉|駅伝/.test(question) &&
+    /歴代/.test(question) &&
+    /優勝|準優勝/.test(question);
   const genderLegRecordQ =
     (/荒玉|駅伝|大会区間記録|区間記録|ボード記録/.test(question) ||
       /記録保持者|区間記録/.test(question)) &&
@@ -1981,6 +1985,11 @@ export async function answerQuestion(
     ];
   }
   if (genericWinnerYearQ) {
+    preferredSources = [
+      preferredSources.find((s) => /winners-by-year/.test(s)) ?? "aragyoku/winners-by-year.md",
+    ];
+  }
+  if (historicalWinnerQ) {
     preferredSources = [
       preferredSources.find((s) => /winners-by-year/.test(s)) ?? "aragyoku/winners-by-year.md",
     ];
@@ -2241,6 +2250,7 @@ export async function answerQuestion(
     latestRunnerUpQ ||
     latestFirstPlaceQ ||
     genericWinnerYearQ ||
+    historicalWinnerQ ||
     schoolPbRankQ ||
     trackLapQ ||
     top2CountQ ||
@@ -2282,6 +2292,7 @@ export async function answerQuestion(
         latestRunnerUpQ ||
         latestFirstPlaceQ ||
         genericWinnerYearQ ||
+        historicalWinnerQ ||
         schoolPbRankQ ||
         trackLapQ ||
         top2CountQ ||
