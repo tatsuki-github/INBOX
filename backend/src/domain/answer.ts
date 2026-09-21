@@ -328,8 +328,10 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
     const requestedYear = q.match(/20\d{2}/)?.[0];
     let best: { year: number; leg: string; time: string } | undefined;
     for (const candidate of candidates) {
-      const yearText = flat.slice(0, candidate.index ?? 0).match(/20\d{2}年/g)?.at(-1);
-      const year = yearText ? Number(yearText.slice(0, 4)) : 0;
+      const beforeCandidate = flat.slice(0, candidate.index ?? 0);
+      const sectionYear = [...beforeCandidate.matchAll(/##\s*(20\d{2})年\s+(?:男子|女子)/g)].at(-1)?.[1];
+      const yearText = sectionYear ?? beforeCandidate.match(/20\d{2}年/g)?.at(-1);
+      const year = sectionYear ? Number(sectionYear) : yearText ? Number(yearText.slice(0, 4)) : 0;
       if (requestedYear && year !== Number(requestedYear)) continue;
       if (!best || year >= best.year) {
         best = { year, leg: candidate[1]!, time: candidate[2]! };
@@ -2921,17 +2923,17 @@ export async function answerQuestion(
   const fromSources = retrieveBySources(preferredSources, {
     query: expanded,
     perSource:
-      exhaustive || totalMeetRecordQ || teamFullRecordQ || explicitTeamLegRankQ || historicalWinnerQ || winnerYearTeamQ || legRankQuestionQ
+      exhaustive || totalMeetRecordQ || teamFullRecordQ || explicitTeamLegRankQ || historicalWinnerQ || winnerYearTeamQ || legRankQuestionQ || namedLegTimeQ
         || resultListQ || genericResultQ || explicitLegAwardQ || schoolPbRankQ || nagomiLegOrderQ || nagomiLegRankQ || nagomiResultQ || nagomiDateQ || nagomiVenueQ || kanaguriResultQ || aragyokuDateQ || datedTeamResultQ
         ? 200
         : RETRIEVAL_BUDGET.perSource,
     maxChunks:
-      exhaustive || totalMeetRecordQ || teamFullRecordQ || explicitTeamLegRankQ || historicalWinnerQ || winnerYearTeamQ || legRankQuestionQ
+      exhaustive || totalMeetRecordQ || teamFullRecordQ || explicitTeamLegRankQ || historicalWinnerQ || winnerYearTeamQ || legRankQuestionQ || namedLegTimeQ
         || resultListQ || genericResultQ || explicitLegAwardQ || schoolPbRankQ || nagomiLegOrderQ || nagomiLegRankQ || nagomiResultQ || nagomiDateQ || nagomiVenueQ || kanaguriResultQ || aragyokuDateQ || datedTeamResultQ
         ? 200
         : RETRIEVAL_BUDGET.maxChunks,
       coverage:
-      exhaustive || exactDatedPractice || totalMeetRecordQ || teamFullRecordQ || explicitTeamLegRankQ || historicalWinnerQ || winnerYearTeamQ || legRankQuestionQ
+      exhaustive || exactDatedPractice || totalMeetRecordQ || teamFullRecordQ || explicitTeamLegRankQ || historicalWinnerQ || winnerYearTeamQ || legRankQuestionQ || namedLegTimeQ
         || resultListQ || genericResultQ || explicitLegAwardQ || schoolPbRankQ || nagomiLegOrderQ || nagomiLegRankQ || nagomiResultQ || nagomiDateQ || nagomiVenueQ || kanaguriResultQ || aragyokuDateQ || datedTeamResultQ
         ? "full"
         : "ranked",

@@ -883,6 +883,22 @@ describe("answerQuestion", () => {
     }
   });
 
+  it("uses the latest year for a yearless named runner split query", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("村上咲稀の区間タイムは？", {
+      llm: null,
+      skipRouter: true,
+      defaultYear: 2026,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.sources[0]).toBe("out-analysis/aragyoku-teams/岱明.md");
+      expect(result.text).toContain("2025年1区 村上咲稀の区間タイムは11:02。");
+      expect(result.text).not.toContain("2024年4区 村上咲稀の区間タイムは7:50。");
+    }
+  });
+
   it("keeps 荒玉の大会区間記録 on the meet-record board digest", async () => {
     resetRetrieverCache();
     resetKgCache();
