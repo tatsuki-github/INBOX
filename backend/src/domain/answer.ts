@@ -1309,7 +1309,9 @@ export async function answerQuestion(
     /距離|何キロ|何km|何メートル|何m/.test(expanded);
   const nagomiGatherQ = /なごみ/.test(expanded) && /集合|場所|会場/.test(expanded);
   const kanaguriVenueQ =
-    /金栗駅伝/.test(expanded) && /会場|場所/.test(expanded) && !/なごみ/.test(expanded);
+    /金栗駅伝/.test(expanded) &&
+    /会場|場所|開催日|日付|いつ/.test(expanded) &&
+    !/なごみ/.test(expanded);
 
   const fromSources = retrieveBySources(preferredSources, {
     query: expanded,

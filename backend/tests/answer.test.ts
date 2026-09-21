@@ -387,6 +387,22 @@ describe("answerQuestion", () => {
     }
   });
 
+  it("keeps 金栗駅伝 date answers on the 2026 canonical note", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("金栗駅伝の開催日は？", {
+      llm: null,
+      skipRouter: true,
+      defaultYear: 2026,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.sources).toEqual(["drive-text/大会/2026年度/0315_金栗駅伝/概要.md"]);
+      expect(result.text).toContain("2026-03-15");
+      expect(result.text).not.toContain("ジュニア駅伝");
+    }
+  });
+
   it("routes explicit year/gender winner-school questions to winners-by-year", async () => {
     resetRetrieverCache();
     resetKgCache();
