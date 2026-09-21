@@ -127,7 +127,12 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
   if (/全記録|記録一覧|所属選手|ランキング|トップ\s*\d+|何位/.test(q)) {
     return flat.slice(0, budget);
   }
-  if (/最新|直近|今年/.test(q) && /優勝/.test(q) && /荒玉|駅伝/.test(q)) {
+  if (
+    /優勝/.test(q) &&
+    /荒玉|駅伝/.test(q) &&
+    (/最新|直近|今年/.test(q) || (!/20\d{2}/.test(q) && /優勝校|優勝は/.test(q))) &&
+    !/差|タイム/.test(q)
+  ) {
     const gender = /女子/.test(q) ? "女子" : /男子/.test(q) ? "男子" : "";
     if (gender) {
       const re = new RegExp(`20\\d{2}年荒玉駅伝${gender}の優勝校は[^。]+。`, "g");
@@ -593,10 +598,12 @@ function offlineAnswer(
       /総合.*(?:大会記録|記録)|ボード/.test(question) &&
       /荒玉|駅伝|ボード/.test(question);
     const latestWinner =
-      /最新|直近|今年/.test(question) &&
+      (/最新|直近|今年/.test(question) ||
+        (!/20\d{2}/.test(question) && /優勝校|優勝は/.test(question))) &&
       /優勝/.test(question) &&
       /男子|女子/.test(question) &&
-      /荒玉|駅伝/.test(question);
+      /荒玉|駅伝/.test(question) &&
+      !/差|タイム/.test(question);
     const latestWinnerTime =
       /総合タイム|優勝タイム/.test(question) &&
       /男子|女子/.test(question) &&
@@ -1424,10 +1431,12 @@ export async function answerQuestion(
     /荒玉|駅伝/.test(question) &&
     /2位|準優勝/.test(question);
   const latestWinnerQ =
-    /最新|直近|今年/.test(question) &&
+    (/最新|直近|今年/.test(question) ||
+      (!/20\d{2}/.test(question) && /優勝校|優勝は/.test(question))) &&
     /優勝/.test(question) &&
     /男子|女子/.test(question) &&
-    /荒玉|駅伝/.test(question);
+    /荒玉|駅伝/.test(question) &&
+    !/差|タイム/.test(question);
   const latestWinnerTimeQ =
     /総合タイム|優勝タイム/.test(question) &&
     /男子|女子/.test(question) &&
