@@ -506,7 +506,7 @@ function pathQueryBonus(source: string, query: string): number {
   const s = source;
   let bonus = 0;
   if (
-    /なごみ駅伝.*集合場所|集合場所.*なごみ駅伝/.test(q) &&
+    /なごみ.*集合|集合.*なごみ/.test(q) &&
     /line-chats\/daiming-parents/.test(s)
   ) {
     bonus += 600;

@@ -430,6 +430,21 @@ describe("answerQuestion", () => {
     }
   });
 
+  it("handles the short なごみ集合場所 phrasing", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("なごみの集合場所どこ？", {
+      llm: null,
+      skipRouter: true,
+      defaultYear: 2026,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.sources.some((s) => s.includes("line-chats/daiming-parents"))).toBe(true);
+      expect(result.text).toContain("和水町三加和公民館");
+    }
+  });
+
   it("llm sees なごみ context for 9/20", async () => {
     resetRetrieverCache();
     resetKgCache();
