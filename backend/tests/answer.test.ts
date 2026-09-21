@@ -2260,6 +2260,23 @@ describe("answerQuestion", () => {
     }
   });
 
+  it("keeps a なごみ区間順位 list query as a result-table view", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("なごみ駅伝の男子2区の区間順位は？", {
+      skipRouter: true,
+      defaultYear: 2026,
+      llm: null,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.text).toContain("男子成績表");
+      expect(result.text).toContain("NJAC");
+      expect(result.text).not.toContain("区間1位:");
+      expect(result.sources[0]).toContain("男子成績表.md");
+    }
+  });
+
   it("answers なごみ 岱明男子1区 from 2026 order list, not 金栗駅伝", async () => {
     resetRetrieverCache();
     resetKgCache();

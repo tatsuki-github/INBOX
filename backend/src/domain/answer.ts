@@ -142,7 +142,7 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
       return `${label}: ${rows.map(([rank, [team, total]]) => `${rank}位 ${team} ${total}`).join("、")}。`;
     }
   }
-  if (/なごみ/.test(q) && /区間/.test(q) && /[1-6]区/.test(q) && /(?:\d+位|順位|誰)/.test(q)) {
+  if (/なごみ/.test(q) && /区間/.test(q) && /[1-6]区/.test(q) && /(?:\d+位|誰)/.test(q)) {
     const leg = Number(q.match(/([1-6])区/)?.[1]);
     const rank = Number(q.match(/区間\s*(\d+)\s*位/)?.[1] ?? (q.match(/(\d+)位/)?.[1] ?? 1));
     const rows = [...flat.matchAll(
@@ -155,6 +155,9 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
     if (hit?.result) {
       return `なごみ駅伝${leg}区の区間${rank}位: ${hit.result[1]!.trim()}（${hit.team}）${hit.result[3]}。`;
     }
+  }
+  if (/なごみ/.test(q) && /区間順位|区間順/.test(q) && /[1-6]区/.test(q)) {
+    return flat.slice(0, budget);
   }
   if (/女子/.test(q) && /800m|800ｍ/.test(q) && /最速|一番速|速い/.test(q)) {
     const sectionStart = flat.indexOf("## 800m・上位3人平均");
@@ -900,7 +903,7 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
       return `なごみ駅伝の優勝: ${winners.map((row) => `${row[1]!.trim()} ${row[2]!.trim()}`).join("、")}。`;
     }
   }
-  if (/なごみ/.test(q) && /区間/.test(q) && /[1-6]区/.test(q) && /(?:\d+位|順位|誰)/.test(q)) {
+  if (/なごみ/.test(q) && /区間/.test(q) && /[1-6]区/.test(q) && /(?:\d+位|誰)/.test(q)) {
     const leg = Number(q.match(/([1-6])区/)?.[1]);
     const rank = Number(q.match(/区間\s*(\d+)\s*位/)?.[1] ?? (q.match(/(\d+)位/)?.[1] ?? 1));
     const rows = [...flat.matchAll(
