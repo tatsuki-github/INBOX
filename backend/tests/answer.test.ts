@@ -644,6 +644,22 @@ describe("answerQuestion", () => {
     }
   });
 
+  it("defaults a short gender/leg record-holder question to the latest board row", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("女子4区の記録保持者は？", {
+      llm: null,
+      skipRouter: true,
+      defaultYear: 2026,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.sources[0]).toBe("out-analysis/aragyoku_meet_records.md");
+      expect(result.text).toContain("浦浜実里");
+      expect(result.text).toContain("6:42");
+    }
+  });
+
   it("finds a named historical holder on the meet-record board", async () => {
     resetRetrieverCache();
     resetKgCache();
