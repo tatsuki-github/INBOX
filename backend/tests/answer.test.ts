@@ -2404,6 +2404,22 @@ describe("answerQuestion", () => {
     }
   });
 
+  it("routes a 女子1500m ranking query to the women's ranking digest", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("女子1500mのランキングは？", {
+      skipRouter: true,
+      defaultYear: 2026,
+      llm: null,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.sources[0]).toBe("out-analysis/2026_women_800m_1500m_pb_school_ranking.md");
+      expect(result.text).toContain("女子800m／1500m PB 学校別ランキング");
+      expect(result.text).not.toContain("男子1500m SB 個人ランキング");
+    }
+  });
+
   it("answers 優勝との差 from focus analysis not meet_records board", async () => {
     resetRetrieverCache();
     resetKgCache();
