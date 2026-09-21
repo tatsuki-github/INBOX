@@ -151,6 +151,22 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
       if (matches.length > 0) return matches.map((match) => match[0]).join(" ");
     }
   }
+  if (/区間順位|区間順/.test(q) && /男子|女子/.test(q)) {
+    const gender = /女子/.test(q) ? "女子" : "男子";
+    const headings = [...flat.matchAll(new RegExp(`## (20\\d{2})年 ${gender}`, "g"))];
+    if (headings.length > 0) {
+      const latest = headings.reduce((best, current) =>
+        Number(current[1]) > Number(best[1]) ? current : best,
+      );
+      const start = latest.index ?? 0;
+      const next = flat.indexOf("## ", start + latest[0].length);
+      const section = flat.slice(start, next >= 0 ? next : undefined);
+      const rows = [...section.matchAll(/\|\s*(\d+)\s*\|\s*([^|]+?)\s*\|\s*\d+\s*\|\s*([^|]+?)\s*\|\s*([^|]+?)\s*\|/g)];
+      if (rows.length > 0) {
+        return `${latest[1]}年${gender}の区間: ${rows.map((row) => `${row[1]}区 ${row[2].trim()} ${row[3].trim()}`).join("、")}。`;
+      }
+    }
+  }
   if (/なごみ/.test(q) && /区間/.test(q) && /[1-6]区/.test(q) && /(?:\d+位|誰)/.test(q)) {
     const leg = Number(q.match(/([1-6])区/)?.[1]);
     const rank = Number(q.match(/区間\s*(\d+)\s*位/)?.[1] ?? (q.match(/(\d+)位/)?.[1] ?? 1));
@@ -1380,6 +1396,10 @@ function offlineAnswer(
       /[1-6]区/.test(question) &&
       /区間/.test(question) &&
       /(?:\d+位|順位|誰)/.test(question);
+    const teamLegRankLookup =
+      /区間順位|区間順/.test(question) &&
+      /男子|女子/.test(question) &&
+      /岱明|玉高附属|玉名付属|玉名附属|天水|有明|南関|菊水|玉東|玉陵|長洲/.test(question);
     const nagomiDateLookup =
       /なごみ/.test(question) &&
       /開催日|開催日時|いつ|何日|日付/.test(question) &&
@@ -1443,6 +1463,7 @@ function offlineAnswer(
       resultListLookup ||
       nagomiResultLookup ||
       nagomiLegRankLookup ||
+      teamLegRankLookup ||
       nagomiDateLookup ||
       nagomiVenueLookup ||
       women800FastestLookup ||

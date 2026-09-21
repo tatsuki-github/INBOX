@@ -2294,6 +2294,23 @@ describe("answerQuestion", () => {
     }
   });
 
+  it("answers 岱明の区間順位 from the latest team table", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("岱明男子の区間順位は？", {
+      skipRouter: true,
+      defaultYear: 2026,
+      llm: null,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.text).toContain("倉田裕斗");
+      expect(result.text).toContain("9:32");
+      expect(result.text).toContain("案浦竜士");
+      expect(result.sources[0]).toBe("out-analysis/aragyoku-teams/岱明.md");
+    }
+  });
+
   it("answers なごみ 岱明男子1区 from 2026 order list, not 金栗駅伝", async () => {
     resetRetrieverCache();
     resetKgCache();
