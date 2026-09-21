@@ -910,6 +910,23 @@ describe("answerQuestion", () => {
     }
   });
 
+  it("focuses an explicit-year 1位 question on the winner row", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("2025年荒玉女子の1位は？", {
+      llm: null,
+      skipRouter: true,
+      defaultYear: 2026,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.sources[0]).toBe("aragyoku/winners-by-year.md");
+      expect(result.text).toContain("2025年荒玉駅伝女子の優勝校は「玉名」");
+      expect(result.text).not.toContain("2024年荒玉駅伝");
+      expect(result.text).not.toContain("深掘り分析");
+    }
+  });
+
   it("routes yearless 荒玉 total-time questions to the latest result", async () => {
     resetRetrieverCache();
     resetKgCache();

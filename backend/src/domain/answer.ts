@@ -639,6 +639,26 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
     }
   }
   if (
+    /1位/.test(q) &&
+    /荒玉|駅伝/.test(q) &&
+    /男子|女子/.test(q) &&
+    !/平均ペース|ランキング/.test(q)
+  ) {
+    const gender = /女子/.test(q) ? "女子" : "男子";
+    const re = new RegExp(`20\\d{2}年荒玉駅伝${gender}の優勝校は[^。]+。`, "g");
+    const matches = [...flat.matchAll(re)];
+    if (matches.length > 0) {
+      const requestedYear = q.match(/20\d{2}/)?.[0];
+      const exact = requestedYear
+        ? matches.find((match) => match[0].startsWith(`${requestedYear}年`))
+        : undefined;
+      if (exact) return exact[0]!;
+      return matches.reduce((best, match) =>
+        Number(match[0].slice(0, 4)) >= Number(best[0].slice(0, 4)) ? match : best,
+      )[0]!;
+    }
+  }
+  if (
     !/20\d{2}/.test(q) &&
     /1位/.test(q) &&
     /荒玉|駅伝/.test(q) &&
@@ -994,6 +1014,11 @@ function offlineAnswer(
       /男子|女子/.test(question) &&
       /荒玉|駅伝/.test(question) &&
       !/平均ペース|ランキング/.test(question);
+    const firstPlaceLookup =
+      /荒玉|駅伝/.test(question) &&
+      /1位/.test(question) &&
+      /男子|女子/.test(question) &&
+      !/平均ペース|ランキング/.test(question);
     const genericWinnerYearLookup =
       /優勝校|優勝は/.test(question) &&
       /荒玉|駅伝/.test(question) &&
@@ -1103,6 +1128,7 @@ function offlineAnswer(
       latestWinnerTime ||
       latestRunnerUp ||
       latestFirstPlace ||
+      firstPlaceLookup ||
       genericWinnerYearLookup ||
       winnerTeamLookup ||
       historicalWinnerLookup ||
@@ -1953,6 +1979,12 @@ export async function answerQuestion(
     /男子|女子/.test(question) &&
     /荒玉|駅伝/.test(question) &&
     !/平均ペース|ランキング/.test(question);
+  const firstPlaceQ =
+    /20\d{2}/.test(question) &&
+    /1位/.test(question) &&
+    /男子|女子/.test(question) &&
+    /荒玉|駅伝/.test(question) &&
+    !/平均ペース|ランキング/.test(question);
   const genericWinnerYearQ =
     /優勝校|優勝チーム|優勝は/.test(question) &&
     /荒玉|駅伝/.test(question) &&
@@ -2027,6 +2059,11 @@ export async function answerQuestion(
     ];
   }
   if (latestFirstPlaceQ) {
+    preferredSources = [
+      preferredSources.find((s) => /winners-by-year/.test(s)) ?? "aragyoku/winners-by-year.md",
+    ];
+  }
+  if (firstPlaceQ) {
     preferredSources = [
       preferredSources.find((s) => /winners-by-year/.test(s)) ?? "aragyoku/winners-by-year.md",
     ];
@@ -2296,6 +2333,7 @@ export async function answerQuestion(
     latestWinnerTimeQ ||
     latestRunnerUpQ ||
     latestFirstPlaceQ ||
+    firstPlaceQ ||
     genericWinnerYearQ ||
     historicalWinnerQ ||
     schoolPbRankQ ||
@@ -2338,6 +2376,7 @@ export async function answerQuestion(
         latestWinnerTimeQ ||
         latestRunnerUpQ ||
         latestFirstPlaceQ ||
+        firstPlaceQ ||
         genericWinnerYearQ ||
         historicalWinnerQ ||
         schoolPbRankQ ||
