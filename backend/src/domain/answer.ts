@@ -415,6 +415,12 @@ function boostAthleteRecordSources(query: string, baseSources: string[]): string
   if (/記録|全記録|一覧|所属|選手/.test(q)) {
     const hit = knownTeamFiles.find((stem) => q.includes(stem));
     if (hit) {
+      // A school + SB list has a dedicated current-year digest. The wide SB
+      // CSV is global and row-chunked, so using it directly can return other
+      // schools or only the first matching row.
+      if (/\bSB\b|ＳＢ|シーズンベスト/.test(q)) {
+        push(`out-analysis/arato-tamana-teams/${hit}_SB.md`);
+      }
       push(`out-analysis/arato-tamana-teams/${hit}.md`);
     } else {
       const teamDigestHit = q.match(
@@ -489,6 +495,12 @@ function boostAthleteRecordSources(query: string, baseSources: string[]): string
     if (teamOnly.length > 0) {
       return teamOnly;
     }
+  }
+  // For a named school SB-list question, the dedicated digest is complete;
+  // do not append the all-school CSV as an unfiltered fallback.
+  if (/(?:\bSB\b|ＳＢ|シーズンベスト)/.test(q) && /荒尾三中/.test(q)) {
+    const teamSb = out.find((s) => s.endsWith("/荒尾三中_SB.md"));
+    if (teamSb) return [teamSb];
   }
   // Named athlete PB → stick to SB CSV (avoid 3000m予想ランキング drowning short names)
   const named = extractAthleteNameHints(q).length > 0;
@@ -584,6 +596,11 @@ function boostDaimingLineSources(query: string, baseSources: string[]): string[]
   }
   for (const s of baseSources) push(s);
   return out;
+}
+
+function isNamedTeamSbListQuery(query: string): boolean {
+  const q = query.normalize("NFKC");
+  return /荒尾三中/.test(q) && /(?:\bSB\b|ＳＢ|シーズンベスト)/.test(q) && /選手|一覧|所属/.test(q);
 }
 
 /**
@@ -886,6 +903,7 @@ export async function answerQuestion(
   const expanded = expandDateQuery(question, year, now);
   const topK = deps.topK ?? RETRIEVAL_BUDGET.topK;
   const exhaustive = isExhaustiveListQuery(expanded);
+  const namedTeamSbList = isNamedTeamSbListQuery(expanded);
 
   const canned = matchCannedAnswer(question);
   if (canned) {
@@ -977,7 +995,7 @@ export async function answerQuestion(
   });
   const retrieve = deps.retrieve ?? retrieveContext;
   // Exhaustive: preferred digest coverage alone — BM25 OCR/ADR filler drowns the list
-  const fromBm25 = exhaustive || exactDatedPractice ? [] : retrieve(expanded, topK);
+  const fromBm25 = exhaustive || exactDatedPractice || namedTeamSbList ? [] : retrieve(expanded, topK);
   const mergedCore = mergeRetrieved(
     fromSources,
     fromBm25,

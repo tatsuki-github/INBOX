@@ -139,6 +139,7 @@
 - `out/analysis/arato-tamana-teams/玉陵.md` → `out-analysis/arato-tamana-teams/玉陵.md`
 - `out/analysis/arato-tamana-teams/玉陵中.md` → `out-analysis/arato-tamana-teams/玉陵中.md`
 - `out/analysis/arato-tamana-teams/荒尾三中.md` → `out-analysis/arato-tamana-teams/荒尾三中.md`
+- `out/analysis/arato-tamana-teams/荒尾三中_SB.md` → `out-analysis/arato-tamana-teams/荒尾三中_SB.md`
 - `out/analysis/arato-tamana-teams/荒尾海陽中.md` → `out-analysis/arato-tamana-teams/荒尾海陽中.md`
 - `out/analysis/arato-tamana-teams/荒尾第四中.md` → `out-analysis/arato-tamana-teams/荒尾第四中.md`
 - `out/analysis/arato-tamana-teams/金栗PROJECT.md` → `out-analysis/arato-tamana-teams/金栗PROJECT.md`

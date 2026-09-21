@@ -59,4 +59,22 @@ describe("team full-record routing", () => {
       expect(result.sources.some((s) => s.includes("玉・有明中"))).toBe(true);
     }
   });
+
+  it("answers 荒尾三中 players and SB from the dedicated school digest", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("荒尾三中の選手とSB一覧", {
+      skipRouter: true,
+      defaultYear: 2026,
+      llm: null,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.sources).toEqual(["out-analysis/arato-tamana-teams/荒尾三中_SB.md"]);
+      expect(result.text).toMatch(/田中羚弥/);
+      expect(result.text).toMatch(/福島志帆/);
+      expect(result.text).toMatch(/2:30\.77/);
+      expect(result.text).not.toMatch(/熊本西原中|泗水中/);
+    }
+  });
 });

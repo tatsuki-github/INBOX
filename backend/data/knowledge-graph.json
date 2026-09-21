@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated_at": "2026-09-21T07:43:15Z",
+  "generated_at": "2026-09-21T08:13:11Z",
   "nodes": [
     {
       "id": "corpus:analysis-ocr",
@@ -204,8 +204,8 @@
         "practice"
       ],
       "refs": [
-        "out/analysis/notion_records_2026.json",
         "input/events.2025.yaml",
+        "out/analysis/notion_records_2026.json",
         "out/2025/practice_absentees.csv"
       ],
       "hint": "部員エンティティ"
@@ -220,8 +220,8 @@
         "practice"
       ],
       "refs": [
-        "out/analysis/notion_records_2026.json",
         "input/events.2025.yaml",
+        "out/analysis/notion_records_2026.json",
         "out/2025/practice_absentees.csv"
       ],
       "hint": "所属:岱明中"
@@ -236,8 +236,8 @@
         "practice"
       ],
       "refs": [
-        "out/analysis/notion_records_2026.json",
         "input/events.2025.yaml",
+        "out/analysis/notion_records_2026.json",
         "out/2025/practice_absentees.csv"
       ],
       "hint": "部員エンティティ"
@@ -252,8 +252,8 @@
         "practice"
       ],
       "refs": [
-        "out/analysis/notion_records_2026.json",
         "input/events.2025.yaml",
+        "out/analysis/notion_records_2026.json",
         "out/2025/practice_absentees.csv"
       ],
       "hint": "所属:岱明中"
@@ -268,8 +268,8 @@
         "practice"
       ],
       "refs": [
-        "out/analysis/notion_records_2026.json",
         "input/events.2025.yaml",
+        "out/analysis/notion_records_2026.json",
         "out/2025/practice_absentees.csv"
       ],
       "hint": "部員エンティティ"
@@ -284,8 +284,8 @@
         "practice"
       ],
       "refs": [
-        "out/analysis/notion_records_2026.json",
         "input/events.2025.yaml",
+        "out/analysis/notion_records_2026.json",
         "out/2025/practice_absentees.csv"
       ],
       "hint": "所属:岱明中"
@@ -328,8 +328,8 @@
         "practice"
       ],
       "refs": [
-        "out/analysis/notion_records_2026.json",
         "input/events.2025.yaml",
+        "out/analysis/notion_records_2026.json",
         "out/2025/practice_absentees.csv"
       ],
       "hint": "部員エンティティ"
@@ -344,8 +344,8 @@
         "practice"
       ],
       "refs": [
-        "out/analysis/notion_records_2026.json",
         "input/events.2025.yaml",
+        "out/analysis/notion_records_2026.json",
         "out/2025/practice_absentees.csv"
       ],
       "hint": "所属:岱明中"
@@ -375,8 +375,8 @@
         "practice"
       ],
       "refs": [
-        "out/analysis/notion_records_2026.json",
         "input/events.2025.yaml",
+        "out/analysis/notion_records_2026.json",
         "out/2025/practice_absentees.csv"
       ],
       "hint": "部員エンティティ"
@@ -391,8 +391,8 @@
         "practice"
       ],
       "refs": [
-        "out/analysis/notion_records_2026.json",
         "input/events.2025.yaml",
+        "out/analysis/notion_records_2026.json",
         "out/2025/practice_absentees.csv"
       ],
       "hint": "所属:岱明中"
@@ -407,8 +407,8 @@
         "practice"
       ],
       "refs": [
-        "out/analysis/notion_records_2026.json",
         "input/events.2025.yaml",
+        "out/analysis/notion_records_2026.json",
         "out/2025/practice_absentees.csv"
       ],
       "hint": "部員エンティティ"
@@ -423,8 +423,8 @@
         "practice"
       ],
       "refs": [
-        "out/analysis/notion_records_2026.json",
         "input/events.2025.yaml",
+        "out/analysis/notion_records_2026.json",
         "out/2025/practice_absentees.csv"
       ],
       "hint": "所属:岱明中"
@@ -439,8 +439,8 @@
         "practice"
       ],
       "refs": [
-        "out/analysis/notion_records_2026.json",
         "input/events.2025.yaml",
+        "out/analysis/notion_records_2026.json",
         "out/2025/practice_absentees.csv"
       ],
       "hint": "部員エンティティ"
@@ -455,8 +455,8 @@
         "practice"
       ],
       "refs": [
-        "out/analysis/notion_records_2026.json",
         "input/events.2025.yaml",
+        "out/analysis/notion_records_2026.json",
         "out/2025/practice_absentees.csv"
       ],
       "hint": "所属:岱明中"
@@ -503,8 +503,8 @@
         "practice"
       ],
       "refs": [
-        "out/analysis/notion_records_2026.json",
         "input/events.2025.yaml",
+        "out/analysis/notion_records_2026.json",
         "out/2025/practice_absentees.csv"
       ],
       "hint": "部員エンティティ"
@@ -519,8 +519,8 @@
         "practice"
       ],
       "refs": [
-        "out/analysis/notion_records_2026.json",
         "input/events.2025.yaml",
+        "out/analysis/notion_records_2026.json",
         "out/2025/practice_absentees.csv"
       ],
       "hint": "所属:岱明中"
@@ -535,11 +535,11 @@
         "practice"
       ],
       "refs": [
-        "out/analysis/notion_records_2026.json",
-        "out/2025/practice_absentees.csv",
-        "out/2026/practice_absentees.csv",
         "input/events.2026.yaml",
-        "input/events.2025.yaml"
+        "out/analysis/notion_records_2026.json",
+        "out/2026/practice_absentees.csv",
+        "input/events.2025.yaml",
+        "out/2025/practice_absentees.csv"
       ],
       "hint": "部員エンティティ"
     },
@@ -553,11 +553,11 @@
         "practice"
       ],
       "refs": [
-        "out/analysis/notion_records_2026.json",
-        "out/2025/practice_absentees.csv",
-        "out/2026/practice_absentees.csv",
         "input/events.2026.yaml",
-        "input/events.2025.yaml"
+        "out/analysis/notion_records_2026.json",
+        "out/2026/practice_absentees.csv",
+        "input/events.2025.yaml",
+        "out/2025/practice_absentees.csv"
       ],
       "hint": "所属:岱明中"
     },
@@ -6568,6 +6568,18 @@
       "hint": "荒尾玉名の所属別トラック全記録。荒尾三中 記録一覧（荒尾玉名） / 荒尾・玉名地区の中学生トラック記録を所属（チーム）単位でまとめたもの。 / 出典: Notion 中学生記録 DB / `notion_records_2026.json`。 / 2024年度 / 件数: 33 / 800m / | 性別 | 学年 | 選手 | 記録 | 日付 | 大会/URL | / |---|---:|---|---:|---|---| /"
     },
     {
+      "id": "source:out/analysis/arato-tamana-teams/荒尾三中_SB.md",
+      "type": "Source",
+      "label": "荒尾三中_SB",
+      "topics": [
+        "athlete_records"
+      ],
+      "refs": [
+        "out/analysis/arato-tamana-teams/荒尾三中_SB.md"
+      ],
+      "hint": "荒尾玉名の所属別トラック全記録。荒尾三中 選手・SB一覧（2026年度） / 2026年度の SB 採用記録から、荒尾三中 の選手と距離別 SB をまとめた一覧。 / 年度指定がない学校別質問では、この現行年度一覧を回答の正本として使用する。 / 出典: `input/external/sb/middle-school/by-year/2026-sb-adopted.json` / 選手一覧 / | 選手 | 性別 | 学年 |"
+    },
+    {
       "id": "source:out/analysis/arato-tamana-teams/荒尾海陽中.md",
       "type": "Source",
       "label": "荒尾海陽中",
@@ -11499,6 +11511,11 @@
     {
       "from": "topic:athlete_records",
       "to": "source:out/analysis/arato-tamana-teams/荒尾三中.md",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:athlete_records",
+      "to": "source:out/analysis/arato-tamana-teams/荒尾三中_SB.md",
       "rel": "search_here"
     },
     {

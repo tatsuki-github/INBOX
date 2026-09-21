@@ -638,6 +638,7 @@ def _build_index() -> dict[str, Any]:
 def main() -> int:
     # Refresh analysis markdowns so out-analysis copies stay searchable.
     gen_scripts = [
+        ROOT / "scripts" / "generate_team_sb_digest.py",
         ROOT / "scripts" / "generate_team_record_markdowns.py",
         ROOT / "scripts" / "generate_aragyoku_overview.py",
         ROOT / "scripts" / "generate_aragyoku_2024_2025_focus_analysis.py",
