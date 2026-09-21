@@ -2137,6 +2137,22 @@ describe("answerQuestion", () => {
     }
   });
 
+  it("finds the historical 荒玉男子 runner-up year for a named school", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("玉高附属が荒玉男子で2位になったのは何年？", {
+      skipRouter: true,
+      defaultYear: 2026,
+      llm: null,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.sources[0]).toBe("aragyoku/winners-by-year.md");
+      expect(result.text).toContain("玉高附属が荒玉男子で2位（準優勝）になった年は2024年です。");
+      expect(result.text).not.toContain("2025年荒玉駅伝男子の優勝校");
+    }
+  });
+
   it("answers 荒玉地区 3000m fastest from ranking digest", async () => {
     resetRetrieverCache();
     resetKgCache();

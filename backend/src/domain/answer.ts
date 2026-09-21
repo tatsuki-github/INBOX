@@ -194,6 +194,33 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
     const leaders = rows.filter((row) => row.count === max && max > 0).map((row) => row.school);
     if (leaders.length > 0) return `荒玉男子の総合2位以内回数最多は${leaders.join("・")}（各${max}回）。`;
   }
+  // Historical runner-up questions need the year-by-year winners digest,
+  // not the latest-result preview.
+  if (
+    /荒玉|駅伝/.test(q) &&
+    /男子/.test(q) &&
+    /2位|準優勝/.test(q) &&
+    /何年|何年度|いつ/.test(q)
+  ) {
+    const team = /玉高附属|玉名付属|玉名附属/.test(q)
+      ? "玉高附属"
+      : ["玉名", "菊水", "荒尾四", "荒尾海陽", "南関", "荒尾三", "玉東", "玉南", "玉陵"].find(
+          (name) => q.includes(name),
+        );
+    if (team) {
+      const escaped = team.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+      const years = [
+        ...flat.matchAll(
+          new RegExp(`(20\\d{2})年荒玉駅伝男子の優勝校は[^。]*準優勝校は「${escaped}」`, "g"),
+        ),
+      ].map((match) => match[1]);
+      if (years.length > 0) return `${team}が荒玉男子で2位（準優勝）になった年は${years.join("・")}年です。`;
+      const rowYears = [
+        ...flat.matchAll(new RegExp(`\\|\\s*(20\\d{2})\\s*\\|\\s*男子\\s*\\|[^|]*\\|[^|]*\\|\\s*${escaped}\\s*\\|`, "g")),
+      ].map((match) => match[1]);
+      if (rowYears.length > 0) return `${team}が荒玉男子で2位（準優勝）になった年は${rowYears.join("・")}年です。`;
+    }
+  }
   if (
     !/20\d{2}/.test(q) &&
     /何位|順位/.test(q) &&
@@ -805,6 +832,14 @@ function offlineAnswer(
       /男子/.test(question) &&
       /2位まで|2位以内|総合2位/.test(question) &&
       /多い|最多|何回|回数/.test(question);
+    const teamRunnerUpYearLookup =
+      /荒玉|駅伝/.test(question) &&
+      /男子/.test(question) &&
+      /2位|準優勝/.test(question) &&
+      /何年|何年度|いつ/.test(question) &&
+      /玉高附属|玉名付属|玉名附属|玉名|菊水|荒尾四|荒尾海陽|南関|荒尾三|玉東|玉南|玉陵/.test(
+        question,
+      );
     const teamFullRecordLookup =
       /全記録|所属選手|記録一覧/.test(question) &&
       /南関中|玉名中|天水中|岱明中|長洲中|玉陵中|玉南中|玉名附中|荒尾三中|荒尾第四中|荒尾海陽中/.test(
@@ -839,6 +874,7 @@ function offlineAnswer(
       schoolPbRankLookup ||
       trackLapLookup ||
       top2CountLookup ||
+      teamRunnerUpYearLookup ||
       teamFullRecordLookup ||
       latestTeamRankLookup ||
       teamYearOverYearLookup ||
@@ -1870,6 +1906,17 @@ export async function answerQuestion(
   if (top2CountQ) {
     preferredSources = ["out-analysis/aragyoku_top2_finish_counts.md"];
   }
+  const teamRunnerUpYearQ =
+    /荒玉|駅伝/.test(expanded) &&
+    /男子/.test(expanded) &&
+    /2位|準優勝/.test(expanded) &&
+    /何年|何年度|いつ/.test(expanded) &&
+    /玉高附属|玉名付属|玉名附属|玉名|菊水|荒尾四|荒尾海陽|南関|荒尾三|玉東|玉南|玉陵/.test(
+      expanded,
+    );
+  if (teamRunnerUpYearQ) {
+    preferredSources = ["aragyoku/winners-by-year.md"];
+  }
   const namedAssignmentQ =
     /地点分担|何地点|どの地点|担当地点|地点(?:は|に|です)/.test(expanded) &&
     /熊澤|土山|柴尾|土本/.test(expanded);
@@ -1914,6 +1961,7 @@ export async function answerQuestion(
     schoolPbRankQ ||
     trackLapQ ||
     top2CountQ ||
+    teamRunnerUpYearQ ||
     teamFullRecordQ ||
     latestTeamRankQ ||
     teamYearOverYearQ ||
@@ -1948,6 +1996,7 @@ export async function answerQuestion(
         schoolPbRankQ ||
         trackLapQ ||
         top2CountQ ||
+        teamRunnerUpYearQ ||
         teamFullRecordQ ||
         latestTeamRankQ ||
         teamYearOverYearQ ||
