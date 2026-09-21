@@ -367,7 +367,7 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
   if (
     /優勝/.test(q) &&
     /荒玉|駅伝/.test(q) &&
-    (/最新|直近|今年/.test(q) || (!/20\d{2}/.test(q) && /優勝校|優勝は/.test(q))) &&
+    (/最新|直近|今年/.test(q) || /優勝チーム/.test(q) || (!/20\d{2}/.test(q) && /優勝校|優勝は/.test(q))) &&
     !/差|タイム/.test(q)
   ) {
     const gender = /女子/.test(q) ? "女子" : /男子/.test(q) ? "男子" : "";
@@ -375,6 +375,11 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
       const re = new RegExp(`20\\d{2}年荒玉駅伝${gender}の優勝校は[^。]+。`, "g");
       const matches = [...flat.matchAll(re)];
       if (matches.length > 0) {
+        const requestedYear = q.match(/20\d{2}/)?.[0];
+        if (requestedYear) {
+          const exact = matches.find((match) => match[0].startsWith(`${requestedYear}年`));
+          if (exact) return exact[0]!;
+        }
         let best = matches[0]!;
         for (const match of matches) {
           if (Number(match[0].slice(0, 4)) >= Number(best[0].slice(0, 4))) best = match;
@@ -423,7 +428,7 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
   }
   // 優勝・準優勝の年度表（直近5年ブロックを先頭に据えた winners-by-year）
   if (
-    /優勝校|優勝は/.test(q) &&
+    /優勝校|優勝チーム|優勝は/.test(q) &&
     /荒玉|駅伝/.test(q) &&
     /去年|前年|20\d{2}/.test(q) &&
     !/男子|女子/.test(q)
@@ -949,6 +954,10 @@ function offlineAnswer(
       /荒玉|駅伝/.test(question) &&
       /去年|前年|20\d{2}/.test(question) &&
       !/男子|女子/.test(question);
+    const winnerTeamLookup =
+      /優勝チーム/.test(question) &&
+      /荒玉|駅伝/.test(question) &&
+      /男子|女子/.test(question);
     const teamRankLookup =
       /20\d{2}/.test(question) &&
       /男子|女子/.test(question) &&
@@ -1036,6 +1045,7 @@ function offlineAnswer(
       latestRunnerUp ||
       latestFirstPlace ||
       genericWinnerYearLookup ||
+      winnerTeamLookup ||
       teamRankLookup ||
       schoolPbRankLookup ||
       trackLapLookup ||
@@ -1853,7 +1863,7 @@ export async function answerQuestion(
     /20\d{2}/.test(question) &&
     /男子|女子/.test(question) &&
     /荒玉|駅伝/.test(question) &&
-    /優勝校/.test(question);
+    /優勝校|優勝チーム/.test(question);
   const runnerUpQ =
     /20\d{2}/.test(question) &&
     /男子|女子/.test(question) &&
@@ -1882,7 +1892,7 @@ export async function answerQuestion(
     /荒玉|駅伝/.test(question) &&
     !/平均ペース|ランキング/.test(question);
   const genericWinnerYearQ =
-    /優勝校|優勝は/.test(question) &&
+    /優勝校|優勝チーム|優勝は/.test(question) &&
     /荒玉|駅伝/.test(question) &&
     /去年|前年|20\d{2}/.test(question) &&
     !/男子|女子/.test(question);
