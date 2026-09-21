@@ -127,6 +127,19 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
   const budget = maxChars ?? offlinePreviewBudget(question);
   const flat = text.replace(/\s+/g, " ");
   const q = question.normalize("NFKC");
+  const resultListMatch = q.match(/(20\d{2}).*?(男子|女子).*?(?:結果一覧|結果表|順位表)/);
+  if (resultListMatch && /荒玉|駅伝/.test(q)) {
+    const rowsByRank = new Map<number, [string, string]>();
+    for (const row of flat.matchAll(/(?:^|\s)(\d+)位\s+([^\s]+)\s+(?:総合\s*)?(\d+:\d+)/g)) {
+      const rank = Number(row[1]);
+      if (!rowsByRank.has(rank)) rowsByRank.set(rank, [row[2]!, row[3]!]);
+    }
+    const rows = [...rowsByRank.entries()].sort(([a], [b]) => a - b);
+    if (rows.length > 0) {
+      const label = `${resultListMatch[1]}年荒玉駅伝${resultListMatch[2]}の結果`;
+      return `${label}: ${rows.map(([rank, [team, total]]) => `${rank}位 ${team} ${total}`).join("、")}。`;
+    }
+  }
   const paceCalc = q.match(/([1-6])区/) && q.match(/(\d+)分(?:\s*(\d+)秒)?/);
   if (paceCalc && /ペース|\/km|1km|キロあたり/.test(q) && /荒玉|駅伝/.test(q)) {
     const leg = Number(q.match(/([1-6])区/)![1]);
@@ -1222,6 +1235,11 @@ function offlineAnswer(
       ["岱明", "玉高附属", "玉名付属", "玉名附属", "天水", "有明"].filter((team) =>
         question.includes(team),
       ).length === 1;
+    const resultListLookup =
+      /20\d{2}/.test(question) &&
+      /男子|女子/.test(question) &&
+      /(?:結果一覧|結果表|順位表)/.test(question) &&
+      /荒玉|駅伝/.test(question);
     const kanaguriDate =
       /金栗駅伝/.test(question) &&
       /いつ|何日|何月|開催月|開催時期/.test(question);
@@ -1260,6 +1278,7 @@ function offlineAnswer(
       teamFullRecordLookup ||
       latestTeamRankLookup ||
       teamYearOverYearLookup ||
+      resultListLookup ||
       kanaguriDate;
     const hint = focusedLookup ? question : previewQuery ?? question;
     if (focusedLookup) {
@@ -2235,6 +2254,16 @@ export async function answerQuestion(
   }
   const teamYearOverYearQ =
     /前年比|前年から|前年度比/.test(question) && /男子|女子/.test(question);
+  const resultListQ =
+    /20\d{2}/.test(question) &&
+    /男子|女子/.test(question) &&
+    /(?:結果一覧|結果表|順位表)/.test(question) &&
+    /荒玉|駅伝/.test(question);
+  if (resultListQ) {
+    const resultYear = question.match(/20\d{2}/)?.[0] ?? String(year);
+    const resultGender = /女子/.test(question) ? "女子" : "男子";
+    preferredSources = [`aragyoku/transcripts/${resultYear}-${resultGender}.json`];
+  }
   const teamWinnerMarginQ =
     /20\d{2}/.test(question) &&
     /岱明|玉名付属|玉名附属|玉高附属|天水|有明/.test(question) &&
@@ -2457,14 +2486,17 @@ export async function answerQuestion(
     query: expanded,
     perSource:
       exhaustive || totalMeetRecordQ || teamFullRecordQ || explicitTeamLegRankQ || historicalWinnerQ || winnerYearTeamQ || legRankQuestionQ
+        || resultListQ
         ? 200
         : RETRIEVAL_BUDGET.perSource,
     maxChunks:
       exhaustive || totalMeetRecordQ || teamFullRecordQ || explicitTeamLegRankQ || historicalWinnerQ || winnerYearTeamQ || legRankQuestionQ
+        || resultListQ
         ? 200
         : RETRIEVAL_BUDGET.maxChunks,
       coverage:
       exhaustive || exactDatedPractice || totalMeetRecordQ || teamFullRecordQ || explicitTeamLegRankQ || historicalWinnerQ || winnerYearTeamQ || legRankQuestionQ
+        || resultListQ
         ? "full"
         : "ranked",
   });
@@ -2499,6 +2531,7 @@ export async function answerQuestion(
     top2CountQ ||
     namedLegTimeQ ||
     teamRunnerUpYearQ ||
+    resultListQ ||
     explicitTeamLegQ ||
     teamFullRecordQ ||
     explicitTeamLegRankQ ||
@@ -2525,6 +2558,8 @@ export async function answerQuestion(
           ? Math.max(topK, fromSources.length, 32)
         : legRankQuestionQ
           ? Math.max(topK, fromSources.length, 24)
+        : resultListQ
+          ? Math.max(topK, fromSources.length, 200)
         : explicitTeamLegRankQ
           ? Math.max(topK, fromSources.length)
         : topK,
@@ -2551,6 +2586,7 @@ export async function answerQuestion(
         top2CountQ ||
         namedLegTimeQ ||
         teamRunnerUpYearQ ||
+        resultListQ ||
         explicitTeamLegQ ||
         teamFullRecordQ ||
         explicitTeamLegRankQ ||
