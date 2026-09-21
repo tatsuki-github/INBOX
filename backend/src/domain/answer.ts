@@ -130,6 +130,16 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
   const resultListIntent = /(?:結果(?:一覧|表|は|を|です)?|順位表|順位(?:は|を|だけ|全部)?|全チーム結果|全順位|結果を一覧)/.test(q);
   const resultListYear = q.match(/20\d{2}/)?.[0] ?? "2025";
   const resultListGender = q.match(/(男子|女子)/)?.[1];
+  if (/自己ベスト|自己記録|\bSB\b|\bPB\b/.test(q)) {
+    const name = q.match(/[\p{Script=Han}]{2,8}(?=の(?:自己|記録|SB|PB))/u)?.[0] ?? q.match(/[\p{Script=Han}]{2,8}/u)?.[0];
+    if (name) {
+      const row = flat.match(new RegExp(`${name},([^,]+),([^,]+),([^,]+),([^,]*),([^,]*),`));
+      if (row) {
+        const records = [`800m ${row[4]}`, `1500m ${row[5]}`].filter((value) => !/\s$/.test(value) && !/:\s*$/.test(value));
+        return `${name}（${row[1]}）の自己ベスト: ${records.join("、")}。`;
+      }
+    }
+  }
   if (resultListGender && resultListIntent && /荒玉|駅伝/.test(q)) {
     const rowsByRank = new Map<number, [string, string]>();
     for (const row of flat.matchAll(/(?:^|\s)(\d+)位\s+([^\s]+)\s+(?:総合\s*)?(\d+:\d+)/g)) {
@@ -1408,6 +1418,9 @@ function offlineAnswer(
       /なごみ/.test(question) &&
       /会場/.test(question) &&
       !/集合/.test(question);
+    const namedSelfBestLookup =
+      /自己ベスト|自己記録|\bSB\b|\bPB\b/.test(question) &&
+      /[\p{Script=Han}]{2,8}/u.test(question);
     const women800FastestLookup =
       /女子/.test(question) && /800m|800ｍ/.test(question) && /最速|一番速|速い/.test(question);
     const individualTrackFastestLookup =
@@ -1466,6 +1479,7 @@ function offlineAnswer(
       teamLegRankLookup ||
       nagomiDateLookup ||
       nagomiVenueLookup ||
+      namedSelfBestLookup ||
       women800FastestLookup ||
       individualTrackFastestLookup ||
       kanaguriVenueLookup ||
@@ -1479,6 +1493,11 @@ function offlineAnswer(
               /(?:男子|女子)成績表\.md$/.test(r.chunk.source) &&
               r.chunk.source.includes(/女子/.test(question) ? "女子" : "男子"),
             )
+          : namedSelfBestLookup
+            ? retrieved.filter((r) => {
+                const name = question.match(/[\p{Script=Han}]{2,8}(?=の(?:自己|記録|SB|PB))/u)?.[0] ?? question.match(/[\p{Script=Han}]{2,8}/u)?.[0] ?? "";
+                return name.length > 0 && r.chunk.text.includes(name);
+              })
           : retrieved;
       const joined = (focusedRetrieved.length > 0 ? focusedRetrieved : retrieved)
         .map((r) => r.chunk.text)
@@ -1504,6 +1523,14 @@ function offlineAnswer(
             ),
           )?.[0]
         : undefined;
+      const namedSelfBestPreview = namedSelfBestLookup
+        ? (() => {
+            const name = question.match(/[\p{Script=Han}]{2,8}(?=の(?:自己|記録|SB|PB))/u)?.[0] ?? question.match(/[\p{Script=Han}]{2,8}/u)?.[0] ?? "";
+            return retrieved
+              .map((r) => previewForOffline(r.chunk.text, question))
+              .find((preview) => name.length > 0 && preview.includes(name) && !/名前,所属/.test(preview));
+          })()
+        : undefined;
       const nagomiWinnerPreview =
         nagomiResultLookup && /優勝/.test(question)
           ? (() => {
@@ -1516,7 +1543,7 @@ function offlineAnswer(
             })()
           : undefined;
       const preview =
-        explicitWinnerMatch?.[0] ?? explicitRunnerMatch?.[0] ?? explicitLegSection ?? nagomiWinnerPreview ?? previewForOffline(joined, hint);
+        explicitWinnerMatch?.[0] ?? explicitRunnerMatch?.[0] ?? explicitLegSection ?? nagomiWinnerPreview ?? namedSelfBestPreview ?? previewForOffline(joined, hint);
       lines.push(`1. ${preview}`);
     } else {
       for (const [i, r] of retrieved.entries()) {
@@ -2667,6 +2694,9 @@ export async function answerQuestion(
     ].find((name) => expanded.includes(name));
     if (team) preferredSources = [`out-analysis/aragyoku-teams/${team}.md`];
   }
+  const namedSelfBestQ =
+    /自己ベスト|自己記録|\bSB\b|\bPB\b/.test(expanded) &&
+    /[\p{Script=Han}]{2,8}/u.test(expanded);
   if (latestTeamRankQ) {
     const team = /玉名付属|玉名附属|玉名附/.test(question)
       ? "玉高附属"

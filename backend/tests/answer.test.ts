@@ -2311,6 +2311,23 @@ describe("answerQuestion", () => {
     }
   });
 
+  it("summarizes a named athlete self-best row", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("村上咲稀の自己ベストは？", {
+      skipRouter: true,
+      defaultYear: 2026,
+      llm: null,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.text).toContain("村上咲稀（岱明中）の自己ベスト");
+      expect(result.text).toContain("800m 2:23.45");
+      expect(result.text).toContain("1500m 5:05.65");
+      expect(result.text).not.toContain("名前,所属,性別,カテゴリー");
+    }
+  });
+
   it("answers なごみ 岱明男子1区 from 2026 order list, not 金栗駅伝", async () => {
     resetRetrieverCache();
     resetKgCache();
