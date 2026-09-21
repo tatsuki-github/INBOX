@@ -2210,6 +2210,22 @@ describe("answerQuestion", () => {
     }
   });
 
+  it("states when 金栗駅伝 results are not recorded", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("金栗駅伝の結果は？", {
+      skipRouter: true,
+      defaultYear: 2026,
+      llm: null,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.text).toContain("結果・順位はまだ記載されていません");
+      expect(result.sources[0]).toBe("drive-text/大会/2026年度/0315_金栗駅伝/概要.md");
+      expect(result.sources.every((source) => !source.includes("2025年度"))).toBe(true);
+    }
+  });
+
   it("answers なごみ 岱明男子1区 from 2026 order list, not 金栗駅伝", async () => {
     resetRetrieverCache();
     resetKgCache();
