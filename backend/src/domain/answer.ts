@@ -186,6 +186,18 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
         .join("。 ") + "。";
     }
   }
+  if (!/男子|女子/.test(q) && /荒玉|駅伝/.test(q) && /優勝タイム|総合タイム/.test(q)) {
+    const winners = [...flat.matchAll(
+      /(20\d{2})年\s*荒玉(?:中体連)?駅伝\s*(男子|女子)[\s\S]{0,220}?優勝校（1位）は「([^」]+)」（総合\s*([0-9]+:\d{2})）/g,
+    )];
+    if (winners.length > 0) {
+      const latestYear = Math.max(...winners.map((winner) => Number(winner[1])));
+      return winners
+        .filter((winner) => Number(winner[1]) === latestYear)
+        .map((winner) => winner[1] + "年" + winner[2] + "優勝タイム: " + winner[4] + "（" + winner[3] + "）")
+        .join("。 ") + "。";
+    }
+  }
   if (/20\d{2}/.test(q) && /結果|成績|順位/.test(q)) {
     const year = q.match(/20\d{2}/)?.[0];
     const team = ["荒尾海陽", "荒尾三", "荒尾四", "三加和", "玉高附属", "玉名", "玉南", "腹栄", "岱明", "天水", "有明", "南関", "菊水", "玉東", "玉陵", "長洲"]
@@ -1369,6 +1381,10 @@ function offlineAnswer(
       /荒玉|駅伝/.test(question) &&
       !/優勝チーム/.test(question) &&
       !/男子|女子|20\d{2}|過去|歴代/.test(question);
+    const unqualifiedWinnerTimeLookup =
+      /優勝タイム|総合タイム/.test(question) &&
+      /荒玉|駅伝/.test(question) &&
+      !/男子|女子|20\d{2}|過去|歴代/.test(question);
     const historicalWinnerLookup =
       /荒玉|駅伝/.test(question) &&
       /歴代/.test(question) &&
@@ -1558,6 +1574,7 @@ function offlineAnswer(
       winnerYearTeamLookup ||
       genericWinnerYearLookup ||
       unqualifiedWinnerLookup ||
+      unqualifiedWinnerTimeLookup ||
       winnerTeamLookup ||
       historicalWinnerLookup ||
       latestLegAwardLookup ||
@@ -2518,6 +2535,10 @@ export async function answerQuestion(
     /総合タイム|優勝タイム/.test(question) &&
     /男子|女子/.test(question) &&
     /荒玉|駅伝/.test(question);
+  const unqualifiedWinnerTimeQ =
+    /総合タイム|優勝タイム/.test(question) &&
+    /荒玉|駅伝/.test(question) &&
+    !/男子|女子|20\d{2}|過去|歴代/.test(question);
   const latestRunnerUpQ =
     !/20\d{2}/.test(question) &&
     /準優勝|2位/.test(question) &&
@@ -2680,6 +2701,12 @@ export async function answerQuestion(
     ];
   }
   if (unqualifiedWinnerQ) {
+    preferredSources = [
+      "aragyoku/transcripts/2025-男子.json",
+      "aragyoku/transcripts/2025-女子.json",
+    ];
+  }
+  if (unqualifiedWinnerTimeQ) {
     preferredSources = [
       "aragyoku/transcripts/2025-男子.json",
       "aragyoku/transcripts/2025-女子.json",
@@ -3083,6 +3110,7 @@ export async function answerQuestion(
     runnerUpQ ||
     latestWinnerQ ||
     latestWinnerTimeQ ||
+    unqualifiedWinnerTimeQ ||
     latestRunnerUpQ ||
     latestFirstPlaceQ ||
     firstPlaceQ ||
@@ -3154,6 +3182,7 @@ export async function answerQuestion(
         runnerUpQ ||
         latestWinnerQ ||
         latestWinnerTimeQ ||
+        unqualifiedWinnerTimeQ ||
         latestRunnerUpQ ||
         latestFirstPlaceQ ||
         firstPlaceQ ||
