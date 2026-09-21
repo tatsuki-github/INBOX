@@ -338,6 +338,13 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
     const place = year && flat.match(new RegExp(`${year}年荒玉駅伝${gender}\\s+3位\\s+([^\\s]+)\\s+総合\\s*([0-9]+:\\d{2})`));
     if (place && year) return `${year}年${gender}3位: ${place[1]}（${place[2]}）。`;
   }
+  if (/男子|女子/.test(q) && /荒玉|駅伝/.test(q) && /(?<!\d)[45]位/.test(q) && /20\d{2}/.test(q)) {
+    const year = q.match(/20\d{2}/)?.[0];
+    const gender = /女子/.test(q) ? "女子" : "男子";
+    const rank = q.match(/(?<!\d)([45])位/)?.[1];
+    const place = year && rank && flat.match(new RegExp(`${year}年荒玉駅伝${gender}\\s+${rank}位\\s+([^\\s]+)\\s+総合\\s*([0-9]+:\\d{2})`));
+    if (place && year && rank) return `${year}年${gender}${rank}位: ${place[1]}（${place[2]}）。`;
+  }
   if (/20\d{2}/.test(q) && /結果|成績|順位/.test(q)) {
     const year = q.match(/20\d{2}/)?.[0];
     const team = ["荒尾海陽", "荒尾三", "荒尾四", "三加和", "玉高附属", "玉名", "玉南", "腹栄", "岱明", "天水", "有明", "南関", "菊水", "玉東", "玉陵", "長洲"]
@@ -1541,7 +1548,7 @@ function offlineAnswer(
       /荒玉|駅伝/.test(question) &&
       !/男子|女子|20\d{2}/.test(question);
     const unqualifiedThirdPlaceLookup =
-      /(?<!\d)3位/.test(question) &&
+      /(?<!\d)[3-5]位/.test(question) &&
       /荒玉|駅伝/.test(question) &&
       !/男子|女子|20\d{2}|過去|歴代|区間/.test(question);
     const unqualifiedFourthPlaceLookup =
@@ -1567,7 +1574,7 @@ function offlineAnswer(
       /男子|女子/.test(question) &&
       !/20\d{2}|区間/.test(question);
     const explicitThirdPlaceLookup =
-      /(?<!\d)3位/.test(question) &&
+      /(?<!\d)[3-5]位/.test(question) &&
       /荒玉|駅伝/.test(question) &&
       /男子|女子|20\d{2}/.test(question) &&
       /20\d{2}/.test(question) &&
@@ -2755,7 +2762,7 @@ export async function answerQuestion(
     /荒玉|駅伝/.test(question) &&
     !/男子|女子|20\d{2}/.test(question);
   const unqualifiedThirdPlaceQ =
-    /(?<!\d)3位/.test(question) &&
+    /(?<!\d)[3-5]位/.test(question) &&
     /荒玉|駅伝/.test(question) &&
     !/男子|女子|20\d{2}|過去|歴代|区間/.test(question);
   const unqualifiedFourthPlaceQ =
@@ -2781,7 +2788,7 @@ export async function answerQuestion(
     /男子|女子/.test(question) &&
     !/20\d{2}|区間/.test(question);
   const explicitThirdPlaceQ =
-    /(?<!\d)3位/.test(question) &&
+    /(?<!\d)[3-5]位/.test(question) &&
     /荒玉|駅伝/.test(question) &&
     /男子|女子/.test(question) &&
     /20\d{2}/.test(question) &&
