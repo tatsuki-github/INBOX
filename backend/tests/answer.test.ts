@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { answerQuestion } from "../src/domain/answer.js";
+import { currentDateMention } from "../src/domain/dates.js";
 import type { RetrievedChunk } from "../src/rag/retrieve.js";
 import { resetRetrieverCache } from "../src/rag/retrieve.js";
 import { resetKgCache } from "../src/kg/query.js";
@@ -93,6 +94,29 @@ describe("answerQuestion", () => {
     });
     expect(result.kind).toBe("offline");
     expect(retrievedQuery).toContain("2026年度");
+  });
+
+  it("anchors relative-date retrieval to today's Japan calendar date", async () => {
+    let retrievedQuery = "";
+    const result = await answerQuestion("今日の予定は？", {
+      defaultYear: 2026,
+      skipRouter: true,
+      kgQuery: () => ({
+        question: "x",
+        matched_nodes: [],
+        refs: [],
+        corpus_sources: [],
+      }),
+      retrieve: (query) => {
+        retrievedQuery = query;
+        return [];
+      },
+      llm: null,
+    });
+    const today = currentDateMention();
+    expect(result.kind).toBe("offline");
+    expect(retrievedQuery).toContain(today.iso);
+    expect(retrievedQuery).toContain(today.mmdd);
   });
 
   it("appends CSV result URLs after formatting", async () => {

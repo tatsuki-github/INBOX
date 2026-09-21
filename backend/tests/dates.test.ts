@@ -1,10 +1,24 @@
 import { describe, expect, it } from "vitest";
 import {
+  currentDateMention,
   currentFiscalYear,
   expandDateQuery,
   parseDateMentions,
+  resolveRelativeDates,
   resolveRelativeYears,
 } from "../src/domain/dates.js";
+
+describe("currentDateMention", () => {
+  it("uses Japan time even when UTC is still on the previous date", () => {
+    expect(currentDateMention(new Date("2026-09-20T15:30:00.000Z"))).toEqual({
+      iso: "2026-09-21",
+      mmdd: "0921",
+      month: 9,
+      day: 21,
+      year: 2026,
+    });
+  });
+});
 
 describe("currentFiscalYear", () => {
   it("uses April as the fiscal-year boundary", () => {
@@ -58,11 +72,42 @@ describe("resolveRelativeYears", () => {
   });
 });
 
+describe("resolveRelativeDates", () => {
+  const now = new Date("2026-09-20T15:30:00.000Z");
+
+  it("resolves today, tomorrow, and yesterday from the JST date", () => {
+    expect(resolveRelativeDates("今日と明日と昨日の予定", now).map((m) => m.iso)).toEqual([
+      "2026-09-21",
+      "2026-09-22",
+      "2026-09-20",
+    ]);
+  });
+
+  it("handles month boundaries", () => {
+    expect(resolveRelativeDates("昨日と明日", new Date("2027-01-01T00:30:00.000Z")).map((m) => m.iso)).toEqual([
+      "2026-12-31",
+      "2027-01-02",
+    ]);
+  });
+});
+
 describe("expandDateQuery", () => {
   it("appends iso and mmdd tokens for retrieval", () => {
     const expanded = expandDateQuery("9/20の予定は？", 2026);
     expect(expanded).toContain("2026-09-20");
     expect(expanded).toContain("0920");
+  });
+
+  it("appends concrete dates for relative calendar-day questions", () => {
+    const expanded = expandDateQuery(
+      "今日の予定と明日の大会は？",
+      2026,
+      new Date("2026-09-20T15:30:00.000Z"),
+    );
+    expect(expanded).toContain("2026-09-21");
+    expect(expanded).toContain("0921");
+    expect(expanded).toContain("2026-09-22");
+    expect(expanded).toContain("0922");
   });
 
   it("appends year for 去年 queries", () => {

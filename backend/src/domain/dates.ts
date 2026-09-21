@@ -8,6 +8,36 @@ export type DateMention = {
   mmdd: string;
 };
 
+const JAPAN_TIME_ZONE = "Asia/Tokyo";
+
+type CalendarDateParts = {
+  year: number;
+  month: number;
+  day: number;
+};
+
+function calendarDateParts(
+  now: Date,
+  timeZone: string = JAPAN_TIME_ZONE,
+): CalendarDateParts {
+  const parts = new Intl.DateTimeFormat("en-US", {
+    timeZone,
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+  }).formatToParts(now);
+  const values = new Map(
+    parts
+      .filter((part) => part.type !== "literal")
+      .map((part) => [part.type, Number(part.value)]),
+  );
+  return {
+    year: values.get("year") ?? now.getUTCFullYear(),
+    month: values.get("month") ?? now.getUTCMonth() + 1,
+    day: values.get("day") ?? now.getUTCDate(),
+  };
+}
+
 /**
  * Return the Japanese fiscal year for a date (April–March).
  *
@@ -15,8 +45,8 @@ export type DateMention = {
  * anchored to this value rather than the calendar year in January–March.
  */
 export function currentFiscalYear(now: Date = new Date()): number {
-  const calendarYear = now.getFullYear();
-  return now.getMonth() >= 3 ? calendarYear : calendarYear - 1;
+  const { year, month } = calendarDateParts(now);
+  return month >= 4 ? year : year - 1;
 }
 
 function pad2(n: number): string {
@@ -35,6 +65,57 @@ function toMention(year: number, month: number, day: number): DateMention | null
     iso: `${year}-${pad2(month)}-${pad2(day)}`,
     mmdd: `${pad2(month)}${pad2(day)}`,
   };
+}
+
+/** Return today's calendar date in Japan Standard Time. */
+export function currentDateMention(now: Date = new Date()): DateMention {
+  const { year, month, day } = calendarDateParts(now);
+  return toMention(year, month, day)!;
+}
+
+function shiftDate(mention: DateMention, days: number): DateMention {
+  const shifted = new Date(Date.UTC(mention.year, mention.month - 1, mention.day));
+  shifted.setUTCDate(shifted.getUTCDate() + days);
+  return toMention(
+    shifted.getUTCFullYear(),
+    shifted.getUTCMonth() + 1,
+    shifted.getUTCDate(),
+  )!;
+}
+
+/** Resolve Japanese relative calendar-day words against the current JST date. */
+export function resolveRelativeDates(
+  text: string,
+  now: Date = new Date(),
+): DateMention[] {
+  const anchor = currentDateMention(now);
+  const hits: DateMention[] = [];
+  const seen = new Set<string>();
+  const offsets: Record<string, number> = {
+    今日: 0,
+    きょう: 0,
+    明日: 1,
+    あした: 1,
+    あす: 1,
+    明後日: 2,
+    あさって: 2,
+    明々後日: 3,
+    明明後日: 3,
+    しあさって: 3,
+    昨日: -1,
+    きのう: -1,
+    一昨日: -2,
+    おととい: -2,
+  };
+  const pattern = /明々後日|明明後日|しあさって|明後日|あさって|一昨日|おととい|昨日|きのう|明日|あした|あす|今日|きょう/g;
+  for (const match of text.matchAll(pattern)) {
+    const token = match[0];
+    const date = shiftDate(anchor, offsets[token]!);
+    if (seen.has(date.iso)) continue;
+    seen.add(date.iso);
+    hits.push(date);
+  }
+  return hits;
 }
 
 /**
@@ -80,7 +161,7 @@ export function parseDateMentions(
 
 /** True when the question looks like a date / schedule lookup. */
 export function looksLikeDateQuestion(text: string): boolean {
-  if (parseDateMentions(text).length > 0) return true;
+  if (parseDateMentions(text).length > 0 || resolveRelativeDates(text).length > 0) return true;
   return /予定|カレンダー|スケジュール/.test(text) && /\d/.test(text);
 }
 
@@ -110,13 +191,14 @@ export function resolveRelativeYears(
 export function expandDateQuery(
   question: string,
   defaultYear: number = currentFiscalYear(),
+  now: Date = new Date(),
 ): string {
   const extras: string[] = [];
   for (const y of resolveRelativeYears(question, defaultYear)) {
     extras.push(String(y), `${y}年`);
   }
   const mentions = parseDateMentions(question, defaultYear);
-  for (const m of mentions) {
+  for (const m of [...mentions, ...resolveRelativeDates(question, now)]) {
     extras.push(m.iso, m.mmdd);
   }
 
