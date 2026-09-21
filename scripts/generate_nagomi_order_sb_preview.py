@@ -16,7 +16,7 @@
 
 SB ソース:
 - 2026-sb-adopted.json / Notion（SB採用優先）
-- 玉名郡ナイター（2026-08-29）全結果のうち、既存より速い記録のみ上書き
+- 玉名郡ナイター（2026-08-29）は、岱明メモ等で SB 明記された記録のみ
 """
 from __future__ import annotations
 
@@ -137,40 +137,55 @@ _NIGHTER_ROW_TABLE = re.compile(
 )
 
 
-def iter_tamana_nighter_marks() -> list[tuple[str, str, str]]:
-    """(name, distance, mark_text) を返す。全結果.md 優先、なければ岱明の結果.md。"""
-    path = TAMANA_NIGHTER_FULL_MD if TAMANA_NIGHTER_FULL_MD.exists() else TAMANA_NIGHTER_DAIMYO_MD
-    if not path.exists():
-        return []
-    distance: str | None = None
+def iter_tamana_nighter_marks(gender: str | None = None) -> list[tuple[str, str, str]]:
+    """SB 明記されたナイター記録だけを返す。
+
+    `全結果.md` はタイムの一覧であって SB 判定を含まないため、そのまま
+    SB として取り込まない。SB 明記を含む岱明メモを併読し、男女セクション
+    がある場合は指定 gender に絞る。
+    """
+    paths = [p for p in (TAMANA_NIGHTER_FULL_MD, TAMANA_NIGHTER_DAIMYO_MD) if p.exists()]
     out: list[tuple[str, str, str]] = []
-    for raw in path.read_text(encoding="utf-8").splitlines():
-        line = raw.strip()
-        if not line or line.startswith(
-            ("大会", "日付", "ステータス", "場所", "タグ", "集合", "所属", "ソース", "中学生", "| ---", "| 氏名")
-        ):
-            continue
-        sec_m = _NIGHTER_SECTION.match(line)
-        if sec_m:
-            distance = sec_m.group(1)
-            continue
-        if distance is None or "DNS" in line:
-            continue
-        table_m = _NIGHTER_ROW_TABLE.match(line)
-        if table_m:
-            out.append((table_m.group(1).strip(), distance, table_m.group(2)))
-            continue
-        row_m = _NIGHTER_ROW_DAIMYO.match(line)
-        if row_m:
-            out.append((row_m.group(1).strip(), distance, row_m.group(2)))
+    seen: set[tuple[str, str, str]] = set()
+    for path in paths:
+        distance: str | None = None
+        section_gender: str | None = None
+        for raw in path.read_text(encoding="utf-8").splitlines():
+            line = raw.strip()
+            if not line or line.startswith(
+                ("大会", "日付", "ステータス", "場所", "タグ", "集合", "所属", "ソース", "中学生", "| ---", "| 氏名")
+            ):
+                continue
+            sec_m = _NIGHTER_SECTION.match(line)
+            if sec_m:
+                distance = sec_m.group(1)
+                section_gender = sec_m.group(2)
+                continue
+            if distance is None or "DNS" in line or not re.search(r"(?:^|\s)SB(?:\s|$)", line):
+                continue
+            if gender and section_gender and section_gender != gender:
+                continue
+            table_m = _NIGHTER_ROW_TABLE.match(line)
+            if table_m:
+                row = (table_m.group(1).strip(), distance, table_m.group(2))
+            else:
+                row_m = _NIGHTER_ROW_DAIMYO.match(line)
+                if not row_m:
+                    continue
+                row = (row_m.group(1).strip(), distance, row_m.group(2))
+            if row not in seen:
+                seen.add(row)
+                out.append(row)
     return out
 
 
-def apply_tamana_nighter_sb(by_name: dict[str, AthleteSB], upsert) -> list[str]:
-    """玉名郡ナイター結果から、既存より速い記録のみ SB として取り込む。戻り値は更新ログ。"""
+def apply_tamana_nighter_sb(
+    by_name: dict[str, AthleteSB], upsert, *, gender: str | None = None
+) -> list[str]:
+    """SB 明記された玉名郡ナイター記録を、既存より速い場合だけ取り込む。"""
     date = "2026-08-29"
     updates: list[str] = []
-    for name, distance, mark_text in iter_tamana_nighter_marks():
+    for name, distance, mark_text in iter_tamana_nighter_marks(gender=gender):
         sec = parse_seconds(mark_text)
         if sec is None:
             continue
@@ -290,10 +305,10 @@ def load_sb_index(
             text = str(r.get("time_text") or r.get("sb_text") or fmt_time(sec))
             upsert(name, distance, sec, text, str(r.get("url") or ""), str(r.get("date") or ""), "notion-best")
 
-    # 3) 玉名郡ナイター（2026-08-29）— 既存SBより速いときだけ上書き
+    # 3) 玉名郡ナイター（2026-08-29）— SB明記かつ既存SBより速いときだけ上書き
     nighter_updates: list[str] = []
     if include_nighter:
-        nighter_updates = apply_tamana_nighter_sb(by_name, upsert)
+        nighter_updates = apply_tamana_nighter_sb(by_name, upsert, gender=gender)
 
     return by_name, nighter_updates
 
@@ -588,12 +603,12 @@ def render_markdown(report: dict[str, Any]) -> str:
     distances = report["distances"]
     year = int(report.get("year") or 2026)
     as_of_note = report.get("as_of_note") or (
-        "as_of: 2026-09-18 オーダー / 2026年度 SB（SB採用優先）+ 玉名郡ナイター更新分"
+        "as_of: 2026-09-18 オーダー / 2026年度 SB（SB採用優先）+ ナイターSB明記更新分"
     )
     event_date = report.get("event_date") or "2026-09-20"
     sb_note = report.get("sb_note") or (
         "- **SB反映**: `2026-sb-adopted` / Notion に加え、"
-        "玉名郡ナイター全結果（2026-08-29）で既存より速い記録のみ上書き"
+        "玉名郡ナイターで SB 明記された記録を、既存より速い場合のみ上書き"
     )
     heading = report.get("heading") or f"なごみ駅伝{year} {g} 区間オーダー × 今年度SB・予想"
     lines: list[str] = []
@@ -969,8 +984,13 @@ def main() -> int:
     args = parser.parse_args()
     THRESHOLD_SEC = float(args.threshold)
 
-    sb_index, nighter_updates = load_sb_index()
-    print(f"SB athletes indexed: {len(sb_index)} (threshold={THRESHOLD_SEC}s)")
+    women_sb_index, women_nighter_updates = load_sb_index(gender="女子")
+    men_sb_index, men_nighter_updates = load_sb_index(gender="男子")
+    nighter_updates = women_nighter_updates + men_nighter_updates
+    print(
+        f"SB athletes indexed: women={len(women_sb_index)}, "
+        f"men={len(men_sb_index)} (threshold={THRESHOLD_SEC}s)"
+    )
     if nighter_updates:
         print(f"Tamana nighter SB updates ({len(nighter_updates)}):")
         for u in nighter_updates:
@@ -980,8 +1000,8 @@ def main() -> int:
     women_order = parse_order_md(MEET_DIR / "女子区間オーダーリスト.md")
     men_order = parse_order_md(MEET_DIR / "男子区間オーダーリスト.md")
 
-    women = build_gender_report("女子", women_order, sb_index)
-    men = build_gender_report("男子", men_order, sb_index)
+    women = build_gender_report("女子", women_order, women_sb_index)
+    men = build_gender_report("男子", men_order, men_sb_index)
 
     OUT_DIR.mkdir(parents=True, exist_ok=True)
     CORPUS_MEET.mkdir(parents=True, exist_ok=True)
