@@ -198,7 +198,10 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
     const date = flat.match(/20\d{2}-\d{2}-\d{2}/)?.[0];
     if (date) {
       const [year, month, day] = date.split("-");
-      return flat.replace(date, `${year}年${Number(month)}月${Number(day)}日（${date}）`);
+      return flat.replace(
+        date,
+        `${year}年${Number(month)}月${Number(day)}日（${date}／${Number(month)}/${Number(day)}）`,
+      );
     }
   }
   // 「優勝との差」列を優先（大会記録ボードより focus / team の差表）
@@ -314,6 +317,32 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
       }
     }
   }
+  // A named holder asks for that athlete's board record, not the latest
+  // year's row for the same gender and leg.
+  const athleteMeetRecord = q.match(
+    /([\p{Script=Han}]{2,8})の(?:(?:荒玉|駅伝))?(?:男子|女子)?(?:[1-6]区)?(?:大会)?区間記録/u,
+  );
+  if (athleteMeetRecord) {
+    const name = athleteMeetRecord[1]!;
+    const leg = q.match(/([1-6])区/)?.[1];
+    const gender = q.match(/男子|女子/)?.[0];
+    const nameEscaped = name.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    const nameMatches = [...flat.matchAll(new RegExp(nameEscaped, "g"))].reverse();
+    for (const nameMatch of nameMatches) {
+      const nameIdx = nameMatch.index ?? -1;
+      if (nameIdx < 0) continue;
+      const start = flat.lastIndexOf("。", nameIdx) + 1;
+      const end = flat.indexOf("。", nameIdx);
+      if (end >= start) {
+        const sentence = flat.slice(start, end + 1).trim();
+        const matchesRequestedLeg = !leg || new RegExp(`${leg}区大会区間記録`).test(sentence);
+        const matchesRequestedGender = !gender || sentence.includes(`${gender}の`);
+        if (/大会区間記録/.test(sentence) && matchesRequestedLeg && matchesRequestedGender) {
+          return sentence;
+        }
+      }
+    }
+  }
   // For a gender/leg record query, jump to the latest matching board row
   // rather than showing the digest's opening year or an unrelated table.
   if (
@@ -351,7 +380,10 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
       }
     }
   }
-  if (/総合大会記録|ボード.*男子/.test(q) && /20\d{2}/.test(q)) {
+  if (
+    /総合大会記録|総合.*大会記録|ボード.*男子|男子.*総合.*大会記録|女子.*総合.*大会記録/.test(q) &&
+    /20\d{2}/.test(q)
+  ) {
     const year = q.match(/20\d{2}/)?.[0];
     const gender = /女子/.test(q) ? "女子" : "男子";
     const needle = `${year}年荒玉駅伝${gender}のボード上部・総合大会記録`;
@@ -496,8 +528,17 @@ function offlineAnswer(
     // preview search for a non-existent row and fall back to the document
     // head; use the user's wording for the precise board-row preview.
     const preciseMeetRecord = /(?:男子|女子).*?[1-6]区.*記録/.test(question);
-    const hint = preciseMeetRecord ? question : previewQuery ?? question;
-    if (preciseMeetRecord) {
+    const namedMeetRecord =
+      /[\p{Script=Han}]{2,8}の/u.test(question) &&
+      /大会記録|区間記録|記録保持/.test(question);
+    const totalMeetRecord =
+      /20\d{2}/.test(question) &&
+      /男子|女子/.test(question) &&
+      /総合.*(?:大会記録|記録)|ボード/.test(question) &&
+      /荒玉|駅伝|ボード/.test(question);
+    const focusedMeetRecord = preciseMeetRecord || namedMeetRecord || totalMeetRecord;
+    const hint = focusedMeetRecord ? question : previewQuery ?? question;
+    if (focusedMeetRecord) {
       const preview = previewForOffline(
         retrieved.map((r) => r.chunk.text).join("\n"),
         hint,
@@ -1303,6 +1344,27 @@ export async function answerQuestion(
     /[1-6]区/.test(question) &&
     /記録/.test(question) &&
     !/区間賞|区間順/.test(question);
+  const namedMeetRecordQ =
+    /[\p{Script=Han}]{2,8}の/u.test(question) &&
+    /大会記録|区間記録|記録保持/.test(question) &&
+    !/区間賞|区間順/.test(question);
+  const totalMeetRecordQ =
+    /20\d{2}/.test(question) &&
+    /男子|女子/.test(question) &&
+    /総合.*(?:大会記録|記録)|ボード/.test(question) &&
+    /荒玉|駅伝|ボード/.test(question);
+  if (namedMeetRecordQ) {
+    preferredSources = [
+      preferredSources.find((s) => /aragyoku_meet_records/.test(s)) ??
+        "out-analysis/aragyoku_meet_records.md",
+    ];
+  }
+  if (totalMeetRecordQ) {
+    preferredSources = [
+      preferredSources.find((s) => /aragyoku_meet_records/.test(s)) ??
+        "out-analysis/aragyoku_meet_records.md",
+    ];
+  }
   if (compactWinnerQ) {
     preferredSources = [
       preferredSources.find((s) => /winners-by-year/.test(s)) ?? "aragyoku/winners-by-year.md",
@@ -1360,12 +1422,11 @@ export async function answerQuestion(
     /金栗駅伝/.test(expanded) &&
     /会場|場所|開催日|日付|いつ/.test(expanded) &&
     !/なごみ/.test(expanded);
-
   const fromSources = retrieveBySources(preferredSources, {
     query: expanded,
-    perSource: exhaustive ? 200 : RETRIEVAL_BUDGET.perSource,
-    maxChunks: exhaustive ? 200 : RETRIEVAL_BUDGET.maxChunks,
-    coverage: exhaustive || exactDatedPractice ? "full" : "ranked",
+    perSource: exhaustive || totalMeetRecordQ ? 200 : RETRIEVAL_BUDGET.perSource,
+    maxChunks: exhaustive || totalMeetRecordQ ? 200 : RETRIEVAL_BUDGET.maxChunks,
+    coverage: exhaustive || exactDatedPractice || totalMeetRecordQ ? "full" : "ranked",
   });
   const retrieve = deps.retrieve ?? retrieveContext;
   // Exhaustive: preferred digest coverage alone — BM25 OCR/ADR filler drowns the list
@@ -1383,13 +1444,19 @@ export async function answerQuestion(
     compactWinnerQ ||
     winnerSchoolQ ||
     teamYearOverYearQ ||
+    namedMeetRecordQ ||
+    totalMeetRecordQ ||
     genderLegRecordQ
       ? []
       : retrieve(expanded, topK);
   const mergedCoreRaw = mergeRetrieved(
     fromSources,
     fromBm25,
-    exhaustive ? Math.max(topK, fromSources.length, 96) : topK,
+    exhaustive
+      ? Math.max(topK, fromSources.length, 96)
+      : totalMeetRecordQ
+        ? Math.max(topK, fromSources.length)
+        : topK,
     {
       query: expanded,
       preferPrimaryOrder:
@@ -1398,6 +1465,8 @@ export async function answerQuestion(
         compactWinnerQ ||
         winnerSchoolQ ||
         teamYearOverYearQ ||
+        namedMeetRecordQ ||
+        totalMeetRecordQ ||
         genderLegRecordQ ||
         isLegAthleteQuestion(expanded),
     },

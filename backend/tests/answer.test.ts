@@ -551,6 +551,39 @@ describe("answerQuestion", () => {
     }
   });
 
+  it("finds a named historical holder on the meet-record board", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("一瀬弘樹の男子1区大会区間記録は何年ボード？", {
+      llm: null,
+      skipRouter: true,
+      defaultYear: 2026,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.sources[0]).toBe("out-analysis/aragyoku_meet_records.md");
+      expect(result.text).toContain("2012年荒玉駅伝男子の1区大会区間記録");
+      expect(result.text).toContain("12:28");
+      expect(result.text).not.toContain("米村和真");
+    }
+  });
+
+  it("keeps a named holder's record answer to one board sentence", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("永尾海斗の大会区間記録は？", {
+      llm: null,
+      skipRouter: true,
+      defaultYear: 2026,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.text).toContain("永尾海斗");
+      expect(result.text).toContain("9:38");
+      expect(result.text).not.toContain("2024年荒玉駅伝女子");
+    }
+  });
+
   it("routes a named runner's 区間タイム to the team race digest", async () => {
     resetRetrieverCache();
     resetKgCache();
@@ -736,6 +769,23 @@ describe("answerQuestion", () => {
       expect(result.sources[0]).toBe("out-analysis/aragyoku_meet_records.md");
       expect(result.text).toContain("2025年荒玉駅伝男子のボード上部・総合大会記録");
       expect(result.text).toContain("56:38");
+    }
+  });
+
+  it("recognizes separated total-record phrasing", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("2024年荒玉男子総合の大会記録は？", {
+      llm: null,
+      skipRouter: true,
+      defaultYear: 2026,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.sources[0]).toBe("out-analysis/aragyoku_meet_records.md");
+      expect(result.text).toContain("2024年荒玉駅伝男子のボード上部・総合大会記録");
+      expect(result.text).toContain("56:38");
+      expect(result.text).toContain("南関中");
     }
   });
 
