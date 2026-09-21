@@ -130,6 +130,13 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
   if (/荒玉|駅伝/.test(q) && /参加校|出場校|参加チーム/.test(q)) {
     return "荒玉中体連駅伝の参加校確定一覧は、手元の正本資料では確認できません。";
   }
+  if (
+    /荒玉|駅伝/.test(q) &&
+    /区間記録/.test(q) &&
+    !/[1-6]区|男子|女子|20\d{2}/.test(q)
+  ) {
+    return "荒玉駅伝の区間記録は、区間・性別・年度を指定してください。";
+  }
   if (/荒玉|駅伝/.test(q) && /今年/.test(q) && /結果|順位|優勝校|優勝チーム/.test(q)) {
     return "2026年の荒玉中体連駅伝は開催予定の記録のみで、結果・順位はまだ記載されていません。";
   }

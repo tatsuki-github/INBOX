@@ -778,6 +778,21 @@ describe("answerQuestion", () => {
     }
   });
 
+  it("clarifies an underspecified aragyoku split-record query", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("荒玉駅伝の区間記録は？", {
+      llm: null,
+      skipRouter: true,
+      defaultYear: 2026,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.text).toContain("区間・性別・年度を指定してください");
+      expect(result.text).not.toContain("6区大会区間記録");
+    }
+  });
+
   it("answers an unqualified first-place question for both genders", async () => {
     resetRetrieverCache();
     resetKgCache();
