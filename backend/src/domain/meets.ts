@@ -46,6 +46,9 @@ export function detectMeetKind(query: string): MeetKind {
   if (/20\d{2}/.test(q) && /男子|女子/.test(q) && /[1-6]区/.test(q) && /記録/.test(q)) {
     return "aragyoku";
   }
+  if (/男子|女子/.test(q) && /[1-6]区/.test(q) && /記録/.test(q)) {
+    return "aragyoku";
+  }
 
   // 「案浦竜士は何区を走った？」— unnamed race-leg defaults to club 荒玉, not 通信陸上
   if (isLegAthleteQuestion(q)) return "aragyoku";

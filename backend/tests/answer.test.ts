@@ -523,6 +523,21 @@ describe("answerQuestion", () => {
     }
   });
 
+  it("defaults an unqualified gender/leg record to the meet-record board", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("女子2区の大会記録だれ？", {
+      llm: null,
+      skipRouter: true,
+      defaultYear: 2026,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.sources[0]).toBe("out-analysis/aragyoku_meet_records.md");
+      expect(result.text).toContain("井上智世");
+    }
+  });
+
   it("llm sees なごみ context for 9/20", async () => {
     resetRetrieverCache();
     resetKgCache();
