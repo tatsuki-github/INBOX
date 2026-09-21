@@ -1207,6 +1207,38 @@ describe("answerQuestion", () => {
     }
   });
 
+  it("focuses composite winner-time phrasing on the requested result sentence", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("2024年荒玉男子の優勝は南関でタイムは？", {
+      llm: null,
+      skipRouter: true,
+      defaultYear: 2026,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.sources[0]).toBe("aragyoku/winners-by-year.md");
+      expect(result.text).toContain("2024年荒玉駅伝男子の優勝校は「南関」（総合 56:38）");
+      expect(result.text).not.toContain("女子・直近5年");
+    }
+  });
+
+  it("focuses compact winner total-time phrasing on the requested result sentence", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("2025女子優勝の玉名の総合タイムは？", {
+      llm: null,
+      skipRouter: true,
+      defaultYear: 2026,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.sources[0]).toBe("aragyoku/winners-by-year.md");
+      expect(result.text).toContain("2025年荒玉駅伝女子の優勝校は「玉名」（総合 41:58）");
+      expect(result.text).not.toContain("2024年荒玉駅伝男子の優勝校は");
+    }
+  });
+
   it("defaults an underspecified 荒玉 distance question to the current course", async () => {
     resetRetrieverCache();
     resetKgCache();
