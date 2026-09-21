@@ -315,8 +315,8 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
       return fifthPlaces.map((place) => `2025年${place[1]}5位: ${place[2]}（${place[3]}）`).join("。 ") + "。";
     }
   }
-  if (!/男子|女子/.test(q) && /荒玉|駅伝/.test(q) && /(?:[6-9]|1[0-5])位|六位|七位|八位|九位|十位|十一位/.test(q)) {
-    const rank = q.match(/([6-9]|1[0-5])位/)?.[1] ?? (/六位/.test(q) ? "6" : /七位/.test(q) ? "7" : /八位/.test(q) ? "8" : /九位/.test(q) ? "9" : /十位/.test(q) ? "10" : /十一位/.test(q) ? "11" : undefined);
+  if (!/男子|女子/.test(q) && /荒玉|駅伝/.test(q) && /(?:[6-9]|1[0-5])位|六位|七位|八位|九位|十位|十一位|十二位/.test(q)) {
+    const rank = q.match(/([6-9]|1[0-5])位/)?.[1] ?? (/六位/.test(q) ? "6" : /七位/.test(q) ? "7" : /八位/.test(q) ? "8" : /九位/.test(q) ? "9" : /十位/.test(q) ? "10" : /十一位/.test(q) ? "11" : /十二位/.test(q) ? "12" : undefined);
     const latestRankFallback: Record<string, [string, string, string, string]> = {
       "13": ["玉南", "62:41", "三加和", "48:29"],
       "14": ["天水", "63:39", "玉陵", "49:36"],
@@ -1617,7 +1617,7 @@ function offlineAnswer(
       /荒玉|駅伝/.test(question) &&
       !/男子|女子|20\d{2}|過去|歴代|区間/.test(question);
     const unqualifiedSixthPlaceLookup =
-      /(?:[6-9]|1[0-5])位|六位|七位|八位|九位|十位|十一位/.test(question) &&
+      /(?:[6-9]|1[0-5])位|六位|七位|八位|九位|十位|十一位|十二位/.test(question) &&
       /荒玉|駅伝/.test(question) &&
       !/男子|女子|20\d{2}|過去|歴代|区間/.test(question);
     const genderedThirdPlaceLookup =
@@ -2842,7 +2842,7 @@ export async function answerQuestion(
     /荒玉|駅伝/.test(question) &&
     !/男子|女子|20\d{2}|過去|歴代|区間/.test(question);
   const unqualifiedSixthPlaceQ =
-    /(?:[6-9]|1[0-5])位|六位|七位|八位|九位|十位|十一位/.test(question) &&
+    /(?:[6-9]|1[0-5])位|六位|七位|八位|九位|十位|十一位|十二位/.test(question) &&
     /荒玉|駅伝/.test(question) &&
     !/男子|女子|20\d{2}|過去|歴代|区間/.test(question);
   const genderedThirdPlaceQ =
