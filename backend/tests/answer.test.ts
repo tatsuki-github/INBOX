@@ -166,6 +166,21 @@ describe("answerQuestion", () => {
     }
   });
 
+  it("shows the date and venue for the 玉名市合同練習会 offline", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("玉名市合同練習会はいつどこ？", {
+      llm: null,
+      skipRouter: true,
+      defaultYear: 2026,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.text).toContain("2026年9月22日");
+      expect(result.text).toContain("おおはまふれあいセンター");
+    }
+  });
+
   it("llm sees なごみ context for 9/20", async () => {
     resetRetrieverCache();
     resetKgCache();

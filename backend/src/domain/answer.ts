@@ -197,6 +197,22 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
       }
     }
   }
+  // 合同練習会の「いつ・どこ」質問は、保護者LINE要約の冒頭ではなく
+  // 予定セクションを見せる。冒頭だけを返すと日付・会場が同じ文書内に
+  // あってもオフライン回答から落ちる。
+  if (/合同練習会|おおはま/.test(q)) {
+    for (const needle of [
+      "### 玉名市合同練習会",
+      "おおはまふれあいセンター",
+      "2026年9月22日",
+    ]) {
+      const idx = flat.indexOf(needle);
+      if (idx >= 0) {
+        const start = Math.max(0, idx - 40);
+        return flat.slice(start, Math.min(flat.length, start + budget));
+      }
+    }
+  }
   // 「案浦竜士は何区を走った？」→ `| N | 案浦竜士 |` を N区 として明示
   if (isLegAthleteQuestion(q) && /何区/.test(q)) {
     const who = q.match(/([\u3400-\u9fff]{2,8})は.{0,20}何区/);
