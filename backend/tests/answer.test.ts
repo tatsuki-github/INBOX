@@ -935,6 +935,21 @@ describe("answerQuestion", () => {
     }
   });
 
+  it("answers an explicit-year gendered aragyoku third-place question", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("2025年荒玉女子の3位はどのチーム？", {
+      llm: null,
+      skipRouter: true,
+      defaultYear: 2026,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.text).toContain("2025年女子3位: 玉東（44:24）");
+      expect(result.text).not.toContain("深掘り分析");
+    }
+  });
+
   it("lists all historical winners for a gender-specific 歴代 question", async () => {
     resetRetrieverCache();
     resetKgCache();

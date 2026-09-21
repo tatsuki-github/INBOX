@@ -304,6 +304,12 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
     const place = rank && flat.match(new RegExp(`2025年荒玉駅伝${gender}\\s+${rank}位\\s+([^\\s]+)\\s+総合\\s*([0-9]+:\\d{2})`));
     if (place && rank) return `2025年${gender}${rank}位: ${place[1]}（${place[2]}）。`;
   }
+  if (/男子|女子/.test(q) && /荒玉|駅伝/.test(q) && /3位/.test(q) && /20\d{2}/.test(q)) {
+    const year = q.match(/20\d{2}/)?.[0];
+    const gender = /女子/.test(q) ? "女子" : "男子";
+    const place = year && flat.match(new RegExp(`${year}年荒玉駅伝${gender}\\s+3位\\s+([^\\s]+)\\s+総合\\s*([0-9]+:\\d{2})`));
+    if (place && year) return `${year}年${gender}3位: ${place[1]}（${place[2]}）。`;
+  }
   if (/20\d{2}/.test(q) && /結果|成績|順位/.test(q)) {
     const year = q.match(/20\d{2}/)?.[0];
     const team = ["荒尾海陽", "荒尾三", "荒尾四", "三加和", "玉高附属", "玉名", "玉南", "腹栄", "岱明", "天水", "有明", "南関", "菊水", "玉東", "玉陵", "長洲"]
@@ -1528,6 +1534,12 @@ function offlineAnswer(
       /荒玉|駅伝/.test(question) &&
       /男子|女子/.test(question) &&
       !/20\d{2}|区間/.test(question);
+    const explicitThirdPlaceLookup =
+      /3位/.test(question) &&
+      /荒玉|駅伝/.test(question) &&
+      /男子|女子|20\d{2}/.test(question) &&
+      /20\d{2}/.test(question) &&
+      !/区間/.test(question);
     const historicalWinnerLookup =
       /荒玉|駅伝/.test(question) &&
       /歴代/.test(question) &&
@@ -1731,6 +1743,7 @@ function offlineAnswer(
       unqualifiedFifthPlaceLookup ||
       genderedThirdPlaceLookup ||
       genderedFourthFifthPlaceLookup ||
+      explicitThirdPlaceLookup ||
       winnerTeamLookup ||
       historicalWinnerLookup ||
       latestLegAwardLookup ||
@@ -2730,6 +2743,12 @@ export async function answerQuestion(
     /荒玉|駅伝/.test(question) &&
     /男子|女子/.test(question) &&
     !/20\d{2}|区間/.test(question);
+  const explicitThirdPlaceQ =
+    /3位/.test(question) &&
+    /荒玉|駅伝/.test(question) &&
+    /男子|女子/.test(question) &&
+    /20\d{2}/.test(question) &&
+    !/区間/.test(question);
   const latestRunnerUpQ =
     !/20\d{2}/.test(question) &&
     /準優勝|2位/.test(question) &&
@@ -2939,6 +2958,10 @@ export async function answerQuestion(
     preferredSources = [
       `aragyoku/transcripts/2025-${/女子/.test(question) ? "女子" : "男子"}.json`,
     ];
+  }
+  if (explicitThirdPlaceQ) {
+    const resultYear = question.match(/20\d{2}/)?.[0] ?? "2025";
+    preferredSources = [`aragyoku/transcripts/${resultYear}-${/女子/.test(question) ? "女子" : "男子"}.json`];
   }
   if (historicalWinnerQ) {
     preferredSources = [
@@ -3306,17 +3329,17 @@ export async function answerQuestion(
     query: expanded,
     perSource:
       exhaustive || totalMeetRecordQ || teamFullRecordQ || explicitTeamLegRankQ || historicalWinnerQ || winnerYearTeamQ || legRankQuestionQ || namedLegTimeQ
-        || resultListQ || genericResultQ || topThreeQ || explicitLegAwardQ || schoolPbRankQ || nagomiLegOrderQ || nagomiLegRankQ || nagomiResultQ || nagomiDateQ || nagomiVenueQ || kanaguriResultQ || aragyokuDateQ || aragyokuVenueQ || datedTeamResultQ || unqualifiedTeamResultQ
+        || resultListQ || genericResultQ || topThreeQ || explicitThirdPlaceQ || explicitLegAwardQ || schoolPbRankQ || nagomiLegOrderQ || nagomiLegRankQ || nagomiResultQ || nagomiDateQ || nagomiVenueQ || kanaguriResultQ || nagomiDateQ || nagomiVenueQ || kanaguriResultQ || aragyokuDateQ || aragyokuVenueQ || datedTeamResultQ || unqualifiedTeamResultQ
         ? 200
         : RETRIEVAL_BUDGET.perSource,
     maxChunks:
       exhaustive || totalMeetRecordQ || teamFullRecordQ || explicitTeamLegRankQ || historicalWinnerQ || winnerYearTeamQ || legRankQuestionQ || namedLegTimeQ
-        || resultListQ || genericResultQ || topThreeQ || explicitLegAwardQ || schoolPbRankQ || nagomiLegOrderQ || nagomiLegRankQ || nagomiResultQ || nagomiDateQ || nagomiVenueQ || kanaguriResultQ || aragyokuDateQ || aragyokuVenueQ || datedTeamResultQ || unqualifiedTeamResultQ
+        || resultListQ || genericResultQ || topThreeQ || explicitThirdPlaceQ || explicitLegAwardQ || schoolPbRankQ || nagomiLegOrderQ || nagomiLegRankQ || nagomiResultQ || nagomiDateQ || nagomiVenueQ || kanaguriResultQ || aragyokuDateQ || aragyokuVenueQ || datedTeamResultQ || unqualifiedTeamResultQ
         ? 200
         : RETRIEVAL_BUDGET.maxChunks,
       coverage:
       exhaustive || exactDatedPractice || totalMeetRecordQ || teamFullRecordQ || explicitTeamLegRankQ || historicalWinnerQ || winnerYearTeamQ || legRankQuestionQ || namedLegTimeQ
-        || resultListQ || genericResultQ || topThreeQ || explicitLegAwardQ || schoolPbRankQ || nagomiLegOrderQ || nagomiLegRankQ || nagomiResultQ || nagomiDateQ || nagomiVenueQ || kanaguriResultQ || aragyokuDateQ || aragyokuVenueQ || datedTeamResultQ || unqualifiedTeamResultQ
+        || resultListQ || genericResultQ || topThreeQ || explicitThirdPlaceQ || explicitLegAwardQ || schoolPbRankQ || nagomiLegOrderQ || nagomiLegRankQ || nagomiResultQ || nagomiDateQ || nagomiVenueQ || kanaguriResultQ || aragyokuDateQ || aragyokuVenueQ || datedTeamResultQ || unqualifiedTeamResultQ
         ? "full"
         : "ranked",
   });
@@ -3347,6 +3370,7 @@ export async function answerQuestion(
     unqualifiedFifthPlaceQ ||
     genderedThirdPlaceQ ||
     genderedFourthFifthPlaceQ ||
+    explicitThirdPlaceQ ||
     latestRunnerUpQ ||
     latestFirstPlaceQ ||
     firstPlaceQ ||
@@ -3427,6 +3451,7 @@ export async function answerQuestion(
         unqualifiedFifthPlaceQ ||
         genderedThirdPlaceQ ||
         genderedFourthFifthPlaceQ ||
+        explicitThirdPlaceQ ||
         latestRunnerUpQ ||
         latestFirstPlaceQ ||
         firstPlaceQ ||
