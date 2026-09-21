@@ -187,6 +187,18 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
       }
     }
   }
+  if (!/男子|女子/.test(q) && /荒玉|駅伝/.test(q) && /優勝/.test(q) && /準優勝/.test(q)) {
+    const pairs = [...flat.matchAll(
+      /(20\d{2})年\s*荒玉(?:中体連)?駅伝\s*(男子|女子)[\s\S]{0,220}?優勝校(?:（1位）)?は「([^」]+)」(?:（総合\s*([0-9]+:\d{2})）)?、準優勝校は「([^」]+)」（総合\s*([0-9]+:\d{2}|—)）/g,
+    )];
+    if (pairs.length > 0) {
+      const latestYear = Math.max(...pairs.map((pair) => Number(pair[1])));
+      return pairs
+        .filter((pair) => Number(pair[1]) === latestYear)
+        .map((pair) => `${pair[1]}年${pair[2]}優勝校: ${pair[3]}（${pair[4] ?? ""}）、準優勝校: ${pair[5]}（${pair[6]}）`)
+        .join("。 ") + "。";
+    }
+  }
   if (!/男子|女子/.test(q) && /荒玉|駅伝/.test(q) && /優勝校|優勝チーム|優勝は|優勝した学校|優勝したチーム/.test(q)) {
     const winners = [...flat.matchAll(
       /(20\d{2})年\s*荒玉(?:中体連)?駅伝\s*(男子|女子)[\s\S]{0,220}?優勝校(?:（1位）)?は「([^」]+)」（総合\s*([0-9]+:\d{2})）/g,

@@ -905,6 +905,21 @@ describe("answerQuestion", () => {
     }
   });
 
+  it("keeps winner and runner-up together for a combined question", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("荒玉駅伝の優勝校と準優勝校は？", {
+      llm: null,
+      skipRouter: true,
+      defaultYear: 2026,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.text).toContain("2025年女子優勝校: 玉名（41:58）、準優勝校: 南関（43:45）");
+      expect(result.text).toContain("2025年男子優勝校: 菊水（56:17）、準優勝校: 玉陵（58:02）");
+    }
+  });
+
   it("lists all historical winners for a gender-specific 歴代 question", async () => {
     resetRetrieverCache();
     resetKgCache();
