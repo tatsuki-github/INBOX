@@ -522,6 +522,11 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
     const meeting = flat.match(/集合\s*\|\s*([^|]+)\s*\|/) ?? flat.match(/集合:\s*([^。]+)/);
     if (meeting) return `集合時刻: ${meeting[1]!.trim()}。`;
   }
+  if (/練習会/.test(q) && /いつ|どこ|会場|場所/.test(q)) {
+    const date = flat.match(/期日\s*\|\s*([^|]+)\s*\|/)?.[1]?.trim();
+    const venue = flat.match(/会場\s*\|\s*([^|]+)\s*\|/)?.[1]?.trim();
+    if (date && venue) return `開催日: ${date}。会場: ${venue}。`;
+  }
   if (/練習会/.test(q) && /会費|参加費|参加料|料金|費用/.test(q)) {
     const fee = flat.match(/会費\s*\|\s*学生\s*1,?000円\s*／\s*一般\s*2,?000円/);
     if (fee) return "会費: 学生 1,000円／一般 2,000円";
@@ -947,6 +952,8 @@ function offlineAnswer(
     const practiceGatherLookup =
       /練習会/.test(question) &&
       /集合時刻|集合時間|集合は|何時/.test(question);
+    const practiceVenueLookup =
+      /練習会/.test(question) && /いつ|どこ|会場|場所/.test(question);
     const morningPracticeLookup =
       /朝練/.test(question) && /曜日|いつ|何時|集合/.test(question);
     const top2CountLookup =
@@ -1010,6 +1017,7 @@ function offlineAnswer(
       assignmentLookup ||
       matSizeLookup ||
       practiceGatherLookup ||
+      practiceVenueLookup ||
       morningPracticeLookup ||
       namedLegTimeLookup ||
       teamLegLookup ||
