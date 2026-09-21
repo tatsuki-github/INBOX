@@ -1521,7 +1521,8 @@ function boostAthleteRecordSources(query: string, baseSources: string[]): string
   const schoolPbRankQ =
     (/学校別|所属別/.test(q) && /ランキング|1500|800|平均/.test(q)) ||
     (/800m|800ｍ|1500m|1500ｍ/.test(q) &&
-      /上位\s*\d+\s*人平均|上位\d人平均|学校別|所属別/.test(q));
+      /上位\s*\d+\s*人平均|上位\d人平均|学校別|所属別/.test(q)) ||
+    (/女子/.test(q) && /800m|800ｍ/.test(q) && /ランキング|順位/.test(q));
   if (schoolPbRankQ) {
     if (/800/.test(q) || /女子/.test(q)) {
       push("out-analysis/2026_women_800m_1500m_pb_school_ranking.md");
@@ -2452,9 +2453,9 @@ export async function answerQuestion(
   }
   const schoolPbRankQ =
     /1500m|1500ｍ|800m|800ｍ/.test(expanded) &&
-    /上位\s*\d+\s*人平均|上位\d+人平均|学校別|所属別/.test(
+    (/上位\s*\d+\s*人平均|上位\d+人平均|学校別|所属別/.test(
       expanded,
-    );
+    ) || (/女子/.test(expanded) && /800m|800ｍ/.test(expanded) && /ランキング|順位/.test(expanded)));
   if (schoolPbRankQ) {
     const schoolRanking = /1500m|1500ｍ/.test(expanded)
       ? "out-analysis/2026_men_1500m_pb_school_ranking.md"
