@@ -67,17 +67,25 @@ function finalizeAnswerText(
   deps: AnswerDeps,
   sources: string[],
 ): string {
-  const formatted = formatForLine(text);
+  const primaryArtifacts = findPrimarySourceArtifacts(question, sources, {
+    defaultYear: deps.defaultYear,
+    now: deps.now,
+  });
+  // A primary PDF is an answer in its own right. Do not leave the generic
+  // missing-information fallback next to a valid PDF link (whether it came
+  // from the offline path or was echoed by the LLM).
+  const formatted = formatForLine(text)
+    .split(MISSING_INFO_MESSAGE)
+    .join(primaryArtifacts.length > 0 ? "" : MISSING_INFO_MESSAGE)
+    .replace(/\n{3,}/g, "\n\n")
+    .trim();
   const withResultUrls = withMeetResultUrls(formatted, question, {
     entries: deps.meetResultUrls,
     defaultYear: deps.defaultYear ?? currentFiscalYear(),
   });
   return appendPrimarySourceLinks(
     withResultUrls,
-    findPrimarySourceArtifacts(question, sources, {
-      defaultYear: deps.defaultYear,
-      now: deps.now,
-    }),
+    primaryArtifacts,
   );
 }
 
@@ -282,10 +290,11 @@ function offlineAnswer(
   question: string,
   retrieved: RetrievedChunk[],
   previewQuery?: string,
+  missingInfoMessage = MISSING_INFO_MESSAGE,
 ): string {
   const lines = ["（オフライン回答）", "", `Q: ${question}`, ""];
   if (retrieved.length === 0) {
-    lines.push(MISSING_INFO_MESSAGE);
+    lines.push(missingInfoMessage);
   } else {
     const hint = previewQuery ?? question;
     for (const [i, r] of retrieved.entries()) {
@@ -991,9 +1000,23 @@ export async function answerQuestion(
   ];
 
   if (!deps.llm) {
+    const primaryArtifacts = findPrimarySourceArtifacts(question, sources, {
+      defaultYear: deps.defaultYear,
+      now: deps.now,
+    });
     return {
       kind: "offline",
-      text: finalizeAnswerText(offlineAnswer(question, merged, expanded), question, deps, sources),
+      text: finalizeAnswerText(
+        offlineAnswer(
+          question,
+          merged,
+          expanded,
+          primaryArtifacts.length > 0 ? "ご指定のPDFです。" : undefined,
+        ),
+        question,
+        deps,
+        sources,
+      ),
       sources,
     };
   }

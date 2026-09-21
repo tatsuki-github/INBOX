@@ -223,7 +223,7 @@ describe("answerQuestion", () => {
       skipRouter: true,
       defaultYear: 2026,
       now: new Date("2026-09-21T00:00:00+09:00"),
-      llm: { complete: async () => "結果を確認しました。" },
+      llm: { complete: async () => "結果を確認しました。コーチに直接聞いてください。" },
     });
     expect(result.kind).toBe("answered");
     if (result.kind === "answered") {
@@ -237,8 +237,31 @@ describe("answerQuestion", () => {
         "https://drive.google.com/file/d/1Yyv2TLVAfSjSE296Q6xrEMm0J2QbQF21/view",
       );
       expect(result.text).not.toContain("github.com");
+      expect(result.text).not.toContain("コーチに直接聞いてください");
       expect(result.text).toContain("drive.google.com/drive/folders/1k-zW0irJ-OjDjqQwUQLZIs4C6PfuR211");
     }
+  });
+
+  it("does not add the coach fallback when PDF links answer the request", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("昨日のなごみ駅伝の結果のPDF渡して", {
+      skipRouter: true,
+      llm: null,
+      retrieve: () => [],
+      defaultYear: 2026,
+      now: new Date("2026-09-21T00:00:00+09:00"),
+      kgQuery: () => ({
+        question: "昨日のなごみ駅伝の結果のPDF渡して",
+        matched_nodes: [],
+        refs: [],
+        corpus_sources: [],
+      }),
+    });
+    expect(result.kind).toBe("offline");
+    expect(result.text).not.toContain("コーチに直接聞いてください");
+    expect(result.text).toContain("女子成績表PDF");
+    expect(result.text).toContain("男子成績表PDF");
   });
 
   it("formats llm markdown and strips source footers", async () => {
