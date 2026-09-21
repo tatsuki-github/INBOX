@@ -1040,6 +1040,22 @@ describe("answerQuestion", () => {
     }
   });
 
+  it("recognizes 何着 as a team-rank alias", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("2025年荒玉男子で岱明は何着？", {
+      llm: null,
+      skipRouter: true,
+      defaultYear: 2026,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.sources[0]).toBe("out-analysis/aragyoku-teams/岱明.md");
+      expect(result.text).toContain("岱明は6位");
+      expect(result.text).not.toContain("深掘り分析");
+    }
+  });
+
   it("keeps combined rank and total-time questions on the team digest", async () => {
     resetRetrieverCache();
     resetKgCache();

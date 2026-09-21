@@ -290,7 +290,7 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
   }
   if (
     !/20\d{2}/.test(q) &&
-    /何位|順位/.test(q) &&
+    /何位|順位|何着|何番目|何番/.test(q) &&
     /男子|女子/.test(q) &&
     /岱明|玉高附属|玉名付属|玉名附属|天水|有明|南関|菊水|玉東|玉陵|長洲/.test(q) &&
     !/過去|歴代|前年比|比較/.test(q)
@@ -806,7 +806,7 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
       }
     }
   }
-  if (/何位|順位|総合タイム|総合は/.test(q) && /20\d{2}/.test(q) && /男子|女子/.test(q)) {
+  if (/何位|順位|何着|何番目|何番|総合タイム|総合は/.test(q) && /20\d{2}/.test(q) && /男子|女子/.test(q)) {
     const years = q.match(/20\d{2}/g) ?? [];
     const year = years[0];
     const gender = /女子/.test(q) ? "女子" : /男子/.test(q) ? "男子" : "";
@@ -975,7 +975,7 @@ function offlineAnswer(
     const teamRankLookup =
       /20\d{2}/.test(question) &&
       /男子|女子/.test(question) &&
-      /何位|順位/.test(question) &&
+      /何位|順位|何着|何番目|何番/.test(question) &&
       /岱明|玉高附属|玉名付属|玉名附属|天水|有明|南関|菊水|玉東|玉陵|長洲/.test(
         question,
       );
@@ -1035,7 +1035,7 @@ function offlineAnswer(
       );
     const latestTeamRankLookup =
       !/20\d{2}/.test(question) &&
-      /何位|順位/.test(question) &&
+      /何位|順位|何着|何番目|何番/.test(question) &&
       /男子|女子/.test(question) &&
       /岱明|玉高附属|玉名付属|玉名附属|天水|有明|南関|菊水|玉東|玉陵|長洲/.test(
         question,
@@ -1172,7 +1172,7 @@ function boostAthleteRecordSources(query: string, baseSources: string[]): string
     })[0];
     if (teamDigest) return [teamDigest];
   }
-  if (/20\d{2}/.test(q) && /男子|女子/.test(q) && /何位|順位/.test(q)) {
+  if (/20\d{2}/.test(q) && /男子|女子/.test(q) && /何位|順位|何着|何番目|何番/.test(q)) {
     const teamDigest = baseSources.find((s) => {
       const stem = s.match(/aragyoku-teams\/([^/]+)\.md$/)?.[1] ?? "";
       if (!stem) return false;
@@ -2056,7 +2056,7 @@ export async function answerQuestion(
   const compactTeamRankQ =
     /20\d{2}/.test(expanded) &&
     /男子|女子/.test(expanded) &&
-    /何位|順位/.test(expanded) &&
+    /何位|順位|何着|何番目|何番/.test(expanded) &&
     /岱明|玉高附属|玉名付属|玉名附属|天水|有明|南関|菊水|玉東|玉陵|長洲/.test(expanded);
   if (compactTeamRankQ) {
     const team = /玉名付属|玉名附属|玉名附/.test(question)
