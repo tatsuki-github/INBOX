@@ -1484,7 +1484,7 @@ function boostAthleteRecordSources(query: string, baseSources: string[]): string
   }
   if (
     /1500m|1500ｍ/.test(q) &&
-    /トップ\s*20|ランキング|SB|自己ベスト|荒玉|何位|順位/.test(q)
+    /トップ\s*20|ランキング|速い|一番|最速|SB|自己ベスト|荒玉|何位|順位/.test(q)
   ) {
     push("out-analysis/2026_aragyoku_men_1500m_sb_individual_top20.md");
   }
@@ -2129,6 +2129,16 @@ export async function answerQuestion(
     /荒玉|駅伝/.test(question) &&
     /男子|女子/.test(question) &&
     /区間順位|区間順/.test(question);
+  const individual1500TopQ =
+    /1500m|1500ｍ/.test(question) &&
+    /速い|一番|最速|ランキング|トップ\s*20|SB|自己ベスト/.test(question) &&
+    !/学校別|所属別|上位\s*\d+\s*人平均/.test(question);
+  if (individual1500TopQ) {
+    preferredSources = [
+      preferredSources.find((s) => /1500m_sb_individual_top20/.test(s)) ??
+        "out-analysis/2026_aragyoku_men_1500m_sb_individual_top20.md",
+    ];
+  }
   if (legRankQuestionQ) {
     preferredSources = [
       preferredSources.find((s) => /aragyoku_leg_awards/.test(s)) ??
@@ -2483,6 +2493,7 @@ export async function answerQuestion(
     historicalWinnerQ ||
     winnerYearTeamQ ||
     legRankQuestionQ ||
+    individual1500TopQ ||
     schoolPbRankQ ||
     trackLapQ ||
     top2CountQ ||
@@ -2534,6 +2545,7 @@ export async function answerQuestion(
         historicalWinnerQ ||
         winnerYearTeamQ ||
         legRankQuestionQ ||
+        individual1500TopQ ||
         schoolPbRankQ ||
         trackLapQ ||
         top2CountQ ||

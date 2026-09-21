@@ -2558,6 +2558,23 @@ describe("answerQuestion", () => {
     }
   });
 
+  it("routes 一番速い男子1500m phrasing to the individual ranking", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("男子1500mで一番速いのは？", {
+      llm: null,
+      skipRouter: true,
+      defaultYear: 2026,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.sources[0]).toBe("out-analysis/2026_aragyoku_men_1500m_sb_individual_top20.md");
+      expect(result.text).toContain("隈部侑成");
+      expect(result.text).toContain("4:11.60");
+      expect(result.text).not.toContain("一番瀬大聖");
+    }
+  });
+
   it("keeps named 1500m SB rank questions on the individual ranking digest", async () => {
     resetRetrieverCache();
     resetKgCache();
