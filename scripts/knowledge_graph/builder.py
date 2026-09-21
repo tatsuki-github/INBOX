@@ -666,33 +666,57 @@ QUERY_HINTS: list[tuple[str, str, list[str]]] = [
     (
         "なごみ駅伝は？",
         "drive-text/大会/*/0920_*なごみ* または 0921_*なごみ* の開催要項・結果・区間オーダーを見る。"
-        "2026年度は女子成績表.md / 男子成績表.md。2025年度は同名＋予実比較.md。"
+        "2026年度は女子成績表.md / 男子成績表.md / 予実比較.md。"
+        "2025年度は同名＋予実比較.md。"
+        "ギャップ分析 HTML は out/analysis/nagomi_sb_gap_analysis.html。"
         "金栗駅伝・金栗記念は別大会。荒玉・aragyoku は使わない",
         [
             "topic:ekiden",
             "topic:calendar",
             "corpus:drive-text",
             "corpus:calendar",
+            "corpus:out-analysis",
             "source:input/events.2026.yaml",
             "source:input/idaten-corpus/drive-text/大会/2026年度/0920_中学駅伝金栗四三生誕の地なごみ大会/女子成績表.md",
             "source:input/idaten-corpus/drive-text/大会/2026年度/0920_中学駅伝金栗四三生誕の地なごみ大会/男子成績表.md",
+            "source:input/idaten-corpus/drive-text/大会/2026年度/0920_中学駅伝金栗四三生誕の地なごみ大会/予実比較.md",
             "source:input/idaten-corpus/drive-text/大会/2026年度/0920_中学駅伝金栗四三生誕の地なごみ大会/男子区間オーダーリスト.md",
             "source:input/idaten-corpus/drive-text/大会/2026年度/0920_中学駅伝金栗四三生誕の地なごみ大会/女子区間オーダーリスト.md",
             "source:input/idaten-corpus/drive-text/大会/2025年度/0921_中学駅伝金栗四三生誕の地なごみ大会/女子成績表.md",
             "source:input/idaten-corpus/drive-text/大会/2025年度/0921_中学駅伝金栗四三生誕の地なごみ大会/男子成績表.md",
             "source:input/idaten-corpus/drive-text/大会/2025年度/0921_中学駅伝金栗四三生誕の地なごみ大会/予実比較.md",
+            "source:out/analysis/nagomi_sb_gap_analysis.html",
         ],
     ),
     (
         "2026年のなごみ駅伝の結果は？",
         "drive-text/大会/2026年度/0920_*なごみ*/女子成績表.md と 男子成績表.md を見る。"
+        "予実比較.md / out/analysis/nagomi_sb_gap_analysis.html で SB 予想との差を見る。"
         "優勝は女子金栗PROJECT A（26:55）・男子NJAC（38:33）。岱明は女子A6位・男子A18位。",
         [
             "topic:ekiden",
             "corpus:drive-text",
+            "corpus:out-analysis",
             "source:input/idaten-corpus/drive-text/大会/2026年度/0920_中学駅伝金栗四三生誕の地なごみ大会/女子成績表.md",
             "source:input/idaten-corpus/drive-text/大会/2026年度/0920_中学駅伝金栗四三生誕の地なごみ大会/男子成績表.md",
             "source:input/idaten-corpus/drive-text/大会/2026年度/0920_中学駅伝金栗四三生誕の地なごみ大会/成績表.json",
+            "source:input/idaten-corpus/drive-text/大会/2026年度/0920_中学駅伝金栗四三生誕の地なごみ大会/予実比較.md",
+            "source:out/analysis/nagomi_sb_gap_analysis.html",
+        ],
+    ),
+    (
+        "なごみ駅伝の予想と実績の差は？",
+        "out/analysis/nagomi_sb_gap_analysis.html と各年度 予実比較.md を見る。"
+        "差=実績−予想。5段階（大きく／少し上回った・妥当・少し／大きく下回った、ADR 052）。"
+        "荒尾玉名関連は女子個人上位5・男子上位6と関連チーム表あり。",
+        [
+            "topic:ekiden",
+            "corpus:out-analysis",
+            "corpus:drive-text",
+            "source:out/analysis/nagomi_sb_gap_analysis.html",
+            "source:input/idaten-corpus/drive-text/大会/2026年度/0920_中学駅伝金栗四三生誕の地なごみ大会/予実比較.md",
+            "source:input/idaten-corpus/drive-text/大会/2025年度/0921_中学駅伝金栗四三生誕の地なごみ大会/予実比較.md",
+            "source:docs/adr/052-nagomi-sb-gap-analysis.md",
         ],
     ),
     (

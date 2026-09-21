@@ -64,7 +64,7 @@ python3 scripts/generate_calendar.py --year 2026 --input input/events.2026.yaml
 
 リポジトリ全体の「何がどこにあるか」を `out/knowledge-graph.json` に保持します。
 全文の複製ではなく、**短いヒント + 参照パス + エンティティリンク**です。回答時はまずここを見て探索先を決め、ヒットしたファイルの周辺コンテキストで答えます（運用は [`AGENTS.md`](AGENTS.md)）。
-`out/analysis/` のチーム別・学校別ダイジェストは Source として自動登録され、LINE backend は `scripts/sync_backend_kg.py` で同梱します（[ADR 046](docs/adr/046-kg-analysis-digest-routing.md)）。大会名なしの「何区を走った？」は荒玉チーム正本へ寄せます（[ADR 047](docs/adr/047-unnamed-leg-athlete-routing.md)）。なごみ大会の区間オーダーは金栗駅伝と分けます（[ADR 048](docs/adr/048-nagomi-order-not-kanaguri-ekiden.md)）。2025 なごみの成績表とレース前 SB 予実は [ADR 049](docs/adr/049-nagomi-2025-sb-vs-actual.md)。SB 予想表の通過・区間順位は [ADR 050](docs/adr/050-nagomi-sb-pred-passing-ranks.md)。2026 なごみ成績表の文字起こしは [ADR 051](docs/adr/051-nagomi-2026-results-transcription.md)。
+`out/analysis/` のチーム別・学校別ダイジェストは Source として自動登録され、LINE backend は `scripts/sync_backend_kg.py` で同梱します（[ADR 046](docs/adr/046-kg-analysis-digest-routing.md)）。大会名なしの「何区を走った？」は荒玉チーム正本へ寄せます（[ADR 047](docs/adr/047-unnamed-leg-athlete-routing.md)）。なごみ大会の区間オーダーは金栗駅伝と分けます（[ADR 048](docs/adr/048-nagomi-order-not-kanaguri-ekiden.md)）。2025 なごみの成績表とレース前 SB 予実は [ADR 049](docs/adr/049-nagomi-2025-sb-vs-actual.md)。SB 予想表の通過・区間順位は [ADR 050](docs/adr/050-nagomi-sb-pred-passing-ranks.md)。2026 なごみ成績表の文字起こしは [ADR 051](docs/adr/051-nagomi-2026-results-transcription.md)。SB 予想と実績のギャップ分析（HTML）は [ADR 052](docs/adr/052-nagomi-sb-gap-analysis.md)（`out/analysis/nagomi_sb_gap_analysis.html`）。
 
 ブラウザで構造を確認する場合:
 
