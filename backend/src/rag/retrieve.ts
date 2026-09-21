@@ -505,6 +505,12 @@ function pathQueryBonus(source: string, query: string): number {
   const q = query.normalize("NFKC");
   const s = source;
   let bonus = 0;
+  if (
+    /なごみ駅伝.*集合場所|集合場所.*なごみ駅伝/.test(q) &&
+    /line-chats\/daiming-parents/.test(s)
+  ) {
+    bonus += 600;
+  }
   if (isLegAthleteQuestion(q) && /aragyoku-teams\/([^/]+)\.md$/.test(s)) {
     const teamStem = s.match(/aragyoku-teams\/([^/]+)\.md$/)?.[1] ?? "";
     const aliases =

@@ -599,6 +599,14 @@ function boostDaimingLineSources(query: string, baseSources: string[]): string[]
     out.push(s);
   };
 
+  // なごみ駅伝の集合場所は大会資料だけでなく、保護者LINEの運用案内
+  // にも明記される。集合場所を尋ねるときはLINE要約を一次候補にする。
+  if (/なごみ駅伝.*集合場所|集合場所.*なごみ駅伝/.test(q)) {
+    push("out-analysis/line-chats/daiming-parents.md");
+    for (const s of baseSources) push(s);
+    return out;
+  }
+
   if (/practice_meets|affect_load|負荷に数え/.test(q)) {
     push("repo-docs/adr/006-practice-meets-not-load.md");
     push("docs/adr/006-practice-meets-not-load.md");

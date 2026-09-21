@@ -276,6 +276,21 @@ describe("answerQuestion", () => {
     }
   });
 
+  it("includes the parent LINE digest for なごみ駅伝集合場所", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("なごみ駅伝の集合場所は？", {
+      llm: null,
+      skipRouter: true,
+      defaultYear: 2026,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.sources.some((s) => s.includes("line-chats/daiming-parents"))).toBe(true);
+      expect(result.text).toContain("三加和公民館");
+    }
+  });
+
   it("llm sees なごみ context for 9/20", async () => {
     resetRetrieverCache();
     resetKgCache();
