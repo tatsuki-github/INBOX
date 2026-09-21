@@ -81,6 +81,7 @@ npx vercel link --yes --project idaten-line-backend --scope tatsukitsuchiyama-gm
 - 大会結果 URL 索引: [`data/meet-result-urls.json`](data/meet-result-urls.json)（記録 CSV / `source.csv` 由来。再生成は `python3 scripts/build_meet_result_urls.py`）
 - 荒玉結果ボード画像（LINE Image）: [`data/aragyoku-board-images.json`](data/aragyoku-board-images.json)（`transcripts` の `source_drive_id`。再生成は `python3 scripts/generate_aragyoku_board_images_catalog.py`。ADR 043）
 - 曖昧な自己ベスト質問は [`src/domain/clarify.ts`](src/domain/clarify.ts) が具体的な質問例を返す（ADR 021）
+- 「使い方」「ヘルプ」「このボットは何ができる？」等は [`src/domain/canned.ts`](src/domain/canned.ts) が荒玉中心の質問例を返す（ADR 053。個人名なし）
 - 中学生 SB: コーパス `sb/中学生SB.csv` は **全所属・行単位チャンク**（ADR 022）。再生成は `uv run python scripts/build_idaten_corpus.py`
 - 想定質問の根拠評価: `npx tsx scripts/eval-1000q/run.ts`（1000問）/ `eval-200q`（200問）（ADR 023）
 - ランタイムは上記以外のパスを読まない（スコープ漏洩防止）
@@ -120,6 +121,7 @@ npx vercel link --yes --project idaten-line-backend --scope tatsukitsuchiyama-gm
 - [ADR 049](../docs/adr/049-nagomi-2025-sb-vs-actual.md)（2025 なごみ成績とレース前 SB 予実）
 - [ADR 051](../docs/adr/051-nagomi-2026-results-transcription.md)（2026 なごみ成績表の文字起こし）
 - [ADR 052](../docs/adr/052-nagomi-sb-gap-analysis.md)（なごみ SB 予実ギャップ HTML）
+- [ADR 053](../docs/adr/053-line-bot-help-examples.md)（使い方・質問例の canned）
 - [ADR 050](../docs/adr/050-nagomi-sb-pred-passing-ranks.md)（SB 予想の通過・区間順位）
 - [ADR 018](../docs/adr/018-line-denied-user-ids.md)（userId 拒否リスト）
 - [Phase 0](../docs/implementation-flow/line-idaten-bot/phase-0.md)

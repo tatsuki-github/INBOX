@@ -2,12 +2,90 @@ import { describe, expect, it } from "vitest";
 import {
   ARAGYOKU_COURSE_VIDEO_MEN_FOLDER_URL,
   ARAGYOKU_COURSE_VIDEO_WOMEN_FOLDER_URL,
+  buildHelpExamplesText,
   isAragyokuCourseVideoQuestion,
+  isHelpOrExampleQuestion,
   matchCannedAnswer,
 } from "../src/domain/canned.js";
 import { formatForLine } from "../src/line/format.js";
 import { answerQuestion } from "../src/domain/answer.js";
 import { buildReplyMessages } from "../src/line/webhook.js";
+
+describe("canned help / example questions", () => {
+  it("detects help and example intents", () => {
+    expect(isHelpOrExampleQuestion("使い方")).toBe(true);
+    expect(isHelpOrExampleQuestion("ヘルプ")).toBe(true);
+    expect(isHelpOrExampleQuestion("help")).toBe(true);
+    expect(isHelpOrExampleQuestion("質問例を教えて")).toBe(true);
+    expect(isHelpOrExampleQuestion("このボットは何ができる？")).toBe(true);
+    expect(isHelpOrExampleQuestion("何が聞ける？")).toBe(true);
+    expect(isHelpOrExampleQuestion("メニュー")).toBe(true);
+    expect(isHelpOrExampleQuestion("荒玉男子の優勝は？")).toBe(false);
+    expect(isHelpOrExampleQuestion("荒玉のコース動画は？")).toBe(false);
+  });
+
+  it("returns help canned without LLM", async () => {
+    let llmCalled = false;
+    const result = await answerQuestion("このボットは何ができる？", {
+      llm: {
+        complete: async () => {
+          llmCalled = true;
+          return "should not run";
+        },
+      },
+      retrieve: () => {
+        throw new Error("retrieve should not run");
+      },
+    });
+    expect(llmCalled).toBe(false);
+    expect(result.kind).toBe("answered");
+    if (result.kind === "answered") {
+      expect(result.sources).toEqual(["canned:help-examples"]);
+      expect(result.text).toMatch(/練習|大会|記録|いだてん/);
+      expect(result.text).toContain("荒玉");
+    }
+  });
+
+  it("help text has no personal names and is Aragyoku-majority", () => {
+    const text = buildHelpExamplesText();
+    // Known athlete names that must not appear in help examples
+    for (const name of ["今村昇磨", "石川隼", "佐藤央琉", "案浦竜士", "松野凛空"]) {
+      expect(text).not.toContain(name);
+    }
+    const exampleLines = text
+      .split("\n")
+      .filter((l) => l.startsWith("・"))
+      .map((l) => l.slice(1));
+    expect(exampleLines.length).toBeGreaterThanOrEqual(12);
+    const aragyokuCount = exampleLines.filter((l) => /荒玉/.test(l)).length;
+    expect(aragyokuCount).toBeGreaterThan(exampleLines.length / 2);
+
+    // App coverage cues (no personal names)
+    for (const cue of [
+      "区間距離",
+      "優勝",
+      "何位",
+      "区間賞",
+      "大会記録",
+      "ペース",
+      "前年比",
+      "コース動画",
+      "結果ボード",
+      "なごみ",
+      "練習",
+      "結果URL",
+      "自己ベスト",
+      "対象外",
+    ]) {
+      expect(text).toContain(cue);
+    }
+  });
+
+  it("matchCannedAnswer prefers help over course-video phrasing in help intents", () => {
+    const canned = matchCannedAnswer("使い方");
+    expect(canned?.id).toBe("help-examples");
+  });
+});
 
 describe("canned aragyoku course videos", () => {
   it("detects course-video questions", () => {
