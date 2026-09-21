@@ -496,12 +496,16 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
     }
   }
   // 「○年の区間賞」→ 該当年セクションを優先
-  const legRankRequest = q.match(/(20\d{2}).*?([1-6])区.*(?:区間順位|区間順)/);
+  const legRankRequest = q.match(/(?:(20\d{2}).*?)?([1-6])区.*(?:区間順位|区間順)/);
   if (legRankRequest && /男子|女子/.test(q)) {
-    const year = legRankRequest[1]!;
-    const leg = legRankRequest[2]!;
     const gender = /女子/.test(q) ? "女子" : "男子";
-    const sectionStart = flat.indexOf(`#### ${year}年${gender}・区間別上位`);
+    const year =
+      legRankRequest[1] ??
+      [...flat.matchAll(new RegExp(`#### (20\\d{2})年${gender}・区間別上位`, "g"))]
+        .map((match) => match[1]!)
+        .sort((a, b) => Number(b) - Number(a))[0];
+    const leg = legRankRequest[2]!;
+    const sectionStart = year ? flat.indexOf(`#### ${year}年${gender}・区間別上位`) : -1;
     if (sectionStart >= 0) {
       const legStart = flat.indexOf(`**${leg}区**`, sectionStart);
       if (legStart >= 0) {
