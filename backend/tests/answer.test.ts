@@ -1257,6 +1257,22 @@ describe("answerQuestion", () => {
     }
   });
 
+  it("supports Japanese numeral fourteenth-place wording", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("荒玉駅伝の十四位は？", {
+      llm: null,
+      skipRouter: true,
+      defaultYear: 2026,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.text).toContain("2025年男子14位: 天水（63:39）");
+      expect(result.text).toContain("2025年女子14位: 玉陵（49:36）");
+      expect(result.text).not.toContain("深掘り分析");
+    }
+  });
+
   it("answers unqualified tenth-to-twelfth-place questions for both genders", async () => {
     resetRetrieverCache();
     resetKgCache();
