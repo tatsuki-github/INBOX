@@ -293,12 +293,13 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
       return fifthPlaces.map((place) => `2025年${place[1]}5位: ${place[2]}（${place[3]}）`).join("。 ") + "。";
     }
   }
-  if (!/男子|女子/.test(q) && /荒玉|駅伝/.test(q) && /6位/.test(q)) {
-    const sixthPlaces = [...flat.matchAll(
-      /2025年荒玉駅伝(男子|女子)\s+6位\s+([^\s]+)\s+総合\s*([0-9]+:\d{2})/g,
-    )];
+  if (!/男子|女子/.test(q) && /荒玉|駅伝/.test(q) && /[6-9]位/.test(q)) {
+    const rank = q.match(/([6-9])位/)?.[1];
+    const sixthPlaces = rank ? [...flat.matchAll(
+      new RegExp(`2025年荒玉駅伝(男子|女子)\\s+${rank}位\\s+([^\\s]+)\\s+総合\\s*([0-9]+:\\d{2})`, "g"),
+    )] : [];
     if (sixthPlaces.length >= 2) {
-      return sixthPlaces.map((place) => `2025年${place[1]}6位: ${place[2]}（${place[3]}）`).join("。 ") + "。";
+      return sixthPlaces.map((place) => `2025年${place[1]}${rank}位: ${place[2]}（${place[3]}）`).join("。 ") + "。";
     }
   }
   if (/男子|女子/.test(q) && /荒玉|駅伝/.test(q) && /3位/.test(q) && !/20\d{2}/.test(q)) {
@@ -1533,7 +1534,7 @@ function offlineAnswer(
       /荒玉|駅伝/.test(question) &&
       !/男子|女子|20\d{2}|過去|歴代|区間/.test(question);
     const unqualifiedSixthPlaceLookup =
-      /6位/.test(question) &&
+      /[6-9]位/.test(question) &&
       /荒玉|駅伝/.test(question) &&
       !/男子|女子|20\d{2}|過去|歴代|区間/.test(question);
     const genderedThirdPlaceLookup =
@@ -2747,7 +2748,7 @@ export async function answerQuestion(
     /荒玉|駅伝/.test(question) &&
     !/男子|女子|20\d{2}|過去|歴代|区間/.test(question);
   const unqualifiedSixthPlaceQ =
-    /6位/.test(question) &&
+    /[6-9]位/.test(question) &&
     /荒玉|駅伝/.test(question) &&
     !/男子|女子|20\d{2}|過去|歴代|区間/.test(question);
   const genderedThirdPlaceQ =
