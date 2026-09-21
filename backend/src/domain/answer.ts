@@ -209,6 +209,17 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
       }
     }
   }
+  // The fee sits below the date/venue rows in the practice note; anchor the
+  // preview on the fee row so a short offline answer does not omit the price.
+  if (/練習会/.test(q) && /会費|参加費|料金/.test(q)) {
+    for (const needle of ["| 会費 |", "学生 1,000円", "学生1000円"]) {
+      const idx = flat.indexOf(needle);
+      if (idx >= 0) {
+        const start = Math.max(0, idx - 40);
+        return flat.slice(start, Math.min(flat.length, start + budget));
+      }
+    }
+  }
   // 合同練習会の「いつ・どこ」質問は、保護者LINE要約の冒頭ではなく
   // 予定セクションを見せる。冒頭だけを返すと日付・会場が同じ文書内に
   // あってもオフライン回答から落ちる。
