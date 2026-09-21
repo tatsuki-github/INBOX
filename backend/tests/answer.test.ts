@@ -74,6 +74,27 @@ describe("answerQuestion", () => {
     }
   });
 
+  it("anchors yearless retrieval to the supplied current fiscal year", async () => {
+    let retrievedQuery = "";
+    const result = await answerQuestion("なごみ駅伝の結果は？", {
+      defaultYear: 2026,
+      skipRouter: true,
+      kgQuery: () => ({
+        question: "x",
+        matched_nodes: [],
+        refs: [],
+        corpus_sources: [],
+      }),
+      retrieve: (query) => {
+        retrievedQuery = query;
+        return [];
+      },
+      llm: null,
+    });
+    expect(result.kind).toBe("offline");
+    expect(retrievedQuery).toContain("2026年度");
+  });
+
   it("appends CSV result URLs after formatting", async () => {
     const result = await answerQuestion("熊本市選手権の結果は？", {
       retrieve: () => [],

@@ -8,6 +8,17 @@ export type DateMention = {
   mmdd: string;
 };
 
+/**
+ * Return the Japanese fiscal year for a date (April–March).
+ *
+ * The corpus is organized by 年度, so a question without a year should be
+ * anchored to this value rather than the calendar year in January–March.
+ */
+export function currentFiscalYear(now: Date = new Date()): number {
+  const calendarYear = now.getFullYear();
+  return now.getMonth() >= 3 ? calendarYear : calendarYear - 1;
+}
+
 function pad2(n: number): string {
   return String(n).padStart(2, "0");
 }
@@ -32,7 +43,7 @@ function toMention(year: number, month: number, day: number): DateMention | null
  */
 export function parseDateMentions(
   text: string,
-  defaultYear: number = new Date().getFullYear(),
+  defaultYear: number = currentFiscalYear(),
 ): DateMention[] {
   const hits: DateMention[] = [];
   const seen = new Set<string>();
@@ -79,7 +90,7 @@ export function looksLikeDateQuestion(text: string): boolean {
  */
 export function resolveRelativeYears(
   text: string,
-  defaultYear: number = new Date().getFullYear(),
+  defaultYear: number = currentFiscalYear(),
 ): number[] {
   const years = new Set<number>();
   if (/今年/.test(text)) years.add(defaultYear);
@@ -98,7 +109,7 @@ export function resolveRelativeYears(
  */
 export function expandDateQuery(
   question: string,
-  defaultYear: number = new Date().getFullYear(),
+  defaultYear: number = currentFiscalYear(),
 ): string {
   const extras: string[] = [];
   for (const y of resolveRelativeYears(question, defaultYear)) {
@@ -108,6 +119,17 @@ export function expandDateQuery(
   for (const m of mentions) {
     extras.push(m.iso, m.mmdd);
   }
+
+  // A normal question with no year is a question about the current fiscal
+  // year. Keep intentionally broad historical/comparison questions wide.
+  const broadTimeScope =
+    /歴代|過去|全年度|全期間|年度別|年別|各年度|各年|毎年|近年|これまで|直近\s*[0-9０-９]+\s*年|過去\s*[0-9０-９]+\s*年|前年比|前年度比|比較/.test(
+      question.normalize("NFKC"),
+    );
+  if (extras.length === 0 && !broadTimeScope) {
+    extras.push(String(defaultYear), `${defaultYear}年度`);
+  }
+
   if (extras.length === 0) return question;
   // Dedupe while preserving order
   const seen = new Set<string>();

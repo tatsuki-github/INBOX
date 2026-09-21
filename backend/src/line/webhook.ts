@@ -11,6 +11,7 @@ import {
 import { isDeniedUserId } from "../domain/deny.js";
 import { NON_TEXT_GUIDANCE, splitLineText } from "./reply.js";
 import { formatForLine } from "./format.js";
+import { currentFiscalYear } from "../domain/dates.js";
 
 export type LineEvent = {
   type: string;
@@ -81,7 +82,7 @@ export async function handleWebhookEvents(
   const { deniedUserIds = new Set<string>(), ...answerDeps } = options;
   const events = body.events ?? [];
   let handled = 0;
-  const defaultYear = answerDeps.defaultYear ?? new Date().getFullYear();
+  const defaultYear = answerDeps.defaultYear ?? currentFiscalYear();
 
   for (const event of events) {
     if (!event.replyToken) continue;

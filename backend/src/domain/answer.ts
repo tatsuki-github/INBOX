@@ -1,5 +1,10 @@
 import { classifyScope, OUT_OF_SCOPE_MESSAGE } from "./scope.js";
-import { expandDateQuery, parseDateMentions, resolveRelativeYears } from "./dates.js";
+import {
+  currentFiscalYear,
+  expandDateQuery,
+  parseDateMentions,
+  resolveRelativeYears,
+} from "./dates.js";
 import { matchCannedAnswer } from "./canned.js";
 import { matchClarifyAnswer } from "./clarify.js";
 import { isLegAthleteQuestion } from "./legs.js";
@@ -60,7 +65,7 @@ function finalizeAnswerText(
   const formatted = formatForLine(text);
   return withMeetResultUrls(formatted, question, {
     entries: deps.meetResultUrls,
-    defaultYear: deps.defaultYear ?? new Date().getFullYear(),
+    defaultYear: deps.defaultYear ?? currentFiscalYear(),
   });
 }
 
@@ -836,7 +841,7 @@ export async function answerQuestion(
   question: string,
   deps: AnswerDeps = {},
 ): Promise<AnswerResult> {
-  const year = deps.defaultYear ?? new Date().getFullYear();
+  const year = deps.defaultYear ?? currentFiscalYear();
   const expanded = expandDateQuery(question, year);
   const topK = deps.topK ?? RETRIEVAL_BUDGET.topK;
   const exhaustive = isExhaustiveListQuery(expanded);
@@ -862,7 +867,10 @@ export async function answerQuestion(
   const kgQuery =
     deps.kgQuery ??
     ((q: string) => queryKnowledgeGraph(q, { topK: 16, expandHops: 2 }));
-  const kg = kgQuery(expanded);
+  // Keep KG intent matching on the user's wording. `expanded` carries the
+  // current-fiscal-year retrieval anchor, but its synthetic year token should
+  // not drown a topic-specific KG hint (for example, a generic pace query).
+  const kg = kgQuery(question);
 
   let scope = classifyScope(question);
   if (

@@ -6,7 +6,7 @@
 import { readFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
-import { resolveRelativeYears } from "./dates.js";
+import { currentFiscalYear, resolveRelativeYears } from "./dates.js";
 
 export type MeetResultUrlEntry = {
   title: string;
@@ -181,7 +181,7 @@ export function findMeetResultUrls(
   if (!q || entries.length === 0) return [];
   if (!wantsMeetResultUrl(q)) return [];
 
-  const defaultYear = opts?.defaultYear ?? new Date().getFullYear();
+  const defaultYear = opts?.defaultYear ?? currentFiscalYear();
   const maxUrls = opts?.maxUrls ?? 3;
   const mentioned = resolveRelativeYears(q, defaultYear);
   const years = mentioned.length > 0 ? mentioned : [defaultYear];

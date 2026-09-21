@@ -1,9 +1,17 @@
 import { describe, expect, it } from "vitest";
 import {
+  currentFiscalYear,
   expandDateQuery,
   parseDateMentions,
   resolveRelativeYears,
 } from "../src/domain/dates.js";
+
+describe("currentFiscalYear", () => {
+  it("uses April as the fiscal-year boundary", () => {
+    expect(currentFiscalYear(new Date("2026-03-31T12:00:00+09:00"))).toBe(2025);
+    expect(currentFiscalYear(new Date("2026-04-01T12:00:00+09:00"))).toBe(2026);
+  });
+});
 
 describe("parseDateMentions", () => {
   it("parses slash dates like 9/20", () => {
@@ -61,5 +69,16 @@ describe("expandDateQuery", () => {
     const expanded = expandDateQuery("去年の荒玉駅伝の優勝校は？", 2026);
     expect(expanded).toContain("2025");
     expect(expanded).toContain("2025年");
+  });
+
+  it("anchors an otherwise yearless question to the current fiscal year", () => {
+    const expanded = expandDateQuery("なごみ駅伝の結果は？", 2026);
+    expect(expanded).toContain("2026");
+    expect(expanded).toContain("2026年度");
+  });
+
+  it("keeps explicitly broad historical questions unbounded", () => {
+    const expanded = expandDateQuery("荒玉駅伝の過去5年の優勝校は？", 2026);
+    expect(expanded).not.toContain("2026年度");
   });
 });

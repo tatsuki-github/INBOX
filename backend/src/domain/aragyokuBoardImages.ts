@@ -7,7 +7,7 @@
 import { readFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
-import { resolveRelativeYears } from "./dates.js";
+import { currentFiscalYear, resolveRelativeYears } from "./dates.js";
 
 export type AragyokuBoardGender = "男子" | "女子";
 
@@ -96,7 +96,7 @@ export function selectAragyokuBoardImages(
   const q = question.trim();
   if (!wantsAragyokuBoardImages(q)) return [];
 
-  const defaultYear = opts?.defaultYear ?? new Date().getFullYear();
+  const defaultYear = opts?.defaultYear ?? currentFiscalYear();
   const maxImages = opts?.maxImages ?? 2;
   const catalog = opts?.images ?? loadAragyokuBoardImages();
   if (catalog.length === 0) return [];
