@@ -826,6 +826,21 @@ describe("answerQuestion", () => {
     }
   });
 
+  it("answers a gendered nagomi rank question from the official result table", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("なごみ男子の2位は？", {
+      llm: null,
+      skipRouter: true,
+      defaultYear: 2026,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.text).toContain("2026年なごみ男子2位: 金栗PROJECT A（38:49）");
+      expect(result.text).not.toContain("区間オーダー");
+    }
+  });
+
   it("lists all historical winners for a gender-specific 歴代 question", async () => {
     resetRetrieverCache();
     resetKgCache();

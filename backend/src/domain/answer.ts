@@ -174,6 +174,16 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
     }).filter(Boolean);
     if (sections.length > 0) return `2025年荒玉駅伝の結果: ${sections.join("。 ")}。`;
   }
+  if (/なごみ/.test(q) && /男子|女子/.test(q)) {
+    const rank = q.match(/(\d+)位/)?.[1];
+    if (rank) {
+      const result = flat.match(new RegExp(`###\\s*${rank}位\\s+No\\.\\d+\\s+(.+?)\\s+総合\\s+([0-9]+:\\d{2})`));
+      if (result) {
+        const gender = /女子/.test(q) ? "女子" : "男子";
+        return `2026年なごみ${gender}${rank}位: ${result[1]}（${result[2]}）。`;
+      }
+    }
+  }
   if (!/男子|女子/.test(q) && /荒玉|駅伝/.test(q) && /優勝校|優勝チーム|優勝は/.test(q)) {
     const winners = [...flat.matchAll(
       /(20\d{2})年\s*荒玉(?:中体連)?駅伝\s*(男子|女子)[\s\S]{0,220}?優勝校（1位）は「([^」]+)」（総合\s*([0-9]+:\d{2})）/g,
@@ -1597,6 +1607,11 @@ function offlineAnswer(
       /なごみ/.test(question) &&
       /結果|順位|何位|優勝/.test(question) &&
       !/予想|SB/.test(question);
+    const nagomiRankLookup =
+      /なごみ/.test(question) &&
+      /男子|女子/.test(question) &&
+      /\d+位/.test(question) &&
+      !/区間/.test(question);
     const nagomiLegRankLookup =
       /なごみ/.test(question) &&
       /[1-6]区/.test(question) &&
@@ -1686,6 +1701,7 @@ function offlineAnswer(
       resultListLookup ||
       genericResultLookup ||
       nagomiResultLookup ||
+      nagomiRankLookup ||
       nagomiLegRankLookup ||
       teamLegRankLookup ||
       nagomiDateLookup ||
@@ -1701,7 +1717,7 @@ function offlineAnswer(
     const hint = focusedLookup ? question : previewQuery ?? question;
     if (focusedLookup) {
       const focusedRetrieved =
-        (nagomiResultLookup || nagomiLegRankLookup) && /男子|女子/.test(question)
+        (nagomiResultLookup || nagomiRankLookup || nagomiLegRankLookup) && /男子|女子/.test(question)
           ? retrieved.filter((r) =>
               /(?:男子|女子)成績表\.md$/.test(r.chunk.source) &&
               r.chunk.source.includes(/女子/.test(question) ? "女子" : "男子"),
@@ -3150,7 +3166,7 @@ export async function answerQuestion(
   }
   const nagomiResultQ =
     /なごみ/.test(expanded) &&
-    /結果|順位|何位|優勝/.test(expanded) &&
+    /結果|順位|何位|\d+位|優勝/.test(expanded) &&
     !/予想|SB/.test(expanded) &&
     !nagomiLegOrderQ;
   const nagomiDateQ =
