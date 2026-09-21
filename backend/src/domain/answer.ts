@@ -202,6 +202,26 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
   const knownTeamInQuestion = /荒尾海陽|玉高附属|玉名付属|玉名附属|荒尾三|荒尾四|三加和|南関|天水|岱明|有明|玉南|玉名|玉東|玉陵|腹栄|荒尾|菊水|長洲/.test(
     q,
   );
+  const teamLegRank = q.match(/(20\d{2})年?.*?([1-6])区.*区間順/);
+  if (teamLegRank && /男子|女子/.test(q) && knownTeamInQuestion) {
+    const year = teamLegRank[1]!;
+    const leg = teamLegRank[2]!;
+    const team = /玉名付属|玉名附属/.test(q) ? "玉高附属" : [
+      "荒尾海陽", "荒尾三", "荒尾四", "三加和", "南関", "天水", "岱明", "有明",
+      "玉南", "玉名", "玉東", "玉陵", "腹栄", "荒尾", "菊水", "長洲",
+    ].find((name) => q.includes(name));
+    if (team) {
+      const teamStart = flat.indexOf(`## ${team}`);
+      const teamEnd = teamStart >= 0 ? flat.indexOf("\n## ", teamStart + 3) : -1;
+      const teamSection = flat.slice(teamStart, teamEnd >= 0 ? teamEnd : undefined);
+      const yearStart = teamSection.indexOf(`#### ${year}年 区間明細`);
+      const yearSection = yearStart >= 0 ? teamSection.slice(yearStart) : teamSection;
+      const row = yearSection.match(
+        new RegExp(`\\|\\s*${leg}\\s*\\|\\s*([^|]+?)\\s*\\|\\s*\\d+\\s*\\|\\s*([0-9]+:[0-9]{2})\\s*\\|\\s*(\\d+)\\s*\\|`),
+      );
+      if (row) return `${year}年${leg}区 ${row[1]!.trim()}（区間順${row[3]}位・${row[2]}）。`;
+    }
+  }
   if (teamLeg && /男子|女子/.test(q) && (/荒玉|駅伝/.test(q) || knownTeamInQuestion)) {
     const year = teamLeg[1]!;
     const leg = teamLeg[2]!;
@@ -1948,6 +1968,36 @@ export async function answerQuestion(
     ].find((stem) => expanded.includes(stem));
     if (team) preferredSources = [`out-analysis/aragyoku-teams/${team}.md`];
   }
+  const explicitTeamLegRankQ =
+    /20\d{2}/.test(expanded) &&
+    /男子|女子/.test(expanded) &&
+    /[1-6]区/.test(expanded) &&
+    /区間順/.test(expanded) &&
+    /荒尾海陽|玉高附属|玉名付属|玉名附属|荒尾三|荒尾四|三加和|南関|天水|岱明|有明|玉南|玉名|玉東|玉陵|腹栄|荒尾|菊水|長洲/.test(
+      expanded,
+    );
+  if (explicitTeamLegRankQ) {
+    const team = [
+      "荒尾海陽",
+      "玉高附属",
+      "荒尾三",
+      "荒尾四",
+      "三加和",
+      "南関",
+      "天水",
+      "岱明",
+      "有明",
+      "玉南",
+      "玉名",
+      "玉東",
+      "玉陵",
+      "腹栄",
+      "荒尾",
+      "菊水",
+      "長洲",
+    ].find((stem) => expanded.includes(stem));
+    preferredSources = ["out-analysis/aragyoku_2024_2025_focus_teams.md"];
+  }
   const latestTeamRankQ =
     !/20\d{2}/.test(expanded) &&
     /何位|順位/.test(expanded) &&
@@ -2027,9 +2077,18 @@ export async function answerQuestion(
     !/なごみ/.test(expanded);
   const fromSources = retrieveBySources(preferredSources, {
     query: expanded,
-    perSource: exhaustive || totalMeetRecordQ || teamFullRecordQ ? 200 : RETRIEVAL_BUDGET.perSource,
-    maxChunks: exhaustive || totalMeetRecordQ || teamFullRecordQ ? 200 : RETRIEVAL_BUDGET.maxChunks,
-    coverage: exhaustive || exactDatedPractice || totalMeetRecordQ || teamFullRecordQ ? "full" : "ranked",
+    perSource:
+      exhaustive || totalMeetRecordQ || teamFullRecordQ || explicitTeamLegRankQ
+        ? 200
+        : RETRIEVAL_BUDGET.perSource,
+    maxChunks:
+      exhaustive || totalMeetRecordQ || teamFullRecordQ || explicitTeamLegRankQ
+        ? 200
+        : RETRIEVAL_BUDGET.maxChunks,
+      coverage:
+      exhaustive || exactDatedPractice || totalMeetRecordQ || teamFullRecordQ || explicitTeamLegRankQ
+        ? "full"
+        : "ranked",
   });
   const retrieve = deps.retrieve ?? retrieveContext;
   // Exhaustive: preferred digest coverage alone — BM25 OCR/ADR filler drowns the list
@@ -2058,6 +2117,7 @@ export async function answerQuestion(
     teamRunnerUpYearQ ||
     explicitTeamLegQ ||
     teamFullRecordQ ||
+    explicitTeamLegRankQ ||
     latestTeamRankQ ||
     teamYearOverYearQ ||
     teamWinnerMarginQ ||
@@ -2075,6 +2135,8 @@ export async function answerQuestion(
         ? Math.max(topK, fromSources.length, 96)
       : totalMeetRecordQ
         ? Math.max(topK, fromSources.length)
+        : explicitTeamLegRankQ
+          ? Math.max(topK, fromSources.length)
         : topK,
     {
       query: expanded,
@@ -2095,6 +2157,7 @@ export async function answerQuestion(
         teamRunnerUpYearQ ||
         explicitTeamLegQ ||
         teamFullRecordQ ||
+        explicitTeamLegRankQ ||
         latestTeamRankQ ||
         teamYearOverYearQ ||
         teamWinnerMarginQ ||

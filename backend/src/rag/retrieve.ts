@@ -805,7 +805,12 @@ function isBlockedCorpusForQuery(source: string, query: string): boolean {
     /区間賞|区間1位|区間一位|区間順/.test(q) &&
     /aragyoku_2024_2025_focus_teams|winners-by-year|aragyoku_meet_records/.test(source)
   ) {
-    return true;
+    const explicitTeamLegRank =
+      /20\d{2}/.test(q) &&
+      /男子|女子/.test(q) &&
+      /[1-6]区/.test(q) &&
+      /岱明|玉高附属|玉名付属|玉名附属|天水|有明|南関|菊水/.test(q);
+    if (!explicitTeamLegRank) return true;
   }
   // Empty Drive stubs must not fill ranking / history answers
   if (/_EMPTY\.md|export\.status\.json/.test(source)) {

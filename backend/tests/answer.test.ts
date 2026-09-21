@@ -1248,6 +1248,22 @@ describe("answerQuestion", () => {
     }
   });
 
+  it("includes the split rank for a team leg question", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("2025年岱明男子5区は誰で区間順は？", {
+      llm: null,
+      skipRouter: true,
+      defaultYear: 2026,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.sources[0]).toBe("out-analysis/aragyoku_2024_2025_focus_teams.md");
+      expect(result.text).toContain("2025年5区 山本哲瑠（区間順2位・9:37）。");
+      expect(result.text).not.toContain("# 岱明 荒玉駅伝 歴代結果");
+    }
+  });
+
   it("handles the short なごみ集合場所 phrasing", async () => {
     resetRetrieverCache();
     resetKgCache();
