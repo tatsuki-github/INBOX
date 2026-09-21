@@ -153,6 +153,23 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
       return best[0]!;
     }
   }
+  if (
+    !/20\d{2}/.test(q) &&
+    /準優勝|2位/.test(q) &&
+    /荒玉|駅伝/.test(q) &&
+    /男子|女子/.test(q)
+  ) {
+    const gender = /女子/.test(q) ? "女子" : "男子";
+    const re = new RegExp(`20\\d{2}年荒玉駅伝${gender}の優勝校は[^。]*準優勝校は[^。]+。`, "g");
+    const matches = [...flat.matchAll(re)];
+    if (matches.length > 0) {
+      let best = matches[0]!;
+      for (const match of matches) {
+        if (Number(match[0].slice(0, 4)) >= Number(best[0].slice(0, 4))) best = match;
+      }
+      return best[0]!;
+    }
+  }
   // 優勝・準優勝の年度表（直近5年ブロックを先頭に据えた winners-by-year）
   if (/優勝|準優勝|2位/.test(q) && /荒玉|駅伝|過去/.test(q)) {
     const years = q.match(/20\d{2}/g) ?? [];
@@ -584,6 +601,11 @@ function offlineAnswer(
       /総合タイム/.test(question) &&
       /男子|女子/.test(question) &&
       /荒玉|駅伝/.test(question);
+    const latestRunnerUp =
+      !/20\d{2}/.test(question) &&
+      /準優勝|2位/.test(question) &&
+      /男子|女子/.test(question) &&
+      /荒玉|駅伝/.test(question);
     const kanaguriDate =
       /金栗駅伝/.test(question) &&
       /いつ|何日|何月|開催月|開催時期/.test(question);
@@ -593,6 +615,7 @@ function offlineAnswer(
       totalMeetRecord ||
       latestWinner ||
       latestWinnerTime ||
+      latestRunnerUp ||
       kanaguriDate;
     const hint = focusedLookup ? question : previewQuery ?? question;
     if (focusedLookup) {
@@ -1409,6 +1432,11 @@ export async function answerQuestion(
     /総合タイム/.test(question) &&
     /男子|女子/.test(question) &&
     /荒玉|駅伝/.test(question);
+  const latestRunnerUpQ =
+    !/20\d{2}/.test(question) &&
+    /準優勝|2位/.test(question) &&
+    /男子|女子/.test(question) &&
+    /荒玉|駅伝/.test(question);
   const genderLegRecordQ =
     /荒玉|駅伝|大会区間記録|区間記録|ボード記録/.test(question) &&
     /男子|女子/.test(question) &&
@@ -1456,6 +1484,11 @@ export async function answerQuestion(
     ];
   }
   if (latestWinnerTimeQ) {
+    preferredSources = [
+      preferredSources.find((s) => /winners-by-year/.test(s)) ?? "aragyoku/winners-by-year.md",
+    ];
+  }
+  if (latestRunnerUpQ) {
     preferredSources = [
       preferredSources.find((s) => /winners-by-year/.test(s)) ?? "aragyoku/winners-by-year.md",
     ];
@@ -1541,6 +1574,7 @@ export async function answerQuestion(
     runnerUpQ ||
     latestWinnerQ ||
     latestWinnerTimeQ ||
+    latestRunnerUpQ ||
     teamYearOverYearQ ||
     teamWinnerMarginQ ||
     namedMeetRecordQ ||
@@ -1566,6 +1600,7 @@ export async function answerQuestion(
         runnerUpQ ||
         latestWinnerQ ||
         latestWinnerTimeQ ||
+        latestRunnerUpQ ||
         teamYearOverYearQ ||
         teamWinnerMarginQ ||
         namedMeetRecordQ ||
