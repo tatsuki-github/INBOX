@@ -231,6 +231,23 @@ describe("answerQuestion", () => {
     }
   });
 
+  it("starts お別れ会 schedule answers at the farewell section", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("お別れ会いつやる？", {
+      llm: null,
+      skipRouter: true,
+      defaultYear: 2026,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.sources[0]).toBe("out-analysis/line-chats/daiming-staff.md");
+      expect(result.text).toContain("金栗駅伝・お別れ会");
+      expect(result.text).toContain("3/15 12:30–15:00");
+      expect(result.text).not.toContain("2026-01");
+    }
+  });
+
   it("routes a named runner's 区間タイム to the team race digest", async () => {
     resetRetrieverCache();
     resetKgCache();

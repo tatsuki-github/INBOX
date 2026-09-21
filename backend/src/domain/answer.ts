@@ -241,6 +241,14 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
       return flat.slice(idx, Math.min(flat.length, idx + budget));
     }
   }
+  if (/お別れ会/.test(q) && /いつ|日程|何時|日/.test(q)) {
+    for (const needle of ["### 金栗駅伝・お別れ会", "3年生お別れ会"]) {
+      const idx = flat.indexOf(needle);
+      if (idx >= 0) {
+        return flat.slice(idx, Math.min(flat.length, idx + budget));
+      }
+    }
+  }
   if (/合同練習会|おおはま/.test(q)) {
     for (const needle of [
       "### 玉名市合同練習会",
@@ -1216,6 +1224,8 @@ export async function answerQuestion(
     /岱明|玉高附属|玉名付属|玉名附属|天水|有明|南関|菊水|玉東|玉陵|長洲/.test(expanded);
   const namedAssignmentQ =
     /地点分担/.test(expanded) && /熊澤|土山|柴尾|土本/.test(expanded);
+  const farewellScheduleQ =
+    /お別れ会/.test(expanded) && /いつ|日程|何時|日/.test(expanded);
 
   const fromSources = retrieveBySources(preferredSources, {
     query: expanded,
@@ -1252,9 +1262,15 @@ export async function answerQuestion(
           /daiming-staff\.md$/.test(r.chunk.source) &&
           /地点分担（荒玉）|質問向け地点分担/.test(r.chunk.text),
       )
-    : mergedCoreRaw;
+    : farewellScheduleQ
+      ? mergedCoreRaw.filter(
+          (r) =>
+            /daiming-staff\.md$/.test(r.chunk.source) &&
+            /金栗駅伝・お別れ会|3年生お別れ会/.test(r.chunk.text),
+        )
+      : mergedCoreRaw;
   const withNeighbors = expandWithNeighbors(mergedCore, {
-    radius: exhaustive || namedAssignmentQ ? 0 : RETRIEVAL_BUDGET.neighborRadius,
+    radius: exhaustive || namedAssignmentQ || farewellScheduleQ ? 0 : RETRIEVAL_BUDGET.neighborRadius,
     maxExtra: exhaustive ? 0 : RETRIEVAL_BUDGET.neighborMaxExtra,
     query: expanded,
   });
