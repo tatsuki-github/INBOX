@@ -2194,6 +2194,22 @@ describe("answerQuestion", () => {
     }
   });
 
+  it("answers the なごみ会場 from the canonical program", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("なごみ駅伝の会場は？", {
+      skipRouter: true,
+      defaultYear: 2026,
+      llm: null,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.text).toContain("和水町三加和公民館");
+      expect(result.sources[0]).toContain("プログラム.pdf.md");
+      expect(result.sources.every((source) => !source.includes("daiming-parents"))).toBe(true);
+    }
+  });
+
   it("answers なごみ 岱明男子1区 from 2026 order list, not 金栗駅伝", async () => {
     resetRetrieverCache();
     resetKgCache();

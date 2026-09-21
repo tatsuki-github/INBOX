@@ -858,7 +858,11 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
       }
     }
   }
-  if (/なごみ/.test(q) && /集合|場所|会場/.test(q)) {
+  if (/なごみ/.test(q) && /会場/.test(q) && !/集合/.test(q)) {
+    const venue = flat.match(/(?:会場|開催場所)[：:]\s*([^（(]+?)(?:[（(]|$)/)?.[1]?.trim();
+    if (venue) return `なごみ駅伝の会場は${venue}です。`;
+  }
+  if (/なごみ/.test(q) && /集合|場所/.test(q)) {
     const idx = flat.indexOf("### なごみ駅伝");
     if (idx >= 0) {
       const next = flat.indexOf("### 通信陸上", idx + "### なごみ駅伝".length);
@@ -1319,6 +1323,10 @@ function offlineAnswer(
       /なごみ/.test(question) &&
       /開催日|開催日時|いつ|何日|日付/.test(question) &&
       !/結果|順位|予想|SB/.test(question);
+    const nagomiVenueLookup =
+      /なごみ/.test(question) &&
+      /会場/.test(question) &&
+      !/集合/.test(question);
     const women800FastestLookup =
       /女子/.test(question) && /800m|800ｍ/.test(question) && /最速|一番速|速い/.test(question);
     const individualTrackFastestLookup =
@@ -1369,6 +1377,7 @@ function offlineAnswer(
       resultListLookup ||
       nagomiResultLookup ||
       nagomiDateLookup ||
+      nagomiVenueLookup ||
       women800FastestLookup ||
       individualTrackFastestLookup ||
       kanaguriVenueLookup ||
@@ -2614,7 +2623,8 @@ export async function answerQuestion(
   const legDistanceQ =
     /2区.*5区|5区.*2区/.test(expanded) &&
     /距離|何キロ|何km|何メートル|何m/.test(expanded);
-  const nagomiGatherQ = /なごみ/.test(expanded) && /集合|場所|会場/.test(expanded);
+  const nagomiGatherQ = /なごみ/.test(expanded) && /集合|場所/.test(expanded);
+  const nagomiVenueQ = /なごみ/.test(expanded) && /会場/.test(expanded) && !/集合/.test(expanded);
   const kanaguriVenueQ =
     /金栗駅伝/.test(expanded) &&
     /会場|場所|開催日|日付|いつ|何月|開催月|開催時期/.test(expanded) &&
@@ -2657,21 +2667,31 @@ export async function answerQuestion(
       `drive-text/大会/${dateYear}年度/0920_中学駅伝金栗四三生誕の地なごみ大会/開催要項.md`,
     ];
   }
+  if (nagomiVenueQ) {
+    const venueYear = expanded.match(/20\d{2}/)?.[0] ?? "2026";
+    const venueBase =
+      `drive-text/大会/${venueYear}年度/0920_中学駅伝金栗四三生誕の地なごみ大会`;
+    preferredSources = [
+      `${venueBase}/プログラム.pdf.md`,
+      `${venueBase}/開催要項.md`,
+      `${venueBase}/当日スケジュール.md`,
+    ];
+  }
   const fromSources = retrieveBySources(preferredSources, {
     query: expanded,
     perSource:
       exhaustive || totalMeetRecordQ || teamFullRecordQ || explicitTeamLegRankQ || historicalWinnerQ || winnerYearTeamQ || legRankQuestionQ
-        || resultListQ || explicitLegAwardQ || schoolPbRankQ || nagomiLegOrderQ || nagomiResultQ || nagomiDateQ
+        || resultListQ || explicitLegAwardQ || schoolPbRankQ || nagomiLegOrderQ || nagomiResultQ || nagomiDateQ || nagomiVenueQ
         ? 200
         : RETRIEVAL_BUDGET.perSource,
     maxChunks:
       exhaustive || totalMeetRecordQ || teamFullRecordQ || explicitTeamLegRankQ || historicalWinnerQ || winnerYearTeamQ || legRankQuestionQ
-        || resultListQ || explicitLegAwardQ || schoolPbRankQ || nagomiLegOrderQ || nagomiResultQ || nagomiDateQ
+        || resultListQ || explicitLegAwardQ || schoolPbRankQ || nagomiLegOrderQ || nagomiResultQ || nagomiDateQ || nagomiVenueQ
         ? 200
         : RETRIEVAL_BUDGET.maxChunks,
       coverage:
       exhaustive || exactDatedPractice || totalMeetRecordQ || teamFullRecordQ || explicitTeamLegRankQ || historicalWinnerQ || winnerYearTeamQ || legRankQuestionQ
-        || resultListQ || explicitLegAwardQ || schoolPbRankQ || nagomiLegOrderQ || nagomiResultQ || nagomiDateQ
+        || resultListQ || explicitLegAwardQ || schoolPbRankQ || nagomiLegOrderQ || nagomiResultQ || nagomiDateQ || nagomiVenueQ
         ? "full"
         : "ranked",
   });
@@ -2712,6 +2732,7 @@ export async function answerQuestion(
     nagomiLegOrderQ ||
     nagomiResultQ ||
     nagomiDateQ ||
+    nagomiVenueQ ||
     explicitTeamLegQ ||
     teamFullRecordQ ||
     explicitTeamLegRankQ ||
@@ -2774,6 +2795,7 @@ export async function answerQuestion(
         nagomiLegOrderQ ||
         nagomiResultQ ||
         nagomiDateQ ||
+        nagomiVenueQ ||
         explicitTeamLegQ ||
         teamFullRecordQ ||
         explicitTeamLegRankQ ||
