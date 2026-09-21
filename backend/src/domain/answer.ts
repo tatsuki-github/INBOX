@@ -334,7 +334,7 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
   // A named holder asks for that athlete's board record, not the latest
   // year's row for the same gender and leg.
   const athleteMeetRecord = q.match(
-    /([\p{Script=Han}]{2,8})の(?:(?:荒玉|駅伝))?(?:男子|女子)?(?:[1-6]区)?(?:大会)?区間記録/u,
+    /([\p{Script=Han}]{2,8})の(?:(?:荒玉|駅伝))?(?:男子|女子)?(?:[1-6]区)?(?:大会)?(?:区間記録|ボード記録)/u,
   );
   if (athleteMeetRecord) {
     const name = athleteMeetRecord[1]!;
@@ -545,7 +545,7 @@ function offlineAnswer(
     const preciseMeetRecord = /(?:男子|女子).*?[1-6]区.*記録/.test(question);
     const namedMeetRecord =
       /[\p{Script=Han}]{2,8}の/u.test(question) &&
-      /大会記録|区間記録|記録保持/.test(question);
+      /大会記録|区間記録|ボード.*記録|記録保持/.test(question);
     const totalMeetRecord =
       /20\d{2}/.test(question) &&
       /男子|女子/.test(question) &&
@@ -1376,7 +1376,7 @@ export async function answerQuestion(
     !/区間賞|区間順/.test(question);
   const namedMeetRecordQ =
     /[\p{Script=Han}]{2,8}の/u.test(question) &&
-    /大会記録|区間記録|記録保持/.test(question) &&
+    /大会記録|区間記録|ボード.*記録|記録保持/.test(question) &&
     !/区間賞|区間順/.test(question);
   const totalMeetRecordQ =
     /20\d{2}/.test(question) &&
