@@ -902,7 +902,7 @@ function digestPinForQuery(chunk: RagChunk, query: string): number {
   const qn = query.normalize("NFKC");
   const base = chunkBaseSource(chunk.source);
   if (
-    /地点分担|何地点|どの地点|担当地点/.test(qn) &&
+    /地点分担|何地点|どの地点|担当地点|地点(?:は|に|です)/.test(qn) &&
     /daiming-staff\.md$/.test(base) &&
     /地点分担（荒玉）|質問向け地点分担/.test(chunk.text)
   ) {

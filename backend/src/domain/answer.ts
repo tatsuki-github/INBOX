@@ -235,7 +235,10 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
       }
     }
   }
-  if (/地点分担|何地点|どの地点|担当地点/.test(q) && /熊澤|土山|柴尾|土本/.test(q)) {
+  if (
+    /地点分担|何地点|どの地点|担当地点|地点(?:は|に|です)/.test(q) &&
+    /熊澤|土山|柴尾|土本/.test(q)
+  ) {
     const idx = flat.indexOf("地点分担（荒玉）");
     if (idx >= 0) {
       return flat.slice(idx, Math.min(flat.length, idx + budget));
@@ -1246,7 +1249,7 @@ export async function answerQuestion(
     /何位|順位/.test(expanded) &&
     /岱明|玉高附属|玉名付属|玉名附属|天水|有明|南関|菊水|玉東|玉陵|長洲/.test(expanded);
   const namedAssignmentQ =
-    /地点分担|何地点|どの地点|担当地点/.test(expanded) &&
+    /地点分担|何地点|どの地点|担当地点|地点(?:は|に|です)/.test(expanded) &&
     /熊澤|土山|柴尾|土本/.test(expanded);
   const farewellScheduleQ =
     /お別れ会/.test(expanded) && /いつ|日程|何時|時間|日/.test(expanded);
