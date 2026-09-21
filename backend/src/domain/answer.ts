@@ -1377,6 +1377,16 @@ export async function answerQuestion(
   }
   const teamYearOverYearQ =
     /前年比|前年から|前年度比/.test(question) && /男子|女子/.test(question);
+  const teamWinnerMarginQ =
+    /20\d{2}/.test(question) &&
+    /岱明|玉名付属|玉名附属|玉高附属|天水|有明/.test(question) &&
+    /優勝差|優勝との差|総合タイム.*優勝/.test(question);
+  if (teamWinnerMarginQ) {
+    preferredSources = [
+      preferredSources.find((s) => /aragyoku_2024_2025_focus_teams/.test(s)) ??
+        "out-analysis/aragyoku_2024_2025_focus_teams.md",
+    ];
+  }
   if (teamYearOverYearQ) {
     preferredSources = [
       preferredSources.find((s) => /aragyoku_2024_2025_focus_teams/.test(s)) ??
@@ -1444,6 +1454,7 @@ export async function answerQuestion(
     compactWinnerQ ||
     winnerSchoolQ ||
     teamYearOverYearQ ||
+    teamWinnerMarginQ ||
     namedMeetRecordQ ||
     totalMeetRecordQ ||
     genderLegRecordQ
@@ -1465,6 +1476,7 @@ export async function answerQuestion(
         compactWinnerQ ||
         winnerSchoolQ ||
         teamYearOverYearQ ||
+        teamWinnerMarginQ ||
         namedMeetRecordQ ||
         totalMeetRecordQ ||
         genderLegRecordQ ||

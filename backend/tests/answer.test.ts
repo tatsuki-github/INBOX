@@ -805,6 +805,23 @@ describe("answerQuestion", () => {
     }
   });
 
+  it("routes combined total-time and winner-margin phrasing to focus analysis", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("2025年岱明男子総合タイムと優勝差は？", {
+      llm: null,
+      skipRouter: true,
+      defaultYear: 2026,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.sources[0]).toBe("out-analysis/aragyoku_2024_2025_focus_teams.md");
+      expect(result.text).toContain("59:08");
+      expect(result.text).toContain("2:51");
+      expect(result.text).not.toContain("女子・直近5年");
+    }
+  });
+
   it("resolves a compact school/year/gender rank question to the team digest", async () => {
     resetRetrieverCache();
     resetKgCache();
