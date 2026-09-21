@@ -1233,6 +1233,17 @@ export async function answerQuestion(
     ),
   ).slice(0, RETRIEVAL_BUDGET.routeSources);
 
+  const compactWinnerQ =
+    /20\d{2}/.test(question) &&
+    /優勝/.test(question) &&
+    /男子|女子/.test(question) &&
+    /総合|タイム/.test(question);
+  if (compactWinnerQ) {
+    preferredSources = [
+      preferredSources.find((s) => /winners-by-year/.test(s)) ?? "aragyoku/winners-by-year.md",
+    ];
+  }
+
   if (exhaustive) {
     preferredSources = narrowExhaustiveSources(expanded, preferredSources);
   }
@@ -1288,7 +1299,8 @@ export async function answerQuestion(
     isLegAthleteQuestion(expanded) ||
     aragyokuDistanceQ ||
     compactTeamRankQ ||
-    kanaguriVenueQ
+    kanaguriVenueQ ||
+    compactWinnerQ
       ? []
       : retrieve(expanded, topK);
   const mergedCoreRaw = mergeRetrieved(
@@ -1297,7 +1309,11 @@ export async function answerQuestion(
     exhaustive ? Math.max(topK, fromSources.length, 96) : topK,
     {
       query: expanded,
-      preferPrimaryOrder: exhaustive || exactDatedPractice || isLegAthleteQuestion(expanded),
+      preferPrimaryOrder:
+        exhaustive ||
+        exactDatedPractice ||
+        compactWinnerQ ||
+        isLegAthleteQuestion(expanded),
     },
   );
   const mergedCore = namedAssignmentQ
