@@ -545,6 +545,10 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
   // 朝練の曜日質問は、スタッフLINE要約の一般的な先頭ではなく、
   // 曜日と集合時刻をまとめた定義セクションを先頭にする。
   if (/朝練/.test(q) && /曜日|いつ|何時|集合/.test(q)) {
+    const schedule = flat.match(/朝練は\s*\*{0,2}([^*。]+)\*{0,2}。集合は\s*\*{0,2}([0-9:]+)\*{0,2}（([^）]+)）/);
+    if (schedule) {
+      return `朝練のリズム: ${schedule[1]!.trim()}。集合${schedule[2]}（${schedule[3]!.trim()}）。`;
+    }
     for (const needle of ["### 朝練のリズム", "朝練は **月・火・木・金**", "朝練"]) {
       const idx = flat.indexOf(needle);
       if (idx >= 0) {
@@ -925,6 +929,8 @@ function offlineAnswer(
     const assignmentLookup =
       /地点分担|何地点|担当地点|地点は/.test(question) &&
       /熊澤|土山|柴尾|土本/.test(question);
+    const morningPracticeLookup =
+      /朝練/.test(question) && /曜日|いつ|何時|集合/.test(question);
     const top2CountLookup =
       /荒玉|駅伝/.test(question) &&
       /男子/.test(question) &&
@@ -984,6 +990,7 @@ function offlineAnswer(
       trackLapLookup ||
       legDistanceLookup ||
       assignmentLookup ||
+      morningPracticeLookup ||
       namedLegTimeLookup ||
       teamLegLookup ||
       top2CountLookup ||
