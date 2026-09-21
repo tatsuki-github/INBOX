@@ -1209,6 +1209,22 @@ describe("answerQuestion", () => {
     }
   });
 
+  it("supports Japanese numeral eleventh-place wording", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("荒玉駅伝の十一位は？", {
+      llm: null,
+      skipRouter: true,
+      defaultYear: 2026,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.text).toContain("2025年男子11位: 荒尾海陽（61:15）");
+      expect(result.text).toContain("2025年女子11位: 玉南（47:13）");
+      expect(result.text).not.toContain("深掘り分析");
+    }
+  });
+
   it("answers unqualified tenth-to-twelfth-place questions for both genders", async () => {
     resetRetrieverCache();
     resetKgCache();
