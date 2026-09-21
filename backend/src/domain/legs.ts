@@ -14,5 +14,8 @@ export function isLegAthleteQuestion(question: string): boolean {
   if (DISTANCE_ONLY_RE.test(q) && !WHO_RE.test(q)) return false;
   if (/(?:何|\d+)区を?走った|は何区(?:を|？|\?|!|！|$)|何区？/.test(q)) return true;
   if (/\d区は誰|\d区の選手|\d区ランナー|何区は誰|区間選手/.test(q)) return true;
+  // A named runner's 「区間タイム」 is a race-leg lookup even when the
+  // question omits the leg number (e.g. 「天水の山本悠斗の区間タイム」).
+  if (/区間タイム/.test(q) && /[一-龯]{2,8}/.test(q)) return true;
   return /\d区/.test(q) && /誰|選手|ランナー|走った|区間タイム|区間順/.test(q);
 }

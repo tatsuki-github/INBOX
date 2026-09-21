@@ -181,6 +181,21 @@ describe("answerQuestion", () => {
     }
   });
 
+  it("routes a named runner's 区間タイム to the team race digest", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("天水の山本悠斗の区間タイムは？", {
+      llm: null,
+      skipRouter: true,
+      defaultYear: 2026,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.sources).toContain("out-analysis/aragyoku-teams/天水.md");
+      expect(result.text).toContain("8:37");
+    }
+  });
+
   it("llm sees なごみ context for 9/20", async () => {
     resetRetrieverCache();
     resetKgCache();
