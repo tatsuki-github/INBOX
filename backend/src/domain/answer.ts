@@ -172,6 +172,38 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
     const lap = flat.match(/トラック\s*1周\s*=\s*\*{0,2}\s*560m/);
     if (lap) return lap[0].replace(/\*+/g, "");
   }
+  if (
+    !/20\d{2}/.test(q) &&
+    /何位|順位/.test(q) &&
+    /男子|女子/.test(q) &&
+    /岱明|玉高附属|玉名付属|玉名附属|天水|有明|南関|菊水|玉東|玉陵|長洲/.test(q) &&
+    !/過去|歴代|前年比|比較/.test(q)
+  ) {
+    const gender = /女子/.test(q) ? "女子" : "男子";
+    const team = /玉名付属|玉名附属|玉名附/.test(q)
+      ? "玉高附属"
+      : [
+          "岱明",
+          "玉高附属",
+          "天水",
+          "有明",
+          "南関",
+          "菊水",
+          "玉東",
+          "玉陵",
+          "長洲",
+        ].find((stem) => q.includes(stem));
+    if (team) {
+      const matches = [
+        ...flat.matchAll(new RegExp(`20\\d{2}年荒玉駅伝${gender} ${team}は[^。]+。`, "g")),
+      ];
+      if (matches.length > 0) {
+        return matches.reduce((best, match) =>
+          Number(match[0].slice(0, 4)) >= Number(best[0].slice(0, 4)) ? match : best,
+        )[0]!;
+      }
+    }
+  }
   // Full-record / ranking digests: prefer document head (title + early tables)
   if (
     /全記録|記録一覧|所属選手|ランキング|トップ\s*\d+|何位/.test(q) &&
@@ -727,6 +759,14 @@ function offlineAnswer(
       /南関中|玉名中|天水中|岱明中|長洲中|玉陵中|玉南中|玉名附中|荒尾三中|荒尾第四中|荒尾海陽中/.test(
         question,
       );
+    const latestTeamRankLookup =
+      !/20\d{2}/.test(question) &&
+      /何位|順位/.test(question) &&
+      /男子|女子/.test(question) &&
+      /岱明|玉高附属|玉名付属|玉名附属|天水|有明|南関|菊水|玉東|玉陵|長洲/.test(
+        question,
+      ) &&
+      !/過去|歴代|前年比|比較/.test(question);
     const kanaguriDate =
       /金栗駅伝/.test(question) &&
       /いつ|何日|何月|開催月|開催時期/.test(question);
@@ -742,6 +782,7 @@ function offlineAnswer(
       schoolPbRankLookup ||
       trackLapLookup ||
       teamFullRecordLookup ||
+      latestTeamRankLookup ||
       kanaguriDate;
     const hint = focusedLookup ? question : previewQuery ?? question;
     if (focusedLookup) {
@@ -1715,6 +1756,28 @@ export async function answerQuestion(
       preferredSources = [preferredSources.find((s) => s.endsWith(path)) ?? path];
     }
   }
+  const latestTeamRankQ =
+    !/20\d{2}/.test(expanded) &&
+    /何位|順位/.test(expanded) &&
+    /男子|女子/.test(expanded) &&
+    /岱明|玉高附属|玉名付属|玉名附属|天水|有明|南関|菊水|玉東|玉陵|長洲/.test(expanded) &&
+    !/過去|歴代|前年比|比較/.test(expanded);
+  if (latestTeamRankQ) {
+    const team = /玉名付属|玉名附属|玉名附/.test(question)
+      ? "玉高附属"
+      : [
+          "岱明",
+          "玉高附属",
+          "天水",
+          "有明",
+          "南関",
+          "菊水",
+          "玉東",
+          "玉陵",
+          "長洲",
+        ].find((stem) => question.includes(stem));
+    if (team) preferredSources = [`out-analysis/aragyoku-teams/${team}.md`];
+  }
   const schoolPbRankQ =
     /1500m|1500ｍ|800m|800ｍ/.test(expanded) &&
     /上位\s*\d+\s*人平均|上位\d+人平均|学校別|所属別/.test(
@@ -1777,6 +1840,7 @@ export async function answerQuestion(
     schoolPbRankQ ||
     trackLapQ ||
     teamFullRecordQ ||
+    latestTeamRankQ ||
     teamYearOverYearQ ||
     teamWinnerMarginQ ||
     namedMeetRecordQ ||
@@ -1809,6 +1873,7 @@ export async function answerQuestion(
         schoolPbRankQ ||
         trackLapQ ||
         teamFullRecordQ ||
+        latestTeamRankQ ||
         teamYearOverYearQ ||
         teamWinnerMarginQ ||
         namedMeetRecordQ ||

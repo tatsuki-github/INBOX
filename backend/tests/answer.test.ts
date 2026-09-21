@@ -968,6 +968,22 @@ describe("answerQuestion", () => {
     }
   });
 
+  it("defaults a yearless team-rank question to the latest team result", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("岱明男子の順位は？", {
+      llm: null,
+      skipRouter: true,
+      defaultYear: 2026,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.sources[0]).toBe("out-analysis/aragyoku-teams/岱明.md");
+      expect(result.text).toContain("2025年荒玉駅伝男子 岱明は6位・総合59:08");
+      expect(result.text).not.toContain("2017年荒玉駅伝女子 岱明は");
+    }
+  });
+
   it("does not confuse 玉名付属中 with the 玉名 team digest", async () => {
     resetRetrieverCache();
     resetKgCache();
