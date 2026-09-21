@@ -1525,7 +1525,7 @@ function offlineAnswer(
       /荒玉(?:駅伝|中体連)?/.test(question) &&
       /開催日|いつ|何日|日付/.test(question);
     const aragyokuVenueLookup =
-      /荒玉駅伝/.test(question) &&
+      /荒玉(?:駅伝|中体連)?/.test(question) &&
       /会場|場所/.test(question);
     const focusedLookup =
       preciseMeetRecord ||
@@ -2932,7 +2932,7 @@ export async function answerQuestion(
     /荒玉(?:駅伝|中体連)?/.test(expanded) &&
     /開催日|いつ|何日|日付/.test(expanded);
   const aragyokuVenueQ =
-    /荒玉駅伝/.test(expanded) &&
+    /荒玉(?:駅伝|中体連)?/.test(expanded) &&
     /会場|場所/.test(expanded);
   const genericResultQ =
     !/男子|女子/.test(expanded) &&

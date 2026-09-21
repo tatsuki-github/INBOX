@@ -2491,6 +2491,21 @@ describe("answerQuestion", () => {
     }
   });
 
+  it("routes the short 荒玉会場 phrasing to one calendar answer", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("荒玉の会場は？", {
+      skipRouter: true,
+      defaultYear: 2026,
+      llm: null,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.text.match(/会場は、手元の正本資料では確認できません/g)?.length).toBe(1);
+      expect(result.sources[0]).toBe("calendar/events.daiming.yaml");
+    }
+  });
+
   it("routes an unqualified 荒玉結果 question to both result transcripts", async () => {
     resetRetrieverCache();
     resetKgCache();
