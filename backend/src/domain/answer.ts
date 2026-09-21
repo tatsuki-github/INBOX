@@ -320,6 +320,16 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
       ? year + "年荒玉中体連駅伝の会場は、手元の正本資料では確認できません。"
       : "荒玉中体連駅伝の会場は、手元の正本資料では確認できません。2026年大会は10月14日（予備日10月15日）予定です。";
   }
+  if (/なごみ/.test(q) && /男子|女子/.test(q) && /結果|順位/.test(q)) {
+    const rows = [...flat.matchAll(
+      /\|\s*(\d+)\s*\|\s*\d+\s*\|\s*([^|]+?)\s*\|\s*([0-9]+\s*:\s*\d{2})\s*\|/g,
+    )];
+    if (rows.length > 0) {
+      const gender = /女子/.test(q) ? "女子" : "男子";
+      return "2026年なごみ駅伝" + gender + "の結果: " +
+        rows.map((row) => row[1] + "位 " + row[2]!.trim() + " " + row[3]!.replace(/\s+/g, "")).join("、") + "。";
+    }
+  }
   const namedLegTime =
     q.match(/([\p{Script=Han}]{2,8})の区間タイム/u) ??
     q.match(/([\p{Script=Han}]{2,8})の(?:荒玉)?20\d{2}年?区間タイム/u);
@@ -2900,10 +2910,10 @@ export async function answerQuestion(
     const resultYear = expanded.match(/20\d{2}/)?.[0] ?? "2026";
     const resultBase =
       `drive-text/大会/${resultYear}年度/0920_中学駅伝金栗四三生誕の地なごみ大会`;
-      preferredSources = [
-      `${resultBase}/男子成績表.md`,
-      `${resultBase}/女子成績表.md`,
-    ];
+    const resultGenders = /男子|女子/.test(expanded)
+      ? [/女子/.test(expanded) ? "女子" : "男子"]
+      : ["男子", "女子"];
+    preferredSources = resultGenders.map((gender) => resultBase + "/" + gender + "成績表.md");
   }
   if (nagomiDateQ) {
     const dateYear = expanded.match(/20\d{2}/)?.[0] ?? "2026";

@@ -2259,6 +2259,24 @@ describe("answerQuestion", () => {
     }
   });
 
+  it("summarizes the requested なごみ gender result table", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("なごみ駅伝の女子結果は？", {
+      skipRouter: true,
+      defaultYear: 2026,
+      llm: null,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.text).toContain("2026年なごみ駅伝女子の結果");
+      expect(result.text).toContain("1位 金栗PROJECT A 26:55");
+      expect(result.text).toContain("23位 湯浦 37:18");
+      expect(result.sources[0]).toContain("女子成績表.md");
+      expect(result.text).not.toContain("原本:");
+    }
+  });
+
   it("answers なごみ区間1位 from actual results, not the order list", async () => {
     resetRetrieverCache();
     resetKgCache();
