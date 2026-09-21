@@ -2420,6 +2420,22 @@ describe("answerQuestion", () => {
     }
   });
 
+  it("extracts the fastest women 800m PB from the canonical ranking", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("2026年女子800mの最速は？", {
+      skipRouter: true,
+      defaultYear: 2026,
+      llm: null,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.sources[0]).toBe("out-analysis/2026_women_800m_1500m_pb_school_ranking.md");
+      expect(result.text).toContain("村上咲稀（岱明中）の2:20.11");
+      expect(result.text).not.toContain("名前,所属,性別,カテゴリー");
+    }
+  });
+
   it("answers 優勝との差 from focus analysis not meet_records board", async () => {
     resetRetrieverCache();
     resetKgCache();

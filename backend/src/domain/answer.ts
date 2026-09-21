@@ -142,6 +142,30 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
       return `${label}: ${rows.map(([rank, [team, total]]) => `${rank}位 ${team} ${total}`).join("、")}。`;
     }
   }
+  if (/女子/.test(q) && /800m|800ｍ/.test(q) && /最速|一番速|速い/.test(q)) {
+    const sectionStart = flat.indexOf("## 800m・上位3人平均");
+    const sectionEnd = flat.indexOf("## 800m・上位5人平均", sectionStart + 1);
+    const section = sectionStart >= 0
+      ? flat.slice(sectionStart, sectionEnd >= 0 ? sectionEnd : undefined)
+      : flat;
+    let fastest: { name: string; school: string; time: string; year: string; seconds: number } | null = null;
+    for (const row of section.matchAll(/\|\s*\d+\s*\|\s*([^|]+)\|\s*[^|]+\|\s*[^|]+\|\s*([^|]+)\|/g)) {
+      for (const record of row[2]!.matchAll(/([^/]+?)\s+(\d+:\d{2}(?:\.\d{2})?)（(\d{4})）/g)) {
+        const [minutes, seconds] = record[2]!.split(":").map(Number);
+        const candidate = {
+          name: record[1]!.trim(),
+          school: row[1]!.trim(),
+          time: record[2]!,
+          year: record[3]!,
+          seconds: minutes * 60 + seconds,
+        };
+        if (!fastest || candidate.seconds < fastest.seconds) fastest = candidate;
+      }
+    }
+    if (fastest) {
+      return `女子800mの最速は${fastest.name}（${fastest.school}）の${fastest.time}（${fastest.year}）。`;
+    }
+  }
   const paceCalc = q.match(/([1-6])区/) && q.match(/(\d+)分(?:\s*(\d+)秒)?/);
   if (paceCalc && /ペース|\/km|1km|キロあたり/.test(q) && /荒玉|駅伝/.test(q)) {
     const leg = Number(q.match(/([1-6])区/)![1]);
@@ -1249,6 +1273,8 @@ function offlineAnswer(
       !/優勝|準優勝|区間|大会記録|記録保持/.test(question) &&
       !/何位/.test(question) &&
       !/岱明|玉高附属|玉名付属|玉名附属|天水|有明|南関|菊水|玉東|玉陵|長洲|荒尾/.test(question);
+    const women800FastestLookup =
+      /女子/.test(question) && /800m|800ｍ/.test(question) && /最速|一番速|速い/.test(question);
     const kanaguriDate =
       /金栗駅伝/.test(question) &&
       /いつ|何日|何月|開催月|開催時期/.test(question);
@@ -1289,6 +1315,7 @@ function offlineAnswer(
       latestTeamRankLookup ||
       teamYearOverYearLookup ||
       resultListLookup ||
+      women800FastestLookup ||
       kanaguriDate;
     const hint = focusedLookup ? question : previewQuery ?? question;
     if (focusedLookup) {
@@ -2510,17 +2537,17 @@ export async function answerQuestion(
     query: expanded,
     perSource:
       exhaustive || totalMeetRecordQ || teamFullRecordQ || explicitTeamLegRankQ || historicalWinnerQ || winnerYearTeamQ || legRankQuestionQ
-        || resultListQ || explicitLegAwardQ
+        || resultListQ || explicitLegAwardQ || schoolPbRankQ
         ? 200
         : RETRIEVAL_BUDGET.perSource,
     maxChunks:
       exhaustive || totalMeetRecordQ || teamFullRecordQ || explicitTeamLegRankQ || historicalWinnerQ || winnerYearTeamQ || legRankQuestionQ
-        || resultListQ || explicitLegAwardQ
+        || resultListQ || explicitLegAwardQ || schoolPbRankQ
         ? 200
         : RETRIEVAL_BUDGET.maxChunks,
       coverage:
       exhaustive || exactDatedPractice || totalMeetRecordQ || teamFullRecordQ || explicitTeamLegRankQ || historicalWinnerQ || winnerYearTeamQ || legRankQuestionQ
-        || resultListQ || explicitLegAwardQ
+        || resultListQ || explicitLegAwardQ || schoolPbRankQ
         ? "full"
         : "ranked",
   });
