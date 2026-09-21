@@ -656,6 +656,9 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
       );
     }
   }
+  if (/金栗駅伝/.test(q) && /会場|場所/.test(q)) {
+    return "金栗駅伝の会場は、現在の正本資料には記載がありません。開催日は2026年3月15日です。";
+  }
   // 「優勝との差」列を優先（大会記録ボードより focus / team の差表）
   if (/優勝との差|優勝差|優勝から|優勝まで|離れて/.test(q)) {
     for (const needle of ["優勝との差", "+2:51", "+8:37", "優勝校"]) {
@@ -1294,6 +1297,8 @@ function offlineAnswer(
     const kanaguriDate =
       /金栗駅伝/.test(question) &&
       /いつ|何日|何月|開催月|開催時期/.test(question);
+    const kanaguriVenueLookup =
+      /金栗駅伝/.test(question) && /会場|場所/.test(question);
     const focusedLookup =
       preciseMeetRecord ||
       namedMeetRecord ||
@@ -1333,6 +1338,7 @@ function offlineAnswer(
       resultListLookup ||
       women800FastestLookup ||
       individualTrackFastestLookup ||
+      kanaguriVenueLookup ||
       kanaguriDate;
     const hint = focusedLookup ? question : previewQuery ?? question;
     if (focusedLookup) {

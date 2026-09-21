@@ -526,7 +526,7 @@ describe("answerQuestion", () => {
     if (result.kind === "offline") {
       expect(result.sources).toEqual(["drive-text/大会/2026年度/0315_金栗駅伝/概要.md"]);
       expect(result.text).toContain("金栗駅伝");
-      expect(result.text).toContain("詳細・結果は追記予定");
+      expect(result.text).toContain("正本資料には記載がありません");
       expect(result.text).not.toContain("朝練のリズム");
     }
   });
