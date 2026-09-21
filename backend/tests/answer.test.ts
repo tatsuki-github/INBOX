@@ -916,6 +916,23 @@ describe("answerQuestion", () => {
     }
   });
 
+  it("defaults a yearless 荒玉 total-record question to the latest board row", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("荒玉男子の総合記録は？", {
+      llm: null,
+      skipRouter: true,
+      defaultYear: 2026,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.sources[0]).toBe("out-analysis/aragyoku_meet_records.md");
+      expect(result.text).toContain("2025年荒玉駅伝男子のボード上部・総合大会記録は56:38");
+      expect(result.text).toContain("南関中");
+      expect(result.text).not.toContain("2026年度荒玉男子.pdf");
+    }
+  });
+
   it("recognizes omitted-meet board record phrasing", async () => {
     resetRetrieverCache();
     resetKgCache();

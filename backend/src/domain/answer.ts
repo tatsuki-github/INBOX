@@ -396,16 +396,29 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
   }
   if (
     /総合大会記録|総合.*(?:大会)?記録|ボード.*男子|男子.*総合.*(?:大会)?記録|女子.*総合.*(?:大会)?記録/.test(q) &&
-    /20\d{2}/.test(q)
+    /男子|女子/.test(q) &&
+    /荒玉|駅伝|ボード/.test(q)
   ) {
     const year = q.match(/20\d{2}/)?.[0];
     const gender = /女子/.test(q) ? "女子" : "男子";
-    const needle = `${year}年荒玉駅伝${gender}のボード上部・総合大会記録`;
-    const idx = flat.indexOf(needle);
-    if (idx >= 0) {
-      const sentenceEnd = flat.indexOf("。", idx);
-      if (sentenceEnd >= 0) return flat.slice(idx, sentenceEnd + 1);
-      return flat.slice(idx, Math.min(flat.length, idx + budget));
+    if (year) {
+      const needle = `${year}年荒玉駅伝${gender}のボード上部・総合大会記録`;
+      const idx = flat.indexOf(needle);
+      if (idx >= 0) {
+        const sentenceEnd = flat.indexOf("。", idx);
+        if (sentenceEnd >= 0) return flat.slice(idx, sentenceEnd + 1);
+        return flat.slice(idx, Math.min(flat.length, idx + budget));
+      }
+    } else {
+      const re = new RegExp(`20\\d{2}年荒玉駅伝${gender}のボード上部・総合大会記録[^。]+。`, "g");
+      const matches = [...flat.matchAll(re)];
+      if (matches.length > 0) {
+        let best = matches[0]!;
+        for (const match of matches) {
+          if (Number(match[0].slice(0, 4)) >= Number(best[0].slice(0, 4))) best = match;
+        }
+        return best[0]!;
+      }
     }
   }
   if (/距離|長さ|どれくらい|何キロ|何km|何m|何ｍ|何メートル/.test(q) && /[1-6]区|区間/.test(q)) {
@@ -547,7 +560,6 @@ function offlineAnswer(
       /[\p{Script=Han}]{2,8}の/u.test(question) &&
       /大会記録|区間記録|ボード.*記録|記録保持/.test(question);
     const totalMeetRecord =
-      /20\d{2}/.test(question) &&
       /男子|女子/.test(question) &&
       /総合.*(?:大会記録|記録)|ボード/.test(question) &&
       /荒玉|駅伝|ボード/.test(question);
@@ -1379,7 +1391,6 @@ export async function answerQuestion(
     /大会記録|区間記録|ボード.*記録|記録保持/.test(question) &&
     !/区間賞|区間順/.test(question);
   const totalMeetRecordQ =
-    /20\d{2}/.test(question) &&
     /男子|女子/.test(question) &&
     /総合.*(?:大会記録|記録)|ボード/.test(question) &&
     /荒玉|駅伝|ボード/.test(question);
