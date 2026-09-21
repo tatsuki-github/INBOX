@@ -188,6 +188,34 @@ describe("answerQuestion", () => {
     }
   });
 
+  it("resolves 明日の玉名市練習会 to the exact dated practice note", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    let systemPrompt = "";
+    let userPrompt = "";
+    const result = await answerQuestion("明日の玉名市練習会の予定は？", {
+      skipRouter: true,
+      defaultYear: 2026,
+      now: new Date("2026-09-21T00:00:00+09:00"),
+      llm: {
+        complete: async (system, user) => {
+          systemPrompt = system;
+          userPrompt = user;
+          return "2026年9月22日（火祝）は午前8時集合、おおはまふれあいセンターです。";
+        },
+      },
+    });
+    expect(result.kind).toBe("answered");
+    expect(systemPrompt).toContain("日付解釈");
+    expect(userPrompt).toContain("日付解釈: 2026-09-22");
+    expect(userPrompt).toContain("2026年9月22日（火祝）");
+    expect(userPrompt).toContain("おおはまふれあいセンター");
+    expect(userPrompt).not.toContain("phase-5-6");
+    if (result.kind === "answered") {
+      expect(result.sources[0]).toBe("drive-text/練習/玉名市練習会/2026-09-22.md");
+    }
+  });
+
   it("formats llm markdown and strips source footers", async () => {
     const result = await answerQuestion("荒玉駅伝で岱明は何位？", {
       retrieve: fakeRetrieve,

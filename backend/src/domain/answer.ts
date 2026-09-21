@@ -3,6 +3,7 @@ import {
   currentFiscalYear,
   expandDateQuery,
   parseDateMentions,
+  resolveRelativeDates,
   resolveRelativeYears,
 } from "./dates.js";
 import { matchCannedAnswer } from "./canned.js";
@@ -55,6 +56,8 @@ export type AnswerDeps = {
   defaultYear?: number;
   /** Inject meet result URL index (tests / overrides) */
   meetResultUrls?: MeetResultUrlEntry[];
+  /** Override the clock used for relative-date expansion (tests / replay). */
+  now?: Date;
 };
 
 function finalizeAnswerText(
@@ -284,6 +287,12 @@ function offlineAnswer(
   return formatForLine(lines.join("\n"));
 }
 
+function isDateScheduleQuestion(query: string): boolean {
+  return /予定|スケジュール|カレンダー|練習会|練習|集合|会場|場所|何時/.test(
+    query.normalize("NFKC"),
+  );
+}
+
 function boostDateMeetSources(expandedQuery: string, baseSources: string[]): string[] {
   const mentions = parseDateMentions(expandedQuery);
   const out: string[] = [];
@@ -295,7 +304,20 @@ function boostDateMeetSources(expandedQuery: string, baseSources: string[]): str
   };
 
   if (mentions.length > 0) {
+    const exactPracticeSources = findSourcesContaining(
+      mentions.map((m) => m.iso),
+      { prefix: "drive-text/練習/", limit: 12 },
+    );
+    for (const s of exactPracticeSources) push(s);
     push("calendar/events.daiming.yaml");
+
+    // A dated practice/schedule question has a canonical dated practice note.
+    // Keep implementation notes and unrelated chat/record sources out of the
+    // first retrieval pass when that exact note exists.
+    if (isDateScheduleQuestion(expandedQuery) && exactPracticeSources.length > 0) {
+      return out;
+    }
+
     const mmdds = mentions.map((m) => m.mmdd);
     for (const s of findSourcesContaining(mmdds, { prefix: "drive-text/大会/", limit: 12 })) {
       push(s);
@@ -841,8 +863,9 @@ export async function answerQuestion(
   question: string,
   deps: AnswerDeps = {},
 ): Promise<AnswerResult> {
-  const year = deps.defaultYear ?? currentFiscalYear();
-  const expanded = expandDateQuery(question, year);
+  const now = deps.now ?? new Date();
+  const year = deps.defaultYear ?? currentFiscalYear(now);
+  const expanded = expandDateQuery(question, year, now);
   const topK = deps.topK ?? RETRIEVAL_BUDGET.topK;
   const exhaustive = isExhaustiveListQuery(expanded);
 
@@ -919,6 +942,15 @@ export async function answerQuestion(
     preferredSources = narrowExhaustiveSources(expanded, preferredSources);
   }
 
+  const exactDatedPractice =
+    isDateScheduleQuestion(expanded) &&
+    preferredSources.some((s) => s.startsWith("drive-text/練習/"));
+  if (exactDatedPractice) {
+    preferredSources = preferredSources.filter(
+      (s) => s === "calendar/events.daiming.yaml" || s.startsWith("drive-text/練習/"),
+    );
+  }
+
   const fromSources = retrieveBySources(preferredSources, {
     query: expanded,
     perSource: exhaustive ? 200 : RETRIEVAL_BUDGET.perSource,
@@ -927,7 +959,7 @@ export async function answerQuestion(
   });
   const retrieve = deps.retrieve ?? retrieveContext;
   // Exhaustive: preferred digest coverage alone — BM25 OCR/ADR filler drowns the list
-  const fromBm25 = exhaustive ? [] : retrieve(expanded, topK);
+  const fromBm25 = exhaustive || exactDatedPractice ? [] : retrieve(expanded, topK);
   const mergedCore = mergeRetrieved(
     fromSources,
     fromBm25,
@@ -960,9 +992,14 @@ export async function answerQuestion(
   try {
     const focusNote =
       route.focus && route.focus !== question ? `\n検索焦点: ${route.focus}` : "";
+    const relativeDateMentions = resolveRelativeDates(question, now);
+    const dateNote =
+      relativeDateMentions.length > 0
+        ? `\n日付解釈: ${relativeDateMentions.map((m) => m.iso).join(", ")}`
+        : "";
     const text = await deps.llm.complete(
       buildSystemPrompt({ exhaustive }),
-      buildUserPrompt(question + focusNote, merged, { exhaustive }),
+      buildUserPrompt(question + focusNote + dateNote, merged, { exhaustive }),
     );
     return {
       kind: "answered",

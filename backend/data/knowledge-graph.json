@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated_at": "2026-09-21T06:07:45Z",
+  "generated_at": "2026-09-21T06:36:57Z",
   "nodes": [
     {
       "id": "corpus:analysis-ocr",
@@ -471,9 +471,9 @@
         "practice"
       ],
       "refs": [
-        "out/analysis/notion_records_2026.json",
+        "input/events.2026.yaml",
         "out/2026/practice_absentees.csv",
-        "input/events.2026.yaml"
+        "out/analysis/notion_records_2026.json"
       ],
       "hint": "部員エンティティ"
     },
@@ -487,9 +487,9 @@
         "practice"
       ],
       "refs": [
-        "out/analysis/notion_records_2026.json",
+        "input/events.2026.yaml",
         "out/2026/practice_absentees.csv",
-        "input/events.2026.yaml"
+        "out/analysis/notion_records_2026.json"
       ],
       "hint": "所属:岱明中"
     },
@@ -535,11 +535,11 @@
         "practice"
       ],
       "refs": [
-        "out/analysis/notion_records_2026.json",
-        "input/events.2025.yaml",
+        "input/events.2026.yaml",
         "out/2026/practice_absentees.csv",
         "out/2025/practice_absentees.csv",
-        "input/events.2026.yaml"
+        "input/events.2025.yaml",
+        "out/analysis/notion_records_2026.json"
       ],
       "hint": "部員エンティティ"
     },
@@ -553,11 +553,11 @@
         "practice"
       ],
       "refs": [
-        "out/analysis/notion_records_2026.json",
-        "input/events.2025.yaml",
+        "input/events.2026.yaml",
         "out/2026/practice_absentees.csv",
         "out/2025/practice_absentees.csv",
-        "input/events.2026.yaml"
+        "input/events.2025.yaml",
+        "out/analysis/notion_records_2026.json"
       ],
       "hint": "所属:岱明中"
     },
