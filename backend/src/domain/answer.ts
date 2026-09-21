@@ -439,6 +439,15 @@ function sortMeetDriveSources(sources: string[], query: string): string[] {
 /** Prefer SB / 記録データベース sources for athlete-record questions. */
 function boostAthleteRecordSources(query: string, baseSources: string[]): string[] {
   const q = query.normalize("NFKC");
+  if (/20\d{2}/.test(q) && /男子|女子/.test(q) && /何位|順位/.test(q)) {
+    const teamDigest = baseSources.find((s) => {
+      const stem = s.match(/aragyoku-teams\/([^/]+)\.md$/)?.[1] ?? "";
+      if (!stem) return false;
+      const aliases = stem === "玉高附属" ? ["玉高附属", "玉名付属", "玉名附属", "玉名附"] : [stem];
+      return aliases.some((alias) => q.includes(alias));
+    });
+    if (teamDigest) return [teamDigest];
+  }
   // Year-over-year team questions belong to the 2024–2025 focus digest, not
   // the broad athlete/media corpus.
   if (/前年比|前年から|前年度比/.test(q) && /男子|女子/.test(q)) {
@@ -1141,6 +1150,11 @@ export async function answerQuestion(
     /距離|何キロ|何km|何ｍ|何メートル/.test(expanded) &&
     /[1-6]区|区間/.test(expanded) &&
     !/ペース/.test(expanded);
+  const compactTeamRankQ =
+    /20\d{2}/.test(expanded) &&
+    /男子|女子/.test(expanded) &&
+    /何位|順位/.test(expanded) &&
+    /岱明|玉高附属|玉名付属|玉名附属|天水|有明|南関|菊水|玉東|玉陵|長洲/.test(expanded);
 
   const fromSources = retrieveBySources(preferredSources, {
     query: expanded,
@@ -1158,7 +1172,8 @@ export async function answerQuestion(
     exactDatedPractice ||
     namedTeamSbList ||
     isLegAthleteQuestion(expanded) ||
-    aragyokuDistanceQ
+    aragyokuDistanceQ ||
+    compactTeamRankQ
       ? []
       : retrieve(expanded, topK);
   const mergedCore = mergeRetrieved(

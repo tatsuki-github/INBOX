@@ -400,6 +400,21 @@ describe("answerQuestion", () => {
     }
   });
 
+  it("classifies a compact school/year/gender 順位 question as 荒玉", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("有明男子2025の順位は？", {
+      llm: null,
+      skipRouter: true,
+      defaultYear: 2026,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.sources[0]).toBe("out-analysis/aragyoku-teams/有明.md");
+      expect(result.text).toContain("12位");
+    }
+  });
+
   it("llm sees なごみ context for 9/20", async () => {
     resetRetrieverCache();
     resetKgCache();
