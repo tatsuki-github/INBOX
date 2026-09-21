@@ -368,7 +368,7 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
     /優勝/.test(q) &&
     /荒玉|駅伝/.test(q) &&
     (/最新|直近|今年/.test(q) || /優勝チーム/.test(q) || (!/20\d{2}/.test(q) && /優勝校|優勝は/.test(q))) &&
-    !/差|タイム/.test(q)
+    !/差|タイム|過去|歴代|全て|全部/.test(q)
   ) {
     const gender = /女子/.test(q) ? "女子" : /男子/.test(q) ? "男子" : "";
     if (gender) {
