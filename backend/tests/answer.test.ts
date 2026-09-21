@@ -950,6 +950,19 @@ describe("answerQuestion", () => {
     }
   });
 
+  it("summarizes yearless gendered aragyoku runner-up questions", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    for (const [question, expected] of [
+      ["荒玉駅伝男子の2位は？", "2025年男子準優勝校: 玉陵（58:02）"],
+      ["荒玉駅伝女子の準優勝タイムは？", "2025年女子準優勝校: 南関（43:45）"],
+    ]) {
+      const result = await answerQuestion(question, { llm: null, skipRouter: true, defaultYear: 2026 });
+      expect(result.kind).toBe("offline");
+      if (result.kind === "offline") expect(result.text).toContain(expected);
+    }
+  });
+
   it("answers an unqualified sixth-place question for both genders", async () => {
     resetRetrieverCache();
     resetKgCache();
