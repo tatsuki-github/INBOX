@@ -127,7 +127,9 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
   const budget = maxChars ?? offlinePreviewBudget(question);
   const flat = text.replace(/\s+/g, " ");
   const q = question.normalize("NFKC");
-  const resultListMatch = q.match(/(20\d{2}).*?(男子|女子).*?(?:結果一覧|結果表|順位表)/);
+  const resultListMatch = q.match(
+    /(20\d{2}).*?(男子|女子).*?(?:結果一覧|結果表|順位表|順位(?:は|を|だけ|全部)?)/,
+  );
   if (resultListMatch && /荒玉|駅伝/.test(q)) {
     const rowsByRank = new Map<number, [string, string]>();
     for (const row of flat.matchAll(/(?:^|\s)(\d+)位\s+([^\s]+)\s+(?:総合\s*)?(\d+:\d+)/g)) {
@@ -1238,8 +1240,10 @@ function offlineAnswer(
     const resultListLookup =
       /20\d{2}/.test(question) &&
       /男子|女子/.test(question) &&
-      /(?:結果一覧|結果表|順位表)/.test(question) &&
-      /荒玉|駅伝/.test(question);
+      /(?:結果一覧|結果表|順位表|順位(?:は|を|だけ|全部)?)/.test(question) &&
+      /荒玉|駅伝/.test(question) &&
+      !/何位/.test(question) &&
+      !/岱明|玉高附属|玉名付属|玉名附属|天水|有明|南関|菊水|玉東|玉陵|長洲|荒尾/.test(question);
     const kanaguriDate =
       /金栗駅伝/.test(question) &&
       /いつ|何日|何月|開催月|開催時期/.test(question);
@@ -2257,8 +2261,10 @@ export async function answerQuestion(
   const resultListQ =
     /20\d{2}/.test(question) &&
     /男子|女子/.test(question) &&
-    /(?:結果一覧|結果表|順位表)/.test(question) &&
-    /荒玉|駅伝/.test(question);
+    /(?:結果一覧|結果表|順位表|順位(?:は|を|だけ|全部)?)/.test(question) &&
+    /荒玉|駅伝/.test(question) &&
+    !/何位/.test(question) &&
+    !/岱明|玉高附属|玉名付属|玉名附属|天水|有明|南関|菊水|玉東|玉陵|長洲|荒尾/.test(question);
   if (resultListQ) {
     const resultYear = question.match(/20\d{2}/)?.[0] ?? String(year);
     const resultGender = /女子/.test(question) ? "女子" : "男子";

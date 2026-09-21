@@ -630,6 +630,23 @@ describe("answerQuestion", () => {
     }
   });
 
+  it("lists every team when a year-gender question asks for overall ranks", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("2025年荒玉女子の順位は？", {
+      llm: null,
+      skipRouter: true,
+      defaultYear: 2026,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.sources[0]).toBe("aragyoku/transcripts/2025-女子.json");
+      expect(result.text).toContain("1位 玉名 41:58");
+      expect(result.text).toContain("15位 天水 51:29");
+      expect(result.text).not.toContain("深掘り分析");
+    }
+  });
+
   it("treats 優勝チーム as a winner-school lookup", async () => {
     resetRetrieverCache();
     resetKgCache();
