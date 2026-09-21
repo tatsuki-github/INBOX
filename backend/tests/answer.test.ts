@@ -794,6 +794,22 @@ describe("answerQuestion", () => {
     }
   });
 
+  it("answers an unqualified fourth-place question for both genders", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("荒玉駅伝の4位は？", {
+      llm: null,
+      skipRouter: true,
+      defaultYear: 2026,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.text).toContain("2025年男子4位: 長洲（58:49）");
+      expect(result.text).toContain("2025年女子4位: 長洲（44:33）");
+      expect(result.text).not.toContain("深掘り分析");
+    }
+  });
+
   it("lists all historical winners for a gender-specific 歴代 question", async () => {
     resetRetrieverCache();
     resetKgCache();

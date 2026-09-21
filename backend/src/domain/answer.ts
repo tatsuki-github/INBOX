@@ -238,6 +238,16 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
         .join("。 ") + "。";
     }
   }
+  if (!/男子|女子/.test(q) && /荒玉|駅伝/.test(q) && /4位/.test(q)) {
+    const fourthPlaces = [...flat.matchAll(
+      /2025年荒玉駅伝(男子|女子)\s+4位\s+([^\s]+)\s+総合\s*([0-9]+:\d{2})/g,
+    )];
+    if (fourthPlaces.length >= 2) {
+      return fourthPlaces
+        .map((fourthPlace) => `2025年${fourthPlace[1]}4位: ${fourthPlace[2]}（${fourthPlace[3]}）`)
+        .join("。 ") + "。";
+    }
+  }
   if (/20\d{2}/.test(q) && /結果|成績|順位/.test(q)) {
     const year = q.match(/20\d{2}/)?.[0];
     const team = ["荒尾海陽", "荒尾三", "荒尾四", "三加和", "玉高附属", "玉名", "玉南", "腹栄", "岱明", "天水", "有明", "南関", "菊水", "玉東", "玉陵", "長洲"]
@@ -1437,6 +1447,10 @@ function offlineAnswer(
       /3位/.test(question) &&
       /荒玉|駅伝/.test(question) &&
       !/男子|女子|20\d{2}|過去|歴代|区間/.test(question);
+    const unqualifiedFourthPlaceLookup =
+      /4位/.test(question) &&
+      /荒玉|駅伝/.test(question) &&
+      !/男子|女子|20\d{2}|過去|歴代|区間/.test(question);
     const historicalWinnerLookup =
       /荒玉|駅伝/.test(question) &&
       /歴代/.test(question) &&
@@ -1630,6 +1644,7 @@ function offlineAnswer(
       unqualifiedRunnerUpLookup ||
       unqualifiedFirstPlaceLookup ||
       unqualifiedThirdPlaceLookup ||
+      unqualifiedFourthPlaceLookup ||
       winnerTeamLookup ||
       historicalWinnerLookup ||
       latestLegAwardLookup ||
@@ -2606,6 +2621,10 @@ export async function answerQuestion(
     /3位/.test(question) &&
     /荒玉|駅伝/.test(question) &&
     !/男子|女子|20\d{2}|過去|歴代|区間/.test(question);
+  const unqualifiedFourthPlaceQ =
+    /4位/.test(question) &&
+    /荒玉|駅伝/.test(question) &&
+    !/男子|女子|20\d{2}|過去|歴代|区間/.test(question);
   const latestRunnerUpQ =
     !/20\d{2}/.test(question) &&
     /準優勝|2位/.test(question) &&
@@ -2786,6 +2805,12 @@ export async function answerQuestion(
     preferredSources = ["aragyoku/winners-by-year.md"];
   }
   if (unqualifiedThirdPlaceQ) {
+    preferredSources = [
+      "aragyoku/transcripts/2025-男子.json",
+      "aragyoku/transcripts/2025-女子.json",
+    ];
+  }
+  if (unqualifiedFourthPlaceQ) {
     preferredSources = [
       "aragyoku/transcripts/2025-男子.json",
       "aragyoku/transcripts/2025-女子.json",
@@ -3193,6 +3218,7 @@ export async function answerQuestion(
     unqualifiedRunnerUpQ ||
     unqualifiedFirstPlaceQ ||
     unqualifiedThirdPlaceQ ||
+    unqualifiedFourthPlaceQ ||
     latestRunnerUpQ ||
     latestFirstPlaceQ ||
     firstPlaceQ ||
@@ -3268,6 +3294,7 @@ export async function answerQuestion(
         unqualifiedRunnerUpQ ||
         unqualifiedFirstPlaceQ ||
         unqualifiedThirdPlaceQ ||
+        unqualifiedFourthPlaceQ ||
         latestRunnerUpQ ||
         latestFirstPlaceQ ||
         firstPlaceQ ||
