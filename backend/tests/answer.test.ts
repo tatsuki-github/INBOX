@@ -337,6 +337,22 @@ describe("answerQuestion", () => {
     }
   });
 
+  it("starts a year/gender leg-record preview at the requested section", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("2025年荒玉男子3区の大会区間記録保持者は？", {
+      llm: null,
+      skipRouter: true,
+      defaultYear: 2026,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.sources[0]).toBe("out-analysis/aragyoku_meet_records.md");
+      expect(result.text).toContain("2025年荒玉駅伝男子の3区大会区間記録");
+      expect(result.text).toContain("亀井遼希");
+    }
+  });
+
   it("llm sees なごみ context for 9/20", async () => {
     resetRetrieverCache();
     resetKgCache();

@@ -236,7 +236,7 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
       const needle = `荒玉駅伝${gender}の${leg}区大会区間記録`;
       const idx = flat.lastIndexOf(needle);
       if (idx >= 0) {
-        const start = Math.max(0, idx - 120);
+        const start = Math.max(0, idx - 36);
         return flat.slice(start, Math.min(flat.length, start + budget));
       }
     }
