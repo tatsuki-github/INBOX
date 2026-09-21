@@ -991,6 +991,21 @@ describe("answerQuestion", () => {
     }
   });
 
+  it("labels both genders in unqualified nagomi rank questions", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("なごみ駅伝の2位は？", {
+      llm: null,
+      skipRouter: true,
+      defaultYear: 2026,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.text).toContain("2026年なごみ男子2位: 金栗PROJECT A（38:49）");
+      expect(result.text).toContain("2026年なごみ女子2位: ATRC（28:25）");
+    }
+  });
+
   it("answers an unqualified sixth-place question for both genders", async () => {
     resetRetrieverCache();
     resetKgCache();

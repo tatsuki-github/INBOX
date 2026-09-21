@@ -177,6 +177,13 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
     }).filter(Boolean);
     if (sections.length > 0) return `2025年荒玉駅伝の結果: ${sections.join("。 ")}。`;
   }
+  if (/なごみ/.test(q) && !/男子|女子/.test(q) && /\d+位/.test(q)) {
+    const rank = q.match(/(\d+)位/)?.[1];
+    const rows = rank ? [...flat.matchAll(new RegExp(`\\|\\s*${rank}\\s*\\|\\s*\\d+\\s*\\|\\s*([^|]+?)\\s*\\|\\s*([0-9]+:\\d{2})\\s*\\|`, "g"))] : [];
+    if (rank && rows.length >= 2) {
+      return `2026年なごみ男子${rank}位: ${rows[0]![1]!.trim()}（${rows[0]![2]}）。2026年なごみ女子${rank}位: ${rows[1]![1]!.trim()}（${rows[1]![2]}）。`;
+    }
+  }
   if (/なごみ/.test(q) && /男子|女子/.test(q)) {
     const rank = q.match(/(\d+)位/)?.[1];
     if (rank) {
@@ -1727,7 +1734,7 @@ function offlineAnswer(
       !/優勝|準優勝|区間|大会記録|記録保持/.test(question);
     const nagomiResultLookup =
       /なごみ/.test(question) &&
-      /結果|順位|何位|優勝/.test(question) &&
+      /結果|順位|何位|\d+位|優勝/.test(question) &&
       !/予想|SB/.test(question);
     const nagomiRankLookup =
       /なごみ/.test(question) &&
