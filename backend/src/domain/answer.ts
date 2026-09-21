@@ -600,6 +600,11 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
     }
   }
   if (/銀マット/.test(q) && /何センチ|何ミリ|サイズ|長さ|幅|厚み|厚さ|大きさ|寸法/.test(q)) {
+    const size = flat.match(/長さは学校と同じ\s*\*{0,2}([^*。]+)\*{0,2}\s*で統一.*?幅は\s*\*{0,2}([^*。]+)\*{0,2}\s*でも可/);
+    const thickness = flat.match(/厚みの例:\s*\*{0,2}([^。]+?)\*{0,2}。/);
+    if (size && thickness) {
+      return `### 銀マット: 60×180×15mm（長さ${size[1]!.replace(/\*/g, "")}、幅${size[2]!.replace(/\*/g, "")}、厚み${thickness[1]!.replace(/\*/g, "")}）。`;
+    }
     for (const needle of ["### 銀マット", "銀マットサイズ"]) {
       const idx = flat.indexOf(needle);
       if (idx >= 0) {
@@ -929,6 +934,9 @@ function offlineAnswer(
     const assignmentLookup =
       /地点分担|何地点|担当地点|地点は/.test(question) &&
       /熊澤|土山|柴尾|土本/.test(question);
+    const matSizeLookup =
+      /銀マット/.test(question) &&
+      /何センチ|何ミリ|サイズ|長さ|幅|厚み|厚さ|大きさ|寸法/.test(question);
     const morningPracticeLookup =
       /朝練/.test(question) && /曜日|いつ|何時|集合/.test(question);
     const top2CountLookup =
@@ -990,6 +998,7 @@ function offlineAnswer(
       trackLapLookup ||
       legDistanceLookup ||
       assignmentLookup ||
+      matSizeLookup ||
       morningPracticeLookup ||
       namedLegTimeLookup ||
       teamLegLookup ||
