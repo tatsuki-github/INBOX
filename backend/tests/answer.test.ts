@@ -231,6 +231,23 @@ describe("answerQuestion", () => {
     }
   });
 
+  it("recognizes 何地点 as a 地点分担 alias", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("熊澤先生は何地点？", {
+      llm: null,
+      skipRouter: true,
+      defaultYear: 2026,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.sources).toEqual(["out-analysis/line-chats/daiming-staff.md"]);
+      expect(result.text).toContain("地点分担（荒玉）");
+      expect(result.text).toContain("熊澤=C地点");
+      expect(result.text).not.toContain("ジュニア駅伝");
+    }
+  });
+
   it("starts お別れ会 schedule answers at the farewell section", async () => {
     resetRetrieverCache();
     resetKgCache();
