@@ -17,6 +17,7 @@ import {
   type MeetKind,
 } from "./meets.js";
 import { withMeetResultUrls, type MeetResultUrlEntry } from "./meetResultUrls.js";
+import { appendPrimarySourceLinks, findPrimarySourceArtifacts } from "./primarySourceArtifacts.js";
 import { routeSources } from "./router.js";
 import type { LlmClient } from "./llm.js";
 import { buildSystemPrompt, buildUserPrompt, MISSING_INFO_MESSAGE } from "../rag/prompt.js";
@@ -64,12 +65,20 @@ function finalizeAnswerText(
   text: string,
   question: string,
   deps: AnswerDeps,
+  sources: string[],
 ): string {
   const formatted = formatForLine(text);
-  return withMeetResultUrls(formatted, question, {
+  const withResultUrls = withMeetResultUrls(formatted, question, {
     entries: deps.meetResultUrls,
     defaultYear: deps.defaultYear ?? currentFiscalYear(),
   });
+  return appendPrimarySourceLinks(
+    withResultUrls,
+    findPrimarySourceArtifacts(question, sources, {
+      defaultYear: deps.defaultYear,
+      now: deps.now,
+    }),
+  );
 }
 
 function offlinePreviewBudget(question: string): number {
@@ -984,7 +993,7 @@ export async function answerQuestion(
   if (!deps.llm) {
     return {
       kind: "offline",
-      text: finalizeAnswerText(offlineAnswer(question, merged, expanded), question, deps),
+      text: finalizeAnswerText(offlineAnswer(question, merged, expanded), question, deps, sources),
       sources,
     };
   }
@@ -1003,7 +1012,7 @@ export async function answerQuestion(
     );
     return {
       kind: "answered",
-      text: finalizeAnswerText(text, question, deps),
+      text: finalizeAnswerText(text, question, deps, sources),
       sources,
     };
   } catch (err) {

@@ -9,7 +9,7 @@ import {
   toLineVideoMessages,
 } from "../domain/aragyokuCourseVideos.js";
 import { isDeniedUserId } from "../domain/deny.js";
-import { NON_TEXT_GUIDANCE, splitLineText } from "./reply.js";
+import { NON_TEXT_GUIDANCE, splitLineTextPreservingPrimarySources } from "./reply.js";
 import { formatForLine } from "./format.js";
 import { currentFiscalYear } from "../domain/dates.js";
 
@@ -66,7 +66,7 @@ export function buildReplyMessages(
   const media = [...images, ...videos].slice(0, 2);
   const mediaCount = media.length;
   const textSlots = Math.max(1, 5 - mediaCount);
-  const parts = splitLineText(formatForLine(text)).slice(0, textSlots);
+  const parts = splitLineTextPreservingPrimarySources(formatForLine(text), textSlots);
   const messages: messagingApi.Message[] = parts.map((t) => ({ type: "text", text: t }));
   for (const item of media) {
     messages.push(item);

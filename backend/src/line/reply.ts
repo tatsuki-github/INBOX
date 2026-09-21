@@ -21,5 +21,23 @@ export function splitLineText(text: string, maxLen = LINE_TEXT_MAX): string[] {
   return parts;
 }
 
+/** Keep the primary-source block reachable when a long offline answer is capped at 5 messages. */
+export function splitLineTextPreservingPrimarySources(
+  text: string,
+  textSlots: number,
+  maxLen = LINE_TEXT_MAX,
+): string[] {
+  const marker = "\n\n一次資料:\n";
+  const markerIndex = text.indexOf(marker);
+  if (markerIndex < 0) return splitLineText(text, maxLen).slice(0, textSlots);
+
+  const body = text.slice(0, markerIndex);
+  const primarySources = text.slice(markerIndex + 2);
+  const sourceParts = splitLineText(primarySources, maxLen);
+  const bodySlots = Math.max(0, textSlots - sourceParts.length);
+  const bodyParts = splitLineText(body, maxLen).slice(0, bodySlots);
+  return [...bodyParts, ...sourceParts].slice(-textSlots);
+}
+
 export const NON_TEXT_GUIDANCE =
   "テキストで質問してください。いだてん岱明の練習・駅伝・記録・名簿について答えます。";

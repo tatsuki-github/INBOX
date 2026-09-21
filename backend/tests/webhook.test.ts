@@ -83,6 +83,40 @@ describe("POST /webhook", () => {
     expect(info).toHaveBeenCalledWith("line message userId=U-allowed");
   });
 
+  it("keeps primary result PDF links in the LINE reply", async () => {
+    const replyMessage = vi.fn(async () => ({}));
+    const app = createApp({
+      config: baseConfig(),
+      replyClient: { replyMessage },
+    });
+
+    const body = {
+      events: [
+        {
+          type: "message",
+          replyToken: "reply-pdf",
+          source: { type: "user", userId: "U-allowed" },
+          message: { type: "text", text: "昨日のなごみ駅伝の結果のPDF渡して" },
+        },
+      ],
+    };
+    const raw = JSON.stringify(body);
+    const sig = signLineBody(raw, secret);
+    const res = await request(app)
+      .post("/webhook")
+      .set("Content-Type", "application/json")
+      .set("x-line-signature", sig)
+      .send(raw);
+
+    expect(res.status).toBe(200);
+    const arg = replyMessage.mock.calls[0]?.[0] as
+      | { messages: Array<{ type: string; text?: string }> }
+      | undefined;
+    const text = arg?.messages.map((message) => message.text ?? "").join("\n") ?? "";
+    expect(text).toContain("女子成績表PDF");
+    expect(text).toContain("raw.githubusercontent.com");
+  });
+
   it("replies guidance for non-text message", async () => {
     const replyMessage = vi.fn(async () => ({}));
     const app = createApp({

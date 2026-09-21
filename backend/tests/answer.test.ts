@@ -216,6 +216,25 @@ describe("answerQuestion", () => {
     }
   });
 
+  it("adds primary result PDF links for 昨日のなごみ駅伝の結果", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("昨日のなごみ駅伝の結果のPDF渡して", {
+      skipRouter: true,
+      defaultYear: 2026,
+      now: new Date("2026-09-21T00:00:00+09:00"),
+      llm: { complete: async () => "結果を確認しました。" },
+    });
+    expect(result.kind).toBe("answered");
+    if (result.kind === "answered") {
+      expect(result.text).toContain("一次資料:");
+      expect(result.text).toContain("女子成績表PDF");
+      expect(result.text).toContain("男子成績表PDF");
+      expect(result.text).toContain("raw.githubusercontent.com");
+      expect(result.text).toContain("drive.google.com/drive/folders/1k-zW0irJ-OjDjqQwUQLZIs4C6PfuR211");
+    }
+  });
+
   it("formats llm markdown and strips source footers", async () => {
     const result = await answerQuestion("荒玉駅伝で岱明は何位？", {
       retrieve: fakeRetrieve,
