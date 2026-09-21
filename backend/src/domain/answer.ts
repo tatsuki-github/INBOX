@@ -179,7 +179,10 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
     const team = ["岱明", "玉高附属", "天水", "有明", "南関", "菊水", "玉東", "玉陵", "長洲"]
       .find((name) => q.includes(name));
     if (year && team) {
-      const matches = [...flat.matchAll(new RegExp(`${year}年荒玉駅伝(?:男子|女子) ${team}は[^。]+。`, "g"))];
+      const gender = q.match(/(男子|女子)/)?.[1];
+      const matches = [...flat.matchAll(
+        new RegExp(year + "年荒玉駅伝" + (gender ?? "(?:男子|女子)") + " " + team + "は[^。]+。", "g"),
+      )];
       if (matches.length > 0) return matches.map((match) => match[0]).join(" ");
     }
   }

@@ -2348,6 +2348,21 @@ describe("answerQuestion", () => {
     }
   });
 
+  it("filters dated team results by the requested gender", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("岱明の2025女子結果は？", {
+      skipRouter: true,
+      defaultYear: 2026,
+      llm: null,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.text).toContain("2025年荒玉駅伝女子 岱明は7位・総合45:22");
+      expect(result.text).not.toContain("2025年荒玉駅伝男子 岱明は6位");
+    }
+  });
+
   it("answers 岱明の区間順位 from the latest team table", async () => {
     resetRetrieverCache();
     resetKgCache();
