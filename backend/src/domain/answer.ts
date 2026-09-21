@@ -271,6 +271,12 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
     const thirdPlace = flat.match(new RegExp(`2025年荒玉駅伝${gender}\\s+3位\\s+([^\\s]+)\\s+総合\\s*([0-9]+:\\d{2})`));
     if (thirdPlace) return `2025年${gender}3位: ${thirdPlace[1]}（${thirdPlace[2]}）。`;
   }
+  if (/男子|女子/.test(q) && /荒玉|駅伝/.test(q) && /[45]位/.test(q) && !/20\d{2}/.test(q)) {
+    const gender = /女子/.test(q) ? "女子" : "男子";
+    const rank = q.match(/([45])位/)?.[1];
+    const place = rank && flat.match(new RegExp(`2025年荒玉駅伝${gender}\\s+${rank}位\\s+([^\\s]+)\\s+総合\\s*([0-9]+:\\d{2})`));
+    if (place && rank) return `2025年${gender}${rank}位: ${place[1]}（${place[2]}）。`;
+  }
   if (/20\d{2}/.test(q) && /結果|成績|順位/.test(q)) {
     const year = q.match(/20\d{2}/)?.[0];
     const team = ["荒尾海陽", "荒尾三", "荒尾四", "三加和", "玉高附属", "玉名", "玉南", "腹栄", "岱明", "天水", "有明", "南関", "菊水", "玉東", "玉陵", "長洲"]
@@ -1483,6 +1489,11 @@ function offlineAnswer(
       /荒玉|駅伝/.test(question) &&
       /男子|女子/.test(question) &&
       !/20\d{2}|区間/.test(question);
+    const genderedFourthFifthPlaceLookup =
+      /[45]位/.test(question) &&
+      /荒玉|駅伝/.test(question) &&
+      /男子|女子/.test(question) &&
+      !/20\d{2}|区間/.test(question);
     const historicalWinnerLookup =
       /荒玉|駅伝/.test(question) &&
       /歴代/.test(question) &&
@@ -1684,6 +1695,7 @@ function offlineAnswer(
       unqualifiedFourthPlaceLookup ||
       unqualifiedFifthPlaceLookup ||
       genderedThirdPlaceLookup ||
+      genderedFourthFifthPlaceLookup ||
       winnerTeamLookup ||
       historicalWinnerLookup ||
       latestLegAwardLookup ||
@@ -2674,6 +2686,11 @@ export async function answerQuestion(
     /荒玉|駅伝/.test(question) &&
     /男子|女子/.test(question) &&
     !/20\d{2}|区間/.test(question);
+  const genderedFourthFifthPlaceQ =
+    /[45]位/.test(question) &&
+    /荒玉|駅伝/.test(question) &&
+    /男子|女子/.test(question) &&
+    !/20\d{2}|区間/.test(question);
   const latestRunnerUpQ =
     !/20\d{2}/.test(question) &&
     /準優勝|2位/.test(question) &&
@@ -2872,6 +2889,11 @@ export async function answerQuestion(
     ];
   }
   if (genderedThirdPlaceQ) {
+    preferredSources = [
+      `aragyoku/transcripts/2025-${/女子/.test(question) ? "女子" : "男子"}.json`,
+    ];
+  }
+  if (genderedFourthFifthPlaceQ) {
     preferredSources = [
       `aragyoku/transcripts/2025-${/女子/.test(question) ? "女子" : "男子"}.json`,
     ];
@@ -3281,6 +3303,7 @@ export async function answerQuestion(
     unqualifiedFourthPlaceQ ||
     unqualifiedFifthPlaceQ ||
     genderedThirdPlaceQ ||
+    genderedFourthFifthPlaceQ ||
     latestRunnerUpQ ||
     latestFirstPlaceQ ||
     firstPlaceQ ||
@@ -3359,6 +3382,7 @@ export async function answerQuestion(
         unqualifiedFourthPlaceQ ||
         unqualifiedFifthPlaceQ ||
         genderedThirdPlaceQ ||
+        genderedFourthFifthPlaceQ ||
         latestRunnerUpQ ||
         latestFirstPlaceQ ||
         firstPlaceQ ||

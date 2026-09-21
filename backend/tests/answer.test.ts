@@ -856,6 +856,23 @@ describe("answerQuestion", () => {
     }
   });
 
+  it("answers yearless gendered aragyoku fourth- and fifth-place questions", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    for (const [question, expected] of [
+      ["荒玉駅伝男子の4位は？", "2025年男子4位: 長洲（58:49）"],
+      ["荒玉駅伝女子の5位は？", "2025年女子5位: 荒尾三（44:56）"],
+    ]) {
+      const result = await answerQuestion(question, {
+        llm: null,
+        skipRouter: true,
+        defaultYear: 2026,
+      });
+      expect(result.kind).toBe("offline");
+      if (result.kind === "offline") expect(result.text).toContain(expected);
+    }
+  });
+
   it("lists all historical winners for a gender-specific 歴代 question", async () => {
     resetRetrieverCache();
     resetKgCache();
