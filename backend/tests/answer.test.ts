@@ -2364,6 +2364,22 @@ describe("answerQuestion", () => {
     }
   });
 
+  it("supports additional 荒玉 teams in unqualified result questions", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("荒尾三の結果は？", {
+      skipRouter: true,
+      defaultYear: 2026,
+      llm: null,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.text).toContain("2025年荒玉駅伝男子 荒尾三は5位・総合58:58");
+      expect(result.text).toContain("2025年荒玉駅伝女子 荒尾三は5位・総合44:56");
+      expect(result.sources[0]).toContain("aragyoku-teams/荒尾三.md");
+    }
+  });
+
   it("filters dated team results by the requested gender", async () => {
     resetRetrieverCache();
     resetKgCache();
