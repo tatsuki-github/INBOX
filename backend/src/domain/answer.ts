@@ -269,7 +269,7 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
         .join("。 ") + "。";
     }
   }
-  if (!/男子|女子/.test(q) && /荒玉|駅伝/.test(q) && /(?<!\d)3位/.test(q)) {
+  if (!/男子|女子/.test(q) && /荒玉|駅伝/.test(q) && /(?<!\d)3位|三位/.test(q)) {
     const thirdPlaces = [...flat.matchAll(
       /"rank"\s*:\s*3[\s\S]{0,220}?"team"\s*:\s*"([^"]+)"[\s\S]{0,120}?"total"\s*:\s*"([^"]+)"/g,
     )];
@@ -343,7 +343,7 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
       }
     }
   }
-  if (/男子|女子/.test(q) && /荒玉|駅伝/.test(q) && /(?<!\d)3位/.test(q) && !/20\d{2}/.test(q)) {
+  if (/男子|女子/.test(q) && /荒玉|駅伝/.test(q) && /(?<!\d)3位|三位/.test(q) && !/20\d{2}/.test(q)) {
     const gender = /女子/.test(q) ? "女子" : "男子";
     const thirdPlace = flat.match(new RegExp(`2025年荒玉駅伝${gender}\\s+3位\\s+([^\\s]+)\\s+総合\\s*([0-9]+:\\d{2})`));
     if (thirdPlace) return `2025年${gender}3位: ${thirdPlace[1]}（${thirdPlace[2]}）。`;
@@ -372,7 +372,7 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
     const winner = flat.match(new RegExp(`2025年荒玉駅伝${gender}[\\s\\S]{0,180}?優勝校(?:（1位）)?は「([^」]+)」（総合\\s*([0-9]+:\\d{2})）`));
     if (winner) return `2025年${gender}優勝校: ${winner[1]}（${winner[2]}）。`;
   }
-  if (/男子|女子/.test(q) && /荒玉|駅伝/.test(q) && /(?<!\d)3位/.test(q) && /20\d{2}/.test(q)) {
+  if (/男子|女子/.test(q) && /荒玉|駅伝/.test(q) && /(?<!\d)3位|三位/.test(q) && /20\d{2}/.test(q)) {
     const year = q.match(/20\d{2}/)?.[0];
     const gender = /女子/.test(q) ? "女子" : "男子";
     const place = year && flat.match(new RegExp(`${year}年荒玉駅伝${gender}\\s+3位\\s+([^\\s]+)\\s+総合\\s*([0-9]+:\\d{2})`));
@@ -1605,7 +1605,7 @@ function offlineAnswer(
       /荒玉|駅伝/.test(question) &&
       !/男子|女子|20\d{2}/.test(question);
     const unqualifiedThirdPlaceLookup =
-      /(?<!\d)(?:[3-9]|1[0-5])位/.test(question) &&
+      /(?<!\d)3位|三位/.test(question) &&
       /荒玉|駅伝/.test(question) &&
       !/男子|女子|20\d{2}|過去|歴代|区間/.test(question);
     const unqualifiedFourthPlaceLookup =
@@ -1621,7 +1621,7 @@ function offlineAnswer(
       /荒玉|駅伝/.test(question) &&
       !/男子|女子|20\d{2}|過去|歴代|区間/.test(question);
     const genderedThirdPlaceLookup =
-      /(?<!\d)3位/.test(question) &&
+      /(?<!\d)3位|三位/.test(question) &&
       /荒玉|駅伝/.test(question) &&
       /男子|女子/.test(question) &&
       !/20\d{2}|区間/.test(question);
@@ -2830,7 +2830,7 @@ export async function answerQuestion(
     /荒玉|駅伝/.test(question) &&
     !/男子|女子|20\d{2}/.test(question);
   const unqualifiedThirdPlaceQ =
-    /(?<!\d)(?:[3-9]|1[0-5])位/.test(question) &&
+    /(?<!\d)3位|三位/.test(question) &&
     /荒玉|駅伝/.test(question) &&
     !/男子|女子|20\d{2}|過去|歴代|区間/.test(question);
   const unqualifiedFourthPlaceQ =
@@ -2846,7 +2846,7 @@ export async function answerQuestion(
     /荒玉|駅伝/.test(question) &&
     !/男子|女子|20\d{2}|過去|歴代|区間/.test(question);
   const genderedThirdPlaceQ =
-    /(?<!\d)3位/.test(question) &&
+    /(?<!\d)3位|三位/.test(question) &&
     /荒玉|駅伝/.test(question) &&
     /男子|女子/.test(question) &&
     !/20\d{2}|区間/.test(question);

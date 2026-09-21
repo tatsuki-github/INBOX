@@ -794,6 +794,22 @@ describe("answerQuestion", () => {
     }
   });
 
+  it("supports Japanese numeral aragyoku rank wording", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("荒玉駅伝の三位は？", {
+      llm: null,
+      skipRouter: true,
+      defaultYear: 2026,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.text).toContain("2025年男子3位: 玉高附属（58:37）");
+      expect(result.text).toContain("2025年女子3位: 玉東（44:24）");
+      expect(result.text).not.toContain("深掘り分析");
+    }
+  });
+
   it("answers an unqualified fourth-place question for both genders", async () => {
     resetRetrieverCache();
     resetKgCache();
