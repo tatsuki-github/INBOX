@@ -172,6 +172,28 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
     const lap = flat.match(/トラック\s*1周\s*=\s*\*{0,2}\s*560m/);
     if (lap) return lap[0].replace(/\*+/g, "");
   }
+  // The top-two digest has a gender-specific table. For a "most frequent"
+  // question, summarize that table instead of surfacing the latest winners.
+  if (
+    /荒玉|駅伝/.test(q) &&
+    /男子/.test(q) &&
+    /2位まで|2位以内|総合2位/.test(q) &&
+    /多い|最多|何回|回数/.test(q)
+  ) {
+    const sectionStart = flat.indexOf("## 男子のみ");
+    const sectionEnd = flat.indexOf("## 女子のみ", sectionStart >= 0 ? sectionStart : 0);
+    const section =
+      sectionStart >= 0
+        ? flat.slice(sectionStart, sectionEnd >= 0 ? sectionEnd : undefined)
+        : flat;
+    const rows = [...section.matchAll(/\|\s*([^|]+?)\s*\|\s*(\d+)\s*\|/g)].map((m) => ({
+      school: m[1]!.trim(),
+      count: Number(m[2]),
+    }));
+    const max = Math.max(...rows.map((row) => row.count), 0);
+    const leaders = rows.filter((row) => row.count === max && max > 0).map((row) => row.school);
+    if (leaders.length > 0) return `荒玉男子の総合2位以内回数最多は${leaders.join("・")}（各${max}回）。`;
+  }
   if (
     !/20\d{2}/.test(q) &&
     /何位|順位/.test(q) &&
@@ -778,6 +800,11 @@ function offlineAnswer(
       );
     const trackLapLookup =
       /トラック/.test(question) && /1周|一周|周長|何メートル|何ｍ/.test(question);
+    const top2CountLookup =
+      /荒玉|駅伝/.test(question) &&
+      /男子/.test(question) &&
+      /2位まで|2位以内|総合2位/.test(question) &&
+      /多い|最多|何回|回数/.test(question);
     const teamFullRecordLookup =
       /全記録|所属選手|記録一覧/.test(question) &&
       /南関中|玉名中|天水中|岱明中|長洲中|玉陵中|玉南中|玉名附中|荒尾三中|荒尾第四中|荒尾海陽中/.test(
@@ -811,6 +838,7 @@ function offlineAnswer(
       teamRankLookup ||
       schoolPbRankLookup ||
       trackLapLookup ||
+      top2CountLookup ||
       teamFullRecordLookup ||
       latestTeamRankLookup ||
       teamYearOverYearLookup ||
@@ -1834,6 +1862,14 @@ export async function answerQuestion(
       "docs/data-model.md",
     ];
   }
+  const top2CountQ =
+    /荒玉|駅伝/.test(expanded) &&
+    /男子/.test(expanded) &&
+    /2位まで|2位以内|総合2位/.test(expanded) &&
+    /多い|最多|何回|回数/.test(expanded);
+  if (top2CountQ) {
+    preferredSources = ["out-analysis/aragyoku_top2_finish_counts.md"];
+  }
   const namedAssignmentQ =
     /地点分担|何地点|どの地点|担当地点|地点(?:は|に|です)/.test(expanded) &&
     /熊澤|土山|柴尾|土本/.test(expanded);
@@ -1877,6 +1913,7 @@ export async function answerQuestion(
     latestFirstPlaceQ ||
     schoolPbRankQ ||
     trackLapQ ||
+    top2CountQ ||
     teamFullRecordQ ||
     latestTeamRankQ ||
     teamYearOverYearQ ||
@@ -1910,6 +1947,7 @@ export async function answerQuestion(
         latestFirstPlaceQ ||
         schoolPbRankQ ||
         trackLapQ ||
+        top2CountQ ||
         teamFullRecordQ ||
         latestTeamRankQ ||
         teamYearOverYearQ ||

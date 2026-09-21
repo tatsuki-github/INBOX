@@ -2121,6 +2121,22 @@ describe("answerQuestion", () => {
     }
   });
 
+  it("summarizes the most frequent 荒玉男子 top-two schools", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("荒玉男子で総合2位以内回数が多い学校は？", {
+      skipRouter: true,
+      defaultYear: 2026,
+      llm: null,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.sources[0]).toBe("out-analysis/aragyoku_top2_finish_counts.md");
+      expect(result.text).toContain("荒玉男子の総合2位以内回数最多は玉名・菊水（各6回）。");
+      expect(result.text).not.toContain("2025年荒玉駅伝男子の優勝校");
+    }
+  });
+
   it("answers 荒玉地区 3000m fastest from ranking digest", async () => {
     resetRetrieverCache();
     resetKgCache();
