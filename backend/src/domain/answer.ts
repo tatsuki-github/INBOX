@@ -468,7 +468,11 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
     const filtered = matches.filter((match) => !targetYear || match[1] === targetYear);
     if (filtered.length > 0) return filtered.map((match) => match[0]).join(" ");
   }
-  if (/優勝|準優勝|2位/.test(q) && /荒玉|駅伝|過去|歴代/.test(q)) {
+  if (
+    /優勝|準優勝|2位/.test(q) &&
+    /荒玉|駅伝|過去|歴代/.test(q) &&
+    !/荒尾海陽|玉高附属|荒尾三|荒尾四|三加和|南関|天水|岱明|有明|玉南|玉名|玉東|玉陵|腹栄|荒尾|菊水|長洲/.test(q)
+  ) {
     const years = q.match(/20\d{2}/g) ?? [];
     const gender = /女子/.test(q) ? "女子" : /男子/.test(q) ? "男子" : "";
     if (years.length > 0 && gender) {

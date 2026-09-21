@@ -2477,6 +2477,23 @@ describe("answerQuestion", () => {
     }
   });
 
+  it("lets 歴代 phrasing reverse-lookup a named winner too", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("菊水の歴代優勝年は？", {
+      llm: null,
+      skipRouter: true,
+      defaultYear: 2026,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.sources[0]).toBe("aragyoku/winners-by-year.md");
+      expect(result.text).toContain("菊水が荒玉駅伝で優勝した年:");
+      expect(result.text).toContain("2014年（男子）");
+      expect(result.text).toContain("2025年（男子）");
+    }
+  });
+
   it("answers 荒玉地区 3000m fastest from ranking digest", async () => {
     resetRetrieverCache();
     resetKgCache();
