@@ -2395,6 +2395,21 @@ describe("answerQuestion", () => {
     }
   });
 
+  it("supports 玉名 in unqualified team result questions", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("玉名の結果は？", {
+      skipRouter: true,
+      defaultYear: 2026,
+      llm: null,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.text).toContain("2025年荒玉駅伝男子 玉名は9位・総合60:52");
+      expect(result.text).toContain("2025年荒玉駅伝女子 玉名は1位・総合41:58");
+    }
+  });
+
   it("filters dated team results by the requested gender", async () => {
     resetRetrieverCache();
     resetKgCache();
