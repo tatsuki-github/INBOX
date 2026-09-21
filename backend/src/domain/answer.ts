@@ -228,7 +228,7 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
   // For a gender/leg record query, jump to the latest matching board row
   // rather than showing the digest's opening year or an unrelated table.
   if (
-    /大会記録|区間記録|ボード.*記録/.test(q) &&
+    /大会記録|区間記録|ボード.*記録|記録保持|歴代記録|20\d{2}.*(?:男子|女子).*区.*記録/.test(q) &&
     /荒玉|駅伝/.test(q) &&
     /男子.*\d区|女子.*\d区/.test(q)
   ) {
@@ -473,7 +473,7 @@ function boostAthleteRecordSources(query: string, baseSources: string[]): string
   // Meet-record questions have a dedicated board digest. Keep the answer
   // focused there instead of letting the generic athlete/SB sources win.
   if (
-    /大会記録|区間記録|ボード.*記録|記録保持|歴代記録/.test(q) &&
+    /大会記録|区間記録|ボード.*記録|記録保持|歴代記録|20\d{2}.*(?:男子|女子).*区.*記録/.test(q) &&
     /荒玉|駅伝/.test(q) &&
     !/区間賞|区間順/.test(q)
   ) {
@@ -804,7 +804,7 @@ function boostMeetYearSources(
         expandedQuery,
       );
     const meetRecordQ =
-      /大会記録|区間記録|ボード.*記録|総合大会記録|記録保持|歴代記録/.test(expandedQuery) &&
+      /大会記録|区間記録|ボード.*記録|総合大会記録|記録保持|歴代記録|20\d{2}.*(?:男子|女子).*区.*記録/.test(expandedQuery) &&
       !/区間賞|区間順/.test(expandedQuery);
     // 「区間賞」「区間順位」は当日結果正本（歴代区間記録ボードとは別）
     const legAwardQ =
