@@ -933,6 +933,18 @@ function digestPinForQuery(chunk: RagChunk, query: string): number {
     if (names.some((n) => chunk.text.includes(n))) return 700;
     return 200;
   }
+  if (
+    /荒玉|駅伝/.test(qn) &&
+    /何位|総合タイム|総合は|総合/.test(qn) &&
+    /aragyoku-teams\/([^/]+)\.md$/.test(base)
+  ) {
+    const teamStem = base.match(/aragyoku-teams\/([^/]+)\.md$/)?.[1] ?? "";
+    const 玉名付属表記 = /玉名付属|玉名附属|玉名附/.test(qn);
+    if (teamStem === "玉名" && 玉名付属表記) return 0;
+    const aliases =
+      teamStem === "玉高附属" ? ["玉高附属", "玉名付属", "玉名附属", "玉名附"] : [teamStem];
+    if (teamStem && aliases.some((alias) => qn.includes(alias))) return 900;
+  }
   if (/トラック/.test(qn) && /1周|一周|周長|何メートル/.test(qn)) {
     if (/daiming-practice-menus-kpace|data-model\.md/.test(chunk.source)) {
       return 500;

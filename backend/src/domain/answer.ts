@@ -247,6 +247,21 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
       }
     }
   }
+  if (/荒玉|駅伝/.test(q) && /何位|総合タイム|総合は/.test(q) && /20\d{2}/.test(q)) {
+    const year = q.match(/20\d{2}/)?.[0];
+    const gender = /女子/.test(q) ? "女子" : /男子/.test(q) ? "男子" : "";
+    const team = /玉名付属|玉名附属|玉名附/.test(q)
+      ? "玉高附属"
+      : ["岱明", "玉高附属", "天水", "有明", "南関", "菊水", "玉東", "玉陵", "長洲"].find(
+          (stem) => q.includes(stem),
+        );
+    if (year && gender && team) {
+      const idx = flat.indexOf(`${year}年荒玉駅伝${gender} ${team}`);
+      if (idx >= 0) {
+        return flat.slice(Math.max(0, idx - 80), Math.min(flat.length, idx + budget));
+      }
+    }
+  }
   // 「案浦竜士は何区を走った？」→ `| N | 案浦竜士 |` を N区 として明示
   if (isLegAthleteQuestion(q) && /何区/.test(q)) {
     const who = q.match(/([\u3400-\u9fff]{2,8})は.{0,20}何区/);
@@ -863,10 +878,9 @@ function boostMeetYearSources(
         "菊水",
         "長洲",
       ];
-      let teamHit = aragyokuTeams.find((stem) => expandedQuery.includes(stem));
-      if (!teamHit && /玉名付属|玉名附属|玉名附/.test(expandedQuery)) {
-        teamHit = "玉高附属";
-      }
+      let teamHit = /玉名付属|玉名附属|玉名附/.test(expandedQuery)
+        ? "玉高附属"
+        : aragyokuTeams.find((stem) => expandedQuery.includes(stem));
       if (teamHit) {
         push(`out-analysis/aragyoku-teams/${teamHit}.md`);
       }
