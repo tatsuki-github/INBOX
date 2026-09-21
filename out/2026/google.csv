@@ -1570,7 +1570,15 @@ Status: scheduled",,False
 敬老の日,09/21/2026,,09/21/2026,,True,"日本の祝日
 
 Tags: holiday",,False
-第３回 熊本県長距離記録会,09/21/2026,,09/21/2026,,True,Status: scheduled,,False
+第３回 熊本県長距離記録会,09/21/2026,,09/21/2026,,True,"【結果・SB更新】
+t-tsuchiyama の最新中学生結果を取り込み。荒玉の中学生SB更新者は30名。
+大会結果CSV: input/external/drive/personal/t-tsuchiyama/sb/by-year/2026-single-table.csv
+荒玉SB更新者一覧: out/analysis/2026-09-21_arato-tamana_middle_school_sb_updates.md
+公式結果: http://www.kumariku.org/26/26,9,21long/kyougi.html
+
+
+Status: done
+Tags: ランニング, 県大会一覧",,False
 国民の休日,09/22/2026,,09/22/2026,,True,"日本の祝日
 
 Tags: holiday",,False

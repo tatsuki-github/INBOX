@@ -8321,10 +8321,13 @@
     "start_time": null,
     "end_time": null,
     "category": "予定",
-    "status": "scheduled",
-    "tags": [],
+    "status": "done",
+    "tags": [
+      "ランニング",
+      "県大会一覧"
+    ],
     "urls": [],
-    "description": "",
+    "description": "【結果・SB更新】\nt-tsuchiyama の最新中学生結果を取り込み。荒玉の中学生SB更新者は30名。\n大会結果CSV: input/external/drive/personal/t-tsuchiyama/sb/by-year/2026-single-table.csv\n荒玉SB更新者一覧: out/analysis/2026-09-21_arato-tamana_middle_school_sb_updates.md\n公式結果: http://www.kumariku.org/26/26,9,21long/kyougi.html\n",
     "location": "",
     "private": false,
     "kind": "event",

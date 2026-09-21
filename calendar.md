@@ -10847,15 +10847,19 @@ Mail：k_project2022@icloud.com
 - **開始時刻**: （なし）
 - **終了時刻**: （なし）
 - **カテゴリ**: 予定
-- **ステータス**: scheduled
-- **タグ**: （なし）
+- **ステータス**: done
+- **タグ**: ランニング, 県大会一覧
 - **場所**: （なし）
 - **URL**: （なし）
 - **非公開**: いいえ
 
 **説明**
 
-（なし）
+【結果・SB更新】
+t-tsuchiyama の最新中学生結果を取り込み。荒玉の中学生SB更新者は30名。
+大会結果CSV: input/external/drive/personal/t-tsuchiyama/sb/by-year/2026-single-table.csv
+荒玉SB更新者一覧: out/analysis/2026-09-21_arato-tamana_middle_school_sb_updates.md
+公式結果: http://www.kumariku.org/26/26,9,21long/kyougi.html
 
 </details>
 

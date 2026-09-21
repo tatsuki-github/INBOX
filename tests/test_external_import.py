@@ -133,7 +133,7 @@ def test_middle_school_sb_year_artifacts_and_index():
         2023: 2267,
         2024: 2267,
         2025: 2662,
-        2026: 3981,
+        2026: 4142,
     }
     for year, expected_count in expected_counts.items():
         status_path = by_year / f"{year}-sb-adopted.status.json"
