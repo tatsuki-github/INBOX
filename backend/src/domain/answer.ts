@@ -127,6 +127,9 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
   const budget = maxChars ?? offlinePreviewBudget(question);
   const flat = text.replace(/\s+/g, " ");
   const q = question.normalize("NFKC");
+  if (/荒玉|駅伝/.test(q) && /今年/.test(q) && /結果|順位|優勝校|優勝チーム/.test(q)) {
+    return "2026年の荒玉中体連駅伝は開催予定の記録のみで、結果・順位はまだ記載されていません。";
+  }
   const resultListIntent = /(?:結果(?:一覧|表|は|を|です)?|順位表|順位(?:は|を|だけ|全部)?|全チーム結果|全順位|結果を一覧)/.test(q);
   const resultListYear = q.match(/20\d{2}/)?.[0] ?? "2025";
   const resultListGender = q.match(/(男子|女子)/)?.[1];
@@ -883,6 +886,9 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
       : "荒玉中体連駅伝大会の2026年開催日は10月14日（予備日10月15日）です。";
   }
   if (/荒玉駅伝/.test(q) && /結果|順位|優勝校|優勝チーム/.test(q) && /2026年/.test(q)) {
+    return "2026年の荒玉中体連駅伝は開催予定の記録のみで、結果・順位はまだ記載されていません。";
+  }
+  if (/荒玉|駅伝/.test(q) && /今年/.test(q) && /結果|順位|優勝校|優勝チーム/.test(q)) {
     return "2026年の荒玉中体連駅伝は開催予定の記録のみで、結果・順位はまだ記載されていません。";
   }
   // 「優勝との差」列を優先（大会記録ボードより focus / team の差表）

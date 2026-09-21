@@ -873,6 +873,21 @@ describe("answerQuestion", () => {
     }
   });
 
+  it("does not project the latest completed year onto this year's aragyoku result", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("今年の荒玉女子の優勝校は？", {
+      llm: null,
+      skipRouter: true,
+      defaultYear: 2026,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.text).toContain("2026年の荒玉中体連駅伝は開催予定");
+      expect(result.text).not.toContain("2025年荒玉駅伝女子の優勝校");
+    }
+  });
+
   it("lists all historical winners for a gender-specific 歴代 question", async () => {
     resetRetrieverCache();
     resetKgCache();
