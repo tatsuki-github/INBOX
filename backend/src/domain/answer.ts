@@ -773,7 +773,7 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
   if (/金栗駅伝/.test(q) && /結果|順位|優勝校|優勝チーム/.test(q) && !/2025年/.test(q)) {
     return "2026年の金栗駅伝は、正本資料上は開催予定の記録のみで、結果・順位はまだ記載されていません。";
   }
-  if (/荒玉駅伝/.test(q) && /開催日|いつ|何日|日付/.test(q)) {
+  if (/荒玉(?:駅伝|中体連)?/.test(q) && /開催日|いつ|何日|日付/.test(q)) {
     const year = q.match(/20\d{2}/)?.[0] ?? "2026";
     return year === "2025"
       ? "荒玉中体連駅伝大会の2025年開催日は10月15日です。"
@@ -1522,7 +1522,7 @@ function offlineAnswer(
       /結果|順位|優勝校|優勝チーム/.test(question) &&
       !/2025年/.test(question);
     const aragyokuDateLookup =
-      /荒玉駅伝/.test(question) &&
+      /荒玉(?:駅伝|中体連)?/.test(question) &&
       /開催日|いつ|何日|日付/.test(question);
     const aragyokuVenueLookup =
       /荒玉駅伝/.test(question) &&
@@ -2929,7 +2929,7 @@ export async function answerQuestion(
     !/2025年/.test(expanded) &&
     !/なごみ/.test(expanded);
   const aragyokuDateQ =
-    /荒玉駅伝/.test(expanded) &&
+    /荒玉(?:駅伝|中体連)?/.test(expanded) &&
     /開催日|いつ|何日|日付/.test(expanded);
   const aragyokuVenueQ =
     /荒玉駅伝/.test(expanded) &&

@@ -2476,6 +2476,21 @@ describe("answerQuestion", () => {
     }
   });
 
+  it("accepts the short 荒玉開催日 phrasing", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("荒玉の開催日は？", {
+      skipRouter: true,
+      defaultYear: 2026,
+      llm: null,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.text).toContain("2026年開催日は10月14日");
+      expect(result.sources[0]).toBe("calendar/events.daiming.yaml");
+    }
+  });
+
   it("routes an unqualified 荒玉結果 question to both result transcripts", async () => {
     resetRetrieverCache();
     resetKgCache();
