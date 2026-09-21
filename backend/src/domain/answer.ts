@@ -381,7 +381,7 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
     }
   }
   if (
-    /総合大会記録|総合.*大会記録|ボード.*男子|男子.*総合.*大会記録|女子.*総合.*大会記録/.test(q) &&
+    /総合大会記録|総合.*(?:大会)?記録|ボード.*男子|男子.*総合.*(?:大会)?記録|女子.*総合.*(?:大会)?記録/.test(q) &&
     /20\d{2}/.test(q)
   ) {
     const year = q.match(/20\d{2}/)?.[0];
@@ -389,8 +389,9 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
     const needle = `${year}年荒玉駅伝${gender}のボード上部・総合大会記録`;
     const idx = flat.indexOf(needle);
     if (idx >= 0) {
-      const start = Math.max(0, idx - 36);
-      return flat.slice(start, Math.min(flat.length, start + budget));
+      const sentenceEnd = flat.indexOf("。", idx);
+      if (sentenceEnd >= 0) return flat.slice(idx, sentenceEnd + 1);
+      return flat.slice(idx, Math.min(flat.length, idx + budget));
     }
   }
   if (/距離|長さ|どれくらい|何キロ|何km|何m|何ｍ|何メートル/.test(q) && /[1-6]区|区間/.test(q)) {
