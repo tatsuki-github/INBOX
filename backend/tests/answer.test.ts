@@ -460,6 +460,21 @@ describe("answerQuestion", () => {
     }
   });
 
+  it("defaults an underspecified 荒玉 distance question to the current course", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("荒玉男子4区は何キロ？", {
+      llm: null,
+      skipRouter: true,
+      defaultYear: 2026,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.text).toContain("4区");
+      expect(result.text).toContain("3km");
+    }
+  });
+
   it("llm sees なごみ context for 9/20", async () => {
     resetRetrieverCache();
     resetKgCache();

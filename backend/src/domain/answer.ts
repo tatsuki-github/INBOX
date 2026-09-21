@@ -257,9 +257,9 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
     const leg = q.match(/([1-6])区/)?.[1];
     const sectionNeedle = /女子/.test(q)
       ? "### 女子（全年度共通）"
-      : /現行|2024年以降/.test(q)
-        ? "### 男子・2024年以降（現行）"
-        : "## 男子";
+      : /2023年以前|旧コース|以前/.test(q)
+        ? "### 男子・2023年以前"
+        : "### 男子・2024年以降（現行）";
     const sectionStart = flat.indexOf(sectionNeedle);
     if (leg && sectionStart >= 0) {
       const row = flat.indexOf(`| ${leg}区 |`, sectionStart);
