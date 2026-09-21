@@ -127,6 +127,23 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
   const budget = maxChars ?? offlinePreviewBudget(question);
   const flat = text.replace(/\s+/g, " ");
   const q = question.normalize("NFKC");
+  const paceCalc = q.match(/([1-6])区/) && q.match(/(\d+)分(?:\s*(\d+)秒)?/);
+  if (paceCalc && /ペース|\/km|1km|キロあたり/.test(q) && /荒玉|駅伝/.test(q)) {
+    const leg = Number(q.match(/([1-6])区/)![1]);
+    const gender = /女子/.test(q) ? "女子" : "男子";
+    const year = Number(q.match(/20\d{2}/)?.[0] ?? "2025");
+    const maleCurrent = [3, 2.855, 3, 3, 2.855, 3];
+    const maleOld = [3.95, 3.05, 2.855, 2.855, 3, 4];
+    const female = [3, 1.855, 2, 2, 3];
+    const distance = (gender === "女子" ? female : year <= 2023 ? maleOld : maleCurrent)[leg - 1];
+    if (distance) {
+      const totalSeconds = Number(paceCalc[1]) * 60 + Number(paceCalc[2] ?? 0);
+      const perKm = totalSeconds / distance;
+      const minutes = Math.floor(perKm / 60);
+      const seconds = Math.round(perKm % 60);
+      return `${gender}${leg}区（${distance.toFixed(3).replace(/0+$/, "").replace(/\.$/, "")}km）を${paceCalc[1]}分${paceCalc[2] ? `${paceCalc[2]}秒` : ""}で走るペースは、約${minutes}:${String(seconds).padStart(2, "0")}/km。`;
+    }
+  }
   // Exhaustive: keep document head / wide window (do not needle-slice away tables)
   if (isExhaustiveListQuery(q)) {
     return flat.slice(0, budget);
@@ -1095,6 +1112,11 @@ function offlineAnswer(
       /距離|長さ|どれくらい|何キロ|何km|何m|何ｍ|何メートル/.test(question) &&
       /[1-6]区|区間/.test(question) &&
       !/2区.*5区|5区.*2区/.test(question);
+    const paceCalculationLookup =
+      /荒玉|駅伝/.test(question) &&
+      /[1-6]区/.test(question) &&
+      /\d+分/.test(question) &&
+      /ペース|\/km|1km|キロあたり/.test(question);
     const assignmentLookup =
       /地点分担|何地点|担当地点|地点は/.test(question) &&
       /熊澤|土山|柴尾|土本/.test(question);
@@ -1174,6 +1196,7 @@ function offlineAnswer(
       schoolPbRankLookup ||
       trackLapLookup ||
       legDistanceLookup ||
+      paceCalculationLookup ||
       assignmentLookup ||
       matSizeLookup ||
       practiceGatherLookup ||

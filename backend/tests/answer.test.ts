@@ -2116,6 +2116,21 @@ describe("answerQuestion", () => {
     }
   });
 
+  it("calculates a leg pace from the canonical distance", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("荒玉男子1区を10分で走るとペースは？", {
+      llm: null,
+      skipRouter: true,
+      defaultYear: 2026,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.text).toContain("男子1区（3km）を10分で走るペースは、約3:20/km");
+      expect(result.text).not.toContain("歴代平均ペース");
+    }
+  });
+
   it("puts 2024-2025 focus analysis for 岱明・天水 questions", async () => {
     resetRetrieverCache();
     resetKgCache();
