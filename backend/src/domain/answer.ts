@@ -1238,7 +1238,17 @@ export async function answerQuestion(
     /優勝/.test(question) &&
     /男子|女子/.test(question) &&
     /総合|タイム/.test(question);
+  const winnerSchoolQ =
+    /20\d{2}/.test(question) &&
+    /男子|女子/.test(question) &&
+    /荒玉|駅伝/.test(question) &&
+    /優勝校/.test(question);
   if (compactWinnerQ) {
+    preferredSources = [
+      preferredSources.find((s) => /winners-by-year/.test(s)) ?? "aragyoku/winners-by-year.md",
+    ];
+  }
+  if (winnerSchoolQ) {
     preferredSources = [
       preferredSources.find((s) => /winners-by-year/.test(s)) ?? "aragyoku/winners-by-year.md",
     ];
@@ -1309,6 +1319,7 @@ export async function answerQuestion(
     compactTeamRankQ ||
     kanaguriVenueQ ||
     compactWinnerQ ||
+    winnerSchoolQ ||
     teamYearOverYearQ
       ? []
       : retrieve(expanded, topK);
@@ -1322,6 +1333,7 @@ export async function answerQuestion(
         exhaustive ||
         exactDatedPractice ||
         compactWinnerQ ||
+        winnerSchoolQ ||
         teamYearOverYearQ ||
         isLegAthleteQuestion(expanded),
     },

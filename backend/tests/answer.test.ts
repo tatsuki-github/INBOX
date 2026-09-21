@@ -387,6 +387,23 @@ describe("answerQuestion", () => {
     }
   });
 
+  it("routes explicit year/gender winner-school questions to winners-by-year", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("2025年荒玉女子優勝校は？", {
+      llm: null,
+      skipRouter: true,
+      defaultYear: 2026,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.sources[0]).toBe("aragyoku/winners-by-year.md");
+      expect(result.text).toContain("2025年荒玉駅伝女子の優勝校");
+      expect(result.text).toContain("玉名");
+      expect(result.text).not.toContain("深掘り分析");
+    }
+  });
+
   it("routes a named runner's 区間タイム to the team race digest", async () => {
     resetRetrieverCache();
     resetKgCache();
