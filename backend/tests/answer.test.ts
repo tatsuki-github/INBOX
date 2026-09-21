@@ -1145,6 +1145,22 @@ describe("answerQuestion", () => {
     }
   });
 
+  it("supports Japanese numeral seventh-place wording", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("荒玉駅伝の七位は？", {
+      llm: null,
+      skipRouter: true,
+      defaultYear: 2026,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.text).toContain("2025年男子7位: 南関（59:18）");
+      expect(result.text).toContain("2025年女子7位: 岱明（45:22）");
+      expect(result.text).not.toContain("深掘り分析");
+    }
+  });
+
   it("answers unqualified tenth-to-twelfth-place questions for both genders", async () => {
     resetRetrieverCache();
     resetKgCache();
