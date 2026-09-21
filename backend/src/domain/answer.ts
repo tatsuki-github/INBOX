@@ -1143,6 +1143,11 @@ function offlineAnswer(
       /区間賞|区間順/.test(question) &&
       /男子|女子/.test(question) &&
       !/20\d{2}/.test(question);
+    const explicitLegAwardLookup =
+      /荒玉|駅伝/.test(question) &&
+      /区間賞/.test(question) &&
+      /男子|女子/.test(question) &&
+      /20\d{2}/.test(question);
     const legRankLookup =
       /荒玉|駅伝/.test(question) &&
       /男子|女子/.test(question) &&
@@ -1263,6 +1268,7 @@ function offlineAnswer(
       winnerTeamLookup ||
       historicalWinnerLookup ||
       latestLegAwardLookup ||
+      explicitLegAwardLookup ||
       legRankLookup ||
       allLegRankLookup ||
       teamRankLookup ||
@@ -2152,6 +2158,17 @@ export async function answerQuestion(
     /荒玉|駅伝/.test(question) &&
     /男子|女子/.test(question) &&
     /区間順位|区間順/.test(question);
+  const explicitLegAwardQ =
+    /20\d{2}/.test(question) &&
+    /荒玉|駅伝/.test(question) &&
+    /区間賞/.test(question) &&
+    /男子|女子/.test(question);
+  if (explicitLegAwardQ) {
+    preferredSources = [
+      preferredSources.find((s) => /aragyoku_leg_awards/.test(s)) ??
+        "out-analysis/aragyoku_leg_awards.md",
+    ];
+  }
   const individual1500TopQ =
     /1500m|1500ｍ/.test(question) &&
     /速い|一番|最速|ランキング|トップ\s*20|SB|自己ベスト/.test(question) &&
@@ -2492,17 +2509,17 @@ export async function answerQuestion(
     query: expanded,
     perSource:
       exhaustive || totalMeetRecordQ || teamFullRecordQ || explicitTeamLegRankQ || historicalWinnerQ || winnerYearTeamQ || legRankQuestionQ
-        || resultListQ
+        || resultListQ || explicitLegAwardQ
         ? 200
         : RETRIEVAL_BUDGET.perSource,
     maxChunks:
       exhaustive || totalMeetRecordQ || teamFullRecordQ || explicitTeamLegRankQ || historicalWinnerQ || winnerYearTeamQ || legRankQuestionQ
-        || resultListQ
+        || resultListQ || explicitLegAwardQ
         ? 200
         : RETRIEVAL_BUDGET.maxChunks,
       coverage:
       exhaustive || exactDatedPractice || totalMeetRecordQ || teamFullRecordQ || explicitTeamLegRankQ || historicalWinnerQ || winnerYearTeamQ || legRankQuestionQ
-        || resultListQ
+        || resultListQ || explicitLegAwardQ
         ? "full"
         : "ranked",
   });
@@ -2532,6 +2549,7 @@ export async function answerQuestion(
     winnerYearTeamQ ||
     legRankQuestionQ ||
     individual1500TopQ ||
+    explicitLegAwardQ ||
     schoolPbRankQ ||
     trackLapQ ||
     top2CountQ ||
@@ -2564,6 +2582,8 @@ export async function answerQuestion(
           ? Math.max(topK, fromSources.length, 32)
         : legRankQuestionQ
           ? Math.max(topK, fromSources.length, 24)
+        : explicitLegAwardQ
+          ? Math.max(topK, fromSources.length)
         : resultListQ
           ? Math.max(topK, fromSources.length, 200)
         : explicitTeamLegRankQ
@@ -2587,6 +2607,7 @@ export async function answerQuestion(
         winnerYearTeamQ ||
         legRankQuestionQ ||
         individual1500TopQ ||
+        explicitLegAwardQ ||
         schoolPbRankQ ||
         trackLapQ ||
         top2CountQ ||
