@@ -1243,6 +1243,14 @@ export async function answerQuestion(
       preferredSources.find((s) => /winners-by-year/.test(s)) ?? "aragyoku/winners-by-year.md",
     ];
   }
+  const teamYearOverYearQ =
+    /前年比|前年から|前年度比/.test(question) && /男子|女子/.test(question);
+  if (teamYearOverYearQ) {
+    preferredSources = [
+      preferredSources.find((s) => /aragyoku_2024_2025_focus_teams/.test(s)) ??
+        "out-analysis/aragyoku_2024_2025_focus_teams.md",
+    ];
+  }
 
   if (exhaustive) {
     preferredSources = narrowExhaustiveSources(expanded, preferredSources);
@@ -1300,7 +1308,8 @@ export async function answerQuestion(
     aragyokuDistanceQ ||
     compactTeamRankQ ||
     kanaguriVenueQ ||
-    compactWinnerQ
+    compactWinnerQ ||
+    teamYearOverYearQ
       ? []
       : retrieve(expanded, topK);
   const mergedCoreRaw = mergeRetrieved(
@@ -1313,6 +1322,7 @@ export async function answerQuestion(
         exhaustive ||
         exactDatedPractice ||
         compactWinnerQ ||
+        teamYearOverYearQ ||
         isLegAthleteQuestion(expanded),
     },
   );
