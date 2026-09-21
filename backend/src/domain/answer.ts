@@ -127,6 +127,20 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
   if (/全記録|記録一覧|所属選手|ランキング|トップ\s*\d+|何位/.test(q)) {
     return flat.slice(0, budget);
   }
+  if (/最新|直近|今年/.test(q) && /優勝/.test(q) && /荒玉|駅伝/.test(q)) {
+    const gender = /女子/.test(q) ? "女子" : /男子/.test(q) ? "男子" : "";
+    if (gender) {
+      const re = new RegExp(`20\\d{2}年荒玉駅伝${gender}の優勝校は[^。]+。`, "g");
+      const matches = [...flat.matchAll(re)];
+      if (matches.length > 0) {
+        let best = matches[0]!;
+        for (const match of matches) {
+          if (Number(match[0].slice(0, 4)) >= Number(best[0].slice(0, 4))) best = match;
+        }
+        return best[0]!;
+      }
+    }
+  }
   // 優勝・準優勝の年度表（直近5年ブロックを先頭に据えた winners-by-year）
   if (/優勝|準優勝|2位/.test(q) && /荒玉|駅伝|過去/.test(q)) {
     const years = q.match(/20\d{2}/g) ?? [];
@@ -537,9 +551,14 @@ function offlineAnswer(
       /男子|女子/.test(question) &&
       /総合.*(?:大会記録|記録)|ボード/.test(question) &&
       /荒玉|駅伝|ボード/.test(question);
-    const focusedMeetRecord = preciseMeetRecord || namedMeetRecord || totalMeetRecord;
-    const hint = focusedMeetRecord ? question : previewQuery ?? question;
-    if (focusedMeetRecord) {
+    const latestWinner =
+      /最新|直近|今年/.test(question) &&
+      /優勝/.test(question) &&
+      /男子|女子/.test(question) &&
+      /荒玉|駅伝/.test(question);
+    const focusedLookup = preciseMeetRecord || namedMeetRecord || totalMeetRecord || latestWinner;
+    const hint = focusedLookup ? question : previewQuery ?? question;
+    if (focusedLookup) {
       const preview = previewForOffline(
         retrieved.map((r) => r.chunk.text).join("\n"),
         hint,
@@ -1344,6 +1363,11 @@ export async function answerQuestion(
     /男子|女子/.test(question) &&
     /荒玉|駅伝/.test(question) &&
     /2位|準優勝/.test(question);
+  const latestWinnerQ =
+    /最新|直近|今年/.test(question) &&
+    /優勝/.test(question) &&
+    /男子|女子/.test(question) &&
+    /荒玉|駅伝/.test(question);
   const genderLegRecordQ =
     /荒玉|駅伝|大会区間記録|区間記録/.test(question) &&
     /男子|女子/.test(question) &&
@@ -1382,6 +1406,11 @@ export async function answerQuestion(
     ];
   }
   if (runnerUpQ) {
+    preferredSources = [
+      preferredSources.find((s) => /winners-by-year/.test(s)) ?? "aragyoku/winners-by-year.md",
+    ];
+  }
+  if (latestWinnerQ) {
     preferredSources = [
       preferredSources.find((s) => /winners-by-year/.test(s)) ?? "aragyoku/winners-by-year.md",
     ];
@@ -1465,6 +1494,7 @@ export async function answerQuestion(
     compactWinnerQ ||
     winnerSchoolQ ||
     runnerUpQ ||
+    latestWinnerQ ||
     teamYearOverYearQ ||
     teamWinnerMarginQ ||
     namedMeetRecordQ ||
@@ -1488,6 +1518,7 @@ export async function answerQuestion(
         compactWinnerQ ||
         winnerSchoolQ ||
         runnerUpQ ||
+        latestWinnerQ ||
         teamYearOverYearQ ||
         teamWinnerMarginQ ||
         namedMeetRecordQ ||
