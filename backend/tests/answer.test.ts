@@ -1177,6 +1177,22 @@ describe("answerQuestion", () => {
     }
   });
 
+  it("supports Japanese numeral ninth-place wording", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("荒玉駅伝の九位は？", {
+      llm: null,
+      skipRouter: true,
+      defaultYear: 2026,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.text).toContain("2025年男子9位: 玉名（60:52）");
+      expect(result.text).toContain("2025年女子9位: 菊水（46:40）");
+      expect(result.text).not.toContain("深掘り分析");
+    }
+  });
+
   it("answers unqualified tenth-to-twelfth-place questions for both genders", async () => {
     resetRetrieverCache();
     resetKgCache();
