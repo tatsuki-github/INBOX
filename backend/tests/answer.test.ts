@@ -284,6 +284,23 @@ describe("answerQuestion", () => {
     }
   });
 
+  it("routes 銀マットの厚み phrasing to the parent size summary", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("銀マットの厚みは？", {
+      llm: null,
+      skipRouter: true,
+      defaultYear: 2026,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.sources[0]).toBe("out-analysis/line-chats/daiming-parents.md");
+      expect(result.text).toContain("### 銀マット");
+      expect(result.text).toContain("15mm");
+      expect(result.text).not.toContain("保護者グループ）運用メモ");
+    }
+  });
+
   it("routes a named runner's 区間タイム to the team race digest", async () => {
     resetRetrieverCache();
     resetKgCache();
