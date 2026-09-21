@@ -793,6 +793,21 @@ describe("answerQuestion", () => {
     }
   });
 
+  it("clarifies an underspecified aragyoku split-athlete query", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("荒玉駅伝の男子6区は誰？", {
+      llm: null,
+      skipRouter: true,
+      defaultYear: 2026,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.text).toContain("区間選手は年度・チームで異なります");
+      expect(result.text).not.toContain("深掘り分析");
+    }
+  });
+
   it("answers an unqualified first-place question for both genders", async () => {
     resetRetrieverCache();
     resetKgCache();
