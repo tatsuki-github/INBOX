@@ -920,6 +920,21 @@ describe("answerQuestion", () => {
     }
   });
 
+  it("summarizes the latest top three aragyoku schools by gender", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("荒玉駅伝の上位3校は？", {
+      llm: null,
+      skipRouter: true,
+      defaultYear: 2026,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.text).toContain("2025年男子: 1位 菊水（56:17）、2位 玉陵（58:02）、3位 玉高附属（58:37）");
+      expect(result.text).toContain("2025年女子: 1位 玉名（41:58）、2位 南関（43:45）、3位 玉東（44:24）");
+    }
+  });
+
   it("lists all historical winners for a gender-specific 歴代 question", async () => {
     resetRetrieverCache();
     resetKgCache();
