@@ -1954,7 +1954,10 @@ function offlineAnswer(
               const winners = [...joined.replace(/\s+/g, " ").matchAll(
                 /\|\s*1\s*\|\s*\d+\s*\|\s*([^|]+?)\s*\|\s*([^|]+?)\s*\|/g,
               )];
-              return winners.length >= 2
+              const gender = /女子/.test(question) ? "女子" : /男子/.test(question) ? "男子" : "";
+              return gender && winners.length > 0
+                ? `2026年なごみ${gender}優勝: ${winners[0]![1]!.trim()}（${winners[0]![2]!.trim()}）。`
+                : winners.length >= 2
                 ? `2026年なごみ男子優勝: ${winners[0]![1]!.trim()}（${winners[0]![2]!.trim()}）。2026年なごみ女子優勝: ${winners[1]![1]!.trim()}（${winners[1]![2]!.trim()}）。`
                 : winners.length > 0
                   ? `なごみ駅伝の優勝: ${winners.map((row) => `${row[1]!.trim()} ${row[2]!.trim()}`).join("、")}。`
