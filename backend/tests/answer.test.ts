@@ -1211,6 +1211,8 @@ describe("answerQuestion", () => {
     if (result.kind === "offline") {
       expect(result.sources[0]).toBe("out-analysis/aragyoku-teams/天水.md");
       expect(result.text).toContain("9:45");
+      expect(result.text).toContain("2024年1区 山本悠斗の区間タイムは9:45。");
+      expect(result.text).not.toContain("2025年荒玉駅伝男子");
     }
   });
 
