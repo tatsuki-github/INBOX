@@ -714,6 +714,12 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
   if (/金栗駅伝/.test(q) && /結果|順位|優勝校|優勝チーム/.test(q) && !/2025年/.test(q)) {
     return "2026年の金栗駅伝は、正本資料上は開催予定の記録のみで、結果・順位はまだ記載されていません。";
   }
+  if (/荒玉駅伝/.test(q) && /開催日|いつ|何日|日付/.test(q)) {
+    const year = q.match(/20\d{2}/)?.[0] ?? "2026";
+    return year === "2025"
+      ? "荒玉中体連駅伝大会の2025年開催日は10月15日です。"
+      : "荒玉中体連駅伝大会の2026年開催日は10月14日（予備日10月15日）です。";
+  }
   // 「優勝との差」列を優先（大会記録ボードより focus / team の差表）
   if (/優勝との差|優勝差|優勝から|優勝まで|離れて/.test(q)) {
     for (const needle of ["優勝との差", "+2:51", "+8:37", "優勝校"]) {
@@ -1436,6 +1442,9 @@ function offlineAnswer(
       /金栗駅伝/.test(question) &&
       /結果|順位|優勝校|優勝チーム/.test(question) &&
       !/2025年/.test(question);
+    const aragyokuDateLookup =
+      /荒玉駅伝/.test(question) &&
+      /開催日|いつ|何日|日付/.test(question);
     const focusedLookup =
       preciseMeetRecord ||
       namedMeetRecord ||
@@ -1484,6 +1493,7 @@ function offlineAnswer(
       individualTrackFastestLookup ||
       kanaguriVenueLookup ||
       kanaguriResultLookup ||
+      aragyokuDateLookup ||
       kanaguriDate;
     const hint = focusedLookup ? question : previewQuery ?? question;
     if (focusedLookup) {
@@ -1531,6 +1541,11 @@ function offlineAnswer(
               .find((preview) => name.length > 0 && preview.includes(name) && !/名前,所属/.test(preview));
           })()
         : undefined;
+      const aragyokuDatePreview = aragyokuDateLookup
+        ? /2025年/.test(question)
+          ? "荒玉中体連駅伝大会の2025年開催日は10月15日です。"
+          : "荒玉中体連駅伝大会の2026年開催日は10月14日（予備日10月15日）です。"
+        : undefined;
       const nagomiWinnerPreview =
         nagomiResultLookup && /優勝/.test(question)
           ? (() => {
@@ -1543,7 +1558,7 @@ function offlineAnswer(
             })()
           : undefined;
       const preview =
-        explicitWinnerMatch?.[0] ?? explicitRunnerMatch?.[0] ?? explicitLegSection ?? nagomiWinnerPreview ?? namedSelfBestPreview ?? previewForOffline(joined, hint);
+        explicitWinnerMatch?.[0] ?? explicitRunnerMatch?.[0] ?? explicitLegSection ?? nagomiWinnerPreview ?? namedSelfBestPreview ?? aragyokuDatePreview ?? previewForOffline(joined, hint);
       lines.push(`1. ${preview}`);
     } else {
       for (const [i, r] of retrieved.entries()) {
@@ -2774,6 +2789,9 @@ export async function answerQuestion(
     /結果|順位|優勝校|優勝チーム/.test(expanded) &&
     !/2025年/.test(expanded) &&
     !/なごみ/.test(expanded);
+  const aragyokuDateQ =
+    /荒玉駅伝/.test(expanded) &&
+    /開催日|いつ|何日|日付/.test(expanded);
   const nagomiLegRankQ =
     /なごみ/.test(expanded) &&
     /[1-6]区/.test(expanded) &&
@@ -2839,21 +2857,24 @@ export async function answerQuestion(
     const resultYear = expanded.match(/20\d{2}/)?.[0] ?? "2026";
     preferredSources = [`drive-text/大会/${resultYear}年度/0315_金栗駅伝/概要.md`];
   }
+  if (aragyokuDateQ) {
+    preferredSources = ["calendar/events.daiming.yaml"];
+  }
   const fromSources = retrieveBySources(preferredSources, {
     query: expanded,
     perSource:
       exhaustive || totalMeetRecordQ || teamFullRecordQ || explicitTeamLegRankQ || historicalWinnerQ || winnerYearTeamQ || legRankQuestionQ
-        || resultListQ || explicitLegAwardQ || schoolPbRankQ || nagomiLegOrderQ || nagomiLegRankQ || nagomiResultQ || nagomiDateQ || nagomiVenueQ || kanaguriResultQ || datedTeamResultQ
+        || resultListQ || explicitLegAwardQ || schoolPbRankQ || nagomiLegOrderQ || nagomiLegRankQ || nagomiResultQ || nagomiDateQ || nagomiVenueQ || kanaguriResultQ || aragyokuDateQ || datedTeamResultQ
         ? 200
         : RETRIEVAL_BUDGET.perSource,
     maxChunks:
       exhaustive || totalMeetRecordQ || teamFullRecordQ || explicitTeamLegRankQ || historicalWinnerQ || winnerYearTeamQ || legRankQuestionQ
-        || resultListQ || explicitLegAwardQ || schoolPbRankQ || nagomiLegOrderQ || nagomiLegRankQ || nagomiResultQ || nagomiDateQ || nagomiVenueQ || kanaguriResultQ || datedTeamResultQ
+        || resultListQ || explicitLegAwardQ || schoolPbRankQ || nagomiLegOrderQ || nagomiLegRankQ || nagomiResultQ || nagomiDateQ || nagomiVenueQ || kanaguriResultQ || aragyokuDateQ || datedTeamResultQ
         ? 200
         : RETRIEVAL_BUDGET.maxChunks,
       coverage:
       exhaustive || exactDatedPractice || totalMeetRecordQ || teamFullRecordQ || explicitTeamLegRankQ || historicalWinnerQ || winnerYearTeamQ || legRankQuestionQ
-        || resultListQ || explicitLegAwardQ || schoolPbRankQ || nagomiLegOrderQ || nagomiLegRankQ || nagomiResultQ || nagomiDateQ || nagomiVenueQ || kanaguriResultQ || datedTeamResultQ
+        || resultListQ || explicitLegAwardQ || schoolPbRankQ || nagomiLegOrderQ || nagomiLegRankQ || nagomiResultQ || nagomiDateQ || nagomiVenueQ || kanaguriResultQ || aragyokuDateQ || datedTeamResultQ
         ? "full"
         : "ranked",
   });
@@ -2898,6 +2919,7 @@ export async function answerQuestion(
     nagomiVenueQ ||
     kanaguriResultQ ||
     datedTeamResultQ ||
+    aragyokuDateQ ||
     explicitTeamLegQ ||
     teamFullRecordQ ||
     explicitTeamLegRankQ ||

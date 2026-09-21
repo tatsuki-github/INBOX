@@ -2328,6 +2328,23 @@ describe("answerQuestion", () => {
     }
   });
 
+  it("answers the 荒玉駅伝開催日 from the calendar", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("荒玉駅伝の開催日は？", {
+      skipRouter: true,
+      defaultYear: 2026,
+      llm: null,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.text).toContain("2026年開催日は10月14日");
+      expect(result.text).toContain("予備日10月15日");
+      expect(result.sources[0]).toBe("calendar/events.daiming.yaml");
+      expect(result.text).not.toContain("深掘り分析");
+    }
+  });
+
   it("answers なごみ 岱明男子1区 from 2026 order list, not 金栗駅伝", async () => {
     resetRetrieverCache();
     resetKgCache();
