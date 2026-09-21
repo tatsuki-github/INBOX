@@ -241,11 +241,13 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
       return flat.slice(idx, Math.min(flat.length, idx + budget));
     }
   }
-  if (/お別れ会/.test(q) && /いつ|日程|何時|日/.test(q)) {
+  if (/お別れ会/.test(q) && /いつ|日程|何時|時間|日/.test(q)) {
     for (const needle of ["### 金栗駅伝・お別れ会", "3年生お別れ会"]) {
       const idx = flat.indexOf(needle);
       if (idx >= 0) {
-        return flat.slice(idx, Math.min(flat.length, idx + budget));
+        const next = flat.indexOf("### 玉名市合同練習会", idx + needle.length);
+        const sectionEnd = next >= 0 ? next : flat.length;
+        return flat.slice(idx, Math.min(sectionEnd, idx + budget));
       }
     }
   }
@@ -1233,7 +1235,7 @@ export async function answerQuestion(
   const namedAssignmentQ =
     /地点分担/.test(expanded) && /熊澤|土山|柴尾|土本/.test(expanded);
   const farewellScheduleQ =
-    /お別れ会/.test(expanded) && /いつ|日程|何時|日/.test(expanded);
+    /お別れ会/.test(expanded) && /いつ|日程|何時|時間|日/.test(expanded);
   const matSizeQ =
     /銀マット/.test(expanded) && /何センチ|何ミリ|サイズ|長さ|幅|大きさ/.test(expanded);
 
@@ -1273,11 +1275,11 @@ export async function answerQuestion(
           /地点分担（荒玉）|質問向け地点分担/.test(r.chunk.text),
       )
     : farewellScheduleQ
-      ? mergedCoreRaw.filter(
-          (r) =>
-            /daiming-staff\.md$/.test(r.chunk.source) &&
-            /金栗駅伝・お別れ会|3年生お別れ会/.test(r.chunk.text),
-        )
+        ? mergedCoreRaw.filter(
+            (r) =>
+              /daiming-staff\.md$/.test(r.chunk.source) &&
+              /金栗駅伝・お別れ会/.test(r.chunk.text),
+          )
       : matSizeQ
         ? mergedCoreRaw.filter(
             (r) =>
