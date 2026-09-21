@@ -757,6 +757,22 @@ describe("answerQuestion", () => {
     }
   });
 
+  it("routes yearless 荒玉 total-time questions to the latest result", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("荒玉男子の総合タイムは？", {
+      llm: null,
+      skipRouter: true,
+      defaultYear: 2026,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.sources[0]).toBe("aragyoku/winners-by-year.md");
+      expect(result.text).toContain("2025年荒玉駅伝男子の優勝校は「菊水」（総合 56:17）");
+      expect(result.text).not.toContain("2026年度荒玉男子.pdf");
+    }
+  });
+
   it("routes team year-over-year questions to the focus analysis digest", async () => {
     resetRetrieverCache();
     resetKgCache();
