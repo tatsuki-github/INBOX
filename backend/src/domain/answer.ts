@@ -124,7 +124,15 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
     return flat.slice(0, budget);
   }
   // Full-record / ranking digests: prefer document head (title + early tables)
-  if (/全記録|記録一覧|所属選手|ランキング|トップ\s*\d+|何位/.test(q)) {
+  if (
+    /全記録|記録一覧|所属選手|ランキング|トップ\s*\d+|何位/.test(q) &&
+    !(
+      /20\d{2}/.test(q) &&
+      /男子|女子/.test(q) &&
+      /何位|順位/.test(q) &&
+      /岱明|玉高附属|玉名付属|玉名附属|天水|有明|南関|菊水|玉東|玉陵|長洲/.test(q)
+    )
+  ) {
     return flat.slice(0, budget);
   }
   if (
@@ -490,14 +498,19 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
     }
   }
   if (/何位|順位|総合タイム|総合は/.test(q) && /20\d{2}/.test(q) && /男子|女子/.test(q)) {
-    const year = q.match(/20\d{2}/)?.[0];
+    const years = q.match(/20\d{2}/g) ?? [];
+    const year = years[0];
     const gender = /女子/.test(q) ? "女子" : /男子/.test(q) ? "男子" : "";
     const team = /玉名付属|玉名附属|玉名附/.test(q)
       ? "玉高附属"
       : ["岱明", "玉高附属", "天水", "有明", "南関", "菊水", "玉東", "玉陵", "長洲"].find(
           (stem) => q.includes(stem),
         );
-    if (year && gender && team) {
+    if (year && years.length === 1 && gender && team) {
+      const sentence = flat.match(
+        new RegExp(`${year}年荒玉駅伝${gender} ${team}は[^。]+。`),
+      );
+      if (sentence) return sentence[0]!;
       const idx = flat.indexOf(`${year}年荒玉駅伝${gender} ${team}`);
       if (idx >= 0) {
         return flat.slice(Math.max(0, idx - 80), Math.min(flat.length, idx + budget));
@@ -637,6 +650,13 @@ function offlineAnswer(
       /男子|女子/.test(question) &&
       /荒玉|駅伝/.test(question) &&
       !/平均ペース|ランキング/.test(question);
+    const teamRankLookup =
+      /20\d{2}/.test(question) &&
+      /男子|女子/.test(question) &&
+      /何位|順位/.test(question) &&
+      /岱明|玉高附属|玉名付属|玉名附属|天水|有明|南関|菊水|玉東|玉陵|長洲/.test(
+        question,
+      );
     const kanaguriDate =
       /金栗駅伝/.test(question) &&
       /いつ|何日|何月|開催月|開催時期/.test(question);
@@ -648,6 +668,7 @@ function offlineAnswer(
       latestWinnerTime ||
       latestRunnerUp ||
       latestFirstPlace ||
+      teamRankLookup ||
       kanaguriDate;
     const hint = focusedLookup ? question : previewQuery ?? question;
     if (focusedLookup) {
@@ -1580,6 +1601,25 @@ export async function answerQuestion(
     /男子|女子/.test(expanded) &&
     /何位|順位/.test(expanded) &&
     /岱明|玉高附属|玉名付属|玉名附属|天水|有明|南関|菊水|玉東|玉陵|長洲/.test(expanded);
+  if (compactTeamRankQ) {
+    const team = /玉名付属|玉名附属|玉名附/.test(question)
+      ? "玉高附属"
+      : [
+          "岱明",
+          "玉高附属",
+          "天水",
+          "有明",
+          "南関",
+          "菊水",
+          "玉東",
+          "玉陵",
+          "長洲",
+        ].find((stem) => question.includes(stem));
+    if (team) {
+      const path = `out-analysis/aragyoku-teams/${team}.md`;
+      preferredSources = [preferredSources.find((s) => s.endsWith(path)) ?? path];
+    }
+  }
   const namedAssignmentQ =
     /地点分担|何地点|どの地点|担当地点|地点(?:は|に|です)/.test(expanded) &&
     /熊澤|土山|柴尾|土本/.test(expanded);
