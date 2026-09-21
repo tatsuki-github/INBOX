@@ -1504,6 +1504,10 @@ function offlineAnswer(
   missingInfoMessage = MISSING_INFO_MESSAGE,
 ): string {
   const lines = ["（オフライン回答）", "", `Q: ${question}`, ""];
+  if (/荒玉|駅伝/.test(question) && /記録/.test(question) && !/大会記録|区間記録|区間賞|保持者|自己記録/.test(question)) {
+    lines.push("荒玉駅伝の記録は、総合順位・区間賞・大会記録のどれを指すか指定してください。");
+    return lines.join("\n");
+  }
   if (/荒玉|駅伝/.test(question) && /参加校|出場校|参加チーム/.test(question)) {
     lines.push("荒玉中体連駅伝の参加校確定一覧は、手元の正本資料では確認できません。");
     return lines.join("\n");
