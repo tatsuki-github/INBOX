@@ -915,6 +915,13 @@ function digestPinForQuery(chunk: RagChunk, query: string): number {
   ) {
     return 1000;
   }
+  if (
+    /銀マット/.test(qn) &&
+    /daiming-parents\.md$/.test(base) &&
+    /### 銀マット|銀マットサイズ/.test(chunk.text)
+  ) {
+    return 1000;
+  }
   if (/全記録|所属選手|記録一覧/.test(qn)) {
     const stem = base.split("/").pop()?.replace(/\.md$/, "") ?? "";
     if (/arato-tamana-teams\/[^/]+\.md$/.test(base) && stem && query.includes(stem)) {

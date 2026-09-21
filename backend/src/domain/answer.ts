@@ -249,6 +249,14 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
       }
     }
   }
+  if (/銀マット/.test(q) && /何センチ|何ミリ|サイズ|長さ|幅|大きさ/.test(q)) {
+    for (const needle of ["### 銀マット", "銀マットサイズ"]) {
+      const idx = flat.indexOf(needle);
+      if (idx >= 0) {
+        return flat.slice(idx, Math.min(flat.length, idx + budget));
+      }
+    }
+  }
   if (/合同練習会|おおはま/.test(q)) {
     for (const needle of [
       "### 玉名市合同練習会",
@@ -1226,6 +1234,8 @@ export async function answerQuestion(
     /地点分担/.test(expanded) && /熊澤|土山|柴尾|土本/.test(expanded);
   const farewellScheduleQ =
     /お別れ会/.test(expanded) && /いつ|日程|何時|日/.test(expanded);
+  const matSizeQ =
+    /銀マット/.test(expanded) && /何センチ|何ミリ|サイズ|長さ|幅|大きさ/.test(expanded);
 
   const fromSources = retrieveBySources(preferredSources, {
     query: expanded,
@@ -1268,9 +1278,18 @@ export async function answerQuestion(
             /daiming-staff\.md$/.test(r.chunk.source) &&
             /金栗駅伝・お別れ会|3年生お別れ会/.test(r.chunk.text),
         )
-      : mergedCoreRaw;
+      : matSizeQ
+        ? mergedCoreRaw.filter(
+            (r) =>
+              /daiming-parents\.md$/.test(r.chunk.source) &&
+              /### 銀マット|銀マットサイズ/.test(r.chunk.text),
+          )
+        : mergedCoreRaw;
   const withNeighbors = expandWithNeighbors(mergedCore, {
-    radius: exhaustive || namedAssignmentQ || farewellScheduleQ ? 0 : RETRIEVAL_BUDGET.neighborRadius,
+    radius:
+      exhaustive || namedAssignmentQ || farewellScheduleQ || matSizeQ
+        ? 0
+        : RETRIEVAL_BUDGET.neighborRadius,
     maxExtra: exhaustive ? 0 : RETRIEVAL_BUDGET.neighborMaxExtra,
     query: expanded,
   });
