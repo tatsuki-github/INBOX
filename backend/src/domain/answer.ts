@@ -127,6 +127,9 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
   const budget = maxChars ?? offlinePreviewBudget(question);
   const flat = text.replace(/\s+/g, " ");
   const q = question.normalize("NFKC");
+  if (/荒玉|駅伝/.test(q) && /参加校|出場校|参加チーム/.test(q)) {
+    return "荒玉中体連駅伝の参加校確定一覧は、手元の正本資料では確認できません。";
+  }
   if (/荒玉|駅伝/.test(q) && /今年/.test(q) && /結果|順位|優勝校|優勝チーム/.test(q)) {
     return "2026年の荒玉中体連駅伝は開催予定の記録のみで、結果・順位はまだ記載されていません。";
   }
@@ -1501,6 +1504,10 @@ function offlineAnswer(
   missingInfoMessage = MISSING_INFO_MESSAGE,
 ): string {
   const lines = ["（オフライン回答）", "", `Q: ${question}`, ""];
+  if (/荒玉|駅伝/.test(question) && /参加校|出場校|参加チーム/.test(question)) {
+    lines.push("荒玉中体連駅伝の参加校確定一覧は、手元の正本資料では確認できません。");
+    return lines.join("\n");
+  }
   if (retrieved.length === 0) {
     if (/金栗駅伝/.test(question) && /結果|順位|優勝校|優勝チーム/.test(question)) {
       lines.push("2026年の金栗駅伝は、正本資料上は開催予定の記録のみで、結果・順位はまだ記載されていません。");
