@@ -2104,6 +2104,17 @@ export async function answerQuestion(
     /荒尾海陽|玉高附属|荒尾三|荒尾四|三加和|南関|天水|岱明|有明|玉南|玉名|玉東|玉陵|腹栄|荒尾|菊水|長洲/.test(
       question,
     );
+  const legRankQuestionQ =
+    /荒玉|駅伝/.test(question) &&
+    /男子|女子/.test(question) &&
+    /[1-6]区/.test(question) &&
+    /区間順位|区間順/.test(question);
+  if (legRankQuestionQ) {
+    preferredSources = [
+      preferredSources.find((s) => /aragyoku_leg_awards/.test(s)) ??
+        "out-analysis/aragyoku_leg_awards.md",
+    ];
+  }
   const genderLegRecordQ =
     (/荒玉|駅伝|大会区間記録|区間記録|ボード記録/.test(question) ||
       /記録保持者|区間記録/.test(question)) &&
@@ -2415,15 +2426,15 @@ export async function answerQuestion(
   const fromSources = retrieveBySources(preferredSources, {
     query: expanded,
     perSource:
-      exhaustive || totalMeetRecordQ || teamFullRecordQ || explicitTeamLegRankQ || historicalWinnerQ || winnerYearTeamQ
+      exhaustive || totalMeetRecordQ || teamFullRecordQ || explicitTeamLegRankQ || historicalWinnerQ || winnerYearTeamQ || legRankQuestionQ
         ? 200
         : RETRIEVAL_BUDGET.perSource,
     maxChunks:
-      exhaustive || totalMeetRecordQ || teamFullRecordQ || explicitTeamLegRankQ || historicalWinnerQ || winnerYearTeamQ
+      exhaustive || totalMeetRecordQ || teamFullRecordQ || explicitTeamLegRankQ || historicalWinnerQ || winnerYearTeamQ || legRankQuestionQ
         ? 200
         : RETRIEVAL_BUDGET.maxChunks,
       coverage:
-      exhaustive || exactDatedPractice || totalMeetRecordQ || teamFullRecordQ || explicitTeamLegRankQ || historicalWinnerQ || winnerYearTeamQ
+      exhaustive || exactDatedPractice || totalMeetRecordQ || teamFullRecordQ || explicitTeamLegRankQ || historicalWinnerQ || winnerYearTeamQ || legRankQuestionQ
         ? "full"
         : "ranked",
   });
@@ -2451,6 +2462,7 @@ export async function answerQuestion(
     genericWinnerYearQ ||
     historicalWinnerQ ||
     winnerYearTeamQ ||
+    legRankQuestionQ ||
     schoolPbRankQ ||
     trackLapQ ||
     top2CountQ ||
@@ -2480,6 +2492,8 @@ export async function answerQuestion(
           ? Math.max(topK, fromSources.length, 32)
         : winnerYearTeamQ
           ? Math.max(topK, fromSources.length, 32)
+        : legRankQuestionQ
+          ? Math.max(topK, fromSources.length, 24)
         : explicitTeamLegRankQ
           ? Math.max(topK, fromSources.length)
         : topK,
@@ -2499,6 +2513,7 @@ export async function answerQuestion(
         genericWinnerYearQ ||
         historicalWinnerQ ||
         winnerYearTeamQ ||
+        legRankQuestionQ ||
         schoolPbRankQ ||
         trackLapQ ||
         top2CountQ ||
