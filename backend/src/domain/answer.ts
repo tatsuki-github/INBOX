@@ -683,7 +683,7 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
     if (top) return `荒玉地区男子3000mSBの1位は${top[1]!.trim()}（${top[2]!.trim()}）${top[3]!.trim()}。`;
   }
   if (
-    /男子/.test(q) &&
+    (!/女子/.test(q) && (/男子/.test(q) || /岱明/.test(q))) &&
     /1500m|1500ｍ|3000m|3000ｍ/.test(q) &&
     /最速|一番速|速い/.test(q) ||
     (/男子/.test(q) && /1500m|1500ｍ|3000m|3000ｍ/.test(q) && /自己ベスト/.test(q) && !/ランキング|トップ/.test(q))
@@ -717,6 +717,34 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
     /上位\s*\d+\s*人平均|上位\d+人平均|学校別|所属別/.test(q);
   if (isExhaustiveListQuery(q) && !schoolAverageQ && !(/なごみ/.test(q) && /優勝/.test(q))) {
     return flat.slice(0, budget);
+  }
+  if (
+    (!/女子/.test(q) && (/男子/.test(q) || /岱明/.test(q))) &&
+    /1500(?:m|ｍ)?/.test(q) &&
+    /上位\s*3\s*人平均|上位3人平均/.test(q)
+  ) {
+    const school = /岱明/.test(q) ? "岱明中" : "";
+    if (!school) {
+      return "男子1500mの学校別正本は上位4人平均で、上位3人平均は収録されていません。";
+    }
+    const sectionStart = flat.indexOf("## 上位4人平均");
+    const sectionEnd = flat.indexOf("## ", sectionStart + 1);
+    const section = sectionStart >= 0
+      ? flat.slice(sectionStart, sectionEnd >= 0 ? sectionEnd : undefined)
+      : flat;
+    const row = section.match(
+      new RegExp(`\\|\\s*(\\d+)\\s*\\|\\s*${school}\\s*\\|[^|]*\\|[^|]*\\|\\s*([^|]+)\\|`),
+    );
+    const times = row ? [...row[2]!.matchAll(/(\d+):(\d{2})\.(\d{2})/g)].slice(0, 3) : [];
+    if (row && times.length === 3) {
+      const seconds = times.reduce(
+        (sum, time) => sum + Number(time[1]) * 60 + Number(time[2]) + Number(time[3]) / 100,
+        0,
+      ) / 3;
+      const minutes = Math.floor(seconds / 60);
+      const remainder = (seconds - minutes * 60).toFixed(2).padStart(5, "0");
+      return `${row[1]}位 ${school}・上位3人平均 ${minutes}:${remainder}`;
+    }
   }
   if (
     /1500(?:m|ｍ)?|800(?:m|ｍ)?/.test(q) &&

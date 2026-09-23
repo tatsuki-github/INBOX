@@ -1054,4 +1054,66 @@ describe("QA precision regressions", () => {
     expect(result.text).toContain("上位3人平均 5:10.77");
     expect(result.text).not.toContain("2:28.81");
   });
+
+  it("calculates the requested top-three male 1500m average", async () => {
+    const result = await ask("岱明男子1500上位3人平均");
+    expect(result.sources).toEqual(["out-analysis/2026_men_1500m_pb_school_ranking.md"]);
+    expect(result.text).toContain("上位3人平均 4:28.69");
+    expect(result.text).not.toContain("4:30.05");
+  });
+
+  it("keeps the male-before-school 1500m average focused", async () => {
+    const result = await ask("男子1500岱明上位3人平均");
+    expect(result.sources).toEqual(["out-analysis/2026_men_1500m_pb_school_ranking.md"]);
+    expect(result.text).toContain("4:28.69");
+  });
+
+  it("handles the school-suffixed male 1500m query", async () => {
+    const result = await ask("岱明中男子1500上位3人平均");
+    expect(result.sources).toEqual(["out-analysis/2026_men_1500m_pb_school_ranking.md"]);
+    expect(result.text).toContain("4:28.69");
+  });
+
+  it("handles the unit-suffixed male 1500m query", async () => {
+    const result = await ask("男子1500m岱明上位3人平均");
+    expect(result.sources).toEqual(["out-analysis/2026_men_1500m_pb_school_ranking.md"]);
+    expect(result.text).toContain("4:28.69");
+  });
+
+  it("handles a gender-before-school male 1500m query", async () => {
+    const result = await ask("男子岱明1500上位3人平均");
+    expect(result.sources).toEqual(["out-analysis/2026_men_1500m_pb_school_ranking.md"]);
+    expect(result.text).toContain("4:28.69");
+  });
+
+  it("defaults a named 1500m average to the male source when gender is omitted", async () => {
+    const result = await ask("1500岱明上位3人平均");
+    expect(result.sources).toEqual(["out-analysis/2026_men_1500m_pb_school_ranking.md"]);
+    expect(result.text).toContain("4:28.69");
+  });
+
+  it("handles a unit-suffixed genderless 1500m average", async () => {
+    const result = await ask("1500m岱明上位3人平均");
+    expect(result.sources).toEqual(["out-analysis/2026_men_1500m_pb_school_ranking.md"]);
+    expect(result.text).toContain("4:28.69");
+  });
+
+  it("explains when the male source lacks a top-three table", async () => {
+    const result = await ask("学校別男子1500上位3人平均");
+    expect(result.sources).toEqual(["out-analysis/2026_men_1500m_pb_school_ranking.md"]);
+    expect(result.text).toContain("上位3人平均は収録されていません");
+    expect(result.text).not.toContain("上位4人平均 |");
+  });
+
+  it("explains the generic male top-three limitation", async () => {
+    const result = await ask("男子1500上位3人平均");
+    expect(result.sources).toEqual(["out-analysis/2026_men_1500m_pb_school_ranking.md"]);
+    expect(result.text).toContain("正本は上位4人平均");
+  });
+
+  it("handles a named 1500m average without an explicit gender", async () => {
+    const result = await ask("岱明1500上位3人平均");
+    expect(result.sources).toEqual(["out-analysis/2026_men_1500m_pb_school_ranking.md"]);
+    expect(result.text).toContain("上位3人平均 4:28.69");
+  });
 });
