@@ -2895,4 +2895,64 @@ describe("QA precision regressions", () => {
     expect(result.text).toContain("17:18.00");
   });
 
+  it("answers a 3km school-context SB query", async () => {
+    const result = await ask("原田はな（Star Light AC）の3km SBは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("10:39.00");
+  });
+
+  it("answers a 3km personal-best query", async () => {
+    const result = await ask("原田はなの3km自己ベストは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("10:39.00");
+  });
+
+  it("answers a compact 3km SB query", async () => {
+    const result = await ask("原田はな 3kmSB");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("10:39.00");
+  });
+
+  it("answers an honorific 3km SB query", async () => {
+    const result = await ask("原田はなさんの3km SB");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("10:39.00");
+  });
+
+  it("answers a trailing-team 3km SB query", async () => {
+    const result = await ask("原田はなの3km SB（Star Light AC）");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("10:39.00");
+  });
+
+  it("answers a second 3km school-context SB query", async () => {
+    const result = await ask("税所由羽（人吉一中）の3km SBは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("10:57.00");
+  });
+
+  it("answers a second 3km personal-best query", async () => {
+    const result = await ask("税所由羽の3km自己ベストは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("10:57.00");
+  });
+
+  it("answers a second compact 3km SB query", async () => {
+    const result = await ask("税所由羽 3kmSB");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("10:57.00");
+  });
+
+  it("answers a second honorific 3km SB query", async () => {
+    const result = await ask("税所由羽さんの3km SB");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("10:57.00");
+  });
+
+  it("answers a second trailing-school 3km SB query", async () => {
+    const result = await ask("税所由羽の3km SB（人吉一中）");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("10:57.00");
+  });
+
 });
