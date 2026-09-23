@@ -471,14 +471,14 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
   if (/自己ベスト|自己記録|\bSB\b|\bPB\b/.test(q) || compactAthleteRecord) {
     const name = extractAthleteNameHints(q)[0] ?? q.match(/[\p{Script=Han}]{2,8}/u)?.[0];
     if (name) {
-      const row = flat.match(new RegExp(`${name},([^,]+),([^,]+),([^,]+),([^,]*),([^,]*),`));
+      const row = flat.match(new RegExp(`${name},([^,]+),([^,]+),([^,]+),([^,]*),([^,]*),([^,]*),`));
       if (row) {
         const distance = q.match(/(800|1500|3000)(?:m|ｍ)?/)?.[1];
         if (distance) {
-          const value = distance === "800" ? row[4] : distance === "1500" ? row[5] : "";
+          const value = distance === "800" ? row[4] : distance === "1500" ? row[5] : row[6];
           if (value) return `${name}（${row[1]}）の${distance}m自己ベストは${value}。`;
         }
-        const records = [`800m ${row[4]}`, `1500m ${row[5]}`].filter((value) => !/\s$/.test(value) && !/:\s*$/.test(value));
+        const records = [`800m ${row[4]}`, `1500m ${row[5]}`, `3000m ${row[6]}`].filter((value) => !/\s$/.test(value) && !/:\s*$/.test(value));
         return `${name}（${row[1]}）の自己ベスト: ${records.join("、")}。`;
       }
     }
@@ -3018,7 +3018,8 @@ function boostDaimingLineSources(query: string, baseSources: string[]): string[]
 
 function isNamedTeamSbListQuery(query: string): boolean {
   const q = query.normalize("NFKC");
-  return /荒尾三中/.test(q) && /(?:\bSB\b|ＳＢ|シーズンベスト|選手|一覧|所属)/.test(q) && /選手|一覧|所属/.test(q);
+  const individualRecord = /800(?:m|ｍ)?|1500(?:m|ｍ)?|3000(?:m|ｍ)?/.test(q) && !/選手一覧|所属選手|全記録|記録一覧/.test(q);
+  return /荒尾三中/.test(q) && /(?:\bSB\b|ＳＢ|シーズンベスト|選手|一覧|所属)/.test(q) && /選手|一覧|所属/.test(q) && !individualRecord;
 }
 
 function isNamedSchoolSbListQuery(query: string): boolean {
@@ -3028,8 +3029,9 @@ function isNamedSchoolSbListQuery(query: string): boolean {
 
 function isNamedSchoolListQuery(query: string): boolean {
   const q = query.normalize("NFKC");
+  const individualRecord = /800(?:m|ｍ)?|1500(?:m|ｍ)?|3000(?:m|ｍ)?/.test(q) && !/選手一覧|所属選手|全記録|記録一覧/.test(q);
   return /荒尾三中|荒尾第四中|荒尾海陽中|南関中|玉名中|天水中|岱明中|長洲中|玉陵中|玉南中|玉名附中|玉名付属中?|玉名附属|玉高附属/.test(q) &&
-    /選手|一覧|所属|SB|シーズンベスト/.test(q);
+    /選手|一覧|所属|SB|シーズンベスト/.test(q) && !individualRecord;
 }
 
 /**
@@ -4313,7 +4315,7 @@ export async function answerQuestion(
     if (team) preferredSources = ["out-analysis/aragyoku-teams/" + team + ".md"];
   }
   const namedSelfBestQ =
-    (/自己ベスト|自己記録|\bSB\b|\bPB\b/.test(expanded) ||
+    (/自己ベスト|自己記録|SB|PB/.test(expanded) ||
       (extractAthleteNameHints(expanded).length > 0 &&
         /800(?:m|ｍ)?|1500(?:m|ｍ)?|3000(?:m|ｍ)?/.test(expanded) &&
         /秒|分|タイム|記録|ベスト/.test(expanded))) &&

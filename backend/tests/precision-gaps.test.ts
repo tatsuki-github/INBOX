@@ -2654,4 +2654,64 @@ describe("QA precision regressions", () => {
     expect(result.sources).toEqual(["calendar/events.daiming.yaml"]);
     expect(result.text).toContain("動きづくり、男子2.5km×2、女子2km×2");
   });
+
+  it("answers an athlete SB query with a school in parentheses", async () => {
+    const result = await ask("江口大尊（荒尾三中）の3000m SBは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("9:04.46");
+  });
+
+  it("answers a compact athlete-school SB query", async () => {
+    const result = await ask("江口大尊 荒尾三中 3000mSB");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("9:04.46");
+  });
+
+  it("answers a school-first athlete personal-best query", async () => {
+    const result = await ask("荒尾三中の江口大尊3000m自己ベストは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("9:04.46");
+  });
+
+  it("answers an athlete-first school-attached SB query", async () => {
+    const result = await ask("江口大尊の荒尾三中3000mSB");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("9:04.46");
+  });
+
+  it("answers a 3000m best query with school context", async () => {
+    const result = await ask("江口大尊（荒尾三中）の3000mベストは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("9:04.46");
+  });
+
+  it("answers a school-context 3000m record query", async () => {
+    const result = await ask("江口大尊 荒尾三中 3000mの記録");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("9:04.46");
+  });
+
+  it("answers a school-first compact SB query", async () => {
+    const result = await ask("荒尾三中 江口大尊 3000m SB");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("9:04.46");
+  });
+
+  it("accepts the honorific in an athlete SB query", async () => {
+    const result = await ask("江口大尊さん（荒尾三中）の3000m SBを教えて");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("9:04.46");
+  });
+
+  it("answers an athlete SB query with trailing school context", async () => {
+    const result = await ask("江口大尊の3000m SB（荒尾三中）");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("9:04.46");
+  });
+
+  it("answers a spaced athlete-school SB query", async () => {
+    const result = await ask("荒尾三中 江口大尊 3000mSBは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("9:04.46");
+  });
 });

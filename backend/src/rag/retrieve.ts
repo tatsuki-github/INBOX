@@ -127,7 +127,7 @@ export function extractAthleteNameHints(query: string): string[] {
   const nameTok = `(?:[A-Za-z]{2,}|[ァ-ヶヴー]{1,8}|${cjk}{1,8})`;
 
   for (const m of q.matchAll(
-    new RegExp(`(${nameTok})(?:[（(][^）)]{1,24}[）)])?の`, "gu"),
+    new RegExp(`(${nameTok})(?:さん|君|くん)?(?:[（(][^）)]{1,24}[）)])?の`, "gu"),
   )) {
     push(m[1]!);
   }
@@ -137,6 +137,13 @@ export function extractAthleteNameHints(query: string): string[] {
       `(${nameTok})(?:[（(][^）)]{1,24}[）)])?(?:\\s+)?(?=(?:800|1500|3000)\\s*(?:m|km)?|自己ベスト|ベストタイム|自己記録|\\bSB\\b|\\bPB\\b)`,
       "giu",
     ),
+  )) {
+    push(m[1]!);
+  }
+  // 「江口大尊 荒尾三中 3000mSB」のように所属を挟む表記も個人記録として扱う。
+  const schoolTok = "(?:荒尾三中|荒尾第四中|荒尾海陽中|南関中|玉名中|天水中|岱明中|長洲中|玉陵中|玉南中|玉名附中|玉名付属中?|玉名附属|玉高附属)";
+  for (const m of q.matchAll(
+    new RegExp(`(${nameTok})(?:さん|君|くん)?\\s+${schoolTok}\\s*(?=(?:800|1500|3000)\\s*(?:m|km)?|自己ベスト|ベストタイム|自己記録|\\bSB\\b|\\bPB\\b)`, "giu"),
   )) {
     push(m[1]!);
   }
