@@ -2955,4 +2955,64 @@ describe("QA precision regressions", () => {
     expect(result.text).toContain("10:57.00");
   });
 
+  it("answers an unqualified named best query from the SB CSV", async () => {
+    const result = await ask("原田はなのベストは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("800m 2:20.81");
+  });
+
+  it("answers a second unqualified named best query from the SB CSV", async () => {
+    const result = await ask("小脇あかりのベストは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("1500m 4:41.70");
+  });
+
+  it("answers a named best query with school context", async () => {
+    const result = await ask("村上葉侑（南関中）のベストは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("3000m 9:44.02");
+  });
+
+  it("answers a named best query with club context", async () => {
+    const result = await ask("原田はな（Star Light AC）のベスト");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("3km 10:39.00");
+  });
+
+  it("answers a named best query without a question mark", async () => {
+    const result = await ask("江口大尊のベスト");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("3000m 9:04.46");
+  });
+
+  it("answers a named best-time query", async () => {
+    const result = await ask("税所由羽のベストタイムは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("800m 2:25.75");
+  });
+
+  it("answers a named best query with honorific", async () => {
+    const result = await ask("原田はなさんのベストは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("1500m 4:40.44");
+  });
+
+  it("answers a named best query with trailing school", async () => {
+    const result = await ask("江口大尊 荒尾三中 ベスト");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("3000m 9:04.46");
+  });
+
+  it("answers a named best-record query", async () => {
+    const result = await ask("村上葉侑のベスト記録は？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("5km 17:18.00");
+  });
+
+  it("answers a second named best-time query", async () => {
+    const result = await ask("小脇あかりのベストタイム");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("1500m 4:41.70");
+  });
+
 });

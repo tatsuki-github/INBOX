@@ -468,7 +468,8 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
     extractAthleteNameHints(q).length > 0 &&
     /800(?:m|ｍ)?|1500(?:m|ｍ)?|3000(?:m|ｍ)?|5000(?:m|ｍ)?|3\s*km|5\s*km/.test(q) &&
     /秒|分|タイム|記録|ベスト|SB|PB/.test(q);
-  if (/自己ベスト|自己記録|\bSB\b|\bPB\b/.test(q) || compactAthleteRecord) {
+  if (/自己ベスト|自己記録|\bSB\b|\bPB\b/.test(q) || compactAthleteRecord ||
+      (extractAthleteNameHints(q).length > 0 && /ベスト/.test(q))) {
     const name = extractAthleteNameHints(q).find((hint) => new RegExp(`${hint.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")},[^,]+,[^,]+,[^,]+,`).test(flat)) ??
       extractAthleteNameHints(q)[0] ?? q.match(/[\p{Script=Han}]{2,8}/u)?.[0];
     if (name) {
@@ -2323,12 +2324,13 @@ function offlineAnswer(
       /会場/.test(question) &&
       !/集合/.test(question);
     const namedSelfBestLookup =
-      (/自己ベスト|自己記録|SB|PB/.test(question) ||
+      (/自己ベスト|自己記録|SB|PB|ベスト/.test(question) ||
         (extractAthleteNameHints(question).length > 0 &&
           /800(?:m|ｍ)?|1500(?:m|ｍ)?|3000(?:m|ｍ)?|5000(?:m|ｍ)?|3\s*km|5\s*km/.test(question) &&
           /秒|分|タイム|記録|ベスト/.test(question))) &&
       extractAthleteNameHints(question).length > 0 &&
-      !(/荒尾三中/.test(question) && /選手|一覧/.test(question));
+      !(/荒尾三中/.test(question) && /選手|一覧/.test(question)) &&
+      !/荒玉|駅伝|平均|ペース/.test(question);
     const staffOpsLookup = /朝練|地点分担/.test(question);
     const coachingLookup =
       /女子荒玉|総合タイム目安|メンバー目安|トラック距離|換算|43分切り|区間配分|鬼ごっこ|手押し車|犬歩き|補強|駅伝前|何チーム.*なごみ|なごみ.*何チーム|参加予定.*何人|何人.*参加予定/.test(
@@ -2498,7 +2500,7 @@ function offlineAnswer(
             )
           : namedSelfBestLookup
             ? retrieved.filter((r) => {
-                const name = question.match(/[\p{Script=Han}]{2,8}(?=の(?:自己|記録|SB|PB))/u)?.[0] ?? question.match(/[\p{Script=Han}]{2,8}/u)?.[0] ?? "";
+                const name = extractAthleteNameHints(question)[0] ?? question.match(/[\p{Script=Han}]{2,8}(?=(?:さん|君|くん)?の(?:自己|記録|SB|PB|ベスト))/u)?.[0] ?? question.match(/[\p{Script=Han}]{2,8}/u)?.[0] ?? "";
                 return name.length > 0 && r.chunk.text.includes(name);
               })
           : retrieved;
@@ -2532,7 +2534,7 @@ function offlineAnswer(
         : undefined;
       const namedSelfBestPreview = namedSelfBestLookup
         ? (() => {
-            const name = question.match(/[\p{Script=Han}]{2,8}(?=の(?:自己|記録|SB|PB))/u)?.[0] ?? question.match(/[\p{Script=Han}]{2,8}/u)?.[0] ?? "";
+            const name = extractAthleteNameHints(question)[0] ?? question.match(/[\p{Script=Han}]{2,8}(?=(?:さん|君|くん)?の(?:自己|記録|SB|PB|ベスト))/u)?.[0] ?? question.match(/[\p{Script=Han}]{2,8}/u)?.[0] ?? "";
             const csvPreview = retrieved
               .filter((r) => r.chunk.source.startsWith("sb/"))
               .map((r) => r.chunk.text)
@@ -2853,10 +2855,11 @@ function boostAthleteRecordSources(query: string, baseSources: string[]): string
   // 氏名付きの自己ベストはランキング表ではなく SB 正本から引く。
   // ランキング資料は短い名前の一致で別選手を拾うため、個人照会では後段に回す。
   const namedAthleteSelfBestQ =
-    /自己ベスト|自己記録|\bSB\b|\bPB\b/.test(q) &&
-    extractAthleteNameHints(q).length > 0;
+    /自己ベスト|自己記録|\bSB\b|\bPB\b|ベスト/.test(q) &&
+    extractAthleteNameHints(q).length > 0 &&
+    !/荒玉|駅伝|平均|ペース/.test(q);
   if (namedAthleteSelfBestQ) {
-    return ["sb/中学生SB.csv", "sb/SBデータベース.csv", ...baseSources];
+    return ["sb/中学生SB.csv"];
   }
   // 「女子800mで岱明の上位3人平均」は学校別ランキング正本（SB CSV より先）
   const schoolPbRankQ =
@@ -4321,11 +4324,12 @@ export async function answerQuestion(
     if (team) preferredSources = ["out-analysis/aragyoku-teams/" + team + ".md"];
   }
   const namedSelfBestQ =
-    (/自己ベスト|自己記録|SB|PB/.test(expanded) ||
+    (/自己ベスト|自己記録|SB|PB|ベスト/.test(expanded) ||
       (extractAthleteNameHints(expanded).length > 0 &&
         /800(?:m|ｍ)?|1500(?:m|ｍ)?|3000(?:m|ｍ)?|5000(?:m|ｍ)?|3\s*km|5\s*km/.test(expanded) &&
         /秒|分|タイム|記録|ベスト/.test(expanded))) &&
-    extractAthleteNameHints(expanded).length > 0;
+    extractAthleteNameHints(expanded).length > 0 &&
+    !/荒玉|駅伝|平均|ペース/.test(expanded);
   if (namedSelfBestQ && !namedSchoolList && !namedSchoolSbList) {
     preferredSources = ["sb/中学生SB.csv"];
   }
