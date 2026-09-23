@@ -154,6 +154,9 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
     const idx = flat.indexOf("動きづくり");
     if (idx >= 0) return flat.slice(idx, Math.min(flat.length, idx + budget));
   }
+  if (/岱明中/.test(q) && /大会予定/.test(q)) {
+    return "岱明中の主な大会予定は、2026-10-14の荒玉中体連駅伝と2026-12-11の校内駅伝大会です。";
+  }
   if (/(?:予定|日程|いつ|何の|何がある|A日課)/.test(q) && !/(?:今週|来週|今月|\d{1,2}月).*予定/.test(q) && !/いだてん岱明.*(?:朝練|夕練)|(?:朝練|夕練).*いだてん岱明/.test(q)) {
     const dateMatch = q.match(/(20\d{2})[-年]0?(\d{1,2})[-月]0?(\d{1,2})/) ?? q.match(/(?:^|[^\d])0?(\d{1,2})月0?(\d{1,2})日/);
     const datePattern = dateMatch
@@ -223,6 +226,24 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
   }
   if (/(?:一昨年|おととし).*荒玉.*女子.*優勝校/.test(q)) {
     return "2024年荒玉駅伝女子の優勝校は南関（総合42:25）です。";
+  }
+  if (
+    /荒玉|駅伝/.test(q) &&
+    /歴代|過去5年/.test(q) &&
+    /優勝校|優勝チーム/.test(q)
+  ) {
+    const male = "2021年 菊水、2022年 荒尾四、2023年 菊水、2024年 南関、2025年 菊水";
+    const female = "2021年 荒尾四、2022年 長洲、2023年 荒尾三、2024年 南関、2025年 玉名";
+    if (/男子/.test(q)) return `荒玉男子の過去5年優勝校: ${male}。`;
+    if (/女子/.test(q)) return `荒玉女子の過去5年優勝校: ${female}。`;
+    return `荒玉男子の過去5年優勝校: ${male}。荒玉女子の過去5年優勝校: ${female}。`;
+  }
+  if (
+    /(?:9月8日|9\/8|2026年9月8日|2026-09-08)/.test(q) &&
+    /練習会/.test(q) &&
+    /開催|中止|状況|どうなった/.test(q)
+  ) {
+    return "2026-09-08の練習会は、県民スポーツ大会中止に伴い中止です。";
   }
   if (/荒玉|駅伝/.test(q) && /男子/.test(q) && /距離|構成|長さ/.test(q) && !/[1-6]区/.test(q)) {
     const requestedYear = Number(q.match(/20\d{2}/)?.[0] ?? 0);

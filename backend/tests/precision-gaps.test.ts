@@ -447,6 +447,7 @@ describe("QA precision regressions", () => {
     const result = await ask("岱明中の大会予定は？");
     expect(result.sources).toEqual(["calendar/events.daiming.yaml"]);
     expect(result.text).toContain("大会");
+    expect(result.text).toContain("2026-10-14");
   });
 
   it("keeps the 2025 Aragyoku result link query on both gender transcripts", async () => {
@@ -728,6 +729,73 @@ describe("QA precision regressions", () => {
     const result = await ask("2026-09-08の練習会はどうなった？");
     expect(result.sources).toEqual(["calendar/events.daiming.yaml"]);
     expect(result.text).toContain("2026-09-08");
+  });
+
+  it("summarizes all recent male winners for a historical query", async () => {
+    const result = await ask("荒玉男子の歴代優勝校は？");
+    expect(result.sources).toEqual(["aragyoku/winners-by-year.md"]);
+    expect(result.text).toContain("2021年");
+    expect(result.text).toContain("2025年");
+  });
+
+  it("summarizes all recent female winners for a historical query", async () => {
+    const result = await ask("荒玉女子の歴代優勝校は？");
+    expect(result.sources).toEqual(["aragyoku/winners-by-year.md"]);
+    expect(result.text).toContain("2021年");
+    expect(result.text).toContain("2025年");
+  });
+
+  it("summarizes both genders for an unqualified historical winner query", async () => {
+    const result = await ask("荒玉の歴代優勝校は？");
+    expect(result.sources).toEqual(["aragyoku/winners-by-year.md"]);
+    expect(result.text).toContain("男子");
+    expect(result.text).toContain("女子");
+    expect(result.text).toContain("2021年");
+    expect(result.text).toContain("2025年");
+  });
+
+  it("summarizes the recent five-year male winner table", async () => {
+    const result = await ask("荒玉男子の過去5年の優勝校は？");
+    expect(result.sources).toEqual(["aragyoku/winners-by-year.md"]);
+    expect(result.text).toContain("2021年");
+    expect(result.text).toContain("2025年");
+  });
+
+  it("summarizes the recent five-year female winner table", async () => {
+    const result = await ask("荒玉女子の過去5年の優勝校は？");
+    expect(result.sources).toEqual(["aragyoku/winners-by-year.md"]);
+    expect(result.text).toContain("2021年");
+    expect(result.text).toContain("2025年");
+  });
+
+  it("answers an unqualified September 8 practice cancellation", async () => {
+    const result = await ask("9月8日の練習会は開催？");
+    expect(result.sources).toEqual(["calendar/events.daiming.yaml"]);
+    expect(result.text).toContain("中止");
+  });
+
+  it("answers the September 8 practice cancellation with a date", async () => {
+    const result = await ask("2026年9月8日練習会は開催？");
+    expect(result.sources).toEqual(["calendar/events.daiming.yaml"]);
+    expect(result.text).toContain("中止");
+  });
+
+  it("answers a slash-formatted September practice cancellation", async () => {
+    const result = await ask("9/8の練習会は中止？");
+    expect(result.sources).toEqual(["calendar/events.daiming.yaml"]);
+    expect(result.text).toContain("中止");
+  });
+
+  it("keeps the September 8 practice status on the calendar", async () => {
+    const result = await ask("2026-09-08練習会の開催状況は？");
+    expect(result.sources).toEqual(["calendar/events.daiming.yaml"]);
+    expect(result.text).toContain("中止");
+  });
+
+  it("keeps a dated cancellation lookup on the calendar", async () => {
+    const result = await ask("2026-09-08の練習会は中止になった？");
+    expect(result.sources).toEqual(["calendar/events.daiming.yaml"]);
+    expect(result.text).toContain("中止");
   });
 
   it("answers Norwegian 45/15 template questions from the method ADR", async () => {
