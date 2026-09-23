@@ -1178,4 +1178,66 @@ describe("QA precision regressions", () => {
     expect(result.sources).toEqual(["out-analysis/2026_men_1500m_pb_school_ranking.md"]);
     expect(result.text).toContain("## 上位6人平均");
   });
+
+  it("accepts kanji top-five wording for female 800m", async () => {
+    const result = await ask("女子800上位五人平均");
+    expect(result.sources).toEqual(["out-analysis/2026_women_800m_1500m_pb_school_ranking.md"]);
+    expect(result.text).toContain("## 800m・上位5人平均");
+    expect(result.text).toContain("2:32.96");
+  });
+
+  it("accepts kanji top-five wording for female 1500m", async () => {
+    const result = await ask("女子1500上位五人平均");
+    expect(result.sources).toEqual(["out-analysis/2026_women_800m_1500m_pb_school_ranking.md"]);
+    expect(result.text).toContain("## 1500m・上位5人平均");
+    expect(result.text).toContain("5:19.61");
+  });
+
+  it("accepts fullwidth top-five wording for female 800m", async () => {
+    const result = await ask("女子800上位５人平均");
+    expect(result.sources).toEqual(["out-analysis/2026_women_800m_1500m_pb_school_ranking.md"]);
+    expect(result.text).toContain("## 800m・上位5人平均");
+  });
+
+  it("accepts fullwidth top-five wording for female 1500m", async () => {
+    const result = await ask("女子1500上位５人平均");
+    expect(result.sources).toEqual(["out-analysis/2026_women_800m_1500m_pb_school_ranking.md"]);
+    expect(result.text).toContain("## 1500m・上位5人平均");
+  });
+
+  it("accepts の平均 wording for female 800m", async () => {
+    const result = await ask("女子800上位5人の平均");
+    expect(result.sources).toEqual(["out-analysis/2026_women_800m_1500m_pb_school_ranking.md"]);
+    expect(result.text).toContain("## 800m・上位5人平均");
+  });
+
+  it("accepts の平均 wording for female 1500m", async () => {
+    const result = await ask("女子1500上位5人の平均");
+    expect(result.sources).toEqual(["out-analysis/2026_women_800m_1500m_pb_school_ranking.md"]);
+    expect(result.text).toContain("## 1500m・上位5人平均");
+  });
+
+  it("keeps a school-qualified female 1500 top-five query focused", async () => {
+    const result = await ask("学校別女子1500上位5人の平均");
+    expect(result.sources).toEqual(["out-analysis/2026_women_800m_1500m_pb_school_ranking.md"]);
+    expect(result.text).toContain("## 1500m・上位5人平均");
+  });
+
+  it("answers a named female 800 top-five average in kanji wording", async () => {
+    const result = await ask("女子800岱明上位五人平均");
+    expect(result.sources).toEqual(["out-analysis/2026_women_800m_1500m_pb_school_ranking.md"]);
+    expect(result.text).toContain("上位5人平均 2:32.96");
+  });
+
+  it("answers a named female 1500 top-five average in fullwidth wording", async () => {
+    const result = await ask("女子1500岱明上位５人平均");
+    expect(result.sources).toEqual(["out-analysis/2026_women_800m_1500m_pb_school_ranking.md"]);
+    expect(result.text).toContain("上位5人平均 5:19.61");
+  });
+
+  it("accepts kanji and の平均 together for female 800m", async () => {
+    const result = await ask("女子800上位五人の平均");
+    expect(result.sources).toEqual(["out-analysis/2026_women_800m_1500m_pb_school_ranking.md"]);
+    expect(result.text).toContain("## 800m・上位5人平均");
+  });
 });
