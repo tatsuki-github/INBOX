@@ -1082,7 +1082,7 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
     }
   }
   // 「○年の区間賞」→ 該当年セクションを優先
-  const legRankRequest = q.match(/(?:(20\d{2}).*?)?([1-6])区.*(?:区間順位|区間順)/);
+  const legRankRequest = q.match(/(?:(20\d{2}).*?)?(?<!\d)([1-6])区.*(?:区間順位|区間順)/);
   if (legRankRequest && /男子|女子/.test(q)) {
     const gender = /女子/.test(q) ? "女子" : "男子";
     const year =
@@ -1148,7 +1148,7 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
   if (/区間賞|区間順|区間[1-3]位|区間一位/.test(q)) {
     const years = q.match(/20\d{2}/g) ?? [];
     const gender = /女子/.test(q) ? "女子" : /男子/.test(q) ? "男子" : "";
-    const leg = q.match(/([1-6])区/)?.[1];
+    const leg = q.match(/(?<!\d)([1-6])区/)?.[1];
     if (gender && leg) {
       const awardRows = [...flat.matchAll(new RegExp(`(20\\d{2})年荒玉駅伝${gender}${leg}区の区間1位は[^。]+。`, "g"))];
       const selected = years.length > 0
@@ -2222,7 +2222,7 @@ function offlineAnswer(
       const explicitLegSection = explicitLegAwardLookup
         ? (() => {
             const year = question.match(/20\d{2}/)?.[0];
-            const leg = question.match(/([1-6])区/)?.[1];
+            const leg = question.match(/(?<!\d)([1-6])区/)?.[1];
             const gender = /女子/.test(question) ? "女子" : "男子";
             if (year && leg) {
               return joined.match(new RegExp(`${year}年荒玉駅伝${gender}${leg}区の区間1位は[^。]+。`))?.[0];

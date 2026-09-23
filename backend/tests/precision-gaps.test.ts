@@ -627,4 +627,66 @@ describe("QA precision regressions", () => {
     expect(result.text).toContain("2024年荒玉駅伝女子1区の区間1位");
     expect(result.text).not.toContain("2024年荒玉駅伝女子2区");
   });
+
+  it("routes 長洲中 player lists to the school digest", async () => {
+    const result = await ask("長洲中の選手一覧");
+    expect(result.sources).toEqual(["out-analysis/arato-tamana-teams/長洲中.md"]);
+    expect(result.text).toContain("# 長洲中 記録一覧");
+  });
+
+  it("routes 玉南中 player lists to the school digest", async () => {
+    const result = await ask("玉南中の選手一覧");
+    expect(result.sources).toEqual(["out-analysis/arato-tamana-teams/玉南中.md"]);
+    expect(result.text).toContain("# 玉南中 記録一覧");
+  });
+
+  it("routes 荒尾海陽中 player lists to the school digest", async () => {
+    const result = await ask("荒尾海陽中の選手一覧");
+    expect(result.sources).toEqual(["out-analysis/arato-tamana-teams/荒尾海陽中.md"]);
+    expect(result.text).toContain("# 荒尾海陽中 記録一覧");
+  });
+
+  it("routes 玉名附属中 aliases to the canonical school digest", async () => {
+    const result = await ask("玉名附属中の選手一覧");
+    expect(result.sources).toEqual(["out-analysis/arato-tamana-teams/玉名附中.md"]);
+    expect(result.text).toContain("# 玉名附中 記録一覧");
+  });
+
+  it("routes 玉高附属 aliases to the canonical school digest", async () => {
+    const result = await ask("玉高附属の選手一覧");
+    expect(result.sources).toEqual(["out-analysis/arato-tamana-teams/玉名附中.md"]);
+    expect(result.text).toContain("# 玉名附中 記録一覧");
+  });
+
+  it("does not mistake the year suffix for a race leg in female awards", async () => {
+    const result = await ask("荒玉女子2025区間賞");
+    expect(result.sources).toEqual(["out-analysis/aragyoku_leg_awards.md"]);
+    expect(result.text).toContain("### 2025年女子");
+    expect(result.text).not.toContain("2025年荒玉駅伝女子5区");
+  });
+
+  it("does not mistake the year suffix for a race leg in male awards", async () => {
+    const result = await ask("荒玉男子2025区間賞");
+    expect(result.sources).toEqual(["out-analysis/aragyoku_leg_awards.md"]);
+    expect(result.text).toContain("### 2025年男子");
+    expect(result.text).not.toContain("2025年荒玉駅伝男子5区");
+  });
+
+  it("keeps the explicit year-first female award section focused", async () => {
+    const result = await ask("2025年女子荒玉駅伝区間賞");
+    expect(result.sources).toEqual(["out-analysis/aragyoku_leg_awards.md"]);
+    expect(result.text).toContain("### 2025年女子");
+  });
+
+  it("keeps the station-prefixed male award section focused", async () => {
+    const result = await ask("荒玉駅伝2025男子区間賞");
+    expect(result.sources).toEqual(["out-analysis/aragyoku_leg_awards.md"]);
+    expect(result.text).toContain("### 2025年男子");
+  });
+
+  it("keeps an explicit 2025 female first-leg award exact", async () => {
+    const result = await ask("荒玉駅伝2025女子1区区間賞");
+    expect(result.sources).toEqual(["out-analysis/aragyoku_leg_awards.md"]);
+    expect(result.text).toContain("2025年荒玉駅伝女子1区の区間1位は坂井優花");
+  });
 });
