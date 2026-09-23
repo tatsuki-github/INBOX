@@ -413,6 +413,72 @@ describe("QA precision regressions", () => {
     expect(result.text).toContain("練習会");
   });
 
+  it("answers the dated Tamana practice status from the practice note", async () => {
+    const result = await ask("2026年9月22日の玉名市練習会は中止？");
+    expect(result.sources).toEqual(["drive-text/練習/玉名市練習会/2026-09-22.md"]);
+    expect(result.text).toContain("2026-09-22");
+  });
+
+  it("keeps the September school schedule on the calendar", async () => {
+    const result = await ask("岱明中の9月行事予定は？");
+    expect(result.sources).toEqual(["calendar/events.daiming.yaml"]);
+    expect(result.text).toContain("2026-09-01");
+  });
+
+  it("does not claim October school details from the September calendar head", async () => {
+    const result = await ask("10月の学校行事予定は？");
+    expect(result.sources).toEqual(["calendar/events.daiming.yaml"]);
+    expect(result.text).toContain("2026-10");
+  });
+
+  it("keeps the Kumamoto Nichi Ekiden date on its overview", async () => {
+    const result = await ask("熊日駅伝の日程は？");
+    expect(result.sources).toEqual(["drive-text/大会/2026年度/0208_熊日駅伝/概要.md"]);
+    expect(result.text).toContain("2026-02-08");
+  });
+
+  it("answers generic practice-meet status from the dated practice note", async () => {
+    const result = await ask("練習会は開催された？");
+    expect(result.sources).toEqual(["drive-text/練習/玉名市練習会/2026-09-22.md"]);
+    expect(result.text).toContain("おおはまふれあいセンター");
+  });
+
+  it("keeps Daiming competition schedules on the calendar", async () => {
+    const result = await ask("岱明中の大会予定は？");
+    expect(result.sources).toEqual(["calendar/events.daiming.yaml"]);
+    expect(result.text).toContain("大会");
+  });
+
+  it("keeps the 2025 Aragyoku result link query on both gender transcripts", async () => {
+    const result = await ask("荒玉駅伝2025の結果リンクは？");
+    expect(result.sources).toEqual([
+      "aragyoku/transcripts/2025-男子.json",
+      "aragyoku/transcripts/2025-女子.json",
+    ]);
+    expect(result.text).toContain("2025年荒玉駅伝の結果");
+  });
+
+  it("keeps Nagomi result links on the two gender result sheets", async () => {
+    const result = await ask("なごみ駅伝の結果リンクは？");
+    expect(result.sources).toEqual([
+      "drive-text/大会/2026年度/0920_中学駅伝金栗四三生誕の地なごみ大会/男子成績表.md",
+      "drive-text/大会/2026年度/0920_中学駅伝金栗四三生誕の地なごみ大会/女子成績表.md",
+    ]);
+    expect(result.text).toContain("2026年なごみ駅伝の結果");
+  });
+
+  it("keeps the Kanakuri Ekiden date on its overview", async () => {
+    const result = await ask("金栗駅伝の開催日は？");
+    expect(result.sources).toEqual(["drive-text/大会/2026年度/0315_金栗駅伝/概要.md"]);
+    expect(result.text).toContain("2026-03-15");
+  });
+
+  it("keeps the practice-record query on the 2026 practice note", async () => {
+    const result = await ask("玉名市練習会の記録は？");
+    expect(result.sources).toEqual(["drive-text/練習/玉名市練習会/2026-09-22.md"]);
+    expect(result.text).toContain("玉名市練習会＆BBQ");
+  });
+
   it("answers Norwegian 45/15 template questions from the method ADR", async () => {
     const result = await ask("norwegian-45-15テンプレは何のセッション？");
     expect(result.sources).toEqual(["repo-docs/adr/002-norwegian-method-integration.md"]);
