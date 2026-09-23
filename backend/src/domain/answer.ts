@@ -145,6 +145,16 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
     const idx = flat.indexOf("動きづくり");
     if (idx >= 0) return flat.slice(idx, Math.min(flat.length, idx + budget));
   }
+  if (/(?:予定|日程|いつ|何の|何がある|A日課)/.test(q)) {
+    const dateMatch = q.match(/(20\d{2})[-年]0?(\d{1,2})[-月]0?(\d{1,2})/) ?? q.match(/(?:^|[^\d])0?(\d{1,2})月0?(\d{1,2})日/);
+    const datePattern = dateMatch
+      ? dateMatch.length === 4
+        ? `${dateMatch[1]}-${String(dateMatch[2]).padStart(2, "0")}-${String(dateMatch[3]).padStart(2, "0")}`
+        : `- ${String(dateMatch[1]).padStart(2, "0")}-${String(dateMatch[2]).padStart(2, "0")}`
+      : "";
+    const idx = datePattern ? flat.indexOf(datePattern) : flat.indexOf("岱明中 A日課");
+    if (idx >= 0) return flat.slice(Math.max(0, idx - 100), Math.min(flat.length, idx + budget));
+  }
   if (/いだてん岱明|岱明駅伝試走|県民スポーツ大会中止/.test(q)) {
     const date = q.match(/20\d{2}[-年]\d{1,2}[-月]\d{1,2}/)?.[0]?.replace(/[年月]/g, "-").replace(/日$/, "");
     const marker = date ? date : /県民スポーツ大会中止/.test(q) ? "県民スポーツ大会" : /岱明駅伝試走/.test(q) ? "岱明駅伝試走" : "";
@@ -3662,6 +3672,13 @@ export async function answerQuestion(
     (/いだてん岱明|岱明駅伝試走|県民スポーツ大会中止/.test(expanded) &&
       /いつ|日程|内容|タグ|中止|どうなった/.test(expanded)) ||
     (/20\d{2}[-年]\d{1,2}[-月]\d{1,2}.*練習会/.test(expanded) && !tamanaPracticeResultQ);
+  const meetResultUrlQ =
+    /(?:結果.*(?:URL|リンク|ページ)|(?:URL|リンク|ページ).*結果|公式.*(?:URL|リンク))/.test(expanded) &&
+    /(?:第\s*71回.*通信陸上|第\s*39回.*熊本県中学校陸上|熊本市陸上競技選手権|熊本県長距離記録会|全九州都市対抗|県中体連)/.test(expanded);
+  const calendarDateScheduleQ =
+    (/(?:20\d{2}[-年]\d{1,2}[-月]\d{1,2}|\d{1,2}月\d{1,2}日)/.test(expanded) || /A日課|県中体連/.test(expanded)) &&
+    /(?:予定|日程|いつ|何の|何がある|A日課)/.test(expanded) &&
+    !meetResultUrlQ;
   const exactDatedPractice =
     (isDateScheduleQuestion(expanded) || tamanaPracticeResultQ) &&
     preferredSources.some((s) => s.startsWith("drive-text/練習/")) &&
@@ -3719,7 +3736,7 @@ export async function answerQuestion(
     /過去|歴代/.test(expanded) &&
     /順位|成績|結果/.test(expanded);
   const directDocQ =
-    practiceTemplateQ || weatherOpsQ || paceCliQ || practiceMeetLoadQ || historicalTopSixPaceQ || historicalTeamRankQ || tamanaPracticeResultQ || strideCountQ || postEkidenPracticeQ || movementPracticeQ || practiceDaysQ || practiceCalendarQ;
+    practiceTemplateQ || weatherOpsQ || paceCliQ || practiceMeetLoadQ || historicalTopSixPaceQ || historicalTeamRankQ || tamanaPracticeResultQ || strideCountQ || postEkidenPracticeQ || movementPracticeQ || practiceDaysQ || practiceCalendarQ || meetResultUrlQ || calendarDateScheduleQ;
   if (practiceTemplateQ) {
     preferredSources = /norwegian-45-15|[Nn]orwegian(?:の|\s*)[- ]?45\s*[\/／\-‐‑–—−]\s*15|ノルウェー(?:式)?(?:の|\s*)45\s*[\/／\-‐‑–—−]\s*15|45\s*[\/／\-‐‑–—−]\s*15/.test(expanded)
       ? ["repo-docs/adr/002-norwegian-method-integration.md"]
@@ -3732,6 +3749,24 @@ export async function answerQuestion(
   if (practiceMeetLoadQ) preferredSources = ["repo-docs/adr/006-practice-meets-not-load.md"];
   if (historicalTopSixPaceQ) {
     preferredSources = ["out-analysis/aragyoku_top6_historical_average_pace.md"];
+  }
+  if (meetResultUrlQ) {
+    if (/第\s*71回.*通信陸上/.test(expanded)) {
+      preferredSources = ["drive-text/大会/2025年度/0628-0629_全日本中学校通信陸上競技大会熊本県大会/岱明の結果.md"];
+    } else if (/第\s*39回.*熊本県中学校陸上/.test(expanded)) {
+      preferredSources = ["drive-text/大会/2025年度/0607-0608_熊本県中学生陸上競技選手権/岱明の結果.md"];
+    } else if (/熊本市陸上競技選手権/.test(expanded)) {
+      preferredSources = ["drive-text/大会/2026年度/0418_第４５回熊本市陸上競技選手権大会/岱明の結果.md"];
+    } else if (/第\s*２回熊本県長距離記録会/.test(expanded)) {
+      preferredSources = ["drive-text/大会/2026年度/0704_第２回熊本県長距離記録会/岱明の結果.md"];
+    } else if (/全九州都市対抗/.test(expanded)) {
+      preferredSources = ["drive-text/記録データベース/2026年度/中学生記録.csv"];
+    } else if (/県中体連/.test(expanded)) {
+      preferredSources = ["drive-text/記録データベース/2025年度/県中体連.csv"];
+    }
+  }
+  if (calendarDateScheduleQ) {
+    preferredSources = ["calendar/events.daiming.yaml"];
   }
 
   const tamanaChampionshipStatusQ =

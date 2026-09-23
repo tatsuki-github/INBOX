@@ -138,6 +138,75 @@ describe("QA precision regressions", () => {
     expect(result.text).toContain("2026-08-20");
   });
 
+  it("keeps the 2025 communication meet URL on the matching result note", async () => {
+    const result = await ask("第71回全日本中学校通信陸上競技大会の結果リンク教えて（2025）");
+    expect(result.sources).toEqual([
+      "drive-text/大会/2025年度/0628-0629_全日本中学校通信陸上競技大会熊本県大会/岱明の結果.md",
+    ]);
+    expect(result.text).toContain("rel101.html");
+  });
+
+  it("routes the 2025 prefectural meet URL to its database", async () => {
+    const result = await ask("県中体連の結果URLほしい");
+    expect(result.sources).toEqual(["drive-text/記録データベース/2025年度/県中体連.csv"]);
+    expect(result.text).toContain("chugaku/rel");
+  });
+
+  it("keeps the 2026 Kumamoto City championship URL on its result note", async () => {
+    const result = await ask("第４５回 熊本市陸上競技選手権大会の結果リンク教えて（2026）");
+    expect(result.sources).toEqual([
+      "drive-text/大会/2026年度/0418_第４５回熊本市陸上競技選手権大会/岱明の結果.md",
+    ]);
+    expect(result.text).toContain("sisen_i/450418");
+  });
+
+  it("keeps the second long-distance meet URL on its result note", async () => {
+    const result = await ask("2026年度第２回熊本県長距離記録会の結果リンク教えて（2026）");
+    expect(result.sources).toEqual([
+      "drive-text/大会/2026年度/0704_第２回熊本県長距離記録会/岱明の結果.md",
+    ]);
+    expect(result.text).toContain("26,7,4long/kyougi.html");
+  });
+
+  it("routes the urban championship URL to the matching record database", async () => {
+    const result = await ask("第79回 全九州都市対抗陸上競技大会の結果リンク教えて（2026）");
+    expect(result.sources).toEqual(["drive-text/記録データベース/2026年度/中学生記録.csv"]);
+    expect(result.text).toContain("omuta.meet7.org");
+  });
+
+  it("answers the A-day schedule from the Daiming calendar", async () => {
+    const result = await ask("岱明中 A日課（6時間）はいつ？");
+    expect(result.sources).toEqual(["calendar/events.daiming.yaml"]);
+    expect(result.text).toContain("岱明中 A日課（6時間）");
+  });
+
+  it("answers an unqualified May 8 schedule question from the calendar", async () => {
+    const result = await ask("5月8日の予定は？");
+    expect(result.sources).toEqual(["calendar/events.daiming.yaml"]);
+    expect(result.text).toContain("2025-05-08");
+  });
+
+  it("keeps a dated July 20 schedule question on the calendar only", async () => {
+    const result = await ask("2026-07-20は何の予定？");
+    expect(result.sources).toEqual(["calendar/events.daiming.yaml"]);
+    expect(result.text).toContain("2026-07-20");
+  });
+
+  it("narrows a dated A-day lookup to the requested calendar date", async () => {
+    const result = await ask("2026-09-08のA日課は？");
+    expect(result.sources).toEqual(["calendar/events.daiming.yaml"]);
+    expect(result.text).toContain("2026-09-08");
+    expect(result.text).toContain("岱明中 A日課（6時間）");
+  });
+
+  it("keeps the 2025 39th prefectural championship URL on its result note", async () => {
+    const result = await ask("第39回熊本県中学校陸上競技選手権大会の結果URLは？");
+    expect(result.sources).toEqual([
+      "drive-text/大会/2025年度/0607-0608_熊本県中学生陸上競技選手権/岱明の結果.md",
+    ]);
+    expect(result.text).toContain("kumariku.org/25");
+  });
+
   it("answers Norwegian 45/15 template questions from the method ADR", async () => {
     const result = await ask("norwegian-45-15テンプレは何のセッション？");
     expect(result.sources).toEqual(["repo-docs/adr/002-norwegian-method-integration.md"]);
