@@ -105,6 +105,12 @@ const NON_NAME_HINTS = new Set([
   "ベスト",
   "記録",
   "タイム",
+  "m",
+  "km",
+  "メートル",
+  "キロ",
+  "SB",
+  "PB",
   "教えて",
   "知りたい",
 ]);
@@ -114,10 +120,12 @@ const NON_NAME_HINTS = new Set([
  * Supports 「Xの…」「X 3000m」「X自己ベスト」 forms.
  */
 export function extractAthleteNameHints(query: string): string[] {
-  const q = query.trim();
+  const q = query
+    .trim()
+    .normalize("NFKC");
   const hints: string[] = [];
   const push = (s: string) => {
-    const t = s.trim().replace(/(?:さん|君|くん)$/u, "");
+    const t = s.trim().replace(/(?:さん|君|くん|選手)(?:の)?$/u, "");
     if (!t || t.length > 12) return;
     if (NON_NAME_HINTS.has(t)) return;
     if (hints.includes(t)) return;
@@ -125,16 +133,32 @@ export function extractAthleteNameHints(query: string): string[] {
   };
   const jp = "[\\p{Script=Han}\\p{Script=Hiragana}\\p{Script=Katakana}ー]";
   const nameTok = `(?:[A-Za-z]{2,}|${jp}{1,8})`;
+  const compactNameQ = q.replace(
+    /(?<=[\p{Script=Han}\p{Script=Hiragana}\p{Script=Katakana}])\s+(?=[\p{Script=Han}\p{Script=Hiragana}\p{Script=Katakana}])/gu,
+    "",
+  );
+  const nameQ = /荒尾三中|荒尾第四中|荒尾海陽中|南関中|玉名中|天水中|岱明中|長洲中|玉陵中|玉南中|玉名附中|玉名付属中?|玉名附属|玉高附属/.test(q)
+    ? q
+    : compactNameQ;
 
-  for (const m of q.matchAll(
-    new RegExp(`(${nameTok})(?:さん|君|くん)?(?:[（(][^）)]{1,24}[）)])?の`, "gu"),
+  for (const m of nameQ.matchAll(
+    new RegExp(`(${nameTok})(?:さん|君|くん|選手)?(?:[（(][^）)]{1,24}[）)])?の`, "gu"),
   )) {
     push(m[1]!);
   }
   // 「森 3000m」「今村昇磨 1500m自己ベスト」「FESTUS 5000m SB」
-  for (const m of q.matchAll(
+  for (const m of nameQ.matchAll(
     new RegExp(
-      `(${nameTok})(?:[（(][^）)]{1,24}[）)])?(?:\\s+)?(?=(?:800|1500|3000|5000)\\s*(?:m|km)?|3\\s*km|5\\s*km|自己ベスト|ベストタイム|自己記録|ベスト|記録|タイム|SB|PB)`,
+      `(${nameTok})(?:[（(][^）)]{1,24}[）)])?(?:\\s+|\\s*[:：,、/／\\-‐‑–—−]\\s*)?(?=(?:800|1[，,]?\\s*500|3[，,]?\\s*000|5[，,]?\\s*000)\\s*(?:m|km)?|3\\s*km|5\\s*km|自己ベスト|ベストタイム|自己記録|ベスト|記録|タイム|SB|PB)`,
+      "giu",
+    ),
+  )) {
+    push(m[1]!);
+  }
+  // 「1500m SBは原田はな？」のように距離・種別が先に来る表記。
+  for (const m of nameQ.matchAll(
+    new RegExp(
+      `(?:800|1[，,]?\\s*500|3[，,]?\\s*000|5[，,]?\\s*000|1(?:[．.]5)|3|5)\\s*(?:m|ｍ|メートル|km|キロ)?(?:[^\\p{Script=Han}\\p{Script=Hiragana}\\p{Script=Katakana}]{0,16})(?:SB|PB|自己ベスト|ベスト|記録|タイム)(?:は|の|[:：])?\\s*(${nameTok})`,
       "giu",
     ),
   )) {
@@ -143,7 +167,7 @@ export function extractAthleteNameHints(query: string): string[] {
   // 「江口大尊 荒尾三中 3000mSB」のように所属を挟む表記も個人記録として扱う。
   const schoolTok = "(?:荒尾三中|荒尾第四中|荒尾海陽中|南関中|玉名中|天水中|岱明中|長洲中|玉陵中|玉南中|玉名附中|玉名付属中?|玉名附属|玉高附属)";
   for (const m of q.matchAll(
-    new RegExp(`(${nameTok})(?:さん|君|くん)?\\s+${schoolTok}\\s*(?=(?:800|1500|3000|5000)\\s*(?:m|km)?|3\\s*km|5\\s*km|自己ベスト|ベストタイム|自己記録|ベスト|記録|タイム|SB|PB)`, "giu"),
+    new RegExp(`(${nameTok})(?:さん|君|くん)?\\s+${schoolTok}\\s*(?=(?:800|1[，,]?\\s*500|3[，,]?\\s*000|5[，,]?\\s*000)\\s*(?:m|km)?|3\\s*km|5\\s*km|自己ベスト|ベストタイム|自己記録|ベスト|記録|タイム|SB|PB)`, "giu"),
   )) {
     push(m[1]!);
   }

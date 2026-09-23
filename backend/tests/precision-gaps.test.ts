@@ -3135,4 +3135,634 @@ describe("QA precision regressions", () => {
     expect(result.text).toContain("3:30 - 3:30 - 3:21");
   });
 
+  it("answers a comma-separated 3000m SB query", async () => {
+    const result = await ask("江口大尊（荒尾三中）の3,000m SBは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("9:04.46");
+  });
+
+  it("answers a fullwidth comma 3000m SB query", async () => {
+    const result = await ask("江口大尊（荒尾三中）の3，000m SBは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("9:04.46");
+  });
+
+  it("answers a comma-separated 3000m query with a space", async () => {
+    const result = await ask("江口大尊（荒尾三中）の3,000 m SBは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("9:04.46");
+  });
+
+  it("answers a comma-separated 1500m SB query", async () => {
+    const result = await ask("原田はなの1,500m SBは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("4:40.44");
+  });
+
+  it("answers a fullwidth comma 1500m SB query", async () => {
+    const result = await ask("原田はなの1，500m SBは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("4:40.44");
+  });
+
+  it("answers a comma-separated 5000m SB query", async () => {
+    const result = await ask("正木好の5,000m SBは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("12:37.91");
+  });
+
+  it("answers a fullwidth comma 5000m SB query", async () => {
+    const result = await ask("正木好の5，000m SBは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("12:37.91");
+  });
+
+  it("answers a school-context comma-separated 3000m query", async () => {
+    const result = await ask("荒尾三中 江口大尊 3,000m SB");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("9:04.46");
+  });
+
+  it("answers a compact comma-separated 3000m query", async () => {
+    const result = await ask("江口大尊 荒尾三中 3,000mSB");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("9:04.46");
+  });
+
+  it("answers a comma-separated 3000m personal-best query", async () => {
+    const result = await ask("江口大尊の3,000m自己ベストは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("9:04.46");
+  });
+
+  it("answers an uppercase 3KM query", async () => {
+    const result = await ask("原田はなの3KM SBは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("10:39.00");
+  });
+
+  it("answers a fullwidth uppercase 3KM query", async () => {
+    const result = await ask("原田はなの３ＫＭ SBは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("10:39.00");
+  });
+
+  it("answers a mixed-case 3Km query", async () => {
+    const result = await ask("原田はなの3Km SBは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("10:39.00");
+  });
+
+  it("answers a spaced uppercase 3 KM query", async () => {
+    const result = await ask("原田はなの3 KM SBは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("10:39.00");
+  });
+
+  it("answers an uppercase 5KM query", async () => {
+    const result = await ask("村上葉侑の5KM SBは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("17:18.00");
+  });
+
+  it("answers a fullwidth 5km query", async () => {
+    const result = await ask("村上葉侑の５km SBは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("17:18.00");
+  });
+
+  it("answers a mixed-case 5Km query", async () => {
+    const result = await ask("村上葉侑の5Km SBは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("17:18.00");
+  });
+
+  it("answers a spaced uppercase 5 KM query", async () => {
+    const result = await ask("村上葉侑の5 KM SBは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("17:18.00");
+  });
+
+  it("answers an uppercase 3KM personal-best query", async () => {
+    const result = await ask("原田はなの3KM自己ベストは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("10:39.00");
+  });
+
+  it("answers an uppercase 5KM personal-best query", async () => {
+    const result = await ask("村上葉侑の5KM自己ベストは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("17:18.00");
+  });
+
+  it("answers a spaced 1500m query", async () => {
+    const result = await ask("原田はなの1 500m SBは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("4:40.44");
+  });
+
+  it("answers a fullwidth-spaced 1500m query", async () => {
+    const result = await ask("原田はなの1　500m SBは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("4:40.44");
+  });
+
+  it("answers a spaced 3000m query", async () => {
+    const result = await ask("江口大尊の3 000m SBは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("9:04.46");
+  });
+
+  it("answers a fullwidth-spaced 3000m query", async () => {
+    const result = await ask("江口大尊の3　000m SBは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("9:04.46");
+  });
+
+  it("answers a spaced 5000m query", async () => {
+    const result = await ask("村上葉侑の5 000m SBは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("17:18.00");
+  });
+
+  it("answers a fullwidth-spaced 5000m query", async () => {
+    const result = await ask("村上葉侑の5　000m SBは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("17:18.00");
+  });
+
+  it("answers a spaced 1500m personal-best query", async () => {
+    const result = await ask("原田はなの1 500m自己ベストは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("4:40.44");
+  });
+
+  it("answers a spaced 3000m personal-best query", async () => {
+    const result = await ask("江口大尊の3 000m自己ベストは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("9:04.46");
+  });
+
+  it("answers a spaced 5000m personal-best query", async () => {
+    const result = await ask("村上葉侑の5 000m自己ベストは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("17:18.00");
+  });
+
+  it("answers a comma-and-space 3000m query", async () => {
+    const result = await ask("江口大尊の3, 000m SBは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("9:04.46");
+  });
+
+  it("answers a 1.5km SB query", async () => {
+    const result = await ask("原田はなの1.5km SBは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("4:40.44");
+  });
+
+  it("answers a fullwidth-decimal 1.5km SB query", async () => {
+    const result = await ask("原田はなの1．5km SBは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("4:40.44");
+  });
+
+  it("answers a two-decimal 1.50km SB query", async () => {
+    const result = await ask("原田はなの1.50km SBは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("4:40.44");
+  });
+
+  it("answers a spaced 1.5 KM SB query", async () => {
+    const result = await ask("原田はなの1.5 KM SBは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("4:40.44");
+  });
+
+  it("answers a fullwidth 1.5km personal-best query", async () => {
+    const result = await ask("原田はなの１．５ｋｍ自己ベストは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("4:40.44");
+  });
+
+  it("answers a 3.0km SB query", async () => {
+    const result = await ask("原田はなの3.0km SBは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("10:39.00");
+  });
+
+  it("answers a fullwidth-decimal 3.0km SB query", async () => {
+    const result = await ask("原田はなの3．0km SBは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("10:39.00");
+  });
+
+  it("answers a spaced 3.0 KM SB query", async () => {
+    const result = await ask("原田はなの3.0 KM SBは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("10:39.00");
+  });
+
+  it("answers a 5.0km SB query", async () => {
+    const result = await ask("村上葉侑の5.0km SBは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("17:18.00");
+  });
+
+  it("answers a spaced 5.0 KM SB query", async () => {
+    const result = await ask("村上葉侑の5.0 KM SBは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("17:18.00");
+  });
+
+  it("answers a spaced 800 m SB query", async () => {
+    const result = await ask("原田はなの800 m SBは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("2:20.81");
+  });
+
+  it("answers a fullwidth-unit 800m SB query", async () => {
+    const result = await ask("原田はなの800 ｍ SBは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("2:20.81");
+  });
+
+  it("answers a spaced 1500 m SB query", async () => {
+    const result = await ask("原田はなの1500 m SBは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("4:40.44");
+  });
+
+  it("answers a fullwidth-unit 1500m SB query", async () => {
+    const result = await ask("原田はなの1500 ｍ SBは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("4:40.44");
+  });
+
+  it("answers a spaced 3000 m SB query", async () => {
+    const result = await ask("江口大尊の3000 m SBは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("9:04.46");
+  });
+
+  it("answers a fullwidth-unit 3000m SB query", async () => {
+    const result = await ask("江口大尊の3000 ｍ SBは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("9:04.46");
+  });
+
+  it("answers a spaced 5000 m SB query", async () => {
+    const result = await ask("寺田向希の5000 m SBは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("14:37.39");
+  });
+
+  it("answers a fullwidth-unit 5000m SB query", async () => {
+    const result = await ask("寺田向希の5000 ｍ SBは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("14:37.39");
+  });
+
+  it("answers a spaced 3000 m personal-best query", async () => {
+    const result = await ask("江口大尊の3000 m自己ベストは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("9:04.46");
+  });
+
+  it("answers a spaced 1500 m personal-best query", async () => {
+    const result = await ask("原田はなの1500 m自己ベストは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("4:40.44");
+  });
+
+  it("answers a fullwidth SB query", async () => {
+    const result = await ask("原田はなの1500m ＳＢは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("4:40.44");
+  });
+
+  it("answers an attached fullwidth SB query", async () => {
+    const result = await ask("原田はなの1500mＳＢは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("4:40.44");
+  });
+
+  it("answers a fullwidth PB query", async () => {
+    const result = await ask("江口大尊の3000m ＰＢは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("9:04.46");
+  });
+
+  it("answers an attached fullwidth PB query", async () => {
+    const result = await ask("江口大尊の3000mＰＢは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("9:04.46");
+  });
+
+  it("answers a season-best alias query", async () => {
+    const result = await ask("村上葉侑の5km シーズンベストは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("17:18.00");
+  });
+
+  it("answers a season-best alias without a distance unit", async () => {
+    const result = await ask("村上葉侑のシーズンベストは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("17:18.00");
+  });
+
+  it("answers a fullwidth SB query with a fullwidth distance unit", async () => {
+    const result = await ask("原田はなの１５００ｍ ＳＢは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("4:40.44");
+  });
+
+  it("answers a fullwidth PB query with a fullwidth distance unit", async () => {
+    const result = await ask("江口大尊の３０００ｍ ＰＢは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("9:04.46");
+  });
+
+  it("answers a season-best alias with a spaced distance", async () => {
+    const result = await ask("村上葉侑の5 000m シーズンベストは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("17:18.00");
+  });
+
+  it("answers a season-best alias with a fullwidth space", async () => {
+    const result = await ask("村上葉侑の5　000m シーズンベストは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("17:18.00");
+  });
+
+  it("answers a 3-kilometer Japanese-unit query", async () => {
+    const result = await ask("原田はなの3キロSBは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("10:39.00");
+  });
+
+  it("answers a 5-kilometer Japanese-unit query", async () => {
+    const result = await ask("村上葉侑の5キロ自己ベストは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("17:18.00");
+  });
+
+  it("answers a 1.5-kilometer Japanese-unit query", async () => {
+    const result = await ask("原田はなの1.5キロSBは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("4:40.44");
+  });
+
+  it("answers a 3.0-kilometer Japanese-unit query", async () => {
+    const result = await ask("原田はなの3.0キロSBは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("10:39.00");
+  });
+
+  it("answers a 5.0-kilometer Japanese-unit query", async () => {
+    const result = await ask("村上葉侑の5.0キロSBは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("17:18.00");
+  });
+
+  it("answers a 1500-meter Japanese-unit query", async () => {
+    const result = await ask("原田はなの1500メートルSBは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("4:40.44");
+  });
+
+  it("answers a 3000-meter Japanese-unit query", async () => {
+    const result = await ask("江口大尊の3000メートル自己ベストは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("9:04.46");
+  });
+
+  it("answers an 800-meter Japanese-unit query", async () => {
+    const result = await ask("原田はなの800メートルSBは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("2:20.81");
+  });
+
+  it("answers a spaced 3-kilometer Japanese-unit query", async () => {
+    const result = await ask("原田はなの3 キロSBは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("10:39.00");
+  });
+
+  it("answers a fullwidth-decimal 1.5-kilometer Japanese-unit query", async () => {
+    const result = await ask("原田はなの１．５キロSBは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("4:40.44");
+  });
+
+  it("answers an athlete-suffixed 1500m query", async () => {
+    const result = await ask("原田はな選手の1500mSBは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("原田はな（Star Light AC）");
+    expect(result.text).toContain("4:40.44");
+  });
+
+  it("answers an athlete-suffixed 3000m query", async () => {
+    const result = await ask("江口大尊選手の3000m自己ベストは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("江口大尊（荒尾三中）");
+    expect(result.text).toContain("9:04.46");
+  });
+
+  it("answers an athlete-suffixed 5km query", async () => {
+    const result = await ask("村上葉侑選手の5kmSBは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("村上葉侑（南関中）");
+    expect(result.text).toContain("17:18.00");
+  });
+
+  it("answers an athlete-suffixed fullwidth-unit query", async () => {
+    const result = await ask("原田はな選手の１５００ｍ ＳＢは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("原田はな（Star Light AC）");
+    expect(result.text).toContain("4:40.44");
+  });
+
+  it("answers an athlete-suffixed Japanese-unit query", async () => {
+    const result = await ask("江口大尊選手の3000メートルSBは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("江口大尊（荒尾三中）");
+    expect(result.text).toContain("9:04.46");
+  });
+
+  it("answers a spaced athlete-suffixed query", async () => {
+    const result = await ask("原田はな選手の1 500m SBは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("原田はな（Star Light AC）");
+    expect(result.text).toContain("4:40.44");
+  });
+
+  it("answers an athlete-suffixed 800m query", async () => {
+    const result = await ask("原田はな選手の800mSBは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("原田はな（Star Light AC）");
+    expect(result.text).toContain("2:20.81");
+  });
+
+  it("answers an athlete-suffixed season-best query", async () => {
+    const result = await ask("村上葉侑選手の5kmシーズンベストは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("村上葉侑（南関中）");
+    expect(result.text).toContain("17:18.00");
+  });
+
+  it("answers an athlete-suffixed PB query", async () => {
+    const result = await ask("江口大尊選手の3000mＰＢは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("江口大尊（荒尾三中）");
+    expect(result.text).toContain("9:04.46");
+  });
+
+  it("answers an athlete-suffixed query without a distance", async () => {
+    const result = await ask("村上葉侑選手のシーズンベストは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("村上葉侑（南関中）");
+    expect(result.text).toContain("17:18.00");
+  });
+
+  it("answers a halfwidth-spaced surname query", async () => {
+    const result = await ask("原田 はなの1500m SBは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("原田はな（Star Light AC）");
+    expect(result.text).toContain("4:40.44");
+  });
+
+  it("answers a fullwidth-spaced surname query", async () => {
+    const result = await ask("原田　はなの1500m SBは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("原田はな（Star Light AC）");
+    expect(result.text).toContain("4:40.44");
+  });
+
+  it("answers a halfwidth-spaced male name query", async () => {
+    const result = await ask("江口 大尊の3000m SBは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("江口大尊（荒尾三中）");
+    expect(result.text).toContain("9:04.46");
+  });
+
+  it("answers a fullwidth-spaced male name query", async () => {
+    const result = await ask("江口　大尊の3000m SBは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("江口大尊（荒尾三中）");
+    expect(result.text).toContain("9:04.46");
+  });
+
+  it("answers a halfwidth-spaced five-kilometer query", async () => {
+    const result = await ask("村上 葉侑の5km SBは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("村上葉侑（南関中）");
+    expect(result.text).toContain("17:18.00");
+  });
+
+  it("answers a fullwidth-spaced five-kilometer query", async () => {
+    const result = await ask("村上　葉侑の5km SBは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("村上葉侑（南関中）");
+    expect(result.text).toContain("17:18.00");
+  });
+
+  it("answers a spaced name with a season-best alias", async () => {
+    const result = await ask("原田 はなの1500m シーズンベストは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("原田はな（Star Light AC）");
+    expect(result.text).toContain("4:40.44");
+  });
+
+  it("answers a spaced name with an athlete suffix", async () => {
+    const result = await ask("原田 はな選手の1500m SBは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("原田はな（Star Light AC）");
+    expect(result.text).toContain("4:40.44");
+  });
+
+  it("answers a spaced name with a fullwidth unit", async () => {
+    const result = await ask("江口 大尊の３０００ｍ ＰＢは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("江口大尊（荒尾三中）");
+    expect(result.text).toContain("9:04.46");
+  });
+
+  it("answers a spaced name without a distance", async () => {
+    const result = await ask("村上 葉侑のシーズンベストは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("村上葉侑（南関中）");
+    expect(result.text).toContain("17:18.00");
+  });
+
+  it("answers a colon-separated athlete query", async () => {
+    const result = await ask("原田はな：1500m SBは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("原田はな（Star Light AC）");
+    expect(result.text).toContain("4:40.44");
+  });
+
+  it("answers a comma-separated athlete query", async () => {
+    const result = await ask("原田はな、1500m SBは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("原田はな（Star Light AC）");
+    expect(result.text).toContain("4:40.44");
+  });
+
+  it("answers a slash-separated athlete query", async () => {
+    const result = await ask("原田はな／1500m SBは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("原田はな（Star Light AC）");
+    expect(result.text).toContain("4:40.44");
+  });
+
+  it("answers a hyphen-separated athlete query", async () => {
+    const result = await ask("原田はな-1500m SBは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("原田はな（Star Light AC）");
+    expect(result.text).toContain("4:40.44");
+  });
+
+  it("answers a fullwidth-colon athlete query", async () => {
+    const result = await ask("江口大尊：3000m PBは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("江口大尊（荒尾三中）");
+    expect(result.text).toContain("9:04.46");
+  });
+
+  it("answers a reverse-order 1500m query", async () => {
+    const result = await ask("1500m SBは原田はな？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("原田はな（Star Light AC）");
+    expect(result.text).toContain("4:40.44");
+  });
+
+  it("answers a reverse-order 3000m query", async () => {
+    const result = await ask("3000m PBは江口大尊？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("江口大尊（荒尾三中）");
+    expect(result.text).toContain("9:04.46");
+  });
+
+  it("answers a reverse-order five-kilometer query", async () => {
+    const result = await ask("5km SBは村上葉侑？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("村上葉侑（南関中）");
+    expect(result.text).toContain("17:18.00");
+  });
+
+  it("answers a reverse-order Japanese-unit query", async () => {
+    const result = await ask("1500メートルSBは原田はな？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("原田はな（Star Light AC）");
+    expect(result.text).toContain("4:40.44");
+  });
+
+  it("answers a reverse-order query with a fullwidth unit", async () => {
+    const result = await ask("３０００ｍ ＰＢは江口大尊？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("江口大尊（荒尾三中）");
+    expect(result.text).toContain("9:04.46");
+  });
+
 });

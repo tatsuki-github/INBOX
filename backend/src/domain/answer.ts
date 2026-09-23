@@ -466,7 +466,7 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
   const resultListGender = q.match(/(男子|女子)/)?.[1];
   const compactAthleteRecord =
     hasNonTeamAthleteNameHint(q) &&
-    /800(?:m|ｍ)?|1500(?:m|ｍ)?|3000(?:m|ｍ)?|5000(?:m|ｍ)?|3\s*km|5\s*km/.test(q) &&
+    /800\s*(?:m|ｍ|メートル)?|1[，,]?\s*500\s*(?:m|ｍ|メートル)?|3[，,]?\s*000\s*(?:m|ｍ|メートル)?|5[，,]?\s*000\s*(?:m|ｍ|メートル)?|3\s*(?:km|キロ)|5\s*(?:km|キロ)|1(?:[．.]5)\s*(?:km|キロ)/i.test(q) &&
     /秒|分|タイム|記録|ベスト|SB|PB/.test(q);
   if (/自己ベスト|自己記録|\bSB\b|\bPB\b/.test(q) || compactAthleteRecord ||
       (hasNonTeamAthleteNameHint(q) && /ベスト/.test(q)) ||
@@ -477,7 +477,8 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
     if (name) {
       const row = flat.match(new RegExp(`${name},([^,]+),([^,]+),([^,]+),([^,]*),([^,]*),([^,]*),([^,]*),([^,]*),([^,]*),`));
       if (row) {
-        const distance = q.match(/(800|1500|3000|5000)(?:m|ｍ)?/)?.[1] ?? (q.match(/3\s*km/) ? "3km" : q.match(/5\s*km/) ? "5km" : undefined);
+        const distance = q.match(/(800|1[，,]?\s*500|3[，,]?\s*000|5[，,]?\s*000)\s*(?:m|ｍ|メートル)?/i)?.[1]?.replace(/[，,\s]/g, "") ??
+          (q.match(/1(?:[．.]5)\s*(?:km|キロ)/i) ? "1500" : q.match(/3(?:[．.]0)?\s*(?:km|キロ)/i) ? "3km" : q.match(/5(?:[．.]0)?\s*(?:km|キロ)/i) ? "5km" : undefined);
         if (distance) {
           const value = distance === "800" ? row[4] : distance === "1500" ? row[5] : distance === "3000" ? row[6] : distance === "5000" ? row[7] : distance === "3km" ? row[8] : row[9];
           if (value) return `${name}（${row[1]}）の${distance === "3km" || distance === "5km" ? distance : `${distance}m`}自己ベストは${value}。`;
@@ -2326,7 +2327,7 @@ function offlineAnswer(
       /会場/.test(question) &&
       !/集合/.test(question);
     const namedSelfBestLookup =
-      (/自己ベスト|自己記録|SB|PB|ベスト/.test(question) ||
+      (/自己ベスト|自己記録|SB|PB|ＳＢ|ＰＢ|ベスト/.test(question) ||
       (hasNonTeamAthleteNameHint(question) &&
           /800(?:m|ｍ)?|1500(?:m|ｍ)?|3000(?:m|ｍ)?|5000(?:m|ｍ)?|3\s*km|5\s*km/.test(question) &&
           /秒|分|タイム|記録|ベスト/.test(question))) &&
@@ -2502,7 +2503,7 @@ function offlineAnswer(
             )
           : namedSelfBestLookup
             ? retrieved.filter((r) => {
-                const name = extractAthleteNameHints(question)[0] ?? question.match(/[\p{Script=Han}]{2,8}(?=(?:さん|君|くん)?の(?:自己|記録|SB|PB|ベスト))/u)?.[0] ?? question.match(/[\p{Script=Han}]{2,8}/u)?.[0] ?? "";
+                const name = extractAthleteNameHints(question)[0] ?? question.match(/[\p{Script=Han}]{2,8}(?=(?:さん|君|くん|選手)?の(?:自己|記録|SB|PB|ベスト))/u)?.[0] ?? question.match(/[\p{Script=Han}]{2,8}/u)?.[0] ?? "";
                 return name.length > 0 && r.chunk.text.includes(name);
               })
           : retrieved;
@@ -2536,7 +2537,7 @@ function offlineAnswer(
         : undefined;
       const namedSelfBestPreview = namedSelfBestLookup
         ? (() => {
-            const name = extractAthleteNameHints(question)[0] ?? question.match(/[\p{Script=Han}]{2,8}(?=(?:さん|君|くん)?の(?:自己|記録|SB|PB|ベスト))/u)?.[0] ?? question.match(/[\p{Script=Han}]{2,8}/u)?.[0] ?? "";
+            const name = extractAthleteNameHints(question)[0] ?? question.match(/[\p{Script=Han}]{2,8}(?=(?:さん|君|くん|選手)?の(?:自己|記録|SB|PB|ベスト))/u)?.[0] ?? question.match(/[\p{Script=Han}]{2,8}/u)?.[0] ?? "";
             const csvPreview = retrieved
               .filter((r) => r.chunk.source.startsWith("sb/"))
               .map((r) => r.chunk.text)
@@ -3029,7 +3030,7 @@ function boostDaimingLineSources(query: string, baseSources: string[]): string[]
 
 function isNamedTeamSbListQuery(query: string): boolean {
   const q = query.normalize("NFKC");
-  const individualRecord = /800(?:m|ｍ)?|1500(?:m|ｍ)?|3000(?:m|ｍ)?|5000(?:m|ｍ)?|3\s*km|5\s*km/.test(q) && !/選手一覧|所属選手|全記録|記録一覧/.test(q);
+  const individualRecord = /800(?:m|ｍ)?|1[，,]?\s*500(?:m|ｍ)?|3[，,]?\s*000(?:m|ｍ)?|5[，,]?\s*000(?:m|ｍ)?|3\s*km|5\s*km/.test(q) && !/選手一覧|所属選手|全記録|記録一覧/.test(q);
   return /荒尾三中/.test(q) && /(?:\bSB\b|ＳＢ|シーズンベスト|選手|一覧|所属)/.test(q) && /選手|一覧|所属/.test(q) && !individualRecord;
 }
 
@@ -3045,7 +3046,7 @@ function isNamedSchoolSbListQuery(query: string): boolean {
 
 function isNamedSchoolListQuery(query: string): boolean {
   const q = query.normalize("NFKC");
-  const individualRecord = /800(?:m|ｍ)?|1500(?:m|ｍ)?|3000(?:m|ｍ)?|5000(?:m|ｍ)?|3\s*km|5\s*km/.test(q) && !/選手一覧|所属選手|全記録|記録一覧/.test(q);
+  const individualRecord = /800(?:m|ｍ)?|1[，,]?\s*500(?:m|ｍ)?|3[，,]?\s*000(?:m|ｍ)?|5[，,]?\s*000(?:m|ｍ)?|3\s*km|5\s*km/.test(q) && !/選手一覧|所属選手|全記録|記録一覧/.test(q);
   return /荒尾三中|荒尾第四中|荒尾海陽中|南関中|玉名中|天水中|岱明中|長洲中|玉陵中|玉南中|玉名附中|玉名付属中?|玉名附属|玉高附属/.test(q) &&
     /選手|一覧|所属|SB|シーズンベスト/.test(q) && !individualRecord;
 }
@@ -4335,7 +4336,7 @@ export async function answerQuestion(
     if (team) preferredSources = ["out-analysis/aragyoku-teams/" + team + ".md"];
   }
   const namedSelfBestQ =
-    (/自己ベスト|自己記録|SB|PB|ベスト|記録|タイム/.test(expanded) ||
+    (/自己ベスト|自己記録|SB|PB|ＳＢ|ＰＢ|ベスト|記録|タイム/.test(expanded) ||
       (hasNonTeamAthleteNameHint(expanded) &&
         /800(?:m|ｍ)?|1500(?:m|ｍ)?|3000(?:m|ｍ)?|5000(?:m|ｍ)?|3\s*km|5\s*km/.test(expanded) &&
         /秒|分|タイム|記録|ベスト/.test(expanded))) &&
