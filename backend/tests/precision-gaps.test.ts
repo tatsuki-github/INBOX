@@ -2534,4 +2534,64 @@ describe("QA precision regressions", () => {
     expect(result.sources).toEqual(["drive-text/練習/玉名市練習会/2026-09-22.md"]);
     expect(result.text).toContain("3:30 - 3:23");
   });
+
+  it("answers the current male course total distance", async () => {
+    const result = await ask("荒玉男子の現行コース合計距離は？");
+    expect(result.sources).toEqual(["docs/aragyoku-ekiden-distance-definitions.md"]);
+    expect(result.text).toContain("17.710km");
+  });
+
+  it("answers the pre-2024 male course total distance", async () => {
+    const result = await ask("荒玉男子の2023年以前の合計距離は？");
+    expect(result.sources).toEqual(["docs/aragyoku-ekiden-distance-definitions.md"]);
+    expect(result.text).toContain("19.710km");
+  });
+
+  it("answers a dated male morning-practice interval distance", async () => {
+    const result = await ask("2026年7月21日朝練の男子インターバル距離は？");
+    expect(result.sources).toEqual(["calendar/events.daiming.yaml"]);
+    expect(result.text).toContain("2.5km");
+  });
+
+  it("answers the dated joint-practice venue from the practice note", async () => {
+    const result = await ask("9月22日の玉名市合同練習会の集合場所は？");
+    expect(result.sources).toEqual(["drive-text/練習/玉名市練習会/2026-09-22.md"]);
+    expect(result.text).toContain("おおはまふれあいセンター");
+  });
+
+  it("answers the combined second-and-fifth-leg distance from the staff memo", async () => {
+    const result = await ask("荒玉の2区と5区の距離は？");
+    expect(result.sources).toEqual(["out-analysis/line-chats/daiming-staff.md"]);
+    expect(result.text).toContain("2.855km");
+  });
+
+  it("answers the planned joint-practice attendance from the coaching memo", async () => {
+    const result = await ask("9/22合同練習会に岱明は何人くらい参加予定？");
+    expect(result.sources).toEqual(["out-analysis/line-chats/arita-taisho.md"]);
+    expect(result.text).toContain("女子7名");
+  });
+
+  it("answers the current course total with a current-course alias", async () => {
+    const result = await ask("荒玉男子現行コースの総距離は？");
+    expect(result.sources).toEqual(["docs/aragyoku-ekiden-distance-definitions.md"]);
+    expect(result.text).toContain("17.710km");
+  });
+
+  it("answers the old course total with an old-course alias", async () => {
+    const result = await ask("荒玉男子旧コースの総距離は？");
+    expect(result.sources).toEqual(["docs/aragyoku-ekiden-distance-definitions.md"]);
+    expect(result.text).toContain("19.710km");
+  });
+
+  it("answers an ISO-dated male morning-practice interval distance", async () => {
+    const result = await ask("2026-07-21朝練の男子2.5kmは？");
+    expect(result.sources).toEqual(["calendar/events.daiming.yaml"]);
+    expect(result.text).toContain("2.5km");
+  });
+
+  it("answers a slash-dated joint-practice venue", async () => {
+    const result = await ask("9/22玉名市合同練習会の場所は？");
+    expect(result.sources).toEqual(["drive-text/練習/玉名市練習会/2026-09-22.md"]);
+    expect(result.text).toContain("おおはまふれあいセンター");
+  });
 });
