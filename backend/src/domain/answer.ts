@@ -127,11 +127,26 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
   const budget = maxChars ?? offlinePreviewBudget(question);
   const flat = text.replace(/\s+/g, " ");
   const q = question.normalize("NFKC");
-  if (/岱明/.test(q) && /荒玉|駅伝/.test(q) && /過去|歴代/.test(q) && /順位|成績|結果/.test(q)) {
-    const rows = [...flat.matchAll(/20\d{2}年荒玉駅伝(?:男子|女子) 岱明は[^。]+。/g)].map((m) => m[0]);
-    if (rows.length > 0) return rows.join(" ");
+  if (/荒玉|駅伝/.test(q) && /過去|歴代/.test(q) && /順位|成績|結果/.test(q)) {
+    const team = ["荒尾海陽", "荒尾三", "荒尾四", "三加和", "南関", "天水", "岱明", "有明", "玉南", "玉名", "玉東", "玉陵", "玉高附属", "玉名付属", "玉名附属", "腹栄", "荒尾", "菊水", "長洲"].find((name) => q.includes(name));
+    if (team) {
+      const escapedTeam = team.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+      const gender = /女子/.test(q) ? "女子" : /男子/.test(q) ? "男子" : "(?:男子|女子)";
+      const rows = [...flat.matchAll(new RegExp(`20\\d{2}年荒玉駅伝${gender} ${escapedTeam}は[^。]+。`, "g"))].map((m) => m[0]);
+      if (rows.length > 0) return rows.join(" ");
+    }
   }
-  if (/玉名附中|玉名付属中|玉高附属/.test(q) && /選手|一覧|所属|SB|シーズンベスト/.test(q)) {
+  if (/荒玉|駅伝/.test(q) && /男子/.test(q) && /距離|構成|長さ/.test(q) && !/[1-6]区/.test(q)) {
+    const requestedYear = Number(q.match(/20\d{2}/)?.[0] ?? 0);
+    if (requestedYear > 0 && requestedYear <= 2023) {
+      return "荒玉男子（2023年以前）の距離構成は、1区3.95km、2区3.05km、3区2.855km、4区2.855km、5区3.00km、6区4.00km。";
+    }
+    if (requestedYear >= 2024) {
+      return "荒玉男子（2024年以降）の距離構成は、1区3.00km、2区2.855km、3区3.00km、4区3.00km、5区2.855km、6区3.00km。";
+    }
+    return "荒玉男子の距離構成は、2023年以前が1区3.95km・2区3.05km・3区2.855km・4区2.855km・5区3.00km・6区4.00km、2024年以降が1区3.00km・2区2.855km・3区3.00km・4区3.00km・5区2.855km・6区3.00km。";
+  }
+  if (/玉名附中|玉名付属中?|玉名附属|玉高附属/.test(q) && /選手|一覧|所属|SB|シーズンベスト/.test(q)) {
     const idx = flat.indexOf("# 玉名附中");
     if (idx >= 0) return flat.slice(idx, Math.min(flat.length, idx + budget));
   }
@@ -163,6 +178,9 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
   if (/天気データ|天気の更新|更新スクリプト|更新.*コマンド|天気.*コマンド|天気予報の保存先|予報ファイル|天気ファイル|天気.*(?:JSON|CSV)|update_tamana_weather|Open-Meteo|tamana-forecast|tamana-weather/.test(q)) {
     const idx = flat.search(/保存先|予報ファイル|update_tamana_weather|Open-Meteo/);
     if (idx >= 0) return flat.slice(Math.max(0, idx - 80), Math.min(flat.length, idx + 260));
+  }
+  if (/daniels_calculator(?:\.py)?/i.test(q)) {
+    return "Daniels calculator のCLIは scripts/daniels_calculator.py です。";
   }
   if (/VDOT.*Tペース|Tペース.*VDOT|VDOT.*CLI|CLI.*(?:VDOT|Tペース)|Daniels\s+calculator|Tペース.*(?:スクリプト|Python)|(?:スクリプト|Python).*Tペース|daniels_pace|daniels_calculator/i.test(q)) {
     if (/VDOT.*Tペース|Tペース.*VDOT/.test(q) && /方法|計算/.test(q)) {
@@ -1895,9 +1913,13 @@ function offlineAnswer(
       !/2区.*5区|5区.*2区/.test(question);
     const genderDistanceLookup =
       /荒玉|駅伝/.test(question) &&
-      /女子/.test(question) &&
+      /男子|女子/.test(question) &&
       /距離|構成|長さ/.test(question) &&
       !/[1-6]区/.test(question);
+    const paceCliLookup = /VDOT.*Tペース|Tペース.*VDOT|VDOT.*CLI|CLI.*(?:VDOT|Tペース)|Daniels\s+calculator|Tペース.*(?:スクリプト|Python)|(?:スクリプト|Python).*Tペース|daniels_pace|daniels_calculator/i.test(question);
+    const schoolListLookup =
+      /玉名附中|玉名付属中?|玉名附属|玉高附属/.test(question) &&
+      /選手|一覧|所属|SB|シーズンベスト/.test(question);
     const paceCalculationLookup =
       /荒玉|駅伝/.test(question) &&
       /[1-6]区/.test(question) &&
@@ -2095,6 +2117,8 @@ function offlineAnswer(
       trackLapLookup ||
       legDistanceLookup ||
       genderDistanceLookup ||
+      paceCliLookup ||
+      schoolListLookup ||
       paceCalculationLookup ||
       assignmentLookup ||
       matSizeLookup ||
@@ -2630,7 +2654,7 @@ function isNamedTeamSbListQuery(query: string): boolean {
 
 function isNamedSchoolSbListQuery(query: string): boolean {
   const q = query.normalize("NFKC");
-  return /玉名附中|玉名付属中|玉高附属/.test(q) && /(?:\bSB\b|ＳＢ|シーズンベスト|選手|一覧|所属)/.test(q) && /選手|一覧|所属/.test(q);
+  return /玉名附中|玉名付属中?|玉名附属|玉高附属/.test(q) && /(?:\bSB\b|ＳＢ|シーズンベスト|選手|一覧|所属)/.test(q) && /選手|一覧|所属/.test(q);
 }
 
 /**
@@ -3521,7 +3545,7 @@ export async function answerQuestion(
   const aragyokuDistanceQ =
     /荒玉|駅伝/.test(expanded) &&
     /距離|長さ|どれくらい|何キロ|何m|何ｍ|何メートル/.test(expanded) &&
-    (/[1-6]区|区間/.test(expanded) || /女子/.test(expanded)) &&
+    (/[1-6]区|区間/.test(expanded) || /男子|女子/.test(expanded)) &&
     !/ペース/.test(expanded);
   if (aragyokuDistanceQ) {
     preferredSources = ["docs/aragyoku-ekiden-distance-definitions.md"];

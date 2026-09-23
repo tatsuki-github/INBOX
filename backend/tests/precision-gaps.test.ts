@@ -434,4 +434,69 @@ describe("QA precision regressions", () => {
     expect(result.sources).toEqual(["docs/ai-practice-generation.md"]);
     expect(result.text).toContain("scripts/daniels_calculator.py");
   });
+
+  it("answers the generic men distance composition from both course eras", async () => {
+    const result = await ask("荒玉男子の距離構成");
+    expect(result.sources).toEqual(["docs/aragyoku-ekiden-distance-definitions.md"]);
+    expect(result.text).toContain("2023年以前");
+    expect(result.text).toContain("2024年以降");
+  });
+
+  it("answers a 2023 men distance composition without a leg number", async () => {
+    const result = await ask("荒玉男子2023年距離構成");
+    expect(result.sources).toEqual(["docs/aragyoku-ekiden-distance-definitions.md"]);
+    expect(result.text).toContain("3.95km");
+    expect(result.text).toContain("4.00km");
+  });
+
+  it("filters a historical ranking digest to women when requested", async () => {
+    const result = await ask("岱明の荒玉過去順位女子");
+    expect(result.sources).toEqual(["out-analysis/aragyoku-teams/岱明.md"]);
+    expect(result.text).toContain("2025年荒玉駅伝女子");
+    expect(result.text).not.toContain("2025年荒玉駅伝男子");
+  });
+
+  it("returns the full historical digest for 三加和", async () => {
+    const result = await ask("三加和の荒玉歴代成績");
+    expect(result.sources).toEqual(["out-analysis/aragyoku-teams/三加和.md"]);
+    expect(result.text).toContain("2012年荒玉駅伝男子");
+    expect(result.text).toContain("2025年荒玉駅伝女子");
+  });
+
+  it("routes 玉名付属 SB wording to the school record digest", async () => {
+    const result = await ask("玉名付属のSB一覧");
+    expect(result.sources).toEqual(["out-analysis/arato-tamana-teams/玉名附中.md"]);
+    expect(result.text).toContain("# 玉名附中 記録一覧");
+  });
+
+  it("routes 玉名附属 wording to the school record digest", async () => {
+    const result = await ask("玉名附属の選手とSB一覧");
+    expect(result.sources).toEqual(["out-analysis/arato-tamana-teams/玉名附中.md"]);
+    expect(result.text).toContain("# 玉名附中 記録一覧");
+  });
+
+  it("keeps 玉名付属 player lists on the school record digest", async () => {
+    const result = await ask("玉名付属の選手一覧");
+    expect(result.sources).toEqual(["out-analysis/arato-tamana-teams/玉名附中.md"]);
+    expect(result.text).toContain("# 玉名附中 記録一覧");
+  });
+
+  it("answers a daniels_calculator.py question directly", async () => {
+    const result = await ask("daniels_calculator.pyは何？");
+    expect(result.sources).toEqual(["docs/ai-practice-generation.md"]);
+    expect(result.text).toContain("scripts/daniels_calculator.py");
+  });
+
+  it("does not duplicate a VDOT T-pace answer", async () => {
+    const result = await ask("TペースをVDOTから計算する方法");
+    expect(result.sources).toEqual(["docs/ai-practice-generation.md"]);
+    expect(result.text.match(/scripts\/daniels_pace\.py/g)?.length).toBe(1);
+  });
+
+  it("answers a current-course men distance composition", async () => {
+    const result = await ask("荒玉男子2024年の距離構成");
+    expect(result.sources).toEqual(["docs/aragyoku-ekiden-distance-definitions.md"]);
+    expect(result.text).toContain("1区3.00km");
+    expect(result.text).toContain("6区3.00km");
+  });
 });
