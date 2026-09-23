@@ -2775,4 +2775,64 @@ describe("QA precision regressions", () => {
     expect(result.text).toContain("11:18.46");
   });
 
+  it("answers a hiragana-name personal-best query", async () => {
+    const result = await ask("原田はなの1500m自己ベストは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("4:40.44");
+  });
+
+  it("answers a hiragana-name school-context SB query", async () => {
+    const result = await ask("原田はな（Star Light AC）の1500m SBは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("4:40.44");
+  });
+
+  it("answers a spaced hiragana-name personal-best query", async () => {
+    const result = await ask("原田はな 1500m自己ベスト");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("4:40.44");
+  });
+
+  it("answers a hiragana-name honorific SB query", async () => {
+    const result = await ask("原田はなさんの1500m SB");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("4:40.44");
+  });
+
+  it("answers a hiragana-name compact SB query", async () => {
+    const result = await ask("原田はなの1500m SB");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("4:40.44");
+  });
+
+  it("answers a second hiragana-name personal-best query", async () => {
+    const result = await ask("小脇あかりの1500m自己ベストは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("4:41.70");
+  });
+
+  it("answers a second hiragana-name school-context SB query", async () => {
+    const result = await ask("小脇あかり（TTC）の1500m SBは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("4:41.70");
+  });
+
+  it("answers a second spaced hiragana-name query", async () => {
+    const result = await ask("小脇あかり1500m自己ベスト");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("4:41.70");
+  });
+
+  it("answers a second hiragana-name honorific query", async () => {
+    const result = await ask("小脇あかりさんの1500m SB");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("4:41.70");
+  });
+
+  it("answers a school-context hiragana-name best query", async () => {
+    const result = await ask("原田はな（Star Light AC）の1500mベスト");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("4:40.44");
+  });
+
 });

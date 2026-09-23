@@ -123,8 +123,8 @@ export function extractAthleteNameHints(query: string): string[] {
     if (hints.includes(t)) return;
     hints.push(t);
   };
-  const cjk = "[\\u3400-\\u9fff\\uf900-\\ufaff\\u{20000}-\\u{2fa1f}]";
-  const nameTok = `(?:[A-Za-z]{2,}|[ァ-ヶヴー]{1,8}|${cjk}{1,8})`;
+  const jp = "[\\p{Script=Han}\\p{Script=Hiragana}\\p{Script=Katakana}ー]";
+  const nameTok = `(?:[A-Za-z]{2,}|${jp}{1,8})`;
 
   for (const m of q.matchAll(
     new RegExp(`(${nameTok})(?:さん|君|くん)?(?:[（(][^）)]{1,24}[）)])?の`, "gu"),
