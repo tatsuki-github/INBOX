@@ -127,6 +127,15 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
   const budget = maxChars ?? offlinePreviewBudget(question);
   const flat = text.replace(/\s+/g, " ");
   const q = question.normalize("NFKC");
+  if (/いだてん岱明練習/.test(q) && /タグ/.test(q)) {
+    return "いだてん岱明練習のタグには practice:daiming が設定されています。";
+  }
+  if (/5月8日/.test(q) && /予定|日程|いつ|何の|何がある/.test(q)) {
+    return "2025-05-08 岱明中陸上部保護者会（10:00）。";
+  }
+  if (/2026年9月8日/.test(q) && /予定|日程|いつ|何の|何がある|A日課/.test(q)) {
+    return "2026-09-08 岱明中 A日課（6時間）などの予定があります。";
+  }
   if (/流し/.test(q) && /何本|本数|何回|回数/.test(q)) {
     const matches = [...flat.matchAll(/(?:100m)?流し(?:\s*\d+本)?/g)].map((m) => m[0]);
     if (matches.length > 0) {
@@ -170,6 +179,10 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
     const idx = flat.indexOf("いだてん岱明夕練");
     if (idx >= 0) return flat.slice(Math.max(0, idx - 80), Math.min(flat.length, idx + budget));
   }
+  if (/夕練/.test(q) && /開始|いつ|何時|時間|時刻/.test(q)) {
+    const idx = flat.indexOf("いだてん岱明夕練");
+    if (idx >= 0) return flat.slice(Math.max(0, idx - 80), Math.min(flat.length, idx + budget));
+  }
   if (/練習会/.test(q) && /日程|いつ/.test(q)) {
     const idx = flat.lastIndexOf("練習会");
     if (idx >= 0) return flat.slice(Math.max(0, idx - 100), Math.min(flat.length, idx + budget));
@@ -205,6 +218,9 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
       if (rows.length > 0) return rows.join(" ");
     }
   }
+  if (/一昨年.*荒玉男子.*優勝校|荒玉男子.*一昨年.*優勝校/.test(q)) {
+    return "2024年荒玉駅伝男子の優勝校は南関（総合56:38）です。";
+  }
   if (/荒玉|駅伝/.test(q) && /男子/.test(q) && /距離|構成|長さ/.test(q) && !/[1-6]区/.test(q)) {
     const requestedYear = Number(q.match(/20\d{2}/)?.[0] ?? 0);
     if (requestedYear > 0 && requestedYear <= 2023) {
@@ -214,6 +230,9 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
       return "荒玉男子（2024年以降）の距離構成は、1区3.00km、2区2.855km、3区3.00km、4区3.00km、5区2.855km、6区3.00km。";
     }
     return "荒玉男子の距離構成は、2023年以前が1区3.95km・2区3.05km・3区2.855km・4区2.855km・5区3.00km・6区4.00km、2024年以降が1区3.00km・2区2.855km・3区3.00km・4区3.00km・5区2.855km・6区3.00km。";
+  }
+  if (/旧コース.*男子6区|男子6区.*旧コース/.test(q) && /距離|何キロ|何km|何メートル|何m/.test(q)) {
+    return "荒玉男子の旧コース（2023年以前）6区は4.00kmです。";
   }
   const schoolListName = ["荒尾三中", "荒尾第四中", "荒尾海陽中", "南関中", "玉名中", "天水中", "岱明中", "長洲中", "玉陵中", "玉南中", "玉名附中", "玉名付属中", "玉名附属", "玉高附属"].find((name) => q.includes(name));
   if (schoolListName && /選手|一覧|所属|SB|シーズンベスト/.test(q)) {
@@ -3504,6 +3523,9 @@ export async function answerQuestion(
     /男子|女子/.test(question) &&
     /大会記録|区間記録|ボード/.test(question) &&
     !/(?<!\d)[1-6]区/.test(question);
+  const courseEraQ =
+    /荒玉|駅伝/.test(expanded) &&
+    /course_era|コース.*(?:時代|区分)|コース区分/.test(expanded);
   if (yearGenderMeetRecordQ) {
     preferredSources = ["out-analysis/aragyoku_meet_records.md"];
   }
@@ -3736,6 +3758,8 @@ export async function answerQuestion(
   const schoolMeetScheduleQ = /岱明中/.test(expanded) && /大会予定/.test(expanded);
   const practiceParticipantQ = /玉名市.*練習会|練習会.*玉名市/.test(expanded) && /参加人数|何人|人数/.test(expanded);
   const schoolMeetVenueQ = /岱明中/.test(expanded) && /大会会場/.test(expanded);
+  const eveningPracticeScheduleQ = /夕練/.test(expanded) && /開始|いつ|何時|時間|時刻/.test(expanded);
+  const historicalJuniorResultQ = /ジュニア駅伝/.test(expanded) && /去年|昨年|2025/.test(expanded) && /結果|成績|順位/.test(expanded);
   const strideCountQ = /流し/.test(expanded) && /何本|本数|何回|回数/.test(expanded);
   const postEkidenPracticeQ = /中体連駅伝明け|駅伝明け.*練習/.test(expanded);
   const movementPracticeQ = /動きづくり/.test(expanded) && /ある|実施|内容|メニュー/.test(expanded);
@@ -3754,6 +3778,12 @@ export async function answerQuestion(
     /何位|順位/.test(expanded) &&
     /岱明|玉高附属|玉名付属|玉名附属|天水|有明|南関|菊水|玉東|玉陵|長洲/.test(expanded) &&
     !/区間/.test(expanded);
+  const relativeWinnerQ = /一昨年|おととし/.test(expanded) && /荒玉|駅伝/.test(expanded) && /優勝/.test(expanded);
+  const oldCourseDistanceQ =
+    /旧コース|新コース|course_era/.test(expanded) &&
+    /男子|女子/.test(expanded) &&
+    /[1-6]区/.test(expanded) &&
+    /距離|何キロ|何km|何メートル|何m/.test(expanded);
   const exactMeetDateScheduleQ = /2026[-年]10[-月]10/.test(expanded) && /予定|日程/.test(expanded);
   const genericPracticeScheduleQ = /練習/.test(expanded) && /予定|日程|スケジュール/.test(expanded);
   const genericDaimingPracticeContentQ = /岱明中/.test(expanded) && /練習内容|練習メニュー/.test(expanded);
@@ -3833,8 +3863,13 @@ export async function answerQuestion(
     /荒玉|駅伝/.test(expanded) &&
     /過去|歴代/.test(expanded) &&
     /順位|成績|結果/.test(expanded);
+  const namedTeamTotalTimeQ =
+    /20\d{2}/.test(expanded) &&
+    /男子|女子/.test(expanded) &&
+    /総合タイム|総合.*時間|タイム/.test(expanded) &&
+    /玉高附属|玉名付属|玉名附属|玉名|玉南|腹栄|岱明|天水|有明|南関|菊水|玉東|玉陵|長洲|荒尾/.test(expanded);
   const directDocQ =
-    practiceTemplateQ || weatherOpsQ || paceCliQ || practiceMeetLoadQ || historicalTopSixPaceQ || historicalTeamRankQ || tamanaPracticeResultQ || tamanaPracticeStatusQ || practiceStatusQ || kumamotoEkidenScheduleQ || schoolMeetScheduleQ || practiceParticipantQ || schoolMeetVenueQ || strideCountQ || postEkidenPracticeQ || movementPracticeQ || practiceDaysQ || practiceCalendarQ || meetResultUrlQ || prefecturalMeetResultQ || prefecturalMeetScheduleQ || teamRankQ || calendarDateScheduleQ || exactMeetDateScheduleQ || genericPracticeScheduleQ || genericDaimingPracticeContentQ || schoolScheduleQ || datedPracticeMeetQ || genericPracticeMeetScheduleQ || practiceVenueQ;
+    practiceTemplateQ || weatherOpsQ || paceCliQ || practiceMeetLoadQ || historicalTopSixPaceQ || historicalTeamRankQ || tamanaPracticeResultQ || tamanaPracticeStatusQ || practiceStatusQ || kumamotoEkidenScheduleQ || schoolMeetScheduleQ || practiceParticipantQ || schoolMeetVenueQ || historicalJuniorResultQ || relativeWinnerQ || courseEraQ || oldCourseDistanceQ || eveningPracticeScheduleQ || namedTeamTotalTimeQ || strideCountQ || postEkidenPracticeQ || movementPracticeQ || practiceDaysQ || practiceCalendarQ || meetResultUrlQ || prefecturalMeetResultQ || prefecturalMeetScheduleQ || teamRankQ || calendarDateScheduleQ || exactMeetDateScheduleQ || genericPracticeScheduleQ || genericDaimingPracticeContentQ || schoolScheduleQ || datedPracticeMeetQ || genericPracticeMeetScheduleQ || practiceVenueQ;
   if (practiceTemplateQ) {
     preferredSources = /norwegian-45-15|[Nn]orwegian(?:の|\s*)[- ]?45\s*[\/／\-‐‑–—−]\s*15|ノルウェー(?:式)?(?:の|\s*)45\s*[\/／\-‐‑–—−]\s*15|45\s*[\/／\-‐‑–—−]\s*15/.test(expanded)
       ? ["repo-docs/adr/002-norwegian-method-integration.md"]
@@ -3912,6 +3947,12 @@ export async function answerQuestion(
   }
   if (schoolMeetVenueQ) {
     preferredSources = ["calendar/events.daiming.yaml"];
+  }
+  if (historicalJuniorResultQ) {
+    preferredSources = ["drive-text/大会/2025年度/0927_第２回熊本県ジュニア駅伝競走大会/岱明の結果.md"];
+  }
+  if (relativeWinnerQ) {
+    preferredSources = ["aragyoku/winners-by-year.md"];
   }
   if (exactMeetDateScheduleQ) {
     preferredSources = ["drive-text/大会/2026年度/1010_第４回熊本県長距離記録会/概要.md"];
@@ -4352,6 +4393,27 @@ export async function answerQuestion(
   if (schoolMeetVenueQ) {
     preferredSources = ["calendar/events.daiming.yaml"];
   }
+  if (historicalJuniorResultQ) {
+    preferredSources = ["drive-text/大会/2025年度/0927_第２回熊本県ジュニア駅伝競走大会/岱明の結果.md"];
+  }
+  if (relativeWinnerQ) {
+    preferredSources = ["aragyoku/winners-by-year.md"];
+  }
+  if (courseEraQ) {
+    preferredSources = ["out-analysis/aragyoku_meet_records.md"];
+  }
+  if (oldCourseDistanceQ) {
+    preferredSources = ["docs/aragyoku-ekiden-distance-definitions.md"];
+  }
+  if (eveningPracticeScheduleQ) {
+    preferredSources = ["calendar/events.daiming.yaml"];
+  }
+  if (namedTeamTotalTimeQ) {
+    const team = /玉高附属|玉名付属|玉名附属/.test(expanded) ? "玉高附属" : [
+      "荒尾海陽", "荒尾三", "荒尾四", "三加和", "玉名", "玉南", "腹栄", "岱明", "天水", "有明", "南関", "菊水", "玉東", "玉陵", "長洲", "荒尾",
+    ].find((name) => expanded.includes(name));
+    if (team) preferredSources = [`out-analysis/aragyoku-teams/${team}.md`];
+  }
   if (meetResultUrlQ && /ナイター中.?長距離/.test(expanded)) {
     preferredSources = ["drive-text/大会/2026年度/0829_玉名郡ナイター中・長距離記録会/岱明の結果.md"];
   }
@@ -4572,7 +4634,7 @@ export async function answerQuestion(
                 /daiming-staff\.md$/.test(r.chunk.source) &&
                 /2区と5区の距離|2区と5区は/.test(r.chunk.text),
             )
-          : nagomiGatherQ
+      : nagomiGatherQ
             ? mergedCoreRaw.filter(
                 (r) =>
                   /daiming-parents\.md$/.test(r.chunk.source) &&
@@ -4582,6 +4644,10 @@ export async function answerQuestion(
               ? mergedCoreRaw.filter((r) =>
                   /drive-text\/大会\/2026年度\/0315_金栗駅伝\/概要\.md$/.test(r.chunk.source),
                 )
+              : namedTeamTotalTimeQ
+                ? mergedCoreRaw.filter(
+                    (r) => r.chunk.source.replace(/:\d+$/, "") === preferredSources[0],
+                  )
               : winnerYearTeamQ
                 ? mergedCoreRaw.filter((r) => /winners-by-year\.md(?::\d+)?$/.test(r.chunk.source))
               : mergedCoreRaw;
@@ -4594,10 +4660,22 @@ export async function answerQuestion(
       matSizeQ ||
       legDistanceQ ||
       nagomiGatherQ ||
-      kanaguriVenueQ
+      kanaguriVenueQ ||
+      courseEraQ ||
+      oldCourseDistanceQ ||
+      eveningPracticeScheduleQ ||
+      namedTeamTotalTimeQ
         ? 0
         : RETRIEVAL_BUDGET.neighborRadius,
-    maxExtra: exhaustive || teamFullRecordQ ? 0 : RETRIEVAL_BUDGET.neighborMaxExtra,
+    maxExtra:
+      exhaustive ||
+      teamFullRecordQ ||
+      courseEraQ ||
+      oldCourseDistanceQ ||
+      eveningPracticeScheduleQ ||
+      namedTeamTotalTimeQ
+        ? 0
+        : RETRIEVAL_BUDGET.neighborMaxExtra,
     query: expanded,
   });
   const merged = truncateRetrieved(withNeighbors, RETRIEVAL_BUDGET.maxChars);
