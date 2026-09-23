@@ -3803,6 +3803,21 @@ export async function answerQuestion(
   const cityRecordResultQ =
     /熊本市陸上競技記録会/.test(expanded) &&
     /結果|公式|リンク|ページ/.test(expanded);
+  const firstLongDistanceResultQ =
+    /第\s*[１1]回熊本県長距離記録会/.test(expanded) &&
+    /結果|公式|リンク|ページ/.test(expanded);
+  const nightMeetResultQ =
+    /ナイター中.?長距離/.test(expanded) &&
+    /結果|順位|成績|公式|リンク|一覧/.test(expanded);
+  const juniorOlympicResultQ =
+    /ジュニアオリンピック/.test(expanded) &&
+    /結果|順位|成績|公式|リンク/.test(expanded);
+  const urbanChampionshipResultQ =
+    /全九州都市対抗/.test(expanded) &&
+    /結果|順位|成績|公式|リンク/.test(expanded);
+  const kanaguriMemorialResultQ =
+    /金栗記念/.test(expanded) &&
+    /結果|順位|成績|公式|リンク/.test(expanded);
   const prefecturalMeetResultQ = /県中体連/.test(expanded) && /結果|成績|順位/.test(expanded) && !meetResultUrlQ;
   const prefecturalMeetScheduleQ = /県中体連/.test(expanded) && /開催日|日程|いつ/.test(expanded);
   const teamRankQ =
@@ -3901,7 +3916,7 @@ export async function answerQuestion(
     /総合タイム|総合.*時間|タイム/.test(expanded) &&
     /玉高附属|玉名付属|玉名附属|玉名|玉南|腹栄|岱明|天水|有明|南関|菊水|玉東|玉陵|長洲|荒尾/.test(expanded);
   const directDocQ =
-    practiceTemplateQ || weatherOpsQ || paceCliQ || practiceMeetLoadQ || historicalTopSixPaceQ || historicalTeamRankQ || tamanaPracticeResultQ || tamanaPracticeStatusQ || practiceStatusQ || kumamotoEkidenScheduleQ || schoolMeetScheduleQ || practiceParticipantQ || schoolMeetVenueQ || historicalJuniorResultQ || relativeWinnerQ || courseEraQ || oldCourseDistanceQ || eveningPracticeScheduleQ || namedTeamTotalTimeQ || cityRecordResultQ || genericWinnerMarginQ || strideCountQ || postEkidenPracticeQ || movementPracticeQ || practiceDaysQ || practiceCalendarQ || meetResultUrlQ || prefecturalMeetResultQ || prefecturalMeetScheduleQ || teamRankQ || calendarDateScheduleQ || exactMeetDateScheduleQ || genericPracticeScheduleQ || genericDaimingPracticeContentQ || schoolScheduleQ || datedPracticeMeetQ || genericPracticeMeetScheduleQ || practiceVenueQ;
+    practiceTemplateQ || weatherOpsQ || paceCliQ || practiceMeetLoadQ || historicalTopSixPaceQ || historicalTeamRankQ || tamanaPracticeResultQ || tamanaPracticeStatusQ || practiceStatusQ || kumamotoEkidenScheduleQ || schoolMeetScheduleQ || practiceParticipantQ || schoolMeetVenueQ || historicalJuniorResultQ || relativeWinnerQ || courseEraQ || oldCourseDistanceQ || eveningPracticeScheduleQ || namedTeamTotalTimeQ || cityRecordResultQ || firstLongDistanceResultQ || nightMeetResultQ || juniorOlympicResultQ || urbanChampionshipResultQ || kanaguriMemorialResultQ || genericWinnerMarginQ || strideCountQ || postEkidenPracticeQ || movementPracticeQ || practiceDaysQ || practiceCalendarQ || meetResultUrlQ || prefecturalMeetResultQ || prefecturalMeetScheduleQ || teamRankQ || calendarDateScheduleQ || exactMeetDateScheduleQ || genericPracticeScheduleQ || genericDaimingPracticeContentQ || schoolScheduleQ || datedPracticeMeetQ || genericPracticeMeetScheduleQ || practiceVenueQ;
   if (practiceTemplateQ) {
     preferredSources = /norwegian-45-15|[Nn]orwegian(?:の|\s*)[- ]?45\s*[\/／\-‐‑–—−]\s*15|ノルウェー(?:式)?(?:の|\s*)45\s*[\/／\-‐‑–—−]\s*15|45\s*[\/／\-‐‑–—−]\s*15/.test(expanded)
       ? ["repo-docs/adr/002-norwegian-method-integration.md"]
@@ -4452,6 +4467,21 @@ export async function answerQuestion(
   if (cityRecordResultQ) {
     preferredSources = ["drive-text/記録データベース/2026年度/中学生記録.csv"];
   }
+  if (firstLongDistanceResultQ) {
+    preferredSources = ["drive-text/大会/2026年度/0509_第１回熊本県長距離記録会/岱明の結果.md"];
+  }
+  if (nightMeetResultQ) {
+    preferredSources = ["drive-text/大会/2026年度/0829_玉名郡ナイター中・長距離記録会/全結果.md"];
+  }
+  if (juniorOlympicResultQ) {
+    preferredSources = ["drive-text/大会/2026年度/0829_ジュニアオリンピックU16熊本県予選会/岱明の結果.md"];
+  }
+  if (urbanChampionshipResultQ) {
+    preferredSources = ["drive-text/記録データベース/2026年度/中学生記録.csv"];
+  }
+  if (kanaguriMemorialResultQ) {
+    preferredSources = ["drive-text/大会/2026年度/0411_第３４回金栗記念選抜陸上中長距離熊本大会/岱明の結果.md"];
+  }
   if (meetResultUrlQ && /ナイター中.?長距離/.test(expanded)) {
     preferredSources = ["drive-text/大会/2026年度/0829_玉名郡ナイター中・長距離記録会/岱明の結果.md"];
   }
@@ -4690,6 +4720,14 @@ export async function answerQuestion(
                 ? mergedCoreRaw.filter(
                     (r) => r.chunk.source.replace(/:\d+$/, "") === preferredSources[0],
                   )
+              : firstLongDistanceResultQ ||
+                nightMeetResultQ ||
+                juniorOlympicResultQ ||
+                urbanChampionshipResultQ ||
+                kanaguriMemorialResultQ
+                ? mergedCoreRaw.filter(
+                    (r) => r.chunk.source.replace(/:\d+$/, "") === preferredSources[0],
+                  )
               : winnerYearTeamQ
                 ? mergedCoreRaw.filter((r) => /winners-by-year\.md(?::\d+)?$/.test(r.chunk.source))
               : mergedCoreRaw;
@@ -4708,7 +4746,12 @@ export async function answerQuestion(
       eveningPracticeScheduleQ ||
       namedTeamTotalTimeQ ||
       genericWinnerMarginQ ||
-      cityRecordResultQ
+      cityRecordResultQ ||
+      firstLongDistanceResultQ ||
+      nightMeetResultQ ||
+      juniorOlympicResultQ ||
+      urbanChampionshipResultQ ||
+      kanaguriMemorialResultQ
         ? 0
         : RETRIEVAL_BUDGET.neighborRadius,
     maxExtra:
@@ -4719,7 +4762,12 @@ export async function answerQuestion(
       eveningPracticeScheduleQ ||
       namedTeamTotalTimeQ ||
       genericWinnerMarginQ ||
-      cityRecordResultQ
+      cityRecordResultQ ||
+      firstLongDistanceResultQ ||
+      nightMeetResultQ ||
+      juniorOlympicResultQ ||
+      urbanChampionshipResultQ ||
+      kanaguriMemorialResultQ
         ? 0
         : RETRIEVAL_BUDGET.neighborMaxExtra,
     query: expanded,

@@ -798,6 +798,72 @@ describe("QA precision regressions", () => {
     expect(result.text).toContain("中止");
   });
 
+  it("routes the first long-distance meet result to its result note", async () => {
+    const result = await ask("第1回熊本県長距離記録会の結果は？");
+    expect(result.sources).toEqual([
+      "drive-text/大会/2026年度/0509_第１回熊本県長距離記録会/岱明の結果.md",
+    ]);
+  });
+
+  it("routes the first long-distance meet result link to its result note", async () => {
+    const result = await ask("第1回熊本県長距離記録会の結果リンクは？");
+    expect(result.sources).toEqual([
+      "drive-text/大会/2026年度/0509_第１回熊本県長距離記録会/岱明の結果.md",
+    ]);
+  });
+
+  it("routes an unqualified night-meet result to the full result sheet", async () => {
+    const result = await ask("玉名郡ナイター中長距離の結果は？");
+    expect(result.sources).toEqual([
+      "drive-text/大会/2026年度/0829_玉名郡ナイター中・長距離記録会/全結果.md",
+    ]);
+  });
+
+  it("keeps a night-meet result lookup on the full result sheet", async () => {
+    const result = await ask("ナイター中長距離記録会の結果一覧は？");
+    expect(result.sources).toEqual([
+      "drive-text/大会/2026年度/0829_玉名郡ナイター中・長距離記録会/全結果.md",
+    ]);
+  });
+
+  it("routes a generic junior Olympic result to its result note", async () => {
+    const result = await ask("ジュニアオリンピック熊本県予選の結果は？");
+    expect(result.sources).toEqual([
+      "drive-text/大会/2026年度/0829_ジュニアオリンピックU16熊本県予選会/岱明の結果.md",
+    ]);
+  });
+
+  it("routes an urban championship result to the record database", async () => {
+    const result = await ask("全九州都市対抗の結果は？");
+    expect(result.sources).toEqual(["drive-text/記録データベース/2026年度/中学生記録.csv"]);
+  });
+
+  it("routes a Kanakuri Memorial result to its result note", async () => {
+    const result = await ask("金栗記念の岱明結果は？");
+    expect(result.sources).toEqual([
+      "drive-text/大会/2026年度/0411_第３４回金栗記念選抜陸上中長距離熊本大会/岱明の結果.md",
+    ]);
+  });
+
+  it("routes the first long-distance meet official result to its result note", async () => {
+    const result = await ask("第1回熊本県長距離記録会の公式結果は？");
+    expect(result.sources).toEqual([
+      "drive-text/大会/2026年度/0509_第１回熊本県長距離記録会/岱明の結果.md",
+    ]);
+  });
+
+  it("routes a junior Olympic result link to its result note", async () => {
+    const result = await ask("ジュニアオリンピック熊本県予選の結果リンクは？");
+    expect(result.sources).toEqual([
+      "drive-text/大会/2026年度/0829_ジュニアオリンピックU16熊本県予選会/岱明の結果.md",
+    ]);
+  });
+
+  it("routes a city championship result link to the record database", async () => {
+    const result = await ask("全九州都市対抗の結果リンクは？");
+    expect(result.sources).toEqual(["drive-text/記録データベース/2026年度/中学生記録.csv"]);
+  });
+
   it("answers Norwegian 45/15 template questions from the method ADR", async () => {
     const result = await ask("norwegian-45-15テンプレは何のセッション？");
     expect(result.sources).toEqual(["repo-docs/adr/002-norwegian-method-integration.md"]);
