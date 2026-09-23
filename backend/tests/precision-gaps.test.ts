@@ -2173,4 +2173,68 @@ describe("QA precision regressions", () => {
     expect(result.sources).toEqual(["drive-text/大会/2026年度/1212_第５回熊本県長距離記録会/概要.md"]);
     expect(result.text).toContain("熊本県長距離記録会");
   });
+
+  it("routes the short Kumamoto city record-meet result to the record database", async () => {
+    const result = await ask("熊本市記録会の結果");
+    expect(result.sources).toEqual(["drive-text/記録データベース/2026年度/中学生記録.csv"]);
+  });
+
+  it("routes the partially abbreviated Kumamoto city record-meet result to the database", async () => {
+    const result = await ask("熊本市陸上記録会の結果");
+    expect(result.sources).toEqual(["drive-text/記録データベース/2026年度/中学生記録.csv"]);
+  });
+
+  it("routes a relative-date practice-meet result to the latest practice note", async () => {
+    const result = await askAt("昨日の練習会の結果", "2026-09-23T12:00:00+09:00");
+    expect(result.sources).toEqual(["drive-text/練習/玉名市練習会/2026-09-22.md"]);
+    expect(result.text).toContain("女子1000m×2本");
+  });
+
+  it("keeps an unqualified Daiming Aragyoku result on the team digest", async () => {
+    const result = await ask("岱明の荒玉駅伝の結果");
+    expect(result.sources).toEqual(["out-analysis/aragyoku-teams/岱明.md"]);
+    expect(result.text).toContain("2025年荒玉駅伝");
+  });
+
+  it("routes a dated but venue-omitted practice-meet result to the practice note", async () => {
+    const result = await ask("9月22日の練習会の結果");
+    expect(result.sources).toEqual(["drive-text/練習/玉名市練習会/2026-09-22.md"]);
+    expect(result.text).toContain("女子1000m×2本");
+  });
+
+  it("routes an unqualified practice-meet result link to the practice note", async () => {
+    const result = await ask("玉名市練習会の結果リンク");
+    expect(result.sources).toEqual(["drive-text/練習/玉名市練習会/2026-09-22.md"]);
+    expect(result.text).toContain("女子1000m×2本");
+  });
+
+  it("routes an unqualified practice-meet official link to the practice note", async () => {
+    const result = await ask("玉名市練習会の公式リンク");
+    expect(result.sources).toEqual(["drive-text/練習/玉名市練習会/2026-09-22.md"]);
+    expect(result.text).toContain("sites.google.com/view/tamariku");
+  });
+
+  it("routes a relative-date practice-meet site query to the practice note", async () => {
+    const result = await askAt("昨日の練習会のサイト", "2026-09-23T12:00:00+09:00");
+    expect(result.sources).toEqual(["drive-text/練習/玉名市練習会/2026-09-22.md"]);
+    expect(result.text).toContain("sites.google.com/view/tamariku");
+  });
+
+  it("routes a generic practice-meet official link to the latest practice note", async () => {
+    const result = await ask("練習会の公式リンク");
+    expect(result.sources).toEqual(["drive-text/練習/玉名市練習会/2026-09-22.md"]);
+    expect(result.text).toContain("sites.google.com/view/tamariku");
+  });
+
+  it("routes a generic practice-meet record query to the latest practice note", async () => {
+    const result = await ask("練習会の記録");
+    expect(result.sources).toEqual(["drive-text/練習/玉名市練習会/2026-09-22.md"]);
+    expect(result.text).toContain("女子1000m×2本");
+  });
+
+  it("routes a short practice-meet time query to the latest practice note", async () => {
+    const result = await ask("練習会のタイム");
+    expect(result.sources).toEqual(["drive-text/練習/玉名市練習会/2026-09-22.md"]);
+    expect(result.text).toContain("3:30 - 3:23");
+  });
 });
