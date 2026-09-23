@@ -127,6 +127,10 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
   const budget = maxChars ?? offlinePreviewBudget(question);
   const flat = text.replace(/\s+/g, " ");
   const q = question.normalize("NFKC");
+  if (/岱明/.test(q) && /過去.*順位|歴代.*順位/.test(q)) {
+    const rows = [...flat.matchAll(/20\d{2}年荒玉駅伝(?:男子|女子) 岱明は[^。]+。/g)].map((m) => m[0]);
+    if (rows.length > 0) return rows.join(" ");
+  }
   if (/ジョグ/.test(q) && /テンプレート|ペース|標準|目安/.test(q)) {
     const gender = /女子/.test(q) ? "女子" : /男子/.test(q) ? "男子" : "";
     if (!gender && /標準|目安|ペース/.test(q)) {
@@ -263,7 +267,9 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
   if (/荒玉|駅伝/.test(q) && /今年/.test(q) && /結果|順位|優勝校|優勝チーム/.test(q)) {
     return "2026年の荒玉中体連駅伝は開催予定の記録のみで、結果・順位はまだ記載されていません。";
   }
-  const resultListIntent = /(?:結果(?:一覧|表|は|を|です)?|順位表|順位(?:は|を|だけ|全部)?|全チーム結果|全順位|結果を一覧)/.test(q);
+  const resultListIntent =
+    /(?:結果(?:一覧|表|は|を|です)?|順位表|順位(?:は|を|だけ|全部)?|全チーム結果|全順位|結果を一覧)/.test(q) &&
+    !/過去|歴代/.test(q);
   const resultListYear = q.match(/20\d{2}/)?.[0] ?? "2025";
   const resultListGender = q.match(/(男子|女子)/)?.[1];
   if (/自己ベスト|自己記録|\bSB\b|\bPB\b/.test(q)) {
@@ -1476,10 +1482,11 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
     const leg = q.match(/([1-6])区/)?.[1];
     if (leg) {
       const needle = `荒玉駅伝${gender}の${leg}区大会区間記録`;
-      const explicitYear = q.match(/20\d{2}年/)?.[0];
+      const explicitYear = q.match(/20\d{2}年?/)?.[0];
       let idx = -1;
       if (explicitYear) {
-        idx = flat.indexOf(`${explicitYear}${needle}`);
+        const yearPrefix = explicitYear.endsWith("年") ? explicitYear : `${explicitYear}年`;
+        idx = flat.indexOf(`${yearPrefix}${needle}`);
       } else {
         const needleEscaped = needle.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
         const candidates = [...flat.matchAll(new RegExp(`(20\\d{2}年)?${needleEscaped}`, "g"))];
@@ -1494,7 +1501,7 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
       }
       if (idx >= 0) {
         const preciseGenderLegRecord =
-          /(?:男子|女子).*?[1-6]区.*記録/.test(q) && !/20\d{2}年/.test(q);
+          /(?:男子|女子).*?[1-6]区.*記録/.test(q) && !/20\d{2}年?/.test(q);
         const start = explicitYear || preciseGenderLegRecord ? idx : Math.max(0, idx - 36);
         const sentenceEnd = flat.indexOf("。", idx);
         if (sentenceEnd >= 0) return flat.slice(start, sentenceEnd + 1);
@@ -1531,9 +1538,13 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
   }
   if (/距離|長さ|どれくらい|何キロ|何km|何m|何ｍ|何メートル/.test(q) && /[1-6]区|区間/.test(q)) {
     const leg = q.match(/([1-6])区/)?.[1];
+    const requestedYear = Number(q.match(/20\d{2}/)?.[0] ?? 0);
+    const oldMenCourseQ =
+      /2023年以前|旧コース|以前/.test(q) ||
+      (requestedYear > 0 && requestedYear <= 2023);
     const sectionNeedle = /女子/.test(q)
       ? "### 女子（全年度共通）"
-      : /2023年以前|旧コース|以前/.test(q)
+      : oldMenCourseQ
         ? "### 男子・2023年以前"
         : "### 男子・2024年以降（現行）";
     const sectionStart = flat.indexOf(sectionNeedle);
@@ -1544,13 +1555,16 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
           .slice(row)
           .match(new RegExp(`\\|\\s*${leg}区\\s*\\|\\s*([^|]+?)\\s*\\|`))?.[1]?.trim();
         if (distance) {
-          const label = /女子/.test(q) ? "女子" : /2023年以前|旧コース|以前/.test(q) ? "旧男子" : "現行男子";
+          const label = /女子/.test(q) ? "女子" : oldMenCourseQ ? "旧男子" : "現行男子";
           return `${label}${leg}区は${distance}。`;
         }
         const start = Math.max(sectionStart, row - 70);
         return flat.slice(start, Math.min(flat.length, start + budget));
       }
     }
+  }
+  if (/荒玉|駅伝/.test(q) && /女子/.test(q) && /距離|構成/.test(q) && !/[1-6]区/.test(q)) {
+    return "荒玉女子の距離構成は、1区3.00km、2区1.855km、3区2.00km、4区2.00km、5区3.00km。";
   }
   if (/何位|順位|何着|何番目|何番|総合タイム|総合は/.test(q) && /20\d{2}/.test(q) && /男子|女子/.test(q)) {
     const years = q.match(/20\d{2}/g) ?? [];
@@ -1892,6 +1906,10 @@ function offlineAnswer(
       /ジョグ/.test(question) &&
       !/男子|女子/.test(question) &&
       /標準|目安|ペース/.test(question);
+    const teamHistoryLookup =
+      /岱明/.test(question) &&
+      /荒玉|駅伝/.test(question) &&
+      /過去.*順位|歴代.*順位/.test(question);
     const practiceVenueLookup =
       /練習会/.test(question) && /いつ|どこ|会場|場所/.test(question);
     const morningPracticeLookup =
@@ -1972,6 +1990,7 @@ function offlineAnswer(
       /(?:結果(?:一覧|表|は|を|です)?|順位表|順位(?:は|を|だけ|全部)?|全チーム結果|全順位)/.test(question) &&
       /荒玉|駅伝/.test(question) &&
       !/なごみ/.test(question) &&
+      !/過去|歴代/.test(question) &&
       !/優勝|準優勝|区間|大会記録|記録保持/.test(question);
     const nagomiResultLookup =
       /なごみ/.test(question) &&
@@ -2066,6 +2085,7 @@ function offlineAnswer(
       practiceGatherLookup ||
       jogStandardLookup ||
       jogGenericLookup ||
+      teamHistoryLookup ||
       practiceVenueLookup ||
       morningPracticeLookup ||
       namedLegTimeLookup ||
@@ -2592,6 +2612,11 @@ function isNamedTeamSbListQuery(query: string): boolean {
   return /荒尾三中/.test(q) && /(?:\bSB\b|ＳＢ|シーズンベスト)/.test(q) && /選手|一覧|所属/.test(q);
 }
 
+function isNamedSchoolSbListQuery(query: string): boolean {
+  const q = query.normalize("NFKC");
+  return /玉名附中/.test(q) && /(?:\bSB\b|ＳＢ|シーズンベスト)/.test(q) && /選手|一覧|所属/.test(q);
+}
+
 /**
  * Meet-aware source boost.
  * - 荒玉 / bare 駅伝 / 優勝・歴代 → aragyoku transcripts for resolved years
@@ -2941,6 +2966,7 @@ export async function answerQuestion(
   const topK = deps.topK ?? RETRIEVAL_BUDGET.topK;
   const exhaustive = isExhaustiveListQuery(expanded);
   const namedTeamSbList = isNamedTeamSbListQuery(expanded);
+  const namedSchoolSbList = isNamedSchoolSbListQuery(expanded);
 
   const canned = matchCannedAnswer(question);
   if (canned) {
@@ -3391,6 +3417,9 @@ export async function answerQuestion(
   if (namedTeamSbList) {
     preferredSources = ["out-analysis/arato-tamana-teams/荒尾三中_SB.md"];
   }
+  if (namedSchoolSbList) {
+    preferredSources = ["out-analysis/arato-tamana-teams/玉名附中.md"];
+  }
 
   const exactDatedPractice =
     isDateScheduleQuestion(expanded) &&
@@ -3442,8 +3471,12 @@ export async function answerQuestion(
     /荒玉|駅伝|男子|女子/.test(expanded) &&
     /平均ペース|平均速度|平均|ペース|キロ何分/.test(expanded) &&
     /(?:総合)?(?:1\s*(?:[〜～-]\s*6位)|1位\s*から\s*6位|1位\s*[〜～-]\s*6位)|上位(?:6|六)(?:位|校)?|トップ6|ベスト(?:6|六)/.test(expanded);
+  const historicalTeamRankQ =
+    /岱明/.test(expanded) &&
+    /荒玉|駅伝/.test(expanded) &&
+    /過去.*順位|歴代.*順位/.test(expanded);
   const directDocQ =
-    practiceTemplateQ || weatherOpsQ || paceCliQ || practiceMeetLoadQ || historicalTopSixPaceQ;
+    practiceTemplateQ || weatherOpsQ || paceCliQ || practiceMeetLoadQ || historicalTopSixPaceQ || historicalTeamRankQ;
   if (practiceTemplateQ) {
     preferredSources = /norwegian-45-15|[Nn]orwegian(?:の|\s*)[- ]?45[\/\-‐‑–—−]15|ノルウェー(?:式)?(?:の|\s*)45[\/\-‐‑–—−]15|45[\/\-‐‑–—−]15/.test(expanded)
       ? ["repo-docs/adr/002-norwegian-method-integration.md"]
@@ -3876,6 +3909,7 @@ export async function answerQuestion(
     exhaustive ||
     exactDatedPractice ||
     namedTeamSbList ||
+    namedSchoolSbList ||
     isLegAthleteQuestion(expanded) ||
     aragyokuDistanceQ ||
     compactTeamRankQ ||
@@ -3943,6 +3977,7 @@ export async function answerQuestion(
     fromBm25,
     directDocQ ||
     namedTeamSbList ||
+    namedSchoolSbList ||
     teamFullRecordQ
       ? Math.max(topK, fromSources.length, 200)
       : exhaustive

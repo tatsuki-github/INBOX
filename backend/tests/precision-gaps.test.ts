@@ -314,4 +314,68 @@ describe("QA precision regressions", () => {
     expect(result.sources).toEqual(["practice/daiming-practice-menus-kpace.md"]);
     expect(result.text).toContain("k/4:45");
   });
+
+  it("selects the requested year for a meet leg record without 年 after the year", async () => {
+    const result = await ask("荒玉駅伝2024男子1区の大会記録は？");
+    expect(result.sources).toEqual(["out-analysis/aragyoku_meet_records.md"]);
+    expect(result.text).toContain("2024年荒玉駅伝男子の1区大会区間記録は9:01");
+    expect(result.text).not.toContain("2025年荒玉駅伝男子");
+  });
+
+  it("selects the old-course distance for a 2023 leg question", async () => {
+    const result = await ask("荒玉男子2023年1区は何km？");
+    expect(result.sources).toContain("docs/aragyoku-ekiden-distance-definitions.md");
+    expect(result.text).toContain("旧男子1区は3.95km");
+  });
+
+  it("answers the generic women distance composition concisely", async () => {
+    const result = await ask("荒玉女子の距離構成は？");
+    expect(result.sources).toContain("docs/aragyoku-ekiden-distance-definitions.md");
+    expect(result.text).toContain("1区3.00km");
+    expect(result.text).toContain("5区3.00km");
+  });
+
+  it("returns the full historical ranking summary for 岱明", async () => {
+    const result = await ask("岱明の荒玉過去順位");
+    expect(result.sources).toEqual(["out-analysis/aragyoku-teams/岱明.md"]);
+    expect(result.text).toContain("2012年荒玉駅伝男子");
+    expect(result.text).toContain("2025年荒玉駅伝男子");
+  });
+
+  it("narrows 玉名附中 SB list wording to its team record digest", async () => {
+    const result = await ask("玉名附中の選手とSB一覧");
+    expect(result.sources).toEqual(["out-analysis/arato-tamana-teams/玉名附中.md"]);
+    expect(result.text).toContain("玉名附中");
+  });
+
+  it("selects the old-course distance when the year is written first", async () => {
+    const result = await ask("2023年荒玉男子1区の距離は？");
+    expect(result.sources).toContain("docs/aragyoku-ekiden-distance-definitions.md");
+    expect(result.text).toContain("旧男子1区は3.95km");
+  });
+
+  it("selects the requested year for a compact meet-record wording", async () => {
+    const result = await ask("2024年荒玉男子1区の大会記録は？");
+    expect(result.sources).toEqual(["out-analysis/aragyoku_meet_records.md"]);
+    expect(result.text).toContain("2024年荒玉駅伝男子の1区大会区間記録は9:01");
+  });
+
+  it("answers a compact year-first meet-record alias", async () => {
+    const result = await ask("2024年荒玉男子1区大会記録は？");
+    expect(result.sources).toEqual(["out-analysis/aragyoku_meet_records.md"]);
+    expect(result.text).toContain("2024年荒玉駅伝男子の1区大会区間記録は9:01");
+  });
+
+  it("answers a women distance composition question with all five legs", async () => {
+    const result = await ask("荒玉駅伝女子の距離構成");
+    expect(result.sources).toContain("docs/aragyoku-ekiden-distance-definitions.md");
+    expect(result.text).toContain("2区1.855km");
+    expect(result.text).toContain("4区2.00km");
+  });
+
+  it("keeps the historical ranking query on the 岱明 digest", async () => {
+    const result = await ask("岱明の荒玉駅伝過去順位は？");
+    expect(result.sources).toEqual(["out-analysis/aragyoku-teams/岱明.md"]);
+    expect(result.text).toContain("2024年荒玉駅伝男子");
+  });
 });
