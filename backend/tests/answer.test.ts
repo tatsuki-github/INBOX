@@ -3745,6 +3745,26 @@ describe("answerQuestion", () => {
     }
   });
 
+  it.each([
+    ["岱明", "1", "村上咲稀"],
+    ["玉高附属", "2", "三吉悠日"],
+    ["天水", "3", "竹原晴美"],
+    ["有明", "2", "溝江杏梨"],
+  ])("keeps 2025 women's leg lookup on the requested team row: %s %s区", async (team, leg, athlete) => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion(`2025年荒玉駅伝女子の${team}の${leg}区は誰？`, {
+      skipRouter: true,
+      defaultYear: 2026,
+      llm: null,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.text).toContain(athlete);
+      expect(result.text).not.toContain("コーチに直接聞いてください");
+    }
+  });
+
   it("routes a named 1500m SB to the athlete digest", async () => {
     resetRetrieverCache();
     resetKgCache();
