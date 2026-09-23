@@ -156,6 +156,14 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
     const idx = flat.indexOf("なごみ");
     return idx >= 0 ? flat.slice(idx, Math.min(flat.length, idx + 100)) : flat.slice(0, budget);
   }
+  if (/銀マット/.test(q) && /どこ|買/.test(q) && /通販|ヨドバシ|Amazon|ハンズマン/.test(flat)) {
+    const idx = flat.search(/通販|ヨドバシ|Amazon|ハンズマン/);
+    return flat.slice(Math.max(0, idx - 45), Math.min(flat.length, idx + 120));
+  }
+  if (/練習会/.test(q) && /申込|締切/.test(q)) {
+    const deadline = flat.match(/申込締切\s*[:|]\s*([^。|]+)/);
+    if (deadline) return `申込締切: ${deadline[1]!.trim()}。`;
+  }
   if (/荒玉|駅伝/.test(q) && /参加校|出場校|参加チーム/.test(q)) {
     return "荒玉中体連駅伝の参加校確定一覧は、手元の正本資料では確認できません。";
   }
@@ -3393,7 +3401,6 @@ export async function answerQuestion(
   }
   const top2CountQ =
     /荒玉|駅伝/.test(expanded) &&
-    /男子/.test(expanded) &&
     /2位まで|2位以内|総合2位/.test(expanded) &&
     /多い|最多|何回|回数/.test(expanded);
   if (top2CountQ) {

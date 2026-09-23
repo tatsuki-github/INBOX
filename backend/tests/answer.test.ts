@@ -3763,6 +3763,22 @@ describe("answerQuestion", () => {
     }
   });
 
+  it("routes a genderless top-two count question to the count digest", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("荒玉駅伝で総合2位以内になった回数が多い学校は？玉名は何回？", {
+      skipRouter: true,
+      defaultYear: 2026,
+      llm: null,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.sources[0]).toBe("out-analysis/aragyoku_top2_finish_counts.md");
+      expect(result.text).toContain("玉名");
+      expect(result.text).not.toContain("コーチに直接聞いてください");
+    }
+  });
+
   it("finds the historical 荒玉男子 runner-up year for a named school", async () => {
     resetRetrieverCache();
     resetKgCache();
