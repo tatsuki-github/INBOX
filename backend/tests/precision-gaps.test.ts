@@ -3015,4 +3015,64 @@ describe("QA precision regressions", () => {
     expect(result.text).toContain("1500m 4:41.70");
   });
 
+  it("answers an unqualified named record query", async () => {
+    const result = await ask("原田はなの記録は？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("1500m 4:40.44");
+  });
+
+  it("answers an unqualified named time query", async () => {
+    const result = await ask("原田はなのタイムは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("3km 10:39.00");
+  });
+
+  it("answers a second named record query", async () => {
+    const result = await ask("小脇あかりの記録は？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("1500m 4:41.70");
+  });
+
+  it("answers a named record query for a male athlete", async () => {
+    const result = await ask("江口大尊の記録は？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("3000m 9:04.46");
+  });
+
+  it("answers a named time query for a female athlete", async () => {
+    const result = await ask("税所由羽のタイムは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("800m 2:25.75");
+  });
+
+  it("answers a named record query with honorific", async () => {
+    const result = await ask("原田はなさんの記録は？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("800m 2:20.81");
+  });
+
+  it("answers a named record query with school context", async () => {
+    const result = await ask("江口大尊 荒尾三中 記録");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("3000m 9:04.46");
+  });
+
+  it("answers a named record query with five-kilometre data", async () => {
+    const result = await ask("村上葉侑の記録は？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("5km 17:18.00");
+  });
+
+  it("answers a second named time query", async () => {
+    const result = await ask("小脇あかりのタイム");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("1500m 4:41.70");
+  });
+
+  it("answers a second named record-time query", async () => {
+    const result = await ask("村上葉侑のタイムは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("3000m 9:44.02");
+  });
+
 });

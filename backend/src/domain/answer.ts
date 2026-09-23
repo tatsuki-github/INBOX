@@ -465,11 +465,13 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
   const resultListYear = q.match(/20\d{2}/)?.[0] ?? "2025";
   const resultListGender = q.match(/(男子|女子)/)?.[1];
   const compactAthleteRecord =
-    extractAthleteNameHints(q).length > 0 &&
+    hasNonTeamAthleteNameHint(q) &&
     /800(?:m|ｍ)?|1500(?:m|ｍ)?|3000(?:m|ｍ)?|5000(?:m|ｍ)?|3\s*km|5\s*km/.test(q) &&
     /秒|分|タイム|記録|ベスト|SB|PB/.test(q);
   if (/自己ベスト|自己記録|\bSB\b|\bPB\b/.test(q) || compactAthleteRecord ||
-      (extractAthleteNameHints(q).length > 0 && /ベスト/.test(q))) {
+      (hasNonTeamAthleteNameHint(q) && /ベスト/.test(q)) ||
+      (hasNonTeamAthleteNameHint(q) && /記録|タイム/.test(q) &&
+        !/区間|大会|駅伝|結果|練習会|全記録|所属選手|記録一覧/.test(q))) {
     const name = extractAthleteNameHints(q).find((hint) => new RegExp(`${hint.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")},[^,]+,[^,]+,[^,]+,`).test(flat)) ??
       extractAthleteNameHints(q)[0] ?? q.match(/[\p{Script=Han}]{2,8}/u)?.[0];
     if (name) {
@@ -2325,12 +2327,12 @@ function offlineAnswer(
       !/集合/.test(question);
     const namedSelfBestLookup =
       (/自己ベスト|自己記録|SB|PB|ベスト/.test(question) ||
-        (extractAthleteNameHints(question).length > 0 &&
+      (hasNonTeamAthleteNameHint(question) &&
           /800(?:m|ｍ)?|1500(?:m|ｍ)?|3000(?:m|ｍ)?|5000(?:m|ｍ)?|3\s*km|5\s*km/.test(question) &&
           /秒|分|タイム|記録|ベスト/.test(question))) &&
-      extractAthleteNameHints(question).length > 0 &&
+      hasNonTeamAthleteNameHint(question) &&
       !(/荒尾三中/.test(question) && /選手|一覧/.test(question)) &&
-      !/荒玉|駅伝|平均|ペース/.test(question);
+      !/荒玉|駅伝|平均|ペース|区間|大会|結果|練習会|全記録|所属選手|記録一覧/.test(question);
     const staffOpsLookup = /朝練|地点分担/.test(question);
     const coachingLookup =
       /女子荒玉|総合タイム目安|メンバー目安|トラック距離|換算|43分切り|区間配分|鬼ごっこ|手押し車|犬歩き|補強|駅伝前|何チーム.*なごみ|なごみ.*何チーム|参加予定.*何人|何人.*参加予定/.test(
@@ -2855,9 +2857,9 @@ function boostAthleteRecordSources(query: string, baseSources: string[]): string
   // 氏名付きの自己ベストはランキング表ではなく SB 正本から引く。
   // ランキング資料は短い名前の一致で別選手を拾うため、個人照会では後段に回す。
   const namedAthleteSelfBestQ =
-    /自己ベスト|自己記録|\bSB\b|\bPB\b|ベスト/.test(q) &&
-    extractAthleteNameHints(q).length > 0 &&
-    !/荒玉|駅伝|平均|ペース/.test(q);
+    /自己ベスト|自己記録|\bSB\b|\bPB\b|ベスト|記録|タイム/.test(q) &&
+    hasNonTeamAthleteNameHint(q) &&
+    !/荒玉|駅伝|平均|ペース|区間|大会|結果|練習会|全記録|所属選手|記録一覧/.test(q);
   if (namedAthleteSelfBestQ) {
     return ["sb/中学生SB.csv"];
   }
@@ -3029,6 +3031,11 @@ function isNamedTeamSbListQuery(query: string): boolean {
   const q = query.normalize("NFKC");
   const individualRecord = /800(?:m|ｍ)?|1500(?:m|ｍ)?|3000(?:m|ｍ)?|5000(?:m|ｍ)?|3\s*km|5\s*km/.test(q) && !/選手一覧|所属選手|全記録|記録一覧/.test(q);
   return /荒尾三中/.test(q) && /(?:\bSB\b|ＳＢ|シーズンベスト|選手|一覧|所属)/.test(q) && /選手|一覧|所属/.test(q) && !individualRecord;
+}
+
+function hasNonTeamAthleteNameHint(query: string): boolean {
+  const team = /^(?:荒尾三中|荒尾第四中|荒尾海陽中|南関中|玉名中|天水中|岱明中|長洲中|玉陵中|玉南中|玉名附中|玉名付属中?|玉名附属|玉高附属)$/u;
+  return extractAthleteNameHints(query).some((hint) => !team.test(hint));
 }
 
 function isNamedSchoolSbListQuery(query: string): boolean {
@@ -4324,12 +4331,12 @@ export async function answerQuestion(
     if (team) preferredSources = ["out-analysis/aragyoku-teams/" + team + ".md"];
   }
   const namedSelfBestQ =
-    (/自己ベスト|自己記録|SB|PB|ベスト/.test(expanded) ||
-      (extractAthleteNameHints(expanded).length > 0 &&
+    (/自己ベスト|自己記録|SB|PB|ベスト|記録|タイム/.test(expanded) ||
+      (hasNonTeamAthleteNameHint(expanded) &&
         /800(?:m|ｍ)?|1500(?:m|ｍ)?|3000(?:m|ｍ)?|5000(?:m|ｍ)?|3\s*km|5\s*km/.test(expanded) &&
         /秒|分|タイム|記録|ベスト/.test(expanded))) &&
-    extractAthleteNameHints(expanded).length > 0 &&
-    !/荒玉|駅伝|平均|ペース/.test(expanded);
+    hasNonTeamAthleteNameHint(expanded) &&
+    !/荒玉|駅伝|平均|ペース|区間|大会|結果|練習会|全記録|所属選手|記録一覧/.test(expanded);
   if (namedSelfBestQ && !namedSchoolList && !namedSchoolSbList) {
     preferredSources = ["sb/中学生SB.csv"];
   }
