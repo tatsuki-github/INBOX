@@ -146,12 +146,14 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
     }
     return "荒玉男子の距離構成は、2023年以前が1区3.95km・2区3.05km・3区2.855km・4区2.855km・5区3.00km・6区4.00km、2024年以降が1区3.00km・2区2.855km・3区3.00km・4区3.00km・5区2.855km・6区3.00km。";
   }
-  if (/玉名附中|玉名付属中?|玉名附属|玉高附属/.test(q) && /選手|一覧|所属|SB|シーズンベスト/.test(q)) {
-    const idx = flat.indexOf("# 玉名附中");
-    if (idx >= 0) return flat.slice(idx, Math.min(flat.length, idx + budget));
-  }
-  if (/荒尾三中/.test(q) && /選手|一覧|所属|SB|シーズンベスト/.test(q)) {
-    const idx = flat.indexOf("# 荒尾三中 選手・SB一覧");
+  const schoolListName = ["荒尾三中", "荒尾第四中", "荒尾海陽中", "南関中", "玉名中", "天水中", "岱明中", "長洲中", "玉陵中", "玉南中", "玉名附中", "玉名付属中", "玉名附属", "玉高附属"].find((name) => q.includes(name));
+  if (schoolListName && /選手|一覧|所属|SB|シーズンベスト/.test(q)) {
+    const title = schoolListName === "荒尾三中"
+      ? "# 荒尾三中 選手・SB一覧"
+      : /玉名附中|玉名付属中?|玉名附属|玉高附属/.test(schoolListName)
+        ? "# 玉名附中"
+        : `# ${schoolListName}`;
+    const idx = flat.indexOf(title);
     if (idx >= 0) return flat.slice(idx, Math.min(flat.length, idx + budget));
   }
   if (/岱明/.test(q) && /過去.*順位|歴代.*順位/.test(q)) {
@@ -1154,6 +1156,14 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
         : awardRows.sort((a, b) => Number(b[1]) - Number(a[1]))[0];
       if (selected) return selected[0]!;
     }
+    if (years.length > 0 && gender && !leg) {
+      const heading = `### ${years[0]}年${gender}`;
+      const idx = flat.indexOf(heading);
+      if (idx >= 0) {
+        const next = flat.indexOf("### ", idx + heading.length);
+        return flat.slice(idx, next >= 0 ? next : Math.min(flat.length, idx + budget));
+      }
+    }
     if (years.length === 0 && gender) {
       const headings = [
         ...flat.matchAll(new RegExp(`### (20\\d{2})年${gender}`, "g")),
@@ -1940,7 +1950,7 @@ function offlineAnswer(
       /平均ペース|平均速度|平均|ペース|キロ何分/.test(question) &&
       /上位(?:6|六)(?:位|校)?|トップ6|ベスト(?:6|六)/.test(question);
     const schoolListLookup =
-      /玉名附中|玉名付属中?|玉名附属|玉高附属/.test(question) &&
+      /荒尾三中|荒尾第四中|荒尾海陽中|南関中|玉名中|天水中|岱明中|長洲中|玉陵中|玉南中|玉名附中|玉名付属中?|玉名附属|玉高附属/.test(question) &&
       /選手|一覧|所属|SB|シーズンベスト/.test(question);
     const paceCalculationLookup =
       /荒玉|駅伝/.test(question) &&
@@ -2684,6 +2694,12 @@ function isNamedSchoolSbListQuery(query: string): boolean {
   return /玉名附中|玉名付属中?|玉名附属|玉高附属/.test(q) && /(?:\bSB\b|ＳＢ|シーズンベスト|選手|一覧|所属)/.test(q) && /選手|一覧|所属/.test(q);
 }
 
+function isNamedSchoolListQuery(query: string): boolean {
+  const q = query.normalize("NFKC");
+  return /荒尾三中|荒尾第四中|荒尾海陽中|南関中|玉名中|天水中|岱明中|長洲中|玉陵中|玉南中|玉名附中|玉名付属中?|玉名附属|玉高附属/.test(q) &&
+    /選手|一覧|所属|SB|シーズンベスト/.test(q);
+}
+
 /**
  * Meet-aware source boost.
  * - 荒玉 / bare 駅伝 / 優勝・歴代 → aragyoku transcripts for resolved years
@@ -3034,6 +3050,7 @@ export async function answerQuestion(
   const exhaustive = isExhaustiveListQuery(expanded);
   const namedTeamSbList = isNamedTeamSbListQuery(expanded);
   const namedSchoolSbList = isNamedSchoolSbListQuery(expanded);
+  const namedSchoolList = isNamedSchoolListQuery(expanded);
 
   const canned = matchCannedAnswer(question);
   const technicalDocQuestion = /Daniels\s+calculator|daniels_(?:pace|calculator)|VDOT.*Tペース|Tペース.*VDOT/i.test(question);
@@ -3487,6 +3504,14 @@ export async function answerQuestion(
   if (namedSchoolSbList) {
     preferredSources = ["out-analysis/arato-tamana-teams/玉名附中.md"];
   }
+  if (namedSchoolList) {
+    const school = /玉名附中|玉名付属中?|玉名附属|玉高附属/.test(expanded)
+      ? "玉名附中"
+      : /荒尾三中/.test(expanded)
+        ? "荒尾三中_SB"
+        : ["荒尾第四中", "荒尾海陽中", "南関中", "玉名中", "天水中", "岱明中", "長洲中", "玉陵中", "玉南中"].find((name) => expanded.includes(name));
+    if (school) preferredSources = [`out-analysis/arato-tamana-teams/${school}.md`];
+  }
 
   const exactDatedPractice =
     isDateScheduleQuestion(expanded) &&
@@ -3874,7 +3899,7 @@ export async function answerQuestion(
   const aritaCoachingQ =
     /女子荒玉|総合タイム目安|メンバー目安|トラック距離|3km.*換算|1500.*換算|換算|43分切り|区間配分|鬼ごっこ|駅伝前|何チーム.*なごみ|なごみ.*何チーム|参加予定.*何人|何人.*参加予定/.test(
       expanded,
-    );
+    ) && !/区間賞|区間順/.test(expanded);
   if (aritaCoachingQ) {
     preferredSources = ["out-analysis/line-chats/arita-taisho.md"];
   }
@@ -3981,6 +4006,7 @@ export async function answerQuestion(
     exactDatedPractice ||
     namedTeamSbList ||
     namedSchoolSbList ||
+    namedSchoolList ||
     isLegAthleteQuestion(expanded) ||
     aragyokuDistanceQ ||
     compactTeamRankQ ||
@@ -4049,6 +4075,7 @@ export async function answerQuestion(
     directDocQ ||
     namedTeamSbList ||
     namedSchoolSbList ||
+    namedSchoolList ||
     teamFullRecordQ
       ? Math.max(topK, fromSources.length, 200)
       : exhaustive

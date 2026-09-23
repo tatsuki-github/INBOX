@@ -564,4 +564,67 @@ describe("QA precision regressions", () => {
     expect(result.text).toContain("2024年男子・区間別上位");
     expect(result.text).toContain("2024年荒玉駅伝男子1区の区間1位");
   });
+
+  it("routes 南関中 player lists to the school digest", async () => {
+    const result = await ask("南関中の選手一覧");
+    expect(result.sources).toEqual(["out-analysis/arato-tamana-teams/南関中.md"]);
+    expect(result.text).toContain("# 南関中 記録一覧");
+  });
+
+  it("routes 南関中 SB aliases to the school digest", async () => {
+    const result = await ask("南関中SB一覧");
+    expect(result.sources).toEqual(["out-analysis/arato-tamana-teams/南関中.md"]);
+    expect(result.text).toContain("# 南関中 記録一覧");
+  });
+
+  it("routes 天水中 player lists to the school digest", async () => {
+    const result = await ask("天水中の選手一覧");
+    expect(result.sources).toEqual(["out-analysis/arato-tamana-teams/天水中.md"]);
+    expect(result.text).toContain("# 天水中 記録一覧");
+  });
+
+  it("routes 玉名中 player lists to the school digest", async () => {
+    const result = await ask("玉名中の選手一覧");
+    expect(result.sources).toEqual(["out-analysis/arato-tamana-teams/玉名中.md"]);
+    expect(result.text).toContain("# 玉名中 記録一覧");
+  });
+
+  it("routes 岱明中 player lists away from LINE transcripts", async () => {
+    const result = await ask("岱明中の選手一覧");
+    expect(result.sources).toEqual(["out-analysis/arato-tamana-teams/岱明中.md"]);
+    expect(result.text).toContain("# 岱明中 記録一覧");
+    expect(result.text).not.toContain("保護者");
+  });
+
+  it("routes 玉陵中 player lists to the school digest", async () => {
+    const result = await ask("玉陵中の選手一覧");
+    expect(result.sources).toEqual(["out-analysis/arato-tamana-teams/玉陵中.md"]);
+    expect(result.text).toContain("# 玉陵中 記録一覧");
+  });
+
+  it("routes 荒尾第四中 player lists to the school digest", async () => {
+    const result = await ask("荒尾第四中の選手一覧");
+    expect(result.sources).toEqual(["out-analysis/arato-tamana-teams/荒尾第四中.md"]);
+    expect(result.text).toContain("# 荒尾第四中 記録一覧");
+  });
+
+  it("starts a year-and-gender award summary at the requested section", async () => {
+    const result = await ask("荒玉駅伝2024女子区間賞");
+    expect(result.sources).toEqual(["out-analysis/aragyoku_leg_awards.md"]);
+    expect(result.text).toContain("### 2024年女子");
+    expect(result.text).not.toContain("内野遥翔");
+  });
+
+  it("does not route a female leg-award query to coaching notes", async () => {
+    const result = await ask("女子荒玉1区区間賞");
+    expect(result.sources).toEqual(["out-analysis/aragyoku_leg_awards.md"]);
+    expect(result.text).toContain("2025年荒玉駅伝女子1区の区間1位は坂井優花");
+  });
+
+  it("keeps a compact female 2024 first-leg award alias exact", async () => {
+    const result = await ask("2024荒玉女子1区区間賞");
+    expect(result.sources).toEqual(["out-analysis/aragyoku_leg_awards.md"]);
+    expect(result.text).toContain("2024年荒玉駅伝女子1区の区間1位");
+    expect(result.text).not.toContain("2024年荒玉駅伝女子2区");
+  });
 });
