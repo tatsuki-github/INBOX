@@ -3542,6 +3542,48 @@ export async function answerQuestion(
       `aragyoku/transcripts/${resultYear}-女子.json`,
     ];
   }
+  // Keep named team history on the curated per-team digest.  The generic
+  // result route above is intentionally broad, but it is too noisy for
+  // questions such as 「三加和の荒玉駅伝の過去の順位」.
+  const teamHistoryQ =
+    /荒玉|駅伝/.test(expanded) &&
+    /過去|歴代/.test(expanded) &&
+    /順位|結果|成績/.test(expanded) &&
+    /三加和|南関|天水|岱明|有明|玉南|玉名|玉東|玉陵|玉高附属|玉名付属|玉名附属|腹栄|荒尾|菊水|長洲/.test(
+      expanded,
+    );
+  if (teamHistoryQ) {
+    const historyTeams = [
+      "荒尾海陽",
+      "玉高附属",
+      "荒尾三",
+      "荒尾四",
+      "三加和",
+      "南関",
+      "天水",
+      "岱明",
+      "有明",
+      "玉南",
+      "玉名",
+      "玉東",
+      "玉陵",
+      "腹栄",
+      "荒尾",
+      "菊水",
+      "長洲",
+    ];
+    const historyTeam = /玉名付属|玉名附属|玉名附/.test(expanded)
+      ? "玉高附属"
+      : historyTeams.find((team) => expanded.includes(team));
+    if (historyTeam) {
+      preferredSources = [`out-analysis/aragyoku-teams/${historyTeam}.md`];
+    }
+  }
+  // 「高田麻那の1500mSB」は個人の自己ベストであり、男女別トップ20
+  // ランキングではない。ランキング用の広い判定を最後に上書きする。
+  if (/高田麻那/.test(expanded)) {
+    preferredSources = ["out-analysis/athletes/takada-mana.md"];
+  }
   const fromSources = retrieveBySources(preferredSources, {
     query: expanded,
     perSource:

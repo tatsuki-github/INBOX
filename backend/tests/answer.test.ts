@@ -3729,6 +3729,38 @@ describe("answerQuestion", () => {
     }
   });
 
+  it("routes named team history to the per-team digest", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("三加和の荒玉駅伝の過去の順位を教えて", {
+      skipRouter: true,
+      defaultYear: 2026,
+      llm: null,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.sources[0]).toContain("out-analysis/aragyoku-teams/三加和.md");
+      expect(result.text).toContain("三加和");
+      expect(result.text).not.toContain("コーチに直接聞いてください");
+    }
+  });
+
+  it("routes a named 1500m SB to the athlete digest", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("高田麻那の1500mSBは？", {
+      skipRouter: true,
+      defaultYear: 2026,
+      llm: null,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.sources[0]).toContain("out-analysis/athletes/takada-mana.md");
+      expect(result.text).toMatch(/5:21\.76|文徳/);
+      expect(result.text).not.toContain("コーチに直接聞いてください");
+    }
+  });
+
   it("answers 荒玉 2位まで school counts from top2 digest", async () => {
     resetRetrieverCache();
     resetKgCache();
