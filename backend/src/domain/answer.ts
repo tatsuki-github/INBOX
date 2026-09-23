@@ -156,6 +156,18 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
     const idx = flat.indexOf(title);
     if (idx >= 0) return flat.slice(idx, Math.min(flat.length, idx + budget));
   }
+  if (/地点分担/.test(q)) {
+    const match = flat.match(/(?:質問向け)?地点分担（荒玉）\*{0,2}:\s*[^。]+。/);
+    if (match) return match[0];
+  }
+  if (/手押し車|犬歩き/.test(q)) {
+    const match = flat.match(/(?:有田先輩の補強メニューは|手押し車・犬歩き)[^。]+。/);
+    if (match) return match[0];
+  }
+  if (/なごみ/.test(q) && /何チーム|参加予定/.test(q)) {
+    const match = flat.match(/なごみ[^。]*男女2チームずつ[^。]*。/);
+    if (match) return match[0];
+  }
   if (/岱明/.test(q) && /過去.*順位|歴代.*順位/.test(q)) {
     const rows = [...flat.matchAll(/20\d{2}年荒玉駅伝(?:男子|女子) 岱明は[^。]+。/g)].map((m) => m[0]);
     if (rows.length > 0) return rows.join(" ");
@@ -2121,6 +2133,11 @@ function offlineAnswer(
           /秒|分|タイム|記録|ベスト/.test(question))) &&
       extractAthleteNameHints(question).length > 0 &&
       !(/荒尾三中/.test(question) && /選手|一覧/.test(question));
+    const staffOpsLookup = /朝練|地点分担/.test(question);
+    const coachingLookup =
+      /女子荒玉|総合タイム目安|メンバー目安|トラック距離|換算|43分切り|区間配分|鬼ごっこ|手押し車|犬歩き|補強|駅伝前|何チーム.*なごみ|なごみ.*何チーム|参加予定.*何人|何人.*参加予定/.test(
+        question,
+      );
     const women800FastestLookup =
       /女子/.test(question) && /800m|800ｍ/.test(question) && /最速|一番速|速い/.test(question);
     const individualTrackFastestLookup =
@@ -2212,6 +2229,8 @@ function offlineAnswer(
       nagomiDateLookup ||
       nagomiVenueLookup ||
       namedSelfBestLookup ||
+      staffOpsLookup ||
+      coachingLookup ||
       women800FastestLookup ||
       individualTrackFastestLookup ||
       kanaguriVenueLookup ||
@@ -3843,6 +3862,10 @@ export async function answerQuestion(
   const namedAssignmentQ =
     /地点分担|何地点|どの地点|担当地点|地点(?:は|に|です)/.test(expanded) &&
     /熊澤|土山|柴尾|土本/.test(expanded);
+  const staffOpsQ = /朝練|地点分担/.test(expanded);
+  if (staffOpsQ) {
+    preferredSources = ["out-analysis/line-chats/daiming-staff.md"];
+  }
   const farewellScheduleQ =
     /お別れ会/.test(expanded) && /いつ|日程|何時|時間|時刻|予定|日/.test(expanded);
   const matSizeQ =
@@ -3943,7 +3966,7 @@ export async function answerQuestion(
   // Generic words such as 「女子」「換算」「駅伝前」 otherwise let calendar
   // or meet-result chunks win BM25 even though the relevant memo is present.
   const aritaCoachingQ =
-    /女子荒玉|総合タイム目安|メンバー目安|トラック距離|3km.*換算|1500.*換算|換算|43分切り|区間配分|鬼ごっこ|駅伝前|何チーム.*なごみ|なごみ.*何チーム|参加予定.*何人|何人.*参加予定/.test(
+    /女子荒玉|総合タイム目安|メンバー目安|トラック距離|3km.*換算|1500.*換算|換算|43分切り|区間配分|鬼ごっこ|手押し車|犬歩き|補強|駅伝前|何チーム.*なごみ|なごみ.*何チーム|参加予定.*何人|何人.*参加予定/.test(
       expanded,
     ) && !/区間賞|区間順|平均ペース|上位\s*[六6]|トップ\s*[六6]/.test(expanded);
   if (aritaCoachingQ) {
@@ -4055,6 +4078,11 @@ export async function answerQuestion(
     namedSchoolList ||
     yearGenderMeetRecordQ ||
     namedSelfBestQ ||
+    staffOpsQ ||
+    namedAssignmentQ ||
+    matSizeQ ||
+    legDistanceQ ||
+    aritaCoachingQ ||
     isLegAthleteQuestion(expanded) ||
     aragyokuDistanceQ ||
     compactTeamRankQ ||

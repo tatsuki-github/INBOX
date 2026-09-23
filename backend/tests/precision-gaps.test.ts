@@ -930,4 +930,65 @@ describe("QA precision regressions", () => {
     expect(result.sources).toEqual(["out-analysis/2026_women_800m_1500m_pb_school_ranking.md"]);
     expect(result.text).toContain("上位3人平均 2:28.81");
   });
+
+  it("routes 朝練 time questions to the staff memo", async () => {
+    const result = await ask("朝練は何時");
+    expect(result.sources).toEqual(["out-analysis/line-chats/daiming-staff.md"]);
+    expect(result.text).toContain("集合7:20");
+  });
+
+  it("routes 朝練 weekday questions to the staff memo", async () => {
+    const result = await ask("朝練の曜日は？");
+    expect(result.sources).toEqual(["out-analysis/line-chats/daiming-staff.md"]);
+    expect(result.text).toContain("月・火・木・金");
+  });
+
+  it("answers generic 地点分担 from the staff memo summary", async () => {
+    const result = await ask("地点分担は何地点");
+    expect(result.sources).toEqual(["out-analysis/line-chats/daiming-staff.md"]);
+    expect(result.text).toContain("地点分担（荒玉）");
+    expect(result.text).toContain("土山=D地点");
+  });
+
+  it("routes 朝練集合時間 to the staff memo", async () => {
+    const result = await ask("朝練の集合時間");
+    expect(result.sources).toEqual(["out-analysis/line-chats/daiming-staff.md"]);
+    expect(result.text).toContain("集合7:20");
+  });
+
+  it("routes 手押し車 questions to the coaching memo only", async () => {
+    const result = await ask("手押し車の補強メニュー");
+    expect(result.sources).toEqual(["out-analysis/line-chats/arita-taisho.md"]);
+    expect(result.text).toContain("手押し車・犬歩き");
+  });
+
+  it("routes 犬歩き questions to the coaching memo only", async () => {
+    const result = await ask("犬歩きの補強");
+    expect(result.sources).toEqual(["out-analysis/line-chats/arita-taisho.md"]);
+    expect(result.text).toContain("手押し車・犬歩き");
+  });
+
+  it("keeps female 荒玉 member guidance on the coaching memo", async () => {
+    const result = await ask("女子荒玉のメンバー目安");
+    expect(result.sources).toEqual(["out-analysis/line-chats/arita-taisho.md"]);
+    expect(result.text).toContain("女子荒玉は43分切り目安");
+  });
+
+  it("answers the planned なごみ team count concisely", async () => {
+    const result = await ask("なごみは何チーム参加予定");
+    expect(result.sources).toEqual(["out-analysis/line-chats/arita-taisho.md"]);
+    expect(result.text).toContain("なごみは男女2チームずつ");
+  });
+
+  it("keeps 荒玉 leg allocation on the coaching memo", async () => {
+    const result = await ask("荒玉駅伝の区間配分");
+    expect(result.sources).toEqual(["out-analysis/line-chats/arita-taisho.md"]);
+    expect(result.text).toContain("区");
+  });
+
+  it("keeps the shared 2区・5区 distance on the staff memo", async () => {
+    const result = await ask("2区と5区の距離");
+    expect(result.sources).toEqual(["out-analysis/line-chats/daiming-staff.md"]);
+    expect(result.text).toContain("2.855km");
+  });
 });
