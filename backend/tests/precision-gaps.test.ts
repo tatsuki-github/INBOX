@@ -194,4 +194,64 @@ describe("QA precision regressions", () => {
     expect(result.sources).toEqual(["repo-docs/adr/002-norwegian-method-integration.md"]);
     expect(result.text).toMatch(/GZ\/T|45-15|セッション/);
   });
+
+  it("accepts weather JSON wording with a forecast qualifier", async () => {
+    const result = await ask("天気予報JSONはどこ？");
+    expect(result.sources).toEqual(["repo-docs/tamana-weather.md"]);
+    expect(result.text).toContain("tamana-forecast.json");
+  });
+
+  it("accepts a location-prefixed weather JSON question", async () => {
+    const result = await ask("玉名天気のJSONファイルは？");
+    expect(result.sources).toEqual(["repo-docs/tamana-weather.md"]);
+    expect(result.text).toContain("tamana-forecast.json");
+  });
+
+  it("accepts a weather CSV output question without the word 保存先", async () => {
+    const result = await ask("天気のCSVはどこに出る？");
+    expect(result.sources).toEqual(["repo-docs/tamana-weather.md"]);
+    expect(result.text).toContain("tamana-forecast.csv");
+  });
+
+  it("accepts a forecast CSV filename question", async () => {
+    const result = await ask("天気予報CSVファイルは？");
+    expect(result.sources).toEqual(["repo-docs/tamana-weather.md"]);
+    expect(result.text).toContain("tamana-forecast.csv");
+  });
+
+  it("routes Japanese Norwegian 45-15 wording to the method ADR", async () => {
+    const result = await ask("ノルウェー式の45‐15は？");
+    expect(result.sources).toEqual(["repo-docs/adr/002-norwegian-method-integration.md"]);
+    expect(result.text).toMatch(/45-15|GZ\/T|セッション/);
+  });
+
+  it("routes a Japanese Norwegian 45-15 template question to the method ADR", async () => {
+    const result = await ask("ノルウェー式45‐15テンプレは？");
+    expect(result.sources).toEqual(["repo-docs/adr/002-norwegian-method-integration.md"]);
+    expect(result.text).toMatch(/45-15|GZ\/T|テンプレ/);
+  });
+
+  it("answers a male 3360m jog alias", async () => {
+    const result = await ask("男子3360mジョグ目安");
+    expect(result.sources).toEqual(["practice/daiming-practice-menus-kpace.md"]);
+    expect(result.text).toContain("k/4:45");
+  });
+
+  it("accepts best-six kanji wording", async () => {
+    const result = await ask("2024年荒玉男子ベスト六の平均");
+    expect(result.sources).toEqual(["out-analysis/aragyoku_top6_historical_average_pace.md"]);
+    expect(result.text).toContain("3:19.3");
+  });
+
+  it("routes gendered top-six pace questions without the 荒玉 token", async () => {
+    const result = await ask("2024年男子上位6校の平均kmペースは？");
+    expect(result.sources).toEqual(["out-analysis/aragyoku_top6_historical_average_pace.md"]);
+    expect(result.text).toContain("3:19.3");
+  });
+
+  it("accepts a best-six pace alias with the 荒玉 token", async () => {
+    const result = await ask("2024年荒玉男子ベスト六平均ペースは？");
+    expect(result.sources).toEqual(["out-analysis/aragyoku_top6_historical_average_pace.md"]);
+    expect(result.text).toContain("3:19.3");
+  });
 });

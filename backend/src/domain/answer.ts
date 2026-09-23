@@ -135,6 +135,9 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
     if (gender === "女子" && /2800m|2\.8(?:0)?km/.test(q)) {
       return "女子ジョグ 2800m は k/4:45（標準例）。";
     }
+    if (gender === "男子" && /3360m|3\.36km/.test(q)) {
+      return "男子ジョグ 3360m は k/4:45（標準例）。";
+    }
     if (gender && /標準|目安/.test(q) && !/2800m|2\.8(?:0)?km|3360m|3\.36km/.test(q)) {
       return `${gender}ジョグのペース目安は k/4:45（メニュー例）。`;
     }
@@ -145,7 +148,7 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
     const idx = flat.search(/norwegian-45-15|45[\/\-‐‑–—−]15/);
     if (idx >= 0) return flat.slice(Math.max(0, idx - 80), Math.min(flat.length, idx + 260));
   }
-  if (/天気データ|天気の更新|更新スクリプト|更新.*コマンド|天気.*コマンド|天気予報の保存先|予報ファイル|天気ファイル|天気(?:JSON|CSV)|update_tamana_weather|Open-Meteo|tamana-forecast|tamana-weather/.test(q)) {
+  if (/天気データ|天気の更新|更新スクリプト|更新.*コマンド|天気.*コマンド|天気予報の保存先|予報ファイル|天気ファイル|天気.*(?:JSON|CSV)|update_tamana_weather|Open-Meteo|tamana-forecast|tamana-weather/.test(q)) {
     const idx = flat.search(/保存先|予報ファイル|update_tamana_weather|Open-Meteo/);
     if (idx >= 0) return flat.slice(Math.max(0, idx - 80), Math.min(flat.length, idx + 260));
   }
@@ -160,7 +163,7 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
   if (
     /荒玉|駅伝/.test(q) &&
     /平均ペース|平均速度|平均|ペース|キロ何分/.test(q) &&
-    /(?:総合)?(?:1\s*(?:[〜～-]\s*6位)|1位\s*から\s*6位|1位\s*[〜～-]\s*6位)|上位(?:6|六)(?:位|校)?|トップ6|ベスト6/.test(q)
+    /(?:総合)?(?:1\s*(?:[〜～-]\s*6位)|1位\s*から\s*6位|1位\s*[〜～-]\s*6位)|上位(?:6|六)(?:位|校)?|トップ6|ベスト(?:6|六)/.test(q)
   ) {
     const year = q.match(/20\d{2}/)?.[0];
     const row = year ? flat.match(new RegExp(`\\|\\s*${year}\\s*\\|[^\\n]{0,260}`)) : null;
@@ -3412,8 +3415,8 @@ export async function answerQuestion(
     (/ジョグ/.test(expanded) && /テンプレート|ペース|女子|男子/.test(expanded)) ||
     practiceJogStandardQ ||
     practiceJogGenericQ ||
-    /norwegian-45-15|[Nn]orwegian(?:の|\s*)[- ]?45[\/\-‐‑–—−]15|45[\/\-‐‑–—−]15.*(?:テンプレ|セッション|GZ|T)|(?:テンプレ|セッション|GZ|T).*45[\/\-‐‑–—−]15/.test(expanded);
-  const weatherOpsQ = /天気データ|天気の更新|更新スクリプト|更新.*コマンド|天気.*コマンド|天気予報の保存先|予報ファイル|天気ファイル|天気(?:JSON|CSV)|update_tamana_weather|Open-Meteo|tamana-forecast|tamana-weather/.test(
+    /norwegian-45-15|[Nn]orwegian(?:の|\s*)[- ]?45[\/\-‐‑–—−]15|ノルウェー(?:式)?(?:の|\s*)45[\/\-‐‑–—−]15|45[\/\-‐‑–—−]15.*(?:テンプレ|セッション|GZ|T)|(?:テンプレ|セッション|GZ|T).*45[\/\-‐‑–—−]15/.test(expanded);
+  const weatherOpsQ = /天気データ|天気の更新|更新スクリプト|更新.*コマンド|天気.*コマンド|天気予報の保存先|予報ファイル|天気ファイル|天気.*(?:JSON|CSV)|update_tamana_weather|Open-Meteo|tamana-forecast|tamana-weather/.test(
     expanded,
   );
   const paceCliQ = /VDOT.*Tペース|Tペース.*VDOT|VDOT.*CLI|CLI.*(?:VDOT|Tペース)|daniels_pace|daniels_calculator/.test(
@@ -3423,14 +3426,13 @@ export async function answerQuestion(
     expanded,
   );
   const historicalTopSixPaceQ =
-    /荒玉|駅伝/.test(expanded) &&
-    /平均ペース|平均速度|平均|ペース|キロ何分/.test(expanded) &&
     /荒玉|駅伝|男子|女子/.test(expanded) &&
-    /(?:総合)?(?:1\s*(?:[〜～-]\s*6位)|1位\s*から\s*6位|1位\s*[〜～-]\s*6位)|上位(?:6|六)(?:位|校)?|トップ6|ベスト6/.test(expanded);
+    /平均ペース|平均速度|平均|ペース|キロ何分/.test(expanded) &&
+    /(?:総合)?(?:1\s*(?:[〜～-]\s*6位)|1位\s*から\s*6位|1位\s*[〜～-]\s*6位)|上位(?:6|六)(?:位|校)?|トップ6|ベスト(?:6|六)/.test(expanded);
   const directDocQ =
     practiceTemplateQ || weatherOpsQ || paceCliQ || practiceMeetLoadQ || historicalTopSixPaceQ;
   if (practiceTemplateQ) {
-    preferredSources = /norwegian-45-15|[Nn]orwegian(?:の|\s*)[- ]?45[\/\-‐‑–—−]15|45[\/\-‐‑–—−]15/.test(expanded)
+    preferredSources = /norwegian-45-15|[Nn]orwegian(?:の|\s*)[- ]?45[\/\-‐‑–—−]15|ノルウェー(?:式)?(?:の|\s*)45[\/\-‐‑–—−]15|45[\/\-‐‑–—−]15/.test(expanded)
       ? ["repo-docs/adr/002-norwegian-method-integration.md"]
       : practiceJogStandardQ || practiceJogGenericQ
         ? ["practice/daiming-practice-menus-kpace.md"]
