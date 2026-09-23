@@ -991,4 +991,67 @@ describe("QA precision regressions", () => {
     expect(result.sources).toEqual(["out-analysis/line-chats/daiming-staff.md"]);
     expect(result.text).toContain("2.855km");
   });
+
+  it("answers unitless 岱明 800m school averages", async () => {
+    const result = await ask("岱明800上位3人平均");
+    expect(result.sources).toEqual(["out-analysis/2026_women_800m_1500m_pb_school_ranking.md"]);
+    expect(result.text).toContain("上位3人平均 2:28.81");
+  });
+
+  it("answers a generic female 800 school-average table", async () => {
+    const result = await ask("女子800上位3人平均");
+    expect(result.sources).toEqual(["out-analysis/2026_women_800m_1500m_pb_school_ranking.md"]);
+    expect(result.text).toContain("## 800m・上位3人平均");
+  });
+
+  it("answers a generic female 1500 school-average table", async () => {
+    const result = await ask("女子1500上位3人平均");
+    expect(result.sources).toEqual(["out-analysis/2026_women_800m_1500m_pb_school_ranking.md"]);
+    expect(result.text).toContain("## 1500m・上位3人平均");
+    expect(result.text).toContain("5:10.77");
+  });
+
+  it("keeps a gender-before-school unitless 800m average focused", async () => {
+    const result = await ask("岱明女子800上位3人平均");
+    expect(result.sources).toEqual(["out-analysis/2026_women_800m_1500m_pb_school_ranking.md"]);
+    expect(result.text).toContain("2:28.81");
+  });
+
+  it("keeps an 800-first unitless 岱明 average focused", async () => {
+    const result = await ask("800岱明上位3人平均");
+    expect(result.sources).toEqual(["out-analysis/2026_women_800m_1500m_pb_school_ranking.md"]);
+    expect(result.text).toContain("2:28.81");
+  });
+
+  it("answers school-qualified female 800 averages", async () => {
+    const result = await ask("学校別女子800上位3人平均");
+    expect(result.sources).toEqual(["out-analysis/2026_women_800m_1500m_pb_school_ranking.md"]);
+    expect(result.text).toContain("## 800m・上位3人平均");
+  });
+
+  it("answers the female 800 school-average alias without m", async () => {
+    const result = await ask("女子800学校別平均");
+    expect(result.sources).toEqual(["out-analysis/2026_women_800m_1500m_pb_school_ranking.md"]);
+    expect(result.text).toContain("## 800m・上位3人平均");
+  });
+
+  it("answers the female 1500 school-average alias without m", async () => {
+    const result = await ask("女子1500学校別平均");
+    expect(result.sources).toEqual(["out-analysis/2026_women_800m_1500m_pb_school_ranking.md"]);
+    expect(result.text).toContain("## 1500m・上位3人平均");
+  });
+
+  it("keeps school-qualified female 1500 averages on the 1500m section", async () => {
+    const result = await ask("学校別女子1500上位3人平均");
+    expect(result.sources).toEqual(["out-analysis/2026_women_800m_1500m_pb_school_ranking.md"]);
+    expect(result.text).toContain("## 1500m・上位3人平均");
+    expect(result.text).toContain("5:10.77");
+  });
+
+  it("answers unitless 岱明女子 1500m averages", async () => {
+    const result = await ask("岱明女子1500上位3人平均");
+    expect(result.sources).toEqual(["out-analysis/2026_women_800m_1500m_pb_school_ranking.md"]);
+    expect(result.text).toContain("上位3人平均 5:10.77");
+    expect(result.text).not.toContain("2:28.81");
+  });
 });

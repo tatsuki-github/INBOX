@@ -712,11 +712,14 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
     }
   }
   // Exhaustive: keep document head / wide window (do not needle-slice away tables)
-  if (isExhaustiveListQuery(q) && !(/なごみ/.test(q) && /優勝/.test(q))) {
+  const schoolAverageQ =
+    /1500(?:m|ｍ)?|800(?:m|ｍ)?/.test(q) &&
+    /上位\s*\d+\s*人平均|上位\d+人平均|学校別|所属別/.test(q);
+  if (isExhaustiveListQuery(q) && !schoolAverageQ && !(/なごみ/.test(q) && /優勝/.test(q))) {
     return flat.slice(0, budget);
   }
   if (
-    /1500m|1500ｍ|800m|800ｍ/.test(q) &&
+    /1500(?:m|ｍ)?|800(?:m|ｍ)?/.test(q) &&
     /上位\s*\d+\s*人平均|上位\d+人平均|学校別|所属別/.test(q)
   ) {
     const count = q.match(/上位\s*(\d+)\s*人平均/)?.[1];
@@ -736,7 +739,7 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
                 ? "菊水中"
                 : "";
     if (school) {
-      const distanceLabel = /1500m|1500ｍ/.test(q) ? "1500m" : "800m";
+      const distanceLabel = /1500(?:m|ｍ)?/.test(q) ? "1500m" : "800m";
       const heading = `## ${distanceLabel}・${count ? `上位${count}人平均` : "上位3人平均"}`;
       const sectionStart = flat.indexOf(heading);
       const section = sectionStart >= 0 ? flat.slice(sectionStart) : flat;
@@ -747,6 +750,13 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
         const label = count ? `上位${count}人平均` : "学校別平均";
         return `${row[1]}位 ${school}・${label} ${row[3]?.trim() ?? ""}`;
       }
+    }
+    const distanceLabel = /1500(?:m|ｍ)?/.test(q) ? "1500m" : "800m";
+    const heading = `## ${distanceLabel}・${count ? `上位${count}人平均` : "上位3人平均"}`;
+    const sectionStart = flat.indexOf(heading);
+    if (sectionStart >= 0) {
+      const nextHeading = flat.indexOf("## ", sectionStart + heading.length);
+      return flat.slice(sectionStart, nextHeading >= 0 ? nextHeading : undefined).trim();
     }
   }
   if (/トラック/.test(q) && /1周|一周|周長|何メートル|何ｍ/.test(q)) {
@@ -1967,7 +1977,7 @@ function offlineAnswer(
         question,
       );
     const schoolPbRankLookup =
-      /1500m|1500ｍ|800m|800ｍ/.test(question) &&
+      /1500(?:m|ｍ)?|800(?:m|ｍ)?/.test(question) &&
       /上位\s*\d+\s*人平均|上位\d+人平均|学校別|所属別/.test(
         question,
       );
@@ -2573,9 +2583,9 @@ function boostAthleteRecordSources(query: string, baseSources: string[]): string
   // 「女子800mで岱明の上位3人平均」は学校別ランキング正本（SB CSV より先）
   const schoolPbRankQ =
     (/学校別|所属別/.test(q) && /ランキング|1500|800|平均/.test(q)) ||
-    (/800m|800ｍ|1500m|1500ｍ/.test(q) &&
+    (/(?:800|1500)(?:m|ｍ)?/.test(q) &&
       /上位\s*\d+\s*人平均|上位\d人平均|学校別|所属別/.test(q)) ||
-    (/女子/.test(q) && /800m|800ｍ|1500m|1500ｍ/.test(q) && /ランキング|順位|速い|最速|一番/.test(q));
+    (/女子/.test(q) && /(?:800|1500)(?:m|ｍ)?/.test(q) && /ランキング|順位|速い|最速|一番/.test(q));
   if (schoolPbRankQ) {
     if (/800/.test(q) || /女子/.test(q)) {
       push("out-analysis/2026_women_800m_1500m_pb_school_ranking.md");
@@ -3821,12 +3831,12 @@ export async function answerQuestion(
     if (team) preferredSources = [`out-analysis/aragyoku-teams/${team}.md`];
   }
   const schoolPbRankQ =
-    /1500m|1500ｍ|800m|800ｍ/.test(expanded) &&
+    /1500(?:m|ｍ)?|800(?:m|ｍ)?/.test(expanded) &&
     (/上位\s*\d+\s*人平均|上位\d+人平均|学校別|所属別/.test(
       expanded,
-    ) || (/女子/.test(expanded) && /800m|800ｍ|1500m|1500ｍ/.test(expanded) && /ランキング|順位|速い|最速|一番/.test(expanded)));
+    ) || (/女子/.test(expanded) && /800(?:m|ｍ)?|1500(?:m|ｍ)?/.test(expanded) && /ランキング|順位|速い|最速|一番/.test(expanded)));
   if (schoolPbRankQ) {
-    const schoolRanking = /女子/.test(expanded) || /800m|800ｍ/.test(expanded)
+    const schoolRanking = /女子/.test(expanded) || /800(?:m|ｍ)?/.test(expanded)
       ? "out-analysis/2026_women_800m_1500m_pb_school_ranking.md"
       : "out-analysis/2026_men_1500m_pb_school_ranking.md";
     preferredSources = [preferredSources.find((s) => s.endsWith(schoolRanking)) ?? schoolRanking];
