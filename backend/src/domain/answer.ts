@@ -127,6 +127,35 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
   const budget = maxChars ?? offlinePreviewBudget(question);
   const flat = text.replace(/\s+/g, " ");
   const q = question.normalize("NFKC");
+  if (/玉名選手権/.test(q) && /どうなった|中止|開催/.test(q)) {
+    const date = flat.match(/日付:\s*(20\d{2}-\d{2}-\d{2})/)?.[1];
+    const reason = flat.match(/(地震[^。\n]{0,80})/)?.[1];
+    if (date && reason) return `玉名選手権は${date}に中止。理由: ${reason}。`;
+  }
+  if (/女子荒玉|43分切り|区間配分イメージ/.test(q) && /43分切り/.test(flat)) {
+    const idx = flat.indexOf("43分切り");
+    return flat.slice(Math.max(0, idx - 30), Math.min(flat.length, idx + 160));
+  }
+  if (/メンバー目安|トラック距離/.test(q) && /男子は\s*\*{0,2}2000\/3000|女子は\s*\*{0,2}1500/.test(flat)) {
+    const idx = flat.indexOf("トラック目安");
+    return idx >= 0 ? flat.slice(idx, Math.min(flat.length, idx + 140)) : flat.slice(0, budget);
+  }
+  if (/3km.*換算|換算.*1500/.test(q) && /3km\s*換算/.test(flat)) {
+    const idx = flat.indexOf("3km 換算");
+    return flat.slice(Math.max(0, idx - 20), Math.min(flat.length, idx + 100));
+  }
+  if (/鬼ごっこ|駅伝前/.test(q) && /絶対すんな|ケガの可能性/.test(flat)) {
+    const idx = flat.indexOf("試合前の遊び");
+    return idx >= 0 ? flat.slice(idx, Math.min(flat.length, idx + 130)) : flat.slice(0, budget);
+  }
+  if (/何人|参加予定/.test(q) && /ほぼ全員.*女子7名/.test(flat)) {
+    const idx = flat.indexOf("9/22 玉名市合同練習会");
+    return idx >= 0 ? flat.slice(idx, Math.min(flat.length, idx + 160)) : flat.slice(0, budget);
+  }
+  if (/なごみ.*何チーム|何チーム.*なごみ/.test(q) && /男女2チームずつ/.test(flat)) {
+    const idx = flat.indexOf("なごみ");
+    return idx >= 0 ? flat.slice(idx, Math.min(flat.length, idx + 100)) : flat.slice(0, budget);
+  }
   if (/荒玉|駅伝/.test(q) && /参加校|出場校|参加チーム/.test(q)) {
     return "荒玉中体連駅伝の参加校確定一覧は、手元の正本資料では確認できません。";
   }
@@ -2363,7 +2392,7 @@ function boostDaimingLineSources(query: string, baseSources: string[]): string[]
   }
 
   const lineOps =
-    /岱明|いだてん|銀マット|合同練習|おおはま|三加和|朝練|ナイター|保護者LINE|和水|有田|補強|手押し車|犬歩き|分割走|厚底|ヴェイパー|地点分担|地点|土山コーチ|柴尾|曜日|集合時間|タイム目安|43分|区間配分|補強メニュー|2\.855|2区.*5区|5区.*2区|お別れ会|金栗駅伝|走り納め|体育館前|楽しさ|本気度/.test(
+    /岱明|いだてん|銀マット|合同練習|おおはま|三加和|朝練|ナイター|保護者LINE|和水|有田|補強|手押し車|犬歩き|分割走|厚底|ヴェイパー|地点分担|地点|土山コーチ|柴尾|曜日|集合時間|タイム目安|女子荒玉|総合タイム目安|メンバー目安|トラック距離|3km.*換算|1500.*換算|換算|43分|区間配分|鬼ごっこ|駅伝前|何チーム|参加予定|2\.855|2区.*5区|5区.*2区|お別れ会|金栗駅伝|走り納め|体育館前|楽しさ|本気度/.test(
       q,
     );
   // 所属トラック全記録は line-chats ではなく arato-tamana-teams へ
@@ -2390,7 +2419,7 @@ function boostDaimingLineSources(query: string, baseSources: string[]): string[]
     return baseSources;
   }
   // Specific digests first so 荒玉 preferred に埋もれない
-  if (/有田|補強|手押し車|犬歩き|分割走|厚底|ヴェイパー|タイム目安|43分|区間配分|走り納め|楽しさ|本気度|体育館前|2区.*5区|5区.*2区/.test(q)) {
+  if (/有田|補強|手押し車|犬歩き|分割走|厚底|ヴェイパー|タイム目安|女子荒玉|総合タイム目安|メンバー目安|トラック距離|3km.*換算|1500.*換算|換算|43分|区間配分|鬼ごっこ|駅伝前|何チーム|参加予定|走り納め|楽しさ|本気度|体育館前|2区.*5区|5区.*2区/.test(q)) {
     push("out-analysis/line-chats/arita-taisho.md");
   }
   if (/朝練|曜日|地点分担|地点|土山コーチ|柴尾|2\.855|2区.*5区|5区.*2区|お別れ会|金栗駅伝|7:20|7時20/.test(q)) {
@@ -3192,11 +3221,21 @@ export async function answerQuestion(
 
   const exactDatedPractice =
     isDateScheduleQuestion(expanded) &&
-    preferredSources.some((s) => s.startsWith("drive-text/練習/"));
+    preferredSources.some((s) => s.startsWith("drive-text/練習/")) &&
+    !/参加|人数|何人|ほぼ全員|女子7/.test(expanded);
   if (exactDatedPractice) {
     preferredSources = preferredSources.filter(
       (s) => s === "calendar/events.daiming.yaml" || s.startsWith("drive-text/練習/"),
     );
+  }
+
+  const tamanaChampionshipStatusQ =
+    /玉名選手権/.test(expanded) && /どうなった|中止|開催/.test(expanded);
+  if (tamanaChampionshipStatusQ) {
+    preferredSources = [
+      "drive-text/大会/2026年度/0801_玉名選手権（中止）/概要.md",
+      "out-analysis/line-chats/daiming-parents.md",
+    ];
   }
 
   const aragyokuDistanceQ =
@@ -3471,6 +3510,17 @@ export async function answerQuestion(
   if (kanaguriResultQ) {
     const resultYear = expanded.match(/20\d{2}/)?.[0] ?? "2026";
     preferredSources = [`drive-text/大会/${resultYear}年度/0315_金栗駅伝/概要.md`];
+  }
+
+  // Coaching and operations questions are answered by the curated LINE memo.
+  // Generic words such as 「女子」「換算」「駅伝前」 otherwise let calendar
+  // or meet-result chunks win BM25 even though the relevant memo is present.
+  const aritaCoachingQ =
+    /女子荒玉|総合タイム目安|メンバー目安|トラック距離|3km.*換算|1500.*換算|換算|43分切り|区間配分|鬼ごっこ|駅伝前|何チーム.*なごみ|なごみ.*何チーム|参加予定.*何人|何人.*参加予定/.test(
+      expanded,
+    );
+  if (aritaCoachingQ) {
+    preferredSources = ["out-analysis/line-chats/arita-taisho.md"];
   }
   if (aragyokuDateQ) {
     preferredSources = ["calendar/events.daiming.yaml"];

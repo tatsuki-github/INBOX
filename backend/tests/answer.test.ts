@@ -3967,4 +3967,28 @@ describe("answerQuestion", () => {
     expect(systemPrompt).toContain("コーチに直接聞いてください。");
     expect(systemPrompt).not.toContain("コーパスに情報がありません");
   });
+
+  it.each([
+    ["玉名選手権はどうなった？", ["中止"]],
+    ["女子荒玉の総合タイム目安は？", ["43分切り"]],
+    ["駅伝メンバー目安のトラック距離は男女で？", ["2000/3000", "1500"]],
+    ["女子の3km換算は1500からどうする？", ["3km", "1500", "30秒"]],
+    ["9/22合同練習会に岱明は何人くらい参加予定？", ["ほぼ全員", "女子7名"]],
+    ["荒玉女子43分切りの区間配分イメージは？", ["10:30", "6:50", "11:00"]],
+    ["駅伝前に鬼ごっこしていい？", ["絶対すんな"]],
+    ["なごみに岱明は何チーム出す？", ["男女2チームずつ"]],
+  ] as const)("keeps the discovered line/corpus gap grounded: %s", async (question, needles) => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion(question, {
+      llm: null,
+      skipRouter: true,
+      defaultYear: 2026,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      for (const needle of needles) expect(result.text).toContain(needle);
+      expect(result.text).not.toContain("コーチに直接聞いてください");
+    }
+  });
 });
