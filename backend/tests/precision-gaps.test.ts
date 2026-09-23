@@ -2835,4 +2835,64 @@ describe("QA precision regressions", () => {
     expect(result.text).toContain("4:40.44");
   });
 
+  it("answers a 5km school-context SB query", async () => {
+    const result = await ask("村上葉侑（南関中）の5km SBは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("17:18.00");
+  });
+
+  it("answers a compact 5km school-context query", async () => {
+    const result = await ask("村上葉侑 南関中 5kmSB");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("17:18.00");
+  });
+
+  it("answers a school-first 5km personal-best query", async () => {
+    const result = await ask("南関中の村上葉侑5km自己ベストは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("17:18.00");
+  });
+
+  it("answers an athlete-first 5km SB query", async () => {
+    const result = await ask("村上葉侑の南関中5kmSB");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("17:18.00");
+  });
+
+  it("answers a 5km honorific SB query", async () => {
+    const result = await ask("村上葉侑さん（南関中）の5km SB");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("17:18.00");
+  });
+
+  it("answers a trailing-school 5km SB query", async () => {
+    const result = await ask("村上葉侑の5km SB（南関中）");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("17:18.00");
+  });
+
+  it("answers a school-first spaced 5km SB query", async () => {
+    const result = await ask("南関中 村上葉侑 5km SB");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("17:18.00");
+  });
+
+  it("answers a 5km best query with school context", async () => {
+    const result = await ask("村上葉侑（南関中）の5kmベスト");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("17:18.00");
+  });
+
+  it("answers a 5km record query with school context", async () => {
+    const result = await ask("村上葉侑 南関中 5kmの記録");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("17:18.00");
+  });
+
+  it("answers a 5km time query with school context", async () => {
+    const result = await ask("村上葉侑は南関中で5km何分？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("17:18.00");
+  });
+
 });
