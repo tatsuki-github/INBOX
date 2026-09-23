@@ -150,6 +150,10 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
     const idx = flat.indexOf("# 玉名附中");
     if (idx >= 0) return flat.slice(idx, Math.min(flat.length, idx + budget));
   }
+  if (/荒尾三中/.test(q) && /選手|一覧|所属|SB|シーズンベスト/.test(q)) {
+    const idx = flat.indexOf("# 荒尾三中 選手・SB一覧");
+    if (idx >= 0) return flat.slice(idx, Math.min(flat.length, idx + budget));
+  }
   if (/岱明/.test(q) && /過去.*順位|歴代.*順位/.test(q)) {
     const rows = [...flat.matchAll(/20\d{2}年荒玉駅伝(?:男子|女子) 岱明は[^。]+。/g)].map((m) => m[0]);
     if (rows.length > 0) return rows.join(" ");
@@ -205,7 +209,13 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
     /(?:総合)?(?:1\s*(?:[〜～-]\s*6位)|1位\s*から\s*6位|1位\s*[〜～-]\s*6位)|上位(?:6|六)(?:位|校)?|トップ6|ベスト(?:6|六)/.test(q)
   ) {
     const year = q.match(/20\d{2}/)?.[0];
-    const row = year ? flat.match(new RegExp(`\\|\\s*${year}\\s*\\|[^\\n]{0,260}`)) : null;
+    if (!year) {
+      const overall = flat.match(/期間加重平均：[^（]+（[^）]+）/);
+      if (overall) return overall[0];
+    }
+    const row = year
+      ? flat.match(new RegExp(`\\|\\s*${year}\\s*\\|(?:[^|]*\\|){3}`))
+      : null;
     if (row) return row[0].trim();
   }
   const generic1500RankingQ =
@@ -1136,6 +1146,14 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
   if (/区間賞|区間順|区間[1-3]位|区間一位/.test(q)) {
     const years = q.match(/20\d{2}/g) ?? [];
     const gender = /女子/.test(q) ? "女子" : /男子/.test(q) ? "男子" : "";
+    const leg = q.match(/([1-6])区/)?.[1];
+    if (gender && leg) {
+      const awardRows = [...flat.matchAll(new RegExp(`(20\\d{2})年荒玉駅伝${gender}${leg}区の区間1位は[^。]+。`, "g"))];
+      const selected = years.length > 0
+        ? awardRows.find((row) => row[1] === years[0])
+        : awardRows.sort((a, b) => Number(b[1]) - Number(a[1]))[0];
+      if (selected) return selected[0]!;
+    }
     if (years.length === 0 && gender) {
       const headings = [
         ...flat.matchAll(new RegExp(`### (20\\d{2})年${gender}`, "g")),
@@ -1917,6 +1935,10 @@ function offlineAnswer(
       /距離|構成|長さ/.test(question) &&
       !/[1-6]区/.test(question);
     const paceCliLookup = /VDOT.*Tペース|Tペース.*VDOT|VDOT.*CLI|CLI.*(?:VDOT|Tペース)|Daniels\s+calculator|Tペース.*(?:スクリプト|Python)|(?:スクリプト|Python).*Tペース|daniels_pace|daniels_calculator/i.test(question);
+    const topSixPaceLookup =
+      /荒玉|駅伝/.test(question) &&
+      /平均ペース|平均速度|平均|ペース|キロ何分/.test(question) &&
+      /上位(?:6|六)(?:位|校)?|トップ6|ベスト(?:6|六)/.test(question);
     const schoolListLookup =
       /玉名附中|玉名付属中?|玉名附属|玉高附属/.test(question) &&
       /選手|一覧|所属|SB|シーズンベスト/.test(question);
@@ -2119,6 +2141,7 @@ function offlineAnswer(
       genderDistanceLookup ||
       paceCliLookup ||
       schoolListLookup ||
+      topSixPaceLookup ||
       paceCalculationLookup ||
       assignmentLookup ||
       matSizeLookup ||
@@ -2187,11 +2210,15 @@ function offlineAnswer(
           )
         : undefined;
       const explicitLegSection = explicitLegAwardLookup
-        ? joined.match(
-            new RegExp(
-              `### ${question.match(/20\d{2}/)?.[0]}年${/女子/.test(question) ? "女子" : "男子"}[\\s\\S]*?(?=\\s### (?!#)20\\d{2}年|$)`,
-            ),
-          )?.[0]
+        ? (() => {
+            const year = question.match(/20\d{2}/)?.[0];
+            const leg = question.match(/([1-6])区/)?.[1];
+            const gender = /女子/.test(question) ? "女子" : "男子";
+            if (year && leg) {
+              return joined.match(new RegExp(`${year}年荒玉駅伝${gender}${leg}区の区間1位は[^。]+。`))?.[0];
+            }
+            return undefined;
+          })()
         : undefined;
       const namedSelfBestPreview = namedSelfBestLookup
         ? (() => {
@@ -2649,7 +2676,7 @@ function boostDaimingLineSources(query: string, baseSources: string[]): string[]
 
 function isNamedTeamSbListQuery(query: string): boolean {
   const q = query.normalize("NFKC");
-  return /荒尾三中/.test(q) && /(?:\bSB\b|ＳＢ|シーズンベスト)/.test(q) && /選手|一覧|所属/.test(q);
+  return /荒尾三中/.test(q) && /(?:\bSB\b|ＳＢ|シーズンベスト|選手|一覧|所属)/.test(q) && /選手|一覧|所属/.test(q);
 }
 
 function isNamedSchoolSbListQuery(query: string): boolean {
@@ -3205,7 +3232,6 @@ export async function answerQuestion(
     /男子|女子/.test(question) &&
     /区間順位|区間順/.test(question);
   const explicitLegAwardQ =
-    /20\d{2}/.test(question) &&
     /荒玉|駅伝/.test(question) &&
     /区間賞|区間[1-3]位|区間一位/.test(question) &&
     /男子|女子/.test(question);

@@ -499,4 +499,69 @@ describe("QA precision regressions", () => {
     expect(result.text).toContain("1区3.00km");
     expect(result.text).toContain("6区3.00km");
   });
+
+  it("routes a generic 荒尾三中 player list to the SB digest", async () => {
+    const result = await ask("荒尾三中の選手一覧");
+    expect(result.sources).toEqual(["out-analysis/arato-tamana-teams/荒尾三中_SB.md"]);
+    expect(result.text).toContain("# 荒尾三中 選手・SB一覧");
+  });
+
+  it("keeps a year-specific top-six pace answer to one table row", async () => {
+    const result = await ask("荒玉男子2024年上位6校平均ペース");
+    expect(result.sources).toEqual(["out-analysis/aragyoku_top6_historical_average_pace.md"]);
+    expect(result.text).toContain("| 2024 | 6 | 17.71km | 3:19.3/km |");
+    expect(result.text).not.toContain("| 2025 | 6 |");
+  });
+
+  it("accepts the compact year-first top-six pace alias", async () => {
+    const result = await ask("荒玉2024男子上位6平均ペース");
+    expect(result.sources).toEqual(["out-analysis/aragyoku_top6_historical_average_pace.md"]);
+    expect(result.text).toContain("| 2024 | 6 | 17.71km | 3:19.3/km |");
+    expect(result.text).not.toContain("| 2025 | 6 |");
+  });
+
+  it("answers an explicit 2024 first-leg award concisely", async () => {
+    const result = await ask("2024年荒玉男子1区区間賞");
+    expect(result.sources).toEqual(["out-analysis/aragyoku_leg_awards.md"]);
+    expect(result.text).toContain("2024年荒玉駅伝男子1区の区間1位は米村和真");
+    expect(result.text).not.toContain("2024年荒玉駅伝男子2区");
+  });
+
+  it("answers a compact year-first first-leg award alias", async () => {
+    const result = await ask("2024荒玉男子1区区間賞");
+    expect(result.sources).toEqual(["out-analysis/aragyoku_leg_awards.md"]);
+    expect(result.text).toContain("2024年荒玉駅伝男子1区の区間1位は米村和真");
+  });
+
+  it("answers the latest men first-leg award alias", async () => {
+    const result = await ask("荒玉男子1区区間賞");
+    expect(result.sources).toEqual(["out-analysis/aragyoku_leg_awards.md"]);
+    expect(result.text).toContain("2025年荒玉駅伝男子1区の区間1位は江口大尊");
+  });
+
+  it("accepts an 駅伝-prefixed latest first-leg award alias", async () => {
+    const result = await ask("荒玉駅伝男子1区区間賞");
+    expect(result.sources).toEqual(["out-analysis/aragyoku_leg_awards.md"]);
+    expect(result.text).toContain("2025年荒玉駅伝男子1区の区間1位は江口大尊");
+  });
+
+  it("answers the polite first-leg award wording", async () => {
+    const result = await ask("2024年荒玉男子1区の区間賞");
+    expect(result.sources).toEqual(["out-analysis/aragyoku_leg_awards.md"]);
+    expect(result.text).toContain("2024年荒玉駅伝男子1区の区間1位は米村和真");
+  });
+
+  it("summarizes an unqualified top-six pace question", async () => {
+    const result = await ask("荒玉駅伝男子上位6校の平均ペース");
+    expect(result.sources).toContain("out-analysis/aragyoku_top6_historical_average_pace.md");
+    expect(result.text).toContain("期間加重平均：3:18.1/km");
+    expect(result.text).not.toContain("順位別の歴代平均ペース");
+  });
+
+  it("keeps the full 2024 men section for an all-leg ranking question", async () => {
+    const result = await ask("2024年荒玉駅伝男子の区間順位");
+    expect(result.sources).toEqual(["out-analysis/aragyoku_leg_awards.md"]);
+    expect(result.text).toContain("2024年男子・区間別上位");
+    expect(result.text).toContain("2024年荒玉駅伝男子1区の区間1位");
+  });
 });
