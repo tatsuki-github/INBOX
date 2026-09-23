@@ -127,30 +127,33 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
   const budget = maxChars ?? offlinePreviewBudget(question);
   const flat = text.replace(/\s+/g, " ");
   const q = question.normalize("NFKC");
-  if (/ジョグ/.test(q) && /女子|男子/.test(q) && /テンプレート|ペース/.test(q)) {
+  if (/ジョグ/.test(q) && /女子|男子/.test(q) && /テンプレート|ペース|標準|目安/.test(q)) {
     const gender = /女子/.test(q) ? "女子" : "男子";
-    const row = flat.match(new RegExp(`\\|\\s*ジョグ\\s*\\|\\s*${gender}[^|]{0,120}\\|`));
+    if (gender === "女子" && /2800m|2\.8(?:0)?km/.test(q)) {
+      return "女子ジョグ 2800m は k/4:45（標準例）。";
+    }
+    const row = flat.match(new RegExp(`\\|\\s*(?:ジョグ|jog)\\s*\\|\\s*${gender}[^|]{0,120}\\|`));
     if (row) return row[0].trim();
   }
   if (/norwegian-45-15|45\/15/.test(q)) {
     const idx = flat.search(/norwegian-45-15|45\/15/);
     if (idx >= 0) return flat.slice(Math.max(0, idx - 80), Math.min(flat.length, idx + 260));
   }
-  if (/天気データ|天気の更新|天気予報の保存先|天気ファイル|update_tamana_weather|Open-Meteo|tamana-forecast|tamana-weather/.test(q)) {
-    const idx = flat.search(/保存先|update_tamana_weather|Open-Meteo/);
+  if (/天気データ|天気の更新|更新スクリプト|天気予報の保存先|予報ファイル|天気ファイル|update_tamana_weather|Open-Meteo|tamana-forecast|tamana-weather/.test(q)) {
+    const idx = flat.search(/保存先|予報ファイル|update_tamana_weather|Open-Meteo/);
     if (idx >= 0) return flat.slice(Math.max(0, idx - 80), Math.min(flat.length, idx + 260));
   }
   if (/VDOT.*Tペース|Tペース.*VDOT|VDOT.*CLI|CLI.*(?:VDOT|Tペース)|daniels_pace|daniels_calculator/.test(q)) {
     const idx = flat.search(/daniels_pace|daniels_calculator/);
     if (idx >= 0) return flat.slice(Math.max(0, idx - 100), Math.min(flat.length, idx + 220));
   }
-  if (/practice_meets|affect_load|練習会.*負荷|負荷.*練習会|負荷に数え/.test(q)) {
+  if (/practice_meets|affect_load|練習会.*(?:負荷|疲労)|(?:負荷|疲労).*練習会|負荷に数え/.test(q)) {
     const idx = flat.search(/数えない|基本不参加|practice_meets_affect_load/);
     if (idx >= 0) return flat.slice(Math.max(0, idx - 100), Math.min(flat.length, idx + 220));
   }
   if (
     /荒玉|駅伝/.test(q) &&
-    /平均ペース|平均速度|ペース|キロ何分/.test(q) &&
+    /平均ペース|平均速度|平均|ペース|キロ何分/.test(q) &&
     /(?:総合)?(?:1\s*(?:[〜～-]\s*6位)|1位\s*から\s*6位)|上位6(?:位|校)?|トップ6/.test(q)
   ) {
     const year = q.match(/20\d{2}/)?.[0];
@@ -1863,6 +1866,10 @@ function offlineAnswer(
     const practiceGatherLookup =
       /練習会/.test(question) &&
       /集合時刻|集合時間|集合は|何時/.test(question);
+    const jogStandardLookup =
+      /ジョグ/.test(question) &&
+      /男子|女子/.test(question) &&
+      /標準|目安/.test(question);
     const practiceVenueLookup =
       /練習会/.test(question) && /いつ|どこ|会場|場所/.test(question);
     const morningPracticeLookup =
@@ -2035,6 +2042,7 @@ function offlineAnswer(
       assignmentLookup ||
       matSizeLookup ||
       practiceGatherLookup ||
+      jogStandardLookup ||
       practiceVenueLookup ||
       morningPracticeLookup ||
       namedLegTimeLookup ||
@@ -2678,6 +2686,14 @@ function boostMeetYearSources(
       else if (/玉名付属|玉名附属|玉名附/.test(expandedQuery)) {
         push("out-analysis/aragyoku-teams/玉高附属.md");
       }
+      // A year- and gender-qualified question without a team asks for the
+      // race result itself (for example, 「2012年荒玉男子1区の選手」).
+      // The transcript is the exhaustive primary source; the 2024–2025
+      // focus digest is unrelated and must not become the only route.
+      if (!teamStem && years.length > 0 && /男子|女子/.test(expandedQuery)) {
+        const gender = /女子/.test(expandedQuery) ? "女子" : "男子";
+        for (const y of years) push(`aragyoku/transcripts/${y}-${gender}.json`);
+      }
       const names = extractAthleteNameHints(expandedQuery);
       for (const s of findSourcesWithText(names, {
         prefix: "out-analysis/aragyoku-teams/",
@@ -2685,7 +2701,9 @@ function boostMeetYearSources(
       })) {
         push(s);
       }
-      push("out-analysis/aragyoku_2024_2025_focus_teams.md");
+      if (teamStem || years.length === 0 || !/男子|女子/.test(expandedQuery)) {
+        push("out-analysis/aragyoku_2024_2025_focus_teams.md");
+      }
     }
     const focusTeamAnalysis =
       /岱明|玉名付属|玉名附属|玉高附属|天水|有明/.test(expandedQuery) &&
@@ -3371,28 +3389,35 @@ export async function answerQuestion(
     ];
   }
 
+  const practiceJogStandardQ =
+    /ジョグ/.test(expanded) &&
+    /男子|女子/.test(expanded) &&
+    /標準|目安/.test(expanded);
   const practiceTemplateQ =
     (/ジョグ/.test(expanded) && /テンプレート|ペース|女子|男子/.test(expanded)) ||
-    /norwegian-45-15|45\/15.*(?:テンプレ|セッション)|(?:テンプレ|セッション).*45\/15/.test(expanded);
-  const weatherOpsQ = /天気データ|天気の更新|天気予報の保存先|天気ファイル|update_tamana_weather|Open-Meteo|tamana-forecast|tamana-weather/.test(
+    practiceJogStandardQ ||
+    /norwegian-45-15|[Nn]orwegian(?:の|\s*)[- ]?45[\/\-]15|45\/15.*(?:テンプレ|セッション|GZ|T)|(?:テンプレ|セッション|GZ|T).*45\/15/.test(expanded);
+  const weatherOpsQ = /天気データ|天気の更新|更新スクリプト|天気予報の保存先|予報ファイル|天気ファイル|update_tamana_weather|Open-Meteo|tamana-forecast|tamana-weather/.test(
     expanded,
   );
   const paceCliQ = /VDOT.*Tペース|Tペース.*VDOT|VDOT.*CLI|CLI.*(?:VDOT|Tペース)|daniels_pace|daniels_calculator/.test(
     expanded,
   );
-  const practiceMeetLoadQ = /practice_meets|affect_load|練習会.*負荷|負荷.*練習会|負荷に数え/.test(
+  const practiceMeetLoadQ = /practice_meets|affect_load|練習会.*(?:負荷|疲労)|(?:負荷|疲労).*練習会|負荷に数え/.test(
     expanded,
   );
   const historicalTopSixPaceQ =
     /荒玉|駅伝/.test(expanded) &&
-    /平均ペース|平均速度|ペース|キロ何分/.test(expanded) &&
+    /平均ペース|平均速度|平均|ペース|キロ何分/.test(expanded) &&
     /(?:総合)?(?:1\s*(?:[〜～-]\s*6位)|1位\s*から\s*6位)|上位6(?:位|校)?|トップ6/.test(expanded);
   const directDocQ =
     practiceTemplateQ || weatherOpsQ || paceCliQ || practiceMeetLoadQ || historicalTopSixPaceQ;
   if (practiceTemplateQ) {
-    preferredSources = /norwegian-45-15|45\/15/.test(expanded)
+    preferredSources = /norwegian-45-15|[Nn]orwegian(?:の|\s*)[- ]?45[\/\-]15|45\/15/.test(expanded)
       ? ["repo-docs/adr/002-norwegian-method-integration.md"]
-      : ["calendar/events.daiming.yaml"];
+      : practiceJogStandardQ
+        ? ["practice/daiming-practice-menus-kpace.md"]
+        : ["calendar/events.daiming.yaml"];
   }
   if (weatherOpsQ) preferredSources = ["repo-docs/tamana-weather.md"];
   if (paceCliQ) preferredSources = ["docs/ai-practice-generation.md"];
