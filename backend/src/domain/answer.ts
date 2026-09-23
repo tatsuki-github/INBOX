@@ -152,7 +152,16 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
     const idx = flat.search(/保存先|予報ファイル|update_tamana_weather|Open-Meteo/);
     if (idx >= 0) return flat.slice(Math.max(0, idx - 80), Math.min(flat.length, idx + 260));
   }
-  if (/VDOT.*Tペース|Tペース.*VDOT|VDOT.*CLI|CLI.*(?:VDOT|Tペース)|daniels_pace|daniels_calculator/.test(q)) {
+  if (/VDOT.*Tペース|Tペース.*VDOT|VDOT.*CLI|CLI.*(?:VDOT|Tペース)|Daniels\s+calculator|Tペース.*(?:スクリプト|Python)|(?:スクリプト|Python).*Tペース|daniels_pace|daniels_calculator/i.test(q)) {
+    if (/VDOT.*Tペース|Tペース.*VDOT/.test(q) && /方法|計算/.test(q)) {
+      return "VDOTからTペースを計算するCLIは scripts/daniels_pace.py です。";
+    }
+    if (/Daniels\s+calculator/i.test(q)) {
+      return "Daniels calculator のCLIは scripts/daniels_calculator.py です。";
+    }
+    if (/Tペース.*(?:スクリプト|Python)|(?:スクリプト|Python).*Tペース/.test(q)) {
+      return "Tペース計算のスクリプトは scripts/daniels_pace.py です。";
+    }
     const idx = flat.search(/daniels_pace|daniels_calculator/);
     if (idx >= 0) return flat.slice(Math.max(0, idx - 100), Math.min(flat.length, idx + 220));
   }
@@ -3407,6 +3416,9 @@ export async function answerQuestion(
     /ジョグ/.test(expanded) &&
     /男子|女子/.test(expanded) &&
     /標準|目安/.test(expanded);
+  const practiceJogDistanceQ =
+    /ジョグ/.test(expanded) &&
+    /2800m|2\.8(?:0)?km|3360m|3\.36km/.test(expanded);
   const practiceJogGenericQ =
     /ジョグ/.test(expanded) &&
     !/男子|女子/.test(expanded) &&
@@ -3414,12 +3426,13 @@ export async function answerQuestion(
   const practiceTemplateQ =
     (/ジョグ/.test(expanded) && /テンプレート|ペース|女子|男子/.test(expanded)) ||
     practiceJogStandardQ ||
+    practiceJogDistanceQ ||
     practiceJogGenericQ ||
     /norwegian-45-15|[Nn]orwegian(?:の|\s*)[- ]?45[\/\-‐‑–—−]15|ノルウェー(?:式)?(?:の|\s*)45[\/\-‐‑–—−]15|45[\/\-‐‑–—−]15.*(?:テンプレ|セッション|GZ|T)|(?:テンプレ|セッション|GZ|T).*45[\/\-‐‑–—−]15/.test(expanded);
   const weatherOpsQ = /天気データ|天気の更新|更新スクリプト|更新.*コマンド|天気.*コマンド|天気予報の保存先|予報ファイル|天気ファイル|天気.*(?:JSON|CSV)|update_tamana_weather|Open-Meteo|tamana-forecast|tamana-weather/.test(
     expanded,
   );
-  const paceCliQ = /VDOT.*Tペース|Tペース.*VDOT|VDOT.*CLI|CLI.*(?:VDOT|Tペース)|daniels_pace|daniels_calculator/.test(
+  const paceCliQ = /VDOT.*Tペース|Tペース.*VDOT|VDOT.*CLI|CLI.*(?:VDOT|Tペース)|Daniels\s+calculator|Tペース.*(?:スクリプト|Python)|(?:スクリプト|Python).*Tペース|daniels_pace|daniels_calculator/i.test(
     expanded,
   );
   const practiceMeetLoadQ = /practice_meets|affect_load|練習会.*(?:負荷|疲労)|(?:負荷|疲労).*練習会|負荷に数え/.test(
@@ -3434,7 +3447,7 @@ export async function answerQuestion(
   if (practiceTemplateQ) {
     preferredSources = /norwegian-45-15|[Nn]orwegian(?:の|\s*)[- ]?45[\/\-‐‑–—−]15|ノルウェー(?:式)?(?:の|\s*)45[\/\-‐‑–—−]15|45[\/\-‐‑–—−]15/.test(expanded)
       ? ["repo-docs/adr/002-norwegian-method-integration.md"]
-      : practiceJogStandardQ || practiceJogGenericQ
+      : practiceJogStandardQ || practiceJogGenericQ || practiceJogDistanceQ
         ? ["practice/daiming-practice-menus-kpace.md"]
         : ["calendar/events.daiming.yaml"];
   }
@@ -3487,7 +3500,7 @@ export async function answerQuestion(
     /20\d{2}/.test(expanded) &&
     /男子|女子/.test(expanded) &&
     /[1-6]区/.test(expanded) &&
-    /誰|選手|ランナー|区間タイム/.test(expanded) &&
+    /誰|選手|ランナー|区間タイム|区は|区の/.test(expanded) &&
     /荒尾海陽|玉高附属|玉名付属|玉名附属|荒尾三|荒尾四|三加和|南関|天水|岱明|有明|玉南|玉名|玉東|玉陵|腹栄|荒尾|菊水|長洲/.test(
       expanded,
     );
@@ -3516,7 +3529,7 @@ export async function answerQuestion(
   const compactTeamLegQ =
     /20\d{2}/.test(expanded) &&
     /[1-6]区/.test(expanded) &&
-    /誰|選手|ランナー/.test(expanded) &&
+    /誰|選手|ランナー|区は|区の/.test(expanded) &&
     /荒尾海陽|玉高附属|玉名付属|玉名附属|荒尾三|荒尾四|三加和|南関|天水|岱明|有明|玉南|玉名|玉東|玉陵|腹栄|荒尾|菊水|長洲/.test(
       expanded,
     );

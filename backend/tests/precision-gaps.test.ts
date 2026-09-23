@@ -254,4 +254,64 @@ describe("QA precision regressions", () => {
     expect(result.sources).toEqual(["out-analysis/aragyoku_top6_historical_average_pace.md"]);
     expect(result.text).toContain("3:19.3");
   });
+
+  it("answers the VDOT calculation method alias", async () => {
+    const result = await ask("VDOTでTペースを計算する方法は？");
+    expect(result.sources).toEqual(["docs/ai-practice-generation.md"]);
+    expect(result.text).toContain("daniels_pace.py");
+  });
+
+  it("answers a standalone T-pace script question", async () => {
+    const result = await ask("Tペース計算のスクリプトは？");
+    expect(result.sources).toEqual(["docs/ai-practice-generation.md"]);
+    expect(result.text).toContain("daniels_pace.py");
+  });
+
+  it("answers the spaced Daniels calculator CLI alias", async () => {
+    const result = await ask("Daniels calculator CLIは？");
+    expect(result.sources).toEqual(["docs/ai-practice-generation.md"]);
+    expect(result.text).toContain("daniels_calculator.py");
+  });
+
+  it("answers a Python T-pace script question", async () => {
+    const result = await ask("Tペースを出すPythonスクリプトは？");
+    expect(result.sources).toEqual(["docs/ai-practice-generation.md"]);
+    expect(result.text).toContain("daniels_pace.py");
+  });
+
+  it("routes Japanese Norwegian 45-15 shorthand with a Unicode hyphen", async () => {
+    const result = await ask("ノルウェー式の45‐15は？");
+    expect(result.sources).toEqual(["repo-docs/adr/002-norwegian-method-integration.md"]);
+    expect(result.text).toMatch(/45-15|GZ\/T|セッション/);
+  });
+
+  it("routes Japanese Norwegian template wording with a Unicode hyphen", async () => {
+    const result = await ask("ノルウェー式45‐15テンプレは？");
+    expect(result.sources).toEqual(["repo-docs/adr/002-norwegian-method-integration.md"]);
+    expect(result.text).toMatch(/45-15|GZ\/T|テンプレ/);
+  });
+
+  it("keeps a team-specific fifth-leg question on the team digest", async () => {
+    const result = await ask("2025年荒玉女子玉名の5区は？");
+    expect(result.sources).toEqual(["out-analysis/aragyoku-teams/玉名.md"]);
+    expect(result.text).toMatch(/5区|水本星夏|11:04/);
+  });
+
+  it("keeps a team-specific first-leg question on the team digest", async () => {
+    const result = await ask("2024年荒玉男子の南関1区は誰？");
+    expect(result.sources).toEqual(["out-analysis/aragyoku-teams/南関.md"]);
+    expect(result.text).toMatch(/坂梨天飛|9:16/);
+  });
+
+  it("routes a female jog distance pace question to the practice menu", async () => {
+    const result = await ask("女子ジョグ2800mペース");
+    expect(result.sources).toEqual(["practice/daiming-practice-menus-kpace.md"]);
+    expect(result.text).toContain("k/4:45");
+  });
+
+  it("routes a male jog distance pace question to the practice menu", async () => {
+    const result = await ask("男子3360mジョグペース");
+    expect(result.sources).toEqual(["practice/daiming-practice-menus-kpace.md"]);
+    expect(result.text).toContain("k/4:45");
+  });
 });
