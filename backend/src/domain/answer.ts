@@ -127,6 +127,30 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
   const budget = maxChars ?? offlinePreviewBudget(question);
   const flat = text.replace(/\s+/g, " ");
   const q = question.normalize("NFKC");
+  if (/流し/.test(q) && /何本|本数|何回|回数/.test(q)) {
+    const matches = [...flat.matchAll(/(?:100m)?流し(?:\s*\d+本)?/g)].map((m) => m[0]);
+    if (matches.length > 0) {
+      return `練習記録では${[...new Set(matches)].slice(0, 8).join("、")}など。日によって本数は異なります。`;
+    }
+  }
+  if (/中体連駅伝明け|駅伝明け.*練習/.test(q)) {
+    const idx = flat.indexOf("中体連駅伝明け最初の練習");
+    if (idx >= 0) return flat.slice(Math.max(0, idx - 80), Math.min(flat.length, idx + budget));
+  }
+  if (/部活.*練習日|練習日は/.test(q)) {
+    const match = flat.match(/(?:朝練|質問向け).*?月・火・木・金.*?7:20[^。]*/);
+    if (match) return match[0];
+  }
+  if (/動きづくり/.test(q) && /ある|実施|内容|メニュー/.test(q)) {
+    const idx = flat.indexOf("動きづくり");
+    if (idx >= 0) return flat.slice(idx, Math.min(flat.length, idx + budget));
+  }
+  if (/いだてん岱明|岱明駅伝試走|県民スポーツ大会中止/.test(q)) {
+    const date = q.match(/20\d{2}[-年]\d{1,2}[-月]\d{1,2}/)?.[0]?.replace(/[年月]/g, "-").replace(/日$/, "");
+    const marker = date ? date : /県民スポーツ大会中止/.test(q) ? "県民スポーツ大会" : /岱明駅伝試走/.test(q) ? "岱明駅伝試走" : "";
+    const idx = marker ? flat.indexOf(marker) : -1;
+    if (idx >= 0) return flat.slice(Math.max(0, idx - 80), Math.min(flat.length, idx + budget));
+  }
   if (
     /玉名市.*練習会|練習会.*玉名市/.test(q) &&
     /結果|記録|タイム|メニュー|岱明/.test(q) &&
@@ -3630,6 +3654,14 @@ export async function answerQuestion(
     /玉名市.*練習会|練習会.*玉名市/.test(expanded) &&
     /結果|記録|タイム|メニュー|岱明/.test(expanded) &&
     /2026年?9月22日|2026-09-22|9月22日|9\/22/.test(expanded);
+  const strideCountQ = /流し/.test(expanded) && /何本|本数|何回|回数/.test(expanded);
+  const postEkidenPracticeQ = /中体連駅伝明け|駅伝明け.*練習/.test(expanded);
+  const movementPracticeQ = /動きづくり/.test(expanded) && /ある|実施|内容|メニュー/.test(expanded);
+  const practiceDaysQ = /部活.*練習日|練習日は/.test(expanded);
+  const practiceCalendarQ =
+    (/いだてん岱明|岱明駅伝試走|県民スポーツ大会中止/.test(expanded) &&
+      /いつ|日程|内容|タグ|中止|どうなった/.test(expanded)) ||
+    (/20\d{2}[-年]\d{1,2}[-月]\d{1,2}.*練習会/.test(expanded) && !tamanaPracticeResultQ);
   const exactDatedPractice =
     (isDateScheduleQuestion(expanded) || tamanaPracticeResultQ) &&
     preferredSources.some((s) => s.startsWith("drive-text/練習/")) &&
@@ -3687,7 +3719,7 @@ export async function answerQuestion(
     /過去|歴代/.test(expanded) &&
     /順位|成績|結果/.test(expanded);
   const directDocQ =
-    practiceTemplateQ || weatherOpsQ || paceCliQ || practiceMeetLoadQ || historicalTopSixPaceQ || historicalTeamRankQ || tamanaPracticeResultQ;
+    practiceTemplateQ || weatherOpsQ || paceCliQ || practiceMeetLoadQ || historicalTopSixPaceQ || historicalTeamRankQ || tamanaPracticeResultQ || strideCountQ || postEkidenPracticeQ || movementPracticeQ || practiceDaysQ || practiceCalendarQ;
   if (practiceTemplateQ) {
     preferredSources = /norwegian-45-15|[Nn]orwegian(?:の|\s*)[- ]?45\s*[\/／\-‐‑–—−]\s*15|ノルウェー(?:式)?(?:の|\s*)45\s*[\/／\-‐‑–—−]\s*15|45\s*[\/／\-‐‑–—−]\s*15/.test(expanded)
       ? ["repo-docs/adr/002-norwegian-method-integration.md"]
@@ -4109,6 +4141,15 @@ export async function answerQuestion(
   // 岱明荒玉駅伝 team-history digest.
   if (tamanaPracticeResultQ) {
     preferredSources = ["drive-text/練習/玉名市練習会/2026-09-22.md"];
+  }
+  if (strideCountQ || postEkidenPracticeQ) {
+    preferredSources = ["drive-text/練習/練習の記録.md"];
+  }
+  if (movementPracticeQ || practiceCalendarQ) {
+    preferredSources = ["calendar/events.daiming.yaml"];
+  }
+  if (practiceDaysQ) {
+    preferredSources = ["out-analysis/line-chats/daiming-staff.md"];
   }
   const fromSources = retrieveBySources(preferredSources, {
     query: expanded,
