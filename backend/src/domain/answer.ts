@@ -127,6 +127,19 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
   const budget = maxChars ?? offlinePreviewBudget(question);
   const flat = text.replace(/\s+/g, " ");
   const q = question.normalize("NFKC");
+  const generic1500RankingQ =
+    /1500m|1500ｍ/.test(q) &&
+    /荒玉地区|トップ\s*20/.test(q) &&
+    /SB|トップ\s*20/.test(q) &&
+    /\d+位/.test(q) &&
+    !/[\p{Script=Han}]{2,8}は何位/u.test(q);
+  if (generic1500RankingQ) {
+    const rank = Number(q.match(/(\d+)位/)?.[1] ?? 1);
+    const row = flat.match(
+      new RegExp(`\\|\\s*${rank}\\s*\\|\\s*([^|]+)\\|\\s*([^|]+)\\|\\s*([^|]+)\\|`),
+    );
+    if (row) return `荒玉地区男子1500mSBの${rank}位は${row[1]!.trim()}（${row[2]!.trim()}）${row[3]!.trim()}。`;
+  }
   if (/玉名選手権/.test(q) && /どうなった|中止|開催/.test(q)) {
     const date = flat.match(/日付:\s*(20\d{2}-\d{2}-\d{2})/)?.[1];
     const reason = flat.match(/(地震[^。\n]{0,80})/)?.[1];
@@ -1834,6 +1847,11 @@ function offlineAnswer(
       /荒尾海陽|玉高附属|玉名付属|玉名附属|荒尾三|荒尾四|三加和|南関|天水|岱明|有明|玉南|玉名|玉東|玉陵|腹栄|荒尾|菊水|長洲/.test(
         question,
       );
+    const individual1500RankLookup =
+      /1500m|1500ｍ/.test(question) &&
+      /荒玉地区|トップ\s*20/.test(question) &&
+      /SB|トップ\s*20/.test(question) &&
+      /\d+位/.test(question);
     const teamRunnerUpYearLookup =
       /荒玉|駅伝/.test(question) &&
       /男子/.test(question) &&
@@ -1978,6 +1996,7 @@ function offlineAnswer(
       namedLegTimeLookup ||
       teamLegLookup ||
       teamBestLookup ||
+      individual1500RankLookup ||
       top2CountLookup ||
       teamRunnerUpYearLookup ||
       teamFullRecordLookup ||
@@ -3278,6 +3297,16 @@ export async function answerQuestion(
       (s) => s === "calendar/events.daiming.yaml" || s.startsWith("drive-text/練習/"),
     );
   }
+  const practiceLineQ =
+    /合同練習会/.test(expanded) &&
+    /会費|参加費|参加料|料金|費用|いつ|どこ|会場|場所/.test(expanded);
+  if (practiceLineQ) {
+    const practiceSource = preferredSources.find((s) => s.startsWith("drive-text/練習/"));
+    preferredSources = [
+      "out-analysis/line-chats/daiming-parents.md",
+      ...(practiceSource ? [practiceSource] : []),
+    ];
+  }
 
   const tamanaChampionshipStatusQ =
     /玉名選手権/.test(expanded) && /どうなった|中止|開催/.test(expanded);
@@ -3660,20 +3689,28 @@ export async function answerQuestion(
   ) {
     preferredSources = ["out-analysis/2026_aragyoku_men_3000m_sb_ranking.md"];
   }
+  if (
+    /1500m|1500ｍ/.test(expanded) &&
+    /荒玉地区|トップ\s*20/.test(expanded) &&
+    /SB|トップ\s*20/.test(expanded) &&
+    /\d+位/.test(expanded)
+  ) {
+    preferredSources = ["out-analysis/2026_aragyoku_men_1500m_sb_individual_top20.md"];
+  }
   const fromSources = retrieveBySources(preferredSources, {
     query: expanded,
     perSource:
-      exhaustive || isLegAthleteQuestion(expanded) || teamBestQ || totalMeetRecordQ || teamFullRecordQ || explicitTeamLegRankQ || historicalWinnerQ || winnerYearTeamQ || legRankQuestionQ || namedLegTimeQ
+      exhaustive || isLegAthleteQuestion(expanded) || individual1500TopQ || teamBestQ || totalMeetRecordQ || teamFullRecordQ || explicitTeamLegRankQ || historicalWinnerQ || winnerYearTeamQ || legRankQuestionQ || namedLegTimeQ
         || resultListQ || genericResultQ || topThreeQ || explicitThirdPlaceQ || unqualifiedSixthPlaceQ || explicitLegAwardQ || schoolPbRankQ || nagomiLegOrderQ || nagomiLegRankQ || nagomiResultQ || nagomiDateQ || nagomiVenueQ || kanaguriResultQ || aragyokuDateQ || aragyokuVenueQ || datedTeamResultQ || unqualifiedTeamResultQ
         ? 200
         : RETRIEVAL_BUDGET.perSource,
     maxChunks:
-      exhaustive || isLegAthleteQuestion(expanded) || teamBestQ || totalMeetRecordQ || teamFullRecordQ || explicitTeamLegRankQ || historicalWinnerQ || winnerYearTeamQ || legRankQuestionQ || namedLegTimeQ
+      exhaustive || isLegAthleteQuestion(expanded) || individual1500TopQ || teamBestQ || totalMeetRecordQ || teamFullRecordQ || explicitTeamLegRankQ || historicalWinnerQ || winnerYearTeamQ || legRankQuestionQ || namedLegTimeQ
         || resultListQ || genericResultQ || topThreeQ || explicitThirdPlaceQ || unqualifiedSixthPlaceQ || explicitLegAwardQ || schoolPbRankQ || nagomiLegOrderQ || nagomiLegRankQ || nagomiResultQ || nagomiDateQ || nagomiVenueQ || kanaguriResultQ || aragyokuDateQ || aragyokuVenueQ || datedTeamResultQ || unqualifiedTeamResultQ
         ? 200
         : RETRIEVAL_BUDGET.maxChunks,
       coverage:
-      exhaustive || exactDatedPractice || isLegAthleteQuestion(expanded) || teamBestQ || totalMeetRecordQ || teamFullRecordQ || explicitTeamLegRankQ || historicalWinnerQ || winnerYearTeamQ || legRankQuestionQ || namedLegTimeQ
+      exhaustive || exactDatedPractice || isLegAthleteQuestion(expanded) || individual1500TopQ || teamBestQ || totalMeetRecordQ || teamFullRecordQ || explicitTeamLegRankQ || historicalWinnerQ || winnerYearTeamQ || legRankQuestionQ || namedLegTimeQ
         || resultListQ || genericResultQ || topThreeQ || explicitThirdPlaceQ || unqualifiedSixthPlaceQ || explicitLegAwardQ || schoolPbRankQ || nagomiLegOrderQ || nagomiLegRankQ || nagomiResultQ || nagomiDateQ || nagomiVenueQ || kanaguriResultQ || aragyokuDateQ || aragyokuVenueQ || datedTeamResultQ || unqualifiedTeamResultQ
         ? "full"
         : "ranked",

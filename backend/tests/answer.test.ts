@@ -3799,6 +3799,43 @@ describe("answerQuestion", () => {
     }
   });
 
+  it.each([
+    ["荒玉地区1500mSBの1位は誰？", "隈部侑成", "4:11"],
+    ["荒玉地区1500mSBの10位は誰？記録は？", "松野凛空", "4:22"],
+  ])("routes a 1500m ranking row to the individual digest: %s", async (question, athlete, time) => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion(question, {
+      skipRouter: true,
+      defaultYear: 2026,
+      llm: null,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.text).toContain(athlete);
+      expect(result.text).toContain(time);
+      expect(result.sources[0]).toContain("1500m_sb_individual_top20");
+    }
+  });
+
+  it.each([
+    ["玉名市合同練習会はいつどこ？", "2026年9月22日", "line-chats"],
+    ["合同練習会の会費は？", "1000", "line-chats"],
+  ])("keeps practice answers connected to the parent LINE memo: %s", async (question, expected, sourceHint) => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion(question, {
+      skipRouter: true,
+      defaultYear: 2026,
+      llm: null,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.text).toContain(expected);
+      expect(result.sources.some((source) => source.includes(sourceHint))).toBe(true);
+    }
+  });
+
   it("routes a named 1500m SB to the athlete digest", async () => {
     resetRetrieverCache();
     resetKgCache();
