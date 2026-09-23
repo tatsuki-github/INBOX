@@ -378,4 +378,60 @@ describe("QA precision regressions", () => {
     expect(result.sources).toEqual(["out-analysis/aragyoku-teams/岱明.md"]);
     expect(result.text).toContain("2024年荒玉駅伝男子");
   });
+
+  it("treats historical 成績 wording as a full 岱明 digest request", async () => {
+    const result = await ask("岱明の荒玉歴代成績");
+    expect(result.sources).toEqual(["out-analysis/aragyoku-teams/岱明.md"]);
+    expect(result.text).toContain("2012年荒玉駅伝男子");
+    expect(result.text).toContain("2025年荒玉駅伝女子");
+  });
+
+  it("keeps a generic women distance question on the distance definitions", async () => {
+    const result = await ask("荒玉駅伝女子の距離");
+    expect(result.sources).toEqual(["docs/aragyoku-ekiden-distance-definitions.md"]);
+    expect(result.text).toContain("1区3.00km");
+    expect(result.text).toContain("5区3.00km");
+  });
+
+  it("answers a compact year-gender-leg record wording", async () => {
+    const result = await ask("2024年荒玉駅伝男子1区記録");
+    expect(result.sources).toEqual(["out-analysis/aragyoku_meet_records.md"]);
+    expect(result.text).toContain("2024年荒玉駅伝男子の1区大会区間記録は9:01");
+  });
+
+  it("routes a 玉名附中 player list to the school record digest", async () => {
+    const result = await ask("玉名附中の選手一覧");
+    expect(result.sources).toEqual(["out-analysis/arato-tamana-teams/玉名附中.md"]);
+    expect(result.text).toContain("# 玉名附中 記録一覧");
+  });
+
+  it("accepts the 玉名付属中 alias for the school SB digest", async () => {
+    const result = await ask("玉名付属中の選手とSB一覧");
+    expect(result.sources).toEqual(["out-analysis/arato-tamana-teams/玉名附中.md"]);
+    expect(result.text).toContain("# 玉名附中 記録一覧");
+  });
+
+  it("accepts 玉高附属 wording for the school SB digest", async () => {
+    const result = await ask("玉高附属の選手とSB一覧");
+    expect(result.sources).toEqual(["out-analysis/arato-tamana-teams/玉名附中.md"]);
+    expect(result.text).toContain("# 玉名附中 記録一覧");
+  });
+
+  it("accepts a fullwidth slash in the Norwegian 45/15 alias", async () => {
+    const result = await ask("ノルウェー式45／15");
+    expect(result.sources).toEqual(["repo-docs/adr/002-norwegian-method-integration.md"]);
+    expect(result.text).toMatch(/GZ|T|45/);
+  });
+
+  it("accepts spaces around an English Norwegian dash alias", async () => {
+    const result = await ask("Norwegian 45 – 15");
+    expect(result.sources).toEqual(["repo-docs/adr/002-norwegian-method-integration.md"]);
+    expect(result.text).toMatch(/GZ|T|45/);
+  });
+
+  it("routes Daniels calculator wording to the practice generation guide", async () => {
+    const result = await ask("Daniels calculatorの使い方");
+    expect(result.sources).toEqual(["docs/ai-practice-generation.md"]);
+    expect(result.text).toContain("scripts/daniels_calculator.py");
+  });
 });
