@@ -466,19 +466,20 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
   const resultListGender = q.match(/(男子|女子)/)?.[1];
   const compactAthleteRecord =
     extractAthleteNameHints(q).length > 0 &&
-    /800(?:m|ｍ)?|1500(?:m|ｍ)?|3000(?:m|ｍ)?/.test(q) &&
-    /秒|分|タイム|記録|ベスト/.test(q);
+    /800(?:m|ｍ)?|1500(?:m|ｍ)?|3000(?:m|ｍ)?|5000(?:m|ｍ)?/.test(q) &&
+    /秒|分|タイム|記録|ベスト|SB|PB/.test(q);
   if (/自己ベスト|自己記録|\bSB\b|\bPB\b/.test(q) || compactAthleteRecord) {
-    const name = extractAthleteNameHints(q)[0] ?? q.match(/[\p{Script=Han}]{2,8}/u)?.[0];
+    const name = extractAthleteNameHints(q).find((hint) => new RegExp(`${hint.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")},[^,]+,[^,]+,[^,]+,`).test(flat)) ??
+      extractAthleteNameHints(q)[0] ?? q.match(/[\p{Script=Han}]{2,8}/u)?.[0];
     if (name) {
-      const row = flat.match(new RegExp(`${name},([^,]+),([^,]+),([^,]+),([^,]*),([^,]*),([^,]*),`));
+      const row = flat.match(new RegExp(`${name},([^,]+),([^,]+),([^,]+),([^,]*),([^,]*),([^,]*),([^,]*),`));
       if (row) {
-        const distance = q.match(/(800|1500|3000)(?:m|ｍ)?/)?.[1];
+        const distance = q.match(/(800|1500|3000|5000)(?:m|ｍ)?/)?.[1];
         if (distance) {
-          const value = distance === "800" ? row[4] : distance === "1500" ? row[5] : row[6];
+          const value = distance === "800" ? row[4] : distance === "1500" ? row[5] : distance === "3000" ? row[6] : row[7];
           if (value) return `${name}（${row[1]}）の${distance}m自己ベストは${value}。`;
         }
-        const records = [`800m ${row[4]}`, `1500m ${row[5]}`, `3000m ${row[6]}`].filter((value) => !/\s$/.test(value) && !/:\s*$/.test(value));
+        const records = [`800m ${row[4]}`, `1500m ${row[5]}`, `3000m ${row[6]}`, `5000m ${row[7]}`].filter((value) => !/\s$/.test(value) && !/:\s*$/.test(value));
         return `${name}（${row[1]}）の自己ベスト: ${records.join("、")}。`;
       }
     }
@@ -2322,9 +2323,9 @@ function offlineAnswer(
       /会場/.test(question) &&
       !/集合/.test(question);
     const namedSelfBestLookup =
-      (/自己ベスト|自己記録|\bSB\b|\bPB\b/.test(question) ||
+      (/自己ベスト|自己記録|SB|PB/.test(question) ||
         (extractAthleteNameHints(question).length > 0 &&
-          /800(?:m|ｍ)?|1500(?:m|ｍ)?|3000(?:m|ｍ)?/.test(question) &&
+          /800(?:m|ｍ)?|1500(?:m|ｍ)?|3000(?:m|ｍ)?|5000(?:m|ｍ)?/.test(question) &&
           /秒|分|タイム|記録|ベスト/.test(question))) &&
       extractAthleteNameHints(question).length > 0 &&
       !(/荒尾三中/.test(question) && /選手|一覧/.test(question));
@@ -2532,6 +2533,11 @@ function offlineAnswer(
       const namedSelfBestPreview = namedSelfBestLookup
         ? (() => {
             const name = question.match(/[\p{Script=Han}]{2,8}(?=の(?:自己|記録|SB|PB))/u)?.[0] ?? question.match(/[\p{Script=Han}]{2,8}/u)?.[0] ?? "";
+            const csvPreview = retrieved
+              .filter((r) => r.chunk.source.startsWith("sb/"))
+              .map((r) => r.chunk.text)
+              .find((text) => name.length > 0 && text.includes(`${name},`));
+            if (csvPreview) return previewForOffline(csvPreview, question);
             return retrieved
               .map((r) => previewForOffline(r.chunk.text, question))
               .find((preview) => name.length > 0 && preview.includes(name) && !/名前,所属/.test(preview));
@@ -3018,7 +3024,7 @@ function boostDaimingLineSources(query: string, baseSources: string[]): string[]
 
 function isNamedTeamSbListQuery(query: string): boolean {
   const q = query.normalize("NFKC");
-  const individualRecord = /800(?:m|ｍ)?|1500(?:m|ｍ)?|3000(?:m|ｍ)?/.test(q) && !/選手一覧|所属選手|全記録|記録一覧/.test(q);
+  const individualRecord = /800(?:m|ｍ)?|1500(?:m|ｍ)?|3000(?:m|ｍ)?|5000(?:m|ｍ)?/.test(q) && !/選手一覧|所属選手|全記録|記録一覧/.test(q);
   return /荒尾三中/.test(q) && /(?:\bSB\b|ＳＢ|シーズンベスト|選手|一覧|所属)/.test(q) && /選手|一覧|所属/.test(q) && !individualRecord;
 }
 
@@ -3029,7 +3035,7 @@ function isNamedSchoolSbListQuery(query: string): boolean {
 
 function isNamedSchoolListQuery(query: string): boolean {
   const q = query.normalize("NFKC");
-  const individualRecord = /800(?:m|ｍ)?|1500(?:m|ｍ)?|3000(?:m|ｍ)?/.test(q) && !/選手一覧|所属選手|全記録|記録一覧/.test(q);
+  const individualRecord = /800(?:m|ｍ)?|1500(?:m|ｍ)?|3000(?:m|ｍ)?|5000(?:m|ｍ)?/.test(q) && !/選手一覧|所属選手|全記録|記録一覧/.test(q);
   return /荒尾三中|荒尾第四中|荒尾海陽中|南関中|玉名中|天水中|岱明中|長洲中|玉陵中|玉南中|玉名附中|玉名付属中?|玉名附属|玉高附属/.test(q) &&
     /選手|一覧|所属|SB|シーズンベスト/.test(q) && !individualRecord;
 }
@@ -4317,7 +4323,7 @@ export async function answerQuestion(
   const namedSelfBestQ =
     (/自己ベスト|自己記録|SB|PB/.test(expanded) ||
       (extractAthleteNameHints(expanded).length > 0 &&
-        /800(?:m|ｍ)?|1500(?:m|ｍ)?|3000(?:m|ｍ)?/.test(expanded) &&
+        /800(?:m|ｍ)?|1500(?:m|ｍ)?|3000(?:m|ｍ)?|5000(?:m|ｍ)?/.test(expanded) &&
         /秒|分|タイム|記録|ベスト/.test(expanded))) &&
     extractAthleteNameHints(expanded).length > 0;
   if (namedSelfBestQ && !namedSchoolList && !namedSchoolSbList) {

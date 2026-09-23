@@ -2714,4 +2714,65 @@ describe("QA precision regressions", () => {
     expect(result.sources).toEqual(["sb/中学生SB.csv"]);
     expect(result.text).toContain("9:04.46");
   });
+
+  it("answers a school-context 1500m SB query", async () => {
+    const result = await ask("稗島葵音（南関中）の1500m SBは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("5:02.49");
+  });
+
+  it("answers a school-context 5000m SB query", async () => {
+    const result = await ask("稗島葵音（南関中）の5000m SBは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("11:18.46");
+  });
+
+  it("answers a compact 1500m SB query for the athlete", async () => {
+    const result = await ask("稗島葵音 南関中 1500mSB");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("5:02.49");
+  });
+
+  it("answers a school-first 1500m personal-best query", async () => {
+    const result = await ask("南関中の稗島葵音1500m自己ベストは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("5:02.49");
+  });
+
+  it("answers an athlete-first 1500m SB query", async () => {
+    const result = await ask("稗島葵音の南関中1500mSB");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("5:02.49");
+  });
+
+  it("answers a school-first spaced 1500m SB query", async () => {
+    const result = await ask("南関中 稗島葵音 1500m SB");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("5:02.49");
+  });
+
+  it("answers an honorific 1500m SB query", async () => {
+    const result = await ask("稗島葵音さん（南関中）の1500m SB");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("5:02.49");
+  });
+
+  it("answers a trailing-school 1500m SB query", async () => {
+    const result = await ask("稗島葵音の1500m SB（南関中）");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("5:02.49");
+  });
+
+  it("answers a compact 5000m SB query", async () => {
+    const result = await ask("稗島葵音 南関中 5000mSB");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("11:18.46");
+  });
+
+  it("answers a school-first 5000m best query", async () => {
+    const result = await ask("南関中の稗島葵音5000mベストは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("11:18.46");
+  });
+
 });
