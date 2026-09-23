@@ -133,4 +133,65 @@ describe("QA precision regressions", () => {
     expect(result.sources).toEqual(["repo-docs/adr/002-norwegian-method-integration.md"]);
     expect(result.text).toMatch(/GZ\/T|45-15|セッション/);
   });
+
+  it("answers the female jog pace alias instead of returning a table fragment", async () => {
+    const result = await ask("女子ジョグのペース目安は？");
+    expect(result.sources).toEqual(["practice/daiming-practice-menus-kpace.md"]);
+    expect(result.text).toContain("k/4:45");
+  });
+
+  it("answers the male jog pace alias instead of returning a table fragment", async () => {
+    const result = await ask("男子ジョグのペース目安は？");
+    expect(result.sources).toEqual(["practice/daiming-practice-menus-kpace.md"]);
+    expect(result.text).toContain("k/4:45");
+  });
+
+  it("answers an unqualified jog standard from the practice menu", async () => {
+    const result = await ask("ジョグの標準ペースは？");
+    expect(result.sources).toEqual(["practice/daiming-practice-menus-kpace.md"]);
+    expect(result.text).toMatch(/男子.*女子|女子.*男子/);
+    expect(result.text).toContain("k/4:45");
+  });
+
+  it("keeps weather JSON path questions in repo scope", async () => {
+    const result = await ask("天気JSONの保存場所は？");
+    expect(result.sources).toEqual(["repo-docs/tamana-weather.md"]);
+    expect(result.text).toContain("tamana-forecast.json");
+  });
+
+  it("keeps weather CSV path questions in repo scope", async () => {
+    const result = await ask("天気CSVの保存場所は？");
+    expect(result.sources).toEqual(["repo-docs/tamana-weather.md"]);
+    expect(result.text).toContain("tamana-forecast.csv");
+  });
+
+  it("answers the weather update command alias", async () => {
+    const result = await ask("天気更新コマンドを教えて");
+    expect(result.sources).toEqual(["repo-docs/tamana-weather.md"]);
+    expect(result.text).toContain("update_tamana_weather.py");
+  });
+
+  it("accepts kanji top-six wording", async () => {
+    const result = await ask("2024年荒玉男子上位六校の平均ペースは？");
+    expect(result.sources).toEqual(["out-analysis/aragyoku_top6_historical_average_pace.md"]);
+    expect(result.text).toContain("3:19.3");
+  });
+
+  it("accepts best-six wording for the historical pace table", async () => {
+    const result = await ask("2024年荒玉男子ベスト6平均ペースは？");
+    expect(result.sources).toEqual(["out-analysis/aragyoku_top6_historical_average_pace.md"]);
+    expect(result.text).toContain("3:19.3");
+  });
+
+  it("accepts an explicit 1位〜6位 range for top-six pace", async () => {
+    const result = await ask("荒玉男子2024年1位〜6位平均ペースは？");
+    expect(result.sources).toEqual(["out-analysis/aragyoku_top6_historical_average_pace.md"]);
+    expect(result.text).toContain("3:19.3");
+  });
+
+  it("accepts a Unicode hyphen in 45-15 wording", async () => {
+    const result = await ask("Norwegian 45‐15は？");
+    expect(result.sources).toEqual(["repo-docs/adr/002-norwegian-method-integration.md"]);
+    expect(result.text).toMatch(/GZ\/T|45-15|セッション/);
+  });
 });

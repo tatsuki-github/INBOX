@@ -9,7 +9,7 @@ export type ScopeDecision =
  * Live "今日の天気は？" etc. still hard-refuse via /天気/.
  */
 const REPO_WEATHER_ALLOW =
-  /天気データ|天気の更新|更新スクリプト|どう更新|update_tamana_weather|Open-Meteo|tamana-forecast|tamana-weather|天気ファイル|予報ファイル|1時間間隔|3時間間隔|保存先/;
+  /天気データ|天気の更新|更新スクリプト|どう更新|更新.*コマンド|天気.*コマンド|update_tamana_weather|Open-Meteo|tamana-forecast|tamana-weather|天気ファイル|予報ファイル|天気(?:JSON|CSV)|1時間間隔|3時間間隔|保存先/;
 
 /** Hard refuse — external live data / unrelated chat, even if other tokens appear. */
 const HARD_OUT_OF_SCOPE_PATTERNS = [
