@@ -814,4 +814,65 @@ describe("QA precision regressions", () => {
     expect(result.sources).toEqual(["sb/中学生SB.csv"]);
     expect(result.text).toContain("三鶴創一朗");
   });
+
+  it("answers unitless 佐藤央琉 800m questions from the SB source", async () => {
+    const result = await ask("佐藤央琉800タイム");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("800m自己ベストは2:21.61");
+  });
+
+  it("answers unitless 佐藤央琉 800m best wording from the SB source", async () => {
+    const result = await ask("佐藤央琉800ベスト");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("800m自己ベストは2:21.61");
+  });
+
+  it("answers unitless 角田亜美 1500m best wording from the SB source", async () => {
+    const result = await ask("角田亜美1500ベスト");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("1500m自己ベストは5:45.56");
+  });
+
+  it("answers unitless 松野凛空 1500m wording from the SB source", async () => {
+    const result = await ask("松野凛空1500何分");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("松野凛空");
+  });
+
+  it("answers unitless 西優翔 1500m wording from the SB source", async () => {
+    const result = await ask("西優翔1500ベスト");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("西優翔");
+  });
+
+  it("answers unitless 木下紗那 1500m wording from the SB source", async () => {
+    const result = await ask("木下紗那1500タイム");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("木下紗那");
+  });
+
+  it("answers unitless 三鶴創一朗 1500m wording from the SB source", async () => {
+    const result = await ask("三鶴創一朗1500ベスト");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("三鶴創一朗");
+  });
+
+  it("answers unitless 坂本春翔 1500m wording from the SB source", async () => {
+    const result = await ask("坂本春翔1500何秒");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("坂本春翔");
+  });
+
+  it("selects the 1500m section for a female school average", async () => {
+    const result = await ask("女子1500m岱明上位3人平均");
+    expect(result.sources).toEqual(["out-analysis/2026_women_800m_1500m_pb_school_ranking.md"]);
+    expect(result.text).toContain("上位3人平均 5:10.77");
+    expect(result.text).not.toContain("2:28.81");
+  });
+
+  it("keeps a female 800m school average on the 800m section", async () => {
+    const result = await ask("女子800m岱明上位3人平均");
+    expect(result.sources).toEqual(["out-analysis/2026_women_800m_1500m_pb_school_ranking.md"]);
+    expect(result.text).toContain("上位3人平均 2:28.81");
+  });
 });

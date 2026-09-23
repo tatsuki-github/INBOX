@@ -134,7 +134,7 @@ export function extractAthleteNameHints(query: string): string[] {
   // 「森 3000m」「今村昇磨 1500m自己ベスト」「FESTUS 5000m SB」
   for (const m of q.matchAll(
     new RegExp(
-      `(${nameTok})(?:[（(][^）)]{1,24}[）)])?(?:\\s+)?(?=\\d+\\s*(?:m|km)|自己ベスト|ベストタイム|自己記録|\\bSB\\b|\\bPB\\b)`,
+      `(${nameTok})(?:[（(][^）)]{1,24}[）)])?(?:\\s+)?(?=(?:800|1500|3000)\\s*(?:m|km)?|自己ベスト|ベストタイム|自己記録|\\bSB\\b|\\bPB\\b)`,
       "giu",
     ),
   )) {

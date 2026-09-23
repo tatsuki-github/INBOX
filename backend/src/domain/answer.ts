@@ -312,14 +312,14 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
   const resultListGender = q.match(/(男子|女子)/)?.[1];
   const compactAthleteRecord =
     extractAthleteNameHints(q).length > 0 &&
-    /800m|800ｍ|1500m|1500ｍ|3000m|3000ｍ/.test(q) &&
+    /800(?:m|ｍ)?|1500(?:m|ｍ)?|3000(?:m|ｍ)?/.test(q) &&
     /秒|分|タイム|記録|ベスト/.test(q);
   if (/自己ベスト|自己記録|\bSB\b|\bPB\b/.test(q) || compactAthleteRecord) {
     const name = extractAthleteNameHints(q)[0] ?? q.match(/[\p{Script=Han}]{2,8}/u)?.[0];
     if (name) {
       const row = flat.match(new RegExp(`${name},([^,]+),([^,]+),([^,]+),([^,]*),([^,]*),`));
       if (row) {
-        const distance = q.match(/(800|1500|3000)m/)?.[1];
+        const distance = q.match(/(800|1500|3000)(?:m|ｍ)?/)?.[1];
         if (distance) {
           const value = distance === "800" ? row[4] : distance === "1500" ? row[5] : "";
           if (value) return `${name}（${row[1]}）の${distance}m自己ベストは${value}。`;
@@ -724,11 +724,8 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
                 ? "菊水中"
                 : "";
     if (school) {
-      const heading = count
-        ? `## 上位${count}人平均`
-        : /800m|800ｍ/.test(q)
-          ? "## 800m・上位3人平均"
-          : "## 上位4人平均";
+      const distanceLabel = /1500m|1500ｍ/.test(q) ? "1500m" : "800m";
+      const heading = `## ${distanceLabel}・${count ? `上位${count}人平均` : "上位3人平均"}`;
       const sectionStart = flat.indexOf(heading);
       const section = sectionStart >= 0 ? flat.slice(sectionStart) : flat;
       const row = section.match(
@@ -2120,7 +2117,7 @@ function offlineAnswer(
     const namedSelfBestLookup =
       (/自己ベスト|自己記録|\bSB\b|\bPB\b/.test(question) ||
         (extractAthleteNameHints(question).length > 0 &&
-          /800m|800ｍ|1500m|1500ｍ|3000m|3000ｍ/.test(question) &&
+          /800(?:m|ｍ)?|1500(?:m|ｍ)?|3000(?:m|ｍ)?/.test(question) &&
           /秒|分|タイム|記録|ベスト/.test(question))) &&
       extractAthleteNameHints(question).length > 0 &&
       !(/荒尾三中/.test(question) && /選手|一覧/.test(question));
@@ -3782,7 +3779,7 @@ export async function answerQuestion(
   const namedSelfBestQ =
     (/自己ベスト|自己記録|\bSB\b|\bPB\b/.test(expanded) ||
       (extractAthleteNameHints(expanded).length > 0 &&
-        /800m|800ｍ|1500m|1500ｍ|3000m|3000ｍ/.test(expanded) &&
+        /800(?:m|ｍ)?|1500(?:m|ｍ)?|3000(?:m|ｍ)?/.test(expanded) &&
         /秒|分|タイム|記録|ベスト/.test(expanded))) &&
     extractAthleteNameHints(expanded).length > 0;
   if (namedSelfBestQ && !namedSchoolList && !namedSchoolSbList) {
