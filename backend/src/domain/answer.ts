@@ -1504,7 +1504,7 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
   const athleteMeetRecord = q.match(
     /([\p{Script=Han}]{2,8})の(?:(?:荒玉|駅伝))?(?:男子|女子)?(?:[1-6]区)?(?:大会)?(?:区間記録|ボード記録)/u,
   );
-  if (athleteMeetRecord) {
+  if (athleteMeetRecord && !/^(?:男子|女子|荒玉|駅伝)$/.test(athleteMeetRecord[1]!)) {
     const name = athleteMeetRecord[1]!;
     const leg = q.match(/([1-6])区/)?.[1];
     const gender = q.match(/男子|女子/)?.[0];
@@ -1530,10 +1530,10 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
   if (
     /大会記録|区間記録|ボード.*記録|記録保持|歴代記録|20\d{2}.*(?:男子|女子).*区.*記録|(?:男子|女子).*?[1-6]区.*記録/.test(q) &&
     (/荒玉|駅伝|大会区間記録|ボード記録/.test(q) || /記録保持者|区間記録/.test(q)) &&
-    /男子.*\d区|女子.*\d区/.test(q)
+    /(?<!\d)[1-6]区/.test(q)
   ) {
     const gender = /男子/.test(q) ? "男子" : "女子";
-    const leg = q.match(/([1-6])区/)?.[1];
+    const leg = q.match(/(?<!\d)([1-6])区/)?.[1];
     if (leg) {
       const needle = `荒玉駅伝${gender}の${leg}区大会区間記録`;
       const explicitYear = q.match(/20\d{2}年?/)?.[0];
@@ -1588,6 +1588,21 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
         }
         return best[0]!;
       }
+    }
+  }
+  if (
+    /大会記録|区間記録|ボード/.test(q) &&
+    /荒玉|駅伝/.test(q) &&
+    /男子|女子/.test(q) &&
+    /20\d{2}/.test(q) &&
+    !/(?<!\d)[1-6]区/.test(q)
+  ) {
+    const year = q.match(/20\d{2}/)?.[0];
+    const gender = /女子/.test(q) ? "女子" : "男子";
+    if (year) {
+      const rows = [...flat.matchAll(new RegExp(`${year}年荒玉駅伝${gender}(?:のボード上部・総合大会記録|の[1-6]区大会区間記録)[^。]+。`, "g"))]
+        .map((match) => match[0]);
+      if (rows.length > 0) return rows.join(" ");
     }
   }
   if (/距離|長さ|どれくらい|何キロ|何km|何m|何ｍ|何メートル/.test(q) && /[1-6]区|区間/.test(q)) {
@@ -1747,7 +1762,7 @@ function offlineAnswer(
   }
   if (
     /荒玉|駅伝/.test(question) &&
-    /[1-6]区/.test(question) &&
+    /(?<!\d)[1-6]区/.test(question) &&
     /誰|だれ/.test(question) &&
     /男子|女子/.test(question) &&
     !/区間賞|区間1位|選手名|20\d{2}/.test(question)
@@ -1780,6 +1795,12 @@ function offlineAnswer(
     const namedMeetRecord =
       /[\p{Script=Han}]{2,8}の/u.test(question) &&
       /大会記録|区間記録|ボード.*記録|記録保持/.test(question);
+    const yearGenderMeetRecord =
+      /20\d{2}/.test(question) &&
+      /荒玉|駅伝/.test(question) &&
+      /男子|女子/.test(question) &&
+      /大会記録|区間記録|ボード/.test(question) &&
+      !/(?<!\d)[1-6]区/.test(question);
     const totalMeetRecord =
       /男子|女子/.test(question) &&
       /総合.*(?:大会記録|記録)|ボード/.test(question) &&
@@ -2115,6 +2136,7 @@ function offlineAnswer(
     const focusedLookup =
       preciseMeetRecord ||
       namedMeetRecord ||
+      yearGenderMeetRecord ||
       totalMeetRecord ||
       latestWinner ||
       latestWinnerTime ||
@@ -3301,6 +3323,15 @@ export async function answerQuestion(
     /[\p{Script=Han}]{2,8}の/u.test(question) &&
     /大会記録|区間記録|ボード.*記録|記録保持/.test(question) &&
     !/区間賞|区間順/.test(question);
+  const yearGenderMeetRecordQ =
+    /20\d{2}/.test(question) &&
+    /荒玉|駅伝/.test(question) &&
+    /男子|女子/.test(question) &&
+    /大会記録|区間記録|ボード/.test(question) &&
+    !/(?<!\d)[1-6]区/.test(question);
+  if (yearGenderMeetRecordQ) {
+    preferredSources = ["out-analysis/aragyoku_meet_records.md"];
+  }
   const totalMeetRecordQ =
     /男子|女子/.test(question) &&
     /総合.*(?:大会記録|記録)|ボード/.test(question) &&
@@ -3899,7 +3930,7 @@ export async function answerQuestion(
   const aritaCoachingQ =
     /女子荒玉|総合タイム目安|メンバー目安|トラック距離|3km.*換算|1500.*換算|換算|43分切り|区間配分|鬼ごっこ|駅伝前|何チーム.*なごみ|なごみ.*何チーム|参加予定.*何人|何人.*参加予定/.test(
       expanded,
-    ) && !/区間賞|区間順/.test(expanded);
+    ) && !/区間賞|区間順|平均ペース|上位\s*[六6]|トップ\s*[六6]/.test(expanded);
   if (aritaCoachingQ) {
     preferredSources = ["out-analysis/line-chats/arita-taisho.md"];
   }
@@ -3980,17 +4011,17 @@ export async function answerQuestion(
   const fromSources = retrieveBySources(preferredSources, {
     query: expanded,
     perSource:
-      directDocQ || exhaustive || isLegAthleteQuestion(expanded) || individual1500TopQ || individual3000RankQ || teamBestQ || totalMeetRecordQ || teamFullRecordQ || explicitTeamLegRankQ || historicalWinnerQ || winnerYearTeamQ || legRankQuestionQ || namedLegTimeQ
+      directDocQ || exhaustive || isLegAthleteQuestion(expanded) || individual1500TopQ || individual3000RankQ || teamBestQ || totalMeetRecordQ || yearGenderMeetRecordQ || teamFullRecordQ || explicitTeamLegRankQ || historicalWinnerQ || winnerYearTeamQ || legRankQuestionQ || namedLegTimeQ
         || resultListQ || genericResultQ || topThreeQ || explicitThirdPlaceQ || unqualifiedSixthPlaceQ || explicitLegAwardQ || schoolPbRankQ || nagomiLegOrderQ || nagomiLegRankQ || nagomiResultQ || nagomiDateQ || nagomiVenueQ || kanaguriResultQ || aragyokuDateQ || aragyokuVenueQ || datedTeamResultQ || unqualifiedTeamResultQ
         ? 200
         : RETRIEVAL_BUDGET.perSource,
     maxChunks:
-      directDocQ || exhaustive || isLegAthleteQuestion(expanded) || individual1500TopQ || individual3000RankQ || teamBestQ || totalMeetRecordQ || teamFullRecordQ || explicitTeamLegRankQ || historicalWinnerQ || winnerYearTeamQ || legRankQuestionQ || namedLegTimeQ
+      directDocQ || exhaustive || isLegAthleteQuestion(expanded) || individual1500TopQ || individual3000RankQ || teamBestQ || totalMeetRecordQ || yearGenderMeetRecordQ || teamFullRecordQ || explicitTeamLegRankQ || historicalWinnerQ || winnerYearTeamQ || legRankQuestionQ || namedLegTimeQ
         || resultListQ || genericResultQ || topThreeQ || explicitThirdPlaceQ || unqualifiedSixthPlaceQ || explicitLegAwardQ || schoolPbRankQ || nagomiLegOrderQ || nagomiLegRankQ || nagomiResultQ || nagomiDateQ || nagomiVenueQ || kanaguriResultQ || aragyokuDateQ || aragyokuVenueQ || datedTeamResultQ || unqualifiedTeamResultQ
         ? 200
         : RETRIEVAL_BUDGET.maxChunks,
       coverage:
-      directDocQ || exhaustive || exactDatedPractice || isLegAthleteQuestion(expanded) || individual1500TopQ || individual3000RankQ || teamBestQ || totalMeetRecordQ || teamFullRecordQ || explicitTeamLegRankQ || historicalWinnerQ || winnerYearTeamQ || legRankQuestionQ || namedLegTimeQ
+      directDocQ || exhaustive || exactDatedPractice || isLegAthleteQuestion(expanded) || individual1500TopQ || individual3000RankQ || teamBestQ || totalMeetRecordQ || yearGenderMeetRecordQ || teamFullRecordQ || explicitTeamLegRankQ || historicalWinnerQ || winnerYearTeamQ || legRankQuestionQ || namedLegTimeQ
         || resultListQ || genericResultQ || topThreeQ || explicitThirdPlaceQ || unqualifiedSixthPlaceQ || explicitLegAwardQ || schoolPbRankQ || nagomiLegOrderQ || nagomiLegRankQ || nagomiResultQ || nagomiDateQ || nagomiVenueQ || kanaguriResultQ || aragyokuDateQ || aragyokuVenueQ || datedTeamResultQ || unqualifiedTeamResultQ
         ? "full"
         : "ranked",
@@ -4007,6 +4038,7 @@ export async function answerQuestion(
     namedTeamSbList ||
     namedSchoolSbList ||
     namedSchoolList ||
+    yearGenderMeetRecordQ ||
     isLegAthleteQuestion(expanded) ||
     aragyokuDistanceQ ||
     compactTeamRankQ ||
@@ -4076,6 +4108,7 @@ export async function answerQuestion(
     namedTeamSbList ||
     namedSchoolSbList ||
     namedSchoolList ||
+    yearGenderMeetRecordQ ||
     teamFullRecordQ
       ? Math.max(topK, fromSources.length, 200)
       : exhaustive
@@ -4103,6 +4136,7 @@ export async function answerQuestion(
         directDocQ ||
         exhaustive ||
         exactDatedPractice ||
+        yearGenderMeetRecordQ ||
         compactWinnerQ ||
         winnerSchoolQ ||
         runnerUpQ ||

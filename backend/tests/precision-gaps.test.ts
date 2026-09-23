@@ -689,4 +689,69 @@ describe("QA precision regressions", () => {
     expect(result.sources).toEqual(["out-analysis/aragyoku_leg_awards.md"]);
     expect(result.text).toContain("2025年荒玉駅伝女子1区の区間1位は坂井優花");
   });
+
+  it("keeps female top-six pace queries out of coaching notes", async () => {
+    const result = await ask("女子荒玉2025上位6平均ペース");
+    expect(result.sources).toEqual(["out-analysis/aragyoku_top6_historical_average_pace.md"]);
+    expect(result.text).toContain("| 2025 | 6 |");
+    expect(result.text).not.toContain("女子荒玉は43分切り");
+  });
+
+  it("summarizes a compact-year female meet-record query", async () => {
+    const result = await ask("2024荒玉女子の大会記録");
+    expect(result.sources).toEqual(["out-analysis/aragyoku_meet_records.md"]);
+    expect(result.text).toContain("2024年荒玉駅伝女子のボード上部・総合大会記録");
+    expect(result.text).not.toContain("2012年荒玉駅伝女子");
+  });
+
+  it("summarizes a year-suffix female meet-record query", async () => {
+    const result = await ask("荒玉女子2024大会記録");
+    expect(result.sources).toEqual(["out-analysis/aragyoku_meet_records.md"]);
+    expect(result.text).toContain("2024年荒玉駅伝女子のボード上部・総合大会記録");
+    expect(result.text).not.toContain("2012年荒玉駅伝女子");
+  });
+
+  it("summarizes a compact-year male leg-record query", async () => {
+    const result = await ask("2024荒玉男子区間記録");
+    expect(result.sources).toEqual(["out-analysis/aragyoku_meet_records.md"]);
+    expect(result.text).toContain("2024年荒玉駅伝男子の1区大会区間記録");
+    expect(result.text).not.toContain("2012年荒玉駅伝男子");
+  });
+
+  it("summarizes a year-suffix male leg-record query", async () => {
+    const result = await ask("荒玉男子2024区間記録");
+    expect(result.sources).toEqual(["out-analysis/aragyoku_meet_records.md"]);
+    expect(result.text).toContain("2024年荒玉駅伝男子の1区大会区間記録");
+    expect(result.text).not.toContain("2012年荒玉駅伝男子");
+  });
+
+  it("keeps an explicit-year female station-record query focused", async () => {
+    const result = await ask("2024年荒玉女子の大会記録");
+    expect(result.sources).toEqual(["out-analysis/aragyoku_meet_records.md"]);
+    expect(result.text).toContain("2024年荒玉駅伝女子の1区大会区間記録");
+  });
+
+  it("keeps an explicit-year male station-record query focused", async () => {
+    const result = await ask("2024年荒玉男子の区間記録");
+    expect(result.sources).toEqual(["out-analysis/aragyoku_meet_records.md"]);
+    expect(result.text).toContain("2024年荒玉駅伝男子の1区大会区間記録");
+  });
+
+  it("keeps the station-prefixed female record query focused", async () => {
+    const result = await ask("荒玉駅伝2024女子の大会記録");
+    expect(result.sources).toEqual(["out-analysis/aragyoku_meet_records.md"]);
+    expect(result.text).toContain("2024年荒玉駅伝女子のボード上部・総合大会記録");
+  });
+
+  it("keeps the station-prefixed male record query focused", async () => {
+    const result = await ask("荒玉駅伝2024男子の区間記録");
+    expect(result.sources).toEqual(["out-analysis/aragyoku_meet_records.md"]);
+    expect(result.text).toContain("2024年荒玉駅伝男子の1区大会区間記録");
+  });
+
+  it("keeps a female top-six pace query with year suffix exact", async () => {
+    const result = await ask("荒玉女子2025上位6校平均ペース");
+    expect(result.sources).toEqual(["out-analysis/aragyoku_top6_historical_average_pace.md"]);
+    expect(result.text).toContain("| 2025 | 6 |");
+  });
 });
