@@ -111,6 +111,10 @@ const NON_NAME_HINTS = new Set([
   "キロ",
   "SB",
   "PB",
+  "自己",
+  "の",
+  "は",
+  "と",
   "教えて",
   "知りたい",
 ]);
@@ -122,10 +126,14 @@ const NON_NAME_HINTS = new Set([
 export function extractAthleteNameHints(query: string): string[] {
   const q = query
     .trim()
-    .normalize("NFKC");
+    .normalize("NFKC")
+    .replace(/S\s*[.．／/]\s*B/giu, "SB")
+    .replace(/P\s*[.．／/]\s*B/giu, "PB");
   const hints: string[] = [];
   const push = (s: string) => {
-    const t = s.trim().replace(/(?:さん|君|くん|選手)(?:の)?$/u, "");
+    const t = s.trim()
+      .replace(/(?:さん|君|くん|選手)(?:の)?$/u, "")
+      .replace(/(?:の|は|と|や)$/u, "");
     if (!t || t.length > 12) return;
     if (NON_NAME_HINTS.has(t)) return;
     if (hints.includes(t)) return;
@@ -140,6 +148,17 @@ export function extractAthleteNameHints(query: string): string[] {
   const nameQ = /荒尾三中|荒尾第四中|荒尾海陽中|南関中|玉名中|天水中|岱明中|長洲中|玉陵中|玉南中|玉名附中|玉名付属中?|玉名附属|玉高附属/.test(q)
     ? q
     : compactNameQ;
+
+  // 「原田はなと村上葉侑の1500m」のような複数選手の列挙。
+  for (const m of nameQ.matchAll(
+    /(.+?)(?=の(?=(?:800|1[，,]?\s*500|3[，,]?\s*000|5[，,]?\s*000)\s*(?:m|km|メートル|キロ)?|3\s*km|5\s*km|自己ベスト|ベスト|記録|タイム|SB|PB))/giu,
+  )) {
+    const prefix = m[1]!.replace(/^(?:女子|男子)\s*/u, "");
+    for (const part of prefix.split(/(?:と|、|・|\/|／|,)/u)) {
+      const candidate = part.trim();
+      if (candidate) push(candidate);
+    }
+  }
 
   for (const m of nameQ.matchAll(
     new RegExp(`(${nameTok})(?:さん|君|くん|選手)?(?:[（(][^）)]{1,24}[）)])?の`, "gu"),

@@ -3765,4 +3765,680 @@ describe("QA precision regressions", () => {
     expect(result.text).toContain("9:04.46");
   });
 
+  it("answers a lowercase sb query", async () => {
+    const result = await ask("原田はなの1500m sbは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("原田はな（Star Light AC）");
+    expect(result.text).toContain("4:40.44");
+  });
+
+  it("answers a lowercase pb query", async () => {
+    const result = await ask("江口大尊の3000m pbは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("江口大尊（荒尾三中）");
+    expect(result.text).toContain("9:04.46");
+  });
+
+  it("answers a mixed-case sb query", async () => {
+    const result = await ask("村上葉侑の5km Sbは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("村上葉侑（南関中）");
+    expect(result.text).toContain("17:18.00");
+  });
+
+  it("answers a mixed-case pb query", async () => {
+    const result = await ask("江口大尊の3000m Pbは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("江口大尊（荒尾三中）");
+    expect(result.text).toContain("9:04.46");
+  });
+
+  it("answers a lowercase sb query with a Japanese unit", async () => {
+    const result = await ask("村上葉侑の5キロ sbは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("村上葉侑（南関中）");
+    expect(result.text).toContain("17:18.00");
+  });
+
+  it("answers a lowercase pb query with a fullwidth unit", async () => {
+    const result = await ask("江口大尊の３０００ｍ ｐｂは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("江口大尊（荒尾三中）");
+    expect(result.text).toContain("9:04.46");
+  });
+
+  it("answers a lowercase sb query with a fullwidth distance", async () => {
+    const result = await ask("原田はなの１５００ｍ ｓｂは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("原田はな（Star Light AC）");
+    expect(result.text).toContain("4:40.44");
+  });
+
+  it("answers a lowercase sb query without a distance", async () => {
+    const result = await ask("村上葉侑のsbは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("村上葉侑（南関中）");
+    expect(result.text).toContain("17:18.00");
+  });
+
+  it("answers a lowercase pb query without a distance", async () => {
+    const result = await ask("江口大尊のpbは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("江口大尊（荒尾三中）");
+    expect(result.text).toContain("9:04.46");
+  });
+
+  it("answers a lowercase sb query with an athlete suffix", async () => {
+    const result = await ask("原田はな選手の1500m sbは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("原田はな（Star Light AC）");
+    expect(result.text).toContain("4:40.44");
+  });
+
+  it("answers a dotted SB query", async () => {
+    const result = await ask("原田はなの1500m S.B.は？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("原田はな（Star Light AC）");
+    expect(result.text).toContain("4:40.44");
+  });
+
+  it("answers a dotted PB query", async () => {
+    const result = await ask("江口大尊の3000m P.B.は？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("江口大尊（荒尾三中）");
+    expect(result.text).toContain("9:04.46");
+  });
+
+  it("answers a fullwidth-dotted SB query", async () => {
+    const result = await ask("原田はなの1500m Ｓ.Ｂ.は？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("原田はな（Star Light AC）");
+    expect(result.text).toContain("4:40.44");
+  });
+
+  it("answers a slash-separated SB query", async () => {
+    const result = await ask("原田はなの1500m S／Bは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("原田はな（Star Light AC）");
+    expect(result.text).toContain("4:40.44");
+  });
+
+  it("answers a slash-separated PB query", async () => {
+    const result = await ask("江口大尊の3000m P／Bは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("江口大尊（荒尾三中）");
+    expect(result.text).toContain("9:04.46");
+  });
+
+  it("answers a spaced dotted SB query", async () => {
+    const result = await ask("原田はなの1500m S. B.は？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("原田はな（Star Light AC）");
+    expect(result.text).toContain("4:40.44");
+  });
+
+  it("answers a lowercase dotted SB query", async () => {
+    const result = await ask("原田はなの1500m s.b.は？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("原田はな（Star Light AC）");
+    expect(result.text).toContain("4:40.44");
+  });
+
+  it("answers a dotted SB query with a Japanese unit", async () => {
+    const result = await ask("村上葉侑の5キロ S.B.は？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("村上葉侑（南関中）");
+    expect(result.text).toContain("17:18.00");
+  });
+
+  it("answers a dotted PB query with a fullwidth unit", async () => {
+    const result = await ask("江口大尊の３０００ｍ Ｐ.Ｂ.は？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("江口大尊（荒尾三中）");
+    expect(result.text).toContain("9:04.46");
+  });
+
+  it("answers a dotted SB query without a distance", async () => {
+    const result = await ask("村上葉侑のS.B.は？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("村上葉侑（南関中）");
+    expect(result.text).toContain("17:18.00");
+  });
+
+  it("answers a dated Daiming practice result query", async () => {
+    const result = await ask("2026-09-22 岱明 女子1000m");
+    expect(result.sources).toEqual(["drive-text/練習/玉名市練習会/2026-09-22.md"]);
+    expect(result.text).toContain("村上");
+  });
+
+  it("answers a Daiming practice result query without the city name", async () => {
+    const result = await ask("岱明の練習会の結果を教えて");
+    expect(result.sources).toEqual(["drive-text/練習/玉名市練習会/2026-09-22.md"]);
+    expect(result.text).toContain("松野");
+  });
+
+  it("answers yesterday's practice athlete query", async () => {
+    const result = await askAt("昨日の玉名市練習会で松野は？", "2026-09-23T12:00:00+09:00");
+    expect(result.sources).toEqual(["drive-text/練習/玉名市練習会/2026-09-22.md"]);
+    expect(result.text).toContain("松野");
+    expect(result.text).toContain("3:10");
+  });
+
+  it("answers a dated female practice result query", async () => {
+    const result = await ask("9月22日の岱明練習会の女子1000m結果は？");
+    expect(result.sources).toEqual(["drive-text/練習/玉名市練習会/2026-09-22.md"]);
+    expect(result.text).toContain("増岡");
+  });
+
+  it("answers a dated male practice result query", async () => {
+    const result = await ask("2026年9月22日の男子1000m結果は？");
+    expect(result.sources).toEqual(["drive-text/練習/玉名市練習会/2026-09-22.md"]);
+    expect(result.text).toContain("田上");
+  });
+
+  it("answers a Daiming practice athlete record query", async () => {
+    const result = await ask("岱明練習会の村上の記録は？");
+    expect(result.sources).toEqual(["drive-text/練習/玉名市練習会/2026-09-22.md"]);
+    expect(result.text).toContain("村上");
+    expect(result.text).toContain("3:30");
+  });
+
+  it("answers a yesterday practice query for a male athlete", async () => {
+    const result = await askAt("昨日の練習会で田上は？", "2026-09-23T12:00:00+09:00");
+    expect(result.sources).toEqual(["drive-text/練習/玉名市練習会/2026-09-22.md"]);
+    expect(result.text).toContain("田上");
+    expect(result.text).toContain("3:20");
+  });
+
+  it("answers a September 22 practice query for a female athlete", async () => {
+    const result = await ask("9/22の練習会で増岡は？");
+    expect(result.sources).toEqual(["drive-text/練習/玉名市練習会/2026-09-22.md"]);
+    expect(result.text).toContain("増岡");
+    expect(result.text).toContain("3:46");
+  });
+
+  it("answers a Daiming practice query for a runner with unknown splits", async () => {
+    const result = await ask("岱明練習会の山本のタイムは？");
+    expect(result.sources).toEqual(["drive-text/練習/玉名市練習会/2026-09-22.md"]);
+    expect(result.text).toContain("山本");
+    expect(result.text).toContain("3:10");
+  });
+
+  it("answers a dated practice query for the women's second runner", async () => {
+    const result = await ask("2026-09-22の岱明練習会で山﨑は？");
+    expect(result.sources).toEqual(["drive-text/練習/玉名市練習会/2026-09-22.md"]);
+    expect(result.text).toContain("山﨑");
+    expect(result.text).toContain("3:37");
+  });
+
+  it("answers a generic female 1000m practice result query", async () => {
+    const result = await ask("女子1000m2本の結果は？");
+    expect(result.sources).toEqual(["drive-text/練習/玉名市練習会/2026-09-22.md"]);
+    expect(result.text).toContain("増岡");
+    expect(result.text).toContain("3:46");
+  });
+
+  it("answers a generic male 1000m practice result query", async () => {
+    const result = await ask("男子1000m3本の結果は？");
+    expect(result.sources).toEqual(["drive-text/練習/玉名市練習会/2026-09-22.md"]);
+    expect(result.text).toContain("田上");
+    expect(result.text).toContain("3:20");
+  });
+
+  it("answers a female practice athlete time without a date", async () => {
+    const result = await ask("増岡の練習会タイムは？");
+    expect(result.sources).toEqual(["drive-text/練習/玉名市練習会/2026-09-22.md"]);
+    expect(result.text).toContain("増岡");
+    expect(result.text).toContain("3:46");
+  });
+
+  it("answers a male practice athlete time without a date", async () => {
+    const result = await ask("松本の練習会タイムは？");
+    expect(result.sources).toEqual(["drive-text/練習/玉名市練習会/2026-09-22.md"]);
+    expect(result.text).toContain("松本");
+    expect(result.text).toContain("3:30");
+  });
+
+  it("answers a female practice result by gender and event", async () => {
+    const result = await ask("岱明練習会の女子1000mは？");
+    expect(result.sources).toEqual(["drive-text/練習/玉名市練習会/2026-09-22.md"]);
+    expect(result.text).toContain("角田");
+    expect(result.text).toContain("3:49");
+  });
+
+  it("answers a male practice result by gender and event", async () => {
+    const result = await ask("玉名市練習会の男子1000mは？");
+    expect(result.sources).toEqual(["drive-text/練習/玉名市練習会/2026-09-22.md"]);
+    expect(result.text).toContain("中尾");
+    expect(result.text).toContain("3:19");
+  });
+
+  it("answers a female practice participant query", async () => {
+    const result = await ask("練習会で女子1000mを走った人は？");
+    expect(result.sources).toEqual(["drive-text/練習/玉名市練習会/2026-09-22.md"]);
+    expect(result.text).toContain("村上");
+    expect(result.text).toContain("柴尾");
+  });
+
+  it("answers a male practice participant query", async () => {
+    const result = await ask("練習会で男子1000mを走った人は？");
+    expect(result.sources).toEqual(["drive-text/練習/玉名市練習会/2026-09-22.md"]);
+    expect(result.text).toContain("松野");
+    expect(result.text).toContain("嶋田");
+  });
+
+  it("answers a female two-repetition result query", async () => {
+    const result = await ask("女子1000mを2本走った結果は？");
+    expect(result.sources).toEqual(["drive-text/練習/玉名市練習会/2026-09-22.md"]);
+    expect(result.text).toContain("増岡");
+    expect(result.text).toContain("3:41");
+  });
+
+  it("answers a male three-repetition result query", async () => {
+    const result = await ask("男子1000mを3本走った結果は？");
+    expect(result.sources).toEqual(["drive-text/練習/玉名市練習会/2026-09-22.md"]);
+    expect(result.text).toContain("田上");
+    expect(result.text).toContain("3:09");
+  });
+
+  it("answers Takada's practice record query", async () => {
+    const result = await ask("高田の練習会記録は？");
+    expect(result.sources).toEqual(["drive-text/練習/玉名市練習会/2026-09-22.md"]);
+    expect(result.text).toContain("高田");
+    expect(result.text).toContain("ジョグのみ");
+  });
+
+  it("answers Takada's practice query without the word record", async () => {
+    const result = await ask("高田の練習会は？");
+    expect(result.sources).toEqual(["drive-text/練習/玉名市練習会/2026-09-22.md"]);
+    expect(result.text).toContain("ジョグのみ");
+  });
+
+  it("answers Takada's practice status query", async () => {
+    const result = await ask("高田は練習会で何をした？");
+    expect(result.sources).toEqual(["drive-text/練習/玉名市練習会/2026-09-22.md"]);
+    expect(result.text).toContain("ジョグのみ");
+  });
+
+  it("answers a fullwidth-space Takada practice query", async () => {
+    const result = await ask("高田　の練習会記録は？");
+    expect(result.sources).toEqual(["drive-text/練習/玉名市練習会/2026-09-22.md"]);
+    expect(result.text).toContain("ジョグのみ");
+  });
+
+  it("answers a dated Takada practice query", async () => {
+    const result = await ask("9/22の練習会で高田は？");
+    expect(result.sources).toEqual(["drive-text/練習/玉名市練習会/2026-09-22.md"]);
+    expect(result.text).toContain("ジョグのみ");
+  });
+
+  it("answers Takada's 1000m participation query", async () => {
+    const result = await ask("高田は練習会で女子1000mを走った？");
+    expect(result.sources).toEqual(["drive-text/練習/玉名市練習会/2026-09-22.md"]);
+    expect(result.text).toContain("1000mは実施せず");
+  });
+
+  it("answers Takada's practice time query", async () => {
+    const result = await ask("高田の練習会タイムは？");
+    expect(result.sources).toEqual(["drive-text/練習/玉名市練習会/2026-09-22.md"]);
+    expect(result.text).toContain("ジョグのみ");
+  });
+
+  it("keeps Takada Mana on the athlete corpus", async () => {
+    const result = await ask("高田麻那の練習会タイムは？");
+    expect(result.sources).not.toEqual(["drive-text/練習/玉名市練習会/2026-09-22.md"]);
+    expect(result.sources).toContain("out-analysis/athletes/takada-mana.md");
+  });
+
+  it("answers Takada's practice note query", async () => {
+    const result = await ask("高田の練習会の所感は？");
+    expect(result.sources).toEqual(["drive-text/練習/玉名市練習会/2026-09-22.md"]);
+    expect(result.text).toContain("ジョグのみ");
+  });
+
+  it("answers Takada's practice participation query", async () => {
+    const result = await ask("練習会で高田は走った？");
+    expect(result.sources).toEqual(["drive-text/練習/玉名市練習会/2026-09-22.md"]);
+    expect(result.text).toContain("ジョグのみ");
+  });
+
+  it("answers two requested distances for one athlete", async () => {
+    const result = await ask("原田はなの800mと1500mのSBは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("800m 2:20.81");
+    expect(result.text).toContain("1500m 4:40.44");
+  });
+
+  it("answers two distances separated by a middle dot", async () => {
+    const result = await ask("原田はなの800m・1500m SBは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("800m 2:20.81");
+    expect(result.text).toContain("1500m 4:40.44");
+  });
+
+  it("answers two male distances", async () => {
+    const result = await ask("江口大尊の1500mと3000m自己ベストは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("3000m 9:04.46");
+  });
+
+  it("answers three requested distances", async () => {
+    const result = await ask("村上葉侑の1500m、3000m、5km SBは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("1500m 4:30.83");
+    expect(result.text).toContain("3000m 9:44.02");
+    expect(result.text).toContain("5km 17:18.00");
+  });
+
+  it("answers slash-separated distances", async () => {
+    const result = await ask("原田はなの800m/1500m SBは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("800m 2:20.81");
+    expect(result.text).toContain("1500m 4:40.44");
+  });
+
+  it("answers 1500m and 3km together", async () => {
+    const result = await ask("原田はなの1500mと3kmのSBは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("1500m 4:40.44");
+    expect(result.text).toContain("3km 10:39.00");
+  });
+
+  it("answers a range-like multi-distance query", async () => {
+    const result = await ask("原田はなの800mから1500mのSBは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("800m 2:20.81");
+    expect(result.text).toContain("1500m 4:40.44");
+  });
+
+  it("answers fullwidth multi-distance notation", async () => {
+    const result = await ask("原田はなの８００ｍと１５００ｍのＳＢは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("800m 2:20.81");
+    expect(result.text).toContain("1500m 4:40.44");
+  });
+
+  it("answers spaced multi-distance notation", async () => {
+    const result = await ask("村上葉侑の1 500mと3 000m SBは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("1500m 4:30.83");
+    expect(result.text).toContain("3000m 9:44.02");
+  });
+
+  it("answers Japanese-unit multi-distance notation", async () => {
+    const result = await ask("村上葉侑の1500メートルと5キロSBは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("1500m 4:30.83");
+    expect(result.text).toContain("5km 17:18.00");
+  });
+
+  it("answers two athletes separated by と", async () => {
+    const result = await ask("原田はなと村上葉侑の1500m SBは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("原田はな（Star Light AC）の1500m自己ベストは4:40.44");
+    expect(result.text).toContain("村上葉侑（南関中）の1500m自己ベストは4:30.83");
+  });
+
+  it("answers two athletes separated by a comma", async () => {
+    const result = await ask("原田はな、村上葉侑の1500m SBは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("原田はな（Star Light AC）の1500m自己ベストは4:40.44");
+    expect(result.text).toContain("村上葉侑（南関中）の1500m自己ベストは4:30.83");
+  });
+
+  it("answers three athletes separated by commas", async () => {
+    const result = await ask("原田はな、江口大尊、村上葉侑の1500m SBは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("原田はな（Star Light AC）の1500m自己ベストは4:40.44");
+    expect(result.text).toContain("江口大尊（荒尾三中）は1500の記録がありません");
+    expect(result.text).toContain("村上葉侑（南関中）の1500m自己ベストは4:30.83");
+  });
+
+  it("answers two athletes separated by a middle dot", async () => {
+    const result = await ask("村上葉侑・原田はなの5km SBは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("村上葉侑（南関中）の5km自己ベストは17:18.00");
+    expect(result.text).toContain("原田はな（Star Light AC）は5kmの記録がありません");
+  });
+
+  it("answers two athletes separated by a slash", async () => {
+    const result = await ask("原田はな／村上葉侑の1500m SBは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("原田はな（Star Light AC）の1500m自己ベストは4:40.44");
+    expect(result.text).toContain("村上葉侑（南関中）の1500m自己ベストは4:30.83");
+  });
+
+  it("answers two athletes' complete SB request", async () => {
+    const result = await ask("原田はなと村上葉侑の自己ベストは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("原田はな（Star Light AC）の自己ベスト:");
+    expect(result.text).toContain("村上葉侑（南関中）の自己ベスト:");
+  });
+
+  it("answers a two-athlete 3km request", async () => {
+    const result = await ask("原田はなと村上葉侑の3km SBは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("原田はな（Star Light AC）の3km自己ベストは10:39.00");
+    expect(result.text).toContain("村上葉侑（南関中）は3kmの記録がありません");
+  });
+
+  it("answers a two-athlete 800m request", async () => {
+    const result = await ask("原田はなと村上葉侑の800m SBは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("原田はな（Star Light AC）の800m自己ベストは2:20.81");
+    expect(result.text).toContain("村上葉侑（南関中）は800の記録がありません");
+  });
+
+  it("answers two athletes' 5km request with a fullwidth delimiter", async () => {
+    const result = await ask("原田はな・村上葉侑の５ｋｍ ＳＢは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("原田はな（Star Light AC）は5kmの記録がありません");
+    expect(result.text).toContain("村上葉侑（南関中）の5km自己ベストは17:18.00");
+  });
+
+  it("answers two athletes with a Japanese unit", async () => {
+    const result = await ask("原田はなと村上葉侑の1500メートルSBは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("原田はな（Star Light AC）の1500m自己ベストは4:40.44");
+    expect(result.text).toContain("村上葉侑（南関中）の1500m自己ベストは4:30.83");
+  });
+
+  it("answers an 800m-to-5km range query", async () => {
+    const result = await ask("原田はなの800mから5kmまでの記録は？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("800m 2:20.81");
+    expect(result.text).toContain("1500m 4:40.44");
+    expect(result.text).toContain("3km 10:39.00");
+  });
+
+  it("answers a range query using 800 meters", async () => {
+    const result = await ask("原田はなの800メートルから5キロまでのSBは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("800m 2:20.81");
+    expect(result.text).toContain("3km 10:39.00");
+  });
+
+  it("answers a fullwidth range query", async () => {
+    const result = await ask("原田はなの８００ｍから５ｋｍまでの記録は？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("800m 2:20.81");
+    expect(result.text).toContain("1500m 4:40.44");
+  });
+
+  it("answers a range query with a season-best alias", async () => {
+    const result = await ask("原田はなの800mから5kmまでのSBは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("3000m 10:28.63");
+  });
+
+  it("answers a range query for a male athlete", async () => {
+    const result = await ask("村上葉侑の1500mから5kmまでの記録は？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("1500m 4:30.83");
+    expect(result.text).toContain("5km 17:18.00");
+  });
+
+  it("answers a range query with Japanese distance names", async () => {
+    const result = await ask("村上葉侑の1500メートルから5キロまでの記録は？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("1500m 4:30.83");
+    expect(result.text).toContain("5km 17:18.00");
+  });
+
+  it("answers a range query with a spaced start distance", async () => {
+    const result = await ask("村上葉侑の1 500mから5kmまでの記録は？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("1500m 4:30.83");
+    expect(result.text).toContain("5km 17:18.00");
+  });
+
+  it("answers a range query for the full SB set", async () => {
+    const result = await ask("原田はなの800mから5kmまでの自己ベストは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("800m 2:20.81");
+    expect(result.text).toContain("3km 10:39.00");
+  });
+
+  it("answers a range query with a fullwidth separator", async () => {
+    const result = await ask("原田はなの800m〜5kmまでの記録は？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("800m 2:20.81");
+    expect(result.text).toContain("3km 10:39.00");
+  });
+
+  it("answers a range query for an athlete with missing 5km data", async () => {
+    const result = await ask("江口大尊の800mから5kmまでの記録は？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("3000m 9:04.46");
+  });
+
+  it("answers an individual record-list query", async () => {
+    const result = await ask("原田はなの記録一覧は？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("原田はな");
+    expect(result.text).toContain("4:40.44");
+  });
+
+  it("answers an individual full-record query", async () => {
+    const result = await ask("原田はなの全記録は？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("原田はな");
+    expect(result.text).toContain("10:39.00");
+  });
+
+  it("answers an individual SB-list query", async () => {
+    const result = await ask("原田はなのSB一覧は？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("原田はな（Star Light AC）");
+    expect(result.text).toContain("4:40.44");
+  });
+
+  it("answers a male individual record-list query", async () => {
+    const result = await ask("江口大尊の記録一覧は？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("江口大尊");
+    expect(result.text).toContain("9:04.46");
+  });
+
+  it("answers a female individual full-record query", async () => {
+    const result = await ask("村上葉侑の全記録は？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("村上葉侑");
+    expect(result.text).toContain("17:18.00");
+  });
+
+  it("answers an all-distance SB query", async () => {
+    const result = await ask("原田はなの全距離SBは？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("800m 2:20.81");
+    expect(result.text).toContain("3km 10:39.00");
+  });
+
+  it("answers a listed SB query", async () => {
+    const result = await ask("江口大尊のSBを一覧で教えて");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("江口大尊（荒尾三中）");
+    expect(result.text).toContain("9:04.46");
+  });
+
+  it("answers a complete SB query", async () => {
+    const result = await ask("原田はなのSBを全部教えて");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("800m 2:20.81");
+    expect(result.text).toContain("1500m 4:40.44");
+  });
+
+  it("answers a personal-best list query", async () => {
+    const result = await ask("村上葉侑の自己ベスト一覧は？");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("村上葉侑（南関中）");
+    expect(result.text).toContain("17:18.00");
+  });
+
+  it("keeps a school full-record query on the school digest", async () => {
+    const result = await ask("荒尾三中の全記録は？");
+    expect(result.sources).toContain("out-analysis/arato-tamana-teams/荒尾三中.md");
+    expect(result.sources).not.toEqual(["sb/中学生SB.csv"]);
+  });
+
+  it("routes a concise 荒尾三中 SB list to the dedicated digest", async () => {
+    const result = await ask("荒尾三中のSB一覧は？");
+    expect(result.sources).toEqual(["out-analysis/arato-tamana-teams/荒尾三中_SB.md"]);
+    expect(result.text).toContain("# 荒尾三中 選手・SB一覧");
+  });
+
+  it("keeps 荒尾三中 player lists on the dedicated digest", async () => {
+    const result = await ask("荒尾三中の選手一覧は？");
+    expect(result.sources).toEqual(["out-analysis/arato-tamana-teams/荒尾三中_SB.md"]);
+    expect(result.text).toContain("# 荒尾三中 選手・SB一覧");
+  });
+
+  it("keeps combined 荒尾三中 player and SB lists dedicated", async () => {
+    const result = await ask("荒尾三中の選手とSB一覧は？");
+    expect(result.sources).toEqual(["out-analysis/arato-tamana-teams/荒尾三中_SB.md"]);
+    expect(result.text).toContain("# 荒尾三中 選手・SB一覧");
+  });
+
+  it("keeps 所属選手 wording on the 荒尾三中 SB digest", async () => {
+    const result = await ask("荒尾三中の所属選手一覧は？");
+    expect(result.sources).toEqual(["out-analysis/arato-tamana-teams/荒尾三中_SB.md"]);
+    expect(result.text).toContain("# 荒尾三中 選手・SB一覧");
+  });
+
+  it("keeps シーズンベスト wording on the 荒尾三中 SB digest", async () => {
+    const result = await ask("荒尾三中のシーズンベスト一覧は？");
+    expect(result.sources).toEqual(["out-analysis/arato-tamana-teams/荒尾三中_SB.md"]);
+    expect(result.text).toContain("# 荒尾三中 選手・SB一覧");
+  });
+
+  it("keeps imperative 荒尾三中 SB list wording dedicated", async () => {
+    const result = await ask("荒尾三中のSBを一覧で教えて");
+    expect(result.sources).toEqual(["out-analysis/arato-tamana-teams/荒尾三中_SB.md"]);
+    expect(result.text).toContain("# 荒尾三中 選手・SB一覧");
+  });
+
+  it("routes 玉名附中 SB lists to its school digest", async () => {
+    const result = await ask("玉名附中のSB一覧は？");
+    expect(result.sources).toEqual(["out-analysis/arato-tamana-teams/玉名附中.md"]);
+    expect(result.text).toContain("# 玉名附中 記録一覧");
+  });
+
+  it("keeps combined 玉名附中 lists on its school digest", async () => {
+    const result = await ask("玉名附中の選手とSB一覧は？");
+    expect(result.sources).toEqual(["out-analysis/arato-tamana-teams/玉名附中.md"]);
+    expect(result.text).toContain("# 玉名附中 記録一覧");
+  });
+
+  it("accepts 玉名付属 in concise SB list wording", async () => {
+    const result = await ask("玉名付属のSB一覧は？");
+    expect(result.sources).toEqual(["out-analysis/arato-tamana-teams/玉名附中.md"]);
+    expect(result.text).toContain("# 玉名附中 記録一覧");
+  });
+
+  it("accepts 玉高附属 in combined SB list wording", async () => {
+    const result = await ask("玉高附属の選手とSB一覧は？");
+    expect(result.sources).toEqual(["out-analysis/arato-tamana-teams/玉名附中.md"]);
+    expect(result.text).toContain("# 玉名附中 記録一覧");
+  });
+
 });
