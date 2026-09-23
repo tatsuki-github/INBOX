@@ -104,10 +104,11 @@ export function resolveRelativeDates(
     しあさって: 3,
     昨日: -1,
     きのう: -1,
+    前日: -1,
     一昨日: -2,
     おととい: -2,
   };
-  const pattern = /明々後日|明明後日|しあさって|明後日|あさって|一昨日|おととい|昨日|きのう|明日|あした|あす|今日|きょう/g;
+  const pattern = /明々後日|明明後日|しあさって|明後日|あさって|一昨日|おととい|昨日|きのう|前日|明日|あした|あす|今日|きょう/g;
   for (const match of text.matchAll(pattern)) {
     const token = match[0];
     const date = shiftDate(anchor, offsets[token]!);
