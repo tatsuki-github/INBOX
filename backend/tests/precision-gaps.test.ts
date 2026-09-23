@@ -2594,4 +2594,64 @@ describe("QA precision regressions", () => {
     expect(result.sources).toEqual(["drive-text/練習/玉名市練習会/2026-09-22.md"]);
     expect(result.text).toContain("おおはまふれあいセンター");
   });
+
+  it("answers a dated morning menu for July 21", async () => {
+    const result = await ask("2026年7月21日の朝練メニューは？");
+    expect(result.sources).toEqual(["calendar/events.daiming.yaml"]);
+    expect(result.text).toContain("動きづくり、男子2.5km×2、女子2km×2");
+  });
+
+  it("answers a dated morning menu for July 23", async () => {
+    const result = await ask("2026年7月23日の朝練メニューは？");
+    expect(result.sources).toEqual(["calendar/events.daiming.yaml"]);
+    expect(result.text).toContain("動きづくり、男子2.5km×2、女子2km×2");
+  });
+
+  it("answers a dated morning menu for July 24", async () => {
+    const result = await ask("2026年7月24日の朝練メニューは？");
+    expect(result.sources).toEqual(["calendar/events.daiming.yaml"]);
+    expect(result.text).toContain("動きづくり、男子2.5km×2、女子2km×2");
+  });
+
+  it("answers an ISO-dated morning menu", async () => {
+    const result = await ask("2026-07-23朝練のメニュー");
+    expect(result.sources).toEqual(["calendar/events.daiming.yaml"]);
+    expect(result.text).toContain("動きづくり、男子2.5km×2、女子2km×2");
+  });
+
+  it("answers a month-day morning-practice content query", async () => {
+    const result = await ask("7月23日の朝練内容");
+    expect(result.sources).toEqual(["calendar/events.daiming.yaml"]);
+    expect(result.text).toContain("動きづくり、男子2.5km×2、女子2km×2");
+  });
+
+  it("answers what to do in a dated morning practice", async () => {
+    const result = await ask("2026年7月23日朝練は何する？");
+    expect(result.sources).toEqual(["calendar/events.daiming.yaml"]);
+    expect(result.text).toContain("動きづくり、男子2.5km×2、女子2km×2");
+  });
+
+  it("answers a slash-dated interval query", async () => {
+    const result = await ask("7/23朝練のインターバルは？");
+    expect(result.sources).toEqual(["calendar/events.daiming.yaml"]);
+    expect(result.text).toContain("動きづくり、男子2.5km×2、女子2km×2");
+  });
+
+  it("answers a dated morning distance query", async () => {
+    const result = await ask("2026年7月23日の朝練は何km？");
+    expect(result.sources).toEqual(["calendar/events.daiming.yaml"]);
+    expect(result.text).toContain("動きづくり、男子2.5km×2、女子2km×2");
+  });
+
+  it("answers a month-day morning content query without a year", async () => {
+    const result = await ask("7月24日朝練の内容は？");
+    expect(result.sources).toEqual(["calendar/events.daiming.yaml"]);
+    expect(result.text).toContain("動きづくり、男子2.5km×2、女子2km×2");
+  });
+
+  it("answers a slash-formatted dated morning menu", async () => {
+    const result = await ask("2026/07/23朝練メニューは？");
+    expect(result.sources).toEqual(["calendar/events.daiming.yaml"]);
+    expect(result.text).toContain("動きづくり、男子2.5km×2、女子2km×2");
+  });
 });

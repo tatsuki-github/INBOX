@@ -211,10 +211,9 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
   }
   if (
     /朝練|夕練/.test(q) &&
-    /男子|女子/.test(q) &&
-    /距離|メニュー|内容|インターバル|何km|何キロ|\d+(?:\.\d+)?km/.test(q)
+    /距離|メニュー|内容|何する|種目|インターバル|何km|何キロ|\d+(?:\.\d+)?km/.test(q)
   ) {
-    const dateMatch = q.match(/(20\d{2})[-年]0?(\d{1,2})[-月]0?(\d{1,2})日?/);
+    const dateMatch = q.match(/(20\d{2})[-/年]0?(\d{1,2})[-/月]0?(\d{1,2})日?/);
     if (dateMatch) {
       const dateKey = `${dateMatch[1]}-${String(Number(dateMatch[2])).padStart(2, "0")}-${String(Number(dateMatch[3])).padStart(2, "0")}`;
       const idx = flat.indexOf(dateKey);
@@ -2608,8 +2607,35 @@ function offlineAnswer(
         /2026年?9月22日|2026-09-22|9月22日|9\/22/.test(question)
           ? "2026年9月22日の玉名市合同練習会の会場は、おおはまふれあいセンターです。"
           : undefined;
+      const datedDaimingPracticeMenuPreview = (() => {
+        if (
+          !/朝練/.test(question) ||
+          !/メニュー|内容|何する|種目|インターバル|何km|何キロ/.test(question)
+        ) {
+          return undefined;
+        }
+        const normalizedQuestion = question.normalize("NFKC");
+        const dateMatch = normalizedQuestion.match(/(20\d{2})[-/年]0?(\d{1,2})[-/月]0?(\d{1,2})日?/) ??
+          normalizedQuestion.match(/(?:^|[^\d])0?(\d{1,2})[月/]0?(\d{1,2})日?/);
+        if (!dateMatch) return undefined;
+        const hasYear = dateMatch.length === 4;
+        const year = hasYear ? dateMatch[1]! : "2026";
+        const month = hasYear ? dateMatch[2]! : dateMatch[1]!;
+        const day = hasYear ? dateMatch[3]! : dateMatch[2]!;
+        const dateKey = `${year}-${String(Number(month)).padStart(2, "0")}-${String(Number(day)).padStart(2, "0")}`;
+        const record = joined.match(
+          new RegExp(
+            `title:\\s*いだてん岱明朝練\\s+date:\\s*['"]${dateKey}['"][\\s\\S]{0,900}?description:\\s*([^\\n]+)`,
+          ),
+        );
+        const description = record?.[1]?.trim();
+        const formattedDate = `${year}年${Number(month)}月${Number(day)}日`;
+        return description
+          ? `${formattedDate}の朝練メニューは、${description}です。`
+          : undefined;
+      })();
       const preview =
-        explicitWinnerMatch?.[0] ?? explicitRunnerMatch?.[0] ?? explicitLegSection ?? nagomiWinnerPreview ?? namedSelfBestPreview ?? aragyokuDatePreview ?? genericResultPreview ?? nagomiResultPreview ?? tamanaVenuePreview ?? previewForOffline(joined, hint);
+        explicitWinnerMatch?.[0] ?? explicitRunnerMatch?.[0] ?? explicitLegSection ?? nagomiWinnerPreview ?? namedSelfBestPreview ?? aragyokuDatePreview ?? genericResultPreview ?? nagomiResultPreview ?? tamanaVenuePreview ?? datedDaimingPracticeMenuPreview ?? previewForOffline(joined, hint);
       lines.push(`1. ${preview}`);
     } else {
       for (const [i, r] of retrieved.entries()) {
@@ -3963,8 +3989,8 @@ export async function answerQuestion(
   const datedPracticeMeetQ = /練習会/.test(expanded) && /(?:20\d{2}[-年]\d{1,2}[-月]\d{1,2}|\d{1,2}月\d{1,2}日)/.test(expanded);
   const datedPracticeContentQ =
     /朝練|夕練/.test(question) &&
-    /メニュー|内容|距離|インターバル|何km|何キロ|\d+(?:\.\d+)?km/.test(question) &&
-    /(?:20\d{2}[-年]\d{1,2}[-月]\d{1,2}|\d{1,2}月\d{1,2}日)/.test(expanded);
+    /メニュー|内容|何する|種目|距離|インターバル|何km|何キロ|\d+(?:\.\d+)?km/.test(question) &&
+    /(?:20\d{2}[-/年]\d{1,2}[-/月]\d{1,2}|\d{1,2}月\d{1,2}日)/.test(expanded);
   const genericPracticeMeetScheduleQ = /練習会/.test(expanded) && /日程|いつ/.test(expanded);
   const calendarDateScheduleQ =
     (/(?:20\d{2}[-年]\d{1,2}[-月]\d{1,2}|\d{1,2}月\d{1,2}日)/.test(expanded) || /今日|明日|明後日|昨日|今週|来週|今月|\d{1,2}月.*予定|A日課|県中体連/.test(expanded)) &&
