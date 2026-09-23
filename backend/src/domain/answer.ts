@@ -2247,6 +2247,21 @@ function offlineAnswer(
     const aragyokuVenueLookup =
       /荒玉(?:駅伝|中体連)?/.test(question) &&
       /会場|場所/.test(question);
+    const meetResultUrlLookup =
+      /(?:結果.*(?:URL|リンク|ページ)|(?:URL|リンク|ページ).*結果|公式.*(?:URL|リンク))/.test(question) &&
+      /(?:通信陸上|熊本県中学校陸上|熊本市陸上競技選手権|熊本県長距離記録会|全九州都市対抗|金栗記念|県中体連)/.test(question);
+    const prefecturalMeetResultLookup = /県中体連/.test(question) && /結果|成績|順位/.test(question) && !meetResultUrlLookup;
+    const prefecturalMeetScheduleLookup = /県中体連/.test(question) && /開催日|日程|いつ/.test(question);
+    const unqualifiedTeamRankLookup =
+      /荒玉|駅伝/.test(question) &&
+      /何位|順位/.test(question) &&
+      /岱明|玉高附属|玉名付属|玉名附属|天水|有明|南関|菊水|玉東|玉陵|長洲/.test(question) &&
+      !/区間/.test(question) &&
+      !/20\d{2}|男子|女子/.test(question);
+    const calendarDateScheduleLookup =
+      (/(?:20\d{2}[-年]\d{1,2}[-月]\d{1,2}|\d{1,2}月\d{1,2}日)/.test(previewQuery ?? question) || /今日|明日|明後日|昨日|A日課/.test(question)) &&
+      /(?:予定|日程|いつ|何の|何がある|A日課)/.test(question) &&
+      !prefecturalMeetScheduleLookup;
     const focusedLookup =
       preciseMeetRecord ||
       namedMeetRecord ||
@@ -2325,8 +2340,19 @@ function offlineAnswer(
       kanaguriResultLookup ||
       aragyokuDateLookup ||
       aragyokuVenueLookup ||
+      meetResultUrlLookup ||
+      prefecturalMeetResultLookup ||
+      prefecturalMeetScheduleLookup ||
+      unqualifiedTeamRankLookup ||
+      calendarDateScheduleLookup ||
       kanaguriDate;
-    const hint = focusedLookup ? question : previewQuery ?? question;
+    const hint = meetResultUrlLookup || prefecturalMeetResultLookup || prefecturalMeetScheduleLookup || teamRankLookup
+      ? question
+      : calendarDateScheduleLookup
+        ? previewQuery ?? question
+        : focusedLookup
+          ? question
+          : previewQuery ?? question;
     if (focusedLookup) {
       const focusedRetrieved =
         (nagomiResultLookup || nagomiRankLookup || nagomiLegRankLookup) && /男子|女子/.test(question)
@@ -3674,11 +3700,19 @@ export async function answerQuestion(
     (/20\d{2}[-年]\d{1,2}[-月]\d{1,2}.*練習会/.test(expanded) && !tamanaPracticeResultQ);
   const meetResultUrlQ =
     /(?:結果.*(?:URL|リンク|ページ)|(?:URL|リンク|ページ).*結果|公式.*(?:URL|リンク))/.test(expanded) &&
-    /(?:第\s*71回.*通信陸上|第\s*39回.*熊本県中学校陸上|熊本市陸上競技選手権|熊本県長距離記録会|全九州都市対抗|県中体連)/.test(expanded);
+    /(?:第\s*71回.*通信陸上|第\s*39回.*熊本県中学校陸上|熊本市陸上競技選手権|熊本県長距離記録会|全九州都市対抗|金栗記念|県中体連)/.test(expanded);
+  const prefecturalMeetResultQ = /県中体連/.test(expanded) && /結果|成績|順位/.test(expanded) && !meetResultUrlQ;
+  const prefecturalMeetScheduleQ = /県中体連/.test(expanded) && /開催日|日程|いつ/.test(expanded);
+  const teamRankQ =
+    /荒玉|駅伝/.test(expanded) &&
+    /何位|順位/.test(expanded) &&
+    /岱明|玉高附属|玉名付属|玉名附属|天水|有明|南関|菊水|玉東|玉陵|長洲/.test(expanded) &&
+    !/区間/.test(expanded);
   const calendarDateScheduleQ =
-    (/(?:20\d{2}[-年]\d{1,2}[-月]\d{1,2}|\d{1,2}月\d{1,2}日)/.test(expanded) || /A日課|県中体連/.test(expanded)) &&
+    (/(?:20\d{2}[-年]\d{1,2}[-月]\d{1,2}|\d{1,2}月\d{1,2}日)/.test(expanded) || /今日|明日|明後日|昨日|A日課|県中体連/.test(expanded)) &&
     /(?:予定|日程|いつ|何の|何がある|A日課)/.test(expanded) &&
-    !meetResultUrlQ;
+    !meetResultUrlQ &&
+    !prefecturalMeetScheduleQ;
   const exactDatedPractice =
     (isDateScheduleQuestion(expanded) || tamanaPracticeResultQ) &&
     preferredSources.some((s) => s.startsWith("drive-text/練習/")) &&
@@ -3691,12 +3725,18 @@ export async function answerQuestion(
   const practiceLineQ =
     /合同練習会/.test(expanded) &&
     /会費|参加費|参加料|料金|費用|いつ|どこ|会場|場所/.test(expanded);
+  const practiceVenueQ =
+    /(?:玉名市)?合同練習会|玉名市練習会/.test(expanded) &&
+    /会場|場所|どこ/.test(expanded);
   if (practiceLineQ) {
     const practiceSource = preferredSources.find((s) => s.startsWith("drive-text/練習/"));
     preferredSources = [
       "out-analysis/line-chats/daiming-parents.md",
       ...(practiceSource ? [practiceSource] : []),
     ];
+  }
+  if (practiceVenueQ) {
+    preferredSources = ["drive-text/練習/玉名市練習会/2026-09-22.md"];
   }
 
   const practiceJogStandardQ =
@@ -3736,7 +3776,7 @@ export async function answerQuestion(
     /過去|歴代/.test(expanded) &&
     /順位|成績|結果/.test(expanded);
   const directDocQ =
-    practiceTemplateQ || weatherOpsQ || paceCliQ || practiceMeetLoadQ || historicalTopSixPaceQ || historicalTeamRankQ || tamanaPracticeResultQ || strideCountQ || postEkidenPracticeQ || movementPracticeQ || practiceDaysQ || practiceCalendarQ || meetResultUrlQ || calendarDateScheduleQ;
+    practiceTemplateQ || weatherOpsQ || paceCliQ || practiceMeetLoadQ || historicalTopSixPaceQ || historicalTeamRankQ || tamanaPracticeResultQ || strideCountQ || postEkidenPracticeQ || movementPracticeQ || practiceDaysQ || practiceCalendarQ || meetResultUrlQ || prefecturalMeetResultQ || prefecturalMeetScheduleQ || teamRankQ || calendarDateScheduleQ || practiceVenueQ;
   if (practiceTemplateQ) {
     preferredSources = /norwegian-45-15|[Nn]orwegian(?:の|\s*)[- ]?45\s*[\/／\-‐‑–—−]\s*15|ノルウェー(?:式)?(?:の|\s*)45\s*[\/／\-‐‑–—−]\s*15|45\s*[\/／\-‐‑–—−]\s*15/.test(expanded)
       ? ["repo-docs/adr/002-norwegian-method-integration.md"]
@@ -3757,13 +3797,31 @@ export async function answerQuestion(
       preferredSources = ["drive-text/大会/2025年度/0607-0608_熊本県中学生陸上競技選手権/岱明の結果.md"];
     } else if (/熊本市陸上競技選手権/.test(expanded)) {
       preferredSources = ["drive-text/大会/2026年度/0418_第４５回熊本市陸上競技選手権大会/岱明の結果.md"];
-    } else if (/第\s*２回熊本県長距離記録会/.test(expanded)) {
+    } else if (/第\s*[２2]回熊本県長距離記録会/.test(expanded)) {
       preferredSources = ["drive-text/大会/2026年度/0704_第２回熊本県長距離記録会/岱明の結果.md"];
+    } else if (/第\s*[４4]回熊本県長距離記録会/.test(expanded)) {
+      preferredSources = ["drive-text/大会/2026年度/1010_第４回熊本県長距離記録会/概要.md"];
+    } else if (/第\s*[５5]回熊本県長距離記録会/.test(expanded)) {
+      preferredSources = ["drive-text/大会/2026年度/1212_第５回熊本県長距離記録会/概要.md"];
     } else if (/全九州都市対抗/.test(expanded)) {
       preferredSources = ["drive-text/記録データベース/2026年度/中学生記録.csv"];
+    } else if (/金栗記念/.test(expanded)) {
+      preferredSources = ["drive-text/大会/2026年度/0411_第３４回金栗記念選抜陸上中長距離熊本大会/岱明の結果.md"];
     } else if (/県中体連/.test(expanded)) {
       preferredSources = ["drive-text/記録データベース/2025年度/県中体連.csv"];
     }
+  }
+  if (prefecturalMeetResultQ) {
+    preferredSources = ["drive-text/記録データベース/2025年度/県中体連.csv"];
+  }
+  if (prefecturalMeetScheduleQ) {
+    preferredSources = ["drive-text/記録データベース/2025年度/県中体連.csv"];
+  }
+  if (teamRankQ) {
+    const team = /玉高附属|玉名付属|玉名附属/.test(expanded)
+      ? "玉高附属"
+      : ["岱明", "天水", "有明", "南関", "菊水", "玉東", "玉陵", "長洲"].find((name) => expanded.includes(name));
+    if (team) preferredSources = [`out-analysis/aragyoku-teams/${team}.md`];
   }
   if (calendarDateScheduleQ) {
     preferredSources = ["calendar/events.daiming.yaml"];

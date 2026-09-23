@@ -16,6 +16,20 @@ async function ask(question: string) {
   return result;
 }
 
+async function askAt(question: string, now: string) {
+  resetKgCache();
+  resetRetrieverCache();
+  const result = await answerQuestion(question, {
+    defaultYear: 2026,
+    now: new Date(now),
+    llm: null,
+    skipRouter: true,
+  });
+  expect(result.kind).toBe("offline");
+  if (result.kind !== "offline") throw new Error("expected offline result");
+  return result;
+}
+
 describe("QA precision regressions", () => {
   it("keeps 荒尾三中 player/SB lists on the dedicated digest", async () => {
     const result = await ask("荒尾三中の選手とSB一覧");
@@ -205,6 +219,69 @@ describe("QA precision regressions", () => {
       "drive-text/大会/2025年度/0607-0608_熊本県中学生陸上競技選手権/岱明の結果.md",
     ]);
     expect(result.text).toContain("kumariku.org/25");
+  });
+
+  it("routes the fourth long-distance meet URL question to its scheduled overview", async () => {
+    const result = await ask("2026年度第4回熊本県長距離記録会の結果リンク教えて");
+    expect(result.sources).toEqual(["drive-text/大会/2026年度/1010_第４回熊本県長距離記録会/概要.md"]);
+    expect(result.text).toContain("第 ４回 熊本県長距離記録会");
+  });
+
+  it("routes the fifth long-distance meet URL question to its scheduled overview", async () => {
+    const result = await ask("2026年度第5回熊本県長距離記録会の結果リンク教えて");
+    expect(result.sources).toEqual(["drive-text/大会/2026年度/1212_第５回熊本県長距離記録会/概要.md"]);
+    expect(result.text).toContain("第 ５回 熊本県長距離記録会");
+  });
+
+  it("keeps the Kanakuri result URL on the matching result note", async () => {
+    const result = await ask("金栗記念の結果URLを教えて（2026）");
+    expect(result.sources).toEqual([
+      "drive-text/大会/2026年度/0411_第３４回金栗記念選抜陸上中長距離熊本大会/岱明の結果.md",
+    ]);
+    expect(result.text).toContain("kanaguri");
+  });
+
+  it("routes a prefectural meet result question to the prefectural database", async () => {
+    const result = await ask("県中体連の結果は？");
+    expect(result.sources).toEqual(["drive-text/記録データベース/2025年度/県中体連.csv"]);
+    expect(result.text).toContain("県中体連");
+  });
+
+  it("routes a prefectural meet date question to its timetable", async () => {
+    const result = await ask("県中体連の開催日は？");
+    expect(result.sources).toEqual(["drive-text/記録データベース/2025年度/県中体連.csv"]);
+    expect(result.text).toMatch(/2025-07-19|2025-07-20/);
+  });
+
+  it("uses the injected current date for 今日の予定", async () => {
+    const result = await askAt("今日の予定は？", "2026-09-08T00:00:00+09:00");
+    expect(result.sources).toEqual(["calendar/events.daiming.yaml"]);
+    expect(result.text).toContain("2026-09-08");
+  });
+
+  it("uses the injected current date for 明日の予定", async () => {
+    const result = await askAt("明日の予定は？", "2026-09-07T00:00:00+09:00");
+    expect(result.sources).toEqual(["calendar/events.daiming.yaml"]);
+    expect(result.text).toContain("2026-09-08");
+  });
+
+  it("routes an unqualified Daiming rank question to the team digest", async () => {
+    const result = await ask("荒玉駅伝で岱明は何位？");
+    expect(result.sources).toEqual(["out-analysis/aragyoku-teams/岱明.md"]);
+    expect(result.text).toContain("2025年荒玉駅伝男子 岱明は6位");
+  });
+
+  it("keeps a combined practice venue question on the dated practice note", async () => {
+    const result = await ask("玉名市合同練習会の会場は？");
+    expect(result.sources).toEqual(["drive-text/練習/玉名市練習会/2026-09-22.md"]);
+    expect(result.text).toContain("おおはまふれあいセンター");
+  });
+
+  it("keeps a dated A-day question focused on the requested date", async () => {
+    const result = await ask("2026年9月8日の予定は？");
+    expect(result.sources).toEqual(["calendar/events.daiming.yaml"]);
+    expect(result.text).toContain("2026-09-08");
+    expect(result.text).toContain("岱明中 A日課（6時間）");
   });
 
   it("answers Norwegian 45/15 template questions from the method ADR", async () => {
