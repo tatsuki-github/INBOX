@@ -3689,6 +3689,11 @@ export async function answerQuestion(
     /20\d{2}/.test(question) &&
     /岱明|玉名付属|玉名附属|玉高附属|天水|有明/.test(question) &&
     /優勝差|優勝との差|総合タイム.*優勝/.test(question);
+  const genericWinnerMarginQ =
+    /荒玉|駅伝/.test(expanded) &&
+    /20\d{2}/.test(expanded) &&
+    /男子|女子/.test(expanded) &&
+    /優勝差|優勝との差|優勝から|優勝まで|離れて/.test(expanded);
   if (teamWinnerMarginQ) {
     preferredSources = [
       preferredSources.find((s) => /aragyoku_2024_2025_focus_teams/.test(s)) ??
@@ -3774,6 +3779,9 @@ export async function answerQuestion(
   const meetResultUrlQ =
     /(?:結果.*(?:URL|リンク|ページ)|(?:URL|リンク|ページ).*結果|公式.*(?:URL|リンク))/.test(expanded) &&
     /(?:第\s*71回.*通信陸上|第\s*39回.*熊本県中学校陸上|熊本県中学校陸上選手権|熊本市陸上競技選手権|熊本市陸上競技記録会|熊本県長距離記録会|全九州都市対抗|金栗記念|ジュニアオリンピック|ナイター中.?長距離|県中体連)/.test(expanded);
+  const cityRecordResultQ =
+    /熊本市陸上競技記録会/.test(expanded) &&
+    /結果|公式|リンク|ページ/.test(expanded);
   const prefecturalMeetResultQ = /県中体連/.test(expanded) && /結果|成績|順位/.test(expanded) && !meetResultUrlQ;
   const prefecturalMeetScheduleQ = /県中体連/.test(expanded) && /開催日|日程|いつ/.test(expanded);
   const teamRankQ =
@@ -3872,7 +3880,7 @@ export async function answerQuestion(
     /総合タイム|総合.*時間|タイム/.test(expanded) &&
     /玉高附属|玉名付属|玉名附属|玉名|玉南|腹栄|岱明|天水|有明|南関|菊水|玉東|玉陵|長洲|荒尾/.test(expanded);
   const directDocQ =
-    practiceTemplateQ || weatherOpsQ || paceCliQ || practiceMeetLoadQ || historicalTopSixPaceQ || historicalTeamRankQ || tamanaPracticeResultQ || tamanaPracticeStatusQ || practiceStatusQ || kumamotoEkidenScheduleQ || schoolMeetScheduleQ || practiceParticipantQ || schoolMeetVenueQ || historicalJuniorResultQ || relativeWinnerQ || courseEraQ || oldCourseDistanceQ || eveningPracticeScheduleQ || namedTeamTotalTimeQ || strideCountQ || postEkidenPracticeQ || movementPracticeQ || practiceDaysQ || practiceCalendarQ || meetResultUrlQ || prefecturalMeetResultQ || prefecturalMeetScheduleQ || teamRankQ || calendarDateScheduleQ || exactMeetDateScheduleQ || genericPracticeScheduleQ || genericDaimingPracticeContentQ || schoolScheduleQ || datedPracticeMeetQ || genericPracticeMeetScheduleQ || practiceVenueQ;
+    practiceTemplateQ || weatherOpsQ || paceCliQ || practiceMeetLoadQ || historicalTopSixPaceQ || historicalTeamRankQ || tamanaPracticeResultQ || tamanaPracticeStatusQ || practiceStatusQ || kumamotoEkidenScheduleQ || schoolMeetScheduleQ || practiceParticipantQ || schoolMeetVenueQ || historicalJuniorResultQ || relativeWinnerQ || courseEraQ || oldCourseDistanceQ || eveningPracticeScheduleQ || namedTeamTotalTimeQ || cityRecordResultQ || genericWinnerMarginQ || strideCountQ || postEkidenPracticeQ || movementPracticeQ || practiceDaysQ || practiceCalendarQ || meetResultUrlQ || prefecturalMeetResultQ || prefecturalMeetScheduleQ || teamRankQ || calendarDateScheduleQ || exactMeetDateScheduleQ || genericPracticeScheduleQ || genericDaimingPracticeContentQ || schoolScheduleQ || datedPracticeMeetQ || genericPracticeMeetScheduleQ || practiceVenueQ;
   if (practiceTemplateQ) {
     preferredSources = /norwegian-45-15|[Nn]orwegian(?:の|\s*)[- ]?45\s*[\/／\-‐‑–—−]\s*15|ノルウェー(?:式)?(?:の|\s*)45\s*[\/／\-‐‑–—−]\s*15|45\s*[\/／\-‐‑–—−]\s*15/.test(expanded)
       ? ["repo-docs/adr/002-norwegian-method-integration.md"]
@@ -4417,6 +4425,12 @@ export async function answerQuestion(
     ].find((name) => expanded.includes(name));
     if (team) preferredSources = [`out-analysis/aragyoku-teams/${team}.md`];
   }
+  if (genericWinnerMarginQ) {
+    preferredSources = ["out-analysis/aragyoku_2024_2025_focus_teams.md"];
+  }
+  if (cityRecordResultQ) {
+    preferredSources = ["drive-text/記録データベース/2026年度/中学生記録.csv"];
+  }
   if (meetResultUrlQ && /ナイター中.?長距離/.test(expanded)) {
     preferredSources = ["drive-text/大会/2026年度/0829_玉名郡ナイター中・長距離記録会/岱明の結果.md"];
   }
@@ -4651,6 +4665,10 @@ export async function answerQuestion(
                 ? mergedCoreRaw.filter(
                     (r) => r.chunk.source.replace(/:\d+$/, "") === preferredSources[0],
                   )
+              : genericWinnerMarginQ || cityRecordResultQ
+                ? mergedCoreRaw.filter(
+                    (r) => r.chunk.source.replace(/:\d+$/, "") === preferredSources[0],
+                  )
               : winnerYearTeamQ
                 ? mergedCoreRaw.filter((r) => /winners-by-year\.md(?::\d+)?$/.test(r.chunk.source))
               : mergedCoreRaw;
@@ -4667,7 +4685,9 @@ export async function answerQuestion(
       courseEraQ ||
       oldCourseDistanceQ ||
       eveningPracticeScheduleQ ||
-      namedTeamTotalTimeQ
+      namedTeamTotalTimeQ ||
+      genericWinnerMarginQ ||
+      cityRecordResultQ
         ? 0
         : RETRIEVAL_BUDGET.neighborRadius,
     maxExtra:
@@ -4676,7 +4696,9 @@ export async function answerQuestion(
       courseEraQ ||
       oldCourseDistanceQ ||
       eveningPracticeScheduleQ ||
-      namedTeamTotalTimeQ
+      namedTeamTotalTimeQ ||
+      genericWinnerMarginQ ||
+      cityRecordResultQ
         ? 0
         : RETRIEVAL_BUDGET.neighborMaxExtra,
     query: expanded,

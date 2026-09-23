@@ -673,6 +673,63 @@ describe("QA precision regressions", () => {
     expect(result.text).toContain("3.00");
   });
 
+  it("keeps an unqualified 2024 winner-margin question on the focus digest", async () => {
+    const result = await ask("荒玉男子2024の優勝差は？");
+    expect(result.sources).toEqual(["out-analysis/aragyoku_2024_2025_focus_teams.md"]);
+    expect(result.text).toContain("優勝との差");
+  });
+
+  it("keeps an unqualified 2025 winner-margin question on the focus digest", async () => {
+    const result = await ask("荒玉男子2025の優勝差は？");
+    expect(result.sources).toEqual(["out-analysis/aragyoku_2024_2025_focus_teams.md"]);
+    expect(result.text).toContain("優勝との差");
+  });
+
+  it("keeps a female winner-margin question on the focus digest", async () => {
+    const result = await ask("荒玉女子2024の優勝差は？");
+    expect(result.sources).toEqual(["out-analysis/aragyoku_2024_2025_focus_teams.md"]);
+    expect(result.text).toContain("優勝との差");
+  });
+
+  it("keeps a winner-gap wording on the focus digest", async () => {
+    const result = await ask("荒玉2024男子は優勝から何分離れていた？");
+    expect(result.sources).toEqual(["out-analysis/aragyoku_2024_2025_focus_teams.md"]);
+    expect(result.text).toContain("優勝との差");
+  });
+
+  it("routes an official Kumamoto City record-meet result lookup to the database", async () => {
+    const result = await ask("熊本市陸上競技記録会の公式結果は？");
+    expect(result.sources).toEqual(["drive-text/記録データベース/2026年度/中学生記録.csv"]);
+  });
+
+  it("routes a short Kumamoto City record-meet result lookup to the database", async () => {
+    const result = await ask("熊本市陸上競技記録会の結果は？");
+    expect(result.sources).toEqual(["drive-text/記録データベース/2026年度/中学生記録.csv"]);
+  });
+
+  it("focuses a September 8 cancellation question on the calendar", async () => {
+    const result = await ask("9月8日の練習会は中止？");
+    expect(result.sources).toEqual(["calendar/events.daiming.yaml"]);
+    expect(result.text).toContain("2026-09-08");
+  });
+
+  it("focuses a dated September 8 status question on the calendar", async () => {
+    const result = await ask("2026年9月8日練習会の開催状況は？");
+    expect(result.sources).toEqual(["calendar/events.daiming.yaml"]);
+    expect(result.text).toContain("2026-09-08");
+  });
+
+  it("routes the 274th Kumamoto City record-meet result link to the database", async () => {
+    const result = await ask("第274回熊本市陸上競技記録会の結果リンクは？");
+    expect(result.sources).toEqual(["drive-text/記録データベース/2026年度/中学生記録.csv"]);
+  });
+
+  it("focuses the dated September 8 practice status on the calendar", async () => {
+    const result = await ask("2026-09-08の練習会はどうなった？");
+    expect(result.sources).toEqual(["calendar/events.daiming.yaml"]);
+    expect(result.text).toContain("2026-09-08");
+  });
+
   it("answers Norwegian 45/15 template questions from the method ADR", async () => {
     const result = await ask("norwegian-45-15テンプレは何のセッション？");
     expect(result.sources).toEqual(["repo-docs/adr/002-norwegian-method-integration.md"]);
