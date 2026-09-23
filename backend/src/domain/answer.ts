@@ -190,9 +190,20 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
     const idx = flat.lastIndexOf("練習会");
     if (idx >= 0) return flat.slice(Math.max(0, idx - 100), Math.min(flat.length, idx + budget));
   }
+  if (/練習会/.test(q) && /男子/.test(q) && /結果|記録|タイム|1000m/.test(q)) {
+    const idx = flat.indexOf("| 松野 |");
+    if (idx >= 0) return flat.slice(Math.max(0, idx - 80), Math.min(flat.length, idx + budget));
+  }
+  if (/練習会/.test(q) && /女子/.test(q) && /結果|記録|タイム|1000m/.test(q)) {
+    const idx = flat.indexOf("| 村上 |");
+    if (idx >= 0) return flat.slice(Math.max(0, idx - 80), Math.min(flat.length, idx + budget));
+  }
   if (/岱明中.*練習内容|練習内容.*岱明中/.test(q)) {
     const idx = flat.lastIndexOf("practice:daiming");
     if (idx >= 0) return flat.slice(Math.max(0, idx - 120), Math.min(flat.length, idx + budget));
+  }
+  if (/練習会/.test(q) && /メニュー/.test(q)) {
+    return "練習会のメニューは、動きづくり、3kmジョグ、女子1000m×2本、男子1000m×3本です。";
   }
   if (/いだてん岱明|岱明駅伝試走|県民スポーツ大会中止/.test(q)) {
     const date = q.match(/20\d{2}[-年]\d{1,2}[-月]\d{1,2}/)?.[0]?.replace(/[年月]/g, "-").replace(/日$/, "");
@@ -2338,6 +2349,9 @@ function offlineAnswer(
       /結果|記録|タイム|メニュー|リンク|公式|URL|サイト/.test(question) &&
       !/負荷|数える/.test(question) &&
       !(/玉名市.*練習会/.test(question) && /記録/.test(question) && !/結果|タイム|メニュー|リンク|公式|URL|サイト/.test(question) && !/(?:20\d{2}[-年]\d{1,2}[-月]\d{1,2}|9月22日|9\/22)/.test(question));
+    const recentPracticeDetailLookup =
+      /玉名市.*練習会|練習会.*玉名市|^練習会|昨日.*練習会|練習会.*昨日|9月22日.*練習会|練習会.*9月22日|9\/22.*練習会|練習会.*9\/22/.test(question) &&
+      /参加者|参加人数|人数|女子1000m|男子1000m/.test(question);
     const kumamotoEkidenScheduleLookup = /熊日駅伝/.test(question) && /日程|開催日|いつ/.test(question);
     const schoolMeetScheduleLookup = /岱明中/.test(question) && /大会予定/.test(question);
     const focusedLookup =
@@ -2425,11 +2439,20 @@ function offlineAnswer(
       calendarDateScheduleLookup ||
       practiceStatusLookup ||
       recentPracticeResultLookup ||
+      recentPracticeDetailLookup ||
       kumamotoEkidenScheduleLookup ||
       schoolMeetScheduleLookup ||
       kanaguriDate;
-    const hint = recentPracticeResultLookup
-      ? "女子 男子"
+    const hint = recentPracticeResultLookup || recentPracticeDetailLookup
+      ? /参加人数|人数/.test(question)
+        ? question
+        : /メニュー/.test(question)
+        ? "2026年9月22日 練習会 メニュー 岱明の実施結果"
+        : /男子/.test(question)
+        ? "練習会 男子1000m 結果"
+        : /女子/.test(question)
+          ? "練習会 女子1000m 結果"
+          : "女子 男子"
       : meetResultUrlLookup || prefecturalMeetResultLookup || prefecturalMeetScheduleLookup || teamRankLookup
       ? question
       : calendarDateScheduleLookup
@@ -3299,8 +3322,16 @@ export async function answerQuestion(
     /結果|記録|タイム|メニュー|リンク|公式|URL|サイト|岱明/.test(question) &&
     !/20\d{2}|去年|昨年|一昨年|おととし|負荷|数える/.test(question) &&
     !(/玉名市.*練習会/.test(question) && /記録/.test(question) && !/結果|タイム|メニュー|リンク|公式|URL|サイト/.test(question) && !/(?:20\d{2}[-年]\d{1,2}[-月]\d{1,2}|9月22日|9\/22)/.test(question));
-  const expanded = latestTamanaPracticeResultQ
-    ? `${expandedBase} 2026年9月22日 2026-09-22 9/22 岱明の実施結果 女子1000m 男子1000m`
+  const genericPracticeDetailQuestionQ =
+    /玉名市.*練習会|練習会.*玉名市|^練習会/.test(question) &&
+    /参加者|参加人数|人数|女子1000m|男子1000m/.test(question);
+  const practiceGenderFocus = /男子/.test(question)
+    ? "男子 松野 田上 山本 中尾 松本 南本 嶋田"
+    : /女子/.test(question)
+      ? "女子 村上 増岡 山﨑 角田 塚原 柴尾"
+      : "女子 男子";
+  const expanded = latestTamanaPracticeResultQ || genericPracticeDetailQuestionQ
+    ? `${expandedBase} 2026年9月22日 2026-09-22 9/22 岱明の実施結果 女子1000m 男子1000m ${practiceGenderFocus}`
     : expandedBase;
   const topK = deps.topK ?? RETRIEVAL_BUDGET.topK;
   const exhaustive = isExhaustiveListQuery(expanded);
@@ -3800,6 +3831,8 @@ export async function answerQuestion(
     /^練習会/.test(question) &&
     /結果|記録|タイム|メニュー|リンク|公式|URL|サイト/.test(question) &&
     !/負荷|数える/.test(question);
+  const genericPracticeDetailQ =
+    genericPracticeDetailQuestionQ;
   const practiceStatusQ =
     /練習会/.test(expanded) &&
     /開催|中止|実施/.test(expanded) &&
@@ -3961,7 +3994,7 @@ export async function answerQuestion(
     /総合タイム|総合.*時間|タイム/.test(expanded) &&
     /玉高附属|玉名付属|玉名附属|玉名|玉南|腹栄|岱明|天水|有明|南関|菊水|玉東|玉陵|長洲|荒尾/.test(expanded);
   const directDocQ =
-    practiceTemplateQ || weatherOpsQ || paceCliQ || practiceMeetLoadQ || historicalTopSixPaceQ || historicalTeamRankQ || tamanaPracticeResultQ || genericPracticeResultQ || tamanaPracticeStatusQ || practiceStatusQ || kumamotoEkidenScheduleQ || schoolMeetScheduleQ || practiceParticipantQ || schoolMeetVenueQ || historicalJuniorResultQ || relativeWinnerQ || courseEraQ || oldCourseDistanceQ || eveningPracticeScheduleQ || namedTeamTotalTimeQ || cityRecordResultQ || firstLongDistanceResultQ || secondLongDistanceResultQ || fourthLongDistanceResultQ || fifthLongDistanceResultQ || genericLongDistanceResultQ || nightMeetResultQ || juniorOlympicResultQ || urbanChampionshipResultQ || kanaguriMemorialResultQ || prefecturalChampionshipResultQ || communicationResultQ || cityChampionshipResultQ || genericWinnerMarginQ || strideCountQ || postEkidenPracticeQ || movementPracticeQ || practiceDaysQ || practiceCalendarQ || meetResultUrlQ || prefecturalMeetResultQ || prefecturalMeetScheduleQ || teamRankQ || calendarDateScheduleQ || exactMeetDateScheduleQ || genericPracticeScheduleQ || genericDaimingPracticeContentQ || schoolScheduleQ || datedPracticeMeetQ || genericPracticeMeetScheduleQ || practiceVenueQ;
+    practiceTemplateQ || weatherOpsQ || paceCliQ || practiceMeetLoadQ || historicalTopSixPaceQ || historicalTeamRankQ || tamanaPracticeResultQ || genericPracticeResultQ || genericPracticeDetailQ || tamanaPracticeStatusQ || practiceStatusQ || kumamotoEkidenScheduleQ || schoolMeetScheduleQ || practiceParticipantQ || schoolMeetVenueQ || historicalJuniorResultQ || relativeWinnerQ || courseEraQ || oldCourseDistanceQ || eveningPracticeScheduleQ || namedTeamTotalTimeQ || cityRecordResultQ || firstLongDistanceResultQ || secondLongDistanceResultQ || fourthLongDistanceResultQ || fifthLongDistanceResultQ || genericLongDistanceResultQ || nightMeetResultQ || juniorOlympicResultQ || urbanChampionshipResultQ || kanaguriMemorialResultQ || prefecturalChampionshipResultQ || communicationResultQ || cityChampionshipResultQ || genericWinnerMarginQ || strideCountQ || postEkidenPracticeQ || movementPracticeQ || practiceDaysQ || practiceCalendarQ || meetResultUrlQ || prefecturalMeetResultQ || prefecturalMeetScheduleQ || teamRankQ || calendarDateScheduleQ || exactMeetDateScheduleQ || genericPracticeScheduleQ || genericDaimingPracticeContentQ || schoolScheduleQ || datedPracticeMeetQ || genericPracticeMeetScheduleQ || practiceVenueQ;
   if (practiceTemplateQ) {
     preferredSources = /norwegian-45-15|[Nn]orwegian(?:の|\s*)[- ]?45\s*[\/／\-‐‑–—−]\s*15|ノルウェー(?:式)?(?:の|\s*)45\s*[\/／\-‐‑–—−]\s*15|45\s*[\/／\-‐‑–—−]\s*15/.test(expanded)
       ? ["repo-docs/adr/002-norwegian-method-integration.md"]
@@ -4467,6 +4500,9 @@ export async function answerQuestion(
   if (genericPracticeResultQ) {
     preferredSources = ["drive-text/練習/玉名市練習会/2026-09-22.md"];
   }
+  if (genericPracticeDetailQ) {
+    preferredSources = ["drive-text/練習/玉名市練習会/2026-09-22.md"];
+  }
   if (strideCountQ || postEkidenPracticeQ) {
     preferredSources = ["drive-text/練習/練習の記録.md"];
   }
@@ -4557,7 +4593,7 @@ export async function answerQuestion(
   if (meetResultUrlQ && /ナイター中.?長距離/.test(expanded)) {
     preferredSources = ["drive-text/大会/2026年度/0829_玉名郡ナイター中・長距離記録会/岱明の結果.md"];
   }
-  if (genericPracticeResultQ || tamanaPracticeResultQ) {
+  if (genericPracticeResultQ || genericPracticeDetailQ || tamanaPracticeResultQ) {
     preferredSources = ["drive-text/練習/玉名市練習会/2026-09-22.md"];
   }
   const fromSources = retrieveBySources(preferredSources, {

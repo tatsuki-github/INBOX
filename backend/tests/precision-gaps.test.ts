@@ -2237,4 +2237,62 @@ describe("QA precision regressions", () => {
     expect(result.sources).toEqual(["drive-text/練習/玉名市練習会/2026-09-22.md"]);
     expect(result.text).toContain("3:30 - 3:23");
   });
+
+  it("routes a generic practice-meet participant query to the latest practice note", async () => {
+    const result = await ask("練習会の参加者");
+    expect(result.sources).toEqual(["drive-text/練習/玉名市練習会/2026-09-22.md"]);
+  });
+
+  it("routes a generic practice-meet participant-count query to the latest practice note", async () => {
+    const result = await ask("練習会の参加人数");
+    expect(result.sources).toEqual(["drive-text/練習/玉名市練習会/2026-09-22.md"]);
+  });
+
+  it("routes a generic female 1000m practice query to the latest practice note", async () => {
+    const result = await ask("練習会の女子1000m");
+    expect(result.sources).toEqual(["drive-text/練習/玉名市練習会/2026-09-22.md"]);
+    expect(result.text).toContain("村上");
+  });
+
+  it("routes a generic male 1000m practice query to the latest practice note", async () => {
+    const result = await ask("練習会の男子1000m");
+    expect(result.sources).toEqual(["drive-text/練習/玉名市練習会/2026-09-22.md"]);
+    expect(result.text).toContain("松野");
+  });
+
+  it("routes a dated practice-meet menu query to the latest practice note", async () => {
+    const result = await ask("9月22日の練習会メニュー");
+    expect(result.sources).toEqual(["drive-text/練習/玉名市練習会/2026-09-22.md"]);
+    expect(result.text).toContain("女子1000m×2本");
+  });
+
+  it("routes a relative-date practice-meet menu query to the latest practice note", async () => {
+    const result = await askAt("昨日の練習会メニュー", "2026-09-23T12:00:00+09:00");
+    expect(result.sources).toEqual(["drive-text/練習/玉名市練習会/2026-09-22.md"]);
+    expect(result.text).toContain("女子1000m×2本");
+  });
+
+  it("routes a generic female practice result query to the latest practice note", async () => {
+    const result = await ask("練習会の女子結果");
+    expect(result.sources).toEqual(["drive-text/練習/玉名市練習会/2026-09-22.md"]);
+    expect(result.text).toContain("村上");
+  });
+
+  it("routes a generic male practice result query to the latest practice note", async () => {
+    const result = await ask("練習会の男子結果");
+    expect(result.sources).toEqual(["drive-text/練習/玉名市練習会/2026-09-22.md"]);
+    expect(result.text).toContain("松野");
+  });
+
+  it("routes a female 1000m practice-time query to the latest practice note", async () => {
+    const result = await ask("玉名市練習会の女子1000mのタイム");
+    expect(result.sources).toEqual(["drive-text/練習/玉名市練習会/2026-09-22.md"]);
+    expect(result.text).toContain("3:30 - 3:23");
+  });
+
+  it("routes a male 1000m practice-time query to the latest practice note", async () => {
+    const result = await ask("玉名市練習会の男子1000mのタイム");
+    expect(result.sources).toEqual(["drive-text/練習/玉名市練習会/2026-09-22.md"]);
+    expect(result.text).toContain("3:10 - 3:20 - 3:09");
+  });
 });
