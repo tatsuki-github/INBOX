@@ -714,43 +714,48 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
   // Exhaustive: keep document head / wide window (do not needle-slice away tables)
   const schoolAverageQ =
     /1500(?:m|ｍ)?|800(?:m|ｍ)?/.test(q) &&
-    /上位\s*\d+\s*人平均|上位\d+人平均|学校別|所属別/.test(q);
+    /上位\s*(?:\d+|[四六])\s*人(?:の)?平均|上位(?:\d+|[四六])人(?:の)?平均|学校別|所属別/.test(q);
   if (isExhaustiveListQuery(q) && !schoolAverageQ && !(/なごみ/.test(q) && /優勝/.test(q))) {
     return flat.slice(0, budget);
   }
   if (
     (!/女子/.test(q) && (/男子/.test(q) || /岱明/.test(q))) &&
     /1500(?:m|ｍ)?/.test(q) &&
-    /上位\s*3\s*人平均|上位3人平均/.test(q)
+    /上位\s*(?:\d+|[四四六六])\s*人(?:の)?平均/.test(q)
   ) {
+    const countMatch = q.match(/上位\s*(\d+)\s*人(?:の)?平均/);
+    const count = countMatch?.[1] ?? (q.includes("四人") ? "4" : q.includes("六人") ? "6" : "3");
     const school = /岱明/.test(q) ? "岱明中" : "";
-    if (!school) {
+    if (!school && count === "3") {
       return "男子1500mの学校別正本は上位4人平均で、上位3人平均は収録されていません。";
     }
-    const sectionStart = flat.indexOf("## 上位4人平均");
-    const sectionEnd = flat.indexOf("## ", sectionStart + 1);
-    const section = sectionStart >= 0
-      ? flat.slice(sectionStart, sectionEnd >= 0 ? sectionEnd : undefined)
+    const sectionStart = flat.indexOf(`## 上位${count}人平均`);
+    const fallbackStart = count === "3" ? flat.indexOf("## 上位4人平均") : sectionStart;
+    const sectionEnd = flat.indexOf("## ", fallbackStart + 1);
+    const section = fallbackStart >= 0
+      ? flat.slice(fallbackStart, sectionEnd >= 0 ? sectionEnd : undefined)
       : flat;
+    if (!school) return section.trim();
     const row = section.match(
       new RegExp(`\\|\\s*(\\d+)\\s*\\|\\s*${school}\\s*\\|[^|]*\\|[^|]*\\|\\s*([^|]+)\\|`),
     );
-    const times = row ? [...row[2]!.matchAll(/(\d+):(\d{2})\.(\d{2})/g)].slice(0, 3) : [];
-    if (row && times.length === 3) {
+    const take = Number(count);
+    const times = row ? [...row[2]!.matchAll(/(\d+):(\d{2})\.(\d{2})/g)].slice(0, take) : [];
+    if (row && times.length === take) {
       const seconds = times.reduce(
         (sum, time) => sum + Number(time[1]) * 60 + Number(time[2]) + Number(time[3]) / 100,
         0,
-      ) / 3;
+      ) / take;
       const minutes = Math.floor(seconds / 60);
       const remainder = (seconds - minutes * 60).toFixed(2).padStart(5, "0");
-      return `${row[1]}位 ${school}・上位3人平均 ${minutes}:${remainder}`;
+      return `${row[1]}位 ${school}・上位${count}人平均 ${minutes}:${remainder}`;
     }
   }
   if (
     /1500(?:m|ｍ)?|800(?:m|ｍ)?/.test(q) &&
-    /上位\s*\d+\s*人平均|上位\d+人平均|学校別|所属別/.test(q)
+    /上位\s*(?:\d+|[四六])\s*人(?:の)?平均|上位(?:\d+|[四六])人(?:の)?平均|学校別|所属別/.test(q)
   ) {
-    const count = q.match(/上位\s*(\d+)\s*人平均/)?.[1];
+    const count = q.match(/上位\s*(\d+)\s*人(?:の)?平均/)?.[1];
     const school = /玉名付属|玉名附属|玉高附属/.test(q)
           ? "玉名附中"
           : /岱明/.test(q)
@@ -2006,7 +2011,7 @@ function offlineAnswer(
       );
     const schoolPbRankLookup =
       /1500(?:m|ｍ)?|800(?:m|ｍ)?/.test(question) &&
-      /上位\s*\d+\s*人平均|上位\d+人平均|学校別|所属別/.test(
+      /上位\s*(?:\d+|[四六])\s*人(?:の)?平均|上位(?:\d+|[四六])人(?:の)?平均|学校別|所属別/.test(
         question,
       );
     const trackLapLookup =
@@ -2612,7 +2617,7 @@ function boostAthleteRecordSources(query: string, baseSources: string[]): string
   const schoolPbRankQ =
     (/学校別|所属別/.test(q) && /ランキング|1500|800|平均/.test(q)) ||
     (/(?:800|1500)(?:m|ｍ)?/.test(q) &&
-      /上位\s*\d+\s*人平均|上位\d人平均|学校別|所属別/.test(q)) ||
+      /上位\s*(?:\d+|[四六])\s*人(?:の)?平均|上位(?:\d+|[四六])人(?:の)?平均|学校別|所属別/.test(q)) ||
     (/女子/.test(q) && /(?:800|1500)(?:m|ｍ)?/.test(q) && /ランキング|順位|速い|最速|一番/.test(q));
   if (schoolPbRankQ) {
     if (/800/.test(q) || /女子/.test(q)) {
@@ -3659,7 +3664,8 @@ export async function answerQuestion(
   const historicalTopSixPaceQ =
     /荒玉|駅伝|男子|女子/.test(expanded) &&
     /平均ペース|平均速度|平均|ペース|キロ何分/.test(expanded) &&
-    /(?:総合)?(?:1\s*(?:[〜～-]\s*6位)|1位\s*から\s*6位|1位\s*[〜～-]\s*6位)|上位(?:6|六)(?:位|校)?|トップ6|ベスト(?:6|六)/.test(expanded);
+    /(?:総合)?(?:1\s*(?:[〜～-]\s*6位)|1位\s*から\s*6位|1位\s*[〜～-]\s*6位)|上位(?:6|六)(?:位|校)?|トップ6|ベスト(?:6|六)/.test(expanded) &&
+    !(/(?:800|1500)(?:m|ｍ)?/.test(expanded) && /上位\s*\d+\s*人(?:の)?平均|上位\d+人(?:の)?平均/.test(expanded));
   const historicalTeamRankQ =
     /岱明/.test(expanded) &&
     /荒玉|駅伝/.test(expanded) &&
@@ -3860,7 +3866,7 @@ export async function answerQuestion(
   }
   const schoolPbRankQ =
     /1500(?:m|ｍ)?|800(?:m|ｍ)?/.test(expanded) &&
-    (/上位\s*\d+\s*人平均|上位\d+人平均|学校別|所属別/.test(
+    (/上位\s*(?:\d+|[四六])\s*人(?:の)?平均|上位(?:\d+|[四六])人(?:の)?平均|学校別|所属別/.test(
       expanded,
     ) || (/女子/.test(expanded) && /800(?:m|ｍ)?|1500(?:m|ｍ)?/.test(expanded) && /ランキング|順位|速い|最速|一番/.test(expanded)));
   if (schoolPbRankQ) {

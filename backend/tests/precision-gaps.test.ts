@@ -1116,4 +1116,66 @@ describe("QA precision regressions", () => {
     expect(result.sources).toEqual(["out-analysis/2026_men_1500m_pb_school_ranking.md"]);
     expect(result.text).toContain("上位3人平均 4:28.69");
   });
+
+  it("selects the male top-four 1500m section", async () => {
+    const result = await ask("男子1500上位4人平均");
+    expect(result.sources).toEqual(["out-analysis/2026_men_1500m_pb_school_ranking.md"]);
+    expect(result.text).toContain("## 上位4人平均");
+    expect(result.text).toContain("4:23.09");
+  });
+
+  it("selects the unit-suffixed male top-four section", async () => {
+    const result = await ask("男子1500m上位4人平均");
+    expect(result.sources).toEqual(["out-analysis/2026_men_1500m_pb_school_ranking.md"]);
+    expect(result.text).toContain("## 上位4人平均");
+  });
+
+  it("selects the male top-six 1500m section", async () => {
+    const result = await ask("男子1500上位6人平均");
+    expect(result.sources).toEqual(["out-analysis/2026_men_1500m_pb_school_ranking.md"]);
+    expect(result.text).toContain("## 上位6人平均");
+    expect(result.text).toContain("4:26.62");
+  });
+
+  it("selects the unit-suffixed male top-six section", async () => {
+    const result = await ask("男子1500m上位6人平均");
+    expect(result.sources).toEqual(["out-analysis/2026_men_1500m_pb_school_ranking.md"]);
+    expect(result.text).toContain("## 上位6人平均");
+  });
+
+  it("keeps a named male top-four average on the correct table", async () => {
+    const result = await ask("岱明男子1500上位4人平均");
+    expect(result.sources).toEqual(["out-analysis/2026_men_1500m_pb_school_ranking.md"]);
+    expect(result.text).toContain("上位4人平均 4:30.05");
+  });
+
+  it("keeps a named male top-six average on the correct table", async () => {
+    const result = await ask("男子1500岱明上位6人平均");
+    expect(result.sources).toEqual(["out-analysis/2026_men_1500m_pb_school_ranking.md"]);
+    expect(result.text).toContain("上位6人平均 4:42.49");
+  });
+
+  it("focuses the school-qualified male top-four query", async () => {
+    const result = await ask("学校別男子1500上位4人平均");
+    expect(result.sources).toEqual(["out-analysis/2026_men_1500m_pb_school_ranking.md"]);
+    expect(result.text).toContain("## 上位4人平均");
+  });
+
+  it("accepts kanji top-four wording for male 1500m", async () => {
+    const result = await ask("男子1500上位四人平均");
+    expect(result.sources).toEqual(["out-analysis/2026_men_1500m_pb_school_ranking.md"]);
+    expect(result.text).toContain("## 上位4人平均");
+  });
+
+  it("accepts the no-space top-six wording with の", async () => {
+    const result = await ask("男子1500上位6人の平均");
+    expect(result.sources).toEqual(["out-analysis/2026_men_1500m_pb_school_ranking.md"]);
+    expect(result.text).toContain("## 上位6人平均");
+  });
+
+  it("accepts kanji top-six wording for male 1500m", async () => {
+    const result = await ask("男子1500上位六人の平均");
+    expect(result.sources).toEqual(["out-analysis/2026_men_1500m_pb_school_ranking.md"]);
+    expect(result.text).toContain("## 上位6人平均");
+  });
 });
