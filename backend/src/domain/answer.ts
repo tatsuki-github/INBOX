@@ -3807,7 +3807,7 @@ export async function answerQuestion(
       expanded,
     ) || (/女子/.test(expanded) && /800m|800ｍ|1500m|1500ｍ/.test(expanded) && /ランキング|順位|速い|最速|一番/.test(expanded)));
   if (schoolPbRankQ) {
-    const schoolRanking = /女子/.test(expanded)
+    const schoolRanking = /女子/.test(expanded) || /800m|800ｍ/.test(expanded)
       ? "out-analysis/2026_women_800m_1500m_pb_school_ranking.md"
       : "out-analysis/2026_men_1500m_pb_school_ranking.md";
     preferredSources = [preferredSources.find((s) => s.endsWith(schoolRanking)) ?? schoolRanking];
