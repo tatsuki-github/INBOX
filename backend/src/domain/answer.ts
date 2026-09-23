@@ -202,7 +202,7 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
     const idx = flat.lastIndexOf("practice:daiming");
     if (idx >= 0) return flat.slice(Math.max(0, idx - 120), Math.min(flat.length, idx + budget));
   }
-  if (/練習会/.test(q) && /メニュー/.test(q)) {
+  if (/練習会/.test(q) && /メニュー|実施内容/.test(q)) {
     return "練習会のメニューは、動きづくり、3kmジョグ、女子1000m×2本、男子1000m×3本です。";
   }
   if (/いだてん岱明|岱明駅伝試走|県民スポーツ大会中止/.test(q)) {
@@ -2351,7 +2351,7 @@ function offlineAnswer(
       !(/玉名市.*練習会/.test(question) && /記録/.test(question) && !/結果|タイム|メニュー|リンク|公式|URL|サイト/.test(question) && !/(?:20\d{2}[-年]\d{1,2}[-月]\d{1,2}|9月22日|9\/22)/.test(question));
     const recentPracticeDetailLookup =
       /玉名市.*練習会|練習会.*玉名市|^練習会|昨日.*練習会|練習会.*昨日|9月22日.*練習会|練習会.*9月22日|9\/22.*練習会|練習会.*9\/22/.test(question) &&
-      /参加者|参加人数|人数|女子1000m|男子1000m/.test(question);
+      /参加者|参加人数|人数|女子1000m|男子1000m|実施内容/.test(question);
     const kumamotoEkidenScheduleLookup = /熊日駅伝/.test(question) && /日程|開催日|いつ/.test(question);
     const schoolMeetScheduleLookup = /岱明中/.test(question) && /大会予定/.test(question);
     const focusedLookup =
@@ -2446,7 +2446,7 @@ function offlineAnswer(
     const hint = recentPracticeResultLookup || recentPracticeDetailLookup
       ? /参加人数|人数/.test(question)
         ? question
-        : /メニュー/.test(question)
+        : /メニュー|実施内容/.test(question)
         ? "2026年9月22日 練習会 メニュー 岱明の実施結果"
         : /男子/.test(question)
         ? "練習会 男子1000m 結果"
@@ -3324,7 +3324,7 @@ export async function answerQuestion(
     !(/玉名市.*練習会/.test(question) && /記録/.test(question) && !/結果|タイム|メニュー|リンク|公式|URL|サイト/.test(question) && !/(?:20\d{2}[-年]\d{1,2}[-月]\d{1,2}|9月22日|9\/22)/.test(question));
   const genericPracticeDetailQuestionQ =
     /玉名市.*練習会|練習会.*玉名市|^練習会/.test(question) &&
-    /参加者|参加人数|人数|女子1000m|男子1000m/.test(question);
+    /参加者|参加人数|人数|女子1000m|男子1000m|実施内容/.test(question);
   const practiceGenderFocus = /男子/.test(question)
     ? "男子 松野 田上 山本 中尾 松本 南本 嶋田"
     : /女子/.test(question)
