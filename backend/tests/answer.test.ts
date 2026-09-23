@@ -3819,6 +3819,46 @@ describe("answerQuestion", () => {
   });
 
   it.each([
+    ["荒玉地区男子3000m SBランキングで2位は誰？", "松浦眞大", "9:08.80"],
+    ["荒玉地区男子3000m SBランキングで3位は誰？", "石川隼", "9:10.97"],
+    ["荒玉地区男子3000m SBランキングで4位は誰？", "永田來夢", "9:22.34"],
+    ["荒玉地区男子3000m SBランキングで5位は誰？", "田中翔大", "9:24.66"],
+  ])("routes a 3000m ranking row to the ranking digest: %s", async (question, athlete, time) => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion(question, {
+      skipRouter: true,
+      defaultYear: 2026,
+      llm: null,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.text).toContain(athlete);
+      expect(result.text).toContain(time);
+      expect(result.sources[0]).toContain("3000m_sb_ranking");
+    }
+  });
+
+  it.each([
+    ["寺田向希の1500m自己ベストは？", "寺田向希", "3:50.00"],
+    ["鍬田聖仁の1500m自己ベストは？", "鍬田聖仁", "4:12.75"],
+  ])("keeps a named 1500m PB on the SB CSV: %s", async (question, athlete, time) => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion(question, {
+      skipRouter: true,
+      defaultYear: 2026,
+      llm: null,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.text).toContain(athlete);
+      expect(result.text).toContain(time);
+      expect(result.sources.some((source) => source.includes("sb/"))).toBe(true);
+    }
+  });
+
+  it.each([
     ["玉名市合同練習会はいつどこ？", "2026年9月22日", "line-chats"],
     ["合同練習会の会費は？", "1000", "line-chats"],
   ])("keeps practice answers connected to the parent LINE memo: %s", async (question, expected, sourceHint) => {
