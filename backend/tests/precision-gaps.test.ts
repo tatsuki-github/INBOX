@@ -864,6 +864,76 @@ describe("QA precision regressions", () => {
     expect(result.sources).toEqual(["drive-text/記録データベース/2026年度/中学生記録.csv"]);
   });
 
+  it("routes the second long-distance meet result to its result note", async () => {
+    const result = await ask("第2回熊本県長距離記録会の結果は？");
+    expect(result.sources).toEqual([
+      "drive-text/大会/2026年度/0704_第２回熊本県長距離記録会/岱明の結果.md",
+    ]);
+  });
+
+  it("routes the second long-distance official result to its result note", async () => {
+    const result = await ask("第2回熊本県長距離記録会の公式結果は？");
+    expect(result.sources).toEqual([
+      "drive-text/大会/2026年度/0704_第２回熊本県長距離記録会/岱明の結果.md",
+    ]);
+  });
+
+  it("routes an unqualified long-distance result link to the latest completed meet", async () => {
+    const result = await ask("熊本県長距離記録会の結果リンクは？");
+    expect(result.sources).toEqual([
+      "drive-text/大会/2026年度/0704_第２回熊本県長距離記録会/岱明の結果.md",
+    ]);
+  });
+
+  it("routes the prefectural middle-school championship result to its 2026 note", async () => {
+    const result = await ask("熊本県中学校陸上選手権の結果は？");
+    expect(result.sources).toEqual([
+      "drive-text/大会/2026年度/0523-0524_熊本県中学校陸上選手権・混成/岱明の結果.md",
+    ]);
+  });
+
+  it("routes the communication-meet result to its 2026 note", async () => {
+    const result = await ask("通信陸上の結果は？");
+    expect(result.sources).toEqual([
+      "drive-text/大会/2026年度/0613_全日本中学校通信陸上競技大会熊本県大会/岱明の結果.md",
+    ]);
+  });
+
+  it("routes the city championship result to its 2026 note", async () => {
+    const result = await ask("熊本市陸上競技選手権の結果は？");
+    expect(result.sources).toEqual([
+      "drive-text/大会/2026年度/0418_第４５回熊本市陸上競技選手権大会/岱明の結果.md",
+    ]);
+  });
+
+  it("routes the prefectural championship result link to its 2026 note", async () => {
+    const result = await ask("熊本県中学校陸上選手権の結果リンクは？");
+    expect(result.sources).toEqual([
+      "drive-text/大会/2026年度/0523-0524_熊本県中学校陸上選手権・混成/岱明の結果.md",
+    ]);
+  });
+
+  it("routes the communication-meet result link to its 2026 note", async () => {
+    const result = await ask("通信陸上の結果リンクは？");
+    expect(result.sources).toEqual([
+      "drive-text/大会/2026年度/0613_全日本中学校通信陸上競技大会熊本県大会/岱明の結果.md",
+    ]);
+  });
+
+  it("routes the city championship result link to its 2026 note", async () => {
+    const result = await ask("熊本市陸上競技選手権の結果リンクは？");
+    expect(result.sources).toEqual([
+      "drive-text/大会/2026年度/0418_第４５回熊本市陸上競技選手権大会/岱明の結果.md",
+    ]);
+  });
+
+  it("routes the unqualified long-distance result to a completed result note", async () => {
+    const result = await ask("熊本県長距離記録会の結果は？");
+    expect(result.sources).toEqual([
+      "drive-text/大会/2026年度/0704_第２回熊本県長距離記録会/岱明の結果.md",
+    ]);
+  });
+
   it("answers Norwegian 45/15 template questions from the method ADR", async () => {
     const result = await ask("norwegian-45-15テンプレは何のセッション？");
     expect(result.sources).toEqual(["repo-docs/adr/002-norwegian-method-integration.md"]);
