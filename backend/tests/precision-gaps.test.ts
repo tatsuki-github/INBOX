@@ -610,6 +610,69 @@ describe("QA precision regressions", () => {
     expect(result.text).toContain("2位");
   });
 
+  it("resolves おととし to the 2024 female winner", async () => {
+    const result = await ask("おととしの荒玉女子優勝校は？");
+    expect(result.sources).toEqual(["aragyoku/winners-by-year.md"]);
+    expect(result.text).toContain("2024年荒玉駅伝女子の優勝校は南関");
+    expect(result.text).toContain("42:25");
+  });
+
+  it("resolves 一昨年 to the 2024 female winner", async () => {
+    const result = await ask("一昨年の荒玉女子優勝校は？");
+    expect(result.sources).toEqual(["aragyoku/winners-by-year.md"]);
+    expect(result.text).toContain("2024年荒玉駅伝女子の優勝校は南関");
+  });
+
+  it("answers a bare evening-practice start-time alias", async () => {
+    const result = await ask("夕練は何時から？");
+    expect(result.sources).toEqual(["calendar/events.daiming.yaml"]);
+    expect(result.text).toContain("18:00");
+  });
+
+  it("answers a compact evening-practice start-time alias", async () => {
+    const result = await ask("いだてん岱明夕練開始時間は？");
+    expect(result.sources).toEqual(["calendar/events.daiming.yaml"]);
+    expect(result.text).toContain("18:00");
+  });
+
+  it("keeps a Japanese dated practice lookup on the exact calendar date", async () => {
+    const result = await ask("2026年9月8日の練習は？");
+    expect(result.sources).toEqual(["calendar/events.daiming.yaml"]);
+    expect(result.text).toContain("2026-09-08");
+  });
+
+  it("keeps a slash-formatted May schedule lookup on the calendar", async () => {
+    const result = await ask("5/8の予定は？");
+    expect(result.sources).toEqual(["calendar/events.daiming.yaml"]);
+    expect(result.text).toContain("2025-05-08");
+  });
+
+  it("answers the 2025 female winner from the winner digest", async () => {
+    const result = await ask("2025年荒玉女子の総合優勝校は？");
+    expect(result.sources).toEqual(["aragyoku/winners-by-year.md"]);
+    expect(result.text).toContain("玉名");
+    expect(result.text).toContain("41:58");
+  });
+
+  it("answers the 2025 玉陵 female total time from the team digest", async () => {
+    const result = await ask("玉陵の2025女子総合タイムは？");
+    expect(result.sources).toEqual(["out-analysis/aragyoku-teams/玉陵.md"]);
+    expect(result.text).toContain("49:36");
+  });
+
+  it("keeps the 2025 junior result alias on the junior result note", async () => {
+    const result = await ask("2025ジュニア駅伝の岱明結果は？");
+    expect(result.sources).toEqual([
+      "drive-text/大会/2025年度/0927_第２回熊本県ジュニア駅伝競走大会/岱明の結果.md",
+    ]);
+  });
+
+  it("keeps a course-era distance alias on the distance definitions", async () => {
+    const result = await ask("新コース男子6区の距離は？");
+    expect(result.sources).toEqual(["docs/aragyoku-ekiden-distance-definitions.md"]);
+    expect(result.text).toContain("3.00");
+  });
+
   it("answers Norwegian 45/15 template questions from the method ADR", async () => {
     const result = await ask("norwegian-45-15テンプレは何のセッション？");
     expect(result.sources).toEqual(["repo-docs/adr/002-norwegian-method-integration.md"]);

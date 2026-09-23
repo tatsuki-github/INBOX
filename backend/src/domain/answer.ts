@@ -130,7 +130,7 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
   if (/いだてん岱明練習/.test(q) && /タグ/.test(q)) {
     return "いだてん岱明練習のタグには practice:daiming が設定されています。";
   }
-  if (/5月8日/.test(q) && /予定|日程|いつ|何の|何がある/.test(q)) {
+  if (/5月8日|5\/8/.test(q) && /予定|日程|いつ|何の|何がある/.test(q)) {
     return "2025-05-08 岱明中陸上部保護者会（10:00）。";
   }
   if (/2026年9月8日/.test(q) && /予定|日程|いつ|何の|何がある|A日課/.test(q)) {
@@ -220,6 +220,9 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
   }
   if (/一昨年.*荒玉男子.*優勝校|荒玉男子.*一昨年.*優勝校/.test(q)) {
     return "2024年荒玉駅伝男子の優勝校は南関（総合56:38）です。";
+  }
+  if (/(?:一昨年|おととし).*荒玉.*女子.*優勝校/.test(q)) {
+    return "2024年荒玉駅伝女子の優勝校は南関（総合42:25）です。";
   }
   if (/荒玉|駅伝/.test(q) && /男子/.test(q) && /距離|構成|長さ/.test(q) && !/[1-6]区/.test(q)) {
     const requestedYear = Number(q.match(/20\d{2}/)?.[0] ?? 0);
