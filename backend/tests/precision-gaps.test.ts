@@ -10192,4 +10192,112 @@ describe("QA precision regressions", () => {
     expect(result.text).toContain(expected);
   });
 
+  it.each([
+    ["女子向け1000mの結果", "村上"], ["男子向け1000mの結果", "松野"],
+    ["女子向け1000mのタイム", "増岡"], ["男子向け1000mのタイム", "田上"],
+    ["女子向け1000mの参加者", "山﨑"], ["男子向け1000mの参加者", "山本"],
+    ["9月22日の女子向け1000mの結果", "角田"], ["9月22日の男子向け1000mの結果", "中尾"],
+    ["女子向け1000mはどうだった？", "塚原"], ["男子向け1000mはどうだった？", "南本"],
+  ])("routes intended-audience wording: %s", async (question, expected) => {
+    const result = await ask(question);
+    expect(result.sources).toEqual(["drive-text/練習/玉名市練習会/2026-09-22.md"]);
+    expect(result.text).toContain(expected);
+  });
+
+  it.each([
+    ["女子主体1000mの結果", "村上"], ["男子主体1000mの結果", "松野"],
+    ["女子主体1000mのタイム", "増岡"], ["男子主体1000mのタイム", "田上"],
+    ["女子主体1000mの参加者", "山﨑"], ["男子主体1000mの参加者", "山本"],
+    ["9月22日の女子主体1000mの結果", "角田"], ["9月22日の男子主体1000mの結果", "中尾"],
+    ["女子主体1000mはどうだった？", "塚原"], ["男子主体1000mはどうだった？", "南本"],
+  ])("routes subject-group wording: %s", async (question, expected) => {
+    const result = await ask(question);
+    expect(result.sources).toEqual(["drive-text/練習/玉名市練習会/2026-09-22.md"]);
+    expect(result.text).toContain(expected);
+  });
+
+  it.each([
+    ["女子中心1000mの結果", "村上"], ["男子中心1000mの結果", "松野"],
+    ["女子中心1000mのタイム", "増岡"], ["男子中心1000mのタイム", "田上"],
+    ["女子中心1000mの参加者", "山﨑"], ["男子中心1000mの参加者", "山本"],
+    ["9月22日の女子中心1000mの結果", "角田"], ["9月22日の男子中心1000mの結果", "中尾"],
+    ["女子中心1000mはどうだった？", "塚原"], ["男子中心1000mはどうだった？", "南本"],
+  ])("routes focus-group wording: %s", async (question, expected) => {
+    const result = await ask(question);
+    expect(result.sources).toEqual(["drive-text/練習/玉名市練習会/2026-09-22.md"]);
+    expect(result.text).toContain(expected);
+  });
+
+  it.each([
+    ["女子側1000mの結果", "村上"], ["男子側1000mの結果", "松野"],
+    ["女子側1000mのタイム", "増岡"], ["男子側1000mのタイム", "田上"],
+    ["女子側1000mの参加者", "山﨑"], ["男子側1000mの参加者", "山本"],
+    ["9月22日の女子側1000mの結果", "角田"], ["9月22日の男子側1000mの結果", "中尾"],
+    ["女子側1000mはどうだった？", "塚原"], ["男子側1000mはどうだった？", "南本"],
+  ])("routes gender-side wording: %s", async (question, expected) => {
+    const result = await ask(question);
+    expect(result.sources).toEqual(["drive-text/練習/玉名市練習会/2026-09-22.md"]);
+    expect(result.text).toContain(expected);
+  });
+
+  it.each([
+    ["女子組別1000mの結果", "村上"], ["男子組別1000mの結果", "松野"],
+    ["女子組別1000mのタイム", "増岡"], ["男子組別1000mのタイム", "田上"],
+    ["女子組別1000mの参加者", "山﨑"], ["男子組別1000mの参加者", "山本"],
+    ["9月22日の女子組別1000mの結果", "角田"], ["9月22日の男子組別1000mの結果", "中尾"],
+    ["女子組別1000mはどうだった？", "塚原"], ["男子組別1000mはどうだった？", "南本"],
+  ])("routes heat-detail wording: %s", async (question, expected) => {
+    const result = await ask(question);
+    expect(result.sources).toEqual(["drive-text/練習/玉名市練習会/2026-09-22.md"]);
+    expect(result.text).toContain(expected);
+  });
+
+  it.each([
+    ["女子班1000mの結果", "村上"], ["男子班1000mの結果", "松野"],
+    ["女子班1000mのタイム", "増岡"], ["男子班1000mのタイム", "田上"],
+    ["女子班1000mの参加者", "山﨑"], ["男子班1000mの参加者", "山本"],
+    ["9月22日の女子班1000mの結果", "角田"], ["9月22日の男子班1000mの結果", "中尾"],
+    ["女子班1000mはどうだった？", "塚原"], ["男子班1000mはどうだった？", "南本"],
+  ])("routes group-label wording: %s", async (question, expected) => {
+    const result = await ask(question);
+    expect(result.sources).toEqual(["drive-text/練習/玉名市練習会/2026-09-22.md"]);
+    expect(result.text).toContain(expected);
+  });
+
+  it.each([
+    ["女子区1000mの結果", "村上"], ["男子区1000mの結果", "松野"],
+    ["女子区1000mのタイム", "増岡"], ["男子区1000mのタイム", "田上"],
+    ["女子区1000mの参加者", "山﨑"], ["男子区1000mの参加者", "山本"],
+    ["9月22日の女子区1000mの結果", "角田"], ["9月22日の男子区1000mの結果", "中尾"],
+    ["女子区1000mはどうだった？", "塚原"], ["男子区1000mはどうだった？", "南本"],
+  ])("routes district-label wording: %s", async (question, expected) => {
+    const result = await ask(question);
+    expect(result.sources).toEqual(["drive-text/練習/玉名市練習会/2026-09-22.md"]);
+    expect(result.text).toContain(expected);
+  });
+
+  it.each([
+    ["女子部門別1000mの結果", "村上"], ["男子部門別1000mの結果", "松野"],
+    ["女子部門別1000mのタイム", "増岡"], ["男子部門別1000mのタイム", "田上"],
+    ["女子部門別1000mの参加者", "山﨑"], ["男子部門別1000mの参加者", "山本"],
+    ["9月22日の女子部門別1000mの結果", "角田"], ["9月22日の男子部門別1000mの結果", "中尾"],
+    ["女子部門別1000mはどうだった？", "塚原"], ["男子部門別1000mはどうだった？", "南本"],
+  ])("routes division-detail wording: %s", async (question, expected) => {
+    const result = await ask(question);
+    expect(result.sources).toEqual(["drive-text/練習/玉名市練習会/2026-09-22.md"]);
+    expect(result.text).toContain(expected);
+  });
+
+  it.each([
+    ["女子枠別1000mの結果", "村上"], ["男子枠別1000mの結果", "松野"],
+    ["女子枠別1000mのタイム", "増岡"], ["男子枠別1000mのタイム", "田上"],
+    ["女子枠別1000mの参加者", "山﨑"], ["男子枠別1000mの参加者", "山本"],
+    ["9月22日の女子枠別1000mの結果", "角田"], ["9月22日の男子枠別1000mの結果", "中尾"],
+    ["女子枠別1000mはどうだった？", "塚原"], ["男子枠別1000mはどうだった？", "南本"],
+  ])("routes slot-detail wording: %s", async (question, expected) => {
+    const result = await ask(question);
+    expect(result.sources).toEqual(["drive-text/練習/玉名市練習会/2026-09-22.md"]);
+    expect(result.text).toContain(expected);
+  });
+
 });
