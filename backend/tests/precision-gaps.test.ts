@@ -754,4 +754,64 @@ describe("QA precision regressions", () => {
     expect(result.sources).toEqual(["out-analysis/aragyoku_top6_historical_average_pace.md"]);
     expect(result.text).toContain("| 2025 | 6 |");
   });
+
+  it("answers compact 佐藤央琉 800m questions from the SB source", async () => {
+    const result = await ask("佐藤央琉800m何秒");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("佐藤央琉（岱明中）の800m自己ベストは2:21.61");
+  });
+
+  it("answers compact 佐藤央琉 wording with a no-何 prefix", async () => {
+    const result = await ask("佐藤央琉800m何分");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("800m自己ベストは2:21.61");
+  });
+
+  it("answers compact 角田亜美 1500m questions from the SB source", async () => {
+    const result = await ask("角田亜美1500mは何分");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("角田亜美（岱明）の1500m自己ベストは5:45.56");
+  });
+
+  it("answers compact 村上咲稀 800m questions from the SB source", async () => {
+    const result = await ask("村上咲稀800m何秒");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("村上咲稀（岱明中）の800m自己ベストは2:23.45");
+  });
+
+  it("answers compact 案浦竜士 1500m questions from the SB source", async () => {
+    const result = await ask("案浦竜士1500m秒");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("案浦竜士（岱明中）の1500m自己ベストは4:49.63");
+  });
+
+  it("answers compact 松野凛空 1500m questions from the SB source", async () => {
+    const result = await ask("松野凛空1500m何秒");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("松野凛空");
+  });
+
+  it("answers compact 田上颯人 1500m questions from the SB source", async () => {
+    const result = await ask("田上颯人1500m何分");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("田上颯人");
+  });
+
+  it("answers compact 西優翔 1500m questions from the SB source", async () => {
+    const result = await ask("西優翔1500m何秒");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("西優翔");
+  });
+
+  it("answers compact 木下紗那 1500m questions from the SB source", async () => {
+    const result = await ask("木下紗那1500m何分");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("木下紗那");
+  });
+
+  it("answers compact 三鶴創一朗 1500m questions from the SB source", async () => {
+    const result = await ask("三鶴創一朗1500m秒");
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("三鶴創一朗");
+  });
 });

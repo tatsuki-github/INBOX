@@ -310,11 +310,20 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
     !/過去|歴代/.test(q);
   const resultListYear = q.match(/20\d{2}/)?.[0] ?? "2025";
   const resultListGender = q.match(/(男子|女子)/)?.[1];
-  if (/自己ベスト|自己記録|\bSB\b|\bPB\b/.test(q)) {
-    const name = q.match(/[\p{Script=Han}]{2,8}(?=の(?:自己|記録|SB|PB))/u)?.[0] ?? q.match(/[\p{Script=Han}]{2,8}/u)?.[0];
+  const compactAthleteRecord =
+    extractAthleteNameHints(q).length > 0 &&
+    /800m|800ｍ|1500m|1500ｍ|3000m|3000ｍ/.test(q) &&
+    /秒|分|タイム|記録|ベスト/.test(q);
+  if (/自己ベスト|自己記録|\bSB\b|\bPB\b/.test(q) || compactAthleteRecord) {
+    const name = extractAthleteNameHints(q)[0] ?? q.match(/[\p{Script=Han}]{2,8}/u)?.[0];
     if (name) {
       const row = flat.match(new RegExp(`${name},([^,]+),([^,]+),([^,]+),([^,]*),([^,]*),`));
       if (row) {
+        const distance = q.match(/(800|1500|3000)m/)?.[1];
+        if (distance) {
+          const value = distance === "800" ? row[4] : distance === "1500" ? row[5] : "";
+          if (value) return `${name}（${row[1]}）の${distance}m自己ベストは${value}。`;
+        }
         const records = [`800m ${row[4]}`, `1500m ${row[5]}`].filter((value) => !/\s$/.test(value) && !/:\s*$/.test(value));
         return `${name}（${row[1]}）の自己ベスト: ${records.join("、")}。`;
       }
@@ -2109,8 +2118,11 @@ function offlineAnswer(
       /会場/.test(question) &&
       !/集合/.test(question);
     const namedSelfBestLookup =
-      /自己ベスト|自己記録|\bSB\b|\bPB\b/.test(question) &&
-      /[\p{Script=Han}]{2,8}/u.test(question) &&
+      (/自己ベスト|自己記録|\bSB\b|\bPB\b/.test(question) ||
+        (extractAthleteNameHints(question).length > 0 &&
+          /800m|800ｍ|1500m|1500ｍ|3000m|3000ｍ/.test(question) &&
+          /秒|分|タイム|記録|ベスト/.test(question))) &&
+      extractAthleteNameHints(question).length > 0 &&
       !(/荒尾三中/.test(question) && /選手|一覧/.test(question));
     const women800FastestLookup =
       /女子/.test(question) && /800m|800ｍ/.test(question) && /最速|一番速|速い/.test(question);
@@ -3768,8 +3780,14 @@ export async function answerQuestion(
     if (team) preferredSources = ["out-analysis/aragyoku-teams/" + team + ".md"];
   }
   const namedSelfBestQ =
-    /自己ベスト|自己記録|\bSB\b|\bPB\b/.test(expanded) &&
-    /[\p{Script=Han}]{2,8}/u.test(expanded);
+    (/自己ベスト|自己記録|\bSB\b|\bPB\b/.test(expanded) ||
+      (extractAthleteNameHints(expanded).length > 0 &&
+        /800m|800ｍ|1500m|1500ｍ|3000m|3000ｍ/.test(expanded) &&
+        /秒|分|タイム|記録|ベスト/.test(expanded))) &&
+    extractAthleteNameHints(expanded).length > 0;
+  if (namedSelfBestQ && !namedSchoolList && !namedSchoolSbList) {
+    preferredSources = ["sb/中学生SB.csv"];
+  }
   if (latestTeamRankQ) {
     const team = /玉名付属|玉名附属|玉名附/.test(question)
       ? "玉高附属"
@@ -4039,6 +4057,7 @@ export async function answerQuestion(
     namedSchoolSbList ||
     namedSchoolList ||
     yearGenderMeetRecordQ ||
+    namedSelfBestQ ||
     isLegAthleteQuestion(expanded) ||
     aragyokuDistanceQ ||
     compactTeamRankQ ||
@@ -4109,6 +4128,7 @@ export async function answerQuestion(
     namedSchoolSbList ||
     namedSchoolList ||
     yearGenderMeetRecordQ ||
+    namedSelfBestQ ||
     teamFullRecordQ
       ? Math.max(topK, fromSources.length, 200)
       : exhaustive
@@ -4137,6 +4157,7 @@ export async function answerQuestion(
         exhaustive ||
         exactDatedPractice ||
         yearGenderMeetRecordQ ||
+        namedSelfBestQ ||
         compactWinnerQ ||
         winnerSchoolQ ||
         runnerUpQ ||
