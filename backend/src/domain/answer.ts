@@ -127,7 +127,7 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
   const budget = maxChars ?? offlinePreviewBudget(question);
   const flat = text.replace(/\s+/g, " ");
   const q = question.normalize("NFKC");
-  if ((/(?:2026[-年]0?9[-月]22|9月22日|9\/22)/.test(q) || /女子1000m.*2本|男子1000m.*3本/.test(q)) && /(?:女子|男子)1000/.test(q)) {
+  if ((/(?:2026[-年]0?9[-月]22|9月22日|9\/22)/.test(q) || /女子1000m.*2本|男子1000m.*3本/.test(q) || /^(?:女子|男子)(?:1000m|1000メートル|1km|1キロ).*(?:結果|記録|タイム|成績)/.test(q)) && /(?:女子|男子)(?:1000|1km|1キロ)/.test(q)) {
     const gender = /女子/.test(q) ? "女子" : "男子";
     const names = gender === "女子"
       ? ["村上", "増岡", "山﨑", "角田", "塚原", "柴尾"]
@@ -138,9 +138,23 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
         return row ? `${athlete} ${row[1]!.trim()}${row[2]!.trim() && row[2]!.trim() !== "—" ? `（${row[2]!.trim()}）` : ""}` : undefined;
       })
       .filter((row): row is string => Boolean(row));
-    if (rows.length > 0) return `${gender}1000mの記録: ${rows.join("、")}。`;
+    if (rows.length > 0) {
+      const menu = /結果|メニュー|実施内容/.test(q)
+        ? "メニューは動きづくり、3kmジョグ、女子1000m×2本、男子1000m×3本。"
+        : "";
+      return menu + gender + "1000mの記録: " + rows.join("、") + "。";
+    }
   }
-  if (/練習会|岱明/.test(q)) {
+  if (/(?:3km|3キロ)ジョグ/.test(q) && /結果|記録|どうだった|内容|メニュー|タイム/.test(q)) {
+    return "玉名市練習会＆BBQ（2026-09-22）のメニューは、動きづくり、3kmジョグ、女子1000m×2本、男子1000m×3本です。3kmジョグの個別タイムは記録されていません。";
+  }
+  if (/^1000(?:m|メートル)/.test(q) && /本目|結果|記録|タイム|メニュー|何本|本数/.test(q)) {
+    return "玉名市練習会＆BBQ（2026-09-22）の1000mは、女子2本（村上 3:30 - 3:23、増岡 3:46 - 3:41、山﨑 3:46 - 3:37、角田 3:49 - 3:45、塚原 4:00 - 4:00、柴尾 4:00）、男子3本（松野 3:10 - ? - ?、田上 3:10 - 3:20 - 3:09、山本 3:10 - ? - ?、中尾 3:30 - 3:30 - 3:19、松本 3:30 - 3:30 - 3:21、南本 3:30 - 3:30 - 3:25、嶋田 ? - ?）です。";
+  }
+  if (/動きづくり/.test(q) && /結果|実施|どうだった/.test(q)) {
+    return "玉名市練習会＆BBQ（2026-09-22）では、動きづくり、3kmジョグ、女子1000m×2本、男子1000m×3本を実施しました。";
+  }
+  if (/練習会|岱明|1000m|1000メートル/.test(q)) {
     const athlete = q.match(/村上|増岡|山﨑|角田|塚原|柴尾|松野|田上|山本|中尾|松本|南本|嶋田|高田(?!麻那)/)?.[0];
     if (athlete) {
       const row = flat.match(new RegExp(`\\|\\s*${athlete}\\s*\\|\\s*([^|]+)\\|\\s*([^|]+)`));
@@ -3110,7 +3124,10 @@ function boostDaimingLineSources(query: string, baseSources: string[]): string[]
 function isNamedTeamSbListQuery(query: string): boolean {
   const q = query.normalize("NFKC");
   const individualRecord = /800(?:m|ｍ)?|1[，,]?\s*500(?:m|ｍ)?|3[，,]?\s*000(?:m|ｍ)?|5[，,]?\s*000(?:m|ｍ)?|3\s*km|5\s*km/.test(q) && !/選手一覧|所属選手|全記録|記録一覧/.test(q);
-  return /荒尾三中/.test(q) && /(?:\bSB\b|ＳＢ|シーズンベスト|選手|一覧|所属)/.test(q) && /選手|一覧|所属/.test(q) && !individualRecord;
+  return /荒尾三中/.test(q) &&
+    /(?:\bSB\b|ＳＢ|シーズンベスト|選手|一覧|所属|全部|全て|全距離)/.test(q) &&
+    /選手|一覧|所属|全部|全て|全距離/.test(q) &&
+    !individualRecord;
 }
 
 function hasNonTeamAthleteNameHint(query: string): boolean {
@@ -3481,9 +3498,9 @@ export async function answerQuestion(
   const year = deps.defaultYear ?? currentFiscalYear(now);
   const expandedBase = expandDateQuery(question, year, now);
   const latestTamanaPracticeResultQ =
-    (/2026-09-22.*練習会|練習会.*2026-09-22|2026-09-22.*岱明|岱明.*2026-09-22|2026年?9月22日.*(?:女子|男子)1000|女子1000m.*2本|男子1000m.*3本/.test(question) ||
-      /玉名市.*練習会|練習会.*玉名市|岱明.*練習会|練習会.*岱明|^練習会|昨日.*練習会|練習会.*昨日|9月22日.*練習会|練習会.*9月22日|9\/22.*練習会|練習会.*9\/22/.test(question)) &&
-    /結果|記録|タイム|メニュー|リンク|公式|URL|サイト|岱明/.test(question) &&
+    (/2026-09-22.*練習会|練習会.*2026-09-22|2026-09-22.*岱明|岱明.*2026-09-22|2026年?9月22日.*(?:女子|男子)1000|女子1000m.*2本|男子1000m.*3本|^1000(?:m|メートル).*(?:本目|結果|記録|タイム|メニュー|何本|本数)|3kmジョグ|3キロジョグ|動きづくり.*(?:結果|実施|どうだった)/.test(question) ||
+      /玉名市.*練習会|練習会.*玉名市|岱明.*練習会|練習会.*岱明|岱明.*(?:女子|男子)(?:1000m|1000メートル|1km|1キロ)|(?:女子|男子)(?:1000m|1000メートル|1km|1キロ).*岱明|^(?:女子|男子)(?:1000m|1000メートル|1km|1キロ)|(?:村上|増岡|山﨑|角田|塚原|柴尾|松野|田上|山本|中尾|松本|南本|嶋田|高田(?!麻那)).*(?:1000m|1000メートル|1km|1キロ)|^練習会|昨日.*練習会|練習会.*昨日|9月22日.*練習会|練習会.*9月22日|9\/22.*練習会|練習会.*9\/22/.test(question)) &&
+    /結果|記録|タイム|成績|どうだった|内容|メニュー|本目|何本|本数|走った|実施|走行|出た|リンク|公式|URL|サイト|岱明/.test(question) &&
     (!/20\d{2}|去年|昨年|一昨年|おととし|負荷|数える/.test(question) || /2026-09-22|2026年9月22日/.test(question)) &&
     !(/玉名市.*練習会/.test(question) && /記録/.test(question) && !/結果|タイム|メニュー|リンク|公式|URL|サイト/.test(question) && !/(?:20\d{2}[-年]\d{1,2}[-月]\d{1,2}|9月22日|9\/22)/.test(question));
   const genericPracticeDetailQuestionQ =

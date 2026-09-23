@@ -4441,4 +4441,610 @@ describe("QA precision regressions", () => {
     expect(result.text).toContain("# 玉名附中 記録一覧");
   });
 
+  it("routes 荒尾三中 SB all wording to the dedicated digest", async () => {
+    const result = await ask("荒尾三中のSBを全部見せて");
+    expect(result.sources).toEqual(["out-analysis/arato-tamana-teams/荒尾三中_SB.md"]);
+    expect(result.text).toContain("# 荒尾三中 選手・SB一覧");
+  });
+
+  it("accepts 全て wording for 荒尾三中 SB lists", async () => {
+    const result = await ask("荒尾三中のSBを全て教えて");
+    expect(result.sources).toEqual(["out-analysis/arato-tamana-teams/荒尾三中_SB.md"]);
+    expect(result.text).toContain("# 荒尾三中 選手・SB一覧");
+  });
+
+  it("accepts 全距離 wording for 荒尾三中 SB lists", async () => {
+    const result = await ask("荒尾三中の全距離SBは？");
+    expect(result.sources).toEqual(["out-analysis/arato-tamana-teams/荒尾三中_SB.md"]);
+    expect(result.text).toContain("# 荒尾三中 選手・SB一覧");
+  });
+
+  it("keeps an SB全一覧 query on the 荒尾三中 digest", async () => {
+    const result = await ask("荒尾三中のSB全一覧");
+    expect(result.sources).toEqual(["out-analysis/arato-tamana-teams/荒尾三中_SB.md"]);
+    expect(result.text).toContain("# 荒尾三中 選手・SB一覧");
+  });
+
+  it("keeps 全記録のSB wording on the 荒尾三中 digest", async () => {
+    const result = await ask("荒尾三中のSB記録を全部");
+    expect(result.sources).toEqual(["out-analysis/arato-tamana-teams/荒尾三中_SB.md"]);
+    expect(result.text).toContain("# 荒尾三中 選手・SB一覧");
+  });
+
+  it("keeps player SB all wording on the 荒尾三中 digest", async () => {
+    const result = await ask("荒尾三中の選手SBを全部");
+    expect(result.sources).toEqual(["out-analysis/arato-tamana-teams/荒尾三中_SB.md"]);
+    expect(result.text).toContain("# 荒尾三中 選手・SB一覧");
+  });
+
+  it("accepts 全距離のSB wording on the 荒尾三中 digest", async () => {
+    const result = await ask("荒尾三中の全距離のSBを教えて");
+    expect(result.sources).toEqual(["out-analysis/arato-tamana-teams/荒尾三中_SB.md"]);
+    expect(result.text).toContain("# 荒尾三中 選手・SB一覧");
+  });
+
+  it("keeps all 荒尾三中 SB records on the dedicated digest", async () => {
+    const result = await ask("荒尾三中のSB記録を全て見せて");
+    expect(result.sources).toEqual(["out-analysis/arato-tamana-teams/荒尾三中_SB.md"]);
+    expect(result.text).toContain("# 荒尾三中 選手・SB一覧");
+  });
+
+  it("keeps a complete 荒尾三中 SB request dedicated", async () => {
+    const result = await ask("荒尾三中のSBを全部一覧で");
+    expect(result.sources).toEqual(["out-analysis/arato-tamana-teams/荒尾三中_SB.md"]);
+    expect(result.text).toContain("# 荒尾三中 選手・SB一覧");
+  });
+
+  it("keeps complete current SB wording on the 荒尾三中 digest", async () => {
+    const result = await ask("荒尾三中の現行SBを全部");
+    expect(result.sources).toEqual(["out-analysis/arato-tamana-teams/荒尾三中_SB.md"]);
+    expect(result.text).toContain("# 荒尾三中 選手・SB一覧");
+  });
+
+  it("routes 岱明女子1000m results to the practice note", async () => {
+    const result = await ask("岱明の女子1000m結果");
+    expect(result.sources).toEqual(["drive-text/練習/玉名市練習会/2026-09-22.md"]);
+    expect(result.text).toContain("女子1000m×2本");
+    expect(result.text).toContain("村上");
+  });
+
+  it("routes 岱明男子1000m results to the practice note", async () => {
+    const result = await ask("岱明の男子1000m結果");
+    expect(result.sources).toEqual(["drive-text/練習/玉名市練習会/2026-09-22.md"]);
+    expect(result.text).toContain("男子1000m×3本");
+    expect(result.text).toContain("松野");
+  });
+
+  it("routes 岱明女子1000m records to the practice note", async () => {
+    const result = await ask("岱明女子1000mの記録");
+    expect(result.sources).toEqual(["drive-text/練習/玉名市練習会/2026-09-22.md"]);
+    expect(result.text).toContain("村上");
+  });
+
+  it("routes 岱明男子1000m records to the practice note", async () => {
+    const result = await ask("岱明男子1000mの記録");
+    expect(result.sources).toEqual(["drive-text/練習/玉名市練習会/2026-09-22.md"]);
+    expect(result.text).toContain("田上");
+  });
+
+  it("routes 岱明女子1000m times to the practice note", async () => {
+    const result = await ask("岱明の女子1000mタイム");
+    expect(result.sources).toEqual(["drive-text/練習/玉名市練習会/2026-09-22.md"]);
+    expect(result.text).toContain("増岡");
+  });
+
+  it("routes 岱明男子1000m times to the practice note", async () => {
+    const result = await ask("岱明の男子1000mタイム");
+    expect(result.sources).toEqual(["drive-text/練習/玉名市練習会/2026-09-22.md"]);
+    expect(result.text).toContain("南本");
+  });
+
+  it("routes dated 岱明女子1000m results to the practice note", async () => {
+    const result = await ask("9月22日岱明女子1000m結果");
+    expect(result.sources[0]).toBe("drive-text/練習/玉名市練習会/2026-09-22.md");
+    expect(result.text).toContain("女子1000m×2本");
+  });
+
+  it("routes dated 岱明男子1000m results to the practice note", async () => {
+    const result = await ask("9月22日岱明男子1000m結果");
+    expect(result.sources[0]).toBe("drive-text/練習/玉名市練習会/2026-09-22.md");
+    expect(result.text).toContain("男子1000m×3本");
+  });
+
+  it("routes slash-date 岱明女子1000m results to the practice note", async () => {
+    const result = await ask("9/22岱明女子1000m結果");
+    expect(result.sources[0]).toBe("drive-text/練習/玉名市練習会/2026-09-22.md");
+    expect(result.text).toContain("村上");
+  });
+
+  it("routes slash-date 岱明男子1000m results to the practice note", async () => {
+    const result = await ask("9/22岱明男子1000m結果");
+    expect(result.sources[0]).toBe("drive-text/練習/玉名市練習会/2026-09-22.md");
+    expect(result.text).toContain("松野");
+  });
+
+  it("routes a generic female 1000m time query to the practice note", async () => {
+    const result = await ask("女子1000mのタイムを教えて");
+    expect(result.sources).toEqual(["drive-text/練習/玉名市練習会/2026-09-22.md"]);
+    expect(result.text).toContain("村上");
+  });
+
+  it("routes a generic male 1000m time query to the practice note", async () => {
+    const result = await ask("男子1000mのタイムを教えて");
+    expect(result.sources).toEqual(["drive-text/練習/玉名市練習会/2026-09-22.md"]);
+    expect(result.text).toContain("松野");
+  });
+
+  it("routes a female 1000m record query to the practice note", async () => {
+    const result = await ask("女子1000mの記録は？");
+    expect(result.sources).toEqual(["drive-text/練習/玉名市練習会/2026-09-22.md"]);
+    expect(result.text).toContain("増岡");
+  });
+
+  it("routes a male 1000m record query to the practice note", async () => {
+    const result = await ask("男子1000mの記録は？");
+    expect(result.sources).toEqual(["drive-text/練習/玉名市練習会/2026-09-22.md"]);
+    expect(result.text).toContain("田上");
+  });
+
+  it("routes a female 1000m result query to the practice note", async () => {
+    const result = await ask("女子1000mの結果は？");
+    expect(result.sources).toEqual(["drive-text/練習/玉名市練習会/2026-09-22.md"]);
+    expect(result.text).toContain("角田");
+  });
+
+  it("routes a male 1000m result query to the practice note", async () => {
+    const result = await ask("男子1000mの結果は？");
+    expect(result.sources).toEqual(["drive-text/練習/玉名市練習会/2026-09-22.md"]);
+    expect(result.text).toContain("中尾");
+  });
+
+  it("routes a female 1000m result request to the practice note", async () => {
+    const result = await ask("女子1000m結果を教えて");
+    expect(result.sources).toEqual(["drive-text/練習/玉名市練習会/2026-09-22.md"]);
+    expect(result.text).toContain("塚原");
+  });
+
+  it("routes a male 1000m result request to the practice note", async () => {
+    const result = await ask("男子1000m結果を教えて");
+    expect(result.sources).toEqual(["drive-text/練習/玉名市練習会/2026-09-22.md"]);
+    expect(result.text).toContain("南本");
+  });
+
+  it("routes a female 1000m performance query to the practice note", async () => {
+    const result = await ask("女子1000mの成績は？");
+    expect(result.sources).toEqual(["drive-text/練習/玉名市練習会/2026-09-22.md"]);
+    expect(result.text).toContain("柴尾");
+  });
+
+  it("routes a male 1000m performance query to the practice note", async () => {
+    const result = await ask("男子1000mの成績は？");
+    expect(result.sources).toEqual(["drive-text/練習/玉名市練習会/2026-09-22.md"]);
+    expect(result.text).toContain("嶋田");
+  });
+
+  it("routes 村上 individual 1000m results to the practice note", async () => {
+    const result = await ask("村上の1000m結果");
+    expect(result.sources).toEqual(["drive-text/練習/玉名市練習会/2026-09-22.md"]);
+    expect(result.text).toContain("3:30");
+  });
+
+  it("routes 増岡 individual 1000m results to the practice note", async () => {
+    const result = await ask("増岡の1000m結果");
+    expect(result.sources).toEqual(["drive-text/練習/玉名市練習会/2026-09-22.md"]);
+    expect(result.text).toContain("3:46");
+  });
+
+  it("routes 山﨑 individual 1000m results to the practice note", async () => {
+    const result = await ask("山﨑の1000m結果");
+    expect(result.sources).toEqual(["drive-text/練習/玉名市練習会/2026-09-22.md"]);
+    expect(result.text).toContain("3:46");
+  });
+
+  it("routes 角田 individual 1000m results to the practice note", async () => {
+    const result = await ask("角田の1000m結果");
+    expect(result.sources).toEqual(["drive-text/練習/玉名市練習会/2026-09-22.md"]);
+    expect(result.text).toContain("3:49");
+  });
+
+  it("routes 塚原 individual 1000m results to the practice note", async () => {
+    const result = await ask("塚原の1000m結果");
+    expect(result.sources).toEqual(["drive-text/練習/玉名市練習会/2026-09-22.md"]);
+    expect(result.text).toContain("4:00");
+  });
+
+  it("routes 柴尾 individual 1000m results to the practice note", async () => {
+    const result = await ask("柴尾の1000m結果");
+    expect(result.sources).toEqual(["drive-text/練習/玉名市練習会/2026-09-22.md"]);
+    expect(result.text).toContain("柴尾");
+  });
+
+  it("routes 松野 individual 1000m results to the practice note", async () => {
+    const result = await ask("松野の1000m結果");
+    expect(result.sources).toEqual(["drive-text/練習/玉名市練習会/2026-09-22.md"]);
+    expect(result.text).toContain("3:10");
+  });
+
+  it("routes 田上 individual 1000m results to the practice note", async () => {
+    const result = await ask("田上の1000m結果");
+    expect(result.sources).toEqual(["drive-text/練習/玉名市練習会/2026-09-22.md"]);
+    expect(result.text).toContain("3:20");
+  });
+
+  it("routes 山本 individual 1000m results to the practice note", async () => {
+    const result = await ask("山本の1000m結果");
+    expect(result.sources).toEqual(["drive-text/練習/玉名市練習会/2026-09-22.md"]);
+    expect(result.text).toContain("山本");
+  });
+
+  it("routes 中尾 individual 1000m results to the practice note", async () => {
+    const result = await ask("中尾の1000m結果");
+    expect(result.sources).toEqual(["drive-text/練習/玉名市練習会/2026-09-22.md"]);
+    expect(result.text).toContain("3:30");
+  });
+
+  it("answers 高田's 1000m participation from the practice note", async () => {
+    const result = await ask("高田は1000mを走った？");
+    expect(result.sources).toEqual(["drive-text/練習/玉名市練習会/2026-09-22.md"]);
+    expect(result.text).toContain("ジョグのみ");
+    expect(result.text).toContain("実施せず");
+  });
+
+  it("answers 村上's 1000m participation from the practice note", async () => {
+    const result = await ask("村上は1000mを走った？");
+    expect(result.sources).toEqual(["drive-text/練習/玉名市練習会/2026-09-22.md"]);
+    expect(result.text).toContain("3:30");
+  });
+
+  it("answers 増岡's 1000m participation from the practice note", async () => {
+    const result = await ask("増岡は1000mを走った？");
+    expect(result.sources).toEqual(["drive-text/練習/玉名市練習会/2026-09-22.md"]);
+    expect(result.text).toContain("3:46");
+  });
+
+  it("answers 山﨑's 1000m participation from the practice note", async () => {
+    const result = await ask("山﨑は1000mを走った？");
+    expect(result.sources).toEqual(["drive-text/練習/玉名市練習会/2026-09-22.md"]);
+    expect(result.text).toContain("3:46");
+  });
+
+  it("answers 角田's 1000m participation from the practice note", async () => {
+    const result = await ask("角田は1000mを走った？");
+    expect(result.sources).toEqual(["drive-text/練習/玉名市練習会/2026-09-22.md"]);
+    expect(result.text).toContain("3:49");
+  });
+
+  it("answers 塚原's 1000m participation from the practice note", async () => {
+    const result = await ask("塚原は1000mを走った？");
+    expect(result.sources).toEqual(["drive-text/練習/玉名市練習会/2026-09-22.md"]);
+    expect(result.text).toContain("4:00");
+  });
+
+  it("answers 柴尾's 1000m participation from the practice note", async () => {
+    const result = await ask("柴尾は1000mを走った？");
+    expect(result.sources).toEqual(["drive-text/練習/玉名市練習会/2026-09-22.md"]);
+    expect(result.text).toContain("柴尾");
+  });
+
+  it("answers 松野's 1000m participation from the practice note", async () => {
+    const result = await ask("松野は1000mを走った？");
+    expect(result.sources).toEqual(["drive-text/練習/玉名市練習会/2026-09-22.md"]);
+    expect(result.text).toContain("3:10");
+  });
+
+  it("answers 田上's 1000m participation from the practice note", async () => {
+    const result = await ask("田上は1000mを走った？");
+    expect(result.sources).toEqual(["drive-text/練習/玉名市練習会/2026-09-22.md"]);
+    expect(result.text).toContain("3:10");
+  });
+
+  it("answers 嶋田's 1000m participation from the practice note", async () => {
+    const result = await ask("嶋田は1000mを走った？");
+    expect(result.sources).toEqual(["drive-text/練習/玉名市練習会/2026-09-22.md"]);
+    expect(result.text).toContain("嶋田");
+  });
+
+  it("routes female 1000メートル results to the practice note", async () => {
+    const result = await ask("女子1000メートルの結果は？");
+    expect(result.sources).toEqual(["drive-text/練習/玉名市練習会/2026-09-22.md"]);
+    expect(result.text).toContain("村上");
+  });
+
+  it("routes male 1000メートル results to the practice note", async () => {
+    const result = await ask("男子1000メートルの結果は？");
+    expect(result.sources).toEqual(["drive-text/練習/玉名市練習会/2026-09-22.md"]);
+    expect(result.text).toContain("松野");
+  });
+
+  it("routes female 1km results to the practice note", async () => {
+    const result = await ask("女子1kmの結果は？");
+    expect(result.sources).toEqual(["drive-text/練習/玉名市練習会/2026-09-22.md"]);
+    expect(result.text).toContain("増岡");
+  });
+
+  it("routes male 1km results to the practice note", async () => {
+    const result = await ask("男子1kmの結果は？");
+    expect(result.sources).toEqual(["drive-text/練習/玉名市練習会/2026-09-22.md"]);
+    expect(result.text).toContain("田上");
+  });
+
+  it("routes female 1キロ results to the practice note", async () => {
+    const result = await ask("女子1キロの結果は？");
+    expect(result.sources).toEqual(["drive-text/練習/玉名市練習会/2026-09-22.md"]);
+    expect(result.text).toContain("山﨑");
+  });
+
+  it("routes male 1キロ results to the practice note", async () => {
+    const result = await ask("男子1キロの結果は？");
+    expect(result.sources).toEqual(["drive-text/練習/玉名市練習会/2026-09-22.md"]);
+    expect(result.text).toContain("中尾");
+  });
+
+  it("routes dated female 1000メートル results to the practice note", async () => {
+    const result = await ask("9月22日の女子1000メートル結果");
+    expect(result.sources[0]).toBe("drive-text/練習/玉名市練習会/2026-09-22.md");
+    expect(result.text).toContain("女子1000m×2本");
+  });
+
+  it("routes dated male 1000メートル results to the practice note", async () => {
+    const result = await ask("9月22日の男子1000メートル結果");
+    expect(result.sources[0]).toBe("drive-text/練習/玉名市練習会/2026-09-22.md");
+    expect(result.text).toContain("男子1000m×3本");
+  });
+
+  it("routes female 1000メートル records to the practice note", async () => {
+    const result = await ask("女子1000メートルの記録");
+    expect(result.sources).toEqual(["drive-text/練習/玉名市練習会/2026-09-22.md"]);
+    expect(result.text).toContain("角田");
+  });
+
+  it("routes male 1000メートル records to the practice note", async () => {
+    const result = await ask("男子1000メートルの記録");
+    expect(result.sources).toEqual(["drive-text/練習/玉名市練習会/2026-09-22.md"]);
+    expect(result.text).toContain("南本");
+  });
+
+  it("routes a 3km jog result query to the practice note", async () => {
+    const result = await ask("3kmジョグの結果");
+    expect(result.sources).toEqual(["drive-text/練習/玉名市練習会/2026-09-22.md"]);
+    expect(result.text).toContain("3kmジョグ");
+    expect(result.text).toContain("個別タイムは記録されていません");
+  });
+
+  it("routes a 3km jog record query to the practice note", async () => {
+    const result = await ask("3kmジョグの記録");
+    expect(result.sources).toEqual(["drive-text/練習/玉名市練習会/2026-09-22.md"]);
+    expect(result.text).toContain("3kmジョグ");
+  });
+
+  it("routes a conversational 3km jog query to the practice note", async () => {
+    const result = await ask("3kmジョグはどうだった？");
+    expect(result.sources).toEqual(["drive-text/練習/玉名市練習会/2026-09-22.md"]);
+    expect(result.text).toContain("個別タイムは記録されていません");
+  });
+
+  it("routes a 3km jog content query to the practice note", async () => {
+    const result = await ask("3kmジョグの内容は？");
+    expect(result.sources).toEqual(["drive-text/練習/玉名市練習会/2026-09-22.md"]);
+    expect(result.text).toContain("女子1000m×2本");
+  });
+
+  it("routes a dated 3km jog result query to the practice note", async () => {
+    const result = await ask("9月22日の3kmジョグ結果");
+    expect(result.sources[0]).toBe("drive-text/練習/玉名市練習会/2026-09-22.md");
+    expect(result.text).toContain("3kmジョグ");
+  });
+
+  it("routes a dated 3km jog record query to the practice note", async () => {
+    const result = await ask("9月22日の3kmジョグ記録");
+    expect(result.sources[0]).toBe("drive-text/練習/玉名市練習会/2026-09-22.md");
+    expect(result.text).toContain("3kmジョグ");
+  });
+
+  it("routes a slash-date 3km jog result query to the practice note", async () => {
+    const result = await ask("9/22の3kmジョグ結果");
+    expect(result.sources[0]).toBe("drive-text/練習/玉名市練習会/2026-09-22.md");
+    expect(result.text).toContain("3kmジョグ");
+  });
+
+  it("routes a 3kmジョグ menu query to the practice note", async () => {
+    const result = await ask("3kmジョグのメニューは？");
+    expect(result.sources).toEqual(["drive-text/練習/玉名市練習会/2026-09-22.md"]);
+    expect(result.text).toContain("動きづくり");
+  });
+
+  it("routes a 3kmジョグ implementation query to the practice note", async () => {
+    const result = await ask("3kmジョグの実施内容");
+    expect(result.sources).toEqual(["drive-text/練習/玉名市練習会/2026-09-22.md"]);
+    expect(result.text).toContain("男子1000m×3本");
+  });
+
+  it("routes a 3km jog time query to the practice note", async () => {
+    const result = await ask("3kmジョグのタイムは？");
+    expect(result.sources).toEqual(["drive-text/練習/玉名市練習会/2026-09-22.md"]);
+    expect(result.text).toContain("個別タイムは記録されていません");
+  });
+
+  it("routes 動きづくり result wording to the practice note", async () => {
+    const result = await ask("動きづくりの結果");
+    expect(result.sources).toEqual(["drive-text/練習/玉名市練習会/2026-09-22.md"]);
+    expect(result.text).toContain("動きづくり");
+    expect(result.text).toContain("女子1000m×2本");
+  });
+
+  it("routes 動きづくり implementation wording to the practice note", async () => {
+    const result = await ask("動きづくりの実施内容");
+    expect(result.sources).toEqual(["drive-text/練習/玉名市練習会/2026-09-22.md"]);
+    expect(result.text).toContain("3kmジョグ");
+  });
+
+  it("routes conversational 動きづくり result wording to the practice note", async () => {
+    const result = await ask("動きづくりはどうだった？");
+    expect(result.sources).toEqual(["drive-text/練習/玉名市練習会/2026-09-22.md"]);
+    expect(result.text).toContain("男子1000m×3本");
+  });
+
+  it("routes 動きづくり execution wording to the practice note", async () => {
+    const result = await ask("動きづくりは実施した？");
+    expect(result.sources).toEqual(["drive-text/練習/玉名市練習会/2026-09-22.md"]);
+    expect(result.text).toContain("動きづくり");
+  });
+
+  it("routes dated 動きづくり results to the practice note", async () => {
+    const result = await ask("9月22日の動きづくり結果");
+    expect(result.sources[0]).toBe("drive-text/練習/玉名市練習会/2026-09-22.md");
+    expect(result.text).toContain("女子1000m×2本");
+  });
+
+  it("routes dated 動きづくり implementation to the practice note", async () => {
+    const result = await ask("9月22日の動きづくり実施内容");
+    expect(result.sources[0]).toBe("drive-text/練習/玉名市練習会/2026-09-22.md");
+    expect(result.text).toContain("男子1000m×3本");
+  });
+
+  it("routes slash-date 動きづくり results to the practice note", async () => {
+    const result = await ask("9/22の動きづくり結果");
+    expect(result.sources[0]).toBe("drive-text/練習/玉名市練習会/2026-09-22.md");
+    expect(result.text).toContain("動きづくり");
+  });
+
+  it("routes 動きづくり completion questions to the practice note", async () => {
+    const result = await ask("動きづくりは実施したの？");
+    expect(result.sources).toEqual(["drive-text/練習/玉名市練習会/2026-09-22.md"]);
+    expect(result.text).toContain("3kmジョグ");
+  });
+
+  it("routes 動きづくり performance questions to the practice note", async () => {
+    const result = await ask("動きづくりはどう実施した？");
+    expect(result.sources).toEqual(["drive-text/練習/玉名市練習会/2026-09-22.md"]);
+    expect(result.text).toContain("女子1000m×2本");
+  });
+
+  it("routes 動きづくり outcome questions to the practice note", async () => {
+    const result = await ask("動きづくりの結果を教えて");
+    expect(result.sources).toEqual(["drive-text/練習/玉名市練習会/2026-09-22.md"]);
+    expect(result.text).toContain("男子1000m×3本");
+  });
+
+  it("routes a 3キロ jog result query to the practice note", async () => {
+    const result = await ask("3キロジョグの結果");
+    expect(result.sources).toEqual(["drive-text/練習/玉名市練習会/2026-09-22.md"]);
+    expect(result.text).toContain("3kmジョグ");
+  });
+
+  it("routes a 3キロ jog record query to the practice note", async () => {
+    const result = await ask("3キロジョグの記録");
+    expect(result.sources).toEqual(["drive-text/練習/玉名市練習会/2026-09-22.md"]);
+    expect(result.text).toContain("個別タイムは記録されていません");
+  });
+
+  it("routes a 3キロ jog content query to the practice note", async () => {
+    const result = await ask("3キロジョグの内容");
+    expect(result.sources).toEqual(["drive-text/練習/玉名市練習会/2026-09-22.md"]);
+    expect(result.text).toContain("女子1000m×2本");
+  });
+
+  it("routes a 3キロ jog menu query to the practice note", async () => {
+    const result = await ask("3キロジョグのメニュー");
+    expect(result.sources).toEqual(["drive-text/練習/玉名市練習会/2026-09-22.md"]);
+    expect(result.text).toContain("動きづくり");
+  });
+
+  it("routes a 3キロ jog time query to the practice note", async () => {
+    const result = await ask("3キロジョグのタイム");
+    expect(result.sources).toEqual(["drive-text/練習/玉名市練習会/2026-09-22.md"]);
+    expect(result.text).toContain("個別タイムは記録されていません");
+  });
+
+  it("routes a dated 3キロ jog result query to the practice note", async () => {
+    const result = await ask("9月22日の3キロジョグ結果");
+    expect(result.sources[0]).toBe("drive-text/練習/玉名市練習会/2026-09-22.md");
+    expect(result.text).toContain("3kmジョグ");
+  });
+
+  it("routes a dated 3キロ jog content query to the practice note", async () => {
+    const result = await ask("9月22日の3キロジョグ内容");
+    expect(result.sources[0]).toBe("drive-text/練習/玉名市練習会/2026-09-22.md");
+    expect(result.text).toContain("男子1000m×3本");
+  });
+
+  it("routes a slash-date 3キロ jog result query to the practice note", async () => {
+    const result = await ask("9/22の3キロジョグ結果");
+    expect(result.sources[0]).toBe("drive-text/練習/玉名市練習会/2026-09-22.md");
+    expect(result.text).toContain("3kmジョグ");
+  });
+
+  it("routes a conversational 3キロ jog query to the practice note", async () => {
+    const result = await ask("3キロジョグはどうだった？");
+    expect(result.sources).toEqual(["drive-text/練習/玉名市練習会/2026-09-22.md"]);
+    expect(result.text).toContain("個別タイムは記録されていません");
+  });
+
+  it("routes a 3キロ jog implementation query to the practice note", async () => {
+    const result = await ask("3キロジョグの実施内容");
+    expect(result.sources).toEqual(["drive-text/練習/玉名市練習会/2026-09-22.md"]);
+    expect(result.text).toContain("男子1000m×3本");
+  });
+
+  it("routes an unqualified 1000m second-repetition query to the practice note", async () => {
+    const result = await ask("1000m2本目は？");
+    expect(result.sources).toEqual(["drive-text/練習/玉名市練習会/2026-09-22.md"]);
+    expect(result.text).toContain("女子2本");
+    expect(result.text).toContain("男子3本");
+  });
+
+  it("routes an unqualified 1000m first-repetition query to the practice note", async () => {
+    const result = await ask("1000m1本目は？");
+    expect(result.sources).toEqual(["drive-text/練習/玉名市練習会/2026-09-22.md"]);
+    expect(result.text).toContain("村上");
+  });
+
+  it("routes an unqualified 1000m result query to the practice note", async () => {
+    const result = await ask("1000mの結果は？");
+    expect(result.sources).toEqual(["drive-text/練習/玉名市練習会/2026-09-22.md"]);
+    expect(result.text).toContain("松野");
+  });
+
+  it("routes an unqualified 1000m record query to the practice note", async () => {
+    const result = await ask("1000mの記録は？");
+    expect(result.sources).toEqual(["drive-text/練習/玉名市練習会/2026-09-22.md"]);
+    expect(result.text).toContain("田上");
+  });
+
+  it("routes an unqualified 1000m time query to the practice note", async () => {
+    const result = await ask("1000mのタイムは？");
+    expect(result.sources).toEqual(["drive-text/練習/玉名市練習会/2026-09-22.md"]);
+    expect(result.text).toContain("角田");
+  });
+
+  it("routes an unqualified 1000m menu query to the practice note", async () => {
+    const result = await ask("1000mのメニューは？");
+    expect(result.sources).toEqual(["drive-text/練習/玉名市練習会/2026-09-22.md"]);
+    expect(result.text).toContain("女子2本");
+  });
+
+  it("routes an unqualified Japanese-unit 1000m query to the practice note", async () => {
+    const result = await ask("1000メートル2本目は？");
+    expect(result.sources).toEqual(["drive-text/練習/玉名市練習会/2026-09-22.md"]);
+    expect(result.text).toContain("男子3本");
+  });
+
+  it("routes an unqualified 1000m count query to the practice note", async () => {
+    const result = await ask("1000mは何本？");
+    expect(result.sources).toEqual(["drive-text/練習/玉名市練習会/2026-09-22.md"]);
+    expect(result.text).toContain("女子2本");
+  });
+
+  it("routes an unqualified 1000m second-time query to the practice note", async () => {
+    const result = await ask("1000mの2本目のタイムは？");
+    expect(result.sources).toEqual(["drive-text/練習/玉名市練習会/2026-09-22.md"]);
+    expect(result.text).toContain("3:20");
+  });
+
+  it("routes an unqualified 1000m repetition-count query to the practice note", async () => {
+    const result = await ask("1000mの本数と結果は？");
+    expect(result.sources).toEqual(["drive-text/練習/玉名市練習会/2026-09-22.md"]);
+    expect(result.text).toContain("男子3本");
+  });
+
 });
