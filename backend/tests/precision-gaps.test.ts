@@ -2107,4 +2107,70 @@ describe("QA precision regressions", () => {
     expect(result.sources).toEqual(["out-analysis/2026_women_800m_1500m_pb_school_ranking.md"]);
     expect(result.text).toContain("## 800m・上位5人平均");
   });
+
+  it("routes an undated 玉名市練習会 result to the latest practice record", async () => {
+    const result = await ask("玉名市練習会の結果");
+    expect(result.sources).toEqual(["drive-text/練習/玉名市練習会/2026-09-22.md"]);
+    expect(result.text).toContain("女子1000m×2本");
+  });
+
+  it("routes the abbreviated first long-distance meet result to its result note", async () => {
+    const result = await ask("第1回長距離記録会の結果");
+    expect(result.sources).toEqual(["drive-text/大会/2026年度/0509_第１回熊本県長距離記録会/岱明の結果.md"]);
+    expect(result.text).toContain("第１回熊本県長距離記録会");
+  });
+
+  it("routes the abbreviated second long-distance meet result to its result note", async () => {
+    const result = await ask("第2回長距離記録会の結果");
+    expect(result.sources).toEqual(["drive-text/大会/2026年度/0704_第２回熊本県長距離記録会/岱明の結果.md"]);
+    expect(result.text).toContain("第２回熊本県長距離記録会");
+  });
+
+  it("routes the short city-championship result query to the current result note", async () => {
+    const result = await ask("市選手権の結果");
+    expect(result.sources).toEqual(["drive-text/大会/2026年度/0418_第４５回熊本市陸上競技選手権大会/岱明の結果.md"]);
+    expect(result.text).toContain("第４５回熊本市陸上競技選手権大会");
+  });
+
+  it("routes the abbreviated Kumamoto city championship result to its result note", async () => {
+    const result = await ask("熊本市選手権の結果");
+    expect(result.sources).toEqual(["drive-text/大会/2026年度/0418_第４５回熊本市陸上競技選手権大会/岱明の結果.md"]);
+    expect(result.text).toContain("第４５回熊本市陸上競技選手権大会");
+  });
+
+  it("routes the short nighter-meet result query to the full result note", async () => {
+    const result = await ask("ナイター記録会の結果");
+    expect(result.sources).toEqual(["drive-text/大会/2026年度/0829_玉名郡ナイター中・長距離記録会/全結果.md"]);
+    expect(result.text).toContain("第25回玉名郡ナイター中・長距離記録会");
+  });
+
+  it("routes the short prefectural championship result to the 2026 result note", async () => {
+    const result = await ask("県中学校選手権の結果");
+    expect(result.sources).toEqual(["drive-text/大会/2026年度/0523-0524_熊本県中学校陸上選手権・混成/岱明の結果.md"]);
+    expect(result.text).toContain("第40回熊本県中学校陸上競技選手権大会");
+  });
+
+  it("routes the short communication-meet result to its 2026 result note", async () => {
+    const result = await ask("通信の結果");
+    expect(result.sources).toEqual(["drive-text/大会/2026年度/0613_全日本中学校通信陸上競技大会熊本県大会/岱明の結果.md"]);
+    expect(result.text).toContain("第72回全日本中学校通信陸上競技大会熊本県大会");
+  });
+
+  it("routes the abbreviated first long-distance result-link query to its result note", async () => {
+    const result = await ask("第1回長距離記録会の結果リンク");
+    expect(result.sources).toEqual(["drive-text/大会/2026年度/0509_第１回熊本県長距離記録会/岱明の結果.md"]);
+    expect(result.text).toContain("第１回熊本県長距離記録会");
+  });
+
+  it("routes the abbreviated fourth long-distance result query to its scheduled overview", async () => {
+    const result = await ask("第4回長距離記録会の結果");
+    expect(result.sources).toEqual(["drive-text/大会/2026年度/1010_第４回熊本県長距離記録会/概要.md"]);
+    expect(result.text).toContain("熊本県長距離記録会");
+  });
+
+  it("routes the abbreviated fifth long-distance result query to its scheduled overview", async () => {
+    const result = await ask("第5回長距離記録会の結果");
+    expect(result.sources).toEqual(["drive-text/大会/2026年度/1212_第５回熊本県長距離記録会/概要.md"]);
+    expect(result.text).toContain("熊本県長距離記録会");
+  });
 });
