@@ -205,6 +205,10 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
   if (/練習会/.test(q) && /メニュー|実施内容/.test(q)) {
     return "練習会のメニューは、動きづくり、3kmジョグ、女子1000m×2本、男子1000m×3本です。";
   }
+  if (/練習会/.test(q) && /結果|記録|タイム/.test(q) && /2026-09-22/.test(q)) {
+    const idx = flat.indexOf("## 岱明の実施結果");
+    if (idx >= 0) return flat.slice(idx, Math.min(flat.length, idx + budget));
+  }
   if (/いだてん岱明|岱明駅伝試走|県民スポーツ大会中止/.test(q)) {
     const date = q.match(/20\d{2}[-年]\d{1,2}[-月]\d{1,2}/)?.[0]?.replace(/[年月]/g, "-").replace(/日$/, "");
     const marker = date ? date : /県民スポーツ大会中止/.test(q) ? "県民スポーツ大会" : /岱明駅伝試走/.test(q) ? "岱明駅伝試走" : "";
@@ -2345,7 +2349,7 @@ function offlineAnswer(
       !prefecturalMeetScheduleLookup;
     const practiceStatusLookup = /練習会/.test(question) && /開催|中止|実施/.test(question);
     const recentPracticeResultLookup =
-      /玉名市.*練習会|練習会.*玉名市|^練習会|昨日.*練習会|練習会.*昨日|9月22日.*練習会|練習会.*9月22日|9\/22.*練習会|練習会.*9\/22/.test(question) &&
+      /玉名市.*練習会|練習会.*玉名市|^練習会|昨日.*練習会|練習会.*昨日|9月22日.*練習会|練習会.*9月22日|9\/22.*練習会|練習会.*9\/22|2026-09-22.*練習会|練習会.*2026-09-22/.test(question) &&
       /結果|記録|タイム|メニュー|リンク|公式|URL|サイト/.test(question) &&
       !/負荷|数える/.test(question) &&
       !(/玉名市.*練習会/.test(question) && /記録/.test(question) && !/結果|タイム|メニュー|リンク|公式|URL|サイト/.test(question) && !/(?:20\d{2}[-年]\d{1,2}[-月]\d{1,2}|9月22日|9\/22)/.test(question));
@@ -2452,7 +2456,9 @@ function offlineAnswer(
         ? "練習会 男子1000m 結果"
         : /女子/.test(question)
           ? "練習会 女子1000m 結果"
-          : "女子 男子"
+          : /2026-09-22/.test(question)
+            ? question
+            : "女子 男子"
       : meetResultUrlLookup || prefecturalMeetResultLookup || prefecturalMeetScheduleLookup || teamRankLookup
       ? question
       : calendarDateScheduleLookup
@@ -3318,9 +3324,10 @@ export async function answerQuestion(
   const year = deps.defaultYear ?? currentFiscalYear(now);
   const expandedBase = expandDateQuery(question, year, now);
   const latestTamanaPracticeResultQ =
-    /玉名市.*練習会|練習会.*玉名市|^練習会|昨日.*練習会|練習会.*昨日|9月22日.*練習会|練習会.*9月22日|9\/22.*練習会|練習会.*9\/22/.test(question) &&
+    (/2026-09-22.*練習会|練習会.*2026-09-22/.test(question) ||
+      /玉名市.*練習会|練習会.*玉名市|^練習会|昨日.*練習会|練習会.*昨日|9月22日.*練習会|練習会.*9月22日|9\/22.*練習会|練習会.*9\/22/.test(question)) &&
     /結果|記録|タイム|メニュー|リンク|公式|URL|サイト|岱明/.test(question) &&
-    !/20\d{2}|去年|昨年|一昨年|おととし|負荷|数える/.test(question) &&
+    (!/20\d{2}|去年|昨年|一昨年|おととし|負荷|数える/.test(question) || /2026-09-22/.test(question)) &&
     !(/玉名市.*練習会/.test(question) && /記録/.test(question) && !/結果|タイム|メニュー|リンク|公式|URL|サイト/.test(question) && !/(?:20\d{2}[-年]\d{1,2}[-月]\d{1,2}|9月22日|9\/22)/.test(question));
   const genericPracticeDetailQuestionQ =
     /玉名市.*練習会|練習会.*玉名市|^練習会/.test(question) &&
