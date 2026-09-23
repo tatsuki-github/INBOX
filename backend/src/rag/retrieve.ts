@@ -810,7 +810,7 @@ function isBlockedCorpusForQuery(source: string, query: string): boolean {
       /男子|女子/.test(q) &&
       /[1-6]区/.test(q) &&
       /岱明|玉高附属|玉名付属|玉名附属|天水|有明|南関|菊水/.test(q);
-    if (!explicitTeamLegRank) return true;
+    if (!explicitTeamLegRank && !/区間順位ベスト/.test(q)) return true;
   }
   // Empty Drive stubs must not fill ranking / history answers
   if (/_EMPTY\.md|export\.status\.json/.test(source)) {

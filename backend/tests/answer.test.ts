@@ -3765,6 +3765,40 @@ describe("answerQuestion", () => {
     }
   });
 
+  it.each([
+    ["2025岱明5区誰", "山本哲瑠"],
+    ["2025年岱明男子の区間順位ベストは誰？", "山本哲瑠"],
+    ["2024年岱明男子4区の区間タイムは？", "田上侑蕾"],
+  ])("keeps compact team leg questions on the race digest: %s", async (question, athlete) => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion(question, {
+      skipRouter: true,
+      defaultYear: 2026,
+      llm: null,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.text).toContain(athlete);
+      expect(result.sources.some((source) => source.includes("aragyoku"))).toBe(true);
+    }
+  });
+
+  it("routes an unqualified 3000m SB leader query to the ranking digest", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("荒玉地区3000mSBの1位の記録は？", {
+      skipRouter: true,
+      defaultYear: 2026,
+      llm: null,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.text).toMatch(/8:54/);
+      expect(result.sources[0]).toContain("3000m_sb_ranking");
+    }
+  });
+
   it("routes a named 1500m SB to the athlete digest", async () => {
     resetRetrieverCache();
     resetKgCache();
