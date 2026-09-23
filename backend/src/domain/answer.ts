@@ -127,6 +127,14 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
   const budget = maxChars ?? offlinePreviewBudget(question);
   const flat = text.replace(/\s+/g, " ");
   const q = question.normalize("NFKC");
+  if (
+    /玉名市.*練習会|練習会.*玉名市/.test(q) &&
+    /結果|記録|タイム|メニュー|岱明/.test(q) &&
+    /2026年?9月22日|2026-09-22|9月22日|9\/22/.test(q)
+  ) {
+    const idx = flat.indexOf("## 岱明の実施結果");
+    if (idx >= 0) return flat.slice(idx, Math.min(flat.length, idx + budget));
+  }
   if (/荒玉|駅伝/.test(q) && /過去|歴代/.test(q) && /順位|成績|結果/.test(q)) {
     const team = ["荒尾海陽", "荒尾三", "荒尾四", "三加和", "南関", "天水", "岱明", "有明", "玉南", "玉名", "玉東", "玉陵", "玉高附属", "玉名付属", "玉名附属", "腹栄", "荒尾", "菊水", "長洲"].find((name) => q.includes(name));
     if (team) {
@@ -3618,8 +3626,12 @@ export async function answerQuestion(
     if (school) preferredSources = [`out-analysis/arato-tamana-teams/${school}.md`];
   }
 
+  const tamanaPracticeResultQ =
+    /玉名市.*練習会|練習会.*玉名市/.test(expanded) &&
+    /結果|記録|タイム|メニュー|岱明/.test(expanded) &&
+    /2026年?9月22日|2026-09-22|9月22日|9\/22/.test(expanded);
   const exactDatedPractice =
-    isDateScheduleQuestion(expanded) &&
+    (isDateScheduleQuestion(expanded) || tamanaPracticeResultQ) &&
     preferredSources.some((s) => s.startsWith("drive-text/練習/")) &&
     !/参加|人数|何人|ほぼ全員|女子7/.test(expanded);
   if (exactDatedPractice) {
@@ -3675,7 +3687,7 @@ export async function answerQuestion(
     /過去|歴代/.test(expanded) &&
     /順位|成績|結果/.test(expanded);
   const directDocQ =
-    practiceTemplateQ || weatherOpsQ || paceCliQ || practiceMeetLoadQ || historicalTopSixPaceQ || historicalTeamRankQ;
+    practiceTemplateQ || weatherOpsQ || paceCliQ || practiceMeetLoadQ || historicalTopSixPaceQ || historicalTeamRankQ || tamanaPracticeResultQ;
   if (practiceTemplateQ) {
     preferredSources = /norwegian-45-15|[Nn]orwegian(?:の|\s*)[- ]?45\s*[\/／\-‐‑–—−]\s*15|ノルウェー(?:式)?(?:の|\s*)45\s*[\/／\-‐‑–—−]\s*15|45\s*[\/／\-‐‑–—−]\s*15/.test(expanded)
       ? ["repo-docs/adr/002-norwegian-method-integration.md"]
@@ -4092,6 +4104,11 @@ export async function answerQuestion(
     !namedSelfBestQ
   ) {
     preferredSources = ["out-analysis/2026_aragyoku_men_1500m_sb_individual_top20.md"];
+  }
+  // A dated 玉名市練習会 result must not be shadowed by the similarly named
+  // 岱明荒玉駅伝 team-history digest.
+  if (tamanaPracticeResultQ) {
+    preferredSources = ["drive-text/練習/玉名市練習会/2026-09-22.md"];
   }
   const fromSources = retrieveBySources(preferredSources, {
     query: expanded,

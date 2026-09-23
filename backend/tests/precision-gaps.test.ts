@@ -67,6 +67,15 @@ describe("QA precision regressions", () => {
     expect(result.text).toContain("基本不参加");
   });
 
+  it("answers a dated 玉名市練習会 result from the practice record", async () => {
+    const result = await ask("2026年9月22日の玉名市練習会で岱明の結果は？");
+    expect(result.sources).toEqual(["drive-text/練習/玉名市練習会/2026-09-22.md"]);
+    expect(result.text).toContain("女子1000m×2本");
+    expect(result.text).toContain("村上");
+    expect(result.text).toContain("3:30 - 3:23");
+    expect(result.text).toContain("男子1000m×3本");
+  });
+
   it("answers Norwegian 45/15 template questions from the method ADR", async () => {
     const result = await ask("norwegian-45-15テンプレは何のセッション？");
     expect(result.sources).toEqual(["repo-docs/adr/002-norwegian-method-integration.md"]);

@@ -52,6 +52,11 @@ SOURCE_GLOBS: list[tuple[str, list[str], str]] = [
     ),
     ("input/external/INDEX.md", ["meta", "practice", "athlete_records"], "外部ソース（Drive/Notion/GitHub）取り込み目録"),
     ("input/external/drive/INDEX.md", ["practice", "athlete_records", "meta"], "Google ドライブいだてん関連スナップショット"),
+    (
+        "input/external/drive/shared/練習/玉名市練習会/2026-09-22.md",
+        ["practice", "calendar", "athlete_records"],
+        "2026-09-22 玉名市練習会の岱明実施結果（女子/男子1000m、選手別タイム・所感）",
+    ),
     ("input/external/notion/INDEX.md", ["practice", "athlete_records", "injury"], "Notion いだてん岱明スナップショット"),
     ("input/external/github/INDEX.md", ["meta"], "関連リポジトリ調査（対象外含む）"),
     (

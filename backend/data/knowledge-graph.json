@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated_at": "2026-09-21T08:13:11Z",
+  "generated_at": "2026-09-23T05:25:42Z",
   "nodes": [
     {
       "id": "corpus:analysis-ocr",
@@ -126,7 +126,7 @@
       "refs": [
         "input/idaten-corpus/out-analysis"
       ],
-      "hint": "out/analysis の md/json（ペース分析・LINE 衛生化・関係図など）. 例: 2026_aragyoku_men_1500m_sb_individual_top20.md, 2026_aragyoku_men_3000m_sb_ranking.md, 2026_men_1500m_pb_school_ranking.md, 2026_women_800m_1500m_pb_school_ranking.md, aragyoku-overview.md, aragyoku-teams, aragyoku_2024_2025_focus_teams.md, aragyoku_all_teams_average_pace.md, aragyoku_leg_awards.md, aragyoku_meet_records.md, aragyoku_top2_finish_counts.md, aragyoku_top6_historical_average_pace.md"
+      "hint": "out/analysis の md/json（ペース分析・LINE 衛生化・関係図など）. 例: 2026-09-21_arato-tamana_middle_school_sb_updates.md, 2026_aragyoku_men_1500m_sb_individual_top20.md, 2026_aragyoku_men_3000m_sb_ranking.md, 2026_men_1500m_pb_school_ranking.md, 2026_women_800m_1500m_pb_school_ranking.md, aragyoku-overview.md, aragyoku-teams, aragyoku_2024_2025_focus_teams.md, aragyoku_all_teams_average_pace.md, aragyoku_leg_awards.md, aragyoku_meet_records.md, aragyoku_top2_finish_counts.md"
     },
     {
       "id": "corpus:practice",
@@ -204,8 +204,8 @@
         "practice"
       ],
       "refs": [
-        "input/events.2025.yaml",
         "out/analysis/notion_records_2026.json",
+        "input/events.2025.yaml",
         "out/2025/practice_absentees.csv"
       ],
       "hint": "部員エンティティ"
@@ -220,8 +220,8 @@
         "practice"
       ],
       "refs": [
-        "input/events.2025.yaml",
         "out/analysis/notion_records_2026.json",
+        "input/events.2025.yaml",
         "out/2025/practice_absentees.csv"
       ],
       "hint": "所属:岱明中"
@@ -236,8 +236,8 @@
         "practice"
       ],
       "refs": [
-        "input/events.2025.yaml",
         "out/analysis/notion_records_2026.json",
+        "input/events.2025.yaml",
         "out/2025/practice_absentees.csv"
       ],
       "hint": "部員エンティティ"
@@ -252,8 +252,8 @@
         "practice"
       ],
       "refs": [
-        "input/events.2025.yaml",
         "out/analysis/notion_records_2026.json",
+        "input/events.2025.yaml",
         "out/2025/practice_absentees.csv"
       ],
       "hint": "所属:岱明中"
@@ -268,8 +268,8 @@
         "practice"
       ],
       "refs": [
-        "input/events.2025.yaml",
         "out/analysis/notion_records_2026.json",
+        "input/events.2025.yaml",
         "out/2025/practice_absentees.csv"
       ],
       "hint": "部員エンティティ"
@@ -284,8 +284,8 @@
         "practice"
       ],
       "refs": [
-        "input/events.2025.yaml",
         "out/analysis/notion_records_2026.json",
+        "input/events.2025.yaml",
         "out/2025/practice_absentees.csv"
       ],
       "hint": "所属:岱明中"
@@ -328,8 +328,8 @@
         "practice"
       ],
       "refs": [
-        "input/events.2025.yaml",
         "out/analysis/notion_records_2026.json",
+        "input/events.2025.yaml",
         "out/2025/practice_absentees.csv"
       ],
       "hint": "部員エンティティ"
@@ -344,8 +344,8 @@
         "practice"
       ],
       "refs": [
-        "input/events.2025.yaml",
         "out/analysis/notion_records_2026.json",
+        "input/events.2025.yaml",
         "out/2025/practice_absentees.csv"
       ],
       "hint": "所属:岱明中"
@@ -375,8 +375,8 @@
         "practice"
       ],
       "refs": [
-        "input/events.2025.yaml",
         "out/analysis/notion_records_2026.json",
+        "input/events.2025.yaml",
         "out/2025/practice_absentees.csv"
       ],
       "hint": "部員エンティティ"
@@ -391,8 +391,8 @@
         "practice"
       ],
       "refs": [
-        "input/events.2025.yaml",
         "out/analysis/notion_records_2026.json",
+        "input/events.2025.yaml",
         "out/2025/practice_absentees.csv"
       ],
       "hint": "所属:岱明中"
@@ -407,8 +407,8 @@
         "practice"
       ],
       "refs": [
-        "input/events.2025.yaml",
         "out/analysis/notion_records_2026.json",
+        "input/events.2025.yaml",
         "out/2025/practice_absentees.csv"
       ],
       "hint": "部員エンティティ"
@@ -423,8 +423,8 @@
         "practice"
       ],
       "refs": [
-        "input/events.2025.yaml",
         "out/analysis/notion_records_2026.json",
+        "input/events.2025.yaml",
         "out/2025/practice_absentees.csv"
       ],
       "hint": "所属:岱明中"
@@ -439,8 +439,8 @@
         "practice"
       ],
       "refs": [
-        "input/events.2025.yaml",
         "out/analysis/notion_records_2026.json",
+        "input/events.2025.yaml",
         "out/2025/practice_absentees.csv"
       ],
       "hint": "部員エンティティ"
@@ -455,8 +455,8 @@
         "practice"
       ],
       "refs": [
-        "input/events.2025.yaml",
         "out/analysis/notion_records_2026.json",
+        "input/events.2025.yaml",
         "out/2025/practice_absentees.csv"
       ],
       "hint": "所属:岱明中"
@@ -471,9 +471,9 @@
         "practice"
       ],
       "refs": [
-        "input/events.2026.yaml",
+        "out/2026/practice_absentees.csv",
         "out/analysis/notion_records_2026.json",
-        "out/2026/practice_absentees.csv"
+        "input/events.2026.yaml"
       ],
       "hint": "部員エンティティ"
     },
@@ -487,9 +487,9 @@
         "practice"
       ],
       "refs": [
-        "input/events.2026.yaml",
+        "out/2026/practice_absentees.csv",
         "out/analysis/notion_records_2026.json",
-        "out/2026/practice_absentees.csv"
+        "input/events.2026.yaml"
       ],
       "hint": "所属:岱明中"
     },
@@ -503,8 +503,8 @@
         "practice"
       ],
       "refs": [
-        "input/events.2025.yaml",
         "out/analysis/notion_records_2026.json",
+        "input/events.2025.yaml",
         "out/2025/practice_absentees.csv"
       ],
       "hint": "部員エンティティ"
@@ -519,8 +519,8 @@
         "practice"
       ],
       "refs": [
-        "input/events.2025.yaml",
         "out/analysis/notion_records_2026.json",
+        "input/events.2025.yaml",
         "out/2025/practice_absentees.csv"
       ],
       "hint": "所属:岱明中"
@@ -535,11 +535,11 @@
         "practice"
       ],
       "refs": [
-        "input/events.2026.yaml",
-        "out/analysis/notion_records_2026.json",
-        "out/2026/practice_absentees.csv",
         "input/events.2025.yaml",
-        "out/2025/practice_absentees.csv"
+        "out/2026/practice_absentees.csv",
+        "out/analysis/notion_records_2026.json",
+        "out/2025/practice_absentees.csv",
+        "input/events.2026.yaml"
       ],
       "hint": "部員エンティティ"
     },
@@ -553,11 +553,11 @@
         "practice"
       ],
       "refs": [
-        "input/events.2026.yaml",
-        "out/analysis/notion_records_2026.json",
-        "out/2026/practice_absentees.csv",
         "input/events.2025.yaml",
-        "out/2025/practice_absentees.csv"
+        "out/2026/practice_absentees.csv",
+        "out/analysis/notion_records_2026.json",
+        "out/2025/practice_absentees.csv",
+        "input/events.2026.yaml"
       ],
       "hint": "所属:岱明中"
     },
@@ -2388,16 +2388,16 @@
         "input/idaten-corpus/drive-text/大会/2025年度/0921_中学駅伝金栗四三生誕の地なごみ大会/岱明の結果.md",
         "input/idaten-corpus/drive-text/大会/2025年度/0921_中学駅伝金栗四三生誕の地なごみ大会/成績表.json",
         "input/idaten-corpus/drive-text/大会/2025年度/0921_中学駅伝金栗四三生誕の地なごみ大会/男子成績表.md",
-        "input/idaten-corpus/drive-text/大会/2025年度/0921_中学駅伝金栗四三生誕の地なごみ大会/予実比較.html",
         "input/idaten-corpus/drive-text/大会/2025年度/0921_中学駅伝金栗四三生誕の地なごみ大会/予実比較.md",
         "input/idaten-corpus/drive-text/大会/2025年度/0921_中学駅伝金栗四三生誕の地なごみ大会/女子の結果.heic.md",
         "input/idaten-corpus/drive-text/大会/2025年度/0921_中学駅伝金栗四三生誕の地なごみ大会/女子区間オーダー_SB予想.md",
         "input/idaten-corpus/drive-text/大会/2025年度/0921_中学駅伝金栗四三生誕の地なごみ大会/女子区間オーダー_SB予想_coverage.csv",
         "input/idaten-corpus/drive-text/大会/2025年度/0921_中学駅伝金栗四三生誕の地なごみ大会/男子の結果1.pdf.md",
         "input/idaten-corpus/drive-text/大会/2025年度/0921_中学駅伝金栗四三生誕の地なごみ大会/男子の結果2.pdf.md",
-        "input/idaten-corpus/drive-text/大会/2025年度/0921_中学駅伝金栗四三生誕の地なごみ大会/男子区間オーダー_SB予想.md"
+        "input/idaten-corpus/drive-text/大会/2025年度/0921_中学駅伝金栗四三生誕の地なごみ大会/男子区間オーダー_SB予想.md",
+        "input/idaten-corpus/drive-text/大会/2025年度/0921_中学駅伝金栗四三生誕の地なごみ大会/男子区間オーダー_SB予想_coverage.csv"
       ],
-      "hint": "2025年度 大会「0921_中学駅伝金栗四三生誕の地なごみ大会」。日付キー MMDD=0921。ファイル: 予実比較.html, 予実比較.md, 女子の結果.heic.md, 女子区間オーダー_SB予想.md, 女子区間オーダー_SB予想_coverage.csv, 女子成績表.md, 岱明の結果.md, 成績表.json。 内容: 女子 / 8位　31:22 / 1区　村上咲稀　7:06 区間4位 / 2区　高田麻由　7:37 区間7位 / 3区　塚原優衣　8:11 区間18位 / 4区　角田亜美　8:28 区間12位 / 男子A / 8位　41:42 / 1区　松野凛空　10:14 区間15位 / 2区　"
+      "hint": "2025年度 大会「0921_中学駅伝金栗四三生誕の地なごみ大会」。日付キー MMDD=0921。ファイル: 予実比較.md, 女子の結果.heic.md, 女子区間オーダー_SB予想.md, 女子区間オーダー_SB予想_coverage.csv, 女子成績表.md, 岱明の結果.md, 成績表.json, 男子の結果1.pdf.md。 内容: 女子 / 8位　31:22 / 1区　村上咲稀　7:06 区間4位 / 2区　高田麻由　7:37 区間7位 / 3区　塚原優衣　8:11 区間18位 / 4区　角田亜美　8:28 区間12位 / 男子A / 8位　41:42 / 1区　松野凛空　10:14 区間15位 / 2区　"
     },
     {
       "id": "meet:2025年度:0927_第２回熊本県ジュニア駅伝競走大会",
@@ -2697,19 +2697,19 @@
       "refs": [
         "input/idaten-corpus/drive-text/大会/2026年度/0920_中学駅伝金栗四三生誕の地なごみ大会",
         "input/idaten-corpus/drive-text/大会/2026年度/0920_中学駅伝金栗四三生誕の地なごみ大会/女子成績表.md",
-        "input/idaten-corpus/drive-text/大会/2026年度/0920_中学駅伝金栗四三生誕の地なごみ大会/女子成績表.pdf",
         "input/idaten-corpus/drive-text/大会/2026年度/0920_中学駅伝金栗四三生誕の地なごみ大会/成績表.json",
         "input/idaten-corpus/drive-text/大会/2026年度/0920_中学駅伝金栗四三生誕の地なごみ大会/男子成績表.md",
-        "input/idaten-corpus/drive-text/大会/2026年度/0920_中学駅伝金栗四三生誕の地なごみ大会/男子成績表.pdf",
         "input/idaten-corpus/drive-text/大会/2026年度/0920_中学駅伝金栗四三生誕の地なごみ大会/エントリーリスト.pdf.md",
         "input/idaten-corpus/drive-text/大会/2026年度/0920_中学駅伝金栗四三生誕の地なごみ大会/プログラム.pdf.md",
-        "input/idaten-corpus/drive-text/大会/2026年度/0920_中学駅伝金栗四三生誕の地なごみ大会/予実比較.html",
         "input/idaten-corpus/drive-text/大会/2026年度/0920_中学駅伝金栗四三生誕の地なごみ大会/予実比較.md",
         "input/idaten-corpus/drive-text/大会/2026年度/0920_中学駅伝金栗四三生誕の地なごみ大会/女子区間オーダー_SB予想.md",
         "input/idaten-corpus/drive-text/大会/2026年度/0920_中学駅伝金栗四三生誕の地なごみ大会/女子区間オーダー_SB予想_coverage.csv",
-        "input/idaten-corpus/drive-text/大会/2026年度/0920_中学駅伝金栗四三生誕の地なごみ大会/女子区間オーダーリスト.md"
+        "input/idaten-corpus/drive-text/大会/2026年度/0920_中学駅伝金栗四三生誕の地なごみ大会/女子区間オーダーリスト.md",
+        "input/idaten-corpus/drive-text/大会/2026年度/0920_中学駅伝金栗四三生誕の地なごみ大会/当日スケジュール.md",
+        "input/idaten-corpus/drive-text/大会/2026年度/0920_中学駅伝金栗四三生誕の地なごみ大会/男子区間オーダー_SB予想.md",
+        "input/idaten-corpus/drive-text/大会/2026年度/0920_中学駅伝金栗四三生誕の地なごみ大会/男子区間オーダー_SB予想_coverage.csv"
       ],
-      "hint": "2026年度 大会「0920_中学駅伝金栗四三生誕の地なごみ大会」。日付キー MMDD=0920。ファイル: エントリーリスト.pdf.md, プログラム.pdf.md, 予実比較.html, 予実比較.md, 女子区間オーダー_SB予想.md, 女子区間オーダー_SB予想_coverage.csv, 女子区間オーダーリスト.md, 女子成績表.jpg。 内容: 第12回 中学駅伝金栗四三生誕の地なごみ大会 女子成績表 / - 日付: 2026-09-20 / - 会場: 和水町三加和公民館前発着周回コース / - 各区 2km / 総合 8km / - 上段: 選手氏名・学年 / 中段: (順位)通過記録 / 下段: (順位)区間記録 "
+      "hint": "2026年度 大会「0920_中学駅伝金栗四三生誕の地なごみ大会」。日付キー MMDD=0920。ファイル: エントリーリスト.pdf.md, プログラム.pdf.md, 予実比較.md, 女子区間オーダー_SB予想.md, 女子区間オーダー_SB予想_coverage.csv, 女子区間オーダーリスト.md, 女子成績表.md, 当日スケジュール.md。 内容: 第12回 中学駅伝金栗四三生誕の地なごみ大会 女子成績表 / - 日付: 2026-09-20 / - 会場: 和水町三加和公民館前発着周回コース / - 各区 2km / 総合 8km / - 上段: 選手氏名・学年 / 中段: (順位)通過記録 / 下段: (順位)区間記録 "
     },
     {
       "id": "meet:2026年度:0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）",
@@ -4612,6 +4612,20 @@
       "hint": "2025 岱明部員名簿"
     },
     {
+      "id": "source:input/external/drive/shared/練習/玉名市練習会/2026-09-22.md",
+      "type": "Source",
+      "label": "2026-09-22.md",
+      "topics": [
+        "athlete_records",
+        "calendar",
+        "practice"
+      ],
+      "refs": [
+        "input/external/drive/shared/練習/玉名市練習会/2026-09-22.md"
+      ],
+      "hint": "2026-09-22 玉名市練習会の岱明実施結果（女子/男子1000m、選手別タイム・所感）"
+    },
+    {
       "id": "source:input/external/drive/shared/練習/練習の記録.md",
       "type": "Source",
       "label": "練習の記録.md",
@@ -5096,7 +5110,7 @@
       "refs": [
         "input/idaten-corpus/out-analysis"
       ],
-      "hint": "out/analysis の md/json（ペース分析・LINE 衛生化・関係図など）. 例: 2026_aragyoku_men_1500m_sb_individual_top20.md, 2026_aragyoku_men_3000m_sb_ranking.md, 2026_men_1500m_pb_school_ranking.md, 2026_women_800m_1500m_pb_school_ranking.md, aragyoku-overview.md, aragyoku-teams, aragyoku_2024_2025_focus_teams.md, aragyoku_all_teams_average_pace.md, aragyoku_leg_awards.md, aragyoku_meet_records.md, aragyoku_top2_finish_counts.md, aragyoku_top6_historical_average_pace.md"
+      "hint": "out/analysis の md/json（ペース分析・LINE 衛生化・関係図など）. 例: 2026-09-21_arato-tamana_middle_school_sb_updates.md, 2026_aragyoku_men_1500m_sb_individual_top20.md, 2026_aragyoku_men_3000m_sb_ranking.md, 2026_men_1500m_pb_school_ranking.md, 2026_women_800m_1500m_pb_school_ranking.md, aragyoku-overview.md, aragyoku-teams, aragyoku_2024_2025_focus_teams.md, aragyoku_all_teams_average_pace.md, aragyoku_leg_awards.md, aragyoku_meet_records.md, aragyoku_top2_finish_counts.md"
     },
     {
       "id": "source:input/idaten-corpus/practice",
@@ -5963,6 +5977,18 @@
         "out/2027/source.csv"
       ],
       "hint": "2027年 source CSV（軽量）（派生・参照のみ）"
+    },
+    {
+      "id": "source:out/analysis/2026-09-21_arato-tamana_middle_school_sb_updates.md",
+      "type": "Source",
+      "label": "2026-09-21_arato-tamana_middle_school_sb_updates.md",
+      "topics": [
+        "athlete_records"
+      ],
+      "refs": [
+        "out/analysis/2026-09-21_arato-tamana_middle_school_sb_updates.md"
+      ],
+      "hint": "2026-09-21 荒玉中学生の学校別大会出場者とSB更新状況 / 対象大会: 第３回 熊本県長距離記録会（2026-09-21） / 抽出条件: `output_2026_中学生_single_table.csv` の `日付=2026/09/21` かつ、荒尾玉名地区の学校配分ルールに該当する選手。学校分類は `input/arato_tamana_report.yaml` の学校割当（クラ"
     },
     {
       "id": "source:out/analysis/2026_aragyoku_men_1500m_sb_individual_top20.md",
@@ -11170,6 +11196,11 @@
     },
     {
       "from": "topic:athlete_records",
+      "to": "source:input/external/drive/shared/練習/玉名市練習会/2026-09-22.md",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:athlete_records",
       "to": "source:input/external/media-manifest.json",
       "rel": "search_here"
     },
@@ -11306,6 +11337,11 @@
     {
       "from": "topic:athlete_records",
       "to": "source:input/idaten-corpus/sb",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:athlete_records",
+      "to": "source:out/analysis/2026-09-21_arato-tamana_middle_school_sb_updates.md",
       "rel": "search_here"
     },
     {
@@ -11816,6 +11852,11 @@
     {
       "from": "topic:calendar",
       "to": "source:input/events.2027.yaml",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:calendar",
+      "to": "source:input/external/drive/shared/練習/玉名市練習会/2026-09-22.md",
       "rel": "search_here"
     },
     {
@@ -13906,6 +13947,11 @@
     {
       "from": "topic:practice",
       "to": "source:input/external/drive/shared/名簿/2025年度_岱明中学校陸上競技部_部員名簿.csv",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:practice",
+      "to": "source:input/external/drive/shared/練習/玉名市練習会/2026-09-22.md",
       "rel": "search_here"
     },
     {
