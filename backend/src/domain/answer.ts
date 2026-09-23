@@ -145,7 +145,7 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
     const idx = flat.indexOf("動きづくり");
     if (idx >= 0) return flat.slice(idx, Math.min(flat.length, idx + budget));
   }
-  if (/(?:予定|日程|いつ|何の|何がある|A日課)/.test(q)) {
+  if (/(?:予定|日程|いつ|何の|何がある|A日課)/.test(q) && !/いだてん岱明.*(?:朝練|夕練)|(?:朝練|夕練).*いだてん岱明/.test(q)) {
     const dateMatch = q.match(/(20\d{2})[-年]0?(\d{1,2})[-月]0?(\d{1,2})/) ?? q.match(/(?:^|[^\d])0?(\d{1,2})月0?(\d{1,2})日/);
     const datePattern = dateMatch
       ? dateMatch.length === 4
@@ -160,6 +160,22 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
     const marker = month ? `2026-${String(month).padStart(2, "0")}` : "2026-09";
     const idx = flat.indexOf(marker);
     if (idx >= 0) return flat.slice(Math.max(0, idx - 100), Math.min(flat.length, idx + budget));
+  }
+  if (/いだてん岱明.*朝練|朝練.*いだてん岱明/.test(q)) {
+    const idx = flat.indexOf("いだてん岱明朝練");
+    if (idx >= 0) return flat.slice(Math.max(0, idx - 80), Math.min(flat.length, idx + budget));
+  }
+  if (/いだてん岱明.*夕練|夕練.*いだてん岱明/.test(q)) {
+    const idx = flat.indexOf("いだてん岱明夕練");
+    if (idx >= 0) return flat.slice(Math.max(0, idx - 80), Math.min(flat.length, idx + budget));
+  }
+  if (/練習会/.test(q) && /日程|いつ/.test(q)) {
+    const idx = flat.lastIndexOf("練習会");
+    if (idx >= 0) return flat.slice(Math.max(0, idx - 100), Math.min(flat.length, idx + budget));
+  }
+  if (/岱明中.*練習内容|練習内容.*岱明中/.test(q)) {
+    const idx = flat.lastIndexOf("practice:daiming");
+    if (idx >= 0) return flat.slice(Math.max(0, idx - 120), Math.min(flat.length, idx + budget));
   }
   if (/いだてん岱明|岱明駅伝試走|県民スポーツ大会中止/.test(q)) {
     const date = q.match(/20\d{2}[-年]\d{1,2}[-月]\d{1,2}/)?.[0]?.replace(/[年月]/g, "-").replace(/日$/, "");
@@ -2265,8 +2281,8 @@ function offlineAnswer(
       !/区間/.test(question) &&
       !/20\d{2}|男子|女子/.test(question);
     const calendarDateScheduleLookup =
-      (/(?:20\d{2}[-年]\d{1,2}[-月]\d{1,2}|\d{1,2}月\d{1,2}日)/.test(previewQuery ?? question) || /今日|明日|明後日|昨日|今週|来週|今月|\d{1,2}月.*予定|A日課/.test(question)) &&
-      /(?:予定|日程|いつ|何の|何がある|A日課)/.test(question) &&
+      (/(?:20\d{2}[-年]\d{1,2}[-月]\d{1,2}|\d{1,2}月\d{1,2}日)/.test(previewQuery ?? question) || /今日|明日|明後日|昨日|今週|来週|今月|\d{1,2}月.*予定|いだてん岱明|岱明中.*練習内容|学校行事|練習会|A日課/.test(question)) &&
+      /(?:予定|日程|いつ|何の|何がある|練習|学校行事|A日課)/.test(question) &&
       !prefecturalMeetScheduleLookup;
     const focusedLookup =
       preciseMeetRecord ||
@@ -3716,13 +3732,21 @@ export async function answerQuestion(
     !/区間/.test(expanded);
   const exactMeetDateScheduleQ = /2026[-年]10[-月]10/.test(expanded) && /予定|日程/.test(expanded);
   const genericPracticeScheduleQ = /練習/.test(expanded) && /予定|日程|スケジュール/.test(expanded);
+  const genericDaimingPracticeContentQ = /岱明中/.test(expanded) && /練習内容|練習メニュー/.test(expanded);
+  const schoolScheduleQ = /学校行事/.test(expanded) && /予定|日程|スケジュール/.test(expanded);
+  const datedPracticeMeetQ = /練習会/.test(expanded) && /(?:20\d{2}[-年]\d{1,2}[-月]\d{1,2}|\d{1,2}月\d{1,2}日)/.test(expanded);
+  const genericPracticeMeetScheduleQ = /練習会/.test(expanded) && /日程|いつ/.test(expanded);
   const calendarDateScheduleQ =
     (/(?:20\d{2}[-年]\d{1,2}[-月]\d{1,2}|\d{1,2}月\d{1,2}日)/.test(expanded) || /今日|明日|明後日|昨日|今週|来週|今月|\d{1,2}月.*予定|A日課|県中体連/.test(expanded)) &&
-    /(?:予定|日程|いつ|何の|何がある|A日課)/.test(expanded) &&
+    /(?:予定|日程|いつ|何の|何がある|練習|A日課)/.test(expanded) &&
     !meetResultUrlQ &&
     !prefecturalMeetScheduleQ &&
     !exactMeetDateScheduleQ &&
-    !genericPracticeScheduleQ;
+    !genericPracticeScheduleQ &&
+    !genericDaimingPracticeContentQ &&
+    !schoolScheduleQ &&
+    !datedPracticeMeetQ &&
+    !genericPracticeMeetScheduleQ;
   const exactDatedPractice =
     (isDateScheduleQuestion(expanded) || tamanaPracticeResultQ) &&
     preferredSources.some((s) => s.startsWith("drive-text/練習/")) &&
@@ -3786,7 +3810,7 @@ export async function answerQuestion(
     /過去|歴代/.test(expanded) &&
     /順位|成績|結果/.test(expanded);
   const directDocQ =
-    practiceTemplateQ || weatherOpsQ || paceCliQ || practiceMeetLoadQ || historicalTopSixPaceQ || historicalTeamRankQ || tamanaPracticeResultQ || strideCountQ || postEkidenPracticeQ || movementPracticeQ || practiceDaysQ || practiceCalendarQ || meetResultUrlQ || prefecturalMeetResultQ || prefecturalMeetScheduleQ || teamRankQ || calendarDateScheduleQ || exactMeetDateScheduleQ || genericPracticeScheduleQ || practiceVenueQ;
+    practiceTemplateQ || weatherOpsQ || paceCliQ || practiceMeetLoadQ || historicalTopSixPaceQ || historicalTeamRankQ || tamanaPracticeResultQ || strideCountQ || postEkidenPracticeQ || movementPracticeQ || practiceDaysQ || practiceCalendarQ || meetResultUrlQ || prefecturalMeetResultQ || prefecturalMeetScheduleQ || teamRankQ || calendarDateScheduleQ || exactMeetDateScheduleQ || genericPracticeScheduleQ || genericDaimingPracticeContentQ || schoolScheduleQ || datedPracticeMeetQ || genericPracticeMeetScheduleQ || practiceVenueQ;
   if (practiceTemplateQ) {
     preferredSources = /norwegian-45-15|[Nn]orwegian(?:の|\s*)[- ]?45\s*[\/／\-‐‑–—−]\s*15|ノルウェー(?:式)?(?:の|\s*)45\s*[\/／\-‐‑–—−]\s*15|45\s*[\/／\-‐‑–—−]\s*15/.test(expanded)
       ? ["repo-docs/adr/002-norwegian-method-integration.md"]
@@ -3845,6 +3869,9 @@ export async function answerQuestion(
     preferredSources = ["calendar/events.daiming.yaml"];
   }
   if (genericPracticeScheduleQ) {
+    preferredSources = ["calendar/events.daiming.yaml"];
+  }
+  if (genericDaimingPracticeContentQ || schoolScheduleQ || datedPracticeMeetQ || genericPracticeMeetScheduleQ) {
     preferredSources = ["calendar/events.daiming.yaml"];
   }
   if (exactMeetDateScheduleQ) {
@@ -4266,6 +4293,9 @@ export async function answerQuestion(
     preferredSources = ["calendar/events.daiming.yaml"];
   }
   if (practiceDaysQ) {
+    preferredSources = ["out-analysis/line-chats/daiming-staff.md"];
+  }
+  if (staffOpsQ) {
     preferredSources = ["out-analysis/line-chats/daiming-staff.md"];
   }
   if (meetResultUrlQ && /ナイター中.?長距離/.test(expanded)) {

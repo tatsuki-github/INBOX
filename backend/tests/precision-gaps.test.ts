@@ -352,6 +352,67 @@ describe("QA precision regressions", () => {
     expect(result.text).toContain("kcrk.jp/i-mode/kiroku/272");
   });
 
+  it("routes generic Daiming practice content to the calendar", async () => {
+    const result = await ask("岱明中の練習内容は？");
+    expect(result.sources).toEqual(["calendar/events.daiming.yaml"]);
+    expect(result.text).toContain("practice:daiming");
+  });
+
+  it("keeps 今日の練習 on the calendar", async () => {
+    const result = await askAt("今日の練習は？", "2026-09-24T00:00:00+09:00");
+    expect(result.sources).toEqual(["calendar/events.daiming.yaml"]);
+    expect(result.text).toContain("2026-09-24");
+  });
+
+  it("keeps 明日の練習 on the calendar", async () => {
+    const result = await askAt("明日の練習は？", "2026-09-23T00:00:00+09:00");
+    expect(result.sources).toEqual(["calendar/events.daiming.yaml"]);
+    expect(result.text).toContain("2026-09-24");
+  });
+
+  it("answers the morning-practice schedule from the staff memo", async () => {
+    const result = await ask("いだてん岱明の朝練はいつ？");
+    expect(result.sources).toEqual(["out-analysis/line-chats/daiming-staff.md"]);
+    expect(result.text).toContain("月・火・木・金");
+  });
+
+  it("focuses the evening-practice schedule on the matching calendar entries", async () => {
+    const result = await ask("いだてん岱明の夕練はいつ？");
+    expect(result.sources).toEqual(["calendar/events.daiming.yaml"]);
+    expect(result.text).toContain("いだてん岱明夕練");
+  });
+
+  it("answers school-event schedule questions from the calendar", async () => {
+    const result = await ask("学校行事予定を教えて");
+    expect(result.sources).toEqual(["calendar/events.daiming.yaml"]);
+    expect(result.text).toContain("学校行事");
+  });
+
+  it("focuses a dated practice-meet question on the requested date", async () => {
+    const result = await ask("9月8日の練習会は？");
+    expect(result.sources).toEqual(["calendar/events.daiming.yaml"]);
+    expect(result.text).toContain("2026-09-08");
+    expect(result.text).toContain("練習会（岱明）（県民スポーツ大会中止に伴い中止）");
+  });
+
+  it("focuses a dated Tamana practice-meet question on the calendar", async () => {
+    const result = await ask("2026-09-08の玉名市練習会は？");
+    expect(result.sources).toEqual(["calendar/events.daiming.yaml"]);
+    expect(result.text).toContain("2026-09-08");
+  });
+
+  it("answers the morning-practice meeting-time alias from the staff memo", async () => {
+    const result = await ask("いだてん岱明朝練の集合時間は？");
+    expect(result.sources).toEqual(["out-analysis/line-chats/daiming-staff.md"]);
+    expect(result.text).toContain("7:20");
+  });
+
+  it("focuses a generic practice-meet schedule query on the calendar", async () => {
+    const result = await ask("練習会の日程は？");
+    expect(result.sources).toEqual(["calendar/events.daiming.yaml"]);
+    expect(result.text).toContain("練習会");
+  });
+
   it("answers Norwegian 45/15 template questions from the method ADR", async () => {
     const result = await ask("norwegian-45-15テンプレは何のセッション？");
     expect(result.sources).toEqual(["repo-docs/adr/002-norwegian-method-integration.md"]);
