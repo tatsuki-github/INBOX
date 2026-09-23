@@ -127,6 +127,36 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
   const budget = maxChars ?? offlinePreviewBudget(question);
   const flat = text.replace(/\s+/g, " ");
   const q = question.normalize("NFKC");
+  if (/ジョグ/.test(q) && /女子|男子/.test(q) && /テンプレート|ペース/.test(q)) {
+    const gender = /女子/.test(q) ? "女子" : "男子";
+    const row = flat.match(new RegExp(`\\|\\s*ジョグ\\s*\\|\\s*${gender}[^|]{0,120}\\|`));
+    if (row) return row[0].trim();
+  }
+  if (/norwegian-45-15|45\/15/.test(q)) {
+    const idx = flat.search(/norwegian-45-15|45\/15/);
+    if (idx >= 0) return flat.slice(Math.max(0, idx - 80), Math.min(flat.length, idx + 260));
+  }
+  if (/天気データ|天気の更新|天気予報の保存先|天気ファイル|update_tamana_weather|Open-Meteo|tamana-forecast|tamana-weather/.test(q)) {
+    const idx = flat.search(/保存先|update_tamana_weather|Open-Meteo/);
+    if (idx >= 0) return flat.slice(Math.max(0, idx - 80), Math.min(flat.length, idx + 260));
+  }
+  if (/VDOT.*Tペース|Tペース.*VDOT|VDOT.*CLI|CLI.*(?:VDOT|Tペース)|daniels_pace|daniels_calculator/.test(q)) {
+    const idx = flat.search(/daniels_pace|daniels_calculator/);
+    if (idx >= 0) return flat.slice(Math.max(0, idx - 100), Math.min(flat.length, idx + 220));
+  }
+  if (/practice_meets|affect_load|練習会.*負荷|負荷.*練習会|負荷に数え/.test(q)) {
+    const idx = flat.search(/数えない|基本不参加|practice_meets_affect_load/);
+    if (idx >= 0) return flat.slice(Math.max(0, idx - 100), Math.min(flat.length, idx + 220));
+  }
+  if (
+    /荒玉|駅伝/.test(q) &&
+    /平均ペース|平均速度|ペース|キロ何分/.test(q) &&
+    /(?:総合)?(?:1\s*(?:[〜～-]\s*6位)|1位\s*から\s*6位)|上位6(?:位|校)?|トップ6/.test(q)
+  ) {
+    const year = q.match(/20\d{2}/)?.[0];
+    const row = year ? flat.match(new RegExp(`\\|\\s*${year}\\s*\\|[^\\n]{0,260}`)) : null;
+    if (row) return row[0].trim();
+  }
   const generic1500RankingQ =
     /1500m|1500ｍ/.test(q) &&
     /荒玉地区|トップ\s*20/.test(q) &&
@@ -1942,7 +1972,8 @@ function offlineAnswer(
       !/集合/.test(question);
     const namedSelfBestLookup =
       /自己ベスト|自己記録|\bSB\b|\bPB\b/.test(question) &&
-      /[\p{Script=Han}]{2,8}/u.test(question);
+      /[\p{Script=Han}]{2,8}/u.test(question) &&
+      !(/荒尾三中/.test(question) && /選手|一覧/.test(question));
     const women800FastestLookup =
       /女子/.test(question) && /800m|800ｍ/.test(question) && /最速|一番速|速い/.test(question);
     const individualTrackFastestLookup =
@@ -3314,6 +3345,11 @@ export async function answerQuestion(
     ].find((stem) => expanded.includes(stem));
     if (team) preferredSources = [`out-analysis/arato-tamana-teams/${team}.md`];
   }
+  // 荒尾三中の「選手とSB一覧」は専用の統合ダイジェストだけで完結する。
+  // 通常のチーム記録・全校SB CSVを混ぜると、別校の選手が回答に紛れ込む。
+  if (namedTeamSbList) {
+    preferredSources = ["out-analysis/arato-tamana-teams/荒尾三中_SB.md"];
+  }
 
   const exactDatedPractice =
     isDateScheduleQuestion(expanded) &&
@@ -3333,6 +3369,36 @@ export async function answerQuestion(
       "out-analysis/line-chats/daiming-parents.md",
       ...(practiceSource ? [practiceSource] : []),
     ];
+  }
+
+  const practiceTemplateQ =
+    (/ジョグ/.test(expanded) && /テンプレート|ペース|女子|男子/.test(expanded)) ||
+    /norwegian-45-15|45\/15.*(?:テンプレ|セッション)|(?:テンプレ|セッション).*45\/15/.test(expanded);
+  const weatherOpsQ = /天気データ|天気の更新|天気予報の保存先|天気ファイル|update_tamana_weather|Open-Meteo|tamana-forecast|tamana-weather/.test(
+    expanded,
+  );
+  const paceCliQ = /VDOT.*Tペース|Tペース.*VDOT|VDOT.*CLI|CLI.*(?:VDOT|Tペース)|daniels_pace|daniels_calculator/.test(
+    expanded,
+  );
+  const practiceMeetLoadQ = /practice_meets|affect_load|練習会.*負荷|負荷.*練習会|負荷に数え/.test(
+    expanded,
+  );
+  const historicalTopSixPaceQ =
+    /荒玉|駅伝/.test(expanded) &&
+    /平均ペース|平均速度|ペース|キロ何分/.test(expanded) &&
+    /(?:総合)?(?:1\s*(?:[〜～-]\s*6位)|1位\s*から\s*6位)|上位6(?:位|校)?|トップ6/.test(expanded);
+  const directDocQ =
+    practiceTemplateQ || weatherOpsQ || paceCliQ || practiceMeetLoadQ || historicalTopSixPaceQ;
+  if (practiceTemplateQ) {
+    preferredSources = /norwegian-45-15|45\/15/.test(expanded)
+      ? ["repo-docs/adr/002-norwegian-method-integration.md"]
+      : ["calendar/events.daiming.yaml"];
+  }
+  if (weatherOpsQ) preferredSources = ["repo-docs/tamana-weather.md"];
+  if (paceCliQ) preferredSources = ["docs/ai-practice-generation.md"];
+  if (practiceMeetLoadQ) preferredSources = ["repo-docs/adr/006-practice-meets-not-load.md"];
+  if (historicalTopSixPaceQ) {
+    preferredSources = ["out-analysis/aragyoku_top6_historical_average_pace.md"];
   }
 
   const tamanaChampionshipStatusQ =
@@ -3728,17 +3794,17 @@ export async function answerQuestion(
   const fromSources = retrieveBySources(preferredSources, {
     query: expanded,
     perSource:
-      exhaustive || isLegAthleteQuestion(expanded) || individual1500TopQ || individual3000RankQ || teamBestQ || totalMeetRecordQ || teamFullRecordQ || explicitTeamLegRankQ || historicalWinnerQ || winnerYearTeamQ || legRankQuestionQ || namedLegTimeQ
+      directDocQ || exhaustive || isLegAthleteQuestion(expanded) || individual1500TopQ || individual3000RankQ || teamBestQ || totalMeetRecordQ || teamFullRecordQ || explicitTeamLegRankQ || historicalWinnerQ || winnerYearTeamQ || legRankQuestionQ || namedLegTimeQ
         || resultListQ || genericResultQ || topThreeQ || explicitThirdPlaceQ || unqualifiedSixthPlaceQ || explicitLegAwardQ || schoolPbRankQ || nagomiLegOrderQ || nagomiLegRankQ || nagomiResultQ || nagomiDateQ || nagomiVenueQ || kanaguriResultQ || aragyokuDateQ || aragyokuVenueQ || datedTeamResultQ || unqualifiedTeamResultQ
         ? 200
         : RETRIEVAL_BUDGET.perSource,
     maxChunks:
-      exhaustive || isLegAthleteQuestion(expanded) || individual1500TopQ || individual3000RankQ || teamBestQ || totalMeetRecordQ || teamFullRecordQ || explicitTeamLegRankQ || historicalWinnerQ || winnerYearTeamQ || legRankQuestionQ || namedLegTimeQ
+      directDocQ || exhaustive || isLegAthleteQuestion(expanded) || individual1500TopQ || individual3000RankQ || teamBestQ || totalMeetRecordQ || teamFullRecordQ || explicitTeamLegRankQ || historicalWinnerQ || winnerYearTeamQ || legRankQuestionQ || namedLegTimeQ
         || resultListQ || genericResultQ || topThreeQ || explicitThirdPlaceQ || unqualifiedSixthPlaceQ || explicitLegAwardQ || schoolPbRankQ || nagomiLegOrderQ || nagomiLegRankQ || nagomiResultQ || nagomiDateQ || nagomiVenueQ || kanaguriResultQ || aragyokuDateQ || aragyokuVenueQ || datedTeamResultQ || unqualifiedTeamResultQ
         ? 200
         : RETRIEVAL_BUDGET.maxChunks,
       coverage:
-      exhaustive || exactDatedPractice || isLegAthleteQuestion(expanded) || individual1500TopQ || individual3000RankQ || teamBestQ || totalMeetRecordQ || teamFullRecordQ || explicitTeamLegRankQ || historicalWinnerQ || winnerYearTeamQ || legRankQuestionQ || namedLegTimeQ
+      directDocQ || exhaustive || exactDatedPractice || isLegAthleteQuestion(expanded) || individual1500TopQ || individual3000RankQ || teamBestQ || totalMeetRecordQ || teamFullRecordQ || explicitTeamLegRankQ || historicalWinnerQ || winnerYearTeamQ || legRankQuestionQ || namedLegTimeQ
         || resultListQ || genericResultQ || topThreeQ || explicitThirdPlaceQ || unqualifiedSixthPlaceQ || explicitLegAwardQ || schoolPbRankQ || nagomiLegOrderQ || nagomiLegRankQ || nagomiResultQ || nagomiDateQ || nagomiVenueQ || kanaguriResultQ || aragyokuDateQ || aragyokuVenueQ || datedTeamResultQ || unqualifiedTeamResultQ
         ? "full"
         : "ranked",
@@ -3749,6 +3815,7 @@ export async function answerQuestion(
   // second global BM25 pass can reintroduce the broad yearly analysis digest
   // and hide the requested team's row.
   const fromBm25 =
+    directDocQ ||
     exhaustive ||
     exactDatedPractice ||
     namedTeamSbList ||
@@ -3817,6 +3884,8 @@ export async function answerQuestion(
   const mergedCoreRaw = mergeRetrieved(
     fromSources,
     fromBm25,
+    directDocQ ||
+    namedTeamSbList ||
     teamFullRecordQ
       ? Math.max(topK, fromSources.length, 200)
       : exhaustive
@@ -3841,6 +3910,7 @@ export async function answerQuestion(
     {
       query: expanded,
       preferPrimaryOrder:
+        directDocQ ||
         exhaustive ||
         exactDatedPractice ||
         compactWinnerQ ||
