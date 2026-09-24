@@ -57,11 +57,32 @@ def _resolve_relative_dates(question: str, *, as_of_date: date | None = None) ->
         "tomorrow": 1,
     }
     current_date = as_of_date or datetime.now(ZoneInfo("Asia/Tokyo")).date()
+    week_monday = current_date - timedelta(days=current_date.weekday())
+    weekday_jp = {"月": 0, "火": 1, "水": 2, "木": 3, "金": 4, "土": 5, "日": 6}
+
+    def replace_japanese_weekday(match: re.Match[str]) -> str:
+        offset = {"先週": -1, "今週": 0, "来週": 1, None: 0}[match.group(1)]
+        return (week_monday + timedelta(weeks=offset, days=weekday_jp[match.group(2)])).isoformat()
+
+    resolved = re.sub(r"(先週|今週|来週)?([月火水木金土日])(?:曜日|曜)", replace_japanese_weekday, question)
+    weekdays_en = ("monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday")
+
+    def replace_english_weekday(match: re.Match[str]) -> str:
+        offset = {"last": -1, "this": 0, "next": 1, None: 0}[match.group(1).lower() if match.group(1) else None]
+        weekday = weekdays_en.index(match.group(2).lower())
+        return (week_monday + timedelta(weeks=offset, days=weekday)).isoformat()
+
+    resolved = re.sub(
+        r"\b(last|this|next)?\s*(Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday)\b",
+        replace_english_weekday,
+        resolved,
+        flags=re.IGNORECASE,
+    )
     pattern = "|".join(re.escape(term) for term in sorted(offsets, key=len, reverse=True))
     resolved = re.sub(
         pattern,
         lambda match: (current_date + timedelta(days=offsets[match.group(0).lower()])).isoformat(),
-        question,
+        resolved,
         flags=re.IGNORECASE,
     )
 
@@ -71,8 +92,71 @@ def _resolve_relative_dates(question: str, *, as_of_date: date | None = None) ->
         except ValueError:
             return match.group(0)
 
-    resolved = re.sub(r"(?<!\d)(\d{1,2})\s*月\s*(\d{1,2})\s*日", replace_month_day, resolved)
-    return re.sub(r"(?<!\d)(\d{1,2})/(\d{1,2})(?!\d)", replace_month_day, resolved)
+    def replace_full_date(match: re.Match[str]) -> str:
+        try:
+            return date(int(match.group(1)), int(match.group(2)), int(match.group(3))).isoformat()
+        except ValueError:
+            return match.group(0)
+
+    resolved = re.sub(r"(?<!\d)(\d{4})年\s*(\d{1,2})月\s*(\d{1,2})日", replace_full_date, resolved)
+    resolved = re.sub(r"(?<!\d)(\d{4})/(\d{1,2})/(\d{1,2})(?!\d)", replace_full_date, resolved)
+    resolved = re.sub(r"(?<![\d年])(\d{1,2})\s*月\s*(\d{1,2})\s*日", replace_month_day, resolved)
+    return re.sub(r"(?<![\d/])(\d{1,2})/(\d{1,2})(?!\d)", replace_month_day, resolved)
+
+
+def _resolve_week_range(question: str, *, as_of_date: date | None = None) -> tuple[date, date] | None:
+    """Return Monday-Sunday bounds for a Japanese or English relative week phrase."""
+    lowered = question.lower()
+    offset_weeks = None
+    for phrase in ("来週", "next week"):
+        if phrase in lowered:
+            offset_weeks = 1
+            break
+    if offset_weeks is None:
+        for phrase in ("先週", "last week"):
+            if phrase in lowered:
+                offset_weeks = -1
+                break
+    if offset_weeks is None and any(phrase in lowered for phrase in ("今週", "this week")):
+        offset_weeks = 0
+    if offset_weeks is None:
+        return None
+    reference = as_of_date or datetime.now(ZoneInfo("Asia/Tokyo")).date()
+    monday = reference - timedelta(days=reference.weekday()) + timedelta(weeks=offset_weeks)
+    return monday, monday + timedelta(days=6)
+
+
+def _resolve_month_range(question: str, *, as_of_date: date | None = None) -> tuple[date, date] | None:
+    """Return date bounds for this/next/last month or an explicit Japanese month."""
+    lowered = question.lower()
+    reference = as_of_date or datetime.now(ZoneInfo("Asia/Tokyo")).date()
+    offset = 0
+    for phrase in ("来月", "next month"):
+        if phrase in lowered:
+            offset = 1
+            break
+    else:
+        for phrase in ("先月", "last month"):
+            if phrase in lowered:
+                offset = -1
+                break
+        else:
+            if not any(phrase in lowered for phrase in ("今月", "this month")):
+                explicit = re.search(r"(?<!\d)(1[0-2]|0?[1-9])月(?!\d|日)", question)
+                if not explicit:
+                    return None
+                month = int(explicit.group(1))
+                year = reference.year
+                return date(year, month, 1), date(year + (month == 12), month % 12 + 1, 1) - timedelta(days=1)
+    target_month = reference.month + offset
+    target_year = reference.year
+    if target_month == 0:
+        target_month, target_year = 12, target_year - 1
+    elif target_month == 13:
+        target_month, target_year = 1, target_year + 1
+    return date(target_year, target_month, 1), date(
+        target_year + (target_month == 12), target_month % 12 + 1, 1
+    ) - timedelta(days=1)
 
 
 def load_graph(path: Path | None = None) -> dict[str, Any]:
@@ -309,16 +393,44 @@ def query_knowledge_graph(
     seeds = scored[:top_k]
 
     resolved_date = re.search(r"(?<!\d)\d{4}-\d{2}-\d{2}(?!\d)", search_question)
-    if resolved_date:
+    week_range = _resolve_week_range(question, as_of_date=as_of_date)
+    month_range = _resolve_month_range(question, as_of_date=as_of_date)
+    period_range = week_range or month_range
+    if period_range and not resolved_date:
+        start, end = period_range
+        matching_week = []
+        for nid, score in scored:
+            match = re.match(r"entity:practice:(\d{4}-\d{2}-\d{2}):", nid)
+            if not match:
+                continue
+            event_date = date.fromisoformat(match.group(1))
+            if start <= event_date <= end:
+                matching_week.append((event_date, nid, score))
+        if matching_week:
+            seeds = [(nid, score) for _, nid, score in sorted(matching_week)[:top_k]]
+    elif resolved_date:
         exact_practices = [
             (nid, score)
             for nid, score in scored
             if nid.startswith(f"entity:practice:{resolved_date.group(0)}:")
         ]
         if exact_practices:
-            # An exact dated practice is a better route than generic practice
-            # hints or other sessions that share the same sport vocabulary.
-            seeds = [max(exact_practices, key=lambda item: item[1])]
+            practice_intent = any(
+                term in question.lower()
+                for term in ("練習", "メニュー", "practice", "jog", "interval", "走る")
+            )
+            if practice_intent:
+                # An exact dated practice is a better route than generic practice
+                # hints or other sessions that share the same sport vocabulary.
+                seeds = [max(exact_practices, key=lambda item: item[1])]
+            else:
+                # A calendar question about the same date must not be answered
+                # with the practice session just because it has a date node.
+                seeds = [
+                    (nid, score)
+                    for nid, score in seeds
+                    if not nid.startswith("entity:practice:")
+                ]
 
     # If a specific entity matched strongly, drop broad Topic/QueryHint seeds that flood refs
     if any(nodes[nid]["type"] in {"Athlete", "Template", "Year"} and s >= 8 for nid, s in seeds):
