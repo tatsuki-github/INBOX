@@ -369,6 +369,10 @@
     "note": "winners + runners-up summary from rank=1/2"
   },
   {
+    "source": "out/analysis/2026-09-21_arato-tamana_middle_school_sb_updates.md",
+    "corpus": "out-analysis/2026-09-21_arato-tamana_middle_school_sb_updates.md"
+  },
+  {
     "source": "out/analysis/2026_aragyoku_men_1500m_sb_individual_top20.md",
     "corpus": "out-analysis/2026_aragyoku_men_1500m_sb_individual_top20.md"
   },
@@ -797,6 +801,18 @@
     "corpus": "repo-docs/adr/051-nagomi-2026-results-transcription.md"
   },
   {
+    "source": "docs/adr/052-nagomi-sb-gap-analysis.md",
+    "corpus": "repo-docs/adr/052-nagomi-sb-gap-analysis.md"
+  },
+  {
+    "source": "docs/adr/053-line-bot-help-examples.md",
+    "corpus": "repo-docs/adr/053-line-bot-help-examples.md"
+  },
+  {
+    "source": "docs/adr/054-primary-source-links-in-line-answers.md",
+    "corpus": "repo-docs/adr/054-primary-source-links-in-line-answers.md"
+  },
+  {
     "source": "docs/idaten-import/phase0-media-ocr.md",
     "corpus": "repo-docs/idaten-import/phase0-media-ocr.md"
   },
@@ -887,6 +903,18 @@
   {
     "source": "docs/implementation-flow/leg-who-without-meet-name/phase-5-6.md",
     "corpus": "repo-docs/implementation-flow/leg-who-without-meet-name/phase-5-6.md"
+  },
+  {
+    "source": "docs/implementation-flow/line-bot-help-examples/phase-0.md",
+    "corpus": "repo-docs/implementation-flow/line-bot-help-examples/phase-0.md"
+  },
+  {
+    "source": "docs/implementation-flow/line-bot-help-examples/phase-1.md",
+    "corpus": "repo-docs/implementation-flow/line-bot-help-examples/phase-1.md"
+  },
+  {
+    "source": "docs/implementation-flow/line-bot-help-examples/phase-5-6.md",
+    "corpus": "repo-docs/implementation-flow/line-bot-help-examples/phase-5-6.md"
   },
   {
     "source": "docs/implementation-flow/line-deny-list/phase-0.md",
@@ -1007,6 +1035,10 @@
   {
     "source": "docs/implementation-flow/nagomi-order-not-kanaguri/phase-5-6.md",
     "corpus": "repo-docs/implementation-flow/nagomi-order-not-kanaguri/phase-5-6.md"
+  },
+  {
+    "source": "docs/implementation-flow/nagomi-sb-gap-analysis/phase-0.md",
+    "corpus": "repo-docs/implementation-flow/nagomi-sb-gap-analysis/phase-0.md"
   },
   {
     "source": "docs/implementation-flow/nagomi-sb-pred-passing-ranks/phase-0.md",
@@ -2265,6 +2297,10 @@
     "corpus": "drive-text/大会/2026年度/0920_中学駅伝金栗四三生誕の地なごみ大会/プログラム.pdf.md"
   },
   {
+    "source": "input/external/drive/shared/大会/2026年度/0920_中学駅伝金栗四三生誕の地なごみ大会/予実比較.md",
+    "corpus": "drive-text/大会/2026年度/0920_中学駅伝金栗四三生誕の地なごみ大会/予実比較.md"
+  },
+  {
     "source": "input/external/drive/shared/大会/2026年度/0920_中学駅伝金栗四三生誕の地なごみ大会/女子区間オーダー_SB予想.md",
     "corpus": "drive-text/大会/2026年度/0920_中学駅伝金栗四三生誕の地なごみ大会/女子区間オーダー_SB予想.md"
   },
@@ -2311,6 +2347,50 @@
   {
     "source": "input/external/drive/shared/大会/2026年度/0920_中学駅伝金栗四三生誕の地なごみ大会/開催要項.md.meta.json",
     "corpus": "drive-text/大会/2026年度/0920_中学駅伝金栗四三生誕の地なごみ大会/開催要項.md.meta.json"
+  },
+  {
+    "source": "input/external/drive/shared/大会/2026年度/0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）/オープン男女_スタートリスト.pdf.md",
+    "corpus": "drive-text/大会/2026年度/0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）/オープン男女_スタートリスト.pdf.md"
+  },
+  {
+    "source": "input/external/drive/shared/大会/2026年度/0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）/オープン男女_スタートリスト.pdf.md.meta.json",
+    "corpus": "drive-text/大会/2026年度/0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）/オープン男女_スタートリスト.pdf.md.meta.json"
+  },
+  {
+    "source": "input/external/drive/shared/大会/2026年度/0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）/チャレンジの部_スタートリスト.pdf.md",
+    "corpus": "drive-text/大会/2026年度/0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）/チャレンジの部_スタートリスト.pdf.md"
+  },
+  {
+    "source": "input/external/drive/shared/大会/2026年度/0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）/チャレンジの部_スタートリスト.pdf.md.meta.json",
+    "corpus": "drive-text/大会/2026年度/0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）/チャレンジの部_スタートリスト.pdf.md.meta.json"
+  },
+  {
+    "source": "input/external/drive/shared/大会/2026年度/0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）/チャンピオンシップの部_スタートリスト.pdf.md",
+    "corpus": "drive-text/大会/2026年度/0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）/チャンピオンシップの部_スタートリスト.pdf.md"
+  },
+  {
+    "source": "input/external/drive/shared/大会/2026年度/0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）/チャンピオンシップの部_スタートリスト.pdf.md.meta.json",
+    "corpus": "drive-text/大会/2026年度/0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）/チャンピオンシップの部_スタートリスト.pdf.md.meta.json"
+  },
+  {
+    "source": "input/external/drive/shared/大会/2026年度/0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）/会場図及び競技注意事項等.pdf.md",
+    "corpus": "drive-text/大会/2026年度/0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）/会場図及び競技注意事項等.pdf.md"
+  },
+  {
+    "source": "input/external/drive/shared/大会/2026年度/0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）/会場図及び競技注意事項等.pdf.md.meta.json",
+    "corpus": "drive-text/大会/2026年度/0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）/会場図及び競技注意事項等.pdf.md.meta.json"
+  },
+  {
+    "source": "input/external/drive/shared/大会/2026年度/0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）/区間オーダー_SB予想.md",
+    "corpus": "drive-text/大会/2026年度/0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）/区間オーダー_SB予想.md"
+  },
+  {
+    "source": "input/external/drive/shared/大会/2026年度/0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）/区間オーダー_SB予想_coverage.csv",
+    "corpus": "drive-text/大会/2026年度/0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）/区間オーダー_SB予想_coverage.csv"
+  },
+  {
+    "source": "input/external/drive/shared/大会/2026年度/0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）/区間オーダー変更.md",
+    "corpus": "drive-text/大会/2026年度/0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）/区間オーダー変更.md"
   },
   {
     "source": "input/external/drive/shared/大会/2026年度/0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）/概要.md",

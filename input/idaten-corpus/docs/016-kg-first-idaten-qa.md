@@ -11,7 +11,7 @@ ADR 015 の LINE バックエンドは BM25（`rag_index.json`）のみで回答
 1. **パイプライン**: Scope → 日付正規化 → KG スコアリング（TypeScript）→ Router LLM（任意）→ `rag_index` から source 指定取得 + BM25 補助 → Answer LLM。
 2. **ランタイム読取は `backend/data/*` のみ**（ADR 015 維持）。KG は `scripts/sync_backend_kg.py` で `backend/data/knowledge-graph.json` に同梱。本文は引き続き `rag_index.json`。repo 直下 `input/` は読まない。
 3. **refs → corpus source マッピング**（例: `input/events.YYYY.yaml` → `calendar/events.daiming.yaml`）。マッピング不能・パストラバーサルは破棄。
-4. **日付質問**: `9/20` / `9月20日` を `YYYY-MM-DD` + `MMDD` に展開し、`drive-text/大会/` のフォルダ名マッチと calendar チャンクを優先。**相対年**（`去年`/`今年`/`おととし`）も西暦トークンへ展開する。
+4. **日付質問**: `9/20` / `9月20日` を `YYYY-MM-DD` + `MMDD` に展開し、`drive-text/大会/` のフォルダ名マッチと calendar チャンクを優先。**相対年**（`去年`/`今年`/`おととし`）も西暦トークンへ展開する。`今日` / `明日` / `明後日` / `昨日` / `一昨日` は実行時の日本時間（`Asia/Tokyo`）の日付から具体的なISO日付と `MMDD` に展開する。
 5. **ベクトル DB は導入しない**。KG が探索地図、BM25 は保険。
 6. **ユーザー向け回答**: コーパス抜粋のみを根拠にするが、パス・ソース名は本文に出さない。LINE は Markdown 非対応のためプレーンテキストで返し、送信前に `formatForLine` で記号を除去する。
 7. **網羅性**: KG にコーパスハブ・大会フォルダ（`meet:*`）を「何が書いてあるか」ヒント付きで登録。検索は topK/近傍チャンク拡大し、抜け漏れを減らす。

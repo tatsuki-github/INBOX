@@ -11065,7 +11065,9 @@ t-tsuchiyama の最新中学生結果を取り込み。荒玉の中学生SB更�
 
 **説明**
 
-（なし）
+第3回 熊本県ジュニア駅伝競走大会
+公式大会ページ: http://kumariku.com/competition/?id=9730
+スタートリスト・区間SB予想: input/idaten-corpus/drive-text/大会/2026年度/0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）/
 
 </details>
 
