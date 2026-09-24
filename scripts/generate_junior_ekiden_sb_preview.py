@@ -25,6 +25,15 @@ TAIMEI_ORDER_OVERRIDES = {
     ("女子", "チャンピオンシップ", 7, "岱明中"): {3: "増岡 里俐"},
     ("男子", "チャンピオンシップ", 7, "岱明中"): {1: "松野 凛空", 2: "山本 哲瑠"},
 }
+STARTER_OVERRIDES = {
+    ("女子", "チャンピオンシップ", 13, "ＡＬＬ八代"): {4: "田本 凪"},
+    ("男子", "チャンピオンシップ", 13, "県立八代中"): {5: "龍野 翔太郎"},
+    ("女子", "チャレンジ", 48, "菊池南中B"): {1: "川口 結花"},
+    ("女子", "チャレンジ", 27, "人吉二中"): {3: "吉村 虹奈"},
+    # 村上葉侑は南関中B/C双方の補員欄にある。同一レースのためCのみ起用。
+    ("男子", "チャレンジ", 29, "南関中C"): {2: "村上 葉侑"},
+    ("男子", "チャレンジ", 49, "玉名中"): {4: "中村 龍之介"},
+}
 
 DIVISIONS = [
     {"gender": "女子", "division": "チャンピオンシップ", "pdf": "チャンピオンシップの部_スタートリスト.pdf", "pages": [0], "legs": 4, "first_km": 2.7, "other_km": 2.3},
@@ -55,7 +64,8 @@ def parse_division(spec: dict) -> list[dict]:
                     n = int(row[0].strip())
                     team = (row[1] or "").strip()
                     legs = [clean_entry(row[3 + i]) for i in range(spec["legs"])]
-                    overrides = TAIMEI_ORDER_OVERRIDES.get((spec["gender"], spec["division"], n, team), {})
+                    key = (spec["gender"], spec["division"], n, team)
+                    overrides = {**TAIMEI_ORDER_OVERRIDES.get(key, {}), **STARTER_OVERRIDES.get(key, {})}
                     for leg_number, athlete in overrides.items():
                         legs[leg_number - 1] = athlete
                     if len(legs) == spec["legs"] and all(legs):
@@ -358,7 +368,7 @@ def render_pdf(reports: list[tuple[dict, list[dict], list[float | None], list[di
 def main() -> int:
     women_sb, _ = nagomi.load_sb_index(as_of=AS_OF, gender="女子")
     men_sb, _ = nagomi.load_sb_index(as_of=AS_OF, gender="男子")
-    all_lines = ["# 第3回 熊本県ジュニア駅伝競走大会 2026年度SB・区間順位予想", "", f"as_of: {AS_OF} / event_date: {EVENT_DATE}", "", "## 算出方法", "", "- SBは2026年度採用SB・Notion採用SB・玉名郡ナイターでSB明記された記録を対象日以前で照合。SB採用済みを優先。", "- 換算式は2026年なごみ駅伝と同じ。女子は1500m SBから2km予想 `SB秒×(2/1.5)+15`、1500mがなければ800m Riegel換算。男子は1500m SBから3km予想 `SB秒×2+35`、800m Riegel換算。男子の3000m実測SBが1500m換算予想より30秒以上遅い場合は1500m換算を採用。", "- 区間距離に合わせて2km/3km予想を距離比例で調整。女子1区2.7km・2-4区2.3km、男子1区3.0km・2-5区2.6km。2026要項はオープンコース距離（女子2.3km・男子2.6km）を記載し、駅伝1区距離は明記していないため、1区は2025年第2回大会の記録資料にある距離を踏襲した推定。", "- 岱明中の最新オーダー変更（女子3区・男子1区/2区）は[区間オーダー変更.md](区間オーダー変更.md)に基づき反映。公式PDFの公表オーダーとは区別している。", "- 各区の区間順位は各部門内の換算予想順。通過順位は予想累計タイム順。総合順位は全区間の換算予想合計。", "- SB予想の欠測は区間ごとの中央値で参考総合順位を補完（※）。完全順位は全区間に実SB予想があるチームのみ。", ""]
+    all_lines = ["# 第3回 熊本県ジュニア駅伝競走大会 2026年度SB・区間順位予想", "", f"as_of: {AS_OF} / event_date: {EVENT_DATE}", "", "## 算出方法", "", "- SBは2026年度採用SB・Notion採用SB・玉名郡ナイターでSB明記された記録を対象日以前で照合。SB採用済みを優先。", "- 換算式は2026年なごみ駅伝と同じ。女子は1500m SBから2km予想 `SB秒×(2/1.5)+15`、1500mがなければ800m Riegel換算。男子は1500m SBから3km予想 `SB秒×2+35`、800m Riegel換算。男子の3000m実測SBが1500m換算予想より30秒以上遅い場合は1500m換算を採用。", "- 区間距離に合わせて2km/3km予想を距離比例で調整。女子1区2.7km・2-4区2.3km、男子1区3.0km・2-5区2.6km。2026要項はオープンコース距離（女子2.3km・男子2.6km）を記載し、駅伝1区距離は明記していないため、1区は2025年第2回大会の記録資料にある距離を踏襲した推定。", "- 岱明中と一部チームのオーダー変更は[区間オーダー変更.md](区間オーダー変更.md)に記録。SB予想は記録済みの最新オーダーを反映し、公式PDFの公表オーダーとは区別している。", "- 各区の区間順位は各部門内の換算予想順。通過順位は予想累計タイム順。総合順位は全区間の換算予想合計。", "- SB予想の欠測は区間ごとの中央値で参考総合順位を補完（※）。完全順位は全区間に実SB予想があるチームのみ。", ""]
     coverages = []
     pdf_reports = []
     for spec in DIVISIONS:
