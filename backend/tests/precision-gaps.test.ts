@@ -628,6 +628,23 @@ describe("QA precision regressions", () => {
     expect(result.text).not.toContain("9:37.84");
   });
 
+  it.each([
+    ["村上咲稀の2024年800mSBは？", "村上咲稀の800mSBは2:29.04（2024/7/21）"],
+    ["村上咲稀の2024年800mPBは？", "村上咲稀の800mPBは2:29.04（2024/7/21）"],
+    ["村上咲稀の2024年800メートルSBは？", "村上咲稀の800mSBは2:29.04（2024/7/21）"],
+    ["村上咲稀の2024年1500mSBは？", "村上咲稀の1500mSBは5:24.48（2024/5/4）"],
+    ["村上咲稀の2024年1500mPBは？", "村上咲稀の1500mPBは5:24.48（2024/5/4）"],
+    ["松野凛空の2024年800mSBは？", "松野凛空の2024年800mSBは、参照できる資料では確認できません"],
+    ["松野凛空の2024年800mPBは？", "松野凛空の2024年800mPBは、参照できる資料では確認できません"],
+    ["松野凛空の2024年800メートルSBは？", "松野凛空の2024年800mSBは、参照できる資料では確認できません"],
+    ["塚原優衣の2024年800mSBは？", "塚原優衣の2024年800mSBは、参照できる資料では確認できません"],
+    ["塚原優衣の2024年800mPBは？", "塚原優衣の2024年800mPBは、参照できる資料では確認できません"],
+  ])("keeps an explicit-year track answer within the requested season: %s", async (question, expected) => {
+    const result = await ask(question);
+    expect(result.sources).toEqual(["out-analysis/arato-tamana-teams/岱明中.md"]);
+    expect(result.text).toContain(expected);
+  });
+
   it("does not substitute 松野凛空's 1500m result for a missing 5000m SB", async () => {
     const result = await ask("松野凛空の5000mSBは？");
     expect(result.text).toContain("松野凛空");

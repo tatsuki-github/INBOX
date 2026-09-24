@@ -1043,12 +1043,16 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
           ["out-analysis/2026_women_800m_1500m_pb_school_ranking.md"],
           { query: name, perSource: 64, maxChunks: 64, coverage: "full" },
         ).map((row) => row.chunk.text).join(" ");
-        if (!womenSource.includes(name)) {
+        if (requestedYear || !womenSource.includes(name)) {
           const kind = /PB|自己ベスト|自己記録/.test(q) ? "PB" : "SB";
           const distance = recordHeader.slice(4);
           return name + "の" + distance + kind + "は" + best[1] + "（" + best[2] + "/" +
             Number(best[3]) + "/" + Number(best[4]) + "）。";
         }
+      }
+      if (requestedYear) {
+        const kind = /PB|自己ベスト|自己記録/.test(q) ? "PB" : "SB";
+        return name + "の" + requestedYear + "年" + recordHeader.slice(4) + kind + "は、参照できる資料では確認できません。";
       }
       if (sources.length === 0) {
         const womenSource = retrieveBySources(
@@ -3186,7 +3190,7 @@ function boostAthleteRecordSources(query: string, baseSources: string[]): string
     const currentMen1500Ranking = "out-analysis/2026_aragyoku_men_1500m_sb_individual_top20.md";
     const currentWomenRanking = "out-analysis/2026_women_800m_1500m_pb_school_ranking.md";
     const names = extractAthleteNameHints(q);
-    if (/3000m|3000ｍ|3[，,]\s*000|1500m|1500ｍ|1[，,]\s*500/.test(q) && /20\d{2}/.test(q) && names.length > 0) {
+    if (/800m|800ｍ|800\s*メートル|3000m|3000ｍ|3[，,]\s*000|1500m|1500ｍ|1[，,]\s*500/.test(q) && /20\d{2}/.test(q) && names.length > 0) {
       const teamSource = names.flatMap((name) => findSourcesWithText([name], {
         prefix: "out-analysis/arato-tamana-teams/",
         limit: 4,
@@ -5157,7 +5161,7 @@ export async function answerQuestion(
     const currentMen1500Ranking = "out-analysis/2026_aragyoku_men_1500m_sb_individual_top20.md";
     const currentWomenRanking = "out-analysis/2026_women_800m_1500m_pb_school_ranking.md";
     const names = extractAthleteNameHints(expanded);
-    const historicalAthleteTrackSource = /3000m|3000ｍ|3[，,]\s*000|1500m|1500ｍ|1[，,]\s*500/.test(expanded) && /20\d{2}/.test(question)
+    const historicalAthleteTrackSource = /800m|800ｍ|800\s*メートル|3000m|3000ｍ|3[，,]\s*000|1500m|1500ｍ|1[，,]\s*500/.test(expanded) && /20\d{2}/.test(question)
       ? names.flatMap((name) => findSourcesWithText([name], {
           prefix: "out-analysis/arato-tamana-teams/",
           limit: 4,
