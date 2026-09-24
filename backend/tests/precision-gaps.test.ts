@@ -285,6 +285,23 @@ describe("QA precision regressions", () => {
     expect(result.text).not.toContain("3:45");
   });
 
+  it("answers an unyearly men's leg record query from the record board", async () => {
+    const result = await ask("荒玉男子3区の大会区間記録は誰？");
+    expect(result.sources).toEqual(["out-analysis/aragyoku_meet_records.md"]);
+    expect(result.text).toContain("2025年荒玉駅伝男子の3区大会区間記録は9:24");
+    expect(result.text).toContain("亀井遼希");
+    expect(result.text).not.toContain("年度またはチームを指定してください");
+  });
+
+  it("answers an unyearly women's leg record query from the record board", async () => {
+    const result = await ask("荒玉女子3区の大会区間記録は誰？");
+    expect(result.sources).toEqual(["out-analysis/aragyoku_meet_records.md"]);
+    expect(result.text).toContain("2025年荒玉駅伝女子の3区大会区間記録は6:36");
+    expect(result.text).toContain("高木彩加");
+    expect(result.text).toContain("小柳若菜");
+    expect(result.text).not.toContain("年度またはチームを指定してください");
+  });
+
   it("answers a school place from the PB ranking row when PB is in the wording", async () => {
     const result = await ask("女子800mPB学校別で荒尾三は何位？");
     expect(result.sources).toEqual([
@@ -329,12 +346,66 @@ describe("QA precision regressions", () => {
     expect(result.text).not.toContain("隈部侑成");
   });
 
+  it("answers an individual 3000m 自己ベスト query with the named record", async () => {
+    const result = await ask("松野凛空の3000m自己ベストは？");
+    expect(result.sources).toEqual([
+      "out-analysis/2026_aragyoku_men_3000m_sb_ranking.md",
+    ]);
+    expect(result.text).toContain("松野凛空の3000mSBは9:37.84");
+    expect(result.text).not.toContain("隈部侑成");
+  });
+
+  it("answers an individual 3000m PB query with the named record", async () => {
+    const result = await ask("松野凛空の3000mPBは？");
+    expect(result.sources).toEqual([
+      "out-analysis/2026_aragyoku_men_3000m_sb_ranking.md",
+    ]);
+    expect(result.text).toContain("松野凛空の3000mSBは9:37.84");
+    expect(result.text).not.toContain("隈部侑成");
+  });
+
+  it("uses the 2026 ranking when it has a newer named men's 1500m SB", async () => {
+    const result = await ask("松野凛空の1500mSBは？");
+    expect(result.sources).toEqual([
+      "out-analysis/2026_aragyoku_men_1500m_sb_individual_top20.md",
+    ]);
+    expect(result.text).toContain("4:22.33");
+    expect(result.text).not.toContain("4:36.05");
+  });
+
+  it("answers 草野瑠唯's 1500m SB from the current ranking", async () => {
+    const result = await ask("草野瑠唯の1500mSBは？");
+    expect(result.sources).toEqual([
+      "out-analysis/2026_aragyoku_men_1500m_sb_individual_top20.md",
+    ]);
+    expect(result.text).toContain("4:21.26");
+    expect(result.text).not.toContain("4:28.64");
+  });
+
+  it("answers 山本哲瑠's 1500m SB from the current ranking", async () => {
+    const result = await ask("山本哲瑠の1500mSBは？");
+    expect(result.sources).toEqual([
+      "out-analysis/2026_aragyoku_men_1500m_sb_individual_top20.md",
+    ]);
+    expect(result.text).toContain("4:30.13");
+    expect(result.text).not.toContain("4:43.17");
+  });
+
   it("answers the historical winner pace from the pace digest", async () => {
     const result = await ask("荒玉男子優勝の歴代平均ペースは？");
     expect(result.sources).toEqual([
       "out-analysis/aragyoku_all_teams_average_pace.md",
     ]);
     expect(result.text).toContain("3:13.0/km");
+  });
+
+  it("uses the current PB digest when it has a newer named 800m record", async () => {
+    const result = await ask("村上咲稀の800mPBは？");
+    expect(result.sources).toEqual([
+      "out-analysis/2026_women_800m_1500m_pb_school_ranking.md",
+    ]);
+    expect(result.text).toContain("2:20.11");
+    expect(result.text).not.toContain("2:23.45");
   });
 
   it("answers the date and venue for the named 玉名市合同練習会", async () => {
@@ -353,6 +424,28 @@ describe("QA precision regressions", () => {
     ]);
     expect(result.text).toContain("山本哲瑠");
     expect(result.text).not.toContain("年度またはチームを指定してください");
+  });
+
+  it("answers both gendered 岱明A lineups when gender is omitted", async () => {
+    const result = await ask("なごみ駅伝2026 岱明A 1区は誰？");
+    expect(result.sources).toEqual([
+      "drive-text/大会/2026年度/0920_中学駅伝金栗四三生誕の地なごみ大会/男子区間オーダーリスト.md",
+      "drive-text/大会/2026年度/0920_中学駅伝金栗四三生誕の地なごみ大会/女子区間オーダーリスト.md",
+    ]);
+    expect(result.text).toContain("岱明Aは男子・女子の両方にあります");
+    expect(result.text).toContain("性別を指定してください");
+    expect(result.text).not.toContain("2025年荒玉");
+  });
+
+  it("answers all four 岱明 lineups when gender and team are omitted", async () => {
+    const result = await ask("なごみ駅伝の岱明1区は誰？");
+    expect(result.sources).toEqual([
+      "drive-text/大会/2026年度/0920_中学駅伝金栗四三生誕の地なごみ大会/男子区間オーダーリスト.md",
+      "drive-text/大会/2026年度/0920_中学駅伝金栗四三生誕の地なごみ大会/女子区間オーダーリスト.md",
+    ]);
+    expect(result.text).toContain("男子A・男子B・女子A・女子B");
+    expect(result.text).toContain("性別とA/Bを指定してください");
+    expect(result.text).not.toContain("2025年荒玉");
   });
 
   it("keeps a combined practice venue question on the dated practice note", async () => {

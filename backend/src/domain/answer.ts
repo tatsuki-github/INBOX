@@ -127,6 +127,12 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
   const budget = maxChars ?? offlinePreviewBudget(question);
   const flat = text.replace(/\s+/g, " ");
   const q = question.normalize("NFKC");
+  if (/なごみ/.test(q) && /岱明/.test(q) && /[1-6]区/.test(q) && !/男子|女子/.test(q)) {
+    const requestedTeam = q.match(/岱明\s*([AB])/)?.[1];
+    return requestedTeam
+      ? "なごみ駅伝の岱明" + requestedTeam + "は男子・女子の両方にあります。性別を指定してください。"
+      : "なごみ駅伝の岱明には男子A・男子B・女子A・女子Bがあります。性別とA/Bを指定してください。";
+  }
   if ((/(?:2026[-年]0?9[-月]22|9月22日|9\/22|昨日|きのう|前日)/.test(q) || /(?:女子(?:の|・)?\s*(?:1000\s*m|1000メートル).*?(?:2本|×\s*2|x\s*2|\*\s*2)|男子(?:の|・)?\s*(?:1000\s*m|1000メートル).*?(?:3本|×\s*3|x\s*3|\*\s*3))/i.test(q) || /^(?:女子|男子)(?:の|・)?\s*(?:1000\s*m|1000メートル|1(?:[.]0+)?\s*km|1(?:[.]0+)?\s*キロ).*(?:結果|記録|タイム|ペース|感想|TT|タイムトライアル|走|成績|参加者|選手|出場|人数|何人|本目|本数|何本|メニュー|実施内容|どうだった)/.test(q)) && /(?:女子|男子)(?:の|・)?\s*(?:1000|1(?:[.]0+)?\s*km|1(?:[.]0+)?\s*キロ)/.test(q)) {
     const gender = /女子/.test(q) ? "女子" : "男子";
     const names = gender === "女子"
@@ -502,7 +508,7 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
     /[1-6]区/.test(q) &&
     /誰|だれ/.test(q) &&
     /男子|女子/.test(q) &&
-    !/区間賞|区間1位|選手名|20\d{2}/.test(q)
+    !/区間賞|区間1位|選手名|20\d{2}|大会区間記録|記録保持者/.test(q)
   ) {
     return "荒玉駅伝の区間選手は年度・チームで異なります。年度またはチームを指定してください。";
   }
@@ -926,7 +932,7 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
   }
   if (
     /3000m|3000ｍ/.test(q) &&
-    /SB/.test(q) &&
+    /SB|PB|自己ベスト|自己記録|ベスト/.test(q) &&
     hasNonTeamAthleteNameHint(q)
   ) {
     const name = extractAthleteNameHints(q)[0];
@@ -944,6 +950,48 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
         new RegExp(`\\|\\s*(\\d+)\\s*\\|\\s*${escaped}\\s*\\|\\s*([^|]+?)\\s*\\|\\s*([^|]+?)\\s*\\|`),
       );
       if (match) return `${name}の3000mSBは${match[3]!.trim()}（${match[1]}位）。`;
+    }
+  }
+  if (/1500m|1500ｍ/.test(q) && /SB|PB|ベスト/.test(q) && hasNonTeamAthleteNameHint(q)) {
+    const name = extractAthleteNameHints(q)[0];
+    const source = "out-analysis/2026_aragyoku_men_1500m_sb_individual_top20.md";
+    if (name) {
+      const ranking = retrieveBySources([source], {
+        query: name,
+        perSource: 64,
+        maxChunks: 64,
+        coverage: "full",
+      });
+      const joined = ranking.map((row) => row.chunk.text).join(" ").replace(/\s+/g, " ");
+      const escaped = name.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+      const match = joined.match(
+        new RegExp(`\\|\\s*(\\d+)\\s*\\|\\s*${escaped}\\s*\\|\\s*([^|]+?)\\s*\\|\\s*([^|]+?)\\s*\\|`),
+      );
+      if (match) return `${name}の男子1500mSBは${match[3]!.trim()}（${match[1]}位）。`;
+    }
+  }
+  if (/800m|800ｍ|1500m|1500ｍ/.test(q) && /SB|PB|ベスト/.test(q) && hasNonTeamAthleteNameHint(q)) {
+    const name = extractAthleteNameHints(q)[0];
+    const source = "out-analysis/2026_women_800m_1500m_pb_school_ranking.md";
+    const distance = /800m|800ｍ/.test(q) ? "800m" : "1500m";
+    if (name) {
+      const ranking = retrieveBySources([source], {
+        query: name,
+        perSource: 64,
+        maxChunks: 64,
+        coverage: "full",
+      });
+      const joined = ranking.map((row) => row.chunk.text).join(" ").replace(/\s+/g, " ");
+      const sectionStart = joined.indexOf(`## ${distance}・`);
+      const sectionEnd = joined.indexOf("## ", sectionStart + 1);
+      const section = sectionStart >= 0
+        ? joined.slice(sectionStart, sectionEnd >= 0 ? sectionEnd : undefined)
+        : joined;
+      const escaped = name.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+      const match = section.match(
+        new RegExp(`${escaped}\\s+([0-9]+:[0-9]{2}(?:\\.[0-9]{2})?)（(20\\d{2})）`),
+      );
+      if (match) return `${name}の${distance}PBは${match[1]}（${match[2]}年）。`;
     }
   }
   if (
@@ -2129,7 +2177,7 @@ function offlineAnswer(
     /(?<!\d)[1-6]区/.test(question) &&
     /誰|だれ/.test(question) &&
     /男子|女子/.test(question) &&
-    !/区間賞|区間1位|選手名|20\d{2}/.test(question)
+    !/区間賞|区間1位|選手名|20\d{2}|大会区間記録|記録保持者/.test(question)
   ) {
     lines.push("荒玉駅伝の区間選手は年度・チームで異なります。年度またはチームを指定してください。");
     return lines.join("\n");
@@ -3019,6 +3067,8 @@ function boostAthleteRecordSources(query: string, baseSources: string[]): string
     !/荒玉|駅伝|平均|ペース|区間|大会|結果|練習会|所属選手/.test(q);
   if (namedAthleteSelfBestQ) {
     const currentMen3000Ranking = "out-analysis/2026_aragyoku_men_3000m_sb_ranking.md";
+    const currentMen1500Ranking = "out-analysis/2026_aragyoku_men_1500m_sb_individual_top20.md";
+    const currentWomenRanking = "out-analysis/2026_women_800m_1500m_pb_school_ranking.md";
     const names = extractAthleteNameHints(q);
     if (/3000m|3000ｍ/.test(q) && names.length > 0) {
       const ranking = retrieveBySources([currentMen3000Ranking], {
@@ -3028,6 +3078,26 @@ function boostAthleteRecordSources(query: string, baseSources: string[]): string
       });
       if (names.some((name) => ranking.some((row) => row.chunk.text.includes(name)))) {
         return [currentMen3000Ranking];
+      }
+    }
+    if (/800m|800ｍ|1500m|1500ｍ/.test(q) && names.length > 0) {
+      const ranking = retrieveBySources([currentWomenRanking], {
+        perSource: 64,
+        maxChunks: 64,
+        coverage: "full",
+      });
+      if (names.some((name) => ranking.some((row) => row.chunk.text.includes(name)))) {
+        return [currentWomenRanking];
+      }
+    }
+    if (/1500m|1500ｍ/.test(q) && names.length > 0) {
+      const ranking = retrieveBySources([currentMen1500Ranking], {
+        perSource: 64,
+        maxChunks: 64,
+        coverage: "full",
+      });
+      if (names.some((name) => ranking.some((row) => row.chunk.text.includes(name)))) {
+        return [currentMen1500Ranking];
       }
     }
     return ["sb/中学生SB.csv"];
@@ -4956,6 +5026,8 @@ export async function answerQuestion(
     !/荒玉|駅伝|平均|ペース|区間|大会|結果|練習会|所属選手/.test(expanded);
   if (namedSelfBestQ && !namedSchoolList && !namedSchoolSbList) {
     const currentMen3000Ranking = "out-analysis/2026_aragyoku_men_3000m_sb_ranking.md";
+    const currentMen1500Ranking = "out-analysis/2026_aragyoku_men_1500m_sb_individual_top20.md";
+    const currentWomenRanking = "out-analysis/2026_women_800m_1500m_pb_school_ranking.md";
     const names = extractAthleteNameHints(expanded);
     const ranking = /3000m|3000ｍ/.test(expanded) && names.length > 0
       ? retrieveBySources([currentMen3000Ranking], {
@@ -4964,9 +5036,27 @@ export async function answerQuestion(
           coverage: "full",
         })
       : [];
+    const womenRanking = /800m|800ｍ|1500m|1500ｍ/.test(expanded) && names.length > 0
+      ? retrieveBySources([currentWomenRanking], {
+          perSource: 64,
+          maxChunks: 64,
+          coverage: "full",
+        })
+      : [];
+    const men1500Ranking = /1500m|1500ｍ/.test(expanded) && names.length > 0
+      ? retrieveBySources([currentMen1500Ranking], {
+          perSource: 64,
+          maxChunks: 64,
+          coverage: "full",
+        })
+      : [];
     preferredSources = names.some((name) => ranking.some((row) => row.chunk.text.includes(name)))
       ? [currentMen3000Ranking]
-      : ["sb/中学生SB.csv"];
+      : names.some((name) => men1500Ranking.some((row) => row.chunk.text.includes(name)))
+        ? [currentMen1500Ranking]
+        : names.some((name) => womenRanking.some((row) => row.chunk.text.includes(name)))
+        ? [currentWomenRanking]
+        : ["sb/中学生SB.csv"];
   }
   if (latestTeamRankQ) {
     const team = /玉名付属|玉名附属|玉名附/.test(question)
@@ -5074,6 +5164,12 @@ export async function answerQuestion(
     /[1-6]区/.test(expanded) &&
     /誰|選手|ランナー|は誰/.test(expanded) &&
     !nagomiLegRankQ;
+  const nagomiAmbiguousTeamLegQ =
+    /なごみ/.test(expanded) &&
+    /岱明/.test(expanded) &&
+    /[1-6]区/.test(expanded) &&
+    /誰|選手|ランナー|は誰/.test(expanded) &&
+    !/男子|女子/.test(expanded);
   if (nagomiLegRankQ) {
     const resultYear = expanded.match(/20\d{2}/)?.[0] ?? "2026";
     const resultGender = /女子/.test(expanded) ? "女子" : "男子";
@@ -5086,6 +5182,14 @@ export async function answerQuestion(
     const orderGender = /女子/.test(expanded) ? "女子" : "男子";
     preferredSources = [
       `drive-text/大会/${orderYear}年度/0920_中学駅伝金栗四三生誕の地なごみ大会/${orderGender}区間オーダーリスト.md`,
+    ];
+  }
+  if (nagomiAmbiguousTeamLegQ) {
+    const orderYear = expanded.match(/20\d{2}/)?.[0] ?? "2026";
+    const orderBase = "drive-text/大会/" + orderYear + "年度/0920_中学駅伝金栗四三生誕の地なごみ大会";
+    preferredSources = [
+      orderBase + "/男子区間オーダーリスト.md",
+      orderBase + "/女子区間オーダーリスト.md",
     ];
   }
   const nagomiResultQ =
@@ -5345,17 +5449,17 @@ export async function answerQuestion(
     query: expanded,
     perSource:
       multipleAthleteRecordQ ? 1000 : directDocQ || exhaustive || isLegAthleteQuestion(expanded) || individual1500TopQ || individual3000RankQ || teamBestQ || totalMeetRecordQ || yearGenderMeetRecordQ || teamFullRecordQ || explicitTeamLegRankQ || historicalWinnerQ || winnerYearTeamQ || teamRunnerUpYearQ || legRankQuestionQ || namedLegTimeQ
-        || resultListQ || genericResultQ || topThreeQ || explicitThirdPlaceQ || unqualifiedSixthPlaceQ || explicitLegAwardQ || schoolPbRankQ || nagomiLegOrderQ || nagomiLegRankQ || nagomiResultQ || nagomiDateQ || nagomiVenueQ || kanaguriResultQ || aragyokuDateQ || aragyokuVenueQ || datedTeamResultQ || unqualifiedTeamResultQ
+        || resultListQ || genericResultQ || topThreeQ || explicitThirdPlaceQ || unqualifiedSixthPlaceQ || explicitLegAwardQ || schoolPbRankQ || nagomiAmbiguousTeamLegQ || nagomiLegOrderQ || nagomiLegRankQ || nagomiResultQ || nagomiDateQ || nagomiVenueQ || kanaguriResultQ || aragyokuDateQ || aragyokuVenueQ || datedTeamResultQ || unqualifiedTeamResultQ
         ? 200
         : RETRIEVAL_BUDGET.perSource,
     maxChunks:
       multipleAthleteRecordQ ? 1000 : directDocQ || exhaustive || isLegAthleteQuestion(expanded) || individual1500TopQ || individual3000RankQ || teamBestQ || totalMeetRecordQ || yearGenderMeetRecordQ || teamFullRecordQ || explicitTeamLegRankQ || historicalWinnerQ || winnerYearTeamQ || teamRunnerUpYearQ || legRankQuestionQ || namedLegTimeQ
-        || resultListQ || genericResultQ || topThreeQ || explicitThirdPlaceQ || unqualifiedSixthPlaceQ || explicitLegAwardQ || schoolPbRankQ || nagomiLegOrderQ || nagomiLegRankQ || nagomiResultQ || nagomiDateQ || nagomiVenueQ || kanaguriResultQ || aragyokuDateQ || aragyokuVenueQ || datedTeamResultQ || unqualifiedTeamResultQ
+        || resultListQ || genericResultQ || topThreeQ || explicitThirdPlaceQ || unqualifiedSixthPlaceQ || explicitLegAwardQ || schoolPbRankQ || nagomiAmbiguousTeamLegQ || nagomiLegOrderQ || nagomiLegRankQ || nagomiResultQ || nagomiDateQ || nagomiVenueQ || kanaguriResultQ || aragyokuDateQ || aragyokuVenueQ || datedTeamResultQ || unqualifiedTeamResultQ
         ? 200
         : RETRIEVAL_BUDGET.maxChunks,
       coverage:
       multipleAthleteRecordQ ? "full" : directDocQ || exhaustive || exactDatedPractice || isLegAthleteQuestion(expanded) || individual1500TopQ || individual3000RankQ || teamBestQ || totalMeetRecordQ || yearGenderMeetRecordQ || teamFullRecordQ || explicitTeamLegRankQ || historicalWinnerQ || winnerYearTeamQ || teamRunnerUpYearQ || legRankQuestionQ || namedLegTimeQ
-        || resultListQ || genericResultQ || topThreeQ || explicitThirdPlaceQ || unqualifiedSixthPlaceQ || explicitLegAwardQ || schoolPbRankQ || nagomiLegOrderQ || nagomiLegRankQ || nagomiResultQ || nagomiDateQ || nagomiVenueQ || kanaguriResultQ || aragyokuDateQ || aragyokuVenueQ || datedTeamResultQ || unqualifiedTeamResultQ
+        || resultListQ || genericResultQ || topThreeQ || explicitThirdPlaceQ || unqualifiedSixthPlaceQ || explicitLegAwardQ || schoolPbRankQ || nagomiAmbiguousTeamLegQ || nagomiLegOrderQ || nagomiLegRankQ || nagomiResultQ || nagomiDateQ || nagomiVenueQ || kanaguriResultQ || aragyokuDateQ || aragyokuVenueQ || datedTeamResultQ || unqualifiedTeamResultQ
         ? "full"
       : "ranked",
   });
@@ -5430,6 +5534,7 @@ export async function answerQuestion(
     teamRunnerUpYearQ ||
     resultListQ ||
     genericResultQ ||
+    nagomiAmbiguousTeamLegQ ||
     nagomiLegOrderQ ||
     nagomiLegRankQ ||
     nagomiResultQ ||
@@ -5531,7 +5636,8 @@ export async function answerQuestion(
         namedLegTimeQ ||
         teamRunnerUpYearQ ||
         resultListQ ||
-        nagomiLegOrderQ ||
+        nagomiAmbiguousTeamLegQ ||
+    nagomiLegOrderQ ||
         nagomiLegRankQ ||
         nagomiResultQ ||
         nagomiDateQ ||
