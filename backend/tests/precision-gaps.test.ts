@@ -32,6 +32,26 @@ async function askAt(question: string, now: string) {
 
 describe("QA precision regressions", () => {
   it.each([
+    "欠席者は誰？",
+    "最近の欠席者は？",
+    "欠席記録を見せて",
+    "今年の欠席者を教えて",
+    "部活を休んだのは誰？",
+    "練習を欠席した選手は？",
+    "欠席者一覧",
+    "2026年の欠席者は？",
+    "欠席履歴は？",
+    "誰が欠席した？",
+  ])("answers absence roster questions from the calendar record: %s", async (question) => {
+    const result = await ask(question);
+    expect(result.sources).toEqual(["calendar/events.daiming.yaml"]);
+    expect(result.text).toContain("田中");
+    expect(result.text).toContain("高田");
+    expect(result.text).toContain("2026-08-19");
+    expect(result.text).toContain("2026-09-05");
+    expect(result.text).not.toContain("第12回 中学駅伝");
+  });
+  it.each([
     ["なごみ駅伝の予想と実績の差は？", undefined],
     ["なごみの予実差を見せて", undefined],
     ["なごみ駅伝のSB予想と結果の比較", undefined],
