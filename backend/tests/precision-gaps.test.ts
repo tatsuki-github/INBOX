@@ -74,6 +74,25 @@ describe("QA precision regressions", () => {
     expect((result.text.match(/2021年 荒尾四・荒尾三/g) ?? []).length).toBe(1);
   });
   it.each([
+    "全チームの平均ペースを全て提示して",
+    "荒玉駅伝の全チーム平均ペースを教えて",
+    "荒玉駅伝の平均ペースを全チーム分一覧で",
+    "荒玉の全出場チームの平均ペース一覧",
+    "荒玉駅伝、各チームの平均ペースを全部見せて",
+    "全チーム分の荒玉駅伝平均ペースは？",
+    "荒玉駅伝の全チーム平均速度を一覧にして",
+    "全出場チームの荒玉平均ペースを見たい",
+    "荒玉駅伝のチーム別平均ペースを全て",
+    "荒玉駅伝、全チームの平均ペース一覧を出して",
+  ])("answers all-team pace questions from the team pace digest: %s", async (question) => {
+    const result = await ask(question);
+    expect(result.sources).toEqual(["out-analysis/aragyoku_all_teams_average_pace.md"]);
+    expect(result.text).toContain("2012年荒玉駅伝男子1位 玉名");
+    expect(result.text).toContain("2025年荒玉駅伝女子1位 玉名");
+    expect(result.text).not.toContain("名前,所属,性別");
+    expect((result.text.match(/2025年荒玉駅伝女子1位 玉名/g) ?? []).length).toBe(1);
+  });
+  it.each([
     ["なごみ駅伝の予想と実績の差は？", undefined],
     ["なごみの予実差を見せて", undefined],
     ["なごみ駅伝のSB予想と結果の比較", undefined],

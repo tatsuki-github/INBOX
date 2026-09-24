@@ -5096,6 +5096,9 @@ export async function answerQuestion(
     /1500(?:m|ｍ)?/.test(question.normalize("NFKC")) &&
     /学校別|学校.*ランキング|学校ランキング|学校.*順位/.test(question);
   const absenceRosterQ = /欠席者|欠席記録|欠席履歴|欠席一覧|欠席した|休んだ/.test(question);
+  const allTeamAveragePaceQ =
+    /全チーム|全出場チーム|各チーム|チーム別/.test(question) &&
+    /平均ペース|平均速度/.test(question);
   const historicalTopFinishQ =
     /荒玉|駅伝/.test(question) &&
     /(?:過去\s*5年|直近\s*5年|5年間)/.test(question) &&
@@ -5120,7 +5123,7 @@ export async function answerQuestion(
     /(?:と|、|・|／|\/)/.test(expanded) &&
     /800(?:m|ｍ)?|1[，,]?\s*500(?:m|ｍ)?|3[，,]?\s*000(?:m|ｍ)?|5[，,]?\s*000(?:m|ｍ)?|3\s*(?:km|キロ)|5\s*(?:km|キロ)/i.test(expanded);
   const directDocQ =
-    practiceTemplateQ || weatherOpsQ || paceCliQ || practiceMeetLoadQ || historicalTopSixPaceQ || historicalRankPaceQ || historicalWinnerPaceQ || historicalTeamRankQ || historicalTopFinishQ || nagomiPredictionGapQ || male1500SchoolRankingQ || absenceRosterQ || tamanaPracticeResultQ || latestTamanaPracticeResultQ || tamanaPracticeAthleteRecordQ || latestTamanaPracticeAthleteQuestionQ || multipleAthleteRecordQ || genericPracticeResultQ || genericPracticeDetailQ || tamanaPracticeStatusQ || practiceStatusQ || kumamotoEkidenScheduleQ || schoolMeetScheduleQ || practiceParticipantQ || tamanaPracticeVenueQ || tamanaPracticeParticipantQ || legDistanceQ || schoolMeetVenueQ || historicalJuniorResultQ || relativeWinnerQ || courseEraQ || oldCourseDistanceQ || eveningPracticeScheduleQ || namedTeamTotalTimeQ || cityRecordResultQ || firstLongDistanceResultQ || secondLongDistanceResultQ || fourthLongDistanceResultQ || fifthLongDistanceResultQ || genericLongDistanceResultQ || nightMeetResultQ || juniorOlympicResultQ || urbanChampionshipResultQ || kanaguriMemorialResultQ || prefecturalChampionshipResultQ || communicationResultQ || cityChampionshipResultQ || teamWinnerMarginQ || genericWinnerMarginQ || strideCountQ || postEkidenPracticeQ || movementPracticeQ || practiceDaysQ || practiceCalendarQ || meetResultUrlQ || prefecturalMeetResultQ || prefecturalMeetScheduleQ || teamRankQ || calendarDateScheduleQ || exactMeetDateScheduleQ || genericPracticeScheduleQ || genericDaimingPracticeContentQ || schoolScheduleQ || datedPracticeMeetQ || datedPracticeContentQ || genericPracticeMeetScheduleQ || practiceVenueQ;
+    practiceTemplateQ || weatherOpsQ || paceCliQ || practiceMeetLoadQ || historicalTopSixPaceQ || historicalRankPaceQ || historicalWinnerPaceQ || historicalTeamRankQ || historicalTopFinishQ || allTeamAveragePaceQ || nagomiPredictionGapQ || male1500SchoolRankingQ || absenceRosterQ || tamanaPracticeResultQ || latestTamanaPracticeResultQ || tamanaPracticeAthleteRecordQ || latestTamanaPracticeAthleteQuestionQ || multipleAthleteRecordQ || genericPracticeResultQ || genericPracticeDetailQ || tamanaPracticeStatusQ || practiceStatusQ || kumamotoEkidenScheduleQ || schoolMeetScheduleQ || practiceParticipantQ || tamanaPracticeVenueQ || tamanaPracticeParticipantQ || legDistanceQ || schoolMeetVenueQ || historicalJuniorResultQ || relativeWinnerQ || courseEraQ || oldCourseDistanceQ || eveningPracticeScheduleQ || namedTeamTotalTimeQ || cityRecordResultQ || firstLongDistanceResultQ || secondLongDistanceResultQ || fourthLongDistanceResultQ || fifthLongDistanceResultQ || genericLongDistanceResultQ || nightMeetResultQ || juniorOlympicResultQ || urbanChampionshipResultQ || kanaguriMemorialResultQ || prefecturalChampionshipResultQ || communicationResultQ || cityChampionshipResultQ || teamWinnerMarginQ || genericWinnerMarginQ || strideCountQ || postEkidenPracticeQ || movementPracticeQ || practiceDaysQ || practiceCalendarQ || meetResultUrlQ || prefecturalMeetResultQ || prefecturalMeetScheduleQ || teamRankQ || calendarDateScheduleQ || exactMeetDateScheduleQ || genericPracticeScheduleQ || genericDaimingPracticeContentQ || schoolScheduleQ || datedPracticeMeetQ || datedPracticeContentQ || genericPracticeMeetScheduleQ || practiceVenueQ;
   if (practiceTemplateQ) {
     preferredSources = /norwegian-45-15|[Nn]orwegian(?:の|\s*)[- ]?45\s*[\/／\-‐‑–—−]\s*15|ノルウェー(?:式)?(?:の|\s*)45\s*[\/／\-‐‑–—−]\s*15|45\s*[\/／\-‐‑–—−]\s*15/.test(expanded)
       ? ["repo-docs/adr/002-norwegian-method-integration.md"]
@@ -5136,6 +5139,9 @@ export async function answerQuestion(
   }
   if (historicalTopFinishQ) {
     preferredSources = ["aragyoku/winners-by-year.md"];
+  }
+  if (allTeamAveragePaceQ) {
+    preferredSources = ["out-analysis/aragyoku_all_teams_average_pace.md"];
   }
   if (historicalRankPaceQ) {
     preferredSources = ["out-analysis/aragyoku_all_teams_average_pace.md"];
@@ -5863,17 +5869,17 @@ export async function answerQuestion(
   let fromSources = retrieveBySources(preferredSources, {
     query: expanded,
     perSource:
-      multipleAthleteRecordQ || absenceRosterQ ? 1000 : directDocQ || exhaustive || isLegAthleteQuestion(expanded) || individual1500TopQ || individual3000RankQ || teamBestQ || totalMeetRecordQ || yearGenderMeetRecordQ || teamFullRecordQ || explicitTeamLegRankQ || historicalWinnerQ || winnerYearTeamQ || teamRunnerUpYearQ || legRankQuestionQ || namedLegTimeQ
+      multipleAthleteRecordQ || absenceRosterQ || allTeamAveragePaceQ ? 1000 : directDocQ || exhaustive || isLegAthleteQuestion(expanded) || individual1500TopQ || individual3000RankQ || teamBestQ || totalMeetRecordQ || yearGenderMeetRecordQ || teamFullRecordQ || explicitTeamLegRankQ || historicalWinnerQ || winnerYearTeamQ || teamRunnerUpYearQ || legRankQuestionQ || namedLegTimeQ
         || resultListQ || genericResultQ || topThreeQ || explicitThirdPlaceQ || unqualifiedSixthPlaceQ || explicitLegAwardQ || schoolPbRankQ || nagomiAmbiguousTeamLegQ || nagomiLegOrderQ || nagomiLegRankQ || nagomiResultQ || nagomiDateQ || nagomiVenueQ || kanaguriResultQ || aragyokuDateQ || aragyokuVenueQ || datedTeamResultQ || unqualifiedTeamResultQ
         ? 200
         : RETRIEVAL_BUDGET.perSource,
     maxChunks:
-      multipleAthleteRecordQ || absenceRosterQ ? 1000 : directDocQ || exhaustive || isLegAthleteQuestion(expanded) || individual1500TopQ || individual3000RankQ || teamBestQ || totalMeetRecordQ || yearGenderMeetRecordQ || teamFullRecordQ || explicitTeamLegRankQ || historicalWinnerQ || winnerYearTeamQ || teamRunnerUpYearQ || legRankQuestionQ || namedLegTimeQ
+      multipleAthleteRecordQ || absenceRosterQ || allTeamAveragePaceQ ? 1000 : directDocQ || exhaustive || isLegAthleteQuestion(expanded) || individual1500TopQ || individual3000RankQ || teamBestQ || totalMeetRecordQ || yearGenderMeetRecordQ || teamFullRecordQ || explicitTeamLegRankQ || historicalWinnerQ || winnerYearTeamQ || teamRunnerUpYearQ || legRankQuestionQ || namedLegTimeQ
         || resultListQ || genericResultQ || topThreeQ || explicitThirdPlaceQ || unqualifiedSixthPlaceQ || explicitLegAwardQ || schoolPbRankQ || nagomiAmbiguousTeamLegQ || nagomiLegOrderQ || nagomiLegRankQ || nagomiResultQ || nagomiDateQ || nagomiVenueQ || kanaguriResultQ || aragyokuDateQ || aragyokuVenueQ || datedTeamResultQ || unqualifiedTeamResultQ
         ? 200
         : RETRIEVAL_BUDGET.maxChunks,
       coverage:
-      multipleAthleteRecordQ || absenceRosterQ ? "full" : directDocQ || exhaustive || exactDatedPractice || isLegAthleteQuestion(expanded) || individual1500TopQ || individual3000RankQ || teamBestQ || totalMeetRecordQ || yearGenderMeetRecordQ || teamFullRecordQ || explicitTeamLegRankQ || historicalWinnerQ || winnerYearTeamQ || teamRunnerUpYearQ || legRankQuestionQ || namedLegTimeQ
+      multipleAthleteRecordQ || absenceRosterQ || allTeamAveragePaceQ ? "full" : directDocQ || exhaustive || exactDatedPractice || isLegAthleteQuestion(expanded) || individual1500TopQ || individual3000RankQ || teamBestQ || totalMeetRecordQ || yearGenderMeetRecordQ || teamFullRecordQ || explicitTeamLegRankQ || historicalWinnerQ || winnerYearTeamQ || teamRunnerUpYearQ || legRankQuestionQ || namedLegTimeQ
         || resultListQ || genericResultQ || topThreeQ || explicitThirdPlaceQ || unqualifiedSixthPlaceQ || explicitLegAwardQ || schoolPbRankQ || nagomiAmbiguousTeamLegQ || nagomiLegOrderQ || nagomiLegRankQ || nagomiResultQ || nagomiDateQ || nagomiVenueQ || kanaguriResultQ || aragyokuDateQ || aragyokuVenueQ || datedTeamResultQ || unqualifiedTeamResultQ
         ? "full"
       : "ranked",
@@ -6252,6 +6258,32 @@ export async function answerQuestion(
     sources.unshift("drive-text/大会/2026年度/1014-1015_荒玉中体連駅伝/概要.md");
   }
 
+  if (allTeamAveragePaceQ && !deps.llm) {
+    const year = question.match(/20\d{2}/)?.[0];
+    const gender = /女子/.test(question) ? "女子" : /男子/.test(question) ? "男子" : undefined;
+    const rows = [...new Set(
+      merged
+        .map((row) => row.chunk.text)
+        .join("\n")
+        .matchAll(/(20\d{2}年荒玉駅伝(男子|女子)\s*(\d+)位\s+[^。\n]+?平均ペースは\s*[0-9:.]+\/km[^。\n]*。)/g),
+    )]
+      .filter((match) => (!year || match[1]!.startsWith(`${year}年`)) && (!gender || match[2] === gender))
+      .sort((a, b) =>
+        Number(a[1]!.slice(0, 4)) - Number(b[1]!.slice(0, 4)) ||
+        (a[2] === b[2] ? 0 : a[2] === "男子" ? -1 : 1) ||
+        Number(a[3]) - Number(b[3]),
+      )
+      .map((match) => match[1]!);
+    const answer = rows.length > 0
+      ? `荒玉駅伝の全チーム平均ペース（${rows.length}件）:\n${rows.map((row) => `- ${row}`).join("\n")}`
+      : "全チーム平均ペースの記録が見つかりませんでした。";
+    return {
+      kind: "offline",
+      text: finalizeAnswerText(answer, question, deps, sources),
+      sources,
+    };
+  }
+
   if (historicalTopFinishQ && !deps.llm) {
     const male = [
       "2021年 菊水・荒尾四",
@@ -6281,7 +6313,7 @@ export async function answerQuestion(
     };
   }
 
-  if (historicalRankPaceQ) {
+  if (historicalRankPaceQ && !deps.llm) {
     const place = requestedHistoricalPlace(expanded);
     const gender = /女子/.test(expanded) ? "女子" : "男子";
     const pace = place
