@@ -496,6 +496,81 @@ describe("QA precision regressions", () => {
     expect(result.text).not.toContain("2:38.96");
   });
 
+  it("uses the team digest for an 800m athlete outside the PB top five", async () => {
+    const result = await ask("塚原優衣の800mPBは？");
+    expect(result.sources).toEqual([
+      "out-analysis/arato-tamana-teams/岱明中.md",
+    ]);
+    expect(result.text).toContain("塚原優衣の800mPBは2:47.47");
+    expect(result.text).not.toContain("上原優来");
+  });
+
+  it("does not substitute another athlete when no 800m row exists", async () => {
+    const result = await ask("柴尾希乃の800mPBは？");
+    expect(result.text).toContain("柴尾希乃の800m記録は、参照できる資料では確認できません");
+    expect(result.text).not.toContain("寺田向希");
+    expect(result.text).not.toContain("上原優来");
+  });
+
+  it("resolves a non-ranked 1.5km PB from the named athlete's team file", async () => {
+    const result = await ask("塚原優衣の1.5kmPBは？");
+    expect(result.sources).toEqual([
+      "out-analysis/arato-tamana-teams/岱明中.md",
+    ]);
+    expect(result.text).toContain("塚原優衣の1500mPBは5:55.33");
+  });
+
+  it("reports a missing men's 800m row instead of showing a 1500m table", async () => {
+    const result = await ask("中尾快叶の800mPBは？");
+    expect(result.text).toContain("中尾快叶の800m記録は、参照できる資料では確認できません");
+    expect(result.text).not.toContain("5:13.13");
+  });
+
+  it("uses the latest 1500m result for a PB query missing from the legacy CSV", async () => {
+    const result = await ask("中尾快叶の1500mPBは？");
+    expect(result.sources).toEqual([
+      "out-analysis/arato-tamana-teams/岱明中.md",
+    ]);
+    expect(result.text).toContain("中尾快叶の1500mPBは5:03.56");
+  });
+
+  it("preserves SB wording for an 800m query outside the PB top five", async () => {
+    const result = await ask("塚原優衣の800mSBは？");
+    expect(result.sources).toEqual([
+      "out-analysis/arato-tamana-teams/岱明中.md",
+    ]);
+    expect(result.text).toContain("塚原優衣の800mSBは2:47.47");
+    expect(result.text).not.toContain("PBは");
+  });
+
+  it("reports when a 1500m SB is absent instead of emitting a CSV excerpt", async () => {
+    const result = await ask("木村透の1500mSBは？");
+    expect(result.text).toContain("木村透の1500m記録は、参照できる資料では確認できません");
+    expect(result.text).not.toContain("寺田向希");
+  }, 15000);
+
+  it("reports when a second athlete has no indexed 1500m PB", async () => {
+    const result = await ask("柴尾希乃の1500mPBは？");
+    expect(result.text).toContain("柴尾希乃の1500m記録は、参照できる資料では確認できません");
+    expect(result.text).not.toContain("寺田向希");
+  });
+
+  it("resolves a non-ranked 1.5km SB from the team record file", async () => {
+    const result = await ask("塚原優衣の1.5kmSBは？");
+    expect(result.sources).toEqual([
+      "out-analysis/arato-tamana-teams/岱明中.md",
+    ]);
+    expect(result.text).toContain("塚原優衣の1500mSBは5:55.33");
+  });
+
+  it("answers a direct 1500m SB query for the same non-ranked athlete", async () => {
+    const result = await ask("塚原優衣の1500mSBは？");
+    expect(result.sources).toEqual([
+      "out-analysis/arato-tamana-teams/岱明中.md",
+    ]);
+    expect(result.text).toContain("塚原優衣の1500mSBは5:55.33");
+  });
+
   it("answers the date and venue for the named 玉名市合同練習会", async () => {
     const result = await ask("玉名市合同練習会はいつどこ？");
     expect(result.sources).toEqual([

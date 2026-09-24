@@ -952,7 +952,7 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
       if (match) return `${name}の3000mSBは${match[3]!.trim()}（${match[1]}位）。`;
     }
   }
-  if (/1500m|1500ｍ|1(?:[．.]5)\s*(?:km|キロ)/.test(q) && /SB|PB|ベスト/.test(q) && hasNonTeamAthleteNameHint(q)) {
+  if (/800m|800ｍ|1500m|1500ｍ|1(?:[．.]5)\s*(?:km|キロ)/.test(q) && /SB|PB|ベスト/.test(q) && hasNonTeamAthleteNameHint(q)) {
     const name = extractAthleteNameHints(q)[0];
     if (name) {
       const sources = findSourcesWithText([name], {
@@ -995,8 +995,19 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
         ).map((row) => row.chunk.text).join(" ");
         if (!womenSource.includes(name)) {
           const kind = /PB|自己ベスト|自己記録/.test(q) ? "PB" : "SB";
-          return name + "の1500m" + kind + "は" + best[1] + "（" + best[2] + "/" +
+          const distance = recordHeader.slice(4);
+          return name + "の" + distance + kind + "は" + best[1] + "（" + best[2] + "/" +
             Number(best[3]) + "/" + Number(best[4]) + "）。";
+        }
+      }
+      if (sources.length === 0) {
+        const womenSource = retrieveBySources(
+          ["out-analysis/2026_women_800m_1500m_pb_school_ranking.md"],
+          { query: name, perSource: 64, maxChunks: 64, coverage: "full" },
+        ).map((row) => row.chunk.text).join(" ");
+        if (!womenSource.includes(name)) {
+          const distance = recordHeader.slice(4);
+          return name + "の" + distance + "記録は、参照できる資料では確認できません。";
         }
       }
     }
@@ -1015,6 +1026,8 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
         new RegExp(`\\|\\s*(\\d+)\\s*\\|\\s*${escaped}\\s*\\|\\s*([^|]+?)\\s*\\|\\s*([^|]+?)\\s*\\|`),
       );
       if (match) return `${rankName}の男子1500mSBは${match[3]!.trim()}（${match[1]}位）。`;
+      const missingDistance = /800m|800ｍ/.test(q) ? "800m" : "1500m";
+      return rankName + "の" + missingDistance + "記録は、参照できる資料では確認できません。";
     }
   }
   if (/800m|800ｍ|1500m|1500ｍ|1(?:[．.]5)\s*(?:km|キロ)/.test(q) && /SB|PB|ベスト/.test(q) && hasNonTeamAthleteNameHint(q)) {
@@ -3143,7 +3156,7 @@ function boostAthleteRecordSources(query: string, baseSources: string[]): string
         return [currentWomenRanking];
       }
     }
-    if (/1500m|1500ｍ|1(?:[．.]5)\s*(?:km|キロ)/.test(q) && names.length > 0) {
+    if (/800m|800ｍ|1500m|1500ｍ|1(?:[．.]5)\s*(?:km|キロ)/.test(q) && names.length > 0) {
       const ranking = retrieveBySources([currentMen1500Ranking], {
         perSource: 64,
         maxChunks: 64,
@@ -5108,7 +5121,7 @@ export async function answerQuestion(
           coverage: "full",
         })
       : [];
-    const teamTrackSource = /1500m|1500ｍ|1(?:[．.]5)\s*(?:km|キロ)/.test(expanded)
+    const teamTrackSource = /800m|800ｍ|1500m|1500ｍ|1(?:[．.]5)\s*(?:km|キロ)/.test(expanded)
       ? names.flatMap((name) => findSourcesWithText([name], {
           prefix: "out-analysis/arato-tamana-teams/",
           limit: 4,
