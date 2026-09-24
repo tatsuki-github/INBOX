@@ -36,7 +36,26 @@ export type ReplyClient = {
     replyToken: string;
     messages: messagingApi.Message[];
   }) => Promise<unknown>;
+  showLoadingAnimation?: (args: {
+    chatId: string;
+    loadingSeconds: number;
+  }) => Promise<unknown>;
 };
+
+const LOADING_ANIMATION_SECONDS = 60;
+const LOADING_ANIMATION_REFRESH_MS = 50_000;
+
+async function showLoadingAnimation(replyClient: ReplyClient, chatId: string): Promise<void> {
+  try {
+    await replyClient.showLoadingAnimation?.({
+      chatId,
+      loadingSeconds: LOADING_ANIMATION_SECONDS,
+    });
+  } catch {
+    // A typing indicator is best-effort; it must never prevent the actual reply.
+    console.warn("LINE loading animation request failed");
+  }
+}
 
 export type WebhookHandleOptions = AnswerDeps & {
   deniedUserIds?: Set<string>;
@@ -110,7 +129,22 @@ export async function handleWebhookEvents(
 
       if (event.message?.type === "text") {
         const question = event.message.text ?? "";
-        const result = await answerQuestion(question, answerDeps);
+        const chatId = event.source?.type === "user" ? userId : undefined;
+        if (chatId && replyClient.showLoadingAnimation) {
+          await showLoadingAnimation(replyClient, chatId);
+        }
+        const refreshTimer =
+          chatId && replyClient.showLoadingAnimation
+            ? setInterval(() => {
+                void showLoadingAnimation(replyClient, chatId);
+              }, LOADING_ANIMATION_REFRESH_MS)
+            : undefined;
+        let result: Awaited<ReturnType<typeof answerQuestion>>;
+        try {
+          result = await answerQuestion(question, answerDeps);
+        } finally {
+          if (refreshTimer) clearInterval(refreshTimer);
+        }
         const text =
           result.kind === "refused" ||
           result.kind === "answered" ||
