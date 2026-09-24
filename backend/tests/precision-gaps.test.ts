@@ -3285,6 +3285,24 @@ describe("QA precision regressions", () => {
     expect(result.text).toContain("5:02.49");
   });
 
+  it.each([
+    "稗島葵音の800mから5kmまでのSBは？",
+    "稗島葵音の1500mから5kmまでのSBは？",
+    "稗島葵音の1500m〜5000mSBは？",
+    "稗島葵音の1500m～5kmのSBは？",
+    "稗島葵音の1500mから5kmの記録は？",
+    "稗島葵音の1500mから5キロまでのSBは？",
+    "南関中 稗島葵音 1500mから5km SB",
+    "稗島葵音の800m〜5kmSB",
+    "稗島葵音の800mから5000mまでのSBは？",
+    "稗島葵音の800メートルから5kmまでSBは？",
+  ])("includes 5000m in a requested middle-distance range: %s", async (question) => {
+    const result = await ask(question);
+    expect(result.sources).toEqual(["sb/中学生SB.csv"]);
+    expect(result.text).toContain("稗島葵音（南関中）");
+    expect(result.text).toContain("5000m 11:18.46");
+  });
+
   it("answers a school-context 5000m SB query", async () => {
     const result = await ask("稗島葵音（南関中）の5000m SBは？");
     expect(result.sources).toEqual(["sb/中学生SB.csv"]);

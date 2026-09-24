@@ -616,10 +616,19 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
     if (name) {
       const row = flat.match(new RegExp(`${name},([^,]+),([^,]+),([^,]+),([^,]*),([^,]*),([^,]*),([^,]*),([^,]*),([^,]*),`));
       if (row) {
-        if (/から|まで/.test(q) && /800\s*(?:m|ｍ|メートル)?/i.test(q) && /5\s*(?:km|キロ)/i.test(q)) {
-          const rangeRecords = [`800m ${row[4]}`, `1500m ${row[5]}`, `3000m ${row[6]}`, `3km ${row[8]}`, `5km ${row[9]}`]
-            .filter((value) => !/\s$/.test(value) && !/:\s*$/.test(value));
-          return `${name}（${row[1]}）の自己ベスト: ${rangeRecords.join("、")}。`;
+        const rangeStart = q.match(/(800|1[，,]?\s*500|1500|3[，,]?\s*000|3000)\s*(?:m|ｍ|メートル)?\s*(?:から|[〜～~])\s*(?:5000|5[，,]?\s*000|5\s*(?:km|キロ))/i)?.[1]
+          ?.replace(/[，,\s]/g, "");
+        if (rangeStart) {
+          const start = Number(rangeStart);
+          const rangeRecords = [
+            { meters: 800, label: "800m", value: row[4] },
+            { meters: 1500, label: "1500m", value: row[5] },
+            { meters: 3000, label: "3000m", value: row[6] },
+            { meters: 5000, label: "5000m", value: row[7] },
+            { meters: 3000, label: "3km", value: row[8] },
+            { meters: 5000, label: "5km", value: row[9] },
+          ].filter((entry) => entry.meters >= start && Boolean(entry.value));
+          return `${name}（${row[1]}）の自己ベスト: ${rangeRecords.map((entry) => `${entry.label} ${entry.value}`).join("、")}。`;
         }
         const requestedCandidates = [
           { matches: /800\s*(?:m|ｍ|メートル)?/i.test(q), label: "800m", value: row[4] },
@@ -3262,6 +3271,9 @@ function boostAthleteRecordSources(query: string, baseSources: string[]): string
     const currentMen1500Ranking = "out-analysis/2026_aragyoku_men_1500m_sb_individual_top20.md";
     const currentWomenRanking = "out-analysis/2026_women_800m_1500m_pb_school_ranking.md";
     const names = extractAthleteNameHints(q);
+    const trackRangeQ = /(?:800|1500|1[，,]\s*500|3000|3[，,]\s*000)\s*(?:m|ｍ|メートル)?/.test(q) &&
+      /(?:5000|5[，,]\s*000|5\s*(?:km|キロ))/.test(q) && /から|まで|[〜～~]/.test(q);
+    if (trackRangeQ && !/高田麻那/.test(q)) return ["sb/中学生SB.csv"];
     const trackDistancePatterns = [
       /800\s*(?:m|ｍ|メートル)?/i,
       /(?:1[，,]?\s*500|1500)\s*(?:m|ｍ|メートル)?/i,
@@ -5239,13 +5251,17 @@ export async function answerQuestion(
     const currentMen1500Ranking = "out-analysis/2026_aragyoku_men_1500m_sb_individual_top20.md";
     const currentWomenRanking = "out-analysis/2026_women_800m_1500m_pb_school_ranking.md";
     const names = extractAthleteNameHints(expanded);
+    const trackRangeQ = /(?:800|1500|1[，,]\s*500|3000|3[，,]\s*000)\s*(?:m|ｍ|メートル)?/.test(question) &&
+      /(?:5000|5[，,]\s*000|5\s*(?:km|キロ))/.test(question) && /から|まで|[〜～~]/.test(question);
     const trackDistancePatterns = [
       /800\s*(?:m|ｍ|メートル)?/i,
       /(?:1[，,]?\s*500|1500)\s*(?:m|ｍ|メートル)?/i,
       /(?:3[，,]?\s*000|3000)\s*(?:m|ｍ|メートル)?/i,
     ];
     const multipleTrackDistances = trackDistancePatterns.filter((pattern) => pattern.test(question)).length >= 2;
-    const historicalAthleteTrackSource = /800m|800ｍ|800\s*メートル|3000m|3000ｍ|3[，,]\s*000|1500m|1500ｍ|1[，,]\s*500/.test(expanded) && (/20\d{2}/.test(question) || multipleTrackDistances)
+    const historicalAthleteTrackSource = trackRangeQ && !/高田麻那/.test(question)
+      ? "sb/中学生SB.csv"
+      : /800m|800ｍ|800\s*メートル|3000m|3000ｍ|3[，,]\s*000|1500m|1500ｍ|1[，,]\s*500/.test(expanded) && (/20\d{2}/.test(question) || multipleTrackDistances)
       ? names.flatMap((name) => findSourcesWithText([name], {
           prefix: "out-analysis/arato-tamana-teams/",
           limit: 4,
