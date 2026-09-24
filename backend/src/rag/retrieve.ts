@@ -134,10 +134,11 @@ export function extractAthleteNameHints(query: string): string[] {
     const t = s.trim()
       .replace(/(?:さん|君|くん|選手)(?:の)?$/u, "")
       .replace(/(?:の|は|と|や)$/u, "");
-    if (!t || t.length > 12) return;
-    if (NON_NAME_HINTS.has(t)) return;
-    if (hints.includes(t)) return;
-    hints.push(t);
+    const name = t.replace(/^(?:の|は|と|や)+/u, "");
+    if (!name || name.length > 12) return;
+    if (NON_NAME_HINTS.has(name)) return;
+    if (hints.includes(name)) return;
+    hints.push(name);
   };
   const jp = "[\\p{Script=Han}\\p{Script=Hiragana}\\p{Script=Katakana}ー]";
   const nameTok = `(?:[A-Za-z]{2,}|${jp}{1,8})`;
@@ -145,9 +146,10 @@ export function extractAthleteNameHints(query: string): string[] {
     /(?<=[\p{Script=Han}\p{Script=Hiragana}\p{Script=Katakana}])\s+(?=[\p{Script=Han}\p{Script=Hiragana}\p{Script=Katakana}])/gu,
     "",
   );
-  const nameQ = /荒尾三中|荒尾第四中|荒尾海陽中|南関中|玉名中|天水中|岱明中|長洲中|玉陵中|玉南中|玉名附中|玉名付属中?|玉名附属|玉高附属/.test(q)
-    ? q
-    : compactNameQ;
+  const nameQ = compactNameQ
+    .replace(/荒尾第四中|荒尾海陽中|熊本大附中|玉名高校附属中|玉名附中|玉名付属中?|玉名附属|玉高附属|荒尾三中|南関中|玉名中|天水中|岱明中|長洲中|玉陵中|玉南中|玉東中|菊水中|金栗PROJECT|玉名アスリーツ|玉東クラブ|ATRC|NJAC/giu, " ")
+    .replace(/[（()）]/gu, " ")
+    .replace(/\s+/g, " ");
 
   // 「原田はなと村上葉侑の1500m」のような複数選手の列挙。
   for (const m of nameQ.matchAll(

@@ -3273,7 +3273,8 @@ function boostAthleteRecordSources(query: string, baseSources: string[]): string
     const names = extractAthleteNameHints(q);
     const trackRangeQ = /(?:800|1500|1[，,]\s*500|3000|3[，,]\s*000)\s*(?:m|ｍ|メートル)?/.test(q) &&
       /(?:5000|5[，,]\s*000|5\s*(?:km|キロ))/.test(q) && /から|まで|[〜～~]/.test(q);
-    if (trackRangeQ && !/高田麻那/.test(q)) return ["sb/中学生SB.csv"];
+    const schoolContextQ = /荒尾三中|荒尾第四中|荒尾海陽中|熊本大附中|南関中|玉名中|天水中|岱明中|長洲中|玉陵中|玉南中|玉名附中|玉名付属|玉名附属|玉高附属|人吉一中/.test(q);
+    if ((trackRangeQ || schoolContextQ) && !/高田麻那/.test(q)) return ["sb/中学生SB.csv"];
     const trackDistancePatterns = [
       /800\s*(?:m|ｍ|メートル)?/i,
       /(?:1[，,]?\s*500|1500)\s*(?:m|ｍ|メートル)?/i,
@@ -5253,13 +5254,14 @@ export async function answerQuestion(
     const names = extractAthleteNameHints(expanded);
     const trackRangeQ = /(?:800|1500|1[，,]\s*500|3000|3[，,]\s*000)\s*(?:m|ｍ|メートル)?/.test(question) &&
       /(?:5000|5[，,]\s*000|5\s*(?:km|キロ))/.test(question) && /から|まで|[〜～~]/.test(question);
+    const schoolContextQ = /荒尾三中|荒尾第四中|荒尾海陽中|熊本大附中|南関中|玉名中|天水中|岱明中|長洲中|玉陵中|玉南中|玉名附中|玉名付属|玉名附属|玉高附属|人吉一中/.test(question);
     const trackDistancePatterns = [
       /800\s*(?:m|ｍ|メートル)?/i,
       /(?:1[，,]?\s*500|1500)\s*(?:m|ｍ|メートル)?/i,
       /(?:3[，,]?\s*000|3000)\s*(?:m|ｍ|メートル)?/i,
     ];
     const multipleTrackDistances = trackDistancePatterns.filter((pattern) => pattern.test(question)).length >= 2;
-    const historicalAthleteTrackSource = trackRangeQ && !/高田麻那/.test(question)
+    const historicalAthleteTrackSource = (trackRangeQ || schoolContextQ) && !/高田麻那/.test(question)
       ? "sb/中学生SB.csv"
       : /800m|800ｍ|800\s*メートル|3000m|3000ｍ|3[，,]\s*000|1500m|1500ｍ|1[，,]\s*500/.test(expanded) && (/20\d{2}/.test(question) || multipleTrackDistances)
       ? names.flatMap((name) => findSourcesWithText([name], {
