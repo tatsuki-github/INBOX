@@ -51,6 +51,25 @@ describe("QA precision regressions", () => {
     expect(result.text).toContain("3:15.4");
   });
 
+  it.each([
+    ["男子1位の平均ペースは？", "3:13.0/km"],
+    ["男子総合1位の平均速度は？", "3:13.0/km"],
+    ["荒玉男子の2位平均ペースは？", "3:14.9/km"],
+    ["男子3位の歴代平均ペース", "3:17.1/km"],
+    ["荒玉男子4位の平均ペースは？", "3:19.4/km"],
+    ["女子総合1位の平均速度は？", "3:31.9/km"],
+    ["女子2位の歴代平均ペースは？", "3:36.4/km"],
+    ["荒玉女子3位平均ペースは？", "3:39.6/km"],
+    ["男子十位の歴代平均ペースは？", "3:29.1/km"],
+    ["男子十一位の平均ペースは？", "3:29.6/km"],
+  ])("answers a single-rank historical pace precisely: %s", async (question, pace) => {
+    const result = await ask(question);
+    expect(result.sources).toEqual(["out-analysis/aragyoku_all_teams_average_pace.md"]);
+    expect(result.text).toContain(pace);
+    expect(result.text).not.toContain("2位 | 13 |");
+    expect(result.text).not.toContain("岱明の荒玉駅伝");
+  });
+
   it("treats 平均速度 as a pace alias for year-specific top-six questions", async () => {
     const result = await ask("荒玉男子2023年1位から6位までの平均速度は？");
     expect(result.sources).toEqual(["out-analysis/aragyoku_top6_historical_average_pace.md"]);
