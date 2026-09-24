@@ -317,6 +317,24 @@ describe("QA precision regressions", () => {
     expect(result.text).not.toContain("2025年男子準優勝校: 玉陵");
   });
 
+  it.each([
+    ["2025年岱明男子は優勝校と何分差？", "+2:51"],
+    ["2025年岱明男子は優勝と何分差？", "+2:51"],
+    ["2025年岱明男子は優勝校に何分遅れ？", "+2:51"],
+    ["2025年の岱明男子、優勝タイムより何秒遅れ？", "+2:51"],
+    ["2024年岱明男子は優勝チームから何分離れていた？", "+8:37"],
+    ["2024年の岱明男子は優勝校と何秒差？", "+8:37"],
+    ["2025年荒玉駅伝男子の岱明は優勝から何分離れていた？", "+2:51"],
+    ["2025年岱明男子の優勝校との差を教えて", "+2:51"],
+    ["2024年岱明男子は優勝にどのくらい及ばなかった？", "+8:37"],
+    ["2025年岱明男子の優勝までのタイム差は？", "+2:51"],
+  ])("answers winner-gap wording from the team analysis: %s", async (question, gap) => {
+    const result = await ask(question);
+    expect(result.sources).toEqual(["out-analysis/aragyoku_2024_2025_focus_teams.md"]);
+    expect(result.text).toContain(gap);
+    expect(result.text).not.toContain("SBデータベース.csv");
+  });
+
   it("filters a 3000m SB ranking to the requested school", async () => {
     const result = await ask("玉名附中の3000mSBランキング上位は？");
     expect(result.sources).toEqual([

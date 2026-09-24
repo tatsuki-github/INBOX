@@ -130,6 +130,12 @@ function requestedSchoolAverageCount(query: string): string | undefined {
   return kanjiCounts[token] ?? String(Number(token.normalize("NFKC")));
 }
 
+function isWinnerMarginQuestion(query: string): boolean {
+  return /優勝.{0,12}(?:(?:何分|何秒|どのくらい|どれくらい).{0,5})?(?:差|遅れ|離れ|及ばなかった|及ばず)/.test(query) ||
+    /(?:何分|何秒|どのくらい|どれくらい).{0,8}優勝/.test(query) ||
+    /優勝(?:との差|差|から|まで|校との差|チームとの差|校と.{0,5}差)/.test(query);
+}
+
 function previewForOffline(text: string, question: string, maxChars?: number): string {
   const budget = maxChars ?? offlinePreviewBudget(question);
   const flat = text.replace(/\s+/g, " ");
@@ -1862,7 +1868,7 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
     return "2026年の荒玉中体連駅伝は開催予定の記録のみで、結果・順位はまだ記載されていません。";
   }
   // 「優勝との差」列を優先（大会記録ボードより focus / team の差表）
-  if (/優勝との差|優勝差|優勝から|優勝まで|離れて/.test(q)) {
+  if (isWinnerMarginQuestion(q)) {
     for (const needle of ["優勝との差", "+2:51", "+8:37", "優勝校"]) {
       const idx = flat.indexOf(needle);
       if (idx >= 0) {
@@ -3460,7 +3466,7 @@ function boostDaimingLineSources(query: string, baseSources: string[]): string[]
 
   // 「2025年岱明男子の優勝との差」は結果分析へ（地点分担 LINE ではない）
   if (
-    /優勝との差|優勝差|優勝から|優勝まで/.test(q) &&
+    isWinnerMarginQuestion(q) &&
     /20\d{2}|荒玉|駅伝|男子|女子|岱明|玉高|天水|有明|南関|菊水/.test(q)
   ) {
     return baseSources.filter((s) => !/line-chats/.test(s));
@@ -3683,11 +3689,11 @@ function boostMeetYearSources(
     }
     const focusTeamAnalysis =
       /岱明|玉名付属|玉名附属|玉高附属|天水|有明/.test(expandedQuery) &&
-      /2024|2025|前年比|深掘り|分析|何位|短縮|区間新|荒玉|優勝との差|優勝差|優勝から/.test(
+      /2024|2025|前年比|深掘り|分析|何位|短縮|区間新|荒玉/.test(
         expandedQuery,
       ) &&
       !legAwardQ;
-    const winnerMarginQ = /優勝との差|優勝差|優勝から|優勝まで|離れて/.test(expandedQuery);
+    const winnerMarginQ = isWinnerMarginQuestion(expandedQuery);
     if (focusTeamAnalysis || winnerMarginQ) {
       push("out-analysis/aragyoku_2024_2025_focus_teams.md");
     }
@@ -3710,7 +3716,7 @@ function boostMeetYearSources(
     // （区間賞・区間順位の全区間一覧とは別 — leg_awards 正本を優先）
     if (
       !legAwardQ &&
-      (/過去|歴代|順位|2024|2025|分析|優勝との差|優勝差|優勝から/.test(expandedQuery) ||
+      (/過去|歴代|順位|2024|2025|分析/.test(expandedQuery) ||
         focusTeamAnalysis ||
         winnerMarginQ ||
         legAthleteQ) &&
@@ -3875,7 +3881,7 @@ export function narrowExhaustiveSources(query: string, sources: string[]): strin
     }
     if (out.length > 0) return out;
   }
-  if (/優勝との差|前年比|深掘り|分析/.test(q) && /2024|2025|岱明|天水|有明|玉高|玉名付属/.test(q)) {
+  if ((isWinnerMarginQuestion(q) || /前年比|深掘り|分析/.test(q)) && /2024|2025|岱明|天水|有明|玉高|玉名付属/.test(q)) {
     push("out-analysis/aragyoku_2024_2025_focus_teams.md");
     return out;
   }
@@ -4761,12 +4767,12 @@ export async function answerQuestion(
   const teamWinnerMarginQ =
     /20\d{2}/.test(question) &&
     /岱明|玉名付属|玉名附属|玉高附属|天水|有明/.test(question) &&
-    /優勝差|優勝との差|総合タイム.*優勝/.test(question);
+    (isWinnerMarginQuestion(question) || /総合タイム.*優勝/.test(question));
   const genericWinnerMarginQ =
     /荒玉|駅伝/.test(expanded) &&
     /20\d{2}/.test(expanded) &&
     /男子|女子/.test(expanded) &&
-    /優勝差|優勝との差|優勝から|優勝まで|離れて/.test(expanded);
+    isWinnerMarginQuestion(expanded);
   if (teamWinnerMarginQ) {
     preferredSources = [
       preferredSources.find((s) => /aragyoku_2024_2025_focus_teams/.test(s)) ??
@@ -5021,12 +5027,13 @@ export async function answerQuestion(
     /20\d{2}/.test(expanded) &&
     /男子|女子/.test(expanded) &&
     /総合タイム|総合.*時間|タイム/.test(expanded) &&
-    /玉高附属|玉名付属|玉名附属|玉名|玉南|腹栄|岱明|天水|有明|南関|菊水|玉東|玉陵|長洲|荒尾/.test(expanded);
+    /玉高附属|玉名付属|玉名附属|玉名|玉南|腹栄|岱明|天水|有明|南関|菊水|玉東|玉陵|長洲|荒尾/.test(expanded) &&
+    !isWinnerMarginQuestion(expanded);
   const multipleAthleteRecordQ =
     /(?:と|、|・|／|\/)/.test(expanded) &&
     /800(?:m|ｍ)?|1[，,]?\s*500(?:m|ｍ)?|3[，,]?\s*000(?:m|ｍ)?|5[，,]?\s*000(?:m|ｍ)?|3\s*(?:km|キロ)|5\s*(?:km|キロ)/i.test(expanded);
   const directDocQ =
-    practiceTemplateQ || weatherOpsQ || paceCliQ || practiceMeetLoadQ || historicalTopSixPaceQ || historicalWinnerPaceQ || historicalTeamRankQ || tamanaPracticeResultQ || latestTamanaPracticeResultQ || tamanaPracticeAthleteRecordQ || latestTamanaPracticeAthleteQuestionQ || multipleAthleteRecordQ || genericPracticeResultQ || genericPracticeDetailQ || tamanaPracticeStatusQ || practiceStatusQ || kumamotoEkidenScheduleQ || schoolMeetScheduleQ || practiceParticipantQ || tamanaPracticeVenueQ || tamanaPracticeParticipantQ || legDistanceQ || schoolMeetVenueQ || historicalJuniorResultQ || relativeWinnerQ || courseEraQ || oldCourseDistanceQ || eveningPracticeScheduleQ || namedTeamTotalTimeQ || cityRecordResultQ || firstLongDistanceResultQ || secondLongDistanceResultQ || fourthLongDistanceResultQ || fifthLongDistanceResultQ || genericLongDistanceResultQ || nightMeetResultQ || juniorOlympicResultQ || urbanChampionshipResultQ || kanaguriMemorialResultQ || prefecturalChampionshipResultQ || communicationResultQ || cityChampionshipResultQ || genericWinnerMarginQ || strideCountQ || postEkidenPracticeQ || movementPracticeQ || practiceDaysQ || practiceCalendarQ || meetResultUrlQ || prefecturalMeetResultQ || prefecturalMeetScheduleQ || teamRankQ || calendarDateScheduleQ || exactMeetDateScheduleQ || genericPracticeScheduleQ || genericDaimingPracticeContentQ || schoolScheduleQ || datedPracticeMeetQ || datedPracticeContentQ || genericPracticeMeetScheduleQ || practiceVenueQ;
+    practiceTemplateQ || weatherOpsQ || paceCliQ || practiceMeetLoadQ || historicalTopSixPaceQ || historicalWinnerPaceQ || historicalTeamRankQ || tamanaPracticeResultQ || latestTamanaPracticeResultQ || tamanaPracticeAthleteRecordQ || latestTamanaPracticeAthleteQuestionQ || multipleAthleteRecordQ || genericPracticeResultQ || genericPracticeDetailQ || tamanaPracticeStatusQ || practiceStatusQ || kumamotoEkidenScheduleQ || schoolMeetScheduleQ || practiceParticipantQ || tamanaPracticeVenueQ || tamanaPracticeParticipantQ || legDistanceQ || schoolMeetVenueQ || historicalJuniorResultQ || relativeWinnerQ || courseEraQ || oldCourseDistanceQ || eveningPracticeScheduleQ || namedTeamTotalTimeQ || cityRecordResultQ || firstLongDistanceResultQ || secondLongDistanceResultQ || fourthLongDistanceResultQ || fifthLongDistanceResultQ || genericLongDistanceResultQ || nightMeetResultQ || juniorOlympicResultQ || urbanChampionshipResultQ || kanaguriMemorialResultQ || prefecturalChampionshipResultQ || communicationResultQ || cityChampionshipResultQ || teamWinnerMarginQ || genericWinnerMarginQ || strideCountQ || postEkidenPracticeQ || movementPracticeQ || practiceDaysQ || practiceCalendarQ || meetResultUrlQ || prefecturalMeetResultQ || prefecturalMeetScheduleQ || teamRankQ || calendarDateScheduleQ || exactMeetDateScheduleQ || genericPracticeScheduleQ || genericDaimingPracticeContentQ || schoolScheduleQ || datedPracticeMeetQ || datedPracticeContentQ || genericPracticeMeetScheduleQ || practiceVenueQ;
   if (practiceTemplateQ) {
     preferredSources = /norwegian-45-15|[Nn]orwegian(?:の|\s*)[- ]?45\s*[\/／\-‐‑–—−]\s*15|ノルウェー(?:式)?(?:の|\s*)45\s*[\/／\-‐‑–—−]\s*15|45\s*[\/／\-‐‑–—−]\s*15/.test(expanded)
       ? ["repo-docs/adr/002-norwegian-method-integration.md"]
@@ -5679,7 +5686,7 @@ export async function answerQuestion(
     ].find((name) => expanded.includes(name));
     if (team) preferredSources = [`out-analysis/aragyoku-teams/${team}.md`];
   }
-  if (genericWinnerMarginQ) {
+  if (teamWinnerMarginQ || genericWinnerMarginQ) {
     preferredSources = ["out-analysis/aragyoku_2024_2025_focus_teams.md"];
   }
   if (cityRecordResultQ) {
@@ -5974,6 +5981,8 @@ export async function answerQuestion(
   );
   const mergedCore = tenKmSelfBestQuestion
     ? mergedCoreRaw.filter((r) => /sb\/中学生SB\.csv(?::\d+)?$/.test(r.chunk.source))
+    : teamWinnerMarginQ || genericWinnerMarginQ
+      ? mergedCoreRaw.filter((r) => r.chunk.source.replace(/:\d+$/, "") === preferredSources[0])
     : namedAssignmentQ
     ? mergedCoreRaw.filter(
         (r) =>
@@ -6012,7 +6021,7 @@ export async function answerQuestion(
                 ? mergedCoreRaw.filter(
                     (r) => r.chunk.source.replace(/:\d+$/, "") === preferredSources[0],
                   )
-              : genericWinnerMarginQ || cityRecordResultQ
+              : cityRecordResultQ
                 ? mergedCoreRaw.filter(
                     (r) => r.chunk.source.replace(/:\d+$/, "") === preferredSources[0],
                   )
@@ -6038,6 +6047,7 @@ export async function answerQuestion(
     radius:
       exhaustive ||
       tenKmSelfBestQuestion ||
+      teamWinnerMarginQ ||
       teamFullRecordQ ||
       namedAssignmentQ ||
       farewellScheduleQ ||
@@ -6068,6 +6078,7 @@ export async function answerQuestion(
     maxExtra:
       exhaustive ||
       tenKmSelfBestQuestion ||
+      teamWinnerMarginQ ||
       teamFullRecordQ ||
       courseEraQ ||
       oldCourseDistanceQ ||
