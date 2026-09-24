@@ -2332,6 +2332,24 @@ describe("QA precision regressions", () => {
     expect(result.text).toContain("2:28.81");
   });
 
+  it.each([
+    ["女子800mで岱明の上位三人平均は？", "2:28.81"],
+    ["岱明女子800m上位三人の平均", "2:28.81"],
+    ["女子800m岱明上位３人平均", "2:28.81"],
+    ["岱明の女子800m上位3人の平均", "2:28.81"],
+    ["岱明800m女子上位三名平均", "2:28.81"],
+    ["女子800m岱明の上位五人平均", "2:32.96"],
+    ["岱明女子800m上位５人平均", "2:32.96"],
+    ["女子800m岱明上位5人の平均", "2:32.96"],
+    ["岱明の上位五名平均800m女子", "2:32.96"],
+    ["岱明女子800m上位5名の平均", "2:32.96"],
+  ])("routes school-average count spellings: %s", async (question, average) => {
+    const result = await ask(question);
+    expect(result.sources).toEqual(["out-analysis/2026_women_800m_1500m_pb_school_ranking.md"]);
+    expect(result.text).toContain(average);
+    expect(result.text).not.toContain("10kmSB参考");
+  });
+
   it("keeps a gender-after-school 800m average focused", async () => {
     const result = await ask("岱明の女子800m上位3人平均");
     expect(result.sources).toEqual(["out-analysis/2026_women_800m_1500m_pb_school_ranking.md"]);

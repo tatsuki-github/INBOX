@@ -123,6 +123,13 @@ function offlinePreviewBudget(question: string): number {
   return 320;
 }
 
+function requestedSchoolAverageCount(query: string): string | undefined {
+  const token = query.match(/上位\s*([0-9０-９三四五六]+)\s*(?:人|名)(?:の)?平均/)?.[1];
+  if (!token) return undefined;
+  const kanjiCounts: Record<string, string> = { 三: "3", 四: "4", 五: "5", 六: "6" };
+  return kanjiCounts[token] ?? String(Number(token.normalize("NFKC")));
+}
+
 function previewForOffline(text: string, question: string, maxChars?: number): string {
   const budget = maxChars ?? offlinePreviewBudget(question);
   const flat = text.replace(/\s+/g, " ");
@@ -1272,17 +1279,16 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
   // Exhaustive: keep document head / wide window (do not needle-slice away tables)
   const schoolAverageQ =
     /1500(?:m|ｍ)?|800(?:m|ｍ)?/.test(q) &&
-    /上位\s*(?:\d+|[０-９]+|[四五六])\s*人(?:の)?平均|学校別|所属別/.test(q);
+    /上位\s*(?:\d+|[０-９]+|[三四五六])\s*(?:人|名)(?:の)?平均|学校別|所属別/.test(q);
   if (isExhaustiveListQuery(q) && !schoolAverageQ && !(/なごみ/.test(q) && /優勝/.test(q))) {
     return flat.slice(0, budget);
   }
   if (
     (!/女子/.test(q) && (/男子/.test(q) || /岱明/.test(q))) &&
     /1500(?:m|ｍ)?/.test(q) &&
-    /上位\s*(?:\d+|[四四六六])\s*人(?:の)?平均/.test(q)
+    /上位\s*(?:\d+|[０-９]+|[三四五六])\s*(?:人|名)(?:の)?平均/.test(q)
   ) {
-    const countMatch = q.match(/上位\s*(\d+)\s*人(?:の)?平均/);
-    const count = countMatch?.[1] ?? (q.includes("四人") ? "4" : q.includes("六人") ? "6" : "3");
+    const count = requestedSchoolAverageCount(q) ?? "3";
     const school = /岱明/.test(q) ? "岱明中" : "";
     if (!school && count === "3") {
       return "男子1500mの学校別正本は上位4人平均で、上位3人平均は収録されていません。";
@@ -1311,12 +1317,9 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
   }
   if (
     /1500(?:m|ｍ)?|800(?:m|ｍ)?/.test(q) &&
-    /上位\s*(?:\d+|[０-９]+|[四五六])\s*人(?:の)?平均|学校別|所属別/.test(q)
+    /上位\s*(?:\d+|[０-９]+|[三四五六])\s*(?:人|名)(?:の)?平均|学校別|所属別/.test(q)
   ) {
-    const countToken = q.match(/上位\s*([0-9０-９]+|[四五六])\s*人(?:の)?平均/)?.[1];
-    const count = countToken
-      ? String(countToken === "四" ? 4 : countToken === "五" ? 5 : countToken === "六" ? 6 : Number(countToken.normalize("NFKC")))
-      : undefined;
+    const count = requestedSchoolAverageCount(q);
     const school = /玉名付属|玉名附属|玉高附属/.test(q)
           ? "玉名附中"
           : /岱明/.test(q)
@@ -2588,7 +2591,7 @@ function offlineAnswer(
       );
     const schoolPbRankLookup =
       /1500(?:m|ｍ)?|800(?:m|ｍ)?/.test(question) &&
-      /上位\s*(?:\d+|[０-９]+|[四五六])\s*人(?:の)?平均|学校別|所属別/.test(
+      /上位\s*(?:\d+|[０-９]+|[三四五六])\s*(?:人|名)(?:の)?平均|学校別|所属別/.test(
         question,
       );
     const trackLapLookup =
@@ -3356,7 +3359,7 @@ function boostAthleteRecordSources(query: string, baseSources: string[]): string
   const schoolPbRankQ =
     (/学校別|所属別/.test(q) && /ランキング|1500|800|平均/.test(q)) ||
     (/(?:800|1500)(?:m|ｍ)?/.test(q) &&
-      /上位\s*(?:\d+|[０-９]+|[四五六])\s*人(?:の)?平均|学校別|所属別/.test(q)) ||
+      /上位\s*(?:\d+|[０-９]+|[三四五六])\s*(?:人|名)(?:の)?平均|学校別|所属別/.test(q)) ||
     (/女子/.test(q) && /(?:800|1500)(?:m|ｍ)?/.test(q) && /ランキング|順位|速い|最速|一番/.test(q));
   if (schoolPbRankQ) {
     if (/800/.test(q) || /女子/.test(q)) {
@@ -3463,7 +3466,7 @@ function boostDaimingLineSources(query: string, baseSources: string[]): string[]
     return baseSources.filter((s) => !/line-chats/.test(s));
   }
   // 学校別トラック平均は LINE ではなく PB ランキングへ
-  if (/上位\s*(?:\d+|[０-９]+|[四五六])\s*人(?:の)?平均|学校別|所属別/.test(q) && /800|1500|ランキング/.test(q)) {
+  if (/上位\s*(?:\d+|[０-９]+|[三四五六])\s*(?:人|名)(?:の)?平均|学校別|所属別/.test(q) && /800|1500|ランキング/.test(q)) {
     return baseSources.filter((s) => !/line-chats/.test(s));
   }
 
@@ -5364,7 +5367,7 @@ export async function answerQuestion(
   }
   const schoolPbRankQ =
     /1500(?:m|ｍ)?|800(?:m|ｍ)?/.test(expanded) &&
-    (/上位\s*(?:\d+|[０-９]+|[四五六])\s*人(?:の)?平均|学校別|所属別/.test(
+    (/上位\s*(?:\d+|[０-９]+|[三四五六])\s*(?:人|名)(?:の)?平均|学校別|所属別/.test(
       expanded,
     ) || (/女子/.test(expanded) && /800(?:m|ｍ)?|1500(?:m|ｍ)?/.test(expanded) && /ランキング|順位|速い|最速|一番/.test(expanded)));
   if (schoolPbRankQ) {
