@@ -138,8 +138,33 @@ export function buildRecordLookupClarifyText(): string {
   ].join("\n");
 }
 
+function isUnderspecifiedMiddleSchoolSbQuestion(question: string): boolean {
+  const q = question.normalize("NFKC").trim();
+  if (!/中学生/.test(q) || !/\bSB\b|シーズンベスト/.test(q)) return false;
+  if (/とは|の意味|何の略/.test(q)) return false;
+  if (/20\d{2}|\d+\s*(?:m|km|メートル|キロ)|800|1500|3000|5000|男子|女子/.test(q)) return false;
+  const subject = q.replace(/中学生|シーズンベスト|全記録|全データ|一覧|記録|データ|SB|提示して|提示|出して|欲しい|を|は|が|に|の|で|と|も|見せて|見たい|みたい|教えて|知りたい|調べて|全部|全て|すべて|ください|？|\?|。|！|!|\s+/giu, " ");
+  return !hasAthleteNameCue(subject);
+}
+
+function buildMiddleSchoolSbClarifyText(): string {
+  return [
+    "どの選手・距離・所属の中学生SBか指定してください。",
+    "例:",
+    "・岱明中の男子1500m SB一覧は？",
+    "・内田健太の3000m SBは？",
+    "・女子800mのSB上位20人は？",
+  ].join("\n");
+}
+
 /** Match underspecified questions that should return example phrasings. */
 export function matchClarifyAnswer(question: string): ClarifyResult | null {
+  if (isUnderspecifiedMiddleSchoolSbQuestion(question)) {
+    return {
+      id: "clarify-middle-school-sb",
+      text: buildMiddleSchoolSbClarifyText(),
+    };
+  }
   if (isUnderspecifiedPersonalBestQuestion(question)) {
     return {
       id: "clarify-personal-best",

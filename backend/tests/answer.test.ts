@@ -805,6 +805,33 @@ describe("answerQuestion", () => {
     }
   });
 
+  it.each([
+    "中学生SBは？",
+    "中学生のSBを教えて",
+    "中学生SB一覧を見せて",
+    "中学生シーズンベスト一覧は？",
+    "中学生のSBデータを見せて",
+    "中学生の全SB記録は？",
+    "中学生SB記録を全部教えて",
+    "中学生SBの一覧が欲しい",
+    "中学生のシーズンベストを見たい",
+    "中学生SB全データを提示して",
+  ])("asks for SB scope instead of returning one arbitrary CSV row: %s", async (question) => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion(question, {
+      llm: null,
+      skipRouter: true,
+      defaultYear: 2026,
+    });
+    expect(result.kind).toBe("answered");
+    if (result.kind === "answered") {
+      expect(result.sources).toEqual(["clarify:clarify-middle-school-sb"]);
+      expect(result.text).toContain("どの選手・距離・所属の中学生SBか指定してください");
+      expect(result.text).not.toContain("前田萌");
+    }
+  });
+
   it("clarifies an underspecified aragyoku split-record query", async () => {
     resetRetrieverCache();
     resetKgCache();
