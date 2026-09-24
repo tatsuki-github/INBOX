@@ -571,6 +571,86 @@ describe("QA precision regressions", () => {
     expect(result.text).toContain("塚原優衣の1500mSBは5:55.33");
   });
 
+  it("treats 1500メートル as 1500m for a named SB query", async () => {
+    const result = await ask("松本空羽の1500メートルSBは？");
+    expect(result.sources).toEqual([
+      "out-analysis/arato-tamana-teams/岱明中.md",
+    ]);
+    expect(result.text).toContain("松本空羽の1500mSBは5:11.17");
+  });
+
+  it("treats 800メートル as 800m for a named PB query", async () => {
+    const result = await ask("塚原優衣の800メートルPBは？");
+    expect(result.sources).toEqual([
+      "out-analysis/arato-tamana-teams/岱明中.md",
+    ]);
+    expect(result.text).toContain("塚原優衣の800mPBは2:47.47");
+  });
+
+  it("treats 1,500m as 1500m in a named SB query", async () => {
+    const result = await ask("松本空羽の1,500mSBは？");
+    expect(result.sources).toEqual([
+      "out-analysis/arato-tamana-teams/岱明中.md",
+    ]);
+    expect(result.text).toContain("松本空羽の1500mSBは5:11.17");
+  });
+
+  it("accepts a space before メートル in an individual 1500m query", async () => {
+    const result = await ask("松本空羽の1500 メートルSBは？");
+    expect(result.sources).toEqual([
+      "out-analysis/arato-tamana-teams/岱明中.md",
+    ]);
+    expect(result.text).toContain("松本空羽の1500mSBは5:11.17");
+  });
+
+  it("accepts a space before メートル in an individual 800m query", async () => {
+    const result = await ask("塚原優衣の800 メートルPBは？");
+    expect(result.sources).toEqual([
+      "out-analysis/arato-tamana-teams/岱明中.md",
+    ]);
+    expect(result.text).toContain("塚原優衣の800mPBは2:47.47");
+  });
+
+  it("treats 3,000m as 3000m in a named SB query", async () => {
+    const result = await ask("山本哲瑠の3,000mSBは？");
+    expect(result.sources).toEqual([
+      "out-analysis/2026_aragyoku_men_3000m_sb_ranking.md",
+    ]);
+    expect(result.text).toContain("山本哲瑠の3000mSBは10:24.29");
+  });
+
+  it("accepts a space before メートル in a named 3000m query", async () => {
+    const result = await ask("山本哲瑠の3000 メートルSBは？");
+    expect(result.sources).toEqual([
+      "out-analysis/2026_aragyoku_men_3000m_sb_ranking.md",
+    ]);
+    expect(result.text).toContain("山本哲瑠の3000mSBは10:24.29");
+  });
+
+  it("accepts a space after the comma in a named 3000m query", async () => {
+    const result = await ask("山本哲瑠の3,000 mSBは？");
+    expect(result.sources).toEqual([
+      "out-analysis/2026_aragyoku_men_3000m_sb_ranking.md",
+    ]);
+    expect(result.text).toContain("山本哲瑠の3000mSBは10:24.29");
+  });
+
+  it("accepts a space before m in an individual 800m query", async () => {
+    const result = await ask("塚原優衣の800 mPBは？");
+    expect(result.sources).toEqual([
+      "out-analysis/arato-tamana-teams/岱明中.md",
+    ]);
+    expect(result.text).toContain("塚原優衣の800mPBは2:47.47");
+  });
+
+  it("accepts a space before m in an individual 1500m query", async () => {
+    const result = await ask("松本空羽の1500 mSBは？");
+    expect(result.sources).toEqual([
+      "out-analysis/arato-tamana-teams/岱明中.md",
+    ]);
+    expect(result.text).toContain("松本空羽の1500mSBは5:11.17");
+  });
+
   it("answers the date and venue for the named 玉名市合同練習会", async () => {
     const result = await ask("玉名市合同練習会はいつどこ？");
     expect(result.sources).toEqual([

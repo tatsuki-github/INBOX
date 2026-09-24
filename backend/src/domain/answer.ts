@@ -431,7 +431,7 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
     if (row) return row[0].trim();
   }
   const generic1500RankingQ =
-    /1500m|1500ｍ|1(?:[．.]5)\s*(?:km|キロ)/.test(q) &&
+    /1500\s*(?:m|ｍ|メートル)|1[，,]\s*500(?:m|ｍ|メートル)?|1(?:[．.]5)\s*(?:km|キロ)/.test(q) &&
     /荒玉地区|トップ\s*20/.test(q) &&
     /SB|トップ\s*20/.test(q) &&
     /\d+位/.test(q) &&
@@ -444,7 +444,7 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
     if (row) return `荒玉地区男子1500mSBの${rank}位は${row[1]!.trim()}（${row[2]!.trim()}）${row[3]!.trim()}。`;
   }
   const generic3000RankingQ =
-    /3000m|3000ｍ/.test(q) &&
+    /3000\s*(?:m|ｍ|メートル)|3[，,]\s*000(?:m|ｍ|メートル)?/.test(q) &&
     /荒玉地区|ランキング/.test(q) &&
     /SB|ランキング/.test(q) &&
     /\d+位/.test(q) &&
@@ -906,7 +906,7 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
   if (/なごみ/.test(q) && /区間順位|区間順/.test(q) && /[1-6]区/.test(q)) {
     return flat.slice(0, budget);
   }
-  if (/女子/.test(q) && /800m|800ｍ/.test(q) && /最速|一番速|速い/.test(q)) {
+  if (/女子/.test(q) && /800\s*(?:m|ｍ|メートル)/.test(q) && /最速|一番速|速い/.test(q)) {
     const sectionStart = flat.indexOf("## 800m・上位3人平均");
     const sectionEnd = flat.indexOf("## 800m・上位5人平均", sectionStart + 1);
     const section = sectionStart >= 0
@@ -931,7 +931,7 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
     }
   }
   if (
-    /3000m|3000ｍ/.test(q) &&
+    /3000\s*(?:m|ｍ|メートル)|3[，,]\s*000(?:m|ｍ|メートル)?/.test(q) &&
     /SB|PB|自己ベスト|自己記録|ベスト/.test(q) &&
     hasNonTeamAthleteNameHint(q)
   ) {
@@ -952,7 +952,7 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
       if (match) return `${name}の3000mSBは${match[3]!.trim()}（${match[1]}位）。`;
     }
   }
-  if (/800m|800ｍ|1500m|1500ｍ|1(?:[．.]5)\s*(?:km|キロ)/.test(q) && /SB|PB|ベスト/.test(q) && hasNonTeamAthleteNameHint(q)) {
+  if (/800\s*(?:m|ｍ|メートル)|1500\s*(?:m|ｍ|メートル)|1[，,]\s*500(?:m|ｍ|メートル)?|1(?:[．.]5)\s*(?:km|キロ)/.test(q) && /SB|PB|ベスト/.test(q) && hasNonTeamAthleteNameHint(q)) {
     const name = extractAthleteNameHints(q)[0];
     if (name) {
       const sources = findSourcesWithText([name], {
@@ -965,7 +965,7 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
         maxChunks: 64,
         coverage: "full",
       }).map((row) => row.chunk.text).join(" ").replace(/\s+/g, " ");
-      const recordHeader = /800m|800ｍ/.test(q) ? "### 800m" : "### 1500m";
+      const recordHeader = /800\s*(?:m|ｍ|メートル)/.test(q) ? "### 800m" : "### 1500m";
       const recordHeaders = [...records.matchAll(/### (800m|1500m)/g)];
       const recordSections = recordHeaders
         .map((header, index) => {
@@ -1026,14 +1026,14 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
         new RegExp(`\\|\\s*(\\d+)\\s*\\|\\s*${escaped}\\s*\\|\\s*([^|]+?)\\s*\\|\\s*([^|]+?)\\s*\\|`),
       );
       if (match) return `${rankName}の男子1500mSBは${match[3]!.trim()}（${match[1]}位）。`;
-      const missingDistance = /800m|800ｍ/.test(q) ? "800m" : "1500m";
+      const missingDistance = /800\s*(?:m|ｍ|メートル)/.test(q) ? "800m" : "1500m";
       return rankName + "の" + missingDistance + "記録は、参照できる資料では確認できません。";
     }
   }
-  if (/800m|800ｍ|1500m|1500ｍ|1(?:[．.]5)\s*(?:km|キロ)/.test(q) && /SB|PB|ベスト/.test(q) && hasNonTeamAthleteNameHint(q)) {
+  if (/800\s*(?:m|ｍ|メートル)|1500\s*(?:m|ｍ|メートル)|1[，,]\s*500(?:m|ｍ|メートル)?|1(?:[．.]5)\s*(?:km|キロ)/.test(q) && /SB|PB|ベスト/.test(q) && hasNonTeamAthleteNameHint(q)) {
     const name = extractAthleteNameHints(q)[0];
     const source = "out-analysis/2026_women_800m_1500m_pb_school_ranking.md";
-    const distance = /800m|800ｍ/.test(q) ? "800m" : "1500m";
+    const distance = /800\s*(?:m|ｍ|メートル)/.test(q) ? "800m" : "1500m";
     if (name) {
       const ranking = retrieveBySources([source], {
         query: name,
@@ -1061,7 +1061,7 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
     }
   }
   if (
-    /3000m|3000ｍ/.test(q) &&
+    /3000\s*(?:m|ｍ|メートル)|3[，,]\s*000(?:m|ｍ|メートル)?/.test(q) &&
     /SB/.test(q) &&
     /ランキング|上位/.test(q) &&
     /玉名附中|玉名付属|玉名附属|玉高附属/.test(q)
@@ -1074,7 +1074,7 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
     }
   }
   if (
-    /3000m|3000ｍ/.test(q) &&
+    /3000\s*(?:m|ｍ|メートル)|3[，,]\s*000(?:m|ｍ|メートル)?/.test(q) &&
     /SB/.test(q) &&
     /1位|ランキング|最速|一番速|速い/.test(q)
   ) {
@@ -1083,9 +1083,9 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
   }
   if (
     (!/女子/.test(q) && (/男子/.test(q) || /岱明/.test(q))) &&
-    /1500m|1500ｍ|1(?:[．.]5)\s*(?:km|キロ)|3000m|3000ｍ/.test(q) &&
+    /1500\s*(?:m|ｍ|メートル)|1[，,]\s*500(?:m|ｍ|メートル)?|1(?:[．.]5)\s*(?:km|キロ)|3000\s*(?:m|ｍ|メートル)|3[，,]\s*000(?:m|ｍ|メートル)?/.test(q) &&
     /最速|一番速|速い/.test(q) ||
-    (/男子/.test(q) && /1500m|1500ｍ|1(?:[．.]5)\s*(?:km|キロ)|3000m|3000ｍ/.test(q) && /自己ベスト/.test(q) && !/ランキング|トップ/.test(q))
+    (/男子/.test(q) && /1500\s*(?:m|ｍ|メートル)|1[，,]\s*500(?:m|ｍ|メートル)?|1(?:[．.]5)\s*(?:km|キロ)|3000\s*(?:m|ｍ|メートル)|3[，,]\s*000(?:m|ｍ|メートル)?/.test(q) && /自己ベスト/.test(q) && !/ランキング|トップ/.test(q))
   ) {
     const distance = q.match(/(1500|3000)m/)?.[1];
     const top = flat.match(/\|\s*1\s*\|\s*([^|]+)\|\s*([^|]+)\|\s*([^|]+)\|/);
@@ -2507,7 +2507,7 @@ function offlineAnswer(
         question,
       );
     const individual1500RankLookup =
-      /1500m|1500ｍ|1(?:[．.]5)\s*(?:km|キロ)/.test(question) &&
+      /1500\s*(?:m|ｍ|メートル)|1[，,]\s*500(?:m|ｍ|メートル)?|1(?:[．.]5)\s*(?:km|キロ)/.test(question) &&
       /荒玉地区|トップ\s*20/.test(question) &&
       /SB|トップ\s*20/.test(question) &&
       /\d+位/.test(question);
@@ -2602,10 +2602,10 @@ function offlineAnswer(
         question,
       );
     const women800FastestLookup =
-      /女子/.test(question) && /800m|800ｍ/.test(question) && /最速|一番速|速い/.test(question);
+      /女子/.test(question) && /800\s*(?:m|ｍ|メートル)/.test(question) && /最速|一番速|速い/.test(question);
     const individualTrackFastestLookup =
       /男子/.test(question) &&
-      /1500m|1500ｍ|1(?:[．.]5)\s*(?:km|キロ)|3000m|3000ｍ/.test(question) &&
+      /1500\s*(?:m|ｍ|メートル)|1[，,]\s*500(?:m|ｍ|メートル)?|1(?:[．.]5)\s*(?:km|キロ)|3000\s*(?:m|ｍ|メートル)|3[，,]\s*000(?:m|ｍ|メートル)?/.test(question) &&
       (/最速|一番速|速い/.test(question) || (/自己ベスト/.test(question) && !/ランキング|トップ/.test(question)));
     const kanaguriDate =
       /金栗駅伝/.test(question) &&
@@ -3114,13 +3114,13 @@ function boostAthleteRecordSources(query: string, baseSources: string[]): string
     }
   }
   if (
-    /3000m|3000ｍ/.test(q) &&
+    /3000\s*(?:m|ｍ|メートル)|3[，,]\s*000(?:m|ｍ|メートル)?/.test(q) &&
     /速い|一番|最速|ランキング|SB|自己ベスト|荒玉|何位|順位/.test(q)
   ) {
     push("out-analysis/2026_aragyoku_men_3000m_sb_ranking.md");
   }
   if (
-    /1500m|1500ｍ|1(?:[．.]5)\s*(?:km|キロ)/.test(q) &&
+    /1500\s*(?:m|ｍ|メートル)|1[，,]\s*500(?:m|ｍ|メートル)?|1(?:[．.]5)\s*(?:km|キロ)/.test(q) &&
     /トップ\s*20|ランキング|速い|一番|最速|SB|自己ベスト|荒玉|何位|順位/.test(q)
   ) {
     push("out-analysis/2026_aragyoku_men_1500m_sb_individual_top20.md");
@@ -3136,7 +3136,7 @@ function boostAthleteRecordSources(query: string, baseSources: string[]): string
     const currentMen1500Ranking = "out-analysis/2026_aragyoku_men_1500m_sb_individual_top20.md";
     const currentWomenRanking = "out-analysis/2026_women_800m_1500m_pb_school_ranking.md";
     const names = extractAthleteNameHints(q);
-    if (/3000m|3000ｍ/.test(q) && names.length > 0) {
+    if (/3000\s*(?:m|ｍ|メートル)|3[，,]\s*000(?:m|ｍ|メートル)?/.test(q) && names.length > 0) {
       const ranking = retrieveBySources([currentMen3000Ranking], {
         perSource: 64,
         maxChunks: 64,
@@ -3146,7 +3146,7 @@ function boostAthleteRecordSources(query: string, baseSources: string[]): string
         return [currentMen3000Ranking];
       }
     }
-    if (/800m|800ｍ|1500m|1500ｍ|1(?:[．.]5)\s*(?:km|キロ)/.test(q) && names.length > 0) {
+    if (/800\s*(?:m|ｍ|メートル)|1500\s*(?:m|ｍ|メートル)|1[，,]\s*500(?:m|ｍ|メートル)?|1(?:[．.]5)\s*(?:km|キロ)/.test(q) && names.length > 0) {
       const ranking = retrieveBySources([currentWomenRanking], {
         perSource: 64,
         maxChunks: 64,
@@ -3156,7 +3156,7 @@ function boostAthleteRecordSources(query: string, baseSources: string[]): string
         return [currentWomenRanking];
       }
     }
-    if (/800m|800ｍ|1500m|1500ｍ|1(?:[．.]5)\s*(?:km|キロ)/.test(q) && names.length > 0) {
+    if (/800\s*(?:m|ｍ|メートル)|1500\s*(?:m|ｍ|メートル)|1[，,]\s*500(?:m|ｍ|メートル)?|1(?:[．.]5)\s*(?:km|キロ)/.test(q) && names.length > 0) {
       const ranking = retrieveBySources([currentMen1500Ranking], {
         perSource: 64,
         maxChunks: 64,
@@ -4366,16 +4366,16 @@ export async function answerQuestion(
     ];
   }
   const individual1500TopQ =
-    /1500m|1500ｍ|1(?:[．.]5)\s*(?:km|キロ)/.test(question) &&
+    /1500\s*(?:m|ｍ|メートル)|1[，,]\s*500(?:m|ｍ|メートル)?|1(?:[．.]5)\s*(?:km|キロ)/.test(question) &&
     /速い|一番|最速|ランキング|トップ\s*20|SB|自己ベスト/.test(question) &&
     !/学校別|所属別|上位\s*\d+\s*人平均/.test(question) &&
     !(/自己ベスト|自己記録|\bSB\b|\bPB\b/i.test(question) && extractAthleteNameHints(question).length > 0);
   const individual3000TopQ =
-    /3000m|3000ｍ/.test(question) &&
+    /3000\s*(?:m|ｍ|メートル)|3[，,]\s*000(?:m|ｍ|メートル)?/.test(question) &&
     /男子/.test(question) &&
     /速い|一番|最速/.test(question);
   const individual3000RankQ =
-    /3000m|3000ｍ/.test(question) &&
+    /3000\s*(?:m|ｍ|メートル)|3[，,]\s*000(?:m|ｍ|メートル)?/.test(question) &&
     (/荒玉地区|ランキング/.test(question) &&
     /SB|ランキング/.test(question) &&
     /\d+位/.test(question) ||
@@ -5100,28 +5100,28 @@ export async function answerQuestion(
     const currentMen1500Ranking = "out-analysis/2026_aragyoku_men_1500m_sb_individual_top20.md";
     const currentWomenRanking = "out-analysis/2026_women_800m_1500m_pb_school_ranking.md";
     const names = extractAthleteNameHints(expanded);
-    const ranking = /3000m|3000ｍ/.test(expanded) && names.length > 0
+    const ranking = /3000\s*(?:m|ｍ|メートル)|3[，,]\s*000(?:m|ｍ|メートル)?/.test(expanded) && names.length > 0
       ? retrieveBySources([currentMen3000Ranking], {
           perSource: 64,
           maxChunks: 64,
           coverage: "full",
         })
       : [];
-    const womenRanking = /800m|800ｍ|1500m|1500ｍ|1(?:[．.]5)\s*(?:km|キロ)/.test(expanded) && names.length > 0
+    const womenRanking = /800\s*(?:m|ｍ|メートル)|1500\s*(?:m|ｍ|メートル)|1[，,]\s*500(?:m|ｍ|メートル)?|1(?:[．.]5)\s*(?:km|キロ)/.test(expanded) && names.length > 0
       ? retrieveBySources([currentWomenRanking], {
           perSource: 64,
           maxChunks: 64,
           coverage: "full",
         })
       : [];
-    const men1500Ranking = /1500m|1500ｍ|1(?:[．.]5)\s*(?:km|キロ)/.test(expanded) && names.length > 0
+    const men1500Ranking = /1500\s*(?:m|ｍ|メートル)|1[，,]\s*500(?:m|ｍ|メートル)?|1(?:[．.]5)\s*(?:km|キロ)/.test(expanded) && names.length > 0
       ? retrieveBySources([currentMen1500Ranking], {
           perSource: 64,
           maxChunks: 64,
           coverage: "full",
         })
       : [];
-    const teamTrackSource = /800m|800ｍ|1500m|1500ｍ|1(?:[．.]5)\s*(?:km|キロ)/.test(expanded)
+    const teamTrackSource = /800\s*(?:m|ｍ|メートル)|1500\s*(?:m|ｍ|メートル)|1[，,]\s*500(?:m|ｍ|メートル)?|1(?:[．.]5)\s*(?:km|キロ)/.test(expanded)
       ? names.flatMap((name) => findSourcesWithText([name], {
           prefix: "out-analysis/arato-tamana-teams/",
           limit: 4,
@@ -5387,14 +5387,14 @@ export async function answerQuestion(
     preferredSources = ["out-analysis/athletes/takada-mana.md"];
   }
   if (
-    /3000m|3000ｍ/.test(expanded) &&
+    /3000\s*(?:m|ｍ|メートル)|3[，,]\s*000(?:m|ｍ|メートル)?/.test(expanded) &&
     /SB/.test(expanded) &&
     /荒玉地区|1位|順位|ランキング|記録/.test(expanded)
   ) {
     preferredSources = ["out-analysis/2026_aragyoku_men_3000m_sb_ranking.md"];
   }
   if (
-    /1500m|1500ｍ|1(?:[．.]5)\s*(?:km|キロ)/.test(expanded) &&
+    /1500\s*(?:m|ｍ|メートル)|1[，,]\s*500(?:m|ｍ|メートル)?|1(?:[．.]5)\s*(?:km|キロ)/.test(expanded) &&
     /荒玉地区|トップ\s*20/.test(expanded) &&
     /SB|トップ\s*20/.test(expanded) &&
     /\d+位/.test(expanded) &&
