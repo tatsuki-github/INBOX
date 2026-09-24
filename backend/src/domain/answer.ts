@@ -4450,6 +4450,9 @@ export async function answerQuestion(
   const atrcFullRecordQ =
     /\bATRC\b|ＡＴＲＣ/.test(question) &&
     /全記録|所属選手|所属する選手|記録一覧|全選手|トラック記録|選手記録|記録.*全部/.test(question);
+  const njacFullRecordQ =
+    /\bNJAC\b/.test(question) &&
+    /全記録|所属選手|所属する選手|記録一覧|全選手|トラック記録|選手記録|記録.*全部/.test(question);
   const now = deps.now ?? new Date();
   const year = deps.defaultYear ?? currentFiscalYear(now);
   const expandedBase = expandDateQuery(question, year, now);
@@ -4528,6 +4531,13 @@ export async function answerQuestion(
     : atrcFullRecordQ
     ? {
         sources: ["out-analysis/arato-tamana-teams/ATRC.md"],
+        focus: question,
+        reason: "exact_team_record_digest",
+        via: "fallback" as const,
+      }
+    : njacFullRecordQ
+    ? {
+        sources: ["out-analysis/arato-tamana-teams/ＮＪＡＣ.md"],
         focus: question,
         reason: "exact_team_record_digest",
         via: "fallback" as const,
@@ -4947,7 +4957,7 @@ export async function answerQuestion(
   }
 
   const teamFullRecordQ =
-    kanaguriProjectFullRecordQ || atrcFullRecordQ ||
+    kanaguriProjectFullRecordQ || atrcFullRecordQ || njacFullRecordQ ||
     (/全記録|所属選手|所属する選手|記録一覧|全選手|トラック記録|選手記録/.test(expanded) &&
       /南関中|玉名中|天水中|岱明中|長洲中|玉陵中|玉南中|玉名附中|荒尾三中|荒尾第四中|荒尾海陽中/.test(
         expanded,
@@ -5981,6 +5991,9 @@ export async function answerQuestion(
   }
   if (atrcFullRecordQ) {
     preferredSources = ["out-analysis/arato-tamana-teams/ATRC.md"];
+  }
+  if (njacFullRecordQ) {
+    preferredSources = ["out-analysis/arato-tamana-teams/ＮＪＡＣ.md"];
   }
   let fromSources = retrieveBySources(preferredSources, {
     query: expanded,

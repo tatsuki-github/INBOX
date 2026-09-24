@@ -63,6 +63,25 @@ describe("QA precision regressions", () => {
   });
 
   it.each([
+    "NJACの選手の全記録",
+    "NJAC所属選手の全記録一覧を見せて",
+    "NJACの記録一覧を全部教えて",
+    "NJACに所属する選手の記録を全て提示して",
+    "NJACの全選手のトラック記録は？",
+    "NJAC選手記録を全部見せて",
+    "ＮＪＡＣの選手の全記録を教えて",
+    "NJAC所属選手の記録一覧は？",
+    "NJACの全記録一覧",
+    "NJACの選手記録をすべて教えて",
+  ])("answers NJAC full-record queries from its team digest: %s", async (question) => {
+    const result = await ask(question);
+    expect(result.sources).toEqual(["out-analysis/arato-tamana-teams/ＮＪＡＣ.md"]);
+    expect(result.text).toContain("濱北愛");
+    expect(result.text).not.toContain("sb/中学生SB.csv");
+    expect(result.text).not.toContain("池田春風");
+  });
+
+  it.each([
     "欠席者は誰？",
     "最近の欠席者は？",
     "欠席記録を見せて",
