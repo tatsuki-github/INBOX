@@ -645,6 +645,29 @@ describe("QA precision regressions", () => {
     expect(result.text).toContain(expected);
   });
 
+  it("does not answer 松野凛空's missing 800m SB with his 1500m result", async () => {
+    const result = await ask("松野凛空の800mSBは？");
+    expect(result.sources).toEqual(["out-analysis/arato-tamana-teams/岱明中.md"]);
+    expect(result.text).toContain("松野凛空の800m記録は、参照できる資料では確認できません");
+    expect(result.text).not.toContain("4:22.33");
+  });
+
+  it.each([
+    ["松野凛空の2026年800mSBは？", "松野凛空の2026年800mSBは、参照できる資料では確認できません"],
+    ["村上咲稀の800mと1500mのSBは？", "800mSBは2:20.11（2026/5/24）、1500mSBは4:53.85（2026/7/4）"],
+    ["村上咲稀の800m・1500mPBは？", "800mPBは2:20.11（2026/5/24）、1500mPBは4:53.85（2026/7/4）"],
+    ["松野凛空の800m・1500mSBは？", "800m記録は参照できる資料では確認できません、1500mSBは4:22.33（2026/7/4）"],
+    ["松野凛空の800mと1500mのPBは？", "800m記録は参照できる資料では確認できません、1500mPBは4:22.33（2026/7/4）"],
+    ["塚原優衣の800mと1500mのSBは？", "800mSBは2:47.47（2026/4/18）、1500mSBは5:55.33（2026/5/9）"],
+    ["塚原優衣の800m・1500mPBは？", "800mPBは2:47.47（2026/4/18）、1500mPBは5:55.33（2026/5/9）"],
+    ["田上颯人の800mと1500mSBは？", "800m記録は参照できる資料では確認できません、1500mSBは4:37.20（2026/7/19）"],
+    ["山本哲瑠の1500m・3000mSBは？", "1500mSBは4:30.13（2026/6/14）、3000mSBは10:24.29（2026/4/18）"],
+  ])("returns every requested track distance precisely: %s", async (question, expected) => {
+    const result = await ask(question);
+    expect(result.sources).toEqual(["out-analysis/arato-tamana-teams/岱明中.md"]);
+    expect(result.text).toContain(expected);
+  });
+
   it("does not substitute 松野凛空's 1500m result for a missing 5000m SB", async () => {
     const result = await ask("松野凛空の5000mSBは？");
     expect(result.text).toContain("松野凛空");
