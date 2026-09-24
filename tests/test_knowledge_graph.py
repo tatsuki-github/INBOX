@@ -195,6 +195,20 @@ def test_english_next_week_practice_query_uses_local_week_bounds():
     assert all("2026-09-21" <= nid.split(":")[2] <= "2026-09-27" for nid in practice_ids)
 
 
+def test_english_last_week_practice_query_uses_local_week_bounds():
+    graph = build_knowledge_graph(generated_at="2026-01-01T00:00:00Z")
+    result = query_knowledge_graph(
+        "Daimei practice last week",
+        graph=graph,
+        include_context=False,
+        top_k=30,
+        as_of_date=date(2025, 9, 24),
+    )
+    practice_ids = [n["id"] for n in result["matched_nodes"] if n["id"].startswith("entity:practice:")]
+    assert practice_ids
+    assert all("2025-09-15" <= nid.split(":")[2] <= "2025-09-21" for nid in practice_ids)
+
+
 def test_query_resolves_full_slash_date_to_explicit_year():
     graph = build_knowledge_graph(generated_at="2026-01-01T00:00:00Z")
     result = query_knowledge_graph(
@@ -205,6 +219,35 @@ def test_query_resolves_full_slash_date_to_explicit_year():
         as_of_date=date(2026, 9, 24),
     )
     assert result["matched_nodes"][0]["id"].startswith("entity:practice:2025-09-15:")
+
+
+def test_query_resolves_year_month_range_to_explicit_year():
+    graph = build_knowledge_graph(generated_at="2026-01-01T00:00:00Z")
+    result = query_knowledge_graph(
+        "2025年9月のいだてん岱明練習は？",
+        graph=graph,
+        include_context=False,
+        top_k=30,
+        as_of_date=date(2026, 9, 24),
+    )
+    practice_ids = [n["id"] for n in result["matched_nodes"] if n["id"].startswith("entity:practice:")]
+    assert practice_ids
+    assert all(nid.startswith("entity:practice:2025-09-") for nid in practice_ids)
+
+
+@pytest.mark.parametrize("question", ["2025/9のいだてん岱明練習は？", "2025-09のいだてん岱明練習は？"])
+def test_query_resolves_numeric_year_month_formats(question: str):
+    graph = build_knowledge_graph(generated_at="2026-01-01T00:00:00Z")
+    result = query_knowledge_graph(
+        question,
+        graph=graph,
+        include_context=False,
+        top_k=30,
+        as_of_date=date(2026, 9, 24),
+    )
+    practice_ids = [n["id"] for n in result["matched_nodes"] if n["id"].startswith("entity:practice:")]
+    assert practice_ids
+    assert all(nid.startswith("entity:practice:2025-09-") for nid in practice_ids)
 
 
 def test_school_event_query_does_not_return_same_day_practice_node():
@@ -221,6 +264,48 @@ def test_school_event_query_does_not_return_same_day_practice_node():
     assert "岱明中 B日課" in calendar_context["snippet"]
 
 
+def test_daily_schedule_query_includes_multiple_events_on_same_date():
+    graph = build_knowledge_graph(generated_at="2026-01-01T00:00:00Z")
+    result = query_knowledge_graph(
+        "2026-09-24の予定一覧",
+        graph=graph,
+        top_k=5,
+        context_files=1,
+    )
+    calendar_context = next(c for c in result["contexts"] if c["path"] == "input/events.2026.yaml")
+    assert "岱明中 B日課" in calendar_context["snippet"]
+    assert "いだてん岱明練習" in calendar_context["snippet"]
+
+
+def test_weekly_schedule_query_reads_full_calendar_period():
+    graph = build_knowledge_graph(generated_at="2026-01-01T00:00:00Z")
+    result = query_knowledge_graph(
+        "今週の予定一覧",
+        graph=graph,
+        top_k=5,
+        context_files=1,
+        as_of_date=date(2026, 9, 24),
+    )
+    calendar_context = next(c for c in result["contexts"] if c["path"] == "input/events.2026.yaml")
+    assert "2026-09-24" in calendar_context["snippet"]
+    assert "2026-09-25" in calendar_context["snippet"]
+    assert "いだてん岱明練習" in calendar_context["snippet"]
+
+
+def test_today_schedule_query_lists_every_same_day_event():
+    graph = build_knowledge_graph(generated_at="2026-01-01T00:00:00Z")
+    result = query_knowledge_graph(
+        "今日の予定一覧",
+        graph=graph,
+        top_k=5,
+        context_files=1,
+        as_of_date=date(2026, 9, 24),
+    )
+    calendar_context = next(c for c in result["contexts"] if c["path"] == "input/events.2026.yaml")
+    assert "岱明中 B日課" in calendar_context["snippet"]
+    assert "いだてん岱明練習" in calendar_context["snippet"]
+
+
 def test_weekday_practice_query_resolves_to_current_week_date():
     graph = build_knowledge_graph(generated_at="2026-01-01T00:00:00Z")
     result = query_knowledge_graph(
@@ -229,6 +314,18 @@ def test_weekday_practice_query_resolves_to_current_week_date():
         include_context=False,
         top_k=5,
         as_of_date=date(2026, 9, 24),
+    )
+    assert result["matched_nodes"][0]["id"].startswith("entity:practice:2026-09-24:")
+
+
+def test_next_weekday_practice_query_resolves_to_following_week():
+    graph = build_knowledge_graph(generated_at="2026-01-01T00:00:00Z")
+    result = query_knowledge_graph(
+        "来週木曜日のいだてん岱明練習は？",
+        graph=graph,
+        include_context=False,
+        top_k=5,
+        as_of_date=date(2026, 9, 17),
     )
     assert result["matched_nodes"][0]["id"].startswith("entity:practice:2026-09-24:")
 
@@ -271,6 +368,31 @@ def test_last_month_query_crosses_year_boundary_correctly():
     practice_ids = [n["id"] for n in result["matched_nodes"] if n["id"].startswith("entity:practice:")]
     assert practice_ids
     assert all(nid.startswith("entity:practice:2025-12-") for nid in practice_ids)
+
+
+def test_period_without_practice_returns_no_unrelated_fallback():
+    graph = build_knowledge_graph(generated_at="2026-01-01T00:00:00Z")
+    result = query_knowledge_graph(
+        "来月のいだてん岱明練習メニューは？",
+        graph=graph,
+        include_context=False,
+        top_k=10,
+        as_of_date=date(2026, 9, 24),
+    )
+    assert result["matched_nodes"] == []
+    assert result["refs"] == []
+
+
+def test_dated_practice_without_session_does_not_fall_back_to_another_day():
+    graph = build_knowledge_graph(generated_at="2026-01-01T00:00:00Z")
+    result = query_knowledge_graph(
+        "2026-09-25のいだてん岱明練習は？",
+        graph=graph,
+        include_context=False,
+        top_k=10,
+    )
+    assert result["matched_nodes"] == []
+    assert result["refs"] == []
 
 
 def test_date_query_context_snippet_uses_requested_calendar_entry():

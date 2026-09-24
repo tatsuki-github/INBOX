@@ -142,6 +142,18 @@ def _resolve_month_range(question: str, *, as_of_date: date | None = None) -> tu
                 break
         else:
             if not any(phrase in lowered for phrase in ("今月", "this month")):
+                explicit_year_month = re.search(r"(?<!\d)(\d{4})年\s*(1[0-2]|0?[1-9])月(?!\d|日)", question)
+                if explicit_year_month:
+                    year, month = int(explicit_year_month.group(1)), int(explicit_year_month.group(2))
+                    return date(year, month, 1), date(year + (month == 12), month % 12 + 1, 1) - timedelta(days=1)
+                slash_year_month = re.search(r"(?<!\d)(\d{4})/(1[0-2]|0?[1-9])(?![/\d])", question)
+                if slash_year_month:
+                    year, month = int(slash_year_month.group(1)), int(slash_year_month.group(2))
+                    return date(year, month, 1), date(year + (month == 12), month % 12 + 1, 1) - timedelta(days=1)
+                iso_year_month = re.search(r"(?<!\d)(\d{4})-(1[0-2]|0[1-9])(?!-\d)", question)
+                if iso_year_month:
+                    year, month = int(iso_year_month.group(1)), int(iso_year_month.group(2))
+                    return date(year, month, 1), date(year + (month == 12), month % 12 + 1, 1) - timedelta(days=1)
                 explicit = re.search(r"(?<!\d)(1[0-2]|0?[1-9])月(?!\d|日)", question)
                 if not explicit:
                     return None
@@ -296,7 +308,13 @@ def _adjacency(edges: list[dict[str, str]]) -> dict[str, list[tuple[str, str]]]:
     return adj
 
 
-def _read_neighborhood(path: Path, query: str, *, max_chars: int = 2400) -> str:
+def _read_neighborhood(
+    path: Path,
+    query: str,
+    *,
+    date_range: tuple[date, date] | None = None,
+    max_chars: int = 2400,
+) -> str:
     if not path.exists() or not path.is_file():
         return ""
     # Skip large binaries
@@ -315,28 +333,35 @@ def _read_neighborhood(path: Path, query: str, *, max_chars: int = 2400) -> str:
     requested_date = re.search(r"(?<!\d)\d{4}-\d{2}-\d{2}(?!\d)", query)
     hit_idxs = []
     date_anchored = False
-    if requested_date:
+    if date_range:
+        start_date, end_date = date_range
+        for index, line in enumerate(lines):
+            match = re.search(r"(?<!\d)(\d{4}-\d{2}-\d{2})(?!\d)", line)
+            if match and start_date <= date.fromisoformat(match.group(1)) <= end_date:
+                hit_idxs.append(index)
+        date_anchored = bool(hit_idxs)
+    elif requested_date:
         hit_idxs = [i for i, line in enumerate(lines) if requested_date.group(0) in line]
         if hit_idxs:
-            # A date may occur in several events on the same day. Prefer the
-            # date row whose surrounding event text best matches the question.
-            compact_query = re.sub(r"20\d{2}-\d{2}-\d{2}|今日|きょう|の|は|？|\s", "", query).lower()
+            calendar_list_intent = any(term in query.lower() for term in ("予定", "一覧", "カレンダー", "日程", "学校行事", "schedule"))
+            if not calendar_list_intent:
+                # A date may occur in several events on the same day. Prefer the
+                # date row whose surrounding event text best matches the question.
+                compact_query = re.sub(r"20\d{2}-\d{2}-\d{2}|今日|きょう|の|は|？|\s", "", query).lower()
 
-            def date_window_score(index: int) -> int:
-                start = index
-                while start > 0 and not lines[start].startswith("- title:"):
-                    start -= 1
-                end = index + 1
-                while end < len(lines) and not lines[end].startswith("- title:"):
-                    end += 1
-                window = "\n".join(lines[start:end]).lower()
-                token_score = sum(token in window for token in tokens)
-                phrase_score = 100 if compact_query and compact_query in re.sub(r"\s", "", window) else 0
-                return token_score + phrase_score
+                def date_window_score(index: int) -> int:
+                    start = index
+                    while start > 0 and not lines[start].startswith("- title:"):
+                        start -= 1
+                    end = index + 1
+                    while end < len(lines) and not lines[end].startswith("- title:"):
+                        end += 1
+                    window = "\n".join(lines[start:end]).lower()
+                    token_score = sum(token in window for token in tokens)
+                    phrase_score = 100 if compact_query and compact_query in re.sub(r"\s", "", window) else 0
+                    return token_score + phrase_score
 
-            hit_idxs = [
-                max(hit_idxs, key=date_window_score)
-            ]
+                hit_idxs = [max(hit_idxs, key=date_window_score)]
             date_anchored = True
     if not hit_idxs:
         hit_idxs = [
@@ -348,6 +373,20 @@ def _read_neighborhood(path: Path, query: str, *, max_chars: int = 2400) -> str:
         return text[:max_chars]
     windows: list[str] = []
     used: set[int] = set()
+    if date_range and hit_idxs:
+        max_chars = max(max_chars, 8000)
+        blocks: list[tuple[int, int]] = []
+        for idx in hit_idxs:
+            start = idx
+            while start > 0 and not lines[start].startswith("- title:"):
+                start -= 1
+            end = idx + 1
+            while end < len(lines) and not lines[end].startswith("- title:"):
+                end += 1
+            blocks.append((start, end))
+        for start, end in blocks:
+            windows.append("\n".join(lines[start:end]))
+        return "\n---\n".join(windows)[:max_chars]
     for idx in hit_idxs[:8]:
         start = max(0, idx - (8 if date_anchored else 4))
         end = min(len(lines), idx + (16 if date_anchored else 5))
@@ -396,29 +435,42 @@ def query_knowledge_graph(
     week_range = _resolve_week_range(question, as_of_date=as_of_date)
     month_range = _resolve_month_range(question, as_of_date=as_of_date)
     period_range = week_range or month_range
-    if period_range and not resolved_date:
+    period_query_resolved = bool(period_range and not resolved_date)
+    calendar_intent = any(term in question.lower() for term in ("予定", "一覧", "カレンダー", "日程", "学校行事", "schedule"))
+    if period_query_resolved:
         start, end = period_range
-        matching_week = []
-        for nid, score in scored:
-            match = re.match(r"entity:practice:(\d{4}-\d{2}-\d{2}):", nid)
-            if not match:
-                continue
-            event_date = date.fromisoformat(match.group(1))
-            if start <= event_date <= end:
-                matching_week.append((event_date, nid, score))
-        if matching_week:
-            seeds = [(nid, score) for _, nid, score in sorted(matching_week)[:top_k]]
+        seeds = []
+        if calendar_intent:
+            for year in range(start.year, end.year + 1):
+                source_id = f"source:input/events.{year}.yaml"
+                if source_id in nodes:
+                    seeds.append((source_id, 1.0))
+        else:
+            matching_week = []
+            for nid, score in scored:
+                match = re.match(r"entity:practice:(\d{4}-\d{2}-\d{2}):", nid)
+                if not match:
+                    continue
+                event_date = date.fromisoformat(match.group(1))
+                if start <= event_date <= end:
+                    matching_week.append((event_date, nid, score))
+            if matching_week:
+                seeds = [(nid, score) for _, nid, score in sorted(matching_week)[:top_k]]
+    elif resolved_date and any(term in question.lower() for term in ("予定", "一覧", "カレンダー", "日程", "学校行事", "schedule")):
+        year = resolved_date.group(0)[:4]
+        calendar_source_id = f"source:input/events.{year}.yaml"
+        seeds = [(calendar_source_id, max((score for nid, score in scored if nid == calendar_source_id), default=1.0))]
     elif resolved_date:
+        practice_intent = any(
+            term in question.lower()
+            for term in ("練習", "メニュー", "practice", "jog", "interval", "走る")
+        )
         exact_practices = [
             (nid, score)
             for nid, score in scored
             if nid.startswith(f"entity:practice:{resolved_date.group(0)}:")
         ]
         if exact_practices:
-            practice_intent = any(
-                term in question.lower()
-                for term in ("練習", "メニュー", "practice", "jog", "interval", "走る")
-            )
             if practice_intent:
                 # An exact dated practice is a better route than generic practice
                 # hints or other sessions that share the same sport vocabulary.
@@ -431,6 +483,9 @@ def query_knowledge_graph(
                     for nid, score in seeds
                     if not nid.startswith("entity:practice:")
                 ]
+        elif practice_intent:
+            seeds = []
+            period_query_resolved = True
 
     # If a specific entity matched strongly, drop broad Topic/QueryHint seeds that flood refs
     if any(nodes[nid]["type"] in {"Athlete", "Template", "Year"} and s >= 8 for nid, s in seeds):
@@ -441,7 +496,7 @@ def query_knowledge_graph(
         ] or seeds[:3]
 
     # If nothing matched, fall back to Topic nodes by crude keyword map
-    if not seeds:
+    if not seeds and not period_query_resolved:
         fallback = []
         mapping = [
             (["練習", "メニュー", "jog", "interval", "欠席"], "topic:practice"),
@@ -460,7 +515,8 @@ def query_knowledge_graph(
     selected: dict[str, float] = {nid: score for nid, score in seeds}
     frontier = list(selected.keys())
     route_rels = {"search_here", "documented_in", "mentioned_in", "see_also"}
-    for _ in range(max(0, expand_hops)):
+    exact_calendar_query = bool(calendar_intent and (resolved_date or period_query_resolved))
+    for _ in range(0 if exact_calendar_query else max(0, expand_hops)):
         nxt: list[str] = []
         for nid in frontier:
             for neighbor, rel in adj.get(nid, []):
@@ -488,7 +544,11 @@ def query_knowledge_graph(
     if include_context:
         for ref in refs[:context_files]:
             path = ROOT / ref
-            snippet = _read_neighborhood(path, search_question)
+            snippet = _read_neighborhood(
+                path,
+                search_question,
+                date_range=period_range if calendar_intent and period_query_resolved else None,
+            )
             if snippet:
                 contexts.append({"path": ref, "snippet": snippet})
 
