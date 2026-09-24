@@ -4447,6 +4447,9 @@ export async function answerQuestion(
   const kanaguriProjectFullRecordQ =
     /金栗\s*PROJECT/.test(question) &&
     /全記録|所属選手|所属する選手|記録一覧|全選手|トラック記録|選手記録|記録.*全部/.test(question);
+  const atrcFullRecordQ =
+    /\bATRC\b|ＡＴＲＣ/.test(question) &&
+    /全記録|所属選手|所属する選手|記録一覧|全選手|トラック記録|選手記録|記録.*全部/.test(question);
   const now = deps.now ?? new Date();
   const year = deps.defaultYear ?? currentFiscalYear(now);
   const expandedBase = expandDateQuery(question, year, now);
@@ -4520,6 +4523,13 @@ export async function answerQuestion(
         sources: ["notion-db/いだてん岱明生徒/rows.json"],
         focus: question,
         reason: "daiming_roster",
+        via: "fallback" as const,
+      }
+    : atrcFullRecordQ
+    ? {
+        sources: ["out-analysis/arato-tamana-teams/ATRC.md"],
+        focus: question,
+        reason: "exact_team_record_digest",
         via: "fallback" as const,
       }
     : kanaguriProjectFullRecordQ
@@ -4937,7 +4947,7 @@ export async function answerQuestion(
   }
 
   const teamFullRecordQ =
-    kanaguriProjectFullRecordQ ||
+    kanaguriProjectFullRecordQ || atrcFullRecordQ ||
     (/全記録|所属選手|所属する選手|記録一覧|全選手|トラック記録|選手記録/.test(expanded) &&
       /南関中|玉名中|天水中|岱明中|長洲中|玉陵中|玉南中|玉名附中|荒尾三中|荒尾第四中|荒尾海陽中/.test(
         expanded,
@@ -4947,6 +4957,9 @@ export async function answerQuestion(
     preferredSources = narrowExhaustiveSources(expanded, preferredSources);
   }
   if (teamFullRecordQ) {
+    if (atrcFullRecordQ) {
+      preferredSources = ["out-analysis/arato-tamana-teams/ATRC.md"];
+    }
     if (/金栗\s*PROJECT/.test(expanded)) {
       preferredSources = ["out-analysis/arato-tamana-teams/金栗PROJECT.md"];
     }
@@ -5965,6 +5978,9 @@ export async function answerQuestion(
   if (absenceRosterQ) {
     const year = question.match(/20\d{2}/)?.[0] ?? String(deps.defaultYear ?? 2026);
     preferredSources = ["calendar/events.daiming.yaml"];
+  }
+  if (atrcFullRecordQ) {
+    preferredSources = ["out-analysis/arato-tamana-teams/ATRC.md"];
   }
   let fromSources = retrieveBySources(preferredSources, {
     query: expanded,

@@ -44,6 +44,25 @@ async function askWithRouter(question: string) {
 
 describe("QA precision regressions", () => {
   it.each([
+    "ATRCの選手の全記録は？",
+    "ATRC所属選手の全記録一覧を見せて",
+    "ATRCの記録一覧を全部教えて",
+    "ATRCに所属する選手の記録を全て提示して",
+    "ATRCの全選手のトラック記録は？",
+    "ATRC選手記録を全部見せて",
+    "ＡＴＲＣの選手の全記録を教えて",
+    "ATRC所属選手の記録一覧は？",
+    "ATRCの全記録一覧",
+    "ATRCの選手記録をすべて教えて",
+  ])("answers ATRC full-record queries from its team digest: %s", async (question) => {
+    const result = await ask(question);
+    expect(result.sources).toEqual(["out-analysis/arato-tamana-teams/ATRC.md"]);
+    expect(result.text).toContain("2024年度 件数: 47");
+    expect(result.text).not.toContain("sb/中学生SB.csv");
+    expect(result.text).not.toContain("福島志帆");
+  });
+
+  it.each([
     "欠席者は誰？",
     "最近の欠席者は？",
     "欠席記録を見せて",
