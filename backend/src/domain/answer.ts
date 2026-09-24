@@ -127,6 +127,27 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
   const budget = maxChars ?? offlinePreviewBudget(question);
   const flat = text.replace(/\s+/g, " ");
   const q = question.normalize("NFKC");
+  if (/10\s*(?:km|キロ)/i.test(q) && /SB|PB|自己ベスト|自己記録|ベスト/i.test(q)) {
+    const candidateQuery = q
+      .replace(/さん|氏/gu, " ")
+      .replace(/荒尾第四中|荒尾海陽中|熊本大附中|玉名高校附属中|玉名附中|玉名付属中?|玉名附属|玉高附属|荒尾三中|南関中|玉名中|天水中|岱明中|長洲中|玉陵中|玉南中|玉東中|菊水中|金栗PROJECT|玉名アスリーツ|玉東クラブ|ATRC|NJAC|人吉一中/giu, " ")
+      .replace(/[（()）]/gu, " ")
+      .replace(/[はがのをにと]/gu, " ");
+    const nameCandidates = new Set([
+      ...extractAthleteNameHints(candidateQuery),
+      ...[...candidateQuery.matchAll(/[\p{Script=Han}\p{Script=Hiragana}\p{Script=Katakana}ー]{2,8}/gu)].map((match) => match[0]),
+    ]);
+    const kind = /PB|自己ベスト|自己記録/.test(q) ? "PB" : "SB";
+    for (const name of nameCandidates) {
+      const escaped = name.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+      const row = flat.match(new RegExp(escaped + ",([^,]+),([^,]+),([^,]+),([^,]*),([^,]*),([^,]*),([^,]*),([^,]*),([^,]*),([^,]*),"));
+      if (row) {
+        return row[10]
+          ? name + "（" + row[1] + "）の10km" + kind + "は" + row[10] + "。"
+          : name + "（" + row[1] + "）の10km記録はありません。";
+      }
+    }
+  }
   if (/高田麻那/.test(q) && /SB|PB|ベスト/.test(q)) {
     const requestedDistancesSet = new Set([...q.matchAll(/(1[，,]?\s*500|1500|3[，,]?\s*000|3000|5[，,]?\s*000|5000)\s*(?:m|ｍ|メートル)?/gi)]
       .map((match) => match[1]!.replace(/[，,\s]/g, "")));
@@ -587,7 +608,7 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
   const resultListGender = q.match(/(男子|女子)/)?.[1];
   const compactAthleteRecord =
     hasNonTeamAthleteNameHint(q) &&
-    /800\s*(?:m|ｍ|メートル)?|1[，,]?\s*500\s*(?:m|ｍ|メートル)?|3[，,]?\s*000\s*(?:m|ｍ|メートル)?|5[，,]?\s*000\s*(?:m|ｍ|メートル)?|3\s*(?:km|キロ)|5\s*(?:km|キロ)|1(?:[．.]5)\s*(?:km|キロ)/i.test(q) &&
+    /800\s*(?:m|ｍ|メートル)?|1[，,]?\s*500\s*(?:m|ｍ|メートル)?|3[，,]?\s*000\s*(?:m|ｍ|メートル)?|5[，,]?\s*000\s*(?:m|ｍ|メートル)?|3\s*(?:km|キロ)|5\s*(?:km|キロ)|10\s*(?:km|キロ)|1(?:[．.]5)\s*(?:km|キロ)/i.test(q) &&
     /秒|分|タイム|記録|ベスト|SB|PB/.test(q);
   if (/自己ベスト|自己記録|\bSB\b|\bPB\b/i.test(q) || compactAthleteRecord ||
       (hasNonTeamAthleteNameHint(q) && /ベスト/.test(q)) ||
@@ -598,23 +619,24 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
       return new RegExp(`${escaped},[^,]+,[^,]+,[^,]+,`).test(flat);
     });
     if (athleteNames.length >= 2) {
-      const distance = q.match(/(800|1[，,]?\s*500|3[，,]?\s*000|5[，,]?\s*000)\s*(?:m|ｍ|メートル)?/i)?.[1]?.replace(/[，,\s]/g, "") ??
+      const distance = q.match(/(800|1[，,]?\s*500|3[，,]?\s*000|5[，,]?\s*000|10)\s*(?:m|ｍ|メートル|km|キロ)?/i)?.[1]?.replace(/[，,\s]/g, "") ??
         (q.match(/1(?:[．.]5)\s*(?:km|キロ)/i) ? "1500" : q.match(/3(?:[．.]0)?\s*(?:km|キロ)/i) ? "3km" : q.match(/5(?:[．.]0)?\s*(?:km|キロ)/i) ? "5km" : undefined);
       const answers = athleteNames.map((athlete) => {
-        const row = flat.match(new RegExp(`${athlete},([^,]+),([^,]+),([^,]+),([^,]*),([^,]*),([^,]*),([^,]*),([^,]*),([^,]*),`));
+        const row = flat.match(new RegExp(`${athlete},([^,]+),([^,]+),([^,]+),([^,]*),([^,]*),([^,]*),([^,]*),([^,]*),([^,]*),([^,]*),`));
         if (!row) return undefined;
         if (distance) {
-          const value = distance === "800" ? row[4] : distance === "1500" ? row[5] : distance === "3000" ? row[6] : distance === "5000" ? row[7] : distance === "3km" ? row[8] : row[9];
-          return value ? `${athlete}（${row[1]}）の${distance === "3km" || distance === "5km" ? distance : `${distance}m`}自己ベストは${value}。` : `${athlete}（${row[1]}）は${distance}の記録がありません。`;
+          const value = distance === "800" ? row[4] : distance === "1500" ? row[5] : distance === "3000" ? row[6] : distance === "5000" ? row[7] : distance === "3km" ? row[8] : distance === "5km" ? row[9] : row[10];
+          const label = distance === "3km" || distance === "5km" ? distance : distance === "10" ? "10km" : `${distance}m`;
+          return value ? `${athlete}（${row[1]}）の${label}自己ベストは${value}。` : `${athlete}（${row[1]}）は${label}の記録がありません。`;
         }
-        return `${athlete}（${row[1]}）の自己ベスト: ${[`800m ${row[4]}`, `1500m ${row[5]}`, `3000m ${row[6]}`, `5000m ${row[7]}`, `3km ${row[8]}`, `5km ${row[9]}`].filter((value) => !/\s$/.test(value) && !/:\s*$/.test(value)).join("、")}。`;
+        return `${athlete}（${row[1]}）の自己ベスト: ${[`800m ${row[4]}`, `1500m ${row[5]}`, `3000m ${row[6]}`, `5000m ${row[7]}`, `3km ${row[8]}`, `5km ${row[9]}`, `10km ${row[10]}`].filter((value) => !/\s$/.test(value) && !/:\s*$/.test(value)).join("、")}。`;
       }).filter((answer): answer is string => Boolean(answer));
       if (answers.length >= 2) return answers.join(" ");
     }
     const name = extractAthleteNameHints(q).find((hint) => new RegExp(`${hint.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")},[^,]+,[^,]+,[^,]+,`).test(flat)) ??
       extractAthleteNameHints(q)[0] ?? q.match(/[\p{Script=Han}]{2,8}/u)?.[0];
     if (name) {
-      const row = flat.match(new RegExp(`${name},([^,]+),([^,]+),([^,]+),([^,]*),([^,]*),([^,]*),([^,]*),([^,]*),([^,]*),`));
+      const row = flat.match(new RegExp(`${name},([^,]+),([^,]+),([^,]+),([^,]*),([^,]*),([^,]*),([^,]*),([^,]*),([^,]*),([^,]*),`));
       if (row) {
         const rangeStart = q.match(/(800|1[，,]?\s*500|1500|3[，,]?\s*000|3000)\s*(?:m|ｍ|メートル)?\s*(?:から|[〜～~])\s*(?:5000|5[，,]?\s*000|5\s*(?:km|キロ))/i)?.[1]
           ?.replace(/[，,\s]/g, "");
@@ -637,19 +659,21 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
           { matches: /5[，,]?\s*000\s*(?:m|ｍ|メートル)?/i.test(q), label: "5000m", value: row[7] },
           { matches: /3\s*(?:km|キロ)/i.test(q), label: "3km", value: row[8] },
           { matches: /5\s*(?:km|キロ)/i.test(q), label: "5km", value: row[9] },
+          { matches: /10\s*(?:km|キロ)/i.test(q), label: "10km", value: row[10] },
         ];
         const requested = requestedCandidates.filter((entry): entry is { matches: true; label: string; value: string } => entry.matches && Boolean(entry.value));
         if (requestedCandidates.filter((entry) => entry.matches).length >= 2) {
           return `${name}（${row[1]}）の自己ベスト: ${requested.map((entry) => `${entry.label} ${entry.value}`).join("、")}。`;
         }
-        const distance = q.match(/(800|1[，,]?\s*500|3[，,]?\s*000|5[，,]?\s*000)\s*(?:m|ｍ|メートル)?/i)?.[1]?.replace(/[，,\s]/g, "") ??
+        const distance = q.match(/(800|1[，,]?\s*500|3[，,]?\s*000|5[，,]?\s*000|10)\s*(?:m|ｍ|メートル|km|キロ)?/i)?.[1]?.replace(/[，,\s]/g, "") ??
           (q.match(/1(?:[．.]5)\s*(?:km|キロ)/i) ? "1500" : q.match(/3(?:[．.]0)?\s*(?:km|キロ)/i) ? "3km" : q.match(/5(?:[．.]0)?\s*(?:km|キロ)/i) ? "5km" : undefined);
         if (distance) {
-          const value = distance === "800" ? row[4] : distance === "1500" ? row[5] : distance === "3000" ? row[6] : distance === "5000" ? row[7] : distance === "3km" ? row[8] : row[9];
-          if (value) return `${name}（${row[1]}）の${distance === "3km" || distance === "5km" ? distance : `${distance}m`}自己ベストは${value}。`;
-          return name + "（" + row[1] + "）の" + (distance === "3km" || distance === "5km" ? distance : distance + "m") + "記録はありません。";
+          const value = distance === "800" ? row[4] : distance === "1500" ? row[5] : distance === "3000" ? row[6] : distance === "5000" ? row[7] : distance === "3km" ? row[8] : distance === "5km" ? row[9] : row[10];
+          const label = distance === "3km" || distance === "5km" ? distance : distance === "10" ? "10km" : distance + "m";
+          if (value) return `${name}（${row[1]}）の${label}自己ベストは${value}。`;
+          return name + "（" + row[1] + "）の" + label + "記録はありません。";
         }
-        const records = [`800m ${row[4]}`, `1500m ${row[5]}`, `3000m ${row[6]}`, `5000m ${row[7]}`, `3km ${row[8]}`, `5km ${row[9]}`].filter((value) => !/\s$/.test(value) && !/:\s*$/.test(value));
+        const records = [`800m ${row[4]}`, `1500m ${row[5]}`, `3000m ${row[6]}`, `5000m ${row[7]}`, `3km ${row[8]}`, `5km ${row[9]}`, `10km ${row[10]}`].filter((value) => !/\s$/.test(value) && !/:\s*$/.test(value));
         return `${name}（${row[1]}）の自己ベスト: ${records.join("、")}。`;
       }
     }
@@ -3248,6 +3272,9 @@ function boostAthleteRecordSources(query: string, baseSources: string[]): string
       }
     }
   }
+  if (/10\s*(?:km|キロ)/i.test(q) && /SB|PB|自己ベスト|自己記録|ベスト/i.test(q) && /[\p{Script=Han}]{2,}/u.test(q)) {
+    return ["sb/中学生SB.csv"];
+  }
   if (
     /3000\s*(?:m|ｍ|メートル)|3[，,]\s*000(?:m|ｍ|メートル)?/.test(q) &&
     /速い|一番|最速|ランキング|SB|自己ベスト|荒玉|何位|順位/.test(q)
@@ -5240,12 +5267,20 @@ export async function answerQuestion(
     ].find((name) => question.includes(name));
     if (team) preferredSources = ["out-analysis/aragyoku-teams/" + team + ".md"];
   }
+  const tenKmNameQuestion = question.replace(/さん|氏/gu, " ");
+  const tenKmSubject = tenKmNameQuestion
+    .replace(/荒尾第四中|荒尾海陽中|熊本大附中|玉名高校附属中|玉名附中|玉名付属中?|玉名附属|玉高附属|荒尾三中|南関中|玉名中|天水中|岱明中|長洲中|玉陵中|玉南中|玉東中|菊水中|金栗PROJECT|玉名アスリーツ|玉東クラブ|ATRC|NJAC|人吉一中/giu, " ")
+    .replace(/[（()）]/gu, " ");
+  const tenKmSelfBestQuestion = /10\s*(?:km|キロ)/i.test(question) &&
+    /SB|PB|自己ベスト|自己記録|ベスト/i.test(question) &&
+    (extractAthleteNameHints(tenKmNameQuestion).length > 0 ||
+      /[\p{Script=Han}\p{Script=Hiragana}\p{Script=Katakana}ー]{2,8}/u.test(tenKmSubject));
   const namedSelfBestQ =
     (/自己ベスト|自己記録|SB|PB|ＳＢ|ＰＢ|ベスト|記録|タイム/i.test(expanded) ||
       (hasNonTeamAthleteNameHint(expanded) &&
         /800(?:m|ｍ)?|1500(?:m|ｍ)?|3000(?:m|ｍ)?|5000(?:m|ｍ)?|3\s*km|5\s*km/.test(expanded) &&
         /秒|分|タイム|記録|ベスト/.test(expanded))) &&
-    hasNonTeamAthleteNameHint(expanded) &&
+    (hasNonTeamAthleteNameHint(expanded) || tenKmSelfBestQuestion) &&
     !/荒玉|駅伝|平均|ペース|区間|大会|結果|練習会|所属選手/.test(expanded);
   if (namedSelfBestQ && !namedSchoolList && !namedSchoolSbList) {
     const currentMen3000Ranking = "out-analysis/2026_aragyoku_men_3000m_sb_ranking.md";
@@ -5254,6 +5289,7 @@ export async function answerQuestion(
     const names = extractAthleteNameHints(expanded);
     const trackRangeQ = /(?:800|1500|1[，,]\s*500|3000|3[，,]\s*000)\s*(?:m|ｍ|メートル)?/.test(question) &&
       /(?:5000|5[，,]\s*000|5\s*(?:km|キロ))/.test(question) && /から|まで|[〜～~]/.test(question);
+    const tenKmSelfBestQ = /10\s*(?:km|キロ)/i.test(question) && /SB|PB|自己ベスト|自己記録|ベスト/i.test(question) && extractAthleteNameHints(question).length > 0;
     const schoolContextQ = /荒尾三中|荒尾第四中|荒尾海陽中|熊本大附中|南関中|玉名中|天水中|岱明中|長洲中|玉陵中|玉南中|玉名附中|玉名付属|玉名附属|玉高附属|人吉一中/.test(question);
     const trackDistancePatterns = [
       /800\s*(?:m|ｍ|メートル)?/i,
@@ -5261,7 +5297,9 @@ export async function answerQuestion(
       /(?:3[，,]?\s*000|3000)\s*(?:m|ｍ|メートル)?/i,
     ];
     const multipleTrackDistances = trackDistancePatterns.filter((pattern) => pattern.test(question)).length >= 2;
-    const historicalAthleteTrackSource = (trackRangeQ || schoolContextQ) && !/高田麻那/.test(question)
+    const historicalAthleteTrackSource = tenKmSelfBestQ
+      ? "sb/中学生SB.csv"
+      : (trackRangeQ || schoolContextQ) && !/高田麻那/.test(question)
       ? "sb/中学生SB.csv"
       : /800m|800ｍ|800\s*メートル|3000m|3000ｍ|3[，,]\s*000|1500m|1500ｍ|1[，,]\s*500/.test(expanded) && (/20\d{2}/.test(question) || multipleTrackDistances)
       ? names.flatMap((name) => findSourcesWithText([name], {
@@ -5372,6 +5410,9 @@ export async function answerQuestion(
   }
   if (datedPracticeContentQ) {
     preferredSources = ["calendar/events.daiming.yaml"];
+  }
+  if (/10\s*(?:km|キロ)/i.test(question) && /SB|PB|自己ベスト|自己記録|ベスト/i.test(question) && /[\p{Script=Han}]{2,}/u.test(question)) {
+    preferredSources = ["sb/中学生SB.csv"];
   }
   if (legDistanceQ) {
     preferredSources = ["out-analysis/line-chats/daiming-staff.md"];
@@ -5724,6 +5765,26 @@ export async function answerQuestion(
     );
     fromSources = [...fromSources, ...targetedAthleteChunks];
   }
+  if (tenKmSelfBestQuestion) {
+    const tenKmQueryNames = question
+      .replace(/さん|氏/gu, " ")
+      .replace(/荒尾第四中|荒尾海陽中|熊本大附中|玉名高校附属中|玉名附中|玉名付属中?|玉名附属|玉高附属|荒尾三中|南関中|玉名中|天水中|岱明中|長洲中|玉陵中|玉南中|玉東中|菊水中|金栗PROJECT|玉名アスリーツ|玉東クラブ|ATRC|NJAC|人吉一中/giu, " ")
+      .replace(/[（()）はがのをにと]/gu, " ");
+    const names = [...new Set([
+      ...extractAthleteNameHints(question.replace(/さん|氏/gu, " ")),
+      ...[...tenKmQueryNames.matchAll(/[\p{Script=Han}\p{Script=Hiragana}\p{Script=Katakana}ー]{2,8}/gu)].map((match) => match[0]),
+    ])];
+    const csvRow = fromSources.flatMap((row) => row.chunk.text.split(/\r?\n/)).find((line) => {
+      const athlete = names.find((name) => line.startsWith(name + ","));
+      return Boolean(athlete && line.split(",").length >= 11);
+    });
+    if (csvRow) {
+      const sourceRow = fromSources.find((row) => row.chunk.text.includes(csvRow));
+      if (sourceRow) {
+        fromSources = [{ ...sourceRow, chunk: { ...sourceRow.chunk, text: csvRow } }];
+      }
+    }
+  }
   const retrieve = deps.retrieve ?? retrieveContext;
   // Exhaustive: preferred digest coverage alone — BM25 OCR/ADR filler drowns the list
   // Race-leg questions already have a dedicated team/transcript route. A
@@ -5738,6 +5799,7 @@ export async function answerQuestion(
     namedSchoolList ||
     yearGenderMeetRecordQ ||
     namedSelfBestQ ||
+    tenKmSelfBestQuestion ||
     staffOpsQ ||
     namedAssignmentQ ||
     matSizeQ ||
@@ -5907,7 +5969,9 @@ export async function answerQuestion(
         isLegAthleteQuestion(expanded),
     },
   );
-  const mergedCore = namedAssignmentQ
+  const mergedCore = tenKmSelfBestQuestion
+    ? mergedCoreRaw.filter((r) => /sb\/中学生SB\.csv(?::\d+)?$/.test(r.chunk.source))
+    : namedAssignmentQ
     ? mergedCoreRaw.filter(
         (r) =>
           /daiming-staff\.md$/.test(r.chunk.source) &&
@@ -5970,6 +6034,7 @@ export async function answerQuestion(
   const withNeighbors = expandWithNeighbors(mergedCore, {
     radius:
       exhaustive ||
+      tenKmSelfBestQuestion ||
       teamFullRecordQ ||
       namedAssignmentQ ||
       farewellScheduleQ ||
@@ -5999,6 +6064,7 @@ export async function answerQuestion(
         : RETRIEVAL_BUDGET.neighborRadius,
     maxExtra:
       exhaustive ||
+      tenKmSelfBestQuestion ||
       teamFullRecordQ ||
       courseEraQ ||
       oldCourseDistanceQ ||
@@ -6040,6 +6106,15 @@ export async function answerQuestion(
     !sources.includes("drive-text/大会/2026年度/1014-1015_荒玉中体連駅伝/概要.md")
   ) {
     sources.unshift("drive-text/大会/2026年度/1014-1015_荒玉中体連駅伝/概要.md");
+  }
+
+  if (tenKmSelfBestQuestion) {
+    const answer = previewForOffline(merged.map((row) => row.chunk.text).join("\n"), question);
+    return {
+      kind: "offline",
+      text: finalizeAnswerText(answer, question, deps, sources),
+      sources,
+    };
   }
 
   if (!deps.llm) {

@@ -3327,6 +3327,24 @@ describe("QA precision regressions", () => {
     expect(result.text).toContain("11:18.46");
   });
 
+  it.each([
+    ["稗島葵音の10kmSBは？", "稗島葵音", "南関中"],
+    ["稗島葵音の10 km SBは？", "稗島葵音", "南関中"],
+    ["稗島葵音の10キロSBは？", "稗島葵音", "南関中"],
+    ["稗島葵音（南関中）の10kmSBは？", "稗島葵音", "南関中"],
+    ["稗島葵音さん（南関中）の10kmPBは？", "稗島葵音", "南関中"],
+    ["南関中の稗島葵音10kmPBは？", "稗島葵音", "南関中"],
+    ["稗島葵音の10キロメートル自己ベストは？", "稗島葵音", "南関中"],
+    ["税所由羽（人吉一中）の10kmSBは？", "税所由羽", "人吉一中"],
+    ["江口大尊（荒尾三中）の10kmSBは？", "江口大尊", "荒尾三中"],
+    ["南関中 稗島葵音 10kmSB", "稗島葵音", "南関中"],
+  ])("reports an empty 10km SB field as missing: %s", async (question, athlete, team) => {
+    const result = await ask(question);
+    expect(result.sources[0]).toBe("sb/中学生SB.csv");
+    expect(result.text).toContain(`${athlete}（${team}）の10km記録はありません`);
+    expect(result.text).not.toContain("名前,所属,性別");
+  });
+
   it("answers a compact 1500m SB query for the athlete", async () => {
     const result = await ask("稗島葵音 南関中 1500mSB");
     expect(result.sources).toEqual(["sb/中学生SB.csv"]);
