@@ -239,7 +239,7 @@ def render_pdf(reports: list[tuple[dict, list[dict], list[float | None], list[di
     from reportlab.lib.units import mm
     from reportlab.pdfbase import pdfmetrics
     from reportlab.pdfbase.ttfonts import TTFont
-    from reportlab.platypus import KeepTogether, Paragraph, SimpleDocTemplate, Spacer, Table, TableStyle
+    from reportlab.platypus import Flowable, KeepTogether, PageBreak, Paragraph, SimpleDocTemplate, Spacer, Table, TableStyle
 
     font_name = "NotoSansJP"
     font_path = ROOT / "assets/fonts/NotoSansJP-Regular.ttf"
@@ -280,6 +280,97 @@ def render_pdf(reports: list[tuple[dict, list[dict], list[float | None], list[di
         canvas.drawString(9 * mm, 5 * mm, "2026年度SBによる参考予想 / 青色のSB記録をクリックすると記録掲載大会へ移動")
         canvas.drawRightString(landscape(A4)[0] - 9 * mm, 5 * mm, f"{doc.page}")
         canvas.restoreState()
+
+    class RankMovementChart(Flowable):
+        """各区終了時の通過順位を全チーム分重ねて描く。"""
+
+        def __init__(self, teams: list[dict], medians: list[float | None], n_legs: int):
+            super().__init__()
+            self.teams = teams
+            self.medians = medians
+            self.n_legs = n_legs
+            self.height = 126 * mm
+            self.has_taimei = any("岱明中" in team["team"] for team in teams)
+
+        def wrap(self, avail_width, avail_height):
+            self.width = avail_width
+            return avail_width, self.height
+
+        def draw(self):
+            c = self.canv
+            n_teams = len(self.teams)
+            left, right, bottom, top = 13 * mm, 12 * mm, 15 * mm, self.height - 5 * mm
+            plot_w, plot_h = self.width - left - right, top - bottom
+
+            # 欠測区間は部門中央値で補完し、本文の通過順位と同じ母集団で順位化。
+            ranks_by_leg: list[list[int | None]] = []
+            for leg in range(1, self.n_legs + 1):
+                cum_values = [
+                    sum(team["preds"][i] if team["preds"][i] is not None else self.medians[i] or 0 for i in range(leg))
+                    for team in self.teams
+                ]
+                ranks_by_leg.append(rank_values(cum_values))
+
+            c.saveState()
+            c.setStrokeColor(colors.HexColor("#D8DEE8"))
+            c.setLineWidth(0.35)
+            tick_step = 1 if n_teams <= 16 else (2 if n_teams <= 32 else 5)
+            ticks = list(range(1, n_teams + 1, tick_step))
+            if n_teams not in ticks:
+                ticks.append(n_teams)
+            for rank in ticks:
+                y = top - (rank - 1) * plot_h / max(n_teams - 1, 1)
+                c.line(left, y, left + plot_w, y)
+                c.setFillColor(colors.HexColor("#475467"))
+                c.setFont(font_name, 6.5)
+                c.drawRightString(left - 2 * mm, y - 2, str(rank))
+            c.setStrokeColor(colors.HexColor("#667085"))
+            c.setLineWidth(0.7)
+            c.line(left, bottom, left, top)
+            c.line(left, bottom, left + plot_w, bottom)
+
+            x_positions = [left + i * plot_w / max(self.n_legs - 1, 1) for i in range(self.n_legs)]
+            for leg, x in enumerate(x_positions, 1):
+                c.setFillColor(colors.HexColor("#475467"))
+                c.setFont(font_name, 7)
+                c.drawCentredString(x, bottom - 5 * mm, f"{leg}区終了")
+
+            # 全チームを淡色で示し、岱明中の推移を太線で強調。
+            for team_idx, team in enumerate(self.teams):
+                is_taimei = "岱明中" in team["team"]
+                c.setStrokeColor(colors.HexColor("#C3CBD6") if not is_taimei else colors.HexColor("#D92D20"))
+                c.setFillColor(colors.HexColor("#98A2B3") if not is_taimei else colors.HexColor("#D92D20"))
+                c.setLineWidth(0.55 if not is_taimei else 2.1)
+                points = []
+                for leg_idx in range(self.n_legs):
+                    rank = ranks_by_leg[leg_idx][team_idx]
+                    if rank is None:
+                        continue
+                    x = x_positions[leg_idx]
+                    y = top - (rank - 1) * plot_h / max(n_teams - 1, 1)
+                    points.append((x, y, rank))
+                for a, b in zip(points, points[1:]):
+                    c.line(a[0], a[1], b[0], b[1])
+                for x, y, rank in points:
+                    c.circle(x, y, 1.3 if is_taimei else 0.75, stroke=0, fill=1)
+                    if is_taimei:
+                        c.setFont(font_name, 7)
+                        label_y = y + (2.5 * mm if rank > 1 else -4 * mm)
+                        c.drawCentredString(x, label_y, str(rank))
+
+            # 簡潔な凡例と順位軸説明。
+            if self.has_taimei:
+                legend_y = self.height - 1 * mm
+                c.setStrokeColor(colors.HexColor("#D92D20"))
+                c.setLineWidth(2.1)
+                c.line(self.width - 36 * mm, legend_y, self.width - 29 * mm, legend_y)
+                c.setFillColor(colors.HexColor("#344054"))
+                c.setFont(font_name, 7)
+                c.drawString(self.width - 27 * mm, legend_y - 2.5, "岱明中")
+            c.setFillColor(colors.HexColor("#667085"))
+            c.setFont(font_name, 6.5)
+            c.drawString(0, self.height - 2 * mm, "通過順位（上ほど上位）")
+            c.restoreState()
 
     story: list[Any] = [para("第3回 熊本県ジュニア駅伝 2026年度SB・区間順位予想", title_style),
                         para("SB基準日 2026-09-24 / 大会日 2026-09-26。男子は3000m実測SBが1500m換算予想より30秒以上遅い場合に1500m換算を採用。SB記録セルのリンク先は各記録の掲載大会ページです。", body_style),
@@ -329,6 +420,18 @@ def render_pdf(reports: list[tuple[dict, list[dict], list[float | None], list[di
             ("TOPPADDING", (0, 0), (-1, -1), 1.5), ("BOTTOMPADDING", (0, 0), (-1, -1), 1.5),
         ]))
         story.append(complete)
+        chart = RankMovementChart(teams, medians, n_legs)
+        chart_note = "各区終了時の通過順位を折れ線で表示。欠測SBは区間中央値で補完。"
+        if chart.has_taimei:
+            chart_note += "岱明中を赤線で強調しています。"
+        story.extend([
+            PageBreak(),
+            para(f"{gender} {division}｜通過順位の変動", section_style),
+            para(chart_note, body_style),
+            Spacer(1, 3 * mm),
+            chart,
+            PageBreak(),
+        ])
         story.append(para("区間別詳細（SB記録クリックで掲載大会へ）", team_style))
         for team in teams:
             rank = f"予想{team['rank_ref']}位" if team.get("rank_ref") else "総合順位対象外"
