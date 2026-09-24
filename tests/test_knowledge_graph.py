@@ -89,6 +89,26 @@ def test_query_resolves_tomorrow_to_japan_calendar_date():
     assert result["matched_nodes"][0]["id"].startswith("entity:practice:2026-09-24:")
 
 
+@pytest.mark.parametrize(
+    ("question", "reference_date"),
+    [
+        ("today Daimei practice", date(2026, 9, 24)),
+        ("yesterday Daimei practice", date(2026, 9, 25)),
+        ("tomorrow Daimei practice", date(2026, 9, 23)),
+    ],
+)
+def test_english_relative_day_queries_resolve_to_exact_session(question: str, reference_date: date):
+    graph = build_knowledge_graph(generated_at="2026-01-01T00:00:00Z")
+    result = query_knowledge_graph(
+        question,
+        graph=graph,
+        include_context=False,
+        top_k=5,
+        as_of_date=reference_date,
+    )
+    assert result["matched_nodes"][0]["id"].startswith("entity:practice:2026-09-24:")
+
+
 def test_query_resolves_japanese_month_day_without_year():
     graph = build_knowledge_graph(generated_at="2026-01-01T00:00:00Z")
     result = query_knowledge_graph(
@@ -195,6 +215,20 @@ def test_english_next_week_practice_query_uses_local_week_bounds():
     assert all("2026-09-21" <= nid.split(":")[2] <= "2026-09-27" for nid in practice_ids)
 
 
+def test_english_this_week_practice_query_uses_local_week_bounds():
+    graph = build_knowledge_graph(generated_at="2026-01-01T00:00:00Z")
+    result = query_knowledge_graph(
+        "Daimei practice this week",
+        graph=graph,
+        include_context=False,
+        top_k=30,
+        as_of_date=date(2026, 9, 24),
+    )
+    practice_ids = [n["id"] for n in result["matched_nodes"] if n["id"].startswith("entity:practice:")]
+    assert any(nid.startswith("entity:practice:2026-09-24:") for nid in practice_ids)
+    assert all("2026-09-21" <= nid.split(":")[2] <= "2026-09-27" for nid in practice_ids)
+
+
 def test_english_last_week_practice_query_uses_local_week_bounds():
     graph = build_knowledge_graph(generated_at="2026-01-01T00:00:00Z")
     result = query_knowledge_graph(
@@ -235,6 +269,18 @@ def test_query_resolves_year_month_range_to_explicit_year():
     assert all(nid.startswith("entity:practice:2025-09-") for nid in practice_ids)
 
 
+def test_query_normalizes_fullwidth_date_digits():
+    graph = build_knowledge_graph(generated_at="2026-01-01T00:00:00Z")
+    result = query_knowledge_graph(
+        "２０２６年９月２４日のいだてん岱明練習は？",
+        graph=graph,
+        include_context=False,
+        top_k=5,
+        as_of_date=date(2026, 9, 24),
+    )
+    assert result["matched_nodes"][0]["id"].startswith("entity:practice:2026-09-24:")
+
+
 @pytest.mark.parametrize("question", ["2025/9のいだてん岱明練習は？", "2025-09のいだてん岱明練習は？"])
 def test_query_resolves_numeric_year_month_formats(question: str):
     graph = build_knowledge_graph(generated_at="2026-01-01T00:00:00Z")
@@ -248,6 +294,63 @@ def test_query_resolves_numeric_year_month_formats(question: str):
     practice_ids = [n["id"] for n in result["matched_nodes"] if n["id"].startswith("entity:practice:")]
     assert practice_ids
     assert all(nid.startswith("entity:practice:2025-09-") for nid in practice_ids)
+
+
+def test_fiscal_year_month_query_uses_april_to_march_calendar():
+    graph = build_knowledge_graph(generated_at="2026-01-01T00:00:00Z")
+    result = query_knowledge_graph(
+        "2025年度9月のいだてん岱明練習は？",
+        graph=graph,
+        include_context=False,
+        top_k=30,
+        as_of_date=date(2026, 9, 24),
+    )
+    practice_ids = [n["id"] for n in result["matched_nodes"] if n["id"].startswith("entity:practice:")]
+    assert practice_ids
+    assert all(nid.startswith("entity:practice:2025-09-") for nid in practice_ids)
+
+
+def test_fiscal_year_practice_query_spans_april_through_march():
+    graph = build_knowledge_graph(generated_at="2026-01-01T00:00:00Z")
+    result = query_knowledge_graph(
+        "2025年度のいだてん岱明練習は？",
+        graph=graph,
+        include_context=False,
+        top_k=50,
+        as_of_date=date(2026, 9, 24),
+    )
+    practice_ids = [n["id"] for n in result["matched_nodes"] if n["id"].startswith("entity:practice:")]
+    assert practice_ids
+    assert all("2025-04-01" <= nid.split(":")[2] <= "2026-03-31" for nid in practice_ids)
+
+
+@pytest.mark.parametrize("question", ["2025年のいだてん岱明練習は？", "去年のいだてん岱明練習は？"])
+def test_calendar_year_practice_query_stays_within_one_calendar_year(question: str):
+    graph = build_knowledge_graph(generated_at="2026-01-01T00:00:00Z")
+    result = query_knowledge_graph(
+        question,
+        graph=graph,
+        include_context=False,
+        top_k=50,
+        as_of_date=date(2026, 9, 24),
+    )
+    practice_ids = [n["id"] for n in result["matched_nodes"] if n["id"].startswith("entity:practice:")]
+    assert practice_ids
+    assert all(nid.startswith("entity:practice:2025-") for nid in practice_ids)
+
+
+def test_this_year_practice_query_uses_current_calendar_year():
+    graph = build_knowledge_graph(generated_at="2026-01-01T00:00:00Z")
+    result = query_knowledge_graph(
+        "今年のいだてん岱明練習は？",
+        graph=graph,
+        include_context=False,
+        top_k=50,
+        as_of_date=date(2026, 9, 24),
+    )
+    practice_ids = [n["id"] for n in result["matched_nodes"] if n["id"].startswith("entity:practice:")]
+    assert practice_ids
+    assert all(nid.startswith("entity:practice:2026-") for nid in practice_ids)
 
 
 def test_school_event_query_does_not_return_same_day_practice_node():
@@ -354,6 +457,33 @@ def test_english_last_month_practice_query_uses_local_month_bounds():
     practice_ids = [n["id"] for n in result["matched_nodes"] if n["id"].startswith("entity:practice:")]
     assert practice_ids
     assert all(nid.startswith("entity:practice:2026-09-") for nid in practice_ids)
+
+
+def test_english_this_month_practice_query_uses_local_month_bounds():
+    graph = build_knowledge_graph(generated_at="2026-01-01T00:00:00Z")
+    result = query_knowledge_graph(
+        "Daimei practice this month",
+        graph=graph,
+        include_context=False,
+        top_k=30,
+        as_of_date=date(2026, 9, 24),
+    )
+    practice_ids = [n["id"] for n in result["matched_nodes"] if n["id"].startswith("entity:practice:")]
+    assert practice_ids
+    assert all(nid.startswith("entity:practice:2026-09-") for nid in practice_ids)
+
+
+def test_english_next_month_without_sessions_returns_no_other_months():
+    graph = build_knowledge_graph(generated_at="2026-01-01T00:00:00Z")
+    result = query_knowledge_graph(
+        "Daimei practice next month",
+        graph=graph,
+        include_context=False,
+        top_k=30,
+        as_of_date=date(2026, 9, 24),
+    )
+    assert result["matched_nodes"] == []
+    assert result["refs"] == []
 
 
 def test_last_month_query_crosses_year_boundary_correctly():

@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import json
 import re
+import unicodedata
 from collections import defaultdict
 from datetime import date, datetime, timedelta
 from pathlib import Path
@@ -142,6 +143,12 @@ def _resolve_month_range(question: str, *, as_of_date: date | None = None) -> tu
                 break
         else:
             if not any(phrase in lowered for phrase in ("今月", "this month")):
+                fiscal_year_month = re.search(r"(?<!\d)(\d{4})年度\s*(1[0-2]|0?[1-9])月", question)
+                if fiscal_year_month:
+                    year, month = int(fiscal_year_month.group(1)), int(fiscal_year_month.group(2))
+                    if month <= 3:
+                        year += 1
+                    return date(year, month, 1), date(year + (month == 12), month % 12 + 1, 1) - timedelta(days=1)
                 explicit_year_month = re.search(r"(?<!\d)(\d{4})年\s*(1[0-2]|0?[1-9])月(?!\d|日)", question)
                 if explicit_year_month:
                     year, month = int(explicit_year_month.group(1)), int(explicit_year_month.group(2))
@@ -169,6 +176,38 @@ def _resolve_month_range(question: str, *, as_of_date: date | None = None) -> tu
     return date(target_year, target_month, 1), date(
         target_year + (target_month == 12), target_month % 12 + 1, 1
     ) - timedelta(days=1)
+
+
+def _resolve_fiscal_year_range(question: str) -> tuple[date, date] | None:
+    """Return Japanese fiscal-year bounds (April through March)."""
+    match = re.search(r"(?<!\d)(\d{4})年度", question)
+    if not match:
+        return None
+    year = int(match.group(1))
+    return date(year, 4, 1), date(year + 1, 3, 31)
+
+
+def _resolve_calendar_year_range(
+    question: str,
+    *,
+    as_of_date: date | None = None,
+) -> tuple[date, date] | None:
+    """Resolve calendar-year questions separately from Japanese fiscal years."""
+    reference = as_of_date or datetime.now(ZoneInfo("Asia/Tokyo")).date()
+    lowered = question.lower()
+    offsets = {"去年": -1, "昨年": -1, "今年": 0, "来年": 1, "last year": -1, "this year": 0, "next year": 1}
+    year = None
+    for phrase, offset in offsets.items():
+        if phrase in lowered:
+            year = reference.year + offset
+            break
+    if year is None:
+        explicit = re.search(r"(?<!\d)(\d{4})年(?!度|\d)", question)
+        if explicit:
+            year = int(explicit.group(1))
+    if year is None:
+        return None
+    return date(year, 1, 1), date(year, 12, 31)
 
 
 def load_graph(path: Path | None = None) -> dict[str, Any]:
@@ -420,7 +459,8 @@ def query_knowledge_graph(
     nodes = {n["id"]: n for n in graph.get("nodes") or []}
     edges = list(graph.get("edges") or [])
     adj = _adjacency(edges)
-    search_question = _resolve_relative_dates(question, as_of_date=as_of_date)
+    normalized_question = unicodedata.normalize("NFKC", question)
+    search_question = _resolve_relative_dates(normalized_question, as_of_date=as_of_date)
     q_tokens = _tokenize(search_question)
 
     scored = [
@@ -432,11 +472,21 @@ def query_knowledge_graph(
     seeds = scored[:top_k]
 
     resolved_date = re.search(r"(?<!\d)\d{4}-\d{2}-\d{2}(?!\d)", search_question)
-    week_range = _resolve_week_range(question, as_of_date=as_of_date)
-    month_range = _resolve_month_range(question, as_of_date=as_of_date)
-    period_range = week_range or month_range
-    period_query_resolved = bool(period_range and not resolved_date)
-    calendar_intent = any(term in question.lower() for term in ("予定", "一覧", "カレンダー", "日程", "学校行事", "schedule"))
+    week_range = _resolve_week_range(normalized_question, as_of_date=as_of_date)
+    month_range = _resolve_month_range(normalized_question, as_of_date=as_of_date)
+    fiscal_range = _resolve_fiscal_year_range(normalized_question)
+    calendar_intent = any(term in normalized_question.lower() for term in ("予定", "一覧", "カレンダー", "日程", "学校行事", "schedule"))
+    practice_intent = any(
+        term in normalized_question.lower()
+        for term in ("練習", "メニュー", "practice", "jog", "interval", "走る")
+    )
+    calendar_year_range = (
+        _resolve_calendar_year_range(normalized_question, as_of_date=as_of_date)
+        if calendar_intent or practice_intent
+        else None
+    )
+    period_range = week_range or month_range or fiscal_range or calendar_year_range
+    period_query_resolved = bool(period_range and not resolved_date and (calendar_intent or practice_intent))
     if period_query_resolved:
         start, end = period_range
         seeds = []
@@ -461,10 +511,6 @@ def query_knowledge_graph(
         calendar_source_id = f"source:input/events.{year}.yaml"
         seeds = [(calendar_source_id, max((score for nid, score in scored if nid == calendar_source_id), default=1.0))]
     elif resolved_date:
-        practice_intent = any(
-            term in question.lower()
-            for term in ("練習", "メニュー", "practice", "jog", "interval", "走る")
-        )
         exact_practices = [
             (nid, score)
             for nid, score in scored
