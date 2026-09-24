@@ -352,6 +352,25 @@ describe("QA precision regressions", () => {
     expect(result.text).toContain("2位 荒尾三中・学校別平均 2:27.99");
   });
 
+  it.each([
+    "男子1500m学校別ランキングは？",
+    "男子1500m学校別PBランキング",
+    "男子1500mの学校別順位を教えて",
+    "男子1500m学校ランキングは？",
+    "1500m男子学校別ランキングは？",
+    "男子の1500m学校別ランキングは？",
+    "男子1500ｍ学校別ランキングは？",
+    "2026年度男子1500m学校別ランキング",
+    "2026年男子1500mの学校順位",
+    "男子1500mの学校別平均ランキング",
+  ])("answers men's 1500m school ranking from its top-four section: %s", async (question) => {
+    const result = await ask(question);
+    expect(result.sources).toEqual(["out-analysis/2026_men_1500m_pb_school_ranking.md"]);
+    expect(result.text).toContain("4:23.09");
+    expect(result.text).not.toContain("上位6人平均");
+    expect(result.text).not.toContain("3000m");
+  });
+
   it("returns the historical year for a named team's runner-up finish", async () => {
     const result = await ask("玉高附属が荒玉男子で2位になったのは何年？");
     expect(result.sources).toEqual(["aragyoku/winners-by-year.md"]);

@@ -171,6 +171,39 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
       }
     }
   }
+  if (/男子/.test(q) && /1500(?:m|ｍ)?/.test(q) && /学校別|学校.*ランキング|学校ランキング|学校.*順位/.test(q)) {
+    const sectionStart = flat.indexOf("## 上位4人平均");
+    const sectionEnd = flat.indexOf("## 上位6人平均", sectionStart + 1);
+    if (sectionStart >= 0) return flat.slice(sectionStart, sectionEnd >= 0 ? sectionEnd : undefined).trim();
+  }
+  if (/800(?:m|ｍ)?|1500(?:m|ｍ)?/.test(q) && /学校別|所属別/.test(q) && /何位|順位/.test(q)) {
+    const school = /玉名付属|玉名附属|玉高附属/.test(q)
+      ? "玉名附中"
+      : /岱明/.test(q)
+        ? "岱明中"
+        : /荒尾三/.test(q)
+          ? "荒尾三中"
+          : /天水/.test(q)
+            ? "天水中"
+            : /有明/.test(q)
+              ? "有明中"
+              : /南関/.test(q)
+                ? "南関中"
+                : /菊水/.test(q)
+                  ? "菊水中"
+                  : undefined;
+    const distance = /1500(?:m|ｍ)?/.test(q) ? "1500m" : "800m";
+    const count = requestedSchoolAverageCount(q) ?? (/男子/.test(q) && distance === "1500m" ? "4" : "3");
+    const heading = /男子/.test(q) && distance === "1500m"
+      ? `## 上位${count}人平均`
+      : `## ${distance}・上位${count}人平均`;
+    const sectionStart = flat.indexOf(heading);
+    const section = sectionStart >= 0 ? flat.slice(sectionStart) : flat;
+    if (school) {
+      const row = section.match(new RegExp(`\\|\\s*(\\d+)\\s*\\|\\s*${school}\\s*\\|([^|]*)\\|([^|]*)\\|`));
+      if (row) return `${row[1]}位 ${school}・学校別平均 ${row[3]?.trim() ?? ""}`;
+    }
+  }
   if (/高田麻那/.test(q) && /SB|PB|ベスト/.test(q)) {
     const requestedDistancesSet = new Set([...q.matchAll(/(1[，,]?\s*500|1500|3[，,]?\s*000|3000|5[，,]?\s*000|5000)\s*(?:m|ｍ|メートル)?/gi)]
       .map((match) => match[1]!.replace(/[，,\s]/g, "")));
@@ -5033,6 +5066,10 @@ export async function answerQuestion(
     /なごみ/.test(question) &&
     /予想|予実|SB.{0,4}実績/.test(question) &&
     /差|比較|乖離|ギャップ|ずれ/.test(question);
+  const male1500SchoolRankingQ =
+    /男子/.test(question) &&
+    /1500(?:m|ｍ)?/.test(question.normalize("NFKC")) &&
+    /学校別|学校.*ランキング|学校ランキング|学校.*順位/.test(question);
   const historicalWinnerPaceQ =
     /荒玉|駅伝/.test(expanded) &&
     /優勝/.test(expanded) &&
@@ -5053,7 +5090,7 @@ export async function answerQuestion(
     /(?:と|、|・|／|\/)/.test(expanded) &&
     /800(?:m|ｍ)?|1[，,]?\s*500(?:m|ｍ)?|3[，,]?\s*000(?:m|ｍ)?|5[，,]?\s*000(?:m|ｍ)?|3\s*(?:km|キロ)|5\s*(?:km|キロ)/i.test(expanded);
   const directDocQ =
-    practiceTemplateQ || weatherOpsQ || paceCliQ || practiceMeetLoadQ || historicalTopSixPaceQ || historicalRankPaceQ || historicalWinnerPaceQ || historicalTeamRankQ || nagomiPredictionGapQ || tamanaPracticeResultQ || latestTamanaPracticeResultQ || tamanaPracticeAthleteRecordQ || latestTamanaPracticeAthleteQuestionQ || multipleAthleteRecordQ || genericPracticeResultQ || genericPracticeDetailQ || tamanaPracticeStatusQ || practiceStatusQ || kumamotoEkidenScheduleQ || schoolMeetScheduleQ || practiceParticipantQ || tamanaPracticeVenueQ || tamanaPracticeParticipantQ || legDistanceQ || schoolMeetVenueQ || historicalJuniorResultQ || relativeWinnerQ || courseEraQ || oldCourseDistanceQ || eveningPracticeScheduleQ || namedTeamTotalTimeQ || cityRecordResultQ || firstLongDistanceResultQ || secondLongDistanceResultQ || fourthLongDistanceResultQ || fifthLongDistanceResultQ || genericLongDistanceResultQ || nightMeetResultQ || juniorOlympicResultQ || urbanChampionshipResultQ || kanaguriMemorialResultQ || prefecturalChampionshipResultQ || communicationResultQ || cityChampionshipResultQ || teamWinnerMarginQ || genericWinnerMarginQ || strideCountQ || postEkidenPracticeQ || movementPracticeQ || practiceDaysQ || practiceCalendarQ || meetResultUrlQ || prefecturalMeetResultQ || prefecturalMeetScheduleQ || teamRankQ || calendarDateScheduleQ || exactMeetDateScheduleQ || genericPracticeScheduleQ || genericDaimingPracticeContentQ || schoolScheduleQ || datedPracticeMeetQ || datedPracticeContentQ || genericPracticeMeetScheduleQ || practiceVenueQ;
+    practiceTemplateQ || weatherOpsQ || paceCliQ || practiceMeetLoadQ || historicalTopSixPaceQ || historicalRankPaceQ || historicalWinnerPaceQ || historicalTeamRankQ || nagomiPredictionGapQ || male1500SchoolRankingQ || tamanaPracticeResultQ || latestTamanaPracticeResultQ || tamanaPracticeAthleteRecordQ || latestTamanaPracticeAthleteQuestionQ || multipleAthleteRecordQ || genericPracticeResultQ || genericPracticeDetailQ || tamanaPracticeStatusQ || practiceStatusQ || kumamotoEkidenScheduleQ || schoolMeetScheduleQ || practiceParticipantQ || tamanaPracticeVenueQ || tamanaPracticeParticipantQ || legDistanceQ || schoolMeetVenueQ || historicalJuniorResultQ || relativeWinnerQ || courseEraQ || oldCourseDistanceQ || eveningPracticeScheduleQ || namedTeamTotalTimeQ || cityRecordResultQ || firstLongDistanceResultQ || secondLongDistanceResultQ || fourthLongDistanceResultQ || fifthLongDistanceResultQ || genericLongDistanceResultQ || nightMeetResultQ || juniorOlympicResultQ || urbanChampionshipResultQ || kanaguriMemorialResultQ || prefecturalChampionshipResultQ || communicationResultQ || cityChampionshipResultQ || teamWinnerMarginQ || genericWinnerMarginQ || strideCountQ || postEkidenPracticeQ || movementPracticeQ || practiceDaysQ || practiceCalendarQ || meetResultUrlQ || prefecturalMeetResultQ || prefecturalMeetScheduleQ || teamRankQ || calendarDateScheduleQ || exactMeetDateScheduleQ || genericPracticeScheduleQ || genericDaimingPracticeContentQ || schoolScheduleQ || datedPracticeMeetQ || datedPracticeContentQ || genericPracticeMeetScheduleQ || practiceVenueQ;
   if (practiceTemplateQ) {
     preferredSources = /norwegian-45-15|[Nn]orwegian(?:の|\s*)[- ]?45\s*[\/／\-‐‑–—−]\s*15|ノルウェー(?:式)?(?:の|\s*)45\s*[\/／\-‐‑–—−]\s*15|45\s*[\/／\-‐‑–—−]\s*15/.test(expanded)
       ? ["repo-docs/adr/002-norwegian-method-integration.md"]
@@ -5400,6 +5437,7 @@ export async function answerQuestion(
     (/上位\s*(?:\d+|[０-９]+|[三四五六])\s*(?:人|名)(?:の)?平均|学校別|所属別/.test(
       expanded,
     ) || (/女子/.test(expanded) && /800(?:m|ｍ)?|1500(?:m|ｍ)?/.test(expanded) && /ランキング|順位|速い|最速|一番/.test(expanded)));
+  const schoolPbPlaceQ = schoolPbRankQ && /何位|順位/.test(question);
   if (schoolPbRankQ) {
     const schoolRanking = /女子/.test(expanded) || /800(?:m|ｍ)?/.test(expanded)
       ? "out-analysis/2026_women_800m_1500m_pb_school_ranking.md"
@@ -5778,6 +5816,9 @@ export async function answerQuestion(
       `drive-text/大会/${reportYear}年度/${reportYear === "2025" ? "0921" : "0920"}_中学駅伝金栗四三生誕の地なごみ大会/予実比較.md`;
     preferredSources = year ? [reportForYear(year)] : [reportForYear("2026"), reportForYear("2025")];
   }
+  if (male1500SchoolRankingQ) {
+    preferredSources = ["out-analysis/2026_men_1500m_pb_school_ranking.md"];
+  }
   let fromSources = retrieveBySources(preferredSources, {
     query: expanded,
     perSource:
@@ -6017,6 +6058,8 @@ export async function answerQuestion(
       ? mergedCoreRaw.filter((r) => /aragyoku_all_teams_average_pace\.md(?::\d+)?$/.test(r.chunk.source))
     : nagomiPredictionGapQ
       ? mergedCoreRaw.filter((r) => preferredSources.some((source) => r.chunk.source.replace(/:\d+$/, "") === source))
+    : male1500SchoolRankingQ
+      ? mergedCoreRaw.filter((r) => /2026_men_1500m_pb_school_ranking\.md(?::\d+)?$/.test(r.chunk.source))
     : teamWinnerMarginQ || genericWinnerMarginQ
       ? mergedCoreRaw.filter((r) => r.chunk.source.replace(/:\d+$/, "") === preferredSources[0])
     : namedAssignmentQ
@@ -6085,6 +6128,7 @@ export async function answerQuestion(
       tenKmSelfBestQuestion ||
       historicalRankPaceQ ||
       nagomiPredictionGapQ ||
+      male1500SchoolRankingQ ||
       teamWinnerMarginQ ||
       teamFullRecordQ ||
       namedAssignmentQ ||
@@ -6118,6 +6162,7 @@ export async function answerQuestion(
       tenKmSelfBestQuestion ||
       historicalRankPaceQ ||
       nagomiPredictionGapQ ||
+      male1500SchoolRankingQ ||
       teamWinnerMarginQ ||
       teamFullRecordQ ||
       courseEraQ ||
@@ -6178,6 +6223,25 @@ export async function answerQuestion(
         sources,
       };
     }
+  }
+
+  if (schoolPbPlaceQ) {
+    const mergedText = merged.map((row) => row.chunk.text).join("\n");
+    const answer = previewForOffline(mergedText, question);
+    return {
+      kind: "offline",
+      text: finalizeAnswerText(answer, question, deps, sources),
+      sources,
+    };
+  }
+
+  if (male1500SchoolRankingQ) {
+    const answer = previewForOffline(merged.map((row) => row.chunk.text).join("\n"), question);
+    return {
+      kind: "offline",
+      text: finalizeAnswerText(answer, question, deps, sources),
+      sources,
+    };
   }
 
   if (tenKmSelfBestQuestion) {
