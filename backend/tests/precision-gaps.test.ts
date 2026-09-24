@@ -364,6 +364,41 @@ describe("QA precision regressions", () => {
     expect(result.text).not.toContain("隈部侑成");
   });
 
+  it("uses the current team record when a named 1500m athlete is outside the top twenty", async () => {
+    const result = await ask("松本空羽の1500mSBは？");
+    expect(result.sources).toEqual([
+      "out-analysis/arato-tamana-teams/岱明中.md",
+    ]);
+    expect(result.text).toContain("松本空羽の1500mSBは5:11.17");
+    expect(result.text).not.toContain("5:36.54");
+  });
+
+  it("uses the current team record for a second named 1500m athlete outside the top twenty", async () => {
+    const result = await ask("田上颯人の1500mSBは？");
+    expect(result.sources).toEqual([
+      "out-analysis/arato-tamana-teams/岱明中.md",
+    ]);
+    expect(result.text).toContain("田上颯人の1500mSBは4:37.20");
+    expect(result.text).not.toContain("4:58.03");
+  });
+
+  it("treats a named 1.5km SB query as the current 1500m record", async () => {
+    const result = await ask("松本空羽の1.5kmSBは？");
+    expect(result.sources).toEqual([
+      "out-analysis/arato-tamana-teams/岱明中.md",
+    ]);
+    expect(result.text).toContain("松本空羽の1500mSBは5:11.17");
+    expect(result.text).not.toContain("5:36.54");
+  });
+
+  it("answers the current 1500m SB for an athlete missing from the legacy SB CSV", async () => {
+    const result = await ask("中尾快叶の1500mSBは？");
+    expect(result.sources).toEqual([
+      "out-analysis/arato-tamana-teams/岱明中.md",
+    ]);
+    expect(result.text).toContain("中尾快叶の1500mSBは5:03.56");
+  });
+
   it("uses the 2026 ranking when it has a newer named men's 1500m SB", async () => {
     const result = await ask("松野凛空の1500mSBは？");
     expect(result.sources).toEqual([
@@ -406,6 +441,59 @@ describe("QA precision regressions", () => {
     ]);
     expect(result.text).toContain("2:20.11");
     expect(result.text).not.toContain("2:23.45");
+  });
+
+  it("finds an individual 800m PB from the next school-rank subsection", async () => {
+    const result = await ask("増岡里俐の800mPBは？");
+    expect(result.sources).toEqual([
+      "out-analysis/2026_women_800m_1500m_pb_school_ranking.md",
+    ]);
+    expect(result.text).toContain("増岡里俐の800mPBは2:38.96");
+    expect(result.text).not.toContain("学校別ランキング");
+  });
+
+  it("keeps a women's 1500m PB lookup out of her 800m rows", async () => {
+    const result = await ask("増岡里俐の1500mPBは？");
+    expect(result.sources).toEqual([
+      "out-analysis/2026_women_800m_1500m_pb_school_ranking.md",
+    ]);
+    expect(result.text).toContain("増岡里俐の1500mPBは5:34.40");
+    expect(result.text).not.toContain("2:38.96");
+  });
+
+  it("prefers the PB digest's newer women's 1500m result", async () => {
+    const result = await ask("高田麻由の1500mPBは？");
+    expect(result.sources).toEqual([
+      "out-analysis/2026_women_800m_1500m_pb_school_ranking.md",
+    ]);
+    expect(result.text).toContain("高田麻由の1500mPBは5:09.66");
+    expect(result.text).not.toContain("5:28.78");
+  });
+
+  it("preserves SB wording when a women's season best is in the PB digest", async () => {
+    const result = await ask("高田麻由の1500mSBは？");
+    expect(result.sources).toEqual([
+      "out-analysis/2026_women_800m_1500m_pb_school_ranking.md",
+    ]);
+    expect(result.text).toContain("高田麻由の1500mSBは5:09.66");
+    expect(result.text).not.toContain("PBは");
+  });
+
+  it("answers an 800m SB question from the current women's PB table", async () => {
+    const result = await ask("高田麻由の800mSBは？");
+    expect(result.sources).toEqual([
+      "out-analysis/2026_women_800m_1500m_pb_school_ranking.md",
+    ]);
+    expect(result.text).toContain("高田麻由の800mSBは2:34.10");
+  });
+
+  it("treats a women's 1.5km PB query as a 1500m PB query", async () => {
+    const result = await ask("増岡里俐の1.5kmPBは？");
+    expect(result.sources).toEqual([
+      "out-analysis/2026_women_800m_1500m_pb_school_ranking.md",
+    ]);
+    expect(result.text).toContain("増岡里俐の1500mPBは5:34.40");
+    expect(result.text).not.toContain("2:38.96");
   });
 
   it("answers the date and venue for the named 玉名市合同練習会", async () => {
