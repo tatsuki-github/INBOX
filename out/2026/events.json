@@ -8400,6 +8400,51 @@
     "weather": null
   },
   {
+    "title": "いだてん岱明練習",
+    "date": "2026-09-24",
+    "end_date": "2026-09-24",
+    "all_day": true,
+    "start_time": null,
+    "end_time": null,
+    "category": "予定",
+    "status": "done",
+    "tags": [
+      "ランニング",
+      "いだてん岱明練習",
+      "practice:daiming"
+    ],
+    "urls": [],
+    "description": "動きづくり\n女子 3360m（560m×6周相当。内回りのため実走距離は短い）\n男子 4480m（560m×8周）、1周560mを2:40\n流し2本\n",
+    "location": "",
+    "private": false,
+    "kind": "event",
+    "practice": {
+      "warmup": "動きづくり",
+      "notes": "1周560mを2:40。女子は内回りのため実走距離が短い。",
+      "items": [
+        {
+          "type": "jog",
+          "group": "女子",
+          "laps": 6,
+          "distance_m": 3360
+        },
+        {
+          "type": "jog",
+          "group": "男子",
+          "laps": 8,
+          "distance_m": 4480
+        },
+        {
+          "type": "strides",
+          "reps": 2,
+          "label": "流し2本"
+        }
+      ]
+    },
+    "template_ref": null,
+    "weather": null
+  },
+  {
     "title": "岱明中 B日課（6時間）",
     "date": "2026-09-24",
     "end_date": "2026-09-24",

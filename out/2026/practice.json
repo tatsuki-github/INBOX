@@ -1548,6 +1548,48 @@
   },
   {
     "year": 2026,
+    "date": "2026-09-24",
+    "title": "いだてん岱明練習",
+    "start_time": null,
+    "end_time": null,
+    "status": "done",
+    "tags": [
+      "ランニング",
+      "いだてん岱明練習",
+      "practice:daiming"
+    ],
+    "practice": {
+      "warmup": "動きづくり",
+      "notes": "1周560mを2:40。女子は内回りのため実走距離が短い。",
+      "items": [
+        {
+          "type": "jog",
+          "group": "女子",
+          "laps": 6,
+          "distance_m": 3360
+        },
+        {
+          "type": "jog",
+          "group": "男子",
+          "laps": 8,
+          "distance_m": 4480
+        },
+        {
+          "type": "strides",
+          "reps": 2,
+          "label": "流し2本"
+        }
+      ]
+    },
+    "parse": {
+      "source": "practice_field",
+      "confidence": "full",
+      "skipped": []
+    },
+    "template_ref": null
+  },
+  {
+    "year": 2026,
     "date": null,
     "title": "練習のバリエーション",
     "start_time": null,

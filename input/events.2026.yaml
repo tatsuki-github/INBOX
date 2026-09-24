@@ -4478,6 +4478,35 @@ events:
   tags:
   - 岱明中
   - 学校行事
+- title: いだてん岱明練習
+  date: '2026-09-24'
+  all_day: true
+  category: 予定
+  status: done
+  description: |
+    動きづくり
+    女子 3360m（560m×6周相当。内回りのため実走距離は短い）
+    男子 4480m（560m×8周）、1周560mを2:40
+    流し2本
+  practice:
+    warmup: 動きづくり
+    notes: 1周560mを2:40。女子は内回りのため実走距離が短い。
+    items:
+      - type: jog
+        group: 女子
+        laps: 6
+        distance_m: 3360
+      - type: jog
+        group: 男子
+        laps: 8
+        distance_m: 4480
+      - type: strides
+        reps: 2
+        label: 流し2本
+  tags:
+  - ランニング
+  - いだてん岱明練習
+  - practice:daiming
 - title: 岱明中 A日課（6時間）
   date: '2026-09-25'
   all_day: true
