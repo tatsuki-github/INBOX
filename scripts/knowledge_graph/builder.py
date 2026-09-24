@@ -1610,6 +1610,54 @@ def build_knowledge_graph(*, generated_at: str | None = None) -> dict[str, Any]:
             )
             _add_edge(edges, yid, sid, "search_here")
 
+            # Give completed/planned Daimei practices their own retrieval target.
+            # A year-level events file is too broad for date-specific questions.
+            event_data = _load_yaml(ROOT / events_yaml)
+            if isinstance(event_data, dict):
+                event_source_lines = (ROOT / events_yaml).read_text(encoding="utf-8").splitlines()
+                for event_index, event in enumerate(event_data.get("events") or []):
+                    if not isinstance(event, dict):
+                        continue
+                    tags = event.get("tags") or []
+                    if isinstance(tags, str):
+                        tags = [tag.strip() for tag in tags.split(",") if tag.strip()]
+                    if "practice:daiming" not in tags or not isinstance(event.get("practice"), dict):
+                        continue
+                    event_date = str(event.get("date") or "").strip()
+                    title = str(event.get("title") or "いだてん岱明練習").strip()
+                    if not event_date:
+                        continue
+                    practice = event["practice"]
+                    details = [str(event.get("description") or "").strip()]
+                    for item in practice.get("items") or []:
+                        if not isinstance(item, dict):
+                            continue
+                        parts = [str(item.get(key) or "").strip() for key in ("group", "distance_m", "label")]
+                        parts.extend(f"{key}={item[key]}" for key in ("laps", "reps", "pace") if item.get(key) is not None)
+                        details.append(" ".join(part for part in parts if part))
+                    detail_hint = " / ".join(part for part in details if part)
+                    event_id = f"entity:practice:{event_date}:{event_index}"
+                    line_ref = ""
+                    title_marker = f"- title: {title}"
+                    for line_index, line in enumerate(event_source_lines):
+                        if line.strip() != title_marker:
+                            continue
+                        block = event_source_lines[line_index : line_index + 8]
+                        if any(re.fullmatch(r"\s*date:\s*['\"]?" + re.escape(event_date) + r"['\"]?\s*", item) for item in block):
+                            line_ref = f"{events_yaml}:L{line_index + 1}"
+                            break
+                    event_node = _node(
+                        event_id,
+                        "Entity",
+                        f"{event_date} {title}",
+                        topics=["calendar", "practice"],
+                        refs=[events_yaml, f"out/{year}/practice.json"],
+                        hint=f"岱明練習実績 {event_date} ({line_ref}): {detail_hint}"[:700],
+                    )
+                    _add_node(nodes, event_node)
+                    _add_edge(edges, yid, event_id, "search_here")
+                    _add_edge(edges, event_id, sid, "documented_in")
+
         out_dir = ROOT / "out" / str(year)
         year_outputs = [
             ("events.json", ["calendar"], f"{year}年イベント JSON（生成物）"),

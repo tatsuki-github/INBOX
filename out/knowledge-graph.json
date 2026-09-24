@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated_at": "2026-09-24T13:09:35Z",
+  "generated_at": "2026-09-24T13:24:03Z",
   "nodes": [
     {
       "id": "corpus:analysis-ocr",
@@ -204,9 +204,9 @@
         "practice"
       ],
       "refs": [
-        "input/events.2025.yaml",
         "out/2025/practice_absentees.csv",
-        "out/analysis/notion_records_2026.json"
+        "out/analysis/notion_records_2026.json",
+        "input/events.2025.yaml"
       ],
       "hint": "部員エンティティ"
     },
@@ -220,9 +220,9 @@
         "practice"
       ],
       "refs": [
-        "input/events.2025.yaml",
         "out/2025/practice_absentees.csv",
-        "out/analysis/notion_records_2026.json"
+        "out/analysis/notion_records_2026.json",
+        "input/events.2025.yaml"
       ],
       "hint": "所属:岱明中"
     },
@@ -236,9 +236,9 @@
         "practice"
       ],
       "refs": [
-        "input/events.2025.yaml",
         "out/2025/practice_absentees.csv",
-        "out/analysis/notion_records_2026.json"
+        "out/analysis/notion_records_2026.json",
+        "input/events.2025.yaml"
       ],
       "hint": "部員エンティティ"
     },
@@ -252,9 +252,9 @@
         "practice"
       ],
       "refs": [
-        "input/events.2025.yaml",
         "out/2025/practice_absentees.csv",
-        "out/analysis/notion_records_2026.json"
+        "out/analysis/notion_records_2026.json",
+        "input/events.2025.yaml"
       ],
       "hint": "所属:岱明中"
     },
@@ -268,9 +268,9 @@
         "practice"
       ],
       "refs": [
-        "input/events.2025.yaml",
         "out/2025/practice_absentees.csv",
-        "out/analysis/notion_records_2026.json"
+        "out/analysis/notion_records_2026.json",
+        "input/events.2025.yaml"
       ],
       "hint": "部員エンティティ"
     },
@@ -284,9 +284,9 @@
         "practice"
       ],
       "refs": [
-        "input/events.2025.yaml",
         "out/2025/practice_absentees.csv",
-        "out/analysis/notion_records_2026.json"
+        "out/analysis/notion_records_2026.json",
+        "input/events.2025.yaml"
       ],
       "hint": "所属:岱明中"
     },
@@ -328,9 +328,9 @@
         "practice"
       ],
       "refs": [
-        "input/events.2025.yaml",
         "out/2025/practice_absentees.csv",
-        "out/analysis/notion_records_2026.json"
+        "out/analysis/notion_records_2026.json",
+        "input/events.2025.yaml"
       ],
       "hint": "部員エンティティ"
     },
@@ -344,9 +344,9 @@
         "practice"
       ],
       "refs": [
-        "input/events.2025.yaml",
         "out/2025/practice_absentees.csv",
-        "out/analysis/notion_records_2026.json"
+        "out/analysis/notion_records_2026.json",
+        "input/events.2025.yaml"
       ],
       "hint": "所属:岱明中"
     },
@@ -360,8 +360,8 @@
         "practice"
       ],
       "refs": [
-        "input/events.2025.yaml",
-        "out/2025/practice_absentees.csv"
+        "out/2025/practice_absentees.csv",
+        "input/events.2025.yaml"
       ],
       "hint": "部員エンティティ"
     },
@@ -375,9 +375,9 @@
         "practice"
       ],
       "refs": [
-        "input/events.2025.yaml",
         "out/2025/practice_absentees.csv",
-        "out/analysis/notion_records_2026.json"
+        "out/analysis/notion_records_2026.json",
+        "input/events.2025.yaml"
       ],
       "hint": "部員エンティティ"
     },
@@ -391,9 +391,9 @@
         "practice"
       ],
       "refs": [
-        "input/events.2025.yaml",
         "out/2025/practice_absentees.csv",
-        "out/analysis/notion_records_2026.json"
+        "out/analysis/notion_records_2026.json",
+        "input/events.2025.yaml"
       ],
       "hint": "所属:岱明中"
     },
@@ -407,9 +407,9 @@
         "practice"
       ],
       "refs": [
-        "input/events.2025.yaml",
         "out/2025/practice_absentees.csv",
-        "out/analysis/notion_records_2026.json"
+        "out/analysis/notion_records_2026.json",
+        "input/events.2025.yaml"
       ],
       "hint": "部員エンティティ"
     },
@@ -423,9 +423,9 @@
         "practice"
       ],
       "refs": [
-        "input/events.2025.yaml",
         "out/2025/practice_absentees.csv",
-        "out/analysis/notion_records_2026.json"
+        "out/analysis/notion_records_2026.json",
+        "input/events.2025.yaml"
       ],
       "hint": "所属:岱明中"
     },
@@ -439,9 +439,9 @@
         "practice"
       ],
       "refs": [
-        "input/events.2025.yaml",
         "out/2025/practice_absentees.csv",
-        "out/analysis/notion_records_2026.json"
+        "out/analysis/notion_records_2026.json",
+        "input/events.2025.yaml"
       ],
       "hint": "部員エンティティ"
     },
@@ -455,9 +455,9 @@
         "practice"
       ],
       "refs": [
-        "input/events.2025.yaml",
         "out/2025/practice_absentees.csv",
-        "out/analysis/notion_records_2026.json"
+        "out/analysis/notion_records_2026.json",
+        "input/events.2025.yaml"
       ],
       "hint": "所属:岱明中"
     },
@@ -472,8 +472,8 @@
       ],
       "refs": [
         "input/events.2026.yaml",
-        "out/2026/practice_absentees.csv",
-        "out/analysis/notion_records_2026.json"
+        "out/analysis/notion_records_2026.json",
+        "out/2026/practice_absentees.csv"
       ],
       "hint": "部員エンティティ"
     },
@@ -488,8 +488,8 @@
       ],
       "refs": [
         "input/events.2026.yaml",
-        "out/2026/practice_absentees.csv",
-        "out/analysis/notion_records_2026.json"
+        "out/analysis/notion_records_2026.json",
+        "out/2026/practice_absentees.csv"
       ],
       "hint": "所属:岱明中"
     },
@@ -503,9 +503,9 @@
         "practice"
       ],
       "refs": [
-        "input/events.2025.yaml",
         "out/2025/practice_absentees.csv",
-        "out/analysis/notion_records_2026.json"
+        "out/analysis/notion_records_2026.json",
+        "input/events.2025.yaml"
       ],
       "hint": "部員エンティティ"
     },
@@ -519,9 +519,9 @@
         "practice"
       ],
       "refs": [
-        "input/events.2025.yaml",
         "out/2025/practice_absentees.csv",
-        "out/analysis/notion_records_2026.json"
+        "out/analysis/notion_records_2026.json",
+        "input/events.2025.yaml"
       ],
       "hint": "所属:岱明中"
     },
@@ -535,11 +535,11 @@
         "practice"
       ],
       "refs": [
-        "input/events.2025.yaml",
-        "out/2025/practice_absentees.csv",
-        "out/2026/practice_absentees.csv",
         "input/events.2026.yaml",
-        "out/analysis/notion_records_2026.json"
+        "out/2025/practice_absentees.csv",
+        "out/analysis/notion_records_2026.json",
+        "out/2026/practice_absentees.csv",
+        "input/events.2025.yaml"
       ],
       "hint": "部員エンティティ"
     },
@@ -553,13 +553,839 @@
         "practice"
       ],
       "refs": [
-        "input/events.2025.yaml",
-        "out/2025/practice_absentees.csv",
-        "out/2026/practice_absentees.csv",
         "input/events.2026.yaml",
-        "out/analysis/notion_records_2026.json"
+        "out/2025/practice_absentees.csv",
+        "out/analysis/notion_records_2026.json",
+        "out/2026/practice_absentees.csv",
+        "input/events.2025.yaml"
       ],
       "hint": "所属:岱明中"
+    },
+    {
+      "id": "entity:practice:2025-06-05:56",
+      "type": "Entity",
+      "label": "2025-06-05 いだてん岱明練習",
+      "topics": [
+        "calendar",
+        "practice"
+      ],
+      "refs": [
+        "input/events.2025.yaml",
+        "out/2025/practice.json"
+      ],
+      "hint": "岱明練習実績 2025-06-05 (input/events.2025.yaml:L455): <!-- practice-menu:v1\nwarmup: 動きづくり\nitems:\n- type: jog\n  group: null\n  laps: 8\n  distance_km: 4.48\n  pace: k/4:16\n- type: jog\n  group: null\n  laps: 6\n  distance_km: 3.36\n  pace: k/4:16\n-->\n\n動きづくり\n\nジョグ 4.48km (8周) k/4:16\nジョグ 3.36km (6周) k/4:16 / laps=8 pace=k/4:16 / laps=6 pace=k/4:16"
+    },
+    {
+      "id": "entity:practice:2025-06-21:61",
+      "type": "Entity",
+      "label": "2025-06-21 いだてん岱明練習",
+      "topics": [
+        "calendar",
+        "practice"
+      ],
+      "refs": [
+        "input/events.2025.yaml",
+        "out/2025/practice.json"
+      ],
+      "hint": "岱明練習実績 2025-06-21 (input/events.2025.yaml:L515): <!-- practice-menu:v1\nwarmup: 動きづくり\nitems:\n- type: set\n  group: null\n  segments:\n  - distance_m: 600\n  - distance_m: 300\n  - distance_m: 300\n  label: 800m組 600m+300m 600m k/3:30 / 300m k/3:10\n- type: set\n  group: null\n  segments:\n  - distance_m: 900\n  - distance_m: 600\n  - distance_m: 600\n  label: 1500m組 900m+600m 900m k/3:30 / 600m k/3:10\n- type: set\n  group: null\n  segments:\n  - distance_m: 600\n  - distance_m: 300\n  label: 800m組 600m+300m k/3:30 / 300m k/3:10\n- type: set\n  group: null\n  segments:\n  - distance_m: 900\n  - distance_m: 600\n  label: 1500m組 900m+600m k/3:30 / 600m k/3:10\n- type: set\n  group: null\n  segments:\n  - distance_m: 600\n  "
+    },
+    {
+      "id": "entity:practice:2025-07-05:67",
+      "type": "Entity",
+      "label": "2025-07-05 いだてん岱明練習",
+      "topics": [
+        "calendar",
+        "practice"
+      ],
+      "refs": [
+        "input/events.2025.yaml",
+        "out/2025/practice.json"
+      ],
+      "hint": "岱明練習実績 2025-07-05 (input/events.2025.yaml:L639): <!-- practice-menu:v1\nwarmup: 動きづくり\nitems:\n- type: jog\n  group: null\n  distance_km: 5.0\n  pace: k/4:28\n- type: jog\n  group: null\n  distance_km: 4.0\n  pace: k/4:55\n-->\n\n動きづくり\n\nジョグ 5.00km k/4:28\nジョグ 4.00km k/4:55 / pace=k/4:28 / pace=k/4:55"
+    },
+    {
+      "id": "entity:practice:2025-07-12:69",
+      "type": "Entity",
+      "label": "2025-07-12 いだてん岱明練習",
+      "topics": [
+        "calendar",
+        "practice"
+      ],
+      "refs": [
+        "input/events.2025.yaml",
+        "out/2025/practice.json"
+      ],
+      "hint": "岱明練習実績 2025-07-12 (input/events.2025.yaml:L681): <!-- practice-menu:v1\nwarmup: 動きづくり\nitems:\n- type: set\n  group: null\n  segments:\n  - distance_m: 600\n  - distance_m: 300\n  - distance_m: 300\n  label: 1500m組 600m+300m 600m k/3:10 / 300m k/3:00\n- type: set\n  group: null\n  segments:\n  - distance_m: 300\n  - distance_m: 300\n  label: 800m組 300m+300m k/3:00\n- type: set\n  group: null\n  segments:\n  - distance_m: 900\n  - distance_m: 300\n  - distance_m: 300\n  label: 3000m組 900m+300m 900m k/3:20 / 300m k/3:00\n- type: set\n  group: null\n  segments:\n  - distance_m: 600\n  - distance_m: 300\n  label: 1500m組 600m+300m k/3:10 / 300m k/3:00\n- type: set\n  group: null\n  segments:\n  - distance_m: 900\n  - distance_m:"
+    },
+    {
+      "id": "entity:practice:2025-07-19:73",
+      "type": "Entity",
+      "label": "2025-07-19 いだてん岱明練習",
+      "topics": [
+        "calendar",
+        "practice"
+      ],
+      "refs": [
+        "input/events.2025.yaml",
+        "out/2025/practice.json"
+      ],
+      "hint": "岱明練習実績 2025-07-19 (input/events.2025.yaml:L795): <!-- practice-menu:v1\nwarmup: 動きづくり\nitems:\n- type: jog\n  group: null\n  laps: 8\n  distance_km: 4.48\n  pace: k/4:28\n- type: jog\n  group: null\n  laps: 6\n  distance_km: 3.36\n  pace: k/5:21\n-->\n\n動きづくり\n\nジョグ 4.48km (8周) k/4:28\nジョグ 3.36km (6周) k/5:21 / laps=8 pace=k/4:28 / laps=6 pace=k/5:21"
+    },
+    {
+      "id": "entity:practice:2025-07-26:78",
+      "type": "Entity",
+      "label": "2025-07-26 いだてん岱明練習",
+      "topics": [
+        "calendar",
+        "practice"
+      ],
+      "refs": [
+        "input/events.2025.yaml",
+        "out/2025/practice.json"
+      ],
+      "hint": "岱明練習実績 2025-07-26 (input/events.2025.yaml:L856): <!-- practice-menu:v1\nwarmup: 動きづくり\nitems:\n- type: set\n  group: null\n  segments:\n  - distance_m: 300\n  - distance_m: 300\n  label: 600m （300m63秒/300m組） 600m k/3:30\n- type: set\n  group: null\n  segments:\n  - distance_m: 300\n  - distance_m: 300\n  label: 600m （300m69秒/300m組） 600m k/3:50\n-->\n\n動きづくり\n\n600m （300m63秒/300m組） 600m k/3:30300m / 300m\n600m （300m69秒/300m組） 600m k/3:50300m / 300m / 600m （300m63秒/300m組） 600m k/3:30 / 600m （300m69秒/300m組） 600m k/3:50"
+    },
+    {
+      "id": "entity:practice:2025-08-07:90",
+      "type": "Entity",
+      "label": "2025-08-07 いだてん岱明練習（午前）",
+      "topics": [
+        "calendar",
+        "practice"
+      ],
+      "refs": [
+        "input/events.2025.yaml",
+        "out/2025/practice.json"
+      ],
+      "hint": "岱明練習実績 2025-08-07 (input/events.2025.yaml:L991): <!-- practice-menu:v1\nwarmup: 動きづくり\nitems:\n- type: jog\n  group: null\n  laps: 10\n  distance_km: 6.29\n  pace: k/4:39\n-->\n\n動きづくり\n\nジョグ 5.60km (10周) k/4:39 / laps=10 pace=k/4:39"
+    },
+    {
+      "id": "entity:practice:2025-08-07:91",
+      "type": "Entity",
+      "label": "2025-08-07 いだてん岱明練習（午後）",
+      "topics": [
+        "calendar",
+        "practice"
+      ],
+      "refs": [
+        "input/events.2025.yaml",
+        "out/2025/practice.json"
+      ],
+      "hint": "岱明練習実績 2025-08-07 (input/events.2025.yaml:L1021): <!-- practice-menu:v1\nwarmup: 動きづくり\nitems:\n- type: set\n  group: null\n  segments:\n  - distance_m: 900\n  label: 男子900m 1本目 900m k/4:00\n- type: set\n  group: null\n  segments:\n  - distance_m: 600\n  label: 女子600m 1本目 600m k/4:00\n- type: set\n  group: null\n  segments:\n  - distance_m: 900\n  label: 男子900m 2本目 900m k/3:50\n- type: set\n  group: null\n  segments:\n  - distance_m: 600\n  label: 女子600m 2本目 600m k/3:50\n- type: set\n  group: null\n  segments:\n  - distance_m: 900\n  label: 男子900m 3本目 900m k/3:40\n- type: set\n  group: null\n  segments:\n  - distance_m: 600\n  label: 女子600m 3本目 600m k/3:40\n-->\n\n動きづくり\n\n男子900m 1本目 900m k/4:00900m\n女子600m 1本目 600m k/4:00600m\n男"
+    },
+    {
+      "id": "entity:practice:2025-08-09:93",
+      "type": "Entity",
+      "label": "2025-08-09 いだてん岱明練習",
+      "topics": [
+        "calendar",
+        "practice"
+      ],
+      "refs": [
+        "input/events.2025.yaml",
+        "out/2025/practice.json"
+      ],
+      "hint": "岱明練習実績 2025-08-09 (input/events.2025.yaml:L1106): <!-- practice-menu:v1\nwarmup: 動きづくり\nitems:\n- type: jog\n  group: null\n  laps: 12\n  distance_km: 6.29\n  pace: k/4:39\n-->\n\n動きづくり\n\n流し\n\nジョグ 6.72km (12周) k/4:39 / laps=12 pace=k/4:39"
+    },
+    {
+      "id": "entity:practice:2025-08-12:96",
+      "type": "Entity",
+      "label": "2025-08-12 いだてん岱明練習",
+      "topics": [
+        "calendar",
+        "practice"
+      ],
+      "refs": [
+        "input/events.2025.yaml",
+        "out/2025/practice.json"
+      ],
+      "hint": "岱明練習実績 2025-08-12 (input/events.2025.yaml:L1148): <!-- practice-menu:v1\nwarmup: 動きづくり\nitems:\n- type: jog\n  group: null\n  laps: 12\n  distance_km: 6.26\n  pace: k/4:55\n-->\n\n動きづくり\n\n流し\n\nジョグ 6.72km (12周) k/4:55 / laps=12 pace=k/4:55"
+    },
+    {
+      "id": "entity:practice:2025-08-21:101",
+      "type": "Entity",
+      "label": "2025-08-21 いだてん岱明練習（午前）",
+      "topics": [
+        "calendar",
+        "practice"
+      ],
+      "refs": [
+        "input/events.2025.yaml",
+        "out/2025/practice.json"
+      ],
+      "hint": "岱明練習実績 2025-08-21 (input/events.2025.yaml:L1201): <!-- practice-menu:v1\nwarmup: 動きづくり\nitems:\n- type: jog\n  group: null\n  laps: 12\n  distance_km: 6.13\n  pace: k/4:44\n-->\n\n動きづくり\n\n流し\n\nジョグ 6.72km (12周) k/4:44 / laps=12 pace=k/4:44"
+    },
+    {
+      "id": "entity:practice:2025-08-21:102",
+      "type": "Entity",
+      "label": "2025-08-21 いだてん岱明練習（午後）",
+      "topics": [
+        "calendar",
+        "practice"
+      ],
+      "refs": [
+        "input/events.2025.yaml",
+        "out/2025/practice.json"
+      ],
+      "hint": "岱明練習実績 2025-08-21 (input/events.2025.yaml:L1233): <!-- practice-menu:v1\nwarmup: 動きづくり\nitems:\n- type: jog\n  group: null\n  laps: 6\n  distance_km: 3.36\n  pace: k/4:18\n- type: set\n  group: null\n  segments:\n  - distance_m: 200\n  label: 200m ×5 男子 200m×5 k/3:10〜k/3:20\n- type: set\n  group: null\n  segments:\n  - distance_m: 200\n  label: 200m ×5 女子 200m×5 k/3:30〜k/3:40\n-->\n\n動きづくり\n\nジョグ 3.36km (6周) k/4:18\n200m ×5 男子 200m×5 k/3:10〜k/3:20200m\n200m ×5 女子 200m×5 k/3:30〜k/3:40200m / laps=6 pace=k/4:18 / 200m ×5 男子 200m×5 k/3:10〜k/3:20 / 200m ×5 女子 200m×5 k/3:30〜k/3:40"
+    },
+    {
+      "id": "entity:practice:2025-09-15:125",
+      "type": "Entity",
+      "label": "2025-09-15 いだてん岱明練習",
+      "topics": [
+        "calendar",
+        "practice"
+      ],
+      "refs": [
+        "input/events.2025.yaml",
+        "out/2025/practice.json"
+      ],
+      "hint": "岱明練習実績 2025-09-15 (input/events.2025.yaml:L1437): <!-- practice-menu:v1\nwarmup: null\nitems:\n- type: jog\n  group: null\n  laps: 4\n  distance_km: 2.24\n  pace: k/3:52\n- type: set\n  group: 男子\n  segments:\n  - distance_m: 1120\n  label: 男子 追加2周（設定） 1.12km (2周) k/3:16\n- type: set\n  group: 男子\n  segments:\n  - distance_m: 1120\n  label: 男子 追加2周（実際） 1.12km (2周) k/3:07\n- type: set\n  group: 女子\n  segments:\n  - distance_m: 1120\n  label: 女子 追加2周（設定） 1.12km (2周) k/3:52\n- type: set\n  group: 女子\n  segments:\n  - distance_m: 1120\n  label: 女子 追加2周（実際） 1.12km (2周) k/3:34\n-->\n\nジョグ 2.24km (4周) k/3:52\n男子 追加2周（設定） 1.12km (2周) k/3:161120m\n男子 追加2周（実際） 1.12km (2周) k/3:071120m\n女子 追加2周（設定） 1.12km (2周) k/3:521120m\n女子 追加2周（実際） 1"
+    },
+    {
+      "id": "entity:practice:2025-09-16:126",
+      "type": "Entity",
+      "label": "2025-09-16 いだてん岱明練習",
+      "topics": [
+        "calendar",
+        "practice"
+      ],
+      "refs": [
+        "input/events.2025.yaml",
+        "out/2025/practice.json"
+      ],
+      "hint": "岱明練習実績 2025-09-16 (input/events.2025.yaml:L1508): <!-- practice-menu:v1\nwarmup: 動きづくり\nitems:\n- type: jog\n  group: null\n  laps: 10\n  distance_km: 5.11\n  pace: k/4:24\n-->\n\n動きづくり\n\n流し\n\nジョグ 5.60km (10周) k/4:24 / laps=10 pace=k/4:24"
+    },
+    {
+      "id": "entity:practice:2025-09-23:133",
+      "type": "Entity",
+      "label": "2025-09-23 いだてん岱明練習",
+      "topics": [
+        "calendar",
+        "practice"
+      ],
+      "refs": [
+        "input/events.2025.yaml",
+        "out/2025/practice.json"
+      ],
+      "hint": "岱明練習実績 2025-09-23 (input/events.2025.yaml:L1595): <!-- practice-menu:v1\nwarmup: 動きづくり\nitems:\n- type: jog\n  group: null\n  laps: 12\n  distance_km: 6.34\n  pace: k/4:23\n-->\n\n動きづくり\n\n流し\n\nジョグ 6.72km (12周) k/4:23 / laps=12 pace=k/4:23"
+    },
+    {
+      "id": "entity:practice:2025-10-04:137",
+      "type": "Entity",
+      "label": "2025-10-04 いだてん岱明練習",
+      "topics": [
+        "calendar",
+        "practice"
+      ],
+      "refs": [
+        "input/events.2025.yaml",
+        "out/2025/practice.json"
+      ],
+      "hint": "岱明練習実績 2025-10-04 (input/events.2025.yaml:L1678): <!-- practice-menu:v1\nwarmup: 動きづくり\nitems:\n- type: jog\n  group: null\n  laps: 12\n  distance_km: 6.3\n  pace: k/4:39\n-->\n\n動きづくり\n\n流し\n\nジョグ 6.72km (12周) k/4:39 / laps=12 pace=k/4:39"
+    },
+    {
+      "id": "entity:practice:2025-10-11:144",
+      "type": "Entity",
+      "label": "2025-10-11 いだてん岱明練習",
+      "topics": [
+        "calendar",
+        "practice"
+      ],
+      "refs": [
+        "input/events.2025.yaml",
+        "out/2025/practice.json"
+      ],
+      "hint": "岱明練習実績 2025-10-11 (input/events.2025.yaml:L1741): <!-- practice-menu:v1\nwarmup: 動きづくり\nitems:\n- type: jog\n  group: null\n  laps: 12\n  distance_km: 6.23\n  pace: k/4:19\n-->\n\n動きづくり\n\n流し\n\nジョグ 6.72km (12周) k/4:19 / laps=12 pace=k/4:19"
+    },
+    {
+      "id": "entity:practice:2025-10-13:146",
+      "type": "Entity",
+      "label": "2025-10-13 いだてん岱明練習",
+      "topics": [
+        "calendar",
+        "practice"
+      ],
+      "refs": [
+        "input/events.2025.yaml",
+        "out/2025/practice.json"
+      ],
+      "hint": "岱明練習実績 2025-10-13 (input/events.2025.yaml:L1778): <!-- practice-menu:v1\nwarmup: 動きづくり\nitems:\n- type: jog\n  group: null\n  laps: 4\n  distance_km: 2.24\n  pace: k/3:45\n- type: set\n  group: 男子\n  segments:\n  - distance_m: 1000\n  - distance_m: 500\n  - distance_m: 500\n  label: 男子 1000m+500m 1000m k/3:20 / 500m k/2:48\n-->\n\n動きづくり\n\nジョグ 2.24km (4周) k/3:45\n男子 1000m+500m 1000m k/3:20 / 500m k/2:481000m / 500m / 500m / laps=4 pace=k/3:45 / 男子 男子 1000m+500m 1000m k/3:20 / 500m k/2:48"
+    },
+    {
+      "id": "entity:practice:2025-10-20:150",
+      "type": "Entity",
+      "label": "2025-10-20 いだてん岱明練習",
+      "topics": [
+        "calendar",
+        "practice"
+      ],
+      "refs": [
+        "input/events.2025.yaml",
+        "out/2025/practice.json"
+      ],
+      "hint": "岱明練習実績 2025-10-20 (input/events.2025.yaml:L1857): <!-- practice-menu:v1\nwarmup: 動きづくり\nitems:\n- type: jog\n  group: null\n  laps: 10\n  distance_km: 4.95\n  pace: k/5:07\n-->\n\n動きづくり\n\n欠席者 松岡\n流し2本\n中体連駅伝明け最初の練習。1名は連絡があり、欠席だったが、その他は全員参加。休み明けと、一体感を高めるために男女固まっての練習。小学生1名含め、全員が最後まで完走。3年が抜け、ジョグ中はかなり静かになっていた。あまりに静かだったので、自分が話を展開することもあった。寒くなってきたため、上着を持ってくるよう伝えた。ディズニーのお土産も配った。メリハリのハリを改善しつつも、岱明のこれまでの良さでもあるメリも大事にしてほしい。\n\nジョグ 5.60km (10周) k/5:07 / laps=10 pace=k/5:07"
+    },
+    {
+      "id": "entity:practice:2025-10-25:154",
+      "type": "Entity",
+      "label": "2025-10-25 いだてん岱明練習",
+      "topics": [
+        "calendar",
+        "practice"
+      ],
+      "refs": [
+        "input/events.2025.yaml",
+        "out/2025/practice.json"
+      ],
+      "hint": "岱明練習実績 2025-10-25 (input/events.2025.yaml:L1909): <!-- practice-menu:v1\nwarmup: 動きづくり\nitems:\n- type: jog\n  group: null\n  laps: 6\n  distance_km: 3.1\n  pace: k/4:02\n-->\n\n動きづくり\n\n欠席者 田上、角田、高田、松本\n欠席者多めの中、動きづくりはいつもよりしっかりとやれていた印象だった。ダウンジョグも一体感持ってやってほしい。11〜1月は日の入りが早いため、6時間授業の場合は学校で速く短く、5時間やそれより早い場合はゆっくり長く、土日祝日で実施する日はスピード練習\n\nジョグ 3.36km (6周) k/4:02 / laps=6 pace=k/4:02"
+    },
+    {
+      "id": "entity:practice:2025-11-01:161",
+      "type": "Entity",
+      "label": "2025-11-01 いだてん岱明練習",
+      "topics": [
+        "calendar",
+        "practice"
+      ],
+      "refs": [
+        "input/events.2025.yaml",
+        "out/2025/practice.json"
+      ],
+      "hint": "岱明練習実績 2025-11-01 (input/events.2025.yaml:L1978): <!-- practice-menu:v1\nwarmup: 動きづくり\nitems:\n- type: jog\n  group: null\n  laps: 12\n  distance_km: 6.13\n  pace: k/4:59\n-->\n\n動きづくり\n\n欠席者 松岡、塚原、村上、高田、増岡\nゆっくりめだったため、リタイアが一人もおらず、全員完走。このペースで男子は8km、女子は7kmをまずいけたら。\n\nジョグ 6.72km (12周) k/4:59 / laps=12 pace=k/4:59"
+    },
+    {
+      "id": "entity:practice:2025-11-03:163",
+      "type": "Entity",
+      "label": "2025-11-03 いだてん岱明練習",
+      "topics": [
+        "calendar",
+        "practice"
+      ],
+      "refs": [
+        "input/events.2025.yaml",
+        "out/2025/practice.json"
+      ],
+      "hint": "岱明練習実績 2025-11-03 (input/events.2025.yaml:L2022): <!-- practice-menu:v1\nwarmup: 動きづくり\nitems:\n- type: jog\n  group: null\n  laps: 6\n  distance_km: 3.08\n  pace: k/4:03\n- type: set\n  group: null\n  segments:\n  - distance_m: 300\n  label: 300m 1本目 300m k/3:23\n- type: set\n  group: null\n  segments:\n  - distance_m: 300\n  label: 300m 2本目 300m k/3:17\n- type: set\n  group: null\n  segments:\n  - distance_m: 300\n  label: 300m 3本目 300m k/3:13\n- type: set\n  group: null\n  segments:\n  - distance_m: 300\n  label: 300m 4本目 300m k/3:00\n-->\n\n動きづくり\n\n欠席者 村上、高田、松岡\nキロ4で3kmが楽になれば、5km20分ではいけそう。まだインターバルの間をしっかりとしたジョグで繋げるようになるまでは時間がかかりそう。角田、塚原はスピードに課題。\n\nジョグ 3.36km (6周) k/4:03\n300m 1本目 300m k/3:23300m\n300m 2本目 300m k/3:17300m\n3"
+    },
+    {
+      "id": "entity:practice:2025-11-08:165",
+      "type": "Entity",
+      "label": "2025-11-08 いだてん岱明練習",
+      "topics": [
+        "calendar",
+        "practice"
+      ],
+      "refs": [
+        "input/events.2025.yaml",
+        "out/2025/practice.json"
+      ],
+      "hint": "岱明練習実績 2025-11-08 (input/events.2025.yaml:L2104): <!-- practice-menu:v1\nwarmup: 動きづくり\nitems:\n- type: jog\n  group: null\n  laps: 6\n  distance_km: 3.17\n  pace: k/5:02\n- type: set\n  group: null\n  segments:\n  - distance_m: 300\n  label: 600m ×2（54秒/300m組） 600m×2 k/3:00\n- type: set\n  group: null\n  segments:\n  - distance_m: 300\n  label: 600m ×2（57秒/300m組） 600m×2 k/3:10\n- type: set\n  group: null\n  segments:\n  - distance_m: 300\n  label: 600m ×2（60秒/300m組） 600m×2 k/3:20\n- type: set\n  group: null\n  segments:\n  - distance_m: 300\n  label: 600m ×2（63秒/300m組） 600m×2 k/3:30\n- type: interval\n  distance_m: 600\n  reps: '2'\n  intensity: null\n  rest_sec: null\n- type: interval\n  distance_m: 600\n  reps: '2'\n  inten"
+    },
+    {
+      "id": "entity:practice:2025-11-15:169",
+      "type": "Entity",
+      "label": "2025-11-15 いだてん岱明練習",
+      "topics": [
+        "calendar",
+        "practice"
+      ],
+      "refs": [
+        "input/events.2025.yaml",
+        "out/2025/practice.json"
+      ],
+      "hint": "岱明練習実績 2025-11-15 (input/events.2025.yaml:L2232): <!-- practice-menu:v1\nwarmup: 動きづくり\nitems:\n- type: jog\n  group: null\n  laps: 6\n  distance_km: 3.26\n  pace: k/5:08\n-->\n\n動きづくり\n\n欠席者 松岡、塚原、高田\n土山は900m4本走ったが、生徒によって3+3+3、3+3+2、3+2+2、3+1+1といった具合。間は3分。\n村上は3本目を2周。田上は60で3本のラストは上げられていた。松野は最後も3周いった。次回以降は、各自の周回を増やすか、1本目66からの4本目54の3秒ずつ上げなどができれば。塚原は疲労骨折手前だったとのこと。オーバーワークにならずにコツコツと負荷を高めていきたい。\n\nジョグ 3.36km (6周) k/5:08 / laps=6 pace=k/5:08"
+    },
+    {
+      "id": "entity:practice:2025-11-24:173",
+      "type": "Entity",
+      "label": "2025-11-24 いだてん岱明練習",
+      "topics": [
+        "calendar",
+        "practice"
+      ],
+      "refs": [
+        "input/events.2025.yaml",
+        "out/2025/practice.json"
+      ],
+      "hint": "岱明練習実績 2025-11-24 (input/events.2025.yaml:L2286): <!-- practice-menu:v1\nwarmup: 動きづくり\nitems:\n- type: jog\n  group: null\n  laps: 6\n  distance_km: 3.22\n  pace: k/5:16\n- type: set\n  group: B組\n  segments:\n  - distance_m: 2100\n  label: B組 2100m 2100m k/4:00\n- type: set\n  group: B組\n  segments:\n  - distance_m: 900\n  label: B組 900m 900m k/3:50\n- type: set\n  group: A組\n  segments:\n  - distance_m: 2100\n  label: A組 2100m 2100m k/3:40\n- type: set\n  group: A組\n  segments:\n  - distance_m: 900\n  label: A組 900m 900m k/3:30\n-->\n\n動きづくり\n\n欠席者 松野、塚原、松本\n設定にゆとりを持って走れる生徒が多く、そういう生徒は自分より前を走っていた。\n\nジョグ 3.36km (6周) k/5:16\nB組 2100m 2100m k/4:002100m\nB組 900m 900m k/3:50900m\nA組 2100m 2100m k/3:402100m\nA組 900m 900m k/3:30900m "
+    },
+    {
+      "id": "entity:practice:2025-12-06:181",
+      "type": "Entity",
+      "label": "2025-12-06 いだてん岱明練習",
+      "topics": [
+        "calendar",
+        "practice"
+      ],
+      "refs": [
+        "input/events.2025.yaml",
+        "out/2025/practice.json"
+      ],
+      "hint": "岱明練習実績 2025-12-06 (input/events.2025.yaml:L2405): <!-- practice-menu:v1\nwarmup: 動きづくり\nitems:\n- type: jog\n  group: null\n  laps: 10\n  distance_km: 5.6\n  pace: k/5:02\n- type: set\n  group: null\n  segments:\n  - distance_m: 300\n  label: 600m ×1（57秒/300m組） 600m k/3:10\n- type: set\n  group: null\n  segments:\n  - distance_m: 300\n  label: 600m ×1（60秒/300m組） 600m k/3:20\n- type: set\n  group: null\n  segments:\n  - distance_m: 300\n  label: 600m ×1（63秒/300m組） 600m k/3:30\n- type: interval\n  distance_m: 600\n  reps: '1'\n  intensity: null\n  rest_sec: null\n- type: interval\n  distance_m: 600\n  reps: '1'\n  intensity: null\n  rest_sec: null\n- type: interval\n  distance_m: 600\n  reps: '1'\n  intensity: null\n  rest_sec: n"
+    },
+    {
+      "id": "entity:practice:2025-12-13:185",
+      "type": "Entity",
+      "label": "2025-12-13 いだてん岱明練習",
+      "topics": [
+        "calendar",
+        "practice"
+      ],
+      "refs": [
+        "input/events.2025.yaml",
+        "out/2025/practice.json"
+      ],
+      "hint": "岱明練習実績 2025-12-13 (input/events.2025.yaml:L2508): <!-- practice-menu:v1\nwarmup: 動きづくり\nitems:\n- type: jog\n  group: null\n  laps: 3\n  distance_km: 2.93\n  pace: k/4:32\n- type: set\n  group: null\n  segments:\n  - distance_m: 300\n  - distance_m: 300\n  label: 600m +300m 900m 600m k/3:00 / 300m k/3:20\n-->\n\n動きづくり\n\nたくさん走る日と質が高い日は分けた方が心身にかかる負荷を分散できそう。\n\nジョグ 1.68km (3周) k/4:32\n600m +300m 900m 600m k/3:00 / 300m k/3:20300m / 300m / laps=3 pace=k/4:32 / 600m +300m 900m 600m k/3:00 / 300m k/3:20"
+    },
+    {
+      "id": "entity:practice:2025-12-20:188",
+      "type": "Entity",
+      "label": "2025-12-20 いだてん岱明練習",
+      "topics": [
+        "calendar",
+        "practice"
+      ],
+      "refs": [
+        "input/events.2025.yaml",
+        "out/2025/practice.json"
+      ],
+      "hint": "岱明練習実績 2025-12-20 (input/events.2025.yaml:L2563): <!-- practice-menu:v1\nwarmup: 動きづくり\nitems:\n- type: jog\n  group: null\n  laps: 15\n  distance_km: 8.4\n  pace: k/5:07\n- type: jog\n  group: null\n  laps: 17\n  distance_km: 9.53\n  pace: k/5:07\n-->\n\n動きづくり\n\n流し\n最初は長いかなと感じたが、無事完走。長く走れるようになってきている。本田くんが最後まで完走したのにはびっくりした。ケガにはお互い注意を払いたい。\n\nジョグ 8.40km (15周) k/5:07\nジョグ 9.52km (17周) k/5:07 / laps=15 pace=k/5:07 / laps=17 pace=k/5:07"
+    },
+    {
+      "id": "entity:practice:2025-12-27:193",
+      "type": "Entity",
+      "label": "2025-12-27 いだてん岱明練習",
+      "topics": [
+        "calendar",
+        "practice"
+      ],
+      "refs": [
+        "input/events.2025.yaml",
+        "out/2025/practice.json"
+      ],
+      "hint": "岱明練習実績 2025-12-27 (input/events.2025.yaml:L2627): <!-- practice-menu:v1\nwarmup: 動きづくり\nitems:\n- type: jog\n  group: null\n  laps: 6\n  distance_km: 3.33\n  pace: k/5:03\n- type: set\n  group: 男子\n  segments:\n  - distance_m: 1680\n  - distance_m: 1120\n  label: 男子 1680m+1120m 2800m 2:10組 k/3:52 / 1:55組 k/3:25\n- type: set\n  group: 女子\n  segments:\n  - distance_m: 1120\n  - distance_m: 560\n  label: 女子 1120m+560m 1680m 2:10組 k/3:52 / 1:55組 k/3:25\n-->\n\n動きづくり\n\n2:10秒組は少しキツそうだった。田上はほぼできていた。松野と山本もほぼいけていた。松野はスタミナに課題。山本は離れても粘れる。\n\nジョグ 3.36km (6周) k/5:03\n男子 1680m+1120m 2800m 2:10組 k/3:52 / 1:55組 k/3:251680m / 1120m\n女子 1120m+560m 1680m 2:10組 k/3:52 / 1:55組 k/3:251120m / 560m / laps=6 pace=k/5:03 / 男子 男子 1680m+1120m 28"
+    },
+    {
+      "id": "entity:practice:2025-12-29:196",
+      "type": "Entity",
+      "label": "2025-12-29 いだてん岱明練習",
+      "topics": [
+        "calendar",
+        "practice"
+      ],
+      "refs": [
+        "input/events.2025.yaml",
+        "out/2025/practice.json"
+      ],
+      "hint": "岱明練習実績 2025-12-29 (input/events.2025.yaml:L2696): <!-- practice-menu:v1\nwarmup: 動きづくり\nitems:\n- type: jog\n  group: null\n  laps: 10\n  distance_km: 5.53\n  pace: k/4:51\n-->\n\n動きづくり\n\n流し4本\n\nジョグ 5.60km (10周) k/4:51 / laps=10 pace=k/4:51"
+    },
+    {
+      "id": "entity:practice:2026-07-21:128",
+      "type": "Entity",
+      "label": "2026-07-21 いだてん岱明朝練",
+      "topics": [
+        "calendar",
+        "practice"
+      ],
+      "refs": [
+        "input/events.2026.yaml",
+        "out/2026/practice.json"
+      ],
+      "hint": "岱明練習実績 2026-07-21 (input/events.2026.yaml:L1036): 動きづくり、男子2.5km×2、女子2km×2 / 男子 reps=2 / 女子 reps=2"
+    },
+    {
+      "id": "entity:practice:2026-07-23:136",
+      "type": "Entity",
+      "label": "2026-07-23 いだてん岱明朝練",
+      "topics": [
+        "calendar",
+        "practice"
+      ],
+      "refs": [
+        "input/events.2026.yaml",
+        "out/2026/practice.json"
+      ],
+      "hint": "岱明練習実績 2026-07-23 (input/events.2026.yaml:L1172): 動きづくり、男子2.5km×2、女子2km×2 / 男子 reps=2 / 女子 reps=2"
+    },
+    {
+      "id": "entity:practice:2026-07-24:138",
+      "type": "Entity",
+      "label": "2026-07-24 いだてん岱明朝練",
+      "topics": [
+        "calendar",
+        "practice"
+      ],
+      "refs": [
+        "input/events.2026.yaml",
+        "out/2026/practice.json"
+      ],
+      "hint": "岱明練習実績 2026-07-24 (input/events.2026.yaml:L1212): 動きづくり、男子2.5km×2、女子2km×2 / 男子 reps=2 / 女子 reps=2"
+    },
+    {
+      "id": "entity:practice:2026-07-27:149",
+      "type": "Entity",
+      "label": "2026-07-27 いだてん岱明朝練",
+      "topics": [
+        "calendar",
+        "practice"
+      ],
+      "refs": [
+        "input/events.2026.yaml",
+        "out/2026/practice.json"
+      ],
+      "hint": "岱明練習実績 2026-07-27 (input/events.2026.yaml:L1388): 動きづくり、男子2.5km×2、女子2km×2 / 男子 reps=2 / 女子 reps=2"
+    },
+    {
+      "id": "entity:practice:2026-07-28:157",
+      "type": "Entity",
+      "label": "2026-07-28 いだてん岱明朝練",
+      "topics": [
+        "calendar",
+        "practice"
+      ],
+      "refs": [
+        "input/events.2026.yaml",
+        "out/2026/practice.json"
+      ],
+      "hint": "岱明練習実績 2026-07-28 (input/events.2026.yaml:L1502): 動きづくり、男子2.5km×2、女子2km×2 / 男子 reps=2 / 女子 reps=2"
+    },
+    {
+      "id": "entity:practice:2026-07-29:160",
+      "type": "Entity",
+      "label": "2026-07-29 いだてん岱明朝練",
+      "topics": [
+        "calendar",
+        "practice"
+      ],
+      "refs": [
+        "input/events.2026.yaml",
+        "out/2026/practice.json"
+      ],
+      "hint": "岱明練習実績 2026-07-29 (input/events.2026.yaml:L1551): 動きづくり、男子2.5km×2、女子2km×2 / 男子 reps=2 / 女子 reps=2"
+    },
+    {
+      "id": "entity:practice:2026-07-31:164",
+      "type": "Entity",
+      "label": "2026-07-31 いだてん岱明夕練",
+      "topics": [
+        "calendar",
+        "practice"
+      ],
+      "refs": [
+        "input/events.2026.yaml",
+        "out/2026/practice.json"
+      ],
+      "hint": "岱明練習実績 2026-07-31 (input/events.2026.yaml:L1651): <!-- practice-menu:v1\nwarmup: null\nitems:\n- type: interval\n  distance_m: 600\n  reps: '2'\n  intensity: RP\n  rest_sec: null\n-->\n\n各自アップ、600m2本（1500mRP、r=8分）\n\n600m×2（RP） / 600 reps=2"
+    },
+    {
+      "id": "entity:practice:2026-07-31:165",
+      "type": "Entity",
+      "label": "2026-07-31 いだてん岱明朝練",
+      "topics": [
+        "calendar",
+        "practice"
+      ],
+      "refs": [
+        "input/events.2026.yaml",
+        "out/2026/practice.json"
+      ],
+      "hint": "岱明練習実績 2026-07-31 (input/events.2026.yaml:L1694): 動きづくり、男子2.5km×2、女子2km×2 / 男子 reps=2 / 女子 reps=2"
+    },
+    {
+      "id": "entity:practice:2026-08-03:173",
+      "type": "Entity",
+      "label": "2026-08-03 いだてん岱明朝練",
+      "topics": [
+        "calendar",
+        "practice"
+      ],
+      "refs": [
+        "input/events.2026.yaml",
+        "out/2026/practice.json"
+      ],
+      "hint": "岱明練習実績 2026-08-03 (input/events.2026.yaml:L1850): 動きづくり、男子2.5km×2、女子2km×2 / 男子 reps=2 / 女子 reps=2"
+    },
+    {
+      "id": "entity:practice:2026-08-03:174",
+      "type": "Entity",
+      "label": "2026-08-03 いだてん岱明夕練",
+      "topics": [
+        "calendar",
+        "practice"
+      ],
+      "refs": [
+        "input/events.2026.yaml",
+        "out/2026/practice.json"
+      ],
+      "hint": "岱明練習実績 2026-08-03 (input/events.2026.yaml:L1885): <!-- practice-menu:v1\nwarmup: null\nitems:\n- type: set\n  group: null\n  segments:\n  - distance_m: 300\n  label: 300m 1本目 300m k/3:28\n- type: set\n  group: null\n  segments:\n  - distance_m: 300\n  label: 300m 2本目 300m k/3:22\n- type: set\n  group: null\n  segments:\n  - distance_m: 300\n  label: 300m 3本目 300m k/3:24\n- type: set\n  group: null\n  segments:\n  - distance_m: 300\n  label: 300m 4本目 300m k/3:23\n- type: set\n  group: null\n  segments:\n  - distance_m: 300\n  label: 300m 5本目 300m k/3:22\n-->\n\n各自アップ、300m5本、レスト70秒\n\n300m 1本目 300m k/3:28300m\n300m 2本目 300m k/3:22300m\n300m 3本目 300m k/3:24300m\n300m 4本目 300m k/3:23300m\n300m 5本目 300m k/3:22300m / 300m 1本目 300m k"
+    },
+    {
+      "id": "entity:practice:2026-08-04:178",
+      "type": "Entity",
+      "label": "2026-08-04 いだてん岱明朝練",
+      "topics": [
+        "calendar",
+        "practice"
+      ],
+      "refs": [
+        "input/events.2026.yaml",
+        "out/2026/practice.json"
+      ],
+      "hint": "岱明練習実績 2026-08-04 (input/events.2026.yaml:L2008): 動きづくり、男子2.5km×2、女子2km×2 / 男子 reps=2 / 女子 reps=2"
+    },
+    {
+      "id": "entity:practice:2026-08-06:186",
+      "type": "Entity",
+      "label": "2026-08-06 いだてん岱明朝練",
+      "topics": [
+        "calendar",
+        "practice"
+      ],
+      "refs": [
+        "input/events.2026.yaml",
+        "out/2026/practice.json"
+      ],
+      "hint": "岱明練習実績 2026-08-06 (input/events.2026.yaml:L2147): 動きづくり、男子2.5km×2、女子2km×2 / 男子 reps=2 / 女子 reps=2"
+    },
+    {
+      "id": "entity:practice:2026-08-07:190",
+      "type": "Entity",
+      "label": "2026-08-07 いだてん岱明朝練",
+      "topics": [
+        "calendar",
+        "practice"
+      ],
+      "refs": [
+        "input/events.2026.yaml",
+        "out/2026/practice.json"
+      ],
+      "hint": "岱明練習実績 2026-08-07 (input/events.2026.yaml:L2209): 動きづくり、男子2.5km×2、女子2km×2 / 男子 reps=2 / 女子 reps=2"
+    },
+    {
+      "id": "entity:practice:2026-08-10:198",
+      "type": "Entity",
+      "label": "2026-08-10 いだてん岱明朝練",
+      "topics": [
+        "calendar",
+        "practice"
+      ],
+      "refs": [
+        "input/events.2026.yaml",
+        "out/2026/practice.json"
+      ],
+      "hint": "岱明練習実績 2026-08-10 (input/events.2026.yaml:L2376): 動きづくり、男子2.5km×2、女子2km×2 / 男子 reps=2 / 女子 reps=2"
+    },
+    {
+      "id": "entity:practice:2026-08-14:216",
+      "type": "Entity",
+      "label": "2026-08-14 いだてん岱明夕練",
+      "topics": [
+        "calendar",
+        "practice"
+      ],
+      "refs": [
+        "input/events.2026.yaml",
+        "out/2026/practice.json"
+      ],
+      "hint": "岱明練習実績 2026-08-14 (input/events.2026.yaml:L2652): <!-- practice-menu:v1\nwarmup: 動きづくり\nitems:\n- type: jog\n  group: null\n  laps: 6\n  distance_km: 3.36\n  pace: k/4:46\n- type: jog\n  group: null\n  laps: 5\n  distance_km: 2.8\n  pace: k/4:46\n- type: set\n  group: null\n  segments:\n  - distance_m: 300\n  label: 900m （300m57秒組） 900m k/3:10\n- type: set\n  group: null\n  segments:\n  - distance_m: 300\n  label: 900m （300m63秒組） 900m k/3:30\n- type: set\n  group: null\n  segments:\n  - distance_m: 300\n  label: 900m （300m69秒組） 900m k/3:50\n-->\n\n動きづくり\n\nジョグ 3.36km (6周) k/4:46\nジョグ 2.80km (5周) k/4:46\n900m （300m57秒組） 900m k/3:10300m\n900m （300m63秒組） 900m k/3:30300m\n900m （300m69秒組） 900m k/3:50300m / laps=6 pace=k/4:46 / laps"
+    },
+    {
+      "id": "entity:practice:2026-08-15:221",
+      "type": "Entity",
+      "label": "2026-08-15 いだてん岱明夕練",
+      "topics": [
+        "calendar",
+        "practice"
+      ],
+      "refs": [
+        "input/events.2026.yaml",
+        "out/2026/practice.json"
+      ],
+      "hint": "岱明練習実績 2026-08-15 (input/events.2026.yaml:L2776): 動きづくり\n\nジョグ 男子 3.36km (6周) k/4:45\nジョグ 女子 2.8km (5周) k/4:45\n\n300m×3（1500mRP、レスト70秒） / 男子 3360 laps=6 pace=k/4:45 / 女子 2800 laps=5 pace=k/4:45 / 300 reps=3"
+    },
+    {
+      "id": "entity:practice:2026-08-17:224",
+      "type": "Entity",
+      "label": "2026-08-17 いだてん岱明朝練",
+      "topics": [
+        "calendar",
+        "practice"
+      ],
+      "refs": [
+        "input/events.2026.yaml",
+        "out/2026/practice.json"
+      ],
+      "hint": "岱明練習実績 2026-08-17 (input/events.2026.yaml:L2868): 動きづくり、男子2.5km×2、女子2km×2 / 男子 reps=2 / 女子 reps=2"
+    },
+    {
+      "id": "entity:practice:2026-08-17:225",
+      "type": "Entity",
+      "label": "2026-08-17 いだてん岱明夕練",
+      "topics": [
+        "calendar",
+        "practice"
+      ],
+      "refs": [
+        "input/events.2026.yaml",
+        "out/2026/practice.json"
+      ],
+      "hint": "岱明練習実績 2026-08-17 (input/events.2026.yaml:L2903): 各自ジョグ200m10本（レスト15秒）\n男子 k/3:30〜k/3:40\n女子 k/4:00〜k/4:10 / 男子 200 reps=10 / 女子 200 reps=10"
+    },
+    {
+      "id": "entity:practice:2026-08-19:233",
+      "type": "Entity",
+      "label": "2026-08-19 いだてん岱明夕練",
+      "topics": [
+        "calendar",
+        "practice"
+      ],
+      "refs": [
+        "input/events.2026.yaml",
+        "out/2026/practice.json"
+      ],
+      "hint": "岱明練習実績 2026-08-19 (input/events.2026.yaml:L3040): 動きづくり\n\n欠席者 田中\n\nジョグ 男子 3.36km (6周) k/4:49\nジョグ 女子 2.80km (5周) k/4:49\n500m×2（1500mRP）、レスト7分 / 男子 3360 laps=6 pace=k/4:49 / 女子 2800 laps=5 pace=k/4:49 / 500 reps=2"
+    },
+    {
+      "id": "entity:practice:2026-08-20:235",
+      "type": "Entity",
+      "label": "2026-08-20 いだてん岱明朝練",
+      "topics": [
+        "calendar",
+        "practice"
+      ],
+      "refs": [
+        "input/events.2026.yaml",
+        "out/2026/practice.json"
+      ],
+      "hint": "岱明練習実績 2026-08-20 (input/events.2026.yaml:L3098): 動きづくり、男子2.5km×2、女子2km×2 / 男子 reps=2 / 女子 reps=2"
+    },
+    {
+      "id": "entity:practice:2026-08-21:239",
+      "type": "Entity",
+      "label": "2026-08-21 いだてん岱明朝練",
+      "topics": [
+        "calendar",
+        "practice"
+      ],
+      "refs": [
+        "input/events.2026.yaml",
+        "out/2026/practice.json"
+      ],
+      "hint": "岱明練習実績 2026-08-21 (input/events.2026.yaml:L3161): 動きづくり、男子2.5km×2、女子2km×2 / 男子 reps=2 / 女子 reps=2"
+    },
+    {
+      "id": "entity:practice:2026-08-22:245",
+      "type": "Entity",
+      "label": "2026-08-22 いだてん岱明夕練",
+      "topics": [
+        "calendar",
+        "practice"
+      ],
+      "refs": [
+        "input/events.2026.yaml",
+        "out/2026/practice.json"
+      ],
+      "hint": "岱明練習実績 2026-08-22 (input/events.2026.yaml:L3263): 動きづくり\n\nジョグ 男子 3.36km (6周) k/4:42\nジョグ 女子 2.80km (5周) k/4:42\n900m×1（1500mRP〜RP+10秒/km）\n\n切上げ\n- 翌日が記録会 → 追い込み禁止。本数を増やさない\n- 雨が強い / 雷 → 短縮または中止\n900mは1500mRP〜RP+10秒/km。1本のみ。追い込み禁止。 / 男子 3360 laps=6 pace=k/4:42 / 女子 2800 laps=5 pace=k/4:42 / 900 reps=1"
+    },
+    {
+      "id": "entity:practice:2026-08-24:250",
+      "type": "Entity",
+      "label": "2026-08-24 いだてん岱明朝練",
+      "topics": [
+        "calendar",
+        "practice"
+      ],
+      "refs": [
+        "input/events.2026.yaml",
+        "out/2026/practice.json"
+      ],
+      "hint": "岱明練習実績 2026-08-24 (input/events.2026.yaml:L3363): 動きづくり、男子2.5km×2、女子2km×2 / 男子 reps=2 / 女子 reps=2"
+    },
+    {
+      "id": "entity:practice:2026-08-24:251",
+      "type": "Entity",
+      "label": "2026-08-24 いだてん岱明夕練",
+      "topics": [
+        "calendar",
+        "practice"
+      ],
+      "refs": [
+        "input/events.2026.yaml",
+        "out/2026/practice.json"
+      ],
+      "hint": "岱明練習実績 2026-08-24 (input/events.2026.yaml:L3398): <!-- practice-menu:v1\nwarmup: null\nitems:\n- type: interval\n  distance_m: 300\n  reps: '2'\n  intensity: RP\n  rest_sec: 120\n-->\n\n各自アップ、300m×2本（800mRP、レスト2分）\n\n300m×2（800mRP） / 300 reps=2"
+    },
+    {
+      "id": "entity:practice:2026-08-25:253",
+      "type": "Entity",
+      "label": "2026-08-25 いだてん岱明朝練",
+      "topics": [
+        "calendar",
+        "practice"
+      ],
+      "refs": [
+        "input/events.2026.yaml",
+        "out/2026/practice.json"
+      ],
+      "hint": "岱明練習実績 2026-08-25 (input/events.2026.yaml:L3463): 動きづくり、男子2.5km×2、女子2km×2 / 男子 reps=2 / 女子 reps=2"
+    },
+    {
+      "id": "entity:practice:2026-08-26:258",
+      "type": "Entity",
+      "label": "2026-08-26 いだてん岱明夕練",
+      "topics": [
+        "calendar",
+        "practice"
+      ],
+      "refs": [
+        "input/events.2026.yaml",
+        "out/2026/practice.json"
+      ],
+      "hint": "岱明練習実績 2026-08-26 (input/events.2026.yaml:L3546): 動きづくり\n\nジョグ 男子 3.36km (6周) k/4:50\nジョグ 女子 2.8km (5周) k/5:00\n900m×1（GZ）\n\n軽いポイント。「最後だから追い込む」禁止 / 男子 laps=6 pace=k/4:50 / 女子 laps=5 pace=k/5:00 / 900 reps=1"
+    },
+    {
+      "id": "entity:practice:2026-08-31:275",
+      "type": "Entity",
+      "label": "2026-08-31 いだてん岱明夕練",
+      "topics": [
+        "calendar",
+        "practice"
+      ],
+      "refs": [
+        "input/events.2026.yaml",
+        "out/2026/practice.json"
+      ],
+      "hint": "岱明練習実績 2026-08-31 (input/events.2026.yaml:L3766): <!-- practice-menu:v1\nwarmup: 動きづくり\nitems:\n- type: jog\n  group: 男子\n  laps: 14\n  distance_m: 7840\n  distance_km: 7.84\n  pace: k/5:26\n  intensity: E\n- type: jog\n  group: 女子\n  distance_m: 6960\n  distance_km: 6.96\n  pace: k/5:26\n  intensity: E\n- type: strides\n  reps: 2\n  label: 流し2本\n-->\n\n動きづくり\n\nジョグ 男子 7.84km (14周) k/5:26\nジョグ 女子 6.96km k/5:26\n流し2本 / 男子 7840 laps=14 pace=k/5:26 / 女子 6960 pace=k/5:26 / 流し2本 reps=2"
+    },
+    {
+      "id": "entity:practice:2026-09-05:286",
+      "type": "Entity",
+      "label": "2026-09-05 いだてん岱明練習",
+      "topics": [
+        "calendar",
+        "practice"
+      ],
+      "refs": [
+        "input/events.2026.yaml",
+        "out/2026/practice.json"
+      ],
+      "hint": "岱明練習実績 2026-09-05 (input/events.2026.yaml:L3926): <!-- practice-menu:v1\nwarmup: 動きづくり\nitems:\n- type: jog\n  group: 男子\n  laps: 6\n  distance_m: 3360\n  distance_km: 3.36\n  pace: k/4:51\n- type: jog\n  group: 女子\n  laps: 5\n  distance_m: 2800\n  distance_km: 2.8\n  pace: k/4:51\n- type: interval\n  group: 3:20組（3km）\n  distance_m: 1000\n  reps: 3\n  pace: k/3:20\n  rest_sec: 360\n- type: interval\n  group: 3:40組（3km）\n  distance_m: 1000\n  reps: 3\n  pace: k/3:40\n  rest_sec: 360\n- type: interval\n  group: 3:50組\n  distance_m: 1000\n  reps: 2\n  pace: k/3:50\n  rest_sec: 360\n- type: interval\n  group: 4:00組\n  distance_m: 1000\n  reps: 2\n  pace: k/4:00\n  rest_sec: 360\n-->\n\n動きづくり\n\n欠席者 高田（腰・左足痛のためメニュー不参加。酷くはなっていない）\n\nジョグ 男子 "
+    },
+    {
+      "id": "entity:practice:2026-09-24:315",
+      "type": "Entity",
+      "label": "2026-09-24 いだてん岱明練習",
+      "topics": [
+        "calendar",
+        "practice"
+      ],
+      "refs": [
+        "input/events.2026.yaml",
+        "out/2026/practice.json"
+      ],
+      "hint": "岱明練習実績 2026-09-24 (input/events.2026.yaml:L4481): 動きづくり\n女子 3360m（560m×6周相当。内回りのため実走距離は短い）\n男子 4480m（560m×8周）、1周560mを2:40\n流し2本 / 女子 3360 laps=6 / 男子 4480 laps=8 / 流し2本 reps=2"
     },
     {
       "id": "entity:tag:BBQ",
@@ -7377,6 +8203,301 @@
       "rel": "mentioned_in"
     },
     {
+      "from": "entity:practice:2025-06-05:56",
+      "to": "source:input/events.2025.yaml",
+      "rel": "documented_in"
+    },
+    {
+      "from": "entity:practice:2025-06-21:61",
+      "to": "source:input/events.2025.yaml",
+      "rel": "documented_in"
+    },
+    {
+      "from": "entity:practice:2025-07-05:67",
+      "to": "source:input/events.2025.yaml",
+      "rel": "documented_in"
+    },
+    {
+      "from": "entity:practice:2025-07-12:69",
+      "to": "source:input/events.2025.yaml",
+      "rel": "documented_in"
+    },
+    {
+      "from": "entity:practice:2025-07-19:73",
+      "to": "source:input/events.2025.yaml",
+      "rel": "documented_in"
+    },
+    {
+      "from": "entity:practice:2025-07-26:78",
+      "to": "source:input/events.2025.yaml",
+      "rel": "documented_in"
+    },
+    {
+      "from": "entity:practice:2025-08-07:90",
+      "to": "source:input/events.2025.yaml",
+      "rel": "documented_in"
+    },
+    {
+      "from": "entity:practice:2025-08-07:91",
+      "to": "source:input/events.2025.yaml",
+      "rel": "documented_in"
+    },
+    {
+      "from": "entity:practice:2025-08-09:93",
+      "to": "source:input/events.2025.yaml",
+      "rel": "documented_in"
+    },
+    {
+      "from": "entity:practice:2025-08-12:96",
+      "to": "source:input/events.2025.yaml",
+      "rel": "documented_in"
+    },
+    {
+      "from": "entity:practice:2025-08-21:101",
+      "to": "source:input/events.2025.yaml",
+      "rel": "documented_in"
+    },
+    {
+      "from": "entity:practice:2025-08-21:102",
+      "to": "source:input/events.2025.yaml",
+      "rel": "documented_in"
+    },
+    {
+      "from": "entity:practice:2025-09-15:125",
+      "to": "source:input/events.2025.yaml",
+      "rel": "documented_in"
+    },
+    {
+      "from": "entity:practice:2025-09-16:126",
+      "to": "source:input/events.2025.yaml",
+      "rel": "documented_in"
+    },
+    {
+      "from": "entity:practice:2025-09-23:133",
+      "to": "source:input/events.2025.yaml",
+      "rel": "documented_in"
+    },
+    {
+      "from": "entity:practice:2025-10-04:137",
+      "to": "source:input/events.2025.yaml",
+      "rel": "documented_in"
+    },
+    {
+      "from": "entity:practice:2025-10-11:144",
+      "to": "source:input/events.2025.yaml",
+      "rel": "documented_in"
+    },
+    {
+      "from": "entity:practice:2025-10-13:146",
+      "to": "source:input/events.2025.yaml",
+      "rel": "documented_in"
+    },
+    {
+      "from": "entity:practice:2025-10-20:150",
+      "to": "source:input/events.2025.yaml",
+      "rel": "documented_in"
+    },
+    {
+      "from": "entity:practice:2025-10-25:154",
+      "to": "source:input/events.2025.yaml",
+      "rel": "documented_in"
+    },
+    {
+      "from": "entity:practice:2025-11-01:161",
+      "to": "source:input/events.2025.yaml",
+      "rel": "documented_in"
+    },
+    {
+      "from": "entity:practice:2025-11-03:163",
+      "to": "source:input/events.2025.yaml",
+      "rel": "documented_in"
+    },
+    {
+      "from": "entity:practice:2025-11-08:165",
+      "to": "source:input/events.2025.yaml",
+      "rel": "documented_in"
+    },
+    {
+      "from": "entity:practice:2025-11-15:169",
+      "to": "source:input/events.2025.yaml",
+      "rel": "documented_in"
+    },
+    {
+      "from": "entity:practice:2025-11-24:173",
+      "to": "source:input/events.2025.yaml",
+      "rel": "documented_in"
+    },
+    {
+      "from": "entity:practice:2025-12-06:181",
+      "to": "source:input/events.2025.yaml",
+      "rel": "documented_in"
+    },
+    {
+      "from": "entity:practice:2025-12-13:185",
+      "to": "source:input/events.2025.yaml",
+      "rel": "documented_in"
+    },
+    {
+      "from": "entity:practice:2025-12-20:188",
+      "to": "source:input/events.2025.yaml",
+      "rel": "documented_in"
+    },
+    {
+      "from": "entity:practice:2025-12-27:193",
+      "to": "source:input/events.2025.yaml",
+      "rel": "documented_in"
+    },
+    {
+      "from": "entity:practice:2025-12-29:196",
+      "to": "source:input/events.2025.yaml",
+      "rel": "documented_in"
+    },
+    {
+      "from": "entity:practice:2026-07-21:128",
+      "to": "source:input/events.2026.yaml",
+      "rel": "documented_in"
+    },
+    {
+      "from": "entity:practice:2026-07-23:136",
+      "to": "source:input/events.2026.yaml",
+      "rel": "documented_in"
+    },
+    {
+      "from": "entity:practice:2026-07-24:138",
+      "to": "source:input/events.2026.yaml",
+      "rel": "documented_in"
+    },
+    {
+      "from": "entity:practice:2026-07-27:149",
+      "to": "source:input/events.2026.yaml",
+      "rel": "documented_in"
+    },
+    {
+      "from": "entity:practice:2026-07-28:157",
+      "to": "source:input/events.2026.yaml",
+      "rel": "documented_in"
+    },
+    {
+      "from": "entity:practice:2026-07-29:160",
+      "to": "source:input/events.2026.yaml",
+      "rel": "documented_in"
+    },
+    {
+      "from": "entity:practice:2026-07-31:164",
+      "to": "source:input/events.2026.yaml",
+      "rel": "documented_in"
+    },
+    {
+      "from": "entity:practice:2026-07-31:165",
+      "to": "source:input/events.2026.yaml",
+      "rel": "documented_in"
+    },
+    {
+      "from": "entity:practice:2026-08-03:173",
+      "to": "source:input/events.2026.yaml",
+      "rel": "documented_in"
+    },
+    {
+      "from": "entity:practice:2026-08-03:174",
+      "to": "source:input/events.2026.yaml",
+      "rel": "documented_in"
+    },
+    {
+      "from": "entity:practice:2026-08-04:178",
+      "to": "source:input/events.2026.yaml",
+      "rel": "documented_in"
+    },
+    {
+      "from": "entity:practice:2026-08-06:186",
+      "to": "source:input/events.2026.yaml",
+      "rel": "documented_in"
+    },
+    {
+      "from": "entity:practice:2026-08-07:190",
+      "to": "source:input/events.2026.yaml",
+      "rel": "documented_in"
+    },
+    {
+      "from": "entity:practice:2026-08-10:198",
+      "to": "source:input/events.2026.yaml",
+      "rel": "documented_in"
+    },
+    {
+      "from": "entity:practice:2026-08-14:216",
+      "to": "source:input/events.2026.yaml",
+      "rel": "documented_in"
+    },
+    {
+      "from": "entity:practice:2026-08-15:221",
+      "to": "source:input/events.2026.yaml",
+      "rel": "documented_in"
+    },
+    {
+      "from": "entity:practice:2026-08-17:224",
+      "to": "source:input/events.2026.yaml",
+      "rel": "documented_in"
+    },
+    {
+      "from": "entity:practice:2026-08-17:225",
+      "to": "source:input/events.2026.yaml",
+      "rel": "documented_in"
+    },
+    {
+      "from": "entity:practice:2026-08-19:233",
+      "to": "source:input/events.2026.yaml",
+      "rel": "documented_in"
+    },
+    {
+      "from": "entity:practice:2026-08-20:235",
+      "to": "source:input/events.2026.yaml",
+      "rel": "documented_in"
+    },
+    {
+      "from": "entity:practice:2026-08-21:239",
+      "to": "source:input/events.2026.yaml",
+      "rel": "documented_in"
+    },
+    {
+      "from": "entity:practice:2026-08-22:245",
+      "to": "source:input/events.2026.yaml",
+      "rel": "documented_in"
+    },
+    {
+      "from": "entity:practice:2026-08-24:250",
+      "to": "source:input/events.2026.yaml",
+      "rel": "documented_in"
+    },
+    {
+      "from": "entity:practice:2026-08-24:251",
+      "to": "source:input/events.2026.yaml",
+      "rel": "documented_in"
+    },
+    {
+      "from": "entity:practice:2026-08-25:253",
+      "to": "source:input/events.2026.yaml",
+      "rel": "documented_in"
+    },
+    {
+      "from": "entity:practice:2026-08-26:258",
+      "to": "source:input/events.2026.yaml",
+      "rel": "documented_in"
+    },
+    {
+      "from": "entity:practice:2026-08-31:275",
+      "to": "source:input/events.2026.yaml",
+      "rel": "documented_in"
+    },
+    {
+      "from": "entity:practice:2026-09-05:286",
+      "to": "source:input/events.2026.yaml",
+      "rel": "documented_in"
+    },
+    {
+      "from": "entity:practice:2026-09-24:315",
+      "to": "source:input/events.2026.yaml",
+      "rel": "documented_in"
+    },
+    {
       "from": "entity:tag:BBQ",
       "to": "source:input/events.2026.yaml",
       "rel": "mentioned_in"
@@ -7933,6 +9054,156 @@
     },
     {
       "from": "entity:year:2025",
+      "to": "entity:practice:2025-06-05:56",
+      "rel": "search_here"
+    },
+    {
+      "from": "entity:year:2025",
+      "to": "entity:practice:2025-06-21:61",
+      "rel": "search_here"
+    },
+    {
+      "from": "entity:year:2025",
+      "to": "entity:practice:2025-07-05:67",
+      "rel": "search_here"
+    },
+    {
+      "from": "entity:year:2025",
+      "to": "entity:practice:2025-07-12:69",
+      "rel": "search_here"
+    },
+    {
+      "from": "entity:year:2025",
+      "to": "entity:practice:2025-07-19:73",
+      "rel": "search_here"
+    },
+    {
+      "from": "entity:year:2025",
+      "to": "entity:practice:2025-07-26:78",
+      "rel": "search_here"
+    },
+    {
+      "from": "entity:year:2025",
+      "to": "entity:practice:2025-08-07:90",
+      "rel": "search_here"
+    },
+    {
+      "from": "entity:year:2025",
+      "to": "entity:practice:2025-08-07:91",
+      "rel": "search_here"
+    },
+    {
+      "from": "entity:year:2025",
+      "to": "entity:practice:2025-08-09:93",
+      "rel": "search_here"
+    },
+    {
+      "from": "entity:year:2025",
+      "to": "entity:practice:2025-08-12:96",
+      "rel": "search_here"
+    },
+    {
+      "from": "entity:year:2025",
+      "to": "entity:practice:2025-08-21:101",
+      "rel": "search_here"
+    },
+    {
+      "from": "entity:year:2025",
+      "to": "entity:practice:2025-08-21:102",
+      "rel": "search_here"
+    },
+    {
+      "from": "entity:year:2025",
+      "to": "entity:practice:2025-09-15:125",
+      "rel": "search_here"
+    },
+    {
+      "from": "entity:year:2025",
+      "to": "entity:practice:2025-09-16:126",
+      "rel": "search_here"
+    },
+    {
+      "from": "entity:year:2025",
+      "to": "entity:practice:2025-09-23:133",
+      "rel": "search_here"
+    },
+    {
+      "from": "entity:year:2025",
+      "to": "entity:practice:2025-10-04:137",
+      "rel": "search_here"
+    },
+    {
+      "from": "entity:year:2025",
+      "to": "entity:practice:2025-10-11:144",
+      "rel": "search_here"
+    },
+    {
+      "from": "entity:year:2025",
+      "to": "entity:practice:2025-10-13:146",
+      "rel": "search_here"
+    },
+    {
+      "from": "entity:year:2025",
+      "to": "entity:practice:2025-10-20:150",
+      "rel": "search_here"
+    },
+    {
+      "from": "entity:year:2025",
+      "to": "entity:practice:2025-10-25:154",
+      "rel": "search_here"
+    },
+    {
+      "from": "entity:year:2025",
+      "to": "entity:practice:2025-11-01:161",
+      "rel": "search_here"
+    },
+    {
+      "from": "entity:year:2025",
+      "to": "entity:practice:2025-11-03:163",
+      "rel": "search_here"
+    },
+    {
+      "from": "entity:year:2025",
+      "to": "entity:practice:2025-11-08:165",
+      "rel": "search_here"
+    },
+    {
+      "from": "entity:year:2025",
+      "to": "entity:practice:2025-11-15:169",
+      "rel": "search_here"
+    },
+    {
+      "from": "entity:year:2025",
+      "to": "entity:practice:2025-11-24:173",
+      "rel": "search_here"
+    },
+    {
+      "from": "entity:year:2025",
+      "to": "entity:practice:2025-12-06:181",
+      "rel": "search_here"
+    },
+    {
+      "from": "entity:year:2025",
+      "to": "entity:practice:2025-12-13:185",
+      "rel": "search_here"
+    },
+    {
+      "from": "entity:year:2025",
+      "to": "entity:practice:2025-12-20:188",
+      "rel": "search_here"
+    },
+    {
+      "from": "entity:year:2025",
+      "to": "entity:practice:2025-12-27:193",
+      "rel": "search_here"
+    },
+    {
+      "from": "entity:year:2025",
+      "to": "entity:practice:2025-12-29:196",
+      "rel": "search_here"
+    },
+    {
+      "from": "entity:year:2025",
       "to": "meet:2025年度:0228_熊本市駅伝",
       "rel": "see_also"
     },
@@ -8049,6 +9320,151 @@
     {
       "from": "entity:year:2025",
       "to": "source:out/2025/source.csv",
+      "rel": "search_here"
+    },
+    {
+      "from": "entity:year:2026",
+      "to": "entity:practice:2026-07-21:128",
+      "rel": "search_here"
+    },
+    {
+      "from": "entity:year:2026",
+      "to": "entity:practice:2026-07-23:136",
+      "rel": "search_here"
+    },
+    {
+      "from": "entity:year:2026",
+      "to": "entity:practice:2026-07-24:138",
+      "rel": "search_here"
+    },
+    {
+      "from": "entity:year:2026",
+      "to": "entity:practice:2026-07-27:149",
+      "rel": "search_here"
+    },
+    {
+      "from": "entity:year:2026",
+      "to": "entity:practice:2026-07-28:157",
+      "rel": "search_here"
+    },
+    {
+      "from": "entity:year:2026",
+      "to": "entity:practice:2026-07-29:160",
+      "rel": "search_here"
+    },
+    {
+      "from": "entity:year:2026",
+      "to": "entity:practice:2026-07-31:164",
+      "rel": "search_here"
+    },
+    {
+      "from": "entity:year:2026",
+      "to": "entity:practice:2026-07-31:165",
+      "rel": "search_here"
+    },
+    {
+      "from": "entity:year:2026",
+      "to": "entity:practice:2026-08-03:173",
+      "rel": "search_here"
+    },
+    {
+      "from": "entity:year:2026",
+      "to": "entity:practice:2026-08-03:174",
+      "rel": "search_here"
+    },
+    {
+      "from": "entity:year:2026",
+      "to": "entity:practice:2026-08-04:178",
+      "rel": "search_here"
+    },
+    {
+      "from": "entity:year:2026",
+      "to": "entity:practice:2026-08-06:186",
+      "rel": "search_here"
+    },
+    {
+      "from": "entity:year:2026",
+      "to": "entity:practice:2026-08-07:190",
+      "rel": "search_here"
+    },
+    {
+      "from": "entity:year:2026",
+      "to": "entity:practice:2026-08-10:198",
+      "rel": "search_here"
+    },
+    {
+      "from": "entity:year:2026",
+      "to": "entity:practice:2026-08-14:216",
+      "rel": "search_here"
+    },
+    {
+      "from": "entity:year:2026",
+      "to": "entity:practice:2026-08-15:221",
+      "rel": "search_here"
+    },
+    {
+      "from": "entity:year:2026",
+      "to": "entity:practice:2026-08-17:224",
+      "rel": "search_here"
+    },
+    {
+      "from": "entity:year:2026",
+      "to": "entity:practice:2026-08-17:225",
+      "rel": "search_here"
+    },
+    {
+      "from": "entity:year:2026",
+      "to": "entity:practice:2026-08-19:233",
+      "rel": "search_here"
+    },
+    {
+      "from": "entity:year:2026",
+      "to": "entity:practice:2026-08-20:235",
+      "rel": "search_here"
+    },
+    {
+      "from": "entity:year:2026",
+      "to": "entity:practice:2026-08-21:239",
+      "rel": "search_here"
+    },
+    {
+      "from": "entity:year:2026",
+      "to": "entity:practice:2026-08-22:245",
+      "rel": "search_here"
+    },
+    {
+      "from": "entity:year:2026",
+      "to": "entity:practice:2026-08-24:250",
+      "rel": "search_here"
+    },
+    {
+      "from": "entity:year:2026",
+      "to": "entity:practice:2026-08-24:251",
+      "rel": "search_here"
+    },
+    {
+      "from": "entity:year:2026",
+      "to": "entity:practice:2026-08-25:253",
+      "rel": "search_here"
+    },
+    {
+      "from": "entity:year:2026",
+      "to": "entity:practice:2026-08-26:258",
+      "rel": "search_here"
+    },
+    {
+      "from": "entity:year:2026",
+      "to": "entity:practice:2026-08-31:275",
+      "rel": "search_here"
+    },
+    {
+      "from": "entity:year:2026",
+      "to": "entity:practice:2026-09-05:286",
+      "rel": "search_here"
+    },
+    {
+      "from": "entity:year:2026",
+      "to": "entity:practice:2026-09-24:315",
       "rel": "search_here"
     },
     {

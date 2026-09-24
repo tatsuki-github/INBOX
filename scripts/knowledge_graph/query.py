@@ -5,8 +5,10 @@ from __future__ import annotations
 import json
 import re
 from collections import defaultdict
+from datetime import date, datetime, timedelta
 from pathlib import Path
 from typing import Any
+from zoneinfo import ZoneInfo
 
 from .builder import KG_PATH, ROOT, build_knowledge_graph
 
@@ -38,6 +40,39 @@ def _tokenize(text: str) -> list[str]:
             seen.add(t)
             out.append(t)
     return out
+
+
+def _resolve_relative_dates(question: str, *, as_of_date: date | None = None) -> str:
+    """Expand relative day words to ISO dates in the calendar's Japan timezone."""
+    offsets = {
+        "今日": 0,
+        "きょう": 0,
+        "昨日": -1,
+        "きのう": -1,
+        "明日": 1,
+        "あした": 1,
+        "あす": 1,
+        "today": 0,
+        "yesterday": -1,
+        "tomorrow": 1,
+    }
+    current_date = as_of_date or datetime.now(ZoneInfo("Asia/Tokyo")).date()
+    pattern = "|".join(re.escape(term) for term in sorted(offsets, key=len, reverse=True))
+    resolved = re.sub(
+        pattern,
+        lambda match: (current_date + timedelta(days=offsets[match.group(0).lower()])).isoformat(),
+        question,
+        flags=re.IGNORECASE,
+    )
+
+    def replace_month_day(match: re.Match[str]) -> str:
+        try:
+            return date(current_date.year, int(match.group(1)), int(match.group(2))).isoformat()
+        except ValueError:
+            return match.group(0)
+
+    resolved = re.sub(r"(?<!\d)(\d{1,2})\s*月\s*(\d{1,2})\s*日", replace_month_day, resolved)
+    return re.sub(r"(?<!\d)(\d{1,2})/(\d{1,2})(?!\d)", replace_month_day, resolved)
 
 
 def load_graph(path: Path | None = None) -> dict[str, Any]:
@@ -193,18 +228,45 @@ def _read_neighborhood(path: Path, query: str, *, max_chars: int = 2400) -> str:
     if not tokens:
         return text[:max_chars]
     lines = text.splitlines()
-    hit_idxs = [
-        i
-        for i, line in enumerate(lines)
-        if any(tok in line.lower() for tok in tokens)
-    ]
+    requested_date = re.search(r"(?<!\d)\d{4}-\d{2}-\d{2}(?!\d)", query)
+    hit_idxs = []
+    date_anchored = False
+    if requested_date:
+        hit_idxs = [i for i, line in enumerate(lines) if requested_date.group(0) in line]
+        if hit_idxs:
+            # A date may occur in several events on the same day. Prefer the
+            # date row whose surrounding event text best matches the question.
+            compact_query = re.sub(r"20\d{2}-\d{2}-\d{2}|今日|きょう|の|は|？|\s", "", query).lower()
+
+            def date_window_score(index: int) -> int:
+                start = index
+                while start > 0 and not lines[start].startswith("- title:"):
+                    start -= 1
+                end = index + 1
+                while end < len(lines) and not lines[end].startswith("- title:"):
+                    end += 1
+                window = "\n".join(lines[start:end]).lower()
+                token_score = sum(token in window for token in tokens)
+                phrase_score = 100 if compact_query and compact_query in re.sub(r"\s", "", window) else 0
+                return token_score + phrase_score
+
+            hit_idxs = [
+                max(hit_idxs, key=date_window_score)
+            ]
+            date_anchored = True
+    if not hit_idxs:
+        hit_idxs = [
+            i
+            for i, line in enumerate(lines)
+            if any(tok in line.lower() for tok in tokens)
+        ]
     if not hit_idxs:
         return text[:max_chars]
     windows: list[str] = []
     used: set[int] = set()
     for idx in hit_idxs[:8]:
-        start = max(0, idx - 4)
-        end = min(len(lines), idx + 5)
+        start = max(0, idx - (8 if date_anchored else 4))
+        end = min(len(lines), idx + (16 if date_anchored else 5))
         for j in range(start, end):
             if j not in used:
                 used.add(j)
@@ -229,20 +291,34 @@ def query_knowledge_graph(
     expand_hops: int = 1,
     context_files: int = 6,
     include_context: bool = True,
+    as_of_date: date | None = None,
 ) -> dict[str, Any]:
     graph = graph or load_graph()
     nodes = {n["id"]: n for n in graph.get("nodes") or []}
     edges = list(graph.get("edges") or [])
     adj = _adjacency(edges)
-    q_tokens = _tokenize(question)
+    search_question = _resolve_relative_dates(question, as_of_date=as_of_date)
+    q_tokens = _tokenize(search_question)
 
     scored = [
-        (nid, _score_node(node, q_tokens, question))
+        (nid, _score_node(node, q_tokens, search_question))
         for nid, node in nodes.items()
     ]
     scored = [(nid, s) for nid, s in scored if s > 0]
     scored.sort(key=lambda x: x[1], reverse=True)
     seeds = scored[:top_k]
+
+    resolved_date = re.search(r"(?<!\d)\d{4}-\d{2}-\d{2}(?!\d)", search_question)
+    if resolved_date:
+        exact_practices = [
+            (nid, score)
+            for nid, score in scored
+            if nid.startswith(f"entity:practice:{resolved_date.group(0)}:")
+        ]
+        if exact_practices:
+            # An exact dated practice is a better route than generic practice
+            # hints or other sessions that share the same sport vocabulary.
+            seeds = [max(exact_practices, key=lambda item: item[1])]
 
     # If a specific entity matched strongly, drop broad Topic/QueryHint seeds that flood refs
     if any(nodes[nid]["type"] in {"Athlete", "Template", "Year"} and s >= 8 for nid, s in seeds):
@@ -300,7 +376,7 @@ def query_knowledge_graph(
     if include_context:
         for ref in refs[:context_files]:
             path = ROOT / ref
-            snippet = _read_neighborhood(path, question)
+            snippet = _read_neighborhood(path, search_question)
             if snippet:
                 contexts.append({"path": ref, "snippet": snippet})
 

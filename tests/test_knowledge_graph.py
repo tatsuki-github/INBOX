@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import json
 import sys
+from datetime import date
 from pathlib import Path
 
 import pytest
@@ -28,6 +29,117 @@ def test_build_knowledge_graph_has_topics_and_sources():
     assert "source:input/practice_templates.yaml" in ids
     assert any(n["type"] == "Source" and n["id"].startswith("source:input/events.") for n in graph["nodes"])
     assert graph["edges"]
+
+
+def test_query_routes_dated_daiming_practice_to_exact_session():
+    graph = build_knowledge_graph(generated_at="2026-01-01T00:00:00Z")
+    result = query_knowledge_graph(
+        "2026-09-24 いだてん岱明練習 女子3360m 男子4480m",
+        graph=graph,
+        include_context=False,
+        top_k=5,
+    )
+    top = result["matched_nodes"][0]
+    assert top["id"].startswith("entity:practice:2026-09-24:")
+    assert "2026-09-24" in top["label"]
+    assert "3360" in top["hint"] and "4480" in top["hint"]
+    assert "input/events.2026.yaml:L" in top["hint"]
+    assert "input/events.2026.yaml" in top["refs"]
+    assert "out/2026/practice.json" in top["refs"]
+
+
+def test_query_resolves_today_to_japan_calendar_date():
+    graph = build_knowledge_graph(generated_at="2026-01-01T00:00:00Z")
+    result = query_knowledge_graph(
+        "今日のいだてん岱明の練習は？",
+        graph=graph,
+        include_context=False,
+        top_k=5,
+        as_of_date=date(2026, 9, 24),
+    )
+    top = result["matched_nodes"][0]
+    assert top["id"].startswith("entity:practice:2026-09-24:")
+    assert "3360" in top["hint"] and "4480" in top["hint"]
+    assert result["refs"] == ["input/events.2026.yaml", "out/2026/practice.json"]
+
+
+def test_query_resolves_yesterday_to_japan_calendar_date():
+    graph = build_knowledge_graph(generated_at="2026-01-01T00:00:00Z")
+    result = query_knowledge_graph(
+        "昨日のいだてん岱明の練習は？",
+        graph=graph,
+        include_context=False,
+        top_k=5,
+        as_of_date=date(2026, 9, 25),
+    )
+    top = result["matched_nodes"][0]
+    assert top["id"].startswith("entity:practice:2026-09-24:")
+    assert "input/events.2026.yaml" in result["refs"]
+
+
+def test_query_resolves_tomorrow_to_japan_calendar_date():
+    graph = build_knowledge_graph(generated_at="2026-01-01T00:00:00Z")
+    result = query_knowledge_graph(
+        "明日の練習メニューは？",
+        graph=graph,
+        include_context=False,
+        top_k=5,
+        as_of_date=date(2026, 9, 23),
+    )
+    assert result["matched_nodes"][0]["id"].startswith("entity:practice:2026-09-24:")
+
+
+def test_query_resolves_japanese_month_day_without_year():
+    graph = build_knowledge_graph(generated_at="2026-01-01T00:00:00Z")
+    result = query_knowledge_graph(
+        "9月24日のいだてん岱明練習は？",
+        graph=graph,
+        include_context=False,
+        top_k=5,
+        as_of_date=date(2026, 9, 25),
+    )
+    assert result["matched_nodes"][0]["id"].startswith("entity:practice:2026-09-24:")
+
+
+def test_query_resolves_slash_month_day_without_year():
+    graph = build_knowledge_graph(generated_at="2026-01-01T00:00:00Z")
+    result = query_knowledge_graph(
+        "9/24の練習は？",
+        graph=graph,
+        include_context=False,
+        top_k=5,
+        as_of_date=date(2026, 9, 25),
+    )
+    assert result["matched_nodes"][0]["id"].startswith("entity:practice:2026-09-24:")
+
+
+def test_generic_today_menu_query_avoids_other_days_and_hints():
+    graph = build_knowledge_graph(generated_at="2026-01-01T00:00:00Z")
+    result = query_knowledge_graph(
+        "今日の練習メニューは？",
+        graph=graph,
+        include_context=False,
+        top_k=5,
+        as_of_date=date(2026, 9, 24),
+    )
+    assert result["matched_nodes"][0]["id"].startswith("entity:practice:2026-09-24:")
+    assert result["refs"] == ["input/events.2026.yaml", "out/2026/practice.json"]
+
+
+def test_date_query_context_snippet_uses_requested_calendar_entry():
+    graph = build_knowledge_graph(generated_at="2026-01-01T00:00:00Z")
+    result = query_knowledge_graph(
+        "2026-09-24 今日のいだてん岱明の練習は？",
+        graph=graph,
+        top_k=5,
+        context_files=1,
+        as_of_date=date(2026, 9, 24),
+    )
+    context = result["contexts"][0]
+    assert context["path"] == "input/events.2026.yaml"
+    assert "2026-09-24" in context["snippet"]
+    assert "3360m" in context["snippet"] and "4480m" in context["snippet"]
+    assert "2026-01-01" not in context["snippet"]
 
 
 def test_write_and_check_roundtrip(tmp_path: Path):
