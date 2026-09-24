@@ -99,6 +99,24 @@ describe("QA precision regressions", () => {
   });
 
   it.each([
+    "玉東クラブ所属選手の全記録",
+    "玉東クラブの選手記録一覧を教えて",
+    "玉東クラブの全記録を見せて",
+    "玉東クラブに所属する選手の記録を全部提示して",
+    "玉東クラブの全選手のトラック記録は？",
+    "玉東クラブ選手記録をすべて見せて",
+    "玉東クラブ所属の記録一覧を教えて",
+    "玉東クラブ全記録一覧",
+    "玉東クラブの所属選手全員の記録は？",
+    "玉東クラブの記録を選手別に全部見たい",
+  ])("limits Gyokuto Club full records to its team digest: %s", async (question) => {
+    const result = await ask(question);
+    expect(result.sources).toEqual(["out-analysis/arato-tamana-teams/玉東クラブ.md"]);
+    expect(result.text).toContain("平井千幹");
+    expect(result.text).not.toContain("寺田向希");
+  });
+
+  it.each([
     "欠席者は誰？",
     "最近の欠席者は？",
     "欠席記録を見せて",
