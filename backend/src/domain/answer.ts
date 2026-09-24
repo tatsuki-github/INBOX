@@ -990,7 +990,7 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
       )]
         .filter((match) => match[2] === team)
         .map((match) => match[1]);
-      if (years.length > 0) return `${team}が荒玉男子で準優勝した年: ${years.join("、")}年。`;
+      if (years.length > 0) return `${team}が荒玉男子で2位（準優勝）になった年は${years.join("・")}年です。`;
     }
   }
   if (/男子|女子/.test(q) && /荒玉|駅伝/.test(q) && /準優勝|2位/.test(q) && !/20\d{2}/.test(q)) {
@@ -1540,6 +1540,26 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
     const max = Math.max(...rows.map((row) => row.count), 0);
     const leaders = rows.filter((row) => row.count === max && max > 0).map((row) => row.school);
     if (leaders.length > 0) return `荒玉男子の総合2位以内回数最多は${leaders.join("・")}（各${max}回）。`;
+  }
+  if (
+    /荒玉|駅伝/.test(q) &&
+    /2位まで|2位以内|総合2位/.test(q) &&
+    /学校|チーム|校/.test(q) &&
+    /経験|入った|入賞|一覧|教えて|どこ/.test(q)
+  ) {
+    const gender = /女子/.test(q) ? "女子" : /男子/.test(q) ? "男子" : undefined;
+    const heading = gender ? "## " + gender + "のみ" : "## 男女合算";
+    const start = flat.indexOf(heading);
+    const endHeading = gender === "男子" ? "## 女子のみ" : gender ? "## 男女合算" : "## 男子のみ";
+    const end = flat.indexOf(endHeading, start >= 0 ? start + heading.length : 0);
+    const section = start >= 0 ? flat.slice(start, end >= 0 ? end : undefined) : flat;
+    const rowPattern = gender
+      ? /\|\s*([^|]+?)\s*\|\s*(\d+)\s*\|/g
+      : /\|\s*\d+\s*\|\s*([^|]+?)\s*\|\s*(\d+)\s*\|/g;
+    const rows = [...new Set([...section.matchAll(rowPattern)]
+      .map((match) => match[1]!.trim() + " " + match[2] + "回"))]
+      .filter((row) => !/^学校\b/.test(row));
+    if (rows.length > 0) return (gender ? "荒玉" + gender : "荒玉") + "駅伝の総合2位以内経験校: " + rows.join("、") + "。";
   }
   // Historical runner-up questions need the year-by-year winners digest,
   // not the latest-result preview.
@@ -2724,6 +2744,11 @@ function offlineAnswer(
       /男子/.test(question) &&
       /2位まで|2位以内|総合2位/.test(question) &&
       /多い|最多|何回|回数/.test(question);
+    const top2ExperienceLookup =
+      /荒玉|駅伝/.test(question) &&
+      /2位まで|2位以内|総合2位/.test(question) &&
+      /学校|チーム|校/.test(question) &&
+      /経験|入った|入賞|一覧|教えて|どこ/.test(question);
     const namedLegTimeLookup =
       /区間タイム/.test(question) &&
       /[\p{Script=Han}]{2,8}の(?:区間タイム|(?:荒玉)?20\d{2}年?区間タイム)/u.test(question);
@@ -2939,6 +2964,7 @@ function offlineAnswer(
       teamBestLookup ||
       individual1500RankLookup ||
       top2CountLookup ||
+      top2ExperienceLookup ||
       teamRunnerUpYearLookup ||
       teamFullRecordLookup ||
       latestTeamRankLookup ||
@@ -3910,6 +3936,15 @@ export function narrowExhaustiveSources(query: string, sources: string[]): strin
   // Topic pins — one digest that alone can satisfy the full list
   if (/優勝|準優勝/.test(q) && /荒玉|駅伝|中体連/.test(q) && !/回数|2位まで|2位以内/.test(q)) {
     push("aragyoku/winners-by-year.md");
+    return out;
+  }
+  if (
+    /2位まで|2位以内|総合2位/.test(q) &&
+    /学校|チーム|校/.test(q) &&
+    /経験|入った|入賞|一覧|教えて|どこ/.test(q) &&
+    /荒玉|駅伝/.test(q)
+  ) {
+    push("out-analysis/aragyoku_top2_finish_counts.md");
     return out;
   }
   if (/2位まで|2位以内|優勝.*回数|回数/.test(q) && /荒玉|駅伝/.test(q)) {
@@ -5103,6 +5138,11 @@ export async function answerQuestion(
     /荒玉|駅伝/.test(question) &&
     /(?:過去\s*5年|直近\s*5年|5年間)/.test(question) &&
     /準優勝|2位/.test(question);
+  const top2ExperienceQ =
+    /荒玉|駅伝/.test(question) &&
+    /2位まで|2位以内|総合2位/.test(question) &&
+    /学校|チーム|校/.test(question) &&
+    /経験|入った|入賞|一覧|教えて|どこ/.test(question);
   const historicalWinnerPaceQ =
     /荒玉|駅伝/.test(expanded) &&
     /優勝/.test(expanded) &&
@@ -5123,7 +5163,7 @@ export async function answerQuestion(
     /(?:と|、|・|／|\/)/.test(expanded) &&
     /800(?:m|ｍ)?|1[，,]?\s*500(?:m|ｍ)?|3[，,]?\s*000(?:m|ｍ)?|5[，,]?\s*000(?:m|ｍ)?|3\s*(?:km|キロ)|5\s*(?:km|キロ)/i.test(expanded);
   const directDocQ =
-    practiceTemplateQ || weatherOpsQ || paceCliQ || practiceMeetLoadQ || historicalTopSixPaceQ || historicalRankPaceQ || historicalWinnerPaceQ || historicalTeamRankQ || historicalTopFinishQ || allTeamAveragePaceQ || nagomiPredictionGapQ || male1500SchoolRankingQ || absenceRosterQ || tamanaPracticeResultQ || latestTamanaPracticeResultQ || tamanaPracticeAthleteRecordQ || latestTamanaPracticeAthleteQuestionQ || multipleAthleteRecordQ || genericPracticeResultQ || genericPracticeDetailQ || tamanaPracticeStatusQ || practiceStatusQ || kumamotoEkidenScheduleQ || schoolMeetScheduleQ || practiceParticipantQ || tamanaPracticeVenueQ || tamanaPracticeParticipantQ || legDistanceQ || schoolMeetVenueQ || historicalJuniorResultQ || relativeWinnerQ || courseEraQ || oldCourseDistanceQ || eveningPracticeScheduleQ || namedTeamTotalTimeQ || cityRecordResultQ || firstLongDistanceResultQ || secondLongDistanceResultQ || fourthLongDistanceResultQ || fifthLongDistanceResultQ || genericLongDistanceResultQ || nightMeetResultQ || juniorOlympicResultQ || urbanChampionshipResultQ || kanaguriMemorialResultQ || prefecturalChampionshipResultQ || communicationResultQ || cityChampionshipResultQ || teamWinnerMarginQ || genericWinnerMarginQ || strideCountQ || postEkidenPracticeQ || movementPracticeQ || practiceDaysQ || practiceCalendarQ || meetResultUrlQ || prefecturalMeetResultQ || prefecturalMeetScheduleQ || teamRankQ || calendarDateScheduleQ || exactMeetDateScheduleQ || genericPracticeScheduleQ || genericDaimingPracticeContentQ || schoolScheduleQ || datedPracticeMeetQ || datedPracticeContentQ || genericPracticeMeetScheduleQ || practiceVenueQ;
+    practiceTemplateQ || weatherOpsQ || paceCliQ || practiceMeetLoadQ || historicalTopSixPaceQ || historicalRankPaceQ || historicalWinnerPaceQ || historicalTeamRankQ || historicalTopFinishQ || allTeamAveragePaceQ || top2ExperienceQ || nagomiPredictionGapQ || male1500SchoolRankingQ || absenceRosterQ || tamanaPracticeResultQ || latestTamanaPracticeResultQ || tamanaPracticeAthleteRecordQ || latestTamanaPracticeAthleteQuestionQ || multipleAthleteRecordQ || genericPracticeResultQ || genericPracticeDetailQ || tamanaPracticeStatusQ || practiceStatusQ || kumamotoEkidenScheduleQ || schoolMeetScheduleQ || practiceParticipantQ || tamanaPracticeVenueQ || tamanaPracticeParticipantQ || legDistanceQ || schoolMeetVenueQ || historicalJuniorResultQ || relativeWinnerQ || courseEraQ || oldCourseDistanceQ || eveningPracticeScheduleQ || namedTeamTotalTimeQ || cityRecordResultQ || firstLongDistanceResultQ || secondLongDistanceResultQ || fourthLongDistanceResultQ || fifthLongDistanceResultQ || genericLongDistanceResultQ || nightMeetResultQ || juniorOlympicResultQ || urbanChampionshipResultQ || kanaguriMemorialResultQ || prefecturalChampionshipResultQ || communicationResultQ || cityChampionshipResultQ || teamWinnerMarginQ || genericWinnerMarginQ || strideCountQ || postEkidenPracticeQ || movementPracticeQ || practiceDaysQ || practiceCalendarQ || meetResultUrlQ || prefecturalMeetResultQ || prefecturalMeetScheduleQ || teamRankQ || calendarDateScheduleQ || exactMeetDateScheduleQ || genericPracticeScheduleQ || genericDaimingPracticeContentQ || schoolScheduleQ || datedPracticeMeetQ || datedPracticeContentQ || genericPracticeMeetScheduleQ || practiceVenueQ;
   if (practiceTemplateQ) {
     preferredSources = /norwegian-45-15|[Nn]orwegian(?:の|\s*)[- ]?45\s*[\/／\-‐‑–—−]\s*15|ノルウェー(?:式)?(?:の|\s*)45\s*[\/／\-‐‑–—−]\s*15|45\s*[\/／\-‐‑–—−]\s*15/.test(expanded)
       ? ["repo-docs/adr/002-norwegian-method-integration.md"]
@@ -5495,6 +5535,9 @@ export async function answerQuestion(
     /2位まで|2位以内|総合2位/.test(expanded) &&
     /多い|最多|何回|回数/.test(expanded);
   if (top2CountQ) {
+    preferredSources = ["out-analysis/aragyoku_top2_finish_counts.md"];
+  }
+  if (top2ExperienceQ) {
     preferredSources = ["out-analysis/aragyoku_top2_finish_counts.md"];
   }
   const namedLegTimeQ =
@@ -6277,6 +6320,15 @@ export async function answerQuestion(
     const answer = rows.length > 0
       ? `荒玉駅伝の全チーム平均ペース（${rows.length}件）:\n${rows.map((row) => `- ${row}`).join("\n")}`
       : "全チーム平均ペースの記録が見つかりませんでした。";
+    return {
+      kind: "offline",
+      text: finalizeAnswerText(answer, question, deps, sources),
+      sources,
+    };
+  }
+
+  if (top2ExperienceQ && !deps.llm) {
+    const answer = previewForOffline(merged.map((row) => row.chunk.text).join("\n"), question);
     return {
       kind: "offline",
       text: finalizeAnswerText(answer, question, deps, sources),

@@ -93,6 +93,34 @@ describe("QA precision regressions", () => {
     expect((result.text.match(/2025年荒玉駅伝女子1位 玉名/g) ?? []).length).toBe(1);
   });
   it.each([
+    "荒玉の総合2位以内経験校を教えて",
+    "荒玉駅伝で総合2位以内に入ったことがある学校は？",
+    "荒玉駅伝で2位までに入った学校一覧",
+    "荒玉駅伝で2位以内入賞したチームは？",
+    "荒玉駅伝の総合2位までの経験校を知りたい",
+    "荒玉駅伝で2位以内経験のある学校を教えて",
+    "荒玉の2位以内入賞校を一覧で",
+    "荒玉駅伝で総合2位以内を経験した学校のリスト",
+    "女子の荒玉駅伝で2位以内に入賞した学校は？",
+    "男子の荒玉駅伝で総合2位以内経験のある学校を教えて",
+  ])("lists schools with an all-time top-two finish: %s", async (question) => {
+    const result = await ask(question);
+    expect(result.sources).toEqual(["out-analysis/aragyoku_top2_finish_counts.md"]);
+    expect(result.text).toContain("玉名");
+    expect(result.text).not.toContain("2025年男子準優勝校");
+    if (question.includes("女子")) {
+      expect(result.text).toContain("玉名 9回");
+      expect(result.text).not.toContain("玉名 15回");
+    } else if (question.includes("男子")) {
+      expect(result.text).toContain("玉名 6回");
+      expect(result.text).not.toContain("玉名 15回");
+    } else {
+      expect(result.text).toContain("玉名 15回");
+      expect(result.text).toContain("荒尾三 9回");
+      expect((result.text.match(/玉名 15回/g) ?? []).length).toBe(1);
+    }
+  });
+  it.each([
     ["なごみ駅伝の予想と実績の差は？", undefined],
     ["なごみの予実差を見せて", undefined],
     ["なごみ駅伝のSB予想と結果の比較", undefined],
