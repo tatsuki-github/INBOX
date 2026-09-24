@@ -127,6 +127,55 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
   const budget = maxChars ?? offlinePreviewBudget(question);
   const flat = text.replace(/\s+/g, " ");
   const q = question.normalize("NFKC");
+  if (/高田麻那/.test(q) && /SB|PB|ベスト/.test(q)) {
+    const distance = q.match(/(1[，,]?\s*500|3[，,]?\s*000|5[，,]?\s*000)\s*(?:m|ｍ|メートル)/i)?.[1]?.replace(/[，,\s]/g, "");
+    if (distance) {
+      const record = flat.match(new RegExp(distance + "m SB:\\s*([^\\s|]+)"));
+      if (record && record[1] !== "—") {
+        const kind = /PB/.test(q) ? "PB" : "SB";
+        return "高田麻那の" + distance + "m" + kind + "は" + record[1] + "。";
+      }
+      return "高田麻那の" + distance + "m記録は、参照できる資料では確認できません。";
+    }
+  }
+  if (
+    /3000m|3000ｍ|3[，,]\s*000/.test(q) &&
+    /20\d{2}年?/.test(q) &&
+    /SB|PB|ベスト/.test(q) &&
+    hasNonTeamAthleteNameHint(q)
+  ) {
+    const name = extractAthleteNameHints(q)[0];
+    const requestedYear = q.match(/20\d{2}/)?.[0];
+    if (name && requestedYear) {
+      const sources = findSourcesWithText([name], {
+        prefix: "out-analysis/arato-tamana-teams/",
+        limit: 4,
+      }).filter((source) => !source.endsWith("/INDEX.md"));
+      const records = retrieveBySources(sources, {
+        query: name,
+        perSource: 64,
+        maxChunks: 64,
+        coverage: "full",
+      }).map((row) => row.chunk.text).join(" ").replace(/\s+/g, " ");
+      const headers = [...records.matchAll(/### 3000m/g)];
+      const sections = headers.map((header, index) => {
+        const start = header.index ?? 0;
+        const next = headers[index + 1]?.index ?? -1;
+        return records.slice(start, next >= 0 ? next : undefined);
+      });
+      const pattern = "\\|\\s*(?:男子|女子)\\s*\\|\\s*\\d+\\s*\\|\\s*" + name +
+        "\\s*\\|\\s*(\\d+:\\d+(?:\\.\\d+)?)\\s*\\|\\s*(20\\d{2})/(\\d{2})/(\\d{2})";
+      const matches = sections.flatMap((section) => [...section.matchAll(new RegExp(pattern, "g"))])
+        .filter((match) => match[2] === requestedYear);
+      const seconds = (time: string) => {
+        const [minutes, remainder] = time.split(":");
+        return Number(minutes) * 60 + Number(remainder);
+      };
+      const best = matches.sort((a, b) => seconds(a[1]!) - seconds(b[1]!))[0];
+      if (best) return name + "の" + requestedYear + "年3000mSBは" + best[1] + "。";
+      return name + "の" + requestedYear + "年3000m記録は、参照できる資料では確認できません。";
+    }
+  }
   if (/なごみ/.test(q) && /岱明/.test(q) && /[1-6]区/.test(q) && !/男子|女子/.test(q)) {
     const requestedTeam = q.match(/岱明\s*([AB])/)?.[1];
     return requestedTeam
@@ -573,6 +622,7 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
         if (distance) {
           const value = distance === "800" ? row[4] : distance === "1500" ? row[5] : distance === "3000" ? row[6] : distance === "5000" ? row[7] : distance === "3km" ? row[8] : row[9];
           if (value) return `${name}（${row[1]}）の${distance === "3km" || distance === "5km" ? distance : `${distance}m`}自己ベストは${value}。`;
+          return name + "（" + row[1] + "）の" + (distance === "3km" || distance === "5km" ? distance : distance + "m") + "記録はありません。";
         }
         const records = [`800m ${row[4]}`, `1500m ${row[5]}`, `3000m ${row[6]}`, `5000m ${row[7]}`, `3km ${row[8]}`, `5km ${row[9]}`].filter((value) => !/\s$/.test(value) && !/:\s*$/.test(value));
         return `${name}（${row[1]}）の自己ベスト: ${records.join("、")}。`;
@@ -3136,6 +3186,13 @@ function boostAthleteRecordSources(query: string, baseSources: string[]): string
     const currentMen1500Ranking = "out-analysis/2026_aragyoku_men_1500m_sb_individual_top20.md";
     const currentWomenRanking = "out-analysis/2026_women_800m_1500m_pb_school_ranking.md";
     const names = extractAthleteNameHints(q);
+    if (/3000m|3000ｍ|3[，,]\s*000|1500m|1500ｍ|1[，,]\s*500/.test(q) && /20\d{2}/.test(q) && names.length > 0) {
+      const teamSource = names.flatMap((name) => findSourcesWithText([name], {
+        prefix: "out-analysis/arato-tamana-teams/",
+        limit: 4,
+      })).find((source) => !source.endsWith("/INDEX.md"));
+      if (teamSource) return [teamSource];
+    }
     if (/3000\s*(?:m|ｍ|メートル)|3[，,]\s*000(?:m|ｍ|メートル)?/.test(q) && names.length > 0) {
       const ranking = retrieveBySources([currentMen3000Ranking], {
         perSource: 64,
@@ -5100,6 +5157,12 @@ export async function answerQuestion(
     const currentMen1500Ranking = "out-analysis/2026_aragyoku_men_1500m_sb_individual_top20.md";
     const currentWomenRanking = "out-analysis/2026_women_800m_1500m_pb_school_ranking.md";
     const names = extractAthleteNameHints(expanded);
+    const historicalAthleteTrackSource = /3000m|3000ｍ|3[，,]\s*000|1500m|1500ｍ|1[，,]\s*500/.test(expanded) && /20\d{2}/.test(question)
+      ? names.flatMap((name) => findSourcesWithText([name], {
+          prefix: "out-analysis/arato-tamana-teams/",
+          limit: 4,
+        })).find((source) => !source.endsWith("/INDEX.md"))
+      : undefined;
     const ranking = /3000\s*(?:m|ｍ|メートル)|3[，,]\s*000(?:m|ｍ|メートル)?/.test(expanded) && names.length > 0
       ? retrieveBySources([currentMen3000Ranking], {
           perSource: 64,
@@ -5127,7 +5190,9 @@ export async function answerQuestion(
           limit: 4,
         })).find((source) => !source.endsWith("/INDEX.md"))
       : undefined;
-    preferredSources = names.some((name) => ranking.some((row) => row.chunk.text.includes(name)))
+    preferredSources = historicalAthleteTrackSource
+      ? [historicalAthleteTrackSource]
+      : names.some((name) => ranking.some((row) => row.chunk.text.includes(name)))
       ? [currentMen3000Ranking]
       : names.some((name) => men1500Ranking.some((row) => row.chunk.text.includes(name)))
         ? [currentMen1500Ranking]

@@ -619,6 +619,76 @@ describe("QA precision regressions", () => {
     expect(result.text).toContain("山本哲瑠の3000mSBは10:24.29");
   });
 
+  it("does not answer a 2024 3000m query with the athlete's 2026 record", async () => {
+    const result = await ask("松野凛空の2024年3000mSBは？");
+    expect(result.sources).toEqual([
+      "out-analysis/arato-tamana-teams/岱明中.md",
+    ]);
+    expect(result.text).toContain("松野凛空の2024年3000m記録は、参照できる資料では確認できません");
+    expect(result.text).not.toContain("9:37.84");
+  });
+
+  it("does not substitute 松野凛空's 1500m result for a missing 5000m SB", async () => {
+    const result = await ask("松野凛空の5000mSBは？");
+    expect(result.text).toContain("松野凛空");
+    expect(result.text).not.toContain("1500m");
+    expect(result.text).not.toContain("4:22.33");
+  });
+
+  it("does not substitute 松本空羽's 1500m result for a missing 5000m SB", async () => {
+    const result = await ask("松本空羽の5000mSBは？");
+    expect(result.text).toContain("松本空羽");
+    expect(result.text).not.toContain("1500m");
+    expect(result.text).not.toContain("5:11.17");
+  });
+
+  it("extracts the exact 5000m SB from the named athlete's profile", async () => {
+    const result = await ask("高田麻那の5000mSBは？");
+    expect(result.sources).toEqual(["out-analysis/athletes/takada-mana.md"]);
+    expect(result.text).toContain("高田麻那の5000mSBは11:05.84");
+    expect(result.text).not.toContain("1500mSB");
+  });
+
+  it("reports the missing 3000m row in the named athlete profile", async () => {
+    const result = await ask("高田麻那の3000mSBは？");
+    expect(result.sources).toEqual(["out-analysis/athletes/takada-mana.md"]);
+    expect(result.text).toContain("高田麻那の3000m記録は、参照できる資料では確認できません");
+  });
+
+  it("extracts the 1500m SB without returning the full athlete profile", async () => {
+    const result = await ask("高田麻那の1500mSBは？");
+    expect(result.sources).toEqual(["out-analysis/athletes/takada-mana.md"]);
+    expect(result.text).toContain("高田麻那の1500mSBは5:21.76");
+    expect(result.text).not.toContain("5000mSB");
+  });
+
+  it("preserves PB wording for the named athlete's 5000m record", async () => {
+    const result = await ask("高田麻那の5000mPBは？");
+    expect(result.sources).toEqual(["out-analysis/athletes/takada-mana.md"]);
+    expect(result.text).toContain("高田麻那の5000mPBは11:05.84");
+  });
+
+  it("accepts comma-separated distances in the named athlete profile", async () => {
+    const result = await ask("高田麻那の3,000mSBは？");
+    expect(result.sources).toEqual(["out-analysis/athletes/takada-mana.md"]);
+    expect(result.text).toContain("高田麻那の3000m記録は、参照できる資料では確認できません");
+  });
+
+  it("accepts 1,500m in a named athlete profile query", async () => {
+    const result = await ask("高田麻那の1,500mPBは？");
+    expect(result.sources).toEqual(["out-analysis/athletes/takada-mana.md"]);
+    expect(result.text).toContain("高田麻那の1500mPBは5:21.76");
+  });
+
+  it("cites the historical record file for an explicit-year 1500m query", async () => {
+    const result = await ask("松野凛空の2024年1500mSBは？");
+    expect(result.sources).toEqual([
+      "out-analysis/arato-tamana-teams/岱明中.md",
+    ]);
+    expect(result.text).toContain("松野凛空の1500mSBは4:44.60（2024/7/20）");
+    expect(result.text).not.toContain("4:22.33");
+  });
+
   it("accepts a space before メートル in a named 3000m query", async () => {
     const result = await ask("山本哲瑠の3000 メートルSBは？");
     expect(result.sources).toEqual([
