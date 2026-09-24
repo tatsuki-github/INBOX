@@ -31,6 +31,29 @@ async function askAt(question: string, now: string) {
 }
 
 describe("QA precision regressions", () => {
+  it.each([
+    ["なごみ駅伝の予想と実績の差は？", undefined],
+    ["なごみの予実差を見せて", undefined],
+    ["なごみ駅伝のSB予想と結果の比較", undefined],
+    ["なごみ大会の予想から実績はどれだけずれた？", undefined],
+    ["2025年なごみ駅伝の予想と実績の差は？", "2025"],
+    ["2025年なごみ駅伝の予実比較", "2025"],
+    ["2025年なごみのSB予想からの差は？", "2025"],
+    ["2026年なごみ駅伝の予想と実績の差は？", "2026"],
+    ["2026年なごみ駅伝の予実比較", "2026"],
+    ["2026年なごみのSB予想からの差は？", "2026"],
+  ])("keeps Nagomi prediction gaps on the comparison report: %s", async (question, year) => {
+    const result = await ask(question);
+    const reportPath = (reportYear: string) =>
+      `drive-text/大会/${reportYear}年度/${reportYear === "2025" ? "0921" : "0920"}_中学駅伝金栗四三生誕の地なごみ大会/予実比較.md`;
+    const expectedSources = year ? [reportPath(year)] : [reportPath("2026"), reportPath("2025")];
+    expect(result.sources).toEqual(expectedSources);
+    expect(result.text).toContain("予想");
+    expect(result.text).toContain("差");
+    expect(result.text).not.toContain("男子成績表.md");
+    if (year) expect(result.text).not.toContain(`なごみ駅伝${year === "2025" ? "2026" : "2025"} SB予想`);
+  });
+
   it("keeps 荒尾三中 player/SB lists on the dedicated digest", async () => {
     const result = await ask("荒尾三中の選手とSB一覧");
     expect(result.sources).toEqual(["out-analysis/arato-tamana-teams/荒尾三中_SB.md"]);

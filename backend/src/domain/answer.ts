@@ -5029,6 +5029,10 @@ export async function answerQuestion(
     /平均ペース|平均速度/.test(question) &&
     Boolean(requestedHistoricalPlace(question)) &&
     !/(?:[〜～~]|から|まで)\s*[0-9０-９一二三四五六七八九十]+位/.test(question);
+  const nagomiPredictionGapQ =
+    /なごみ/.test(question) &&
+    /予想|予実|SB.{0,4}実績/.test(question) &&
+    /差|比較|乖離|ギャップ|ずれ/.test(question);
   const historicalWinnerPaceQ =
     /荒玉|駅伝/.test(expanded) &&
     /優勝/.test(expanded) &&
@@ -5049,7 +5053,7 @@ export async function answerQuestion(
     /(?:と|、|・|／|\/)/.test(expanded) &&
     /800(?:m|ｍ)?|1[，,]?\s*500(?:m|ｍ)?|3[，,]?\s*000(?:m|ｍ)?|5[，,]?\s*000(?:m|ｍ)?|3\s*(?:km|キロ)|5\s*(?:km|キロ)/i.test(expanded);
   const directDocQ =
-    practiceTemplateQ || weatherOpsQ || paceCliQ || practiceMeetLoadQ || historicalTopSixPaceQ || historicalRankPaceQ || historicalWinnerPaceQ || historicalTeamRankQ || tamanaPracticeResultQ || latestTamanaPracticeResultQ || tamanaPracticeAthleteRecordQ || latestTamanaPracticeAthleteQuestionQ || multipleAthleteRecordQ || genericPracticeResultQ || genericPracticeDetailQ || tamanaPracticeStatusQ || practiceStatusQ || kumamotoEkidenScheduleQ || schoolMeetScheduleQ || practiceParticipantQ || tamanaPracticeVenueQ || tamanaPracticeParticipantQ || legDistanceQ || schoolMeetVenueQ || historicalJuniorResultQ || relativeWinnerQ || courseEraQ || oldCourseDistanceQ || eveningPracticeScheduleQ || namedTeamTotalTimeQ || cityRecordResultQ || firstLongDistanceResultQ || secondLongDistanceResultQ || fourthLongDistanceResultQ || fifthLongDistanceResultQ || genericLongDistanceResultQ || nightMeetResultQ || juniorOlympicResultQ || urbanChampionshipResultQ || kanaguriMemorialResultQ || prefecturalChampionshipResultQ || communicationResultQ || cityChampionshipResultQ || teamWinnerMarginQ || genericWinnerMarginQ || strideCountQ || postEkidenPracticeQ || movementPracticeQ || practiceDaysQ || practiceCalendarQ || meetResultUrlQ || prefecturalMeetResultQ || prefecturalMeetScheduleQ || teamRankQ || calendarDateScheduleQ || exactMeetDateScheduleQ || genericPracticeScheduleQ || genericDaimingPracticeContentQ || schoolScheduleQ || datedPracticeMeetQ || datedPracticeContentQ || genericPracticeMeetScheduleQ || practiceVenueQ;
+    practiceTemplateQ || weatherOpsQ || paceCliQ || practiceMeetLoadQ || historicalTopSixPaceQ || historicalRankPaceQ || historicalWinnerPaceQ || historicalTeamRankQ || nagomiPredictionGapQ || tamanaPracticeResultQ || latestTamanaPracticeResultQ || tamanaPracticeAthleteRecordQ || latestTamanaPracticeAthleteQuestionQ || multipleAthleteRecordQ || genericPracticeResultQ || genericPracticeDetailQ || tamanaPracticeStatusQ || practiceStatusQ || kumamotoEkidenScheduleQ || schoolMeetScheduleQ || practiceParticipantQ || tamanaPracticeVenueQ || tamanaPracticeParticipantQ || legDistanceQ || schoolMeetVenueQ || historicalJuniorResultQ || relativeWinnerQ || courseEraQ || oldCourseDistanceQ || eveningPracticeScheduleQ || namedTeamTotalTimeQ || cityRecordResultQ || firstLongDistanceResultQ || secondLongDistanceResultQ || fourthLongDistanceResultQ || fifthLongDistanceResultQ || genericLongDistanceResultQ || nightMeetResultQ || juniorOlympicResultQ || urbanChampionshipResultQ || kanaguriMemorialResultQ || prefecturalChampionshipResultQ || communicationResultQ || cityChampionshipResultQ || teamWinnerMarginQ || genericWinnerMarginQ || strideCountQ || postEkidenPracticeQ || movementPracticeQ || practiceDaysQ || practiceCalendarQ || meetResultUrlQ || prefecturalMeetResultQ || prefecturalMeetScheduleQ || teamRankQ || calendarDateScheduleQ || exactMeetDateScheduleQ || genericPracticeScheduleQ || genericDaimingPracticeContentQ || schoolScheduleQ || datedPracticeMeetQ || datedPracticeContentQ || genericPracticeMeetScheduleQ || practiceVenueQ;
   if (practiceTemplateQ) {
     preferredSources = /norwegian-45-15|[Nn]orwegian(?:の|\s*)[- ]?45\s*[\/／\-‐‑–—−]\s*15|ノルウェー(?:式)?(?:の|\s*)45\s*[\/／\-‐‑–—−]\s*15|45\s*[\/／\-‐‑–—−]\s*15/.test(expanded)
       ? ["repo-docs/adr/002-norwegian-method-integration.md"]
@@ -5768,6 +5772,12 @@ export async function answerQuestion(
   if (historicalRankPaceQ) {
     preferredSources = ["out-analysis/aragyoku_all_teams_average_pace.md"];
   }
+  if (nagomiPredictionGapQ) {
+    const year = question.match(/20\d{2}/)?.[0];
+    const reportForYear = (reportYear: string) =>
+      `drive-text/大会/${reportYear}年度/${reportYear === "2025" ? "0921" : "0920"}_中学駅伝金栗四三生誕の地なごみ大会/予実比較.md`;
+    preferredSources = year ? [reportForYear(year)] : [reportForYear("2026"), reportForYear("2025")];
+  }
   let fromSources = retrieveBySources(preferredSources, {
     query: expanded,
     perSource:
@@ -6005,6 +6015,8 @@ export async function answerQuestion(
     ? mergedCoreRaw.filter((r) => /sb\/中学生SB\.csv(?::\d+)?$/.test(r.chunk.source))
     : historicalRankPaceQ
       ? mergedCoreRaw.filter((r) => /aragyoku_all_teams_average_pace\.md(?::\d+)?$/.test(r.chunk.source))
+    : nagomiPredictionGapQ
+      ? mergedCoreRaw.filter((r) => preferredSources.some((source) => r.chunk.source.replace(/:\d+$/, "") === source))
     : teamWinnerMarginQ || genericWinnerMarginQ
       ? mergedCoreRaw.filter((r) => r.chunk.source.replace(/:\d+$/, "") === preferredSources[0])
     : namedAssignmentQ
@@ -6072,6 +6084,7 @@ export async function answerQuestion(
       exhaustive ||
       tenKmSelfBestQuestion ||
       historicalRankPaceQ ||
+      nagomiPredictionGapQ ||
       teamWinnerMarginQ ||
       teamFullRecordQ ||
       namedAssignmentQ ||
@@ -6104,6 +6117,7 @@ export async function answerQuestion(
       exhaustive ||
       tenKmSelfBestQuestion ||
       historicalRankPaceQ ||
+      nagomiPredictionGapQ ||
       teamWinnerMarginQ ||
       teamFullRecordQ ||
       courseEraQ ||
