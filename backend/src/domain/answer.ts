@@ -2781,8 +2781,8 @@ function offlineAnswer(
         question,
       );
     const teamFullRecordLookup =
-      /全記録|所属選手|記録一覧/.test(question) &&
-      /南関中|玉名中|天水中|岱明中|長洲中|玉陵中|玉南中|玉名附中|荒尾三中|荒尾第四中|荒尾海陽中/.test(
+      /全記録|所属選手|所属する選手|記録一覧|全選手|トラック記録|選手記録/.test(question) &&
+      /南関中|玉名中|天水中|岱明中|長洲中|玉陵中|玉南中|玉名附中|荒尾三中|荒尾第四中|荒尾海陽中|金栗\s*PROJECT/.test(
         question,
       );
     const latestTeamRankLookup =
@@ -3357,6 +3357,10 @@ function boostAthleteRecordSources(query: string, baseSources: string[]): string
     "玉陵",
   ];
   if (/記録|全記録|一覧|所属|選手/.test(q)) {
+    if (/金栗\s*PROJECT/.test(q)) {
+      push("out-analysis/arato-tamana-teams/金栗PROJECT.md");
+      return out;
+    }
     const hit = knownTeamFiles.find((stem) => q.includes(stem));
     if (hit) {
       // A school + SB list has a dedicated current-year digest. The wide SB
@@ -3978,6 +3982,10 @@ export function narrowExhaustiveSources(query: string, sources: string[]): strin
     push("drive-text/personal/ATRC.md");
     return out;
   }
+  if (/全記録|所属選手|記録一覧/.test(q) && /金栗\s*PROJECT/.test(q)) {
+    push("out-analysis/arato-tamana-teams/金栗PROJECT.md");
+    return out;
+  }
   if (/全記録|所属選手|記録一覧/.test(q)) {
     for (const s of sources) {
       if (/arato-tamana-teams\/[^/]+\.md$|athletes\/[^/]+\.md$/.test(s)) push(s);
@@ -4420,6 +4428,9 @@ export async function answerQuestion(
     .replace(/(1000m|1000メートル)\s*[）)]/g, "$1")
     .replace(/S\s*[.．／/]\s*B/giu, "SB")
     .replace(/P\s*[.．／/]\s*B/giu, "PB");
+  const kanaguriProjectFullRecordQ =
+    /金栗\s*PROJECT/.test(question) &&
+    /全記録|所属選手|所属する選手|記録一覧|全選手|トラック記録|選手記録|記録.*全部/.test(question);
   const now = deps.now ?? new Date();
   const year = deps.defaultYear ?? currentFiscalYear(now);
   const expandedBase = expandDateQuery(question, year, now);
@@ -4488,7 +4499,14 @@ export async function answerQuestion(
     return { kind: "refused", text: scope.message || OUT_OF_SCOPE_MESSAGE };
   }
 
-  const route = deps.skipRouter
+  const route = kanaguriProjectFullRecordQ
+    ? {
+        sources: ["out-analysis/arato-tamana-teams/金栗PROJECT.md"],
+        focus: question,
+        reason: "exact_team_record_digest",
+        via: "fallback" as const,
+      }
+    : deps.skipRouter
     ? {
         sources: boostDaimingLineSources(
           question,
@@ -4518,6 +4536,9 @@ export async function answerQuestion(
       ),
     ),
   ).slice(0, RETRIEVAL_BUDGET.routeSources);
+  if (kanaguriProjectFullRecordQ) {
+    preferredSources = ["out-analysis/arato-tamana-teams/金栗PROJECT.md"];
+  }
 
   const compactWinnerQ =
     /20\d{2}/.test(question) &&
@@ -4890,15 +4911,19 @@ export async function answerQuestion(
   }
 
   const teamFullRecordQ =
-    /全記録|所属選手|記録一覧/.test(expanded) &&
-    /南関中|玉名中|天水中|岱明中|長洲中|玉陵中|玉南中|玉名附中|荒尾三中|荒尾第四中|荒尾海陽中/.test(
-      expanded,
-    );
+    kanaguriProjectFullRecordQ ||
+    (/全記録|所属選手|所属する選手|記録一覧|全選手|トラック記録|選手記録/.test(expanded) &&
+      /南関中|玉名中|天水中|岱明中|長洲中|玉陵中|玉南中|玉名附中|荒尾三中|荒尾第四中|荒尾海陽中/.test(
+        expanded,
+      ));
 
   if (exhaustive) {
     preferredSources = narrowExhaustiveSources(expanded, preferredSources);
   }
   if (teamFullRecordQ) {
+    if (/金栗\s*PROJECT/.test(expanded)) {
+      preferredSources = ["out-analysis/arato-tamana-teams/金栗PROJECT.md"];
+    }
     const team = [
       "荒尾第四中",
       "荒尾海陽中",
@@ -5163,7 +5188,7 @@ export async function answerQuestion(
     /(?:と|、|・|／|\/)/.test(expanded) &&
     /800(?:m|ｍ)?|1[，,]?\s*500(?:m|ｍ)?|3[，,]?\s*000(?:m|ｍ)?|5[，,]?\s*000(?:m|ｍ)?|3\s*(?:km|キロ)|5\s*(?:km|キロ)/i.test(expanded);
   const directDocQ =
-    practiceTemplateQ || weatherOpsQ || paceCliQ || practiceMeetLoadQ || historicalTopSixPaceQ || historicalRankPaceQ || historicalWinnerPaceQ || historicalTeamRankQ || historicalTopFinishQ || allTeamAveragePaceQ || top2ExperienceQ || nagomiPredictionGapQ || male1500SchoolRankingQ || absenceRosterQ || tamanaPracticeResultQ || latestTamanaPracticeResultQ || tamanaPracticeAthleteRecordQ || latestTamanaPracticeAthleteQuestionQ || multipleAthleteRecordQ || genericPracticeResultQ || genericPracticeDetailQ || tamanaPracticeStatusQ || practiceStatusQ || kumamotoEkidenScheduleQ || schoolMeetScheduleQ || practiceParticipantQ || tamanaPracticeVenueQ || tamanaPracticeParticipantQ || legDistanceQ || schoolMeetVenueQ || historicalJuniorResultQ || relativeWinnerQ || courseEraQ || oldCourseDistanceQ || eveningPracticeScheduleQ || namedTeamTotalTimeQ || cityRecordResultQ || firstLongDistanceResultQ || secondLongDistanceResultQ || fourthLongDistanceResultQ || fifthLongDistanceResultQ || genericLongDistanceResultQ || nightMeetResultQ || juniorOlympicResultQ || urbanChampionshipResultQ || kanaguriMemorialResultQ || prefecturalChampionshipResultQ || communicationResultQ || cityChampionshipResultQ || teamWinnerMarginQ || genericWinnerMarginQ || strideCountQ || postEkidenPracticeQ || movementPracticeQ || practiceDaysQ || practiceCalendarQ || meetResultUrlQ || prefecturalMeetResultQ || prefecturalMeetScheduleQ || teamRankQ || calendarDateScheduleQ || exactMeetDateScheduleQ || genericPracticeScheduleQ || genericDaimingPracticeContentQ || schoolScheduleQ || datedPracticeMeetQ || datedPracticeContentQ || genericPracticeMeetScheduleQ || practiceVenueQ;
+    practiceTemplateQ || weatherOpsQ || paceCliQ || practiceMeetLoadQ || historicalTopSixPaceQ || historicalRankPaceQ || historicalWinnerPaceQ || historicalTeamRankQ || historicalTopFinishQ || allTeamAveragePaceQ || top2ExperienceQ || kanaguriProjectFullRecordQ || nagomiPredictionGapQ || male1500SchoolRankingQ || absenceRosterQ || tamanaPracticeResultQ || latestTamanaPracticeResultQ || tamanaPracticeAthleteRecordQ || latestTamanaPracticeAthleteQuestionQ || multipleAthleteRecordQ || genericPracticeResultQ || genericPracticeDetailQ || tamanaPracticeStatusQ || practiceStatusQ || kumamotoEkidenScheduleQ || schoolMeetScheduleQ || practiceParticipantQ || tamanaPracticeVenueQ || tamanaPracticeParticipantQ || legDistanceQ || schoolMeetVenueQ || historicalJuniorResultQ || relativeWinnerQ || courseEraQ || oldCourseDistanceQ || eveningPracticeScheduleQ || namedTeamTotalTimeQ || cityRecordResultQ || firstLongDistanceResultQ || secondLongDistanceResultQ || fourthLongDistanceResultQ || fifthLongDistanceResultQ || genericLongDistanceResultQ || nightMeetResultQ || juniorOlympicResultQ || urbanChampionshipResultQ || kanaguriMemorialResultQ || prefecturalChampionshipResultQ || communicationResultQ || cityChampionshipResultQ || teamWinnerMarginQ || genericWinnerMarginQ || strideCountQ || postEkidenPracticeQ || movementPracticeQ || practiceDaysQ || practiceCalendarQ || meetResultUrlQ || prefecturalMeetResultQ || prefecturalMeetScheduleQ || teamRankQ || calendarDateScheduleQ || exactMeetDateScheduleQ || genericPracticeScheduleQ || genericDaimingPracticeContentQ || schoolScheduleQ || datedPracticeMeetQ || datedPracticeContentQ || genericPracticeMeetScheduleQ || practiceVenueQ;
   if (practiceTemplateQ) {
     preferredSources = /norwegian-45-15|[Nn]orwegian(?:の|\s*)[- ]?45\s*[\/／\-‐‑–—−]\s*15|ノルウェー(?:式)?(?:の|\s*)45\s*[\/／\-‐‑–—−]\s*15|45\s*[\/／\-‐‑–—−]\s*15/.test(expanded)
       ? ["repo-docs/adr/002-norwegian-method-integration.md"]
@@ -5431,7 +5456,7 @@ export async function answerQuestion(
         /秒|分|タイム|記録|ベスト/.test(expanded))) &&
     (hasNonTeamAthleteNameHint(expanded) || tenKmSelfBestQuestion) &&
     !/荒玉|駅伝|平均|ペース|区間|大会|結果|練習会|所属選手/.test(expanded);
-  if (namedSelfBestQ && !namedSchoolList && !namedSchoolSbList) {
+  if (namedSelfBestQ && !kanaguriProjectFullRecordQ && !namedSchoolList && !namedSchoolSbList) {
     const currentMen3000Ranking = "out-analysis/2026_aragyoku_men_3000m_sb_ranking.md";
     const currentMen1500Ranking = "out-analysis/2026_aragyoku_men_1500m_sb_individual_top20.md";
     const currentWomenRanking = "out-analysis/2026_women_800m_1500m_pb_school_ranking.md";

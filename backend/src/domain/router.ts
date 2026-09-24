@@ -136,6 +136,18 @@ export async function routeSources(
   // Always allow calendar for schedule bots
   allow.add("calendar/events.daiming.yaml");
 
+  if (
+    /金栗\s*PROJECT/.test(question) &&
+    /全記録|所属選手|所属する選手|記録一覧|全選手|トラック記録|選手記録|記録.*全部/.test(question)
+  ) {
+    return {
+      sources: ["out-analysis/arato-tamana-teams/金栗PROJECT.md"],
+      focus: question.slice(0, 80),
+      reason: "exact_team_record_digest",
+      via: "fallback",
+    };
+  }
+
   if (!llm || kg.corpus_sources.length === 0) {
     return fallbackRoute(question, kg);
   }

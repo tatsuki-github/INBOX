@@ -30,6 +30,18 @@ async function askAt(question: string, now: string) {
   return result;
 }
 
+async function askWithRouter(question: string) {
+  resetKgCache();
+  resetRetrieverCache();
+  const result = await answerQuestion(question, {
+    defaultYear: 2026,
+    llm: null,
+  });
+  expect(result.kind).toBe("offline");
+  if (result.kind !== "offline") throw new Error("expected offline result");
+  return result;
+}
+
 describe("QA precision regressions", () => {
   it.each([
     "欠席者は誰？",
@@ -119,6 +131,24 @@ describe("QA precision regressions", () => {
       expect(result.text).toContain("荒尾三 9回");
       expect((result.text.match(/玉名 15回/g) ?? []).length).toBe(1);
     }
+  });
+  it.each([
+    "金栗PROJECT所属選手の全記録",
+    "金栗PROJECTの記録を全部見せて",
+    "金栗PROJECT所属選手の記録全部",
+    "金栗PROJECTの所属選手全員の記録",
+    "金栗PROJECT所属選手の記録一覧を出して",
+    "金栗 PROJECT の選手記録をすべて提示して",
+    "金栗PROJECTの記録を全て一覧にして",
+    "金栗PROJECT所属選手全記録一覧",
+    "金栗PROJECT所属選手の記録を全件見せて",
+    "金栗PROJECTの記録全部",
+  ])("keeps 金栗PROJECT full-record questions on its team digest: %s", async (question) => {
+    const result = await askWithRouter(question);
+    expect(result.sources).toEqual(["out-analysis/arato-tamana-teams/金栗PROJECT.md"]);
+    expect(result.text).toContain("金栗PROJECT 記録一覧");
+    expect(result.text).not.toContain("女子800m・1500m SB");
+    expect(result.text).not.toContain("ＮＪＡＣ");
   });
   it.each([
     ["なごみ駅伝の予想と実績の差は？", undefined],
