@@ -82,6 +82,23 @@ describe("QA precision regressions", () => {
   });
 
   it.each([
+    "玉名アスリーツ所属選手の全記録",
+    "玉名アスリーツの選手の記録一覧を見せて",
+    "玉名アスリーツの全記録を教えて",
+    "玉名アスリーツに所属する選手の記録を全て提示して",
+    "玉名アスリーツの全選手のトラック記録は？",
+    "玉名アスリーツ選手記録を全部見せて",
+    "玉名アスリーツ所属の記録一覧は？",
+    "玉名アスリーツ全記録一覧",
+    "玉名アスリーツの選手記録をすべて教えて",
+    "玉名アスリーツの所属選手全員の記録は？",
+  ])("limits Tamana Athletes full records to its team digest: %s", async (question) => {
+    const result = await ask(question);
+    expect(result.sources).toEqual(["out-analysis/arato-tamana-teams/玉名アスリーツ.md"]);
+    expect(result.text).toContain("五郎丸壱悟");
+  });
+
+  it.each([
     "欠席者は誰？",
     "最近の欠席者は？",
     "欠席記録を見せて",

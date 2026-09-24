@@ -184,6 +184,18 @@ export async function routeSources(
     };
   }
 
+  if (
+    /玉名アスリーツ/.test(question) &&
+    /全記録|所属選手|所属する選手|記録一覧|全選手|トラック記録|選手記録|記録.*全部/.test(question)
+  ) {
+    return {
+      sources: ["out-analysis/arato-tamana-teams/玉名アスリーツ.md"],
+      focus: question.slice(0, 80),
+      reason: "exact_team_record_digest",
+      via: "fallback",
+    };
+  }
+
   if (!llm || kg.corpus_sources.length === 0) {
     return fallbackRoute(question, kg);
   }
