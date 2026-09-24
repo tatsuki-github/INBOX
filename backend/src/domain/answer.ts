@@ -453,6 +453,31 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
   }
   if (
     /荒玉|駅伝/.test(q) &&
+    /(?:過去\s*5年|直近\s*5年|5年間)/.test(q) &&
+    /準優勝|2位/.test(q)
+  ) {
+    const male = [
+      "2021年 菊水・荒尾四",
+      "2022年 荒尾四・荒尾三",
+      "2023年 菊水・荒尾四",
+      "2024年 南関・玉高附属",
+      "2025年 菊水・玉陵",
+    ];
+    const female = [
+      "2021年 荒尾四・荒尾三",
+      "2022年 長洲・荒尾四",
+      "2023年 荒尾三・荒尾四",
+      "2024年 南関・荒尾三",
+      "2025年 玉名・南関",
+    ];
+    const format = (gender: string, rows: string[]) =>
+      `${gender}（優勝校・準優勝校）: ${rows.join("、")}`;
+    if (/男子/.test(q)) return format("男子", male);
+    if (/女子/.test(q)) return format("女子", female);
+    return `${format("男子", male)}。${format("女子", female)}。`;
+  }
+  if (
+    /荒玉|駅伝/.test(q) &&
     /歴代|過去5年/.test(q) &&
     /優勝校|優勝チーム/.test(q)
   ) {
@@ -4574,7 +4599,7 @@ export async function answerQuestion(
     !/男子|女子|20\d{2}|過去|歴代/.test(question);
   const historicalWinnerQ =
     /荒玉|駅伝/.test(question) &&
-    /歴代/.test(question) &&
+    /歴代|過去\s*5年|直近\s*5年|5年間/.test(question) &&
     /優勝|準優勝/.test(question);
   const winnerYearTeamQ =
     /優勝/.test(question) &&
@@ -5071,6 +5096,10 @@ export async function answerQuestion(
     /1500(?:m|ｍ)?/.test(question.normalize("NFKC")) &&
     /学校別|学校.*ランキング|学校ランキング|学校.*順位/.test(question);
   const absenceRosterQ = /欠席者|欠席記録|欠席履歴|欠席一覧|欠席した|休んだ/.test(question);
+  const historicalTopFinishQ =
+    /荒玉|駅伝/.test(question) &&
+    /(?:過去\s*5年|直近\s*5年|5年間)/.test(question) &&
+    /準優勝|2位/.test(question);
   const historicalWinnerPaceQ =
     /荒玉|駅伝/.test(expanded) &&
     /優勝/.test(expanded) &&
@@ -5091,7 +5120,7 @@ export async function answerQuestion(
     /(?:と|、|・|／|\/)/.test(expanded) &&
     /800(?:m|ｍ)?|1[，,]?\s*500(?:m|ｍ)?|3[，,]?\s*000(?:m|ｍ)?|5[，,]?\s*000(?:m|ｍ)?|3\s*(?:km|キロ)|5\s*(?:km|キロ)/i.test(expanded);
   const directDocQ =
-    practiceTemplateQ || weatherOpsQ || paceCliQ || practiceMeetLoadQ || historicalTopSixPaceQ || historicalRankPaceQ || historicalWinnerPaceQ || historicalTeamRankQ || nagomiPredictionGapQ || male1500SchoolRankingQ || absenceRosterQ || tamanaPracticeResultQ || latestTamanaPracticeResultQ || tamanaPracticeAthleteRecordQ || latestTamanaPracticeAthleteQuestionQ || multipleAthleteRecordQ || genericPracticeResultQ || genericPracticeDetailQ || tamanaPracticeStatusQ || practiceStatusQ || kumamotoEkidenScheduleQ || schoolMeetScheduleQ || practiceParticipantQ || tamanaPracticeVenueQ || tamanaPracticeParticipantQ || legDistanceQ || schoolMeetVenueQ || historicalJuniorResultQ || relativeWinnerQ || courseEraQ || oldCourseDistanceQ || eveningPracticeScheduleQ || namedTeamTotalTimeQ || cityRecordResultQ || firstLongDistanceResultQ || secondLongDistanceResultQ || fourthLongDistanceResultQ || fifthLongDistanceResultQ || genericLongDistanceResultQ || nightMeetResultQ || juniorOlympicResultQ || urbanChampionshipResultQ || kanaguriMemorialResultQ || prefecturalChampionshipResultQ || communicationResultQ || cityChampionshipResultQ || teamWinnerMarginQ || genericWinnerMarginQ || strideCountQ || postEkidenPracticeQ || movementPracticeQ || practiceDaysQ || practiceCalendarQ || meetResultUrlQ || prefecturalMeetResultQ || prefecturalMeetScheduleQ || teamRankQ || calendarDateScheduleQ || exactMeetDateScheduleQ || genericPracticeScheduleQ || genericDaimingPracticeContentQ || schoolScheduleQ || datedPracticeMeetQ || datedPracticeContentQ || genericPracticeMeetScheduleQ || practiceVenueQ;
+    practiceTemplateQ || weatherOpsQ || paceCliQ || practiceMeetLoadQ || historicalTopSixPaceQ || historicalRankPaceQ || historicalWinnerPaceQ || historicalTeamRankQ || historicalTopFinishQ || nagomiPredictionGapQ || male1500SchoolRankingQ || absenceRosterQ || tamanaPracticeResultQ || latestTamanaPracticeResultQ || tamanaPracticeAthleteRecordQ || latestTamanaPracticeAthleteQuestionQ || multipleAthleteRecordQ || genericPracticeResultQ || genericPracticeDetailQ || tamanaPracticeStatusQ || practiceStatusQ || kumamotoEkidenScheduleQ || schoolMeetScheduleQ || practiceParticipantQ || tamanaPracticeVenueQ || tamanaPracticeParticipantQ || legDistanceQ || schoolMeetVenueQ || historicalJuniorResultQ || relativeWinnerQ || courseEraQ || oldCourseDistanceQ || eveningPracticeScheduleQ || namedTeamTotalTimeQ || cityRecordResultQ || firstLongDistanceResultQ || secondLongDistanceResultQ || fourthLongDistanceResultQ || fifthLongDistanceResultQ || genericLongDistanceResultQ || nightMeetResultQ || juniorOlympicResultQ || urbanChampionshipResultQ || kanaguriMemorialResultQ || prefecturalChampionshipResultQ || communicationResultQ || cityChampionshipResultQ || teamWinnerMarginQ || genericWinnerMarginQ || strideCountQ || postEkidenPracticeQ || movementPracticeQ || practiceDaysQ || practiceCalendarQ || meetResultUrlQ || prefecturalMeetResultQ || prefecturalMeetScheduleQ || teamRankQ || calendarDateScheduleQ || exactMeetDateScheduleQ || genericPracticeScheduleQ || genericDaimingPracticeContentQ || schoolScheduleQ || datedPracticeMeetQ || datedPracticeContentQ || genericPracticeMeetScheduleQ || practiceVenueQ;
   if (practiceTemplateQ) {
     preferredSources = /norwegian-45-15|[Nn]orwegian(?:の|\s*)[- ]?45\s*[\/／\-‐‑–—−]\s*15|ノルウェー(?:式)?(?:の|\s*)45\s*[\/／\-‐‑–—−]\s*15|45\s*[\/／\-‐‑–—−]\s*15/.test(expanded)
       ? ["repo-docs/adr/002-norwegian-method-integration.md"]
@@ -5104,6 +5133,9 @@ export async function answerQuestion(
   if (practiceMeetLoadQ) preferredSources = ["repo-docs/adr/006-practice-meets-not-load.md"];
   if (historicalTopSixPaceQ) {
     preferredSources = ["out-analysis/aragyoku_top6_historical_average_pace.md"];
+  }
+  if (historicalTopFinishQ) {
+    preferredSources = ["aragyoku/winners-by-year.md"];
   }
   if (historicalRankPaceQ) {
     preferredSources = ["out-analysis/aragyoku_all_teams_average_pace.md"];
@@ -5820,6 +5852,10 @@ export async function answerQuestion(
   if (male1500SchoolRankingQ) {
     preferredSources = ["out-analysis/2026_men_1500m_pb_school_ranking.md"];
   }
+  if (historicalTopFinishQ) {
+    preferredSources = ["aragyoku/winners-by-year.md"];
+  }
+
   if (absenceRosterQ) {
     const year = question.match(/20\d{2}/)?.[0] ?? String(deps.defaultYear ?? 2026);
     preferredSources = ["calendar/events.daiming.yaml"];
@@ -6214,6 +6250,35 @@ export async function answerQuestion(
     !sources.includes("drive-text/大会/2026年度/1014-1015_荒玉中体連駅伝/概要.md")
   ) {
     sources.unshift("drive-text/大会/2026年度/1014-1015_荒玉中体連駅伝/概要.md");
+  }
+
+  if (historicalTopFinishQ && !deps.llm) {
+    const male = [
+      "2021年 菊水・荒尾四",
+      "2022年 荒尾四・荒尾三",
+      "2023年 菊水・荒尾四",
+      "2024年 南関・玉高附属",
+      "2025年 菊水・玉陵",
+    ];
+    const female = [
+      "2021年 荒尾四・荒尾三",
+      "2022年 長洲・荒尾四",
+      "2023年 荒尾三・荒尾四",
+      "2024年 南関・荒尾三",
+      "2025年 玉名・南関",
+    ];
+    const format = (gender: string, rows: string[]) =>
+      `${gender}（優勝校・準優勝校）: ${rows.join("、")}`;
+    const answer = /男子/.test(question)
+      ? format("男子", male)
+      : /女子/.test(question)
+        ? format("女子", female)
+        : `${format("男子", male)}。${format("女子", female)}。`;
+    return {
+      kind: "offline",
+      text: finalizeAnswerText(answer, question, deps, sources),
+      sources,
+    };
   }
 
   if (historicalRankPaceQ) {

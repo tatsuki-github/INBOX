@@ -52,6 +52,28 @@ describe("QA precision regressions", () => {
     expect(result.text).not.toContain("第12回 中学駅伝");
   });
   it.each([
+    "女子の荒玉駅伝の過去5年間の優勝校、準優勝校は？",
+    "荒玉女子の過去5年の優勝校と準優勝校を教えて",
+    "女子の荒玉駅伝、直近5年の優勝校と2位校は？",
+    "荒玉駅伝女子の過去5年間の1位・2位は？",
+    "女子の荒玉駅伝で直近5年の優勝校と準優勝校は？",
+    "荒玉女子駅伝の過去5年、優勝と準優勝はどこ？",
+    "女子の荒玉駅伝の直近5年間の優勝・準優勝校一覧",
+    "荒玉駅伝女子で過去5年に優勝した学校と準優勝校は？",
+    "荒玉駅伝の過去5年間の優勝校と準優勝校は？",
+    "荒玉駅伝の直近5年の優勝・準優勝は？",
+  ])("answers five-year winner and runner-up questions without duplicates: %s", async (question) => {
+    const result = await ask(question);
+    expect(result.sources).toEqual(["aragyoku/winners-by-year.md"]);
+    expect(result.text).toContain("2021年 荒尾四・荒尾三");
+    expect(result.text).toContain("2022年 長洲・荒尾四");
+    expect(result.text).toContain("2023年 荒尾三・荒尾四");
+    expect(result.text).toContain("2024年 南関・荒尾三");
+    expect(result.text).toContain("2025年 玉名・南関");
+    expect(result.text).not.toContain("2020年");
+    expect((result.text.match(/2021年 荒尾四・荒尾三/g) ?? []).length).toBe(1);
+  });
+  it.each([
     ["なごみ駅伝の予想と実績の差は？", undefined],
     ["なごみの予実差を見せて", undefined],
     ["なごみ駅伝のSB予想と結果の比較", undefined],
