@@ -128,8 +128,12 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
   const flat = text.replace(/\s+/g, " ");
   const q = question.normalize("NFKC");
   if (/高田麻那/.test(q) && /SB|PB|ベスト/.test(q)) {
-    const requestedDistances = [...new Set([...q.matchAll(/(1[，,]?\s*500|1500|3[，,]?\s*000|3000|5[，,]?\s*000|5000)\s*(?:m|ｍ|メートル)?/gi)]
-      .map((match) => match[1]!.replace(/[，,\s]/g, "")))];
+    const requestedDistancesSet = new Set([...q.matchAll(/(1[，,]?\s*500|1500|3[，,]?\s*000|3000|5[，,]?\s*000|5000)\s*(?:m|ｍ|メートル)?/gi)]
+      .map((match) => match[1]!.replace(/[，,\s]/g, "")));
+    if (/1(?:[．.]5)\s*(?:km|キロ)/i.test(q)) requestedDistancesSet.add("1500");
+    if (/3(?:[．.]0)?\s*(?:km|キロ)/i.test(q)) requestedDistancesSet.add("3000");
+    if (/5(?:[．.]0)?\s*(?:km|キロ)/i.test(q)) requestedDistancesSet.add("5000");
+    const requestedDistances = [...requestedDistancesSet];
     if (requestedDistances.length > 1) {
       const kind = /PB/.test(q) ? "PB" : "SB";
       const answers = requestedDistances.map((distance) => {
@@ -140,7 +144,7 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
       });
       return "高田麻那の" + answers.join("、") + "。";
     }
-    const distance = q.match(/(1[，,]?\s*500|3[，,]?\s*000|5[，,]?\s*000)\s*(?:m|ｍ|メートル)/i)?.[1]?.replace(/[，,\s]/g, "");
+    const distance = requestedDistances[0];
     if (distance) {
       const record = flat.match(new RegExp(distance + "m SB:\\s*([^\\s|]+)"));
       if (record && record[1] !== "—") {

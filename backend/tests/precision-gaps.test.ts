@@ -696,6 +696,23 @@ describe("QA precision regressions", () => {
   });
 
   it.each([
+    ["高田麻那の1.5kmSBは？", "高田麻那の1500mSBは5:21.76"],
+    ["高田麻那の1.5kmPBは？", "高田麻那の1500mPBは5:21.76"],
+    ["高田麻那の1.5 km SBは？", "高田麻那の1500mSBは5:21.76"],
+    ["高田麻那の1.5キロSBは？", "高田麻那の1500mSBは5:21.76"],
+    ["高田麻那の1.5キロメートルPBは？", "高田麻那の1500mPBは5:21.76"],
+    ["高田麻那の5kmSBは？", "高田麻那の5000mSBは11:05.84"],
+    ["高田麻那の5 km PBは？", "高田麻那の5000mPBは11:05.84"],
+    ["高田麻那の5キロSBは？", "高田麻那の5000mSBは11:05.84"],
+    ["高田麻那の3kmSBは？", "高田麻那の3000m記録は、参照できる資料では確認できません"],
+    ["高田麻那の3キロPBは？", "高田麻那の3000m記録は、参照できる資料では確認できません"],
+  ])("normalizes distance aliases in 高田麻那's profile query: %s", async (question, expected) => {
+    const result = await ask(question);
+    expect(result.sources).toEqual(["out-analysis/athletes/takada-mana.md"]);
+    expect(result.text).toContain(expected);
+  });
+
+  it.each([
     ["高田麻那の1500mと5000mSBは？", "1500mSBは5:21.76、5000mSBは11:05.84"],
     ["高田麻那の5000mと1500mSBは？", "5000mSBは11:05.84、1500mSBは5:21.76"],
     ["高田麻那の1500mと5000mPBは？", "1500mPBは5:21.76、5000mPBは11:05.84"],
