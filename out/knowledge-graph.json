@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated_at": "2026-09-24T13:24:03Z",
+  "generated_at": "2026-09-24T14:13:54Z",
   "nodes": [
     {
       "id": "corpus:analysis-ocr",
@@ -176,6 +176,7 @@
         "practice"
       ],
       "refs": [
+        "out/analysis/arato-tamana-teams/岱明中.md",
         "out/analysis/notion_records_2026.json"
       ],
       "hint": "所属:岱明中"
@@ -190,6 +191,7 @@
         "practice"
       ],
       "refs": [
+        "out/analysis/arato-tamana-teams/岱明中.md",
         "out/analysis/notion_records_2026.json"
       ],
       "hint": "所属:岱明中"
@@ -220,9 +222,10 @@
         "practice"
       ],
       "refs": [
+        "input/events.2025.yaml",
         "out/2025/practice_absentees.csv",
-        "out/analysis/notion_records_2026.json",
-        "input/events.2025.yaml"
+        "out/analysis/arato-tamana-teams/岱明中.md",
+        "out/analysis/notion_records_2026.json"
       ],
       "hint": "所属:岱明中"
     },
@@ -252,9 +255,10 @@
         "practice"
       ],
       "refs": [
+        "input/events.2025.yaml",
         "out/2025/practice_absentees.csv",
-        "out/analysis/notion_records_2026.json",
-        "input/events.2025.yaml"
+        "out/analysis/arato-tamana-teams/岱明中.md",
+        "out/analysis/notion_records_2026.json"
       ],
       "hint": "所属:岱明中"
     },
@@ -284,9 +288,10 @@
         "practice"
       ],
       "refs": [
+        "input/events.2025.yaml",
         "out/2025/practice_absentees.csv",
-        "out/analysis/notion_records_2026.json",
-        "input/events.2025.yaml"
+        "out/analysis/arato-tamana-teams/岱明中.md",
+        "out/analysis/notion_records_2026.json"
       ],
       "hint": "所属:岱明中"
     },
@@ -300,6 +305,7 @@
         "practice"
       ],
       "refs": [
+        "out/analysis/arato-tamana-teams/岱明中.md",
         "out/analysis/notion_records_2026.json"
       ],
       "hint": "所属:岱明中"
@@ -314,6 +320,7 @@
         "practice"
       ],
       "refs": [
+        "out/analysis/arato-tamana-teams/岱明中.md",
         "out/analysis/notion_records_2026.json"
       ],
       "hint": "所属:岱明中"
@@ -344,9 +351,10 @@
         "practice"
       ],
       "refs": [
+        "input/events.2025.yaml",
         "out/2025/practice_absentees.csv",
-        "out/analysis/notion_records_2026.json",
-        "input/events.2025.yaml"
+        "out/analysis/arato-tamana-teams/岱明中.md",
+        "out/analysis/notion_records_2026.json"
       ],
       "hint": "所属:岱明中"
     },
@@ -391,9 +399,10 @@
         "practice"
       ],
       "refs": [
+        "input/events.2025.yaml",
         "out/2025/practice_absentees.csv",
-        "out/analysis/notion_records_2026.json",
-        "input/events.2025.yaml"
+        "out/analysis/arato-tamana-teams/岱明中.md",
+        "out/analysis/notion_records_2026.json"
       ],
       "hint": "所属:岱明中"
     },
@@ -423,9 +432,10 @@
         "practice"
       ],
       "refs": [
+        "input/events.2025.yaml",
         "out/2025/practice_absentees.csv",
-        "out/analysis/notion_records_2026.json",
-        "input/events.2025.yaml"
+        "out/analysis/arato-tamana-teams/岱明中.md",
+        "out/analysis/notion_records_2026.json"
       ],
       "hint": "所属:岱明中"
     },
@@ -455,9 +465,10 @@
         "practice"
       ],
       "refs": [
+        "input/events.2025.yaml",
         "out/2025/practice_absentees.csv",
-        "out/analysis/notion_records_2026.json",
-        "input/events.2025.yaml"
+        "out/analysis/arato-tamana-teams/岱明中.md",
+        "out/analysis/notion_records_2026.json"
       ],
       "hint": "所属:岱明中"
     },
@@ -472,8 +483,8 @@
       ],
       "refs": [
         "input/events.2026.yaml",
-        "out/analysis/notion_records_2026.json",
-        "out/2026/practice_absentees.csv"
+        "out/2026/practice_absentees.csv",
+        "out/analysis/notion_records_2026.json"
       ],
       "hint": "部員エンティティ"
     },
@@ -488,8 +499,9 @@
       ],
       "refs": [
         "input/events.2026.yaml",
-        "out/analysis/notion_records_2026.json",
-        "out/2026/practice_absentees.csv"
+        "out/2026/practice_absentees.csv",
+        "out/analysis/arato-tamana-teams/岱明中.md",
+        "out/analysis/notion_records_2026.json"
       ],
       "hint": "所属:岱明中"
     },
@@ -519,9 +531,10 @@
         "practice"
       ],
       "refs": [
+        "input/events.2025.yaml",
         "out/2025/practice_absentees.csv",
-        "out/analysis/notion_records_2026.json",
-        "input/events.2025.yaml"
+        "out/analysis/arato-tamana-teams/岱明中.md",
+        "out/analysis/notion_records_2026.json"
       ],
       "hint": "所属:岱明中"
     },
@@ -535,10 +548,10 @@
         "practice"
       ],
       "refs": [
-        "input/events.2026.yaml",
         "out/2025/practice_absentees.csv",
-        "out/analysis/notion_records_2026.json",
+        "input/events.2026.yaml",
         "out/2026/practice_absentees.csv",
+        "out/analysis/notion_records_2026.json",
         "input/events.2025.yaml"
       ],
       "hint": "部員エンティティ"
@@ -553,11 +566,12 @@
         "practice"
       ],
       "refs": [
+        "input/events.2025.yaml",
         "input/events.2026.yaml",
         "out/2025/practice_absentees.csv",
-        "out/analysis/notion_records_2026.json",
         "out/2026/practice_absentees.csv",
-        "input/events.2025.yaml"
+        "out/analysis/arato-tamana-teams/岱明中.md",
+        "out/analysis/notion_records_2026.json"
       ],
       "hint": "所属:岱明中"
     },
@@ -7232,7 +7246,7 @@
       "refs": [
         "out/analysis/arato-tamana-teams/ATRC.md"
       ],
-      "hint": "ATRC 記録一覧（荒尾玉名） / 荒尾・玉名地区の中学生トラック記録を所属（チーム）単位でまとめたもの。 / 出典: Notion 中学生記録 DB / `notion_records_2026.json`。 / 2024年度 / 件数: 47 / 800m / | 性別 | 学年 | 選手 | 記録 | 日付 | 大会/URL | / |---|---:|---|---:|---|---| /。荒尾玉名の所属別トラック全記録。ATRC 所属選手のトラック記録一覧"
+      "hint": "ATRC 記録一覧（荒尾玉名） / 荒尾・玉名地区の中学生トラック記録を所属（チーム）単位でまとめたもの。 / 出典: Notion 中学生記録 DB / `notion_records_2026.json`。 / 2024年度 / 件数: 47 / 800m / | 性別 | 学年 | 選手 | 記録 | 日付 | 大会/URL | / |---|---:|---|---:|---|---| /。荒尾玉名の所属別トラック全記録。種目: 800m / 1500m / 3000m。年度別の選手記録・自己ベスト確認。ATRC 所属選手のトラック記録一覧"
     },
     {
       "id": "source:out/analysis/arato-tamana-teams/INDEX.md",
@@ -7256,7 +7270,7 @@
       "refs": [
         "out/analysis/arato-tamana-teams/南関中.md"
       ],
-      "hint": "別名: 南関。荒尾玉名の所属別トラック全記録。南関中 記録一覧（荒尾玉名） / 荒尾・玉名地区の中学生トラック記録を所属（チーム）単位でまとめたもの。 / 出典: Notion 中学生記録 DB / `notion_records_2026.json`。 / 2024年度 / 件数: 118 / 800m / | 性別 | 学年 | 選手 | 記録 | 日付 | 大会/URL | / |---|---:|---|---:|---|---| /"
+      "hint": "別名: 南関。荒尾玉名の所属別トラック全記録。種目: 800m / 1500m / 3000m。年度別の選手記録・自己ベスト確認。南関中 記録一覧（荒尾玉名） / 荒尾・玉名地区の中学生トラック記録を所属（チーム）単位でまとめたもの。 / 出典: Notion 中学生記録 DB / `notion_records_2026.json`。 / 2024年度 / 件数: 118 / 800m / | 性別 | 学年 | 選手 | 記録 | 日付 | 大会/URL | / |---|---:|---|---:|---|---| /"
     },
     {
       "id": "source:out/analysis/arato-tamana-teams/天水中.md",
@@ -7268,7 +7282,7 @@
       "refs": [
         "out/analysis/arato-tamana-teams/天水中.md"
       ],
-      "hint": "別名: 天水。荒尾玉名の所属別トラック全記録。天水中 記録一覧（荒尾玉名） / 荒尾・玉名地区の中学生トラック記録を所属（チーム）単位でまとめたもの。 / 出典: Notion 中学生記録 DB / `notion_records_2026.json`。 / 2024年度 / 件数: 51 / 800m / | 性別 | 学年 | 選手 | 記録 | 日付 | 大会/URL | / |---|---:|---|---:|---|---| / "
+      "hint": "別名: 天水。荒尾玉名の所属別トラック全記録。種目: 800m / 1500m / 3000m。年度別の選手記録・自己ベスト確認。天水中 記録一覧（荒尾玉名） / 荒尾・玉名地区の中学生トラック記録を所属（チーム）単位でまとめたもの。 / 出典: Notion 中学生記録 DB / `notion_records_2026.json`。 / 2024年度 / 件数: 51 / 800m / | 性別 | 学年 | 選手 | 記録 | 日付 | 大会/URL | / |---|---:|---|---:|---|---| / "
     },
     {
       "id": "source:out/analysis/arato-tamana-teams/岱明中.md",
@@ -7280,7 +7294,7 @@
       "refs": [
         "out/analysis/arato-tamana-teams/岱明中.md"
       ],
-      "hint": "別名: 岱明。荒尾玉名の所属別トラック全記録。岱明中 記録一覧（荒尾玉名） / 荒尾・玉名地区の中学生トラック記録を所属（チーム）単位でまとめたもの。 / 出典: Notion 中学生記録 DB / `notion_records_2026.json`。 / 2024年度 / 件数: 48 / 800m / | 性別 | 学年 | 選手 | 記録 | 日付 | 大会/URL | / |---|---:|---|---:|---|---| / "
+      "hint": "別名: 岱明。荒尾玉名の所属別トラック全記録。種目: 800m / 1500m / 3000m。年度別の選手記録・自己ベスト確認。岱明中 記録一覧（荒尾玉名） / 荒尾・玉名地区の中学生トラック記録を所属（チーム）単位でまとめたもの。 / 出典: Notion 中学生記録 DB / `notion_records_2026.json`。 / 2024年度 / 件数: 48 / 800m / | 性別 | 学年 | 選手 | 記録 | 日付 | 大会/URL | / |---|---:|---|---:|---|---| / "
     },
     {
       "id": "source:out/analysis/arato-tamana-teams/熊本大附中.md",
@@ -7292,7 +7306,7 @@
       "refs": [
         "out/analysis/arato-tamana-teams/熊本大附中.md"
       ],
-      "hint": "荒尾玉名の所属別トラック全記録。熊本大附中 記録一覧（荒尾玉名） / 荒尾・玉名地区の中学生トラック記録を所属（チーム）単位でまとめたもの。 / 出典: Notion 中学生記録 DB / `notion_records_2026.json`。 / 2026年度 / 件数: 3 / 800m / | 性別 | 学年 | 選手 | 記録 | 日付 | 大会/URL | / |---|---:|---|---:|---|---| /"
+      "hint": "荒尾玉名の所属別トラック全記録。種目: 800m / 1500m / 3000m。年度別の選手記録・自己ベスト確認。熊本大附中 記録一覧（荒尾玉名） / 荒尾・玉名地区の中学生トラック記録を所属（チーム）単位でまとめたもの。 / 出典: Notion 中学生記録 DB / `notion_records_2026.json`。 / 2026年度 / 件数: 3 / 800m / | 性別 | 学年 | 選手 | 記録 | 日付 | 大会/URL | / |---|---:|---|---:|---|---| /"
     },
     {
       "id": "source:out/analysis/arato-tamana-teams/玉・有明中.md",
@@ -7304,7 +7318,7 @@
       "refs": [
         "out/analysis/arato-tamana-teams/玉・有明中.md"
       ],
-      "hint": "荒尾玉名の所属別トラック全記録。玉・有明中 記録一覧（荒尾玉名） / 荒尾・玉名地区の中学生トラック記録を所属（チーム）単位でまとめたもの。 / 出典: Notion 中学生記録 DB / `notion_records_2026.json`。 / 2024年度 / 件数: 31 / 800m / | 性別 | 学年 | 選手 | 記録 | 日付 | 大会/URL | / |---|---:|---|---:|---|---| "
+      "hint": "荒尾玉名の所属別トラック全記録。種目: 800m / 1500m / 3000m。年度別の選手記録・自己ベスト確認。玉・有明中 記録一覧（荒尾玉名） / 荒尾・玉名地区の中学生トラック記録を所属（チーム）単位でまとめたもの。 / 出典: Notion 中学生記録 DB / `notion_records_2026.json`。 / 2024年度 / 件数: 31 / 800m / | 性別 | 学年 | 選手 | 記録 | 日付 | 大会/URL | / |---|---:|---|---:|---|---| "
     },
     {
       "id": "source:out/analysis/arato-tamana-teams/玉南中.md",
@@ -7316,7 +7330,7 @@
       "refs": [
         "out/analysis/arato-tamana-teams/玉南中.md"
       ],
-      "hint": "荒尾玉名の所属別トラック全記録。玉南中 記録一覧（荒尾玉名） / 荒尾・玉名地区の中学生トラック記録を所属（チーム）単位でまとめたもの。 / 出典: Notion 中学生記録 DB / `notion_records_2026.json`。 / 2024年度 / 件数: 15 / 800m / | 性別 | 学年 | 選手 | 記録 | 日付 | 大会/URL | / |---|---:|---|---:|---|---| / "
+      "hint": "荒尾玉名の所属別トラック全記録。種目: 800m / 1500m / 3000m。年度別の選手記録・自己ベスト確認。玉南中 記録一覧（荒尾玉名） / 荒尾・玉名地区の中学生トラック記録を所属（チーム）単位でまとめたもの。 / 出典: Notion 中学生記録 DB / `notion_records_2026.json`。 / 2024年度 / 件数: 15 / 800m / | 性別 | 学年 | 選手 | 記録 | 日付 | 大会/URL | / |---|---:|---|---:|---|---| / "
     },
     {
       "id": "source:out/analysis/arato-tamana-teams/玉名アスリーツ.md",
@@ -7328,7 +7342,7 @@
       "refs": [
         "out/analysis/arato-tamana-teams/玉名アスリーツ.md"
       ],
-      "hint": "荒尾玉名の所属別トラック全記録。玉名アスリーツ 記録一覧（荒尾玉名） / 荒尾・玉名地区の中学生トラック記録を所属（チーム）単位でまとめたもの。 / 出典: Notion 中学生記録 DB / `notion_records_2026.json`。 / 2026年度 / 件数: 87 / 800m / | 性別 | 学年 | 選手 | 記録 | 日付 | 大会/URL | / |---|---:|---|---:|---|---"
+      "hint": "荒尾玉名の所属別トラック全記録。種目: 800m / 1500m / 3000m。年度別の選手記録・自己ベスト確認。玉名アスリーツ 記録一覧（荒尾玉名） / 荒尾・玉名地区の中学生トラック記録を所属（チーム）単位でまとめたもの。 / 出典: Notion 中学生記録 DB / `notion_records_2026.json`。 / 2026年度 / 件数: 87 / 800m / | 性別 | 学年 | 選手 | 記録 | 日付 | 大会/URL | / |---|---:|---|---:|---|---"
     },
     {
       "id": "source:out/analysis/arato-tamana-teams/玉名中.md",
@@ -7340,7 +7354,7 @@
       "refs": [
         "out/analysis/arato-tamana-teams/玉名中.md"
       ],
-      "hint": "荒尾玉名の所属別トラック全記録。玉名中 記録一覧（荒尾玉名） / 荒尾・玉名地区の中学生トラック記録を所属（チーム）単位でまとめたもの。 / 出典: Notion 中学生記録 DB / `notion_records_2026.json`。 / 2024年度 / 件数: 125 / 800m / | 性別 | 学年 | 選手 | 記録 | 日付 | 大会/URL | / |---|---:|---|---:|---|---| /"
+      "hint": "荒尾玉名の所属別トラック全記録。種目: 800m / 1500m / 3000m。年度別の選手記録・自己ベスト確認。玉名中 記録一覧（荒尾玉名） / 荒尾・玉名地区の中学生トラック記録を所属（チーム）単位でまとめたもの。 / 出典: Notion 中学生記録 DB / `notion_records_2026.json`。 / 2024年度 / 件数: 125 / 800m / | 性別 | 学年 | 選手 | 記録 | 日付 | 大会/URL | / |---|---:|---|---:|---|---| /"
     },
     {
       "id": "source:out/analysis/arato-tamana-teams/玉名附中.md",
@@ -7352,7 +7366,7 @@
       "refs": [
         "out/analysis/arato-tamana-teams/玉名附中.md"
       ],
-      "hint": "荒尾玉名の所属別トラック全記録。玉名附中 記録一覧（荒尾玉名） / 荒尾・玉名地区の中学生トラック記録を所属（チーム）単位でまとめたもの。 / 出典: Notion 中学生記録 DB / `notion_records_2026.json`。 / 2024年度 / 件数: 15 / 800m / | 性別 | 学年 | 選手 | 記録 | 日付 | 大会/URL | / |---|---:|---|---:|---|---| /"
+      "hint": "荒尾玉名の所属別トラック全記録。種目: 800m / 1500m / 3000m。年度別の選手記録・自己ベスト確認。玉名附中 記録一覧（荒尾玉名） / 荒尾・玉名地区の中学生トラック記録を所属（チーム）単位でまとめたもの。 / 出典: Notion 中学生記録 DB / `notion_records_2026.json`。 / 2024年度 / 件数: 15 / 800m / | 性別 | 学年 | 選手 | 記録 | 日付 | 大会/URL | / |---|---:|---|---:|---|---| /"
     },
     {
       "id": "source:out/analysis/arato-tamana-teams/玉名高校附属中.md",
@@ -7364,7 +7378,7 @@
       "refs": [
         "out/analysis/arato-tamana-teams/玉名高校附属中.md"
       ],
-      "hint": "荒尾玉名の所属別トラック全記録。玉名高校附属中 記録一覧（荒尾玉名） / 荒尾・玉名地区の中学生トラック記録を所属（チーム）単位でまとめたもの。 / 出典: Notion 中学生記録 DB / `notion_records_2026.json`。 / 2024年度 / 件数: 2 / 800m / | 性別 | 学年 | 選手 | 記録 | 日付 | 大会/URL | / |---|---:|---|---:|---|---|"
+      "hint": "荒尾玉名の所属別トラック全記録。種目: 800m / 1500m / 3000m。年度別の選手記録・自己ベスト確認。玉名高校附属中 記録一覧（荒尾玉名） / 荒尾・玉名地区の中学生トラック記録を所属（チーム）単位でまとめたもの。 / 出典: Notion 中学生記録 DB / `notion_records_2026.json`。 / 2024年度 / 件数: 2 / 800m / | 性別 | 学年 | 選手 | 記録 | 日付 | 大会/URL | / |---|---:|---|---:|---|---|"
     },
     {
       "id": "source:out/analysis/arato-tamana-teams/玉名高附.md",
@@ -7376,7 +7390,7 @@
       "refs": [
         "out/analysis/arato-tamana-teams/玉名高附.md"
       ],
-      "hint": "荒尾玉名の所属別トラック全記録。玉名高附 記録一覧（荒尾玉名） / 荒尾・玉名地区の中学生トラック記録を所属（チーム）単位でまとめたもの。 / 出典: Notion 中学生記録 DB / `notion_records_2026.json`。 / 2024年度 / 件数: 58 / 800m / | 性別 | 学年 | 選手 | 記録 | 日付 | 大会/URL | / |---|---:|---|---:|---|---| /"
+      "hint": "荒尾玉名の所属別トラック全記録。種目: 800m / 1500m / 3000m。年度別の選手記録・自己ベスト確認。玉名高附 記録一覧（荒尾玉名） / 荒尾・玉名地区の中学生トラック記録を所属（チーム）単位でまとめたもの。 / 出典: Notion 中学生記録 DB / `notion_records_2026.json`。 / 2024年度 / 件数: 58 / 800m / | 性別 | 学年 | 選手 | 記録 | 日付 | 大会/URL | / |---|---:|---|---:|---|---| /"
     },
     {
       "id": "source:out/analysis/arato-tamana-teams/玉東クラブ.md",
@@ -7388,7 +7402,7 @@
       "refs": [
         "out/analysis/arato-tamana-teams/玉東クラブ.md"
       ],
-      "hint": "荒尾玉名の所属別トラック全記録。玉東クラブ 記録一覧（荒尾玉名） / 荒尾・玉名地区の中学生トラック記録を所属（チーム）単位でまとめたもの。 / 出典: Notion 中学生記録 DB / `notion_records_2026.json`。 / 2024年度 / 件数: 35 / 800m / | 性別 | 学年 | 選手 | 記録 | 日付 | 大会/URL | / |---|---:|---|---:|---|---| "
+      "hint": "荒尾玉名の所属別トラック全記録。種目: 800m / 1500m / 3000m。年度別の選手記録・自己ベスト確認。玉東クラブ 記録一覧（荒尾玉名） / 荒尾・玉名地区の中学生トラック記録を所属（チーム）単位でまとめたもの。 / 出典: Notion 中学生記録 DB / `notion_records_2026.json`。 / 2024年度 / 件数: 35 / 800m / | 性別 | 学年 | 選手 | 記録 | 日付 | 大会/URL | / |---|---:|---|---:|---|---| "
     },
     {
       "id": "source:out/analysis/arato-tamana-teams/玉陵.md",
@@ -7400,7 +7414,7 @@
       "refs": [
         "out/analysis/arato-tamana-teams/玉陵.md"
       ],
-      "hint": "荒尾玉名の所属別トラック全記録。玉陵 記録一覧（荒尾玉名） / 荒尾・玉名地区の中学生トラック記録を所属（チーム）単位でまとめたもの。 / 出典: Notion 中学生記録 DB / `notion_records_2026.json`。 / 2024年度 / 件数: 55 / 800m / | 性別 | 学年 | 選手 | 記録 | 日付 | 大会/URL | / |---|---:|---|---:|---|---| / |"
+      "hint": "荒尾玉名の所属別トラック全記録。種目: 800m / 1500m / 3000m。年度別の選手記録・自己ベスト確認。玉陵 記録一覧（荒尾玉名） / 荒尾・玉名地区の中学生トラック記録を所属（チーム）単位でまとめたもの。 / 出典: Notion 中学生記録 DB / `notion_records_2026.json`。 / 2024年度 / 件数: 55 / 800m / | 性別 | 学年 | 選手 | 記録 | 日付 | 大会/URL | / |---|---:|---|---:|---|---| / |"
     },
     {
       "id": "source:out/analysis/arato-tamana-teams/玉陵中.md",
@@ -7412,7 +7426,7 @@
       "refs": [
         "out/analysis/arato-tamana-teams/玉陵中.md"
       ],
-      "hint": "荒尾玉名の所属別トラック全記録。玉陵中 記録一覧（荒尾玉名） / 荒尾・玉名地区の中学生トラック記録を所属（チーム）単位でまとめたもの。 / 出典: Notion 中学生記録 DB / `notion_records_2026.json`。 / 2024年度 / 件数: 5 / 800m / | 性別 | 学年 | 選手 | 記録 | 日付 | 大会/URL | / |---|---:|---|---:|---|---| / |"
+      "hint": "荒尾玉名の所属別トラック全記録。種目: 800m / 1500m / 3000m。年度別の選手記録・自己ベスト確認。玉陵中 記録一覧（荒尾玉名） / 荒尾・玉名地区の中学生トラック記録を所属（チーム）単位でまとめたもの。 / 出典: Notion 中学生記録 DB / `notion_records_2026.json`。 / 2024年度 / 件数: 5 / 800m / | 性別 | 学年 | 選手 | 記録 | 日付 | 大会/URL | / |---|---:|---|---:|---|---| / |"
     },
     {
       "id": "source:out/analysis/arato-tamana-teams/荒尾三中.md",
@@ -7424,7 +7438,7 @@
       "refs": [
         "out/analysis/arato-tamana-teams/荒尾三中.md"
       ],
-      "hint": "荒尾玉名の所属別トラック全記録。荒尾三中 記録一覧（荒尾玉名） / 荒尾・玉名地区の中学生トラック記録を所属（チーム）単位でまとめたもの。 / 出典: Notion 中学生記録 DB / `notion_records_2026.json`。 / 2024年度 / 件数: 33 / 800m / | 性別 | 学年 | 選手 | 記録 | 日付 | 大会/URL | / |---|---:|---|---:|---|---| /"
+      "hint": "荒尾玉名の所属別トラック全記録。種目: 800m / 1500m / 3000m。年度別の選手記録・自己ベスト確認。荒尾三中 記録一覧（荒尾玉名） / 荒尾・玉名地区の中学生トラック記録を所属（チーム）単位でまとめたもの。 / 出典: Notion 中学生記録 DB / `notion_records_2026.json`。 / 2024年度 / 件数: 33 / 800m / | 性別 | 学年 | 選手 | 記録 | 日付 | 大会/URL | / |---|---:|---|---:|---|---| /"
     },
     {
       "id": "source:out/analysis/arato-tamana-teams/荒尾三中_SB.md",
@@ -7436,7 +7450,7 @@
       "refs": [
         "out/analysis/arato-tamana-teams/荒尾三中_SB.md"
       ],
-      "hint": "荒尾玉名の所属別トラック全記録。荒尾三中 選手・SB一覧（2026年度） / 2026年度の SB 採用記録から、荒尾三中 の選手と距離別 SB をまとめた一覧。 / 年度指定がない学校別質問では、この現行年度一覧を回答の正本として使用する。 / 出典: `input/external/sb/middle-school/by-year/2026-sb-adopted.json` / 選手一覧 / | 選手 | 性別 | 学年 |"
+      "hint": "荒尾玉名の所属別トラック全記録。種目: 800m / 1500m / 3000m。年度別の選手記録・自己ベスト確認。荒尾三中 選手・SB一覧（2026年度） / 2026年度の SB 採用記録から、荒尾三中 の選手と距離別 SB をまとめた一覧。 / 年度指定がない学校別質問では、この現行年度一覧を回答の正本として使用する。 / 出典: `input/external/sb/middle-school/by-year/2026-sb-adopted.json` / 選手一覧 / | 選手 | 性別 | 学年 |"
     },
     {
       "id": "source:out/analysis/arato-tamana-teams/荒尾海陽中.md",
@@ -7448,7 +7462,7 @@
       "refs": [
         "out/analysis/arato-tamana-teams/荒尾海陽中.md"
       ],
-      "hint": "荒尾玉名の所属別トラック全記録。荒尾海陽中 記録一覧（荒尾玉名） / 荒尾・玉名地区の中学生トラック記録を所属（チーム）単位でまとめたもの。 / 出典: Notion 中学生記録 DB / `notion_records_2026.json`。 / 2024年度 / 件数: 39 / 800m / | 性別 | 学年 | 選手 | 記録 | 日付 | 大会/URL | / |---|---:|---|---:|---|---| "
+      "hint": "荒尾玉名の所属別トラック全記録。種目: 800m / 1500m / 3000m。年度別の選手記録・自己ベスト確認。荒尾海陽中 記録一覧（荒尾玉名） / 荒尾・玉名地区の中学生トラック記録を所属（チーム）単位でまとめたもの。 / 出典: Notion 中学生記録 DB / `notion_records_2026.json`。 / 2024年度 / 件数: 39 / 800m / | 性別 | 学年 | 選手 | 記録 | 日付 | 大会/URL | / |---|---:|---|---:|---|---| "
     },
     {
       "id": "source:out/analysis/arato-tamana-teams/荒尾第四中.md",
@@ -7460,7 +7474,7 @@
       "refs": [
         "out/analysis/arato-tamana-teams/荒尾第四中.md"
       ],
-      "hint": "荒尾玉名の所属別トラック全記録。荒尾第四中 記録一覧（荒尾玉名） / 荒尾・玉名地区の中学生トラック記録を所属（チーム）単位でまとめたもの。 / 出典: Notion 中学生記録 DB / `notion_records_2026.json`。 / 2024年度 / 件数: 83 / 800m / | 性別 | 学年 | 選手 | 記録 | 日付 | 大会/URL | / |---|---:|---|---:|---|---| "
+      "hint": "荒尾玉名の所属別トラック全記録。種目: 800m / 1500m / 3000m。年度別の選手記録・自己ベスト確認。荒尾第四中 記録一覧（荒尾玉名） / 荒尾・玉名地区の中学生トラック記録を所属（チーム）単位でまとめたもの。 / 出典: Notion 中学生記録 DB / `notion_records_2026.json`。 / 2024年度 / 件数: 83 / 800m / | 性別 | 学年 | 選手 | 記録 | 日付 | 大会/URL | / |---|---:|---|---:|---|---| "
     },
     {
       "id": "source:out/analysis/arato-tamana-teams/金栗PROJECT.md",
@@ -7472,7 +7486,7 @@
       "refs": [
         "out/analysis/arato-tamana-teams/金栗PROJECT.md"
       ],
-      "hint": "別名: 金栗プロジェクト。荒尾玉名の所属別トラック全記録。金栗PROJECT 記録一覧（荒尾玉名） / 荒尾・玉名地区の中学生トラック記録を所属（チーム）単位でまとめたもの。 / 出典: Notion 中学生記録 DB / `notion_records_2026.json`。 / 2024年度 / 件数: 229 / 800m / | 性別 | 学年 | 選手 | 記録 | 日付 | 大会/URL | / |---|---:|---|---:|---|"
+      "hint": "別名: 金栗プロジェクト。荒尾玉名の所属別トラック全記録。種目: 800m / 1500m / 3000m。年度別の選手記録・自己ベスト確認。金栗PROJECT 記録一覧（荒尾玉名） / 荒尾・玉名地区の中学生トラック記録を所属（チーム）単位でまとめたもの。 / 出典: Notion 中学生記録 DB / `notion_records_2026.json`。 / 2024年度 / 件数: 229 / 800m / | 性別 | 学年 | 選手 | 記録 | 日付 | 大会/URL | / |---|---:|---|---:|---|"
     },
     {
       "id": "source:out/analysis/arato-tamana-teams/長洲中.md",
@@ -7484,7 +7498,7 @@
       "refs": [
         "out/analysis/arato-tamana-teams/長洲中.md"
       ],
-      "hint": "別名: 長洲。荒尾玉名の所属別トラック全記録。長洲中 記録一覧（荒尾玉名） / 荒尾・玉名地区の中学生トラック記録を所属（チーム）単位でまとめたもの。 / 出典: Notion 中学生記録 DB / `notion_records_2026.json`。 / 2024年度 / 件数: 37 / 800m / | 性別 | 学年 | 選手 | 記録 | 日付 | 大会/URL | / |---|---:|---|---:|---|---| / "
+      "hint": "別名: 長洲。荒尾玉名の所属別トラック全記録。種目: 800m / 1500m / 3000m。年度別の選手記録・自己ベスト確認。長洲中 記録一覧（荒尾玉名） / 荒尾・玉名地区の中学生トラック記録を所属（チーム）単位でまとめたもの。 / 出典: Notion 中学生記録 DB / `notion_records_2026.json`。 / 2024年度 / 件数: 37 / 800m / | 性別 | 学年 | 選手 | 記録 | 日付 | 大会/URL | / |---|---:|---|---:|---|---| / "
     },
     {
       "id": "source:out/analysis/arato-tamana-teams/ＮＪＡＣ.md",
@@ -7496,7 +7510,7 @@
       "refs": [
         "out/analysis/arato-tamana-teams/ＮＪＡＣ.md"
       ],
-      "hint": "荒尾玉名の所属別トラック全記録。ＮＪＡＣ 記録一覧（荒尾玉名） / 荒尾・玉名地区の中学生トラック記録を所属（チーム）単位でまとめたもの。 / 出典: Notion 中学生記録 DB / `notion_records_2026.json`。 / 2025年度 / 件数: 7 / 800m / | 性別 | 学年 | 選手 | 記録 | 日付 | 大会/URL | / |---|---:|---|---:|---|---| / "
+      "hint": "荒尾玉名の所属別トラック全記録。種目: 800m / 1500m / 3000m。年度別の選手記録・自己ベスト確認。ＮＪＡＣ 記録一覧（荒尾玉名） / 荒尾・玉名地区の中学生トラック記録を所属（チーム）単位でまとめたもの。 / 出典: Notion 中学生記録 DB / `notion_records_2026.json`。 / 2025年度 / 件数: 7 / 800m / | 性別 | 学年 | 選手 | 記録 | 日付 | 大会/URL | / |---|---:|---|---:|---|---| / "
     },
     {
       "id": "source:out/analysis/arato-tamana-teams/ﾀﾏﾅﾁｭｳ玉名中.md",
@@ -7508,7 +7522,7 @@
       "refs": [
         "out/analysis/arato-tamana-teams/ﾀﾏﾅﾁｭｳ玉名中.md"
       ],
-      "hint": "荒尾玉名の所属別トラック全記録。ﾀﾏﾅﾁｭｳ玉名中 記録一覧（荒尾玉名） / 荒尾・玉名地区の中学生トラック記録を所属（チーム）単位でまとめたもの。 / 出典: Notion 中学生記録 DB / `notion_records_2026.json`。 / 2025年度 / 件数: 65 / 800m / | 性別 | 学年 | 選手 | 記録 | 日付 | 大会/URL | / |---|---:|---|---:|---|-"
+      "hint": "荒尾玉名の所属別トラック全記録。種目: 800m / 1500m / 3000m。年度別の選手記録・自己ベスト確認。ﾀﾏﾅﾁｭｳ玉名中 記録一覧（荒尾玉名） / 荒尾・玉名地区の中学生トラック記録を所属（チーム）単位でまとめたもの。 / 出典: Notion 中学生記録 DB / `notion_records_2026.json`。 / 2025年度 / 件数: 65 / 800m / | 性別 | 学年 | 選手 | 記録 | 日付 | 大会/URL | / |---|---:|---|---:|---|-"
     },
     {
       "id": "source:out/analysis/athletes/takada-mana.md",
@@ -7854,7 +7868,17 @@
   "edges": [
     {
       "from": "entity:athlete:中尾快叶",
+      "to": "source:out/analysis/arato-tamana-teams/岱明中.md",
+      "rel": "mentioned_in"
+    },
+    {
+      "from": "entity:athlete:中尾快叶",
       "to": "source:out/analysis/notion_records_2026.json",
+      "rel": "mentioned_in"
+    },
+    {
+      "from": "entity:athlete:南本幸治郎",
+      "to": "source:out/analysis/arato-tamana-teams/岱明中.md",
       "rel": "mentioned_in"
     },
     {
@@ -7889,6 +7913,11 @@
     },
     {
       "from": "entity:athlete:塚原優衣",
+      "to": "source:out/analysis/arato-tamana-teams/岱明中.md",
+      "rel": "mentioned_in"
+    },
+    {
+      "from": "entity:athlete:塚原優衣",
       "to": "source:out/analysis/notion_records_2026.json",
       "rel": "mentioned_in"
     },
@@ -7915,6 +7944,11 @@
     {
       "from": "entity:athlete:増岡里俐",
       "to": "source:out/2025/practice_absentees.csv",
+      "rel": "mentioned_in"
+    },
+    {
+      "from": "entity:athlete:増岡里俐",
+      "to": "source:out/analysis/arato-tamana-teams/岱明中.md",
       "rel": "mentioned_in"
     },
     {
@@ -7945,6 +7979,11 @@
     {
       "from": "entity:athlete:山本哲瑠",
       "to": "source:out/2025/practice_absentees.csv",
+      "rel": "mentioned_in"
+    },
+    {
+      "from": "entity:athlete:山本哲瑠",
+      "to": "source:out/analysis/arato-tamana-teams/岱明中.md",
       "rel": "mentioned_in"
     },
     {
@@ -7954,7 +7993,17 @@
     },
     {
       "from": "entity:athlete:山﨑莉奈",
+      "to": "source:out/analysis/arato-tamana-teams/岱明中.md",
+      "rel": "mentioned_in"
+    },
+    {
+      "from": "entity:athlete:山﨑莉奈",
       "to": "source:out/analysis/notion_records_2026.json",
+      "rel": "mentioned_in"
+    },
+    {
+      "from": "entity:athlete:嶋田匠眞",
+      "to": "source:out/analysis/arato-tamana-teams/岱明中.md",
       "rel": "mentioned_in"
     },
     {
@@ -7989,6 +8038,11 @@
     },
     {
       "from": "entity:athlete:村上咲稀",
+      "to": "source:out/analysis/arato-tamana-teams/岱明中.md",
+      "rel": "mentioned_in"
+    },
+    {
+      "from": "entity:athlete:村上咲稀",
       "to": "source:out/analysis/notion_records_2026.json",
       "rel": "mentioned_in"
     },
@@ -8029,6 +8083,11 @@
     },
     {
       "from": "entity:athlete:松本空羽",
+      "to": "source:out/analysis/arato-tamana-teams/岱明中.md",
+      "rel": "mentioned_in"
+    },
+    {
+      "from": "entity:athlete:松本空羽",
       "to": "source:out/analysis/notion_records_2026.json",
       "rel": "mentioned_in"
     },
@@ -8055,6 +8114,11 @@
     {
       "from": "entity:athlete:松野凛空",
       "to": "source:out/2025/practice_absentees.csv",
+      "rel": "mentioned_in"
+    },
+    {
+      "from": "entity:athlete:松野凛空",
+      "to": "source:out/analysis/arato-tamana-teams/岱明中.md",
       "rel": "mentioned_in"
     },
     {
@@ -8089,6 +8153,11 @@
     },
     {
       "from": "entity:athlete:田上颯人",
+      "to": "source:out/analysis/arato-tamana-teams/岱明中.md",
+      "rel": "mentioned_in"
+    },
+    {
+      "from": "entity:athlete:田上颯人",
       "to": "source:out/analysis/notion_records_2026.json",
       "rel": "mentioned_in"
     },
@@ -8115,6 +8184,11 @@
     {
       "from": "entity:athlete:田中智稀",
       "to": "source:out/2026/practice_absentees.csv",
+      "rel": "mentioned_in"
+    },
+    {
+      "from": "entity:athlete:田中智稀",
+      "to": "source:out/analysis/arato-tamana-teams/岱明中.md",
       "rel": "mentioned_in"
     },
     {
@@ -8149,6 +8223,11 @@
     },
     {
       "from": "entity:athlete:角田亜美",
+      "to": "source:out/analysis/arato-tamana-teams/岱明中.md",
+      "rel": "mentioned_in"
+    },
+    {
+      "from": "entity:athlete:角田亜美",
       "to": "source:out/analysis/notion_records_2026.json",
       "rel": "mentioned_in"
     },
@@ -8195,6 +8274,11 @@
     {
       "from": "entity:athlete:高田麻由",
       "to": "source:out/2026/practice_absentees.csv",
+      "rel": "mentioned_in"
+    },
+    {
+      "from": "entity:athlete:高田麻由",
+      "to": "source:out/analysis/arato-tamana-teams/岱明中.md",
       "rel": "mentioned_in"
     },
     {

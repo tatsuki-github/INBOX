@@ -1342,7 +1342,7 @@ def _register_analysis_digests(
         if is_team and parent == "aragyoku-teams":
             hint_bits.append("荒玉駅伝チーム別歴代（区間選手・順位）")
         elif is_team:
-            hint_bits.append("荒尾玉名の所属別トラック全記録")
+            hint_bits.append("荒尾玉名の所属別トラック全記録。種目: 800m / 1500m / 3000m。年度別の選手記録・自己ベスト確認")
         if peek:
             hint_bits.append(peek)
         hint = "。".join(hint_bits) if hint_bits else path.name
@@ -1369,6 +1369,20 @@ def _register_analysis_digests(
             alias_blob = "、".join(aliases)
             if alias_blob not in (nodes[sid].get("hint") or ""):
                 nodes[sid]["hint"] = f"別名: {alias_blob}。" + (nodes[sid].get("hint") or "")
+        if parent == "arato-tamana-teams":
+            names_in_tables = {
+                cell.strip()
+                for line in path.read_text(encoding="utf-8", errors="replace").splitlines()
+                if line.lstrip().startswith("|")
+                for cell in line.strip().strip("|").split("|")
+            }
+            for athlete in nodes.values():
+                if athlete.get("type") != "Athlete" or athlete.get("label") not in names_in_tables:
+                    continue
+                athlete_refs = set(athlete.get("refs") or [])
+                athlete_refs.add(rel)
+                athlete["refs"] = sorted(athlete_refs)
+                _add_edge(edges, athlete["id"], sid, "mentioned_in")
 
 
 def _register_external_media(

@@ -525,6 +525,31 @@ def test_dated_practice_without_session_does_not_fall_back_to_another_day():
     assert result["refs"] == []
 
 
+def test_dated_non_daiming_training_finds_matching_external_source():
+    graph = build_knowledge_graph(generated_at="2026-01-01T00:00:00Z")
+    result = query_knowledge_graph(
+        "2026年9月22日の玉名市練習会は何をした？",
+        graph=graph,
+        include_context=False,
+        top_k=5,
+    )
+    assert result["matched_nodes"][0]["id"] == "source:input/external/drive/shared/練習/玉名市練習会/2026-09-22.md"
+
+
+def test_training_meal_question_context_uses_menu_section():
+    graph = build_knowledge_graph(generated_at="2026-01-01T00:00:00Z")
+    result = query_knowledge_graph(
+        "2026年9月22日の玉名市練習会は何をした？",
+        graph=graph,
+        context_files=1,
+        top_k=5,
+    )
+    snippet = result["contexts"][0]["snippet"]
+    assert "### メニュー" in snippet
+    assert "3kmジョグ" in snippet and "女子1000m×2本" in snippet
+    assert "## 概要" not in snippet
+
+
 def test_date_query_context_snippet_uses_requested_calendar_entry():
     graph = build_knowledge_graph(generated_at="2026-01-01T00:00:00Z")
     result = query_knowledge_graph(
@@ -633,6 +658,44 @@ def test_query_routes_school_average_to_pb_ranking():
     assert "2026_women_800m_1500m_pb_school_ranking" in joined
 
 
+@pytest.mark.parametrize(
+    "question",
+    [
+        "岱明女子の800mベストは？",
+        "岱明女子の1500mベストは？",
+        "岱明男子の3000m記録は？",
+    ],
+)
+def test_query_routes_school_best_time_to_track_record_digest(question: str):
+    graph = build_knowledge_graph(generated_at="2026-01-01T00:00:00Z")
+    result = query_knowledge_graph(
+        question,
+        graph=graph,
+        include_context=False,
+        top_k=5,
+    )
+    assert result["matched_nodes"][0]["id"] == "source:out/analysis/arato-tamana-teams/岱明中.md"
+    assert result["refs"][0] == "out/analysis/arato-tamana-teams/岱明中.md"
+
+
+def test_athlete_node_links_to_team_track_record_digest():
+    graph = build_knowledge_graph(generated_at="2026-01-01T00:00:00Z")
+    athlete = next(n for n in graph["nodes"] if n["id"] == "entity:athlete:松野凛空")
+    assert "out/analysis/arato-tamana-teams/岱明中.md" in athlete["refs"]
+
+
+def test_athlete_best_query_returns_athlete_and_track_record_source():
+    graph = build_knowledge_graph(generated_at="2026-01-01T00:00:00Z")
+    result = query_knowledge_graph(
+        "松野凛空の1500m自己ベストは？",
+        graph=graph,
+        include_context=False,
+        top_k=5,
+    )
+    assert result["matched_nodes"][0]["id"] == "entity:athlete:松野凛空"
+    assert "out/analysis/arato-tamana-teams/岱明中.md" in result["refs"]
+
+
 def test_query_routes_kikui_leg_to_team_digest():
     graph = build_knowledge_graph(generated_at="2026-01-01T00:00:00Z")
     result = query_knowledge_graph(
@@ -642,6 +705,41 @@ def test_query_routes_kikui_leg_to_team_digest():
     )
     joined = " ".join(result["refs"])
     assert "aragyoku-teams/菊水.md" in joined
+
+
+def test_query_routes_team_leg_split_time_to_team_digest():
+    graph = build_knowledge_graph(generated_at="2026-01-01T00:00:00Z")
+    result = query_knowledge_graph(
+        "荒玉駅伝2024年の岱明女子1区は何分？",
+        graph=graph,
+        include_context=False,
+        top_k=5,
+    )
+    assert result["matched_nodes"][0]["id"] == "source:out/analysis/aragyoku-teams/岱明.md"
+    assert result["refs"][0] == "out/analysis/aragyoku-teams/岱明.md"
+
+
+def test_injury_query_routes_to_injury_knowledge_not_athlete_records():
+    graph = build_knowledge_graph(generated_at="2026-01-01T00:00:00Z")
+    result = query_knowledge_graph(
+        "奈良崎選手の怪我は？",
+        graph=graph,
+        include_context=False,
+        top_k=5,
+    )
+    assert result["matched_nodes"][0]["id"] == "source:input/idaten-corpus/notion-db/怪我について/rows.json"
+    assert "input/idaten-corpus/notion-db/怪我について/rows.json" in result["refs"]
+
+
+def test_generic_injury_factor_query_routes_to_notions_injury_database():
+    graph = build_knowledge_graph(generated_at="2026-01-01T00:00:00Z")
+    result = query_knowledge_graph(
+        "怪我の因子ランキングは？",
+        graph=graph,
+        include_context=False,
+        top_k=5,
+    )
+    assert "input/idaten-corpus/notion-db/怪我について/rows.json" in result["refs"]
 
 
 def test_query_routes_kanaguri_project_not_nagomi():

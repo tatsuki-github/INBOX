@@ -230,6 +230,10 @@ def _is_leg_athlete_question(query: str) -> bool:
     return bool(re.search(r"\d区", q) and re.search(r"誰|選手|ランナー|走った|区間タイム|区間順", q))
 
 
+def _is_leg_time_question(query: str) -> bool:
+    return bool(re.search(r"\d区", query) and re.search(r"何分|区間タイム|タイム", query))
+
+
 def _score_node(node: dict[str, Any], q_tokens: list[str], query: str) -> float:
     label = (node.get("label") or "").lower()
     node_type = node.get("type", "")
@@ -258,6 +262,25 @@ def _score_node(node: dict[str, Any], q_tokens: list[str], query: str) -> float:
             score += 2.0 if len(tok) >= 2 else 0.5
     if node_type != "Athlete" and q and q in blob:
         score += 5.0
+    track_record_intent = (
+        any(term in q for term in ("pb", "ベスト", "自己ベスト", "最速", "記録", "タイム"))
+        and any(distance in q for distance in ("800m", "1500m", "3000m", "800", "1500", "3000"))
+    )
+    if track_record_intent:
+        if "arato-tamana-teams/" in blob and "所属別トラック全記録" in blob:
+            score += 24.0
+        if "aragyoku-teams/" in blob:
+            score -= 12.0
+        if "pb_school_ranking" in blob and not any(term in q for term in ("平均", "ランキング", "上位")):
+            score -= 6.0
+    injury_intent = any(term in q for term in ("怪我", "けが", "ケガ", "故障", "痛み", "障害"))
+    if injury_intent:
+        if "怪我について/rows.json" in blob:
+            score += 32.0
+        elif "怪我について" in label:
+            score += 10.0
+        if node_type == "QueryHint" and not any(term in blob for term in ("怪我について", "rri_healing", "injury")):
+            score -= 8.0
     # Meet disambiguation (keep in sync with backend/src/kg/query.ts)
     if "ジュニア" in q:
         if "ジュニア" in blob:
@@ -316,6 +339,15 @@ def _score_node(node: dict[str, Any], q_tokens: list[str], query: str) -> float:
                 score += 8.0
             if "aragyoku-teams" in blob or "focus_teams" in blob:
                 score -= 16.0
+    if _is_leg_time_question(query) and re.search(r"20\d{2}", query):
+        if "aragyoku-teams/" in blob and label and label in q:
+            score += 30.0
+        if "focus_teams" in blob:
+            score -= 14.0
+        if "aragyoku-teams/index.md" in blob:
+            score -= 22.0
+        if node_type == "QueryHint":
+            score -= 30.0
         elif "ジュニア" not in q:
             if "aragyoku-teams" in blob or "focus_teams" in blob:
                 score += 18.0
@@ -369,6 +401,19 @@ def _read_neighborhood(
     if not tokens:
         return text[:max_chars]
     lines = text.splitlines()
+    menu_intent = any(term in query.lower() for term in ("何をした", "メニュー", "練習内容", "実施内容"))
+    if path.suffix.lower() == ".md" and menu_intent:
+        for heading_idx, line in enumerate(lines):
+            if not re.match(r"^#{1,6}\s*(?:メニュー|練習内容|実施内容)", line.strip()):
+                continue
+            heading_level = len(line) - len(line.lstrip("#"))
+            end = heading_idx + 1
+            while end < len(lines):
+                next_heading = re.match(r"^(#{1,6})\s", lines[end].strip())
+                if next_heading and len(next_heading.group(1)) <= heading_level:
+                    break
+                end += 1
+            return "\n".join(lines[heading_idx:end])[:max_chars]
     requested_date = re.search(r"(?<!\d)\d{4}-\d{2}-\d{2}(?!\d)", query)
     hit_idxs = []
     date_anchored = False
@@ -530,8 +575,17 @@ def query_knowledge_graph(
                     if not nid.startswith("entity:practice:")
                 ]
         elif practice_intent:
-            seeds = []
-            period_query_resolved = True
+            date_refs = [
+                (nid, score)
+                for nid, score in scored
+                if nodes[nid]["type"] == "Source"
+                and resolved_date.group(0) in " ".join(nodes[nid].get("refs") or [])
+                and any(term in " ".join([nodes[nid].get("label", ""), nodes[nid].get("hint", "")]).lower()
+                        for term in ("練習", "practice", "training"))
+            ]
+            seeds = sorted(date_refs, key=lambda item: item[1], reverse=True)[:top_k]
+            if not seeds:
+                period_query_resolved = True
 
     # If a specific entity matched strongly, drop broad Topic/QueryHint seeds that flood refs
     if any(nodes[nid]["type"] in {"Athlete", "Template", "Year"} and s >= 8 for nid, s in seeds):
