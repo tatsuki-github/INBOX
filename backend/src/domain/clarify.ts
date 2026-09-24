@@ -117,11 +117,25 @@ export function buildPersonalBestClarifyText(): string {
 export function isUnderspecifiedRecordLookupQuestion(question: string): boolean {
   const q = question.normalize("NFKC").trim();
   if (!q) return false;
-  if (!/(記録を調べ|記録が知り|記録知り|記録教えて|記録みたい|記録見たい|記録を見)/.test(q)) {
+  if (!/(?:記録|成績)/.test(q)) {
     return false;
   }
-  if (hasAthleteNameCue(q)) return false;
+  if (/\d+\s*(?:m|km|メートル|キロ)|男子|女子|学校|チーム|大会|駅伝|練習会/.test(q)) {
+    return false;
+  }
+  const subject = q.replace(/全?選手|陸上|トラック|記録一覧|記録|成績|一覧|を|は|が|に|の|で|と|も|見せて|見たい|みたい|教えて|知りたい|調べて|知り|全部|全て|すべて|ください|？|\?|。|！|!|\s+/gu, " ");
+  if (hasAthleteNameCue(subject)) return false;
   return true;
+}
+
+export function buildRecordLookupClarifyText(): string {
+  return [
+    "どの選手・種目の記録か具体的に書いてください。",
+    "例:",
+    "・今村昇磨の1500mの記録は？",
+    "・女子3000mの荒玉地区ランキングは？",
+    "・岱明中の全選手の記録一覧は？",
+  ].join("\n");
 }
 
 /** Match underspecified questions that should return example phrasings. */
@@ -135,7 +149,7 @@ export function matchClarifyAnswer(question: string): ClarifyResult | null {
   if (isUnderspecifiedRecordLookupQuestion(question)) {
     return {
       id: "clarify-record-lookup",
-      text: buildPersonalBestClarifyText(),
+      text: buildRecordLookupClarifyText(),
     };
   }
   return null;

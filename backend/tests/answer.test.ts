@@ -778,6 +778,33 @@ describe("answerQuestion", () => {
     }
   });
 
+  it.each([
+    "選手の記録は？",
+    "選手記録を見せて",
+    "記録を教えて",
+    "記録一覧が見たい",
+    "陸上の記録を知りたい",
+    "記録を調べて",
+    "選手の記録を全部見せて",
+    "全選手の記録は？",
+    "記録の一覧を見せて",
+    "記録を見せて",
+  ])("asks for details instead of returning arbitrary records: %s", async (question) => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion(question, {
+      llm: null,
+      skipRouter: true,
+      defaultYear: 2026,
+    });
+    expect(result.kind).toBe("answered");
+    if (result.kind === "answered") {
+      expect(result.sources).toEqual(["clarify:clarify-record-lookup"]);
+      expect(result.text).toContain("どの選手・種目の記録か具体的に書いてください");
+      expect(result.text).not.toContain("寺田向希");
+    }
+  });
+
   it("clarifies an underspecified aragyoku split-record query", async () => {
     resetRetrieverCache();
     resetKgCache();
