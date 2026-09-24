@@ -128,6 +128,18 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
   const flat = text.replace(/\s+/g, " ");
   const q = question.normalize("NFKC");
   if (/高田麻那/.test(q) && /SB|PB|ベスト/.test(q)) {
+    const requestedDistances = [...new Set([...q.matchAll(/(1[，,]?\s*500|1500|3[，,]?\s*000|3000|5[，,]?\s*000|5000)\s*(?:m|ｍ|メートル)?/gi)]
+      .map((match) => match[1]!.replace(/[，,\s]/g, "")))];
+    if (requestedDistances.length > 1) {
+      const kind = /PB/.test(q) ? "PB" : "SB";
+      const answers = requestedDistances.map((distance) => {
+        const record = flat.match(new RegExp(distance + "m SB:\\s*([^\\s|]+)"));
+        return record && record[1] !== "—"
+          ? distance + "m" + kind + "は" + record[1]
+          : distance + "m記録は、参照できる資料では確認できません";
+      });
+      return "高田麻那の" + answers.join("、") + "。";
+    }
     const distance = q.match(/(1[，,]?\s*500|3[，,]?\s*000|5[，,]?\s*000)\s*(?:m|ｍ|メートル)/i)?.[1]?.replace(/[，,\s]/g, "");
     if (distance) {
       const record = flat.match(new RegExp(distance + "m SB:\\s*([^\\s|]+)"));

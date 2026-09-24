@@ -695,6 +695,23 @@ describe("QA precision regressions", () => {
     expect(result.text).toContain("高田麻那の3000m記録は、参照できる資料では確認できません");
   });
 
+  it.each([
+    ["高田麻那の1500mと5000mSBは？", "1500mSBは5:21.76、5000mSBは11:05.84"],
+    ["高田麻那の5000mと1500mSBは？", "5000mSBは11:05.84、1500mSBは5:21.76"],
+    ["高田麻那の1500mと5000mPBは？", "1500mPBは5:21.76、5000mPBは11:05.84"],
+    ["高田麻那の5,000m・1,500mSBは？", "5000mSBは11:05.84、1500mSBは5:21.76"],
+    ["高田麻那の1,500mおよび5,000mPBは？", "1500mPBは5:21.76、5000mPBは11:05.84"],
+    ["高田麻那の1500m、3000m、5000mSBは？", "1500mSBは5:21.76、3000m記録は、参照できる資料では確認できません、5000mSBは11:05.84"],
+    ["高田麻那の3000mと5000mSBは？", "3000m記録は、参照できる資料では確認できません、5000mSBは11:05.84"],
+    ["高田麻那の1500mと3000mSBは？", "1500mSBは5:21.76、3000m記録は、参照できる資料では確認できません"],
+    ["高田麻那の1,500mと3,000mPBは？", "1500mPBは5:21.76、3000m記録は、参照できる資料では確認できません"],
+    ["高田麻那の3,000mと5,000mPBは？", "3000m記録は、参照できる資料では確認できません、5000mPBは11:05.84"],
+  ])("returns all requested distances from 高田麻那's profile: %s", async (question, expected) => {
+    const result = await ask(question);
+    expect(result.sources).toEqual(["out-analysis/athletes/takada-mana.md"]);
+    expect(result.text).toContain(expected);
+  });
+
   it("extracts the 1500m SB without returning the full athlete profile", async () => {
     const result = await ask("高田麻那の1500mSBは？");
     expect(result.sources).toEqual(["out-analysis/athletes/takada-mana.md"]);
