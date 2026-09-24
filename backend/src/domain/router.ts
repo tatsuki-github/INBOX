@@ -137,6 +137,18 @@ export async function routeSources(
   allow.add("calendar/events.daiming.yaml");
 
   if (
+    /部員名簿|部員一覧|陸上部員|部員.*誰/.test(question) &&
+    (/岱明|いだてん/.test(question) || /^部員名簿/.test(question))
+  ) {
+    return {
+      sources: ["notion-db/いだてん岱明生徒/rows.json"],
+      focus: question.slice(0, 80),
+      reason: "daiming_roster",
+      via: "fallback",
+    };
+  }
+
+  if (
     /金栗\s*PROJECT/.test(question) &&
     /全記録|所属選手|所属する選手|記録一覧|全選手|トラック記録|選手記録|記録.*全部/.test(question)
   ) {

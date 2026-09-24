@@ -151,6 +151,26 @@ describe("QA precision regressions", () => {
     expect(result.text).not.toContain("ＮＪＡＣ");
   });
   it.each([
+    "部員名簿は？",
+    "岱明中の部員名簿を見せて",
+    "岱明中の部員一覧は？",
+    "いだてん岱明の部員は誰？",
+    "岱明陸上部の部員名簿",
+    "岱明中陸上部の部員一覧を出して",
+    "2026年の岱明中陸上部員は？",
+    "岱明の部員名簿を一覧で",
+    "いだてん岱明の陸上部員名簿",
+    "岱明中学校の陸上部員を教えて",
+  ])("answers daiming roster questions from the current roster: %s", async (question) => {
+    const result = await askWithRouter(question);
+    expect(result.sources).toEqual(["notion-db/いだてん岱明生徒/rows.json"]);
+    expect(result.text).toContain("部員名簿（15名）");
+    expect(result.text).toContain("中尾快叶");
+    expect(result.text).toContain("塚原優衣");
+    expect(result.text).toContain("村上咲稀");
+    expect(result.text).not.toContain("2012 女子");
+  });
+  it.each([
     ["なごみ駅伝の予想と実績の差は？", undefined],
     ["なごみの予実差を見せて", undefined],
     ["なごみ駅伝のSB予想と結果の比較", undefined],
