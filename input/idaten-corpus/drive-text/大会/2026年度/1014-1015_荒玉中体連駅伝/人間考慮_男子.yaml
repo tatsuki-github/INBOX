@@ -4,6 +4,8 @@
 #   set_sec: 絶対秒で上書き
 #   min_sec / max_sec: 下限・上限
 # order_exclusions: team と athlete を自動作成オーダーから除き、校内次点を繰り上げる。
+# lineup_overrides: team + leg + athlete で仮オーダーを直接差し替える。
+# formula_adjustments: 数式予測への set_sec / delta_sec（氏名未確定の枠も team+leg で指定可）。
 # formula_observation_weights: team/athlete/meet/date に一致する実績の信頼度 weight（1=通常）。
 # 再生成時、既存ファイルは上書きされない。
 gender: 男子
@@ -11,6 +13,7 @@ updated: '2026-09-27'
 memo: |
   Jr実績は総合ほぼ一致。松野凛空のJr駅伝は気管支炎回復期の影響があったため、通常より低く評価する。
   玉陵の内野翼は不出走情報に基づき仮オーダーから除外し、校内SB次点で補充。
+  荒尾第四の本戸優貴はユーザー確認で昨年中学3年・高校進学済み。ATRCの宮崎晃仁を2区へ置換。
   松野は本番9:20線。田上4区は9:40線。今村は昨年9:38以上を期待しつつプレッシャーは掛けない。
   5–6人目は厳しい。菊水1区はトラック楽観を抑え、現実的な下限感を維持。
   玉名高附・小倉由宇: なごみ2区10:30は不調のみ。Jr CS 4区8:48を実力線（なごみはRECENT非注入）。
@@ -19,6 +22,14 @@ order_exclusions:
 - team: 玉陵中
   athlete: 内野 翼
   reason: 出走しない情報（2026-09-27確認）
+- team: 荒尾第四中
+  athlete: 本戸 優貴
+  reason: ユーザー確認で2025年時点中学3年、高校進学済み
+lineup_overrides:
+- team: 荒尾第四中
+  leg: 2
+  athlete: 宮崎 晃仁
+  reason: ATRC所属。本人記録の所属が荒尾第四中、1年生
 adjustments:
 - athlete: 松野 凛空
   set_sec: 560

@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated_at": "2026-09-27T12:38:17Z",
+  "generated_at": "2026-09-27T12:58:39Z",
   "nodes": [
     {
       "id": "corpus:analysis-ocr",
@@ -17220,7 +17220,7 @@
       "refs": [
         "out/analysis/aragyoku-years/2025.md"
       ],
-      "hint": "男子 本戸優貴 学年2 10:02 区間2位 総合10位"
+      "hint": "男子 本戸優貴 学年3 10:02 区間2位 総合10位"
     },
     {
       "id": "entity:aragyoku-leg:2025:荒尾海陽:1",
@@ -17820,9 +17820,9 @@
         "practice"
       ],
       "refs": [
-        "out/analysis/notion_records_2026.json",
+        "input/events.2026.yaml",
         "out/2026/practice_absentees.csv",
-        "input/events.2026.yaml"
+        "out/analysis/notion_records_2026.json"
       ],
       "hint": "部員エンティティ"
     },
@@ -17892,10 +17892,10 @@
         "practice"
       ],
       "refs": [
-        "input/events.2025.yaml",
-        "input/events.2026.yaml",
         "out/2025/practice_absentees.csv",
         "out/analysis/notion_records_2026.json",
+        "input/events.2025.yaml",
+        "input/events.2026.yaml",
         "out/2026/practice_absentees.csv"
       ],
       "hint": "部員エンティティ"
@@ -24835,7 +24835,7 @@
       "refs": [
         "out/analysis/aragyoku_2026_formula_report.md"
       ],
-      "hint": "荒玉駅伝2026：レース記録から作る説明可能な区間予測式 / 基準日: 2026-09-27 ／ 大会予定日: 2026-10-14。現在の区間オーダーは仮置きを含む。 / このモデルは直近の駅伝・ロード実績を優先して区間タイムを予測する。旧 `区間オーダー_SB予想_coverage.csv` は比較値で、レース観測には混ぜていない。 / データと除外 / 選手 107 名、採用レース 1187"
+      "hint": "荒玉駅伝2026：レース記録から作る説明可能な区間予測式 / 基準日: 2026-09-27 ／ 大会予定日: 2026-10-14。現在の区間オーダーは仮置きを含む。 / このモデルは直近の駅伝・ロード実績を優先して区間タイムを予測する。旧 `区間オーダー_SB予想_coverage.csv` は比較値で、レース観測には混ぜていない。 / データと除外 / 選手 107 名、採用レース 1191"
     },
     {
       "id": "source:out/analysis/aragyoku_all_teams_average_pace.md",

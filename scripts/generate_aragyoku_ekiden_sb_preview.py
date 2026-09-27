@@ -246,11 +246,11 @@ PROVISIONAL_ORDERS: dict[str, list[dict[str, Any]]] = {
                 "谷平 陽生",
                 "中田 透和",
                 "北村 春磨",
-                "本戸 優貴",
+                "宮崎 晃仁",
                 "藤井 祐吏",
             ],
             "notes": (
-                "前年A復帰（藤原・谷平・中田・本戸）＋SBの北村春磨。"
+                "前年A復帰（藤原・谷平・中田）＋SBの北村春磨・宮崎晃仁。"
                 "シードは速い順。配置時に遅→5（藤井）・次遅→2。松岡・浦本は控え"
             ),
         },
@@ -732,6 +732,9 @@ def get_provisional_orders(
         row = built[team_key]
         legs = list(row.get("legs") or [])
         legs.extend([""] * max(0, n_legs - len(legs)))
+        for i, current in enumerate(legs):
+            if i != leg_no - 1 and current and is_same_athlete(athlete, str(current)):
+                legs[i] = ""
         legs[leg_no - 1] = athlete
         row["legs"] = legs[:n_legs]
         reason = str(override.get("reason") or "人間指定オーダー").strip()

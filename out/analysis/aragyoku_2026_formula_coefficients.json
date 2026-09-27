@@ -8,9 +8,9 @@
       "short_exponent": 1.1727167488320045,
       "short_pairs": 349,
       "short_raw_median": 1.1727167488320045,
-      "road_factor": 1.0056629120894307,
-      "road_pairs": 20,
-      "road_raw_median": 1.0127415522012189,
+      "road_factor": 1.0059942492988119,
+      "road_pairs": 21,
+      "road_raw_median": 1.0131302603688264,
       "best_share": 0.3,
       "other_feature": "typical",
       "recent_window_days": 45,
@@ -79,13 +79,13 @@
   },
   "historical_track_backtest": {
     "男子": {
-      "n": 71,
-      "mae_sec": 21.55500133260702,
-      "rmse_sec": 37.46440697423449,
-      "median_actual_over_raw": 0.9913122607793574,
+      "n": 72,
+      "mae_sec": 21.269962777600764,
+      "rmse_sec": 37.203526672422115,
+      "median_actual_over_raw": 0.9925365644653918,
       "by_year": {
         "2024": 37,
-        "2025": 34
+        "2025": 35
       }
     },
     "女子": {
@@ -100,10 +100,10 @@
     }
   },
   "rejected": {
-    "graduated_athlete": 7,
-    "missing_or_invalid": 94,
+    "graduated_athlete": 3,
+    "missing_or_invalid": 96,
     "different_school_namesake": 3,
-    "duplicate": 436
+    "duplicate": 439
   },
-  "observations": 1187
+  "observations": 1191
 }

@@ -115,10 +115,13 @@ def extract(targets: list[dict]) -> tuple[list[dict], Counter]:
             rejected["graduated_athlete"] += 1
             return
         # A matching name from an explicitly different school is a namesake.
-        if (target is not None and team.endswith("中") and
-                target["team"] not in {team, "玉名高附" if team == "玉名附中" else team}):
-            rejected["different_school_namesake"] += 1
-            return
+        if target is not None and team.endswith("中"):
+            target_school = base.normalize_prior_team_to_school(target["team"]) or target["team"]
+            source_school = base.normalize_prior_team_to_school(team) or team
+            legacy_tamana_match = team == "玉名附中" and target_school == "玉名高附"
+            if target_school != source_school and not legacy_tamana_match:
+                rejected["different_school_namesake"] += 1
+                return
         if km is None or not .7 <= km <= 10 or sec is None or sec <= 0:
             rejected["missing_or_invalid"] += 1
             return
@@ -765,6 +768,35 @@ def write_report(obs: list[dict], comparisons: list[dict], params: dict,
     for gender in ("男子", "女子"):
         p = params[gender]
         lines.append(f"- **{gender}**: `k_short={p['short_exponent']:.4f}, k_long={p['distance_exponent']:.4f}`、ロード等は `C_j={p['road_factor']:.4f}`、`T={p['baseline_scale']:.4f}(0.30B+0.70Q_recent)`。")
+    project_rows = [r for r in obs if r["gender"] == "女子" and
+                    r["date"] == "2026-09-20" and r["meet"] == "なごみ中学駅伝" and
+                    r.get("source_team", "").startswith("金栗PROJECT")]
+    women_first = [r for r in comparisons if r["gender"] == "女子" and
+                   r["leg"] == 1 and r["formula_sec"] is not None]
+    if project_rows and women_first:
+        lines += [
+            "",
+            "## 金栗PROJECT女子のなごみ実績チェック",
+            "",
+            "2026年なごみ駅伝の金栗PROJECT所属選手の2km実績は、ほかの競技会と同じ距離換算・ロード係数・直近重みで式へ投入している。独立した所属ボーナスは加えていないため、同じ実績を二重に評価しない。",
+        ]
+        woman_params = params["女子"]
+        first_by_name = {norm_name(r["name"]): r for r in women_first}
+        for race in sorted(project_rows, key=lambda r: r["time_sec"]):
+            forecast = first_by_name.get(norm_name(race["name"]))
+            if forecast is None:
+                continue
+            equivalent = (woman_params["baseline_scale"] *
+                          distance_convert(race["time_sec"], race["distance_km"],
+                                           forecast["km"], woman_params["distance_exponent"],
+                                           woman_params["short_exponent"]) /
+                          woman_params["road_factor"])
+            rank = 1 + sum(r["formula_sec"] < forecast["formula_sec"] for r in women_first)
+            lines.append(
+                f"- {forecast['name']}（{forecast['team']}）: なごみ {fmt(race['time_sec'])}"
+                f"/{race['distance_km']:g}km → 距離換算 {fmt(equivalent)}、"
+                f"全区間式 {fmt(forecast['formula_sec'])}、1区{rank}位/{len(women_first)}校。"
+            )
     lines += [
         "",
         "距離指数は地域の全選手について同一年・45日以内の800/1500m、1500/3000mを照合し、選手年度ごとの中央値を求めた。女子の中長距離15組は少ないため男女合算の中央値へ20組相当で縮めた。",
