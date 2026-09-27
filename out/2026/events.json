@@ -8795,7 +8795,7 @@
     "status": "scheduled",
     "tags": [],
     "urls": [],
-    "description": "玉名荒尾中体連駅伝（荒玉）\n岱明確定オーダー・SB予想・校別展開: input/idaten-corpus/drive-text/大会/2026年度/1014-1015_荒玉中体連駅伝/\n距離正本: docs/aragyoku-ekiden-distance-definitions.md\n生成: python3 scripts/generate_aragyoku_ekiden_sb_preview.py\n",
+    "description": "玉名荒尾中体連駅伝（荒玉）\n岱明確定オーダー・現行数式予想・校別展開: input/idaten-corpus/drive-text/大会/2026年度/1014-1015_荒玉中体連駅伝/\n現行予測: 区間オーダー_数式予想.md / 区間オーダー_数式予想_coverage.csv / 区間オーダー_数式予想.json\n旧SB予測: 区間オーダー_SB予想.md（比較用）\n距離正本: docs/aragyoku-ekiden-distance-definitions.md\n生成: python3 scripts/generate_aragyoku_ekiden_sb_preview.py → /opt/miniconda3/bin/python scripts/model_aragyoku_2026_formula.py\n",
     "location": "",
     "private": false,
     "kind": "event",

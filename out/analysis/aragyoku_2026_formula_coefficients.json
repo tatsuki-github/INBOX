@@ -1,0 +1,72 @@
+{
+  "as_of": "2026-09-27",
+  "params": {
+    "男子": {
+      "distance_exponent": 1.11686608267681,
+      "distance_pairs": 474,
+      "distance_raw_median": 1.1168663747628038,
+      "short_exponent": 1.1727167488320045,
+      "short_pairs": 349,
+      "short_raw_median": 1.1727167488320045,
+      "road_factor": 1.0053336730144637,
+      "road_pairs": 18,
+      "road_raw_median": 1.0127415522012189,
+      "best_share": 0.3,
+      "other_feature": "typical",
+      "recent_window_days": 45,
+      "recent_half_life_days": 21,
+      "recent_road_weight": 2.0,
+      "recent_track_weight": 0.5,
+      "baseline_scale": 1.0051284240243719,
+      "baseline_scale_source": "v1 median alignment, held fixed"
+    },
+    "女子": {
+      "distance_exponent": 1.11410746162166,
+      "distance_pairs": 15,
+      "distance_raw_median": 1.1104385301321984,
+      "short_exponent": 1.1557583458106997,
+      "short_pairs": 404,
+      "short_raw_median": 1.1557583458106997,
+      "road_factor": 0.9924667003145493,
+      "road_pairs": 10,
+      "road_raw_median": 0.9736334511009226,
+      "best_share": 0.3,
+      "other_feature": "typical",
+      "recent_window_days": 45,
+      "recent_half_life_days": 21,
+      "recent_road_weight": 2.0,
+      "recent_track_weight": 0.5,
+      "baseline_scale": 0.9860736188843046,
+      "baseline_scale_source": "v1 median alignment, held fixed"
+    }
+  },
+  "historical_track_backtest": {
+    "男子": {
+      "n": 71,
+      "mae_sec": 21.55500133260702,
+      "rmse_sec": 37.46440697423449,
+      "median_actual_over_raw": 0.9913122607793574,
+      "by_year": {
+        "2024": 37,
+        "2025": 34
+      }
+    },
+    "女子": {
+      "n": 76,
+      "mae_sec": 20.795879864122153,
+      "rmse_sec": 26.693323542029653,
+      "median_actual_over_raw": 1.0101228206128228,
+      "by_year": {
+        "2024": 38,
+        "2025": 38
+      }
+    }
+  },
+  "rejected": {
+    "graduated_athlete": 7,
+    "missing_or_invalid": 98,
+    "different_school_namesake": 3,
+    "duplicate": 434
+  },
+  "observations": 1149
+}
