@@ -2597,7 +2597,7 @@ function offlineAnswer(
     lines.push("区間順位と通過順位のどちらを知りたいか指定してください。");
     return lines.join("\n");
   }
-  const exactLegWinnerRank = question.match(/(?:(?:区間(?:順位)?|通過順位)\s*(?:第)?(\d{1,2})位|(?<!\d)(\d{1,2})位|区間一位)/);
+  const exactLegWinnerRank = question.match(/(?:(?:区間(?:順位|タイム)?|通過順位)\s*(?:第)?(\d{1,2})位|区間タイム.*?(\d{1,2})位|(?<!\d)(\d{1,2})位|区間一位)/);
   const namedLegTeam = /荒尾海陽|玉高附属|玉名付属|玉名附属|荒尾三|荒尾四|三加和|南関|天水|岱明|有明|玉南|玉名|玉東|玉陵|腹栄|荒尾|菊水|長洲/.test(question);
   if (/20\d{2}/.test(question) && /男子|女子/.test(question) && /[1-6]区/.test(question) && exactLegWinnerRank && !namedLegTeam) {
     const year = question.match(/20\d{2}/)![0];
@@ -2612,7 +2612,7 @@ function offlineAnswer(
     const nextLeg = legStart >= 0 ? genderSection.indexOf("### ", legStart + 4) : -1;
     const legSection = legStart >= 0 ? genderSection.slice(legStart, nextLeg >= 0 ? nextLeg : undefined) : genderSection;
     const rows = [...legSection.matchAll(/\|\s*(\d+)\s*\|\s*([^|]+)\|\s*([^|]+)\|\s*\d+\s*\|\s*([^|]+?)\s*\|\s*[^|]+\|\s*(\d+)\s*\|\s*(\d+)\s*\|/g)];
-    const rank = Number(exactLegWinnerRank[1] ?? exactLegWinnerRank[2] ?? 1);
+    const rank = Number(exactLegWinnerRank[1] ?? exactLegWinnerRank[2] ?? exactLegWinnerRank[3] ?? 1);
     const rankIndex = /通過順位/.test(question) ? 5 : 6;
     const matchingRows = rows.filter((candidate) => Number(candidate[rankIndex]) === rank);
     if (matchingRows.length > 0) {
@@ -2640,8 +2640,8 @@ function offlineAnswer(
   const allTeamLegRankListQuestion =
     /20\d{2}/.test(question) &&
     /[1-6]区/.test(question) &&
-    /区間順位|区間順|通過順位|順位順|最速|一番速|トップ\s*\d+/.test(question) &&
-    /ランキング|順位順|全チーム|全順位|一覧|最速|一番速|トップ\s*\d+|区間順位|通過順位/.test(question) &&
+    /区間順位|区間順|通過順位|順位順|最速|一番速|最も速|もっとも速|最遅|一番遅|最も遅|もっとも遅|タイム順|速い順|トップ\s*\d+/.test(question) &&
+    /ランキング|順位順|全チーム|全順位|一覧|最速|一番速|最も速|もっとも速|最遅|一番遅|最も遅|もっとも遅|タイム順|速い順|トップ\s*\d+|区間順位|通過順位/.test(question) &&
     !/玉高附属|玉名付属|玉名附属|荒尾三|荒尾四|荒尾海陽|三加和|南関|天水|岱明|有明|玉南|玉名|玉東|玉陵|腹栄|菊水|長洲/.test(question);
   if (allTeamLegRankListQuestion) {
     const leg = question.match(/(?<!\d)([1-6])区/)?.[1];
@@ -2655,29 +2655,31 @@ function offlineAnswer(
     const nextLeg = legStart >= 0 ? genderSection.indexOf("### ", legStart + 4) : -1;
     const legSection = legStart >= 0 ? genderSection.slice(legStart, nextLeg >= 0 ? nextLeg : undefined) : genderSection;
     const rows = [...legSection.matchAll(/\|\s*(\d+)\s*\|\s*([^|]+)\|\s*([^|]+)\|\s*\d+\s*\|\s*([^|]+?)\s*\|\s*[^|]+\|\s*(\d+)\s*\|\s*(\d+)\s*\|/g)];
-    const fastest = /最速|一番速/.test(question);
+    const fastest = /最速|一番速|最も速|もっとも速/.test(question);
+    const slowest = /最遅|一番遅|最も遅|もっとも遅/.test(question);
+    const timeOrder = /タイム順|速い順/.test(question);
     const passingRank = /通過順位/.test(question);
-    if (fastest) {
+    if (fastest || slowest || timeOrder) {
       const toSeconds = (value: string) => {
         const [minutes = "0", seconds = "0"] = value.trim().split(":");
         return Number(minutes) * 60 + Number(seconds);
       };
-      rows.sort((a, b) => toSeconds(a[4]!) - toSeconds(b[4]!));
+      rows.sort((a, b) => (toSeconds(a[4]!) - toSeconds(b[4]!)) * (slowest ? -1 : 1));
     } else {
       rows.sort((a, b) => Number(passingRank ? a[5] : a[6]) - Number(passingRank ? b[5] : b[6]));
     }
     if (leg && rows.length > 0) {
       const year = question.match(/20\d{2}/)![0];
-      const topCount = Number(question.match(/トップ\s*(\d+)/)?.[1] ?? (fastest ? 1 : rows.length));
+      const topCount = Number(question.match(/トップ\s*(\d+)/)?.[1] ?? (fastest || slowest ? 1 : rows.length));
       let displayRows = rows.slice(0, topCount);
-      if (!fastest && topCount > 0 && topCount < rows.length) {
+      if (!fastest && !slowest && topCount > 0 && topCount < rows.length) {
         const boundaryRank = Number(passingRank ? displayRows.at(-1)?.[5] : displayRows.at(-1)?.[6]);
         displayRows = rows.filter((row) => Number(passingRank ? row[5] : row[6]) <= boundaryRank);
       }
-      const listing = fastest
+      const listing = fastest || slowest || timeOrder
         ? displayRows.map((row, index) => `${index + 1}位 ${row[2]!.trim()} ${row[4]!.trim()}（区間順位${row[6]}位）`)
         : displayRows.map((row) => `${passingRank ? row[5] : row[6]}位 ${row[3]!.trim()}（${row[2]!.trim()}）${row[4]!.trim()}`);
-      lines.push(`${year}年荒玉駅伝${gender}${leg}区の${fastest ? "区間記録順" : passingRank ? "通過順位" : "区間順位"}: ${listing.join("、")}。`);
+      lines.push(`${year}年荒玉駅伝${gender}${leg}区の${fastest ? "最速" : slowest ? "最遅" : timeOrder ? "区間記録順" : passingRank ? "通過順位" : "区間順位"}: ${listing.join("、")}。`);
       return lines.join("\n");
     }
   }
@@ -4259,6 +4261,10 @@ export async function answerQuestion(
 ): Promise<AnswerResult> {
   question = question
     .normalize("NFKC")
+    .replace(/第?([一二三四五六])区/g, (_match, numeral: string) => String("一二三四五六".indexOf(numeral) + 1) + "区")
+    .replace(/区間記録順位/g, "区間順位")
+    .replace(/区間記録ランキング/g, "タイム順")
+    .replace(/通過順(?!位)/g, "通過順位")
     .replace(/jog/gi, "jog")
     .replace(/1,000/g, "1000")
     .replace(/1\s+000/g, "1000")
@@ -4970,15 +4976,15 @@ export async function answerQuestion(
     );
   const legRankQuestionQ =
     /男子|女子/.test(question) &&
-    /(?:荒玉|駅伝).*(?:区間順位|区間順|通過順位|最速|一番速)|20\d{2}年?.*[1-6]区.*(?:区間順位|区間順|通過順位|区間[1-3]位|順位順|トップ\s*\d+|最速|一番速)/.test(question);
+    /(?:荒玉|駅伝).*(?:区間順位|区間順|区間タイム|通過順位|最速|一番速|最も速|もっとも速|最遅|一番遅|最も遅|もっとも遅|タイム順|速い順)|20\d{2}年?.*[1-6]区.*(?:区間順位|区間順|区間タイム|通過順位|区間[1-3]位|順位順|トップ\s*\d+|最速|一番速|最も速|もっとも速|最遅|一番遅|最も遅|もっとも遅|タイム順|速い順)/.test(question);
   const allTeamLegRankListQ =
     /20\d{2}/.test(question) &&
     /[1-6]区/.test(question) &&
-    /区間順位|区間順|通過順位|順位順|最速|一番速|トップ\s*\d+/.test(question) &&
-    /ランキング|順位順|全チーム|全順位|一覧|最速|一番速|トップ\s*\d+/.test(question);
+    /区間順位|区間順|区間タイム|通過順位|順位順|最速|一番速|最も速|もっとも速|最遅|一番遅|最も遅|もっとも遅|タイム順|速い順|トップ\s*\d+/.test(question) &&
+    /ランキング|順位順|全チーム|全順位|一覧|最速|一番速|最も速|もっとも速|最遅|一番遅|最も遅|もっとも遅|タイム順|速い順|トップ\s*\d+/.test(question);
   const explicitLegAwardQ =
     (/(?:荒玉|駅伝)/.test(question) || /20\d{2}/.test(question) && /[1-6]区/.test(question)) &&
-    /区間賞|区間\d{1,2}位|区間[1-3]位|区間一位/.test(question) &&
+    /区間賞|区間\d{1,2}位|区間[1-3]位|区間一位|区間タイム.*\d{1,2}位/.test(question) &&
     /男子|女子/.test(question);
   if (explicitLegAwardQ) {
     const year = question.match(/20\d{2}/)?.[0];
@@ -6270,7 +6276,7 @@ export async function answerQuestion(
     /20\d{2}/.test(question) &&
     /男子|女子/.test(question) &&
     /[1-6]区/.test(question) &&
-    /区間(?:順位|順|\d{1,2}位|[1-3]位|一位)|通過順位/.test(question);
+    /区間(?:順位|順|タイム|\d{1,2}位|[1-3]位|一位)|通過順位/.test(question);
   if (exactYearLegRankQ) {
     const year = question.match(/20\d{2}/)![0];
     preferredSources = [`out-analysis/aragyoku-years/${year}.md`];

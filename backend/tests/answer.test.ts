@@ -1038,6 +1038,48 @@ describe("answerQuestion", () => {
     }
   });
 
+  it.each([
+    ["2025年男子三区の区間順位", "1位 草野瑠唯"],
+    ["2025年男子3区でもっとも速いチームは？", "1位 玉高附属 9:14"],
+    ["2025年男子3区のタイム順", "15位 三加和 11:28"],
+    ["2025年男子3区区間タイムの1位は？", "草野瑠唯（玉高附属）9:14"],
+  ])("normalizes alternate leg and split-time wording: %s", async (question, expected) => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion(question, {
+      skipRouter: true,
+      defaultYear: 2026,
+      llm: null,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.sources[0]).toBe("out-analysis/aragyoku-years/2025.md");
+      expect(result.text).toContain(expected);
+    }
+  });
+
+  it.each([
+    ["2025年男子3区区間記録順位は？", "15位 井上太汰（三加和）11:28"],
+    ["2025年男子3区通過順ランキング", "通過順位: 1位 石原佳維斗（菊水）9:22"],
+    ["2025年男子3区の最遅チームは？", "1位 三加和 11:28"],
+    ["2025年男子3区で一番遅いチームは？", "1位 三加和 11:28"],
+    ["2025年男子3区で最も遅いチームは？", "1位 三加和 11:28"],
+    ["2025年男子3区の区間記録ランキング", "15位 三加和 11:28"],
+  ])("resolves rank aliases and slowest-team wording: %s", async (question, expected) => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion(question, {
+      skipRouter: true,
+      defaultYear: 2026,
+      llm: null,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.sources[0]).toBe("out-analysis/aragyoku-years/2025.md");
+      expect(result.text).toContain(expected);
+    }
+  });
+
   it("asks which leg when a yearly split-rank query omits the leg number", async () => {
     resetRetrieverCache();
     resetKgCache();
