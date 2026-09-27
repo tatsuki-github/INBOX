@@ -134,7 +134,7 @@
         "complete": true,
         "provisional": false,
         "provisional_legs": [],
-        "total_sec": 3445.0,
+        "total_sec": 3468.0,
         "rank": 2,
         "legs": [
           {
@@ -144,8 +144,8 @@
             "km": 3.0,
             "name": "小倉 十和",
             "baseline_sec": 573.1,
-            "formula_sec": 550,
-            "error_sec": -23.100000000000023,
+            "formula_sec": 573,
+            "error_sec": -0.10000000000002274,
             "leg_effect_sec": 0.0,
             "best_sec": 555.7781059057986,
             "recent_sec": 555.1505785549859,
@@ -155,12 +155,12 @@
             "latest_race": "2026-09-26",
             "race_types": "aragyoku_prior,road_ekiden,track",
             "baseline_note": "※仮 / SB:3000m 9:28.13@2026/06/13→3000m SBを距離比例→区間3km=9:28.1 / 駅伝加味:SB9:28.1(w=0.02)+荒玉2025 9:42.0@3.0km(2025-10-15)→比例9:42.0(w=0.55)→加重9:41.6 / 前年伸び:荒玉2025 9:42.0@3.0km(2025-10-15)→比例9:42.0×-2%→9:33.3採用（ブレンド9:41.6より速い） / 3000mトラック優先:9:28.13@2026/06/13→区間3km比例9:28.1+5s=9:33.1（計算9:33.3より速い） →予想9:33.1",
-            "human_adjustment": "",
+            "human_adjustment": "ユーザーの1区評価を反映し、柿本より下位へ（9:33）",
             "prediction_basis": "race_records",
-            "cumulative_sec": 550.0,
+            "cumulative_sec": 573.0,
             "provisional": false,
-            "leg_rank": 2,
-            "passing_rank": 2
+            "leg_rank": 5,
+            "passing_rank": 5
           },
           {
             "gender": "男子",
@@ -182,10 +182,10 @@
             "baseline_note": "※仮 / SB:3000m 9:51.09@2026/05/23→3000m SBを距離比例→区間2.855km=9:36.9＋区間バイアス+14s / 3000mトラック優先:9:51.09@2026/05/23→区間2.855km比例9:22.5+5s=9:27.5（計算9:36.9より速い） →予想9:27.5",
             "human_adjustment": "",
             "prediction_basis": "race_records",
-            "cumulative_sec": 1098.0,
+            "cumulative_sec": 1121.0,
             "provisional": false,
             "leg_rank": 2,
-            "passing_rank": 1
+            "passing_rank": 3
           },
           {
             "gender": "男子",
@@ -207,10 +207,10 @@
             "baseline_note": "※仮 / SB:3000m 9:28.42@2026/06/13→3000m SBを距離比例→区間3km=9:28.4 / 駅伝加味:SB9:28.4(w=0.02)+荒玉2025 9:14.0@3.0km(2025-10-15)→比例9:14.0(w=0.55)→加重9:14.4 / 前年伸び:荒玉2025 9:14.0@3.0km(2025-10-15)→比例9:14.0×-2%→9:05.7採用（ブレンド9:14.4より速い） →予想9:05.7",
             "human_adjustment": "",
             "prediction_basis": "race_records",
-            "cumulative_sec": 1655.0,
+            "cumulative_sec": 1678.0,
             "provisional": false,
             "leg_rank": 2,
-            "passing_rank": 1
+            "passing_rank": 2
           },
           {
             "gender": "男子",
@@ -232,10 +232,10 @@
             "baseline_note": "※仮 / SB:1500m 4:33.96@2026/07/04→1500m SB→3km式を距離比例→区間3km=9:42.9 / 駅伝加味:SB9:42.9(w=0.03)+荒玉2025 10:11.0@3.0km(2025-10-15)→比例10:11.0(w=0.55)→加重10:09.3 / 前年伸び:荒玉2025 10:11.0@3.0km(2025-10-15)→比例10:11.0×-2%→10:01.8採用（ブレンド10:09.3より速い） →予想10:01.8",
             "human_adjustment": "",
             "prediction_basis": "race_records",
-            "cumulative_sec": 2273.0,
+            "cumulative_sec": 2296.0,
             "provisional": false,
             "leg_rank": 7,
-            "passing_rank": 2
+            "passing_rank": 4
           },
           {
             "gender": "男子",
@@ -257,7 +257,7 @@
             "baseline_note": "※仮 / SB:1500m 4:48.48@2026/07/04→1500m SB→3km式を距離比例→区間2.855km=10:00.1＋区間バイアス+18s →予想10:00.1",
             "human_adjustment": "",
             "prediction_basis": "race_records",
-            "cumulative_sec": 2839.0,
+            "cumulative_sec": 2862.0,
             "provisional": false,
             "leg_rank": 2,
             "passing_rank": 2
@@ -282,7 +282,7 @@
             "baseline_note": "※仮 / SB:1500m 4:43.21@2026/07/04→1500m SB→3km式を距離比例→区間3km=10:01.4 / 駅伝加味:SB10:01.4(w=0.01)+ジュニアCS 8:48.0@2.6km(2026-09-26)→比例10:09.2(w=0.55)→加重10:09.1 →予想10:09.1",
             "human_adjustment": "",
             "prediction_basis": "race_records",
-            "cumulative_sec": 3445.0,
+            "cumulative_sec": 3468.0,
             "provisional": false,
             "leg_rank": 3,
             "passing_rank": 2
@@ -294,7 +294,7 @@
         "complete": true,
         "provisional": false,
         "provisional_legs": [],
-        "total_sec": 3477.0,
+        "total_sec": 3473.0,
         "rank": 3,
         "legs": [
           {
@@ -304,8 +304,8 @@
             "km": 3.0,
             "name": "隈部侑成",
             "baseline_sec": 537.5,
-            "formula_sec": 542,
-            "error_sec": 4.5,
+            "formula_sec": 538,
+            "error_sec": 0.5,
             "leg_effect_sec": 0.0,
             "best_sec": 529.8032542995193,
             "recent_sec": 542.567085704442,
@@ -315,9 +315,9 @@
             "latest_race": "2026-09-21",
             "race_types": "aragyoku_prior,road_ekiden,track",
             "baseline_note": "※仮 / SB:3000m 8:52.46@2026/09/12→3000m SBを距離比例→区間3km=8:52.5 / 駅伝加味:SB8:52.5(w=0.07)+なごみ 9:17.0@3.0km(2026-09-20)→比例9:17.0(w=0.45)+荒玉2025 9:12.0@3.0km(2025-10-15)→比例9:12.0(w=0.55)→加重9:12.8 / 前年伸び:荒玉2025 9:12.0@3.0km(2025-10-15)→比例9:12.0×-2%→9:01.0採用（ブレンド9:12.8より速い） / 3000mトラック優先:8:52.46@2026/09/12→区間3km比例8:52.5+5s=8:57.5（計算9:01.0より速い） →予想8:57.5",
-            "human_adjustment": "",
+            "human_adjustment": "ユーザーの1区評価を反映。区間1位とし、柿本・小倉との差を明確化（8:58）",
             "prediction_basis": "race_records",
-            "cumulative_sec": 542.0,
+            "cumulative_sec": 538.0,
             "provisional": false,
             "leg_rank": 1,
             "passing_rank": 1
@@ -342,7 +342,7 @@
             "baseline_note": "※仮 / SB:1500m 4:44.25@2026/06/27→1500m SB→3km式を距離比例→区間2.855km=9:34.3 / 駅伝加味:SB9:34.3(w=0.03)+荒玉2025 10:25.0@2.9km(2025-10-15)→比例10:25.0(w=0.55)→加重10:22.6 / 前年伸び:荒玉2025 10:25.0@2.9km(2025-10-15)→比例10:25.0×-2%→10:15.6採用（ブレンド10:22.6より速い） →予想10:15.6",
             "human_adjustment": "",
             "prediction_basis": "race_records",
-            "cumulative_sec": 1151.0,
+            "cumulative_sec": 1147.0,
             "provisional": false,
             "leg_rank": 7,
             "passing_rank": 5
@@ -367,10 +367,10 @@
             "baseline_note": "※仮 / SB:3000m 9:24.24@2026/09/12→3000m SBを距離比例→区間3km=9:24.2 / 駅伝加味:SB9:24.2(w=0.35)+荒玉2025 9:47.0@2.9km(2025-10-15)→比例10:16.8(w=0.55)→加重9:56.4 / 3000mトラック優先:9:24.24@2026/09/12→区間3km比例9:24.2+5s=9:29.2（計算9:56.4より速い） →予想9:29.2",
             "human_adjustment": "",
             "prediction_basis": "race_records",
-            "cumulative_sec": 1712.0,
+            "cumulative_sec": 1708.0,
             "provisional": false,
             "leg_rank": 3,
-            "passing_rank": 5
+            "passing_rank": 4
           },
           {
             "gender": "男子",
@@ -392,10 +392,10 @@
             "baseline_note": "※仮 / SB:3000m 9:36.40@2026/09/12→3000m SBを距離比例→区間3km=9:36.4 / 駅伝加味:SB9:36.4(w=0.07)+なごみ 9:44.0@3.0km(2026-09-20)→比例9:44.0(w=0.45)→加重9:43.0 / 3000mトラック優先:9:36.40@2026/09/12→区間3km比例9:36.4+5s=9:41.4（計算9:43.0より速い） →予想9:41.4",
             "human_adjustment": "",
             "prediction_basis": "race_records",
-            "cumulative_sec": 2287.0,
+            "cumulative_sec": 2283.0,
             "provisional": false,
             "leg_rank": 2,
-            "passing_rank": 4
+            "passing_rank": 2
           },
           {
             "gender": "男子",
@@ -417,7 +417,7 @@
             "baseline_note": "※仮 / SB:1500m 4:46.56@2026/06/27→1500m SB→3km式を距離比例→区間2.855km=9:56.4＋区間バイアス+18s →予想9:56.4",
             "human_adjustment": "",
             "prediction_basis": "race_records",
-            "cumulative_sec": 2870.0,
+            "cumulative_sec": 2866.0,
             "provisional": false,
             "leg_rank": 5,
             "passing_rank": 3
@@ -442,7 +442,7 @@
             "baseline_note": "※仮 / SB:3000m 9:54.85@2026/09/21→3000m SBを距離比例→区間3km=10:10.1＋区間バイアス+15s / 3000mトラック優先:9:54.85@2026/09/21→区間3km比例9:54.8+5s=9:59.8（計算10:10.0より速い） →予想9:59.8",
             "human_adjustment": "",
             "prediction_basis": "race_records",
-            "cumulative_sec": 3477.0,
+            "cumulative_sec": 3473.0,
             "provisional": false,
             "leg_rank": 4,
             "passing_rank": 3
@@ -454,7 +454,7 @@
         "complete": true,
         "provisional": false,
         "provisional_legs": [],
-        "total_sec": 3358.0,
+        "total_sec": 3366.0,
         "rank": 1,
         "legs": [
           {
@@ -464,8 +464,8 @@
             "km": 3.0,
             "name": "柿本晴仁",
             "baseline_sec": 559.5,
-            "formula_sec": 552,
-            "error_sec": -7.5,
+            "formula_sec": 560,
+            "error_sec": 0.5,
             "leg_effect_sec": 0.0,
             "best_sec": 554.6767487909974,
             "recent_sec": 559.8717239295063,
@@ -475,12 +475,12 @@
             "latest_race": "2026-09-21",
             "race_types": "aragyoku_prior,road,road_ekiden,track",
             "baseline_note": "※仮 / SB:3000m 9:14.53@2026/09/12→3000m SBを距離比例→区間3km=9:14.5 / 駅伝加味:SB9:14.5(w=0.35)+荒玉2025 9:35.0@2.9km(2025-10-15)→比例10:04.2(w=0.55)→加重9:45.0 / 3000mトラック優先:9:14.53@2026/09/12→区間3km比例9:14.5+5s=9:19.5（計算9:45.0より速い） →予想9:19.5",
-            "human_adjustment": "",
+            "human_adjustment": "ユーザーの1区評価を反映し、小倉より上位へ（9:20）",
             "prediction_basis": "race_records",
-            "cumulative_sec": 552.0,
+            "cumulative_sec": 560.0,
             "provisional": false,
-            "leg_rank": 3,
-            "passing_rank": 3
+            "leg_rank": 2,
+            "passing_rank": 2
           },
           {
             "gender": "男子",
@@ -502,10 +502,10 @@
             "baseline_note": "※仮 / SB:3000m 9:53.36@2026/09/12→3000m SBを距離比例→区間2.855km=9:24.7 / 駅伝加味:SB9:24.7(w=0.35)+荒玉2025 10:24.0@3.0km(2025-10-15)→比例9:53.8(w=0.55)→加重9:42.5 / 3000mトラック優先:9:53.36@2026/09/12→区間2.855km比例9:24.7+5s=9:29.7（計算9:42.5より速い） →予想9:29.7",
             "human_adjustment": "",
             "prediction_basis": "race_records",
-            "cumulative_sec": 1109.0,
+            "cumulative_sec": 1117.0,
             "provisional": false,
             "leg_rank": 3,
-            "passing_rank": 2
+            "passing_rank": 1
           },
           {
             "gender": "男子",
@@ -527,10 +527,10 @@
             "baseline_note": "※仮 / SB:3000m 9:20.09@2026/09/12→3000m SBを距離比例→区間3km=9:20.1 / 駅伝加味:SB9:20.1(w=0.35)+荒玉2025 9:30.0@3.0km(2025-10-15)→比例9:30.0(w=0.55)→加重9:26.2 / 前年伸び:荒玉2025 9:30.0@3.0km(2025-10-15)→比例9:30.0×-2%→9:21.4採用（ブレンド9:26.2より速い） →予想9:21.4",
             "human_adjustment": "",
             "prediction_basis": "race_records",
-            "cumulative_sec": 1663.0,
+            "cumulative_sec": 1671.0,
             "provisional": false,
             "leg_rank": 1,
-            "passing_rank": 2
+            "passing_rank": 1
           },
           {
             "gender": "男子",
@@ -552,7 +552,7 @@
             "baseline_note": "※仮 / SB:3000m 9:24.36@2026/09/12→3000m SBを距離比例→区間3km=9:24.4 / 駅伝加味:SB9:24.4(w=0.35)+荒玉2025 9:26.0@2.9km(2025-10-15)→比例9:54.7(w=0.55)→加重9:43.0 / 3000mトラック優先:9:24.36@2026/09/12→区間3km比例9:24.4+5s=9:29.4（計算9:43.0より速い） →予想9:29.4",
             "human_adjustment": "",
             "prediction_basis": "race_records",
-            "cumulative_sec": 2224.0,
+            "cumulative_sec": 2232.0,
             "provisional": false,
             "leg_rank": 1,
             "passing_rank": 1
@@ -577,7 +577,7 @@
             "baseline_note": "※仮 / SB:3000m 9:57.24@2026/09/12→3000m SBを距離比例→区間2.855km=9:46.1＋区間バイアス+18s / 3000mトラック優先:9:57.24@2026/09/12→区間2.855km比例9:28.4+5s=9:33.4（計算9:46.1より速い） →予想9:33.4",
             "human_adjustment": "",
             "prediction_basis": "race_records",
-            "cumulative_sec": 2786.0,
+            "cumulative_sec": 2794.0,
             "provisional": false,
             "leg_rank": 1,
             "passing_rank": 1
@@ -602,7 +602,7 @@
             "baseline_note": "※仮 / SB:3000m 9:36.31@2026/09/12→3000m SBを距離比例→区間3km=9:51.5＋区間バイアス+15s / 3000mトラック優先:9:36.31@2026/09/12→区間3km比例9:36.3+5s=9:41.3（計算9:51.5より速い） →予想9:41.3",
             "human_adjustment": "",
             "prediction_basis": "race_records",
-            "cumulative_sec": 3358.0,
+            "cumulative_sec": 3366.0,
             "provisional": false,
             "leg_rank": 1,
             "passing_rank": 1
@@ -639,8 +639,8 @@
             "prediction_basis": "race_records",
             "cumulative_sec": 572.0,
             "provisional": false,
-            "leg_rank": 5,
-            "passing_rank": 5
+            "leg_rank": 4,
+            "passing_rank": 4
           },
           {
             "gender": "男子",
@@ -665,7 +665,7 @@
             "cumulative_sec": 1118.0,
             "provisional": false,
             "leg_rank": 1,
-            "passing_rank": 3
+            "passing_rank": 2
           },
           {
             "gender": "男子",
@@ -690,7 +690,7 @@
             "cumulative_sec": 1708.0,
             "provisional": false,
             "leg_rank": 6,
-            "passing_rank": 4
+            "passing_rank": 5
           },
           {
             "gender": "男子",
@@ -799,8 +799,8 @@
             "prediction_basis": "race_records",
             "cumulative_sec": 569.0,
             "provisional": false,
-            "leg_rank": 4,
-            "passing_rank": 4
+            "leg_rank": 3,
+            "passing_rank": 3
           },
           {
             "gender": "男子",

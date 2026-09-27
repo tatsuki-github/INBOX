@@ -755,7 +755,7 @@ def write_report(obs: list[dict], comparisons: list[dict], params: dict,
         rows = [r for r in comparisons if r["gender"] == gender]
         fields = ["team", "leg", "km", "name", "leg_effect_sec", "formula_sec", "formula_time",
                   "baseline_sec", "baseline_time", "error_sec", "n_races", "latest_race",
-                  "prediction_basis"]
+                  "prediction_basis", "human_adjustment"]
         path = OUT / f"aragyoku_2026_formula_{gender}.csv"
         with path.open("w", encoding="utf-8", newline="") as f:
             writer = csv.DictWriter(f, fieldnames=fields); writer.writeheader()
@@ -830,6 +830,14 @@ def write_report(obs: list[dict], comparisons: list[dict], params: dict,
     for gender in ("男子", "女子"):
         p = params[gender]
         lines.append(f"- **{gender}**: `k_short={p['short_exponent']:.4f}, k_long={p['distance_exponent']:.4f}`、ロード等は `C_j={p['road_factor']:.4f}`、`T={p['baseline_scale']:.4f}(0.30B+0.70Q_recent)+L_{gender},leg`。")
+    human_adjustments = [r for r in comparisons if r["human_adjustment"]]
+    if human_adjustments:
+        lines += ["", "### 個別の数式調整", "",
+                  "利用者からの選手別情報・予想順位の指定を、数式の自動値の後に個別反映した。"]
+        lines += ["", "| 性別 | 学校 | 区間 | 選手 | 採用値 | 調整理由 |",
+                  "| --- | --- | ---: | --- | ---: | --- |"]
+        for row in human_adjustments:
+            lines.append(f"| {row['gender']} | {row['team']} | {row['leg']} | {row['name']} | {fmt(row['formula_sec'])} | {row['human_adjustment']} |")
     leg_effect = params["女子"]["leg_effect"]
     lines += [
         "",
@@ -1160,6 +1168,7 @@ def publish_predictions(comparisons: list[dict], params: dict) -> None:
                                 "latest_race": r["latest_race"] if r else "",
                                 "race_types": r["race_types"] if r else "",
                                 "prediction_basis": r["prediction_basis"] if r else "unavailable",
+                                "human_adjustment": r["human_adjustment"] if r else "",
                                 "sb_800": row["sb_800"], "sb_1500": row["sb_1500"],
                                 "sb_3000": row["sb_3000"],
                                 "model": "aragyoku_2026_formula_v6_context", "as_of": AS_OF.isoformat()})

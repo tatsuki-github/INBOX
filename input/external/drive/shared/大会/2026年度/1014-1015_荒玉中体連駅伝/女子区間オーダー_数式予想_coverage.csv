@@ -1,51 +1,51 @@
-gender,team,leg,km,name,pred_sec,pred,baseline_sb_sec,baseline_sb,delta_sec,n_races,latest_race,race_types,prediction_basis,sb_800,sb_1500,sb_3000,model,as_of
-女子,南関中,1,3.0,福山 結衣,653,10:53,613.0,10:13.0,+40.0,12,2026-09-26,"aragyoku_prior,road_ekiden,track",race_records,2:28.50 @2026/07/19,—,—,aragyoku_2026_formula_v6_context,2026-09-27
-女子,南関中,2,1.855,米田 美空,413,6:53,426.6,7:06.6,-13.6,10,2026-09-26,"aragyoku_prior,road_ekiden,track",race_records,2:41.35 @2026/07/19,—,—,aragyoku_2026_formula_v6_context,2026-09-27
-女子,南関中,3,2.0,平山 結菜,432,7:12,460.0,7:40.0,-28.0,12,2026-09-26,"road_ekiden,track",race_records,2:43.98 @2026/06/14,—,—,aragyoku_2026_formula_v6_context,2026-09-27
-女子,南関中,4,2.0,原賀 美和,463,7:43,473.0,7:53.0,-10.0,2,2026-09-26,road_ekiden,race_records,—,—,—,aragyoku_2026_formula_v6_context,2026-09-27
-女子,南関中,5,3.0,堀田 稔々,646,10:46,650.2,10:50.2,-4.2,19,2026-09-26,"aragyoku_prior,road_ekiden,track",race_records,2:33.22 @2026/05/24,5:18.00 @2026/07/18,—,aragyoku_2026_formula_v6_context,2026-09-27
-女子,岱明中,1,3.0,村上 咲稀,653,10:53,640.5,10:40.5,+12.5,21,2026-09-26,"aragyoku_prior,road,road_ekiden,track",race_records,2:20.11 @2026/05/24,4:53.85 @2026/07/04,—,aragyoku_2026_formula_v6_context,2026-09-27
-女子,岱明中,2,1.855,山﨑 莉奈,412,6:52,410.0,6:50.0,+2.0,6,2026-09-26,"road_ekiden,track",race_records,2:32.23 @2026/07/19,5:28.8 @2026-08-29,—,aragyoku_2026_formula_v6_context,2026-09-27
-女子,岱明中,3,2.0,角田 亜美,448,7:28,454.7,7:34.7,-6.7,15,2026-09-26,"aragyoku_prior,road,road_ekiden,track",race_records,2:39.42 @2026/05/24,5:31.34 @2026/07/18,—,aragyoku_2026_formula_v6_context,2026-09-27
-女子,岱明中,4,2.0,増岡 里俐,466,7:46,444.8,7:24.8,+21.2,11,2026-09-26,"aragyoku_prior,road_ekiden,track",race_records,2:38.96 @2026/05/24,5:34.40 @2026/07/04,—,aragyoku_2026_formula_v6_context,2026-09-27
-女子,岱明中,5,3.0,高田 麻由,694,11:34,678.2,11:18.2,+15.8,13,2026-09-26,"aragyoku_prior,road,road_ekiden,track",race_records,—,5:10.80 @2026/07/18,—,aragyoku_2026_formula_v6_context,2026-09-27
-女子,玉名高附,1,3.0,大木 莉子,631,10:31,620.5,10:20.6,+10.5,18,2026-08-29,"aragyoku_prior,road_ekiden,track",race_records,2:22.66 @2026/07/19,4:52.55 @2026/07/04,—,aragyoku_2026_formula_v6_context,2026-09-27
-女子,玉名高附,2,1.855,田口 心晴,477,7:57,479.0,7:59.0,-2.0,4,2026-09-26,"road_ekiden,track",race_records,2:54.79 @2026/06/14,—,—,aragyoku_2026_formula_v6_context,2026-09-27
-女子,玉名高附,3,2.0,永江 春花,513,8:33,535.9,8:55.9,-22.9,2,2026-06-14,track,race_records,3:05.92 @2026/05/24,—,—,aragyoku_2026_formula_v6_context,2026-09-27
-女子,玉名高附,4,2.0,中山 結葵,533,8:53,,—,,2,2026-09-26,road_ekiden,race_records,—,—,—,aragyoku_2026_formula_v6_context,2026-09-27
-女子,玉名高附,5,3.0,戸谷 美月,710,11:50,724.9,12:04.9,-14.9,8,2026-09-20,"road_ekiden,track",race_records,2:41.95 @2026/06/14,5:32.64 @2026/07/04,—,aragyoku_2026_formula_v6_context,2026-09-27
-女子,菊水中,1,3.0,森心雅,733,12:13,706.1,11:46.1,+26.9,7,2026-09-20,"road_ekiden,track",race_records,2:35.82 @2026/06/14,5:31.41 @2026/07/04,—,aragyoku_2026_formula_v6_context,2026-09-27
-女子,菊水中,2,1.855,高集穂花,424,7:04,423.0,7:03.0,+1.0,1,2025-10-15,aragyoku_prior,race_records,—,—,—,aragyoku_2026_formula_v6_context,2026-09-27
-女子,菊水中,3,2.0,秀島礼亜,437,7:17,456.5,7:36.5,-19.5,1,2026-05-24,track,race_records,2:38.92 @2026/05/24,—,—,aragyoku_2026_formula_v6_context,2026-09-27
-女子,菊水中,4,2.0,金澤朱里,474,7:54,469.5,7:49.5,+4.5,17,2026-09-21,"aragyoku_prior,road_ekiden,track",race_records,2:50.30 @2026/04/29,5:52.65 @2026/05/09,—,aragyoku_2026_formula_v6_context,2026-09-27
-女子,菊水中,5,3.0,荒木陽依,721,12:01,681.1,11:21.1,+39.9,1,2025-10-15,aragyoku_prior,race_records,—,—,—,aragyoku_2026_formula_v6_context,2026-09-27
-女子,玉陵中,1,3.0,居石華音,612,10:12,608.7,10:08.7,+3.3,26,2026-09-21,"aragyoku_prior,road_ekiden,track",race_records,2:21.26 @2026/07/19,4:48.25 @2026/09/21,—,aragyoku_2026_formula_v6_context,2026-09-27
-女子,玉陵中,2,1.855,松本倫甲,469,7:49,468.7,7:48.7,+0.3,1,2025-10-15,aragyoku_prior,race_records,—,—,—,aragyoku_2026_formula_v6_context,2026-09-27
-女子,玉陵中,3,2.0,田上千乃,517,8:37,508.7,8:28.7,+8.3,2,2025-10-15,aragyoku_prior,race_records,—,—,—,aragyoku_2026_formula_v6_context,2026-09-27
-女子,玉陵中,4,2.0,高田奈和,526,8:46,511.2,8:31.2,+14.8,1,2025-10-15,aragyoku_prior,race_records,—,—,—,aragyoku_2026_formula_v6_context,2026-09-27
-女子,玉陵中,5,3.0,永田珠莉,745,12:25,758.3,12:38.3,-13.3,5,2026-09-21,track,race_records,2:47.69 @2026/06/14,5:49.33 @2026/09/21,—,aragyoku_2026_formula_v6_context,2026-09-27
-女子,天水中,1,3.0,田尻雛菜乃,708,11:48,702.0,11:42.0,+6.0,6,2026-09-20,"road_ekiden,track",race_records,2:34.32 @2026/07/19,—,—,aragyoku_2026_formula_v6_context,2026-09-27
-女子,天水中,2,1.855,浦田咲希,437,7:17,463.5,7:43.5,-26.5,9,2025-10-15,"aragyoku_prior,road_ekiden,track",race_records,—,—,—,aragyoku_2026_formula_v6_context,2026-09-27
-女子,天水中,3,2.0,山本桜愛,455,7:35,484.9,8:04.9,-29.9,6,2026-09-20,"road_ekiden,track",race_records,2:48.57 @2026/07/19,—,—,aragyoku_2026_formula_v6_context,2026-09-27
-女子,天水中,4,2.0,竹原晴美,492,8:12,502.3,8:22.4,-10.3,11,2026-09-20,"aragyoku_prior,road_ekiden,track",race_records,2:53.45 @2026/06/14,—,—,aragyoku_2026_formula_v6_context,2026-09-27
-女子,天水中,5,3.0,花谷明優,735,12:15,744.7,12:24.7,-9.7,13,2026-09-20,"aragyoku_prior,road_ekiden,track",race_records,2:45.47 @2026/05/24,5:43.23 @2026/07/18,—,aragyoku_2026_formula_v6_context,2026-09-27
-女子,荒尾海陽中,1,3.0,中尾菜々,733,12:13,686.6,11:26.6,+46.4,1,2025-10-15,aragyoku_prior,race_records,—,—,—,aragyoku_2026_formula_v6_context,2026-09-27
-女子,荒尾海陽中,2,1.855,前田凛子,431,7:11,446.9,7:26.9,-15.9,5,2026-09-26,"road_ekiden,track",race_records,2:43.02 @2026/06/14,—,—,aragyoku_2026_formula_v6_context,2026-09-27
-女子,荒尾海陽中,3,2.0,石川葵葉,456,7:36,491.9,8:11.9,-35.9,2,2026-09-26,"road_ekiden,track",race_records,2:50.95 @2026/06/14,—,—,aragyoku_2026_formula_v6_context,2026-09-27
-女子,荒尾海陽中,4,2.0,今村心晴,494,8:14,515.0,8:35.0,-21.0,1,2026-04-29,track,race_records,2:52.33 @2026/04/29,—,—,aragyoku_2026_formula_v6_context,2026-09-27
-女子,荒尾海陽中,5,3.0,三原悠愛,692,11:32,669.3,11:09.3,+22.7,9,2026-09-26,"aragyoku_prior,road_ekiden,track",race_records,2:41.31 @2026/06/14,5:37.53 @2026/04/29,—,aragyoku_2026_formula_v6_context,2026-09-27
-女子,荒尾三中,1,3.0,庄山 瑠那,604,10:04,591.5,9:51.5,+12.5,30,2026-09-21,"aragyoku_prior,road_ekiden,track",race_records,2:22.22 @2026/05/24,4:39.17 @2026/08/05,—,aragyoku_2026_formula_v6_context,2026-09-27
-女子,荒尾三中,2,1.855,平 夢花,439,7:19,450.0,7:30.0,-11.0,3,2026-09-21,track,race_records,2:50.75 @2026/07/19,5:51.08 @2026/09/21,—,aragyoku_2026_formula_v6_context,2026-09-27
-女子,荒尾三中,3,2.0,佐藤 妃葵,426,7:06,436.4,7:16.4,-10.4,9,2026-09-21,"aragyoku_prior,track",race_records,2:36.01 @2026/07/19,5:22.58 @2026/09/21,—,aragyoku_2026_formula_v6_context,2026-09-27
-女子,荒尾三中,4,2.0,内野 沙笑,451,7:31,465.6,7:45.6,-14.6,8,2026-09-21,"aragyoku_prior,track",race_records,2:36.71 @2026/05/24,5:24.69 @2026/09/21,—,aragyoku_2026_formula_v6_context,2026-09-27
-女子,荒尾三中,5,3.0,福島 志帆,655,10:55,664.9,11:04.9,-9.9,12,2026-09-21,"aragyoku_prior,track",race_records,2:30.77 @2026/07/19,5:05.74 @2026/09/21,—,aragyoku_2026_formula_v6_context,2026-09-27
-女子,長洲中,1,3.0,猿渡 愛梨,648,10:48,642.2,10:42.2,+5.8,17,2026-09-21,"aragyoku_prior,road_ekiden,track",race_records,2:35.90 @2026/07/19,5:16.77 @2026/07/04,10:55.81 @2026/09/21,aragyoku_2026_formula_v6_context,2026-09-27
-女子,長洲中,2,1.855,猿渡（妹）,434,7:14,,—,,0,,,manual_provisional,—,—,—,aragyoku_2026_formula_v6_context,2026-09-27
-女子,長洲中,3,2.0,山川 綾,449,7:29,449.0,7:29.0,+0.0,11,2026-07-19,"aragyoku_prior,track",race_records,2:26.83 @2026/06/14,5:22.32 @2026/05/09,—,aragyoku_2026_formula_v6_context,2026-09-27
-女子,長洲中,4,2.0,濱北 愛,440,7:20,426.5,7:06.5,+13.5,19,2026-09-21,"aragyoku_prior,road_ekiden,track",race_records,2:31.86 @2026/07/19,5:13.86 @2026/07/04,—,aragyoku_2026_formula_v6_context,2026-09-27
-女子,長洲中,5,3.0,中村 羽音,649,10:49,658.0,10:58.0,-9.0,18,2026-09-21,"aragyoku_prior,road_ekiden,track",race_records,2:24.44 @2026/07/19,5:09.38 @2026/09/21,—,aragyoku_2026_formula_v6_context,2026-09-27
-女子,玉名中,1,3.0,清藤 結唯,654,10:54,664.9,11:04.9,-10.9,22,2026-09-21,"road_ekiden,track",race_records,2:26.72 @2026/06/14,4:54.56 @2026/07/04,11:11.08 @2026/09/21,aragyoku_2026_formula_v6_context,2026-09-27
-女子,玉名中,2,1.855,亀木,395,6:35,394.7,6:34.7,+0.3,1,2025-10-15,aragyoku_prior,prior_year_B_provisional,—,—,—,aragyoku_2026_formula_v6_context,2026-09-27
-女子,玉名中,3,2.0,川原 芽吹,432,7:12,449.5,7:29.5,-17.5,11,2026-09-21,"aragyoku_prior,track",race_records,2:38.25 @2026/07/19,5:38.58 @2026/09/21,—,aragyoku_2026_formula_v6_context,2026-09-27
-女子,玉名中,4,2.0,結菜,455,7:35,441.3,7:21.3,+13.7,1,2025-10-15,aragyoku_prior,prior_year_B_provisional,—,—,—,aragyoku_2026_formula_v6_context,2026-09-27
-女子,玉名中,5,3.0,水本 星夏,661,11:01,654.0,10:54.0,+7.0,1,2025-10-15,aragyoku_prior,race_records,—,—,—,aragyoku_2026_formula_v6_context,2026-09-27
+gender,team,leg,km,name,pred_sec,pred,baseline_sb_sec,baseline_sb,delta_sec,n_races,latest_race,race_types,prediction_basis,human_adjustment,sb_800,sb_1500,sb_3000,model,as_of
+女子,南関中,1,3.0,福山 結衣,653,10:53,613.0,10:13.0,+40.0,12,2026-09-26,"aragyoku_prior,road_ekiden,track",race_records,,2:28.50 @2026/07/19,—,—,aragyoku_2026_formula_v6_context,2026-09-27
+女子,南関中,2,1.855,米田 美空,413,6:53,426.6,7:06.6,-13.6,10,2026-09-26,"aragyoku_prior,road_ekiden,track",race_records,,2:41.35 @2026/07/19,—,—,aragyoku_2026_formula_v6_context,2026-09-27
+女子,南関中,3,2.0,平山 結菜,432,7:12,460.0,7:40.0,-28.0,12,2026-09-26,"road_ekiden,track",race_records,,2:43.98 @2026/06/14,—,—,aragyoku_2026_formula_v6_context,2026-09-27
+女子,南関中,4,2.0,原賀 美和,463,7:43,473.0,7:53.0,-10.0,2,2026-09-26,road_ekiden,race_records,,—,—,—,aragyoku_2026_formula_v6_context,2026-09-27
+女子,南関中,5,3.0,堀田 稔々,646,10:46,650.2,10:50.2,-4.2,19,2026-09-26,"aragyoku_prior,road_ekiden,track",race_records,,2:33.22 @2026/05/24,5:18.00 @2026/07/18,—,aragyoku_2026_formula_v6_context,2026-09-27
+女子,岱明中,1,3.0,村上 咲稀,653,10:53,640.5,10:40.5,+12.5,21,2026-09-26,"aragyoku_prior,road,road_ekiden,track",race_records,,2:20.11 @2026/05/24,4:53.85 @2026/07/04,—,aragyoku_2026_formula_v6_context,2026-09-27
+女子,岱明中,2,1.855,山﨑 莉奈,412,6:52,410.0,6:50.0,+2.0,6,2026-09-26,"road_ekiden,track",race_records,,2:32.23 @2026/07/19,5:28.8 @2026-08-29,—,aragyoku_2026_formula_v6_context,2026-09-27
+女子,岱明中,3,2.0,角田 亜美,448,7:28,454.7,7:34.7,-6.7,15,2026-09-26,"aragyoku_prior,road,road_ekiden,track",race_records,,2:39.42 @2026/05/24,5:31.34 @2026/07/18,—,aragyoku_2026_formula_v6_context,2026-09-27
+女子,岱明中,4,2.0,増岡 里俐,466,7:46,444.8,7:24.8,+21.2,11,2026-09-26,"aragyoku_prior,road_ekiden,track",race_records,,2:38.96 @2026/05/24,5:34.40 @2026/07/04,—,aragyoku_2026_formula_v6_context,2026-09-27
+女子,岱明中,5,3.0,高田 麻由,694,11:34,678.2,11:18.2,+15.8,13,2026-09-26,"aragyoku_prior,road,road_ekiden,track",race_records,,—,5:10.80 @2026/07/18,—,aragyoku_2026_formula_v6_context,2026-09-27
+女子,玉名高附,1,3.0,大木 莉子,631,10:31,620.5,10:20.6,+10.5,18,2026-08-29,"aragyoku_prior,road_ekiden,track",race_records,,2:22.66 @2026/07/19,4:52.55 @2026/07/04,—,aragyoku_2026_formula_v6_context,2026-09-27
+女子,玉名高附,2,1.855,田口 心晴,477,7:57,479.0,7:59.0,-2.0,4,2026-09-26,"road_ekiden,track",race_records,,2:54.79 @2026/06/14,—,—,aragyoku_2026_formula_v6_context,2026-09-27
+女子,玉名高附,3,2.0,永江 春花,513,8:33,535.9,8:55.9,-22.9,2,2026-06-14,track,race_records,,3:05.92 @2026/05/24,—,—,aragyoku_2026_formula_v6_context,2026-09-27
+女子,玉名高附,4,2.0,中山 結葵,533,8:53,,—,,2,2026-09-26,road_ekiden,race_records,,—,—,—,aragyoku_2026_formula_v6_context,2026-09-27
+女子,玉名高附,5,3.0,戸谷 美月,710,11:50,724.9,12:04.9,-14.9,8,2026-09-20,"road_ekiden,track",race_records,,2:41.95 @2026/06/14,5:32.64 @2026/07/04,—,aragyoku_2026_formula_v6_context,2026-09-27
+女子,菊水中,1,3.0,森心雅,733,12:13,706.1,11:46.1,+26.9,7,2026-09-20,"road_ekiden,track",race_records,,2:35.82 @2026/06/14,5:31.41 @2026/07/04,—,aragyoku_2026_formula_v6_context,2026-09-27
+女子,菊水中,2,1.855,高集穂花,424,7:04,423.0,7:03.0,+1.0,1,2025-10-15,aragyoku_prior,race_records,,—,—,—,aragyoku_2026_formula_v6_context,2026-09-27
+女子,菊水中,3,2.0,秀島礼亜,437,7:17,456.5,7:36.5,-19.5,1,2026-05-24,track,race_records,,2:38.92 @2026/05/24,—,—,aragyoku_2026_formula_v6_context,2026-09-27
+女子,菊水中,4,2.0,金澤朱里,474,7:54,469.5,7:49.5,+4.5,17,2026-09-21,"aragyoku_prior,road_ekiden,track",race_records,,2:50.30 @2026/04/29,5:52.65 @2026/05/09,—,aragyoku_2026_formula_v6_context,2026-09-27
+女子,菊水中,5,3.0,荒木陽依,721,12:01,681.1,11:21.1,+39.9,1,2025-10-15,aragyoku_prior,race_records,,—,—,—,aragyoku_2026_formula_v6_context,2026-09-27
+女子,玉陵中,1,3.0,居石華音,612,10:12,608.7,10:08.7,+3.3,26,2026-09-21,"aragyoku_prior,road_ekiden,track",race_records,,2:21.26 @2026/07/19,4:48.25 @2026/09/21,—,aragyoku_2026_formula_v6_context,2026-09-27
+女子,玉陵中,2,1.855,松本倫甲,469,7:49,468.7,7:48.7,+0.3,1,2025-10-15,aragyoku_prior,race_records,,—,—,—,aragyoku_2026_formula_v6_context,2026-09-27
+女子,玉陵中,3,2.0,田上千乃,517,8:37,508.7,8:28.7,+8.3,2,2025-10-15,aragyoku_prior,race_records,,—,—,—,aragyoku_2026_formula_v6_context,2026-09-27
+女子,玉陵中,4,2.0,高田奈和,526,8:46,511.2,8:31.2,+14.8,1,2025-10-15,aragyoku_prior,race_records,,—,—,—,aragyoku_2026_formula_v6_context,2026-09-27
+女子,玉陵中,5,3.0,永田珠莉,745,12:25,758.3,12:38.3,-13.3,5,2026-09-21,track,race_records,,2:47.69 @2026/06/14,5:49.33 @2026/09/21,—,aragyoku_2026_formula_v6_context,2026-09-27
+女子,天水中,1,3.0,田尻雛菜乃,708,11:48,702.0,11:42.0,+6.0,6,2026-09-20,"road_ekiden,track",race_records,,2:34.32 @2026/07/19,—,—,aragyoku_2026_formula_v6_context,2026-09-27
+女子,天水中,2,1.855,浦田咲希,437,7:17,463.5,7:43.5,-26.5,9,2025-10-15,"aragyoku_prior,road_ekiden,track",race_records,,—,—,—,aragyoku_2026_formula_v6_context,2026-09-27
+女子,天水中,3,2.0,山本桜愛,455,7:35,484.9,8:04.9,-29.9,6,2026-09-20,"road_ekiden,track",race_records,,2:48.57 @2026/07/19,—,—,aragyoku_2026_formula_v6_context,2026-09-27
+女子,天水中,4,2.0,竹原晴美,492,8:12,502.3,8:22.4,-10.3,11,2026-09-20,"aragyoku_prior,road_ekiden,track",race_records,,2:53.45 @2026/06/14,—,—,aragyoku_2026_formula_v6_context,2026-09-27
+女子,天水中,5,3.0,花谷明優,735,12:15,744.7,12:24.7,-9.7,13,2026-09-20,"aragyoku_prior,road_ekiden,track",race_records,,2:45.47 @2026/05/24,5:43.23 @2026/07/18,—,aragyoku_2026_formula_v6_context,2026-09-27
+女子,荒尾海陽中,1,3.0,中尾菜々,733,12:13,686.6,11:26.6,+46.4,1,2025-10-15,aragyoku_prior,race_records,,—,—,—,aragyoku_2026_formula_v6_context,2026-09-27
+女子,荒尾海陽中,2,1.855,前田凛子,431,7:11,446.9,7:26.9,-15.9,5,2026-09-26,"road_ekiden,track",race_records,,2:43.02 @2026/06/14,—,—,aragyoku_2026_formula_v6_context,2026-09-27
+女子,荒尾海陽中,3,2.0,石川葵葉,456,7:36,491.9,8:11.9,-35.9,2,2026-09-26,"road_ekiden,track",race_records,,2:50.95 @2026/06/14,—,—,aragyoku_2026_formula_v6_context,2026-09-27
+女子,荒尾海陽中,4,2.0,今村心晴,494,8:14,515.0,8:35.0,-21.0,1,2026-04-29,track,race_records,,2:52.33 @2026/04/29,—,—,aragyoku_2026_formula_v6_context,2026-09-27
+女子,荒尾海陽中,5,3.0,三原悠愛,692,11:32,669.3,11:09.3,+22.7,9,2026-09-26,"aragyoku_prior,road_ekiden,track",race_records,,2:41.31 @2026/06/14,5:37.53 @2026/04/29,—,aragyoku_2026_formula_v6_context,2026-09-27
+女子,荒尾三中,1,3.0,庄山 瑠那,604,10:04,591.5,9:51.5,+12.5,30,2026-09-21,"aragyoku_prior,road_ekiden,track",race_records,,2:22.22 @2026/05/24,4:39.17 @2026/08/05,—,aragyoku_2026_formula_v6_context,2026-09-27
+女子,荒尾三中,2,1.855,平 夢花,439,7:19,450.0,7:30.0,-11.0,3,2026-09-21,track,race_records,,2:50.75 @2026/07/19,5:51.08 @2026/09/21,—,aragyoku_2026_formula_v6_context,2026-09-27
+女子,荒尾三中,3,2.0,佐藤 妃葵,426,7:06,436.4,7:16.4,-10.4,9,2026-09-21,"aragyoku_prior,track",race_records,,2:36.01 @2026/07/19,5:22.58 @2026/09/21,—,aragyoku_2026_formula_v6_context,2026-09-27
+女子,荒尾三中,4,2.0,内野 沙笑,451,7:31,465.6,7:45.6,-14.6,8,2026-09-21,"aragyoku_prior,track",race_records,,2:36.71 @2026/05/24,5:24.69 @2026/09/21,—,aragyoku_2026_formula_v6_context,2026-09-27
+女子,荒尾三中,5,3.0,福島 志帆,655,10:55,664.9,11:04.9,-9.9,12,2026-09-21,"aragyoku_prior,track",race_records,,2:30.77 @2026/07/19,5:05.74 @2026/09/21,—,aragyoku_2026_formula_v6_context,2026-09-27
+女子,長洲中,1,3.0,猿渡 愛梨,648,10:48,642.2,10:42.2,+5.8,17,2026-09-21,"aragyoku_prior,road_ekiden,track",race_records,,2:35.90 @2026/07/19,5:16.77 @2026/07/04,10:55.81 @2026/09/21,aragyoku_2026_formula_v6_context,2026-09-27
+女子,長洲中,2,1.855,猿渡（妹）,434,7:14,,—,,0,,,manual_provisional,猿渡（妹）の暫定値。村里の旧予想7:16より2秒速く設定,—,—,—,aragyoku_2026_formula_v6_context,2026-09-27
+女子,長洲中,3,2.0,山川 綾,449,7:29,449.0,7:29.0,+0.0,11,2026-07-19,"aragyoku_prior,track",race_records,伸びが限定的との情報を反映し、予測の過大な上昇を抑える（約7:29）,2:26.83 @2026/06/14,5:22.32 @2026/05/09,—,aragyoku_2026_formula_v6_context,2026-09-27
+女子,長洲中,4,2.0,濱北 愛,440,7:20,426.5,7:06.5,+13.5,19,2026-09-21,"aragyoku_prior,road_ekiden,track",race_records,,2:31.86 @2026/07/19,5:13.86 @2026/07/04,—,aragyoku_2026_formula_v6_context,2026-09-27
+女子,長洲中,5,3.0,中村 羽音,649,10:49,658.0,10:58.0,-9.0,18,2026-09-21,"aragyoku_prior,road_ekiden,track",race_records,,2:24.44 @2026/07/19,5:09.38 @2026/09/21,—,aragyoku_2026_formula_v6_context,2026-09-27
+女子,玉名中,1,3.0,清藤 結唯,654,10:54,664.9,11:04.9,-10.9,22,2026-09-21,"road_ekiden,track",race_records,,2:26.72 @2026/06/14,4:54.56 @2026/07/04,11:11.08 @2026/09/21,aragyoku_2026_formula_v6_context,2026-09-27
+女子,玉名中,2,1.855,亀木,395,6:35,394.7,6:34.7,+0.3,1,2025-10-15,aragyoku_prior,prior_year_B_provisional,,—,—,—,aragyoku_2026_formula_v6_context,2026-09-27
+女子,玉名中,3,2.0,川原 芽吹,432,7:12,449.5,7:29.5,-17.5,11,2026-09-21,"aragyoku_prior,track",race_records,,2:38.25 @2026/07/19,5:38.58 @2026/09/21,—,aragyoku_2026_formula_v6_context,2026-09-27
+女子,玉名中,4,2.0,結菜,455,7:35,441.3,7:21.3,+13.7,1,2025-10-15,aragyoku_prior,prior_year_B_provisional,,—,—,—,aragyoku_2026_formula_v6_context,2026-09-27
+女子,玉名中,5,3.0,水本 星夏,661,11:01,654.0,10:54.0,+7.0,1,2025-10-15,aragyoku_prior,race_records,,—,—,—,aragyoku_2026_formula_v6_context,2026-09-27
