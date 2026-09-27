@@ -2591,13 +2591,13 @@ function offlineAnswer(
     /男子|女子/.test(question) &&
     /[1-6]区/.test(question) &&
     /順位/.test(question) &&
-    !/区間順位|通過順位|最速|一番速|ランキング/.test(question) &&
+    !/区間順位|通過順位|総合順位|最速|一番速|ランキング/.test(question) &&
     !/荒尾海陽|玉高附属|玉名付属|玉名附属|荒尾三|荒尾四|三加和|南関|天水|岱明|有明|玉南|玉名|玉東|玉陵|腹栄|荒尾|菊水|長洲/.test(question);
   if (ambiguousLegRankType) {
     lines.push("区間順位と通過順位のどちらを知りたいか指定してください。");
     return lines.join("\n");
   }
-  const exactLegWinnerRank = question.match(/(?:(?:区間(?:順位|タイム)?|通過順位)\s*(?:第)?(\d{1,2})位|区間タイム.*?(\d{1,2})位|(?<!\d)(\d{1,2})位|区間一位)/);
+  const exactLegWinnerRank = question.match(/(?:(?:区間(?:順位|タイム)?|通過順位|総合順位)\s*(?:第)?(\d{1,2})位|区間タイム.*?(\d{1,2})位|(?<!\d)(\d{1,2})位|区間一位)/);
   const namedLegTeam = /荒尾海陽|玉高附属|玉名付属|玉名附属|荒尾三|荒尾四|三加和|南関|天水|岱明|有明|玉南|玉名|玉東|玉陵|腹栄|荒尾|菊水|長洲/.test(question);
   if (/20\d{2}/.test(question) && /男子|女子/.test(question) && /[1-6]区/.test(question) && exactLegWinnerRank && !namedLegTeam && !/位まで|位以内|位から/.test(question)) {
     const year = question.match(/20\d{2}/)![0];
@@ -2613,10 +2613,10 @@ function offlineAnswer(
     const legSection = legStart >= 0 ? genderSection.slice(legStart, nextLeg >= 0 ? nextLeg : undefined) : genderSection;
     const rows = [...legSection.matchAll(/\|\s*(\d+)\s*\|\s*([^|]+)\|\s*([^|]+)\|\s*\d+\s*\|\s*([^|]+?)\s*\|\s*[^|]+\|\s*(\d+)\s*\|\s*(\d+)\s*\|/g)];
     const rank = Number(exactLegWinnerRank[1] ?? exactLegWinnerRank[2] ?? exactLegWinnerRank[3] ?? 1);
-    const rankIndex = /通過順位/.test(question) ? 5 : 6;
+    const rankIndex = /総合順位/.test(question) ? 1 : /通過順位/.test(question) ? 5 : 6;
     const matchingRows = rows.filter((candidate) => Number(candidate[rankIndex]) === rank);
     if (matchingRows.length > 0) {
-      lines.push(`${year}年荒玉駅伝${gender}${leg}区の${/通過順位/.test(question) ? "通過順位" : "区間"}${rank}位: ${matchingRows.map((row) => `${row[3]!.trim()}（${row[2]!.trim()}）${row[4]!.trim()}`).join("、")}。`);
+      lines.push(`${year}年荒玉駅伝${gender}${leg}区の${/総合順位/.test(question) ? "総合順位" : /通過順位/.test(question) ? "通過順位" : "区間"}${rank}位: ${matchingRows.map((row) => `${row[3]!.trim()}（${row[2]!.trim()}）${row[4]!.trim()}`).join("、")}。`);
       return lines.join("\n");
     }
   }
@@ -2640,8 +2640,8 @@ function offlineAnswer(
   const allTeamLegRankListQuestion =
     /20\d{2}/.test(question) &&
     /[1-6]区/.test(question) &&
-    /区間順位|区間順|通過順位|順位順|最速|一番速|最も速|もっとも速|最遅|一番遅|最も遅|もっとも遅|タイム順|速い順|トップ\s*\d+|上位\s*\d+|ベスト\s*\d+|\d+位まで|\d+位以内|1位から/.test(question) &&
-    /ランキング|順位順|全チーム|全順位|一覧|最速|一番速|最も速|もっとも速|最遅|一番遅|最も遅|もっとも遅|タイム順|速い順|トップ\s*\d+|上位\s*\d+|ベスト\s*\d+|\d+位まで|\d+位以内|1位から|区間順位|通過順位/.test(question) &&
+    /区間順位|区間順|通過順位|総合順位|順位順|最速|一番速|最も速|もっとも速|最遅|一番遅|最も遅|もっとも遅|タイム順|速い順|トップ\s*\d+|上位\s*\d+|ベスト\s*\d+|\d+位まで|\d+位以内|1位から/.test(question) &&
+    /ランキング|順位順|全チーム|全順位|一覧|最速|一番速|最も速|もっとも速|最遅|一番遅|最も遅|もっとも遅|タイム順|速い順|トップ\s*\d+|上位\s*\d+|ベスト\s*\d+|\d+位まで|\d+位以内|1位から|区間順位|通過順位|総合順位/.test(question) &&
     !/玉高附属|玉名付属|玉名附属|荒尾三|荒尾四|荒尾海陽|三加和|南関|天水|岱明|有明|玉南|玉名|玉東|玉陵|腹栄|菊水|長洲/.test(question);
   if (allTeamLegRankListQuestion) {
     const leg = question.match(/(?<!\d)([1-6])区/)?.[1];
@@ -2659,6 +2659,7 @@ function offlineAnswer(
     const slowest = /最遅|一番遅|最も遅|もっとも遅/.test(question);
     const timeOrder = /タイム順|速い順/.test(question);
     const passingRank = /通過順位/.test(question);
+    const overallRank = /総合順位/.test(question);
     if (fastest || slowest || timeOrder) {
       const toSeconds = (value: string) => {
         const [minutes = "0", seconds = "0"] = value.trim().split(":");
@@ -2666,7 +2667,8 @@ function offlineAnswer(
       };
       rows.sort((a, b) => (toSeconds(a[4]!) - toSeconds(b[4]!)) * (slowest ? -1 : 1));
     } else {
-      rows.sort((a, b) => Number(passingRank ? a[5] : a[6]) - Number(passingRank ? b[5] : b[6]));
+      const rankIndex = overallRank ? 1 : passingRank ? 5 : 6;
+      rows.sort((a, b) => Number(a[rankIndex]) - Number(b[rankIndex]));
     }
     if (leg && rows.length > 0) {
       const year = question.match(/20\d{2}/)![0];
@@ -2674,13 +2676,14 @@ function offlineAnswer(
       const topCount = Number(topCountMatch?.[1] ?? topCountMatch?.[2] ?? topCountMatch?.[3] ?? (fastest || slowest ? 1 : rows.length));
       let displayRows = rows.slice(0, topCount);
       if (!fastest && !slowest && topCount > 0 && topCount < rows.length) {
-        const boundaryRank = Number(passingRank ? displayRows.at(-1)?.[5] : displayRows.at(-1)?.[6]);
-        displayRows = rows.filter((row) => Number(passingRank ? row[5] : row[6]) <= boundaryRank);
+        const rankIndex = overallRank ? 1 : passingRank ? 5 : 6;
+        const boundaryRank = Number(displayRows.at(-1)?.[rankIndex]);
+        displayRows = rows.filter((row) => Number(row[rankIndex]) <= boundaryRank);
       }
       const listing = fastest || slowest || timeOrder
         ? displayRows.map((row, index) => `${index + 1}位 ${row[2]!.trim()} ${row[4]!.trim()}（区間順位${row[6]}位）`)
-        : displayRows.map((row) => `${passingRank ? row[5] : row[6]}位 ${row[3]!.trim()}（${row[2]!.trim()}）${row[4]!.trim()}`);
-      lines.push(`${year}年荒玉駅伝${gender}${leg}区の${fastest ? "最速" : slowest ? "最遅" : timeOrder ? "区間記録順" : passingRank ? "通過順位" : "区間順位"}: ${listing.join("、")}。`);
+        : displayRows.map((row) => `${overallRank ? row[1] : passingRank ? row[5] : row[6]}位 ${row[3]!.trim()}（${row[2]!.trim()}）${row[4]!.trim()}`);
+      lines.push(`${year}年荒玉駅伝${gender}${leg}区の${fastest ? "最速" : slowest ? "最遅" : timeOrder ? "区間記録順" : overallRank ? "総合順位" : passingRank ? "通過順位" : "区間順位"}: ${listing.join("、")}。`);
       return lines.join("\n");
     }
   }
@@ -4268,6 +4271,9 @@ export async function answerQuestion(
     .replace(/区間記録順位/g, "区間順位")
     .replace(/区間記録ランキング/g, "タイム順")
     .replace(/通過順(?!位)/g, "通過順位")
+    .replace(/玉名(?:附属|付属|附中|付中)|玉高附中/g, "玉高附属")
+    .replace(/荒尾第(?:三|3)中?/g, "荒尾三")
+    .replace(/荒尾第(?:四|4)中?/g, "荒尾四")
     .replace(/\bTOP\s*(\d+)/gi, "トップ$1")
     .replace(/jog/gi, "jog")
     .replace(/1,000/g, "1000")
@@ -4980,12 +4986,12 @@ export async function answerQuestion(
     );
   const legRankQuestionQ =
     /男子|女子/.test(question) &&
-    /(?:荒玉|駅伝).*(?:区間順位|区間順|区間タイム|通過順位|最速|一番速|最も速|もっとも速|最遅|一番遅|最も遅|もっとも遅|タイム順|速い順)|20\d{2}年?.*[1-6]区.*(?:区間順位|区間順|区間タイム|通過順位|区間[1-3]位|順位順|トップ\s*\d+|上位\s*\d+|ベスト\s*\d+|\d+位まで|\d+位以内|1位から|最速|一番速|最も速|もっとも速|最遅|一番遅|最も遅|もっとも遅|タイム順|速い順)/.test(question);
+    /(?:荒玉|駅伝).*(?:区間順位|区間順|区間タイム|通過順位|総合順位|最速|一番速|最も速|もっとも速|最遅|一番遅|最も遅|もっとも遅|タイム順|速い順)|20\d{2}年?.*[1-6]区.*(?:区間順位|区間順|区間タイム|通過順位|総合順位|区間[1-3]位|順位順|トップ\s*\d+|上位\s*\d+|ベスト\s*\d+|\d+位まで|\d+位以内|1位から|最速|一番速|最も速|もっとも速|最遅|一番遅|最も遅|もっとも遅|タイム順|速い順)/.test(question);
   const allTeamLegRankListQ =
     /20\d{2}/.test(question) &&
     /[1-6]区/.test(question) &&
-    /区間順位|区間順|区間タイム|通過順位|順位順|最速|一番速|最も速|もっとも速|最遅|一番遅|最も遅|もっとも遅|タイム順|速い順|トップ\s*\d+|上位\s*\d+|ベスト\s*\d+|\d+位まで|\d+位以内|1位から/.test(question) &&
-    /ランキング|順位順|全チーム|全順位|一覧|最速|一番速|最も速|もっとも速|最遅|一番遅|最も遅|もっとも遅|タイム順|速い順|トップ\s*\d+|上位\s*\d+|ベスト\s*\d+|\d+位まで|\d+位以内|1位から/.test(question);
+    /区間順位|区間順|区間タイム|通過順位|総合順位|順位順|最速|一番速|最も速|もっとも速|最遅|一番遅|最も遅|もっとも遅|タイム順|速い順|トップ\s*\d+|上位\s*\d+|ベスト\s*\d+|\d+位まで|\d+位以内|1位から/.test(question) &&
+    /ランキング|順位順|全チーム|全順位|一覧|最速|一番速|最も速|もっとも速|最遅|一番遅|最も遅|もっとも遅|タイム順|速い順|トップ\s*\d+|上位\s*\d+|ベスト\s*\d+|\d+位まで|\d+位以内|1位から|区間順位|通過順位|総合順位/.test(question);
   const explicitLegAwardQ =
     (/(?:荒玉|駅伝)/.test(question) || /20\d{2}/.test(question) && /[1-6]区/.test(question)) &&
     /区間賞|区間\d{1,2}位|区間[1-3]位|区間一位|区間タイム.*\d{1,2}位/.test(question) &&
@@ -6280,7 +6286,7 @@ export async function answerQuestion(
     /20\d{2}/.test(question) &&
     /男子|女子/.test(question) &&
     /[1-6]区/.test(question) &&
-    /区間(?:順位|順|タイム|\d{1,2}位|[1-3]位|一位)|通過順位/.test(question);
+    /区間(?:順位|順|タイム|\d{1,2}位|[1-3]位|一位)|通過順位|総合順位/.test(question);
   if (exactYearLegRankQ) {
     const year = question.match(/20\d{2}/)![0];
     preferredSources = [`out-analysis/aragyoku-years/${year}.md`];
@@ -6292,6 +6298,15 @@ export async function answerQuestion(
     /[1-6]区/.test(question) &&
     /順位一覧|順位表/.test(question);
   if (ambiguousLegRankListQ) {
+    const year = question.match(/20\d{2}/)![0];
+    preferredSources = ["out-analysis/aragyoku-years/" + year + ".md"];
+  }
+  const annualLegRankScopeQ =
+    /20\d{2}/.test(question) &&
+    /男子|女子/.test(question) &&
+    /[1-6]区/.test(question) &&
+    /順位/.test(question);
+  if (annualLegRankScopeQ) {
     const year = question.match(/20\d{2}/)![0];
     preferredSources = ["out-analysis/aragyoku-years/" + year + ".md"];
   }
