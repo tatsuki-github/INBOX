@@ -70,8 +70,9 @@ def distance(value: str) -> float | None:
 def fmt(sec: float | None) -> str:
     if sec is None or not math.isfinite(sec):
         return "—"
-    sec = round(sec, 1)
-    return f"{int(sec // 60)}:{sec % 60:04.1f}"
+    # Relay results and forecasts are recorded to whole seconds.
+    whole = math.floor(sec + 0.5) if sec >= 0 else math.ceil(sec - 0.5)
+    return f"{int(whole // 60)}:{int(whole % 60):02d}"
 
 
 def load_targets() -> list[dict]:
@@ -547,7 +548,8 @@ def fit(targets: list[dict], obs: list[dict]) -> tuple[dict, list[dict], list[di
             f = features(by_key[t["key"]], t["km"], k, k_short, rc,
                          junior_course_factor=transfer["junior_course_factor"],
                          peak_factor=transfer["peak_factor"])
-            pred = None if f is None else course * (BEST_SHARE * f["best"] + (1 - BEST_SHARE) * f["typical"])
+            raw_pred = None if f is None else course * (BEST_SHARE * f["best"] + (1 - BEST_SHARE) * f["typical"])
+            pred = None if raw_pred is None else math.floor(raw_pred + 0.5)
             comparisons.append({"gender": gender, "team": t["team"], "leg": t["leg"],
                                 "km": t["km"], "name": t["name"], "baseline_sec": t["baseline"],
                                 "formula_sec": pred, "error_sec": None if pred is None or t["baseline"] is None else pred - t["baseline"],
@@ -852,7 +854,7 @@ def write_report(obs: list[dict], comparisons: list[dict], params: dict,
         f"| {junior['date']} 県ジュニア駅伝 {junior['distance_km']:g}km | {fmt(junior['time_sec'])} | {fmt(q_junior)} |",
         "",
         f"`B = {example['best_sec']:.2f}秒`。全{example['n_races']}件のうち直近集合{example['n_recent_races']}件から `Q_recent = {example['typical_sec']:.2f}秒`。",
-        f"`T = {p['baseline_scale']:.6f} × (0.30 × {example['best_sec']:.2f} + 0.70 × {other_value:.2f}) = {example['formula_sec']:.2f}秒 = {fmt(example['formula_sec'])}`。旧SB値は{fmt(example['baseline_sec'])}で、差は{example['error_sec']:+.1f}秒。",
+        f"`T = {p['baseline_scale']:.6f} × (0.30 × {example['best_sec']:.2f} + 0.70 × {other_value:.2f}) = {example['formula_sec']:.0f}秒`（1秒単位に四捨五入）。旧SB値は{fmt(example['baseline_sec'])}で、差は{example['error_sec']:+.1f}秒。",
         "",
         "## 過去本番への診断と次の校正",
         "",
@@ -1009,7 +1011,7 @@ def publish_predictions(comparisons: list[dict], params: dict) -> None:
             r = by_slot.get((gender, row["team"], int(row["leg"])))
             source_rows.append({"gender": gender, "team": row["team"], "leg": row["leg"],
                                 "km": row["km"], "name": row["name"],
-                                "pred_sec": f"{r['formula_sec']:.1f}" if r and r["formula_sec"] is not None else "",
+                                "pred_sec": str(r["formula_sec"]) if r and r["formula_sec"] is not None else "",
                                 "pred": fmt(r["formula_sec"]) if r else "—",
                                 "baseline_sb_sec": row["pred_sec"],
                                 "baseline_sb": row["pred"],
