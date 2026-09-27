@@ -2599,7 +2599,7 @@ function offlineAnswer(
   }
   const exactLegWinnerRank = question.match(/(?:(?:区間(?:順位|タイム)?|通過順位)\s*(?:第)?(\d{1,2})位|区間タイム.*?(\d{1,2})位|(?<!\d)(\d{1,2})位|区間一位)/);
   const namedLegTeam = /荒尾海陽|玉高附属|玉名付属|玉名附属|荒尾三|荒尾四|三加和|南関|天水|岱明|有明|玉南|玉名|玉東|玉陵|腹栄|荒尾|菊水|長洲/.test(question);
-  if (/20\d{2}/.test(question) && /男子|女子/.test(question) && /[1-6]区/.test(question) && exactLegWinnerRank && !namedLegTeam) {
+  if (/20\d{2}/.test(question) && /男子|女子/.test(question) && /[1-6]区/.test(question) && exactLegWinnerRank && !namedLegTeam && !/位まで|位以内|位から/.test(question)) {
     const year = question.match(/20\d{2}/)![0];
     const leg = question.match(/(?<!\d)([1-6])区/)![1]!;
     const gender = /女子/.test(question) ? "女子" : "男子";
@@ -2640,8 +2640,8 @@ function offlineAnswer(
   const allTeamLegRankListQuestion =
     /20\d{2}/.test(question) &&
     /[1-6]区/.test(question) &&
-    /区間順位|区間順|通過順位|順位順|最速|一番速|最も速|もっとも速|最遅|一番遅|最も遅|もっとも遅|タイム順|速い順|トップ\s*\d+/.test(question) &&
-    /ランキング|順位順|全チーム|全順位|一覧|最速|一番速|最も速|もっとも速|最遅|一番遅|最も遅|もっとも遅|タイム順|速い順|トップ\s*\d+|区間順位|通過順位/.test(question) &&
+    /区間順位|区間順|通過順位|順位順|最速|一番速|最も速|もっとも速|最遅|一番遅|最も遅|もっとも遅|タイム順|速い順|トップ\s*\d+|上位\s*\d+|ベスト\s*\d+|\d+位まで|\d+位以内|1位から/.test(question) &&
+    /ランキング|順位順|全チーム|全順位|一覧|最速|一番速|最も速|もっとも速|最遅|一番遅|最も遅|もっとも遅|タイム順|速い順|トップ\s*\d+|上位\s*\d+|ベスト\s*\d+|\d+位まで|\d+位以内|1位から|区間順位|通過順位/.test(question) &&
     !/玉高附属|玉名付属|玉名附属|荒尾三|荒尾四|荒尾海陽|三加和|南関|天水|岱明|有明|玉南|玉名|玉東|玉陵|腹栄|菊水|長洲/.test(question);
   if (allTeamLegRankListQuestion) {
     const leg = question.match(/(?<!\d)([1-6])区/)?.[1];
@@ -2670,7 +2670,8 @@ function offlineAnswer(
     }
     if (leg && rows.length > 0) {
       const year = question.match(/20\d{2}/)![0];
-      const topCount = Number(question.match(/トップ\s*(\d+)/)?.[1] ?? (fastest || slowest ? 1 : rows.length));
+      const topCountMatch = question.match(/(?:トップ|上位|ベスト)\s*(\d+)|(\d+)位(?:まで|以内)|1位から\s*(\d+)位/);
+      const topCount = Number(topCountMatch?.[1] ?? topCountMatch?.[2] ?? topCountMatch?.[3] ?? (fastest || slowest ? 1 : rows.length));
       let displayRows = rows.slice(0, topCount);
       if (!fastest && !slowest && topCount > 0 && topCount < rows.length) {
         const boundaryRank = Number(passingRank ? displayRows.at(-1)?.[5] : displayRows.at(-1)?.[6]);
@@ -4262,9 +4263,12 @@ export async function answerQuestion(
   question = question
     .normalize("NFKC")
     .replace(/第?([一二三四五六])区/g, (_match, numeral: string) => String("一二三四五六".indexOf(numeral) + 1) + "区")
+    .replace(/([一二三四五])位/g, (_match, numeral: string) => String("一二三四五".indexOf(numeral) + 1) + "位")
+    .replace(/(\d+)位?\s*[〜～]\s*(\d+)位/g, "$1位から$2位")
     .replace(/区間記録順位/g, "区間順位")
     .replace(/区間記録ランキング/g, "タイム順")
     .replace(/通過順(?!位)/g, "通過順位")
+    .replace(/\bTOP\s*(\d+)/gi, "トップ$1")
     .replace(/jog/gi, "jog")
     .replace(/1,000/g, "1000")
     .replace(/1\s+000/g, "1000")
@@ -4976,12 +4980,12 @@ export async function answerQuestion(
     );
   const legRankQuestionQ =
     /男子|女子/.test(question) &&
-    /(?:荒玉|駅伝).*(?:区間順位|区間順|区間タイム|通過順位|最速|一番速|最も速|もっとも速|最遅|一番遅|最も遅|もっとも遅|タイム順|速い順)|20\d{2}年?.*[1-6]区.*(?:区間順位|区間順|区間タイム|通過順位|区間[1-3]位|順位順|トップ\s*\d+|最速|一番速|最も速|もっとも速|最遅|一番遅|最も遅|もっとも遅|タイム順|速い順)/.test(question);
+    /(?:荒玉|駅伝).*(?:区間順位|区間順|区間タイム|通過順位|最速|一番速|最も速|もっとも速|最遅|一番遅|最も遅|もっとも遅|タイム順|速い順)|20\d{2}年?.*[1-6]区.*(?:区間順位|区間順|区間タイム|通過順位|区間[1-3]位|順位順|トップ\s*\d+|上位\s*\d+|ベスト\s*\d+|\d+位まで|\d+位以内|1位から|最速|一番速|最も速|もっとも速|最遅|一番遅|最も遅|もっとも遅|タイム順|速い順)/.test(question);
   const allTeamLegRankListQ =
     /20\d{2}/.test(question) &&
     /[1-6]区/.test(question) &&
-    /区間順位|区間順|区間タイム|通過順位|順位順|最速|一番速|最も速|もっとも速|最遅|一番遅|最も遅|もっとも遅|タイム順|速い順|トップ\s*\d+/.test(question) &&
-    /ランキング|順位順|全チーム|全順位|一覧|最速|一番速|最も速|もっとも速|最遅|一番遅|最も遅|もっとも遅|タイム順|速い順|トップ\s*\d+/.test(question);
+    /区間順位|区間順|区間タイム|通過順位|順位順|最速|一番速|最も速|もっとも速|最遅|一番遅|最も遅|もっとも遅|タイム順|速い順|トップ\s*\d+|上位\s*\d+|ベスト\s*\d+|\d+位まで|\d+位以内|1位から/.test(question) &&
+    /ランキング|順位順|全チーム|全順位|一覧|最速|一番速|最も速|もっとも速|最遅|一番遅|最も遅|もっとも遅|タイム順|速い順|トップ\s*\d+|上位\s*\d+|ベスト\s*\d+|\d+位まで|\d+位以内|1位から/.test(question);
   const explicitLegAwardQ =
     (/(?:荒玉|駅伝)/.test(question) || /20\d{2}/.test(question) && /[1-6]区/.test(question)) &&
     /区間賞|区間\d{1,2}位|区間[1-3]位|区間一位|区間タイム.*\d{1,2}位/.test(question) &&

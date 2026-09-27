@@ -1080,6 +1080,33 @@ describe("answerQuestion", () => {
     }
   });
 
+  it.each([
+    ["2025年男子3区区間順位上位3校", "3位 一瀬彪眞（玉陵）9:26"],
+    ["2025年男子3区区間順位TOP3", "3位 一瀬彪眞（玉陵）9:26"],
+    ["2025年男子3区の区間順位3位まで", "3位 一瀬彪眞（玉陵）9:26"],
+    ["2025年男子3区の区間順位3位以内はどこ？", "3位 一瀬彪眞（玉陵）9:26"],
+    ["2025年男子3区の区間順位ベスト3", "3位 一瀬彪眞（玉陵）9:26"],
+    ["2025年男子3区の区間順位1位から3位", "3位 一瀬彪眞（玉陵）9:26"],
+    ["2025年男子3区1〜3位は？", "3位 一瀬彪眞（玉陵）9:26"],
+    ["2025年男子3区区間順位で一位から三位", "3位 一瀬彪眞（玉陵）9:26"],
+    ["2025年男子3区区間順位1位〜3位", "3位 一瀬彪眞（玉陵）9:26"],
+    ["2025年男子3区区間順位で上位3チーム", "3位 一瀬彪眞（玉陵）9:26"],
+  ])("limits split-rank results to the requested top count: %s", async (question, expected) => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion(question, {
+      skipRouter: true,
+      defaultYear: 2026,
+      llm: null,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.sources[0]).toBe("out-analysis/aragyoku-years/2025.md");
+      expect(result.text).toContain(expected);
+      expect(result.text).not.toContain("15位");
+    }
+  });
+
   it("asks which leg when a yearly split-rank query omits the leg number", async () => {
     resetRetrieverCache();
     resetKgCache();
