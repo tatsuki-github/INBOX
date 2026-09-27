@@ -928,6 +928,71 @@ describe("answerQuestion", () => {
     }
   });
 
+  it("returns every team tied at the requested split rank", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("2025年男子3区の区間順位10位はどこ？", {
+      skipRouter: true,
+      defaultYear: 2026,
+      llm: null,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.sources[0]).toBe("out-analysis/aragyoku-years/2025.md");
+      expect(result.text).toContain("大塚正統（玉東）10:23");
+      expect(result.text).toContain("川口瑞夢（玉名）10:23");
+      expect(result.text).toContain("北村政人（荒尾四）10:23");
+    }
+  });
+
+  it("ranks yearly teams by passing rank when asked", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("2025年男子3区の通過順位ランキング", {
+      skipRouter: true,
+      defaultYear: 2026,
+      llm: null,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.sources[0]).toBe("out-analysis/aragyoku-years/2025.md");
+      expect(result.text).toContain("通過順位: 1位");
+      expect(result.text).toContain("石原佳維斗（菊水）");
+    }
+  });
+
+  it("keeps tied teams at the top-N rank boundary", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("2025年男子3区の区間順位トップ10", {
+      skipRouter: true,
+      defaultYear: 2026,
+      llm: null,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.text).toContain("大塚正統（玉東）10:23");
+      expect(result.text).toContain("川口瑞夢（玉名）10:23");
+      expect(result.text).toContain("北村政人（荒尾四）10:23");
+    }
+  });
+
+  it("uses the same exact fastest-team lookup for a prior year", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("2024年男子3区で一番速いチームは？", {
+      skipRouter: true,
+      defaultYear: 2026,
+      llm: null,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.sources[0]).toBe("out-analysis/aragyoku-years/2024.md");
+      expect(result.text).toContain("1位 玉高附属 9:24");
+      expect(result.text).not.toContain("15位 岱明");
+    }
+  });
+
   it("asks which leg when a yearly split-rank query omits the leg number", async () => {
     resetRetrieverCache();
     resetKgCache();
