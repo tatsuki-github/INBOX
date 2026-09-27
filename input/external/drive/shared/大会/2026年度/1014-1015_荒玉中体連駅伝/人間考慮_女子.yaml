@@ -52,6 +52,11 @@ lineup_overrides:
     athlete: 濱北 愛
     reason: ユーザー指定で3区と4区を入れ替え
 formula_adjustments:
+  - team: 岱明中
+    athlete: 増岡 里俐
+    leg: 4
+    set_sec: 445
+    reason: なごみ駅伝で増岡3区7:45、角田4区7:48、ジュニア駅伝でも増岡9:00・角田9:02。直近比較で増岡を少し上に置き、4区の歴代平均補正（+9.5秒）を個人差に優先して重ねないよう、角田3区予測より3秒速い7:25に設定
   - team: 長洲中
     leg: 2
     set_sec: 434

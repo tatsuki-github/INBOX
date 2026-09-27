@@ -174,48 +174,37 @@ def extract(targets: list[dict]) -> tuple[list[dict], Counter]:
                         "road_ekiden", "なごみ中学駅伝", rel, leg=leg,
                         team=team["team"], grade=row.get("grade"))
 
-    # 2026 junior district transcription; known course lengths. Its official
-    # PDF is still pending, so keep the source explicitly visible in every row.
+    # 2026 junior district transcription; known course lengths. Use the
+    # complete official-result transcription, not the former partial excerpt.
     rel = ("input/external/drive/shared/大会/2026年度/"
-           "0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）/荒玉地区_ジュニア結果抜粋.md")
+           "0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）/荒玉地区の結果.md")
     text = (ROOT / rel).read_text(encoding="utf-8")
     section = ""
+    junior_team = ""
     for line in text.splitlines():
-        if line.startswith("## ") or line.startswith("### "):
-            section = line.lstrip("# ")
-        if not line.startswith("|") or "---" in line or "順位" in line:
+        if line.strip() in {"女子チャンピオンシップ", "女子チャレンジ", "女子オープン",
+                            "男子チャンピオンシップ", "男子チャレンジ", "男子オープン"}:
+            section = line.strip()
+            junior_team = ""
             continue
-        cells = [x.strip().replace("**", "") for x in line.strip("|").split("|")]
-        if "チャンピオンシップ" in section and len(cells) >= 7:
-            gender = "女子" if "女子" in section else "男子"
-            for leg, cell in enumerate(cells[3:], 1):
-                m = re.search(r"([^\s/]+?)[①②③④⑤⑥⑦⑧⑨\d]*\s+(\d+:\d{2})", cell)
-                if m:
-                    km = (2.7 if leg == 1 else 2.3) if gender == "女子" else (3.0 if leg == 1 else 2.6)
-                    add(gender, m[1], "2026-09-26", km, m[2], "road_ekiden",
-                        "熊本県ジュニア駅伝", rel, leg=leg, team=cells[1],
-                        include_non_target=True)
-        elif "女子チャレンジ" in section and len(cells) >= 7:
-            for leg, cell in enumerate(cells[3:], 1):
-                m = re.search(r"([^\s/]+?)[①②③④⑤⑥⑦⑧⑨\d]*\s+(\d+:\d{2})", cell)
-                if m:
-                    km = 2.7 if leg == 1 else 2.3
-                    add("女子", m[1], "2026-09-26", km, m[2], "road_ekiden",
-                        "熊本県ジュニア駅伝", rel, leg=leg, team=cells[1],
-                        include_non_target=True)
-        elif "オープン" in section and len(cells) >= 4:
-            gender = "女子" if "女子" in section else "男子"
-            m = re.search(r"([^\s]+?)[①②③④⑤⑥⑦⑧⑨]*$", cells[2])
+        if section.endswith("チャンピオンシップ") and "位 " in line and " 総合" in line:
+            junior_team = re.search(r"\d+位\s+(.+?)\s+総合", line).group(1)
+            continue
+        if section.endswith("チャンピオンシップ"):
+            m = re.search(r"(\d)区\s+([\d.]+)km\s+(.+?)（(\d+)年）(\d+:\d{2})", line)
             if m:
-                add(gender, m[1], "2026-09-26", 2.3 if gender == "女子" else 2.6,
-                    cells[3], "road_ekiden", "熊本県ジュニア駅伝オープン", rel,
-                    team=cells[1], include_non_target=True)
-        elif ("男子下位" in section or "男子チャレンジ" in section) and len(cells) >= 4:
-            for leg, match in enumerate(re.finditer(r"([^\s/]+)\s+(\d+:\d{2})", cells[3]), 1):
-                name = re.sub(r"[①②③④⑤⑥⑦⑧⑨]", "", match[1])
-                add("男子", name, "2026-09-26", 3.0 if leg == 1 else 2.6,
-                    match[2], "road_ekiden", "熊本県ジュニア駅伝", rel, leg=leg,
-                    team=cells[1], include_non_target=True)
+                leg, km = int(m[1]), float(m[2])
+                add("女子" if section.startswith("女子") else "男子", m[3],
+                    "2026-09-26", km, m[5], "road_ekiden", "熊本県ジュニア駅伝",
+                    rel, leg=leg, team=junior_team, grade=int(m[4]),
+                    include_non_target=True)
+        elif section.endswith("オープン"):
+            m = re.search(r"\d+位\s+(.+?)\s+(.+?)（(\d+)年）(\d+:\d{2})", line)
+            if m:
+                gender = "女子" if section.startswith("女子") else "男子"
+                add(gender, m[2], "2026-09-26", 2.3 if gender == "女子" else 2.6,
+                    m[4], "road_ekiden", "熊本県ジュニア駅伝オープン", rel,
+                    team=m[1], grade=int(m[3]), include_non_target=True)
 
     # 2025 junior: only the Daimei results have individual splits.
     rel = ("input/external/drive/shared/大会/2025年度/"
@@ -644,6 +633,12 @@ def fit(targets: list[dict], obs: list[dict]) -> tuple[dict, list[dict], list[di
                 applied_adjustments.append(str(adj.get("reason") or "人間考慮"))
             comparisons.append({"gender": gender, "team": t["team"], "leg": t["leg"],
                                 "km": t["km"], "name": t["name"], "baseline_sec": t["baseline"],
+                                "grade": next((int(r["source_grade"]) + AS_OF.year - int(r["date"][:4])
+                                              for r in sorted(by_key[t["key"]],
+                                                              key=lambda x: x["date"], reverse=True)
+                                              if r.get("source_grade") is not None and r.get("date") and
+                                              1 <= int(r["source_grade"]) + AS_OF.year - int(r["date"][:4]) <= 3),
+                                             None),
                                 "formula_sec": pred, "error_sec": None if pred is None or t["baseline"] is None else pred - t["baseline"],
                                 "leg_effect_sec": leg_effect_sec,
                                 "best_sec": f["best"] if f else None,
@@ -753,7 +748,7 @@ def write_report(obs: list[dict], comparisons: list[dict], params: dict,
     team_totals = []
     for gender in ("男子", "女子"):
         rows = [r for r in comparisons if r["gender"] == gender]
-        fields = ["team", "leg", "km", "name", "leg_effect_sec", "formula_sec", "formula_time",
+        fields = ["team", "leg", "km", "name", "grade", "leg_effect_sec", "formula_sec", "formula_time",
                   "baseline_sec", "baseline_time", "error_sec", "n_races", "latest_race",
                   "prediction_basis", "human_adjustment"]
         path = OUT / f"aragyoku_2026_formula_{gender}.csv"
@@ -893,10 +888,11 @@ def write_report(obs: list[dict], comparisons: list[dict], params: dict,
     ]
     for athlete in ("今村昇磨", "田上颯人"):
         row = next(r for r in comparisons if r["gender"] == "男子" and norm_name(r["name"]) == athlete)
-        junior = next(r for r in obs if r["gender"] == "男子" and
-                      norm_name(r["name"]) == athlete and r["date"] == "2026-09-26" and
-                      r["meet"] == "熊本県ジュニア駅伝")
-        lines.append(f"- {row['team']}・{row['leg']}区 {row['name']}: ジュニア2.6km {fmt(junior['time_sec'])} → 荒玉{row['km']:g}km予測 {fmt(row['formula_sec'])}。")
+        junior = next((r for r in obs if r["gender"] == "男子" and
+                       norm_name(r["name"]) == athlete and r["date"] == "2026-09-26" and
+                       r["meet"] == "熊本県ジュニア駅伝"), None)
+        if junior:
+            lines.append(f"- {row['team']}・{row['leg']}区 {row['name']}: ジュニア2.6km {fmt(junior['time_sec'])} → 荒玉{row['km']:g}km予測 {fmt(row['formula_sec'])}。")
     daimei_rows = [r for r in comparisons if r["gender"] == "男子" and r["team"] == "岱明中"]
     daimei_observations = defaultdict(list)
     for row in obs:
@@ -1073,12 +1069,13 @@ def publish_predictions(comparisons: list[dict], params: dict) -> None:
 
     def leg_cell(r: dict) -> str:
         suffix = "†" if r["prediction_basis"] in {"prior_year_B_provisional", "manual_provisional"} else ""
+        grade = f"{r['grade']}年" if r.get("grade") else "学年不明"
         if r["formula_sec"] is None:
-            return f"{r['name']}（記録不足）"
+            return f"{r['name']}（{grade}・記録不足）"
         if r.get("leg_rank") is None:
-            return f"{r['name']}{suffix} {fmt(r['formula_sec'])}"
+            return f"{r['name']}{suffix}（{grade}） {fmt(r['formula_sec'])}"
         compact = r["name"].replace(" ", "")
-        return (f"{compact}{suffix} ({r['passing_rank']}){fmt(r['cumulative_sec'])} / "
+        return (f"{compact}{suffix}（{grade}） ({r['passing_rank']}){fmt(r['cumulative_sec'])} / "
                 f"({r['leg_rank']}){fmt(r['formula_sec'])}")
 
     def render_gender(gender: str) -> str:
@@ -1118,13 +1115,14 @@ def publish_predictions(comparisons: list[dict], params: dict) -> None:
                     missing += f"、未登録{n_legs - len(t['legs'])}区間"
                 lines.append(f"- {t['team']}: {missing}")
         lines += ["", "## 区間別データ", "",
-                  "| 学校 | 区間 | 距離 | 選手 | 数式予想 | 通過予想 | 区間順 | 通過順 | 採用レース数 | 直近レース | 旧SB予測 |",
-                  "| --- | ---: | ---: | --- | ---: | ---: | ---: | ---: | ---: | --- | ---: |"]
+                  "| 学校 | 区間 | 距離 | 選手 | 学年 | 数式予想 | 通過予想 | 区間順 | 通過順 | 採用レース数 | 直近レース | 旧SB予測 |",
+                  "| --- | ---: | ---: | --- | ---: | ---: | ---: | ---: | ---: | ---: | --- | ---: |"]
         for t in team_payloads[gender]:
             for r in t["legs"]:
                 provisional = "†" if r["prediction_basis"] in {"prior_year_B_provisional", "manual_provisional"} else ""
                 lines.append(f"| {t['team']} | {r['leg']} | {r['km']:g}km | {r['name']}{provisional} | "
-                             f"{fmt(r['formula_sec'])} | {fmt(r['cumulative_sec']) if t['complete'] else '—'} | "
+                             f"{r['grade'] if r.get('grade') else '—'} | {fmt(r['formula_sec'])} | "
+                             f"{fmt(r['cumulative_sec']) if t['complete'] else '—'} | "
                              f"{r.get('leg_rank', '—')} | {r.get('passing_rank', '—')} | "
                              f"{r['n_races']} | {r['latest_race'] or '—'} | {fmt(r['baseline_sec'])} |")
         lines += ["", "† は前年Bチームの実測区間記録だけを持つ仮選手、または個人記録がなく人間考慮で暫定設定した選手。欠測区間に旧SB予測を代入していない。全レースの出典と個人別誤差は分析レポートを参照。", ""]
@@ -1144,7 +1142,10 @@ def publish_predictions(comparisons: list[dict], params: dict) -> None:
         scenario_lines += [f"## {gender}", "", "| 順位 | 学校 | 合計 | 区間予想 |",
                            "| ---: | --- | ---: | --- |"]
         for t in ranked[gender]:
-            splits = " / ".join(f"{r['leg']}区 {r['name']} {fmt(r['formula_sec'])}" for r in t["legs"])
+            splits = " / ".join(
+                f"{r['leg']}区 {r['name']}（{r['grade']}年） {fmt(r['formula_sec'])}"
+                if r.get("grade") else f"{r['leg']}区 {r['name']}（学年不明） {fmt(r['formula_sec'])}"
+                for r in t["legs"])
             marker = "†" if t["provisional"] else ""
             scenario_lines.append(f"| {t['rank']} | {t['team']}{marker} | {fmt(t['total_sec'])} | {splits} |")
         scenario_lines += ["", "† は前年B記録のみの仮選手を含む学校。全区間がそろわない学校は合計順位対象外。", ""]
@@ -1159,6 +1160,7 @@ def publish_predictions(comparisons: list[dict], params: dict) -> None:
             r = by_slot.get((gender, row["team"], int(row["leg"])))
             source_rows.append({"gender": gender, "team": row["team"], "leg": row["leg"],
                                 "km": row["km"], "name": row["name"],
+                                "grade": r["grade"] if r and r.get("grade") else "",
                                 "pred_sec": str(r["formula_sec"]) if r and r["formula_sec"] is not None else "",
                                 "pred": fmt(r["formula_sec"]) if r else "—",
                                 "baseline_sb_sec": row["pred_sec"],

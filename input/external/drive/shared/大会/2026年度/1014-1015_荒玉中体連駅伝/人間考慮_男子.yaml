@@ -20,6 +20,9 @@ memo: |
   南関男子は直近フォームが上がらず、校単位で+20s。
   男子1区はユーザー指摘を反映し、隈部を8:58、柿本を9:15、小倉を9:28に調整。柿本を小倉より上位、隈部との区間差を保ちつつ、二人を各5秒速める。
 order_exclusions:
+- team: 菊水中
+  athlete: 福原 雅史
+  reason: ユーザー確認で中学生ではないため対象外。なごみ駅伝の中学生選手から繰り上げ
 - team: 玉陵中
   athlete: 内野 翼
   reason: 出走しない情報（2026-09-27確認）
@@ -64,6 +67,30 @@ formula_observation_weights:
     weight: 0.25
     reason: 気管支炎からの回復期。今回のJr記録は通常の競技力指標より低く評価
 formula_adjustments:
+  - team: 南関中
+    leg: 1
+    delta_sec: 10
+    reason: ジュニア男子で玉名高附43:11・南関44:15・岱明44:23。現行予想では南関が玉名高附とほぼ同タイムのため、地区比較を反映して各区+10秒
+  - team: 南関中
+    leg: 2
+    delta_sec: 10
+    reason: ジュニア男子の学校間比較を反映する南関チーム補正
+  - team: 南関中
+    leg: 3
+    delta_sec: 10
+    reason: ジュニア男子の学校間比較を反映する南関チーム補正
+  - team: 南関中
+    leg: 4
+    delta_sec: 10
+    reason: ジュニア男子の学校間比較を反映する南関チーム補正
+  - team: 南関中
+    leg: 5
+    delta_sec: 10
+    reason: ジュニア男子の学校間比較を反映する南関チーム補正
+  - team: 南関中
+    leg: 6
+    delta_sec: 10
+    reason: ジュニア男子の学校間比較を反映する南関チーム補正
   - team: 菊水中
     athlete: 隈部侑成
     set_sec: 538

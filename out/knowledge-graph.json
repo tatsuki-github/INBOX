@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated_at": "2026-09-27T13:40:03Z",
+  "generated_at": "2026-09-27T14:22:36Z",
   "nodes": [
     {
       "id": "corpus:analysis-ocr",
@@ -17502,9 +17502,9 @@
         "practice"
       ],
       "refs": [
+        "input/events.2025.yaml",
         "out/analysis/notion_records_2026.json",
-        "out/2025/practice_absentees.csv",
-        "input/events.2025.yaml"
+        "out/2025/practice_absentees.csv"
       ],
       "hint": "部員エンティティ"
     },
@@ -17538,9 +17538,9 @@
         "practice"
       ],
       "refs": [
+        "input/events.2025.yaml",
         "out/analysis/notion_records_2026.json",
-        "out/2025/practice_absentees.csv",
-        "input/events.2025.yaml"
+        "out/2025/practice_absentees.csv"
       ],
       "hint": "部員エンティティ"
     },
@@ -17574,9 +17574,9 @@
         "practice"
       ],
       "refs": [
+        "input/events.2025.yaml",
         "out/analysis/notion_records_2026.json",
-        "out/2025/practice_absentees.csv",
-        "input/events.2025.yaml"
+        "out/2025/practice_absentees.csv"
       ],
       "hint": "部員エンティティ"
     },
@@ -17646,9 +17646,9 @@
         "practice"
       ],
       "refs": [
+        "input/events.2025.yaml",
         "out/analysis/notion_records_2026.json",
-        "out/2025/practice_absentees.csv",
-        "input/events.2025.yaml"
+        "out/2025/practice_absentees.csv"
       ],
       "hint": "部員エンティティ"
     },
@@ -17682,8 +17682,8 @@
         "practice"
       ],
       "refs": [
-        "out/2025/practice_absentees.csv",
-        "input/events.2025.yaml"
+        "input/events.2025.yaml",
+        "out/2025/practice_absentees.csv"
       ],
       "hint": "部員エンティティ"
     },
@@ -17697,9 +17697,9 @@
         "practice"
       ],
       "refs": [
+        "input/events.2025.yaml",
         "out/analysis/notion_records_2026.json",
-        "out/2025/practice_absentees.csv",
-        "input/events.2025.yaml"
+        "out/2025/practice_absentees.csv"
       ],
       "hint": "部員エンティティ"
     },
@@ -17733,9 +17733,9 @@
         "practice"
       ],
       "refs": [
+        "input/events.2025.yaml",
         "out/analysis/notion_records_2026.json",
-        "out/2025/practice_absentees.csv",
-        "input/events.2025.yaml"
+        "out/2025/practice_absentees.csv"
       ],
       "hint": "部員エンティティ"
     },
@@ -17784,9 +17784,9 @@
         "practice"
       ],
       "refs": [
+        "input/events.2025.yaml",
         "out/analysis/notion_records_2026.json",
-        "out/2025/practice_absentees.csv",
-        "input/events.2025.yaml"
+        "out/2025/practice_absentees.csv"
       ],
       "hint": "部員エンティティ"
     },
@@ -17856,9 +17856,9 @@
         "practice"
       ],
       "refs": [
+        "input/events.2025.yaml",
         "out/analysis/notion_records_2026.json",
-        "out/2025/practice_absentees.csv",
-        "input/events.2025.yaml"
+        "out/2025/practice_absentees.csv"
       ],
       "hint": "部員エンティティ"
     },
@@ -17892,11 +17892,11 @@
         "practice"
       ],
       "refs": [
-        "out/2025/practice_absentees.csv",
         "input/events.2026.yaml",
         "out/analysis/notion_records_2026.json",
-        "input/events.2025.yaml",
-        "out/2026/practice_absentees.csv"
+        "out/2025/practice_absentees.csv",
+        "out/2026/practice_absentees.csv",
+        "input/events.2025.yaml"
       ],
       "hint": "部員エンティティ"
     },
@@ -18746,7 +18746,7 @@
         "input/events.2026.yaml",
         "out/2026/practice.json"
       ],
-      "hint": "岱明練習実績 2026-09-24 (input/events.2026.yaml:L4481): 動きづくり\n女子 3360m（560m×6周相当。内回りのため実走距離は短い）\n男子 4480m（560m×8周）、1周560mを2:40\n流し2本 / 女子 3360 laps=6 / 男子 4480 laps=8 / 流し2本 reps=2"
+      "hint": "岱明練習実績 2026-09-24 (input/events.2026.yaml:L4483): 動きづくり\n女子 3360m（560m×6周相当。内回りのため実走距離は短い）\n男子 4480m（560m×8周）、1周560mを2:40\n流し2本 / 女子 3360 laps=6 / 男子 4480 laps=8 / 流し2本 reps=2"
     },
     {
       "id": "entity:tag:BBQ",
@@ -20934,7 +20934,8 @@
         "input/idaten-corpus/drive-text/大会/2026年度/0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）/区間オーダー_SB予想_coverage.csv",
         "input/idaten-corpus/drive-text/大会/2026年度/0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）/区間オーダー変更.md",
         "input/idaten-corpus/drive-text/大会/2026年度/0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）/概要.md",
-        "input/idaten-corpus/drive-text/大会/2026年度/0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）/荒玉地区_ジュニア結果抜粋.md"
+        "input/idaten-corpus/drive-text/大会/2026年度/0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）/荒玉地区_ジュニア結果抜粋.md",
+        "input/idaten-corpus/drive-text/大会/2026年度/0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）/荒玉地区の結果.md"
       ],
       "hint": "2026年度 大会「0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）」。日付キー MMDD=0926。ファイル: オープン男女_スタートリスト.pdf.md, チャレンジの部_スタートリスト.pdf.md, チャンピオンシップの部_スタートリスト.pdf.md, 会場図及び競技注意事項等.pdf.md, 区間オーダー_SB予想.md, 区間オーダー_SB予想_coverage.csv, 区間オーダー変更.md, 岱明の結果.md。 内容: 岱明の結果 / 大会: 第3回 熊本県ジュニア駅伝競走大会（2026-09-26） / 出典: ユーザー提供の公式結果PDF（`input/external/user-provided/2026-junior-ekiden/results-pdf/`）と監督所感（2026-09-"
     },
@@ -24835,7 +24836,7 @@
       "refs": [
         "out/analysis/aragyoku_2026_formula_report.md"
       ],
-      "hint": "荒玉駅伝2026：レース記録から作る説明可能な区間予測式 / 基準日: 2026-09-27 ／ 大会予定日: 2026-10-14。現在の区間オーダーは仮置きを含む。 / このモデルは直近の駅伝・ロード実績を優先して区間タイムを予測する。旧 `区間オーダー_SB予想_coverage.csv` は比較値で、レース観測には混ぜていない。 / データと除外 / 選手 107 名、採用レース 1191"
+      "hint": "荒玉駅伝2026：レース記録から作る説明可能な区間予測式 / 基準日: 2026-09-27 ／ 大会予定日: 2026-10-14。現在の区間オーダーは仮置きを含む。 / このモデルは直近の駅伝・ロード実績を優先して区間タイムを予測する。旧 `区間オーダー_SB予想_coverage.csv` は比較値で、レース観測には混ぜていない。 / データと除外 / 選手 107 名、採用レース 1189"
     },
     {
       "id": "source:out/analysis/aragyoku_all_teams_average_pace.md",

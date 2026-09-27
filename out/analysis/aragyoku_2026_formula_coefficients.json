@@ -8,9 +8,9 @@
       "short_exponent": 1.1727167488320045,
       "short_pairs": 349,
       "short_raw_median": 1.1727167488320045,
-      "road_factor": 1.0059942492988119,
-      "road_pairs": 21,
-      "road_raw_median": 1.0131302603688264,
+      "road_factor": 1.008486208558349,
+      "road_pairs": 18,
+      "road_raw_median": 1.020272609333834,
       "best_share": 0.3,
       "other_feature": "typical",
       "recent_window_days": 45,
@@ -60,9 +60,9 @@
       "short_exponent": 1.1557583458106997,
       "short_pairs": 404,
       "short_raw_median": 1.1557583458106997,
-      "road_factor": 0.9911082983116876,
-      "road_pairs": 12,
-      "road_raw_median": 0.9725839197943701,
+      "road_factor": 0.9924667003145493,
+      "road_pairs": 10,
+      "road_raw_median": 0.9736334511009226,
       "best_share": 0.3,
       "other_feature": "typical",
       "recent_window_days": 45,
@@ -148,9 +148,9 @@
   },
   "rejected": {
     "graduated_athlete": 3,
-    "missing_or_invalid": 96,
+    "missing_or_invalid": 98,
     "different_school_namesake": 3,
-    "duplicate": 439
+    "duplicate": 442
   },
-  "observations": 1191
+  "observations": 1189
 }
