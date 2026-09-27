@@ -290,7 +290,7 @@
             "prediction_basis": "race_records",
             "cumulative_sec": 3474.0,
             "provisional": false,
-            "leg_rank": 3,
+            "leg_rank": 4,
             "passing_rank": 2
           }
         ]
@@ -300,7 +300,7 @@
         "complete": true,
         "provisional": false,
         "provisional_legs": [],
-        "total_sec": 3495.0,
+        "total_sec": 3475.0,
         "rank": 3,
         "legs": [
           {
@@ -415,8 +415,8 @@
             "name": "明瀬七跳",
             "baseline_sec": 603.2,
             "grade": 3,
-            "formula_sec": 608,
-            "error_sec": 4.7999999999999545,
+            "formula_sec": 600,
+            "error_sec": -3.2000000000000455,
             "leg_effect_sec": 0.0,
             "best_sec": 594.6285580536144,
             "recent_sec": 605.6497207535521,
@@ -426,12 +426,12 @@
             "latest_race": "2026-09-21",
             "race_types": "road_ekiden,track",
             "baseline_note": "※仮 / SB:1500m 4:50.14@2026/05/09（3000m 10:47.15@2026/06/13不採用）→1500m SB→3km式（3000mが+32s遅い）→区間2.855km=10:03.2＋区間バイアス+18s →予想10:03.2",
-            "human_adjustment": "",
+            "human_adjustment": "なごみ駅伝で明瀬七跳が10:58、中尾快叶が11:03。中尾の現行予測10:02とほぼ同等か少し速い評価を反映し、10:00に設定",
             "prediction_basis": "race_records",
-            "cumulative_sec": 2888.0,
+            "cumulative_sec": 2880.0,
             "provisional": false,
-            "leg_rank": 6,
-            "passing_rank": 4
+            "leg_rank": 5,
+            "passing_rank": 3
           },
           {
             "gender": "男子",
@@ -441,8 +441,8 @@
             "name": "松山哲丈",
             "baseline_sec": 599.9,
             "grade": 2,
-            "formula_sec": 607,
-            "error_sec": 7.100000000000023,
+            "formula_sec": 595,
+            "error_sec": -4.899999999999977,
             "leg_effect_sec": 0.0,
             "best_sec": 603.5749414448973,
             "recent_sec": 611.4869568202455,
@@ -452,11 +452,11 @@
             "latest_race": "2026-07-19",
             "race_types": "track",
             "baseline_note": "※仮 / SB:3000m 9:54.85@2026/09/21→3000m SBを距離比例→区間3km=10:10.1＋区間バイアス+15s / 3000mトラック優先:9:54.85@2026/09/21→区間3km比例9:54.8+5s=9:59.8（計算10:10.0より速い） →予想9:59.8",
-            "human_adjustment": "",
+            "human_adjustment": "2026-09-21の3000m SB 9:54.85を本人記録として反映。SBは所属変更により自動観測から外れていたため、3km予測を9:55に設定",
             "prediction_basis": "race_records",
-            "cumulative_sec": 3495.0,
+            "cumulative_sec": 3475.0,
             "provisional": false,
-            "leg_rank": 4,
+            "leg_rank": 3,
             "passing_rank": 3
           }
         ]
@@ -928,8 +928,8 @@
             "prediction_basis": "race_records",
             "cumulative_sec": 2882.0,
             "provisional": false,
-            "leg_rank": 5,
-            "passing_rank": 3
+            "leg_rank": 6,
+            "passing_rank": 4
           },
           {
             "gender": "男子",
