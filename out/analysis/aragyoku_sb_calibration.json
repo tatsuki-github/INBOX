@@ -1,0 +1,216 @@
+{
+  "years": [
+    {
+      "year": 2024,
+      "as_of": "2024-10-15",
+      "genders": {
+        "男子": {
+          "matched_legs": 36,
+          "distances_km": [
+            3.0,
+            2.855,
+            3.0,
+            3.0,
+            2.855,
+            3.0
+          ],
+          "legs": {
+            "1": {
+              "n": 8,
+              "median_gap_sec": -2.7,
+              "mean_gap_sec": 2.3,
+              "mae_sec": 17.8
+            },
+            "2": {
+              "n": 3,
+              "median_gap_sec": 20.3,
+              "mean_gap_sec": 14.5,
+              "mae_sec": 19.5
+            },
+            "3": {
+              "n": 4,
+              "median_gap_sec": 9.0,
+              "mean_gap_sec": 9.7,
+              "mae_sec": 14.8
+            },
+            "4": {
+              "n": 5,
+              "median_gap_sec": 48.0,
+              "mean_gap_sec": 89.1,
+              "mae_sec": 89.1
+            },
+            "5": {
+              "n": 6,
+              "median_gap_sec": 21.4,
+              "mean_gap_sec": 11.3,
+              "mae_sec": 32.3
+            },
+            "6": {
+              "n": 10,
+              "median_gap_sec": 15.2,
+              "mean_gap_sec": 10.7,
+              "mae_sec": 20.2
+            }
+          }
+        },
+        "女子": {
+          "matched_legs": 50,
+          "distances_km": [
+            3.0,
+            1.855,
+            2.0,
+            2.0,
+            3.0
+          ],
+          "legs": {
+            "1": {
+              "n": 12,
+              "median_gap_sec": 20.9,
+              "mean_gap_sec": 22.6,
+              "mae_sec": 29.7
+            },
+            "2": {
+              "n": 11,
+              "median_gap_sec": -6.4,
+              "mean_gap_sec": -5.0,
+              "mae_sec": 17.7
+            },
+            "3": {
+              "n": 10,
+              "median_gap_sec": -6.9,
+              "mean_gap_sec": -10.8,
+              "mae_sec": 24.5
+            },
+            "4": {
+              "n": 6,
+              "median_gap_sec": 9.4,
+              "mean_gap_sec": 8.8,
+              "mae_sec": 14.5
+            },
+            "5": {
+              "n": 11,
+              "median_gap_sec": 36.5,
+              "mean_gap_sec": 34.0,
+              "mae_sec": 34.0
+            }
+          }
+        }
+      }
+    },
+    {
+      "year": 2025,
+      "as_of": "2025-10-14",
+      "genders": {
+        "男子": {
+          "matched_legs": 39,
+          "distances_km": [
+            3.0,
+            2.855,
+            3.0,
+            3.0,
+            2.855,
+            3.0
+          ],
+          "legs": {
+            "1": {
+              "n": 7,
+              "median_gap_sec": -9.0,
+              "mean_gap_sec": -13.8,
+              "mae_sec": 13.8
+            },
+            "2": {
+              "n": 5,
+              "median_gap_sec": 8.6,
+              "mean_gap_sec": 17.1,
+              "mae_sec": 17.1
+            },
+            "3": {
+              "n": 6,
+              "median_gap_sec": 10.9,
+              "mean_gap_sec": 9.9,
+              "mae_sec": 21.2
+            },
+            "4": {
+              "n": 8,
+              "median_gap_sec": 22.9,
+              "mean_gap_sec": 19.0,
+              "mae_sec": 45.5
+            },
+            "5": {
+              "n": 5,
+              "median_gap_sec": 14.0,
+              "mean_gap_sec": 25.5,
+              "mae_sec": 27.8
+            },
+            "6": {
+              "n": 8,
+              "median_gap_sec": 15.3,
+              "mean_gap_sec": 7.3,
+              "mae_sec": 24.5
+            }
+          }
+        },
+        "女子": {
+          "matched_legs": 38,
+          "distances_km": [
+            3.0,
+            1.855,
+            2.0,
+            2.0,
+            3.0
+          ],
+          "legs": {
+            "1": {
+              "n": 13,
+              "median_gap_sec": 20.7,
+              "mean_gap_sec": 18.1,
+              "mae_sec": 25.6
+            },
+            "2": {
+              "n": 5,
+              "median_gap_sec": 10.2,
+              "mean_gap_sec": 11.0,
+              "mae_sec": 22.6
+            },
+            "3": {
+              "n": 4,
+              "median_gap_sec": -15.6,
+              "mean_gap_sec": -14.4,
+              "mae_sec": 15.0
+            },
+            "4": {
+              "n": 8,
+              "median_gap_sec": 6.3,
+              "mean_gap_sec": 5.4,
+              "mae_sec": 16.9
+            },
+            "5": {
+              "n": 8,
+              "median_gap_sec": 37.7,
+              "mean_gap_sec": 33.8,
+              "mae_sec": 34.5
+            }
+          }
+        }
+      }
+    }
+  ],
+  "recommended_leg_bias_sec": {
+    "女子": [
+      20.8,
+      1.9,
+      -11.2,
+      7.8,
+      37.1
+    ],
+    "男子": [
+      -5.8,
+      14.4,
+      9.9,
+      35.5,
+      17.7,
+      15.2
+    ]
+  },
+  "freshness_days": 152
+}

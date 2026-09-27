@@ -11086,7 +11086,7 @@ t-tsuchiyama の最新中学生結果を取り込み。荒玉の中学生SB更�
 - **開始時刻**: （なし）
 - **終了時刻**: （なし）
 - **カテゴリ**: 予定
-- **ステータス**: scheduled
+- **ステータス**: done
 - **タグ**: （なし）
 - **場所**: （なし）
 - **URL**: （なし）
@@ -11096,7 +11096,8 @@ t-tsuchiyama の最新中学生結果を取り込み。荒玉の中学生SB更�
 
 第3回 熊本県ジュニア駅伝競走大会
 公式大会ページ: http://kumariku.com/competition/?id=9730
-スタートリスト・区間SB予想: input/idaten-corpus/drive-text/大会/2026年度/0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）/
+岱明: 女子CS 12位 36:52 / 男子CS 14位 44:23
+結果・地区抜粋・SB予想: input/idaten-corpus/drive-text/大会/2026年度/0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）/
 
 </details>
 
@@ -11467,7 +11468,10 @@ t-tsuchiyama の最新中学生結果を取り込み。荒玉の中学生SB更�
 
 **説明**
 
-（なし）
+玉名荒尾中体連駅伝（荒玉）
+岱明確定オーダー・SB予想・校別展開: input/idaten-corpus/drive-text/大会/2026年度/1014-1015_荒玉中体連駅伝/
+距離正本: docs/aragyoku-ekiden-distance-definitions.md
+生成: python3 scripts/generate_aragyoku_ekiden_sb_preview.py
 
 </details>
 
@@ -11493,7 +11497,7 @@ t-tsuchiyama の最新中学生結果を取り込み。荒玉の中学生SB更�
 
 **説明**
 
-（なし）
+荒玉中体連駅伝の予備日（本大会 2026-10-14）
 
 </details>
 

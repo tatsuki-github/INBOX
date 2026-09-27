@@ -214,6 +214,49 @@ def date_on_or_before(date_text: str, as_of: str | None) -> bool:
     return raw <= str(as_of).strip().replace("-", "/")
 
 
+def parse_iso_like_date(date_text: str) -> tuple[int, int, int] | None:
+    """YYYY-MM-DD / YYYY/MM/DD → (y,m,d)。不正なら None。"""
+    raw = str(date_text or "").strip().replace("-", "/")
+    m = re.fullmatch(r"(\d{4})/(\d{1,2})/(\d{1,2})", raw)
+    if not m:
+        return None
+    return int(m.group(1)), int(m.group(2)), int(m.group(3))
+
+
+def date_within_freshness(
+    date_text: str,
+    as_of: str | None,
+    freshness_days: int | None,
+    *,
+    allow_missing_date: bool = True,
+) -> bool:
+    """as_of 以前かつ freshness_days 以内か。
+
+    freshness_days が None のときは従来どおり as_of 以前のみ（日付欠落は allow_missing_date）。
+    freshness_days 指定時は日付必須（欠落は不採用）で、as_of から freshness_days より古い記録を除外する。
+    """
+    if not date_on_or_before(date_text, as_of):
+        # freshness モードでは欠落日付を date_on_or_before が True にする点に注意
+        if freshness_days is not None and not str(date_text or "").strip():
+            return False
+        if not str(date_text or "").strip():
+            return allow_missing_date
+        return False
+    if freshness_days is None:
+        if not str(date_text or "").strip():
+            return allow_missing_date
+        return True
+    parsed = parse_iso_like_date(date_text)
+    as_of_parsed = parse_iso_like_date(as_of or "")
+    if parsed is None or as_of_parsed is None:
+        return False
+    from datetime import date, timedelta
+
+    mark_d = date(*parsed)
+    as_of_d = date(*as_of_parsed)
+    return mark_d >= as_of_d - timedelta(days=int(freshness_days))
+
+
 def load_sb_index(
     sb_path: Path | None = None,
     *,
@@ -221,10 +264,13 @@ def load_sb_index(
     include_notion: bool = True,
     include_nighter: bool = True,
     gender: str | None = None,
+    freshness_days: int | None = None,
 ) -> tuple[dict[str, AthleteSB], list[str]]:
     """正規化氏名 → AthleteSB（距離ごとのベスト）。ナイター更新ログも返す。
 
     as_of を指定すると、その日以前の記録だけを使う（レース前の公平な予想用）。
+    freshness_days を指定すると、さらに as_of からその日数以内の記録だけを使う
+    （荒玉など。日付欠落は不採用。なごみ／ジュニアは未指定のまま）。
     gender は「男子」「女子」。指定時は性別が一致する行だけ採用する。
     """
     by_name: dict[str, AthleteSB] = {}
@@ -232,6 +278,13 @@ def load_sb_index(
 
     def upsert(name: str, distance: str, seconds: float, text: str, url: str, date: str, source: str) -> None:
         if distance not in ("800m", "1500m", "3000m") or seconds is None:
+            return
+        if not date_within_freshness(
+            date,
+            as_of,
+            freshness_days,
+            allow_missing_date=freshness_days is None,
+        ):
             return
         key = norm_name(name)
         if not key:

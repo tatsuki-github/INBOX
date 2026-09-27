@@ -810,6 +810,7 @@ describe("answerQuestion", () => {
       expect(result.sources[0]).toBe("out-analysis/aragyoku-years/2025.md");
       expect(result.text).toContain("通過順位2位");
       expect(result.text).toContain("区間順位3位");
+      expect(result.text).toContain("総合順位2位");
     }
   });
 
@@ -894,6 +895,51 @@ describe("answerQuestion", () => {
       expect(result.sources[0]).toBe("out-analysis/aragyoku-years/2025.md");
       expect(result.text).toContain("草野瑠唯");
       expect(result.text).toContain("9:14");
+    }
+  });
+
+  it("answers a leg-place rank without requiring the word 荒玉駅伝", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("2025年男子3区の区間2位は誰？", {
+      skipRouter: true,
+      defaultYear: 2026,
+      llm: null,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.sources[0]).toBe("out-analysis/aragyoku-years/2025.md");
+      expect(result.text).toContain("石原佳維斗（菊水）9:22");
+    }
+  });
+
+  it("looks up split positions above third place from the leg table", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("2025年女子2区の区間順位10位は誰？", {
+      skipRouter: true,
+      defaultYear: 2026,
+      llm: null,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.sources[0]).toBe("out-analysis/aragyoku-years/2025.md");
+      expect(result.text).toContain("宮本奈留（荒尾四）7:17");
+    }
+  });
+
+  it("asks which leg when a yearly split-rank query omits the leg number", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("2025年荒玉駅伝男子の区間順位ランキング", {
+      skipRouter: true,
+      defaultYear: 2026,
+      llm: null,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.text).toContain("どの区間の順位か指定してください");
+      expect(result.text).not.toContain("2012年");
     }
   });
 

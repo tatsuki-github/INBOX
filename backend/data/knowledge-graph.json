@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated_at": "2026-09-27T06:24:19Z",
+  "generated_at": "2026-09-27T07:16:19Z",
   "nodes": [
     {
       "id": "corpus:analysis-ocr",
@@ -17483,9 +17483,9 @@
         "practice"
       ],
       "refs": [
-        "input/events.2025.yaml",
         "out/2025/practice_absentees.csv",
-        "out/analysis/notion_records_2026.json"
+        "out/analysis/notion_records_2026.json",
+        "input/events.2025.yaml"
       ],
       "hint": "部員エンティティ"
     },
@@ -17516,9 +17516,9 @@
         "practice"
       ],
       "refs": [
-        "input/events.2025.yaml",
         "out/2025/practice_absentees.csv",
-        "out/analysis/notion_records_2026.json"
+        "out/analysis/notion_records_2026.json",
+        "input/events.2025.yaml"
       ],
       "hint": "部員エンティティ"
     },
@@ -17549,9 +17549,9 @@
         "practice"
       ],
       "refs": [
-        "input/events.2025.yaml",
         "out/2025/practice_absentees.csv",
-        "out/analysis/notion_records_2026.json"
+        "out/analysis/notion_records_2026.json",
+        "input/events.2025.yaml"
       ],
       "hint": "部員エンティティ"
     },
@@ -17612,9 +17612,9 @@
         "practice"
       ],
       "refs": [
-        "input/events.2025.yaml",
         "out/2025/practice_absentees.csv",
-        "out/analysis/notion_records_2026.json"
+        "out/analysis/notion_records_2026.json",
+        "input/events.2025.yaml"
       ],
       "hint": "部員エンティティ"
     },
@@ -17645,8 +17645,8 @@
         "practice"
       ],
       "refs": [
-        "input/events.2025.yaml",
-        "out/2025/practice_absentees.csv"
+        "out/2025/practice_absentees.csv",
+        "input/events.2025.yaml"
       ],
       "hint": "部員エンティティ"
     },
@@ -17660,9 +17660,9 @@
         "practice"
       ],
       "refs": [
-        "input/events.2025.yaml",
         "out/2025/practice_absentees.csv",
-        "out/analysis/notion_records_2026.json"
+        "out/analysis/notion_records_2026.json",
+        "input/events.2025.yaml"
       ],
       "hint": "部員エンティティ"
     },
@@ -17693,9 +17693,9 @@
         "practice"
       ],
       "refs": [
-        "input/events.2025.yaml",
         "out/2025/practice_absentees.csv",
-        "out/analysis/notion_records_2026.json"
+        "out/analysis/notion_records_2026.json",
+        "input/events.2025.yaml"
       ],
       "hint": "部員エンティティ"
     },
@@ -17726,9 +17726,9 @@
         "practice"
       ],
       "refs": [
-        "input/events.2025.yaml",
         "out/2025/practice_absentees.csv",
-        "out/analysis/notion_records_2026.json"
+        "out/analysis/notion_records_2026.json",
+        "input/events.2025.yaml"
       ],
       "hint": "部員エンティティ"
     },
@@ -17792,9 +17792,9 @@
         "practice"
       ],
       "refs": [
-        "input/events.2025.yaml",
         "out/2025/practice_absentees.csv",
-        "out/analysis/notion_records_2026.json"
+        "out/analysis/notion_records_2026.json",
+        "input/events.2025.yaml"
       ],
       "hint": "部員エンティティ"
     },
@@ -17825,11 +17825,11 @@
         "practice"
       ],
       "refs": [
-        "out/2026/practice_absentees.csv",
-        "input/events.2025.yaml",
         "out/2025/practice_absentees.csv",
         "input/events.2026.yaml",
-        "out/analysis/notion_records_2026.json"
+        "input/events.2025.yaml",
+        "out/analysis/notion_records_2026.json",
+        "out/2026/practice_absentees.csv"
       ],
       "hint": "部員エンティティ"
     },
@@ -20839,6 +20839,7 @@
       ],
       "refs": [
         "input/idaten-corpus/drive-text/大会/2026年度/0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）",
+        "input/idaten-corpus/drive-text/大会/2026年度/0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）/岱明の結果.md",
         "input/idaten-corpus/drive-text/大会/2026年度/0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）/オープン男女_スタートリスト.pdf.md",
         "input/idaten-corpus/drive-text/大会/2026年度/0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）/チャレンジの部_スタートリスト.pdf.md",
         "input/idaten-corpus/drive-text/大会/2026年度/0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）/チャンピオンシップの部_スタートリスト.pdf.md",
@@ -20846,9 +20847,10 @@
         "input/idaten-corpus/drive-text/大会/2026年度/0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）/区間オーダー_SB予想.md",
         "input/idaten-corpus/drive-text/大会/2026年度/0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）/区間オーダー_SB予想_coverage.csv",
         "input/idaten-corpus/drive-text/大会/2026年度/0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）/区間オーダー変更.md",
-        "input/idaten-corpus/drive-text/大会/2026年度/0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）/概要.md"
+        "input/idaten-corpus/drive-text/大会/2026年度/0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）/概要.md",
+        "input/idaten-corpus/drive-text/大会/2026年度/0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）/荒玉地区_ジュニア結果抜粋.md"
       ],
-      "hint": "2026年度 大会「0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）」。日付キー MMDD=0926。ファイル: オープン男女_スタートリスト.pdf.md, チャレンジの部_スタートリスト.pdf.md, チャンピオンシップの部_スタートリスト.pdf.md, 会場図及び競技注意事項等.pdf.md, 区間オーダー_SB予想.md, 区間オーダー_SB予想_coverage.csv, 区間オーダー変更.md, 概要.md。 内容: 第3回 熊本県ジュニア駅伝競走大会 スタートリスト / - 開催日: 2026-09-26 / - 公式ページ: http://kumariku.com/competition/?id=9730 / - 原本PDF: http://kuma"
+      "hint": "2026年度 大会「0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）」。日付キー MMDD=0926。ファイル: オープン男女_スタートリスト.pdf.md, チャレンジの部_スタートリスト.pdf.md, チャンピオンシップの部_スタートリスト.pdf.md, 会場図及び競技注意事項等.pdf.md, 区間オーダー_SB予想.md, 区間オーダー_SB予想_coverage.csv, 区間オーダー変更.md, 岱明の結果.md。 内容: 岱明の結果 / 大会: 第3回 熊本県ジュニア駅伝競走大会（2026-09-26） / 出典: 紙面結果写真（[results-photos/](results-photos/)）＋監督所感（2026-09-27）。公式PDFで後追い突合予定。 / 関連: [荒玉地区_ジュニア結"
     },
     {
       "id": "meet:2026年度:1010_第４回熊本県長距離記録会",
@@ -20875,9 +20877,15 @@
       ],
       "refs": [
         "input/idaten-corpus/drive-text/大会/2026年度/1014-1015_荒玉中体連駅伝",
+        "input/idaten-corpus/drive-text/大会/2026年度/1014-1015_荒玉中体連駅伝/予実比較.md",
+        "input/idaten-corpus/drive-text/大会/2026年度/1014-1015_荒玉中体連駅伝/公式オーダー待ち.md",
+        "input/idaten-corpus/drive-text/大会/2026年度/1014-1015_荒玉中体連駅伝/区間オーダー_SB予想.md",
+        "input/idaten-corpus/drive-text/大会/2026年度/1014-1015_荒玉中体連駅伝/区間オーダー_SB予想_coverage.csv",
+        "input/idaten-corpus/drive-text/大会/2026年度/1014-1015_荒玉中体連駅伝/岱明_暫定区間オーダー.md",
+        "input/idaten-corpus/drive-text/大会/2026年度/1014-1015_荒玉中体連駅伝/校別展開予想.md",
         "input/idaten-corpus/drive-text/大会/2026年度/1014-1015_荒玉中体連駅伝/概要.md"
       ],
-      "hint": "2026年度 大会「1014-1015_荒玉中体連駅伝」。日付キー MMDD=1014。ファイル: 概要.md。 内容: 大会名: 荒玉中体連駅伝 / 日付: 2026-10-14 / ステータス: scheduled / （カレンダーより作成。詳細・結果は追記予定）"
+      "hint": "2026年度 大会「1014-1015_荒玉中体連駅伝」。日付キー MMDD=1014。ファイル: 予実比較.md, 公式オーダー待ち.md, 区間オーダー_SB予想.md, 区間オーダー_SB予想_coverage.csv, 岱明_暫定区間オーダー.md, 校別展開予想.md, 概要.md。 内容: 荒玉駅伝 SB 予実ギャップ分析 / ステータス: **レース前スタブ**（2026-10-14 開催予定） / 予定ワークフロー / 1. 成績を `岱明の結果.md` および男女成績表に転記する。 / 2. レース前の `区間オーダー_"
     },
     {
       "id": "meet:2026年度:1211_岱明中校内駅伝大会",
@@ -22508,6 +22516,20 @@
         "docs/adr/055-aragyoku-year-leg-kg-routing.md"
       ],
       "hint": "ADR: 055-aragyoku-year-leg-kg-routing"
+    },
+    {
+      "id": "source:docs/adr/056-aragyoku-sb-preview.md",
+      "type": "Source",
+      "label": "056-aragyoku-sb-preview.md",
+      "topics": [
+        "ai",
+        "meta",
+        "practice"
+      ],
+      "refs": [
+        "docs/adr/056-aragyoku-sb-preview.md"
+      ],
+      "hint": "ADR: 056-aragyoku-sb-preview"
     },
     {
       "id": "source:docs/ai-practice-generation.md",
@@ -24696,6 +24718,30 @@
         "out/analysis/aragyoku_meet_records.md"
       ],
       "hint": "荒玉駅伝 大会記録・区間記録（ボード上部） / 結果ボード上部に印刷された **総合大会記録** と **各区間の大会区間記録**。 / 正本は各年 transcript の `meet_records`（ADR 033）。 / Q&A の使い方 / - 「○年の大会記録（総合）は？」「男子2区の大会区間記録は誰？」→ **この文書を優先**。 / - 当日の区間新フラグは各チーム結果の `spl。荒玉ボード上部の大会記録・区間記録（meet_records）年別一覧"
+    },
+    {
+      "id": "source:out/analysis/aragyoku_sb_calibration.md",
+      "type": "Source",
+      "label": "aragyoku_sb_calibration.md",
+      "topics": [
+        "athlete_records"
+      ],
+      "refs": [
+        "out/analysis/aragyoku_sb_calibration.md"
+      ],
+      "hint": "荒玉駅伝 SB 区間キャリブレーション / 対象年: 2024, 2025 / 鮮度窓: 152日 / Notion・ナイターは履歴年では未使用 / 推奨区間バイアス秒（実績−予想の中央値） / 正の値＝予想が速すぎた（遅めに補正）。`generate_aragyoku_ekiden_sb_preview.LEG_BIAS_SEC` に反映。 / - **女子**: [20.8, 1.9, -11"
+    },
+    {
+      "id": "source:out/analysis/aragyoku_sb_gap_analysis.md",
+      "type": "Source",
+      "label": "aragyoku_sb_gap_analysis.md",
+      "topics": [
+        "athlete_records"
+      ],
+      "refs": [
+        "out/analysis/aragyoku_sb_gap_analysis.md"
+      ],
+      "hint": "荒玉駅伝 SB 予実ギャップ分析 / ステータス: **レース前スタブ**（2026-10-14 開催予定） / 予定ワークフロー / 1. 成績を `岱明の結果.md` および男女成績表に転記する。 / 2. レース前の `区間オーダー_SB予想.md`（as_of＝大会前日）を固定する。 / 3. 本スクリプトを拡張し、差＝実績−予想の表／HTML を生成する（なごみ ADR 052 準拠）。"
     },
     {
       "id": "source:out/analysis/aragyoku_top2_finish_counts.md",
@@ -35928,6 +35974,11 @@
       "rel": "see_also"
     },
     {
+      "from": "source:docs/ai-practice-generation.md",
+      "to": "source:docs/adr/056-aragyoku-sb-preview.md",
+      "rel": "see_also"
+    },
+    {
       "from": "source:out/2020/calendar.md",
       "to": "source:input/events.2020.yaml",
       "rel": "derived_from"
@@ -36520,6 +36571,11 @@
     {
       "from": "topic:ai",
       "to": "source:docs/adr/055-aragyoku-year-leg-kg-routing.md",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:ai",
+      "to": "source:docs/adr/056-aragyoku-sb-preview.md",
       "rel": "search_here"
     },
     {
@@ -37185,6 +37241,16 @@
     {
       "from": "topic:athlete_records",
       "to": "source:out/analysis/aragyoku-years/INDEX.md",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:athlete_records",
+      "to": "source:out/analysis/aragyoku_sb_calibration.md",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:athlete_records",
+      "to": "source:out/analysis/aragyoku_sb_gap_analysis.md",
       "rel": "search_here"
     },
     {
@@ -45469,6 +45535,11 @@
     },
     {
       "from": "topic:meta",
+      "to": "source:docs/adr/056-aragyoku-sb-preview.md",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:meta",
       "to": "source:docs/tamana-weather.md",
       "rel": "documented_in"
     },
@@ -46335,6 +46406,11 @@
     {
       "from": "topic:practice",
       "to": "source:docs/adr/055-aragyoku-year-leg-kg-routing.md",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:practice",
+      "to": "source:docs/adr/056-aragyoku-sb-preview.md",
       "rel": "search_here"
     },
     {
