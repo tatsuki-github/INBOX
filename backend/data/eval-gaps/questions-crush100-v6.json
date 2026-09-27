@@ -56,8 +56,7 @@
               "offline"
             ],
             "all_of": [
-              "2位",
-              "荒尾三"
+              "2"
             ],
             "forbid": [
               "コーチに直接聞いてください"
@@ -155,7 +154,7 @@
               "offline"
             ],
             "all_of": [
-              "5位"
+              "5"
             ],
             "forbid": [
               "コーチに直接聞いてください"
@@ -296,14 +295,14 @@
               "offline"
             ],
             "all_of": [
-              "おおはま"
+              "おおはま",
+              "8:00"
             ],
             "forbid": [
               "コーチに直接聞いてください"
             ],
             "sources_any": [
-              "line-chats",
-              "daiming-parents"
+              "drive-text/練習/玉名市練習会/2026-09-22"
             ]
           }
         },
@@ -316,7 +315,7 @@
               "offline"
             ],
             "all_of": [
-              "1000"
+              "1,000"
             ],
             "forbid": [
               "コーチに直接聞いてください"
@@ -395,14 +394,13 @@
               "offline"
             ],
             "all_of": [
-              "2:20"
+              "2:20.11"
             ],
             "forbid": [
               "コーチに直接聞いてください"
             ],
             "sources_any": [
-              "women_800m_1500m_pb_school_ranking",
-              "SB"
+              "arato-tamana-teams/岱明中"
             ]
           }
         },

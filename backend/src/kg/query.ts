@@ -176,6 +176,15 @@ function scoreNode(node: KgNode, qTokens: string[], query: string): number {
   if (/全記録|記録一覧|所属選手/.test(q) && /arato-tamana-teams|athletes\//.test(blob)) {
     score += 14;
   }
+  // An athlete-specific PB/SB lookup belongs to the athlete's chronological
+  // result sheet, even if the school ranking digest repeats the same name.
+  if (/\b(?:pb|sb)\b|自己ベスト|自己記録|ベスト/i.test(query) && /800|1500|3000/.test(query)) {
+    if (nodeType === "Athlete" && q.includes(label)) score += 24;
+    if (/arato-tamana-teams\/.*\.md/.test(blob) && qTokens.some((token) => token.length >= 2 && refs.includes(token))) {
+      score += 16;
+    }
+    if (/pb_school_ranking/.test(blob)) score -= 12;
+  }
   if (/トラック/.test(q) && /1周|一周|周長|何メートル|何ｍ/.test(q) && /kpace|data-model|560/.test(blob)) {
     score += 14;
   }
@@ -200,11 +209,12 @@ function scoreNode(node: KgNode, qTokens: string[], query: string): number {
   const aragyokuYear = query.match(/(?<!\d)(20\d{2})(?!\d)/)?.[1];
   const aragyokuLeg = query.match(/(?<!\d)(\d+)区/)?.[1];
   const rankOrResultIntent = /順位|ランキング|上位|何位|記録|タイム|通過/.test(query);
+  const namedRelayTeam = /岱明|玉高附属|玉名付属|玉名附属|天水|有明|南関|菊水|玉東|玉陵|長洲|荒尾三|荒尾四|荒尾海陽|三加和|玉南/.test(query);
   if (
     aragyokuYear &&
     aragyokuLeg &&
     rankOrResultIntent &&
-    /荒玉|aragyoku|中体連/i.test(query)
+    (/荒玉|aragyoku|中体連/i.test(query) || namedRelayTeam)
   ) {
     if (nodeType === "RelayLegResult") {
       const [, , nodeYear, nodeTeam, nodeLeg] = node.id.split(":");
@@ -213,7 +223,7 @@ function scoreNode(node: KgNode, qTokens: string[], query: string): number {
       }
     }
     if (nodeType === "Source" && refs.includes(`out/analysis/aragyoku-years/${aragyokuYear}.md`)) {
-      score += 100;
+      score += namedRelayTeam ? 130 : 100;
     }
   }
   const aragyokuQuestion = /荒玉|aragyoku|中体連|駅伝/i.test(query);

@@ -177,7 +177,9 @@ describe("answerQuestion", () => {
     expect(result.kind).toBe("offline");
     if (result.kind === "offline") {
       expect(result.text).toContain("2026年9月22日");
+      expect(result.text).toMatch(/午前\s*8(?::00|時)/);
       expect(result.text).toContain("おおはまふれあいセンター");
+      expect(result.sources[0]).toBe("drive-text/練習/玉名市練習会/2026-09-22.md");
     }
   });
 
@@ -775,6 +777,71 @@ describe("answerQuestion", () => {
       expect(result.text).toContain("2025年男子準優勝校: 玉陵（58:02）");
       expect(result.text).toContain("2025年女子準優勝校: 南関（43:45）");
       expect(result.text).not.toContain("深掘り分析");
+    }
+  });
+
+  it("answers an individual team's leg split rank from the yearly ranking table", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("2025年玉陵男子3区の区間順位は？", {
+      skipRouter: true,
+      defaultYear: 2026,
+      llm: null,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.sources[0]).toBe("out-analysis/aragyoku-years/2025.md");
+      expect(result.text).toContain("一瀬彪眞");
+      expect(result.text).toContain("区間順位3位");
+      expect(result.text).toContain("総合順位2位");
+    }
+  });
+
+  it("distinguishes the passing rank from the split rank for a team leg", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("2025年玉陵男子3区の通過順位は？", {
+      skipRouter: true,
+      defaultYear: 2026,
+      llm: null,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.sources[0]).toBe("out-analysis/aragyoku-years/2025.md");
+      expect(result.text).toContain("通過順位2位");
+      expect(result.text).toContain("区間順位3位");
+    }
+  });
+
+  it("answers a team's split time from the yearly leg table", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("2025年玉陵男子3区の区間タイムは？", {
+      skipRouter: true,
+      defaultYear: 2026,
+      llm: null,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.sources[0]).toBe("out-analysis/aragyoku-years/2025.md");
+      expect(result.text).toContain("一瀬彪眞");
+      expect(result.text).toContain("区間記録9:26");
+    }
+  });
+
+  it("lists all teams in split-rank order for an annual leg ranking", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("2025年荒玉駅伝男子3区の区間順位ランキングは？", {
+      skipRouter: true,
+      defaultYear: 2026,
+      llm: null,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.sources[0]).toBe("out-analysis/aragyoku-years/2025.md");
+      expect(result.text).toContain("1位 草野瑠唯（玉高附属）9:14");
+      expect(result.text).toContain("15位");
     }
   });
 
@@ -2237,9 +2304,8 @@ describe("answerQuestion", () => {
     });
     expect(result.kind).toBe("offline");
     if (result.kind === "offline") {
-      expect(result.sources[0]).toBe("out-analysis/aragyoku_2024_2025_focus_teams.md");
-      expect(result.text).toContain("2025年5区 山本哲瑠（区間順2位・9:37）。");
-      expect(result.text).not.toContain("# 岱明 荒玉駅伝 歴代結果");
+      expect(result.sources[0]).toBe("out-analysis/aragyoku-years/2025.md");
+      expect(result.text).toContain("2025年岱明男子5区: 山本哲瑠、区間記録9:37、区間順位2位");
     }
   });
 
@@ -3629,6 +3695,37 @@ describe("answerQuestion", () => {
     }
   });
 
+  it("answers an individual 800m PB from the athlete's dated results", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("村上咲稀の800mPBは？", {
+      skipRouter: true,
+      defaultYear: 2026,
+      llm: null,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.sources[0]).toBe("out-analysis/arato-tamana-teams/岱明中.md");
+      expect(result.text).toContain("2:20.11");
+    }
+  });
+
+  it("uses the all-time fastest result for PB when the latest SB is slower", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("作取夢歩の800mPBは？", {
+      skipRouter: true,
+      defaultYear: 2026,
+      llm: null,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.sources[0]).toBe("out-analysis/arato-tamana-teams/荒尾三中.md");
+      expect(result.text).toContain("2:56.09");
+      expect(result.text).not.toContain("3:00.95");
+    }
+  });
+
   it("extracts the fastest men 3000m SB from the ranking digest", async () => {
     resetRetrieverCache();
     resetKgCache();
@@ -3658,6 +3755,38 @@ describe("answerQuestion", () => {
       expect(result.sources[0]).toBe("out-analysis/2026_aragyoku_men_1500m_sb_individual_top20.md");
       expect(result.text).toContain("隈部侑成（金栗PROJECT）の4:11.60");
       expect(result.text).not.toContain("トップ20");
+    }
+  });
+
+  it("keeps a school all-record request on the historical team digest", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("荒尾三中所属選手の全記録一覧は？", {
+      skipRouter: true,
+      defaultYear: 2026,
+      llm: null,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.sources[0]).toBe("out-analysis/arato-tamana-teams/荒尾三中.md");
+      expect(result.text).toContain("井形心美");
+      expect(result.text).not.toContain("荒尾三中_SB.md");
+    }
+  });
+
+  it("returns ranked rows for a broad men 1500m SB top-20 question", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("今年の荒玉地区の男子1500mSBランキングトップ20", {
+      skipRouter: true,
+      defaultYear: 2026,
+      llm: null,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.sources[0]).toBe("out-analysis/2026_aragyoku_men_1500m_sb_individual_top20.md");
+      expect(result.text).toContain("1位 隈部侑成（金栗PROJECT）4:11.60");
+      expect(result.text).toContain("20位 内野翼");
     }
   });
 

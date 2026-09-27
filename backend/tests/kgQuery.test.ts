@@ -79,6 +79,14 @@ describe("queryKnowledgeGraph", () => {
     expect(blob).toMatch(/2026_women_800m_1500m_pb_school_ranking/);
   });
 
+  it("routes an athlete-specific PB question to the athlete's result digest", () => {
+    resetKgCache();
+    const result = queryKnowledgeGraph("村上咲稀の800mPBは？", { kgPath });
+    expect(result.matched_nodes[0]?.id).toBe("entity:athlete:村上咲稀");
+    expect(result.corpus_sources).toContain("out-analysis/arato-tamana-teams/岱明中.md");
+    expect(result.corpus_sources.some((source) => source.includes("pb_school_ranking"))).toBe(false);
+  });
+
   it("routes winner-margin questions to focus-team analysis", () => {
     resetKgCache();
     const result = queryKnowledgeGraph("2025年岱明男子の優勝との差は？", { kgPath });
@@ -103,8 +111,8 @@ describe("queryKnowledgeGraph", () => {
   });
 
   it.each([
-    ["2025年 荒玉駅伝 玉陵 3区のタイムは？", "entity:aragyoku-leg:2025:玉陵:3", "out-analysis/aragyoku-years/2025.md"],
-    ["2025年 荒玉駅伝 玉陵 3区の通過順位は？", "entity:aragyoku-leg:2025:玉陵:3", "out-analysis/aragyoku-years/2025.md"],
+    ["2025年 荒玉駅伝 玉陵 3区のタイムは？", "source:out/analysis/aragyoku-years/2025.md", "out-analysis/aragyoku-years/2025.md"],
+    ["2025年 荒玉駅伝 玉陵 3区の通過順位は？", "source:out/analysis/aragyoku-years/2025.md", "out-analysis/aragyoku-years/2025.md"],
     ["2025年 荒玉駅伝男子 3区の区間順位一覧", "source:out/analysis/aragyoku-years/2025.md", "out-analysis/aragyoku-years/2025.md"],
     ["2025年 荒玉駅伝男子 玉陵の全区間順位", "source:out/analysis/aragyoku-teams/玉陵.md", "out-analysis/aragyoku-teams/玉陵.md"],
     ["玉陵の荒玉駅伝3区は過去何位？", "source:out/analysis/aragyoku-teams/玉陵.md", "out-analysis/aragyoku-teams/玉陵.md"],

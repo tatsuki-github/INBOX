@@ -137,13 +137,13 @@ def main() -> int:
         (
             "v6_goudou",
             "玉名市合同練習会はいつどこ？",
-            ["おおはま"],
-            ["line-chats", "daiming-parents"],
+            ["おおはま", "8:00"],
+            ["drive-text/練習/玉名市練習会/2026-09-22"],
         ),
         (
             "v6_fee",
             "合同練習会の会費は？",
-            ["1000"],
+            ["1,000"],
             ["line-chats", "daiming-parents"],
         ),
         (
@@ -167,8 +167,8 @@ def main() -> int:
         (
             "v6_murakami",
             "村上咲稀の800mPBは？",
-            ["2:20"],
-            ["women_800m_1500m_pb_school_ranking", "SB"],
+            ["2:20.11"],
+            ["arato-tamana-teams/岱明中"],
         ),
     ]
     for fid, q, all_of, sources in core:
