@@ -553,13 +553,6 @@ gender,team,name,date,distance_km,time_sec,type,meet,leg,source,source_team,sour
 男子,岱明中,今村 昇磨,2026-09-20,3.0,607.0,road_ekiden,なごみ中学駅伝,2,input/external/drive/shared/大会/2026年度/0920_中学駅伝金栗四三生誕の地なごみ大会/成績表.json,ATRC A,3
 男子,岱明中,今村 昇磨,2026-09-26,2.6,507.0,road_ekiden,熊本県ジュニア駅伝,3,input/external/drive/shared/大会/2026年度/0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）/荒玉地区_ジュニア結果抜粋.md,岱明中,
 男子,南関中B,八尋勇翔,2026-09-26,2.6,546.0,road_ekiden,熊本県ジュニア駅伝,4,input/external/drive/shared/大会/2026年度/0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）/荒玉地区_ジュニア結果抜粋.md,南関中B,
-男子,玉陵中,内野翼,2025-04-29,1.5,291.67,track,第42回大牟田陸上競技大会,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2025-single-table.csv,FORMULA K,1
-男子,玉陵中,内野翼,2025-06-08,1.5,279.93,track,令和7年度　第39回熊本県中学校陸上競技選手権大会,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2025-single-table.csv,FORMULA K,1
-男子,玉陵中,内野翼,2025-06-28,1.5,279.95,track,第71回全日本中学校通信陸上競技大会熊本県大会,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2025-single-table.csv,FORMULA K,1
-男子,玉陵中,内野翼,2026-05-09,1.5,293.69,track,2026.5.9　第１回熊本県長距離記録会,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2026-single-table.csv,玉名アスリーツ,2
-男子,玉陵中,内野翼,2026-05-24,1.5,292.9,track,令和8年度　第40回熊本県中学校陸上競技選手権大会,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2026-single-table.csv,玉名アスリーツ,2
-男子,玉陵中,内野翼,2026-06-14,1.5,276.16,track,第72回全日本中学校通信陸上競技大会熊本県大会,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2026-single-table.csv,玉名アスリーツ,2
-男子,玉陵中,内野翼,2026-07-19,1.5,273.34,track,令和8年度　熊本県中学校総合体育大会　陸上競技大会,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2026-single-table.csv,玉名アスリーツ,2
 男子,荒尾第四中,北村 春磨,2026-04-04,1.5,293.7,track,第２７２回　熊本市陸上競技記録会,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2026-single-table.csv,ATRC,1
 男子,荒尾第四中,北村 春磨,2026-05-09,1.5,285.03,track,2026.5.9　第１回熊本県長距離記録会,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2026-single-table.csv,ATRC,1
 男子,荒尾第四中,北村 春磨,2026-05-24,1.5,282.37,track,令和8年度　第40回熊本県中学校陸上競技選手権大会,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2026-single-table.csv,ATRC,1
@@ -668,6 +661,26 @@ gender,team,name,date,distance_km,time_sec,type,meet,leg,source,source_team,sour
 男子,玉名高附,小倉 由宇,2026-07-04,1.5,283.21,track,2026.7.4　第２回熊本県長距離記録会,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2026-single-table.csv,玉名附中,1
 男子,玉名高附,小倉 由宇,2026-09-20,3.0,630.0,road_ekiden,なごみ中学駅伝,2,input/external/drive/shared/大会/2026年度/0920_中学駅伝金栗四三生誕の地なごみ大会/成績表.json,玉名高校附属A,1
 男子,玉名高附,小倉 由宇,2026-09-26,2.6,528.0,road_ekiden,熊本県ジュニア駅伝,4,input/external/drive/shared/大会/2026年度/0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）/荒玉地区_ジュニア結果抜粋.md,玉名高附A,
+男子,玉陵中,小林祐貴,2025-05-10,1.5,349.13,track,2025.5.10　第一回熊本県跳躍記録会,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2025-single-table.csv,玉名アスリーツ,1
+男子,玉陵中,小林祐貴,2025-05-25,1.5,356.94,track,さつき記録会,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2025-single-table.csv,玉名アスリーツ,1
+男子,玉陵中,小林祐貴,2025-06-08,1.5,340.07,track,令和7年度　第39回熊本県中学校陸上競技選手権大会,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2025-single-table.csv,玉名アスリーツ,1
+男子,玉陵中,小林祐貴,2025-06-28,1.5,342.21,track,第71回全日本中学校通信陸上競技大会熊本県大会,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2025-single-table.csv,玉名アスリーツ,1
+男子,玉陵中,小林祐貴,2025-07-05,1.5,334.3,track,2025.7.5　第二回熊本県長距離記録会,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2025-single-table.csv,玉名アスリーツ,1
+男子,玉陵中,小林祐貴,2025-07-19,1.5,336.52,track,令和7年度　熊本県中学校総合体育大会　陸上競技大会,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2025-single-table.csv,玉名アスリーツ,1
+男子,玉陵中,小林祐貴,2025-11-15,0.8,157.83,track,第４回会熊本県チャレンジ陸上大会,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2025-single-table.csv,玉名アスリーツ,1
+男子,玉陵中,小林祐貴,2025-11-22,1.5,311.37,track,第７８回熊本市中長距離陸上競技選手権大会,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2025-single-table.csv,玉名アスリーツ,1
+男子,玉陵中,小林祐貴,2026-03-20,0.8,153.44,track,陸協春季熊本陸協記録会,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2025-single-table.csv,玉名アスリーツ,1
+男子,玉陵中,小林祐貴,2026-04-04,1.5,298.7,track,第２７２回　熊本市陸上競技記録会,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2026-single-table.csv,玉名アスリーツ,2
+男子,玉陵中,小林祐貴,2026-04-18,1.5,281.55,track,２０２６年度　第４５回熊本市陸上競技選手権大会,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2026-single-table.csv,玉名アスリーツ,2
+男子,玉陵中,小林祐貴,2026-04-29,1.5,284.08,track,第43回大牟田陸上競技大会,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2026-single-table.csv,玉名アスリーツ,2
+男子,玉陵中,小林祐貴,2026-05-09,1.5,287.62,track,2026.5.9　第１回熊本県長距離記録会,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2026-single-table.csv,玉名アスリーツ,2
+男子,玉陵中,小林祐貴,2026-05-24,1.5,288.76,track,令和8年度　第40回熊本県中学校陸上競技選手権大会,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2026-single-table.csv,玉名アスリーツ,2
+男子,玉陵中,小林祐貴,2026-06-14,1.5,280.13,track,第72回全日本中学校通信陸上競技大会熊本県大会,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2026-single-table.csv,玉名アスリーツ,2
+男子,玉陵中,小林祐貴,2026-07-04,1.5,279.04,track,2026.7.4　第２回熊本県長距離記録会,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2026-single-table.csv,玉名アスリーツ,2
+男子,玉陵中,小林祐貴,2026-07-19,1.5,282.23,track,令和8年度　熊本県中学校総合体育大会　陸上競技大会,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2026-single-table.csv,玉名アスリーツ,2
+男子,玉陵中,小林祐貴,2026-09-12,3.0,597.24,track,令和8年度 第3回ナイター記録会,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2026-single-table.csv,玉名アスリーツ,2
+男子,玉陵中,小林祐貴,2026-09-20,3.0,629.0,road_ekiden,なごみ中学駅伝,3,input/external/drive/shared/大会/2026年度/0920_中学駅伝金栗四三生誕の地なごみ大会/成績表.json,玉名アスリーツB,2
+男子,玉陵中,小林祐貴,2026-09-21,1.5,282.78,track,2026.9.21　第３回熊本県長距離記録会,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2026-single-table.csv,玉名アスリーツ,2
 男子,岱明中,山本 哲瑠,2025-06-08,1.5,283.17,track,令和7年度　第39回熊本県中学校陸上競技選手権大会,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2025-single-table.csv,岱明中,1
 男子,岱明中,山本 哲瑠,2025-06-28,1.5,292.42,track,第71回全日本中学校通信陸上競技大会熊本県大会,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2025-single-table.csv,岱明中,1
 男子,岱明中,山本 哲瑠,2025-07-19,1.5,291.51,track,令和7年度　熊本県中学校総合体育大会　陸上競技大会,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2025-single-table.csv,岱明中,1

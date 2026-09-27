@@ -8,25 +8,28 @@
       "short_exponent": 1.1727167488320045,
       "short_pairs": 349,
       "short_raw_median": 1.1727167488320045,
-      "road_factor": 1.0053341826508777,
-      "road_pairs": 19,
-      "road_raw_median": 1.0123528440336114,
-      "best_share": 0.3,
-      "other_feature": "typical",
+      "road_factor": 1.0056629120894307,
+      "road_pairs": 20,
+      "road_raw_median": 1.0127415522012189,
+      "best_share": 0.6,
+      "other_feature": "recent",
+      "best_feature": "recent_best",
       "recent_window_days": 45,
       "recent_half_life_days": 21,
-      "recent_road_weight": 2.0,
-      "recent_track_weight": 0.5,
-      "baseline_scale": 1.0051284240243719,
-      "baseline_scale_source": "v1 median alignment, held fixed",
-      "junior_course_factor": 1.01,
-      "peak_factor": 0.9859830007869856,
+      "recent_road_weight": 1.0,
+      "recent_track_weight": 2.0,
+      "peak_factor_min": 0.995,
+      "baseline_scale": 1.0,
+      "baseline_scale_source": "neutral 1.0; legacy SB estimate is comparison-only",
+      "junior_course_factor": 1.0,
+      "junior_course_factor_source": "neutral 1.0; no measured course-time factor",
+      "raw_peak_factor": 0.9859830007869856,
+      "peak_factor": 0.995,
       "nagomi_pairs": 37,
       "junior_pairs": 6,
       "nagomi_to_aragyoku_median": 0.959375,
       "junior_to_aragyoku_median": 0.980821440662437,
       "raw_course_factor": 0.9781342048885551,
-      "junior_course_factor_source": "rolling-course scenario assumption; elevation not measured",
       "peak_projection_days": 17,
       "peak_evidence_days": 30
     },
@@ -40,16 +43,20 @@
       "road_factor": 0.9911082983116876,
       "road_pairs": 12,
       "road_raw_median": 0.9725839197943701,
-      "best_share": 0.3,
-      "other_feature": "typical",
+      "best_share": 0.6,
+      "other_feature": "recent",
+      "best_feature": "recent_best",
       "recent_window_days": 45,
       "recent_half_life_days": 21,
-      "recent_road_weight": 2.0,
-      "recent_track_weight": 0.5,
-      "baseline_scale": 0.9860736188843046,
-      "baseline_scale_source": "v1 median alignment, held fixed",
+      "recent_road_weight": 1.0,
+      "recent_track_weight": 2.0,
+      "peak_factor_min": 0.995,
+      "baseline_scale": 1.0,
+      "baseline_scale_source": "neutral 1.0; legacy SB estimate is comparison-only",
       "junior_course_factor": 1.0,
       "peak_factor": 1.0,
+      "junior_course_factor_source": "neutral 1.0; no measured course-time factor",
+      "raw_peak_factor": 1.0,
       "nagomi_pairs": 0,
       "junior_pairs": 0
     }
@@ -57,9 +64,9 @@
   "historical_track_backtest": {
     "男子": {
       "n": 71,
-      "mae_sec": 21.55500133260702,
-      "rmse_sec": 37.46440697423449,
-      "median_actual_over_raw": 0.9913122607793574,
+      "mae_sec": 21.94512171490071,
+      "rmse_sec": 38.04971345619684,
+      "median_actual_over_raw": 0.985835106106989,
       "by_year": {
         "2024": 37,
         "2025": 34
@@ -67,9 +74,9 @@
     },
     "女子": {
       "n": 76,
-      "mae_sec": 20.795879864122153,
-      "rmse_sec": 26.693323542029653,
-      "median_actual_over_raw": 1.0101228206128228,
+      "mae_sec": 18.939386951443353,
+      "rmse_sec": 24.19057831157145,
+      "median_actual_over_raw": 1.0089264290763147,
       "by_year": {
         "2024": 38,
         "2025": 38
@@ -78,9 +85,9 @@
   },
   "rejected": {
     "graduated_athlete": 7,
-    "missing_or_invalid": 98,
+    "missing_or_invalid": 94,
     "different_school_namesake": 3,
-    "duplicate": 434
+    "duplicate": 438
   },
-  "observations": 1182
+  "observations": 1195
 }

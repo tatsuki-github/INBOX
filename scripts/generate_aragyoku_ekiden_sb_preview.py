@@ -612,6 +612,25 @@ def get_provisional_orders(
     smap = school_map or load_arato_school_map()
     pools = build_school_athlete_pools(gender, sb_index, school_map=smap)
     locked = LOCKED_ORDER_TEAMS.get(gender, set())
+    human_notes = load_human_notes(gender)
+    order_exclusions = [
+        row for row in human_notes.get("order_exclusions", [])
+        if isinstance(row, dict) and row.get("athlete") and row.get("team")
+    ]
+
+    def _excluded_from_order(team: str, name: str) -> bool:
+        return any(
+            (str(row["team"]) in team or team in str(row["team"]))
+            and is_same_athlete(str(row["athlete"]), name)
+            for row in order_exclusions
+        )
+
+    def _exclusion_note(team: str) -> str:
+        rows = [r for r in order_exclusions
+                if str(r["team"]) in team or team in str(r["team"])]
+        return " / 出走しない情報により除外: " + "、".join(
+            f"{r['athlete']}（{r.get('reason') or '人間確認'}）" for r in rows
+        ) if rows else ""
 
     used_names: list[str] = []
 
@@ -640,7 +659,7 @@ def get_provisional_orders(
         pool = [
             (name, score)
             for name, score in pools.get(team, [])
-            if not _is_used(name)
+            if not _is_used(name) and not _excluded_from_order(team, name)
         ]
         seed = seeds.get(team)
         min_unique = MIN_UNIQUE_FOR_SCHOOL_MAP.get(gender, 2)
@@ -651,7 +670,7 @@ def get_provisional_orders(
             )
             notes = (
                 f"`arato_tamana_report.yaml` の所属／選手マッピング後の校内SB上位"
-                f"（{len(ranked_names)}名プール）"
+                f"（{len(ranked_names)}名プール）{_exclusion_note(team)}"
             )
             built[team] = {
                 "team": team,
@@ -664,12 +683,12 @@ def get_provisional_orders(
         elif seed:
             ranked: list[str] = []
             for name in seed.get("legs") or []:
-                if name and not _is_used(str(name)) and not any(
+                if name and not _is_used(str(name)) and not _excluded_from_order(team, str(name)) and not any(
                     is_same_athlete(str(name), r) for r in ranked
                 ):
                     ranked.append(str(name))
             for name, _ in pool:
-                if not _is_used(name) and not any(
+                if not _is_used(name) and not _excluded_from_order(team, name) and not any(
                     is_same_athlete(name, r) for r in ranked
                 ):
                     ranked.append(name)
@@ -679,7 +698,7 @@ def get_provisional_orders(
             row = dict(seed)
             row["legs"] = legs
             row["notes"] = (
-                f"{seed.get('notes', '')} / 同一選手複数区間禁止"
+                f"{seed.get('notes', '')}{_exclusion_note(team)} / 同一選手複数区間禁止"
             ).strip(" /")
             built[team] = row
             for name in legs:
@@ -1557,6 +1576,7 @@ def empty_human_notes(gender: str) -> dict[str, Any]:
         "updated": "",
         "memo": "",
         "adjustments": [],
+        "order_exclusions": [],
     }
 
 
@@ -1574,6 +1594,8 @@ def load_human_notes(gender: str, *, path: Path | None = None) -> dict[str, Any]
         notes["memo"] = str(raw.get("memo") or "").strip()
         adj = raw.get("adjustments") or []
         notes["adjustments"] = [a for a in adj if isinstance(a, dict)]
+        exclusions = raw.get("order_exclusions") or []
+        notes["order_exclusions"] = [a for a in exclusions if isinstance(a, dict)]
         notes["_path"] = str(p)
         return notes
     return empty_human_notes(gender)

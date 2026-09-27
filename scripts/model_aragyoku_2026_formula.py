@@ -27,16 +27,20 @@ MEET = base.MEET_DIR
 NAME_ALIASES = {"松野凜空": "松野凛空"}
 RECENT_WINDOW_DAYS = 45
 RECENT_HALF_LIFE_DAYS = 21
-RECENT_ROAD_WEIGHT = 2.0
-RECENT_TRACK_WEIGHT = 0.5
-BEST_SHARE = 0.30
+RECENT_ROAD_WEIGHT = 1.0
+RECENT_TRACK_WEIGHT = 2.0
+BEST_SHARE = 0.60
 PEAK_EVIDENCE_DAYS = 30
+PEAK_FACTOR_MIN = 0.995
 # Scenario assumption: the junior park loop is rolling, but no measured
-# elevation profile or independent course-time penalty is available here.
-JUNIOR_HILL_FACTOR = 1.01
-# The v1 baseline alignment is held fixed so the recency change can be
-# evaluated without fitting the new forecast back to the old SB estimates.
-BASELINE_SCALE = {"男子": 1.0051284240243719, "女子": 0.9860736188843046}
+# elevation profile or independent course-time penalty is available, so use
+# the neutral factor and let the dated race observations speak for themselves.
+JUNIOR_HILL_FACTOR = 1.0
+# Do not calibrate forecasts back to the legacy SB estimates. Those estimates
+# are comparison-only; an unobserved global scale must not override recent facts.
+BASELINE_SCALE = {"男子": 1.0, "女子": 1.0}
+BASELINE_SCALE_SOURCE = "neutral 1.0; legacy SB estimate is comparison-only"
+JUNIOR_COURSE_FACTOR_SOURCE = "neutral 1.0; no measured course-time factor"
 
 
 def norm_name(value: str) -> str:
@@ -445,7 +449,8 @@ def estimate_men_meet_transfer(k: float, k_short: float) -> tuple[dict, list[dic
     nagomi_ratios = [r["actual_over_converted"] for r in pairs if r["source_meet"] == "nagomi"]
     junior_ratios = [r["actual_over_converted"] for r in pairs if r["source_meet"] == "junior"]
     if not nagomi_ratios or not junior_ratios:
-        return {"junior_course_factor": JUNIOR_HILL_FACTOR, "peak_factor": 1.0,
+        return {"junior_course_factor": JUNIOR_HILL_FACTOR, "junior_course_factor_source": JUNIOR_COURSE_FACTOR_SOURCE,
+                "raw_peak_factor": 1.0, "peak_factor": 1.0,
                 "nagomi_pairs": len(nagomi_ratios), "junior_pairs": len(junior_ratios)}, pairs
     nagomi_median = statistics.median(nagomi_ratios)
     junior_median = statistics.median(junior_ratios)
@@ -453,15 +458,19 @@ def estimate_men_meet_transfer(k: float, k_short: float) -> tuple[dict, list[dic
     # Forty neutral pseudo-pairs halve the potential fitness signal because
     # that historical ratio also contains weather and course differences.
     peak_weight = len(nagomi_ratios) / (len(nagomi_ratios) + 40)
-    peak_factor = nagomi_median ** ((FORECAST_DATE - AS_OF).days / 24 * peak_weight)
+    raw_peak_factor = nagomi_median ** ((FORECAST_DATE - AS_OF).days / 24 * peak_weight)
+    # Keep the empirical forward projection, but cap the gain at 0.5% so a
+    # forecast cannot turn a recent observed result into an unsupported leap.
+    peak_factor = max(raw_peak_factor, PEAK_FACTOR_MIN)
     raw_course_factor = nagomi_median / junior_median
     return {"junior_course_factor": JUNIOR_HILL_FACTOR,
+            "junior_course_factor_source": JUNIOR_COURSE_FACTOR_SOURCE,
+            "raw_peak_factor": raw_peak_factor,
             "peak_factor": peak_factor,
             "nagomi_pairs": len(nagomi_ratios), "junior_pairs": len(junior_ratios),
             "nagomi_to_aragyoku_median": nagomi_median,
             "junior_to_aragyoku_median": junior_median,
             "raw_course_factor": raw_course_factor,
-            "junior_course_factor_source": "rolling-course scenario assumption; elevation not measured",
             "peak_projection_days": (FORECAST_DATE - AS_OF).days,
             "peak_evidence_days": PEAK_EVIDENCE_DAYS}, pairs
 
@@ -503,14 +512,11 @@ def features(rows: list[dict], km: float, k: float, k_short: float, road_c: floa
         # Keep a forecast for athletes who have no race inside the window.
         recent_points = points
     recent = sum(t * w for t, w, _ in recent_points) / sum(w for _, w, _ in recent_points)
-    # The fast-side quartile is robust to one unusually slow recent race.
-    ordered = sorted(recent_points, key=lambda x: x[0]); cumulative = 0; total = sum(x[1] for x in ordered)
-    typical = ordered[-1][0]
-    for value, weight, _ in ordered:
-        cumulative += weight
-        if cumulative >= .25 * total:
-            typical = value; break
-    return {"best": best, "recent": recent, "typical": typical,
+    # Use the actual fastest equivalent inside the recent window as the
+    # capability anchor; the weighted mean keeps one exceptional result from
+    # dominating the whole forecast. If the window is empty, both use all data.
+    recent_best = min(t for t, _, _ in recent_points)
+    return {"best": best, "recent_best": recent_best, "recent": recent,
             "n": len(rows), "latest": max(x["date"] for x in rows),
             "n_recent": len(recent_points),
             "types": sorted(set(x["type"] for x in rows))}
@@ -532,30 +538,35 @@ def fit(targets: list[dict], obs: list[dict]) -> tuple[dict, list[dict], list[di
         course = BASELINE_SCALE[gender]
         transfer = men_transfer if gender == "男子" else {
             "junior_course_factor": 1.0, "peak_factor": 1.0,
-            "nagomi_pairs": 0, "junior_pairs": 0}
+            "junior_course_factor_source": JUNIOR_COURSE_FACTOR_SOURCE,
+            "raw_peak_factor": 1.0, "nagomi_pairs": 0, "junior_pairs": 0}
         params[gender] = {"distance_exponent": k, "distance_pairs": n_k, "distance_raw_median": raw_k,
                           "short_exponent": k_short, "short_pairs": n_short, "short_raw_median": raw_short,
                           "road_factor": rc, "road_pairs": n_road, "road_raw_median": raw_road,
-                          "best_share": BEST_SHARE, "other_feature": "typical",
+                          "best_share": BEST_SHARE, "other_feature": "recent",
+                          "best_feature": "recent_best",
                           "recent_window_days": RECENT_WINDOW_DAYS,
                           "recent_half_life_days": RECENT_HALF_LIFE_DAYS,
                           "recent_road_weight": RECENT_ROAD_WEIGHT,
                           "recent_track_weight": RECENT_TRACK_WEIGHT,
+                          "peak_factor_min": PEAK_FACTOR_MIN,
                           "baseline_scale": course,
-                          "baseline_scale_source": "v1 median alignment, held fixed",
+                          "baseline_scale_source": BASELINE_SCALE_SOURCE,
                           **transfer}
         for t in [x for x in targets if x["gender"] == gender]:
             f = features(by_key[t["key"]], t["km"], k, k_short, rc,
                          junior_course_factor=transfer["junior_course_factor"],
                          peak_factor=transfer["peak_factor"])
-            raw_pred = None if f is None else course * (BEST_SHARE * f["best"] + (1 - BEST_SHARE) * f["typical"])
+            raw_pred = None if f is None else course * (
+                BEST_SHARE * f["recent_best"] + (1 - BEST_SHARE) * f["recent"]
+            )
             pred = None if raw_pred is None else math.floor(raw_pred + 0.5)
             comparisons.append({"gender": gender, "team": t["team"], "leg": t["leg"],
                                 "km": t["km"], "name": t["name"], "baseline_sec": t["baseline"],
                                 "formula_sec": pred, "error_sec": None if pred is None or t["baseline"] is None else pred - t["baseline"],
                                 "best_sec": f["best"] if f else None,
+                                "recent_best_sec": f["recent_best"] if f else None,
                                 "recent_sec": f["recent"] if f else None,
-                                "typical_sec": f["typical"] if f else None,
                                 "n_races": f["n"] if f else 0,
                                 "n_recent_races": f["n_recent"] if f else 0,
                                 "latest_race": f["latest"] if f else "",
@@ -627,8 +638,8 @@ def historical_track_backtest(params: dict) -> tuple[list[dict], dict]:
                                  p["junior_course_factor"], p["peak_factor"])
                     if f is None:
                         continue
-                    raw = (p["best_share"] * f["best"] +
-                           (1 - p["best_share"]) * f[p["other_feature"]])
+                    raw = (p["best_share"] * f["recent_best"] +
+                           (1 - p["best_share"]) * f["recent"])
                     pred = p["baseline_scale"] * raw
                     results.append({"year": year, "gender": gender, "team": s,
                                     "name": leg["name"], "leg": number,
@@ -693,7 +704,7 @@ def write_report(obs: list[dict], comparisons: list[dict], params: dict,
         "# 荒玉駅伝2026：レース記録から作る説明可能な区間予測式",
         "",
         "基準日: 2026-09-27 ／ 大会予定日: 2026-10-14。現在の区間オーダーは仮置きを含む。",
-        "このモデルは直近の駅伝・ロード実績を優先して区間タイムを予測する。旧 `区間オーダー_SB予想_coverage.csv` は比較値で、レース観測には混ぜていない。",
+        "このモデルは直近のトラック・ロード・駅伝実績を優先して区間タイムを予測する。旧 `区間オーダー_SB予想_coverage.csv` は比較値で、レース観測には混ぜていない。",
         "",
         "## データと除外",
         "",
@@ -709,32 +720,32 @@ def write_report(obs: list[dict], comparisons: list[dict], params: dict,
         "`q_j = t_j × (1.5 / d_j)^k_short × (L / 1.5)^k_long / C_type`（d_j < 1.5km）",
         "",
         "`C_type = 1` はトラック、ロード・駅伝・前年荒玉には下表の男女別係数を使う。これは同一選手の45日以内のトラック対ロードを比較し、選手ごとの中央値を求めてから少数標本を1へ縮めた値。クロカン係数はデータがないため推定していない。",
-        "男子のジュニア駅伝記録はさらに `H_junior=1.01` で割る。男子の基準日直前30日以内の記録は、本番までの仕上がり係数 `F_peak` を掛ける。どちらも岱明だけでなく条件に合う全校の記録へ適用する。女子は両係数を1とする。",
+        f"男子のジュニア駅伝記録は、実測コース差がないため `H_junior={JUNIOR_HILL_FACTOR:.2f}` とする。男子の基準日直前30日以内の記録は本番までの仕上がり係数 `F_peak` を掛けるが、短縮は最大0.5%に制限する。女子は仕上がり係数を1とする。",
         "",
-        "直近45日内の記録について `w_j = 2^(-age_days / 21) × type_weight / n_same_day`、`type_weight_track = 0.5`、`type_weight_road/ekiden = 2.0`。同日の複数記録はその日の重みを分け合う。45日内の記録がない選手だけ全記録に同じ式を使う。",
+        "直近45日内の記録について `w_j = 2^(-age_days / 21) × type_weight / n_same_day`、`type_weight_track = 2.0`、`type_weight_road/ekiden = 1.0`。同日の複数記録はその日の重みを分け合う。45日内の記録がない選手だけ全記録に同じ式を使う。",
         "",
         "`B = 全記録の補正後 q_j 最速2件の平均`（1件ならその1件）、`Q_recent = 直近集合の補正後 q_j の重み付き25パーセンタイル`（速い側から重み累積25%の記録）。",
         "",
-        "**男女共通の式**: `T_pred = S_gender × (0.30 B + 0.70 Q_recent)`。学校別の補正は置かない。性別ごとに距離指数・種別係数・旧基準合わせ係数が異なる。",
+        "**男女共通の式**: `T_pred = 0.60 B_recent + 0.40 Q_recent`。`B_recent` は直近集合の最速換算値、`Q_recent` は記録日と種別で重みづけした平均。学校別の補正は置かない。",
         "",
-        "| 性別 | 短距離指数 k_short | 800/1500m組数 | 中長距離指数 k_long | 1500/3000m組数 | ロード係数 C_type | 種別比較数 | 現行予測合わせ S_gender |",
-        "| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |",
+        "| 性別 | 短距離指数 k_short | 800/1500m組数 | 中長距離指数 k_long | 1500/3000m組数 | ロード係数 C_type | 種別比較数 |",
+        "| --- | ---: | ---: | ---: | ---: | ---: | ---: |",
     ]
     for gender in ("男子", "女子"):
         p = params[gender]
-        lines.append(f"| {gender} | {p['short_exponent']:.4f} | {p['short_pairs']} | {p['distance_exponent']:.4f} | {p['distance_pairs']} | {p['road_factor']:.4f} | {p['road_pairs']} | {p['baseline_scale']:.4f} |")
+        lines.append(f"| {gender} | {p['short_exponent']:.4f} | {p['short_pairs']} | {p['distance_exponent']:.4f} | {p['distance_pairs']} | {p['road_factor']:.4f} | {p['road_pairs']} |")
     lines += [
         "",
-        "係数を代入した実用式（各jのqとwからB・Q_recentを求める）:",
+        "係数を代入した実用式:",
         "",
     ]
     for gender in ("男子", "女子"):
         p = params[gender]
-        lines.append(f"- **{gender}**: `k_short={p['short_exponent']:.4f}, k_long={p['distance_exponent']:.4f}`、ロード等は `C_j={p['road_factor']:.4f}`、`T={p['baseline_scale']:.4f}(0.30B+0.70Q_recent)`。")
+        lines.append(f"- **{gender}**: `k_short={p['short_exponent']:.4f}, k_long={p['distance_exponent']:.4f}`、ロード等は `C_type={p['road_factor']:.4f}`、`T=0.60B_recent+0.40Q_recent`。")
     lines += [
         "",
         "距離指数は地域の全選手について同一年・45日以内の800/1500m、1500/3000mを照合し、選手年度ごとの中央値を求めた。女子の中長距離15組は少ないため男女合算の中央値へ20組相当で縮めた。",
-        "直近45日・21日半減期・ロード等4倍の種別重み比を全校共通で採用した。`S_gender` は旧モデルで求めたSB予想との中央値合わせ係数を固定し、今回の式に再適合していない。実際のコース係数を意味しない。",
+        "各選手の直近45日を使い、21日半減期で古い記録の重みを減らす。トラックの種別重みは2.0、ロード等は1.0。直近集合の最速換算値 `B_recent` と加重平均 `Q_recent` を60:40で混ぜる。旧SB予想への中央値合わせは行わない。",
         "",
         "## 男子ジュニア駅伝の起伏と本番までの仕上がり",
         "",
@@ -742,9 +753,9 @@ def write_report(obs: list[dict], comparisons: list[dict], params: dict,
     transfer = params["男子"]
     lines += [
         f"2025年なごみ→荒玉の同一選手 {transfer['nagomi_pairs']} 件では、距離換算後の `荒玉実績 / なごみ実績` の中央値が {transfer['nagomi_to_aragyoku_median']:.4f}。2025年ジュニア→荒玉の同一選手 {transfer['junior_pairs']} 件の中央値は {transfer['junior_to_aragyoku_median']:.4f}。同名選手が荒玉で複数校に現れる組は除外した。照合明細は `out/analysis/aragyoku_2026_meet_transfer_pairs.csv`。2025年大会記録と正本の区間距離を使用した。",
-        f"`F_peak = {transfer['nagomi_to_aragyoku_median']:.4f}^(({transfer['peak_projection_days']}/24) × ({transfer['nagomi_pairs']}/({transfer['nagomi_pairs']}+40))) = {transfer['peak_factor']:.4f}`。昨年の大会間24日を今年の基準日から本番まで{transfer['peak_projection_days']}日に換算し、コース・天候の差も混ざるため40件分の中立情報で縮めた。これは男子全校の直前30日以内の記録に適用する。",
-        f"起伏の独立したタイム損失は資料から測定できない。ジュニア→荒玉と、なごみ→荒玉の比から出る相対コース係数は {transfer['raw_course_factor']:.4f} で、起伏による遅延を立証しない。このため `H_junior=1.01` はユーザーのコース所感に基づく**仮定**であり実測係数ではない。ジュニア記録にだけ適用し、感度範囲は1.00–1.02とする。",
-        "男子の補正後記録は `q_adjusted = q_raw / H_junior × F_peak`（直前30日内のジュニア）、`q_raw × F_peak`（同期間の他の記録）。古い記録には仕上がり係数を掛けない。女子には適用しない。",
+        f"`F_peak_raw = {transfer['nagomi_to_aragyoku_median']:.4f}^(({transfer['peak_projection_days']}/24) × ({transfer['nagomi_pairs']}/({transfer['nagomi_pairs']}+40))) = {transfer['raw_peak_factor']:.4f}`、適用値は `max(F_peak_raw, {PEAK_FACTOR_MIN:.3f}) = {transfer['peak_factor']:.4f}`。昨年の大会間比はコース・天候差も含むため、予測短縮は最大0.5%に制限し、直前30日以内の男子記録だけに適用する。",
+        f"ジュニア→荒玉と、なごみ→荒玉の相対比はコース・天候差も混ざり、独立した起伏差を立証しない。このため実測コース係数がない現状では `H_junior={JUNIOR_HILL_FACTOR:.2f}` とし、ジュニア記録に推測の短縮を加えない。",
+        "男子の直近記録は `q_adjusted = q_raw / H_junior × F_peak`（直前30日内のジュニア）、`q_raw × F_peak`（同期間の他記録）。女子にはこの男子向け補正を適用しない。予測値は直近45日内の最速換算値60%と時間減衰付き直近平均40%の加重値とし、トラックをロードより強く評価する。45日内の記録がなければ全記録から同じ2特徴を作る。",
         "2026年ジュニアの今村8:27・田上8:26は `input/external/user-provided/2026-junior-ekiden/results-pdf/a40bc8e8fbf8daa401833dc1b8f6e5eb.pdf` で照合済み。地区抜粋にも記録を載せた。",
     ]
     for athlete in ("今村昇磨", "田上颯人"):
@@ -759,15 +770,16 @@ def write_report(obs: list[dict], comparisons: list[dict], params: dict,
         if row["gender"] == "男子" and row["team"] == "岱明中":
             daimei_observations[norm_name(row["name"])].append(row)
     sensitivity = []
-    for hill in (1.0, JUNIOR_HILL_FACTOR, 1.02):
+    for hill in (JUNIOR_HILL_FACTOR, 1.01, 1.02):
         total = 0.0
         for row in daimei_rows:
             f = features(daimei_observations[norm_name(row["name"])], row["km"],
                          transfer["distance_exponent"], transfer["short_exponent"],
                          transfer["road_factor"], junior_course_factor=hill,
                          peak_factor=transfer["peak_factor"])
-            total += transfer["baseline_scale"] * (BEST_SHARE * f["best"] +
-                                                    (1 - BEST_SHARE) * f["typical"])
+            total += transfer["baseline_scale"] * (
+                BEST_SHARE * f["recent_best"] + (1 - BEST_SHARE) * f["recent"]
+            )
         sensitivity.append(f"H={hill:.2f}: {fmt(total)}")
     lines.append("岱明男子の起伏仮定への感度（仕上がり係数は固定）: " + " / ".join(sensitivity) + "。")
     nankan_rows = [r for r in comparisons if r["gender"] == "男子" and r["team"] == "南関中"]
@@ -853,8 +865,8 @@ def write_report(obs: list[dict], comparisons: list[dict], params: dict,
     lines += [
         f"| {junior['date']} 県ジュニア駅伝 {junior['distance_km']:g}km | {fmt(junior['time_sec'])} | {fmt(q_junior)} |",
         "",
-        f"`B = {example['best_sec']:.2f}秒`。全{example['n_races']}件のうち直近集合{example['n_recent_races']}件から `Q_recent = {example['typical_sec']:.2f}秒`。",
-        f"`T = {p['baseline_scale']:.6f} × (0.30 × {example['best_sec']:.2f} + 0.70 × {other_value:.2f}) = {example['formula_sec']:.0f}秒`（1秒単位に四捨五入）。旧SB値は{fmt(example['baseline_sec'])}で、差は{example['error_sec']:+.1f}秒。",
+        f"直近集合{example['n_recent_races']}件の最速換算 `B_recent = {example['recent_best_sec']:.2f}秒`、時間減衰付き平均 `Q_recent = {example['recent_sec']:.2f}秒`。全{example['n_races']}件の最速2件平均も診断値として保持。",
+        f"`T = 0.60 × {example['recent_best_sec']:.2f} + 0.40 × {other_value:.2f} = {example['formula_sec']:.0f}秒`（直近実績を中心に1秒単位へ四捨五入）。旧SB値は{fmt(example['baseline_sec'])}で、差は{example['error_sec']:+.1f}秒。",
         "",
         "## 過去本番への診断と次の校正",
         "",
@@ -868,7 +880,7 @@ def write_report(obs: list[dict], comparisons: list[dict], params: dict,
         lines.append(f"| {gender} | {s['n']} | {s['mae_sec']:.1f}秒 | {s['rmse_sec']:.1f}秒 | {s['median_actual_over_raw']:.4f} |")
     lines += [
         "",
-        "歴史データでコース・区間を校正するときは、(1) その大会前日までの観測だけで同じB・Q_recentを算出し、(2) `実績 / (0.30B + 0.70Q_recent)` を男女別に求め、(3) 年と学校を分けて検証し、安定した場合だけSを置き換える。現時点の実績比はロード欠損や天候も含むため2026予想には適用していない。",
+        "歴史データでコース・区間を校正するときは、(1) その大会前日までの観測だけで同じB_recent・Q_recentを算出し、(2) `実績 / (0.60B_recent + 0.40Q_recent)` を男女別に求め、(3) 年と学校を分けて検証する。旧SB予想への合わせ係数は使用しない。",
         "照合明細は `out/analysis/aragyoku_2026_historical_track_backtest.csv`。既存のSB式での区間差分析は `out/analysis/aragyoku_sb_calibration.md`。",
         "",
         "## 制約",
@@ -936,9 +948,9 @@ def publish_predictions(comparisons: list[dict], params: dict) -> None:
 
     def render_gender(gender: str) -> str:
         p = params[gender]
-        m = "直近45日（記録がなければ全期間）の重み付き25%値 Q_recent"
+        m = "直近45日（記録がなければ全期間）の時間減衰付き平均 Q_recent"
         correction_note = (
-            f"男子はジュニア駅伝記録を起伏仮定1.01で補正し、直前30日以内の記録に本番仕上がり係数{p['peak_factor']:.4f}を掛ける。起伏係数は実測ではない。"
+            f"男子はジュニア駅伝の未測定コース差を補正せず、直前30日以内の記録には本番仕上がり係数{p['peak_factor']:.4f}を掛ける（短縮は最大0.5%）。"
             if gender == "男子" else "")
         n_legs = 6 if gender == "男子" else 5
         order_note = ("岱明女子は監督確定、他校は仮置き。" if gender == "女子" else
@@ -947,8 +959,8 @@ def publish_predictions(comparisons: list[dict], params: dict) -> None:
                  "", f"基準日: {AS_OF.isoformat()} / 大会: 2026-10-14",
                  "", f"公式オーダー未着。{order_note}"
                  "トラック・ロード・駅伝の全採用レースから算出し、手入力の予想値は使用していない。",
-                 f"数式: `T = {p['baseline_scale']:.4f} × (0.30 B + 0.70 Q_recent)`。"
-                 f"Bは全記録の最速2件平均、{m}。直近の半減期21日、ロード・駅伝の重みはトラックの4倍。距離指数は短距離 {p['short_exponent']:.4f} / 中長距離 {p['distance_exponent']:.4f}。",
+                 f"数式: `T = 0.60 B_recent + 0.40 Q_recent`。"
+                 f"B_recentは直近集合の最速換算値、{m}。直近の半減期21日、トラックの種別重みはロード・駅伝の2倍。距離指数は短距離 {p['short_exponent']:.4f} / 中長距離 {p['distance_exponent']:.4f}。",
                  correction_note,
                  "詳細: `out/analysis/aragyoku_2026_formula_report.md`。"
                  "旧SB予測は `区間オーダー_SB予想.md` に保存。",
@@ -1022,9 +1034,9 @@ def publish_predictions(comparisons: list[dict], params: dict) -> None:
                                 "prediction_basis": r["prediction_basis"] if r else "unavailable",
                                 "sb_800": row["sb_800"], "sb_1500": row["sb_1500"],
                                 "sb_3000": row["sb_3000"],
-                                "model": "aragyoku_2026_formula_v4", "as_of": AS_OF.isoformat()})
+                                "model": "aragyoku_2026_formula_v5", "as_of": AS_OF.isoformat()})
     payload = {"event": "荒玉中体連駅伝", "event_date": "2026-10-14",
-               "as_of": AS_OF.isoformat(), "model": "aragyoku_2026_formula_v4",
+               "as_of": AS_OF.isoformat(), "model": "aragyoku_2026_formula_v5",
                "coefficients": params, "teams": team_payloads}
     for out_dir in (MEET, base.CORPUS_MEET):
         out_dir.mkdir(parents=True, exist_ok=True)
