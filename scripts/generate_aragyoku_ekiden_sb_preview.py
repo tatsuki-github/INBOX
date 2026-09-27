@@ -1604,6 +1604,7 @@ def empty_human_notes(gender: str) -> dict[str, Any]:
         "adjustments": [],
         "order_exclusions": [],
         "lineup_overrides": [],
+        "grade_overrides": [],
         "formula_adjustments": [],
         "formula_observation_weights": [],
     }
@@ -1625,7 +1626,7 @@ def load_human_notes(gender: str, *, path: Path | None = None) -> dict[str, Any]
         notes["adjustments"] = [a for a in adj if isinstance(a, dict)]
         exclusions = raw.get("order_exclusions") or []
         notes["order_exclusions"] = [a for a in exclusions if isinstance(a, dict)]
-        for key in ("lineup_overrides", "formula_adjustments", "formula_observation_weights"):
+        for key in ("lineup_overrides", "grade_overrides", "formula_adjustments", "formula_observation_weights"):
             values = raw.get(key) or []
             notes[key] = [a for a in values if isinstance(a, dict)]
         notes["_path"] = str(p)

@@ -631,14 +631,22 @@ def fit(targets: list[dict], obs: list[dict]) -> tuple[dict, list[dict], list[di
                 elif adj.get("delta_sec") is not None and pred is not None:
                     pred = math.floor(pred + float(adj["delta_sec"]) + 0.5)
                 applied_adjustments.append(str(adj.get("reason") or "人間考慮"))
+            grade_override = next((int(adj["grade"])
+                                   for adj in human[gender].get("grade_overrides", [])
+                                   if adj.get("team") and str(adj["team"]) in t["team"]
+                                   and adj.get("athlete")
+                                   and norm_name(str(adj["athlete"])) == norm_name(t["name"])
+                                   and str(adj.get("grade", "")).isdigit()
+                                   and 1 <= int(adj["grade"]) <= 3), None)
             comparisons.append({"gender": gender, "team": t["team"], "leg": t["leg"],
                                 "km": t["km"], "name": t["name"], "baseline_sec": t["baseline"],
-                                "grade": next((int(r["source_grade"]) + AS_OF.year - int(r["date"][:4])
-                                              for r in sorted(by_key[t["key"]],
-                                                              key=lambda x: x["date"], reverse=True)
-                                              if r.get("source_grade") is not None and r.get("date") and
-                                              1 <= int(r["source_grade"]) + AS_OF.year - int(r["date"][:4]) <= 3),
-                                             None),
+                                "grade": grade_override if grade_override is not None else
+                                next((int(r["source_grade"]) + AS_OF.year - int(r["date"][:4])
+                                      for r in sorted(by_key[t["key"]],
+                                                      key=lambda x: x["date"], reverse=True)
+                                      if r.get("source_grade") is not None and r.get("date") and
+                                      1 <= int(r["source_grade"]) + AS_OF.year - int(r["date"][:4]) <= 3),
+                                     None),
                                 "formula_sec": pred, "error_sec": None if pred is None or t["baseline"] is None else pred - t["baseline"],
                                 "leg_effect_sec": leg_effect_sec,
                                 "best_sec": f["best"] if f else None,

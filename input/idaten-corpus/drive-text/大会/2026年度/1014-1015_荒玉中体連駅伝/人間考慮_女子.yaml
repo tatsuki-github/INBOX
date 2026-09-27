@@ -4,6 +4,7 @@
 #   set_sec: 絶対秒で上書き
 #   min_sec / max_sec: 下限・上限
 # lineup_overrides: team + leg + athlete で仮オーダーを直接差し替える。
+# grade_overrides: team + athlete で学年を指定（grade: 1–3）。
 # formula_adjustments: 数式予測への set_sec / delta_sec（氏名未確定の枠も team+leg で指定可）。
 # formula_observation_weights: team/athlete/meet/date に一致する実績の信頼度 weight（1=通常）。
 # 再生成時、既存ファイルは上書きされない。
@@ -65,6 +66,11 @@ formula_adjustments:
     athlete: 山川 綾
     set_sec: 449
     reason: 伸びが限定的との情報を反映し、予測の過大な上昇を抑える（約7:29）
+grade_overrides:
+  - team: 長洲中
+    athlete: 猿渡（妹）
+    grade: 1
+    reason: ユーザー情報。中学1年生
 formula_observation_weights:
   - team: 玉陵中
     meet: なごみ中学駅伝
