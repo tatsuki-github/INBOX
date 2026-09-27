@@ -1082,6 +1082,33 @@ describe("answerQuestion", () => {
   });
 
   it.each([
+    ["2025年女子6区の区間順位ランキング", "女子は5区まで"],
+    ["2025年女子6区の選手は誰？", "女子は5区まで"],
+    ["2025年男子7区の区間順位は？", "男子は6区まで"],
+    ["2025年男子7区順位は？", "男子は6区まで"],
+    ["2025年男子8区区間タイムは？", "男子は6区まで"],
+    ["2024年男子7区の選手は誰？", "男子は6区まで"],
+    ["2024年女子6区の区間順位は？", "女子は5区まで"],
+    ["2012年女子6区の区間記録は？", "女子は5区まで"],
+    ["2025年女子6区ランキング上位3人は？", "女子は5区まで"],
+    ["2025年玉名女子6区の区間順位は？", "女子は5区まで"],
+  ])("does not reuse another leg when the requested section is absent: %s", async (question, expected) => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion(question, {
+      skipRouter: true,
+      defaultYear: 2026,
+      llm: null,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.sources[0]).toBe("out-analysis/aragyoku-years/" + question.match(/20\d{2}/)?.[0] + ".md");
+      expect(result.text).toContain(expected);
+      expect(result.text).not.toContain("区間順位: 1位");
+    }
+  });
+
+  it.each([
     ["2025年玉名附属男子3区の区間順位は？", "玉高附属男子3区: 草野瑠唯"],
     ["2025年玉名付属男子3区の区間順位は？", "玉高附属男子3区: 草野瑠唯"],
     ["2025年玉名附中男子3区区間順位は？", "玉高附属男子3区: 草野瑠唯"],
