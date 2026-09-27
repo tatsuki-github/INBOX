@@ -97,10 +97,11 @@ def extract(targets: list[dict]) -> tuple[list[dict], Counter]:
 
     def add(gender: str, name: str, when: str, km: float | None, time: str | float | None,
             kind: str, meet: str, source: str, *, leg: int | None = None,
-            team: str = "", grade: int | None = None, status: str = "") -> None:
+            team: str = "", grade: int | None = None, status: str = "",
+            include_non_target: bool = False) -> None:
         key = gender, norm_name(name)
         target = by_key.get(key)
-        if target is None:
+        if target is None and not include_non_target:
             return
         d, sec = day(when), seconds(time)
         if status and status != "ok":
@@ -113,7 +114,8 @@ def extract(targets: list[dict]) -> tuple[list[dict], Counter]:
             rejected["graduated_athlete"] += 1
             return
         # A matching name from an explicitly different school is a namesake.
-        if team.endswith("中") and target["team"] not in {team, "玉名高附" if team == "玉名附中" else team}:
+        if (target is not None and team.endswith("中") and
+                target["team"] not in {team, "玉名高附" if team == "玉名附中" else team}):
             rejected["different_school_namesake"] += 1
             return
         if km is None or not .7 <= km <= 10 or sec is None or sec <= 0:
@@ -128,7 +130,8 @@ def extract(targets: list[dict]) -> tuple[list[dict], Counter]:
             rejected["duplicate"] += 1
             return
         seen.add(identity)
-        obs.append({"gender": gender, "team": target["team"], "name": target["name"],
+        obs.append({"gender": gender, "team": target["team"] if target else team,
+                    "name": target["name"] if target else name,
                     "date": d.isoformat(), "distance_km": km, "time_sec": sec,
                     "type": kind, "meet": meet, "leg": leg, "source": source,
                     "source_team": team, "source_grade": grade})
@@ -186,19 +189,29 @@ def extract(targets: list[dict]) -> tuple[list[dict], Counter]:
                 if m:
                     km = (2.7 if leg == 1 else 2.3) if gender == "女子" else (3.0 if leg == 1 else 2.6)
                     add(gender, m[1], "2026-09-26", km, m[2], "road_ekiden",
-                        "熊本県ジュニア駅伝", rel, leg=leg, team=cells[1])
+                        "熊本県ジュニア駅伝", rel, leg=leg, team=cells[1],
+                        include_non_target=True)
+        elif "女子チャレンジ" in section and len(cells) >= 7:
+            for leg, cell in enumerate(cells[3:], 1):
+                m = re.search(r"([^\s/]+?)[①②③④⑤⑥⑦⑧⑨\d]*\s+(\d+:\d{2})", cell)
+                if m:
+                    km = 2.7 if leg == 1 else 2.3
+                    add("女子", m[1], "2026-09-26", km, m[2], "road_ekiden",
+                        "熊本県ジュニア駅伝", rel, leg=leg, team=cells[1],
+                        include_non_target=True)
         elif "オープン" in section and len(cells) >= 4:
             gender = "女子" if "女子" in section else "男子"
             m = re.search(r"([^\s]+?)[①②③④⑤⑥⑦⑧⑨]*$", cells[2])
             if m:
                 add(gender, m[1], "2026-09-26", 2.3 if gender == "女子" else 2.6,
                     cells[3], "road_ekiden", "熊本県ジュニア駅伝オープン", rel,
-                    team=cells[1])
-        elif "男子下位" in section and len(cells) >= 4:
+                    team=cells[1], include_non_target=True)
+        elif ("男子下位" in section or "男子チャレンジ" in section) and len(cells) >= 4:
             for leg, match in enumerate(re.finditer(r"([^\s/]+)\s+(\d+:\d{2})", cells[3]), 1):
                 name = re.sub(r"[①②③④⑤⑥⑦⑧⑨]", "", match[1])
                 add("男子", name, "2026-09-26", 3.0 if leg == 1 else 2.6,
-                    match[2], "road_ekiden", "熊本県ジュニア駅伝", rel, leg=leg, team=cells[1])
+                    match[2], "road_ekiden", "熊本県ジュニア駅伝", rel, leg=leg,
+                    team=cells[1], include_non_target=True)
 
     # 2025 junior: only the Daimei results have individual splits.
     rel = ("input/external/drive/shared/大会/2025年度/"
@@ -684,7 +697,7 @@ def write_report(obs: list[dict], comparisons: list[dict], params: dict,
         "",
         f"選手 {len(comparisons)} 名、採用レース {len(obs)} 件。重複除去 {rejected['duplicate']} 件、卒業済みと判定 {rejected['graduated_athlete']} 件、同名の別校 {rejected['different_school_namesake']} 件、欠損・非数値・不合理なペース等 {rejected['missing_or_invalid']} 件。",
         "採用対象は800m、1000m、1500m、3000m、ロード3km/5km、なごみ・県ジュニア・過去の荒玉駅伝区間記録。2025–2026年の全レース表とNotion補完を使用し、SBだけには限定していない。対象選手のクロスカントリーと独立したタイムトライアル結果は、確認した取り込み済み資料では特定できなかった。",
-        "出典と全採用行: `out/analysis/aragyoku_2026_race_observations.csv`。県ジュニア2026は地区の写真起こしで、公式PDFとの突合は未了。",
+        "出典と全採用行: `out/analysis/aragyoku_2026_race_observations.csv`。2026年県ジュニアの荒玉関連行は公式結果PDFで照合し、チャンピオンシップ・チャレンジ・オープンの対象外選手も観測行とロード係数算定に含めた。PDF正本は `input/external/user-provided/2026-junior-ekiden/results-pdf/`。女子CS写真として登録された `IMG_1951_女子CS.jpg` は紙面見出しが男子チャレンジだったため、女子CSは公式PDFを採用した。",
         "",
         "## 最終式",
         "",
@@ -730,7 +743,7 @@ def write_report(obs: list[dict], comparisons: list[dict], params: dict,
         f"`F_peak = {transfer['nagomi_to_aragyoku_median']:.4f}^(({transfer['peak_projection_days']}/24) × ({transfer['nagomi_pairs']}/({transfer['nagomi_pairs']}+40))) = {transfer['peak_factor']:.4f}`。昨年の大会間24日を今年の基準日から本番まで{transfer['peak_projection_days']}日に換算し、コース・天候の差も混ざるため40件分の中立情報で縮めた。これは男子全校の直前30日以内の記録に適用する。",
         f"起伏の独立したタイム損失は資料から測定できない。ジュニア→荒玉と、なごみ→荒玉の比から出る相対コース係数は {transfer['raw_course_factor']:.4f} で、起伏による遅延を立証しない。このため `H_junior=1.01` はユーザーのコース所感に基づく**仮定**であり実測係数ではない。ジュニア記録にだけ適用し、感度範囲は1.00–1.02とする。",
         "男子の補正後記録は `q_adjusted = q_raw / H_junior × F_peak`（直前30日内のジュニア）、`q_raw × F_peak`（同期間の他の記録）。古い記録には仕上がり係数を掛けない。女子には適用しない。",
-        "2026年ジュニアの今村8:27・田上8:26は `input/external/drive/shared/大会/2026年度/0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）/岱明の結果.md` の写真起こしを参照。公式PDFとの突合は未了。",
+        "2026年ジュニアの今村8:27・田上8:26は `input/external/user-provided/2026-junior-ekiden/results-pdf/a40bc8e8fbf8daa401833dc1b8f6e5eb.pdf` で照合済み。地区抜粋にも記録を載せた。",
     ]
     for athlete in ("今村昇磨", "田上颯人"):
         row = next(r for r in comparisons if r["gender"] == "男子" and norm_name(r["name"]) == athlete)

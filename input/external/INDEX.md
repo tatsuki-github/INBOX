@@ -4,6 +4,7 @@
 
 | ソース | パス | 備考 |
 |:---|:---|:---|
+| ユーザー提供の大会原本 | [`user-provided/2026-junior-ekiden/results-pdf/`](user-provided/2026-junior-ekiden/results-pdf/) | 2026-09-26 熊本県ジュニア駅伝の結果PDF 6件 |
 | Google ドライブ（共有＋個人） | [`drive/INDEX.md`](drive/INDEX.md) | Docs/Sheets は MD/CSV。分析 PDF・フォト画像はバイナリ可（ADR 011） |
 | Notion（ワークスペース「いだてん岱明」） | [`notion/INDEX.md`](notion/INDEX.md) | DB schema + rows。駅伝メディアは [`notion/media/`](notion/media/) |
 | メディア索引 | [`media-manifest.json`](media-manifest.json) | 画像・OCR・PDF のパス一覧（KG `MediaAsset`） |

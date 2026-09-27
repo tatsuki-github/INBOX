@@ -7,6 +7,8 @@ gender,team,name,date,distance_km,time_sec,type,meet,leg,source,source_team,sour
 女子,荒尾海陽中,三原悠愛,2026-06-14,0.8,161.31,track,第72回全日本中学校通信陸上競技大会熊本県大会,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2026-single-table.csv,荒尾海陽中,2
 女子,荒尾海陽中,三原悠愛,2026-07-19,0.8,162.0,track,令和8年度　熊本県中学校総合体育大会　陸上競技大会,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2026-single-table.csv,荒尾海陽中,2
 女子,荒尾海陽中,三原悠愛,2026-08-29,1.0,210.52,track,JOC　ジュニアオリンピックカップ　第57回U16陸上競技大会,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2026-single-table.csv,荒尾海陽中,2
+女子,荒尾海陽中,三原悠愛,2026-09-26,2.7,616.0,road_ekiden,熊本県ジュニア駅伝,1,input/external/drive/shared/大会/2026年度/0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）/荒玉地区_ジュニア結果抜粋.md,荒尾海陽中,
+女子,玉名高附,三苫悠日,2026-09-26,2.3,665.0,road_ekiden,熊本県ジュニア駅伝オープン,,input/external/drive/shared/大会/2026年度/0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）/荒玉地区_ジュニア結果抜粋.md,玉名高附,
 女子,荒尾海陽中,中尾菜々,2025-10-15,1.855,431.0,aragyoku_prior,荒玉駅伝,2,input/aragyoku/transcripts/2025-女子.json,荒尾海陽,1
 女子,玉名高附,中山 結葵,2026-09-20,2.0,563.0,road_ekiden,なごみ中学駅伝,4,input/external/drive/shared/大会/2026年度/0920_中学駅伝金栗四三生誕の地なごみ大会/成績表.json,玉名高校附属,1
 女子,玉名高附,中山 結葵,2026-09-26,2.3,607.0,road_ekiden,熊本県ジュニア駅伝オープン,,input/external/drive/shared/大会/2026年度/0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）/荒玉地区_ジュニア結果抜粋.md,玉名高附,
@@ -29,6 +31,7 @@ gender,team,name,date,distance_km,time_sec,type,meet,leg,source,source_team,sour
 女子,長洲中,中村 羽音,2026-08-29,1.0,192.04,track,JOC　ジュニアオリンピックカップ　第57回U16陸上競技大会,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2026-single-table.csv,長洲中,3
 女子,長洲中,中村 羽音,2026-09-21,1.5,309.38,track,2026.9.21　第３回熊本県長距離記録会,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2026-single-table.csv,長洲中,3
 女子,玉名中,亀木,2025-10-15,2.0,432.0,aragyoku_prior,荒玉2025B,3,scripts/generate_aragyoku_ekiden_sb_preview.py:PRIOR_YEAR_B_TEAM_RETURNERS,玉名中,1
+女子,南関中,井口舞桜,2026-09-26,2.3,538.0,road_ekiden,熊本県ジュニア駅伝オープン,,input/external/drive/shared/大会/2026年度/0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）/荒玉地区_ジュニア結果抜粋.md,南関中,
 女子,荒尾海陽中,今村心晴,2026-04-29,0.8,172.33,track,第43回大牟田陸上競技大会,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2026-single-table.csv,荒尾海陽中,2
 女子,荒尾三中,佐藤 妃葵,2025-05-24,0.8,159.19,track,第２６９回　熊本市陸上競技記録会,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2025-single-table.csv,荒尾三中,2
 女子,荒尾三中,佐藤 妃葵,2025-06-08,0.8,155.83,track,令和7年度　第39回熊本県中学校陸上競技選手権大会,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2025-single-table.csv,荒尾三中,2
@@ -51,7 +54,9 @@ gender,team,name,date,distance_km,time_sec,type,meet,leg,source,source_team,sour
 女子,荒尾海陽中,前田凛子,2026-06-14,0.8,163.02,track,第72回全日本中学校通信陸上競技大会熊本県大会,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2026-single-table.csv,荒尾海陽中,1
 女子,荒尾海陽中,前田凛子,2026-07-19,0.8,164.47,track,令和8年度　熊本県中学校総合体育大会　陸上競技大会,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2026-single-table.csv,荒尾海陽中,1
 女子,荒尾海陽中,前田凛子,2026-08-29,1.0,221.51,track,JOC　ジュニアオリンピックカップ　第57回U16陸上競技大会,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2026-single-table.csv,荒尾海陽中,1
+女子,荒尾海陽中,前田凛子,2026-09-26,2.3,554.0,road_ekiden,熊本県ジュニア駅伝,3,input/external/drive/shared/大会/2026年度/0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）/荒玉地区_ジュニア結果抜粋.md,荒尾海陽中,
 女子,南関中,原賀 美和,2026-09-20,2.0,473.0,road_ekiden,なごみ中学駅伝,2,input/external/drive/shared/大会/2026年度/0920_中学駅伝金栗四三生誕の地なごみ大会/成績表.json,南関β,3
+女子,南関中,原賀 美和,2026-09-26,2.3,529.0,road_ekiden,熊本県ジュニア駅伝,2,input/external/drive/shared/大会/2026年度/0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）/荒玉地区_ジュニア結果抜粋.md,南関中,
 女子,南関中,堀田 稔々,2025-04-19,1.5,319.96,track,２０２５年度　第４４回熊本市陸上競技選手権大会（2025/04/19）,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2025-single-table.csv,南関中,2
 女子,南関中,堀田 稔々,2025-05-10,1.5,314.76,track,2025.5.10　第一回熊本県跳躍記録会,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2025-single-table.csv,南関中,2
 女子,南関中,堀田 稔々,2025-05-24,0.8,151.85,track,第２６９回　熊本市陸上競技記録会,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2025-single-table.csv,南関中,2
@@ -70,7 +75,8 @@ gender,team,name,date,distance_km,time_sec,type,meet,leg,source,source_team,sour
 女子,南関中,堀田 稔々,2026-07-04,1.5,326.96,track,2026.7.4　第２回熊本県長距離記録会,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2026-single-table.csv,南関中,3
 女子,南関中,堀田 稔々,2026-07-18,1.5,318.0,track,令和8年度　熊本県中学校総合体育大会　陸上競技大会,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2026-single-table.csv,南関中,3
 女子,南関中,堀田 稔々,2026-09-20,2.0,437.0,road_ekiden,なごみ中学駅伝,4,input/external/drive/shared/大会/2026年度/0920_中学駅伝金栗四三生誕の地なごみ大会/成績表.json,南関α,3
-女子,南関中,堀田 稔々,2026-09-26,2.7,567.0,road_ekiden,熊本県ジュニア駅伝,1,input/external/drive/shared/大会/2026年度/0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）/荒玉地区_ジュニア結果抜粋.md,南関中A,
+女子,南関中,堀田 稔々,2026-09-26,2.7,576.0,road_ekiden,熊本県ジュニア駅伝,1,input/external/drive/shared/大会/2026年度/0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）/荒玉地区_ジュニア結果抜粋.md,南関中,
+女子,岱明中,塚原優衣,2026-09-26,2.3,553.0,road_ekiden,熊本県ジュニア駅伝オープン,,input/external/drive/shared/大会/2026年度/0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）/荒玉地区_ジュニア結果抜粋.md,岱明中,
 女子,岱明中,増岡 里俐,2025-06-29,0.8,162.03,track,第71回全日本中学校通信陸上競技大会熊本県大会,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2025-single-table.csv,岱明中,1
 女子,岱明中,増岡 里俐,2025-07-20,0.8,162.89,track,令和7年度　熊本県中学校総合体育大会　陸上競技大会,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2025-single-table.csv,岱明中,1
 女子,岱明中,増岡 里俐,2025-09-27,2.3,533.0,road_ekiden,熊本県ジュニア駅伝,4,input/external/drive/shared/大会/2025年度/0927_第２回熊本県ジュニア駅伝競走大会/岱明の結果.md,岱明中,
@@ -81,7 +87,6 @@ gender,team,name,date,distance_km,time_sec,type,meet,leg,source,source_team,sour
 女子,岱明中,増岡 里俐,2026-06-14,0.8,159.55,track,第72回全日本中学校通信陸上競技大会熊本県大会,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2026-single-table.csv,岱明中,2
 女子,岱明中,増岡 里俐,2026-07-04,1.5,334.4,track,2026.7.4　第２回熊本県長距離記録会,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2026-single-table.csv,岱明中,2
 女子,岱明中,増岡 里俐,2026-09-20,2.0,465.0,road_ekiden,なごみ中学駅伝,3,input/external/drive/shared/大会/2026年度/0920_中学駅伝金栗四三生誕の地なごみ大会/成績表.json,岱明A,2
-女子,岱明中,増岡 里俐,2026-09-26,2.3,540.0,road_ekiden,熊本県ジュニア駅伝,3,input/external/drive/shared/大会/2026年度/0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）/荒玉地区_ジュニア結果抜粋.md,岱明中,
 女子,玉名高附,大木 莉子,2024-10-18,3.0,671.0,aragyoku_prior,荒玉駅伝,5,input/aragyoku/transcripts/2024-女子.json,玉高附属,1
 女子,玉名高附,大木 莉子,2025-04-19,1.5,301.33,track,２０２５年度　第４４回熊本市陸上競技選手権大会（2025/04/19）,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2025-single-table.csv,玉名高附,2
 女子,玉名高附,大木 莉子,2025-04-29,0.8,147.58,track,第42回大牟田陸上競技大会,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2025-single-table.csv,玉名高附,2
@@ -174,7 +179,7 @@ gender,team,name,date,distance_km,time_sec,type,meet,leg,source,source_team,sour
 女子,南関中,平山 結菜,2026-06-14,0.8,163.98,track,第72回全日本中学校通信陸上競技大会熊本県大会,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2026-single-table.csv,南関中,2
 女子,南関中,平山 結菜,2026-07-19,0.8,164.15,track,令和8年度　熊本県中学校総合体育大会　陸上競技大会,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2026-single-table.csv,南関中,2
 女子,南関中,平山 結菜,2026-09-20,2.0,462.0,road_ekiden,なごみ中学駅伝,3,input/external/drive/shared/大会/2026年度/0920_中学駅伝金栗四三生誕の地なごみ大会/成績表.json,南関α,2
-女子,南関中,平山 結菜,2026-09-26,2.3,527.0,road_ekiden,熊本県ジュニア駅伝,4,input/external/drive/shared/大会/2026年度/0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）/荒玉地区_ジュニア結果抜粋.md,南関中A,
+女子,南関中,平山 結菜,2026-09-26,2.3,516.0,road_ekiden,熊本県ジュニア駅伝,4,input/external/drive/shared/大会/2026年度/0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）/荒玉地区_ジュニア結果抜粋.md,南関中,
 女子,荒尾三中,庄山 瑠那,2024-10-18,1.855,385.0,aragyoku_prior,荒玉駅伝,2,input/aragyoku/transcripts/2024-女子.json,荒尾三,1
 女子,荒尾三中,庄山 瑠那,2025-04-19,0.8,152.25,track,２０２５年度　第４４回熊本市陸上競技選手権大会（2025/04/19）,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2025-single-table.csv,金栗PROJECT,2
 女子,荒尾三中,庄山 瑠那,2025-04-26,1.5,289.34,track,令和７年度　熊本陸上競技選手権大会,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2025-single-table.csv,金栗PROJECT,2
@@ -243,6 +248,7 @@ gender,team,name,date,distance_km,time_sec,type,meet,leg,source,source_team,sour
 女子,長洲中,村里 唯花,2026-06-14,0.8,169.0,track,第72回全日本中学校通信陸上競技大会熊本県大会,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2026-single-table.csv,長洲中,3
 女子,長洲中,村里 唯花,2026-07-19,0.8,169.09,track,令和8年度　熊本県中学校総合体育大会　陸上競技大会,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2026-single-table.csv,長洲中,3
 女子,玉陵中,松本倫甲,2025-10-15,2.0,513.0,aragyoku_prior,荒玉駅伝,4,input/aragyoku/transcripts/2025-女子.json,玉陵,2
+女子,岱明中,柴尾希乃,2026-09-26,2.3,581.0,road_ekiden,熊本県ジュニア駅伝オープン,,input/external/drive/shared/大会/2026年度/0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）/荒玉地区_ジュニア結果抜粋.md,岱明中,
 女子,菊水中,森心雅,2026-04-29,0.8,167.73,track,第43回大牟田陸上競技大会,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2026-single-table.csv,金栗PROJECT,1
 女子,菊水中,森心雅,2026-05-09,1.5,336.95,track,2026.5.9　第１回熊本県長距離記録会,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2026-single-table.csv,金栗PROJECT,1
 女子,菊水中,森心雅,2026-05-24,0.8,158.81,track,令和8年度　第40回熊本県中学校陸上競技選手権大会,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2026-single-table.csv,金栗PROJECT,1
@@ -289,6 +295,7 @@ gender,team,name,date,distance_km,time_sec,type,meet,leg,source,source_team,sour
 女子,玉名中,清藤 結唯,2026-08-29,1.0,187.73,track,JOC　ジュニアオリンピックカップ　第57回U16陸上競技大会,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2026-single-table.csv,ATRC,2
 女子,玉名中,清藤 結唯,2026-09-20,2.0,429.0,road_ekiden,なごみ中学駅伝,1,input/external/drive/shared/大会/2026年度/0920_中学駅伝金栗四三生誕の地なごみ大会/成績表.json,ATRC,2
 女子,玉名中,清藤 結唯,2026-09-21,3.0,671.08,track,2026.9.21　第３回熊本県長距離記録会,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2026-single-table.csv,ATRC,2
+女子,荒尾海陽中,湯村絢音,2026-09-26,2.3,604.0,road_ekiden,熊本県ジュニア駅伝,4,input/external/drive/shared/大会/2026年度/0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）/荒玉地区_ジュニア結果抜粋.md,荒尾海陽中,
 女子,長洲中,濱北 愛,2025-04-19,0.8,159.22,track,２０２５年度　第４４回熊本市陸上競技選手権大会（2025/04/19）,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2025-single-table.csv,NJAC,1
 女子,長洲中,濱北 愛,2025-06-08,0.8,153.48,track,令和7年度　第39回熊本県中学校陸上競技選手権大会,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2025-single-table.csv,NJAC,1
 女子,長洲中,濱北 愛,2025-06-29,0.8,150.87,track,第71回全日本中学校通信陸上競技大会熊本県大会,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2025-single-table.csv,NJAC,1
@@ -338,6 +345,7 @@ gender,team,name,date,distance_km,time_sec,type,meet,leg,source,source_team,sour
 女子,天水中,田尻雛菜乃,2026-08-29,1.0,214.96,track,JOC　ジュニアオリンピックカップ　第57回U16陸上競技大会,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2026-single-table.csv,天水中,1
 女子,天水中,田尻雛菜乃,2026-09-20,2.0,460.0,road_ekiden,なごみ中学駅伝,1,input/external/drive/shared/大会/2026年度/0920_中学駅伝金栗四三生誕の地なごみ大会/成績表.json,天水,1
 女子,荒尾海陽中,石川葵葉,2026-06-14,0.8,170.95,track,第72回全日本中学校通信陸上競技大会熊本県大会,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2026-single-table.csv,荒尾海陽中,1
+女子,荒尾海陽中,石川葵葉,2026-09-26,2.3,543.0,road_ekiden,熊本県ジュニア駅伝,2,input/external/drive/shared/大会/2026年度/0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）/荒玉地区_ジュニア結果抜粋.md,荒尾海陽中,
 女子,南関中,福山 結衣,2025-05-10,1.5,333.69,track,2025.5.10　第一回熊本県跳躍記録会,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2025-single-table.csv,南関中,1
 女子,南関中,福山 結衣,2025-05-24,0.8,160.49,track,第２６９回　熊本市陸上競技記録会,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2025-single-table.csv,南関中,1
 女子,南関中,福山 結衣,2025-06-08,0.8,153.23,track,令和7年度　第39回熊本県中学校陸上競技選手権大会,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2025-single-table.csv,南関中,1
@@ -349,7 +357,7 @@ gender,team,name,date,distance_km,time_sec,type,meet,leg,source,source_team,sour
 女子,南関中,福山 結衣,2026-06-14,0.8,152.15,track,第72回全日本中学校通信陸上競技大会熊本県大会,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2026-single-table.csv,南関中,2
 女子,南関中,福山 結衣,2026-07-19,0.8,148.5,track,令和8年度　熊本県中学校総合体育大会　陸上競技大会,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2026-single-table.csv,南関中,2
 女子,南関中,福山 結衣,2026-09-20,2.0,420.0,road_ekiden,なごみ中学駅伝,1,input/external/drive/shared/大会/2026年度/0920_中学駅伝金栗四三生誕の地なごみ大会/成績表.json,南関α,2
-女子,南関中,福山 結衣,2026-09-26,2.3,531.0,road_ekiden,熊本県ジュニア駅伝,3,input/external/drive/shared/大会/2026年度/0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）/荒玉地区_ジュニア結果抜粋.md,南関中A,
+女子,南関中,福山 結衣,2026-09-26,2.3,488.0,road_ekiden,熊本県ジュニア駅伝,3,input/external/drive/shared/大会/2026年度/0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）/荒玉地区_ジュニア結果抜粋.md,南関中,
 女子,荒尾三中,福島 志帆,2025-05-24,0.8,162.62,track,第２６９回　熊本市陸上競技記録会,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2025-single-table.csv,荒尾三中,1
 女子,荒尾三中,福島 志帆,2025-06-08,0.8,156.3,track,令和7年度　第39回熊本県中学校陸上競技選手権大会,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2025-single-table.csv,荒尾三中,1
 女子,荒尾三中,福島 志帆,2025-06-29,0.8,160.26,track,第71回全日本中学校通信陸上競技大会熊本県大会,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2025-single-table.csv,荒尾三中,1
@@ -363,6 +371,7 @@ gender,team,name,date,distance_km,time_sec,type,meet,leg,source,source_team,sour
 女子,荒尾三中,福島 志帆,2026-07-19,0.8,150.77,track,令和8年度　熊本県中学校総合体育大会　陸上競技大会,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2026-single-table.csv,荒尾三中,2
 女子,荒尾三中,福島 志帆,2026-09-21,1.5,305.74,track,2026.9.21　第３回熊本県長距離記録会,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2026-single-table.csv,荒尾三中,2
 女子,菊水中,秀島礼亜,2026-05-24,0.8,158.92,track,令和8年度　第40回熊本県中学校陸上競技選手権大会,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2026-single-table.csv,金栗PROJECT,3
+女子,南関中,稗島琴都,2026-09-26,2.3,608.0,road_ekiden,熊本県ジュニア駅伝オープン,,input/external/drive/shared/大会/2026年度/0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）/荒玉地区_ジュニア結果抜粋.md,南関中,
 女子,天水中,竹原晴美,2024-10-18,1.855,463.0,aragyoku_prior,荒玉駅伝,2,input/aragyoku/transcripts/2024-女子.json,天水,1
 女子,天水中,竹原晴美,2025-04-19,0.8,165.16,track,２０２５年度　第４４回熊本市陸上競技選手権大会（2025/04/19）,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2025-single-table.csv,天水中,2
 女子,天水中,竹原晴美,2025-05-24,0.8,187.05,track,第２６９回　熊本市陸上競技記録会,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2025-single-table.csv,天水中,2
@@ -374,6 +383,7 @@ gender,team,name,date,distance_km,time_sec,type,meet,leg,source,source_team,sour
 女子,天水中,竹原晴美,2026-07-19,0.8,176.21,track,令和8年度　熊本県中学校総合体育大会　陸上競技大会,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2026-single-table.csv,天水中,3
 女子,天水中,竹原晴美,2026-08-29,1.0,227.84,track,JOC　ジュニアオリンピックカップ　第57回U16陸上競技大会,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2026-single-table.csv,天水中,3
 女子,天水中,竹原晴美,2026-09-20,2.0,488.0,road_ekiden,なごみ中学駅伝,3,input/external/drive/shared/大会/2026年度/0920_中学駅伝金栗四三生誕の地なごみ大会/成績表.json,天水,3
+女子,南関中,竹隈月香,2026-09-26,2.3,571.0,road_ekiden,熊本県ジュニア駅伝オープン,,input/external/drive/shared/大会/2026年度/0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）/荒玉地区_ジュニア結果抜粋.md,南関中,
 女子,南関中,米田 美空,2024-10-18,1.855,409.0,aragyoku_prior,荒玉駅伝,2,input/aragyoku/transcripts/2024-女子.json,南関,1
 女子,南関中,米田 美空,2025-05-24,0.8,151.79,track,第２６９回　熊本市陸上競技記録会,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2025-single-table.csv,南関中,2
 女子,南関中,米田 美空,2025-09-21,2.0,488.0,road_ekiden,なごみ中学駅伝,3,input/external/drive/shared/大会/2025年度/0921_中学駅伝金栗四三生誕の地なごみ大会/成績表.json,南関,2
@@ -383,7 +393,6 @@ gender,team,name,date,distance_km,time_sec,type,meet,leg,source,source_team,sour
 女子,南関中,米田 美空,2026-06-14,0.8,162.82,track,第72回全日本中学校通信陸上競技大会熊本県大会,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2026-single-table.csv,南関中,3
 女子,南関中,米田 美空,2026-07-19,0.8,161.35,track,令和8年度　熊本県中学校総合体育大会　陸上競技大会,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2026-single-table.csv,南関中,3
 女子,南関中,米田 美空,2026-09-20,2.0,481.0,road_ekiden,なごみ中学駅伝,2,input/external/drive/shared/大会/2026年度/0920_中学駅伝金栗四三生誕の地なごみ大会/成績表.json,南関α,3
-女子,南関中,米田 美空,2026-09-26,2.3,502.0,road_ekiden,熊本県ジュニア駅伝,2,input/external/drive/shared/大会/2026年度/0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）/荒玉地区_ジュニア結果抜粋.md,南関中A,
 女子,南関中,米田 美空,2026-09-26,2.3,534.0,road_ekiden,熊本県ジュニア駅伝オープン,,input/external/drive/shared/大会/2026年度/0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）/荒玉地区_ジュニア結果抜粋.md,南関中,
 女子,玉名中,結菜,2025-10-15,2.0,448.0,aragyoku_prior,荒玉2025B,4,scripts/generate_aragyoku_ekiden_sb_preview.py:PRIOR_YEAR_B_TEAM_RETURNERS,玉名中,2
 女子,天水中,花谷明優,2024-10-18,2.0,495.0,aragyoku_prior,荒玉駅伝,3,input/aragyoku/transcripts/2024-女子.json,天水,1
@@ -414,6 +423,7 @@ gender,team,name,date,distance_km,time_sec,type,meet,leg,source,source_team,sour
 女子,岱明中,角田 亜美,2026-07-04,1.5,345.25,track,2026.7.4　第２回熊本県長距離記録会,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2026-single-table.csv,岱明中,2
 女子,岱明中,角田 亜美,2026-07-18,1.5,331.34,track,令和8年度　熊本県中学校総合体育大会　陸上競技大会,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2026-single-table.csv,岱明中,2
 女子,岱明中,角田 亜美,2026-09-20,2.0,468.0,road_ekiden,なごみ中学駅伝,4,input/external/drive/shared/大会/2026年度/0920_中学駅伝金栗四三生誕の地なごみ大会/成績表.json,岱明A,2
+女子,岱明中,角田 亜美,2026-09-26,2.3,540.0,road_ekiden,熊本県ジュニア駅伝,3,input/external/drive/shared/大会/2026年度/0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）/荒玉地区_ジュニア結果抜粋.md,岱明中,
 女子,岱明中,角田 亜美,2026-09-26,2.3,542.0,road_ekiden,熊本県ジュニア駅伝オープン,,input/external/drive/shared/大会/2026年度/0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）/荒玉地区_ジュニア結果抜粋.md,岱明中,
 女子,菊水中,金澤朱里,2024-10-18,1.855,417.0,aragyoku_prior,荒玉駅伝,2,input/aragyoku/transcripts/2024-女子.json,三加和,1
 女子,菊水中,金澤朱里,2025-04-29,0.8,164.7,track,第42回大牟田陸上競技大会,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2025-single-table.csv,金栗PROJECT,2
@@ -472,6 +482,7 @@ gender,team,name,date,distance_km,time_sec,type,meet,leg,source,source_team,sour
 男子,玉名高附,中岡 謙太,2026-07-18,3.0,601.75,track,令和8年度　熊本県中学校総合体育大会　陸上競技大会,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2026-single-table.csv,玉名附中,3
 男子,玉名高附,中岡 謙太,2026-09-20,3.0,604.0,road_ekiden,なごみ中学駅伝,4,input/external/drive/shared/大会/2026年度/0920_中学駅伝金栗四三生誕の地なごみ大会/成績表.json,玉名高校附属A,3
 男子,玉名高附,中岡 謙太,2026-09-26,2.6,504.0,road_ekiden,熊本県ジュニア駅伝,5,input/external/drive/shared/大会/2026年度/0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）/荒玉地区_ジュニア結果抜粋.md,玉名高附A,
+男子,玉名高附B,中岡良介,2026-09-26,2.6,593.0,road_ekiden,熊本県ジュニア駅伝オープン,,input/external/drive/shared/大会/2026年度/0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）/荒玉地区_ジュニア結果抜粋.md,玉名高附B,
 男子,天水中,中村七皇,2024-10-16,2.855,645.0,aragyoku_prior,荒玉駅伝,5,input/aragyoku/transcripts/2024-男子.json,天水,1
 男子,天水中,中村七皇,2025-04-19,1.5,305.09,track,２０２５年度　第４４回熊本市陸上競技選手権大会（2025/04/19）,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2025-single-table.csv,天水中,2
 男子,天水中,中村七皇,2025-05-24,1.5,298.54,track,第２６９回　熊本市陸上競技記録会,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2025-single-table.csv,天水中,2
@@ -541,6 +552,7 @@ gender,team,name,date,distance_km,time_sec,type,meet,leg,source,source_team,sour
 男子,岱明中,今村 昇磨,2026-07-19,1.5,285.35,track,令和8年度　熊本県中学校総合体育大会　陸上競技大会,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2026-single-table.csv,ATRC,3
 男子,岱明中,今村 昇磨,2026-09-20,3.0,607.0,road_ekiden,なごみ中学駅伝,2,input/external/drive/shared/大会/2026年度/0920_中学駅伝金栗四三生誕の地なごみ大会/成績表.json,ATRC A,3
 男子,岱明中,今村 昇磨,2026-09-26,2.6,507.0,road_ekiden,熊本県ジュニア駅伝,3,input/external/drive/shared/大会/2026年度/0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）/荒玉地区_ジュニア結果抜粋.md,岱明中,
+男子,南関中B,八尋勇翔,2026-09-26,2.6,546.0,road_ekiden,熊本県ジュニア駅伝,4,input/external/drive/shared/大会/2026年度/0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）/荒玉地区_ジュニア結果抜粋.md,南関中B,
 男子,玉陵中,内野翼,2025-04-29,1.5,291.67,track,第42回大牟田陸上競技大会,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2025-single-table.csv,FORMULA K,1
 男子,玉陵中,内野翼,2025-06-08,1.5,279.93,track,令和7年度　第39回熊本県中学校陸上競技選手権大会,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2025-single-table.csv,FORMULA K,1
 男子,玉陵中,内野翼,2025-06-28,1.5,279.95,track,第71回全日本中学校通信陸上競技大会熊本県大会,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2025-single-table.csv,FORMULA K,1
@@ -608,8 +620,11 @@ gender,team,name,date,distance_km,time_sec,type,meet,leg,source,source_team,sour
 男子,南関中,大木 蒼介,2026-07-19,1.5,294.67,track,令和8年度　熊本県中学校総合体育大会　陸上競技大会,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2026-single-table.csv,南関中,2
 男子,南関中,大木 蒼介,2026-09-20,3.0,612.0,road_ekiden,なごみ中学駅伝,2,input/external/drive/shared/大会/2026年度/0920_中学駅伝金栗四三生誕の地なごみ大会/成績表.json,南関α,2
 男子,南関中,大木 蒼介,2026-09-26,2.6,514.0,road_ekiden,熊本県ジュニア駅伝,2,input/external/drive/shared/大会/2026年度/0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）/荒玉地区_ジュニア結果抜粋.md,南関中A,
+男子,南関中B,大木颯馬,2026-09-26,2.6,531.0,road_ekiden,熊本県ジュニア駅伝,2,input/external/drive/shared/大会/2026年度/0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）/荒玉地区_ジュニア結果抜粋.md,南関中B,
+男子,荒尾海陽中,大橋佑理,2026-09-26,2.6,638.0,road_ekiden,熊本県ジュニア駅伝,3,input/external/drive/shared/大会/2026年度/0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）/荒玉地区_ジュニア結果抜粋.md,荒尾海陽中,
 男子,荒尾海陽中,宮原 維吹,2026-06-14,1.5,318.63,track,第72回全日本中学校通信陸上競技大会熊本県大会,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2026-single-table.csv,荒尾海陽中,2
 男子,荒尾海陽中,宮原 維吹,2026-08-29,1.0,209.61,track,JOC　ジュニアオリンピックカップ　第57回U16陸上競技大会,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2026-single-table.csv,荒尾海陽中,2
+男子,荒尾海陽中,宮原 維吹,2026-09-26,2.6,631.0,road_ekiden,熊本県ジュニア駅伝,4,input/external/drive/shared/大会/2026年度/0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）/荒玉地区_ジュニア結果抜粋.md,荒尾海陽中,
 男子,玉陵中,宮川晴,2025-05-10,1.5,390.03,track,2025.5.10　第一回熊本県跳躍記録会,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2025-single-table.csv,玉名アスリーツ,1
 男子,玉陵中,宮川晴,2025-05-25,1.5,364.86,track,さつき記録会,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2025-single-table.csv,玉名アスリーツ,1
 男子,玉陵中,宮川晴,2025-06-08,1.5,352.3,track,令和7年度　第39回熊本県中学校陸上競技選手権大会,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2025-single-table.csv,玉名アスリーツ,1
@@ -669,6 +684,7 @@ gender,team,name,date,distance_km,time_sec,type,meet,leg,source,source_team,sour
 男子,岱明中,山本 哲瑠,2026-07-19,1.5,281.37,track,令和8年度　熊本県中学校総合体育大会　陸上競技大会,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2026-single-table.csv,岱明中,2
 男子,岱明中,山本 哲瑠,2026-09-20,3.0,611.0,road_ekiden,なごみ中学駅伝,1,input/external/drive/shared/大会/2026年度/0920_中学駅伝金栗四三生誕の地なごみ大会/成績表.json,岱明A,2
 男子,岱明中,山本 哲瑠,2026-09-26,2.6,514.0,road_ekiden,熊本県ジュニア駅伝,2,input/external/drive/shared/大会/2026年度/0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）/荒玉地区_ジュニア結果抜粋.md,岱明中,
+男子,岱明中,嶋田匠眞,2026-09-26,2.6,622.0,road_ekiden,熊本県ジュニア駅伝オープン,,input/external/drive/shared/大会/2026年度/0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）/荒玉地区_ジュニア結果抜粋.md,岱明中,
 男子,菊水中,川崎大芽,2025-04-29,1.5,304.7,track,第42回大牟田陸上競技大会,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2025-single-table.csv,金栗PROJECT,2
 男子,菊水中,川崎大芽,2025-07-05,1.5,294.48,track,2025.7.5　第二回熊本県長距離記録会,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2025-single-table.csv,金栗PROJECT,2
 男子,菊水中,川崎大芽,2025-07-19,0.8,133.69,track,令和7年度　熊本県中学校総合体育大会　陸上競技大会,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2025-single-table.csv,金栗PROJECT,2
@@ -682,6 +698,8 @@ gender,team,name,date,distance_km,time_sec,type,meet,leg,source,source_team,sour
 男子,菊水中,川崎大芽,2026-07-04,1.5,295.59,track,2026.7.4　第２回熊本県長距離記録会,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2026-single-table.csv,金栗PROJECT,3
 男子,菊水中,川崎大芽,2026-09-20,3.0,666.0,road_ekiden,なごみ中学駅伝,1,input/external/drive/shared/大会/2026年度/0920_中学駅伝金栗四三生誕の地なごみ大会/成績表.json,金栗PROJECT B,3
 男子,菊水中,川崎大芽,2026-09-21,1.5,288.03,track,2026.9.21　第３回熊本県長距離記録会,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2026-single-table.csv,金栗PROJECT,3
+男子,玉名高附A,廣田翼,2026-09-26,2.6,624.0,road_ekiden,熊本県ジュニア駅伝オープン,,input/external/drive/shared/大会/2026年度/0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）/荒玉地区_ジュニア結果抜粋.md,玉名高附A,
+男子,南関中B,星先一慶,2026-09-26,2.6,556.0,road_ekiden,熊本県ジュニア駅伝,3,input/external/drive/shared/大会/2026年度/0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）/荒玉地区_ジュニア結果抜粋.md,南関中B,
 男子,天水中,木村幹太,2024-10-16,3,635.0,aragyoku_prior,荒玉駅伝,3,input/aragyoku/transcripts/2024-男子.json,天水,1
 男子,天水中,木村幹太,2025-04-19,1.5,302.66,track,２０２５年度　第４４回熊本市陸上競技選手権大会（2025/04/19）,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2025-single-table.csv,天水中,2
 男子,天水中,木村幹太,2025-05-10,1.5,294.52,track,2025.5.10　第一回熊本県跳躍記録会,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2025-single-table.csv,天水中,2
@@ -732,6 +750,7 @@ gender,team,name,date,distance_km,time_sec,type,meet,leg,source,source_team,sour
 男子,南関中,村上 葉侑,2026-07-04,1.5,264.54,track,2026.7.4　第２回熊本県長距離記録会,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2026-single-table.csv,南関中,3
 男子,南関中,村上 葉侑,2026-07-18,3.0,615.14,track,令和8年度　熊本県中学校総合体育大会　陸上競技大会,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2026-single-table.csv,南関中,3
 男子,南関中,村上 葉侑,2026-09-20,3.0,620.0,road_ekiden,なごみ中学駅伝,1,input/external/drive/shared/大会/2026年度/0920_中学駅伝金栗四三生誕の地なごみ大会/成績表.json,南関α,3
+男子,南関中C,村上慶汰,2026-09-26,2.6,603.0,road_ekiden,熊本県ジュニア駅伝,4,input/external/drive/shared/大会/2026年度/0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）/荒玉地区_ジュニア結果抜粋.md,南関中C,
 男子,荒尾海陽中,松井 智義,2025-04-29,1.5,341.95,track,第42回大牟田陸上競技大会,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2025-single-table.csv,荒尾海陽中,2
 男子,荒尾海陽中,松井 智義,2025-06-08,1.5,331.74,track,令和7年度　第39回熊本県中学校陸上競技選手権大会,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2025-single-table.csv,荒尾海陽中,2
 男子,荒尾海陽中,松井 智義,2025-06-29,1.5,340.58,track,第71回全日本中学校通信陸上競技大会熊本県大会,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2025-single-table.csv,荒尾海陽中,2
@@ -786,6 +805,7 @@ gender,team,name,date,distance_km,time_sec,type,meet,leg,source,source_team,sour
 男子,岱明中,松本 空羽,2026-07-04,1.5,311.17,track,2026.7.4　第２回熊本県長距離記録会,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2026-single-table.csv,岱明中,2
 男子,岱明中,松本 空羽,2026-07-19,1.5,331.05,track,令和8年度　熊本県中学校総合体育大会　陸上競技大会,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2026-single-table.csv,岱明中,2
 男子,岱明中,松本 空羽,2026-09-20,3.0,691.0,road_ekiden,なごみ中学駅伝,3,input/external/drive/shared/大会/2026年度/0920_中学駅伝金栗四三生誕の地なごみ大会/成績表.json,岱明A,2
+男子,岱明中,松本 空羽,2026-09-26,2.6,570.0,road_ekiden,熊本県ジュニア駅伝オープン,,input/external/drive/shared/大会/2026年度/0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）/荒玉地区_ジュニア結果抜粋.md,岱明中,
 男子,荒尾海陽中,松本 颯斗,2025-04-29,1.5,302.23,track,第42回大牟田陸上競技大会,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2025-single-table.csv,荒尾海陽中,1
 男子,荒尾海陽中,松本 颯斗,2025-05-25,1.5,296.47,track,さつき記録会,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2025-single-table.csv,荒尾海陽中,1
 男子,荒尾海陽中,松本 颯斗,2025-06-08,1.5,285.81,track,令和7年度　第39回熊本県中学校陸上競技選手権大会,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2025-single-table.csv,荒尾海陽中,1
@@ -800,6 +820,7 @@ gender,team,name,date,distance_km,time_sec,type,meet,leg,source,source_team,sour
 男子,荒尾海陽中,松本 颯斗,2026-07-18,0.8,131.61,track,令和8年度　熊本県中学校総合体育大会　陸上競技大会,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2026-single-table.csv,荒尾海陽中,2
 男子,荒尾海陽中,松本 颯斗,2026-08-29,1.0,174.21,track,JOC　ジュニアオリンピックカップ　第57回U16陸上競技大会,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2026-single-table.csv,荒尾海陽中,2
 男子,荒尾海陽中,松本 颯斗,2026-09-21,1.5,278.25,track,2026.9.21　第３回熊本県長距離記録会,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2026-single-table.csv,CLUTCH,2
+男子,玉名高附B,松永康輝,2026-09-26,2.6,558.0,road_ekiden,熊本県ジュニア駅伝,2,input/external/drive/shared/大会/2026年度/0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）/荒玉地区_ジュニア結果抜粋.md,玉名高附B,
 男子,岱明中,松野 凛空,2025-04-19,1.5,296.56,track,２０２５年度　第４４回熊本市陸上競技選手権大会（2025/04/19）,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2025-single-table.csv,岱明中,2
 男子,岱明中,松野 凛空,2025-06-08,1.5,284.82,track,令和7年度　第39回熊本県中学校陸上競技選手権大会,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2025-single-table.csv,岱明中,2
 男子,岱明中,松野 凛空,2025-06-29,1.5,285.41,track,第71回全日本中学校通信陸上競技大会熊本県大会,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2025-single-table.csv,岱明中,2
@@ -822,7 +843,7 @@ gender,team,name,date,distance_km,time_sec,type,meet,leg,source,source_team,sour
 男子,荒尾海陽中,林田 光司,2026-07-04,1.5,314.32,track,2026.7.4　第２回熊本県長距離記録会,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2026-single-table.csv,荒尾海陽中,1
 男子,荒尾海陽中,林田 光司,2026-07-18,0.8,158.19,track,令和8年度　熊本県中学校総合体育大会　陸上競技大会,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2026-single-table.csv,荒尾海陽中,1
 男子,荒尾海陽中,林田 光司,2026-08-29,1.0,208.29,track,JOC　ジュニアオリンピックカップ　第57回U16陸上競技大会,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2026-single-table.csv,荒尾海陽中,1
-男子,荒尾海陽中,林田 光司,2026-09-26,2.6,597.0,road_ekiden,熊本県ジュニア駅伝,2,input/external/drive/shared/大会/2026年度/0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）/荒玉地区_ジュニア結果抜粋.md,荒尾海陽中,
+男子,荒尾海陽中,林田 光司,2026-09-26,2.6,589.0,road_ekiden,熊本県ジュニア駅伝,2,input/external/drive/shared/大会/2026年度/0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）/荒玉地区_ジュニア結果抜粋.md,荒尾海陽中,
 男子,玉名中,林田竜空,2025-04-19,1.5,326.43,track,２０２５年度　第４４回熊本市陸上競技選手権大会（2025/04/19）,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2025-single-table.csv,玉名中,2
 男子,玉名中,林田竜空,2025-04-29,1.5,292.69,track,第42回大牟田陸上競技大会,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2025-single-table.csv,玉名中,2
 男子,玉名中,林田竜空,2025-05-24,1.5,294.28,track,第２６９回　熊本市陸上競技記録会,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2025-single-table.csv,玉名中,2
@@ -925,6 +946,10 @@ gender,team,name,date,distance_km,time_sec,type,meet,leg,source,source_team,sour
 男子,菊水中,津口晃誠,2026-09-12,3.0,576.4,track,令和8年度 第3回ナイター記録会,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2026-single-table.csv,金栗PROJECT,2
 男子,菊水中,津口晃誠,2026-09-20,3.0,584.0,road_ekiden,なごみ中学駅伝,1,input/external/drive/shared/大会/2026年度/0920_中学駅伝金栗四三生誕の地なごみ大会/成績表.json,金栗PROJECT A,2
 男子,菊水中,津口晃誠,2026-09-21,1.5,273.42,track,2026.9.21　第３回熊本県長距離記録会,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2026-single-table.csv,金栗PROJECT,2
+男子,南関中C,津留武蔵,2026-09-26,3.0,618.0,road_ekiden,熊本県ジュニア駅伝,1,input/external/drive/shared/大会/2026年度/0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）/荒玉地区_ジュニア結果抜粋.md,南関中C,
+男子,南関中C,溝上恭祐,2026-09-26,2.6,631.0,road_ekiden,熊本県ジュニア駅伝,5,input/external/drive/shared/大会/2026年度/0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）/荒玉地区_ジュニア結果抜粋.md,南関中C,
+男子,南関中C,熊澤絢真,2026-09-26,2.6,570.0,road_ekiden,熊本県ジュニア駅伝,2,input/external/drive/shared/大会/2026年度/0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）/荒玉地区_ジュニア結果抜粋.md,南関中C,
+男子,南関中B,牧嶌志竜,2026-09-26,2.6,554.0,road_ekiden,熊本県ジュニア駅伝,5,input/external/drive/shared/大会/2026年度/0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）/荒玉地区_ジュニア結果抜粋.md,南関中B,
 男子,南関中,猿渡 元喜,2025-05-10,1.5,333.94,track,2025.5.10　第一回熊本県跳躍記録会,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2025-single-table.csv,南関中,1
 男子,南関中,猿渡 元喜,2025-05-24,1.5,318.73,track,第２６９回　熊本市陸上競技記録会,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2025-single-table.csv,南関中,1
 男子,南関中,猿渡 元喜,2025-06-08,1.5,318.25,track,令和7年度　第39回熊本県中学校陸上競技選手権大会,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2025-single-table.csv,南関中,1
@@ -976,6 +1001,7 @@ gender,team,name,date,distance_km,time_sec,type,meet,leg,source,source_team,sour
 男子,菊水中,田中元稀,2026-07-18,3.0,602.62,track,令和8年度　熊本県中学校総合体育大会　陸上競技大会,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2026-single-table.csv,金栗PROJECT,3
 男子,菊水中,田中元稀,2026-09-12,3.0,564.24,track,令和8年度 第3回ナイター記録会,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2026-single-table.csv,金栗PROJECT,3
 男子,菊水中,田中元稀,2026-09-21,1.5,267.0,track,2026.9.21　第３回熊本県長距離記録会,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2026-single-table.csv,金栗PROJECT,3
+男子,岱明中,田中智稀,2026-09-26,2.6,620.0,road_ekiden,熊本県ジュニア駅伝オープン,,input/external/drive/shared/大会/2026年度/0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）/荒玉地区_ジュニア結果抜粋.md,岱明中,
 男子,荒尾三中,田中羚弥,2025-06-08,0.8,169.16,track,令和7年度　第39回熊本県中学校陸上競技選手権大会,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2025-single-table.csv,荒尾三中,1
 男子,荒尾三中,田中羚弥,2025-06-28,1.5,337.62,track,第71回全日本中学校通信陸上競技大会熊本県大会,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2025-single-table.csv,荒尾三中,1
 男子,荒尾三中,田中羚弥,2025-07-19,0.8,170.19,track,令和7年度　熊本県中学校総合体育大会　陸上競技大会,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2025-single-table.csv,荒尾三中,1
@@ -999,6 +1025,8 @@ gender,team,name,date,distance_km,time_sec,type,meet,leg,source,source_team,sour
 男子,玉名中,田島航,2026-07-04,3.0,575.87,track,2026.7.4　第２回熊本県長距離記録会,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2026-single-table.csv,玉名中,2
 男子,玉名中,田島航,2026-07-19,1.5,262.79,track,令和8年度　熊本県中学校総合体育大会　陸上競技大会,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2026-single-table.csv,玉名中,2
 男子,玉名中,田島航,2026-09-21,3.0,582.12,track,2026.9.21　第３回熊本県長距離記録会,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2026-single-table.csv,玉名中,2
+男子,玉名高附B,田淵友翔,2026-09-26,2.6,589.0,road_ekiden,熊本県ジュニア駅伝オープン,,input/external/drive/shared/大会/2026年度/0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）/荒玉地区_ジュニア結果抜粋.md,玉名高附B,
+男子,南関中C,田畑友雅,2026-09-26,2.6,553.0,road_ekiden,熊本県ジュニア駅伝,3,input/external/drive/shared/大会/2026年度/0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）/荒玉地区_ジュニア結果抜粋.md,南関中C,
 男子,菊水中,福原雅史,2025-09-23,1.5,270.23,track,2025.9.23　第三回熊本県長距離記録会,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2025-single-table.csv,金栗PROJECT,
 男子,菊水中,福原雅史,2025-10-11,1.5,278.36,track,2025.10.11　第四回熊本県長距離記録会,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2025-single-table.csv,金栗PROJECT,
 男子,菊水中,福原雅史,2026-06-27,1.5,286.56,track,第６回天草市陸上競技記録会,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2026-single-table.csv,金栗PROJECT,
@@ -1027,6 +1055,7 @@ gender,team,name,date,distance_km,time_sec,type,meet,leg,source,source_team,sour
 男子,玉名高附,秋原 康秀,2026-07-04,1.5,273.96,track,2026.7.4　第２回熊本県長距離記録会,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2026-single-table.csv,玉名附中,3
 男子,玉名高附,秋原 康秀,2026-07-18,0.8,129.54,track,令和8年度　熊本県中学校総合体育大会　陸上競技大会,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2026-single-table.csv,玉名附中,3
 男子,玉名高附,秋原 康秀,2026-09-20,3.0,646.0,road_ekiden,なごみ中学駅伝,3,input/external/drive/shared/大会/2026年度/0920_中学駅伝金栗四三生誕の地なごみ大会/成績表.json,玉名高校附属B,3
+男子,玉名高附B,美奈川篤,2026-09-26,2.6,557.0,road_ekiden,熊本県ジュニア駅伝,3,input/external/drive/shared/大会/2026年度/0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）/荒玉地区_ジュニア結果抜粋.md,玉名高附B,
 男子,玉名高附,草野 瑠唯,2024-10-16,2.855,571.0,aragyoku_prior,荒玉駅伝,2,input/aragyoku/transcripts/2024-男子.json,玉高附属,1
 男子,玉名高附,草野 瑠唯,2025-04-19,1.5,268.64,track,２０２５年度　第４４回熊本市陸上競技選手権大会（2025/04/19）,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2025-single-table.csv,玉名高附,2
 男子,玉名高附,草野 瑠唯,2025-04-29,1.5,269.43,track,第42回大牟田陸上競技大会,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2025-single-table.csv,玉名高附,2
@@ -1052,6 +1081,7 @@ gender,team,name,date,distance_km,time_sec,type,meet,leg,source,source_team,sour
 男子,荒尾海陽中,荒木 陽翔,2026-09-26,3.0,651.0,road_ekiden,熊本県ジュニア駅伝,1,input/external/drive/shared/大会/2026年度/0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）/荒玉地区_ジュニア結果抜粋.md,荒尾海陽中,
 男子,玉名中,萩原大介,2026-06-14,1.5,280.89,track,第72回全日本中学校通信陸上競技大会熊本県大会,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2026-single-table.csv,玉名中,2
 男子,玉名中,萩原大介,2026-07-19,1.5,275.02,track,令和8年度　熊本県中学校総合体育大会　陸上競技大会,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2026-single-table.csv,玉名中,2
+男子,玉名高附A,萩原康秀,2026-09-26,2.6,512.0,road_ekiden,熊本県ジュニア駅伝,3,input/external/drive/shared/大会/2026年度/0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）/荒玉地区_ジュニア結果抜粋.md,玉名高附A,
 男子,荒尾第四中,藤井 祐吏,2026-09-20,3.0,615.0,road_ekiden,なごみ中学駅伝,1,input/external/drive/shared/大会/2026年度/0920_中学駅伝金栗四三生誕の地なごみ大会/成績表.json,荒尾第四,3
 男子,荒尾第四中,藤原 尚己,2024-10-16,3,647.0,aragyoku_prior,荒玉駅伝,4,input/aragyoku/transcripts/2024-男子.json,荒尾四,1
 男子,荒尾第四中,藤原 尚己,2025-04-29,1.5,271.49,track,第42回大牟田陸上競技大会,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2025-single-table.csv,ATRC,2
@@ -1119,6 +1149,7 @@ gender,team,name,date,distance_km,time_sec,type,meet,leg,source,source_team,sour
 男子,玉陵中,辛嶋大宙,2026-09-12,3.0,564.36,track,令和8年度 第3回ナイター記録会,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2026-single-table.csv,玉名アスリーツ,3
 男子,玉陵中,辛嶋大宙,2026-09-20,3.0,587.0,road_ekiden,なごみ中学駅伝,1,input/external/drive/shared/大会/2026年度/0920_中学駅伝金栗四三生誕の地なごみ大会/成績表.json,玉名アスリーツA,3
 男子,玉陵中,辛嶋大宙,2026-09-21,1.5,271.78,track,2026.9.21　第３回熊本県長距離記録会,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2026-single-table.csv,玉名アスリーツ,3
+男子,玉名高附B,邊春共弥,2026-09-26,2.6,569.0,road_ekiden,熊本県ジュニア駅伝,5,input/external/drive/shared/大会/2026年度/0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）/荒玉地区_ジュニア結果抜粋.md,玉名高附B,
 男子,菊水中,隈部侑成,2024-10-16,3,570.0,aragyoku_prior,荒玉駅伝,1,input/aragyoku/transcripts/2024-男子.json,菊水,1
 男子,菊水中,隈部侑成,2025-04-19,1.5,263.44,track,２０２５年度　第４４回熊本市陸上競技選手権大会（2025/04/19）,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2025-single-table.csv,金栗PROJECT,2
 男子,菊水中,隈部侑成,2025-04-29,1.5,269.71,track,第42回大牟田陸上競技大会,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2025-single-table.csv,金栗PROJECT,2
@@ -1148,3 +1179,5 @@ gender,team,name,date,distance_km,time_sec,type,meet,leg,source,source_team,sour
 男子,菊水中,隈部侑成,2026-09-12,3.0,532.46,track,令和8年度 第3回ナイター記録会,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2026-single-table.csv,金栗PROJECT,3
 男子,菊水中,隈部侑成,2026-09-20,3.0,557.0,road_ekiden,なごみ中学駅伝,3,input/external/drive/shared/大会/2026年度/0920_中学駅伝金栗四三生誕の地なごみ大会/成績表.json,金栗PROJECT A,3
 男子,菊水中,隈部侑成,2026-09-21,1.5,254.26,track,2026.9.21　第３回熊本県長距離記録会,,input/external/drive/personal/t-tsuchiyama/sb/by-year/2026-single-table.csv,金栗PROJECT,3
+男子,玉名高附B,飯塚湧,2026-09-26,2.6,571.0,road_ekiden,熊本県ジュニア駅伝,4,input/external/drive/shared/大会/2026年度/0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）/荒玉地区_ジュニア結果抜粋.md,玉名高附B,
+男子,南関中B,黒木悠真,2026-09-26,3.0,622.0,road_ekiden,熊本県ジュニア駅伝,1,input/external/drive/shared/大会/2026年度/0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）/荒玉地区_ジュニア結果抜粋.md,南関中B,
