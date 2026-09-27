@@ -1034,7 +1034,7 @@ describe("answerQuestion", () => {
     expect(result.kind).toBe("offline");
     if (result.kind === "offline") {
       expect(result.sources[0]).toBe("out-analysis/aragyoku-years/2025.md");
-      expect(result.text).toContain("区間順位と通過順位のどちら");
+      expect(result.text).toContain("区間順位・通過順位・総合順位");
     }
   });
 
@@ -1077,7 +1077,50 @@ describe("answerQuestion", () => {
     expect(result.kind).toBe("offline");
     if (result.kind === "offline") {
       expect(result.sources[0]).toBe("out-analysis/aragyoku-years/2024.md");
-      expect(result.text).toContain("区間順位と通過順位のどちら");
+      expect(result.text).toContain("区間順位・通過順位・総合順位");
+    }
+  });
+
+  it.each([
+    ["2025年男子3区の区間順位3位から5位", "3位 一瀬彪眞（玉陵）9:26", "1位 草野瑠唯"],
+    ["2025年男子3区区間順位3位〜5位", "3位 一瀬彪眞（玉陵）9:26", "1位 草野瑠唯"],
+    ["2025年男子3区区間順位3位～5位", "3位 一瀬彪眞（玉陵）9:26", "1位 草野瑠唯"],
+    ["2025年男子3区区間順位3位-5位", "3位 一瀬彪眞（玉陵）9:26", "1位 草野瑠唯"],
+    ["2025年男子3区の通過順位2位から4位", "2位 一瀬彪眞（玉陵）9:26", "1位 石原佳維斗"],
+    ["2025年女子3区の総合順位2位〜4位", "2位 福山結衣（南関）6:57", "1位 辻美空"],
+  ])("filters annual relay rankings to the requested range: %s", async (question, expected, excluded) => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion(question, {
+      skipRouter: true,
+      defaultYear: 2026,
+      llm: null,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.sources[0]).toBe("out-analysis/aragyoku-years/2025.md");
+      expect(result.text).toContain(expected);
+      expect(result.text).not.toContain(excluded);
+    }
+  });
+
+  it.each([
+    "2025年男子3区の順位ランキング",
+    "2025年女子2区の順位順",
+    "2025年男子3区の順位一覧",
+    "2025年女子3区順位トップ3",
+  ])("asks which relay rank is meant by a generic ranking request: %s", async (question) => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion(question, {
+      skipRouter: true,
+      defaultYear: 2026,
+      llm: null,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.text).toContain("区間順位・通過順位・総合順位");
+      expect(result.text).not.toContain("順位: 1位");
     }
   });
 

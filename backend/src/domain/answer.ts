@@ -2607,15 +2607,15 @@ function offlineAnswer(
     /男子|女子/.test(question) &&
     /[1-6]区/.test(question) &&
     /順位/.test(question) &&
-    !/区間順位|通過順位|総合順位|最速|一番速|ランキング/.test(question) &&
+    !/区間順位|通過順位|総合順位|最速|一番速/.test(question) &&
     !/荒尾海陽|玉高附属|玉名付属|玉名附属|荒尾三|荒尾四|三加和|南関|天水|岱明|有明|玉南|玉名|玉東|玉陵|腹栄|荒尾|菊水|長洲/.test(question);
   if (ambiguousLegRankType) {
-    lines.push("区間順位と通過順位のどちらを知りたいか指定してください。");
+    lines.push("区間順位・通過順位・総合順位のどれを知りたいか指定してください。");
     return lines.join("\n");
   }
   const exactLegWinnerRank = question.match(/(?:(?:区間(?:順位|タイム)?|通過順位|総合順位)\s*(?:第)?(\d{1,2})位|区間タイム.*?(\d{1,2})位|(?<!\d)(\d{1,2})位|区間一位)/);
   const namedLegTeam = /荒尾海陽|玉高附属|玉名付属|玉名附属|荒尾三|荒尾四|三加和|南関|天水|岱明|有明|玉南|玉名|玉東|玉陵|腹栄|荒尾|菊水|長洲/.test(question);
-  if (/20\d{2}/.test(question) && /男子|女子/.test(question) && /[1-6]区/.test(question) && exactLegWinnerRank && !namedLegTeam && !/位まで|位以内|位から/.test(question)) {
+  if (/20\d{2}/.test(question) && /男子|女子/.test(question) && /[1-6]区/.test(question) && exactLegWinnerRank && !namedLegTeam && !/位まで|位以内|位から|\d+位\s*(?:[〜～~\-–])\s*\d+位/.test(question)) {
     const year = question.match(/20\d{2}/)![0];
     const leg = question.match(/(?<!\d)([1-6])区/)![1]!;
     const gender = /女子/.test(question) ? "女子" : "男子";
@@ -2690,9 +2690,12 @@ function offlineAnswer(
       const year = question.match(/20\d{2}/)![0];
       const topCountMatch = question.match(/(?:トップ|上位|ベスト)\s*(\d+)|(\d+)位(?:まで|以内)|1位から\s*(\d+)位/);
       const topCount = Number(topCountMatch?.[1] ?? topCountMatch?.[2] ?? topCountMatch?.[3] ?? (fastest || slowest ? 1 : rows.length));
-      let displayRows = rows.slice(0, topCount);
-      if (!fastest && !slowest && topCount > 0 && topCount < rows.length) {
-        const rankIndex = overallRank ? 1 : passingRank ? 5 : 6;
+      const rankRange = question.match(/(\d+)位\s*(?:から|〜|～|~|[-–])\s*(\d+)位/);
+      const rankIndex = overallRank ? 1 : passingRank ? 5 : 6;
+      let displayRows = rankRange
+        ? rows.filter((row) => Number(row[rankIndex]) >= Number(rankRange[1]) && Number(row[rankIndex]) <= Number(rankRange[2]))
+        : rows.slice(0, topCount);
+      if (!rankRange && !fastest && !slowest && topCount > 0 && topCount < rows.length) {
         const boundaryRank = Number(displayRows.at(-1)?.[rankIndex]);
         displayRows = rows.filter((row) => Number(row[rankIndex]) <= boundaryRank);
       }
