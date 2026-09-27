@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated_at": "2026-09-27T14:28:08Z",
+  "generated_at": "2026-09-27T22:00:47Z",
   "nodes": [
     {
       "id": "corpus:analysis-ocr",
@@ -17502,9 +17502,9 @@
         "practice"
       ],
       "refs": [
-        "out/2025/practice_absentees.csv",
         "out/analysis/notion_records_2026.json",
-        "input/events.2025.yaml"
+        "input/events.2025.yaml",
+        "out/2025/practice_absentees.csv"
       ],
       "hint": "部員エンティティ"
     },
@@ -17538,9 +17538,9 @@
         "practice"
       ],
       "refs": [
-        "out/2025/practice_absentees.csv",
         "out/analysis/notion_records_2026.json",
-        "input/events.2025.yaml"
+        "input/events.2025.yaml",
+        "out/2025/practice_absentees.csv"
       ],
       "hint": "部員エンティティ"
     },
@@ -17574,9 +17574,9 @@
         "practice"
       ],
       "refs": [
-        "out/2025/practice_absentees.csv",
         "out/analysis/notion_records_2026.json",
-        "input/events.2025.yaml"
+        "input/events.2025.yaml",
+        "out/2025/practice_absentees.csv"
       ],
       "hint": "部員エンティティ"
     },
@@ -17646,9 +17646,9 @@
         "practice"
       ],
       "refs": [
-        "out/2025/practice_absentees.csv",
         "out/analysis/notion_records_2026.json",
-        "input/events.2025.yaml"
+        "input/events.2025.yaml",
+        "out/2025/practice_absentees.csv"
       ],
       "hint": "部員エンティティ"
     },
@@ -17682,8 +17682,8 @@
         "practice"
       ],
       "refs": [
-        "out/2025/practice_absentees.csv",
-        "input/events.2025.yaml"
+        "input/events.2025.yaml",
+        "out/2025/practice_absentees.csv"
       ],
       "hint": "部員エンティティ"
     },
@@ -17697,9 +17697,9 @@
         "practice"
       ],
       "refs": [
-        "out/2025/practice_absentees.csv",
         "out/analysis/notion_records_2026.json",
-        "input/events.2025.yaml"
+        "input/events.2025.yaml",
+        "out/2025/practice_absentees.csv"
       ],
       "hint": "部員エンティティ"
     },
@@ -17733,9 +17733,9 @@
         "practice"
       ],
       "refs": [
-        "out/2025/practice_absentees.csv",
         "out/analysis/notion_records_2026.json",
-        "input/events.2025.yaml"
+        "input/events.2025.yaml",
+        "out/2025/practice_absentees.csv"
       ],
       "hint": "部員エンティティ"
     },
@@ -17784,9 +17784,9 @@
         "practice"
       ],
       "refs": [
-        "out/2025/practice_absentees.csv",
         "out/analysis/notion_records_2026.json",
-        "input/events.2025.yaml"
+        "input/events.2025.yaml",
+        "out/2025/practice_absentees.csv"
       ],
       "hint": "部員エンティティ"
     },
@@ -17821,8 +17821,8 @@
       ],
       "refs": [
         "out/analysis/notion_records_2026.json",
-        "input/events.2026.yaml",
-        "out/2026/practice_absentees.csv"
+        "out/2026/practice_absentees.csv",
+        "input/events.2026.yaml"
       ],
       "hint": "部員エンティティ"
     },
@@ -17856,9 +17856,9 @@
         "practice"
       ],
       "refs": [
-        "out/2025/practice_absentees.csv",
         "out/analysis/notion_records_2026.json",
-        "input/events.2025.yaml"
+        "input/events.2025.yaml",
+        "out/2025/practice_absentees.csv"
       ],
       "hint": "部員エンティティ"
     },
@@ -17892,11 +17892,11 @@
         "practice"
       ],
       "refs": [
-        "out/2025/practice_absentees.csv",
         "out/analysis/notion_records_2026.json",
         "out/2026/practice_absentees.csv",
-        "input/events.2026.yaml",
-        "input/events.2025.yaml"
+        "out/2025/practice_absentees.csv",
+        "input/events.2025.yaml",
+        "input/events.2026.yaml"
       ],
       "hint": "部員エンティティ"
     },
@@ -24319,7 +24319,7 @@
       "refs": [
         "out/analysis/2026_aragyoku_men_3000m_sb_ranking.md"
       ],
-      "hint": "荒玉地区 男子3000m SBランキング（2026年度登録ベース） / 出典: `out/analysis/notion_records_2026.json`（荒尾・玉名地区の中学生記録）。 / 同一選手は最速記録のみ。 / | 順位 | 選手 | 所属 | 記録 | 日付 | / |---:|---|---|---:|---| / | 1 | 隈部侑成 | 金栗PROJECT | 8:54.61。荒玉地区 男子3000m SBランキング（2026）"
+      "hint": "荒玉地区 男子3000m SBランキング（2026年度登録ベース） / 出典: `load_sb_index` 採用SB（Notion / 中学生SB / ナイター等）。 / 所属スコープ: `notion_records_2026.json` の荒尾・玉名地区（as_of=2026-09-27, freshness=365日）。 / 同一選手は最速記録のみ。 / | 順位 | 選手 | 所属 |。荒玉地区 男子3000m SBランキング（2026）"
     },
     {
       "id": "source:out/analysis/2026_men_1500m_pb_school_ranking.md",

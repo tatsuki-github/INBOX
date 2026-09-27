@@ -613,8 +613,8 @@ describe("QA precision regressions", () => {
     expect(result.sources).toEqual([
       "out-analysis/2026_aragyoku_men_3000m_sb_ranking.md",
     ]);
-    expect(result.text).toContain("6位 小倉十和 9:28.13");
-    expect(result.text).toContain("7位 草野瑠唯 9:28.42");
+    expect(result.text).toContain("9位 小倉十和 9:28.13");
+    expect(result.text).toContain("10位 草野瑠唯 9:28.42");
     expect(result.text).not.toContain("1位 隈部侑成");
   });
 

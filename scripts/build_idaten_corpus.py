@@ -701,6 +701,7 @@ def main() -> int:
         ROOT / "scripts" / "generate_aragyoku_meet_records_markdown.py",
         ROOT / "scripts" / "generate_aragyoku_all_teams_average_pace.py",
         ROOT / "scripts" / "generate_aragyoku_leg_awards.py",
+        ROOT / "scripts" / "generate_aragyoku_men_3000m_sb_ranking.py",
         ROOT / "scripts" / "ingest_line_exports.py",
     ]
     py_candidates = [

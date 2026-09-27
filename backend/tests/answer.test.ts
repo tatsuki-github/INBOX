@@ -4219,7 +4219,7 @@ describe("answerQuestion", () => {
     expect(result.kind).toBe("offline");
     if (result.kind === "offline") {
       expect(result.sources[0]).toBe("out-analysis/2026_aragyoku_men_3000m_sb_ranking.md");
-      expect(result.text).toContain("隈部侑成（金栗PROJECT）の8:54.61");
+      expect(result.text).toContain("隈部侑成（金栗PROJECT）の8:52.46");
       expect(result.text).not.toContain("荒尾三中");
     }
   });
@@ -4686,7 +4686,7 @@ describe("answerQuestion", () => {
     });
     expect(result.kind).toBe("offline");
     if (result.kind === "offline") {
-      expect(result.text).toMatch(/隈部侑成|8:54\.61/);
+      expect(result.text).toMatch(/隈部侑成|8:52\.46/);
       expect(result.text).not.toContain("コーチに直接聞いてください");
     }
   });
