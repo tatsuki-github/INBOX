@@ -829,6 +829,109 @@ describe("answerQuestion", () => {
     }
   });
 
+  it("resolves a named team's leg athlete from the yearly transcript table", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("2025年玉陵男子3区は誰？", {
+      skipRouter: true,
+      defaultYear: 2026,
+      llm: null,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.sources[0]).toBe("out-analysis/aragyoku-years/2025.md");
+      expect(result.text).toContain("一瀬彪眞");
+      expect(result.text).toContain("区間記録9:26");
+      expect(result.text).toContain("区間順位3位");
+    }
+  });
+
+  it("asks for the year when a team-leg rank query omits it", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("玉陵男子3区の区間順位は？", {
+      skipRouter: true,
+      defaultYear: 2026,
+      llm: null,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.text).toContain("年度を指定してください");
+      expect(result.text).toContain("2025年玉陵男子3区");
+      expect(result.text).not.toContain("コーチに直接聞いてください");
+    }
+  });
+
+  it.each([
+    ["2025年荒玉駅伝男子3区で一番速いチームは？", "1位 玉高附属 9:14"],
+    ["2025年荒玉駅伝女子3区順位順", "2025年荒玉駅伝女子3区の区間順位:"],
+    ["2025年男子3区の区間順位トップ3は？", "3位 一瀬彪眞（玉陵）9:26"],
+  ])("uses the annual leg table for broad split queries: %s", async (question, expected) => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion(question, {
+      skipRouter: true,
+      defaultYear: 2026,
+      llm: null,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.sources[0]).toBe("out-analysis/aragyoku-years/2025.md");
+      expect(result.text).toContain(expected);
+    }
+  });
+
+  it("uses the year-specific table for a named leg-winner rank", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("2025年荒玉駅伝男子3区区間一位は？", {
+      skipRouter: true,
+      defaultYear: 2026,
+      llm: null,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.sources[0]).toBe("out-analysis/aragyoku-years/2025.md");
+      expect(result.text).toContain("草野瑠唯");
+      expect(result.text).toContain("9:14");
+    }
+  });
+
+  it.each([
+    ["2025年男子玉陵3区の区間順位は？", "区間順位3位"],
+    ["玉陵の2025年男子3区は何位？", "通過順位2位"],
+    ["2025年岱明男子5区区間タイムは？", "区間記録9:37"],
+  ])("keeps reordered or shortened team-leg ranks exact: %s", async (question, expected) => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion(question, {
+      skipRouter: true,
+      defaultYear: 2026,
+      llm: null,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.sources[0]).toMatch(/aragyoku-years\/2025\.md/);
+      expect(result.text).toContain(expected);
+    }
+  });
+
+  it("returns both genders when a team-leg rank question omits gender", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("2025年玉陵3区区間順位は？", {
+      skipRouter: true,
+      defaultYear: 2026,
+      llm: null,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.sources[0]).toMatch(/aragyoku-years\/2025\.md/);
+      expect(result.text).toContain("男子は一瀬彪眞、区間記録9:26、区間順位3位");
+      expect(result.text).toContain("女子は");
+    }
+  });
+
   it("lists all teams in split-rank order for an annual leg ranking", async () => {
     resetRetrieverCache();
     resetKgCache();
