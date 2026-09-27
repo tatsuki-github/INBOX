@@ -535,7 +535,7 @@
         },
         {
           "leg": 3,
-          "name": "unknown",
+          "name": "塚川流星",
           "grade": 3,
           "split": "9:49",
           "cumulative": "29:10",
@@ -543,7 +543,7 @@
           "split_rank": 5,
           "split_record": false,
           "status": "ok",
-          "raw_name_grade": "unknown(3)"
+          "raw_name_grade": "塚川流星(3)"
         },
         {
           "leg": 4,
@@ -851,7 +851,7 @@
         },
         {
           "leg": 3,
-          "name": "unknown",
+          "name": "林田流音",
           "grade": 2,
           "split": "9:51",
           "cumulative": "29:27",
@@ -859,7 +859,7 @@
           "split_rank": 7,
           "split_record": false,
           "status": "ok",
-          "raw_name_grade": "unknown(2)"
+          "raw_name_grade": "林田流音(2)"
         },
         {
           "leg": 4,
@@ -930,15 +930,15 @@
         },
         {
           "leg": 3,
-          "name": "unknown",
-          "grade": 3,
+          "name": "伊藤倖",
+          "grade": 2,
           "split": "10:38",
           "cumulative": "29:52",
           "passing_rank": 11,
           "split_rank": 14,
           "split_record": false,
           "status": "ok",
-          "raw_name_grade": "unknown(3)"
+          "raw_name_grade": "伊藤倖(2)"
         },
         {
           "leg": 4,
@@ -1218,7 +1218,10 @@
   ],
   "ocr_notes": [
     "Result board OCR + image verification; ranks derived from split times",
-    "玉陵男子3区の選手名は成績表画像で一瀬彪眞と確認（旧: unknown）。"
+    "玉陵男子3区の選手名は成績表画像で一瀬彪眞と確認（旧: unknown）。",
+    "南関男子3区はユーザー確認により塚川流星（3年）に修正。",
+    "荒尾海陽男子3区はユーザー確認により林田流音（2年）に修正。",
+    "有明男子3区はユーザー確認により伊藤倖（2年）に修正。"
   ],
   "daimyo": {
     "rank": 6,
