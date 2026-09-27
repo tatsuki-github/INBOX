@@ -15,6 +15,7 @@ const CORPUS_PREFIXES = [
   "repo-docs/",
   "practice/",
   "sb/",
+  "profiles/",
   "docs/",
   "media-manifest.slim.json",
 ] as const;
@@ -60,6 +61,10 @@ export function mapRefToCorpusSource(ref: string): string | null {
   // Calendar events YAML → filtered daiming calendar in corpus
   if (/^input\/events\.\d{4}\.yaml$/.test(p)) {
     return "calendar/events.daiming.yaml";
+  }
+
+  if (p === "input/athlete-team-profiles.json") {
+    return "profiles/athlete-team-profiles.json";
   }
 
   // Aragyoku

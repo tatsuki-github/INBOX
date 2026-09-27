@@ -541,6 +541,18 @@
     "corpus": "out-analysis/aragyoku_meet_records.md"
   },
   {
+    "source": "out/analysis/aragyoku_sb_calibration.json",
+    "corpus": "out-analysis/aragyoku_sb_calibration.json"
+  },
+  {
+    "source": "out/analysis/aragyoku_sb_calibration.md",
+    "corpus": "out-analysis/aragyoku_sb_calibration.md"
+  },
+  {
+    "source": "out/analysis/aragyoku_sb_gap_analysis.md",
+    "corpus": "out-analysis/aragyoku_sb_gap_analysis.md"
+  },
+  {
     "source": "out/analysis/aragyoku_top2_finish_counts.md",
     "corpus": "out-analysis/aragyoku_top2_finish_counts.md"
   },
@@ -877,6 +889,14 @@
     "corpus": "repo-docs/adr/055-aragyoku-year-leg-kg-routing.md"
   },
   {
+    "source": "docs/adr/056-aragyoku-sb-preview.md",
+    "corpus": "repo-docs/adr/056-aragyoku-sb-preview.md"
+  },
+  {
+    "source": "docs/adr/057-athlete-team-profiles.md",
+    "corpus": "repo-docs/adr/057-athlete-team-profiles.md"
+  },
+  {
     "source": "docs/idaten-import/phase0-media-ocr.md",
     "corpus": "repo-docs/idaten-import/phase0-media-ocr.md"
   },
@@ -907,6 +927,230 @@
   {
     "source": "docs/implementation/middle-school-sb-all-years.md",
     "corpus": "repo-docs/implementation/middle-school-sb-all-years.md"
+  },
+  {
+    "source": "docs/implementation-flow/aragyoku-sb-preview/phase-0-arao-yon-nagomi.md",
+    "corpus": "repo-docs/implementation-flow/aragyoku-sb-preview/phase-0-arao-yon-nagomi.md"
+  },
+  {
+    "source": "docs/implementation-flow/aragyoku-sb-preview/phase-0-araosan-fukushima-anchor.md",
+    "corpus": "repo-docs/implementation-flow/aragyoku-sb-preview/phase-0-araosan-fukushima-anchor.md"
+  },
+  {
+    "source": "docs/implementation-flow/aragyoku-sb-preview/phase-0-araosan-shoyama-leg1.md",
+    "corpus": "repo-docs/implementation-flow/aragyoku-sb-preview/phase-0-araosan-shoyama-leg1.md"
+  },
+  {
+    "source": "docs/implementation-flow/aragyoku-sb-preview/phase-0-araosan-swap-leg2-3.md",
+    "corpus": "repo-docs/implementation-flow/aragyoku-sb-preview/phase-0-araosan-swap-leg2-3.md"
+  },
+  {
+    "source": "docs/implementation-flow/aragyoku-sb-preview/phase-0-bteam-tamana.md",
+    "corpus": "repo-docs/implementation-flow/aragyoku-sb-preview/phase-0-bteam-tamana.md"
+  },
+  {
+    "source": "docs/implementation-flow/aragyoku-sb-preview/phase-0-club-school-map.md",
+    "corpus": "repo-docs/implementation-flow/aragyoku-sb-preview/phase-0-club-school-map.md"
+  },
+  {
+    "source": "docs/implementation-flow/aragyoku-sb-preview/phase-0-evidence.md",
+    "corpus": "repo-docs/implementation-flow/aragyoku-sb-preview/phase-0-evidence.md"
+  },
+  {
+    "source": "docs/implementation-flow/aragyoku-sb-preview/phase-0-exclude-graduates.md",
+    "corpus": "repo-docs/implementation-flow/aragyoku-sb-preview/phase-0-exclude-graduates.md"
+  },
+  {
+    "source": "docs/implementation-flow/aragyoku-sb-preview/phase-0-gyokuryo-3000m.md",
+    "corpus": "repo-docs/implementation-flow/aragyoku-sb-preview/phase-0-gyokuryo-3000m.md"
+  },
+  {
+    "source": "docs/implementation-flow/aragyoku-sb-preview/phase-0-gyokuryo-top-n.md",
+    "corpus": "repo-docs/implementation-flow/aragyoku-sb-preview/phase-0-gyokuryo-top-n.md"
+  },
+  {
+    "source": "docs/implementation-flow/aragyoku-sb-preview/phase-0-human-notes.md",
+    "corpus": "repo-docs/implementation-flow/aragyoku-sb-preview/phase-0-human-notes.md"
+  },
+  {
+    "source": "docs/implementation-flow/aragyoku-sb-preview/phase-0-kawara-mid-legs.md",
+    "corpus": "repo-docs/implementation-flow/aragyoku-sb-preview/phase-0-kawara-mid-legs.md"
+  },
+  {
+    "source": "docs/implementation-flow/aragyoku-sb-preview/phase-0-men-slow-leg5-leg2.md",
+    "corpus": "repo-docs/implementation-flow/aragyoku-sb-preview/phase-0-men-slow-leg5-leg2.md"
+  },
+  {
+    "source": "docs/implementation-flow/aragyoku-sb-preview/phase-0-nagasu-order-refine.md",
+    "corpus": "repo-docs/implementation-flow/aragyoku-sb-preview/phase-0-nagasu-order-refine.md"
+  },
+  {
+    "source": "docs/implementation-flow/aragyoku-sb-preview/phase-0-nagasu-saruwatari-leg1.md",
+    "corpus": "repo-docs/implementation-flow/aragyoku-sb-preview/phase-0-nagasu-saruwatari-leg1.md"
+  },
+  {
+    "source": "docs/implementation-flow/aragyoku-sb-preview/phase-0-nankan-men-form.md",
+    "corpus": "repo-docs/implementation-flow/aragyoku-sb-preview/phase-0-nankan-men-form.md"
+  },
+  {
+    "source": "docs/implementation-flow/aragyoku-sb-preview/phase-0-nankan-women-nagomi.md",
+    "corpus": "repo-docs/implementation-flow/aragyoku-sb-preview/phase-0-nankan-women-nagomi.md"
+  },
+  {
+    "source": "docs/implementation-flow/aragyoku-sb-preview/phase-0-no-near-dup-legs.md",
+    "corpus": "repo-docs/implementation-flow/aragyoku-sb-preview/phase-0-no-near-dup-legs.md"
+  },
+  {
+    "source": "docs/implementation-flow/aragyoku-sb-preview/phase-0-no-repeat-legs.md",
+    "corpus": "repo-docs/implementation-flow/aragyoku-sb-preview/phase-0-no-repeat-legs.md"
+  },
+  {
+    "source": "docs/implementation-flow/aragyoku-sb-preview/phase-0-ogura-skip-nagomi.md",
+    "corpus": "repo-docs/implementation-flow/aragyoku-sb-preview/phase-0-ogura-skip-nagomi.md"
+  },
+  {
+    "source": "docs/implementation-flow/aragyoku-sb-preview/phase-0-prior-year-returners.md",
+    "corpus": "repo-docs/implementation-flow/aragyoku-sb-preview/phase-0-prior-year-returners.md"
+  },
+  {
+    "source": "docs/implementation-flow/aragyoku-sb-preview/phase-0-rank-table-names.md",
+    "corpus": "repo-docs/implementation-flow/aragyoku-sb-preview/phase-0-rank-table-names.md"
+  },
+  {
+    "source": "docs/implementation-flow/aragyoku-sb-preview/phase-0-school-scenario-yoy.md",
+    "corpus": "repo-docs/implementation-flow/aragyoku-sb-preview/phase-0-school-scenario-yoy.md"
+  },
+  {
+    "source": "docs/implementation-flow/aragyoku-sb-preview/phase-0-taimei-set-times.md",
+    "corpus": "repo-docs/implementation-flow/aragyoku-sb-preview/phase-0-taimei-set-times.md"
+  },
+  {
+    "source": "docs/implementation-flow/aragyoku-sb-preview/phase-0-yoy-growth.md",
+    "corpus": "repo-docs/implementation-flow/aragyoku-sb-preview/phase-0-yoy-growth.md"
+  },
+  {
+    "source": "docs/implementation-flow/aragyoku-sb-preview/phase-0.md",
+    "corpus": "repo-docs/implementation-flow/aragyoku-sb-preview/phase-0.md"
+  },
+  {
+    "source": "docs/implementation-flow/aragyoku-sb-preview/phase-1-arao-yon-nagomi.md",
+    "corpus": "repo-docs/implementation-flow/aragyoku-sb-preview/phase-1-arao-yon-nagomi.md"
+  },
+  {
+    "source": "docs/implementation-flow/aragyoku-sb-preview/phase-1-araosan-fukushima-anchor.md",
+    "corpus": "repo-docs/implementation-flow/aragyoku-sb-preview/phase-1-araosan-fukushima-anchor.md"
+  },
+  {
+    "source": "docs/implementation-flow/aragyoku-sb-preview/phase-1-araosan-shoyama-leg1.md",
+    "corpus": "repo-docs/implementation-flow/aragyoku-sb-preview/phase-1-araosan-shoyama-leg1.md"
+  },
+  {
+    "source": "docs/implementation-flow/aragyoku-sb-preview/phase-1-araosan-swap-leg2-3.md",
+    "corpus": "repo-docs/implementation-flow/aragyoku-sb-preview/phase-1-araosan-swap-leg2-3.md"
+  },
+  {
+    "source": "docs/implementation-flow/aragyoku-sb-preview/phase-1-bteam-tamana.md",
+    "corpus": "repo-docs/implementation-flow/aragyoku-sb-preview/phase-1-bteam-tamana.md"
+  },
+  {
+    "source": "docs/implementation-flow/aragyoku-sb-preview/phase-1-club-school-map.md",
+    "corpus": "repo-docs/implementation-flow/aragyoku-sb-preview/phase-1-club-school-map.md"
+  },
+  {
+    "source": "docs/implementation-flow/aragyoku-sb-preview/phase-1-evidence.md",
+    "corpus": "repo-docs/implementation-flow/aragyoku-sb-preview/phase-1-evidence.md"
+  },
+  {
+    "source": "docs/implementation-flow/aragyoku-sb-preview/phase-1-exclude-graduates.md",
+    "corpus": "repo-docs/implementation-flow/aragyoku-sb-preview/phase-1-exclude-graduates.md"
+  },
+  {
+    "source": "docs/implementation-flow/aragyoku-sb-preview/phase-1-gyokuryo-3000m.md",
+    "corpus": "repo-docs/implementation-flow/aragyoku-sb-preview/phase-1-gyokuryo-3000m.md"
+  },
+  {
+    "source": "docs/implementation-flow/aragyoku-sb-preview/phase-1-gyokuryo-top-n.md",
+    "corpus": "repo-docs/implementation-flow/aragyoku-sb-preview/phase-1-gyokuryo-top-n.md"
+  },
+  {
+    "source": "docs/implementation-flow/aragyoku-sb-preview/phase-1-kawara-mid-legs.md",
+    "corpus": "repo-docs/implementation-flow/aragyoku-sb-preview/phase-1-kawara-mid-legs.md"
+  },
+  {
+    "source": "docs/implementation-flow/aragyoku-sb-preview/phase-1-men-slow-leg5-leg2.md",
+    "corpus": "repo-docs/implementation-flow/aragyoku-sb-preview/phase-1-men-slow-leg5-leg2.md"
+  },
+  {
+    "source": "docs/implementation-flow/aragyoku-sb-preview/phase-1-multi-school.md",
+    "corpus": "repo-docs/implementation-flow/aragyoku-sb-preview/phase-1-multi-school.md"
+  },
+  {
+    "source": "docs/implementation-flow/aragyoku-sb-preview/phase-1-nagasu-saruwatari-leg1.md",
+    "corpus": "repo-docs/implementation-flow/aragyoku-sb-preview/phase-1-nagasu-saruwatari-leg1.md"
+  },
+  {
+    "source": "docs/implementation-flow/aragyoku-sb-preview/phase-1-nankan-men-form.md",
+    "corpus": "repo-docs/implementation-flow/aragyoku-sb-preview/phase-1-nankan-men-form.md"
+  },
+  {
+    "source": "docs/implementation-flow/aragyoku-sb-preview/phase-1-no-repeat-legs.md",
+    "corpus": "repo-docs/implementation-flow/aragyoku-sb-preview/phase-1-no-repeat-legs.md"
+  },
+  {
+    "source": "docs/implementation-flow/aragyoku-sb-preview/phase-1-ogura-skip-nagomi.md",
+    "corpus": "repo-docs/implementation-flow/aragyoku-sb-preview/phase-1-ogura-skip-nagomi.md"
+  },
+  {
+    "source": "docs/implementation-flow/aragyoku-sb-preview/phase-1-prior-year-returners.md",
+    "corpus": "repo-docs/implementation-flow/aragyoku-sb-preview/phase-1-prior-year-returners.md"
+  },
+  {
+    "source": "docs/implementation-flow/aragyoku-sb-preview/phase-1-rank-table-names.md",
+    "corpus": "repo-docs/implementation-flow/aragyoku-sb-preview/phase-1-rank-table-names.md"
+  },
+  {
+    "source": "docs/implementation-flow/aragyoku-sb-preview/phase-1-school-scenario-yoy.md",
+    "corpus": "repo-docs/implementation-flow/aragyoku-sb-preview/phase-1-school-scenario-yoy.md"
+  },
+  {
+    "source": "docs/implementation-flow/aragyoku-sb-preview/phase-1-taimei-set-times.md",
+    "corpus": "repo-docs/implementation-flow/aragyoku-sb-preview/phase-1-taimei-set-times.md"
+  },
+  {
+    "source": "docs/implementation-flow/aragyoku-sb-preview/phase-1-yoy-growth.md",
+    "corpus": "repo-docs/implementation-flow/aragyoku-sb-preview/phase-1-yoy-growth.md"
+  },
+  {
+    "source": "docs/implementation-flow/aragyoku-sb-preview/phase-1.md",
+    "corpus": "repo-docs/implementation-flow/aragyoku-sb-preview/phase-1.md"
+  },
+  {
+    "source": "docs/implementation-flow/aragyoku-sb-preview/phase-5-evidence.md",
+    "corpus": "repo-docs/implementation-flow/aragyoku-sb-preview/phase-5-evidence.md"
+  },
+  {
+    "source": "docs/implementation-flow/aragyoku-sb-preview/phase-5-exclude-graduates.md",
+    "corpus": "repo-docs/implementation-flow/aragyoku-sb-preview/phase-5-exclude-graduates.md"
+  },
+  {
+    "source": "docs/implementation-flow/aragyoku-sb-preview/phase-5-gyokuryo-top-n.md",
+    "corpus": "repo-docs/implementation-flow/aragyoku-sb-preview/phase-5-gyokuryo-top-n.md"
+  },
+  {
+    "source": "docs/implementation-flow/aragyoku-sb-preview/phase-5-taimei-set-times.md",
+    "corpus": "repo-docs/implementation-flow/aragyoku-sb-preview/phase-5-taimei-set-times.md"
+  },
+  {
+    "source": "docs/implementation-flow/aragyoku-sb-preview/phase-5.md",
+    "corpus": "repo-docs/implementation-flow/aragyoku-sb-preview/phase-5.md"
+  },
+  {
+    "source": "docs/implementation-flow/aragyoku-sb-preview/phase-6-evidence.md",
+    "corpus": "repo-docs/implementation-flow/aragyoku-sb-preview/phase-6-evidence.md"
+  },
+  {
+    "source": "docs/implementation-flow/aragyoku-sb-preview/phase-6-taimei-set-times.md",
+    "corpus": "repo-docs/implementation-flow/aragyoku-sb-preview/phase-6-taimei-set-times.md"
   },
   {
     "source": "docs/implementation-flow/aragyoku-trial-run-calendar/phase-0.md",
@@ -2457,12 +2701,20 @@
     "corpus": "drive-text/大会/2026年度/0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）/区間オーダー変更.md"
   },
   {
+    "source": "input/external/drive/shared/大会/2026年度/0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）/岱明の結果.md",
+    "corpus": "drive-text/大会/2026年度/0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）/岱明の結果.md"
+  },
+  {
     "source": "input/external/drive/shared/大会/2026年度/0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）/概要.md",
     "corpus": "drive-text/大会/2026年度/0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）/概要.md"
   },
   {
     "source": "input/external/drive/shared/大会/2026年度/0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）/概要.md.meta.json",
     "corpus": "drive-text/大会/2026年度/0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）/概要.md.meta.json"
+  },
+  {
+    "source": "input/external/drive/shared/大会/2026年度/0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）/荒玉地区_ジュニア結果抜粋.md",
+    "corpus": "drive-text/大会/2026年度/0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）/荒玉地区_ジュニア結果抜粋.md"
   },
   {
     "source": "input/external/drive/shared/大会/2026年度/1010_第４回熊本県長距離記録会/概要.md",
@@ -2473,12 +2725,64 @@
     "corpus": "drive-text/大会/2026年度/1010_第４回熊本県長距離記録会/概要.md.meta.json"
   },
   {
+    "source": "input/external/drive/shared/大会/2026年度/1014-1015_荒玉中体連駅伝/予実比較.md",
+    "corpus": "drive-text/大会/2026年度/1014-1015_荒玉中体連駅伝/予実比較.md"
+  },
+  {
+    "source": "input/external/drive/shared/大会/2026年度/1014-1015_荒玉中体連駅伝/人間考慮_女子.yaml",
+    "corpus": "drive-text/大会/2026年度/1014-1015_荒玉中体連駅伝/人間考慮_女子.yaml"
+  },
+  {
+    "source": "input/external/drive/shared/大会/2026年度/1014-1015_荒玉中体連駅伝/人間考慮_男子.yaml",
+    "corpus": "drive-text/大会/2026年度/1014-1015_荒玉中体連駅伝/人間考慮_男子.yaml"
+  },
+  {
+    "source": "input/external/drive/shared/大会/2026年度/1014-1015_荒玉中体連駅伝/仮区間オーダー.md",
+    "corpus": "drive-text/大会/2026年度/1014-1015_荒玉中体連駅伝/仮区間オーダー.md"
+  },
+  {
+    "source": "input/external/drive/shared/大会/2026年度/1014-1015_荒玉中体連駅伝/公式オーダー待ち.md",
+    "corpus": "drive-text/大会/2026年度/1014-1015_荒玉中体連駅伝/公式オーダー待ち.md"
+  },
+  {
+    "source": "input/external/drive/shared/大会/2026年度/1014-1015_荒玉中体連駅伝/区間オーダー_SB予想.md",
+    "corpus": "drive-text/大会/2026年度/1014-1015_荒玉中体連駅伝/区間オーダー_SB予想.md"
+  },
+  {
+    "source": "input/external/drive/shared/大会/2026年度/1014-1015_荒玉中体連駅伝/区間オーダー_SB予想_coverage.csv",
+    "corpus": "drive-text/大会/2026年度/1014-1015_荒玉中体連駅伝/区間オーダー_SB予想_coverage.csv"
+  },
+  {
+    "source": "input/external/drive/shared/大会/2026年度/1014-1015_荒玉中体連駅伝/女子区間オーダー_SB予想.md",
+    "corpus": "drive-text/大会/2026年度/1014-1015_荒玉中体連駅伝/女子区間オーダー_SB予想.md"
+  },
+  {
+    "source": "input/external/drive/shared/大会/2026年度/1014-1015_荒玉中体連駅伝/女子区間オーダー_SB予想_coverage.csv",
+    "corpus": "drive-text/大会/2026年度/1014-1015_荒玉中体連駅伝/女子区間オーダー_SB予想_coverage.csv"
+  },
+  {
+    "source": "input/external/drive/shared/大会/2026年度/1014-1015_荒玉中体連駅伝/岱明_暫定区間オーダー.md",
+    "corpus": "drive-text/大会/2026年度/1014-1015_荒玉中体連駅伝/岱明_暫定区間オーダー.md"
+  },
+  {
+    "source": "input/external/drive/shared/大会/2026年度/1014-1015_荒玉中体連駅伝/校別展開予想.md",
+    "corpus": "drive-text/大会/2026年度/1014-1015_荒玉中体連駅伝/校別展開予想.md"
+  },
+  {
     "source": "input/external/drive/shared/大会/2026年度/1014-1015_荒玉中体連駅伝/概要.md",
     "corpus": "drive-text/大会/2026年度/1014-1015_荒玉中体連駅伝/概要.md"
   },
   {
     "source": "input/external/drive/shared/大会/2026年度/1014-1015_荒玉中体連駅伝/概要.md.meta.json",
     "corpus": "drive-text/大会/2026年度/1014-1015_荒玉中体連駅伝/概要.md.meta.json"
+  },
+  {
+    "source": "input/external/drive/shared/大会/2026年度/1014-1015_荒玉中体連駅伝/男子区間オーダー_SB予想.md",
+    "corpus": "drive-text/大会/2026年度/1014-1015_荒玉中体連駅伝/男子区間オーダー_SB予想.md"
+  },
+  {
+    "source": "input/external/drive/shared/大会/2026年度/1014-1015_荒玉中体連駅伝/男子区間オーダー_SB予想_coverage.csv",
+    "corpus": "drive-text/大会/2026年度/1014-1015_荒玉中体連駅伝/男子区間オーダー_SB予想_coverage.csv"
   },
   {
     "source": "input/external/drive/shared/大会/2026年度/1211_岱明中校内駅伝大会/概要.md",
@@ -2565,6 +2869,10 @@
     "source": "input/external/drive/personal/t-tsuchiyama/sb/SBデータベース.csv",
     "corpus": "sb/SBデータベース.csv",
     "note": "personal SB database HS+MS (4900 data rows)"
+  },
+  {
+    "source": "input/athlete-team-profiles.json",
+    "corpus": "profiles/athlete-team-profiles.json"
   },
   {
     "source": "docs/adr/010-external-idaten-import.md",

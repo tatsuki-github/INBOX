@@ -29,6 +29,7 @@ SOURCE_GLOBS: list[tuple[str, list[str], str]] = [
     ("input/ai_generation_rules.yaml", ["ai", "practice", "rules"], "AI 固定/可変/創作ルール"),
     ("input/daniels_vdot_paces.yaml", ["pace", "danish", "norwegian"], "Daniels VDOT ペース表"),
     ("input/arato_tamana_report.yaml", ["athlete_records", "arato"], "荒尾・玉名記録 PDF 設定"),
+    ("input/athlete-team-profiles.json", ["athlete_records", "team_profiles"], "2026年度 岱明の選手プロフィール・学年・所属と個人大会記録を結ぶ JSON"),
     ("out/daiming-practice-menus-kpace.md", ["practice", "pace"], "岱明練習 k/pace 横断一覧。トラック1周=560m"),
     (
         "out/analysis/line-chats/INDEX.md",
@@ -227,8 +228,9 @@ TOPIC_DEFS: list[tuple[str, str, str]] = [
     (
         "athlete_records",
         "選手記録",
-        "荒尾・玉名・中学生 SB・学校別PB平均・所属全記録・Notion 生徒/記録 DB。コーパス sb/ out-analysis/ notion-db/",
+        "荒尾・玉名・中学生 SB・学校別PB平均・所属全記録・選手/チームプロフィール。コーパス profiles/ sb/ out-analysis/ notion-db/",
     ),
+    ("team_profiles", "選手・チームプロフィール", "学年・所属・年度別の個人プロフィールとチーム構成。大会の個人記録へリンク"),
     ("norwegian", "Norwegian Method", "GZ/閾値・VDOT・原則メモ"),
     ("ai", "AI 練習生成", "プロンプト・ルール・週次/単日生成"),
     ("schema", "スキーマ", "JSON Schema とデータモデル"),
@@ -285,6 +287,15 @@ QUERY_HINTS: list[tuple[str, str, list[str]]] = [
             "corpus:notion-db",
             "corpus:analysis-ocr",
             "source:input/external/sb/middle-school/wide/中学生SB.csv",
+        ],
+    ),
+    (
+        "選手のプロフィールやチーム構成は？",
+        "2026年度の選手・チームプロフィールJSON。個人記録は選手名・所属を照合して結び付けた記録一覧を参照",
+        [
+            "topic:athlete_records",
+            "source:input/athlete-team-profiles.json",
+            "source:input/external/notion/databases/いだてん岱明生徒/rows.json",
         ],
     ),
     (
@@ -873,6 +884,7 @@ TOPIC_CORPUS_HUBS: list[tuple[str, str]] = [
     ("topic:calendar", "corpus:out-analysis"),
     ("topic:athlete_records", "corpus:out-analysis"),
     ("topic:athlete_records", "corpus:sb"),
+    ("topic:team_profiles", "source:input/athlete-team-profiles.json"),
     ("topic:practice", "corpus:practice"),
 ]
 
@@ -1137,6 +1149,7 @@ def _register_idaten_corpus(
         ("calendar", ["calendar", "practice"], "岱明フィルタ済み events.daiming.yaml"),
         ("practice", ["practice"], "練習 JSON / menus / absentees 抜粋"),
         ("sb", ["athlete_records"], "中学生 SB（全所属・wide CSV 行単位）"),
+        ("profiles", ["athlete_records", "team_profiles"], "選手ごとに分割した学年・所属・大会記録プロフィール JSON"),
         ("notion-db", ["practice", "athlete_records", "ekiden", "injury"], "Notion DB スナップショット"),
         ("notion-pages", ["practice", "meta"], "Notion ページ Markdown"),
         ("drive-text", ["ekiden", "practice", "calendar", "athlete_records"], "Drive テキスト（大会・記録データベース・個人メモ）"),
@@ -1845,6 +1858,74 @@ def build_knowledge_graph(*, generated_at: str | None = None) -> dict[str, Any]:
         _add_edge(edges, "topic:practice", nid, "related_to")
         if aff:
             _add_edge(edges, "topic:athlete_records", nid, "related_to")
+
+    # Curated, reproducibly generated profile layer; link profiles to existing record sources.
+    profiles_path = ROOT / "input" / "athlete-team-profiles.json"
+    if profiles_path.is_file():
+        profiles = json.loads(profiles_path.read_text(encoding="utf-8"))
+        profile_ref = _rel(profiles_path)
+        profile_source = _register_source(
+            nodes,
+            edges,
+            profile_ref,
+            topics=["athlete_records", "team_profiles"],
+            hint="選手の学年・所属と大会記録をひも付けた検索用プロフィール JSON（2026年度）",
+        )
+        for team in profiles.get("teams") or []:
+            if not isinstance(team, dict):
+                continue
+            team_id = str(team.get("id") or "")
+            if not team_id:
+                continue
+            nid = f"entity:team:{team_id}"
+            _add_node(
+                nodes,
+                _node(
+                    nid,
+                    "Team",
+                    str(team.get("name") or team_id),
+                    topics=["team_profiles", "athlete_records", "ekiden"],
+                    refs=[profile_ref, *team.get("team_record_sources", [])],
+                    hint=(
+                        f"別名: {'、'.join(team.get('aliases') or [])}。{team.get('overview', '')} "
+                        f"大会記録リンク数: {team.get('record_count', 0)}"
+                    ),
+                ),
+            )
+            _add_edge(edges, "topic:athlete_records", nid, "related_to")
+            _add_edge(edges, "topic:ekiden", nid, "related_to")
+            _add_edge(edges, nid, profile_source, "documented_in")
+            for ref in team.get("team_record_sources") or []:
+                _add_edge(edges, nid, _source_id(ref), "documented_in")
+        for athlete in profiles.get("athletes") or []:
+            if not isinstance(athlete, dict):
+                continue
+            name = str(athlete.get("name") or "").strip()
+            if not name:
+                continue
+            nid = f"entity:athlete:{name}"
+            refs = {profile_ref, str(athlete.get("profile_source") or "")}
+            if athlete.get("records"):
+                refs.add("out/analysis/notion_records_2026.json")
+            refs.discard("")
+            _add_node(
+                nodes,
+                _node(
+                    nid,
+                    "Athlete",
+                    name,
+                    topics=["athlete", "athlete_records", "team_profiles"],
+                    refs=sorted(refs),
+                    hint=f"2026年度 岱明。学年{athlete.get('grade')}、大会記録{len(athlete.get('records') or [])}件をプロフィールJSONに収録",
+                ),
+            )
+            _add_edge(edges, nid, profile_source, "documented_in")
+            team_id = str(athlete.get("team_id") or "")
+            team_nid = f"entity:team:{team_id}"
+            if team_nid in nodes:
+                _add_edge(edges, nid, team_nid, "member_of")
+            if athlete.get("records") and "source:out/analysis/notion_records_2026.json" in nodes:
+                _add_edge(edges, nid, "source:out/analysis/notion_records_2026.json", "has_record_in")
 
     # External media (images / OCR / analysis PDFs) — paths for LLM follow-up reads
     _register_external_media(nodes, edges)

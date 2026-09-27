@@ -1,0 +1,1004 @@
+{
+  "schema_version": 1,
+  "generated_from": [
+    "input/external/notion/databases/いだてん岱明生徒/rows.json",
+    "out/analysis/notion_records_2026.json",
+    "out/analysis/arato-tamana-teams/岱明中.md"
+  ],
+  "teams": [
+    {
+      "id": "daiming-jhs-athletics",
+      "name": "岱明中学校陸上競技部",
+      "aliases": [
+        "岱明",
+        "岱明中",
+        "いだてん岱明"
+      ],
+      "season": 2026,
+      "overview": "岱明中学校の陸上競技部。選手プロフィールは2026年度のNotion生徒DB、競技記録は同年度の中学生記録スナップショットに基づく。",
+      "members": [
+        "notion:3d3a38e8-3034-80ec-808f-c85991c1188a",
+        "notion:3d3a38e8-3034-80b5-aa81-d1ba5951a24b",
+        "notion:3d3a38e8-3034-80d4-8c21-db814eff7b84",
+        "notion:3d3a38e8-3034-8095-8420-e14495612cf6",
+        "notion:3d3a38e8-3034-8027-ab92-cf898cbbcd97",
+        "notion:3d3a38e8-3034-80f9-a65c-ffae5644455d",
+        "notion:3d3a38e8-3034-80c2-a323-f6e637b7dbea",
+        "notion:3d3a38e8-3034-8070-be62-e876a1e8d618",
+        "notion:3d3a38e8-3034-804c-bfe4-f55cd57a226d",
+        "notion:3d3a38e8-3034-805b-942b-c5d68ab5bcb4",
+        "notion:3d3a38e8-3034-809a-a27e-d33e926956bb",
+        "notion:3d3a38e8-3034-8044-be4e-e06e7e1cd261",
+        "notion:3d3a38e8-3034-8014-8316-deb28b49b4b1",
+        "notion:3d3a38e8-3034-80f5-a4be-dac52007f91b",
+        "notion:3d3a38e8-3034-8043-8592-f8db918b23c0"
+      ],
+      "record_count": 101,
+      "profile_source": "input/external/notion/databases/いだてん岱明生徒/rows.json",
+      "record_source": "out/analysis/notion_records_2026.json",
+      "team_record_sources": [
+        "out/analysis/arato-tamana-teams/岱明中.md",
+        "out/analysis/aragyoku-teams/岱明.md"
+      ]
+    }
+  ],
+  "athletes": [
+    {
+      "id": "notion:3d3a38e8-3034-80ec-808f-c85991c1188a",
+      "name": "中尾快叶",
+      "team_id": "daiming-jhs-athletics",
+      "grade": 1,
+      "season": 2026,
+      "profile_source": "input/external/notion/databases/いだてん岱明生徒/rows.json",
+      "records": [
+        {
+          "season": 2026,
+          "event_date": "2026/04/18",
+          "discipline": "1500m",
+          "result": "5:13.13",
+          "result_url": "http://www.kcrk.jp/i-mode/kiroku/sisen_i/450418/PC/rel016.html",
+          "record_source": "out/analysis/notion_records_2026.json"
+        },
+        {
+          "season": 2026,
+          "event_date": "2026/04/18",
+          "discipline": "1500m",
+          "result": "5:13.13",
+          "result_url": "http://www.kcrk.jp/i-mode/kiroku/sisen_i/450418/PC/rel016...",
+          "record_source": "out/analysis/arato-tamana-teams/岱明中.md"
+        },
+        {
+          "season": 2026,
+          "event_date": "2026/05/09",
+          "discipline": "1500m",
+          "result": "5:10.95",
+          "result_url": "http://www.kumariku.org/26/26,5,9long/rel009.html",
+          "record_source": "out/analysis/arato-tamana-teams/岱明中.md"
+        },
+        {
+          "season": 2026,
+          "event_date": "2026/05/24",
+          "discipline": "1500m",
+          "result": "5:17.72",
+          "result_url": "http://www.kumariku.org/26/26,5,23chugaku/rel152.html",
+          "record_source": "out/analysis/arato-tamana-teams/岱明中.md"
+        },
+        {
+          "season": 2026,
+          "event_date": "2026/06/13",
+          "discipline": "1500m",
+          "result": "5:04.21",
+          "result_url": "http://www.kumariku.org/26/26,6,13tsushin/rel177.html",
+          "record_source": "out/analysis/arato-tamana-teams/岱明中.md"
+        },
+        {
+          "season": 2026,
+          "event_date": "2026/07/04",
+          "discipline": "1500m",
+          "result": "5:11.09",
+          "result_url": "http://www.kumariku.org/26/26,7,4long/rel007.html",
+          "record_source": "out/analysis/arato-tamana-teams/岱明中.md"
+        },
+        {
+          "season": 2026,
+          "event_date": "2026/07/18",
+          "discipline": "1500m",
+          "result": "5:03.56",
+          "result_url": "http://www.kumariku.org/26/26,7,18chutairen/rel073.html",
+          "record_source": "out/analysis/arato-tamana-teams/岱明中.md"
+        }
+      ]
+    },
+    {
+      "id": "notion:3d3a38e8-3034-80b5-aa81-d1ba5951a24b",
+      "name": "南本幸治郎",
+      "team_id": "daiming-jhs-athletics",
+      "grade": 1,
+      "season": 2026,
+      "profile_source": "input/external/notion/databases/いだてん岱明生徒/rows.json",
+      "records": [
+        {
+          "season": 2026,
+          "event_date": "2026/05/09",
+          "discipline": "1500m",
+          "result": "5:43.60",
+          "result_url": "http://www.kumariku.org/26/26,5,9long/rel007.html",
+          "record_source": "out/analysis/arato-tamana-teams/岱明中.md"
+        },
+        {
+          "season": 2026,
+          "event_date": "2026/05/24",
+          "discipline": "1500m",
+          "result": "5:32.33",
+          "result_url": "http://www.kumariku.org/26/26,5,23chugaku/rel150.html",
+          "record_source": "out/analysis/arato-tamana-teams/岱明中.md"
+        },
+        {
+          "season": 2026,
+          "event_date": "2026/06/13",
+          "discipline": "1500m",
+          "result": "5:44.50",
+          "result_url": "http://www.kumariku.org/26/26,6,13tsushin/rel178.html",
+          "record_source": "out/analysis/arato-tamana-teams/岱明中.md"
+        },
+        {
+          "season": 2026,
+          "event_date": "2026/07/04",
+          "discipline": "1500m",
+          "result": "5:31.12",
+          "result_url": "http://www.kumariku.org/26/26,7,4long/rel006.html",
+          "record_source": "out/analysis/arato-tamana-teams/岱明中.md"
+        },
+        {
+          "season": 2026,
+          "event_date": "2026/07/18",
+          "discipline": "1500m",
+          "result": "5:23.50",
+          "result_url": "http://www.kumariku.org/26/26,7,18chutairen/rel075.html",
+          "record_source": "out/analysis/arato-tamana-teams/岱明中.md"
+        }
+      ]
+    },
+    {
+      "id": "notion:3d3a38e8-3034-80d4-8c21-db814eff7b84",
+      "name": "山﨑莉奈",
+      "team_id": "daiming-jhs-athletics",
+      "grade": 1,
+      "season": 2026,
+      "profile_source": "input/external/notion/databases/いだてん岱明生徒/rows.json",
+      "records": [
+        {
+          "season": 2026,
+          "event_date": "2026/05/09",
+          "discipline": "1500m",
+          "result": "5:35.20",
+          "result_url": "http://www.kumariku.org/26/26,5,9long/rel023.html",
+          "record_source": "out/analysis/arato-tamana-teams/岱明中.md"
+        },
+        {
+          "season": 2026,
+          "event_date": "2026/05/24",
+          "discipline": "800m",
+          "result": "2:36.37",
+          "result_url": "http://www.kumariku.org/26/26,5,23chugaku/rel168.html",
+          "record_source": "out/analysis/arato-tamana-teams/岱明中.md"
+        },
+        {
+          "season": 2026,
+          "event_date": "2026/06/14",
+          "discipline": "800m",
+          "result": "2:34.18",
+          "result_url": "http://www.kumariku.org/26/26,6,13tsushin/rel197.html",
+          "record_source": "out/analysis/arato-tamana-teams/岱明中.md"
+        },
+        {
+          "season": 2026,
+          "event_date": "2026/07/04",
+          "discipline": "1500m",
+          "result": "DNS",
+          "result_url": "http://www.kumariku.org/26/26,7,4long/rel032.html",
+          "record_source": "out/analysis/arato-tamana-teams/岱明中.md"
+        },
+        {
+          "season": 2026,
+          "event_date": "2026/07/19",
+          "discipline": "800m",
+          "result": "2:32.23",
+          "result_url": "http://www.kumariku.org/26/26,7,18chutairen/rel127.html",
+          "record_source": "out/analysis/arato-tamana-teams/岱明中.md"
+        }
+      ]
+    },
+    {
+      "id": "notion:3d3a38e8-3034-8095-8420-e14495612cf6",
+      "name": "嶋田匠眞",
+      "team_id": "daiming-jhs-athletics",
+      "grade": 1,
+      "season": 2026,
+      "profile_source": "input/external/notion/databases/いだてん岱明生徒/rows.json",
+      "records": [
+        {
+          "season": 2026,
+          "event_date": "2026/07/04",
+          "discipline": "1500m",
+          "result": "5:50.31",
+          "result_url": "http://www.kumariku.org/26/26,7,4long/rel005.html",
+          "record_source": "out/analysis/arato-tamana-teams/岱明中.md"
+        }
+      ]
+    },
+    {
+      "id": "notion:3d3a38e8-3034-8027-ab92-cf898cbbcd97",
+      "name": "塚原優衣",
+      "team_id": "daiming-jhs-athletics",
+      "grade": 2,
+      "season": 2026,
+      "profile_source": "input/external/notion/databases/いだてん岱明生徒/rows.json",
+      "records": [
+        {
+          "season": 2026,
+          "event_date": "2026/04/18",
+          "discipline": "800m",
+          "result": "2:47.47",
+          "result_url": "http://www.kcrk.jp/i-mode/kiroku/sisen_i/450418/PC/rel005.html",
+          "record_source": "out/analysis/notion_records_2026.json"
+        },
+        {
+          "season": 2026,
+          "event_date": "2026/04/18",
+          "discipline": "800m",
+          "result": "2:47.47",
+          "result_url": "http://www.kcrk.jp/i-mode/kiroku/sisen_i/450418/PC/rel005...",
+          "record_source": "out/analysis/arato-tamana-teams/岱明中.md"
+        },
+        {
+          "season": 2026,
+          "event_date": "2026/05/09",
+          "discipline": "1500m",
+          "result": "5:55.33",
+          "result_url": "http://www.kumariku.org/26/26,5,9long/rel023.html",
+          "record_source": "out/analysis/arato-tamana-teams/岱明中.md"
+        },
+        {
+          "season": 2026,
+          "event_date": "2026/05/24",
+          "discipline": "800m",
+          "result": "DNS",
+          "result_url": "http://www.kumariku.org/26/26,5,23chugaku/rel171.html",
+          "record_source": "out/analysis/arato-tamana-teams/岱明中.md"
+        },
+        {
+          "season": 2026,
+          "event_date": "2026/06/14",
+          "discipline": "800m",
+          "result": "2:50.13",
+          "result_url": "http://www.kumariku.org/26/26,6,13tsushin/rel202.html",
+          "record_source": "out/analysis/arato-tamana-teams/岱明中.md"
+        },
+        {
+          "season": 2026,
+          "event_date": "2026/07/04",
+          "discipline": "1500m",
+          "result": "6:00.81",
+          "result_url": "http://www.kumariku.org/26/26,7,4long/rel031.html",
+          "record_source": "out/analysis/arato-tamana-teams/岱明中.md"
+        },
+        {
+          "season": 2026,
+          "event_date": "2026/07/19",
+          "discipline": "800m",
+          "result": "2:51.63",
+          "result_url": "http://www.kumariku.org/26/26,7,18chutairen/rel132.html",
+          "record_source": "out/analysis/arato-tamana-teams/岱明中.md"
+        }
+      ]
+    },
+    {
+      "id": "notion:3d3a38e8-3034-80f9-a65c-ffae5644455d",
+      "name": "増岡里俐",
+      "team_id": "daiming-jhs-athletics",
+      "grade": 2,
+      "season": 2026,
+      "profile_source": "input/external/notion/databases/いだてん岱明生徒/rows.json",
+      "records": [
+        {
+          "season": 2026,
+          "event_date": "2026/04/18",
+          "discipline": "1500m",
+          "result": "5:43.68",
+          "result_url": "http://www.kcrk.jp/i-mode/kiroku/sisen_i/450418/PC/rel013.html",
+          "record_source": "out/analysis/notion_records_2026.json"
+        },
+        {
+          "season": 2026,
+          "event_date": "2026/04/18",
+          "discipline": "1500m",
+          "result": "5:43.68",
+          "result_url": "http://www.kcrk.jp/i-mode/kiroku/sisen_i/450418/PC/rel013...",
+          "record_source": "out/analysis/arato-tamana-teams/岱明中.md"
+        },
+        {
+          "season": 2026,
+          "event_date": "2026/05/09",
+          "discipline": "1500m",
+          "result": "5:43.57",
+          "result_url": "http://www.kumariku.org/26/26,5,9long/rel024.html",
+          "record_source": "out/analysis/arato-tamana-teams/岱明中.md"
+        },
+        {
+          "season": 2026,
+          "event_date": "2026/05/24",
+          "discipline": "800m",
+          "result": "2:38.96",
+          "result_url": "http://www.kumariku.org/26/26,5,23chugaku/rel171.html",
+          "record_source": "out/analysis/arato-tamana-teams/岱明中.md"
+        },
+        {
+          "season": 2026,
+          "event_date": "2026/06/14",
+          "discipline": "800m",
+          "result": "2:39.55",
+          "result_url": "http://www.kumariku.org/26/26,6,13tsushin/rel201.html",
+          "record_source": "out/analysis/arato-tamana-teams/岱明中.md"
+        },
+        {
+          "season": 2026,
+          "event_date": "2026/07/04",
+          "discipline": "1500m",
+          "result": "5:34.40",
+          "result_url": "http://www.kumariku.org/26/26,7,4long/rel032.html",
+          "record_source": "out/analysis/arato-tamana-teams/岱明中.md"
+        }
+      ]
+    },
+    {
+      "id": "notion:3d3a38e8-3034-80c2-a323-f6e637b7dbea",
+      "name": "山本哲瑠",
+      "team_id": "daiming-jhs-athletics",
+      "grade": 2,
+      "season": 2026,
+      "profile_source": "input/external/notion/databases/いだてん岱明生徒/rows.json",
+      "records": [
+        {
+          "season": 2026,
+          "event_date": "2026/04/18",
+          "discipline": "3000m",
+          "result": "10:24.29",
+          "result_url": "http://www.kcrk.jp/i-mode/kiroku/sisen_i/450418/PC/rel027.html",
+          "record_source": "out/analysis/notion_records_2026.json"
+        },
+        {
+          "season": 2026,
+          "event_date": "2026/04/18",
+          "discipline": "3000m",
+          "result": "10:24.29",
+          "result_url": "http://www.kcrk.jp/i-mode/kiroku/sisen_i/450418/PC/rel027...",
+          "record_source": "out/analysis/arato-tamana-teams/岱明中.md"
+        },
+        {
+          "season": 2026,
+          "event_date": "2026/05/09",
+          "discipline": "1500m",
+          "result": "4:39.74",
+          "result_url": "http://www.kumariku.org/26/26,5,9long/rel013.html",
+          "record_source": "out/analysis/arato-tamana-teams/岱明中.md"
+        },
+        {
+          "season": 2026,
+          "event_date": "2026/05/24",
+          "discipline": "1500m",
+          "result": "4:40.40",
+          "result_url": "http://www.kumariku.org/26/26,5,23chugaku/rel154.html",
+          "record_source": "out/analysis/arato-tamana-teams/岱明中.md"
+        },
+        {
+          "season": 2026,
+          "event_date": "2026/06/14",
+          "discipline": "1500m",
+          "result": "4:30.13",
+          "result_url": "http://www.kumariku.org/26/26,6,13tsushin/rel182.html",
+          "record_source": "out/analysis/arato-tamana-teams/岱明中.md"
+        },
+        {
+          "season": 2026,
+          "event_date": "2026/07/04",
+          "discipline": "1500m",
+          "result": "4:42.45",
+          "result_url": "http://www.kumariku.org/26/26,7,4long/rel012.html",
+          "record_source": "out/analysis/arato-tamana-teams/岱明中.md"
+        },
+        {
+          "season": 2026,
+          "event_date": "2026/07/19",
+          "discipline": "1500m",
+          "result": "4:41.37",
+          "result_url": "http://www.kumariku.org/26/26,7,18chutairen/rel076.html",
+          "record_source": "out/analysis/arato-tamana-teams/岱明中.md"
+        }
+      ]
+    },
+    {
+      "id": "notion:3d3a38e8-3034-8070-be62-e876a1e8d618",
+      "name": "松本空羽",
+      "team_id": "daiming-jhs-athletics",
+      "grade": 2,
+      "season": 2026,
+      "profile_source": "input/external/notion/databases/いだてん岱明生徒/rows.json",
+      "records": [
+        {
+          "season": 2026,
+          "event_date": "2026/04/18",
+          "discipline": "1500m",
+          "result": "5:13.67",
+          "result_url": "http://www.kcrk.jp/i-mode/kiroku/sisen_i/450418/PC/rel016.html",
+          "record_source": "out/analysis/notion_records_2026.json"
+        },
+        {
+          "season": 2026,
+          "event_date": "2026/04/18",
+          "discipline": "1500m",
+          "result": "5:13.67",
+          "result_url": "http://www.kcrk.jp/i-mode/kiroku/sisen_i/450418/PC/rel016...",
+          "record_source": "out/analysis/arato-tamana-teams/岱明中.md"
+        },
+        {
+          "season": 2026,
+          "event_date": "2026/05/09",
+          "discipline": "1500m",
+          "result": "5:26.02",
+          "result_url": "http://www.kumariku.org/26/26,5,9long/rel009.html",
+          "record_source": "out/analysis/arato-tamana-teams/岱明中.md"
+        },
+        {
+          "season": 2026,
+          "event_date": "2026/05/24",
+          "discipline": "1500m",
+          "result": "5:16.80",
+          "result_url": "http://www.kumariku.org/26/26,5,23chugaku/rel158.html",
+          "record_source": "out/analysis/arato-tamana-teams/岱明中.md"
+        },
+        {
+          "season": 2026,
+          "event_date": "2026/06/14",
+          "discipline": "1500m",
+          "result": "5:13.00",
+          "result_url": "http://www.kumariku.org/26/26,6,13tsushin/rel185.html",
+          "record_source": "out/analysis/arato-tamana-teams/岱明中.md"
+        },
+        {
+          "season": 2026,
+          "event_date": "2026/07/04",
+          "discipline": "1500m",
+          "result": "5:11.17",
+          "result_url": "http://www.kumariku.org/26/26,7,4long/rel007.html",
+          "record_source": "out/analysis/arato-tamana-teams/岱明中.md"
+        },
+        {
+          "season": 2026,
+          "event_date": "2026/07/19",
+          "discipline": "1500m",
+          "result": "5:31.05",
+          "result_url": "http://www.kumariku.org/26/26,7,18chutairen/rel080.html",
+          "record_source": "out/analysis/arato-tamana-teams/岱明中.md"
+        }
+      ]
+    },
+    {
+      "id": "notion:3d3a38e8-3034-804c-bfe4-f55cd57a226d",
+      "name": "柴尾希乃",
+      "team_id": "daiming-jhs-athletics",
+      "grade": 2,
+      "season": 2026,
+      "profile_source": "input/external/notion/databases/いだてん岱明生徒/rows.json",
+      "records": []
+    },
+    {
+      "id": "notion:3d3a38e8-3034-805b-942b-c5d68ab5bcb4",
+      "name": "田上颯人",
+      "team_id": "daiming-jhs-athletics",
+      "grade": 2,
+      "season": 2026,
+      "profile_source": "input/external/notion/databases/いだてん岱明生徒/rows.json",
+      "records": [
+        {
+          "season": 2026,
+          "event_date": "2026/04/18",
+          "discipline": "3000m",
+          "result": "10:41.62",
+          "result_url": "http://www.kcrk.jp/i-mode/kiroku/sisen_i/450418/PC/rel027.html",
+          "record_source": "out/analysis/notion_records_2026.json"
+        },
+        {
+          "season": 2026,
+          "event_date": "2026/04/18",
+          "discipline": "3000m",
+          "result": "10:41.62",
+          "result_url": "http://www.kcrk.jp/i-mode/kiroku/sisen_i/450418/PC/rel027...",
+          "record_source": "out/analysis/arato-tamana-teams/岱明中.md"
+        },
+        {
+          "season": 2026,
+          "event_date": "2026/05/09",
+          "discipline": "1500m",
+          "result": "4:52.76",
+          "result_url": "http://www.kumariku.org/26/26,5,9long/rel010.html",
+          "record_source": "out/analysis/arato-tamana-teams/岱明中.md"
+        },
+        {
+          "season": 2026,
+          "event_date": "2026/05/24",
+          "discipline": "1500m",
+          "result": "4:44.48",
+          "result_url": "http://www.kumariku.org/26/26,5,23chugaku/rel156.html",
+          "record_source": "out/analysis/arato-tamana-teams/岱明中.md"
+        },
+        {
+          "season": 2026,
+          "event_date": "2026/06/13",
+          "discipline": "3000m",
+          "result": "10:24.08",
+          "result_url": "http://www.kumariku.org/26/26,6,13tsushin/rel196.html",
+          "record_source": "out/analysis/arato-tamana-teams/岱明中.md"
+        },
+        {
+          "season": 2026,
+          "event_date": "2026/07/04",
+          "discipline": "1500m",
+          "result": "4:42.40",
+          "result_url": "http://www.kumariku.org/26/26,7,4long/rel011.html",
+          "record_source": "out/analysis/arato-tamana-teams/岱明中.md"
+        },
+        {
+          "season": 2026,
+          "event_date": "2026/07/19",
+          "discipline": "1500m",
+          "result": "4:37.20",
+          "result_url": "http://www.kumariku.org/26/26,7,18chutairen/rel079.html",
+          "record_source": "out/analysis/arato-tamana-teams/岱明中.md"
+        }
+      ]
+    },
+    {
+      "id": "notion:3d3a38e8-3034-809a-a27e-d33e926956bb",
+      "name": "田中智稀",
+      "team_id": "daiming-jhs-athletics",
+      "grade": 2,
+      "season": 2026,
+      "profile_source": "input/external/notion/databases/いだてん岱明生徒/rows.json",
+      "records": [
+        {
+          "season": 2026,
+          "event_date": "2026/04/18",
+          "discipline": "1500m",
+          "result": "5:15.91",
+          "result_url": "http://www.kcrk.jp/i-mode/kiroku/sisen_i/450418/PC/rel016.html",
+          "record_source": "out/analysis/notion_records_2026.json"
+        },
+        {
+          "season": 2026,
+          "event_date": "2026/04/18",
+          "discipline": "1500m",
+          "result": "5:15.91",
+          "result_url": "http://www.kcrk.jp/i-mode/kiroku/sisen_i/450418/PC/rel016...",
+          "record_source": "out/analysis/arato-tamana-teams/岱明中.md"
+        },
+        {
+          "season": 2026,
+          "event_date": "2026/05/09",
+          "discipline": "1500m",
+          "result": "5:17.84",
+          "result_url": "http://www.kumariku.org/26/26,5,9long/rel009.html",
+          "record_source": "out/analysis/arato-tamana-teams/岱明中.md"
+        },
+        {
+          "season": 2026,
+          "event_date": "2026/05/24",
+          "discipline": "1500m",
+          "result": "5:22.83",
+          "result_url": "http://www.kumariku.org/26/26,5,23chugaku/rel159.html",
+          "record_source": "out/analysis/arato-tamana-teams/岱明中.md"
+        },
+        {
+          "season": 2026,
+          "event_date": "2026/06/13",
+          "discipline": "800m",
+          "result": "2:26.10",
+          "result_url": "http://www.kumariku.org/26/26,6,13tsushin/rel176.html",
+          "record_source": "out/analysis/arato-tamana-teams/岱明中.md"
+        },
+        {
+          "season": 2026,
+          "event_date": "2026/07/04",
+          "discipline": "1500m",
+          "result": "5:24.79",
+          "result_url": "http://www.kumariku.org/26/26,7,4long/rel007.html",
+          "record_source": "out/analysis/arato-tamana-teams/岱明中.md"
+        },
+        {
+          "season": 2026,
+          "event_date": "2026/07/18",
+          "discipline": "800m",
+          "result": "2:23.08",
+          "result_url": "http://www.kumariku.org/26/26,7,18chutairen/rel069.html",
+          "record_source": "out/analysis/arato-tamana-teams/岱明中.md"
+        }
+      ]
+    },
+    {
+      "id": "notion:3d3a38e8-3034-8044-be4e-e06e7e1cd261",
+      "name": "角田亜美",
+      "team_id": "daiming-jhs-athletics",
+      "grade": 2,
+      "season": 2026,
+      "profile_source": "input/external/notion/databases/いだてん岱明生徒/rows.json",
+      "records": [
+        {
+          "season": 2026,
+          "event_date": "2026/04/18",
+          "discipline": "800m",
+          "result": "2:46.21",
+          "result_url": "http://www.kcrk.jp/i-mode/kiroku/sisen_i/450418/PC/rel005.html",
+          "record_source": "out/analysis/notion_records_2026.json"
+        },
+        {
+          "season": 2026,
+          "event_date": "2026/04/18",
+          "discipline": "800m",
+          "result": "2:46.21",
+          "result_url": "http://www.kcrk.jp/i-mode/kiroku/sisen_i/450418/PC/rel005...",
+          "record_source": "out/analysis/arato-tamana-teams/岱明中.md"
+        },
+        {
+          "season": 2026,
+          "event_date": "2026/05/09",
+          "discipline": "1500m",
+          "result": "5:52.12",
+          "result_url": "http://www.kumariku.org/26/26,5,9long/rel023.html",
+          "record_source": "out/analysis/arato-tamana-teams/岱明中.md"
+        },
+        {
+          "season": 2026,
+          "event_date": "2026/05/24",
+          "discipline": "800m",
+          "result": "2:39.42",
+          "result_url": "http://www.kumariku.org/26/26,5,23chugaku/rel171.html",
+          "record_source": "out/analysis/arato-tamana-teams/岱明中.md"
+        },
+        {
+          "season": 2026,
+          "event_date": "2026/06/14",
+          "discipline": "800m",
+          "result": "2:42.22",
+          "result_url": "http://www.kumariku.org/26/26,6,13tsushin/rel201.html",
+          "record_source": "out/analysis/arato-tamana-teams/岱明中.md"
+        },
+        {
+          "season": 2026,
+          "event_date": "2026/07/04",
+          "discipline": "1500m",
+          "result": "5:45.25",
+          "result_url": "http://www.kumariku.org/26/26,7,4long/rel031.html",
+          "record_source": "out/analysis/arato-tamana-teams/岱明中.md"
+        },
+        {
+          "season": 2026,
+          "event_date": "2026/07/18",
+          "discipline": "1500m",
+          "result": "5:31.34",
+          "result_url": "http://www.kumariku.org/26/26,7,18chutairen/rel139.html",
+          "record_source": "out/analysis/arato-tamana-teams/岱明中.md"
+        }
+      ]
+    },
+    {
+      "id": "notion:3d3a38e8-3034-8014-8316-deb28b49b4b1",
+      "name": "村上咲稀",
+      "team_id": "daiming-jhs-athletics",
+      "grade": 3,
+      "season": 2026,
+      "profile_source": "input/external/notion/databases/いだてん岱明生徒/rows.json",
+      "records": [
+        {
+          "season": 2024,
+          "event_date": "2024/05/04",
+          "discipline": "1500m",
+          "result": "5:24.48",
+          "result_url": "http://www.kcrk.jp/i-mode/kiroku/sisen_i/43/PC/rel156.html",
+          "record_source": "out/analysis/arato-tamana-teams/岱明中.md"
+        },
+        {
+          "season": 2024,
+          "event_date": "2024/06/09",
+          "discipline": "800m",
+          "result": "2:35.60",
+          "result_url": "http://www.kumariku.org/24/24,6,08chugaku/rel120.html",
+          "record_source": "out/analysis/arato-tamana-teams/岱明中.md"
+        },
+        {
+          "season": 2024,
+          "event_date": "2024/06/23",
+          "discipline": "800m",
+          "result": "2:30.77",
+          "result_url": "http://www.kumariku.org/24/24,6,22tsushin/rel177.html",
+          "record_source": "out/analysis/arato-tamana-teams/岱明中.md"
+        },
+        {
+          "season": 2024,
+          "event_date": "2024/06/23",
+          "discipline": "800m",
+          "result": "2:34.82",
+          "result_url": "http://www.kumariku.org/24/24,6,22tsushin/rel212.html",
+          "record_source": "out/analysis/arato-tamana-teams/岱明中.md"
+        },
+        {
+          "season": 2024,
+          "event_date": "2024/07/21",
+          "discipline": "800m",
+          "result": "2:29.04",
+          "result_url": "http://www.kumariku.org/24/24,7,20chutairen/rel188.html",
+          "record_source": "out/analysis/arato-tamana-teams/岱明中.md"
+        },
+        {
+          "season": 2024,
+          "event_date": "2024/07/21",
+          "discipline": "800m",
+          "result": "2:29.66",
+          "result_url": "http://www.kumariku.org/24/24,7,20chutairen/rel146.html",
+          "record_source": "out/analysis/arato-tamana-teams/岱明中.md"
+        },
+        {
+          "season": 2026,
+          "event_date": "2026/04/11",
+          "discipline": "1500m",
+          "result": "5:00.19",
+          "result_url": "http://www.kumariku.org/26/26,4,11kanaguri/rel013.html",
+          "record_source": "out/analysis/arato-tamana-teams/岱明中.md"
+        },
+        {
+          "season": 2026,
+          "event_date": "2026/04/18",
+          "discipline": "800m",
+          "result": "2:25.44",
+          "result_url": "http://www.kcrk.jp/i-mode/kiroku/sisen_i/450418/PC/rel006.html",
+          "record_source": "out/analysis/notion_records_2026.json"
+        },
+        {
+          "season": 2026,
+          "event_date": "2026/04/18",
+          "discipline": "800m",
+          "result": "2:25.44",
+          "result_url": "http://www.kcrk.jp/i-mode/kiroku/sisen_i/450418/PC/rel006...",
+          "record_source": "out/analysis/arato-tamana-teams/岱明中.md"
+        },
+        {
+          "season": 2026,
+          "event_date": "2026/05/09",
+          "discipline": "1500m",
+          "result": "5:02.26",
+          "result_url": "http://www.kumariku.org/26/26,5,9long/rel028.html",
+          "record_source": "out/analysis/arato-tamana-teams/岱明中.md"
+        },
+        {
+          "season": 2026,
+          "event_date": "2026/05/24",
+          "discipline": "800m",
+          "result": "2:20.11",
+          "result_url": "http://www.kumariku.org/26/26,5,23chugaku/rel174.html",
+          "record_source": "out/analysis/arato-tamana-teams/岱明中.md"
+        },
+        {
+          "season": 2026,
+          "event_date": "2026/06/14",
+          "discipline": "800m",
+          "result": "2:20.45",
+          "result_url": "http://www.kumariku.org/26/26,6,13tsushin/rel204.html",
+          "record_source": "out/analysis/arato-tamana-teams/岱明中.md"
+        },
+        {
+          "season": 2026,
+          "event_date": "2026/07/04",
+          "discipline": "1500m",
+          "result": "4:53.85",
+          "result_url": "http://www.kumariku.org/26/26,7,4long/rel034.html",
+          "record_source": "out/analysis/arato-tamana-teams/岱明中.md"
+        },
+        {
+          "season": 2026,
+          "event_date": "2026/07/19",
+          "discipline": "800m",
+          "result": "2:26.82",
+          "result_url": "http://www.kumariku.org/26/26,7,18chutairen/rel133.html",
+          "record_source": "out/analysis/arato-tamana-teams/岱明中.md"
+        }
+      ]
+    },
+    {
+      "id": "notion:3d3a38e8-3034-80f5-a4be-dac52007f91b",
+      "name": "松野凛空",
+      "team_id": "daiming-jhs-athletics",
+      "grade": 3,
+      "season": 2026,
+      "profile_source": "input/external/notion/databases/いだてん岱明生徒/rows.json",
+      "records": [
+        {
+          "season": 2024,
+          "event_date": "2024/05/04",
+          "discipline": "1500m",
+          "result": "4:57.81",
+          "result_url": "http://www.kcrk.jp/i-mode/kiroku/sisen_i/43/PC/rel164.html",
+          "record_source": "out/analysis/arato-tamana-teams/岱明中.md"
+        },
+        {
+          "season": 2024,
+          "event_date": "2024/06/09",
+          "discipline": "1500m",
+          "result": "4:53.35",
+          "result_url": "http://www.kumariku.org/24/24,6,08chugaku/rel130.html",
+          "record_source": "out/analysis/arato-tamana-teams/岱明中.md"
+        },
+        {
+          "season": 2024,
+          "event_date": "2024/06/22",
+          "discipline": "1500m",
+          "result": "4:51.22",
+          "result_url": "http://www.kumariku.org/24/24,6,22tsushin/rel110.html",
+          "record_source": "out/analysis/arato-tamana-teams/岱明中.md"
+        },
+        {
+          "season": 2024,
+          "event_date": "2024/07/20",
+          "discipline": "1500m",
+          "result": "4:44.60",
+          "result_url": "http://www.kumariku.org/24/24,7,20chutairen/rel060.html",
+          "record_source": "out/analysis/arato-tamana-teams/岱明中.md"
+        },
+        {
+          "season": 2026,
+          "event_date": "2026/04/18",
+          "discipline": "1500m",
+          "result": "4:40.09",
+          "result_url": "http://www.kcrk.jp/i-mode/kiroku/sisen_i/450418/PC/rel019.html",
+          "record_source": "out/analysis/notion_records_2026.json"
+        },
+        {
+          "season": 2026,
+          "event_date": "2026/04/18",
+          "discipline": "1500m",
+          "result": "4:40.09",
+          "result_url": "http://www.kcrk.jp/i-mode/kiroku/sisen_i/450418/PC/rel019...",
+          "record_source": "out/analysis/arato-tamana-teams/岱明中.md"
+        },
+        {
+          "season": 2026,
+          "event_date": "2026/05/09",
+          "discipline": "1500m",
+          "result": "4:25.40",
+          "result_url": "http://www.kumariku.org/26/26,5,9long/rel015.html",
+          "record_source": "out/analysis/arato-tamana-teams/岱明中.md"
+        },
+        {
+          "season": 2026,
+          "event_date": "2026/05/24",
+          "discipline": "1500m",
+          "result": "4:23.58",
+          "result_url": "http://www.kumariku.org/26/26,5,23chugaku/rel144.html",
+          "record_source": "out/analysis/arato-tamana-teams/岱明中.md"
+        },
+        {
+          "season": 2026,
+          "event_date": "2026/06/13",
+          "discipline": "3000m",
+          "result": "9:37.84",
+          "result_url": "http://www.kumariku.org/26/26,6,13tsushin/rel196.html",
+          "record_source": "out/analysis/arato-tamana-teams/岱明中.md"
+        },
+        {
+          "season": 2026,
+          "event_date": "2026/07/04",
+          "discipline": "1500m",
+          "result": "4:22.33",
+          "result_url": "http://www.kumariku.org/26/26,7,4long/rel015.html",
+          "record_source": "out/analysis/arato-tamana-teams/岱明中.md"
+        },
+        {
+          "season": 2026,
+          "event_date": "2026/07/19",
+          "discipline": "1500m",
+          "result": "4:28.92",
+          "result_url": "http://www.kumariku.org/26/26,7,18chutairen/rel083.html",
+          "record_source": "out/analysis/arato-tamana-teams/岱明中.md"
+        }
+      ]
+    },
+    {
+      "id": "notion:3d3a38e8-3034-8043-8592-f8db918b23c0",
+      "name": "高田麻由",
+      "team_id": "daiming-jhs-athletics",
+      "grade": 3,
+      "season": 2026,
+      "profile_source": "input/external/notion/databases/いだてん岱明生徒/rows.json",
+      "records": [
+        {
+          "season": 2024,
+          "event_date": "2024/05/04",
+          "discipline": "1500m",
+          "result": "5:28.78",
+          "result_url": "http://www.kcrk.jp/i-mode/kiroku/sisen_i/43/PC/rel156.html",
+          "record_source": "out/analysis/arato-tamana-teams/岱明中.md"
+        },
+        {
+          "season": 2024,
+          "event_date": "2024/06/09",
+          "discipline": "800m",
+          "result": "2:36.63",
+          "result_url": "http://www.kumariku.org/24/24,6,08chugaku/rel120.html",
+          "record_source": "out/analysis/arato-tamana-teams/岱明中.md"
+        },
+        {
+          "season": 2024,
+          "event_date": "2024/06/23",
+          "discipline": "800m",
+          "result": "2:34.10",
+          "result_url": "http://www.kumariku.org/24/24,6,22tsushin/rel177.html",
+          "record_source": "out/analysis/arato-tamana-teams/岱明中.md"
+        },
+        {
+          "season": 2024,
+          "event_date": "2024/07/21",
+          "discipline": "800m",
+          "result": "2:35.13",
+          "result_url": "http://www.kumariku.org/24/24,7,20chutairen/rel146.html",
+          "record_source": "out/analysis/arato-tamana-teams/岱明中.md"
+        },
+        {
+          "season": 2026,
+          "event_date": "2026/04/18",
+          "discipline": "1500m",
+          "result": "5:15.87",
+          "result_url": "http://www.kcrk.jp/i-mode/kiroku/sisen_i/450418/PC/rel013.html",
+          "record_source": "out/analysis/notion_records_2026.json"
+        },
+        {
+          "season": 2026,
+          "event_date": "2026/04/18",
+          "discipline": "1500m",
+          "result": "5:15.87",
+          "result_url": "http://www.kcrk.jp/i-mode/kiroku/sisen_i/450418/PC/rel013...",
+          "record_source": "out/analysis/arato-tamana-teams/岱明中.md"
+        },
+        {
+          "season": 2026,
+          "event_date": "2026/05/23",
+          "discipline": "1500m",
+          "result": "5:11.66",
+          "result_url": "http://www.kumariku.org/26/26,5,23chugaku/rel161.html",
+          "record_source": "out/analysis/arato-tamana-teams/岱明中.md"
+        },
+        {
+          "season": 2026,
+          "event_date": "2026/06/13",
+          "discipline": "1500m",
+          "result": "5:11.57",
+          "result_url": "http://www.kumariku.org/26/26,6,13tsushin/rel209.html",
+          "record_source": "out/analysis/arato-tamana-teams/岱明中.md"
+        },
+        {
+          "season": 2026,
+          "event_date": "2026/07/04",
+          "discipline": "1500m",
+          "result": "5:24.78",
+          "result_url": "http://www.kumariku.org/26/26,7,4long/rel034.html",
+          "record_source": "out/analysis/arato-tamana-teams/岱明中.md"
+        },
+        {
+          "season": 2026,
+          "event_date": "2026/07/18",
+          "discipline": "1500m",
+          "result": "5:10.80",
+          "result_url": "http://www.kumariku.org/26/26,7,18chutairen/rel138.html",
+          "record_source": "out/analysis/arato-tamana-teams/岱明中.md"
+        }
+      ]
+    }
+  ]
+}

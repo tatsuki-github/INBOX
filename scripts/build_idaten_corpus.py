@@ -11,6 +11,7 @@ from __future__ import annotations
 import json
 import re
 import shutil
+import subprocess
 import sys
 from pathlib import Path
 from typing import Any, Iterator
@@ -297,6 +298,10 @@ def _build_corpus() -> list[dict[str, str]]:
     _extract_practice(sources)
     _extract_sb(sources)
 
+    profiles = ROOT / "input" / "athlete-team-profiles.json"
+    if profiles.is_file():
+        _copy_file(profiles, CORPUS_DIR / "profiles" / profiles.name, sources)
+
     docs_dest = CORPUS_DIR / "docs"
     for path in DOC_FILES:
         if path.exists():
@@ -350,6 +355,7 @@ def _build_corpus() -> list[dict[str, str]]:
                 "- `drive-text/` — Drive テキスト",
                 "- `calendar/` / `practice/` — 岱明フィルタ済み予定・練習",
                 "- `sb/` — 中学生 SB（全所属。Drive SBデータベース wide）",
+                "- `profiles/` — 選手・チームプロフィールと年度別大会記録のリンク",
                 "- `docs/` — 関連 ADR・定義（抜粋）",
                 "",
                 f"ファイル数（SOURCES）: {len(sources)}",
@@ -595,6 +601,56 @@ def _chunk_csv_rows(path: Path, rel: str) -> list[dict[str, Any]]:
 
 def _chunk_file(path: Path) -> list[dict[str, Any]]:
     rel = str(path.relative_to(CORPUS_DIR)).replace("\\", "/")
+    if rel == "profiles/athlete-team-profiles.json":
+        try:
+            data = json.loads(path.read_text(encoding="utf-8"))
+        except json.JSONDecodeError:
+            return []
+        out: list[dict[str, Any]] = []
+        for team in data.get("teams") or []:
+            if not isinstance(team, dict):
+                continue
+            member_names = [
+                str(a.get("name"))
+                for a in data.get("athletes") or []
+                if isinstance(a, dict) and a.get("id") in (team.get("members") or [])
+            ]
+            text = (
+                f"チームプロフィール: {team.get('name')}（別名: {'、'.join(team.get('aliases') or [])}）\n"
+                f"年度: {team.get('season')}。{team.get('overview')}\n"
+                f"所属選手: {'、'.join(member_names)}。大会記録リンク数: {team.get('record_count')}。"
+            )
+            out.append({
+                "id": f"{rel}:team:{team.get('id')}",
+                "source": rel,
+                "text": text,
+                "metadata": {"path": f"input/idaten-corpus/{rel}", "kind": "team_profile", "team_id": team.get("id")},
+            })
+        for athlete in data.get("athletes") or []:
+            if not isinstance(athlete, dict):
+                continue
+            lines = [
+                f"選手プロフィール: {athlete.get('name')}。所属: 岱明中学校陸上競技部。",
+                f"年度: {athlete.get('season')}、学年: {athlete.get('grade')}。",
+            ]
+            for record in athlete.get("records") or []:
+                lines.append(
+                    f"大会記録: {record.get('event_date') or '日付不明'} {record.get('discipline') or ''} "
+                    f"{record.get('result') or ''} {record.get('result_url') or ''}"
+                )
+            out.append({
+                "id": f"{rel}:athlete:{athlete.get('id')}",
+                "source": rel,
+                "text": "\n".join(lines),
+                "metadata": {
+                    "path": f"input/idaten-corpus/{rel}",
+                    "kind": "athlete_profile",
+                    "athlete_id": athlete.get("id"),
+                    "team_id": athlete.get("team_id"),
+                    "name": athlete.get("name"),
+                },
+            })
+        return out
     if rel.startswith("aragyoku/transcripts/") and path.suffix.lower() == ".json":
         return _chunk_aragyoku_transcript(path, rel)
     # Row-level CSV for SB + 記録データベース (athlete / meet result tables)
@@ -657,8 +713,6 @@ def main() -> int:
             if not py.is_file():
                 continue
             try:
-                import subprocess
-
                 proc = subprocess.run(
                     [str(py), str(gen)],
                     cwd=str(ROOT),
@@ -676,6 +730,9 @@ def main() -> int:
                 print(f"warn: {gen.name} via {py} failed: {exc}", file=sys.stderr)
         if not ran:
             print(f"warn: {gen.name} skipped", file=sys.stderr)
+
+    profile_builder = ROOT / "scripts" / "build_athlete_team_profiles.py"
+    subprocess.run([sys.executable, str(profile_builder)], cwd=str(ROOT), check=True)
 
     sources = _build_corpus()
     index = _build_index()

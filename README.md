@@ -107,10 +107,12 @@ Notion / Google ドライブ / 関連リポジトリから取り込んだスナ�
 | `input/external/drive/` | 共有・個人ドライブ（練習ログ・名簿・記録 CSV 等） |
 | `input/external/notion/` | DB schema / rows（生徒・記録・駅伝戦略など） |
 | `input/external/sb/middle-school/` | t-tsuchiyama 中学生 SB（ワイド＋年度別） |
+| [`input/athlete-team-profiles.json`](input/athlete-team-profiles.json) | 2026年度の岱明選手・チームプロフィールと個人大会記録のリンク |
 | `input/external/github/` | 他リポ調査（INBOX 以外は対象外） |
 
 巨大 PDF・写真バイナリはメタ／リンクのみ。カレンダー予定の正本は引き続き `input/events.*.yaml`。
-設計: [`docs/adr/010-external-idaten-import.md`](docs/adr/010-external-idaten-import.md) / [`docs/adr/012-middle-school-sb-all-years.md`](docs/adr/012-middle-school-sb-all-years.md)
+プロフィール JSON は Notion 生徒 DB と年度別の所属記録から再生成し、氏名・所属・学年の照合に通った大会記録を付けてコーパス内では選手単位で索引化する。更新は `python3 scripts/build_idaten_corpus.py`。
+設計: [`docs/adr/010-external-idaten-import.md`](docs/adr/010-external-idaten-import.md) / [`docs/adr/012-middle-school-sb-all-years.md`](docs/adr/012-middle-school-sb-all-years.md) / [`docs/adr/057-athlete-team-profiles.md`](docs/adr/057-athlete-team-profiles.md)
 
 ## 予定・メモの追加
 

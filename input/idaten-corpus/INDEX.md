@@ -14,6 +14,7 @@ LINE Q&A バックエンドが参照するテキスト専用コーパス（い�
 - `drive-text/` — Drive テキスト
 - `calendar/` / `practice/` — 岱明フィルタ済み予定・練習
 - `sb/` — 中学生 SB（全所属。Drive SBデータベース wide）
+- `profiles/` — 選手・チームプロフィールと年度別大会記録のリンク
 - `docs/` — 関連 ADR・定義（抜粋）
 
-ファイル数（SOURCES）: 650
+ファイル数（SOURCES）: 727
