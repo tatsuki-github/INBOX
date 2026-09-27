@@ -95,6 +95,28 @@ describe("queryKnowledgeGraph", () => {
     expect(result.corpus_sources.some((s) => s.includes("aragyoku-teams/菊水.md"))).toBe(true);
   });
 
+  it("routes year/team/leg questions to the exact annual results digest", () => {
+    resetKgCache();
+    const result = queryKnowledgeGraph("2025年 荒玉駅伝 玉陵 3区の選手は？", { kgPath });
+    expect(result.matched_nodes[0]?.id).toBe("entity:aragyoku-leg:2025:玉陵:3");
+    expect(result.corpus_sources[0]).toContain("out-analysis/aragyoku-years/2025.md");
+  });
+
+  it.each([
+    ["2025年 荒玉駅伝 玉陵 3区のタイムは？", "entity:aragyoku-leg:2025:玉陵:3", "out-analysis/aragyoku-years/2025.md"],
+    ["2025年 荒玉駅伝 玉陵 3区の通過順位は？", "entity:aragyoku-leg:2025:玉陵:3", "out-analysis/aragyoku-years/2025.md"],
+    ["2025年 荒玉駅伝男子 3区の区間順位一覧", "source:out/analysis/aragyoku-years/2025.md", "out-analysis/aragyoku-years/2025.md"],
+    ["2025年 荒玉駅伝男子 玉陵の全区間順位", "source:out/analysis/aragyoku-teams/玉陵.md", "out-analysis/aragyoku-teams/玉陵.md"],
+    ["玉陵の荒玉駅伝3区は過去何位？", "source:out/analysis/aragyoku-teams/玉陵.md", "out-analysis/aragyoku-teams/玉陵.md"],
+    ["2025年荒玉駅伝で玉陵は何位まで上がったか", "source:out/analysis/aragyoku-teams/玉陵.md", "out-analysis/aragyoku-teams/玉陵.md"],
+    ["2025年荒玉駅伝3区ランキングの上位チームは？", "source:out/analysis/aragyoku-years/2025.md", "out-analysis/aragyoku-years/2025.md"],
+  ] as const)("routes low-precision aragyoku rank question: %s", (question, nodeId, source) => {
+    resetKgCache();
+    const result = queryKnowledgeGraph(question, { kgPath });
+    expect(result.matched_nodes[0]?.id).toBe(nodeId);
+    expect(result.corpus_sources[0]).toContain(source);
+  });
+
   it("routes なごみ 1区 questions to なごみ大会, not 金栗駅伝", () => {
     resetKgCache();
     const result = queryKnowledgeGraph("なごみ駅伝の岱明男子1区は誰？", { kgPath });

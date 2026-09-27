@@ -395,6 +395,16 @@
 
 （換算対象なし）
 
+### 2026-09-24 いだてん岱明練習
+
+- **parsed**: full (practice_field)
+
+| type | group | detail | pace |
+|---|---|---|---|
+| jog | 女子 | 3360m |  |
+| jog | 男子 | 4480m |  |
+| strides |  | 流し2本 |  |
+
 ### （日付なし） 岱明中 荒玉中体連駅伝（2026-10-14）残り練習計画【部活カレンダー準拠】
 
 - **parsed**: none (description)

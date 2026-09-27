@@ -465,6 +465,66 @@
     "corpus": "out-analysis/aragyoku-teams/長洲.md"
   },
   {
+    "source": "out/analysis/aragyoku-years/2012.md",
+    "corpus": "out-analysis/aragyoku-years/2012.md"
+  },
+  {
+    "source": "out/analysis/aragyoku-years/2013.md",
+    "corpus": "out-analysis/aragyoku-years/2013.md"
+  },
+  {
+    "source": "out/analysis/aragyoku-years/2014.md",
+    "corpus": "out-analysis/aragyoku-years/2014.md"
+  },
+  {
+    "source": "out/analysis/aragyoku-years/2015.md",
+    "corpus": "out-analysis/aragyoku-years/2015.md"
+  },
+  {
+    "source": "out/analysis/aragyoku-years/2016.md",
+    "corpus": "out-analysis/aragyoku-years/2016.md"
+  },
+  {
+    "source": "out/analysis/aragyoku-years/2017.md",
+    "corpus": "out-analysis/aragyoku-years/2017.md"
+  },
+  {
+    "source": "out/analysis/aragyoku-years/2018.md",
+    "corpus": "out-analysis/aragyoku-years/2018.md"
+  },
+  {
+    "source": "out/analysis/aragyoku-years/2019.md",
+    "corpus": "out-analysis/aragyoku-years/2019.md"
+  },
+  {
+    "source": "out/analysis/aragyoku-years/2020.md",
+    "corpus": "out-analysis/aragyoku-years/2020.md"
+  },
+  {
+    "source": "out/analysis/aragyoku-years/2021.md",
+    "corpus": "out-analysis/aragyoku-years/2021.md"
+  },
+  {
+    "source": "out/analysis/aragyoku-years/2022.md",
+    "corpus": "out-analysis/aragyoku-years/2022.md"
+  },
+  {
+    "source": "out/analysis/aragyoku-years/2023.md",
+    "corpus": "out-analysis/aragyoku-years/2023.md"
+  },
+  {
+    "source": "out/analysis/aragyoku-years/2024.md",
+    "corpus": "out-analysis/aragyoku-years/2024.md"
+  },
+  {
+    "source": "out/analysis/aragyoku-years/2025.md",
+    "corpus": "out-analysis/aragyoku-years/2025.md"
+  },
+  {
+    "source": "out/analysis/aragyoku-years/INDEX.md",
+    "corpus": "out-analysis/aragyoku-years/INDEX.md"
+  },
+  {
     "source": "out/analysis/aragyoku_2024_2025_focus_teams.md",
     "corpus": "out-analysis/aragyoku_2024_2025_focus_teams.md"
   },
@@ -811,6 +871,10 @@
   {
     "source": "docs/adr/054-primary-source-links-in-line-answers.md",
     "corpus": "repo-docs/adr/054-primary-source-links-in-line-answers.md"
+  },
+  {
+    "source": "docs/adr/055-aragyoku-year-leg-kg-routing.md",
+    "corpus": "repo-docs/adr/055-aragyoku-year-leg-kg-routing.md"
   },
   {
     "source": "docs/idaten-import/phase0-media-ocr.md",
@@ -2486,7 +2550,7 @@
   {
     "source": "out/2026/practice.json",
     "corpus": "practice/practice.2026.json",
-    "note": "filtered 41 items"
+    "note": "filtered 42 items"
   },
   {
     "source": "out/daiming-practice-menus-kpace.md",

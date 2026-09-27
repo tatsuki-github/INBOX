@@ -21847,7 +21847,7 @@
             },
             {
               "leg": 3,
-              "name": "unknown",
+              "name": "一瀬彪眞",
               "grade": 3,
               "split": "9:26",
               "cumulative": "28:22",
@@ -21855,7 +21855,7 @@
               "split_rank": 3,
               "split_record": false,
               "status": "ok",
-              "raw_name_grade": "unknown(3)",
+              "raw_name_grade": "一瀬彪眞(3)",
               "computed": {
                 "split_rank": 3,
                 "passing_rank": 2
@@ -23262,7 +23262,8 @@
         "total": "59:08"
       },
       "ocr_notes": [
-        "Result board OCR + image verification; ranks derived from split times"
+        "Result board OCR + image verification; ranks derived from split times",
+        "玉陵男子3区の選手名は成績表画像で一瀬彪眞と確認（旧: unknown）。"
       ]
     }
   },

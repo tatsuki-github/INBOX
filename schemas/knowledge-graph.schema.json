@@ -27,7 +27,7 @@
         "id": { "type": "string", "minLength": 1 },
         "type": {
           "type": "string",
-          "enum": ["Source", "Topic", "Entity", "QueryHint", "Athlete", "Year", "Template", "MediaAsset"]
+          "enum": ["Source", "Topic", "Entity", "QueryHint", "Athlete", "Year", "Template", "MediaAsset", "RelayLegResult"]
         },
         "label": { "type": "string" },
         "topics": {

@@ -180,6 +180,9 @@ function scoreNode(node: KgNode, qTokens: string[], query: string): number {
     score += 14;
   }
   if (isLegAthleteQuestion(query)) {
+    // A complete year/team/leg tuple is an exact lookup key. Prefer its
+    // transcript-derived result node over broad awards and meet-record hints.
+    if (nodeType === "RelayLegResult" && label && q.includes(label)) score += 90;
     if (isNagomiMeetQuestion(query)) {
       if (/なごみ/.test(blob) && /オーダー|区間/.test(blob)) score += 20;
       if (/なごみ/.test(blob)) score += 18;
@@ -194,6 +197,35 @@ function scoreNode(node: KgNode, qTokens: string[], query: string): number {
       }
     }
   }
+  const aragyokuYear = query.match(/(?<!\d)(20\d{2})(?!\d)/)?.[1];
+  const aragyokuLeg = query.match(/(?<!\d)(\d+)区/)?.[1];
+  const rankOrResultIntent = /順位|ランキング|上位|何位|記録|タイム|通過/.test(query);
+  if (
+    aragyokuYear &&
+    aragyokuLeg &&
+    rankOrResultIntent &&
+    /荒玉|aragyoku|中体連/i.test(query)
+  ) {
+    if (nodeType === "RelayLegResult") {
+      const [, , nodeYear, nodeTeam, nodeLeg] = node.id.split(":");
+      if (nodeYear === aragyokuYear && nodeLeg === aragyokuLeg && nodeTeam && query.includes(nodeTeam)) {
+        score += 90;
+      }
+    }
+    if (nodeType === "Source" && refs.includes(`out/analysis/aragyoku-years/${aragyokuYear}.md`)) {
+      score += 100;
+    }
+  }
+  const aragyokuQuestion = /荒玉|aragyoku|中体連|駅伝/i.test(query);
+  if (
+    nodeType === "Source" &&
+    refs.includes("aragyoku-teams/") &&
+    label &&
+    q.includes(label) &&
+    aragyokuQuestion
+  ) {
+    if (rankOrResultIntent || /過去|歴代/.test(query)) score += 32;
+  }
   if (nodeType !== "Athlete" && nodeType !== "MediaAsset" && q && blob.includes(q)) score += 5;
   if (score <= 0) return 0;
   const boost: Record<string, number> = {
@@ -205,6 +237,7 @@ function scoreNode(node: KgNode, qTokens: string[], query: string): number {
     Entity: 1.25,
     Year: 1.0,
     MediaAsset: 1.35,
+    RelayLegResult: 1.0,
   };
   return score * (boost[nodeType] ?? 1);
 }

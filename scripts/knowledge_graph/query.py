@@ -234,6 +234,12 @@ def _is_leg_time_question(query: str) -> bool:
     return bool(re.search(r"\d区", query) and re.search(r"何分|区間タイム|タイム", query))
 
 
+def _aragyoku_year_leg_lookup(query: str) -> tuple[str | None, str | None]:
+    year = re.search(r"(?<!\d)(20\d{2})(?!\d)", query)
+    leg = re.search(r"(?<!\d)(\d+)区", query)
+    return (year.group(1) if year else None, leg.group(1) if leg else None)
+
+
 def _score_node(node: dict[str, Any], q_tokens: list[str], query: str) -> float:
     label = (node.get("label") or "").lower()
     node_type = node.get("type", "")
@@ -332,6 +338,10 @@ def _score_node(node: dict[str, Any], q_tokens: list[str], query: str) -> float:
         if any(x in blob for x in ("kpace", "data-model", "560")):
             score += 14.0
     if _is_leg_athlete_question(query):
+        # A complete year/team/leg tuple is an exact retrieval key. Prefer its
+        # transcript-derived RelayLegResult over broad awards and meet-record hints.
+        if node_type == "RelayLegResult" and label and label in q:
+            score += 60.0
         if nagomi_q:
             if "なごみ" in blob:
                 score += 18.0
@@ -339,6 +349,20 @@ def _score_node(node: dict[str, Any], q_tokens: list[str], query: str) -> float:
                 score += 8.0
             if "aragyoku-teams" in blob or "focus_teams" in blob:
                 score -= 16.0
+    year, leg = _aragyoku_year_leg_lookup(query)
+    rank_or_result_intent = bool(re.search(r"順位|ランキング|上位|何位|記録|タイム|通過", query))
+    if year and leg and rank_or_result_intent and any(term in q for term in ("荒玉", "aragyoku", "中体連")):
+        if node_type == "RelayLegResult":
+            _, _, node_year, node_team, node_leg = node.get("id", "").split(":", 4) if node.get("id", "").count(":") == 4 else ("", "", "", "", "")
+            if node_year == year and node_leg == leg and node_team in query:
+                score += 90.0
+        if node_type == "Source" and f"out/analysis/aragyoku-years/{year}.md" in refs:
+            score += 100.0
+    # Team-wide history and rank questions should use that team's digest.
+    aragyoku_question = any(term in q for term in ("荒玉", "aragyoku", "中体連", "駅伝"))
+    if node_type == "Source" and "aragyoku-teams/" in refs and label and label in query and aragyoku_question:
+        if rank_or_result_intent or "過去" in query or "歴代" in query:
+            score += 32.0
     if _is_leg_time_question(query) and re.search(r"20\d{2}", query):
         if "aragyoku-teams/" in blob and label and label in q:
             score += 30.0
@@ -520,7 +544,7 @@ def query_knowledge_graph(
     week_range = _resolve_week_range(normalized_question, as_of_date=as_of_date)
     month_range = _resolve_month_range(normalized_question, as_of_date=as_of_date)
     fiscal_range = _resolve_fiscal_year_range(normalized_question)
-    calendar_intent = any(term in normalized_question.lower() for term in ("予定", "一覧", "カレンダー", "日程", "学校行事", "schedule"))
+    calendar_intent = any(term in normalized_question.lower() for term in ("予定", "カレンダー", "日程", "学校行事", "schedule"))
     practice_intent = any(
         term in normalized_question.lower()
         for term in ("練習", "メニュー", "practice", "jog", "interval", "走る")

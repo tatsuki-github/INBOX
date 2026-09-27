@@ -275,3 +275,15 @@ def test_meet_records_women_2025_header() -> None:
     assert mr["legs"][0]["time"] == "9:46"
     assert mr["legs"][0]["holders"][0]["name"] == "西川侑里"
     assert mr["legs"][1]["time"] == "6:08"
+
+
+def test_2025_tamaryo_third_leg_name_matches_transcript_and_full_dataset() -> None:
+    transcript = json.loads(
+        (ARAGYOKU / "transcripts/2025-男子.json").read_text(encoding="utf-8")
+    )
+    full = json.loads((ARAGYOKU / "men_full_2012_2025.json").read_text(encoding="utf-8"))
+    transcript_team = next(t for t in transcript["teams"] if t["team"] == "玉陵")
+    full_team = next(t for t in full["years"]["2025"]["teams"] if t["team"] == "玉陵")
+    assert transcript_team["legs"][2]["name"] == "一瀬彪眞"
+    assert full_team["legs"][2]["name"] == "一瀬彪眞"
+    assert any("玉陵男子3区" in note and "一瀬彪眞" in note for note in transcript["ocr_notes"])

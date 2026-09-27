@@ -1385,6 +1385,63 @@ def _register_analysis_digests(
                 _add_edge(edges, athlete["id"], sid, "mentioned_in")
 
 
+def _register_aragyoku_leg_results(
+    nodes: dict[str, dict[str, Any]],
+    edges: set[tuple[str, str, str]],
+) -> None:
+    """Index year/team/leg lookups to the annual transcript-derived digest."""
+    transcript_dir = ROOT / "input" / "idaten-corpus" / "aragyoku" / "transcripts"
+    results: dict[tuple[int, str, int], list[tuple[str, dict[str, Any], dict[str, Any]]]] = defaultdict(list)
+    for path in sorted(transcript_dir.glob("*.json")) if transcript_dir.is_dir() else []:
+        try:
+            meet = json.loads(path.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError):
+            continue
+        if not isinstance(meet, dict) or not str(meet.get("year", "")).isdigit():
+            continue
+        year = int(meet["year"])
+        gender = str(meet.get("gender") or "")
+        for team in meet.get("teams") or []:
+            if not isinstance(team, dict):
+                continue
+            team_name = str(team.get("team") or "").strip()
+            for leg in team.get("legs") or []:
+                if not isinstance(leg, dict) or not str(leg.get("leg", "")).isdigit():
+                    continue
+                results[(year, team_name, int(leg["leg"]))].append((gender, team, leg))
+
+    for (year, team_name, leg_no), entries in results.items():
+        ref = f"out/analysis/aragyoku-years/{year}.md"
+        sid = _register_source(
+            nodes,
+            edges,
+            ref,
+            topics=["ekiden", "athlete_records"],
+            hint=f"{year}年荒玉駅伝の男女・全チーム区間別記録。総合順位、選手、学年、区間記録、累計、通過順位、区間順位",
+        )
+        nid = f"entity:aragyoku-leg:{year}:{team_name}:{leg_no}"
+        details = []
+        for gender, team, leg in sorted(entries, key=lambda item: item[0]):
+            details.append(
+                f"{gender} {leg.get('name') or 'unknown'} 学年{leg.get('grade') or '不明'} "
+                f"{leg.get('split') or '記録不明'} 区間{leg.get('split_rank') or '不明'}位 "
+                f"総合{team.get('rank') or '不明'}位"
+            )
+        _add_node(
+            nodes,
+            _node(
+                nid,
+                "RelayLegResult",
+                f"{year}年 荒玉駅伝 {team_name} {leg_no}区",
+                topics=["ekiden", "athlete_records"],
+                refs=[ref],
+                hint=" / ".join(details),
+            ),
+        )
+        _add_edge(edges, nid, sid, "documented_in")
+        _add_edge(edges, "topic:ekiden", nid, "search_here")
+
+
 def _register_external_media(
     nodes: dict[str, dict[str, Any]],
     edges: set[tuple[str, str, str]],
@@ -1797,6 +1854,7 @@ def build_knowledge_graph(*, generated_at: str | None = None) -> dict[str, Any]:
 
     # Generated analysis digests (team / ranking / LINE chats)
     _register_analysis_digests(nodes, edges)
+    _register_aragyoku_leg_results(nodes, edges)
 
     # Query hints — prefer concrete Source/corpus; attach refs for 0-hop routing
     for idx, (label, hint, targets) in enumerate(QUERY_HINTS):

@@ -116,6 +116,21 @@
 - `out/analysis/aragyoku-teams/荒尾海陽.md` → `out-analysis/aragyoku-teams/荒尾海陽.md`
 - `out/analysis/aragyoku-teams/菊水.md` → `out-analysis/aragyoku-teams/菊水.md`
 - `out/analysis/aragyoku-teams/長洲.md` → `out-analysis/aragyoku-teams/長洲.md`
+- `out/analysis/aragyoku-years/2012.md` → `out-analysis/aragyoku-years/2012.md`
+- `out/analysis/aragyoku-years/2013.md` → `out-analysis/aragyoku-years/2013.md`
+- `out/analysis/aragyoku-years/2014.md` → `out-analysis/aragyoku-years/2014.md`
+- `out/analysis/aragyoku-years/2015.md` → `out-analysis/aragyoku-years/2015.md`
+- `out/analysis/aragyoku-years/2016.md` → `out-analysis/aragyoku-years/2016.md`
+- `out/analysis/aragyoku-years/2017.md` → `out-analysis/aragyoku-years/2017.md`
+- `out/analysis/aragyoku-years/2018.md` → `out-analysis/aragyoku-years/2018.md`
+- `out/analysis/aragyoku-years/2019.md` → `out-analysis/aragyoku-years/2019.md`
+- `out/analysis/aragyoku-years/2020.md` → `out-analysis/aragyoku-years/2020.md`
+- `out/analysis/aragyoku-years/2021.md` → `out-analysis/aragyoku-years/2021.md`
+- `out/analysis/aragyoku-years/2022.md` → `out-analysis/aragyoku-years/2022.md`
+- `out/analysis/aragyoku-years/2023.md` → `out-analysis/aragyoku-years/2023.md`
+- `out/analysis/aragyoku-years/2024.md` → `out-analysis/aragyoku-years/2024.md`
+- `out/analysis/aragyoku-years/2025.md` → `out-analysis/aragyoku-years/2025.md`
+- `out/analysis/aragyoku-years/INDEX.md` → `out-analysis/aragyoku-years/INDEX.md`
 - `out/analysis/aragyoku_2024_2025_focus_teams.md` → `out-analysis/aragyoku_2024_2025_focus_teams.md`
 - `out/analysis/aragyoku_all_teams_average_pace.md` → `out-analysis/aragyoku_all_teams_average_pace.md`
 - `out/analysis/aragyoku_leg_awards.md` → `out-analysis/aragyoku_leg_awards.md`
@@ -203,6 +218,7 @@
 - `docs/adr/052-nagomi-sb-gap-analysis.md` → `repo-docs/adr/052-nagomi-sb-gap-analysis.md`
 - `docs/adr/053-line-bot-help-examples.md` → `repo-docs/adr/053-line-bot-help-examples.md`
 - `docs/adr/054-primary-source-links-in-line-answers.md` → `repo-docs/adr/054-primary-source-links-in-line-answers.md`
+- `docs/adr/055-aragyoku-year-leg-kg-routing.md` → `repo-docs/adr/055-aragyoku-year-leg-kg-routing.md`
 - `docs/idaten-import/phase0-media-ocr.md` → `repo-docs/idaten-import/phase0-media-ocr.md`
 - `docs/idaten-import/phase0-work-type.md` → `repo-docs/idaten-import/phase0-work-type.md`
 - `docs/idaten-import/phase1-media-ocr.md` → `repo-docs/idaten-import/phase1-media-ocr.md`
@@ -620,7 +636,7 @@
 - `input/events.2025.yaml` → `calendar/events.2025.filtered.yaml` (daiming-filtered)
 - `input/events.2026.yaml` → `calendar/events.2026.filtered.yaml` (daiming-filtered)
 - `out/2025/practice.json` → `practice/practice.2025.json` (filtered 31 items)
-- `out/2026/practice.json` → `practice/practice.2026.json` (filtered 41 items)
+- `out/2026/practice.json` → `practice/practice.2026.json` (filtered 42 items)
 - `out/daiming-practice-menus-kpace.md` → `practice/daiming-practice-menus-kpace.md`
 - `input/external/sb/middle-school/wide/中学生SB.csv` → `sb/中学生SB.csv` (full middle-school SB (1371 data rows))
 - `input/external/drive/personal/t-tsuchiyama/sb/SBデータベース.csv` → `sb/SBデータベース.csv` (personal SB database HS+MS (4900 data rows))

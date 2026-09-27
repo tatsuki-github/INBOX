@@ -719,6 +719,39 @@ def test_query_routes_team_leg_split_time_to_team_digest():
     assert result["refs"][0] == "out/analysis/aragyoku-teams/岱明.md"
 
 
+def test_query_routes_exact_year_team_leg_runner_to_team_digest():
+    graph = build_knowledge_graph(generated_at="2026-01-01T00:00:00Z")
+    result = query_knowledge_graph(
+        "2025年 荒玉駅伝 玉陵 3区の選手は？",
+        graph=graph,
+        include_context=False,
+        top_k=5,
+    )
+    assert result["matched_nodes"][0]["id"] == "entity:aragyoku-leg:2025:玉陵:3"
+    assert result["refs"][0] == "out/analysis/aragyoku-years/2025.md"
+
+
+@pytest.mark.parametrize(
+    ("question", "node_id", "reference"),
+    [
+        ("2025年 荒玉駅伝 玉陵 3区のタイムは？", "entity:aragyoku-leg:2025:玉陵:3", "out/analysis/aragyoku-years/2025.md"),
+        ("2025年 荒玉駅伝 玉陵 3区の通過順位は？", "entity:aragyoku-leg:2025:玉陵:3", "out/analysis/aragyoku-years/2025.md"),
+        ("2025年 荒玉駅伝 玉陵 3区の記録と順位は？", "entity:aragyoku-leg:2025:玉陵:3", "out/analysis/aragyoku-years/2025.md"),
+        ("2025年 荒玉駅伝男子 3区の区間順位一覧", "source:out/analysis/aragyoku-years/2025.md", "out/analysis/aragyoku-years/2025.md"),
+        ("2025年 荒玉駅伝男子 玉陵の全区間順位", "source:out/analysis/aragyoku-teams/玉陵.md", "out/analysis/aragyoku-teams/玉陵.md"),
+        ("玉陵の荒玉駅伝3区は過去何位？", "source:out/analysis/aragyoku-teams/玉陵.md", "out/analysis/aragyoku-teams/玉陵.md"),
+        ("2025年 荒玉駅伝 3区で玉陵の選手は何位？", "entity:aragyoku-leg:2025:玉陵:3", "out/analysis/aragyoku-years/2025.md"),
+        ("2025年荒玉駅伝で玉陵は何位まで上がったか", "source:out/analysis/aragyoku-teams/玉陵.md", "out/analysis/aragyoku-teams/玉陵.md"),
+        ("2025年荒玉駅伝3区ランキングの上位チームは？", "source:out/analysis/aragyoku-years/2025.md", "out/analysis/aragyoku-years/2025.md"),
+    ],
+)
+def test_aragyoku_year_team_leg_and_rank_queries_route_precisely(question, node_id, reference):
+    graph = build_knowledge_graph(generated_at="2026-01-01T00:00:00Z")
+    result = query_knowledge_graph(question, graph=graph, include_context=False, top_k=5)
+    assert result["matched_nodes"][0]["id"] == node_id
+    assert result["refs"][0] == reference
+
+
 def test_injury_query_routes_to_injury_knowledge_not_athlete_records():
     graph = build_knowledge_graph(generated_at="2026-01-01T00:00:00Z")
     result = query_knowledge_graph(

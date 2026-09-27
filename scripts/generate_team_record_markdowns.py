@@ -35,6 +35,7 @@ from arato_tamana_records import (  # noqa: E402
 
 ARATO_OUT = ROOT / "out" / "analysis" / "arato-tamana-teams"
 ARAGYOKU_OUT = ROOT / "out" / "analysis" / "aragyoku-teams"
+ARAGYOKU_YEAR_OUT = ROOT / "out" / "analysis" / "aragyoku-years"
 TRANSCRIPTS = ROOT / "input" / "aragyoku" / "transcripts"
 # 2024–2025 深掘り対象（詳細は aragyoku_2024_2025_focus_teams.md）
 FOCUS_YOY_TEAMS = frozenset({"岱明", "玉高附属", "天水", "有明"})
@@ -351,6 +352,71 @@ def generate_aragyoku_team_mds() -> list[Path]:
     return written
 
 
+def render_aragyoku_year_md(year: int, meets: list[dict[str, Any]]) -> str:
+    """Render one year of results so team/leg/rank questions land in one file."""
+    lines = [
+        f"# {year}年 荒玉駅伝 区間別記録",
+        "",
+        "出典: `input/aragyoku/transcripts/` の大会結果文字起こし。",
+        "チーム順位・区間選手・区間記録・累計・通過順位・区間順位を収録。",
+        "",
+    ]
+    for meet in sorted(meets, key=lambda x: (0 if x["gender"] == "男子" else 1)):
+        gender = meet["gender"]
+        lines.extend([f"## {gender}", "", f"総合チーム数: {len(meet['teams'])}", ""])
+        for leg_no in sorted({int(l.get("leg") or 0) for t in meet["teams"] for l in t.get("legs", [])}):
+            lines.extend([f"### {leg_no}区", "", "| 総合順位 | チーム | 選手 | 学年 | 区間記録 | 累計 | 通過順位 | 区間順位 |", "|---:|---|---|---:|---:|---:|---:|---:|"])
+            rows = []
+            for team in meet["teams"]:
+                leg = next((l for l in team.get("legs", []) if int(l.get("leg") or 0) == leg_no), None)
+                if leg is None:
+                    continue
+                rows.append((team, leg))
+            for team, leg in sorted(rows, key=lambda pair: int(pair[0].get("rank") or 999)):
+                rowsafe = lambda value: str(value if value not in (None, "") else "—").replace("|", "/")
+                lines.append(
+                    f"| {rowsafe(team.get('rank'))} | {rowsafe(team.get('team'))} | {rowsafe(leg.get('name'))} | "
+                    f"{rowsafe(leg.get('grade'))} | {rowsafe(leg.get('split'))} | {rowsafe(leg.get('cumulative'))} | "
+                    f"{rowsafe(leg.get('passing_rank'))} | {rowsafe(leg.get('split_rank'))} |"
+                )
+            lines.append("")
+            for team, leg in sorted(rows, key=lambda pair: int(pair[0].get("rank") or 999)):
+                lines.append(
+                    f"{year}年荒玉駅伝{gender} {team.get('team')} {leg_no}区: {leg.get('name') or 'unknown'} "
+                    f"{leg.get('split') or '記録不明'}、区間順位{leg.get('split_rank') or '不明'}位、"
+                    f"総合{team.get('rank') or '不明'}位。"
+                )
+            lines.append("")
+    return "\n".join(lines).rstrip() + "\n"
+
+
+def generate_aragyoku_year_mds() -> list[Path]:
+    by_year: dict[int, list[dict[str, Any]]] = defaultdict(list)
+    if not TRANSCRIPTS.is_dir():
+        return []
+    for path in sorted(TRANSCRIPTS.glob("*.json")):
+        try:
+            data = json.loads(path.read_text(encoding="utf-8"))
+        except json.JSONDecodeError:
+            continue
+        if not isinstance(data, dict) or not str(data.get("year", "")).isdigit():
+            continue
+        by_year[int(data["year"])].append(data)
+
+    ARAGYOKU_YEAR_OUT.mkdir(parents=True, exist_ok=True)
+    written: list[Path] = []
+    index = ["# 荒玉駅伝 年度別区間記録 INDEX", "", "各年のファイルに男女別・区間別の全チーム結果を収録。", "", "| 年 | 記録 |", "|---:|---|"]
+    for year, meets in sorted(by_year.items(), reverse=True):
+        path = ARAGYOKU_YEAR_OUT / f"{year}.md"
+        path.write_text(render_aragyoku_year_md(year, meets), encoding="utf-8")
+        written.append(path)
+        index.append(f"| {year} | `{year}.md` |")
+    index_path = ARAGYOKU_YEAR_OUT / "INDEX.md"
+    index_path.write_text("\n".join(index) + "\n", encoding="utf-8")
+    written.append(index_path)
+    return written
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--arato-only", action="store_true")
@@ -363,6 +429,7 @@ def main() -> int:
         written.extend(generate_arato_tamana_team_mds(config))
     if not args.arato_only:
         written.extend(generate_aragyoku_team_mds())
+        written.extend(generate_aragyoku_year_mds())
 
     print(f"wrote {len(written)} files")
     for p in written[:8]:
