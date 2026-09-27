@@ -19,6 +19,14 @@
       "recent_track_weight": 0.5,
       "baseline_scale": 1.0051284240243719,
       "baseline_scale_source": "v1 median alignment, held fixed",
+      "leg_effect": {
+        "leg4_minus_leg3_median_sec": 0.0,
+        "leg_offsets_sec": {},
+        "season_count": 0,
+        "team_pairs": 0,
+        "years": [],
+        "season_medians_sec": {}
+      },
       "observation_weight_rules": [
         {
           "team": "玉陵中",
@@ -63,6 +71,45 @@
       "recent_track_weight": 0.5,
       "baseline_scale": 0.9860736188843046,
       "baseline_scale_source": "v1 median alignment, held fixed",
+      "leg_effect": {
+        "leg4_minus_leg3_median_sec": 19.0,
+        "leg_offsets_sec": {
+          "3": -9.5,
+          "4": 9.5
+        },
+        "season_count": 13,
+        "team_pairs": 204,
+        "years": [
+          2012,
+          2013,
+          2015,
+          2016,
+          2017,
+          2018,
+          2019,
+          2020,
+          2021,
+          2022,
+          2023,
+          2024,
+          2025
+        ],
+        "season_medians_sec": {
+          "2012": 12.0,
+          "2013": 28.0,
+          "2015": 17.0,
+          "2016": 10.5,
+          "2017": 21.5,
+          "2018": 21.5,
+          "2019": 18.5,
+          "2020": 20.5,
+          "2021": 19.0,
+          "2022": 9.0,
+          "2023": 19.0,
+          "2024": 10.0,
+          "2025": 19.0
+        }
+      },
       "observation_weight_rules": [
         {
           "team": "玉陵中",
@@ -90,8 +137,8 @@
     },
     "女子": {
       "n": 76,
-      "mae_sec": 20.795879864122153,
-      "rmse_sec": 26.693323542029653,
+      "mae_sec": 20.088723400207098,
+      "rmse_sec": 26.329081621529642,
       "median_actual_over_raw": 1.0101228206128228,
       "by_year": {
         "2024": 38,

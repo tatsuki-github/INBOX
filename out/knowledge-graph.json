@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated_at": "2026-09-27T12:58:39Z",
+  "generated_at": "2026-09-27T13:28:32Z",
   "nodes": [
     {
       "id": "corpus:analysis-ocr",
@@ -17502,8 +17502,8 @@
         "practice"
       ],
       "refs": [
-        "input/events.2025.yaml",
         "out/2025/practice_absentees.csv",
+        "input/events.2025.yaml",
         "out/analysis/notion_records_2026.json"
       ],
       "hint": "部員エンティティ"
@@ -17538,8 +17538,8 @@
         "practice"
       ],
       "refs": [
-        "input/events.2025.yaml",
         "out/2025/practice_absentees.csv",
+        "input/events.2025.yaml",
         "out/analysis/notion_records_2026.json"
       ],
       "hint": "部員エンティティ"
@@ -17574,8 +17574,8 @@
         "practice"
       ],
       "refs": [
-        "input/events.2025.yaml",
         "out/2025/practice_absentees.csv",
+        "input/events.2025.yaml",
         "out/analysis/notion_records_2026.json"
       ],
       "hint": "部員エンティティ"
@@ -17646,8 +17646,8 @@
         "practice"
       ],
       "refs": [
-        "input/events.2025.yaml",
         "out/2025/practice_absentees.csv",
+        "input/events.2025.yaml",
         "out/analysis/notion_records_2026.json"
       ],
       "hint": "部員エンティティ"
@@ -17682,8 +17682,8 @@
         "practice"
       ],
       "refs": [
-        "input/events.2025.yaml",
-        "out/2025/practice_absentees.csv"
+        "out/2025/practice_absentees.csv",
+        "input/events.2025.yaml"
       ],
       "hint": "部員エンティティ"
     },
@@ -17697,8 +17697,8 @@
         "practice"
       ],
       "refs": [
-        "input/events.2025.yaml",
         "out/2025/practice_absentees.csv",
+        "input/events.2025.yaml",
         "out/analysis/notion_records_2026.json"
       ],
       "hint": "部員エンティティ"
@@ -17733,8 +17733,8 @@
         "practice"
       ],
       "refs": [
-        "input/events.2025.yaml",
         "out/2025/practice_absentees.csv",
+        "input/events.2025.yaml",
         "out/analysis/notion_records_2026.json"
       ],
       "hint": "部員エンティティ"
@@ -17784,8 +17784,8 @@
         "practice"
       ],
       "refs": [
-        "input/events.2025.yaml",
         "out/2025/practice_absentees.csv",
+        "input/events.2025.yaml",
         "out/analysis/notion_records_2026.json"
       ],
       "hint": "部員エンティティ"
@@ -17820,9 +17820,9 @@
         "practice"
       ],
       "refs": [
-        "input/events.2026.yaml",
         "out/2026/practice_absentees.csv",
-        "out/analysis/notion_records_2026.json"
+        "out/analysis/notion_records_2026.json",
+        "input/events.2026.yaml"
       ],
       "hint": "部員エンティティ"
     },
@@ -17856,8 +17856,8 @@
         "practice"
       ],
       "refs": [
-        "input/events.2025.yaml",
         "out/2025/practice_absentees.csv",
+        "input/events.2025.yaml",
         "out/analysis/notion_records_2026.json"
       ],
       "hint": "部員エンティティ"
@@ -17892,11 +17892,11 @@
         "practice"
       ],
       "refs": [
-        "out/2025/practice_absentees.csv",
-        "out/analysis/notion_records_2026.json",
-        "input/events.2025.yaml",
+        "out/2026/practice_absentees.csv",
         "input/events.2026.yaml",
-        "out/2026/practice_absentees.csv"
+        "out/2025/practice_absentees.csv",
+        "input/events.2025.yaml",
+        "out/analysis/notion_records_2026.json"
       ],
       "hint": "部員エンティティ"
     },

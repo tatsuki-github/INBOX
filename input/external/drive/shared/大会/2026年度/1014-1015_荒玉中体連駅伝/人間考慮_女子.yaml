@@ -15,6 +15,7 @@ memo: |
   Jrでスタミナ不足が露顕。南関A（Jr 35:27）をベンチマーク。
   玉陵以外は前回の予想式に戻す。玉陵はなごみを調整として軽く扱う。
   長洲2区は村里から猿渡（妹・仮名）へ変更し、村里の旧予想より2秒速く仮置き。
+  荒尾三中・長洲中は3区と4区を入れ替え。山川綾は伸びが限定的との情報から、数式の過大な上昇を抑える。
   岱明・山﨑莉奈2区は6:50線。玉名・川原芽吹は今年フォーム落ちで1/5区外（3区）。
 adjustments:
   - athlete: 山﨑 莉奈
@@ -25,16 +26,40 @@ adjustments:
   - athlete: 川原 芽吹
     delta_sec: 45
     reason: 今年フォーム落ち。前年A1区実績の伸びを打ち消し、直近トラック寄りに
+  - team: 長洲中
+    athlete: 山川 綾
+    set_sec: 449
+    reason: 伸びが限定的との情報から過大な上昇を抑える（約7:29）
 lineup_overrides:
   - team: 長洲中
     leg: 2
     athlete: 猿渡（妹）
     reason: 村里唯花は不出走。妹の正式名・個人記録未確認のため仮置き
+  - team: 荒尾三中
+    leg: 3
+    athlete: 佐藤 妃葵
+    reason: ユーザー指定で3区と4区を入れ替え
+  - team: 荒尾三中
+    leg: 4
+    athlete: 内野 沙笑
+    reason: ユーザー指定で3区と4区を入れ替え
+  - team: 長洲中
+    leg: 3
+    athlete: 山川 綾
+    reason: ユーザー指定で3区と4区を入れ替え
+  - team: 長洲中
+    leg: 4
+    athlete: 濱北 愛
+    reason: ユーザー指定で3区と4区を入れ替え
 formula_adjustments:
   - team: 長洲中
     leg: 2
     set_sec: 434
     reason: 猿渡（妹）の暫定値。村里の旧予想7:16より2秒速く設定
+  - team: 長洲中
+    athlete: 山川 綾
+    set_sec: 449
+    reason: 伸びが限定的との情報を反映し、予測の過大な上昇を抑える（約7:29）
 formula_observation_weights:
   - team: 玉陵中
     meet: なごみ中学駅伝

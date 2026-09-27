@@ -341,6 +341,56 @@ def estimate_exponents() -> dict[str, dict]:
     return result
 
 
+def estimate_women_middle_leg_effect(max_year: int = 2025) -> dict:
+    """Estimate the recurring 3rd/4th-leg split difference from same-team pairs.
+
+    Use each season's median of team-level (leg 4 - leg 3) differences, then
+    take the median across seasons so larger fields and unusual years do not
+    dominate. The two legs are the same distance in the historical sources.
+    """
+    season_medians = []
+    team_pairs = 0
+    for path in sorted((ROOT / "input/aragyoku/transcripts").glob("20??-女子.json")):
+        try:
+            payload = json.loads(path.read_text(encoding="utf-8"))
+            year = int(payload.get("year", path.name[:4]))
+        except (ValueError, json.JSONDecodeError):
+            continue
+        if year > max_year:
+            continue
+        distances = {x["leg"]: float(x["distance_km"])
+                     for x in payload.get("legs", [])}
+        if not distances:
+            distances = dict(enumerate(base.WOMEN_DISTANCES_KM, 1))
+        if distances.get(3) != distances.get(4):
+            continue
+        differences = []
+        for team in payload.get("teams", []):
+            legs = {int(row["leg"]): row for row in team.get("legs", [])
+                    if row.get("status", "ok") == "ok"}
+            if 3 not in legs or 4 not in legs:
+                continue
+            t3, t4 = seconds(legs[3].get("split")), seconds(legs[4].get("split"))
+            if t3 is None or t4 is None:
+                continue
+            differences.append(t4 - t3)
+        if differences:
+            season_medians.append((year, statistics.median(differences), len(differences)))
+            team_pairs += len(differences)
+    if not season_medians:
+        differential = 0.0
+    else:
+        differential = statistics.median(row[1] for row in season_medians)
+    return {
+        "leg4_minus_leg3_median_sec": differential,
+        "leg_offsets_sec": {"3": -differential / 2, "4": differential / 2},
+        "season_count": len(season_medians),
+        "team_pairs": team_pairs,
+        "years": [row[0] for row in season_medians],
+        "season_medians_sec": {str(year): value for year, value, _ in season_medians},
+    }
+
+
 def distance_convert(time_sec: float, source_km: float, target_km: float,
                      k_long: float, k_short: float) -> float:
     if source_km < 1.5 <= target_km:
@@ -541,6 +591,7 @@ def fit(targets: list[dict], obs: list[dict]) -> tuple[dict, list[dict], list[di
         by_key[(row["gender"], norm_name(row["name"]))].append(row)
     params = {}; comparisons = []
     exponents = estimate_exponents()
+    women_leg_effect = estimate_women_middle_leg_effect()
     men_transfer, transfer_pairs = estimate_men_meet_transfer(
         exponents["男子"]["long"]["value"],
         exponents["男子"]["short"]["value"])
@@ -563,6 +614,10 @@ def fit(targets: list[dict], obs: list[dict]) -> tuple[dict, list[dict], list[di
                           "recent_track_weight": RECENT_TRACK_WEIGHT,
                           "baseline_scale": course,
                           "baseline_scale_source": "v1 median alignment, held fixed",
+                          "leg_effect": women_leg_effect if gender == "女子" else {
+                              "leg4_minus_leg3_median_sec": 0.0,
+                              "leg_offsets_sec": {}, "season_count": 0,
+                              "team_pairs": 0, "years": [], "season_medians_sec": {}},
                           "observation_weight_rules": human[gender].get("formula_observation_weights", []),
                           **transfer}
         for t in [x for x in targets if x["gender"] == gender]:
@@ -570,7 +625,9 @@ def fit(targets: list[dict], obs: list[dict]) -> tuple[dict, list[dict], list[di
                          junior_course_factor=transfer["junior_course_factor"],
                          peak_factor=transfer["peak_factor"], team=t["team"],
                          observation_weights=human[gender].get("formula_observation_weights", []))
-            raw_pred = None if f is None else course * (BEST_SHARE * f["best"] + (1 - BEST_SHARE) * f["typical"])
+            leg_effect_sec = float(params[gender]["leg_effect"]["leg_offsets_sec"].get(str(t["leg"]), 0.0))
+            raw_pred = (None if f is None else
+                        course * (BEST_SHARE * f["best"] + (1 - BEST_SHARE) * f["typical"]) + leg_effect_sec)
             pred = None if raw_pred is None else math.floor(raw_pred + 0.5)
             applied_adjustments = []
             for adj in human[gender].get("formula_adjustments", []):
@@ -588,6 +645,7 @@ def fit(targets: list[dict], obs: list[dict]) -> tuple[dict, list[dict], list[di
             comparisons.append({"gender": gender, "team": t["team"], "leg": t["leg"],
                                 "km": t["km"], "name": t["name"], "baseline_sec": t["baseline"],
                                 "formula_sec": pred, "error_sec": None if pred is None or t["baseline"] is None else pred - t["baseline"],
+                                "leg_effect_sec": leg_effect_sec,
                                 "best_sec": f["best"] if f else None,
                                 "recent_sec": f["recent"] if f else None,
                                 "typical_sec": f["typical"] if f else None,
@@ -648,6 +706,8 @@ def historical_track_backtest(params: dict) -> tuple[list[dict], dict]:
             if not km_by_leg:
                 km_by_leg = dict(enumerate(base.MEN_DISTANCES_KM if gender == "男子" else base.WOMEN_DISTANCES_KM, 1))
             p = params[gender]
+            leg_effect = (estimate_women_middle_leg_effect(max_year=year - 1)
+                          if gender == "女子" else {"leg_offsets_sec": {}})
             for team in payload["teams"]:
                 s = school(team["team"])
                 for leg in team["legs"]:
@@ -666,10 +726,12 @@ def historical_track_backtest(params: dict) -> tuple[list[dict], dict]:
                         continue
                     raw = (p["best_share"] * f["best"] +
                            (1 - p["best_share"]) * f[p["other_feature"]])
-                    pred = p["baseline_scale"] * raw
+                    leg_effect_sec = float(leg_effect["leg_offsets_sec"].get(str(number), 0.0))
+                    pred = p["baseline_scale"] * raw + leg_effect_sec
                     results.append({"year": year, "gender": gender, "team": s,
                                     "name": leg["name"], "leg": number,
                                     "km": km_by_leg[number], "n_track_races": len(rs),
+                                    "leg_effect_sec": leg_effect_sec,
                                     "actual_sec": actual, "formula_sec": pred,
                                     "actual_minus_formula_sec": actual - pred,
                                     "actual_over_raw": actual / raw})
@@ -691,7 +753,7 @@ def write_report(obs: list[dict], comparisons: list[dict], params: dict,
     team_totals = []
     for gender in ("男子", "女子"):
         rows = [r for r in comparisons if r["gender"] == gender]
-        fields = ["team", "leg", "km", "name", "formula_sec", "formula_time",
+        fields = ["team", "leg", "km", "name", "leg_effect_sec", "formula_sec", "formula_time",
                   "baseline_sec", "baseline_time", "error_sec", "n_races", "latest_race",
                   "prediction_basis"]
         path = OUT / f"aragyoku_2026_formula_{gender}.csv"
@@ -752,7 +814,7 @@ def write_report(obs: list[dict], comparisons: list[dict], params: dict,
         "",
         "`B = 全記録の補正後 q_j 最速2件の平均`（1件ならその1件）、`Q_recent = 直近集合の補正後 q_j の重み付き25パーセンタイル`（速い側から重み累積25%の記録）。",
         "",
-        "**男女共通の式**: `T_pred = S_gender × (0.30 B + 0.70 Q_recent)`。基本式は共通。人間考慮YAMLで、療養明け・練習参加など特定実績の重みや、個人記録のない暫定オーダーを個別指定できる。",
+        "**基本式**: `T_pred = S_gender × (0.30 B + 0.70 Q_recent) + L_gender,leg`。人間考慮YAMLで、療養明け・練習参加など特定実績の重みや、個人記録のない暫定オーダーを個別指定できる。",
         "",
         "| 性別 | 短距離指数 k_short | 800/1500m組数 | 中長距離指数 k_long | 1500/3000m組数 | ロード係数 C_type | 種別比較数 | 現行予測合わせ S_gender |",
         "| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |",
@@ -767,7 +829,15 @@ def write_report(obs: list[dict], comparisons: list[dict], params: dict,
     ]
     for gender in ("男子", "女子"):
         p = params[gender]
-        lines.append(f"- **{gender}**: `k_short={p['short_exponent']:.4f}, k_long={p['distance_exponent']:.4f}`、ロード等は `C_j={p['road_factor']:.4f}`、`T={p['baseline_scale']:.4f}(0.30B+0.70Q_recent)`。")
+        lines.append(f"- **{gender}**: `k_short={p['short_exponent']:.4f}, k_long={p['distance_exponent']:.4f}`、ロード等は `C_j={p['road_factor']:.4f}`、`T={p['baseline_scale']:.4f}(0.30B+0.70Q_recent)+L_{gender},leg`。")
+    leg_effect = params["女子"]["leg_effect"]
+    lines += [
+        "",
+        "### 女子3区・4区の区間差補正",
+        "",
+        f"2012–2025年の女子荒玉駅伝から、同じチームの4区タイム−3区タイムを各年内の中央値にし、年ごとの中央値をさらに中央値化した。対象は距離が同じ年だけで、{leg_effect['season_count']}年・{leg_effect['team_pairs']}チーム組。区間差の中央値は4区が3区より{leg_effect['leg4_minus_leg3_median_sec']:.1f}秒遅い。",
+        f"予測ではチーム合計を保つよう3区に{leg_effect['leg_offsets_sec']['3']:+.1f}秒、4区に{leg_effect['leg_offsets_sec']['4']:+.1f}秒を加える。個人の記録から計算した基礎値に対する、女子の区間位置補正である。山川綾は「伸びが限定的」との情報を優先し、人間考慮YAMLで個別に7:29へ調整する。",
+    ]
     project_rows = [r for r in obs if r["gender"] == "女子" and
                     r["date"] == "2026-09-20" and r["meet"] == "なごみ中学駅伝" and
                     r.get("source_team", "").startswith("金栗PROJECT")]
@@ -924,7 +994,7 @@ def write_report(obs: list[dict], comparisons: list[dict], params: dict,
         "",
         "## 過去本番への診断と次の校正",
         "",
-        "2024・2025年の荒玉区間実績に対し、当時の大会前トラック記録だけを入力して再計算した。係数は2026-09-27までのデータで決めたため、これは後方診断であり真の事前予測ではない。過去のロード記録も網羅できず、2026年の全種別モデルと同条件の比較ではない。",
+        "2024・2025年の荒玉区間実績に対し、当時の大会前トラック記録だけを入力して再計算した。女子の区間補正は各照合年より前の大会だけから推定した。距離指数など他の係数は2026-09-27までのデータで決めたため、これは後方診断であり真の事前予測ではない。過去のロード記録も網羅できず、2026年の全種別モデルと同条件の比較ではない。",
         "",
         "| 性別 | 照合区間 | 実績との差MAE | RMSE | 実績 / B・M合成値の中央値 |",
         "| --- | ---: | ---: | ---: | ---: |",
@@ -1008,7 +1078,8 @@ def publish_predictions(comparisons: list[dict], params: dict) -> None:
         m = "直近45日（記録がなければ全期間）の重み付き25%値 Q_recent"
         correction_note = (
             f"男子はジュニア駅伝記録を起伏仮定1.01で補正し、直前30日以内の記録に本番仕上がり係数{p['peak_factor']:.4f}を掛ける。起伏係数は実測ではない。"
-            if gender == "男子" else "")
+            if gender == "男子" else
+            f"女子は歴代記録による区間補正を加える（3区 {p['leg_effect']['leg_offsets_sec']['3']:+.1f}秒、4区 {p['leg_effect']['leg_offsets_sec']['4']:+.1f}秒）。")
         n_legs = 6 if gender == "男子" else 5
         order_note = ("岱明女子は監督確定、他校は仮置き。" if gender == "女子" else
                       "岱明男子1–4区は監督確定、5–6区と他校は仮置き。")
@@ -1016,7 +1087,7 @@ def publish_predictions(comparisons: list[dict], params: dict) -> None:
                  "", f"基準日: {AS_OF.isoformat()} / 大会: 2026-10-14",
                  "", f"公式オーダー未着。{order_note}"
                  "トラック・ロード・駅伝の全採用レースから算出する。人間考慮YAMLに明示された実績重みと、記録未確認選手の暫定タイムだけを個別適用する。",
-                 f"数式: `T = {p['baseline_scale']:.4f} × (0.30 B + 0.70 Q_recent)`。"
+                 f"数式: `T = {p['baseline_scale']:.4f} × (0.30 B + 0.70 Q_recent) + L_leg`。"
                  f"Bは全記録の最速2件平均、{m}。直近の半減期21日、ロード・駅伝の重みはトラックの4倍。距離指数は短距離 {p['short_exponent']:.4f} / 中長距離 {p['distance_exponent']:.4f}。",
                  correction_note,
                  "詳細: `out/analysis/aragyoku_2026_formula_report.md`。"
