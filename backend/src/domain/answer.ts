@@ -2576,6 +2576,27 @@ function offlineAnswer(
     lines.push("どの区間の順位か指定してください（例: 2025年男子3区の区間順位）。");
     return lines.join("\n");
   }
+  const missingGenderLegRank =
+    /20\d{2}/.test(question) &&
+    /[1-6]区/.test(question) &&
+    !/男子|女子/.test(question) &&
+    /区間順位|区間順|通過順位|ランキング|順位順/.test(question) &&
+    !/荒尾海陽|玉高附属|玉名付属|玉名附属|荒尾三|荒尾四|三加和|南関|天水|岱明|有明|玉南|玉名|玉東|玉陵|腹栄|荒尾|菊水|長洲/.test(question);
+  if (missingGenderLegRank) {
+    lines.push("男子と女子のどちらの記録か指定してください。");
+    return lines.join("\n");
+  }
+  const ambiguousLegRankType =
+    /20\d{2}/.test(question) &&
+    /男子|女子/.test(question) &&
+    /[1-6]区/.test(question) &&
+    /順位/.test(question) &&
+    !/区間順位|通過順位|最速|一番速|ランキング/.test(question) &&
+    !/荒尾海陽|玉高附属|玉名付属|玉名附属|荒尾三|荒尾四|三加和|南関|天水|岱明|有明|玉南|玉名|玉東|玉陵|腹栄|荒尾|菊水|長洲/.test(question);
+  if (ambiguousLegRankType) {
+    lines.push("区間順位と通過順位のどちらを知りたいか指定してください。");
+    return lines.join("\n");
+  }
   const exactLegWinnerRank = question.match(/(?:(?:区間(?:順位)?|通過順位)\s*(?:第)?(\d{1,2})位|(?<!\d)(\d{1,2})位|区間一位)/);
   const namedLegTeam = /荒尾海陽|玉高附属|玉名付属|玉名附属|荒尾三|荒尾四|三加和|南関|天水|岱明|有明|玉南|玉名|玉東|玉陵|腹栄|荒尾|菊水|長洲/.test(question);
   if (/20\d{2}/.test(question) && /男子|女子/.test(question) && /[1-6]区/.test(question) && exactLegWinnerRank && !namedLegTeam) {
@@ -2618,10 +2639,9 @@ function offlineAnswer(
   }
   const allTeamLegRankListQuestion =
     /20\d{2}/.test(question) &&
-    /男子|女子/.test(question) &&
     /[1-6]区/.test(question) &&
     /区間順位|区間順|通過順位|順位順|最速|一番速|トップ\s*\d+/.test(question) &&
-    /ランキング|順位順|全チーム|全順位|一覧|最速|一番速|トップ\s*\d+/.test(question) &&
+    /ランキング|順位順|全チーム|全順位|一覧|最速|一番速|トップ\s*\d+|区間順位|通過順位/.test(question) &&
     !/玉高附属|玉名付属|玉名附属|荒尾三|荒尾四|荒尾海陽|三加和|南関|天水|岱明|有明|玉南|玉名|玉東|玉陵|腹栄|菊水|長洲/.test(question);
   if (allTeamLegRankListQuestion) {
     const leg = question.match(/(?<!\d)([1-6])区/)?.[1];
@@ -4953,7 +4973,6 @@ export async function answerQuestion(
     /(?:荒玉|駅伝).*(?:区間順位|区間順|通過順位|最速|一番速)|20\d{2}年?.*[1-6]区.*(?:区間順位|区間順|通過順位|区間[1-3]位|順位順|トップ\s*\d+|最速|一番速)/.test(question);
   const allTeamLegRankListQ =
     /20\d{2}/.test(question) &&
-    /男子|女子/.test(question) &&
     /[1-6]区/.test(question) &&
     /区間順位|区間順|通過順位|順位順|最速|一番速|トップ\s*\d+/.test(question) &&
     /ランキング|順位順|全チーム|全順位|一覧|最速|一番速|トップ\s*\d+/.test(question);
@@ -6257,6 +6276,15 @@ export async function answerQuestion(
     preferredSources = [`out-analysis/aragyoku-years/${year}.md`];
   }
 
+  const ambiguousLegRankListQ =
+    /20\d{2}/.test(question) &&
+    /男子|女子/.test(question) &&
+    /[1-6]区/.test(question) &&
+    /順位一覧|順位表/.test(question);
+  if (ambiguousLegRankListQ) {
+    const year = question.match(/20\d{2}/)![0];
+    preferredSources = ["out-analysis/aragyoku-years/" + year + ".md"];
+  }
   if (absenceRosterQ) {
     const year = question.match(/20\d{2}/)?.[0] ?? String(deps.defaultYear ?? 2026);
     preferredSources = ["calendar/events.daiming.yaml"];

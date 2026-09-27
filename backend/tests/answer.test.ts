@@ -865,7 +865,7 @@ describe("answerQuestion", () => {
 
   it.each([
     ["2025年荒玉駅伝男子3区で一番速いチームは？", "1位 玉高附属 9:14"],
-    ["2025年荒玉駅伝女子3区順位順", "2025年荒玉駅伝女子3区の区間順位:"],
+    ["2025年荒玉駅伝女子3区順位順", "区間順位と通過順位のどちら"],
     ["2025年男子3区の区間順位トップ3は？", "3位 一瀬彪眞（玉陵）9:26"],
   ])("uses the annual leg table for broad split queries: %s", async (question, expected) => {
     resetRetrieverCache();
@@ -990,6 +990,51 @@ describe("answerQuestion", () => {
       expect(result.sources[0]).toBe("out-analysis/aragyoku-years/2024.md");
       expect(result.text).toContain("1位 玉高附属 9:24");
       expect(result.text).not.toContain("15位 岱明");
+    }
+  });
+
+  it("lists all split ranks when an exact leg-ranking list is requested", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("2025年荒玉駅伝男子3区の区間順位", {
+      skipRouter: true,
+      defaultYear: 2026,
+      llm: null,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.sources[0]).toBe("out-analysis/aragyoku-years/2025.md");
+      expect(result.text).toContain("15位 井上太汰（三加和）11:28");
+    }
+  });
+
+  it("asks which gender when a yearly split ranking omits gender", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("2025年3区の区間順位ランキング", {
+      skipRouter: true,
+      defaultYear: 2026,
+      llm: null,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.text).toContain("男子と女子のどちら");
+      expect(result.text).not.toContain("中学生SB.csv");
+    }
+  });
+
+  it("asks split or passing rank for an underspecified yearly rank list", async () => {
+    resetRetrieverCache();
+    resetKgCache();
+    const result = await answerQuestion("2025年男子3区の順位一覧", {
+      skipRouter: true,
+      defaultYear: 2026,
+      llm: null,
+    });
+    expect(result.kind).toBe("offline");
+    if (result.kind === "offline") {
+      expect(result.sources[0]).toBe("out-analysis/aragyoku-years/2025.md");
+      expect(result.text).toContain("区間順位と通過順位のどちら");
     }
   });
 
