@@ -4,11 +4,12 @@
 #   set_sec: 絶対秒で上書き
 #   min_sec / max_sec: 下限・上限
 # order_exclusions: team と athlete を自動作成オーダーから除き、校内次点を繰り上げる。
+# formula_observation_weights: team/athlete/meet/date に一致する実績の信頼度 weight（1=通常）。
 # 再生成時、既存ファイルは上書きされない。
 gender: 男子
 updated: '2026-09-27'
 memo: |
-  Jr実績は総合ほぼ一致。直近駅伝ブレンド済み。
+  Jr実績は総合ほぼ一致。松野凛空のJr駅伝は気管支炎回復期の影響があったため、通常より低く評価する。
   玉陵の内野翼は不出走情報に基づき仮オーダーから除外し、校内SB次点で補充。
   松野は本番9:20線。田上4区は9:40線。今村は昨年9:38以上を期待しつつプレッシャーは掛けない。
   5–6人目は厳しい。菊水1区はトラック楽観を抑え、現実的な下限感を維持。
@@ -40,3 +41,13 @@ adjustments:
 - team: 南関中
   delta_sec: 20
   reason: 直近フォーム上がらず。Jr以降も調子が乗りきれていない
+formula_observation_weights:
+  - team: 玉陵中
+    meet: なごみ中学駅伝
+    weight: 0.15
+    reason: 練習参加とみなし、競技会実績より低い重み
+  - athlete: 松野 凛空
+    meet: 熊本県ジュニア駅伝
+    date: '2026-09-26'
+    weight: 0.25
+    reason: 気管支炎からの回復期。今回のJr記録は通常の競技力指標より低く評価

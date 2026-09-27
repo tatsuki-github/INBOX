@@ -715,6 +715,29 @@ def get_provisional_orders(
     for team, row in list(built.items()):
         built[team] = _sanitize_row(row)
 
+    # Explicit human order entries override the provisional ranking. This
+    # keeps confirmed lineup changes editable without changing model code.
+    for override in human_notes.get("lineup_overrides", []):
+        team = str(override.get("team") or "")
+        leg = override.get("leg")
+        athlete = str(override.get("athlete") or "").strip()
+        if not team or not athlete or leg is None:
+            continue
+        team_key = next((key for key in built if key == team or team in key), None)
+        if team_key is None:
+            continue
+        leg_no = int(leg)
+        if not 1 <= leg_no <= n_legs:
+            continue
+        row = built[team_key]
+        legs = list(row.get("legs") or [])
+        legs.extend([""] * max(0, n_legs - len(legs)))
+        legs[leg_no - 1] = athlete
+        row["legs"] = legs[:n_legs]
+        reason = str(override.get("reason") or "人間指定オーダー").strip()
+        row["notes"] = f"{row.get('notes', '')} / {leg_no}区{athlete}（{reason}）".strip(" /")
+        built[team_key] = row
+
     ordered: list[dict[str, Any]] = []
     seen_teams: set[str] = set()
     for team in TEAM_DISPLAY_ORDER.get(gender, []):
@@ -1577,6 +1600,9 @@ def empty_human_notes(gender: str) -> dict[str, Any]:
         "memo": "",
         "adjustments": [],
         "order_exclusions": [],
+        "lineup_overrides": [],
+        "formula_adjustments": [],
+        "formula_observation_weights": [],
     }
 
 
@@ -1596,6 +1622,9 @@ def load_human_notes(gender: str, *, path: Path | None = None) -> dict[str, Any]
         notes["adjustments"] = [a for a in adj if isinstance(a, dict)]
         exclusions = raw.get("order_exclusions") or []
         notes["order_exclusions"] = [a for a in exclusions if isinstance(a, dict)]
+        for key in ("lineup_overrides", "formula_adjustments", "formula_observation_weights"):
+            values = raw.get(key) or []
+            notes[key] = [a for a in values if isinstance(a, dict)]
         notes["_path"] = str(p)
         return notes
     return empty_human_notes(gender)

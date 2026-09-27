@@ -3,6 +3,9 @@
 #   delta_sec: 秒の加減（負=速く / 正=遅く）
 #   set_sec: 絶対秒で上書き
 #   min_sec / max_sec: 下限・上限
+# lineup_overrides: team + leg + athlete で仮オーダーを直接差し替える。
+# formula_adjustments: 数式予測への set_sec / delta_sec（氏名未確定の枠も team+leg で指定可）。
+# formula_observation_weights: team/athlete/meet/date に一致する実績の信頼度 weight（1=通常）。
 # 再生成時、既存ファイルは上書きされない。
 # 予想の主軸はなごみ／ジュニア駅伝ブレンド（トラックSBは低重み）。ここに書くのは微調整用。
 gender: 女子
@@ -10,7 +13,8 @@ updated: '2026-09-27'
 memo: |
   女子はトラックSBよりなごみ／ジュニア駅伝実績を主に予想する（SB重み×0.15）。
   Jrでスタミナ不足が露顕。南関A（Jr 35:27）をベンチマーク。
-  人間加減は直近駅伝ブレンド後の微調整用。
+  玉陵以外は前回の予想式に戻す。玉陵はなごみを調整として軽く扱う。
+  長洲2区は村里から猿渡（妹・仮名）へ変更し、村里の旧予想より2秒速く仮置き。
   岱明・山﨑莉奈2区は6:50線。玉名・川原芽吹は今年フォーム落ちで1/5区外（3区）。
 adjustments:
   - athlete: 山﨑 莉奈
@@ -21,3 +25,18 @@ adjustments:
   - athlete: 川原 芽吹
     delta_sec: 45
     reason: 今年フォーム落ち。前年A1区実績の伸びを打ち消し、直近トラック寄りに
+lineup_overrides:
+  - team: 長洲中
+    leg: 2
+    athlete: 猿渡（妹）
+    reason: 村里唯花は不出走。妹の正式名・個人記録未確認のため仮置き
+formula_adjustments:
+  - team: 長洲中
+    leg: 2
+    set_sec: 434
+    reason: 猿渡（妹）の暫定値。村里の旧予想7:16より2秒速く設定
+formula_observation_weights:
+  - team: 玉陵中
+    meet: なごみ中学駅伝
+    weight: 0.15
+    reason: 練習参加とみなし、競技会実績より低い重み
