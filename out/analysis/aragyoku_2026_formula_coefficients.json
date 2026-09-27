@@ -18,7 +18,17 @@
       "recent_road_weight": 2.0,
       "recent_track_weight": 0.5,
       "baseline_scale": 1.0051284240243719,
-      "baseline_scale_source": "v1 median alignment, held fixed"
+      "baseline_scale_source": "v1 median alignment, held fixed",
+      "junior_course_factor": 1.01,
+      "peak_factor": 0.9859830007869856,
+      "nagomi_pairs": 37,
+      "junior_pairs": 6,
+      "nagomi_to_aragyoku_median": 0.959375,
+      "junior_to_aragyoku_median": 0.980821440662437,
+      "raw_course_factor": 0.9781342048885551,
+      "junior_course_factor_source": "rolling-course scenario assumption; elevation not measured",
+      "peak_projection_days": 17,
+      "peak_evidence_days": 30
     },
     "女子": {
       "distance_exponent": 1.11410746162166,
@@ -37,7 +47,11 @@
       "recent_road_weight": 2.0,
       "recent_track_weight": 0.5,
       "baseline_scale": 0.9860736188843046,
-      "baseline_scale_source": "v1 median alignment, held fixed"
+      "baseline_scale_source": "v1 median alignment, held fixed",
+      "junior_course_factor": 1.0,
+      "peak_factor": 1.0,
+      "nagomi_pairs": 0,
+      "junior_pairs": 0
     }
   },
   "historical_track_backtest": {
