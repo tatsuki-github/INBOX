@@ -1,3 +1,15 @@
-Edit the provided Japanese 荒玉駅伝 infographic with a minimal targeted change. In the lower-right "距離の基準" card, DELETE the entire bullet line "道幅は狭め・中央線なし". Preserve the other two bullets "男子スタート：Cの145m手前" and "北が上／矢印が進行方向", and tidy their spacing. Do NOT put a replacement sentence or label in the deleted line's place. Keep all other wording, all distance numbers, all eight card layouts, bridge caption "女子1区の1km地点（橋の上）", map marker positions, D west straight placement, 1周4.855km, 145m bracket, male/female tables, footer, colors and type sizes unchanged.
-One remaining visual correction from earlier user instruction: all roads must be narrow, plain gray asphalt with NO painted center line or painted road stripes. The input still has faint dashed white center markings especially in the bridge panel, A, C, E and the miniature. Erase those faint dashes entirely while preserving the teal directional ARROW OVERLAYS and white text-box outlines. All roadway asphalt surfaces must be a uniform unmarked gray texture. Do not put "中央線なし" anywhere as text.
-Output one polished high-resolution image. Exact text accuracy and unchanged numeric values essential.
+Mode: built-in image_gen / image edit
+Reference image: prior course common-point schematic.
+Final style: simple 2D road diagram, no satellite-photo background.
+
+添付の荒玉駅伝インフォグラフィックを、読みやすくシンプルな道路の模式図に修正する。8カード構成、見出し、女子と男子の距離表、全ての区番号と距離、1周4.855km、Cの145m手前の男子スタート、凡例をそのまま保つ。
+全地図パネルをフラットで簡潔な図に変更。衛星写真は使わない。田畑、河川、水路、木、家、リアルな地形、立体的な道路をすべて省く。白か薄いクリームの無地背景に、細めのグレーの道路と、オレンジの地点マーカー、青の進行矢印だけを表示。道路に中央線は描かない。橋の下に水路を描かない。地図を飾らずに相対位置と進行方向がすぐわかる2D図にする。
+特に女子1区1km（橋の上）のパネル：南北の道路を上から下へ進み、その先で90度左に曲がって右へ進むL字形。1kmのオレンジの点は曲がる角の「手前の直線上」。その直線部分に「橋の上」の小さなラベルを付ける。橋を角に置かない。直線の橋区間を小さなオレンジ色の薄い帯または道路脇の二本の短い平行線で簡潔に示す。青い矢印は南へと、角を曲がった先の東へ。タイトルは正確に「女子1区の1km地点（橋の上）」。
+全体図：西側の直線道路にD、南西の曲がり角の手前に1km(橋)、角を曲がった先の南側道路にE、同じ南側道路のさらに東にA、東側道路にB、北側道路にC。Dは北西の角の南側の直線上。男子スタートはCの右／東側。進行順「D → 1km(橋) → E → A → B → C → D」。全体図に小さな進行矢印をこの順番で入れる（西側下向き、南側右向き、東側上向き、北側左向き）。
+D詳細は上部に曲がり角、点はその下の直線上、下向き矢印。B詳細は上向き、AとEは右向き、Cは左向き。Cと男子スタートの間に145m。Cには「女子4〜5区／男子5〜6区」。
+男子B地点の最初の行は必ず「2区 1.0km地点」。添付にある他の距離表も完全に維持。女子は5区まで、男子は6区まで。
+下部の脚注は「距離は1周4.855kmと各区間距離を基準にした目安。道路は模式図。」。衛星写真のクレジットは入れない。「道幅は狭め・中央線なし」という説明文は入れない。
+最終画像は前の図と同じ2列×4段の8カード、白背景、濃紺見出し、女子ピンクと男子青、読みやすい日本語。視覚的な装飾を減らし、文字表とシンプルな道路図の明快さを優先。
+
+Final correction:
+添付のシンプルな荒玉駅伝図を2点だけ修正。全体図の北側の道路で、Cのオレンジのラベルのすぐ左下、男子スタートのオレンジの丸より左側に、C地点のオレンジの丸を明確に追加する。Cと男子スタートは別々の2個の丸として道路上に置く（Cが西／左、男子スタートが東／右）。B地点の拡大図は単純な南北の直線道路だけにし、上部の右へ曲がる道路を削除する。Bの点と上向き矢印は保持。他は一切変更しない。全ての距離・区番号・表・8カード構成・橋の直線部・D位置・145m・4.855kmをそのまま維持。衛星写真、田畑、水路などの背景は追加しない。
