@@ -800,7 +800,7 @@ def write_report(obs: list[dict], comparisons: list[dict], params: dict,
         "## データと除外",
         "",
         f"選手 {len(comparisons)} 名、採用レース {len(obs)} 件。重複除去 {rejected['duplicate']} 件、卒業済みと判定 {rejected['graduated_athlete']} 件、同名の別校 {rejected['different_school_namesake']} 件、欠損・非数値・不合理なペース等 {rejected['missing_or_invalid']} 件。",
-        "採用対象は800m、1000m、1500m、3000m、ロード3km/5km、なごみ・県ジュニア・過去の荒玉駅伝区間記録。2025–2026年の全レース表とNotion補完を使用し、SBだけには限定していない。対象選手のクロスカントリーと独立したタイムトライアル結果は、確認した取り込み済み資料では特定できなかった。",
+        "採用対象は800m、1000m、1500m、3000m、ロード3km/5km、なごみ・県ジュニア・過去の荒玉駅伝区間記録。2025–2026年の全レース表とNotion補完を使用し、SBだけには限定していない。対象選手のクロスカントリー結果は確認した資料では特定できなかった。2026-09-29の荒玉駅伝試走は `out/analysis/2026-09-29_aragyoku_trial_results.md` に別記録として保存し、松本空羽・中尾快叶の伸びを人間考慮YAMLの個別予測調整に反映した。大会レースの観測基準日は2026-09-27を維持している。",
         "出典と全採用行: `out/analysis/aragyoku_2026_race_observations.csv`。2026年県ジュニアの荒玉関連行は公式結果PDFで照合し、チャンピオンシップ・チャレンジ・オープンの対象外選手も観測行とロード係数算定に含めた。PDF正本は `input/external/user-provided/2026-junior-ekiden/results-pdf/`。女子CS写真として登録された `IMG_1951_女子CS.jpg` は紙面見出しが男子チャレンジだったため、女子CSは公式PDFを採用した。",
         "",
         "## 最終式",
@@ -847,7 +847,7 @@ def write_report(obs: list[dict], comparisons: list[dict], params: dict,
         "### 女子3区・4区の区間差補正",
         "",
         f"2012–2025年の女子荒玉駅伝から、同じチームの4区タイム−3区タイムを各年内の中央値にし、年ごとの中央値をさらに中央値化した。対象は距離が同じ年だけで、{leg_effect['season_count']}年・{leg_effect['team_pairs']}チーム組。区間差の中央値は4区が3区より{leg_effect['leg4_minus_leg3_median_sec']:.1f}秒遅い。",
-        f"予測ではチーム合計を保つよう3区に{leg_effect['leg_offsets_sec']['3']:+.1f}秒、4区に{leg_effect['leg_offsets_sec']['4']:+.1f}秒を加える。個人の記録から計算した基礎値に対する、女子の区間位置補正である。山川綾は「伸びが限定的」との情報を優先し、人間考慮YAMLで個別に7:29へ調整する。",
+        f"予測ではチーム合計を保つよう3区に{leg_effect['leg_offsets_sec']['3']:+.1f}秒、4区に{leg_effect['leg_offsets_sec']['4']:+.1f}秒を加える。個人の記録から計算した基礎値に対する、女子の区間位置補正である。山川綾などの個別予測は人間考慮YAMLの最新指定を適用する。採用タイムと理由は上の個別調整表に示す。",
     ]
     project_rows = [r for r in obs if r["gender"] == "女子" and
                     r["date"] == "2026-09-20" and r["meet"] == "なごみ中学駅伝" and

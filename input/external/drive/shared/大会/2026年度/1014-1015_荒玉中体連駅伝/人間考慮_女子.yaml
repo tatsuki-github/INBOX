@@ -10,7 +10,7 @@
 # 再生成時、既存ファイルは上書きされない。
 # 予想の主軸はなごみ／ジュニア駅伝ブレンド（トラックSBは低重み）。ここに書くのは微調整用。
 gender: 女子
-updated: '2026-09-27'
+updated: '2026-09-29'
 memo: |
   女子はトラックSBよりなごみ／ジュニア駅伝実績を主に予想する（SB重み×0.15）。
   Jrでスタミナ不足が露顕。南関A（Jr 35:27）をベンチマーク。
@@ -45,27 +45,72 @@ lineup_overrides:
     athlete: 内野 沙笑
     reason: ユーザー指定で3区と4区を入れ替え
   - team: 長洲中
-    leg: 3
-    athlete: 山川 綾
-    reason: ユーザー指定で3区と4区を入れ替え
-  - team: 長洲中
     leg: 4
+    athlete: 山川 綾
+    reason: ユーザーの最新指定で濱北愛と交代し4区に配置
+  - team: 長洲中
+    leg: 3
     athlete: 濱北 愛
-    reason: ユーザー指定で3区と4区を入れ替え
+    reason: ユーザーの最新指定で山川綾と交代し3区に配置
 formula_adjustments:
   - team: 岱明中
     athlete: 増岡 里俐
     leg: 4
-    set_sec: 445
-    reason: なごみ駅伝で増岡3区7:45、角田4区7:48、ジュニア駅伝でも増岡9:00・角田9:02。直近比較で増岡を少し上に置き、4区の歴代平均補正（+9.5秒）を個人差に優先して重ねないよう、角田3区予測より3秒速い7:25に設定
+    set_sec: 448
+    reason: ユーザーの最新指示により増岡里俐の4区予想を7:28に設定
   - team: 長洲中
     leg: 2
     set_sec: 434
     reason: 猿渡（妹）の暫定値。村里の旧予想7:16より2秒速く設定
   - team: 長洲中
     athlete: 山川 綾
-    set_sec: 449
-    reason: 伸びが限定的との情報を反映し、予測の過大な上昇を抑える（約7:29）
+    set_sec: 440
+    reason: ユーザー指定の7:20を保持して山川綾を4区に配置
+  - team: 南関中
+    athlete: 福山 結衣
+    delta_sec: -5
+    reason: 2026-09-29ユーザー指示により現行の数式予想を5秒速める
+  - team: 長洲中
+    athlete: 猿渡 愛梨
+    delta_sec: -5
+    reason: 2026-09-29ユーザー指示により現行の数式予想を5秒速める
+  - team: 玉名中
+    athlete: 清藤 結唯
+    delta_sec: -5
+    reason: 2026-09-29ユーザー指示により現行の数式予想を5秒速める
+  - team: 荒尾三中
+    athlete: 佐藤 妃葵
+    delta_sec: 9
+    reason: 2026-09-29ユーザー指示により当初の数式予想を計+9秒調整（先の5秒調整にさらに4秒）
+  - team: 荒尾三中
+    athlete: 内野 沙笑
+    delta_sec: -11
+    reason: 2026-09-29ユーザー指示により当初の数式予想を計-11秒調整（-5秒、-4秒、さらに-2秒）
+  - team: 玉名中
+    athlete: 結菜
+    leg: 4
+    set_sec: 440
+    reason: ユーザー指示により結菜の4区予想を7:20に設定
+  - team: 長洲中
+    athlete: 濱北 愛
+    leg: 3
+    set_sec: 435
+    reason: ユーザー指定の7:15を保持して濱北愛を3区に配置
+  - team: 長洲中
+    athlete: 中村 羽音
+    leg: 5
+    set_sec: 664
+    reason: ユーザー指示により中村羽音の5区予想を11:04に設定
+  - team: 南関中
+    athlete: 平山 結菜
+    leg: 3
+    set_sec: 440
+    reason: ユーザー指示により平山結菜の3区予想を7:20に設定
+  - team: 南関中
+    athlete: 原賀 美和
+    leg: 4
+    set_sec: 452
+    reason: ユーザーの最新指示により原賀美和の4区予想を7:32に設定
 grade_overrides:
   - team: 長洲中
     athlete: 猿渡（妹）

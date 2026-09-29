@@ -1,0 +1,210 @@
+{
+  "event": "岱明中 荒玉駅伝試走",
+  "date": "2026-09-29",
+  "record_type": "course_trial",
+  "source_type": "user_message",
+  "source": "input/external/user-provided/2026-aragyoku-trial/2026-09-29.txt",
+  "records": [
+    {
+      "leg": 1,
+      "distance_km": 3,
+      "reported_name": "松野",
+      "name": "松野凛空",
+      "identity_status": "context_matched",
+      "time": "9:48",
+      "time_sec": 588,
+      "laps": [
+        "3:12",
+        "3:16",
+        "3:20"
+      ],
+      "lap_sum_sec": 588,
+      "total_minus_lap_sum_sec": 0
+    },
+    {
+      "leg": 2,
+      "distance_km": 2.855,
+      "reported_name": "山本",
+      "name": "山本哲瑠",
+      "identity_status": "context_matched",
+      "time": "9:52",
+      "time_sec": 592,
+      "laps": [
+        "3:20",
+        "3:31",
+        "3:01"
+      ],
+      "lap_sum_sec": 592,
+      "total_minus_lap_sum_sec": 0
+    },
+    {
+      "leg": 3,
+      "distance_km": 3,
+      "reported_name": "今村",
+      "name": "今村昇磨",
+      "identity_status": "context_matched",
+      "time": "10:15",
+      "time_sec": 615,
+      "laps": [
+        "3:11",
+        "3:29",
+        "3:34"
+      ],
+      "lap_sum_sec": 614,
+      "total_minus_lap_sum_sec": 1
+    },
+    {
+      "leg": 4,
+      "distance_km": 3,
+      "reported_name": "田上",
+      "name": "田上颯人",
+      "identity_status": "context_matched",
+      "time": "10:14",
+      "time_sec": 614,
+      "laps": [
+        "3:23",
+        "3:29",
+        "3:21"
+      ],
+      "lap_sum_sec": 613,
+      "total_minus_lap_sum_sec": 1
+    },
+    {
+      "leg": 5,
+      "distance_km": 2.855,
+      "start": "一斉",
+      "display_order": 1,
+      "reported_name": "松本",
+      "name": "松本空羽",
+      "identity_status": "context_matched",
+      "time": "10:11",
+      "time_sec": 611
+    },
+    {
+      "leg": 5,
+      "distance_km": 2.855,
+      "start": "一斉",
+      "display_order": 2,
+      "reported_name": "中尾",
+      "name": "中尾快叶",
+      "identity_status": "context_matched",
+      "time": "10:12",
+      "time_sec": 612
+    },
+    {
+      "leg": 5,
+      "distance_km": 2.855,
+      "start": "一斉",
+      "display_order": 3,
+      "reported_name": "西村",
+      "name": null,
+      "identity_status": "unconfirmed",
+      "time": "10:22",
+      "time_sec": 622
+    },
+    {
+      "leg": 5,
+      "distance_km": 2.855,
+      "start": "一斉",
+      "display_order": 4,
+      "reported_name": "南本",
+      "name": "南本幸治郎",
+      "identity_status": "context_matched",
+      "time": "10:42",
+      "time_sec": 642
+    },
+    {
+      "leg": 5,
+      "distance_km": 2.855,
+      "start": "一斉",
+      "display_order": 5,
+      "reported_name": "永田",
+      "name": null,
+      "identity_status": "unconfirmed",
+      "time": "10:47",
+      "time_sec": 647
+    },
+    {
+      "leg": 5,
+      "distance_km": 2.855,
+      "start": "一斉",
+      "display_order": 6,
+      "reported_name": "鍋島",
+      "name": null,
+      "identity_status": "unconfirmed",
+      "time": "10:49",
+      "time_sec": 649
+    },
+    {
+      "leg": 5,
+      "distance_km": 2.855,
+      "start": "一斉",
+      "display_order": 7,
+      "reported_name": "田中",
+      "name": "田中智稀",
+      "identity_status": "context_matched",
+      "time": "11:25",
+      "time_sec": 685
+    },
+    {
+      "leg": 5,
+      "distance_km": 2.855,
+      "start": "一斉",
+      "display_order": 8,
+      "reported_name": "池田",
+      "name": null,
+      "identity_status": "unconfirmed",
+      "time": "11:38",
+      "time_sec": 698
+    },
+    {
+      "leg": 5,
+      "distance_km": 2.855,
+      "start": "一斉",
+      "display_order": 9,
+      "reported_name": "中尾",
+      "name": null,
+      "identity_status": "unconfirmed",
+      "time": "12:13",
+      "time_sec": 733
+    },
+    {
+      "leg": 5,
+      "distance_km": 2.855,
+      "start": "一斉",
+      "display_order": 10,
+      "reported_name": "本田",
+      "name": "本田和志",
+      "identity_status": "context_matched",
+      "time": "12:13",
+      "time_sec": 733
+    },
+    {
+      "leg": 5,
+      "distance_km": 2.855,
+      "start": "一斉",
+      "display_order": 11,
+      "reported_name": "嶋田",
+      "name": "嶋田匠眞",
+      "identity_status": "context_matched",
+      "time": "12:26",
+      "time_sec": 746
+    },
+    {
+      "leg": 5,
+      "distance_km": 2.855,
+      "start": "一斉",
+      "display_order": 12,
+      "reported_name": "菱沼",
+      "name": null,
+      "identity_status": "unconfirmed",
+      "time": "12:58",
+      "time_sec": 778
+    }
+  ],
+  "notes": [
+    "総タイム・ラップはユーザー報告を保持。今村はラップ合計10:14／総タイム10:15、田上は10:13／10:14。",
+    "中尾10:12は現在の予想オーダーの中尾快叶と照合。中尾12:13と、フルネームを確認できない選手は姓のみで保存。",
+    "1–4区は区間別試走、5区は2.855km一斉走。試走記録は大会結果・トラックSBとは区別する。"
+  ]
+}

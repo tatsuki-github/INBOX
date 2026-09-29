@@ -239,7 +239,7 @@
             "cumulative_sec": 2287.0,
             "provisional": false,
             "leg_rank": 7,
-            "passing_rank": 4
+            "passing_rank": 3
           },
           {
             "gender": "男子",
@@ -290,7 +290,7 @@
             "prediction_basis": "race_records",
             "cumulative_sec": 3474.0,
             "provisional": false,
-            "leg_rank": 4,
+            "leg_rank": 5,
             "passing_rank": 2
           }
         ]
@@ -353,7 +353,7 @@
             "cumulative_sec": 1146.0,
             "provisional": false,
             "leg_rank": 7,
-            "passing_rank": 5
+            "passing_rank": 4
           },
           {
             "gender": "男子",
@@ -379,7 +379,7 @@
             "cumulative_sec": 1707.0,
             "provisional": false,
             "leg_rank": 3,
-            "passing_rank": 4
+            "passing_rank": 3
           },
           {
             "gender": "男子",
@@ -430,7 +430,7 @@
             "prediction_basis": "race_records",
             "cumulative_sec": 2880.0,
             "provisional": false,
-            "leg_rank": 5,
+            "leg_rank": 6,
             "passing_rank": 3
           },
           {
@@ -456,7 +456,7 @@
             "prediction_basis": "race_records",
             "cumulative_sec": 3475.0,
             "provisional": false,
-            "leg_rank": 3,
+            "leg_rank": 4,
             "passing_rank": 3
           }
         ]
@@ -518,7 +518,7 @@
             "prediction_basis": "race_records",
             "cumulative_sec": 1112.0,
             "provisional": false,
-            "leg_rank": 4,
+            "leg_rank": 2,
             "passing_rank": 1
           },
           {
@@ -632,7 +632,7 @@
         "complete": true,
         "provisional": false,
         "provisional_legs": [],
-        "total_sec": 3535.0,
+        "total_sec": 3530.0,
         "rank": 5,
         "legs": [
           {
@@ -666,26 +666,26 @@
             "team": "南関中",
             "leg": 2,
             "km": 2.855,
-            "name": "田中 翔大",
-            "baseline_sec": 562.4,
-            "grade": 3,
-            "formula_sec": 555,
-            "error_sec": -7.399999999999977,
+            "name": "猿渡 元喜",
+            "baseline_sec": 620.5,
+            "grade": 2,
+            "formula_sec": 588,
+            "error_sec": -32.5,
             "leg_effect_sec": 0.0,
-            "best_sec": 538.3836284232079,
-            "recent_sec": 548.0096576439594,
-            "typical_sec": 543.7633889775465,
-            "n_races": 19,
+            "best_sec": 576.9328608020774,
+            "recent_sec": 576.6288888816945,
+            "typical_sec": 573.8530626759085,
+            "n_races": 13,
             "n_recent_races": 2,
             "latest_race": "2026-09-26",
-            "race_types": "aragyoku_prior,road,road_ekiden,track",
-            "baseline_note": "※仮 / SB:3000m 9:24.66@2026/06/13→3000m SBを距離比例→区間2.855km=8:57.4 / 駅伝加味:SB8:57.4(w=0.02)+荒玉2025 10:04.0@3.0km(2025-10-15)→比例9:34.8(w=0.55)→加重9:33.7 / 前年伸び:荒玉2025 10:04.0@3.0km(2025-10-15)→比例9:34.8×-2%→9:26.2採用（ブレンド9:33.7より速い） / 3000mトラック優先:9:24.66@2026/06/13→区間2.855km比例8:57.4+5s=9:02.4（計算9:26.2より速い） / 人間+20s(直近フォーム上がらず。Jr以降も調子が乗りきれていない) →予想9:22.4",
+            "race_types": "road_ekiden,track",
+            "baseline_note": "※仮 / SB:1500m 4:50.45@2026/07/19→1500m SB→3km式を距離比例→区間2.855km=10:00.5＋区間バイアス+14s / 人間+20s(直近フォーム上がらず。Jr以降も調子が乗りきれていない) →予想10:20.5",
             "human_adjustment": "ジュニア男子の学校間比較を反映する南関チーム補正",
             "prediction_basis": "race_records",
-            "cumulative_sec": 1136.0,
+            "cumulative_sec": 1169.0,
             "provisional": false,
-            "leg_rank": 2,
-            "passing_rank": 4
+            "leg_rank": 5,
+            "passing_rank": 6
           },
           {
             "gender": "男子",
@@ -708,10 +708,10 @@
             "baseline_note": "※仮 / SB:1500m 4:34.32@2026/05/24→1500m SB→3km式を距離比例→区間3km=9:53.5＋区間バイアス+10s / 人間+20s(直近フォーム上がらず。Jr以降も調子が乗りきれていない) →予想10:13.5",
             "human_adjustment": "ジュニア男子の学校間比較を反映する南関チーム補正",
             "prediction_basis": "race_records",
-            "cumulative_sec": 1734.0,
+            "cumulative_sec": 1767.0,
             "provisional": false,
             "leg_rank": 8,
-            "passing_rank": 5
+            "passing_rank": 7
           },
           {
             "gender": "男子",
@@ -734,10 +734,10 @@
             "baseline_note": "※仮 / SB:1500m 4:46.63@2026/07/04（3000m 10:43.15@2026/07/18不採用）→1500m SB→3km式（3000mが+35s遅い）→区間3km=10:43.8＋区間バイアス+36s / 人間+20s(直近フォーム上がらず。Jr以降も調子が乗りきれていない) →予想11:03.8",
             "human_adjustment": "ジュニア男子の学校間比較を反映する南関チーム補正",
             "prediction_basis": "race_records",
-            "cumulative_sec": 2338.0,
+            "cumulative_sec": 2371.0,
             "provisional": false,
             "leg_rank": 6,
-            "passing_rank": 5
+            "passing_rank": 7
           },
           {
             "gender": "男子",
@@ -760,35 +760,35 @@
             "baseline_note": "※仮 / SB:3000m 9:46.66@2026/05/23→3000m SBを距離比例→区間2.855km=9:18.3 / 駅伝加味:SB9:18.3(w=0.01)+荒玉2025 9:29.0@3.0km(2025-10-15)→比例9:01.5(w=0.55)→加重9:01.8 / 前年伸び:荒玉2025 9:29.0@3.0km(2025-10-15)→比例9:01.5×-2%→8:53.4採用（ブレンド9:01.8より速い） / 人間+20s(直近フォーム上がらず。Jr以降も調子が乗りきれていない) →予想9:13.4",
             "human_adjustment": "ジュニア男子の学校間比較を反映する南関チーム補正",
             "prediction_basis": "race_records",
-            "cumulative_sec": 2914.0,
+            "cumulative_sec": 2947.0,
             "provisional": false,
             "leg_rank": 3,
-            "passing_rank": 5
+            "passing_rank": 6
           },
           {
             "gender": "男子",
             "team": "南関中",
             "leg": 6,
             "km": 3.0,
-            "name": "猿渡 元喜",
-            "baseline_sec": 651.1,
-            "grade": 2,
-            "formula_sec": 621,
-            "error_sec": -30.100000000000023,
+            "name": "田中 翔大",
+            "baseline_sec": 589.7,
+            "grade": 3,
+            "formula_sec": 583,
+            "error_sec": -6.7000000000000455,
             "leg_effect_sec": 0.0,
-            "best_sec": 609.7542115050214,
-            "recent_sec": 609.4329468116305,
-            "typical_sec": 606.4992055838716,
-            "n_races": 13,
+            "best_sec": 569.0119373335989,
+            "recent_sec": 579.1855853543814,
+            "typical_sec": 574.6977491113089,
+            "n_races": 19,
             "n_recent_races": 2,
             "latest_race": "2026-09-26",
-            "race_types": "road_ekiden,track",
-            "baseline_note": "※仮 / SB:1500m 4:50.45@2026/07/19→1500m SB→3km式を距離比例→区間3km=10:31.1＋区間バイアス+15s / 人間+20s(直近フォーム上がらず。Jr以降も調子が乗りきれていない) →予想10:51.1",
-            "human_adjustment": "ジュニア男子の学校間比較を反映する南関チーム補正",
+            "race_types": "aragyoku_prior,road,road_ekiden,track",
+            "baseline_note": "※仮 / SB:3000m 9:24.66@2026/06/13→3000m SBを距離比例→区間3km=9:24.7 / 駅伝加味:SB9:24.7(w=0.02)+荒玉2025 10:04.0@3.0km(2025-10-15)→比例10:04.0(w=0.55)→加重10:02.8 / 前年伸び:荒玉2025 10:04.0@3.0km(2025-10-15)→比例10:04.0×-2%→9:54.9採用（ブレンド10:02.8より速い） / 3000mトラック優先:9:24.66@2026/06/13→区間3km比例9:24.7+5s=9:29.7（計算9:54.9より速い） / 人間+20s(直近フォーム上がらず。Jr以降も調子が乗りきれていない) →予想9:49.7",
+            "human_adjustment": "ジュニア男子の学校間比較を反映する南関チーム補正 / 2026年ジュニア駅伝で田中翔大・田上颯人はともに2.6km 8:26、山本哲瑠は8:34。田上と同等で山本より速い評価を保持。2区2.855kmの9:12を6区3kmへ距離指数1.116866で換算し9:43に設定",
             "prediction_basis": "race_records",
-            "cumulative_sec": 3535.0,
+            "cumulative_sec": 3530.0,
             "provisional": false,
-            "leg_rank": 5,
+            "leg_rank": 2,
             "passing_rank": 5
           }
         ]
@@ -798,7 +798,7 @@
         "complete": true,
         "provisional": false,
         "provisional_legs": [],
-        "total_sec": 3537.0,
+        "total_sec": 3535.0,
         "rank": 6,
         "legs": [
           {
@@ -835,8 +835,8 @@
             "name": "山本 哲瑠",
             "baseline_sec": 562.5,
             "grade": 2,
-            "formula_sec": 555,
-            "error_sec": -7.5,
+            "formula_sec": 562,
+            "error_sec": -0.5,
             "leg_effect_sec": 0.0,
             "best_sec": 552.9990712176793,
             "recent_sec": 558.1518672905802,
@@ -846,9 +846,9 @@
             "latest_race": "2026-09-26",
             "race_types": "aragyoku_prior,road,road_ekiden,track",
             "baseline_note": "確定 / SB:1500m 4:30.13@2026/06/14→1500m SB→3km式を距離比例→区間2.855km=9:07.5 / 駅伝加味:SB9:07.5(w=0.00)+ジュニアCS 8:34.0@2.6km(2026-09-26)→比例9:24.4(w=0.55)+なごみ 10:11.0@3.0km(2026-09-20)→比例9:41.5(w=0.45)+荒玉2025 9:37.0@2.9km(2025-10-15)→比例9:37.0(w=0.55)→加重9:33.8 / 前年伸び:荒玉2025 9:37.0@2.9km(2025-10-15)→比例9:37.0×-2%→9:25.5採用（ブレンド9:33.8より速い） / 人間-3s(なごみより上向き・競り合いで燃える) →予想9:22.5",
-            "human_adjustment": "",
+            "human_adjustment": "2026-09-29ユーザー指示により当初の数式予想へ計7秒加算（9:15→9:20→9:22）",
             "prediction_basis": "race_records",
-            "cumulative_sec": 1123.0,
+            "cumulative_sec": 1130.0,
             "provisional": false,
             "leg_rank": 3,
             "passing_rank": 3
@@ -861,8 +861,8 @@
             "name": "今村 昇磨",
             "baseline_sec": 581.1,
             "grade": 3,
-            "formula_sec": 578,
-            "error_sec": -3.1000000000000227,
+            "formula_sec": 585,
+            "error_sec": 3.8999999999999773,
             "leg_effect_sec": 0.0,
             "best_sec": 574.4848808478024,
             "recent_sec": 583.7748721220869,
@@ -872,12 +872,12 @@
             "latest_race": "2026-09-26",
             "race_types": "aragyoku_prior,road_ekiden,track",
             "baseline_note": "確定 / SB:3000m 10:28.92@2026/07/04→3000m SBを距離比例→区間3km=10:28.9 / 駅伝加味:SB10:28.9(w=0.01)+ジュニアCS 8:27.0@2.6km(2026-09-26)→比例9:45.0(w=0.55)+なごみ 10:07.0@3.0km(2026-09-20)→比例10:07.0(w=0.45)+荒玉2025 9:38.0@3.0km(2025-10-15)→比例9:38.0(w=0.55)→加重9:49.1 / 人間-8s(本番覚醒・殻破り期待（昨年9:38以上）) →予想9:41.1",
-            "human_adjustment": "",
+            "human_adjustment": "2026-09-29ユーザー指示により本番予想を9:45に設定",
             "prediction_basis": "race_records",
-            "cumulative_sec": 1701.0,
+            "cumulative_sec": 1715.0,
             "provisional": false,
             "leg_rank": 5,
-            "passing_rank": 3
+            "passing_rank": 4
           },
           {
             "gender": "男子",
@@ -887,8 +887,8 @@
             "name": "田上 颯人",
             "baseline_sec": 580.0,
             "grade": 2,
-            "formula_sec": 579,
-            "error_sec": -1.0,
+            "formula_sec": 585,
+            "error_sec": 5.0,
             "leg_effect_sec": 0.0,
             "best_sec": 577.721661757525,
             "recent_sec": 577.4232056586235,
@@ -898,12 +898,12 @@
             "latest_race": "2026-09-26",
             "race_types": "road,road_ekiden,track",
             "baseline_note": "確定 / SB:1500m 4:33.6@2026-08-29（3000m 10:24.08@2026/06/13不採用）→1500m SB→3km式（3000mが+42s遅い）→区間3km=9:42.2 / 駅伝加味:SB9:42.2(w=0.04)+ジュニアCS 8:26.0@2.6km(2026-09-26)→比例9:43.8(w=0.55)+なごみ 9:54.0@3.0km(2026-09-20)→比例9:54.0(w=0.45)→加重9:48.2 / 人間set=9:40.0(4区は9:40でいける) →予想9:40.0",
-            "human_adjustment": "",
+            "human_adjustment": "2026-09-29ユーザー指示により本番予想を9:45に設定",
             "prediction_basis": "race_records",
-            "cumulative_sec": 2280.0,
+            "cumulative_sec": 2300.0,
             "provisional": false,
             "leg_rank": 3,
-            "passing_rank": 3
+            "passing_rank": 4
           },
           {
             "gender": "男子",
@@ -913,8 +913,8 @@
             "name": "中尾 快叶",
             "baseline_sec": 619.0,
             "grade": 1,
-            "formula_sec": 602,
-            "error_sec": -17.0,
+            "formula_sec": 595,
+            "error_sec": -24.0,
             "leg_effect_sec": 0.0,
             "best_sec": 604.8675695565205,
             "recent_sec": 604.033837218329,
@@ -924,11 +924,11 @@
             "latest_race": "2026-09-26",
             "race_types": "road_ekiden,track",
             "baseline_note": "※仮 / SB:1500m 5:03.56@2026/07/18→1500m SB→3km式を距離比例→区間2.855km=10:11.1 / 駅伝加味:SB10:11.1(w=0.01)+ジュニアCS 9:15.0@2.6km(2026-09-26)→比例10:09.4(w=0.55)+なごみ 11:03.0@3.0km(2026-09-20)→比例10:31.0(w=0.45)→加重10:19.0 →予想10:19.0",
-            "human_adjustment": "",
+            "human_adjustment": "2026-09-29荒玉駅伝試走で5区2.855km 10:12。伸びてきたとのユーザー評価を反映し、本番予想を10:02から9:55へ7秒速める",
             "prediction_basis": "race_records",
-            "cumulative_sec": 2882.0,
+            "cumulative_sec": 2895.0,
             "provisional": false,
-            "leg_rank": 6,
+            "leg_rank": 5,
             "passing_rank": 4
           },
           {
@@ -939,8 +939,8 @@
             "name": "松本 空羽",
             "baseline_sec": 690.5,
             "grade": 2,
-            "formula_sec": 655,
-            "error_sec": -35.5,
+            "formula_sec": 640,
+            "error_sec": -50.5,
             "leg_effect_sec": 0.0,
             "best_sec": 661.1189087687364,
             "recent_sec": 660.0925902247619,
@@ -950,9 +950,9 @@
             "latest_race": "2026-09-26",
             "race_types": "road,road_ekiden,track",
             "baseline_note": "※仮 / SB:1500m 5:11.17@2026/07/04→1500m SB→3km式を距離比例→区間3km=10:57.3 / 駅伝加味:SB10:57.3(w=0.01)+なごみ 11:31.0@3.0km(2026-09-20)→比例11:31.0(w=0.45)→加重11:30.5 →予想11:30.5",
-            "human_adjustment": "",
+            "human_adjustment": "2026-09-29荒玉駅伝試走で5区2.855km 10:11。伸びてきたとのユーザー評価を反映。本番6区3kmは距離差を踏まえ10:55から10:40へ15秒速める",
             "prediction_basis": "race_records",
-            "cumulative_sec": 3537.0,
+            "cumulative_sec": 3535.0,
             "provisional": false,
             "leg_rank": 6,
             "passing_rank": 6
@@ -1043,7 +1043,7 @@
             "cumulative_sec": 1747.0,
             "provisional": false,
             "leg_rank": 4,
-            "passing_rank": 6
+            "passing_rank": 5
           },
           {
             "gender": "男子",
@@ -1069,7 +1069,7 @@
             "cumulative_sec": 2348.0,
             "provisional": false,
             "leg_rank": 4,
-            "passing_rank": 6
+            "passing_rank": 5
           },
           {
             "gender": "男子",
@@ -1514,8 +1514,8 @@
             "prediction_basis": "race_records",
             "cumulative_sec": 1161.0,
             "provisional": false,
-            "leg_rank": 5,
-            "passing_rank": 6
+            "leg_rank": 4,
+            "passing_rank": 5
           },
           {
             "gender": "男子",
@@ -1541,7 +1541,7 @@
             "cumulative_sec": 1756.0,
             "provisional": false,
             "leg_rank": 7,
-            "passing_rank": 7
+            "passing_rank": 6
           },
           {
             "gender": "男子",
@@ -1567,7 +1567,7 @@
             "cumulative_sec": 2360.0,
             "provisional": false,
             "leg_rank": 5,
-            "passing_rank": 7
+            "passing_rank": 6
           },
           {
             "gender": "男子",
@@ -1593,7 +1593,7 @@
             "cumulative_sec": 2932.0,
             "provisional": false,
             "leg_rank": 2,
-            "passing_rank": 6
+            "passing_rank": 5
           },
           {
             "gender": "男子",
@@ -1618,7 +1618,7 @@
             "prediction_basis": "race_records",
             "cumulative_sec": 3526.0,
             "provisional": false,
-            "leg_rank": 2,
+            "leg_rank": 3,
             "passing_rank": 4
           }
         ]
@@ -1712,7 +1712,7 @@
         "complete": true,
         "provisional": false,
         "provisional_legs": [],
-        "total_sec": 2602.0,
+        "total_sec": 2596.0,
         "rank": 3,
         "legs": [
           {
@@ -1723,8 +1723,8 @@
             "name": "福山 結衣",
             "baseline_sec": 613.0,
             "grade": 2,
-            "formula_sec": 652,
-            "error_sec": 39.0,
+            "formula_sec": 647,
+            "error_sec": 34.0,
             "leg_effect_sec": 0.0,
             "best_sec": 660.5941858707253,
             "recent_sec": 662.7837964235413,
@@ -1734,9 +1734,9 @@
             "latest_race": "2026-09-26",
             "race_types": "aragyoku_prior,road_ekiden,track",
             "baseline_note": "※仮 / SB:800m 2:28.50@2026/07/19→800m SB→2km式を距離比例→区間3km=10:55.5 / 駅伝加味:SB10:55.5(w=0.01)+ジュニアCS 8:51.0@2.3km(2026-09-26)→比例11:32.6(w=0.55)+なごみ 7:00.0@2.0km(2026-09-20)→比例10:30.0(w=0.45)+荒玉2025 6:57.0@2.0km(2025-10-15)→比例10:25.5(w=0.55)→加重10:50.7 / 前年伸び:荒玉2025 6:57.0@2.0km(2025-10-15)→比例10:25.5×-2%→10:13.0採用（ブレンド10:50.7より速い） →予想10:13.0",
-            "human_adjustment": "",
+            "human_adjustment": "2026-09-29ユーザー指示により現行の数式予想を5秒速める",
             "prediction_basis": "race_records",
-            "cumulative_sec": 652.0,
+            "cumulative_sec": 647.0,
             "provisional": false,
             "leg_rank": 5,
             "passing_rank": 5
@@ -1762,7 +1762,7 @@
             "baseline_note": "※仮 / SB:800m 2:41.35@2026/07/19→800m SB→2km式を距離比例→区間1.855km=7:20.4 / 駅伝加味:SB7:20.4(w=0.01)+ジュニアCS 8:22.0@2.3km(2026-09-26)→比例6:44.9(w=0.55)+なごみ 8:01.0@2.0km(2026-09-20)→比例7:26.1(w=0.45)+荒玉2025 7:12.0@1.9km(2025-10-15)→比例7:12.0(w=0.55)→加重7:06.6 →予想7:06.6",
             "human_adjustment": "",
             "prediction_basis": "race_records",
-            "cumulative_sec": 1064.0,
+            "cumulative_sec": 1059.0,
             "provisional": false,
             "leg_rank": 2,
             "passing_rank": 3
@@ -1775,8 +1775,8 @@
             "name": "平山 結菜",
             "baseline_sec": 460.0,
             "grade": 2,
-            "formula_sec": 431,
-            "error_sec": -29.0,
+            "formula_sec": 440,
+            "error_sec": -20.0,
             "leg_effect_sec": -9.5,
             "best_sec": 451.0776184863049,
             "recent_sec": 454.2131655233778,
@@ -1786,11 +1786,11 @@
             "latest_race": "2026-09-26",
             "race_types": "road_ekiden,track",
             "baseline_note": "※仮 / SB:800m 2:43.98@2026/06/14→800m SB→2km式を距離比例→区間2km=8:02.6 / 駅伝加味:SB8:02.6(w=0.00)+ジュニアCS 8:47.0@2.3km(2026-09-26)→比例7:38.3(w=0.55)+なごみ 7:42.0@2.0km(2026-09-20)→比例7:42.0(w=0.45)→加重7:40.0 →予想7:40.0",
-            "human_adjustment": "",
+            "human_adjustment": "ユーザー指示により平山結菜の3区予想を7:20に設定",
             "prediction_basis": "race_records",
-            "cumulative_sec": 1495.0,
+            "cumulative_sec": 1499.0,
             "provisional": false,
-            "leg_rank": 2,
+            "leg_rank": 5,
             "passing_rank": 3
           },
           {
@@ -1801,8 +1801,8 @@
             "name": "原賀 美和",
             "baseline_sec": 473.0,
             "grade": 3,
-            "formula_sec": 462,
-            "error_sec": -11.0,
+            "formula_sec": 452,
+            "error_sec": -21.0,
             "leg_effect_sec": 9.5,
             "best_sec": 466.374419404131,
             "recent_sec": 465.36612601355887,
@@ -1812,9 +1812,9 @@
             "latest_race": "2026-09-26",
             "race_types": "road_ekiden",
             "baseline_note": "※仮 / SBなし（トラック5ヶ月窓内記録なし） / 駅伝加味:なごみ 7:53.0@2.0km(2026-09-20)→比例7:53.0(w=0.45)→加重7:53.0 →予想7:53.0",
-            "human_adjustment": "",
+            "human_adjustment": "ユーザーの最新指示により原賀美和の4区予想を7:32に設定",
             "prediction_basis": "race_records",
-            "cumulative_sec": 1957.0,
+            "cumulative_sec": 1951.0,
             "provisional": false,
             "leg_rank": 5,
             "passing_rank": 3
@@ -1840,7 +1840,7 @@
             "baseline_note": "※仮 / SB:1500m 5:18.00@2026/07/18→1500m SB→2km式を距離比例→区間3km=10:58.5 / 駅伝加味:SB10:58.5(w=0.01)+ジュニアCS 9:27.0@2.7km(2026-09-26)→比例10:30.0(w=0.55)+なごみ 7:17.0@2.0km(2026-09-20)→比例10:55.5(w=0.45)+荒玉2025 7:24.0@2.0km(2025-10-15)→比例11:06.0(w=0.55)→加重10:50.2 →予想10:50.2",
             "human_adjustment": "",
             "prediction_basis": "race_records",
-            "cumulative_sec": 2602.0,
+            "cumulative_sec": 2596.0,
             "provisional": false,
             "leg_rank": 1,
             "passing_rank": 3
@@ -1852,7 +1852,7 @@
         "complete": true,
         "provisional": false,
         "provisional_legs": [],
-        "total_sec": 2650.0,
+        "total_sec": 2653.0,
         "rank": 5,
         "legs": [
           {
@@ -1878,8 +1878,8 @@
             "prediction_basis": "race_records",
             "cumulative_sec": 652.0,
             "provisional": false,
-            "leg_rank": 6,
-            "passing_rank": 6
+            "leg_rank": 7,
+            "passing_rank": 7
           },
           {
             "gender": "女子",
@@ -1930,8 +1930,8 @@
             "prediction_basis": "race_records",
             "cumulative_sec": 1512.0,
             "provisional": false,
-            "leg_rank": 5,
-            "passing_rank": 4
+            "leg_rank": 6,
+            "passing_rank": 5
           },
           {
             "gender": "女子",
@@ -1941,8 +1941,8 @@
             "name": "増岡 里俐",
             "baseline_sec": 444.8,
             "grade": 2,
-            "formula_sec": 445,
-            "error_sec": 0.19999999999998863,
+            "formula_sec": 448,
+            "error_sec": 3.1999999999999886,
             "leg_effect_sec": 9.5,
             "best_sec": 453.74489689491895,
             "recent_sec": 466.94431956449347,
@@ -1952,12 +1952,12 @@
             "latest_race": "2026-09-26",
             "race_types": "aragyoku_prior,road_ekiden,track",
             "baseline_note": "確定 / SB:1500m 5:34.40@2026/07/04→1500m SB→2km式を距離比例→区間2km=7:40.9 / 駅伝加味:SB7:40.9(w=0.01)+ジュニアCS 9:00.0@2.3km(2026-09-26)→比例7:49.6(w=0.55)+なごみ 7:45.0@2.0km(2026-09-20)→比例7:45.0(w=0.45)+荒玉2025 7:01.0@1.9km(2025-10-15)→比例7:33.9(w=0.55)→加重7:42.7 / 前年伸び:荒玉2025 7:01.0@1.9km(2025-10-15)→比例7:33.9×-2%→7:24.8採用（ブレンド7:42.7より速い） →予想7:24.8",
-            "human_adjustment": "なごみ駅伝で増岡3区7:45、角田4区7:48、ジュニア駅伝でも増岡9:00・角田9:02。直近比較で増岡を少し上に置き、4区の歴代平均補正（+9.5秒）を個人差に優先して重ねないよう、角田3区予測より3秒速い7:25に設定",
+            "human_adjustment": "ユーザーの最新指示により増岡里俐の4区予想を7:28に設定",
             "prediction_basis": "race_records",
-            "cumulative_sec": 1957.0,
+            "cumulative_sec": 1960.0,
             "provisional": false,
-            "leg_rank": 2,
-            "passing_rank": 4
+            "leg_rank": 4,
+            "passing_rank": 5
           },
           {
             "gender": "女子",
@@ -1980,7 +1980,7 @@
             "baseline_note": "確定 / SB:1500m 5:10.80@2026/07/18→1500m SB→2km式を距離比例→区間3km=10:44.1 / 駅伝加味:SB10:44.1(w=0.01)+ジュニアCS 8:49.0@2.3km(2026-09-26)→比例11:30.0(w=0.55)+荒玉2025 11:32.0@3.0km(2025-10-15)→比例11:32.0(w=0.55)→加重11:30.7 / 前年伸び:荒玉2025 11:32.0@3.0km(2025-10-15)→比例11:32.0×-2%→11:18.2採用（ブレンド11:30.7より速い） →予想11:18.2",
             "human_adjustment": "",
             "prediction_basis": "race_records",
-            "cumulative_sec": 2650.0,
+            "cumulative_sec": 2653.0,
             "provisional": false,
             "leg_rank": 5,
             "passing_rank": 5
@@ -2325,7 +2325,7 @@
             "cumulative_sec": 1081.0,
             "provisional": false,
             "leg_rank": 9,
-            "passing_rank": 5
+            "passing_rank": 6
           },
           {
             "gender": "女子",
@@ -2692,7 +2692,7 @@
         "complete": true,
         "provisional": false,
         "provisional_legs": [],
-        "total_sec": 2575.0,
+        "total_sec": 2573.0,
         "rank": 1,
         "legs": [
           {
@@ -2755,8 +2755,8 @@
             "name": "佐藤 妃葵",
             "baseline_sec": 436.4,
             "grade": 3,
-            "formula_sec": 426,
-            "error_sec": -10.399999999999977,
+            "formula_sec": 435,
+            "error_sec": -1.3999999999999773,
             "leg_effect_sec": -9.5,
             "best_sec": 435.652654294795,
             "recent_sec": 444.45993281055394,
@@ -2766,12 +2766,12 @@
             "latest_race": "2026-09-21",
             "race_types": "aragyoku_prior,track",
             "baseline_note": "※仮 / SB:1500m 5:22.58@2026/09/21→1500m SB→2km式を距離比例→区間2km=7:25.1 / 駅伝加味:SB7:25.1(w=0.07)+荒玉2025 7:23.0@2.0km(2025-10-15)→比例7:23.0(w=0.55)→加重7:23.2 / 前年伸び:荒玉2025 7:23.0@2.0km(2025-10-15)→比例7:23.0×-2%→7:16.4採用（ブレンド7:23.2より速い） →予想7:16.4",
-            "human_adjustment": "",
+            "human_adjustment": "2026-09-29ユーザー指示により当初の数式予想を計+9秒調整（先の5秒調整にさらに4秒）",
             "prediction_basis": "race_records",
-            "cumulative_sec": 1469.0,
+            "cumulative_sec": 1478.0,
             "provisional": false,
-            "leg_rank": 1,
-            "passing_rank": 1
+            "leg_rank": 2,
+            "passing_rank": 2
           },
           {
             "gender": "女子",
@@ -2781,8 +2781,8 @@
             "name": "内野 沙笑",
             "baseline_sec": 465.6,
             "grade": 2,
-            "formula_sec": 451,
-            "error_sec": -14.600000000000023,
+            "formula_sec": 440,
+            "error_sec": -25.600000000000023,
             "leg_effect_sec": 9.5,
             "best_sec": 446.93045252002935,
             "recent_sec": 447.3671510455042,
@@ -2792,12 +2792,12 @@
             "latest_race": "2026-09-21",
             "race_types": "aragyoku_prior,track",
             "baseline_note": "※仮 / SB:1500m 5:24.69@2026/09/21→1500m SB→2km式を距離比例→区間2km=7:27.9 / 駅伝加味:SB7:27.9(w=0.07)+荒玉2025 11:49.0@3.0km(2025-10-15)→比例7:52.7(w=0.55)→加重7:49.9 / 前年伸び:荒玉2025 11:49.0@3.0km(2025-10-15)→比例7:52.7×-2%→7:45.6採用（ブレンド7:49.9より速い） →予想7:45.6",
-            "human_adjustment": "",
+            "human_adjustment": "2026-09-29ユーザー指示により当初の数式予想を計-11秒調整（-5秒、-4秒、さらに-2秒）",
             "prediction_basis": "race_records",
-            "cumulative_sec": 1920.0,
+            "cumulative_sec": 1918.0,
             "provisional": false,
-            "leg_rank": 3,
-            "passing_rank": 1
+            "leg_rank": 1,
+            "passing_rank": 2
           },
           {
             "gender": "女子",
@@ -2820,9 +2820,9 @@
             "baseline_note": "※仮 / SB:1500m 5:05.74@2026/09/21→1500m SB→2km式を距離比例→区間3km=10:34.0 / 駅伝加味:SB10:34.0(w=0.07)+荒玉2025 11:15.0@3.0km(2025-10-15)→比例11:15.0(w=0.55)→加重11:10.4 / 前年伸び:荒玉2025 11:15.0@3.0km(2025-10-15)→比例11:15.0×-2%→11:04.9採用（ブレンド11:10.4より速い） →予想11:04.9",
             "human_adjustment": "",
             "prediction_basis": "race_records",
-            "cumulative_sec": 2575.0,
+            "cumulative_sec": 2573.0,
             "provisional": false,
-            "leg_rank": 3,
+            "leg_rank": 2,
             "passing_rank": 1
           }
         ]
@@ -2834,7 +2834,7 @@
         "provisional_legs": [
           2
         ],
-        "total_sec": 2620.0,
+        "total_sec": 2616.0,
         "rank": 4,
         "legs": [
           {
@@ -2845,8 +2845,8 @@
             "name": "猿渡 愛梨",
             "baseline_sec": 642.2,
             "grade": 3,
-            "formula_sec": 648,
-            "error_sec": 5.7999999999999545,
+            "formula_sec": 643,
+            "error_sec": 0.7999999999999545,
             "leg_effect_sec": 0.0,
             "best_sec": 656.3682174246271,
             "recent_sec": 658.6670001620547,
@@ -2856,9 +2856,9 @@
             "latest_race": "2026-09-21",
             "race_types": "aragyoku_prior,road_ekiden,track",
             "baseline_note": "※仮 / SB:1500m 5:16.77@2026/07/04→1500m SB→2km式を距離比例→区間3km=10:56.0 / 駅伝加味:SB10:56.0(w=0.01)+なごみ 6:55.0@2.0km(2026-09-20)→比例10:22.5(w=0.45)+荒玉2025 11:16.0@3.0km(2025-10-15)→比例11:16.0(w=0.55)→加重10:51.9 / 前年伸び:荒玉2025 11:16.0@3.0km(2025-10-15)→比例11:16.0×-5%→10:42.2採用（ブレンド10:51.9より速い） →予想10:42.2",
-            "human_adjustment": "",
+            "human_adjustment": "2026-09-29ユーザー指示により現行の数式予想を5秒速める",
             "prediction_basis": "race_records",
-            "cumulative_sec": 648.0,
+            "cumulative_sec": 643.0,
             "provisional": false,
             "leg_rank": 4,
             "passing_rank": 4
@@ -2884,48 +2884,22 @@
             "baseline_note": "※仮 / 記録なし（5ヶ月窓内）",
             "human_adjustment": "猿渡（妹）の暫定値。村里の旧予想7:16より2秒速く設定",
             "prediction_basis": "manual_provisional",
-            "cumulative_sec": 1082.0,
+            "cumulative_sec": 1077.0,
             "provisional": true,
             "leg_rank": 5,
-            "passing_rank": 6
+            "passing_rank": 5
           },
           {
             "gender": "女子",
             "team": "長洲中",
             "leg": 3,
             "km": 2.0,
-            "name": "山川 綾",
-            "baseline_sec": 449.0,
-            "grade": 2,
-            "formula_sec": 449,
-            "error_sec": 0.0,
-            "leg_effect_sec": -9.5,
-            "best_sec": 422.5037252239964,
-            "recent_sec": 427.337387697718,
-            "typical_sec": 426.66351643599336,
-            "n_races": 11,
-            "n_recent_races": 11,
-            "latest_race": "2026-07-19",
-            "race_types": "aragyoku_prior,track",
-            "baseline_note": "※仮 / SB:1500m 5:22.32@2026/05/09→1500m SB→2km式を距離比例→区間2km=7:24.8 / 駅伝加味:SB7:24.8(w=0.00)+荒玉2025 7:03.0@1.9km(2025-10-15)→比例7:36.1(w=0.55)→加重7:36.0 / 前年伸び:荒玉2025 7:03.0@1.9km(2025-10-15)→比例7:36.1×-2%→7:29.2採用（ブレンド7:36.0より速い） / 人間set=7:29.0(伸びが限定的との情報から過大な上昇を抑える（約7:29）) →予想7:29.0",
-            "human_adjustment": "伸びが限定的との情報を反映し、予測の過大な上昇を抑える（約7:29）",
-            "prediction_basis": "race_records",
-            "cumulative_sec": 1531.0,
-            "provisional": false,
-            "leg_rank": 6,
-            "passing_rank": 5
-          },
-          {
-            "gender": "女子",
-            "team": "長洲中",
-            "leg": 4,
-            "km": 2.0,
             "name": "濱北 愛",
             "baseline_sec": 426.5,
             "grade": 2,
-            "formula_sec": 440,
-            "error_sec": 13.5,
-            "leg_effect_sec": 9.5,
+            "formula_sec": 435,
+            "error_sec": 8.5,
+            "leg_effect_sec": -9.5,
             "best_sec": 431.14992851202777,
             "recent_sec": 439.15447482580515,
             "typical_sec": 438.3010392038109,
@@ -2934,12 +2908,38 @@
             "latest_race": "2026-09-21",
             "race_types": "aragyoku_prior,road_ekiden,track",
             "baseline_note": "※仮 / SB:1500m 5:13.86@2026/07/04→1500m SB→2km式を距離比例→区間2km=7:13.5 / 駅伝加味:SB7:13.5(w=0.01)+荒玉2025 7:13.0@2.0km(2025-10-15)→比例7:13.0(w=0.55)→加重7:13.0 / 前年伸び:荒玉2025 7:13.0@2.0km(2025-10-15)→比例7:13.0×-2%→7:06.5採用（ブレンド7:13.0より速い） →予想7:06.5",
-            "human_adjustment": "",
+            "human_adjustment": "ユーザー指定の7:15を保持して濱北愛を3区に配置",
             "prediction_basis": "race_records",
-            "cumulative_sec": 1971.0,
+            "cumulative_sec": 1512.0,
             "provisional": false,
-            "leg_rank": 1,
-            "passing_rank": 5
+            "leg_rank": 3,
+            "passing_rank": 4
+          },
+          {
+            "gender": "女子",
+            "team": "長洲中",
+            "leg": 4,
+            "km": 2.0,
+            "name": "山川 綾",
+            "baseline_sec": 449.0,
+            "grade": 2,
+            "formula_sec": 440,
+            "error_sec": -9.0,
+            "leg_effect_sec": 9.5,
+            "best_sec": 422.5037252239964,
+            "recent_sec": 427.337387697718,
+            "typical_sec": 426.66351643599336,
+            "n_races": 11,
+            "n_recent_races": 11,
+            "latest_race": "2026-07-19",
+            "race_types": "aragyoku_prior,track",
+            "baseline_note": "※仮 / SB:1500m 5:22.32@2026/05/09→1500m SB→2km式を距離比例→区間2km=7:24.8 / 駅伝加味:SB7:24.8(w=0.00)+荒玉2025 7:03.0@1.9km(2025-10-15)→比例7:36.1(w=0.55)→加重7:36.0 / 前年伸び:荒玉2025 7:03.0@1.9km(2025-10-15)→比例7:36.1×-2%→7:29.2採用（ブレンド7:36.0より速い） / 人間set=7:29.0(伸びが限定的との情報から過大な上昇を抑える（約7:29）) →予想7:29.0",
+            "human_adjustment": "ユーザー指定の7:20を保持して山川綾を4区に配置",
+            "prediction_basis": "race_records",
+            "cumulative_sec": 1952.0,
+            "provisional": false,
+            "leg_rank": 3,
+            "passing_rank": 4
           },
           {
             "gender": "女子",
@@ -2949,8 +2949,8 @@
             "name": "中村 羽音",
             "baseline_sec": 658.0,
             "grade": 3,
-            "formula_sec": 649,
-            "error_sec": -9.0,
+            "formula_sec": 664,
+            "error_sec": 6.0,
             "leg_effect_sec": 0.0,
             "best_sec": 642.4821653278213,
             "recent_sec": 667.9335974097752,
@@ -2960,11 +2960,11 @@
             "latest_race": "2026-09-21",
             "race_types": "aragyoku_prior,road_ekiden,track",
             "baseline_note": "※仮 / SB:1500m 5:09.38@2026/09/21→1500m SB→2km式を距離比例→区間3km=10:41.3 / 駅伝加味:SB10:41.3(w=0.07)+荒玉2025 11:08.0@3.0km(2025-10-15)→比例11:08.0(w=0.55)→加重11:05.0 / 前年伸び:荒玉2025 11:08.0@3.0km(2025-10-15)→比例11:08.0×-2%→10:58.0採用（ブレンド11:05.0より速い） →予想10:58.0",
-            "human_adjustment": "",
+            "human_adjustment": "ユーザー指示により中村羽音の5区予想を11:04に設定",
             "prediction_basis": "race_records",
-            "cumulative_sec": 2620.0,
+            "cumulative_sec": 2616.0,
             "provisional": false,
-            "leg_rank": 2,
+            "leg_rank": 4,
             "passing_rank": 4
           }
         ]
@@ -2977,7 +2977,7 @@
           2,
           4
         ],
-        "total_sec": 2596.0,
+        "total_sec": 2576.0,
         "rank": 2,
         "legs": [
           {
@@ -2988,8 +2988,8 @@
             "name": "清藤 結唯",
             "baseline_sec": 664.9,
             "grade": 2,
-            "formula_sec": 654,
-            "error_sec": -10.899999999999977,
+            "formula_sec": 649,
+            "error_sec": -15.899999999999977,
             "leg_effect_sec": 0.0,
             "best_sec": 643.4441072227621,
             "recent_sec": 674.9741705258081,
@@ -2999,12 +2999,12 @@
             "latest_race": "2026-09-21",
             "race_types": "road_ekiden,track",
             "baseline_note": "※仮 / SB:1500m 4:54.56@2026/07/04→1500m SB→2km式を距離比例→区間3km=10:11.6 / 駅伝加味:SB10:11.6(w=0.01)+荒玉2025B 11:15.0@3.0km(2025-10-15)→比例11:15.0(w=0.55)→加重11:14.4 / 前年伸び:荒玉2025B 11:15.0@3.0km(2025-10-15)→比例11:15.0×-2%→11:04.9採用（ブレンド11:14.4より速い） →予想11:04.9",
-            "human_adjustment": "",
+            "human_adjustment": "2026-09-29ユーザー指示により現行の数式予想を5秒速める",
             "prediction_basis": "race_records",
-            "cumulative_sec": 654.0,
+            "cumulative_sec": 649.0,
             "provisional": false,
-            "leg_rank": 7,
-            "passing_rank": 7
+            "leg_rank": 6,
+            "passing_rank": 6
           },
           {
             "gender": "女子",
@@ -3027,7 +3027,7 @@
             "baseline_note": "※仮 / SBなし（トラック5ヶ月窓内記録なし） / 駅伝加味:荒玉2025B 7:12.0@2.0km(2025-10-15)→比例6:40.7(w=0.55)→加重6:40.7 / 前年伸び:荒玉2025B 7:12.0@2.0km(2025-10-15)→比例6:40.7×-2%→6:34.7採用（ブレンド6:40.7より速い） →予想6:34.7",
             "human_adjustment": "",
             "prediction_basis": "prior_year_B_provisional",
-            "cumulative_sec": 1049.0,
+            "cumulative_sec": 1044.0,
             "provisional": true,
             "leg_rank": 1,
             "passing_rank": 2
@@ -3053,10 +3053,10 @@
             "baseline_note": "※仮 / SB:1500m 5:38.58@2026/09/21→1500m SB→2km式を距離比例→区間2km=7:46.4 / 駅伝加味:SB7:46.4(w=0.07)+荒玉2025 10:16.0@3.0km(2025-10-15)→比例6:50.7(w=0.55)→加重6:57.0 / 前年伸び:荒玉2025 10:16.0@3.0km(2025-10-15)→比例6:50.7×-2%→6:44.5採用（ブレンド6:57.0より速い） / 人間+45s(今年フォーム落ち。前年A1区実績の伸びを打ち消し、直近トラック寄りに) →予想7:29.5",
             "human_adjustment": "",
             "prediction_basis": "race_records",
-            "cumulative_sec": 1481.0,
+            "cumulative_sec": 1476.0,
             "provisional": false,
-            "leg_rank": 3,
-            "passing_rank": 2
+            "leg_rank": 1,
+            "passing_rank": 1
           },
           {
             "gender": "女子",
@@ -3066,8 +3066,8 @@
             "name": "結菜",
             "baseline_sec": 441.3,
             "grade": 3,
-            "formula_sec": 455,
-            "error_sec": 13.699999999999989,
+            "formula_sec": 440,
+            "error_sec": -1.3000000000000114,
             "leg_effect_sec": 9.5,
             "best_sec": 451.40053551218625,
             "recent_sec": 451.40053551218625,
@@ -3077,12 +3077,12 @@
             "latest_race": "2025-10-15",
             "race_types": "aragyoku_prior",
             "baseline_note": "※仮 / SBなし（トラック5ヶ月窓内記録なし） / 駅伝加味:荒玉2025B 7:28.0@2.0km(2025-10-15)→比例7:28.0(w=0.55)→加重7:28.0 / 前年伸び:荒玉2025B 7:28.0@2.0km(2025-10-15)→比例7:28.0×-2%→7:21.3採用（ブレンド7:28.0より速い） →予想7:21.3",
-            "human_adjustment": "",
+            "human_adjustment": "ユーザー指示により結菜の4区予想を7:20に設定",
             "prediction_basis": "prior_year_B_provisional",
-            "cumulative_sec": 1936.0,
+            "cumulative_sec": 1916.0,
             "provisional": true,
-            "leg_rank": 4,
-            "passing_rank": 2
+            "leg_rank": 2,
+            "passing_rank": 1
           },
           {
             "gender": "女子",
@@ -3105,9 +3105,9 @@
             "baseline_note": "※仮 / SBなし（トラック5ヶ月窓内記録なし） / 駅伝加味:荒玉2025 11:04.0@3.0km(2025-10-15)→比例11:04.0(w=0.55)→加重11:04.0 / 前年伸び:荒玉2025 11:04.0@3.0km(2025-10-15)→比例11:04.0×-2%→10:54.0採用（ブレンド11:04.0より速い） →予想10:54.0",
             "human_adjustment": "",
             "prediction_basis": "race_records",
-            "cumulative_sec": 2596.0,
+            "cumulative_sec": 2576.0,
             "provisional": false,
-            "leg_rank": 4,
+            "leg_rank": 3,
             "passing_rank": 2
           }
         ]

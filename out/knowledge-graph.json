@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated_at": "2026-09-27T22:16:06Z",
+  "generated_at": "2026-09-29T07:57:07Z",
   "nodes": [
     {
       "id": "corpus:analysis-ocr",
@@ -126,7 +126,7 @@
       "refs": [
         "input/idaten-corpus/out-analysis"
       ],
-      "hint": "out/analysis の md/json（ペース分析・LINE 衛生化・関係図など）. 例: 2026-09-21_arato-tamana_middle_school_sb_updates.md, 2026_aragyoku_men_1500m_sb_individual_top20.md, 2026_aragyoku_men_3000m_sb_ranking.md, 2026_men_1500m_pb_school_ranking.md, 2026_women_800m_1500m_pb_school_ranking.md, aragyoku-overview.md, aragyoku-teams, aragyoku-years, aragyoku_2024_2025_focus_teams.md, aragyoku_all_teams_average_pace.md, aragyoku_leg_awards.md, aragyoku_meet_records.md"
+      "hint": "out/analysis の md/json（ペース分析・LINE 衛生化・関係図など）. 例: 2026-09-21_arato-tamana_middle_school_sb_updates.md, 2026-09-29_aragyoku_trial_results.json, 2026-09-29_aragyoku_trial_results.md, 2026_aragyoku_men_1500m_sb_individual_top20.md, 2026_aragyoku_men_3000m_sb_ranking.md, 2026_men_1500m_pb_school_ranking.md, 2026_women_800m_1500m_pb_school_ranking.md, aragyoku-overview.md, aragyoku-teams, aragyoku-years, aragyoku_2024_2025_focus_teams.md, aragyoku_2026_formula_coefficients.json"
     },
     {
       "id": "corpus:practice",
@@ -17502,9 +17502,9 @@
         "practice"
       ],
       "refs": [
-        "input/events.2025.yaml",
+        "out/2025/practice_absentees.csv",
         "out/analysis/notion_records_2026.json",
-        "out/2025/practice_absentees.csv"
+        "input/events.2025.yaml"
       ],
       "hint": "部員エンティティ"
     },
@@ -17538,9 +17538,9 @@
         "practice"
       ],
       "refs": [
-        "input/events.2025.yaml",
+        "out/2025/practice_absentees.csv",
         "out/analysis/notion_records_2026.json",
-        "out/2025/practice_absentees.csv"
+        "input/events.2025.yaml"
       ],
       "hint": "部員エンティティ"
     },
@@ -17574,9 +17574,9 @@
         "practice"
       ],
       "refs": [
-        "input/events.2025.yaml",
+        "out/2025/practice_absentees.csv",
         "out/analysis/notion_records_2026.json",
-        "out/2025/practice_absentees.csv"
+        "input/events.2025.yaml"
       ],
       "hint": "部員エンティティ"
     },
@@ -17646,9 +17646,9 @@
         "practice"
       ],
       "refs": [
-        "input/events.2025.yaml",
+        "out/2025/practice_absentees.csv",
         "out/analysis/notion_records_2026.json",
-        "out/2025/practice_absentees.csv"
+        "input/events.2025.yaml"
       ],
       "hint": "部員エンティティ"
     },
@@ -17682,8 +17682,8 @@
         "practice"
       ],
       "refs": [
-        "input/events.2025.yaml",
-        "out/2025/practice_absentees.csv"
+        "out/2025/practice_absentees.csv",
+        "input/events.2025.yaml"
       ],
       "hint": "部員エンティティ"
     },
@@ -17697,9 +17697,9 @@
         "practice"
       ],
       "refs": [
-        "input/events.2025.yaml",
+        "out/2025/practice_absentees.csv",
         "out/analysis/notion_records_2026.json",
-        "out/2025/practice_absentees.csv"
+        "input/events.2025.yaml"
       ],
       "hint": "部員エンティティ"
     },
@@ -17733,9 +17733,9 @@
         "practice"
       ],
       "refs": [
-        "input/events.2025.yaml",
+        "out/2025/practice_absentees.csv",
         "out/analysis/notion_records_2026.json",
-        "out/2025/practice_absentees.csv"
+        "input/events.2025.yaml"
       ],
       "hint": "部員エンティティ"
     },
@@ -17784,9 +17784,9 @@
         "practice"
       ],
       "refs": [
-        "input/events.2025.yaml",
+        "out/2025/practice_absentees.csv",
         "out/analysis/notion_records_2026.json",
-        "out/2025/practice_absentees.csv"
+        "input/events.2025.yaml"
       ],
       "hint": "部員エンティティ"
     },
@@ -17820,8 +17820,8 @@
         "practice"
       ],
       "refs": [
-        "out/2026/practice_absentees.csv",
         "input/events.2026.yaml",
+        "out/2026/practice_absentees.csv",
         "out/analysis/notion_records_2026.json"
       ],
       "hint": "部員エンティティ"
@@ -17856,9 +17856,9 @@
         "practice"
       ],
       "refs": [
-        "input/events.2025.yaml",
+        "out/2025/practice_absentees.csv",
         "out/analysis/notion_records_2026.json",
-        "out/2025/practice_absentees.csv"
+        "input/events.2025.yaml"
       ],
       "hint": "部員エンティティ"
     },
@@ -17892,11 +17892,11 @@
         "practice"
       ],
       "refs": [
+        "input/events.2026.yaml",
+        "out/2025/practice_absentees.csv",
         "out/2026/practice_absentees.csv",
         "out/analysis/notion_records_2026.json",
-        "input/events.2025.yaml",
-        "out/2025/practice_absentees.csv",
-        "input/events.2026.yaml"
+        "input/events.2025.yaml"
       ],
       "hint": "部員エンティティ"
     },
@@ -19110,6 +19110,18 @@
       "hint": "イベントタグ `県大会一覧`"
     },
     {
+      "id": "entity:tag:結果",
+      "type": "Entity",
+      "label": "結果",
+      "topics": [
+        "calendar"
+      ],
+      "refs": [
+        "input/events.2026.yaml"
+      ],
+      "hint": "イベントタグ `結果`"
+    },
+    {
       "id": "entity:tag:給与",
       "type": "Entity",
       "label": "給与",
@@ -19137,6 +19149,30 @@
         "input/events.2026.yaml"
       ],
       "hint": "イベントタグ `自分の練習`"
+    },
+    {
+      "id": "entity:tag:荒玉駅伝",
+      "type": "Entity",
+      "label": "荒玉駅伝",
+      "topics": [
+        "calendar"
+      ],
+      "refs": [
+        "input/events.2026.yaml"
+      ],
+      "hint": "イベントタグ `荒玉駅伝`"
+    },
+    {
+      "id": "entity:tag:試走",
+      "type": "Entity",
+      "label": "試走",
+      "topics": [
+        "calendar"
+      ],
+      "refs": [
+        "input/events.2026.yaml"
+      ],
+      "hint": "イベントタグ `試走`"
     },
     {
       "id": "entity:tag:金額",
@@ -23402,7 +23438,7 @@
       "refs": [
         "input/idaten-corpus/out-analysis"
       ],
-      "hint": "out/analysis の md/json（ペース分析・LINE 衛生化・関係図など）. 例: 2026-09-21_arato-tamana_middle_school_sb_updates.md, 2026_aragyoku_men_1500m_sb_individual_top20.md, 2026_aragyoku_men_3000m_sb_ranking.md, 2026_men_1500m_pb_school_ranking.md, 2026_women_800m_1500m_pb_school_ranking.md, aragyoku-overview.md, aragyoku-teams, aragyoku-years, aragyoku_2024_2025_focus_teams.md, aragyoku_all_teams_average_pace.md, aragyoku_leg_awards.md, aragyoku_meet_records.md"
+      "hint": "out/analysis の md/json（ペース分析・LINE 衛生化・関係図など）. 例: 2026-09-21_arato-tamana_middle_school_sb_updates.md, 2026-09-29_aragyoku_trial_results.json, 2026-09-29_aragyoku_trial_results.md, 2026_aragyoku_men_1500m_sb_individual_top20.md, 2026_aragyoku_men_3000m_sb_ranking.md, 2026_men_1500m_pb_school_ranking.md, 2026_women_800m_1500m_pb_school_ranking.md, aragyoku-overview.md, aragyoku-teams, aragyoku-years, aragyoku_2024_2025_focus_teams.md, aragyoku_2026_formula_coefficients.json"
     },
     {
       "id": "source:input/idaten-corpus/practice",
@@ -24294,6 +24330,19 @@
         "out/analysis/2026-09-21_arato-tamana_middle_school_sb_updates.md"
       ],
       "hint": "2026-09-21 荒玉中学生の学校別大会出場者とSB更新状況 / 対象大会: 第３回 熊本県長距離記録会（2026-09-21） / 抽出条件: `output_2026_中学生_single_table.csv` の `日付=2026/09/21` かつ、荒尾玉名地区の学校配分ルールに該当する選手。学校分類は `input/arato_tamana_report.yaml` の学校割当（クラ"
+    },
+    {
+      "id": "source:out/analysis/2026-09-29_aragyoku_trial_results.md",
+      "type": "Source",
+      "label": "2026-09-29_aragyoku_trial_results.md",
+      "topics": [
+        "athlete_records",
+        "ekiden"
+      ],
+      "refs": [
+        "out/analysis/2026-09-29_aragyoku_trial_results.md"
+      ],
+      "hint": "2026年9月29日 岱明中 荒玉駅伝試走結果 / 日付: 2026-09-29 ／ 出典: ユーザー報告（原文: `input/external/user-provided/2026-aragyoku-trial/2026-09-29.txt`） / 1–4区 / | 区間 | 距離 | 選手 | ラップ（報告順） | 総タイム | / | --- | ---: | --- | --- | --"
     },
     {
       "id": "source:out/analysis/2026_aragyoku_men_1500m_sb_individual_top20.md",
@@ -33337,6 +33386,11 @@
       "rel": "mentioned_in"
     },
     {
+      "from": "entity:tag:結果",
+      "to": "source:input/events.2026.yaml",
+      "rel": "mentioned_in"
+    },
+    {
       "from": "entity:tag:給与",
       "to": "source:input/events.2026.yaml",
       "rel": "mentioned_in"
@@ -33363,6 +33417,16 @@
     },
     {
       "from": "entity:tag:自分の練習",
+      "to": "source:input/events.2026.yaml",
+      "rel": "mentioned_in"
+    },
+    {
+      "from": "entity:tag:荒玉駅伝",
+      "to": "source:input/events.2026.yaml",
+      "rel": "mentioned_in"
+    },
+    {
+      "from": "entity:tag:試走",
       "to": "source:input/events.2026.yaml",
       "rel": "mentioned_in"
     },
@@ -37494,6 +37558,11 @@
     {
       "from": "topic:athlete_records",
       "to": "source:out/analysis/2026-09-21_arato-tamana_middle_school_sb_updates.md",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:athlete_records",
+      "to": "source:out/analysis/2026-09-29_aragyoku_trial_results.md",
       "rel": "search_here"
     },
     {
@@ -45424,6 +45493,11 @@
     {
       "from": "topic:ekiden",
       "to": "source:input/idaten-corpus/out-analysis",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:ekiden",
+      "to": "source:out/analysis/2026-09-29_aragyoku_trial_results.md",
       "rel": "search_here"
     },
     {

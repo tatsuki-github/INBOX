@@ -1719,5 +1719,31 @@
       "skipped": []
     },
     "template_ref": null
+  },
+  {
+    "year": 2026,
+    "date": "2026-09-29",
+    "title": "岱明中 荒玉駅伝試走結果",
+    "start_time": null,
+    "end_time": null,
+    "status": "done",
+    "tags": [
+      "岱明中",
+      "いだてん岱明練習",
+      "practice:daiming",
+      "駅伝",
+      "荒玉駅伝",
+      "試走",
+      "結果"
+    ],
+    "practice": {
+      "items": []
+    },
+    "parse": {
+      "source": "description",
+      "confidence": "none",
+      "skipped": []
+    },
+    "template_ref": null
   }
 ]

@@ -1,0 +1,156 @@
+{
+  "as_of": "2026-09-27",
+  "params": {
+    "男子": {
+      "distance_exponent": 1.11686608267681,
+      "distance_pairs": 474,
+      "distance_raw_median": 1.1168663747628038,
+      "short_exponent": 1.1727167488320045,
+      "short_pairs": 349,
+      "short_raw_median": 1.1727167488320045,
+      "road_factor": 1.008486208558349,
+      "road_pairs": 18,
+      "road_raw_median": 1.020272609333834,
+      "best_share": 0.3,
+      "other_feature": "typical",
+      "recent_window_days": 45,
+      "recent_half_life_days": 21,
+      "recent_road_weight": 2.0,
+      "recent_track_weight": 0.5,
+      "baseline_scale": 1.0051284240243719,
+      "baseline_scale_source": "v1 median alignment, held fixed",
+      "leg_effect": {
+        "leg4_minus_leg3_median_sec": 0.0,
+        "leg_offsets_sec": {},
+        "season_count": 0,
+        "team_pairs": 0,
+        "years": [],
+        "season_medians_sec": {}
+      },
+      "observation_weight_rules": [
+        {
+          "team": "玉陵中",
+          "meet": "なごみ中学駅伝",
+          "weight": 0.15,
+          "reason": "練習参加とみなし、競技会実績より低い重み"
+        },
+        {
+          "athlete": "松野 凛空",
+          "meet": "熊本県ジュニア駅伝",
+          "date": "2026-09-26",
+          "weight": 0.25,
+          "reason": "気管支炎からの回復期。今回のJr記録は通常の競技力指標より低く評価"
+        }
+      ],
+      "junior_course_factor": 1.01,
+      "peak_factor": 0.9859830007869856,
+      "nagomi_pairs": 37,
+      "junior_pairs": 6,
+      "nagomi_to_aragyoku_median": 0.959375,
+      "junior_to_aragyoku_median": 0.980821440662437,
+      "raw_course_factor": 0.9781342048885551,
+      "junior_course_factor_source": "rolling-course scenario assumption; elevation not measured",
+      "peak_projection_days": 17,
+      "peak_evidence_days": 30
+    },
+    "女子": {
+      "distance_exponent": 1.11410746162166,
+      "distance_pairs": 15,
+      "distance_raw_median": 1.1104385301321984,
+      "short_exponent": 1.1557583458106997,
+      "short_pairs": 404,
+      "short_raw_median": 1.1557583458106997,
+      "road_factor": 0.9924667003145493,
+      "road_pairs": 10,
+      "road_raw_median": 0.9736334511009226,
+      "best_share": 0.3,
+      "other_feature": "typical",
+      "recent_window_days": 45,
+      "recent_half_life_days": 21,
+      "recent_road_weight": 2.0,
+      "recent_track_weight": 0.5,
+      "baseline_scale": 0.9860736188843046,
+      "baseline_scale_source": "v1 median alignment, held fixed",
+      "leg_effect": {
+        "leg4_minus_leg3_median_sec": 19.0,
+        "leg_offsets_sec": {
+          "3": -9.5,
+          "4": 9.5
+        },
+        "season_count": 13,
+        "team_pairs": 204,
+        "years": [
+          2012,
+          2013,
+          2015,
+          2016,
+          2017,
+          2018,
+          2019,
+          2020,
+          2021,
+          2022,
+          2023,
+          2024,
+          2025
+        ],
+        "season_medians_sec": {
+          "2012": 12.0,
+          "2013": 28.0,
+          "2015": 17.0,
+          "2016": 10.5,
+          "2017": 21.5,
+          "2018": 21.5,
+          "2019": 18.5,
+          "2020": 20.5,
+          "2021": 19.0,
+          "2022": 9.0,
+          "2023": 19.0,
+          "2024": 10.0,
+          "2025": 19.0
+        }
+      },
+      "observation_weight_rules": [
+        {
+          "team": "玉陵中",
+          "meet": "なごみ中学駅伝",
+          "weight": 0.15,
+          "reason": "練習参加とみなし、競技会実績より低い重み"
+        }
+      ],
+      "junior_course_factor": 1.0,
+      "peak_factor": 1.0,
+      "nagomi_pairs": 0,
+      "junior_pairs": 0
+    }
+  },
+  "historical_track_backtest": {
+    "男子": {
+      "n": 72,
+      "mae_sec": 21.269962777600764,
+      "rmse_sec": 37.203526672422115,
+      "median_actual_over_raw": 0.9925365644653918,
+      "by_year": {
+        "2024": 37,
+        "2025": 35
+      }
+    },
+    "女子": {
+      "n": 76,
+      "mae_sec": 20.088723400207098,
+      "rmse_sec": 26.329081621529642,
+      "median_actual_over_raw": 1.0101228206128228,
+      "by_year": {
+        "2024": 38,
+        "2025": 38
+      }
+    }
+  },
+  "rejected": {
+    "graduated_athlete": 3,
+    "missing_or_invalid": 98,
+    "different_school_namesake": 3,
+    "duplicate": 442
+  },
+  "observations": 1189
+}
