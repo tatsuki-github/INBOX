@@ -19,6 +19,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 import generate_aragyoku_ekiden_sb_preview as base  # noqa: E402
+from aragyoku_recent_results import collect_recent_results, render_recent_results  # noqa: E402
 
 AS_OF = date(2026, 9, 27)
 FORECAST_DATE = date(2026, 10, 14)
@@ -1031,6 +1032,9 @@ def write_report(obs: list[dict], comparisons: list[dict], params: dict,
 
 def publish_predictions(comparisons: list[dict], params: dict) -> None:
     """Dual-write the formula forecast as the current meet prediction data."""
+    recent_results = collect_recent_results(comparisons)
+    (OUT / "aragyoku_2026_recent_results.json").write_text(
+        json.dumps(recent_results, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     by_gender = {gender: [r for r in comparisons if r["gender"] == gender]
                  for gender in ("男子", "女子")}
     ranked: dict[str, list[dict]] = {}
@@ -1134,6 +1138,7 @@ def publish_predictions(comparisons: list[dict], params: dict) -> None:
                              f"{r.get('leg_rank', '—')} | {r.get('passing_rank', '—')} | "
                              f"{r['n_races']} | {r['latest_race'] or '—'} | {fmt(r['baseline_sec'])} |")
         lines += ["", "† は前年Bチームの実測区間記録だけを持つ仮選手、または個人記録がなく人間考慮で暫定設定した選手。欠測区間に旧SB予測を代入していない。全レースの出典と個人別誤差は分析レポートを参照。", ""]
+        lines += render_recent_results(gender, team_payloads[gender], recent_results)
         return "\n".join(lines)
 
     gender_md = {gender: render_gender(gender) for gender in ("男子", "女子")}
