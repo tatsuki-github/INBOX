@@ -5,7 +5,7 @@
   "lap_metres": 4855,
   "men_start_before_C_metres": 145,
   "image_path": "input/aragyoku/course-points/aragyoku-course-common-points.png",
-  "image_sha256": "bb29830ed05c341590ecfa535f3cfe4f2ef0f4f87d9c0329acaddade6bd16e41",
+  "image_sha256": "4e23c42357c7a050f74724d2b263d9bdec1d948c4b0423049060b15ce6f208ad",
   "drive_file_id": "1j9iRk5WAnNVdMyO_fDJX5MaMAVDrESzG",
   "drive_url": "https://drive.google.com/file/d/1j9iRk5WAnNVdMyO_fDJX5MaMAVDrESzG/view?usp=drivesdk",
   "drive_parent_folder_id": "1hR2ouziPiuo6wg7Z0WWJgDuieYakkd9k",
@@ -19,7 +19,8 @@
     "最終画像は衛星写真を使わずシンプルな道路図にする",
     "女子4→5区と男子5→6区の中継所は同じC地点。中継所の吹き出しはCのみを指す。",
     "全体図の橋は曲がり角のすぐ手前に表示。A地点は曲がり角を通過した先で、拡大図に角は不要。",
-    "橋のオレンジのマーカーを進行方向の先へ寄せ、E地点につながる吹き出しを削除。"
+    "橋のオレンジのマーカーを進行方向の先へ寄せ、E地点につながる吹き出しを削除。",
+    "E地点の拡大図には手前の曲がり角を含める。Eの点は曲がった先の直線上。"
   ],
   "sources": [
     "input/aragyoku/course-videos.md",
@@ -125,7 +126,7 @@
         "5": "スタート",
         "6": "2.0km地点"
       },
-      "location_note": "橋の先、南側直線上"
+      "location_note": "南西の曲がり角を通過して東へ進んだ先の直線上。拡大図には手前の曲がり角も写す。"
     }
   ],
   "generation": {
