@@ -23,3 +23,11 @@
 正本カタログ: `backend/data/aragyoku-course-videos.json`（再生成: `python3 scripts/generate_aragyoku_course_videos_catalog.py`）
 
 詳細: `docs/adr/044-aragyoku-line-course-videos.md`
+
+## 男女コースの共通ポイント図解
+
+女子1区の1km地点（橋の上）、D・B・A・C・Eの男女区間別距離対応を画像化。1周4.855km、男子スタートはCの145m手前。
+
+- [地点・距離対応のナレッジ](course-points.md)
+- [画像](course-points/aragyoku-course-common-points.png)
+- [Google Drive の画像](https://drive.google.com/file/d/1j9iRk5WAnNVdMyO_fDJX5MaMAVDrESzG/view?usp=drivesdk)

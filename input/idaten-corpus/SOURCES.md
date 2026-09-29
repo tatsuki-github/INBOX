@@ -727,3 +727,5 @@
 - `README.md` → `docs/README.md`
 - `AGENTS.md` → `docs/AGENTS.md`
 - `input/external/media-manifest.json` → `media-manifest.slim.json` (ekiden+analysis 30 items)
+- `input/aragyoku/course-points.md` → `aragyoku/course-points.md`
+- `input/aragyoku/course-points.json` → `aragyoku/course-points.json`

@@ -1,7 +1,7 @@
 {
   "version": 1,
   "corpus": "input/idaten-corpus",
-  "chunk_count": 16263,
+  "chunk_count": 16271,
   "chunks": [
     {
       "id": "analysis-ocr/2026年度荒玉男子.ocr.md:0",
@@ -3379,12 +3379,84 @@
       }
     },
     {
+      "id": "aragyoku/course-points.json:0",
+      "source": "aragyoku/course-points.json",
+      "text": "{\n  \"version\": 1,\n  \"title\": \"荒玉駅伝 男女コースの共通ポイント\",\n  \"updated_at\": \"2026-09-29\",\n  \"lap_metres\": 4855,\n  \"men_start_before_C_metres\": 145,\n  \"image_path\": \"input/aragyoku/course-points/aragyoku-course-common-points.png\",\n  \"image_sha256\": \"2dd7540f61b98a2291b36aff58dee0797d8465617811aef0c364d94adef89424\",\n  \"drive_file_id\": \"1j9iRk5WAnNVdMyO_fDJX5MaMAVDrESzG\",\n  \"drive_url\": \"https://drive.google.com/file/d/1j9iRk5WAnNVdMyO_fDJX5MaMAVDrESzG/view?usp=drivesdk\",\n  \"drive_parent_folder_id\": \"1hR2ouziPiuo6wg7Z0WWJgDuieYakkd9k\",\n  \"distance_note\": \"1周4.855kmと各区間距離を基準にした目安。道路は模式図。GPSの補正値を小数2桁へ丸めた旧図から、区間距離に整合する値へ統一。\",\n  \"user_confirmed\": [\n    \"女子1区の1km地点は橋の上\",\n    \"1周4.855km\",\n    \"男子スタートはCの145m手前\",\n    \"道幅は狭めで中央線なし（画像内の説明文は不要）\"\n  ],\n  \"sources\": [\n    \"input/aragyoku/course-videos.md\",\n    \"scripts/generate_aragyoku_women_course_videos.py\",\n    \"scripts/build_aragyoku_men_gpx_from_women.py\"\n  ",
+      "metadata": {
+        "path": "input/idaten-corpus/aragyoku/course-points.json",
+        "index": 0
+      }
+    },
+    {
+      "id": "aragyoku/course-points.json:1",
+      "source": "aragyoku/course-points.json",
+      "text": "],\n  \"points\": [\n    {\n      \"id\": \"bridge_1km\",\n      \"label\": \"女子1区の1km地点（橋の上）\",\n      \"women\": {\n        \"1\": \"1.0km地点\",\n        \"3\": \"1.0km地点\",\n        \"5\": \"1.855km地点\"\n      },\n      \"men\": {\n        \"1\": \"2.0km地点\",\n        \"3\": \"1.0km地点\",\n        \"4\": \"2.855km地点\",\n        \"6\": \"1.855km地点\"\n      },\n      \"location_note\": \"南西の曲がり角の直前にある橋の上\"\n    },\n    {\n      \"id\": \"D\",\n      \"label\": \"D地点\",\n      \"women\": {\n        \"1\": \"スタート\",\n        \"2\": \"1.855km・中継\",\n        \"3\": \"スタート\",\n        \"5\": \"0.855km地点\"\n      },\n      \"men\": {\n        \"1\": \"1.0km地点\",\n        \"2\": \"2.855km・中継\",\n        \"3\": \"スタート\",\n        \"4\": \"1.855km地点\",\n        \"6\": \"0.855km地点\"\n      },\n      \"location_note\": \"北西の曲がり角より南側の直線上\"\n    },\n    {\n      \"id\": \"B\",\n      \"label\": \"B地点\",\n      \"women\": {\n        \"1\": \"3.0km・中継\",\n        \"2\": \"スタート\",\n        \"4\": \"1.0km地点\"\n      },\n      \"men\": {\n        \"2\": \"1.0km地点\",\n       ",
+      "metadata": {
+        "path": "input/idaten-corpus/aragyoku/course-points.json",
+        "index": 1
+      }
+    },
+    {
+      "id": "aragyoku/course-points.json:2",
+      "source": "aragyoku/course-points.json",
+      "text": " \"3\": \"3.0km・中継\",\n        \"4\": \"スタート\",\n        \"5\": \"1.855km地点\"\n      },\n      \"location_note\": \"東側の直線上\"\n    },\n    {\n      \"id\": \"A\",\n      \"label\": \"A地点\",\n      \"women\": {\n        \"1\": \"2.0km地点\",\n        \"3\": \"2.0km・中継\",\n        \"4\": \"スタート\"\n      },\n      \"men\": {\n        \"1\": \"3.0km・中継\",\n        \"2\": \"スタート\",\n        \"3\": \"2.0km地点\",\n        \"5\": \"0.855km地点\"\n      },\n      \"location_note\": \"南側の直線上\"\n    },\n    {\n      \"id\": \"C\",\n      \"label\": \"C地点\",\n      \"women\": {\n        \"2\": \"1.0km地点\",\n        \"4\": \"2.0km・中継\",\n        \"5\": \"スタート\"\n      },\n      \"men\": {\n        \"1\": \"0.145km地点\",\n        \"2\": \"2.0km地点\",\n        \"4\": \"1.0km地点\",\n        \"5\": \"2.855km・中継\",\n        \"6\": \"スタート\"\n      },\n      \"location_note\": \"女子4→5区／男子5→6区の中継位置。男子1区スタートはCの145m手前（東側）\"\n    },\n    {\n      \"id\": \"E\",\n      \"label\": \"E地点\",\n      \"women\": {\n        \"1\": \"1.145km地点\",\n        \"3\": \"1.145km地点\",\n        \"5\": \"2.0k",
+      "metadata": {
+        "path": "input/idaten-corpus/aragyoku/course-points.json",
+        "index": 2
+      }
+    },
+    {
+      "id": "aragyoku/course-points.json:3",
+      "source": "aragyoku/course-points.json",
+      "text": "m地点\"\n      },\n      \"men\": {\n        \"1\": \"2.145km地点\",\n        \"3\": \"1.145km地点\",\n        \"4\": \"3.0km・中継\",\n        \"5\": \"スタート\",\n        \"6\": \"2.0km地点\"\n      },\n      \"location_note\": \"橋の先、南側直線上\"\n    }\n  ],\n  \"generation\": {\n    \"method\": \"built-in image_gen\",\n    \"prompt_path\": \"output/imagegen/aragyoku-course-common-points-final-prompt.txt\"\n  }\n}",
+      "metadata": {
+        "path": "input/idaten-corpus/aragyoku/course-points.json",
+        "index": 3
+      }
+    },
+    {
+      "id": "aragyoku/course-points.md:0",
+      "source": "aragyoku/course-points.md",
+      "text": "# 荒玉駅伝 男女コース共通ポイント図解\n\n更新日: 2026-09-29。女子1〜5区・男子1〜6区が共有する6地点の図解。\n\n![荒玉駅伝 男女コース共通ポイント（橋の上）](course-points/aragyoku-course-common-points.png)\n\n- [Google Drive の画像](https://drive.google.com/file/d/1j9iRk5WAnNVdMyO_fDJX5MaMAVDrESzG/view?usp=drivesdk)\n- [男女コース動画フォルダ](https://drive.google.com/drive/folders/1hR2ouziPiuo6wg7Z0WWJgDuieYakkd9k)\n- ローカル画像: `input/aragyoku/course-points/aragyoku-course-common-points.png`\n- 構造化距離対応: `input/aragyoku/course-points.json`\n\n## 確定した地点情報\n\n- 女子1区の1km地点は**橋の上**。見出しは「女子1区の1km地点（橋の上）」。\n- 1周は**4.855km**。\n- 男子1区スタートは**Cの145m手前**。北が上の図ではCの東側。男子1区がCを通過するときは0.145km地点。\n- Dは北西の曲がり角から南へ進んだ直線上。全体図でも曲がり角の頂点や北側の道路に置かない。\n- 進行順は **D → 1km（橋） → E → A → B → C → D**。\n- 実際は中央線のない狭い道。画像内の「道幅は狭め・中央線なし」の説明行は削除済み。\n\n上記はユーザー確認済みの情報。画像は道路形状を説明する模式図で、地図の正確な縮尺を保証するものではない。\n\n## 男女各区の距離対応",
+      "metadata": {
+        "path": "input/idaten-corpus/aragyoku/course-points.md",
+        "index": 0
+      }
+    },
+    {
+      "id": "aragyoku/course-points.md:1",
+      "source": "aragyoku/course-points.md",
+      "text": "| 共通地点 | 女子 | 男子 |\n| --- | --- | --- |\n| 女子1区の1km地点（橋の上） | 1区 1.0km地点／3区 1.0km地点／5区 1.855km地点 | 1区 2.0km地点／3区 1.0km地点／4区 2.855km地点／6区 1.855km地点 |\n| D地点 | 1区 スタート／2区 1.855km・中継／3区 スタート／5区 0.855km地点 | 1区 1.0km地点／2区 2.855km・中継／3区 スタート／4区 1.855km地点／6区 0.855km地点 |\n| B地点 | 1区 3.0km・中継／2区 スタート／4区 1.0km地点 | 2区 1.0km地点／3区 3.0km・中継／4区 スタート／5区 1.855km地点 |\n| A地点 | 1区 2.0km地点／3区 2.0km・中継／4区 スタート | 1区 3.0km・中継／2区 スタート／3区 2.0km地点／5区 0.855km地点 |\n| C地点 | 2区 1.0km地点／4区 2.0km・中継／5区 スタート | 1区 0.145km地点／2区 2.0km地点／4区 1.0km地点／5区 2.855km・中継／6区 スタート |\n| E地点 | 1区 1.145km地点／3区 1.145km地点／5区 2.0km地点 | 1区 2.145km地点／3区 1.145km地点／4区 3.0km・中継／5区 スタート／6区 2.0km地点 |\n\n距離は1周4.855kmと各区間距離を基準にした目安。区間の終点と次区間のスタートは同じ中継所。女子は5区までで、Cは女子4→5区・男子5→6区の中継所。\n\n## 出典と作成方法",
+      "metadata": {
+        "path": "input/idaten-corpus/aragyoku/course-points.md",
+        "index": 1
+      }
+    },
+    {
+      "id": "aragyoku/course-points.md:2",
+      "source": "aragyoku/course-points.md",
+      "text": "- 動画案内: `input/aragyoku/course-videos.md`\n- 女子各区GPXと動画の距離・地点記号: `scripts/generate_aragyoku_women_course_videos.py`\n- 男子1・3〜6区の動画用派生トラック: `scripts/build_aragyoku_men_gpx_from_women.py`（男子2区は実測GPX）。\n- 動画: `web/public/videos/women-leg1.mp4`〜`women-leg5.mp4`、`men-leg1.mp4`〜`men-leg6.mp4`。\n- 画像生成: built-in image_gen。橋の上・周回距離・男子スタート位置・道幅はユーザーの修正を反映。\n- 生成プロンプト: `output/imagegen/aragyoku-course-common-points-final-prompt.txt`\n\n旧女子専用図やGPS概算の旧版ではなく、この男女版をコース共通ポイントの参照画像として使う。",
+      "metadata": {
+        "path": "input/idaten-corpus/aragyoku/course-points.md",
+        "index": 2
+      }
+    },
+    {
       "id": "aragyoku/course-videos.md:0",
       "source": "aragyoku/course-videos.md",
-      "text": "# 荒玉駅伝 コース動画\n\n荒玉駅伝（玉名荒尾中体連駅伝）のコース動画は、男女別の Google ドライブフォルダにある。\n\n## フォルダ\n\n| 区分 | URL |\n|:---|:---|\n| 女子 | https://drive.google.com/drive/folders/1no2bVU7GeyVbXFsCG8V8uwM0IuaFoOhi |\n| 男子 | https://drive.google.com/drive/folders/17MrxiZ_0CsDBgVrS_O3uZm3Oypu70Uoo |\n\n限定公開YouTubeプレイリスト: https://youtube.com/playlist?list=PLfEmEvJWOhLE&si=xNbUO5aLL8ly9axJ\n\n各フォルダに「全区間」と区間別（女子 1〜5区、男子 1〜6区）の mp4 がある。\n\n## LINE ボット\n\n「コース動画はどこ？」「荒玉の女子3区コース映像」などの質問では:\n\n1. テキストで上記フォルダ URL を案内する（性別に応じて片方、または両方）\n2. 区間が特定でき、かつ LINE 取得可能なサイズ・形式の動画がある場合、LINE Video を最大 1 件添付する\n\n正本カタログ: `backend/data/aragyoku-course-videos.json`（再生成: `python3 scripts/generate_aragyoku_course_videos_catalog.py`）\n\n詳細: `docs/adr/044-aragyoku-line-course-videos.md`",
+      "text": "# 荒玉駅伝 コース動画\n\n荒玉駅伝（玉名荒尾中体連駅伝）のコース動画は、男女別の Google ドライブフォルダにある。\n\n## フォルダ\n\n| 区分 | URL |\n|:---|:---|\n| 女子 | https://drive.google.com/drive/folders/1no2bVU7GeyVbXFsCG8V8uwM0IuaFoOhi |\n| 男子 | https://drive.google.com/drive/folders/17MrxiZ_0CsDBgVrS_O3uZm3Oypu70Uoo |\n\n限定公開YouTubeプレイリスト: https://youtube.com/playlist?list=PLfEmEvJWOhLE&si=xNbUO5aLL8ly9axJ\n\n各フォルダに「全区間」と区間別（女子 1〜5区、男子 1〜6区）の mp4 がある。\n\n## LINE ボット\n\n「コース動画はどこ？」「荒玉の女子3区コース映像」などの質問では:\n\n1. テキストで上記フォルダ URL を案内する（性別に応じて片方、または両方）\n2. 区間が特定でき、かつ LINE 取得可能なサイズ・形式の動画がある場合、LINE Video を最大 1 件添付する\n\n正本カタログ: `backend/data/aragyoku-course-videos.json`（再生成: `python3 scripts/generate_aragyoku_course_videos_catalog.py`）\n\n詳細: `docs/adr/044-aragyoku-line-course-videos.md`\n\n## 男女コースの共通ポイント図解\n\n女子1区の1km地点（橋の上）、D・B・A・C・Eの男女区間別距離対応を画像化。1周4.855km、男子スタートはCの145m手前。",
       "metadata": {
         "path": "input/idaten-corpus/aragyoku/course-videos.md",
         "index": 0
+      }
+    },
+    {
+      "id": "aragyoku/course-videos.md:1",
+      "source": "aragyoku/course-videos.md",
+      "text": "- [地点・距離対応のナレッジ](course-points.md)\n- [画像](course-points/aragyoku-course-common-points.png)\n- [Google Drive の画像](https://drive.google.com/file/d/1j9iRk5WAnNVdMyO_fDJX5MaMAVDrESzG/view?usp=drivesdk)",
+      "metadata": {
+        "path": "input/idaten-corpus/aragyoku/course-videos.md",
+        "index": 1
       }
     },
     {

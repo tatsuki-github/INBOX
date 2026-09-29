@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated_at": "2026-09-29T08:11:47Z",
+  "generated_at": "2026-09-29T10:11:57Z",
   "nodes": [
     {
       "id": "corpus:analysis-ocr",
@@ -26,7 +26,7 @@
       "refs": [
         "input/idaten-corpus/aragyoku"
       ],
-      "hint": "荒玉駅伝の構造化 JSON/MD・transcripts・winners-by-year・course-videos. 例: course-videos.md, men_full_2012_2025.json, ocr_raw, quiz, taimei-records-2012-2025.md, transcripts, winners-by-year.md, women_full_2012_2025.json, women_top4_2012_2025.json, women_top6_2012_2025.json"
+      "hint": "荒玉駅伝の構造化 JSON/MD・transcripts・winners-by-year・course-videos. 例: course-points.json, course-points.md, course-videos.md, men_full_2012_2025.json, ocr_raw, quiz, taimei-records-2012-2025.md, transcripts, winners-by-year.md, women_full_2012_2025.json, women_top4_2012_2025.json, women_top6_2012_2025.json"
     },
     {
       "id": "corpus:calendar",
@@ -17502,9 +17502,9 @@
         "practice"
       ],
       "refs": [
-        "out/analysis/notion_records_2026.json",
+        "input/events.2025.yaml",
         "out/2025/practice_absentees.csv",
-        "input/events.2025.yaml"
+        "out/analysis/notion_records_2026.json"
       ],
       "hint": "部員エンティティ"
     },
@@ -17538,9 +17538,9 @@
         "practice"
       ],
       "refs": [
-        "out/analysis/notion_records_2026.json",
+        "input/events.2025.yaml",
         "out/2025/practice_absentees.csv",
-        "input/events.2025.yaml"
+        "out/analysis/notion_records_2026.json"
       ],
       "hint": "部員エンティティ"
     },
@@ -17574,9 +17574,9 @@
         "practice"
       ],
       "refs": [
-        "out/analysis/notion_records_2026.json",
+        "input/events.2025.yaml",
         "out/2025/practice_absentees.csv",
-        "input/events.2025.yaml"
+        "out/analysis/notion_records_2026.json"
       ],
       "hint": "部員エンティティ"
     },
@@ -17646,9 +17646,9 @@
         "practice"
       ],
       "refs": [
-        "out/analysis/notion_records_2026.json",
+        "input/events.2025.yaml",
         "out/2025/practice_absentees.csv",
-        "input/events.2025.yaml"
+        "out/analysis/notion_records_2026.json"
       ],
       "hint": "部員エンティティ"
     },
@@ -17682,8 +17682,8 @@
         "practice"
       ],
       "refs": [
-        "out/2025/practice_absentees.csv",
-        "input/events.2025.yaml"
+        "input/events.2025.yaml",
+        "out/2025/practice_absentees.csv"
       ],
       "hint": "部員エンティティ"
     },
@@ -17697,9 +17697,9 @@
         "practice"
       ],
       "refs": [
-        "out/analysis/notion_records_2026.json",
+        "input/events.2025.yaml",
         "out/2025/practice_absentees.csv",
-        "input/events.2025.yaml"
+        "out/analysis/notion_records_2026.json"
       ],
       "hint": "部員エンティティ"
     },
@@ -17733,9 +17733,9 @@
         "practice"
       ],
       "refs": [
-        "out/analysis/notion_records_2026.json",
+        "input/events.2025.yaml",
         "out/2025/practice_absentees.csv",
-        "input/events.2025.yaml"
+        "out/analysis/notion_records_2026.json"
       ],
       "hint": "部員エンティティ"
     },
@@ -17784,9 +17784,9 @@
         "practice"
       ],
       "refs": [
-        "out/analysis/notion_records_2026.json",
+        "input/events.2025.yaml",
         "out/2025/practice_absentees.csv",
-        "input/events.2025.yaml"
+        "out/analysis/notion_records_2026.json"
       ],
       "hint": "部員エンティティ"
     },
@@ -17820,9 +17820,9 @@
         "practice"
       ],
       "refs": [
-        "input/events.2026.yaml",
+        "out/2026/practice_absentees.csv",
         "out/analysis/notion_records_2026.json",
-        "out/2026/practice_absentees.csv"
+        "input/events.2026.yaml"
       ],
       "hint": "部員エンティティ"
     },
@@ -17856,9 +17856,9 @@
         "practice"
       ],
       "refs": [
-        "out/analysis/notion_records_2026.json",
+        "input/events.2025.yaml",
         "out/2025/practice_absentees.csv",
-        "input/events.2025.yaml"
+        "out/analysis/notion_records_2026.json"
       ],
       "hint": "部員エンティティ"
     },
@@ -17892,11 +17892,11 @@
         "practice"
       ],
       "refs": [
-        "input/events.2025.yaml",
-        "out/2025/practice_absentees.csv",
-        "input/events.2026.yaml",
+        "out/2026/practice_absentees.csv",
         "out/analysis/notion_records_2026.json",
-        "out/2026/practice_absentees.csv"
+        "input/events.2026.yaml",
+        "input/events.2025.yaml",
+        "out/2025/practice_absentees.csv"
       ],
       "hint": "部員エンティティ"
     },
@@ -20038,6 +20038,21 @@
         "input/external/notion/media/ekiden-history/2025-男子.meta.json"
       ],
       "hint": "topic=ekiden; binary=pending; ocr=input/external/notion/media/ekiden-history/ocr/2025-男子.md; notion添付あり"
+    },
+    {
+      "id": "media:ekiden:荒玉駅伝-男女コース共通ポイント-橋の上",
+      "type": "MediaAsset",
+      "label": "荒玉駅伝-男女コース共通ポイント-橋の上",
+      "topics": [
+        "athlete_records",
+        "ekiden"
+      ],
+      "refs": [
+        "input/aragyoku/course-points/aragyoku-course-common-points.png",
+        "input/aragyoku/course-points.md",
+        "input/aragyoku/course-points.json"
+      ],
+      "hint": "topic=ekiden; binary=yes; ocr=input/aragyoku/course-points.md"
     },
     {
       "id": "media:photo:1748942808411",
@@ -22756,6 +22771,30 @@
       "hint": "AI 固定/可変/創作ルール"
     },
     {
+      "id": "source:input/aragyoku/course-points.json",
+      "type": "Source",
+      "label": "course-points.json",
+      "topics": [
+        "ekiden"
+      ],
+      "refs": [
+        "input/aragyoku/course-points.json"
+      ],
+      "hint": "荒玉駅伝 共通地点の男女区間別距離対応と画像・Drive URL"
+    },
+    {
+      "id": "source:input/aragyoku/course-points.md",
+      "type": "Source",
+      "label": "course-points.md",
+      "topics": [
+        "ekiden"
+      ],
+      "refs": [
+        "input/aragyoku/course-points.md"
+      ],
+      "hint": "荒玉駅伝 男女コース共通ポイント図解・橋の上の1km・A/B/C/D/E・1周4.855km・男子スタート145m手前"
+    },
+    {
       "id": "source:input/aragyoku/course-videos.md",
       "type": "Source",
       "label": "course-videos.md",
@@ -23121,7 +23160,7 @@
       "refs": [
         "input/idaten-corpus/aragyoku"
       ],
-      "hint": "荒玉駅伝の構造化 JSON/MD・transcripts・winners-by-year・course-videos. 例: course-videos.md, men_full_2012_2025.json, ocr_raw, quiz, taimei-records-2012-2025.md, transcripts, winners-by-year.md, women_full_2012_2025.json, women_top4_2012_2025.json, women_top6_2012_2025.json"
+      "hint": "荒玉駅伝の構造化 JSON/MD・transcripts・winners-by-year・course-videos. 例: course-points.json, course-points.md, course-videos.md, men_full_2012_2025.json, ocr_raw, quiz, taimei-records-2012-2025.md, transcripts, winners-by-year.md, women_full_2012_2025.json, women_top4_2012_2025.json, women_top6_2012_2025.json"
     },
     {
       "id": "source:input/idaten-corpus/aragyoku/course-videos.md",
@@ -34816,6 +34855,21 @@
       "rel": "see_also"
     },
     {
+      "from": "media:ekiden:荒玉駅伝-男女コース共通ポイント-橋の上",
+      "to": "source:input/external/media-manifest.json",
+      "rel": "documented_in"
+    },
+    {
+      "from": "media:ekiden:荒玉駅伝-男女コース共通ポイント-橋の上",
+      "to": "source:input/external/notion/databases/荒玉中体連駅伝歴代/rows.json",
+      "rel": "derived_from"
+    },
+    {
+      "from": "media:ekiden:荒玉駅伝-男女コース共通ポイント-橋の上",
+      "to": "source:input/external/notion/media/ekiden-history/INDEX.md",
+      "rel": "see_also"
+    },
+    {
       "from": "media:photo:1748942808411",
       "to": "source:input/external/media-manifest.json",
       "rel": "documented_in"
@@ -37368,6 +37422,11 @@
     {
       "from": "topic:athlete_records",
       "to": "media:ekiden:2025-男子",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:athlete_records",
+      "to": "media:ekiden:荒玉駅伝-男女コース共通ポイント-橋の上",
       "rel": "search_here"
     },
     {
@@ -45227,6 +45286,11 @@
     },
     {
       "from": "topic:ekiden",
+      "to": "media:ekiden:荒玉駅伝-男女コース共通ポイント-橋の上",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:ekiden",
       "to": "meet:2025年度:0228_熊本市駅伝",
       "rel": "search_here"
     },
@@ -45398,6 +45462,16 @@
     {
       "from": "topic:ekiden",
       "to": "source:docs/aragyoku-ekiden-distance-definitions.md",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:ekiden",
+      "to": "source:input/aragyoku/course-points.json",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:ekiden",
+      "to": "source:input/aragyoku/course-points.md",
       "rel": "search_here"
     },
     {

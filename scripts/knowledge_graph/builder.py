@@ -201,6 +201,16 @@ SOURCE_GLOBS: list[tuple[str, list[str], str]] = [
         "荒玉駅伝コース動画の Google ドライブ URL",
     ),
     (
+        "input/aragyoku/course-points.md",
+        ["ekiden"],
+        "荒玉駅伝 男女コース共通ポイント図解・橋の上の1km・A/B/C/D/E・1周4.855km・男子スタート145m手前",
+    ),
+    (
+        "input/aragyoku/course-points.json",
+        ["ekiden"],
+        "荒玉駅伝 共通地点の男女区間別距離対応と画像・Drive URL",
+    ),
+    (
         "input/idaten-corpus/aragyoku/winners-by-year.md",
         ["ekiden"],
         "荒玉駅伝 年度別優勝・準優勝校（コーパス）",

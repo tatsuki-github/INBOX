@@ -7,7 +7,8 @@
     "ekiden_ocr": 27,
     "analysis_pdfs": 3,
     "photo_binaries": 29,
-    "total_items": 59
+    "total_items": 60,
+    "course_diagrams": 1
   },
   "items": [
     {
@@ -812,6 +813,23 @@
       "kind": "image",
       "bytes": 186470,
       "event_folder": "20250927_ジュニア駅伝"
+    },
+    {
+      "id": "aragyoku-course-common-points",
+      "title": "荒玉駅伝 男女コース共通ポイント（橋の上）",
+      "topic": "ekiden",
+      "stem": "荒玉駅伝-男女コース共通ポイント-橋の上",
+      "local_path": "input/aragyoku/course-points/aragyoku-course-common-points.png",
+      "path": "input/aragyoku/course-points/aragyoku-course-common-points.png",
+      "ocr_path": "input/aragyoku/course-points.md",
+      "ocr": "input/aragyoku/course-points.md",
+      "meta_path": "input/aragyoku/course-points.json",
+      "binary_saved": true,
+      "kind": "generated_course_diagram",
+      "source_drive_id": "1j9iRk5WAnNVdMyO_fDJX5MaMAVDrESzG",
+      "source_drive_url": "https://drive.google.com/file/d/1j9iRk5WAnNVdMyO_fDJX5MaMAVDrESzG/view?usp=drivesdk",
+      "source_provenance": "course videos and user-confirmed course facts; generated infographic",
+      "updated_at": "2026-09-29"
     }
   ]
 }

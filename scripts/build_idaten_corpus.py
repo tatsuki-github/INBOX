@@ -44,6 +44,8 @@ ARAGYOKU_FILES = (
     "women_top6_2012_2025.json",
     "women_top4_2012_2025.json",
     "course-videos.md",
+    "course-points.md",
+    "course-points.json",
 )
 
 DOC_FILES = (

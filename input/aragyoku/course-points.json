@@ -1,0 +1,130 @@
+{
+  "version": 1,
+  "title": "荒玉駅伝 男女コースの共通ポイント",
+  "updated_at": "2026-09-29",
+  "lap_metres": 4855,
+  "men_start_before_C_metres": 145,
+  "image_path": "input/aragyoku/course-points/aragyoku-course-common-points.png",
+  "image_sha256": "2dd7540f61b98a2291b36aff58dee0797d8465617811aef0c364d94adef89424",
+  "drive_file_id": "1j9iRk5WAnNVdMyO_fDJX5MaMAVDrESzG",
+  "drive_url": "https://drive.google.com/file/d/1j9iRk5WAnNVdMyO_fDJX5MaMAVDrESzG/view?usp=drivesdk",
+  "drive_parent_folder_id": "1hR2ouziPiuo6wg7Z0WWJgDuieYakkd9k",
+  "distance_note": "1周4.855kmと各区間距離を基準にした目安。道路は模式図。GPSの補正値を小数2桁へ丸めた旧図から、区間距離に整合する値へ統一。",
+  "user_confirmed": [
+    "女子1区の1km地点は橋の上",
+    "1周4.855km",
+    "男子スタートはCの145m手前",
+    "道幅は狭めで中央線なし（画像内の説明文は不要）"
+  ],
+  "sources": [
+    "input/aragyoku/course-videos.md",
+    "scripts/generate_aragyoku_women_course_videos.py",
+    "scripts/build_aragyoku_men_gpx_from_women.py"
+  ],
+  "points": [
+    {
+      "id": "bridge_1km",
+      "label": "女子1区の1km地点（橋の上）",
+      "women": {
+        "1": "1.0km地点",
+        "3": "1.0km地点",
+        "5": "1.855km地点"
+      },
+      "men": {
+        "1": "2.0km地点",
+        "3": "1.0km地点",
+        "4": "2.855km地点",
+        "6": "1.855km地点"
+      },
+      "location_note": "南西の曲がり角の直前にある橋の上"
+    },
+    {
+      "id": "D",
+      "label": "D地点",
+      "women": {
+        "1": "スタート",
+        "2": "1.855km・中継",
+        "3": "スタート",
+        "5": "0.855km地点"
+      },
+      "men": {
+        "1": "1.0km地点",
+        "2": "2.855km・中継",
+        "3": "スタート",
+        "4": "1.855km地点",
+        "6": "0.855km地点"
+      },
+      "location_note": "北西の曲がり角より南側の直線上"
+    },
+    {
+      "id": "B",
+      "label": "B地点",
+      "women": {
+        "1": "3.0km・中継",
+        "2": "スタート",
+        "4": "1.0km地点"
+      },
+      "men": {
+        "2": "1.0km地点",
+        "3": "3.0km・中継",
+        "4": "スタート",
+        "5": "1.855km地点"
+      },
+      "location_note": "東側の直線上"
+    },
+    {
+      "id": "A",
+      "label": "A地点",
+      "women": {
+        "1": "2.0km地点",
+        "3": "2.0km・中継",
+        "4": "スタート"
+      },
+      "men": {
+        "1": "3.0km・中継",
+        "2": "スタート",
+        "3": "2.0km地点",
+        "5": "0.855km地点"
+      },
+      "location_note": "南側の直線上"
+    },
+    {
+      "id": "C",
+      "label": "C地点",
+      "women": {
+        "2": "1.0km地点",
+        "4": "2.0km・中継",
+        "5": "スタート"
+      },
+      "men": {
+        "1": "0.145km地点",
+        "2": "2.0km地点",
+        "4": "1.0km地点",
+        "5": "2.855km・中継",
+        "6": "スタート"
+      },
+      "location_note": "女子4→5区／男子5→6区の中継位置。男子1区スタートはCの145m手前（東側）"
+    },
+    {
+      "id": "E",
+      "label": "E地点",
+      "women": {
+        "1": "1.145km地点",
+        "3": "1.145km地点",
+        "5": "2.0km地点"
+      },
+      "men": {
+        "1": "2.145km地点",
+        "3": "1.145km地点",
+        "4": "3.0km・中継",
+        "5": "スタート",
+        "6": "2.0km地点"
+      },
+      "location_note": "橋の先、南側直線上"
+    }
+  ],
+  "generation": {
+    "method": "built-in image_gen",
+    "prompt_path": "output/imagegen/aragyoku-course-common-points-final-prompt.txt"
+  }
+}

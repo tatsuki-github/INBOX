@@ -2914,5 +2914,13 @@
     "source": "input/external/media-manifest.json",
     "corpus": "media-manifest.slim.json",
     "note": "ekiden+analysis 30 items"
+  },
+  {
+    "source": "input/aragyoku/course-points.md",
+    "corpus": "aragyoku/course-points.md"
+  },
+  {
+    "source": "input/aragyoku/course-points.json",
+    "corpus": "aragyoku/course-points.json"
   }
 ]

@@ -85,3 +85,7 @@ Snapshot under `input/external/drive/` (ADR 010). Drive remains source of truth.
 - Multi-MB PDFs & commercial books: stub/skipped + viewUrl
 - Photos/images: INDEX link only
 - Huge Google Docs (Drive manual): skipped body
+
+### 荒玉駅伝 コース図解（追加 2026-09-29）
+
+- [男女コース共通ポイント・橋の上 PNG](https://drive.google.com/file/d/1j9iRk5WAnNVdMyO_fDJX5MaMAVDrESzG/view?usp=drivesdk) — コース動画フォルダ内。ナレッジ: `input/aragyoku/course-points.md`、画像: `input/aragyoku/course-points/aragyoku-course-common-points.png`。
