@@ -1,0 +1,44 @@
+Use case: infographic-diagram
+Primary request: Generate a polished Japanese coaching infographic about 荒玉駅伝 WOMEN'S course, based on the provided actual GPX geometry reference and satellite video frame. Show ONLY five places shared by multiple women's legs: women's leg1 1km area, D, B, A, C. This is a factual course-location diagram, with meaningful exact Japanese distance labels and travel arrows.
+Input images: first geometry-guide.png is the primary factual geometry + text reference, NOT a design to reproduce mechanically. Second women1-1km.png is supporting evidence of the actual southwestern bend and rural fields. Use only subtle flat illustration of fields, not photographic satellite imagery. Preserve road geometry, north-up orientation, checkpoint locations and common direction of travel. Do not invent junctions, roads or branches. All routes at any checkpoint flow in the same direction; relay start/end markers do NOT imply a different road or different direction.
+Composition: high-resolution portrait infographic, approximately 1600x2200 or larger. Two columns, three rows of beautiful cards: row1 overall course locator left, 1km bend right; row2 D left, B right; row3 A left, C right. Keep leg-distance labels large, clean and highly legible. Overall locator should show FULL circuit, with all markers WITHIN the diagram (the guide's D exceeds its viewport: FIX this in your overview by fitting full loop inside it). Overall loop geometry: D northwest, southwestern bend labeled 1km付近, A along southern road, B along eastern road, C along northern road, then back to D. A is on the southern straight, B on eastern straight, C northern road, D below small northwestern bend. Loop runs D→southwestern bend→A→B→C→D, counterclockwise as viewed north-up. Omit the unlabelled finish spur from the overall locator for clarity. Single common-direction arrow per local card. Orange checkpoint circles, teal route arrows, navy titles, white/cream background. Light muted field blocks framing actual roads are okay. Every diagram north-up with small N↑.
+Local road geometries:
+1km card: incoming road descends from near top center slightly toward lower left, bends sharply left from runner's perspective then heads east-southeast to lower right. The 1km marker sits at bend approach a few metres before the corner; note 曲がり角付近. Arrow should follow the road smoothly THROUGH this bend, not a straight diagonal shortcut or a U-turn.
+D card: road enters from upper right westward around curved northwestern bend, then goes south-southwest, D is on straight just below bend. Common arrow downward/southwest. D is NOT a four-way intersection.
+B card: simple almost straight north-northeast road, route upward. No S bend.
+A card: simple west-northwest to east-southeast road, arrow right/down. No intersection at A.
+C card: road along slight bend east-southeast to west-northwest, arrow left/up.
+Text (verbatim):
+Main title: "荒玉駅伝｜女子コースの共通ポイント"
+Subtitle: "複数区間が通る5地点をチェック"
+Overall card title: "全体の位置"
+Overall small text: "D → 1km付近 → A → B → C → D"
+1km card title: "女子1区の1km地点"
+1km small note: "曲がり角付近"
+Rows:
+"女子1区｜1.0km地点"
+"女子3区｜約1.0km地点"
+"女子5区｜約1.85km地点"
+D card title: "D地点"
+Rows:
+"女子1区｜スタート"
+"女子2区｜1.855km・中継"
+"女子3区｜スタート"
+"女子5区｜約0.86km地点"
+B card title: "B地点"
+Rows:
+"女子1区｜3.0km・中継"
+"女子2区｜スタート"
+"女子4区｜約1.0km地点"
+A card title: "A地点"
+Rows:
+"女子1区｜約2.0km地点"
+"女子3区｜2.0km・中継"
+"女子4区｜スタート"
+C card title: "C地点"
+Rows:
+"女子2区｜約1.0km地点"
+"女子4区｜2.0km・中継"
+"女子5区｜スタート"
+Footer: "動画の元GPXをもとに図解。『約』は公式区間距離で補正した概算。"
+Use colored tiny badges consistently for women's legs 1 blue, 2 amber, 3 green, 4 purple, 5 red next to text. Distance numbers MUST not change, missing rows forbidden. Provide an attractive explanatory illustration suitable for sharing with middle school runners. Make text the priority and factual diagram geometry second. No invented place names, claims about hills, or unrelated coaching advice.
