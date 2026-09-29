@@ -5,7 +5,7 @@
   "lap_metres": 4855,
   "men_start_before_C_metres": 145,
   "image_path": "input/aragyoku/course-points/aragyoku-course-common-points.png",
-  "image_sha256": "4e23c42357c7a050f74724d2b263d9bdec1d948c4b0423049060b15ce6f208ad",
+  "image_sha256": "58a767d929e3a0257be0bd9de21d3d0aa4c02bb873176e4a74c1b0ceb00d6186",
   "drive_file_id": "1j9iRk5WAnNVdMyO_fDJX5MaMAVDrESzG",
   "drive_url": "https://drive.google.com/file/d/1j9iRk5WAnNVdMyO_fDJX5MaMAVDrESzG/view?usp=drivesdk",
   "drive_parent_folder_id": "1hR2ouziPiuo6wg7Z0WWJgDuieYakkd9k",
@@ -132,6 +132,7 @@
   "generation": {
     "method": "built-in image_gen",
     "prompt_path": "output/imagegen/aragyoku-course-common-points-final-prompt.txt",
-    "style": "simple 2D road schematic; no satellite photos, farmland or waterways"
+    "style": "simple 2D road schematic; no satellite photos, farmland or waterways",
+    "last_image_edit": "ユーザーの2枚目の白い指定範囲に合わせ、全体図下部の経路順表示帯を削除。"
   }
 }

@@ -1,5 +1,11 @@
 Mode: built-in image_gen / image edit
-Latest edit: show the preceding bend in the E checkpoint inset.
+Latest edit: remove the overview route-order strip indicated by the white mask in the user's second image.
+
+Use case: precise-object-edit. Edit the ORIGINAL Aragyoku infographic supplied by the user as Image #1. Image #2 is a black image with a broad white brush mark showing the area to remove; the white brush is centered over the left overview card's bottom route-order legend. If an earlier generated draft is present, ignore it: that failed draft incorrectly erased the main page title. The main title must be present.
+Target visual element to DELETE: the pale blue rounded rectangular strip across the BOTTOM of the UPPER-LEFT “全体の位置 1周4.855km” card, containing the text “D → 1km（橋） → E → A → B → C → D”. Erase BOTH the route-order text AND the pale blue rounded rectangle/background. Replace only that strip with the same plain white background already inside this card. Do not remove the overview map above it, its orange points, the “1km（橋）” label on the map, the card's navy header, or the card border.
+The brush mark is thick and spills near the D card below; the D地点 navy header and D card must remain intact. Keep the main page title “荒玉駅伝｜男女コースの共通ポイント” at the top. Keep all eight cards, all numeric tables, E inset bend, C relay label, and all other image content intact. No replacement caption, no new element. Output the original infographic with ONLY that overview route-order legend removed.
+
+Prior edit: show the preceding bend in the E checkpoint inset.
 
 Use case: precise-object-edit. 添付の完成した荒玉駅伝の男女コース図を、左下「E地点」の拡大図だけ修正する。
 現在E地点カードの地図は、灰色の道路が左から右へ一直線だけで、手前の曲がり角が写っていない。これを、Eへ向かう手前の南西の曲がり角が分かるようにする。地図エリアの左側に、上／北から下／南へ延びる細い灰色の道路を描き、そこで滑らかに右／東へ曲げ、右へ伸びる灰色の水平直線道路につなぐ。曲がり角はEのマーカーよりも左／手前に置く。Eのオレンジの点と「E」のラベルは曲がった後の水平直線道路上、角から明確に離れた位置に維持する。Eの点を角の頂点に置かない。青い矢印はEの点より右側の直線道路上で右向きのまま。N↑も維持。白背景、細い灰色の道路、中央線なし。川・水路・衛星写真・田畑を追加しない。
