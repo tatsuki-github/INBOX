@@ -1,5 +1,10 @@
 Mode: built-in image_gen / image edit
-Latest edit: remove the overview route-order strip indicated by the white mask in the user's second image.
+Latest edit: remove orange tails from alphabetic labels in the overview.
+
+Use case: precise-object-edit. 添付の荒玉駅伝図の、左上「全体の位置」カード内のアルファベット地点ラベルだけを整える。D、E、A、B、Cのオレンジ色の四角い文字ラベルから、丸いオレンジの地点マーカーへ向けて短く突き出している細いオレンジ色の線、しっぽ、突起、引き出し線をすべて消す。特にAとEとDのラベルに付く小さな突起を消す。アルファベットの四角いラベルは輪郭の整った単純な角丸長方形にして、各地点の丸いオレンジのマーカーとは物理的に独立させる。D、E、A、B、Cの文字・ラベル・丸はすべて残し、道路上の各点の位置も動かさない。男子スタートの吹き出しや青い進行矢印、橋の1kmの文字はそのまま。
+修正は全体の位置カード内の細いオレンジの線やしっぽの削除のみ。右上の橋カードや下のD・B・A・C・E・距離の基準カードを含む他の内容、タイトル、表の全ての距離・区番号、4.855kmと145mは変更しない。全体図下部の経路表示帯は削除された状態を維持。
+
+Prior edit: remove the overview route-order strip indicated by the white mask in the user's second image.
 
 Use case: precise-object-edit. Edit the ORIGINAL Aragyoku infographic supplied by the user as Image #1. Image #2 is a black image with a broad white brush mark showing the area to remove; the white brush is centered over the left overview card's bottom route-order legend. If an earlier generated draft is present, ignore it: that failed draft incorrectly erased the main page title. The main title must be present.
 Target visual element to DELETE: the pale blue rounded rectangular strip across the BOTTOM of the UPPER-LEFT “全体の位置 1周4.855km” card, containing the text “D → 1km（橋） → E → A → B → C → D”. Erase BOTH the route-order text AND the pale blue rounded rectangle/background. Replace only that strip with the same plain white background already inside this card. Do not remove the overview map above it, its orange points, the “1km（橋）” label on the map, the card's navy header, or the card border.

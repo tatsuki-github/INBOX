@@ -9,6 +9,7 @@
 - ローカル画像: `input/aragyoku/course-points/aragyoku-course-common-points.png`
 - 構造化距離対応: `input/aragyoku/course-points.json`
 - 図の全体図下にあった「D → 1km（橋） → E → A → B → C → D」の経路表示帯は、指定画像の白い範囲に従って削除済み。進行順の情報は本ページの本文に保持。
+- 全体図のD・E・A・B・Cのオレンジの文字ラベルから伸びる装飾線は削除し、地点の丸と文字ラベルだけを残す。
 
 ## 確定した地点情報
 
