@@ -1,0 +1,980 @@
+version: 1
+total: 100
+note: |
+  想定質問への定型回答（ADR 059）。回答は正本ナレッジから確定した短文。
+  ヒット時は本文をほぼそのまま返す。未ヒット時のみ RAG/LLM。
+entries:
+  - id: aragyoku-what
+    questions:
+      - 荒玉駅伝って何？
+      - 荒玉中体連駅伝とは？
+      - 荒玉駅伝について教えて
+    answer: |
+      荒玉駅伝は、玉名・荒尾地区の中体連駅伝（通称: 荒玉駅伝 / 荒玉中体連駅伝）です。男子は6区間、女子は5区間です。コース距離は年度によって変わり、男子は2024年に再編されています。
+    sources:
+      - out/analysis/aragyoku-overview.md
+    tags: [aragyoku, meta]
+  - id: aragyoku-2026-when
+    questions:
+      - 今年の荒玉はいつ？
+      - 2026年の荒玉駅伝はいつ？
+      - 荒玉中体連駅伝の日程は？
+    answer: |
+      2026年の荒玉中体連駅伝（玉名荒尾中体連駅伝）は 2026-10-14 です。予備日は 2026-10-15 です。
+    sources:
+      - input/events.2026.yaml
+    tags: [aragyoku, schedule]
+  - id: aragyoku-men-distance
+    questions:
+      - 荒玉男子の区間距離は？
+      - 荒玉駅伝男子の距離を教えて
+      - 男子の区間距離は？
+    answer: |
+      荒玉駅伝男子・現行（2024年以降）の区間距離は、1区3.00km、2区2.855km、3区3.00km、4区3.00km、5区2.855km、6区3.00km（合計17.71km）です。2023年以前は別定義です。
+    sources:
+      - docs/aragyoku-ekiden-distance-definitions.md
+      - out/analysis/aragyoku-overview.md
+    tags: [aragyoku, distance]
+  - id: aragyoku-women-distance
+    questions:
+      - 荒玉女子の区間距離は？
+      - 荒玉駅伝女子の距離は？
+      - 女子の区間距離を教えて
+    answer: |
+      荒玉駅伝女子の区間距離は全年度共通で、1区3.00km、2区1.855km、3区2.00km、4区2.00km、5区3.00kmです。
+    sources:
+      - docs/aragyoku-ekiden-distance-definitions.md
+    tags: [aragyoku, distance]
+  - id: aragyoku-course-image
+    questions:
+      - 荒玉駅伝のコースの画像は？
+      - コース図を見せて
+      - 荒玉の共通ポイントの図
+      - コース図解はどこ？
+    answer: |
+      荒玉駅伝の男女コース共通ポイント図解です（女子1〜5区・男子1〜6区が共有する地点）。
+      https://drive.google.com/file/d/1j9iRk5WAnNVdMyO_fDJX5MaMAVDrESzG/view?usp=drivesdk
+      詳細: 橋の上の1km、A/B/C/D/E、1周4.855km、男子スタートはCの145m手前。
+    sources:
+      - input/aragyoku/course-points.md
+      - input/aragyoku/course-points.json
+    tags: [aragyoku, course]
+  - id: aragyoku-course-points-facts
+    questions:
+      - 荒玉のコース共通ポイントは？
+      - 1周は何km？
+      - 男子スタートはどこ？
+    answer: |
+      荒玉駅伝の男女共通ポイントは、女子1区の1km地点（橋の上）と D・E・A・B・C です。1周は4.855km、男子スタートはCの145m手前です。進行順は D → 1km（橋） → E → A → B → C → D です。
+    sources:
+      - input/aragyoku/course-points.md
+    tags: [aragyoku, course]
+  - id: aragyoku-2025-women-winner
+    questions:
+      - 2025年荒玉駅伝女子の優勝校は？
+      - 去年の荒玉女子優勝は誰？
+      - 2025年女子の優勝は？
+    answer: |
+      2025年荒玉駅伝女子の優勝は玉名、準優勝は南関です。優勝タイムは41:58です。
+    sources:
+      - input/aragyoku/winners-by-year.md
+      - out/analysis/aragyoku_2024_2025_focus_teams.md
+    tags: [aragyoku, result]
+  - id: aragyoku-2025-men-winner
+    questions:
+      - 2025年荒玉駅伝男子の優勝校は？
+      - 去年の荒玉男子優勝は誰？
+      - 2025年男子の優勝は？
+    answer: |
+      2025年荒玉駅伝男子の優勝は菊水（56:17）、準優勝は玉陵（58:02）です。
+    sources:
+      - input/aragyoku/winners-by-year.md
+      - out/analysis/aragyoku-teams/菊水.md
+    tags: [aragyoku, result]
+  - id: aragyoku-2024-women-winner
+    questions:
+      - 2024年荒玉駅伝女子の優勝校は？
+      - 2024年女子の優勝は？
+    answer: |
+      2024年荒玉駅伝女子の優勝は南関（42:25）、準優勝は荒尾三（42:36）です。
+    sources:
+      - input/aragyoku/winners-by-year.md
+      - out/analysis/aragyoku_2024_2025_focus_teams.md
+    tags: [aragyoku, result]
+  - id: aragyoku-2024-men-winner
+    questions:
+      - 2024年荒玉駅伝男子の優勝校は？
+      - 2024年男子の優勝チームは？
+    answer: |
+      2024年荒玉駅伝男子の優勝は南関（56:38）、準優勝は玉高附属（58:13）です。
+    sources:
+      - input/aragyoku/winners-by-year.md
+      - out/analysis/aragyoku_2024_2025_focus_teams.md
+    tags: [aragyoku, result]
+  - id: aragyoku-women-top5-winners
+    questions:
+      - 女子の荒玉駅伝の過去5年間の優勝校、準優勝校は？
+      - 荒玉女子の過去5年の優勝は？
+    answer: |
+      荒玉駅伝女子・直近5年（2021–2025）の優勝・準優勝は次のとおりです。
+      2021: 優勝荒尾四・準優勝荒尾三 / 2022: 優勝長洲・準優勝荒尾四 / 2023: 優勝荒尾三・準優勝荒尾四 / 2024: 優勝南関・準優勝荒尾三 / 2025: 優勝玉名・準優勝南関。
+    sources:
+      - input/aragyoku/winners-by-year.md
+    tags: [aragyoku, result]
+  - id: aragyoku-men-top5-winners
+    questions:
+      - 男子の荒玉駅伝の過去5年間の優勝校は？
+      - 荒玉男子の過去5年の優勝・準優勝は？
+    answer: |
+      荒玉駅伝男子・直近5年（2021–2025）の優勝・準優勝は次のとおりです。
+      2021: 優勝菊水・準優勝荒尾四 / 2022: 優勝荒尾四・準優勝荒尾三 / 2023: 優勝菊水・準優勝荒尾四 / 2024: 優勝南関・準優勝玉高附属 / 2025: 優勝菊水・準優勝玉陵。
+    sources:
+      - input/aragyoku/winners-by-year.md
+    tags: [aragyoku, result]
+  - id: aragyoku-2025-daiming-men
+    questions:
+      - 2025年荒玉駅伝の岱明男子は何位？
+      - 2025年荒玉で岱明男子は？
+      - 去年の荒玉男子で岱明は何位？
+    answer: |
+      2025年荒玉駅伝男子の岱明は6位・総合59:08です。区間は倉田裕斗・松野凛空・今村昇磨・佐藤央琉・山本哲瑠・案浦竜士です。
+    sources:
+      - out/analysis/aragyoku-teams/岱明.md
+      - out/analysis/aragyoku_2024_2025_focus_teams.md
+    tags: [aragyoku, daiming]
+  - id: aragyoku-2025-daiming-women
+    questions:
+      - 2025年荒玉駅伝の岱明女子は何位？
+      - 去年の荒玉女子で岱明は？
+    answer: |
+      2025年荒玉駅伝女子の岱明は7位・総合45:22です（2024年は6位・45:06）。
+    sources:
+      - out/analysis/aragyoku-teams/岱明.md
+      - out/analysis/aragyoku_2024_2025_focus_teams.md
+    tags: [aragyoku, daiming]
+  - id: aragyoku-daiming-yoy
+    questions:
+      - 2024と2025の荒玉で岱明の前年比は？
+      - 岱明の荒玉2024-2025はどうだった？
+    answer: |
+      岱明の荒玉駅伝前年比です。男子は2024年15位65:15 → 2025年6位59:08（-6:07、順位+9）。女子は2024年6位45:06 → 2025年7位45:22（+16秒、順位-1）。
+    sources:
+      - out/analysis/aragyoku_2024_2025_focus_teams.md
+    tags: [aragyoku, daiming]
+  - id: aragyoku-2025-daiming-men-gap
+    questions:
+      - 2025年岱明男子の優勝との差は？
+      - 岱明男子と優勝の差は？
+    answer: |
+      2025年荒玉駅伝男子の岱明は優勝・菊水（56:17）に対し +2:51（59:08）です。2024年は優勝・南関に対し +8:37 でした。
+    sources:
+      - out/analysis/aragyoku_2024_2025_focus_teams.md
+    tags: [aragyoku, daiming]
+  - id: aragyoku-tamana-fuzoku
+    questions:
+      - 玉名付属中の荒玉駅伝2024と2025は？
+      - 玉高附属の荒玉はどうだった？
+    answer: |
+      玉名付属中は transcript 上「玉高附属」と同一です。男子: 2024年2位58:13 → 2025年3位58:37。女子: 2024年5位43:50 → 2025年10位46:55。
+    sources:
+      - out/analysis/aragyoku_2024_2025_focus_teams.md
+    tags: [aragyoku, team]
+  - id: aragyoku-tensui-record
+    questions:
+      - 天水中の荒玉駅伝で区間新は誰？
+      - 天水の区間新は？
+    answer: |
+      2025年荒玉駅伝男子2区・山本悠斗（天水・1年）が 8:37 で区間賞・区間新です。
+    sources:
+      - out/analysis/aragyoku_2024_2025_focus_teams.md
+      - out/analysis/aragyoku_leg_awards.md
+    tags: [aragyoku, team]
+  - id: aragyoku-ariake
+    questions:
+      - 有明中の荒玉駅伝2024-2025の分析は？
+      - 有明の荒玉はどうだった？
+    answer: |
+      有明の荒玉駅伝は、男子11位→12位、女子13位→12位です。詳細は 2024–2025 深掘り分析（有明節）を参照してください。
+    sources:
+      - out/analysis/aragyoku_2024_2025_focus_teams.md
+    tags: [aragyoku, team]
+  - id: aragyoku-focus-four
+    questions:
+      - 2024年と2025年の荒玉駅伝で岱明・玉名付属・天水・有明はどうだった？
+      - 4校の荒玉比較は？
+    answer: |
+      2024–2025の深掘り対象4校です。岱明男子は15位→6位と大幅上昇、女子は6位→7位。玉高附属男子は2位→3位、女子は5位→10位。天水男子は14位維持、有明は男子11→12位・女子13→12位。詳細は aragyoku_2024_2025_focus_teams.md です。
+    sources:
+      - out/analysis/aragyoku_2024_2025_focus_teams.md
+    tags: [aragyoku, analysis]
+  - id: aragyoku-men2-meet-record
+    questions:
+      - 荒玉駅伝の男子2区の大会区間記録は誰？
+      - 男子2区の大会記録は？
+    answer: |
+      荒玉駅伝男子2区の大会区間記録（ボード上部・2025年表示）は 8:41、保持者は荒木琉偉（三加和）/R6 です。当日の区間賞・区間新とは別概念です。
+    sources:
+      - out/analysis/aragyoku_meet_records.md
+    tags: [aragyoku, record]
+  - id: aragyoku-2025-men-meet-record
+    questions:
+      - 2025年荒玉駅伝男子の総合大会記録は？
+      - 2025年男子の大会記録は？
+    answer: |
+      2025年荒玉駅伝男子ボード上部の総合大会記録は 56:38（南関中 / R6）です。2025年優勝タイム（菊水56:17）とは別概念の場合があります。
+    sources:
+      - out/analysis/aragyoku_meet_records.md
+    tags: [aragyoku, record]
+  - id: aragyoku-2025-women-meet-record
+    questions:
+      - 2025年荒玉駅伝女子の総合大会記録は？
+      - 女子の大会記録は？
+    answer: |
+      2025年荒玉駅伝女子ボード上部の総合大会記録は 40:58（玉名中 / H19）です。
+    sources:
+      - out/analysis/aragyoku_meet_records.md
+    tags: [aragyoku, record]
+  - id: aragyoku-2025-men-leg-awards
+    questions:
+      - 2025年の荒玉駅伝の区間賞の名前と学年は？
+      - 2025年荒玉男子の区間賞は？
+    answer: |
+      2025年荒玉駅伝男子の区間賞です。1区江口大尊（3・荒尾三）9:18、2区山本悠斗（1・天水）8:37、3区草野瑠唯（2・玉高附属）9:14、4区辻本愛琉（3・菊水）9:25、5区柿本晴仁（1・玉陵）9:35、6区隈部侑成（2・菊水）9:12（いずれも区間新）。
+    sources:
+      - out/analysis/aragyoku_leg_awards.md
+    tags: [aragyoku, award]
+  - id: aragyoku-2025-women-leg-awards
+    questions:
+      - 2025年荒玉女子の区間賞は？
+      - 2025年女子の区間賞の名前は？
+    answer: |
+      2025年荒玉駅伝女子の区間賞は、1区坂井優花（3・菊水）10:05、2区内田愛祐（3・玉名）6:43、3区福山結衣（1・南関）6:57 です（以降の区も aragyoku_leg_awards.md を正本とします）。
+    sources:
+      - out/analysis/aragyoku_leg_awards.md
+    tags: [aragyoku, award]
+  - id: aragyoku-top2-counts
+    questions:
+      - 荒玉駅伝で2位までに入った学校と回数は？
+      - 2位以内の学校回数は？
+    answer: |
+      荒玉駅伝（2012–2025）で総合2位以内の回数が多い学校は、玉名15回、荒尾三9回、菊水8回、荒尾四7回などです。正本は aragyoku_top2_finish_counts.md です。
+    sources:
+      - out/analysis/aragyoku_top2_finish_counts.md
+    tags: [aragyoku, analysis]
+  - id: aragyoku-kikusui-leg1
+    questions:
+      - 菊水の荒玉駅伝の1区は誰？
+      - 2025年菊水男子1区は？
+    answer: |
+      2025年荒玉駅伝男子・菊水の1区は松浦眞大（3年）9:30 です。菊水は総合1位・56:17 でした。
+    sources:
+      - out/analysis/aragyoku-teams/菊水.md
+    tags: [aragyoku, team]
+  - id: aragyoku-unnamed-leg
+    questions:
+      - 選手は何区を走った？
+      - 何区を走ったか教えて
+    answer: |
+      大会名のない「何区を走った？」は荒玉駅伝のチーム正本（out/analysis/aragyoku-teams/）を優先します。選手名と大会年が分かると特定できます。例: 「2025年荒玉男子の岱明5区は？」→ 山本哲瑠。
+    sources:
+      - out/analysis/aragyoku-teams/岱明.md
+      - docs/adr/047-unnamed-leg-athlete-routing.md
+    tags: [aragyoku, routing]
+  - id: aragyoku-team-history
+    questions:
+      - 〇〇中の荒玉駅伝の過去の順位は？
+      - 学校別の荒玉歴代はどこ？
+    answer: |
+      学校別の荒玉駅伝歴代順位・区間選手は out/analysis/aragyoku-teams/{チーム}.md が正本です。玉名付属は玉高附属.md を見てください。
+    sources:
+      - out/analysis/aragyoku-teams/岱明.md
+    tags: [aragyoku, team]
+  - id: aragyoku-history-boards
+    questions:
+      - 荒玉駅伝の歴代は？
+      - 荒玉の歴代結果はどこ？
+    answer: |
+      荒玉駅伝の歴代は、優勝・準優勝一覧（winners-by-year.md）、チーム別 MD、結果ボード画像（Drive フォルダ）にあります。特定年なら「2025年荒玉男子の結果ボードを見せて」のように年を付けて聞いてください。
+    sources:
+      - input/aragyoku/winners-by-year.md
+      - docs/adr/043-aragyoku-line-board-images.md
+    tags: [aragyoku, result]
+  - id: aragyoku-board-2025-men
+    questions:
+      - 2025年荒玉男子の結果ボードを見せて
+      - 2025年男子の結果ボードは？
+    answer: |
+      2025年荒玉駅伝男子の結果ボード画像を表示します（LINE Image）。テキスト回答とあわせてボードを確認してください。正本 ID は transcripts の source_drive_id です。
+    sources:
+      - backend/data/aragyoku-board-images.json
+      - docs/adr/043-aragyoku-line-board-images.md
+    tags: [aragyoku, board]
+  - id: aragyoku-pace-men1-10min
+    questions:
+      - 荒玉男子1区を10分で走るとペースは？
+      - 男子1区10分のペースは？
+    answer: |
+      荒玉男子1区は現行3.00kmです。10:00 で走るとキロ換算は約 3:20/km です（10:00 ÷ 3.00）。
+    sources:
+      - docs/aragyoku-ekiden-distance-definitions.md
+      - out/analysis/aragyoku-overview.md
+    tags: [aragyoku, pace]
+  - id: aragyoku-average-pace
+    questions:
+      - 荒玉駅伝の平均ペースは？
+      - 全チームの平均ペースを全て提示して
+    answer: |
+      荒玉駅伝のチーム平均ペース一覧は out/analysis の平均ペース分析（全チーム提示系）を正本とします。性別・年度を指定すると絞り込みやすいです。例: 「2025年男子の平均ペース」。
+    sources:
+      - out/analysis/aragyoku-overview.md
+    tags: [aragyoku, pace]
+  - id: aragyoku-winner-pace
+    questions:
+      - 男子1位の平均ペースは？
+      - 優勝の平均ペースは？
+    answer: |
+      2025年荒玉駅伝男子優勝・菊水は総合56:17 / 17.71km です。平均ペースは約 3:10/km（56:17÷17.71）です。
+    sources:
+      - out/analysis/aragyoku-teams/菊水.md
+      - docs/aragyoku-ekiden-distance-definitions.md
+    tags: [aragyoku, pace]
+  - id: aragyoku-winners-all
+    questions:
+      - 荒玉駅伝の過去の優勝校を全て提示して
+      - 優勝校一覧は？
+    answer: |
+      荒玉駅伝の年度別優勝・準優勝は input/aragyoku/winners-by-year.md が正本です。直近では2025年男子菊水・女子玉名、2024年男女とも南関です。
+    sources:
+      - input/aragyoku/winners-by-year.md
+    tags: [aragyoku, result]
+  - id: aragyoku-runner-up
+    questions:
+      - 荒玉駅伝の準優勝校は？
+      - 2025年の準優勝は？
+    answer: |
+      2025年荒玉駅伝の準優勝は、男子・玉陵、女子・南関です。
+    sources:
+      - input/aragyoku/winners-by-year.md
+    tags: [aragyoku, result]
+  - id: aragyoku-order-legs
+    questions:
+      - オーダー・区間は？
+      - 荒玉の区間オーダーはどこ？
+    answer: |
+      荒玉駅伝の区間・オーダーは、チーム別 MD（out/analysis/aragyoku-teams/）と大会フォルダのオーダー資料を正本とします。なごみの区間オーダーは金栗駅伝とは別です。
+    sources:
+      - out/analysis/aragyoku-teams/岱明.md
+      - docs/adr/048-nagomi-order-not-kanaguri-ekiden.md
+    tags: [aragyoku, order]
+  - id: aragyoku-leg-award-generic
+    questions:
+      - 荒玉駅伝の区間賞は誰？
+      - 区間賞を教えて
+    answer: |
+      区間賞は年度・性別の指定があると正確です。2025年男子の区間賞は全区区間新で、2区は天水・山本悠斗 8:37 などです。詳細表は aragyoku_leg_awards.md です。
+    sources:
+      - out/analysis/aragyoku_leg_awards.md
+    tags: [aragyoku, award]
+  - id: aragyoku-trial-20260929
+    questions:
+      - 荒玉駅伝試走の結果は？
+      - 9/29の試走結果は？
+    answer: |
+      2026-09-29 岱明中 荒玉駅伝試走結果です。松野1区3km 9:48、山本2区2.855km 9:52、今村3区3km 10:15、田上4区3km 10:14。5区一斉2.855kmは松本10:11・中尾快叶10:12。
+    sources:
+      - input/events.2026.yaml
+      - out/analysis/2026-09-29_aragyoku_trial_results.md
+    tags: [aragyoku, practice]
+  - id: aragyoku-sb-preview-where
+    questions:
+      - 荒玉のSB予想はどこ？
+      - 荒玉駅伝の予想表は？
+    answer: |
+      2026年荒玉中体連駅伝の岱明確定オーダー・現行数式予想・校別展開は、大会フォルダ input/idaten-corpus/drive-text/大会/2026年度/1014-1015_荒玉中体連駅伝/ にあります。
+    sources:
+      - input/events.2026.yaml
+    tags: [aragyoku, preview]
+  - id: nagomi-what
+    questions:
+      - なごみ駅伝は？
+      - なごみ大会って何？
+      - 金栗四三生誕の地なごみ大会は？
+    answer: |
+      なごみ駅伝は「中学駅伝金栗四三生誕の地なごみ大会」です。2026年は第12回で 2026-09-20 開催でした。荒玉地区結果や成績表は大会フォルダにあります。
+    sources:
+      - input/events.2026.yaml
+      - input/idaten-corpus/drive-text/大会/2026年度/0920_中学駅伝金栗四三生誕の地なごみ大会/荒玉地区の結果.md
+    tags: [nagomi]
+  - id: nagomi-2026-result
+    questions:
+      - 2026年のなごみ駅伝の結果は？
+      - なごみ駅伝の結果は？
+      - 昨日のなごみ駅伝の結果
+    answer: |
+      2026年なごみ駅伝（2026-09-20）の荒玉地区結果です。女子・岱明Aは6位30:18。男子・岱明Aは18位42:39。成績表PDF:
+      女子: https://drive.google.com/file/d/1Z1NPn0w-6O18CrKcv0keqymhv39N9Ydi/view
+      男子: https://drive.google.com/file/d/1Yyv2TLVAfSjSE296Q6xrEMm0J2QbQF21/view
+      原本フォルダ: https://drive.google.com/drive/folders/1k-zW0irJ-OjDjqQwUQLZIs4C6PfuR211
+    sources:
+      - input/idaten-corpus/drive-text/大会/2026年度/0920_中学駅伝金栗四三生誕の地なごみ大会/荒玉地区の結果.md
+    tags: [nagomi, result]
+  - id: nagomi-2026-pdf
+    questions:
+      - なごみ駅伝の結果のPDF渡して
+      - なごみの成績表PDFは？
+    answer: |
+      なごみ駅伝2026の成績表PDFです。
+      ・女子成績表PDF: https://drive.google.com/file/d/1Z1NPn0w-6O18CrKcv0keqymhv39N9Ydi/view
+      ・男子成績表PDF: https://drive.google.com/file/d/1Yyv2TLVAfSjSE296Q6xrEMm0J2QbQF21/view
+      ・原本フォルダ: https://drive.google.com/drive/folders/1k-zW0irJ-OjDjqQwUQLZIs4C6PfuR211
+    sources:
+      - docs/adr/054-primary-source-links-in-line-answers.md
+    tags: [nagomi, pdf]
+  - id: nagomi-2025-result
+    questions:
+      - 2025年のなごみ駅伝の結果は？
+      - 去年のなごみは？
+    answer: |
+      2025年なごみ駅伝の結果・予実比較は大会フォルダおよび out/analysis のなごみ関連分析を正本とします。2026年結果とは別です。
+    sources:
+      - docs/adr/049-nagomi-2025-sb-vs-actual.md
+    tags: [nagomi, result]
+  - id: nagomi-order
+    questions:
+      - なごみ駅伝の区間オーダーは？
+      - なごみのオーダーリストは？
+    answer: |
+      なごみ駅伝の区間オーダーは、大会フォルダの男女「区間オーダーリスト.md」が正本です。金栗駅伝のオーダーとは別です。
+    sources:
+      - input/idaten-corpus/drive-text/大会/2026年度/0920_中学駅伝金栗四三生誕の地なごみ大会/男子区間オーダーリスト.md
+      - docs/adr/048-nagomi-order-not-kanaguri-ekiden.md
+    tags: [nagomi, order]
+  - id: nagomi-gap
+    questions:
+      - なごみ駅伝の予想と実績の差は？
+      - なごみの予実ギャップは？
+    answer: |
+      なごみ駅伝のSB予想と実績の差は、大会フォルダの予実比較.md と SBギャップ分析（ADR 052）を正本とします。
+    sources:
+      - input/idaten-corpus/drive-text/大会/2026年度/0920_中学駅伝金栗四三生誕の地なごみ大会/予実比較.md
+      - docs/adr/052-nagomi-sb-gap-analysis.md
+    tags: [nagomi, analysis]
+  - id: junior-2026-result
+    questions:
+      - ジュニア駅伝の結果は？
+      - 県ジュニア駅伝の結果は？
+      - 2026年ジュニア駅伝の結果
+    answer: |
+      2026年・第3回県ジュニア駅伝（2026-09-26）の岱明結果です。女子CS 12位36:52、男子CS 14位44:23。詳細は岱明の結果.md。
+      大会フォルダ: https://drive.google.com/drive/folders/1pUww3wPlyy4IoSNUy58qK9yhCRzeU_-2
+      結果PDFの索引は荒玉地区_ジュニア結果抜粋.md を参照してください。
+    sources:
+      - input/idaten-corpus/drive-text/大会/2026年度/0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）/岱明の結果.md
+    tags: [junior, result]
+  - id: junior-2026-daiming-detail
+    questions:
+      - 2026年ジュニア駅伝の岱明は？
+      - ジュニアで岱明はどうだった？
+    answer: |
+      2026年ジュニア駅伝・岱明です。女子チャンピオンシップ12位36:52（村上・高田・増岡・山﨑）。男子チャンピオンシップ14位44:23（松野・山本・今村・中尾・田上）。対南関男子Aは+8秒でした。
+    sources:
+      - input/idaten-corpus/drive-text/大会/2026年度/0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）/岱明の結果.md
+    tags: [junior, daiming]
+  - id: junior-2025-result
+    questions:
+      - 去年のジュニア駅伝の岱明の結果は？
+      - 2025年ジュニア駅伝の結果は？
+    answer: |
+      2025年・第2回熊本県ジュニア駅伝の岱明です。女子チャレンジ優勝36:47、男子チャレンジ優勝45:07。
+      結果PDF（最大4件）:
+      ・結果_女子チャンピオンシップ: https://drive.google.com/file/d/1peANqtTi_cg05junkSpH9LWMaK0QYD3p/view
+      ・結果_男子チャンピオンシップ: https://drive.google.com/file/d/1SEYTjCmXsvGwP8aylgeU9jLgSC54jOZc/view
+      ・結果_女子チャレンジ: https://drive.google.com/file/d/1kxOae7UFb8Im5nS4-OClvRJMuhiifZc9/view
+      ・結果_男子チャレンジ: https://drive.google.com/file/d/1Xm-_z4TL8sMp3X_AKz1zLi20xGUTkWHP/view
+      原本フォルダ: https://drive.google.com/drive/folders/1GLBlWzfFByYgzuK96T-BzRP2yIXuUbK5
+    sources:
+      - input/idaten-corpus/drive-text/大会/2025年度/0927_第２回熊本県ジュニア駅伝競走大会/岱明の結果.md
+    tags: [junior, result, pdf]
+  - id: junior-2025-pdf
+    questions:
+      - ジュニア駅伝の結果PDF
+      - 県ジュニアの結果PDFを見せて
+      - ジュニアの成績PDFは？
+    answer: |
+      ジュニア駅伝の結果PDFです（2025年大会・Drive、最大4件）。
+      ・女子チャンピオンシップ: https://drive.google.com/file/d/1peANqtTi_cg05junkSpH9LWMaK0QYD3p/view
+      ・男子チャンピオンシップ: https://drive.google.com/file/d/1SEYTjCmXsvGwP8aylgeU9jLgSC54jOZc/view
+      ・女子チャレンジ: https://drive.google.com/file/d/1kxOae7UFb8Im5nS4-OClvRJMuhiifZc9/view
+      ・男子チャレンジ: https://drive.google.com/file/d/1Xm-_z4TL8sMp3X_AKz1zLi20xGUTkWHP/view
+      2026年大会フォルダ: https://drive.google.com/drive/folders/1pUww3wPlyy4IoSNUy58qK9yhCRzeU_-2
+    sources:
+      - input/idaten-corpus/drive-text/大会/2025年度/0927_第２回熊本県ジュニア駅伝競走大会/結果_男子チャンピオンシップ.pdf.md.meta.json
+    tags: [junior, pdf]
+  - id: junior-when-2026
+    questions:
+      - ジュニア駅伝はいつ？
+      - 県ジュニアの日程は？
+    answer: |
+      2026年の第3回県ジュニア駅伝（第４回県ジュニア陸上）は 2026-09-26 です。
+    sources:
+      - input/events.2026.yaml
+    tags: [junior, schedule]
+  - id: junior-not-aragyoku
+    questions:
+      - ジュニアと荒玉は同じ？
+      - ジュニア駅伝は荒玉？
+    answer: |
+      別大会です。ジュニア駅伝は県大会（例: 2026-09-26）、荒玉駅伝は玉名荒尾中体連駅伝（2026-10-14）です。結果・オーダーの正本フォルダも別です。
+    sources:
+      - input/events.2026.yaml
+    tags: [junior, meta]
+  - id: meet-result-url-generic
+    questions:
+      - 県中体連の結果URLは？
+      - 大会の結果URLはどこ？
+    answer: |
+      公式結果ページのURLは記録CSV由来の索引（meet-result-urls.json）から付与します。大会名と年を具体的に書いてください。例: 「2025年県中体連の結果URLは？」
+    sources:
+      - docs/adr/020-meet-result-urls.md
+    tags: [meet, url]
+  - id: youkou-generic
+    questions:
+      - 開催要項は？
+      - 要項を見せて
+    answer: |
+      開催要項は各大会フォルダの開催要項.md / PDF が正本です。大会名を指定してください。例: なごみ駅伝、ジュニア駅伝、荒玉中体連駅伝。
+    sources:
+      - input/idaten-corpus/drive-text/大会/2026年度/0920_中学駅伝金栗四三生誕の地なごみ大会/開催要項.md
+    tags: [meet, youkou]
+  - id: aragyoku-region-junior-excerpt
+    questions:
+      - ジュニア駅伝の荒玉地区の結果は？
+      - 荒玉地区のジュニア結果は？
+    answer: |
+      2026年ジュニア駅伝の荒玉地区全選手・全カテゴリ結果は、大会フォルダの荒玉地区の結果.md が正本です。PDF照合メモは荒玉地区_ジュニア結果抜粋.md です。
+    sources:
+      - input/idaten-corpus/drive-text/大会/2026年度/0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）/荒玉地区の結果.md
+    tags: [junior, result]
+  - id: sb-3000-fastest
+    questions:
+      - 荒玉地区で3000mが一番速いのは？
+      - 男子3000m最速は誰？
+    answer: |
+      2026年度登録ベースの荒玉地区男子3000m SB最速は、隈部侑成（金栗PROJECT）8:52.46（2026/09/12）です。
+    sources:
+      - out/analysis/2026_aragyoku_men_3000m_sb_ranking.md
+    tags: [sb, ranking]
+  - id: sb-1500-top20
+    questions:
+      - 今年の荒玉地区の男子1500mSBランキングトップ20は？
+      - 男子1500mトップ20は？
+    answer: |
+      2026年度・荒玉地区男子1500m SB個人トップは隈部侑成（金栗PROJECT）4:11.60 です。トップ20表は 2026_aragyoku_men_1500m_sb_individual_top20.md が正本です。
+    sources:
+      - out/analysis/2026_aragyoku_men_1500m_sb_individual_top20.md
+    tags: [sb, ranking]
+  - id: sb-atrc
+    questions:
+      - ATRCの選手の全記録は？
+      - ATRC所属の記録一覧
+    answer: |
+      ATRC 所属選手のトラック記録一覧は out/analysis/arato-tamana-teams/ATRC.md が正本です。
+    sources:
+      - out/analysis/arato-tamana-teams/ATRC.md
+    tags: [sb, team]
+  - id: sb-kanaguri-project
+    questions:
+      - 金栗PROJECT所属選手の全記録
+      - 金栗PROJECTの記録一覧は？
+    answer: |
+      金栗PROJECT 所属選手の全記録は out/analysis/arato-tamana-teams/金栗PROJECT.md が正本です。駅伝開催要項フォルダは使いません。
+    sources:
+      - out/analysis/arato-tamana-teams/金栗PROJECT.md
+    tags: [sb, team]
+  - id: sb-nankan
+    questions:
+      - 南関中の所属選手の記録一覧
+      - 南関中のSBは？
+    answer: |
+      南関中の所属選手記録一覧は out/analysis/arato-tamana-teams/ 配下の南関中ダイジェストを正本とします。
+    sources:
+      - out/analysis/arato-tamana-teams/南関中.md
+    tags: [sb, team]
+  - id: sb-takada-mana
+    questions:
+      - 高田麻那の記録は？
+      - 高田麻那のSBは？
+    answer: |
+      高田麻那（文徳高）の記録は out/analysis/athletes/takada-mana.md と SB データベースを正本とします。岱明の高田麻由とは別人です。
+    sources:
+      - out/analysis/athletes/takada-mana.md
+    tags: [sb, athlete]
+  - id: sb-women800-daiming
+    questions:
+      - 女子800mで岱明の上位3人平均は？
+      - 岱明女子800mの平均は？
+    answer: |
+      女子800mの学校別上位3人平均は 2026_women_800m_1500m_pb_school_ranking.md を正本とします（個人SB行より学校別正本を優先）。
+    sources:
+      - out/analysis/2026_women_800m_1500m_pb_school_ranking.md
+    tags: [sb, school]
+  - id: sb-men1500-school
+    questions:
+      - 男子1500m学校別ランキングは？
+      - 1500mの学校ランキングは？
+    answer: |
+      男子1500m学校別ランキング（上位4人平均）は 2026_men_1500m_pb_school_ranking.md が正本です。
+    sources:
+      - out/analysis/2026_men_1500m_pb_school_ranking.md
+    tags: [sb, school]
+  - id: sb-middle-generic
+    questions:
+      - 中学生SBは？
+      - 中学生の自己ベストはどこ？
+    answer: |
+      中学生SBはコーパス sb/中学生SB.csv（全所属・行単位）が正本です。選手名と距離を書いてください。例: 「松野凛空の1500m自己ベストは？」
+    sources:
+      - docs/adr/022-sb-csv-row-qa.md
+    tags: [sb]
+  - id: sb-athlete-generic
+    questions:
+      - 選手の記録は？
+      - 自己ベストを教えて
+    answer: |
+      選手の記録は、選手名と距離（例: 1500m）を指定すると SB CSV / 所属別ダイジェストから答えます。曖昧な場合は聞き方の例を返します。
+    sources:
+      - docs/adr/021-clarify-concrete-examples.md
+    tags: [sb, clarify]
+  - id: sb-matsuno-1500
+    questions:
+      - 松野凛空の1500m自己ベストは？
+      - 松野の1500は？
+    answer: |
+      松野凛空の1500m自己ベストは 4:36.05 です（評価用正本・SBコーパス）。最新採用SBは年度更新で変わる場合があります。
+    sources:
+      - backend/data/eval-200q/questions.json
+    tags: [sb, athlete]
+  - id: sb-anpura-1500
+    questions:
+      - 案浦竜士の1500m自己ベストは？
+      - 案浦の1500は？
+    answer: |
+      案浦竜士の1500m自己ベストは 4:49.63 です（評価用正本・SBコーパス）。
+    sources:
+      - backend/data/eval-200q/questions.json
+    tags: [sb, athlete]
+  - id: sb-sato-1500
+    questions:
+      - 佐藤央琉の1500m自己ベストは？
+      - 佐藤央琉の1500は？
+    answer: |
+      佐藤央琉の1500m自己ベストは 4:50.24 です（評価用正本・SBコーパス）。
+    sources:
+      - backend/data/eval-200q/questions.json
+    tags: [sb, athlete]
+  - id: sb-murakami-1500
+    questions:
+      - 村上咲稀の1500m自己ベストは？
+      - 村上の1500は？
+    answer: |
+      村上咲稀の1500m自己ベストは 5:05.65 です（評価用正本・SBコーパス）。
+    sources:
+      - backend/data/eval-200q/questions.json
+    tags: [sb, athlete]
+  - id: athlete-team-profiles
+    questions:
+      - 選手のプロフィールやチーム構成は？
+      - 部員のプロフィールは？
+    answer: |
+      2026年度岱明の選手プロフィール・学年・所属と大会記録の接続は input/athlete-team-profiles.json が正本です（ADR 057）。
+    sources:
+      - input/athlete-team-profiles.json
+      - docs/adr/057-athlete-team-profiles.md
+    tags: [athlete, profile]
+  - id: calendar-today
+    questions:
+      - 今日の予定は？
+      - 本日の予定を教えて
+    answer: |
+      今日の予定は input/events の当日イベントが正本です。日付を「〇月〇日の予定は？」のように指定しても検索できます。いだてん岱明の練習・大会予定が対象です。
+    sources:
+      - input/events.2026.yaml
+    tags: [calendar]
+  - id: calendar-date
+    questions:
+      - 〇月〇日の予定は？
+      - 9月20日の予定は？
+      - 10月14日の予定は？
+    answer: |
+      日付の予定は events YAML が正本です。2026-09-20 はなごみ駅伝、2026-09-26 は県ジュニア駅伝、2026-10-14 は荒玉中体連駅伝です。
+    sources:
+      - input/events.2026.yaml
+    tags: [calendar]
+  - id: practice-menu
+    questions:
+      - 練習メニューの中身は？
+      - 今日の練習は？
+      - 練習内容は？
+    answer: |
+      練習メニューは practice 付きイベントと practice.json / コーパス practice/ が正本です。日付を指定するとその日のメニューを引けます。
+    sources:
+      - docs/data-model.md
+    tags: [practice]
+  - id: practice-absentees
+    questions:
+      - 欠席者は誰？
+      - 今日の欠席は？
+    answer: |
+      欠席者は practice_absentees.csv と events YAML の absentees が正本です。日付を指定してください。
+    sources:
+      - input/events.2026.yaml
+    tags: [practice]
+  - id: roster
+    questions:
+      - 部員名簿は？
+      - 名簿を見せて
+    answer: |
+      部員名簿・選手一覧はコーパスの名簿および athlete-team-profiles を正本とします。個人の連絡先は扱いません。
+    sources:
+      - input/athlete-team-profiles.json
+    tags: [roster]
+  - id: track-lap
+    questions:
+      - 岱明のトラック1周は？
+      - トラックの周長は？
+    answer: |
+      岱明のトラック1周の距離定義は、練習・ペース計算で使うトラック周長ナレッジ（概要・距離定義）に従います。詳細な運用値が必要な場合はコーチ確認ください。
+    sources:
+      - out/analysis/aragyoku-overview.md
+    tags: [practice]
+  - id: silver-mat
+    questions:
+      - 銀マット・合同練習・保護者連絡は？
+      - 合同練習の連絡は？
+    answer: |
+      銀マット・合同練習・保護者連絡などの運用メモは、コーパスの個人メモ・練習連絡を正本とします。具体的な日付や件名があると引けます。
+    sources:
+      - input/idaten-corpus/drive-text
+    tags: [ops]
+  - id: arita-practice
+    questions:
+      - 有田先輩の練習・補強の考え方は？
+      - 有田先輩の補強は？
+    answer: |
+      有田先輩の練習・補強の考え方はコーパス内の関連メモ・資料を正本とします。該当ノートを指定して聞いてください。
+    sources:
+      - input/idaten-corpus/drive-text
+    tags: [practice]
+  - id: injury
+    questions:
+      - ケガ・障害は？
+      - 怪我について教えて
+      - RRIは？
+    answer: |
+      ケガ・障害（RRI）の一般論はコーパスの障害・回復系資料を案内します。個人の診断や治療方針は答えられません。症状がある場合はコーチ・医療機関に確認してください。
+    sources:
+      - docs/adr/016-kg-first-idaten-qa.md
+    tags: [injury]
+  - id: ai-practice
+    questions:
+      - AI で練習を作るには？
+      - 練習メニューをAIで作りたい
+    answer: |
+      AI練習生成は docs/ai-practice-generation.md と ADR 001 の流れに従います。カレンダー・テンプレ・制約を入力に練習シートを生成します。
+    sources:
+      - docs/ai-practice-generation.md
+      - docs/adr/001-ai-practice-generation-architecture.md
+    tags: [ai, practice]
+  - id: tamana-weather
+    questions:
+      - 玉名の天気データはどう更新する？
+      - 天気データの更新は？
+    answer: |
+      玉名の天気データ更新手順はコーパス / 運用ドキュメントの tamana-weather 系を正本とします。一般の天気予報そのものは回答対象外です。
+    sources:
+      - docs/adr/016-kg-first-idaten-qa.md
+    tags: [ops]
+  - id: practice-daiming-mode
+    questions:
+      - 練習実績モードとは？
+      - 実績入力モードは？
+    answer: |
+      2026-09-19以降、いだてん岱明の練習メニュー予定は実績入力モードへ移行しています（残り練習計画メモ参照）。予定の追加より実績の記録が中心です。
+    sources:
+      - input/events.2026.yaml
+      - docs/adr/037-daiming-practice-actuals-mode.md
+    tags: [practice]
+  - id: daiming-club-schools
+    questions:
+      - 荒玉クラブ所属生徒の中学校は？
+      - クラブ生徒の学校振分は？
+    answer: |
+      荒玉クラブ所属生徒の中学校振分メモは events のメモ「荒玉クラブ所属生徒の中学校」が正本です。不明は不明分類とします。
+    sources:
+      - input/events.2026.yaml
+    tags: [ops]
+  - id: competitor-analysis
+    questions:
+      - 荒玉競合分析は？
+      - 競合分析を見せて
+    answer: |
+      荒玉競合分析メモは events / 分析資料を正本とします。学校名を指定するとチーム別 MD や SB ランキングと合わせて案内できます。
+    sources:
+      - input/events.2026.yaml
+      - out/analysis/aragyoku_2024_2025_focus_teams.md
+    tags: [analysis]
+  - id: schedule-kumamoto-ekiden
+    questions:
+      - 熊本県駅伝の予定は？
+      - 県駅伝はいつ？
+    answer: |
+      熊本県駅伝など県大会の日程は events YAML と大会フォルダを正本とします。大会名を具体的に指定してください。
+    sources:
+      - input/events.2026.yaml
+    tags: [calendar]
+  - id: gz-pace
+    questions:
+      - GZ / 閾値ペースは？
+      - GZペースを教えて
+      - 閾値ペースは？
+    answer: |
+      GZ（閾値）ペースは Daniels VDOT の T ペースから決定論的に導出します（ADR 008 / ADR 002）。VDOT やレースタイムを指定すると算出できます。例の対応: VDOT 53.7 → T 約4:01/km。
+    sources:
+      - docs/adr/008-daniels-vdot-gz-guidance.md
+      - docs/adr/002-norwegian-method-integration.md
+    tags: [pace, gz]
+  - id: help-examples
+    questions:
+      - このボットは何ができる？
+      - 使い方
+      - 質問例を教えて
+      - ヘルプ
+    answer: |
+      いだてん岱明の練習・大会・駅伝・記録について答えます。天気・ニュースなど外部の話題は対象外です。質問例: 「荒玉男子の区間距離は？」「2025年荒玉で岱明は何位？」「荒玉駅伝のコースの画像は？」「ジュニア駅伝の結果は？」「なごみ駅伝の結果のPDF渡して」。
+    sources:
+      - docs/adr/053-line-bot-help-examples.md
+    tags: [meta, help]
+  - id: out-of-scope
+    questions:
+      - 今日の天気は？
+      - ニュースを教えて
+      - 雑談しよう
+    answer: |
+      天気・一般ニュース・雑談は対象外です。いだてん岱明の練習・大会・駅伝・記録について具体的に聞いてください。
+    sources:
+      - docs/adr/015-line-idaten-qa-backend.md
+    tags: [meta, scope]
+  - id: coach-fallback-meaning
+    questions:
+      - コーチに直接聞いてくださいとは？
+      - 分からないときは？
+    answer: |
+      コーパスに無い事実や個人の医療・連絡先などは「コーチに直接聞いてください。」と返します。定型回答や根拠ファイルがある質問では、その内容を優先して返します。
+    sources:
+      - docs/adr/015-line-idaten-qa-backend.md
+    tags: [meta]
+  - id: clarify-sb
+    questions:
+      - 自己ベストは？
+      - SB教えて
+    answer: |
+      自己ベストは選手名と距離を書いてください。例: 「〇〇の1500m自己ベストは？」。曖昧な聞き方の場合は具体例を返します。
+    sources:
+      - docs/adr/021-clarify-concrete-examples.md
+    tags: [sb, clarify]
+  - id: norwegian
+    questions:
+      - ノルウェージャンメソッドとは？
+      - Norwegian methodは？
+    answer: |
+      ノルウェージャンメソッド連携は ADR 002 を正本とします。GZ/T ペースは Daniels 系で決定論的に扱います。
+    sources:
+      - docs/adr/002-norwegian-method-integration.md
+    tags: [pace]
+  - id: kg-first
+    questions:
+      - ナレッジグラフとは？
+      - どうやって答えを探す？
+    answer: |
+      回答はまず定型Q&A、次にナレッジグラフのルート地図、その後コーパス検索の順です。根拠パスを辿って答えます（ADR 016 / ADR 059）。
+    sources:
+      - docs/adr/016-kg-first-idaten-qa.md
+      - docs/adr/059-prepared-qa-answers.md
+    tags: [meta]
+  - id: line-scope
+    questions:
+      - LINEで何が聞ける？
+      - ボットの対象範囲は？
+    answer: |
+      答える範囲: いだてん岱明の練習・駅伝・記録・名簿・大会予定などコーパス内。答えない: 天気・一般雑談など。
+    sources:
+      - backend/README.md
+      - docs/adr/015-line-idaten-qa-backend.md
+    tags: [meta]
+  - id: result-board-how
+    questions:
+      - 結果ボードの見方は？
+      - ボード画像はどう返る？
+    answer: |
+      特定年の荒玉結果ボードは、年付き質問で LINE Image 最大2枚を添付します（ADR 043）。例: 「2025年荒玉男子の結果ボードを見せて」。
+    sources:
+      - docs/adr/043-aragyoku-line-board-images.md
+    tags: [aragyoku, board]
+  - id: course-video-how
+    questions:
+      - コース動画の聞き方は？
+      - 動画はどうやって見る？
+    answer: |
+      「荒玉のコース動画はどこ？」「荒玉女子3区のコース動画を見せて」のように聞いてください。DriveフォルダURLと、可能ならLINE Videoを返します（ADR 044）。
+    sources:
+      - docs/adr/044-aragyoku-line-course-videos.md
+      - input/aragyoku/course-videos.md
+    tags: [aragyoku, course]
+  - id: course-image-how
+    questions:
+      - コース画像の聞き方は？
+      - コース図の聞き方
+    answer: |
+      「荒玉駅伝のコースの画像は？」「コース図を見せて」のように聞いてください。共通ポイント図解のDrive URLとLINE Imageを返します（ADR 058）。
+    sources:
+      - docs/adr/058-aragyoku-line-course-images.md
+      - input/aragyoku/course-points.md
+    tags: [aragyoku, course]
+  - id: primary-pdf-how
+    questions:
+      - 結果PDFの聞き方は？
+      - 一次資料リンクとは？
+    answer: |
+      結果・成績の質問で正本PDFがある場合、回答末尾に一次資料リンクを付けます（ADR 054）。例: 「なごみ駅伝の結果のPDF渡して」。
+    sources:
+      - docs/adr/054-primary-source-links-in-line-answers.md
+    tags: [meta, pdf]
+  - id: relative-year
+    questions:
+      - 去年と今年の意味は？
+      - 相対年はどう解釈される？
+    answer: |
+      「去年」「今年」は日本の年度（4月始まり）と defaultYear に基づき西暦へ展開します。2026年度なら去年は2025年です。
+    sources:
+      - backend/src/domain/dates.ts
+    tags: [meta]
+  - id: prepared-qa-meta
+    questions:
+      - 定型回答とは？
+      - 用意された回答は？
+    answer: |
+      想定質問にはあらかじめ用意した定型回答をほぼそのまま返します。ヒットしない場合のみ検索・生成します。正本は input/faq/prepared-qa.v1.yaml です（ADR 059）。
+    sources:
+      - docs/adr/059-prepared-qa-answers.md
+      - input/faq/prepared-qa.v1.yaml
+    tags: [meta]
+  - id: data-update
+    questions:
+      - データ更新したらどうなる？
+      - ナレッジを増やすには？
+    answer: |
+      大会結果やFAQを追加したら、events / 成績表を更新し、必要ならカレンダー生成・KG再生成・prepared-qa 追記と sync を行います。ナレッジが増えるほど定型回答のバリエーションも増やせます。
+    sources:
+      - AGENTS.md
+      - docs/adr/059-prepared-qa-answers.md
+    tags: [meta]
