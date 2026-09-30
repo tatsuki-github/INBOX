@@ -167,21 +167,53 @@ export function looksLikeDateQuestion(text: string): boolean {
 }
 
 /**
+ * Strip YoY comparison words so 「前年比」does not count as 「前年」.
+ * Example (defaultYear=2026): 去年/昨年/前年 → 2025, 今年 → 2026, おととし → 2024.
+ */
+function textForRelativeYearWords(text: string): string {
+  return text.normalize("NFKC").replace(/前年比|前年度比/g, "同比");
+}
+
+/** True when text asks for last fiscal year (昨年/去年/前年…), not YoY comparison. */
+export function mentionsLastFiscalYear(text: string): boolean {
+  return /去年|昨年|昨年度|前年度|前年/.test(textForRelativeYearWords(text));
+}
+
+/**
  * Resolve relative year words and explicit YYYY年 into calendar years.
- * Example (defaultYear=2026): 去年 → 2025, 今年 → 2026, おととし → 2024.
+ * Example (defaultYear=2026): 去年/昨年/前年 → 2025, 今年 → 2026, おととし → 2024.
+ * 「前年比/前年度比」は相対年に数えない。
  */
 export function resolveRelativeYears(
   text: string,
   defaultYear: number = currentFiscalYear(),
 ): number[] {
+  const scoped = textForRelativeYearWords(text);
   const years = new Set<number>();
-  if (/今年/.test(text)) years.add(defaultYear);
-  if (/去年|昨年/.test(text)) years.add(defaultYear - 1);
-  if (/おととし|一昨年/.test(text)) years.add(defaultYear - 2);
+  if (/今年|今年度|今季/.test(scoped)) years.add(defaultYear);
+  if (/去年|昨年|昨年度|前年度|前年/.test(scoped)) years.add(defaultYear - 1);
+  if (/おととし|一昨年/.test(scoped)) years.add(defaultYear - 2);
   for (const m of text.matchAll(/\b(20\d{2})\s*年?/g)) {
     years.add(Number(m[1]));
   }
   return [...years].sort((a, b) => b - a);
+}
+
+/**
+ * Single target year for 「昨年/去年/前年/今年」or the first explicit YYYY.
+ * Returns undefined when the question is yearless / historical-broad.
+ * 「前年比」だけでは undefined（明示年があればその年）。
+ */
+export function targetYearFromQuestion(
+  text: string,
+  defaultYear: number = currentFiscalYear(),
+): number | undefined {
+  const scoped = textForRelativeYearWords(text);
+  if (/一昨年|おととし/.test(scoped)) return defaultYear - 2;
+  if (/去年|昨年|昨年度|前年度|前年/.test(scoped)) return defaultYear - 1;
+  if (/今年|今年度|今季/.test(scoped)) return defaultYear;
+  const m = text.match(/20\d{2}/);
+  return m ? Number(m[0]) : undefined;
 }
 
 /**

@@ -109,12 +109,12 @@ export function normalizePreparedQuestion(
 
   const defaultYear = opts?.defaultYear ?? currentFiscalYear(opts?.now);
   // Expand relative years to absolute before comparing.
-  // 「今年度/今季/今年」はシノニムで今年度に寄せたあと年へ展開する。
+  // 「前年/前年度」も昨年と同義（今年度のひとつ前）。一昨年は defaultYear-2。
+  // 「前年比/前年度比」は相対年ではないので先に退避する。
+  q = q.replace(/前年比|前年度比/g, "同比");
   q = q.replace(/今年度|今季|今年/g, `${defaultYear}年`);
-  q = q.replace(/昨年度|一昨年/g, (m) =>
-    m === "一昨年" ? `${defaultYear - 2}年` : `${defaultYear - 1}年`,
-  );
-  q = q.replace(/去年|昨年/g, `${defaultYear - 1}年`);
+  q = q.replace(/一昨年|おととし/g, `${defaultYear - 2}年`);
+  q = q.replace(/昨年度|前年度|前年|去年|昨年/g, `${defaultYear - 1}年`);
 
   // Drop polite / trailing noise.
   // 「とは」は裸のチーム名へ潰れると名簿定型を誤吸するため、意味を残すトークンへ置換する。

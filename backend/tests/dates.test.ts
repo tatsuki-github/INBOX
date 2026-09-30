@@ -3,9 +3,11 @@ import {
   currentDateMention,
   currentFiscalYear,
   expandDateQuery,
+  mentionsLastFiscalYear,
   parseDateMentions,
   resolveRelativeDates,
   resolveRelativeYears,
+  targetYearFromQuestion,
 } from "../src/domain/dates.js";
 
 describe("currentDateMention", () => {
@@ -65,10 +67,27 @@ describe("resolveRelativeYears", () => {
     expect(resolveRelativeYears("今年の大会", 2026)).toEqual([2026]);
     expect(resolveRelativeYears("おととしの優勝", 2026)).toEqual([2024]);
     expect(resolveRelativeYears("昨年の結果", 2026)).toEqual([2025]);
+    expect(resolveRelativeYears("前年の優勝校", 2026)).toEqual([2025]);
+    expect(resolveRelativeYears("前年度の結果", 2026)).toEqual([2025]);
+  });
+
+  it("does not treat 前年比 as last year", () => {
+    expect(resolveRelativeYears("岱明の前年比は？", 2026)).toEqual([]);
+    expect(mentionsLastFiscalYear("岱明の前年比は？")).toBe(false);
+    expect(targetYearFromQuestion("岱明の前年比は？", 2026)).toBeUndefined();
   });
 
   it("keeps explicit YYYY年", () => {
     expect(resolveRelativeYears("2024年男子", 2026)).toContain(2024);
+  });
+});
+
+describe("targetYearFromQuestion", () => {
+  it("maps 昨年/去年/前年 to defaultYear-1, never defaultYear-2", () => {
+    expect(targetYearFromQuestion("昨年の荒玉男子優勝校は？", 2026)).toBe(2025);
+    expect(targetYearFromQuestion("去年のジュニア駅伝の結果", 2026)).toBe(2025);
+    expect(targetYearFromQuestion("前年の荒玉駅伝の優勝校は？", 2026)).toBe(2025);
+    expect(targetYearFromQuestion("一昨年の荒玉男子優勝校は？", 2026)).toBe(2024);
   });
 });
 

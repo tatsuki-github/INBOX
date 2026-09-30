@@ -61,7 +61,9 @@ export function wantsAragyokuBoardImages(question: string): boolean {
   if (/ジュニア|なごみ|金栗/.test(q) && !/荒玉/.test(q)) return false;
   if (!/荒玉|中体連/.test(q)) return false;
   // 特定年が必要（西暦 or 相対年）
-  if (!/20\d{2}/.test(q) && !/去年|昨年|今年|おととし|一昨年/.test(q)) return false;
+  if (!/20\d{2}/.test(q) && !/去年|昨年|昨年度|前年|前年度|今年|今年度|おととし|一昨年/.test(q)) {
+    return false;
+  }
   // コース動画だけの質問は canned Drive フォルダ回答に任せる
   if (/動画|映像|ビデオ/.test(q) && /コース/.test(q) && !/結果|順位|区間|優勝|学年|選手|タイム/.test(q)) {
     return false;
