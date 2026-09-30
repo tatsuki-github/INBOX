@@ -19,6 +19,21 @@ describe("preparedQa catalog", () => {
     expect(entries[0]?.answer.length).toBeGreaterThan(10);
   });
 
+  it("keeps user-facing answers free of repo-path jargon", () => {
+    const entries = loadPreparedQa();
+    const bad = entries.filter((e) => {
+      const a = e.answer || "";
+      return (
+        /(?:^|[\s「])(?:input|out|docs|scripts)\//.test(a) ||
+        /出典:\s*(?:out\/|input\/)/.test(a) ||
+        /状態:\s*\w+/.test(a) ||
+        /チーム別正本/.test(a)
+      );
+    });
+    expect(bad.slice(0, 5).map((e) => e.id)).toEqual([]);
+    expect(bad.length).toBe(0);
+  });
+
   it("covers diversified bulk ids beyond the first 100", () => {
     const entries = loadPreparedQa();
     const ids = new Set(entries.map((e) => e.id));
