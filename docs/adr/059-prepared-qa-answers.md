@@ -33,8 +33,11 @@ LINE Q&A は RAG / LLM で都度組み立てると、ぶれ・コーチ誘導・
   `scripts/generate_prepared_qa_knowledge_1000.py`（ナレッジカバー拡充）/
   `scripts/generate_prepared_qa_course_points.py`（コース地点）/
   `scripts/generate_prepared_qa_prefectural_top2.py`（荒玉2位まで→県駅伝出場）/
-  `scripts/generate_prepared_qa_daiming_rivals.py`（岱明ライバル校）→
+  `scripts/generate_prepared_qa_daiming_rivals.py`（岱明ライバル校）/
+  `scripts/generate_prepared_qa_aragyoku_aliases.py`（荒玉の呼び方揺れ）→
   `scripts/sync_prepared_qa.py`。
+  大会名正規化: `backend/src/domain/aragyokuAliases.ts`
+  （荒玉中体連駅伝 / 郡市駅伝 / 玉名荒尾中体連駅伝 → 荒玉）。
 
 ## Test strategy
 

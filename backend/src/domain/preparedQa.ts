@@ -7,6 +7,7 @@ import { readFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { currentFiscalYear, resolveRelativeYears } from "./dates.js";
+import { canonicalizeAragyokuNames } from "./aragyokuAliases.js";
 import { canonicalizeSchoolNames, schoolSynonymGroups } from "./schoolAliases.js";
 
 export type PreparedQaEntry = {
@@ -52,7 +53,7 @@ const SYNONYM_GROUPS: string[][] = [
   ["教えて", "見せて", "知りたい", "どこ", "ある"],
   // 学校名は schoolAliases.ts に集約（荒尾四/荒尾第四、玉高附属/玉名付属 など）
   ...schoolSynonymGroups(),
-  ["荒玉", "荒玉駅伝", "中体連駅伝", "荒玉中体連"],
+  // 荒玉大会名は aragyokuAliases.ts で longest-first 正規化（ここでは同義語置換しない）
   ["ジュニア", "県ジュニア", "ジュニア駅伝"],
   ["なごみ", "なごみ駅伝", "金栗"],
   ["自己ベスト", "sb", "SB"],
@@ -120,6 +121,8 @@ export function normalizePreparedQuestion(
 
   // 荒尾第四→荒尾四、玉名付属→玉高附属 など（カタログ質問側も同じ正規化）
   q = canonicalizeSchoolNames(q);
+  // 荒玉中体連駅伝 / 郡市駅伝 / 玉名荒尾中体連駅伝 → 荒玉（長い表記優先）
+  q = canonicalizeAragyokuNames(q);
 
   // Drop polite / trailing noise.
   // 「とは」は裸のチーム名へ潰れると名簿定型を誤吸するため、意味を残すトークンへ置換する。
