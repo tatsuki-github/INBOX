@@ -56,6 +56,7 @@ const SYNONYM_GROUPS: string[][] = [
   ["自己ベスト", "sb", "SB"],
   ["予定", "日程", "スケジュール"],
   ["区間距離", "距離"],
+  ["名簿", "生徒一覧", "部員名簿", "部員一覧", "陸上部員"],
 ];
 
 export function defaultPreparedQaPath(): string {
@@ -107,11 +108,13 @@ export function normalizePreparedQuestion(
   );
   q = q.replace(/去年|昨年/g, `${defaultYear - 1}年`);
 
-  // Drop polite / trailing noise
+  // Drop polite / trailing noise.
+  // 「とは」は裸のチーム名へ潰れると名簿定型を誤吸するため、意味を残すトークンへ置換する。
   q = q
     .replace(/[?？!！。．、,，・]/g, "")
     .replace(/(を)?(教えて|見せて|知りたい|ください|下さい|お願い|ですか|でしょうか)+$/g, "")
-    .replace(/(は|って|とは)?$/g, "");
+    .replace(/とは$/g, "ってなに")
+    .replace(/(は|って)?$/g, "");
 
   q = applySynonyms(q.toLowerCase());
   // "2025年のジュニア" と "2025年ジュニア" を同一視
@@ -182,6 +185,12 @@ function jaccard(a: string[], b: string[]): number {
   return union === 0 ? 0 : inter / union;
 }
 
+const ROSTER_INTENT_KEYS = ["名簿", "生徒", "部員"] as const;
+
+function hasRosterIntent(normalized: string): boolean {
+  return ROSTER_INTENT_KEYS.some((k) => normalized.includes(k));
+}
+
 function scorePair(nq: string, nCand: string): number {
   if (!nq || !nCand) return 0;
   const yq: string[] = nq.match(/20\d{2}/g) ?? [];
@@ -199,6 +208,12 @@ function scorePair(nq: string, nCand: string): number {
     base = 0.86 + 0.1 * ratio;
   } else {
     base = jaccard(tokenize(nq), tokenize(nCand));
+  }
+
+  // 名簿・生徒一覧の意図がある側と無い側の部分一致を強く減点
+  // （「いだてん岱明とは」→短い「いだてん岱明」が名簿定型を includes で誤吸するのを防ぐ）
+  if (hasRosterIntent(nq) !== hasRosterIntent(nCand)) {
+    base *= 0.4;
   }
 
   if (yearsConflict) return base * 0.35;

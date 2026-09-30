@@ -224,6 +224,7 @@ describe("QA precision regressions", () => {
     expect(result.text).not.toContain("ＮＪＡＣ");
   });
   it.each([
+    "いだてん岱明の生徒一覧",
     "部員名簿は？",
     "岱明中の部員名簿を見せて",
     "岱明中の部員一覧は？",
@@ -234,14 +235,22 @@ describe("QA precision regressions", () => {
     "岱明の部員名簿を一覧で",
     "いだてん岱明の陸上部員名簿",
     "岱明中学校の陸上部員を教えて",
-  ])("answers daiming roster questions from the current roster: %s", async (question) => {
-    const result = await askWithRouter(question);
-    expect(result.sources).toEqual(["notion-db/いだてん岱明生徒/rows.json"]);
+  ])("answers daiming roster questions from prepared roster: %s", async (question) => {
+    resetKgCache();
+    resetRetrieverCache();
+    const result = await answerQuestion(question, {
+      defaultYear: 2026,
+      llm: null,
+    });
+    expect(result.kind).toBe("answered");
+    if (result.kind !== "answered") throw new Error("expected answered result");
+    expect(result.sources[0]).toBe("prepared:roster");
     expect(result.text).toContain("部員名簿（15名）");
     expect(result.text).toContain("中尾快叶");
     expect(result.text).toContain("塚原優衣");
     expect(result.text).toContain("村上咲稀");
     expect(result.text).not.toContain("2012 女子");
+    expect(result.text).not.toContain("玉名市の中学校チーム");
   });
   it.each([
     ["なごみ駅伝の予想と実績の差は？", undefined],

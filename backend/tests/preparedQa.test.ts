@@ -96,6 +96,24 @@ describe("matchPreparedAnswer", () => {
     expect(hit?.text).not.toContain("4:36.05");
   });
 
+  it("lists いだてん岱明 students instead of who-is-daiming", () => {
+    for (const q of ["いだてん岱明の生徒一覧", "いだてん岱明の部員は誰？", "岱明中の生徒一覧", "部員名簿は？"]) {
+      const hit = matchPreparedAnswer(q, { defaultYear: 2026 });
+      expect(hit?.id, q).toBe("roster");
+      expect(hit?.text, q).toContain("部員名簿（15名）");
+      expect(hit?.text, q).toContain("松野凛空");
+      expect(hit?.text, q).toContain("村上咲稀");
+      expect(hit?.text, q).toContain("中尾快叶");
+      expect(hit?.text, q).not.toContain("玉名市の中学校チーム");
+    }
+  });
+
+  it("keeps who-is-daiming for team-identity questions", () => {
+    const hit = matchPreparedAnswer("いだてん岱明とはどんなチーム？", { defaultYear: 2026 });
+    expect(hit?.id).toBe("who-is-daiming");
+    expect(hit?.text).toContain("玉名市の中学校チーム");
+  });
+
   it("treats yearless questions as current fiscal year", () => {
     const nagomi = matchPreparedAnswer("なごみ駅伝はいつ？", { defaultYear: 2026 });
     expect(nagomi?.id).toMatch(/cal-2026-.*なごみ|20260920/);
