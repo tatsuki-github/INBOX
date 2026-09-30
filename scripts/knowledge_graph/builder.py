@@ -617,6 +617,18 @@ QUERY_HINTS: list[tuple[str, str, list[str]]] = [
         ],
     ),
     (
+        "荒玉駅伝の女子4区は何地点から？",
+        "course-points.json の男女各地点対応を正本。定型Q&A（course-leg-*）優先。例: 女子4区スタート=A地点、女子4→5区中継=C地点",
+        [
+            "topic:ekiden",
+            "corpus:aragyoku",
+            "source:input/aragyoku/course-points.json",
+            "source:input/aragyoku/course-points.md",
+            "source:input/faq/prepared-qa.v1.yaml",
+            "media:ekiden:荒玉駅伝-男女コース共通ポイント-橋の上",
+        ],
+    ),
+    (
         "想定質問の定型回答は？",
         "input/faq/prepared-qa.v1.yaml の定型回答を優先（ADR 059）。未ヒット時のみ RAG/LLM",
         [
