@@ -12,11 +12,21 @@ describe("preparedQa catalog", () => {
     resetPreparedQaCache();
   });
 
-  it("loads 100 entries", () => {
+  it("loads 1100 entries", () => {
     const entries = loadPreparedQa();
-    expect(entries).toHaveLength(100);
+    expect(entries).toHaveLength(1100);
     expect(entries[0]?.id).toBeTruthy();
     expect(entries[0]?.answer.length).toBeGreaterThan(10);
+  });
+
+  it("covers diversified bulk ids beyond the first 100", () => {
+    const entries = loadPreparedQa();
+    const ids = new Set(entries.map((e) => e.id));
+    expect(ids.has("aragyoku-what")).toBe(true);
+    // bulk generators
+    expect([...ids].some((id) => id.startsWith("sb-2026-"))).toBe(true);
+    expect([...ids].some((id) => id.startsWith("cal-"))).toBe(true);
+    expect([...ids].some((id) => id.includes("-leg"))).toBe(true);
   });
 });
 

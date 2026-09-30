@@ -213,7 +213,7 @@ SOURCE_GLOBS: list[tuple[str, list[str], str]] = [
     (
         "input/faq/prepared-qa.v1.yaml",
         ["ekiden", "practice", "athlete_records", "calendar"],
-        "想定質問100件の定型回答正本（ADR 059）。ヒット時は本文をほぼそのまま返す",
+        "想定質問1100件の定型回答正本（ADR 059）。ヒット時は本文をほぼそのまま返す",
     ),
     (
         "input/idaten-corpus/faq/prepared-qa.v1.yaml",

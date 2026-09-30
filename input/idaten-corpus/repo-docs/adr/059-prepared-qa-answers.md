@@ -23,10 +23,11 @@ LINE Q&A は RAG / LLM で都度組み立てると、ぶれ・コーチ誘導・
 
 - ナレッジを増やすほど定型ヒットが増え、生成依存が減る。
 - 回答更新は YAML 編集 + sync（推測埋めはしない）。
-- 初版は 100 件。以降は同形式で追記する。
+- 初版は 100 件。2026-09-30 にナレッジ横断で +1000（計 1100）。
+  生成: `scripts/generate_prepared_qa_bulk.py` → `scripts/sync_prepared_qa.py`。
 
 ## Test strategy
 
-- `backend/tests/preparedQa.test.ts`: 正規化 / 言い換え / 非ヒット / 100 件ロード
+- `backend/tests/preparedQa.test.ts`: 正規化 / 言い換え / 非ヒット / 1100 件ロード
 - `answerQuestion` 代表問で `prepared:` ソース
 - KG Source 登録と `--check`
