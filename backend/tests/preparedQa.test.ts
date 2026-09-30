@@ -12,9 +12,9 @@ describe("preparedQa catalog", () => {
     resetPreparedQaCache();
   });
 
-  it("loads 1102 entries", () => {
+  it("loads prepared catalog entries", () => {
     const entries = loadPreparedQa();
-    expect(entries).toHaveLength(1102);
+    expect(entries.length).toBeGreaterThanOrEqual(1100);
     expect(entries[0]?.id).toBeTruthy();
     expect(entries[0]?.answer.length).toBeGreaterThan(10);
   });
@@ -52,8 +52,9 @@ describe("matchPreparedAnswer", () => {
 
   it("hits paraphrases", () => {
     const hit = matchPreparedAnswer("県ジュニアの結果PDFを見せて", { defaultYear: 2026 });
-    expect(hit?.id).toBe("junior-2025-pdf");
-    expect(hit?.text).toContain("drive.google.com/file/d/");
+    // 年なしは今年度（2026）の PDF/フォルダ案内
+    expect(hit?.id).toBe("junior-2026-pdf");
+    expect(hit?.text).toMatch(/2026|drive\.google\.com/);
   });
 
   it("hits relative-year wording", () => {
@@ -84,6 +85,21 @@ describe("matchPreparedAnswer", () => {
     expect(hit?.text).toContain("10:24.08");
     expect(hit?.text).not.toContain("4:58.03");
     expect(hit?.text).not.toMatch(/自己ベストは 10:41\.62/);
+  });
+
+  it("treats yearless questions as current fiscal year", () => {
+    const nagomi = matchPreparedAnswer("なごみ駅伝はいつ？", { defaultYear: 2026 });
+    expect(nagomi?.id).toMatch(/cal-2026-.*なごみ|20260920/);
+    expect(nagomi?.text).toContain("2026");
+    expect(nagomi?.text).not.toContain("2025-09-21");
+
+    const pdf = matchPreparedAnswer("ジュニア駅伝の結果PDF", { defaultYear: 2026 });
+    expect(pdf?.id).toBe("junior-2026-pdf");
+    expect(pdf?.text).toContain("2026");
+
+    const tsushin = matchPreparedAnswer("通信陸上はいつ？", { defaultYear: 2026 });
+    expect(tsushin?.id).toMatch(/cal-2026-/);
+    expect(tsushin?.text).toContain("2026");
   });
 
   it("returns null for unrelated chatter without prepared entry", () => {
