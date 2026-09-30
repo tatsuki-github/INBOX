@@ -114,6 +114,21 @@ describe("matchPreparedAnswer", () => {
     expect(hit?.text).toContain("玉名市の中学校チーム");
   });
 
+  it("returns junior detail for 南関中 and 玉名附属中, not coach fallback", () => {
+    for (const q of [
+      "ジュニア駅伝の南関中と玉名附属中の結果の詳細",
+      "ジュニア駅伝の南関と玉名附属の結果の詳細",
+      "今年のジュニアで玉名附属はどうだった？",
+    ]) {
+      const hit = matchPreparedAnswer(q, { defaultYear: 2026 });
+      expect(hit?.id, q).toBe("junior-2026-nankan-tamafz-detail");
+      expect(hit?.text, q).toContain("35:09");
+      expect(hit?.text, q).toContain("43:11");
+      expect(hit?.text, q).toContain("44:15");
+      expect(hit?.text, q).not.toContain("コーチに直接聞いてください");
+    }
+  });
+
   it("treats yearless questions as current fiscal year", () => {
     const nagomi = matchPreparedAnswer("なごみ駅伝はいつ？", { defaultYear: 2026 });
     expect(nagomi?.id).toMatch(/cal-2026-.*なごみ|20260920/);
