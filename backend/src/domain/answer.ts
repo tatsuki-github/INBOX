@@ -8,6 +8,7 @@ import {
   resolveRelativeYears,
   targetYearFromQuestion,
 } from "./dates.js";
+import { canonicalizeSchoolNames, resolveSchoolRecordName } from "./schoolAliases.js";
 import { matchCannedAnswer } from "./canned.js";
 import { matchPreparedAnswer } from "./preparedQa.js";
 import { matchClarifyAnswer } from "./clarify.js";
@@ -523,7 +524,11 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
   if (/旧コース.*男子6区|男子6区.*旧コース/.test(q) && /距離|何キロ|何km|何メートル|何m/.test(q)) {
     return "荒玉男子の旧コース（2023年以前）6区は4.00kmです。";
   }
-  const schoolListName = ["荒尾三中", "荒尾第四中", "荒尾海陽中", "南関中", "玉名中", "天水中", "岱明中", "長洲中", "玉陵中", "玉南中", "玉名附中", "玉名付属中", "玉名附属", "玉高附属"].find((name) => q.includes(name));
+  const schoolListName =
+    resolveSchoolRecordName(q) ??
+    ["荒尾三中", "荒尾第四中", "荒尾海陽中", "南関中", "玉名中", "天水中", "岱明中", "長洲中", "玉陵中", "玉南中", "玉名附中", "玉名付属中", "玉名附属", "玉高附属"].find((name) =>
+      q.includes(name),
+    );
   if (schoolListName && /選手|一覧|所属|SB|シーズンベスト/.test(q)) {
     const title = schoolListName === "荒尾三中"
       ? "# 荒尾三中 選手・SB一覧"
@@ -2974,7 +2979,10 @@ function offlineAnswer(
       /平均ペース|平均速度|平均|ペース|キロ何分/.test(question) &&
       /上位(?:6|六)(?:位|校)?|トップ6|ベスト(?:6|六)/.test(question);
     const schoolListLookup =
-      /荒尾三中|荒尾第四中|荒尾海陽中|南関中|玉名中|天水中|岱明中|長洲中|玉陵中|玉南中|玉名附中|玉名付属中?|玉名附属|玉高附属/.test(question) &&
+      (resolveSchoolRecordName(question) != null ||
+        /荒尾三中|荒尾第四中|荒尾海陽中|南関中|玉名中|天水中|岱明中|長洲中|玉陵中|玉南中|玉名附中|玉名付属中?|玉名附属|玉高附属|荒尾三|荒尾四|荒尾海陽/.test(
+          question,
+        )) &&
       /選手|一覧|所属|SB|シーズンベスト/.test(question);
     const paceCalculationLookup =
       /荒玉|駅伝/.test(question) &&
@@ -3050,9 +3058,10 @@ function offlineAnswer(
       );
     const teamFullRecordLookup =
       /全記録|所属選手|所属する選手|記録一覧|全選手|トラック記録|選手記録/.test(question) &&
-      /南関中|玉名中|天水中|岱明中|長洲中|玉陵中|玉南中|玉名附中|荒尾三中|荒尾第四中|荒尾海陽中|金栗\s*PROJECT/.test(
-        question,
-      );
+      (resolveSchoolRecordName(question) != null ||
+        /南関中|玉名中|天水中|岱明中|長洲中|玉陵中|玉南中|玉名附中|荒尾三中|荒尾第四中|荒尾海陽中|荒尾三|荒尾四|荒尾海陽|金栗\s*PROJECT/.test(
+          question,
+        ));
     const latestTeamRankLookup =
       !/20\d{2}/.test(question) &&
       /何位|順位|何着|何番目|何番/.test(question) &&
@@ -3638,7 +3647,8 @@ function boostAthleteRecordSources(query: string, baseSources: string[]): string
       push("out-analysis/arato-tamana-teams/金栗PROJECT.md");
       return out;
     }
-    const hit = knownTeamFiles.find((stem) => q.includes(stem));
+    const recordHit = resolveSchoolRecordName(q);
+    const hit = recordHit ?? knownTeamFiles.find((stem) => q.includes(stem));
     if (hit) {
       // A school + SB list has a dedicated current-year digest. The wide SB
       // CSV is global and row-chunked, so using it directly can return other
@@ -3903,14 +3913,14 @@ function boostDaimingLineSources(query: string, baseSources: string[]): string[]
 function isNamedTeamSbListQuery(query: string): boolean {
   const q = query.normalize("NFKC");
   const individualRecord = /800(?:m|ｍ)?|1[，,]?\s*500(?:m|ｍ)?|3[，,]?\s*000(?:m|ｍ)?|5[，,]?\s*000(?:m|ｍ)?|3\s*km|5\s*km/.test(q) && !/選手一覧|所属選手|全記録|記録一覧/.test(q);
-  return /荒尾三中/.test(q) &&
+  return (/荒尾三中|荒尾三/.test(q) || resolveSchoolRecordName(q) === "荒尾三中") &&
     /(?:\bSB\b|ＳＢ|シーズンベスト)/.test(q) &&
     /選手|一覧|所属|全部|全て|全距離/.test(q) &&
     !individualRecord;
 }
 
 function hasNonTeamAthleteNameHint(query: string): boolean {
-  const team = /^(?:荒尾三中|荒尾第四中|荒尾海陽中|南関中|玉名中|天水中|岱明中|長洲中|玉陵中|玉南中|玉名附中|玉名付属中?|玉名附属|玉高附属)$/u;
+  const team = /^(?:荒尾三中|荒尾第四中|荒尾海陽中|南関中|玉名中|天水中|岱明中|長洲中|玉陵中|玉南中|玉名附中|玉名付属中?|玉名附属|玉高附属|荒尾三|荒尾四|荒尾海陽)$/u;
   return extractAthleteNameHints(query).some((hint) => !team.test(hint));
 }
 
@@ -3922,7 +3932,8 @@ function isNamedSchoolSbListQuery(query: string): boolean {
 function isNamedSchoolListQuery(query: string): boolean {
   const q = query.normalize("NFKC");
   const individualRecord = /800(?:m|ｍ)?|1[，,]?\s*500(?:m|ｍ)?|3[，,]?\s*000(?:m|ｍ)?|5[，,]?\s*000(?:m|ｍ)?|3\s*km|5\s*km/.test(q) && !/選手一覧|所属選手|全記録|記録一覧/.test(q);
-  return /荒尾三中|荒尾第四中|荒尾海陽中|南関中|玉名中|天水中|岱明中|長洲中|玉陵中|玉南中|玉名附中|玉名付属中?|玉名附属|玉高附属/.test(q) &&
+  return (resolveSchoolRecordName(q) != null ||
+    /荒尾三中|荒尾第四中|荒尾海陽中|南関中|玉名中|天水中|岱明中|長洲中|玉陵中|玉南中|玉名附中|玉名付属中?|玉名附属|玉高附属|荒尾三|荒尾四|荒尾海陽/.test(q)) &&
     /選手|一覧|所属|SB|シーズンベスト|全記録|記録一覧/.test(q) && !individualRecord;
 }
 
@@ -4289,18 +4300,19 @@ export async function answerQuestion(
   question: string,
   deps: AnswerDeps = {},
 ): Promise<AnswerResult> {
+  question = canonicalizeSchoolNames(
+    question
+      .normalize("NFKC")
+      .replace(/第?([一二三四五六])区/g, (_match, numeral: string) => String("一二三四五六".indexOf(numeral) + 1) + "区")
+      .replace(/([一二三四五])位/g, (_match, numeral: string) => String("一二三四五".indexOf(numeral) + 1) + "位")
+      .replace(/(\d+)位?\s*[〜～]\s*(\d+)位/g, "$1位から$2位")
+      .replace(/区間記録順位/g, "区間順位")
+      .replace(/区間記録ランキング/g, "タイム順")
+      .replace(/通過順(?!位)/g, "通過順位")
+      .replace(/\bTOP\s*(\d+)/gi, "トップ$1"),
+  );
+  // 以降の置換は canonicalize 後の文字列に続ける
   question = question
-    .normalize("NFKC")
-    .replace(/第?([一二三四五六])区/g, (_match, numeral: string) => String("一二三四五六".indexOf(numeral) + 1) + "区")
-    .replace(/([一二三四五])位/g, (_match, numeral: string) => String("一二三四五".indexOf(numeral) + 1) + "位")
-    .replace(/(\d+)位?\s*[〜～]\s*(\d+)位/g, "$1位から$2位")
-    .replace(/区間記録順位/g, "区間順位")
-    .replace(/区間記録ランキング/g, "タイム順")
-    .replace(/通過順(?!位)/g, "通過順位")
-    .replace(/玉名(?:附属|付属|附中|付中)|玉高附中/g, "玉高附属")
-    .replace(/荒尾第(?:三|3)中?/g, "荒尾三")
-    .replace(/荒尾第(?:四|4)中?/g, "荒尾四")
-    .replace(/\bTOP\s*(\d+)/gi, "トップ$1")
     .replace(/jog/gi, "jog")
     .replace(/1,000/g, "1000")
     .replace(/1\s+000/g, "1000")
@@ -5283,9 +5295,10 @@ export async function answerQuestion(
   const teamFullRecordQ =
     kanaguriProjectFullRecordQ || atrcFullRecordQ || njacFullRecordQ || tamanaAthletesFullRecordQ || gyokutoClubFullRecordQ ||
     (/全記録|所属選手|所属する選手|記録一覧|全選手|トラック記録|選手記録/.test(expanded) &&
-      /南関中|玉名中|天水中|岱明中|長洲中|玉陵中|玉南中|玉名附中|荒尾三中|荒尾第四中|荒尾海陽中/.test(
-        expanded,
-      ));
+      (resolveSchoolRecordName(expanded) != null ||
+        /南関中|玉名中|天水中|岱明中|長洲中|玉陵中|玉南中|玉名附中|荒尾三中|荒尾第四中|荒尾海陽中|荒尾三|荒尾四|荒尾海陽/.test(
+          expanded,
+        )));
 
   if (exhaustive) {
     preferredSources = narrowExhaustiveSources(expanded, preferredSources);
@@ -5297,19 +5310,21 @@ export async function answerQuestion(
     if (/金栗\s*PROJECT/.test(expanded)) {
       preferredSources = ["out-analysis/arato-tamana-teams/金栗PROJECT.md"];
     }
-    const team = [
-      "荒尾第四中",
-      "荒尾海陽中",
-      "荒尾三中",
-      "玉名附中",
-      "南関中",
-      "玉名中",
-      "天水中",
-      "岱明中",
-      "長洲中",
-      "玉陵中",
-      "玉南中",
-    ].find((stem) => expanded.includes(stem));
+    const team =
+      resolveSchoolRecordName(expanded) ??
+      [
+        "荒尾第四中",
+        "荒尾海陽中",
+        "荒尾三中",
+        "玉名附中",
+        "南関中",
+        "玉名中",
+        "天水中",
+        "岱明中",
+        "長洲中",
+        "玉陵中",
+        "玉南中",
+      ].find((stem) => expanded.includes(stem));
     if (team) preferredSources = [`out-analysis/arato-tamana-teams/${team}.md`];
   }
   if (daimingRosterQ) {
@@ -5324,11 +5339,15 @@ export async function answerQuestion(
     preferredSources = ["out-analysis/arato-tamana-teams/玉名附中.md"];
   }
   if (namedSchoolList && !namedTeamSbList && !namedSchoolSbList) {
-    const school = /玉名附中|玉名付属中?|玉名附属|玉高附属/.test(expanded)
-      ? "玉名附中"
-      : /荒尾三中/.test(expanded)
-        ? "荒尾三中"
-        : ["荒尾第四中", "荒尾海陽中", "南関中", "玉名中", "天水中", "岱明中", "長洲中", "玉陵中", "玉南中"].find((name) => expanded.includes(name));
+    const school =
+      resolveSchoolRecordName(expanded) ??
+      (/玉名附中|玉名付属中?|玉名附属|玉高附属/.test(expanded)
+        ? "玉名附中"
+        : /荒尾三中|荒尾三/.test(expanded)
+          ? "荒尾三中"
+          : ["荒尾第四中", "荒尾海陽中", "南関中", "玉名中", "天水中", "岱明中", "長洲中", "玉陵中", "玉南中"].find((name) =>
+              expanded.includes(name),
+            ));
     if (school) preferredSources = [`out-analysis/arato-tamana-teams/${school}.md`];
   }
   if (daimingRosterQ) {

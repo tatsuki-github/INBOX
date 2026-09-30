@@ -1167,10 +1167,14 @@ describe("answerQuestion", () => {
       defaultYear: 2026,
       llm: null,
     });
-    expect(result.kind).toBe("offline");
+    // 定型Q&A（prepared）または years ダイジェストのどちらでも、別名正規化後に正解行へ着地すればよい
+    expect(result.text).toContain(expected.split(": ")[1] ?? expected);
     if (result.kind === "offline") {
       expect(result.sources[0]).toBe("out-analysis/aragyoku-years/2025.md");
       expect(result.text).toContain(expected);
+    } else {
+      expect(result.kind).toBe("answered");
+      expect(result.sources?.[0]).toMatch(/^prepared:aragyoku-2025-男子-/);
     }
   });
 
