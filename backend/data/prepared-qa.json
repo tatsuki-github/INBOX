@@ -1,8 +1,8 @@
 {
   "version": 1,
-  "total": 1100,
+  "total": 1102,
   "source": "input/faq/prepared-qa.v1.yaml",
-  "note": "想定質問への定型回答（ADR 059）。初版100 + 追加1000（多様化: 荒玉結果/区間・カレンダー・SB・コース/ペース・大会資料・メタ）。\nヒット時は本文をほぼそのまま返す。未ヒット時のみ RAG/LLM。\n",
+  "note": "想定質問への定型回答（ADR 059）。初版100 + 追加1000（多様化）+ 田上颯人SB修正追記。\nヒット時は本文をほぼそのまま返す。未ヒット時のみ RAG/LLM。\n",
   "entries": [
     {
       "id": "aragyoku-what",
@@ -12199,15 +12199,57 @@
       ]
     },
     {
+      "id": "sb-田上颯人",
+      "questions": [
+        "田上颯人の自己ベストは？",
+        "田上颯人のSBは？",
+        "田上颯人の記録は？",
+        "田上の自己ベストは？"
+      ],
+      "answer": "田上颯人（岱明中・男子2年）の自己ベスト（2026年度・SB採用）です。\n・1500m: 4:37.20（令和8年度 熊本県中学校総合体育大会、2026-07-19）\n・3000m: 10:24.08（第72回全日本中学校通信陸上競技大会熊本県大会、2026-06-13）",
+      "sources": [
+        "out/analysis/notion_records_2026.json",
+        "out/analysis/arato-tamana-teams/岱明中.md",
+        "input/athlete-team-profiles.json"
+      ],
+      "tags": [
+        "sb",
+        "athlete",
+        "男子",
+        "daiming"
+      ]
+    },
+    {
+      "id": "sb-2026-田上颯人-1500m",
+      "questions": [
+        "田上颯人の1500mの自己ベストは？",
+        "田上颯人の1500mSBは？",
+        "田上颯人の1500m記録は？",
+        "田上の1500は？"
+      ],
+      "answer": "田上颯人（岱明中/男子）の1500m自己ベストは 4:37.20 です。\n大会: 令和8年度 熊本県中学校総合体育大会 陸上競技大会（2026/07/19）。",
+      "sources": [
+        "out/analysis/notion_records_2026.json",
+        "out/analysis/arato-tamana-teams/岱明中.md"
+      ],
+      "tags": [
+        "sb",
+        "athlete",
+        "男子",
+        "1500m"
+      ]
+    },
+    {
       "id": "sb-2026-田上颯人-3000m",
       "questions": [
         "田上颯人の3000mの自己ベストは？",
         "田上颯人の3000mSBは？",
         "田上颯人の3000m記録は？"
       ],
-      "answer": "田上颯人（岱明中/男子）の3000m自己ベストは 10:41.62 です。 大会: 第４５回熊本市陸上競技選手権大会中長距離の部（2026/04/18）。",
+      "answer": "田上颯人（岱明中/男子）の3000m自己ベストは 10:24.08 です。\n大会: 第72回全日本中学校通信陸上競技大会熊本県大会（2026/06/13）。",
       "sources": [
-        "input/idaten-corpus/drive-text/記録データベース/2026年度/中学生記録.csv"
+        "out/analysis/notion_records_2026.json",
+        "out/analysis/arato-tamana-teams/岱明中.md"
       ],
       "tags": [
         "sb",

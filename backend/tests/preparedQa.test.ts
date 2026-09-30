@@ -12,9 +12,9 @@ describe("preparedQa catalog", () => {
     resetPreparedQaCache();
   });
 
-  it("loads 1100 entries", () => {
+  it("loads 1102 entries", () => {
     const entries = loadPreparedQa();
-    expect(entries).toHaveLength(1100);
+    expect(entries).toHaveLength(1102);
     expect(entries[0]?.id).toBeTruthy();
     expect(entries[0]?.answer.length).toBeGreaterThan(10);
   });
@@ -75,6 +75,15 @@ describe("matchPreparedAnswer", () => {
   it("keeps yearless junior result on current-year entry", () => {
     const hit = matchPreparedAnswer("ジュニア駅伝の結果は？", { defaultYear: 2026 });
     expect(hit?.id).toBe("junior-2026-result");
+  });
+
+  it("returns current SB for 田上颯人, not stale 4:58.03", () => {
+    const hit = matchPreparedAnswer("田上颯人の自己ベストは？", { defaultYear: 2026 });
+    expect(hit?.id).toBe("sb-田上颯人");
+    expect(hit?.text).toContain("4:37.20");
+    expect(hit?.text).toContain("10:24.08");
+    expect(hit?.text).not.toContain("4:58.03");
+    expect(hit?.text).not.toMatch(/自己ベストは 10:41\.62/);
   });
 
   it("returns null for unrelated chatter without prepared entry", () => {
