@@ -14,7 +14,7 @@ describe("preparedQa catalog", () => {
 
   it("loads prepared catalog entries", () => {
     const entries = loadPreparedQa();
-    expect(entries.length).toBeGreaterThanOrEqual(17000);
+    expect(entries.length).toBeGreaterThanOrEqual(20000);
     expect(entries[0]?.id).toBeTruthy();
     expect(entries[0]?.answer.length).toBeGreaterThan(10);
   });
@@ -38,6 +38,9 @@ describe("preparedQa catalog", () => {
     expect([...ids].some((id) => id.startsWith("race-2026-"))).toBe(true);
     expect([...ids].some((id) => id.startsWith("aragyoku-career-"))).toBe(true);
     expect([...ids].some((id) => id.endsWith("-order"))).toBe(true);
+    expect([...ids].some((id) => id.endsWith("-splitrank"))).toBe(true);
+    expect(ids.has("guide-2026-what")).toBe(true);
+    expect(ids.has("trial-2026-daiming-aragyoku")).toBe(true);
   });
 
   it("covers knowledge topics via prepared answers", () => {
@@ -247,6 +250,32 @@ describe("matchPreparedAnswer", () => {
     const hit = matchPreparedAnswer("松野凛空の荒玉出走歴は？", { defaultYear: 2026 });
     expect(hit?.id).toBe("aragyoku-career-松野凛空");
     expect(hit?.text).toContain("2025年男子・岱明2区");
+  });
+
+  it("returns last-year split rank for 岱明 men leg2", () => {
+    for (const q of [
+      "昨年の荒玉男子岱明2区の区間順位は？",
+      "2025年荒玉男子の岱明2区の区間順位は？",
+    ]) {
+      const hit = matchPreparedAnswer(q, { defaultYear: 2026 });
+      expect(hit?.id, q).toBe("aragyoku-2025-男子-岱明-leg2-splitrank");
+      expect(hit?.text, q).toContain("松野凛空");
+      expect(hit?.text, q).toContain("区間6位");
+    }
+  });
+
+  it("returns 徹底対策 guide overview", () => {
+    const hit = matchPreparedAnswer("荒玉の完全ガイドは？", { defaultYear: 2026 });
+    expect(hit?.id).toBe("guide-2026-what");
+    expect(hit?.text).toContain("徹底対策");
+    expect(hit?.text).toContain("117");
+  });
+
+  it("returns 2026 course trial results", () => {
+    const hit = matchPreparedAnswer("岱明の荒玉試走タイムは？", { defaultYear: 2026 });
+    expect(hit?.id).toBe("trial-2026-daiming-aragyoku");
+    expect(hit?.text).toContain("松野凛空");
+    expect(hit?.text).toContain("9:48");
   });
 
   it("returns null for unrelated chatter without prepared entry", () => {
