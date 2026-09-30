@@ -279,6 +279,21 @@ describe("matchPreparedAnswer", () => {
     }
   });
 
+  it("answers course-point start questions from the common-points diagram", () => {
+    const hit = matchPreparedAnswer("荒玉駅伝の女子4区は何地点から？", { defaultYear: 2026 });
+    expect(hit?.id).toBe("course-leg-女子4-start");
+    expect(hit?.text).toContain("A地点");
+    expect(hit?.text).toContain("drive.google.com");
+
+    const men1 = matchPreparedAnswer("男子1区は何地点から？", { defaultYear: 2026 });
+    expect(men1?.id).toBe("course-leg-男子1-start");
+    expect(men1?.text).toContain("145m");
+
+    const relay = matchPreparedAnswer("女子4→5区の中継所は？", { defaultYear: 2026 });
+    expect(relay?.id).toBe("course-leg-女子4-relay");
+    expect(relay?.text).toContain("C地点");
+  });
+
   it("returns 徹底対策 guide overview", () => {
     const hit = matchPreparedAnswer("荒玉の完全ガイドは？", { defaultYear: 2026 });
     expect(hit?.id).toBe("guide-2026-what");
