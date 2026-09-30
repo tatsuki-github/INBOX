@@ -29,7 +29,8 @@ LINE Q&A は RAG / LLM で都度組み立てると、ぶれ・コーチ誘導・
 - 回答更新は YAML 編集 + sync（推測埋めはしない）。
 - 初版は 100 件。以降は同形式で追記（年なし＝今年度ポリシーを維持）。
   生成: `scripts/generate_prepared_qa_bulk.py` /
-  `scripts/generate_aragyoku_athlete_sb_qa.py`（荒玉地区選手の年度別SB）→
+  `scripts/generate_aragyoku_athlete_sb_qa.py`（荒玉地区選手の年度別SB）/
+  `scripts/generate_prepared_qa_knowledge_1000.py`（ナレッジカバー拡充）→
   `scripts/sync_prepared_qa.py`。
 
 ## Test strategy
