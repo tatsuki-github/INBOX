@@ -53,21 +53,25 @@ describe("canned help / example questions", () => {
     for (const name of ["今村昇磨", "石川隼", "佐藤央琉", "案浦竜士", "松野凛空"]) {
       expect(text).not.toContain(name);
     }
-    expect(text).toContain("荒玉男子1区を10分で走るとペースは？");
+    expect(text).toContain("荒玉駅伝男子1区を10分で走るとペースは？");
     expect(text).not.toContain("12分");
     expect(text).not.toContain("銀マット");
     expect(text).not.toContain("9/20の練習予定");
     expect(text).toContain("○○/〇〇の大会予定は？");
     expect(text).not.toMatch(/20(?:0\d|1\d|2[0-3])/); // 直近2年（2024–）以外の西暦年を入れない
-    expect(text).toContain("2024年荒玉男子の優勝チームは？");
+    expect(text).toContain("2024年荒玉駅伝男子の優勝チームは？");
     expect(text).toContain("2025年");
     const exampleLines = text
       .split("\n")
       .filter((l) => l.startsWith("・"))
       .map((l) => l.slice(1));
     expect(exampleLines.length).toBeGreaterThanOrEqual(12);
-    const aragyokuCount = exampleLines.filter((l) => /荒玉/.test(l)).length;
+    const aragyokuCount = exampleLines.filter((l) => /荒玉駅伝/.test(l)).length;
     expect(aragyokuCount).toBeGreaterThan(exampleLines.length / 2);
+    // ヘルプ質問例では略称「荒玉」単独ではなく「荒玉駅伝」と書く
+    for (const line of exampleLines.filter((l) => /荒玉/.test(l))) {
+      expect(line).toMatch(/荒玉駅伝/);
+    }
 
     // App coverage cues (no personal names)
     for (const cue of [
