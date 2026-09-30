@@ -34,6 +34,27 @@ describe("preparedQa catalog", () => {
     expect(bad.length).toBe(0);
   });
 
+  it("omits non-link bibliographic references in answers", () => {
+    const entries = loadPreparedQa();
+    const bad = entries.filter((e) => {
+      const a = e.answer || "";
+      return (
+        /（[^）]*徹底対策ガイド[^）]*）/.test(a) ||
+        /出場枠は[^。\n]*要項/.test(a) ||
+        /詳しくは[^。\n]*(?:ガイド|徹底対策)/.test(a)
+      );
+    });
+    expect(bad.slice(0, 5).map((e) => e.id)).toEqual([]);
+    expect(bad.length).toBe(0);
+
+    const core = matchPreparedAnswer("荒玉駅伝は何位までが県駅伝に出場できる？", {
+      defaultYear: 2026,
+    });
+    expect(core?.text).toContain("男女上位2校");
+    expect(core?.text).not.toContain("徹底対策ガイド");
+    expect(core?.text).not.toContain("大会要項");
+  });
+
   it("covers diversified bulk ids beyond the first 100", () => {
     const entries = loadPreparedQa();
     const ids = new Set(entries.map((e) => e.id));

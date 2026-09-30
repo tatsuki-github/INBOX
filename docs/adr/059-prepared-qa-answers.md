@@ -29,9 +29,12 @@ LINE Q&A は RAG / LLM で都度組み立てると、ぶれ・コーチ誘導・
 - リポジトリパス（`input/` `out/` `docs/` `scripts/` 等）や内部ファイル名
 - `状態: scheduled` のような運用ラベル、`出典: out/...`、`正本は xxx.md`
 - Markdown 表の生ダンプや分析レポート全文の貼り付け
+- **リンクでない参考文献**（「徹底対策ガイド 4.16」「大会要項で再確認」など）。
+  公開 URL（`https://...`）がある場合だけ載せる
 
 回答は短い事実文＋必要なら公開 URL（Drive / 大会結果）に留める。
-全件の品質回収: `scripts/polish_prepared_qa_quality.py` → `scripts/sync_prepared_qa.py`。
+全件の品質回収: `scripts/polish_prepared_qa_quality.py` /
+`scripts/strip_prepared_qa_nonlink_refs.py` → `scripts/sync_prepared_qa.py`。
 
 ## Consequences
 
