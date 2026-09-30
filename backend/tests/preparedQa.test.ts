@@ -14,7 +14,7 @@ describe("preparedQa catalog", () => {
 
   it("loads prepared catalog entries", () => {
     const entries = loadPreparedQa();
-    expect(entries.length).toBeGreaterThanOrEqual(20000);
+    expect(entries.length).toBeGreaterThanOrEqual(22000);
     expect(entries[0]?.id).toBeTruthy();
     expect(entries[0]?.answer.length).toBeGreaterThan(10);
   });
@@ -371,6 +371,20 @@ describe("matchPreparedAnswer", () => {
     expect(hit?.id).toBe("trial-2026-daiming-aragyoku");
     expect(hit?.text).toContain("松野凛空");
     expect(hit?.text).toContain("9:48");
+  });
+
+  it("covers gap-crush batch B samples (top2 / meet record / formula)", () => {
+    const top2 = matchPreparedAnswer("玉名は荒玉で2位以内何回？", { defaultYear: 2026 });
+    expect(top2?.id).toBe("gap1000b-top2-玉名");
+    expect(top2?.text).toContain("15回");
+
+    const meet = matchPreparedAnswer("2012荒玉女子ボードの大会記録", { defaultYear: 2026 });
+    expect(meet?.id).toBe("gap1000b-meetrec-2012-女子");
+    expect(meet?.text).toContain("40:58");
+
+    const formula = matchPreparedAnswer("荒玉男子玉名中の5区予想タイムは？", { defaultYear: 2026 });
+    expect(formula?.id).toBe("gap1000b-formula-男子-玉名中-leg5");
+    expect(formula?.text).toContain("10:10");
   });
 
   it("returns null for unrelated chatter without prepared entry", () => {
