@@ -79,6 +79,7 @@ describe("canned help / example questions", () => {
       "ペース",
       "前年比",
       "コース動画",
+      "コースの画像",
       "結果ボード",
       "なごみ",
       "大会予定",

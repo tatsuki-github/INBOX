@@ -66,6 +66,13 @@ export function wantsAragyokuBoardImages(question: string): boolean {
   if (/動画|映像|ビデオ/.test(q) && /コース/.test(q) && !/結果|順位|区間|優勝|学年|選手|タイム/.test(q)) {
     return false;
   }
+  // コース図解だけの質問は course-images 経路に任せる
+  if (
+    (/画像|図解|コース図|共通ポイント/.test(q) && /コース|共通ポイント/.test(q)) &&
+    !/結果|順位|区間|優勝|学年|選手|タイム|ボード/.test(q)
+  ) {
+    return false;
+  }
   return true;
 }
 

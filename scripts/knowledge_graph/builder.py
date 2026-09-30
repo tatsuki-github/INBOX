@@ -591,6 +591,17 @@ QUERY_HINTS: list[tuple[str, str, list[str]]] = [
         ],
     ),
     (
+        "荒玉駅伝のコースの画像は？",
+        "aragyoku/course-points.md の図解画像（Drive URL・ローカル PNG）を返す。LINE は ADR 058",
+        [
+            "topic:ekiden",
+            "corpus:aragyoku",
+            "source:input/aragyoku/course-points.md",
+            "source:input/aragyoku/course-points.json",
+            "media:ekiden:荒玉駅伝-男女コース共通ポイント-橋の上",
+        ],
+    ),
+    (
         "2025年の荒玉駅伝の区間賞の名前と学年は？",
         "aragyoku_leg_awards.md の2025年男女セクション（区間賞＝split_rank1）。大会記録ボードとは別",
         [

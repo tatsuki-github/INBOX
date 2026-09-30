@@ -5,6 +5,10 @@ import {
   toLineImageMessages,
 } from "../domain/aragyokuBoardImages.js";
 import {
+  selectAragyokuCourseImages,
+  toLineCourseImageMessages,
+} from "../domain/aragyokuCourseImages.js";
+import {
   selectAragyokuCourseVideos,
   toLineVideoMessages,
 } from "../domain/aragyokuCourseVideos.js";
@@ -68,21 +72,27 @@ export function buildReplyMessages(
   opts?: {
     defaultYear?: number;
     attachBoardImages?: boolean;
+    attachCourseImages?: boolean;
     attachCourseVideos?: boolean;
   },
 ): messagingApi.Message[] {
   const attachImages = opts?.attachBoardImages !== false;
+  const attachCourseImages = opts?.attachCourseImages !== false;
   const attachVideos = opts?.attachCourseVideos !== false;
-  const images = attachImages
+  const boardImages = attachImages
     ? toLineImageMessages(
         selectAragyokuBoardImages(question, { defaultYear: opts?.defaultYear }),
       )
     : [];
+  const courseImages = attachCourseImages
+    ? toLineCourseImageMessages(selectAragyokuCourseImages(question))
+    : [];
+  const images = [...courseImages, ...boardImages];
   const videos = attachVideos
     ? toLineVideoMessages(selectAragyokuCourseVideos(question))
     : [];
-  // Keep result attachments bounded together. Course-video questions still
-  // receive the playlist URL in their canned text.
+  // Keep result attachments bounded together. Course-video / course-image
+  // questions still receive Drive URLs in their canned text.
   const media = [...images, ...videos].slice(0, 2);
   const mediaCount = media.length;
   const textSlots = Math.max(1, 5 - mediaCount);
@@ -158,6 +168,7 @@ export async function handleWebhookEvents(
           messages: buildReplyMessages(text, question, {
             defaultYear,
             attachBoardImages: attachMedia,
+            attachCourseImages: attachMedia,
             attachCourseVideos: attachMedia,
           }),
         });

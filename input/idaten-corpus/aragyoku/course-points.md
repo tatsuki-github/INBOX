@@ -13,6 +13,17 @@
 - 全体図のD・E付近の道路は一定幅の滑らかな線に修正。女子5区と男子6区の共通ゴールを、EとAの間で南へ分かれる道の先に表示。ゴールの拡大図は追加しない。
 - ゴールへの曲がり角は女子5区GPXの約2.54km地点（北緯32.854100、東経130.537978）。全体図の表現は女子5区・男子6区のコース動画に合わせ、分岐からゴールまで南へ真っすぐ描く。橋の1kmマーカーも動画上の曲がり角直前へ寄せた。動画参照フレーム: `input/aragyoku/course-points/women5-video-overview-goal.png`。GPX走行線の座標確認用参照図: `input/aragyoku/course-points/goal-turn-gpx-reference.png`。
 
+## LINE ボット
+
+「荒玉駅伝のコースの画像は？」「コース図を見せて」「共通ポイントの図」などの質問では:
+
+1. テキストで上記 Google Drive の画像 URL を案内する
+2. LINE Image で図解 PNG を 1 枚添付する
+
+正本カタログ: `backend/data/aragyoku-course-images.json`（再生成: `python3 scripts/generate_aragyoku_course_images_catalog.py`）
+
+詳細: `docs/adr/058-aragyoku-line-course-images.md`
+
 ## 確定した地点情報
 
 - 女子1区の1km地点は**曲がる手前の直線になっている橋の上**。見出しは「女子1区の1km地点（橋の上）」。
