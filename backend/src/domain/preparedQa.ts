@@ -200,8 +200,23 @@ function scorePair(nq: string, nCand: string): number {
 const HIT_THRESHOLD = 0.72;
 const AMBIGUITY_GAP = 0.06;
 
+/** Infer the primary year of a prepared entry (id / tags / answer). */
+export function preparedEntryYear(entry: PreparedQaEntry): number | null {
+  const idMatch = entry.id.match(/(?:^|-)((?:20)\d{2})(?:-|$)/);
+  if (idMatch?.[1]) return Number(idMatch[1]);
+  for (const tag of entry.tags ?? []) {
+    if (typeof tag === "number" && tag >= 2000 && tag <= 2100) return tag;
+    if (typeof tag === "string" && /^20\d{2}$/.test(tag)) return Number(tag);
+  }
+  const years = [...(entry.answer?.match(/20\d{2}/g) ?? [])].map(Number);
+  const uniq = [...new Set(years)];
+  if (uniq.length === 1) return uniq[0]!;
+  return null;
+}
+
 /**
  * Match a prepared FAQ entry. Returns null when no confident unique hit.
+ * Yearless questions are treated as the current fiscal year (defaultYear).
  */
 export function matchPreparedAnswer(
   question: string,
@@ -214,16 +229,23 @@ export function matchPreparedAnswer(
   const q = question.trim();
   if (!q) return null;
 
+  const defaultYear = opts?.defaultYear ?? currentFiscalYear(opts?.now);
   // Keep relative-year resolution available for callers/tests.
-  void resolveRelativeYears(q, opts?.defaultYear ?? currentFiscalYear(opts?.now));
+  void resolveRelativeYears(q, defaultYear);
 
   const nq = normalizePreparedQuestion(q, opts);
   if (!nq) return null;
+  const queryHasYear = (nq.match(/20\d{2}/g) ?? []).length > 0;
 
   const catalog = opts?.entries ?? loadPreparedQa();
   if (catalog.length === 0) return null;
 
-  type Cand = { entry: PreparedQaEntry; score: number; matchedQuestion: string };
+  type Cand = {
+    entry: PreparedQaEntry;
+    score: number;
+    matchedQuestion: string;
+    year: number | null;
+  };
   const scored: Cand[] = [];
 
   for (const entry of catalog) {
@@ -237,15 +259,30 @@ export function matchPreparedAnswer(
         bestQ = candQ;
       }
     }
+    // 年なし質問は今年度エントリをわずかに優先（同点解消・過去年への誤吸込防止）
+    const year = preparedEntryYear(entry);
+    if (!queryHasYear && year != null) {
+      if (year === defaultYear) best += 0.02;
+      else best -= 0.05;
+    }
     if (best >= HIT_THRESHOLD * 0.85) {
-      scored.push({ entry, score: best, matchedQuestion: bestQ });
+      scored.push({ entry, score: best, matchedQuestion: bestQ, year });
     }
   }
 
-  scored.sort((a, b) => b.score - a.score);
+  scored.sort((a, b) => {
+    if (b.score !== a.score) return b.score - a.score;
+    if (!queryHasYear) {
+      const aCur = a.year === defaultYear ? 1 : 0;
+      const bCur = b.year === defaultYear ? 1 : 0;
+      if (bCur !== aCur) return bCur - aCur;
+    }
+    return 0;
+  });
   const top = scored[0];
   if (!top || top.score < HIT_THRESHOLD) return null;
-  // 正規化後の完全一致は採用。部分一致同士が僅差のときだけ曖昧として見送る。
+  // 正規化後の完全一致（年ブースト込みで >=1）は採用。
+  // 部分一致同士が僅差のときだけ曖昧として見送る。
   if (top.score < 1) {
     const second = scored[1];
     if (

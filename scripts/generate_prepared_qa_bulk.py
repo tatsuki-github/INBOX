@@ -282,11 +282,20 @@ def gen_calendar(existing_ids: set[str], limit: int) -> list[dict]:
             loc = ev.get("location") or ""
             desc = (ev.get("description") or "").strip()
             desc_one = re.sub(r"\s+", " ", desc)[:220]
-            qs = [
-                f"{title}はいつ？",
-                f"{year}年の{title}の日程は？",
-                f"{title}について教えて",
-            ]
+            # 年なし質問は今年度のみ。過去年は西暦付きに固定（ADR 059）
+            if int(year) == 2026:
+                qs = [
+                    f"{title}はいつ？",
+                    f"{year}年の{title}の日程は？",
+                    f"{title}について教えて",
+                    f"今年の{title}はいつ？",
+                ]
+            else:
+                qs = [
+                    f"{year}年の{title}はいつ？",
+                    f"{year}年の{title}の日程は？",
+                    f"{year}年の{title}について教えて",
+                ]
             if str(date)[:10] != str(date):
                 pass
             ans = f"{title}は {date} です。"
@@ -678,11 +687,18 @@ def gen_meet_results_index(existing_ids: set[str], limit: int) -> list[dict]:
                 continue
             rel = str(meet_dir.relative_to(ROOT))
             files = [p.name for p in meet_dir.iterdir() if p.is_file()][:8]
-            qs = [
-                f"{title}の資料はどこ？",
-                f"{title}の結果フォルダは？",
-                f"{year}の{title}について",
-            ]
+            if str(year).startswith("2026"):
+                qs = [
+                    f"{title}の資料はどこ？",
+                    f"{title}の結果フォルダは？",
+                    f"{year}の{title}について",
+                ]
+            else:
+                qs = [
+                    f"{year}年{title}の資料はどこ？",
+                    f"{year}年{title}の結果フォルダは？",
+                    f"{year}の{title}について",
+                ]
             ans = f"{title}（{year}）のコーパスフォルダは `{rel}` です。"
             if files:
                 ans += " 主なファイル: " + "、".join(files[:6]) + "。"
