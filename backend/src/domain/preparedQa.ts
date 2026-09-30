@@ -7,6 +7,7 @@ import { readFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { currentFiscalYear, resolveRelativeYears } from "./dates.js";
+import { canonicalizeSchoolNames, schoolSynonymGroups } from "./schoolAliases.js";
 
 export type PreparedQaEntry = {
   id: string;
@@ -49,7 +50,8 @@ const SYNONYM_GROUPS: string[][] = [
   ["優勝", "1位", "一位"],
   ["準優勝", "2位", "二位"],
   ["教えて", "見せて", "知りたい", "どこ", "ある"],
-  ["玉名付属", "玉高附属", "玉名附属", "玉名高附", "玉名附", "附中"],
+  // 学校名は schoolAliases.ts に集約（荒尾四/荒尾第四、玉高附属/玉名付属 など）
+  ...schoolSynonymGroups(),
   ["荒玉", "荒玉駅伝", "中体連駅伝", "荒玉中体連"],
   ["ジュニア", "県ジュニア", "ジュニア駅伝"],
   ["なごみ", "なごみ駅伝", "金栗"],
@@ -116,6 +118,9 @@ export function normalizePreparedQuestion(
   q = q.replace(/一昨年|おととし/g, `${defaultYear - 2}年`);
   q = q.replace(/昨年度|前年度|前年|去年|昨年/g, `${defaultYear - 1}年`);
 
+  // 荒尾第四→荒尾四、玉名付属→玉高附属 など（カタログ質問側も同じ正規化）
+  q = canonicalizeSchoolNames(q);
+
   // Drop polite / trailing noise.
   // 「とは」は裸のチーム名へ潰れると名簿定型を誤吸するため、意味を残すトークンへ置換する。
   q = q
@@ -165,6 +170,9 @@ function tokenize(normalized: string): string[] {
     "pdf",
     "成績表",
     "玉高附属",
+    "荒尾四",
+    "荒尾三",
+    "荒尾海陽",
     "天水",
     "有明",
     "菊水",
