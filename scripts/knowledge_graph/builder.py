@@ -211,6 +211,21 @@ SOURCE_GLOBS: list[tuple[str, list[str], str]] = [
         "荒玉駅伝 共通地点の男女区間別距離対応と画像・Drive URL",
     ),
     (
+        "input/faq/prepared-qa.v1.yaml",
+        ["ekiden", "practice", "athlete_records", "calendar"],
+        "想定質問1100件の定型回答正本（ADR 059）。ヒット時は本文をほぼそのまま返す",
+    ),
+    (
+        "input/idaten-corpus/faq/prepared-qa.v1.yaml",
+        ["ekiden", "practice", "athlete_records", "calendar"],
+        "定型回答FAQ（コーパスコピー）",
+    ),
+    (
+        "docs/adr/059-prepared-qa-answers.md",
+        ["meta"],
+        "ADR 059: 想定質問の定型回答ナレッジ",
+    ),
+    (
         "input/idaten-corpus/aragyoku/winners-by-year.md",
         ["ekiden"],
         "荒玉駅伝 年度別優勝・準優勝校（コーパス）",
@@ -599,6 +614,25 @@ QUERY_HINTS: list[tuple[str, str, list[str]]] = [
             "source:input/aragyoku/course-points.md",
             "source:input/aragyoku/course-points.json",
             "media:ekiden:荒玉駅伝-男女コース共通ポイント-橋の上",
+        ],
+    ),
+    (
+        "想定質問の定型回答は？",
+        "input/faq/prepared-qa.v1.yaml の定型回答を優先（ADR 059）。未ヒット時のみ RAG/LLM",
+        [
+            "source:input/faq/prepared-qa.v1.yaml",
+            "source:input/idaten-corpus/faq/prepared-qa.v1.yaml",
+            "source:docs/adr/059-prepared-qa-answers.md",
+            "topic:ekiden",
+        ],
+    ),
+    (
+        "ジュニア駅伝の結果PDFは？",
+        "prepared-qa の junior-2025-pdf / junior-2026-result。Drive PDF 最大4件と大会フォルダ",
+        [
+            "source:input/faq/prepared-qa.v1.yaml",
+            "topic:ekiden",
+            "corpus:drive-text",
         ],
     ),
     (
@@ -1175,6 +1209,7 @@ def _register_idaten_corpus(
         ("notion-pages", ["practice", "meta"], "Notion ページ Markdown"),
         ("drive-text", ["ekiden", "practice", "calendar", "athlete_records"], "Drive テキスト（大会・記録データベース・個人メモ）"),
         ("docs", ["ekiden", "schema", "meta"], "関連 ADR・区間距離定義のコピー"),
+        ("faq", ["ekiden", "practice", "athlete_records", "calendar", "meta"], "想定質問の定型回答（prepared-qa）"),
     ]
     for dirname, topics, base_hint in dir_specs:
         dpath = corpus / dirname

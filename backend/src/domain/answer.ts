@@ -7,6 +7,7 @@ import {
   resolveRelativeYears,
 } from "./dates.js";
 import { matchCannedAnswer } from "./canned.js";
+import { matchPreparedAnswer } from "./preparedQa.js";
 import { matchClarifyAnswer } from "./clarify.js";
 import { isLegAthleteQuestion } from "./legs.js";
 import {
@@ -4769,6 +4770,18 @@ export async function answerQuestion(
       kind: "answered",
       text: formatForLine(canned.text),
       sources: [`canned:${canned.id}`],
+    };
+  }
+
+  const prepared = matchPreparedAnswer(question, {
+    defaultYear: deps.defaultYear,
+    now: deps.now,
+  });
+  if (prepared && !technicalDocQuestion) {
+    return {
+      kind: "answered",
+      text: formatForLine(prepared.text),
+      sources: [`prepared:${prepared.id}`, ...prepared.sources.map((s) => `ref:${s}`)],
     };
   }
 

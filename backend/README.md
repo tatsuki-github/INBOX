@@ -81,6 +81,7 @@ npx vercel link --yes --project idaten-line-backend --scope tatsukitsuchiyama-gm
 - 大会結果 URL 索引: [`data/meet-result-urls.json`](data/meet-result-urls.json)（記録 CSV / `source.csv` 由来。再生成は `python3 scripts/build_meet_result_urls.py`）
 - 荒玉結果ボード画像（LINE Image）: [`data/aragyoku-board-images.json`](data/aragyoku-board-images.json)（`transcripts` の `source_drive_id`。再生成は `python3 scripts/generate_aragyoku_board_images_catalog.py`。ADR 043）
 - 荒玉コース図解画像（LINE Image）: [`data/aragyoku-course-images.json`](data/aragyoku-course-images.json)（`course-points.json` の `drive_file_id`。再生成は `python3 scripts/generate_aragyoku_course_images_catalog.py`。ADR 058）
+- 想定質問の定型回答: [`data/prepared-qa.json`](data/prepared-qa.json)（正本 `input/faq/prepared-qa.v1.yaml`。再生成は `python3 scripts/sync_prepared_qa.py`。ADR 059）
 - 曖昧な自己ベスト質問は [`src/domain/clarify.ts`](src/domain/clarify.ts) が具体的な質問例を返す（ADR 021）
 - 「使い方」「ヘルプ」「このボットは何ができる？」等は [`src/domain/canned.ts`](src/domain/canned.ts) が荒玉中心の質問例を返す（ADR 053。個人名なし）
 - 中学生 SB: コーパス `sb/中学生SB.csv` は **全所属・行単位チャンク**（ADR 022）。再生成は `uv run python scripts/build_idaten_corpus.py`
