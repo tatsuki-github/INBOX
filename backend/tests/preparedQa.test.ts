@@ -14,7 +14,7 @@ describe("preparedQa catalog", () => {
 
   it("loads prepared catalog entries", () => {
     const entries = loadPreparedQa();
-    expect(entries.length).toBeGreaterThanOrEqual(22000);
+    expect(entries.length).toBeGreaterThanOrEqual(22200);
     expect(entries[0]?.id).toBeTruthy();
     expect(entries[0]?.answer.length).toBeGreaterThan(10);
   });
@@ -414,6 +414,17 @@ describe("matchPreparedAnswer", () => {
     expect(hit?.id).toBe("trial-2026-daiming-aragyoku");
     expect(hit?.text).toContain("松野凛空");
     expect(hit?.text).toContain("9:48");
+  });
+
+  it("returns なごみ team result for 荒尾第四 / 荒尾四", () => {
+    for (const q of ["荒尾第四のなごみ駅伝の結果は？", "荒尾四のなごみ駅伝の結果は？"]) {
+      const hit = matchPreparedAnswer(q, { defaultYear: 2026 });
+      expect(hit?.id, q).toBe("nagomi-team-2026-荒尾第四");
+      expect(hit?.text, q).toContain("37:25");
+      expect(hit?.text, q).toContain("藤井祐吏");
+      expect(hit?.text, q).toContain("drive.google.com/drive/folders/1k-zW0irJ-OjDjqQwUQLZIs4C6PfuR211");
+      expect(hit?.text, q).not.toContain("コーチに直接聞いてください");
+    }
   });
 
   it("covers gap-crush batch B samples (top2 / meet record / formula)", () => {
