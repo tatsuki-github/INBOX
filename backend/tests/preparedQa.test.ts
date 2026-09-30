@@ -84,6 +84,7 @@ describe("matchPreparedAnswer", () => {
     expect(hit?.id).toBe("sb-2026-田上颯人");
     expect(hit?.text).toContain("4:37.20");
     expect(hit?.text).toContain("10:24.08");
+    expect(hit?.text).toMatch(/大会結果:\s*https?:\/\//);
     expect(hit?.text).not.toContain("4:58.03");
     expect(hit?.text).not.toMatch(/自己ベストは 10:41\.62/);
   });
@@ -93,7 +94,16 @@ describe("matchPreparedAnswer", () => {
     expect(hit?.id).toBe("sb-2026-松野凛空");
     expect(hit?.text).toContain("4:22.33");
     expect(hit?.text).toContain("9:37.84");
+    expect(hit?.text).toContain("http://www.kumariku.org/26/26,7,4long/rel015.html");
+    expect(hit?.text).toContain("http://www.kumariku.org/26/26,6,13tsushin/rel196.html");
     expect(hit?.text).not.toContain("4:36.05");
+  });
+
+  it("includes meet result link on distance-specific SB answers", () => {
+    const hit = matchPreparedAnswer("松野凛空の1500mSBは？", { defaultYear: 2026 });
+    expect(hit?.id).toBe("sb-2026-松野凛空-1500m");
+    expect(hit?.text).toContain("4:22.33");
+    expect(hit?.text).toContain("大会結果: http://www.kumariku.org/26/26,7,4long/rel015.html");
   });
 
   it("lists いだてん岱明 students instead of who-is-daiming", () => {
