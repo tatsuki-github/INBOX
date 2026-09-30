@@ -1,11 +1,11 @@
 {
   "version": 1,
   "title": "荒玉駅伝 男女コースの共通ポイント",
-  "updated_at": "2026-09-29",
+  "updated_at": "2026-09-30",
   "lap_metres": 4855,
   "men_start_before_C_metres": 145,
   "image_path": "input/aragyoku/course-points/aragyoku-course-common-points.png",
-  "image_sha256": "57987957a0a777264b53b973943f3b5cd6c6be6dc57c1f0b0b69e15b001d334e",
+  "image_sha256": "45090c723ab57105ec3b3682e465e2f8c8876e3c3f6abf3f40628b49c94e3795",
   "drive_file_id": "1j9iRk5WAnNVdMyO_fDJX5MaMAVDrESzG",
   "drive_url": "https://drive.google.com/file/d/1j9iRk5WAnNVdMyO_fDJX5MaMAVDrESzG/view?usp=drivesdk",
   "drive_parent_folder_id": "1hR2ouziPiuo6wg7Z0WWJgDuieYakkd9k",
@@ -133,6 +133,20 @@
     "method": "built-in image_gen",
     "prompt_path": "output/imagegen/aragyoku-course-common-points-final-prompt.txt",
     "style": "simple 2D road schematic; no satellite photos, farmland or waterways",
-    "last_image_edit": "全体図のアルファベットラベルから伸びる不要な細いオレンジの線を削除。"
+    "last_image_edit": "女子5区GPXの約2.54km地点の曲がり角にゴール分岐を合わせ、角から南西へ向かう走行線を図示。"
+  },
+  "overview_goal": {
+    "label": "ゴール",
+    "women_leg": 5,
+    "men_leg": 6,
+    "latitude": 32.850179,
+    "longitude": 130.536632,
+    "location_note": "EとAの間で、女子5区GPXの約2.54km地点から南へ曲がる。ゴールはその角より南西側。全体図のみに表示。",
+    "source": "女子5区GPX終点。scripts/build_aragyoku_men_gpx_from_women.py では男子6区に女子5区GPXを使用。",
+    "detail_card": false,
+    "turn_latitude": 32.8541,
+    "turn_longitude": 130.537978,
+    "turn_women_leg_km_approx": 2.54,
+    "turn_reference_path": "input/aragyoku/course-points/goal-turn-gpx-reference.png"
   }
 }

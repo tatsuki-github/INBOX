@@ -1,6 +1,6 @@
 # 荒玉駅伝 男女コース共通ポイント図解
 
-更新日: 2026-09-29。女子1〜5区・男子1〜6区が共有する6地点の図解。
+更新日: 2026-09-30。女子1〜5区・男子1〜6区が共有する6地点の図解。
 
 ![荒玉駅伝 男女コース共通ポイント（橋の上）](course-points/aragyoku-course-common-points.png)
 
@@ -10,6 +10,8 @@
 - 構造化距離対応: `input/aragyoku/course-points.json`
 - 図の全体図下にあった「D → 1km（橋） → E → A → B → C → D」の経路表示帯は、指定画像の白い範囲に従って削除済み。進行順の情報は本ページの本文に保持。
 - 全体図のD・E・A・B・Cのオレンジの文字ラベルから伸びる装飾線は削除し、地点の丸と文字ラベルだけを残す。
+- 全体図のD・E付近の道路は一定幅の滑らかな線に修正。女子5区と男子6区の共通ゴールを、EとAの間で南へ分かれる道の先に表示。ゴールの拡大図は追加しない。
+- ゴールへの曲がり角は女子5区GPXの約2.54km地点（北緯32.854100、東経130.537978）。EからAへ向かう道の途中で南へ曲がり、ゴールへ向かってやや西へ進む。GPX走行線の参照図: `input/aragyoku/course-points/goal-turn-gpx-reference.png`。
 
 ## 確定した地点情報
 
@@ -44,6 +46,7 @@
 - 動画案内: `input/aragyoku/course-videos.md`
 - 女子各区GPXと動画の距離・地点記号: `scripts/generate_aragyoku_women_course_videos.py`
 - 男子1・3〜6区の動画用派生トラック: `scripts/build_aragyoku_men_gpx_from_women.py`（男子2区は実測GPX）。
+- ゴール位置: 女子5区GPX終点（北緯32.850179、東経130.536632）。男子6区は同じ女子5区GPXのトラックを用いるため終点も共通。Aより南西側で、南側道路から分かれた先。
 - 動画: `web/public/videos/women-leg1.mp4`〜`women-leg5.mp4`、`men-leg1.mp4`〜`men-leg6.mp4`。
 - 画像生成: built-in image_gen。曲がる手前の直線の橋・周回距離・男子スタート位置を反映し、衛星写真を使わないシンプルな道路図に変更。
 - 生成プロンプト: `output/imagegen/aragyoku-course-common-points-final-prompt.txt`
