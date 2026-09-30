@@ -30,7 +30,9 @@ LINE Q&A は RAG / LLM で都度組み立てると、ぶれ・コーチ誘導・
 - 初版は 100 件。以降は同形式で追記（年なし＝今年度ポリシーを維持）。
   生成: `scripts/generate_prepared_qa_bulk.py` /
   `scripts/generate_aragyoku_athlete_sb_qa.py`（荒玉地区選手の年度別SB）/
-  `scripts/generate_prepared_qa_knowledge_1000.py`（ナレッジカバー拡充）→
+  `scripts/generate_prepared_qa_knowledge_1000.py`（ナレッジカバー拡充）/
+  `scripts/generate_prepared_qa_course_points.py`（コース地点）/
+  `scripts/generate_prepared_qa_prefectural_top2.py`（荒玉2位まで→県駅伝出場）→
   `scripts/sync_prepared_qa.py`。
 
 ## Test strategy
