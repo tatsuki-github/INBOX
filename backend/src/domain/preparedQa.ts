@@ -105,6 +105,8 @@ export function normalizePreparedQuestion(
     .replace(/(は|って|とは)?$/g, "");
 
   q = applySynonyms(q.toLowerCase());
+  // "2025年のジュニア" と "2025年ジュニア" を同一視
+  q = q.replace(/の/g, "");
   q = q.replace(/\s+/g, "");
   return q;
 }
@@ -173,19 +175,26 @@ function jaccard(a: string[], b: string[]): number {
 
 function scorePair(nq: string, nCand: string): number {
   if (!nq || !nCand) return 0;
-  if (nq === nCand) return 1;
-  if (nq.includes(nCand) || nCand.includes(nq)) {
-    const ratio = Math.min(nq.length, nCand.length) / Math.max(nq.length, nCand.length);
-    return 0.86 + 0.1 * ratio;
-  }
-  const jq = jaccard(tokenize(nq), tokenize(nCand));
-  // Require overlapping years when both sides mention a year.
   const yq: string[] = nq.match(/20\d{2}/g) ?? [];
   const yc: string[] = nCand.match(/20\d{2}/g) ?? [];
-  if (yq.length && yc.length && !yq.some((y) => yc.includes(y))) {
-    return jq * 0.35;
+  const yearsConflict =
+    yq.length > 0 && yc.length > 0 && !yq.some((y) => yc.includes(y));
+  // 「昨年→2025」付き質問が、年なしの「ジュニアの結果」定型に部分一致して今年へ吸われるのを防ぐ
+  const queryYearOnly = yq.length > 0 && yc.length === 0;
+
+  if (nq === nCand) return yearsConflict || queryYearOnly ? 0 : 1;
+
+  let base = 0;
+  if (nq.includes(nCand) || nCand.includes(nq)) {
+    const ratio = Math.min(nq.length, nCand.length) / Math.max(nq.length, nCand.length);
+    base = 0.86 + 0.1 * ratio;
+  } else {
+    base = jaccard(tokenize(nq), tokenize(nCand));
   }
-  return jq;
+
+  if (yearsConflict) return base * 0.35;
+  if (queryYearOnly) return base * 0.4;
+  return base;
 }
 
 const HIT_THRESHOLD = 0.72;
@@ -236,9 +245,16 @@ export function matchPreparedAnswer(
   scored.sort((a, b) => b.score - a.score);
   const top = scored[0];
   if (!top || top.score < HIT_THRESHOLD) return null;
-  const second = scored[1];
-  if (second && top.entry.id !== second.entry.id && top.score - second.score < AMBIGUITY_GAP) {
-    return null;
+  // 正規化後の完全一致は採用。部分一致同士が僅差のときだけ曖昧として見送る。
+  if (top.score < 1) {
+    const second = scored[1];
+    if (
+      second &&
+      top.entry.id !== second.entry.id &&
+      top.score - second.score < AMBIGUITY_GAP
+    ) {
+      return null;
+    }
   }
 
   return {

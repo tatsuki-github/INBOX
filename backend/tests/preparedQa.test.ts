@@ -62,6 +62,21 @@ describe("matchPreparedAnswer", () => {
     expect(hit?.text).toContain("菊水");
   });
 
+  it("maps 昨年/去年 junior results to 2025, not 2026", () => {
+    for (const q of ["昨年のジュニア駅伝の結果", "去年のジュニア駅伝の結果", "昨年の県ジュニア駅伝の結果は？"]) {
+      const hit = matchPreparedAnswer(q, { defaultYear: 2026 });
+      expect(hit?.id, q).toBe("junior-2025-result");
+      expect(hit?.text, q).toContain("2025");
+      expect(hit?.text, q).toContain("36:47");
+      expect(hit?.text, q).not.toContain("36:52");
+    }
+  });
+
+  it("keeps yearless junior result on current-year entry", () => {
+    const hit = matchPreparedAnswer("ジュニア駅伝の結果は？", { defaultYear: 2026 });
+    expect(hit?.id).toBe("junior-2026-result");
+  });
+
   it("returns null for unrelated chatter without prepared entry", () => {
     // deliberately odd; if someday prepared, this assertion should be updated
     const hit = matchPreparedAnswer("宇宙の果てはどこ？", { defaultYear: 2026 });
