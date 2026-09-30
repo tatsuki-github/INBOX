@@ -34,6 +34,14 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 
 let cached: PreparedQaEntry[] | null = null;
 
+type PreparedNormEntry = {
+  entry: PreparedQaEntry;
+  year: number | null;
+  norms: { raw: string; norm: string }[];
+};
+
+let cachedNorm: { defaultYear: number; rows: PreparedNormEntry[] } | null = null;
+
 const SYNONYM_GROUPS: string[][] = [
   ["動画", "映像", "ビデオ"],
   ["画像", "図", "図解", "コース図", "写真"],
@@ -68,6 +76,7 @@ export function loadPreparedQa(path = defaultPreparedQaPath()): PreparedQaEntry[
 
 export function resetPreparedQaCache(): void {
   cached = null;
+  cachedNorm = null;
 }
 
 function applySynonyms(text: string): string {
@@ -214,6 +223,26 @@ export function preparedEntryYear(entry: PreparedQaEntry): number | null {
   return null;
 }
 
+function loadPreparedQaNormalized(
+  defaultYear: number,
+  entries?: PreparedQaEntry[],
+): PreparedNormEntry[] {
+  if (!entries && cachedNorm && cachedNorm.defaultYear === defaultYear) {
+    return cachedNorm.rows;
+  }
+  const catalog = entries ?? loadPreparedQa();
+  const rows = catalog.map((entry) => ({
+    entry,
+    year: preparedEntryYear(entry),
+    norms: entry.questions.map((raw) => ({
+      raw,
+      norm: normalizePreparedQuestion(raw, { defaultYear }),
+    })),
+  }));
+  if (!entries) cachedNorm = { defaultYear, rows };
+  return rows;
+}
+
 /**
  * Match a prepared FAQ entry. Returns null when no confident unique hit.
  * Yearless questions are treated as the current fiscal year (defaultYear).
@@ -237,7 +266,7 @@ export function matchPreparedAnswer(
   if (!nq) return null;
   const queryHasYear = (nq.match(/20\d{2}/g) ?? []).length > 0;
 
-  const catalog = opts?.entries ?? loadPreparedQa();
+  const catalog = loadPreparedQaNormalized(defaultYear, opts?.entries);
   if (catalog.length === 0) return null;
 
   type Cand = {
@@ -248,25 +277,24 @@ export function matchPreparedAnswer(
   };
   const scored: Cand[] = [];
 
-  for (const entry of catalog) {
+  for (const row of catalog) {
     let best = 0;
-    let bestQ = entry.questions[0] ?? "";
-    for (const candQ of entry.questions) {
-      const nCand = normalizePreparedQuestion(candQ, opts);
-      const s = scorePair(nq, nCand);
+    let bestQ = row.entry.questions[0] ?? "";
+    for (const cand of row.norms) {
+      const s = scorePair(nq, cand.norm);
       if (s > best) {
         best = s;
-        bestQ = candQ;
+        bestQ = cand.raw;
       }
     }
     // 年なし質問は今年度エントリをわずかに優先（同点解消・過去年への誤吸込防止）
-    const year = preparedEntryYear(entry);
+    const year = row.year;
     if (!queryHasYear && year != null) {
       if (year === defaultYear) best += 0.02;
       else best -= 0.05;
     }
     if (best >= HIT_THRESHOLD * 0.85) {
-      scored.push({ entry, score: best, matchedQuestion: bestQ, year });
+      scored.push({ entry: row.entry, score: best, matchedQuestion: bestQ, year });
     }
   }
 

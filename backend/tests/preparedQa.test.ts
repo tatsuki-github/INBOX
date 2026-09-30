@@ -14,7 +14,7 @@ describe("preparedQa catalog", () => {
 
   it("loads prepared catalog entries", () => {
     const entries = loadPreparedQa();
-    expect(entries.length).toBeGreaterThanOrEqual(1100);
+    expect(entries.length).toBeGreaterThanOrEqual(7000);
     expect(entries[0]?.id).toBeTruthy();
     expect(entries[0]?.answer.length).toBeGreaterThan(10);
   });
@@ -23,8 +23,9 @@ describe("preparedQa catalog", () => {
     const entries = loadPreparedQa();
     const ids = new Set(entries.map((e) => e.id));
     expect(ids.has("aragyoku-what")).toBe(true);
-    // bulk generators
+    // bulk generators + aragyoku athlete SB bank
     expect([...ids].some((id) => id.startsWith("sb-2026-"))).toBe(true);
+    expect([...ids].some((id) => id.startsWith("sb-2012-"))).toBe(true);
     expect([...ids].some((id) => id.startsWith("cal-"))).toBe(true);
     expect([...ids].some((id) => id.includes("-leg"))).toBe(true);
   });
@@ -80,11 +81,19 @@ describe("matchPreparedAnswer", () => {
 
   it("returns current SB for 田上颯人, not stale 4:58.03", () => {
     const hit = matchPreparedAnswer("田上颯人の自己ベストは？", { defaultYear: 2026 });
-    expect(hit?.id).toBe("sb-田上颯人");
+    expect(hit?.id).toBe("sb-2026-田上颯人");
     expect(hit?.text).toContain("4:37.20");
     expect(hit?.text).toContain("10:24.08");
     expect(hit?.text).not.toContain("4:58.03");
     expect(hit?.text).not.toMatch(/自己ベストは 10:41\.62/);
+  });
+
+  it("returns current SB for 松野凛空, not stale 4:36.05", () => {
+    const hit = matchPreparedAnswer("松野凛空の自己ベストは？", { defaultYear: 2026 });
+    expect(hit?.id).toBe("sb-2026-松野凛空");
+    expect(hit?.text).toContain("4:22.33");
+    expect(hit?.text).toContain("9:37.84");
+    expect(hit?.text).not.toContain("4:36.05");
   });
 
   it("treats yearless questions as current fiscal year", () => {
