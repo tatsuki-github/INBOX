@@ -104,6 +104,21 @@ describe("matchPreparedAnswer", () => {
     }
   });
 
+  it("maps 昨年/前年 aragyoku winners to 2025, not 2024", () => {
+    for (const q of ["昨年の荒玉男子優勝は誰？", "前年の荒玉男子優勝は誰？", "昨年度の荒玉男子優勝は誰？"]) {
+      const hit = matchPreparedAnswer(q, { defaultYear: 2026 });
+      expect(hit?.id, q).toBe("aragyoku-2025-men-winner");
+      expect(hit?.text, q).toContain("2025");
+      expect(hit?.text, q).toContain("菊水");
+      expect(hit?.text, q).not.toMatch(/2024年荒玉駅伝男子の優勝は南関/);
+    }
+  });
+
+  it("does not expand 前年比 into a 2025-year question", () => {
+    expect(normalizePreparedQuestion("岱明男子の前年比は？", { defaultYear: 2026 })).toContain("同比");
+    expect(normalizePreparedQuestion("岱明男子の前年比は？", { defaultYear: 2026 })).not.toContain("2025年比");
+  });
+
   it("keeps yearless junior result on current-year entry", () => {
     const hit = matchPreparedAnswer("ジュニア駅伝の結果は？", { defaultYear: 2026 });
     expect(hit?.id).toBe("junior-2026-result");

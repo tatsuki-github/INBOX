@@ -2,9 +2,11 @@ import { classifyScope, OUT_OF_SCOPE_MESSAGE } from "./scope.js";
 import {
   currentFiscalYear,
   expandDateQuery,
+  mentionsLastFiscalYear,
   parseDateMentions,
   resolveRelativeDates,
   resolveRelativeYears,
+  targetYearFromQuestion,
 } from "./dates.js";
 import { matchCannedAnswer } from "./canned.js";
 import { matchPreparedAnswer } from "./preparedQa.js";
@@ -151,6 +153,15 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
   const budget = maxChars ?? offlinePreviewBudget(question);
   const flat = text.replace(/\s+/g, " ");
   const q = question.normalize("NFKC");
+  // 「昨年/去年/前年」はコーパス最新年ではなく defaultYear-1 を使う
+  const relativeTargetYear = targetYearFromQuestion(q);
+  const pickCorpusYear = (years: number[]): number => {
+    // 「昨年/前年」はコーパス最新年より優先（欠落時も defaultYear-1 を返す）
+    if (relativeTargetYear != null) return relativeTargetYear;
+    return years.length > 0 ? Math.max(...years) : 0;
+  };
+  const requestedYearToken =
+    relativeTargetYear != null ? String(relativeTargetYear) : q.match(/20\d{2}/)?.[0];
   if (/10\s*(?:km|キロ)/i.test(q) && /SB|PB|自己ベスト|自己記録|ベスト/i.test(q)) {
     const candidateQuery = q
       .replace(/さん|氏/gu, " ")
@@ -234,12 +245,12 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
   }
   if (
     /3000m|3000ｍ|3[，,]\s*000/.test(q) &&
-    /20\d{2}年?/.test(q) &&
+    (/20\d{2}年?/.test(q) || relativeTargetYear != null) &&
     /SB|PB|ベスト/.test(q) &&
     hasNonTeamAthleteNameHint(q)
   ) {
     const name = extractAthleteNameHints(q)[0];
-    const requestedYear = q.match(/20\d{2}/)?.[0];
+    const requestedYear = requestedYearToken;
     if (name && requestedYear) {
       const sources = findSourcesWithText([name], {
         prefix: "out-analysis/arato-tamana-teams/",
@@ -690,7 +701,7 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
   const resultListIntent =
     /(?:結果(?:一覧|表|は|を|です)?|順位表|順位(?:は|を|だけ|全部)?|全チーム結果|全順位|結果を一覧)/.test(q) &&
     !/過去|歴代/.test(q);
-  const resultListYear = q.match(/20\d{2}/)?.[0] ?? "2025";
+  const resultListYear = requestedYearToken ?? "2025";
   const resultListGender = q.match(/(男子|女子)/)?.[1];
   const compactAthleteRecord =
     hasNonTeamAthleteNameHint(q) &&
@@ -832,7 +843,7 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
       /(20\d{2})年\s*荒玉(?:中体連)?駅伝\s*(男子|女子)[\s\S]{0,220}?優勝校(?:（1位）)?は「([^」]+)」(?:（総合\s*([0-9]+:\d{2})）)?、準優勝校は「([^」]+)」（総合\s*([0-9]+:\d{2}|—)）/g,
     )];
     if (pairs.length > 0) {
-      const latestYear = Math.max(...pairs.map((pair) => Number(pair[1])));
+      const latestYear = pickCorpusYear(pairs.map((pair) => Number(pair[1])));
       return pairs
         .filter((pair) => Number(pair[1]) === latestYear)
         .map((pair) => `${pair[1]}年${pair[2]}優勝校: ${pair[3]}（${pair[4] ?? ""}）、準優勝校: ${pair[5]}（${pair[6]}）`)
@@ -844,7 +855,7 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
       /(20\d{2})年\s*荒玉(?:中体連)?駅伝\s*(男子|女子)[\s\S]{0,220}?優勝校(?:（1位）)?は「([^」]+)」（総合\s*([0-9]+:\d{2})）/g,
     )];
     if (winners.length > 0) {
-      const latestYear = Math.max(...winners.map((winner) => Number(winner[1])));
+      const latestYear = pickCorpusYear(winners.map((winner) => Number(winner[1])));
       const latest = winners.filter((winner) => Number(winner[1]) === latestYear);
       return latest
         .map((winner) => winner[1] + "年" + winner[2] + "優勝校: " + winner[3] + "（" + winner[4] + "）")
@@ -856,7 +867,7 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
       /(20\d{2})年\s*荒玉(?:中体連)?駅伝\s*(男子|女子)[\s\S]{0,220}?優勝校(?:（1位）)?は「([^」]+)」（総合\s*([0-9]+:\d{2})）/g,
     )];
     if (winners.length > 0) {
-      const latestYear = Math.max(...winners.map((winner) => Number(winner[1])));
+      const latestYear = pickCorpusYear(winners.map((winner) => Number(winner[1])));
       return winners
         .filter((winner) => Number(winner[1]) === latestYear)
         .map((winner) => winner[1] + "年" + winner[2] + "優勝タイム: " + winner[4] + "（" + winner[3] + "）")
@@ -868,7 +879,7 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
       /(20\d{2})年\s*荒玉(?:中体連)?駅伝\s*(男子|女子)[\s\S]{0,220}?準優勝校は「([^」]+)」（総合\s*([0-9]+:\d{2}|—)）/g,
     )];
     if (runnersUp.length > 0) {
-      const latestYear = Math.max(...runnersUp.map((runnerUp) => Number(runnerUp[1])));
+      const latestYear = pickCorpusYear(runnersUp.map((runnerUp) => Number(runnerUp[1])));
       return runnersUp
         .filter((runnerUp) => Number(runnerUp[1]) === latestYear)
         .map((runnerUp) => runnerUp[1] + "年" + runnerUp[2] + "準優勝校: " + runnerUp[3] + "（" + runnerUp[4] + "）")
@@ -880,7 +891,7 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
       /(20\d{2})年\s*荒玉(?:中体連)?駅伝\s*(男子|女子)[\s\S]{0,220}?優勝校は「([^」]+)」（総合\s*([0-9]+:\d{2})）/g,
     )];
     if (firstPlaces.length > 0) {
-      const latestYear = Math.max(...firstPlaces.map((firstPlace) => Number(firstPlace[1])));
+      const latestYear = pickCorpusYear(firstPlaces.map((firstPlace) => Number(firstPlace[1])));
       return firstPlaces
         .filter((firstPlace) => Number(firstPlace[1]) === latestYear)
         .map((firstPlace) => firstPlace[1] + "年" + firstPlace[2] + "1位: " + firstPlace[3] + "（" + firstPlace[4] + "）")
@@ -1042,7 +1053,7 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
       if (matches.length > 0) return matches.map((match) => match[0]).join(" ");
     }
   }
-  if (!/20\d{2}/.test(q) && /結果|成績|順位/.test(q)) {
+  if ((!/20\d{2}/.test(q) || relativeTargetYear != null) && /結果|成績|順位/.test(q)) {
     const team = ["荒尾海陽", "荒尾三", "荒尾四", "三加和", "玉高附属", "玉名", "玉南", "腹栄", "岱明", "天水", "有明", "南関", "菊水", "玉東", "玉陵", "長洲"]
       .find((name) => q.includes(name));
     const gender = q.match(/(男子|女子)/)?.[1];
@@ -1051,7 +1062,7 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
         new RegExp("(20\\d{2})年荒玉駅伝(男子|女子) " + team + "は[^。]+。", "g"),
       )];
       const years = matches.map((match) => Number(match[1]));
-      const latestYear = years.length > 0 ? Math.max(...years) : 0;
+      const latestYear = pickCorpusYear(years);
       const latest = matches
         .filter((match) => Number(match[1]) === latestYear && (!gender || match[2] === gender))
         .map((match) => match[0]);
@@ -1155,7 +1166,7 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
       }).map((row) => row.chunk.text).join(" ").replace(/\s+/g, " ");
       if (sources.length > 0) {
         const headers = [...records.matchAll(/### (800m|1500m|3000m)/g)];
-        const requestedYear = q.match(/20\d{2}/)?.[0];
+        const requestedYear = requestedYearToken;
         const kind = /PB|自己ベスト|自己記録/.test(q) ? "PB" : "SB";
         const seconds = (time: string) => {
           const [minutes, remainder] = time.split(":");
@@ -1172,7 +1183,7 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
             "\\s*\\|\\s*(\\d+:\\d+(?:\\.\\d+)?)\\s*\\|\\s*(20\\d{2})/(\\d{2})/(\\d{2})";
           const matches = sections.flatMap((section) => [...section.matchAll(new RegExp(pattern, "g"))])
             .filter((match) => !requestedYear || match[2] === requestedYear);
-          const latestYear = matches.reduce((year, match) => Math.max(year, Number(match[2])), 0);
+          const latestYear = pickCorpusYear(matches.map((match) => Number(match[2])));
           const eligible = matches.filter((match) => Number(match[2]) === latestYear);
           const isPersonalBest = /PB|自己ベスト|自己記録/.test(q);
           const best = (isPersonalBest ? matches : eligible)
@@ -1213,9 +1224,9 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
       const pattern = "\\|\\s*(?:男子|女子)\\s*\\|\\s*\\d+\\s*\\|\\s*" + name +
         "\\s*\\|\\s*(\\d+:\\d+(?:\\.\\d+)?)\\s*\\|\\s*(20\\d{2})/(\\d{2})/(\\d{2})";
       const matches = [...recordSection.matchAll(new RegExp(pattern, "g"))];
-      const requestedYear = q.match(/20\d{2}/)?.[0];
+      const requestedYear = requestedYearToken;
       const eligible = requestedYear ? matches.filter((match) => match[2] === requestedYear) : matches;
-      const latestYear = eligible.reduce((year, match) => Math.max(year, Number(match[2])), 0);
+      const latestYear = pickCorpusYear(eligible.map((match) => Number(match[2])));
       const seasonRecords = eligible.filter((match) => Number(match[2]) === latestYear);
       const seconds = (time: string) => {
         const [minutes, remainder] = time.split(":");
@@ -1344,7 +1355,7 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
   if (paceCalc && /ペース|\/km|1km|キロあたり/.test(q) && /荒玉|駅伝/.test(q)) {
     const leg = Number(q.match(/([1-6])区/)![1]);
     const gender = /女子/.test(q) ? "女子" : "男子";
-    const year = Number(q.match(/20\d{2}/)?.[0] ?? "2025");
+    const year = Number(requestedYearToken ?? "2025");
     const maleCurrent = [3, 2.855, 3, 3, 2.855, 3];
     const maleOld = [3.95, 3.05, 2.855, 2.855, 3, 4];
     const female = [3, 1.855, 2, 2, 3];
@@ -1738,23 +1749,18 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
   if (
     /優勝校|優勝チーム|優勝は/.test(q) &&
     /荒玉|駅伝/.test(q) &&
-    (/去年|前年|20\d{2}/.test(q) ||
+    (mentionsLastFiscalYear(q) ||
+      /20\d{2}/.test(q) ||
       (/優勝チーム/.test(q) && !/過去|歴代|全て|全部/.test(q))) &&
     !/男子|女子/.test(q)
   ) {
-    const requestedYear = q.match(/20\d{2}/)?.[0];
     const matches = [
       ...flat.matchAll(/(20\d{2})年荒玉駅伝(?:男子|女子)の優勝校は[^。]+。/g),
     ];
+    const latestInCorpus = pickCorpusYear(matches.map((match) => Number(match[1])));
     const targetYear =
-      requestedYear ??
-      (q.includes("去年")
-        ? String(Math.max(...matches.map((match) => Number(match[1]))))
-        : q.includes("前年")
-          ? String(Math.max(...matches.map((match) => Number(match[1]))) - 1)
-          : /優勝チーム/.test(q)
-            ? String(Math.max(...matches.map((match) => Number(match[1]))))
-          : undefined);
+      requestedYearToken ??
+      (/優勝チーム/.test(q) ? String(latestInCorpus) : undefined);
     const filtered = matches.filter((match) => !targetYear || match[1] === targetYear);
     if (filtered.length > 0) return filtered.map((match) => match[0]).join(" ");
   }
@@ -1843,7 +1849,7 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
     "岱明", "有明", "玉南", "玉名", "玉東", "玉陵", "腹栄", "荒尾", "菊水", "長洲",
   ];
   const exactTeam = exactTeamNames.find((name) => q.includes(name));
-  const exactYear = q.match(/20\d{2}/)?.[0];
+  const exactYear = requestedYearToken;
   const exactLeg = q.match(/(?<!\d)([1-6])区/)?.[1];
   if (exactTeam && exactYear && exactLeg && /男子|女子/.test(q) &&
       /区間順位|区間順|通過順位|区間記録|区間タイム|何位|順位/.test(q)) {
@@ -1930,10 +1936,10 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
     !/[1-6]区/.test(q)
   ) {
     const gender = /女子/.test(q) ? "女子" : "男子";
-    const requestedYear = q.match(/20\d{2}/)?.[0];
+    const requestedYear = requestedYearToken;
     const years = [...flat.matchAll(new RegExp(`#### (20\\d{2})年${gender}・区間別上位`, "g"))]
       .map((match) => match[1]!);
-    const year = requestedYear ?? years.sort((a, b) => Number(b) - Number(a))[0];
+    const year = requestedYear ?? (pickCorpusYear(years.map(Number)) || undefined)?.toString();
     if (year) {
       const idx = flat.indexOf(`#### ${year}年${gender}・区間別上位`);
       if (idx >= 0) return flat.slice(idx, Math.min(flat.length, idx + budget));
@@ -2012,7 +2018,7 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
     return "2026年の金栗駅伝は、正本資料上は開催予定の記録のみで、結果・順位はまだ記載されていません。";
   }
   if (/荒玉(?:駅伝|中体連)?/.test(q) && /開催日|いつ|何日|日付/.test(q)) {
-    const year = q.match(/20\d{2}/)?.[0] ?? "2026";
+    const year = requestedYearToken ?? "2026";
     return year === "2025"
       ? "荒玉中体連駅伝大会の2025年開催日は10月15日です。"
       : "荒玉中体連駅伝大会の2026年開催日は10月14日（予備日10月15日）です。";
@@ -2850,7 +2856,7 @@ function offlineAnswer(
     const genericWinnerYearLookup =
       /優勝校|優勝は/.test(question) &&
       /荒玉|駅伝/.test(question) &&
-      /去年|前年|20\d{2}/.test(question) &&
+      (mentionsLastFiscalYear(question) || /20\d{2}/.test(question)) &&
       !/男子|女子/.test(question);
     const unqualifiedWinnerLookup =
       /優勝校|優勝チーム|優勝は|優勝した学校|優勝したチーム/.test(question) &&
@@ -4998,7 +5004,8 @@ export async function answerQuestion(
   const genericWinnerYearQ =
     /優勝校|優勝チーム|優勝は/.test(question) &&
     /荒玉|駅伝/.test(question) &&
-    (/去年|前年|20\d{2}/.test(question) ||
+    (mentionsLastFiscalYear(question) ||
+      /20\d{2}/.test(question) ||
       (/優勝チーム/.test(question) && !/過去|歴代|全て|全部/.test(question))) &&
     !/男子|女子/.test(question);
   const unqualifiedWinnerQ =
@@ -5368,7 +5375,10 @@ export async function answerQuestion(
     /距離|何キロ|何km|何メートル|何m/.test(expanded);
   const schoolMeetVenueQ = /岱明中/.test(expanded) && /大会会場/.test(expanded);
   const eveningPracticeScheduleQ = /夕練/.test(expanded) && /開始|いつ|何時|時間|時刻/.test(expanded);
-  const historicalJuniorResultQ = /ジュニア駅伝/.test(expanded) && /去年|昨年|2025/.test(expanded) && /結果|成績|順位/.test(expanded);
+  const historicalJuniorResultQ =
+    /ジュニア駅伝/.test(expanded) &&
+    (mentionsLastFiscalYear(expanded) || /2025/.test(expanded)) &&
+    /結果|成績|順位/.test(expanded);
   const strideCountQ = /流し/.test(expanded) && /何本|本数|何回|回数/.test(expanded);
   const postEkidenPracticeQ = /中体連駅伝明け|駅伝明け.*練習/.test(expanded);
   const movementPracticeQ = /動きづくり/.test(expanded) && /ある|実施|内容|メニュー/.test(expanded);
