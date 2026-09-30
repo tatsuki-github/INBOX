@@ -230,14 +230,27 @@ describe("matchPreparedAnswer", () => {
     ]) {
       const hit = matchPreparedAnswer(q, { defaultYear: 2026 });
       expect(hit?.id, q).toBe("records-athlete-2026-南本幸治郎");
-      expect(hit?.text, q).toContain("全5件");
+      expect(hit?.text, q).toMatch(/全6件/);
       expect(hit?.text, q).toContain("5:23.50");
       expect(hit?.text, q).toContain("5:43.60");
+      expect(hit?.text, q).toContain("なごみ駅伝");
       expect(hit?.text, q).toMatch(/大会結果:\s*https?:\/\//);
       expect(hit?.text, q).toContain("http://www.kumariku.org/26/26,7,18chutairen/rel075.html");
       // 距離別SB定型へ誤吸しない
       expect(hit?.id, q).not.toMatch(/^sb-/);
     }
+  });
+
+  it("includes ekiden/road meets in 村上咲稀 all-season records", () => {
+    const hit = matchPreparedAnswer("村上咲稀の今年度の全ての記録", { defaultYear: 2026 });
+    expect(hit?.id).toBe("records-athlete-2026-村上咲稀");
+    expect(hit?.text).toMatch(/駅伝/);
+    expect(hit?.text).toContain("なごみ駅伝");
+    expect(hit?.text).toContain("県ジュニア駅伝");
+    expect(hit?.text).toContain("7:07");
+    expect(hit?.text).toContain("9:58");
+    expect(hit?.text).toContain("2:20.11");
+    expect(hit?.text).toContain("4:53.85");
   });
 
   it("returns past-3-year all records for aragyoku athletes", () => {
