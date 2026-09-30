@@ -148,10 +148,9 @@ def gen_team_history_paraphrase(existing_ids: set[str], limit: int) -> list[dict
         blurb = ""
         if m:
             blurb = re.sub(r"\s+", " ", m.group(1))[:180]
-        ans = f"{name}の荒玉駅伝歴代はチーム別正本にまとめています。"
+        ans = f"{name}の荒玉駅伝歴代成績です。"
         if blurb:
             ans += f" 2025年付近: {blurb}"
-        ans += f" 詳細: out/analysis/aragyoku-teams/{name}.md"
         qs = [
             f"{name}の荒玉の過去成績は？",
             f"{name}中の荒玉歴代は？",
@@ -686,13 +685,17 @@ def gen_arato_team_gaps(existing_ids: set[str], limit: int) -> list[dict]:
         if eid in existing_ids:
             continue
         text = path.read_text(encoding="utf-8", errors="ignore")
-        blurb = re.sub(r"\s+", " ", text)[:220]
+        # strip markdown / tables for user-facing blurb
+        blurb = re.sub(r"^#+\s*", "", text, flags=re.M)
+        blurb = re.sub(r"\|.*\|", " ", blurb)
+        blurb = re.sub(r"`[^`]+`", " ", blurb)
+        blurb = re.sub(r"\s+", " ", blurb).strip()[:180]
         qs = [
             f"{name}の選手記録は？",
             f"{name}の地区記録まとめ",
             f"荒尾玉名の{name}について",
         ]
-        ans = f"{name}の荒尾・玉名地区記録はチーム別正本にあります。概要: {blurb}"
+        ans = f"{name}の荒尾・玉名地区の中学生記録まとめです。{blurb}"
         out.append(
             entry(
                 eid,
@@ -721,7 +724,10 @@ def gen_year_digest_gaps(existing_ids: set[str], limit: int) -> list[dict]:
         if eid in existing_ids:
             continue
         text = path.read_text(encoding="utf-8", errors="ignore")
-        blurb = re.sub(r"\s+", " ", text)[:280]
+        blurb = re.sub(r"^#+\s*", "", text, flags=re.M)
+        blurb = re.sub(r"\|.*\|", " ", blurb)
+        blurb = re.sub(r"`[^`]+`", " ", blurb)
+        blurb = re.sub(r"\s+", " ", blurb).strip()[:200]
         qs = [
             f"{year}年の荒玉駅伝の概要は？",
             f"{year}年荒玉の結果まとめ",
@@ -777,7 +783,7 @@ def gen_notion_race_gaps(existing_ids: set[str], limit: int) -> list[dict]:
         ans = f"{name}（{aff}）の{dist}は{mark}"
         if date:
             ans += f"（{date}）"
-        ans += "です。出典: out/analysis/notion_records_2026.json"
+        ans += "です。"
         out.append(
             entry(
                 eid,
