@@ -94,6 +94,9 @@ def load_year_records(year: int, keywords: list[str]) -> dict[str, dict]:
         gender = (r.get("性別") or "").strip()
         meet = (r.get("大会名") or "").strip()
         date = (r.get("日付") or "").strip()
+        url = (r.get("参考") or r.get("結果URL") or r.get("url") or "").strip()
+        if url and not re.match(r"^https?://", url, re.I):
+            url = ""
         bucket = out.setdefault(
             name,
             {"aff": aff, "gender": gender, "distances": {}},
@@ -110,6 +113,7 @@ def load_year_records(year: int, keywords: list[str]) -> dict[str, dict]:
                 "seconds": sec,
                 "meet": meet,
                 "date": date,
+                "url": url,
             }
     return out
 
@@ -135,6 +139,8 @@ def build_entries_for_year(year: int, athletes: dict[str, dict]) -> list[dict]:
             bit = f"・{dist}: {rec['mark']}"
             if rec["meet"] or rec["date"]:
                 bit += f"（{rec['meet']}、{rec['date']}）" if rec["meet"] else f"（{rec['date']}）"
+            if rec.get("url"):
+                bit += f"\n  大会結果: {rec['url']}"
             lines.append(bit)
         overview_ans = (
             f"{name}（{aff}"
@@ -188,6 +194,8 @@ def build_entries_for_year(year: int, athletes: dict[str, dict]) -> list[dict]:
             )
             if rec["meet"] or rec["date"]:
                 ans += f" 大会: {rec['meet']}（{rec['date']}）。"
+            if rec.get("url"):
+                ans += f" 大会結果: {rec['url']}"
             ans += "\n"
             entries.append(
                 {
@@ -317,11 +325,12 @@ def main() -> int:
         print(f"{year}: athletes={len(athletes)} entries={len(year_entries)}")
         all_new.extend(year_entries)
 
-    # sanity: 松野凛空 2026
+    # sanity: 松野凛空 2026 includes meet result URLs
     mats = [e for e in all_new if e["id"].startswith("sb-2026-松野凛空")]
     for e in mats:
         print("CHECK", e["id"], e["answer"].split("\n")[0][:80])
         assert "4:22.33" in e["answer"] or "9:37.84" in e["answer"] or "自己ベスト" in e["answer"]
+        assert "http://" in e["answer"] or "https://" in e["answer"], e["id"]
 
     merge_into_faq(all_new, dry_run=args.dry_run)
     return 0
