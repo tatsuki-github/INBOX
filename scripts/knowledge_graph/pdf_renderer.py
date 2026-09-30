@@ -28,7 +28,10 @@ TYPE_ORDER = [
     "Source",
     "Template",
     "Athlete",
+    "Team",
     "Entity",
+    "MediaAsset",
+    "RelayLegResult",
 ]
 
 

@@ -27,7 +27,7 @@
         "id": { "type": "string", "minLength": 1 },
         "type": {
           "type": "string",
-          "enum": ["Source", "Topic", "Entity", "QueryHint", "Athlete", "Year", "Template", "MediaAsset", "RelayLegResult"]
+          "enum": ["Source", "Topic", "Entity", "QueryHint", "Athlete", "Team", "Year", "Template", "MediaAsset", "RelayLegResult"]
         },
         "label": { "type": "string" },
         "topics": {
@@ -56,7 +56,9 @@
             "mentioned_in",
             "related_to",
             "see_also",
-            "documented_in"
+            "documented_in",
+            "member_of",
+            "has_record_in"
           ]
         }
       }

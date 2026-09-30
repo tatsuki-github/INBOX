@@ -14,11 +14,13 @@ TYPE_COLORS = {
     "Source": "#3d6b8c",
     "Topic": "#2a7a6a",
     "Athlete": "#b07a2a",
+    "Team": "#7a5a2a",
     "Entity": "#6b6358",
     "QueryHint": "#3f7a3f",
     "Year": "#2f6f8f",
     "Template": "#9a5a2a",
     "MediaAsset": "#8a4f6d",
+    "RelayLegResult": "#4a6a8a",
 }
 
 
