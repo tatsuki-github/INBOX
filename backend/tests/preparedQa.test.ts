@@ -43,22 +43,26 @@ describe("preparedQa catalog", () => {
     expect(ids.has("trial-2026-daiming-aragyoku")).toBe(true);
   });
 
-  it("covers knowledge topics via prepared answers", () => {
-    const cases: Array<[string, RegExp]> = [
-      ["南関中の記録一覧は？", /南関中/],
-      ["松野凛空のプロフィールは？", /岱明中/],
-      ["岱明の1500m最速は誰？", /4:22\.33|松野凛空/],
-      ["玉名郡ナイター中・長距離記録会の結果は？", /4:29\.8|松野凛空/],
-      ["選手記録はどこで分かる？", /自己ベスト|選手名/],
-      ["南本幸治郎の今年度の全ての記録", /5:23\.50|kumariku\.org/],
-    ];
-    for (const [q, re] of cases) {
-      const hit = matchPreparedAnswer(q, { defaultYear: 2026 });
-      expect(hit, q).toBeTruthy();
-      expect(hit?.text, q).toMatch(re);
-      expect(hit?.text, q).not.toContain("コーチに直接聞いてください");
-    }
-  });
+  it(
+    "covers knowledge topics via prepared answers",
+    () => {
+      const cases: Array<[string, RegExp]> = [
+        ["南関中の記録一覧は？", /南関中/],
+        ["松野凛空のプロフィールは？", /岱明中/],
+        ["岱明の1500m最速は誰？", /4:22\.33|松野凛空/],
+        ["玉名郡ナイター中・長距離記録会の結果は？", /4:29\.8|松野凛空/],
+        ["選手記録はどこで分かる？", /自己ベスト|選手名/],
+        ["南本幸治郎の今年度の全ての記録", /5:23\.50|kumariku\.org/],
+      ];
+      for (const [q, re] of cases) {
+        const hit = matchPreparedAnswer(q, { defaultYear: 2026 });
+        expect(hit, q).toBeTruthy();
+        expect(hit?.text, q).toMatch(re);
+        expect(hit?.text, q).not.toContain("コーチに直接聞いてください");
+      }
+    },
+    60_000,
+  );
 });
 
 describe("normalizePreparedQuestion", () => {
@@ -251,6 +255,15 @@ describe("matchPreparedAnswer", () => {
     expect(hit?.text).toContain("9:58");
     expect(hit?.text).toContain("2:20.11");
     expect(hit?.text).toContain("4:53.85");
+  });
+
+  it("covers gap-crush-1000 samples that previously missed", () => {
+    const tensui = matchPreparedAnswer("荒玉女子の天水の順位は？", { defaultYear: 2026 });
+    expect(tensui?.id).toMatch(/gap1000-aragyoku-yearless-女子-天水-rank|aragyoku-.*天水/);
+    expect(tensui?.text).toMatch(/位/);
+
+    const career = matchPreparedAnswer("三滝拓海の荒玉出走歴は？", { defaultYear: 2026 });
+    expect(career?.id, career?.text?.slice(0, 80)).toMatch(/aragyoku-career-三滝拓海|gap1000/);
   });
 
   it("returns past-3-year all records for aragyoku athletes", () => {

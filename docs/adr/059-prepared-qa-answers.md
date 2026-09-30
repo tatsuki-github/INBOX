@@ -35,7 +35,8 @@ LINE Q&A は RAG / LLM で都度組み立てると、ぶれ・コーチ誘導・
   `scripts/generate_prepared_qa_prefectural_top2.py`（荒玉2位まで→県駅伝出場）/
   `scripts/generate_prepared_qa_daiming_rivals.py`（岱明ライバル校）/
   `scripts/generate_prepared_qa_aragyoku_aliases.py`（荒玉の呼び方揺れ）/
-  `scripts/generate_prepared_qa_athlete_all_records.py`（選手全記録=トラック＋駅伝・ロード）→
+  `scripts/generate_prepared_qa_athlete_all_records.py`（選手全記録=トラック＋駅伝・ロード）/
+  `scripts/gap_crush_prepared_1000.py`（未カバー質問を1問ずつ発見→1000件追加）→
   `scripts/sync_prepared_qa.py`。
   大会名正規化: `backend/src/domain/aragyokuAliases.ts`
   （荒玉中体連駅伝 / 郡市駅伝 / 玉名荒尾中体連駅伝 → 荒玉）。
