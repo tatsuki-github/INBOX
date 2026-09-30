@@ -8,6 +8,7 @@ import {
   resolveRelativeYears,
   targetYearFromQuestion,
 } from "./dates.js";
+import { canonicalizeAragyokuNames } from "./aragyokuAliases.js";
 import { canonicalizeSchoolNames, resolveSchoolRecordName } from "./schoolAliases.js";
 import { matchCannedAnswer } from "./canned.js";
 import { matchPreparedAnswer } from "./preparedQa.js";
@@ -4300,16 +4301,18 @@ export async function answerQuestion(
   question: string,
   deps: AnswerDeps = {},
 ): Promise<AnswerResult> {
-  question = canonicalizeSchoolNames(
-    question
-      .normalize("NFKC")
-      .replace(/第?([一二三四五六])区/g, (_match, numeral: string) => String("一二三四五六".indexOf(numeral) + 1) + "区")
-      .replace(/([一二三四五])位/g, (_match, numeral: string) => String("一二三四五".indexOf(numeral) + 1) + "位")
-      .replace(/(\d+)位?\s*[〜～]\s*(\d+)位/g, "$1位から$2位")
-      .replace(/区間記録順位/g, "区間順位")
-      .replace(/区間記録ランキング/g, "タイム順")
-      .replace(/通過順(?!位)/g, "通過順位")
-      .replace(/\bTOP\s*(\d+)/gi, "トップ$1"),
+  question = canonicalizeAragyokuNames(
+    canonicalizeSchoolNames(
+      question
+        .normalize("NFKC")
+        .replace(/第?([一二三四五六])区/g, (_match, numeral: string) => String("一二三四五六".indexOf(numeral) + 1) + "区")
+        .replace(/([一二三四五])位/g, (_match, numeral: string) => String("一二三四五".indexOf(numeral) + 1) + "位")
+        .replace(/(\d+)位?\s*[〜～]\s*(\d+)位/g, "$1位から$2位")
+        .replace(/区間記録順位/g, "区間順位")
+        .replace(/区間記録ランキング/g, "タイム順")
+        .replace(/通過順(?!位)/g, "通過順位")
+        .replace(/\bTOP\s*(\d+)/gi, "トップ$1"),
+    ),
   );
   // 以降の置換は canonicalize 後の文字列に続ける
   question = question

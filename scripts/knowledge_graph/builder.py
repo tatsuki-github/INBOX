@@ -133,7 +133,7 @@ SOURCE_GLOBS: list[tuple[str, list[str], str]] = [
     (
         "out/analysis/aragyoku-overview.md",
         ["ekiden", "pace"],
-        "荒玉駅伝概要（区間距離・使い方・現行/旧コース）",
+        "荒玉駅伝概要（呼び方: 荒玉中体連/郡市/玉名荒尾中体連・区間距離・現行/旧コース）",
     ),
     (
         "out/analysis/aragyoku_2024_2025_focus_teams.md",
@@ -406,6 +406,16 @@ QUERY_HINTS: list[tuple[str, str, list[str]]] = [
             "source:out/analysis/2026_men_1500m_pb_school_ranking.md",
             "source:out/analysis/2026_women_800m_1500m_pb_school_ranking.md",
             "source:out/analysis/aragyoku-teams/岱明.md",
+            "corpus:out-analysis",
+            "corpus:aragyoku",
+        ],
+    ),
+    (
+        "郡市駅伝と荒玉駅伝は同じ？",
+        "同じ大会。通称 荒玉駅伝/荒玉中体連駅伝、正式寄り 玉名荒尾中体連駅伝、口語 郡市駅伝。正規化は aragyokuAliases.ts",
+        [
+            "topic:ekiden",
+            "source:out/analysis/aragyoku-overview.md",
             "corpus:out-analysis",
             "corpus:aragyoku",
         ],
