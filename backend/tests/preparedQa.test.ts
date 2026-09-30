@@ -14,7 +14,7 @@ describe("preparedQa catalog", () => {
 
   it("loads prepared catalog entries", () => {
     const entries = loadPreparedQa();
-    expect(entries.length).toBeGreaterThanOrEqual(12000);
+    expect(entries.length).toBeGreaterThanOrEqual(17000);
     expect(entries[0]?.id).toBeTruthy();
     expect(entries[0]?.answer.length).toBeGreaterThan(10);
   });
@@ -35,6 +35,9 @@ describe("preparedQa catalog", () => {
     expect([...ids].some((id) => id.startsWith("sb-school-"))).toBe(true);
     expect([...ids].some((id) => id.startsWith("records-athlete-2026-"))).toBe(true);
     expect(ids.has("records-athlete-2026-南本幸治郎")).toBe(true);
+    expect([...ids].some((id) => id.startsWith("race-2026-"))).toBe(true);
+    expect([...ids].some((id) => id.startsWith("aragyoku-career-"))).toBe(true);
+    expect([...ids].some((id) => id.endsWith("-order"))).toBe(true);
   });
 
   it("covers knowledge topics via prepared answers", () => {
@@ -224,6 +227,26 @@ describe("matchPreparedAnswer", () => {
     expect(hit?.id).toBe("records-athlete-3y-松野凛空");
     expect(hit?.text).toMatch(/2024|2025|2026/);
     expect(hit?.text).toMatch(/大会結果:\s*https?:\/\//);
+  });
+
+  it("returns meet-specific race result with link", () => {
+    const hit = matchPreparedAnswer("南本幸治郎の通信陸上の記録は？", { defaultYear: 2026 });
+    expect(hit?.id).toBe("race-2026-南本幸治郎-通信陸上");
+    expect(hit?.text).toContain("5:44.50");
+    expect(hit?.text).toContain("http://www.kumariku.org/26/26,6,13tsushin/rel178.html");
+  });
+
+  it("returns aragyoku team order for 岱明 2025 men", () => {
+    const hit = matchPreparedAnswer("2025年荒玉駅伝男子の岱明のオーダーは？", { defaultYear: 2026 });
+    expect(hit?.id).toBe("aragyoku-2025-男子-team-岱明-order");
+    expect(hit?.text).toContain("松野凛空");
+    expect(hit?.text).toContain("6位");
+  });
+
+  it("returns aragyoku career history", () => {
+    const hit = matchPreparedAnswer("松野凛空の荒玉出走歴は？", { defaultYear: 2026 });
+    expect(hit?.id).toBe("aragyoku-career-松野凛空");
+    expect(hit?.text).toContain("2025年男子・岱明2区");
   });
 
   it("returns null for unrelated chatter without prepared entry", () => {
