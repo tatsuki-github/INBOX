@@ -141,6 +141,11 @@ SOURCE_GLOBS: list[tuple[str, list[str], str]] = [
         "荒玉2024–2025深掘り（岱明・玉高附属＝玉名付属・天水・有明の区間・前年比）",
     ),
     (
+        "out/analysis/aragyoku_daiming_rivals.md",
+        ["ekiden", "analysis"],
+        "荒玉：岱明中のライバル校候補（2025隣接順位＋2026トラック層）",
+    ),
+    (
         "out/analysis/aragyoku_meet_records.md",
         ["ekiden", "analysis"],
         "荒玉ボード上部の大会記録・区間記録（meet_records）年別一覧",
@@ -387,6 +392,19 @@ QUERY_HINTS: list[tuple[str, str, list[str]]] = [
         [
             "topic:ekiden",
             "source:out/analysis/aragyoku_2024_2025_focus_teams.md",
+            "source:out/analysis/aragyoku-teams/岱明.md",
+            "corpus:out-analysis",
+            "corpus:aragyoku",
+        ],
+    ),
+    (
+        "荒玉駅伝で岱明中とライバルになりそうな学校は？",
+        "aragyoku_daiming_rivals.md を正本（2025隣接順位＋2026トラック層）。男子=荒尾三・南関、女子=長洲・荒尾三",
+        [
+            "topic:ekiden",
+            "source:out/analysis/aragyoku_daiming_rivals.md",
+            "source:out/analysis/2026_men_1500m_pb_school_ranking.md",
+            "source:out/analysis/2026_women_800m_1500m_pb_school_ranking.md",
             "source:out/analysis/aragyoku-teams/岱明.md",
             "corpus:out-analysis",
             "corpus:aragyoku",

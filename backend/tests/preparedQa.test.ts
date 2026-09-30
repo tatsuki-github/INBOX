@@ -315,6 +315,24 @@ describe("matchPreparedAnswer", () => {
     expect(not3?.text).toContain("2位まで");
   });
 
+  it("answers 岱明 rival-school questions from analysis", () => {
+    const hit = matchPreparedAnswer("荒玉駅伝で岱明中とライバルになりそうな学校は？", {
+      defaultYear: 2026,
+    });
+    expect(hit?.id).toBe("daiming-rivals-core");
+    expect(hit?.text).toContain("荒尾三");
+    expect(hit?.text).toContain("南関");
+    expect(hit?.text).toContain("長洲");
+
+    const men = matchPreparedAnswer("岱明男子のライバル校は？", { defaultYear: 2026 });
+    expect(men?.id).toBe("daiming-rivals-men");
+    expect(men?.text).toContain("南関");
+
+    const women = matchPreparedAnswer("岱明女子のライバル校は？", { defaultYear: 2026 });
+    expect(women?.id).toBe("daiming-rivals-women");
+    expect(women?.text).toContain("長洲");
+  });
+
   it("returns 徹底対策 guide overview", () => {
     const hit = matchPreparedAnswer("荒玉の完全ガイドは？", { defaultYear: 2026 });
     expect(hit?.id).toBe("guide-2026-what");
