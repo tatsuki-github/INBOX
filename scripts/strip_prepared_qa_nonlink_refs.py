@@ -131,6 +131,14 @@ def strip_nonlink_refs(answer: str) -> str:
     # "を見てください / を参照" dangling sentences without URL
     text = re.sub(r"[^。\n]*(?:を見てください|を参照(?:してください)?)。", "", text)
 
+    # Ops footnotes not for end users
+    text = re.sub(
+        r"\n?※トラックCSVに加え、駅伝・ロード等の大会結果も含みます。?",
+        "",
+        text,
+    )
+    text = re.sub(r"\s*トラックに加え駅伝・ロード等も含みます。?", "", text)
+
     # Cleanup whitespace / empty parens / double periods
     text = re.sub(r"[（(]\s*[）)]", "", text)
     text = re.sub(r"\s{2,}", " ", text)
