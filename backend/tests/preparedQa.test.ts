@@ -14,7 +14,7 @@ describe("preparedQa catalog", () => {
 
   it("loads prepared catalog entries", () => {
     const entries = loadPreparedQa();
-    expect(entries.length).toBeGreaterThanOrEqual(8000);
+    expect(entries.length).toBeGreaterThanOrEqual(12000);
     expect(entries[0]?.id).toBeTruthy();
     expect(entries[0]?.answer.length).toBeGreaterThan(10);
   });
@@ -33,6 +33,8 @@ describe("preparedQa catalog", () => {
     expect([...ids].some((id) => id.startsWith("profile-"))).toBe(true);
     expect([...ids].some((id) => id.startsWith("topic-"))).toBe(true);
     expect([...ids].some((id) => id.startsWith("sb-school-"))).toBe(true);
+    expect([...ids].some((id) => id.startsWith("records-athlete-2026-"))).toBe(true);
+    expect(ids.has("records-athlete-2026-南本幸治郎")).toBe(true);
   });
 
   it("covers knowledge topics via prepared answers", () => {
@@ -42,6 +44,7 @@ describe("preparedQa catalog", () => {
       ["岱明の1500m最速は誰？", /4:22\.33|松野凛空/],
       ["玉名郡ナイター中・長距離記録会の結果は？", /4:29\.8|松野凛空/],
       ["選手記録はどこで分かる？", /自己ベスト|選手名/],
+      ["南本幸治郎の今年度の全ての記録", /5:23\.50|kumariku\.org/],
     ];
     for (const [q, re] of cases) {
       const hit = matchPreparedAnswer(q, { defaultYear: 2026 });
@@ -196,6 +199,31 @@ describe("matchPreparedAnswer", () => {
     const tsushin = matchPreparedAnswer("通信陸上はいつ？", { defaultYear: 2026 });
     expect(tsushin?.id).toMatch(/cal-2026-/);
     expect(tsushin?.text).toContain("2026");
+  });
+
+  it("returns all season races with meet links for 南本幸治郎", () => {
+    for (const q of [
+      "南本幸治郎の今年度の全ての記録",
+      "南本幸治郎の全ての記録",
+      "南本幸治郎の全記録は？",
+    ]) {
+      const hit = matchPreparedAnswer(q, { defaultYear: 2026 });
+      expect(hit?.id, q).toBe("records-athlete-2026-南本幸治郎");
+      expect(hit?.text, q).toContain("全5件");
+      expect(hit?.text, q).toContain("5:23.50");
+      expect(hit?.text, q).toContain("5:43.60");
+      expect(hit?.text, q).toMatch(/大会結果:\s*https?:\/\//);
+      expect(hit?.text, q).toContain("http://www.kumariku.org/26/26,7,18chutairen/rel075.html");
+      // 距離別SB定型へ誤吸しない
+      expect(hit?.id, q).not.toMatch(/^sb-/);
+    }
+  });
+
+  it("returns past-3-year all records for aragyoku athletes", () => {
+    const hit = matchPreparedAnswer("松野凛空の過去3年の全ての記録", { defaultYear: 2026 });
+    expect(hit?.id).toBe("records-athlete-3y-松野凛空");
+    expect(hit?.text).toMatch(/2024|2025|2026/);
+    expect(hit?.text).toMatch(/大会結果:\s*https?:\/\//);
   });
 
   it("returns null for unrelated chatter without prepared entry", () => {

@@ -54,6 +54,7 @@ const SYNONYM_GROUPS: string[][] = [
   ["ジュニア", "県ジュニア", "ジュニア駅伝"],
   ["なごみ", "なごみ駅伝", "金栗"],
   ["自己ベスト", "sb", "SB"],
+  ["全ての記録", "全記録", "記録一覧", "レース結果一覧"],
   ["予定", "日程", "スケジュール"],
   ["区間距離", "距離"],
   ["名簿", "生徒一覧", "部員名簿", "部員一覧", "陸上部員"],
@@ -102,7 +103,8 @@ export function normalizePreparedQuestion(
 
   const defaultYear = opts?.defaultYear ?? currentFiscalYear(opts?.now);
   // Expand relative years to absolute before comparing.
-  q = q.replace(/今年/g, `${defaultYear}年`);
+  // 「今年度/今季/今年」はシノニムで今年度に寄せたあと年へ展開する。
+  q = q.replace(/今年度|今季|今年/g, `${defaultYear}年`);
   q = q.replace(/昨年度|一昨年/g, (m) =>
     m === "一昨年" ? `${defaultYear - 2}年` : `${defaultYear - 1}年`,
   );
@@ -144,6 +146,7 @@ function tokenize(normalized: string): string[] {
     "距離",
     "ペース",
     "自己ベスト",
+    "全ての記録",
     "予定",
     "欠席",
     "名簿",
@@ -186,9 +189,14 @@ function jaccard(a: string[], b: string[]): number {
 }
 
 const ROSTER_INTENT_KEYS = ["名簿", "生徒", "部員"] as const;
+const ALL_RECORDS_INTENT_KEYS = ["全ての記録"] as const;
 
 function hasRosterIntent(normalized: string): boolean {
   return ROSTER_INTENT_KEYS.some((k) => normalized.includes(k));
+}
+
+function hasAllRecordsIntent(normalized: string): boolean {
+  return ALL_RECORDS_INTENT_KEYS.some((k) => normalized.includes(k));
 }
 
 function scorePair(nq: string, nCand: string): number {
@@ -214,6 +222,15 @@ function scorePair(nq: string, nCand: string): number {
   // （「いだてん岱明とは」→短い「いだてん岱明」が名簿定型を includes で誤吸するのを防ぐ）
   if (hasRosterIntent(nq) !== hasRosterIntent(nCand)) {
     base *= 0.4;
+  }
+
+  // 「全ての記録」系は距離別SB定型への誤吸を防ぐ
+  const qAll = hasAllRecordsIntent(nq);
+  const cAll = hasAllRecordsIntent(nCand);
+  if (qAll !== cAll) {
+    base *= 0.35;
+  } else if (qAll && cAll) {
+    base = Math.min(1, base + 0.08);
   }
 
   if (yearsConflict) return base * 0.35;
