@@ -5,7 +5,7 @@
   "lap_metres": 4855,
   "men_start_before_C_metres": 145,
   "image_path": "input/aragyoku/course-points/aragyoku-course-common-points.png",
-  "image_sha256": "45090c723ab57105ec3b3682e465e2f8c8876e3c3f6abf3f40628b49c94e3795",
+  "image_sha256": "d7e61945ace24fb8f36c21ce18562e4b02678156adbb694a107da1c291f3ffdf",
   "drive_file_id": "1j9iRk5WAnNVdMyO_fDJX5MaMAVDrESzG",
   "drive_url": "https://drive.google.com/file/d/1j9iRk5WAnNVdMyO_fDJX5MaMAVDrESzG/view?usp=drivesdk",
   "drive_parent_folder_id": "1hR2ouziPiuo6wg7Z0WWJgDuieYakkd9k",
@@ -133,7 +133,7 @@
     "method": "built-in image_gen",
     "prompt_path": "output/imagegen/aragyoku-course-common-points-final-prompt.txt",
     "style": "simple 2D road schematic; no satellite photos, farmland or waterways",
-    "last_image_edit": "女子5区GPXの約2.54km地点の曲がり角にゴール分岐を合わせ、角から南西へ向かう走行線を図示。"
+    "last_image_edit": "女子5区・男子6区の動画全体図に合わせ、ゴールへの道を分岐から直線化。橋の1km丸も南西角の直前へ寄せた。"
   },
   "overview_goal": {
     "label": "ゴール",
@@ -141,12 +141,13 @@
     "men_leg": 6,
     "latitude": 32.850179,
     "longitude": 130.536632,
-    "location_note": "EとAの間で、女子5区GPXの約2.54km地点から南へ曲がる。ゴールはその角より南西側。全体図のみに表示。",
+    "location_note": "EとAの間で南へ曲がる。コース動画の全体図に合わせ、分岐からゴールまで南向きの直線として表示。全体図のみに表示。",
     "source": "女子5区GPX終点。scripts/build_aragyoku_men_gpx_from_women.py では男子6区に女子5区GPXを使用。",
     "detail_card": false,
     "turn_latitude": 32.8541,
     "turn_longitude": 130.537978,
     "turn_women_leg_km_approx": 2.54,
-    "turn_reference_path": "input/aragyoku/course-points/goal-turn-gpx-reference.png"
+    "turn_reference_path": "input/aragyoku/course-points/goal-turn-gpx-reference.png",
+    "video_reference_path": "input/aragyoku/course-points/women5-video-overview-goal.png"
   }
 }
