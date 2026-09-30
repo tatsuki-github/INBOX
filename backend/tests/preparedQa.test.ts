@@ -291,6 +291,8 @@ describe("matchPreparedAnswer", () => {
     expect(hit?.text).toContain("9:58");
     expect(hit?.text).toContain("2:20.11");
     expect(hit?.text).toContain("4:53.85");
+    expect(hit?.text).not.toContain("トラックCSVに加え");
+    expect(hit?.text).not.toContain("トラックに加え駅伝・ロード等も含みます");
   });
 
   it("covers gap-crush-1000 samples that previously missed", () => {

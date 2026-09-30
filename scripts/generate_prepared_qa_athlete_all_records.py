@@ -510,8 +510,6 @@ def build_year_answer(
     sb = sb_summary(races)
     if sb:
         ans += "\n" + sb
-    if n_ekiden or n_road:
-        ans += "\n※トラックCSVに加え、駅伝・ロード等の大会結果も含みます。"
     return ans
 
 
@@ -535,10 +533,7 @@ def build_3y_answer(name: str, by_year: dict[int, list[dict[str, str]]]) -> str:
         sb = sb_summary(races)
         if sb:
             chunks.append(sb)
-    head = (
-        f"{who}の過去3年（{years[0]}–{years[-1]}）の記録は全{total}件です。"
-        " トラックに加え駅伝・ロード等も含みます。"
-    )
+    head = f"{who}の過去3年（{years[0]}–{years[-1]}）の記録は全{total}件です。"
     return "\n".join([head, *chunks])
 
 
