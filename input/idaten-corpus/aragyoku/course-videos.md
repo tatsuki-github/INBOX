@@ -28,6 +28,8 @@
 
 女子1区の1km地点（橋の上）、D・B・A・C・Eの男女区間別距離対応を画像化。1周4.855km、男子スタートはCの145m手前。
 
+「荒玉駅伝のコースの画像は？」などの質問では LINE Image で返す（ADR 058）。
+
 - [地点・距離対応のナレッジ](course-points.md)
 - [画像](course-points/aragyoku-course-common-points.png)
 - [Google Drive の画像](https://drive.google.com/file/d/1j9iRk5WAnNVdMyO_fDJX5MaMAVDrESzG/view?usp=drivesdk)

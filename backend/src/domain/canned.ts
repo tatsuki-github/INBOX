@@ -17,6 +17,10 @@ export const ARAGYOKU_COURSE_VIDEO_YOUTUBE_PLAYLIST_URL =
 /** @deprecated Use gender-specific folder URLs. Kept for tests that check either URL. */
 export const ARAGYOKU_COURSE_VIDEO_FOLDER_URL = ARAGYOKU_COURSE_VIDEO_MEN_FOLDER_URL;
 
+/** 男女コース共通ポイント図解（course-points.json の drive_url と同期）。 */
+export const ARAGYOKU_COURSE_IMAGE_DRIVE_URL =
+  "https://drive.google.com/file/d/1j9iRk5WAnNVdMyO_fDJX5MaMAVDrESzG/view?usp=drivesdk";
+
 export type CannedAnswer = {
   id: string;
   text: string;
@@ -64,6 +68,7 @@ export function buildHelpExamplesText(): string {
     "・2024と2025の荒玉で岱明の前年比は？",
     "・荒玉のコース動画はどこ？",
     "・荒玉女子3区のコース動画を見せて",
+    "・荒玉駅伝のコースの画像は？",
     "・2025年荒玉男子の結果ボードを見せて",
     "",
     "▼ ほかにも聞けること",
@@ -88,6 +93,28 @@ export function isAragyokuCourseVideoQuestion(question: string): boolean {
   // 「荒玉の動画どこ？」「駅伝コースの映像」など
   const hasAragyoku = /荒玉|駅伝|aragyoku|中体連/.test(q);
   return hasAragyoku && hasVideo && hasCourse;
+}
+
+/**
+ * True when the question asks for the 荒玉駅伝 course diagram / course image.
+ * Video questions take precedence (handled by isAragyokuCourseVideoQuestion).
+ */
+export function isAragyokuCourseImageQuestion(question: string): boolean {
+  const q = question.normalize("NFKC").trim();
+  if (!q) return false;
+  if (/ジュニア|なごみ|金栗/.test(q)) return false;
+  // 動画はコース動画 canned へ
+  if (/動画|映像|ビデオ|ムービー|movie|video/i.test(q)) return false;
+  // 結果ボードは別経路
+  if (/結果ボード|成績表|順位表|結果画像/.test(q)) return false;
+
+  const hasImageCue =
+    /画像|図解|図面|写真|イメージ|\bimage\b|\.png/i.test(q) || /コース図|ポイント図|共通ポイント/.test(q);
+  const hasCourse = /コース|ルート|共通ポイント|course/i.test(q);
+  if (hasCourse && hasImageCue) return true;
+
+  const hasAragyoku = /荒玉|駅伝|aragyoku|中体連/.test(q);
+  return hasAragyoku && /コース図|共通ポイント/.test(q);
 }
 
 function courseVideoCannedText(question: string): string {
@@ -115,8 +142,16 @@ function courseVideoCannedText(question: string): string {
   ].join("\n");
 }
 
+function courseImageCannedText(): string {
+  return [
+    "荒玉駅伝の男女コース共通ポイント図解は、次の画像です（女子1〜5区・男子1〜6区が共有する地点）。",
+    ARAGYOKU_COURSE_IMAGE_DRIVE_URL,
+    "詳細: 橋の上の1km、A/B/C/D/E、1周4.855km、男子スタートはCの145m手前。",
+  ].join("\n");
+}
+
 export function matchCannedAnswer(question: string): CannedAnswer | null {
-  // Help first: 「使い方」等はコース動画より優先
+  // Help first: 「使い方」等はコース動画・画像より優先
   if (isHelpOrExampleQuestion(question)) {
     return {
       id: "help-examples",
@@ -127,6 +162,12 @@ export function matchCannedAnswer(question: string): CannedAnswer | null {
     return {
       id: "aragyoku-course-videos",
       text: courseVideoCannedText(question),
+    };
+  }
+  if (isAragyokuCourseImageQuestion(question)) {
+    return {
+      id: "aragyoku-course-images",
+      text: courseImageCannedText(),
     };
   }
   return null;
