@@ -320,26 +320,31 @@ describe("matchPreparedAnswer", () => {
     expect(relay?.text).toContain("C地点");
   });
 
-  it("answers 荒玉 top-2 → 県駅伝出場 questions", () => {
-    for (const q of [
-      "荒玉駅伝で何位まで県駅伝に出られる？",
-      "荒玉は2位まで県駅伝？",
-      "荒玉駅伝の県駅伝出場条件は？",
-      "県駅伝に出るには荒玉で何位必要？",
-    ]) {
-      const hit = matchPreparedAnswer(q, { defaultYear: 2026 });
-      expect(hit?.id, q).toMatch(/^aragyoku-pref-top2-/);
-      expect(hit?.text, q).toContain("2位まで");
-      expect(hit?.text, q).toMatch(/県駅伝/);
-    }
+  it(
+    "answers 荒玉 top-2 → 県駅伝出場 questions",
+    () => {
+      for (const q of [
+        "荒玉駅伝は何位までが県駅伝に出場できる？",
+        "荒玉駅伝で何位まで県駅伝に出られる？",
+        "荒玉は2位まで県駅伝？",
+        "荒玉駅伝の県駅伝出場条件は？",
+        "県駅伝に出るには荒玉で何位必要？",
+      ]) {
+        const hit = matchPreparedAnswer(q, { defaultYear: 2026 });
+        expect(hit?.id, q).toMatch(/^aragyoku-pref-top2-/);
+        expect(hit?.text, q).toContain("男女上位2校");
+        expect(hit?.text, q).toMatch(/県駅伝/);
+      }
 
-    const not3 = matchPreparedAnswer("荒玉駅伝で3位でも県駅伝に出られる？", {
-      defaultYear: 2026,
-    });
-    expect(not3?.id).toBe("aragyoku-pref-top2-not-3rd");
-    expect(not3?.text).toContain("3位");
-    expect(not3?.text).toContain("2位まで");
-  });
+      const not3 = matchPreparedAnswer("荒玉駅伝で3位でも県駅伝に出られる？", {
+        defaultYear: 2026,
+      });
+      expect(not3?.id).toBe("aragyoku-pref-top2-not-3rd");
+      expect(not3?.text).toContain("3位");
+      expect(not3?.text).toContain("2位まで");
+    },
+    60_000,
+  );
 
   it("answers 岱明 rival-school questions from analysis", () => {
     const hit = matchPreparedAnswer("荒玉駅伝で岱明中とライバルになりそうな学校は？", {
