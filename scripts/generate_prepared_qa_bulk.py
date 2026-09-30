@@ -61,6 +61,148 @@ def slug(s: str) -> str:
     return s.strip("-")[:48] or "x"
 
 
+_PATHISH = re.compile(
+    r"`[^`]+`"
+    r"|(?:(?:input|out|docs|backend|scripts)/[\w./\-（）()\u3040-\u30ff\u4e00-\u9fff]+)"
+    r"|(?:[\w./\-（）()\u3040-\u30ff\u4e00-\u9fff]+?\.(?:md|yaml|yml|json|csv|txt|pdf)(?:\.meta\.json)?)"
+    r"|(?:/opt/[\w./\-]+)"
+    r"|(?:python3(?:\s+[\w./\-]+)+)"
+)
+
+
+def clean_user_facing_text(text: str, *, max_len: int = 220) -> str:
+    """Strip repo paths / filenames; keep human summary and http(s) URLs."""
+    if not text:
+        return ""
+    t = text.replace("\n", " ")
+    # Drop generator / ops tails early
+    t = re.sub(r"生成\s*[:：].*$", " ", t)
+    t = _PATHISH.sub(" ", t)
+    t = re.sub(
+        r"(岱明確定オーダー|現行数式予想|校別展開|現行予測|旧SB予測|距離正本|コーパス|正本|結果詳細)\s*[:：]?\s*",
+        " ",
+        t,
+    )
+    t = re.sub(r"（比較用）", " ", t)
+    t = re.sub(r"[・/|→]+", " ", t)
+    t = re.sub(r"\s+", " ", t).strip(" 。\t")
+    # If almost nothing useful remains (punctuation only), drop
+    if len(re.sub(r"[\s\W]+", "", t)) < 2:
+        return ""
+    if len(t) > max_len:
+        t = t[: max_len - 1].rstrip() + "…"
+    return t
+
+
+def friendly_status_phrase(status: str | None) -> str:
+    s = (status or "").strip().lower()
+    if s in {"done", "completed"}:
+        return "実施済みです。"
+    if s in {"cancelled", "canceled", "中止"}:
+        return "中止です。"
+    # scheduled / unknown → omit jargon like 「状態: scheduled」
+    return ""
+
+
+def friendly_calendar_answer(
+    title: str,
+    date: str,
+    *,
+    location: str = "",
+    status: str | None = None,
+    description: str = "",
+    drive_url: str | None = None,
+) -> str:
+    parts = [f"{title}は {date} です。"]
+    if location:
+        parts.append(f"場所: {location}。")
+    status_phrase = friendly_status_phrase(status)
+    if status_phrase:
+        parts.append(status_phrase)
+    summary = clean_user_facing_text(description, max_len=200)
+    if summary:
+        # Keep useful notes / public URLs; avoid dumping internal ops text
+        if summary.startswith("http"):
+            parts.append(f"詳細: {summary}")
+        else:
+            parts.append(summary if summary.endswith("。") else summary + "。")
+    if drive_url:
+        parts.append(f"資料: {drive_url}")
+    return " ".join(parts)
+
+
+def load_drive_meet_folder_map() -> dict[str, str]:
+    idx = ROOT / "input" / "external" / "drive" / "shared" / "大会" / "INDEX.md"
+    out: dict[str, str] = {}
+    if not idx.exists():
+        return out
+    for m in re.finditer(
+        r"\[([^\]]+)\]\((https://drive\.google\.com/drive/folders/[^)]+)\)",
+        idx.read_text(encoding="utf-8"),
+    ):
+        out[m.group(1)] = m.group(2)
+    return out
+
+
+def resolve_drive_meet_url(
+    folder_name: str,
+    title: str,
+    drive_map: dict[str, str],
+) -> str | None:
+    if folder_name in drive_map:
+        return drive_map[folder_name]
+    # Prefer keys that share the leading date token (e.g. 1014-1015_)
+    prefix = folder_name.split("_", 1)[0] if "_" in folder_name else ""
+    candidates: list[tuple[str, str]] = []
+    for key, url in drive_map.items():
+        if key == title or key.endswith("_" + title) or key.endswith(folder_name):
+            candidates.append((key, url))
+        elif title and title in key:
+            candidates.append((key, url))
+        elif folder_name and folder_name in key:
+            candidates.append((key, url))
+    if not candidates:
+        return None
+    if prefix:
+        pref = [c for c in candidates if c[0].startswith(prefix)]
+        if pref:
+            return sorted(pref, key=lambda x: -len(x[0]))[0][1]
+    return sorted(candidates, key=lambda x: -len(x[0]))[0][1]
+
+
+def drive_url_for_calendar(title: str, description: str, drive_map: dict[str, str]) -> str | None:
+    """Best-effort Drive folder for calendar answers (from description path or title)."""
+    m = re.search(r"大会/(20\d{2})年度/([^/\s]+)", description or "")
+    if m:
+        folder = m.group(2).rstrip("/")
+        url = resolve_drive_meet_url(folder, re.sub(r"^\d{2,4}[-_]?", "", folder), drive_map)
+        if url:
+            return url
+    # Known short titles
+    aliases = {
+        "荒玉中体連駅伝": "1014-1015_荒玉中体連駅伝",
+        "荒玉中体連駅伝予備日": "1014-1015_荒玉中体連駅伝",
+        "玉名郡ナイター中・長距離記録会": "0829_玉名郡ナイター中・長距離記録会",
+    }
+    folder = aliases.get(title)
+    if folder:
+        return drive_map.get(folder)
+    return None
+
+
+def friendly_meet_folder_answer(title: str, year: str, folder_name: str, drive_url: str | None) -> str:
+    if drive_url:
+        return (
+            f"{title}（{year}）の大会フォルダ（Googleドライブ）です。\n"
+            f"{drive_url}\n"
+            "結果・オーダー・要項などの資料はこちらから確認できます。"
+        )
+    return (
+        f"{title}（{year}）の大会資料フォルダは「{folder_name}」です。"
+        "結果やオーダー表などの資料があります。"
+    )
+
+
 def entry(
     eid: str,
     questions: list[str],
@@ -281,7 +423,6 @@ def gen_calendar(existing_ids: set[str], limit: int) -> list[dict]:
             status = ev.get("status") or "scheduled"
             loc = ev.get("location") or ""
             desc = (ev.get("description") or "").strip()
-            desc_one = re.sub(r"\s+", " ", desc)[:220]
             # 年なし質問は今年度のみ。過去年は西暦付きに固定（ADR 059）
             if int(year) == 2026:
                 qs = [
@@ -298,13 +439,18 @@ def gen_calendar(existing_ids: set[str], limit: int) -> list[dict]:
                 ]
             if str(date)[:10] != str(date):
                 pass
-            ans = f"{title}は {date} です。"
-            if loc:
-                ans += f" 場所: {loc}。"
-            if status:
-                ans += f" 状態: {status}。"
-            if desc_one:
-                ans += f" 概要: {desc_one}"
+            drive_map = getattr(gen_calendar, "_drive_map", None)
+            if drive_map is None:
+                drive_map = load_drive_meet_folder_map()
+                gen_calendar._drive_map = drive_map  # type: ignore[attr-defined]
+            ans = friendly_calendar_answer(
+                title,
+                str(date),
+                location=str(loc or ""),
+                status=str(status) if status else None,
+                description=desc,
+                drive_url=drive_url_for_calendar(title, desc, drive_map),
+            )
             src = f"input/events.{year}.yaml"
             out.append(
                 entry(
@@ -671,6 +817,7 @@ def gen_meet_results_index(existing_ids: set[str], limit: int) -> list[dict]:
     out: list[dict] = []
     if not root.exists():
         return out
+    drive_map = load_drive_meet_folder_map()
     for year_dir in sorted(root.iterdir()):
         if not year_dir.is_dir():
             continue
@@ -686,7 +833,6 @@ def gen_meet_results_index(existing_ids: set[str], limit: int) -> list[dict]:
             if eid in existing_ids:
                 continue
             rel = str(meet_dir.relative_to(ROOT))
-            files = [p.name for p in meet_dir.iterdir() if p.is_file()][:8]
             if str(year).startswith("2026"):
                 qs = [
                     f"{title}の資料はどこ？",
@@ -699,15 +845,18 @@ def gen_meet_results_index(existing_ids: set[str], limit: int) -> list[dict]:
                     f"{year}年{title}の結果フォルダは？",
                     f"{year}の{title}について",
                 ]
-            ans = f"{title}（{year}）のコーパスフォルダは `{rel}` です。"
-            if files:
-                ans += " 主なファイル: " + "、".join(files[:6]) + "。"
+            drive_url = resolve_drive_meet_url(name, title, drive_map)
+            ans = friendly_meet_folder_answer(title, str(year), name, drive_url)
+            sources = [rel]
+            idx_path = "input/external/drive/shared/大会/INDEX.md"
+            if drive_url:
+                sources.append(idx_path)
             out.append(
                 entry(
                     eid,
                     qs,
                     ans,
-                    [rel],
+                    sources,
                     ["meet", "result", year],
                 )
             )
@@ -780,10 +929,15 @@ def gen_practice_notes(existing_ids: set[str], limit: int) -> list[dict]:
                 f"{date}の{title}は？",
                 f"{title}（{date}）について",
             ]
-            ans = f"{date} の予定「{title}」です。状態: {ev.get('status') or 'scheduled'}。"
             desc = (ev.get("description") or "").strip()
-            if desc:
-                ans += " " + re.sub(r"\s+", " ", desc)[:180]
+            parts = [f"{date} の予定「{title}」です。"]
+            status_phrase = friendly_status_phrase(str(ev.get("status") or ""))
+            if status_phrase:
+                parts.append(status_phrase)
+            summary = clean_user_facing_text(desc, max_len=180)
+            if summary:
+                parts.append(summary if summary.endswith("。") else summary + "。")
+            ans = " ".join(parts)
             out.append(
                 entry(
                     eid,
