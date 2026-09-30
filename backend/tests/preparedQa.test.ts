@@ -114,6 +114,18 @@ describe("matchPreparedAnswer", () => {
     expect(hit?.text).toContain("玉名市の中学校チーム");
   });
 
+  it("returns user-friendly 荒玉 calendar answer without repo jargon", () => {
+    for (const q of ["荒玉中体連駅伝はいつ？", "荒玉中体連駅伝について教えて"]) {
+      const hit = matchPreparedAnswer(q, { defaultYear: 2026 });
+      expect(hit?.text, q).toContain("2026-10-14");
+      expect(hit?.text, q).toContain("drive.google.com/drive/folders/1G8IlaBp9xVmXUynBAjV9ZZQPfFqzj4Yi");
+      expect(hit?.text, q).not.toContain("状態:");
+      expect(hit?.text, q).not.toContain("input/idaten-corpus");
+      expect(hit?.text, q).not.toContain("coverage.csv");
+      expect(hit?.text, q).not.toContain("docs/aragyoku");
+    }
+  });
+
   it("returns 2026 玉名郡ナイター result with Drive links", () => {
     for (const q of ["玉名郡ナイターの結果", "今年の玉名郡ナイターの結果", "玉名郡ナイター中・長距離記録会の結果"]) {
       const hit = matchPreparedAnswer(q, { defaultYear: 2026 });
