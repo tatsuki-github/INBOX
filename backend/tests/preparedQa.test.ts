@@ -114,6 +114,17 @@ describe("matchPreparedAnswer", () => {
     expect(hit?.text).toContain("玉名市の中学校チーム");
   });
 
+  it("returns 2026 玉名郡ナイター result with Drive links", () => {
+    for (const q of ["玉名郡ナイターの結果", "今年の玉名郡ナイターの結果", "玉名郡ナイター中・長距離記録会の結果"]) {
+      const hit = matchPreparedAnswer(q, { defaultYear: 2026 });
+      expect(hit?.id, q).toBe("nighter-2026-result");
+      expect(hit?.text, q).toContain("drive.google.com/drive/folders/1L9RE6ZK_qmehh9sj7bYK7W5A4wKZU82t");
+      expect(hit?.text, q).toContain("docs.google.com/document/d/1k4ka2olKO0ZQPgwTYKxOzMlGaHFjWwAzQsx3uanjMf4");
+      expect(hit?.text, q).toContain("4:29.8");
+      expect(hit?.text, q).not.toContain("2025年度/0830_玉名郡ナイター");
+    }
+  });
+
   it("returns junior detail for 南関中 and 玉名附属中, not coach fallback", () => {
     for (const q of [
       "ジュニア駅伝の南関中と玉名附属中の結果の詳細",

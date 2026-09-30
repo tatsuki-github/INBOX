@@ -1,5 +1,5 @@
 version: 1
-total: 7047
+total: 7048
 note: '想定質問への定型回答（ADR 059）。年なし＝今年度。荒玉（荒尾・玉名）地区選手の年度別SBを by-year sb-adopted から生成。
 
   ヒット時は本文をほぼそのまま返す。未ヒット時のみ RAG/LLM。
@@ -10866,16 +10866,53 @@ entries:
   - meet
   - result
   - '2026'
+- id: nighter-2026-result
+  questions:
+  - 玉名郡ナイターの結果
+  - 玉名郡ナイターの結果は？
+  - 今年の玉名郡ナイターの結果
+  - 2026年玉名郡ナイターの結果
+  - 玉名郡ナイター中・長距離記録会の結果
+  - 玉名郡ナイター中・長距離記録会の結果は？
+  - 今年のナイターの結果
+  - 2026年の玉名郡ナイターの結果を見せて
+  answer: |
+    2026年・玉名郡ナイター中・長距離記録会（2026-08-29 / 和水町総合グラウンド）の結果です。
+
+    大会フォルダ: https://drive.google.com/drive/folders/1L9RE6ZK_qmehh9sj7bYK7W5A4wKZU82t
+    結果（Drive）: https://docs.google.com/document/d/1k4ka2olKO0ZQPgwTYKxOzMlGaHFjWwAzQsx3uanjMf4/edit
+
+    岱明の主な記録:
+    ・1500m男子: 松野凛空 4:29.8（1位SB）、田上颯人 4:33.6（3位SB）、山本哲瑠 4:40.5 ほか
+    ・1500m女子: 高田麻由 5:28.7、山﨑莉奈 5:28.8（SB）、角田亜美 5:36.8、増岡里俐 5:55.5
+    ・800m女子: 塚原優衣 2:51.5、柴尾希乃 DNS
+  sources:
+  - input/idaten-corpus/drive-text/大会/2026年度/0829_玉名郡ナイター中・長距離記録会/岱明の結果.md
+  - input/external/drive/shared/大会/INDEX.md
+  tags:
+  - meet
+  - result
+  - nighter
+  - 2026
 - id: meet-folder-2026-玉名郡ナイター中-長距離記録会
   questions:
   - 玉名郡ナイター中・長距離記録会の資料はどこ？
   - 玉名郡ナイター中・長距離記録会の結果フォルダは？
   - 2026の玉名郡ナイター中・長距離記録会について
-  answer: '玉名郡ナイター中・長距離記録会（2026）のコーパスフォルダは `input/idaten-corpus/drive-text/大会/2026年度/0829_玉名郡ナイター中・長距離記録会` です。 主なファイル: 全結果.md、岱明の結果.md、第25回ナイター中長距離記録会_結果_raw.txt、岱明の結果.md.meta.json、参加者メモ.md、参加者メモ.md.meta.json。
+  - 玉名郡ナイターの資料はどこ？
+  - 玉名郡ナイターの結果フォルダは？
+  answer: '玉名郡ナイター中・長距離記録会（2026-08-29）の Drive です。
+
+    大会フォルダ: https://drive.google.com/drive/folders/1L9RE6ZK_qmehh9sj7bYK7W5A4wKZU82t
+
+    結果: https://docs.google.com/document/d/1k4ka2olKO0ZQPgwTYKxOzMlGaHFjWwAzQsx3uanjMf4/edit
+
+    コーパス: `input/idaten-corpus/drive-text/大会/2026年度/0829_玉名郡ナイター中・長距離記録会`
 
     '
   sources:
   - input/idaten-corpus/drive-text/大会/2026年度/0829_玉名郡ナイター中・長距離記録会
+  - input/external/drive/shared/大会/INDEX.md
   tags:
   - meet
   - result
