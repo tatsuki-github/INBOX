@@ -14,7 +14,7 @@ describe("preparedQa catalog", () => {
 
   it("loads prepared catalog entries", () => {
     const entries = loadPreparedQa();
-    expect(entries.length).toBeGreaterThanOrEqual(7000);
+    expect(entries.length).toBeGreaterThanOrEqual(8000);
     expect(entries[0]?.id).toBeTruthy();
     expect(entries[0]?.answer.length).toBeGreaterThan(10);
   });
@@ -23,11 +23,32 @@ describe("preparedQa catalog", () => {
     const entries = loadPreparedQa();
     const ids = new Set(entries.map((e) => e.id));
     expect(ids.has("aragyoku-what")).toBe(true);
-    // bulk generators + aragyoku athlete SB bank
+    // bulk generators + aragyoku athlete SB bank + knowledge cover
     expect([...ids].some((id) => id.startsWith("sb-2026-"))).toBe(true);
     expect([...ids].some((id) => id.startsWith("sb-2012-"))).toBe(true);
     expect([...ids].some((id) => id.startsWith("cal-"))).toBe(true);
     expect([...ids].some((id) => id.includes("-leg"))).toBe(true);
+    expect([...ids].some((id) => id.startsWith("meet-result-"))).toBe(true);
+    expect([...ids].some((id) => id.startsWith("records-team-"))).toBe(true);
+    expect([...ids].some((id) => id.startsWith("profile-"))).toBe(true);
+    expect([...ids].some((id) => id.startsWith("topic-"))).toBe(true);
+    expect([...ids].some((id) => id.startsWith("sb-school-"))).toBe(true);
+  });
+
+  it("covers knowledge topics via prepared answers", () => {
+    const cases: Array<[string, RegExp]> = [
+      ["南関中の記録一覧は？", /南関中/],
+      ["松野凛空のプロフィールは？", /岱明中/],
+      ["岱明の1500m最速は誰？", /4:22\.33|松野凛空/],
+      ["玉名郡ナイター中・長距離記録会の結果は？", /4:29\.8|松野凛空/],
+      ["選手記録はどこで分かる？", /自己ベスト|選手名/],
+    ];
+    for (const [q, re] of cases) {
+      const hit = matchPreparedAnswer(q, { defaultYear: 2026 });
+      expect(hit, q).toBeTruthy();
+      expect(hit?.text, q).toMatch(re);
+      expect(hit?.text, q).not.toContain("コーチに直接聞いてください");
+    }
   });
 });
 
