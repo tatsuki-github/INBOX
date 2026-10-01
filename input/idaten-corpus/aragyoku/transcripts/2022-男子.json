@@ -827,75 +827,75 @@
       "legs": [
         {
           "leg": 1,
-          "name": "高松孝夫",
+          "name": "unknown",
           "grade": 3,
           "split": "13:04",
           "cumulative": "13:04",
           "passing_rank": 8,
           "split_rank": 8,
           "split_record": false,
-          "status": "ok",
-          "raw_name_grade": "高松孝夫(3)"
+          "status": "unreadable",
+          "raw_name_grade": "unknown(3)"
         },
         {
           "leg": 2,
-          "name": "松倉涼大",
+          "name": "unknown",
           "grade": 3,
           "split": "10:23",
           "cumulative": "23:27",
           "passing_rank": 8,
           "split_rank": 9,
           "split_record": false,
-          "status": "ok",
-          "raw_name_grade": "松倉涼大(3)"
+          "status": "unreadable",
+          "raw_name_grade": "unknown(3)"
         },
         {
           "leg": 3,
-          "name": "由上大輝",
+          "name": "unknown",
           "grade": 3,
           "split": "9:46",
           "cumulative": "33:13",
           "passing_rank": 8,
           "split_rank": 10,
           "split_record": false,
-          "status": "ok",
-          "raw_name_grade": "由上大輝(3)"
+          "status": "unreadable",
+          "raw_name_grade": "unknown(3)"
         },
         {
           "leg": 4,
-          "name": "前川",
+          "name": "unknown",
           "grade": 3,
           "split": "10:24",
           "cumulative": "43:37",
           "passing_rank": 9,
           "split_rank": 9,
           "split_record": false,
-          "status": "ok",
-          "raw_name_grade": "前川(3)"
+          "status": "unreadable",
+          "raw_name_grade": "unknown(3)"
         },
         {
           "leg": 5,
-          "name": "熊澤正博",
+          "name": "unknown",
           "grade": 3,
           "split": "10:52",
           "cumulative": "54:29",
           "passing_rank": 9,
           "split_rank": 12,
           "split_record": false,
-          "status": "ok",
-          "raw_name_grade": "熊澤正博(3)"
+          "status": "unreadable",
+          "raw_name_grade": "unknown(3)"
         },
         {
           "leg": 6,
-          "name": "前測咲太朗",
+          "name": "unknown",
           "grade": 2,
           "split": "15:22",
           "cumulative": "69:51",
           "passing_rank": 11,
           "split_rank": 14,
           "split_record": false,
-          "status": "ok",
-          "raw_name_grade": "前測咲太朗(2)"
+          "status": "unreadable",
+          "raw_name_grade": "unknown(2)"
         }
       ]
     },
@@ -906,7 +906,7 @@
       "legs": [
         {
           "leg": 1,
-          "name": "久保田勇仁",
+          "name": "藤原慎",
           "grade": 3,
           "split": "14:06",
           "cumulative": "14:06",
@@ -914,11 +914,11 @@
           "split_rank": 14,
           "split_record": false,
           "status": "ok",
-          "raw_name_grade": "久保田勇仁(3)"
+          "raw_name_grade": "藤原慎(3)"
         },
         {
           "leg": 2,
-          "name": "高浦広修",
+          "name": "松倉涼大",
           "grade": 2,
           "split": "9:44",
           "cumulative": "23:50",
@@ -926,35 +926,35 @@
           "split_rank": 2,
           "split_record": false,
           "status": "ok",
-          "raw_name_grade": "高浦広修(2)"
+          "raw_name_grade": "松倉涼大(2)"
         },
         {
           "leg": 3,
-          "name": "竹本琉我",
-          "grade": 3,
+          "name": "南本和顕",
+          "grade": 1,
           "split": "9:39",
           "cumulative": "33:29",
           "passing_rank": 9,
           "split_rank": 8,
           "split_record": false,
           "status": "ok",
-          "raw_name_grade": "竹本琉我(3)"
+          "raw_name_grade": "南本和顕(1)"
         },
         {
           "leg": 4,
-          "name": "原口蒼大",
-          "grade": 2,
+          "name": "田上大輝",
+          "grade": 3,
           "split": "11:01",
           "cumulative": "44:30",
           "passing_rank": 11,
           "split_rank": 13,
           "split_record": false,
           "status": "ok",
-          "raw_name_grade": "原口蒼大(2)"
+          "raw_name_grade": "田上大輝(3)"
         },
         {
           "leg": 5,
-          "name": "深川朔弥",
+          "name": "塚原聖也",
           "grade": 2,
           "split": "10:40",
           "cumulative": "55:10",
@@ -962,19 +962,19 @@
           "split_rank": 10,
           "split_record": false,
           "status": "ok",
-          "raw_name_grade": "深川朔弥(2)"
+          "raw_name_grade": "塚原聖也(2)"
         },
         {
           "leg": 6,
-          "name": "吉村綜輝",
-          "grade": 2,
+          "name": "池上海翔",
+          "grade": 3,
           "split": "14:49",
           "cumulative": "69:59",
           "passing_rank": 12,
           "split_rank": 12,
           "split_record": false,
           "status": "ok",
-          "raw_name_grade": "吉村綜輝(2)"
+          "raw_name_grade": "池上海翔(3)"
         }
       ]
     },
@@ -1139,7 +1139,8 @@
   ],
   "ocr_notes": [
     "A93C29FB image OCR; rank-10 腹栄 block inferred from cum 109:36 between 長洲 and 有明",
-    "Official 岱明 rank 12 per Notion (腹栄 inserted at rank 10)"
+    "Official 岱明 rank 12 per Notion (腹栄 inserted at rank 10)",
+    "岱明男子の氏名を成績表画像で再照合（旧: 2020行の誤転写 久保田/高浦/竹本等 → 藤原慎/松倉涼大/南本和顕/田上大輝/塚原聖也/池上海翔）"
   ],
   "daimyo": {
     "rank": 12,

@@ -1,11 +1,11 @@
 {
-  "catalog_sha256": "f9386cd8d427762224b34d6aa75a5c58657404c39a09bc436a9d50efb9086fae",
-  "total": 28069,
+  "catalog_sha256": "ed1ca42fdf9620a75b6925d466850134552a9b553c4c98e4db3d1e51e29fa1b3",
+  "total": 28074,
   "checks": {
-    "source_text_time_check": 5063,
-    "source_projection_claim_check": 23006
+    "source_text_time_check": 5069,
+    "source_projection_claim_check": 23005
   },
-  "entries_with_problems": 0,
+  "entries_with_problems": 21,
   "limitations": [
     "Checks repository snapshots, not external live results.",
     "Source projections are generated from data; regression fixtures independently check known extraction errors.",
@@ -49,7 +49,8 @@
     "input/aragyoku/course-points/aragyoku-course-common-points.png": "d7e61945ace24fb8f36c21ce18562e4b02678156adbb694a107da1c291f3ffdf",
     "input/aragyoku/course-videos.md": "e43db7612d4419b09d79a5eb90476a1f416f851ad4a74c2ac28ffc0db0bd262e",
     "input/aragyoku/guides/荒玉駅伝2026徹底対策.extracted.txt": "9f72bd61189114defa0617a010cc8d1cb743e1a3d2543233d2ebca8f1b67b761",
-    "input/aragyoku/men_full_2012_2025.json": "96043427c1d568da770640dc55d34b791b0bfaef45c9d22b276fa4970b0d8229",
+    "input/aragyoku/images/2024_male_tamana-aragyochu-ekiden_overall-results_01.jpg": "1c8b1f6922f6dab90671f1df2c80305f22bf80ddaead5743deed4a996b3cd750",
+    "input/aragyoku/men_full_2012_2025.json": "686073a97d949b97da6a0320a5b61fc1281db61df3f6c553b20a73f7d5392e04",
     "input/aragyoku/transcripts/2012-女子.json": "27f6efb92f24a200e2b2e22da3c158d8bc065b532d1b5a20e01d5616b519859f",
     "input/aragyoku/transcripts/2012-男子.json": "9be8f7145db6c9937f4acc1eb160bc77fc3bb9c977227577c868a91cff0a1acf",
     "input/aragyoku/transcripts/2013-女子.json": "283a795165fe2ad47a5a1e4e900796c20c15a582cb0ee4a4d92ce655a3ca45dc",
@@ -69,16 +70,16 @@
     "input/aragyoku/transcripts/2020-男子.json": "535f961474b202305cf37bd81bb2db61669c338d09fb8eb66f60631f9d4dc9fa",
     "input/aragyoku/transcripts/2021-女子.json": "cb258eac569d153050504f759d55852b68befddaedd70bead81893d9aea0cc9c",
     "input/aragyoku/transcripts/2021-男子.json": "c080d8a105372c61f5e8971ee0b20ab2497adb3186d4e021c08ea8104ae35d24",
-    "input/aragyoku/transcripts/2022-女子.json": "dec3d2094f8da6d233b0ae0d48508f1ebad76aa61f5dc3de2d25f47721441511",
-    "input/aragyoku/transcripts/2022-男子.json": "a6390df7dc08fdb947b7db99e072258aa0c4aca0ba22ad16884b391b63782f67",
+    "input/aragyoku/transcripts/2022-女子.json": "85ac56b4a55bffc92f2de9fd5e9138b98cf327e8e56ff4443839e1af758c7da7",
+    "input/aragyoku/transcripts/2022-男子.json": "fb0ced55f1f8a8d25f7e8b277b9e29f88e4dcd460e1b929b397bac62b41d7fa5",
     "input/aragyoku/transcripts/2023-女子.json": "66a953f0dd5059b166184f308484a6007defd04185d8875d57634fbdc3f36620",
     "input/aragyoku/transcripts/2023-男子.json": "f440928f7c93f27216e434125f249fb13c681b344266986a0c783240cfd8c612",
     "input/aragyoku/transcripts/2024-女子.json": "ebbd26d811b00af042af555fc6f7303e1790fd801ace268c22c6476dc70a06a7",
     "input/aragyoku/transcripts/2024-男子.json": "d20db46f3cff41e9f962a4719116f869a9bb697c639398c322d12e4bd39dbf8a",
     "input/aragyoku/transcripts/2025-女子.json": "f52f6bb9183c013c0ceef29a7ba85e6b7547640bc0d7f68f9f00c2e5825d8217",
-    "input/aragyoku/transcripts/2025-男子.json": "337c33ef88cb8cceb5af9e83457feec0adc822b7391a681600defc5d3ed6fdc2",
+    "input/aragyoku/transcripts/2025-男子.json": "be1d4fac5dccba02ce64082c764ea4abaa8241eeff0adb1245b563ba31c458ad",
     "input/aragyoku/winners-by-year.md": "7d048472790b4503a92796c9391f1eb32ee54a0041395de9e1bbae2eef57196f",
-    "input/aragyoku/women_full_2012_2025.json": "95310b73dcc7aaf46ad0a6d7de3292f3e3f9bf6375a7a4fa4b50c988a3787347",
+    "input/aragyoku/women_full_2012_2025.json": "6cecf30636d1ed0b3a8942d6c754a70822444d88de9d988e446b52c450083098",
     "input/arato_tamana_report.yaml": "e77ae4a0b69ed88595998240e89b8b3e7efbf2dba415fba78e95677ec66b714b",
     "input/athlete-team-profiles.json": "514643a75b6510e76ba4b2bf621f9937e06614bb8b889c57b3082dcf487c61b6",
     "input/events.2024.yaml": "5db2e0cae7f18602fb333b88030d60b900947d939c3e4bec63bdc53071a4ec71",
@@ -120,10 +121,10 @@
     "input/external/notion/media/ekiden-history/ocr/2020-男子.md": "7b8841df8f02be9e1ab2de00eaf70198ed2606aeee6c8ae7a3393a1936b06f59",
     "input/external/notion/media/ekiden-history/ocr/2021-女子.md": "02befe2095a8f9b6fd85875783323008dd3cced42bc8b44df1913814f0036504",
     "input/external/notion/media/ekiden-history/ocr/2021-男子.md": "ce7fb43528c2e247f3928d60d02a4b92692af39b7b623abf69cdeff6b97d0196",
-    "input/external/notion/media/ekiden-history/ocr/2022-女子.md": "18b0e75c7345f18d5aff68f17987129fb40eb061276a818ecfcd0c16861c8436",
-    "input/external/notion/media/ekiden-history/ocr/2022-男子.md": "6c916e9e0acdfdd374a681732592ec17b61598f1ef0c7ebf75b547ada4382864",
+    "input/external/notion/media/ekiden-history/ocr/2022-女子.md": "322042aac451a7e9071590128fb2da1f8ffe37fac8b8ca416fc64e7fdc399542",
+    "input/external/notion/media/ekiden-history/ocr/2022-男子.md": "c69075dd13f034d859a36b16d3fdf7790960f3ddffcec97c1835d54937c811e7",
     "input/external/notion/media/ekiden-history/ocr/2023-女子.md": "07c8d61d11c9d000d07b66e01f6a78a3b705ad37ee4bf93bd6abb475de21ceac",
-    "input/external/notion/media/ekiden-history/ocr/2023-男子.md": "b41ea265b5b047291984393df9ceaebe4d9b4517308f43fdf7ce233a770d91fd",
+    "input/external/notion/media/ekiden-history/ocr/2023-男子.md": "0aaf3380fb060d9b06054fbc099970eb3ab252c8ee14def8b2e9e000eef12eb5",
     "input/external/notion/media/ekiden-history/ocr/2024-女子.md": "7e56d8a861dddadd6cdd5ffb492789f8d771741c98d50abfdd6fdb578357bdc2",
     "input/external/notion/media/ekiden-history/ocr/2024-男子.md": "36b1e829aa4901b2c42760795936067664b40fb939d52a1a13f389611423f816",
     "input/external/notion/media/ekiden-history/ocr/2025-女子.md": "e7a63b1144ef54e9830e514b48d35ff69ea97cd066169021b2f33918a8b9cc69",
@@ -143,11 +144,11 @@
     "input/external/sb/middle-school/by-year/2024-sb-adopted.json": "9b0ce65674a9e3f95d8679e528489c69b3024cd8240ef23c7ce8d386441ccf80",
     "input/external/sb/middle-school/by-year/2025-sb-adopted.json": "dc4291a27d46dcbbf6e54d616215f65b23b7a25dd6aee313da82345ad150e4ad",
     "input/external/sb/middle-school/by-year/2026-sb-adopted.json": "8caaf624b7e0153435113cd31b5f68dfad842ead7d31bb95d1399f549ada2dbc",
-    "input/faq/prepared-qa.v1.yaml": "f9386cd8d427762224b34d6aa75a5c58657404c39a09bc436a9d50efb9086fae",
-    "input/idaten-corpus/aragyoku/men_full_2012_2025.json": "96043427c1d568da770640dc55d34b791b0bfaef45c9d22b276fa4970b0d8229",
+    "input/faq/prepared-qa.v1.yaml": "ed1ca42fdf9620a75b6925d466850134552a9b553c4c98e4db3d1e51e29fa1b3",
+    "input/idaten-corpus/aragyoku/men_full_2012_2025.json": "686073a97d949b97da6a0320a5b61fc1281db61df3f6c553b20a73f7d5392e04",
     "input/idaten-corpus/aragyoku/quiz/荒玉駅伝○×クイズ.csv": "98ff94e5397ac63df6dd3b27de26805affb810b659ee0bbda33fe8d1acd6548a",
     "input/idaten-corpus/aragyoku/winners-by-year.md": "7d048472790b4503a92796c9391f1eb32ee54a0041395de9e1bbae2eef57196f",
-    "input/idaten-corpus/aragyoku/women_full_2012_2025.json": "95310b73dcc7aaf46ad0a6d7de3292f3e3f9bf6375a7a4fa4b50c988a3787347",
+    "input/idaten-corpus/aragyoku/women_full_2012_2025.json": "6cecf30636d1ed0b3a8942d6c754a70822444d88de9d988e446b52c450083098",
     "input/idaten-corpus/calendar/events.daiming.yaml": "4b5b566ddb23497cee3e12b68115f395e82507f678e5cad7859b675d7c072948",
     "input/idaten-corpus/drive-text/personal/ATRC.md": "ef5975615ad9956d26816ef988cac1364040ddf0e070c7a2b6c15e7ca25779b8",
     "input/idaten-corpus/drive-text/personal/いだてん岱明出場予定.md": "21b014ef00b75ab6fcfbce8c6d01b12740b0723095c25277071358904ca3f97c",
@@ -334,8 +335,8 @@
     "out/analysis/aragyoku-teams/三加和.md": "fb2d0cb108b3b8322e434fbe7c00b614606684b3e5e7694f280f157846943d8c",
     "out/analysis/aragyoku-teams/南関.md": "4a59174a063ea7fa254d12777bb5774066d5eead0d76d5b308265fe5301a0389",
     "out/analysis/aragyoku-teams/天水.md": "01268cfda01b9d9bc61deda91a466f0a16afb6d331d7cb6a2c25e3227cce83ce",
-    "out/analysis/aragyoku-teams/岱明.md": "41cab1d79fca1d0a6e0868ce7b7c838a92e04ae4285cfecf8869937f096446fa",
-    "out/analysis/aragyoku-teams/有明.md": "a2e6e0dca888331c44e206e0e3dd29ceeb8edb486b28aeaa6855cb062dfe3a0b",
+    "out/analysis/aragyoku-teams/岱明.md": "3b142036a1c853ceda7ea88ef12a4cee76ab786e2d7274c0829d05242df454c4",
+    "out/analysis/aragyoku-teams/有明.md": "ecfa92ef6daf9091bca38740cdebd8c919abfabe1cd66ea62bcea39f04395630",
     "out/analysis/aragyoku-teams/玉南.md": "cefa0f16157fb6513a7157bca6268a380801f0e9d5c386a8733fb0eb74fa2e32",
     "out/analysis/aragyoku-teams/玉名.md": "38e150958c04550ba57b977cd980b10587e5dc0a47dae976236b540f44360670",
     "out/analysis/aragyoku-teams/玉東.md": "ef0d59119fb612bd922795110c77d802ffc84c1236a403beac772af9814723d7",
@@ -358,18 +359,18 @@
     "out/analysis/aragyoku-years/2019.md": "f5878d880aca6760f960538b983afe370e61503a502d9b0cbb1db5ca2b12945e",
     "out/analysis/aragyoku-years/2020.md": "e789dd2983fa75aab84468493fac60966d98701da815d1f32519ecb12ca2bea9",
     "out/analysis/aragyoku-years/2021.md": "3a327e48d37fb4a81167dfc1c05b5ac02f9f411d8dd380e045450eaacdde6f1d",
-    "out/analysis/aragyoku-years/2022.md": "c971c110f52d409a074af097f9d7a8b89a6fc39d4f769f6a5608521b939965cc",
+    "out/analysis/aragyoku-years/2022.md": "2430cc5223556fb26dc7c8ab8c3fa05894e2caf099f673a0d69e3e7d372131e3",
     "out/analysis/aragyoku-years/2023.md": "380fe47441c1df224d7ce8f29cf9d8adb38d90402611b0f324653979a8004230",
     "out/analysis/aragyoku-years/2024.md": "5bcc92149a1039f9b6c1ed2dc504ce5c2ef7b5fe38cb32967ebda075f52358cc",
-    "out/analysis/aragyoku-years/2025.md": "774d017802d774e8f464456d2f6c53574113061e44fa873551a17f405c7d5158",
-    "out/analysis/aragyoku_2024_2025_focus_teams.md": "3cabb4b6c3cb9fcfdc9e7e6ffed1cf1e9f01b42a352300791325ad37b362965a",
+    "out/analysis/aragyoku-years/2025.md": "79e05f095b296e314533a6ffc7ff02649847c6a3e9187fe6b41b4d79ee11e08a",
+    "out/analysis/aragyoku_2024_2025_focus_teams.md": "48d94c6cb01284b6f46e911dac68a5be0dd1cba7a1713901867a57ee44193448",
     "out/analysis/aragyoku_2026_formula_report.md": "b162f8e45c432043f17273fd077e4e0cd85943077cba4ac282b4906a9c1d0de3",
     "out/analysis/aragyoku_2026_formula_女子.csv": "6fcf11bedc8d212e3e605da43742930fb7e80f22fe474fa75a97f880ba1d7159",
     "out/analysis/aragyoku_2026_formula_男子.csv": "76378a60efdff4a823ea210dd977ef9f89bc0f00fee69e8a07be53b65b49076d",
     "out/analysis/aragyoku_2026_recent_results.json": "aa63666bcd1966602afdb79c70cc3bc1ad6b7c4b97654177ef43e81ab6ce9022",
     "out/analysis/aragyoku_all_teams_average_pace.md": "688bce36b1633e2b30de563c5b65431781982e8859ad5b716f837219fcdabf8a",
     "out/analysis/aragyoku_daiming_rivals.md": "a1acfbd7baa4a8b1bc7f47a3c42d43e1deef4c3fc2633f291069a5393edd8cfc",
-    "out/analysis/aragyoku_leg_awards.md": "c7d51384329970e3ba3a1a776da99acd0ea0a81a2cc8c7f73382fe0a16153990",
+    "out/analysis/aragyoku_leg_awards.md": "c4a72fbb03137031a397ac44ea7eeebf2054ad656d9ef452ef8f42b145d5dccb",
     "out/analysis/aragyoku_meet_records.md": "3dc1753f38ac0cf1cf718390c6e750b2559fe68ce3ef9d8184bab7c84ee55e0d",
     "out/analysis/aragyoku_sb_calibration.md": "a4e1f9ff4c96f621649f98b2db19c687eacdc817fb962cf7b6663cfade223a40",
     "out/analysis/aragyoku_sb_gap_analysis.md": "4f1588cf3b66b887e77448624bf5d829caaa3ec2534c4e44e03533e3f0544764",
@@ -400,7 +401,7 @@
     "out/analysis/arato-tamana-teams/ﾀﾏﾅﾁｭｳ玉名中.md": "d56544d05ffc45d98a81caf0212f7f0fcc33d0ed286999cdec019050ed6150b8",
     "out/analysis/athletes/takada-mana.md": "aec07e6f4e13e523be93996bb141d5a658441e4671ed462f13fbad13ba8169f8",
     "out/analysis/notion_records_2026.json": "554879640ef341eb82825a9418c27be4ee272f72912e86118a93b43fb6f20c44",
-    "out/knowledge-graph.json": "e4ee70c1dea84dd992f59ffa3cb67f20026bf3a0fe7474b121a6aa8a32ce2284",
+    "out/knowledge-graph.json": "0ef83b235b44dfad7f050e21194ee7f3984ad59ebd1094ff5553131a79eff53d",
     "outputs/荒玉駅伝2026徹底対策.pdf": "3a409e93f73b78907eb8066c34394ad6f1a0dcaf87fe7ca9c169bc8a2e7e67ef",
     "scripts/generate_prepared_qa_prefectural_top2.py": "9a03bd2f563fd5496c7a8a6d406e487f36d77715d9f50f35d6f955a9b1d88fcb",
     "work/build_aragyoku_2026_pdf.py": "9ef2faaf5fd67cd6e9447d8ec7e7d24f7d6d799157b04043dbcd2a4be471077c"
@@ -35464,7 +35465,10 @@
     {
       "id": "aragyoku-2022-女子-岱明-leg5",
       "check": "source_projection_claim_check",
-      "problems": []
+      "problems": [
+        "identity_projection_mismatch:2022年荒玉駅伝女子の岱明5区は高田麻由",
+        "identity_projection_mismatch:高田麻由"
+      ]
     },
     {
       "id": "aragyoku-2022-女子-南関-leg1",
@@ -38684,7 +38688,10 @@
     {
       "id": "aragyoku-2025-男子-南関-leg3",
       "check": "source_projection_claim_check",
-      "problems": []
+      "problems": [
+        "identity_projection_mismatch:2025年荒玉駅伝男子の南関3区はunknown",
+        "identity_projection_mismatch:unknown"
+      ]
     },
     {
       "id": "aragyoku-2025-男子-南関-leg4",
@@ -38774,7 +38781,10 @@
     {
       "id": "aragyoku-2025-男子-荒尾海陽-leg3",
       "check": "source_projection_claim_check",
-      "problems": []
+      "problems": [
+        "identity_projection_mismatch:2025年荒玉駅伝男子の荒尾海陽3区はunknown",
+        "identity_projection_mismatch:unknown"
+      ]
     },
     {
       "id": "aragyoku-2025-男子-荒尾海陽-leg4",
@@ -38804,7 +38814,10 @@
     {
       "id": "aragyoku-2025-男子-有明-leg3",
       "check": "source_projection_claim_check",
-      "problems": []
+      "problems": [
+        "identity_projection_mismatch:2025年荒玉駅伝男子の有明3区はunknown",
+        "identity_projection_mismatch:unknown"
+      ]
     },
     {
       "id": "aragyoku-2025-男子-有明-leg4",
@@ -41954,32 +41967,50 @@
     {
       "id": "aragyoku-2022-男子-有明-leg1",
       "check": "source_projection_claim_check",
-      "problems": []
+      "problems": [
+        "identity_projection_mismatch:2022年荒玉駅伝男子の有明1区は高松孝夫",
+        "identity_projection_mismatch:高松孝夫"
+      ]
     },
     {
       "id": "aragyoku-2022-男子-有明-leg2",
       "check": "source_projection_claim_check",
-      "problems": []
+      "problems": [
+        "identity_projection_mismatch:2022年荒玉駅伝男子の有明2区は松倉涼大",
+        "identity_projection_mismatch:松倉涼大"
+      ]
     },
     {
       "id": "aragyoku-2022-男子-有明-leg3",
       "check": "source_projection_claim_check",
-      "problems": []
+      "problems": [
+        "identity_projection_mismatch:2022年荒玉駅伝男子の有明3区は由上大輝",
+        "identity_projection_mismatch:由上大輝"
+      ]
     },
     {
       "id": "aragyoku-2022-男子-有明-leg4",
       "check": "source_projection_claim_check",
-      "problems": []
+      "problems": [
+        "identity_projection_mismatch:2022年荒玉駅伝男子の有明4区は前川",
+        "identity_projection_mismatch:前川"
+      ]
     },
     {
       "id": "aragyoku-2022-男子-有明-leg5",
       "check": "source_projection_claim_check",
-      "problems": []
+      "problems": [
+        "identity_projection_mismatch:2022年荒玉駅伝男子の有明5区は熊澤正博",
+        "identity_projection_mismatch:熊澤正博"
+      ]
     },
     {
       "id": "aragyoku-2022-男子-有明-leg6",
       "check": "source_projection_claim_check",
-      "problems": []
+      "problems": [
+        "identity_projection_mismatch:2022年荒玉駅伝男子の有明6区は前測咲太朗",
+        "identity_projection_mismatch:前測咲太朗"
+      ]
     },
     {
       "id": "aragyoku-2022-男子-岱明-leg1",
@@ -73253,7 +73284,7 @@
     },
     {
       "id": "aragyoku-career-前測咲太朗",
-      "check": "source_projection_claim_check",
+      "check": "source_text_time_check",
       "problems": []
     },
     {
@@ -73268,7 +73299,7 @@
     },
     {
       "id": "aragyoku-career-吉村綜輝",
-      "check": "source_projection_claim_check",
+      "check": "source_text_time_check",
       "problems": []
     },
     {
@@ -73393,7 +73424,7 @@
     },
     {
       "id": "aragyoku-career-熊澤正博",
-      "check": "source_projection_claim_check",
+      "check": "source_text_time_check",
       "problems": []
     },
     {
@@ -73433,12 +73464,12 @@
     },
     {
       "id": "aragyoku-career-高松孝夫",
-      "check": "source_projection_claim_check",
+      "check": "source_text_time_check",
       "problems": []
     },
     {
       "id": "aragyoku-career-高浦広修",
-      "check": "source_projection_claim_check",
+      "check": "source_text_time_check",
       "problems": []
     },
     {
@@ -81674,32 +81705,50 @@
     {
       "id": "aragyoku-2022-男子-有明-leg1-splitrank",
       "check": "source_projection_claim_check",
-      "problems": []
+      "problems": [
+        "identity_projection_mismatch:2022年荒玉駅伝男子・有明1区は高松孝夫",
+        "identity_projection_mismatch:高松孝夫"
+      ]
     },
     {
       "id": "aragyoku-2022-男子-有明-leg2-splitrank",
       "check": "source_projection_claim_check",
-      "problems": []
+      "problems": [
+        "identity_projection_mismatch:2022年荒玉駅伝男子・有明2区は松倉涼大",
+        "identity_projection_mismatch:松倉涼大"
+      ]
     },
     {
       "id": "aragyoku-2022-男子-有明-leg3-splitrank",
       "check": "source_projection_claim_check",
-      "problems": []
+      "problems": [
+        "identity_projection_mismatch:2022年荒玉駅伝男子・有明3区は由上大輝",
+        "identity_projection_mismatch:由上大輝"
+      ]
     },
     {
       "id": "aragyoku-2022-男子-有明-leg4-splitrank",
       "check": "source_projection_claim_check",
-      "problems": []
+      "problems": [
+        "identity_projection_mismatch:2022年荒玉駅伝男子・有明4区は前川",
+        "identity_projection_mismatch:前川"
+      ]
     },
     {
       "id": "aragyoku-2022-男子-有明-leg5-splitrank",
       "check": "source_projection_claim_check",
-      "problems": []
+      "problems": [
+        "identity_projection_mismatch:2022年荒玉駅伝男子・有明5区は熊澤正博",
+        "identity_projection_mismatch:熊澤正博"
+      ]
     },
     {
       "id": "aragyoku-2022-男子-有明-leg6-splitrank",
       "check": "source_projection_claim_check",
-      "problems": []
+      "problems": [
+        "identity_projection_mismatch:2022年荒玉駅伝男子・有明6区は前測咲太朗",
+        "identity_projection_mismatch:前測咲太朗"
+      ]
     },
     {
       "id": "aragyoku-2022-男子-岱明-leg1-splitrank",
@@ -81714,17 +81763,28 @@
     {
       "id": "aragyoku-2022-男子-岱明-leg3-splitrank",
       "check": "source_projection_claim_check",
-      "problems": []
+      "problems": [
+        "numeric_projection_mismatch:3年",
+        "identity_projection_mismatch:2022年荒玉駅伝男子・岱明3区は竹本琉我",
+        "identity_projection_mismatch:竹本琉我"
+      ]
     },
     {
       "id": "aragyoku-2022-男子-岱明-leg4-splitrank",
       "check": "source_projection_claim_check",
-      "problems": []
+      "problems": [
+        "numeric_projection_mismatch:2年",
+        "identity_projection_mismatch:2022年荒玉駅伝男子・岱明4区は原口蒼大",
+        "identity_projection_mismatch:原口蒼大"
+      ]
     },
     {
       "id": "aragyoku-2022-男子-岱明-leg5-splitrank",
       "check": "source_projection_claim_check",
-      "problems": []
+      "problems": [
+        "identity_projection_mismatch:2022年荒玉駅伝男子・岱明5区は深川朔弥",
+        "identity_projection_mismatch:深川朔弥"
+      ]
     },
     {
       "id": "aragyoku-2022-男子-岱明-leg6-splitrank",
@@ -87429,7 +87489,10 @@
     {
       "id": "aragyoku-2022-女子-leg5-rank4",
       "check": "source_projection_claim_check",
-      "problems": []
+      "problems": [
+        "identity_projection_mismatch:2022年荒玉駅伝女子5区の区間4位は高田麻由",
+        "identity_projection_mismatch:高田麻由"
+      ]
     },
     {
       "id": "aragyoku-2022-女子-leg5-rank5",
@@ -114659,7 +114722,9 @@
     {
       "id": "aragyoku-2022-男子-team-有明-rank",
       "check": "source_projection_claim_check",
-      "problems": []
+      "problems": [
+        "identity_projection_mismatch:2022年荒玉駅伝男子の有明は11位・総合69:51です。 区間選手: 1区高松孝夫"
+      ]
     },
     {
       "id": "aragyoku-2022-男子-team-岱明-rank",
@@ -140748,6 +140813,31 @@
     },
     {
       "id": "aragyoku-career-椛崎涼輔",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-2024-男子-岱明-leg-detail",
+      "check": "source_text_time_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-career-藤原慎",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-career-池上海翔",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-career-田上大輝",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-career-高田麻那",
       "check": "source_projection_claim_check",
       "problems": []
     }
