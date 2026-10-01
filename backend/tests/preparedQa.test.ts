@@ -401,6 +401,34 @@ describe("matchPreparedAnswer", () => {
     }
   });
 
+  it(
+    "maps 去年/昨年 men leg2 board to 2025, not 2024",
+    () => {
+      for (const q of [
+        "去年の男子2区の荒玉駅伝の区間順位",
+        "去年の荒玉駅伝男子2区の区間順位",
+        "昨年の男子2区の荒玉駅伝の区間順位",
+        "2025年男子2区の荒玉駅伝の区間順位",
+      ]) {
+        const hit = matchPreparedAnswer(q, { defaultYear: 2026 });
+        expect(hit?.id, q).toBe("aragyoku-2025-男子-leg2-board");
+        expect(hit?.text, q).toContain("2025年");
+        expect(hit?.text, q).toContain("山本悠斗");
+        expect(hit?.text, q).toContain("8:37");
+        expect(hit?.text, q).not.toContain("荒木琉琉");
+        expect(hit?.text, q).not.toContain("2024年荒玉駅伝男子2区");
+        expect(hit?.id, q).not.toBe("aragyoku-2024-男子-leg2-board");
+      }
+
+      const y2024 = matchPreparedAnswer("2024年男子2区の荒玉駅伝の区間順位", {
+        defaultYear: 2026,
+      });
+      expect(y2024?.id).toBe("aragyoku-2024-男子-leg2-board");
+      expect(y2024?.text).toContain("荒木琉琉");
+    },
+    60_000,
+  );
+
   it("answers course-point start questions from the common-points diagram", () => {
     const hit = matchPreparedAnswer("荒玉駅伝の女子4区は何地点から？", { defaultYear: 2026 });
     expect(hit?.id).toBe("course-leg-女子4-start");
