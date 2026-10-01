@@ -120,3 +120,25 @@ def test_audit_flags_false_tamana_nighter_alias():
     }
     problems = audit.check_entry(entry, None)["problems"]
     assert any(p.startswith("nighter_meet_alias_mismatch") for p in problems)
+
+
+def test_audit_flags_hollow_answers_that_miss_the_question():
+    entry = {
+        "id": "sb-women800-daiming",
+        "sources": [],
+        "answer": "女子800mの学校別上位3人平均は 。",
+    }
+    problems = audit.check_entry(entry, None)["problems"]
+    assert "hollow_answer_fact" in problems
+
+
+def test_alignment_fix_restores_daiming_order_facts():
+    import yaml
+    from pathlib import Path
+
+    faq = yaml.safe_load((ROOT / "input/faq/prepared-qa.v1.yaml").read_text())
+    by = {e["id"]: e for e in faq["entries"]}
+    ans = by["meet-2026-aragyoku-daiming-order"]["answer"]
+    for token in ("村上咲稀", "松野凛空", "山本哲瑠", "仮置き"):
+        assert token in ans
+    assert "「」" not in ans

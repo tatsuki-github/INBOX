@@ -190,6 +190,15 @@ def check_entry(e: dict, projected: dict | None) -> dict:
     answer = e.get("answer") or ""
     if re.search(r"\b(?:mimeType|fileSize|parentId|modifiedTime)\b", answer):
         problems.append("drive_metadata_leak")
+    # Hollow answers after path/link stripping no longer address the question.
+    if "「」" in answer or re.search(r"詳細表は\s*です", answer):
+        problems.append("hollow_answer_template")
+    if re.search(r"(?:平均|ランキング|一覧|接続|付属)は\s*。", answer):
+        problems.append("hollow_answer_fact")
+    if re.search(r"および\s*の[なごじ]", answer) or (
+        "[]" in answer and re.search(r"より。|他校は\s*\[\]", answer)
+    ):
+        problems.append("hollow_answer_link_strip")
     mode = "source_text_time_check"
     if projected:
         mode = "source_projection_claim_check"
