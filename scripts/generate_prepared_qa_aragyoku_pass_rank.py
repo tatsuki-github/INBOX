@@ -337,6 +337,13 @@ def append_entries(new_entries: list[dict]) -> tuple[int, int]:
             "note: |\n  aragyoku-pass-rank-2026: 荒玉2026数式予想のN区まで通過順位・総合順位を想定Q&A化。",
             1,
         )
+    m = re.search(r"(?m)^total:\s*(\d+)\s*$", text)
+    if m:
+        text = text.replace(
+            f"total: {m.group(1)}",
+            f"total: {int(m.group(1)) + added}",
+            1,
+        )
     if not text.endswith("\n"):
         text += "\n"
     text += "".join(chunks)

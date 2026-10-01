@@ -829,6 +829,43 @@ describe("matchPreparedAnswer", { timeout: 30_000 }, () => {
     expect(formula?.text).toContain("10:10");
   });
 
+  it(
+    "answers yearless 荒玉男女の区間歴代記録（ボード上部一覧）",
+    () => {
+      const men = matchPreparedAnswer("荒玉駅伝の男子の区間歴代記録は？", {
+        defaultYear: 2026,
+      });
+      expect(men?.id).toBe("aragyoku-leg-records-男子-current");
+      expect(men?.text).toContain("米村和真");
+      expect(men?.text).toContain("9:01");
+      expect(men?.text).toContain("56:38");
+      expect(men?.text).toContain("2024");
+
+      const women = matchPreparedAnswer("荒玉駅伝の女子の区間歴代記録は？", {
+        defaultYear: 2026,
+      });
+      expect(women?.id).toBe("aragyoku-leg-records-女子-current");
+      expect(women?.text).toContain("西川侑里");
+      expect(women?.text).toContain("井上智世");
+      expect(women?.text).toContain("40:58");
+
+      const both = matchPreparedAnswer("荒玉駅伝の区間歴代記録は？", {
+        defaultYear: 2026,
+      });
+      expect(both?.id).toBe("aragyoku-leg-records-both-current");
+      expect(both?.text).toContain("男子");
+      expect(both?.text).toContain("女子");
+
+      const oldMen = matchPreparedAnswer("荒玉男子の旧コース区間記録は？", {
+        defaultYear: 2026,
+      });
+      expect(oldMen?.id).toBe("aragyoku-leg-records-男子-pre2024");
+      expect(oldMen?.text).toContain("田上建");
+      expect(oldMen?.text).toContain("62:49");
+    },
+    60_000,
+  );
+
   it("returns null for unrelated chatter without prepared entry", () => {
     // deliberately odd; if someday prepared, this assertion should be updated
     const hit = matchPreparedAnswer("宇宙の果てはどこ？", { defaultYear: 2026 });
