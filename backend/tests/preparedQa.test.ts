@@ -7,8 +7,11 @@ import {
 } from "../src/domain/preparedQa.js";
 import { answerQuestion } from "../src/domain/answer.js";
 
-describe("preparedQa catalog", () => {
-  beforeEach(() => {
+describe("preparedQa catalog", { timeout: 30_000 }, () => {
+  beforeEach(async () => {
+    // Large catalogs rebuild their index in synchronous tests. Yield between
+    // cases so the test worker can send progress and service its RPC channel.
+    await new Promise(resolve => setTimeout(resolve, 0));
     resetPreparedQaCache();
   });
 
@@ -152,7 +155,10 @@ describe("normalizePreparedQuestion", () => {
 });
 
 describe("matchPreparedAnswer", { timeout: 30_000 }, () => {
-  beforeEach(() => {
+  beforeEach(async () => {
+    // Large catalogs rebuild their index in synchronous tests. Yield between
+    // cases so the test worker can send progress and service its RPC channel.
+    await new Promise(resolve => setTimeout(resolve, 0));
     resetPreparedQaCache();
   });
 

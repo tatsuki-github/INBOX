@@ -95,3 +95,12 @@ LINE Q&A は RAG / LLM で都度組み立てると、ぶれ・コーチ誘導・
 - `backend/tests/preparedQaConstraints.test.ts`: 男女・区間・距離の矛盾除外、複数区間、距離単位の同値性
 - `answerQuestion` 代表問で `prepared:` ソース
 - KG Source 登録と `--check`
+
+## Additional comparison batch (2026-10-01)
+
+- `scripts/generate_prepared_qa_edge_comparisons.py` adds **5000 new entries** on top of the existing 29,995, for a total of 34,995.
+- Coverage: total-time gaps (800), same-leg split gaps (2400), intermediate cumulative gaps (1200), and relative gains/losses from an intermediate checkpoint to the finish (600). Selection rotates across 2012–2025, both sexes and applicable legs, prioritizing 岱明 comparisons within each group. These are separate factual questions, not extra aliases counted as entries.
+- Only two schools in the same year, sex and leg are compared. Cumulative/total claims require all splits to have `status: ok`, all cumulative sums to agree, and the last sum to equal the total. Missing/uncertain names are excluded from split answers. Same times are reported as ties without inferring official ranks. No cross-course/year performance conclusions are drawn.
+- `backend/data/eval-gaps/edge-comparisons-5000.jsonl` stores each answer's two JSON pointers and source SHA-256. `--check` reconstructs all 5000 entries, checks identity/question/answer/source equality and detects source drift. Running the generator again verifies the existing batch without adding duplicates.
+- The general factual auditor also reconstructs the comparison family and requires exact answer equality. Independent regression fixtures cover tie times, opposite split/cumulative leaders, overtaking, invalid seconds, missing names and inconsistent sums. The backend catalog test checks every new question for normalized collisions and an exact prepared-answer hit.
+- The source snapshots are transcribed race records, not independently reverified official originals. Arithmetic checks do not establish that the upstream transcription is error-free or that live external results are current.

@@ -101,6 +101,7 @@ export function loadPreparedQa(path = defaultPreparedQaPath()): PreparedQaEntry[
 export function resetPreparedQaCache(): void {
   cached = null;
   cachedNorm = null;
+  comparisonEntityCache.clear();
 }
 
 function applySynonyms(text: string): string {
@@ -312,12 +313,34 @@ function rosterEntities(normalized: string): Set<string> {
   return found;
 }
 
+/** Two-school gaps must preserve both school identities, even with similar wording. */
+const comparisonEntityCache = new Map<string, Set<string>>();
+
+function comparisonEntities(normalized: string): Set<string> {
+  const cached = comparisonEntityCache.get(normalized);
+  if (cached) return cached;
+  const found = rosterEntities(normalized);
+  if (normalized.includes("腹栄")) found.add("腹栄");
+  // Remove longer 荒尾 names before detecting the historical 荒尾 school.
+  if (normalized.replace(/荒尾海陽|荒尾四|荒尾三/g, "").includes("荒尾")) found.add("荒尾");
+  comparisonEntityCache.set(normalized, found);
+  return found;
+}
+
 function scorePair(nq: string, nCand: string): number {
   if (!nq || !nCand) return 0;
   // Similar wording is not evidence that gender, race leg or event agrees.
   // Reject explicit conflicts before containment / similarity bonuses. When
   // either side omits a dimension, leave confidence to the existing scorer.
   // 区間距離の一覧定型（特定区を列挙しない）は、○区の距離質問を落とさない。
+  if (/差|何秒|取り戻|相対/.test(nq + nCand)) {
+    const qSchools = comparisonEntities(nq);
+    const cSchools = comparisonEntities(nCand);
+    if ((qSchools.size >= 2 || cSchools.size >= 2) &&
+      (qSchools.size !== cSchools.size ||
+        [...qSchools].some(school => !cSchools.has(school)))) return 0;
+  }
+
   const candDistanceOverview =
     /区間距離|総距離|合計\d/.test(nCand) && !/\d+区/.test(nCand);
   const dimensions: Array<{ pattern: RegExp; skip?: boolean }> = [
