@@ -3122,15 +3122,9 @@
       ]
     },
     {
-      "path": "input/aragyoku/transcripts (derived)",
-      "routes": [
-        "corpus-original"
-      ],
-      "disposition": "missing-route"
-    },
-    {
       "path": "input/aragyoku/transcripts/2012-女子.json",
       "routes": [
+        "corpus-derived-original:input/aragyoku/transcripts",
         "corpus-original"
       ],
       "source_sha256": "27f6efb92f24a200e2b2e22da3c158d8bc065b532d1b5a20e01d5616b519859f",
@@ -3148,6 +3142,7 @@
     {
       "path": "input/aragyoku/transcripts/2012-男子.json",
       "routes": [
+        "corpus-derived-original:input/aragyoku/transcripts",
         "corpus-original"
       ],
       "source_sha256": "9be8f7145db6c9937f4acc1eb160bc77fc3bb9c977227577c868a91cff0a1acf",
@@ -3166,6 +3161,7 @@
     {
       "path": "input/aragyoku/transcripts/2013-女子.json",
       "routes": [
+        "corpus-derived-original:input/aragyoku/transcripts",
         "corpus-original"
       ],
       "source_sha256": "283a795165fe2ad47a5a1e4e900796c20c15a582cb0ee4a4d92ce655a3ca45dc",
@@ -3183,6 +3179,7 @@
     {
       "path": "input/aragyoku/transcripts/2013-男子.json",
       "routes": [
+        "corpus-derived-original:input/aragyoku/transcripts",
         "corpus-original"
       ],
       "source_sha256": "54dc86efd44ec7fbee484cd6de955ffd896a4ae8dbdcdbd4fa975d96d603cbb6",
@@ -3201,6 +3198,7 @@
     {
       "path": "input/aragyoku/transcripts/2014-男子.json",
       "routes": [
+        "corpus-derived-original:input/aragyoku/transcripts",
         "corpus-original"
       ],
       "source_sha256": "1ab6f3ab0443b00e4cff72119d6b5c9061ae1fe939333e16bc091adcc85451b4",
@@ -3219,6 +3217,7 @@
     {
       "path": "input/aragyoku/transcripts/2015-女子.json",
       "routes": [
+        "corpus-derived-original:input/aragyoku/transcripts",
         "corpus-original"
       ],
       "source_sha256": "7ffa6d1a263c973f58b7332af9da5097fd403c349925d07153b7d8bf1e8a2e15",
@@ -3236,6 +3235,7 @@
     {
       "path": "input/aragyoku/transcripts/2015-男子.json",
       "routes": [
+        "corpus-derived-original:input/aragyoku/transcripts",
         "corpus-original"
       ],
       "source_sha256": "cc8102346e96483811eaa56ba8f39bc52fa70c10467eec78f14e7f3de9cb4061",
@@ -3254,6 +3254,7 @@
     {
       "path": "input/aragyoku/transcripts/2016-女子.json",
       "routes": [
+        "corpus-derived-original:input/aragyoku/transcripts",
         "corpus-original"
       ],
       "source_sha256": "c469ccd379888c5668088ccb0e372b38aa738448511693f79cdb73e2753c1ac4",
@@ -3271,6 +3272,7 @@
     {
       "path": "input/aragyoku/transcripts/2016-男子.json",
       "routes": [
+        "corpus-derived-original:input/aragyoku/transcripts",
         "corpus-original"
       ],
       "source_sha256": "70f90561450850f0a3a5e5558df3cd0637256cc1aa4cffbacbdf414df3b80a82",
@@ -3289,6 +3291,7 @@
     {
       "path": "input/aragyoku/transcripts/2017-女子.json",
       "routes": [
+        "corpus-derived-original:input/aragyoku/transcripts",
         "corpus-original"
       ],
       "source_sha256": "f848d0d2e98e20335b81bda2ef243d50ea1a7bd1d7eb79fc4c8827b3e12d85ab",
@@ -3306,6 +3309,7 @@
     {
       "path": "input/aragyoku/transcripts/2017-男子.json",
       "routes": [
+        "corpus-derived-original:input/aragyoku/transcripts",
         "corpus-original"
       ],
       "source_sha256": "bc1e8c661385e929156eb705e01e1c090af07c8d541fc02541a41d0dec74d33b",
@@ -3324,6 +3328,7 @@
     {
       "path": "input/aragyoku/transcripts/2018-女子.json",
       "routes": [
+        "corpus-derived-original:input/aragyoku/transcripts",
         "corpus-original"
       ],
       "source_sha256": "ec0f1c0b8b49127367be4c04d0837c3ebd117e885ef422e6a07970d83b970c6d",
@@ -3341,6 +3346,7 @@
     {
       "path": "input/aragyoku/transcripts/2018-男子.json",
       "routes": [
+        "corpus-derived-original:input/aragyoku/transcripts",
         "corpus-original"
       ],
       "source_sha256": "8ef25641d1db7677cba06090fdbedf7ff44fbcd3f8ad994fbfbc9c904eff1d53",
@@ -3359,6 +3365,7 @@
     {
       "path": "input/aragyoku/transcripts/2019-女子.json",
       "routes": [
+        "corpus-derived-original:input/aragyoku/transcripts",
         "corpus-original"
       ],
       "source_sha256": "4a31bf80b08710129602e6163eca44baa231a0688085215ba41c62501a09c1bd",
@@ -3376,6 +3383,7 @@
     {
       "path": "input/aragyoku/transcripts/2019-男子.json",
       "routes": [
+        "corpus-derived-original:input/aragyoku/transcripts",
         "corpus-original"
       ],
       "source_sha256": "b803ac6fe865f299a60761adf193c62ebf7a4a76ab1b9aecae80fdd327fd2a09",
@@ -3394,6 +3402,7 @@
     {
       "path": "input/aragyoku/transcripts/2020-女子.json",
       "routes": [
+        "corpus-derived-original:input/aragyoku/transcripts",
         "corpus-original"
       ],
       "source_sha256": "b0c02a354565c63c2cea96b85147887c7bb88107419ef26d17d9f2ff405b4aca",
@@ -3411,6 +3420,7 @@
     {
       "path": "input/aragyoku/transcripts/2020-男子.json",
       "routes": [
+        "corpus-derived-original:input/aragyoku/transcripts",
         "corpus-original"
       ],
       "source_sha256": "535f961474b202305cf37bd81bb2db61669c338d09fb8eb66f60631f9d4dc9fa",
@@ -3429,6 +3439,7 @@
     {
       "path": "input/aragyoku/transcripts/2021-女子.json",
       "routes": [
+        "corpus-derived-original:input/aragyoku/transcripts",
         "corpus-original"
       ],
       "source_sha256": "cb258eac569d153050504f759d55852b68befddaedd70bead81893d9aea0cc9c",
@@ -3446,6 +3457,7 @@
     {
       "path": "input/aragyoku/transcripts/2021-男子.json",
       "routes": [
+        "corpus-derived-original:input/aragyoku/transcripts",
         "corpus-original"
       ],
       "source_sha256": "c080d8a105372c61f5e8971ee0b20ab2497adb3186d4e021c08ea8104ae35d24",
@@ -3464,6 +3476,7 @@
     {
       "path": "input/aragyoku/transcripts/2022-女子.json",
       "routes": [
+        "corpus-derived-original:input/aragyoku/transcripts",
         "corpus-original"
       ],
       "source_sha256": "85ac56b4a55bffc92f2de9fd5e9138b98cf327e8e56ff4443839e1af758c7da7",
@@ -3481,6 +3494,7 @@
     {
       "path": "input/aragyoku/transcripts/2022-男子.json",
       "routes": [
+        "corpus-derived-original:input/aragyoku/transcripts",
         "corpus-original"
       ],
       "source_sha256": "fb0ced55f1f8a8d25f7e8b277b9e29f88e4dcd460e1b929b397bac62b41d7fa5",
@@ -3498,6 +3512,7 @@
     {
       "path": "input/aragyoku/transcripts/2023-女子.json",
       "routes": [
+        "corpus-derived-original:input/aragyoku/transcripts",
         "corpus-original"
       ],
       "source_sha256": "66a953f0dd5059b166184f308484a6007defd04185d8875d57634fbdc3f36620",
@@ -3515,6 +3530,7 @@
     {
       "path": "input/aragyoku/transcripts/2023-男子.json",
       "routes": [
+        "corpus-derived-original:input/aragyoku/transcripts",
         "corpus-original"
       ],
       "source_sha256": "f440928f7c93f27216e434125f249fb13c681b344266986a0c783240cfd8c612",
@@ -3533,6 +3549,7 @@
     {
       "path": "input/aragyoku/transcripts/2024-女子.json",
       "routes": [
+        "corpus-derived-original:input/aragyoku/transcripts",
         "corpus-original"
       ],
       "source_sha256": "ebbd26d811b00af042af555fc6f7303e1790fd801ace268c22c6476dc70a06a7",
@@ -3550,6 +3567,7 @@
     {
       "path": "input/aragyoku/transcripts/2024-男子.json",
       "routes": [
+        "corpus-derived-original:input/aragyoku/transcripts",
         "corpus-original"
       ],
       "source_sha256": "d20db46f3cff41e9f962a4719116f869a9bb697c639398c322d12e4bd39dbf8a",
@@ -3568,6 +3586,7 @@
     {
       "path": "input/aragyoku/transcripts/2025-女子.json",
       "routes": [
+        "corpus-derived-original:input/aragyoku/transcripts",
         "corpus-original"
       ],
       "source_sha256": "f52f6bb9183c013c0ceef29a7ba85e6b7547640bc0d7f68f9f00c2e5825d8217",
@@ -3585,6 +3604,7 @@
     {
       "path": "input/aragyoku/transcripts/2025-男子.json",
       "routes": [
+        "corpus-derived-original:input/aragyoku/transcripts",
         "corpus-original"
       ],
       "source_sha256": "be1d4fac5dccba02ce64082c764ea4abaa8241eeff0adb1245b563ba31c458ad",
@@ -26938,19 +26958,28 @@
   ],
   "baseline_prepared_qa_count": 34995,
   "baseline_prepared_qa_sha256": "232d689008815c86362a0660ea443ead5d96eafd96692d6a5a91a5813ba367b8",
+  "chunk_kinds": {
+    "text": 1240,
+    "structured": 998,
+    "csv": 651
+  },
+  "canonical_suffixes": {
+    ".md": 588,
+    ".yaml": 16,
+    ".json": 247,
+    ".csv": 59,
+    ".txt": 2
+  },
   "chunk_count": 2889,
   "required_new_qa": 8667,
   "dispositions": {
     "canonical": 912,
     "nontext-asset-or-implementation": 44,
-    "missing-route": 1,
     "derived-index-or-existing-qa": 4,
     "identical-alias": 718,
     "virtual-filtered-calendar-route": 2
   },
-  "missing_routes": [
-    "input/aragyoku/transcripts (derived)"
-  ],
+  "missing_routes": [],
   "batches": [
     {
       "path": "out/qa-chunks/chunks-0001.jsonl",
