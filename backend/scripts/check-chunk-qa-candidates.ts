@@ -43,6 +43,53 @@ const authored: Authored[] = [];
 for (const file of readdirSync(authoredDir).filter(f => /^authored-\d+\.json$/.test(f)).sort()) {
   authored.push(...JSON.parse(readFileSync(join(authoredDir, file), "utf8")).entries);
 }
+
+/** Retrieval aid for reviewing existing intents, not a semantic deduplication proof. */
+const grams = (value: string) => {
+  const text = value.normalize("NFKC").toLowerCase().replace(/[\s\p{P}\p{S}]/gu, "");
+  return new Set(Array.from({ length: Math.max(0, text.length - 2) }, (_, i) => text.slice(i, i + 3)));
+};
+const candidates = [...catalog.entries, ...authored];
+const docs = candidates.flatMap(entry => entry.questions.map(question => ({
+  id: entry.id, question, answer: entry.answer, grams: grams(question),
+})));
+const postings = new Map<string, number[]>();
+docs.forEach((doc, index) => {
+  for (const gram of doc.grams) {
+    const indices = postings.get(gram) ?? [];
+    indices.push(index);
+    postings.set(gram, indices);
+  }
+});
+const weights = new Map([...postings].map(([gram, indices]) =>
+  [gram, Math.log(1 + docs.length / indices.length)]));
+const norm = (features: Set<string>) => Math.sqrt([...features]
+  .reduce((sum, g) => sum + (weights.get(g) ?? 0) ** 2, 0));
+const norms = docs.map(doc => norm(doc.grams));
+const neighbors = authored.map(entry => {
+  const features = grams(entry.questions[0]);
+  const scores = new Map<number, number>();
+  for (const gram of features) {
+    const weight = (weights.get(gram) ?? 0) ** 2;
+    for (const index of postings.get(gram) ?? []) {
+      if (docs[index].id !== entry.id) scores.set(index, (scores.get(index) ?? 0) + weight);
+    }
+  }
+  const byId = new Map<string, { id: string; score: number; question: string; answer: string }>();
+  for (const [index, dot] of scores) {
+    const doc = docs[index];
+    const score = dot / (norm(features) * norms[index] || 1);
+    if (score > (byId.get(doc.id)?.score ?? -1)) {
+      byId.set(doc.id, { id: doc.id, score: Number(score.toFixed(4)),
+        question: doc.question, answer: doc.answer });
+    }
+  }
+  return { id: entry.id, question: entry.questions[0], answer: entry.answer,
+    closest: [...byId.values()].sort((a, b) => b.score - a.score).slice(0, 5) };
+});
+writeFileSync(join(evidenceDir, "qa-intent-neighbors.json"),
+  JSON.stringify({ method: "IDF weighted character-trigram cosine; requires context review", entries: neighbors }, null, 2) + "\n");
+
 const existingIds = new Set(catalog.entries.map(e => e.id));
 const owners = new Map<string, Set<string>>();
 const register = (e: PreparedQaEntry) => {
