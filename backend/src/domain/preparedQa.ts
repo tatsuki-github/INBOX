@@ -76,7 +76,7 @@ const SYNONYM_GROUPS: string[][] = [
   ["戦力分析", "戦力予想", "数式予想", "校別展開"],
   ["徹底対策", "完全ガイド", "荒玉ガイド"],
   ["予定", "日程", "スケジュール", "開催日"],
-  ["区間距離", "距離"],
+  // 「距離」単独は区間距離へ潰さない（○区の距離・総距離と衝突しやすい）
   ["名簿", "生徒一覧", "部員名簿", "部員一覧", "陸上部名簿", "陸上部員"],
   ["差", "タイム差", "秒差", "時差"],
   ["出場できる", "出場出来る", "出られる", "出れる"],
@@ -110,7 +110,14 @@ function applySynonyms(text: string): string {
     // 長い別名から置換（優勝チーム→優勝 が 優勝→… より先）
     const alts = group.slice(1).filter(Boolean).sort((a, b) => b.length - a.length);
     for (const alt of alts) {
-      out = out.split(alt).join(canon);
+      if (!alt || alt === canon || !out.includes(alt)) continue;
+      // alt が canon の部分文字列のときだけ退避（例: 区間距離 ← 距離）
+      if (canon.includes(alt)) {
+        const protectedOut = out.split(canon).join("\u0000");
+        out = protectedOut.split(alt).join(canon).split("\u0000").join(canon);
+      } else {
+        out = out.split(alt).join(canon);
+      }
     }
   }
   return out;
@@ -310,8 +317,16 @@ function scorePair(nq: string, nCand: string): number {
   // Similar wording is not evidence that gender, race leg or event agrees.
   // Reject explicit conflicts before containment / similarity bonuses. When
   // either side omits a dimension, leave confidence to the existing scorer.
-  const dimensions = [/(?:男子|女子)/g, /\d+区/g, /\d+(?:\.\d+)?m/g];
-  for (const pattern of dimensions) {
+  // 区間距離の一覧定型（特定区を列挙しない）は、○区の距離質問を落とさない。
+  const candDistanceOverview =
+    /区間距離|総距離|合計\d/.test(nCand) && !/\d+区/.test(nCand);
+  const dimensions: Array<{ pattern: RegExp; skip?: boolean }> = [
+    { pattern: /(?:男子|女子)/g },
+    { pattern: /\d+区/g, skip: candDistanceOverview },
+    { pattern: /\d+(?:\.\d+)?m/g },
+  ];
+  for (const { pattern, skip } of dimensions) {
+    if (skip) continue;
     const queryValues = new Set(nq.match(pattern) ?? []);
     const candidateValues = new Set(nCand.match(pattern) ?? []);
     if (queryValues.size && candidateValues.size &&
@@ -526,6 +541,23 @@ export function matchPreparedAnswer(
     if (!queryHasYear && year != null) {
       if (year === defaultYear) best += 0.02;
       else best -= 0.05;
+    }
+    // OCR生ダンプ定型が「数式予想／校別展開／戦力分析」へ誤吸しないよう減点し、
+    // 専用の予想・校別エントリを優先する。
+    const wantsStructuredPreview =
+      /数式|校別展開|オーダー予想|戦力予想|区間予想|戦力分析/.test(nq);
+    if (wantsStructuredPreview) {
+      const id = row.entry.id;
+      if (id.includes("analysis-ocr")) best *= 0.25;
+      else if (
+        id.includes("school-expand") ||
+        id.includes("校別展開") ||
+        id.includes("formula-") ||
+        /-(men|women)-order$/.test(id) ||
+        id.includes("preview")
+      ) {
+        best = Math.min(1.05, best + 0.18);
+      }
     }
     if (best >= HIT_THRESHOLD * 0.85) {
       scored.push({ entry: row.entry, score: best, matchedQuestion: bestQ, year });
