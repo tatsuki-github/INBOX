@@ -2,7 +2,7 @@
 """Add per-athlete all-records prepared FAQ (past 3 years, aragyoku district).
 
 Covers questions like 「村上咲稀の今年度の全ての記録」 with track CSV rows
-plus 駅伝・ロード等の大会結果（drive-text / 荒玉 transcripts）。
+plus 駅伝・ロード・玉名郡ナイター等の大会結果（drive-text / 荒玉 transcripts）。
 
 Usage:
   python3 scripts/generate_prepared_qa_athlete_all_records.py
@@ -42,6 +42,7 @@ DEFAULT_YEAR = 2026
 ID_PREFIX = "records-athlete-"
 
 ROAD_EKIDEN_FOLDER_RE = re.compile(r"駅伝|なごみ|マラソン")
+TRACK_MEET_FOLDER_RE = re.compile(r"ナイター")
 RESULT_FILES = (
     "荒玉地区の結果.md",
     "岱明の結果.md",
@@ -49,9 +50,41 @@ RESULT_FILES = (
     "女子成績表.md",
     "男子成績表.md",
 )
+TRACK_RESULT_FILES = (
+    "全結果.md",
+    "岱明の結果.md",
+    "記録.md",
+)
 CIRCLE_GRADE = str.maketrans("①②③④⑤⑥⑦⑧⑨", "123456789")
+NAME_CHAR_ALIASES = (
+    ("　", ""),
+    (" ", ""),
+    ("凜", "凛"),
+    ("﨑", "崎"),
+    ("髙", "高"),
+    ("濵", "濱"),
+    ("瀨", "瀬"),
+    ("邊", "邉"),
+)
 TIME_RE = re.compile(
     r"(?P<t>(?:\d{1,2}:)?\d{1,2}:\d{2}(?:\.\d+)?|\d{1,2}'\d{2}(?:\"\d{0,2})?|\d{1,2}分\d{1,2}秒(?:\d+)?)"
+)
+TRACK_DIST_RE = re.compile(
+    r"^(?:##\s*)?(?P<dist>800m|1500m|3000m|5000m)\s*(?P<gender>男子|女子)?\s*$"
+)
+TRACK_TABLE_ROW_RE = re.compile(
+    r"^\|\s*(?P<name>[^|]+?)\s*\|\s*(?P<aff>[^|]*?)\s*\|\s*(?P<grade>[^|]*?)\s*\|\s*"
+    r"(?P<mark>\d{1,2}:\d{2}(?:\.\d+)?)\s*\|"
+)
+TRACK_LINE_RE = re.compile(
+    r"^(?P<name>[一-龥ぁ-んァ-ヶー\s　]+?)\s+"
+    r"(?:\d年|[①②③中]\d?)?\s*"
+    r"(?P<mark>\d{1,2}:\d{2}(?:\.\d+)?|\d{1,2}分\d{1,2}秒\d*)"
+    r"(?:\s|$|　)"
+)
+TRACK_JP_LINE_RE = re.compile(
+    r"^(?P<name>[一-龥ぁ-んァ-ヶー]+)\s*[　\s]+"
+    r"(?P<mark>\d{1,2}分\d{1,2}秒\d*)"
 )
 
 
@@ -62,6 +95,8 @@ def _truthy_sb(val: object) -> bool:
 
 def normalize_athlete_name(name: str) -> str:
     n = (name or "").translate(CIRCLE_GRADE)
+    for a, b in NAME_CHAR_ALIASES:
+        n = n.replace(a, b)
     n = re.sub(r"\s+", "", n)
     n = re.sub(r"[（(]\d年[）)]", "", n)
     n = re.sub(r"[①②③1-3]$", "", n)
@@ -71,6 +106,12 @@ def normalize_athlete_name(name: str) -> str:
 
 def normalize_mark(mark: str) -> str:
     m = (mark or "").strip()
+    jp = re.fullmatch(r"(\d{1,2})分(\d{1,2})秒(\d+)?", m)
+    if jp:
+        mm, ss, frac = int(jp.group(1)), int(jp.group(2)), jp.group(3)
+        if frac:
+            return f"{mm}:{ss:02d}.{frac}"
+        return f"{mm}:{ss:02d}"
     m = m.replace("'", ":").replace("’", ":").replace("″", "").replace('"', "")
     m = re.sub(r"分", ":", m)
     m = re.sub(r"秒", "", m)
@@ -148,6 +189,8 @@ def short_meet_title(folder: str) -> str:
         return "荒玉駅伝"
     if "金栗駅伝" in raw:
         return "金栗駅伝"
+    if "ナイター" in raw:
+        return "玉名郡ナイター"
     title = re.sub(r"[（(][^）)]*[）)]", "", title)
     for cut in (r"中学駅伝金栗四三生誕の地", r"第\d+回", r"令和\d+年度"):
         title = re.sub(cut, "", title)
@@ -156,6 +199,129 @@ def short_meet_title(folder: str) -> str:
     if len(title) > 24:
         title = title[:23] + "…"
     return title or folder
+
+
+def extract_track_from_text(text: str) -> list[dict[str, str]]:
+    """Pull track marks from ナイター-style docs (tables + 岱明メモ)."""
+    out: list[dict[str, str]] = []
+    seen: set[tuple[str, str, str]] = set()
+    distance = ""
+    gender = ""
+    for raw in text.splitlines():
+        line = raw.strip()
+        if not line:
+            continue
+        if line.startswith(
+            (
+                "大会",
+                "日付",
+                "ステータス",
+                "場所",
+                "タグ",
+                "集合",
+                "所属",
+                "ソース",
+                "中学生",
+                "| ---",
+                "| 氏名",
+                "|---",
+            )
+        ):
+            continue
+        if line in {"男子", "女子"}:
+            gender = line
+            continue
+        if re.fullmatch(r"[1-3]年", line):
+            continue
+        dist_m = TRACK_DIST_RE.match(line)
+        if dist_m:
+            distance = dist_m.group("dist")
+            if dist_m.group("gender"):
+                gender = dist_m.group("gender")
+            continue
+        if "DNS" in line or not distance:
+            continue
+
+        name = ""
+        mark = ""
+        aff = ""
+        table_m = TRACK_TABLE_ROW_RE.match(line)
+        if table_m:
+            name = normalize_athlete_name(table_m.group("name"))
+            mark = normalize_mark(table_m.group("mark"))
+            aff = (table_m.group("aff") or "").strip()
+        else:
+            line_m = TRACK_LINE_RE.match(line) or TRACK_JP_LINE_RE.match(line)
+            if not line_m:
+                continue
+            name = normalize_athlete_name(line_m.group("name"))
+            mark = normalize_mark(line_m.group("mark"))
+
+        if len(name) < 2 or not mark or name in {"氏名", "記録", "所属", "学年"}:
+            continue
+        key = (name, distance, mark)
+        if key in seen:
+            continue
+        seen.add(key)
+        note = "SB" if re.search(r"(?:^|\s)SB(?:\s|$)", line) else ""
+        out.append(
+            {
+                "名前": name,
+                "所属": aff,
+                "性別": gender,
+                "距離": distance,
+                "記録": mark,
+                "_kind": "track",
+                "_note": note,
+            }
+        )
+    return out
+
+
+def load_track_meet_rows(drive_map: dict[str, str]) -> list[dict[str, str]]:
+    """Load 玉名郡ナイター等のトラック大会結果（CSV未収録分の補完）。"""
+    rows: list[dict[str, str]] = []
+    if not MEETS_ROOT.exists():
+        return rows
+    for year_dir in sorted(MEETS_ROOT.iterdir()):
+        if not year_dir.is_dir() or not year_dir.name.endswith("年度"):
+            continue
+        try:
+            year_label = int(year_dir.name.replace("年度", ""))
+        except ValueError:
+            continue
+        for meet_dir in sorted(year_dir.iterdir()):
+            if not meet_dir.is_dir():
+                continue
+            if not TRACK_MEET_FOLDER_RE.search(meet_dir.name):
+                continue
+            # Prefer full-field results; fall back to 岱明メモ.
+            texts: list[tuple[str, Path]] = []
+            for fname in TRACK_RESULT_FILES:
+                p = meet_dir / fname
+                if p.exists():
+                    texts.append((fname, p))
+            if not texts:
+                continue
+            date = meet_date_from_dir(meet_dir, year_label)
+            title = short_meet_title(meet_dir.name)
+            url = resolve_drive_meet_url(meet_dir.name, title, drive_map) or ""
+            # Prefer 全結果.md when present; otherwise merge all available files.
+            preferred = [t for t in texts if t[0] == "全結果.md"]
+            use_texts = preferred or texts
+            extracted: list[dict[str, str]] = []
+            for fname, path in use_texts:
+                text = path.read_text(encoding="utf-8", errors="ignore")
+                for hit in extract_track_from_text(text):
+                    hit = dict(hit)
+                    hit["日付"] = date.replace("-", "/") if date else ""
+                    hit["大会名"] = title
+                    hit["参考"] = url
+                    hit["_source"] = str(path.relative_to(ROOT))
+                    hit["_folder"] = meet_dir.name
+                    extracted.append(hit)
+            rows.extend(extracted)
+    return rows
 
 
 def extract_ekiden_from_text(text: str) -> list[dict[str, str]]:
@@ -564,11 +730,12 @@ def gen_entries(
 
     drive_map = load_drive_meet_folder_map()
     ekiden_rows = load_road_ekiden_rows(drive_map) + load_aragyoku_ekiden_rows()
+    nighter_rows = load_track_meet_rows(drive_map)
 
     per_year: dict[int, dict[str, list[dict[str, str]]]] = {}
     for year in YEARS:
         track = load_year_rows(year)
-        extras = filter_extras_for_year(ekiden_rows, year)
+        extras = filter_extras_for_year(ekiden_rows + nighter_rows, year)
         # only attach extras for athletes in track CSV (district coverage)
         track_names = {
             normalize_athlete_name(r.get("名前") or "")
@@ -686,11 +853,12 @@ def main() -> int:
             existing_q.add(q)
     print(f"after question dedupe: {len(cleaned)}")
 
-    for sample_name in ("村上咲稀", "南本幸治郎", "松野凛空"):
+    for sample_name in ("村上咲稀", "南本幸治郎", "松野凛空", "田上颯人"):
         sample = next((e for e in cleaned if sample_name in e["id"] and "2026" in e["id"]), None)
         if sample:
             print("SAMPLE", sample["id"])
-            print(sample["answer"][:700])
+            print(sample["answer"][:900])
+            print("has nighter?", "玉名郡ナイター" in sample["answer"])
             print("---")
 
     if args.dry_run:
@@ -708,10 +876,10 @@ def main() -> int:
     data["entries"] = uniq
     data["total"] = len(uniq)
     note = data.get("note") or ""
-    if "駅伝・ロード" not in note:
+    if "玉名郡ナイター" not in note:
         data["note"] = (
             note.rstrip()
-            + "\n選手の年度別・過去3年全記録（トラックCSV＋駅伝・ロード等）を収録。\n"
+            + "\n選手の年度別・過去3年全記録（トラックCSV＋駅伝・ロード・玉名郡ナイター等）を収録。\n"
         )
     FAQ.write_text(
         yaml.dump(

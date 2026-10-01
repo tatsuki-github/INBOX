@@ -270,10 +270,12 @@ describe("matchPreparedAnswer", () => {
     ]) {
       const hit = matchPreparedAnswer(q, { defaultYear: 2026 });
       expect(hit?.id, q).toBe("records-athlete-2026-南本幸治郎");
-      expect(hit?.text, q).toMatch(/全6件/);
+      expect(hit?.text, q).toMatch(/全7件/);
       expect(hit?.text, q).toContain("5:23.50");
       expect(hit?.text, q).toContain("5:43.60");
       expect(hit?.text, q).toContain("なごみ駅伝");
+      expect(hit?.text, q).toContain("玉名郡ナイター");
+      expect(hit?.text, q).toContain("5:24.8");
       expect(hit?.text, q).toMatch(/大会結果:\s*https?:\/\//);
       expect(hit?.text, q).toContain("http://www.kumariku.org/26/26,7,18chutairen/rel075.html");
       // 距離別SB定型へ誤吸しない
@@ -293,6 +295,26 @@ describe("matchPreparedAnswer", () => {
     expect(hit?.text).toContain("4:53.85");
     expect(hit?.text).not.toContain("トラックCSVに加え");
     expect(hit?.text).not.toContain("トラックに加え駅伝・ロード等も含みます");
+  });
+
+  it("includes 玉名郡ナイター in all-records when the athlete raced there", () => {
+    const matsuno = matchPreparedAnswer("松野凛空の全ての記録", { defaultYear: 2026 });
+    expect(matsuno?.id).toBe("records-athlete-2026-松野凛空");
+    expect(matsuno?.text).toContain("玉名郡ナイター");
+    expect(matsuno?.text).toContain("4:29.8");
+    expect(matsuno?.text).toContain(
+      "drive.google.com/drive/folders/1L9RE6ZK_qmehh9sj7bYK7W5A4wKZU82t",
+    );
+
+    const tanoue = matchPreparedAnswer("田上颯人の今年度の全ての記録", { defaultYear: 2026 });
+    expect(tanoue?.id).toBe("records-athlete-2026-田上颯人");
+    expect(tanoue?.text).toContain("玉名郡ナイター");
+    expect(tanoue?.text).toContain("4:33.6");
+
+    const past = matchPreparedAnswer("松野凛空の過去3年の全ての記録", { defaultYear: 2026 });
+    expect(past?.id).toBe("records-athlete-3y-松野凛空");
+    expect(past?.text).toContain("玉名郡ナイター");
+    expect(past?.text).toMatch(/4:47\.9|4:29\.8/);
   });
 
   it("covers gap-crush-1000 samples that previously missed", () => {
