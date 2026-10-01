@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "max_chunk_chars": 5000,
+  "chunk_count": 2789,
+  "required_new_qa": 8367,
+  "dispositions": {
+    "canonical": 896,
+    "nontext-asset-or-implementation": 44,
+    "missing-route": 3,
+    "derived-index-or-existing-qa": 4,
+    "identical-alias": 734
+  },
+  "missing_routes": [
+    "input/aragyoku/transcripts (derived)",
+    "input/idaten-corpus/calendar/events.2025.filtered.yaml",
+    "input/idaten-corpus/calendar/events.2026.filtered.yaml"
+  ],
+  "batches": 64
+}
