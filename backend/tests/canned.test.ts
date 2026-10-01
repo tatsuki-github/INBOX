@@ -29,8 +29,12 @@ describe("canned help / example questions", () => {
   it("answers greetings and thanks without coach fallback", async () => {
     expect(isGreetingOrThanksQuestion("こんにちは")).toBe(true);
     expect(isGreetingOrThanksQuestion("ありがとう")).toBe(true);
+    expect(isGreetingOrThanksQuestion("hi")).toBe(true);
+    expect(isGreetingOrThanksQuestion("了解")).toBe(true);
+    expect(isGreetingOrThanksQuestion("バイバイ")).toBe(true);
     expect(isGreetingOrThanksQuestion("荒玉駅伝はいつ？")).toBe(false);
     expect(matchCannedAnswer("こんにちは")?.id).toBe("greeting-thanks");
+    expect(matchCannedAnswer("了解")?.id).toBe("greeting-thanks");
     const result = await answerQuestion("こんにちは", {
       retrieve: () => {
         throw new Error("retrieve should not run");

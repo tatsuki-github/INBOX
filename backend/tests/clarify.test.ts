@@ -69,6 +69,41 @@ describe("matchClarifyAnswer", () => {
     expect(matchClarifyAnswer("タイムは？")?.text).toContain("例:");
     expect(matchClarifyAnswer("今村昇磨の1500m自己ベストは？")).toBeNull();
   });
+
+  it("clarifies more underspecified domain openers", () => {
+    expect(matchClarifyAnswer("優勝は？")?.id).toBe("clarify-meet-result");
+    expect(matchClarifyAnswer("何位？")?.id).toBe("clarify-meet-result");
+    expect(matchClarifyAnswer("今日は？")?.id).toBe("clarify-schedule");
+    expect(matchClarifyAnswer("今週は？")?.id).toBe("clarify-schedule");
+    expect(matchClarifyAnswer("次の大会は？")?.id).toBe("clarify-schedule");
+    expect(matchClarifyAnswer("距離は？")?.id).toBe("clarify-distance-course");
+    expect(matchClarifyAnswer("コースは？")?.id).toBe("clarify-distance-course");
+    expect(matchClarifyAnswer("動画は？")?.id).toBe("clarify-media");
+    expect(matchClarifyAnswer("画像は？")?.id).toBe("clarify-media");
+    expect(matchClarifyAnswer("名簿は？")?.id).toBe("clarify-roster");
+    expect(matchClarifyAnswer("何人？")?.id).toBe("clarify-roster");
+    expect(matchClarifyAnswer("ライバルは？")?.id).toBe("clarify-rival");
+    expect(matchClarifyAnswer("ペースは？")?.id).toBe("clarify-pace-advice");
+    expect(matchClarifyAnswer("作戦どうする？")?.id).toBe("clarify-pace-advice");
+    expect(matchClarifyAnswer("集合場所は？")?.id).toBe("clarify-logistics");
+    expect(matchClarifyAnswer("持ち物は？")?.id).toBe("clarify-logistics");
+    expect(matchClarifyAnswer("休めばいい？")?.id).toBe("clarify-logistics");
+    expect(matchClarifyAnswer("予想は？")?.id).toBe("clarify-opinion");
+    expect(matchClarifyAnswer("体調は？")?.id).toBe("clarify-opinion");
+    expect(matchClarifyAnswer("差は？")?.id).toBe("clarify-gap");
+    expect(matchClarifyAnswer("前年比は？")?.id).toBe("clarify-gap");
+    expect(matchClarifyAnswer("岱明は？")?.id).toBe("clarify-bare-school");
+    expect(matchClarifyAnswer("南関どうだった？")?.id).toBe("clarify-bare-school");
+    expect(matchClarifyAnswer("今村は？")?.id).toBe("clarify-bare-athlete");
+    expect(matchClarifyAnswer("今村昇磨どう？")?.id).toBe("clarify-bare-athlete");
+    expect(matchClarifyAnswer("駅伝って？")?.id).toBe("clarify-topic-opener");
+    expect(matchClarifyAnswer("荒玉のことは？")?.id).toBe("clarify-topic-opener");
+    expect(matchClarifyAnswer("中学生の記録は？")?.id).toBe("clarify-record-lookup");
+    expect(matchClarifyAnswer("高校生は？")?.id).toBe("clarify-record-lookup");
+    expect(matchClarifyAnswer("今週の練習は？")).toBeNull();
+    expect(matchClarifyAnswer("荒玉駅伝男子の区間距離は？")).toBeNull();
+    expect(matchClarifyAnswer("岱明中の生徒一覧は？")).toBeNull();
+  });
 });
 
 describe("answerQuestion clarify", () => {
@@ -99,7 +134,20 @@ describe("answerQuestion clarify", () => {
   });
 
   it("returns examples for unexpected vague questions without LLM", async () => {
-    for (const q of ["タイムは？", "何区がいい？", "練習どうだった？", "教えて"]) {
+    for (const q of [
+      "タイムは？",
+      "何区がいい？",
+      "練習どうだった？",
+      "教えて",
+      "優勝は？",
+      "今日は？",
+      "動画は？",
+      "名簿は？",
+      "岱明は？",
+      "今村は？",
+      "中学生の記録は？",
+      "駅伝って？",
+    ]) {
       const result = await answerQuestion(q, {
         retrieve: () => {
           throw new Error("retrieve should not run");
@@ -118,8 +166,9 @@ describe("answerQuestion clarify", () => {
       expect(result.kind, q).toBe("answered");
       if (result.kind === "answered") {
         expect(result.sources[0], q).toMatch(/^clarify:/);
-        expect(result.text, q).toMatch(/例:|使い方/);
+        expect(result.text, q).toMatch(/例:|使い方|コーチ/);
         expect(result.text, q).not.toMatch(/名前,所属,性別/);
+        expect(result.text, q).not.toMatch(/winners-by-year|events\.daiming/);
       }
     }
   });
