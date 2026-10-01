@@ -33,6 +33,9 @@ LINE Q&A は RAG / LLM で都度組み立てると、ぶれ・コーチ誘導・
   公開 URL（`https://...`）がある場合だけ載せる
 
 回答は短い事実文＋必要なら公開 URL（Drive / 大会結果）に留める。
+**推測・幻覚で埋めない。** 荒玉のチーム結果は transcripts /
+`men_full`・`women_full` の順位・総合・区間選手のみを書く（去年＝今年度−1）。
+定型未ヒットで LLM が別年を返す事故を避けるため、「結果は？」自然文も収録する。
 全件の品質回収: `scripts/polish_prepared_qa_quality.py` /
 `scripts/strip_prepared_qa_nonlink_refs.py` → `scripts/sync_prepared_qa.py`。
 
