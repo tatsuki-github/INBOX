@@ -135,6 +135,9 @@ export function normalizePreparedQuestion(
     .replace(/(は|って)?$/g, "");
 
   q = applySynonyms(q.toLowerCase());
+  // Compare equivalent event distances in metres (1.5km = 1500m).
+  q = q.replace(/(\d+(?:\.\d+)?)\s*(km|キロメートル|キロ|m|メートル)(?![a-z])/g,
+    (_, value: string, unit: string) => `${Number(value) * (/^(km|キロ)/.test(unit) ? 1000 : 1)}m`);
   // "2025年のジュニア" と "2025年ジュニア" を同一視
   q = q.replace(/の/g, "");
   q = q.replace(/\s+/g, "");
@@ -278,6 +281,17 @@ function rosterEntities(normalized: string): Set<string> {
 
 function scorePair(nq: string, nCand: string): number {
   if (!nq || !nCand) return 0;
+  // Similar wording is not evidence that gender, race leg or event agrees.
+  // Reject explicit conflicts before containment / similarity bonuses. When
+  // either side omits a dimension, leave confidence to the existing scorer.
+  const dimensions = [/(?:男子|女子)/g, /\d+区/g, /\d+(?:\.\d+)?m/g];
+  for (const pattern of dimensions) {
+    const queryValues = new Set(nq.match(pattern) ?? []);
+    const candidateValues = new Set(nCand.match(pattern) ?? []);
+    if (queryValues.size && candidateValues.size &&
+      (queryValues.size !== candidateValues.size ||
+        [...queryValues].some((value) => !candidateValues.has(value)))) return 0;
+  }
   const yq: string[] = nq.match(/20\d{2}/g) ?? [];
   const yc: string[] = nCand.match(/20\d{2}/g) ?? [];
   const yearsConflict =
