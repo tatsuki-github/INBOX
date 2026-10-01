@@ -1,0 +1,44 @@
+name: Knowledge QA Workbench
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'scripts/prepare_knowledge_qa_chunks.py'
+      - 'tests/test_knowledge_qa_chunks.py'
+      - '.github/workflows/knowledge-qa-workbench.yml'
+
+concurrency:
+  group: knowledge-qa-workbench-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  inventory:
+    if: github.event.pull_request.head.repo.full_name == github.repository && github.head_ref == 'codex/all-knowledge-three-qa'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install PyYAML pytest
+      - name: Verify lossless evidence chunking
+        run: python3 -m pytest tests/test_knowledge_qa_chunks.py -q
+      - name: Prepare inventory and evidence only
+        run: python3 scripts/prepare_knowledge_qa_chunks.py --write
+      - name: Persist reviewable evidence on the work branch
+        run: |
+          git add out/qa-chunks
+          if git diff --cached --quiet; then
+            echo "Evidence inventory unchanged."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Prepare source-pinned full knowledge evidence inventory"
+          git push origin HEAD:codex/all-knowledge-three-qa
