@@ -142,3 +142,17 @@ def test_alignment_fix_restores_daiming_order_facts():
     for token in ("村上咲稀", "松野凛空", "山本哲瑠", "仮置き"):
         assert token in ans
     assert "「」" not in ans
+
+
+def test_ux_brush_up_avoids_broken_doudatta_and_jargon():
+    import yaml
+
+    faq = yaml.safe_load((ROOT / "input/faq/prepared-qa.v1.yaml").read_text())
+    assert not any("のどうだった" in q for e in faq["entries"] for q in e.get("questions") or [])
+    by = {e["id"]: e for e in faq["entries"]}
+    assert "transcript" not in by["aragyoku-tamana-fuzoku"]["answer"]
+    assert "コーパス" not in by["sb-middle-generic"]["answer"]
+    area = by["nagomi-2026-aragyoku-area-result"]["answer"]
+    assert len(area) < 600
+    assert "岱明A" in area
+    assert "TujEJG7vAey" in area
