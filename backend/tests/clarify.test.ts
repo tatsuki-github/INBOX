@@ -41,6 +41,17 @@ describe("matchClarifyAnswer", () => {
     expect(c?.text).toContain("例:");
     expect(c?.text).toContain("今村昇磨の1500m自己ベストは？");
   });
+
+  it("clarifies vague meet-result / schedule / order questions", () => {
+    expect(matchClarifyAnswer("結果は？")?.id).toBe("clarify-meet-result");
+    expect(matchClarifyAnswer("誰が勝った？")?.id).toBe("clarify-meet-result");
+    expect(matchClarifyAnswer("いつ？")?.id).toBe("clarify-schedule");
+    expect(matchClarifyAnswer("日程は？")?.id).toBe("clarify-schedule");
+    expect(matchClarifyAnswer("オーダーは？")?.id).toBe("clarify-order");
+    expect(matchClarifyAnswer("なごみ駅伝の結果は？")).toBeNull();
+    expect(matchClarifyAnswer("荒玉駅伝はいつ？")).toBeNull();
+    expect(matchClarifyAnswer("2025年荒玉男子の岱明のオーダーは？")).toBeNull();
+  });
 });
 
 describe("answerQuestion clarify", () => {
