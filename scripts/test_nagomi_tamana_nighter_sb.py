@@ -71,6 +71,13 @@ class TamanaNighterSbTest(unittest.TestCase):
                         [("女子 子", "1500m", "5:30.0")],
                     )
 
+    def test_real_daimyo_memo_excludes_matsuno_non_sb(self) -> None:
+        """松野凛空のナイター4:29.8はSBではない（既存SB 4:22.33）。"""
+        marks = g.iter_tamana_nighter_marks()
+        self.assertFalse(any("松野" in name for name, _, _ in marks))
+        self.assertTrue(any("田上" in name for name, _, _ in marks))
+
 
 if __name__ == "__main__":
     unittest.main()
+
