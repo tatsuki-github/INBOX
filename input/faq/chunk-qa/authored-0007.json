@@ -1,0 +1,235 @@
+{
+  "version": 1,
+  "entries": [
+    {
+      "id": "chunkqa-a9dc32deef8c1b4cc5c6f4b4-1",
+      "chunk_id": "knowledge-a9dc32deef8c1b4cc5c6f4b4",
+      "questions": [
+        "2026年8月31日のいだてん岱明夕練で、男子と女子のジョグ距離は何m違う？"
+      ],
+      "answer": "男子7.84km、女子6.96kmと記録されており、距離差は0.88km、880mです。両方とも5分26秒/kmのペースが記載されています。",
+      "sources": [
+        "calendar.md"
+      ],
+      "source_sha256": "c708357283066a9fa70d7c765b6c3c933529e681a56a9048980ab7e382a4ac6f",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "- **件名**: いだてん岱明夕練\n- **表示日**: 2026-08-31\n- **開始日**: 2026-08-31\n- **終了日**: 2026-08-31\n- **終日**: いいえ\n- **開始時刻**: 17:00\n- **終了時刻**: 18:30\n- **カテゴリ**: 予定\n- **ステータス**: scheduled\n- **タグ**: ランニング, いだてん岱明練習, practice:daiming, session:evening\n- **場所**: （なし）\n- **URL**: （なし）\n- **非公開**: いいえ\n\n**説明**\n\n<!-- practice-menu:v1\nwarmup: 動きづくり\nitems:\n- type: jog\n  group: 男子\n  laps: 14\n  distance_m: 7840\n  distance_km: 7.84\n  pace: k/5:26\n  intensity: E\n- type: jog\n  group: 女子\n  distance_m: 6960\n  distance_km: 6.96\n  pace: k/5:26\n  intensity: E\n- type: strides\n  reps: 2\n  label: 流し2本\n-->\n\n動きづくり\n\nジョグ 男子 7.84km (14周) k/5:26\nジョグ 女子 6.96km k/5:26\n流し2本\n\n"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "authored-machine-checks-pending"
+      }
+    },
+    {
+      "id": "chunkqa-a9dc32deef8c1b4cc5c6f4b4-2",
+      "chunk_id": "knowledge-a9dc32deef8c1b4cc5c6f4b4",
+      "questions": [
+        "2026年8月31日の石原と荒田は、いだてん岱明夕練の開始時刻よりそれぞれ何時間早い予定？"
+      ],
+      "answer": "石原は9時、荒田は10時、いだてん岱明夕練は17時開始です。夕練の開始時刻より、石原は8時間、荒田は7時間早い予定です。",
+      "sources": [
+        "calendar.md"
+      ],
+      "source_sha256": "c708357283066a9fa70d7c765b6c3c933529e681a56a9048980ab7e382a4ac6f",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "- **件名**: 石原\n- **表示日**: 2026-08-31\n- **開始日**: 2026-08-31\n- **終了日**: 2026-08-31\n- **終日**: いいえ\n- **開始時刻**: 09:00\n- **終了時刻**: 12:00\n- **カテゴリ**: 予定\n- **ステータス**: scheduled\n- **タグ**: 会社\n- **場所**: （なし）\n- **URL**: （なし）\n- **非公開**: いいえ\n\n**説明**\n\n（なし）\n\n"
+        },
+        {
+          "kind": "quote",
+          "text": "- **件名**: 荒田\n- **表示日**: 2026-08-31\n- **開始日**: 2026-08-31\n- **終了日**: 2026-08-31\n- **終日**: いいえ\n- **開始時刻**: 10:00\n- **終了時刻**: 13:00\n- **カテゴリ**: 予定\n- **ステータス**: scheduled\n- **タグ**: 会社\n- **場所**: （なし）\n- **URL**: （なし）\n- **非公開**: いいえ\n\n**説明**\n\n（なし）\n\n"
+        },
+        {
+          "kind": "quote",
+          "text": "- **件名**: いだてん岱明夕練\n- **表示日**: 2026-08-31\n- **開始日**: 2026-08-31\n- **終了日**: 2026-08-31\n- **終日**: いいえ\n- **開始時刻**: 17:00\n- **終了時刻**: 18:30\n- **カテゴリ**: 予定\n- **ステータス**: scheduled\n- **タグ**: ランニング, いだてん岱明練習, practice:daiming, session:evening\n- **場所**: （なし）\n- **URL**: （なし）\n- **非公開**: いいえ\n\n**説明**\n\n<!-- practice-menu:v1\nwarmup: 動きづくり\nitems:\n- type: jog\n  group: 男子\n  laps: 14\n  distance_m: 7840\n  distance_km: 7.84\n  pace: k/5:26\n  intensity: E\n- type: jog\n  group: 女子\n  distance_m: 6960\n  distance_km: 6.96\n  pace: k/5:26\n  intensity: E\n- type: strides\n  reps: 2\n  label: 流し2本\n-->\n\n動きづくり\n\nジョグ 男子 7.84km (14周) k/5:26\nジョグ 女子 6.96km k/5:26\n流し2本\n\n"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "authored-machine-checks-pending"
+      }
+    },
+    {
+      "id": "chunkqa-a9dc32deef8c1b4cc5c6f4b4-3",
+      "chunk_id": "knowledge-a9dc32deef8c1b4cc5c6f4b4",
+      "questions": [
+        "2026年8月30日の自分の練習と翌日のいだてん岱明夕練は、開始時刻だけを比べると何分違う？"
+      ],
+      "answer": "8月30日の自分の練習は18時30分、31日のいだてん岱明夕練は17時です。開始時刻だけを比べると、翌日の夕練が1時間30分早い時刻です。",
+      "sources": [
+        "calendar.md"
+      ],
+      "source_sha256": "c708357283066a9fa70d7c765b6c3c933529e681a56a9048980ab7e382a4ac6f",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "- **件名**: 自分の練習\n- **表示日**: 2026-08-30\n- **開始日**: 2026-08-30\n- **終了日**: 2026-08-30\n- **終日**: いいえ\n- **開始時刻**: 18:30\n- **終了時刻**: 20:00\n- **カテゴリ**: 予定\n- **ステータス**: done\n- **タグ**: ランニング, 自分の練習, practice:personal\n- **場所**: （なし）\n- **URL**: （なし）\n- **非公開**: いいえ\n\n**説明**\n\n45/15の30本（疾走アベk/3:47）\n\n"
+        },
+        {
+          "kind": "quote",
+          "text": "- **件名**: いだてん岱明夕練\n- **表示日**: 2026-08-31\n- **開始日**: 2026-08-31\n- **終了日**: 2026-08-31\n- **終日**: いいえ\n- **開始時刻**: 17:00\n- **終了時刻**: 18:30\n- **カテゴリ**: 予定\n- **ステータス**: scheduled\n- **タグ**: ランニング, いだてん岱明練習, practice:daiming, session:evening\n- **場所**: （なし）\n- **URL**: （なし）\n- **非公開**: いいえ\n\n**説明**\n\n<!-- practice-menu:v1\nwarmup: 動きづくり\nitems:\n- type: jog\n  group: 男子\n  laps: 14\n  distance_m: 7840\n  distance_km: 7.84\n  pace: k/5:26\n  intensity: E\n- type: jog\n  group: 女子\n  distance_m: 6960\n  distance_km: 6.96\n  pace: k/5:26\n  intensity: E\n- type: strides\n  reps: 2\n  label: 流し2本\n-->\n\n動きづくり\n\nジョグ 男子 7.84km (14周) k/5:26\nジョグ 女子 6.96km k/5:26\n流し2本\n\n"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "authored-machine-checks-pending"
+      }
+    },
+    {
+      "id": "chunkqa-cb2adbdc65f2e39f590c4dbf-1",
+      "chunk_id": "knowledge-cb2adbdc65f2e39f590c4dbf",
+      "questions": [
+        "2026年9月1日と2日の岱明中2年生職場体験の日は、給食と授業がどう登録されている？"
+      ],
+      "answer": "両日とも授業は6時間で、1〜6限すべて総合と記録されています。給食は「2年は職場体験のためなし」と記載されています。",
+      "sources": [
+        "calendar.md"
+      ],
+      "source_sha256": "c708357283066a9fa70d7c765b6c3c933529e681a56a9048980ab7e382a4ac6f",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "- **件名**: 岱明中 A日課（6時間）\n- **表示日**: 2026-09-01\n- **開始日**: 2026-09-01\n- **終了日**: 2026-09-01\n- **終日**: はい\n- **開始時刻**: （なし）\n- **終了時刻**: （なし）\n- **カテゴリ**: 予定\n- **ステータス**: scheduled\n- **タグ**: 岱明中, 学校行事\n- **場所**: （なし）\n- **URL**: （なし）\n- **非公開**: いいえ\n\n**説明**\n\n【校内行事】2年職場体験学習（1日目）／ＩＣＴ支援員訪問（午後）\n【授業】6時間（1〜6限すべて総合）\n【給食】△（2年は職場体験のためなし）\n【校外行事】第2回岱明中学校区小中一貫教育推進委員会（15:30～16:30高道小）【末藤・宮本】\n\n"
+        },
+        {
+          "kind": "quote",
+          "text": "- **件名**: 岱明中 B日課（6時間）\n- **表示日**: 2026-09-02\n- **開始日**: 2026-09-02\n- **終了日**: 2026-09-02\n- **終日**: はい\n- **開始時刻**: （なし）\n- **終了時刻**: （なし）\n- **カテゴリ**: 予定\n- **ステータス**: scheduled\n- **タグ**: 岱明中, 学校行事\n- **場所**: （なし）\n- **URL**: （なし）\n- **非公開**: いいえ\n\n**説明**\n\n【校内行事】2年職場体験学習（2日目）／※巡回相談（1日）\n【授業】6時間（1〜6限すべて総合）\n【給食】△（2年は職場体験のためなし）\n【校外行事】荒尾・玉名地区学校事務研究協議会研修会（14:00～和水町中央公民館）【丹生】／玉名市校長会議（9:00～市役所4階 第2委員会室）【宮本】\n\n"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "authored-machine-checks-pending"
+      }
+    },
+    {
+      "id": "chunkqa-cb2adbdc65f2e39f590c4dbf-2",
+      "chunk_id": "knowledge-cb2adbdc65f2e39f590c4dbf",
+      "questions": [
+        "2026年9月9日と10日の岱明中の特別日課は、月間カレンダー上で何が違う？"
+      ],
+      "answer": "両日ともB日課の特別・4時間授業で、前期期末テストが登録されています。10日の予定名には、9日と違って「掃除あり」の表記があります。",
+      "sources": [
+        "calendar.md"
+      ],
+      "source_sha256": "c708357283066a9fa70d7c765b6c3c933529e681a56a9048980ab7e382a4ac6f",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "[岱明中 B日課（特別・4時間授業）](#event-20260909-01)"
+        },
+        {
+          "kind": "quote",
+          "text": "[岱明中 B日課（特別・4時間授業・掃除あり）](#event-20260910-02)"
+        },
+        {
+          "kind": "quote",
+          "text": "[岱明中前期期末テスト](#event-20260909-02)"
+        },
+        {
+          "kind": "quote",
+          "text": "[岱明中前期期末テスト](#event-20260910-03)"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "authored-machine-checks-pending"
+      }
+    },
+    {
+      "id": "chunkqa-cb2adbdc65f2e39f590c4dbf-3",
+      "chunk_id": "knowledge-cb2adbdc65f2e39f590c4dbf",
+      "questions": [
+        "2026年9月のなごみ駅伝と県ジュニア駅伝は、月間カレンダー上で何日間隔？"
+      ],
+      "answer": "なごみ駅伝は9月20日、県ジュニア駅伝を含む第4回熊本県中学生ジュニア陸上大会は9月26日に登録されており、6日間隔です。",
+      "sources": [
+        "calendar.md"
+      ],
+      "source_sha256": "c708357283066a9fa70d7c765b6c3c933529e681a56a9048980ab7e382a4ac6f",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "[第12回　中学駅伝金栗四三生誕の地なごみ大会](#event-20260920-03)"
+        },
+        {
+          "kind": "quote",
+          "text": "[第４回 熊本県中学生ジュニア陸上大会（第３回県ジュニア駅伝大会）](#event-20260926-01)"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "authored-machine-checks-pending"
+      }
+    },
+    {
+      "id": "chunkqa-8b50bdcf4fb5dcd856080ddb-1",
+      "chunk_id": "knowledge-8b50bdcf4fb5dcd856080ddb",
+      "questions": [
+        "2026年9月5日の練習で、村上の1000m3本の記録を合計すると何分？"
+      ],
+      "answer": "メモの3分33秒・3分39秒・3分34秒を合計すると、疾走3本は10分46秒です。レストはこの合計に含めません。",
+      "sources": [
+        "calendar.md"
+      ],
+      "source_sha256": "c708357283066a9fa70d7c765b6c3c933529e681a56a9048980ab7e382a4ac6f",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "【3:40組】村上＋1年男子2名 — 全員設定（k/3:40）より速い。最遅の村上で3:33–3:39–3:34。"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "authored-machine-checks-pending"
+      }
+    },
+    {
+      "id": "chunkqa-8b50bdcf4fb5dcd856080ddb-2",
+      "chunk_id": "knowledge-8b50bdcf4fb5dcd856080ddb",
+      "questions": [
+        "2026年9月5日の村上の1000m3本は、3分40秒を3本の設定と比べて合計何秒速い？"
+      ],
+      "answer": "設定の3分40秒×3は11分です。村上の記録は3分33秒・3分39秒・3分34秒で合計10分46秒なので、疾走部分の合計は14秒速い記録です。",
+      "sources": [
+        "calendar.md"
+      ],
+      "source_sha256": "c708357283066a9fa70d7c765b6c3c933529e681a56a9048980ab7e382a4ac6f",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "【3:40組】村上＋1年男子2名 — 全員設定（k/3:40）より速い。最遅の村上で3:33–3:39–3:34。"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "authored-machine-checks-pending"
+      }
+    },
+    {
+      "id": "chunkqa-8b50bdcf4fb5dcd856080ddb-3",
+      "chunk_id": "knowledge-8b50bdcf4fb5dcd856080ddb",
+      "questions": [
+        "2026年9月5日の練習で、3分50秒組の1本目を3分43秒に変更した差は1kmあたり何秒？"
+      ],
+      "answer": "元の3分50秒/kmから3分43秒/kmへ、1kmあたり7秒速い設定に変更されています。メモでは増岡・角田・山﨑が3分43秒、塚原は3分50秒だったと記録されています。",
+      "sources": [
+        "calendar.md"
+      ],
+      "source_sha256": "c708357283066a9fa70d7c765b6c3c933529e681a56a9048980ab7e382a4ac6f",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "【3:50組】増岡・角田・山﨑・塚原（村上除く）— 柴尾コーチが1本目をk/3:43に変更。\n・1本目: 増岡・角田・山﨑は3:43、塚原のみ3:50。"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "authored-machine-checks-pending"
+      }
+    }
+  ]
+}
