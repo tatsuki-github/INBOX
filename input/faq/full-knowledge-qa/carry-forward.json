@@ -1,0 +1,2256 @@
+{
+  "entries": [
+    {
+      "id": "chunkqa-fbc8dd69760bd81df0ea92da-1",
+      "chunk_id": "knowledge-fbc8dd69760bd81df0ea92da",
+      "questions": [
+        "INBOXのナレッジグラフのヒントだけを根拠に断定してよい？"
+      ],
+      "answer": "ヒントだけでは断定しません。参照先の該当箇所と、その前後の文脈を確認して回答します。",
+      "sources": [
+        "AGENTS.md"
+      ],
+      "source_sha256": "27a54272dd00f986fec5b3ab0e18c84fca6509f8026003efe5aae46ad83cff2a",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "- KG の `hint` だけを根拠に断定すること（必ず `refs` 先を読む）"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      },
+      "previous_chunk_id": "knowledge-fbc8dd69760bd81df0ea92da",
+      "carry_forward": true
+    },
+    {
+      "id": "chunkqa-fbc8dd69760bd81df0ea92da-2",
+      "chunk_id": "knowledge-fbc8dd69760bd81df0ea92da",
+      "questions": [
+        "大会の成績表をナレッジに追加するとき、カレンダー側でも必要な更新は？"
+      ],
+      "answer": "同じ作業でカレンダーを開催済みに更新し、説明の冒頭に岱明の結果と成績表への参照を追記します。その後、カレンダーとナレッジグラフを再生成します。",
+      "sources": [
+        "AGENTS.md"
+      ],
+      "source_sha256": "27a54272dd00f986fec5b3ab0e18c84fca6509f8026003efe5aae46ad83cff2a",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "1. `input/events.YYYY.yaml` の当該大会を `status: done` にし、description 先頭に岱明結果（＋成績表パス）を載せる。\n2. `python3 scripts/generate_calendar.py --year YYYY` で `out/YYYY/` と KG を再生成する。"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      },
+      "previous_chunk_id": "knowledge-fbc8dd69760bd81df0ea92da",
+      "carry_forward": true
+    },
+    {
+      "id": "chunkqa-fbc8dd69760bd81df0ea92da-3",
+      "chunk_id": "knowledge-fbc8dd69760bd81df0ea92da",
+      "questions": [
+        "INBOXの年次カレンダー生成後、ナレッジグラフは自動更新される？"
+      ],
+      "answer": "年次または全年分のカレンダー生成が成功すると、ナレッジグラフは自動で再生成されます。",
+      "sources": [
+        "AGENTS.md"
+      ],
+      "source_sha256": "27a54272dd00f986fec5b3ab0e18c84fca6509f8026003efe5aae46ad83cff2a",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "- `python3 scripts/generate_calendar.py --year YYYY`（または `--all-years`）の成功後、自動で KG が再生成される。"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      },
+      "previous_chunk_id": "knowledge-fbc8dd69760bd81df0ea92da",
+      "carry_forward": true
+    },
+    {
+      "id": "chunkqa-6836165cab4e43e11679d727-1",
+      "chunk_id": "knowledge-6836165cab4e43e11679d727",
+      "questions": [
+        "INBOXのGoogleカレンダー向けCSVは、日付なしメモも出力する？"
+      ],
+      "answer": "Googleカレンダー向けには日付付き予定だけを出力し、日付なしメモは含めません。Notion向けには予定とメモの両方を出力します。",
+      "sources": [
+        "README.md"
+      ],
+      "source_sha256": "29a82514b206a4d68c63d2695f9a29b4f2ca7c7c2f0b4d944385ce86ce7af619",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "| `out/YYYY/google.csv` | Googleカレンダー用（**日付付きのみ**。メモは除外。status/tags/urls は Description に付記） |\n| `out/YYYY/notion.csv` | Notion用（予定 + メモ + Status / Tags / URLs 列） |"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      },
+      "previous_chunk_id": "knowledge-6836165cab4e43e11679d727",
+      "carry_forward": true
+    },
+    {
+      "id": "chunkqa-6836165cab4e43e11679d727-2",
+      "chunk_id": "knowledge-6836165cab4e43e11679d727",
+      "questions": [
+        "INBOXのWeb画面とLINE Q&Aは、同じVercelプロジェクトで動く？"
+      ],
+      "answer": "別のVercelプロジェクトで運用します。運用説明ではWeb側は封鎖中で、コミットしても自動デプロイされない設定です。LINE Q&Aは別プロジェクトのバックエンドです。",
+      "sources": [
+        "README.md"
+      ],
+      "source_sha256": "29a82514b206a4d68c63d2695f9a29b4f2ca7c7c2f0b4d944385ce86ce7af619",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "**現在は封鎖中**で、コミットしても自動デプロイされない（Paused + `git.deploymentEnabled: false`）。"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      },
+      "previous_chunk_id": "knowledge-6836165cab4e43e11679d727",
+      "carry_forward": true
+    },
+    {
+      "id": "chunkqa-6836165cab4e43e11679d727-3",
+      "chunk_id": "knowledge-6836165cab4e43e11679d727",
+      "questions": [
+        "INBOXのナレッジグラフは、すべての資料本文を複製したデータなの？"
+      ],
+      "answer": "ナレッジグラフは、短いヒント・参照先・エンティティ間のリンクを保持する探索用の地図です。回答に使う本文は参照先から確認します。",
+      "sources": [
+        "README.md"
+      ],
+      "source_sha256": "29a82514b206a4d68c63d2695f9a29b4f2ca7c7c2f0b4d944385ce86ce7af619",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "全文の複製ではなく、**短いヒント + 参照パス + エンティティリンク**です。"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      },
+      "previous_chunk_id": "knowledge-6836165cab4e43e11679d727",
+      "carry_forward": true
+    },
+    {
+      "id": "chunkqa-7811d821e7e5af3ba0ceafe3-1",
+      "chunk_id": "knowledge-7811d821e7e5af3ba0ceafe3",
+      "questions": [
+        "INBOXで日付を省略したメモに、開始時刻や終了日を付けられる？"
+      ],
+      "answer": "日付を省略すると日付なしメモになり、開始・終了時刻や終了日は付けられません。",
+      "sources": [
+        "README.md"
+      ],
+      "source_sha256": "29a82514b206a4d68c63d2695f9a29b4f2ca7c7c2f0b4d944385ce86ce7af619",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "| `end_date` | 任意 | 終了日（メモには不可） |\n| `all_day` | 任意 | 終日か（デフォルト: true） |\n| `start_time` / `end_time` | 条件付き | 時刻付き予定用（メモには不可） |"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      },
+      "previous_chunk_id": "knowledge-7811d821e7e5af3ba0ceafe3",
+      "carry_forward": true
+    },
+    {
+      "id": "chunkqa-7811d821e7e5af3ba0ceafe3-2",
+      "chunk_id": "knowledge-7811d821e7e5af3ba0ceafe3",
+      "questions": [
+        "INBOXの練習ログで、欠席者を空配列にした場合は何を意味する？"
+      ],
+      "answer": "空配列は欠席者なしを表します。欠席者欄は任意の項目です。",
+      "sources": [
+        "README.md"
+      ],
+      "source_sha256": "29a82514b206a4d68c63d2695f9a29b4f2ca7c7c2f0b4d944385ce86ce7af619",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "absentees: [松野, 塚原]  # 任意。空配列 [] = 欠席者なし"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      },
+      "previous_chunk_id": "knowledge-7811d821e7e5af3ba0ceafe3",
+      "carry_forward": true
+    },
+    {
+      "id": "chunkqa-7811d821e7e5af3ba0ceafe3-3",
+      "chunk_id": "knowledge-7811d821e7e5af3ba0ceafe3",
+      "questions": [
+        "INBOXの予定をNotionへ取り込むとき、複数行のURLをもつ列は何型にする？"
+      ],
+      "answer": "URL型またはText型が目安で、複数行のURLを扱う場合はText型にします。",
+      "sources": [
+        "README.md"
+      ],
+      "source_sha256": "29a82514b206a4d68c63d2695f9a29b4f2ca7c7c2f0b4d944385ce86ce7af619",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "- `URLs` → URL または Text（複数行の場合は Text）"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      },
+      "previous_chunk_id": "knowledge-7811d821e7e5af3ba0ceafe3",
+      "carry_forward": true
+    },
+    {
+      "id": "chunkqa-e7487e3be852e6b1eafacccc-1",
+      "chunk_id": "knowledge-e7487e3be852e6b1eafacccc",
+      "questions": [
+        "荒尾玉名中学生の所属別ランキングPDFで、3000mのSBがない選手の予想タイムは何を優先する？"
+      ],
+      "answer": "3000mのシーズンベストを優先し、なければ1500mのシーズンベストを換算、さらに800mのシーズンベストを換算する順です。",
+      "sources": [
+        "README.md"
+      ],
+      "source_sha256": "29a82514b206a4d68c63d2695f9a29b4f2ca7c7c2f0b4d944385ce86ce7af619",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "| 3000m 予想タイム | 3000m SB → 1500m SB 換算 → 800m SB 換算の順 |"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      },
+      "previous_chunk_id": "knowledge-e7487e3be852e6b1eafacccc",
+      "carry_forward": true
+    },
+    {
+      "id": "chunkqa-e7487e3be852e6b1eafacccc-2",
+      "chunk_id": "knowledge-e7487e3be852e6b1eafacccc",
+      "questions": [
+        "荒尾玉名中学生記録PDFの所属別ランキングは、男子・女子それぞれ何人以上が対象？"
+      ],
+      "answer": "所属別ランキングの人数条件は、男子6人以上、女子5人以上です。",
+      "sources": [
+        "README.md"
+      ],
+      "source_sha256": "29a82514b206a4d68c63d2695f9a29b4f2ca7c7c2f0b4d944385ce86ce7af619",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "| 男子 | 上位4人 / 5人 / 6人平均 | 6人以上 |\n| 女子 | 上位3人 / 4人 / 5人平均 | 5人以上 |"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      },
+      "previous_chunk_id": "knowledge-e7487e3be852e6b1eafacccc",
+      "carry_forward": true
+    },
+    {
+      "id": "chunkqa-e7487e3be852e6b1eafacccc-3",
+      "chunk_id": "knowledge-e7487e3be852e6b1eafacccc",
+      "questions": [
+        "INBOXのカレンダーCSVをNotionへ再インポートすると、既存予定は上書き更新される？"
+      ],
+      "answer": "この取り込み手順は追記で、既存予定の上書き更新にはなりません。再インポート時は重複に注意してください。",
+      "sources": [
+        "README.md"
+      ],
+      "source_sha256": "29a82514b206a4d68c63d2695f9a29b4f2ca7c7c2f0b4d944385ce86ce7af619",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "- Notionへの再インポートは追記のみ（重複に注意）"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      },
+      "previous_chunk_id": "knowledge-e7487e3be852e6b1eafacccc",
+      "carry_forward": true
+    },
+    {
+      "id": "chunkqa-d096d284234ce1b4426eff4e-1",
+      "chunk_id": "knowledge-ec225b62e125fc181e3b75b8",
+      "questions": [
+        "2026年1月の長洲マラソンは、成人の日と同じ日にカレンダー登録されている？"
+      ],
+      "answer": "どちらも2026年1月12日に登録されており、カレンダー上は同じ日です。",
+      "sources": [
+        "calendar.md"
+      ],
+      "source_sha256": "4e10ff27be346fe94764558ee536a69abfb48eb448177bb1f6183db294818522",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "| 12 | 月 | [成人の日](#event-20260112-00) / [長洲マラソン](#event-20260112-01) |"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      },
+      "previous_chunk_id": "knowledge-d096d284234ce1b4426eff4e",
+      "carry_forward": true
+    },
+    {
+      "id": "chunkqa-d096d284234ce1b4426eff4e-2",
+      "chunk_id": "knowledge-ec225b62e125fc181e3b75b8",
+      "questions": [
+        "2026年1月のAmazon Prime更新日と定期期限は、カレンダーではどちらが何日早い？"
+      ],
+      "answer": "Amazon Prime更新日は1月2日、定期期限は1月13日で、更新日の予定が11日早く登録されています。",
+      "sources": [
+        "calendar.md"
+      ],
+      "source_sha256": "4e10ff27be346fe94764558ee536a69abfb48eb448177bb1f6183db294818522",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "- **件名**: 定期期限\n- **表示日**: 2026-01-13"
+        },
+        {
+          "kind": "quote",
+          "text": "- **件名**: Amazon Prime更新日\n- **表示日**: 2026-01-02"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      },
+      "previous_chunk_id": "knowledge-d096d284234ce1b4426eff4e",
+      "carry_forward": true
+    },
+    {
+      "id": "chunkqa-d096d284234ce1b4426eff4e-3",
+      "chunk_id": "knowledge-ec225b62e125fc181e3b75b8",
+      "questions": [
+        "2026年1月19日のカレンダーに、Dさんのリモートと午後休は同じ日に登録されている？"
+      ],
+      "answer": "2026年1月19日には、Dさんリモートと午後休の両方が予定として登録されています。",
+      "sources": [
+        "calendar.md"
+      ],
+      "source_sha256": "4e10ff27be346fe94764558ee536a69abfb48eb448177bb1f6183db294818522",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "| 19 | 月 | [Dさんリモート](#event-20260119-00) / [午後休](#event-20260119-01) |"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      },
+      "previous_chunk_id": "knowledge-d096d284234ce1b4426eff4e",
+      "carry_forward": true
+    },
+    {
+      "id": "chunkqa-3f77dd0bd0a994f6fe507a5a-2",
+      "chunk_id": "knowledge-2f2a952e7e9af192cc8cbc19",
+      "questions": [
+        "2026年1月25日の永井監督を祝う会打ち上げと玉名駅伝は、時刻付き予定と終日予定のどちら？"
+      ],
+      "answer": "カレンダーでは、打ち上げは11時開始の時刻付き予定、玉名駅伝は終日の予定です。",
+      "sources": [
+        "calendar.md"
+      ],
+      "source_sha256": "4e10ff27be346fe94764558ee536a69abfb48eb448177bb1f6183db294818522",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "- **件名**: 永井監督を祝う会打ち上げ\n- **表示日**: 2026-01-25"
+        },
+        {
+          "kind": "quote",
+          "text": "- **開始時刻**: 11:00"
+        },
+        {
+          "kind": "quote",
+          "text": "- **件名**: 玉名駅伝\n- **表示日**: 2026-01-25\n- **開始日**: 2026-01-25\n- **終了日**: 2026-01-25\n- **終日**: はい"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      },
+      "previous_chunk_id": "knowledge-3f77dd0bd0a994f6fe507a5a",
+      "carry_forward": true
+    },
+    {
+      "id": "chunkqa-3f77dd0bd0a994f6fe507a5a-3",
+      "chunk_id": "knowledge-2f2a952e7e9af192cc8cbc19",
+      "questions": [
+        "2026年2月の岱明中の後期期末テストは、3年と1・2年でどちらが何日早い予定？"
+      ],
+      "answer": "3年は2月5日、1・2年は2月12日で、3年の日程が7日早い予定です。",
+      "sources": [
+        "calendar.md"
+      ],
+      "source_sha256": "4e10ff27be346fe94764558ee536a69abfb48eb448177bb1f6183db294818522",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "| 12 | 木 | [岱明中1・2年後期期末テスト](#event-20260212-00) |"
+        },
+        {
+          "kind": "quote",
+          "text": "| 5 | 木 | [カフェイン断ち](#event-20260205-00) / [岱明中3年後期期末テスト](#event-20260205-01) |"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      },
+      "previous_chunk_id": "knowledge-3f77dd0bd0a994f6fe507a5a",
+      "carry_forward": true
+    },
+    {
+      "id": "chunkqa-710b1fdcefee5ab44a8d0adc-1",
+      "chunk_id": "knowledge-2f2a952e7e9af192cc8cbc19",
+      "questions": [
+        "2026年2月のコーヒーから緑茶への切り替えとカフェイン断ちは、カレンダー上で何日間隔？"
+      ],
+      "answer": "切り替えは2月3日、カフェイン断ちは2月5日の予定として登録されており、2日間隔です。",
+      "sources": [
+        "calendar.md"
+      ],
+      "source_sha256": "4e10ff27be346fe94764558ee536a69abfb48eb448177bb1f6183db294818522",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "- **件名**: コーヒーから緑茶\n- **表示日**: 2026-02-03\n- **開始日**: 2026-02-03\n- **終了日**: 2026-02-03\n- **終日**: はい\n- **開始時刻**: （なし）\n- **終了時刻**: （なし）\n- **カテゴリ**: 予定\n- **ステータス**: scheduled\n- **タグ**: （なし）\n- **場所**: （なし）\n- **URL**: （なし）\n- **非公開**: いいえ\n\n**説明**\n\n（なし）\n\n"
+        },
+        {
+          "kind": "quote",
+          "text": "- **件名**: カフェイン断ち\n- **表示日**: 2026-02-05\n- **開始日**: 2026-02-05\n- **終了日**: 2026-02-05\n- **終日**: はい\n- **開始時刻**: （なし）\n- **終了時刻**: （なし）\n- **カテゴリ**: 予定\n- **ステータス**: scheduled\n- **タグ**: （なし）\n- **場所**: （なし）\n- **URL**: （なし）\n- **非公開**: いいえ\n\n**説明**\n\n（なし）\n\n"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      },
+      "previous_chunk_id": "knowledge-710b1fdcefee5ab44a8d0adc",
+      "carry_forward": true
+    },
+    {
+      "id": "chunkqa-710b1fdcefee5ab44a8d0adc-2",
+      "chunk_id": "knowledge-87cf31783baaff56705b784d",
+      "questions": [
+        "2026年2月9日のStravaフリートライアル終了と有休は、同じ日に登録されている？"
+      ],
+      "answer": "はい。Stravaフリートライアル終了と有休は、どちらも2026年2月9日の終日予定として登録されています。",
+      "sources": [
+        "calendar.md"
+      ],
+      "source_sha256": "4e10ff27be346fe94764558ee536a69abfb48eb448177bb1f6183db294818522",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "- **件名**: Stravaフリートライアル終了\n- **表示日**: 2026-02-09\n- **開始日**: 2026-02-09\n- **終了日**: 2026-02-09\n- **終日**: はい\n- **開始時刻**: （なし）\n- **終了時刻**: （なし）\n- **カテゴリ**: 予定\n- **ステータス**: scheduled\n- **タグ**: （なし）\n- **場所**: （なし）\n- **URL**: （なし）\n- **非公開**: いいえ\n\n**説明**\n\n（なし）\n\n"
+        },
+        {
+          "kind": "quote",
+          "text": "- **件名**: 有休\n- **表示日**: 2026-02-09\n- **開始日**: 2026-02-09\n- **終了日**: 2026-02-09\n- **終日**: はい\n- **開始時刻**: （なし）\n- **終了時刻**: （なし）\n- **カテゴリ**: 予定\n- **ステータス**: scheduled\n- **タグ**: （なし）\n- **場所**: （なし）\n- **URL**: （なし）\n- **非公開**: いいえ\n\n**説明**\n\n（なし）\n\n"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      },
+      "previous_chunk_id": "knowledge-710b1fdcefee5ab44a8d0adc",
+      "carry_forward": true
+    },
+    {
+      "id": "chunkqa-2cc60b44fd1f0fa98166234f-1",
+      "chunk_id": "knowledge-87cf31783baaff56705b784d",
+      "questions": [
+        "2026年2月21日の熊日駅伝テレビ放送は、カレンダーでは何時開始？"
+      ],
+      "answer": "2026年2月21日6時開始の予定として登録されています。終日予定ではありません。",
+      "sources": [
+        "calendar.md"
+      ],
+      "source_sha256": "4e10ff27be346fe94764558ee536a69abfb48eb448177bb1f6183db294818522",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "- **件名**: 熊日駅伝テレビ放送\n- **表示日**: 2026-02-21\n- **開始日**: 2026-02-21\n- **終了日**: 2026-02-21\n- **終日**: いいえ\n- **開始時刻**: 06:00\n- **終了時刻**: （なし）\n- **カテゴリ**: 予定\n- **ステータス**: scheduled\n- **タグ**: （なし）\n- **場所**: （なし）\n- **URL**: （なし）\n- **非公開**: いいえ\n\n**説明**\n\n（なし）\n\n"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      },
+      "previous_chunk_id": "knowledge-2cc60b44fd1f0fa98166234f",
+      "carry_forward": true
+    },
+    {
+      "id": "chunkqa-2cc60b44fd1f0fa98166234f-2",
+      "chunk_id": "knowledge-7b756386f65839f1f62f1090",
+      "questions": [
+        "2026年3月の岱明中卒業式から陸上部お別れ会までは、予定上何日ある？"
+      ],
+      "answer": "卒業式は3月6日、陸上部お別れ会は3月15日に登録されており、9日あります。",
+      "sources": [
+        "calendar.md"
+      ],
+      "source_sha256": "4e10ff27be346fe94764558ee536a69abfb48eb448177bb1f6183db294818522",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "| 6 | 金 | [カフェイン断ち開始日](#event-20260306-00) / [岱明中卒業式](#event-20260306-01) |"
+        },
+        {
+          "kind": "quote",
+          "text": "| 15 | 日 | [岱明中陸上部お別れ会](#event-20260315-00) / [金栗駅伝](#event-20260315-01) |"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      },
+      "previous_chunk_id": "knowledge-2cc60b44fd1f0fa98166234f",
+      "carry_forward": true
+    },
+    {
+      "id": "chunkqa-2cc60b44fd1f0fa98166234f-3",
+      "chunk_id": "knowledge-7b756386f65839f1f62f1090",
+      "questions": [
+        "2026年2月26日の福岡ランニング基地MTGtgは、カレンダーでは終日予定？"
+      ],
+      "answer": "終日予定ではなく、2026年2月26日12時開始の予定です。",
+      "sources": [
+        "calendar.md"
+      ],
+      "source_sha256": "4e10ff27be346fe94764558ee536a69abfb48eb448177bb1f6183db294818522",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "- **件名**: 福岡ランニング基地MTGtg\n- **表示日**: 2026-02-26\n- **開始日**: 2026-02-26\n- **終了日**: 2026-02-26\n- **終日**: いいえ\n- **開始時刻**: 12:00\n- **終了時刻**: （なし）\n- **カテゴリ**: 予定\n- **ステータス**: scheduled\n- **タグ**: （なし）\n- **場所**: （なし）\n- **URL**: （なし）\n- **非公開**: いいえ\n\n**説明**\n\n（なし）\n\n"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      },
+      "previous_chunk_id": "knowledge-2cc60b44fd1f0fa98166234f",
+      "carry_forward": true
+    },
+    {
+      "id": "chunkqa-d5e3172ab38e0b21645e5722-2",
+      "chunk_id": "knowledge-78c2c2263e65a886f30f1c63",
+      "questions": [
+        "2026年3月16日と23日のリモート候補メモは、同じ対象者で何日間隔？"
+      ],
+      "answer": "どちらも「ステファニーさんのみ」と記録されており、7日間隔です。3月16日のメモには、実際には出社したとも書かれています。",
+      "sources": [
+        "calendar.md"
+      ],
+      "source_sha256": "4e10ff27be346fe94764558ee536a69abfb48eb448177bb1f6183db294818522",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "- **件名**: リモート候補\n- **表示日**: 2026-03-16\n- **開始日**: 2026-03-16\n- **終了日**: 2026-03-16\n- **終日**: はい\n- **開始時刻**: （なし）\n- **終了時刻**: （なし）\n- **カテゴリ**: 予定\n- **ステータス**: scheduled\n- **タグ**: （なし）\n- **場所**: （なし）\n- **URL**: （なし）\n- **非公開**: いいえ\n\n**説明**\n\nステファニーさんのみ。\n出社した。リモートでも良かった笑。\n\n"
+        },
+        {
+          "kind": "quote",
+          "text": "- **件名**: リモート候補\n- **表示日**: 2026-03-23\n- **開始日**: 2026-03-23\n- **終了日**: 2026-03-23\n- **終日**: はい\n- **開始時刻**: （なし）\n- **終了時刻**: （なし）\n- **カテゴリ**: 予定\n- **ステータス**: scheduled\n- **タグ**: （なし）\n- **場所**: （なし）\n- **URL**: （なし）\n- **非公開**: いいえ\n\n**説明**\n\nステファニーさんのみ\n\n"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      },
+      "previous_chunk_id": "knowledge-d5e3172ab38e0b21645e5722",
+      "carry_forward": true
+    },
+    {
+      "id": "chunkqa-d5e3172ab38e0b21645e5722-3",
+      "chunk_id": "knowledge-78c2c2263e65a886f30f1c63",
+      "questions": [
+        "2026年3月25日の地域部活動運営会議と翌日の福岡ランニング基地MTGtgは、開始時刻が何時間違う？"
+      ],
+      "answer": "地域部活動運営会議は3月25日10時、福岡ランニング基地MTGtgは3月26日12時の予定です。開始時刻だけを比べると、翌日のMTGtgが2時間遅い時刻です。",
+      "sources": [
+        "calendar.md"
+      ],
+      "source_sha256": "4e10ff27be346fe94764558ee536a69abfb48eb448177bb1f6183db294818522",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "- **件名**: 地域部活動運営会議\n- **表示日**: 2026-03-25\n- **開始日**: 2026-03-25\n- **終了日**: 2026-03-25\n- **終日**: いいえ\n- **開始時刻**: 10:00\n- **終了時刻**: （なし）\n- **カテゴリ**: 予定\n- **ステータス**: scheduled\n- **タグ**: （なし）\n- **場所**: （なし）\n- **URL**: （なし）\n- **非公開**: いいえ\n\n**説明**\n\n（なし）\n\n"
+        },
+        {
+          "kind": "quote",
+          "text": "- **件名**: 福岡ランニング基地MTGtg\n- **表示日**: 2026-03-26\n- **開始日**: 2026-03-26\n- **終了日**: 2026-03-26\n- **終日**: いいえ\n- **開始時刻**: 12:00\n- **終了時刻**: （なし）\n- **カテゴリ**: 予定\n- **ステータス**: scheduled\n- **タグ**: （なし）\n- **場所**: （なし）\n- **URL**: （なし）\n- **非公開**: いいえ\n\n**説明**\n\n（なし）\n\n"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      },
+      "previous_chunk_id": "knowledge-d5e3172ab38e0b21645e5722",
+      "carry_forward": true
+    },
+    {
+      "id": "chunkqa-d01160152e9d34859c0842a7-1",
+      "chunk_id": "knowledge-6342969056e2d28a613b40f4",
+      "questions": [
+        "2026年4月の熊本市陸上競技記録会と金栗記念選抜陸上は、カレンダー上で何日間隔？"
+      ],
+      "answer": "第272回熊本市陸上競技記録会は4月4日、第34回金栗記念選抜陸上中長距離熊本大会は4月11日の予定で、7日間隔です。",
+      "sources": [
+        "calendar.md"
+      ],
+      "source_sha256": "4e10ff27be346fe94764558ee536a69abfb48eb448177bb1f6183db294818522",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "- **件名**: 第２７２回熊本市陸上競技記録会R8\n- **表示日**: 2026-04-04\n- **開始日**: 2026-04-04\n- **終了日**: 2026-04-04\n- **終日**: はい\n- **開始時刻**: （なし）\n- **終了時刻**: （なし）\n- **カテゴリ**: 予定\n- **ステータス**: scheduled\n- **タグ**: （なし）\n- **場所**: （なし）\n- **URL**: （なし）\n- **非公開**: いいえ\n\n**説明**\n\n（なし）\n\n"
+        },
+        {
+          "kind": "quote",
+          "text": "- **件名**: 第３４回 金栗記念選抜陸上中長距離熊本大会\n- **表示日**: 2026-04-11\n- **開始日**: 2026-04-11\n- **終了日**: 2026-04-11\n- **終日**: はい\n- **開始時刻**: （なし）\n- **終了時刻**: （なし）\n- **カテゴリ**: 予定\n- **ステータス**: scheduled\n- **タグ**: （なし）\n- **場所**: （なし）\n- **URL**: （なし）\n- **非公開**: いいえ\n\n**説明**\n\nhttp://kumariku.com/competition/?id=8968\n\n"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      },
+      "previous_chunk_id": "knowledge-d01160152e9d34859c0842a7",
+      "carry_forward": true
+    },
+    {
+      "id": "chunkqa-d01160152e9d34859c0842a7-3",
+      "chunk_id": "knowledge-6342969056e2d28a613b40f4",
+      "questions": [
+        "2026年4月18日の熊本市陸上競技選手権の男子1500mメモでは、松本と中尾の記録差は何秒？"
+      ],
+      "answer": "松本は5分13秒67、中尾は5分13秒13と記録されており、中尾が0.54秒速い記録です。",
+      "sources": [
+        "calendar.md"
+      ],
+      "source_sha256": "4e10ff27be346fe94764558ee536a69abfb48eb448177bb1f6183db294818522",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "- **件名**: 第４５回 熊本市陸上競技選手権大会\n- **表示日**: 2026-04-18\n- **開始日**: 2026-04-18\n- **終了日**: 2026-04-18\n- **終日**: はい\n- **開始時刻**: （なし）\n- **終了時刻**: （なし）\n- **カテゴリ**: 予定\n- **ステータス**: done\n- **タグ**: ランニング\n- **場所**: 熊本（えがお）\n- **URL**: http://www.kcrk.jp/i-mode/kiroku/sisen_i/450418/PC/rel026.html\n- **非公開**: いいえ\n\n**説明**\n\n1500m出場、4:20.52\n\n800m\n女子 10:20\n塚原（2組12）2:47.47\n角田（2組13）2:46.21\n\n10:30\n村上（3組5）2:25.44 3位入賞\n\n1500m\n女子 11:00\n高田（1組11）5:15.87\n増岡（1組28）5:43.68 初1500\n\n男子 11:20\n田中（1組18）5:15.91 10秒ほどPB更新\n松本（1組19）5:13.67 23秒ほどPB更新\n中尾（1組31）5:13.13 中学初レース\n\n11:35\n松野（4組5）4:40.09\n\n3000m\n男子 12:50\n山本（1組17）10:24.29 初3000\n田上（1組31）10:41.62 初3000\n\n"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      },
+      "previous_chunk_id": "knowledge-d01160152e9d34859c0842a7",
+      "carry_forward": true
+    },
+    {
+      "id": "chunkqa-fd9ec13dfccf16d0147a66fa-1",
+      "chunk_id": "knowledge-6342969056e2d28a613b40f4",
+      "questions": [
+        "2026年4月19日のカレンダーには、谷口睦生杯八代陸上と天草陸上の両方が入っている？"
+      ],
+      "answer": "はい。第27回谷口睦生杯八代陸上選手権大会と第51回天草陸上競技選手権大会は、いずれも2026年4月19日の終日予定として登録されています。",
+      "sources": [
+        "calendar.md"
+      ],
+      "source_sha256": "4e10ff27be346fe94764558ee536a69abfb48eb448177bb1f6183db294818522",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "- **件名**: 第２７回 谷口睦生杯八代陸上選手権大会\n- **表示日**: 2026-04-19\n- **開始日**: 2026-04-19\n- **終了日**: 2026-04-19\n- **終日**: はい\n- **開始時刻**: （なし）\n- **終了時刻**: （なし）\n- **カテゴリ**: 予定\n- **ステータス**: scheduled\n- **タグ**: ランニング, 県大会一覧\n- **場所**: 熊本県営八代\n- **URL**: http://kumariku.com/info/wp-content/uploads/2026/04/b652729b4a1eecb47ebc1e6e01321a6e.pdf\n- **非公開**: いいえ\n\n**説明**\n\n熊本県陸上競技大会一覧（2026/5/31版）より追加\n\n"
+        },
+        {
+          "kind": "quote",
+          "text": "- **件名**: 第５１回 天草陸上競技選手権大会\n- **表示日**: 2026-04-19\n- **開始日**: 2026-04-18\n- **終了日**: 2026-04-19\n- **終日**: はい\n- **開始時刻**: （なし）\n- **終了時刻**: （なし）\n- **カテゴリ**: 予定\n- **ステータス**: scheduled\n- **タグ**: ランニング, 県大会一覧\n- **場所**: あましんスタジアム\n- **URL**: http://kumariku.com/info/wp-content/uploads/2026/04/b652729b4a1eecb47ebc1e6e01321a6e.pdf\n- **非公開**: いいえ\n\n**説明**\n\n熊本県陸上競技大会一覧（2026/5/31版）より追加\n\n"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      },
+      "previous_chunk_id": "knowledge-fd9ec13dfccf16d0147a66fa",
+      "carry_forward": true
+    },
+    {
+      "id": "chunkqa-fd9ec13dfccf16d0147a66fa-2",
+      "chunk_id": "knowledge-f9f0bee4bd3821b54bcd9de0",
+      "questions": [
+        "2026年5月の岱明中体育大会と前期確認テストは、予定上何日離れている？"
+      ],
+      "answer": "体育大会は5月17日、前期確認テストは5月26日と27日に登録されています。体育大会からテスト初日までは9日です。",
+      "sources": [
+        "calendar.md"
+      ],
+      "source_sha256": "4e10ff27be346fe94764558ee536a69abfb48eb448177bb1f6183db294818522",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "| 17 | 日 | [岱明中体育大会](#event-20260517-00) / [第５７回 熊本マスターズ陸上競技記録会](#event-20260517-01) |"
+        },
+        {
+          "kind": "quote",
+          "text": "| 26 | 火 | [岱明中前期確認テスト](#event-20260526-00) |"
+        },
+        {
+          "kind": "quote",
+          "text": "| 27 | 水 | [岱明中前期確認テスト](#event-20260527-00) |"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      },
+      "previous_chunk_id": "knowledge-fd9ec13dfccf16d0147a66fa",
+      "carry_forward": true
+    },
+    {
+      "id": "chunkqa-fd9ec13dfccf16d0147a66fa-3",
+      "chunk_id": "knowledge-f9f0bee4bd3821b54bcd9de0",
+      "questions": [
+        "2026年5月15日の地域部活動指導者研修会と地域部活動研修は、月間カレンダーで別の開始時刻？"
+      ],
+      "answer": "両方とも2026年5月15日19時開始として登録されています。月間カレンダーには別々の予定名で載っています。",
+      "sources": [
+        "calendar.md"
+      ],
+      "source_sha256": "4e10ff27be346fe94764558ee536a69abfb48eb448177bb1f6183db294818522",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "| 15 | 金 | [19:00 地域部活動指導者研修会](#event-20260515-00) / [19:00 地域部活動研修](#event-20260515-01) / [リモート](#event-20260515-02) |"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      },
+      "previous_chunk_id": "knowledge-fd9ec13dfccf16d0147a66fa",
+      "carry_forward": true
+    },
+    {
+      "id": "chunkqa-4e23f3e6ca50f235f463b4ff-1",
+      "chunk_id": "knowledge-282baaf9c2c918195b191c7e",
+      "questions": [
+        "2026年第1回熊本県長距離記録会の男子1500mでは、組1位かつPBとメモされた選手は誰？"
+      ],
+      "answer": "松野凛空と田上颯人です。2026年5月9日の結果メモには、松野が4分25秒40、田上が4分52秒76で、どちらも「組1位 PB」と記録されています。",
+      "sources": [
+        "calendar.md"
+      ],
+      "source_sha256": "4e10ff27be346fe94764558ee536a69abfb48eb448177bb1f6183db294818522",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "- **件名**: 第 １ 回 熊本県長距離記録会\n- **表示日**: 2026-05-09\n- **開始日**: 2026-05-09\n- **終了日**: 2026-05-09\n- **終日**: はい\n- **開始時刻**: （なし）\n- **終了時刻**: （なし）\n- **カテゴリ**: 予定\n- **ステータス**: done\n- **タグ**: ランニング\n- **場所**: （なし）\n- **URL**: （なし）\n- **非公開**: いいえ\n\n**説明**\n\n1500m\n\n男子\n松野凛空 4:25.40 組1位 PB\n田上颯人 4:52.76 組1位 PB\n山本哲瑠 4:39.74 組6位 PB\n中尾快叶 5:10.95 組7位 PB\n田中智稀 5:17.84 組14位\n松本空羽 5:26.02 組17位\n南本幸治郎 5:43.60 組11位 PB\n\n女子\n村上咲稀 5:02.26 組5位\n増岡里俐 5:43.57 組4位 PB\n山﨑莉奈 5:35.20 組9位 PB\n塚原優衣 5:55.33 組12位 PB\n角田亜美 5:52.12 組11位\n\n"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      },
+      "previous_chunk_id": "knowledge-4e23f3e6ca50f235f463b4ff",
+      "carry_forward": true
+    },
+    {
+      "id": "chunkqa-4e23f3e6ca50f235f463b4ff-2",
+      "chunk_id": "knowledge-282baaf9c2c918195b191c7e",
+      "questions": [
+        "2026年第1回熊本県長距離記録会の男子1500mで、山本哲瑠と中尾快叶の記録差は？"
+      ],
+      "answer": "2026年5月9日の結果メモでは、山本哲瑠は4分39秒74、中尾快叶は5分10秒95です。山本が31.21秒速い記録です。",
+      "sources": [
+        "calendar.md"
+      ],
+      "source_sha256": "4e10ff27be346fe94764558ee536a69abfb48eb448177bb1f6183db294818522",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "- **件名**: 第 １ 回 熊本県長距離記録会\n- **表示日**: 2026-05-09\n- **開始日**: 2026-05-09\n- **終了日**: 2026-05-09\n- **終日**: はい\n- **開始時刻**: （なし）\n- **終了時刻**: （なし）\n- **カテゴリ**: 予定\n- **ステータス**: done\n- **タグ**: ランニング\n- **場所**: （なし）\n- **URL**: （なし）\n- **非公開**: いいえ\n\n**説明**\n\n1500m\n\n男子\n松野凛空 4:25.40 組1位 PB\n田上颯人 4:52.76 組1位 PB\n山本哲瑠 4:39.74 組6位 PB\n中尾快叶 5:10.95 組7位 PB\n田中智稀 5:17.84 組14位\n松本空羽 5:26.02 組17位\n南本幸治郎 5:43.60 組11位 PB\n\n女子\n村上咲稀 5:02.26 組5位\n増岡里俐 5:43.57 組4位 PB\n山﨑莉奈 5:35.20 組9位 PB\n塚原優衣 5:55.33 組12位 PB\n角田亜美 5:52.12 組11位\n\n"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      },
+      "previous_chunk_id": "knowledge-4e23f3e6ca50f235f463b4ff",
+      "carry_forward": true
+    },
+    {
+      "id": "chunkqa-4e23f3e6ca50f235f463b4ff-3",
+      "chunk_id": "knowledge-282baaf9c2c918195b191c7e",
+      "questions": [
+        "2026年第1回熊本県長距離記録会の女子1500mで、増岡里俐と山﨑莉奈の記録差は？"
+      ],
+      "answer": "2026年5月9日の結果メモでは、増岡里俐は5分43秒57、山﨑莉奈は5分35秒20です。山﨑が8.37秒速い記録です。",
+      "sources": [
+        "calendar.md"
+      ],
+      "source_sha256": "4e10ff27be346fe94764558ee536a69abfb48eb448177bb1f6183db294818522",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "- **件名**: 第 １ 回 熊本県長距離記録会\n- **表示日**: 2026-05-09\n- **開始日**: 2026-05-09\n- **終了日**: 2026-05-09\n- **終日**: はい\n- **開始時刻**: （なし）\n- **終了時刻**: （なし）\n- **カテゴリ**: 予定\n- **ステータス**: done\n- **タグ**: ランニング\n- **場所**: （なし）\n- **URL**: （なし）\n- **非公開**: いいえ\n\n**説明**\n\n1500m\n\n男子\n松野凛空 4:25.40 組1位 PB\n田上颯人 4:52.76 組1位 PB\n山本哲瑠 4:39.74 組6位 PB\n中尾快叶 5:10.95 組7位 PB\n田中智稀 5:17.84 組14位\n松本空羽 5:26.02 組17位\n南本幸治郎 5:43.60 組11位 PB\n\n女子\n村上咲稀 5:02.26 組5位\n増岡里俐 5:43.57 組4位 PB\n山﨑莉奈 5:35.20 組9位 PB\n塚原優衣 5:55.33 組12位 PB\n角田亜美 5:52.12 組11位\n\n"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      },
+      "previous_chunk_id": "knowledge-4e23f3e6ca50f235f463b4ff",
+      "carry_forward": true
+    },
+    {
+      "id": "chunkqa-72470939b8e37c7eab2673d1-1",
+      "chunk_id": "knowledge-3d36c98e71269afa873d7a9f",
+      "questions": [
+        "2026年熊本県中学校陸上選手権の男子1500mで、山本哲瑠と田上颯人の記録差は？"
+      ],
+      "answer": "2026年5月23日・24日の結果メモでは、山本哲瑠は4分40秒40、田上颯人は4分44秒48です。山本が4.08秒速い記録です。",
+      "sources": [
+        "calendar.md"
+      ],
+      "source_sha256": "4e10ff27be346fe94764558ee536a69abfb48eb448177bb1f6183db294818522",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "- **件名**: 第４１回 熊本県中学校陸上選手権・第２４回中学校混成競技大会\n- **表示日**: 2026-05-23\n- **開始日**: 2026-05-23\n- **終了日**: 2026-05-24\n- **終日**: はい\n- **開始時刻**: （なし）\n- **終了時刻**: （なし）\n- **カテゴリ**: 予定\n- **ステータス**: done\n- **タグ**: ランニング\n- **場所**: えがお健康スタジアム(熊本県民総合運動公園陸上競技場)\n- **URL**: http://kumariku.com/competition/?id=9281\n- **非公開**: いいえ\n\n**説明**\n\n800m 女子\n村上咲稀 2:20.11\n山﨑莉奈 2:36.37\n増岡里俐 2:38.96\n角田亜美 2:39.42\n\n1500m 男子\n松野凛空 4:23.58\n山本哲瑠 4:40.40\n田上颯人 4:44.48\n松本空羽 5:16.80\n田中智稀 5:22.83\n中尾快叶 5:17.72\n南本幸治郎 5:32.33\n\n"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      },
+      "previous_chunk_id": "knowledge-72470939b8e37c7eab2673d1",
+      "carry_forward": true
+    },
+    {
+      "id": "chunkqa-72470939b8e37c7eab2673d1-2",
+      "chunk_id": "knowledge-3d36c98e71269afa873d7a9f",
+      "questions": [
+        "2026年熊本県中学校陸上選手権の女子800mで、増岡里俐と角田亜美の記録差は？"
+      ],
+      "answer": "2026年5月23日・24日の結果メモでは、増岡里俐は2分38秒96、角田亜美は2分39秒42です。増岡が0.46秒速い記録です。",
+      "sources": [
+        "calendar.md"
+      ],
+      "source_sha256": "4e10ff27be346fe94764558ee536a69abfb48eb448177bb1f6183db294818522",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "- **件名**: 第４１回 熊本県中学校陸上選手権・第２４回中学校混成競技大会\n- **表示日**: 2026-05-24\n- **開始日**: 2026-05-23\n- **終了日**: 2026-05-24\n- **終日**: はい\n- **開始時刻**: （なし）\n- **終了時刻**: （なし）\n- **カテゴリ**: 予定\n- **ステータス**: done\n- **タグ**: ランニング\n- **場所**: えがお健康スタジアム(熊本県民総合運動公園陸上競技場)\n- **URL**: http://kumariku.com/competition/?id=9281\n- **非公開**: いいえ\n\n**説明**\n\n800m 女子\n村上咲稀 2:20.11\n山﨑莉奈 2:36.37\n増岡里俐 2:38.96\n角田亜美 2:39.42\n\n1500m 男子\n松野凛空 4:23.58\n山本哲瑠 4:40.40\n田上颯人 4:44.48\n松本空羽 5:16.80\n田中智稀 5:22.83\n中尾快叶 5:17.72\n南本幸治郎 5:32.33\n\n"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      },
+      "previous_chunk_id": "knowledge-72470939b8e37c7eab2673d1",
+      "carry_forward": true
+    },
+    {
+      "id": "chunkqa-2d193bdaebea7981a732f6bd-2",
+      "chunk_id": "knowledge-6858d6e77888e49d37e5d362",
+      "questions": [
+        "2026年熊本県通信陸上の女子800mで、山﨑莉奈と増岡里俐の記録差は？"
+      ],
+      "answer": "2026年6月13日・14日の結果メモでは、山﨑莉奈は2分34秒18、増岡里俐は2分39秒55です。山﨑が5.37秒速い記録です。",
+      "sources": [
+        "calendar.md"
+      ],
+      "source_sha256": "4e10ff27be346fe94764558ee536a69abfb48eb448177bb1f6183db294818522",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "- **件名**: 第７２回 全日本中学校通信陸上競技大会熊本県大会\n- **表示日**: 2026-06-13\n- **開始日**: 2026-06-13\n- **終了日**: 2026-06-14\n- **終日**: はい\n- **開始時刻**: （なし）\n- **終了時刻**: （なし）\n- **カテゴリ**: 予定\n- **ステータス**: done\n- **タグ**: ランニング\n- **場所**: （なし）\n- **URL**: （なし）\n- **非公開**: いいえ\n\n**説明**\n\n800m 女子\n角田亜美 2年 2:42.22\n山﨑莉奈 1年 2:34.18\n増岡里俐 2年 2:39.55\n村上咲稀 3年 2:20.45\n塚原優衣 2年 2:50.13\n\n1500m 女子\n高田麻由 3年 5:11.57\n\n1500m 男子\n山本哲瑠 2年 4:30.13\n松本空羽 2年 5:13.00\n中尾快叶 1年 5:04.21\n南本幸治郎 1年 5:44.50\n\n800m 男子\n田中智稀 2年 2:26.10\n\n3000m 男子\n松野凛空 3年 9:37.84\n田上颯人 2年 10:24.08\n\n"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      },
+      "previous_chunk_id": "knowledge-2d193bdaebea7981a732f6bd",
+      "carry_forward": true
+    },
+    {
+      "id": "chunkqa-2d193bdaebea7981a732f6bd-3",
+      "chunk_id": "knowledge-6858d6e77888e49d37e5d362",
+      "questions": [
+        "2026年熊本県通信陸上の男子1500mで、松本空羽と中尾快叶の記録差は？"
+      ],
+      "answer": "2026年6月13日・14日の結果メモでは、松本空羽は5分13秒00、中尾快叶は5分04秒21です。中尾が8.79秒速い記録です。",
+      "sources": [
+        "calendar.md"
+      ],
+      "source_sha256": "4e10ff27be346fe94764558ee536a69abfb48eb448177bb1f6183db294818522",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "- **件名**: 第７２回 全日本中学校通信陸上競技大会熊本県大会\n- **表示日**: 2026-06-13\n- **開始日**: 2026-06-13\n- **終了日**: 2026-06-14\n- **終日**: はい\n- **開始時刻**: （なし）\n- **終了時刻**: （なし）\n- **カテゴリ**: 予定\n- **ステータス**: done\n- **タグ**: ランニング\n- **場所**: （なし）\n- **URL**: （なし）\n- **非公開**: いいえ\n\n**説明**\n\n800m 女子\n角田亜美 2年 2:42.22\n山﨑莉奈 1年 2:34.18\n増岡里俐 2年 2:39.55\n村上咲稀 3年 2:20.45\n塚原優衣 2年 2:50.13\n\n1500m 女子\n高田麻由 3年 5:11.57\n\n1500m 男子\n山本哲瑠 2年 4:30.13\n松本空羽 2年 5:13.00\n中尾快叶 1年 5:04.21\n南本幸治郎 1年 5:44.50\n\n800m 男子\n田中智稀 2年 2:26.10\n\n3000m 男子\n松野凛空 3年 9:37.84\n田上颯人 2年 10:24.08\n\n"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      },
+      "previous_chunk_id": "knowledge-2d193bdaebea7981a732f6bd",
+      "carry_forward": true
+    },
+    {
+      "id": "chunkqa-edc24da519507491ca802a72-1",
+      "chunk_id": "knowledge-32c2c2d63b31c02f67eca7cc",
+      "questions": [
+        "2026年第2回熊本県長距離記録会の男子1500mで、中尾快叶と松本空羽の記録差は？"
+      ],
+      "answer": "2026年7月4日の結果メモでは、中尾快叶は5分11秒09、松本空羽は5分11秒17です。中尾が0.08秒速い記録です。",
+      "sources": [
+        "calendar.md"
+      ],
+      "source_sha256": "4e10ff27be346fe94764558ee536a69abfb48eb448177bb1f6183db294818522",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "- **件名**: 2026年度第２回熊本県長距離記録会\n- **表示日**: 2026-07-04\n- **開始日**: 2026-07-04\n- **終了日**: 2026-07-04\n- **終日**: はい\n- **開始時刻**: （なし）\n- **終了時刻**: （なし）\n- **カテゴリ**: 予定\n- **ステータス**: done\n- **タグ**: ランニング\n- **場所**: （なし）\n- **URL**: http://www.kumariku.org/26/26,7,4long/kyougi.html\n- **非公開**: いいえ\n\n**説明**\n\n1500mピーキング候補\n\n1500m\n\n女子\n塚原優衣 2年 6:00.81 組4位\n角田亜美 2年 5:45.25 組1位\n山﨑莉奈 1年 DNS\n増岡里俐 2年 5:34.40 組6位\n高田麻由 3年 5:24.78 組17位\n村上咲稀 3年 4:53.85 組1位\n\n男子\n嶋田匠眞 1年 5:50.31 組13位\n南本幸治郎 1年 5:31.12 組19位\n田中智稀 2年 5:24.79 組20位\n中尾快叶 1年 5:11.09 組5位\n松本空羽 2年 5:11.17 組6位\n田上颯人 2年 4:42.40 組10位\n山本哲瑠 2年 4:42.45 組10位\n松野凛空 3年 4:22.33 組5位\n\n"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      },
+      "previous_chunk_id": "knowledge-edc24da519507491ca802a72",
+      "carry_forward": true
+    },
+    {
+      "id": "chunkqa-edc24da519507491ca802a72-2",
+      "chunk_id": "knowledge-32c2c2d63b31c02f67eca7cc",
+      "questions": [
+        "2026年第2回熊本県長距離記録会の男子1500mで、田上颯人と山本哲瑠の記録差は？"
+      ],
+      "answer": "2026年7月4日の結果メモでは、田上颯人は4分42秒40、山本哲瑠は4分42秒45です。田上が0.05秒速い記録です。",
+      "sources": [
+        "calendar.md"
+      ],
+      "source_sha256": "4e10ff27be346fe94764558ee536a69abfb48eb448177bb1f6183db294818522",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "- **件名**: 2026年度第２回熊本県長距離記録会\n- **表示日**: 2026-07-04\n- **開始日**: 2026-07-04\n- **終了日**: 2026-07-04\n- **終日**: はい\n- **開始時刻**: （なし）\n- **終了時刻**: （なし）\n- **カテゴリ**: 予定\n- **ステータス**: done\n- **タグ**: ランニング\n- **場所**: （なし）\n- **URL**: http://www.kumariku.org/26/26,7,4long/kyougi.html\n- **非公開**: いいえ\n\n**説明**\n\n1500mピーキング候補\n\n1500m\n\n女子\n塚原優衣 2年 6:00.81 組4位\n角田亜美 2年 5:45.25 組1位\n山﨑莉奈 1年 DNS\n増岡里俐 2年 5:34.40 組6位\n高田麻由 3年 5:24.78 組17位\n村上咲稀 3年 4:53.85 組1位\n\n男子\n嶋田匠眞 1年 5:50.31 組13位\n南本幸治郎 1年 5:31.12 組19位\n田中智稀 2年 5:24.79 組20位\n中尾快叶 1年 5:11.09 組5位\n松本空羽 2年 5:11.17 組6位\n田上颯人 2年 4:42.40 組10位\n山本哲瑠 2年 4:42.45 組10位\n松野凛空 3年 4:22.33 組5位\n\n"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      },
+      "previous_chunk_id": "knowledge-edc24da519507491ca802a72",
+      "carry_forward": true
+    },
+    {
+      "id": "chunkqa-edc24da519507491ca802a72-3",
+      "chunk_id": "knowledge-32c2c2d63b31c02f67eca7cc",
+      "questions": [
+        "2026年7月4日の県長距離記録会と翌日のチャレンジゲームズは、どちらも1500mのピーキング候補？"
+      ],
+      "answer": "はい。7月4日の第2回熊本県長距離記録会と7月5日のチャレンジゲームズには、どちらも「1500mピーキング候補」と記録されています。",
+      "sources": [
+        "calendar.md"
+      ],
+      "source_sha256": "4e10ff27be346fe94764558ee536a69abfb48eb448177bb1f6183db294818522",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "- **件名**: 2026年度第２回熊本県長距離記録会\n- **表示日**: 2026-07-04\n- **開始日**: 2026-07-04\n- **終了日**: 2026-07-04\n- **終日**: はい\n- **開始時刻**: （なし）\n- **終了時刻**: （なし）\n- **カテゴリ**: 予定\n- **ステータス**: done\n- **タグ**: ランニング\n- **場所**: （なし）\n- **URL**: http://www.kumariku.org/26/26,7,4long/kyougi.html\n- **非公開**: いいえ\n\n**説明**\n\n1500mピーキング候補\n\n1500m\n\n女子\n塚原優衣 2年 6:00.81 組4位\n角田亜美 2年 5:45.25 組1位\n山﨑莉奈 1年 DNS\n増岡里俐 2年 5:34.40 組6位\n高田麻由 3年 5:24.78 組17位\n村上咲稀 3年 4:53.85 組1位\n\n男子\n嶋田匠眞 1年 5:50.31 組13位\n南本幸治郎 1年 5:31.12 組19位\n田中智稀 2年 5:24.79 組20位\n中尾快叶 1年 5:11.09 組5位\n松本空羽 2年 5:11.17 組6位\n田上颯人 2年 4:42.40 組10位\n山本哲瑠 2年 4:42.45 組10位\n松野凛空 3年 4:22.33 組5位\n\n"
+        },
+        {
+          "kind": "quote",
+          "text": "- **件名**: チャレンジゲームズ（午前中開催予定）\n- **表示日**: 2026-07-05\n- **開始日**: 2026-07-05\n- **終了日**: 2026-07-05\n- **終日**: はい\n- **開始時刻**: （なし）\n- **終了時刻**: （なし）\n- **カテゴリ**: 予定\n- **ステータス**: scheduled\n- **タグ**: （なし）\n- **場所**: （なし）\n- **URL**: （なし）\n- **非公開**: いいえ\n\n**説明**\n\n1500mピーキング候補\n\n"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      },
+      "previous_chunk_id": "knowledge-edc24da519507491ca802a72",
+      "carry_forward": true
+    },
+    {
+      "id": "chunkqa-f8344b9fc0a204afdc5fe55f-1",
+      "chunk_id": "knowledge-ff50b8701cf3c027c37feb86",
+      "questions": [
+        "2026年熊本県中体連陸上の男子1500mで、田上颯人と松野凛空の記録差は？"
+      ],
+      "answer": "2026年7月18日・19日の結果メモでは、田上颯人は4分37秒20、松野凛空は4分28秒92です。松野が8.28秒速い記録です。",
+      "sources": [
+        "calendar.md"
+      ],
+      "source_sha256": "4e10ff27be346fe94764558ee536a69abfb48eb448177bb1f6183db294818522",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "- **件名**: 県中体連\n- **表示日**: 2026-07-18\n- **開始日**: 2026-07-18\n- **終了日**: 2026-07-20\n- **終日**: はい\n- **開始時刻**: （なし）\n- **終了時刻**: （なし）\n- **カテゴリ**: 予定\n- **ステータス**: done\n- **タグ**: ランニング\n- **場所**: （なし）\n- **URL**: （なし）\n- **非公開**: いいえ\n\n**説明**\n\n令和８年度 熊本県中学校総合体育大会陸上競技大会\n\n800m 女子\n山﨑莉奈 1年 2:32.23 組2位\n村上咲稀 3年 2:26.82 組7位\n塚原優衣 2年 2:51.63 組10位\n\n800m 男子\n田中智稀 2年 2:23.08 組3位\n\n1500m 男子\n田上颯人 2年 4:37.20 組1位\n松野凛空 3年 4:28.92 組14位\n中尾快叶 1年 5:03.56 組16位\n南本幸治郎 1年 5:23.50 組6位\n山本哲瑠 2年 4:41.37 組19位\n松本空羽 2年 5:31.05 組23位\n\n1500m 女子\n角田亜美 2年 5:31.34 組1位\n高田麻由 3年 5:10.80 組2位\n\n"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      },
+      "previous_chunk_id": "knowledge-f8344b9fc0a204afdc5fe55f",
+      "carry_forward": true
+    },
+    {
+      "id": "chunkqa-f8344b9fc0a204afdc5fe55f-2",
+      "chunk_id": "knowledge-ff50b8701cf3c027c37feb86",
+      "questions": [
+        "2026年熊本県中体連陸上の女子1500mで、角田亜美と高田麻由の記録差は？"
+      ],
+      "answer": "2026年7月18日・19日の結果メモでは、角田亜美は5分31秒34、高田麻由は5分10秒80です。高田が20.54秒速い記録です。",
+      "sources": [
+        "calendar.md"
+      ],
+      "source_sha256": "4e10ff27be346fe94764558ee536a69abfb48eb448177bb1f6183db294818522",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "- **件名**: 県中体連\n- **表示日**: 2026-07-19\n- **開始日**: 2026-07-18\n- **終了日**: 2026-07-20\n- **終日**: はい\n- **開始時刻**: （なし）\n- **終了時刻**: （なし）\n- **カテゴリ**: 予定\n- **ステータス**: done\n- **タグ**: ランニング\n- **場所**: （なし）\n- **URL**: （なし）\n- **非公開**: いいえ\n\n**説明**\n\n令和８年度 熊本県中学校総合体育大会陸上競技大会\n\n800m 女子\n山﨑莉奈 1年 2:32.23 組2位\n村上咲稀 3年 2:26.82 組7位\n塚原優衣 2年 2:51.63 組10位\n\n800m 男子\n田中智稀 2年 2:23.08 組3位\n\n1500m 男子\n田上颯人 2年 4:37.20 組1位\n松野凛空 3年 4:28.92 組14位\n中尾快叶 1年 5:03.56 組16位\n南本幸治郎 1年 5:23.50 組6位\n山本哲瑠 2年 4:41.37 組19位\n松本空羽 2年 5:31.05 組23位\n\n1500m 女子\n角田亜美 2年 5:31.34 組1位\n高田麻由 3年 5:10.80 組2位\n\n"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      },
+      "previous_chunk_id": "knowledge-f8344b9fc0a204afdc5fe55f",
+      "carry_forward": true
+    },
+    {
+      "id": "chunkqa-f8344b9fc0a204afdc5fe55f-3",
+      "chunk_id": "knowledge-ff50b8701cf3c027c37feb86",
+      "questions": [
+        "2026年7月の岱明中夏休み開始は、県中体連の登録日と重なっている？"
+      ],
+      "answer": "はい。岱明中夏休み開始は2026年7月18日の予定で、同じ日に県中体連も登録されています。県中体連のその日の説明には大会の結果メモが載っています。",
+      "sources": [
+        "calendar.md"
+      ],
+      "source_sha256": "4e10ff27be346fe94764558ee536a69abfb48eb448177bb1f6183db294818522",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "- **件名**: 岱明中夏休み開始\n- **表示日**: 2026-07-18\n- **開始日**: 2026-07-18\n- **終了日**: 2026-07-18\n- **終日**: はい\n- **開始時刻**: （なし）\n- **終了時刻**: （なし）\n- **カテゴリ**: 予定\n- **ステータス**: scheduled\n- **タグ**: （なし）\n- **場所**: （なし）\n- **URL**: （なし）\n- **非公開**: いいえ\n\n**説明**\n\n（なし）\n\n"
+        },
+        {
+          "kind": "quote",
+          "text": "- **件名**: 県中体連\n- **表示日**: 2026-07-18\n- **開始日**: 2026-07-18\n- **終了日**: 2026-07-20\n- **終日**: はい\n- **開始時刻**: （なし）\n- **終了時刻**: （なし）\n- **カテゴリ**: 予定\n- **ステータス**: done\n- **タグ**: ランニング\n- **場所**: （なし）\n- **URL**: （なし）\n- **非公開**: いいえ\n\n**説明**\n\n令和８年度 熊本県中学校総合体育大会陸上競技大会\n\n800m 女子\n山﨑莉奈 1年 2:32.23 組2位\n村上咲稀 3年 2:26.82 組7位\n塚原優衣 2年 2:51.63 組10位\n\n800m 男子\n田中智稀 2年 2:23.08 組3位\n\n1500m 男子\n田上颯人 2年 4:37.20 組1位\n松野凛空 3年 4:28.92 組14位\n中尾快叶 1年 5:03.56 組16位\n南本幸治郎 1年 5:23.50 組6位\n山本哲瑠 2年 4:41.37 組19位\n松本空羽 2年 5:31.05 組23位\n\n1500m 女子\n角田亜美 2年 5:31.34 組1位\n高田麻由 3年 5:10.80 組2位\n\n"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      },
+      "previous_chunk_id": "knowledge-f8344b9fc0a204afdc5fe55f",
+      "carry_forward": true
+    },
+    {
+      "id": "chunkqa-f2762b3f0820dea6eb5e4d8c-1",
+      "chunk_id": "knowledge-73c2ba31788410d41bad5f06",
+      "questions": [
+        "2026年7月21日と23日のいだてん岱明朝練は、開始時刻とメニューが同じ？"
+      ],
+      "answer": "両日とも8時開始の予定で、メニューは「動きづくり、男子2.5km×2、女子2km×2」と同じ内容が記録されています。",
+      "sources": [
+        "calendar.md"
+      ],
+      "source_sha256": "4e10ff27be346fe94764558ee536a69abfb48eb448177bb1f6183db294818522",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "- **件名**: いだてん岱明朝練\n- **表示日**: 2026-07-21\n- **開始日**: 2026-07-21\n- **終了日**: 2026-07-21\n- **終日**: いいえ\n- **開始時刻**: 08:00\n- **終了時刻**: 09:30\n- **カテゴリ**: 予定\n- **ステータス**: scheduled\n- **タグ**: ランニング, いだてん岱明練習, practice:daiming, session:morning\n- **場所**: （なし）\n- **URL**: （なし）\n- **非公開**: いいえ\n\n**天気（玉名市）**\n\n- **観測時刻**: 2026-07-21T08:00\n- **天気**: 霧雨（弱）\n- **気温**: 27.3°C\n- **湿度**: 95%\n- **風向**: 南東\n- **風速**: 2.6 km/h\n- **降水量**: 0.1 mm\n- **データソース**: open-meteo\n\n**説明**\n\n動きづくり、男子2.5km×2、女子2km×2\n\n"
+        },
+        {
+          "kind": "quote",
+          "text": "- **件名**: いだてん岱明朝練\n- **表示日**: 2026-07-23\n- **開始日**: 2026-07-23\n- **終了日**: 2026-07-23\n- **終日**: いいえ\n- **開始時刻**: 08:00\n- **終了時刻**: 09:30\n- **カテゴリ**: 予定\n- **ステータス**: scheduled\n- **タグ**: ランニング, いだてん岱明練習, practice:daiming, session:morning\n- **場所**: （なし）\n- **URL**: （なし）\n- **非公開**: いいえ\n\n**天気（玉名市）**\n\n- **観測時刻**: 2026-07-23T08:00\n- **天気**: 晴れ\n- **気温**: 28.6°C\n- **湿度**: 86%\n- **風向**: 南東\n- **風速**: 3.3 km/h\n- **降水量**: 0.0 mm\n- **データソース**: open-meteo\n\n**説明**\n\n動きづくり、男子2.5km×2、女子2km×2\n\n"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      },
+      "previous_chunk_id": "knowledge-f2762b3f0820dea6eb5e4d8c",
+      "carry_forward": true
+    },
+    {
+      "id": "chunkqa-f2762b3f0820dea6eb5e4d8c-2",
+      "chunk_id": "knowledge-73c2ba31788410d41bad5f06",
+      "questions": [
+        "2026年7月22日のいだてん岱明は、朝練と夕練のどちらが休みの予定？"
+      ],
+      "answer": "朝練が休みで、夕練は18時開始の予定として登録されています。",
+      "sources": [
+        "calendar.md"
+      ],
+      "source_sha256": "4e10ff27be346fe94764558ee536a69abfb48eb448177bb1f6183db294818522",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "- **件名**: いだてん岱明夕練\n- **表示日**: 2026-07-22\n- **開始日**: 2026-07-22\n- **終了日**: 2026-07-22\n- **終日**: いいえ\n- **開始時刻**: 18:00\n- **終了時刻**: 19:30\n- **カテゴリ**: 予定\n- **ステータス**: scheduled\n- **タグ**: ランニング, いだてん岱明練習, practice:daiming, session:evening\n- **場所**: （なし）\n- **URL**: （なし）\n- **非公開**: いいえ\n\n**天気（玉名市）**\n\n- **観測時刻**: 2026-07-22T18:00\n- **天気**: 快晴\n- **気温**: 32.9°C\n- **湿度**: 53%\n- **風向**: 南西\n- **風速**: 3.0 km/h\n- **降水量**: 0.0 mm\n- **データソース**: open-meteo\n\n**説明**\n\n（なし）\n\n"
+        },
+        {
+          "kind": "quote",
+          "text": "- **件名**: いだてん岱明朝練休み\n- **表示日**: 2026-07-22\n- **開始日**: 2026-07-22\n- **終了日**: 2026-07-22\n- **終日**: はい\n- **開始時刻**: （なし）\n- **終了時刻**: （なし）\n- **カテゴリ**: 予定\n- **ステータス**: scheduled\n- **タグ**: ランニング, いだてん岱明練習, practice:daiming, session:morning\n- **場所**: （なし）\n- **URL**: （なし）\n- **非公開**: いいえ\n\n**天気（玉名市）**\n\n- **観測時刻**: 2026-07-22T08:00\n- **天気**: 霧雨（弱）\n- **気温**: 29.4°C\n- **湿度**: 79%\n- **風向**: 東南東\n- **風速**: 3.0 km/h\n- **降水量**: 0.1 mm\n- **データソース**: open-meteo\n\n**説明**\n\n（なし）\n\n"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      },
+      "previous_chunk_id": "knowledge-f2762b3f0820dea6eb5e4d8c",
+      "carry_forward": true
+    },
+    {
+      "id": "chunkqa-f2762b3f0820dea6eb5e4d8c-3",
+      "chunk_id": "knowledge-73c2ba31788410d41bad5f06",
+      "questions": [
+        "2026年7月22日の玉名選手権参加費振込は、三者面談と同じ日に登録されている？"
+      ],
+      "answer": "はい。玉名選手権参加費振込と3年の三者面談は、どちらも2026年7月22日の終日予定として登録されています。",
+      "sources": [
+        "calendar.md"
+      ],
+      "source_sha256": "4e10ff27be346fe94764558ee536a69abfb48eb448177bb1f6183db294818522",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "- **件名**: 三者面談（3年）\n- **表示日**: 2026-07-22\n- **開始日**: 2026-07-22\n- **終了日**: 2026-07-22\n- **終日**: はい\n- **開始時刻**: （なし）\n- **終了時刻**: （なし）\n- **カテゴリ**: 予定\n- **ステータス**: scheduled\n- **タグ**: （なし）\n- **場所**: （なし）\n- **URL**: （なし）\n- **非公開**: いいえ\n\n**説明**\n\n（なし）\n\n"
+        },
+        {
+          "kind": "quote",
+          "text": "- **件名**: 玉名選手権参加費振込\n- **表示日**: 2026-07-22\n- **開始日**: 2026-07-22\n- **終了日**: 2026-07-22\n- **終日**: はい\n- **開始時刻**: （なし）\n- **終了時刻**: （なし）\n- **カテゴリ**: 予定\n- **ステータス**: scheduled\n- **タグ**: （なし）\n- **場所**: （なし）\n- **URL**: （なし）\n- **非公開**: いいえ\n\n**説明**\n\n（なし）\n\n"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      },
+      "previous_chunk_id": "knowledge-f2762b3f0820dea6eb5e4d8c",
+      "carry_forward": true
+    },
+    {
+      "id": "chunkqa-04a5c89c47ba3687af057339-1",
+      "chunk_id": "knowledge-98971a8e88653b1c9bf01c30",
+      "questions": [
+        "2026年7月24日のノルウェーメソッドの購入メモでは、岱明の練習との共通点をどう捉えている？"
+      ],
+      "answer": "できる限りハードにするより、十分な強度・頻度で長期間継続するというメッセージが、岱明の設定を遅めにしたポイント練習と調和しそうだ、と記録されています。",
+      "sources": [
+        "calendar.md"
+      ],
+      "source_sha256": "4e10ff27be346fe94764558ee536a69abfb48eb448177bb1f6183db294818522",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "- **件名**: ノルウェーメソッド\n- **表示日**: 2026-07-24\n- **開始日**: 2026-07-24\n- **終了日**: 2026-07-24\n- **終日**: はい\n- **開始時刻**: （なし）\n- **終了時刻**: （なし）\n- **カテゴリ**: 予定\n- **ステータス**: scheduled\n- **タグ**: （なし）\n- **場所**: （なし）\n- **URL**: （なし）\n- **非公開**: いいえ\n\n**説明**\n\n「できる限りハードに練習することが、成長につながるわけではありません。 十分な強度で、十分な頻度で、十分な期間継続して練習することが、成長につながるのです。」このメッセージが岱明の設定遅めのポイント練習と調和性が高そうだと感じ、英語の本で5000円くらいしますが購入しました。英語は得意なので問題なし。土山は本気です。\n\n"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      },
+      "previous_chunk_id": "knowledge-04a5c89c47ba3687af057339",
+      "carry_forward": true
+    },
+    {
+      "id": "chunkqa-04a5c89c47ba3687af057339-2",
+      "chunk_id": "knowledge-98971a8e88653b1c9bf01c30",
+      "questions": [
+        "2026年7月24日のノルウェーメソッドの購入メモでは、本の言語と価格はどう書かれている？"
+      ],
+      "answer": "英語の本で、価格は5,000円くらいと記録されています。メッセージが岱明の練習と調和しそうだと感じて購入した、というメモです。",
+      "sources": [
+        "calendar.md"
+      ],
+      "source_sha256": "4e10ff27be346fe94764558ee536a69abfb48eb448177bb1f6183db294818522",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "- **件名**: ノルウェーメソッド\n- **表示日**: 2026-07-24\n- **開始日**: 2026-07-24\n- **終了日**: 2026-07-24\n- **終日**: はい\n- **開始時刻**: （なし）\n- **終了時刻**: （なし）\n- **カテゴリ**: 予定\n- **ステータス**: scheduled\n- **タグ**: （なし）\n- **場所**: （なし）\n- **URL**: （なし）\n- **非公開**: いいえ\n\n**説明**\n\n「できる限りハードに練習することが、成長につながるわけではありません。 十分な強度で、十分な頻度で、十分な期間継続して練習することが、成長につながるのです。」このメッセージが岱明の設定遅めのポイント練習と調和性が高そうだと感じ、英語の本で5000円くらいしますが購入しました。英語は得意なので問題なし。土山は本気です。\n\n"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      },
+      "previous_chunk_id": "knowledge-04a5c89c47ba3687af057339",
+      "carry_forward": true
+    },
+    {
+      "id": "chunkqa-04a5c89c47ba3687af057339-3",
+      "chunk_id": "knowledge-98971a8e88653b1c9bf01c30",
+      "questions": [
+        "2026年7月25日のいだてん岱明は、朝夕どちらにも練習予定がある？"
+      ],
+      "answer": "朝練は休みで、夕練は18時開始の予定です。朝夕の両方に練習がある日ではありません。",
+      "sources": [
+        "calendar.md"
+      ],
+      "source_sha256": "4e10ff27be346fe94764558ee536a69abfb48eb448177bb1f6183db294818522",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "- **件名**: いだてん岱明夕練\n- **表示日**: 2026-07-25\n- **開始日**: 2026-07-25\n- **終了日**: 2026-07-25\n- **終日**: いいえ\n- **開始時刻**: 18:00\n- **終了時刻**: 19:30\n- **カテゴリ**: 予定\n- **ステータス**: scheduled\n- **タグ**: ランニング, いだてん岱明練習, practice:daiming, session:evening\n- **場所**: （なし）\n- **URL**: （なし）\n- **非公開**: いいえ\n\n**天気（玉名市）**\n\n- **観測時刻**: 2026-07-25T18:00\n- **天気**: 曇り\n- **気温**: 32.5°C\n- **湿度**: 62%\n- **風向**: 西北西\n- **風速**: 9.4 km/h\n- **降水量**: 0.0 mm\n- **データソース**: open-meteo\n\n**説明**\n\n（なし）\n\n"
+        },
+        {
+          "kind": "quote",
+          "text": "- **件名**: いだてん岱明朝練休み\n- **表示日**: 2026-07-25\n- **開始日**: 2026-07-25\n- **終了日**: 2026-07-25\n- **終日**: はい\n- **開始時刻**: （なし）\n- **終了時刻**: （なし）\n- **カテゴリ**: 予定\n- **ステータス**: scheduled\n- **タグ**: ランニング, いだてん岱明練習, practice:daiming, session:morning\n- **場所**: （なし）\n- **URL**: （なし）\n- **非公開**: いいえ\n\n**天気（玉名市）**\n\n- **観測時刻**: 2026-07-25T08:00\n- **天気**: 快晴\n- **気温**: 29.4°C\n- **湿度**: 76%\n- **風向**: 南東\n- **風速**: 2.2 km/h\n- **降水量**: 0.0 mm\n- **データソース**: open-meteo\n\n**説明**\n\n（なし）\n\n"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      },
+      "previous_chunk_id": "knowledge-04a5c89c47ba3687af057339",
+      "carry_forward": true
+    },
+    {
+      "id": "chunkqa-60d78174fb9f098f6d729f56-1",
+      "chunk_id": "knowledge-2e61ca70a0a32415794e59a3",
+      "questions": [
+        "2026年7月27日と28日のいだてん岱明朝練は、メニューと開始時刻が同じ？"
+      ],
+      "answer": "両日とも8時開始の予定で、「動きづくり、男子2.5km×2、女子2km×2」と同じメニューが記録されています。",
+      "sources": [
+        "calendar.md"
+      ],
+      "source_sha256": "4e10ff27be346fe94764558ee536a69abfb48eb448177bb1f6183db294818522",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "- **件名**: いだてん岱明朝練\n- **表示日**: 2026-07-27\n- **開始日**: 2026-07-27\n- **終了日**: 2026-07-27\n- **終日**: いいえ\n- **開始時刻**: 08:00\n- **終了時刻**: 09:30\n- **カテゴリ**: 予定\n- **ステータス**: scheduled\n- **タグ**: ランニング, いだてん岱明練習, practice:daiming, session:morning\n- **場所**: （なし）\n- **URL**: （なし）\n- **非公開**: いいえ\n\n**天気（玉名市）**\n\n- **観測時刻**: 2026-07-27T08:00\n- **天気**: 晴れ\n- **気温**: 30.2°C\n- **湿度**: 79%\n- **風向**: 東\n- **風速**: 2.2 km/h\n- **降水量**: 0.0 mm\n- **データソース**: open-meteo\n\n**説明**\n\n動きづくり、男子2.5km×2、女子2km×2\n\n"
+        },
+        {
+          "kind": "quote",
+          "text": "- **件名**: いだてん岱明朝練\n- **表示日**: 2026-07-28\n- **開始日**: 2026-07-28\n- **終了日**: 2026-07-28\n- **終日**: いいえ\n- **開始時刻**: 08:00\n- **終了時刻**: 09:30\n- **カテゴリ**: 予定\n- **ステータス**: scheduled\n- **タグ**: ランニング, いだてん岱明練習, practice:daiming, session:morning\n- **場所**: （なし）\n- **URL**: （なし）\n- **非公開**: いいえ\n\n**天気（玉名市）**\n\n- **観測時刻**: 2026-07-28T08:00\n- **天気**: 一部曇り\n- **気温**: 30.4°C\n- **湿度**: 76%\n- **風向**: 西\n- **風速**: 2.2 km/h\n- **降水量**: 0.0 mm\n- **データソース**: open-meteo\n\n**説明**\n\n動きづくり、男子2.5km×2、女子2km×2\n\n"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      },
+      "previous_chunk_id": "knowledge-60d78174fb9f098f6d729f56",
+      "carry_forward": true
+    },
+    {
+      "id": "chunkqa-60d78174fb9f098f6d729f56-2",
+      "chunk_id": "knowledge-2e61ca70a0a32415794e59a3",
+      "questions": [
+        "2026年7月27日の帰りの電車は、記録では何時でどの区間？"
+      ],
+      "answer": "2026年7月27日21時27分の「帰りの電車」に、区間は「上熊本-玉名」と記録されています。完了として登録された予定です。",
+      "sources": [
+        "calendar.md"
+      ],
+      "source_sha256": "4e10ff27be346fe94764558ee536a69abfb48eb448177bb1f6183db294818522",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "- **件名**: 帰りの電車\n- **表示日**: 2026-07-27\n- **開始日**: 2026-07-27\n- **終了日**: 2026-07-27\n- **終日**: いいえ\n- **開始時刻**: 21:27\n- **終了時刻**: 21:54\n- **カテゴリ**: 予定\n- **ステータス**: done\n- **タグ**: （なし）\n- **場所**: （なし）\n- **URL**: （なし）\n- **非公開**: いいえ\n\n**説明**\n\n上熊本-玉名\n\n"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      },
+      "previous_chunk_id": "knowledge-60d78174fb9f098f6d729f56",
+      "carry_forward": true
+    },
+    {
+      "id": "chunkqa-60d78174fb9f098f6d729f56-3",
+      "chunk_id": "knowledge-2e61ca70a0a32415794e59a3",
+      "questions": [
+        "2026年7月27日の秀ちゃんラーメンと酒湊は、カレンダーで訪問記録として残っている？"
+      ],
+      "answer": "はい。両方とも2026年7月27日に完了として登録され、説明には「訪問記録」と記載されています。",
+      "sources": [
+        "calendar.md"
+      ],
+      "source_sha256": "4e10ff27be346fe94764558ee536a69abfb48eb448177bb1f6183db294818522",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "- **件名**: 秀ちゃんラーメン\n- **表示日**: 2026-07-27\n- **開始日**: 2026-07-27\n- **終了日**: 2026-07-27\n- **終日**: はい\n- **開始時刻**: （なし）\n- **終了時刻**: （なし）\n- **カテゴリ**: 予定\n- **ステータス**: done\n- **タグ**: （なし）\n- **場所**: （なし）\n- **URL**: https://s.tabelog.com/kumamoto/A4301/A430101/43000898/\n- **非公開**: いいえ\n\n**説明**\n\n訪問記録\n\n"
+        },
+        {
+          "kind": "quote",
+          "text": "- **件名**: 酒湊\n- **表示日**: 2026-07-27\n- **開始日**: 2026-07-27\n- **終了日**: 2026-07-27\n- **終日**: はい\n- **開始時刻**: （なし）\n- **終了時刻**: （なし）\n- **カテゴリ**: 予定\n- **ステータス**: done\n- **タグ**: （なし）\n- **場所**: （なし）\n- **URL**: https://www.sakasou.kumamoto.jp/shop/sakasou/\n- **非公開**: いいえ\n\n**説明**\n\n訪問記録\n\n"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      },
+      "previous_chunk_id": "knowledge-60d78174fb9f098f6d729f56",
+      "carry_forward": true
+    },
+    {
+      "id": "chunkqa-7f5ee7a938d1e84d10bf6ff6-1",
+      "chunk_id": "knowledge-4940d49a6322955ad06a276b",
+      "questions": [
+        "2026年7月29日と31日のいだてん岱明朝練は、時刻とメニューが同じ？"
+      ],
+      "answer": "両日とも8時開始の予定で、「動きづくり、男子2.5km×2、女子2km×2」と同じメニューが記録されています。",
+      "sources": [
+        "calendar.md"
+      ],
+      "source_sha256": "4e10ff27be346fe94764558ee536a69abfb48eb448177bb1f6183db294818522",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "- **件名**: いだてん岱明朝練\n- **表示日**: 2026-07-29\n- **開始日**: 2026-07-29\n- **終了日**: 2026-07-29\n- **終日**: いいえ\n- **開始時刻**: 08:00\n- **終了時刻**: 09:30\n- **カテゴリ**: 予定\n- **ステータス**: scheduled\n- **タグ**: ランニング, いだてん岱明練習, practice:daiming, session:morning\n- **場所**: （なし）\n- **URL**: （なし）\n- **非公開**: いいえ\n\n**天気（玉名市）**\n\n- **観測時刻**: 2026-07-29T08:00\n- **天気**: 霧雨（弱）\n- **気温**: 29.2°C\n- **湿度**: 78%\n- **風向**: 南西\n- **風速**: 5.0 km/h\n- **降水量**: 0.2 mm\n- **データソース**: open-meteo\n\n**説明**\n\n動きづくり、男子2.5km×2、女子2km×2\n\n"
+        },
+        {
+          "kind": "quote",
+          "text": "- **件名**: いだてん岱明朝練\n- **表示日**: 2026-07-31\n- **開始日**: 2026-07-31\n- **終了日**: 2026-07-31\n- **終日**: いいえ\n- **開始時刻**: 08:00\n- **終了時刻**: 09:30\n- **カテゴリ**: 予定\n- **ステータス**: scheduled\n- **タグ**: ランニング, いだてん岱明練習, practice:daiming, session:morning\n- **場所**: （なし）\n- **URL**: （なし）\n- **非公開**: いいえ\n\n**天気（玉名市）**\n\n- **観測時刻**: 2026-07-31T08:00\n- **天気**: 晴れ\n- **気温**: 28.3°C\n- **湿度**: 76%\n- **風向**: 南東\n- **風速**: 3.9 km/h\n- **降水量**: 0.0 mm\n- **データソース**: open-meteo\n\n**説明**\n\n動きづくり、男子2.5km×2、女子2km×2\n\n"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      },
+      "previous_chunk_id": "knowledge-7f5ee7a938d1e84d10bf6ff6",
+      "carry_forward": true
+    },
+    {
+      "id": "chunkqa-7f5ee7a938d1e84d10bf6ff6-2",
+      "chunk_id": "knowledge-4940d49a6322955ad06a276b",
+      "questions": [
+        "2026年7月31日のいだてん岱明夕練は、600mの疾走部分だけで合計何m？"
+      ],
+      "answer": "600mを2本なので、疾走部分は合計1,200mです。メモでは1500mのレースペース、レスト8分とされています。各自のアップはこの距離に含めていません。",
+      "sources": [
+        "calendar.md"
+      ],
+      "source_sha256": "4e10ff27be346fe94764558ee536a69abfb48eb448177bb1f6183db294818522",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "- **件名**: いだてん岱明夕練\n- **表示日**: 2026-07-31\n- **開始日**: 2026-07-31\n- **終了日**: 2026-07-31\n- **終日**: いいえ\n- **開始時刻**: 18:00\n- **終了時刻**: 19:30\n- **カテゴリ**: 予定\n- **ステータス**: scheduled\n- **タグ**: ランニング, いだてん岱明練習, practice:daiming, session:evening\n- **場所**: （なし）\n- **URL**: （なし）\n- **非公開**: いいえ\n\n**天気（玉名市）**\n\n- **観測時刻**: 2026-07-31T18:00\n- **天気**: 快晴\n- **気温**: 32.0°C\n- **湿度**: 60%\n- **風向**: 西南西\n- **風速**: 13.2 km/h\n- **降水量**: 0.0 mm\n- **データソース**: open-meteo\n\n**説明**\n\n<!-- practice-menu:v1\nwarmup: null\nitems:\n- type: interval\n  distance_m: 600\n  reps: '2'\n  intensity: RP\n  rest_sec: null\n-->\n\n各自アップ、600m2本（1500mRP、r=8分）\n\n600m×2（RP）\n\n"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      },
+      "previous_chunk_id": "knowledge-7f5ee7a938d1e84d10bf6ff6",
+      "carry_forward": true
+    },
+    {
+      "id": "chunkqa-7f5ee7a938d1e84d10bf6ff6-3",
+      "chunk_id": "knowledge-4940d49a6322955ad06a276b",
+      "questions": [
+        "2026年7月30日のいだてん岱明は、朝夕とも休みの予定で、翌日は朝夕とも練習予定？"
+      ],
+      "answer": "はい。7月30日は朝練・夕練とも休み、翌31日は朝練8時・夕練18時の予定として登録されています。",
+      "sources": [
+        "calendar.md"
+      ],
+      "source_sha256": "4e10ff27be346fe94764558ee536a69abfb48eb448177bb1f6183db294818522",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "- **件名**: いだてん岱明朝練休み\n- **表示日**: 2026-07-30\n- **開始日**: 2026-07-30\n- **終了日**: 2026-07-30\n- **終日**: はい\n- **開始時刻**: （なし）\n- **終了時刻**: （なし）\n- **カテゴリ**: 予定\n- **ステータス**: scheduled\n- **タグ**: ランニング, いだてん岱明練習, practice:daiming, session:morning\n- **場所**: （なし）\n- **URL**: （なし）\n- **非公開**: いいえ\n\n**天気（玉名市）**\n\n- **観測時刻**: 2026-07-30T08:00\n- **天気**: 曇り\n- **気温**: 29.3°C\n- **湿度**: 76%\n- **風向**: 南西\n- **風速**: 3.9 km/h\n- **降水量**: 0.0 mm\n- **データソース**: open-meteo\n\n**説明**\n\n（なし）\n\n"
+        },
+        {
+          "kind": "quote",
+          "text": "- **件名**: いだてん岱明夕練休み\n- **表示日**: 2026-07-30\n- **開始日**: 2026-07-30\n- **終了日**: 2026-07-30\n- **終日**: はい\n- **開始時刻**: （なし）\n- **終了時刻**: （なし）\n- **カテゴリ**: 予定\n- **ステータス**: scheduled\n- **タグ**: ランニング, いだてん岱明練習, practice:daiming, session:evening\n- **場所**: （なし）\n- **URL**: （なし）\n- **非公開**: いいえ\n\n**天気（玉名市）**\n\n- **観測時刻**: 2026-07-30T18:00\n- **天気**: 快晴\n- **気温**: 31.5°C\n- **湿度**: 55%\n- **風向**: 西\n- **風速**: 13.9 km/h\n- **降水量**: 0.0 mm\n- **データソース**: open-meteo\n\n**説明**\n\n（なし）\n\n"
+        },
+        {
+          "kind": "quote",
+          "text": "- **件名**: いだてん岱明朝練\n- **表示日**: 2026-07-31\n- **開始日**: 2026-07-31\n- **終了日**: 2026-07-31\n- **終日**: いいえ\n- **開始時刻**: 08:00\n- **終了時刻**: 09:30\n- **カテゴリ**: 予定\n- **ステータス**: scheduled\n- **タグ**: ランニング, いだてん岱明練習, practice:daiming, session:morning\n- **場所**: （なし）\n- **URL**: （なし）\n- **非公開**: いいえ\n\n**天気（玉名市）**\n\n- **観測時刻**: 2026-07-31T08:00\n- **天気**: 晴れ\n- **気温**: 28.3°C\n- **湿度**: 76%\n- **風向**: 南東\n- **風速**: 3.9 km/h\n- **降水量**: 0.0 mm\n- **データソース**: open-meteo\n\n**説明**\n\n動きづくり、男子2.5km×2、女子2km×2\n\n"
+        },
+        {
+          "kind": "quote",
+          "text": "- **件名**: いだてん岱明夕練\n- **表示日**: 2026-07-31\n- **開始日**: 2026-07-31\n- **終了日**: 2026-07-31\n- **終日**: いいえ\n- **開始時刻**: 18:00\n- **終了時刻**: 19:30\n- **カテゴリ**: 予定\n- **ステータス**: scheduled\n- **タグ**: ランニング, いだてん岱明練習, practice:daiming, session:evening\n- **場所**: （なし）\n- **URL**: （なし）\n- **非公開**: いいえ\n\n**天気（玉名市）**\n\n- **観測時刻**: 2026-07-31T18:00\n- **天気**: 快晴\n- **気温**: 32.0°C\n- **湿度**: 60%\n- **風向**: 西南西\n- **風速**: 13.2 km/h\n- **降水量**: 0.0 mm\n- **データソース**: open-meteo\n\n**説明**\n\n<!-- practice-menu:v1\nwarmup: null\nitems:\n- type: interval\n  distance_m: 600\n  reps: '2'\n  intensity: RP\n  rest_sec: null\n-->\n\n各自アップ、600m2本（1500mRP、r=8分）\n\n600m×2（RP）\n\n"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      },
+      "previous_chunk_id": "knowledge-7f5ee7a938d1e84d10bf6ff6",
+      "carry_forward": true
+    },
+    {
+      "id": "chunkqa-99f7c0feeeb9ef5f5f287fc5-1",
+      "chunk_id": "knowledge-8986c6fcac1316c4290f740e",
+      "questions": [
+        "2026年8月の月間カレンダーで、2・3年と1年の課題提出日はどう違う？"
+      ],
+      "answer": "2・3年は8月19日、1年は8月20日と21日に課題提出日が登録されています。1年の最初の登録日は、2・3年より1日後です。",
+      "sources": [
+        "calendar.md"
+      ],
+      "source_sha256": "4e10ff27be346fe94764558ee536a69abfb48eb448177bb1f6183db294818522",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "[2，3年課題提出日](#event-20260819-01)"
+        },
+        {
+          "kind": "quote",
+          "text": "[1年課題提出日](#event-20260820-03)"
+        },
+        {
+          "kind": "quote",
+          "text": "[1年課題提出日](#event-20260821-04)"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      },
+      "previous_chunk_id": "knowledge-99f7c0feeeb9ef5f5f287fc5",
+      "carry_forward": true
+    },
+    {
+      "id": "chunkqa-99f7c0feeeb9ef5f5f287fc5-2",
+      "chunk_id": "knowledge-8986c6fcac1316c4290f740e",
+      "questions": [
+        "2026年8月の岱明中の学校閉庁日は、月間カレンダーにどの日付で登録されている？"
+      ],
+      "answer": "8月10日・12日・13日・14日の4日分が、学校閉庁日として登録されています。",
+      "sources": [
+        "calendar.md"
+      ],
+      "source_sha256": "4e10ff27be346fe94764558ee536a69abfb48eb448177bb1f6183db294818522",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "[学校閉庁日](#event-20260810-06)"
+        },
+        {
+          "kind": "quote",
+          "text": "[学校閉庁日](#event-20260812-03)"
+        },
+        {
+          "kind": "quote",
+          "text": "[学校閉庁日](#event-20260813-02)"
+        },
+        {
+          "kind": "quote",
+          "text": "[学校閉庁日](#event-20260814-05)"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      },
+      "previous_chunk_id": "knowledge-99f7c0feeeb9ef5f5f287fc5",
+      "carry_forward": true
+    },
+    {
+      "id": "chunkqa-99f7c0feeeb9ef5f5f287fc5-3",
+      "chunk_id": "knowledge-8986c6fcac1316c4290f740e",
+      "questions": [
+        "2026年8月26日の夏期休業最終日から、玉名郡ナイターの登録日までは何日？"
+      ],
+      "answer": "夏期休業最終日は8月26日、玉名郡ナイター中・長距離記録会は8月29日に登録されており、3日あります。",
+      "sources": [
+        "calendar.md"
+      ],
+      "source_sha256": "4e10ff27be346fe94764558ee536a69abfb48eb448177bb1f6183db294818522",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "[夏期休業最終日](#event-20260826-06)"
+        },
+        {
+          "kind": "quote",
+          "text": "[玉名郡ナイター中・長距離記録会](#event-20260829-00)"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      },
+      "previous_chunk_id": "knowledge-99f7c0feeeb9ef5f5f287fc5",
+      "carry_forward": true
+    },
+    {
+      "id": "chunkqa-47aa96fa94b90e2a116c5718-1",
+      "chunk_id": "knowledge-353b4aa0f85f7b52df1a00cb",
+      "questions": [
+        "2026年8月3日のいだてん岱明夕練は、300m5本の疾走距離が合計何m？"
+      ],
+      "answer": "300mを5本なので、疾走部分は合計1,500mです。メモには各自アップとレスト70秒も記載されています。アップの距離は合計に含めていません。",
+      "sources": [
+        "calendar.md"
+      ],
+      "source_sha256": "4e10ff27be346fe94764558ee536a69abfb48eb448177bb1f6183db294818522",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "- **件名**: いだてん岱明夕練\n- **表示日**: 2026-08-03\n- **開始日**: 2026-08-03\n- **終了日**: 2026-08-03\n- **終日**: いいえ\n- **開始時刻**: 18:00\n- **終了時刻**: 19:30\n- **カテゴリ**: 予定\n- **ステータス**: done\n- **タグ**: ランニング, いだてん岱明練習, practice:daiming, session:evening\n- **場所**: （なし）\n- **URL**: （なし）\n- **非公開**: いいえ\n\n**天気（玉名市）**\n\n- **観測時刻**: 2026-08-03T18:00\n- **天気**: 快晴\n- **気温**: 35.9°C\n- **湿度**: 47%\n- **風向**: 東南東\n- **風速**: 5.8 km/h\n- **降水量**: 0.0 mm\n- **データソース**: open-meteo\n\n**説明**\n\n<!-- practice-menu:v1\nwarmup: null\nitems:\n- type: set\n  group: null\n  segments:\n  - distance_m: 300\n  label: 300m 1本目 300m k/3:28\n- type: set\n  group: null\n  segments:\n  - distance_m: 300\n  label: 300m 2本目 300m k/3:22\n- type: set\n  group: null\n  segments:\n  - distance_m: 300\n  label: 300m 3本目 300m k/3:24\n- type: set\n  group: null\n  segments:\n  - distance_m: 300\n  label: 300m 4本目 300m k/3:23\n- type: set\n  group: null\n  segments:\n  - distance_m: 300\n  label: 300m 5本目 300m k/3:22\n-->\n\n各自アップ、300m5本、レスト70秒\n\n300m 1本目 300m k/3:28300m\n300m 2本目 300m k/3:22300m\n300m 3本目 300m k/3:24300m\n300m 4本目 300m k/3:23300m\n300m 5本目 300m k/3:22300m\n\n"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      },
+      "previous_chunk_id": "knowledge-47aa96fa94b90e2a116c5718",
+      "carry_forward": true
+    },
+    {
+      "id": "chunkqa-47aa96fa94b90e2a116c5718-2",
+      "chunk_id": "knowledge-353b4aa0f85f7b52df1a00cb",
+      "questions": [
+        "2026年8月3日のいだてん岱明夕練で、5本の間だけに70秒のレストを4回取ると合計何分？"
+      ],
+      "answer": "本と本の間だけの4回分なら、70秒×4で280秒、4分40秒です。メニューは300m5本、レスト70秒と記録されています。最後の1本後の休憩はこの計算に含めません。",
+      "sources": [
+        "calendar.md"
+      ],
+      "source_sha256": "4e10ff27be346fe94764558ee536a69abfb48eb448177bb1f6183db294818522",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "- **件名**: いだてん岱明夕練\n- **表示日**: 2026-08-03\n- **開始日**: 2026-08-03\n- **終了日**: 2026-08-03\n- **終日**: いいえ\n- **開始時刻**: 18:00\n- **終了時刻**: 19:30\n- **カテゴリ**: 予定\n- **ステータス**: done\n- **タグ**: ランニング, いだてん岱明練習, practice:daiming, session:evening\n- **場所**: （なし）\n- **URL**: （なし）\n- **非公開**: いいえ\n\n**天気（玉名市）**\n\n- **観測時刻**: 2026-08-03T18:00\n- **天気**: 快晴\n- **気温**: 35.9°C\n- **湿度**: 47%\n- **風向**: 東南東\n- **風速**: 5.8 km/h\n- **降水量**: 0.0 mm\n- **データソース**: open-meteo\n\n**説明**\n\n<!-- practice-menu:v1\nwarmup: null\nitems:\n- type: set\n  group: null\n  segments:\n  - distance_m: 300\n  label: 300m 1本目 300m k/3:28\n- type: set\n  group: null\n  segments:\n  - distance_m: 300\n  label: 300m 2本目 300m k/3:22\n- type: set\n  group: null\n  segments:\n  - distance_m: 300\n  label: 300m 3本目 300m k/3:24\n- type: set\n  group: null\n  segments:\n  - distance_m: 300\n  label: 300m 4本目 300m k/3:23\n- type: set\n  group: null\n  segments:\n  - distance_m: 300\n  label: 300m 5本目 300m k/3:22\n-->\n\n各自アップ、300m5本、レスト70秒\n\n300m 1本目 300m k/3:28300m\n300m 2本目 300m k/3:22300m\n300m 3本目 300m k/3:24300m\n300m 4本目 300m k/3:23300m\n300m 5本目 300m k/3:22300m\n\n"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      },
+      "previous_chunk_id": "knowledge-47aa96fa94b90e2a116c5718",
+      "carry_forward": true
+    },
+    {
+      "id": "chunkqa-47aa96fa94b90e2a116c5718-3",
+      "chunk_id": "knowledge-353b4aa0f85f7b52df1a00cb",
+      "questions": [
+        "2026年8月3日のいだてん岱明朝練と夕練は、予定の開始時刻が何時間離れている？"
+      ],
+      "answer": "朝練は8時、夕練は18時開始なので、開始時刻は10時間離れています。練習が10時間連続するという意味ではありません。",
+      "sources": [
+        "calendar.md"
+      ],
+      "source_sha256": "4e10ff27be346fe94764558ee536a69abfb48eb448177bb1f6183db294818522",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "- **件名**: いだてん岱明朝練\n- **表示日**: 2026-08-03\n- **開始日**: 2026-08-03\n- **終了日**: 2026-08-03\n- **終日**: いいえ\n- **開始時刻**: 08:00\n- **終了時刻**: 09:30\n- **カテゴリ**: 予定\n- **ステータス**: scheduled\n- **タグ**: ランニング, いだてん岱明練習, practice:daiming, session:morning\n- **場所**: （なし）\n- **URL**: （なし）\n- **非公開**: いいえ\n\n**天気（玉名市）**\n\n- **観測時刻**: 2026-08-03T08:00\n- **天気**: 晴れ\n- **気温**: 31.1°C\n- **湿度**: 68%\n- **風向**: 東北東\n- **風速**: 3.7 km/h\n- **降水量**: 0.0 mm\n- **データソース**: open-meteo\n\n**説明**\n\n動きづくり、男子2.5km×2、女子2km×2\n\n"
+        },
+        {
+          "kind": "quote",
+          "text": "- **件名**: いだてん岱明夕練\n- **表示日**: 2026-08-03\n- **開始日**: 2026-08-03\n- **終了日**: 2026-08-03\n- **終日**: いいえ\n- **開始時刻**: 18:00\n- **終了時刻**: 19:30\n- **カテゴリ**: 予定\n- **ステータス**: done\n- **タグ**: ランニング, いだてん岱明練習, practice:daiming, session:evening\n- **場所**: （なし）\n- **URL**: （なし）\n- **非公開**: いいえ\n\n**天気（玉名市）**\n\n- **観測時刻**: 2026-08-03T18:00\n- **天気**: 快晴\n- **気温**: 35.9°C\n- **湿度**: 47%\n- **風向**: 東南東\n- **風速**: 5.8 km/h\n- **降水量**: 0.0 mm\n- **データソース**: open-meteo\n\n**説明**\n\n<!-- practice-menu:v1\nwarmup: null\nitems:\n- type: set\n  group: null\n  segments:\n  - distance_m: 300\n  label: 300m 1本目 300m k/3:28\n- type: set\n  group: null\n  segments:\n  - distance_m: 300\n  label: 300m 2本目 300m k/3:22\n- type: set\n  group: null\n  segments:\n  - distance_m: 300\n  label: 300m 3本目 300m k/3:24\n- type: set\n  group: null\n  segments:\n  - distance_m: 300\n  label: 300m 4本目 300m k/3:23\n- type: set\n  group: null\n  segments:\n  - distance_m: 300\n  label: 300m 5本目 300m k/3:22\n-->\n\n各自アップ、300m5本、レスト70秒\n\n300m 1本目 300m k/3:28300m\n300m 2本目 300m k/3:22300m\n300m 3本目 300m k/3:24300m\n300m 4本目 300m k/3:23300m\n300m 5本目 300m k/3:22300m\n\n"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      },
+      "previous_chunk_id": "knowledge-47aa96fa94b90e2a116c5718",
+      "carry_forward": true
+    },
+    {
+      "id": "chunkqa-0a253bc90c8b31954ad3604e-3",
+      "chunk_id": "knowledge-3b0cc2d590b93f583fd52d31",
+      "questions": [
+        "2026年8月4日の小森と荒田は、カレンダーで同じ開始時刻？"
+      ],
+      "answer": "はい。小森と荒田は、どちらも2026年8月4日10時開始の予定として登録されています。",
+      "sources": [
+        "calendar.md"
+      ],
+      "source_sha256": "4e10ff27be346fe94764558ee536a69abfb48eb448177bb1f6183db294818522",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "- **件名**: 小森\n- **表示日**: 2026-08-04\n- **開始日**: 2026-08-04\n- **終了日**: 2026-08-04\n- **終日**: いいえ\n- **開始時刻**: 10:00\n- **終了時刻**: 13:00\n- **カテゴリ**: 予定\n- **ステータス**: scheduled\n- **タグ**: 会社\n- **場所**: （なし）\n- **URL**: （なし）\n- **非公開**: いいえ\n\n**説明**\n\n（なし）\n\n"
+        },
+        {
+          "kind": "quote",
+          "text": "- **件名**: 荒田\n- **表示日**: 2026-08-04\n- **開始日**: 2026-08-04\n- **終了日**: 2026-08-04\n- **終日**: いいえ\n- **開始時刻**: 10:00\n- **終了時刻**: 13:00\n- **カテゴリ**: 予定\n- **ステータス**: scheduled\n- **タグ**: 会社\n- **場所**: （なし）\n- **URL**: （なし）\n- **非公開**: いいえ\n\n**説明**\n\n（なし）\n\n"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      },
+      "previous_chunk_id": "knowledge-0a253bc90c8b31954ad3604e",
+      "carry_forward": true
+    },
+    {
+      "id": "chunkqa-00fb55727bd47acaaa1798c2-1",
+      "chunk_id": "knowledge-d3dc4d7f01a706c57db80e38",
+      "questions": [
+        "2026年8月7日のいだてん岱明夕練は、300mの疾走距離が男子と女子で何m違う？"
+      ],
+      "answer": "男子は300m7本で2,100m、女子は300m5本で1,500mです。疾走距離の差は600mです。各自ジョグの距離は含めません。",
+      "sources": [
+        "calendar.md"
+      ],
+      "source_sha256": "4e10ff27be346fe94764558ee536a69abfb48eb448177bb1f6183db294818522",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "- **件名**: いだてん岱明夕練\n- **表示日**: 2026-08-07\n- **開始日**: 2026-08-07\n- **終了日**: 2026-08-07\n- **終日**: いいえ\n- **開始時刻**: 18:00\n- **終了時刻**: 19:30\n- **カテゴリ**: 予定\n- **ステータス**: done\n- **タグ**: ランニング, いだてん岱明練習, practice:daiming, session:evening\n- **場所**: （なし）\n- **URL**: （なし）\n- **非公開**: いいえ\n\n**天気（玉名市）**\n\n- **観測時刻**: 2026-08-07T18:00\n- **天気**: 曇り\n- **気温**: 31.5°C\n- **湿度**: 61%\n- **風向**: 東北東\n- **風速**: 15.0 km/h\n- **降水量**: 0.0 mm\n- **データソース**: open-meteo\n\n**説明**\n\n各自ジョグ、300m（男子7本・女子5本）、間1分前後\n\n"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      },
+      "previous_chunk_id": "knowledge-00fb55727bd47acaaa1798c2",
+      "carry_forward": true
+    },
+    {
+      "id": "chunkqa-00fb55727bd47acaaa1798c2-2",
+      "chunk_id": "knowledge-d3dc4d7f01a706c57db80e38",
+      "questions": [
+        "2026年8月8日のいだてん岱明夕練は、男子と女子で周回数が何周違う？"
+      ],
+      "answer": "男子14周、女子12周と記録されており、男子が2周多いメニューです。周回のほかに動きづくりと流し2本も記載されています。",
+      "sources": [
+        "calendar.md"
+      ],
+      "source_sha256": "4e10ff27be346fe94764558ee536a69abfb48eb448177bb1f6183db294818522",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "- **件名**: いだてん岱明夕練\n- **表示日**: 2026-08-08\n- **開始日**: 2026-08-08\n- **終了日**: 2026-08-08\n- **終日**: いいえ\n- **開始時刻**: 18:00\n- **終了時刻**: 19:30\n- **カテゴリ**: 予定\n- **ステータス**: scheduled\n- **タグ**: ランニング, いだてん岱明練習, practice:daiming, session:evening\n- **場所**: （なし）\n- **URL**: （なし）\n- **非公開**: いいえ\n\n**天気（玉名市）**\n\n- **観測時刻**: 2026-08-08T18:00\n- **天気**: 一部曇り\n- **気温**: 31.1°C\n- **湿度**: 49%\n- **風向**: 東北東\n- **風速**: 15.0 km/h\n- **降水量**: 0.0 mm\n- **データソース**: open-meteo\n\n**説明**\n\n動きづくり、男子14周・女子12周、流し2本\n\n"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      },
+      "previous_chunk_id": "knowledge-00fb55727bd47acaaa1798c2",
+      "carry_forward": true
+    },
+    {
+      "id": "chunkqa-00fb55727bd47acaaa1798c2-3",
+      "chunk_id": "knowledge-d3dc4d7f01a706c57db80e38",
+      "questions": [
+        "2026年8月8日の自分の練習といだてん岱明夕練は、予定の開始時刻がどのくらい離れている？"
+      ],
+      "answer": "自分の練習は16時30分、いだてん岱明夕練は18時開始で、開始時刻は1時間30分離れています。",
+      "sources": [
+        "calendar.md"
+      ],
+      "source_sha256": "4e10ff27be346fe94764558ee536a69abfb48eb448177bb1f6183db294818522",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "- **件名**: 自分の練習\n- **表示日**: 2026-08-08\n- **開始日**: 2026-08-08\n- **終了日**: 2026-08-08\n- **終日**: いいえ\n- **開始時刻**: 16:30\n- **終了時刻**: 17:30\n- **カテゴリ**: 予定\n- **ステータス**: scheduled\n- **タグ**: ランニング, 自分の練習, practice:personal\n- **場所**: （なし）\n- **URL**: （なし）\n- **非公開**: いいえ\n\n**説明**\n\n45/15を30本（疾走平均k/3:50）\n\n"
+        },
+        {
+          "kind": "quote",
+          "text": "- **件名**: いだてん岱明夕練\n- **表示日**: 2026-08-08\n- **開始日**: 2026-08-08\n- **終了日**: 2026-08-08\n- **終日**: いいえ\n- **開始時刻**: 18:00\n- **終了時刻**: 19:30\n- **カテゴリ**: 予定\n- **ステータス**: scheduled\n- **タグ**: ランニング, いだてん岱明練習, practice:daiming, session:evening\n- **場所**: （なし）\n- **URL**: （なし）\n- **非公開**: いいえ\n\n**天気（玉名市）**\n\n- **観測時刻**: 2026-08-08T18:00\n- **天気**: 一部曇り\n- **気温**: 31.1°C\n- **湿度**: 49%\n- **風向**: 東北東\n- **風速**: 15.0 km/h\n- **降水量**: 0.0 mm\n- **データソース**: open-meteo\n\n**説明**\n\n動きづくり、男子14周・女子12周、流し2本\n\n"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      },
+      "previous_chunk_id": "knowledge-00fb55727bd47acaaa1798c2",
+      "carry_forward": true
+    },
+    {
+      "id": "chunkqa-c0825c814094e42d359eaa89-1",
+      "chunk_id": "knowledge-46448cb8b4ac814550fb22ba",
+      "questions": [
+        "2026年8月10日のいだてん岱明夕練は、男子・村上と他の女子で疾走距離が何m違う？"
+      ],
+      "answer": "男子と村上は600m2本で1,200m、村上以外の女子は300m2本で600mです。疾走部分の合計は600m違います。各自ジョグは含めません。",
+      "sources": [
+        "calendar.md"
+      ],
+      "source_sha256": "4e10ff27be346fe94764558ee536a69abfb48eb448177bb1f6183db294818522",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "- **件名**: いだてん岱明夕練\n- **表示日**: 2026-08-10\n- **開始日**: 2026-08-10\n- **終了日**: 2026-08-10\n- **終日**: いいえ\n- **開始時刻**: 18:00\n- **終了時刻**: 19:30\n- **カテゴリ**: 予定\n- **ステータス**: scheduled\n- **タグ**: ランニング, いだてん岱明練習, practice:daiming, session:evening\n- **場所**: （なし）\n- **URL**: （なし）\n- **非公開**: いいえ\n\n**天気（玉名市）**\n\n- **観測時刻**: 2026-08-10T18:00\n- **天気**: 曇り\n- **気温**: 32.3°C\n- **湿度**: 51%\n- **風向**: 北西\n- **風速**: 4.2 km/h\n- **降水量**: 0.0 mm\n- **データソース**: open-meteo\n\n**説明**\n\n各自ジョグ、男子と村上は600m2本、村上以外の女子は300m2本（目標1500mペース+10秒/km）\n\n1500mRP+10秒/km\n\n"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      },
+      "previous_chunk_id": "knowledge-c0825c814094e42d359eaa89",
+      "carry_forward": true
+    },
+    {
+      "id": "chunkqa-c0825c814094e42d359eaa89-2",
+      "chunk_id": "knowledge-46448cb8b4ac814550fb22ba",
+      "questions": [
+        "2026年8月10日の杉永と川上・荒田は、予定の開始時刻が何時間違う？"
+      ],
+      "answer": "杉永は9時、川上と荒田は10時開始の予定なので、杉永が1時間早い時刻です。",
+      "sources": [
+        "calendar.md"
+      ],
+      "source_sha256": "4e10ff27be346fe94764558ee536a69abfb48eb448177bb1f6183db294818522",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "- **件名**: 杉永\n- **表示日**: 2026-08-10\n- **開始日**: 2026-08-10\n- **終了日**: 2026-08-10\n- **終日**: いいえ\n- **開始時刻**: 09:00\n- **終了時刻**: 12:00\n- **カテゴリ**: 予定\n- **ステータス**: scheduled\n- **タグ**: 会社\n- **場所**: （なし）\n- **URL**: （なし）\n- **非公開**: いいえ\n\n**説明**\n\n（なし）\n\n"
+        },
+        {
+          "kind": "quote",
+          "text": "- **件名**: 川上\n- **表示日**: 2026-08-10\n- **開始日**: 2026-08-10\n- **終了日**: 2026-08-10\n- **終日**: いいえ\n- **開始時刻**: 10:00\n- **終了時刻**: 17:00\n- **カテゴリ**: 予定\n- **ステータス**: scheduled\n- **タグ**: 会社\n- **場所**: （なし）\n- **URL**: （なし）\n- **非公開**: いいえ\n\n**説明**\n\n（なし）\n\n"
+        },
+        {
+          "kind": "quote",
+          "text": "- **件名**: 荒田\n- **表示日**: 2026-08-10\n- **開始日**: 2026-08-10\n- **終了日**: 2026-08-10\n- **終日**: いいえ\n- **開始時刻**: 10:00\n- **終了時刻**: 13:00\n- **カテゴリ**: 予定\n- **ステータス**: scheduled\n- **タグ**: 会社\n- **場所**: （なし）\n- **URL**: （なし）\n- **非公開**: いいえ\n\n**説明**\n\n（なし）\n\n"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      },
+      "previous_chunk_id": "knowledge-c0825c814094e42d359eaa89",
+      "carry_forward": true
+    },
+    {
+      "id": "chunkqa-c0825c814094e42d359eaa89-3",
+      "chunk_id": "knowledge-46448cb8b4ac814550fb22ba",
+      "questions": [
+        "2026年の山の日には、いだてん岱明の朝練と夕練は両方休みの予定？"
+      ],
+      "answer": "はい。2026年8月11日の山の日には、朝練休みと夕練休みの両方が終日予定として登録されています。",
+      "sources": [
+        "calendar.md"
+      ],
+      "source_sha256": "4e10ff27be346fe94764558ee536a69abfb48eb448177bb1f6183db294818522",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "- **件名**: 山の日\n- **表示日**: 2026-08-11\n- **開始日**: 2026-08-11\n- **終了日**: 2026-08-11\n- **終日**: はい\n- **開始時刻**: （なし）\n- **終了時刻**: （なし）\n- **カテゴリ**: 祝日\n- **ステータス**: （なし）\n- **タグ**: holiday\n- **場所**: （なし）\n- **URL**: （なし）\n- **非公開**: いいえ\n\n**説明**\n\n日本の祝日\n\n"
+        },
+        {
+          "kind": "quote",
+          "text": "- **件名**: いだてん岱明朝練休み\n- **表示日**: 2026-08-11\n- **開始日**: 2026-08-11\n- **終了日**: 2026-08-11\n- **終日**: はい\n- **開始時刻**: （なし）\n- **終了時刻**: （なし）\n- **カテゴリ**: 予定\n- **ステータス**: scheduled\n- **タグ**: ランニング, いだてん岱明練習, practice:daiming, session:morning\n- **場所**: （なし）\n- **URL**: （なし）\n- **非公開**: いいえ\n\n**天気（玉名市）**\n\n- **観測時刻**: 2026-08-11T08:00\n- **天気**: 曇り\n- **気温**: 28.4°C\n- **湿度**: 67%\n- **風向**: 東北東\n- **風速**: 3.5 km/h\n- **降水量**: 0.0 mm\n- **データソース**: open-meteo\n\n**説明**\n\n（なし）\n\n"
+        },
+        {
+          "kind": "quote",
+          "text": "- **件名**: いだてん岱明夕練休み\n- **表示日**: 2026-08-11\n- **開始日**: 2026-08-11\n- **終了日**: 2026-08-11\n- **終日**: はい\n- **開始時刻**: （なし）\n- **終了時刻**: （なし）\n- **カテゴリ**: 予定\n- **ステータス**: scheduled\n- **タグ**: ランニング, いだてん岱明練習, practice:daiming, session:evening\n- **場所**: （なし）\n- **URL**: （なし）\n- **非公開**: いいえ\n\n**天気（玉名市）**\n\n- **観測時刻**: 2026-08-11T18:00\n- **天気**: 快晴\n- **気温**: 30.9°C\n- **湿度**: 45%\n- **風向**: 北北西\n- **風速**: 21.1 km/h\n- **降水量**: 0.0 mm\n- **データソース**: open-meteo\n\n**説明**\n\n（なし）\n\n"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      },
+      "previous_chunk_id": "knowledge-c0825c814094e42d359eaa89",
+      "carry_forward": true
+    },
+    {
+      "id": "chunkqa-87797960368bf436455ee296-1",
+      "chunk_id": "knowledge-6ff865efa6f6ac75d3b0f72c",
+      "questions": [
+        "2026年8月14日のジョグメニューで、3.36kmと2.80kmの距離差は何m？"
+      ],
+      "answer": "3.36kmと2.80kmの差は0.56km、560mです。メモではそれぞれ6周と5周で、どちらも4分46秒/kmのペースが記載されています。",
+      "sources": [
+        "calendar.md"
+      ],
+      "source_sha256": "4e10ff27be346fe94764558ee536a69abfb48eb448177bb1f6183db294818522",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "- **件名**: いだてん岱明夕練\n- **表示日**: 2026-08-14\n- **開始日**: 2026-08-14\n- **終了日**: 2026-08-14\n- **終日**: いいえ\n- **開始時刻**: 18:00\n- **終了時刻**: 19:30\n- **カテゴリ**: 予定\n- **ステータス**: scheduled\n- **タグ**: ランニング, いだてん岱明練習, practice:daiming, session:evening\n- **場所**: （なし）\n- **URL**: （なし）\n- **非公開**: いいえ\n\n**天気（玉名市）**\n\n- **観測時刻**: 2026-08-14T18:00\n- **天気**: 曇り\n- **気温**: 31.4°C\n- **湿度**: 49%\n- **風向**: 西南西\n- **風速**: 12.0 km/h\n- **降水量**: 0.0 mm\n- **データソース**: open-meteo\n\n**説明**\n\n<!-- practice-menu:v1\nwarmup: 動きづくり\nitems:\n- type: jog\n  group: null\n  laps: 6\n  distance_km: 3.36\n  pace: k/4:46\n- type: jog\n  group: null\n  laps: 5\n  distance_km: 2.8\n  pace: k/4:46\n- type: set\n  group: null\n  segments:\n  - distance_m: 300\n  label: 900m （300m57秒組） 900m k/3:10\n- type: set\n  group: null\n  segments:\n  - distance_m: 300\n  label: 900m （300m63秒組） 900m k/3:30\n- type: set\n  group: null\n  segments:\n  - distance_m: 300\n  label: 900m （300m69秒組） 900m k/3:50\n-->\n\n動きづくり\n\nジョグ 3.36km (6周) k/4:46\nジョグ 2.80km (5周) k/4:46\n900m （300m57秒組） 900m k/3:10300m\n900m （300m63秒組） 900m k/3:30300m\n900m （300m69秒組） 900m k/3:50300m\n\n"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      },
+      "previous_chunk_id": "knowledge-87797960368bf436455ee296",
+      "carry_forward": true
+    },
+    {
+      "id": "chunkqa-87797960368bf436455ee296-2",
+      "chunk_id": "knowledge-6ff865efa6f6ac75d3b0f72c",
+      "questions": [
+        "2026年8月14日の自分の練習といだてん岱明夕練は、予定の開始時刻が何時間違う？"
+      ],
+      "answer": "自分の練習は17時、いだてん岱明夕練は18時開始で、開始時刻の差は1時間です。",
+      "sources": [
+        "calendar.md"
+      ],
+      "source_sha256": "4e10ff27be346fe94764558ee536a69abfb48eb448177bb1f6183db294818522",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "- **件名**: 自分の練習\n- **表示日**: 2026-08-14\n- **開始日**: 2026-08-14\n- **終了日**: 2026-08-14\n- **終日**: いいえ\n- **開始時刻**: 17:00\n- **終了時刻**: 17:45\n- **カテゴリ**: 予定\n- **ステータス**: done\n- **タグ**: ランニング, 自分の練習, practice:personal\n- **場所**: （なし）\n- **URL**: （なし）\n- **非公開**: いいえ\n\n**説明**\n\n45/15を30本（疾走ペース平均k/3:37）\n\n"
+        },
+        {
+          "kind": "quote",
+          "text": "- **件名**: いだてん岱明夕練\n- **表示日**: 2026-08-14\n- **開始日**: 2026-08-14\n- **終了日**: 2026-08-14\n- **終日**: いいえ\n- **開始時刻**: 18:00\n- **終了時刻**: 19:30\n- **カテゴリ**: 予定\n- **ステータス**: scheduled\n- **タグ**: ランニング, いだてん岱明練習, practice:daiming, session:evening\n- **場所**: （なし）\n- **URL**: （なし）\n- **非公開**: いいえ\n\n**天気（玉名市）**\n\n- **観測時刻**: 2026-08-14T18:00\n- **天気**: 曇り\n- **気温**: 31.4°C\n- **湿度**: 49%\n- **風向**: 西南西\n- **風速**: 12.0 km/h\n- **降水量**: 0.0 mm\n- **データソース**: open-meteo\n\n**説明**\n\n<!-- practice-menu:v1\nwarmup: 動きづくり\nitems:\n- type: jog\n  group: null\n  laps: 6\n  distance_km: 3.36\n  pace: k/4:46\n- type: jog\n  group: null\n  laps: 5\n  distance_km: 2.8\n  pace: k/4:46\n- type: set\n  group: null\n  segments:\n  - distance_m: 300\n  label: 900m （300m57秒組） 900m k/3:10\n- type: set\n  group: null\n  segments:\n  - distance_m: 300\n  label: 900m （300m63秒組） 900m k/3:30\n- type: set\n  group: null\n  segments:\n  - distance_m: 300\n  label: 900m （300m69秒組） 900m k/3:50\n-->\n\n動きづくり\n\nジョグ 3.36km (6周) k/4:46\nジョグ 2.80km (5周) k/4:46\n900m （300m57秒組） 900m k/3:10300m\n900m （300m63秒組） 900m k/3:30300m\n900m （300m69秒組） 900m k/3:50300m\n\n"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      },
+      "previous_chunk_id": "knowledge-87797960368bf436455ee296",
+      "carry_forward": true
+    },
+    {
+      "id": "chunkqa-64a2addbe5615a22d149dbe7-1",
+      "chunk_id": "knowledge-d4683c915a121f97fbc18d26",
+      "questions": [
+        "2026年8月15日のいだてん岱明夕練は、ジョグと300m3本を合わせると男女それぞれ何km？"
+      ],
+      "answer": "ジョグと300m3本の疾走部分を合わせると、男子は3.36km＋0.90kmで4.26km、女子は2.80km＋0.90kmで3.70kmです。動きづくりやレスト中の移動は含めません。",
+      "sources": [
+        "calendar.md"
+      ],
+      "source_sha256": "4e10ff27be346fe94764558ee536a69abfb48eb448177bb1f6183db294818522",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "- **件名**: いだてん岱明夕練\n- **表示日**: 2026-08-15\n- **開始日**: 2026-08-15\n- **終了日**: 2026-08-15\n- **終日**: いいえ\n- **開始時刻**: 18:00\n- **終了時刻**: 19:30\n- **カテゴリ**: 予定\n- **ステータス**: scheduled\n- **タグ**: ランニング, いだてん岱明練習, practice:daiming, session:evening\n- **場所**: （なし）\n- **URL**: （なし）\n- **非公開**: いいえ\n\n**天気（玉名市）**\n\n- **観測時刻**: 2026-08-15T18:00\n- **天気**: 曇り\n- **気温**: 31.0°C\n- **湿度**: 50%\n- **風向**: 西\n- **風速**: 9.9 km/h\n- **降水量**: 0.0 mm\n- **データソース**: open-meteo\n\n**説明**\n\n動きづくり\n\nジョグ 男子 3.36km (6周) k/4:45\nジョグ 女子 2.8km (5周) k/4:45\n\n300m×3（1500mRP、レスト70秒）\n\n"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      },
+      "previous_chunk_id": "knowledge-64a2addbe5615a22d149dbe7",
+      "carry_forward": true
+    },
+    {
+      "id": "chunkqa-64a2addbe5615a22d149dbe7-2",
+      "chunk_id": "knowledge-d4683c915a121f97fbc18d26",
+      "questions": [
+        "2026年8月17日のいだてん岱明夕練で、200m10本の疾走距離は合計何km？"
+      ],
+      "answer": "200mを10本なので、疾走部分は合計2,000m、2kmです。メモにはレスト15秒、男子3分30秒〜3分40秒/km、女子4分〜4分10秒/kmと記載されています。",
+      "sources": [
+        "calendar.md"
+      ],
+      "source_sha256": "4e10ff27be346fe94764558ee536a69abfb48eb448177bb1f6183db294818522",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "- **件名**: いだてん岱明夕練\n- **表示日**: 2026-08-17\n- **開始日**: 2026-08-17\n- **終了日**: 2026-08-17\n- **終日**: いいえ\n- **開始時刻**: 18:00\n- **終了時刻**: 19:30\n- **カテゴリ**: 予定\n- **ステータス**: scheduled\n- **タグ**: ランニング, いだてん岱明練習, practice:daiming, session:evening\n- **場所**: （なし）\n- **URL**: （なし）\n- **非公開**: いいえ\n\n**天気（玉名市）**\n\n- **観測時刻**: 2026-08-17T18:00\n- **天気**: 霧雨（弱）\n- **気温**: 30.1°C\n- **湿度**: 65%\n- **風向**: 西北西\n- **風速**: 10.8 km/h\n- **降水量**: 0.2 mm\n- **データソース**: open-meteo\n\n**説明**\n\n各自ジョグ200m10本（レスト15秒）\n男子 k/3:30〜k/3:40\n女子 k/4:00〜k/4:10\n\n"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      },
+      "previous_chunk_id": "knowledge-64a2addbe5615a22d149dbe7",
+      "carry_forward": true
+    },
+    {
+      "id": "chunkqa-64a2addbe5615a22d149dbe7-3",
+      "chunk_id": "knowledge-d4683c915a121f97fbc18d26",
+      "questions": [
+        "2026年8月17日の200mメニューでは、男子と女子の設定ペース帯は1kmあたり何秒ずれる？"
+      ],
+      "answer": "男子は3分30秒〜3分40秒/km、女子は4分〜4分10秒/kmです。速い側同士・遅い側同士を比べると、女子の設定がどちらも1kmあたり30秒遅いペースです。",
+      "sources": [
+        "calendar.md"
+      ],
+      "source_sha256": "4e10ff27be346fe94764558ee536a69abfb48eb448177bb1f6183db294818522",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "- **件名**: いだてん岱明夕練\n- **表示日**: 2026-08-17\n- **開始日**: 2026-08-17\n- **終了日**: 2026-08-17\n- **終日**: いいえ\n- **開始時刻**: 18:00\n- **終了時刻**: 19:30\n- **カテゴリ**: 予定\n- **ステータス**: scheduled\n- **タグ**: ランニング, いだてん岱明練習, practice:daiming, session:evening\n- **場所**: （なし）\n- **URL**: （なし）\n- **非公開**: いいえ\n\n**天気（玉名市）**\n\n- **観測時刻**: 2026-08-17T18:00\n- **天気**: 霧雨（弱）\n- **気温**: 30.1°C\n- **湿度**: 65%\n- **風向**: 西北西\n- **風速**: 10.8 km/h\n- **降水量**: 0.2 mm\n- **データソース**: open-meteo\n\n**説明**\n\n各自ジョグ200m10本（レスト15秒）\n男子 k/3:30〜k/3:40\n女子 k/4:00〜k/4:10\n\n"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      },
+      "previous_chunk_id": "knowledge-64a2addbe5615a22d149dbe7",
+      "carry_forward": true
+    },
+    {
+      "id": "chunkqa-eabfa70db1cfe95be0566042-1",
+      "chunk_id": "knowledge-0765d639dcf4dc27760811c1",
+      "questions": [
+        "2026年8月19日のいだてん岱明夕練は、ジョグと500m2本を合わせると男女それぞれ何km？"
+      ],
+      "answer": "男子は3.36km＋1kmで4.36km、女子は2.80km＋1kmで3.80kmです。動きづくりやレスト中の移動を除く、記載されたジョグと疾走部分の合計です。",
+      "sources": [
+        "calendar.md"
+      ],
+      "source_sha256": "4e10ff27be346fe94764558ee536a69abfb48eb448177bb1f6183db294818522",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "- **件名**: いだてん岱明夕練\n- **表示日**: 2026-08-19\n- **開始日**: 2026-08-19\n- **終了日**: 2026-08-19\n- **終日**: いいえ\n- **開始時刻**: 18:00\n- **終了時刻**: 19:30\n- **カテゴリ**: 予定\n- **ステータス**: scheduled\n- **タグ**: ランニング, いだてん岱明練習, practice:daiming, session:evening\n- **場所**: （なし）\n- **URL**: （なし）\n- **非公開**: いいえ\n\n**天気（玉名市）**\n\n- **観測時刻**: 2026-08-19T18:00\n- **天気**: 一部曇り\n- **気温**: 32.1°C\n- **湿度**: 52%\n- **風向**: 南\n- **風速**: 3.3 km/h\n- **降水量**: 0.0 mm\n- **データソース**: open-meteo\n\n**説明**\n\n動きづくり\n\n欠席者 田中\n\nジョグ 男子 3.36km (6周) k/4:49\nジョグ 女子 2.80km (5周) k/4:49\n500m×2（1500mRP）、レスト7分\n\n"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      },
+      "previous_chunk_id": "knowledge-eabfa70db1cfe95be0566042",
+      "carry_forward": true
+    },
+    {
+      "id": "chunkqa-dff99228b7dc08072b1b1024-1",
+      "chunk_id": "knowledge-1b9b931230cce86f5f0510d4",
+      "questions": [
+        "2026年8月22日のいだてん岱明夕練は、ジョグと900m1本を合わせると男女それぞれ何km？"
+      ],
+      "answer": "男子は3.36km＋0.90kmで4.26km、女子は2.80km＋0.90kmで3.70kmです。動きづくりなどを除き、記載されたジョグと900m1本を合計した距離です。",
+      "sources": [
+        "calendar.md"
+      ],
+      "source_sha256": "4e10ff27be346fe94764558ee536a69abfb48eb448177bb1f6183db294818522",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "- **件名**: いだてん岱明夕練\n- **表示日**: 2026-08-22\n- **開始日**: 2026-08-22\n- **終了日**: 2026-08-22\n- **終日**: いいえ\n- **開始時刻**: 18:00\n- **終了時刻**: 19:30\n- **カテゴリ**: 予定\n- **ステータス**: scheduled\n- **タグ**: ランニング, いだてん岱明練習, practice:daiming, session:evening\n- **場所**: （なし）\n- **URL**: （なし）\n- **非公開**: いいえ\n\n**天気（玉名市）**\n\n- **観測時刻**: 2026-08-22T18:00\n- **天気**: 霧雨（中）\n- **気温**: 30.1°C\n- **湿度**: 74%\n- **風向**: 西南西\n- **風速**: 6.6 km/h\n- **降水量**: 0.9 mm\n- **データソース**: open-meteo\n\n**説明**\n\n動きづくり\n\nジョグ 男子 3.36km (6周) k/4:42\nジョグ 女子 2.80km (5周) k/4:42\n900m×1（1500mRP〜RP+10秒/km）\n\n切上げ\n- 翌日が記録会 → 追い込み禁止。本数を増やさない\n- 雨が強い / 雷 → 短縮または中止\n900mは1500mRP〜RP+10秒/km。1本のみ。追い込み禁止。\n\n"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      },
+      "previous_chunk_id": "knowledge-dff99228b7dc08072b1b1024",
+      "carry_forward": true
+    },
+    {
+      "id": "chunkqa-dff99228b7dc08072b1b1024-2",
+      "chunk_id": "knowledge-1b9b931230cce86f5f0510d4",
+      "questions": [
+        "2026年8月22日の900m刺激は、翌日が記録会なら本数を増やしてよいメニュー？"
+      ],
+      "answer": "本数を増やさず、900mは1本のみです。メモでは翌日が記録会なので追い込み禁止、設定は1500mのレースペース〜それより1kmあたり10秒遅いペースとされています。",
+      "sources": [
+        "calendar.md"
+      ],
+      "source_sha256": "4e10ff27be346fe94764558ee536a69abfb48eb448177bb1f6183db294818522",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "- **件名**: いだてん岱明夕練\n- **表示日**: 2026-08-22\n- **開始日**: 2026-08-22\n- **終了日**: 2026-08-22\n- **終日**: いいえ\n- **開始時刻**: 18:00\n- **終了時刻**: 19:30\n- **カテゴリ**: 予定\n- **ステータス**: scheduled\n- **タグ**: ランニング, いだてん岱明練習, practice:daiming, session:evening\n- **場所**: （なし）\n- **URL**: （なし）\n- **非公開**: いいえ\n\n**天気（玉名市）**\n\n- **観測時刻**: 2026-08-22T18:00\n- **天気**: 霧雨（中）\n- **気温**: 30.1°C\n- **湿度**: 74%\n- **風向**: 西南西\n- **風速**: 6.6 km/h\n- **降水量**: 0.9 mm\n- **データソース**: open-meteo\n\n**説明**\n\n動きづくり\n\nジョグ 男子 3.36km (6周) k/4:42\nジョグ 女子 2.80km (5周) k/4:42\n900m×1（1500mRP〜RP+10秒/km）\n\n切上げ\n- 翌日が記録会 → 追い込み禁止。本数を増やさない\n- 雨が強い / 雷 → 短縮または中止\n900mは1500mRP〜RP+10秒/km。1本のみ。追い込み禁止。\n\n"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      },
+      "previous_chunk_id": "knowledge-dff99228b7dc08072b1b1024",
+      "carry_forward": true
+    },
+    {
+      "id": "chunkqa-069f4cebab0ec631facbaf4d-1",
+      "chunk_id": "knowledge-65d28c81bb7184a964a1d9d5",
+      "questions": [
+        "2026年8月24日のいだてん岱明夕練は、300m2本の疾走距離が合計何m？"
+      ],
+      "answer": "300mを2本なので、疾走部分は合計600mです。メモでは800mのレースペース、レスト2分と記載されています。各自アップは含めません。",
+      "sources": [
+        "calendar.md"
+      ],
+      "source_sha256": "4e10ff27be346fe94764558ee536a69abfb48eb448177bb1f6183db294818522",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "- **件名**: いだてん岱明夕練\n- **表示日**: 2026-08-24\n- **開始日**: 2026-08-24\n- **終了日**: 2026-08-24\n- **終日**: いいえ\n- **開始時刻**: 18:00\n- **終了時刻**: 19:30\n- **カテゴリ**: 予定\n- **ステータス**: scheduled\n- **タグ**: ランニング, いだてん岱明練習, practice:daiming, session:evening\n- **場所**: （なし）\n- **URL**: （なし）\n- **非公開**: いいえ\n\n**天気（玉名市）**\n\n- **観測時刻**: 2026-08-24T18:00\n- **天気**: 晴れ\n- **気温**: 31.1°C\n- **湿度**: 68%\n- **風向**: 西南西\n- **風速**: 9.8 km/h\n- **降水量**: 0.0 mm\n- **データソース**: open-meteo\n\n**説明**\n\n<!-- practice-menu:v1\nwarmup: null\nitems:\n- type: interval\n  distance_m: 300\n  reps: '2'\n  intensity: RP\n  rest_sec: 120\n-->\n\n各自アップ、300m×2本（800mRP、レスト2分）\n\n300m×2（800mRP）\n\n"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      },
+      "previous_chunk_id": "knowledge-069f4cebab0ec631facbaf4d",
+      "carry_forward": true
+    },
+    {
+      "id": "chunkqa-069f4cebab0ec631facbaf4d-3",
+      "chunk_id": "knowledge-65d28c81bb7184a964a1d9d5",
+      "questions": [
+        "2026年8月25日の石原と小森・川上は、予定の開始時刻が何時間違う？"
+      ],
+      "answer": "石原は9時、小森と川上は10時開始なので、石原が1時間早い予定です。",
+      "sources": [
+        "calendar.md"
+      ],
+      "source_sha256": "4e10ff27be346fe94764558ee536a69abfb48eb448177bb1f6183db294818522",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "- **件名**: 石原\n- **表示日**: 2026-08-25\n- **開始日**: 2026-08-25\n- **終了日**: 2026-08-25\n- **終日**: いいえ\n- **開始時刻**: 09:00\n- **終了時刻**: 12:00\n- **カテゴリ**: 予定\n- **ステータス**: scheduled\n- **タグ**: 会社\n- **場所**: （なし）\n- **URL**: （なし）\n- **非公開**: いいえ\n\n**説明**\n\n（なし）\n\n"
+        },
+        {
+          "kind": "quote",
+          "text": "- **件名**: 小森\n- **表示日**: 2026-08-25\n- **開始日**: 2026-08-25\n- **終了日**: 2026-08-25\n- **終日**: いいえ\n- **開始時刻**: 10:00\n- **終了時刻**: 15:00\n- **カテゴリ**: 予定\n- **ステータス**: scheduled\n- **タグ**: 会社\n- **場所**: （なし）\n- **URL**: （なし）\n- **非公開**: いいえ\n\n**説明**\n\n（なし）\n\n"
+        },
+        {
+          "kind": "quote",
+          "text": "- **件名**: 川上\n- **表示日**: 2026-08-25\n- **開始日**: 2026-08-25\n- **終了日**: 2026-08-25\n- **終日**: いいえ\n- **開始時刻**: 10:00\n- **終了時刻**: 17:00\n- **カテゴリ**: 予定\n- **ステータス**: scheduled\n- **タグ**: 会社\n- **場所**: （なし）\n- **URL**: （なし）\n- **非公開**: いいえ\n\n**説明**\n\n（なし）\n\n"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      },
+      "previous_chunk_id": "knowledge-069f4cebab0ec631facbaf4d",
+      "carry_forward": true
+    },
+    {
+      "id": "chunkqa-da513a5c6fa4efd5d6ecf73d-1",
+      "chunk_id": "knowledge-65d28c81bb7184a964a1d9d5",
+      "questions": [
+        "2026年8月26日のいだてん岱明夕練では、男子と女子のジョグの設定ペースは1kmあたり何秒違う？"
+      ],
+      "answer": "男子は4分50秒/km、女子は5分/kmと記録されており、男子の設定が1kmあたり10秒速いペースです。ジョグ距離は男子3.36km、女子2.8kmです。",
+      "sources": [
+        "calendar.md"
+      ],
+      "source_sha256": "4e10ff27be346fe94764558ee536a69abfb48eb448177bb1f6183db294818522",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "- **件名**: いだてん岱明夕練\n- **表示日**: 2026-08-26\n- **開始日**: 2026-08-26\n- **終了日**: 2026-08-26\n- **終日**: いいえ\n- **開始時刻**: 18:00\n- **終了時刻**: 19:30\n- **カテゴリ**: 予定\n- **ステータス**: scheduled\n- **タグ**: ランニング, いだてん岱明練習, practice:daiming, session:evening\n- **場所**: （なし）\n- **URL**: （なし）\n- **非公開**: いいえ\n\n**天気（玉名市）**\n\n- **観測時刻**: 2026-08-26T18:00\n- **天気**: 一部曇り\n- **気温**: 32.9°C\n- **湿度**: 57%\n- **風向**: 西\n- **風速**: 6.0 km/h\n- **降水量**: 0.0 mm\n- **データソース**: open-meteo\n\n**説明**\n\n動きづくり\n\nジョグ 男子 3.36km (6周) k/4:50\nジョグ 女子 2.8km (5周) k/5:00\n900m×1（GZ）\n\n軽いポイント。「最後だから追い込む」禁止\n\n"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      },
+      "previous_chunk_id": "knowledge-da513a5c6fa4efd5d6ecf73d",
+      "carry_forward": true
+    },
+    {
+      "id": "chunkqa-da513a5c6fa4efd5d6ecf73d-2",
+      "chunk_id": "knowledge-b1e7b4f5caae520c192a221d",
+      "questions": [
+        "2026年玉名郡ナイターの男子1500mで、松野凛空と田上颯人の記録差は？"
+      ],
+      "answer": "2026年8月29日の結果メモでは、松野凛空は4分29秒8、田上颯人は4分33秒6です。松野が3.8秒速い記録です。",
+      "sources": [
+        "calendar.md"
+      ],
+      "source_sha256": "4e10ff27be346fe94764558ee536a69abfb48eb448177bb1f6183db294818522",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "- **件名**: 玉名郡ナイター中・長距離記録会\n- **表示日**: 2026-08-29\n- **開始日**: 2026-08-29\n- **終了日**: 2026-08-29\n- **終日**: はい\n- **開始時刻**: （なし）\n- **終了時刻**: （なし）\n- **カテゴリ**: 予定\n- **ステータス**: done\n- **タグ**: ランニング\n- **場所**: 和水町総合グラウンド\n- **URL**: （なし）\n- **非公開**: いいえ\n\n**説明**\n\n玉名郡ナイター中・長距離記録会\n集合 16:00 和水町総合グラウンド\n所属 岱明中学校 / 責任者 熊澤正博\n\n1500m 男子\n松野凛空 3年 4:29.8 1位\n田上颯人 2年 4:33.6 3位 SB\n山本哲瑠 2年 4:40.5\n中尾快叶 1年 5:10.1\n松本空羽 2年 5:21.1\n南本幸治郎 1年 5:24.8\n田中智稀 2年 5:28.6\n嶋田匠眞 1年 5:37.6 SB\n\n1500m 女子\n高田麻由 3年 5:28.7\n山﨑莉奈 1年 5:28.8 SB\n角田亜美 2年 5:36.8\n増岡里俐 2年 5:55.5\n\n800m 女子\n塚原優衣 2年 2:51.5\n柴尾希乃 2年 DNS\n\n"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      },
+      "previous_chunk_id": "knowledge-da513a5c6fa4efd5d6ecf73d",
+      "carry_forward": true
+    },
+    {
+      "id": "chunkqa-da513a5c6fa4efd5d6ecf73d-3",
+      "chunk_id": "knowledge-b1e7b4f5caae520c192a221d",
+      "questions": [
+        "2026年玉名郡ナイターの女子1500mで、高田麻由と山﨑莉奈の記録差は？"
+      ],
+      "answer": "2026年8月29日の結果メモでは、高田麻由は5分28秒7、山﨑莉奈は5分28秒8です。高田が0.1秒速い記録です。",
+      "sources": [
+        "calendar.md"
+      ],
+      "source_sha256": "4e10ff27be346fe94764558ee536a69abfb48eb448177bb1f6183db294818522",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "- **件名**: 玉名郡ナイター中・長距離記録会\n- **表示日**: 2026-08-29\n- **開始日**: 2026-08-29\n- **終了日**: 2026-08-29\n- **終日**: はい\n- **開始時刻**: （なし）\n- **終了時刻**: （なし）\n- **カテゴリ**: 予定\n- **ステータス**: done\n- **タグ**: ランニング\n- **場所**: 和水町総合グラウンド\n- **URL**: （なし）\n- **非公開**: いいえ\n\n**説明**\n\n玉名郡ナイター中・長距離記録会\n集合 16:00 和水町総合グラウンド\n所属 岱明中学校 / 責任者 熊澤正博\n\n1500m 男子\n松野凛空 3年 4:29.8 1位\n田上颯人 2年 4:33.6 3位 SB\n山本哲瑠 2年 4:40.5\n中尾快叶 1年 5:10.1\n松本空羽 2年 5:21.1\n南本幸治郎 1年 5:24.8\n田中智稀 2年 5:28.6\n嶋田匠眞 1年 5:37.6 SB\n\n1500m 女子\n高田麻由 3年 5:28.7\n山﨑莉奈 1年 5:28.8 SB\n角田亜美 2年 5:36.8\n増岡里俐 2年 5:55.5\n\n800m 女子\n塚原優衣 2年 2:51.5\n柴尾希乃 2年 DNS\n\n"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      },
+      "previous_chunk_id": "knowledge-da513a5c6fa4efd5d6ecf73d",
+      "carry_forward": true
+    },
+    {
+      "id": "chunkqa-a9dc32deef8c1b4cc5c6f4b4-1",
+      "chunk_id": "knowledge-d0c4b2207368bf676a122f7d",
+      "questions": [
+        "2026年8月31日のいだてん岱明夕練で、男子と女子のジョグ距離は何m違う？"
+      ],
+      "answer": "男子7.84km、女子6.96kmと記録されており、距離差は0.88km、880mです。両方とも5分26秒/kmのペースが記載されています。",
+      "sources": [
+        "calendar.md"
+      ],
+      "source_sha256": "4e10ff27be346fe94764558ee536a69abfb48eb448177bb1f6183db294818522",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "- **件名**: いだてん岱明夕練\n- **表示日**: 2026-08-31\n- **開始日**: 2026-08-31\n- **終了日**: 2026-08-31\n- **終日**: いいえ\n- **開始時刻**: 17:00\n- **終了時刻**: 18:30\n- **カテゴリ**: 予定\n- **ステータス**: scheduled\n- **タグ**: ランニング, いだてん岱明練習, practice:daiming, session:evening\n- **場所**: （なし）\n- **URL**: （なし）\n- **非公開**: いいえ\n\n**説明**\n\n<!-- practice-menu:v1\nwarmup: 動きづくり\nitems:\n- type: jog\n  group: 男子\n  laps: 14\n  distance_m: 7840\n  distance_km: 7.84\n  pace: k/5:26\n  intensity: E\n- type: jog\n  group: 女子\n  distance_m: 6960\n  distance_km: 6.96\n  pace: k/5:26\n  intensity: E\n- type: strides\n  reps: 2\n  label: 流し2本\n-->\n\n動きづくり\n\nジョグ 男子 7.84km (14周) k/5:26\nジョグ 女子 6.96km k/5:26\n流し2本\n\n"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      },
+      "previous_chunk_id": "knowledge-a9dc32deef8c1b4cc5c6f4b4",
+      "carry_forward": true
+    },
+    {
+      "id": "chunkqa-a9dc32deef8c1b4cc5c6f4b4-2",
+      "chunk_id": "knowledge-d0c4b2207368bf676a122f7d",
+      "questions": [
+        "2026年8月31日の石原と荒田は、いだてん岱明夕練の開始時刻よりそれぞれ何時間早い予定？"
+      ],
+      "answer": "石原は9時、荒田は10時、いだてん岱明夕練は17時開始です。夕練の開始時刻より、石原は8時間、荒田は7時間早い予定です。",
+      "sources": [
+        "calendar.md"
+      ],
+      "source_sha256": "4e10ff27be346fe94764558ee536a69abfb48eb448177bb1f6183db294818522",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "- **件名**: 石原\n- **表示日**: 2026-08-31\n- **開始日**: 2026-08-31\n- **終了日**: 2026-08-31\n- **終日**: いいえ\n- **開始時刻**: 09:00\n- **終了時刻**: 12:00\n- **カテゴリ**: 予定\n- **ステータス**: scheduled\n- **タグ**: 会社\n- **場所**: （なし）\n- **URL**: （なし）\n- **非公開**: いいえ\n\n**説明**\n\n（なし）\n\n"
+        },
+        {
+          "kind": "quote",
+          "text": "- **件名**: 荒田\n- **表示日**: 2026-08-31\n- **開始日**: 2026-08-31\n- **終了日**: 2026-08-31\n- **終日**: いいえ\n- **開始時刻**: 10:00\n- **終了時刻**: 13:00\n- **カテゴリ**: 予定\n- **ステータス**: scheduled\n- **タグ**: 会社\n- **場所**: （なし）\n- **URL**: （なし）\n- **非公開**: いいえ\n\n**説明**\n\n（なし）\n\n"
+        },
+        {
+          "kind": "quote",
+          "text": "- **件名**: いだてん岱明夕練\n- **表示日**: 2026-08-31\n- **開始日**: 2026-08-31\n- **終了日**: 2026-08-31\n- **終日**: いいえ\n- **開始時刻**: 17:00\n- **終了時刻**: 18:30\n- **カテゴリ**: 予定\n- **ステータス**: scheduled\n- **タグ**: ランニング, いだてん岱明練習, practice:daiming, session:evening\n- **場所**: （なし）\n- **URL**: （なし）\n- **非公開**: いいえ\n\n**説明**\n\n<!-- practice-menu:v1\nwarmup: 動きづくり\nitems:\n- type: jog\n  group: 男子\n  laps: 14\n  distance_m: 7840\n  distance_km: 7.84\n  pace: k/5:26\n  intensity: E\n- type: jog\n  group: 女子\n  distance_m: 6960\n  distance_km: 6.96\n  pace: k/5:26\n  intensity: E\n- type: strides\n  reps: 2\n  label: 流し2本\n-->\n\n動きづくり\n\nジョグ 男子 7.84km (14周) k/5:26\nジョグ 女子 6.96km k/5:26\n流し2本\n\n"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      },
+      "previous_chunk_id": "knowledge-a9dc32deef8c1b4cc5c6f4b4",
+      "carry_forward": true
+    },
+    {
+      "id": "chunkqa-cb2adbdc65f2e39f590c4dbf-1",
+      "chunk_id": "knowledge-31bd9607deefbdf667af3d93",
+      "questions": [
+        "2026年9月1日と2日の岱明中2年生職場体験の日は、給食と授業がどう登録されている？"
+      ],
+      "answer": "両日とも授業は6時間で、1〜6限すべて総合と記録されています。給食は「2年は職場体験のためなし」と記載されています。",
+      "sources": [
+        "calendar.md"
+      ],
+      "source_sha256": "4e10ff27be346fe94764558ee536a69abfb48eb448177bb1f6183db294818522",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "- **件名**: 岱明中 A日課（6時間）\n- **表示日**: 2026-09-01\n- **開始日**: 2026-09-01\n- **終了日**: 2026-09-01\n- **終日**: はい\n- **開始時刻**: （なし）\n- **終了時刻**: （なし）\n- **カテゴリ**: 予定\n- **ステータス**: scheduled\n- **タグ**: 岱明中, 学校行事\n- **場所**: （なし）\n- **URL**: （なし）\n- **非公開**: いいえ\n\n**説明**\n\n【校内行事】2年職場体験学習（1日目）／ＩＣＴ支援員訪問（午後）\n【授業】6時間（1〜6限すべて総合）\n【給食】△（2年は職場体験のためなし）\n【校外行事】第2回岱明中学校区小中一貫教育推進委員会（15:30～16:30高道小）【末藤・宮本】\n\n"
+        },
+        {
+          "kind": "quote",
+          "text": "- **件名**: 岱明中 B日課（6時間）\n- **表示日**: 2026-09-02\n- **開始日**: 2026-09-02\n- **終了日**: 2026-09-02\n- **終日**: はい\n- **開始時刻**: （なし）\n- **終了時刻**: （なし）\n- **カテゴリ**: 予定\n- **ステータス**: scheduled\n- **タグ**: 岱明中, 学校行事\n- **場所**: （なし）\n- **URL**: （なし）\n- **非公開**: いいえ\n\n**説明**\n\n【校内行事】2年職場体験学習（2日目）／※巡回相談（1日）\n【授業】6時間（1〜6限すべて総合）\n【給食】△（2年は職場体験のためなし）\n【校外行事】荒尾・玉名地区学校事務研究協議会研修会（14:00～和水町中央公民館）【丹生】／玉名市校長会議（9:00～市役所4階 第2委員会室）【宮本】\n\n"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      },
+      "previous_chunk_id": "knowledge-cb2adbdc65f2e39f590c4dbf",
+      "carry_forward": true
+    },
+    {
+      "id": "chunkqa-cb2adbdc65f2e39f590c4dbf-2",
+      "chunk_id": "knowledge-d0c4b2207368bf676a122f7d",
+      "questions": [
+        "2026年9月9日と10日の岱明中の特別日課は、月間カレンダー上で何が違う？"
+      ],
+      "answer": "両日ともB日課の特別・4時間授業で、前期期末テストが登録されています。10日の予定名には、9日と違って「掃除あり」の表記があります。",
+      "sources": [
+        "calendar.md"
+      ],
+      "source_sha256": "4e10ff27be346fe94764558ee536a69abfb48eb448177bb1f6183db294818522",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "[岱明中 B日課（特別・4時間授業）](#event-20260909-01)"
+        },
+        {
+          "kind": "quote",
+          "text": "[岱明中 B日課（特別・4時間授業・掃除あり）](#event-20260910-02)"
+        },
+        {
+          "kind": "quote",
+          "text": "[岱明中前期期末テスト](#event-20260909-02)"
+        },
+        {
+          "kind": "quote",
+          "text": "[岱明中前期期末テスト](#event-20260910-03)"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      },
+      "previous_chunk_id": "knowledge-cb2adbdc65f2e39f590c4dbf",
+      "carry_forward": true
+    },
+    {
+      "id": "chunkqa-8b50bdcf4fb5dcd856080ddb-1",
+      "chunk_id": "knowledge-31bd9607deefbdf667af3d93",
+      "questions": [
+        "2026年9月5日の練習で、村上の1000m3本の記録を合計すると何分？"
+      ],
+      "answer": "メモの3分33秒・3分39秒・3分34秒を合計すると、疾走3本は10分46秒です。レストはこの合計に含めません。",
+      "sources": [
+        "calendar.md"
+      ],
+      "source_sha256": "4e10ff27be346fe94764558ee536a69abfb48eb448177bb1f6183db294818522",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "【3:40組】村上＋1年男子2名 — 全員設定（k/3:40）より速い。最遅の村上で3:33–3:39–3:34。"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      },
+      "previous_chunk_id": "knowledge-8b50bdcf4fb5dcd856080ddb",
+      "carry_forward": true
+    },
+    {
+      "id": "chunkqa-8b50bdcf4fb5dcd856080ddb-2",
+      "chunk_id": "knowledge-31bd9607deefbdf667af3d93",
+      "questions": [
+        "2026年9月5日の村上の1000m3本は、3分40秒を3本の設定と比べて合計何秒速い？"
+      ],
+      "answer": "設定の3分40秒×3は11分です。村上の記録は3分33秒・3分39秒・3分34秒で合計10分46秒なので、疾走部分の合計は14秒速い記録です。",
+      "sources": [
+        "calendar.md"
+      ],
+      "source_sha256": "4e10ff27be346fe94764558ee536a69abfb48eb448177bb1f6183db294818522",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "【3:40組】村上＋1年男子2名 — 全員設定（k/3:40）より速い。最遅の村上で3:33–3:39–3:34。"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      },
+      "previous_chunk_id": "knowledge-8b50bdcf4fb5dcd856080ddb",
+      "carry_forward": true
+    }
+  ]
+}
