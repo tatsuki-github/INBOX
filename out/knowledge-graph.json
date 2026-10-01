@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated_at": "2026-10-01T03:02:38Z",
+  "generated_at": "2026-10-01T04:20:22Z",
   "nodes": [
     {
       "id": "corpus:analysis-ocr",
@@ -14246,7 +14246,7 @@
       "refs": [
         "out/analysis/aragyoku-years/2023.md"
       ],
-      "hint": "女子 谷野愛々花 学年2 7:50 区間6位 総合8位 / 男子 浦田桐生 学年3 10:10 区間11位 総合11位"
+      "hint": "女子 谷野愛々花 学年2 7:50 区間6位 総合8位 / 男子 浦田桐生 学年2 10:10 区間11位 総合11位"
     },
     {
       "id": "entity:aragyoku-leg:2023:岱明:5",
@@ -14272,7 +14272,7 @@
       "refs": [
         "out/analysis/aragyoku-years/2023.md"
       ],
-      "hint": "男子 南本和顯 学年3 14:12 区間11位 総合11位"
+      "hint": "男子 南本和顕 学年2 14:12 区間11位 総合11位"
     },
     {
       "id": "entity:aragyoku-leg:2023:有明:1",
@@ -15377,7 +15377,7 @@
       "refs": [
         "out/analysis/aragyoku-years/2024.md"
       ],
-      "hint": "女子 角田里奈 学年3 10:43 区間6位 総合6位 / 男子 根本和樹 学年3 9:17 区間3位 総合15位"
+      "hint": "女子 角田里奈 学年3 10:43 区間6位 総合6位 / 男子 南本和顕 学年3 9:17 区間3位 総合15位"
     },
     {
       "id": "entity:aragyoku-leg:2024:岱明:2",
@@ -15390,7 +15390,7 @@
       "refs": [
         "out/analysis/aragyoku-years/2024.md"
       ],
-      "hint": "女子 瀧下那奈 学年3 6:59 区間7位 総合6位 / 男子 満田樹生 学年3 10:04 区間13位 総合15位"
+      "hint": "女子 瀧下那奈 学年3 6:59 区間7位 総合6位 / 男子 浦田桐生 学年3 10:04 区間13位 総合15位"
     },
     {
       "id": "entity:aragyoku-leg:2024:岱明:3",
@@ -17518,9 +17518,9 @@
         "practice"
       ],
       "refs": [
-        "out/analysis/notion_records_2026.json",
         "out/2025/practice_absentees.csv",
-        "input/events.2025.yaml"
+        "input/events.2025.yaml",
+        "out/analysis/notion_records_2026.json"
       ],
       "hint": "部員エンティティ"
     },
@@ -17554,9 +17554,9 @@
         "practice"
       ],
       "refs": [
-        "out/analysis/notion_records_2026.json",
         "out/2025/practice_absentees.csv",
-        "input/events.2025.yaml"
+        "input/events.2025.yaml",
+        "out/analysis/notion_records_2026.json"
       ],
       "hint": "部員エンティティ"
     },
@@ -17590,9 +17590,9 @@
         "practice"
       ],
       "refs": [
-        "out/analysis/notion_records_2026.json",
         "out/2025/practice_absentees.csv",
-        "input/events.2025.yaml"
+        "input/events.2025.yaml",
+        "out/analysis/notion_records_2026.json"
       ],
       "hint": "部員エンティティ"
     },
@@ -17662,9 +17662,9 @@
         "practice"
       ],
       "refs": [
-        "out/analysis/notion_records_2026.json",
         "out/2025/practice_absentees.csv",
-        "input/events.2025.yaml"
+        "input/events.2025.yaml",
+        "out/analysis/notion_records_2026.json"
       ],
       "hint": "部員エンティティ"
     },
@@ -17713,9 +17713,9 @@
         "practice"
       ],
       "refs": [
-        "out/analysis/notion_records_2026.json",
         "out/2025/practice_absentees.csv",
-        "input/events.2025.yaml"
+        "input/events.2025.yaml",
+        "out/analysis/notion_records_2026.json"
       ],
       "hint": "部員エンティティ"
     },
@@ -17749,9 +17749,9 @@
         "practice"
       ],
       "refs": [
-        "out/analysis/notion_records_2026.json",
         "out/2025/practice_absentees.csv",
-        "input/events.2025.yaml"
+        "input/events.2025.yaml",
+        "out/analysis/notion_records_2026.json"
       ],
       "hint": "部員エンティティ"
     },
@@ -17800,9 +17800,9 @@
         "practice"
       ],
       "refs": [
-        "out/analysis/notion_records_2026.json",
         "out/2025/practice_absentees.csv",
-        "input/events.2025.yaml"
+        "input/events.2025.yaml",
+        "out/analysis/notion_records_2026.json"
       ],
       "hint": "部員エンティティ"
     },
@@ -17872,9 +17872,9 @@
         "practice"
       ],
       "refs": [
-        "out/analysis/notion_records_2026.json",
         "out/2025/practice_absentees.csv",
-        "input/events.2025.yaml"
+        "input/events.2025.yaml",
+        "out/analysis/notion_records_2026.json"
       ],
       "hint": "部員エンティティ"
     },
@@ -17908,11 +17908,11 @@
         "practice"
       ],
       "refs": [
-        "out/2026/practice_absentees.csv",
         "out/2025/practice_absentees.csv",
+        "input/events.2025.yaml",
         "input/events.2026.yaml",
         "out/analysis/notion_records_2026.json",
-        "input/events.2025.yaml"
+        "out/2026/practice_absentees.csv"
       ],
       "hint": "部員エンティティ"
     },
@@ -24647,7 +24647,7 @@
       "refs": [
         "out/analysis/aragyoku-overview.md"
       ],
-      "hint": "荒玉駅伝（荒玉中体連駅伝）概要 / 荒玉駅伝は、玉名・荒尾地区の中体連駅伝である。 / 呼び方の揺れ: **荒玉駅伝** / **荒玉中体連駅伝** / **玉名荒尾中体連駅伝** / 口語の **郡市駅伝**。 / いずれも同じ大会を指す（質問側の正規化は `backend/src/domain/aragyokuAliases.ts`）。 / 男子は6区間、女子は5区間。コース距離は年度によって。荒玉駅伝概要（呼び方: 荒玉中体連/郡市/玉名荒尾中体連・区間距離・現行/旧コース）"
+      "hint": "荒玉駅伝（荒玉中体連駅伝）概要 / 荒玉駅伝は、玉名・荒尾地区の中体連駅伝（通称: 荒玉駅伝 / 荒玉中体連駅伝）である。 / 男子は6区間、女子は5区間。コース距離は年度によって変わる（特に男子は2024年に再編）。 / このドキュメントの使い方（Q&A） / - 「区間距離は？」「○区を△分でいくとペースは？」→ **この概要を優先**して答える。 / - 年度が無い質問の男子距離は、**現行。荒玉駅伝概要（呼び方: 荒玉中体連/郡市/玉名荒尾中体連・区間距離・現行/旧コース）"
     },
     {
       "id": "source:out/analysis/aragyoku-teams/INDEX.md",
