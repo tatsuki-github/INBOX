@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "baseline_count": 34995,
+  "chunks": 2889,
+  "required_new_qa": 8667,
+  "authored_candidates": 9,
+  "validated_candidates": 9,
+  "chunks_with_three_candidates": 3,
+  "pending_chunks": 2886,
+  "prepared_exact_hits": 9,
+  "problems": [],
+  "complete": false,
+  "limitations": [
+    "Quote presence plus manual context review; not an automated proof of every prose proposition.",
+    "Candidates remain unpublished until all chunks and independent final audits pass."
+  ]
+}
