@@ -156,9 +156,22 @@ def gen_leg_rank_board(existing_ids: set[str], limit: int) -> list[dict]:
                     f"{year}年荒玉{gender}{leg}区の区間順位は？",
                     f"{year}年荒玉駅伝{gender}の{leg}区順位表",
                     f"{year}荒玉{gender}{leg}区の上位は誰？",
+                    f"{year}年{gender}{leg}区の荒玉駅伝の区間順位",
+                    f"{year}年の{gender}{leg}区の荒玉の区間順位は？",
+                    f"{year}年荒玉駅伝の{gender}{leg}区の区間順位",
                 ]
                 if year == LAST_YEAR:
-                    qs.append(f"昨年の荒玉{gender}{leg}区の区間順位は？")
+                    qs.extend(
+                        [
+                            f"昨年の荒玉{gender}{leg}区の区間順位は？",
+                            f"去年の荒玉{gender}{leg}区の区間順位は？",
+                            f"去年の{gender}{leg}区の荒玉駅伝の区間順位",
+                            f"昨年の{gender}{leg}区の荒玉駅伝の区間順位",
+                            f"去年の荒玉駅伝{gender}{leg}区の区間順位",
+                            f"昨年の荒玉駅伝の{gender}{leg}区の区間順位は？",
+                            f"去年の荒玉駅伝の{gender}の{leg}区の区間順位",
+                        ]
+                    )
                 ans = (
                     f"{year}年荒玉駅伝{gender}{leg}区の区間順位（上位）です。\n"
                     + "\n".join(lines)
