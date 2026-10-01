@@ -189,6 +189,13 @@ def team_through_questions(gender: str, through: int, team: str) -> list[str]:
     ]
 
 
+def gen_entries() -> list[dict]:
+    """Read-only rebuild for audit_prepared_qa_facts source_projection."""
+    if not FORMULA_JSON.exists():
+        raise FileNotFoundError(FORMULA_JSON)
+    return build_entries(json.loads(FORMULA_JSON.read_text(encoding="utf-8")))
+
+
 def build_entries(data: dict) -> list[dict]:
     as_of = data.get("as_of", "2026-09-27")
     event_date = data.get("event_date", "2026-10-14")
