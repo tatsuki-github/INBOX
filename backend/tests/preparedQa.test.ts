@@ -307,6 +307,26 @@ describe("matchPreparedAnswer", { timeout: 30_000 }, () => {
         ["今年の荒玉男子の数式予想は？", /^meet-2026-aragyoku-school-expand$/, /玉陵|56:01/],
         ["荒玉男子の戦力分析は？", /^meet-2026-aragyoku-school-expand$/, /校別展開|数式予想/],
         ["荒玉女子の数式予想は？", /^meet-2026-aragyoku-school-expand$/, /荒尾三|42:53/],
+        [
+          "今年の荒玉駅伝の女子2区までの順位予想",
+          /^aragyoku-2026-pass-rank-女子-through2$/,
+          /荒尾三中（17:23）|岱明中（17:44）/,
+        ],
+        [
+          "今年の荒玉駅伝の男子3区までの順位予想",
+          /^aragyoku-2026-pass-rank-男子-through3$/,
+          /玉陵中（27:46）|岱明中（28:35）/,
+        ],
+        [
+          "荒玉駅伝の女子の順位予想は？",
+          /^aragyoku-2026-pass-rank-女子-through5$/,
+          /荒尾三中（42:53）/,
+        ],
+        [
+          "今年の荒玉駅伝の順位予想",
+          /^aragyoku-2026-pass-rank-both-overall$/,
+          /男子:.*玉陵中|女子:.*荒尾三中/,
+        ],
         ["荒玉男子2区の距離は？", /^aragyoku-distance-current-男子-leg2$/, /2\.855km/],
         ["荒玉男子の区間距離は？", /^aragyoku-men-distance$/, /17\.71km/],
         ["荒玉の総距離は？", /^gap1000-overview-distance$/, /17\.71km|11\.855km/],
