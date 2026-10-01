@@ -1,0 +1,223 @@
+{
+  "version": 1,
+  "entries": [
+    {
+      "id": "chunkqa-e7487e3be852e6b1eafacccc-1",
+      "chunk_id": "knowledge-e7487e3be852e6b1eafacccc",
+      "questions": [
+        "荒尾玉名中学生の所属別ランキングPDFで、3000mのSBがない選手の予想タイムは何を優先する？"
+      ],
+      "answer": "3000mのシーズンベストを優先し、なければ1500mのシーズンベストを換算、さらに800mのシーズンベストを換算する順です。",
+      "sources": [
+        "README.md"
+      ],
+      "source_sha256": "29a82514b206a4d68c63d2695f9a29b4f2ca7c7c2f0b4d944385ce86ce7af619",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "| 3000m 予想タイム | 3000m SB → 1500m SB 換算 → 800m SB 換算の順 |"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "authored-machine-checks-pending"
+      }
+    },
+    {
+      "id": "chunkqa-e7487e3be852e6b1eafacccc-2",
+      "chunk_id": "knowledge-e7487e3be852e6b1eafacccc",
+      "questions": [
+        "荒尾玉名中学生記録PDFの所属別ランキングは、男子・女子それぞれ何人以上が対象？"
+      ],
+      "answer": "所属別ランキングの人数条件は、男子6人以上、女子5人以上です。",
+      "sources": [
+        "README.md"
+      ],
+      "source_sha256": "29a82514b206a4d68c63d2695f9a29b4f2ca7c7c2f0b4d944385ce86ce7af619",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "| 男子 | 上位4人 / 5人 / 6人平均 | 6人以上 |\n| 女子 | 上位3人 / 4人 / 5人平均 | 5人以上 |"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "authored-machine-checks-pending"
+      }
+    },
+    {
+      "id": "chunkqa-e7487e3be852e6b1eafacccc-3",
+      "chunk_id": "knowledge-e7487e3be852e6b1eafacccc",
+      "questions": [
+        "INBOXのカレンダーCSVをNotionへ再インポートすると、既存予定は上書き更新される？"
+      ],
+      "answer": "この取り込み手順は追記で、既存予定の上書き更新にはなりません。再インポート時は重複に注意してください。",
+      "sources": [
+        "README.md"
+      ],
+      "source_sha256": "29a82514b206a4d68c63d2695f9a29b4f2ca7c7c2f0b4d944385ce86ce7af619",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "- Notionへの再インポートは追記のみ（重複に注意）"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "authored-machine-checks-pending"
+      }
+    },
+    {
+      "id": "chunkqa-d096d284234ce1b4426eff4e-1",
+      "chunk_id": "knowledge-d096d284234ce1b4426eff4e",
+      "questions": [
+        "2026年1月の長洲マラソンは、成人の日と同じ日にカレンダー登録されている？"
+      ],
+      "answer": "どちらも2026年1月12日に登録されており、カレンダー上は同じ日です。",
+      "sources": [
+        "calendar.md"
+      ],
+      "source_sha256": "c708357283066a9fa70d7c765b6c3c933529e681a56a9048980ab7e382a4ac6f",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "| 12 | 月 | [成人の日](#event-20260112-00) / [長洲マラソン](#event-20260112-01) |"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "authored-machine-checks-pending"
+      }
+    },
+    {
+      "id": "chunkqa-d096d284234ce1b4426eff4e-2",
+      "chunk_id": "knowledge-d096d284234ce1b4426eff4e",
+      "questions": [
+        "2026年1月のAmazon Prime更新日と定期期限は、カレンダーではどちらが何日早い？"
+      ],
+      "answer": "Amazon Prime更新日は1月2日、定期期限は1月13日で、更新日の予定が11日早く登録されています。",
+      "sources": [
+        "calendar.md"
+      ],
+      "source_sha256": "c708357283066a9fa70d7c765b6c3c933529e681a56a9048980ab7e382a4ac6f",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "- **件名**: 定期期限\n- **表示日**: 2026-01-13"
+        },
+        {
+          "kind": "quote",
+          "text": "- **件名**: Amazon Prime更新日\n- **表示日**: 2026-01-02"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "authored-machine-checks-pending"
+      }
+    },
+    {
+      "id": "chunkqa-d096d284234ce1b4426eff4e-3",
+      "chunk_id": "knowledge-d096d284234ce1b4426eff4e",
+      "questions": [
+        "2026年1月19日のカレンダーに、Dさんのリモートと午後休は同じ日に登録されている？"
+      ],
+      "answer": "2026年1月19日には、Dさんリモートと午後休の両方が予定として登録されています。",
+      "sources": [
+        "calendar.md"
+      ],
+      "source_sha256": "c708357283066a9fa70d7c765b6c3c933529e681a56a9048980ab7e382a4ac6f",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "| 19 | 月 | [Dさんリモート](#event-20260119-00) / [午後休](#event-20260119-01) |"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "authored-machine-checks-pending"
+      }
+    },
+    {
+      "id": "chunkqa-3f77dd0bd0a994f6fe507a5a-1",
+      "chunk_id": "knowledge-3f77dd0bd0a994f6fe507a5a",
+      "questions": [
+        "2026年1月30日のいだてん岱明謝礼には、カレンダー上いくら登録されている？"
+      ],
+      "answer": "2026年1月30日のいだてん岱明謝礼には、17,061円が登録されています。",
+      "sources": [
+        "calendar.md"
+      ],
+      "source_sha256": "c708357283066a9fa70d7c765b6c3c933529e681a56a9048980ab7e382a4ac6f",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "金額: ￥17,061"
+        },
+        {
+          "kind": "quote",
+          "text": "- **件名**: いだてん岱明謝礼\n- **表示日**: 2026-01-30"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "authored-machine-checks-pending"
+      }
+    },
+    {
+      "id": "chunkqa-3f77dd0bd0a994f6fe507a5a-2",
+      "chunk_id": "knowledge-3f77dd0bd0a994f6fe507a5a",
+      "questions": [
+        "2026年1月25日の永井監督を祝う会打ち上げと玉名駅伝は、時刻付き予定と終日予定のどちら？"
+      ],
+      "answer": "カレンダーでは、打ち上げは11時開始の時刻付き予定、玉名駅伝は終日の予定です。",
+      "sources": [
+        "calendar.md"
+      ],
+      "source_sha256": "c708357283066a9fa70d7c765b6c3c933529e681a56a9048980ab7e382a4ac6f",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "- **件名**: 永井監督を祝う会打ち上げ\n- **表示日**: 2026-01-25"
+        },
+        {
+          "kind": "quote",
+          "text": "- **開始時刻**: 11:00"
+        },
+        {
+          "kind": "quote",
+          "text": "- **件名**: 玉名駅伝\n- **表示日**: 2026-01-25\n- **開始日**: 2026-01-25\n- **終了日**: 2026-01-25\n- **終日**: はい"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "authored-machine-checks-pending"
+      }
+    },
+    {
+      "id": "chunkqa-3f77dd0bd0a994f6fe507a5a-3",
+      "chunk_id": "knowledge-3f77dd0bd0a994f6fe507a5a",
+      "questions": [
+        "2026年2月の岱明中の後期期末テストは、3年と1・2年でどちらが何日早い予定？"
+      ],
+      "answer": "3年は2月5日、1・2年は2月12日で、3年の日程が7日早い予定です。",
+      "sources": [
+        "calendar.md"
+      ],
+      "source_sha256": "c708357283066a9fa70d7c765b6c3c933529e681a56a9048980ab7e382a4ac6f",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "| 12 | 木 | [岱明中1・2年後期期末テスト](#event-20260212-00) |"
+        },
+        {
+          "kind": "quote",
+          "text": "| 5 | 木 | [カフェイン断ち](#event-20260205-00) / [岱明中3年後期期末テスト](#event-20260205-01) |"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "authored-machine-checks-pending"
+      }
+    }
+  ]
+}
