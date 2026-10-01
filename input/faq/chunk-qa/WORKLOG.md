@@ -8,8 +8,9 @@
 - 作業ブランチ: `codex/all-knowledge-three-qa`
 - クラウド作業環境が起動に失敗したため、GitHub接続とブランチ限定のCIを作業台として使う。
 - 棚卸し完了: 912正本、718個の同一本文コピーを対応付け。2,889チャンク、追加目標8,667件。
-- authored-0001/0002の18件（6チャンク）は機械検査成功。authored-0003の27件（9チャンク）は作成済み、CI検査待ち。
-- 候補はまだPrepared QAへ公開していない。45件を作成した段階であり、全件完了ではない。
+- authored-0001〜0006に99件（33チャンク）を作成。初期63件の機械検査成功、後続バッチの最新CIを確認する。
+- 近い既存QAを確認し、謝礼額だけの再掲など4候補は具体的な比較へ差し替えた。質問意図の照合は各バッチで継続する。
+- 候補はまだPrepared QAへ公開していない。99件を作成した段階であり、全件完了ではない。
 - 既存QAとの正規化重複に加え、文字3-gram/IDFによる近い質問の候補を作り、質問意図の既存追加有無を文脈で確認する。類似度は新規性の自動証明ではない。
 
 ## 対象と作成規則
@@ -36,7 +37,8 @@
 
 `scripts/prepare_knowledge_qa_chunks.py` と `tests/test_knowledge_qa_chunks.py` はブランチに作成済み。
 `out/qa-chunks/qa-progress.json` で検証状態、`qa-intent-neighbors.json` で近い既存質問を確認する。
-次はcalendar.mdのindex 11以降（全体先頭の19番目ではなく、calendarの12番目）を読む。最初のAGENTS 1、README 3、calendar index 0〜10の計15チャンクに45候補を作成済み。
+次はchunks-0002.jsonlの先頭、calendar.mdのindex 29以降を読む。最初のAGENTS 1、README 3、calendar index 0〜28の計33チャンクに99候補を作成済み。
+`csv-schemas.json` と `structured-schemas-*.json` を追加して型付き資料の検査方法を設計中。自動候補を手動確認済みと偽って記録しない。値の計算・年/男女/種目/選手/予想・実績を独立に検証し、新規性を確認する。
 重要: authoredファイルは `{version:1, entries:[...]}` 形式。既存QAは34,995件のまま維持。
 WorkbenchのbotコミットはCIを再実行しない。最終マージ前は新しいAPIコミットで最新headの全CIを起動・検証する。
 本台帳は作業状態であり、完成したナレッジとして利用しない。
