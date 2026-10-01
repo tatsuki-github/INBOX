@@ -1,0 +1,31 @@
+name: Import verified knowledge checkpoint
+on:
+  push:
+    branches: [codex/all-knowledge-three-qa]
+    paths:
+      - .github/checkpoint-transfer.bundle
+      - .github/workflows/checkpoint-transfer.yml
+permissions:
+  contents: write
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Import exact locally verified tree and remove transfer files
+        shell: bash
+        run: |
+          set -euo pipefail
+          echo "da09f61de698fdba9a6db07fbf529600c5d994f9167618be3aea16d4cdaad825  .github/checkpoint-transfer.bundle" | sha256sum --check
+          git bundle verify .github/checkpoint-transfer.bundle
+          git bundle unbundle .github/checkpoint-transfer.bundle
+          target=c28ec73bfa00c7b879f9b27c29a9b1a03b51e450
+          target_tree=$(git rev-parse "$target^{tree}")
+          test "$target_tree" = 345e6d23bc14c66543f0f562cded0a239b2cca9c
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          published=$(git commit-tree "$target_tree" -p "$GITHUB_SHA" -p "$target" -m "Publish verified QA checkpoint and remove remuneration information")
+          git push origin "$published:refs/heads/codex/all-knowledge-three-qa"
+          echo "Published $published with tree $target_tree"
