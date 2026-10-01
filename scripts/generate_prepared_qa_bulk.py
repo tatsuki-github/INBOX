@@ -75,6 +75,19 @@ def clean_user_facing_text(text: str, *, max_len: int = 220) -> str:
     if not text:
         return ""
     t = text.replace("\n", " ")
+    # Drop Drive import metadata dumps (mimeType / fileSize / viewUrl …).
+    t = re.sub(
+        r"(?:^|\s)[-*]?\s*\*\*(?:id|mimeType|fileSize|viewUrl|parentId|modifiedTime|status|name)\*\*\s*[:：]?[^\s]*",
+        " ",
+        t,
+        flags=re.I,
+    )
+    t = re.sub(
+        r"\b(?:mimeType|fileSize|parentId|modifiedTime)\b\s*[:：]?\s*\S*",
+        " ",
+        t,
+        flags=re.I,
+    )
     # Drop generator / ops tails early
     t = re.sub(r"生成\s*[:：].*$", " ", t)
     t = _PATHISH.sub(" ", t)

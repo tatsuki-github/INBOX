@@ -1,5 +1,5 @@
 version: 1
-total: 28074
+total: 28045
 note: '想定質問への定型回答（ADR 059）。年なし＝今年度。ナレッジカバーを拡充（知識カバー+1000/+3000: 荒玉全区間・年度別学校SB・大会資料・カレンダー等）。
 
   ヒット時は本文をほぼそのまま返す。未ヒット時のみ RAG/LLM。
@@ -9252,8 +9252,8 @@ entries:
   - 2025.pdfの内容は？
   - 2025.pdfについて教えて
   - 練習資料「2025.pdf」は？
-  answer: '。- **id**: - **mimeType**: - **fileSize**: 920658 - **viewUrl**: https://drive.google.com/file/d/1h45jCS2qdXU-_LdebUQkcnDDYpTUtALm/view?usp=drivesdk
-    - **parentId**: `15tcCRtdeO85EmJYAOO_R。
+  answer: '920658 https: drive.google.com file d 1h45jCS2qdXU-_LdebUQkcnDDYpTUtALm view?usp=drivesdk `15tcCRtdeO85EmJYAOO_R。
+    ファイル: https://drive.google.com/file/d/1h45jCS2qdXU-_LdebUQkcnDDYpTUtALm/view?usp=drivesdk。
 
     '
   sources:
@@ -117341,9 +117341,9 @@ entries:
   - 第４回県ジュニア陸上（第３回県ジュニア駅伝）のどうだった？
   - 第４回県ジュニア陸上（第３回県ジュニア駅伝）の岱明はどうだった？
   - 第４回県ジュニア陸上（第３回県ジュニア駅伝）の岱明のどうだった？
-  answer: '第４回県ジュニア陸上（第３回県ジュニア駅伝）（2026）の岱明結果です。 関連: [ ] ) [公式PDF照合メモ] ) [ ] ) 女子チャンピオンシップの部 — 12位 36:52 2025年: 36:47（チャレンジ優勝帯）。レース前SB予想:
-    6位想定 34:54。 1 2.7 村上 咲稀③ 9:58 10 — 2025年9:37 想定9:30 2 2.3 高田 麻由③ 8:49 10 11 2025年8:38 想定8:25–35 3 2.3 増岡 里俐② 9:00 12 10
-    2025年8:53 想定8:40–45 4 2.3 山﨑 莉奈① 9:05 12 12 想定8:35–40 女…。 資料: https://drive.google.com/drive/folders/1pUww3wPlyy4IoSNUy58qK9yhCRzeU_-2。
+  answer: '第４回県ジュニア陸上（第３回県ジュニア駅伝）（2026）の岱明結果です。 関連: 公式PDF照合メモ 女子チャンピオンシップの部 — 12位 36:52 2025年: 36:47（チャレンジ優勝帯）。レース前SB予想: 6位想定
+    34:54。 1 2.7 村上 咲稀③ 9:58 10 — 2025年9:37 想定9:30 2 2.3 高田 麻由③ 8:49 10 11 2025年8:38 想定8:25–35 3 2.3 増岡 里俐② 9:00 12 10 2025年8:53
+    想定8:40–45 4 2.3 山﨑 莉奈① 9:05 12 12 想定8:35–40 女…。 資料: https://drive.google.com/drive/folders/1pUww3wPlyy4IoSNUy58qK9yhCRzeU_-2。
 
     '
   sources:
@@ -164156,8 +164156,8 @@ entries:
   questions:
   - 第４回県ジュニア陸上（第３回県ジュニア駅伝）「岱明の結果」の内容は？
   - 今年の第４回県ジュニア陸上（第３回県ジュニア駅伝）の岱明の結果
-  answer: '第４回県ジュニア陸上（第３回県ジュニア駅伝）（2026）の「岱明の結果」です。 岱明の結果 大会: 第3回 熊本県ジュニア駅伝競走大会（2026-09-26）。結果PDFで照合済み。 関連: [ ] ) [公式PDF照合メモ]
-    ) [ ] ) 女子チャンピオンシップの部 — 12位 36:52 2025年: 36:47（チャレンジ優勝帯）。レース前SB予想: 6位想定 34:54。 区 km 選手 実績 区間 通過 2025年 想定 --…。 資料: https://drive.google.com/drive/folders/1pUww3wPlyy4IoSNUy58qK9yhCRzeU_-2。
+  answer: '第４回県ジュニア陸上（第３回県ジュニア駅伝）（2026）の「岱明の結果」です。 岱明の結果 大会: 第3回 熊本県ジュニア駅伝競走大会（2026-09-26）。結果PDFで照合済み。 関連: 公式PDF照合メモ 女子チャンピオンシップの部
+    — 12位 36:52 2025年: 36:47（チャレンジ優勝帯）。レース前SB予想: 6位想定 34:54。 区 km 選手 実績 区間 通過 2025年 想定 --…。 資料: https://drive.google.com/drive/folders/1pUww3wPlyy4IoSNUy58qK9yhCRzeU_-2。
 
     '
   sources:
@@ -164172,8 +164172,8 @@ entries:
   - 第４回県ジュニア陸上（第３回県ジュニア駅伝）の概要は？
   - 第４回県ジュニア陸上（第３回県ジュニア駅伝）「概要」の内容は？
   - 今年の第４回県ジュニア陸上（第３回県ジュニア駅伝）の概要
-  answer: '第４回県ジュニア陸上（第３回県ジュニア駅伝）（2026）の「概要」です。 公式ページ: http: kumariku.com competition ?id=9730 2026年結果（紙面 暫定） - 岱明: [ ] )（女子CS
-    12位 36:52 男子CS 14位 44:23） - 荒玉地区抜粋: [ ] ) - 結果写真: [results-photos ](results-photos ) - 公式結果PDF到着後に全チームを突合更新する。 2026年スタートリスト
+  answer: '第４回県ジュニア陸上（第３回県ジュニア駅伝）（2026）の「概要」です。 公式ページ: http: kumariku.com competition ?id=9730 2026年結果（紙面 暫定） - 岱明: （女子CS
+    12位 36:52 男子CS 14位 44:23） - 荒玉地区抜粋: - 結果写真: [results-photos ](results-photos ) - 公式結果PDF到着後に全チームを突合更新する。 2026年スタートリスト
     - 駅伝チームの先発…。 資料: https://drive.google.com/drive/folders/1pUww3wPlyy4IoSNUy58qK9yhCRzeU_-2。
 
     '
@@ -164270,9 +164270,8 @@ entries:
   - 荒玉中体連駅伝の公式オーダー待ちは？
   - 荒玉中体連駅伝「公式オーダー待ち」の内容は？
   - 今年の荒玉中体連駅伝の公式オーダー待ち
-  answer: '荒玉中体連駅伝（2026）の「公式オーダー待ち」です。 暫定: ジュニア／SB上位で**全校全区間を仮置き済み**（[ ] ) [ ] )） 1. Drive に男女オーダー（またはスタートリスト）を保存し表構造MD化。
-    2. 開催要項と [ ] ) を突合。 3. の を公式に差し替え、 の男子5–6仮置きを確定／修正。 4. 差分があれば に記録しスクリプト再実行。 5. [ ] ) を公式オーダーで更新。 暫定成果物: [ ] ) [ ] ) 女子
-    男子個別 MD。 資料: https://drive.google.com/drive/folders/1G8IlaBp9xVmXUynBAjV9ZZQPfFqzj4Yi。
+  answer: '荒玉中体連駅伝（2026）の「公式オーダー待ち」です。 暫定: ジュニア／SB上位で**全校全区間を仮置き済み**（ ） 1. Drive に男女オーダー（またはスタートリスト）を保存し表構造MD化。 2. 開催要項と を突合。
+    3. の を公式に差し替え、 の男子5–6仮置きを確定／修正。 4. 差分があれば に記録しスクリプト再実行。 5. を公式オーダーで更新。 暫定成果物: 女子 男子個別 MD。 資料: https://drive.google.com/drive/folders/1G8IlaBp9xVmXUynBAjV9ZZQPfFqzj4Yi。
 
     '
   sources:
@@ -164421,9 +164420,8 @@ entries:
   - 荒玉中体連駅伝の岱明_暫定区間オーダーは？
   - 荒玉中体連駅伝「岱明_暫定区間オーダー」の内容は？
   - 今年の荒玉中体連駅伝の岱明_暫定区間オーダー
-  answer: '荒玉中体連駅伝（2026）の「岱明_暫定区間オーダー」です。 岱明 暫定区間オーダー（荒玉中体連駅伝 2026） 大会: 荒玉中体連駅伝（2026-10-14） 更新: 2026-09-27 [ ] )（2024年以降）
-    女子フルと男子1–4は監督確定。男子5–6は**予想用の仮置き**（公式到着で差し替え）。他校は [ ] )。 女子（5区） 区 km 選手 状態 ---: ---: --- --- 1 3.00 村上 咲稀③ **確定** 2 1.855
-    山﨑 莉奈① **確定**…。 資料: https://drive.google.com/drive/folders/1G8IlaBp9xVmXUynBAjV9ZZQPfFqzj4Yi。
+  answer: '荒玉中体連駅伝（2026）の「岱明_暫定区間オーダー」です。 岱明 暫定区間オーダー（荒玉中体連駅伝 2026） 大会: 荒玉中体連駅伝（2026-10-14） 更新: 2026-09-27 （2024年以降） 女子フルと男子1–4は監督確定。男子5–6は**予想用の仮置き**（公式到着で差し替え）。他校は
+    。 女子（5区） 区 km 選手 状態 ---: ---: --- --- 1 3.00 村上 咲稀③ **確定** 2 1.855 山﨑 莉奈① **確定**…。 資料: https://drive.google.com/drive/folders/1G8IlaBp9xVmXUynBAjV9ZZQPfFqzj4Yi。
 
     '
   sources:
@@ -164454,7 +164452,7 @@ entries:
   - 荒玉中体連駅伝の校別展開予想は？
   - 荒玉中体連駅伝「校別展開予想」の内容は？
   - 今年の荒玉中体連駅伝の校別展開予想
-  answer: '荒玉中体連駅伝（2026）の「校別展開予想」です。 荒玉中体連駅伝 2026 予想 更新: 2026-09-27（SB区間予想＋2025年成績の自動生成） 開催: 2026-10-14（予備日あり） 根拠: [ ] ) ジュニア結果
+  answer: '荒玉中体連駅伝（2026）の「校別展開予想」です。 荒玉中体連駅伝 2026 予想 更新: 2026-09-27（SB区間予想＋2025年成績の自動生成） 開催: 2026-10-14（予備日あり） 根拠: ジュニア結果
     距離: 男子 3.00 2.855 3.00 3.00 2.855 3.00 km、女子 3.00 1.855 2.00 2.00 3.00 km（2024年以降定義） **注意**: 他校オーダーは公式未着の仮置き。数値はトラックSB
     直近駅伝 前年…。 資料: https://drive.google.com/drive/folders/1G8IlaBp9xVmXUynBAjV9ZZQPfFqzj4Yi。
 
@@ -164471,8 +164469,8 @@ entries:
   - 荒玉中体連駅伝の概要は？
   - 荒玉中体連駅伝「概要」の内容は？
   - 今年の荒玉中体連駅伝の概要
-  answer: '荒玉中体連駅伝（2026）の「概要」です。 予備日: 2026-10-15 ナレッジ（2026-09-27時点） - [ ] ) - 現行 数式予想: [ ] ) [区間CSV] ) [] ) - 数式予想: [ ] )
-    - 旧SB方式の比較値: [ ] ) [ ] ) - ジュニア地区結果（精度材料）: [ ] ) - （2024年以降） - 生成順:。 資料: https://drive.google.com/drive/folders/1G8IlaBp9xVmXUynBAjV9ZZQPfFqzj4Yi。
+  answer: '荒玉中体連駅伝（2026）の「概要」です。 予備日: 2026-10-15 ナレッジ（2026-09-27時点） - - 現行 数式予想: 区間CSV [] ) - 数式予想: - 旧SB方式の比較値: - ジュニア地区結果（精度材料）:
+    - （2024年以降） - 生成順:。 資料: https://drive.google.com/drive/folders/1G8IlaBp9xVmXUynBAjV9ZZQPfFqzj4Yi。
 
     '
   sources:
@@ -164613,9 +164611,8 @@ entries:
   questions:
   - 2025年第４４回熊本市陸上競技選手権の女子中学1500m結果.mhtは？
   - 2025年第４４回熊本市陸上競技選手権「女子中学1500m結果.mht」の内容は？
-  answer: '第４４回熊本市陸上競技選手権（2025）の「女子中学1500m結果.mht」です。 女子中学 １５００ｍ ﾀｲﾑﾚｰｽ総合結果.mht - **id**: - **mimeType**: - **fileSize**: 16586
-    - **viewUrl**: https: drive.google.com file d 1LXazqRV54XFAkCJtLd_TkVE09eVb0DRL view?usp=drivesdk - **parentId**: - **modifiedTime**:
-    - **statu…。 資料: https://drive.google.com/drive/folders/1uWt8u7xz4htlaAaE_LXrMHqE6wJHkKeM。
+  answer: '第４４回熊本市陸上競技選手権（2025）の「女子中学1500m結果.mht」です。 資料: https://drive.google.com/drive/folders/1uWt8u7xz4htlaAaE_LXrMHqE6wJHkKeM
+    ファイル: https://drive.google.com/file/d/1LXazqRV54XFAkCJtLd_TkVE09eVb0DRL/view。
 
     '
   sources:
@@ -164629,9 +164626,8 @@ entries:
   questions:
   - 2025年第４４回熊本市陸上競技選手権の男子中学1500m結果.mhtは？
   - 2025年第４４回熊本市陸上競技選手権「男子中学1500m結果.mht」の内容は？
-  answer: '第４４回熊本市陸上競技選手権（2025）の「男子中学1500m結果.mht」です。 男子中学 １５００ｍ ﾀｲﾑﾚｰｽ総合結果.mht - **id**: - **mimeType**: - **fileSize**: 41493
-    - **viewUrl**: https: drive.google.com file d 1eBB9aO6JwJkQmb8eooitSF2JRGPr_Bza view?usp=drivesdk - **parentId**: - **modifiedTime**:
-    - **statu…。 資料: https://drive.google.com/drive/folders/1uWt8u7xz4htlaAaE_LXrMHqE6wJHkKeM。
+  answer: '第４４回熊本市陸上競技選手権（2025）の「男子中学1500m結果.mht」です。 資料: https://drive.google.com/drive/folders/1uWt8u7xz4htlaAaE_LXrMHqE6wJHkKeM
+    ファイル: https://drive.google.com/file/d/1eBB9aO6JwJkQmb8eooitSF2JRGPr_Bza/view。
 
     '
   sources:
@@ -164645,9 +164641,8 @@ entries:
   questions:
   - 2025年第４４回熊本市陸上競技選手権の要項は？
   - 2025年第４４回熊本市陸上競技選手権「要項」の内容は？
-  answer: '第４４回熊本市陸上競技選手権（2025）の「要項」です。 - **id**: - **mimeType**: - **fileSize**: 324370 - **viewUrl**: https: drive.google.com
-    file d 1zSTHvlCMTUsImKGAc-tQlATrEbktEx9Z view?usp=drivesdk - **parentId**: - **modifiedTime**: - **status**: stub (binary
-    deferred;…。 資料: https://drive.google.com/drive/folders/1uWt8u7xz4htlaAaE_LXrMHqE6wJHkKeM。
+  answer: '第４４回熊本市陸上競技選手権（2025）の「要項」です。 資料: https://drive.google.com/drive/folders/1uWt8u7xz4htlaAaE_LXrMHqE6wJHkKeM ファイル:
+    https://drive.google.com/file/d/1zSTHvlCMTUsImKGAc-tQlATrEbktEx9Z/view。
 
     '
   sources:
@@ -164661,9 +164656,8 @@ entries:
   questions:
   - 2025年熊本県中学生陸上競技選手権のスタートリストは？
   - 2025年熊本県中学生陸上競技選手権「スタートリスト」の内容は？
-  answer: '熊本県中学生陸上競技選手権（2025）の「スタートリスト」です。 - **id**: - **mimeType**: - **fileSize**: 1977370 - **viewUrl**: https: drive.google.com
-    file d 1Dtsw33QtmwK92I_VHiVLZmb2_Cy1znG2 view - **parentId**: - **modifiedTime**: - **status**: stub (binary deferred;
-    use viewUrl)。 資料: https://drive.google.com/drive/folders/1PT_antiggHN2a3Pmoze4xS1VTMMpD2e1。
+  answer: '熊本県中学生陸上競技選手権（2025）の「スタートリスト」です。 資料: https://drive.google.com/drive/folders/1PT_antiggHN2a3Pmoze4xS1VTMMpD2e1 ファイル:
+    https://drive.google.com/file/d/1Dtsw33QtmwK92I_VHiVLZmb2_Cy1znG2/view。
 
     '
   sources:
@@ -164677,9 +164671,8 @@ entries:
   questions:
   - 2025年熊本県中学生陸上競技選手権のタイムテーブルは？
   - 2025年熊本県中学生陸上競技選手権「タイムテーブル」の内容は？
-  answer: '熊本県中学生陸上競技選手権（2025）の「タイムテーブル」です。 - **id**: - **mimeType**: - **fileSize**: 129281 - **viewUrl**: https: drive.google.com
-    file d 1Vrq0zcbzS3qJiY_VRosV6cMinll17zqU view?usp=drivesdk - **parentId**: - **modifiedTime**: - **status**: stub (binary
-    deferre…。 資料: https://drive.google.com/drive/folders/1PT_antiggHN2a3Pmoze4xS1VTMMpD2e1。
+  answer: '熊本県中学生陸上競技選手権（2025）の「タイムテーブル」です。 資料: https://drive.google.com/drive/folders/1PT_antiggHN2a3Pmoze4xS1VTMMpD2e1 ファイル:
+    https://drive.google.com/file/d/1Vrq0zcbzS3qJiY_VRosV6cMinll17zqU/view。
 
     '
   sources:
@@ -164693,9 +164686,8 @@ entries:
   questions:
   - 2025年熊本県中学生陸上競技選手権の実施要項は？
   - 2025年熊本県中学生陸上競技選手権「実施要項」の内容は？
-  answer: '熊本県中学生陸上競技選手権（2025）の「実施要項」です。 - **id**: - **mimeType**: - **fileSize**: 197094 - **viewUrl**: https: drive.google.com
-    file d 1rfFXTtjVYZtnzcfxg9UVZWvGGNgblrH7 view - **parentId**: - **modifiedTime**: - **status**: stub (binary deferred;
-    use viewUrl)。 資料: https://drive.google.com/drive/folders/1PT_antiggHN2a3Pmoze4xS1VTMMpD2e1。
+  answer: '熊本県中学生陸上競技選手権（2025）の「実施要項」です。 資料: https://drive.google.com/drive/folders/1PT_antiggHN2a3Pmoze4xS1VTMMpD2e1 ファイル:
+    https://drive.google.com/file/d/1rfFXTtjVYZtnzcfxg9UVZWvGGNgblrH7/view。
 
     '
   sources:
@@ -164709,9 +164701,8 @@ entries:
   questions:
   - 2025年熊本県中学生陸上競技選手権の岱明の出場予定は？
   - 2025年熊本県中学生陸上競技選手権「岱明の出場予定」の内容は？
-  answer: '熊本県中学生陸上競技選手権（2025）の「岱明の出場予定」です。 - **id**: - **mimeType**: - **fileSize**: 34636 - **viewUrl**: https: drive.google.com
-    file d 13SW2mg8VIqNtC9TYKJxjD2NXag0nO0G- view?usp=drivesdk - **parentId**: - **modifiedTime**: 2025-06-07T02:53:57.515Z
-    - **status**…。 資料: https://drive.google.com/drive/folders/1PT_antiggHN2a3Pmoze4xS1VTMMpD2e1。
+  answer: '熊本県中学生陸上競技選手権（2025）の「岱明の出場予定」です。 資料: https://drive.google.com/drive/folders/1PT_antiggHN2a3Pmoze4xS1VTMMpD2e1 ファイル:
+    https://drive.google.com/file/d/13SW2mg8VIqNtC9TYKJxjD2NXag0nO0G-/view。
 
     '
   sources:
@@ -164725,9 +164716,8 @@ entries:
   questions:
   - 2025年熊本県中学生陸上競技選手権の岱明の参加計画は？
   - 2025年熊本県中学生陸上競技選手権「岱明の参加計画」の内容は？
-  answer: '熊本県中学生陸上競技選手権（2025）の「岱明の参加計画」です。 - **id**: - **mimeType**: - **fileSize**: 765968 - **viewUrl**: https: drive.google.com
-    file d 1OZwA87li4tAzsFzokDnpLKtMhzZVLkS0 view?usp=drivesdk - **parentId**: - **modifiedTime**: - **status**: stub (binary
-    deferred;…。 資料: https://drive.google.com/drive/folders/1PT_antiggHN2a3Pmoze4xS1VTMMpD2e1。
+  answer: '熊本県中学生陸上競技選手権（2025）の「岱明の参加計画」です。 資料: https://drive.google.com/drive/folders/1PT_antiggHN2a3Pmoze4xS1VTMMpD2e1 ファイル:
+    https://drive.google.com/file/d/1OZwA87li4tAzsFzokDnpLKtMhzZVLkS0/view。
 
     '
   sources:
@@ -164755,9 +164745,8 @@ entries:
   questions:
   - 2025年熊本県中学生陸上競技選手権の撮影に関する注意事項は？
   - 2025年熊本県中学生陸上競技選手権「撮影に関する注意事項」の内容は？
-  answer: '熊本県中学生陸上競技選手権（2025）の「撮影に関する注意事項」です。 - **id**: - **mimeType**: - **fileSize**: 306820 - **viewUrl**: https: drive.google.com
-    file d 1zSQhEj8fIP2JDGabr0x31lLBHrRuR3s5 view?usp=drivesdk - **parentId**: - **modifiedTime**: - **status**: stub (binary
-    deferred;…。 資料: https://drive.google.com/drive/folders/1PT_antiggHN2a3Pmoze4xS1VTMMpD2e1。
+  answer: '熊本県中学生陸上競技選手権（2025）の「撮影に関する注意事項」です。 資料: https://drive.google.com/drive/folders/1PT_antiggHN2a3Pmoze4xS1VTMMpD2e1
+    ファイル: https://drive.google.com/file/d/1zSQhEj8fIP2JDGabr0x31lLBHrRuR3s5/view。
 
     '
   sources:
@@ -164771,9 +164760,8 @@ entries:
   questions:
   - 2025年熊本県中学生陸上競技選手権の申し合わせ事項は？
   - 2025年熊本県中学生陸上競技選手権「申し合わせ事項」の内容は？
-  answer: '熊本県中学生陸上競技選手権（2025）の「申し合わせ事項」です。 - **id**: - **mimeType**: - **fileSize**: 680073 - **viewUrl**: https: drive.google.com
-    file d 1_yQc2AYJK1qNFFJyepD5Rze8ffLv8198 view?usp=drivesdk - **parentId**: - **modifiedTime**: - **status**: stub (binary
-    deferred;…。 資料: https://drive.google.com/drive/folders/1PT_antiggHN2a3Pmoze4xS1VTMMpD2e1。
+  answer: '熊本県中学生陸上競技選手権（2025）の「申し合わせ事項」です。 資料: https://drive.google.com/drive/folders/1PT_antiggHN2a3Pmoze4xS1VTMMpD2e1 ファイル:
+    https://drive.google.com/file/d/1_yQc2AYJK1qNFFJyepD5Rze8ffLv8198/view。
 
     '
   sources:
@@ -164787,9 +164775,8 @@ entries:
   questions:
   - 2025年熊本県中学生陸上競技選手権の競技注意事項は？
   - 2025年熊本県中学生陸上競技選手権「競技注意事項」の内容は？
-  answer: '熊本県中学生陸上競技選手権（2025）の「競技注意事項」です。 - **id**: - **mimeType**: - **fileSize**: 225702 - **viewUrl**: https: drive.google.com
-    file d 1A7C9Fk5YhGBBY-6E_f2S9uOoe-kFAM5u view?usp=drivesdk - **parentId**: - **modifiedTime**: - **status**: stub (binary
-    deferred;…。 資料: https://drive.google.com/drive/folders/1PT_antiggHN2a3Pmoze4xS1VTMMpD2e1。
+  answer: '熊本県中学生陸上競技選手権（2025）の「競技注意事項」です。 資料: https://drive.google.com/drive/folders/1PT_antiggHN2a3Pmoze4xS1VTMMpD2e1 ファイル:
+    https://drive.google.com/file/d/1A7C9Fk5YhGBBY-6E_f2S9uOoe-kFAM5u/view。
 
     '
   sources:
@@ -164803,9 +164790,8 @@ entries:
   questions:
   - 2025年熊本県中学生陸上競技選手権の練習会場図は？
   - 2025年熊本県中学生陸上競技選手権「練習会場図」の内容は？
-  answer: '熊本県中学生陸上競技選手権（2025）の「練習会場図」です。 - **id**: - **mimeType**: - **fileSize**: 266673 - **viewUrl**: https: drive.google.com
-    file d 1IxtwY2-aiX-PFyb46VnBSBS2JUmhzcWH view?usp=drivesdk - **parentId**: - **modifiedTime**: - **status**: stub (binary
-    deferred;…。 資料: https://drive.google.com/drive/folders/1PT_antiggHN2a3Pmoze4xS1VTMMpD2e1。
+  answer: '熊本県中学生陸上競技選手権（2025）の「練習会場図」です。 資料: https://drive.google.com/drive/folders/1PT_antiggHN2a3Pmoze4xS1VTMMpD2e1 ファイル:
+    https://drive.google.com/file/d/1IxtwY2-aiX-PFyb46VnBSBS2JUmhzcWH/view。
 
     '
   sources:
@@ -164819,9 +164805,8 @@ entries:
   questions:
   - 2025年熊本県中学生陸上競技選手権の衣服運搬については？
   - 2025年熊本県中学生陸上競技選手権「衣服運搬について」の内容は？
-  answer: '熊本県中学生陸上競技選手権（2025）の「衣服運搬について」です。 - **id**: - **mimeType**: - **fileSize**: 375039 - **viewUrl**: https: drive.google.com
-    file d 1Thyrri2DaSqnFfM_-6YN_6z5pPX62_MX view?usp=drivesdk - **parentId**: - **modifiedTime**: - **status**: stub (binary
-    deferred;…。 資料: https://drive.google.com/drive/folders/1PT_antiggHN2a3Pmoze4xS1VTMMpD2e1。
+  answer: '熊本県中学生陸上競技選手権（2025）の「衣服運搬について」です。 資料: https://drive.google.com/drive/folders/1PT_antiggHN2a3Pmoze4xS1VTMMpD2e1
+    ファイル: https://drive.google.com/file/d/1Thyrri2DaSqnFfM_-6YN_6z5pPX62_MX/view。
 
     '
   sources:
@@ -164850,9 +164835,8 @@ entries:
   questions:
   - 2025年荒尾選手権（中止）の大会プログラムは？
   - 2025年荒尾選手権（中止）「大会プログラム」の内容は？
-  answer: '荒尾選手権（中止）（2025）の「大会プログラム」です。 - **id**: - **mimeType**: - **fileSize**: 1192194 - **viewUrl**: https: drive.google.com
-    file d 1OjvYRGsisuJQnW4Hb7221lOIc9q3ET-C view?usp=drivesdk - **parentId**: - **modifiedTime**: - **status**: stub (binary
-    deferred…。 資料: https://drive.google.com/drive/folders/1ZPPJboc_BUiu2thxzlsIUERDlmTBm6Op。
+  answer: '荒尾選手権（中止）（2025）の「大会プログラム」です。 資料: https://drive.google.com/drive/folders/1ZPPJboc_BUiu2thxzlsIUERDlmTBm6Op ファイル:
+    https://drive.google.com/file/d/1OjvYRGsisuJQnW4Hb7221lOIc9q3ET-C/view。
 
     '
   sources:
@@ -164866,9 +164850,8 @@ entries:
   questions:
   - 2025年荒尾選手権（中止）の岱明の参加計画は？
   - 2025年荒尾選手権（中止）「岱明の参加計画」の内容は？
-  answer: '荒尾選手権（中止）（2025）の「岱明の参加計画」です。 - **id**: - **mimeType**: - **fileSize**: 573057 - **viewUrl**: https: drive.google.com
-    file d 1OhVixB3UH07jW7tq9VYRcFs9L9-RLNmI view?usp=drivesdk - **parentId**: - **modifiedTime**: - **status**: stub (binary
-    deferred;…。 資料: https://drive.google.com/drive/folders/1ZPPJboc_BUiu2thxzlsIUERDlmTBm6Op。
+  answer: '荒尾選手権（中止）（2025）の「岱明の参加計画」です。 資料: https://drive.google.com/drive/folders/1ZPPJboc_BUiu2thxzlsIUERDlmTBm6Op ファイル:
+    https://drive.google.com/file/d/1OhVixB3UH07jW7tq9VYRcFs9L9-RLNmI/view。
 
     '
   sources:
@@ -164882,9 +164865,7 @@ entries:
   questions:
   - 2025年荒尾選手権（中止）の開催要項は？
   - 2025年荒尾選手権（中止）「開催要項」の内容は？
-  answer: '荒尾選手権（中止）（2025）の「開催要項」です。 - **id**: - **mimeType**: - **fileSize**: 298931 - **viewUrl**: https: drive.google.com
-    file d 1AVzqzWhgWu2TF6PuYusH49gi2bUFXZNv view?usp=drivesdk - **parentId**: - **modifiedTime**: - **status**: stub (binary
-    deferred;…。 資料: https://drive.google.com/drive/folders/1ZPPJboc_BUiu2thxzlsIUERDlmTBm6Op。
+  answer: '荒尾選手権（中止）（2025）の「開催要項」です。 資料: https://drive.google.com/drive/folders/1ZPPJboc_BUiu2thxzlsIUERDlmTBm6Op ファイル: https://drive.google.com/file/d/1AVzqzWhgWu2TF6PuYusH49gi2bUFXZNv/view。
 
     '
   sources:
@@ -164898,9 +164879,8 @@ entries:
   questions:
   - 2025年全日本中学校通信陸上競技大会熊本県大会のスタートリストは？
   - 2025年全日本中学校通信陸上競技大会熊本県大会「スタートリスト」の内容は？
-  answer: '全日本中学校通信陸上競技大会熊本県大会（2025）の「スタートリスト」です。 - **id**: - **mimeType**: - **fileSize**: 2628024 - **viewUrl**: https:
-    drive.google.com file d 1dAX4qvVP7hdNp8ShczyvpRevmc-WstUb view - **parentId**: - **modifiedTime**: - **status**: stub
-    (binary deferred; use viewUrl)。 資料: https://drive.google.com/drive/folders/1PpQjL2oUCleF8gujx5Z2ZkIhfuTXop2Q。
+  answer: '全日本中学校通信陸上競技大会熊本県大会（2025）の「スタートリスト」です。 資料: https://drive.google.com/drive/folders/1PpQjL2oUCleF8gujx5Z2ZkIhfuTXop2Q
+    ファイル: https://drive.google.com/file/d/1dAX4qvVP7hdNp8ShczyvpRevmc-WstUb/view。
 
     '
   sources:
@@ -164914,9 +164894,8 @@ entries:
   questions:
   - 2025年全日本中学校通信陸上競技大会熊本県大会のタイムテーブルは？
   - 2025年全日本中学校通信陸上競技大会熊本県大会「タイムテーブル」の内容は？
-  answer: '全日本中学校通信陸上競技大会熊本県大会（2025）の「タイムテーブル」です。 タイムテーブル - **id**: - **mimeType**: - **fileSize**: 81762 - **viewUrl**: https:
-    drive.google.com file d 1aJmct0-FnLeZpmJ3XFSdN5imGBTEgztR view?usp=drivesdk - **parentId**: - **modifiedTime**: - **status**:
-    stub (binary…。 資料: https://drive.google.com/drive/folders/1PpQjL2oUCleF8gujx5Z2ZkIhfuTXop2Q。
+  answer: '全日本中学校通信陸上競技大会熊本県大会（2025）の「タイムテーブル」です。 資料: https://drive.google.com/drive/folders/1PpQjL2oUCleF8gujx5Z2ZkIhfuTXop2Q
+    ファイル: https://drive.google.com/file/d/1aJmct0-FnLeZpmJ3XFSdN5imGBTEgztR/view。
 
     '
   sources:
@@ -164930,9 +164909,8 @@ entries:
   questions:
   - 2025年全日本中学校通信陸上競技大会熊本県大会のリレー・オーダー用紙は？
   - 2025年全日本中学校通信陸上競技大会熊本県大会「リレー・オーダー用紙」の内容は？
-  answer: '全日本中学校通信陸上競技大会熊本県大会（2025）の「リレー・オーダー用紙」です。 - **id**: - **mimeType**: - **fileSize**: 49088 - **viewUrl**: https:
-    drive.google.com file d 1afWxbJCA0Iud5wVh_9VL1ksTSiEmyHKE view?usp=drivesdk - **parentId**: - **modifiedTime**: 2025-06-20T12:49:18.154Z
-    - **status**…。 資料: https://drive.google.com/drive/folders/1PpQjL2oUCleF8gujx5Z2ZkIhfuTXop2Q。
+  answer: '全日本中学校通信陸上競技大会熊本県大会（2025）の「リレー・オーダー用紙」です。 資料: https://drive.google.com/drive/folders/1PpQjL2oUCleF8gujx5Z2ZkIhfuTXop2Q
+    ファイル: https://drive.google.com/file/d/1afWxbJCA0Iud5wVh_9VL1ksTSiEmyHKE/view。
 
     '
   sources:
@@ -164946,9 +164924,8 @@ entries:
   questions:
   - 2025年全日本中学校通信陸上競技大会熊本県大会の大会要項は？
   - 2025年全日本中学校通信陸上競技大会熊本県大会「大会要項」の内容は？
-  answer: '全日本中学校通信陸上競技大会熊本県大会（2025）の「大会要項」です。 - **id**: - **mimeType**: - **fileSize**: 269419 - **viewUrl**: https: drive.google.com
-    file d 1PsIStR7ABS4YvhW1LSpq-FBSse_GS85S view - **parentId**: - **modifiedTime**: - **status**: stub (binary deferred;
-    use viewUrl)。 資料: https://drive.google.com/drive/folders/1PpQjL2oUCleF8gujx5Z2ZkIhfuTXop2Q。
+  answer: '全日本中学校通信陸上競技大会熊本県大会（2025）の「大会要項」です。 資料: https://drive.google.com/drive/folders/1PpQjL2oUCleF8gujx5Z2ZkIhfuTXop2Q
+    ファイル: https://drive.google.com/file/d/1PsIStR7ABS4YvhW1LSpq-FBSse_GS85S/view。
 
     '
   sources:
@@ -164991,9 +164968,8 @@ entries:
   questions:
   - 2025年全日本中学校通信陸上競技大会熊本県大会の撮影に関する注意事項は？
   - 2025年全日本中学校通信陸上競技大会熊本県大会「撮影に関する注意事項」の内容は？
-  answer: '全日本中学校通信陸上競技大会熊本県大会（2025）の「撮影に関する注意事項」です。 - **id**: - **mimeType**: - **fileSize**: 306820 - **viewUrl**: https:
-    drive.google.com file d 1adwigMVZaYEWhoJEUA35Ma2dtDE8ElqT view?usp=drivesdk - **parentId**: - **modifiedTime**: - **status**:
-    stub (binary deferred;…。 資料: https://drive.google.com/drive/folders/1PpQjL2oUCleF8gujx5Z2ZkIhfuTXop2Q。
+  answer: '全日本中学校通信陸上競技大会熊本県大会（2025）の「撮影に関する注意事項」です。 資料: https://drive.google.com/drive/folders/1PpQjL2oUCleF8gujx5Z2ZkIhfuTXop2Q
+    ファイル: https://drive.google.com/file/d/1adwigMVZaYEWhoJEUA35Ma2dtDE8ElqT/view。
 
     '
   sources:
@@ -165007,9 +164983,8 @@ entries:
   questions:
   - 2025年全日本中学校通信陸上競技大会熊本県大会の申し合わせ事項は？
   - 2025年全日本中学校通信陸上競技大会熊本県大会「申し合わせ事項」の内容は？
-  answer: '全日本中学校通信陸上競技大会熊本県大会（2025）の「申し合わせ事項」です。 - **id**: - **mimeType**: - **fileSize**: 177725 - **viewUrl**: https: drive.google.com
-    file d 1aTM-6Gtf9VGlms1TBq12UmgGeuIY_aNK view?usp=drivesdk - **parentId**: - **modifiedTime**: - **status**: stub (binary
-    deferred;…。 資料: https://drive.google.com/drive/folders/1PpQjL2oUCleF8gujx5Z2ZkIhfuTXop2Q。
+  answer: '全日本中学校通信陸上競技大会熊本県大会（2025）の「申し合わせ事項」です。 資料: https://drive.google.com/drive/folders/1PpQjL2oUCleF8gujx5Z2ZkIhfuTXop2Q
+    ファイル: https://drive.google.com/file/d/1aTM-6Gtf9VGlms1TBq12UmgGeuIY_aNK/view。
 
     '
   sources:
@@ -165023,9 +164998,8 @@ entries:
   questions:
   - 2025年全日本中学校通信陸上競技大会熊本県大会の競技注意事項は？
   - 2025年全日本中学校通信陸上競技大会熊本県大会「競技注意事項」の内容は？
-  answer: '全日本中学校通信陸上競技大会熊本県大会（2025）の「競技注意事項」です。 - **id**: - **mimeType**: - **fileSize**: 160830 - **viewUrl**: https: drive.google.com
-    file d 1aOrp3as1m0J0mTfUQLsjSwvMrpKtIwM6 view?usp=drivesdk - **parentId**: - **modifiedTime**: - **status**: stub (binary
-    deferred;…。 資料: https://drive.google.com/drive/folders/1PpQjL2oUCleF8gujx5Z2ZkIhfuTXop2Q。
+  answer: '全日本中学校通信陸上競技大会熊本県大会（2025）の「競技注意事項」です。 資料: https://drive.google.com/drive/folders/1PpQjL2oUCleF8gujx5Z2ZkIhfuTXop2Q
+    ファイル: https://drive.google.com/file/d/1aOrp3as1m0J0mTfUQLsjSwvMrpKtIwM6/view。
 
     '
   sources:
@@ -165039,9 +165013,8 @@ entries:
   questions:
   - 2025年全日本中学校通信陸上競技大会熊本県大会の練習会場図は？
   - 2025年全日本中学校通信陸上競技大会熊本県大会「練習会場図」の内容は？
-  answer: '全日本中学校通信陸上競技大会熊本県大会（2025）の「練習会場図」です。 - **id**: - **mimeType**: - **fileSize**: 258617 - **viewUrl**: https: drive.google.com
-    file d 1aZqgTTb52ZkZnlGgiecrs-JwExe--RUq view?usp=drivesdk - **parentId**: - **modifiedTime**: - **status**: stub (binary
-    deferred;…。 資料: https://drive.google.com/drive/folders/1PpQjL2oUCleF8gujx5Z2ZkIhfuTXop2Q。
+  answer: '全日本中学校通信陸上競技大会熊本県大会（2025）の「練習会場図」です。 資料: https://drive.google.com/drive/folders/1PpQjL2oUCleF8gujx5Z2ZkIhfuTXop2Q
+    ファイル: https://drive.google.com/file/d/1aZqgTTb52ZkZnlGgiecrs-JwExe--RUq/view。
 
     '
   sources:
@@ -165055,9 +165028,8 @@ entries:
   questions:
   - 2025年全日本中学校通信陸上競技大会熊本県大会の衣服運搬については？
   - 2025年全日本中学校通信陸上競技大会熊本県大会「衣服運搬について」の内容は？
-  answer: '全日本中学校通信陸上競技大会熊本県大会（2025）の「衣服運搬について」です。 - **id**: - **mimeType**: - **fileSize**: 420372 - **viewUrl**: https:
-    drive.google.com file d 1aeqgO8RtsLsTF5vWVe3kUmT4JSxSEQuX view?usp=drivesdk - **parentId**: - **modifiedTime**: - **status**:
-    stub (binary deferred;…。 資料: https://drive.google.com/drive/folders/1PpQjL2oUCleF8gujx5Z2ZkIhfuTXop2Q。
+  answer: '全日本中学校通信陸上競技大会熊本県大会（2025）の「衣服運搬について」です。 資料: https://drive.google.com/drive/folders/1PpQjL2oUCleF8gujx5Z2ZkIhfuTXop2Q
+    ファイル: https://drive.google.com/file/d/1aeqgO8RtsLsTF5vWVe3kUmT4JSxSEQuX/view。
 
     '
   sources:
@@ -165071,9 +165043,8 @@ entries:
   questions:
   - 2025年熊本県中学校総合体育大会陸上競技大会のゴール後の導線については？
   - 2025年熊本県中学校総合体育大会陸上競技大会「ゴール後の導線について」の内容は？
-  answer: '熊本県中学校総合体育大会陸上競技大会（2025）の「ゴール後の導線について」です。 - **id**: - **mimeType**: - **fileSize**: 386462 - **viewUrl**: https:
-    drive.google.com file d 1ta7g9s-KK3e8DVfb8xIXJ5lOLnz6Y8Xv view?usp=drivesdk - **parentId**: - **modifiedTime**: - **status**:
-    stub (binary deferred;…。 資料: https://drive.google.com/drive/folders/1tV3rNM3AfGExLRXBM2oWb3pZtRD1PYFk。
+  answer: '熊本県中学校総合体育大会陸上競技大会（2025）の「ゴール後の導線について」です。 資料: https://drive.google.com/drive/folders/1tV3rNM3AfGExLRXBM2oWb3pZtRD1PYFk
+    ファイル: https://drive.google.com/file/d/1ta7g9s-KK3e8DVfb8xIXJ5lOLnz6Y8Xv/view。
 
     '
   sources:
@@ -165087,9 +165058,8 @@ entries:
   questions:
   - 2025年熊本県中学校総合体育大会陸上競技大会のスタートリストは？
   - 2025年熊本県中学校総合体育大会陸上競技大会「スタートリスト」の内容は？
-  answer: '熊本県中学校総合体育大会陸上競技大会（2025）の「スタートリスト」です。 - **id**: - **mimeType**: - **fileSize**: 2137443 - **viewUrl**: https: drive.google.com
-    file d 1tWnTdof2kLvPWiMLXg4X9RZ1osTBdjk3 view?usp=drivesdk - **parentId**: - **modifiedTime**: - **status**: stub (binary
-    deferred…。 資料: https://drive.google.com/drive/folders/1tV3rNM3AfGExLRXBM2oWb3pZtRD1PYFk。
+  answer: '熊本県中学校総合体育大会陸上競技大会（2025）の「スタートリスト」です。 資料: https://drive.google.com/drive/folders/1tV3rNM3AfGExLRXBM2oWb3pZtRD1PYFk
+    ファイル: https://drive.google.com/file/d/1tWnTdof2kLvPWiMLXg4X9RZ1osTBdjk3/view。
 
     '
   sources:
@@ -165103,9 +165073,8 @@ entries:
   questions:
   - 2025年熊本県中学校総合体育大会陸上競技大会のタイムテーブルは？
   - 2025年熊本県中学校総合体育大会陸上競技大会「タイムテーブル」の内容は？
-  answer: '熊本県中学校総合体育大会陸上競技大会（2025）の「タイムテーブル」です。 - **id**: - **mimeType**: - **fileSize**: 75971 - **viewUrl**: https: drive.google.com
-    file d 1u1L897KlkJK1AsFdr2PZ3BPCJbt2MV2l view?usp=drivesdk - **parentId**: - **modifiedTime**: - **status**: stub (binary
-    deferred…。 資料: https://drive.google.com/drive/folders/1tV3rNM3AfGExLRXBM2oWb3pZtRD1PYFk。
+  answer: '熊本県中学校総合体育大会陸上競技大会（2025）の「タイムテーブル」です。 資料: https://drive.google.com/drive/folders/1tV3rNM3AfGExLRXBM2oWb3pZtRD1PYFk
+    ファイル: https://drive.google.com/file/d/1u1L897KlkJK1AsFdr2PZ3BPCJbt2MV2l/view。
 
     '
   sources:
@@ -165119,9 +165088,8 @@ entries:
   questions:
   - 2025年熊本県中学校総合体育大会陸上競技大会の審判編成は？
   - 2025年熊本県中学校総合体育大会陸上競技大会「審判編成」の内容は？
-  answer: '熊本県中学校総合体育大会陸上競技大会（2025）の「審判編成」です。 - **id**: - **mimeType**: - **fileSize**: 221529 - **viewUrl**: https: drive.google.com
-    file d 1tXeZz3Rn9CZWgHWBpoXyb_tB-VCcN66r view?usp=drivesdk - **parentId**: - **modifiedTime**: - **status**: stub (binary
-    deferred;…。 資料: https://drive.google.com/drive/folders/1tV3rNM3AfGExLRXBM2oWb3pZtRD1PYFk。
+  answer: '熊本県中学校総合体育大会陸上競技大会（2025）の「審判編成」です。 資料: https://drive.google.com/drive/folders/1tV3rNM3AfGExLRXBM2oWb3pZtRD1PYFk
+    ファイル: https://drive.google.com/file/d/1tXeZz3Rn9CZWgHWBpoXyb_tB-VCcN66r/view。
 
     '
   sources:
@@ -165150,9 +165118,8 @@ entries:
   questions:
   - 2025年熊本県中学校総合体育大会陸上競技大会の撮影に関する注意事項は？
   - 2025年熊本県中学校総合体育大会陸上競技大会「撮影に関する注意事項」の内容は？
-  answer: '熊本県中学校総合体育大会陸上競技大会（2025）の「撮影に関する注意事項」です。 - **id**: - **mimeType**: - **fileSize**: 306820 - **viewUrl**: https:
-    drive.google.com file d 1toqaqu1BHR0x0Yw6infEMTjArssYxG5T view?usp=drivesdk - **parentId**: - **modifiedTime**: - **status**:
-    stub (binary deferred;…。 資料: https://drive.google.com/drive/folders/1tV3rNM3AfGExLRXBM2oWb3pZtRD1PYFk。
+  answer: '熊本県中学校総合体育大会陸上競技大会（2025）の「撮影に関する注意事項」です。 資料: https://drive.google.com/drive/folders/1tV3rNM3AfGExLRXBM2oWb3pZtRD1PYFk
+    ファイル: https://drive.google.com/file/d/1toqaqu1BHR0x0Yw6infEMTjArssYxG5T/view。
 
     '
   sources:
@@ -165166,9 +165133,8 @@ entries:
   questions:
   - 2025年熊本県中学校総合体育大会陸上競技大会の申し合わせ・掃除分担は？
   - 2025年熊本県中学校総合体育大会陸上競技大会「申し合わせ・掃除分担」の内容は？
-  answer: '熊本県中学校総合体育大会陸上競技大会（2025）の「申し合わせ・掃除分担」です。 - **id**: - **mimeType**: - **fileSize**: 151089 - **viewUrl**: https:
-    drive.google.com file d 1twXq9h-w3Lu3xPZiGqqvr7MPKRyvhmO4 view?usp=drivesdk - **parentId**: - **modifiedTime**: - **status**:
-    stub (binary deferred;…。 資料: https://drive.google.com/drive/folders/1tV3rNM3AfGExLRXBM2oWb3pZtRD1PYFk。
+  answer: '熊本県中学校総合体育大会陸上競技大会（2025）の「申し合わせ・掃除分担」です。 資料: https://drive.google.com/drive/folders/1tV3rNM3AfGExLRXBM2oWb3pZtRD1PYFk
+    ファイル: https://drive.google.com/file/d/1twXq9h-w3Lu3xPZiGqqvr7MPKRyvhmO4/view。
 
     '
   sources:
@@ -165182,9 +165148,8 @@ entries:
   questions:
   - 2025年熊本県中学校総合体育大会陸上競技大会の競技注意事項は？
   - 2025年熊本県中学校総合体育大会陸上競技大会「競技注意事項」の内容は？
-  answer: '熊本県中学校総合体育大会陸上競技大会（2025）の「競技注意事項」です。 - **id**: - **mimeType**: - **fileSize**: 185924 - **viewUrl**: https: drive.google.com
-    file d 1tyhuCOSgWoHWSozRYc2p_Yo4KEa1qhO_ view?usp=drivesdk - **parentId**: - **modifiedTime**: - **status**: stub (binary
-    deferred;…。 資料: https://drive.google.com/drive/folders/1tV3rNM3AfGExLRXBM2oWb3pZtRD1PYFk。
+  answer: '熊本県中学校総合体育大会陸上競技大会（2025）の「競技注意事項」です。 資料: https://drive.google.com/drive/folders/1tV3rNM3AfGExLRXBM2oWb3pZtRD1PYFk
+    ファイル: https://drive.google.com/file/d/1tyhuCOSgWoHWSozRYc2p_Yo4KEa1qhO_/view。
 
     '
   sources:
@@ -165198,9 +165163,8 @@ entries:
   questions:
   - 2025年熊本県中学校総合体育大会陸上競技大会の練習会場図は？
   - 2025年熊本県中学校総合体育大会陸上競技大会「練習会場図」の内容は？
-  answer: '熊本県中学校総合体育大会陸上競技大会（2025）の「練習会場図」です。 - **id**: - **mimeType**: - **fileSize**: 259869 - **viewUrl**: https: drive.google.com
-    file d 1tclsgN9UcVlrw4FcUWd0nPbKVGcKQdmI view?usp=drivesdk - **parentId**: - **modifiedTime**: - **status**: stub (binary
-    deferred;…。 資料: https://drive.google.com/drive/folders/1tV3rNM3AfGExLRXBM2oWb3pZtRD1PYFk。
+  answer: '熊本県中学校総合体育大会陸上競技大会（2025）の「練習会場図」です。 資料: https://drive.google.com/drive/folders/1tV3rNM3AfGExLRXBM2oWb3pZtRD1PYFk
+    ファイル: https://drive.google.com/file/d/1tclsgN9UcVlrw4FcUWd0nPbKVGcKQdmI/view。
 
     '
   sources:
@@ -165214,9 +165178,7 @@ entries:
   questions:
   - 2025年玉名選手権のタイムテーブルは？
   - 2025年玉名選手権「タイムテーブル」の内容は？
-  answer: '玉名選手権（2025）の「タイムテーブル」です。 - **id**: - **mimeType**: - **fileSize**: 30472 - **viewUrl**: https: drive.google.com
-    file d 1-viejsZ98ArceFXt1u_vm2AdmV3LPJ1O view?usp=drivesdk - **parentId**: - **modifiedTime**: 2025-07-31T07:19:34.249Z
-    - **status…。 資料: https://drive.google.com/drive/folders/1-tQ7fu6h5f0PTxqCtFqadSLyTqdTUfTH。
+  answer: '玉名選手権（2025）の「タイムテーブル」です。 資料: https://drive.google.com/drive/folders/1-tQ7fu6h5f0PTxqCtFqadSLyTqdTUfTH ファイル: https://drive.google.com/file/d/1-viejsZ98ArceFXt1u_vm2AdmV3LPJ1O/view。
 
     '
   sources:
@@ -165230,9 +165192,7 @@ entries:
   questions:
   - 2025年玉名選手権のトラックは？
   - 2025年玉名選手権「トラック」の内容は？
-  answer: '玉名選手権（2025）の「トラック」です。 - **id**: - **mimeType**: - **fileSize**: 308115 - **viewUrl**: https: drive.google.com file
-    d 100csybdQtlca7-dbMls_5P3ffneusS9z view?usp=drivesdk - **parentId**: - **modifiedTime**: - **status**: stub (binary deferred;…。
-    資料: https://drive.google.com/drive/folders/1-tQ7fu6h5f0PTxqCtFqadSLyTqdTUfTH。
+  answer: '玉名選手権（2025）の「トラック」です。 資料: https://drive.google.com/drive/folders/1-tQ7fu6h5f0PTxqCtFqadSLyTqdTUfTH ファイル: https://drive.google.com/file/d/100csybdQtlca7-dbMls_5P3ffneusS9z/view。
 
     '
   sources:
@@ -165260,9 +165220,7 @@ entries:
   questions:
   - 2025年玉名選手権の歴代記録は？
   - 2025年玉名選手権「歴代記録」の内容は？
-  answer: '玉名選手権（2025）の「歴代記録」です。 - **id**: - **mimeType**: - **fileSize**: 202335 - **viewUrl**: https: drive.google.com file
-    d 101ulNyYlX3uWO1D99zkpEdJVIPKp3bTI view?usp=drivesdk - **parentId**: - **modifiedTime**: - **status**: stub (binary deferred;…。
-    資料: https://drive.google.com/drive/folders/1-tQ7fu6h5f0PTxqCtFqadSLyTqdTUfTH。
+  answer: '玉名選手権（2025）の「歴代記録」です。 資料: https://drive.google.com/drive/folders/1-tQ7fu6h5f0PTxqCtFqadSLyTqdTUfTH ファイル: https://drive.google.com/file/d/101ulNyYlX3uWO1D99zkpEdJVIPKp3bTI/view。
 
     '
   sources:
@@ -165276,9 +165234,7 @@ entries:
   questions:
   - 2025年玉名選手権の要項は？
   - 2025年玉名選手権「要項」の内容は？
-  answer: '玉名選手権（2025）の「要項」です。 - **id**: - **mimeType**: - **fileSize**: 384770 - **viewUrl**: https: drive.google.com file
-    d 1-vGfIn3v0Hsxoxc_-wTTQINCPe5bqy4A view?usp=drivesdk - **parentId**: - **modifiedTime**: - **status**: stub (binary deferred;…。
-    資料: https://drive.google.com/drive/folders/1-tQ7fu6h5f0PTxqCtFqadSLyTqdTUfTH。
+  answer: '玉名選手権（2025）の「要項」です。 資料: https://drive.google.com/drive/folders/1-tQ7fu6h5f0PTxqCtFqadSLyTqdTUfTH ファイル: https://drive.google.com/file/d/1-vGfIn3v0Hsxoxc_-wTTQINCPe5bqy4A/view。
 
     '
   sources:
@@ -165292,9 +165248,7 @@ entries:
   questions:
   - 2025年玉名選手権の跳躍は？
   - 2025年玉名選手権「跳躍」の内容は？
-  answer: '玉名選手権（2025）の「跳躍」です。 - **id**: - **mimeType**: - **fileSize**: 110968 - **viewUrl**: https: drive.google.com file
-    d 1-wRsgTV73YDpKiDFn0cFv9XKeS2iNr2l view?usp=drivesdk - **parentId**: - **modifiedTime**: - **status**: stub (binary deferred;…。
-    資料: https://drive.google.com/drive/folders/1-tQ7fu6h5f0PTxqCtFqadSLyTqdTUfTH。
+  answer: '玉名選手権（2025）の「跳躍」です。 資料: https://drive.google.com/drive/folders/1-tQ7fu6h5f0PTxqCtFqadSLyTqdTUfTH ファイル: https://drive.google.com/file/d/1-wRsgTV73YDpKiDFn0cFv9XKeS2iNr2l/view。
 
     '
   sources:
@@ -165308,9 +165262,8 @@ entries:
   questions:
   - 2025年玉名郡ナイターのR7タイムテーブルは？
   - 2025年玉名郡ナイター「R7タイムテーブル」の内容は？
-  answer: '玉名郡ナイター（2025）の「R7タイムテーブル」です。 ★ - **id**: - **mimeType**: - **fileSize**: 67933 - **viewUrl**: https: drive.google.com
-    file d 1PACfxpcUIZWp2xqICu-oTAhvbhKibErX view?usp=drivesdk - **parentId**: - **modifiedTime**: 2025-08-30T06:19:35.731Z
-    - **stat…。 資料: https://drive.google.com/drive/folders/1HG6vHjRUkqe1vMT3r5Vh3spZa3bviFF-。
+  answer: '玉名郡ナイター（2025）の「R7タイムテーブル」です。 資料: https://drive.google.com/drive/folders/1HG6vHjRUkqe1vMT3r5Vh3spZa3bviFF- ファイル:
+    https://drive.google.com/file/d/1PACfxpcUIZWp2xqICu-oTAhvbhKibErX/view。
 
     '
   sources:
@@ -165324,9 +165277,7 @@ entries:
   questions:
   - 2025年玉名郡ナイターのR7選手リストは？
   - 2025年玉名郡ナイター「R7選手リスト」の内容は？
-  answer: '玉名郡ナイター（2025）の「R7選手リスト」です。 ★ - **id**: - **mimeType**: - **fileSize**: 310137 - **viewUrl**: https: drive.google.com
-    file d 1P572fciy-R_BSBnAd9VRxexE7R2nArVH view?usp=drivesdk - **parentId**: - **modifiedTime**: - **status**: stub (binary
-    defer…。 資料: https://drive.google.com/drive/folders/1HG6vHjRUkqe1vMT3r5Vh3spZa3bviFF-。
+  answer: '玉名郡ナイター（2025）の「R7選手リスト」です。 資料: https://drive.google.com/drive/folders/1HG6vHjRUkqe1vMT3r5Vh3spZa3bviFF- ファイル: https://drive.google.com/file/d/1P572fciy-R_BSBnAd9VRxexE7R2nArVH/view。
 
     '
   sources:
@@ -165370,8 +165321,8 @@ entries:
   questions:
   - 2025年中学駅伝金栗四三生誕の地なごみ大会の女子の結果.heicは？
   - 2025年中学駅伝金栗四三生誕の地なごみ大会「女子の結果.heic」の内容は？
-  answer: '中学駅伝金栗四三生誕の地なごみ大会（2025）の「女子の結果.heic」です。 女子の結果 - **id**: - **mimeType**: - **fileSize**: 2896668 - **viewUrl**:
-    https: drive.google.com file d 1sPz3-nLsS_79Rl19lbW5oNkjPHtHVmCq view?usp=drivesdk - **status**: transcribed。 資料: https://drive.google.com/drive/folders/1NSx1uYMt2_N9ezohsnyZ4BPXIw-rfUb6。
+  answer: '中学駅伝金栗四三生誕の地なごみ大会（2025）の「女子の結果.heic」です。 資料: https://drive.google.com/drive/folders/1NSx1uYMt2_N9ezohsnyZ4BPXIw-rfUb6
+    ファイル: https://drive.google.com/file/d/1sPz3-nLsS_79Rl19lbW5oNkjPHtHVmCq/view。
 
     '
   sources:
@@ -165464,9 +165415,8 @@ entries:
   questions:
   - 2025年中学駅伝金栗四三生誕の地なごみ大会の男子の結果1は？
   - 2025年中学駅伝金栗四三生誕の地なごみ大会「男子の結果1」の内容は？
-  answer: '中学駅伝金栗四三生誕の地なごみ大会（2025）の「男子の結果1」です。 - **id**: - **mimeType**: - **fileSize**: 1555845 - **viewUrl**: https: drive.google.com
-    file d 1aNFefxDGThQ6AA5Cru2Ve77SqB3rcrHJ view?usp=drivesdk - **status**: transcribed 1〜20位のスキャン原本。文字起こし は （ と合わせて全チーム）。
-    資料: https://drive.google.com/drive/folders/1NSx1uYMt2_N9ezohsnyZ4BPXIw-rfUb6。
+  answer: '中学駅伝金栗四三生誕の地なごみ大会（2025）の「男子の結果1」です。 資料: https://drive.google.com/drive/folders/1NSx1uYMt2_N9ezohsnyZ4BPXIw-rfUb6
+    ファイル: https://drive.google.com/file/d/1aNFefxDGThQ6AA5Cru2Ve77SqB3rcrHJ/view。
 
     '
   sources:
@@ -165480,8 +165430,8 @@ entries:
   questions:
   - 2025年中学駅伝金栗四三生誕の地なごみ大会の男子の結果2は？
   - 2025年中学駅伝金栗四三生誕の地なごみ大会「男子の結果2」の内容は？
-  answer: '中学駅伝金栗四三生誕の地なごみ大会（2025）の「男子の結果2」です。 - **id**: - **mimeType**: - **fileSize**: 1075016 - **viewUrl**: https: drive.google.com
-    file d 1OhqX-94EJoL5hrjwIFxszsejF5gW_14P view?usp=drivesdk - **status**: transcribed 21位〜OP のスキャン原本。文字起こし は。 資料: https://drive.google.com/drive/folders/1NSx1uYMt2_N9ezohsnyZ4BPXIw-rfUb6。
+  answer: '中学駅伝金栗四三生誕の地なごみ大会（2025）の「男子の結果2」です。 資料: https://drive.google.com/drive/folders/1NSx1uYMt2_N9ezohsnyZ4BPXIw-rfUb6
+    ファイル: https://drive.google.com/file/d/1OhqX-94EJoL5hrjwIFxszsejF5gW_14P/view。
 
     '
   sources:
@@ -165543,9 +165493,8 @@ entries:
   questions:
   - 2025年中学駅伝金栗四三生誕の地なごみ大会の開催要項は？
   - 2025年中学駅伝金栗四三生誕の地なごみ大会「開催要項」の内容は？
-  answer: '中学駅伝金栗四三生誕の地なごみ大会（2025）の「開催要項」です。 - **id**: - **mimeType**: - **fileSize**: 1455659 - **viewUrl**: https: drive.google.com
-    file d 1OmlzLChKKck3d2IYPXF5rsWMS4T0XXFJ view?usp=drivesdk - **parentId**: - **modifiedTime**: 2025-09-21T05:00:00Z -
-    **status**:…。 資料: https://drive.google.com/drive/folders/1NSx1uYMt2_N9ezohsnyZ4BPXIw-rfUb6。
+  answer: '中学駅伝金栗四三生誕の地なごみ大会（2025）の「開催要項」です。 資料: https://drive.google.com/drive/folders/1NSx1uYMt2_N9ezohsnyZ4BPXIw-rfUb6
+    ファイル: https://drive.google.com/file/d/1OmlzLChKKck3d2IYPXF5rsWMS4T0XXFJ/view。
 
     '
   sources:
@@ -165559,9 +165508,8 @@ entries:
   questions:
   - 2025年第２回熊本県ジュニア駅伝競走大会の会場図及び注意事項等は？
   - 2025年第２回熊本県ジュニア駅伝競走大会「会場図及び注意事項等」の内容は？
-  answer: '第２回熊本県ジュニア駅伝競走大会（2025）の「会場図及び注意事項等」です。 - **id**: - **mimeType**: - **fileSize**: 3639294 - **viewUrl**: https:
-    drive.google.com file d 10rxganXv6jcGfxVGVkorWzueHt4VU5JC view?usp=drivesdk - **parentId**: - **modifiedTime**: 2025-09-28T12:00:00Z
-    - **status**:…。 資料: https://drive.google.com/drive/folders/1GLBlWzfFByYgzuK96T-BzRP2yIXuUbK5。
+  answer: '第２回熊本県ジュニア駅伝競走大会（2025）の「会場図及び注意事項等」です。 資料: https://drive.google.com/drive/folders/1GLBlWzfFByYgzuK96T-BzRP2yIXuUbK5
+    ファイル: https://drive.google.com/file/d/10rxganXv6jcGfxVGVkorWzueHt4VU5JC/view。
 
     '
   sources:
@@ -165575,9 +165523,8 @@ entries:
   questions:
   - 2025年第２回熊本県ジュニア駅伝競走大会の女子チャレンジ_スタートリストは？
   - 2025年第２回熊本県ジュニア駅伝競走大会「女子チャレンジ_スタートリスト」の内容は？
-  answer: '第２回熊本県ジュニア駅伝競走大会（2025）の「女子チャレンジ_スタートリスト」です。 - **id**: - **mimeType**: - **fileSize**: 1353418 - **viewUrl**: https:
-    drive.google.com file d 1Hd2dJjaLnwYMv5MBLh3OR6dmireEPkHb view?usp=drivesdk - **parentId**: - **modifiedTime**: 2025-09-28T12:00:00Z
-    - **status**:…。 資料: https://drive.google.com/drive/folders/1GLBlWzfFByYgzuK96T-BzRP2yIXuUbK5。
+  answer: '第２回熊本県ジュニア駅伝競走大会（2025）の「女子チャレンジ_スタートリスト」です。 資料: https://drive.google.com/drive/folders/1GLBlWzfFByYgzuK96T-BzRP2yIXuUbK5
+    ファイル: https://drive.google.com/file/d/1Hd2dJjaLnwYMv5MBLh3OR6dmireEPkHb/view。
 
     '
   sources:
@@ -165591,9 +165538,8 @@ entries:
   questions:
   - 2025年第２回熊本県ジュニア駅伝競走大会の女子チャンピオンシップ_スタートリストは？
   - 2025年第２回熊本県ジュニア駅伝競走大会「女子チャンピオンシップ_スタートリスト」の内容は？
-  answer: '第２回熊本県ジュニア駅伝競走大会（2025）の「女子チャンピオンシップ_スタートリスト」です。 - **id**: - **mimeType**: - **fileSize**: 738820 - **viewUrl**:
-    https: drive.google.com file d 1-ssz3RDHwRnI6ZtnEJL7wFSZwvy2qzep view?usp=drivesdk - **parentId**: - **modifiedTime**:
-    2025-09-28T12:00:00Z - **status**: s…。 資料: https://drive.google.com/drive/folders/1GLBlWzfFByYgzuK96T-BzRP2yIXuUbK5。
+  answer: '第２回熊本県ジュニア駅伝競走大会（2025）の「女子チャンピオンシップ_スタートリスト」です。 資料: https://drive.google.com/drive/folders/1GLBlWzfFByYgzuK96T-BzRP2yIXuUbK5
+    ファイル: https://drive.google.com/file/d/1-ssz3RDHwRnI6ZtnEJL7wFSZwvy2qzep/view。
 
     '
   sources:
@@ -165622,9 +165568,8 @@ entries:
   questions:
   - 2025年第２回熊本県ジュニア駅伝競走大会の男子チャレンジ_スタートリストは？
   - 2025年第２回熊本県ジュニア駅伝競走大会「男子チャレンジ_スタートリスト」の内容は？
-  answer: '第２回熊本県ジュニア駅伝競走大会（2025）の「男子チャレンジ_スタートリスト」です。 - **id**: - **mimeType**: - **fileSize**: 2353136 - **viewUrl**: https:
-    drive.google.com file d 1DamQKlqOKAly1rbtmE7MmnidiNNze7Vb view?usp=drivesdk - **parentId**: - **modifiedTime**: 2025-09-28T12:00:00Z
-    - **status**:…。 資料: https://drive.google.com/drive/folders/1GLBlWzfFByYgzuK96T-BzRP2yIXuUbK5。
+  answer: '第２回熊本県ジュニア駅伝競走大会（2025）の「男子チャレンジ_スタートリスト」です。 資料: https://drive.google.com/drive/folders/1GLBlWzfFByYgzuK96T-BzRP2yIXuUbK5
+    ファイル: https://drive.google.com/file/d/1DamQKlqOKAly1rbtmE7MmnidiNNze7Vb/view。
 
     '
   sources:
@@ -165638,9 +165583,8 @@ entries:
   questions:
   - 2025年第２回熊本県ジュニア駅伝競走大会の男子チャンピオンシップ_スタートリストは？
   - 2025年第２回熊本県ジュニア駅伝競走大会「男子チャンピオンシップ_スタートリスト」の内容は？
-  answer: '第２回熊本県ジュニア駅伝競走大会（2025）の「男子チャンピオンシップ_スタートリスト」です。 - **id**: - **mimeType**: - **fileSize**: 1773817 - **viewUrl**:
-    https: drive.google.com file d 11OswTqThhkqYimMO3W2QaeruwxsM2VMX view?usp=drivesdk - **parentId**: - **modifiedTime**:
-    2025-09-28T12:00:00Z - **status**:…。 資料: https://drive.google.com/drive/folders/1GLBlWzfFByYgzuK96T-BzRP2yIXuUbK5。
+  answer: '第２回熊本県ジュニア駅伝競走大会（2025）の「男子チャンピオンシップ_スタートリスト」です。 資料: https://drive.google.com/drive/folders/1GLBlWzfFByYgzuK96T-BzRP2yIXuUbK5
+    ファイル: https://drive.google.com/file/d/11OswTqThhkqYimMO3W2QaeruwxsM2VMX/view。
 
     '
   sources:
@@ -165654,9 +165598,8 @@ entries:
   questions:
   - 2025年第２回熊本県ジュニア駅伝競走大会の結果_女子オープンは？
   - 2025年第２回熊本県ジュニア駅伝競走大会「結果_女子オープン」の内容は？
-  answer: '第２回熊本県ジュニア駅伝競走大会（2025）の「結果_女子オープン」です。 結果_女子オープン - **id**: - **mimeType**: - **fileSize**: 90153 - **viewUrl**:
-    https: drive.google.com file d 1qnXJvioITkJEu4H2nvnhtqyuPNkTidAx view?usp=drivesdk - **parentId**: - **modifiedTime**:
-    2025-09-28T12:00:00Z - **…。 資料: https://drive.google.com/drive/folders/1GLBlWzfFByYgzuK96T-BzRP2yIXuUbK5。
+  answer: '第２回熊本県ジュニア駅伝競走大会（2025）の「結果_女子オープン」です。 資料: https://drive.google.com/drive/folders/1GLBlWzfFByYgzuK96T-BzRP2yIXuUbK5
+    ファイル: https://drive.google.com/file/d/1qnXJvioITkJEu4H2nvnhtqyuPNkTidAx/view。
 
     '
   sources:
@@ -165670,9 +165613,8 @@ entries:
   questions:
   - 2025年第２回熊本県ジュニア駅伝競走大会の結果_女子チャレンジは？
   - 2025年第２回熊本県ジュニア駅伝競走大会「結果_女子チャレンジ」の内容は？
-  answer: '第２回熊本県ジュニア駅伝競走大会（2025）の「結果_女子チャレンジ」です。 結果_女子チャレンジ - **id**: - **mimeType**: - **fileSize**: 124686 - **viewUrl**:
-    https: drive.google.com file d 1kxOae7UFb8Im5nS4-OClvRJMuhiifZc9 view?usp=drivesdk - **parentId**: - **modifiedTime**:
-    2025-09-28T12:00:00Z -…。 資料: https://drive.google.com/drive/folders/1GLBlWzfFByYgzuK96T-BzRP2yIXuUbK5。
+  answer: '第２回熊本県ジュニア駅伝競走大会（2025）の「結果_女子チャレンジ」です。 資料: https://drive.google.com/drive/folders/1GLBlWzfFByYgzuK96T-BzRP2yIXuUbK5
+    ファイル: https://drive.google.com/file/d/1kxOae7UFb8Im5nS4-OClvRJMuhiifZc9/view。
 
     '
   sources:
@@ -165686,9 +165628,8 @@ entries:
   questions:
   - 2025年第２回熊本県ジュニア駅伝競走大会の結果_女子チャンピオンシップは？
   - 2025年第２回熊本県ジュニア駅伝競走大会「結果_女子チャンピオンシップ」の内容は？
-  answer: '第２回熊本県ジュニア駅伝競走大会（2025）の「結果_女子チャンピオンシップ」です。 結果_女子チャンピオンシップ - **id**: - **mimeType**: - **fileSize**: 85538 - **viewUrl**:
-    https: drive.google.com file d 1peANqtTi_cg05junkSpH9LWMaK0QYD3p view?usp=drivesdk - **parentId**: - **modifiedTime**:
-    2025-09-28T12:00:00Z…。 資料: https://drive.google.com/drive/folders/1GLBlWzfFByYgzuK96T-BzRP2yIXuUbK5。
+  answer: '第２回熊本県ジュニア駅伝競走大会（2025）の「結果_女子チャンピオンシップ」です。 資料: https://drive.google.com/drive/folders/1GLBlWzfFByYgzuK96T-BzRP2yIXuUbK5
+    ファイル: https://drive.google.com/file/d/1peANqtTi_cg05junkSpH9LWMaK0QYD3p/view。
 
     '
   sources:
@@ -165702,9 +165643,8 @@ entries:
   questions:
   - 2025年第２回熊本県ジュニア駅伝競走大会の結果_男子オープンは？
   - 2025年第２回熊本県ジュニア駅伝競走大会「結果_男子オープン」の内容は？
-  answer: '第２回熊本県ジュニア駅伝競走大会（2025）の「結果_男子オープン」です。 結果_男子オープン - **id**: - **mimeType**: - **fileSize**: 111308 - **viewUrl**:
-    https: drive.google.com file d 1-yX79WQjJ7GiAz7_d598JDAPLaaIyltJ view?usp=drivesdk - **parentId**: - **modifiedTime**:
-    2025-09-28T12:00:00Z - *…。 資料: https://drive.google.com/drive/folders/1GLBlWzfFByYgzuK96T-BzRP2yIXuUbK5。
+  answer: '第２回熊本県ジュニア駅伝競走大会（2025）の「結果_男子オープン」です。 資料: https://drive.google.com/drive/folders/1GLBlWzfFByYgzuK96T-BzRP2yIXuUbK5
+    ファイル: https://drive.google.com/file/d/1-yX79WQjJ7GiAz7_d598JDAPLaaIyltJ/view。
 
     '
   sources:
@@ -165718,9 +165658,8 @@ entries:
   questions:
   - 2025年第２回熊本県ジュニア駅伝競走大会の結果_男子チャレンジは？
   - 2025年第２回熊本県ジュニア駅伝競走大会「結果_男子チャレンジ」の内容は？
-  answer: '第２回熊本県ジュニア駅伝競走大会（2025）の「結果_男子チャレンジ」です。 結果_男子チャレンジ - **id**: - **mimeType**: - **fileSize**: 431243 - **viewUrl**:
-    https: drive.google.com file d 1Xm-_z4TL8sMp3X_AKz1zLi20xGUTkWHP view?usp=drivesdk - **parentId**: - **modifiedTime**:
-    2025-09-28T12:00:00Z -…。 資料: https://drive.google.com/drive/folders/1GLBlWzfFByYgzuK96T-BzRP2yIXuUbK5。
+  answer: '第２回熊本県ジュニア駅伝競走大会（2025）の「結果_男子チャレンジ」です。 資料: https://drive.google.com/drive/folders/1GLBlWzfFByYgzuK96T-BzRP2yIXuUbK5
+    ファイル: https://drive.google.com/file/d/1Xm-_z4TL8sMp3X_AKz1zLi20xGUTkWHP/view。
 
     '
   sources:
@@ -165734,9 +165673,8 @@ entries:
   questions:
   - 2025年第２回熊本県ジュニア駅伝競走大会の結果_男子チャンピオンシップは？
   - 2025年第２回熊本県ジュニア駅伝競走大会「結果_男子チャンピオンシップ」の内容は？
-  answer: '第２回熊本県ジュニア駅伝競走大会（2025）の「結果_男子チャンピオンシップ」です。 結果_男子チャンピオンシップ - **id**: - **mimeType**: - **fileSize**: 339113 - **viewUrl**:
-    https: drive.google.com file d 1SEYTjCmXsvGwP8aylgeU9jLgSC54jOZc view?usp=drivesdk - **parentId**: - **modifiedTime**:
-    2025-09-28T12:00:00…。 資料: https://drive.google.com/drive/folders/1GLBlWzfFByYgzuK96T-BzRP2yIXuUbK5。
+  answer: '第２回熊本県ジュニア駅伝競走大会（2025）の「結果_男子チャンピオンシップ」です。 資料: https://drive.google.com/drive/folders/1GLBlWzfFByYgzuK96T-BzRP2yIXuUbK5
+    ファイル: https://drive.google.com/file/d/1SEYTjCmXsvGwP8aylgeU9jLgSC54jOZc/view。
 
     '
   sources:
@@ -165750,9 +165688,8 @@ entries:
   questions:
   - 2025年荒玉中体連駅伝（玉名荒尾）の参加計画1は？
   - 2025年荒玉中体連駅伝（玉名荒尾）「参加計画1」の内容は？
-  answer: '荒玉中体連駅伝（玉名荒尾）（2025）の「参加計画1」です。 - **id**: - **mimeType**: - **fileSize**: 1017817 - **viewUrl**: https: drive.google.com
-    file d 13jxQlVp953do7w_Vrb0T9aYjgQE76sYg view - **parentId**: - **modifiedTime**: - **status**: stub (binary deferred;
-    use viewU…。 資料: https://drive.google.com/drive/folders/16wyldCo5M67eTbTKMyNEeC9OPf0tV7KL。
+  answer: '荒玉中体連駅伝（玉名荒尾）（2025）の「参加計画1」です。 資料: https://drive.google.com/drive/folders/16wyldCo5M67eTbTKMyNEeC9OPf0tV7KL ファイル:
+    https://drive.google.com/file/d/13jxQlVp953do7w_Vrb0T9aYjgQE76sYg/view。
 
     '
   sources:
@@ -165766,9 +165703,8 @@ entries:
   questions:
   - 2025年荒玉中体連駅伝（玉名荒尾）の参加計画2は？
   - 2025年荒玉中体連駅伝（玉名荒尾）「参加計画2」の内容は？
-  answer: '荒玉中体連駅伝（玉名荒尾）（2025）の「参加計画2」です。 - **id**: - **mimeType**: - **fileSize**: 1102212 - **viewUrl**: https: drive.google.com
-    file d 1o6SkMOyeNtaEUKRLMRHRkXOLn1SrvNMT view - **parentId**: - **modifiedTime**: - **status**: stub (binary deferred;
-    use viewU…。 資料: https://drive.google.com/drive/folders/16wyldCo5M67eTbTKMyNEeC9OPf0tV7KL。
+  answer: '荒玉中体連駅伝（玉名荒尾）（2025）の「参加計画2」です。 資料: https://drive.google.com/drive/folders/16wyldCo5M67eTbTKMyNEeC9OPf0tV7KL ファイル:
+    https://drive.google.com/file/d/1o6SkMOyeNtaEUKRLMRHRkXOLn1SrvNMT/view。
 
     '
   sources:
@@ -165782,9 +165718,8 @@ entries:
   questions:
   - 2025年荒玉中体連駅伝（玉名荒尾）の女子の結果.JPGは？
   - 2025年荒玉中体連駅伝（玉名荒尾）「女子の結果.JPG」の内容は？
-  answer: '荒玉中体連駅伝（玉名荒尾）（2025）の「女子の結果.JPG」です。 女子の結果.JPG - **id**: - **mimeType**: - **fileSize**: 470947 - **viewUrl**: https:
-    drive.google.com file d 1Ob_16QTu6vvMbQZzPgtvni7-NBGKteuR view?usp=drivesdk - **parentId**: - **modifiedTime**: - **status**:
-    stub (bina…。 資料: https://drive.google.com/drive/folders/16wyldCo5M67eTbTKMyNEeC9OPf0tV7KL。
+  answer: '荒玉中体連駅伝（玉名荒尾）（2025）の「女子の結果.JPG」です。 資料: https://drive.google.com/drive/folders/16wyldCo5M67eTbTKMyNEeC9OPf0tV7KL
+    ファイル: https://drive.google.com/file/d/1Ob_16QTu6vvMbQZzPgtvni7-NBGKteuR/view。
 
     '
   sources:
@@ -165798,9 +165733,8 @@ entries:
   questions:
   - 2025年荒玉中体連駅伝（玉名荒尾）の女子オーダーは？
   - 2025年荒玉中体連駅伝（玉名荒尾）「女子オーダー」の内容は？
-  answer: '荒玉中体連駅伝（玉名荒尾）（2025）の「女子オーダー」です。 - **id**: - **mimeType**: - **fileSize**: 370396 - **viewUrl**: https: drive.google.com
-    file d 1LKkiu1FBHQN7ANvHOB0xPWuR5UhT2q1T view?usp=drivesdk - **parentId**: - **modifiedTime**: - **status**: stub (binary
-    deferred;…。 資料: https://drive.google.com/drive/folders/16wyldCo5M67eTbTKMyNEeC9OPf0tV7KL。
+  answer: '荒玉中体連駅伝（玉名荒尾）（2025）の「女子オーダー」です。 資料: https://drive.google.com/drive/folders/16wyldCo5M67eTbTKMyNEeC9OPf0tV7KL ファイル:
+    https://drive.google.com/file/d/1LKkiu1FBHQN7ANvHOB0xPWuR5UhT2q1T/view。
 
     '
   sources:
@@ -165829,9 +165763,8 @@ entries:
   questions:
   - 2025年荒玉中体連駅伝（玉名荒尾）の男子の結果.JPGは？
   - 2025年荒玉中体連駅伝（玉名荒尾）「男子の結果.JPG」の内容は？
-  answer: '荒玉中体連駅伝（玉名荒尾）（2025）の「男子の結果.JPG」です。 男子の結果.JPG - **id**: - **mimeType**: - **fileSize**: 506877 - **viewUrl**: https:
-    drive.google.com file d 1G3p7uvkrDO3859IsupLU1EiKKxOifzwV view?usp=drivesdk - **parentId**: - **modifiedTime**: - **status**:
-    stub (bina…。 資料: https://drive.google.com/drive/folders/16wyldCo5M67eTbTKMyNEeC9OPf0tV7KL。
+  answer: '荒玉中体連駅伝（玉名荒尾）（2025）の「男子の結果.JPG」です。 資料: https://drive.google.com/drive/folders/16wyldCo5M67eTbTKMyNEeC9OPf0tV7KL
+    ファイル: https://drive.google.com/file/d/1G3p7uvkrDO3859IsupLU1EiKKxOifzwV/view。
 
     '
   sources:
@@ -165845,9 +165778,8 @@ entries:
   questions:
   - 2025年荒玉中体連駅伝（玉名荒尾）の男子オーダーは？
   - 2025年荒玉中体連駅伝（玉名荒尾）「男子オーダー」の内容は？
-  answer: '荒玉中体連駅伝（玉名荒尾）（2025）の「男子オーダー」です。 - **id**: - **mimeType**: - **fileSize**: 445845 - **viewUrl**: https: drive.google.com
-    file d 143eQA2hcXtmEv5L0P2nsP8GMPT3u1Vxu view?usp=drivesdk - **parentId**: - **modifiedTime**: - **status**: stub (binary
-    deferred;…。 資料: https://drive.google.com/drive/folders/16wyldCo5M67eTbTKMyNEeC9OPf0tV7KL。
+  answer: '荒玉中体連駅伝（玉名荒尾）（2025）の「男子オーダー」です。 資料: https://drive.google.com/drive/folders/16wyldCo5M67eTbTKMyNEeC9OPf0tV7KL ファイル:
+    https://drive.google.com/file/d/143eQA2hcXtmEv5L0P2nsP8GMPT3u1Vxu/view。
 
     '
   sources:
@@ -165861,9 +165793,8 @@ entries:
   questions:
   - 2025年熊本市中長距離選手権のスタートリストは？
   - 2025年熊本市中長距離選手権「スタートリスト」の内容は？
-  answer: '熊本市中長距離選手権（2025）の「スタートリスト」です。 - **id**: - **mimeType**: - **fileSize**: 290169 - **viewUrl**: https: drive.google.com
-    file d 1p_MLy6Qipyz-t9WPTgCfN2SXjuR6zm1o view?usp=drivesdk - **parentId**: - **modifiedTime**: - **status**: stub (binary
-    deferred;…。 資料: https://drive.google.com/drive/folders/1779L2nrg7nDxnCP44MkrPsBno_vMAJKe。
+  answer: '熊本市中長距離選手権（2025）の「スタートリスト」です。 資料: https://drive.google.com/drive/folders/1779L2nrg7nDxnCP44MkrPsBno_vMAJKe ファイル:
+    https://drive.google.com/file/d/1p_MLy6Qipyz-t9WPTgCfN2SXjuR6zm1o/view。
 
     '
   sources:
@@ -165891,9 +165822,8 @@ entries:
   questions:
   - 2025年熊本市中長距離選手権の岱明の計画.JPGは？
   - 2025年熊本市中長距離選手権「岱明の計画.JPG」の内容は？
-  answer: '熊本市中長距離選手権（2025）の「岱明の計画.JPG」です。 - **id**: - **mimeType**: - **fileSize**: 133724 - **viewUrl**: https: drive.google.com
-    file d 17vsh35Jbz1YnhzySCp86nNNNhV6NsqxL view?usp=drivesdk - **parentId**: - **modifiedTime**: - **status**: stub (binary
-    deferred;…。 資料: https://drive.google.com/drive/folders/1779L2nrg7nDxnCP44MkrPsBno_vMAJKe。
+  answer: '熊本市中長距離選手権（2025）の「岱明の計画.JPG」です。 資料: https://drive.google.com/drive/folders/1779L2nrg7nDxnCP44MkrPsBno_vMAJKe ファイル:
+    https://drive.google.com/file/d/17vsh35Jbz1YnhzySCp86nNNNhV6NsqxL/view。
 
     '
   sources:
@@ -165907,9 +165837,8 @@ entries:
   questions:
   - 2025年熊本市中長距離選手権の競技日程・注意事項・審判他は？
   - 2025年熊本市中長距離選手権「競技日程・注意事項・審判他」の内容は？
-  answer: '熊本市中長距離選手権（2025）の「競技日程・注意事項・審判他」です。 - **id**: - **mimeType**: - **fileSize**: 224728 - **viewUrl**: https: drive.google.com
-    file d 1MEhmQQTZiuO5PKqCRUR2PwNUJsOuY3Fa view?usp=drivesdk - **parentId**: - **modifiedTime**: - **status**: stub (binary
-    deferred;…。 資料: https://drive.google.com/drive/folders/1779L2nrg7nDxnCP44MkrPsBno_vMAJKe。
+  answer: '熊本市中長距離選手権（2025）の「競技日程・注意事項・審判他」です。 資料: https://drive.google.com/drive/folders/1779L2nrg7nDxnCP44MkrPsBno_vMAJKe
+    ファイル: https://drive.google.com/file/d/1MEhmQQTZiuO5PKqCRUR2PwNUJsOuY3Fa/view。
 
     '
   sources:
@@ -165923,9 +165852,7 @@ entries:
   questions:
   - 2025年熊本市中長距離選手権の要項は？
   - 2025年熊本市中長距離選手権「要項」の内容は？
-  answer: '熊本市中長距離選手権（2025）の「要項」です。 - **id**: - **mimeType**: - **fileSize**: 105235 - **viewUrl**: https: drive.google.com
-    file d 1FVOuaIVKroQp6Ij43mTENmcq5MYWOoVx view?usp=drivesdk - **parentId**: - **modifiedTime**: 2025-11-18T12:29:35.549Z
-    - **status*…。 資料: https://drive.google.com/drive/folders/1779L2nrg7nDxnCP44MkrPsBno_vMAJKe。
+  answer: '熊本市中長距離選手権（2025）の「要項」です。 資料: https://drive.google.com/drive/folders/1779L2nrg7nDxnCP44MkrPsBno_vMAJKe ファイル: https://drive.google.com/file/d/1FVOuaIVKroQp6Ij43mTENmcq5MYWOoVx/view。
 
     '
   sources:
@@ -165939,9 +165866,8 @@ entries:
   questions:
   - 2025年玉名市民マラソンのIMG_0247.JPGは？
   - 2025年玉名市民マラソン「IMG_0247.JPG」の内容は？
-  answer: '玉名市民マラソン（2025）の「IMG_0247.JPG」です。 IMG_0247.JPG - **id**: - **mimeType**: - **fileSize**: 117754 - **viewUrl**: https:
-    drive.google.com file d 1aXsWXo1zVnUE8evOCTtsgguAi2cTqIih view?usp=drivesdk - **parentId**: - **modifiedTime**: - **status**:
-    stub (b…。 資料: https://drive.google.com/drive/folders/1kpGBjokHgieMg3KIDX4e9lYyk92B8jC0。
+  answer: '玉名市民マラソン（2025）の「IMG_0247.JPG」です。 資料: https://drive.google.com/drive/folders/1kpGBjokHgieMg3KIDX4e9lYyk92B8jC0 ファイル:
+    https://drive.google.com/file/d/1aXsWXo1zVnUE8evOCTtsgguAi2cTqIih/view。
 
     '
   sources:
@@ -165955,9 +165881,7 @@ entries:
   questions:
   - 2025年玉名市民マラソンのコースは？
   - 2025年玉名市民マラソン「コース」の内容は？
-  answer: '玉名市民マラソン（2025）の「コース」です。 - **id**: - **mimeType**: - **fileSize**: 1925571 - **viewUrl**: https: drive.google.com
-    file d 1GoTv8m5LVqc0CKZXxzdqNoj5AY_PYZFE view?usp=drivesdk - **parentId**: - **modifiedTime**: - **status**: stub (binary
-    deferred…。 資料: https://drive.google.com/drive/folders/1kpGBjokHgieMg3KIDX4e9lYyk92B8jC0。
+  answer: '玉名市民マラソン（2025）の「コース」です。 資料: https://drive.google.com/drive/folders/1kpGBjokHgieMg3KIDX4e9lYyk92B8jC0 ファイル: https://drive.google.com/file/d/1GoTv8m5LVqc0CKZXxzdqNoj5AY_PYZFE/view。
 
     '
   sources:
@@ -165985,9 +165909,7 @@ entries:
   questions:
   - 2025年玉名市民マラソンの要項は？
   - 2025年玉名市民マラソン「要項」の内容は？
-  answer: '玉名市民マラソン（2025）の「要項」です。 - **id**: - **mimeType**: - **fileSize**: 211174 - **viewUrl**: https: drive.google.com
-    file d 1PdD1TkvT3EFDHrECUN5Dn76uo-ZDZzp0 view?usp=drivesdk - **parentId**: - **modifiedTime**: - **status**: stub (binary
-    deferred;…。 資料: https://drive.google.com/drive/folders/1kpGBjokHgieMg3KIDX4e9lYyk92B8jC0。
+  answer: '玉名市民マラソン（2025）の「要項」です。 資料: https://drive.google.com/drive/folders/1kpGBjokHgieMg3KIDX4e9lYyk92B8jC0 ファイル: https://drive.google.com/file/d/1PdD1TkvT3EFDHrECUN5Dn76uo-ZDZzp0/view。
 
     '
   sources:
@@ -166001,9 +165923,7 @@ entries:
   questions:
   - 2025年玉名市民マラソンの駐車券は？
   - 2025年玉名市民マラソン「駐車券」の内容は？
-  answer: '玉名市民マラソン（2025）の「駐車券」です。 - **id**: - **mimeType**: - **fileSize**: 198764 - **viewUrl**: https: drive.google.com
-    file d 1ptLEbD_Pm-NkvZLQMuH4MTIJuy-RIW_- view?usp=drivesdk - **parentId**: - **modifiedTime**: - **status**: stub (binary
-    deferred;…。 資料: https://drive.google.com/drive/folders/1kpGBjokHgieMg3KIDX4e9lYyk92B8jC0。
+  answer: '玉名市民マラソン（2025）の「駐車券」です。 資料: https://drive.google.com/drive/folders/1kpGBjokHgieMg3KIDX4e9lYyk92B8jC0 ファイル: https://drive.google.com/file/d/1ptLEbD_Pm-NkvZLQMuH4MTIJuy-RIW_-/view。
 
     '
   sources:
@@ -180771,25 +180691,6 @@ entries:
   - meet
   - 2024
   - 熊本陸上競技選手権大会
-- id: race-2024-北原汰一-玉名郡ナイター
-  questions:
-  - 2024年北原汰一の玉名郡ナイターの記録は？
-  - 2024年北原汰一の玉名郡ナイターの結果
-  - 2024年北原汰一は玉名郡ナイターで何分？
-  - 2024年北原汰一の玉名郡ナイタータイム
-  answer: '北原汰一（金栗PROJECT/男子）の2024年度・玉名郡ナイターの記録は1件です（大会名: 第19回　天草市ナイター陸上記録会）。
-
-    2024/08/03 3000m 9:08.03 大会結果: http://www.kumariku.org/24/24,8,3amakusanight/rel017.html。
-
-    '
-  sources:
-  - input/external/drive/personal/t-tsuchiyama/sb/by-year/2024-single-table.csv
-  tags:
-  - race
-  - athlete
-  - meet
-  - 2024
-  - 玉名郡ナイター
 - id: race-2024-北原汰一-第二回長距離記録会
   questions:
   - 2024年北原汰一の第二回長距離記録会の記録は？
@@ -198390,25 +198291,6 @@ entries:
   - meet
   - 2025
   - 熊本市中長距離陸上競技選手権大会
-- id: race-2025-一瀬彪眞-玉名郡ナイター
-  questions:
-  - 2025年一瀬彪眞の玉名郡ナイターの記録は？
-  - 2025年一瀬彪眞の玉名郡ナイターの結果
-  - 2025年一瀬彪眞は玉名郡ナイターで何分？
-  - 2025年一瀬彪眞の玉名郡ナイタータイム
-  answer: '一瀬彪眞（玉名アスリーツ/男子）の2025年度・玉名郡ナイターの記録は1件です（大会名: 令和7年度 第3回ナイター記録会）。
-
-    2025/09/13 3000m 9:36.66 大会結果: https://jaaf-nagasaki.net/result/2025/25420306/010115.htm。
-
-    '
-  sources:
-  - input/external/drive/personal/t-tsuchiyama/sb/by-year/2025-single-table.csv
-  tags:
-  - race
-  - athlete
-  - meet
-  - 2025
-  - 玉名郡ナイター
 - id: race-2025-一瀬彪眞-県中学選手権
   questions:
   - 2025年一瀬彪眞の県中学選手権の結果
@@ -199353,25 +199235,6 @@ entries:
   - meet
   - 2025
   - 熊本市陸上競技記録会
-- id: race-2025-丸山白虎-玉名郡ナイター
-  questions:
-  - 2025年丸山白虎の玉名郡ナイターの記録は？
-  - 2025年丸山白虎の玉名郡ナイターの結果
-  - 2025年丸山白虎は玉名郡ナイターで何分？
-  - 2025年丸山白虎の玉名郡ナイタータイム
-  answer: '丸山白虎（金栗PROJECT/男子）の2025年度・玉名郡ナイターの記録は1件です（大会名: 第20回　天草市ナイター陸上記録会）。
-
-    2025/08/02 1500m 5:03.80 大会結果: http://www.kumariku.org/25/25,8,2amakusa/rel056.html。
-
-    '
-  sources:
-  - input/external/drive/personal/t-tsuchiyama/sb/by-year/2025-single-table.csv
-  tags:
-  - race
-  - athlete
-  - meet
-  - 2025
-  - 玉名郡ナイター
 - id: race-2025-丸山白虎-県中学選手権
   questions:
   - 2025年丸山白虎の県中学選手権の結果
@@ -201737,25 +201600,6 @@ entries:
   - meet
   - 2025
   - 熊本陸上競技選手権大会
-- id: race-2025-坂井優花-玉名郡ナイター
-  questions:
-  - 2025年坂井優花の玉名郡ナイターの記録は？
-  - 2025年坂井優花の玉名郡ナイターの結果
-  - 2025年坂井優花は玉名郡ナイターで何分？
-  - 2025年坂井優花の玉名郡ナイタータイム
-  answer: '坂井優花（金栗PROJECT/女子）の2025年度・玉名郡ナイターの記録は1件です（大会名: 第20回　天草市ナイター陸上記録会）。
-
-    2025/08/02 1500m 4:53.41 大会結果: http://www.kumariku.org/25/25,8,2amakusa/rel058.html。
-
-    '
-  sources:
-  - input/external/drive/personal/t-tsuchiyama/sb/by-year/2025-single-table.csv
-  tags:
-  - race
-  - athlete
-  - meet
-  - 2025
-  - 玉名郡ナイター
 - id: race-2025-坂井優花-県中学選手権
   questions:
   - 2025年坂井優花の県中学選手権の結果
@@ -203635,25 +203479,6 @@ entries:
   - meet
   - 2025
   - 熊本市中長距離陸上競技選手権大会
-- id: race-2025-居石楓摩-玉名郡ナイター
-  questions:
-  - 2025年居石楓摩の玉名郡ナイターの記録は？
-  - 2025年居石楓摩の玉名郡ナイターの結果
-  - 2025年居石楓摩は玉名郡ナイターで何分？
-  - 2025年居石楓摩の玉名郡ナイタータイム
-  answer: '居石楓摩（玉名アスリーツ/男子）の2025年度・玉名郡ナイターの記録は1件です（大会名: 令和7年度 第3回ナイター記録会）。
-
-    2025/09/13 3000m 9:18.99【SB】 大会結果: https://jaaf-nagasaki.net/result/2025/25420306/010115.htm。
-
-    '
-  sources:
-  - input/external/drive/personal/t-tsuchiyama/sb/by-year/2025-single-table.csv
-  tags:
-  - race
-  - athlete
-  - meet
-  - 2025
-  - 玉名郡ナイター
 - id: race-2025-居石楓摩-県中学選手権
   questions:
   - 2025年居石楓摩の県中学選手権の結果
@@ -203816,25 +203641,6 @@ entries:
   - meet
   - 2025
   - 熊本市陸上競技記録会
-- id: race-2025-居石華音-玉名郡ナイター
-  questions:
-  - 2025年居石華音の玉名郡ナイターの記録は？
-  - 2025年居石華音の玉名郡ナイターの結果
-  - 2025年居石華音は玉名郡ナイターで何分？
-  - 2025年居石華音の玉名郡ナイタータイム
-  answer: '居石華音（金栗PROJECT/女子）の2025年度・玉名郡ナイターの記録は1件です（大会名: 第20回　天草市ナイター陸上記録会）。
-
-    2025/08/02 1500m 5:02.87【SB】 大会結果: http://www.kumariku.org/25/25,8,2amakusa/rel058.html。
-
-    '
-  sources:
-  - input/external/drive/personal/t-tsuchiyama/sb/by-year/2025-single-table.csv
-  tags:
-  - race
-  - athlete
-  - meet
-  - 2025
-  - 玉名郡ナイター
 - id: race-2025-居石華音-県中学選手権
   questions:
   - 2025年居石華音の県中学選手権の記録は？
@@ -204984,25 +204790,6 @@ entries:
   - meet
   - 2025
   - 熊本陸上競技選手権大会
-- id: race-2025-庄山瑠那-玉名郡ナイター
-  questions:
-  - 2025年庄山瑠那の玉名郡ナイターの記録は？
-  - 2025年庄山瑠那の玉名郡ナイターの結果
-  - 2025年庄山瑠那は玉名郡ナイターで何分？
-  - 2025年庄山瑠那の玉名郡ナイタータイム
-  answer: '庄山瑠那（金栗PROJECT/女子）の2025年度・玉名郡ナイターの記録は1件です（大会名: 第20回　天草市ナイター陸上記録会）。
-
-    2025/08/02 1500m DNS 大会結果: http://www.kumariku.org/25/25,8,2amakusa/rel058.html。
-
-    '
-  sources:
-  - input/external/drive/personal/t-tsuchiyama/sb/by-year/2025-single-table.csv
-  tags:
-  - race
-  - athlete
-  - meet
-  - 2025
-  - 玉名郡ナイター
 - id: race-2025-庄山瑠那-県中学選手権
   questions:
   - 2025年庄山瑠那の県中学選手権の記録は？
@@ -207539,25 +207326,6 @@ entries:
   - meet
   - 2025
   - 熊本市中長距離陸上競技選手権大会
-- id: race-2025-松島颯希-玉名郡ナイター
-  questions:
-  - 2025年松島颯希の玉名郡ナイターの記録は？
-  - 2025年松島颯希の玉名郡ナイターの結果
-  - 2025年松島颯希は玉名郡ナイターで何分？
-  - 2025年松島颯希の玉名郡ナイタータイム
-  answer: '松島颯希（玉名アスリーツ/男子）の2025年度・玉名郡ナイターの記録は1件です（大会名: 令和7年度 第3回ナイター記録会）。
-
-    2025/09/13 3000m 10:23.88 大会結果: https://jaaf-nagasaki.net/result/2025/25420306/010115.htm。
-
-    '
-  sources:
-  - input/external/drive/personal/t-tsuchiyama/sb/by-year/2025-single-table.csv
-  tags:
-  - race
-  - athlete
-  - meet
-  - 2025
-  - 玉名郡ナイター
 - id: race-2025-松島颯希-県中学選手権
   questions:
   - 2025年松島颯希の県中学選手権の記録は？
@@ -207755,25 +207523,6 @@ entries:
   - meet
   - 2025
   - 熊本市陸上競技記録会
-- id: race-2025-松川大希-玉名郡ナイター
-  questions:
-  - 2025年松川大希の玉名郡ナイターの記録は？
-  - 2025年松川大希の玉名郡ナイターの結果
-  - 2025年松川大希は玉名郡ナイターで何分？
-  - 2025年松川大希の玉名郡ナイタータイム
-  answer: '松川大希（金栗PROJECT/男子）の2025年度・玉名郡ナイターの記録は1件です（大会名: 第20回　天草市ナイター陸上記録会）。
-
-    2025/08/02 1500m 4:49.70 大会結果: http://www.kumariku.org/25/25,8,2amakusa/rel055.html。
-
-    '
-  sources:
-  - input/external/drive/personal/t-tsuchiyama/sb/by-year/2025-single-table.csv
-  tags:
-  - race
-  - athlete
-  - meet
-  - 2025
-  - 玉名郡ナイター
 - id: race-2025-松川大希-県中学選手権
   questions:
   - 2025年松川大希の県中学選手権の結果
@@ -208263,25 +208012,6 @@ entries:
   - meet
   - 2025
   - 熊本市陸上競技記録会
-- id: race-2025-松浦眞大-玉名郡ナイター
-  questions:
-  - 2025年松浦眞大の玉名郡ナイターの記録は？
-  - 2025年松浦眞大の玉名郡ナイターの結果
-  - 2025年松浦眞大は玉名郡ナイターで何分？
-  - 2025年松浦眞大の玉名郡ナイタータイム
-  answer: '松浦眞大（金栗PROJECT/男子）の2025年度・玉名郡ナイターの記録は1件です（大会名: 第20回　天草市ナイター陸上記録会）。
-
-    2025/08/02 1500m 4:43.53 大会結果: http://www.kumariku.org/25/25,8,2amakusa/rel056.html。
-
-    '
-  sources:
-  - input/external/drive/personal/t-tsuchiyama/sb/by-year/2025-single-table.csv
-  tags:
-  - race
-  - athlete
-  - meet
-  - 2025
-  - 玉名郡ナイター
 - id: race-2025-松浦眞大-県中学選手権
   questions:
   - 2025年松浦眞大の県中学選手権の記録は？
@@ -208924,25 +208654,6 @@ entries:
   - meet
   - 2025
   - 熊本市中長距離陸上競技選手権大会
-- id: race-2025-柿本晴仁-玉名郡ナイター
-  questions:
-  - 2025年柿本晴仁の玉名郡ナイターの記録は？
-  - 2025年柿本晴仁の玉名郡ナイターの結果
-  - 2025年柿本晴仁は玉名郡ナイターで何分？
-  - 2025年柿本晴仁の玉名郡ナイタータイム
-  answer: '柿本晴仁（玉名アスリーツ/男子）の2025年度・玉名郡ナイターの記録は1件です（大会名: 令和7年度 第3回ナイター記録会）。
-
-    2025/09/13 3000m 10:31.00 大会結果: https://jaaf-nagasaki.net/result/2025/25420306/010115.htm。
-
-    '
-  sources:
-  - input/external/drive/personal/t-tsuchiyama/sb/by-year/2025-single-table.csv
-  tags:
-  - race
-  - athlete
-  - meet
-  - 2025
-  - 玉名郡ナイター
 - id: race-2025-柿本晴仁-県中学選手権
   questions:
   - 2025年柿本晴仁の県中学選手権の記録は？
@@ -209588,25 +209299,6 @@ entries:
   - meet
   - 2025
   - 熊本市中長距離陸上競技選手権大会
-- id: race-2025-永田來夢-玉名郡ナイター
-  questions:
-  - 2025年永田來夢の玉名郡ナイターの記録は？
-  - 2025年永田來夢の玉名郡ナイターの結果
-  - 2025年永田來夢は玉名郡ナイターで何分？
-  - 2025年永田來夢の玉名郡ナイタータイム
-  answer: '永田來夢（玉名アスリーツ/男子）の2025年度・玉名郡ナイターの記録は1件です（大会名: 令和7年度 第3回ナイター記録会）。
-
-    2025/09/13 3000m 9:52.80 大会結果: https://jaaf-nagasaki.net/result/2025/25420306/010115.htm。
-
-    '
-  sources:
-  - input/external/drive/personal/t-tsuchiyama/sb/by-year/2025-single-table.csv
-  tags:
-  - race
-  - athlete
-  - meet
-  - 2025
-  - 玉名郡ナイター
 - id: race-2025-永田來夢-県中学選手権
   questions:
   - 2025年永田來夢の県中学選手権の結果
@@ -209877,25 +209569,6 @@ entries:
   - meet
   - 2025
   - 熊本市陸上競技記録会
-- id: race-2025-池松華凛-玉名郡ナイター
-  questions:
-  - 2025年池松華凛の玉名郡ナイターの記録は？
-  - 2025年池松華凛の玉名郡ナイターの結果
-  - 2025年池松華凛は玉名郡ナイターで何分？
-  - 2025年池松華凛の玉名郡ナイタータイム
-  answer: '池松華凛（金栗PROJECT/女子）の2025年度・玉名郡ナイターの記録は1件です（大会名: 第20回　天草市ナイター陸上記録会）。
-
-    2025/08/02 1500m DNS 大会結果: http://www.kumariku.org/25/25,8,2amakusa/rel057.html。
-
-    '
-  sources:
-  - input/external/drive/personal/t-tsuchiyama/sb/by-year/2025-single-table.csv
-  tags:
-  - race
-  - athlete
-  - meet
-  - 2025
-  - 玉名郡ナイター
 - id: race-2025-池松華凛-第二回長距離記録会
   questions:
   - 2025年池松華凛の第二回長距離記録会の結果
@@ -210372,25 +210045,6 @@ entries:
   - meet
   - 2025
   - 熊本市陸上競技記録会
-- id: race-2025-津口晃誠-玉名郡ナイター
-  questions:
-  - 2025年津口晃誠の玉名郡ナイターの記録は？
-  - 2025年津口晃誠の玉名郡ナイターの結果
-  - 2025年津口晃誠は玉名郡ナイターで何分？
-  - 2025年津口晃誠の玉名郡ナイタータイム
-  answer: '津口晃誠（金栗PROJECT/男子）の2025年度・玉名郡ナイターの記録は1件です（大会名: 第20回　天草市ナイター陸上記録会）。
-
-    2025/08/02 1500m 5:08.44 大会結果: http://www.kumariku.org/25/25,8,2amakusa/rel055.html。
-
-    '
-  sources:
-  - input/external/drive/personal/t-tsuchiyama/sb/by-year/2025-single-table.csv
-  tags:
-  - race
-  - athlete
-  - meet
-  - 2025
-  - 玉名郡ナイター
 - id: race-2025-津口晃誠-県中学選手権
   questions:
   - 2025年津口晃誠の県中学選手権の記録は？
@@ -211338,25 +210992,6 @@ entries:
   - meet
   - 2025
   - 通信陸上
-- id: race-2025-田中元稀-玉名郡ナイター
-  questions:
-  - 2025年田中元稀の玉名郡ナイターの記録は？
-  - 2025年田中元稀の玉名郡ナイターの結果
-  - 2025年田中元稀は玉名郡ナイターで何分？
-  - 2025年田中元稀の玉名郡ナイタータイム
-  answer: '田中元稀（金栗PROJECT/男子）の2025年度・玉名郡ナイターの記録は1件です（大会名: 第20回　天草市ナイター陸上記録会）。
-
-    2025/08/02 1500m DNS 大会結果: http://www.kumariku.org/25/25,8,2amakusa/rel055.html。
-
-    '
-  sources:
-  - input/external/drive/personal/t-tsuchiyama/sb/by-year/2025-single-table.csv
-  tags:
-  - race
-  - athlete
-  - meet
-  - 2025
-  - 玉名郡ナイター
 - id: race-2025-田中小羽-中体連
   questions:
   - 2025年田中小羽の中体連の記録は？
@@ -212307,25 +211942,6 @@ entries:
   - meet
   - 2025
   - 熊本市陸上競技記録会
-- id: race-2025-石原佳維斗-玉名郡ナイター
-  questions:
-  - 2025年石原佳維斗の玉名郡ナイターの記録は？
-  - 2025年石原佳維斗の玉名郡ナイターの結果
-  - 2025年石原佳維斗は玉名郡ナイターで何分？
-  - 2025年石原佳維斗の玉名郡ナイタータイム
-  answer: '石原佳維斗（金栗PROJECT/男子）の2025年度・玉名郡ナイターの記録は1件です（大会名: 第20回　天草市ナイター陸上記録会）。
-
-    2025/08/02 1500m 4:41.95 大会結果: http://www.kumariku.org/25/25,8,2amakusa/rel056.html。
-
-    '
-  sources:
-  - input/external/drive/personal/t-tsuchiyama/sb/by-year/2025-single-table.csv
-  tags:
-  - race
-  - athlete
-  - meet
-  - 2025
-  - 玉名郡ナイター
 - id: race-2025-石原佳維斗-県中学選手権
   questions:
   - 2025年石原佳維斗の県中学選手権の結果
@@ -215114,25 +214730,6 @@ entries:
   - meet
   - 2025
   - 熊本市陸上競技記録会
-- id: race-2025-西原琉惟-玉名郡ナイター
-  questions:
-  - 2025年西原琉惟の玉名郡ナイターの記録は？
-  - 2025年西原琉惟の玉名郡ナイターの結果
-  - 2025年西原琉惟は玉名郡ナイターで何分？
-  - 2025年西原琉惟の玉名郡ナイタータイム
-  answer: '西原琉惟（金栗PROJECT/男子）の2025年度・玉名郡ナイターの記録は1件です（大会名: 第20回　天草市ナイター陸上記録会）。
-
-    2025/08/02 1500m 5:15.82 大会結果: http://www.kumariku.org/25/25,8,2amakusa/rel055.html。
-
-    '
-  sources:
-  - input/external/drive/personal/t-tsuchiyama/sb/by-year/2025-single-table.csv
-  tags:
-  - race
-  - athlete
-  - meet
-  - 2025
-  - 玉名郡ナイター
 - id: race-2025-西原琉惟-第三回長距離記録会
   questions:
   - 2025年西原琉惟の第三回長距離記録会の記録は？
@@ -215514,25 +215111,6 @@ entries:
   - meet
   - 2025
   - 熊本市中長距離陸上競技選手権大会
-- id: race-2025-辛嶋大宙-玉名郡ナイター
-  questions:
-  - 2025年辛嶋大宙の玉名郡ナイターの記録は？
-  - 2025年辛嶋大宙の玉名郡ナイターの結果
-  - 2025年辛嶋大宙は玉名郡ナイターで何分？
-  - 2025年辛嶋大宙の玉名郡ナイタータイム
-  answer: '辛嶋大宙（玉名アスリーツ/男子）の2025年度・玉名郡ナイターの記録は1件です（大会名: 令和7年度 第3回ナイター記録会）。
-
-    2025/09/13 3000m 10:25.35 大会結果: https://jaaf-nagasaki.net/result/2025/25420306/010115.htm。
-
-    '
-  sources:
-  - input/external/drive/personal/t-tsuchiyama/sb/by-year/2025-single-table.csv
-  tags:
-  - race
-  - athlete
-  - meet
-  - 2025
-  - 玉名郡ナイター
 - id: race-2025-辛嶋大宙-県中学選手権
   questions:
   - 2025年辛嶋大宙の県中学選手権の記録は？
@@ -215736,25 +215314,6 @@ entries:
   - meet
   - 2025
   - 熊本陸上競技選手権大会
-- id: race-2025-辻本愛琉-玉名郡ナイター
-  questions:
-  - 2025年辻本愛琉の玉名郡ナイターの記録は？
-  - 2025年辻本愛琉の玉名郡ナイターの結果
-  - 2025年辻本愛琉は玉名郡ナイターで何分？
-  - 2025年辻本愛琉の玉名郡ナイタータイム
-  answer: '辻本愛琉（金栗PROJECT/男子）の2025年度・玉名郡ナイターの記録は1件です（大会名: 第20回　天草市ナイター陸上記録会）。
-
-    2025/08/02 1500m 4:34.34 大会結果: http://www.kumariku.org/25/25,8,2amakusa/rel056.html。
-
-    '
-  sources:
-  - input/external/drive/personal/t-tsuchiyama/sb/by-year/2025-single-table.csv
-  tags:
-  - race
-  - athlete
-  - meet
-  - 2025
-  - 玉名郡ナイター
 - id: race-2025-辻本愛琉-県中学選手権
   questions:
   - 2025年辻本愛琉の県中学選手権の結果
@@ -215914,25 +215473,6 @@ entries:
   - meet
   - 2025
   - 熊本市陸上競技記録会
-- id: race-2025-辻美空-玉名郡ナイター
-  questions:
-  - 2025年辻美空の玉名郡ナイターの記録は？
-  - 2025年辻美空の玉名郡ナイターの結果
-  - 2025年辻美空は玉名郡ナイターで何分？
-  - 2025年辻美空の玉名郡ナイタータイム
-  answer: '辻美空（金栗PROJECT/女子）の2025年度・玉名郡ナイターの記録は1件です（大会名: 第20回　天草市ナイター陸上記録会）。
-
-    2025/08/02 1500m 5:02.18【SB】 大会結果: http://www.kumariku.org/25/25,8,2amakusa/rel058.html。
-
-    '
-  sources:
-  - input/external/drive/personal/t-tsuchiyama/sb/by-year/2025-single-table.csv
-  tags:
-  - race
-  - athlete
-  - meet
-  - 2025
-  - 玉名郡ナイター
 - id: race-2025-辻美空-県中学選手権
   questions:
   - 2025年辻美空の県中学選手権の結果
@@ -216038,25 +215578,6 @@ entries:
   - meet
   - 2025
   - 熊本市陸上競技記録会
-- id: race-2025-近藤弘樹-玉名郡ナイター
-  questions:
-  - 2025年近藤弘樹の玉名郡ナイターの記録は？
-  - 2025年近藤弘樹の玉名郡ナイターの結果
-  - 2025年近藤弘樹は玉名郡ナイターで何分？
-  - 2025年近藤弘樹の玉名郡ナイタータイム
-  answer: '近藤弘樹（金栗PROJECT/男子）の2025年度・玉名郡ナイターの記録は1件です（大会名: 第20回　天草市ナイター陸上記録会）。
-
-    2025/08/02 1500m 4:49.90 大会結果: http://www.kumariku.org/25/25,8,2amakusa/rel056.html。
-
-    '
-  sources:
-  - input/external/drive/personal/t-tsuchiyama/sb/by-year/2025-single-table.csv
-  tags:
-  - race
-  - athlete
-  - meet
-  - 2025
-  - 玉名郡ナイター
 - id: race-2025-近藤弘樹-第三回長距離記録会
   questions:
   - 2025年近藤弘樹の第三回長距離記録会の記録は？
@@ -216919,25 +216440,6 @@ entries:
   - meet
   - 2025
   - 熊本陸上競技選手権大会
-- id: race-2025-隈部侑成-玉名郡ナイター
-  questions:
-  - 2025年隈部侑成の玉名郡ナイターの記録は？
-  - 2025年隈部侑成の玉名郡ナイターの結果
-  - 2025年隈部侑成は玉名郡ナイターで何分？
-  - 2025年隈部侑成の玉名郡ナイタータイム
-  answer: '隈部侑成（金栗PROJECT/男子）の2025年度・玉名郡ナイターの記録は1件です（大会名: 第20回　天草市ナイター陸上記録会）。
-
-    2025/08/02 1500m 4:40.86 大会結果: http://www.kumariku.org/25/25,8,2amakusa/rel056.html。
-
-    '
-  sources:
-  - input/external/drive/personal/t-tsuchiyama/sb/by-year/2025-single-table.csv
-  tags:
-  - race
-  - athlete
-  - meet
-  - 2025
-  - 玉名郡ナイター
 - id: race-2025-隈部侑成-県中学選手権
   questions:
   - 2025年隈部侑成の県中学選手権の結果
@@ -218579,28 +218081,6 @@ entries:
   - meet
   - 2026
   - 県中学選手権
-- id: race-2026-上川慧翔-玉名郡ナイター
-  questions:
-  - 上川慧翔の玉名郡ナイターの記録は？
-  - 2026年上川慧翔の玉名郡ナイターの結果
-  - 上川慧翔は玉名郡ナイターで何分？
-  - 上川慧翔の玉名郡ナイタータイム
-  - 上川慧翔の今年の玉名郡ナイターの記録
-  - 今年度上川慧翔の玉名郡ナイター
-  - 2026年度上川慧翔の玉名郡ナイター
-  answer: '上川慧翔（長崎大附属中/男子）の2026年度・玉名郡ナイターの記録は1件です（大会名: 令和8年度 第3回ナイター記録会）。
-
-    2026/09/12 3000m 10:44.41【SB】 大会結果: https://jaaf-nagasaki.net/result/2026/26420306/010115.htm。
-
-    '
-  sources:
-  - input/external/drive/personal/t-tsuchiyama/sb/by-year/2026-single-table.csv
-  tags:
-  - race
-  - athlete
-  - meet
-  - 2026
-  - 玉名郡ナイター
 - id: race-2026-上田尚摩-中体連
   questions:
   - 2026年上田尚摩の中体連の結果
@@ -220882,28 +220362,6 @@ entries:
   - meet
   - 2026
   - 大牟田陸上競技大会
-- id: race-2026-内田武尊-玉名郡ナイター
-  questions:
-  - 内田武尊の玉名郡ナイターの記録は？
-  - 2026年内田武尊の玉名郡ナイターの結果
-  - 内田武尊は玉名郡ナイターで何分？
-  - 内田武尊の玉名郡ナイタータイム
-  - 内田武尊の今年の玉名郡ナイターの記録
-  - 今年度内田武尊の玉名郡ナイター
-  - 2026年度内田武尊の玉名郡ナイター
-  answer: '内田武尊（玉名アスリーツ/男子）の2026年度・玉名郡ナイターの記録は1件です（大会名: 令和8年度 第3回ナイター記録会）。
-
-    2026/09/12 3000m 10:28.68【SB】 大会結果: https://jaaf-nagasaki.net/result/2026/26420306/010115.htm。
-
-    '
-  sources:
-  - input/external/drive/personal/t-tsuchiyama/sb/by-year/2026-single-table.csv
-  tags:
-  - race
-  - athlete
-  - meet
-  - 2026
-  - 玉名郡ナイター
 - id: race-2026-内田武尊-県中学選手権
   questions:
   - 内田武尊の県中学選手権の記録は？
@@ -224398,28 +223856,6 @@ entries:
   - meet
   - 2026
   - 通信陸上
-- id: race-2026-宮嶋晴文-玉名郡ナイター
-  questions:
-  - 宮嶋晴文の玉名郡ナイターの記録は？
-  - 2026年宮嶋晴文の玉名郡ナイターの結果
-  - 宮嶋晴文は玉名郡ナイターで何分？
-  - 宮嶋晴文の玉名郡ナイタータイム
-  - 宮嶋晴文の今年の玉名郡ナイターの記録
-  - 今年度宮嶋晴文の玉名郡ナイター
-  - 2026年度宮嶋晴文の玉名郡ナイター
-  answer: '宮嶋晴文（長崎大附属中/男子）の2026年度・玉名郡ナイターの記録は1件です（大会名: 令和8年度 第3回ナイター記録会）。
-
-    2026/09/12 3000m 11:45.52【SB】 大会結果: https://jaaf-nagasaki.net/result/2026/26420306/010115.htm。
-
-    '
-  sources:
-  - input/external/drive/personal/t-tsuchiyama/sb/by-year/2026-single-table.csv
-  tags:
-  - race
-  - athlete
-  - meet
-  - 2026
-  - 玉名郡ナイター
 - id: race-2026-宮川晴-中体連
   questions:
   - 宮川晴の中体連の記録は？
@@ -224486,28 +223922,6 @@ entries:
   - meet
   - 2026
   - 熊本市陸上競技記録会
-- id: race-2026-宮川晴-玉名郡ナイター
-  questions:
-  - 宮川晴の玉名郡ナイターの記録は？
-  - 2026年宮川晴の玉名郡ナイターの結果
-  - 宮川晴は玉名郡ナイターで何分？
-  - 宮川晴の玉名郡ナイタータイム
-  - 宮川晴の今年の玉名郡ナイターの記録
-  - 今年度宮川晴の玉名郡ナイター
-  - 2026年度宮川晴の玉名郡ナイター
-  answer: '宮川晴（玉名アスリーツ/男子）の2026年度・玉名郡ナイターの記録は1件です（大会名: 令和8年度 第3回ナイター記録会）。
-
-    2026/09/12 3000m 9:36.31【SB】 大会結果: https://jaaf-nagasaki.net/result/2026/26420306/010115.htm。
-
-    '
-  sources:
-  - input/external/drive/personal/t-tsuchiyama/sb/by-year/2026-single-table.csv
-  tags:
-  - race
-  - athlete
-  - meet
-  - 2026
-  - 玉名郡ナイター
 - id: race-2026-宮川晴-県中学選手権
   questions:
   - 2026年宮川晴の県中学選手権の結果
@@ -225040,28 +224454,6 @@ entries:
   - meet
   - 2026
   - 熊本市陸上競技記録会
-- id: race-2026-小林祐貴-玉名郡ナイター
-  questions:
-  - 小林祐貴の玉名郡ナイターの記録は？
-  - 2026年小林祐貴の玉名郡ナイターの結果
-  - 小林祐貴は玉名郡ナイターで何分？
-  - 小林祐貴の玉名郡ナイタータイム
-  - 小林祐貴の今年の玉名郡ナイターの記録
-  - 今年度小林祐貴の玉名郡ナイター
-  - 2026年度小林祐貴の玉名郡ナイター
-  answer: '小林祐貴（玉名アスリーツ/男子）の2026年度・玉名郡ナイターの記録は1件です（大会名: 令和8年度 第3回ナイター記録会）。
-
-    2026/09/12 3000m 9:57.24【SB】 大会結果: https://jaaf-nagasaki.net/result/2026/26420306/010115.htm。
-
-    '
-  sources:
-  - input/external/drive/personal/t-tsuchiyama/sb/by-year/2026-single-table.csv
-  tags:
-  - race
-  - athlete
-  - meet
-  - 2026
-  - 玉名郡ナイター
 - id: race-2026-小林祐貴-県中学選手権
   questions:
   - 2026年小林祐貴の県中学選手権の結果
@@ -225380,28 +224772,6 @@ entries:
   - meet
   - 2026
   - 金栗記念選抜陸上中長距離熊本大会
-- id: race-2026-山中陽翔-玉名郡ナイター
-  questions:
-  - 山中陽翔の玉名郡ナイターの記録は？
-  - 2026年山中陽翔の玉名郡ナイターの結果
-  - 山中陽翔は玉名郡ナイターで何分？
-  - 山中陽翔の玉名郡ナイタータイム
-  - 山中陽翔の今年の玉名郡ナイターの記録
-  - 今年度山中陽翔の玉名郡ナイター
-  - 2026年度山中陽翔の玉名郡ナイター
-  answer: '山中陽翔（長崎大附属中/男子）の2026年度・玉名郡ナイターの記録は1件です（大会名: 令和8年度 第3回ナイター記録会）。
-
-    2026/09/12 3000m 10:17.87【SB】 大会結果: https://jaaf-nagasaki.net/result/2026/26420306/010115.htm。
-
-    '
-  sources:
-  - input/external/drive/personal/t-tsuchiyama/sb/by-year/2026-single-table.csv
-  tags:
-  - race
-  - athlete
-  - meet
-  - 2026
-  - 玉名郡ナイター
 - id: race-2026-山川綾-中体連
   questions:
   - 2026年山川綾の中体連の結果
@@ -226419,28 +225789,6 @@ entries:
   - meet
   - 2026
   - ２０２６年度 第４５回熊本市陸上競技選手権…
-- id: race-2026-平野穂太朗-玉名郡ナイター
-  questions:
-  - 平野穂太朗の玉名郡ナイターの記録は？
-  - 2026年平野穂太朗の玉名郡ナイターの結果
-  - 平野穂太朗は玉名郡ナイターで何分？
-  - 平野穂太朗の玉名郡ナイタータイム
-  - 平野穂太朗の今年の玉名郡ナイターの記録
-  - 今年度平野穂太朗の玉名郡ナイター
-  - 2026年度平野穂太朗の玉名郡ナイター
-  answer: '平野穂太朗（長崎大附属中/男子）の2026年度・玉名郡ナイターの記録は1件です（大会名: 令和8年度 第3回ナイター記録会）。
-
-    2026/09/12 3000m 9:55.47【SB】 大会結果: https://jaaf-nagasaki.net/result/2026/26420306/010115.htm。
-
-    '
-  sources:
-  - input/external/drive/personal/t-tsuchiyama/sb/by-year/2026-single-table.csv
-  tags:
-  - race
-  - athlete
-  - meet
-  - 2026
-  - 玉名郡ナイター
 - id: race-2026-庄山瑠那-ジュニア駅伝
   questions:
   - 庄山瑠那のジュニア駅伝の記録は？
@@ -226869,28 +226217,6 @@ entries:
   - meet
   - 2026
   - 熊本市陸上競技記録会
-- id: race-2026-恩田慈希-玉名郡ナイター
-  questions:
-  - 恩田慈希の玉名郡ナイターの記録は？
-  - 2026年恩田慈希の玉名郡ナイターの結果
-  - 恩田慈希は玉名郡ナイターで何分？
-  - 恩田慈希の玉名郡ナイタータイム
-  - 恩田慈希の今年の玉名郡ナイターの記録
-  - 今年度恩田慈希の玉名郡ナイター
-  - 2026年度恩田慈希の玉名郡ナイター
-  answer: '恩田慈希（玉名アスリーツ/男子）の2026年度・玉名郡ナイターの記録は1件です（大会名: 令和8年度 第3回ナイター記録会）。
-
-    2026/09/12 3000m 10:38.78【SB】 大会結果: https://jaaf-nagasaki.net/result/2026/26420306/010115.htm。
-
-    '
-  sources:
-  - input/external/drive/personal/t-tsuchiyama/sb/by-year/2026-single-table.csv
-  tags:
-  - race
-  - athlete
-  - meet
-  - 2026
-  - 玉名郡ナイター
 - id: race-2026-恩田慈希-県中学選手権
   questions:
   - 2026年恩田慈希の県中学選手権の結果
@@ -227439,28 +226765,6 @@ entries:
   - meet
   - 2026
   - ２０２６年度 第４５回熊本市陸上競技選手権…
-- id: race-2026-木下友郎-玉名郡ナイター
-  questions:
-  - 木下友郎の玉名郡ナイターの記録は？
-  - 2026年木下友郎の玉名郡ナイターの結果
-  - 木下友郎は玉名郡ナイターで何分？
-  - 木下友郎の玉名郡ナイタータイム
-  - 木下友郎の今年の玉名郡ナイターの記録
-  - 今年度木下友郎の玉名郡ナイター
-  - 2026年度木下友郎の玉名郡ナイター
-  answer: '木下友郎（長崎大附属中/男子）の2026年度・玉名郡ナイターの記録は1件です（大会名: 令和8年度 第3回ナイター記録会）。
-
-    2026/09/12 3000m 9:44.63【SB】 大会結果: https://jaaf-nagasaki.net/result/2026/26420306/010115.htm。
-
-    '
-  sources:
-  - input/external/drive/personal/t-tsuchiyama/sb/by-year/2026-single-table.csv
-  tags:
-  - race
-  - athlete
-  - meet
-  - 2026
-  - 玉名郡ナイター
 - id: race-2026-木村幹太-中体連
   questions:
   - 2026年木村幹太の中体連の結果
@@ -228246,28 +227550,6 @@ entries:
   - meet
   - 2026
   - 通信陸上
-- id: race-2026-松尾遥仁-玉名郡ナイター
-  questions:
-  - 松尾遥仁の玉名郡ナイターの記録は？
-  - 2026年松尾遥仁の玉名郡ナイターの結果
-  - 松尾遥仁は玉名郡ナイターで何分？
-  - 松尾遥仁の玉名郡ナイタータイム
-  - 松尾遥仁の今年の玉名郡ナイターの記録
-  - 今年度松尾遥仁の玉名郡ナイター
-  - 2026年度松尾遥仁の玉名郡ナイター
-  answer: '松尾遥仁（長崎大附属中/男子）の2026年度・玉名郡ナイターの記録は1件です（大会名: 令和8年度 第3回ナイター記録会）。
-
-    2026/09/12 3000m 11:00.86【SB】 大会結果: https://jaaf-nagasaki.net/result/2026/26420306/010115.htm。
-
-    '
-  sources:
-  - input/external/drive/personal/t-tsuchiyama/sb/by-year/2026-single-table.csv
-  tags:
-  - race
-  - athlete
-  - meet
-  - 2026
-  - 玉名郡ナイター
 - id: race-2026-松山哲丈-大牟田陸上競技大会
   questions:
   - 松山哲丈の大牟田陸上競技大会の記録は？
@@ -228391,25 +227673,6 @@ entries:
   - meet
   - 2026
   - 熊本市陸上競技記録会
-- id: race-2026-松島颯希-玉名郡ナイター
-  questions:
-  - 2026年松島颯希の玉名郡ナイターの結果
-  - 松島颯希の今年の玉名郡ナイターの記録
-  - 今年度松島颯希の玉名郡ナイター
-  - 2026年度松島颯希の玉名郡ナイター
-  answer: '松島颯希（玉名アスリーツ/男子）の2026年度・玉名郡ナイターの記録は1件です（大会名: 令和8年度 第3回ナイター記録会）。
-
-    2026/09/12 3000m 9:53.36【SB】 大会結果: https://jaaf-nagasaki.net/result/2026/26420306/010115.htm。
-
-    '
-  sources:
-  - input/external/drive/personal/t-tsuchiyama/sb/by-year/2026-single-table.csv
-  tags:
-  - race
-  - athlete
-  - meet
-  - 2026
-  - 玉名郡ナイター
 - id: race-2026-松島颯希-県中学選手権
   questions:
   - 2026年松島颯希の県中学選手権の結果
@@ -266345,25 +265608,6 @@ entries:
   - meet
   - 2026
   - 熊本市陸上競技記録会
-- id: race-2026-柿本晴仁-玉名郡ナイター
-  questions:
-  - 2026年柿本晴仁の玉名郡ナイターの結果
-  - 柿本晴仁の今年の玉名郡ナイターの記録
-  - 今年度柿本晴仁の玉名郡ナイター
-  - 2026年度柿本晴仁の玉名郡ナイター
-  answer: '柿本晴仁（玉名アスリーツ/男子）の2026年度・玉名郡ナイターの記録は1件です（大会名: 令和8年度 第3回ナイター記録会）。
-
-    2026/09/12 3000m 9:14.53【SB】 大会結果: https://jaaf-nagasaki.net/result/2026/26420306/010115.htm。
-
-    '
-  sources:
-  - input/external/drive/personal/t-tsuchiyama/sb/by-year/2026-single-table.csv
-  tags:
-  - race
-  - athlete
-  - meet
-  - 2026
-  - 玉名郡ナイター
 - id: race-2026-柿本晴仁-県中学選手権
   questions:
   - 2026年柿本晴仁の県中学選手権の結果
@@ -267204,25 +266448,6 @@ entries:
   - meet
   - 2026
   - 熊本市陸上競技記録会
-- id: race-2026-永田來夢-玉名郡ナイター
-  questions:
-  - 2026年永田來夢の玉名郡ナイターの結果
-  - 永田來夢の今年の玉名郡ナイターの記録
-  - 今年度永田來夢の玉名郡ナイター
-  - 2026年度永田來夢の玉名郡ナイター
-  answer: '永田來夢（玉名アスリーツ/男子）の2026年度・玉名郡ナイターの記録は1件です（大会名: 令和8年度 第3回ナイター記録会）。
-
-    2026/09/12 3000m 9:20.09【SB】 大会結果: https://jaaf-nagasaki.net/result/2026/26420306/010115.htm。
-
-    '
-  sources:
-  - input/external/drive/personal/t-tsuchiyama/sb/by-year/2026-single-table.csv
-  tags:
-  - race
-  - athlete
-  - meet
-  - 2026
-  - 玉名郡ナイター
 - id: race-2026-永田來夢-県中学選手権
   questions:
   - 2026年永田來夢の県中学選手権の結果
@@ -314073,25 +313298,6 @@ entries:
   - recent
   - '2026'
   - なごみ大会
-- id: recent-2026-宮川晴-玉名郡ナイター
-  questions:
-  - 宮川晴の玉名郡ナイターの結果は？
-  - 2026年宮川晴の玉名郡ナイター
-  - 宮川晴のトラック/駅伝シーズン（玉名郡ナイター）
-  - 宮川晴の玉名郡ナイターはどうだった？
-  - 宮川晴の玉名郡ナイターのどうだった？
-  answer: '宮川晴（玉陵中）の2026年度・玉名郡ナイターの結果です。
-
-    2026-09-12 3000m 9:36.31（組103着） 大会結果: https://jaaf-nagasaki.net/result/2026/26420306/010115.htm。
-
-    '
-  sources:
-  - out/analysis/aragyoku_2026_recent_results.json
-  tags:
-  - aragyoku
-  - recent
-  - '2026'
-  - 玉名郡ナイター
 - id: recent-2026-宮川晴-長距離記録会
   questions:
   - 宮川晴の長距離記録会の結果は？
@@ -314215,25 +313421,6 @@ entries:
   - recent
   - '2026'
   - なごみ大会
-- id: recent-2026-小林祐貴-玉名郡ナイター
-  questions:
-  - 小林祐貴の玉名郡ナイターの結果は？
-  - 2026年小林祐貴の玉名郡ナイター
-  - 小林祐貴のトラック/駅伝シーズン（玉名郡ナイター）
-  - 小林祐貴の玉名郡ナイターはどうだった？
-  - 小林祐貴の玉名郡ナイターのどうだった？
-  answer: '小林祐貴（玉陵中）の2026年度・玉名郡ナイターの結果です。
-
-    2026-09-12 3000m 9:57.24（組176着） 大会結果: https://jaaf-nagasaki.net/result/2026/26420306/010115.htm。
-
-    '
-  sources:
-  - out/analysis/aragyoku_2026_recent_results.json
-  tags:
-  - aragyoku
-  - recent
-  - '2026'
-  - 玉名郡ナイター
 - id: recent-2026-小林祐貴-長距離記録会
   questions:
   - 小林祐貴の長距離記録会の結果は？
@@ -314766,25 +313953,6 @@ entries:
   - recent
   - '2026'
   - なごみ大会
-- id: recent-2026-松島颯希-玉名郡ナイター
-  questions:
-  - 松島颯希の玉名郡ナイターの結果は？
-  - 2026年松島颯希の玉名郡ナイター
-  - 松島颯希のトラック/駅伝シーズン（玉名郡ナイター）
-  - 松島颯希の玉名郡ナイターはどうだった？
-  - 松島颯希の玉名郡ナイターのどうだった？
-  answer: '松島颯希（玉陵中）の2026年度・玉名郡ナイターの結果です。
-
-    2026-09-12 3000m 9:53.36（組163着） 大会結果: https://jaaf-nagasaki.net/result/2026/26420306/010115.htm。
-
-    '
-  sources:
-  - out/analysis/aragyoku_2026_recent_results.json
-  tags:
-  - aragyoku
-  - recent
-  - '2026'
-  - 玉名郡ナイター
 - id: recent-2026-松島颯希-長距離記録会
   questions:
   - 松島颯希の長距離記録会の結果は？
@@ -314980,25 +314148,6 @@ entries:
   - recent
   - '2026'
   - なごみ大会
-- id: recent-2026-柿本晴仁-玉名郡ナイター
-  questions:
-  - 柿本晴仁の玉名郡ナイターの結果は？
-  - 2026年柿本晴仁の玉名郡ナイター
-  - 柿本晴仁のトラック/駅伝シーズン（玉名郡ナイター）
-  - 柿本晴仁の玉名郡ナイターはどうだった？
-  - 柿本晴仁の玉名郡ナイターのどうだった？
-  answer: '柿本晴仁（玉陵中）の2026年度・玉名郡ナイターの結果です。
-
-    2026-09-12 3000m 9:14.53（組59着） 大会結果: https://jaaf-nagasaki.net/result/2026/26420306/010115.htm。
-
-    '
-  sources:
-  - out/analysis/aragyoku_2026_recent_results.json
-  tags:
-  - aragyoku
-  - recent
-  - '2026'
-  - 玉名郡ナイター
 - id: recent-2026-柿本晴仁-長距離記録会
   questions:
   - 柿本晴仁の長距離記録会の結果は？
@@ -315105,25 +314254,6 @@ entries:
   - recent
   - '2026'
   - なごみ大会
-- id: recent-2026-永田來夢-玉名郡ナイター
-  questions:
-  - 永田來夢の玉名郡ナイターの結果は？
-  - 2026年永田來夢の玉名郡ナイター
-  - 永田來夢のトラック/駅伝シーズン（玉名郡ナイター）
-  - 永田來夢の玉名郡ナイターはどうだった？
-  - 永田來夢の玉名郡ナイターのどうだった？
-  answer: '永田來夢（玉陵中）の2026年度・玉名郡ナイターの結果です。
-
-    2026-09-12 3000m 9:20.09（組68着） 大会結果: https://jaaf-nagasaki.net/result/2026/26420306/010115.htm。
-
-    '
-  sources:
-  - out/analysis/aragyoku_2026_recent_results.json
-  tags:
-  - aragyoku
-  - recent
-  - '2026'
-  - 玉名郡ナイター
 - id: recent-2026-永田來夢-長距離記録会
   questions:
   - 永田來夢の長距離記録会の結果は？
@@ -315179,25 +314309,6 @@ entries:
   - recent
   - '2026'
   - なごみ大会
-- id: recent-2026-津口晃誠-玉名郡ナイター
-  questions:
-  - 津口晃誠の玉名郡ナイターの結果は？
-  - 2026年津口晃誠の玉名郡ナイター
-  - 津口晃誠のトラック/駅伝シーズン（玉名郡ナイター）
-  - 津口晃誠の玉名郡ナイターはどうだった？
-  - 津口晃誠の玉名郡ナイターのどうだった？
-  answer: '津口晃誠（菊水中）の2026年度・玉名郡ナイターの結果です。
-
-    2026-09-12 3000m 9:36.40（組105着） 大会結果: https://jaaf-nagasaki.net/result/2026/26420306/010115.htm。
-
-    '
-  sources:
-  - out/analysis/aragyoku_2026_recent_results.json
-  tags:
-  - aragyoku
-  - recent
-  - '2026'
-  - 玉名郡ナイター
 - id: recent-2026-津口晃誠-長距離記録会
   questions:
   - 津口晃誠の長距離記録会の結果は？
@@ -315450,25 +314561,6 @@ entries:
   - recent
   - '2026'
   - 荒玉試走
-- id: recent-2026-田中元稀-玉名郡ナイター
-  questions:
-  - 田中元稀の玉名郡ナイターの結果は？
-  - 2026年田中元稀の玉名郡ナイター
-  - 田中元稀のトラック/駅伝シーズン（玉名郡ナイター）
-  - 田中元稀の玉名郡ナイターはどうだった？
-  - 田中元稀の玉名郡ナイターのどうだった？
-  answer: '田中元稀（菊水中）の2026年度・玉名郡ナイターの結果です。
-
-    2026-09-12 3000m 9:24.24（組78着） 大会結果: https://jaaf-nagasaki.net/result/2026/26420306/010115.htm。
-
-    '
-  sources:
-  - out/analysis/aragyoku_2026_recent_results.json
-  tags:
-  - aragyoku
-  - recent
-  - '2026'
-  - 玉名郡ナイター
 - id: recent-2026-田中元稀-長距離記録会
   questions:
   - 田中元稀の長距離記録会の結果は？
@@ -323012,7 +322104,7 @@ entries:
   - 腹栄中の荒玉歴代は？
   - 腹栄の駅伝成績を教えて
   - 荒玉での腹栄の成績推移
-  answer: '腹栄の荒玉駅伝歴代は。
+  answer: '腹栄の荒玉駅伝歴代結果です。 例: 2023年13位、2023年10位、2022年10位、2022年9位、2021年7位、2021年11位。
 
     '
   sources:
@@ -323028,11 +322120,13 @@ entries:
   - 荒尾中の荒玉歴代は？
   - 荒尾の駅伝成績を教えて
   - 荒玉での荒尾の成績推移
-  answer: '荒尾の荒玉駅伝歴代は。
+  answer: '荒尾の荒玉駅伝歴代結果です。 「荒尾」名義の男子は2012年16位・総合69:33が確認できます。 近年は荒尾三・荒尾四・荒尾海陽として出場しており、 例: 2025年男子は荒尾三5位・荒尾四10位・荒尾海陽11位、 女子は荒尾三5位・荒尾四6位・荒尾海陽8位です。
 
     '
   sources:
   - out/analysis/aragyoku-teams/荒尾.md
+  - input/aragyoku/men_full_2012_2025.json
+  - input/aragyoku/women_full_2012_2025.json
   tags:
   - gap1000
   - aragyoku
@@ -326270,25 +325364,6 @@ entries:
   - meet
   - 2026
   - 大牟田陸上競技大会
-- id: race-2026-津口晃誠-玉名郡ナイター
-  questions:
-  - 2026年津口晃誠の玉名郡ナイターの結果
-  - 津口晃誠の今年の玉名郡ナイターの記録
-  - 今年度津口晃誠の玉名郡ナイター
-  - 2026年度津口晃誠の玉名郡ナイター
-  answer: '津口晃誠（金栗PROJECT/男子）の2026年度・玉名郡ナイターの記録は1件です（大会名: 令和8年度 第3回ナイター記録会）。
-
-    2026/09/12 3000m 9:36.40【SB】 大会結果: https://jaaf-nagasaki.net/result/2026/26420306/010115.htm。
-
-    '
-  sources:
-  - input/external/drive/personal/t-tsuchiyama/sb/by-year/2026-single-table.csv
-  tags:
-  - race
-  - athlete
-  - meet
-  - 2026
-  - 玉名郡ナイター
 - id: race-2026-津口晃誠-県中学選手権
   questions:
   - 2026年津口晃誠の県中学選手権の結果
@@ -327136,28 +326211,6 @@ entries:
   - meet
   - 2026
   - ２０２６年度 第４５回熊本市陸上競技選手権…
-- id: race-2026-濵本健心-玉名郡ナイター
-  questions:
-  - 濵本健心の玉名郡ナイターの記録は？
-  - 2026年濵本健心の玉名郡ナイターの結果
-  - 濵本健心は玉名郡ナイターで何分？
-  - 濵本健心の玉名郡ナイタータイム
-  - 濵本健心の今年の玉名郡ナイターの記録
-  - 今年度濵本健心の玉名郡ナイター
-  - 2026年度濵本健心の玉名郡ナイター
-  answer: '濵本健心（長崎大附属中/男子）の2026年度・玉名郡ナイターの記録は1件です（大会名: 令和8年度 第3回ナイター記録会）。
-
-    2026/09/12 3000m 11:11.76【SB】 大会結果: https://jaaf-nagasaki.net/result/2026/26420306/010115.htm。
-
-    '
-  sources:
-  - input/external/drive/personal/t-tsuchiyama/sb/by-year/2026-single-table.csv
-  tags:
-  - race
-  - athlete
-  - meet
-  - 2026
-  - 玉名郡ナイター
 - id: race-2026-熊澤絢真-中体連
   questions:
   - 熊澤絢真の中体連の記録は？
@@ -327760,25 +326813,6 @@ entries:
   - meet
   - 2026
   - 中体連
-- id: race-2026-田中元稀-玉名郡ナイター
-  questions:
-  - 2026年田中元稀の玉名郡ナイターの結果
-  - 田中元稀の今年の玉名郡ナイターの記録
-  - 今年度田中元稀の玉名郡ナイター
-  - 2026年度田中元稀の玉名郡ナイター
-  answer: '田中元稀（金栗PROJECT/男子）の2026年度・玉名郡ナイターの記録は1件です（大会名: 令和8年度 第3回ナイター記録会）。
-
-    2026/09/12 3000m 9:24.24【SB】 大会結果: https://jaaf-nagasaki.net/result/2026/26420306/010115.htm。
-
-    '
-  sources:
-  - input/external/drive/personal/t-tsuchiyama/sb/by-year/2026-single-table.csv
-  tags:
-  - race
-  - athlete
-  - meet
-  - 2026
-  - 玉名郡ナイター
 - id: race-2026-田中元稀-第３回長距離記録会
   questions:
   - 田中元稀の第３回長距離記録会の記録は？
@@ -328897,28 +327931,6 @@ entries:
   - meet
   - 2026
   - 県中学選手権
-- id: race-2026-石原直季-玉名郡ナイター
-  questions:
-  - 石原直季の玉名郡ナイターの記録は？
-  - 2026年石原直季の玉名郡ナイターの結果
-  - 石原直季は玉名郡ナイターで何分？
-  - 石原直季の玉名郡ナイタータイム
-  - 石原直季の今年の玉名郡ナイターの記録
-  - 今年度石原直季の玉名郡ナイター
-  - 2026年度石原直季の玉名郡ナイター
-  answer: '石原直季（長崎大附属中/男子）の2026年度・玉名郡ナイターの記録は1件です（大会名: 令和8年度 第3回ナイター記録会）。
-
-    2026/09/12 3000m 10:40.67【SB】 大会結果: https://jaaf-nagasaki.net/result/2026/26420306/010115.htm。
-
-    '
-  sources:
-  - input/external/drive/personal/t-tsuchiyama/sb/by-year/2026-single-table.csv
-  tags:
-  - race
-  - athlete
-  - meet
-  - 2026
-  - 玉名郡ナイター
 - id: race-2026-石川葵葉-県中学選手権
   questions:
   - 石川葵葉の県中学選手権の記録は？
@@ -329738,28 +328750,6 @@ entries:
   - meet
   - 2026
   - 熊本市陸上競技記録会
-- id: race-2026-福村綱余-玉名郡ナイター
-  questions:
-  - 福村綱余の玉名郡ナイターの記録は？
-  - 2026年福村綱余の玉名郡ナイターの結果
-  - 福村綱余は玉名郡ナイターで何分？
-  - 福村綱余の玉名郡ナイタータイム
-  - 福村綱余の今年の玉名郡ナイターの記録
-  - 今年度福村綱余の玉名郡ナイター
-  - 2026年度福村綱余の玉名郡ナイター
-  answer: '福村綱余（玉名アスリーツ/男子）の2026年度・玉名郡ナイターの記録は1件です（大会名: 令和8年度 第3回ナイター記録会）。
-
-    2026/09/12 3000m 10:44.37【SB】 大会結果: https://jaaf-nagasaki.net/result/2026/26420306/010115.htm。
-
-    '
-  sources:
-  - input/external/drive/personal/t-tsuchiyama/sb/by-year/2026-single-table.csv
-  tags:
-  - race
-  - athlete
-  - meet
-  - 2026
-  - 玉名郡ナイター
 - id: race-2026-福村綱余-県中学選手権
   questions:
   - 2026年福村綱余の県中学選手権の結果
@@ -330724,28 +329714,6 @@ entries:
   - meet
   - 2026
   - 県中学選手権
-- id: race-2026-米田伊織-玉名郡ナイター
-  questions:
-  - 米田伊織の玉名郡ナイターの記録は？
-  - 2026年米田伊織の玉名郡ナイターの結果
-  - 米田伊織は玉名郡ナイターで何分？
-  - 米田伊織の玉名郡ナイタータイム
-  - 米田伊織の今年の玉名郡ナイターの記録
-  - 今年度米田伊織の玉名郡ナイター
-  - 2026年度米田伊織の玉名郡ナイター
-  answer: '米田伊織（長崎大附属中/男子）の2026年度・玉名郡ナイターの記録は1件です（大会名: 令和8年度 第3回ナイター記録会）。
-
-    2026/09/12 3000m 11:37.43【SB】 大会結果: https://jaaf-nagasaki.net/result/2026/26420306/010115.htm。
-
-    '
-  sources:
-  - input/external/drive/personal/t-tsuchiyama/sb/by-year/2026-single-table.csv
-  tags:
-  - race
-  - athlete
-  - meet
-  - 2026
-  - 玉名郡ナイター
 - id: race-2026-米田美空-中体連
   questions:
   - 2026年米田美空の中体連の結果
@@ -332353,25 +331321,6 @@ entries:
   - meet
   - 2026
   - 大牟田陸上競技大会
-- id: race-2026-辛嶋大宙-玉名郡ナイター
-  questions:
-  - 2026年辛嶋大宙の玉名郡ナイターの結果
-  - 辛嶋大宙の今年の玉名郡ナイターの記録
-  - 今年度辛嶋大宙の玉名郡ナイター
-  - 2026年度辛嶋大宙の玉名郡ナイター
-  answer: '辛嶋大宙（玉名アスリーツ/男子）の2026年度・玉名郡ナイターの記録は1件です（大会名: 令和8年度 第3回ナイター記録会）。
-
-    2026/09/12 3000m 9:24.36【SB】 大会結果: https://jaaf-nagasaki.net/result/2026/26420306/010115.htm。
-
-    '
-  sources:
-  - input/external/drive/personal/t-tsuchiyama/sb/by-year/2026-single-table.csv
-  tags:
-  - race
-  - athlete
-  - meet
-  - 2026
-  - 玉名郡ナイター
 - id: race-2026-辛嶋大宙-県中学選手権
   questions:
   - 2026年辛嶋大宙の県中学選手権の結果
@@ -332794,28 +331743,6 @@ entries:
   - meet
   - 2026
   - 通信陸上
-- id: race-2026-金子修也-玉名郡ナイター
-  questions:
-  - 金子修也の玉名郡ナイターの記録は？
-  - 2026年金子修也の玉名郡ナイターの結果
-  - 金子修也は玉名郡ナイターで何分？
-  - 金子修也の玉名郡ナイタータイム
-  - 金子修也の今年の玉名郡ナイターの記録
-  - 今年度金子修也の玉名郡ナイター
-  - 2026年度金子修也の玉名郡ナイター
-  answer: '金子修也（長崎大附属中/男子）の2026年度・玉名郡ナイターの記録は1件です（大会名: 令和8年度 第3回ナイター記録会）。
-
-    2026/09/12 3000m 11:18.78【SB】 大会結果: https://jaaf-nagasaki.net/result/2026/26420306/010115.htm。
-
-    '
-  sources:
-  - input/external/drive/personal/t-tsuchiyama/sb/by-year/2026-single-table.csv
-  tags:
-  - race
-  - athlete
-  - meet
-  - 2026
-  - 玉名郡ナイター
 - id: race-2026-金澤朱里-大牟田陸上競技大会
   questions:
   - 2026年金澤朱里の大牟田陸上競技大会の結果
@@ -332961,25 +331888,6 @@ entries:
   - meet
   - 2026
   - 県中学選手権
-- id: race-2026-隈部侑成-玉名郡ナイター
-  questions:
-  - 2026年隈部侑成の玉名郡ナイターの結果
-  - 隈部侑成の今年の玉名郡ナイターの記録
-  - 今年度隈部侑成の玉名郡ナイター
-  - 2026年度隈部侑成の玉名郡ナイター
-  answer: '隈部侑成（金栗PROJECT/男子）の2026年度・玉名郡ナイターの記録は1件です（大会名: 令和8年度 第3回ナイター記録会）。
-
-    2026/09/12 3000m 8:52.46【SB】 大会結果: https://jaaf-nagasaki.net/result/2026/26420306/010115.htm。
-
-    '
-  sources:
-  - input/external/drive/personal/t-tsuchiyama/sb/by-year/2026-single-table.csv
-  tags:
-  - race
-  - athlete
-  - meet
-  - 2026
-  - 玉名郡ナイター
 - id: race-2026-隈部侑成-第１回長距離記録会
   questions:
   - 隈部侑成の第１回長距離記録会の記録は？
@@ -333524,28 +332432,6 @@ entries:
   - meet
   - 2026
   - 通信陸上
-- id: race-2026-高島健-玉名郡ナイター
-  questions:
-  - 高島健の玉名郡ナイターの記録は？
-  - 2026年高島健の玉名郡ナイターの結果
-  - 高島健は玉名郡ナイターで何分？
-  - 高島健の玉名郡ナイタータイム
-  - 高島健の今年の玉名郡ナイターの記録
-  - 今年度高島健の玉名郡ナイター
-  - 2026年度高島健の玉名郡ナイター
-  answer: '高島健（長崎大附属中/男子）の2026年度・玉名郡ナイターの記録は1件です（大会名: 令和8年度 第3回ナイター記録会）。
-
-    2026/09/12 3000m 10:37.00【SB】 大会結果: https://jaaf-nagasaki.net/result/2026/26420306/010115.htm。
-
-    '
-  sources:
-  - input/external/drive/personal/t-tsuchiyama/sb/by-year/2026-single-table.csv
-  tags:
-  - race
-  - athlete
-  - meet
-  - 2026
-  - 玉名郡ナイター
 - id: race-2026-高田麻由-中体連
   questions:
   - 2026年高田麻由の中体連の結果
@@ -455874,26 +454760,6 @@ entries:
   - edge5k
   - 2021
   - ２０２１年度 第４０回熊本市陸上競技選手権…
-- id: race-2021-中山優志-玉名郡ナイター
-  questions:
-  - 2021年中山優志の玉名郡ナイターの記録は？
-  - 2021年中山優志の玉名郡ナイターの結果
-  - 2021年中山優志は玉名郡ナイターで何分？
-  - 2021年中山優志の玉名郡ナイタータイム
-  answer: '中山優志（玉・有明中/男子）の2021年度・玉名郡ナイターの記録は1件です（大会名: 第１6回　天草市ナイター陸上競技記録会）。
-
-    2021/08/07 1500m 5:17.00【SB】 大会結果: http://www.kumariku.org/21/kekka/21,8,7amakusa/rel014.html。
-
-    '
-  sources:
-  - input/external/drive/personal/t-tsuchiyama/sb/by-year/2021-single-table.csv
-  tags:
-  - race
-  - athlete
-  - meet
-  - edge5k
-  - 2021
-  - 玉名郡ナイター
 - id: race-2021-中山寛大-県中学選手権
   questions:
   - 2021年中山寛大の県中学選手権の記録は？
@@ -456694,26 +455560,6 @@ entries:
   - edge5k
   - 2021
   - ２０２１年度 第４０回熊本市陸上競技選手権…
-- id: race-2021-今福澄仁-玉名郡ナイター
-  questions:
-  - 2021年今福澄仁の玉名郡ナイターの記録は？
-  - 2021年今福澄仁の玉名郡ナイターの結果
-  - 2021年今福澄仁は玉名郡ナイターで何分？
-  - 2021年今福澄仁の玉名郡ナイタータイム
-  answer: '今福澄仁（玉・有明中/男子）の2021年度・玉名郡ナイターの記録は1件です（大会名: 第１6回　天草市ナイター陸上競技記録会）。
-
-    2021/08/07 1500m 5:30.00【SB】 大会結果: http://www.kumariku.org/21/kekka/21,8,7amakusa/rel014.html。
-
-    '
-  sources:
-  - input/external/drive/personal/t-tsuchiyama/sb/by-year/2021-single-table.csv
-  tags:
-  - race
-  - athlete
-  - meet
-  - edge5k
-  - 2021
-  - 玉名郡ナイター
 - id: race-2021-伊藤妃菜-通信陸上
   questions:
   - 2021年伊藤妃菜の通信陸上の記録は？
@@ -458674,26 +457520,6 @@ entries:
   - edge5k
   - 2021
   - 通信陸上
-- id: race-2021-島田椿女-玉名郡ナイター
-  questions:
-  - 2021年島田椿女の玉名郡ナイターの記録は？
-  - 2021年島田椿女の玉名郡ナイターの結果
-  - 2021年島田椿女は玉名郡ナイターで何分？
-  - 2021年島田椿女の玉名郡ナイタータイム
-  answer: '島田椿女（玉・有明中/女子）の2021年度・玉名郡ナイターの記録は1件です（大会名: 第１6回　天草市ナイター陸上競技記録会）。
-
-    2021/08/07 1500m 6:25.00【SB】 大会結果: http://www.kumariku.org/21/kekka/21,8,7amakusa/rel067.html。
-
-    '
-  sources:
-  - input/external/drive/personal/t-tsuchiyama/sb/by-year/2021-single-table.csv
-  tags:
-  - race
-  - athlete
-  - meet
-  - edge5k
-  - 2021
-  - 玉名郡ナイター
 - id: race-2021-嶋田晴日-中体連
   questions:
   - 2021年嶋田晴日の中体連の記録は？
@@ -459634,26 +458460,6 @@ entries:
   - edge5k
   - 2021
   - 通信陸上
-- id: race-2021-木村羽愛音-玉名郡ナイター
-  questions:
-  - 2021年木村羽愛音の玉名郡ナイターの記録は？
-  - 2021年木村羽愛音の玉名郡ナイターの結果
-  - 2021年木村羽愛音は玉名郡ナイターで何分？
-  - 2021年木村羽愛音の玉名郡ナイタータイム
-  answer: '木村羽愛音（玉・有明中/女子）の2021年度・玉名郡ナイターの記録は1件です（大会名: 第１6回　天草市ナイター陸上競技記録会）。
-
-    2021/08/07 1500m 6:00.00【SB】 大会結果: http://www.kumariku.org/21/kekka/21,8,7amakusa/rel067.html。
-
-    '
-  sources:
-  - input/external/drive/personal/t-tsuchiyama/sb/by-year/2021-single-table.csv
-  tags:
-  - race
-  - athlete
-  - meet
-  - edge5k
-  - 2021
-  - 玉名郡ナイター
 - id: race-2021-本山怜実-熊本タイムトライアル
   questions:
   - 2021年本山怜実の熊本タイムトライアルの記録は？
@@ -460354,66 +459160,6 @@ entries:
   - edge5k
   - 2021
   - 通信陸上
-- id: race-2021-松﨑癒来-玉名郡ナイター
-  questions:
-  - 2021年松﨑癒来の玉名郡ナイターの記録は？
-  - 2021年松﨑癒来の玉名郡ナイターの結果
-  - 2021年松﨑癒来は玉名郡ナイターで何分？
-  - 2021年松﨑癒来の玉名郡ナイタータイム
-  answer: '松﨑癒来（玉・有明中/男子）の2021年度・玉名郡ナイターの記録は1件です（大会名: 第１6回　天草市ナイター陸上競技記録会）。
-
-    2021/08/07 1500m 5:21.00【SB】 大会結果: http://www.kumariku.org/21/kekka/21,8,7amakusa/rel014.html。
-
-    '
-  sources:
-  - input/external/drive/personal/t-tsuchiyama/sb/by-year/2021-single-table.csv
-  tags:
-  - race
-  - athlete
-  - meet
-  - edge5k
-  - 2021
-  - 玉名郡ナイター
-- id: race-2021-松﨑百花-玉名郡ナイター
-  questions:
-  - 2021年松﨑百花の玉名郡ナイターの記録は？
-  - 2021年松﨑百花の玉名郡ナイターの結果
-  - 2021年松﨑百花は玉名郡ナイターで何分？
-  - 2021年松﨑百花の玉名郡ナイタータイム
-  answer: '松﨑百花（玉・有明中/女子）の2021年度・玉名郡ナイターの記録は1件です（大会名: 第１6回　天草市ナイター陸上競技記録会）。
-
-    2021/08/07 1500m 6:14.00【SB】 大会結果: http://www.kumariku.org/21/kekka/21,8,7amakusa/rel067.html。
-
-    '
-  sources:
-  - input/external/drive/personal/t-tsuchiyama/sb/by-year/2021-single-table.csv
-  tags:
-  - race
-  - athlete
-  - meet
-  - edge5k
-  - 2021
-  - 玉名郡ナイター
-- id: race-2021-柴田真奈-玉名郡ナイター
-  questions:
-  - 2021年柴田真奈の玉名郡ナイターの記録は？
-  - 2021年柴田真奈の玉名郡ナイターの結果
-  - 2021年柴田真奈は玉名郡ナイターで何分？
-  - 2021年柴田真奈の玉名郡ナイタータイム
-  answer: '柴田真奈（玉・有明中/女子）の2021年度・玉名郡ナイターの記録は1件です（大会名: 第１6回　天草市ナイター陸上競技記録会）。
-
-    2021/08/07 1500m 6:24.00【SB】 大会結果: http://www.kumariku.org/21/kekka/21,8,7amakusa/rel067.html。
-
-    '
-  sources:
-  - input/external/drive/personal/t-tsuchiyama/sb/by-year/2021-single-table.csv
-  tags:
-  - race
-  - athlete
-  - meet
-  - edge5k
-  - 2021
-  - 玉名郡ナイター
 - id: race-2021-柿本こころ-通信陸上
   questions:
   - 2021年柿本こころの通信陸上の記録は？
@@ -460574,26 +459320,6 @@ entries:
   - edge5k
   - 2021
   - ２０２１年度 第４０回熊本市陸上競技選手権…
-- id: race-2021-森田煌琉-玉名郡ナイター
-  questions:
-  - 2021年森田煌琉の玉名郡ナイターの記録は？
-  - 2021年森田煌琉の玉名郡ナイターの結果
-  - 2021年森田煌琉は玉名郡ナイターで何分？
-  - 2021年森田煌琉の玉名郡ナイタータイム
-  answer: '森田煌琉（玉・有明中/男子）の2021年度・玉名郡ナイターの記録は1件です（大会名: 第１6回　天草市ナイター陸上競技記録会）。
-
-    2021/08/07 1500m 5:05.00【SB】 大会結果: http://www.kumariku.org/21/kekka/21,8,7amakusa/rel014.html。
-
-    '
-  sources:
-  - input/external/drive/personal/t-tsuchiyama/sb/by-year/2021-single-table.csv
-  tags:
-  - race
-  - athlete
-  - meet
-  - edge5k
-  - 2021
-  - 玉名郡ナイター
 - id: race-2021-椛島将真-県中学選手権
   questions:
   - 2021年椛島将真の県中学選手権の記録は？
@@ -460774,26 +459500,6 @@ entries:
   - edge5k
   - 2021
   - 通信陸上
-- id: race-2021-横山紅里-玉名郡ナイター
-  questions:
-  - 2021年横山紅里の玉名郡ナイターの記録は？
-  - 2021年横山紅里の玉名郡ナイターの結果
-  - 2021年横山紅里は玉名郡ナイターで何分？
-  - 2021年横山紅里の玉名郡ナイタータイム
-  answer: '横山紅里（玉・有明中/女子）の2021年度・玉名郡ナイターの記録は1件です（大会名: 第１6回　天草市ナイター陸上競技記録会）。
-
-    2021/08/07 800m 3:11.00【SB】 大会結果: http://www.kumariku.org/21/kekka/21,8,7amakusa/rel066.html。
-
-    '
-  sources:
-  - input/external/drive/personal/t-tsuchiyama/sb/by-year/2021-single-table.csv
-  tags:
-  - race
-  - athlete
-  - meet
-  - edge5k
-  - 2021
-  - 玉名郡ナイター
 - id: race-2021-橋本乃娃-熊本市中長距離陸上競技選手権大会
   questions:
   - 2021年橋本乃娃の熊本市中長距離陸上競技選手権大会の記録は？
@@ -461174,26 +459880,6 @@ entries:
   - edge5k
   - 2021
   - 熊本市陸上競技記録会
-- id: race-2021-浦田東吾-玉名郡ナイター
-  questions:
-  - 2021年浦田東吾の玉名郡ナイターの記録は？
-  - 2021年浦田東吾の玉名郡ナイターの結果
-  - 2021年浦田東吾は玉名郡ナイターで何分？
-  - 2021年浦田東吾の玉名郡ナイタータイム
-  answer: '浦田東吾（玉・有明中/男子）の2021年度・玉名郡ナイターの記録は1件です（大会名: 第１6回　天草市ナイター陸上競技記録会）。
-
-    2021/08/07 1500m 5:29.00【SB】 大会結果: http://www.kumariku.org/21/kekka/21,8,7amakusa/rel014.html。
-
-    '
-  sources:
-  - input/external/drive/personal/t-tsuchiyama/sb/by-year/2021-single-table.csv
-  tags:
-  - race
-  - athlete
-  - meet
-  - edge5k
-  - 2021
-  - 玉名郡ナイター
 - id: race-2021-清田彩加-県中学選手権
   questions:
   - 2021年清田彩加の県中学選手権の記録は？
@@ -461334,26 +460020,6 @@ entries:
   - edge5k
   - 2021
   - 通信陸上
-- id: race-2021-濱﨑光琉-玉名郡ナイター
-  questions:
-  - 2021年濱﨑光琉の玉名郡ナイターの記録は？
-  - 2021年濱﨑光琉の玉名郡ナイターの結果
-  - 2021年濱﨑光琉は玉名郡ナイターで何分？
-  - 2021年濱﨑光琉の玉名郡ナイタータイム
-  answer: '濱﨑光琉（玉・有明中/男子）の2021年度・玉名郡ナイターの記録は1件です（大会名: 第１6回　天草市ナイター陸上競技記録会）。
-
-    2021/08/07 1500m 5:14.00【SB】 大会結果: http://www.kumariku.org/21/kekka/21,8,7amakusa/rel014.html。
-
-    '
-  sources:
-  - input/external/drive/personal/t-tsuchiyama/sb/by-year/2021-single-table.csv
-  tags:
-  - race
-  - athlete
-  - meet
-  - edge5k
-  - 2021
-  - 玉名郡ナイター
 - id: race-2021-濵崎結菜-通信陸上
   questions:
   - 2021年濵崎結菜の通信陸上の記録は？
@@ -469060,28 +467726,6 @@ entries:
   - edge5k
   - 2019
   - 天草陸上競技選手権大会
-- id: race-2019-寺澤忍-玉名郡ナイター
-  questions:
-  - 2019年寺澤忍の玉名郡ナイターの記録は？
-  - 2019年寺澤忍の玉名郡ナイターの結果
-  - 2019年寺澤忍は玉名郡ナイターで何分？
-  - 2019年寺澤忍の玉名郡ナイタータイム
-  answer: '寺澤忍（玉・有明中/男子）の2019年度・玉名郡ナイターの記録は2件です（大会名: 第１4回　天草市ナイター陸上競技記録会）。
-
-    2019/08/31 1500m 4:50.00 大会結果: http://www.kumariku.org/19/kekka/19,8,31amakusa/rel084.html
-
-    2019/08/31 3000m 10:35.00 大会結果: http://www.kumariku.org/19/kekka/19,8,31amakusa/rel086.html。
-
-    '
-  sources:
-  - input/external/drive/personal/t-tsuchiyama/sb/by-year/2019-single-table.csv
-  tags:
-  - race
-  - athlete
-  - meet
-  - edge5k
-  - 2019
-  - 玉名郡ナイター
 - id: race-2019-小山ふう-熊本市陸上競技記録会
   questions:
   - 2019年小山ふうの熊本市陸上競技記録会の記録は？
@@ -469170,28 +467814,6 @@ entries:
   - edge5k
   - 2019
   - 天草陸上競技選手権大会
-- id: race-2019-山川晃生-玉名郡ナイター
-  questions:
-  - 2019年山川晃生の玉名郡ナイターの記録は？
-  - 2019年山川晃生の玉名郡ナイターの結果
-  - 2019年山川晃生は玉名郡ナイターで何分？
-  - 2019年山川晃生の玉名郡ナイタータイム
-  answer: '山川晃生（天・有明中/男子）の2019年度・玉名郡ナイターの記録は2件です（大会名: 第１4回　天草市ナイター陸上競技記録会）。
-
-    2019/08/31 1500m 4:37.00 大会結果: http://www.kumariku.org/19/kekka/19,8,31amakusa/rel085.html
-
-    2019/08/31 3000m 10:21.00 大会結果: http://www.kumariku.org/19/kekka/19,8,31amakusa/rel086.html。
-
-    '
-  sources:
-  - input/external/drive/personal/t-tsuchiyama/sb/by-year/2019-single-table.csv
-  tags:
-  - race
-  - athlete
-  - meet
-  - edge5k
-  - 2019
-  - 玉名郡ナイター
 - id: race-2019-山本真央-熊本市陸上競技記録会
   questions:
   - 2019年山本真央の熊本市陸上競技記録会の記録は？
@@ -469258,28 +467880,6 @@ entries:
   - edge5k
   - 2019
   - 熊本市陸上競技記録会
-- id: race-2019-木村羽愛音-玉名郡ナイター
-  questions:
-  - 2019年木村羽愛音の玉名郡ナイターの記録は？
-  - 2019年木村羽愛音の玉名郡ナイターの結果
-  - 2019年木村羽愛音は玉名郡ナイターで何分？
-  - 2019年木村羽愛音の玉名郡ナイタータイム
-  answer: '木村羽愛音（玉・有明中/女子）の2019年度・玉名郡ナイターの記録は2件です（大会名: 第１4回　天草市ナイター陸上競技記録会）。
-
-    2019/08/31 1500m 6:02.00【SB】 大会結果: http://www.kumariku.org/19/kekka/19,8,31amakusa/rel081.html
-
-    2019/08/31 800m 2:50.00 大会結果: http://www.kumariku.org/19/kekka/19,8,31amakusa/rel079.html。
-
-    '
-  sources:
-  - input/external/drive/personal/t-tsuchiyama/sb/by-year/2019-single-table.csv
-  tags:
-  - race
-  - athlete
-  - meet
-  - edge5k
-  - 2019
-  - 玉名郡ナイター
 - id: race-2019-本田心七海-通信陸上
   questions:
   - 2019年本田心七海の通信陸上の記録は？
@@ -469434,28 +468034,6 @@ entries:
   - edge5k
   - 2019
   - 通信陸上
-- id: race-2019-柴田愛梨-玉名郡ナイター
-  questions:
-  - 2019年柴田愛梨の玉名郡ナイターの記録は？
-  - 2019年柴田愛梨の玉名郡ナイターの結果
-  - 2019年柴田愛梨は玉名郡ナイターで何分？
-  - 2019年柴田愛梨の玉名郡ナイタータイム
-  answer: '柴田愛梨（天・有明中/女子）の2019年度・玉名郡ナイターの記録は2件です（大会名: 第１4回　天草市ナイター陸上競技記録会）。
-
-    2019/08/31 1500m 5:59.00【SB】 大会結果: http://www.kumariku.org/19/kekka/19,8,31amakusa/rel081.html
-
-    2019/08/31 800m 2:47.00 大会結果: http://www.kumariku.org/19/kekka/19,8,31amakusa/rel079.html。
-
-    '
-  sources:
-  - input/external/drive/personal/t-tsuchiyama/sb/by-year/2019-single-table.csv
-  tags:
-  - race
-  - athlete
-  - meet
-  - edge5k
-  - 2019
-  - 玉名郡ナイター
 - id: race-2019-渡邊亮斗-熊本タイムトライアル大会
   questions:
   - 2019年渡邊亮斗の熊本タイムトライアル大会の記録は？
@@ -469500,28 +468078,6 @@ entries:
   - edge5k
   - 2019
   - 熊本市陸上競技記録会
-- id: race-2019-澤井駿佑-玉名郡ナイター
-  questions:
-  - 2019年澤井駿佑の玉名郡ナイターの記録は？
-  - 2019年澤井駿佑の玉名郡ナイターの結果
-  - 2019年澤井駿佑は玉名郡ナイターで何分？
-  - 2019年澤井駿佑の玉名郡ナイタータイム
-  answer: '澤井駿佑（玉・有明中/男子）の2019年度・玉名郡ナイターの記録は2件です（大会名: 第１4回　天草市ナイター陸上競技記録会）。
-
-    2019/08/31 1500m 4:45.00【SB】 大会結果: http://www.kumariku.org/19/kekka/19,8,31amakusa/rel084.html
-
-    2019/08/31 3000m 10:51.00 大会結果: http://www.kumariku.org/19/kekka/19,8,31amakusa/rel086.html。
-
-    '
-  sources:
-  - input/external/drive/personal/t-tsuchiyama/sb/by-year/2019-single-table.csv
-  tags:
-  - race
-  - athlete
-  - meet
-  - edge5k
-  - 2019
-  - 玉名郡ナイター
 - id: race-2019-田上未来-熊本市陸上競技記録会
   questions:
   - 2019年田上未来の熊本市陸上競技記録会の記録は？
@@ -470520,26 +469076,6 @@ entries:
   - edge5k
   - 2019
   - 天草陸上競技選手権大会
-- id: race-2019-井手尾南海-玉名郡ナイター
-  questions:
-  - 2019年井手尾南海の玉名郡ナイターの記録は？
-  - 2019年井手尾南海の玉名郡ナイターの結果
-  - 2019年井手尾南海は玉名郡ナイターで何分？
-  - 2019年井手尾南海の玉名郡ナイタータイム
-  answer: '井手尾南海（天・有明中/女子）の2019年度・玉名郡ナイターの記録は1件です（大会名: 第１4回　天草市ナイター陸上競技記録会）。
-
-    2019/08/31 800m 3:09.00 大会結果: http://www.kumariku.org/19/kekka/19,8,31amakusa/rel079.html。
-
-    '
-  sources:
-  - input/external/drive/personal/t-tsuchiyama/sb/by-year/2019-single-table.csv
-  tags:
-  - race
-  - athlete
-  - meet
-  - edge5k
-  - 2019
-  - 玉名郡ナイター
 - id: race-2019-井手尾南海-県中学選手権
   questions:
   - 2019年井手尾南海の県中学選手権の記録は？
@@ -473880,26 +472416,6 @@ entries:
   - edge5k
   - 2019
   - 天草陸上競技選手権大会
-- id: race-2019-岡田壮真-玉名郡ナイター
-  questions:
-  - 2019年岡田壮真の玉名郡ナイターの記録は？
-  - 2019年岡田壮真の玉名郡ナイターの結果
-  - 2019年岡田壮真は玉名郡ナイターで何分？
-  - 2019年岡田壮真の玉名郡ナイタータイム
-  answer: '岡田壮真（玉・有明中/男子）の2019年度・玉名郡ナイターの記録は1件です（大会名: 第１4回　天草市ナイター陸上競技記録会）。
-
-    2019/08/31 1500m 5:18.00【SB】 大会結果: http://www.kumariku.org/19/kekka/19,8,31amakusa/rel082.html。
-
-    '
-  sources:
-  - input/external/drive/personal/t-tsuchiyama/sb/by-year/2019-single-table.csv
-  tags:
-  - race
-  - athlete
-  - meet
-  - edge5k
-  - 2019
-  - 玉名郡ナイター
 - id: race-2019-岡田恋兜-天草陸上競技選手権大会
   questions:
   - 2019年岡田恋兜の天草陸上競技選手権大会の記録は？
@@ -473920,26 +472436,6 @@ entries:
   - edge5k
   - 2019
   - 天草陸上競技選手権大会
-- id: race-2019-岡田恋兜-玉名郡ナイター
-  questions:
-  - 2019年岡田恋兜の玉名郡ナイターの記録は？
-  - 2019年岡田恋兜の玉名郡ナイターの結果
-  - 2019年岡田恋兜は玉名郡ナイターで何分？
-  - 2019年岡田恋兜の玉名郡ナイタータイム
-  answer: '岡田恋兜（玉・有明中/男子）の2019年度・玉名郡ナイターの記録は1件です（大会名: 第１4回　天草市ナイター陸上競技記録会）。
-
-    2019/08/31 1500m 5:05.00【SB】 大会結果: http://www.kumariku.org/19/kekka/19,8,31amakusa/rel083.html。
-
-    '
-  sources:
-  - input/external/drive/personal/t-tsuchiyama/sb/by-year/2019-single-table.csv
-  tags:
-  - race
-  - athlete
-  - meet
-  - edge5k
-  - 2019
-  - 玉名郡ナイター
 - id: race-2019-岩本浩二-ジュニア駅伝
   questions:
   - 2019年岩本浩二のジュニア駅伝の記録は？
@@ -475500,26 +473996,6 @@ entries:
   - edge5k
   - 2019
   - 天草陸上競技選手権大会
-- id: race-2019-松本空也-玉名郡ナイター
-  questions:
-  - 2019年松本空也の玉名郡ナイターの記録は？
-  - 2019年松本空也の玉名郡ナイターの結果
-  - 2019年松本空也は玉名郡ナイターで何分？
-  - 2019年松本空也の玉名郡ナイタータイム
-  answer: '松本空也（玉・有明中/男子）の2019年度・玉名郡ナイターの記録は1件です（大会名: 第１4回　天草市ナイター陸上競技記録会）。
-
-    2019/08/31 1500m 5:05.00【SB】 大会結果: http://www.kumariku.org/19/kekka/19,8,31amakusa/rel083.html。
-
-    '
-  sources:
-  - input/external/drive/personal/t-tsuchiyama/sb/by-year/2019-single-table.csv
-  tags:
-  - race
-  - athlete
-  - meet
-  - edge5k
-  - 2019
-  - 玉名郡ナイター
 - id: race-2019-松本空也-通信陸上
   questions:
   - 2019年松本空也の通信陸上の記録は？
@@ -475740,26 +474216,6 @@ entries:
   - edge5k
   - 2019
   - 第４回長距離記録会
-- id: race-2019-松﨑惺来-玉名郡ナイター
-  questions:
-  - 2019年松﨑惺来の玉名郡ナイターの記録は？
-  - 2019年松﨑惺来の玉名郡ナイターの結果
-  - 2019年松﨑惺来は玉名郡ナイターで何分？
-  - 2019年松﨑惺来の玉名郡ナイタータイム
-  answer: '松﨑惺来（玉・有明中/女子）の2019年度・玉名郡ナイターの記録は1件です（大会名: 第１4回　天草市ナイター陸上競技記録会）。
-
-    2019/08/31 800m 3:10.00【SB】 大会結果: http://www.kumariku.org/19/kekka/19,8,31amakusa/rel079.html。
-
-    '
-  sources:
-  - input/external/drive/personal/t-tsuchiyama/sb/by-year/2019-single-table.csv
-  tags:
-  - race
-  - athlete
-  - meet
-  - edge5k
-  - 2019
-  - 玉名郡ナイター
 - id: race-2019-松﨑百花-天草陸上競技選手権大会
   questions:
   - 2019年松﨑百花の天草陸上競技選手権大会の記録は？
@@ -475780,26 +474236,6 @@ entries:
   - edge5k
   - 2019
   - 天草陸上競技選手権大会
-- id: race-2019-松﨑百花-玉名郡ナイター
-  questions:
-  - 2019年松﨑百花の玉名郡ナイターの記録は？
-  - 2019年松﨑百花の玉名郡ナイターの結果
-  - 2019年松﨑百花は玉名郡ナイターで何分？
-  - 2019年松﨑百花の玉名郡ナイタータイム
-  answer: '松﨑百花（玉・有明中/女子）の2019年度・玉名郡ナイターの記録は1件です（大会名: 第１4回　天草市ナイター陸上競技記録会）。
-
-    2019/08/31 800m 3:05.00 大会結果: http://www.kumariku.org/19/kekka/19,8,31amakusa/rel079.html。
-
-    '
-  sources:
-  - input/external/drive/personal/t-tsuchiyama/sb/by-year/2019-single-table.csv
-  tags:
-  - race
-  - athlete
-  - meet
-  - edge5k
-  - 2019
-  - 玉名郡ナイター
 - id: race-2019-柴尾綾乃-ジュニア駅伝
   questions:
   - 2019年柴尾綾乃のジュニア駅伝の記録は？
@@ -476300,26 +474736,6 @@ entries:
   - edge5k
   - 2019
   - 天草陸上競技選手権大会
-- id: race-2019-横山紅里-玉名郡ナイター
-  questions:
-  - 2019年横山紅里の玉名郡ナイターの記録は？
-  - 2019年横山紅里の玉名郡ナイターの結果
-  - 2019年横山紅里は玉名郡ナイターで何分？
-  - 2019年横山紅里の玉名郡ナイタータイム
-  answer: '横山紅里（玉・有明中/女子）の2019年度・玉名郡ナイターの記録は1件です（大会名: 第１4回　天草市ナイター陸上競技記録会）。
-
-    2019/08/31 800m 3:08.00【SB】 大会結果: http://www.kumariku.org/19/kekka/19,8,31amakusa/rel079.html。
-
-    '
-  sources:
-  - input/external/drive/personal/t-tsuchiyama/sb/by-year/2019-single-table.csv
-  tags:
-  - race
-  - athlete
-  - meet
-  - edge5k
-  - 2019
-  - 玉名郡ナイター
 - id: race-2019-橋本耀-ジュニア駅伝
   questions:
   - 2019年橋本耀のジュニア駅伝の記録は？
@@ -476720,26 +475136,6 @@ entries:
   - edge5k
   - 2019
   - 天草陸上競技選手権大会
-- id: race-2019-河内あさひ-玉名郡ナイター
-  questions:
-  - 2019年河内あさひの玉名郡ナイターの記録は？
-  - 2019年河内あさひの玉名郡ナイターの結果
-  - 2019年河内あさひは玉名郡ナイターで何分？
-  - 2019年河内あさひの玉名郡ナイタータイム
-  answer: '河内あさひ（玉・有明中/女子）の2019年度・玉名郡ナイターの記録は1件です（大会名: 第１4回　天草市ナイター陸上競技記録会）。
-
-    2019/08/31 800m 2:58.00 大会結果: http://www.kumariku.org/19/kekka/19,8,31amakusa/rel079.html。
-
-    '
-  sources:
-  - input/external/drive/personal/t-tsuchiyama/sb/by-year/2019-single-table.csv
-  tags:
-  - race
-  - athlete
-  - meet
-  - edge5k
-  - 2019
-  - 玉名郡ナイター
 - id: race-2019-泉鈴花-県中学選手権
   questions:
   - 2019年泉鈴花の県中学選手権の記録は？
@@ -476780,26 +475176,6 @@ entries:
   - edge5k
   - 2019
   - 天草陸上競技選手権大会
-- id: race-2019-浦田東吾-玉名郡ナイター
-  questions:
-  - 2019年浦田東吾の玉名郡ナイターの記録は？
-  - 2019年浦田東吾の玉名郡ナイターの結果
-  - 2019年浦田東吾は玉名郡ナイターで何分？
-  - 2019年浦田東吾の玉名郡ナイタータイム
-  answer: '浦田東吾（玉・有明中/男子）の2019年度・玉名郡ナイターの記録は1件です（大会名: 第１4回　天草市ナイター陸上競技記録会）。
-
-    2019/08/31 1500m 6:11.00 大会結果: http://www.kumariku.org/19/kekka/19,8,31amakusa/rel082.html。
-
-    '
-  sources:
-  - input/external/drive/personal/t-tsuchiyama/sb/by-year/2019-single-table.csv
-  tags:
-  - race
-  - athlete
-  - meet
-  - edge5k
-  - 2019
-  - 玉名郡ナイター
 - id: race-2019-清田将平-ジュニア駅伝
   questions:
   - 2019年清田将平のジュニア駅伝の記録は？
@@ -477880,26 +476256,6 @@ entries:
   - edge5k
   - 2019
   - 天草陸上競技選手権大会
-- id: race-2019-福富爽-玉名郡ナイター
-  questions:
-  - 2019年福富爽の玉名郡ナイターの記録は？
-  - 2019年福富爽の玉名郡ナイターの結果
-  - 2019年福富爽は玉名郡ナイターで何分？
-  - 2019年福富爽の玉名郡ナイタータイム
-  answer: '福富爽（玉・有明中/女子）の2019年度・玉名郡ナイターの記録は1件です（大会名: 第１4回　天草市ナイター陸上競技記録会）。
-
-    2019/08/31 800m 3:00.00 大会結果: http://www.kumariku.org/19/kekka/19,8,31amakusa/rel080.html。
-
-    '
-  sources:
-  - input/external/drive/personal/t-tsuchiyama/sb/by-year/2019-single-table.csv
-  tags:
-  - race
-  - athlete
-  - meet
-  - edge5k
-  - 2019
-  - 玉名郡ナイター
 - id: race-2019-稲生創太-ジュニア駅伝
   questions:
   - 2019年稲生創太のジュニア駅伝の記録は？
@@ -482070,26 +480426,6 @@ entries:
   - edge5k
   - 2018
   - 天草陸上競技選手権大会
-- id: race-2018-坂上翔哉-玉名郡ナイター
-  questions:
-  - 2018年坂上翔哉の玉名郡ナイターの記録は？
-  - 2018年坂上翔哉の玉名郡ナイターの結果
-  - 2018年坂上翔哉は玉名郡ナイターで何分？
-  - 2018年坂上翔哉の玉名郡ナイタータイム
-  answer: '坂上翔哉（玉・有明中/男子）の2018年度・玉名郡ナイターの記録は1件です（大会名: 第１3回　天草市ナイター陸上競技記録会）。
-
-    2018/08/11 1500m 5:23.40 大会結果: http://www.kumariku.org/18/kekka/18,8,9amanight/rel017.html。
-
-    '
-  sources:
-  - input/external/drive/personal/t-tsuchiyama/sb/by-year/2018-single-table.csv
-  tags:
-  - race
-  - athlete
-  - meet
-  - edge5k
-  - 2018
-  - 玉名郡ナイター
 - id: race-2018-坂本華-ジュニア駅伝
   questions:
   - 2018年坂本華のジュニア駅伝の記録は？
@@ -482850,26 +481186,6 @@ entries:
   - edge5k
   - 2018
   - 天草陸上競技選手権大会
-- id: race-2018-寺澤忍-玉名郡ナイター
-  questions:
-  - 2018年寺澤忍の玉名郡ナイターの記録は？
-  - 2018年寺澤忍の玉名郡ナイターの結果
-  - 2018年寺澤忍は玉名郡ナイターで何分？
-  - 2018年寺澤忍の玉名郡ナイタータイム
-  answer: '寺澤忍（玉・有明中/男子）の2018年度・玉名郡ナイターの記録は1件です（大会名: 第１3回　天草市ナイター陸上競技記録会）。
-
-    2018/08/11 1500m 5:09.60 大会結果: http://www.kumariku.org/18/kekka/18,8,9amanight/rel018.html。
-
-    '
-  sources:
-  - input/external/drive/personal/t-tsuchiyama/sb/by-year/2018-single-table.csv
-  tags:
-  - race
-  - athlete
-  - meet
-  - edge5k
-  - 2018
-  - 玉名郡ナイター
 - id: race-2018-小山ふう-ジュニア駅伝
   questions:
   - 2018年小山ふうのジュニア駅伝の記録は？
@@ -483090,26 +481406,6 @@ entries:
   - edge5k
   - 2018
   - 天草陸上競技選手権大会
-- id: race-2018-小谷飛翼-玉名郡ナイター
-  questions:
-  - 2018年小谷飛翼の玉名郡ナイターの記録は？
-  - 2018年小谷飛翼の玉名郡ナイターの結果
-  - 2018年小谷飛翼は玉名郡ナイターで何分？
-  - 2018年小谷飛翼の玉名郡ナイタータイム
-  answer: '小谷飛翼（玉・有明中/男子）の2018年度・玉名郡ナイターの記録は1件です（大会名: 第１3回　天草市ナイター陸上競技記録会）。
-
-    2018/08/11 1500m 4:43.70 大会結果: http://www.kumariku.org/18/kekka/18,8,9amanight/rel017.html。
-
-    '
-  sources:
-  - input/external/drive/personal/t-tsuchiyama/sb/by-year/2018-single-table.csv
-  tags:
-  - race
-  - athlete
-  - meet
-  - edge5k
-  - 2018
-  - 玉名郡ナイター
 - id: race-2018-山下みのり-ジュニア駅伝
   questions:
   - 2018年山下みのりのジュニア駅伝の記録は？
@@ -485170,26 +483466,6 @@ entries:
   - edge5k
   - 2018
   - 陸協秋季熊本陸協記録会
-- id: race-2018-松﨑惺来-玉名郡ナイター
-  questions:
-  - 2018年松﨑惺来の玉名郡ナイターの記録は？
-  - 2018年松﨑惺来の玉名郡ナイターの結果
-  - 2018年松﨑惺来は玉名郡ナイターで何分？
-  - 2018年松﨑惺来の玉名郡ナイタータイム
-  answer: '松﨑惺来（玉・有明中/女子）の2018年度・玉名郡ナイターの記録は1件です（大会名: 第１3回　天草市ナイター陸上競技記録会）。
-
-    2018/08/11 800m 3:06.60【SB】 大会結果: http://www.kumariku.org/18/kekka/18,8,9amanight/rel067.html。
-
-    '
-  sources:
-  - input/external/drive/personal/t-tsuchiyama/sb/by-year/2018-single-table.csv
-  tags:
-  - race
-  - athlete
-  - meet
-  - edge5k
-  - 2018
-  - 玉名郡ナイター
 - id: race-2018-柳凰太郎-通信陸上
   questions:
   - 2018年柳凰太郎の通信陸上の記録は？
@@ -485970,26 +484246,6 @@ entries:
   - edge5k
   - 2018
   - 天草陸上競技選手権大会
-- id: race-2018-津﨑奈々美-玉名郡ナイター
-  questions:
-  - 2018年津﨑奈々美の玉名郡ナイターの記録は？
-  - 2018年津﨑奈々美の玉名郡ナイターの結果
-  - 2018年津﨑奈々美は玉名郡ナイターで何分？
-  - 2018年津﨑奈々美の玉名郡ナイタータイム
-  answer: '津﨑奈々美（玉・有明中/女子）の2018年度・玉名郡ナイターの記録は1件です（大会名: 第１3回　天草市ナイター陸上競技記録会）。
-
-    2018/08/11 800m 2:54.20【SB】 大会結果: http://www.kumariku.org/18/kekka/18,8,9amanight/rel068.html。
-
-    '
-  sources:
-  - input/external/drive/personal/t-tsuchiyama/sb/by-year/2018-single-table.csv
-  tags:
-  - race
-  - athlete
-  - meet
-  - edge5k
-  - 2018
-  - 玉名郡ナイター
 - id: race-2018-清田将平-熊本市陸上競技記録会
   questions:
   - 2018年清田将平の熊本市陸上競技記録会の記録は？
@@ -519820,3 +518076,1057 @@ entries:
   - career
   - athlete
   - 高田麻那
+- id: race-2024-北原汰一-天草市ナイター
+  questions:
+  - 2024年北原汰一の天草市ナイターの記録は？
+  - 2024年北原汰一の天草市ナイターの結果
+  - 2024年北原汰一は天草市ナイターで何分？
+  - 2024年北原汰一の天草市ナイタータイム
+  answer: '北原汰一（金栗PROJECT/男子）の2024年度・天草市ナイターの記録は1件です（大会名: 第19回　天草市ナイター陸上記録会）。
+
+    2024/08/03 3000m 9:08.03 大会結果: http://www.kumariku.org/24/24,8,3amakusanight/rel017.html
+
+    '
+  sources:
+  - input/external/drive/personal/t-tsuchiyama/sb/by-year/2024-single-table.csv
+  tags:
+  - race
+  - athlete
+  - meet
+  - 2024
+  - 天草市ナイター
+- id: race-2025-一瀬彪眞-ナイター記録会
+  questions:
+  - 2025年一瀬彪眞のナイター記録会の記録は？
+  - 2025年一瀬彪眞のナイター記録会の結果
+  - 2025年一瀬彪眞はナイター記録会で何分？
+  - 2025年一瀬彪眞のナイター記録会タイム
+  answer: '一瀬彪眞（玉名アスリーツ/男子）の2025年度・ナイター記録会の記録は1件です（大会名: 令和7年度 第3回ナイター記録会）。
+
+    2025/09/13 3000m 9:36.66 大会結果: https://jaaf-nagasaki.net/result/2025/25420306/010115.htm
+
+    '
+  sources:
+  - input/external/drive/personal/t-tsuchiyama/sb/by-year/2025-single-table.csv
+  tags:
+  - race
+  - athlete
+  - meet
+  - 2025
+  - ナイター記録会
+- id: race-2025-丸山白虎-天草市ナイター
+  questions:
+  - 2025年丸山白虎の天草市ナイターの記録は？
+  - 2025年丸山白虎の天草市ナイターの結果
+  - 2025年丸山白虎は天草市ナイターで何分？
+  - 2025年丸山白虎の天草市ナイタータイム
+  answer: '丸山白虎（金栗PROJECT/男子）の2025年度・天草市ナイターの記録は1件です（大会名: 第20回　天草市ナイター陸上記録会）。
+
+    2025/08/02 1500m 5:03.80 大会結果: http://www.kumariku.org/25/25,8,2amakusa/rel056.html
+
+    '
+  sources:
+  - input/external/drive/personal/t-tsuchiyama/sb/by-year/2025-single-table.csv
+  tags:
+  - race
+  - athlete
+  - meet
+  - 2025
+  - 天草市ナイター
+- id: race-2025-坂井優花-天草市ナイター
+  questions:
+  - 2025年坂井優花の天草市ナイターの記録は？
+  - 2025年坂井優花の天草市ナイターの結果
+  - 2025年坂井優花は天草市ナイターで何分？
+  - 2025年坂井優花の天草市ナイタータイム
+  answer: '坂井優花（金栗PROJECT/女子）の2025年度・天草市ナイターの記録は1件です（大会名: 第20回　天草市ナイター陸上記録会）。
+
+    2025/08/02 1500m 4:53.41 大会結果: http://www.kumariku.org/25/25,8,2amakusa/rel058.html
+
+    '
+  sources:
+  - input/external/drive/personal/t-tsuchiyama/sb/by-year/2025-single-table.csv
+  tags:
+  - race
+  - athlete
+  - meet
+  - 2025
+  - 天草市ナイター
+- id: race-2025-居石楓摩-ナイター記録会
+  questions:
+  - 2025年居石楓摩のナイター記録会の記録は？
+  - 2025年居石楓摩のナイター記録会の結果
+  - 2025年居石楓摩はナイター記録会で何分？
+  - 2025年居石楓摩のナイター記録会タイム
+  answer: '居石楓摩（玉名アスリーツ/男子）の2025年度・ナイター記録会の記録は1件です（大会名: 令和7年度 第3回ナイター記録会）。
+
+    2025/09/13 3000m 9:18.99【SB】 大会結果: https://jaaf-nagasaki.net/result/2025/25420306/010115.htm
+
+    '
+  sources:
+  - input/external/drive/personal/t-tsuchiyama/sb/by-year/2025-single-table.csv
+  tags:
+  - race
+  - athlete
+  - meet
+  - 2025
+  - ナイター記録会
+- id: race-2025-居石華音-天草市ナイター
+  questions:
+  - 2025年居石華音の天草市ナイターの記録は？
+  - 2025年居石華音の天草市ナイターの結果
+  - 2025年居石華音は天草市ナイターで何分？
+  - 2025年居石華音の天草市ナイタータイム
+  answer: '居石華音（金栗PROJECT/女子）の2025年度・天草市ナイターの記録は1件です（大会名: 第20回　天草市ナイター陸上記録会）。
+
+    2025/08/02 1500m 5:02.87【SB】 大会結果: http://www.kumariku.org/25/25,8,2amakusa/rel058.html
+
+    '
+  sources:
+  - input/external/drive/personal/t-tsuchiyama/sb/by-year/2025-single-table.csv
+  tags:
+  - race
+  - athlete
+  - meet
+  - 2025
+  - 天草市ナイター
+- id: race-2025-庄山瑠那-天草市ナイター
+  questions:
+  - 2025年庄山瑠那の天草市ナイターの記録は？
+  - 2025年庄山瑠那の天草市ナイターの結果
+  - 2025年庄山瑠那は天草市ナイターで何分？
+  - 2025年庄山瑠那の天草市ナイタータイム
+  answer: '庄山瑠那（金栗PROJECT/女子）の2025年度・天草市ナイターの記録は1件です（大会名: 第20回　天草市ナイター陸上記録会）。
+
+    2025/08/02 1500m DNS 大会結果: http://www.kumariku.org/25/25,8,2amakusa/rel058.html
+
+    '
+  sources:
+  - input/external/drive/personal/t-tsuchiyama/sb/by-year/2025-single-table.csv
+  tags:
+  - race
+  - athlete
+  - meet
+  - 2025
+  - 天草市ナイター
+- id: race-2025-松島颯希-ナイター記録会
+  questions:
+  - 2025年松島颯希のナイター記録会の記録は？
+  - 2025年松島颯希のナイター記録会の結果
+  - 2025年松島颯希はナイター記録会で何分？
+  - 2025年松島颯希のナイター記録会タイム
+  answer: '松島颯希（玉名アスリーツ/男子）の2025年度・ナイター記録会の記録は1件です（大会名: 令和7年度 第3回ナイター記録会）。
+
+    2025/09/13 3000m 10:23.88 大会結果: https://jaaf-nagasaki.net/result/2025/25420306/010115.htm
+
+    '
+  sources:
+  - input/external/drive/personal/t-tsuchiyama/sb/by-year/2025-single-table.csv
+  tags:
+  - race
+  - athlete
+  - meet
+  - 2025
+  - ナイター記録会
+- id: race-2025-松川大希-天草市ナイター
+  questions:
+  - 2025年松川大希の天草市ナイターの記録は？
+  - 2025年松川大希の天草市ナイターの結果
+  - 2025年松川大希は天草市ナイターで何分？
+  - 2025年松川大希の天草市ナイタータイム
+  answer: '松川大希（金栗PROJECT/男子）の2025年度・天草市ナイターの記録は1件です（大会名: 第20回　天草市ナイター陸上記録会）。
+
+    2025/08/02 1500m 4:49.70 大会結果: http://www.kumariku.org/25/25,8,2amakusa/rel055.html
+
+    '
+  sources:
+  - input/external/drive/personal/t-tsuchiyama/sb/by-year/2025-single-table.csv
+  tags:
+  - race
+  - athlete
+  - meet
+  - 2025
+  - 天草市ナイター
+- id: race-2025-松浦眞大-天草市ナイター
+  questions:
+  - 2025年松浦眞大の天草市ナイターの記録は？
+  - 2025年松浦眞大の天草市ナイターの結果
+  - 2025年松浦眞大は天草市ナイターで何分？
+  - 2025年松浦眞大の天草市ナイタータイム
+  answer: '松浦眞大（金栗PROJECT/男子）の2025年度・天草市ナイターの記録は1件です（大会名: 第20回　天草市ナイター陸上記録会）。
+
+    2025/08/02 1500m 4:43.53 大会結果: http://www.kumariku.org/25/25,8,2amakusa/rel056.html
+
+    '
+  sources:
+  - input/external/drive/personal/t-tsuchiyama/sb/by-year/2025-single-table.csv
+  tags:
+  - race
+  - athlete
+  - meet
+  - 2025
+  - 天草市ナイター
+- id: race-2025-柿本晴仁-ナイター記録会
+  questions:
+  - 2025年柿本晴仁のナイター記録会の記録は？
+  - 2025年柿本晴仁のナイター記録会の結果
+  - 2025年柿本晴仁はナイター記録会で何分？
+  - 2025年柿本晴仁のナイター記録会タイム
+  answer: '柿本晴仁（玉名アスリーツ/男子）の2025年度・ナイター記録会の記録は1件です（大会名: 令和7年度 第3回ナイター記録会）。
+
+    2025/09/13 3000m 10:31.00 大会結果: https://jaaf-nagasaki.net/result/2025/25420306/010115.htm
+
+    '
+  sources:
+  - input/external/drive/personal/t-tsuchiyama/sb/by-year/2025-single-table.csv
+  tags:
+  - race
+  - athlete
+  - meet
+  - 2025
+  - ナイター記録会
+- id: race-2025-永田來夢-ナイター記録会
+  questions:
+  - 2025年永田來夢のナイター記録会の記録は？
+  - 2025年永田來夢のナイター記録会の結果
+  - 2025年永田來夢はナイター記録会で何分？
+  - 2025年永田來夢のナイター記録会タイム
+  answer: '永田來夢（玉名アスリーツ/男子）の2025年度・ナイター記録会の記録は1件です（大会名: 令和7年度 第3回ナイター記録会）。
+
+    2025/09/13 3000m 9:52.80 大会結果: https://jaaf-nagasaki.net/result/2025/25420306/010115.htm
+
+    '
+  sources:
+  - input/external/drive/personal/t-tsuchiyama/sb/by-year/2025-single-table.csv
+  tags:
+  - race
+  - athlete
+  - meet
+  - 2025
+  - ナイター記録会
+- id: race-2025-池松華凛-天草市ナイター
+  questions:
+  - 2025年池松華凛の天草市ナイターの記録は？
+  - 2025年池松華凛の天草市ナイターの結果
+  - 2025年池松華凛は天草市ナイターで何分？
+  - 2025年池松華凛の天草市ナイタータイム
+  answer: '池松華凛（金栗PROJECT/女子）の2025年度・天草市ナイターの記録は1件です（大会名: 第20回　天草市ナイター陸上記録会）。
+
+    2025/08/02 1500m DNS 大会結果: http://www.kumariku.org/25/25,8,2amakusa/rel057.html
+
+    '
+  sources:
+  - input/external/drive/personal/t-tsuchiyama/sb/by-year/2025-single-table.csv
+  tags:
+  - race
+  - athlete
+  - meet
+  - 2025
+  - 天草市ナイター
+- id: race-2025-津口晃誠-天草市ナイター
+  questions:
+  - 2025年津口晃誠の天草市ナイターの記録は？
+  - 2025年津口晃誠の天草市ナイターの結果
+  - 2025年津口晃誠は天草市ナイターで何分？
+  - 2025年津口晃誠の天草市ナイタータイム
+  answer: '津口晃誠（金栗PROJECT/男子）の2025年度・天草市ナイターの記録は1件です（大会名: 第20回　天草市ナイター陸上記録会）。
+
+    2025/08/02 1500m 5:08.44 大会結果: http://www.kumariku.org/25/25,8,2amakusa/rel055.html
+
+    '
+  sources:
+  - input/external/drive/personal/t-tsuchiyama/sb/by-year/2025-single-table.csv
+  tags:
+  - race
+  - athlete
+  - meet
+  - 2025
+  - 天草市ナイター
+- id: race-2025-田中元稀-天草市ナイター
+  questions:
+  - 2025年田中元稀の天草市ナイターの記録は？
+  - 2025年田中元稀の天草市ナイターの結果
+  - 2025年田中元稀は天草市ナイターで何分？
+  - 2025年田中元稀の天草市ナイタータイム
+  answer: '田中元稀（金栗PROJECT/男子）の2025年度・天草市ナイターの記録は1件です（大会名: 第20回　天草市ナイター陸上記録会）。
+
+    2025/08/02 1500m DNS 大会結果: http://www.kumariku.org/25/25,8,2amakusa/rel055.html
+
+    '
+  sources:
+  - input/external/drive/personal/t-tsuchiyama/sb/by-year/2025-single-table.csv
+  tags:
+  - race
+  - athlete
+  - meet
+  - 2025
+  - 天草市ナイター
+- id: race-2025-石原佳維斗-天草市ナイター
+  questions:
+  - 2025年石原佳維斗の天草市ナイターの記録は？
+  - 2025年石原佳維斗の天草市ナイターの結果
+  - 2025年石原佳維斗は天草市ナイターで何分？
+  - 2025年石原佳維斗の天草市ナイタータイム
+  answer: '石原佳維斗（金栗PROJECT/男子）の2025年度・天草市ナイターの記録は1件です（大会名: 第20回　天草市ナイター陸上記録会）。
+
+    2025/08/02 1500m 4:41.95 大会結果: http://www.kumariku.org/25/25,8,2amakusa/rel056.html
+
+    '
+  sources:
+  - input/external/drive/personal/t-tsuchiyama/sb/by-year/2025-single-table.csv
+  tags:
+  - race
+  - athlete
+  - meet
+  - 2025
+  - 天草市ナイター
+- id: race-2025-西原琉惟-天草市ナイター
+  questions:
+  - 2025年西原琉惟の天草市ナイターの記録は？
+  - 2025年西原琉惟の天草市ナイターの結果
+  - 2025年西原琉惟は天草市ナイターで何分？
+  - 2025年西原琉惟の天草市ナイタータイム
+  answer: '西原琉惟（金栗PROJECT/男子）の2025年度・天草市ナイターの記録は1件です（大会名: 第20回　天草市ナイター陸上記録会）。
+
+    2025/08/02 1500m 5:15.82 大会結果: http://www.kumariku.org/25/25,8,2amakusa/rel055.html
+
+    '
+  sources:
+  - input/external/drive/personal/t-tsuchiyama/sb/by-year/2025-single-table.csv
+  tags:
+  - race
+  - athlete
+  - meet
+  - 2025
+  - 天草市ナイター
+- id: race-2025-辛嶋大宙-ナイター記録会
+  questions:
+  - 2025年辛嶋大宙のナイター記録会の記録は？
+  - 2025年辛嶋大宙のナイター記録会の結果
+  - 2025年辛嶋大宙はナイター記録会で何分？
+  - 2025年辛嶋大宙のナイター記録会タイム
+  answer: '辛嶋大宙（玉名アスリーツ/男子）の2025年度・ナイター記録会の記録は1件です（大会名: 令和7年度 第3回ナイター記録会）。
+
+    2025/09/13 3000m 10:25.35 大会結果: https://jaaf-nagasaki.net/result/2025/25420306/010115.htm
+
+    '
+  sources:
+  - input/external/drive/personal/t-tsuchiyama/sb/by-year/2025-single-table.csv
+  tags:
+  - race
+  - athlete
+  - meet
+  - 2025
+  - ナイター記録会
+- id: race-2025-辻本愛琉-天草市ナイター
+  questions:
+  - 2025年辻本愛琉の天草市ナイターの記録は？
+  - 2025年辻本愛琉の天草市ナイターの結果
+  - 2025年辻本愛琉は天草市ナイターで何分？
+  - 2025年辻本愛琉の天草市ナイタータイム
+  answer: '辻本愛琉（金栗PROJECT/男子）の2025年度・天草市ナイターの記録は1件です（大会名: 第20回　天草市ナイター陸上記録会）。
+
+    2025/08/02 1500m 4:34.34 大会結果: http://www.kumariku.org/25/25,8,2amakusa/rel056.html
+
+    '
+  sources:
+  - input/external/drive/personal/t-tsuchiyama/sb/by-year/2025-single-table.csv
+  tags:
+  - race
+  - athlete
+  - meet
+  - 2025
+  - 天草市ナイター
+- id: race-2025-辻美空-天草市ナイター
+  questions:
+  - 2025年辻美空の天草市ナイターの記録は？
+  - 2025年辻美空の天草市ナイターの結果
+  - 2025年辻美空は天草市ナイターで何分？
+  - 2025年辻美空の天草市ナイタータイム
+  answer: '辻美空（金栗PROJECT/女子）の2025年度・天草市ナイターの記録は1件です（大会名: 第20回　天草市ナイター陸上記録会）。
+
+    2025/08/02 1500m 5:02.18【SB】 大会結果: http://www.kumariku.org/25/25,8,2amakusa/rel058.html
+
+    '
+  sources:
+  - input/external/drive/personal/t-tsuchiyama/sb/by-year/2025-single-table.csv
+  tags:
+  - race
+  - athlete
+  - meet
+  - 2025
+  - 天草市ナイター
+- id: race-2025-近藤弘樹-天草市ナイター
+  questions:
+  - 2025年近藤弘樹の天草市ナイターの記録は？
+  - 2025年近藤弘樹の天草市ナイターの結果
+  - 2025年近藤弘樹は天草市ナイターで何分？
+  - 2025年近藤弘樹の天草市ナイタータイム
+  answer: '近藤弘樹（金栗PROJECT/男子）の2025年度・天草市ナイターの記録は1件です（大会名: 第20回　天草市ナイター陸上記録会）。
+
+    2025/08/02 1500m 4:49.90 大会結果: http://www.kumariku.org/25/25,8,2amakusa/rel056.html
+
+    '
+  sources:
+  - input/external/drive/personal/t-tsuchiyama/sb/by-year/2025-single-table.csv
+  tags:
+  - race
+  - athlete
+  - meet
+  - 2025
+  - 天草市ナイター
+- id: race-2025-隈部侑成-天草市ナイター
+  questions:
+  - 2025年隈部侑成の天草市ナイターの記録は？
+  - 2025年隈部侑成の天草市ナイターの結果
+  - 2025年隈部侑成は天草市ナイターで何分？
+  - 2025年隈部侑成の天草市ナイタータイム
+  answer: '隈部侑成（金栗PROJECT/男子）の2025年度・天草市ナイターの記録は1件です（大会名: 第20回　天草市ナイター陸上記録会）。
+
+    2025/08/02 1500m 4:40.86 大会結果: http://www.kumariku.org/25/25,8,2amakusa/rel056.html
+
+    '
+  sources:
+  - input/external/drive/personal/t-tsuchiyama/sb/by-year/2025-single-table.csv
+  tags:
+  - race
+  - athlete
+  - meet
+  - 2025
+  - 天草市ナイター
+- id: race-2026-上川慧翔-ナイター記録会
+  questions:
+  - 上川慧翔のナイター記録会の記録は？
+  - 2026年上川慧翔のナイター記録会の結果
+  - 上川慧翔はナイター記録会で何分？
+  - 上川慧翔のナイター記録会タイム
+  - 上川慧翔の今年のナイター記録会の記録
+  - 今年度上川慧翔のナイター記録会
+  answer: '上川慧翔（長崎大附属中/男子）の2026年度・ナイター記録会の記録は1件です（大会名: 令和8年度 第3回ナイター記録会）。
+
+    2026/09/12 3000m 10:44.41【SB】 大会結果: https://jaaf-nagasaki.net/result/2026/26420306/010115.htm
+
+    '
+  sources:
+  - input/external/drive/personal/t-tsuchiyama/sb/by-year/2026-single-table.csv
+  tags:
+  - race
+  - athlete
+  - meet
+  - 2026
+  - ナイター記録会
+- id: race-2026-内田武尊-ナイター記録会
+  questions:
+  - 内田武尊のナイター記録会の記録は？
+  - 2026年内田武尊のナイター記録会の結果
+  - 内田武尊はナイター記録会で何分？
+  - 内田武尊のナイター記録会タイム
+  - 内田武尊の今年のナイター記録会の記録
+  - 今年度内田武尊のナイター記録会
+  answer: '内田武尊（玉名アスリーツ/男子）の2026年度・ナイター記録会の記録は1件です（大会名: 令和8年度 第3回ナイター記録会）。
+
+    2026/09/12 3000m 10:28.68【SB】 大会結果: https://jaaf-nagasaki.net/result/2026/26420306/010115.htm
+
+    '
+  sources:
+  - input/external/drive/personal/t-tsuchiyama/sb/by-year/2026-single-table.csv
+  tags:
+  - race
+  - athlete
+  - meet
+  - 2026
+  - ナイター記録会
+- id: race-2026-宮嶋晴文-ナイター記録会
+  questions:
+  - 宮嶋晴文のナイター記録会の記録は？
+  - 2026年宮嶋晴文のナイター記録会の結果
+  - 宮嶋晴文はナイター記録会で何分？
+  - 宮嶋晴文のナイター記録会タイム
+  - 宮嶋晴文の今年のナイター記録会の記録
+  - 今年度宮嶋晴文のナイター記録会
+  answer: '宮嶋晴文（長崎大附属中/男子）の2026年度・ナイター記録会の記録は1件です（大会名: 令和8年度 第3回ナイター記録会）。
+
+    2026/09/12 3000m 11:45.52【SB】 大会結果: https://jaaf-nagasaki.net/result/2026/26420306/010115.htm
+
+    '
+  sources:
+  - input/external/drive/personal/t-tsuchiyama/sb/by-year/2026-single-table.csv
+  tags:
+  - race
+  - athlete
+  - meet
+  - 2026
+  - ナイター記録会
+- id: race-2026-宮川晴-ナイター記録会
+  questions:
+  - 宮川晴のナイター記録会の記録は？
+  - 2026年宮川晴のナイター記録会の結果
+  - 宮川晴はナイター記録会で何分？
+  - 宮川晴のナイター記録会タイム
+  - 宮川晴の今年のナイター記録会の記録
+  - 今年度宮川晴のナイター記録会
+  answer: '宮川晴（玉名アスリーツ/男子）の2026年度・ナイター記録会の記録は1件です（大会名: 令和8年度 第3回ナイター記録会）。
+
+    2026/09/12 3000m 9:36.31【SB】 大会結果: https://jaaf-nagasaki.net/result/2026/26420306/010115.htm
+
+    '
+  sources:
+  - input/external/drive/personal/t-tsuchiyama/sb/by-year/2026-single-table.csv
+  tags:
+  - race
+  - athlete
+  - meet
+  - 2026
+  - ナイター記録会
+- id: race-2026-小林祐貴-ナイター記録会
+  questions:
+  - 小林祐貴のナイター記録会の記録は？
+  - 2026年小林祐貴のナイター記録会の結果
+  - 小林祐貴はナイター記録会で何分？
+  - 小林祐貴のナイター記録会タイム
+  - 小林祐貴の今年のナイター記録会の記録
+  - 今年度小林祐貴のナイター記録会
+  answer: '小林祐貴（玉名アスリーツ/男子）の2026年度・ナイター記録会の記録は1件です（大会名: 令和8年度 第3回ナイター記録会）。
+
+    2026/09/12 3000m 9:57.24【SB】 大会結果: https://jaaf-nagasaki.net/result/2026/26420306/010115.htm
+
+    '
+  sources:
+  - input/external/drive/personal/t-tsuchiyama/sb/by-year/2026-single-table.csv
+  tags:
+  - race
+  - athlete
+  - meet
+  - 2026
+  - ナイター記録会
+- id: race-2026-山中陽翔-ナイター記録会
+  questions:
+  - 山中陽翔のナイター記録会の記録は？
+  - 2026年山中陽翔のナイター記録会の結果
+  - 山中陽翔はナイター記録会で何分？
+  - 山中陽翔のナイター記録会タイム
+  - 山中陽翔の今年のナイター記録会の記録
+  - 今年度山中陽翔のナイター記録会
+  answer: '山中陽翔（長崎大附属中/男子）の2026年度・ナイター記録会の記録は1件です（大会名: 令和8年度 第3回ナイター記録会）。
+
+    2026/09/12 3000m 10:17.87【SB】 大会結果: https://jaaf-nagasaki.net/result/2026/26420306/010115.htm
+
+    '
+  sources:
+  - input/external/drive/personal/t-tsuchiyama/sb/by-year/2026-single-table.csv
+  tags:
+  - race
+  - athlete
+  - meet
+  - 2026
+  - ナイター記録会
+- id: race-2026-平野穂太朗-ナイター記録会
+  questions:
+  - 平野穂太朗のナイター記録会の記録は？
+  - 2026年平野穂太朗のナイター記録会の結果
+  - 平野穂太朗はナイター記録会で何分？
+  - 平野穂太朗のナイター記録会タイム
+  - 平野穂太朗の今年のナイター記録会の記録
+  - 今年度平野穂太朗のナイター記録会
+  answer: '平野穂太朗（長崎大附属中/男子）の2026年度・ナイター記録会の記録は1件です（大会名: 令和8年度 第3回ナイター記録会）。
+
+    2026/09/12 3000m 9:55.47【SB】 大会結果: https://jaaf-nagasaki.net/result/2026/26420306/010115.htm
+
+    '
+  sources:
+  - input/external/drive/personal/t-tsuchiyama/sb/by-year/2026-single-table.csv
+  tags:
+  - race
+  - athlete
+  - meet
+  - 2026
+  - ナイター記録会
+- id: race-2026-恩田慈希-ナイター記録会
+  questions:
+  - 恩田慈希のナイター記録会の記録は？
+  - 2026年恩田慈希のナイター記録会の結果
+  - 恩田慈希はナイター記録会で何分？
+  - 恩田慈希のナイター記録会タイム
+  - 恩田慈希の今年のナイター記録会の記録
+  - 今年度恩田慈希のナイター記録会
+  answer: '恩田慈希（玉名アスリーツ/男子）の2026年度・ナイター記録会の記録は1件です（大会名: 令和8年度 第3回ナイター記録会）。
+
+    2026/09/12 3000m 10:38.78【SB】 大会結果: https://jaaf-nagasaki.net/result/2026/26420306/010115.htm
+
+    '
+  sources:
+  - input/external/drive/personal/t-tsuchiyama/sb/by-year/2026-single-table.csv
+  tags:
+  - race
+  - athlete
+  - meet
+  - 2026
+  - ナイター記録会
+- id: race-2026-木下友郎-ナイター記録会
+  questions:
+  - 木下友郎のナイター記録会の記録は？
+  - 2026年木下友郎のナイター記録会の結果
+  - 木下友郎はナイター記録会で何分？
+  - 木下友郎のナイター記録会タイム
+  - 木下友郎の今年のナイター記録会の記録
+  - 今年度木下友郎のナイター記録会
+  answer: '木下友郎（長崎大附属中/男子）の2026年度・ナイター記録会の記録は1件です（大会名: 令和8年度 第3回ナイター記録会）。
+
+    2026/09/12 3000m 9:44.63【SB】 大会結果: https://jaaf-nagasaki.net/result/2026/26420306/010115.htm
+
+    '
+  sources:
+  - input/external/drive/personal/t-tsuchiyama/sb/by-year/2026-single-table.csv
+  tags:
+  - race
+  - athlete
+  - meet
+  - 2026
+  - ナイター記録会
+- id: race-2026-松尾遥仁-ナイター記録会
+  questions:
+  - 松尾遥仁のナイター記録会の記録は？
+  - 2026年松尾遥仁のナイター記録会の結果
+  - 松尾遥仁はナイター記録会で何分？
+  - 松尾遥仁のナイター記録会タイム
+  - 松尾遥仁の今年のナイター記録会の記録
+  - 今年度松尾遥仁のナイター記録会
+  answer: '松尾遥仁（長崎大附属中/男子）の2026年度・ナイター記録会の記録は1件です（大会名: 令和8年度 第3回ナイター記録会）。
+
+    2026/09/12 3000m 11:00.86【SB】 大会結果: https://jaaf-nagasaki.net/result/2026/26420306/010115.htm
+
+    '
+  sources:
+  - input/external/drive/personal/t-tsuchiyama/sb/by-year/2026-single-table.csv
+  tags:
+  - race
+  - athlete
+  - meet
+  - 2026
+  - ナイター記録会
+- id: race-2026-松島颯希-ナイター記録会
+  questions:
+  - 松島颯希のナイター記録会の記録は？
+  - 2026年松島颯希のナイター記録会の結果
+  - 松島颯希はナイター記録会で何分？
+  - 松島颯希のナイター記録会タイム
+  - 松島颯希の今年のナイター記録会の記録
+  - 今年度松島颯希のナイター記録会
+  answer: '松島颯希（玉名アスリーツ/男子）の2026年度・ナイター記録会の記録は1件です（大会名: 令和8年度 第3回ナイター記録会）。
+
+    2026/09/12 3000m 9:53.36【SB】 大会結果: https://jaaf-nagasaki.net/result/2026/26420306/010115.htm
+
+    '
+  sources:
+  - input/external/drive/personal/t-tsuchiyama/sb/by-year/2026-single-table.csv
+  tags:
+  - race
+  - athlete
+  - meet
+  - 2026
+  - ナイター記録会
+- id: race-2026-柿本晴仁-ナイター記録会
+  questions:
+  - 柿本晴仁のナイター記録会の記録は？
+  - 2026年柿本晴仁のナイター記録会の結果
+  - 柿本晴仁はナイター記録会で何分？
+  - 柿本晴仁のナイター記録会タイム
+  - 柿本晴仁の今年のナイター記録会の記録
+  - 今年度柿本晴仁のナイター記録会
+  answer: '柿本晴仁（玉名アスリーツ/男子）の2026年度・ナイター記録会の記録は1件です（大会名: 令和8年度 第3回ナイター記録会）。
+
+    2026/09/12 3000m 9:14.53【SB】 大会結果: https://jaaf-nagasaki.net/result/2026/26420306/010115.htm
+
+    '
+  sources:
+  - input/external/drive/personal/t-tsuchiyama/sb/by-year/2026-single-table.csv
+  tags:
+  - race
+  - athlete
+  - meet
+  - 2026
+  - ナイター記録会
+- id: race-2026-永田來夢-ナイター記録会
+  questions:
+  - 永田來夢のナイター記録会の記録は？
+  - 2026年永田來夢のナイター記録会の結果
+  - 永田來夢はナイター記録会で何分？
+  - 永田來夢のナイター記録会タイム
+  - 永田來夢の今年のナイター記録会の記録
+  - 今年度永田來夢のナイター記録会
+  answer: '永田來夢（玉名アスリーツ/男子）の2026年度・ナイター記録会の記録は1件です（大会名: 令和8年度 第3回ナイター記録会）。
+
+    2026/09/12 3000m 9:20.09【SB】 大会結果: https://jaaf-nagasaki.net/result/2026/26420306/010115.htm
+
+    '
+  sources:
+  - input/external/drive/personal/t-tsuchiyama/sb/by-year/2026-single-table.csv
+  tags:
+  - race
+  - athlete
+  - meet
+  - 2026
+  - ナイター記録会
+- id: race-2026-津口晃誠-ナイター記録会
+  questions:
+  - 津口晃誠のナイター記録会の記録は？
+  - 2026年津口晃誠のナイター記録会の結果
+  - 津口晃誠はナイター記録会で何分？
+  - 津口晃誠のナイター記録会タイム
+  - 津口晃誠の今年のナイター記録会の記録
+  - 今年度津口晃誠のナイター記録会
+  answer: '津口晃誠（金栗PROJECT/男子）の2026年度・ナイター記録会の記録は1件です（大会名: 令和8年度 第3回ナイター記録会）。
+
+    2026/09/12 3000m 9:36.40【SB】 大会結果: https://jaaf-nagasaki.net/result/2026/26420306/010115.htm
+
+    '
+  sources:
+  - input/external/drive/personal/t-tsuchiyama/sb/by-year/2026-single-table.csv
+  tags:
+  - race
+  - athlete
+  - meet
+  - 2026
+  - ナイター記録会
+- id: race-2026-濵本健心-ナイター記録会
+  questions:
+  - 濵本健心のナイター記録会の記録は？
+  - 2026年濵本健心のナイター記録会の結果
+  - 濵本健心はナイター記録会で何分？
+  - 濵本健心のナイター記録会タイム
+  - 濵本健心の今年のナイター記録会の記録
+  - 今年度濵本健心のナイター記録会
+  answer: '濵本健心（長崎大附属中/男子）の2026年度・ナイター記録会の記録は1件です（大会名: 令和8年度 第3回ナイター記録会）。
+
+    2026/09/12 3000m 11:11.76【SB】 大会結果: https://jaaf-nagasaki.net/result/2026/26420306/010115.htm
+
+    '
+  sources:
+  - input/external/drive/personal/t-tsuchiyama/sb/by-year/2026-single-table.csv
+  tags:
+  - race
+  - athlete
+  - meet
+  - 2026
+  - ナイター記録会
+- id: race-2026-田中元稀-ナイター記録会
+  questions:
+  - 田中元稀のナイター記録会の記録は？
+  - 2026年田中元稀のナイター記録会の結果
+  - 田中元稀はナイター記録会で何分？
+  - 田中元稀のナイター記録会タイム
+  - 田中元稀の今年のナイター記録会の記録
+  - 今年度田中元稀のナイター記録会
+  answer: '田中元稀（金栗PROJECT/男子）の2026年度・ナイター記録会の記録は1件です（大会名: 令和8年度 第3回ナイター記録会）。
+
+    2026/09/12 3000m 9:24.24【SB】 大会結果: https://jaaf-nagasaki.net/result/2026/26420306/010115.htm
+
+    '
+  sources:
+  - input/external/drive/personal/t-tsuchiyama/sb/by-year/2026-single-table.csv
+  tags:
+  - race
+  - athlete
+  - meet
+  - 2026
+  - ナイター記録会
+- id: race-2026-石原直季-ナイター記録会
+  questions:
+  - 石原直季のナイター記録会の記録は？
+  - 2026年石原直季のナイター記録会の結果
+  - 石原直季はナイター記録会で何分？
+  - 石原直季のナイター記録会タイム
+  - 石原直季の今年のナイター記録会の記録
+  - 今年度石原直季のナイター記録会
+  answer: '石原直季（長崎大附属中/男子）の2026年度・ナイター記録会の記録は1件です（大会名: 令和8年度 第3回ナイター記録会）。
+
+    2026/09/12 3000m 10:40.67【SB】 大会結果: https://jaaf-nagasaki.net/result/2026/26420306/010115.htm
+
+    '
+  sources:
+  - input/external/drive/personal/t-tsuchiyama/sb/by-year/2026-single-table.csv
+  tags:
+  - race
+  - athlete
+  - meet
+  - 2026
+  - ナイター記録会
+- id: race-2026-福村綱余-ナイター記録会
+  questions:
+  - 福村綱余のナイター記録会の記録は？
+  - 2026年福村綱余のナイター記録会の結果
+  - 福村綱余はナイター記録会で何分？
+  - 福村綱余のナイター記録会タイム
+  - 福村綱余の今年のナイター記録会の記録
+  - 今年度福村綱余のナイター記録会
+  answer: '福村綱余（玉名アスリーツ/男子）の2026年度・ナイター記録会の記録は1件です（大会名: 令和8年度 第3回ナイター記録会）。
+
+    2026/09/12 3000m 10:44.37【SB】 大会結果: https://jaaf-nagasaki.net/result/2026/26420306/010115.htm
+
+    '
+  sources:
+  - input/external/drive/personal/t-tsuchiyama/sb/by-year/2026-single-table.csv
+  tags:
+  - race
+  - athlete
+  - meet
+  - 2026
+  - ナイター記録会
+- id: race-2026-米田伊織-ナイター記録会
+  questions:
+  - 米田伊織のナイター記録会の記録は？
+  - 2026年米田伊織のナイター記録会の結果
+  - 米田伊織はナイター記録会で何分？
+  - 米田伊織のナイター記録会タイム
+  - 米田伊織の今年のナイター記録会の記録
+  - 今年度米田伊織のナイター記録会
+  answer: '米田伊織（長崎大附属中/男子）の2026年度・ナイター記録会の記録は1件です（大会名: 令和8年度 第3回ナイター記録会）。
+
+    2026/09/12 3000m 11:37.43【SB】 大会結果: https://jaaf-nagasaki.net/result/2026/26420306/010115.htm
+
+    '
+  sources:
+  - input/external/drive/personal/t-tsuchiyama/sb/by-year/2026-single-table.csv
+  tags:
+  - race
+  - athlete
+  - meet
+  - 2026
+  - ナイター記録会
+- id: race-2026-辛嶋大宙-ナイター記録会
+  questions:
+  - 辛嶋大宙のナイター記録会の記録は？
+  - 2026年辛嶋大宙のナイター記録会の結果
+  - 辛嶋大宙はナイター記録会で何分？
+  - 辛嶋大宙のナイター記録会タイム
+  - 辛嶋大宙の今年のナイター記録会の記録
+  - 今年度辛嶋大宙のナイター記録会
+  answer: '辛嶋大宙（玉名アスリーツ/男子）の2026年度・ナイター記録会の記録は1件です（大会名: 令和8年度 第3回ナイター記録会）。
+
+    2026/09/12 3000m 9:24.36【SB】 大会結果: https://jaaf-nagasaki.net/result/2026/26420306/010115.htm
+
+    '
+  sources:
+  - input/external/drive/personal/t-tsuchiyama/sb/by-year/2026-single-table.csv
+  tags:
+  - race
+  - athlete
+  - meet
+  - 2026
+  - ナイター記録会
+- id: race-2026-金子修也-ナイター記録会
+  questions:
+  - 金子修也のナイター記録会の記録は？
+  - 2026年金子修也のナイター記録会の結果
+  - 金子修也はナイター記録会で何分？
+  - 金子修也のナイター記録会タイム
+  - 金子修也の今年のナイター記録会の記録
+  - 今年度金子修也のナイター記録会
+  answer: '金子修也（長崎大附属中/男子）の2026年度・ナイター記録会の記録は1件です（大会名: 令和8年度 第3回ナイター記録会）。
+
+    2026/09/12 3000m 11:18.78【SB】 大会結果: https://jaaf-nagasaki.net/result/2026/26420306/010115.htm
+
+    '
+  sources:
+  - input/external/drive/personal/t-tsuchiyama/sb/by-year/2026-single-table.csv
+  tags:
+  - race
+  - athlete
+  - meet
+  - 2026
+  - ナイター記録会
+- id: race-2026-隈部侑成-ナイター記録会
+  questions:
+  - 隈部侑成のナイター記録会の記録は？
+  - 2026年隈部侑成のナイター記録会の結果
+  - 隈部侑成はナイター記録会で何分？
+  - 隈部侑成のナイター記録会タイム
+  - 隈部侑成の今年のナイター記録会の記録
+  - 今年度隈部侑成のナイター記録会
+  answer: '隈部侑成（金栗PROJECT/男子）の2026年度・ナイター記録会の記録は1件です（大会名: 令和8年度 第3回ナイター記録会）。
+
+    2026/09/12 3000m 8:52.46【SB】 大会結果: https://jaaf-nagasaki.net/result/2026/26420306/010115.htm
+
+    '
+  sources:
+  - input/external/drive/personal/t-tsuchiyama/sb/by-year/2026-single-table.csv
+  tags:
+  - race
+  - athlete
+  - meet
+  - 2026
+  - ナイター記録会
+- id: race-2026-高島健-ナイター記録会
+  questions:
+  - 高島健のナイター記録会の記録は？
+  - 2026年高島健のナイター記録会の結果
+  - 高島健はナイター記録会で何分？
+  - 高島健のナイター記録会タイム
+  - 高島健の今年のナイター記録会の記録
+  - 今年度高島健のナイター記録会
+  answer: '高島健（長崎大附属中/男子）の2026年度・ナイター記録会の記録は1件です（大会名: 令和8年度 第3回ナイター記録会）。
+
+    2026/09/12 3000m 10:37.00【SB】 大会結果: https://jaaf-nagasaki.net/result/2026/26420306/010115.htm
+
+    '
+  sources:
+  - input/external/drive/personal/t-tsuchiyama/sb/by-year/2026-single-table.csv
+  tags:
+  - race
+  - athlete
+  - meet
+  - 2026
+  - ナイター記録会
+- id: recent-2026-宮川晴-ナイター記録会
+  questions:
+  - 宮川晴のナイター記録会の結果は？
+  - 2026年宮川晴のナイター記録会
+  - 宮川晴のトラック/駅伝シーズン（ナイター記録会）
+  answer: '宮川晴（玉陵中）の2026年度・ナイター記録会の結果です。
+
+    2026-09-12 3000m 9:36.31（組103着） 大会結果: https://jaaf-nagasaki.net/result/2026/26420306/010115.htm
+
+    '
+  sources:
+  - out/analysis/aragyoku_2026_recent_results.json
+  tags:
+  - aragyoku
+  - recent
+  - '2026'
+  - ナイター記録会
+- id: recent-2026-小林祐貴-ナイター記録会
+  questions:
+  - 小林祐貴のナイター記録会の結果は？
+  - 2026年小林祐貴のナイター記録会
+  - 小林祐貴のトラック/駅伝シーズン（ナイター記録会）
+  answer: '小林祐貴（玉陵中）の2026年度・ナイター記録会の結果です。
+
+    2026-09-12 3000m 9:57.24（組176着） 大会結果: https://jaaf-nagasaki.net/result/2026/26420306/010115.htm
+
+    '
+  sources:
+  - out/analysis/aragyoku_2026_recent_results.json
+  tags:
+  - aragyoku
+  - recent
+  - '2026'
+  - ナイター記録会
+- id: recent-2026-松島颯希-ナイター記録会
+  questions:
+  - 松島颯希のナイター記録会の結果は？
+  - 2026年松島颯希のナイター記録会
+  - 松島颯希のトラック/駅伝シーズン（ナイター記録会）
+  answer: '松島颯希（玉陵中）の2026年度・ナイター記録会の結果です。
+
+    2026-09-12 3000m 9:53.36（組163着） 大会結果: https://jaaf-nagasaki.net/result/2026/26420306/010115.htm
+
+    '
+  sources:
+  - out/analysis/aragyoku_2026_recent_results.json
+  tags:
+  - aragyoku
+  - recent
+  - '2026'
+  - ナイター記録会
+- id: recent-2026-柿本晴仁-ナイター記録会
+  questions:
+  - 柿本晴仁のナイター記録会の結果は？
+  - 2026年柿本晴仁のナイター記録会
+  - 柿本晴仁のトラック/駅伝シーズン（ナイター記録会）
+  answer: '柿本晴仁（玉陵中）の2026年度・ナイター記録会の結果です。
+
+    2026-09-12 3000m 9:14.53（組59着） 大会結果: https://jaaf-nagasaki.net/result/2026/26420306/010115.htm
+
+    '
+  sources:
+  - out/analysis/aragyoku_2026_recent_results.json
+  tags:
+  - aragyoku
+  - recent
+  - '2026'
+  - ナイター記録会
+- id: recent-2026-永田來夢-ナイター記録会
+  questions:
+  - 永田來夢のナイター記録会の結果は？
+  - 2026年永田來夢のナイター記録会
+  - 永田來夢のトラック/駅伝シーズン（ナイター記録会）
+  answer: '永田來夢（玉陵中）の2026年度・ナイター記録会の結果です。
+
+    2026-09-12 3000m 9:20.09（組68着） 大会結果: https://jaaf-nagasaki.net/result/2026/26420306/010115.htm
+
+    '
+  sources:
+  - out/analysis/aragyoku_2026_recent_results.json
+  tags:
+  - aragyoku
+  - recent
+  - '2026'
+  - ナイター記録会
+- id: recent-2026-津口晃誠-ナイター記録会
+  questions:
+  - 津口晃誠のナイター記録会の結果は？
+  - 2026年津口晃誠のナイター記録会
+  - 津口晃誠のトラック/駅伝シーズン（ナイター記録会）
+  answer: '津口晃誠（菊水中）の2026年度・ナイター記録会の結果です。
+
+    2026-09-12 3000m 9:36.40（組105着） 大会結果: https://jaaf-nagasaki.net/result/2026/26420306/010115.htm
+
+    '
+  sources:
+  - out/analysis/aragyoku_2026_recent_results.json
+  tags:
+  - aragyoku
+  - recent
+  - '2026'
+  - ナイター記録会
+- id: recent-2026-田中元稀-ナイター記録会
+  questions:
+  - 田中元稀のナイター記録会の結果は？
+  - 2026年田中元稀のナイター記録会
+  - 田中元稀のトラック/駅伝シーズン（ナイター記録会）
+  answer: '田中元稀（菊水中）の2026年度・ナイター記録会の結果です。
+
+    2026-09-12 3000m 9:24.24（組78着） 大会結果: https://jaaf-nagasaki.net/result/2026/26420306/010115.htm
+
+    '
+  sources:
+  - out/analysis/aragyoku_2026_recent_results.json
+  tags:
+  - aragyoku
+  - recent
+  - '2026'
+  - ナイター記録会
+- id: recent-2026-辛嶋大宙-ナイター記録会
+  questions:
+  - 辛嶋大宙のナイター記録会の結果は？
+  - 2026年辛嶋大宙のナイター記録会
+  - 辛嶋大宙のトラック/駅伝シーズン（ナイター記録会）
+  answer: '辛嶋大宙（玉陵中）の2026年度・ナイター記録会の結果です。
+
+    2026-09-12 3000m 9:24.36（組79着） 大会結果: https://jaaf-nagasaki.net/result/2026/26420306/010115.htm
+
+    '
+  sources:
+  - out/analysis/aragyoku_2026_recent_results.json
+  tags:
+  - aragyoku
+  - recent
+  - '2026'
+  - ナイター記録会
+- id: recent-2026-隈部侑成-ナイター記録会
+  questions:
+  - 隈部侑成のナイター記録会の結果は？
+  - 2026年隈部侑成のナイター記録会
+  - 隈部侑成のトラック/駅伝シーズン（ナイター記録会）
+  answer: '隈部侑成（菊水中）の2026年度・ナイター記録会の結果です。
+
+    2026-09-12 3000m 8:52.46（組28着） 大会結果: https://jaaf-nagasaki.net/result/2026/26420306/010115.htm
+
+    '
+  sources:
+  - out/analysis/aragyoku_2026_recent_results.json
+  tags:
+  - aragyoku
+  - recent
+  - '2026'
+  - ナイター記録会

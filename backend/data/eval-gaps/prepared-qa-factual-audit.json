@@ -1,11 +1,11 @@
 {
-  "catalog_sha256": "ed1ca42fdf9620a75b6925d466850134552a9b553c4c98e4db3d1e51e29fa1b3",
-  "total": 28074,
+  "catalog_sha256": "37df67c379f690bd488e1fe88111ee5b0d3b1ccee845d60bab8b8400ef594fcd",
+  "total": 28045,
   "checks": {
-    "source_text_time_check": 5069,
-    "source_projection_claim_check": 23005
+    "source_text_time_check": 5038,
+    "source_projection_claim_check": 23007
   },
-  "entries_with_problems": 21,
+  "entries_with_problems": 0,
   "limitations": [
     "Checks repository snapshots, not external live results.",
     "Source projections are generated from data; regression fixtures independently check known extraction errors.",
@@ -144,7 +144,7 @@
     "input/external/sb/middle-school/by-year/2024-sb-adopted.json": "9b0ce65674a9e3f95d8679e528489c69b3024cd8240ef23c7ce8d386441ccf80",
     "input/external/sb/middle-school/by-year/2025-sb-adopted.json": "dc4291a27d46dcbbf6e54d616215f65b23b7a25dd6aee313da82345ad150e4ad",
     "input/external/sb/middle-school/by-year/2026-sb-adopted.json": "8caaf624b7e0153435113cd31b5f68dfad842ead7d31bb95d1399f549ada2dbc",
-    "input/faq/prepared-qa.v1.yaml": "ed1ca42fdf9620a75b6925d466850134552a9b553c4c98e4db3d1e51e29fa1b3",
+    "input/faq/prepared-qa.v1.yaml": "37df67c379f690bd488e1fe88111ee5b0d3b1ccee845d60bab8b8400ef594fcd",
     "input/idaten-corpus/aragyoku/men_full_2012_2025.json": "686073a97d949b97da6a0320a5b61fc1281db61df3f6c553b20a73f7d5392e04",
     "input/idaten-corpus/aragyoku/quiz/荒玉駅伝○×クイズ.csv": "98ff94e5397ac63df6dd3b27de26805affb810b659ee0bbda33fe8d1acd6548a",
     "input/idaten-corpus/aragyoku/winners-by-year.md": "7d048472790b4503a92796c9391f1eb32ee54a0041395de9e1bbae2eef57196f",
@@ -401,7 +401,7 @@
     "out/analysis/arato-tamana-teams/ﾀﾏﾅﾁｭｳ玉名中.md": "d56544d05ffc45d98a81caf0212f7f0fcc33d0ed286999cdec019050ed6150b8",
     "out/analysis/athletes/takada-mana.md": "aec07e6f4e13e523be93996bb141d5a658441e4671ed462f13fbad13ba8169f8",
     "out/analysis/notion_records_2026.json": "554879640ef341eb82825a9418c27be4ee272f72912e86118a93b43fb6f20c44",
-    "out/knowledge-graph.json": "0ef83b235b44dfad7f050e21194ee7f3984ad59ebd1094ff5553131a79eff53d",
+    "out/knowledge-graph.json": "26c95914c2549ad0bf5fca734ed6a871ddff3958b1b093e4418bda9c1704c335",
     "outputs/荒玉駅伝2026徹底対策.pdf": "3a409e93f73b78907eb8066c34394ad6f1a0dcaf87fe7ca9c169bc8a2e7e67ef",
     "scripts/generate_prepared_qa_prefectural_top2.py": "9a03bd2f563fd5496c7a8a6d406e487f36d77715d9f50f35d6f955a9b1d88fcb",
     "work/build_aragyoku_2026_pdf.py": "9ef2faaf5fd67cd6e9447d8ec7e7d24f7d6d799157b04043dbcd2a4be471077c"
@@ -35465,10 +35465,7 @@
     {
       "id": "aragyoku-2022-女子-岱明-leg5",
       "check": "source_projection_claim_check",
-      "problems": [
-        "identity_projection_mismatch:2022年荒玉駅伝女子の岱明5区は高田麻由",
-        "identity_projection_mismatch:高田麻由"
-      ]
+      "problems": []
     },
     {
       "id": "aragyoku-2022-女子-南関-leg1",
@@ -38688,10 +38685,7 @@
     {
       "id": "aragyoku-2025-男子-南関-leg3",
       "check": "source_projection_claim_check",
-      "problems": [
-        "identity_projection_mismatch:2025年荒玉駅伝男子の南関3区はunknown",
-        "identity_projection_mismatch:unknown"
-      ]
+      "problems": []
     },
     {
       "id": "aragyoku-2025-男子-南関-leg4",
@@ -38781,10 +38775,7 @@
     {
       "id": "aragyoku-2025-男子-荒尾海陽-leg3",
       "check": "source_projection_claim_check",
-      "problems": [
-        "identity_projection_mismatch:2025年荒玉駅伝男子の荒尾海陽3区はunknown",
-        "identity_projection_mismatch:unknown"
-      ]
+      "problems": []
     },
     {
       "id": "aragyoku-2025-男子-荒尾海陽-leg4",
@@ -38814,10 +38805,7 @@
     {
       "id": "aragyoku-2025-男子-有明-leg3",
       "check": "source_projection_claim_check",
-      "problems": [
-        "identity_projection_mismatch:2025年荒玉駅伝男子の有明3区はunknown",
-        "identity_projection_mismatch:unknown"
-      ]
+      "problems": []
     },
     {
       "id": "aragyoku-2025-男子-有明-leg4",
@@ -41967,50 +41955,32 @@
     {
       "id": "aragyoku-2022-男子-有明-leg1",
       "check": "source_projection_claim_check",
-      "problems": [
-        "identity_projection_mismatch:2022年荒玉駅伝男子の有明1区は高松孝夫",
-        "identity_projection_mismatch:高松孝夫"
-      ]
+      "problems": []
     },
     {
       "id": "aragyoku-2022-男子-有明-leg2",
       "check": "source_projection_claim_check",
-      "problems": [
-        "identity_projection_mismatch:2022年荒玉駅伝男子の有明2区は松倉涼大",
-        "identity_projection_mismatch:松倉涼大"
-      ]
+      "problems": []
     },
     {
       "id": "aragyoku-2022-男子-有明-leg3",
       "check": "source_projection_claim_check",
-      "problems": [
-        "identity_projection_mismatch:2022年荒玉駅伝男子の有明3区は由上大輝",
-        "identity_projection_mismatch:由上大輝"
-      ]
+      "problems": []
     },
     {
       "id": "aragyoku-2022-男子-有明-leg4",
       "check": "source_projection_claim_check",
-      "problems": [
-        "identity_projection_mismatch:2022年荒玉駅伝男子の有明4区は前川",
-        "identity_projection_mismatch:前川"
-      ]
+      "problems": []
     },
     {
       "id": "aragyoku-2022-男子-有明-leg5",
       "check": "source_projection_claim_check",
-      "problems": [
-        "identity_projection_mismatch:2022年荒玉駅伝男子の有明5区は熊澤正博",
-        "identity_projection_mismatch:熊澤正博"
-      ]
+      "problems": []
     },
     {
       "id": "aragyoku-2022-男子-有明-leg6",
       "check": "source_projection_claim_check",
-      "problems": [
-        "identity_projection_mismatch:2022年荒玉駅伝男子の有明6区は前測咲太朗",
-        "identity_projection_mismatch:前測咲太朗"
-      ]
+      "problems": []
     },
     {
       "id": "aragyoku-2022-男子-岱明-leg1",
@@ -54798,11 +54768,6 @@
       "problems": []
     },
     {
-      "id": "race-2024-北原汰一-玉名郡ナイター",
-      "check": "source_projection_claim_check",
-      "problems": []
-    },
-    {
       "id": "race-2024-北原汰一-第二回長距離記録会",
       "check": "source_projection_claim_check",
       "problems": []
@@ -59423,11 +59388,6 @@
       "problems": []
     },
     {
-      "id": "race-2025-一瀬彪眞-玉名郡ナイター",
-      "check": "source_projection_claim_check",
-      "problems": []
-    },
-    {
       "id": "race-2025-一瀬彪眞-県中学選手権",
       "check": "source_projection_claim_check",
       "problems": []
@@ -59689,11 +59649,6 @@
     },
     {
       "id": "race-2025-丸山白虎-熊本市陸上競技記録会",
-      "check": "source_projection_claim_check",
-      "problems": []
-    },
-    {
-      "id": "race-2025-丸山白虎-玉名郡ナイター",
       "check": "source_projection_claim_check",
       "problems": []
     },
@@ -60363,11 +60318,6 @@
       "problems": []
     },
     {
-      "id": "race-2025-坂井優花-玉名郡ナイター",
-      "check": "source_projection_claim_check",
-      "problems": []
-    },
-    {
       "id": "race-2025-坂井優花-県中学選手権",
       "check": "source_projection_claim_check",
       "problems": []
@@ -60883,11 +60833,6 @@
       "problems": []
     },
     {
-      "id": "race-2025-居石楓摩-玉名郡ナイター",
-      "check": "source_projection_claim_check",
-      "problems": []
-    },
-    {
       "id": "race-2025-居石楓摩-県中学選手権",
       "check": "source_projection_claim_check",
       "problems": []
@@ -60929,11 +60874,6 @@
     },
     {
       "id": "race-2025-居石華音-熊本市陸上競技記録会",
-      "check": "source_projection_claim_check",
-      "problems": []
-    },
-    {
-      "id": "race-2025-居石華音-玉名郡ナイター",
       "check": "source_projection_claim_check",
       "problems": []
     },
@@ -61249,11 +61189,6 @@
     },
     {
       "id": "race-2025-庄山瑠那-熊本陸上競技選手権大会",
-      "check": "source_projection_claim_check",
-      "problems": []
-    },
-    {
-      "id": "race-2025-庄山瑠那-玉名郡ナイター",
       "check": "source_projection_claim_check",
       "problems": []
     },
@@ -61953,11 +61888,6 @@
       "problems": []
     },
     {
-      "id": "race-2025-松島颯希-玉名郡ナイター",
-      "check": "source_projection_claim_check",
-      "problems": []
-    },
-    {
       "id": "race-2025-松島颯希-県中学選手権",
       "check": "source_projection_claim_check",
       "problems": []
@@ -62009,11 +61939,6 @@
     },
     {
       "id": "race-2025-松川大希-熊本市陸上競技記録会",
-      "check": "source_projection_claim_check",
-      "problems": []
-    },
-    {
-      "id": "race-2025-松川大希-玉名郡ナイター",
       "check": "source_projection_claim_check",
       "problems": []
     },
@@ -62149,11 +62074,6 @@
     },
     {
       "id": "race-2025-松浦眞大-熊本市陸上競技記録会",
-      "check": "source_projection_claim_check",
-      "problems": []
-    },
-    {
-      "id": "race-2025-松浦眞大-玉名郡ナイター",
       "check": "source_projection_claim_check",
       "problems": []
     },
@@ -62338,11 +62258,6 @@
       "problems": []
     },
     {
-      "id": "race-2025-柿本晴仁-玉名郡ナイター",
-      "check": "source_projection_claim_check",
-      "problems": []
-    },
-    {
       "id": "race-2025-柿本晴仁-県中学選手権",
       "check": "source_projection_claim_check",
       "problems": []
@@ -62523,11 +62438,6 @@
       "problems": []
     },
     {
-      "id": "race-2025-永田來夢-玉名郡ナイター",
-      "check": "source_projection_claim_check",
-      "problems": []
-    },
-    {
       "id": "race-2025-永田來夢-県中学選手権",
       "check": "source_projection_claim_check",
       "problems": []
@@ -62599,11 +62509,6 @@
     },
     {
       "id": "race-2025-池松華凛-熊本市陸上競技記録会",
-      "check": "source_projection_claim_check",
-      "problems": []
-    },
-    {
-      "id": "race-2025-池松華凛-玉名郡ナイター",
       "check": "source_projection_claim_check",
       "problems": []
     },
@@ -62734,11 +62639,6 @@
     },
     {
       "id": "race-2025-津口晃誠-熊本市陸上競技記録会",
-      "check": "source_projection_claim_check",
-      "problems": []
-    },
-    {
-      "id": "race-2025-津口晃誠-玉名郡ナイター",
       "check": "source_projection_claim_check",
       "problems": []
     },
@@ -63008,11 +62908,6 @@
       "problems": []
     },
     {
-      "id": "race-2025-田中元稀-玉名郡ナイター",
-      "check": "source_projection_claim_check",
-      "problems": []
-    },
-    {
       "id": "race-2025-田中小羽-中体連",
       "check": "source_projection_claim_check",
       "problems": []
@@ -63274,11 +63169,6 @@
     },
     {
       "id": "race-2025-石原佳維斗-熊本市陸上競技記録会",
-      "check": "source_projection_claim_check",
-      "problems": []
-    },
-    {
-      "id": "race-2025-石原佳維斗-玉名郡ナイター",
       "check": "source_projection_claim_check",
       "problems": []
     },
@@ -64053,11 +63943,6 @@
       "problems": []
     },
     {
-      "id": "race-2025-西原琉惟-玉名郡ナイター",
-      "check": "source_projection_claim_check",
-      "problems": []
-    },
-    {
       "id": "race-2025-西原琉惟-第三回長距離記録会",
       "check": "source_projection_claim_check",
       "problems": []
@@ -64163,11 +64048,6 @@
       "problems": []
     },
     {
-      "id": "race-2025-辛嶋大宙-玉名郡ナイター",
-      "check": "source_projection_claim_check",
-      "problems": []
-    },
-    {
       "id": "race-2025-辛嶋大宙-県中学選手権",
       "check": "source_projection_claim_check",
       "problems": []
@@ -64223,11 +64103,6 @@
       "problems": []
     },
     {
-      "id": "race-2025-辻本愛琉-玉名郡ナイター",
-      "check": "source_projection_claim_check",
-      "problems": []
-    },
-    {
       "id": "race-2025-辻本愛琉-県中学選手権",
       "check": "source_projection_claim_check",
       "problems": []
@@ -64273,11 +64148,6 @@
       "problems": []
     },
     {
-      "id": "race-2025-辻美空-玉名郡ナイター",
-      "check": "source_projection_claim_check",
-      "problems": []
-    },
-    {
       "id": "race-2025-辻美空-県中学選手権",
       "check": "source_projection_claim_check",
       "problems": []
@@ -64304,11 +64174,6 @@
     },
     {
       "id": "race-2025-近藤弘樹-熊本市陸上競技記録会",
-      "check": "source_projection_claim_check",
-      "problems": []
-    },
-    {
-      "id": "race-2025-近藤弘樹-玉名郡ナイター",
       "check": "source_projection_claim_check",
       "problems": []
     },
@@ -64554,11 +64419,6 @@
     },
     {
       "id": "race-2025-隈部侑成-熊本陸上競技選手権大会",
-      "check": "source_projection_claim_check",
-      "problems": []
-    },
-    {
-      "id": "race-2025-隈部侑成-玉名郡ナイター",
       "check": "source_projection_claim_check",
       "problems": []
     },
@@ -64964,11 +64824,6 @@
     },
     {
       "id": "race-2026-上土井咲輝-県中学選手権",
-      "check": "source_projection_claim_check",
-      "problems": []
-    },
-    {
-      "id": "race-2026-上川慧翔-玉名郡ナイター",
       "check": "source_projection_claim_check",
       "problems": []
     },
@@ -65514,11 +65369,6 @@
     },
     {
       "id": "race-2026-内田武尊-大牟田陸上競技大会",
-      "check": "source_projection_claim_check",
-      "problems": []
-    },
-    {
-      "id": "race-2026-内田武尊-玉名郡ナイター",
       "check": "source_projection_claim_check",
       "problems": []
     },
@@ -66343,11 +66193,6 @@
       "problems": []
     },
     {
-      "id": "race-2026-宮嶋晴文-玉名郡ナイター",
-      "check": "source_projection_claim_check",
-      "problems": []
-    },
-    {
       "id": "race-2026-宮川晴-中体連",
       "check": "source_projection_claim_check",
       "problems": []
@@ -66359,11 +66204,6 @@
     },
     {
       "id": "race-2026-宮川晴-熊本市陸上競技記録会",
-      "check": "source_projection_claim_check",
-      "problems": []
-    },
-    {
-      "id": "race-2026-宮川晴-玉名郡ナイター",
       "check": "source_projection_claim_check",
       "problems": []
     },
@@ -66493,11 +66333,6 @@
       "problems": []
     },
     {
-      "id": "race-2026-小林祐貴-玉名郡ナイター",
-      "check": "source_projection_claim_check",
-      "problems": []
-    },
-    {
       "id": "race-2026-小林祐貴-県中学選手権",
       "check": "source_projection_claim_check",
       "problems": []
@@ -66569,11 +66404,6 @@
     },
     {
       "id": "race-2026-居石華音-金栗記念選抜陸上中長距離熊本大会",
-      "check": "source_projection_claim_check",
-      "problems": []
-    },
-    {
-      "id": "race-2026-山中陽翔-玉名郡ナイター",
       "check": "source_projection_claim_check",
       "problems": []
     },
@@ -66818,11 +66648,6 @@
       "problems": []
     },
     {
-      "id": "race-2026-平野穂太朗-玉名郡ナイター",
-      "check": "source_projection_claim_check",
-      "problems": []
-    },
-    {
       "id": "race-2026-庄山瑠那-ジュニア駅伝",
       "check": "source_projection_claim_check",
       "problems": []
@@ -66919,11 +66744,6 @@
     },
     {
       "id": "race-2026-恩田慈希-熊本市陸上競技記録会",
-      "check": "source_projection_claim_check",
-      "problems": []
-    },
-    {
-      "id": "race-2026-恩田慈希-玉名郡ナイター",
       "check": "source_projection_claim_check",
       "problems": []
     },
@@ -67054,11 +66874,6 @@
     },
     {
       "id": "race-2026-星先一慶-２０２６年度第４５回熊本市陸上競技選手権",
-      "check": "source_projection_claim_check",
-      "problems": []
-    },
-    {
-      "id": "race-2026-木下友郎-玉名郡ナイター",
       "check": "source_projection_claim_check",
       "problems": []
     },
@@ -67253,11 +67068,6 @@
       "problems": []
     },
     {
-      "id": "race-2026-松尾遥仁-玉名郡ナイター",
-      "check": "source_projection_claim_check",
-      "problems": []
-    },
-    {
       "id": "race-2026-松山哲丈-大牟田陸上競技大会",
       "check": "source_projection_claim_check",
       "problems": []
@@ -67284,11 +67094,6 @@
     },
     {
       "id": "race-2026-松島颯希-熊本市陸上競技記録会",
-      "check": "source_projection_claim_check",
-      "problems": []
-    },
-    {
-      "id": "race-2026-松島颯希-玉名郡ナイター",
       "check": "source_projection_claim_check",
       "problems": []
     },
@@ -78303,11 +78108,6 @@
       "problems": []
     },
     {
-      "id": "race-2026-柿本晴仁-玉名郡ナイター",
-      "check": "source_projection_claim_check",
-      "problems": []
-    },
-    {
       "id": "race-2026-柿本晴仁-県中学選手権",
       "check": "source_projection_claim_check",
       "problems": []
@@ -78499,11 +78299,6 @@
     },
     {
       "id": "race-2026-永田來夢-熊本市陸上競技記録会",
-      "check": "source_projection_claim_check",
-      "problems": []
-    },
-    {
-      "id": "race-2026-永田來夢-玉名郡ナイター",
       "check": "source_projection_claim_check",
       "problems": []
     },
@@ -81705,50 +81500,32 @@
     {
       "id": "aragyoku-2022-男子-有明-leg1-splitrank",
       "check": "source_projection_claim_check",
-      "problems": [
-        "identity_projection_mismatch:2022年荒玉駅伝男子・有明1区は高松孝夫",
-        "identity_projection_mismatch:高松孝夫"
-      ]
+      "problems": []
     },
     {
       "id": "aragyoku-2022-男子-有明-leg2-splitrank",
       "check": "source_projection_claim_check",
-      "problems": [
-        "identity_projection_mismatch:2022年荒玉駅伝男子・有明2区は松倉涼大",
-        "identity_projection_mismatch:松倉涼大"
-      ]
+      "problems": []
     },
     {
       "id": "aragyoku-2022-男子-有明-leg3-splitrank",
       "check": "source_projection_claim_check",
-      "problems": [
-        "identity_projection_mismatch:2022年荒玉駅伝男子・有明3区は由上大輝",
-        "identity_projection_mismatch:由上大輝"
-      ]
+      "problems": []
     },
     {
       "id": "aragyoku-2022-男子-有明-leg4-splitrank",
       "check": "source_projection_claim_check",
-      "problems": [
-        "identity_projection_mismatch:2022年荒玉駅伝男子・有明4区は前川",
-        "identity_projection_mismatch:前川"
-      ]
+      "problems": []
     },
     {
       "id": "aragyoku-2022-男子-有明-leg5-splitrank",
       "check": "source_projection_claim_check",
-      "problems": [
-        "identity_projection_mismatch:2022年荒玉駅伝男子・有明5区は熊澤正博",
-        "identity_projection_mismatch:熊澤正博"
-      ]
+      "problems": []
     },
     {
       "id": "aragyoku-2022-男子-有明-leg6-splitrank",
       "check": "source_projection_claim_check",
-      "problems": [
-        "identity_projection_mismatch:2022年荒玉駅伝男子・有明6区は前測咲太朗",
-        "identity_projection_mismatch:前測咲太朗"
-      ]
+      "problems": []
     },
     {
       "id": "aragyoku-2022-男子-岱明-leg1-splitrank",
@@ -81763,28 +81540,17 @@
     {
       "id": "aragyoku-2022-男子-岱明-leg3-splitrank",
       "check": "source_projection_claim_check",
-      "problems": [
-        "numeric_projection_mismatch:3年",
-        "identity_projection_mismatch:2022年荒玉駅伝男子・岱明3区は竹本琉我",
-        "identity_projection_mismatch:竹本琉我"
-      ]
+      "problems": []
     },
     {
       "id": "aragyoku-2022-男子-岱明-leg4-splitrank",
       "check": "source_projection_claim_check",
-      "problems": [
-        "numeric_projection_mismatch:2年",
-        "identity_projection_mismatch:2022年荒玉駅伝男子・岱明4区は原口蒼大",
-        "identity_projection_mismatch:原口蒼大"
-      ]
+      "problems": []
     },
     {
       "id": "aragyoku-2022-男子-岱明-leg5-splitrank",
       "check": "source_projection_claim_check",
-      "problems": [
-        "identity_projection_mismatch:2022年荒玉駅伝男子・岱明5区は深川朔弥",
-        "identity_projection_mismatch:深川朔弥"
-      ]
+      "problems": []
     },
     {
       "id": "aragyoku-2022-男子-岱明-leg6-splitrank",
@@ -87489,10 +87255,7 @@
     {
       "id": "aragyoku-2022-女子-leg5-rank4",
       "check": "source_projection_claim_check",
-      "problems": [
-        "identity_projection_mismatch:2022年荒玉駅伝女子5区の区間4位は高田麻由",
-        "identity_projection_mismatch:高田麻由"
-      ]
+      "problems": []
     },
     {
       "id": "aragyoku-2022-女子-leg5-rank5",
@@ -91415,11 +91178,6 @@
       "problems": []
     },
     {
-      "id": "recent-2026-宮川晴-玉名郡ナイター",
-      "check": "source_projection_claim_check",
-      "problems": []
-    },
-    {
       "id": "recent-2026-宮川晴-長距離記録会",
       "check": "source_projection_claim_check",
       "problems": []
@@ -91451,11 +91209,6 @@
     },
     {
       "id": "recent-2026-小林祐貴-なごみ大会",
-      "check": "source_projection_claim_check",
-      "problems": []
-    },
-    {
-      "id": "recent-2026-小林祐貴-玉名郡ナイター",
       "check": "source_projection_claim_check",
       "problems": []
     },
@@ -91610,11 +91363,6 @@
       "problems": []
     },
     {
-      "id": "recent-2026-松島颯希-玉名郡ナイター",
-      "check": "source_projection_claim_check",
-      "problems": []
-    },
-    {
       "id": "recent-2026-松島颯希-長距離記録会",
       "check": "source_projection_claim_check",
       "problems": []
@@ -91670,11 +91418,6 @@
       "problems": []
     },
     {
-      "id": "recent-2026-柿本晴仁-玉名郡ナイター",
-      "check": "source_projection_claim_check",
-      "problems": []
-    },
-    {
       "id": "recent-2026-柿本晴仁-長距離記録会",
       "check": "source_projection_claim_check",
       "problems": []
@@ -91705,11 +91448,6 @@
       "problems": []
     },
     {
-      "id": "recent-2026-永田來夢-玉名郡ナイター",
-      "check": "source_projection_claim_check",
-      "problems": []
-    },
-    {
       "id": "recent-2026-永田來夢-長距離記録会",
       "check": "source_projection_claim_check",
       "problems": []
@@ -91721,11 +91459,6 @@
     },
     {
       "id": "recent-2026-津口晃誠-なごみ大会",
-      "check": "source_projection_claim_check",
-      "problems": []
-    },
-    {
-      "id": "recent-2026-津口晃誠-玉名郡ナイター",
       "check": "source_projection_claim_check",
       "problems": []
     },
@@ -91796,11 +91529,6 @@
     },
     {
       "id": "recent-2026-田上颯人-荒玉試走",
-      "check": "source_projection_claim_check",
-      "problems": []
-    },
-    {
-      "id": "recent-2026-田中元稀-玉名郡ナイター",
       "check": "source_projection_claim_check",
       "problems": []
     },
@@ -95100,11 +94828,6 @@
       "problems": []
     },
     {
-      "id": "race-2026-津口晃誠-玉名郡ナイター",
-      "check": "source_projection_claim_check",
-      "problems": []
-    },
-    {
       "id": "race-2026-津口晃誠-県中学選手権",
       "check": "source_projection_claim_check",
       "problems": []
@@ -95305,11 +95028,6 @@
       "problems": []
     },
     {
-      "id": "race-2026-濵本健心-玉名郡ナイター",
-      "check": "source_projection_claim_check",
-      "problems": []
-    },
-    {
       "id": "race-2026-熊澤絢真-中体連",
       "check": "source_projection_claim_check",
       "problems": []
@@ -95451,11 +95169,6 @@
     },
     {
       "id": "race-2026-田中元稀-中体連",
-      "check": "source_projection_claim_check",
-      "problems": []
-    },
-    {
-      "id": "race-2026-田中元稀-玉名郡ナイター",
       "check": "source_projection_claim_check",
       "problems": []
     },
@@ -95725,11 +95438,6 @@
       "problems": []
     },
     {
-      "id": "race-2026-石原直季-玉名郡ナイター",
-      "check": "source_projection_claim_check",
-      "problems": []
-    },
-    {
       "id": "race-2026-石川葵葉-県中学選手権",
       "check": "source_projection_claim_check",
       "problems": []
@@ -95921,11 +95629,6 @@
     },
     {
       "id": "race-2026-福村綱余-熊本市陸上競技記録会",
-      "check": "source_projection_claim_check",
-      "problems": []
-    },
-    {
-      "id": "race-2026-福村綱余-玉名郡ナイター",
       "check": "source_projection_claim_check",
       "problems": []
     },
@@ -96156,11 +95859,6 @@
     },
     {
       "id": "race-2026-米村柊哉-県中学選手権",
-      "check": "source_projection_claim_check",
-      "problems": []
-    },
-    {
-      "id": "race-2026-米田伊織-玉名郡ナイター",
       "check": "source_projection_claim_check",
       "problems": []
     },
@@ -96550,11 +96248,6 @@
       "problems": []
     },
     {
-      "id": "race-2026-辛嶋大宙-玉名郡ナイター",
-      "check": "source_projection_claim_check",
-      "problems": []
-    },
-    {
       "id": "race-2026-辛嶋大宙-県中学選手権",
       "check": "source_projection_claim_check",
       "problems": []
@@ -96655,11 +96348,6 @@
       "problems": []
     },
     {
-      "id": "race-2026-金子修也-玉名郡ナイター",
-      "check": "source_projection_claim_check",
-      "problems": []
-    },
-    {
       "id": "race-2026-金澤朱里-大牟田陸上競技大会",
       "check": "source_projection_claim_check",
       "problems": []
@@ -96691,11 +96379,6 @@
     },
     {
       "id": "race-2026-関根桜一郎-県中学選手権",
-      "check": "source_projection_claim_check",
-      "problems": []
-    },
-    {
-      "id": "race-2026-隈部侑成-玉名郡ナイター",
       "check": "source_projection_claim_check",
       "problems": []
     },
@@ -96821,11 +96504,6 @@
     },
     {
       "id": "race-2026-飯牟禮月希-通信陸上",
-      "check": "source_projection_claim_check",
-      "problems": []
-    },
-    {
-      "id": "race-2026-高島健-玉名郡ナイター",
       "check": "source_projection_claim_check",
       "problems": []
     },
@@ -114722,9 +114400,7 @@
     {
       "id": "aragyoku-2022-男子-team-有明-rank",
       "check": "source_projection_claim_check",
-      "problems": [
-        "identity_projection_mismatch:2022年荒玉駅伝男子の有明は11位・総合69:51です。 区間選手: 1区高松孝夫"
-      ]
+      "problems": []
     },
     {
       "id": "aragyoku-2022-男子-team-岱明-rank",
@@ -123262,11 +122938,6 @@
       "problems": []
     },
     {
-      "id": "race-2021-中山優志-玉名郡ナイター",
-      "check": "source_text_time_check",
-      "problems": []
-    },
-    {
       "id": "race-2021-中山寛大-県中学選手権",
       "check": "source_text_time_check",
       "problems": []
@@ -123463,11 +123134,6 @@
     },
     {
       "id": "race-2021-井形麗矢-２０２１年度第４０回熊本市陸上競技選手権",
-      "check": "source_text_time_check",
-      "problems": []
-    },
-    {
-      "id": "race-2021-今福澄仁-玉名郡ナイター",
       "check": "source_text_time_check",
       "problems": []
     },
@@ -123962,11 +123628,6 @@
       "problems": []
     },
     {
-      "id": "race-2021-島田椿女-玉名郡ナイター",
-      "check": "source_text_time_check",
-      "problems": []
-    },
-    {
       "id": "race-2021-嶋田晴日-中体連",
       "check": "source_text_time_check",
       "problems": []
@@ -124202,11 +123863,6 @@
       "problems": []
     },
     {
-      "id": "race-2021-木村羽愛音-玉名郡ナイター",
-      "check": "source_text_time_check",
-      "problems": []
-    },
-    {
       "id": "race-2021-本山怜実-熊本タイムトライアル",
       "check": "source_text_time_check",
       "problems": []
@@ -124382,21 +124038,6 @@
       "problems": []
     },
     {
-      "id": "race-2021-松﨑癒来-玉名郡ナイター",
-      "check": "source_text_time_check",
-      "problems": []
-    },
-    {
-      "id": "race-2021-松﨑百花-玉名郡ナイター",
-      "check": "source_text_time_check",
-      "problems": []
-    },
-    {
-      "id": "race-2021-柴田真奈-玉名郡ナイター",
-      "check": "source_text_time_check",
-      "problems": []
-    },
-    {
       "id": "race-2021-柿本こころ-通信陸上",
       "check": "source_text_time_check",
       "problems": []
@@ -124433,11 +124074,6 @@
     },
     {
       "id": "race-2021-桑原圭吾-２０２１年度第４０回熊本市陸上競技選手権",
-      "check": "source_text_time_check",
-      "problems": []
-    },
-    {
-      "id": "race-2021-森田煌琉-玉名郡ナイター",
       "check": "source_text_time_check",
       "problems": []
     },
@@ -124483,11 +124119,6 @@
     },
     {
       "id": "race-2021-横尾駿-通信陸上",
-      "check": "source_text_time_check",
-      "problems": []
-    },
-    {
-      "id": "race-2021-横山紅里-玉名郡ナイター",
       "check": "source_text_time_check",
       "problems": []
     },
@@ -124587,11 +124218,6 @@
       "problems": []
     },
     {
-      "id": "race-2021-浦田東吾-玉名郡ナイター",
-      "check": "source_text_time_check",
-      "problems": []
-    },
-    {
       "id": "race-2021-清田彩加-県中学選手権",
       "check": "source_text_time_check",
       "problems": []
@@ -124623,11 +124249,6 @@
     },
     {
       "id": "race-2021-澤村葵-通信陸上",
-      "check": "source_text_time_check",
-      "problems": []
-    },
-    {
-      "id": "race-2021-濱﨑光琉-玉名郡ナイター",
       "check": "source_text_time_check",
       "problems": []
     },
@@ -126547,11 +126168,6 @@
       "problems": []
     },
     {
-      "id": "race-2019-寺澤忍-玉名郡ナイター",
-      "check": "source_text_time_check",
-      "problems": []
-    },
-    {
       "id": "race-2019-小山ふう-熊本市陸上競技記録会",
       "check": "source_text_time_check",
       "problems": []
@@ -126572,11 +126188,6 @@
       "problems": []
     },
     {
-      "id": "race-2019-山川晃生-玉名郡ナイター",
-      "check": "source_text_time_check",
-      "problems": []
-    },
-    {
       "id": "race-2019-山本真央-熊本市陸上競技記録会",
       "check": "source_text_time_check",
       "problems": []
@@ -126588,11 +126199,6 @@
     },
     {
       "id": "race-2019-徳永理子-熊本市陸上競技記録会",
-      "check": "source_text_time_check",
-      "problems": []
-    },
-    {
-      "id": "race-2019-木村羽愛音-玉名郡ナイター",
       "check": "source_text_time_check",
       "problems": []
     },
@@ -126632,22 +126238,12 @@
       "problems": []
     },
     {
-      "id": "race-2019-柴田愛梨-玉名郡ナイター",
-      "check": "source_text_time_check",
-      "problems": []
-    },
-    {
       "id": "race-2019-渡邊亮斗-熊本タイムトライアル大会",
       "check": "source_text_time_check",
       "problems": []
     },
     {
       "id": "race-2019-滝本享矢-熊本市陸上競技記録会",
-      "check": "source_text_time_check",
-      "problems": []
-    },
-    {
-      "id": "race-2019-澤井駿佑-玉名郡ナイター",
       "check": "source_text_time_check",
       "problems": []
     },
@@ -126893,11 +126489,6 @@
     },
     {
       "id": "race-2019-井手尾南海-天草陸上競技選手権大会",
-      "check": "source_text_time_check",
-      "problems": []
-    },
-    {
-      "id": "race-2019-井手尾南海-玉名郡ナイター",
       "check": "source_text_time_check",
       "problems": []
     },
@@ -127737,17 +127328,7 @@
       "problems": []
     },
     {
-      "id": "race-2019-岡田壮真-玉名郡ナイター",
-      "check": "source_text_time_check",
-      "problems": []
-    },
-    {
       "id": "race-2019-岡田恋兜-天草陸上競技選手権大会",
-      "check": "source_text_time_check",
-      "problems": []
-    },
-    {
-      "id": "race-2019-岡田恋兜-玉名郡ナイター",
       "check": "source_text_time_check",
       "problems": []
     },
@@ -128142,11 +127723,6 @@
       "problems": []
     },
     {
-      "id": "race-2019-松本空也-玉名郡ナイター",
-      "check": "source_text_time_check",
-      "problems": []
-    },
-    {
       "id": "race-2019-松本空也-通信陸上",
       "check": "source_text_time_check",
       "problems": []
@@ -128202,17 +127778,7 @@
       "problems": []
     },
     {
-      "id": "race-2019-松﨑惺来-玉名郡ナイター",
-      "check": "source_text_time_check",
-      "problems": []
-    },
-    {
       "id": "race-2019-松﨑百花-天草陸上競技選手権大会",
-      "check": "source_text_time_check",
-      "problems": []
-    },
-    {
-      "id": "race-2019-松﨑百花-玉名郡ナイター",
       "check": "source_text_time_check",
       "problems": []
     },
@@ -128342,11 +127908,6 @@
       "problems": []
     },
     {
-      "id": "race-2019-横山紅里-玉名郡ナイター",
-      "check": "source_text_time_check",
-      "problems": []
-    },
-    {
       "id": "race-2019-橋本耀-ジュニア駅伝",
       "check": "source_text_time_check",
       "problems": []
@@ -128447,22 +128008,12 @@
       "problems": []
     },
     {
-      "id": "race-2019-河内あさひ-玉名郡ナイター",
-      "check": "source_text_time_check",
-      "problems": []
-    },
-    {
       "id": "race-2019-泉鈴花-県中学選手権",
       "check": "source_text_time_check",
       "problems": []
     },
     {
       "id": "race-2019-浦田東吾-天草陸上競技選手権大会",
-      "check": "source_text_time_check",
-      "problems": []
-    },
-    {
-      "id": "race-2019-浦田東吾-玉名郡ナイター",
       "check": "source_text_time_check",
       "problems": []
     },
@@ -128733,11 +128284,6 @@
     },
     {
       "id": "race-2019-福富爽-天草陸上競技選手権大会",
-      "check": "source_text_time_check",
-      "problems": []
-    },
-    {
-      "id": "race-2019-福富爽-玉名郡ナイター",
       "check": "source_text_time_check",
       "problems": []
     },
@@ -129777,11 +129323,6 @@
       "problems": []
     },
     {
-      "id": "race-2018-坂上翔哉-玉名郡ナイター",
-      "check": "source_text_time_check",
-      "problems": []
-    },
-    {
       "id": "race-2018-坂本華-ジュニア駅伝",
       "check": "source_text_time_check",
       "problems": []
@@ -129972,11 +129513,6 @@
       "problems": []
     },
     {
-      "id": "race-2018-寺澤忍-玉名郡ナイター",
-      "check": "source_text_time_check",
-      "problems": []
-    },
-    {
       "id": "race-2018-小山ふう-ジュニア駅伝",
       "check": "source_text_time_check",
       "problems": []
@@ -130028,11 +129564,6 @@
     },
     {
       "id": "race-2018-小谷飛翼-天草陸上競技選手権大会",
-      "check": "source_text_time_check",
-      "problems": []
-    },
-    {
-      "id": "race-2018-小谷飛翼-玉名郡ナイター",
       "check": "source_text_time_check",
       "problems": []
     },
@@ -130552,11 +130083,6 @@
       "problems": []
     },
     {
-      "id": "race-2018-松﨑惺来-玉名郡ナイター",
-      "check": "source_text_time_check",
-      "problems": []
-    },
-    {
       "id": "race-2018-柳凰太郎-通信陸上",
       "check": "source_text_time_check",
       "problems": []
@@ -130748,11 +130274,6 @@
     },
     {
       "id": "race-2018-津﨑壮達-天草陸上競技選手権大会",
-      "check": "source_text_time_check",
-      "problems": []
-    },
-    {
-      "id": "race-2018-津﨑奈々美-玉名郡ナイター",
       "check": "source_text_time_check",
       "problems": []
     },
@@ -140838,6 +140359,276 @@
     },
     {
       "id": "aragyoku-career-高田麻那",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "race-2024-北原汰一-天草市ナイター",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "race-2025-一瀬彪眞-ナイター記録会",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "race-2025-丸山白虎-天草市ナイター",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "race-2025-坂井優花-天草市ナイター",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "race-2025-居石楓摩-ナイター記録会",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "race-2025-居石華音-天草市ナイター",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "race-2025-庄山瑠那-天草市ナイター",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "race-2025-松島颯希-ナイター記録会",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "race-2025-松川大希-天草市ナイター",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "race-2025-松浦眞大-天草市ナイター",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "race-2025-柿本晴仁-ナイター記録会",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "race-2025-永田來夢-ナイター記録会",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "race-2025-池松華凛-天草市ナイター",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "race-2025-津口晃誠-天草市ナイター",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "race-2025-田中元稀-天草市ナイター",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "race-2025-石原佳維斗-天草市ナイター",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "race-2025-西原琉惟-天草市ナイター",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "race-2025-辛嶋大宙-ナイター記録会",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "race-2025-辻本愛琉-天草市ナイター",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "race-2025-辻美空-天草市ナイター",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "race-2025-近藤弘樹-天草市ナイター",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "race-2025-隈部侑成-天草市ナイター",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "race-2026-上川慧翔-ナイター記録会",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "race-2026-内田武尊-ナイター記録会",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "race-2026-宮嶋晴文-ナイター記録会",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "race-2026-宮川晴-ナイター記録会",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "race-2026-小林祐貴-ナイター記録会",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "race-2026-山中陽翔-ナイター記録会",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "race-2026-平野穂太朗-ナイター記録会",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "race-2026-恩田慈希-ナイター記録会",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "race-2026-木下友郎-ナイター記録会",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "race-2026-松尾遥仁-ナイター記録会",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "race-2026-松島颯希-ナイター記録会",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "race-2026-柿本晴仁-ナイター記録会",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "race-2026-永田來夢-ナイター記録会",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "race-2026-津口晃誠-ナイター記録会",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "race-2026-濵本健心-ナイター記録会",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "race-2026-田中元稀-ナイター記録会",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "race-2026-石原直季-ナイター記録会",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "race-2026-福村綱余-ナイター記録会",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "race-2026-米田伊織-ナイター記録会",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "race-2026-辛嶋大宙-ナイター記録会",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "race-2026-金子修也-ナイター記録会",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "race-2026-隈部侑成-ナイター記録会",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "race-2026-高島健-ナイター記録会",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "recent-2026-宮川晴-ナイター記録会",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "recent-2026-小林祐貴-ナイター記録会",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "recent-2026-松島颯希-ナイター記録会",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "recent-2026-柿本晴仁-ナイター記録会",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "recent-2026-永田來夢-ナイター記録会",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "recent-2026-津口晃誠-ナイター記録会",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "recent-2026-田中元稀-ナイター記録会",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "recent-2026-辛嶋大宙-ナイター記録会",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "recent-2026-隈部侑成-ナイター記録会",
       "check": "source_projection_claim_check",
       "problems": []
     }

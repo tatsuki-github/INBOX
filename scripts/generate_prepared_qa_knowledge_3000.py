@@ -261,12 +261,21 @@ def gen_meet_docs(existing_ids: set[str], limit: int) -> list[dict]:
                     continue
                 lines = [ln.strip() for ln in text.splitlines() if ln.strip()]
                 keep = []
+                meta_line = re.compile(
+                    r"(?:mimeType|fileSize|viewUrl|parentId|modifiedTime|\*\*id\*\*)",
+                    re.I,
+                )
                 for ln in lines[:40]:
                     if re.match(r"^(大会名|日付|ステータス|状態|場所|タグ|所属|責任者|集合)\b", ln):
+                        continue
+                    if meta_line.search(ln):
                         continue
                     if re.search(r"\d|:|位|区|結果|優勝|順位|タイム|SB|DNS", ln):
                         keep.append(ln)
                 summary = clean_user_facing_text(" ".join(keep[:12]), max_len=220)
+                # Prefer a Drive link over a metadata-only dump.
+                if not summary or meta_line.search(summary):
+                    summary = ""
                 if year == str(DEFAULT_YEAR):
                     qs = [
                         f"{title}の{stem}は？",

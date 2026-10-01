@@ -94,3 +94,29 @@ def test_audit_rejects_wrong_athlete_rank_and_date():
 def test_sample_question_times_are_not_asserted_results():
     assert audit.asserted_clocks("「荒玉男子1区を3分30秒/kmで」のように聞いてください。") == set()
     assert audit.asserted_clocks("結果は10:42です。") == {"642"}
+
+
+@pytest.mark.parametrize(
+    "meet, expected",
+    [
+        ("第20回　天草市ナイター陸上記録会", "天草市ナイター"),
+        ("令和7年度 第3回ナイター記録会", "ナイター記録会"),
+        ("第25回玉名郡ナイター中・長距離記録会", "玉名郡ナイター"),
+        ("玉名郡ナイター", "玉名郡ナイター"),
+    ],
+)
+def test_nighter_short_labels_are_not_collapsed(meet, expected):
+    import generate_prepared_qa_knowledge_5000 as k5000
+
+    assert k5000.short_meet(meet) == expected
+    assert aragyoku.short_event(meet) == expected
+
+
+def test_audit_flags_false_tamana_nighter_alias():
+    entry = {
+        "id": "race-2025-某人-玉名郡ナイター",
+        "sources": [],
+        "answer": "某人の2025年度・玉名郡ナイターの記録は1件です（大会名: 第20回　天草市ナイター陸上記録会）。",
+    }
+    problems = audit.check_entry(entry, None)["problems"]
+    assert any(p.startswith("nighter_meet_alias_mismatch") for p in problems)

@@ -718,12 +718,20 @@ def short_event(ev: str) -> str:
         return "なごみ大会"
     if "ジュニア" in e:
         return "県ジュニア"
+    if "ナイター" in e:
+        # Distinguish 玉名郡 / 天草市 / 長崎ナイター記録会 (do not alias all to 玉名郡).
+        # Before 長距離記録会 — 玉名郡ナイター中・長距離記録会 contains both.
+        if "玉名郡" in e:
+            return "玉名郡ナイター"
+        if "天草" in e:
+            return "天草市ナイター"
+        if "ナイター記録会" in e:
+            return "ナイター記録会"
+        return "ナイター大会"
     if "長距離記録会" in e:
         return "長距離記録会"
     if "通信" in e:
         return "通信陸上"
-    if "ナイター" in e:
-        return "玉名郡ナイター"
     if "中体連" in e or "総合体育" in e:
         return "中体連"
     if "選手権" in e:
