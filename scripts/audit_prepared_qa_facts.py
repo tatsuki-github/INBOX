@@ -203,6 +203,10 @@ def check_entry(e: dict, projected: dict | None) -> dict:
         "[]" in answer and re.search(r"より。|他校は\s*\[\]", answer)
     ):
         problems.append("hollow_answer_link_strip")
+    if e["id"].startswith("chunkqa-"):
+        from reviewed_chunk_qa import reviewed_entries, check_reviewed_entry
+        problems.extend(check_reviewed_entry(e, reviewed_entries().get(e["id"])))
+        return {"id": e["id"], "check": "manual_context_review_and_source_quote_check", "problems": problems}
     mode = "source_text_time_check"
     if projected:
         mode = "source_projection_claim_check"
@@ -315,7 +319,8 @@ def main() -> int:
         "entries_with_problems": sum(bool(r["problems"]) for r in rows),
         "limitations": ["Checks repository snapshots, not external live results.",
                         "Source projections are generated from data; regression fixtures independently check known extraction errors.",
-                        "Text time checks establish literal support, not every prose assertion or identity association."],
+                        "Text time checks establish literal support, not every prose assertion or identity association.",
+                        "Reviewed chunk prose/arithmetic uses manual review plus exact source quotes; not automated semantic proof."],
         "sources": {s: hashlib.sha256((ROOT / s).read_bytes()).hexdigest()
                     for s in paths if (ROOT / s).is_file()},
         "entries": rows,

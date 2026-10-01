@@ -1,15 +1,17 @@
 {
-  "catalog_sha256": "232d689008815c86362a0660ea443ead5d96eafd96692d6a5a91a5813ba367b8",
-  "total": 34995,
+  "catalog_sha256": "efa679c1bf7fa7f8347cee68cea36012b2998e925829fb44dc8e3aeafedbb38b",
+  "total": 35294,
   "checks": {
     "source_text_time_check": 5042,
-    "source_projection_claim_check": 29953
+    "source_projection_claim_check": 30146,
+    "manual_context_review_and_source_quote_check": 106
   },
   "entries_with_problems": 0,
   "limitations": [
     "Checks repository snapshots, not external live results.",
     "Source projections are generated from data; regression fixtures independently check known extraction errors.",
-    "Text time checks establish literal support, not every prose assertion or identity association."
+    "Text time checks establish literal support, not every prose assertion or identity association.",
+    "Reviewed chunk prose/arithmetic uses manual review plus exact source quotes; not automated semantic proof."
   ],
   "sources": {
     "AGENTS.md": "27a54272dd00f986fec5b3ab0e18c84fca6509f8026003efe5aae46ad83cff2a",
@@ -19,6 +21,7 @@
     "backend/src/domain/aragyokuAliases.ts": "38005e290a644e3c0425f32cbf90450477bd28081bd72f6e7e74f3962ef219dc",
     "backend/src/domain/canned.ts": "437993bec010c3354498f5ddb3a0531c1df4ea6337ebb7f7b3e3bbb49c567a78",
     "backend/src/domain/dates.ts": "8ef6f6b024a38b31e528397605feec00727fffcb8a83a155b64b2ef0377a37fe",
+    "calendar.md": "462a1f7f934e544a3c79b82bc46dfa6afe19b8d11f19717e6cdfc3137eb73399",
     "docs/adr/001-ai-practice-generation-architecture.md": "a0d52cd85c21f9049575b441ad75e72b23197e7c55052022cf6ebe8ee762af67",
     "docs/adr/002-norwegian-method-integration.md": "e96869657804ed6490ba12ead541b4ffeb9b02005ea9ec2284a81f19f60ce8bd",
     "docs/adr/008-daniels-vdot-gz-guidance.md": "b6d44fc619bc28b9f0507f8744483fe534572856f99e5cf1d51a18439576a120",
@@ -40,7 +43,7 @@
     "docs/adr/054-primary-source-links-in-line-answers.md": "4622c6fd97d61fbae4d695000536bd337611d2506643cb66595fb3c8770e28d6",
     "docs/adr/057-athlete-team-profiles.md": "62a9766280ce7e7bcb5fde5b36c4c124d7d410759b1cd04aaf5b449eb1f8ce4e",
     "docs/adr/058-aragyoku-line-course-images.md": "9641fab0b1a145c1791682d9426ea7b3ecfe0077e531ed93478fc3d9459030ea",
-    "docs/adr/059-prepared-qa-answers.md": "a7201afd254259bc88f24e3d346473f34086aca85c3bb7189f72b721fe8cee72",
+    "docs/adr/059-prepared-qa-answers.md": "e5574c80f876970a9d2cef0f30a0caf97addd4b5e89460d66b191adf38ef342f",
     "docs/ai-practice-generation.md": "1f10e3d717cd8db0d91411e6ec56083a5177c8f851f2fe6ea5e5c30339da1a66",
     "docs/aragyoku-ekiden-distance-definitions.md": "7edaed6565f97d6a2282dcd2c63a18afd8ebd07c2308a5a336f5555ca8b8cf08",
     "docs/data-model.md": "ae94f928e3cf3a6145daa3fc0d9f880af7f4aec340c74f05657e0cb803505cfc",
@@ -84,7 +87,7 @@
     "input/athlete-team-profiles.json": "514643a75b6510e76ba4b2bf621f9937e06614bb8b889c57b3082dcf487c61b6",
     "input/events.2024.yaml": "5db2e0cae7f18602fb333b88030d60b900947d939c3e4bec63bdc53071a4ec71",
     "input/events.2025.yaml": "a42b86178eb6db9746373ca9767627990e18b681eedb80cbe100d6caaccf6e34",
-    "input/events.2026.yaml": "b8c0ab2a2e0116e39eb5409401a17fb319523b632bc43fece8ef40306dc62c97",
+    "input/events.2026.yaml": "81bd4dddb788aa22d79e4a161b4f9dc6cbe99c7e94671dff6e0d8e4e414bd51c",
     "input/external/INDEX.md": "594db4553dca4f0a03c5f5ed74cebfc590fdee4c8f8458272a029199a898f66c",
     "input/external/drive/personal/t-tsuchiyama/sb/by-year/2018-single-table.csv": "e92902c27f57837321deca99fec10708b59e148e0fc44df3307be67a0fb9991b",
     "input/external/drive/personal/t-tsuchiyama/sb/by-year/2019-single-table.csv": "9fa866bc7a1ec79f959a2ffec970c6378214c767aac03eff08aa6c022d204df0",
@@ -144,12 +147,12 @@
     "input/external/sb/middle-school/by-year/2024-sb-adopted.json": "9b0ce65674a9e3f95d8679e528489c69b3024cd8240ef23c7ce8d386441ccf80",
     "input/external/sb/middle-school/by-year/2025-sb-adopted.json": "dc4291a27d46dcbbf6e54d616215f65b23b7a25dd6aee313da82345ad150e4ad",
     "input/external/sb/middle-school/by-year/2026-sb-adopted.json": "8caaf624b7e0153435113cd31b5f68dfad842ead7d31bb95d1399f549ada2dbc",
-    "input/faq/prepared-qa.v1.yaml": "232d689008815c86362a0660ea443ead5d96eafd96692d6a5a91a5813ba367b8",
+    "input/faq/prepared-qa.v1.yaml": "efa679c1bf7fa7f8347cee68cea36012b2998e925829fb44dc8e3aeafedbb38b",
     "input/idaten-corpus/aragyoku/men_full_2012_2025.json": "686073a97d949b97da6a0320a5b61fc1281db61df3f6c553b20a73f7d5392e04",
     "input/idaten-corpus/aragyoku/quiz/荒玉駅伝○×クイズ.csv": "98ff94e5397ac63df6dd3b27de26805affb810b659ee0bbda33fe8d1acd6548a",
     "input/idaten-corpus/aragyoku/winners-by-year.md": "7d048472790b4503a92796c9391f1eb32ee54a0041395de9e1bbae2eef57196f",
     "input/idaten-corpus/aragyoku/women_full_2012_2025.json": "6cecf30636d1ed0b3a8942d6c754a70822444d88de9d988e446b52c450083098",
-    "input/idaten-corpus/calendar/events.daiming.yaml": "4b5b566ddb23497cee3e12b68115f395e82507f678e5cad7859b675d7c072948",
+    "input/idaten-corpus/calendar/events.daiming.yaml": "450d65ef2df83d23dadb0b06248e6cc577dc4182650853e1ee716234932383c2",
     "input/idaten-corpus/drive-text/personal/ATRC.md": "ef5975615ad9956d26816ef988cac1364040ddf0e070c7a2b6c15e7ca25779b8",
     "input/idaten-corpus/drive-text/personal/いだてん岱明出場予定.md": "21b014ef00b75ab6fcfbce8c6d01b12740b0723095c25277071358904ca3f97c",
     "input/idaten-corpus/drive-text/personal/いだてん岱明部員.md": "01e11cb8c277a124d304ec995a7b6438691e227669fda8655f9fbabd5c8bf0ca",
@@ -373,6 +376,7 @@
     "out/analysis/aragyoku_leg_awards.md": "c4a72fbb03137031a397ac44ea7eeebf2054ad656d9ef452ef8f42b145d5dccb",
     "out/analysis/aragyoku_leg_time_rank_guide.md": "2659812094e512621abed3345598c27a2228609d2f04c4aa62566e1b23af1eec",
     "out/analysis/aragyoku_meet_records.md": "3dc1753f38ac0cf1cf718390c6e750b2559fe68ce3ef9d8184bab7c84ee55e0d",
+    "out/analysis/aragyoku_rank_benchmark_guide.md": "54952670c65ba639292f81ad13b156fd49b5decb2473f641de8dee9d169eb446",
     "out/analysis/aragyoku_sb_calibration.md": "a4e1f9ff4c96f621649f98b2db19c687eacdc817fb962cf7b6663cfade223a40",
     "out/analysis/aragyoku_sb_gap_analysis.md": "4f1588cf3b66b887e77448624bf5d829caaa3ec2534c4e44e03533e3f0544764",
     "out/analysis/aragyoku_top2_finish_counts.md": "4b6164c1fe8319e69c8a22721f03a94789e45568f5822a2d2f1e17e2cf4f41aa",
@@ -402,7 +406,7 @@
     "out/analysis/arato-tamana-teams/ﾀﾏﾅﾁｭｳ玉名中.md": "d56544d05ffc45d98a81caf0212f7f0fcc33d0ed286999cdec019050ed6150b8",
     "out/analysis/athletes/takada-mana.md": "aec07e6f4e13e523be93996bb141d5a658441e4671ed462f13fbad13ba8169f8",
     "out/analysis/notion_records_2026.json": "554879640ef341eb82825a9418c27be4ee272f72912e86118a93b43fb6f20c44",
-    "out/knowledge-graph.json": "12d0fd4ff6c73a6b1530634c9943d5a2b987123d1aad5575978d0d17e1c02f46",
+    "out/knowledge-graph.json": "8562482f862b83ea492b67b17cc31464c80a909c25ea67fc89ab24e6cd07ffb5",
     "outputs/荒玉駅伝2026徹底対策.pdf": "3a409e93f73b78907eb8066c34394ad6f1a0dcaf87fe7ca9c169bc8a2e7e67ef",
     "scripts/generate_prepared_qa_prefectural_top2.py": "9a03bd2f563fd5496c7a8a6d406e487f36d77715d9f50f35d6f955a9b1d88fcb",
     "work/build_aragyoku_2026_pdf.py": "9ef2faaf5fd67cd6e9447d8ec7e7d24f7d6d799157b04043dbcd2a4be471077c"
@@ -50229,11 +50233,6 @@
       "problems": []
     },
     {
-      "id": "cal-2026-20260130-いだてん岱明謝礼",
-      "check": "source_projection_claim_check",
-      "problems": []
-    },
-    {
       "id": "cal-2026-20260130-カフェイン断ち",
       "check": "source_projection_claim_check",
       "problems": []
@@ -50405,11 +50404,6 @@
     },
     {
       "id": "cal-2026-20260403-リモート",
-      "check": "source_projection_claim_check",
-      "problems": []
-    },
-    {
-      "id": "cal-2026-20260406-いだてん岱明謝礼",
       "check": "source_projection_claim_check",
       "problems": []
     },
@@ -175381,6 +175375,1511 @@
     {
       "id": "edgecmp-2020-closing-b4c95117589dbca4",
       "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-男子-rank1-all-legs",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-男子-leg1-rank1",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-男子-leg2-rank1",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-男子-leg3-rank1",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-男子-leg4-rank1",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-男子-leg5-rank1",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-男子-leg6-rank1",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-男子-rank2-all-legs",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-男子-leg1-rank2",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-男子-leg2-rank2",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-男子-leg3-rank2",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-男子-leg4-rank2",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-男子-leg5-rank2",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-男子-leg6-rank2",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-男子-rank3-all-legs",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-男子-leg1-rank3",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-男子-leg2-rank3",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-男子-leg3-rank3",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-男子-leg4-rank3",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-男子-leg5-rank3",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-男子-leg6-rank3",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-男子-rank4-all-legs",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-男子-leg1-rank4",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-男子-leg2-rank4",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-男子-leg3-rank4",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-男子-leg4-rank4",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-男子-leg5-rank4",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-男子-leg6-rank4",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-男子-rank5-all-legs",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-男子-leg1-rank5",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-男子-leg2-rank5",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-男子-leg3-rank5",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-男子-leg4-rank5",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-男子-leg5-rank5",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-男子-leg6-rank5",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-男子-rank6-all-legs",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-男子-leg1-rank6",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-男子-leg2-rank6",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-男子-leg3-rank6",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-男子-leg4-rank6",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-男子-leg5-rank6",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-男子-leg6-rank6",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-男子-rank7-all-legs",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-男子-leg1-rank7",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-男子-leg2-rank7",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-男子-leg3-rank7",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-男子-leg4-rank7",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-男子-leg5-rank7",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-男子-leg6-rank7",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-男子-rank8-all-legs",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-男子-leg1-rank8",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-男子-leg2-rank8",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-男子-leg3-rank8",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-男子-leg4-rank8",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-男子-leg5-rank8",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-男子-leg6-rank8",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-男子-rank9-all-legs",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-男子-leg1-rank9",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-男子-leg2-rank9",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-男子-leg3-rank9",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-男子-leg4-rank9",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-男子-leg5-rank9",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-男子-leg6-rank9",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-男子-rank10-all-legs",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-男子-leg1-rank10",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-男子-leg2-rank10",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-男子-leg3-rank10",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-男子-leg4-rank10",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-男子-leg5-rank10",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-男子-leg6-rank10",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-男子-rank11-all-legs",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-男子-leg1-rank11",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-男子-leg2-rank11",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-男子-leg3-rank11",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-男子-leg4-rank11",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-男子-leg5-rank11",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-男子-leg6-rank11",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-男子-rank12-all-legs",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-男子-leg1-rank12",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-男子-leg2-rank12",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-男子-leg3-rank12",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-男子-leg4-rank12",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-男子-leg5-rank12",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-男子-leg6-rank12",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-男子-rank13-all-legs",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-男子-leg1-rank13",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-男子-leg2-rank13",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-男子-leg3-rank13",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-男子-leg4-rank13",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-男子-leg5-rank13",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-男子-leg6-rank13",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-男子-rank14-all-legs",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-男子-leg1-rank14",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-男子-leg2-rank14",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-男子-leg3-rank14",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-男子-leg4-rank14",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-男子-leg5-rank14",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-男子-leg6-rank14",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-男子-rank15-all-legs",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-男子-leg1-rank15",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-男子-leg2-rank15",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-男子-leg3-rank15",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-男子-leg4-rank15",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-男子-leg5-rank15",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-男子-leg6-rank15",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-女子-rank1-all-legs",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-女子-leg1-rank1",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-女子-leg2-rank1",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-女子-leg3-rank1",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-女子-leg4-rank1",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-女子-leg5-rank1",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-女子-rank2-all-legs",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-女子-leg1-rank2",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-女子-leg2-rank2",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-女子-leg3-rank2",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-女子-leg4-rank2",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-女子-leg5-rank2",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-女子-rank3-all-legs",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-女子-leg1-rank3",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-女子-leg2-rank3",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-女子-leg3-rank3",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-女子-leg4-rank3",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-女子-leg5-rank3",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-女子-rank4-all-legs",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-女子-leg1-rank4",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-女子-leg2-rank4",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-女子-leg3-rank4",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-女子-leg4-rank4",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-女子-leg5-rank4",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-女子-rank5-all-legs",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-女子-leg1-rank5",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-女子-leg2-rank5",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-女子-leg3-rank5",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-女子-leg4-rank5",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-女子-leg5-rank5",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-女子-rank6-all-legs",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-女子-leg1-rank6",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-女子-leg2-rank6",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-女子-leg3-rank6",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-女子-leg4-rank6",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-女子-leg5-rank6",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-女子-rank7-all-legs",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-女子-leg1-rank7",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-女子-leg2-rank7",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-女子-leg3-rank7",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-女子-leg4-rank7",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-女子-leg5-rank7",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-女子-rank8-all-legs",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-女子-leg1-rank8",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-女子-leg2-rank8",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-女子-leg3-rank8",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-女子-leg4-rank8",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-女子-leg5-rank8",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-女子-rank9-all-legs",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-女子-leg1-rank9",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-女子-leg2-rank9",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-女子-leg3-rank9",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-女子-leg4-rank9",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-女子-leg5-rank9",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-女子-rank10-all-legs",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-女子-leg1-rank10",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-女子-leg2-rank10",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-女子-leg3-rank10",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-女子-leg4-rank10",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-女子-leg5-rank10",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-女子-rank11-all-legs",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-女子-leg1-rank11",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-女子-leg2-rank11",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-女子-leg3-rank11",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-女子-leg4-rank11",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-女子-leg5-rank11",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-女子-rank12-all-legs",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-女子-leg1-rank12",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-女子-leg2-rank12",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-女子-leg3-rank12",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-女子-leg4-rank12",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-女子-leg5-rank12",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-女子-rank13-all-legs",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-女子-leg1-rank13",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-女子-leg2-rank13",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-女子-leg3-rank13",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-女子-leg4-rank13",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-女子-leg5-rank13",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-女子-rank14-all-legs",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-女子-leg1-rank14",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-女子-leg2-rank14",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-女子-leg3-rank14",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-女子-leg4-rank14",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-女子-leg5-rank14",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-女子-rank15-all-legs",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-女子-leg1-rank15",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-女子-leg2-rank15",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-女子-leg3-rank15",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-女子-leg4-rank15",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "aragyoku-rank-benchmark-女子-leg5-rank15",
+      "check": "source_projection_claim_check",
+      "problems": []
+    },
+    {
+      "id": "chunkqa-fbc8dd69760bd81df0ea92da-1",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "chunkqa-fbc8dd69760bd81df0ea92da-2",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "chunkqa-fbc8dd69760bd81df0ea92da-3",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "chunkqa-6836165cab4e43e11679d727-1",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "chunkqa-6836165cab4e43e11679d727-2",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "chunkqa-6836165cab4e43e11679d727-3",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "chunkqa-7811d821e7e5af3ba0ceafe3-1",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "chunkqa-7811d821e7e5af3ba0ceafe3-2",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "chunkqa-7811d821e7e5af3ba0ceafe3-3",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "chunkqa-e7487e3be852e6b1eafacccc-1",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "chunkqa-e7487e3be852e6b1eafacccc-2",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "chunkqa-e7487e3be852e6b1eafacccc-3",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "chunkqa-d096d284234ce1b4426eff4e-1",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "chunkqa-d096d284234ce1b4426eff4e-2",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "chunkqa-d096d284234ce1b4426eff4e-3",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "chunkqa-3f77dd0bd0a994f6fe507a5a-2",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "chunkqa-3f77dd0bd0a994f6fe507a5a-3",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "chunkqa-710b1fdcefee5ab44a8d0adc-1",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "chunkqa-710b1fdcefee5ab44a8d0adc-2",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "chunkqa-710b1fdcefee5ab44a8d0adc-3",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "chunkqa-2cc60b44fd1f0fa98166234f-1",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "chunkqa-2cc60b44fd1f0fa98166234f-2",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "chunkqa-2cc60b44fd1f0fa98166234f-3",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "chunkqa-d5e3172ab38e0b21645e5722-1",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "chunkqa-d5e3172ab38e0b21645e5722-2",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "chunkqa-d5e3172ab38e0b21645e5722-3",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "chunkqa-d01160152e9d34859c0842a7-1",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "chunkqa-d01160152e9d34859c0842a7-2",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "chunkqa-d01160152e9d34859c0842a7-3",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "chunkqa-fd9ec13dfccf16d0147a66fa-1",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "chunkqa-fd9ec13dfccf16d0147a66fa-2",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "chunkqa-fd9ec13dfccf16d0147a66fa-3",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "chunkqa-4e23f3e6ca50f235f463b4ff-1",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "chunkqa-4e23f3e6ca50f235f463b4ff-2",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "chunkqa-4e23f3e6ca50f235f463b4ff-3",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "chunkqa-dfa2a91fa2eaa95809350666-2",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "chunkqa-dfa2a91fa2eaa95809350666-3",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "chunkqa-72470939b8e37c7eab2673d1-1",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "chunkqa-72470939b8e37c7eab2673d1-2",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "chunkqa-72470939b8e37c7eab2673d1-3",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "chunkqa-2d193bdaebea7981a732f6bd-1",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "chunkqa-2d193bdaebea7981a732f6bd-2",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "chunkqa-2d193bdaebea7981a732f6bd-3",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "chunkqa-871328b6f4c9a03f19daf922-1",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "chunkqa-871328b6f4c9a03f19daf922-2",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "chunkqa-871328b6f4c9a03f19daf922-3",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "chunkqa-edc24da519507491ca802a72-1",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "chunkqa-edc24da519507491ca802a72-2",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "chunkqa-edc24da519507491ca802a72-3",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "chunkqa-f8344b9fc0a204afdc5fe55f-1",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "chunkqa-f8344b9fc0a204afdc5fe55f-2",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "chunkqa-f8344b9fc0a204afdc5fe55f-3",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "chunkqa-f2762b3f0820dea6eb5e4d8c-1",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "chunkqa-f2762b3f0820dea6eb5e4d8c-2",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "chunkqa-f2762b3f0820dea6eb5e4d8c-3",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "chunkqa-04a5c89c47ba3687af057339-1",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "chunkqa-04a5c89c47ba3687af057339-2",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "chunkqa-04a5c89c47ba3687af057339-3",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "chunkqa-60d78174fb9f098f6d729f56-1",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "chunkqa-60d78174fb9f098f6d729f56-2",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "chunkqa-60d78174fb9f098f6d729f56-3",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "chunkqa-7f5ee7a938d1e84d10bf6ff6-1",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "chunkqa-7f5ee7a938d1e84d10bf6ff6-2",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "chunkqa-7f5ee7a938d1e84d10bf6ff6-3",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "chunkqa-99f7c0feeeb9ef5f5f287fc5-1",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "chunkqa-99f7c0feeeb9ef5f5f287fc5-2",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "chunkqa-99f7c0feeeb9ef5f5f287fc5-3",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "chunkqa-47aa96fa94b90e2a116c5718-1",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "chunkqa-47aa96fa94b90e2a116c5718-2",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "chunkqa-47aa96fa94b90e2a116c5718-3",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "chunkqa-0a253bc90c8b31954ad3604e-1",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "chunkqa-0a253bc90c8b31954ad3604e-2",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "chunkqa-0a253bc90c8b31954ad3604e-3",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "chunkqa-00fb55727bd47acaaa1798c2-1",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "chunkqa-00fb55727bd47acaaa1798c2-2",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "chunkqa-00fb55727bd47acaaa1798c2-3",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "chunkqa-c0825c814094e42d359eaa89-1",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "chunkqa-c0825c814094e42d359eaa89-2",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "chunkqa-c0825c814094e42d359eaa89-3",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "chunkqa-87797960368bf436455ee296-1",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "chunkqa-87797960368bf436455ee296-2",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "chunkqa-87797960368bf436455ee296-3",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "chunkqa-64a2addbe5615a22d149dbe7-1",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "chunkqa-64a2addbe5615a22d149dbe7-2",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "chunkqa-64a2addbe5615a22d149dbe7-3",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "chunkqa-eabfa70db1cfe95be0566042-1",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "chunkqa-eabfa70db1cfe95be0566042-2",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "chunkqa-eabfa70db1cfe95be0566042-3",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "chunkqa-dff99228b7dc08072b1b1024-1",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "chunkqa-dff99228b7dc08072b1b1024-2",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "chunkqa-dff99228b7dc08072b1b1024-3",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "chunkqa-069f4cebab0ec631facbaf4d-1",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "chunkqa-069f4cebab0ec631facbaf4d-2",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "chunkqa-069f4cebab0ec631facbaf4d-3",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "chunkqa-da513a5c6fa4efd5d6ecf73d-1",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "chunkqa-da513a5c6fa4efd5d6ecf73d-2",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "chunkqa-da513a5c6fa4efd5d6ecf73d-3",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "chunkqa-a9dc32deef8c1b4cc5c6f4b4-1",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "chunkqa-a9dc32deef8c1b4cc5c6f4b4-2",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "chunkqa-a9dc32deef8c1b4cc5c6f4b4-3",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "chunkqa-cb2adbdc65f2e39f590c4dbf-1",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "chunkqa-cb2adbdc65f2e39f590c4dbf-2",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "chunkqa-cb2adbdc65f2e39f590c4dbf-3",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "chunkqa-8b50bdcf4fb5dcd856080ddb-1",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "chunkqa-8b50bdcf4fb5dcd856080ddb-2",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "chunkqa-8b50bdcf4fb5dcd856080ddb-3",
+      "check": "manual_context_review_and_source_quote_check",
       "problems": []
     }
   ]

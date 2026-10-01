@@ -1,4 +1,4 @@
-import { classifyScope, OUT_OF_SCOPE_MESSAGE } from "./scope.js";
+import { classifyScope, OUT_OF_SCOPE_MESSAGE, isPrivateRemunerationQuestion, REMUNERATION_PRIVATE_MESSAGE } from "./scope.js";
 import {
   currentFiscalYear,
   expandDateQuery,
@@ -4314,6 +4314,9 @@ export async function answerQuestion(
   question: string,
   deps: AnswerDeps = {},
 ): Promise<AnswerResult> {
+  if (isPrivateRemunerationQuestion(question)) {
+    return { kind: "refused", text: REMUNERATION_PRIVATE_MESSAGE };
+  }
   question = canonicalizeAragyokuNames(
     canonicalizeSchoolNames(
       question
