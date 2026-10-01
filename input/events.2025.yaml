@@ -2374,14 +2374,6 @@ events:
   all_day: true
   category: 予定
   status: scheduled
-- title: 資産
-  date: '2025-12-01'
-  all_day: true
-  category: 予定
-  status: scheduled
-  description: '金額: ￥9,730,994'
-  tags:
-  - 金額
 - title: Dさんリモート
   date: '2025-12-02'
   all_day: true

@@ -51,3 +51,14 @@ def test_path_cannot_escape_repository():
     import pytest
     with pytest.raises(ValueError):
         c.safe_path("../../outside")
+
+def test_empty_exports_have_no_records_but_single_record_is_kept():
+    assert c.empty_record_export("year,date,name\n", ".csv")
+    assert c.empty_record_export("[]", ".json")
+    assert not c.empty_record_export("year,date,name\n2026,2026-10-14,甲\n", ".csv")
+    assert not c.empty_record_export('{"year": 2026}', ".json")
+
+def test_mirror_ownership_does_not_guess_unrelated_documents():
+    assert c.inferred_original("out/2026/calendar.md") == "calendar.md"
+    assert c.inferred_original("input/idaten-corpus/out-analysis/race.md") == "out/analysis/race.md"
+    assert c.inferred_original("input/other-year/race.md") == "input/other-year/race.md"

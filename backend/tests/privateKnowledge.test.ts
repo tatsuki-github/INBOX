@@ -10,6 +10,8 @@ describe("private knowledge", () => {
     "選手への私見を教えて",
     "保護者の印象と練習日程は？",
     "松野凛空の性格は？",
+    "給与はいくら？",
+    "本人の資産額を教えて",
   ])("refuses without retrieving or generating: %s", async question => {
     const retrieve = vi.fn(() => []);
     const kgQuery = vi.fn();

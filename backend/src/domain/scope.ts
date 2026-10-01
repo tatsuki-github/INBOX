@@ -102,7 +102,7 @@ export const REMUNERATION_PRIVATE_MESSAGE = "謝礼・謝金の金額は回答�
 export const PERSONAL_PRIVATE_MESSAGE = "口座・認証情報や個人への私的な評価は回答対象外です。";
 
 export function isPrivatePersonalQuestion(question: string): boolean {
-  return /口座|バックアップコード|認証コード|マイナンバー|運転免許|免許証.*番号|性格|人物評|人間性|家庭事情|(?:保護者|選手|生徒).*(?:私見|印象|評判)/.test(question.normalize("NFKC"));
+  return /口座|バックアップコード|認証コード|マイナンバー|運転免許|免許証.*番号|給与|年収|月給|資産|残高|性格|人物評|人間性|家庭事情|(?:保護者|選手|生徒).*(?:私見|印象|評判)/.test(question.normalize("NFKC"));
 }
 
 export function isPrivateRemunerationQuestion(question: string): boolean {

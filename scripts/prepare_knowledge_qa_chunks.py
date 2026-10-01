@@ -211,6 +211,32 @@ def discover():
             add(str(path.relative_to(ROOT)), "corpus-file")
     return routes
 
+def inferred_original(rel):
+    """Recognize mirrored documents not yet registered in the corpus manifest."""
+    prefixes = {
+        "input/idaten-corpus/out-analysis/": "out/analysis/",
+        "input/idaten-corpus/repo-docs/": "docs/",
+    }
+    for prefix, original in prefixes.items():
+        if rel.startswith(prefix):
+            return original + rel[len(prefix):]
+    if re.fullmatch(r"out/20\d{2}/calendar[.]md", rel):
+        return "calendar.md"
+    if rel.endswith("/1014-1015_荒玉中体連駅伝/予実比較.md"):
+        return "out/analysis/aragyoku_sb_gap_analysis.md"
+    return rel
+
+def empty_record_export(raw, suffix):
+    """Header-only exports and empty imported folders contain no domain records."""
+    if suffix == ".csv":
+        return len(list(csv.reader(io.StringIO(raw)))) <= 1
+    if suffix == ".json":
+        try:
+            return json.loads(raw) in ([], {})
+        except ValueError:
+            return False
+    return False
+
 def build():
     routes = discover()
     files, content_groups = [], {}
@@ -235,11 +261,17 @@ def build():
             if not raw.strip():
                 record["disposition"] = "empty-document"
                 continue
+            if path.name == "_EMPTY.md" or empty_record_export(raw, path.suffix.lower()):
+                record["disposition"] = "empty-record-export"
+                record["source_sha256"] = digest(payload)
+                continue
             h = digest(raw)
             record["normalized_sha256"] = h
             record["disposition"] = "canonical-or-alias"
             # Do not merge identical words from unrelated subject contexts.
-            owner = copy_origins.get(rel, rel)
+            owner = inferred_original(rel)
+            if owner == rel:
+                owner = copy_origins.get(rel, rel)
             original = safe_path(owner)
             if original.is_file():
                 original_text = original.read_bytes().decode("utf-8-sig", errors="strict").replace("\r\n", "\n")

@@ -1,10 +1,19 @@
 {
-  "removed_records": 7,
+  "removed_records": 14,
   "scrubbed_personal_memos": 14,
   "removed_prepared_ids": [
     "cal-2026-20260801-玉名選手権参加料返金口座の連絡メールの送信",
-    "calx-2026-20260801-玉名選手権参加料返金口座の連絡メールの送信"
+    "calx-2026-20260801-玉名選手権参加料返金口座の連絡メールの送信",
+    "cal-2026-20260101-資産",
+    "cal-2026-20260201-資産",
+    "cal-2026-20260302-資産",
+    "cal-2026-20260401-資産",
+    "cal-2026-20260412-資産",
+    "cal-2026-20260724-給与振り込み",
+    "guide-2026-p36",
+    "cal-2025-20251201-資産",
+    "chunkqa-d01160152e9d34859c0842a7-2"
   ],
   "scrubbed_prepared_ids": [],
-  "policy": "No account credentials, identity numbers, remuneration or private personal evaluations in source knowledge or QAs."
+  "policy": "No account credentials, identity numbers, private salary or asset amounts, remuneration, private individual health or personality evaluations in source knowledge or QAs."
 }
