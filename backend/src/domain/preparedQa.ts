@@ -42,15 +42,24 @@ type PreparedNormEntry = {
   norms: { raw: string; norm: string }[];
 };
 
-let cachedNorm: { defaultYear: number; rows: PreparedNormEntry[] } | null = null;
+type PreparedNormCache = {
+  defaultYear: number;
+  rows: PreparedNormEntry[];
+  /** Normalized question → unique entry (ambiguous norms omitted). */
+  exact: Map<string, { entry: PreparedQaEntry; raw: string; year: number | null }>;
+};
+
+let cachedNorm: PreparedNormCache | null = null;
 
 const SYNONYM_GROUPS: string[][] = [
   ["動画", "映像", "ビデオ"],
-  ["画像", "図", "図解", "コース図", "写真"],
+  // 長い表記を先に置換（コース図→画像 など）
+  ["画像", "コース図", "図解", "地図", "図", "写真"],
   // 「区間順位」を先に正規化（「区間順」は接頭辞衝突するので入れない）
   ["区間順位", "通過順位", "区間結果"],
-  ["結果", "成績"],
-  ["優勝", "1位", "一位"],
+  ["結果", "成績", "どうだった"],
+  // 優勝表現のゆれ（長い語を先に）
+  ["優勝", "優勝チーム", "優勝校", "誰が勝った", "1位", "一位"],
   ["準優勝", "2位", "二位"],
   ["教えて", "見せて", "知りたい", "どこ", "ある"],
   // 学校名は schoolAliases.ts に集約（荒尾四/荒尾第四、玉高附属/玉名付属 など）
@@ -58,17 +67,19 @@ const SYNONYM_GROUPS: string[][] = [
   // 荒玉大会名は aragyokuAliases.ts で longest-first 正規化（ここでは同義語置換しない）
   ["ジュニア", "県ジュニア", "ジュニア駅伝"],
   ["なごみ", "なごみ駅伝", "金栗"],
-  ["自己ベスト", "sb", "SB"],
+  // SB 言い換え（長い語優先）
+  ["自己ベスト", "ベストタイム", "自己記録", "ベスト記録", "sb", "SB"],
   ["全ての記録", "全記録", "記録一覧", "レース結果一覧"],
   ["オーダー", "区間メンバー", "区間配置", "誰が何区"],
   ["出走歴", "出場記録", "荒玉出場"],
   ["区間賞", "区間最速", "区賞"],
   ["戦力分析", "戦力予想", "数式予想", "校別展開"],
   ["徹底対策", "完全ガイド", "荒玉ガイド"],
-  ["予定", "日程", "スケジュール"],
+  ["予定", "日程", "スケジュール", "開催日"],
   ["区間距離", "距離"],
-  ["名簿", "生徒一覧", "部員名簿", "部員一覧", "陸上部員"],
+  ["名簿", "生徒一覧", "部員名簿", "部員一覧", "陸上部名簿", "陸上部員"],
   ["差", "タイム差", "秒差", "時差"],
+  ["出場できる", "出場出来る", "出られる", "出れる"],
 ];
 
 export function defaultPreparedQaPath(): string {
@@ -96,8 +107,9 @@ function applySynonyms(text: string): string {
   let out = text;
   for (const group of SYNONYM_GROUPS) {
     const canon = group[0]!;
-    for (const alt of group.slice(1)) {
-      if (!alt) continue;
+    // 長い別名から置換（優勝チーム→優勝 が 優勝→… より先）
+    const alts = group.slice(1).filter(Boolean).sort((a, b) => b.length - a.length);
+    for (const alt of alts) {
       out = out.split(alt).join(canon);
     }
   }
@@ -131,8 +143,22 @@ export function normalizePreparedQuestion(
   q = q
     .replace(/[?？!！。．、,，・]/g, "")
     .replace(/(を)?(教えて|見せて|知りたい|ください|下さい|お願い|ですか|でしょうか)+$/g, "")
+    .replace(/(だった|なの|かな)$/g, "")
+    .replace(/って(どんな|どういう)(大会|もの)?$/g, "ってなに")
+    .replace(/(は|って)?どんな(大会|もの)?$/g, "ってなに")
+    .replace(/(は|って)?どういう(大会|もの)?$/g, "ってなに")
     .replace(/とは$/g, "ってなに")
+    // 「〇〇のベストは？」→ 自己ベスト（区間ベスト等は触らない）
+    .replace(/のベスト(?!タイム|記録)/g, "の自己ベスト")
     .replace(/(は|って)?$/g, "");
+
+  // 「いつ開催」→「いつ」（日程同義語と組み合わせ）
+  q = q.replace(/いつ開催/g, "いつ");
+
+  // 記録系で単位なし距離（1500のベスト → 1500m）
+  if (/自己ベスト|ベスト|sb|記録/i.test(q)) {
+    q = q.replace(/(?<![0-9.])(800|1500|3000|5000)(?![0-9.a-zｍmメートル])/gi, "$1m");
+  }
 
   q = applySynonyms(q.toLowerCase());
   // Compare equivalent event distances in metres (1.5km = 1500m).
@@ -381,21 +407,43 @@ export function preparedEntryYear(entry: PreparedQaEntry): number | null {
 function loadPreparedQaNormalized(
   defaultYear: number,
   entries?: PreparedQaEntry[],
-): PreparedNormEntry[] {
+): PreparedNormCache {
   if (!entries && cachedNorm && cachedNorm.defaultYear === defaultYear) {
-    return cachedNorm.rows;
+    return cachedNorm;
   }
   const catalog = entries ?? loadPreparedQa();
-  const rows = catalog.map((entry) => ({
-    entry,
-    year: preparedEntryYear(entry),
-    norms: entry.questions.map((raw) => ({
-      raw,
-      norm: normalizePreparedQuestion(raw, { defaultYear }),
-    })),
-  }));
-  if (!entries) cachedNorm = { defaultYear, rows };
-  return rows;
+  const exact = new Map<
+    string,
+    { entry: PreparedQaEntry; raw: string; year: number | null } | null
+  >();
+  const rows = catalog.map((entry) => {
+    const year = preparedEntryYear(entry);
+    const seenNorm = new Set<string>();
+    const norms: { raw: string; norm: string }[] = [];
+    for (const raw of entry.questions) {
+      const norm = normalizePreparedQuestion(raw, { defaultYear });
+      if (!norm || seenNorm.has(norm)) continue;
+      seenNorm.add(norm);
+      norms.push({ raw, norm });
+      if (!exact.has(norm)) {
+        exact.set(norm, { entry, raw, year });
+      } else {
+        // 同一正規化文が複数エントリに載る場合は exact では採用しない
+        exact.set(norm, null);
+      }
+    }
+    return { entry, year, norms };
+  });
+  const exactUnique = new Map<
+    string,
+    { entry: PreparedQaEntry; raw: string; year: number | null }
+  >();
+  for (const [k, v] of exact) {
+    if (v) exactUnique.set(k, v);
+  }
+  const cache: PreparedNormCache = { defaultYear, rows, exact: exactUnique };
+  if (!entries) cachedNorm = cache;
+  return cache;
 }
 
 /**
@@ -421,8 +469,28 @@ export function matchPreparedAnswer(
   if (!nq) return null;
   const queryHasYear = (nq.match(/20\d{2}/g) ?? []).length > 0;
 
-  const catalog = loadPreparedQaNormalized(defaultYear, opts?.entries);
+  const loaded = loadPreparedQaNormalized(defaultYear, opts?.entries);
+  const catalog = loaded.rows;
   if (catalog.length === 0) return null;
+
+  // 正規化後の完全一致は O(1)（表記ゆれを同義語で潰したあと）
+  const exactHit = loaded.exact.get(nq);
+  if (exactHit) {
+    let score = 1;
+    if (!queryHasYear && exactHit.year != null) {
+      if (exactHit.year === defaultYear) score += 0.02;
+      else score -= 0.05;
+    }
+    if (score >= HIT_THRESHOLD) {
+      return {
+        id: exactHit.entry.id,
+        text: exactHit.entry.answer.trim(),
+        score,
+        matchedQuestion: exactHit.raw,
+        sources: exactHit.entry.sources,
+      };
+    }
+  }
 
   type Cand = {
     entry: PreparedQaEntry;

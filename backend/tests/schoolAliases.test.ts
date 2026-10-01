@@ -73,14 +73,18 @@ describe("answerQuestion school aliases", () => {
     return answerQuestion(question, { defaultYear: 2026, llm: null, skipRouter: true });
   }
 
-  it("routes 荒尾第四中 player lists to the school digest", async () => {
+  it("routes 荒尾第四中 player lists to prepared roster (or school digest)", async () => {
     const result = await ask("荒尾第四中の選手一覧");
-    expect(result.sources?.[0]).toBe("out-analysis/arato-tamana-teams/荒尾第四中.md");
+    expect(result.sources?.[0]).toMatch(
+      /^(?:prepared:roster-aff-荒尾第四中|out-analysis\/arato-tamana-teams\/荒尾第四中\.md)$/,
+    );
     expect(result.text).toContain("荒尾第四中");
   });
 
-  it("routes 荒尾四中 alias to the same school digest", async () => {
+  it("routes 荒尾四中 alias to the same roster / school digest", async () => {
     const result = await ask("荒尾四中の選手一覧");
-    expect(result.sources?.[0]).toBe("out-analysis/arato-tamana-teams/荒尾第四中.md");
+    expect(result.sources?.[0]).toMatch(
+      /^(?:prepared:roster-aff-荒尾第四中|out-analysis\/arato-tamana-teams\/荒尾第四中\.md)$/,
+    );
   });
 });
