@@ -52,6 +52,23 @@ describe("matchClarifyAnswer", () => {
     expect(matchClarifyAnswer("荒玉駅伝はいつ？")).toBeNull();
     expect(matchClarifyAnswer("2025年荒玉男子の岱明のオーダーは？")).toBeNull();
   });
+
+  it("clarifies unexpected vague questions with examples", () => {
+    expect(matchClarifyAnswer("タイムは？")?.id).toBe("clarify-time");
+    expect(matchClarifyAnswer("メンバーは？")?.id).toBe("clarify-order");
+    expect(matchClarifyAnswer("何区がいい？")?.id).toBe("clarify-leg-advice");
+    expect(matchClarifyAnswer("区間どうする？")?.id).toBe("clarify-leg-advice");
+    expect(matchClarifyAnswer("練習どうだった？")?.id).toBe("clarify-practice");
+    expect(matchClarifyAnswer("速い人は？")?.id).toBe("clarify-who-fast");
+    expect(matchClarifyAnswer("誰？")?.id).toBe("clarify-who-fast");
+    expect(matchClarifyAnswer("松野は速い？")?.id).toBe("clarify-named-time");
+    expect(matchClarifyAnswer("松野のタイムは？")?.id).toBe("clarify-named-time");
+    expect(matchClarifyAnswer("教えて")?.id).toBe("clarify-ultra-vague");
+    expect(matchClarifyAnswer("おすすめは？")?.id).toBe("clarify-ultra-vague");
+    expect(matchClarifyAnswer("？")?.id).toBe("clarify-ultra-vague");
+    expect(matchClarifyAnswer("タイムは？")?.text).toContain("例:");
+    expect(matchClarifyAnswer("今村昇磨の1500m自己ベストは？")).toBeNull();
+  });
 });
 
 describe("answerQuestion clarify", () => {
@@ -78,6 +95,32 @@ describe("answerQuestion clarify", () => {
     if (result.kind === "answered") {
       expect(result.text).toContain("例:");
       expect(result.sources[0]).toBe("clarify:clarify-personal-best");
+    }
+  });
+
+  it("returns examples for unexpected vague questions without LLM", async () => {
+    for (const q of ["タイムは？", "何区がいい？", "練習どうだった？", "教えて"]) {
+      const result = await answerQuestion(q, {
+        retrieve: () => {
+          throw new Error("retrieve should not run");
+        },
+        llm: {
+          complete: async () => "should not run",
+        },
+        skipRouter: true,
+        kgQuery: () => ({
+          question: q,
+          matched_nodes: [],
+          refs: [],
+          corpus_sources: [],
+        }),
+      });
+      expect(result.kind, q).toBe("answered");
+      if (result.kind === "answered") {
+        expect(result.sources[0], q).toMatch(/^clarify:/);
+        expect(result.text, q).toMatch(/例:|使い方/);
+        expect(result.text, q).not.toMatch(/名前,所属,性別/);
+      }
     }
   });
 });

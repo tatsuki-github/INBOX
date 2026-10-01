@@ -46,6 +46,30 @@ export function isHelpOrExampleQuestion(question: string): boolean {
   return false;
 }
 
+/** Greeting / thanks — avoid bare「コーチに…」for social openers. */
+export function isGreetingOrThanksQuestion(question: string): boolean {
+  const q = question.normalize("NFKC").trim();
+  if (!q) return false;
+  return /^(?:こんにちは|こんにちわ|こんばんは|おはよう(?:ございます)?|はじめまして|宜しく|よろしく(?:お願い(?:します|いたします)?)?|ありがとう(?:ございます)?|どうも|お疲れ(?:さま|様)?(?:です)?|おつかれ(?:さま|様)?(?:です)?)[！!。．～〜]*$/u.test(
+    q,
+  );
+}
+
+export function buildGreetingOrThanksText(question: string): string {
+  const q = question.normalize("NFKC").trim();
+  const thanks = /ありがとう|どうも|お疲れ|おつかれ/.test(q);
+  if (thanks) {
+    return [
+      "どういたしまして。",
+      "大会結果・記録・練習予定なども聞けます。質問例は「使い方」と送ってください。",
+    ].join("\n");
+  }
+  return [
+    "こんにちは。いだてん岱明の練習・大会・駅伝・記録について答えます。",
+    "大会名・選手名・年を付けて聞いてください。質問例は「使い方」と送ってください。",
+  ].join("\n");
+}
+
 /**
  * Help / example questions. Aragyoku-centric, no personal names, covers app surface.
  * Keep under LINE comfort length; bullets use 「・」 for formatForLine friendliness.
@@ -166,6 +190,12 @@ export function matchCannedAnswer(question: string): CannedAnswer | null {
     return {
       id: "help-examples",
       text: buildHelpExamplesText(),
+    };
+  }
+  if (isGreetingOrThanksQuestion(question)) {
+    return {
+      id: "greeting-thanks",
+      text: buildGreetingOrThanksText(question),
     };
   }
   if (isAragyokuCourseVideoQuestion(question)) {

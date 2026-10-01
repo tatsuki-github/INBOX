@@ -5,6 +5,7 @@ import {
   ARAGYOKU_COURSE_VIDEO_YOUTUBE_PLAYLIST_URL,
   buildHelpExamplesText,
   isAragyokuCourseVideoQuestion,
+  isGreetingOrThanksQuestion,
   isHelpOrExampleQuestion,
   matchCannedAnswer,
 } from "../src/domain/canned.js";
@@ -23,6 +24,25 @@ describe("canned help / example questions", () => {
     expect(isHelpOrExampleQuestion("メニュー")).toBe(true);
     expect(isHelpOrExampleQuestion("荒玉男子の優勝は？")).toBe(false);
     expect(isHelpOrExampleQuestion("荒玉のコース動画は？")).toBe(false);
+  });
+
+  it("answers greetings and thanks without coach fallback", async () => {
+    expect(isGreetingOrThanksQuestion("こんにちは")).toBe(true);
+    expect(isGreetingOrThanksQuestion("ありがとう")).toBe(true);
+    expect(isGreetingOrThanksQuestion("荒玉駅伝はいつ？")).toBe(false);
+    expect(matchCannedAnswer("こんにちは")?.id).toBe("greeting-thanks");
+    const result = await answerQuestion("こんにちは", {
+      retrieve: () => {
+        throw new Error("retrieve should not run");
+      },
+      llm: { complete: async () => "should not run" },
+    });
+    expect(result.kind).toBe("answered");
+    if (result.kind === "answered") {
+      expect(result.sources[0]).toBe("canned:greeting-thanks");
+      expect(result.text).toContain("使い方");
+      expect(result.text).not.toContain("コーチに直接聞いてください");
+    }
   });
 
   it("returns help canned without LLM", async () => {

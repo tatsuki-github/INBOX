@@ -25,7 +25,13 @@ import { withMeetResultUrls, type MeetResultUrlEntry } from "./meetResultUrls.js
 import { appendPrimarySourceLinks, findPrimarySourceArtifacts } from "./primarySourceArtifacts.js";
 import { routeSources } from "./router.js";
 import type { LlmClient } from "./llm.js";
-import { buildSystemPrompt, buildUserPrompt, MISSING_INFO_MESSAGE } from "../rag/prompt.js";
+import {
+  buildMissingInfoGuideText,
+  buildSystemPrompt,
+  buildUserPrompt,
+  isBareMissingInfo,
+  MISSING_INFO_MESSAGE,
+} from "../rag/prompt.js";
 import { formatForLine } from "../line/format.js";
 import {
   expandWithNeighbors,
@@ -79,11 +85,15 @@ function finalizeAnswerText(
   // A primary PDF is an answer in its own right. Do not leave the generic
   // missing-information fallback next to a valid PDF link (whether it came
   // from the offline path or was echoed by the LLM).
-  const formatted = formatForLine(text)
+  let formatted = formatForLine(text)
     .split(MISSING_INFO_MESSAGE)
     .join(primaryArtifacts.length > 0 ? "" : MISSING_INFO_MESSAGE)
     .replace(/\n{3,}/g, "\n\n")
     .trim();
+  // LLM/offline bare coach-only replies → add ask examples for unexpected Qs.
+  if (primaryArtifacts.length === 0 && isBareMissingInfo(formatted)) {
+    formatted = formatForLine(buildMissingInfoGuideText());
+  }
   const withResultUrls = withMeetResultUrls(formatted, question, {
     entries: deps.meetResultUrls,
     defaultYear: deps.defaultYear ?? currentFiscalYear(),
@@ -2791,6 +2801,9 @@ function offlineAnswer(
       lines.push("2026年の金栗駅伝は、正本資料上は開催予定の記録のみで、結果・順位はまだ記載されていません。");
     } else if (/荒玉駅伝/.test(question) && /結果|順位|優勝校|優勝チーム/.test(question) && /2026年/.test(question)) {
       lines.push("2026年の荒玉中体連駅伝は開催予定の記録のみで、結果・順位はまだ記載されていません。");
+    } else if (missingInfoMessage === MISSING_INFO_MESSAGE) {
+      // Unexpected / unanswered: keep coach line + concrete ask examples.
+      lines.push(buildMissingInfoGuideText());
     } else {
       lines.push(missingInfoMessage);
     }
