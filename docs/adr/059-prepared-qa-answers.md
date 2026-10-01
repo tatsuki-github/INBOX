@@ -55,7 +55,9 @@ LINE Q&A は RAG / LLM で都度組み立てると、ぶれ・コーチ誘導・
   `scripts/gap_crush_prepared_1000.py`（未カバー質問を1問ずつ発見→1000件追加、
   `--batch b` で第2バッチ）/
   `scripts/polish_prepared_qa_quality.py`（全件のユーザー向け品質改修）/
-  `scripts/generate_prepared_qa_nagomi_team_results.py`（なごみ駅伝チーム別結果）→
+  `scripts/generate_prepared_qa_nagomi_team_results.py`（なごみ駅伝チーム別結果）/
+  `scripts/refresh_prepared_qa_team_results.py`（荒玉チーム結果・去年/結果は？）/
+  `scripts/refresh_prepared_qa_leg_boards.py`（区間順位ボード・去年語順）→
   `scripts/sync_prepared_qa.py`。
   大会名正規化: `backend/src/domain/aragyokuAliases.ts`
   （荒玉中体連駅伝 / 郡市駅伝 / 玉名荒尾中体連駅伝 → 荒玉）。
