@@ -6,6 +6,8 @@ on:
     paths:
       - 'scripts/prepare_knowledge_qa_chunks.py'
       - 'tests/test_knowledge_qa_chunks.py'
+      - 'backend/scripts/check-chunk-qa-candidates.ts'
+      - 'input/faq/chunk-qa/**'
       - '.github/workflows/knowledge-qa-workbench.yml'
 
 concurrency:
@@ -31,6 +33,16 @@ jobs:
         run: python3 -m pytest tests/test_knowledge_qa_chunks.py -q
       - name: Prepare inventory and evidence only
         run: python3 scripts/prepare_knowledge_qa_chunks.py --write
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: backend/package-lock.json
+      - run: npm ci --no-audit --no-fund
+        working-directory: backend
+      - name: Validate authored candidates without publishing
+        run: npx tsx scripts/check-chunk-qa-candidates.ts
+        working-directory: backend
       - name: Persist reviewable evidence on the work branch
         run: |
           git add out/qa-chunks
