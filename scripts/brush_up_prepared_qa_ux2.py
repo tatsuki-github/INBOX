@@ -271,13 +271,13 @@ def is_dump_answer(ans: str) -> bool:
 
 
 def scrub_placeholders(ans: str) -> str:
+    """Remove leaked None tokens; keep （?） so audit identity anchors stay stable."""
     out = ans
-    out = out.replace("（None）", "").replace("(None)", "")
+    out = out.replace("（None）", "（—）").replace("(None)", "(—)")
     out = out.replace("チームNone位", "オープン参加")
     out = out.replace("None位", "")
-    out = re.sub(r"（\?）", "", out)
-    out = re.sub(r"\(\?\)", "", out)
     out = re.sub(r"None年", "", out)
+    # do not strip （?） — needed for 総合N位（?） identity projection checks
     out = re.sub(r"\s{2,}", " ", out)
     out = re.sub(r"（\s*）", "", out)
     return out
