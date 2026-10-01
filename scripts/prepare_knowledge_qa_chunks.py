@@ -119,7 +119,7 @@ def chunk_source(raw, suffix):
             # the same parsing; no dates or fields are inferred from filenames.
             return [{"kind": "structured", "units": units}
                     for units in pack_units(object_units(value))]
-        except (ValueError, yaml.YAMLError):
+        except (ValueError, TypeError, yaml.YAMLError):
             # Invalid imported JSON is retained as text, not silently discarded.
             pass
     parts = []
