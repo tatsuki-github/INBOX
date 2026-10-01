@@ -1,0 +1,428 @@
+[
+  {
+    "source": "input/external/drive/shared/大会/2025年度/1015_荒玉中体連駅伝（玉名荒尾）/参加計画1.pdf.md.meta.json",
+    "chunk_ids": [
+      "knowledge-3f1b00556c34e31ee61a5234"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": {\"fileSize\": 1017817, \"id\": \"13jxQlVp953do7w_Vrb0T9aYjgQE76sYg\", \"importedAs\": null, \"mimeType\": \"application/pdf\", \"parentId\": \"16wyldCo5M67eTbTKMyNEeC9OPf0tV7KL\", \"skipReason\": \"PDF binary not imported; meta+viewUrl only (ADR 010)\", \"status\": \"stub\", \"stubReason\": \"binary deferred; use viewUrl\", \"title\": \"参加計画1.pdf\", \"viewUrl\": \"https://drive.google.com/file/d/13jxQlVp953do7w_Vrb0T9aYjgQE76sYg/view\"}}"
+  },
+  {
+    "source": "input/external/drive/shared/大会/2025年度/1015_荒玉中体連駅伝（玉名荒尾）/参加計画2.pdf.md.meta.json",
+    "chunk_ids": [
+      "knowledge-b688626b1b847c2dad0d62c2"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": {\"fileSize\": 1102212, \"id\": \"1o6SkMOyeNtaEUKRLMRHRkXOLn1SrvNMT\", \"importedAs\": null, \"mimeType\": \"application/pdf\", \"parentId\": \"16wyldCo5M67eTbTKMyNEeC9OPf0tV7KL\", \"skipReason\": \"PDF binary not imported; meta+viewUrl only (ADR 010)\", \"status\": \"stub\", \"stubReason\": \"binary deferred; use viewUrl\", \"title\": \"参加計画2.pdf\", \"viewUrl\": \"https://drive.google.com/file/d/1o6SkMOyeNtaEUKRLMRHRkXOLn1SrvNMT/view\"}}"
+  },
+  {
+    "source": "input/external/drive/shared/大会/2025年度/1015_荒玉中体連駅伝（玉名荒尾）/女子の結果.JPG.md.meta.json",
+    "chunk_ids": [
+      "knowledge-8e9ff6cf9ac2c8c785dc6d89"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": {\"fileSize\": \"470947\", \"id\": \"1Ob_16QTu6vvMbQZzPgtvni7-NBGKteuR\", \"mimeType\": \"image/jpeg\", \"modifiedTime\": \"\", \"parentId\": \"16wyldCo5M67eTbTKMyNEeC9OPf0tV7KL\", \"stubReason\": \"binary deferred; use viewUrl\", \"title\": \"女子の結果.JPG\", \"viewUrl\": \"https://drive.google.com/file/d/1Ob_16QTu6vvMbQZzPgtvni7-NBGKteuR/view?usp=drivesdk\"}}"
+  },
+  {
+    "source": "input/external/drive/shared/大会/2025年度/1015_荒玉中体連駅伝（玉名荒尾）/女子オーダー.md.meta.json",
+    "chunk_ids": [
+      "knowledge-5b8ed5913902f9c75aad4068"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": {\"fileSize\": \"370396\", \"id\": \"1LKkiu1FBHQN7ANvHOB0xPWuR5UhT2q1T\", \"mimeType\": \"image/jpeg\", \"modifiedTime\": \"\", \"parentId\": \"16wyldCo5M67eTbTKMyNEeC9OPf0tV7KL\", \"stubReason\": \"binary deferred; use viewUrl\", \"title\": \"女子オーダー\", \"viewUrl\": \"https://drive.google.com/file/d/1LKkiu1FBHQN7ANvHOB0xPWuR5UhT2q1T/view?usp=drivesdk\"}}"
+  },
+  {
+    "source": "input/external/drive/shared/大会/2025年度/1015_荒玉中体連駅伝（玉名荒尾）/岱明の結果.md.meta.json",
+    "chunk_ids": [
+      "knowledge-9c5f2ba3a112e11b7e758fff"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": {\"id\": \"1-lUDvbgseGmez910dhX9LvRskV_uSDvJ3R7IYbbji1U\", \"importedAs\": \"markdown\", \"mimeType\": \"application/vnd.google-apps.document\", \"parentId\": \"16wyldCo5M67eTbTKMyNEeC9OPf0tV7KL\", \"skipReason\": null, \"status\": \"imported\", \"title\": \"岱明の結果\", \"viewUrl\": \"https://docs.google.com/document/d/1-lUDvbgseGmez910dhX9LvRskV_uSDvJ3R7IYbbji1U/edit\"}}"
+  },
+  {
+    "source": "input/external/drive/shared/大会/2025年度/1015_荒玉中体連駅伝（玉名荒尾）/男子の結果.JPG.md.meta.json",
+    "chunk_ids": [
+      "knowledge-bc8fe8055ed546ac225569d2"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": {\"fileSize\": \"506877\", \"id\": \"1G3p7uvkrDO3859IsupLU1EiKKxOifzwV\", \"mimeType\": \"image/jpeg\", \"modifiedTime\": \"\", \"parentId\": \"16wyldCo5M67eTbTKMyNEeC9OPf0tV7KL\", \"stubReason\": \"binary deferred; use viewUrl\", \"title\": \"男子の結果.JPG\", \"viewUrl\": \"https://drive.google.com/file/d/1G3p7uvkrDO3859IsupLU1EiKKxOifzwV/view?usp=drivesdk\"}}"
+  },
+  {
+    "source": "input/external/drive/shared/大会/2025年度/1015_荒玉中体連駅伝（玉名荒尾）/男子オーダー.md.meta.json",
+    "chunk_ids": [
+      "knowledge-080d6b17fe0e032218f801ef"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": {\"fileSize\": \"445845\", \"id\": \"143eQA2hcXtmEv5L0P2nsP8GMPT3u1Vxu\", \"mimeType\": \"image/jpeg\", \"modifiedTime\": \"\", \"parentId\": \"16wyldCo5M67eTbTKMyNEeC9OPf0tV7KL\", \"stubReason\": \"binary deferred; use viewUrl\", \"title\": \"男子オーダー\", \"viewUrl\": \"https://drive.google.com/file/d/143eQA2hcXtmEv5L0P2nsP8GMPT3u1Vxu/view?usp=drivesdk\"}}"
+  },
+  {
+    "source": "input/external/drive/shared/大会/2025年度/1118_熊本市中長距離選手権/スタートリスト.pdf.md.meta.json",
+    "chunk_ids": [
+      "knowledge-93c62f2bffd7694c6d22122f"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": {\"fileSize\": \"290169\", \"id\": \"1p_MLy6Qipyz-t9WPTgCfN2SXjuR6zm1o\", \"mimeType\": \"application/pdf\", \"modifiedTime\": \"\", \"parentId\": \"1779L2nrg7nDxnCP44MkrPsBno_vMAJKe\", \"stubReason\": \"binary deferred; use viewUrl\", \"title\": \"スタートリスト.pdf\", \"viewUrl\": \"https://drive.google.com/file/d/1p_MLy6Qipyz-t9WPTgCfN2SXjuR6zm1o/view?usp=drivesdk\"}}"
+  },
+  {
+    "source": "input/external/drive/shared/大会/2025年度/1118_熊本市中長距離選手権/岱明の結果.md.meta.json",
+    "chunk_ids": [
+      "knowledge-e05f8e20ee8ae3f4b61236a3"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": {\"id\": \"12OnACvygc2k3xLXI_hS81YMpSlpKjKH86tPf2fe4nzo\", \"importedAs\": \"markdown\", \"mimeType\": \"application/vnd.google-apps.document\", \"modifiedTime\": \"2025-11-22T09:54:35.229Z\", \"parentId\": \"1779L2nrg7nDxnCP44MkrPsBno_vMAJKe\", \"skipReason\": null, \"status\": \"imported\", \"title\": \"岱明の結果\", \"viewUrl\": \"https://docs.google.com/document/d/12OnACvygc2k3xLXI_hS81YMpSlpKjKH86tPf2fe4nzo/edit\"}}"
+  },
+  {
+    "source": "input/external/drive/shared/大会/2025年度/1118_熊本市中長距離選手権/岱明の計画.JPG.md.meta.json",
+    "chunk_ids": [
+      "knowledge-a4726705d495abeb6df50218"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": {\"fileSize\": \"133724\", \"id\": \"17vsh35Jbz1YnhzySCp86nNNNhV6NsqxL\", \"mimeType\": \"image/jpeg\", \"modifiedTime\": \"\", \"parentId\": \"1779L2nrg7nDxnCP44MkrPsBno_vMAJKe\", \"stubReason\": \"binary deferred; use viewUrl\", \"title\": \"岱明の計画.JPG\", \"viewUrl\": \"https://drive.google.com/file/d/17vsh35Jbz1YnhzySCp86nNNNhV6NsqxL/view?usp=drivesdk\"}}"
+  },
+  {
+    "source": "input/external/drive/shared/大会/2025年度/1118_熊本市中長距離選手権/競技日程・注意事項・審判他.pdf.md.meta.json",
+    "chunk_ids": [
+      "knowledge-27340a32ac66bef9cba2c9fd"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": {\"fileSize\": \"224728\", \"id\": \"1MEhmQQTZiuO5PKqCRUR2PwNUJsOuY3Fa\", \"mimeType\": \"application/pdf\", \"modifiedTime\": \"\", \"parentId\": \"1779L2nrg7nDxnCP44MkrPsBno_vMAJKe\", \"stubReason\": \"binary deferred; use viewUrl\", \"title\": \"競技日程・注意事項・審判他.pdf\", \"viewUrl\": \"https://drive.google.com/file/d/1MEhmQQTZiuO5PKqCRUR2PwNUJsOuY3Fa/view?usp=drivesdk\"}}"
+  },
+  {
+    "source": "input/external/drive/shared/大会/2025年度/1118_熊本市中長距離選手権/要項.pdf.md.meta.json",
+    "chunk_ids": [
+      "knowledge-cca62540d925f9601dd276e9"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": {\"fileSize\": 105235, \"id\": \"1FVOuaIVKroQp6Ij43mTENmcq5MYWOoVx\", \"importedAs\": \"要項.pdf.md\", \"mimeType\": \"application/pdf\", \"modifiedTime\": \"2025-11-18T12:29:35.549Z\", \"parentId\": \"1779L2nrg7nDxnCP44MkrPsBno_vMAJKe\", \"skipReason\": \"PDF binary not imported; searchable stub + viewUrl (ADR 010)\", \"status\": \"stub\", \"title\": \"要項.pdf\", \"viewUrl\": \"https://drive.google.com/file/d/1FVOuaIVKroQp6Ij43mTENmcq5MYWOoVx/view?usp=drivesdk\"}}"
+  },
+  {
+    "source": "input/external/drive/shared/大会/2025年度/1130_玉名市民マラソン/IMG_0247.JPG.md.meta.json",
+    "chunk_ids": [
+      "knowledge-37f23558df452139938acedc"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": {\"fileSize\": \"117754\", \"id\": \"1aXsWXo1zVnUE8evOCTtsgguAi2cTqIih\", \"mimeType\": \"image/jpeg\", \"modifiedTime\": \"\", \"parentId\": \"1kpGBjokHgieMg3KIDX4e9lYyk92B8jC0\", \"stubReason\": \"binary deferred; use viewUrl\", \"title\": \"IMG_0247.JPG\", \"viewUrl\": \"https://drive.google.com/file/d/1aXsWXo1zVnUE8evOCTtsgguAi2cTqIih/view?usp=drivesdk\"}}"
+  },
+  {
+    "source": "input/external/drive/shared/大会/2025年度/1130_玉名市民マラソン/コース.pdf.md.meta.json",
+    "chunk_ids": [
+      "knowledge-57355e3697f69bc7915b1f3d"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": {\"fileSize\": \"1925571\", \"id\": \"1GoTv8m5LVqc0CKZXxzdqNoj5AY_PYZFE\", \"mimeType\": \"application/pdf\", \"modifiedTime\": \"\", \"parentId\": \"1kpGBjokHgieMg3KIDX4e9lYyk92B8jC0\", \"stubReason\": \"binary deferred; use viewUrl\", \"title\": \"コース.pdf\", \"viewUrl\": \"https://drive.google.com/file/d/1GoTv8m5LVqc0CKZXxzdqNoj5AY_PYZFE/view?usp=drivesdk\"}}"
+  },
+  {
+    "source": "input/external/drive/shared/大会/2025年度/1130_玉名市民マラソン/岱明の結果.md.meta.json",
+    "chunk_ids": [
+      "knowledge-368d3d31878d25f8377764a0"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": {\"id\": \"12ZF_8VJpfKDh4N5rKVl5C0rToAKmSXc1teqqy1RjOJg\", \"importedAs\": \"markdown\", \"localName\": \"岱明の結果.md\", \"mimeType\": \"application/vnd.google-apps.document\", \"modifiedTime\": \"2025-11-30T04:37:38.699Z\", \"parentId\": \"1kpGBjokHgieMg3KIDX4e9lYyk92B8jC0\", \"skipReason\": null, \"status\": \"imported\", \"title\": \"玉名市民マラソン_岱明の結果\", \"viewUrl\": \"https://docs.google.com/document/d/12ZF_8VJpfKDh4N5rKVl5C0rToAKmSXc1teqqy1RjOJg/edit\"}}"
+  },
+  {
+    "source": "input/external/drive/shared/大会/2025年度/1130_玉名市民マラソン/要項.pdf.md.meta.json",
+    "chunk_ids": [
+      "knowledge-aaf1e179ff13b77f31d1cbf3"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": {\"fileSize\": \"211174\", \"id\": \"1PdD1TkvT3EFDHrECUN5Dn76uo-ZDZzp0\", \"mimeType\": \"application/pdf\", \"modifiedTime\": \"\", \"parentId\": \"1kpGBjokHgieMg3KIDX4e9lYyk92B8jC0\", \"stubReason\": \"binary deferred; use viewUrl\", \"title\": \"要項 .pdf\", \"viewUrl\": \"https://drive.google.com/file/d/1PdD1TkvT3EFDHrECUN5Dn76uo-ZDZzp0/view?usp=drivesdk\"}}"
+  },
+  {
+    "source": "input/external/drive/shared/大会/2025年度/1130_玉名市民マラソン/駐車券.pdf.md.meta.json",
+    "chunk_ids": [
+      "knowledge-3523fb923d3d31b89f368b45"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": {\"fileSize\": \"198764\", \"id\": \"1ptLEbD_Pm-NkvZLQMuH4MTIJuy-RIW_-\", \"mimeType\": \"application/pdf\", \"modifiedTime\": \"\", \"parentId\": \"1kpGBjokHgieMg3KIDX4e9lYyk92B8jC0\", \"stubReason\": \"binary deferred; use viewUrl\", \"title\": \"駐車券.pdf\", \"viewUrl\": \"https://drive.google.com/file/d/1ptLEbD_Pm-NkvZLQMuH4MTIJuy-RIW_-/view?usp=drivesdk\"}}"
+  },
+  {
+    "source": "input/external/drive/shared/大会/2026年度/0125_玉名駅伝/概要.md.meta.json",
+    "chunk_ids": [
+      "knowledge-61460ce7f981448265f92415"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": {\"id\": \"1v2TFZLUVFo5mStNYYfIJDklvSfGHztPJkNgnS_aNMEU\", \"mimeType\": \"application/vnd.google-apps.document\", \"modifiedTime\": \"2026-09-08T12:15:36.984Z\", \"parentId\": \"1OzqPA1aHnB_bWVE9kuRrgOdw3dOQeyLE\", \"title\": \"概要\", \"viewUrl\": \"https://docs.google.com/document/d/1v2TFZLUVFo5mStNYYfIJDklvSfGHztPJkNgnS_aNMEU/edit\"}}"
+  },
+  {
+    "source": "input/external/drive/shared/大会/2026年度/0208_熊日駅伝/概要.md.meta.json",
+    "chunk_ids": [
+      "knowledge-b0a5561f49d4b1b34259d434"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": {\"id\": \"1G4TqVOg50RiMtGzy4jb1hzc6J9jWmsD9n9gT0ZkMfcI\", \"mimeType\": \"application/vnd.google-apps.document\", \"modifiedTime\": \"2026-09-08T12:15:40.979Z\", \"parentId\": \"1GAYJhrQmLMVrTzeH8Xymjfaw2SqZsFK6\", \"title\": \"概要\", \"viewUrl\": \"https://docs.google.com/document/d/1G4TqVOg50RiMtGzy4jb1hzc6J9jWmsD9n9gT0ZkMfcI/edit\"}}"
+  },
+  {
+    "source": "input/external/drive/shared/大会/2026年度/0315_金栗駅伝/概要.md.meta.json",
+    "chunk_ids": [
+      "knowledge-96c829df6b635ec67c997f66"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": {\"id\": \"1HmoGoahWZ7QmDjIKTuPCI9bFbNal5ecTeKoNdjQO0vE\", \"mimeType\": \"application/vnd.google-apps.document\", \"modifiedTime\": \"2026-09-08T12:15:45.314Z\", \"parentId\": \"1LSreScB5ubzLQ8_hTLeaAQuQCKvAwTKg\", \"title\": \"概要\", \"viewUrl\": \"https://docs.google.com/document/d/1HmoGoahWZ7QmDjIKTuPCI9bFbNal5ecTeKoNdjQO0vE/edit\"}}"
+  },
+  {
+    "source": "input/external/drive/shared/大会/2026年度/0411_第３４回金栗記念選抜陸上中長距離熊本大会/岱明の結果.md.meta.json",
+    "chunk_ids": [
+      "knowledge-7092b17929378e7eafeb9f38"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": {\"id\": \"1QcEZQLx0LEyS8JQ7hz6eLmtQTN4vj1HYZjcA1el4oQM\", \"importedAs\": \"markdown\", \"localName\": \"岱明の結果.md\", \"mimeType\": \"application/vnd.google-apps.document\", \"parentId\": \"1JwNJASek89dWLqrUhYeO2AFQS4GNtT0X\", \"skipReason\": null, \"status\": \"imported\", \"title\": \"結果\", \"viewUrl\": \"https://docs.google.com/document/d/1QcEZQLx0LEyS8JQ7hz6eLmtQTN4vj1HYZjcA1el4oQM/edit\"}}"
+  },
+  {
+    "source": "input/external/drive/shared/大会/2026年度/0411_第３４回金栗記念選抜陸上中長距離熊本大会/概要.md.meta.json",
+    "chunk_ids": [
+      "knowledge-6a331a6a25f376131da1b338"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": {\"id\": \"101MFazrtVu0c9JStUxQDR74I1SM7ok1itmDO5fsQnVE\", \"importedAs\": \"markdown\", \"mimeType\": \"application/vnd.google-apps.document\", \"parentId\": \"1JwNJASek89dWLqrUhYeO2AFQS4GNtT0X\", \"skipReason\": null, \"status\": \"imported\", \"title\": \"概要\", \"viewUrl\": \"https://docs.google.com/document/d/101MFazrtVu0c9JStUxQDR74I1SM7ok1itmDO5fsQnVE/edit\"}}"
+  },
+  {
+    "source": "input/external/drive/shared/大会/2026年度/0418_第４５回熊本市陸上競技選手権大会/岱明の結果.md.meta.json",
+    "chunk_ids": [
+      "knowledge-98b45d2f754f7d64fa4bf53c"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": {\"id\": \"1MC3hi0Y3QDl4qRzHR81gdl1yARO9hK_Qg8ICqqBXFUI\", \"importedAs\": \"markdown\", \"localName\": \"岱明の結果.md\", \"mimeType\": \"application/vnd.google-apps.document\", \"modifiedTime\": \"2026-09-09T09:41:23.634Z\", \"parentId\": \"1dn6PfQrcLizw6jioPF45R-_XOz3n6yyi\", \"skipReason\": null, \"status\": \"imported\", \"title\": \"結果\", \"viewUrl\": \"https://docs.google.com/document/d/1MC3hi0Y3QDl4qRzHR81gdl1yARO9hK_Qg8ICqqBXFUI/edit\"}}"
+  },
+  {
+    "source": "input/external/drive/shared/大会/2026年度/0509_第１回熊本県長距離記録会/岱明の結果.md.meta.json",
+    "chunk_ids": [
+      "knowledge-754b2e7e9d0b1e94e3a4ab5e"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": {\"id\": \"1gwvI5TmbKNbdwJgL7eKvAWNtoMzfmu5Dge3mz88xh3w\", \"importedAs\": \"markdown\", \"localName\": \"岱明の結果.md\", \"mimeType\": \"application/vnd.google-apps.document\", \"modifiedTime\": \"2026-09-09T09:40:01.432Z\", \"parentId\": \"1U2rcxUwYzwdymUPL8ccjl-f1Ae4ZQzk2\", \"skipReason\": null, \"status\": \"imported\", \"title\": \"結果\", \"viewUrl\": \"https://docs.google.com/document/d/1gwvI5TmbKNbdwJgL7eKvAWNtoMzfmu5Dge3mz88xh3w/edit\"}}"
+  },
+  {
+    "source": "input/external/drive/shared/大会/2026年度/0523-0524_熊本県中学校陸上選手権・混成/岱明の結果.md.meta.json",
+    "chunk_ids": [
+      "knowledge-16d2c8edfd52fd03d443a80c"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": {\"id\": \"1H7Y9CiyUH7HzofuC5HeIO0lsJT-S0iDbFeWPJjbbw_k\", \"importedAs\": \"markdown\", \"localName\": \"岱明の結果.md\", \"mimeType\": \"application/vnd.google-apps.document\", \"parentId\": \"1bJOQWGH1bxgvqS7Wa8xj9iEHnHUdmzrT\", \"skipReason\": null, \"status\": \"imported\", \"title\": \"結果\", \"viewUrl\": \"https://docs.google.com/document/d/1H7Y9CiyUH7HzofuC5HeIO0lsJT-S0iDbFeWPJjbbw_k/edit\"}}"
+  },
+  {
+    "source": "input/external/drive/shared/大会/2026年度/0613_全日本中学校通信陸上競技大会熊本県大会/岱明の結果.md.meta.json",
+    "chunk_ids": [
+      "knowledge-f68a8b54b6286d128c0b6b19"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": {\"id\": \"1gjaw6NSdctUYc1KRKtjipL7e_AvA_pLY-u3OxFxK1-Y\", \"importedAs\": \"markdown\", \"localName\": \"岱明の結果.md\", \"mimeType\": \"application/vnd.google-apps.document\", \"modifiedTime\": \"2026-09-09T09:40:10.410Z\", \"parentId\": \"10hXQ5qJD00tmfuGUcNMkM4Lgx15_-kt3\", \"skipReason\": null, \"status\": \"imported\", \"title\": \"結果\", \"viewUrl\": \"https://docs.google.com/document/d/1gjaw6NSdctUYc1KRKtjipL7e_AvA_pLY-u3OxFxK1-Y/edit\"}}"
+  },
+  {
+    "source": "input/external/drive/shared/大会/2026年度/0628_荒尾選手権/岱明の結果.md.meta.json",
+    "chunk_ids": [
+      "knowledge-f2d7f4272e8d1b97e6801057"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": {\"id\": \"1EkGfA9y59xQBsS4Y2XH8yEEZ6vDglNsnLv1D2kTk1ZU\", \"importedAs\": \"markdown\", \"localName\": \"岱明の結果.md\", \"mimeType\": \"application/vnd.google-apps.document\", \"modifiedTime\": \"2026-09-08T12:16:58.923Z\", \"parentId\": \"1jG2-V7hbMduasWtjuDX38fsab-CXj4oJ\", \"skipReason\": null, \"status\": \"imported\", \"title\": \"結果\", \"viewUrl\": \"https://docs.google.com/document/d/1EkGfA9y59xQBsS4Y2XH8yEEZ6vDglNsnLv1D2kTk1ZU/edit\"}}"
+  },
+  {
+    "source": "input/external/drive/shared/大会/2026年度/0704_第２回熊本県長距離記録会/岱明の結果.md.meta.json",
+    "chunk_ids": [
+      "knowledge-6daed6bb1f7da5d93a0ff0bf"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": {\"id\": \"1Lx1yVCWjfYo5QnCvZdX9_I1zP5-OISZg1OCtFnkcTkw\", \"importedAs\": \"markdown\", \"localName\": \"岱明の結果.md\", \"mimeType\": \"application/vnd.google-apps.document\", \"modifiedTime\": \"2026-09-09T09:40:14.843Z\", \"parentId\": \"1e5Lv3XSBSTaH08v86reDYUjkq86IAxjd\", \"skipReason\": null, \"status\": \"imported\", \"title\": \"結果\", \"viewUrl\": \"https://docs.google.com/document/d/1Lx1yVCWjfYo5QnCvZdX9_I1zP5-OISZg1OCtFnkcTkw/edit\"}}"
+  },
+  {
+    "source": "input/external/drive/shared/大会/2026年度/0718-0720_熊本県中学校総合体育大会陸上競技大会/岱明の結果.md.meta.json",
+    "chunk_ids": [
+      "knowledge-2b9002548039dca060edec7b"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": {\"id\": \"1YaYTtu_LO1iBcIkYkvjEywvj1XGtm2cJVgfFcAtGnBw\", \"importedAs\": \"markdown\", \"localName\": \"岱明の結果.md\", \"mimeType\": \"application/vnd.google-apps.document\", \"modifiedTime\": \"2026-09-09T09:40:16.199Z\", \"parentId\": \"1O3iNv83D6pevHu6LzkpYgJ6LOT4qP6sz\", \"skipReason\": null, \"status\": \"imported\", \"title\": \"結果\", \"viewUrl\": \"https://docs.google.com/document/d/1YaYTtu_LO1iBcIkYkvjEywvj1XGtm2cJVgfFcAtGnBw/edit\"}}"
+  },
+  {
+    "source": "input/external/drive/shared/大会/2026年度/0801_玉名選手権（中止）/概要.md.meta.json",
+    "chunk_ids": [
+      "knowledge-d0b937b7349acedf72d39512"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": {\"id\": \"1do7ZmCLOGWVzNYdP4NqyLtRQ0Uy-qgo53pWQ8kSjNf8\", \"mimeType\": \"application/vnd.google-apps.document\", \"modifiedTime\": \"2026-09-08T12:17:12.286Z\", \"parentId\": \"1360u2a0cZpQMX3XTo70ilc2sA-btEoS1\", \"title\": \"概要\", \"viewUrl\": \"https://docs.google.com/document/d/1do7ZmCLOGWVzNYdP4NqyLtRQ0Uy-qgo53pWQ8kSjNf8/edit\"}}"
+  },
+  {
+    "source": "input/external/drive/shared/大会/2026年度/0829_ジュニアオリンピックU16熊本県予選会/岱明の結果.md.meta.json",
+    "chunk_ids": [
+      "knowledge-4349442362673e7a151f183c"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": {\"id\": \"16xBgqrJR6778tB8CT65s9k9sQ-qc1T7cAC9BkW0Q9-U\", \"importedAs\": \"markdown\", \"localName\": \"岱明の結果.md\", \"mimeType\": \"application/vnd.google-apps.document\", \"modifiedTime\": \"2026-09-08T12:17:22.530Z\", \"parentId\": \"1Myj8-fE-qwCUevBl0fo7OCT4y6FCW-p0\", \"skipReason\": null, \"status\": \"imported\", \"title\": \"結果\", \"viewUrl\": \"https://docs.google.com/document/d/16xBgqrJR6778tB8CT65s9k9sQ-qc1T7cAC9BkW0Q9-U/edit\"}}"
+  },
+  {
+    "source": "input/external/drive/shared/大会/2026年度/0829_玉名郡ナイター中・長距離記録会/参加者メモ.md.meta.json",
+    "chunk_ids": [
+      "knowledge-ca01ba9f17be0bff6a7e8157"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": {\"id\": \"1lGhyF4XAOG9B49Nf4NjPCwjKlAhTzwxm1Gc_DbaPCJg\", \"importedAs\": \"markdown\", \"mimeType\": \"application/vnd.google-apps.document\", \"modifiedTime\": \"2026-09-08T12:17:37.613Z\", \"parentId\": \"1L9RE6ZK_qmehh9sj7bYK7W5A4wKZU82t\", \"skipReason\": null, \"status\": \"imported\", \"title\": \"参加者メモ\", \"viewUrl\": \"https://docs.google.com/document/d/1lGhyF4XAOG9B49Nf4NjPCwjKlAhTzwxm1Gc_DbaPCJg/edit\"}}"
+  },
+  {
+    "source": "input/external/drive/shared/大会/2026年度/0829_玉名郡ナイター中・長距離記録会/岱明の結果.md.meta.json",
+    "chunk_ids": [
+      "knowledge-046d95763640eaaa676e32f4"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": {\"id\": \"1k4ka2olKO0ZQPgwTYKxOzMlGaHFjWwAzQsx3uanjMf4\", \"importedAs\": \"markdown\", \"localName\": \"岱明の結果.md\", \"mimeType\": \"application/vnd.google-apps.document\", \"modifiedTime\": \"2026-09-08T12:17:13.509Z\", \"parentId\": \"1L9RE6ZK_qmehh9sj7bYK7W5A4wKZU82t\", \"skipReason\": null, \"status\": \"imported\", \"title\": \"結果\", \"viewUrl\": \"https://docs.google.com/document/d/1k4ka2olKO0ZQPgwTYKxOzMlGaHFjWwAzQsx3uanjMf4/edit\"}}"
+  },
+  {
+    "source": "input/external/drive/shared/大会/2026年度/0920_中学駅伝金栗四三生誕の地なごみ大会/成績表.json",
+    "chunk_ids": [
+      "knowledge-90b09ccfb35b2a6e553834ba",
+      "knowledge-69ecdcb6dca2adfcca81267b",
+      "knowledge-0505fee8b57f2e0e1d50cb2f",
+      "knowledge-9f28ae8f6a8ac7ae5a5ac717",
+      "knowledge-bd0027b548892c25b1b615df",
+      "knowledge-330432ae7ace81729d33b5d1",
+      "knowledge-1137f65c0ef4882e306f6823"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"/event\", \"value\": {\"date\": \"2026-09-20\", \"sources\": [\"女子成績表.pdf\", \"男子成績表.pdf\", \"女子成績表.jpg\", \"男子成績表_1.jpg\", \"男子成績表_2.jpg\"], \"title\": \"第12回 中学駅伝金栗四三生誕の地なごみ大会\", \"venue\": \"和水町三加和公民館前発着周回コース\"}}"
+  },
+  {
+    "source": "input/external/drive/shared/大会/2026年度/0920_中学駅伝金栗四三生誕の地なごみ大会/開催要項.md.meta.json",
+    "chunk_ids": [
+      "knowledge-7aeaa60abb4dc09c0fd79076"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": {\"id\": \"1StOtyLMoZ4NiacdLbUaBG0qE3GwFY7iphFiPgBxmGog\", \"importedAs\": \"markdown\", \"mimeType\": \"application/vnd.google-apps.document\", \"modifiedTime\": \"2026-09-08T12:18:10.862Z\", \"parentId\": \"1k-zW0irJ-OjDjqQwUQLZIs4C6PfuR211\", \"skipReason\": null, \"status\": \"imported\", \"title\": \"開催要項\", \"viewUrl\": \"https://docs.google.com/document/d/1StOtyLMoZ4NiacdLbUaBG0qE3GwFY7iphFiPgBxmGog/edit\"}}"
+  },
+  {
+    "source": "input/external/drive/shared/大会/2026年度/0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）/オープン男女_スタートリスト.pdf.md.meta.json",
+    "chunk_ids": [
+      "knowledge-154fd29eebdf7f8949a6b476"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": {\"date\": \"2026-09-26\", \"downloadUrl\": \"http://kumariku.com/info/wp-content/uploads/2026/08/2a34b3da0a1004c966215b0f045bb7b2.pdf\", \"importedAs\": \"page-wise table extraction\", \"mimeType\": \"application/pdf\", \"pages\": 1, \"pdfSha256\": \"6a85e08fa4ba522bd05ae0df167b0cbbb6bf19b5c6d6787a8eb577c32bbeb6dc\", \"sourceUrl\": \"http://kumariku.com/competition/?id=9730\", \"title\": \"オープン男女_スタートリスト.pdf\"}}"
+  },
+  {
+    "source": "input/external/drive/shared/大会/2026年度/0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）/チャレンジの部_スタートリスト.pdf.md.meta.json",
+    "chunk_ids": [
+      "knowledge-9de1d2ba727b2fce8380e7d4"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": {\"date\": \"2026-09-26\", \"downloadUrl\": \"http://kumariku.com/info/wp-content/uploads/2026/08/0b974d43c24127a119fbd1639ebab4f9.pdf\", \"importedAs\": \"page-wise table extraction\", \"mimeType\": \"application/pdf\", \"pages\": 4, \"pdfSha256\": \"117b6a5f392b379f822a6adf78c859003d5d66e7bd6238d811756f202b8bcefd\", \"sourceUrl\": \"http://kumariku.com/competition/?id=9730\", \"title\": \"チャレンジの部_スタートリスト.pdf\"}}"
+  },
+  {
+    "source": "input/external/drive/shared/大会/2026年度/0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）/チャンピオンシップの部_スタートリスト.pdf.md.meta.json",
+    "chunk_ids": [
+      "knowledge-32220e857ce38b4640bf9b1c"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": {\"date\": \"2026-09-26\", \"downloadUrl\": \"http://kumariku.com/info/wp-content/uploads/2026/08/511300726646f9a2492eab554db3bcb5.pdf\", \"importedAs\": \"page-wise table extraction\", \"mimeType\": \"application/pdf\", \"pages\": 2, \"pdfSha256\": \"bfcd0556d1790283782e92d8175bbabfd01f181fc139b2a9011dfe5abbb2e389\", \"sourceUrl\": \"http://kumariku.com/competition/?id=9730\", \"title\": \"チャンピオンシップの部_スタートリスト.pdf\"}}"
+  },
+  {
+    "source": "input/external/drive/shared/大会/2026年度/0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）/会場図及び競技注意事項等.pdf.md.meta.json",
+    "chunk_ids": [
+      "knowledge-c773e2e993230e57a5189c1f"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": {\"date\": \"2026-09-26\", \"downloadUrl\": \"http://kumariku.com/info/wp-content/uploads/2026/08/5abb2178ec94cea0e9a7bc388f3dc4bb.pdf\", \"importedAs\": \"page-wise text extraction\", \"mimeType\": \"application/pdf\", \"pages\": 4, \"pdfSha256\": \"c4fc361f49e4d8307b9e6db8c07d9619ae35330c2d20f1bcda2dd9d9558e8fcf\", \"sourceUrl\": \"http://kumariku.com/competition/?id=9730\", \"title\": \"会場図及び競技注意事項等.pdf\"}}"
+  },
+  {
+    "source": "input/external/drive/shared/大会/2026年度/0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）/概要.md.meta.json",
+    "chunk_ids": [
+      "knowledge-5769de54152a469c97d840ea"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": {\"id\": \"1oCaamGYThaERXPUKW5KryMPtR-iwdllxxbtiZi5JeAw\", \"mimeType\": \"application/vnd.google-apps.document\", \"modifiedTime\": \"2026-09-08T12:18:19.780Z\", \"parentId\": \"1pUww3wPlyy4IoSNUy58qK9yhCRzeU_-2\", \"title\": \"概要\", \"viewUrl\": \"https://docs.google.com/document/d/1oCaamGYThaERXPUKW5KryMPtR-iwdllxxbtiZi5JeAw/edit\"}}"
+  },
+  {
+    "source": "input/external/drive/shared/大会/2026年度/1010_第４回熊本県長距離記録会/概要.md.meta.json",
+    "chunk_ids": [
+      "knowledge-98c9aaa12e7e3bd8b9bc6030"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": {\"id\": \"1RwNPrfdHvkPqFhz8DNbmRhQCZDz3ZRJJgme-0mk5w0M\", \"mimeType\": \"application/vnd.google-apps.document\", \"modifiedTime\": \"2026-09-08T12:18:23.617Z\", \"parentId\": \"1kYZCyozlXMvBOaYjgOr8n3BnaAt4VTqg\", \"title\": \"概要\", \"viewUrl\": \"https://docs.google.com/document/d/1RwNPrfdHvkPqFhz8DNbmRhQCZDz3ZRJJgme-0mk5w0M/edit\"}}"
+  },
+  {
+    "source": "input/external/drive/shared/大会/2026年度/1014-1015_荒玉中体連駅伝/人間考慮_女子.yaml",
+    "chunk_ids": [
+      "knowledge-abc8a5e2cb1f633466e4003d"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": {\"adjustments\": [{\"athlete\": \"山﨑 莉奈\", \"leg\": 2, \"reason\": \"2区は6:50でいける\", \"set_sec\": 410, \"team\": \"岱明中\"}, {\"athlete\": \"川原 芽吹\", \"delta_sec\": 45, \"reason\": \"今年フォーム落ち。前年A1区実績の伸びを打ち消し、直近トラック寄りに\"}, {\"athlete\": \"山川 綾\", \"reason\": \"伸びが限定的との情報から過大な上昇を抑える（約7:29）\", \"set_sec\": 449, \"team\": \"長洲中\"}], \"formula_adjustments\": [{\"athlete\": \"増岡 里俐\", \"leg\": 4, \"reason\": \"ユーザーの最新指示により増岡里俐の4区予想を7:28に設定\", \"set_sec\": 448, \"team\": \"岱明中\"}, {\"leg\": 2, \"reason\": \"猿渡（妹）の暫定値。村里の旧予想7:16より2秒速く設定\", \"set_sec\": 434, \"team\": \"長洲中\"}, {\"athlete\": \"山川 綾\", \"reason\": \"ユーザー指定の7:20を保持して山川綾を4区に配置\", \"set_sec\": 440, \"team\": \"長洲中\"}, {\"athlete\": \"福山 結衣\", \"delta_sec\": -5, \"reason\": \"2026-09-29ユーザー指示により現行の数式予想を5秒速める\", \"team\": \"南関中\"}, {\"athlete\": \"猿渡 愛梨\", \"delta_sec\": -5, \"reason\": \"2026-09-29ユーザー指示により現行の数式予想を5秒速める\", \"team\": \"長洲中\"}, {\"athlete\": \"清藤 結唯\", \"delta_sec\": -5, \"reason\": \"2026-09-29ユーザー指示により現行の数式予想を5秒速める\", \"team\": \"玉名中\"}, {\"athlete\": \"佐藤 妃葵\", \"delta_sec\": 9, \"reason\": \"2026-09-29ユーザー指示により当初の数式予想を計+9秒調整（先の5秒調整にさらに4秒）\", \"team\": \"荒尾三中\"}, {\"athlete\": \"内野 沙笑\", \"delta_sec\": -11, \"reason\": \"2026-09-29ユーザー指示により当初の数式予想を計-11秒調整（-5秒、-4秒、さらに-2秒）\", \"team\": \"荒尾三中\"}, {\"athlete\": \"結菜\", \"leg\": 4, \"reason\": \"ユーザー指示により結菜の4区予想を7:20に設定\", \"set_sec\": 440, \"team\": \"玉名中\"}, {\"athlete\": \"濱北 愛\", \"leg\": 3, \"reason\": \"ユーザー指定の7:15を保持して濱北愛を3区に配置\", \"set_sec\": 435, \"team\": \"長洲中\"}, {\"athlete\": \"中村 羽音\", \"leg\": 5, \"reason\": \"ユーザー指示により中村羽音の5区予想を11:04に設定\", \"set_sec\": 664, \"team\": \"長洲中\"}, {\"athlete\": \"平山 結菜\", \"leg\": 3, \"reason\": \"ユーザー指示により平山結菜の3区予想を7:20に設定\", \"set_sec\": 440, \"team\": \"南関中\"}, {\"athlete\": \"原賀 美和\", \"leg\": 4, \"reason\": \"ユーザーの最新指示により原賀美和の4区予想を7:32に設定\", \"set_sec\": 452, \"team\": \"南関中\"}], \"formula_observation_weights\": [{\"meet\": \"なごみ中学駅伝\", \"reason\": \"練習参加とみなし、競技会実績より低い重み\", \"team\": \"玉陵中\", \"weight\": 0.15}], \"gender\": \"女子\", \"grade_overrides\": [{\"athlete\": \"猿渡（妹）\", \"grade\": 1, \"reason\": \"ユーザー情報。中学1年生\", \"team\": \"長洲中\"}], \"lineup_overrides\": [{\"athlete\": \"猿渡（妹）\", \"leg\": 2, \"reason\": \"村里唯花は不出走。妹の正式名・個人記録未確認のため"
+  },
+  {
+    "source": "input/external/drive/shared/大会/2026年度/1014-1015_荒玉中体連駅伝/人間考慮_男子.yaml",
+    "chunk_ids": [
+      "knowledge-a8dd1b3a15cd64d463fcf50d"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": {\"adjustments\": [{\"athlete\": \"松野 凛空\", \"reason\": \"本番1区は9:20でいける\", \"set_sec\": 560}, {\"athlete\": \"田上 颯人\", \"leg\": 4, \"reason\": \"4区は9:40でいける\", \"set_sec\": 580, \"team\": \"岱明中\"}, {\"athlete\": \"今村 昇磨\", \"delta_sec\": -8, \"reason\": \"本番覚醒・殻破り期待（昨年9:38以上）\"}, {\"athlete\": \"山本 哲瑠\", \"delta_sec\": -3, \"reason\": \"なごみより上向き・競り合いで燃える\"}, {\"leg\": 1, \"min_sec\": 530, \"reason\": \"1区はどんなに速くても8:50前後が現実線\", \"team\": \"菊水中\"}, {\"delta_sec\": 20, \"reason\": \"直近フォーム上がらず。Jr以降も調子が乗りきれていない\", \"team\": \"南関中\"}], \"formula_adjustments\": [{\"delta_sec\": 10, \"leg\": 1, \"reason\": \"ジュニア男子で玉名高附43:11・南関44:15・岱明44:23。現行予想では南関が玉名高附とほぼ同タイムのため、地区比較を反映して各区+10秒\", \"team\": \"南関中\"}, {\"delta_sec\": 10, \"leg\": 2, \"reason\": \"ジュニア男子の学校間比較を反映する南関チーム補正\", \"team\": \"南関中\"}, {\"delta_sec\": 10, \"leg\": 3, \"reason\": \"ジュニア男子の学校間比較を反映する南関チーム補正\", \"team\": \"南関中\"}, {\"delta_sec\": 10, \"leg\": 4, \"reason\": \"ジュニア男子の学校間比較を反映する南関チーム補正\", \"team\": \"南関中\"}, {\"delta_sec\": 10, \"leg\": 5, \"reason\": \"ジュニア男子の学校間比較を反映する南関チーム補正\", \"team\": \"南関中\"}, {\"delta_sec\": 10, \"leg\": 6, \"reason\": \"ジュニア男子の学校間比較を反映する南関チーム補正\", \"team\": \"南関中\"}, {\"athlete\": \"隈部侑成\", \"reason\": \"ユーザーの1区評価を反映。区間1位とし、柿本・小倉との差を明確化（8:58）\", \"set_sec\": 538, \"team\": \"菊水中\"}, {\"athlete\": \"柿本晴仁\", \"reason\": \"ユーザーの追加評価を反映し、5秒速めて小倉より上位を維持（9:15）\", \"set_sec\": 555, \"team\": \"玉陵中\"}, {\"athlete\": \"小倉 十和\", \"reason\": \"ユーザーの追加評価を反映し、5秒速めて柿本より下位を維持（9:28）\", \"set_sec\": 568, \"team\": \"玉名高附\"}, {\"athlete\": \"明瀬七跳\", \"reason\": \"なごみ駅伝で明瀬七跳が10:58、中尾快叶が11:03。中尾の現行予測10:02とほぼ同等か少し速い評価を反映し、10:00に設定\", \"set_sec\": 600, \"team\": \"菊水中\"}, {\"athlete\": \"松山哲丈\", \"reason\": \"2026-09-21の3000m SB 9:54.85を本人記録として反映。SBは所属変更により自動観測から外れていたため、3km予測を9:55に設定\", \"set_sec\": 595, \"team\": \"菊水中\"}, {\"athlete\": \"田中 翔大\", \"reason\": \"2026年ジュニア駅伝で田中翔大・田上颯人はともに2.6km 8:26、山本哲瑠は8:34。田上と同等で山本より速い評価を保持。2区2.855kmの9:12を6区3kmへ距離指数1.116866で換算し9:43に設定\", \"set_sec\": 583, \"team\": \"南関中\"}, {\"athlete\": \"松本 空羽\", \"reason\": \"2026-09-29荒玉駅伝試走で5区2.855km 10:11。伸びてきたとのユーザー評価を反映。本番6区3kmは距離差を踏まえ10:55から10:40へ15秒速める\", \"set_sec\": 640, \"team\": \"岱明中\"}, {\"athlete\": \"中尾 快叶\", \"rea"
+  },
+  {
+    "source": "input/external/drive/shared/大会/2026年度/1014-1015_荒玉中体連駅伝/概要.md.meta.json",
+    "chunk_ids": [
+      "knowledge-354afff96a40a4d0ef135dde"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": {\"id\": \"1mmhH_q4gvFt6EMPD8EywW39zAdh9nIGteEStxM5ifk0\", \"mimeType\": \"application/vnd.google-apps.document\", \"modifiedTime\": \"2026-09-08T12:18:27.768Z\", \"parentId\": \"1G8IlaBp9xVmXUynBAjV9ZZQPfFqzj4Yi\", \"title\": \"概要\", \"viewUrl\": \"https://docs.google.com/document/d/1mmhH_q4gvFt6EMPD8EywW39zAdh9nIGteEStxM5ifk0/edit\"}}"
+  },
+  {
+    "source": "input/external/drive/shared/大会/2026年度/1211_岱明中校内駅伝大会/概要.md.meta.json",
+    "chunk_ids": [
+      "knowledge-0889548c43f096695ae8a450"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": {\"id\": \"1JaxpOQFqSJGUbNDwQ4OrkVkzP1tTL7MxhcdyAueqDmk\", \"importedAs\": \"markdown\", \"mimeType\": \"application/vnd.google-apps.document\", \"modifiedTime\": \"2026-09-08T12:18:40.493Z\", \"parentId\": \"1ir7uf7P9r1isU1nHM7WL3IleJ8sgctLW\", \"skipReason\": null, \"status\": \"imported\", \"title\": \"概要\", \"viewUrl\": \"https://docs.google.com/document/d/1JaxpOQFqSJGUbNDwQ4OrkVkzP1tTL7MxhcdyAueqDmk/edit\"}}"
+  },
+  {
+    "source": "input/external/drive/shared/大会/2026年度/1212_第５回熊本県長距離記録会/概要.md.meta.json",
+    "chunk_ids": [
+      "knowledge-3f9f23352376c1974e181b68"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": {\"id\": \"1qo1nk5M9tHN8Bp7s_-HrQr34FW0svNytzPZCMXpa0jY\", \"mimeType\": \"application/vnd.google-apps.document\", \"modifiedTime\": \"2026-09-08T12:18:44.924Z\", \"parentId\": \"1mGWc2b34ST7a3D3S6dAO0Srgdlyhv2fS\", \"title\": \"概要\", \"viewUrl\": \"https://docs.google.com/document/d/1qo1nk5M9tHN8Bp7s_-HrQr34FW0svNytzPZCMXpa0jY/edit\"}}"
+  },
+  {
+    "source": "input/external/drive/shared/大会/荒玉駅伝歴代/_EMPTY.md.meta.json",
+    "chunk_ids": [
+      "knowledge-5923a5a8d021ff0cc87700f9"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": {\"id\": \"1XRxBeG1wkG3c92Y-h5ycPgbBL7Ep1ief\", \"importedAs\": null, \"mimeType\": \"application/vnd.google-apps.folder\", \"skipReason\": \"Folder empty at import time\", \"status\": \"stub\", \"title\": \"荒玉駅伝歴代\", \"viewUrl\": \"https://drive.google.com/drive/folders/1XRxBeG1wkG3c92Y-h5ycPgbBL7Ep1ief\"}}"
+  },
+  {
+    "source": "input/external/drive/shared/練習/玉名市練習会/2025-12-30.md.meta.json",
+    "chunk_ids": [
+      "knowledge-7809858ccdefdde9a5fb2887"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": {\"id\": \"1-rvillAOSAvL-GqawchbJZIfpIoCbL9b7ZZF6fdbUsU\", \"importedAs\": \"markdown\", \"mimeType\": \"application/vnd.google-apps.document\", \"parentId\": \"12rJUlqIg0E-XusEQqD_R00yt4-K8UOXy\", \"skipReason\": null, \"status\": \"imported\", \"title\": \"2025/12/30\", \"viewUrl\": \"https://docs.google.com/document/d/1-rvillAOSAvL-GqawchbJZIfpIoCbL9b7ZZF6fdbUsU/edit\"}}"
+  },
+  {
+    "source": "input/external/drive/shared/練習/練習の記録.csv.meta.json",
+    "chunk_ids": [
+      "knowledge-5e5fda0fc5f56ae28507bae7"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": {\"id\": \"1QZCWaJN-bV4GW26ZONWNXlguTCJ-dSWaGCfgRh3yJ0I\", \"importedAs\": \"csv\", \"mimeType\": \"application/vnd.google-apps.spreadsheet\", \"status\": \"imported\", \"title\": \"練習の記録\", \"viewUrl\": \"https://docs.google.com/spreadsheets/d/1QZCWaJN-bV4GW26ZONWNXlguTCJ-dSWaGCfgRh3yJ0I/edit\"}}"
+  },
+  {
+    "source": "input/external/drive/shared/練習/練習の記録.md.meta.json",
+    "chunk_ids": [
+      "knowledge-8a3e9430dc3a8847ef842fc0"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": {\"id\": \"1HpUIWr6zjIvdHU8wRgwIVRBn0yJ_yppNMpKRORasyCk\", \"importedAs\": \"markdown\", \"mimeType\": \"application/vnd.google-apps.document\", \"status\": \"imported\", \"title\": \"練習の記録\", \"viewUrl\": \"https://docs.google.com/document/d/1HpUIWr6zjIvdHU8wRgwIVRBn0yJ_yppNMpKRORasyCk/edit\"}}"
+  },
+  {
+    "source": "input/external/drive/shared/練習/駅伝試走/2025.pdf.md.meta.json",
+    "chunk_ids": [
+      "knowledge-8c1635fad469543267039df1"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": {\"fileSize\": \"920658\", \"id\": \"1h45jCS2qdXU-_LdebUQkcnDDYpTUtALm\", \"mimeType\": \"application/pdf\", \"modifiedTime\": \"2025-10-08T05:36:21.958Z\", \"parentId\": \"15tcCRtdeO85EmJYAOO_RZHjIP_vFEyUh\", \"stubReason\": \"PDF binary deferred; use viewUrl\", \"title\": \"2025.pdf\", \"viewUrl\": \"https://drive.google.com/file/d/1h45jCS2qdXU-_LdebUQkcnDDYpTUtALm/view?usp=drivesdk\"}}"
+  },
+  {
+    "source": "input/external/drive/shared/記録データベース/2025年度/3000m予想タイムランキング.csv.meta.json",
+    "chunk_ids": [
+      "knowledge-b194fcaf8a5cef1db1935250"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": {\"id\": \"1f-JAd8J_v0UJ63T5L-LemUXeaa7i8sKCjfql8kulnc0\", \"importedAs\": \"csv\", \"mimeType\": \"application/vnd.google-apps.spreadsheet\", \"modifiedTime\": \"2025-07-27T07:06:59.367Z\", \"parentId\": \"1V3di1iSwfvoGRGd5cwiYZrxKESjZ7e-b\", \"skipReason\": null, \"status\": \"imported\", \"title\": \"3000m予想タイムランキング\", \"viewUrl\": \"https://docs.google.com/spreadsheets/d/1f-JAd8J_v0UJ63T5L-LemUXeaa7i8sKCjfql8kulnc0/edit?usp=drivesdk&ouid=112681577980405057294\"}}"
+  },
+  {
+    "source": "input/external/drive/shared/記録データベース/2025年度/中学選手権.csv.meta.json",
+    "chunk_ids": [
+      "knowledge-aaef02d7db597ec424c16676"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": {\"id\": \"1TVfRDM96-KNy9cUVKUVrDx3C96uDsIw1Ay9JqOX0Cic\", \"importedAs\": \"csv\", \"mimeType\": \"application/vnd.google-apps.spreadsheet\", \"modifiedTime\": \"2025-07-13T12:11:02.786Z\", \"parentId\": \"1V3di1iSwfvoGRGd5cwiYZrxKESjZ7e-b\", \"skipReason\": null, \"status\": \"imported\", \"title\": \"中学選手権\", \"viewUrl\": \"https://docs.google.com/spreadsheets/d/1TVfRDM96-KNy9cUVKUVrDx3C96uDsIw1Ay9JqOX0Cic/edit?usp=drivesdk&ouid=112681577980405057294\"}}"
+  },
+  {
+    "source": "input/external/drive/shared/記録データベース/2025年度/県中体連.csv.meta.json",
+    "chunk_ids": [
+      "knowledge-a975ad304630f8bbeabc61db"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": {\"id\": \"19RukTEYL5_ZpjdD3N_oOau8m-8qdo8gxaWW54ENYrv0\", \"importedAs\": \"csv\", \"mimeType\": \"application/vnd.google-apps.spreadsheet\", \"modifiedTime\": \"2025-07-21T07:48:50.671Z\", \"parentId\": \"1V3di1iSwfvoGRGd5cwiYZrxKESjZ7e-b\", \"skipReason\": null, \"status\": \"imported\", \"title\": \"県中体連\", \"viewUrl\": \"https://docs.google.com/spreadsheets/d/19RukTEYL5_ZpjdD3N_oOau8m-8qdo8gxaWW54ENYrv0/edit?usp=drivesdk&ouid=112681577980405057294\"}}"
+  },
+  {
+    "source": "input/external/drive/shared/記録データベース/2025年度/通信陸上.csv.meta.json",
+    "chunk_ids": [
+      "knowledge-453a1f921c3e88167388b71d"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": {\"id\": \"1OhKHdfRDDDUOEeKA2ERTkaLh-P3K2CECSH31DA3tQck\", \"importedAs\": \"csv\", \"mimeType\": \"application/vnd.google-apps.spreadsheet\", \"modifiedTime\": \"2025-06-30T13:49:08.361Z\", \"parentId\": \"1V3di1iSwfvoGRGd5cwiYZrxKESjZ7e-b\", \"skipReason\": null, \"status\": \"imported\", \"title\": \"通信陸上\", \"viewUrl\": \"https://docs.google.com/spreadsheets/d/1OhKHdfRDDDUOEeKA2ERTkaLh-P3K2CECSH31DA3tQck/edit?usp=drivesdk&ouid=112681577980405057294\"}}"
+  },
+  {
+    "source": "input/external/drive/shared/記録データベース/2025年度/選手権と通信のタイム差.csv.meta.json",
+    "chunk_ids": [
+      "knowledge-bbacaf320f7def05154591dd"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": {\"id\": \"1dGJ37mg0B0TBmfF8_Vx_DZapg60O-9LRiZKLsnLj-qE\", \"importedAs\": \"csv\", \"mimeType\": \"application/vnd.google-apps.spreadsheet\", \"modifiedTime\": \"2025-07-02T12:14:03.266Z\", \"parentId\": \"1V3di1iSwfvoGRGd5cwiYZrxKESjZ7e-b\", \"skipReason\": null, \"status\": \"imported\", \"title\": \"選手権と通信のタイム差\", \"viewUrl\": \"https://docs.google.com/spreadsheets/d/1dGJ37mg0B0TBmfF8_Vx_DZapg60O-9LRiZKLsnLj-qE/edit?usp=drivesdk&ouid=112681577980405057294\"}}"
+  },
+  {
+    "source": "input/external/drive/shared/記録データベース/2026年度/中学生記録.csv.meta.json",
+    "chunk_ids": [
+      "knowledge-edcfc7e1e0ed17f5d84f3a13"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": {\"bytes\": 170668, \"id\": \"1JTy7bHPLOTD3rwteRhEQCxdlyKlVMxeccqrb8PYDXfc\", \"importedAs\": \"csv\", \"lines\": 643, \"mimeType\": \"application/vnd.google-apps.spreadsheet\", \"status\": \"imported\", \"title\": \"中学生記録\", \"viewUrl\": \"https://docs.google.com/spreadsheets/d/1JTy7bHPLOTD3rwteRhEQCxdlyKlVMxeccqrb8PYDXfc/edit\"}}"
+  },
+  {
+    "source": "input/external/drive/shared/記録データベース/印刷用/中学選手権.md.meta.json",
+    "chunk_ids": [
+      "knowledge-4aabca3ebdde2352f0597964"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": {\"id\": \"1I7QT4i5wm9OvcfuYTn3OzimpXK2xC_VB\", \"importedAs\": \"markdown\", \"mimeType\": \"application/pdf\", \"modifiedTime\": \"2025-07-13T12:37:01.078Z\", \"parentId\": \"1hNqnqcGmO77H8sXZZThuTg1oAjzC2cSR\", \"skipReason\": null, \"status\": \"imported\", \"title\": \"中学選手権.pdf\", \"viewUrl\": \"https://drive.google.com/file/d/1I7QT4i5wm9OvcfuYTn3OzimpXK2xC_VB/view?usp=drivesdk\"}}"
+  },
+  {
+    "source": "input/external/drive/shared/記録データベース/印刷用/通信陸上.md.meta.json",
+    "chunk_ids": [
+      "knowledge-d4f2064066b2c2c5dc8b0d4f"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": {\"id\": \"1sxpVLWCg5TRRWq0N_pSJBIlreecMfaUY\", \"importedAs\": \"markdown\", \"mimeType\": \"application/pdf\", \"modifiedTime\": \"2025-07-13T12:39:12.570Z\", \"parentId\": \"1hNqnqcGmO77H8sXZZThuTg1oAjzC2cSR\", \"skipReason\": null, \"status\": \"imported\", \"title\": \"通信陸上.pdf\", \"viewUrl\": \"https://drive.google.com/file/d/1sxpVLWCg5TRRWq0N_pSJBIlreecMfaUY/view?usp=drivesdk\"}}"
+  },
+  {
+    "source": "input/external/drive/shared/記録データベース/印刷用/選手権と通信のタイム差.md.meta.json",
+    "chunk_ids": [
+      "knowledge-646834df9bbb0077239b01df"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": {\"id\": \"1Sav31Rh_MQPm0dKD4ed-RYlc2OAH7s84\", \"importedAs\": \"markdown\", \"mimeType\": \"application/pdf\", \"modifiedTime\": \"2025-07-13T12:36:43.103Z\", \"parentId\": \"1hNqnqcGmO77H8sXZZThuTg1oAjzC2cSR\", \"skipReason\": null, \"status\": \"imported\", \"title\": \"選手権と通信のタイム差 .pdf\", \"viewUrl\": \"https://drive.google.com/file/d/1Sav31Rh_MQPm0dKD4ed-RYlc2OAH7s84/view?usp=drivesdk\"}}"
+  }
+]

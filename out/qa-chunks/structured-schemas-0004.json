@@ -1,0 +1,544 @@
+[
+  {
+    "source": "input/external/media-manifest.json",
+    "chunk_ids": [
+      "knowledge-ab226d8aee979e692560ebf2",
+      "knowledge-ff638d8163356621109f24ce",
+      "knowledge-531ee296ac0a79863c838a45",
+      "knowledge-5b00f6f79ae85a6999cc9e74",
+      "knowledge-fa33ef1f89e1ee8c367d7108",
+      "knowledge-c3c6eb6fc609d79e151268c3",
+      "knowledge-e6abce97db7adad2fe4edebf",
+      "knowledge-daad41f4f77215ed404f1a32"
+    ],
+    "sample_json": "{\"context\": {\"generated_at\": \"2026-09-14T05:35:40.978120+00:00\", \"purpose\": \"荒玉駅伝勝利のためのいだてん岱明メディア索引。KG がパスを辿り LLM が画像/OCRを読む。\"}, \"pointer\": \"/generated_at\", \"value\": \"2026-09-14T05:35:40.978120+00:00\"}"
+  },
+  {
+    "source": "input/external/notion/databases/2026年度中学生記録/rows.json",
+    "chunk_ids": [
+      "knowledge-a2a2c41259958cad745d8b94",
+      "knowledge-2e7c2a3facda9db399483d3b",
+      "knowledge-91a104128207c68d1680ccb4",
+      "knowledge-3429888e8d82f5ee532080d7",
+      "knowledge-9a293654ec390847be484539",
+      "knowledge-44dac9ad60ba12e76028d15b",
+      "knowledge-8519485dd216ed2e1ede6f34",
+      "knowledge-4e83fddabb85275e906d665d",
+      "knowledge-822f1ddaa52df3a784382d4e",
+      "knowledge-15e8bd4acd15dc60b4211d47",
+      "knowledge-72d138506acc67421f469c57",
+      "knowledge-1c6f805e8ada77cd6607ba2f",
+      "knowledge-d0edd42ce179fd79abb16755",
+      "knowledge-ed6c40bd59bcf5ec967685b7",
+      "knowledge-f2171dce803329199c545dac",
+      "knowledge-f5767f5a342df09a89e6b38b",
+      "knowledge-f8fb511eac096c5e0df928a5",
+      "knowledge-807f364bf239b55d84567812",
+      "knowledge-f1e6f2802be015987b3e0cdd",
+      "knowledge-bbf7d3ec8a367c4d62c5c3a5",
+      "knowledge-a8b8641fc2c0fdc4daf62be8",
+      "knowledge-476e8185434698ff3290fe8f",
+      "knowledge-712b6fbb61c74d2fc64973a7",
+      "knowledge-cf27277660c392b77b589548",
+      "knowledge-5f0d0c65168849d457df0bb1",
+      "knowledge-9324e2129f8cf4cc4bcbdb6c",
+      "knowledge-a0f0737fad2d832ded178f97",
+      "knowledge-85bcad46e7d1320e26a96a56",
+      "knowledge-131896e7f2605ada92bb7558",
+      "knowledge-2125ea0041e6957baa8fdd57",
+      "knowledge-9c3959f3482162eebe252f31",
+      "knowledge-120cb0a2de016d76c52ae7a9",
+      "knowledge-c98cddc1467d33bce871c539",
+      "knowledge-2a37e2d179e4c82e680078e5",
+      "knowledge-0a377d132561578fe54bbea1",
+      "knowledge-bdcc087f912a724c8f438b80",
+      "knowledge-534e214569c1c0f423399fbf",
+      "knowledge-46190ed6bb03dca904f713b1",
+      "knowledge-bdef2a92da6a9f8b8c903a2d",
+      "knowledge-e365e233240ba301eb1ca149",
+      "knowledge-81f39f92a34865fe7755425b",
+      "knowledge-d0896f3a0487b5b8ca19dc91",
+      "knowledge-f94e35628e55c14642b2af66",
+      "knowledge-780c5924f7eece0effdf4cc8",
+      "knowledge-e056332b451750143db1475a",
+      "knowledge-a91ce3554cef67dde6f91259",
+      "knowledge-da4053793e3830ebfc77b4fc",
+      "knowledge-7850e7b9bf2b220ceafca423",
+      "knowledge-eee8c8e98ddfc676a6212d22"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"/0\", \"value\": {\"affiliation\": \"金栗PROJECT\", \"date\": \"2026/08/20\", \"distance\": \"3000m\", \"gender\": \"男子\", \"grade\": 3, \"name\": \"隈部侑成\", \"record_seconds\": 539.54, \"sb_adopted\": false, \"sb_text\": \"8:54.61\", \"time_text\": \"8:59.54\", \"url\": \"https://yaaf.jp/mob/11/nans21v/shtml/result/track/20260820_1-108001-7-0-4-3-3-0-5_ResultTrackA.html\"}}"
+  },
+  {
+    "source": "input/external/notion/databases/いだてん岱明の未来/export.status.json",
+    "chunk_ids": [
+      "knowledge-477fb630ed7fd9e07d732f25"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": {\"complete\": true, \"database\": \"いだてん岱明の未来\", \"has_more\": false, \"next_cursor\": null, \"partial\": false, \"row_count\": 1}}"
+  },
+  {
+    "source": "input/external/notion/databases/いだてん岱明の未来/meta.json",
+    "chunk_ids": [
+      "knowledge-3f0a3bf2e27b0285ac9b0dd1"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": {\"data_source_url\": \"collection://3d3a38e8-3034-800e-9e5b-000b23350b79\", \"sqlite\": \"CREATE TABLE IF NOT EXISTS \\\"collection://3d3a38e8-3034-800e-9e5b-000b23350b79\\\" (\\n\\turl TEXT UNIQUE,\\n\\tcreatedTime TEXT,\\n\\t\\\"名前\\\" TEXT\\n)\", \"url\": \"https://app.notion.com/p/3d3a38e830348036be5af24d3a50c01d?pvs=204\", \"view_url\": \"view://3d3a38e8-3034-802f-9a5b-000cc98582f3\"}}"
+  },
+  {
+    "source": "input/external/notion/databases/いだてん岱明の未来/rows.json",
+    "chunk_ids": [
+      "knowledge-f78b44dcba2ffda4f2faf8f7"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": [{\"url\": \"https://app.notion.com/3d3a38e830348059bc41fdfcc36b059e\", \"名前\": \"自分が見れる火木土曜ポイント、その他はジョグで他の人に見てもらうか各自ジョグ\"}]}"
+  },
+  {
+    "source": "input/external/notion/databases/いだてん岱明生徒/export.status.json",
+    "chunk_ids": [
+      "knowledge-0d7db34b5502993f87cec948"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": {\"complete\": true, \"database\": \"いだてん岱明生徒\", \"has_more\": false, \"next_cursor\": null, \"partial\": false, \"row_count\": 15}}"
+  },
+  {
+    "source": "input/external/notion/databases/いだてん岱明生徒/meta.json",
+    "chunk_ids": [
+      "knowledge-e588e4fa2a69f8c238cdd543"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": {\"data_source_url\": \"collection://3d3a38e8-3034-807e-9a80-000b41555366\", \"sqlite\": \"CREATE TABLE IF NOT EXISTS \\\"collection://3d3a38e8-3034-807e-9a80-000b41555366\\\" (\\n\\turl TEXT UNIQUE,\\n\\tcreatedTime TEXT,\\n\\t\\\"タイプ\\\" TEXT,\\n\\t\\\"1500mPB\\\" TEXT,\\n\\t\\\"800mPB\\\" TEXT,\\n\\t\\\"学年\\\" FLOAT,\\n\\t\\\"3000mPB\\\" TEXT,\\n\\t\\\"備考\\\" TEXT,\\n\\t\\\"名前\\\" TEXT\\n)\", \"url\": \"https://app.notion.com/p/3d3a38e830348023a011d8ece7451e47?pvs=204\", \"view_url\": \"view://3d3a38e8-3034-8056-b8e2-000c7ea39f48\"}}"
+  },
+  {
+    "source": "input/external/notion/databases/いだてん岱明生徒/rows.json",
+    "chunk_ids": [
+      "knowledge-0996348a793c03032b5b25be"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": [{\"1500mPB\": null, \"3000mPB\": null, \"800mPB\": null, \"createdTime\": \"2026-09-06 07:30:36Z\", \"id\": \"3d3a38e8-3034-80ec-808f-c85991c1188a\", \"url\": \"https://app.notion.com/3d3a38e8303480ec808fc85991c1188a\", \"タイプ\": null, \"備考\": null, \"名前\": \"中尾快叶\", \"学年\": 1}, {\"1500mPB\": null, \"3000mPB\": null, \"800mPB\": null, \"createdTime\": \"2026-09-06 07:30:50Z\", \"id\": \"3d3a38e8-3034-80b5-aa81-d1ba5951a24b\", \"url\": \"https://app.notion.com/3d3a38e8303480b5aa81d1ba5951a24b\", \"タイプ\": null, \"備考\": null, \"名前\": \"南本幸治郎\", \"学年\": 1}, {\"1500mPB\": null, \"3000mPB\": null, \"800mPB\": null, \"createdTime\": \"2026-09-06 07:31:39Z\", \"id\": \"3d3a38e8-3034-80d4-8c21-db814eff7b84\", \"url\": \"https://app.notion.com/3d3a38e8303480d48c21db814eff7b84\", \"タイプ\": null, \"備考\": null, \"名前\": \"山﨑莉奈\", \"学年\": 1}, {\"1500mPB\": null, \"3000mPB\": null, \"800mPB\": null, \"createdTime\": \"2026-09-06 07:31:14Z\", \"id\": \"3d3a38e8-3034-8095-8420-e14495612cf6\", \"url\": \"https://app.notion.com/3d3a38e8303480958420e14495612cf6\", \"タイプ\": null, \"備考\": null, \"名前\": \"嶋田匠眞\", \"学年\": 1}, {\"1500mPB\": null, \"3000mPB\": null, \"800mPB\": null, \"createdTime\": \"2026-09-06 07:30:04Z\", \"id\": \"3d3a38e8-3034-8027-ab92-cf898cbbcd97\", \"url\": \"https://app.notion.com/3d3a38e830348027ab92cf898cbbcd97\", \"タイプ\": null, \"備考\": null, \"名前\": \"塚原優衣\", \"学年\": 2}, {\"1500mPB\": null, \"3000mPB\": null, \"800mPB\": null, \"createdTime\": \"2026-09-06 07:29:18Z\", \"id\": \"3d3a38e8-3034-80f9-a65c-ffae5644455d\", \"url\": \"https://app.notion.com/3d3a38e8303480f9a65cffae5644455d\", \"タイプ\": null, \"備考\": null, \"名前\": \"増岡里俐\", \"学年\": 2}, {\"1500mPB\": null, \"3000mPB\": null, \"800mPB\": null, \"createdTime\": \"2026-09-06 07:28:42Z\", \"id\": \"3d3a38e8-3034-80c2-a323-f6e637b7dbea\", \"url\": \"https://app.notion.com/3d3a38e8303480c2a323f6e637b7dbea\", \"タイプ\": null, \"備考\": null, \"名前\": \"山本哲瑠\", \"学年\": 2}, {\"1500mPB\": null, \"3000mPB\": null, \"800mPB\": null, \"createdTime\": \"2026-09-06 07:28:51Z\", \"id\": \"3d3a38e8-3034-8070-be62-e876a1e8d618\", \"url\": \"https://app.notion.com/3d3a38e830348070be62e876a1e8d618\","
+  },
+  {
+    "source": "input/external/notion/databases/動きづくり/export.status.json",
+    "chunk_ids": [
+      "knowledge-d59f9eebc8e7c61699312228"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": {\"complete\": true, \"database\": \"動きづくり\", \"export_complete\": true, \"has_more\": false, \"partial\": false, \"row_count\": 1}}"
+  },
+  {
+    "source": "input/external/notion/databases/動きづくり/meta.json",
+    "chunk_ids": [
+      "knowledge-12af81e0f4656e057c4ce179"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": {\"data_source_url\": \"collection://3d3a38e8-3034-80f6-8d7b-000bc6f23c41\", \"title\": \"動きづくり\", \"url\": \"https://app.notion.com/p/3d3a38e8303480208f18fd51a2a6bcdd?pvs=204\", \"view_urls\": [\"view://3d3a38e8-3034-80b6-97c3-000cd1da037f\"]}}"
+  },
+  {
+    "source": "input/external/notion/databases/動きづくり/rows.json",
+    "chunk_ids": [
+      "knowledge-26d90760c1f6c51d5fd682ab"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": [{\"URL\": \"https://youtu.be/EQXz7EwqOcI?si=V6sLSV2Gt-HVqUDo\", \"url\": \"https://app.notion.com/p/3d3a38e830348076a74bfaa3a8115903\", \"名前\": \"洛南高校 動きづくり\"}]}"
+  },
+  {
+    "source": "input/external/notion/databases/怪我について/export.status.json",
+    "chunk_ids": [
+      "knowledge-2709f58cd16ededbf860b48c"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": {\"complete\": true, \"database\": \"怪我について\", \"export_complete\": true, \"has_more\": false, \"partial\": false, \"row_count\": 1}}"
+  },
+  {
+    "source": "input/external/notion/databases/怪我について/meta.json",
+    "chunk_ids": [
+      "knowledge-0ea69bcdf96d90c22e1d3050"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": {\"data_source_url\": \"collection://3d3a38e8-3034-8051-8459-000bde367914\", \"title\": \"怪我について\", \"url\": \"https://app.notion.com/p/3d3a38e8303480edbc07f1508240cf0b?pvs=204\", \"view_urls\": [\"view://3d3a38e8-3034-8073-b780-000c329ba0cc\"]}}"
+  },
+  {
+    "source": "input/external/notion/databases/怪我について/rows.json",
+    "chunk_ids": [
+      "knowledge-2e9aa41bac77e8f15c9211cd"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": [{\"url\": \"https://app.notion.com/p/3d3a38e83034809cac1fc096b974429b\", \"テキスト\": \"1. 過去の12ヶ月以内の怪我\\n2. 単一セッション走行距離スパイク（過去30日最長比>10%）\\n3. マラソン/長距離レース準備\\n4. 睡眠の質の低下\\n5. 頻繁なシューズ変更（0–3ヶ月）\\n6. 低エネルギー可用性 / RED-S\\n7. 2週で週距離+30%超\\n8. 高BMI + ミニマリストシューズ\\n9. speed training（スピード練習）\\n10. 高週間走行距離（絶対量）\", \"名前\": \"怪我の因子ランキング\"}]}"
+  },
+  {
+    "source": "input/external/notion/databases/練習のバリエーション/export.status.json",
+    "chunk_ids": [
+      "knowledge-b3f8b539d46c5a7683e04d5f"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": {\"complete\": true, \"database\": \"練習のバリエーション\", \"export_complete\": true, \"has_more\": false, \"partial\": false, \"row_count\": 3}}"
+  },
+  {
+    "source": "input/external/notion/databases/練習のバリエーション/meta.json",
+    "chunk_ids": [
+      "knowledge-ade299ece0ae9ea0747efdee"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": {\"data_source_url\": \"collection://3d3a38e8-3034-80d7-8830-000bd495194c\", \"title\": \"練習のバリエーション\", \"url\": \"https://app.notion.com/p/3d3a38e830348072a283ccea24377aba?pvs=204\", \"view_urls\": [\"view://3d3a38e8-3034-803a-b2dc-000c0e26df6d\"]}}"
+  },
+  {
+    "source": "input/external/notion/databases/練習のバリエーション/rows.json",
+    "chunk_ids": [
+      "knowledge-2849be1628d8bab1b7cc818c"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": [{\"url\": \"https://app.notion.com/p/3d3a38e8303480ae867fe35f1f01816c\", \"名前\": \"600mRPのインターバル\", \"設定\": \"3〜5本\"}, {\"url\": \"https://app.notion.com/p/3d3a38e8303480a4a5f7d54eb5c6127a\", \"名前\": \"900mインターバル\", \"設定\": \"RPに1kmあたり+20秒から始めて徐々に速くする\"}, {\"url\": \"https://app.notion.com/p/3d3a38e8303480c390f0fe5a38c45695\", \"名前\": \"時間走\", \"設定\": \"RPに1kmあたり+30秒から始めて徐々に速くする\\n2km組は1800m、3km組は2700m\"}]}"
+  },
+  {
+    "source": "input/external/notion/databases/荒玉中体連駅伝戦略/export.status.json",
+    "chunk_ids": [
+      "knowledge-62a89234ceb53067d049be0d"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": {\"complete\": true, \"database\": \"荒玉中体連駅伝戦略\", \"export_complete\": true, \"has_more\": false, \"partial\": false, \"row_count\": 5}}"
+  },
+  {
+    "source": "input/external/notion/databases/荒玉中体連駅伝戦略/meta.json",
+    "chunk_ids": [
+      "knowledge-d117dc6dbaa7e696a88db9f7"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": {\"data_source_url\": \"collection://3d3a38e8-3034-80e8-a08d-000b0cf67466\", \"sqlite\": \"see schema.md\", \"url\": \"https://app.notion.com/p/3d3a38e8303480a5bb0decdafc1d77c3?pvs=204\", \"view_url\": \"view://3d3a38e8-3034-8058-80b1-000c7d6f683f\"}}"
+  },
+  {
+    "source": "input/external/notion/databases/荒玉中体連駅伝戦略/rows.json",
+    "chunk_ids": [
+      "knowledge-5858ffe801d0fdea94a5a500"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": [{\"url\": \"https://app.notion.com/p/3d4a38e83034813bb071f3971c133bdd\", \"テキスト\": \"痛みを抱えて走らせていないか／質は週2以下か（レース含む）／練習会中止の空白を質で埋めすぎていないか／イージーが速すぎないか／なごみ・Jrの学びを1つ返したか／10/6以降量を削れているか\", \"名前\": \"運用チェック（毎週）\"}, {\"url\": \"https://app.notion.com/p/3d4a38e8303481c9b1bbe637e05a2c19\", \"テキスト\": \"部活カレンダー準拠（平日17:00-18:30／土祝9:00-10:30）。水・日は休養or自主練E。\\n\\nBG日のみ質:\\n9/11 600×3 → 9/12 ロングE → 9/14 持続GZ → 9/15 1000系 → 9/17 ロングE → 9/18 開花 → 9/19 極軽 → 9/20 なごみ\\n9/22 回復E → 9/24 長GZ → 9/25 量 → 9/26 Jr → 9/28 E → 9/29 ロード持続 → 10/2 2000+1000\\n10/6 RP本 → 10/9 RP短 → 10/13 前日 → 10/14 本番\\n\\n10月は月火木金土の同リズム想定。10/12スポーツの日は休み想定。\", \"名前\": \"残り練習【部活カレンダー準拠】スタミナ→RP\"}, {\"url\": \"https://app.notion.com/p/3d3a38e83034800db51dccb94c32f9b4\", \"テキスト\": \"1区 10:50\\n2区 7:00\\n3区 7:40\\n4区 7:45\\n5区 11:30\\nトータル 44:45 k/3:46\", \"名前\": \"女子 11.855km 44:45\"}, {\"url\": \"https://app.notion.com/p/3d3a38e8303480abb0a2fe356d4d8ad3\", \"テキスト\": \"1区 10:45\\n2区 6:50\\n3区 7:25\\n4区 7:30\\n5区 11:15\\nトータル 43:45 k/3:41\", \"名前\": \"女子 11.855km 43:45\"}, {\"url\": \"https://app.notion.com/p/3d3a38e83034805d91dae26680917203\", \"テキスト\": \"1区 10:30\\n2区 6:40\\n3区 7:15\\n4区 7:20\\n5区 11:00\\nトータル 42:45 k/3:36\", \"名前\": \"女子 11.855km 42:45\"}]}"
+  },
+  {
+    "source": "input/external/notion/databases/荒玉中体連駅伝歴代/export.status.json",
+    "chunk_ids": [
+      "knowledge-8c9c40c84baa14ba68908d7e"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": {\"complete\": true, \"database\": \"荒玉中体連駅伝歴代\", \"has_more\": false, \"next_cursor\": null, \"partial\": false, \"row_count\": 27}}"
+  },
+  {
+    "source": "input/external/notion/databases/荒玉中体連駅伝歴代/meta.json",
+    "chunk_ids": [
+      "knowledge-bbe68f7f9539dbd99e677eeb"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": {\"data_source_url\": \"collection://3d3a38e8-3034-8025-b329-000b5f514dfe\", \"sqlite\": \"see schema.md\", \"url\": \"https://app.notion.com/p/3d3a38e830348011b3a1cdf76ce2394e?pvs=204\", \"view_url\": \"view://3d3a38e8-3034-8073-ae64-000c65269e65\"}}"
+  },
+  {
+    "source": "input/external/notion/databases/荒玉中体連駅伝歴代/rows.json",
+    "chunk_ids": [
+      "knowledge-f7c68716513c24f2de8fa8fd"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": [{\"2位の平均ペース\": \"3:16\", \"url\": \"https://app.notion.com/p/3d3a38e83034807db9ecc892080dca31\", \"スタート時間付近の気温\": 29, \"名前\": \"2025 男子\", \"岱明の記録\": \"59:08\", \"岱明の順位\": 6}, {\"2位の平均ペース\": \"3:41\", \"url\": \"https://app.notion.com/p/3d3a38e830348010a680f2d7c60f8f67\", \"スタート時間付近の気温\": 28.5, \"名前\": \"2025 女子\", \"岱明の記録\": \"45:22\", \"岱明の順位\": 7}, {\"2位の平均ペース\": \"3:17\", \"url\": \"https://app.notion.com/p/3d3a38e8303480728aa5eb6b9f867d19\", \"スタート時間付近の気温\": 29.9, \"名前\": \"2024 男子\", \"岱明の記録\": \"1:05:15\", \"岱明の順位\": 15}, {\"2位の平均ペース\": \"3:36\", \"url\": \"https://app.notion.com/p/3d3a38e8303480a6aa75e666c4010c33\", \"スタート時間付近の気温\": 27, \"名前\": \"2024 女子\", \"岱明の記録\": \"45:06\", \"岱明の順位\": 6}, {\"2位の平均ペース\": \"3:12\", \"url\": \"https://app.notion.com/p/3d3a38e830348081a304f320fe6e0c21\", \"スタート時間付近の気温\": 22.8, \"名前\": \"2023 男子\", \"岱明の記録\": \"1:08:35\", \"岱明の順位\": 11}, {\"2位の平均ペース\": \"3:36\", \"url\": \"https://app.notion.com/p/3d3a38e8303480429823e68f2a52e2f0\", \"スタート時間付近の気温\": 20.4, \"名前\": \"2023 女子\", \"岱明の記録\": \"46:12\", \"岱明の順位\": 8}, {\"2位の平均ペース\": \"3:15\", \"url\": \"https://app.notion.com/p/3d3a38e8303480ee875fe381d045dd5e\", \"スタート時間付近の気温\": 22, \"名前\": \"2022 男子\", \"岱明の記録\": \"1:09:59\", \"岱明の順位\": 12}, {\"2位の平均ペース\": \"3:41\", \"url\": \"https://app.notion.com/p/3d3a38e830348033940ee9dccf8e2bed\", \"スタート時間付近の気温\": 19.2, \"名前\": \"2022 女子\", \"岱明の記録\": \"45:15\", \"岱明の順位\": 8}, {\"2位の平均ペース\": \"3:13\", \"url\": \"https://app.notion.com/p/3d3a38e830348040834bf9ef33231453\", \"スタート時間付近の気温\": 19.7, \"名前\": \"2021 男子\", \"岱明の記録\": \"1:09:31\", \"岱明の順位\": 12}, {\"2位の平均ペース\": \"3:40\", \"url\": \"https://app.notion.com/p/3d3a38e8303480a68cd4eae39043ddcf\", \"スタート時間付近の気温\": 17.4, \"名前\": \"2021 女子\", \"岱明の記録\": \"45:02\", \"岱明の順位\": 7}, {\"2位の平均ペース\": \"3:17\", \"url\": \"https://app.notion.com/p/3d3a38e83034804bb0aff188218f8cf4\", \"スタート時間付近の気温\": 23.2, \"名前\": \"2020 男子\", \"岱明の記録\": \"1:11:02\", \"岱明の順位\": 11}, {\"2位の平均ペース\": \"3:42\", \"url\": \"https://app.notion.com/p/3d3a38e83034807a928fe2318a61e37d\", \"スタート時間付近の気温\": 21.2, \"名前\": \"2020 女子\", \"岱明の記録\": \"45:54\", \"岱明の順位\": 6}, {\"2位の平均ペース\": \"3:19\", \"url\": \"https://app.notion.com/p/"
+  },
+  {
+    "source": "input/external/notion/media/ekiden-history/2012-女子.meta.json",
+    "chunk_ids": [
+      "knowledge-2d7e556313bc0ef7858a95a6"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": {\"binary_saved\": false, \"download_error\": \"Notion MCP returns attachment IDs only (no signed file URLs for file properties). Drive folder 荒玉駅伝歴代 (1XRxBeG1wkG3c92Y-h5ycPgbBL7Ep1ief) is empty; no Drive copies found for these result boards.\", \"drive_id\": null, \"gender\": \"女子\", \"local_path\": null, \"notion_page_url\": \"https://app.notion.com/p/3d3a38e8303480319e39de08907b4829\", \"ocr_path\": \"notion/media/ekiden-history/ocr/2012-女子.md\", \"source_attachment_id\": \"attachment:18bf7a69-ad84-40c6-80ae-f10989833ccd:image.png\", \"stem\": \"2012-女子\", \"structured_fields\": {\"2位の平均ペース\": \"3:36\", \"スタート時間付近の気温\": null, \"岱明の記録\": \"42:41\", \"岱明の順位\": 2}, \"year\": 2012}}"
+  },
+  {
+    "source": "input/external/notion/media/ekiden-history/2012-男子.meta.json",
+    "chunk_ids": [
+      "knowledge-dea63f7f8ffbbe9b923d3bca"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": {\"binary_saved\": false, \"download_error\": \"Notion MCP returns attachment IDs only (no signed file URLs for file properties). Drive folder 荒玉駅伝歴代 (1XRxBeG1wkG3c92Y-h5ycPgbBL7Ep1ief) is empty; no Drive copies found for these result boards.\", \"drive_id\": null, \"gender\": \"男子\", \"local_path\": null, \"notion_page_url\": \"https://app.notion.com/p/3d3a38e83034802aa47ac70b2b080865\", \"ocr_path\": \"notion/media/ekiden-history/ocr/2012-男子.md\", \"source_attachment_id\": \"attachment:a389939b-c24a-4c4d-8465-320c12e569bd:image.png\", \"stem\": \"2012-男子\", \"structured_fields\": {\"2位の平均ペース\": \"3:16\", \"スタート時間付近の気温\": null, \"岱明の記録\": \"1:06:34\", \"岱明の順位\": 5}, \"year\": 2012}}"
+  },
+  {
+    "source": "input/external/notion/media/ekiden-history/2013-女子.meta.json",
+    "chunk_ids": [
+      "knowledge-ccff5a79aa544a5c4ef2214f"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": {\"binary_saved\": false, \"download_error\": \"Notion MCP returns attachment IDs only (no signed file URLs for file properties). Drive folder 荒玉駅伝歴代 (1XRxBeG1wkG3c92Y-h5ycPgbBL7Ep1ief) is empty; no Drive copies found for these result boards.\", \"drive_id\": null, \"gender\": \"女子\", \"local_path\": null, \"notion_page_url\": \"https://app.notion.com/p/3d3a38e8303480209051e73041413b42\", \"ocr_path\": \"notion/media/ekiden-history/ocr/2013-女子.md\", \"source_attachment_id\": \"attachment:1e00d16e-f9b2-48ab-aa86-cc9af7bd0e64:image.png\", \"stem\": \"2013-女子\", \"structured_fields\": {\"2位の平均ペース\": \"3:36\", \"スタート時間付近の気温\": null, \"岱明の記録\": \"43:25\", \"岱明の順位\": 7}, \"year\": 2013}}"
+  },
+  {
+    "source": "input/external/notion/media/ekiden-history/2013-男子.meta.json",
+    "chunk_ids": [
+      "knowledge-12d99b10caf718076fc59a2c"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": {\"binary_saved\": false, \"download_error\": \"Notion MCP returns attachment IDs only (no signed file URLs for file properties). Drive folder 荒玉駅伝歴代 (1XRxBeG1wkG3c92Y-h5ycPgbBL7Ep1ief) is empty; no Drive copies found for these result boards.\", \"drive_id\": null, \"gender\": \"男子\", \"local_path\": null, \"notion_page_url\": \"https://app.notion.com/p/3d3a38e8303480bb8578c4872c730563\", \"ocr_path\": \"notion/media/ekiden-history/ocr/2013-男子.md\", \"source_attachment_id\": \"attachment:66c8aaba-e822-46e0-890f-2aa06b62f9f1:image.png\", \"stem\": \"2013-男子\", \"structured_fields\": {\"2位の平均ペース\": \"3:12\", \"スタート時間付近の気温\": 20.8, \"岱明の記録\": \"1:08:00\", \"岱明の順位\": 2}, \"year\": 2013}}"
+  },
+  {
+    "source": "input/external/notion/media/ekiden-history/2014-男子.meta.json",
+    "chunk_ids": [
+      "knowledge-d319db64cbb82f41795126db"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": {\"binary_saved\": false, \"download_error\": \"Notion MCP returns attachment IDs only (no signed file URLs for file properties). Drive folder 荒玉駅伝歴代 (1XRxBeG1wkG3c92Y-h5ycPgbBL7Ep1ief) is empty; no Drive copies found for these result boards.\", \"drive_id\": null, \"gender\": \"男子\", \"local_path\": null, \"notion_page_url\": \"https://app.notion.com/p/3d3a38e830348002b5bde8d1c36233ca\", \"ocr_path\": \"notion/media/ekiden-history/ocr/2014-男子.md\", \"source_attachment_id\": \"attachment:2efaf514-bef4-446a-b6e2-f39b7bc85e9c:image.png\", \"stem\": \"2014-男子\", \"structured_fields\": {\"2位の平均ペース\": \"3:14\", \"スタート時間付近の気温\": 21.6, \"岱明の記録\": \"1:07:04\", \"岱明の順位\": 9}, \"year\": 2014}}"
+  },
+  {
+    "source": "input/external/notion/media/ekiden-history/2015-女子.meta.json",
+    "chunk_ids": [
+      "knowledge-c7f686b25edfeb554be237b8"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": {\"binary_saved\": false, \"download_error\": \"Notion MCP returns attachment IDs only (no signed file URLs for file properties). Drive folder 荒玉駅伝歴代 (1XRxBeG1wkG3c92Y-h5ycPgbBL7Ep1ief) is empty; no Drive copies found for these result boards.\", \"drive_id\": null, \"gender\": \"女子\", \"local_path\": null, \"notion_page_url\": \"https://app.notion.com/p/3d3a38e8303480039644f680c1f7c47d\", \"ocr_path\": \"notion/media/ekiden-history/ocr/2015-女子.md\", \"source_attachment_id\": \"attachment:e22e26f9-4264-405d-b192-ed3f79c53949:image.png\", \"stem\": \"2015-女子\", \"structured_fields\": {\"2位の平均ペース\": \"3:36\", \"スタート時間付近の気温\": 22.7, \"岱明の記録\": \"43:36\", \"岱明の順位\": 4}, \"year\": 2015}}"
+  },
+  {
+    "source": "input/external/notion/media/ekiden-history/2015-男子.meta.json",
+    "chunk_ids": [
+      "knowledge-ecab1d3a03a0547a10ff303a"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": {\"binary_saved\": false, \"download_error\": \"Notion MCP returns attachment IDs only (no signed file URLs for file properties). Drive folder 荒玉駅伝歴代 (1XRxBeG1wkG3c92Y-h5ycPgbBL7Ep1ief) is empty; no Drive copies found for these result boards.\", \"drive_id\": null, \"gender\": \"男子\", \"local_path\": null, \"notion_page_url\": \"https://app.notion.com/p/3d3a38e83034809094e8e090289253e4\", \"ocr_path\": \"notion/media/ekiden-history/ocr/2015-男子.md\", \"source_attachment_id\": \"attachment:e9da8a94-341b-4116-9e6e-77ccdebe375d:image.png\", \"stem\": \"2015-男子\", \"structured_fields\": {\"2位の平均ペース\": \"3:15\", \"スタート時間付近の気温\": 25.2, \"岱明の記録\": \"1:07:06\", \"岱明の順位\": 7}, \"year\": 2015}}"
+  },
+  {
+    "source": "input/external/notion/media/ekiden-history/2016-女子.meta.json",
+    "chunk_ids": [
+      "knowledge-fe60942936ef68b91cd43cb3"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": {\"binary_saved\": false, \"download_error\": \"Notion MCP returns attachment IDs only (no signed file URLs for file properties). Drive folder 荒玉駅伝歴代 (1XRxBeG1wkG3c92Y-h5ycPgbBL7Ep1ief) is empty; no Drive copies found for these result boards.\", \"drive_id\": null, \"gender\": \"女子\", \"local_path\": null, \"notion_page_url\": \"https://app.notion.com/p/3d3a38e83034808db2c2ec3861bdb42b\", \"ocr_path\": \"notion/media/ekiden-history/ocr/2016-女子.md\", \"source_attachment_id\": \"attachment:4a00c589-97fe-45c5-bbec-5e1ef702f365:image.png\", \"stem\": \"2016-女子\", \"structured_fields\": {\"2位の平均ペース\": \"3:28\", \"スタート時間付近の気温\": 22.6, \"岱明の記録\": \"43:02\", \"岱明の順位\": 4}, \"year\": 2016}}"
+  },
+  {
+    "source": "input/external/notion/media/ekiden-history/2016-男子.meta.json",
+    "chunk_ids": [
+      "knowledge-173d514bf6af7480d1cf68f7"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": {\"binary_saved\": false, \"download_error\": \"Notion MCP returns attachment IDs only (no signed file URLs for file properties). Drive folder 荒玉駅伝歴代 (1XRxBeG1wkG3c92Y-h5ycPgbBL7Ep1ief) is empty; no Drive copies found for these result boards.\", \"drive_id\": null, \"gender\": \"男子\", \"local_path\": null, \"notion_page_url\": \"https://app.notion.com/p/3d3a38e8303480d88605fc0488cfdd1f\", \"ocr_path\": \"notion/media/ekiden-history/ocr/2016-男子.md\", \"source_attachment_id\": \"attachment:29bfc4d6-1cd4-45bd-b1fa-71a7396af315:image.png\", \"stem\": \"2016-男子\", \"structured_fields\": {\"2位の平均ペース\": \"3:12\", \"スタート時間付近の気温\": 23.8, \"岱明の記録\": \"1:06:13\", \"岱明の順位\": 7}, \"year\": 2016}}"
+  },
+  {
+    "source": "input/external/notion/media/ekiden-history/2017-女子.meta.json",
+    "chunk_ids": [
+      "knowledge-e3d3375609fae7a66e253661"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": {\"binary_saved\": false, \"download_error\": \"Notion MCP returns attachment IDs only (no signed file URLs for file properties). Drive folder 荒玉駅伝歴代 (1XRxBeG1wkG3c92Y-h5ycPgbBL7Ep1ief) is empty; no Drive copies found for these result boards.\", \"drive_id\": null, \"gender\": \"女子\", \"local_path\": null, \"notion_page_url\": \"https://app.notion.com/p/3d3a38e8303480a0b052f97ff603b2d0\", \"ocr_path\": \"notion/media/ekiden-history/ocr/2017-女子.md\", \"source_attachment_id\": \"attachment:ec953169-1d52-4221-b148-96669b759e76:image.png\", \"stem\": \"2017-女子\", \"structured_fields\": {\"2位の平均ペース\": \"3:33\", \"スタート時間付近の気温\": 18.8, \"岱明の記録\": \"43:29\", \"岱明の順位\": 4}, \"year\": 2017}}"
+  },
+  {
+    "source": "input/external/notion/media/ekiden-history/2017-男子.meta.json",
+    "chunk_ids": [
+      "knowledge-8efbe139c8839bf3d7e6b4da"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": {\"binary_saved\": false, \"download_error\": \"Notion MCP returns attachment IDs only (no signed file URLs for file properties). Drive folder 荒玉駅伝歴代 (1XRxBeG1wkG3c92Y-h5ycPgbBL7Ep1ief) is empty; no Drive copies found for these result boards.\", \"drive_id\": null, \"gender\": \"男子\", \"local_path\": null, \"notion_page_url\": \"https://app.notion.com/p/3d3a38e83034806882faea2020ca86be\", \"ocr_path\": \"notion/media/ekiden-history/ocr/2017-男子.md\", \"source_attachment_id\": \"attachment:c3af0dcf-d630-4472-8aae-96ee8d0d168e:image.png\", \"stem\": \"2017-男子\", \"structured_fields\": {\"2位の平均ペース\": \"3:12\", \"スタート時間付近の気温\": 19.2, \"岱明の記録\": \"1:06:47\", \"岱明の順位\": 7}, \"year\": 2017}}"
+  },
+  {
+    "source": "input/external/notion/media/ekiden-history/2018-女子.meta.json",
+    "chunk_ids": [
+      "knowledge-b521dd69029eac185719c350"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": {\"binary_saved\": false, \"download_error\": \"Notion MCP returns attachment IDs only (no signed file URLs for file properties). Drive folder 荒玉駅伝歴代 (1XRxBeG1wkG3c92Y-h5ycPgbBL7Ep1ief) is empty; no Drive copies found for these result boards.\", \"drive_id\": null, \"gender\": \"女子\", \"local_path\": null, \"notion_page_url\": \"https://app.notion.com/p/3d3a38e83034805587afd55e3a037885\", \"ocr_path\": \"notion/media/ekiden-history/ocr/2018-女子.md\", \"source_attachment_id\": \"attachment:a5f03851-0b47-4817-8187-53bea70b4f9a:image.png\", \"stem\": \"2018-女子\", \"structured_fields\": {\"2位の平均ペース\": \"3:34\", \"スタート時間付近の気温\": 19.2, \"岱明の記録\": \"45:26\", \"岱明の順位\": 9}, \"year\": 2018}}"
+  },
+  {
+    "source": "input/external/notion/media/ekiden-history/2018-男子.meta.json",
+    "chunk_ids": [
+      "knowledge-16cf9b2c9c72b0e9c0538d56"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": {\"binary_saved\": false, \"download_error\": \"Notion MCP returns attachment IDs only (no signed file URLs for file properties). Drive folder 荒玉駅伝歴代 (1XRxBeG1wkG3c92Y-h5ycPgbBL7Ep1ief) is empty; no Drive copies found for these result boards.\", \"drive_id\": null, \"gender\": \"男子\", \"local_path\": null, \"notion_page_url\": \"https://app.notion.com/p/3d3a38e8303480cfafdaf25fa75482ae\", \"ocr_path\": \"notion/media/ekiden-history/ocr/2018-男子.md\", \"source_attachment_id\": \"attachment:5e5fc2dd-9f0a-43f1-8bbc-4105286b9758:image.png\", \"stem\": \"2018-男子\", \"structured_fields\": {\"2位の平均ペース\": \"3:19\", \"スタート時間付近の気温\": 22.2, \"岱明の記録\": \"1:08:57\", \"岱明の順位\": 8}, \"year\": 2018}}"
+  },
+  {
+    "source": "input/external/notion/media/ekiden-history/2019-女子.meta.json",
+    "chunk_ids": [
+      "knowledge-3ae78d157c24fb9d1cea07ca"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": {\"binary_saved\": false, \"download_error\": \"Notion MCP returns attachment IDs only (no signed file URLs for file properties). Drive folder 荒玉駅伝歴代 (1XRxBeG1wkG3c92Y-h5ycPgbBL7Ep1ief) is empty; no Drive copies found for these result boards.\", \"drive_id\": null, \"gender\": \"女子\", \"local_path\": null, \"notion_page_url\": \"https://app.notion.com/p/3d3a38e8303480caaca2e97b06e7f1a8\", \"ocr_path\": \"notion/media/ekiden-history/ocr/2019-女子.md\", \"source_attachment_id\": \"attachment:c76418f2-709a-474b-bc56-d60d847009a2:image.png\", \"stem\": \"2019-女子\", \"structured_fields\": {\"2位の平均ペース\": \"3:33\", \"スタート時間付近の気温\": 20.1, \"岱明の記録\": \"45:46\", \"岱明の順位\": 8}, \"year\": 2019}}"
+  },
+  {
+    "source": "input/external/notion/media/ekiden-history/2019-男子.meta.json",
+    "chunk_ids": [
+      "knowledge-856a955dc5cf6c9b72556c5b"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": {\"binary_saved\": false, \"download_error\": \"Notion MCP returns attachment IDs only (no signed file URLs for file properties). Drive folder 荒玉駅伝歴代 (1XRxBeG1wkG3c92Y-h5ycPgbBL7Ep1ief) is empty; no Drive copies found for these result boards.\", \"drive_id\": null, \"gender\": \"男子\", \"local_path\": null, \"notion_page_url\": \"https://app.notion.com/p/3d3a38e83034808f9fc3e24e000c5cc2\", \"ocr_path\": \"notion/media/ekiden-history/ocr/2019-男子.md\", \"source_attachment_id\": \"attachment:5cc692cd-17f3-4d86-b539-1b1684f80a70:image.png\", \"stem\": \"2019-男子\", \"structured_fields\": {\"2位の平均ペース\": \"3:19\", \"スタート時間付近の気温\": 23.9, \"岱明の記録\": \"1:07:18\", \"岱明の順位\": 4}, \"year\": 2019}}"
+  },
+  {
+    "source": "input/external/notion/media/ekiden-history/2020-女子.meta.json",
+    "chunk_ids": [
+      "knowledge-0976a29861ed645d88b0a7f6"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": {\"binary_saved\": false, \"download_error\": \"Notion MCP returns attachment IDs only (no signed file URLs for file properties). Drive folder 荒玉駅伝歴代 (1XRxBeG1wkG3c92Y-h5ycPgbBL7Ep1ief) is empty; no Drive copies found for these result boards.\", \"drive_id\": null, \"gender\": \"女子\", \"local_path\": null, \"notion_page_url\": \"https://app.notion.com/p/3d3a38e83034807a928fe2318a61e37d\", \"ocr_path\": \"notion/media/ekiden-history/ocr/2020-女子.md\", \"source_attachment_id\": \"attachment:ec8f56bb-3788-415d-b10f-07c6519be957:image.png\", \"stem\": \"2020-女子\", \"structured_fields\": {\"2位の平均ペース\": \"3:42\", \"スタート時間付近の気温\": 21.2, \"岱明の記録\": \"45:54\", \"岱明の順位\": 6}, \"year\": 2020}}"
+  },
+  {
+    "source": "input/external/notion/media/ekiden-history/2020-男子.meta.json",
+    "chunk_ids": [
+      "knowledge-4d3208fd0c808a5706b51da1"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": {\"binary_saved\": false, \"download_error\": \"Notion MCP returns attachment IDs only (no signed file URLs for file properties). Drive folder 荒玉駅伝歴代 (1XRxBeG1wkG3c92Y-h5ycPgbBL7Ep1ief) is empty; no Drive copies found for these result boards.\", \"drive_id\": null, \"gender\": \"男子\", \"local_path\": null, \"notion_page_url\": \"https://app.notion.com/p/3d3a38e83034804bb0aff188218f8cf4\", \"ocr_path\": \"notion/media/ekiden-history/ocr/2020-男子.md\", \"source_attachment_id\": \"attachment:551f9c60-bbf0-407c-b3d7-e0cd2cd29cff:image.png\", \"stem\": \"2020-男子\", \"structured_fields\": {\"2位の平均ペース\": \"3:17\", \"スタート時間付近の気温\": 23.2, \"岱明の記録\": \"1:11:02\", \"岱明の順位\": 11}, \"year\": 2020}}"
+  },
+  {
+    "source": "input/external/notion/media/ekiden-history/2021-女子.meta.json",
+    "chunk_ids": [
+      "knowledge-ffb59e983e9cf5a6ac17c547"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": {\"binary_saved\": false, \"download_error\": \"Notion MCP returns attachment IDs only (no signed file URLs for file properties). Drive folder 荒玉駅伝歴代 (1XRxBeG1wkG3c92Y-h5ycPgbBL7Ep1ief) is empty; no Drive copies found for these result boards.\", \"drive_id\": null, \"gender\": \"女子\", \"local_path\": null, \"notion_page_url\": \"https://app.notion.com/p/3d3a38e8303480a68cd4eae39043ddcf\", \"ocr_path\": \"notion/media/ekiden-history/ocr/2021-女子.md\", \"source_attachment_id\": \"attachment:ddaa395c-17b7-4684-af38-dce67932eeae:image.png\", \"stem\": \"2021-女子\", \"structured_fields\": {\"2位の平均ペース\": \"3:40\", \"スタート時間付近の気温\": 17.4, \"岱明の記録\": \"45:02\", \"岱明の順位\": 7}, \"year\": 2021}}"
+  },
+  {
+    "source": "input/external/notion/media/ekiden-history/2021-男子.meta.json",
+    "chunk_ids": [
+      "knowledge-dd278a2f21a05c664b8d6a21"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": {\"binary_saved\": false, \"download_error\": \"Notion MCP returns attachment IDs only (no signed file URLs for file properties). Drive folder 荒玉駅伝歴代 (1XRxBeG1wkG3c92Y-h5ycPgbBL7Ep1ief) is empty; no Drive copies found for these result boards.\", \"drive_id\": null, \"gender\": \"男子\", \"local_path\": null, \"notion_page_url\": \"https://app.notion.com/p/3d3a38e830348040834bf9ef33231453\", \"ocr_path\": \"notion/media/ekiden-history/ocr/2021-男子.md\", \"source_attachment_id\": \"attachment:49ddab62-498e-40e2-9d7d-2cee3074b214:image.png\", \"stem\": \"2021-男子\", \"structured_fields\": {\"2位の平均ペース\": \"3:13\", \"スタート時間付近の気温\": 19.7, \"岱明の記録\": \"1:09:31\", \"岱明の順位\": 12}, \"year\": 2021}}"
+  },
+  {
+    "source": "input/external/notion/media/ekiden-history/2022-女子.meta.json",
+    "chunk_ids": [
+      "knowledge-b5b7ff5ea32ca6ce92152232"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": {\"binary_saved\": false, \"download_error\": \"Notion MCP returns attachment IDs only (no signed file URLs for file properties). Drive folder 荒玉駅伝歴代 (1XRxBeG1wkG3c92Y-h5ycPgbBL7Ep1ief) is empty; no Drive copies found for these result boards.\", \"drive_id\": null, \"gender\": \"女子\", \"local_path\": null, \"notion_page_url\": \"https://app.notion.com/p/3d3a38e830348033940ee9dccf8e2bed\", \"ocr_path\": \"notion/media/ekiden-history/ocr/2022-女子.md\", \"source_attachment_id\": \"attachment:eaf69c20-5376-4398-910b-a97bb5993c92:image.png\", \"stem\": \"2022-女子\", \"structured_fields\": {\"2位の平均ペース\": \"3:41\", \"スタート時間付近の気温\": 19.2, \"岱明の記録\": \"45:15\", \"岱明の順位\": 8}, \"year\": 2022}}"
+  },
+  {
+    "source": "input/external/notion/media/ekiden-history/2022-男子.meta.json",
+    "chunk_ids": [
+      "knowledge-054f4dd67c745117ee1db386"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": {\"binary_saved\": false, \"download_error\": \"Notion MCP returns attachment IDs only (no signed file URLs for file properties). Drive folder 荒玉駅伝歴代 (1XRxBeG1wkG3c92Y-h5ycPgbBL7Ep1ief) is empty; no Drive copies found for these result boards.\", \"drive_id\": null, \"gender\": \"男子\", \"local_path\": null, \"notion_page_url\": \"https://app.notion.com/p/3d3a38e8303480ee875fe381d045dd5e\", \"ocr_path\": \"notion/media/ekiden-history/ocr/2022-男子.md\", \"source_attachment_id\": \"attachment:8504b516-bf57-411d-b10c-95d376b4f751:image.png\", \"stem\": \"2022-男子\", \"structured_fields\": {\"2位の平均ペース\": \"3:15\", \"スタート時間付近の気温\": 22, \"岱明の記録\": \"1:09:59\", \"岱明の順位\": 12}, \"year\": 2022}}"
+  },
+  {
+    "source": "input/external/notion/media/ekiden-history/2023-女子.meta.json",
+    "chunk_ids": [
+      "knowledge-71b1ea5e9db7d1817af5896a"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": {\"binary_saved\": false, \"download_error\": \"Notion MCP returns attachment IDs only (no signed file URLs for file properties). Drive folder 荒玉駅伝歴代 (1XRxBeG1wkG3c92Y-h5ycPgbBL7Ep1ief) is empty; no Drive copies found for these result boards.\", \"drive_id\": null, \"gender\": \"女子\", \"local_path\": null, \"notion_page_url\": \"https://app.notion.com/p/3d3a38e8303480429823e68f2a52e2f0\", \"ocr_path\": \"notion/media/ekiden-history/ocr/2023-女子.md\", \"source_attachment_id\": \"attachment:d190bb10-5074-4fd6-a9fe-e738c413dd51:image.png\", \"stem\": \"2023-女子\", \"structured_fields\": {\"2位の平均ペース\": \"3:36\", \"スタート時間付近の気温\": 20.4, \"岱明の記録\": \"46:12\", \"岱明の順位\": 8}, \"year\": 2023}}"
+  },
+  {
+    "source": "input/external/notion/media/ekiden-history/2023-男子.meta.json",
+    "chunk_ids": [
+      "knowledge-369deed87e8358c2aa1b2e39"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": {\"binary_saved\": false, \"download_error\": \"Notion MCP returns attachment IDs only (no signed file URLs for file properties). Drive folder 荒玉駅伝歴代 (1XRxBeG1wkG3c92Y-h5ycPgbBL7Ep1ief) is empty; no Drive copies found for these result boards.\", \"drive_id\": null, \"gender\": \"男子\", \"local_path\": null, \"notion_page_url\": \"https://app.notion.com/p/3d3a38e830348081a304f320fe6e0c21\", \"ocr_path\": \"notion/media/ekiden-history/ocr/2023-男子.md\", \"source_attachment_id\": \"attachment:1d7e6525-2942-42dd-8610-17d7987a7371:image.png\", \"stem\": \"2023-男子\", \"structured_fields\": {\"2位の平均ペース\": \"3:12\", \"スタート時間付近の気温\": 22.8, \"岱明の記録\": \"1:08:35\", \"岱明の順位\": 11}, \"year\": 2023}}"
+  },
+  {
+    "source": "input/external/notion/media/ekiden-history/2024-女子.meta.json",
+    "chunk_ids": [
+      "knowledge-c7a29d0f253ceae165bdad4a"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": {\"binary_saved\": false, \"download_error\": \"Notion MCP returns attachment IDs only (no signed file URLs for file properties). Drive folder 荒玉駅伝歴代 (1XRxBeG1wkG3c92Y-h5ycPgbBL7Ep1ief) is empty; no Drive copies found for these result boards.\", \"drive_id\": null, \"gender\": \"女子\", \"local_path\": null, \"notion_page_url\": \"https://app.notion.com/p/3d3a38e8303480a6aa75e666c4010c33\", \"ocr_path\": \"notion/media/ekiden-history/ocr/2024-女子.md\", \"source_attachment_id\": \"attachment:19df0e4a-3a41-4b9d-ae28-a3d833268c02:image.png\", \"stem\": \"2024-女子\", \"structured_fields\": {\"2位の平均ペース\": \"3:36\", \"スタート時間付近の気温\": 27, \"岱明の記録\": \"45:06\", \"岱明の順位\": 6}, \"year\": 2024}}"
+  },
+  {
+    "source": "input/external/notion/media/ekiden-history/2024-男子.meta.json",
+    "chunk_ids": [
+      "knowledge-0fb2abe3212f873b66862dc7"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": {\"binary_saved\": false, \"download_error\": \"Notion MCP returns attachment IDs only (no signed file URLs for file properties). Drive folder 荒玉駅伝歴代 (1XRxBeG1wkG3c92Y-h5ycPgbBL7Ep1ief) is empty; no Drive copies found for these result boards.\", \"drive_id\": null, \"gender\": \"男子\", \"local_path\": null, \"notion_page_url\": \"https://app.notion.com/p/3d3a38e8303480728aa5eb6b9f867d19\", \"ocr_path\": \"notion/media/ekiden-history/ocr/2024-男子.md\", \"source_attachment_id\": \"attachment:14697ee3-f926-4644-857f-79a8629626ed:image.png\", \"stem\": \"2024-男子\", \"structured_fields\": {\"2位の平均ペース\": \"3:17\", \"スタート時間付近の気温\": 29.9, \"岱明の記録\": \"1:05:15\", \"岱明の順位\": 15}, \"year\": 2024}}"
+  },
+  {
+    "source": "input/external/notion/media/ekiden-history/2025-女子.meta.json",
+    "chunk_ids": [
+      "knowledge-acf2aa9d253a76dd7fc8ad25"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": {\"binary_saved\": false, \"download_error\": \"Notion MCP returns attachment IDs only (no signed file URLs for file properties). Drive folder 荒玉駅伝歴代 (1XRxBeG1wkG3c92Y-h5ycPgbBL7Ep1ief) is empty; no Drive copies found for these result boards.\", \"drive_id\": null, \"gender\": \"女子\", \"local_path\": null, \"notion_page_url\": \"https://app.notion.com/p/3d3a38e830348010a680f2d7c60f8f67\", \"ocr_path\": \"notion/media/ekiden-history/ocr/2025-女子.md\", \"source_attachment_id\": \"attachment:488fb43f-0a91-48d0-8034-c2388526068f:image.png\", \"stem\": \"2025-女子\", \"structured_fields\": {\"2位の平均ペース\": \"3:41\", \"スタート時間付近の気温\": 28.5, \"岱明の記録\": \"45:22\", \"岱明の順位\": 7}, \"year\": 2025}}"
+  },
+  {
+    "source": "input/external/notion/media/ekiden-history/2025-男子.meta.json",
+    "chunk_ids": [
+      "knowledge-9899e68436d0a20f8d0d1fa7"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": {\"binary_saved\": false, \"download_error\": \"Notion MCP returns attachment IDs only (no signed file URLs for file properties). Drive folder 荒玉駅伝歴代 (1XRxBeG1wkG3c92Y-h5ycPgbBL7Ep1ief) is empty; no Drive copies found for these result boards.\", \"drive_id\": null, \"gender\": \"男子\", \"local_path\": null, \"notion_page_url\": \"https://app.notion.com/p/3d3a38e83034807db9ecc892080dca31\", \"ocr_path\": \"notion/media/ekiden-history/ocr/2025-男子.md\", \"source_attachment_id\": \"attachment:2c24d4d0-8ee7-43da-917f-9d89e42f927d:image.png\", \"stem\": \"2025-男子\", \"structured_fields\": {\"2位の平均ペース\": \"3:16\", \"スタート時間付近の気温\": 29, \"岱明の記録\": \"59:08\", \"岱明の順位\": 6}, \"year\": 2025}}"
+  },
+  {
+    "source": "input/idaten-corpus/calendar/events.daiming.yaml",
+    "chunk_ids": [
+      "knowledge-7c206f7a82d8997ab31993e8",
+      "knowledge-4eb55ef1b73a6f9195577184",
+      "knowledge-74c91b6d6e2c702faff8a6fd",
+      "knowledge-0ddbc317d9ff82b1acd52361",
+      "knowledge-4d40648f87f933caacaa6555",
+      "knowledge-b8538bfb2ef3e8940e89b866",
+      "knowledge-b0570fd5f29e2312da94a283",
+      "knowledge-ef07ff5cd5bd42fec3d60eb3",
+      "knowledge-bab5407c0e3fd08f138d3610",
+      "knowledge-6dcf8ce28ec0d05d34fb8df5",
+      "knowledge-396387e82f04dacf5b6ac386",
+      "knowledge-82cf8513f1d3514e6869f1b5",
+      "knowledge-f8a92ee32e9613de951bf38d",
+      "knowledge-5347518ef39b8a879c2d300e",
+      "knowledge-b60a39be551d32c776dbed9a",
+      "knowledge-b4227e8f6aa1fff3f81e8928",
+      "knowledge-c7c6d3c7ba6ebb216fb1ae1f",
+      "knowledge-9497734197e6baa4b9542f13",
+      "knowledge-3b06d19911704a7e84bfcdef",
+      "knowledge-8e86ee11473f517a64bfcd2c",
+      "knowledge-ebcfd79a9dfd0a2fe3ef7025",
+      "knowledge-801a5901dc8cd0956e35487e",
+      "knowledge-795b30483f18262d888848ef",
+      "knowledge-a6b7e7904c14b86c7f456c59",
+      "knowledge-46e3a6fbfdaafdaa25742914"
+    ],
+    "sample_json": "{\"context\": {\"filter\": \"daiming\"}, \"pointer\": \"/events/0\", \"value\": {\"all_day\": true, \"category\": \"予定\", \"date\": \"2025-03-08\", \"status\": \"scheduled\", \"title\": \"岱明中陸上部お別れ会\"}}"
+  },
+  {
+    "source": "input/idaten-corpus/drive-text/大会/2026年度/0920_中学駅伝金栗四三生誕の地なごみ大会/荒玉地区の結果.md.meta.json",
+    "chunk_ids": [
+      "knowledge-d8d8a554d1161be6da53715f"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": {\"id\": \"1TujEJG7vAeyQCWqZ5735CIHu69H0e3zyPkFgytpHgJ0\", \"importedAs\": \"markdown\", \"mimeType\": \"application/vnd.google-apps.document\", \"modifiedTime\": \"2026-09-27T13:54:49.724Z\", \"parentId\": \"1k-zW0irJ-OjDjqQwUQLZIs4C6PfuR211\", \"size\": 1277, \"skipReason\": null, \"status\": \"imported\", \"title\": \"荒玉地区の結果\", \"viewUrl\": \"https://docs.google.com/document/d/1TujEJG7vAeyQCWqZ5735CIHu69H0e3zyPkFgytpHgJ0/edit\"}}"
+  },
+  {
+    "source": "input/idaten-corpus/drive-text/大会/2026年度/0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）/荒玉地区の結果.md.meta.json",
+    "chunk_ids": [
+      "knowledge-03722df31c35b3f5ad3f259e"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": {\"id\": \"1XcNm5Sx6qSVyUy6F9ujYfiAmPXifzBTkyug4aYkrvGo\", \"importedAs\": \"markdown\", \"mimeType\": \"application/vnd.google-apps.document\", \"modifiedTime\": \"2026-09-27T13:54:46.248Z\", \"parentId\": \"1pUww3wPlyy4IoSNUy58qK9yhCRzeU_-2\", \"size\": 1607, \"skipReason\": null, \"status\": \"imported\", \"title\": \"荒玉地区の結果\", \"viewUrl\": \"https://docs.google.com/document/d/1XcNm5Sx6qSVyUy6F9ujYfiAmPXifzBTkyug4aYkrvGo/edit\"}}"
+  },
+  {
+    "source": "input/idaten-corpus/drive-text/大会/2026年度/1014-1015_荒玉中体連駅伝/区間オーダー_数式予想.json",
+    "chunk_ids": [
+      "knowledge-16173051fad3e92ae431d901",
+      "knowledge-614cbc885108bd94cde2b58d",
+      "knowledge-90b15c183086cde851bd6cdf",
+      "knowledge-47ce0c0dce85a1223527fb9d",
+      "knowledge-163986b1b4dbe42422b1ff1f",
+      "knowledge-485b0f4368cb0c954b43887b",
+      "knowledge-2488de456f4dc4fd75b78776",
+      "knowledge-beb121fa60e49caec1001905",
+      "knowledge-d7735a21380c13baa568e709",
+      "knowledge-c229d6e90a37f0b4276464f7",
+      "knowledge-eaefdea63451dbb0179d2f96",
+      "knowledge-64c70af0f22bbb814f15faa7",
+      "knowledge-7e4e996014e9592ade27e5b5",
+      "knowledge-aea9f8c939e032852bf167cc",
+      "knowledge-665b3982b2d49573a47f10e1",
+      "knowledge-41c0d12057eba06648cdfa07",
+      "knowledge-e26aa05593fc8e1579a3f217",
+      "knowledge-79ca0e5b1c35610e10ee1ef7",
+      "knowledge-7fb86a2a6ff74258b91244d5",
+      "knowledge-54094f42cd22d3e812751926",
+      "knowledge-72f68a7eeb1224503494c7e0",
+      "knowledge-6049f750396d351ad0d0ba52"
+    ],
+    "sample_json": "{\"context\": {\"as_of\": \"2026-09-27\", \"event\": \"荒玉中体連駅伝\", \"event_date\": \"2026-10-14\", \"model\": \"aragyoku_2026_formula_v6_context\"}, \"pointer\": \"/event\", \"value\": \"荒玉中体連駅伝\"}"
+  },
+  {
+    "source": "input/idaten-corpus/media-manifest.slim.json",
+    "chunk_ids": [
+      "knowledge-a663779dd8fdc2d5a156eea0"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": [{\"binary_saved\": false, \"topic\": \"ekiden\"}, {\"binary_saved\": false, \"topic\": \"ekiden\"}, {\"binary_saved\": false, \"topic\": \"ekiden\"}, {\"binary_saved\": false, \"topic\": \"ekiden\"}, {\"binary_saved\": false, \"topic\": \"ekiden\"}, {\"binary_saved\": false, \"topic\": \"ekiden\"}, {\"binary_saved\": false, \"topic\": \"ekiden\"}, {\"binary_saved\": false, \"topic\": \"ekiden\"}, {\"binary_saved\": false, \"topic\": \"ekiden\"}, {\"binary_saved\": false, \"topic\": \"ekiden\"}, {\"binary_saved\": false, \"topic\": \"ekiden\"}, {\"binary_saved\": false, \"topic\": \"ekiden\"}, {\"binary_saved\": false, \"topic\": \"ekiden\"}, {\"binary_saved\": false, \"topic\": \"ekiden\"}, {\"binary_saved\": false, \"topic\": \"ekiden\"}, {\"binary_saved\": false, \"topic\": \"ekiden\"}, {\"binary_saved\": false, \"topic\": \"ekiden\"}, {\"binary_saved\": false, \"topic\": \"ekiden\"}, {\"binary_saved\": false, \"topic\": \"ekiden\"}, {\"binary_saved\": false, \"topic\": \"ekiden\"}, {\"binary_saved\": false, \"topic\": \"ekiden\"}, {\"binary_saved\": false, \"topic\": \"ekiden\"}, {\"binary_saved\": false, \"topic\": \"ekiden\"}, {\"binary_saved\": false, \"topic\": \"ekiden\"}, {\"binary_saved\": false, \"topic\": \"ekiden\"}, {\"binary_saved\": false, \"topic\": \"ekiden\"}, {\"binary_saved\": false, \"topic\": \"ekiden\"}, {\"binary_saved\": true, \"topic\": \"analysis\"}, {\"binary_saved\": true, \"topic\": \"analysis\"}, {\"binary_saved\": true, \"topic\": \"analysis\"}]}"
+  },
+  {
+    "source": "input/idaten-corpus/out-analysis/2026-09-29_aragyoku_trial_results.json",
+    "chunk_ids": [
+      "knowledge-3a58f8e9155f60149f364d14"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": {\"date\": \"2026-09-29\", \"event\": \"岱明中 荒玉駅伝試走\", \"notes\": [\"総タイム・ラップはユーザー報告を保持。今村はラップ合計10:14／総タイム10:15、田上は10:13／10:14。\", \"中尾10:12は現在の予想オーダーの中尾快叶と照合。中尾12:13と、フルネームを確認できない選手は姓のみで保存。\", \"1–4区は区間別試走、5区は2.855km一斉走。試走記録は大会結果・トラックSBとは区別する。\"], \"record_type\": \"course_trial\", \"records\": [{\"distance_km\": 3, \"identity_status\": \"context_matched\", \"lap_sum_sec\": 588, \"laps\": [\"3:12\", \"3:16\", \"3:20\"], \"leg\": 1, \"name\": \"松野凛空\", \"reported_name\": \"松野\", \"time\": \"9:48\", \"time_sec\": 588, \"total_minus_lap_sum_sec\": 0}, {\"distance_km\": 2.855, \"identity_status\": \"context_matched\", \"lap_sum_sec\": 592, \"laps\": [\"3:20\", \"3:31\", \"3:01\"], \"leg\": 2, \"name\": \"山本哲瑠\", \"reported_name\": \"山本\", \"time\": \"9:52\", \"time_sec\": 592, \"total_minus_lap_sum_sec\": 0}, {\"distance_km\": 3, \"identity_status\": \"context_matched\", \"lap_sum_sec\": 614, \"laps\": [\"3:11\", \"3:29\", \"3:34\"], \"leg\": 3, \"name\": \"今村昇磨\", \"reported_name\": \"今村\", \"time\": \"10:15\", \"time_sec\": 615, \"total_minus_lap_sum_sec\": 1}, {\"distance_km\": 3, \"identity_status\": \"context_matched\", \"lap_sum_sec\": 613, \"laps\": [\"3:23\", \"3:29\", \"3:21\"], \"leg\": 4, \"name\": \"田上颯人\", \"reported_name\": \"田上\", \"time\": \"10:14\", \"time_sec\": 614, \"total_minus_lap_sum_sec\": 1}, {\"display_order\": 1, \"distance_km\": 2.855, \"identity_status\": \"context_matched\", \"leg\": 5, \"name\": \"松本空羽\", \"reported_name\": \"松本\", \"start\": \"一斉\", \"time\": \"10:11\", \"time_sec\": 611}, {\"display_order\": 2, \"distance_km\": 2.855, \"identity_status\": \"context_matched\", \"leg\": 5, \"name\": \"中尾快叶\", \"reported_name\": \"中尾\", \"start\": \"一斉\", \"time\": \"10:12\", \"time_sec\": 612}, {\"display_order\": 3, \"distance_km\": 2.855, \"identity_status\": \"unconfirmed\", \"leg\": 5, \"name\": null, \"reported_name\": \"西村\", \"start\": \"一斉\", \"time\": \"10:22\", \"time_sec\": 622}, {\"display_order\": 4, \"distance_km\": 2.855, \"identity_status\": \"context_matched\", \"leg\": 5, \"name\": \"南本幸治郎\", \"reported_name\": \"南本\", \"start\": \"一斉\", \"time\": \"10:42\", \"time_sec\": 642}, {\"display_order\": 5, \"distance_km\": 2.855, \"identity_status\": \"uncon"
+  },
+  {
+    "source": "input/idaten-corpus/out-analysis/aragyoku_2026_formula_coefficients.json",
+    "chunk_ids": [
+      "knowledge-3be33fd8b172ad7590eddca3"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": {\"as_of\": \"2026-09-27\", \"historical_track_backtest\": {\"女子\": {\"by_year\": {\"2024\": 38, \"2025\": 38}, \"mae_sec\": 20.088723400207098, \"median_actual_over_raw\": 1.0101228206128228, \"n\": 76, \"rmse_sec\": 26.329081621529642}, \"男子\": {\"by_year\": {\"2024\": 37, \"2025\": 35}, \"mae_sec\": 21.269962777600764, \"median_actual_over_raw\": 0.9925365644653918, \"n\": 72, \"rmse_sec\": 37.203526672422115}}, \"observations\": 1189, \"params\": {\"女子\": {\"baseline_scale\": 0.9860736188843046, \"baseline_scale_source\": \"v1 median alignment, held fixed\", \"best_share\": 0.3, \"distance_exponent\": 1.11410746162166, \"distance_pairs\": 15, \"distance_raw_median\": 1.1104385301321984, \"junior_course_factor\": 1.0, \"junior_pairs\": 0, \"leg_effect\": {\"leg4_minus_leg3_median_sec\": 19.0, \"leg_offsets_sec\": {\"3\": -9.5, \"4\": 9.5}, \"season_count\": 13, \"season_medians_sec\": {\"2012\": 12.0, \"2013\": 28.0, \"2015\": 17.0, \"2016\": 10.5, \"2017\": 21.5, \"2018\": 21.5, \"2019\": 18.5, \"2020\": 20.5, \"2021\": 19.0, \"2022\": 9.0, \"2023\": 19.0, \"2024\": 10.0, \"2025\": 19.0}, \"team_pairs\": 204, \"years\": [2012, 2013, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025]}, \"nagomi_pairs\": 0, \"observation_weight_rules\": [{\"meet\": \"なごみ中学駅伝\", \"reason\": \"練習参加とみなし、競技会実績より低い重み\", \"team\": \"玉陵中\", \"weight\": 0.15}], \"other_feature\": \"typical\", \"peak_factor\": 1.0, \"recent_half_life_days\": 21, \"recent_road_weight\": 2.0, \"recent_track_weight\": 0.5, \"recent_window_days\": 45, \"road_factor\": 0.9924667003145493, \"road_pairs\": 10, \"road_raw_median\": 0.9736334511009226, \"short_exponent\": 1.1557583458106997, \"short_pairs\": 404, \"short_raw_median\": 1.1557583458106997}, \"男子\": {\"baseline_scale\": 1.0051284240243719, \"baseline_scale_source\": \"v1 median alignment, held fixed\", \"best_share\": 0.3, \"distance_exponent\": 1.11686608267681, \"distance_pairs\": 474, \"distance_raw_median\": 1.1168663747628038, \"junior_course_factor\": 1.01, \"junior_course_factor_source\": \"rolling-course scenario assumption; elevation not measured\", \"junior"
+  },
+  {
+    "source": "input/idaten-corpus/out-analysis/aragyoku_2026_recent_results.json",
+    "chunk_ids": [
+      "knowledge-edaf85d03c6c0b0c5330c089",
+      "knowledge-03cec2986e77023c7f56b77d",
+      "knowledge-0ed2da285fd8419d84103091",
+      "knowledge-ce2f19bfbe6ec943e90aa08a",
+      "knowledge-2632a2e7ae3ad44fecadacd9",
+      "knowledge-984e363efc81bb3b21a34508",
+      "knowledge-4073c3404e5f33b83fa02ac0",
+      "knowledge-541218318fd6aa0c08da2a37",
+      "knowledge-c7783355deca87197fde9aa0",
+      "knowledge-07b739c7d1fe734e6eb4f420",
+      "knowledge-f123a8684f188af3cf2eb60b",
+      "knowledge-0f8e51c930889551c22ed415",
+      "knowledge-c40578a2e1c2789b50380af4",
+      "knowledge-bf91292a4a16814a41585f1a",
+      "knowledge-ad4bae87a9060da73b9625bd",
+      "knowledge-cf95f0201b1957f40259bd66"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"/0\", \"value\": {\"affiliation\": \"南関β\", \"date\": \"2026-09-20\", \"discipline\": \"2区\", \"distance_km\": 2.0, \"event\": \"第12回 中学駅伝金栗四三生誕の地なごみ大会\", \"gender\": \"女子\", \"identity_confirmed\": true, \"kind\": \"competition\", \"name\": \"原賀 美和\", \"note\": \"区間11位／チーム19位 33:38\", \"result\": \"7:53\", \"source\": \"input/external/drive/shared/大会/2026年度/0920_中学駅伝金栗四三生誕の地なごみ大会/成績表.json\", \"team\": \"南関中\", \"url\": \"\"}}"
+  },
+  {
+    "source": "input/idaten-corpus/practice/practice.2025.json",
+    "chunk_ids": [
+      "knowledge-fe72f003ef621720ebf26330",
+      "knowledge-658f2761f91bc72576fe2559",
+      "knowledge-5d6cdf2ae767a7afbf09a3f8",
+      "knowledge-6101e35000f6ca242084e152"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"/0\", \"value\": {\"date\": \"2025-06-05\", \"end_time\": null, \"parse\": {\"confidence\": \"full\", \"skipped\": [], \"source\": \"practice_field\"}, \"practice\": {\"items\": [{\"distance_km\": 4.48, \"laps\": 8, \"pace\": \"k/4:16\", \"type\": \"jog\"}, {\"distance_km\": 3.36, \"laps\": 6, \"pace\": \"k/4:16\", \"type\": \"jog\"}], \"warmup\": \"動きづくり\"}, \"start_time\": null, \"status\": \"scheduled\", \"tags\": [\"ランニング\", \"いだてん岱明練習\", \"practice:daiming\"], \"template_ref\": null, \"title\": \"いだてん岱明練習\", \"year\": 2025}}"
+  },
+  {
+    "source": "input/idaten-corpus/practice/practice.2026.json",
+    "chunk_ids": [
+      "knowledge-22419f857de2b98aac16e9d8",
+      "knowledge-2f55cf9609cedbb93b5bf9f7",
+      "knowledge-7d08a0f870d3568ccca4b080",
+      "knowledge-72ff450fcd8d4d5bf6614dcb",
+      "knowledge-280d59aad8a6185acf92d30c"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"/0\", \"value\": {\"date\": \"2026-07-21\", \"end_time\": \"09:30\", \"parse\": {\"confidence\": \"full\", \"skipped\": [], \"source\": \"practice_field\"}, \"practice\": {\"items\": [{\"distance_km\": 2.5, \"group\": \"男子\", \"reps\": 2, \"type\": \"interval\"}, {\"distance_km\": 2.0, \"group\": \"女子\", \"reps\": 2, \"type\": \"interval\"}], \"warmup\": \"動きづくり\"}, \"start_time\": \"08:00\", \"status\": \"scheduled\", \"tags\": [\"ランニング\", \"いだてん岱明練習\", \"practice:daiming\", \"session:morning\"], \"template_ref\": null, \"title\": \"いだてん岱明朝練\", \"year\": 2026}}"
+  }
+]
