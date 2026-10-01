@@ -1,0 +1,477 @@
+{
+  "version": 1,
+  "entries": [
+    {
+      "id": "chunkqa-7f5ee7a938d1e84d10bf6ff6-1",
+      "chunk_id": "knowledge-7f5ee7a938d1e84d10bf6ff6",
+      "questions": [
+        "2026年7月29日と31日のいだてん岱明朝練は、時刻とメニューが同じ？"
+      ],
+      "answer": "両日とも8時開始の予定で、「動きづくり、男子2.5km×2、女子2km×2」と同じメニューが記録されています。",
+      "sources": [
+        "calendar.md"
+      ],
+      "source_sha256": "c708357283066a9fa70d7c765b6c3c933529e681a56a9048980ab7e382a4ac6f",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "- **件名**: いだてん岱明朝練\n- **表示日**: 2026-07-29\n- **開始日**: 2026-07-29\n- **終了日**: 2026-07-29\n- **終日**: いいえ\n- **開始時刻**: 08:00\n- **終了時刻**: 09:30\n- **カテゴリ**: 予定\n- **ステータス**: scheduled\n- **タグ**: ランニング, いだてん岱明練習, practice:daiming, session:morning\n- **場所**: （なし）\n- **URL**: （なし）\n- **非公開**: いいえ\n\n**天気（玉名市）**\n\n- **観測時刻**: 2026-07-29T08:00\n- **天気**: 霧雨（弱）\n- **気温**: 29.2°C\n- **湿度**: 78%\n- **風向**: 南西\n- **風速**: 5.0 km/h\n- **降水量**: 0.2 mm\n- **データソース**: open-meteo\n\n**説明**\n\n動きづくり、男子2.5km×2、女子2km×2\n\n"
+        },
+        {
+          "kind": "quote",
+          "text": "- **件名**: いだてん岱明朝練\n- **表示日**: 2026-07-31\n- **開始日**: 2026-07-31\n- **終了日**: 2026-07-31\n- **終日**: いいえ\n- **開始時刻**: 08:00\n- **終了時刻**: 09:30\n- **カテゴリ**: 予定\n- **ステータス**: scheduled\n- **タグ**: ランニング, いだてん岱明練習, practice:daiming, session:morning\n- **場所**: （なし）\n- **URL**: （なし）\n- **非公開**: いいえ\n\n**天気（玉名市）**\n\n- **観測時刻**: 2026-07-31T08:00\n- **天気**: 晴れ\n- **気温**: 28.3°C\n- **湿度**: 76%\n- **風向**: 南東\n- **風速**: 3.9 km/h\n- **降水量**: 0.0 mm\n- **データソース**: open-meteo\n\n**説明**\n\n動きづくり、男子2.5km×2、女子2km×2\n\n"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "authored-machine-checks-pending"
+      }
+    },
+    {
+      "id": "chunkqa-7f5ee7a938d1e84d10bf6ff6-2",
+      "chunk_id": "knowledge-7f5ee7a938d1e84d10bf6ff6",
+      "questions": [
+        "2026年7月31日のいだてん岱明夕練は、600mの疾走部分だけで合計何m？"
+      ],
+      "answer": "600mを2本なので、疾走部分は合計1,200mです。メモでは1500mのレースペース、レスト8分とされています。各自のアップはこの距離に含めていません。",
+      "sources": [
+        "calendar.md"
+      ],
+      "source_sha256": "c708357283066a9fa70d7c765b6c3c933529e681a56a9048980ab7e382a4ac6f",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "- **件名**: いだてん岱明夕練\n- **表示日**: 2026-07-31\n- **開始日**: 2026-07-31\n- **終了日**: 2026-07-31\n- **終日**: いいえ\n- **開始時刻**: 18:00\n- **終了時刻**: 19:30\n- **カテゴリ**: 予定\n- **ステータス**: scheduled\n- **タグ**: ランニング, いだてん岱明練習, practice:daiming, session:evening\n- **場所**: （なし）\n- **URL**: （なし）\n- **非公開**: いいえ\n\n**天気（玉名市）**\n\n- **観測時刻**: 2026-07-31T18:00\n- **天気**: 快晴\n- **気温**: 32.0°C\n- **湿度**: 60%\n- **風向**: 西南西\n- **風速**: 13.2 km/h\n- **降水量**: 0.0 mm\n- **データソース**: open-meteo\n\n**説明**\n\n<!-- practice-menu:v1\nwarmup: null\nitems:\n- type: interval\n  distance_m: 600\n  reps: '2'\n  intensity: RP\n  rest_sec: null\n-->\n\n各自アップ、600m2本（1500mRP、r=8分）\n\n600m×2（RP）\n\n"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "authored-machine-checks-pending"
+      }
+    },
+    {
+      "id": "chunkqa-7f5ee7a938d1e84d10bf6ff6-3",
+      "chunk_id": "knowledge-7f5ee7a938d1e84d10bf6ff6",
+      "questions": [
+        "2026年7月30日のいだてん岱明は、朝夕とも休みの予定で、翌日は朝夕とも練習予定？"
+      ],
+      "answer": "はい。7月30日は朝練・夕練とも休み、翌31日は朝練8時・夕練18時の予定として登録されています。",
+      "sources": [
+        "calendar.md"
+      ],
+      "source_sha256": "c708357283066a9fa70d7c765b6c3c933529e681a56a9048980ab7e382a4ac6f",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "- **件名**: いだてん岱明朝練休み\n- **表示日**: 2026-07-30\n- **開始日**: 2026-07-30\n- **終了日**: 2026-07-30\n- **終日**: はい\n- **開始時刻**: （なし）\n- **終了時刻**: （なし）\n- **カテゴリ**: 予定\n- **ステータス**: scheduled\n- **タグ**: ランニング, いだてん岱明練習, practice:daiming, session:morning\n- **場所**: （なし）\n- **URL**: （なし）\n- **非公開**: いいえ\n\n**天気（玉名市）**\n\n- **観測時刻**: 2026-07-30T08:00\n- **天気**: 曇り\n- **気温**: 29.3°C\n- **湿度**: 76%\n- **風向**: 南西\n- **風速**: 3.9 km/h\n- **降水量**: 0.0 mm\n- **データソース**: open-meteo\n\n**説明**\n\n（なし）\n\n"
+        },
+        {
+          "kind": "quote",
+          "text": "- **件名**: いだてん岱明夕練休み\n- **表示日**: 2026-07-30\n- **開始日**: 2026-07-30\n- **終了日**: 2026-07-30\n- **終日**: はい\n- **開始時刻**: （なし）\n- **終了時刻**: （なし）\n- **カテゴリ**: 予定\n- **ステータス**: scheduled\n- **タグ**: ランニング, いだてん岱明練習, practice:daiming, session:evening\n- **場所**: （なし）\n- **URL**: （なし）\n- **非公開**: いいえ\n\n**天気（玉名市）**\n\n- **観測時刻**: 2026-07-30T18:00\n- **天気**: 快晴\n- **気温**: 31.5°C\n- **湿度**: 55%\n- **風向**: 西\n- **風速**: 13.9 km/h\n- **降水量**: 0.0 mm\n- **データソース**: open-meteo\n\n**説明**\n\n（なし）\n\n"
+        },
+        {
+          "kind": "quote",
+          "text": "- **件名**: いだてん岱明朝練\n- **表示日**: 2026-07-31\n- **開始日**: 2026-07-31\n- **終了日**: 2026-07-31\n- **終日**: いいえ\n- **開始時刻**: 08:00\n- **終了時刻**: 09:30\n- **カテゴリ**: 予定\n- **ステータス**: scheduled\n- **タグ**: ランニング, いだてん岱明練習, practice:daiming, session:morning\n- **場所**: （なし）\n- **URL**: （なし）\n- **非公開**: いいえ\n\n**天気（玉名市）**\n\n- **観測時刻**: 2026-07-31T08:00\n- **天気**: 晴れ\n- **気温**: 28.3°C\n- **湿度**: 76%\n- **風向**: 南東\n- **風速**: 3.9 km/h\n- **降水量**: 0.0 mm\n- **データソース**: open-meteo\n\n**説明**\n\n動きづくり、男子2.5km×2、女子2km×2\n\n"
+        },
+        {
+          "kind": "quote",
+          "text": "- **件名**: いだてん岱明夕練\n- **表示日**: 2026-07-31\n- **開始日**: 2026-07-31\n- **終了日**: 2026-07-31\n- **終日**: いいえ\n- **開始時刻**: 18:00\n- **終了時刻**: 19:30\n- **カテゴリ**: 予定\n- **ステータス**: scheduled\n- **タグ**: ランニング, いだてん岱明練習, practice:daiming, session:evening\n- **場所**: （なし）\n- **URL**: （なし）\n- **非公開**: いいえ\n\n**天気（玉名市）**\n\n- **観測時刻**: 2026-07-31T18:00\n- **天気**: 快晴\n- **気温**: 32.0°C\n- **湿度**: 60%\n- **風向**: 西南西\n- **風速**: 13.2 km/h\n- **降水量**: 0.0 mm\n- **データソース**: open-meteo\n\n**説明**\n\n<!-- practice-menu:v1\nwarmup: null\nitems:\n- type: interval\n  distance_m: 600\n  reps: '2'\n  intensity: RP\n  rest_sec: null\n-->\n\n各自アップ、600m2本（1500mRP、r=8分）\n\n600m×2（RP）\n\n"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "authored-machine-checks-pending"
+      }
+    },
+    {
+      "id": "chunkqa-99f7c0feeeb9ef5f5f287fc5-1",
+      "chunk_id": "knowledge-99f7c0feeeb9ef5f5f287fc5",
+      "questions": [
+        "2026年8月の月間カレンダーで、2・3年と1年の課題提出日はどう違う？"
+      ],
+      "answer": "2・3年は8月19日、1年は8月20日と21日に課題提出日が登録されています。1年の最初の登録日は、2・3年より1日後です。",
+      "sources": [
+        "calendar.md"
+      ],
+      "source_sha256": "c708357283066a9fa70d7c765b6c3c933529e681a56a9048980ab7e382a4ac6f",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "[2，3年課題提出日](#event-20260819-01)"
+        },
+        {
+          "kind": "quote",
+          "text": "[1年課題提出日](#event-20260820-03)"
+        },
+        {
+          "kind": "quote",
+          "text": "[1年課題提出日](#event-20260821-04)"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "authored-machine-checks-pending"
+      }
+    },
+    {
+      "id": "chunkqa-99f7c0feeeb9ef5f5f287fc5-2",
+      "chunk_id": "knowledge-99f7c0feeeb9ef5f5f287fc5",
+      "questions": [
+        "2026年8月の岱明中の学校閉庁日は、月間カレンダーにどの日付で登録されている？"
+      ],
+      "answer": "8月10日・12日・13日・14日の4日分が、学校閉庁日として登録されています。",
+      "sources": [
+        "calendar.md"
+      ],
+      "source_sha256": "c708357283066a9fa70d7c765b6c3c933529e681a56a9048980ab7e382a4ac6f",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "[学校閉庁日](#event-20260810-06)"
+        },
+        {
+          "kind": "quote",
+          "text": "[学校閉庁日](#event-20260812-03)"
+        },
+        {
+          "kind": "quote",
+          "text": "[学校閉庁日](#event-20260813-02)"
+        },
+        {
+          "kind": "quote",
+          "text": "[学校閉庁日](#event-20260814-05)"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "authored-machine-checks-pending"
+      }
+    },
+    {
+      "id": "chunkqa-99f7c0feeeb9ef5f5f287fc5-3",
+      "chunk_id": "knowledge-99f7c0feeeb9ef5f5f287fc5",
+      "questions": [
+        "2026年8月26日の夏期休業最終日から、玉名郡ナイターの登録日までは何日？"
+      ],
+      "answer": "夏期休業最終日は8月26日、玉名郡ナイター中・長距離記録会は8月29日に登録されており、3日あります。",
+      "sources": [
+        "calendar.md"
+      ],
+      "source_sha256": "c708357283066a9fa70d7c765b6c3c933529e681a56a9048980ab7e382a4ac6f",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "[夏期休業最終日](#event-20260826-06)"
+        },
+        {
+          "kind": "quote",
+          "text": "[玉名郡ナイター中・長距離記録会](#event-20260829-00)"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "authored-machine-checks-pending"
+      }
+    },
+    {
+      "id": "chunkqa-47aa96fa94b90e2a116c5718-1",
+      "chunk_id": "knowledge-47aa96fa94b90e2a116c5718",
+      "questions": [
+        "2026年8月3日のいだてん岱明夕練は、300m5本の疾走距離が合計何m？"
+      ],
+      "answer": "300mを5本なので、疾走部分は合計1,500mです。メモには各自アップとレスト70秒も記載されています。アップの距離は合計に含めていません。",
+      "sources": [
+        "calendar.md"
+      ],
+      "source_sha256": "c708357283066a9fa70d7c765b6c3c933529e681a56a9048980ab7e382a4ac6f",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "- **件名**: いだてん岱明夕練\n- **表示日**: 2026-08-03\n- **開始日**: 2026-08-03\n- **終了日**: 2026-08-03\n- **終日**: いいえ\n- **開始時刻**: 18:00\n- **終了時刻**: 19:30\n- **カテゴリ**: 予定\n- **ステータス**: done\n- **タグ**: ランニング, いだてん岱明練習, practice:daiming, session:evening\n- **場所**: （なし）\n- **URL**: （なし）\n- **非公開**: いいえ\n\n**天気（玉名市）**\n\n- **観測時刻**: 2026-08-03T18:00\n- **天気**: 快晴\n- **気温**: 35.9°C\n- **湿度**: 47%\n- **風向**: 東南東\n- **風速**: 5.8 km/h\n- **降水量**: 0.0 mm\n- **データソース**: open-meteo\n\n**説明**\n\n<!-- practice-menu:v1\nwarmup: null\nitems:\n- type: set\n  group: null\n  segments:\n  - distance_m: 300\n  label: 300m 1本目 300m k/3:28\n- type: set\n  group: null\n  segments:\n  - distance_m: 300\n  label: 300m 2本目 300m k/3:22\n- type: set\n  group: null\n  segments:\n  - distance_m: 300\n  label: 300m 3本目 300m k/3:24\n- type: set\n  group: null\n  segments:\n  - distance_m: 300\n  label: 300m 4本目 300m k/3:23\n- type: set\n  group: null\n  segments:\n  - distance_m: 300\n  label: 300m 5本目 300m k/3:22\n-->\n\n各自アップ、300m5本、レスト70秒\n\n300m 1本目 300m k/3:28300m\n300m 2本目 300m k/3:22300m\n300m 3本目 300m k/3:24300m\n300m 4本目 300m k/3:23300m\n300m 5本目 300m k/3:22300m\n\n"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "authored-machine-checks-pending"
+      }
+    },
+    {
+      "id": "chunkqa-47aa96fa94b90e2a116c5718-2",
+      "chunk_id": "knowledge-47aa96fa94b90e2a116c5718",
+      "questions": [
+        "2026年8月3日のいだてん岱明夕練で、5本の間だけに70秒のレストを4回取ると合計何分？"
+      ],
+      "answer": "本と本の間だけの4回分なら、70秒×4で280秒、4分40秒です。メニューは300m5本、レスト70秒と記録されています。最後の1本後の休憩はこの計算に含めません。",
+      "sources": [
+        "calendar.md"
+      ],
+      "source_sha256": "c708357283066a9fa70d7c765b6c3c933529e681a56a9048980ab7e382a4ac6f",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "- **件名**: いだてん岱明夕練\n- **表示日**: 2026-08-03\n- **開始日**: 2026-08-03\n- **終了日**: 2026-08-03\n- **終日**: いいえ\n- **開始時刻**: 18:00\n- **終了時刻**: 19:30\n- **カテゴリ**: 予定\n- **ステータス**: done\n- **タグ**: ランニング, いだてん岱明練習, practice:daiming, session:evening\n- **場所**: （なし）\n- **URL**: （なし）\n- **非公開**: いいえ\n\n**天気（玉名市）**\n\n- **観測時刻**: 2026-08-03T18:00\n- **天気**: 快晴\n- **気温**: 35.9°C\n- **湿度**: 47%\n- **風向**: 東南東\n- **風速**: 5.8 km/h\n- **降水量**: 0.0 mm\n- **データソース**: open-meteo\n\n**説明**\n\n<!-- practice-menu:v1\nwarmup: null\nitems:\n- type: set\n  group: null\n  segments:\n  - distance_m: 300\n  label: 300m 1本目 300m k/3:28\n- type: set\n  group: null\n  segments:\n  - distance_m: 300\n  label: 300m 2本目 300m k/3:22\n- type: set\n  group: null\n  segments:\n  - distance_m: 300\n  label: 300m 3本目 300m k/3:24\n- type: set\n  group: null\n  segments:\n  - distance_m: 300\n  label: 300m 4本目 300m k/3:23\n- type: set\n  group: null\n  segments:\n  - distance_m: 300\n  label: 300m 5本目 300m k/3:22\n-->\n\n各自アップ、300m5本、レスト70秒\n\n300m 1本目 300m k/3:28300m\n300m 2本目 300m k/3:22300m\n300m 3本目 300m k/3:24300m\n300m 4本目 300m k/3:23300m\n300m 5本目 300m k/3:22300m\n\n"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "authored-machine-checks-pending"
+      }
+    },
+    {
+      "id": "chunkqa-47aa96fa94b90e2a116c5718-3",
+      "chunk_id": "knowledge-47aa96fa94b90e2a116c5718",
+      "questions": [
+        "2026年8月3日のいだてん岱明朝練と夕練は、予定の開始時刻が何時間離れている？"
+      ],
+      "answer": "朝練は8時、夕練は18時開始なので、開始時刻は10時間離れています。練習が10時間連続するという意味ではありません。",
+      "sources": [
+        "calendar.md"
+      ],
+      "source_sha256": "c708357283066a9fa70d7c765b6c3c933529e681a56a9048980ab7e382a4ac6f",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "- **件名**: いだてん岱明朝練\n- **表示日**: 2026-08-03\n- **開始日**: 2026-08-03\n- **終了日**: 2026-08-03\n- **終日**: いいえ\n- **開始時刻**: 08:00\n- **終了時刻**: 09:30\n- **カテゴリ**: 予定\n- **ステータス**: scheduled\n- **タグ**: ランニング, いだてん岱明練習, practice:daiming, session:morning\n- **場所**: （なし）\n- **URL**: （なし）\n- **非公開**: いいえ\n\n**天気（玉名市）**\n\n- **観測時刻**: 2026-08-03T08:00\n- **天気**: 晴れ\n- **気温**: 31.1°C\n- **湿度**: 68%\n- **風向**: 東北東\n- **風速**: 3.7 km/h\n- **降水量**: 0.0 mm\n- **データソース**: open-meteo\n\n**説明**\n\n動きづくり、男子2.5km×2、女子2km×2\n\n"
+        },
+        {
+          "kind": "quote",
+          "text": "- **件名**: いだてん岱明夕練\n- **表示日**: 2026-08-03\n- **開始日**: 2026-08-03\n- **終了日**: 2026-08-03\n- **終日**: いいえ\n- **開始時刻**: 18:00\n- **終了時刻**: 19:30\n- **カテゴリ**: 予定\n- **ステータス**: done\n- **タグ**: ランニング, いだてん岱明練習, practice:daiming, session:evening\n- **場所**: （なし）\n- **URL**: （なし）\n- **非公開**: いいえ\n\n**天気（玉名市）**\n\n- **観測時刻**: 2026-08-03T18:00\n- **天気**: 快晴\n- **気温**: 35.9°C\n- **湿度**: 47%\n- **風向**: 東南東\n- **風速**: 5.8 km/h\n- **降水量**: 0.0 mm\n- **データソース**: open-meteo\n\n**説明**\n\n<!-- practice-menu:v1\nwarmup: null\nitems:\n- type: set\n  group: null\n  segments:\n  - distance_m: 300\n  label: 300m 1本目 300m k/3:28\n- type: set\n  group: null\n  segments:\n  - distance_m: 300\n  label: 300m 2本目 300m k/3:22\n- type: set\n  group: null\n  segments:\n  - distance_m: 300\n  label: 300m 3本目 300m k/3:24\n- type: set\n  group: null\n  segments:\n  - distance_m: 300\n  label: 300m 4本目 300m k/3:23\n- type: set\n  group: null\n  segments:\n  - distance_m: 300\n  label: 300m 5本目 300m k/3:22\n-->\n\n各自アップ、300m5本、レスト70秒\n\n300m 1本目 300m k/3:28300m\n300m 2本目 300m k/3:22300m\n300m 3本目 300m k/3:24300m\n300m 4本目 300m k/3:23300m\n300m 5本目 300m k/3:22300m\n\n"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "authored-machine-checks-pending"
+      }
+    },
+    {
+      "id": "chunkqa-0a253bc90c8b31954ad3604e-1",
+      "chunk_id": "knowledge-0a253bc90c8b31954ad3604e",
+      "questions": [
+        "2026年8月3日のランと5日の自分の練習の45/15は、本数がいくつ違う？"
+      ],
+      "answer": "8月3日のランは30本、5日の自分の練習は20本と記録されています。3日のほうが10本多い内容です。",
+      "sources": [
+        "calendar.md"
+      ],
+      "source_sha256": "c708357283066a9fa70d7c765b6c3c933529e681a56a9048980ab7e382a4ac6f",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "- **件名**: ラン\n- **表示日**: 2026-08-03\n- **開始日**: 2026-08-03\n- **終了日**: 2026-08-03\n- **終日**: いいえ\n- **開始時刻**: 19:00\n- **終了時刻**: 20:00\n- **カテゴリ**: 予定\n- **ステータス**: done\n- **タグ**: ランニング\n- **場所**: （なし）\n- **URL**: （なし）\n- **非公開**: いいえ\n\n**説明**\n\n45/15の30本（疾走アベ3:59/km）\n\n"
+        },
+        {
+          "kind": "quote",
+          "text": "- **件名**: 自分の練習\n- **表示日**: 2026-08-05\n- **開始日**: 2026-08-05\n- **終了日**: 2026-08-05\n- **終日**: いいえ\n- **開始時刻**: 19:30\n- **終了時刻**: 20:00\n- **カテゴリ**: 予定\n- **ステータス**: scheduled\n- **タグ**: ランニング, 自分の練習, practice:personal\n- **場所**: （なし）\n- **URL**: （なし）\n- **非公開**: いいえ\n\n**説明**\n\n45/15の20本（疾走平均k/3:55）\n\n"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "authored-machine-checks-pending"
+      }
+    },
+    {
+      "id": "chunkqa-0a253bc90c8b31954ad3604e-2",
+      "chunk_id": "knowledge-0a253bc90c8b31954ad3604e",
+      "questions": [
+        "2026年8月3日のランと5日の自分の練習は、疾走平均ペースが1kmあたり何秒違う？"
+      ],
+      "answer": "3日は3分59秒/km、5日は3分55秒/kmと記録されており、5日のほうが1kmあたり4秒速いペースです。",
+      "sources": [
+        "calendar.md"
+      ],
+      "source_sha256": "c708357283066a9fa70d7c765b6c3c933529e681a56a9048980ab7e382a4ac6f",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "- **件名**: ラン\n- **表示日**: 2026-08-03\n- **開始日**: 2026-08-03\n- **終了日**: 2026-08-03\n- **終日**: いいえ\n- **開始時刻**: 19:00\n- **終了時刻**: 20:00\n- **カテゴリ**: 予定\n- **ステータス**: done\n- **タグ**: ランニング\n- **場所**: （なし）\n- **URL**: （なし）\n- **非公開**: いいえ\n\n**説明**\n\n45/15の30本（疾走アベ3:59/km）\n\n"
+        },
+        {
+          "kind": "quote",
+          "text": "- **件名**: 自分の練習\n- **表示日**: 2026-08-05\n- **開始日**: 2026-08-05\n- **終了日**: 2026-08-05\n- **終日**: いいえ\n- **開始時刻**: 19:30\n- **終了時刻**: 20:00\n- **カテゴリ**: 予定\n- **ステータス**: scheduled\n- **タグ**: ランニング, 自分の練習, practice:personal\n- **場所**: （なし）\n- **URL**: （なし）\n- **非公開**: いいえ\n\n**説明**\n\n45/15の20本（疾走平均k/3:55）\n\n"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "authored-machine-checks-pending"
+      }
+    },
+    {
+      "id": "chunkqa-0a253bc90c8b31954ad3604e-3",
+      "chunk_id": "knowledge-0a253bc90c8b31954ad3604e",
+      "questions": [
+        "2026年8月4日の小森と荒田は、カレンダーで同じ開始時刻？"
+      ],
+      "answer": "はい。小森と荒田は、どちらも2026年8月4日10時開始の予定として登録されています。",
+      "sources": [
+        "calendar.md"
+      ],
+      "source_sha256": "c708357283066a9fa70d7c765b6c3c933529e681a56a9048980ab7e382a4ac6f",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "- **件名**: 小森\n- **表示日**: 2026-08-04\n- **開始日**: 2026-08-04\n- **終了日**: 2026-08-04\n- **終日**: いいえ\n- **開始時刻**: 10:00\n- **終了時刻**: 13:00\n- **カテゴリ**: 予定\n- **ステータス**: scheduled\n- **タグ**: 会社\n- **場所**: （なし）\n- **URL**: （なし）\n- **非公開**: いいえ\n\n**説明**\n\n（なし）\n\n"
+        },
+        {
+          "kind": "quote",
+          "text": "- **件名**: 荒田\n- **表示日**: 2026-08-04\n- **開始日**: 2026-08-04\n- **終了日**: 2026-08-04\n- **終日**: いいえ\n- **開始時刻**: 10:00\n- **終了時刻**: 13:00\n- **カテゴリ**: 予定\n- **ステータス**: scheduled\n- **タグ**: 会社\n- **場所**: （なし）\n- **URL**: （なし）\n- **非公開**: いいえ\n\n**説明**\n\n（なし）\n\n"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "authored-machine-checks-pending"
+      }
+    },
+    {
+      "id": "chunkqa-00fb55727bd47acaaa1798c2-1",
+      "chunk_id": "knowledge-00fb55727bd47acaaa1798c2",
+      "questions": [
+        "2026年8月7日のいだてん岱明夕練は、300mの疾走距離が男子と女子で何m違う？"
+      ],
+      "answer": "男子は300m7本で2,100m、女子は300m5本で1,500mです。疾走距離の差は600mです。各自ジョグの距離は含めません。",
+      "sources": [
+        "calendar.md"
+      ],
+      "source_sha256": "c708357283066a9fa70d7c765b6c3c933529e681a56a9048980ab7e382a4ac6f",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "- **件名**: いだてん岱明夕練\n- **表示日**: 2026-08-07\n- **開始日**: 2026-08-07\n- **終了日**: 2026-08-07\n- **終日**: いいえ\n- **開始時刻**: 18:00\n- **終了時刻**: 19:30\n- **カテゴリ**: 予定\n- **ステータス**: done\n- **タグ**: ランニング, いだてん岱明練習, practice:daiming, session:evening\n- **場所**: （なし）\n- **URL**: （なし）\n- **非公開**: いいえ\n\n**天気（玉名市）**\n\n- **観測時刻**: 2026-08-07T18:00\n- **天気**: 曇り\n- **気温**: 31.5°C\n- **湿度**: 61%\n- **風向**: 東北東\n- **風速**: 15.0 km/h\n- **降水量**: 0.0 mm\n- **データソース**: open-meteo\n\n**説明**\n\n各自ジョグ、300m（男子7本・女子5本）、間1分前後\n\n"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "authored-machine-checks-pending"
+      }
+    },
+    {
+      "id": "chunkqa-00fb55727bd47acaaa1798c2-2",
+      "chunk_id": "knowledge-00fb55727bd47acaaa1798c2",
+      "questions": [
+        "2026年8月8日のいだてん岱明夕練は、男子と女子で周回数が何周違う？"
+      ],
+      "answer": "男子14周、女子12周と記録されており、男子が2周多いメニューです。周回のほかに動きづくりと流し2本も記載されています。",
+      "sources": [
+        "calendar.md"
+      ],
+      "source_sha256": "c708357283066a9fa70d7c765b6c3c933529e681a56a9048980ab7e382a4ac6f",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "- **件名**: いだてん岱明夕練\n- **表示日**: 2026-08-08\n- **開始日**: 2026-08-08\n- **終了日**: 2026-08-08\n- **終日**: いいえ\n- **開始時刻**: 18:00\n- **終了時刻**: 19:30\n- **カテゴリ**: 予定\n- **ステータス**: scheduled\n- **タグ**: ランニング, いだてん岱明練習, practice:daiming, session:evening\n- **場所**: （なし）\n- **URL**: （なし）\n- **非公開**: いいえ\n\n**天気（玉名市）**\n\n- **観測時刻**: 2026-08-08T18:00\n- **天気**: 一部曇り\n- **気温**: 31.1°C\n- **湿度**: 49%\n- **風向**: 東北東\n- **風速**: 15.0 km/h\n- **降水量**: 0.0 mm\n- **データソース**: open-meteo\n\n**説明**\n\n動きづくり、男子14周・女子12周、流し2本\n\n"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "authored-machine-checks-pending"
+      }
+    },
+    {
+      "id": "chunkqa-00fb55727bd47acaaa1798c2-3",
+      "chunk_id": "knowledge-00fb55727bd47acaaa1798c2",
+      "questions": [
+        "2026年8月8日の自分の練習といだてん岱明夕練は、予定の開始時刻がどのくらい離れている？"
+      ],
+      "answer": "自分の練習は16時30分、いだてん岱明夕練は18時開始で、開始時刻は1時間30分離れています。",
+      "sources": [
+        "calendar.md"
+      ],
+      "source_sha256": "c708357283066a9fa70d7c765b6c3c933529e681a56a9048980ab7e382a4ac6f",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "- **件名**: 自分の練習\n- **表示日**: 2026-08-08\n- **開始日**: 2026-08-08\n- **終了日**: 2026-08-08\n- **終日**: いいえ\n- **開始時刻**: 16:30\n- **終了時刻**: 17:30\n- **カテゴリ**: 予定\n- **ステータス**: scheduled\n- **タグ**: ランニング, 自分の練習, practice:personal\n- **場所**: （なし）\n- **URL**: （なし）\n- **非公開**: いいえ\n\n**説明**\n\n45/15を30本（疾走平均k/3:50）\n\n"
+        },
+        {
+          "kind": "quote",
+          "text": "- **件名**: いだてん岱明夕練\n- **表示日**: 2026-08-08\n- **開始日**: 2026-08-08\n- **終了日**: 2026-08-08\n- **終日**: いいえ\n- **開始時刻**: 18:00\n- **終了時刻**: 19:30\n- **カテゴリ**: 予定\n- **ステータス**: scheduled\n- **タグ**: ランニング, いだてん岱明練習, practice:daiming, session:evening\n- **場所**: （なし）\n- **URL**: （なし）\n- **非公開**: いいえ\n\n**天気（玉名市）**\n\n- **観測時刻**: 2026-08-08T18:00\n- **天気**: 一部曇り\n- **気温**: 31.1°C\n- **湿度**: 49%\n- **風向**: 東北東\n- **風速**: 15.0 km/h\n- **降水量**: 0.0 mm\n- **データソース**: open-meteo\n\n**説明**\n\n動きづくり、男子14周・女子12周、流し2本\n\n"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "authored-machine-checks-pending"
+      }
+    },
+    {
+      "id": "chunkqa-c0825c814094e42d359eaa89-1",
+      "chunk_id": "knowledge-c0825c814094e42d359eaa89",
+      "questions": [
+        "2026年8月10日のいだてん岱明夕練は、男子・村上と他の女子で疾走距離が何m違う？"
+      ],
+      "answer": "男子と村上は600m2本で1,200m、村上以外の女子は300m2本で600mです。疾走部分の合計は600m違います。各自ジョグは含めません。",
+      "sources": [
+        "calendar.md"
+      ],
+      "source_sha256": "c708357283066a9fa70d7c765b6c3c933529e681a56a9048980ab7e382a4ac6f",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "- **件名**: いだてん岱明夕練\n- **表示日**: 2026-08-10\n- **開始日**: 2026-08-10\n- **終了日**: 2026-08-10\n- **終日**: いいえ\n- **開始時刻**: 18:00\n- **終了時刻**: 19:30\n- **カテゴリ**: 予定\n- **ステータス**: scheduled\n- **タグ**: ランニング, いだてん岱明練習, practice:daiming, session:evening\n- **場所**: （なし）\n- **URL**: （なし）\n- **非公開**: いいえ\n\n**天気（玉名市）**\n\n- **観測時刻**: 2026-08-10T18:00\n- **天気**: 曇り\n- **気温**: 32.3°C\n- **湿度**: 51%\n- **風向**: 北西\n- **風速**: 4.2 km/h\n- **降水量**: 0.0 mm\n- **データソース**: open-meteo\n\n**説明**\n\n各自ジョグ、男子と村上は600m2本、村上以外の女子は300m2本（目標1500mペース+10秒/km）\n南本は足首に少し痛みがあるが、走って温めると痛くないとのこと。高田は腰の痛みは少し治っているとのこと。両者とも走れた。中尾は少し疲労が溜まっているかも。松野と田上は大丈夫そう。\n1500mRP+10秒/km\n\n"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "authored-machine-checks-pending"
+      }
+    },
+    {
+      "id": "chunkqa-c0825c814094e42d359eaa89-2",
+      "chunk_id": "knowledge-c0825c814094e42d359eaa89",
+      "questions": [
+        "2026年8月10日の杉永と川上・荒田は、予定の開始時刻が何時間違う？"
+      ],
+      "answer": "杉永は9時、川上と荒田は10時開始の予定なので、杉永が1時間早い時刻です。",
+      "sources": [
+        "calendar.md"
+      ],
+      "source_sha256": "c708357283066a9fa70d7c765b6c3c933529e681a56a9048980ab7e382a4ac6f",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "- **件名**: 杉永\n- **表示日**: 2026-08-10\n- **開始日**: 2026-08-10\n- **終了日**: 2026-08-10\n- **終日**: いいえ\n- **開始時刻**: 09:00\n- **終了時刻**: 12:00\n- **カテゴリ**: 予定\n- **ステータス**: scheduled\n- **タグ**: 会社\n- **場所**: （なし）\n- **URL**: （なし）\n- **非公開**: いいえ\n\n**説明**\n\n（なし）\n\n"
+        },
+        {
+          "kind": "quote",
+          "text": "- **件名**: 川上\n- **表示日**: 2026-08-10\n- **開始日**: 2026-08-10\n- **終了日**: 2026-08-10\n- **終日**: いいえ\n- **開始時刻**: 10:00\n- **終了時刻**: 17:00\n- **カテゴリ**: 予定\n- **ステータス**: scheduled\n- **タグ**: 会社\n- **場所**: （なし）\n- **URL**: （なし）\n- **非公開**: いいえ\n\n**説明**\n\n（なし）\n\n"
+        },
+        {
+          "kind": "quote",
+          "text": "- **件名**: 荒田\n- **表示日**: 2026-08-10\n- **開始日**: 2026-08-10\n- **終了日**: 2026-08-10\n- **終日**: いいえ\n- **開始時刻**: 10:00\n- **終了時刻**: 13:00\n- **カテゴリ**: 予定\n- **ステータス**: scheduled\n- **タグ**: 会社\n- **場所**: （なし）\n- **URL**: （なし）\n- **非公開**: いいえ\n\n**説明**\n\n（なし）\n\n"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "authored-machine-checks-pending"
+      }
+    },
+    {
+      "id": "chunkqa-c0825c814094e42d359eaa89-3",
+      "chunk_id": "knowledge-c0825c814094e42d359eaa89",
+      "questions": [
+        "2026年の山の日には、いだてん岱明の朝練と夕練は両方休みの予定？"
+      ],
+      "answer": "はい。2026年8月11日の山の日には、朝練休みと夕練休みの両方が終日予定として登録されています。",
+      "sources": [
+        "calendar.md"
+      ],
+      "source_sha256": "c708357283066a9fa70d7c765b6c3c933529e681a56a9048980ab7e382a4ac6f",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "- **件名**: 山の日\n- **表示日**: 2026-08-11\n- **開始日**: 2026-08-11\n- **終了日**: 2026-08-11\n- **終日**: はい\n- **開始時刻**: （なし）\n- **終了時刻**: （なし）\n- **カテゴリ**: 祝日\n- **ステータス**: （なし）\n- **タグ**: holiday\n- **場所**: （なし）\n- **URL**: （なし）\n- **非公開**: いいえ\n\n**説明**\n\n日本の祝日\n\n"
+        },
+        {
+          "kind": "quote",
+          "text": "- **件名**: いだてん岱明朝練休み\n- **表示日**: 2026-08-11\n- **開始日**: 2026-08-11\n- **終了日**: 2026-08-11\n- **終日**: はい\n- **開始時刻**: （なし）\n- **終了時刻**: （なし）\n- **カテゴリ**: 予定\n- **ステータス**: scheduled\n- **タグ**: ランニング, いだてん岱明練習, practice:daiming, session:morning\n- **場所**: （なし）\n- **URL**: （なし）\n- **非公開**: いいえ\n\n**天気（玉名市）**\n\n- **観測時刻**: 2026-08-11T08:00\n- **天気**: 曇り\n- **気温**: 28.4°C\n- **湿度**: 67%\n- **風向**: 東北東\n- **風速**: 3.5 km/h\n- **降水量**: 0.0 mm\n- **データソース**: open-meteo\n\n**説明**\n\n（なし）\n\n"
+        },
+        {
+          "kind": "quote",
+          "text": "- **件名**: いだてん岱明夕練休み\n- **表示日**: 2026-08-11\n- **開始日**: 2026-08-11\n- **終了日**: 2026-08-11\n- **終日**: はい\n- **開始時刻**: （なし）\n- **終了時刻**: （なし）\n- **カテゴリ**: 予定\n- **ステータス**: scheduled\n- **タグ**: ランニング, いだてん岱明練習, practice:daiming, session:evening\n- **場所**: （なし）\n- **URL**: （なし）\n- **非公開**: いいえ\n\n**天気（玉名市）**\n\n- **観測時刻**: 2026-08-11T18:00\n- **天気**: 快晴\n- **気温**: 30.9°C\n- **湿度**: 45%\n- **風向**: 北北西\n- **風速**: 21.1 km/h\n- **降水量**: 0.0 mm\n- **データソース**: open-meteo\n\n**説明**\n\n（なし）\n\n"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "authored-machine-checks-pending"
+      }
+    }
+  ]
+}
