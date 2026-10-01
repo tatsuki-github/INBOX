@@ -36,6 +36,8 @@ note: '想定質問への定型回答（ADR 059）。年なし＝今年度。ナ
 
   brush-up-prepared-qa-ux: ユーザー満足度向けに質問表記と回答を磨いた
 
+  brush-up-prepared-qa-ux2: meet-docダンプ・薄い案内・None漏れをユーザー向けに整理
+
   '
 entries:
 - id: aragyoku-what
@@ -790,7 +792,8 @@ entries:
   questions:
   - なごみ駅伝の予想と実績の差は？
   - なごみの予実ギャップは？
-  answer: 'なごみ駅伝のSB予想と実績の差は、大会フォルダの と SBギャップ分析。
+  answer: 'なごみ駅伝のSB予想と実績の差は、大会フォルダの成績・ギャップ分析で確認できます。 2026年資料: https://drive.google.com/drive/folders/1k-zW0irJ-OjDjqQwUQLZIs4C6PfuR211
+    岱明の結果は「なごみ駅伝の結果は？」でも聞けます。
 
     '
   sources:
@@ -949,7 +952,7 @@ entries:
   questions:
   - 開催要項は？
   - 要項を見せて
-  answer: '開催要項は各大会フォルダの PDF 大会名を指定してください。例: なごみ駅伝、ジュニア駅伝、荒玉中体連駅伝。
+  answer: '開催要項は大会名を指定すると案内しやすいです。 例: 「なごみ駅伝の開催要項は？」「ジュニア駅伝の要項は？」「荒玉駅伝の要項は？」。
 
     '
   sources:
@@ -1023,7 +1026,7 @@ entries:
   questions:
   - 金栗PROJECT所属選手の全記録
   - 金栗PROJECTの記録一覧は？
-  answer: '金栗PROJECT 所属選手の全記録は 駅伝開催要項フォルダは使いません。
+  answer: '金栗PROJECT所属選手の記録は、選手名＋距離で聞いてください。 駅伝の開催要項フォルダとは別資料です。例: 「○○の1500m自己ベストは？」。
 
     '
   sources:
@@ -1036,7 +1039,7 @@ entries:
   - 南関中の所属選手の記録一覧
   - 南関中のSBは？
   - 南関中の自己ベストは？
-  answer: '南関中の所属選手記録一覧は 配下の南関中ダイジェスト。
+  answer: '南関中の所属選手の記録は、選手名＋距離で聞くのが確実です。 例: 「南関の3000m最速は誰？」「稗島葵音の1500mSBは？」。
 
     '
   sources:
@@ -1049,7 +1052,7 @@ entries:
   - 高田麻那の記録は？
   - 高田麻那のSBは？
   - 高田麻那の自己ベストは？
-  answer: '高田麻那（文徳高）の記録は と SB データベース岱明の高田麻由とは別人です。
+  answer: '高田麻那（文徳高）の記録は、SBデータベースで選手名指定すると案内できます。 岱明の高田麻由とは別人です。例: 「高田麻那の1500m自己ベストは？」。
 
     '
   sources:
@@ -1137,7 +1140,7 @@ entries:
   - 〇月〇日の予定は？
   - 9月20日の予定は？
   - 10月14日の予定は？
-  answer: '日付の予定は events 2026-09-20 はなごみ駅伝、2026-09-26 は県ジュニア駅伝、2026-10-14 は荒玉中体連駅伝です。
+  answer: '日付の予定例です。2026-09-20はなごみ駅伝、2026-09-26は県ジュニア駅伝、 2026-10-14は荒玉中体連駅伝です。 「○月○日の予定は？」「なごみ駅伝はいつ？」のように聞いてください。
 
     '
   sources:
@@ -1160,7 +1163,7 @@ entries:
   questions:
   - 欠席者は誰？
   - 今日の欠席は？
-  answer: '欠席者は と events の absentees 日付を指定してください。
+  answer: '欠席者は日付付きで聞くと案内できます。 例: 「2026-09-05の欠席者は？」「9月5日の練習の欠席は？」。 「今日の欠席」だけだと特定しづらいので、日付を付けてください。
 
     '
   sources:
@@ -1248,7 +1251,7 @@ entries:
   questions:
   - AI で練習を作るには？
   - 練習メニューをAIで作りたい
-  answer: 'AI練習生成は と の流れに従います。カレンダー・テンプレ・制約を入力に練習シートを生成します。
+  answer: 'AI練習生成は、カレンダー・テンプレ・制約をもとに練習シートを作る仕組みです。 「○月○日の練習は？」「今日の練習メニューは？」のように日付で聞くと案内しやすいです。
 
     '
   sources:
@@ -1285,7 +1288,7 @@ entries:
   questions:
   - 荒玉クラブ所属生徒の中学校は？
   - クラブ生徒の学校振分は？
-  answer: '荒玉クラブ所属生徒の中学校振分メモは events のメモ「荒玉クラブ所属生徒の中学校」不明は不明分類とします。
+  answer: '荒玉クラブ所属生徒の中学校振分は、メモ「荒玉クラブ所属生徒の中学校」に基づきます。 不明な場合は不明分類とします。学校名を指定すると個別に案内しやすいです。
 
     '
   sources:
@@ -1296,7 +1299,7 @@ entries:
   questions:
   - 荒玉競合分析は？
   - 競合分析を見せて
-  answer: '荒玉競合分析メモは events 分析資料学校名を指定するとチーム別 MD や SB ランキングと合わせて案内できます。
+  answer: '荒玉の競合・戦力は学校名を指定すると案内できます。 例: 「今年の荒玉戦力分析（校別）は？」「南関の荒玉予想は？」「岱明のライバル校は？」。
 
     '
   sources:
@@ -1309,7 +1312,7 @@ entries:
   - 熊本県駅伝の予定は？
   - 県駅伝はいつ？
   - 県駅伝は日程は？
-  answer: '熊本県駅伝など県大会の日程は events と大会フォルダ大会名を具体的に指定してください。
+  answer: '熊本県駅伝など県大会の日程は、大会名を具体的に指定すると案内できます。 例: 「ジュニア駅伝はいつ？」「荒玉駅伝はいつ？」「なごみ駅伝の日程は？」。
 
     '
   sources:
@@ -1362,7 +1365,7 @@ entries:
   questions:
   - コーチに直接聞いてくださいとは？
   - 分からないときは？
-  answer: 'コーパスに無い事実や個人の医療・連絡先などは「コーチに直接聞いてください。」と返します。定型回答や根拠ファイルがある質問では、その内容を優先して返します。
+  answer: '資料に無い内容や、個人の医療・連絡先などは「コーチに直接聞いてください」と案内します。 大会結果・記録・予定など、用意済みの質問にはその回答を返します。
 
     '
   sources:
@@ -2249,7 +2252,7 @@ entries:
   - 2019年の荒玉男子1位はどこ？
   - 2019年荒玉駅伝男子の優勝は誰は？
   - 2019年荒玉駅伝男子の優勝はどこは？
-  answer: '2019年荒玉駅伝男子の優勝は玉名（None）、準優勝は玉東（None）です。
+  answer: '2019年荒玉駅伝男子の優勝は玉名、準優勝は玉東です。 総合タイムは文字起こし未記入のため省略します。
 
     '
   sources:
@@ -2268,7 +2271,7 @@ entries:
   - 2019年荒玉駅伝男子の準優勝は誰は？
   - 2019年荒玉駅伝男子の準優勝はどこは？
   - 2019年荒玉駅伝男子の準1位はどこは？
-  answer: '2019年荒玉駅伝男子の準優勝は玉東（None）です。優勝は玉名（None）です。
+  answer: '2019年荒玉駅伝男子の準優勝は玉東です。優勝は玉名です。 総合タイムは文字起こし未記入のため省略します。
 
     '
   sources:
@@ -9214,8 +9217,7 @@ entries:
   - 玉名市練習会＆BBQ（2026-09-22）の内容は？
   - 玉名市練習会＆BBQ（2026-09-22）について教えて
   - 練習資料「玉名市練習会＆BBQ（2026-09-22）」は？
-  answer: '玉名市練習会＆BBQ（2026-09-22）。source: https://sites.google.com/view/tamariku/練習会?authuser=0 site: 玉名市陸上競技協会（tamariku）
-    fetched: 2026-09-18 概要 夏季練習会＆BBQ。熊日駅伝に向けた親睦。陸上好きなら誰でも歓迎（玉名市外も可）。練習会後に BBQ。
+  answer: '玉名市練習会＆BBQ（2026-09-22）。 。熊日駅伝に向けた親睦。陸上好きなら誰でも歓迎（玉名市外も可）。練習会後に BBQ。
 
     '
   sources:
@@ -9973,8 +9975,7 @@ entries:
   - 荒玉駅伝：区間賞・区間順位の要点は？
   - aragyoku_leg_awardsについて教えて
   - 分析「荒玉駅伝：区間賞・区間順位」は？
-  answer: '荒玉駅伝：区間賞・区間順位。各年度・男女の 区間賞（区間1位） と 区間別上位3。 Q&A の使い方 - 「○年の区間賞の名前と学年は？」→ 区間賞の一覧 - 「○年○区の区間順位は？」「○区2位は誰？」→ 区間別上位 -
-    ボード上部の歴代区間記録（保持者）は `aragyoku_m。
+  answer: '荒玉駅伝の区間賞・区間上位の一覧です。 「2025年荒玉駅伝の区間賞は誰？」「2025年荒玉男子2区の区間順位は？」のように 年・男女・区間を指定すると答えやすいです。
 
     '
   sources:
@@ -9987,8 +9988,7 @@ entries:
   - 荒玉駅伝 大会記録・区間記録（ボード上部）の要点は？
   - aragyoku_meet_recordsについて教えて
   - 分析「荒玉駅伝 大会記録・区間記録（ボード上部）」は？
-  answer: '荒玉駅伝 大会記録・区間記録（ボード上部）。結果ボード上部に印刷された 総合大会記録 と 各区間の大会区間記録。 Q&A の使い方 - 「○年の大会記録（総合）は？」「男子2区の大会区間記録は誰？」→ この内容を案内します。
-    - 当日の区間新フラグは各チーム結果の （別概念）。 - 男子は2024年以降でコース再編があり、記録がリセットされる。 2012年 女子。
+  answer: '荒玉駅伝ボード上部の大会記録・区間記録の案内です。 「男子2区の大会区間記録は誰？」「2025年の大会記録は？」のように指定してください。 男子は2024年以降のコース再編で記録が分かれます。
 
     '
   sources:
@@ -10001,8 +10001,8 @@ entries:
   - 荒玉駅伝 SB 区間キャリブレーションの要点は？
   - aragyoku_sb_calibrationについて教えて
   - 分析「荒玉駅伝 SB 区間キャリブレーション」は？
-  answer: '荒玉駅伝 SB 区間キャリブレーション。対象年: 2024, 2025 鮮度窓: 152日 Notion・ナイターは履歴年では未使用 推奨区間バイアス秒（実績−予想の中央値） 正の値＝予想が速すぎた（遅めに補正）。 に反映。
-    - 女子: [20.8, 1.9, -11.2, 7.8, 37.1] - 男子: [-5.8, 14.4, 9.9, 35.5, 17.7, 15.2] 2024（as_of 2024-10-15）。
+  answer: '荒玉駅伝のSB区間予想を実績で補正するための目安（2024–2025）です。 正の値は予想が速すぎた（遅め補正）を意味します。 女子の区間バイアス例: 約+21 / +2 / -11 / +8 / +37秒。 男子例: 約-6
+    / +14 / +10 / +36 / +18 / +15秒。 詳しくは「2026荒玉男子の区間オーダー予想は？」で聞けます。
 
     '
   sources:
@@ -10015,8 +10015,7 @@ entries:
   - 荒玉駅伝 数式予想・旧SB予想の予実ギャップ分析の要点は？
   - aragyoku_sb_gap_analysisについて教えて
   - 分析「荒玉駅伝 数式予想・旧SB予想の予実ギャップ分析」は？
-  answer: '荒玉駅伝 数式予想・旧SB予想の予実ギャップ分析。ステータス: レース前スタブ（2026-10-14 開催予定） 予定ワークフロー 1. 成績を および男女成績表に転記する。 2. レース前の と旧 を固定する。 3. 本スクリプトを拡張し、差＝実績−数式予想、実績−旧SB予想の表／HTML
-    を生成する（なごみ 準拠）。 4. 男女別の数式係数と の区間バイアスを更新する。
+  answer: '2026年荒玉駅伝（2026-10-14予定）の数式予想・旧SB予想と実績の差をまとめる分析枠です。 大会後に実績が入ると、予実差の表として使えます。 いま聞ける予想は「今年の荒玉戦力分析（校別）は？」が分かりやすいです。
 
     '
   sources:
@@ -130516,7 +130515,7 @@ entries:
   - ナレッジグラフは？
   - KGの正本は？
   - knowledge-graphはどこ？
-  answer: '検索ルート地図は です。まず の refs を開き、必要ならカレンダー生成後に再生成します。
+  answer: 'よくある質問は定型回答を優先し、必要なら関連資料のパスをたどって答えます。 大会結果や予定は「○年の○○の結果は？」「○○はいつ？」が分かりやすいです。
 
     '
   sources:
@@ -130530,7 +130529,7 @@ entries:
   - 外部データの入口は？
   - Driveスナップショットはどこ？
   - external INDEXは？
-  answer: 'Notion・Drive 由来は です。探索は から。
+  answer: 'Notion・Googleドライブ由来の資料は、大会名・日付を指定すると案内できます。 例: 「なごみ駅伝の成績表は？」「荒玉のコース画像は？」。
 
     '
   sources:
@@ -130544,7 +130543,7 @@ entries:
   - 駅伝の画像OCRは？
   - media-manifestは？
   - コース写真のナレッジは？
-  answer: '画像・OCRは media-manifest と の MediaAsset（topic:ekiden）を辿ります。
+  answer: '駅伝のコース図・結果ボード画像は、大会名や地点名で聞けます。 例: 「荒玉のコース画像は？」「荒玉の橋の上のポイントは？」。
 
     '
   sources:
@@ -163705,9 +163704,7 @@ entries:
   - 中学駅伝金栗四三生誕の地なごみ大会のエントリーリストは？
   - 中学駅伝金栗四三生誕の地なごみ大会「エントリーリスト」の内容は？
   - 今年の中学駅伝金栗四三生誕の地なごみ大会のエントリーリスト
-  answer: '中学駅伝金栗四三生誕の地なごみ大会（2026）の「エントリーリスト」です。 第12回 中学駅伝金栗四三生誕の地なごみ大会 エントリーリスト source: as_of: 2026-09-14（リスト表記） event_date:
-    2026-09-20 チーム数: 男子 38 女子 25（as_of 2026-09-14） 区間オーダー確定版（氏名入り）は 2026-09-18 20:00 提出分を参照: - （女子 25 チーム） - （男子 39 チーム。湯浦が
-    A B に分かれ No.39 まで） #…。 資料: https://drive.google.com/drive/folders/1k-zW0irJ-OjDjqQwUQLZIs4C6PfuR211。
+  answer: '2026年なごみ駅伝のエントリーリストです。 チーム・区間メンバーの一覧は大会フォルダで確認できます。 資料: https://drive.google.com/drive/folders/1k-zW0irJ-OjDjqQwUQLZIs4C6PfuR211
 
     '
   sources:
@@ -163722,9 +163719,7 @@ entries:
   - 中学駅伝金栗四三生誕の地なごみ大会のプログラムは？
   - 中学駅伝金栗四三生誕の地なごみ大会「プログラム」の内容は？
   - 今年の中学駅伝金栗四三生誕の地なごみ大会のプログラム
-  answer: '中学駅伝金栗四三生誕の地なごみ大会（2026）の「プログラム」です。 第12回 中学駅伝金栗四三生誕の地なごみ大会 プログラム source: ） date: 2026-09-20 - 主催: 和水町陸上競技協会、一般社団法人K-PROJECT
-    - 後援: 和水町、和水町教育委員会、和水町体育協会 - 期日: 令和8年9月20日（日）小雨決行 - 会場: 和水町三加和公民館（熊本県玉名郡和水町板楠76番地、菊水ICから車で20分） - コース: 三加和公民館前発着周回（男子1周3km
-    女子1周2km…。 資料: https://drive.google.com/drive/folders/1k-zW0irJ-OjDjqQwUQLZIs4C6PfuR211。
+  answer: '2026年なごみ駅伝（第12回、2026-09-20）のプログラム概要です。 会場: 和水町三加和公民館。男子1周3km・女子1周2kmの周回。 主催: 和水町陸上競技協会・K-PROJECT。 資料: https://drive.google.com/drive/folders/1k-zW0irJ-OjDjqQwUQLZIs4C6PfuR211
 
     '
   sources:
@@ -163739,7 +163734,7 @@ entries:
   - 中学駅伝金栗四三生誕の地なごみ大会の予実比較は？
   - 中学駅伝金栗四三生誕の地なごみ大会「予実比較」の内容は？
   - 今年の中学駅伝金栗四三生誕の地なごみ大会の予実比較
-  answer: 'なごみ駅伝2026のSB予想と実績の乖離資料です。 差は実績−予想（プラスは予想より遅い）。 区間判定の目安は女子10/20秒・男子15/30秒。 詳細は大会フォルダの予実比較を参照。 資料: https://drive.google.com/drive/folders/1k-zW0irJ-OjDjqQwUQLZIs4C6PfuR211
+  answer: '2026年なごみ駅伝の予実比較用の枠です。 大会後に実績が入ると、予想との差を確認できます。 資料: https://drive.google.com/drive/folders/1k-zW0irJ-OjDjqQwUQLZIs4C6PfuR211
 
     '
   sources:
@@ -163754,9 +163749,7 @@ entries:
   - 中学駅伝金栗四三生誕の地なごみ大会の女子区間オーダー_SB予想は？
   - 中学駅伝金栗四三生誕の地なごみ大会「女子区間オーダー_SB予想」の内容は？
   - 今年の中学駅伝金栗四三生誕の地なごみ大会の女子区間オーダー_SB予想
-  answer: '中学駅伝金栗四三生誕の地なごみ大会（2026）の「女子区間オーダー_SB予想」です。 なごみ駅伝2026 女子 区間オーダー × 今年度SB 予想 as_of: 2026-09-18 オーダー 2026年度 SB（SB採用優先）+
-    ナイターSB明記更新分 event_date: 2026-09-20 - **2km予想（1500m）**: （男子と同型の掛け算＋加算） - **2km予想（800mフォールバック）**: 1500欠測時のみ - **SB反映**:
-    Notion に加え、玉名郡ナイターで SB 明記さ…。 資料: https://drive.google.com/drive/folders/1k-zW0irJ-OjDjqQwUQLZIs4C6PfuR211。
+  answer: '2026年なごみ駅伝の区間オーダー予想（女子区間オーダー SB予想）です。 自己ベストなどから算出した目安で、確定オーダーではありません。 資料: https://drive.google.com/drive/folders/1k-zW0irJ-OjDjqQwUQLZIs4C6PfuR211
 
     '
   sources:
@@ -163771,9 +163764,8 @@ entries:
   - 中学駅伝金栗四三生誕の地なごみ大会の女子区間オーダー_SB予想_coverageは？
   - 中学駅伝金栗四三生誕の地なごみ大会「女子区間オーダー_SB予想_coverage」の内容は？
   - 今年の中学駅伝金栗四三生誕の地なごみ大会の女子区間オーダー_SB予想_coverage
-  answer: '中学駅伝金栗四三生誕の地なごみ大会（2026）の「女子区間オーダー_SB予想_coverage」です。 gender,team,role,name,800m,1500m,pred,pred_cum,pred_cum_rank,pred_sec_rank,note
-    女子,ATRC,1区,清藤 結唯,2:26.72,4:54.56,6:47.7,6:47.7,3,3,1500 2km式 女子,ATRC,2区,猿渡 愛梨,2:35.90,5:16.77,7:17.4,14:05.1,2,4,1500
-    2km式 女子,ATRC,3区,中尾 杏朱…。 資料: https://drive.google.com/drive/folders/1k-zW0irJ-OjDjqQwUQLZIs4C6PfuR211。
+  answer: '2026年なごみ駅伝の「女子区間オーダー SB予想 coverage」は集計用データです。 利用者向けにはオーダー予想や結果の質問の方が分かりやすいです。 例: 「2026年なごみ駅伝の区間オーダー予想は？」「なごみ駅伝の結果は？」。
+    資料: https://drive.google.com/drive/folders/1k-zW0irJ-OjDjqQwUQLZIs4C6PfuR211
 
     '
   sources:
@@ -163788,9 +163780,7 @@ entries:
   - 中学駅伝金栗四三生誕の地なごみ大会の女子区間オーダーリストは？
   - 中学駅伝金栗四三生誕の地なごみ大会「女子区間オーダーリスト」の内容は？
   - 今年の中学駅伝金栗四三生誕の地なごみ大会の女子区間オーダーリスト
-  answer: '中学駅伝金栗四三生誕の地なごみ大会（2026）の「女子区間オーダーリスト」です。 第１２回中学駅伝 金栗四三生誕の地 なごみ大会 女子区間オーダーリスト 9 18 20：00 source: （紙面写真の文字起こし） as_of:
-    2026-09-18 20:00 event_date: 2026-09-20 No. チーム名 1区 2区 3区 4区 控え 控え 控え 1 ATRC 清藤 結唯 猿渡 愛梨 中尾 杏朱 入江 音寧 2 天水中学校 田尻 雛菜乃 山本
-    桜愛 竹原 晴美 花谷 明優 荒木 優里 木根…。 資料: https://drive.google.com/drive/folders/1k-zW0irJ-OjDjqQwUQLZIs4C6PfuR211。
+  answer: '2026年なごみ駅伝の女子区間オーダーリストです。 チーム・区間メンバーの一覧は大会フォルダで確認できます。 資料: https://drive.google.com/drive/folders/1k-zW0irJ-OjDjqQwUQLZIs4C6PfuR211
 
     '
   sources:
@@ -163838,9 +163828,7 @@ entries:
   - 中学駅伝金栗四三生誕の地なごみ大会の成績表は？
   - 中学駅伝金栗四三生誕の地なごみ大会「成績表」の内容は？
   - 今年の中学駅伝金栗四三生誕の地なごみ大会の成績表
-  answer: '中学駅伝金栗四三生誕の地なごみ大会（2026）の「成績表」です。 "event": { "title": "第12回 中学駅伝金栗四三生誕の地なごみ大会", "date": "2026-09-20", "venue": "和水町三加和公民館前発着周回コース",
-    "sources": [ "男子成績表_1.jpg", "男子成績表_2.jpg" "women": [ "rank": 1, "no": 24, "team": "金栗PROJECT A", "total": "26:55",。 資料:
-    https://drive.google.com/drive/folders/1k-zW0irJ-OjDjqQwUQLZIs4C6PfuR211。
+  answer: '2026年なごみ駅伝の成績表です。 岱明の結果は「2026年のなごみ駅伝の結果は？」が分かりやすいです。 資料: https://drive.google.com/drive/folders/1k-zW0irJ-OjDjqQwUQLZIs4C6PfuR211
 
     '
   sources:
@@ -163855,9 +163843,7 @@ entries:
   - 中学駅伝金栗四三生誕の地なごみ大会の男子区間オーダー_SB予想は？
   - 中学駅伝金栗四三生誕の地なごみ大会「男子区間オーダー_SB予想」の内容は？
   - 今年の中学駅伝金栗四三生誕の地なごみ大会の男子区間オーダー_SB予想
-  answer: '中学駅伝金栗四三生誕の地なごみ大会（2026）の「男子区間オーダー_SB予想」です。 なごみ駅伝2026 男子 区間オーダー × 今年度SB 予想 as_of: 2026-09-18 オーダー 2026年度 SB（SB採用優先）+
-    ナイターSB明記更新分 event_date: 2026-09-20 - **3km予想（1500m）**: （掛け算＋加算。従来の駅伝予測HTML +68.50 から変更） - **3km予想（800mフォールバック）**: - **3000m
-    SB**: 1500換算3km予想より…。 資料: https://drive.google.com/drive/folders/1k-zW0irJ-OjDjqQwUQLZIs4C6PfuR211。
+  answer: '2026年なごみ駅伝の区間オーダー予想（男子区間オーダー SB予想）です。 自己ベストなどから算出した目安で、確定オーダーではありません。 資料: https://drive.google.com/drive/folders/1k-zW0irJ-OjDjqQwUQLZIs4C6PfuR211
 
     '
   sources:
@@ -163872,9 +163858,8 @@ entries:
   - 中学駅伝金栗四三生誕の地なごみ大会の男子区間オーダー_SB予想_coverageは？
   - 中学駅伝金栗四三生誕の地なごみ大会「男子区間オーダー_SB予想_coverage」の内容は？
   - 今年の中学駅伝金栗四三生誕の地なごみ大会の男子区間オーダー_SB予想_coverage
-  answer: '中学駅伝金栗四三生誕の地なごみ大会（2026）の「男子区間オーダー_SB予想_coverage」です。 gender,team,role,name,800m,1500m,3000m,pred,pred_cum,pred_cum_rank,pred_sec_rank,note
-    男子,ATRC A,1区,米谷 慶吾,,4:22.83,9:37.02,9:37.0,9:37.0,16,16,3000m SB 男子,ATRC A,2区,今村 昇磨,2:15.70,4:45.35,10:28.92,10:05.7,19:42.7,14,19,15…。
-    資料: https://drive.google.com/drive/folders/1k-zW0irJ-OjDjqQwUQLZIs4C6PfuR211。
+  answer: '2026年なごみ駅伝の「男子区間オーダー SB予想 coverage」は集計用データです。 利用者向けにはオーダー予想や結果の質問の方が分かりやすいです。 例: 「2026年なごみ駅伝の区間オーダー予想は？」「なごみ駅伝の結果は？」。
+    資料: https://drive.google.com/drive/folders/1k-zW0irJ-OjDjqQwUQLZIs4C6PfuR211
 
     '
   sources:
@@ -163889,9 +163874,7 @@ entries:
   - 中学駅伝金栗四三生誕の地なごみ大会の男子区間オーダーリストは？
   - 中学駅伝金栗四三生誕の地なごみ大会「男子区間オーダーリスト」の内容は？
   - 今年の中学駅伝金栗四三生誕の地なごみ大会の男子区間オーダーリスト
-  answer: '中学駅伝金栗四三生誕の地なごみ大会（2026）の「男子区間オーダーリスト」です。 第１２回中学駅伝 金栗四三生誕の地 なごみ大会 男子区間オーダーリスト 9 18 20：00 source: （紙面写真の文字起こし） as_of:
-    2026-09-18 20:00 event_date: 2026-09-20 空欄は紙面どおり未記入。控え列に氏名があるセルは紙面で橙背景。エントリーリスト（9 14）時点の男子38チームから、本リストでは湯浦が A B に分かれ No.39
-    まで（39チーム）。 No. チーム名…。 資料: https://drive.google.com/drive/folders/1k-zW0irJ-OjDjqQwUQLZIs4C6PfuR211。
+  answer: '2026年なごみ駅伝の男子区間オーダーリストです。 チーム・区間メンバーの一覧は大会フォルダで確認できます。 資料: https://drive.google.com/drive/folders/1k-zW0irJ-OjDjqQwUQLZIs4C6PfuR211
 
     '
   sources:
@@ -163968,9 +163951,7 @@ entries:
   - 第４回県ジュニア陸上（第３回県ジュニア駅伝）のオープン男女_スタートリストは？
   - 第４回県ジュニア陸上（第３回県ジュニア駅伝）「オープン男女_スタートリスト」の内容は？
   - 今年の第４回県ジュニア陸上（第３回県ジュニア駅伝）のオープン男女_スタートリスト
-  answer: '第４回県ジュニア陸上（第３回県ジュニア駅伝）（2026）の「オープン男女_スタートリスト」です。 第3回 熊本県ジュニア駅伝競走大会 スタートリスト - 開催日: 2026-09-26 - 公式ページ: http: kumariku.com
-    competition ?id=9730 - 原本PDF: http: - PDFページ数: 1 - 文字層から表形式で転記。氏名 学年 区間は原本PDFと照合可能。 1ページ 第3回 熊本県ジュニア駅伝競走大会 オープンレース登録者
-    東町中 森川 優志③ もりかわ ゆうし 3 東町…。 資料: https://drive.google.com/drive/folders/1pUww3wPlyy4IoSNUy58qK9yhCRzeU_-2。
+  answer: '2026年県ジュニア駅伝のスタートリストです。 チーム・区間メンバーの一覧は大会フォルダで確認できます。 資料: https://drive.google.com/drive/folders/1pUww3wPlyy4IoSNUy58qK9yhCRzeU_-2
 
     '
   sources:
@@ -163985,9 +163966,7 @@ entries:
   - 第４回県ジュニア陸上（第３回県ジュニア駅伝）のチャレンジの部_スタートリストは？
   - 第４回県ジュニア陸上（第３回県ジュニア駅伝）「チャレンジの部_スタートリスト」の内容は？
   - 今年の第４回県ジュニア陸上（第３回県ジュニア駅伝）のチャレンジの部_スタートリスト
-  answer: '第４回県ジュニア陸上（第３回県ジュニア駅伝）（2026）の「チャレンジの部_スタートリスト」です。 第3回 熊本県ジュニア駅伝競走大会 スタートリスト - 開催日: 2026-09-26 - 公式ページ: http: kumariku.com
-    competition ?id=9730 - 原本PDF: http: - PDFページ数: 4 - 文字層から表形式で転記。氏名 学年 区間は原本PDFと照合可能。 1ページ 第3回 熊本県ジュニア駅伝競走大会（女子チャレンジの部）
-    No. 学校名 監督 １区 ２区 ３区 ４区 補…。 資料: https://drive.google.com/drive/folders/1pUww3wPlyy4IoSNUy58qK9yhCRzeU_-2。
+  answer: '2026年県ジュニア駅伝のスタートリストです。 チーム・区間メンバーの一覧は大会フォルダで確認できます。 資料: https://drive.google.com/drive/folders/1pUww3wPlyy4IoSNUy58qK9yhCRzeU_-2
 
     '
   sources:
@@ -164002,9 +163981,7 @@ entries:
   - 第４回県ジュニア陸上（第３回県ジュニア駅伝）のチャンピオンシップの部_スタートリストは？
   - 第４回県ジュニア陸上（第３回県ジュニア駅伝）「チャンピオンシップの部_スタートリスト」の内容は？
   - 今年の第４回県ジュニア陸上（第３回県ジュニア駅伝）のチャンピオンシップの部_スタートリスト
-  answer: '第４回県ジュニア陸上（第３回県ジュニア駅伝）（2026）の「チャンピオンシップの部_スタートリスト」です。 第3回 熊本県ジュニア駅伝競走大会 スタートリスト - 開催日: 2026-09-26 - 公式ページ: http:
-    kumariku.com competition ?id=9730 - 原本PDF: http: - PDFページ数: 2 - 文字層から表形式で転記。氏名 学年 区間は原本PDFと照合可能。 1ページ 第3回 熊本県ジュニア駅伝競走大会（女子チャンピオンシップの部）
-    No. 学校名 監督 １区 ２区 ３区…。 資料: https://drive.google.com/drive/folders/1pUww3wPlyy4IoSNUy58qK9yhCRzeU_-2。
+  answer: '2026年県ジュニア駅伝のスタートリストです。 チーム・区間メンバーの一覧は大会フォルダで確認できます。 資料: https://drive.google.com/drive/folders/1pUww3wPlyy4IoSNUy58qK9yhCRzeU_-2
 
     '
   sources:
@@ -164036,9 +164013,7 @@ entries:
   - 第４回県ジュニア陸上（第３回県ジュニア駅伝）の区間オーダー_SB予想は？
   - 第４回県ジュニア陸上（第３回県ジュニア駅伝）「区間オーダー_SB予想」の内容は？
   - 今年の第４回県ジュニア陸上（第３回県ジュニア駅伝）の区間オーダー_SB予想
-  answer: '第４回県ジュニア陸上（第３回県ジュニア駅伝）（2026）の「区間オーダー_SB予想」です。 第3回 熊本県ジュニア駅伝競走大会 2026年度SB 区間順位予想 as_of: 2026-09-24 event_date: 2026-09-26
-    - SBは2026年度採用SB Notion採用SB 玉名郡ナイターでSB明記された記録を対象日以前で照合。SB採用済みを優先。 - 換算式は2026年なごみ駅伝と同じ。女子は1500m SBから2km予想 、1500mがなければ800m
-    Riegel換算。男子は1500m SBから…。 資料: https://drive.google.com/drive/folders/1pUww3wPlyy4IoSNUy58qK9yhCRzeU_-2。
+  answer: '2026年県ジュニア駅伝の区間オーダー予想（区間オーダー SB予想）です。 自己ベストなどから算出した目安で、確定オーダーではありません。 資料: https://drive.google.com/drive/folders/1pUww3wPlyy4IoSNUy58qK9yhCRzeU_-2
 
     '
   sources:
@@ -164053,8 +164028,10 @@ entries:
   - 第４回県ジュニア陸上（第３回県ジュニア駅伝）の区間オーダー_SB予想_coverageは？
   - 第４回県ジュニア陸上（第３回県ジュニア駅伝）「区間オーダー_SB予想_coverage」の内容は？
   - 今年の第４回県ジュニア陸上（第３回県ジュニア駅伝）の区間オーダー_SB予想_coverage
-  answer: "第４回県ジュニア陸上（第３回県ジュニア駅伝）（2026）の「区間オーダー_SB予想_coverage」です。 \uFEFFgender,division,no,team,predicted_legs,total_legs,reference_rank,complete_rank,predicted_total_sec,reference_total_sec,leg_1_athlete,leg_2_athlete,leg_3_athlete,leg_4_athlete,leg_1_pred_sec,leg_2_pred_sec,leg_3_pred_se…。\
-    \ 資料: https://drive.google.com/drive/folders/1pUww3wPlyy4IoSNUy58qK9yhCRzeU_-2。\n"
+  answer: '2026年県ジュニア駅伝の「区間オーダー SB予想 coverage」は集計用データです。 利用者向けにはオーダー予想や結果の質問の方が分かりやすいです。 例: 「2026年県ジュニア駅伝の区間オーダー予想は？」「県ジュニア駅伝の結果は？」。
+    資料: https://drive.google.com/drive/folders/1pUww3wPlyy4IoSNUy58qK9yhCRzeU_-2
+
+    '
   sources:
   - input/idaten-corpus/drive-text/大会/2026年度/0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）/区間オーダー_SB予想_coverage.csv
   - input/external/drive/shared/大会/INDEX.md
@@ -164067,8 +164044,7 @@ entries:
   - 第４回県ジュニア陸上（第３回県ジュニア駅伝）の区間オーダー変更は？
   - 第４回県ジュニア陸上（第３回県ジュニア駅伝）「区間オーダー変更」の内容は？
   - 今年の第４回県ジュニア陸上（第３回県ジュニア駅伝）の区間オーダー変更
-  answer: '第４回県ジュニア陸上（第３回県ジュニア駅伝）（2026）の「区間オーダー変更」です。 大会 区間オーダー変更記録 大会: 第3回 熊本県ジュニア駅伝競走大会（2026-09-26） 更新日: 2026-09-24 公式スタートリスト公表後に受けた岱明中の区間変更、およびSB比較に基づく補員との入れ替えを、SB予想用の最新オーダーとして記録する。公式スタートリストの文字起こしは公表時点の原本転記として保持する。
-    岱明中からの区間変更 部門 区間 最新オーダー 公表時オーダー --- ---: --- --- 女…。 資料: https://drive.google.com/drive/folders/1pUww3wPlyy4IoSNUy58qK9yhCRzeU_-2。
+  answer: '2026年県ジュニア駅伝の区間オーダー変更メモです。 確定メンバーは「県ジュニア駅伝の結果は？」や大会フォルダで確認できます。 資料: https://drive.google.com/drive/folders/1pUww3wPlyy4IoSNUy58qK9yhCRzeU_-2
 
     '
   sources:
@@ -164164,8 +164140,7 @@ entries:
   - 荒玉中体連駅伝の予実比較は？
   - 荒玉中体連駅伝「予実比較」の内容は？
   - 今年の荒玉中体連駅伝の予実比較
-  answer: '荒玉中体連駅伝（2026）の「予実比較」です。 荒玉駅伝 数式予想 旧SB予想の予実ギャップ分析 1. 成績を および男女成績表に転記する。 2. レース前の と旧 を固定する。 3. 本スクリプトを拡張し、差＝実績−数式予想、実績−旧SB予想の表／HTML
-    を生成する（なごみ 準拠）。 4. 男女別の数式係数と の区間バイアスを更新する。 - 現行予想: - 現行展開: - 旧SB比較値: - ジュニア予実（参考）: ジュニア大会フォルダの。 資料: https://drive.google.com/drive/folders/1G8IlaBp9xVmXUynBAjV9ZZQPfFqzj4Yi。
+  answer: '2026年荒玉駅伝の予実比較（数式予想・旧SB予想と実績の差）用の枠です。 開催は2026-10-14予定で、大会後に実績が入ると使えます。 予想の確認は「今年の荒玉戦力分析（校別）は？」が分かりやすいです。 資料: https://drive.google.com/drive/folders/1G8IlaBp9xVmXUynBAjV9ZZQPfFqzj4Yi
 
     '
   sources:
@@ -164195,8 +164170,7 @@ entries:
   - 荒玉中体連駅伝の公式オーダー待ちは？
   - 荒玉中体連駅伝「公式オーダー待ち」の内容は？
   - 今年の荒玉中体連駅伝の公式オーダー待ち
-  answer: '荒玉中体連駅伝（2026）の「公式オーダー待ち」です。 暫定: ジュニア／SB上位で**全校全区間を仮置き済み**（ ） 1. Drive に男女オーダー（またはスタートリスト）を保存し表構造MD化。 2. 開催要項と を突合。
-    3. の を公式に差し替え、 の男子5–6仮置きを確定／修正。 4. 差分があれば に記録しスクリプト再実行。 5. を公式オーダーで更新。 暫定成果物: 女子 男子個別 MD。 資料: https://drive.google.com/drive/folders/1G8IlaBp9xVmXUynBAjV9ZZQPfFqzj4Yi。
+  answer: '2026年荒玉駅伝は公式の全チームオーダー待ちです。 岱明は暫定オーダーあり（男子5–6区は仮置き）。 「岱明の2026荒玉暫定オーダーは？」で確認できます。 資料: https://drive.google.com/drive/folders/1G8IlaBp9xVmXUynBAjV9ZZQPfFqzj4Yi
 
     '
   sources:
@@ -164211,9 +164185,8 @@ entries:
   - 荒玉中体連駅伝の区間オーダー_SB予想は？
   - 荒玉中体連駅伝「区間オーダー_SB予想」の内容は？
   - 今年の荒玉中体連駅伝の区間オーダー_SB予想
-  answer: '荒玉中体連駅伝（2026）の「区間オーダー_SB予想」です。 荒玉中体連駅伝 2026年度SB 区間予想（多校 全区間仮置き） as_of: 2026-09-27 event_date: 2026-10-14 freshness_days:
-    152 女子 男子それぞれの総合順位 通過順 チーム詳細は下記。 オーダーは公式未着のためジュニア／SB上位で全区間を仮置き（岱明女 男1–4のみ確定）。 荒玉中体連駅伝 2026 女子 区間オーダー × SB予想（仮置き込み） as_of:
-    202…。 資料: https://drive.google.com/drive/folders/1G8IlaBp9xVmXUynBAjV9ZZQPfFqzj4Yi。
+  answer: '2026年荒玉駅伝の区間オーダー予想（区間オーダー SB予想）です。 自己ベストなどから算出した目安で、確定オーダーではありません。 「今年の荒玉戦力分析（校別）は？」や「岱明の2026荒玉暫定オーダーは？」も便利です。
+    資料: https://drive.google.com/drive/folders/1G8IlaBp9xVmXUynBAjV9ZZQPfFqzj4Yi
 
     '
   sources:
@@ -164228,9 +164201,8 @@ entries:
   - 荒玉中体連駅伝の区間オーダー_SB予想_coverageは？
   - 荒玉中体連駅伝「区間オーダー_SB予想_coverage」の内容は？
   - 今年の荒玉中体連駅伝の区間オーダー_SB予想_coverage
-  answer: '荒玉中体連駅伝（2026）の「区間オーダー_SB予想_coverage」です。 gender,team,leg,km,name,pred_sec,pred,sb_800,sb_1500,sb_3000,note,source,as_of,freshness_days
-    女子,南関中,1,3.0,福山 結衣,613.0,10:13.0,2:28.50 @2026 07 19,—,—,※仮 SB:800m 2:28.50@2026 07 19 800m SB 2km式を距離比例 区間3km=10:55.5
-    駅伝加味:S…。 資料: https://drive.google.com/drive/folders/1G8IlaBp9xVmXUynBAjV9ZZQPfFqzj4Yi。
+  answer: '2026年荒玉駅伝の「区間オーダー SB予想 coverage」は集計用データです。 利用者向けにはオーダー予想や結果の質問の方が分かりやすいです。 例: 「2026年荒玉駅伝の区間オーダー予想は？」「荒玉駅伝の結果は？」。
+    資料: https://drive.google.com/drive/folders/1G8IlaBp9xVmXUynBAjV9ZZQPfFqzj4Yi
 
     '
   sources:
@@ -164245,9 +164217,8 @@ entries:
   - 荒玉中体連駅伝の区間オーダー_数式予想は？
   - 荒玉中体連駅伝「区間オーダー_数式予想」の内容は？
   - 今年の荒玉中体連駅伝の区間オーダー_数式予想
-  answer: '荒玉中体連駅伝（2026）の「区間オーダー_数式予想」です。 "event": "荒玉中体連駅伝", "event_date": "2026-10-14", "as_of": "2026-09-27", "model":
-    "aragyoku_2026_formula_v6_context", "coefficients": { "男子": { "distance_exponent": 1.11686608267681, "distance_pairs":
-    474, "distance_raw_m…。 資料: https://drive.google.com/drive/folders/1G8IlaBp9xVmXUynBAjV9ZZQPfFqzj4Yi。
+  answer: '2026年荒玉駅伝の区間オーダー予想（区間オーダー 数式予想）です。 自己ベストなどから算出した目安で、確定オーダーではありません。 「今年の荒玉戦力分析（校別）は？」や「岱明の2026荒玉暫定オーダーは？」も便利です。
+    資料: https://drive.google.com/drive/folders/1G8IlaBp9xVmXUynBAjV9ZZQPfFqzj4Yi
 
     '
   sources:
@@ -164262,8 +164233,8 @@ entries:
   - 荒玉中体連駅伝の区間オーダー_数式予想_coverageは？
   - 荒玉中体連駅伝「区間オーダー_数式予想_coverage」の内容は？
   - 今年の荒玉中体連駅伝の区間オーダー_数式予想_coverage
-  answer: '荒玉中体連駅伝（2026）の「区間オーダー_数式予想_coverage」です。 gender,team,leg,km,name,grade,pred_sec,pred,baseline_sb_sec,baseline_sb,delta_sec,n_races,latest_race,race_types,prediction_basis,human_adjustment,sb_800,sb_1500,sb_3000,model,as_of
-    女子,南関中,1,3.0,福山 結衣,2,647,10:47,613.0,…。 資料: https://drive.google.com/drive/folders/1G8IlaBp9xVmXUynBAjV9ZZQPfFqzj4Yi。
+  answer: '2026年荒玉駅伝の「区間オーダー 数式予想 coverage」は集計用データです。 利用者向けにはオーダー予想や結果の質問の方が分かりやすいです。 例: 「2026年荒玉駅伝の区間オーダー予想は？」「荒玉駅伝の結果は？」。
+    資料: https://drive.google.com/drive/folders/1G8IlaBp9xVmXUynBAjV9ZZQPfFqzj4Yi
 
     '
   sources:
@@ -164278,9 +164249,8 @@ entries:
   - 荒玉中体連駅伝の女子区間オーダー_SB予想は？
   - 荒玉中体連駅伝「女子区間オーダー_SB予想」の内容は？
   - 今年の荒玉中体連駅伝の女子区間オーダー_SB予想
-  answer: '荒玉中体連駅伝（2026）の「女子区間オーダー_SB予想」です。 荒玉中体連駅伝 2026 女子 区間オーダー × SB予想（仮置き込み） as_of: 2026-09-27 event_date: 2026-10-14
-    freshness_days: 152 - 編集ファイル: （updated: 2026-09-29） - 調整キー: （加減） （絶対） （上下限）。 または + 女子はトラックSBよりなごみ／ジュニア駅伝実績を主に予想する（SB重み×0.15）。
-    Jrでスタミナ不足が露顕。…。 資料: https://drive.google.com/drive/folders/1G8IlaBp9xVmXUynBAjV9ZZQPfFqzj4Yi。
+  answer: '2026年荒玉駅伝の区間オーダー予想（女子区間オーダー SB予想）です。 自己ベストなどから算出した目安で、確定オーダーではありません。 「今年の荒玉戦力分析（校別）は？」や「岱明の2026荒玉暫定オーダーは？」も便利です。
+    資料: https://drive.google.com/drive/folders/1G8IlaBp9xVmXUynBAjV9ZZQPfFqzj4Yi
 
     '
   sources:
@@ -164295,9 +164265,8 @@ entries:
   - 荒玉中体連駅伝の女子区間オーダー_SB予想_coverageは？
   - 荒玉中体連駅伝「女子区間オーダー_SB予想_coverage」の内容は？
   - 今年の荒玉中体連駅伝の女子区間オーダー_SB予想_coverage
-  answer: '荒玉中体連駅伝（2026）の「女子区間オーダー_SB予想_coverage」です。 gender,team,leg,km,name,pred_sec,pred,sb_800,sb_1500,sb_3000,note,source,as_of,freshness_days
-    女子,南関中,1,3.0,福山 結衣,613.0,10:13.0,2:28.50 @2026 07 19,—,—,※仮 SB:800m 2:28.50@2026 07 19 800m SB 2km式を距離比例 区間3km=10:55.5
-    駅伝加味:S…。 資料: https://drive.google.com/drive/folders/1G8IlaBp9xVmXUynBAjV9ZZQPfFqzj4Yi。
+  answer: '2026年荒玉駅伝の「女子区間オーダー SB予想 coverage」は集計用データです。 利用者向けにはオーダー予想や結果の質問の方が分かりやすいです。 例: 「2026年荒玉駅伝の区間オーダー予想は？」「荒玉駅伝の結果は？」。
+    資料: https://drive.google.com/drive/folders/1G8IlaBp9xVmXUynBAjV9ZZQPfFqzj4Yi
 
     '
   sources:
@@ -164312,9 +164281,8 @@ entries:
   - 荒玉中体連駅伝の女子区間オーダー_数式予想は？
   - 荒玉中体連駅伝「女子区間オーダー_数式予想」の内容は？
   - 今年の荒玉中体連駅伝の女子区間オーダー_数式予想
-  answer: '荒玉中体連駅伝（2026）の「女子区間オーダー_数式予想」です。 荒玉中体連駅伝 2026 女子 区間オーダー 数式予想 基準日: 2026-09-27 大会: 2026-10-14 公式オーダー未着。岱明女子は監督確定、他校は仮置き。トラック
-    ロード 駅伝の全採用レースから算出する。人間考慮YAMLに明示された実績重みと、記録未確認選手の暫定タイムだけを個別適用する。 数式:。Bは全記録の最速2件平均、直近45日（記録がなければ全期間）の重み付き25%値 Q_recent。直近の半減期21日…。
-    資料: https://drive.google.com/drive/folders/1G8IlaBp9xVmXUynBAjV9ZZQPfFqzj4Yi。
+  answer: '2026年荒玉駅伝の区間オーダー予想（女子区間オーダー 数式予想）です。 自己ベストなどから算出した目安で、確定オーダーではありません。 「今年の荒玉戦力分析（校別）は？」や「岱明の2026荒玉暫定オーダーは？」も便利です。
+    資料: https://drive.google.com/drive/folders/1G8IlaBp9xVmXUynBAjV9ZZQPfFqzj4Yi
 
     '
   sources:
@@ -164329,8 +164297,8 @@ entries:
   - 荒玉中体連駅伝の女子区間オーダー_数式予想_coverageは？
   - 荒玉中体連駅伝「女子区間オーダー_数式予想_coverage」の内容は？
   - 今年の荒玉中体連駅伝の女子区間オーダー_数式予想_coverage
-  answer: '荒玉中体連駅伝（2026）の「女子区間オーダー_数式予想_coverage」です。 gender,team,leg,km,name,grade,pred_sec,pred,baseline_sb_sec,baseline_sb,delta_sec,n_races,latest_race,race_types,prediction_basis,human_adjustment,sb_800,sb_1500,sb_3000,model,as_of
-    女子,南関中,1,3.0,福山 結衣,2,647,10:47,613.0,…。 資料: https://drive.google.com/drive/folders/1G8IlaBp9xVmXUynBAjV9ZZQPfFqzj4Yi。
+  answer: '2026年荒玉駅伝の「女子区間オーダー 数式予想 coverage」は集計用データです。 利用者向けにはオーダー予想や結果の質問の方が分かりやすいです。 例: 「2026年荒玉駅伝の区間オーダー予想は？」「荒玉駅伝の結果は？」。
+    資料: https://drive.google.com/drive/folders/1G8IlaBp9xVmXUynBAjV9ZZQPfFqzj4Yi
 
     '
   sources:
@@ -164361,8 +164329,8 @@ entries:
   - 荒玉中体連駅伝の校別展開_数式予想は？
   - 荒玉中体連駅伝「校別展開_数式予想」の内容は？
   - 今年の荒玉中体連駅伝の校別展開_数式予想
-  answer: '荒玉中体連駅伝（2026）の校別展開・数式予想です。 男子上位: 1位玉陵中（56:01）、2位玉名高附（57:54）、3位菊水中（57:55）、4位荒尾第四中（58:46）、5位南関中（58:50）、6位岱明中（58:55）。女子上位:
-    1位荒尾三中（42:53）、2位玉名中†（42:56）、3位南関中（43:16）、4位長洲中†（43:36）、5位岱明中（44:13）、6位菊水中（46:26）。 公式オーダー未着の仮予想です。 資料: https://drive.google.com/drive/folders/1G8IlaBp9xVmXUynBAjV9ZZQPfFqzj4Yi。
+  answer: '2026年荒玉駅伝の区間オーダー予想（校別展開 数式予想）です。 自己ベストなどから算出した目安で、確定オーダーではありません。 「今年の荒玉戦力分析（校別）は？」や「岱明の2026荒玉暫定オーダーは？」も便利です。 資料:
+    https://drive.google.com/drive/folders/1G8IlaBp9xVmXUynBAjV9ZZQPfFqzj4Yi
 
     '
   sources:
@@ -164377,9 +164345,7 @@ entries:
   - 荒玉中体連駅伝の校別展開予想は？
   - 荒玉中体連駅伝「校別展開予想」の内容は？
   - 今年の荒玉中体連駅伝の校別展開予想
-  answer: '荒玉中体連駅伝（2026）の「校別展開予想」です。 荒玉中体連駅伝 2026 予想 更新: 2026-09-27（SB区間予想＋2025年成績の自動生成） 開催: 2026-10-14（予備日あり） 根拠: ジュニア結果
-    距離: 男子 3.00 2.855 3.00 3.00 2.855 3.00 km、女子 3.00 1.855 2.00 2.00 3.00 km（2024年以降定義） **注意**: 他校オーダーは公式未着の仮置き。数値はトラックSB
-    直近駅伝 前年…。 資料: https://drive.google.com/drive/folders/1G8IlaBp9xVmXUynBAjV9ZZQPfFqzj4Yi。
+  answer: '2026年荒玉駅伝の校別展開予想です（更新2026-09-27、開催2026-10-14）。 公式オーダー前の目安です。「今年の荒玉戦力分析（校別）は？」でも聞けます。 資料: https://drive.google.com/drive/folders/1G8IlaBp9xVmXUynBAjV9ZZQPfFqzj4Yi
 
     '
   sources:
@@ -164409,9 +164375,8 @@ entries:
   - 荒玉中体連駅伝の男子区間オーダー_SB予想は？
   - 荒玉中体連駅伝「男子区間オーダー_SB予想」の内容は？
   - 今年の荒玉中体連駅伝の男子区間オーダー_SB予想
-  answer: '荒玉中体連駅伝（2026）の「男子区間オーダー_SB予想」です。 荒玉中体連駅伝 2026 男子 区間オーダー × SB予想（仮置き込み） as_of: 2026-09-27 event_date: 2026-10-14
-    freshness_days: 152 - 編集ファイル: （updated: 2026-09-29） - 調整キー: （加減） （絶対） （上下限）。 または + 玉陵の内野翼は不出走情報に基づき仮オーダーから除外し、校内SB次点で補充。
-    荒尾第四の本戸優貴はユーザー確認で昨…。 資料: https://drive.google.com/drive/folders/1G8IlaBp9xVmXUynBAjV9ZZQPfFqzj4Yi。
+  answer: '2026年荒玉駅伝の区間オーダー予想（男子区間オーダー SB予想）です。 自己ベストなどから算出した目安で、確定オーダーではありません。 「今年の荒玉戦力分析（校別）は？」や「岱明の2026荒玉暫定オーダーは？」も便利です。
+    資料: https://drive.google.com/drive/folders/1G8IlaBp9xVmXUynBAjV9ZZQPfFqzj4Yi
 
     '
   sources:
@@ -164426,9 +164391,8 @@ entries:
   - 荒玉中体連駅伝の男子区間オーダー_SB予想_coverageは？
   - 荒玉中体連駅伝「男子区間オーダー_SB予想_coverage」の内容は？
   - 今年の荒玉中体連駅伝の男子区間オーダー_SB予想_coverage
-  answer: '荒玉中体連駅伝（2026）の「男子区間オーダー_SB予想_coverage」です。 gender,team,leg,km,name,pred_sec,pred,sb_800,sb_1500,sb_3000,note,source,as_of,freshness_days
-    男子,玉名高附,1,3.0,小倉 十和,573.1,9:33.1,—,4:21.99 @2026 05 24,9:28.13 @2026 06 13,※仮 SB:3000m 9:28.13@2026 06 13 3000m SBを距離比例
-    区間3km…。 資料: https://drive.google.com/drive/folders/1G8IlaBp9xVmXUynBAjV9ZZQPfFqzj4Yi。
+  answer: '2026年荒玉駅伝の「男子区間オーダー SB予想 coverage」は集計用データです。 利用者向けにはオーダー予想や結果の質問の方が分かりやすいです。 例: 「2026年荒玉駅伝の区間オーダー予想は？」「荒玉駅伝の結果は？」。
+    資料: https://drive.google.com/drive/folders/1G8IlaBp9xVmXUynBAjV9ZZQPfFqzj4Yi
 
     '
   sources:
@@ -164443,9 +164407,8 @@ entries:
   - 荒玉中体連駅伝の男子区間オーダー_数式予想は？
   - 荒玉中体連駅伝「男子区間オーダー_数式予想」の内容は？
   - 今年の荒玉中体連駅伝の男子区間オーダー_数式予想
-  answer: '荒玉中体連駅伝（2026）の「男子区間オーダー_数式予想」です。 荒玉中体連駅伝 2026 男子 区間オーダー 数式予想 基準日: 2026-09-27 大会: 2026-10-14 公式オーダー未着。岱明男子1–4区は監督確定、5–6区と他校は仮置き。トラック
-    ロード 駅伝の全採用レースから算出する。人間考慮YAMLに明示された実績重みと、記録未確認選手の暫定タイムだけを個別適用する。 数式:。Bは全記録の最速2件平均、直近45日（記録がなければ全期間）の重み付き25%値 Q_recent。…。
-    資料: https://drive.google.com/drive/folders/1G8IlaBp9xVmXUynBAjV9ZZQPfFqzj4Yi。
+  answer: '2026年荒玉駅伝の区間オーダー予想（男子区間オーダー 数式予想）です。 自己ベストなどから算出した目安で、確定オーダーではありません。 「今年の荒玉戦力分析（校別）は？」や「岱明の2026荒玉暫定オーダーは？」も便利です。
+    資料: https://drive.google.com/drive/folders/1G8IlaBp9xVmXUynBAjV9ZZQPfFqzj4Yi
 
     '
   sources:
@@ -164460,8 +164423,8 @@ entries:
   - 荒玉中体連駅伝の男子区間オーダー_数式予想_coverageは？
   - 荒玉中体連駅伝「男子区間オーダー_数式予想_coverage」の内容は？
   - 今年の荒玉中体連駅伝の男子区間オーダー_数式予想_coverage
-  answer: '荒玉中体連駅伝（2026）の「男子区間オーダー_数式予想_coverage」です。 gender,team,leg,km,name,grade,pred_sec,pred,baseline_sb_sec,baseline_sb,delta_sec,n_races,latest_race,race_types,prediction_basis,human_adjustment,sb_800,sb_1500,sb_3000,model,as_of
-    男子,玉名高附,1,3.0,小倉 十和,2,568,9:28,573.1,…。 資料: https://drive.google.com/drive/folders/1G8IlaBp9xVmXUynBAjV9ZZQPfFqzj4Yi。
+  answer: '2026年荒玉駅伝の「男子区間オーダー 数式予想 coverage」は集計用データです。 利用者向けにはオーダー予想や結果の質問の方が分かりやすいです。 例: 「2026年荒玉駅伝の区間オーダー予想は？」「荒玉駅伝の結果は？」。
+    資料: https://drive.google.com/drive/folders/1G8IlaBp9xVmXUynBAjV9ZZQPfFqzj4Yi
 
     '
   sources:
@@ -164580,8 +164543,7 @@ entries:
   questions:
   - 2025年熊本県中学生陸上競技選手権のスタートリストは？
   - 2025年熊本県中学生陸上競技選手権「スタートリスト」の内容は？
-  answer: '熊本県中学生陸上競技選手権（2025）の「スタートリスト」です。 資料: https://drive.google.com/drive/folders/1PT_antiggHN2a3Pmoze4xS1VTMMpD2e1 ファイル:
-    https://drive.google.com/file/d/1Dtsw33QtmwK92I_VHiVLZmb2_Cy1znG2/view。
+  answer: '2025年大会のスタートリストです。 チーム・区間メンバーの一覧は大会フォルダで確認できます。
 
     '
   sources:
@@ -164759,8 +164721,7 @@ entries:
   questions:
   - 2025年荒尾選手権（中止）の大会プログラムは？
   - 2025年荒尾選手権（中止）「大会プログラム」の内容は？
-  answer: '荒尾選手権（中止）（2025）の「大会プログラム」です。 資料: https://drive.google.com/drive/folders/1ZPPJboc_BUiu2thxzlsIUERDlmTBm6Op ファイル:
-    https://drive.google.com/file/d/1OjvYRGsisuJQnW4Hb7221lOIc9q3ET-C/view。
+  answer: '2025年大会のプログラム・要項の案内です。開催日・会場は大会名で聞けます。
 
     '
   sources:
@@ -164803,8 +164764,7 @@ entries:
   questions:
   - 2025年全日本中学校通信陸上競技大会熊本県大会のスタートリストは？
   - 2025年全日本中学校通信陸上競技大会熊本県大会「スタートリスト」の内容は？
-  answer: '全日本中学校通信陸上競技大会熊本県大会（2025）の「スタートリスト」です。 資料: https://drive.google.com/drive/folders/1PpQjL2oUCleF8gujx5Z2ZkIhfuTXop2Q
-    ファイル: https://drive.google.com/file/d/1dAX4qvVP7hdNp8ShczyvpRevmc-WstUb/view。
+  answer: '2025年大会のスタートリストです。 チーム・区間メンバーの一覧は大会フォルダで確認できます。
 
     '
   sources:
@@ -164982,8 +164942,7 @@ entries:
   questions:
   - 2025年熊本県中学校総合体育大会陸上競技大会のスタートリストは？
   - 2025年熊本県中学校総合体育大会陸上競技大会「スタートリスト」の内容は？
-  answer: '熊本県中学校総合体育大会陸上競技大会（2025）の「スタートリスト」です。 資料: https://drive.google.com/drive/folders/1tV3rNM3AfGExLRXBM2oWb3pZtRD1PYFk
-    ファイル: https://drive.google.com/file/d/1tWnTdof2kLvPWiMLXg4X9RZ1osTBdjk3/view。
+  answer: '2025年大会のスタートリストです。 チーム・区間メンバーの一覧は大会フォルダで確認できます。
 
     '
   sources:
@@ -165229,7 +165188,7 @@ entries:
   questions:
   - 2025年中学駅伝金栗四三生誕の地なごみ大会の予実比較は？
   - 2025年中学駅伝金栗四三生誕の地なごみ大会「予実比較」の内容は？
-  answer: 'なごみ駅伝2025のSB予想と実績の乖離資料です。 差は実績−予想（プラスは予想より遅い）。 区間判定の目安は女子10/20秒・男子15/30秒。 詳細は大会フォルダの予実比較を参照。 資料: https://drive.google.com/drive/folders/1NSx1uYMt2_N9ezohsnyZ4BPXIw-rfUb6
+  answer: '2025年なごみ駅伝の予実比較用の枠です。 大会後に実績が入ると、予想との差を確認できます。 資料: https://drive.google.com/drive/folders/1NSx1uYMt2_N9ezohsnyZ4BPXIw-rfUb6
 
     '
   sources:
@@ -165258,9 +165217,7 @@ entries:
   questions:
   - 2025年中学駅伝金栗四三生誕の地なごみ大会の女子区間オーダー_SB予想は？
   - 2025年中学駅伝金栗四三生誕の地なごみ大会「女子区間オーダー_SB予想」の内容は？
-  answer: '中学駅伝金栗四三生誕の地なごみ大会（2025）の「女子区間オーダー_SB予想」です。 なごみ駅伝2025 女子 出走メンバー × レース前SB 予想 as_of: 2025-09-20 出走は 2025-09-21 成績表
-    2025年度 SB採用（レース前日以前のみ。ナイター Notion 上書きなし） event_date: 2025-09-21 - **2km予想（1500m）**: （男子と同型の掛け算＋加算） - **2km予想（800mフォールバック）**:
-    1500欠測時のみ - **SB反映**: の…。 資料: https://drive.google.com/drive/folders/1NSx1uYMt2_N9ezohsnyZ4BPXIw-rfUb6。
+  answer: '2025年なごみ駅伝の区間オーダー予想（女子区間オーダー SB予想）です。 自己ベストなどから算出した目安で、確定オーダーではありません。 資料: https://drive.google.com/drive/folders/1NSx1uYMt2_N9ezohsnyZ4BPXIw-rfUb6
 
     '
   sources:
@@ -165274,9 +165231,8 @@ entries:
   questions:
   - 2025年中学駅伝金栗四三生誕の地なごみ大会の女子区間オーダー_SB予想_coverageは？
   - 2025年中学駅伝金栗四三生誕の地なごみ大会「女子区間オーダー_SB予想_coverage」の内容は？
-  answer: '中学駅伝金栗四三生誕の地なごみ大会（2025）の「女子区間オーダー_SB予想_coverage」です。 gender,team,role,name,800m,1500m,pred,pred_cum,pred_cum_rank,pred_sec_rank,note
-    女子,金栗PROJECT,1区,坂井優花,,4:48.17,6:39.2,6:39.2,1,1,1500 2km式 女子,金栗PROJECT,2区,辻美空,2:20.11,5:02.18,6:57.9,13:37.1,1,2,1500
-    2km式 女子,金栗PROJECT,3区,…。 資料: https://drive.google.com/drive/folders/1NSx1uYMt2_N9ezohsnyZ4BPXIw-rfUb6。
+  answer: '2025年なごみ駅伝の「女子区間オーダー SB予想 coverage」は集計用データです。 利用者向けにはオーダー予想や結果の質問の方が分かりやすいです。 例: 「2025年なごみ駅伝の区間オーダー予想は？」「なごみ駅伝の結果は？」。
+    資料: https://drive.google.com/drive/folders/1NSx1uYMt2_N9ezohsnyZ4BPXIw-rfUb6
 
     '
   sources:
@@ -165321,9 +165277,7 @@ entries:
   questions:
   - 2025年中学駅伝金栗四三生誕の地なごみ大会の成績表は？
   - 2025年中学駅伝金栗四三生誕の地なごみ大会「成績表」の内容は？
-  answer: '中学駅伝金栗四三生誕の地なごみ大会（2025）の「成績表」です。 "event": { "title": "第11回 中学駅伝金栗四三生誕の地なごみ大会", "date": "2025-09-21", "venue": "和水町三加和公民館前発着周回コース",
-    "output_note": "男子成績表は 2025 09 21 11:13 出力" "as_of_sb": "2025-09-20", "women": [ "rank": 1, "team": "金栗PROJECT", "total":…。
-    資料: https://drive.google.com/drive/folders/1NSx1uYMt2_N9ezohsnyZ4BPXIw-rfUb6。
+  answer: '2025年なごみ駅伝の成績表です。 岱明の結果は「2025年のなごみ駅伝の結果は？」が分かりやすいです。 資料: https://drive.google.com/drive/folders/1NSx1uYMt2_N9ezohsnyZ4BPXIw-rfUb6
 
     '
   sources:
@@ -165367,9 +165321,7 @@ entries:
   questions:
   - 2025年中学駅伝金栗四三生誕の地なごみ大会の男子区間オーダー_SB予想は？
   - 2025年中学駅伝金栗四三生誕の地なごみ大会「男子区間オーダー_SB予想」の内容は？
-  answer: '中学駅伝金栗四三生誕の地なごみ大会（2025）の「男子区間オーダー_SB予想」です。 なごみ駅伝2025 男子 出走メンバー × レース前SB 予想 as_of: 2025-09-20 出走は 2025-09-21 成績表
-    2025年度 SB採用（レース前日以前のみ。ナイター Notion 上書きなし） event_date: 2025-09-21 - **3km予想（1500m）**: （掛け算＋加算。従来の駅伝予測HTML +68.50 から変更） -
-    **3km予想（800mフォールバック）**: - **3…。 資料: https://drive.google.com/drive/folders/1NSx1uYMt2_N9ezohsnyZ4BPXIw-rfUb6。
+  answer: '2025年なごみ駅伝の区間オーダー予想（男子区間オーダー SB予想）です。 自己ベストなどから算出した目安で、確定オーダーではありません。 資料: https://drive.google.com/drive/folders/1NSx1uYMt2_N9ezohsnyZ4BPXIw-rfUb6
 
     '
   sources:
@@ -165383,9 +165335,8 @@ entries:
   questions:
   - 2025年中学駅伝金栗四三生誕の地なごみ大会の男子区間オーダー_SB予想_coverageは？
   - 2025年中学駅伝金栗四三生誕の地なごみ大会「男子区間オーダー_SB予想_coverage」の内容は？
-  answer: '中学駅伝金栗四三生誕の地なごみ大会（2025）の「男子区間オーダー_SB予想_coverage」です。 gender,team,role,name,800m,1500m,3000m,pred,pred_cum,pred_cum_rank,pred_sec_rank,note
-    男子,金栗PROJECT A,1区,丸山白虎,,4:25.89,,9:26.8,9:26.8,6,6,1500 3km式 男子,金栗PROJECT A,2区,石原佳維斗,,4:26.76,,9:28.5,18:55.3,3,4,1500
-    3km式 男子,金栗PROJ…。 資料: https://drive.google.com/drive/folders/1NSx1uYMt2_N9ezohsnyZ4BPXIw-rfUb6。
+  answer: '2025年なごみ駅伝の「男子区間オーダー SB予想 coverage」は集計用データです。 利用者向けにはオーダー予想や結果の質問の方が分かりやすいです。 例: 「2025年なごみ駅伝の区間オーダー予想は？」「なごみ駅伝の結果は？」。
+    資料: https://drive.google.com/drive/folders/1NSx1uYMt2_N9ezohsnyZ4BPXIw-rfUb6
 
     '
   sources:
@@ -165445,8 +165396,7 @@ entries:
   questions:
   - 2025年第２回熊本県ジュニア駅伝競走大会の女子チャレンジ_スタートリストは？
   - 2025年第２回熊本県ジュニア駅伝競走大会「女子チャレンジ_スタートリスト」の内容は？
-  answer: '第２回熊本県ジュニア駅伝競走大会（2025）の「女子チャレンジ_スタートリスト」です。 資料: https://drive.google.com/drive/folders/1GLBlWzfFByYgzuK96T-BzRP2yIXuUbK5
-    ファイル: https://drive.google.com/file/d/1Hd2dJjaLnwYMv5MBLh3OR6dmireEPkHb/view。
+  answer: '2025年県ジュニア駅伝のスタートリストです。 チーム・区間メンバーの一覧は大会フォルダで確認できます。
 
     '
   sources:
@@ -165460,8 +165410,7 @@ entries:
   questions:
   - 2025年第２回熊本県ジュニア駅伝競走大会の女子チャンピオンシップ_スタートリストは？
   - 2025年第２回熊本県ジュニア駅伝競走大会「女子チャンピオンシップ_スタートリスト」の内容は？
-  answer: '第２回熊本県ジュニア駅伝競走大会（2025）の「女子チャンピオンシップ_スタートリスト」です。 資料: https://drive.google.com/drive/folders/1GLBlWzfFByYgzuK96T-BzRP2yIXuUbK5
-    ファイル: https://drive.google.com/file/d/1-ssz3RDHwRnI6ZtnEJL7wFSZwvy2qzep/view。
+  answer: '2025年県ジュニア駅伝のスタートリストです。 チーム・区間メンバーの一覧は大会フォルダで確認できます。
 
     '
   sources:
@@ -165490,8 +165439,7 @@ entries:
   questions:
   - 2025年第２回熊本県ジュニア駅伝競走大会の男子チャレンジ_スタートリストは？
   - 2025年第２回熊本県ジュニア駅伝競走大会「男子チャレンジ_スタートリスト」の内容は？
-  answer: '第２回熊本県ジュニア駅伝競走大会（2025）の「男子チャレンジ_スタートリスト」です。 資料: https://drive.google.com/drive/folders/1GLBlWzfFByYgzuK96T-BzRP2yIXuUbK5
-    ファイル: https://drive.google.com/file/d/1DamQKlqOKAly1rbtmE7MmnidiNNze7Vb/view。
+  answer: '2025年県ジュニア駅伝のスタートリストです。 チーム・区間メンバーの一覧は大会フォルダで確認できます。
 
     '
   sources:
@@ -165505,8 +165453,7 @@ entries:
   questions:
   - 2025年第２回熊本県ジュニア駅伝競走大会の男子チャンピオンシップ_スタートリストは？
   - 2025年第２回熊本県ジュニア駅伝競走大会「男子チャンピオンシップ_スタートリスト」の内容は？
-  answer: '第２回熊本県ジュニア駅伝競走大会（2025）の「男子チャンピオンシップ_スタートリスト」です。 資料: https://drive.google.com/drive/folders/1GLBlWzfFByYgzuK96T-BzRP2yIXuUbK5
-    ファイル: https://drive.google.com/file/d/11OswTqThhkqYimMO3W2QaeruwxsM2VMX/view。
+  answer: '2025年県ジュニア駅伝のスタートリストです。 チーム・区間メンバーの一覧は大会フォルダで確認できます。
 
     '
   sources:
@@ -165715,8 +165662,7 @@ entries:
   questions:
   - 2025年熊本市中長距離選手権のスタートリストは？
   - 2025年熊本市中長距離選手権「スタートリスト」の内容は？
-  answer: '熊本市中長距離選手権（2025）の「スタートリスト」です。 資料: https://drive.google.com/drive/folders/1779L2nrg7nDxnCP44MkrPsBno_vMAJKe ファイル:
-    https://drive.google.com/file/d/1p_MLy6Qipyz-t9WPTgCfN2SXjuR6zm1o/view。
+  answer: '2025年大会のスタートリストです。 チーム・区間メンバーの一覧は大会フォルダで確認できます。
 
     '
   sources:
@@ -173709,7 +173655,7 @@ entries:
   - 2019荒玉男子優勝タイムは？
   - 2019年荒玉男子の優勝はどこは？
   - 2019年荒玉男子の1位はどこは？
-  answer: '2019年荒玉駅伝男子の優勝は玉名（?）です。 対して準優勝は玉東（?）です。
+  answer: '2019年荒玉駅伝男子の優勝は玉名です。対して準優勝は玉東です。 総合タイムは文字起こし未記入のため省略します。
 
     '
   sources:
@@ -173724,7 +173670,7 @@ entries:
   - 2019年荒玉男子の上位3校は？
   - 2019年荒玉駅伝男子トップ3は？
   - 2019荒玉男子の3位まで教えて
-  answer: '2019年荒玉駅伝男子の上位は 1位玉名（?）、2位玉東（?）、3位天水（?） です。
+  answer: '2019年荒玉駅伝男子の上位は 1位玉名、2位玉東、3位天水 です。
 
     '
   sources:
@@ -173741,7 +173687,7 @@ entries:
   - 2019荒玉男子準優勝タイムは？
   - 2019年荒玉男子の準優勝はどこは？
   - 2019年荒玉男子の準1位はどこは？
-  answer: '2019年荒玉駅伝男子の準優勝は玉東（?）です。 対して優勝は玉名（?）です。
+  answer: '2019年荒玉駅伝男子の準優勝は玉東です。対して優勝は玉名です。 総合タイムは文字起こし未記入のため省略します。
 
     '
   sources:
@@ -229486,7 +229432,7 @@ entries:
   - 2023年荒玉女子三加和の区間メンバーは？
   - 2023年の三加和女子オーダーを教えて
   - 2023荒玉女子三加和誰が何区？
-  answer: '2023年荒玉駅伝女子・三加和のオーダーです。 総合15位（38:34）。 1区橋本乃娃（13:58）、2区柿原埜亜（7:26）、3区中山寧音（8:18）、4区池上碧生（8:52）、5区unknown（?）。
+  answer: '2023年荒玉駅伝女子・三加和のオーダーです。 総合15位（38:34）。 1区橋本乃娃（13:58）、2区柿原埜亜（7:26）、3区中山寧音（8:18）、4区池上碧生（8:52）、5区unknown。
 
     '
   sources:
@@ -232461,7 +232407,7 @@ entries:
   - 2025年荒玉男子三加和の区間メンバーは？
   - 2025年の三加和男子オーダーを教えて
   - 2025荒玉男子三加和誰が何区？
-  answer: '2025年荒玉駅伝男子・三加和のオーダーです。 総合15位（?）。 1区山下隼大（9:46）、2区川﨑大芽（10:25）、3区井上太汰（11:28）、4区明瀬七絃（11:10）、5区unknown（?）、6区unknown（?）。
+  answer: '2025年荒玉駅伝男子・三加和のオーダーです。 総合15位。 1区山下隼大（9:46）、2区川﨑大芽（10:25）、3区井上太汰（11:28）、4区明瀬七絃（11:10）、5区unknown、6区unknown。
 
     '
   sources:
@@ -233770,7 +233716,7 @@ entries:
   - 2019年荒玉男子玉名の区間メンバーは？
   - 2019年の玉名男子オーダーを教えて
   - 2019荒玉男子玉名誰が何区？
-  answer: '2019年荒玉駅伝男子・玉名のオーダーです。 総合1位（?）。 1区unknown（?）、2区unknown（?）、3区unknown（?）、4区unknown（?）、5区unknown（?）、6区unknown（?）。
+  answer: '2019年荒玉駅伝男子・玉名のオーダーです。 総合1位。 1区unknown、2区unknown、3区unknown、4区unknown、5区unknown、6区unknown。
 
     '
   sources:
@@ -233787,7 +233733,7 @@ entries:
   - 2019年荒玉男子玉東の区間メンバーは？
   - 2019年の玉東男子オーダーを教えて
   - 2019荒玉男子玉東誰が何区？
-  answer: '2019年荒玉駅伝男子・玉東のオーダーです。 総合2位（?）。 1区unknown（?）、2区unknown（?）、3区unknown（?）、4区unknown（?）、5区unknown（?）、6区unknown（?）。
+  answer: '2019年荒玉駅伝男子・玉東のオーダーです。 総合2位。 1区unknown、2区unknown、3区unknown、4区unknown、5区unknown、6区unknown。
 
     '
   sources:
@@ -233804,7 +233750,7 @@ entries:
   - 2019年荒玉男子天水の区間メンバーは？
   - 2019年の天水男子オーダーを教えて
   - 2019荒玉男子天水誰が何区？
-  answer: '2019年荒玉駅伝男子・天水のオーダーです。 総合3位（?）。 1区unknown（?）、2区unknown（?）、3区unknown（?）、4区unknown（?）、5区unknown（?）、6区unknown（?）。
+  answer: '2019年荒玉駅伝男子・天水のオーダーです。 総合3位。 1区unknown、2区unknown、3区unknown、4区unknown、5区unknown、6区unknown。
 
     '
   sources:
@@ -233821,7 +233767,7 @@ entries:
   - 2019年荒玉男子岱明の区間メンバーは？
   - 2019年の岱明男子オーダーを教えて
   - 2019荒玉男子岱明誰が何区？
-  answer: '2019年荒玉駅伝男子・岱明のオーダーです。 総合4位（?）。 1区unknown（?）、2区unknown（?）、3区unknown（?）、4区unknown（?）、5区unknown（?）、6区unknown（?）。
+  answer: '2019年荒玉駅伝男子・岱明のオーダーです。 総合4位。 1区unknown、2区unknown、3区unknown、4区unknown、5区unknown、6区unknown。
 
     '
   sources:
@@ -233838,7 +233784,7 @@ entries:
   - 2019年荒玉男子荒尾四の区間メンバーは？
   - 2019年の荒尾四男子オーダーを教えて
   - 2019荒玉男子荒尾四誰が何区？
-  answer: '2019年荒玉駅伝男子・荒尾四のオーダーです。 総合5位（?）。 1区unknown（?）、2区unknown（?）、3区unknown（?）、4区unknown（?）、5区unknown（?）、6区unknown（?）。
+  answer: '2019年荒玉駅伝男子・荒尾四のオーダーです。 総合5位。 1区unknown、2区unknown、3区unknown、4区unknown、5区unknown、6区unknown。
 
     '
   sources:
@@ -233855,7 +233801,7 @@ entries:
   - 2019年荒玉男子南関の区間メンバーは？
   - 2019年の南関男子オーダーを教えて
   - 2019荒玉男子南関誰が何区？
-  answer: '2019年荒玉駅伝男子・南関のオーダーです。 総合6位（?）。 1区unknown（?）、2区unknown（?）、3区unknown（?）、4区unknown（?）、5区unknown（?）、6区unknown（?）。
+  answer: '2019年荒玉駅伝男子・南関のオーダーです。 総合6位。 1区unknown、2区unknown、3区unknown、4区unknown、5区unknown、6区unknown。
 
     '
   sources:
@@ -233872,7 +233818,7 @@ entries:
   - 2019年荒玉男子荒尾海陽の区間メンバーは？
   - 2019年の荒尾海陽男子オーダーを教えて
   - 2019荒玉男子荒尾海陽誰が何区？
-  answer: '2019年荒玉駅伝男子・荒尾海陽のオーダーです。 総合7位（?）。 1区unknown（?）、2区unknown（?）、3区unknown（?）、4区unknown（?）、5区unknown（?）、6区unknown（?）。
+  answer: '2019年荒玉駅伝男子・荒尾海陽のオーダーです。 総合7位。 1区unknown、2区unknown、3区unknown、4区unknown、5区unknown、6区unknown。
 
     '
   sources:
@@ -233889,7 +233835,7 @@ entries:
   - 2019年荒玉男子荒尾三の区間メンバーは？
   - 2019年の荒尾三男子オーダーを教えて
   - 2019荒玉男子荒尾三誰が何区？
-  answer: '2019年荒玉駅伝男子・荒尾三のオーダーです。 総合8位（?）。 1区unknown（?）、2区unknown（?）、3区unknown（?）、4区unknown（?）、5区unknown（?）、6区unknown（?）。
+  answer: '2019年荒玉駅伝男子・荒尾三のオーダーです。 総合8位。 1区unknown、2区unknown、3区unknown、4区unknown、5区unknown、6区unknown。
 
     '
   sources:
@@ -233906,7 +233852,7 @@ entries:
   - 2019年荒玉男子玉陵の区間メンバーは？
   - 2019年の玉陵男子オーダーを教えて
   - 2019荒玉男子玉陵誰が何区？
-  answer: '2019年荒玉駅伝男子・玉陵のオーダーです。 総合9位（?）。 1区unknown（?）、2区unknown（?）、3区unknown（?）、4区unknown（?）、5区unknown（?）、6区unknown（?）。
+  answer: '2019年荒玉駅伝男子・玉陵のオーダーです。 総合9位。 1区unknown、2区unknown、3区unknown、4区unknown、5区unknown、6区unknown。
 
     '
   sources:
@@ -233923,7 +233869,7 @@ entries:
   - 2019年荒玉男子長洲の区間メンバーは？
   - 2019年の長洲男子オーダーを教えて
   - 2019荒玉男子長洲誰が何区？
-  answer: '2019年荒玉駅伝男子・長洲のオーダーです。 総合10位（?）。 1区unknown（?）、2区unknown（?）、3区unknown（?）、4区unknown（?）、5区unknown（?）、6区unknown（?）。
+  answer: '2019年荒玉駅伝男子・長洲のオーダーです。 総合10位。 1区unknown、2区unknown、3区unknown、4区unknown、5区unknown、6区unknown。
 
     '
   sources:
@@ -233940,7 +233886,7 @@ entries:
   - 2019年荒玉男子菊水の区間メンバーは？
   - 2019年の菊水男子オーダーを教えて
   - 2019荒玉男子菊水誰が何区？
-  answer: '2019年荒玉駅伝男子・菊水のオーダーです。 総合11位（?）。 1区unknown（?）、2区unknown（?）、3区unknown（?）、4区unknown（?）、5区unknown（?）、6区unknown（?）。
+  answer: '2019年荒玉駅伝男子・菊水のオーダーです。 総合11位。 1区unknown、2区unknown、3区unknown、4区unknown、5区unknown、6区unknown。
 
     '
   sources:
@@ -233957,7 +233903,7 @@ entries:
   - 2019年荒玉男子玉南の区間メンバーは？
   - 2019年の玉南男子オーダーを教えて
   - 2019荒玉男子玉南誰が何区？
-  answer: '2019年荒玉駅伝男子・玉南のオーダーです。 総合12位（?）。 1区unknown（?）、2区unknown（?）、3区unknown（?）、4区unknown（?）、5区unknown（?）、6区unknown（?）。
+  answer: '2019年荒玉駅伝男子・玉南のオーダーです。 総合12位。 1区unknown、2区unknown、3区unknown、4区unknown、5区unknown、6区unknown。
 
     '
   sources:
@@ -233974,7 +233920,7 @@ entries:
   - 2019年荒玉男子有明の区間メンバーは？
   - 2019年の有明男子オーダーを教えて
   - 2019荒玉男子有明誰が何区？
-  answer: '2019年荒玉駅伝男子・有明のオーダーです。 総合13位（?）。 1区unknown（?）、2区unknown（?）、3区unknown（?）、4区unknown（?）、5区unknown（?）、6区unknown（?）。
+  answer: '2019年荒玉駅伝男子・有明のオーダーです。 総合13位。 1区unknown、2区unknown、3区unknown、4区unknown、5区unknown、6区unknown。
 
     '
   sources:
@@ -233991,7 +233937,7 @@ entries:
   - 2019年荒玉男子三加和の区間メンバーは？
   - 2019年の三加和男子オーダーを教えて
   - 2019荒玉男子三加和誰が何区？
-  answer: '2019年荒玉駅伝男子・三加和のオーダーです。 総合14位（?）。 1区unknown（?）、2区unknown（?）、3区unknown（?）、4区unknown（?）、5区unknown（?）、6区unknown（?）。
+  answer: '2019年荒玉駅伝男子・三加和のオーダーです。 総合14位。 1区unknown、2区unknown、3区unknown、4区unknown、5区unknown、6区unknown。
 
     '
   sources:
@@ -234008,7 +233954,7 @@ entries:
   - 2019年荒玉男子腹栄の区間メンバーは？
   - 2019年の腹栄男子オーダーを教えて
   - 2019荒玉男子腹栄誰が何区？
-  answer: '2019年荒玉駅伝男子・腹栄のオーダーです。 総合15位（?）。 1区unknown（?）、2区unknown（?）、3区unknown（?）、4区unknown（?）、5区unknown（?）、6区unknown（?）。
+  answer: '2019年荒玉駅伝男子・腹栄のオーダーです。 総合15位。 1区unknown、2区unknown、3区unknown、4区unknown、5区unknown、6区unknown。
 
     '
   sources:
@@ -234025,7 +233971,7 @@ entries:
   - 2019年荒玉男子玉高附属の区間メンバーは？
   - 2019年の玉高附属男子オーダーを教えて
   - 2019荒玉男子玉高附属誰が何区？
-  answer: '2019年荒玉駅伝男子・玉高附属のオーダーです。 総合16位（?）。 1区unknown（?）、2区unknown（?）、3区unknown（?）、4区unknown（?）、5区unknown（?）、6区unknown（?）。
+  answer: '2019年荒玉駅伝男子・玉高附属のオーダーです。 総合16位。 1区unknown、2区unknown、3区unknown、4区unknown、5区unknown、6区unknown。
 
     '
   sources:
@@ -314816,7 +314762,7 @@ entries:
   - 2026年藤井祐吏のなごみ大会
   - 藤井祐吏のトラック/駅伝シーズン（なごみ大会）
   - 藤井祐吏のなごみ大会はどうだった？
-  answer: '藤井祐吏（荒尾第四中）の2026年度・なごみ大会の結果です。 2026-09-20 1区 10:15（区間19位／チームNone位 37:25）。
+  answer: '藤井祐吏（荒尾第四中）の2026年度・なごみ大会の結果です。 2026-09-20 男子オープン・1区 10:15（区間19位）。 荒尾第四オープン総合 37:25（1区藤井祐吏、2区松岡颯希、3区浦本崇彦）。
 
     '
   sources:
@@ -319650,7 +319596,7 @@ entries:
   - 2025荒玉男子で岱明の前後は？
   - 岱明男子の隣接校は？
   - 男子の岱明対抗はどこ？
-  answer: '岱明男子のライバル候補は **荒尾三・南関** です。 2025荒玉は岱明6位・59:08で、荒尾三（5位58:58）・南関（7位59:18）が±10秒。 2026男子1500m上位4人平均でも岱明は5位・4:30.05で、南関（4:30.04）・荒尾第四（4:30.18）と秒差。
+  answer: '岱明男子のライバル候補は 荒尾三・南関 です。 2025荒玉は岱明6位・59:08で、荒尾三（5位58:58）・南関（7位59:18）が±10秒。 2026男子1500m上位4人平均でも岱明は5位・4:30.05で、南関（4:30.04）・荒尾第四（4:30.18）と秒差。
     上位を狙うなら長洲・玉名附・玉陵・菊水帯も視野です。
 
     '
@@ -319677,7 +319623,7 @@ entries:
   - 岱明女子の隣接校は？
   - 女子の岱明対抗はどこ？
   - 岱明女子のライバルは長洲？
-  answer: '岱明女子のライバル候補は **長洲・荒尾三** が本命です。 2026の800m/1500m学校別で同帯に並び、上位5人平均は岱明首位ですが長洲とほぼ同タイム。 2025荒玉では岱明7位・45:22で、前後は荒尾四（6位）・荒尾海陽（8位）、上に荒尾三・長洲がいます。
+  answer: '岱明女子のライバル候補は 長洲・荒尾三 が本命です。 2026の800m/1500m学校別で同帯に並び、上位5人平均は岱明首位ですが長洲とほぼ同タイム。 2025荒玉では岱明7位・45:22で、前後は荒尾四（6位）・荒尾海陽（8位）、上に荒尾三・長洲がいます。
     南関もトラック層で近い相手です。
 
     '
@@ -321260,8 +321206,8 @@ entries:
   - 2026年第３４回金栗記念選抜陸上中長距離熊本大会の岱明成績
   - 岱明の第３４回金栗記念選抜陸上中長距離熊本大会結果を教えて
   - 今年の第３４回金栗記念選抜陸上中長距離熊本大会で岱明はどうだった？
-  answer: '2026年度・第３４回金栗記念選抜陸上中長距離熊本大会の岱明の結果です。 大会名: 第３４回 金栗記念選抜陸上中長距離熊本大会 日付: 2026-04-11 ステータス: done タグ: ランニング 1500m 女子 村上咲稀
-    3年 5:00.19 1組15位 スタート 10:10 SB 4:53.85。
+  answer: '2026年度・第３４回金栗記念選抜陸上中長距離熊本大会の岱明の結果です。 大会名: 第３４回 金栗記念選抜陸上中長距離熊本大会 日付: 2026-04-11 タグ: ランニング 1500m 女子 村上咲稀 3年 5:00.19
+    1組15位 スタート 10:10 SB 4:53.85。
 
     '
   sources:
@@ -321276,11 +321222,10 @@ entries:
   - 2026年第４５回熊本市陸上競技選手権大会の岱明成績
   - 岱明の第４５回熊本市陸上競技選手権大会結果を教えて
   - 今年の第４５回熊本市陸上競技選手権大会で岱明はどうだった？
-  answer: '2026年度・第４５回熊本市陸上競技選手権大会の岱明の結果です。 大会名: ２０２６年度 第４５回熊本市陸上競技選手権大会 日付: 2026-04-18 ステータス: done タグ: ランニング 800m 女子 塚原優衣
-    2年 2:47.47 2組9位 角田亜美 2年 2:46.21 2組7位 村上咲稀 3年 2:25.44 3組3位 入賞 1500m 女子 高田麻由 3年 5:15.87 組13位 増岡里俐 2年 5:43.68 組24位 初1500
-    1500m 男子 中尾快叶 1年 5:13.13 1組6位 中学初レース 松本空羽 2年 5:13.67 1組7位 PB更新 田中智稀 2年 5:15.91 1組8位 PB更新 松野凛空 3年 4:40.09 4組8位 3000m 男子
-    山本哲瑠 2年 10:24.29 組18位 初3000 田上颯人 2年 10:41.62 組20位 初3000 スタート目安: 女子800 10:31/10:35 女子1500 11:00 男子1500 11:18/11:43 男子3000
-    12:50。
+  answer: '2026年度・第４５回熊本市陸上競技選手権大会の岱明の結果です。 大会名: ２０２６年度 第４５回熊本市陸上競技選手権大会 日付: 2026-04-18 タグ: ランニング 800m 女子 塚原優衣 2年 2:47.47
+    2組9位 角田亜美 2年 2:46.21 2組7位 村上咲稀 3年 2:25.44 3組3位 入賞 1500m 女子 高田麻由 3年 5:15.87 組13位 増岡里俐 2年 5:43.68 組24位 初1500 1500m 男子 中尾快叶
+    1年 5:13.13 1組6位 中学初レース 松本空羽 2年 5:13.67 1組7位 PB更新 田中智稀 2年 5:15.91 1組8位 PB更新 松野凛空 3年 4:40.09 4組8位 3000m 男子 山本哲瑠 2年 10:24.29
+    組18位 初3000 田上颯人 2年 10:41.62 組20位 初3000 スタート目安: 女子800 10:31/10:35 女子1500 11:00 男子1500 11:18/11:43 男子3000 12:50。
 
     '
   sources:
@@ -321295,10 +321240,10 @@ entries:
   - 2026年第１回熊本県長距離記録会の岱明成績
   - 岱明の第１回熊本県長距離記録会結果を教えて
   - 今年の第１回熊本県長距離記録会で岱明はどうだった？
-  answer: '2026年度・第１回熊本県長距離記録会の岱明の結果です。 大会名: 第１回熊本県長距離記録会 日付: 2026-05-09 ステータス: done タグ: ランニング 1500m 男子 松野凛空 3年 4:25.40 9組1位
-    PB 田上颯人 2年 4:52.76 4組1位 PB 山本哲瑠 2年 4:39.74 7組6位 PB 中尾快叶 1年 5:10.95 3組7位 PB 田中智稀 2年 5:17.84 3組14位 松本空羽 2年 5:26.02 3組17位
-    南本幸治郎 1年 5:43.60 1組11位 PB 1500m 女子 村上咲稀 3年 5:02.26 6組5位 増岡里俐 2年 5:43.57 2組4位 PB 山﨑莉奈 1年 5:35.20 1組9位 PB 角田亜美 2年 5:52.12
-    1組11位 塚原優衣 2年 5:55.33 1組12位 PB。
+  answer: '2026年度・第１回熊本県長距離記録会の岱明の結果です。 大会名: 第１回熊本県長距離記録会 日付: 2026-05-09 タグ: ランニング 1500m 男子 松野凛空 3年 4:25.40 9組1位 PB 田上颯人 2年
+    4:52.76 4組1位 PB 山本哲瑠 2年 4:39.74 7組6位 PB 中尾快叶 1年 5:10.95 3組7位 PB 田中智稀 2年 5:17.84 3組14位 松本空羽 2年 5:26.02 3組17位 南本幸治郎 1年 5:43.60
+    1組11位 PB 1500m 女子 村上咲稀 3年 5:02.26 6組5位 増岡里俐 2年 5:43.57 2組4位 PB 山﨑莉奈 1年 5:35.20 1組9位 PB 角田亜美 2年 5:52.12 1組11位 塚原優衣 2年 5:55.33
+    1組12位 PB。
 
     '
   sources:
@@ -321313,10 +321258,10 @@ entries:
   - 2026年熊本県中学校陸上選手権・混成の岱明成績
   - 岱明の熊本県中学校陸上選手権・混成結果を教えて
   - 今年の熊本県中学校陸上選手権・混成で岱明はどうだった？
-  answer: '2026年度・熊本県中学校陸上選手権・混成の岱明の結果です。 大会名: 令和8年度 第40回熊本県中学校陸上競技選手権大会 兼 第24回混成競技大会 日付: 2026-05-23〜2026-05-24 ステータス: done
-    場所: えがお健康スタジアム(熊本県民総合運動公園陸上競技場) タグ: ランニング 800m 女子（5/24） 村上咲稀 3年 2:20.11 1組3位 SB 山﨑莉奈 1年 2:36.37 3組3位 増岡里俐 2年 2:38.96 2組4位
-    角田亜美 2年 2:39.42 2組5位 塚原優衣 2年 DNS 1500m 女子（5/23） 高田麻由 3年 5:11.66 2組5位 1500m 男子（5/24） 松野凛空 3年 4:23.58 2組2位 山本哲瑠 2年 4:40.40
-    2組8位 田上颯人 2年 4:44.48 4組2位 中尾快叶 1年 5:17.72 4組2位 松本空羽 2年 5:16.80 6組9位 田中智稀 2年 5:22.83 7組7位 南本幸治郎 1年 5:32.33 2組14位。
+  answer: '2026年度・熊本県中学校陸上選手権・混成の岱明の結果です。 大会名: 令和8年度 第40回熊本県中学校陸上競技選手権大会 兼 第24回混成競技大会 日付: 2026-05-23〜2026-05-24 場所: えがお健康スタジアム(熊本県民総合運動公園陸上競技場)
+    タグ: ランニング 800m 女子（5/24） 村上咲稀 3年 2:20.11 1組3位 SB 山﨑莉奈 1年 2:36.37 3組3位 増岡里俐 2年 2:38.96 2組4位 角田亜美 2年 2:39.42 2組5位 塚原優衣 2年
+    DNS 1500m 女子（5/23） 高田麻由 3年 5:11.66 2組5位 1500m 男子（5/24） 松野凛空 3年 4:23.58 2組2位 山本哲瑠 2年 4:40.40 2組8位 田上颯人 2年 4:44.48 4組2位
+    中尾快叶 1年 5:17.72 4組2位 松本空羽 2年 5:16.80 6組9位 田中智稀 2年 5:22.83 7組7位 南本幸治郎 1年 5:32.33 2組14位。
 
     '
   sources:
@@ -321331,11 +321276,10 @@ entries:
   - 2026年全日本中学校通信陸上競技大会熊本県大会の岱明成績
   - 岱明の全日本中学校通信陸上競技大会熊本県大会結果を教えて
   - 今年の全日本中学校通信陸上競技大会熊本県大会で岱明はどうだった？
-  answer: '2026年度・全日本中学校通信陸上競技大会熊本県大会の岱明の結果です。 大会名: 第72回全日本中学校通信陸上競技大会熊本県大会 日付: 2026-06-13〜2026-06-14 ステータス: done タグ: ランニング
-    800m 女子（6/14） 村上咲稀 3年 2:20.45 1組3位 山﨑莉奈 1年 2:34.18 1組17位 増岡里俐 2年 2:39.55 1組22位 角田亜美 2年 2:42.22 1組23位 塚原優衣 2年 2:50.13 2組20位
-    1500m 女子（6/13） 高田麻由 3年 5:11.57 2組5位 800m 男子（6/13） 田中智稀 2年 2:26.10 4組4位 1500m 男子（6/13-14） 山本哲瑠 2年 4:30.13 2組2位 SB 中尾快叶
-    1年 5:04.21 1組19位 松本空羽 2年 5:13.00 5組16位 南本幸治郎 1年 5:44.50 2組23位 3000m 男子（6/13） 松野凛空 3年 9:37.84 3組1位 SB 田上颯人 2年 10:24.08
-    3組15位 SB。
+  answer: '2026年度・全日本中学校通信陸上競技大会熊本県大会の岱明の結果です。 大会名: 第72回全日本中学校通信陸上競技大会熊本県大会 日付: 2026-06-13〜2026-06-14 タグ: ランニング 800m 女子（6/14）
+    村上咲稀 3年 2:20.45 1組3位 山﨑莉奈 1年 2:34.18 1組17位 増岡里俐 2年 2:39.55 1組22位 角田亜美 2年 2:42.22 1組23位 塚原優衣 2年 2:50.13 2組20位 1500m 女子（6/13）
+    高田麻由 3年 5:11.57 2組5位 800m 男子（6/13） 田中智稀 2年 2:26.10 4組4位 1500m 男子（6/13-14） 山本哲瑠 2年 4:30.13 2組2位 SB 中尾快叶 1年 5:04.21 1組19位
+    松本空羽 2年 5:13.00 5組16位 南本幸治郎 1年 5:44.50 2組23位 3000m 男子（6/13） 松野凛空 3年 9:37.84 3組1位 SB 田上颯人 2年 10:24.08 3組15位 SB。
 
     '
   sources:
@@ -321350,10 +321294,10 @@ entries:
   - 2026年荒尾選手権の岱明成績
   - 岱明の荒尾選手権結果を教えて
   - 今年の荒尾選手権で岱明はどうだった？
-  answer: '2026年度・荒尾選手権の岱明の結果です。 大会名: 荒尾選手権 日付: 2026-06-28 ステータス: done タグ: ランニング 中学男子1500m【決勝】 1位 田上颯人 2年 4''48"08 2位 松本空羽
-    2年 5''37"26 3位 南本幸治郎 1年 5''41"82 4位 嶋田匠眞 1年 5''59"18 中学女子800m【決勝】（大会記録 2''20"52） 1位 村上咲稀 3年 2''33"50 2位 山﨑莉奈 1年 2''34"37
-    3位 高田麻由 3年 2''41"02 4位 増岡里俐 2年 2''44"93 5位 角田亜美 2年 2''45"27 6位 塚原優衣 2年 2''49"08 中学男子800m【決勝】 1位 松野凛空 3年 2''16"96（大会新）
-    2位 山本哲瑠 2年 2''18"92（大会新） 3位 中尾快叶 1年 2''31"91 4位 田中智稀 2年 2''35"80。
+  answer: '2026年度・荒尾選手権の岱明の結果です。 大会名: 荒尾選手権 日付: 2026-06-28 タグ: ランニング 中学男子1500m【決勝】 1位 田上颯人 2年 4''48"08 2位 松本空羽 2年 5''37"26
+    3位 南本幸治郎 1年 5''41"82 4位 嶋田匠眞 1年 5''59"18 中学女子800m【決勝】（大会記録 2''20"52） 1位 村上咲稀 3年 2''33"50 2位 山﨑莉奈 1年 2''34"37 3位 高田麻由 3年
+    2''41"02 4位 増岡里俐 2年 2''44"93 5位 角田亜美 2年 2''45"27 6位 塚原優衣 2年 2''49"08 中学男子800m【決勝】 1位 松野凛空 3年 2''16"96（大会新） 2位 山本哲瑠 2年
+    2''18"92（大会新） 3位 中尾快叶 1年 2''31"91 4位 田中智稀 2年 2''35"80。
 
     '
   sources:
@@ -321368,10 +321312,10 @@ entries:
   - 2026年第２回熊本県長距離記録会の岱明成績
   - 岱明の第２回熊本県長距離記録会結果を教えて
   - 今年の第２回熊本県長距離記録会で岱明はどうだった？
-  answer: '2026年度・第２回熊本県長距離記録会の岱明の結果です。 大会名: 2026.7.4 第２回熊本県長距離記録会 日付: 2026-07-04 ステータス: done URL: http://www.kumariku.org/26/26,7
-    タグ: ランニング 1500m 女子 村上咲稀 3年 4:53.85 4組1位 SB 高田麻由 3年 5:24.78 4組17位 増岡里俐 2年 5:34.40 2組6位 SB 角田亜美 2年 5:45.25 1組1位 塚原優衣 2年
-    6:00.81 1組4位 山﨑莉奈 1年 DNS 1500m 男子 松野凛空 3年 4:22.33 11組5位 SB 田上颯人 2年 4:42.40 7組10位 山本哲瑠 2年 4:42.45 8組10位 中尾快叶 1年 5:11.09
-    3組5位 松本空羽 2年 5:11.17 3組6位 SB 田中智稀 2年 5:24.79 3組20位 南本幸治郎 1年 5:31.12 2組19位 嶋田匠眞 1年 5:50.31 1組13位。 資料: http://www.kumariku.org/26/26,7,。
+  answer: '2026年度・第２回熊本県長距離記録会の岱明の結果です。 大会名: 2026.7.4 第２回熊本県長距離記録会 日付: 2026-07-04 URL: http://www.kumariku.org/26/26,7 タグ:
+    ランニング 1500m 女子 村上咲稀 3年 4:53.85 4組1位 SB 高田麻由 3年 5:24.78 4組17位 増岡里俐 2年 5:34.40 2組6位 SB 角田亜美 2年 5:45.25 1組1位 塚原優衣 2年 6:00.81
+    1組4位 山﨑莉奈 1年 DNS 1500m 男子 松野凛空 3年 4:22.33 11組5位 SB 田上颯人 2年 4:42.40 7組10位 山本哲瑠 2年 4:42.45 8組10位 中尾快叶 1年 5:11.09 3組5位 松本空羽
+    2年 5:11.17 3組6位 SB 田中智稀 2年 5:24.79 3組20位 南本幸治郎 1年 5:31.12 2組19位 嶋田匠眞 1年 5:50.31 1組13位。 資料: http://www.kumariku.org/26/26,7,。
     資料: http://www.kumariku.org/26/26,7,。 資料: http://www.kumariku.org/26/26,7,4long/kyougi.html。
 
     '
@@ -321387,10 +321331,10 @@ entries:
   - 2026年熊本県中学校総合体育大会陸上競技大会の岱明成績
   - 岱明の熊本県中学校総合体育大会陸上競技大会結果を教えて
   - 今年の熊本県中学校総合体育大会陸上競技大会で岱明はどうだった？
-  answer: '2026年度・熊本県中学校総合体育大会陸上競技大会の岱明の結果です。 大会名: 令和8年度 熊本県中学校総合体育大会 陸上競技大会 日付: 2026-07-18〜2026-07-20 ステータス: done タグ: ランニング
-    800m 女子（7/19） 山﨑莉奈 1年 2:32.23 2組2位 SB 村上咲稀 3年 2:26.82 1組7位 塚原優衣 2年 2:51.63 3組10位 800m 男子（7/18） 田中智稀 2年 2:23.08 3組3位 SB
-    1500m 女子（7/18） 角田亜美 2年 5:31.34 3組1位 SB 高田麻由 3年 5:10.80 2組2位 SB 1500m 男子（7/18-19） 田上颯人 2年 4:37.20 4組1位 SB 松野凛空 3年 4:28.92
-    2組14位 山本哲瑠 2年 4:41.37 1組19位 中尾快叶 1年 5:03.56 2組16位 SB 南本幸治郎 1年 5:23.50 4組6位 SB 松本空羽 2年 5:31.05 5組23位。
+  answer: '2026年度・熊本県中学校総合体育大会陸上競技大会の岱明の結果です。 大会名: 令和8年度 熊本県中学校総合体育大会 陸上競技大会 日付: 2026-07-18〜2026-07-20 タグ: ランニング 800m 女子（7/19）
+    山﨑莉奈 1年 2:32.23 2組2位 SB 村上咲稀 3年 2:26.82 1組7位 塚原優衣 2年 2:51.63 3組10位 800m 男子（7/18） 田中智稀 2年 2:23.08 3組3位 SB 1500m 女子（7/18）
+    角田亜美 2年 5:31.34 3組1位 SB 高田麻由 3年 5:10.80 2組2位 SB 1500m 男子（7/18-19） 田上颯人 2年 4:37.20 4組1位 SB 松野凛空 3年 4:28.92 2組14位 山本哲瑠 2年
+    4:41.37 1組19位 中尾快叶 1年 5:03.56 2組16位 SB 南本幸治郎 1年 5:23.50 4組6位 SB 松本空羽 2年 5:31.05 5組23位。
 
     '
   sources:
@@ -321405,8 +321349,8 @@ entries:
   - 2026年ジュニアオリンピックU16熊本県予選会の岱明成績
   - 岱明のジュニアオリンピックU16熊本県予選会結果を教えて
   - 今年のジュニアオリンピックU16熊本県予選会で岱明はどうだった？
-  answer: '2026年度・ジュニアオリンピックU16熊本県予選会の岱明の結果です。 大会名: 第５７回 ジュニアオリンピックU１６陸上競技大会熊本県予選会 日付: 2026-08-29 ステータス: done タグ: ランニング 1000m
-    女子 村上咲稀 3年 3:15.56。
+  answer: '2026年度・ジュニアオリンピックU16熊本県予選会の岱明の結果です。 大会名: 第５７回 ジュニアオリンピックU１６陸上競技大会熊本県予選会 日付: 2026-08-29 タグ: ランニング 1000m 女子 村上咲稀
+    3年 3:15.56。
 
     '
   sources:
@@ -321421,10 +321365,10 @@ entries:
   - 2026年玉名郡ナイター中・長距離記録会の岱明成績
   - 岱明の玉名郡ナイター中・長距離記録会結果を教えて
   - 今年の玉名郡ナイター中・長距離記録会で岱明はどうだった？
-  answer: '2026年度・玉名郡ナイター中・長距離記録会の岱明の結果です。 大会名: 玉名郡ナイター中・長距離記録会 日付: 2026-08-29 ステータス: done 場所: 和水町総合グラウンド タグ: ランニング 集合 16:00
-    和水町総合グラウンド 所属 岱明中学校 責任者 熊澤正博 1500m 男子 松野凛空 3年 4:29.8 1位 SB 田上颯人 2年 4:33.6 3位 SB 山本哲瑠 2年 4:40.5 中尾快叶 1年 5:10.1 松本空羽 2年
-    5:21.1 南本幸治郎 1年 5:24.8 田中智稀 2年 5:28.6 嶋田匠眞 1年 5:37.6 SB 1500m 女子 高田麻由 3年 5:28.7 山﨑莉奈 1年 5:28.8 SB 角田亜美 2年 5:36.8 増岡里俐
-    2年 5:55.5 800m 女子 塚原優衣 2年 2:51.5 柴尾希乃 2年 DNS。
+  answer: '2026年度・玉名郡ナイター中・長距離記録会の岱明の結果です。 大会名: 玉名郡ナイター中・長距離記録会 日付: 2026-08-29 場所: 和水町総合グラウンド タグ: ランニング 集合 16:00 和水町総合グラウンド
+    所属 岱明中学校 責任者 熊澤正博 1500m 男子 松野凛空 3年 4:29.8 1位 SB 田上颯人 2年 4:33.6 3位 SB 山本哲瑠 2年 4:40.5 中尾快叶 1年 5:10.1 松本空羽 2年 5:21.1 南本幸治郎
+    1年 5:24.8 田中智稀 2年 5:28.6 嶋田匠眞 1年 5:37.6 SB 1500m 女子 高田麻由 3年 5:28.7 山﨑莉奈 1年 5:28.8 SB 角田亜美 2年 5:36.8 増岡里俐 2年 5:55.5 800m
+    女子 塚原優衣 2年 2:51.5 柴尾希乃 2年 DNS。
 
     '
   sources:
@@ -324846,11 +324790,12 @@ entries:
   - 男子
 - id: media-ekiden-荒玉駅伝-男女コース共通ポイント-橋の上
   questions:
-  - None年荒玉の結果ボードは？
-  - None年荒玉駅伝の成績表画像
-  - None荒玉OCR
-  answer: 'None年荒玉駅伝の結果ボード（OCR）です。 更新日: 2026-09-30。女子1〜5区・男子1〜6区が共有する6地点の図解。 - [Google Drive の画像](https://drive.google.com/file/d/1j9iRk5WAnNVdMyO_fDJX5MaMAVDrESzG/view?usp=drivesdk)
-    - [男女コース動画フォルダ](https://drive.google.com/drive/folders/1hR2ouziPiuo6wg7…
+  - 荒玉駅伝の橋の上のポイントは？
+  - 荒玉のコース共通ポイント（橋の上）は？
+  - 荒玉男女コース共通ポイント 橋の上
+  - 荒玉の橋の上の図解は？
+  - 荒玉コースの橋の上の画像は？
+  answer: '荒玉駅伝のコース共通ポイント（橋の上）の図解です。 女子1〜5区・男子1〜6区が共有する地点の案内（更新日: 2026-09-30）。 画像: https://drive.google.com/file/d/1j9iRk5WAnNVdMyO_fDJX5MaMAVDrESzG/view?usp=drivesdk。
 
     '
   sources:
@@ -324859,8 +324804,6 @@ entries:
   - aragyoku
   - media
   - ocr
-  - null
-  - ''
 - id: course-points-overview
   questions:
   - 荒玉のコースポイントは？
