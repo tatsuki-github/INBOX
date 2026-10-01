@@ -427,6 +427,26 @@ describe("matchPreparedAnswer", () => {
     }
   });
 
+  it("returns なごみ荒玉地区の結果 with document body and Drive link", () => {
+    for (const q of [
+      "なごみ駅伝の荒玉地区の結果",
+      "なごみの荒玉地区の結果は？",
+      "荒玉地区のなごみ結果",
+    ]) {
+      const hit = matchPreparedAnswer(q, { defaultYear: 2026 });
+      expect(hit?.id, q).toBe("nagomi-2026-aragyoku-area-result");
+      expect(hit?.text, q).toContain(
+        "docs.google.com/document/d/1TujEJG7vAeyQCWqZ5735CIHu69H0e3zyPkFgytpHgJ0",
+      );
+      expect(hit?.text, q).toContain("drive.google.com/drive/folders/1k-zW0irJ-OjDjqQwUQLZIs4C6PfuR211");
+      expect(hit?.text, q).toContain("ATRC");
+      expect(hit?.text, q).toContain("岱明A");
+      expect(hit?.text, q).toContain("30:18");
+      expect(hit?.text, q).toContain("42:39");
+      expect(hit?.id, q).not.toBe("nagomi-what");
+    }
+  });
+
   it("covers gap-crush batch B samples (top2 / meet record / formula)", () => {
     const top2 = matchPreparedAnswer("玉名は荒玉で2位以内何回？", { defaultYear: 2026 });
     expect(top2?.id).toBe("gap1000b-top2-玉名");
