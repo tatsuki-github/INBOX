@@ -1,9 +1,9 @@
 {
-  "catalog_sha256": "720772153bc4d592c0c3963299989ac4eac628aa302f0b8add3cdbed0c26e8ce",
-  "total": 28071,
+  "catalog_sha256": "f9386cd8d427762224b34d6aa75a5c58657404c39a09bc436a9d50efb9086fae",
+  "total": 28069,
   "checks": {
     "source_text_time_check": 5063,
-    "source_projection_claim_check": 23008
+    "source_projection_claim_check": 23006
   },
   "entries_with_problems": 0,
   "limitations": [
@@ -48,8 +48,8 @@
     "input/aragyoku/course-points.md": "16c5344d3571b345627f6b60e81f83bf02b3269118f7cd33c62cf4386118dcd7",
     "input/aragyoku/course-points/aragyoku-course-common-points.png": "d7e61945ace24fb8f36c21ce18562e4b02678156adbb694a107da1c291f3ffdf",
     "input/aragyoku/course-videos.md": "e43db7612d4419b09d79a5eb90476a1f416f851ad4a74c2ac28ffc0db0bd262e",
-    "input/aragyoku/guides/荒玉駅伝2026徹底対策.extracted.txt": "c808c543a1736786fd4018a589016142d715b8718f16f5dabffc834285b51a12",
-    "input/aragyoku/men_full_2012_2025.json": "36cd1641b1620032aadf1de19e4ef40449cbdfb3ac3706cba220c2da3c68d4c2",
+    "input/aragyoku/guides/荒玉駅伝2026徹底対策.extracted.txt": "9f72bd61189114defa0617a010cc8d1cb743e1a3d2543233d2ebca8f1b67b761",
+    "input/aragyoku/men_full_2012_2025.json": "96043427c1d568da770640dc55d34b791b0bfaef45c9d22b276fa4970b0d8229",
     "input/aragyoku/transcripts/2012-女子.json": "27f6efb92f24a200e2b2e22da3c158d8bc065b532d1b5a20e01d5616b519859f",
     "input/aragyoku/transcripts/2012-男子.json": "9be8f7145db6c9937f4acc1eb160bc77fc3bb9c977227577c868a91cff0a1acf",
     "input/aragyoku/transcripts/2013-女子.json": "283a795165fe2ad47a5a1e4e900796c20c15a582cb0ee4a4d92ce655a3ca45dc",
@@ -72,9 +72,9 @@
     "input/aragyoku/transcripts/2022-女子.json": "dec3d2094f8da6d233b0ae0d48508f1ebad76aa61f5dc3de2d25f47721441511",
     "input/aragyoku/transcripts/2022-男子.json": "a6390df7dc08fdb947b7db99e072258aa0c4aca0ba22ad16884b391b63782f67",
     "input/aragyoku/transcripts/2023-女子.json": "66a953f0dd5059b166184f308484a6007defd04185d8875d57634fbdc3f36620",
-    "input/aragyoku/transcripts/2023-男子.json": "8a96abf5493bfbc8702a884221b01c3b5d2ce6da1e7b85d65365ade11e0dc739",
+    "input/aragyoku/transcripts/2023-男子.json": "f440928f7c93f27216e434125f249fb13c681b344266986a0c783240cfd8c612",
     "input/aragyoku/transcripts/2024-女子.json": "ebbd26d811b00af042af555fc6f7303e1790fd801ace268c22c6476dc70a06a7",
-    "input/aragyoku/transcripts/2024-男子.json": "208b26d0b1a553f35924fc419e0f65e05c923d375756187dfcfd5ce2013f713c",
+    "input/aragyoku/transcripts/2024-男子.json": "d20db46f3cff41e9f962a4719116f869a9bb697c639398c322d12e4bd39dbf8a",
     "input/aragyoku/transcripts/2025-女子.json": "f52f6bb9183c013c0ceef29a7ba85e6b7547640bc0d7f68f9f00c2e5825d8217",
     "input/aragyoku/transcripts/2025-男子.json": "337c33ef88cb8cceb5af9e83457feec0adc822b7391a681600defc5d3ed6fdc2",
     "input/aragyoku/winners-by-year.md": "7d048472790b4503a92796c9391f1eb32ee54a0041395de9e1bbae2eef57196f",
@@ -125,7 +125,7 @@
     "input/external/notion/media/ekiden-history/ocr/2023-女子.md": "07c8d61d11c9d000d07b66e01f6a78a3b705ad37ee4bf93bd6abb475de21ceac",
     "input/external/notion/media/ekiden-history/ocr/2023-男子.md": "b41ea265b5b047291984393df9ceaebe4d9b4517308f43fdf7ce233a770d91fd",
     "input/external/notion/media/ekiden-history/ocr/2024-女子.md": "7e56d8a861dddadd6cdd5ffb492789f8d771741c98d50abfdd6fdb578357bdc2",
-    "input/external/notion/media/ekiden-history/ocr/2024-男子.md": "a9bc522ffe66dbe1b85c7efb8d7eb46a2f0748843b4865a3c81cb95a1318a00d",
+    "input/external/notion/media/ekiden-history/ocr/2024-男子.md": "36b1e829aa4901b2c42760795936067664b40fb939d52a1a13f389611423f816",
     "input/external/notion/media/ekiden-history/ocr/2025-女子.md": "e7a63b1144ef54e9830e514b48d35ff69ea97cd066169021b2f33918a8b9cc69",
     "input/external/notion/media/ekiden-history/ocr/2025-男子.md": "9e5c273a1ee58e95b952a8747dd4bb3fd222c4c1c6e4bea637259eb7f6eed699",
     "input/external/sb/middle-school/by-year/2012-sb-adopted.json": "db4a40024d16ef0713fa0d9e31ab0e8e0876b2c54baa0b88225d40c338174dca",
@@ -143,8 +143,8 @@
     "input/external/sb/middle-school/by-year/2024-sb-adopted.json": "9b0ce65674a9e3f95d8679e528489c69b3024cd8240ef23c7ce8d386441ccf80",
     "input/external/sb/middle-school/by-year/2025-sb-adopted.json": "dc4291a27d46dcbbf6e54d616215f65b23b7a25dd6aee313da82345ad150e4ad",
     "input/external/sb/middle-school/by-year/2026-sb-adopted.json": "8caaf624b7e0153435113cd31b5f68dfad842ead7d31bb95d1399f549ada2dbc",
-    "input/faq/prepared-qa.v1.yaml": "720772153bc4d592c0c3963299989ac4eac628aa302f0b8add3cdbed0c26e8ce",
-    "input/idaten-corpus/aragyoku/men_full_2012_2025.json": "36cd1641b1620032aadf1de19e4ef40449cbdfb3ac3706cba220c2da3c68d4c2",
+    "input/faq/prepared-qa.v1.yaml": "f9386cd8d427762224b34d6aa75a5c58657404c39a09bc436a9d50efb9086fae",
+    "input/idaten-corpus/aragyoku/men_full_2012_2025.json": "96043427c1d568da770640dc55d34b791b0bfaef45c9d22b276fa4970b0d8229",
     "input/idaten-corpus/aragyoku/quiz/荒玉駅伝○×クイズ.csv": "98ff94e5397ac63df6dd3b27de26805affb810b659ee0bbda33fe8d1acd6548a",
     "input/idaten-corpus/aragyoku/winners-by-year.md": "7d048472790b4503a92796c9391f1eb32ee54a0041395de9e1bbae2eef57196f",
     "input/idaten-corpus/aragyoku/women_full_2012_2025.json": "95310b73dcc7aaf46ad0a6d7de3292f3e3f9bf6375a7a4fa4b50c988a3787347",
@@ -329,12 +329,12 @@
     "out/analysis/2026_aragyoku_men_3000m_sb_ranking.md": "e320e11759ded0a45d9a3e4fbe1c4882b71ef0dd9772896fa70ca5347dee34f7",
     "out/analysis/2026_men_1500m_pb_school_ranking.md": "2d6409d937544a3013ab5f2f3795340a5dd3e8bbdc055622f3999448c61a1bda",
     "out/analysis/2026_women_800m_1500m_pb_school_ranking.md": "2ee137963e23cd648abf099ad5f823bd3ba6a5983c9c39045d3ce8010e802a45",
-    "out/analysis/aragyoku-overview.md": "691fd3162a5eb36b7785329f70ecf19af589ea628951e1abd6de9c2e652a5123",
+    "out/analysis/aragyoku-overview.md": "bf9baf62b9338bd390de7240852c722bfd1385d4eb276d5c684abc1edec5e8f6",
     "out/analysis/aragyoku-teams/INDEX.md": "48f1479c4ff94cea18a214ec82327ca5258691ca2029de59b1a93b03d80d8289",
     "out/analysis/aragyoku-teams/三加和.md": "fb2d0cb108b3b8322e434fbe7c00b614606684b3e5e7694f280f157846943d8c",
     "out/analysis/aragyoku-teams/南関.md": "4a59174a063ea7fa254d12777bb5774066d5eead0d76d5b308265fe5301a0389",
     "out/analysis/aragyoku-teams/天水.md": "01268cfda01b9d9bc61deda91a466f0a16afb6d331d7cb6a2c25e3227cce83ce",
-    "out/analysis/aragyoku-teams/岱明.md": "6d9bb159cfbce1706194a5f013ae6f6191c93885a7a4a835f8367f32b2634eac",
+    "out/analysis/aragyoku-teams/岱明.md": "41cab1d79fca1d0a6e0868ce7b7c838a92e04ae4285cfecf8869937f096446fa",
     "out/analysis/aragyoku-teams/有明.md": "a2e6e0dca888331c44e206e0e3dd29ceeb8edb486b28aeaa6855cb062dfe3a0b",
     "out/analysis/aragyoku-teams/玉南.md": "cefa0f16157fb6513a7157bca6268a380801f0e9d5c386a8733fb0eb74fa2e32",
     "out/analysis/aragyoku-teams/玉名.md": "38e150958c04550ba57b977cd980b10587e5dc0a47dae976236b540f44360670",
@@ -359,17 +359,17 @@
     "out/analysis/aragyoku-years/2020.md": "e789dd2983fa75aab84468493fac60966d98701da815d1f32519ecb12ca2bea9",
     "out/analysis/aragyoku-years/2021.md": "3a327e48d37fb4a81167dfc1c05b5ac02f9f411d8dd380e045450eaacdde6f1d",
     "out/analysis/aragyoku-years/2022.md": "c971c110f52d409a074af097f9d7a8b89a6fc39d4f769f6a5608521b939965cc",
-    "out/analysis/aragyoku-years/2023.md": "22ff436bcdfdbcb11473b4b3ff5dac74ef1ab4cee1e090a6a76fb108989a2ff9",
-    "out/analysis/aragyoku-years/2024.md": "379726dc6f384499384768b69f64e978c78714c524fe8d8821722cfc4529ed50",
+    "out/analysis/aragyoku-years/2023.md": "380fe47441c1df224d7ce8f29cf9d8adb38d90402611b0f324653979a8004230",
+    "out/analysis/aragyoku-years/2024.md": "5bcc92149a1039f9b6c1ed2dc504ce5c2ef7b5fe38cb32967ebda075f52358cc",
     "out/analysis/aragyoku-years/2025.md": "774d017802d774e8f464456d2f6c53574113061e44fa873551a17f405c7d5158",
-    "out/analysis/aragyoku_2024_2025_focus_teams.md": "f55b944c3349839bcfb86997c566c184ded0e63b62799f10e6b53baadd9040ea",
+    "out/analysis/aragyoku_2024_2025_focus_teams.md": "3cabb4b6c3cb9fcfdc9e7e6ffed1cf1e9f01b42a352300791325ad37b362965a",
     "out/analysis/aragyoku_2026_formula_report.md": "b162f8e45c432043f17273fd077e4e0cd85943077cba4ac282b4906a9c1d0de3",
     "out/analysis/aragyoku_2026_formula_女子.csv": "6fcf11bedc8d212e3e605da43742930fb7e80f22fe474fa75a97f880ba1d7159",
     "out/analysis/aragyoku_2026_formula_男子.csv": "76378a60efdff4a823ea210dd977ef9f89bc0f00fee69e8a07be53b65b49076d",
     "out/analysis/aragyoku_2026_recent_results.json": "aa63666bcd1966602afdb79c70cc3bc1ad6b7c4b97654177ef43e81ab6ce9022",
     "out/analysis/aragyoku_all_teams_average_pace.md": "688bce36b1633e2b30de563c5b65431781982e8859ad5b716f837219fcdabf8a",
     "out/analysis/aragyoku_daiming_rivals.md": "a1acfbd7baa4a8b1bc7f47a3c42d43e1deef4c3fc2633f291069a5393edd8cfc",
-    "out/analysis/aragyoku_leg_awards.md": "c113ba722a9e870bdd858acff99e798e2cef19a333829d5565163a576570522b",
+    "out/analysis/aragyoku_leg_awards.md": "c7d51384329970e3ba3a1a776da99acd0ea0a81a2cc8c7f73382fe0a16153990",
     "out/analysis/aragyoku_meet_records.md": "3dc1753f38ac0cf1cf718390c6e750b2559fe68ce3ef9d8184bab7c84ee55e0d",
     "out/analysis/aragyoku_sb_calibration.md": "a4e1f9ff4c96f621649f98b2db19c687eacdc817fb962cf7b6663cfade223a40",
     "out/analysis/aragyoku_sb_gap_analysis.md": "4f1588cf3b66b887e77448624bf5d829caaa3ec2534c4e44e03533e3f0544764",
@@ -400,7 +400,7 @@
     "out/analysis/arato-tamana-teams/ﾀﾏﾅﾁｭｳ玉名中.md": "d56544d05ffc45d98a81caf0212f7f0fcc33d0ed286999cdec019050ed6150b8",
     "out/analysis/athletes/takada-mana.md": "aec07e6f4e13e523be93996bb141d5a658441e4671ed462f13fbad13ba8169f8",
     "out/analysis/notion_records_2026.json": "554879640ef341eb82825a9418c27be4ee272f72912e86118a93b43fb6f20c44",
-    "out/knowledge-graph.json": "252cd7af0f342c0d0294b5613f77d05c1544a0a51f60442d214a91fa6b1ecc11",
+    "out/knowledge-graph.json": "e4ee70c1dea84dd992f59ffa3cb67f20026bf3a0fe7474b121a6aa8a32ce2284",
     "outputs/荒玉駅伝2026徹底対策.pdf": "3a409e93f73b78907eb8066c34394ad6f1a0dcaf87fe7ca9c169bc8a2e7e67ef",
     "scripts/generate_prepared_qa_prefectural_top2.py": "9a03bd2f563fd5496c7a8a6d406e487f36d77715d9f50f35d6f955a9b1d88fcb",
     "work/build_aragyoku_2026_pdf.py": "9ef2faaf5fd67cd6e9447d8ec7e7d24f7d6d799157b04043dbcd2a4be471077c"
@@ -72737,7 +72737,7 @@
       "problems": []
     },
     {
-      "id": "aragyoku-career-根本和樹",
+      "id": "aragyoku-career-南本和顕",
       "check": "source_projection_claim_check",
       "problems": []
     },
@@ -72782,7 +72782,7 @@
       "problems": []
     },
     {
-      "id": "aragyoku-career-満田樹生",
+      "id": "aragyoku-career-浦田桐生",
       "check": "source_projection_claim_check",
       "problems": []
     },
@@ -72913,11 +72913,6 @@
     },
     {
       "id": "aragyoku-career-北村隼人",
-      "check": "source_projection_claim_check",
-      "problems": []
-    },
-    {
-      "id": "aragyoku-career-南本和顯",
       "check": "source_projection_claim_check",
       "problems": []
     },
@@ -73103,11 +73098,6 @@
     },
     {
       "id": "aragyoku-career-池田有芙",
-      "check": "source_projection_claim_check",
-      "problems": []
-    },
-    {
-      "id": "aragyoku-career-浦田桐生",
       "check": "source_projection_claim_check",
       "problems": []
     },

@@ -282,6 +282,24 @@ describe("matchPreparedAnswer", { timeout: 30_000 }, () => {
     120_000,
   );
 
+
+  it(
+    "returns corrected 2024 Daimei men leg names from the result board",
+    () => {
+      const hit = matchPreparedAnswer("2024年の岱明男子の区間詳細", { defaultYear: 2026 });
+      expect(hit?.id).toBe("aragyoku-2024-男子-岱明-leg-detail");
+      expect(hit?.text).toContain("南本和顕");
+      expect(hit?.text).toContain("浦田桐生");
+      expect(hit?.text).not.toContain("根本和樹");
+      expect(hit?.text).not.toContain("満田樹生");
+      const leg1 = matchPreparedAnswer("2024年荒玉男子岱明の1区は誰？", { defaultYear: 2026 });
+      expect(leg1?.text).toContain("南本和顕");
+      expect(leg1?.text).not.toContain("根本和樹");
+    },
+    120_000,
+  );
+
+
   it(
     "routes formula/preview away from OCR dumps and hits per-leg distances",
     () => {
