@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated_at": "2026-10-01T11:04:13Z",
+  "generated_at": "2026-10-01T13:39:10Z",
   "nodes": [
     {
       "id": "corpus:analysis-ocr",
@@ -17518,9 +17518,9 @@
         "practice"
       ],
       "refs": [
-        "input/events.2025.yaml",
+        "out/2025/practice_absentees.csv",
         "out/analysis/notion_records_2026.json",
-        "out/2025/practice_absentees.csv"
+        "input/events.2025.yaml"
       ],
       "hint": "部員エンティティ"
     },
@@ -17554,9 +17554,9 @@
         "practice"
       ],
       "refs": [
-        "input/events.2025.yaml",
+        "out/2025/practice_absentees.csv",
         "out/analysis/notion_records_2026.json",
-        "out/2025/practice_absentees.csv"
+        "input/events.2025.yaml"
       ],
       "hint": "部員エンティティ"
     },
@@ -17590,9 +17590,9 @@
         "practice"
       ],
       "refs": [
-        "input/events.2025.yaml",
+        "out/2025/practice_absentees.csv",
         "out/analysis/notion_records_2026.json",
-        "out/2025/practice_absentees.csv"
+        "input/events.2025.yaml"
       ],
       "hint": "部員エンティティ"
     },
@@ -17662,9 +17662,9 @@
         "practice"
       ],
       "refs": [
-        "input/events.2025.yaml",
+        "out/2025/practice_absentees.csv",
         "out/analysis/notion_records_2026.json",
-        "out/2025/practice_absentees.csv"
+        "input/events.2025.yaml"
       ],
       "hint": "部員エンティティ"
     },
@@ -17698,8 +17698,8 @@
         "practice"
       ],
       "refs": [
-        "input/events.2025.yaml",
-        "out/2025/practice_absentees.csv"
+        "out/2025/practice_absentees.csv",
+        "input/events.2025.yaml"
       ],
       "hint": "部員エンティティ"
     },
@@ -17713,9 +17713,9 @@
         "practice"
       ],
       "refs": [
-        "input/events.2025.yaml",
+        "out/2025/practice_absentees.csv",
         "out/analysis/notion_records_2026.json",
-        "out/2025/practice_absentees.csv"
+        "input/events.2025.yaml"
       ],
       "hint": "部員エンティティ"
     },
@@ -17749,9 +17749,9 @@
         "practice"
       ],
       "refs": [
-        "input/events.2025.yaml",
+        "out/2025/practice_absentees.csv",
         "out/analysis/notion_records_2026.json",
-        "out/2025/practice_absentees.csv"
+        "input/events.2025.yaml"
       ],
       "hint": "部員エンティティ"
     },
@@ -17800,9 +17800,9 @@
         "practice"
       ],
       "refs": [
-        "input/events.2025.yaml",
+        "out/2025/practice_absentees.csv",
         "out/analysis/notion_records_2026.json",
-        "out/2025/practice_absentees.csv"
+        "input/events.2025.yaml"
       ],
       "hint": "部員エンティティ"
     },
@@ -17836,9 +17836,9 @@
         "practice"
       ],
       "refs": [
-        "out/2026/practice_absentees.csv",
         "input/events.2026.yaml",
-        "out/analysis/notion_records_2026.json"
+        "out/analysis/notion_records_2026.json",
+        "out/2026/practice_absentees.csv"
       ],
       "hint": "部員エンティティ"
     },
@@ -17872,9 +17872,9 @@
         "practice"
       ],
       "refs": [
-        "input/events.2025.yaml",
+        "out/2025/practice_absentees.csv",
         "out/analysis/notion_records_2026.json",
-        "out/2025/practice_absentees.csv"
+        "input/events.2025.yaml"
       ],
       "hint": "部員エンティティ"
     },
@@ -17908,9 +17908,9 @@
         "practice"
       ],
       "refs": [
-        "input/events.2025.yaml",
         "out/2025/practice_absentees.csv",
         "out/analysis/notion_records_2026.json",
+        "input/events.2025.yaml",
         "input/events.2026.yaml",
         "out/2026/practice_absentees.csv"
       ],
@@ -25143,6 +25143,19 @@
         "out/analysis/aragyoku_leg_awards.md"
       ],
       "hint": "荒玉駅伝：区間賞・区間順位 / 各年度・男女の **区間賞（区間1位）** と **区間別上位3**。 / 正本は [`input/aragyoku/transcripts/`](../../input/aragyoku/transcripts/) の `split_rank` / `name` / `grade`。 / Q&A の使い方 / - 「○年の区間賞の名前と学年は？」→ **この文書の。荒玉区間賞・区間上位（当日結果・名前・学年・所属）"
+    },
+    {
+      "id": "source:out/analysis/aragyoku_leg_time_rank_guide.md",
+      "type": "Source",
+      "label": "aragyoku_leg_time_rank_guide.md",
+      "topics": [
+        "athlete_records",
+        "ekiden"
+      ],
+      "refs": [
+        "out/analysis/aragyoku_leg_time_rank_guide.md"
+      ],
+      "hint": "荒玉駅伝 区間タイム→区間順位目安（2024–2025） / 現行コース実績（男子は2024年再編以降）の区間タイムを、その年のフィールドに当てはめた区間順位目安。 / 通過順位ではなく区間タイム順位。年によって前後する。 / 正本: `input/aragyoku/transcripts/{year}-{gender}.json` / `men_full`・`women_full`。 / 生成:"
     },
     {
       "id": "source:out/analysis/aragyoku_meet_records.md",
@@ -38203,6 +38216,11 @@
     },
     {
       "from": "topic:athlete_records",
+      "to": "source:out/analysis/aragyoku_leg_time_rank_guide.md",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:athlete_records",
       "to": "source:out/analysis/aragyoku_sb_calibration.md",
       "rel": "search_here"
     },
@@ -46194,6 +46212,11 @@
     {
       "from": "topic:ekiden",
       "to": "source:out/analysis/aragyoku_leg_awards.md",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:ekiden",
+      "to": "source:out/analysis/aragyoku_leg_time_rank_guide.md",
       "rel": "search_here"
     },
     {

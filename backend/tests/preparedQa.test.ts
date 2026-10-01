@@ -866,6 +866,34 @@ describe("matchPreparedAnswer", { timeout: 30_000 }, () => {
     60_000,
   );
 
+  it(
+    "answers leg-time → split-rank estimates for men and women",
+    () => {
+      const men = matchPreparedAnswer(
+        "荒玉駅伝男子の1区を9:30で走ると区間何位くらいになる？",
+        { defaultYear: 2026 },
+      );
+      expect(men?.id).toBe("aragyoku-leg-time-rank-男子-leg1-9-30");
+      expect(men?.text).toContain("2025年なら区間5位相当");
+      expect(men?.text).toContain("松浦眞大");
+      expect(men?.text).toContain("2024年なら区間9位相当");
+
+      const nearby = matchPreparedAnswer("荒玉男子1区を9:32で走ったら区間何位？", {
+        defaultYear: 2026,
+      });
+      expect(nearby?.id).toBe("aragyoku-leg-time-rank-男子-leg1-9-32");
+      expect(nearby?.text).toContain("倉田裕斗");
+
+      const women = matchPreparedAnswer(
+        "荒玉駅伝の女子2区を6:40で走ると区間何位くらいになる？",
+        { defaultYear: 2026 },
+      );
+      expect(women?.id).toBe("aragyoku-leg-time-rank-女子-leg2-6-40");
+      expect(women?.text).toMatch(/2025年なら区間1位級|2024年なら区間/);
+    },
+    60_000,
+  );
+
   it("returns null for unrelated chatter without prepared entry", () => {
     // deliberately odd; if someday prepared, this assertion should be updated
     const hit = matchPreparedAnswer("宇宙の果てはどこ？", { defaultYear: 2026 });

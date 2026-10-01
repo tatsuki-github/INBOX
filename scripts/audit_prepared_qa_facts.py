@@ -126,6 +126,7 @@ def source_projection() -> dict[str, dict]:
         ("generate_prepared_qa_daiming_rivals", "build_entries"),
         ("generate_prepared_qa_prefectural_top2", "build_entries"),
         ("generate_prepared_qa_aragyoku_pass_rank", "gen_entries"),
+        ("generate_prepared_qa_aragyoku_leg_time_rank", "gen_entries"),
     ):
         for e in getattr(importlib.import_module(module_name), function)():
             out[e["id"]] = e

@@ -324,6 +324,8 @@ function scorePair(nq: string, nCand: string): number {
     { pattern: /(?:男子|女子)/g },
     { pattern: /\d+区/g, skip: candDistanceOverview },
     { pattern: /\d+(?:\.\d+)?m/g },
+    // 区間タイム目安（9:30 vs 9:32）の取り違えを防ぐ
+    { pattern: /\d{1,2}:\d{2}/g },
   ];
   for (const { pattern, skip } of dimensions) {
     if (skip) continue;
