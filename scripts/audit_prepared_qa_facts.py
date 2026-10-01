@@ -188,6 +188,8 @@ def check_entry(e: dict, projected: dict | None) -> dict:
     # Do not use the FAQ itself as evidence for its own claims.
     evidence_times = set().union(*(source_clocks(s) for s in sources if "prepared-qa" not in s))
     answer = e.get("answer") or ""
+    if re.search(r"\b(?:mimeType|fileSize|parentId|modifiedTime)\b", answer):
+        problems.append("drive_metadata_leak")
     mode = "source_text_time_check"
     if projected:
         mode = "source_projection_claim_check"
@@ -216,6 +218,18 @@ def check_entry(e: dict, projected: dict | None) -> dict:
     else:
         unsupported = asserted_clocks(answer) - evidence_times
         problems.extend("unsupported_time:" + t for t in sorted(unsupported))
+    # Short meet aliases must not claim a different real meet (e.g. 天草→玉名郡).
+    if e["id"].startswith(("race-", "recent-")) and "ナイター" in e["id"]:
+        meet_m = re.search(r"大会名:\s*([^）\n]+)", answer)
+        if meet_m and "玉名郡ナイター" in e["id"] and "玉名郡" not in meet_m.group(1):
+            problems.append("nighter_meet_alias_mismatch:" + meet_m.group(1).strip())
+        if "玉名郡ナイター" in answer and re.search(
+            r"大会名:\s*[^）\n]*(?:天草|ナイター記録会)", answer
+        ) and "玉名郡" not in (meet_m.group(1) if meet_m else ""):
+            problems.append("nighter_meet_alias_mismatch_prose")
+        if e["id"].startswith("recent-") and "玉名郡ナイター" in e["id"]:
+            if "jaaf-nagasaki" in answer or "amakusa" in answer.lower() or "天草" in answer:
+                problems.append("nighter_meet_alias_mismatch_recent")
     return {"id": e["id"], "check": mode, "problems": problems}
 
 

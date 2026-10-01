@@ -328,8 +328,32 @@ def polish_trial_analysis(_answer: str) -> str:
     return body
 
 
+_DRIVE_META_RE = re.compile(
+    r"(?:^|\s)[-*]?\s*\*\*(?:id|mimeType|fileSize|viewUrl|parentId|modifiedTime|status|name)\*\*\s*[:：]?[^\s]*|"
+    r"\b(?:mimeType|fileSize|parentId|modifiedTime)\b\s*[:：]?\s*\S*",
+    re.I,
+)
+
+
+def strip_drive_metadata(text: str) -> str:
+    t = _DRIVE_META_RE.sub(" ", text or "")
+    t = re.sub(r"https:\s*drive\.google\.com\s+file\s+d\s+(\S+)\s+view\S*",
+               r"https://drive.google.com/file/d/\1/view", t)
+    t = re.sub(r"\s{2,}", " ", t)
+    return t.strip(" 。\t-")
+
+
 def polish_generic(answer: str, eid: str) -> str:
     urls = extract_urls(answer)
+    # Also recover broken "https: drive.google.com file d …" forms before strip.
+    for m in re.finditer(
+        r"https:\s*drive\.google\.com\s+file\s+d\s+([A-Za-z0-9_-]+)\s+view\S*",
+        answer or "",
+    ):
+        u = f"https://drive.google.com/file/d/{m.group(1)}/view"
+        if u not in urls:
+            urls.append(u)
+    answer = strip_drive_metadata(answer)
     original = answer
     # Preserve multiline structure when URLs / 大会結果 lines matter
     if "大会結果:" in answer or eid.startswith(("sb-", "records-", "race-")):

@@ -194,7 +194,11 @@ def short_meet_title(folder: str) -> str:
     if "金栗駅伝" in raw:
         return "金栗駅伝"
     if "ナイター" in raw:
-        return "玉名郡ナイター"
+        if "玉名郡" in raw:
+            return "玉名郡ナイター"
+        if "天草" in raw:
+            return "天草市ナイター"
+        return "ナイター大会"
     title = re.sub(r"[（(][^）)]*[）)]", "", title)
     for cut in (r"中学駅伝金栗四三生誕の地", r"第\d+回", r"令和\d+年度"):
         title = re.sub(cut, "", title)

@@ -85,13 +85,21 @@ def short_meet(meet: str) -> str:
         return "中体連"
     if "中学校陸上競技選手権" in m or "県中学" in m:
         return "県中学選手権"
+    if "ナイター" in m:
+        # Do not collapse every ナイター meet into 玉名郡 (天草市・長崎など別大会がある).
+        # Check before 長距離記録会 — 玉名郡ナイター中・長距離記録会 contains both.
+        if "玉名郡" in m:
+            return "玉名郡ナイター"
+        if "天草" in m:
+            return "天草市ナイター"
+        if "ナイター記録会" in m:
+            return "ナイター記録会"
+        return "ナイター大会"
     if "長距離記録会" in m:
         n = re.search(r"第([１２3-9一二三四五六七八九十\d]+)回", meet)
         if n:
             return f"第{n.group(1)}回長距離記録会"
         return "長距離記録会"
-    if "ナイター" in m:
-        return "玉名郡ナイター"
     if "なごみ" in m or "金栗四三" in m:
         return "なごみ大会"
     if "ジュニア" in m:

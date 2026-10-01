@@ -422,6 +422,20 @@ describe("matchPreparedAnswer", { timeout: 30_000 }, () => {
     }
   });
 
+  it("returns 2026 玉名郡ナイター 岱明結果 for short yearless and dated asks", () => {
+    for (const q of [
+      "2026年の玉名郡ナイターの岱明の結果",
+      "玉名郡ナイターの岱明の結果",
+      "今年の玉名郡ナイターの岱明の結果",
+      "2026年玉名郡ナイターの岱明の結果は？",
+    ]) {
+      const hit = matchPreparedAnswer(q, { defaultYear: 2026 });
+      expect(hit?.id, q).toMatch(/nighter-2026-result|meet-result-2026-玉名郡ナイター/);
+      expect(hit?.text, q).toMatch(/松野凛空|4:29\.8/);
+      expect(hit?.text, q).not.toMatch(/4分48秒1|倉田裕斗　4分48/);
+    }
+  });
+
   it("returns 2026 玉名郡ナイター result with Drive links", () => {
     for (const q of ["玉名郡ナイターの結果", "今年の玉名郡ナイターの結果", "玉名郡ナイター中・長距離記録会の結果"]) {
       const hit = matchPreparedAnswer(q, { defaultYear: 2026 });
