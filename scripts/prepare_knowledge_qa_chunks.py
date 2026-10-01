@@ -204,7 +204,7 @@ def discover():
 
 def build():
     routes = discover()
-    files, content_groups = [], {}
+    files, content_groups = [], {}\n    copy_origins = {"input/idaten-corpus/" + item["corpus"]: item["source"]\n                    for item in json.loads((ROOT / "input/idaten-corpus/sources.json").read_text())}
     for rel, origin in sorted(routes.items()):
         path = safe_path(rel)
         record = {"path": rel, "routes": sorted(origin)}
@@ -227,9 +227,9 @@ def build():
             h = digest(raw)
             record["normalized_sha256"] = h
             record["disposition"] = "canonical-or-alias"
-            content_groups.setdefault(h, []).append((rel, raw, record))
+            # Identical text in unrelated documents can have different subject\n            # context. Only known original/corpus-copy relations become aliases.\n            owner = copy_origins.get(rel, rel)\n            original = safe_path(owner)\n            if original.is_file():\n                original_text = original.read_bytes().decode("utf-8-sig", errors="strict").replace("\\r\\n", "\\n")\n                if digest(original_text) != h:\n                    owner = rel\n            else:\n                owner = rel\n            content_groups.setdefault((owner, h), []).append((rel, raw, record))
     chunks = []
-    for h, group in sorted(content_groups.items()):
+    for (owner, h), group in sorted(content_groups.items()):
         # Prefer original snapshots; preserve every identical alias in coverage.
         group.sort(key=lambda row: (row[0].startswith("input/idaten-corpus/"), row[0]))
         rel, raw, canonical = group[0]
@@ -237,7 +237,7 @@ def build():
         verify_partition(raw, Path(rel).suffix.lower(), parts)
         ids = []
         for index, part in enumerate(parts):
-            chunk_id = "knowledge-" + digest(compact([h, index, part]))[:24]
+            chunk_id = "knowledge-" + digest(compact([owner, h, index, part]))[:24]
             ids.append(chunk_id)
             chunks.append({"id": chunk_id, "source": rel, "source_sha256": canonical["source_sha256"],
                            "source_normalized_sha256": h, "index": index,
@@ -248,7 +248,7 @@ def build():
             record["chunk_ids"] = ids
     assert len({c["id"] for c in chunks}) == len(chunks)
     missing = [f["path"] for f in files if f["disposition"] == "missing-route"]
-    return {"version": 1, "max_chunk_chars": BUDGET, "files": files,
+    catalog = ROOT / "input/faq/prepared-qa.v1.yaml"\n    existing = yaml.load(catalog.read_text(), Loader=getattr(yaml, "CSafeLoader", yaml.SafeLoader))\n    return {"version": 1, "max_chunk_chars": BUDGET, "files": files,\n            "baseline_prepared_qa_count": len(existing["entries"]),\n            "baseline_prepared_qa_sha256": digest(catalog.read_bytes()),
             "chunk_count": len(chunks), "required_new_qa": len(chunks) * 3,
             "dispositions": dict(Counter(f["disposition"] for f in files)),
             "missing_routes": missing}, chunks
