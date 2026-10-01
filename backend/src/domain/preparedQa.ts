@@ -67,6 +67,7 @@ const SYNONYM_GROUPS: string[][] = [
   ["予定", "日程", "スケジュール"],
   ["区間距離", "距離"],
   ["名簿", "生徒一覧", "部員名簿", "部員一覧", "陸上部員"],
+  ["差", "タイム差", "秒差", "時差"],
 ];
 
 export function defaultPreparedQaPath(): string {
@@ -170,6 +171,7 @@ function tokenize(normalized: string): string[] {
     "予定",
     "欠席",
     "名簿",
+    "差",
     "pdf",
     "成績表",
     "玉高附属",
@@ -249,6 +251,18 @@ function hasAllRecordsIntent(normalized: string): boolean {
   return ALL_RECORDS_INTENT_KEYS.some((k) => normalized.includes(k));
 }
 
+/** 「2位と3位の差」など順位間タイム差。準優勝定型への誤吸を防ぐ。 */
+function hasTimeGapIntent(normalized: string): boolean {
+  if (!normalized.includes("差")) return false;
+  // 予実差・偏差などの別系統は除外し、順位/優勝系に限定
+  if (/予実|偏差|格差|差出/.test(normalized)) return false;
+  return (
+    /優勝|準優勝|\d位|一位|二位|三位/.test(normalized) ||
+    normalized.includes("位と") ||
+    normalized.includes("との差")
+  );
+}
+
 function rosterEntities(normalized: string): Set<string> {
   const found = new Set<string>();
   let rest = normalized.toLowerCase();
@@ -316,6 +330,15 @@ function scorePair(nq: string, nCand: string): number {
     base *= 0.35;
   } else if (qAll && cAll) {
     base = Math.min(1, base + 0.08);
+  }
+
+  // 「2位と3位の差」が準優勝校定型へ誤吸しない
+  const qGap = hasTimeGapIntent(nq);
+  const cGap = hasTimeGapIntent(nCand);
+  if (qGap !== cGap) {
+    base *= 0.28;
+  } else if (qGap && cGap) {
+    base = Math.min(1, base + 0.12);
   }
 
   if (yearsConflict) return base * 0.35;

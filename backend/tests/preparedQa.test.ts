@@ -467,6 +467,41 @@ describe("matchPreparedAnswer", () => {
     expect(hit?.text).toContain("117");
   });
 
+  it(
+    "answers aragyoku rank-to-rank time gaps, not runner-up school",
+    () => {
+      for (const q of [
+        "去年の荒玉駅伝の男子の2位と3位の差は？",
+        "2025年荒玉男子の2位と3位の差",
+        "2025年荒玉駅伝男子の準優勝と3位の差は？",
+      ]) {
+        const hit = matchPreparedAnswer(q, { defaultYear: 2026 });
+        expect(hit?.id, q).toBe("aragyoku-rankgap-2025-男子-2-3");
+        expect(hit?.text, q).toContain("35秒");
+        expect(hit?.text, q).toContain("玉陵");
+        expect(hit?.text, q).toContain("玉高附属");
+        expect(hit?.text, q).toContain("58:02");
+        expect(hit?.text, q).toContain("58:37");
+        expect(hit?.id, q).not.toBe("aragyoku-2025-男子-runnerup");
+      }
+
+      const winGap = matchPreparedAnswer("2025年荒玉駅伝男子の優勝と準優勝の差は？", {
+        defaultYear: 2026,
+      });
+      expect(winGap?.id).toBe("aragyoku-rankgap-2025-男子-1-2");
+      expect(winGap?.text).toContain("1分45秒");
+      expect(winGap?.text).toContain("菊水");
+
+      const women = matchPreparedAnswer("去年の荒玉女子の1位と2位のタイム差", {
+        defaultYear: 2026,
+      });
+      expect(women?.id).toBe("aragyoku-rankgap-2025-女子-1-2");
+      expect(women?.text).toContain("1分47秒");
+      expect(women?.text).not.toMatch(/^2025年荒玉駅伝女子の優勝は/);
+    },
+    60_000,
+  );
+
   it("returns 2026 course trial results", () => {
     const hit = matchPreparedAnswer("岱明の荒玉試走タイムは？", { defaultYear: 2026 });
     expect(hit?.id).toBe("trial-2026-daiming-aragyoku");
