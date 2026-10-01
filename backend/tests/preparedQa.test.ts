@@ -191,17 +191,53 @@ describe("matchPreparedAnswer", () => {
     expect(hit?.text).toContain("大会結果: http://www.kumariku.org/26/26,7,4long/rel015.html");
   });
 
-  it("lists いだてん岱明 students instead of who-is-daiming", () => {
-    for (const q of ["いだてん岱明の生徒一覧", "いだてん岱明の部員は誰？", "岱明中の生徒一覧", "部員名簿は？"]) {
-      const hit = matchPreparedAnswer(q, { defaultYear: 2026 });
-      expect(hit?.id, q).toBe("roster");
-      expect(hit?.text, q).toContain("部員名簿（15名）");
-      expect(hit?.text, q).toContain("松野凛空");
-      expect(hit?.text, q).toContain("村上咲稀");
-      expect(hit?.text, q).toContain("中尾快叶");
-      expect(hit?.text, q).not.toContain("玉名市の中学校チーム");
-    }
-  });
+  it(
+    "lists いだてん岱明 students instead of who-is-daiming",
+    () => {
+      for (const q of [
+        "いだてん岱明の生徒一覧",
+        "いだてん岱明の部員は誰？",
+        "岱明中の生徒一覧",
+        "岱明の部員名簿は？",
+      ]) {
+        const hit = matchPreparedAnswer(q, { defaultYear: 2026 });
+        expect(hit?.id, q).toBe("roster");
+        expect(hit?.text, q).toContain("部員名簿（15名）");
+        expect(hit?.text, q).toContain("松野凛空");
+        expect(hit?.text, q).toContain("村上咲稀");
+        expect(hit?.text, q).toContain("中尾快叶");
+        expect(hit?.text, q).not.toContain("玉名市の中学校チーム");
+      }
+    },
+    60_000,
+  );
+
+  it(
+    "returns school/club roster for 玉名附属・南関・ATRC, not 岱明",
+    () => {
+      for (const q of ["玉名附属中の生徒一覧", "玉名高校附属中の部員名簿", "玉高附属の選手一覧"]) {
+        const hit = matchPreparedAnswer(q, { defaultYear: 2026 });
+        expect(hit?.id, q).toBe("roster-aff-玉名附中");
+        expect(hit?.text, q).toContain("玉名高校附属中");
+        expect(hit?.text, q).toContain("草野瑠唯");
+        expect(hit?.text, q).toContain("小倉十和");
+        expect(hit?.text, q).not.toContain("いだてん岱明");
+        expect(hit?.text, q).not.toContain("村上咲稀");
+      }
+
+      const nankan = matchPreparedAnswer("南関中の生徒一覧", { defaultYear: 2026 });
+      expect(nankan?.id).toBe("roster-aff-南関中");
+      expect(nankan?.text).toContain("南関中");
+      expect(nankan?.text).not.toContain("いだてん岱明");
+
+      const atrc = matchPreparedAnswer("ATRCの生徒一覧", { defaultYear: 2026 });
+      expect(atrc?.id).toBe("roster-aff-ATRC");
+      expect(atrc?.text).toContain("ATRC");
+      expect(atrc?.text).toMatch(/今村昇磨|米谷慶吾|猿渡愛梨/);
+      expect(atrc?.text).not.toContain("いだてん岱明");
+    },
+    60_000,
+  );
 
   it("keeps who-is-daiming for team-identity questions", () => {
     const hit = matchPreparedAnswer("いだてん岱明とはどんなチーム？", { defaultYear: 2026 });
