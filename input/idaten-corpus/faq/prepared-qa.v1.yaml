@@ -1,5 +1,5 @@
 version: 1
-total: 23054
+total: 23071
 note: '想定質問への定型回答（ADR 059）。年なし＝今年度。ナレッジカバーを拡充（知識カバー+1000/+3000: 荒玉全区間・年度別学校SB・大会資料・カレンダー等）。
 
   ヒット時は本文をほぼそのまま返す。未ヒット時のみ RAG/LLM。
@@ -86,15 +86,17 @@ entries:
   - 荒玉男子は何キロ？
   - 荒玉駅伝男子何km？
   - 男子の距離は？
+  - 荒玉男子各区の距離は？
   answer: '荒玉駅伝男子・現行（2024年以降）の区間距離は、1区3.00km、2区2.855km、3区3.00km、4区3.00km、5区2.855km、6区3.00km（合計17.71km）です。2023年以前は別定義です。
 
     '
-  sources:
+  sources: &id005
   - docs/aragyoku-ekiden-distance-definitions.md
   - out/analysis/aragyoku-overview.md
   tags:
   - aragyoku
   - distance
+  - 男子
 - id: aragyoku-women-distance
   questions:
   - 荒玉女子の区間距離は？
@@ -164820,9 +164822,8 @@ entries:
   - 荒玉中体連駅伝の校別展開_数式予想は？
   - 荒玉中体連駅伝「校別展開_数式予想」の内容は？
   - 今年の荒玉中体連駅伝の校別展開_数式予想
-  answer: '荒玉中体連駅伝（2026）の「校別展開_数式予想」です。 荒玉中体連駅伝 2026 数式予想 基準日: 2026-09-27 大会: 2026-10-14。公式オーダー未着。 数値の [ ] )。 2025年実績との比較
-    旧SB方式の展開は。 順位 学校 合計 区間予想 ---: --- ---: --- 1 玉陵中 56:01 1区 柿本晴仁（2年） 9:15 2区 松島颯希（3年） 9:17 3区 永田來夢（3年） 9:14 4区 辛嶋大宙（3年）
-    9:21 5区 小林祐貴（2年） 9:…。 資料: https://drive.google.com/drive/folders/1G8IlaBp9xVmXUynBAjV9ZZQPfFqzj4Yi。
+  answer: '荒玉中体連駅伝（2026）の校別展開・数式予想です。 男子上位: 1位玉陵中（56:01）、2位玉名高附（57:54）、3位菊水中（57:55）、4位荒尾第四中（58:46）、5位南関中（58:50）、6位岱明中（58:55）。女子上位:
+    1位荒尾三中（42:53）、2位玉名中†（42:56）、3位南関中（43:16）、4位長洲中†（43:36）、5位岱明中（44:13）、6位菊水中（46:26）。 公式オーダー未着の仮予想です。 資料: https://drive.google.com/drive/folders/1G8IlaBp9xVmXUynBAjV9ZZQPfFqzj4Yi
 
     '
   sources:
@@ -311835,6 +311836,8 @@ entries:
   - 岱明男子の数式予想は？
   - 今年の岱明男子オーダー予想は？
   - 岱明の2026男子区間予想
+  - 岱明男子の区間予想まとめ
+  - 岱明の男子区間予想をまとめて
   answer: '2026年荒玉駅伝男子・岱明中の数式予想（仮オーダー含む）です。 全区間の合計目安 58:55。 1区松野凛空（予想9:28）、2区山本哲瑠（予想9:22）、3区今村昇磨（予想9:45）、4区田上颯人（予想9:45）、5区中尾快叶（予想9:55）、6区松本空羽（予想10:40）。
     断定順位ではなく、直近レース観測に基づく説明可能な予想です。
 
@@ -312788,6 +312791,7 @@ entries:
   - 岱明女子の2026区間予想は？
   - 岱明女子の数式予想は？
   - 今年の岱明女子オーダー予想は？
+  - 岱明女子の区間予想まとめ
   answer: '2026年荒玉駅伝女子・岱明中の数式予想（仮オーダー含む）です。 全区間の合計目安 44:13。 1区村上咲稀（予想10:52）、2区山﨑莉奈（予想6:52）、3区角田亜美（予想7:28）、4区増岡里俐（予想7:28）、5区高田麻由（予想11:33）。
     断定順位ではなく、直近レース観測に基づく説明可能な予想です。
 
@@ -313507,48 +313511,65 @@ entries:
   - 2026荒玉の校別展開予想は？
   - 今年の荒玉戦力分析（校別）は？
   - 荒玉2026の数式予想まとめ
-  answer: '2026年荒玉中体連駅伝の「」より。 基準日: 2026-09-27 大会: 2026-10-14。公式オーダー未着。 数値の。 2025年実績との比較・旧SB方式の展開は。
+  - 今年の荒玉男子の数式予想は？
+  - 荒玉男子の戦力分析は？
+  - 2026年荒玉男子の校別展開は？
+  - 今年の荒玉女子の数式予想は？
+  - 荒玉女子の戦力分析は？
+  answer: '2026年荒玉駅伝の校別展開・数式予想（基準日2026-09-27、大会2026-10-14、公式オーダー未着）です。 男子上位: 1位玉陵中（56:01）、2位玉名高附（57:54）、3位菊水中（57:55）、4位荒尾第四中（58:46）、5位南関中（58:50）、6位岱明中（58:55）。
+    女子上位: 1位荒尾三中（42:53）、2位玉名中†（42:56）、3位南関中（43:16）、4位長洲中†（43:36）、5位岱明中（44:13）、6位菊水中（46:26）。 断定順位ではなく説明可能な予想です。 資料: https://drive.google.com/drive/folders/1G8IlaBp9xVmXUynBAjV9ZZQPfFqzj4Yi
 
     '
   sources:
   - input/idaten-corpus/drive-text/大会/2026年度/1014-1015_荒玉中体連駅伝/校別展開_数式予想.md
+  - out/analysis/aragyoku_2026_formula_report.md
   tags:
   - aragyoku
   - preview
   - '2026'
   - school-expand
+  - analysis
+  - formula
 - id: meet-2026-aragyoku-men-order
   questions:
   - 2026荒玉男子の区間オーダー予想は？
   - 今年の荒玉男子オーダー予想
-  answer: '2026年荒玉中体連駅伝の「男子区間オーダー」より。 基準日: 2026-09-27 大会: 2026-10-14 公式オーダー未着。岱明男子1–4区は監督確定、5–6区と他校は仮置き。トラック・ロード・駅伝の全採用レースから算出する。人間考慮YAMLに明示された実績重みと、記録未確認選手の暫定タイムだけを個別適用する。
-    数式:。Bは全記録の最速2件平均、直近45日（記録がなければ全期間）の重み付き25%値 Q_recent。直近の半減期21日、ロード・駅伝の重み 男子はジュニア駅伝記録を起伏仮定1.01で補正し、直前30日以内の記録に本番仕上がり係数0.9860を掛ける。起伏係数は実測ではない。
-    。
+  - 荒玉男子の2026区間予想まとめ
+  - 男子の荒玉数式オーダーは？
+  answer: '2026年荒玉駅伝男子の区間オーダー・数式予想です。 校別合計の上位目安: 1位玉陵中（56:01）、2位玉名高附（57:54）、3位菊水中（57:55）。 仮オーダーを含み、確定ではありません。 資料: https://drive.google.com/drive/folders/1G8IlaBp9xVmXUynBAjV9ZZQPfFqzj4Yi
 
     '
   sources:
   - input/idaten-corpus/drive-text/大会/2026年度/1014-1015_荒玉中体連駅伝/男子区間オーダー_数式予想.md
+  - out/analysis/aragyoku_2026_formula_report.md
   tags:
   - aragyoku
   - preview
   - '2026'
   - men-order
+  - analysis
+  - formula
+  - 男子
 - id: meet-2026-aragyoku-women-order
   questions:
   - 2026荒玉女子の区間オーダー予想は？
   - 今年の荒玉女子オーダー予想
-  answer: '2026年荒玉中体連駅伝の「女子区間オーダー」より。 基準日: 2026-09-27 大会: 2026-10-14 公式オーダー未着。岱明女子は監督確定、他校は仮置き。トラック・ロード・駅伝の全採用レースから算出する。人間考慮YAMLに明示された実績重みと、記録未確認選手の暫定タイムだけを個別適用する。
-    数式:。Bは全記録の最速2件平均、直近45日（記録がなければ全期間）の重み付き25%値 Q_recent。直近の半減期21日、ロード・駅伝の重み 女子は歴代記録による区間補正を加える（3区 -9.5秒、4区 +9.5秒）。 。旧SB予測は
-    `区間オーダー_SB予想.… 仮置き・予想を含み、確定オーダーではありません。
+  - 荒玉女子の2026区間予想まとめ
+  - 女子の荒玉数式オーダーは？
+  answer: '2026年荒玉駅伝女子の区間オーダー・数式予想です。 校別合計の上位目安: 1位荒尾三中（42:53）、2位玉名中†（42:56）、3位南関中（43:16）。 仮オーダーを含み、確定ではありません。 資料: https://drive.google.com/drive/folders/1G8IlaBp9xVmXUynBAjV9ZZQPfFqzj4Yi
 
     '
   sources:
   - input/idaten-corpus/drive-text/大会/2026年度/1014-1015_荒玉中体連駅伝/女子区間オーダー_数式予想.md
+  - out/analysis/aragyoku_2026_formula_report.md
   tags:
   - aragyoku
   - preview
   - '2026'
   - women-order
+  - analysis
+  - formula
+  - 女子
 - id: meet-2026-aragyoku-daiming-order
   questions:
   - 岱明の2026荒玉暫定オーダーは？
@@ -318196,11 +318217,10 @@ entries:
 - id: analysis-ocr-2026-男子
   questions:
   - 2026年荒玉男子の分析PDFは？
-  - 荒玉男子戦力分析（2026）
   - 今年の荒玉男子分析資料
-  answer: '2026年荒玉男子の分析資料（OCR）より。 OCR drive_id: 17wQY9f09Y6qPsp1rHkGGoiVMIs7QuuXA 2026年度中学⽣記録 今村昇磨 ATRC 3 800m 2 15.70 http://www.kumarik
-    u.org/26/26,6,13tsus 今村昇磨 ATRC 3 1500m 4 45.35 http://www.kumarik u.org/26/26,7,18chut 今村昇磨 ATRC 3 1500m 4 47.85 http://www.kcrk.jp/i
-    -mode/kiroku/272/P 今村昇磨 ATRC 3 1500m 5 08.69 http://www.kumarik u.org/26/26,…
+  - 荒玉男子の分析PDFを見せて
+  - 2026荒玉男子OCR資料は？
+  answer: '2026年荒玉駅伝男子の分析資料（PDF）です。 資料: https://drive.google.com/file/d/17wQY9f09Y6qPsp1rHkGGoiVMIs7QuuXA/view 数式予想や校別展開は「今年の荒玉戦力分析（校別）は？」「2026荒玉男子の区間オーダー予想は？」で聞けます。
 
     '
   sources:
@@ -318211,14 +318231,14 @@ entries:
   - analysis
   - '2026'
   - 男子
+  - pdf
 - id: analysis-ocr-2026-女子
   questions:
   - 2026年荒玉女子の分析PDFは？
-  - 荒玉女子戦力分析（2026）
   - 今年の荒玉女子分析資料
-  answer: '2026年荒玉女子の分析資料（OCR）より。 OCR drive_id: 1d1oEtMhvMte6d0JvXhZMNL5GigTYcR-i 2026年度中学⽣記録 猿渡愛梨 ATRC 3 800m 2 35.90 http://www.kumarik
-    u.org/26/26,7,18chut 猿渡愛梨 ATRC 3 800m 2 37.57 http://www.kumarik u.org/26/26,5,23ch 猿渡愛梨 ATRC 3 800m 2 38.30 http://www.kumarik
-    u.org/26/26,6,13tsus 猿渡愛梨 ATRC 3 1500m 5 16.77 http://www.kumarik u.org/26/26,7…
+  - 荒玉女子の分析PDFを見せて
+  - 2026荒玉女子OCR資料は？
+  answer: '2026年荒玉駅伝女子の分析資料（PDF）です。 資料: https://drive.google.com/file/d/1d1oEtMhvMte6d0JvXhZMNL5GigTYcR-i/view 数式予想や校別展開は「今年の荒玉戦力分析（校別）は？」「2026荒玉女子の区間オーダー予想は？」で聞けます。
 
     '
   sources:
@@ -318229,6 +318249,7 @@ entries:
   - analysis
   - '2026'
   - 女子
+  - pdf
 - id: track-2026-男子3000m
   questions:
   - 今年の荒玉男子3000mSBランキングは？
@@ -322419,14 +322440,22 @@ entries:
   - 荒玉男子の総距離は？
   - 荒玉男子コースの合計kmは？
   - 荒玉男子は何km？
+  - 荒玉の総距離は？
+  - 荒玉は何km？
+  - 荒玉駅伝の合計距離は？
+  - 荒玉コースの総距離
   answer: '荒玉男子の現行（2024年以降）合計距離は17.71km、2023年以前は19.71kmです。女子は11.855km（年度共通）です。
 
     '
   sources:
   - out/analysis/aragyoku-overview.md
+  - docs/aragyoku-ekiden-distance-definitions.md
+  - out/analysis/aragyoku-overview.md
   tags:
   - gap1000
   - digest
+  - aragyoku
+  - distance
 - id: gap1000-overview-women-dist
   questions:
   - 荒玉女子の総距離は？
@@ -428114,3 +428143,232 @@ entries:
   - formula
   - 女子
   - 2026
+- id: aragyoku-distance-current-男子-leg1
+  questions:
+  - 荒玉男子1区の距離は？
+  - 荒玉駅伝男子1区は何km？
+  - 男子1区の距離を教えて
+  - 荒玉男子1区何キロ？
+  answer: '荒玉駅伝男子・現行（2024年以降）の1区は3.00kmです。
+
+    '
+  sources: *id005
+  tags:
+  - aragyoku
+  - distance
+  - 男子
+  - current
+- id: aragyoku-distance-current-男子-leg2
+  questions:
+  - 荒玉男子2区の距離は？
+  - 荒玉駅伝男子2区は何km？
+  - 男子2区の距離を教えて
+  - 荒玉男子2区何キロ？
+  answer: '荒玉駅伝男子・現行（2024年以降）の2区は2.855kmです。
+
+    '
+  sources: *id005
+  tags:
+  - aragyoku
+  - distance
+  - 男子
+  - current
+- id: aragyoku-distance-current-男子-leg3
+  questions:
+  - 荒玉男子3区の距離は？
+  - 荒玉駅伝男子3区は何km？
+  - 男子3区の距離を教えて
+  - 荒玉男子3区何キロ？
+  answer: '荒玉駅伝男子・現行（2024年以降）の3区は3.00kmです。
+
+    '
+  sources: *id005
+  tags:
+  - aragyoku
+  - distance
+  - 男子
+  - current
+- id: aragyoku-distance-current-男子-leg4
+  questions:
+  - 荒玉男子4区の距離は？
+  - 荒玉駅伝男子4区は何km？
+  - 男子4区の距離を教えて
+  - 荒玉男子4区何キロ？
+  answer: '荒玉駅伝男子・現行（2024年以降）の4区は3.00kmです。
+
+    '
+  sources: *id005
+  tags:
+  - aragyoku
+  - distance
+  - 男子
+  - current
+- id: aragyoku-distance-current-男子-leg5
+  questions:
+  - 荒玉男子5区の距離は？
+  - 荒玉駅伝男子5区は何km？
+  - 男子5区の距離を教えて
+  - 荒玉男子5区何キロ？
+  answer: '荒玉駅伝男子・現行（2024年以降）の5区は2.855kmです。
+
+    '
+  sources: *id005
+  tags:
+  - aragyoku
+  - distance
+  - 男子
+  - current
+- id: aragyoku-distance-current-男子-leg6
+  questions:
+  - 荒玉男子6区の距離は？
+  - 荒玉駅伝男子6区は何km？
+  - 男子6区の距離を教えて
+  - 荒玉男子6区何キロ？
+  answer: '荒玉駅伝男子・現行（2024年以降）の6区は3.00kmです。
+
+    '
+  sources: *id005
+  tags:
+  - aragyoku
+  - distance
+  - 男子
+  - current
+- id: aragyoku-distance-current-女子-leg1
+  questions:
+  - 荒玉駅伝女子1区は何km？
+  answer: '荒玉駅伝女子の1区は3.00kmです（全年度共通）。
+
+    '
+  sources: *id005
+  tags:
+  - aragyoku
+  - distance
+  - 女子
+- id: aragyoku-distance-current-女子-leg2
+  questions:
+  - 荒玉駅伝女子2区は何km？
+  answer: '荒玉駅伝女子の2区は1.855kmです（全年度共通）。
+
+    '
+  sources: *id005
+  tags:
+  - aragyoku
+  - distance
+  - 女子
+- id: aragyoku-distance-current-女子-leg3
+  questions:
+  - 荒玉駅伝女子3区は何km？
+  answer: '荒玉駅伝女子の3区は2.00kmです（全年度共通）。
+
+    '
+  sources: *id005
+  tags:
+  - aragyoku
+  - distance
+  - 女子
+- id: aragyoku-distance-current-女子-leg4
+  questions:
+  - 荒玉駅伝女子4区は何km？
+  answer: '荒玉駅伝女子の4区は2.00kmです（全年度共通）。
+
+    '
+  sources: *id005
+  tags:
+  - aragyoku
+  - distance
+  - 女子
+- id: aragyoku-distance-current-女子-leg5
+  questions:
+  - 荒玉駅伝女子5区は何km？
+  answer: '荒玉駅伝女子の5区は3.00kmです（全年度共通）。
+
+    '
+  sources: *id005
+  tags:
+  - aragyoku
+  - distance
+  - 女子
+- id: aragyoku-distance-current-男子-leg2-leg3
+  questions:
+  - 荒玉男子2区と3区の距離は？
+  - 男子2区と3区は何km？
+  - 荒玉駅伝男子2区3区の距離
+  answer: '荒玉駅伝男子・現行（2024年以降）は2区2.855km、3区3.00kmです。
+
+    '
+  sources: *id005
+  tags:
+  - aragyoku
+  - distance
+  - 男子
+  - current
+- id: aragyoku-distance-current-both-leg1
+  questions:
+  - 荒玉1区の距離は？
+  - 1区の距離は？
+  - 荒玉駅伝1区は何km？
+  - 1区は何キロ？
+  answer: '荒玉駅伝1区の距離は、男子（現行2024年以降）3.00km、女子3.00kmです。男女どちらかを指定すると片方だけ答えます。
+
+    '
+  sources: *id005
+  tags:
+  - aragyoku
+  - distance
+  - current
+- id: aragyoku-distance-current-both-leg2
+  questions:
+  - 荒玉2区の距離は？
+  - 2区の距離は？
+  - 荒玉駅伝2区は何km？
+  - 2区は何キロ？
+  answer: '荒玉駅伝2区の距離は、男子（現行2024年以降）2.855km、女子1.855kmです。男女どちらかを指定すると片方だけ答えます。
+
+    '
+  sources: *id005
+  tags:
+  - aragyoku
+  - distance
+  - current
+- id: aragyoku-distance-current-both-leg3
+  questions:
+  - 荒玉3区の距離は？
+  - 3区の距離は？
+  - 荒玉駅伝3区は何km？
+  - 3区は何キロ？
+  answer: '荒玉駅伝3区の距離は、男子（現行2024年以降）3.00km、女子2.00kmです。男女どちらかを指定すると片方だけ答えます。
+
+    '
+  sources: *id005
+  tags:
+  - aragyoku
+  - distance
+  - current
+- id: aragyoku-distance-current-both-leg4
+  questions:
+  - 荒玉4区の距離は？
+  - 4区の距離は？
+  - 荒玉駅伝4区は何km？
+  - 4区は何キロ？
+  answer: '荒玉駅伝4区の距離は、男子（現行2024年以降）3.00km、女子2.00kmです。男女どちらかを指定すると片方だけ答えます。
+
+    '
+  sources: *id005
+  tags:
+  - aragyoku
+  - distance
+  - current
+- id: aragyoku-distance-current-both-leg5
+  questions:
+  - 荒玉5区の距離は？
+  - 5区の距離は？
+  - 荒玉駅伝5区は何km？
+  - 5区は何キロ？
+  answer: '荒玉駅伝5区の距離は、男子（現行2024年以降）2.855km、女子3.00kmです。男女どちらかを指定すると片方だけ答えます。
+
+    '
+  sources: *id005
+  tags:
+  - aragyoku
+  - distance
+  - current

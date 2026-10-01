@@ -63,12 +63,15 @@ LINE Q&A は RAG / LLM で都度組み立てると、ぶれ・コーチ誘導・
   `scripts/refresh_prepared_qa_team_results.py`（荒玉チーム結果・去年/結果は？）/
   `scripts/refresh_prepared_qa_leg_boards.py`（区間順位ボード・去年語順）/
   `scripts/expand_prepared_qa_question_variants.py`（質問表記ゆれの一括拡充）/
-  `scripts/generate_prepared_qa_coach_analysis.py`（指導者向け分析Q&A・前年比/区間/SB等）→
+  `scripts/generate_prepared_qa_coach_analysis.py`（指導者向け分析Q&A・前年比/区間/SB等）/
+  `scripts/improve_prepared_qa_accuracy.py`（OCR誤吸抑制・数式/校別優先・区間距離取りこぼし回収）→
   `scripts/sync_prepared_qa.py`。
   大会名正規化: `backend/src/domain/aragyokuAliases.ts`
   （荒玉中体連駅伝 / 郡市駅伝 / 玉名荒尾中体連駅伝 → 荒玉）。
   マッチ時の同義語: `preparedQa.ts` の `SYNONYM_GROUPS`
   （自己ベスト/ベストタイム、優勝校/優勝チーム、地図/画像、出れる/出場できる 等）。
+  「距離」単独は区間距離へ潰さない。数式予想／校別展開質問では `analysis-ocr` を減点し
+  school-expand / formula / preview を加点する。
 
 ## Test strategy
 

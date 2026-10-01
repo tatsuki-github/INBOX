@@ -253,6 +253,37 @@ describe("matchPreparedAnswer", () => {
     expect(normalizePreparedQuestion("岱明男子の前年比は？", { defaultYear: 2026 })).not.toContain("2025年比");
   });
 
+  it("does not double-replace into 区間区間距離", () => {
+    expect(normalizePreparedQuestion("区間距離", { defaultYear: 2026 })).toBe("区間距離");
+    expect(normalizePreparedQuestion("荒玉男子の区間距離は？", { defaultYear: 2026 })).not.toContain(
+      "区間区間",
+    );
+  });
+
+  it(
+    "routes formula/preview away from OCR dumps and hits per-leg distances",
+    () => {
+      const cases: Array<[string, RegExp, RegExp]> = [
+        ["今年の荒玉男子の数式予想は？", /^meet-2026-aragyoku-school-expand$/, /玉陵|56:01/],
+        ["荒玉男子の戦力分析は？", /^meet-2026-aragyoku-school-expand$/, /校別展開|数式予想/],
+        ["荒玉女子の数式予想は？", /^meet-2026-aragyoku-school-expand$/, /荒尾三|42:53/],
+        ["荒玉男子2区の距離は？", /^aragyoku-distance-current-男子-leg2$/, /2\.855km/],
+        ["荒玉男子の区間距離は？", /^aragyoku-men-distance$/, /17\.71km/],
+        ["荒玉の総距離は？", /^gap1000-overview-distance$/, /17\.71km|11\.855km/],
+        ["2区の距離は？", /^aragyoku-distance-current-both-leg2$/, /男子.*2\.855km|女子.*1\.855km/],
+        ["2026年荒玉男子の分析PDFは？", /^analysis-ocr-2026-男子$/, /drive\.google\.com/],
+      ];
+      for (const [q, idRe, textRe] of cases) {
+        const hit = matchPreparedAnswer(q, { defaultYear: 2026 });
+        expect(hit, q).toBeTruthy();
+        expect(hit!.id, q).toMatch(idRe);
+        expect(hit!.text, q).toMatch(textRe);
+        expect(hit!.text, q).not.toMatch(/パート\d+|OCR生/);
+      }
+    },
+    120_000,
+  );
+
   it("keeps yearless junior result on current-year entry", () => {
     const hit = matchPreparedAnswer("ジュニア駅伝の結果は？", { defaultYear: 2026 });
     expect(hit?.id).toBe("junior-2026-result");
