@@ -121,6 +121,7 @@ def source_projection() -> dict[str, dict]:
     for e in records.gen_entries(set(), replace=True):
         out[e["id"]] = e
     for module_name, function in (
+        ("generate_prepared_qa_edge_comparisons", "gen_entries"),
         ("generate_prepared_qa_aragyoku_rank_gaps", "gen_entries"),
         ("generate_prepared_qa_school_rosters", "gen_entries"),
         ("generate_prepared_qa_daiming_rivals", "build_entries"),
@@ -224,9 +225,11 @@ def check_entry(e: dict, projected: dict | None) -> dict:
             problems.extend("wrong_race_tuple:" + repr(t) for t in sorted(wrong))
         # Projections refreshed by --fix must match exactly, including the
         # identity and counts; these cannot be validated by loose token overlap.
-        if refresh_family(e["id"]) and answer.strip() != projected["answer"].strip():
+        if (refresh_family(e["id"]) or e["id"].startswith("edgecmp-")) and answer.strip() != projected["answer"].strip():
             problems.append("source_projection_drift")
     else:
+        if e["id"].startswith("edgecmp-"):
+            problems.append("missing_source_projection")
         unsupported = asserted_clocks(answer) - evidence_times
         problems.extend("unsupported_time:" + t for t in sorted(unsupported))
     # Short meet aliases must not claim a different real meet (e.g. 天草→玉名郡).
