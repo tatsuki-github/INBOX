@@ -170,6 +170,31 @@ describe("matchPreparedAnswer", () => {
   });
 
   it(
+    "hits coach-oriented analysis questions from focus / SB / trial facts",
+    () => {
+      const cases: Array<[string, RegExp]> = [
+        ["岱明男子の前年比は？", /15位.*59:08|65:15.*6位/],
+        ["岱明男子のボトルネック区間は？", /案浦竜士|6区/],
+        ["2025年岱明男子で一番よかった区間は？", /山本哲瑠|5区/],
+        ["天水の区間新は？", /山本悠斗|8:37/],
+        ["連続出場した岱明男子は？", /松野凛空|今村昇磨|倉田裕斗/],
+        ["2024から2025で一番伸びたのはどの校？", /岱明男子|15位→6位/],
+        ["どの学校が2位以内が多い？", /玉名.*15|荒尾三/],
+        ["1500mの学校別ランキングは？", /玉陵|4:23/],
+        ["岱明の試走タイムは？", /9:48|松野/],
+        ["岱明男子の2026区間予想は？", /58:55|松野凛空/],
+      ];
+      for (const [q, re] of cases) {
+        const hit = matchPreparedAnswer(q, { defaultYear: 2026 });
+        expect(hit, q).toBeTruthy();
+        expect(hit?.text, q).toMatch(re);
+        expect(hit?.text, q).not.toContain("コーチに直接聞いてください");
+      }
+    },
+    120_000,
+  );
+
+  it(
     "hits slight wording variants via synonyms and expanded questions",
     () => {
       const cases: Array<[string, string | RegExp]> = [
