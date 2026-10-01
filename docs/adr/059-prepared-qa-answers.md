@@ -66,6 +66,7 @@ LINE Q&A は RAG / LLM で都度組み立てると、ぶれ・コーチ誘導・
   `scripts/generate_prepared_qa_coach_analysis.py`（指導者向け分析Q&A・前年比/区間/SB等）/
   `scripts/generate_prepared_qa_aragyoku_pass_rank.py`（2026数式予想のN区まで通過順位・総合順位）/
   `scripts/generate_prepared_qa_aragyoku_leg_time_rank.py`（区間タイム→区間順位目安・男女全区間・2024-2025）/
+  `scripts/generate_prepared_qa_aragyoku_rank_benchmark.py`（区間N位基準タイム・男女全区間・1–15位・2024-2025）/
   `scripts/improve_prepared_qa_accuracy.py`（OCR誤吸抑制・数式/校別優先・区間距離取りこぼし回収）/
   `scripts/generate_prepared_qa_edge_5000.py`（重箱の隅向け+5000: 2012–2023大会別記録・
   区間上位・通過順位・学年・平均ペース等）→

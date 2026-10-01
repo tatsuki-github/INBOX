@@ -22,7 +22,6 @@ Snapshot under `input/external/drive/` (ADR 010). Drive remains source of truth.
 | `personal/参考サイト.md` | imported | markdown |
 | `personal/夏休みの練習.md` | imported | markdown |
 | `personal/早熟と後伸びについて.md` | imported | markdown |
-| `personal/謝礼金.md` | imported | Source document appears empty (sensitive title retained) |
 | `personal/通信陸上.md` | imported | markdown |
 | `personal/通信陸上_のコピー.csv` | imported | csv |
 | `personal/選手権と通信のタイム差_のコピー.csv` | imported | csv |

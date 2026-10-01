@@ -15,6 +15,7 @@ describe("prepared FAQ factual constraints", () => {
     ["松野凛空の1500m自己ベスト", "松野凛空の3000m自己ベスト"],
     ["荒玉駅伝男子2区と3区の距離", "荒玉駅伝男子2区の距離"],
     ["荒玉男子1区を9:30で走ったら区間何位？", "荒玉男子1区を9:32で走ったら区間何位？"],
+    ["荒玉駅伝女子の各区間5位の基準タイムは？", "荒玉駅伝女子の各区間6位の基準タイムは？"],
   ])("rejects conflicting facts: %s", (query, candidate) => {
     expect(match(query, candidate)).toBeNull();
   });

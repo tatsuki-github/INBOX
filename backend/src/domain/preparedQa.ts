@@ -349,6 +349,8 @@ function scorePair(nq: string, nCand: string): number {
     { pattern: /\d+(?:\.\d+)?m/g },
     // 区間タイム目安（9:30 vs 9:32）の取り違えを防ぐ
     { pattern: /\d{1,2}:\d{2}/g },
+    // 区間N位基準タイム（5位 vs 6位）の取り違えを防ぐ
+    { pattern: /\d+位/g },
   ];
   for (const { pattern, skip } of dimensions) {
     if (skip) continue;
