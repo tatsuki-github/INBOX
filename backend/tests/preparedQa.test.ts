@@ -562,6 +562,22 @@ describe("matchPreparedAnswer", { timeout: 30_000 }, () => {
     expect(hit?.text).toContain("6位");
   });
 
+  it("returns 2026 岱明暫定オーダー with named legs, not hollow links", () => {
+    const hit = matchPreparedAnswer("岱明の2026荒玉暫定オーダーは？", { defaultYear: 2026 });
+    expect(hit?.id).toBe("meet-2026-aragyoku-daiming-order");
+    expect(hit?.text).toContain("村上咲稀");
+    expect(hit?.text).toContain("松野凛空");
+    expect(hit?.text).toContain("山本哲瑠");
+    expect(hit?.text).not.toContain("「」");
+  });
+
+  it("answers 岱明女子800m平均 with school ranking facts", () => {
+    const hit = matchPreparedAnswer("岱明女子800mの平均は？", { defaultYear: 2026 });
+    expect(hit?.id).toBe("sb-women800-daiming");
+    expect(hit?.text).toContain("2:28.81");
+    expect(hit?.text).toContain("岱明");
+  });
+
   it("returns aragyoku career history", () => {
     const hit = matchPreparedAnswer("松野凛空の荒玉出走歴は？", { defaultYear: 2026 });
     expect(hit?.id).toBe("aragyoku-career-松野凛空");
