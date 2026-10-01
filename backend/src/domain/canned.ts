@@ -46,18 +46,32 @@ export function isHelpOrExampleQuestion(question: string): boolean {
   return false;
 }
 
-/** Greeting / thanks — avoid bare「コーチに…」for social openers. */
+/** Greeting / thanks / ack — avoid bare「コーチに…」for social openers. */
 export function isGreetingOrThanksQuestion(question: string): boolean {
   const q = question.normalize("NFKC").trim();
   if (!q) return false;
-  return /^(?:こんにちは|こんにちわ|こんばんは|おはよう(?:ございます)?|はじめまして|宜しく|よろしく(?:お願い(?:します|いたします)?)?|ありがとう(?:ございます)?|どうも|お疲れ(?:さま|様)?(?:です)?|おつかれ(?:さま|様)?(?:です)?)[！!。．～〜]*$/u.test(
+  return /^(?:こんにちは|こんにちわ|こんばんは|おはよう(?:ございます)?|はじめまして|宜しく|よろしく(?:お願い(?:します|いたします)?)?|ありがとう(?:ございます)?|どうも|お疲れ(?:さま|様)?(?:です)?|おつかれ(?:さま|様)?(?:です)?|すみません|ごめん(?:なさい)?|了解|りょうかい|なるほど|わかった|オーケー|OK|ok|hi|hello|hey|bye|バイバイ|ばいばい|またね|じゃあね)[！!。．～〜]*$/iu.test(
     q,
   );
 }
 
 export function buildGreetingOrThanksText(question: string): string {
   const q = question.normalize("NFKC").trim();
-  const thanks = /ありがとう|どうも|お疲れ|おつかれ/.test(q);
+  const bye = /bye|バイバイ|ばいばい|またね|じゃあね/i.test(q);
+  if (bye) {
+    return [
+      "また聞いてください。",
+      "質問例は「使い方」と送ってください。",
+    ].join("\n");
+  }
+  const ack = /了解|りょうかい|なるほど|わかった|オーケー|\bOK\b/i.test(q);
+  if (ack) {
+    return [
+      "了解です。ほかにも大会結果や記録について聞けます。",
+      "質問例は「使い方」と送ってください。",
+    ].join("\n");
+  }
+  const thanks = /ありがとう|どうも|お疲れ|おつかれ|すみません|ごめん/.test(q);
   if (thanks) {
     return [
       "どういたしまして。",
