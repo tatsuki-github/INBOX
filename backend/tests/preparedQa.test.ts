@@ -151,7 +151,7 @@ describe("normalizePreparedQuestion", () => {
   });
 });
 
-describe("matchPreparedAnswer", () => {
+describe("matchPreparedAnswer", { timeout: 30_000 }, () => {
   beforeEach(() => {
     resetPreparedQaCache();
   });

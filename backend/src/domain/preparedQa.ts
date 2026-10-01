@@ -110,11 +110,14 @@ function applySynonyms(text: string): string {
     // 長い別名から置換（優勝チーム→優勝 が 優勝→… より先）
     const alts = group.slice(1).filter(Boolean).sort((a, b) => b.length - a.length);
     for (const alt of alts) {
-      if (!alt || alt === canon) continue;
-      // canon 部分を退避してから alt を置換し、二重置換（例: 区間区間距離）を防ぐ
-      const protectedOut = out.split(canon).join("\u0000");
-      const replaced = protectedOut.split(alt).join(canon);
-      out = replaced.split("\u0000").join(canon);
+      if (!alt || alt === canon || !out.includes(alt)) continue;
+      // alt が canon の部分文字列のときだけ退避（例: 区間距離 ← 距離）
+      if (canon.includes(alt)) {
+        const protectedOut = out.split(canon).join("\u0000");
+        out = protectedOut.split(alt).join(canon).split("\u0000").join(canon);
+      } else {
+        out = out.split(alt).join(canon);
+      }
     }
   }
   return out;
