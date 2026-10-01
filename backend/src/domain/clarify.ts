@@ -157,6 +157,98 @@ function buildMiddleSchoolSbClarifyText(): string {
   ].join("\n");
 }
 
+/** Vague meet-result questions without a concrete meet name. */
+export function isUnderspecifiedMeetResultQuestion(question: string): boolean {
+  const q = question.normalize("NFKC").trim();
+  if (!q) return false;
+  // Ultra-short forms first (「結果」itself looks like a 2-kanji "name" to cues).
+  if (
+    /^(?:大会の)?(?:結果|順位|成績)(?:は|を|って|教えて|知りたい)?[？?！!。．]*$/u.test(
+      q,
+    ) ||
+    /^(?:誰が|どの(?:学校|チーム)が)?(?:勝った|優勝)(?:の|か)?[？?！!。．]*$/u.test(
+      q,
+    )
+  ) {
+    return true;
+  }
+  if (!/(?:結果|順位|何位|成績)/.test(q)) return false;
+  // Already names a known meet / school / athlete cue → let prepared/RAG handle.
+  if (
+    /荒玉|なごみ|ジュニア|ナイター|金栗|県中|通信|選手権|岱明|南関|玉名|長洲|菊水|有明|玉陵|玉東|玉南|荒尾|天水|三加和|腹栄/.test(
+      q,
+    )
+  ) {
+    return false;
+  }
+  if (/20\d{2}|去年|昨年|今年|今年度/.test(q) && /大会|駅伝|記録会/.test(q)) {
+    return false;
+  }
+  return false;
+}
+
+export function buildMeetResultClarifyText(): string {
+  return [
+    "どの大会の結果か、大会名を付けて聞いてください。",
+    "例:",
+    "・なごみ駅伝の結果は？",
+    "・2025年荒玉駅伝男子の岱明は何位？",
+    "・ジュニア駅伝の結果は？",
+    "・玉名郡ナイターの結果は？",
+  ].join("\n");
+}
+
+/** Vague schedule questions without event name. */
+export function isUnderspecifiedScheduleQuestion(question: string): boolean {
+  const q = question.normalize("NFKC").trim();
+  if (!q) return false;
+  if (!/(?:いつ|日程|予定|カレンダー)/.test(q)) return false;
+  if (
+    /荒玉|なごみ|ジュニア|ナイター|金栗|県中|練習|大会|駅伝|記録会|今週|今月|今日|明日/.test(
+      q,
+    )
+  ) {
+    return false;
+  }
+  return /^(?:いつ|日程|予定)(?:は|を|って|教えて|知りたい)?[？?！!。．]*$/u.test(q);
+}
+
+export function buildScheduleClarifyText(): string {
+  return [
+    "どの予定か、大会名や日付を付けて聞いてください。",
+    "例:",
+    "・荒玉駅伝はいつ？",
+    "・ジュニア駅伝の日程は？",
+    "・今週の練習は？",
+    "・2026-10-14の予定は？",
+  ].join("\n");
+}
+
+/** Vague order / lineup questions without school+year. */
+export function isUnderspecifiedOrderQuestion(question: string): boolean {
+  const q = question.normalize("NFKC").trim();
+  if (!q) return false;
+  if (!/(?:オーダー|区間メンバー|誰が何区|メンバー表)/.test(q)) return false;
+  if (
+    /岱明|南関|玉名|長洲|菊水|有明|玉陵|玉東|玉南|荒尾|天水|三加和|腹栄|玉高|20\d{2}|去年|昨年|今年/.test(
+      q,
+    )
+  ) {
+    return false;
+  }
+  return true;
+}
+
+export function buildOrderClarifyText(): string {
+  return [
+    "どの年・学校のオーダーか指定してください。",
+    "例:",
+    "・2025年荒玉男子の岱明のオーダーは？",
+    "・岱明の2026荒玉暫定オーダーは？",
+    "・2025年荒玉女子の南関5区は誰？",
+  ].join("\n");
+}
+
 /** Match underspecified questions that should return example phrasings. */
 export function matchClarifyAnswer(question: string): ClarifyResult | null {
   if (isUnderspecifiedMiddleSchoolSbQuestion(question)) {
@@ -175,6 +267,24 @@ export function matchClarifyAnswer(question: string): ClarifyResult | null {
     return {
       id: "clarify-record-lookup",
       text: buildRecordLookupClarifyText(),
+    };
+  }
+  if (isUnderspecifiedMeetResultQuestion(question)) {
+    return {
+      id: "clarify-meet-result",
+      text: buildMeetResultClarifyText(),
+    };
+  }
+  if (isUnderspecifiedScheduleQuestion(question)) {
+    return {
+      id: "clarify-schedule",
+      text: buildScheduleClarifyText(),
+    };
+  }
+  if (isUnderspecifiedOrderQuestion(question)) {
+    return {
+      id: "clarify-order",
+      text: buildOrderClarifyText(),
     };
   }
   return null;

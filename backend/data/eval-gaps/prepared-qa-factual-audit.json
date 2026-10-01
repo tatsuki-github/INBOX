@@ -1,5 +1,5 @@
 {
-  "catalog_sha256": "cb183d0f92b1fc67ca3486699a87aceaef64b601efddc10b0b5b4754938ee36a",
+  "catalog_sha256": "286a11745a914b371c38294538bacb252cd235469ab5483d81f6c73cc46ae06a",
   "total": 28045,
   "checks": {
     "source_text_time_check": 5038,
@@ -17,7 +17,7 @@
     "backend/README.md": "0dd859e756ad73ded5a3f0ff381f1472f33a46b4c14d3f01e23bea6e35fb02fc",
     "backend/data/aragyoku-board-images.json": "999ce763f1437a88f156bdbe259ae75f107dfeab07dc8aeaeefa9039f0ebd41a",
     "backend/src/domain/aragyokuAliases.ts": "38005e290a644e3c0425f32cbf90450477bd28081bd72f6e7e74f3962ef219dc",
-    "backend/src/domain/canned.ts": "17aba1aa31d33a268acb0e354d40df51e0ac4c13e30bc47b57c522fc2f3f08c0",
+    "backend/src/domain/canned.ts": "8cb848acaea85d423f7e0ca35fbed2e9ff2529c0162000d429b8d9a321c8c61d",
     "backend/src/domain/dates.ts": "8ef6f6b024a38b31e528397605feec00727fffcb8a83a155b64b2ef0377a37fe",
     "docs/adr/001-ai-practice-generation-architecture.md": "a0d52cd85c21f9049575b441ad75e72b23197e7c55052022cf6ebe8ee762af67",
     "docs/adr/002-norwegian-method-integration.md": "e96869657804ed6490ba12ead541b4ffeb9b02005ea9ec2284a81f19f60ce8bd",
@@ -144,7 +144,7 @@
     "input/external/sb/middle-school/by-year/2024-sb-adopted.json": "9b0ce65674a9e3f95d8679e528489c69b3024cd8240ef23c7ce8d386441ccf80",
     "input/external/sb/middle-school/by-year/2025-sb-adopted.json": "dc4291a27d46dcbbf6e54d616215f65b23b7a25dd6aee313da82345ad150e4ad",
     "input/external/sb/middle-school/by-year/2026-sb-adopted.json": "8caaf624b7e0153435113cd31b5f68dfad842ead7d31bb95d1399f549ada2dbc",
-    "input/faq/prepared-qa.v1.yaml": "cb183d0f92b1fc67ca3486699a87aceaef64b601efddc10b0b5b4754938ee36a",
+    "input/faq/prepared-qa.v1.yaml": "286a11745a914b371c38294538bacb252cd235469ab5483d81f6c73cc46ae06a",
     "input/idaten-corpus/aragyoku/men_full_2012_2025.json": "686073a97d949b97da6a0320a5b61fc1281db61df3f6c553b20a73f7d5392e04",
     "input/idaten-corpus/aragyoku/quiz/荒玉駅伝○×クイズ.csv": "98ff94e5397ac63df6dd3b27de26805affb810b659ee0bbda33fe8d1acd6548a",
     "input/idaten-corpus/aragyoku/winners-by-year.md": "7d048472790b4503a92796c9391f1eb32ee54a0041395de9e1bbae2eef57196f",
