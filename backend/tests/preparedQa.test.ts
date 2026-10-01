@@ -14,7 +14,7 @@ describe("preparedQa catalog", () => {
 
   it("loads prepared catalog entries", () => {
     const entries = loadPreparedQa();
-    expect(entries.length).toBeGreaterThanOrEqual(22200);
+    expect(entries.length).toBeGreaterThanOrEqual(28000);
     expect(entries[0]?.id).toBeTruthy();
     expect(entries[0]?.answer.length).toBeGreaterThan(10);
   });
@@ -259,6 +259,28 @@ describe("matchPreparedAnswer", { timeout: 30_000 }, () => {
       "区間区間",
     );
   });
+
+  it(
+    "covers edge-5000 niche facts (who-rank / split-rank / historical race / pace)",
+    () => {
+      const cases: Array<[string, RegExp, RegExp]> = [
+        ["2025年荒玉男子の6位はどの学校？", /^edge5k-who-rank-2025-男子-6$/, /岱明|59:08/],
+        // 既存の leg2-best 定型が先に当たっても事実（山本悠斗 8:37）は同じ
+        ["2025年荒玉男子2区の区間賞は誰？", /leg2-(best|r1)|splitrank-2025-男子-leg2/, /山本悠斗|8:37/],
+        ["2023年岩根正太朗の熊本市陸上競技記録会の記録は？", /^race-2023-岩根正太朗-/, /4:34\.83/],
+        ["2025年荒玉女子岱明の平均ペースは？", /^edge5k-pace-2025-女子-rank7-岱明$/, /3:49\.6\/km|45:22/],
+        ["2018年荒玉男子の10位はどの学校？", /^edge5k-who-rank-2018-男子-10$/, /.+/],
+      ];
+      for (const [q, idRe, textRe] of cases) {
+        const hit = matchPreparedAnswer(q, { defaultYear: 2026 });
+        expect(hit, q).toBeTruthy();
+        expect(hit!.id, q).toMatch(idRe);
+        expect(hit!.text, q).toMatch(textRe);
+        expect(hit!.text, q).not.toMatch(/(?:input|out|docs)\//);
+      }
+    },
+    120_000,
+  );
 
   it(
     "routes formula/preview away from OCR dumps and hits per-leg distances",
