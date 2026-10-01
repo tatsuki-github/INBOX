@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated_at": "2026-09-30T12:58:44Z",
+  "generated_at": "2026-10-01T00:58:48Z",
   "nodes": [
     {
       "id": "corpus:analysis-ocr",
@@ -17518,8 +17518,8 @@
         "practice"
       ],
       "refs": [
-        "input/events.2025.yaml",
         "out/2025/practice_absentees.csv",
+        "input/events.2025.yaml",
         "out/analysis/notion_records_2026.json"
       ],
       "hint": "部員エンティティ"
@@ -17554,8 +17554,8 @@
         "practice"
       ],
       "refs": [
-        "input/events.2025.yaml",
         "out/2025/practice_absentees.csv",
+        "input/events.2025.yaml",
         "out/analysis/notion_records_2026.json"
       ],
       "hint": "部員エンティティ"
@@ -17590,8 +17590,8 @@
         "practice"
       ],
       "refs": [
-        "input/events.2025.yaml",
         "out/2025/practice_absentees.csv",
+        "input/events.2025.yaml",
         "out/analysis/notion_records_2026.json"
       ],
       "hint": "部員エンティティ"
@@ -17662,8 +17662,8 @@
         "practice"
       ],
       "refs": [
-        "input/events.2025.yaml",
         "out/2025/practice_absentees.csv",
+        "input/events.2025.yaml",
         "out/analysis/notion_records_2026.json"
       ],
       "hint": "部員エンティティ"
@@ -17698,8 +17698,8 @@
         "practice"
       ],
       "refs": [
-        "input/events.2025.yaml",
-        "out/2025/practice_absentees.csv"
+        "out/2025/practice_absentees.csv",
+        "input/events.2025.yaml"
       ],
       "hint": "部員エンティティ"
     },
@@ -17713,8 +17713,8 @@
         "practice"
       ],
       "refs": [
-        "input/events.2025.yaml",
         "out/2025/practice_absentees.csv",
+        "input/events.2025.yaml",
         "out/analysis/notion_records_2026.json"
       ],
       "hint": "部員エンティティ"
@@ -17749,8 +17749,8 @@
         "practice"
       ],
       "refs": [
-        "input/events.2025.yaml",
         "out/2025/practice_absentees.csv",
+        "input/events.2025.yaml",
         "out/analysis/notion_records_2026.json"
       ],
       "hint": "部員エンティティ"
@@ -17800,8 +17800,8 @@
         "practice"
       ],
       "refs": [
-        "input/events.2025.yaml",
         "out/2025/practice_absentees.csv",
+        "input/events.2025.yaml",
         "out/analysis/notion_records_2026.json"
       ],
       "hint": "部員エンティティ"
@@ -17836,9 +17836,9 @@
         "practice"
       ],
       "refs": [
-        "input/events.2026.yaml",
         "out/2026/practice_absentees.csv",
-        "out/analysis/notion_records_2026.json"
+        "out/analysis/notion_records_2026.json",
+        "input/events.2026.yaml"
       ],
       "hint": "部員エンティティ"
     },
@@ -17872,8 +17872,8 @@
         "practice"
       ],
       "refs": [
-        "input/events.2025.yaml",
         "out/2025/practice_absentees.csv",
+        "input/events.2025.yaml",
         "out/analysis/notion_records_2026.json"
       ],
       "hint": "部員エンティティ"
@@ -17908,9 +17908,9 @@
         "practice"
       ],
       "refs": [
-        "input/events.2025.yaml",
         "out/2025/practice_absentees.csv",
         "input/events.2026.yaml",
+        "input/events.2025.yaml",
         "out/2026/practice_absentees.csv",
         "out/analysis/notion_records_2026.json"
       ],
@@ -20714,7 +20714,7 @@
         "input/idaten-corpus/drive-text/大会/2025年度/1015_荒玉中体連駅伝（玉名荒尾）/男子の結果.JPG.md",
         "input/idaten-corpus/drive-text/大会/2025年度/1015_荒玉中体連駅伝（玉名荒尾）/男子オーダー.md"
       ],
-      "hint": "2025年度 大会「1015_荒玉中体連駅伝（玉名荒尾）」。日付キー MMDD=1015。ファイル: 参加計画1.pdf.md, 参加計画2.pdf.md, 女子の結果.JPG.md, 女子オーダー.md, 岱明の結果.md, 男子の結果.JPG.md, 男子オーダー.md。 内容: 女子 / 45:22 総合7位（昨年は45:06の6位、昨年の6位相等、2位とは1分37秒、3位とは58秒差） / 1区　村上咲稀2　7位通過　11:02  区間7位 / 2区　増岡里俐1　4位通過　7:01   区間3位 / 3区　角田亜美1　8位通過　7:44   区間8位 "
+      "hint": "2025年度 大会「1015_荒玉中体連駅伝（玉名荒尾）」。日付キー MMDD=1015。ファイル: 参加計画1.pdf.md, 参加計画2.pdf.md, 女子の結果.JPG.md, 女子オーダー.md, 岱明の結果.md, 男子の結果.JPG.md, 男子オーダー.md。 内容: 女子 / 45:22 総合7位（2024年は45:06の6位、2024年の6位相等、2位とは1分37秒、3位とは58秒差） / 1区　村上咲稀2　7位通過　11:02  区間7位 / 2区　増岡里俐1　4位通過　7:01   区間3位 / 3区　角田亜美1　8位通過　7:44  "
     },
     {
       "id": "meet:2025年度:1118_熊本市中長距離選手権",
@@ -21105,7 +21105,38 @@
       "hint": "aragyoku_2024_2025_focus_teams.md と aragyoku-teams/岱明.md（2025男子6位・59:08）"
     },
     {
-      "id": "query:11:玉名付属中の荒玉駅伝2024と2025は？",
+      "id": "query:11:荒玉駅伝で岱明中とライバルになりそうな学校は？",
+      "type": "QueryHint",
+      "label": "荒玉駅伝で岱明中とライバルになりそうな学校は？",
+      "topics": [
+        "ekiden"
+      ],
+      "refs": [
+        "out/analysis/aragyoku_daiming_rivals.md",
+        "out/analysis/2026_men_1500m_pb_school_ranking.md",
+        "out/analysis/2026_women_800m_1500m_pb_school_ranking.md",
+        "out/analysis/aragyoku-teams/岱明.md",
+        "input/idaten-corpus/out-analysis",
+        "input/idaten-corpus/aragyoku"
+      ],
+      "hint": "aragyoku_daiming_rivals.md を正本（2025隣接順位＋2026トラック層）。男子=荒尾三・南関、女子=長洲・荒尾三"
+    },
+    {
+      "id": "query:12:郡市駅伝と荒玉駅伝は同じ？",
+      "type": "QueryHint",
+      "label": "郡市駅伝と荒玉駅伝は同じ？",
+      "topics": [
+        "ekiden"
+      ],
+      "refs": [
+        "out/analysis/aragyoku-overview.md",
+        "input/idaten-corpus/out-analysis",
+        "input/idaten-corpus/aragyoku"
+      ],
+      "hint": "同じ大会。通称 荒玉駅伝/荒玉中体連駅伝、正式寄り 玉名荒尾中体連駅伝、口語 郡市駅伝。正規化は aragyokuAliases.ts"
+    },
+    {
+      "id": "query:13:玉名付属中の荒玉駅伝2024と2025は？",
       "type": "QueryHint",
       "label": "玉名付属中の荒玉駅伝2024と2025は？",
       "topics": [
@@ -21120,7 +21151,7 @@
       "hint": "玉名付属=玉高附属。aragyoku_2024_2025_focus_teams.md と aragyoku-teams/玉高附属.md"
     },
     {
-      "id": "query:12:天水中の荒玉駅伝で区間新は誰？",
+      "id": "query:14:天水中の荒玉駅伝で区間新は誰？",
       "type": "QueryHint",
       "label": "天水中の荒玉駅伝で区間新は誰？",
       "topics": [
@@ -21135,7 +21166,7 @@
       "hint": "2025男子2区・山本悠斗 8:37（区間新）。正本は aragyoku_2024_2025_focus_teams.md"
     },
     {
-      "id": "query:13:有明中の荒玉駅伝2024-2025の分析は？",
+      "id": "query:15:有明中の荒玉駅伝2024-2025の分析は？",
       "type": "QueryHint",
       "label": "有明中の荒玉駅伝2024-2025の分析は？",
       "topics": [
@@ -21150,7 +21181,7 @@
       "hint": "aragyoku_2024_2025_focus_teams.md の有明節（男子11→12位、女子13→12位、2024男子1区区間新）"
     },
     {
-      "id": "query:14:荒玉駅伝の男子2区の大会区間記録は誰？",
+      "id": "query:16:荒玉駅伝の男子2区の大会区間記録は誰？",
       "type": "QueryHint",
       "label": "荒玉駅伝の男子2区の大会区間記録は誰？",
       "topics": [
@@ -21164,7 +21195,7 @@
       "hint": "out/analysis/aragyoku_meet_records.md を正本（ボード上部・meet_records）。当日区間新とは別"
     },
     {
-      "id": "query:15:2025年荒玉駅伝男子の総合大会記録は？",
+      "id": "query:17:2025年荒玉駅伝男子の総合大会記録は？",
       "type": "QueryHint",
       "label": "2025年荒玉駅伝男子の総合大会記録は？",
       "topics": [
@@ -21178,7 +21209,7 @@
       "hint": "aragyoku_meet_records.md の2025男子（ボード印刷値）。優勝タイムとは別概念の場合あり"
     },
     {
-      "id": "query:16:荒玉駅伝で2位までに入った学校と回数は？",
+      "id": "query:18:荒玉駅伝で2位までに入った学校と回数は？",
       "type": "QueryHint",
       "label": "荒玉駅伝で2位までに入った学校と回数は？",
       "topics": [
@@ -21193,7 +21224,7 @@
       "hint": "out/analysis/aragyoku_top2_finish_counts.md を正本として読む（男女合算・男女別）"
     },
     {
-      "id": "query:17:荒玉地区で3000mが一番速いのは？",
+      "id": "query:19:荒玉地区で3000mが一番速いのは？",
       "type": "QueryHint",
       "label": "荒玉地区で3000mが一番速いのは？",
       "topics": [
@@ -21206,34 +21237,6 @@
         "input/idaten-corpus/sb"
       ],
       "hint": "out/analysis/2026_aragyoku_men_3000m_sb_ranking.md の1位（隈部侑成）を返す"
-    },
-    {
-      "id": "query:18:今年の荒玉地区の男子1500mSBランキングトッ",
-      "type": "QueryHint",
-      "label": "今年の荒玉地区の男子1500mSBランキングトップ20は？",
-      "topics": [
-        "athlete_records",
-        "ekiden"
-      ],
-      "refs": [
-        "out/analysis/2026_aragyoku_men_1500m_sb_individual_top20.md",
-        "input/idaten-corpus/out-analysis",
-        "input/idaten-corpus/sb"
-      ],
-      "hint": "out/analysis/2026_aragyoku_men_1500m_sb_individual_top20.md を正本として返す"
-    },
-    {
-      "id": "query:19:ATRCの選手の全記録は？",
-      "type": "QueryHint",
-      "label": "ATRCの選手の全記録は？",
-      "topics": [
-        "athlete_records"
-      ],
-      "refs": [
-        "out/analysis/arato-tamana-teams/ATRC.md",
-        "input/idaten-corpus/out-analysis"
-      ],
-      "hint": "out/analysis/arato-tamana-teams/ATRC.md を優先（所属別全記録ダイジェスト）"
     },
     {
       "id": "query:1:欠席者は誰？",
@@ -21250,7 +21253,35 @@
       "hint": "practice_absentees.csv と events YAML の absentees"
     },
     {
-      "id": "query:20:高田麻那の記録は？",
+      "id": "query:20:今年の荒玉地区の男子1500mSBランキングトッ",
+      "type": "QueryHint",
+      "label": "今年の荒玉地区の男子1500mSBランキングトップ20は？",
+      "topics": [
+        "athlete_records",
+        "ekiden"
+      ],
+      "refs": [
+        "out/analysis/2026_aragyoku_men_1500m_sb_individual_top20.md",
+        "input/idaten-corpus/out-analysis",
+        "input/idaten-corpus/sb"
+      ],
+      "hint": "out/analysis/2026_aragyoku_men_1500m_sb_individual_top20.md を正本として返す"
+    },
+    {
+      "id": "query:21:ATRCの選手の全記録は？",
+      "type": "QueryHint",
+      "label": "ATRCの選手の全記録は？",
+      "topics": [
+        "athlete_records"
+      ],
+      "refs": [
+        "out/analysis/arato-tamana-teams/ATRC.md",
+        "input/idaten-corpus/out-analysis"
+      ],
+      "hint": "out/analysis/arato-tamana-teams/ATRC.md を優先（所属別全記録ダイジェスト）"
+    },
+    {
+      "id": "query:22:高田麻那の記録は？",
       "type": "QueryHint",
       "label": "高田麻那の記録は？",
       "topics": [
@@ -21264,7 +21295,7 @@
       "hint": "out/analysis/athletes/takada-mana.md と sb/SBデータベース.csv。高田麻由（岱明）と混同しない"
     },
     {
-      "id": "query:21:女子800mで岱明の上位3人平均は？",
+      "id": "query:23:女子800mで岱明の上位3人平均は？",
       "type": "QueryHint",
       "label": "女子800mで岱明の上位3人平均は？",
       "topics": [
@@ -21277,7 +21308,7 @@
       "hint": "2026_women_800m_1500m_pb_school_ranking.md の学校別上位3人平均（SB CSV より先）"
     },
     {
-      "id": "query:22:男子1500m学校別ランキングは？",
+      "id": "query:24:男子1500m学校別ランキングは？",
       "type": "QueryHint",
       "label": "男子1500m学校別ランキングは？",
       "topics": [
@@ -21290,7 +21321,7 @@
       "hint": "2026_men_1500m_pb_school_ranking.md の上位4人平均。個人SB行より学校別正本を優先"
     },
     {
-      "id": "query:23:2025年岱明男子の優勝との差は？",
+      "id": "query:25:2025年岱明男子の優勝との差は？",
       "type": "QueryHint",
       "label": "2025年岱明男子の優勝との差は？",
       "topics": [
@@ -21304,7 +21335,7 @@
       "hint": "aragyoku_2024_2025_focus_teams.md の優勝との差列。meet_records ボードではない"
     },
     {
-      "id": "query:24:菊水の荒玉駅伝の1区は誰？",
+      "id": "query:26:菊水の荒玉駅伝の1区は誰？",
       "type": "QueryHint",
       "label": "菊水の荒玉駅伝の1区は誰？",
       "topics": [
@@ -21318,7 +21349,7 @@
       "hint": "out/analysis/aragyoku-teams/菊水.md を正本（区間選手）。OCR 散発ヒットにしない"
     },
     {
-      "id": "query:25:選手は何区を走った？",
+      "id": "query:27:選手は何区を走った？",
       "type": "QueryHint",
       "label": "選手は何区を走った？",
       "topics": [
@@ -21333,7 +21364,7 @@
       "hint": "大会名なしの区間は荒玉チーム正本。スタートリストや通信陸上の出走表ではない"
     },
     {
-      "id": "query:26:〇〇中の荒玉駅伝の過去の順位は？",
+      "id": "query:28:〇〇中の荒玉駅伝の過去の順位は？",
       "type": "QueryHint",
       "label": "〇〇中の荒玉駅伝の過去の順位は？",
       "topics": [
@@ -21346,7 +21377,7 @@
       "hint": "out/analysis/aragyoku-teams/{チーム}.md。玉名付属=玉高附属。区間選手も含む"
     },
     {
-      "id": "query:27:金栗PROJECT所属選手の全記録",
+      "id": "query:29:金栗PROJECT所属選手の全記録",
       "type": "QueryHint",
       "label": "金栗PROJECT所属選手の全記録",
       "topics": [
@@ -21358,34 +21389,6 @@
         "input/idaten-corpus/out-analysis"
       ],
       "hint": "out/analysis/arato-tamana-teams/金栗PROJECT.md。駅伝開催要項フォルダは使わない"
-    },
-    {
-      "id": "query:28:南関中の所属選手の記録一覧",
-      "type": "QueryHint",
-      "label": "南関中の所属選手の記録一覧",
-      "topics": [
-        "athlete_records"
-      ],
-      "refs": [
-        "out/analysis/arato-tamana-teams/南関中.md",
-        "out/analysis/arato-tamana-teams/INDEX.md",
-        "input/idaten-corpus/out-analysis"
-      ],
-      "hint": "out/analysis/arato-tamana-teams/南関中.md の所属別全記録"
-    },
-    {
-      "id": "query:29:岱明のトラック1周は？",
-      "type": "QueryHint",
-      "label": "岱明のトラック1周は？",
-      "topics": [
-        "practice"
-      ],
-      "refs": [
-        "out/daiming-practice-menus-kpace.md",
-        "docs/data-model.md",
-        "input/idaten-corpus/practice"
-      ],
-      "hint": "practice/daiming-practice-menus-kpace.md と docs/data-model.md。1周=560m。LINE 会話は使わない"
     },
     {
       "id": "query:2:GZ / 閾値ペースは？",
@@ -21404,7 +21407,35 @@
       "hint": "Norwegian メモ + daniels_pace / VDOT 表"
     },
     {
-      "id": "query:30:去年の荒玉駅伝の優勝校は？",
+      "id": "query:30:南関中の所属選手の記録一覧",
+      "type": "QueryHint",
+      "label": "南関中の所属選手の記録一覧",
+      "topics": [
+        "athlete_records"
+      ],
+      "refs": [
+        "out/analysis/arato-tamana-teams/南関中.md",
+        "out/analysis/arato-tamana-teams/INDEX.md",
+        "input/idaten-corpus/out-analysis"
+      ],
+      "hint": "out/analysis/arato-tamana-teams/南関中.md の所属別全記録"
+    },
+    {
+      "id": "query:31:岱明のトラック1周は？",
+      "type": "QueryHint",
+      "label": "岱明のトラック1周は？",
+      "topics": [
+        "practice"
+      ],
+      "refs": [
+        "out/daiming-practice-menus-kpace.md",
+        "docs/data-model.md",
+        "input/idaten-corpus/practice"
+      ],
+      "hint": "practice/daiming-practice-menus-kpace.md と docs/data-model.md。1周=560m。LINE 会話は使わない"
+    },
+    {
+      "id": "query:32:去年の荒玉駅伝の優勝校は？",
       "type": "QueryHint",
       "label": "去年の荒玉駅伝の優勝校は？",
       "topics": [
@@ -21418,7 +21449,7 @@
       "hint": "相対年を西暦に展開し aragyoku/winners-by-year.md（優勝+準優勝）と transcripts/{year}-*.json の rank=1/2 を読む"
     },
     {
-      "id": "query:31:荒玉駅伝のコース動画は？",
+      "id": "query:33:荒玉駅伝のコース動画は？",
       "type": "QueryHint",
       "label": "荒玉駅伝のコース動画は？",
       "topics": [
@@ -21432,7 +21463,7 @@
       "hint": "aragyoku/course-videos.md の Google ドライブフォルダ URL を返す（確定回答）"
     },
     {
-      "id": "query:32:荒玉駅伝のコースの画像は？",
+      "id": "query:34:荒玉駅伝のコースの画像は？",
       "type": "QueryHint",
       "label": "荒玉駅伝のコースの画像は？",
       "topics": [
@@ -21447,7 +21478,23 @@
       "hint": "aragyoku/course-points.md の図解画像（Drive URL・ローカル PNG）を返す。LINE は ADR 058"
     },
     {
-      "id": "query:33:想定質問の定型回答は？",
+      "id": "query:35:荒玉駅伝の女子4区は何地点から？",
+      "type": "QueryHint",
+      "label": "荒玉駅伝の女子4区は何地点から？",
+      "topics": [
+        "ekiden"
+      ],
+      "refs": [
+        "input/idaten-corpus/aragyoku",
+        "input/aragyoku/course-points.json",
+        "input/aragyoku/course-points.md",
+        "input/faq/prepared-qa.v1.yaml",
+        "input/aragyoku/course-points/aragyoku-course-common-points.png"
+      ],
+      "hint": "course-points.json の男女各地点対応を正本。定型Q&A（course-leg-*）優先。例: 女子4区スタート=A地点、女子4→5区中継=C地点"
+    },
+    {
+      "id": "query:36:想定質問の定型回答は？",
       "type": "QueryHint",
       "label": "想定質問の定型回答は？",
       "topics": [
@@ -21461,7 +21508,7 @@
       "hint": "input/faq/prepared-qa.v1.yaml の定型回答を優先（ADR 059）。未ヒット時のみ RAG/LLM"
     },
     {
-      "id": "query:34:ジュニア駅伝の結果PDFは？",
+      "id": "query:37:ジュニア駅伝の結果PDFは？",
       "type": "QueryHint",
       "label": "ジュニア駅伝の結果PDFは？",
       "topics": [
@@ -21474,7 +21521,7 @@
       "hint": "prepared-qa の junior-2025-pdf / junior-2026-result。Drive PDF 最大4件と大会フォルダ"
     },
     {
-      "id": "query:35:2025年の荒玉駅伝の区間賞の名前と学年は？",
+      "id": "query:38:2025年の荒玉駅伝の区間賞の名前と学年は？",
       "type": "QueryHint",
       "label": "2025年の荒玉駅伝の区間賞の名前と学年は？",
       "topics": [
@@ -21488,7 +21535,7 @@
       "hint": "aragyoku_leg_awards.md の2025年男女セクション（区間賞＝split_rank1）。大会記録ボードとは別"
     },
     {
-      "id": "query:36:荒玉駅伝の区間賞は誰？",
+      "id": "query:39:荒玉駅伝の区間賞は誰？",
       "type": "QueryHint",
       "label": "荒玉駅伝の区間賞は誰？",
       "topics": [
@@ -21499,50 +21546,6 @@
         "input/idaten-corpus/out-analysis"
       ],
       "hint": "aragyoku_leg_awards.md を正本（当日区間賞・学年・所属）。meet_records の歴代区間記録とは別"
-    },
-    {
-      "id": "query:37:男子1位の平均ペースは？",
-      "type": "QueryHint",
-      "label": "男子1位の平均ペースは？",
-      "topics": [
-        "ekiden"
-      ],
-      "refs": [
-        "out/analysis/aragyoku_all_teams_average_pace.md",
-        "out/analysis/aragyoku_top6_historical_average_pace.md",
-        "docs/aragyoku-ekiden-distance-definitions.md",
-        "input/idaten-corpus/out-analysis"
-      ],
-      "hint": "aragyoku_all_teams_average_pace.md の順位別歴代平均ペース（男子）。距離定義で総合÷総距離"
-    },
-    {
-      "id": "query:38:荒玉駅伝の平均ペースは？",
-      "type": "QueryHint",
-      "label": "荒玉駅伝の平均ペースは？",
-      "topics": [
-        "ekiden"
-      ],
-      "refs": [
-        "out/analysis/aragyoku_all_teams_average_pace.md",
-        "out/analysis/aragyoku_top6_historical_average_pace.md",
-        "out/analysis/aragyoku-overview.md",
-        "input/idaten-corpus/out-analysis"
-      ],
-      "hint": "全チーム版 aragyoku_all_teams_average_pace.md を正本。上位6位要約は top6_historical_average_pace.md"
-    },
-    {
-      "id": "query:39:女子の荒玉駅伝の過去5年間の優勝校、準優勝校は？",
-      "type": "QueryHint",
-      "label": "女子の荒玉駅伝の過去5年間の優勝校、準優勝校は？",
-      "topics": [
-        "ekiden"
-      ],
-      "refs": [
-        "input/idaten-corpus/aragyoku",
-        "input/idaten-corpus/aragyoku/winners-by-year.md",
-        "out/analysis/aragyoku_top2_finish_counts.md"
-      ],
-      "hint": "winners-by-year.md の「女子・直近5年」表（優勝+準優勝）。回数集計の top2_finish_counts だけでは年度別準優勝が欠ける"
     },
     {
       "id": "query:3:選手の記録は？",
@@ -21560,7 +21563,51 @@
       "hint": "notion_records・荒尾玉名・sb/・analysis-ocr を見る"
     },
     {
-      "id": "query:40:荒玉駅伝の優勝校は？",
+      "id": "query:40:男子1位の平均ペースは？",
+      "type": "QueryHint",
+      "label": "男子1位の平均ペースは？",
+      "topics": [
+        "ekiden"
+      ],
+      "refs": [
+        "out/analysis/aragyoku_all_teams_average_pace.md",
+        "out/analysis/aragyoku_top6_historical_average_pace.md",
+        "docs/aragyoku-ekiden-distance-definitions.md",
+        "input/idaten-corpus/out-analysis"
+      ],
+      "hint": "aragyoku_all_teams_average_pace.md の順位別歴代平均ペース（男子）。距離定義で総合÷総距離"
+    },
+    {
+      "id": "query:41:荒玉駅伝の平均ペースは？",
+      "type": "QueryHint",
+      "label": "荒玉駅伝の平均ペースは？",
+      "topics": [
+        "ekiden"
+      ],
+      "refs": [
+        "out/analysis/aragyoku_all_teams_average_pace.md",
+        "out/analysis/aragyoku_top6_historical_average_pace.md",
+        "out/analysis/aragyoku-overview.md",
+        "input/idaten-corpus/out-analysis"
+      ],
+      "hint": "全チーム版 aragyoku_all_teams_average_pace.md を正本。上位6位要約は top6_historical_average_pace.md"
+    },
+    {
+      "id": "query:42:女子の荒玉駅伝の過去5年間の優勝校、準優勝校は？",
+      "type": "QueryHint",
+      "label": "女子の荒玉駅伝の過去5年間の優勝校、準優勝校は？",
+      "topics": [
+        "ekiden"
+      ],
+      "refs": [
+        "input/idaten-corpus/aragyoku",
+        "input/idaten-corpus/aragyoku/winners-by-year.md",
+        "out/analysis/aragyoku_top2_finish_counts.md"
+      ],
+      "hint": "winners-by-year.md の「女子・直近5年」表（優勝+準優勝）。回数集計の top2_finish_counts だけでは年度別準優勝が欠ける"
+    },
+    {
+      "id": "query:43:荒玉駅伝の優勝校は？",
       "type": "QueryHint",
       "label": "荒玉駅伝の優勝校は？",
       "topics": [
@@ -21574,7 +21621,7 @@
       "hint": "aragyoku/winners-by-year.md（年度別優勝・準優勝）と transcripts の teams[rank=1/2]、ekiden-ocr 該当年"
     },
     {
-      "id": "query:41:荒玉駅伝の準優勝校は？",
+      "id": "query:44:荒玉駅伝の準優勝校は？",
       "type": "QueryHint",
       "label": "荒玉駅伝の準優勝校は？",
       "topics": [
@@ -21587,7 +21634,7 @@
       "hint": "winners-by-year.md の準優勝校列（rank=2）。top2_finish_counts は回数集計のみで年度一覧には使わない"
     },
     {
-      "id": "query:42:荒玉駅伝の過去の優勝校を全て提示して",
+      "id": "query:45:荒玉駅伝の過去の優勝校を全て提示して",
       "type": "QueryHint",
       "label": "荒玉駅伝の過去の優勝校を全て提示して",
       "topics": [
@@ -21600,7 +21647,7 @@
       "hint": "「全て提示」系は winners-by-year.md 正本を全文寄りで渡す（OCR/focus 分析に散らさない）"
     },
     {
-      "id": "query:43:全チームの平均ペースを全て提示して",
+      "id": "query:46:全チームの平均ペースを全て提示して",
       "type": "QueryHint",
       "label": "全チームの平均ペースを全て提示して",
       "topics": [
@@ -21614,7 +21661,7 @@
       "hint": "aragyoku_all_teams_average_pace.md を文書順で網羅取得（BM25 散発ヒットにしない）"
     },
     {
-      "id": "query:44:荒玉駅伝の区間距離は？",
+      "id": "query:47:荒玉駅伝の区間距離は？",
       "type": "QueryHint",
       "label": "荒玉駅伝の区間距離は？",
       "topics": [
@@ -21628,7 +21675,7 @@
       "hint": "docs/aragyoku-ekiden-distance-definitions.md の年度別・男女別区間距離定義を優先する"
     },
     {
-      "id": "query:45:なごみ駅伝は？",
+      "id": "query:48:なごみ駅伝は？",
       "type": "QueryHint",
       "label": "なごみ駅伝は？",
       "topics": [
@@ -21644,7 +21691,7 @@
       "hint": "drive-text/大会/*/0920_*なごみ* または 0921_*なごみ* の開催要項・結果・区間オーダーを見る。2026年度は女子成績表.md / 男子成績表.md / 予実比較.md。2025年度は同名＋予実比較.md。ギャップ分析 HTML は out/analysis/nagomi_sb_gap_analysis.html。金栗駅伝・金栗記念は別大会。荒玉・aragyoku は使わない"
     },
     {
-      "id": "query:46:2026年のなごみ駅伝の結果は？",
+      "id": "query:49:2026年のなごみ駅伝の結果は？",
       "type": "QueryHint",
       "label": "2026年のなごみ駅伝の結果は？",
       "topics": [
@@ -21655,44 +21702,6 @@
         "input/idaten-corpus/out-analysis"
       ],
       "hint": "drive-text/大会/2026年度/0920_*なごみ*/女子成績表.md と 男子成績表.md を見る。予実比較.md / out/analysis/nagomi_sb_gap_analysis.html で SB 予想との差を見る。優勝は女子金栗PROJECT A（26:55）・男子NJAC（38:33）。岱明は女子A6位・男子A18位。"
-    },
-    {
-      "id": "query:47:なごみ駅伝の予想と実績の差は？",
-      "type": "QueryHint",
-      "label": "なごみ駅伝の予想と実績の差は？",
-      "topics": [
-        "ekiden"
-      ],
-      "refs": [
-        "input/idaten-corpus/out-analysis",
-        "input/idaten-corpus/drive-text",
-        "docs/adr/052-nagomi-sb-gap-analysis.md"
-      ],
-      "hint": "out/analysis/nagomi_sb_gap_analysis.html と各年度 予実比較.md を見る。差=実績−予想。5段階（大きく／少し上回った・妥当・少し／大きく下回った、ADR 052）。荒尾玉名関連は女子個人上位5・男子上位6と関連チーム表あり。"
-    },
-    {
-      "id": "query:48:2025年のなごみ駅伝の結果は？",
-      "type": "QueryHint",
-      "label": "2025年のなごみ駅伝の結果は？",
-      "topics": [
-        "ekiden"
-      ],
-      "refs": [
-        "input/idaten-corpus/drive-text"
-      ],
-      "hint": "drive-text/大会/2025年度/0921_*なごみ*/女子成績表.md と 男子成績表.md を見る。予実比較.md はレース前SB予想との差。"
-    },
-    {
-      "id": "query:49:なごみ駅伝の区間オーダーは？",
-      "type": "QueryHint",
-      "label": "なごみ駅伝の区間オーダーは？",
-      "topics": [
-        "ekiden"
-      ],
-      "refs": [
-        "input/idaten-corpus/drive-text"
-      ],
-      "hint": "drive-text/大会/2026年度/0920_*なごみ*/男子区間オーダーリスト.md と 女子区間オーダーリスト.md を優先。金栗駅伝・金栗記念は別大会。荒玉は使わない"
     },
     {
       "id": "query:4:選手のプロフィールやチーム構成は？",
@@ -21708,7 +21717,45 @@
       "hint": "2026年度の選手・チームプロフィールJSON。個人記録は選手名・所属を照合して結び付けた記録一覧を参照"
     },
     {
-      "id": "query:50:ジュニア駅伝の結果は？",
+      "id": "query:50:なごみ駅伝の予想と実績の差は？",
+      "type": "QueryHint",
+      "label": "なごみ駅伝の予想と実績の差は？",
+      "topics": [
+        "ekiden"
+      ],
+      "refs": [
+        "input/idaten-corpus/out-analysis",
+        "input/idaten-corpus/drive-text",
+        "docs/adr/052-nagomi-sb-gap-analysis.md"
+      ],
+      "hint": "out/analysis/nagomi_sb_gap_analysis.html と各年度 予実比較.md を見る。差=実績−予想。5段階（大きく／少し上回った・妥当・少し／大きく下回った、ADR 052）。荒尾玉名関連は女子個人上位5・男子上位6と関連チーム表あり。"
+    },
+    {
+      "id": "query:51:2025年のなごみ駅伝の結果は？",
+      "type": "QueryHint",
+      "label": "2025年のなごみ駅伝の結果は？",
+      "topics": [
+        "ekiden"
+      ],
+      "refs": [
+        "input/idaten-corpus/drive-text"
+      ],
+      "hint": "drive-text/大会/2025年度/0921_*なごみ*/女子成績表.md と 男子成績表.md を見る。予実比較.md はレース前SB予想との差。"
+    },
+    {
+      "id": "query:52:なごみ駅伝の区間オーダーは？",
+      "type": "QueryHint",
+      "label": "なごみ駅伝の区間オーダーは？",
+      "topics": [
+        "ekiden"
+      ],
+      "refs": [
+        "input/idaten-corpus/drive-text"
+      ],
+      "hint": "drive-text/大会/2026年度/0920_*なごみ*/男子区間オーダーリスト.md と 女子区間オーダーリスト.md を優先。金栗駅伝・金栗記念は別大会。荒玉は使わない"
+    },
+    {
+      "id": "query:53:ジュニア駅伝の結果は？",
       "type": "QueryHint",
       "label": "ジュニア駅伝の結果は？",
       "topics": [
@@ -21721,7 +21768,7 @@
       "hint": "drive-text/大会/*/*ジュニア駅伝*/岱明の結果.md および 結果_*.pdf.md を見る。荒玉・aragyoku・ekiden-ocr は別大会なので選ばない"
     },
     {
-      "id": "query:51:去年のジュニア駅伝の岱明の結果は？",
+      "id": "query:54:去年のジュニア駅伝の岱明の結果は？",
       "type": "QueryHint",
       "label": "去年のジュニア駅伝の岱明の結果は？",
       "topics": [
@@ -21734,7 +21781,7 @@
       "hint": "相対年を西暦に展開し drive-text/大会/{year}年度/*ジュニア*/岱明の結果.md を優先。荒玉優勝校・transcripts は使わない"
     },
     {
-      "id": "query:52:部員名簿は？",
+      "id": "query:55:部員名簿は？",
       "type": "QueryHint",
       "label": "部員名簿は？",
       "topics": [
@@ -21750,7 +21797,7 @@
       "hint": "Notion いだてん岱明生徒 DB と Drive 名簿 CSV（コーパス notion-db/いだてん岱明生徒）"
     },
     {
-      "id": "query:53:中学生SBは？",
+      "id": "query:56:中学生SBは？",
       "type": "QueryHint",
       "label": "中学生SBは？",
       "topics": [
@@ -21765,7 +21812,7 @@
       "hint": "コーパス sb/ と input/external/sb/middle-school/ を見る"
     },
     {
-      "id": "query:54:開催要項は？",
+      "id": "query:57:開催要項は？",
       "type": "QueryHint",
       "label": "開催要項は？",
       "topics": [
@@ -21777,7 +21824,7 @@
       "hint": "drive-text/大会/ 各大会フォルダの開催要項.md を見る（大会名でフォルダを特定）"
     },
     {
-      "id": "query:55:ケガ・障害は？",
+      "id": "query:58:ケガ・障害は？",
       "type": "QueryHint",
       "label": "ケガ・障害は？",
       "topics": [
@@ -21791,7 +21838,7 @@
       "hint": "injury トピックと Notion 怪我について・RRI メモ"
     },
     {
-      "id": "query:56:オーダー・区間は？",
+      "id": "query:59:オーダー・区間は？",
       "type": "QueryHint",
       "label": "オーダー・区間は？",
       "topics": [
@@ -21808,7 +21855,21 @@
       "hint": "荒玉の区間・オーダーなら荒玉戦略 Notion・分析 OCR・歴代 OCR。なごみなら該大会フォルダの区間オーダーリスト（金栗駅伝は別）。ジュニアは該大会フォルダ"
     },
     {
-      "id": "query:57:銀マット・合同練習・保護者連絡は？",
+      "id": "query:5:今日の予定は？",
+      "type": "QueryHint",
+      "label": "今日の予定は？",
+      "topics": [
+        "calendar"
+      ],
+      "refs": [
+        "input/events.2026.yaml",
+        "calendar.md",
+        "input/idaten-corpus/calendar"
+      ],
+      "hint": "events YAML / events.json / calendar.md / calendar/events.daiming.yaml"
+    },
+    {
+      "id": "query:60:銀マット・合同練習・保護者連絡は？",
       "type": "QueryHint",
       "label": "銀マット・合同練習・保護者連絡は？",
       "topics": [
@@ -21824,7 +21885,7 @@
       "hint": "out/analysis/line-chats（parents/staff）を優先。カレンダーに無い一次連絡が多い"
     },
     {
-      "id": "query:58:有田先輩の練習・補強の考え方は？",
+      "id": "query:61:有田先輩の練習・補強の考え方は？",
       "type": "QueryHint",
       "label": "有田先輩の練習・補強の考え方は？",
       "topics": [
@@ -21839,7 +21900,7 @@
       "hint": "out/analysis/line-chats/arita-taisho.md（分割走・補強・厚底・荒玉目安・合同練習）"
     },
     {
-      "id": "query:59:玉名の天気データはどう更新する？",
+      "id": "query:62:玉名の天気データはどう更新する？",
       "type": "QueryHint",
       "label": "玉名の天気データはどう更新する？",
       "topics": [
@@ -21851,20 +21912,6 @@
         "input/idaten-corpus/repo-docs"
       ],
       "hint": "docs/tamana-weather.md（Open-Meteo・tamana-forecast・更新間隔）"
-    },
-    {
-      "id": "query:5:今日の予定は？",
-      "type": "QueryHint",
-      "label": "今日の予定は？",
-      "topics": [
-        "calendar"
-      ],
-      "refs": [
-        "input/events.2026.yaml",
-        "calendar.md",
-        "input/idaten-corpus/calendar"
-      ],
-      "hint": "events YAML / events.json / calendar.md / calendar/events.daiming.yaml"
     },
     {
       "id": "query:6:〇月〇日の予定は？",
@@ -24600,7 +24647,7 @@
       "refs": [
         "out/analysis/aragyoku-overview.md"
       ],
-      "hint": "荒玉駅伝（荒玉中体連駅伝）概要 / 荒玉駅伝は、玉名・荒尾地区の中体連駅伝（通称: 荒玉駅伝 / 荒玉中体連駅伝）である。 / 男子は6区間、女子は5区間。コース距離は年度によって変わる（特に男子は2024年に再編）。 / このドキュメントの使い方（Q&A） / - 「区間距離は？」「○区を△分でいくとペースは？」→ **この概要を優先**して答える。 / - 年度が無い質問の男子距離は、**現行。荒玉駅伝概要（区間距離・使い方・現行/旧コース）"
+      "hint": "荒玉駅伝（荒玉中体連駅伝）概要 / 荒玉駅伝は、玉名・荒尾地区の中体連駅伝である。 / 呼び方の揺れ: **荒玉駅伝** / **荒玉中体連駅伝** / **玉名荒尾中体連駅伝** / 口語の **郡市駅伝**。 / いずれも同じ大会を指す（質問側の正規化は `backend/src/domain/aragyokuAliases.ts`）。 / 男子は6区間、女子は5区間。コース距離は年度によって。荒玉駅伝概要（呼び方: 荒玉中体連/郡市/玉名荒尾中体連・区間距離・現行/旧コース）"
     },
     {
       "id": "source:out/analysis/aragyoku-teams/INDEX.md",
@@ -24782,7 +24829,7 @@
       "refs": [
         "out/analysis/aragyoku-teams/荒尾三.md"
       ],
-      "hint": "荒玉駅伝チーム別歴代（区間選手・順位）。荒尾三 荒玉駅伝 歴代結果 / 玉名荒尾中体連駅伝（荒玉駅伝）の構造化 transcripts から、チーム単位で全年の結果を整理。 / 2025年 男子 / - 順位: **5位** / - 総合: **58:58** / | 区 | 選手 | 学年 | 区間 | 累計 | / |---:|---|---:|---:|---:| / | 1 | 江口大尊 | 3 | 9:18 | 9:18 | "
+      "hint": "別名: 荒尾第三、荒尾第三中、荒尾三中、荒尾3中。荒玉駅伝チーム別歴代（区間選手・順位）。荒尾三 荒玉駅伝 歴代結果 / 玉名荒尾中体連駅伝（荒玉駅伝）の構造化 transcripts から、チーム単位で全年の結果を整理。 / 2025年 男子 / - 順位: **5位** / - 総合: **58:58** / | 区 | 選手 | 学年 | 区間 | 累計 | / |---:|---|---:|---:|---:| / | 1 | 江口大尊 | 3 | 9:18 | 9:18 | "
     },
     {
       "id": "source:out/analysis/aragyoku-teams/荒尾四.md",
@@ -24795,7 +24842,7 @@
       "refs": [
         "out/analysis/aragyoku-teams/荒尾四.md"
       ],
-      "hint": "荒玉駅伝チーム別歴代（区間選手・順位）。荒尾四 荒玉駅伝 歴代結果 / 玉名荒尾中体連駅伝（荒玉駅伝）の構造化 transcripts から、チーム単位で全年の結果を整理。 / 2025年 男子 / - 順位: **10位** / - 総合: **61:15** / | 区 | 選手 | 学年 | 区間 | 累計 | / |---:|---|---:|---:|---:| / | 1 | 松村颯汰 | 3 | 9:58 | 9:58 |"
+      "hint": "別名: 荒尾第四、荒尾第四中、荒尾四中、荒尾4中。荒玉駅伝チーム別歴代（区間選手・順位）。荒尾四 荒玉駅伝 歴代結果 / 玉名荒尾中体連駅伝（荒玉駅伝）の構造化 transcripts から、チーム単位で全年の結果を整理。 / 2025年 男子 / - 順位: **10位** / - 総合: **61:15** / | 区 | 選手 | 学年 | 区間 | 累計 | / |---:|---|---:|---:|---:| / | 1 | 松村颯汰 | 3 | 9:58 | 9:58 |"
     },
     {
       "id": "source:out/analysis/aragyoku-teams/荒尾海陽.md",
@@ -24808,7 +24855,7 @@
       "refs": [
         "out/analysis/aragyoku-teams/荒尾海陽.md"
       ],
-      "hint": "荒玉駅伝チーム別歴代（区間選手・順位）。荒尾海陽 荒玉駅伝 歴代結果 / 玉名荒尾中体連駅伝（荒玉駅伝）の構造化 transcripts から、チーム単位で全年の結果を整理。 / 2025年 男子 / - 順位: **11位** / - 総合: **61:15** / | 区 | 選手 | 学年 | 区間 | 累計 | / |---:|---|---:|---:|---:| / | 1 | 上田慶太郎 | 2 | 9:41 | 9:41"
+      "hint": "別名: 荒尾海陽中。荒玉駅伝チーム別歴代（区間選手・順位）。荒尾海陽 荒玉駅伝 歴代結果 / 玉名荒尾中体連駅伝（荒玉駅伝）の構造化 transcripts から、チーム単位で全年の結果を整理。 / 2025年 男子 / - 順位: **11位** / - 総合: **61:15** / | 区 | 選手 | 学年 | 区間 | 累計 | / |---:|---|---:|---:|---:| / | 1 | 上田慶太郎 | 2 | 9:41 | 9:41"
     },
     {
       "id": "source:out/analysis/aragyoku-teams/菊水.md",
@@ -25070,6 +25117,19 @@
         "out/analysis/aragyoku_all_teams_average_pace.md"
       ],
       "hint": "荒玉駅伝：全チーム・年度別の平均ペース / 各年度・男女の**全出場チーム**について、総合タイム ÷ 当年コース総距離で平均ペース（分:秒/km）を算出した正本。 / 距離定義は [`docs/aragyoku-ekiden-distance-definitions.md`](../../docs/aragyoku-ekiden-distance-definitions.md) に従う。 / -。荒玉全チーム・全年度の平均ペース（順位別歴代＋年度別全校）"
+    },
+    {
+      "id": "source:out/analysis/aragyoku_daiming_rivals.md",
+      "type": "Source",
+      "label": "aragyoku_daiming_rivals.md",
+      "topics": [
+        "analysis",
+        "ekiden"
+      ],
+      "refs": [
+        "out/analysis/aragyoku_daiming_rivals.md"
+      ],
+      "hint": "荒玉駅伝：岱明中のライバル校候補 / 「荒玉駅伝で岱明中とライバルになりそうな学校は？」への正本メモ。 / 確定の対戦表ではなく、**直近大会の隣接順位**と**今年度トラック層（学校別平均）**から近い学校を挙げる。 / このドキュメントの使い方（Q&A） / - 「岱明のライバルは？」「競合校は？」「誰とタイムが近い？」→ **この文書を優先**。 / - 順位・総合の正本: `input/a。荒玉：岱明中のライバル校候補（2025隣接順位＋2026トラック層）"
     },
     {
       "id": "source:out/analysis/aragyoku_leg_awards.md",
@@ -25348,7 +25408,7 @@
       "refs": [
         "out/analysis/arato-tamana-teams/荒尾三中.md"
       ],
-      "hint": "荒尾玉名の所属別トラック全記録。種目: 800m / 1500m / 3000m。年度別の選手記録・自己ベスト確認。荒尾三中 記録一覧（荒尾玉名） / 荒尾・玉名地区の中学生トラック記録を所属（チーム）単位でまとめたもの。 / 出典: Notion 中学生記録 DB / `notion_records_2026.json`。 / 2024年度 / 件数: 33 / 800m / | 性別 | 学年 | 選手 | 記録 | 日付 | 大会/URL | / |---|---:|---|---:|---|---| /"
+      "hint": "別名: 荒尾三、荒尾第三、荒尾第三中。荒尾玉名の所属別トラック全記録。種目: 800m / 1500m / 3000m。年度別の選手記録・自己ベスト確認。荒尾三中 記録一覧（荒尾玉名） / 荒尾・玉名地区の中学生トラック記録を所属（チーム）単位でまとめたもの。 / 出典: Notion 中学生記録 DB / `notion_records_2026.json`。 / 2024年度 / 件数: 33 / 800m / | 性別 | 学年 | 選手 | 記録 | 日付 | 大会/URL | / |---|---:|---|---:|---|---| /"
     },
     {
       "id": "source:out/analysis/arato-tamana-teams/荒尾三中_SB.md",
@@ -25384,7 +25444,7 @@
       "refs": [
         "out/analysis/arato-tamana-teams/荒尾第四中.md"
       ],
-      "hint": "荒尾玉名の所属別トラック全記録。種目: 800m / 1500m / 3000m。年度別の選手記録・自己ベスト確認。荒尾第四中 記録一覧（荒尾玉名） / 荒尾・玉名地区の中学生トラック記録を所属（チーム）単位でまとめたもの。 / 出典: Notion 中学生記録 DB / `notion_records_2026.json`。 / 2024年度 / 件数: 83 / 800m / | 性別 | 学年 | 選手 | 記録 | 日付 | 大会/URL | / |---|---:|---|---:|---|---| "
+      "hint": "別名: 荒尾四、荒尾第四、荒尾四中。荒尾玉名の所属別トラック全記録。種目: 800m / 1500m / 3000m。年度別の選手記録・自己ベスト確認。荒尾第四中 記録一覧（荒尾玉名） / 荒尾・玉名地区の中学生トラック記録を所属（チーム）単位でまとめたもの。 / 出典: Notion 中学生記録 DB / `notion_records_2026.json`。 / 2024年度 / 件数: 83 / 800m / | 性別 | 学年 | 選手 | 記録 | 日付 | 大会/URL | / |---|---:|---|---:|---|---| "
     },
     {
       "id": "source:out/analysis/arato-tamana-teams/金栗PROJECT.md",
@@ -35197,208 +35257,223 @@
       "rel": "search_here"
     },
     {
-      "from": "query:11:玉名付属中の荒玉駅伝2024と2025は？",
+      "from": "query:11:荒玉駅伝で岱明中とライバルになりそうな学校は？",
       "to": "corpus:aragyoku",
       "rel": "search_here"
     },
     {
-      "from": "query:11:玉名付属中の荒玉駅伝2024と2025は？",
+      "from": "query:11:荒玉駅伝で岱明中とライバルになりそうな学校は？",
       "to": "corpus:out-analysis",
       "rel": "search_here"
     },
     {
-      "from": "query:11:玉名付属中の荒玉駅伝2024と2025は？",
+      "from": "query:11:荒玉駅伝で岱明中とライバルになりそうな学校は？",
+      "to": "source:out/analysis/2026_men_1500m_pb_school_ranking.md",
+      "rel": "documented_in"
+    },
+    {
+      "from": "query:11:荒玉駅伝で岱明中とライバルになりそうな学校は？",
+      "to": "source:out/analysis/2026_women_800m_1500m_pb_school_ranking.md",
+      "rel": "documented_in"
+    },
+    {
+      "from": "query:11:荒玉駅伝で岱明中とライバルになりそうな学校は？",
+      "to": "source:out/analysis/aragyoku-teams/岱明.md",
+      "rel": "documented_in"
+    },
+    {
+      "from": "query:11:荒玉駅伝で岱明中とライバルになりそうな学校は？",
+      "to": "source:out/analysis/aragyoku_daiming_rivals.md",
+      "rel": "documented_in"
+    },
+    {
+      "from": "query:11:荒玉駅伝で岱明中とライバルになりそうな学校は？",
+      "to": "topic:ekiden",
+      "rel": "search_here"
+    },
+    {
+      "from": "query:12:郡市駅伝と荒玉駅伝は同じ？",
+      "to": "corpus:aragyoku",
+      "rel": "search_here"
+    },
+    {
+      "from": "query:12:郡市駅伝と荒玉駅伝は同じ？",
+      "to": "corpus:out-analysis",
+      "rel": "search_here"
+    },
+    {
+      "from": "query:12:郡市駅伝と荒玉駅伝は同じ？",
+      "to": "source:out/analysis/aragyoku-overview.md",
+      "rel": "documented_in"
+    },
+    {
+      "from": "query:12:郡市駅伝と荒玉駅伝は同じ？",
+      "to": "topic:ekiden",
+      "rel": "search_here"
+    },
+    {
+      "from": "query:13:玉名付属中の荒玉駅伝2024と2025は？",
+      "to": "corpus:aragyoku",
+      "rel": "search_here"
+    },
+    {
+      "from": "query:13:玉名付属中の荒玉駅伝2024と2025は？",
+      "to": "corpus:out-analysis",
+      "rel": "search_here"
+    },
+    {
+      "from": "query:13:玉名付属中の荒玉駅伝2024と2025は？",
       "to": "source:out/analysis/aragyoku-teams/玉高附属.md",
       "rel": "documented_in"
     },
     {
-      "from": "query:11:玉名付属中の荒玉駅伝2024と2025は？",
+      "from": "query:13:玉名付属中の荒玉駅伝2024と2025は？",
       "to": "source:out/analysis/aragyoku_2024_2025_focus_teams.md",
       "rel": "documented_in"
     },
     {
-      "from": "query:11:玉名付属中の荒玉駅伝2024と2025は？",
+      "from": "query:13:玉名付属中の荒玉駅伝2024と2025は？",
       "to": "topic:ekiden",
       "rel": "search_here"
     },
     {
-      "from": "query:12:天水中の荒玉駅伝で区間新は誰？",
+      "from": "query:14:天水中の荒玉駅伝で区間新は誰？",
       "to": "corpus:aragyoku",
       "rel": "search_here"
     },
     {
-      "from": "query:12:天水中の荒玉駅伝で区間新は誰？",
+      "from": "query:14:天水中の荒玉駅伝で区間新は誰？",
       "to": "corpus:out-analysis",
       "rel": "search_here"
     },
     {
-      "from": "query:12:天水中の荒玉駅伝で区間新は誰？",
+      "from": "query:14:天水中の荒玉駅伝で区間新は誰？",
       "to": "source:out/analysis/aragyoku-teams/天水.md",
       "rel": "documented_in"
     },
     {
-      "from": "query:12:天水中の荒玉駅伝で区間新は誰？",
+      "from": "query:14:天水中の荒玉駅伝で区間新は誰？",
       "to": "source:out/analysis/aragyoku_2024_2025_focus_teams.md",
       "rel": "documented_in"
     },
     {
-      "from": "query:12:天水中の荒玉駅伝で区間新は誰？",
+      "from": "query:14:天水中の荒玉駅伝で区間新は誰？",
       "to": "topic:ekiden",
       "rel": "search_here"
     },
     {
-      "from": "query:13:有明中の荒玉駅伝2024-2025の分析は？",
+      "from": "query:15:有明中の荒玉駅伝2024-2025の分析は？",
       "to": "corpus:aragyoku",
       "rel": "search_here"
     },
     {
-      "from": "query:13:有明中の荒玉駅伝2024-2025の分析は？",
+      "from": "query:15:有明中の荒玉駅伝2024-2025の分析は？",
       "to": "corpus:out-analysis",
       "rel": "search_here"
     },
     {
-      "from": "query:13:有明中の荒玉駅伝2024-2025の分析は？",
+      "from": "query:15:有明中の荒玉駅伝2024-2025の分析は？",
       "to": "source:out/analysis/aragyoku-teams/有明.md",
       "rel": "documented_in"
     },
     {
-      "from": "query:13:有明中の荒玉駅伝2024-2025の分析は？",
+      "from": "query:15:有明中の荒玉駅伝2024-2025の分析は？",
       "to": "source:out/analysis/aragyoku_2024_2025_focus_teams.md",
       "rel": "documented_in"
     },
     {
-      "from": "query:13:有明中の荒玉駅伝2024-2025の分析は？",
+      "from": "query:15:有明中の荒玉駅伝2024-2025の分析は？",
       "to": "topic:ekiden",
       "rel": "search_here"
     },
     {
-      "from": "query:14:荒玉駅伝の男子2区の大会区間記録は誰？",
+      "from": "query:16:荒玉駅伝の男子2区の大会区間記録は誰？",
       "to": "corpus:aragyoku",
       "rel": "search_here"
     },
     {
-      "from": "query:14:荒玉駅伝の男子2区の大会区間記録は誰？",
+      "from": "query:16:荒玉駅伝の男子2区の大会区間記録は誰？",
       "to": "corpus:out-analysis",
       "rel": "search_here"
     },
     {
-      "from": "query:14:荒玉駅伝の男子2区の大会区間記録は誰？",
+      "from": "query:16:荒玉駅伝の男子2区の大会区間記録は誰？",
       "to": "source:out/analysis/aragyoku_meet_records.md",
       "rel": "documented_in"
     },
     {
-      "from": "query:14:荒玉駅伝の男子2区の大会区間記録は誰？",
+      "from": "query:16:荒玉駅伝の男子2区の大会区間記録は誰？",
       "to": "topic:ekiden",
       "rel": "search_here"
     },
     {
-      "from": "query:15:2025年荒玉駅伝男子の総合大会記録は？",
+      "from": "query:17:2025年荒玉駅伝男子の総合大会記録は？",
       "to": "corpus:aragyoku",
       "rel": "search_here"
     },
     {
-      "from": "query:15:2025年荒玉駅伝男子の総合大会記録は？",
+      "from": "query:17:2025年荒玉駅伝男子の総合大会記録は？",
       "to": "corpus:out-analysis",
       "rel": "search_here"
     },
     {
-      "from": "query:15:2025年荒玉駅伝男子の総合大会記録は？",
+      "from": "query:17:2025年荒玉駅伝男子の総合大会記録は？",
       "to": "source:out/analysis/aragyoku_meet_records.md",
       "rel": "documented_in"
     },
     {
-      "from": "query:15:2025年荒玉駅伝男子の総合大会記録は？",
+      "from": "query:17:2025年荒玉駅伝男子の総合大会記録は？",
       "to": "topic:ekiden",
       "rel": "search_here"
     },
     {
-      "from": "query:16:荒玉駅伝で2位までに入った学校と回数は？",
+      "from": "query:18:荒玉駅伝で2位までに入った学校と回数は？",
       "to": "corpus:aragyoku",
       "rel": "search_here"
     },
     {
-      "from": "query:16:荒玉駅伝で2位までに入った学校と回数は？",
+      "from": "query:18:荒玉駅伝で2位までに入った学校と回数は？",
       "to": "corpus:out-analysis",
       "rel": "search_here"
     },
     {
-      "from": "query:16:荒玉駅伝で2位までに入った学校と回数は？",
+      "from": "query:18:荒玉駅伝で2位までに入った学校と回数は？",
       "to": "source:input/idaten-corpus/aragyoku/winners-by-year.md",
       "rel": "documented_in"
     },
     {
-      "from": "query:16:荒玉駅伝で2位までに入った学校と回数は？",
+      "from": "query:18:荒玉駅伝で2位までに入った学校と回数は？",
       "to": "source:out/analysis/aragyoku_top2_finish_counts.md",
       "rel": "documented_in"
     },
     {
-      "from": "query:16:荒玉駅伝で2位までに入った学校と回数は？",
+      "from": "query:18:荒玉駅伝で2位までに入った学校と回数は？",
       "to": "topic:ekiden",
       "rel": "search_here"
     },
     {
-      "from": "query:17:荒玉地区で3000mが一番速いのは？",
+      "from": "query:19:荒玉地区で3000mが一番速いのは？",
       "to": "corpus:out-analysis",
       "rel": "search_here"
     },
     {
-      "from": "query:17:荒玉地区で3000mが一番速いのは？",
+      "from": "query:19:荒玉地区で3000mが一番速いのは？",
       "to": "corpus:sb",
       "rel": "search_here"
     },
     {
-      "from": "query:17:荒玉地区で3000mが一番速いのは？",
+      "from": "query:19:荒玉地区で3000mが一番速いのは？",
       "to": "source:out/analysis/2026_aragyoku_men_3000m_sb_ranking.md",
       "rel": "documented_in"
     },
     {
-      "from": "query:17:荒玉地区で3000mが一番速いのは？",
+      "from": "query:19:荒玉地区で3000mが一番速いのは？",
       "to": "topic:athlete_records",
       "rel": "search_here"
     },
     {
-      "from": "query:17:荒玉地区で3000mが一番速いのは？",
+      "from": "query:19:荒玉地区で3000mが一番速いのは？",
       "to": "topic:ekiden",
-      "rel": "search_here"
-    },
-    {
-      "from": "query:18:今年の荒玉地区の男子1500mSBランキングトッ",
-      "to": "corpus:out-analysis",
-      "rel": "search_here"
-    },
-    {
-      "from": "query:18:今年の荒玉地区の男子1500mSBランキングトッ",
-      "to": "corpus:sb",
-      "rel": "search_here"
-    },
-    {
-      "from": "query:18:今年の荒玉地区の男子1500mSBランキングトッ",
-      "to": "source:out/analysis/2026_aragyoku_men_1500m_sb_individual_top20.md",
-      "rel": "documented_in"
-    },
-    {
-      "from": "query:18:今年の荒玉地区の男子1500mSBランキングトッ",
-      "to": "topic:athlete_records",
-      "rel": "search_here"
-    },
-    {
-      "from": "query:18:今年の荒玉地区の男子1500mSBランキングトッ",
-      "to": "topic:ekiden",
-      "rel": "search_here"
-    },
-    {
-      "from": "query:19:ATRCの選手の全記録は？",
-      "to": "corpus:out-analysis",
-      "rel": "search_here"
-    },
-    {
-      "from": "query:19:ATRCの選手の全記録は？",
-      "to": "source:out/analysis/arato-tamana-teams/ATRC.md",
-      "rel": "documented_in"
-    },
-    {
-      "from": "query:19:ATRCの選手の全記録は？",
-      "to": "topic:athlete_records",
       "rel": "search_here"
     },
     {
@@ -35422,193 +35497,193 @@
       "rel": "search_here"
     },
     {
-      "from": "query:20:高田麻那の記録は？",
+      "from": "query:20:今年の荒玉地区の男子1500mSBランキングトッ",
       "to": "corpus:out-analysis",
       "rel": "search_here"
     },
     {
-      "from": "query:20:高田麻那の記録は？",
+      "from": "query:20:今年の荒玉地区の男子1500mSBランキングトッ",
       "to": "corpus:sb",
       "rel": "search_here"
     },
     {
-      "from": "query:20:高田麻那の記録は？",
+      "from": "query:20:今年の荒玉地区の男子1500mSBランキングトッ",
+      "to": "source:out/analysis/2026_aragyoku_men_1500m_sb_individual_top20.md",
+      "rel": "documented_in"
+    },
+    {
+      "from": "query:20:今年の荒玉地区の男子1500mSBランキングトッ",
+      "to": "topic:athlete_records",
+      "rel": "search_here"
+    },
+    {
+      "from": "query:20:今年の荒玉地区の男子1500mSBランキングトッ",
+      "to": "topic:ekiden",
+      "rel": "search_here"
+    },
+    {
+      "from": "query:21:ATRCの選手の全記録は？",
+      "to": "corpus:out-analysis",
+      "rel": "search_here"
+    },
+    {
+      "from": "query:21:ATRCの選手の全記録は？",
+      "to": "source:out/analysis/arato-tamana-teams/ATRC.md",
+      "rel": "documented_in"
+    },
+    {
+      "from": "query:21:ATRCの選手の全記録は？",
+      "to": "topic:athlete_records",
+      "rel": "search_here"
+    },
+    {
+      "from": "query:22:高田麻那の記録は？",
+      "to": "corpus:out-analysis",
+      "rel": "search_here"
+    },
+    {
+      "from": "query:22:高田麻那の記録は？",
+      "to": "corpus:sb",
+      "rel": "search_here"
+    },
+    {
+      "from": "query:22:高田麻那の記録は？",
       "to": "source:out/analysis/athletes/takada-mana.md",
       "rel": "documented_in"
     },
     {
-      "from": "query:20:高田麻那の記録は？",
+      "from": "query:22:高田麻那の記録は？",
       "to": "topic:athlete_records",
       "rel": "search_here"
     },
     {
-      "from": "query:21:女子800mで岱明の上位3人平均は？",
+      "from": "query:23:女子800mで岱明の上位3人平均は？",
       "to": "corpus:out-analysis",
       "rel": "search_here"
     },
     {
-      "from": "query:21:女子800mで岱明の上位3人平均は？",
+      "from": "query:23:女子800mで岱明の上位3人平均は？",
       "to": "source:out/analysis/2026_women_800m_1500m_pb_school_ranking.md",
       "rel": "documented_in"
     },
     {
-      "from": "query:21:女子800mで岱明の上位3人平均は？",
+      "from": "query:23:女子800mで岱明の上位3人平均は？",
       "to": "topic:athlete_records",
       "rel": "search_here"
     },
     {
-      "from": "query:22:男子1500m学校別ランキングは？",
+      "from": "query:24:男子1500m学校別ランキングは？",
       "to": "corpus:out-analysis",
       "rel": "search_here"
     },
     {
-      "from": "query:22:男子1500m学校別ランキングは？",
+      "from": "query:24:男子1500m学校別ランキングは？",
       "to": "source:out/analysis/2026_men_1500m_pb_school_ranking.md",
       "rel": "documented_in"
     },
     {
-      "from": "query:22:男子1500m学校別ランキングは？",
+      "from": "query:24:男子1500m学校別ランキングは？",
       "to": "topic:athlete_records",
       "rel": "search_here"
     },
     {
-      "from": "query:23:2025年岱明男子の優勝との差は？",
+      "from": "query:25:2025年岱明男子の優勝との差は？",
       "to": "corpus:out-analysis",
       "rel": "search_here"
     },
     {
-      "from": "query:23:2025年岱明男子の優勝との差は？",
+      "from": "query:25:2025年岱明男子の優勝との差は？",
       "to": "source:out/analysis/aragyoku-teams/岱明.md",
       "rel": "documented_in"
     },
     {
-      "from": "query:23:2025年岱明男子の優勝との差は？",
+      "from": "query:25:2025年岱明男子の優勝との差は？",
       "to": "source:out/analysis/aragyoku_2024_2025_focus_teams.md",
       "rel": "documented_in"
     },
     {
-      "from": "query:23:2025年岱明男子の優勝との差は？",
+      "from": "query:25:2025年岱明男子の優勝との差は？",
       "to": "topic:ekiden",
       "rel": "search_here"
     },
     {
-      "from": "query:24:菊水の荒玉駅伝の1区は誰？",
+      "from": "query:26:菊水の荒玉駅伝の1区は誰？",
       "to": "corpus:out-analysis",
       "rel": "search_here"
     },
     {
-      "from": "query:24:菊水の荒玉駅伝の1区は誰？",
+      "from": "query:26:菊水の荒玉駅伝の1区は誰？",
       "to": "source:out/analysis/aragyoku-teams/INDEX.md",
       "rel": "documented_in"
     },
     {
-      "from": "query:24:菊水の荒玉駅伝の1区は誰？",
+      "from": "query:26:菊水の荒玉駅伝の1区は誰？",
       "to": "source:out/analysis/aragyoku-teams/菊水.md",
       "rel": "documented_in"
     },
     {
-      "from": "query:24:菊水の荒玉駅伝の1区は誰？",
+      "from": "query:26:菊水の荒玉駅伝の1区は誰？",
       "to": "topic:ekiden",
       "rel": "search_here"
     },
     {
-      "from": "query:25:選手は何区を走った？",
+      "from": "query:27:選手は何区を走った？",
       "to": "corpus:aragyoku",
       "rel": "search_here"
     },
     {
-      "from": "query:25:選手は何区を走った？",
+      "from": "query:27:選手は何区を走った？",
       "to": "corpus:out-analysis",
       "rel": "search_here"
     },
     {
-      "from": "query:25:選手は何区を走った？",
+      "from": "query:27:選手は何区を走った？",
       "to": "source:out/analysis/aragyoku-teams/INDEX.md",
       "rel": "documented_in"
     },
     {
-      "from": "query:25:選手は何区を走った？",
+      "from": "query:27:選手は何区を走った？",
       "to": "source:out/analysis/aragyoku_2024_2025_focus_teams.md",
       "rel": "documented_in"
     },
     {
-      "from": "query:25:選手は何区を走った？",
+      "from": "query:27:選手は何区を走った？",
       "to": "topic:ekiden",
       "rel": "search_here"
     },
     {
-      "from": "query:26:〇〇中の荒玉駅伝の過去の順位は？",
+      "from": "query:28:〇〇中の荒玉駅伝の過去の順位は？",
       "to": "corpus:out-analysis",
       "rel": "search_here"
     },
     {
-      "from": "query:26:〇〇中の荒玉駅伝の過去の順位は？",
+      "from": "query:28:〇〇中の荒玉駅伝の過去の順位は？",
       "to": "source:out/analysis/aragyoku-teams/INDEX.md",
       "rel": "documented_in"
     },
     {
-      "from": "query:26:〇〇中の荒玉駅伝の過去の順位は？",
+      "from": "query:28:〇〇中の荒玉駅伝の過去の順位は？",
       "to": "topic:ekiden",
       "rel": "search_here"
     },
     {
-      "from": "query:27:金栗PROJECT所属選手の全記録",
+      "from": "query:29:金栗PROJECT所属選手の全記録",
       "to": "corpus:out-analysis",
       "rel": "search_here"
     },
     {
-      "from": "query:27:金栗PROJECT所属選手の全記録",
+      "from": "query:29:金栗PROJECT所属選手の全記録",
       "to": "source:out/analysis/arato-tamana-teams/INDEX.md",
       "rel": "documented_in"
     },
     {
-      "from": "query:27:金栗PROJECT所属選手の全記録",
+      "from": "query:29:金栗PROJECT所属選手の全記録",
       "to": "source:out/analysis/arato-tamana-teams/金栗PROJECT.md",
       "rel": "documented_in"
     },
     {
-      "from": "query:27:金栗PROJECT所属選手の全記録",
+      "from": "query:29:金栗PROJECT所属選手の全記録",
       "to": "topic:athlete_records",
-      "rel": "search_here"
-    },
-    {
-      "from": "query:28:南関中の所属選手の記録一覧",
-      "to": "corpus:out-analysis",
-      "rel": "search_here"
-    },
-    {
-      "from": "query:28:南関中の所属選手の記録一覧",
-      "to": "source:out/analysis/arato-tamana-teams/INDEX.md",
-      "rel": "documented_in"
-    },
-    {
-      "from": "query:28:南関中の所属選手の記録一覧",
-      "to": "source:out/analysis/arato-tamana-teams/南関中.md",
-      "rel": "documented_in"
-    },
-    {
-      "from": "query:28:南関中の所属選手の記録一覧",
-      "to": "topic:athlete_records",
-      "rel": "search_here"
-    },
-    {
-      "from": "query:29:岱明のトラック1周は？",
-      "to": "corpus:practice",
-      "rel": "search_here"
-    },
-    {
-      "from": "query:29:岱明のトラック1周は？",
-      "to": "source:docs/data-model.md",
-      "rel": "documented_in"
-    },
-    {
-      "from": "query:29:岱明のトラック1周は？",
-      "to": "source:out/daiming-practice-menus-kpace.md",
-      "rel": "documented_in"
-    },
-    {
-      "from": "query:29:岱明のトラック1周は？",
-      "to": "topic:practice",
       "rel": "search_here"
     },
     {
@@ -35642,207 +35717,207 @@
       "rel": "search_here"
     },
     {
-      "from": "query:30:去年の荒玉駅伝の優勝校は？",
+      "from": "query:30:南関中の所属選手の記録一覧",
+      "to": "corpus:out-analysis",
+      "rel": "search_here"
+    },
+    {
+      "from": "query:30:南関中の所属選手の記録一覧",
+      "to": "source:out/analysis/arato-tamana-teams/INDEX.md",
+      "rel": "documented_in"
+    },
+    {
+      "from": "query:30:南関中の所属選手の記録一覧",
+      "to": "source:out/analysis/arato-tamana-teams/南関中.md",
+      "rel": "documented_in"
+    },
+    {
+      "from": "query:30:南関中の所属選手の記録一覧",
+      "to": "topic:athlete_records",
+      "rel": "search_here"
+    },
+    {
+      "from": "query:31:岱明のトラック1周は？",
+      "to": "corpus:practice",
+      "rel": "search_here"
+    },
+    {
+      "from": "query:31:岱明のトラック1周は？",
+      "to": "source:docs/data-model.md",
+      "rel": "documented_in"
+    },
+    {
+      "from": "query:31:岱明のトラック1周は？",
+      "to": "source:out/daiming-practice-menus-kpace.md",
+      "rel": "documented_in"
+    },
+    {
+      "from": "query:31:岱明のトラック1周は？",
+      "to": "topic:practice",
+      "rel": "search_here"
+    },
+    {
+      "from": "query:32:去年の荒玉駅伝の優勝校は？",
       "to": "corpus:aragyoku",
       "rel": "search_here"
     },
     {
-      "from": "query:30:去年の荒玉駅伝の優勝校は？",
+      "from": "query:32:去年の荒玉駅伝の優勝校は？",
       "to": "source:input/idaten-corpus/aragyoku/winners-by-year.md",
       "rel": "documented_in"
     },
     {
-      "from": "query:30:去年の荒玉駅伝の優勝校は？",
+      "from": "query:32:去年の荒玉駅伝の優勝校は？",
       "to": "source:out/analysis/aragyoku-overview.md",
       "rel": "documented_in"
     },
     {
-      "from": "query:30:去年の荒玉駅伝の優勝校は？",
+      "from": "query:32:去年の荒玉駅伝の優勝校は？",
       "to": "topic:ekiden",
       "rel": "search_here"
     },
     {
-      "from": "query:31:荒玉駅伝のコース動画は？",
+      "from": "query:33:荒玉駅伝のコース動画は？",
       "to": "corpus:aragyoku",
       "rel": "search_here"
     },
     {
-      "from": "query:31:荒玉駅伝のコース動画は？",
+      "from": "query:33:荒玉駅伝のコース動画は？",
       "to": "source:input/aragyoku/course-videos.md",
       "rel": "documented_in"
     },
     {
-      "from": "query:31:荒玉駅伝のコース動画は？",
+      "from": "query:33:荒玉駅伝のコース動画は？",
       "to": "source:input/idaten-corpus/aragyoku/course-videos.md",
       "rel": "documented_in"
     },
     {
-      "from": "query:31:荒玉駅伝のコース動画は？",
+      "from": "query:33:荒玉駅伝のコース動画は？",
       "to": "topic:ekiden",
       "rel": "search_here"
     },
     {
-      "from": "query:32:荒玉駅伝のコースの画像は？",
+      "from": "query:34:荒玉駅伝のコースの画像は？",
       "to": "corpus:aragyoku",
       "rel": "search_here"
     },
     {
-      "from": "query:32:荒玉駅伝のコースの画像は？",
+      "from": "query:34:荒玉駅伝のコースの画像は？",
       "to": "media:ekiden:荒玉駅伝-男女コース共通ポイント-橋の上",
       "rel": "search_here"
     },
     {
-      "from": "query:32:荒玉駅伝のコースの画像は？",
+      "from": "query:34:荒玉駅伝のコースの画像は？",
       "to": "source:input/aragyoku/course-points.json",
       "rel": "documented_in"
     },
     {
-      "from": "query:32:荒玉駅伝のコースの画像は？",
+      "from": "query:34:荒玉駅伝のコースの画像は？",
       "to": "source:input/aragyoku/course-points.md",
       "rel": "documented_in"
     },
     {
-      "from": "query:32:荒玉駅伝のコースの画像は？",
+      "from": "query:34:荒玉駅伝のコースの画像は？",
       "to": "topic:ekiden",
       "rel": "search_here"
     },
     {
-      "from": "query:33:想定質問の定型回答は？",
+      "from": "query:35:荒玉駅伝の女子4区は何地点から？",
+      "to": "corpus:aragyoku",
+      "rel": "search_here"
+    },
+    {
+      "from": "query:35:荒玉駅伝の女子4区は何地点から？",
+      "to": "media:ekiden:荒玉駅伝-男女コース共通ポイント-橋の上",
+      "rel": "search_here"
+    },
+    {
+      "from": "query:35:荒玉駅伝の女子4区は何地点から？",
+      "to": "source:input/aragyoku/course-points.json",
+      "rel": "documented_in"
+    },
+    {
+      "from": "query:35:荒玉駅伝の女子4区は何地点から？",
+      "to": "source:input/aragyoku/course-points.md",
+      "rel": "documented_in"
+    },
+    {
+      "from": "query:35:荒玉駅伝の女子4区は何地点から？",
+      "to": "source:input/faq/prepared-qa.v1.yaml",
+      "rel": "documented_in"
+    },
+    {
+      "from": "query:35:荒玉駅伝の女子4区は何地点から？",
+      "to": "topic:ekiden",
+      "rel": "search_here"
+    },
+    {
+      "from": "query:36:想定質問の定型回答は？",
       "to": "source:docs/adr/059-prepared-qa-answers.md",
       "rel": "documented_in"
     },
     {
-      "from": "query:33:想定質問の定型回答は？",
+      "from": "query:36:想定質問の定型回答は？",
       "to": "source:input/faq/prepared-qa.v1.yaml",
       "rel": "documented_in"
     },
     {
-      "from": "query:33:想定質問の定型回答は？",
+      "from": "query:36:想定質問の定型回答は？",
       "to": "source:input/idaten-corpus/faq/prepared-qa.v1.yaml",
       "rel": "documented_in"
     },
     {
-      "from": "query:33:想定質問の定型回答は？",
+      "from": "query:36:想定質問の定型回答は？",
       "to": "topic:ekiden",
       "rel": "search_here"
     },
     {
-      "from": "query:34:ジュニア駅伝の結果PDFは？",
+      "from": "query:37:ジュニア駅伝の結果PDFは？",
       "to": "corpus:drive-text",
       "rel": "search_here"
     },
     {
-      "from": "query:34:ジュニア駅伝の結果PDFは？",
+      "from": "query:37:ジュニア駅伝の結果PDFは？",
       "to": "source:input/faq/prepared-qa.v1.yaml",
       "rel": "documented_in"
     },
     {
-      "from": "query:34:ジュニア駅伝の結果PDFは？",
+      "from": "query:37:ジュニア駅伝の結果PDFは？",
       "to": "topic:ekiden",
       "rel": "search_here"
     },
     {
-      "from": "query:35:2025年の荒玉駅伝の区間賞の名前と学年は？",
+      "from": "query:38:2025年の荒玉駅伝の区間賞の名前と学年は？",
       "to": "corpus:aragyoku",
       "rel": "search_here"
     },
     {
-      "from": "query:35:2025年の荒玉駅伝の区間賞の名前と学年は？",
+      "from": "query:38:2025年の荒玉駅伝の区間賞の名前と学年は？",
       "to": "corpus:out-analysis",
       "rel": "search_here"
     },
     {
-      "from": "query:35:2025年の荒玉駅伝の区間賞の名前と学年は？",
+      "from": "query:38:2025年の荒玉駅伝の区間賞の名前と学年は？",
       "to": "source:out/analysis/aragyoku_leg_awards.md",
       "rel": "documented_in"
     },
     {
-      "from": "query:35:2025年の荒玉駅伝の区間賞の名前と学年は？",
+      "from": "query:38:2025年の荒玉駅伝の区間賞の名前と学年は？",
       "to": "topic:ekiden",
       "rel": "search_here"
     },
     {
-      "from": "query:36:荒玉駅伝の区間賞は誰？",
+      "from": "query:39:荒玉駅伝の区間賞は誰？",
       "to": "corpus:out-analysis",
       "rel": "search_here"
     },
     {
-      "from": "query:36:荒玉駅伝の区間賞は誰？",
+      "from": "query:39:荒玉駅伝の区間賞は誰？",
       "to": "source:out/analysis/aragyoku_leg_awards.md",
       "rel": "documented_in"
     },
     {
-      "from": "query:36:荒玉駅伝の区間賞は誰？",
-      "to": "topic:ekiden",
-      "rel": "search_here"
-    },
-    {
-      "from": "query:37:男子1位の平均ペースは？",
-      "to": "corpus:out-analysis",
-      "rel": "search_here"
-    },
-    {
-      "from": "query:37:男子1位の平均ペースは？",
-      "to": "source:docs/aragyoku-ekiden-distance-definitions.md",
-      "rel": "documented_in"
-    },
-    {
-      "from": "query:37:男子1位の平均ペースは？",
-      "to": "source:out/analysis/aragyoku_all_teams_average_pace.md",
-      "rel": "documented_in"
-    },
-    {
-      "from": "query:37:男子1位の平均ペースは？",
-      "to": "source:out/analysis/aragyoku_top6_historical_average_pace.md",
-      "rel": "documented_in"
-    },
-    {
-      "from": "query:37:男子1位の平均ペースは？",
-      "to": "topic:ekiden",
-      "rel": "search_here"
-    },
-    {
-      "from": "query:38:荒玉駅伝の平均ペースは？",
-      "to": "corpus:out-analysis",
-      "rel": "search_here"
-    },
-    {
-      "from": "query:38:荒玉駅伝の平均ペースは？",
-      "to": "source:out/analysis/aragyoku-overview.md",
-      "rel": "documented_in"
-    },
-    {
-      "from": "query:38:荒玉駅伝の平均ペースは？",
-      "to": "source:out/analysis/aragyoku_all_teams_average_pace.md",
-      "rel": "documented_in"
-    },
-    {
-      "from": "query:38:荒玉駅伝の平均ペースは？",
-      "to": "source:out/analysis/aragyoku_top6_historical_average_pace.md",
-      "rel": "documented_in"
-    },
-    {
-      "from": "query:38:荒玉駅伝の平均ペースは？",
-      "to": "topic:ekiden",
-      "rel": "search_here"
-    },
-    {
-      "from": "query:39:女子の荒玉駅伝の過去5年間の優勝校、準優勝校は？",
-      "to": "corpus:aragyoku",
-      "rel": "search_here"
-    },
-    {
-      "from": "query:39:女子の荒玉駅伝の過去5年間の優勝校、準優勝校は？",
-      "to": "source:input/idaten-corpus/aragyoku/winners-by-year.md",
-      "rel": "documented_in"
-    },
-    {
-      "from": "query:39:女子の荒玉駅伝の過去5年間の優勝校、準優勝校は？",
-      "to": "source:out/analysis/aragyoku_top2_finish_counts.md",
-      "rel": "documented_in"
-    },
-    {
-      "from": "query:39:女子の荒玉駅伝の過去5年間の優勝校、準優勝校は？",
+      "from": "query:39:荒玉駅伝の区間賞は誰？",
       "to": "topic:ekiden",
       "rel": "search_here"
     },
@@ -35872,177 +35947,207 @@
       "rel": "search_here"
     },
     {
-      "from": "query:40:荒玉駅伝の優勝校は？",
-      "to": "corpus:aragyoku",
-      "rel": "search_here"
-    },
-    {
-      "from": "query:40:荒玉駅伝の優勝校は？",
-      "to": "source:input/idaten-corpus/aragyoku/winners-by-year.md",
-      "rel": "documented_in"
-    },
-    {
-      "from": "query:40:荒玉駅伝の優勝校は？",
-      "to": "source:out/analysis/aragyoku-overview.md",
-      "rel": "documented_in"
-    },
-    {
-      "from": "query:40:荒玉駅伝の優勝校は？",
-      "to": "topic:ekiden",
-      "rel": "search_here"
-    },
-    {
-      "from": "query:41:荒玉駅伝の準優勝校は？",
-      "to": "corpus:aragyoku",
-      "rel": "search_here"
-    },
-    {
-      "from": "query:41:荒玉駅伝の準優勝校は？",
-      "to": "source:input/idaten-corpus/aragyoku/winners-by-year.md",
-      "rel": "documented_in"
-    },
-    {
-      "from": "query:41:荒玉駅伝の準優勝校は？",
-      "to": "topic:ekiden",
-      "rel": "search_here"
-    },
-    {
-      "from": "query:42:荒玉駅伝の過去の優勝校を全て提示して",
-      "to": "corpus:aragyoku",
-      "rel": "search_here"
-    },
-    {
-      "from": "query:42:荒玉駅伝の過去の優勝校を全て提示して",
-      "to": "source:input/idaten-corpus/aragyoku/winners-by-year.md",
-      "rel": "documented_in"
-    },
-    {
-      "from": "query:42:荒玉駅伝の過去の優勝校を全て提示して",
-      "to": "topic:ekiden",
-      "rel": "search_here"
-    },
-    {
-      "from": "query:43:全チームの平均ペースを全て提示して",
+      "from": "query:40:男子1位の平均ペースは？",
       "to": "corpus:out-analysis",
       "rel": "search_here"
     },
     {
-      "from": "query:43:全チームの平均ペースを全て提示して",
+      "from": "query:40:男子1位の平均ペースは？",
       "to": "source:docs/aragyoku-ekiden-distance-definitions.md",
       "rel": "documented_in"
     },
     {
-      "from": "query:43:全チームの平均ペースを全て提示して",
+      "from": "query:40:男子1位の平均ペースは？",
       "to": "source:out/analysis/aragyoku_all_teams_average_pace.md",
       "rel": "documented_in"
     },
     {
-      "from": "query:43:全チームの平均ペースを全て提示して",
+      "from": "query:40:男子1位の平均ペースは？",
+      "to": "source:out/analysis/aragyoku_top6_historical_average_pace.md",
+      "rel": "documented_in"
+    },
+    {
+      "from": "query:40:男子1位の平均ペースは？",
       "to": "topic:ekiden",
       "rel": "search_here"
     },
     {
-      "from": "query:44:荒玉駅伝の区間距離は？",
-      "to": "corpus:aragyoku",
+      "from": "query:41:荒玉駅伝の平均ペースは？",
+      "to": "corpus:out-analysis",
       "rel": "search_here"
     },
     {
-      "from": "query:44:荒玉駅伝の区間距離は？",
-      "to": "source:docs/aragyoku-ekiden-distance-definitions.md",
-      "rel": "documented_in"
-    },
-    {
-      "from": "query:44:荒玉駅伝の区間距離は？",
+      "from": "query:41:荒玉駅伝の平均ペースは？",
       "to": "source:out/analysis/aragyoku-overview.md",
       "rel": "documented_in"
     },
     {
-      "from": "query:44:荒玉駅伝の区間距離は？",
+      "from": "query:41:荒玉駅伝の平均ペースは？",
+      "to": "source:out/analysis/aragyoku_all_teams_average_pace.md",
+      "rel": "documented_in"
+    },
+    {
+      "from": "query:41:荒玉駅伝の平均ペースは？",
+      "to": "source:out/analysis/aragyoku_top6_historical_average_pace.md",
+      "rel": "documented_in"
+    },
+    {
+      "from": "query:41:荒玉駅伝の平均ペースは？",
       "to": "topic:ekiden",
       "rel": "search_here"
     },
     {
-      "from": "query:45:なごみ駅伝は？",
+      "from": "query:42:女子の荒玉駅伝の過去5年間の優勝校、準優勝校は？",
+      "to": "corpus:aragyoku",
+      "rel": "search_here"
+    },
+    {
+      "from": "query:42:女子の荒玉駅伝の過去5年間の優勝校、準優勝校は？",
+      "to": "source:input/idaten-corpus/aragyoku/winners-by-year.md",
+      "rel": "documented_in"
+    },
+    {
+      "from": "query:42:女子の荒玉駅伝の過去5年間の優勝校、準優勝校は？",
+      "to": "source:out/analysis/aragyoku_top2_finish_counts.md",
+      "rel": "documented_in"
+    },
+    {
+      "from": "query:42:女子の荒玉駅伝の過去5年間の優勝校、準優勝校は？",
+      "to": "topic:ekiden",
+      "rel": "search_here"
+    },
+    {
+      "from": "query:43:荒玉駅伝の優勝校は？",
+      "to": "corpus:aragyoku",
+      "rel": "search_here"
+    },
+    {
+      "from": "query:43:荒玉駅伝の優勝校は？",
+      "to": "source:input/idaten-corpus/aragyoku/winners-by-year.md",
+      "rel": "documented_in"
+    },
+    {
+      "from": "query:43:荒玉駅伝の優勝校は？",
+      "to": "source:out/analysis/aragyoku-overview.md",
+      "rel": "documented_in"
+    },
+    {
+      "from": "query:43:荒玉駅伝の優勝校は？",
+      "to": "topic:ekiden",
+      "rel": "search_here"
+    },
+    {
+      "from": "query:44:荒玉駅伝の準優勝校は？",
+      "to": "corpus:aragyoku",
+      "rel": "search_here"
+    },
+    {
+      "from": "query:44:荒玉駅伝の準優勝校は？",
+      "to": "source:input/idaten-corpus/aragyoku/winners-by-year.md",
+      "rel": "documented_in"
+    },
+    {
+      "from": "query:44:荒玉駅伝の準優勝校は？",
+      "to": "topic:ekiden",
+      "rel": "search_here"
+    },
+    {
+      "from": "query:45:荒玉駅伝の過去の優勝校を全て提示して",
+      "to": "corpus:aragyoku",
+      "rel": "search_here"
+    },
+    {
+      "from": "query:45:荒玉駅伝の過去の優勝校を全て提示して",
+      "to": "source:input/idaten-corpus/aragyoku/winners-by-year.md",
+      "rel": "documented_in"
+    },
+    {
+      "from": "query:45:荒玉駅伝の過去の優勝校を全て提示して",
+      "to": "topic:ekiden",
+      "rel": "search_here"
+    },
+    {
+      "from": "query:46:全チームの平均ペースを全て提示して",
+      "to": "corpus:out-analysis",
+      "rel": "search_here"
+    },
+    {
+      "from": "query:46:全チームの平均ペースを全て提示して",
+      "to": "source:docs/aragyoku-ekiden-distance-definitions.md",
+      "rel": "documented_in"
+    },
+    {
+      "from": "query:46:全チームの平均ペースを全て提示して",
+      "to": "source:out/analysis/aragyoku_all_teams_average_pace.md",
+      "rel": "documented_in"
+    },
+    {
+      "from": "query:46:全チームの平均ペースを全て提示して",
+      "to": "topic:ekiden",
+      "rel": "search_here"
+    },
+    {
+      "from": "query:47:荒玉駅伝の区間距離は？",
+      "to": "corpus:aragyoku",
+      "rel": "search_here"
+    },
+    {
+      "from": "query:47:荒玉駅伝の区間距離は？",
+      "to": "source:docs/aragyoku-ekiden-distance-definitions.md",
+      "rel": "documented_in"
+    },
+    {
+      "from": "query:47:荒玉駅伝の区間距離は？",
+      "to": "source:out/analysis/aragyoku-overview.md",
+      "rel": "documented_in"
+    },
+    {
+      "from": "query:47:荒玉駅伝の区間距離は？",
+      "to": "topic:ekiden",
+      "rel": "search_here"
+    },
+    {
+      "from": "query:48:なごみ駅伝は？",
       "to": "corpus:calendar",
       "rel": "search_here"
     },
     {
-      "from": "query:45:なごみ駅伝は？",
+      "from": "query:48:なごみ駅伝は？",
       "to": "corpus:drive-text",
       "rel": "search_here"
     },
     {
-      "from": "query:45:なごみ駅伝は？",
+      "from": "query:48:なごみ駅伝は？",
       "to": "corpus:out-analysis",
       "rel": "search_here"
     },
     {
-      "from": "query:45:なごみ駅伝は？",
+      "from": "query:48:なごみ駅伝は？",
       "to": "source:input/events.2026.yaml",
       "rel": "documented_in"
     },
     {
-      "from": "query:45:なごみ駅伝は？",
+      "from": "query:48:なごみ駅伝は？",
       "to": "topic:calendar",
       "rel": "search_here"
     },
     {
-      "from": "query:45:なごみ駅伝は？",
+      "from": "query:48:なごみ駅伝は？",
       "to": "topic:ekiden",
       "rel": "search_here"
     },
     {
-      "from": "query:46:2026年のなごみ駅伝の結果は？",
+      "from": "query:49:2026年のなごみ駅伝の結果は？",
       "to": "corpus:drive-text",
       "rel": "search_here"
     },
     {
-      "from": "query:46:2026年のなごみ駅伝の結果は？",
+      "from": "query:49:2026年のなごみ駅伝の結果は？",
       "to": "corpus:out-analysis",
       "rel": "search_here"
     },
     {
-      "from": "query:46:2026年のなごみ駅伝の結果は？",
-      "to": "topic:ekiden",
-      "rel": "search_here"
-    },
-    {
-      "from": "query:47:なごみ駅伝の予想と実績の差は？",
-      "to": "corpus:drive-text",
-      "rel": "search_here"
-    },
-    {
-      "from": "query:47:なごみ駅伝の予想と実績の差は？",
-      "to": "corpus:out-analysis",
-      "rel": "search_here"
-    },
-    {
-      "from": "query:47:なごみ駅伝の予想と実績の差は？",
-      "to": "source:docs/adr/052-nagomi-sb-gap-analysis.md",
-      "rel": "documented_in"
-    },
-    {
-      "from": "query:47:なごみ駅伝の予想と実績の差は？",
-      "to": "topic:ekiden",
-      "rel": "search_here"
-    },
-    {
-      "from": "query:48:2025年のなごみ駅伝の結果は？",
-      "to": "corpus:drive-text",
-      "rel": "search_here"
-    },
-    {
-      "from": "query:48:2025年のなごみ駅伝の結果は？",
-      "to": "topic:ekiden",
-      "rel": "search_here"
-    },
-    {
-      "from": "query:49:なごみ駅伝の区間オーダーは？",
-      "to": "corpus:drive-text",
-      "rel": "search_here"
-    },
-    {
-      "from": "query:49:なごみ駅伝の区間オーダーは？",
+      "from": "query:49:2026年のなごみ駅伝の結果は？",
       "to": "topic:ekiden",
       "rel": "search_here"
     },
@@ -36062,228 +36167,193 @@
       "rel": "search_here"
     },
     {
-      "from": "query:50:ジュニア駅伝の結果は？",
+      "from": "query:50:なごみ駅伝の予想と実績の差は？",
       "to": "corpus:drive-text",
       "rel": "search_here"
     },
     {
-      "from": "query:50:ジュニア駅伝の結果は？",
-      "to": "topic:calendar",
+      "from": "query:50:なごみ駅伝の予想と実績の差は？",
+      "to": "corpus:out-analysis",
       "rel": "search_here"
     },
     {
-      "from": "query:50:ジュニア駅伝の結果は？",
+      "from": "query:50:なごみ駅伝の予想と実績の差は？",
+      "to": "source:docs/adr/052-nagomi-sb-gap-analysis.md",
+      "rel": "documented_in"
+    },
+    {
+      "from": "query:50:なごみ駅伝の予想と実績の差は？",
       "to": "topic:ekiden",
       "rel": "search_here"
     },
     {
-      "from": "query:51:去年のジュニア駅伝の岱明の結果は？",
+      "from": "query:51:2025年のなごみ駅伝の結果は？",
       "to": "corpus:drive-text",
       "rel": "search_here"
     },
     {
-      "from": "query:51:去年のジュニア駅伝の岱明の結果は？",
-      "to": "topic:calendar",
-      "rel": "search_here"
-    },
-    {
-      "from": "query:51:去年のジュニア駅伝の岱明の結果は？",
+      "from": "query:51:2025年のなごみ駅伝の結果は？",
       "to": "topic:ekiden",
       "rel": "search_here"
     },
     {
-      "from": "query:52:部員名簿は？",
+      "from": "query:52:なごみ駅伝の区間オーダーは？",
+      "to": "corpus:drive-text",
+      "rel": "search_here"
+    },
+    {
+      "from": "query:52:なごみ駅伝の区間オーダーは？",
+      "to": "topic:ekiden",
+      "rel": "search_here"
+    },
+    {
+      "from": "query:53:ジュニア駅伝の結果は？",
+      "to": "corpus:drive-text",
+      "rel": "search_here"
+    },
+    {
+      "from": "query:53:ジュニア駅伝の結果は？",
+      "to": "topic:calendar",
+      "rel": "search_here"
+    },
+    {
+      "from": "query:53:ジュニア駅伝の結果は？",
+      "to": "topic:ekiden",
+      "rel": "search_here"
+    },
+    {
+      "from": "query:54:去年のジュニア駅伝の岱明の結果は？",
+      "to": "corpus:drive-text",
+      "rel": "search_here"
+    },
+    {
+      "from": "query:54:去年のジュニア駅伝の岱明の結果は？",
+      "to": "topic:calendar",
+      "rel": "search_here"
+    },
+    {
+      "from": "query:54:去年のジュニア駅伝の岱明の結果は？",
+      "to": "topic:ekiden",
+      "rel": "search_here"
+    },
+    {
+      "from": "query:55:部員名簿は？",
       "to": "corpus:notion-db",
       "rel": "search_here"
     },
     {
-      "from": "query:52:部員名簿は？",
+      "from": "query:55:部員名簿は？",
       "to": "source:input/external/drive/shared/名簿/2025年度_岱明中学校陸上競技部_部員名簿.csv",
       "rel": "documented_in"
     },
     {
-      "from": "query:52:部員名簿は？",
+      "from": "query:55:部員名簿は？",
       "to": "source:input/external/notion/databases/いだてん岱明生徒/rows.json",
       "rel": "documented_in"
     },
     {
-      "from": "query:52:部員名簿は？",
+      "from": "query:55:部員名簿は？",
       "to": "source:input/idaten-corpus/notion-db/いだてん岱明生徒",
       "rel": "documented_in"
     },
     {
-      "from": "query:52:部員名簿は？",
+      "from": "query:55:部員名簿は？",
       "to": "topic:athlete_records",
       "rel": "search_here"
     },
     {
-      "from": "query:52:部員名簿は？",
+      "from": "query:55:部員名簿は？",
       "to": "topic:practice",
       "rel": "search_here"
     },
     {
-      "from": "query:53:中学生SBは？",
+      "from": "query:56:中学生SBは？",
       "to": "corpus:sb",
       "rel": "search_here"
     },
     {
-      "from": "query:53:中学生SBは？",
+      "from": "query:56:中学生SBは？",
       "to": "source:docs/adr/012-middle-school-sb-all-years.md",
       "rel": "documented_in"
     },
     {
-      "from": "query:53:中学生SBは？",
+      "from": "query:56:中学生SBは？",
       "to": "source:input/external/sb/middle-school/INDEX.md",
       "rel": "documented_in"
     },
     {
-      "from": "query:53:中学生SBは？",
+      "from": "query:56:中学生SBは？",
       "to": "source:input/external/sb/middle-school/wide/中学生SB.csv",
       "rel": "documented_in"
     },
     {
-      "from": "query:53:中学生SBは？",
+      "from": "query:56:中学生SBは？",
       "to": "topic:athlete_records",
       "rel": "search_here"
     },
     {
-      "from": "query:54:開催要項は？",
+      "from": "query:57:開催要項は？",
       "to": "corpus:drive-text",
       "rel": "search_here"
     },
     {
-      "from": "query:54:開催要項は？",
+      "from": "query:57:開催要項は？",
       "to": "topic:ekiden",
       "rel": "search_here"
     },
     {
-      "from": "query:55:ケガ・障害は？",
+      "from": "query:58:ケガ・障害は？",
       "to": "corpus:notion-db",
       "rel": "search_here"
     },
     {
-      "from": "query:55:ケガ・障害は？",
+      "from": "query:58:ケガ・障害は？",
       "to": "source:input/external/notion/INDEX.md",
       "rel": "documented_in"
     },
     {
-      "from": "query:55:ケガ・障害は？",
+      "from": "query:58:ケガ・障害は？",
       "to": "source:input/memos/rri_healing_evidence_review.md",
       "rel": "documented_in"
     },
     {
-      "from": "query:55:ケガ・障害は？",
+      "from": "query:58:ケガ・障害は？",
       "to": "topic:injury",
       "rel": "search_here"
     },
     {
-      "from": "query:56:オーダー・区間は？",
+      "from": "query:59:オーダー・区間は？",
       "to": "corpus:analysis-ocr",
       "rel": "search_here"
     },
     {
-      "from": "query:56:オーダー・区間は？",
+      "from": "query:59:オーダー・区間は？",
       "to": "corpus:aragyoku",
       "rel": "search_here"
     },
     {
-      "from": "query:56:オーダー・区間は？",
+      "from": "query:59:オーダー・区間は？",
       "to": "corpus:drive-text",
       "rel": "search_here"
     },
     {
-      "from": "query:56:オーダー・区間は？",
+      "from": "query:59:オーダー・区間は？",
       "to": "source:docs/aragyoku-ekiden-distance-definitions.md",
       "rel": "documented_in"
     },
     {
-      "from": "query:56:オーダー・区間は？",
+      "from": "query:59:オーダー・区間は？",
       "to": "source:out/analysis/aragyoku-overview.md",
       "rel": "documented_in"
     },
     {
-      "from": "query:56:オーダー・区間は？",
+      "from": "query:59:オーダー・区間は？",
       "to": "topic:athlete_records",
       "rel": "search_here"
     },
     {
-      "from": "query:56:オーダー・区間は？",
+      "from": "query:59:オーダー・区間は？",
       "to": "topic:ekiden",
-      "rel": "search_here"
-    },
-    {
-      "from": "query:57:銀マット・合同練習・保護者連絡は？",
-      "to": "corpus:out-analysis",
-      "rel": "search_here"
-    },
-    {
-      "from": "query:57:銀マット・合同練習・保護者連絡は？",
-      "to": "source:out/analysis/line-chats/INDEX.md",
-      "rel": "documented_in"
-    },
-    {
-      "from": "query:57:銀マット・合同練習・保護者連絡は？",
-      "to": "source:out/analysis/line-chats/daiming-parents.md",
-      "rel": "documented_in"
-    },
-    {
-      "from": "query:57:銀マット・合同練習・保護者連絡は？",
-      "to": "source:out/analysis/line-chats/daiming-staff.md",
-      "rel": "documented_in"
-    },
-    {
-      "from": "query:57:銀マット・合同練習・保護者連絡は？",
-      "to": "topic:calendar",
-      "rel": "search_here"
-    },
-    {
-      "from": "query:57:銀マット・合同練習・保護者連絡は？",
-      "to": "topic:practice",
-      "rel": "search_here"
-    },
-    {
-      "from": "query:58:有田先輩の練習・補強の考え方は？",
-      "to": "corpus:out-analysis",
-      "rel": "search_here"
-    },
-    {
-      "from": "query:58:有田先輩の練習・補強の考え方は？",
-      "to": "source:out/analysis/line-chats/INDEX.md",
-      "rel": "documented_in"
-    },
-    {
-      "from": "query:58:有田先輩の練習・補強の考え方は？",
-      "to": "source:out/analysis/line-chats/arita-taisho.md",
-      "rel": "documented_in"
-    },
-    {
-      "from": "query:58:有田先輩の練習・補強の考え方は？",
-      "to": "topic:ekiden",
-      "rel": "search_here"
-    },
-    {
-      "from": "query:58:有田先輩の練習・補強の考え方は？",
-      "to": "topic:practice",
-      "rel": "search_here"
-    },
-    {
-      "from": "query:59:玉名の天気データはどう更新する？",
-      "to": "corpus:repo-docs",
-      "rel": "search_here"
-    },
-    {
-      "from": "query:59:玉名の天気データはどう更新する？",
-      "to": "source:docs/tamana-weather.md",
-      "rel": "documented_in"
-    },
-    {
-      "from": "query:59:玉名の天気データはどう更新する？",
-      "to": "topic:calendar",
-      "rel": "search_here"
-    },
-    {
-      "from": "query:59:玉名の天気データはどう更新する？",
-      "to": "topic:meta",
       "rel": "search_here"
     },
     {
@@ -36304,6 +36374,81 @@
     {
       "from": "query:5:今日の予定は？",
       "to": "topic:calendar",
+      "rel": "search_here"
+    },
+    {
+      "from": "query:60:銀マット・合同練習・保護者連絡は？",
+      "to": "corpus:out-analysis",
+      "rel": "search_here"
+    },
+    {
+      "from": "query:60:銀マット・合同練習・保護者連絡は？",
+      "to": "source:out/analysis/line-chats/INDEX.md",
+      "rel": "documented_in"
+    },
+    {
+      "from": "query:60:銀マット・合同練習・保護者連絡は？",
+      "to": "source:out/analysis/line-chats/daiming-parents.md",
+      "rel": "documented_in"
+    },
+    {
+      "from": "query:60:銀マット・合同練習・保護者連絡は？",
+      "to": "source:out/analysis/line-chats/daiming-staff.md",
+      "rel": "documented_in"
+    },
+    {
+      "from": "query:60:銀マット・合同練習・保護者連絡は？",
+      "to": "topic:calendar",
+      "rel": "search_here"
+    },
+    {
+      "from": "query:60:銀マット・合同練習・保護者連絡は？",
+      "to": "topic:practice",
+      "rel": "search_here"
+    },
+    {
+      "from": "query:61:有田先輩の練習・補強の考え方は？",
+      "to": "corpus:out-analysis",
+      "rel": "search_here"
+    },
+    {
+      "from": "query:61:有田先輩の練習・補強の考え方は？",
+      "to": "source:out/analysis/line-chats/INDEX.md",
+      "rel": "documented_in"
+    },
+    {
+      "from": "query:61:有田先輩の練習・補強の考え方は？",
+      "to": "source:out/analysis/line-chats/arita-taisho.md",
+      "rel": "documented_in"
+    },
+    {
+      "from": "query:61:有田先輩の練習・補強の考え方は？",
+      "to": "topic:ekiden",
+      "rel": "search_here"
+    },
+    {
+      "from": "query:61:有田先輩の練習・補強の考え方は？",
+      "to": "topic:practice",
+      "rel": "search_here"
+    },
+    {
+      "from": "query:62:玉名の天気データはどう更新する？",
+      "to": "corpus:repo-docs",
+      "rel": "search_here"
+    },
+    {
+      "from": "query:62:玉名の天気データはどう更新する？",
+      "to": "source:docs/tamana-weather.md",
+      "rel": "documented_in"
+    },
+    {
+      "from": "query:62:玉名の天気データはどう更新する？",
+      "to": "topic:calendar",
+      "rel": "search_here"
+    },
+    {
+      "from": "query:62:玉名の天気データはどう更新する？",
+      "to": "topic:meta",
       "rel": "search_here"
     },
     {
@@ -46039,6 +46184,11 @@
     {
       "from": "topic:ekiden",
       "to": "source:out/analysis/aragyoku_all_teams_average_pace.md",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:ekiden",
+      "to": "source:out/analysis/aragyoku_daiming_rivals.md",
       "rel": "search_here"
     },
     {
