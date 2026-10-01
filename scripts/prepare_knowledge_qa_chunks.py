@@ -315,6 +315,41 @@ def write():
     for chunk in chunks:
         source_index.setdefault(chunk["source"], []).append(chunk["id"])
     (OUT / "source-index.json").write_text(json.dumps(source_index, ensure_ascii=False, indent=2) + "\n")
+
+    # Schema-oriented review queue for deliberate, independently checked
+    # record calculations. These are samples, never authored answers.
+    csv_schemas = {}
+    structured_schemas = {}
+    for chunk in chunks:
+        ev = chunk["evidence"]
+        if ev["kind"] == "csv":
+            item = csv_schemas.setdefault(chunk["source"], {
+                "source": chunk["source"], "header": ev["header"],
+                "chunk_ids": [], "rows": 0, "sample_units": []
+            })
+            item["chunk_ids"].append(chunk["id"])
+            item["rows"] += len(ev["units"])
+            if len(item["sample_units"]) < 2:
+                item["sample_units"].extend(ev["units"][:2-len(item["sample_units"])])
+        elif ev["kind"] == "structured":
+            item = structured_schemas.setdefault(chunk["source"], {
+                "source": chunk["source"], "chunk_ids": [], "sample_units": []
+            })
+            item["chunk_ids"].append(chunk["id"])
+            if len(item["sample_units"]) < 1:
+                item["sample_units"].extend(ev["units"][:1])
+    (OUT / "csv-schemas.json").write_text(json.dumps(list(csv_schemas.values()), ensure_ascii=False, indent=2) + "\n")
+    # Keep review samples bounded even for a complete object-valued unit.
+    for item in structured_schemas.values():
+        for unit in item["sample_units"]:
+            sample = compact(unit)
+            item["sample_json"] = sample[:2000]
+        del item["sample_units"]
+    rows = list(structured_schemas.values())
+    for offset in range(0, len(rows), 60):
+        name = f"structured-schemas-{offset//60+1:04d}.json"
+        (OUT / name).write_text(json.dumps(rows[offset:offset+60], ensure_ascii=False, indent=2) + "\n")
+
     (OUT / "inventory.json").write_text(json.dumps(inventory, ensure_ascii=False, indent=2) + "\n")
     report = {k: v for k, v in inventory.items() if k not in {"files", "batches"}}
     report["batches"] = len(batches)
