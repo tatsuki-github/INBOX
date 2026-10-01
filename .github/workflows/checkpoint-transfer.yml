@@ -26,6 +26,11 @@ jobs:
           test "$target_tree" = 345e6d23bc14c66543f0f562cded0a239b2cca9c
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          published=$(git commit-tree "$target_tree" -p "$GITHUB_SHA" -p "$target" -m "Publish verified QA checkpoint and remove remuneration information")
+          git read-tree "$target_tree"
+          for file in .github/checkpoint-transfer.bundle .github/workflows/checkpoint-transfer.yml; do
+            git update-index --add --cacheinfo "100644,$(git rev-parse "$GITHUB_SHA:$file"),$file"
+          done
+          published_tree=$(git write-tree)
+          published=$(git commit-tree "$published_tree" -p "$GITHUB_SHA" -p "$target" -m "Publish verified QA checkpoint and remove remuneration information")
           git push origin "$published:refs/heads/codex/all-knowledge-three-qa"
           echo "Published $published with tree $target_tree"
