@@ -185,6 +185,8 @@ def discover():
         for ref in node.get("refs", []):
             if not isinstance(ref, str) or re.match(r"[a-z]+://", ref):
                 continue
+            # Legacy KG refs sometimes annotate the derived directory.
+            ref = re.sub(r" [(]derived[)]$", "", ref)
             path = safe_path(ref)
             if path.is_dir():
                 for child in sorted(path.rglob("*")):
@@ -204,7 +206,9 @@ def discover():
 
 def build():
     routes = discover()
-    files, content_groups = [], {}\n    copy_origins = {"input/idaten-corpus/" + item["corpus"]: item["source"]\n                    for item in json.loads((ROOT / "input/idaten-corpus/sources.json").read_text())}
+    files, content_groups = [], {}
+    copy_origins = {"input/idaten-corpus/" + item["corpus"]: item["source"]
+                    for item in json.loads((ROOT / "input/idaten-corpus/sources.json").read_text())}
     for rel, origin in sorted(routes.items()):
         path = safe_path(rel)
         record = {"path": rel, "routes": sorted(origin)}
@@ -227,7 +231,16 @@ def build():
             h = digest(raw)
             record["normalized_sha256"] = h
             record["disposition"] = "canonical-or-alias"
-            # Identical text in unrelated documents can have different subject\n            # context. Only known original/corpus-copy relations become aliases.\n            owner = copy_origins.get(rel, rel)\n            original = safe_path(owner)\n            if original.is_file():\n                original_text = original.read_bytes().decode("utf-8-sig", errors="strict").replace("\\r\\n", "\\n")\n                if digest(original_text) != h:\n                    owner = rel\n            else:\n                owner = rel\n            content_groups.setdefault((owner, h), []).append((rel, raw, record))
+            # Do not merge identical words from unrelated subject contexts.
+            owner = copy_origins.get(rel, rel)
+            original = safe_path(owner)
+            if original.is_file():
+                original_text = original.read_bytes().decode("utf-8-sig", errors="strict").replace("\r\n", "\n")
+                if digest(original_text) != h:
+                    owner = rel
+            else:
+                owner = rel
+            content_groups.setdefault((owner, h), []).append((rel, raw, record))
     chunks = []
     for (owner, h), group in sorted(content_groups.items()):
         # Prefer original snapshots; preserve every identical alias in coverage.
@@ -247,8 +260,21 @@ def build():
             record["canonical"] = rel
             record["chunk_ids"] = ids
     assert len({c["id"] for c in chunks}) == len(chunks)
+    by_path = {f["path"]: f for f in files}
+    for record in files:
+        m = re.fullmatch(r"input/idaten-corpus/calendar/events[.](20\d{2})[.]filtered[.]yaml", record["path"])
+        if record["disposition"] == "missing-route" and m:
+            source = "input/events." + m[1] + ".yaml"
+            full = by_path.get(source)
+            if full and full.get("chunk_ids"):
+                record.update(disposition="virtual-filtered-calendar-route",
+                              covered_by=source, chunk_ids=full["chunk_ids"])
     missing = [f["path"] for f in files if f["disposition"] == "missing-route"]
-    catalog = ROOT / "input/faq/prepared-qa.v1.yaml"\n    existing = yaml.load(catalog.read_text(), Loader=getattr(yaml, "CSafeLoader", yaml.SafeLoader))\n    return {"version": 1, "max_chunk_chars": BUDGET, "files": files,\n            "baseline_prepared_qa_count": len(existing["entries"]),\n            "baseline_prepared_qa_sha256": digest(catalog.read_bytes()),
+    catalog = ROOT / "input/faq/prepared-qa.v1.yaml"
+    existing = yaml.load(catalog.read_text(), Loader=getattr(yaml, "CSafeLoader", yaml.SafeLoader))
+    return {"version": 1, "max_chunk_chars": BUDGET, "files": files,
+            "baseline_prepared_qa_count": len(existing["entries"]),
+            "baseline_prepared_qa_sha256": digest(catalog.read_bytes()),
             "chunk_count": len(chunks), "required_new_qa": len(chunks) * 3,
             "dispositions": dict(Counter(f["disposition"] for f in files)),
             "missing_routes": missing}, chunks
