@@ -293,6 +293,68 @@ def gen_aragyoku_winners(existing_ids: set[str]) -> list[dict]:
     return out
 
 
+def _leg_bits(team: dict) -> list[str]:
+    bits: list[str] = []
+    for lg in team.get("legs") or []:
+        runner = (lg.get("name") or "").replace(" ", "")
+        if not runner:
+            continue
+        leg_no = lg.get("leg")
+        grade = lg.get("grade")
+        split = lg.get("split") or ""
+        bit = f"{leg_no}区{runner}"
+        if grade not in (None, ""):
+            bit += f"（{grade}年）"
+        if split:
+            bit += f"{split}"
+        bits.append(bit)
+    return bits
+
+
+def team_result_questions(year: int, gender: str, name: str) -> list[str]:
+    """Natural phrasings including 去年/結果は？ without forcing 荒玉-first word order."""
+    qs = [
+        f"{year}年荒玉駅伝{gender}の{name}は何位？",
+        f"{year}年荒玉{gender}{name}の順位は？",
+        f"{year}年の荒玉{gender}で{name}の成績は？",
+        f"{year}年の{name}の{gender}の結果は？",
+        f"{year}年{name}{gender}の結果は？",
+        f"{year}年荒玉駅伝の{name}の{gender}の結果は？",
+        f"{year}年の荒玉駅伝{name}{gender}の結果",
+        f"{year}年{name}の{gender}の荒玉の結果は？",
+    ]
+    # 相対年（今年度のひとつ前＝2025）
+    if year == 2025:
+        qs.extend(
+            [
+                f"去年の{name}の{gender}の結果は？",
+                f"昨年の{name}の{gender}の結果は？",
+                f"去年の{name}{gender}の結果は？",
+                f"昨年の{name}{gender}の結果",
+                f"去年の荒玉駅伝の{name}の{gender}の結果は？",
+                f"昨年の荒玉駅伝{gender}の{name}の結果は？",
+                f"去年の荒玉の{name}{gender}の結果は？",
+                f"昨年の荒玉{gender}で{name}は？",
+            ]
+        )
+        if gender == "女子":
+            qs.append(f"去年の荒玉女子で{name}は？")
+        else:
+            qs.append(f"去年の荒玉男子で{name}は何位？")
+    return qs
+
+
+def format_team_result_answer(year: int, gender: str, team: dict) -> str:
+    name = team.get("team") or ""
+    rank = team.get("rank")
+    total = team.get("total") or "?"
+    legs = _leg_bits(team)
+    ans = f"{year}年荒玉駅伝{gender}の{name}は{rank}位・総合{total}です。"
+    if legs:
+        ans += " 区間選手: " + "、".join(legs[:6]) + "。"
+    return ans
+
+
 def gen_aragyoku_team_ranks(existing_ids: set[str], limit: int) -> list[dict]:
     out: list[dict] = []
     for gender, path, src in (
@@ -314,27 +376,19 @@ def gen_aragyoku_team_ranks(existing_ids: set[str], limit: int) -> list[dict]:
                 eid = f"aragyoku-{year}-{gender}-team-{slug(name)}-rank"
                 if eid in existing_ids:
                     continue
-                total = team.get("total") or "?"
-                leg_bits = []
-                for lg in team.get("legs") or []:
-                    if lg.get("name"):
-                        leg_bits.append(f"{lg.get('leg')}区{lg['name']}")
-                legs = "、".join(leg_bits[:6])
-                qs = [
-                    f"{year}年荒玉駅伝{gender}の{name}は何位？",
-                    f"{year}年荒玉{gender}{name}の順位は？",
-                    f"{year}年の荒玉{gender}で{name}の成績は？",
-                ]
-                ans = f"{year}年荒玉駅伝{gender}の{name}は{rank}位（{total}）です。"
-                if legs:
-                    ans += f" 区間: {legs}。"
+                qs = team_result_questions(int(year), gender, name)
+                ans = format_team_result_answer(int(year), gender, team)
                 out.append(
                     entry(
                         eid,
                         qs,
                         ans,
-                        [src],
-                        ["aragyoku", "team", gender, int(year)],
+                        [
+                            src,
+                            f"input/aragyoku/transcripts/{year}-{gender}.json",
+                            f"out/analysis/aragyoku-teams/{name}.md",
+                        ],
+                        ["aragyoku", "team", "result", gender, int(year)],
                     )
                 )
                 if len(out) >= limit:

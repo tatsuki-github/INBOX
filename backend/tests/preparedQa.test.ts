@@ -402,6 +402,38 @@ describe("matchPreparedAnswer", () => {
   });
 
   it(
+    "maps 去年の岱明女子の結果 to 2025 facts, not 2024",
+    () => {
+      for (const q of [
+        "去年の岱明の女子の結果は？",
+        "昨年の岱明女子の結果は？",
+        "去年の荒玉駅伝の岱明の女子の結果は？",
+        "2025年の岱明の女子の結果は？",
+      ]) {
+        const hit = matchPreparedAnswer(q, { defaultYear: 2026 });
+        expect(hit, q).toBeTruthy();
+        expect(hit?.text, q).toContain("2025年荒玉駅伝女子");
+        expect(hit?.text, q).toContain("7位");
+        expect(hit?.text, q).toContain("45:22");
+        expect(hit?.text, q).toContain("村上咲稀");
+        expect(hit?.text, q).toContain("増岡里俐");
+        expect(hit?.text, q).not.toContain("角田里奈");
+        expect(hit?.text, q).not.toContain("瀧下那奈");
+        expect(hit?.text, q).not.toContain("45:06");
+      }
+
+      const y2024 = matchPreparedAnswer("2024年の岱明の女子の結果は？", {
+        defaultYear: 2026,
+      });
+      expect(y2024?.text).toContain("2024年荒玉駅伝女子");
+      expect(y2024?.text).toContain("6位");
+      expect(y2024?.text).toContain("45:06");
+      expect(y2024?.text).toContain("角田里奈");
+    },
+    60_000,
+  );
+
+  it(
     "maps 去年/昨年 men leg2 board to 2025, not 2024",
     () => {
       for (const q of [
