@@ -419,6 +419,17 @@ export function matchPreparedAnswer(
   const scored: Cand[] = [];
 
   for (const row of catalog) {
+    // A historical entry whose aliases are all explicitly dated must not turn
+    // into this year's result through fuzzy containment of a yearless query.
+    // Intentionally yearless history/latest-known answers retain their aliases.
+    if (
+      !queryHasYear &&
+      row.year != null &&
+      row.year !== defaultYear &&
+      row.norms.every((cand) => /20\d{2}/.test(cand.norm))
+    ) {
+      continue;
+    }
     let best = 0;
     let bestQ = row.entry.questions[0] ?? "";
     for (const cand of row.norms) {

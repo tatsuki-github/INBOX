@@ -89,7 +89,8 @@ def main() -> int:
     data = _load_yaml(SRC)
     entries = validate(data)
     payload = build_payload(data, entries)
-    text = json.dumps(payload, ensure_ascii=False, indent=2) + "\n"
+    # Keep this large generated catalog within API upload limits.
+    text = json.dumps(payload, ensure_ascii=False) + "\n"
 
     if args.check:
         if not OUT_JSON.exists():

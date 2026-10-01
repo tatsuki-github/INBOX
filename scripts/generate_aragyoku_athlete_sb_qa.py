@@ -145,7 +145,7 @@ def build_entries_for_year(year: int, athletes: dict[str, dict]) -> list[dict]:
         overview_ans = (
             f"{name}（{aff}"
             + (f"/{gender}" if gender else "")
-            + f"）の自己ベスト（{year}年度・SB採用）です。\n"
+            + f"）のシーズンベスト（{year}年度・SB採用）です。\n"
             + "\n".join(lines)
             + "\n"
         )
@@ -190,7 +190,7 @@ def build_entries_for_year(year: int, athletes: dict[str, dict]) -> list[dict]:
             ans = (
                 f"{name}（{aff}"
                 + (f"/{gender}" if gender else "")
-                + f"）の{dist}自己ベストは {rec['mark']} です。"
+                + f"）の{year}年度・{dist}シーズンベスト（SB採用）は {rec['mark']} です。"
             )
             if rec["meet"] or rec["date"]:
                 ans += f" 大会: {rec['meet']}（{rec['date']}）。"

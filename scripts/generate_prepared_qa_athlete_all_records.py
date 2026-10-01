@@ -106,6 +106,10 @@ def normalize_athlete_name(name: str) -> str:
 
 def normalize_mark(mark: str) -> str:
     m = (mark or "").strip()
+    quoted = re.fullmatch(r"(\d{1,2})['’](\d{2})[\"″](\d{1,2})?", m)
+    if quoted:
+        frac = quoted.group(3)
+        return f"{int(quoted.group(1))}:{quoted.group(2)}" + (f".{frac}" if frac else "")
     jp = re.fullmatch(r"(\d{1,2})分(\d{1,2})秒(\d+)?", m)
     if jp:
         mm, ss, frac = int(jp.group(1)), int(jp.group(2)), jp.group(3)
@@ -333,11 +337,13 @@ def extract_ekiden_from_text(text: str) -> list[dict[str, str]]:
     # 1区　村上咲稀2　7位通過　11:02  区間7位
     patterns = [
         re.compile(
-            r"(?P<leg>\d{1,2})区\s*(?:(?P<km>\d+(?:\.\d+)?)k?m)?\s*"
-            r"(?P<name>[一-龥ぁ-んァ-ヶー]+(?:\s*[一-龥ぁ-んァ-ヶー]+)?)\s*"
-            r"(?:[（(]?\d年[）)]?|[①②③1-3])?\s*"
-            r"(?:(?P<pass>\d{1,2})位通過)?\s*"
-            r"(?P<mark>(?:\d{1,2}:)?\d{1,2}:\d{2}(?:\.\d+)?|\d{1,2}分\d{1,2}秒|\d{1,2}'\d{2}(?:\"\d{0,2})?)"
+            r"(?P<leg>\d{1,2})区[^\S\n]*(?:(?P<km>\d+(?:\.\d+)?)k?m)?[^\S\n]*"
+            r"(?P<name>[一-龥ぁ-んァ-ヶー]+(?:[^\S\n]*[一-龥ぁ-んァ-ヶー]+)?)[^\S\n]*"
+            # A bare grade digit must end before whitespace. Otherwise the 1 in
+            # '佐藤央琉 10:42' is consumed as a grade and fabricates '0:42'.
+            r"(?:[（(]?\d年[）)]?|[①②③]|[1-3](?=\s))?[^\S\n]*"
+            r"(?:(?P<pass>\d{1,2})位通過)?[^\S\n]*"
+            r"(?P<mark>(?<![\d:])(?:\d{1,2}:)?\d{1,2}:\d{2}(?:\.\d+)?|\d{1,2}分\d{1,2}秒|\d{1,2}'\d{2}(?:\"\d{0,2})?)"
             r"(?:\s*（?区間(?P<rank>\d{1,2})位)?"
         ),
         re.compile(
@@ -444,8 +450,10 @@ def load_aragyoku_ekiden_rows() -> list[dict[str, str]]:
         year, gender = int(m.group(1)), m.group(2)
         data = json.loads(path.read_text(encoding="utf-8"))
         teams = data.get("teams") or []
-        # race date: October of that calendar year (荒玉 is mid-Oct)
-        date = f"{year}/10/15"
+        # Use the recorded date; never invent October 15 for every year.
+        date = str(data.get("date") or "").replace("-", "/")
+        if not re.fullmatch(r"20\d{2}/\d{2}/\d{2}", date):
+            continue
         for team in teams:
             school = (team.get("team") or team.get("name") or "").strip()
             rank = team.get("rank")
@@ -503,6 +511,12 @@ def merge_rows(
             by_name_gender.setdefault(name, r["性別"].strip())
 
     seen = {dedupe_key(r) for r in track}
+    soft_seen = {
+        (normalize_athlete_name(r.get("名前") or ""),
+         (r.get("日付") or "").replace("-", "/"),
+         normalize_mark(r.get("記録") or ""))
+        for r in track
+    }
     out = list(track)
     for r in extras:
         name = normalize_athlete_name(r.get("名前") or "")
@@ -520,17 +534,10 @@ def merge_rows(
             continue
         # also skip if same name+date+mark already (distance label differs)
         soft = (name, (r.get("日付") or "").replace("-", "/"), normalize_mark(r.get("記録") or ""))
-        if any(
-            (
-                normalize_athlete_name(x.get("名前") or ""),
-                (x.get("日付") or "").replace("-", "/"),
-                normalize_mark(x.get("記録") or ""),
-            )
-            == soft
-            for x in out
-        ):
+        if soft in soft_seen:
             continue
         seen.add(key)
+        soft_seen.add(soft)
         out.append(r)
     return out
 
@@ -672,7 +679,7 @@ def build_year_answer(
         extras.append(f"ロード{n_road}")
     if extras and (n_ekiden or n_road):
         scope += f"（{'・'.join(extras)}）"
-    ans = f"{who}の{label}の記録は{scope}です。\n" + "\n".join(lines)
+    ans = f"{who}の{label}の記録（ナレッジ収録分）は{scope}です。\n" + "\n".join(lines)
     sb = sb_summary(races)
     if sb:
         ans += "\n" + sb
@@ -699,7 +706,7 @@ def build_3y_answer(name: str, by_year: dict[int, list[dict[str, str]]]) -> str:
         sb = sb_summary(races)
         if sb:
             chunks.append(sb)
-    head = f"{who}の過去3年（{years[0]}–{years[-1]}）の記録は全{total}件です。"
+    head = f"{who}の過去3年（{years[0]}–{years[-1]}）の記録（ナレッジ収録分）は全{total}件です。"
     return "\n".join([head, *chunks])
 
 
@@ -783,7 +790,7 @@ def gen_entries(
                     eid,
                     qs,
                     ans,
-                    sources[:12],
+                    sources,
                     ["records", "athlete", "all", year, name],
                 )
             )
@@ -803,6 +810,11 @@ def gen_entries(
             f"{name}の過去三年のレース結果",
         ]
         sources = [f"{src_base}/{y}-single-table.csv" for y in sorted(by_year)]
+        for rows in by_year.values():
+            for r in rows:
+                src = r.get("_source") or ""
+                if src and src not in sources:
+                    sources.append(src)
         out.append(
             entry(
                 eid,

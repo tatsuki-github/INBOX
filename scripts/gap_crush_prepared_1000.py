@@ -178,7 +178,14 @@ def gen_school_rank_paraphrases(existing_ids: set[str], limit: int) -> list[dict
         if not path.exists():
             return []
         rows = []
+        section = "上位4人平均" if kind.startswith("男子1500m") else "800m・上位3人平均"
+        active = False
         for line in path.read_text(encoding="utf-8").splitlines():
+            if line.startswith("## "):
+                active = line[3:].strip() == section
+                continue
+            if not active:
+                continue
             m = re.match(
                 r"\|\s*(\d+)\s*\|\s*([^|]+?)\s*\|\s*\d+\s*\|\s*([^|]+?)\s*\|",
                 line,
