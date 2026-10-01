@@ -894,6 +894,34 @@ describe("matchPreparedAnswer", { timeout: 30_000 }, () => {
     60_000,
   );
 
+  it(
+    "answers Nth-place leg benchmark times for all legs and a single leg",
+    () => {
+      const womenAll = matchPreparedAnswer(
+        "荒玉駅伝女子の各区間5位の基準タイムは？",
+        { defaultYear: 2026 },
+      );
+      expect(womenAll?.id).toBe("aragyoku-rank-benchmark-女子-rank5-all-legs");
+      expect(womenAll?.text).toContain("10:33");
+      expect(womenAll?.text).toContain("7:04");
+      expect(womenAll?.text).toContain("11:16");
+
+      const menLeg = matchPreparedAnswer("荒玉駅伝男子の1区5位の基準タイムは？", {
+        defaultYear: 2026,
+      });
+      expect(menLeg?.id).toBe("aragyoku-rank-benchmark-男子-leg1-rank5");
+      expect(menLeg?.text).toContain("9:30");
+      expect(menLeg?.text).toMatch(/松浦眞大|永田來夢/);
+
+      const rank1 = matchPreparedAnswer("荒玉女子各区の区間1位の目安タイム", {
+        defaultYear: 2026,
+      });
+      expect(rank1?.id).toBe("aragyoku-rank-benchmark-女子-rank1-all-legs");
+      expect(rank1?.text).toContain("1位");
+    },
+    60_000,
+  );
+
   it("returns null for unrelated chatter without prepared entry", () => {
     // deliberately odd; if someday prepared, this assertion should be updated
     const hit = matchPreparedAnswer("宇宙の果てはどこ？", { defaultYear: 2026 });
