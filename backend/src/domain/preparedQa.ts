@@ -214,12 +214,51 @@ function jaccard(a: string[], b: string[]): number {
 const ROSTER_INTENT_KEYS = ["名簿", "生徒", "部員"] as const;
 const ALL_RECORDS_INTENT_KEYS = ["全ての記録"] as const;
 
+/** 長い表記優先。名簿質問で学校/所属の取り違えを防ぐ。 */
+const ROSTER_ENTITY_KEYS = [
+  "玉名アスリーツ",
+  "玉東クラブ",
+  "金栗project",
+  "なごみproject", // 金栗PROJECT → なごみPROJECT 正規化後
+  "玉高附属",
+  "荒尾海陽",
+  "荒尾四",
+  "荒尾三",
+  "熊本大附",
+  "三加和",
+  "岱明",
+  "南関",
+  "天水",
+  "有明",
+  "菊水",
+  "長洲",
+  "玉陵",
+  "玉南",
+  "玉東",
+  "玉名",
+  "atrc",
+  "njac",
+  "gz",
+] as const;
+
 function hasRosterIntent(normalized: string): boolean {
   return ROSTER_INTENT_KEYS.some((k) => normalized.includes(k));
 }
 
 function hasAllRecordsIntent(normalized: string): boolean {
   return ALL_RECORDS_INTENT_KEYS.some((k) => normalized.includes(k));
+}
+
+function rosterEntities(normalized: string): Set<string> {
+  const found = new Set<string>();
+  let rest = normalized.toLowerCase();
+  for (const key of ROSTER_ENTITY_KEYS) {
+    const k = key.toLowerCase();
+    if (!rest.includes(k)) continue;
+    found.add(k);
+    rest = rest.split(k).join(" ");
+  }
+  return found;
 }
 
 function scorePair(nq: string, nCand: string): number {
@@ -243,8 +282,31 @@ function scorePair(nq: string, nCand: string): number {
 
   // 名簿・生徒一覧の意図がある側と無い側の部分一致を強く減点
   // （「いだてん岱明とは」→短い「いだてん岱明」が名簿定型を includes で誤吸するのを防ぐ）
-  if (hasRosterIntent(nq) !== hasRosterIntent(nCand)) {
+  const qRoster = hasRosterIntent(nq);
+  const cRoster = hasRosterIntent(nCand);
+  if (qRoster !== cRoster) {
     base *= 0.4;
+  }
+
+  // 「玉名附属中の生徒一覧」が汎用「名簿を見せて」→岱明名簿へ誤吸しないよう、学校/所属を照合
+  if (qRoster && cRoster) {
+    const qEnt = rosterEntities(nq);
+    const cEnt = rosterEntities(nCand);
+    let overlap = false;
+    for (const e of qEnt) {
+      if (cEnt.has(e)) {
+        overlap = true;
+        break;
+      }
+    }
+    if (qEnt.size > 0 && cEnt.size > 0 && !overlap) {
+      base *= 0.15;
+    } else if (qEnt.size > 0 && cEnt.size === 0) {
+      // クエリに学校名あり・候補が汎用「名簿」のみ
+      base *= 0.25;
+    } else if (overlap) {
+      base = Math.min(1, base + 0.12);
+    }
   }
 
   // 「全ての記録」系は距離別SB定型への誤吸を防ぐ
