@@ -196,7 +196,14 @@ def discover():
                 add(ref, "kg-reference")
     manifest = json.loads((ROOT / "input/idaten-corpus/sources.json").read_text())
     for item in manifest:
-        add(item["source"], "corpus-original")
+        original = re.sub(r" [(]derived[)]$", "", item["source"])
+        path = safe_path(original)
+        if path.is_dir():
+            for child in sorted(path.rglob("*")):
+                if child.is_file():
+                    add(str(child.relative_to(ROOT)), "corpus-derived-original:" + original)
+        else:
+            add(original, "corpus-original")
         rel = "input/idaten-corpus/" + item["corpus"]
         add(rel, "corpus-copy")
     for path in sorted((ROOT / "input/idaten-corpus").rglob("*")):
@@ -275,6 +282,9 @@ def build():
     return {"version": 1, "max_chunk_chars": BUDGET, "files": files,
             "baseline_prepared_qa_count": len(existing["entries"]),
             "baseline_prepared_qa_sha256": digest(catalog.read_bytes()),
+            "chunk_kinds": dict(Counter(c["evidence"]["kind"] for c in chunks)),
+            "canonical_suffixes": dict(Counter(Path(f["path"]).suffix.lower() for f in files
+                                               if f["disposition"] == "canonical")),
             "chunk_count": len(chunks), "required_new_qa": len(chunks) * 3,
             "dispositions": dict(Counter(f["disposition"] for f in files)),
             "missing_routes": missing}, chunks
@@ -301,6 +311,10 @@ def write():
         (OUT / name).write_text("".join(buffer))
         batches.append({"path": "out/qa-chunks/" + name, "chunks": len(buffer)})
     inventory["batches"] = batches
+    source_index = {}
+    for chunk in chunks:
+        source_index.setdefault(chunk["source"], []).append(chunk["id"])
+    (OUT / "source-index.json").write_text(json.dumps(source_index, ensure_ascii=False, indent=2) + "\n")
     (OUT / "inventory.json").write_text(json.dumps(inventory, ensure_ascii=False, indent=2) + "\n")
     report = {k: v for k, v in inventory.items() if k not in {"files", "batches"}}
     report["batches"] = len(batches)
