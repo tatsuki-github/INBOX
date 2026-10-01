@@ -203,10 +203,12 @@ def check_entry(e: dict, projected: dict | None) -> dict:
         "[]" in answer and re.search(r"より。|他校は\s*\[\]", answer)
     ):
         problems.append("hollow_answer_link_strip")
-    if e["id"].startswith("chunkqa-"):
+    if e["id"].startswith(("chunkqa-", "fullchunkqa-")):
         from reviewed_chunk_qa import reviewed_entries, check_reviewed_entry
-        problems.extend(check_reviewed_entry(e, reviewed_entries().get(e["id"])))
-        return {"id": e["id"], "check": "manual_context_review_and_source_quote_check", "problems": problems}
+        reviewed = reviewed_entries().get(e["id"])
+        problems.extend(check_reviewed_entry(e, reviewed))
+        mode = "validated_csv_clock_comparison" if reviewed and reviewed.get("review", {}).get("method") == "schema-reviewed-time-comparison" else "manual_context_review_and_source_quote_check"
+        return {"id": e["id"], "check": mode, "problems": problems}
     mode = "source_text_time_check"
     if projected:
         mode = "source_projection_claim_check"

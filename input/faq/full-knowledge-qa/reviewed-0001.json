@@ -1,0 +1,473 @@
+{
+  "version": 1,
+  "entries": [
+    {
+      "id": "fullchunkqa-706ae3bd207b5be2043d7065-1",
+      "chunk_id": "knowledge-706ae3bd207b5be2043d7065",
+      "questions": [
+        "AI練習生成では自由に書ける部分とI・R強度の扱いをどう分ける？"
+      ],
+      "answer": "自由生成はウォームアップ・notes・週テーマに限ります。コアitemsはテンプレートを選んで差分編集し、I・R強度は週1の実験例外を除いてテンプレートが必要です。",
+      "sources": [
+        "docs/adr/001-ai-practice-generation-architecture.md"
+      ],
+      "source_sha256": "a0d52cd85c21f9049575b441ad75e72b23197e7c55052022cf6ebe8ee762af67",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "1. **テンプレ参照型**: コア items は [`input/practice_templates.yaml`](../../input/practice_templates.yaml) から選択し差分編集する"
+        },
+        {
+          "kind": "quote",
+          "text": "3. **創作スロット**: `warmup` / `notes` / 週テーマのみ自由生成。`I`/`R` intensity はテンプレ必須（週1 実験除く）"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      }
+    },
+    {
+      "id": "fullchunkqa-706ae3bd207b5be2043d7065-2",
+      "chunk_id": "knowledge-706ae3bd207b5be2043d7065",
+      "questions": [
+        "AI練習生成で形式が崩れた場合とAPIキー未設定の場合の対処は？"
+      ],
+      "answer": "形式は生成後にpracticeブロックのlintで検証し、最大3回再生成します。APIキー未設定時は、テンプレート選択のみのdry-runにフォールバックできます。",
+      "sources": [
+        "docs/adr/001-ai-practice-generation-architecture.md"
+      ],
+      "source_sha256": "a0d52cd85c21f9049575b441ad75e72b23197e7c55052022cf6ebe8ee762af67",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "2. **lint 検証ループ**: 生成後に [`scripts/lint_events.py`](../../scripts/lint_events.py) の `validate_practice_block` を通し、最大 3 回再生成"
+        },
+        {
+          "kind": "quote",
+          "text": "- LLM API キー未設定時はテンプレ選択のみの `--dry-run` フォールバック可能"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      }
+    },
+    {
+      "id": "fullchunkqa-706ae3bd207b5be2043d7065-3",
+      "chunk_id": "knowledge-706ae3bd207b5be2043d7065",
+      "questions": [
+        "AI練習生成の品質改善で新テンプレ追加を優先する理由と、ファインチューニングを見送った理由は？"
+      ],
+      "answer": "テンプレートとlintで精度を担保する構成なので、新テンプレートの追加が品質向上の主要な手段です。ファインチューニングはデータ量と運用コストに対してROIが低いとして見送られています。",
+      "sources": [
+        "docs/adr/001-ai-practice-generation-architecture.md"
+      ],
+      "source_sha256": "a0d52cd85c21f9049575b441ad75e72b23197e7c55052022cf6ebe8ee762af67",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "- 新テンプレ追加が AI 品質向上の主要レバーになる"
+        },
+        {
+          "kind": "quote",
+          "text": "- **ファインチューニング**: 却下 — データ量・運用コストに対し ROI が低い"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      }
+    },
+    {
+      "id": "fullchunkqa-272d8e3126b8130d27de480b-1",
+      "chunk_id": "knowledge-272d8e3126b8130d27de480b",
+      "questions": [
+        "ノルウェー式のAI生成とGZ表更新でペース計算を別々に実装している？"
+      ],
+      "answer": "計算はCh.2・Ch.5のロジックをpace_calculatorに集約し、GZ表の更新処理も同じモジュールを読み込みます。GZ・TはDaniels Tから決定論的に導出します。",
+      "sources": [
+        "docs/adr/002-norwegian-method-integration.md"
+      ],
+      "source_sha256": "e96869657804ed6490ba12ead541b4ffeb9b02005ea9ec2284a81f19f60ce8bd",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "1. **ペース計算**: [`scripts/ai/pace_calculator.py`](../../scripts/ai/pace_calculator.py) に Ch.2/Ch.5 ロジックを集約。`update_golden_zone_tables.py` も同モジュールを import"
+        },
+        {
+          "kind": "quote",
+          "text": "- GZ/T ペースは Daniels T から決定論的に導出（VDOT 計算は ADR 008 / `daniels_calculator.py`）"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      }
+    },
+    {
+      "id": "fullchunkqa-272d8e3126b8130d27de480b-2",
+      "chunk_id": "knowledge-272d8e3126b8130d27de480b",
+      "questions": [
+        "ノルウェー式AI生成のsystem promptには原則だけを渡す？"
+      ],
+      "answer": "原則だけでなく、principles_for_promptが返す原則とTペース表をsystem promptに注入します。説明・週テーマはRAGとLLM、数値はコードで扱う方針です。",
+      "sources": [
+        "docs/adr/002-norwegian-method-integration.md"
+      ],
+      "source_sha256": "e96869657804ed6490ba12ead541b4ffeb9b02005ea9ec2284a81f19f60ce8bd",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "4. **プロンプト**: `norwegian_rules.principles_for_prompt()` と T ペース表を system prompt に注入"
+        },
+        {
+          "kind": "quote",
+          "text": "- 説明・週テーマは RAG + LLM、数値はコード"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      }
+    },
+    {
+      "id": "fullchunkqa-272d8e3126b8130d27de480b-3",
+      "chunk_id": "knowledge-272d8e3126b8130d27de480b",
+      "questions": [
+        "ノルウェー式の根拠検索では毎回書籍PDFを読む方針？既存の索引資料は？"
+      ],
+      "answer": "毎回PDFを読み込む案は、既存の全文テキストと要約で十分として見送られています。RAGには原文全文テキストと要約Markdownを索引します。",
+      "sources": [
+        "docs/adr/002-norwegian-method-integration.md"
+      ],
+      "source_sha256": "e96869657804ed6490ba12ead541b4ffeb9b02005ea9ec2284a81f19f60ce8bd",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "3. **RAG**: `input/memos/norwegian_method_applied_full.txt` と `tmp/norwegian_method_summary.md` を索引"
+        },
+        {
+          "kind": "quote",
+          "text": "- 書籍 PDF をその都度読込: 却下 — 既存 txt/summary で十分"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      }
+    },
+    {
+      "id": "fullchunkqa-2cc3ab18d63ebef4ba8835ed-1",
+      "chunk_id": "knowledge-2cc3ab18d63ebef4ba8835ed",
+      "questions": [
+        "外部APIを呼べないCIで、AI練習生成の実LLMテストをどう扱う？"
+      ],
+      "answer": "オーケストレータはMockLLMClientで検証します。実APIのテストはintegrationマーカーを付けてCIから除外し、LLMの品質は手動確認または統合テストで確認します。",
+      "sources": [
+        "docs/adr/003-test-strategy-ai-module.md"
+      ],
+      "source_sha256": "92fb50bbfbbc16d9cebcad115eb575fe17fef37452d276ee4e152917aa39ec97",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "| オーケストレータ | `practice_generator`, `weekly_planner` | MockLLMClient |"
+        },
+        {
+          "kind": "quote",
+          "text": "| 統合 LLM | 実 API | `@pytest.mark.integration`、CI 除外 |"
+        },
+        {
+          "kind": "quote",
+          "text": "- 退行は pytest で検出、LLM 品質は手動/統合マーカーで確認"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      }
+    },
+    {
+      "id": "fullchunkqa-2cc3ab18d63ebef4ba8835ed-2",
+      "chunk_id": "knowledge-2cc3ab18d63ebef4ba8835ed",
+      "questions": [
+        "AIモジュールのRAGテストとドメインテストは同じ検証方法？"
+      ],
+      "answer": "ドメインの計算・選択・検証規則はpytestのTDDで検証し、RAGのchunkerとBM25Retrieverは固定フィクスチャとtmp_pathを使います。",
+      "sources": [
+        "docs/adr/003-test-strategy-ai-module.md"
+      ],
+      "source_sha256": "92fb50bbfbbc16d9cebcad115eb575fe17fef37452d276ee4e152917aa39ec97",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "| ドメイン | `creative_rules`, `template_selector`, `pace_calculator`, `validator`, `pre_race_stimulus`, `attendance_rules` | pytest TDD |"
+        },
+        {
+          "kind": "quote",
+          "text": "| RAG | `chunker`, `BM25Retriever` | 固定フィクスチャ + tmp_path |"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      }
+    },
+    {
+      "id": "fullchunkqa-2cc3ab18d63ebef4ba8835ed-3",
+      "chunk_id": "knowledge-2cc3ab18d63ebef4ba8835ed",
+      "questions": [
+        "AIモジュールのCLIテストは実装済みの必須手段として記載されている？全体の検証コマンドは？"
+      ],
+      "answer": "ADRではCLIのsubprocessテストを「将来」としています。全体の検証コマンドはpython3 -m pytest tests/ -vです。",
+      "sources": [
+        "docs/adr/003-test-strategy-ai-module.md"
+      ],
+      "source_sha256": "92fb50bbfbbc16d9cebcad115eb575fe17fef37452d276ee4e152917aa39ec97",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "| CLI | `generate_practice.py` 等 | subprocess（将来） |"
+        },
+        {
+          "kind": "quote",
+          "text": "検証コマンド: `python3 -m pytest tests/ -v`"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      }
+    },
+    {
+      "id": "fullchunkqa-5d9684f76a91672d1262737b-1",
+      "chunk_id": "knowledge-5d9684f76a91672d1262737b",
+      "questions": [
+        "現場1枚の読み上げ文と距離別の秒タイムは、LLMが直接書く？"
+      ],
+      "answer": "どちらもLLMには任せません。距離別のGZ・T秒レンジはpace_calculatorで計算し、読み上げ文はpractice_rendererを土台に生成します。",
+      "sources": [
+        "docs/adr/004-coach-ready-practice-sheet.md"
+      ],
+      "source_sha256": "a753136fb5e021d735744243c8afb94732c133ce4425d48b6cfd2089b743246f",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "2. **秒タイム**は LLM 禁止。[`pace_calculator.py`](../../scripts/ai/pace_calculator.py) で GZ/T を距離別秒レンジにする"
+        },
+        {
+          "kind": "quote",
+          "text": "3. **読み上げ文**は LLM 禁止。[`practice_renderer.py`](../../scripts/practice_renderer.py) を土台にする"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      }
+    },
+    {
+      "id": "fullchunkqa-5d9684f76a91672d1262737b-2",
+      "chunk_id": "knowledge-5d9684f76a91672d1262737b",
+      "questions": [
+        "現場1枚をapplyするとき、構造化練習と読み上げ文を片方ずつ更新する？"
+      ],
+      "answer": "applyはpracticeとdescriptionの読み上げ・切上げを同時に更新します。信頼度ヘッダはカレンダーに書き込みません。",
+      "sources": [
+        "docs/adr/004-coach-ready-practice-sheet.md"
+      ],
+      "source_sha256": "a753136fb5e021d735744243c8afb94732c133ce4425d48b6cfd2089b743246f",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "5. **`--apply`** は `practice` と `description`（読み上げ + 切上げ）を同時更新。信頼度ヘッダはカレンダーに書かない"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      }
+    },
+    {
+      "id": "fullchunkqa-5d9684f76a91672d1262737b-3",
+      "chunk_id": "knowledge-5d9684f76a91672d1262737b",
+      "questions": [
+        "現場1枚に選手名の例外が出たらAIが推測して反映する？出力形式も選べる？"
+      ],
+      "answer": "選手名の例外は推測せず、確認チェックリストにします。既定は指導者向けの現場1枚ですが、機械用のYAML・JSON形式も残しています。",
+      "sources": [
+        "docs/adr/004-coach-ready-practice-sheet.md"
+      ],
+      "source_sha256": "a753136fb5e021d735744243c8afb94732c133ce4425d48b6cfd2089b743246f",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "6. 選手名の例外は推測せず、確認チェックリストのみ"
+        },
+        {
+          "kind": "quote",
+          "text": "1. **既定出力は現場1枚**（ヘッダ + 読み上げ文 + 切上げ + 確認）。`--format yaml|json` は機械用として残す"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      }
+    },
+    {
+      "id": "fullchunkqa-7594ca476599ffc886098109-1",
+      "chunk_id": "knowledge-7594ca476599ffc886098109",
+      "questions": [
+        "800mと1500mが混在する大会2日前RPで、1500m組に合わせて全員900mにする？"
+      ],
+      "answer": "既定は短い600mの刺激1本です。1500m組は手で900mまたは1000mに変更できる旨をnotesに書きます。連続疾走の上限は1000mで、本数は増やしません。",
+      "sources": [
+        "docs/adr/005-pre-race-rp-stimulus.md"
+      ],
+      "source_sha256": "ef5fde7eda665590d41b4207464f640e6d0696caccaf7dbca850133009ee6917",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "   800 と 1500 が混在するときは **短い刺激（600m）** を既定にし、1500 組は手で 900/1000 に変えられる旨を notes に書く"
+        },
+        {
+          "kind": "quote",
+          "text": "- 連続疾走は **最大 1000m**、本数は増やさない"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      }
+    },
+    {
+      "id": "fullchunkqa-7594ca476599ffc886098109-2",
+      "chunk_id": "knowledge-7594ca476599ffc886098109",
+      "questions": [
+        "大会2日前でも翌日が記録会の場合やジョグのみ指定の場合はRP刺激に上書きする？"
+      ],
+      "answer": "上書きしません。適用条件は夕練・2日後が大会・翌日が記録会でないことです。「ジョグのみ」などの指定も上書きしません。",
+      "sources": [
+        "docs/adr/005-pre-race-rp-stimulus.md"
+      ],
+      "source_sha256": "ef5fde7eda665590d41b4207464f640e6d0696caccaf7dbca850133009ee6917",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "4. **適用条件**: 夕練、かつ 2 日後が大会、かつ翌日が記録会でない。クエリが「ジョグのみ」等なら上書きしない"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      }
+    },
+    {
+      "id": "fullchunkqa-7594ca476599ffc886098109-3",
+      "chunk_id": "knowledge-7594ca476599ffc886098109",
+      "questions": [
+        "1500mの大会2日前RPを1000mにする指定と、種目不明時の既定は？"
+      ],
+      "answer": "1500mは900mが既定で、クエリに1000があり900がないときに1000mにします。種目不明時は900mとし、確認チェックリストを出します。",
+      "sources": [
+        "docs/adr/005-pre-race-rp-stimulus.md"
+      ],
+      "source_sha256": "ef5fde7eda665590d41b4207464f640e6d0696caccaf7dbca850133009ee6917",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "   | 1500m | 900m（クエリに 1000 があり 900 が無いとき 1000m） |"
+        },
+        {
+          "kind": "quote",
+          "text": "   | 不明 | 900m（確認チェックリスト） |"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      }
+    },
+    {
+      "id": "fullchunkqa-573d676405f657e0ae6cde65-1",
+      "chunk_id": "knowledge-573d676405f657e0ae6cde65",
+      "questions": [
+        "カレンダーに練習会が残っているだけで岱明の翌日メニューをジョグに固定する？"
+      ],
+      "answer": "固定しません。練習会は原則不参加のため負荷フラグを立てず、通常のGZ週として組めます。天候による切上げは残します。",
+      "sources": [
+        "docs/adr/006-practice-meets-not-load.md"
+      ],
+      "source_sha256": "e21f7f286b9d3e30f2390aa95688950918e945b8a29847a1de4a7eb7ff959157",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "2. `prev_meet` / `next_meet` は練習会から立てない（負荷フラグにしない）"
+        },
+        {
+          "kind": "quote",
+          "text": "- 8/21 夕練は練習会翌日でもジョグ強制にならない（天候による切上げは残る）"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      }
+    },
+    {
+      "id": "fullchunkqa-573d676405f657e0ae6cde65-2",
+      "chunk_id": "knowledge-573d676405f657e0ae6cde65",
+      "questions": [
+        "大会2日前RPにとって、翌日の練習会と翌日の記録会は同じ扱い？"
+      ],
+      "answer": "扱いが異なります。翌日が練習会ならRPを止めず、翌日が記録会なら止めます。翌日のテーパーの対象は記録会のみです。",
+      "sources": [
+        "docs/adr/006-practice-meets-not-load.md"
+      ],
+      "source_sha256": "e21f7f286b9d3e30f2390aa95688950918e945b8a29847a1de4a7eb7ff959157",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "3. 切上げから「練習会翌日で脚が重い」を外す。翌日のテーパーは **記録会のみ**"
+        },
+        {
+          "kind": "quote",
+          "text": "4. 大会2日前 RP は翌日練習会では止めない（翌日記録会では止める）"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      }
+    },
+    {
+      "id": "fullchunkqa-573d676405f657e0ae6cde65-3",
+      "chunk_id": "knowledge-573d676405f657e0ae6cde65",
+      "questions": [
+        "練習会の負荷を除外するために予定自体を消す？例外参加者への対応は？"
+      ],
+      "answer": "予定は会場情報として価値があるため残します。例外参加者は確認チェックリストの「例外グループ」で手動の切上げに対応します。練習会前後だけでは信頼度をreviewにしません。",
+      "sources": [
+        "docs/adr/006-practice-meets-not-load.md"
+      ],
+      "source_sha256": "e21f7f286b9d3e30f2390aa95688950918e945b8a29847a1de4a7eb7ff959157",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "- 練習会をカレンダーから消す: 却下 — 会場情報として残す価値がある"
+        },
+        {
+          "kind": "quote",
+          "text": "- 例外参加の選手だけ手で切上げ: 採用 — 確認チェックリストの「例外グループ」で足りる"
+        },
+        {
+          "kind": "quote",
+          "text": "5. 信頼度は練習会前後だけでは `review` にしない"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      }
+    }
+  ]
+}

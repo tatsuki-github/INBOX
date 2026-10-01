@@ -99,6 +99,12 @@ const HARD_OUT_OF_SCOPE_PATTERNS = [
 
 export const REMUNERATION_PRIVATE_MESSAGE = "謝礼・謝金の金額は回答対象外です。";
 
+export const PERSONAL_PRIVATE_MESSAGE = "口座・認証情報や個人への私的な評価は回答対象外です。";
+
+export function isPrivatePersonalQuestion(question: string): boolean {
+  return /口座|バックアップコード|認証コード|マイナンバー|運転免許|免許証.*番号|給与|年収|月給|資産|残高|性格|人物評|人間性|家庭事情|(?:保護者|選手|生徒).*(?:私見|印象|評判)/.test(question.normalize("NFKC"));
+}
+
 export function isPrivateRemunerationQuestion(question: string): boolean {
   return /謝礼|謝金|報酬|指導者.*時給|コーチ.*時給/.test(question.normalize("NFKC"));
 }
@@ -119,6 +125,10 @@ export function classifyScope(question: string): ScopeDecision {
 
   if (isPrivateRemunerationQuestion(q)) {
     return { kind: "out_of_scope", message: REMUNERATION_PRIVATE_MESSAGE, hard: true };
+  }
+
+  if (isPrivatePersonalQuestion(q)) {
+    return { kind: "out_of_scope", message: PERSONAL_PRIVATE_MESSAGE, hard: true };
   }
 
   const allowRepoWeather = REPO_WEATHER_ALLOW.test(q);

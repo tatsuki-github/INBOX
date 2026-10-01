@@ -1,0 +1,505 @@
+{
+  "version": 1,
+  "entries": [
+    {
+      "id": "fullchunkqa-b874cdcba1bd305699f800e0-1",
+      "chunk_id": "knowledge-b874cdcba1bd305699f800e0",
+      "questions": [
+        "大会翌日の休みと、次の大会2日前のRP刺激が重なったらどちらを優先する？"
+      ],
+      "answer": "大会翌日のpost-race-restを優先します。単日生成・週次生成の両方で、大会2日前のRP刺激より翌日の休みを優先する方針です。",
+      "sources": [
+        "docs/adr/007-post-race-rest.md"
+      ],
+      "source_sha256": "84a95f32c9689d06a06e0985a71798bd44bd1ed5cf560b06e9ab3811f56308b6",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "3. 検出時はテンプレ `post-race-rest` を優先（週次・単日とも）。**大会2日前 RP より優先**"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      }
+    },
+    {
+      "id": "fullchunkqa-b874cdcba1bd305699f800e0-2",
+      "chunk_id": "knowledge-b874cdcba1bd305699f800e0",
+      "questions": [
+        "大会翌日は朝練だけEペースで行い、夕練は通常練習にする運用？"
+      ],
+      "answer": "朝夕とも基本休みです。Eペースは部の練習を行う指定ではなく、自主練を行う場合の上限としてnotesで許可する扱いです。",
+      "sources": [
+        "docs/adr/007-post-race-rest.md"
+      ],
+      "source_sha256": "84a95f32c9689d06a06e0985a71798bd44bd1ed5cf560b06e9ab3811f56308b6",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "- 翌日 E ジョグテンプレ: 却下 — 「基本休み」を優先。E は notes で自主練許可"
+        },
+        {
+          "kind": "quote",
+          "text": "- `prev_race` で朝練のみ E: 却下 — 朝夕とも休みが方針"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      }
+    },
+    {
+      "id": "fullchunkqa-b874cdcba1bd305699f800e0-3",
+      "chunk_id": "knowledge-b874cdcba1bd305699f800e0",
+      "questions": [
+        "大会翌日の休み規則は駅伝・ナイターも対象？練習会翌日も同じ？"
+      ],
+      "answer": "前日の大会・記録会・駅伝・ナイターをprev_raceで検出します。練習会は負荷外の扱いを継続するため、練習会翌日だけで大会翌日の休み規則を適用しません。",
+      "sources": [
+        "docs/adr/007-post-race-rest.md"
+      ],
+      "source_sha256": "84a95f32c9689d06a06e0985a71798bd44bd1ed5cf560b06e9ab3811f56308b6",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "2. `session_context` が **前日** の大会・記録会・駅伝・ナイターを `prev_race` で検出"
+        },
+        {
+          "kind": "quote",
+          "text": "5. 練習会は引き続き負荷外（ADR 006）"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      }
+    },
+    {
+      "id": "fullchunkqa-2d51fd70f82ab620347102f7-1",
+      "chunk_id": "knowledge-2d51fd70f82ab620347102f7",
+      "questions": [
+        "Danielsのトレーニングペースをコードに固定する案を見送った理由と、補間する表の単位は？"
+      ],
+      "answer": "テストと更新を容易にするため、コードへの直書きではなくYAMLに分離しています。Daniels第3版のsec/mile表を線形補間して使います。",
+      "sources": [
+        "docs/adr/008-daniels-vdot-gz-guidance.md"
+      ],
+      "source_sha256": "b6d44fc619bc28b9f0507f8744483fe534572856f99e5cf1d51a18439576a120",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "2. **トレーニングペース**: [`input/daniels_vdot_paces.yaml`](../../input/daniels_vdot_paces.yaml) の 3rd ed. テーブル（sec/mile）を線形補間"
+        },
+        {
+          "kind": "quote",
+          "text": "- VDOT テーブルをコードに直書き: 却下 — YAML 分離でテスト・更新容易"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      }
+    },
+    {
+      "id": "fullchunkqa-2d51fd70f82ab620347102f7-2",
+      "chunk_id": "knowledge-2d51fd70f82ab620347102f7",
+      "questions": [
+        "GZを10km換算やLLMの概算で出してよい？レースタイムからの算出順は？"
+      ],
+      "answer": "概算は採用していません。レースタイムからVDOT、Tペース、GZの順に決定論的に算出し、回答はCLI実行結果を根拠にする方針です。",
+      "sources": [
+        "docs/adr/008-daniels-vdot-gz-guidance.md"
+      ],
+      "source_sha256": "b6d44fc619bc28b9f0507f8744483fe534572856f99e5cf1d51a18439576a120",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "5. **エージェント規約**: GZ / サブ閾値の質問には **CLI 実行結果を根拠に回答**（[`practice-ai` スキル](../../.agents/skills/practice-ai/references/daniels-gz-guide.md)）"
+        },
+        {
+          "kind": "quote",
+          "text": "- GZ 回答の一貫性が保証される（レースタイム → VDOT → T → GZ）"
+        },
+        {
+          "kind": "quote",
+          "text": "- Web 検索 / LLM 概算: 却下 — 10K ペース基準の過大評価が再発"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      }
+    },
+    {
+      "id": "fullchunkqa-2d51fd70f82ab620347102f7-3",
+      "chunk_id": "knowledge-2d51fd70f82ab620347102f7",
+      "questions": [
+        "VDOT計算モジュールの追加に合わせてGZのTへのoffset規則も変えた？既存GZ表更新との関係は？"
+      ],
+      "answer": "GZは既存のT+offsetロジックを変更せず利用します。GZ表の更新処理も引き続きTペース文字列から更新し、VDOT CLIと整合させます。",
+      "sources": [
+        "docs/adr/008-daniels-vdot-gz-guidance.md"
+      ],
+      "source_sha256": "b6d44fc619bc28b9f0507f8744483fe534572856f99e5cf1d51a18439576a120",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "3. **GZ 導出**: 既存 [`pace_calculator.py`](../../scripts/ai/pace_calculator.py) の T+offset ロジックを使用（変更なし）"
+        },
+        {
+          "kind": "quote",
+          "text": "- `update_golden_zone_tables.py` は引き続き T ペース文字列から GZ を更新（VDOT CLI と整合）"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      }
+    },
+    {
+      "id": "fullchunkqa-209dbc0e046c710cf2cb5968-1",
+      "chunk_id": "knowledge-209dbc0e046c710cf2cb5968",
+      "questions": [
+        "ナレッジグラフHTMLはローカルファイルでも外部依存なしで描画できる？データ取得と描画ライブラリの違いは？"
+      ],
+      "answer": "グラフデータはHTMLに埋め込むため、JSONの外部fetchに依存しません。ただし描画にはCDNのvis-networkを使う構成です。データの埋め込みと描画ライブラリの外部依存は別です。",
+      "sources": [
+        "docs/adr/009-knowledge-graph-html-viz.md"
+      ],
+      "source_sha256": "f86b2c873284bd3d2c355220d6ffe09fd4dc5f32e569a9517f6f7ff6e701a319",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "3. データは HTML 内に埋め込む（`file://` でも動くようにする。外部 fetch に依存しない）。"
+        },
+        {
+          "kind": "quote",
+          "text": "4. 描画は **vis-network**（CDN）の force-directed グラフとする。"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      }
+    },
+    {
+      "id": "fullchunkqa-209dbc0e046c710cf2cb5968-2",
+      "chunk_id": "knowledge-209dbc0e046c710cf2cb5968",
+      "questions": [
+        "ナレッジグラフのPDFもHTMLと同じ対話グラフを印刷する形式？生成するタイミングは？"
+      ],
+      "answer": "PDFは対話グラフではなく、印刷用のノード一覧スナップショットです。JSON・HTMLと同じ生成で出力し、ReportLabと同梱NotoSansJPを使います。",
+      "sources": [
+        "docs/adr/009-knowledge-graph-html-viz.md"
+      ],
+      "source_sha256": "f86b2c873284bd3d2c355220d6ffe09fd4dc5f32e569a9517f6f7ff6e701a319",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "2. 同じ生成で **`out/knowledge-graph.pdf`**（印刷用ノード一覧スナップショット）も出力する。"
+        },
+        {
+          "kind": "quote",
+          "text": "6. PDF は ReportLab + リポジトリ同梱 NotoSansJP（対話グラフではなく一覧）。"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      }
+    },
+    {
+      "id": "fullchunkqa-209dbc0e046c710cf2cb5968-3",
+      "chunk_id": "knowledge-209dbc0e046c710cf2cb5968",
+      "questions": [
+        "ナレッジグラフのcheckはHTML・PDFまで内容を完全比較する？それぞれのテスト対象は？"
+      ],
+      "answer": "checkはJSON比較のままです。HTMLは埋め込みJSON・必須DOM id・CDN参照、PDFはPDFヘッダと十分なサイズを生成検証します。",
+      "sources": [
+        "docs/adr/009-knowledge-graph-html-viz.md"
+      ],
+      "source_sha256": "f86b2c873284bd3d2c355220d6ffe09fd4dc5f32e569a9517f6f7ff6e701a319",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "- 単体: HTML 生成物に埋め込み JSON・必須 DOM id・vis-network CDN 参照があること"
+        },
+        {
+          "kind": "quote",
+          "text": "- 単体: PDF が `%PDF` ヘッダを持ち十分なサイズであること"
+        },
+        {
+          "kind": "quote",
+          "text": "- 回帰: 既存 `tests/test_knowledge_graph.py` Green、`--check` は JSON 比較のまま（HTML/PDF は生成検証）"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      }
+    },
+    {
+      "id": "fullchunkqa-582e291a579d642868c74aa8-1",
+      "chunk_id": "knowledge-582e291a579d642868c74aa8",
+      "questions": [
+        "外部取り込みの通常ルールではGoogle Docs・Sheetsと8MB超のPDFをどう保存する？"
+      ],
+      "answer": "テキスト化できるDocs・SheetsはMarkdown・CSVで保存し、8MB超の巨大PDFや市販書籍はメタデータスタブのみとします。荒玉結果画像などには別途メディア例外があります。",
+      "sources": [
+        "docs/adr/010-external-idaten-import.md"
+      ],
+      "source_sha256": "758c1736a75049a4daf23799f497a3c82637c7fdecf4aef3d7c1e47be51507df",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "3. テキスト化可能な Google Docs/Sheets は MD/CSV で保存。巨大 PDF（>8MB）や市販書籍はメタデータスタブのみ。"
+        },
+        {
+          "kind": "quote",
+          "text": "6. **メディア例外（詳細は ADR 011）**: 荒玉駅伝結果画像・分析 PDF・フォト画像はバイナリ＋OCR を保存し、KG の `MediaAsset` からパス参照する。"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      }
+    },
+    {
+      "id": "fullchunkqa-582e291a579d642868c74aa8-2",
+      "chunk_id": "knowledge-582e291a579d642868c74aa8",
+      "questions": [
+        "Notionカレンダーを全ページ個別Markdownにしない理由と、代わりに保存するDB情報は？"
+      ],
+      "answer": "カレンダーは既存のevents YAMLと重複し、ページ数も多いためINDEXリンクと差分補完を優先します。Notion DB自体はschemaとrows JSONを保存します。",
+      "sources": [
+        "docs/adr/010-external-idaten-import.md"
+      ],
+      "source_sha256": "758c1736a75049a4daf23799f497a3c82637c7fdecf4aef3d7c1e47be51507df",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "4. Notion DB は schema + rows JSON を保存。カレンダー全件は既存 YAML 正本と重複するため INDEX リンク優先、差分補完のみ。"
+        },
+        {
+          "kind": "quote",
+          "text": "| Notion カレンダー全ページ個別 MD | 件数過多。既存 `input/events.*.yaml` が正本 |"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      }
+    },
+    {
+      "id": "fullchunkqa-582e291a579d642868c74aa8-3",
+      "chunk_id": "knowledge-582e291a579d642868c74aa8",
+      "questions": [
+        "外部データ取り込みでリポジトリを外部の正本に置き換え、ライブAPIだけで探索する方針？"
+      ],
+      "answer": "正本は外部にあり、リポジトリは検索可能なスナップショットです。ライブAPIだけの参照はオフライン探索とCI再現性がないため見送っています。各ファイルにid・タイトル・MIME・閲覧URL・更新時刻のメタデータを併置します。",
+      "sources": [
+        "docs/adr/010-external-idaten-import.md"
+      ],
+      "source_sha256": "758c1736a75049a4daf23799f497a3c82637c7fdecf4aef3d7c1e47be51507df",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "1. スナップショットを `input/external/{drive,notion,github}/` に置く（正本は外部、リポは検索可能なコピー）。"
+        },
+        {
+          "kind": "quote",
+          "text": "2. 各ファイルに `.meta.json`（id, title, mimeType, viewUrl, modifiedTime）を併置する。"
+        },
+        {
+          "kind": "quote",
+          "text": "| 外部 API ライブ参照のみ | オフライン探索・CI 再現性がない |"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      }
+    },
+    {
+      "id": "fullchunkqa-d93abaf401df9b972bb77937-1",
+      "chunk_id": "knowledge-d93abaf401df9b972bb77937",
+      "questions": [
+        "駅伝の結果画像が未取得なら文字起こしも作らずに待つ？後から画像を補うために何を残す？"
+      ],
+      "answer": "画像が未取得でもNotion行プロパティから構造化文字起こしを置きます。未取得バイナリはメタデータにattachment IDを残し、後から手動・追従アップロードで補います。",
+      "sources": [
+        "docs/adr/011-idaten-media-ocr-kg.md"
+      ],
+      "source_sha256": "30db2558441ae6773b3151af0aa40b964c76fc270e933a0f1f9e7577522f4c49",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "   - 駅伝歴代は画像未取得時でも Notion 行プロパティから構造化文字起こしを必ず置く"
+        },
+        {
+          "kind": "quote",
+          "text": "5. **未取得バイナリ**は meta に attachment ID を残し、Drive フォルダ `荒玉駅伝歴代` への手動/追従アップロードで埋める"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      }
+    },
+    {
+      "id": "fullchunkqa-d93abaf401df9b972bb77937-2",
+      "chunk_id": "knowledge-d93abaf401df9b972bb77937",
+      "questions": [
+        "駅伝画像をナレッジグラフのbase64に埋め込む？画像とOCRはどう参照する？"
+      ],
+      "answer": "base64埋め込みはグラフ肥大と差分ノイズのため採用しません。MediaAssetのrefsでローカル画像パスを参照し、hintにOCRパスを載せます。",
+      "sources": [
+        "docs/adr/011-idaten-media-ocr-kg.md"
+      ],
+      "source_sha256": "30db2558441ae6773b3151af0aa40b964c76fc270e933a0f1f9e7577522f4c49",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "   - `MediaAsset` ノード（refs = ローカルパス、hint に OCR パス）"
+        },
+        {
+          "kind": "quote",
+          "text": "| KG に画像 base64 埋め込み | グラフ肥大・差分ノイズ |"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      }
+    },
+    {
+      "id": "fullchunkqa-d93abaf401df9b972bb77937-3",
+      "chunk_id": "knowledge-d93abaf401df9b972bb77937",
+      "questions": [
+        "メディア取り込みでOCRだけを残し、元画像と動画をすべて同じ扱いにする？"
+      ],
+      "answer": "元画像は順位表の読み取り・検証に必要なので残します。保存は画像を優先し、フォト動画はスタブを継続できる扱いです。",
+      "sources": [
+        "docs/adr/011-idaten-media-ocr-kg.md"
+      ],
+      "source_sha256": "30db2558441ae6773b3151af0aa40b964c76fc270e933a0f1f9e7577522f4c49",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "   - 共有フォトの画像（動画はスタブ継続可）→ `input/external/drive/shared/フォト/**`"
+        },
+        {
+          "kind": "quote",
+          "text": "| OCR のみで画像不要 | 順位表の読み取り・検証に原画が必要 |"
+        },
+        {
+          "kind": "quote",
+          "text": "| 全フォト動画もバイナリ | サイズ肥大。画像優先 |"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      }
+    },
+    {
+      "id": "fullchunkqa-429354a984509dd661e36ff2-1",
+      "chunk_id": "knowledge-429354a984509dd661e36ff2",
+      "questions": [
+        "年度別SBの元CSVに翌暦年1〜3月の記録がある場合、日付の年に移す？"
+      ],
+      "answer": "移しません。年度は行の日付ではなく元CSVのファイル名で判定し、元パイプラインの年度区分を保持します。翌暦年の記録も元年度に残します。",
+      "sources": [
+        "docs/adr/012-middle-school-sb-all-years.md"
+      ],
+      "source_sha256": "ec7cc62f015d722e10eb0b1d3aaf7332eb66be8d8b0e77bd5a1106a85ada43c1",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "3. 年度は行の日付ではなく、元CSVのファイル名で判定する。元ファイルが持つ年度区分を"
+        },
+        {
+          "kind": "quote",
+          "text": "   変更せず、翌暦年の記録を含む場合も元年度に保持する。"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      }
+    },
+    {
+      "id": "fullchunkqa-429354a984509dd661e36ff2-2",
+      "chunk_id": "knowledge-429354a984509dd661e36ff2",
+      "questions": [
+        "年度別SBの採用フラグがtrue・false以外だったら採用を推測する？名前の置換文字も修復する？"
+      ],
+      "answer": "不正な採用フラグは推測せず生成を停止します。trueの採用行だけを取り込み、出力は__YES__に正規化します。元データのUnicode置換文字も推測修復せず、statusのreplacement_character_rowsで可視化します。",
+      "sources": [
+        "docs/adr/012-middle-school-sb-all-years.md"
+      ],
+      "source_sha256": "ec7cc62f015d722e10eb0b1d3aaf7332eb66be8d8b0e77bd5a1106a85ada43c1",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "4. 元CSVの `SB採用=true` 行だけを採用し、出力では `__YES__` に正規化する。"
+        },
+        {
+          "kind": "quote",
+          "text": "   `true` / `false` 以外の値は入力不正として生成を停止する。"
+        },
+        {
+          "kind": "quote",
+          "text": "   元データに存在するUnicode置換文字は推測修復せず、statusの"
+        },
+        {
+          "kind": "quote",
+          "text": "   `replacement_character_rows` で可視化する。"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      }
+    },
+    {
+      "id": "fullchunkqa-429354a984509dd661e36ff2-3",
+      "chunk_id": "knowledge-429354a984509dd661e36ff2",
+      "questions": [
+        "年度別中学生SBをワイド表の年度コピーだけで作らない理由と、公開元の訂正時の対応は？"
+      ],
+      "answer": "ワイド表だけでは年度別の大会・日付・SB採用フラグが失われるため、年度別の長形式元CSVから決定的に再生成します。公開元で訂正・削除された場合は元CSVを更新し、生成物へ反映します。",
+      "sources": [
+        "docs/adr/012-middle-school-sb-all-years.md"
+      ],
+      "source_sha256": "ec7cc62f015d722e10eb0b1d3aaf7332eb66be8d8b0e77bd5a1106a85ada43c1",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "2. 年度別の正本は"
+        },
+        {
+          "kind": "quote",
+          "text": "   とし、`scripts/build_middle_school_sb_by_year.py` で決定的に再生成する。"
+        },
+        {
+          "kind": "quote",
+          "text": "| ワイドだけを年度別コピー | 年度別の大会・日付・SB採用フラグが失われる |"
+        },
+        {
+          "kind": "quote",
+          "text": "   連絡先や住所など競技結果に不要な個人情報は保存しない。公開元で訂正・削除された場合は"
+        },
+        {
+          "kind": "quote",
+          "text": "   元CSVを更新して生成物へ反映する。"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      }
+    }
+  ]
+}
