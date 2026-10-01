@@ -68,6 +68,17 @@ LINE Q&A は RAG / LLM で都度組み立てると、ぶれ・コーチ誘導・
 
 ## Test strategy
 
+- 事実照合: `python3 scripts/audit_prepared_qa_facts.py --check`。
+  全エントリの根拠の存在を確認し、ソースから再構成できる回答は数値・選手名・日付／種目／記録の対応を照合する。
+  `--fix` は抽出処理を修正した年度別SB、全記録、所属別件数、予想オーダー等を再構成する。
+  年度別SBは生涯PBと区別し、全記録の件数はナレッジ収録分、未収録区間がある予想は小計と明記する。
+  古い年度の大会結果の質問には西暦を付ける。「今年」の質問から過去の結果へ誘導しない。
+- 監査結果: `backend/data/eval-gaps/prepared-qa-factual-audit.json` に全件の検査方式・問題・ソースハッシュを保存する。
+  `prepared-qa-factual-corrections.jsonl` は改修前後のハッシュと変更項目を記録する。
+  ソース再構成がない自由文の検査は根拠の存在とタイムの文字列照合に限定され、文意や人物対応の完全な証明ではない。
+  外部サイトの最新結果の正しさも保証しない。疑義が出たら該当行・一次資料を開いて確認する。
+- 抽出処理の独立した回帰例: `tests/test_prepared_qa_facts.py`（学年によるタイム先頭桁の欠落、異なる平均表の混同、開催日、小計等）。
+
 - `backend/tests/preparedQa.test.ts`: 正規化 / 言い換え / 年なし＝今年度 / 非ヒット / 件数ロード
 - `backend/tests/preparedQaConstraints.test.ts`: 男女・区間・距離の矛盾除外、複数区間、距離単位の同値性
 - `answerQuestion` 代表問で `prepared:` ソース

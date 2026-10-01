@@ -560,7 +560,7 @@ def gen_sb(existing_ids: set[str], limit: int) -> list[dict]:
             f"{name}の{dist}SBは？",
             f"{name}の{dist}記録は？",
         ]
-        ans = f"{name}（{aff}/{gender}）の{dist}自己ベストは {mark} です。"
+        ans = f"{name}（{aff}/{gender}）の2026年度・{dist}シーズンベスト（SB採用）は {mark} です。"
         if meet or date:
             ans += f" 大会: {meet}（{date}）。"
         out.append(

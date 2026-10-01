@@ -476,9 +476,14 @@ def gen_formula_2026(existing_ids: set[str], limit: int) -> list[dict]:
                 f"今年の荒玉{gender}{team}の戦力予想は？",
                 f"{team}の2026荒玉{gender}区間予想",
             ]
+            required_legs = set(range(1, 7 if gender == "男子" else 6))
+            predicted_legs = {int(r["leg"]) for r in rows if r.get("formula_sec")}
+            complete = predicted_legs == required_legs
+            total_label = "全区間の合計目安" if complete else f"予想のある{len(predicted_legs)}区間のみの小計"
+            incomplete_note = "" if complete else " 未収録区間があるため、総合タイムは算出できません。"
             ans = (
                 f"2026年荒玉駅伝{gender}・{team}の数式予想（仮オーダー含む）です。"
-                f" 合計目安 {mm}:{ss:02d}。 " + "、".join(bits) + "。"
+                f" {total_label} {mm}:{ss:02d}。" + incomplete_note + " " + "、".join(bits) + "。"
                 " 断定順位ではなく、直近レース観測に基づく説明可能な予想です。"
             )
             srcs = [str(path.relative_to(ROOT))]

@@ -219,7 +219,9 @@ def gen_arato_tamana_teams(existing_ids: set[str], limit: int) -> list[dict]:
         for s in seasons:
             if s not in uniq_seasons:
                 uniq_seasons.append(s)
-        count_m = re.search(r"件数:\s*(\d+)", text)
+        # The document is oldest-first. The first count is not the latest one.
+        sections = re.findall(r"##\s*(20\d{2})年度\s*\n+件数:\s*(\d+)", text)
+        latest_count = max(sections, key=lambda x: int(x[0])) if sections else None
         qs = [
             f"{team}の選手の全記録は？",
             f"{team}の記録一覧は？",
@@ -230,8 +232,8 @@ def gen_arato_tamana_teams(existing_ids: set[str], limit: int) -> list[dict]:
         ans = f"{team}の所属選手トラック記録一覧です。"
         if uniq_seasons:
             ans += " 収録年度: " + "、".join(uniq_seasons[:4]) + "。"
-        if count_m:
-            ans += f" 例: 直近セクション件数 {count_m.group(1)}。"
+        if latest_count:
+            ans += f" {latest_count[0]}年度の収録件数は{latest_count[1]}件です。"
         ans += " 種目は800m・1500m・3000mなど。個人の自己ベストは選手名＋距離で聞いてください。"
         out.append(
             entry(

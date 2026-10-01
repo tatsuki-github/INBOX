@@ -19,6 +19,47 @@ describe("preparedQa catalog", () => {
     expect(entries[0]?.answer.length).toBeGreaterThan(10);
   });
 
+  it("keeps audited annual records and prediction scopes factual", () => {
+    const entries = new Map(loadPreparedQa().map((e) => [e.id, e]));
+    const sato = entries.get("records-athlete-2025-佐藤央琉")!;
+    expect(sato.answer).toContain("全9件");
+    expect(sato.answer).toContain("2025/09/21 3区 10:42");
+    expect(sato.answer).not.toMatch(/3区 0:42/);
+    const matsumoto = entries.get("records-athlete-2025-松本空羽")!;
+    expect(matsumoto.answer).toContain("全4件");
+    expect(matsumoto.answer).not.toMatch(/4区 2:37/);
+    expect(entries.get("formula-2026-男子-荒尾三中-order")!.answer).toContain("3区間のみの小計 32:13");
+    expect(entries.get("formula-2026-男子-荒尾三中-order")!.answer).toContain("総合タイムは算出できません");
+    expect(entries.get("records-team-ATRC")!.answer).toContain("2026年度の収録件数は67件");
+    expect(entries.get("aragyoku-winner-pace")!.answer).toContain("3:11/km");
+    expect(entries.get("records-athlete-3y-佐藤央琉")!.sources.some((s) => s.endsWith("岱明の結果.md"))).toBe(true);
+  });
+
+  it("keeps annual SB distinct from lifetime PB and past meet questions dated", () => {
+    const entries = loadPreparedQa();
+    for (const e of entries.filter((e) => /^sb-20\d{2}-/.test(e.id))) {
+      expect(e.answer, e.id).toContain("シーズンベスト");
+      expect(e.answer, e.id).toContain(e.id.split("-")[1]);
+    }
+    for (const e of entries.filter((e) => /^race-202[45]-/.test(e.id))) {
+      expect(e.questions.every((q) => q.includes(e.id.split("-")[1]!)), e.id).toBe(true);
+    }
+  });
+
+  it("does not fuzzy-match a dated historical result to a yearless current query", () => {
+    const historical = {
+      id: "race-2024-選手甲-記録会",
+      questions: ["2024年選手甲の記録会の結果は？"],
+      answer: "2024年度の選手甲の1500m記録は5:00です。",
+      sources: ["fixture.csv"],
+      tags: ["2024"],
+    };
+    expect(matchPreparedAnswer("選手甲の記録会の結果は？", { defaultYear: 2026, entries: [historical] })).toBeNull();
+    expect(matchPreparedAnswer("2024年選手甲の記録会の結果は？", { defaultYear: 2026, entries: [historical] })?.id).toBe(historical.id);
+    const latestKnown = { ...historical, questions: ["選手甲の直近の記録会の結果は？"] };
+    expect(matchPreparedAnswer("選手甲の直近の記録会の結果は？", { defaultYear: 2026, entries: [latestKnown] })?.id).toBe(historical.id);
+  });
+
   it("keeps user-facing answers free of repo-path jargon", () => {
     const entries = loadPreparedQa();
     const bad = entries.filter((e) => {

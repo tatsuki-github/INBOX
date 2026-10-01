@@ -171,6 +171,8 @@ def gen_athlete_meet(existing_ids: set[str], limit: int) -> list[dict]:
                 f"{name}は{sm}で何分？",
                 f"{name}の{sm}タイム",
             ]
+            if year != DEFAULT_YEAR:
+                qs = [q if str(year) in q else f"{year}年{q}" for q in qs]
             if year == DEFAULT_YEAR:
                 qs.extend(
                     [
@@ -458,7 +460,7 @@ def gen_sb_gaps(existing_ids: set[str], limit: int) -> list[dict]:
                         f"{name}の{dist}SBは？",
                     ]
                 )
-            ans = f"{name}（{aff}）の{year}年度{dist}自己ベストは {mark} です。"
+            ans = f"{name}（{aff}）の{year}年度・{dist}シーズンベスト（SB採用）は {mark} です。"
             if meet or date:
                 ans += f" 大会: {meet}（{date}）。"
             if url:
