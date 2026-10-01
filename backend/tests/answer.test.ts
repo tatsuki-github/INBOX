@@ -4790,6 +4790,8 @@ describe("answerQuestion", () => {
     expect(result.kind).toBe("offline");
     if (result.kind === "offline") {
       expect(result.text).toContain("コーチに直接聞いてください。");
+      expect(result.text).toContain("聞き方の例");
+      expect(result.text).toContain("使い方");
       expect(result.text).not.toContain("コーパスに情報がありません");
     }
   });

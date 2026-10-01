@@ -3,6 +3,33 @@ import type { RetrievedChunk } from "./retrieve.js";
 /** User-facing text when the corpus has no answer (LLM + offline paths). */
 export const MISSING_INFO_MESSAGE = "コーチに直接聞いてください。";
 
+/**
+ * Offline / empty-retrieval guide: keep the coach line, add concrete ask examples
+ * so unexpected questions are not a dead end.
+ */
+export function buildMissingInfoGuideText(): string {
+  return [
+    "手元の資料だけでは答えきれません。コーチに直接聞いてください。",
+    "",
+    "聞き方の例:",
+    "・なごみ駅伝の結果は？",
+    "・荒玉駅伝はいつ？",
+    "・〇〇の1500m自己ベストは？",
+    "・今週の練習は？",
+    "・使い方（質問例一覧）",
+  ].join("\n");
+}
+
+/** True when the model/offline path returned only the bare coach fallback. */
+export function isBareMissingInfo(text: string): boolean {
+  const t = text
+    .replace(/（オフライン回答）/g, "")
+    .replace(/^Q:.*$/gm, "")
+    .replace(/\s+/g, "")
+    .trim();
+  return t === MISSING_INFO_MESSAGE.replace(/\s+/g, "");
+}
+
 export function buildSystemPrompt(opts?: { exhaustive?: boolean }): string {
   const lines = [
     "あなたはこのリポジトリの知識コーパス（練習・駅伝・記録・分析・ドキュメント等）に基づくアシスタントです。",

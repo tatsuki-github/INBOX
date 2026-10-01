@@ -228,7 +228,9 @@ export function buildScheduleClarifyText(): string {
 export function isUnderspecifiedOrderQuestion(question: string): boolean {
   const q = question.normalize("NFKC").trim();
   if (!q) return false;
-  if (!/(?:オーダー|区間メンバー|誰が何区|メンバー表)/.test(q)) return false;
+  if (!/(?:オーダー|区間メンバー|誰が何区|メンバー表|^メンバー(?:は|を|って)?)/.test(q)) {
+    return false;
+  }
   if (
     /岱明|南関|玉名|長洲|菊水|有明|玉陵|玉東|玉南|荒尾|天水|三加和|腹栄|玉高|20\d{2}|去年|昨年|今年/.test(
       q,
@@ -249,6 +251,170 @@ export function buildOrderClarifyText(): string {
   ].join("\n");
 }
 
+/** Bare「タイムは？」without athlete / distance. */
+export function isUnderspecifiedTimeQuestion(question: string): boolean {
+  const q = question.normalize("NFKC").trim();
+  if (!q) return false;
+  if (
+    /^(?:タイム|記録タイム|走ったタイム|タイム教えて)(?:は|を|って|教えて|知りたい)?[？?！!。．]*$/u.test(
+      q,
+    )
+  ) {
+    return true;
+  }
+  if (!/タイム/.test(q)) return false;
+  if (/\d+\s*(?:m|km|メートル|キロ)|自己ベスト|SB|PB|区間|荒玉|なごみ|ジュニア|ナイター|大会/.test(q)) {
+    return false;
+  }
+  if (hasAthleteNameCue(q)) return false;
+  return /タイム(?:は|を|って|教えて|知りたい)?[？?！!。．]*$/u.test(q) && q.length <= 12;
+}
+
+export function buildTimeClarifyText(): string {
+  return [
+    "誰の・どの距離や大会のタイムか具体的に書いてください。",
+    "例:",
+    "・今村昇磨の1500m自己ベストは？",
+    "・2025年荒玉男子1区の区間タイムは？",
+    "・松野凛空の3000mのSBは？",
+  ].join("\n");
+}
+
+/** Named athlete +「タイム/速い」but no distance or meet. */
+export function isNamedUnderspecifiedTimeQuestion(question: string): boolean {
+  const raw = question.trim();
+  const q = raw.normalize("NFKC");
+  if (!q) return false;
+  if (!/(?:タイム|速い|おそい|遅い|走力)/.test(q)) return false;
+  if (/\d+\s*(?:m|km|メートル|キロ)|自己ベスト|SB|PB|区間|荒玉|なごみ|ジュニア|ナイター|大会|記録会/.test(q)) {
+    return false;
+  }
+  if (!(hasAthleteNameCue(raw) || hasAthleteNameCue(q))) return false;
+  return true;
+}
+
+export function buildNamedTimeClarifyText(): string {
+  return [
+    "どの距離・大会のタイムか指定してください。",
+    "例:",
+    "・〇〇の1500m自己ベストは？",
+    "・〇〇の3000mのSBは？",
+    "・〇〇の荒玉駅伝の区間タイムは？",
+  ].join("\n");
+}
+
+/** Leg assignment advice without school/year context. */
+export function isUnderspecifiedLegAdviceQuestion(question: string): boolean {
+  const q = question.normalize("NFKC").trim();
+  if (!q) return false;
+  if (
+    !/(?:何区が(?:いい|良い|向いて)|どの区(?:が|を)|区間どう|区どうする|おすすめの区|何区を走|何区走)/.test(
+      q,
+    )
+  ) {
+    return false;
+  }
+  if (
+    /岱明|南関|玉名|長洲|菊水|有明|玉陵|玉東|玉南|荒尾|天水|三加和|腹栄|20\d{2}|去年|昨年/.test(
+      q,
+    )
+  ) {
+    return false;
+  }
+  return true;
+}
+
+export function buildLegAdviceClarifyText(): string {
+  return [
+    "区間の適性は資料だけでは断定できません。事実ベースで聞くなら例:",
+    "・2025年荒玉男子の岱明のオーダーは？",
+    "・荒玉駅伝男子の区間距離は？",
+    "・〇〇の1500m自己ベストは？",
+    "方針はコーチに直接聞いてください。",
+  ].join("\n");
+}
+
+/** Vague practice-feedback questions. */
+export function isUnderspecifiedPracticeQuestion(question: string): boolean {
+  const q = question.normalize("NFKC").trim();
+  if (!q) return false;
+  if (
+    !/(?:練習どう|練習できた|練習の(?:感想|様子)|どうだった.*練習|練習.*どうだった)/.test(
+      q,
+    )
+  ) {
+    return false;
+  }
+  if (/20\d{2}|今週|今日|明日|\d{1,2}\/\d{1,2}|\d{1,2}月\d{1,2}日/.test(q)) {
+    return false;
+  }
+  return true;
+}
+
+export function buildPracticeClarifyText(): string {
+  return [
+    "どの日・どの練習か指定してください。",
+    "例:",
+    "・今週の練習は？",
+    "・2026-10-14の予定は？",
+    "・今日の練習メニューは？",
+    "感想や評価はコーチに直接聞いてください。",
+  ].join("\n");
+}
+
+/** 「速い人は？」「誰？」— ranking without filters. */
+export function isUnderspecifiedWhoFastQuestion(question: string): boolean {
+  const q = question.normalize("NFKC").trim();
+  if (!q) return false;
+  if (/^(?:誰|だれ)[？?！!。．]*$/u.test(q)) return true;
+  if (!/(?:速い人|誰が速い|だれが速い|おすすめの選手|強い人)/.test(q)) return false;
+  if (/\d+\s*(?:m|km)|男子|女子|荒玉|なごみ|SB|トップ|上位|ランキング/.test(q)) {
+    return false;
+  }
+  return true;
+}
+
+export function buildWhoFastClarifyText(): string {
+  return [
+    "種目・性別・大会を付けて聞いてください。",
+    "例:",
+    "・荒玉地区男子1500m SBトップ20は？",
+    "・2025年荒玉男子1区の区間順位は？",
+    "・女子3000mの荒玉地区ランキングは？",
+  ].join("\n");
+}
+
+/**
+ * Ultra-short / open-ended prompts that would otherwise dump「コーチに…」.
+ * Keep narrow so concrete domain questions still reach prepared/RAG.
+ */
+export function isUltraVagueQuestion(question: string): boolean {
+  const q = question.normalize("NFKC").trim();
+  if (!q) return true;
+  if (
+    /^(?:教えて|お願い|なに|何|どうすれば|どうしたら|おすすめ|おすすめは|なんか教えて|何か教えて)[？?！!。．]*$/u.test(
+      q,
+    )
+  ) {
+    return true;
+  }
+  // Punctuation-only / filler
+  if (/^[？?！!。．…・～〜]+$/u.test(q)) return true;
+  return false;
+}
+
+export function buildUltraVagueClarifyText(): string {
+  return [
+    "もう少し具体的に書いてください。",
+    "例:",
+    "・なごみ駅伝の結果は？",
+    "・荒玉駅伝はいつ？",
+    "・〇〇の1500m自己ベストは？",
+    "・今週の練習は？",
+    "質問例の一覧は「使い方」と送ってください。",
+  ].join("\n");
+}
+
 /** Match underspecified questions that should return example phrasings. */
 export function matchClarifyAnswer(question: string): ClarifyResult | null {
   if (isUnderspecifiedMiddleSchoolSbQuestion(question)) {
@@ -261,6 +427,18 @@ export function matchClarifyAnswer(question: string): ClarifyResult | null {
     return {
       id: "clarify-personal-best",
       text: buildPersonalBestClarifyText(),
+    };
+  }
+  if (isUnderspecifiedTimeQuestion(question)) {
+    return {
+      id: "clarify-time",
+      text: buildTimeClarifyText(),
+    };
+  }
+  if (isNamedUnderspecifiedTimeQuestion(question)) {
+    return {
+      id: "clarify-named-time",
+      text: buildNamedTimeClarifyText(),
     };
   }
   if (isUnderspecifiedRecordLookupQuestion(question)) {
@@ -285,6 +463,31 @@ export function matchClarifyAnswer(question: string): ClarifyResult | null {
     return {
       id: "clarify-order",
       text: buildOrderClarifyText(),
+    };
+  }
+  if (isUnderspecifiedLegAdviceQuestion(question)) {
+    return {
+      id: "clarify-leg-advice",
+      text: buildLegAdviceClarifyText(),
+    };
+  }
+  if (isUnderspecifiedPracticeQuestion(question)) {
+    return {
+      id: "clarify-practice",
+      text: buildPracticeClarifyText(),
+    };
+  }
+  if (isUnderspecifiedWhoFastQuestion(question)) {
+    return {
+      id: "clarify-who-fast",
+      text: buildWhoFastClarifyText(),
+    };
+  }
+  // Last: open-ended fillers only (must not preempt「結果は？」等)
+  if (isUltraVagueQuestion(question)) {
+    return {
+      id: "clarify-ultra-vague",
+      text: buildUltraVagueClarifyText(),
     };
   }
   return null;
