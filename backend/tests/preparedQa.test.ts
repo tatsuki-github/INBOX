@@ -169,6 +169,34 @@ describe("matchPreparedAnswer", () => {
     expect(hit?.text).toMatch(/2026|drive\.google\.com/);
   });
 
+  it(
+    "hits slight wording variants via synonyms and expanded questions",
+    () => {
+      const cases: Array<[string, string | RegExp]> = [
+        ["松野凛空のベストタイムは？", /^sb-2026-松野凛空$/],
+        ["松野凛空の自己記録は？", /^sb-2026-松野凛空$/],
+        ["2025年の荒玉男子の優勝チームは？", /aragyoku-2025-.*men.*winner|aragyoku-2025-men-winner/],
+        ["去年荒玉男子誰が勝った？", /aragyoku-2025-men-winner|gap1000-winner-2025-男子/],
+        ["荒玉駅伝ってどんな大会？", /^aragyoku-what$/],
+        ["荒玉はどういう大会？", /^aragyoku-what$/],
+        ["荒玉の地図見せて", /^aragyoku-course-image$/],
+        ["南関の陸上部名簿見せて", /^roster-aff-南関中$/],
+        ["荒玉で2位まで県に出れる？", /^aragyoku-pref-top2-core$/],
+        ["男子の荒玉の距離は？", /^aragyoku-men-distance$/],
+        ["去年岱明男子何位？", /^aragyoku-2025-daiming-men$/],
+        ["なごみはいつ開催？", /nagomi|cal-2026-.*なごみ/],
+        ["田上颯人の1500のベストは？", /^sb-2026-田上颯人-1500m$/],
+        ["通信陸上の結果URLは？", /meet-.*通信陸上/],
+      ];
+      for (const [q, idRe] of cases) {
+        const hit = matchPreparedAnswer(q, { defaultYear: 2026 });
+        expect(hit, q).toBeTruthy();
+        expect(hit!.id, q).toMatch(idRe);
+      }
+    },
+    120_000,
+  );
+
   it("hits relative-year wording", () => {
     const hit = matchPreparedAnswer("去年の荒玉男子優勝は誰？", { defaultYear: 2026 });
     expect(hit?.id).toBe("aragyoku-2025-men-winner");
