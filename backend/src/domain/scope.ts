@@ -97,6 +97,12 @@ const HARD_OUT_OF_SCOPE_PATTERNS = [
   /Soraとは/,
 ] as const;
 
+export const REMUNERATION_PRIVATE_MESSAGE = "謝礼・謝金の金額は回答対象外です。";
+
+export function isPrivateRemunerationQuestion(question: string): boolean {
+  return /謝礼|謝金|報酬|指導者.*時給|コーチ.*時給/.test(question.normalize("NFKC"));
+}
+
 export const OUT_OF_SCOPE_MESSAGE =
   "このボットはリポジトリに書いてある内容（練習・駅伝・記録・分析・ドキュメント等）について答えます。天気・ニュースなど外部の話題は対象外です。";
 
@@ -109,6 +115,10 @@ export function classifyScope(question: string): ScopeDecision {
   const q = question.trim();
   if (!q) {
     return { kind: "out_of_scope", message: OUT_OF_SCOPE_MESSAGE };
+  }
+
+  if (isPrivateRemunerationQuestion(q)) {
+    return { kind: "out_of_scope", message: REMUNERATION_PRIVATE_MESSAGE, hard: true };
   }
 
   const allowRepoWeather = REPO_WEATHER_ALLOW.test(q);

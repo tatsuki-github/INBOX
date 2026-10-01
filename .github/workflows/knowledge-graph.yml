@@ -44,7 +44,7 @@ jobs:
           python3 scripts/sync_prepared_qa.py --check
           python3 scripts/audit_prepared_qa_facts.py --check
           python3 scripts/generate_prepared_qa_edge_comparisons.py --check
-          python3 -m pytest tests/test_prepared_qa_facts.py tests/test_prepared_qa_edge_comparisons.py -q
+          python3 -m pytest tests/test_prepared_qa_facts.py tests/test_prepared_qa_edge_comparisons.py tests/test_knowledge_qa_chunks.py tests/test_reviewed_chunk_qa.py -q
 
   prepared-comparisons:
     runs-on: ubuntu-latest
@@ -59,5 +59,5 @@ jobs:
         working-directory: backend
       - run: npm run lint
         working-directory: backend
-      - run: npm test -- --run tests/preparedQa.test.ts tests/preparedQaConstraints.test.ts tests/preparedQaEdgeComparisons.test.ts
+      - run: npm test -- --run tests/preparedQa.test.ts tests/preparedQaConstraints.test.ts tests/preparedQaEdgeComparisons.test.ts tests/remunerationPrivacy.test.ts tests/scope.test.ts
         working-directory: backend
