@@ -1,0 +1,36 @@
+name: Publish verified knowledge checkpoint
+on:
+  push:
+    branches: [codex/knowledge-qa-track-checkpoint]
+    paths: [.codex-transfer/**]
+permissions:
+  contents: write
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Import and publish verified objects
+        env:
+          TARGET_COMMIT: bc21ae2059a03f99b102b1a0b375ff01cc734268
+          TARGET_TREE: 0fd9ab454319c553558c75bbeca1c6a0963b5bf1
+          BUNDLE_SHA256: d54b2be71793ce619336c363ab2c40313f6ca430bc4a4b51983e007088c57de5
+        run: |
+          set -euo pipefail
+          cat .codex-transfer/part-* > /tmp/checkpoint.bundle
+          echo "$BUNDLE_SHA256  /tmp/checkpoint.bundle" | sha256sum -c -
+          git bundle verify /tmp/checkpoint.bundle
+          git bundle unbundle /tmp/checkpoint.bundle
+          test "$(git rev-parse "$TARGET_COMMIT^{tree}")" = "$TARGET_TREE"
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git read-tree "$TARGET_TREE"
+          while IFS= read -r file; do
+            blob=$(git rev-parse "$GITHUB_SHA:$file")
+            git update-index --add --cacheinfo "100644,$blob,$file"
+          done < <(git ls-tree -r --name-only "$GITHUB_SHA" .codex-transfer .github/workflows/knowledge-transfer.yml)
+          tree=$(git write-tree)
+          published=$(git commit-tree "$tree" -p "$GITHUB_SHA" -p "$TARGET_COMMIT" -m 'Publish verified source and QA checkpoint')
+          git push origin "$published:refs/heads/codex/knowledge-qa-track-checkpoint"
