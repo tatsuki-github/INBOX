@@ -1,53 +1,17 @@
 {
   "status": "in_progress",
-  "total_chunks": 2782,
-  "complete_chunks": 1077,
-  "authored_qa": 3251,
+  "total_chunks": 2778,
+  "complete_chunks": 1269,
+  "authored_qa": 3815,
   "carried_forward_qa": 86,
-  "required_qa": 8346,
-  "remaining_qa": 5095,
+  "required_qa": 8334,
+  "remaining_qa": 4519,
   "pending": [
-    {
-      "chunk_id": "knowledge-87cf31783baaff56705b784d",
-      "source": "calendar.md",
-      "index": 2,
-      "remaining_qa": 1
-    },
-    {
-      "chunk_id": "knowledge-7b756386f65839f1f62f1090",
-      "source": "calendar.md",
-      "index": 3,
-      "remaining_qa": 1
-    },
-    {
-      "chunk_id": "knowledge-78c2c2263e65a886f30f1c63",
-      "source": "calendar.md",
-      "index": 4,
-      "remaining_qa": 1
-    },
-    {
-      "chunk_id": "knowledge-f9f0bee4bd3821b54bcd9de0",
-      "source": "calendar.md",
-      "index": 6,
-      "remaining_qa": 1
-    },
-    {
-      "chunk_id": "knowledge-3d36c98e71269afa873d7a9f",
-      "source": "calendar.md",
-      "index": 8,
-      "remaining_qa": 1
-    },
     {
       "chunk_id": "knowledge-50a35b2d7ac0b4eb99f5404c",
       "source": "calendar.md",
       "index": 9,
       "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-6858d6e77888e49d37e5d362",
-      "source": "calendar.md",
-      "index": 10,
-      "remaining_qa": 1
     },
     {
       "chunk_id": "knowledge-3b0cc2d590b93f583fd52d31",
@@ -107,30 +71,6 @@
       "chunk_id": "knowledge-38937048d62a0da1e9dfa20c",
       "source": "calendar.md",
       "index": 34,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-2c277bf46d90ef10452c256f",
-      "source": "calendar.md",
-      "index": 35,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-2daf7c5250ff8f9ad3963c96",
-      "source": "calendar.md",
-      "index": 36,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-a5f90819878734614a56a398",
-      "source": "calendar.md",
-      "index": 37,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-85e145334f57a6d8eb85ec80",
-      "source": "calendar.md",
-      "index": 38,
       "remaining_qa": 3
     },
     {
@@ -374,7 +314,7 @@
       "remaining_qa": 3
     },
     {
-      "chunk_id": "knowledge-f2b7fe5f8cd8e6ad9574b9a8",
+      "chunk_id": "knowledge-0ee7e397457331ec83e48d79",
       "source": "docs/adr/056-aragyoku-sb-preview.md",
       "index": 0,
       "remaining_qa": 3
@@ -1436,468 +1376,6 @@
       "remaining_qa": 3
     },
     {
-      "chunk_id": "knowledge-79e33e9da7ed22b2c929f9ac",
-      "source": "input/aragyoku/transcripts/2012-女子.json",
-      "index": 0,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-920315ca69f3c72f4ab897a1",
-      "source": "input/aragyoku/transcripts/2012-女子.json",
-      "index": 1,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-c46c9282329f87b08dc1aa8a",
-      "source": "input/aragyoku/transcripts/2012-女子.json",
-      "index": 2,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-e0c3e74478a535d992fca256",
-      "source": "input/aragyoku/transcripts/2012-女子.json",
-      "index": 3,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-7d57739ed9a96a0b1b89ffba",
-      "source": "input/aragyoku/transcripts/2012-女子.json",
-      "index": 4,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-754fa901d3e6248566df7ae7",
-      "source": "input/aragyoku/transcripts/2012-男子.json",
-      "index": 0,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-37c60f882c4dabf7c6f6fdcd",
-      "source": "input/aragyoku/transcripts/2012-男子.json",
-      "index": 1,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-aec379075bfa102d87976280",
-      "source": "input/aragyoku/transcripts/2012-男子.json",
-      "index": 2,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-37496ba7bbd1710e1b250944",
-      "source": "input/aragyoku/transcripts/2012-男子.json",
-      "index": 3,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-06aa4116de445ff1b9a44535",
-      "source": "input/aragyoku/transcripts/2012-男子.json",
-      "index": 4,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-a76c6c0417e62c02ceed109f",
-      "source": "input/aragyoku/transcripts/2012-男子.json",
-      "index": 5,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-03e748aa11ad701501a71bc7",
-      "source": "input/aragyoku/transcripts/2013-女子.json",
-      "index": 0,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-469afa425be53f09479608dd",
-      "source": "input/aragyoku/transcripts/2013-女子.json",
-      "index": 1,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-73b7ca103e8fa250ef860097",
-      "source": "input/aragyoku/transcripts/2013-女子.json",
-      "index": 2,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-fc94bd4f79d0e11ee63b0ec7",
-      "source": "input/aragyoku/transcripts/2013-女子.json",
-      "index": 3,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-6fa7b60f46cce47413b9b297",
-      "source": "input/aragyoku/transcripts/2013-女子.json",
-      "index": 4,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-9987bd7bfc85c22abd81ee45",
-      "source": "input/aragyoku/transcripts/2013-男子.json",
-      "index": 0,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-fe83ae24cf925b3b8df55e0b",
-      "source": "input/aragyoku/transcripts/2013-男子.json",
-      "index": 1,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-5b45083d79a396063a8c9606",
-      "source": "input/aragyoku/transcripts/2013-男子.json",
-      "index": 2,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-a2f420c502617df6f4b90565",
-      "source": "input/aragyoku/transcripts/2013-男子.json",
-      "index": 3,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-a691e2930782bbc3af0df458",
-      "source": "input/aragyoku/transcripts/2013-男子.json",
-      "index": 4,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-d8bc72347eb1f4b17182a57c",
-      "source": "input/aragyoku/transcripts/2013-男子.json",
-      "index": 5,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-9e320fba456287e9d0b13b8d",
-      "source": "input/aragyoku/transcripts/2014-男子.json",
-      "index": 0,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-b7ebce69991a5362ce03887c",
-      "source": "input/aragyoku/transcripts/2014-男子.json",
-      "index": 1,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-6f2736156e5a57de685cc1f2",
-      "source": "input/aragyoku/transcripts/2014-男子.json",
-      "index": 2,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-38e53541e8671992920d2b21",
-      "source": "input/aragyoku/transcripts/2014-男子.json",
-      "index": 3,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-679b1af6612ab1b70dd7e110",
-      "source": "input/aragyoku/transcripts/2014-男子.json",
-      "index": 4,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-742f82b2d3bfd0e47999f3c1",
-      "source": "input/aragyoku/transcripts/2014-男子.json",
-      "index": 5,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-7ee4e693b3164257efb2750e",
-      "source": "input/aragyoku/transcripts/2015-女子.json",
-      "index": 0,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-ad0aad22f7493f0132d47f55",
-      "source": "input/aragyoku/transcripts/2015-女子.json",
-      "index": 1,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-6796784a7972dfc323c96278",
-      "source": "input/aragyoku/transcripts/2015-女子.json",
-      "index": 2,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-2f339a13d9e48ca2d28ad57d",
-      "source": "input/aragyoku/transcripts/2015-女子.json",
-      "index": 3,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-75c3526aa9f5a60fa728c7ba",
-      "source": "input/aragyoku/transcripts/2015-女子.json",
-      "index": 4,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-cacfde438720b699f7ad7741",
-      "source": "input/aragyoku/transcripts/2015-男子.json",
-      "index": 0,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-402d9e68ccd20ea8034b8f4a",
-      "source": "input/aragyoku/transcripts/2015-男子.json",
-      "index": 1,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-e22c6a2dcfeb6f176ff91e19",
-      "source": "input/aragyoku/transcripts/2015-男子.json",
-      "index": 2,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-8fa0502646cba42f999ec711",
-      "source": "input/aragyoku/transcripts/2015-男子.json",
-      "index": 3,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-6685112eb61f2b0e0e8399ed",
-      "source": "input/aragyoku/transcripts/2015-男子.json",
-      "index": 4,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-62fad6ebfee025108010d50f",
-      "source": "input/aragyoku/transcripts/2015-男子.json",
-      "index": 5,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-9344ef14e8eaadd78ab5b64a",
-      "source": "input/aragyoku/transcripts/2016-女子.json",
-      "index": 0,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-59495e13610cd24c115ec69d",
-      "source": "input/aragyoku/transcripts/2016-女子.json",
-      "index": 1,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-a2c878d2b63ad2413810199a",
-      "source": "input/aragyoku/transcripts/2016-女子.json",
-      "index": 2,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-95642e4e0e7a14959a35fcc0",
-      "source": "input/aragyoku/transcripts/2016-女子.json",
-      "index": 3,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-cafd67cd2f33cf294f05305a",
-      "source": "input/aragyoku/transcripts/2016-女子.json",
-      "index": 4,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-dccfe97da1f2e9c1e6d84735",
-      "source": "input/aragyoku/transcripts/2016-男子.json",
-      "index": 0,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-ac61739986ac6acc520dd7fe",
-      "source": "input/aragyoku/transcripts/2016-男子.json",
-      "index": 1,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-7f14f8bd50d273fac95b8a30",
-      "source": "input/aragyoku/transcripts/2016-男子.json",
-      "index": 2,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-2dfb087a0d0e63f248d29a64",
-      "source": "input/aragyoku/transcripts/2016-男子.json",
-      "index": 3,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-3f3ee600971921bd83477654",
-      "source": "input/aragyoku/transcripts/2016-男子.json",
-      "index": 4,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-33b9dce662099f87da1346e6",
-      "source": "input/aragyoku/transcripts/2016-男子.json",
-      "index": 5,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-a00e17b58da9eebe766e6230",
-      "source": "input/aragyoku/transcripts/2017-女子.json",
-      "index": 0,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-14d03ea50d41f1b17fe1fb32",
-      "source": "input/aragyoku/transcripts/2017-女子.json",
-      "index": 1,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-33fcc99762ab2c4996fd829e",
-      "source": "input/aragyoku/transcripts/2017-女子.json",
-      "index": 2,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-2c800ebd5141e5057aa214cf",
-      "source": "input/aragyoku/transcripts/2017-女子.json",
-      "index": 3,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-a25749fdcf2567fdd1758d8c",
-      "source": "input/aragyoku/transcripts/2017-女子.json",
-      "index": 4,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-3ceba779e1517c4c79bf0b06",
-      "source": "input/aragyoku/transcripts/2017-男子.json",
-      "index": 0,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-6c17c5a7a7de93270d6e0746",
-      "source": "input/aragyoku/transcripts/2017-男子.json",
-      "index": 1,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-f4d973c06f2f3d8784d4cc14",
-      "source": "input/aragyoku/transcripts/2017-男子.json",
-      "index": 2,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-eb9c7adfcb8641c22f6952a0",
-      "source": "input/aragyoku/transcripts/2017-男子.json",
-      "index": 3,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-fc2491293d90292709257bac",
-      "source": "input/aragyoku/transcripts/2017-男子.json",
-      "index": 4,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-019cc33d1e4811547589a5df",
-      "source": "input/aragyoku/transcripts/2017-男子.json",
-      "index": 5,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-ff9f7e96c656bfaae951df31",
-      "source": "input/aragyoku/transcripts/2018-女子.json",
-      "index": 0,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-91d0fcb369d3a8ed76cb2a66",
-      "source": "input/aragyoku/transcripts/2018-女子.json",
-      "index": 1,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-b5e77983f54603dcb42c71d1",
-      "source": "input/aragyoku/transcripts/2018-女子.json",
-      "index": 2,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-303e8cf5377003d28018ad2a",
-      "source": "input/aragyoku/transcripts/2018-女子.json",
-      "index": 3,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-aa3199306c4da62659a4415f",
-      "source": "input/aragyoku/transcripts/2018-女子.json",
-      "index": 4,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-525f48efa4391604eb839937",
-      "source": "input/aragyoku/transcripts/2018-男子.json",
-      "index": 0,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-90112b43d33eed3f420285a9",
-      "source": "input/aragyoku/transcripts/2018-男子.json",
-      "index": 1,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-b767259c39432c6e002d3a00",
-      "source": "input/aragyoku/transcripts/2018-男子.json",
-      "index": 2,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-69a1ad657125d55d83e284ef",
-      "source": "input/aragyoku/transcripts/2018-男子.json",
-      "index": 3,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-c008c17ae589936bb141fb45",
-      "source": "input/aragyoku/transcripts/2018-男子.json",
-      "index": 4,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-31328e27181c21cfd807f53f",
-      "source": "input/aragyoku/transcripts/2018-男子.json",
-      "index": 5,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-c785fb2d17ac8c1555e2fb83",
-      "source": "input/aragyoku/transcripts/2019-女子.json",
-      "index": 0,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-90a15939823ce927f44e936c",
-      "source": "input/aragyoku/transcripts/2019-女子.json",
-      "index": 1,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-96dce4de176af958381a5e7f",
-      "source": "input/aragyoku/transcripts/2019-女子.json",
-      "index": 2,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-b3108a537db979aa68ecc270",
-      "source": "input/aragyoku/transcripts/2019-女子.json",
-      "index": 3,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-4c9cbbf535d8210902080aa2",
-      "source": "input/aragyoku/transcripts/2019-女子.json",
-      "index": 4,
-      "remaining_qa": 3
-    },
-    {
       "chunk_id": "knowledge-a238c490a2c38363979333e3",
       "source": "input/aragyoku/transcripts/2019-男子.json",
       "index": 0,
@@ -1934,254 +1412,8 @@
       "remaining_qa": 3
     },
     {
-      "chunk_id": "knowledge-2ad410f725f4bc95b3b3a396",
-      "source": "input/aragyoku/transcripts/2020-女子.json",
-      "index": 0,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-6eddc946b4b04b7b584d6841",
-      "source": "input/aragyoku/transcripts/2020-女子.json",
-      "index": 1,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-552c129b78c5400806b0e65a",
-      "source": "input/aragyoku/transcripts/2020-女子.json",
-      "index": 2,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-1f4b8f0e2e0a6c660ec0cc20",
-      "source": "input/aragyoku/transcripts/2020-女子.json",
-      "index": 3,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-5577dda5d809b7fd9629ee90",
-      "source": "input/aragyoku/transcripts/2020-女子.json",
-      "index": 4,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-1209f467c37b1cec352b82c0",
-      "source": "input/aragyoku/transcripts/2020-男子.json",
-      "index": 0,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-08c160e2aee7f2d145a20851",
-      "source": "input/aragyoku/transcripts/2020-男子.json",
-      "index": 1,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-e8b913928d3100fcffbd9781",
-      "source": "input/aragyoku/transcripts/2020-男子.json",
-      "index": 2,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-97ca144b03c27d216f83b2a8",
-      "source": "input/aragyoku/transcripts/2020-男子.json",
-      "index": 3,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-e67029b2b2ea73d39f95e653",
-      "source": "input/aragyoku/transcripts/2020-男子.json",
-      "index": 4,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-a613498de071fc955d4ba185",
-      "source": "input/aragyoku/transcripts/2020-男子.json",
-      "index": 5,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-7fd7c34d37d25ab9e085f85c",
-      "source": "input/aragyoku/transcripts/2021-女子.json",
-      "index": 0,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-6a4f07c6d911868273b6be61",
-      "source": "input/aragyoku/transcripts/2021-女子.json",
-      "index": 1,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-afa8da9efa201a10f5ebde17",
-      "source": "input/aragyoku/transcripts/2021-女子.json",
-      "index": 2,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-45e58a4c08400432bab40adf",
-      "source": "input/aragyoku/transcripts/2021-女子.json",
-      "index": 3,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-c2419dc970bcfaea00cbad22",
-      "source": "input/aragyoku/transcripts/2021-女子.json",
-      "index": 4,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-a1ef7494168a3599c20dae61",
-      "source": "input/aragyoku/transcripts/2021-男子.json",
-      "index": 0,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-f08b6dd788608aff0260f139",
-      "source": "input/aragyoku/transcripts/2021-男子.json",
-      "index": 1,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-119ae4555bad51d5442f7578",
-      "source": "input/aragyoku/transcripts/2021-男子.json",
-      "index": 2,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-8adc0193228be14a47fbd59f",
-      "source": "input/aragyoku/transcripts/2021-男子.json",
-      "index": 3,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-867d6863ffd5cb43fe7877c3",
-      "source": "input/aragyoku/transcripts/2021-男子.json",
-      "index": 4,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-db01ab1007792f9c86bfec02",
-      "source": "input/aragyoku/transcripts/2021-男子.json",
-      "index": 5,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-8a1f65313d0e806f2f74440b",
-      "source": "input/aragyoku/transcripts/2022-女子.json",
-      "index": 0,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-d4fcc3811566ad1a7d03e761",
-      "source": "input/aragyoku/transcripts/2022-女子.json",
-      "index": 1,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-64c2fdf22de70836d7149f7b",
-      "source": "input/aragyoku/transcripts/2022-女子.json",
-      "index": 2,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-db401b2ccfcd0be9055122c0",
-      "source": "input/aragyoku/transcripts/2022-女子.json",
-      "index": 3,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-43917400b0a96c23c68d99ff",
-      "source": "input/aragyoku/transcripts/2022-女子.json",
-      "index": 4,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-eedf24722c206751558c1d4c",
-      "source": "input/aragyoku/transcripts/2022-男子.json",
-      "index": 0,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-5875dfa33da08e4c6f25cd8d",
-      "source": "input/aragyoku/transcripts/2022-男子.json",
-      "index": 1,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-41da990bb9eb7443476dd435",
-      "source": "input/aragyoku/transcripts/2022-男子.json",
-      "index": 2,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-747459d2714fa445279ea1a1",
-      "source": "input/aragyoku/transcripts/2022-男子.json",
-      "index": 3,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-8040abfca2dc1446684fbed6",
-      "source": "input/aragyoku/transcripts/2022-男子.json",
-      "index": 4,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-4c75b2ed3c52fad9fa25f039",
-      "source": "input/aragyoku/transcripts/2023-女子.json",
-      "index": 0,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-c8070a8f56e5127b966675a4",
-      "source": "input/aragyoku/transcripts/2023-女子.json",
-      "index": 1,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-31441ec3ef222e1d5e36e6a0",
-      "source": "input/aragyoku/transcripts/2023-女子.json",
-      "index": 2,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-7de832a6e656107dd7dfe356",
-      "source": "input/aragyoku/transcripts/2023-女子.json",
-      "index": 3,
-      "remaining_qa": 3
-    },
-    {
       "chunk_id": "knowledge-ccfa9d2b8d2dc83d8d6e2960",
       "source": "input/aragyoku/transcripts/2023-女子.json",
-      "index": 4,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-e62f545570c88e5e6cf5c338",
-      "source": "input/aragyoku/transcripts/2023-男子.json",
-      "index": 0,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-6e1317965745d0d6b0d5d940",
-      "source": "input/aragyoku/transcripts/2023-男子.json",
-      "index": 1,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-064c62958203cac798b66270",
-      "source": "input/aragyoku/transcripts/2023-男子.json",
-      "index": 2,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-503b61c4c8b4d7722e92fff2",
-      "source": "input/aragyoku/transcripts/2023-男子.json",
-      "index": 3,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-153e375faa860f5fdb96185a",
-      "source": "input/aragyoku/transcripts/2023-男子.json",
       "index": 4,
       "remaining_qa": 3
     },
@@ -2192,62 +1424,8 @@
       "remaining_qa": 3
     },
     {
-      "chunk_id": "knowledge-eb9f561888b126421c8d68bd",
-      "source": "input/aragyoku/transcripts/2024-女子.json",
-      "index": 0,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-7d79bb831c1c4d6ca778cbd8",
-      "source": "input/aragyoku/transcripts/2024-女子.json",
-      "index": 1,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-100fd0d0a29096d8507b0b60",
-      "source": "input/aragyoku/transcripts/2024-女子.json",
-      "index": 2,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-741e19614dca9ec8ad299fdb",
-      "source": "input/aragyoku/transcripts/2024-女子.json",
-      "index": 3,
-      "remaining_qa": 3
-    },
-    {
       "chunk_id": "knowledge-f09167378914a3709fd861f1",
       "source": "input/aragyoku/transcripts/2024-女子.json",
-      "index": 4,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-c105f9ee77765148dbb5bf24",
-      "source": "input/aragyoku/transcripts/2024-男子.json",
-      "index": 0,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-7c039bbbbfd0050664047cb6",
-      "source": "input/aragyoku/transcripts/2024-男子.json",
-      "index": 1,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-d31efa07ee7e2006779000b0",
-      "source": "input/aragyoku/transcripts/2024-男子.json",
-      "index": 2,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-afadecdb01269bd321b6d3e9",
-      "source": "input/aragyoku/transcripts/2024-男子.json",
-      "index": 3,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-0a580a6a1483e8f18b8851bd",
-      "source": "input/aragyoku/transcripts/2024-男子.json",
       "index": 4,
       "remaining_qa": 3
     },
@@ -2258,62 +1436,8 @@
       "remaining_qa": 3
     },
     {
-      "chunk_id": "knowledge-6510c60f0b27ee34dbcb69db",
-      "source": "input/aragyoku/transcripts/2025-女子.json",
-      "index": 0,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-1b2f6a52d18f6443d50dadf3",
-      "source": "input/aragyoku/transcripts/2025-女子.json",
-      "index": 1,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-9d89bbb5487333a2608bf076",
-      "source": "input/aragyoku/transcripts/2025-女子.json",
-      "index": 2,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-03fc98a43ccf61aee3f3a4f8",
-      "source": "input/aragyoku/transcripts/2025-女子.json",
-      "index": 3,
-      "remaining_qa": 3
-    },
-    {
       "chunk_id": "knowledge-c9d2964b4071044762745286",
       "source": "input/aragyoku/transcripts/2025-女子.json",
-      "index": 4,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-9ca35d43b09aa6dde9c38ed2",
-      "source": "input/aragyoku/transcripts/2025-男子.json",
-      "index": 0,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-261a64feec54f6cea1e9bfa9",
-      "source": "input/aragyoku/transcripts/2025-男子.json",
-      "index": 1,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-20719db9f928e1204788e32b",
-      "source": "input/aragyoku/transcripts/2025-男子.json",
-      "index": 2,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-f8f0cef980017eed3adcc36e",
-      "source": "input/aragyoku/transcripts/2025-男子.json",
-      "index": 3,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-4bd94a569e2054877ac3b202",
-      "source": "input/aragyoku/transcripts/2025-男子.json",
       "index": 4,
       "remaining_qa": 3
     },
@@ -5252,7 +4376,7 @@
       "remaining_qa": 3
     },
     {
-      "chunk_id": "knowledge-3a49471b766ca8a9498689db",
+      "chunk_id": "knowledge-db7cce41e8d1349af1059f48",
       "source": "input/external/drive/shared/大会/2026年度/0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）/岱明の結果.md",
       "index": 0,
       "remaining_qa": 3
@@ -5294,7 +4418,7 @@
       "remaining_qa": 3
     },
     {
-      "chunk_id": "knowledge-a8dd1b3a15cd64d463fcf50d",
+      "chunk_id": "knowledge-f5b4c2a8c20871ea1331f549",
       "source": "input/external/drive/shared/大会/2026年度/1014-1015_荒玉中体連駅伝/人間考慮_男子.yaml",
       "index": 0,
       "remaining_qa": 3
@@ -5312,109 +4436,103 @@
       "remaining_qa": 3
     },
     {
-      "chunk_id": "knowledge-dd7b986d26c2738a7c132995",
+      "chunk_id": "knowledge-7a001ec9a1c965e866e60119",
       "source": "input/external/drive/shared/大会/2026年度/1014-1015_荒玉中体連駅伝/区間オーダー_SB予想.md",
       "index": 0,
       "remaining_qa": 3
     },
     {
-      "chunk_id": "knowledge-412c58d0a62222a4688ae6f9",
+      "chunk_id": "knowledge-836c20d07203864ac32ebff9",
       "source": "input/external/drive/shared/大会/2026年度/1014-1015_荒玉中体連駅伝/区間オーダー_SB予想.md",
       "index": 1,
       "remaining_qa": 3
     },
     {
-      "chunk_id": "knowledge-8dc4336e66002b506f387bc5",
+      "chunk_id": "knowledge-59ace2efeadee2489f1e6dcb",
       "source": "input/external/drive/shared/大会/2026年度/1014-1015_荒玉中体連駅伝/区間オーダー_SB予想.md",
       "index": 2,
       "remaining_qa": 3
     },
     {
-      "chunk_id": "knowledge-2a4220b928bd237209145345",
+      "chunk_id": "knowledge-f4c73017f391b98b46b01e8f",
       "source": "input/external/drive/shared/大会/2026年度/1014-1015_荒玉中体連駅伝/区間オーダー_SB予想.md",
       "index": 3,
       "remaining_qa": 3
     },
     {
-      "chunk_id": "knowledge-24c50946f39567d877aa80bd",
+      "chunk_id": "knowledge-714a7aecc8b060e823f9b004",
       "source": "input/external/drive/shared/大会/2026年度/1014-1015_荒玉中体連駅伝/区間オーダー_SB予想.md",
       "index": 4,
       "remaining_qa": 3
     },
     {
-      "chunk_id": "knowledge-0d1e9740dd7d8716e9205027",
+      "chunk_id": "knowledge-0653338df3f22cafee65ae77",
       "source": "input/external/drive/shared/大会/2026年度/1014-1015_荒玉中体連駅伝/区間オーダー_SB予想.md",
       "index": 5,
       "remaining_qa": 3
     },
     {
-      "chunk_id": "knowledge-5fb579bfcc55adbab5b08b9b",
+      "chunk_id": "knowledge-42373d542f3bf957ba474bf8",
       "source": "input/external/drive/shared/大会/2026年度/1014-1015_荒玉中体連駅伝/区間オーダー_SB予想.md",
       "index": 6,
       "remaining_qa": 3
     },
     {
-      "chunk_id": "knowledge-3fd8d3d01edae3eeeea7009e",
+      "chunk_id": "knowledge-6a9247f8a9fad7795a146805",
       "source": "input/external/drive/shared/大会/2026年度/1014-1015_荒玉中体連駅伝/区間オーダー_SB予想.md",
       "index": 7,
       "remaining_qa": 3
     },
     {
-      "chunk_id": "knowledge-615fd87df44053383e3cc862",
+      "chunk_id": "knowledge-4f7af759dda2bc7865932803",
       "source": "input/external/drive/shared/大会/2026年度/1014-1015_荒玉中体連駅伝/区間オーダー_SB予想.md",
       "index": 8,
       "remaining_qa": 3
     },
     {
-      "chunk_id": "knowledge-0ff915d2dcac56ef8cdc71c5",
-      "source": "input/external/drive/shared/大会/2026年度/1014-1015_荒玉中体連駅伝/区間オーダー_SB予想.md",
-      "index": 9,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-0c67c701e423e0114fc64be1",
+      "chunk_id": "knowledge-192ce57c10dfdb1f01a3df5b",
       "source": "input/external/drive/shared/大会/2026年度/1014-1015_荒玉中体連駅伝/区間オーダー_SB予想_coverage.csv",
       "index": 0,
       "remaining_qa": 3
     },
     {
-      "chunk_id": "knowledge-1d9d1fb37bc4f56215813f28",
+      "chunk_id": "knowledge-874c35aa6da9868b4369c011",
       "source": "input/external/drive/shared/大会/2026年度/1014-1015_荒玉中体連駅伝/区間オーダー_SB予想_coverage.csv",
       "index": 1,
       "remaining_qa": 3
     },
     {
-      "chunk_id": "knowledge-2f0c25449ae38c903b185f41",
+      "chunk_id": "knowledge-ff536f86da47f30ec139c1b3",
       "source": "input/external/drive/shared/大会/2026年度/1014-1015_荒玉中体連駅伝/区間オーダー_SB予想_coverage.csv",
       "index": 2,
       "remaining_qa": 3
     },
     {
-      "chunk_id": "knowledge-077e8408cbf207cdcfc85701",
+      "chunk_id": "knowledge-e523f20fe58044a8b103b2c0",
       "source": "input/external/drive/shared/大会/2026年度/1014-1015_荒玉中体連駅伝/区間オーダー_SB予想_coverage.csv",
       "index": 3,
       "remaining_qa": 3
     },
     {
-      "chunk_id": "knowledge-c295e01a020319c0a3dfaafd",
+      "chunk_id": "knowledge-9f02209c2b662e581f406156",
       "source": "input/external/drive/shared/大会/2026年度/1014-1015_荒玉中体連駅伝/区間オーダー_SB予想_coverage.csv",
       "index": 4,
       "remaining_qa": 3
     },
     {
-      "chunk_id": "knowledge-2c7728fad59ec0ae1a88c30a",
+      "chunk_id": "knowledge-67d6498d6abd1f3c9fbe6054",
       "source": "input/external/drive/shared/大会/2026年度/1014-1015_荒玉中体連駅伝/区間オーダー_SB予想_coverage.csv",
       "index": 5,
       "remaining_qa": 3
     },
     {
-      "chunk_id": "knowledge-e91e7bdd2bb89b520026588d",
+      "chunk_id": "knowledge-2724d0ec9922a4b500b5c794",
       "source": "input/external/drive/shared/大会/2026年度/1014-1015_荒玉中体連駅伝/区間オーダー_SB予想_coverage.csv",
       "index": 6,
       "remaining_qa": 3
     },
     {
-      "chunk_id": "knowledge-56d75f3790be3079bc61d3a8",
+      "chunk_id": "knowledge-7159d549e5198bd12b2caa63",
       "source": "input/external/drive/shared/大会/2026年度/1014-1015_荒玉中体連駅伝/区間オーダー_SB予想_coverage.csv",
       "index": 7,
       "remaining_qa": 3
@@ -5504,67 +4622,61 @@
       "remaining_qa": 3
     },
     {
-      "chunk_id": "knowledge-76ecdb7ec7b249d029868b1d",
+      "chunk_id": "knowledge-35121826493a0398d9a56e2c",
       "source": "input/external/drive/shared/大会/2026年度/1014-1015_荒玉中体連駅伝/男子区間オーダー_SB予想.md",
       "index": 0,
       "remaining_qa": 3
     },
     {
-      "chunk_id": "knowledge-af0b311d24d483e9c4164899",
+      "chunk_id": "knowledge-0f7270c965fa92a10ecf7400",
       "source": "input/external/drive/shared/大会/2026年度/1014-1015_荒玉中体連駅伝/男子区間オーダー_SB予想.md",
       "index": 1,
       "remaining_qa": 3
     },
     {
-      "chunk_id": "knowledge-77a0ff7f52a7f46d3e71bcd4",
+      "chunk_id": "knowledge-f833af427bd77c2a52e1375b",
       "source": "input/external/drive/shared/大会/2026年度/1014-1015_荒玉中体連駅伝/男子区間オーダー_SB予想.md",
       "index": 2,
       "remaining_qa": 3
     },
     {
-      "chunk_id": "knowledge-c9f0dbe4f3759340a81744e2",
+      "chunk_id": "knowledge-0f2e1b87906a8317f70e8738",
       "source": "input/external/drive/shared/大会/2026年度/1014-1015_荒玉中体連駅伝/男子区間オーダー_SB予想.md",
       "index": 3,
       "remaining_qa": 3
     },
     {
-      "chunk_id": "knowledge-0dd7b27ae12b4998012139bb",
+      "chunk_id": "knowledge-6110ac1a0c5f05371740d86c",
       "source": "input/external/drive/shared/大会/2026年度/1014-1015_荒玉中体連駅伝/男子区間オーダー_SB予想.md",
       "index": 4,
       "remaining_qa": 3
     },
     {
-      "chunk_id": "knowledge-f69aa1c87de224d37827da08",
-      "source": "input/external/drive/shared/大会/2026年度/1014-1015_荒玉中体連駅伝/男子区間オーダー_SB予想.md",
-      "index": 5,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-78c9271aa92faf71b4e4e99c",
+      "chunk_id": "knowledge-ec834dbcf57fd14e4c8bc7fd",
       "source": "input/external/drive/shared/大会/2026年度/1014-1015_荒玉中体連駅伝/男子区間オーダー_SB予想_coverage.csv",
       "index": 0,
       "remaining_qa": 3
     },
     {
-      "chunk_id": "knowledge-027ff18e0113e0af464c1692",
+      "chunk_id": "knowledge-8ad4d6b9d2dcf9b99979c2d3",
       "source": "input/external/drive/shared/大会/2026年度/1014-1015_荒玉中体連駅伝/男子区間オーダー_SB予想_coverage.csv",
       "index": 1,
       "remaining_qa": 3
     },
     {
-      "chunk_id": "knowledge-c9ab24391b7e4a19ee838b54",
+      "chunk_id": "knowledge-48df3783048d441126b6e6f0",
       "source": "input/external/drive/shared/大会/2026年度/1014-1015_荒玉中体連駅伝/男子区間オーダー_SB予想_coverage.csv",
       "index": 2,
       "remaining_qa": 3
     },
     {
-      "chunk_id": "knowledge-4ff35dd01ab9d8f0fe6670bc",
+      "chunk_id": "knowledge-a5ee518169ab9ee3774101d0",
       "source": "input/external/drive/shared/大会/2026年度/1014-1015_荒玉中体連駅伝/男子区間オーダー_SB予想_coverage.csv",
       "index": 3,
       "remaining_qa": 3
     },
     {
-      "chunk_id": "knowledge-220f4040f99d9232747a21b3",
+      "chunk_id": "knowledge-42286e2a6e44b1124117f9b4",
       "source": "input/external/drive/shared/大会/2026年度/1014-1015_荒玉中体連駅伝/男子区間オーダー_SB予想_coverage.csv",
       "index": 4,
       "remaining_qa": 3
@@ -5624,7 +4736,7 @@
       "remaining_qa": 3
     },
     {
-      "chunk_id": "knowledge-83e7ef42f7ffb94801d0c07c",
+      "chunk_id": "knowledge-606cb9c250ab6083ecc0c02e",
       "source": "input/external/drive/shared/練習/玉名市練習会/2026-09-22.md",
       "index": 0,
       "remaining_qa": 3
@@ -6788,135 +5900,129 @@
       "remaining_qa": 3
     },
     {
-      "chunk_id": "knowledge-16173051fad3e92ae431d901",
+      "chunk_id": "knowledge-4aed2dd1f6fe4471ed3b2c64",
       "source": "input/idaten-corpus/drive-text/大会/2026年度/1014-1015_荒玉中体連駅伝/区間オーダー_数式予想.json",
       "index": 0,
       "remaining_qa": 3
     },
     {
-      "chunk_id": "knowledge-614cbc885108bd94cde2b58d",
+      "chunk_id": "knowledge-1cc7b933a074b7eba892f4fd",
       "source": "input/idaten-corpus/drive-text/大会/2026年度/1014-1015_荒玉中体連駅伝/区間オーダー_数式予想.json",
       "index": 1,
       "remaining_qa": 3
     },
     {
-      "chunk_id": "knowledge-90b15c183086cde851bd6cdf",
+      "chunk_id": "knowledge-bd7409f9b993a70e5846a67c",
       "source": "input/idaten-corpus/drive-text/大会/2026年度/1014-1015_荒玉中体連駅伝/区間オーダー_数式予想.json",
       "index": 2,
       "remaining_qa": 3
     },
     {
-      "chunk_id": "knowledge-47ce0c0dce85a1223527fb9d",
+      "chunk_id": "knowledge-45de254b04f0f2ca272aba07",
       "source": "input/idaten-corpus/drive-text/大会/2026年度/1014-1015_荒玉中体連駅伝/区間オーダー_数式予想.json",
       "index": 3,
       "remaining_qa": 3
     },
     {
-      "chunk_id": "knowledge-163986b1b4dbe42422b1ff1f",
+      "chunk_id": "knowledge-e77b7ae8732cdec0c6ae95fb",
       "source": "input/idaten-corpus/drive-text/大会/2026年度/1014-1015_荒玉中体連駅伝/区間オーダー_数式予想.json",
       "index": 4,
       "remaining_qa": 3
     },
     {
-      "chunk_id": "knowledge-485b0f4368cb0c954b43887b",
+      "chunk_id": "knowledge-c1b3f2222021e89553eba526",
       "source": "input/idaten-corpus/drive-text/大会/2026年度/1014-1015_荒玉中体連駅伝/区間オーダー_数式予想.json",
       "index": 5,
       "remaining_qa": 3
     },
     {
-      "chunk_id": "knowledge-2488de456f4dc4fd75b78776",
+      "chunk_id": "knowledge-17a04b03dd33d6fb58639c85",
       "source": "input/idaten-corpus/drive-text/大会/2026年度/1014-1015_荒玉中体連駅伝/区間オーダー_数式予想.json",
       "index": 6,
       "remaining_qa": 3
     },
     {
-      "chunk_id": "knowledge-beb121fa60e49caec1001905",
+      "chunk_id": "knowledge-423123e5b63da3ba17a0f0e2",
       "source": "input/idaten-corpus/drive-text/大会/2026年度/1014-1015_荒玉中体連駅伝/区間オーダー_数式予想.json",
       "index": 7,
       "remaining_qa": 3
     },
     {
-      "chunk_id": "knowledge-d7735a21380c13baa568e709",
+      "chunk_id": "knowledge-4f68b4f7588ab1d976fdb1f8",
       "source": "input/idaten-corpus/drive-text/大会/2026年度/1014-1015_荒玉中体連駅伝/区間オーダー_数式予想.json",
       "index": 8,
       "remaining_qa": 3
     },
     {
-      "chunk_id": "knowledge-c229d6e90a37f0b4276464f7",
+      "chunk_id": "knowledge-3036bb53c2ba4058c503afbb",
       "source": "input/idaten-corpus/drive-text/大会/2026年度/1014-1015_荒玉中体連駅伝/区間オーダー_数式予想.json",
       "index": 9,
       "remaining_qa": 3
     },
     {
-      "chunk_id": "knowledge-eaefdea63451dbb0179d2f96",
+      "chunk_id": "knowledge-9106881d23e789ae35cb6bea",
       "source": "input/idaten-corpus/drive-text/大会/2026年度/1014-1015_荒玉中体連駅伝/区間オーダー_数式予想.json",
       "index": 10,
       "remaining_qa": 3
     },
     {
-      "chunk_id": "knowledge-64c70af0f22bbb814f15faa7",
+      "chunk_id": "knowledge-e3e4ae061fb1ce992a36f17b",
       "source": "input/idaten-corpus/drive-text/大会/2026年度/1014-1015_荒玉中体連駅伝/区間オーダー_数式予想.json",
       "index": 11,
       "remaining_qa": 3
     },
     {
-      "chunk_id": "knowledge-7e4e996014e9592ade27e5b5",
+      "chunk_id": "knowledge-2df512a38e707c82c36641d7",
       "source": "input/idaten-corpus/drive-text/大会/2026年度/1014-1015_荒玉中体連駅伝/区間オーダー_数式予想.json",
       "index": 12,
       "remaining_qa": 3
     },
     {
-      "chunk_id": "knowledge-aea9f8c939e032852bf167cc",
+      "chunk_id": "knowledge-80b97f511b00267e40c8ee49",
       "source": "input/idaten-corpus/drive-text/大会/2026年度/1014-1015_荒玉中体連駅伝/区間オーダー_数式予想.json",
       "index": 13,
       "remaining_qa": 3
     },
     {
-      "chunk_id": "knowledge-665b3982b2d49573a47f10e1",
+      "chunk_id": "knowledge-80f670a0056573996e8f23e6",
       "source": "input/idaten-corpus/drive-text/大会/2026年度/1014-1015_荒玉中体連駅伝/区間オーダー_数式予想.json",
       "index": 14,
       "remaining_qa": 3
     },
     {
-      "chunk_id": "knowledge-41c0d12057eba06648cdfa07",
+      "chunk_id": "knowledge-662eeadbc4b41ae45ef78a1b",
       "source": "input/idaten-corpus/drive-text/大会/2026年度/1014-1015_荒玉中体連駅伝/区間オーダー_数式予想.json",
       "index": 15,
       "remaining_qa": 3
     },
     {
-      "chunk_id": "knowledge-e26aa05593fc8e1579a3f217",
+      "chunk_id": "knowledge-94deaa7f61cbbfde73679413",
       "source": "input/idaten-corpus/drive-text/大会/2026年度/1014-1015_荒玉中体連駅伝/区間オーダー_数式予想.json",
       "index": 16,
       "remaining_qa": 3
     },
     {
-      "chunk_id": "knowledge-79ca0e5b1c35610e10ee1ef7",
+      "chunk_id": "knowledge-1fc0474609e52112d745ba7e",
       "source": "input/idaten-corpus/drive-text/大会/2026年度/1014-1015_荒玉中体連駅伝/区間オーダー_数式予想.json",
       "index": 17,
       "remaining_qa": 3
     },
     {
-      "chunk_id": "knowledge-7fb86a2a6ff74258b91244d5",
+      "chunk_id": "knowledge-ced90e17238d1a3d9fe176a6",
       "source": "input/idaten-corpus/drive-text/大会/2026年度/1014-1015_荒玉中体連駅伝/区間オーダー_数式予想.json",
       "index": 18,
       "remaining_qa": 3
     },
     {
-      "chunk_id": "knowledge-54094f42cd22d3e812751926",
+      "chunk_id": "knowledge-f7827f6ead6c2e0e72d6ab07",
       "source": "input/idaten-corpus/drive-text/大会/2026年度/1014-1015_荒玉中体連駅伝/区間オーダー_数式予想.json",
       "index": 19,
       "remaining_qa": 3
     },
     {
-      "chunk_id": "knowledge-72f68a7eeb1224503494c7e0",
+      "chunk_id": "knowledge-907c7f5d235e2372c4bc9362",
       "source": "input/idaten-corpus/drive-text/大会/2026年度/1014-1015_荒玉中体連駅伝/区間オーダー_数式予想.json",
       "index": 20,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-6049f750396d351ad0d0ba52",
-      "source": "input/idaten-corpus/drive-text/大会/2026年度/1014-1015_荒玉中体連駅伝/区間オーダー_数式予想.json",
-      "index": 21,
       "remaining_qa": 3
     },
     {
@@ -6974,45 +6080,39 @@
       "remaining_qa": 3
     },
     {
-      "chunk_id": "knowledge-7b40d057ba6aed393d065acf",
+      "chunk_id": "knowledge-0438e01ecfee6d02ecd6dbac",
       "source": "input/idaten-corpus/drive-text/大会/2026年度/1014-1015_荒玉中体連駅伝/区間オーダー_数式予想_coverage.csv",
       "index": 0,
       "remaining_qa": 3
     },
     {
-      "chunk_id": "knowledge-119ac9911e142b87e9781537",
+      "chunk_id": "knowledge-9e369eb2fc0f517c3b967bb3",
       "source": "input/idaten-corpus/drive-text/大会/2026年度/1014-1015_荒玉中体連駅伝/区間オーダー_数式予想_coverage.csv",
       "index": 1,
       "remaining_qa": 3
     },
     {
-      "chunk_id": "knowledge-d3d16c55e1ed368a90df0702",
+      "chunk_id": "knowledge-f1e0ed2eeed035f4b491e569",
       "source": "input/idaten-corpus/drive-text/大会/2026年度/1014-1015_荒玉中体連駅伝/区間オーダー_数式予想_coverage.csv",
       "index": 2,
       "remaining_qa": 3
     },
     {
-      "chunk_id": "knowledge-839141401020bd5e6af29220",
+      "chunk_id": "knowledge-f06e20d2de24822dba120309",
       "source": "input/idaten-corpus/drive-text/大会/2026年度/1014-1015_荒玉中体連駅伝/区間オーダー_数式予想_coverage.csv",
       "index": 3,
       "remaining_qa": 3
     },
     {
-      "chunk_id": "knowledge-7189092f58737991a51afa79",
+      "chunk_id": "knowledge-8cbc535736344a90d2b8777b",
       "source": "input/idaten-corpus/drive-text/大会/2026年度/1014-1015_荒玉中体連駅伝/区間オーダー_数式予想_coverage.csv",
       "index": 4,
       "remaining_qa": 3
     },
     {
-      "chunk_id": "knowledge-50755c979770eb59dc501041",
+      "chunk_id": "knowledge-09e881e49a6afe0b21b0bbb5",
       "source": "input/idaten-corpus/drive-text/大会/2026年度/1014-1015_荒玉中体連駅伝/区間オーダー_数式予想_coverage.csv",
       "index": 5,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-a75ea83d364a467bbe66d484",
-      "source": "input/idaten-corpus/drive-text/大会/2026年度/1014-1015_荒玉中体連駅伝/区間オーダー_数式予想_coverage.csv",
-      "index": 6,
       "remaining_qa": 3
     },
     {
@@ -7040,19 +6140,19 @@
       "remaining_qa": 3
     },
     {
-      "chunk_id": "knowledge-dca52a83e57b82add597c7d7",
+      "chunk_id": "knowledge-0853216aa6505fc65b04a7a9",
       "source": "input/idaten-corpus/drive-text/大会/2026年度/1014-1015_荒玉中体連駅伝/女子区間オーダー_数式予想_coverage.csv",
       "index": 0,
       "remaining_qa": 3
     },
     {
-      "chunk_id": "knowledge-9f5b62270599fc7789da0bb7",
+      "chunk_id": "knowledge-e2507fe7d77024c1b75eb833",
       "source": "input/idaten-corpus/drive-text/大会/2026年度/1014-1015_荒玉中体連駅伝/女子区間オーダー_数式予想_coverage.csv",
       "index": 1,
       "remaining_qa": 3
     },
     {
-      "chunk_id": "knowledge-523a65d547ee3f5409136a8f",
+      "chunk_id": "knowledge-cc2b13e6789473f4a5d155c6",
       "source": "input/idaten-corpus/drive-text/大会/2026年度/1014-1015_荒玉中体連駅伝/女子区間オーダー_数式予想_coverage.csv",
       "index": 2,
       "remaining_qa": 3
@@ -7100,25 +6200,25 @@
       "remaining_qa": 3
     },
     {
-      "chunk_id": "knowledge-b821afef2ed55fafbe5e163b",
+      "chunk_id": "knowledge-27798381ee3aa33ec8b174df",
       "source": "input/idaten-corpus/drive-text/大会/2026年度/1014-1015_荒玉中体連駅伝/男子区間オーダー_数式予想_coverage.csv",
       "index": 0,
       "remaining_qa": 3
     },
     {
-      "chunk_id": "knowledge-3fca313743abf3ce11ad4c2d",
+      "chunk_id": "knowledge-bec4979379465a833e667949",
       "source": "input/idaten-corpus/drive-text/大会/2026年度/1014-1015_荒玉中体連駅伝/男子区間オーダー_数式予想_coverage.csv",
       "index": 1,
       "remaining_qa": 3
     },
     {
-      "chunk_id": "knowledge-20e652e3613fec498523e5e9",
+      "chunk_id": "knowledge-d132126692dc9d021724147f",
       "source": "input/idaten-corpus/drive-text/大会/2026年度/1014-1015_荒玉中体連駅伝/男子区間オーダー_数式予想_coverage.csv",
       "index": 2,
       "remaining_qa": 3
     },
     {
-      "chunk_id": "knowledge-318d0e5148b3b23c23e040ed",
+      "chunk_id": "knowledge-ee69de1b3841fbaa9254bcf7",
       "source": "input/idaten-corpus/drive-text/大会/2026年度/1014-1015_荒玉中体連駅伝/男子区間オーダー_数式予想_coverage.csv",
       "index": 3,
       "remaining_qa": 3
@@ -7223,102 +6323,6 @@
       "chunk_id": "knowledge-aa7cae802c417257688da671",
       "source": "input/idaten-corpus/repo-docs/adr/059-prepared-qa-answers.md",
       "index": 0,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-67b7c02e8a34aedad9fe6b2a",
-      "source": "input/memos/norwegian_method_applied_full.txt",
-      "index": 64,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-0f274d9ea6dd6fddeec92b4a",
-      "source": "input/memos/norwegian_method_applied_full.txt",
-      "index": 65,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-be8b952bade838a878fac317",
-      "source": "input/memos/norwegian_method_applied_full.txt",
-      "index": 66,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-675d7b40a68a7069d6fa4070",
-      "source": "input/memos/norwegian_method_applied_full.txt",
-      "index": 67,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-8a78aded9f29a54be8bf243d",
-      "source": "input/memos/norwegian_method_applied_full.txt",
-      "index": 68,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-22cb89813465c6bda8c93eed",
-      "source": "input/memos/norwegian_method_applied_full.txt",
-      "index": 69,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-5853071aab82f00c0fb9cae1",
-      "source": "input/memos/norwegian_method_applied_full.txt",
-      "index": 70,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-e9652dee573a359d01ff07d6",
-      "source": "input/memos/norwegian_method_applied_full.txt",
-      "index": 71,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-3832bcc1f64c33c2bf8eb35b",
-      "source": "input/memos/norwegian_method_applied_full.txt",
-      "index": 72,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-c154a5f408e4d5a2e6d55ed3",
-      "source": "input/memos/norwegian_method_applied_full.txt",
-      "index": 73,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-028081e1bf4b8590f852970d",
-      "source": "input/memos/norwegian_method_applied_full.txt",
-      "index": 74,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-f4a78df41d57e2e1a0f5ba44",
-      "source": "input/memos/norwegian_method_applied_full.txt",
-      "index": 75,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-1c29886913bce4c74d59c2f7",
-      "source": "input/memos/norwegian_method_applied_full.txt",
-      "index": 76,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-ce73d2311aebc1cf3bc1ba85",
-      "source": "input/memos/norwegian_method_applied_full.txt",
-      "index": 77,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-a5366f632bb16c95a1c8bee5",
-      "source": "input/memos/norwegian_method_applied_full.txt",
-      "index": 78,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-f4c533e4bd3098a2fae876dd",
-      "source": "input/memos/norwegian_method_applied_full.txt",
-      "index": 79,
       "remaining_qa": 3
     },
     {
@@ -7640,33 +6644,9 @@
       "remaining_qa": 3
     },
     {
-      "chunk_id": "knowledge-dc965f1fb40000dcc0019c13",
-      "source": "out/2020/calendar.md",
-      "index": 0,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-7ad1e90b0d144f30c2030b51",
-      "source": "out/2020/calendar.md",
-      "index": 1,
-      "remaining_qa": 3
-    },
-    {
       "chunk_id": "knowledge-03051b115b7ee476eed3f47f",
       "source": "out/2020/practice-summary.md",
       "index": 0,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-c17087b2335acba2070c9368",
-      "source": "out/2022/calendar.md",
-      "index": 0,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-d155631cdb9303476d34e4cf",
-      "source": "out/2022/calendar.md",
-      "index": 1,
       "remaining_qa": 3
     },
     {
@@ -7685,36 +6665,6 @@
       "chunk_id": "knowledge-c2cc62ee38f438a02a190e6f",
       "source": "out/2022/practice.json",
       "index": 0,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-44d355966df9f00aa6903c64",
-      "source": "out/2023/calendar.md",
-      "index": 0,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-02f6bb833eaa5c559db22cf6",
-      "source": "out/2023/calendar.md",
-      "index": 1,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-c51fa331ff4b5731b920ba72",
-      "source": "out/2023/calendar.md",
-      "index": 2,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-5206f6b14a837491a62dfae1",
-      "source": "out/2023/calendar.md",
-      "index": 3,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-a81057e683c952f15a536ede",
-      "source": "out/2023/calendar.md",
-      "index": 4,
       "remaining_qa": 3
     },
     {
@@ -7754,60 +6704,6 @@
       "remaining_qa": 3
     },
     {
-      "chunk_id": "knowledge-a02bc979f09b3565d77028ac",
-      "source": "out/2024/calendar.md",
-      "index": 0,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-e156db393a3bf4253eb9e694",
-      "source": "out/2024/calendar.md",
-      "index": 1,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-917b832417006e5198041e6c",
-      "source": "out/2024/calendar.md",
-      "index": 2,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-e526be8a32346f5af7417d56",
-      "source": "out/2024/calendar.md",
-      "index": 3,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-708367ca6f0063b7ac282620",
-      "source": "out/2024/calendar.md",
-      "index": 4,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-deb77bcddd29dd901bc58c5b",
-      "source": "out/2024/calendar.md",
-      "index": 5,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-4ae7c2c8fd24279fd3ff7773",
-      "source": "out/2024/calendar.md",
-      "index": 6,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-7e555067e95f5a16f62a7a08",
-      "source": "out/2024/calendar.md",
-      "index": 7,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-75a0e5a0c2c2467294d20209",
-      "source": "out/2024/calendar.md",
-      "index": 8,
-      "remaining_qa": 3
-    },
-    {
       "chunk_id": "knowledge-e7783e2d2533d60ac87e381f",
       "source": "out/2024/calendar.md",
       "index": 9,
@@ -7838,24 +6734,6 @@
       "remaining_qa": 3
     },
     {
-      "chunk_id": "knowledge-308d8b53091366bac66b9017",
-      "source": "out/2025/calendar.md",
-      "index": 1,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-88b52ed9327c5da56941a1ff",
-      "source": "out/2025/calendar.md",
-      "index": 2,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-38decf270f6ea09840b98452",
-      "source": "out/2025/calendar.md",
-      "index": 3,
-      "remaining_qa": 3
-    },
-    {
       "chunk_id": "knowledge-bf4260f63557e10f375ec6f4",
       "source": "out/2025/calendar.md",
       "index": 4,
@@ -7874,39 +6752,15 @@
       "remaining_qa": 3
     },
     {
-      "chunk_id": "knowledge-64b270bfc742ba004601f8a3",
-      "source": "out/2025/calendar.md",
-      "index": 7,
-      "remaining_qa": 3
-    },
-    {
       "chunk_id": "knowledge-350e821e0e085bcafd133cae",
       "source": "out/2025/calendar.md",
       "index": 8,
       "remaining_qa": 3
     },
     {
-      "chunk_id": "knowledge-2a9c0a2adadaddc9d0a4a103",
-      "source": "out/2025/calendar.md",
-      "index": 9,
-      "remaining_qa": 3
-    },
-    {
       "chunk_id": "knowledge-243fd20d6ae5a8c41a4abf0b",
       "source": "out/2025/calendar.md",
       "index": 10,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-37993e47b45dfa1e7be3b2b4",
-      "source": "out/2025/calendar.md",
-      "index": 11,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-6b84f47b4862978d84e7d0a4",
-      "source": "out/2025/calendar.md",
-      "index": 12,
       "remaining_qa": 3
     },
     {
@@ -7949,12 +6803,6 @@
       "chunk_id": "knowledge-e31d9502568fe1c19739b492",
       "source": "out/2025/calendar.md",
       "index": 19,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-f90ddbf22d90e16b34db4934",
-      "source": "out/2025/calendar.md",
-      "index": 20,
       "remaining_qa": 3
     },
     {
@@ -8624,30 +7472,6 @@
       "remaining_qa": 3
     },
     {
-      "chunk_id": "knowledge-67eb6ba54d11dd30600ea173",
-      "source": "out/2027/calendar.md",
-      "index": 0,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-fddd74921c8da94aa4564b8e",
-      "source": "out/2027/calendar.md",
-      "index": 1,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-550367d2edb8b97d99e709f3",
-      "source": "out/2027/calendar.md",
-      "index": 2,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-fdcd5d62167024a6410d22fa",
-      "source": "out/2027/calendar.md",
-      "index": 3,
-      "remaining_qa": 3
-    },
-    {
       "chunk_id": "knowledge-c91cc3df9efe0ba73af84272",
       "source": "out/2027/google.csv",
       "index": 1,
@@ -8678,7 +7502,7 @@
       "remaining_qa": 3
     },
     {
-      "chunk_id": "knowledge-961deb5d2e63ac62f0835470",
+      "chunk_id": "knowledge-852e3f956ed15eca610621ef",
       "source": "out/analysis/2026-09-29_aragyoku_trial_results.md",
       "index": 0,
       "remaining_qa": 3
@@ -9266,25 +8090,25 @@
       "remaining_qa": 3
     },
     {
-      "chunk_id": "knowledge-b8cd9bea8aac392e42200eb6",
+      "chunk_id": "knowledge-15b9440d8effe08ca73b7632",
       "source": "input/idaten-corpus/out-analysis/aragyoku_2026_formula_coefficients.json",
       "index": 0,
       "remaining_qa": 3
     },
     {
-      "chunk_id": "knowledge-a77eaac2e26d7ff7c8f339f4",
+      "chunk_id": "knowledge-60d40621076379b720e10a65",
       "source": "out/analysis/aragyoku_2026_formula_report.md",
       "index": 0,
       "remaining_qa": 3
     },
     {
-      "chunk_id": "knowledge-4062041db2098962125207e1",
+      "chunk_id": "knowledge-1d3e238bdf200c79bfdee3e3",
       "source": "out/analysis/aragyoku_2026_formula_report.md",
       "index": 1,
       "remaining_qa": 3
     },
     {
-      "chunk_id": "knowledge-fa0ab2a4b5f6f2acc42718fd",
+      "chunk_id": "knowledge-aa1e99fd25b5dc9729d792d8",
       "source": "out/analysis/aragyoku_2026_formula_report.md",
       "index": 2,
       "remaining_qa": 3

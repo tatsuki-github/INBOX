@@ -4,7 +4,24 @@ from datetime import date,datetime
 import yaml
 from prepare_knowledge_qa_chunks import resolve_pointer
 PUBLIC=re.compile(r'駅伝|陸上|記録会|マラソン|大会|選手権|練習|中体連|通信|修学旅行|入試|テスト|終業式|始業式|卒業式|運動会|体育大会|夏休み|冬休み|春休み|元日|成人の日|建国記念|天皇誕生日|春分|秋分|昭和の日|憲法記念|みどりの日|こどもの日|海の日|山の日|敬老の日|スポーツの日|文化の日|勤労感謝')
-PATH=re.compile(r'^(?:input/events\.20\d{2}\.yaml|out/20\d{2}/(?:events\.json|source\.csv|notion\.csv|google\.csv))$')
+PATH=re.compile(r'^(?:calendar\.md|input/events\.20\d{2}\.yaml|out/20\d{2}/(?:calendar\.md|events\.json|source\.csv|notion\.csv|google\.csv))$')
+
+def markdown_events(text):
+    """Only complete detail blocks; no date/title joins across chunk boundaries."""
+    units=[]
+    for m in re.finditer(r'<details>\n.*?</details>',text,re.S):
+        block=m[0];fields={}
+        for key in ('件名','開始日','非公開'):
+            values=re.findall(r'^- \*\*'+key+r'\*\*: (.+)$',block,re.M)
+            if len(values)!=1:break
+            fields[key]=values[0]
+        else:
+            if fields['非公開'] not in ('はい','いいえ'):continue
+            unit={'quote':block,'value':{'title':fields['件名'],'date':fields['開始日'],'private':fields['非公開']=='はい'}}
+            try:event(unit)
+            except (ValueError,TypeError):continue
+            units.append(unit)
+    return units
 
 def load_source(text):
     return json.loads(json.dumps(yaml.load(text,Loader=yaml.CSafeLoader),ensure_ascii=False,default=str))
@@ -43,6 +60,12 @@ def validate_gap(entry,chunk,source_text):
         for u in units:
             if assigned.get(u['pointer'])!=u:raise ValueError('outside assigned chunk')
             if u.get('string_span') or resolve_pointer(source,u['pointer'])!=u['value']:raise ValueError('source record changed')
+    elif ev.get('kind')=='calendar-markdown-events':
+        if chunk['evidence']['kind']!='text':raise ValueError('Markdown text chunk required')
+        units=ev['units'];assigned=markdown_events(chunk['evidence']['text']);full=markdown_events(source_text)
+        for u in units:
+            if u not in assigned:raise ValueError('outside assigned chunk')
+            if u not in full:raise ValueError('source detail block changed')
     elif ev.get('kind')=='csv-rows':
         header=ev['header'];units=ev['rows'];full=list(csv.reader(io.StringIO(source_text)))
         if not full or full[0]!=header or chunk['evidence']['header']!=header:raise ValueError('header changed')

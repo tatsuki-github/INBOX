@@ -1,12 +1,12 @@
 {
   "version": 1,
   "max_chunk_chars": 5000,
-  "baseline_prepared_qa_count": 38447,
-  "baseline_prepared_qa_sha256": "1ed6522199f91ff6f5cb6d6a6709c48a26ef01aef65d027de2bd7508dcef0075",
+  "baseline_prepared_qa_count": 39011,
+  "baseline_prepared_qa_sha256": "39fdfaa1a1b67c7ee4c274076dfb271141a205e1d60ffdf65066703d9d5f1ab9",
   "chunk_kinds": {
-    "text": 1150,
-    "structured": 993,
-    "csv": 639
+    "text": 1148,
+    "structured": 992,
+    "csv": 638
   },
   "canonical_suffixes": {
     ".md": 581,
@@ -15,8 +15,8 @@
     ".csv": 49,
     ".txt": 2
   },
-  "chunk_count": 2782,
-  "required_new_qa": 8346,
+  "chunk_count": 2778,
+  "required_new_qa": 8334,
   "dispositions": {
     "canonical": 893,
     "nontext-asset-or-implementation": 44,

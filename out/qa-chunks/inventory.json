@@ -873,12 +873,12 @@
         "corpus-original",
         "kg-reference"
       ],
-      "source_sha256": "4deb6e4174606f90ca377f0cfa86a49423ff4c5ba7f5d35be3c546c476fce25e",
-      "normalized_sha256": "4deb6e4174606f90ca377f0cfa86a49423ff4c5ba7f5d35be3c546c476fce25e",
+      "source_sha256": "fa2eb8e5abbad2457390403f7fec247efba4e86fa95b0bc4f92366d5023c216d",
+      "normalized_sha256": "fa2eb8e5abbad2457390403f7fec247efba4e86fa95b0bc4f92366d5023c216d",
       "disposition": "canonical",
       "canonical": "docs/adr/056-aragyoku-sb-preview.md",
       "chunk_ids": [
-        "knowledge-f2b7fe5f8cd8e6ad9574b9a8"
+        "knowledge-0ee7e397457331ec83e48d79"
       ]
     },
     {
@@ -8375,12 +8375,12 @@
       "routes": [
         "corpus-original"
       ],
-      "source_sha256": "62b75a8b74579990af593ad5500fa9ea2382b737d17961543e902e843b5c90f9",
-      "normalized_sha256": "62b75a8b74579990af593ad5500fa9ea2382b737d17961543e902e843b5c90f9",
+      "source_sha256": "411c2b75a34a3d0e7169c434c3bc55a9f18f6a69c7339d075e7f00b56d2e3161",
+      "normalized_sha256": "411c2b75a34a3d0e7169c434c3bc55a9f18f6a69c7339d075e7f00b56d2e3161",
       "disposition": "canonical",
       "canonical": "input/external/drive/shared/大会/2026年度/0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）/岱明の結果.md",
       "chunk_ids": [
-        "knowledge-3a49471b766ca8a9498689db"
+        "knowledge-db7cce41e8d1349af1059f48"
       ]
     },
     {
@@ -8479,12 +8479,12 @@
       "routes": [
         "corpus-original"
       ],
-      "source_sha256": "6f202ab2b27645167800738d1d3c68b66decfa18e43eb65db023d22153bf70e7",
-      "normalized_sha256": "6f202ab2b27645167800738d1d3c68b66decfa18e43eb65db023d22153bf70e7",
+      "source_sha256": "fa3eb9d1b988fbdface4caa7877b6d350448dda7bd6612bc3550dbbb50f549cc",
+      "normalized_sha256": "fa3eb9d1b988fbdface4caa7877b6d350448dda7bd6612bc3550dbbb50f549cc",
       "disposition": "canonical",
       "canonical": "input/external/drive/shared/大会/2026年度/1014-1015_荒玉中体連駅伝/人間考慮_男子.yaml",
       "chunk_ids": [
-        "knowledge-a8dd1b3a15cd64d463fcf50d"
+        "knowledge-f5b4c2a8c20871ea1331f549"
       ]
     },
     {
@@ -8518,21 +8518,20 @@
       "routes": [
         "corpus-original"
       ],
-      "source_sha256": "6f2ff59cb9923bdeaaddb94f6368583e0658cf10bd278371bc077c2fa57fb073",
-      "normalized_sha256": "6f2ff59cb9923bdeaaddb94f6368583e0658cf10bd278371bc077c2fa57fb073",
+      "source_sha256": "ccbf3017d89f0cddbaa1b9da62374f7b1d5ac1aaa8c2c77680bf46e6513fcaea",
+      "normalized_sha256": "ccbf3017d89f0cddbaa1b9da62374f7b1d5ac1aaa8c2c77680bf46e6513fcaea",
       "disposition": "canonical",
       "canonical": "input/external/drive/shared/大会/2026年度/1014-1015_荒玉中体連駅伝/区間オーダー_SB予想.md",
       "chunk_ids": [
-        "knowledge-dd7b986d26c2738a7c132995",
-        "knowledge-412c58d0a62222a4688ae6f9",
-        "knowledge-8dc4336e66002b506f387bc5",
-        "knowledge-2a4220b928bd237209145345",
-        "knowledge-24c50946f39567d877aa80bd",
-        "knowledge-0d1e9740dd7d8716e9205027",
-        "knowledge-5fb579bfcc55adbab5b08b9b",
-        "knowledge-3fd8d3d01edae3eeeea7009e",
-        "knowledge-615fd87df44053383e3cc862",
-        "knowledge-0ff915d2dcac56ef8cdc71c5"
+        "knowledge-7a001ec9a1c965e866e60119",
+        "knowledge-836c20d07203864ac32ebff9",
+        "knowledge-59ace2efeadee2489f1e6dcb",
+        "knowledge-f4c73017f391b98b46b01e8f",
+        "knowledge-714a7aecc8b060e823f9b004",
+        "knowledge-0653338df3f22cafee65ae77",
+        "knowledge-42373d542f3bf957ba474bf8",
+        "knowledge-6a9247f8a9fad7795a146805",
+        "knowledge-4f7af759dda2bc7865932803"
       ]
     },
     {
@@ -8540,19 +8539,19 @@
       "routes": [
         "corpus-original"
       ],
-      "source_sha256": "2359aaef7821c19fb30a1e000c2976cebdaafefc674598ff45fb57432f42484a",
-      "normalized_sha256": "c0328261a4bc43aa90a2aad2d6ad0453beeedc8ca119242666cdd7b8c62c4a10",
+      "source_sha256": "bf7516bded1be1fde4c7d5ed87960e5e154a90b77a9f0b9a47b31c7deca7dda4",
+      "normalized_sha256": "a30deca3e45c9d1d38c4f2054cce356c91a0c650e9bdd1582ee9e015671428aa",
       "disposition": "canonical",
       "canonical": "input/external/drive/shared/大会/2026年度/1014-1015_荒玉中体連駅伝/区間オーダー_SB予想_coverage.csv",
       "chunk_ids": [
-        "knowledge-0c67c701e423e0114fc64be1",
-        "knowledge-1d9d1fb37bc4f56215813f28",
-        "knowledge-2f0c25449ae38c903b185f41",
-        "knowledge-077e8408cbf207cdcfc85701",
-        "knowledge-c295e01a020319c0a3dfaafd",
-        "knowledge-2c7728fad59ec0ae1a88c30a",
-        "knowledge-e91e7bdd2bb89b520026588d",
-        "knowledge-56d75f3790be3079bc61d3a8"
+        "knowledge-192ce57c10dfdb1f01a3df5b",
+        "knowledge-874c35aa6da9868b4369c011",
+        "knowledge-ff536f86da47f30ec139c1b3",
+        "knowledge-e523f20fe58044a8b103b2c0",
+        "knowledge-9f02209c2b662e581f406156",
+        "knowledge-67d6498d6abd1f3c9fbe6054",
+        "knowledge-2724d0ec9922a4b500b5c794",
+        "knowledge-7159d549e5198bd12b2caa63"
       ]
     },
     {
@@ -8646,17 +8645,16 @@
       "routes": [
         "corpus-original"
       ],
-      "source_sha256": "19ecb97e0a85d3ae79aa61ad7441993ca2b87bae2a1d1ade584ad8157a899ff6",
-      "normalized_sha256": "19ecb97e0a85d3ae79aa61ad7441993ca2b87bae2a1d1ade584ad8157a899ff6",
+      "source_sha256": "4d68c4dcf14301d54b7c6d1ca391c01c273fb58f2251594c4671ed9bacad6367",
+      "normalized_sha256": "4d68c4dcf14301d54b7c6d1ca391c01c273fb58f2251594c4671ed9bacad6367",
       "disposition": "canonical",
       "canonical": "input/external/drive/shared/大会/2026年度/1014-1015_荒玉中体連駅伝/男子区間オーダー_SB予想.md",
       "chunk_ids": [
-        "knowledge-76ecdb7ec7b249d029868b1d",
-        "knowledge-af0b311d24d483e9c4164899",
-        "knowledge-77a0ff7f52a7f46d3e71bcd4",
-        "knowledge-c9f0dbe4f3759340a81744e2",
-        "knowledge-0dd7b27ae12b4998012139bb",
-        "knowledge-f69aa1c87de224d37827da08"
+        "knowledge-35121826493a0398d9a56e2c",
+        "knowledge-0f7270c965fa92a10ecf7400",
+        "knowledge-f833af427bd77c2a52e1375b",
+        "knowledge-0f2e1b87906a8317f70e8738",
+        "knowledge-6110ac1a0c5f05371740d86c"
       ]
     },
     {
@@ -8664,16 +8662,16 @@
       "routes": [
         "corpus-original"
       ],
-      "source_sha256": "9884d00ea49f7f589505296bb4dc3902b538ca5b6b4abec7a89961ae43ed6090",
-      "normalized_sha256": "fd2939ebc7df5155ea78cf5700a71c8c2d7111022c9dd20ee768aeca5a5b5b70",
+      "source_sha256": "66582d843438748d24d46cf3ba871c163e4ddd400364e039eca974602d3dcdb9",
+      "normalized_sha256": "54f50645757a180effbe90f86e1c35da586b26d240a80b04bc45c50151f855c5",
       "disposition": "canonical",
       "canonical": "input/external/drive/shared/大会/2026年度/1014-1015_荒玉中体連駅伝/男子区間オーダー_SB予想_coverage.csv",
       "chunk_ids": [
-        "knowledge-78c9271aa92faf71b4e4e99c",
-        "knowledge-027ff18e0113e0af464c1692",
-        "knowledge-c9ab24391b7e4a19ee838b54",
-        "knowledge-4ff35dd01ab9d8f0fe6670bc",
-        "knowledge-220f4040f99d9232747a21b3"
+        "knowledge-ec834dbcf57fd14e4c8bc7fd",
+        "knowledge-8ad4d6b9d2dcf9b99979c2d3",
+        "knowledge-48df3783048d441126b6e6f0",
+        "knowledge-a5ee518169ab9ee3774101d0",
+        "knowledge-42286e2a6e44b1124117f9b4"
       ]
     },
     {
@@ -8807,12 +8805,12 @@
         "corpus-original",
         "kg-reference"
       ],
-      "source_sha256": "448d187ed17f73dbb5ec0e1df155c7188d208ed83bd591310ddfb922e77045d2",
-      "normalized_sha256": "448d187ed17f73dbb5ec0e1df155c7188d208ed83bd591310ddfb922e77045d2",
+      "source_sha256": "129bfcb0423548d37c635418a1172acb22c8c5d7ae16150235c4c30fb086a8bb",
+      "normalized_sha256": "129bfcb0423548d37c635418a1172acb22c8c5d7ae16150235c4c30fb086a8bb",
       "disposition": "canonical",
       "canonical": "input/external/drive/shared/練習/玉名市練習会/2026-09-22.md",
       "chunk_ids": [
-        "knowledge-83e7ef42f7ffb94801d0c07c"
+        "knowledge-606cb9c250ab6083ecc0c02e"
       ]
     },
     {
@@ -16983,12 +16981,12 @@
         "kg-directory:input/idaten-corpus/drive-text/大会/2026年度/0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）",
         "kg-reference"
       ],
-      "source_sha256": "62b75a8b74579990af593ad5500fa9ea2382b737d17961543e902e843b5c90f9",
-      "normalized_sha256": "62b75a8b74579990af593ad5500fa9ea2382b737d17961543e902e843b5c90f9",
+      "source_sha256": "411c2b75a34a3d0e7169c434c3bc55a9f18f6a69c7339d075e7f00b56d2e3161",
+      "normalized_sha256": "411c2b75a34a3d0e7169c434c3bc55a9f18f6a69c7339d075e7f00b56d2e3161",
       "disposition": "identical-alias",
       "canonical": "input/external/drive/shared/大会/2026年度/0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）/岱明の結果.md",
       "chunk_ids": [
-        "knowledge-3a49471b766ca8a9498689db"
+        "knowledge-db7cce41e8d1349af1059f48"
       ]
     },
     {
@@ -17148,12 +17146,12 @@
         "kg-directory:input/idaten-corpus/drive-text/大会/2026年度/1014-1015_荒玉中体連駅伝",
         "kg-reference"
       ],
-      "source_sha256": "6f202ab2b27645167800738d1d3c68b66decfa18e43eb65db023d22153bf70e7",
-      "normalized_sha256": "6f202ab2b27645167800738d1d3c68b66decfa18e43eb65db023d22153bf70e7",
+      "source_sha256": "fa3eb9d1b988fbdface4caa7877b6d350448dda7bd6612bc3550dbbb50f549cc",
+      "normalized_sha256": "fa3eb9d1b988fbdface4caa7877b6d350448dda7bd6612bc3550dbbb50f549cc",
       "disposition": "identical-alias",
       "canonical": "input/external/drive/shared/大会/2026年度/1014-1015_荒玉中体連駅伝/人間考慮_男子.yaml",
       "chunk_ids": [
-        "knowledge-a8dd1b3a15cd64d463fcf50d"
+        "knowledge-f5b4c2a8c20871ea1331f549"
       ]
     },
     {
@@ -17199,21 +17197,20 @@
         "kg-directory:input/idaten-corpus/drive-text/大会/2026年度/1014-1015_荒玉中体連駅伝",
         "kg-reference"
       ],
-      "source_sha256": "6f2ff59cb9923bdeaaddb94f6368583e0658cf10bd278371bc077c2fa57fb073",
-      "normalized_sha256": "6f2ff59cb9923bdeaaddb94f6368583e0658cf10bd278371bc077c2fa57fb073",
+      "source_sha256": "ccbf3017d89f0cddbaa1b9da62374f7b1d5ac1aaa8c2c77680bf46e6513fcaea",
+      "normalized_sha256": "ccbf3017d89f0cddbaa1b9da62374f7b1d5ac1aaa8c2c77680bf46e6513fcaea",
       "disposition": "identical-alias",
       "canonical": "input/external/drive/shared/大会/2026年度/1014-1015_荒玉中体連駅伝/区間オーダー_SB予想.md",
       "chunk_ids": [
-        "knowledge-dd7b986d26c2738a7c132995",
-        "knowledge-412c58d0a62222a4688ae6f9",
-        "knowledge-8dc4336e66002b506f387bc5",
-        "knowledge-2a4220b928bd237209145345",
-        "knowledge-24c50946f39567d877aa80bd",
-        "knowledge-0d1e9740dd7d8716e9205027",
-        "knowledge-5fb579bfcc55adbab5b08b9b",
-        "knowledge-3fd8d3d01edae3eeeea7009e",
-        "knowledge-615fd87df44053383e3cc862",
-        "knowledge-0ff915d2dcac56ef8cdc71c5"
+        "knowledge-7a001ec9a1c965e866e60119",
+        "knowledge-836c20d07203864ac32ebff9",
+        "knowledge-59ace2efeadee2489f1e6dcb",
+        "knowledge-f4c73017f391b98b46b01e8f",
+        "knowledge-714a7aecc8b060e823f9b004",
+        "knowledge-0653338df3f22cafee65ae77",
+        "knowledge-42373d542f3bf957ba474bf8",
+        "knowledge-6a9247f8a9fad7795a146805",
+        "knowledge-4f7af759dda2bc7865932803"
       ]
     },
     {
@@ -17225,19 +17222,19 @@
         "kg-directory:input/idaten-corpus/drive-text/大会/2026年度/1014-1015_荒玉中体連駅伝",
         "kg-reference"
       ],
-      "source_sha256": "2359aaef7821c19fb30a1e000c2976cebdaafefc674598ff45fb57432f42484a",
-      "normalized_sha256": "c0328261a4bc43aa90a2aad2d6ad0453beeedc8ca119242666cdd7b8c62c4a10",
+      "source_sha256": "bf7516bded1be1fde4c7d5ed87960e5e154a90b77a9f0b9a47b31c7deca7dda4",
+      "normalized_sha256": "a30deca3e45c9d1d38c4f2054cce356c91a0c650e9bdd1582ee9e015671428aa",
       "disposition": "identical-alias",
       "canonical": "input/external/drive/shared/大会/2026年度/1014-1015_荒玉中体連駅伝/区間オーダー_SB予想_coverage.csv",
       "chunk_ids": [
-        "knowledge-0c67c701e423e0114fc64be1",
-        "knowledge-1d9d1fb37bc4f56215813f28",
-        "knowledge-2f0c25449ae38c903b185f41",
-        "knowledge-077e8408cbf207cdcfc85701",
-        "knowledge-c295e01a020319c0a3dfaafd",
-        "knowledge-2c7728fad59ec0ae1a88c30a",
-        "knowledge-e91e7bdd2bb89b520026588d",
-        "knowledge-56d75f3790be3079bc61d3a8"
+        "knowledge-192ce57c10dfdb1f01a3df5b",
+        "knowledge-874c35aa6da9868b4369c011",
+        "knowledge-ff536f86da47f30ec139c1b3",
+        "knowledge-e523f20fe58044a8b103b2c0",
+        "knowledge-9f02209c2b662e581f406156",
+        "knowledge-67d6498d6abd1f3c9fbe6054",
+        "knowledge-2724d0ec9922a4b500b5c794",
+        "knowledge-7159d549e5198bd12b2caa63"
       ]
     },
     {
@@ -17248,33 +17245,32 @@
         "kg-directory:input/idaten-corpus/drive-text/大会/2026年度/1014-1015_荒玉中体連駅伝",
         "kg-reference"
       ],
-      "source_sha256": "fe3f065be9d49a70fc30b45e93df4abbf4fdd4bbc7130415bb52639a09385a86",
-      "normalized_sha256": "fe3f065be9d49a70fc30b45e93df4abbf4fdd4bbc7130415bb52639a09385a86",
+      "source_sha256": "9673696944b0fcc3be4eb3f4f7b46d7daa1d42db90da1a207774f61fc7cb19ba",
+      "normalized_sha256": "9673696944b0fcc3be4eb3f4f7b46d7daa1d42db90da1a207774f61fc7cb19ba",
       "disposition": "canonical",
       "canonical": "input/idaten-corpus/drive-text/大会/2026年度/1014-1015_荒玉中体連駅伝/区間オーダー_数式予想.json",
       "chunk_ids": [
-        "knowledge-16173051fad3e92ae431d901",
-        "knowledge-614cbc885108bd94cde2b58d",
-        "knowledge-90b15c183086cde851bd6cdf",
-        "knowledge-47ce0c0dce85a1223527fb9d",
-        "knowledge-163986b1b4dbe42422b1ff1f",
-        "knowledge-485b0f4368cb0c954b43887b",
-        "knowledge-2488de456f4dc4fd75b78776",
-        "knowledge-beb121fa60e49caec1001905",
-        "knowledge-d7735a21380c13baa568e709",
-        "knowledge-c229d6e90a37f0b4276464f7",
-        "knowledge-eaefdea63451dbb0179d2f96",
-        "knowledge-64c70af0f22bbb814f15faa7",
-        "knowledge-7e4e996014e9592ade27e5b5",
-        "knowledge-aea9f8c939e032852bf167cc",
-        "knowledge-665b3982b2d49573a47f10e1",
-        "knowledge-41c0d12057eba06648cdfa07",
-        "knowledge-e26aa05593fc8e1579a3f217",
-        "knowledge-79ca0e5b1c35610e10ee1ef7",
-        "knowledge-7fb86a2a6ff74258b91244d5",
-        "knowledge-54094f42cd22d3e812751926",
-        "knowledge-72f68a7eeb1224503494c7e0",
-        "knowledge-6049f750396d351ad0d0ba52"
+        "knowledge-4aed2dd1f6fe4471ed3b2c64",
+        "knowledge-1cc7b933a074b7eba892f4fd",
+        "knowledge-bd7409f9b993a70e5846a67c",
+        "knowledge-45de254b04f0f2ca272aba07",
+        "knowledge-e77b7ae8732cdec0c6ae95fb",
+        "knowledge-c1b3f2222021e89553eba526",
+        "knowledge-17a04b03dd33d6fb58639c85",
+        "knowledge-423123e5b63da3ba17a0f0e2",
+        "knowledge-4f68b4f7588ab1d976fdb1f8",
+        "knowledge-3036bb53c2ba4058c503afbb",
+        "knowledge-9106881d23e789ae35cb6bea",
+        "knowledge-e3e4ae061fb1ce992a36f17b",
+        "knowledge-2df512a38e707c82c36641d7",
+        "knowledge-80b97f511b00267e40c8ee49",
+        "knowledge-80f670a0056573996e8f23e6",
+        "knowledge-662eeadbc4b41ae45ef78a1b",
+        "knowledge-94deaa7f61cbbfde73679413",
+        "knowledge-1fc0474609e52112d745ba7e",
+        "knowledge-ced90e17238d1a3d9fe176a6",
+        "knowledge-f7827f6ead6c2e0e72d6ab07",
+        "knowledge-907c7f5d235e2372c4bc9362"
       ]
     },
     {
@@ -17309,18 +17305,17 @@
         "kg-directory:input/idaten-corpus/drive-text/大会/2026年度/1014-1015_荒玉中体連駅伝",
         "kg-reference"
       ],
-      "source_sha256": "3e444a0bafd52d4e17328e292299a86e840031e81cb9222980bcf75768ebb5e4",
-      "normalized_sha256": "155be0c0a9e18b5b8a40600d0d8b11401d69d181be9b74f89865ae6b64b1ead5",
+      "source_sha256": "e6def3b06ede94c1ba858cd16851870450fbde3f4ad360b8fd3ef5399ba579d3",
+      "normalized_sha256": "ba843d6e74fdd897439e829ec4a1481793032e8c828f7063dc98f4e0b810fc00",
       "disposition": "canonical",
       "canonical": "input/idaten-corpus/drive-text/大会/2026年度/1014-1015_荒玉中体連駅伝/区間オーダー_数式予想_coverage.csv",
       "chunk_ids": [
-        "knowledge-7b40d057ba6aed393d065acf",
-        "knowledge-119ac9911e142b87e9781537",
-        "knowledge-d3d16c55e1ed368a90df0702",
-        "knowledge-839141401020bd5e6af29220",
-        "knowledge-7189092f58737991a51afa79",
-        "knowledge-50755c979770eb59dc501041",
-        "knowledge-a75ea83d364a467bbe66d484"
+        "knowledge-0438e01ecfee6d02ecd6dbac",
+        "knowledge-9e369eb2fc0f517c3b967bb3",
+        "knowledge-f1e0ed2eeed035f4b491e569",
+        "knowledge-f06e20d2de24822dba120309",
+        "knowledge-8cbc535736344a90d2b8777b",
+        "knowledge-09e881e49a6afe0b21b0bbb5"
       ]
     },
     {
@@ -17389,14 +17384,14 @@
         "kg-directory:input/idaten-corpus/drive-text",
         "kg-directory:input/idaten-corpus/drive-text/大会/2026年度/1014-1015_荒玉中体連駅伝"
       ],
-      "source_sha256": "afad0e6d7fb08a25883cd6ec6945ef792ec55f5e1bf308ee70acc93966433d6e",
-      "normalized_sha256": "88645d3f632f3ec8f386cf3fe578a48d3eac0ffdf2a501c1bbcb7d37709f4632",
+      "source_sha256": "e5d3f72c713ab506bb6c931c8690e8767ec392822c1bdaf8d911d75bd492fb8a",
+      "normalized_sha256": "e667a43d2c57e6fcd8c6212cf820ecfcd3e78847ef7fc699eb56aa6c8494f8c9",
       "disposition": "canonical",
       "canonical": "input/idaten-corpus/drive-text/大会/2026年度/1014-1015_荒玉中体連駅伝/女子区間オーダー_数式予想_coverage.csv",
       "chunk_ids": [
-        "knowledge-dca52a83e57b82add597c7d7",
-        "knowledge-9f5b62270599fc7789da0bb7",
-        "knowledge-523a65d547ee3f5409136a8f"
+        "knowledge-0853216aa6505fc65b04a7a9",
+        "knowledge-e2507fe7d77024c1b75eb833",
+        "knowledge-cc2b13e6789473f4a5d155c6"
       ]
     },
     {
@@ -17487,17 +17482,16 @@
         "kg-directory:input/idaten-corpus/drive-text",
         "kg-directory:input/idaten-corpus/drive-text/大会/2026年度/1014-1015_荒玉中体連駅伝"
       ],
-      "source_sha256": "19ecb97e0a85d3ae79aa61ad7441993ca2b87bae2a1d1ade584ad8157a899ff6",
-      "normalized_sha256": "19ecb97e0a85d3ae79aa61ad7441993ca2b87bae2a1d1ade584ad8157a899ff6",
+      "source_sha256": "4d68c4dcf14301d54b7c6d1ca391c01c273fb58f2251594c4671ed9bacad6367",
+      "normalized_sha256": "4d68c4dcf14301d54b7c6d1ca391c01c273fb58f2251594c4671ed9bacad6367",
       "disposition": "identical-alias",
       "canonical": "input/external/drive/shared/大会/2026年度/1014-1015_荒玉中体連駅伝/男子区間オーダー_SB予想.md",
       "chunk_ids": [
-        "knowledge-76ecdb7ec7b249d029868b1d",
-        "knowledge-af0b311d24d483e9c4164899",
-        "knowledge-77a0ff7f52a7f46d3e71bcd4",
-        "knowledge-c9f0dbe4f3759340a81744e2",
-        "knowledge-0dd7b27ae12b4998012139bb",
-        "knowledge-f69aa1c87de224d37827da08"
+        "knowledge-35121826493a0398d9a56e2c",
+        "knowledge-0f7270c965fa92a10ecf7400",
+        "knowledge-f833af427bd77c2a52e1375b",
+        "knowledge-0f2e1b87906a8317f70e8738",
+        "knowledge-6110ac1a0c5f05371740d86c"
       ]
     },
     {
@@ -17508,16 +17502,16 @@
         "kg-directory:input/idaten-corpus/drive-text",
         "kg-directory:input/idaten-corpus/drive-text/大会/2026年度/1014-1015_荒玉中体連駅伝"
       ],
-      "source_sha256": "9884d00ea49f7f589505296bb4dc3902b538ca5b6b4abec7a89961ae43ed6090",
-      "normalized_sha256": "fd2939ebc7df5155ea78cf5700a71c8c2d7111022c9dd20ee768aeca5a5b5b70",
+      "source_sha256": "66582d843438748d24d46cf3ba871c163e4ddd400364e039eca974602d3dcdb9",
+      "normalized_sha256": "54f50645757a180effbe90f86e1c35da586b26d240a80b04bc45c50151f855c5",
       "disposition": "identical-alias",
       "canonical": "input/external/drive/shared/大会/2026年度/1014-1015_荒玉中体連駅伝/男子区間オーダー_SB予想_coverage.csv",
       "chunk_ids": [
-        "knowledge-78c9271aa92faf71b4e4e99c",
-        "knowledge-027ff18e0113e0af464c1692",
-        "knowledge-c9ab24391b7e4a19ee838b54",
-        "knowledge-4ff35dd01ab9d8f0fe6670bc",
-        "knowledge-220f4040f99d9232747a21b3"
+        "knowledge-ec834dbcf57fd14e4c8bc7fd",
+        "knowledge-8ad4d6b9d2dcf9b99979c2d3",
+        "knowledge-48df3783048d441126b6e6f0",
+        "knowledge-a5ee518169ab9ee3774101d0",
+        "knowledge-42286e2a6e44b1124117f9b4"
       ]
     },
     {
@@ -17547,15 +17541,15 @@
         "kg-directory:input/idaten-corpus/drive-text",
         "kg-directory:input/idaten-corpus/drive-text/大会/2026年度/1014-1015_荒玉中体連駅伝"
       ],
-      "source_sha256": "92fa883c173b552ad1056afbb00fee7eff1f5194a53cdef391883be50c4863b7",
-      "normalized_sha256": "85474811eadb4fec1dc10e814083a2b1e55053fe815170d3fb5bff4c010c2350",
+      "source_sha256": "202b8db6806a73e1d106a8fb61c6e5c6bc8e4dcf76c47b12c21ec86d44b5b4b0",
+      "normalized_sha256": "057c5e5aced8500a4eb3964492852477f897720919b89bc501e6a8f6ec35a49e",
       "disposition": "canonical",
       "canonical": "input/idaten-corpus/drive-text/大会/2026年度/1014-1015_荒玉中体連駅伝/男子区間オーダー_数式予想_coverage.csv",
       "chunk_ids": [
-        "knowledge-b821afef2ed55fafbe5e163b",
-        "knowledge-3fca313743abf3ce11ad4c2d",
-        "knowledge-20e652e3613fec498523e5e9",
-        "knowledge-318d0e5148b3b23c23e040ed"
+        "knowledge-27798381ee3aa33ec8b174df",
+        "knowledge-bec4979379465a833e667949",
+        "knowledge-d132126692dc9d021724147f",
+        "knowledge-ee69de1b3841fbaa9254bcf7"
       ]
     },
     {
@@ -17717,12 +17711,12 @@
         "corpus-file",
         "kg-directory:input/idaten-corpus/drive-text"
       ],
-      "source_sha256": "448d187ed17f73dbb5ec0e1df155c7188d208ed83bd591310ddfb922e77045d2",
-      "normalized_sha256": "448d187ed17f73dbb5ec0e1df155c7188d208ed83bd591310ddfb922e77045d2",
+      "source_sha256": "129bfcb0423548d37c635418a1172acb22c8c5d7ae16150235c4c30fb086a8bb",
+      "normalized_sha256": "129bfcb0423548d37c635418a1172acb22c8c5d7ae16150235c4c30fb086a8bb",
       "disposition": "identical-alias",
       "canonical": "input/external/drive/shared/練習/玉名市練習会/2026-09-22.md",
       "chunk_ids": [
-        "knowledge-83e7ef42f7ffb94801d0c07c"
+        "knowledge-606cb9c250ab6083ecc0c02e"
       ]
     },
     {
@@ -19485,12 +19479,12 @@
         "corpus-file",
         "kg-directory:input/idaten-corpus/out-analysis"
       ],
-      "source_sha256": "88da68f4972ca63916d996eec281dcdc43169d526980918146f4854fd33b0505",
-      "normalized_sha256": "88da68f4972ca63916d996eec281dcdc43169d526980918146f4854fd33b0505",
+      "source_sha256": "1dd620f4220a9fc75e661d064aa03ddacf2bc231b142cc17e740a59fef6069ca",
+      "normalized_sha256": "1dd620f4220a9fc75e661d064aa03ddacf2bc231b142cc17e740a59fef6069ca",
       "disposition": "identical-alias",
       "canonical": "out/analysis/2026-09-29_aragyoku_trial_results.md",
       "chunk_ids": [
-        "knowledge-961deb5d2e63ac62f0835470"
+        "knowledge-852e3f956ed15eca610621ef"
       ]
     },
     {
@@ -20142,12 +20136,12 @@
         "corpus-file",
         "kg-directory:input/idaten-corpus/out-analysis"
       ],
-      "source_sha256": "851765f6293e3f844218e5f0a8dca5d0e8035fe1f585a9187cc9582c6e1dea14",
-      "normalized_sha256": "851765f6293e3f844218e5f0a8dca5d0e8035fe1f585a9187cc9582c6e1dea14",
+      "source_sha256": "3bb344593ba019aca6ceb44823a4bc33f0e35fafb2887459eac7a427fcba20ef",
+      "normalized_sha256": "3bb344593ba019aca6ceb44823a4bc33f0e35fafb2887459eac7a427fcba20ef",
       "disposition": "canonical",
       "canonical": "input/idaten-corpus/out-analysis/aragyoku_2026_formula_coefficients.json",
       "chunk_ids": [
-        "knowledge-b8cd9bea8aac392e42200eb6"
+        "knowledge-15b9440d8effe08ca73b7632"
       ]
     },
     {
@@ -20156,14 +20150,14 @@
         "corpus-file",
         "kg-directory:input/idaten-corpus/out-analysis"
       ],
-      "source_sha256": "b162f8e45c432043f17273fd077e4e0cd85943077cba4ac282b4906a9c1d0de3",
-      "normalized_sha256": "b162f8e45c432043f17273fd077e4e0cd85943077cba4ac282b4906a9c1d0de3",
+      "source_sha256": "3da0f95a614c33957a6efd1ffca9803cdcae51de80f488cf09a243b8fb946e16",
+      "normalized_sha256": "3da0f95a614c33957a6efd1ffca9803cdcae51de80f488cf09a243b8fb946e16",
       "disposition": "identical-alias",
       "canonical": "out/analysis/aragyoku_2026_formula_report.md",
       "chunk_ids": [
-        "knowledge-a77eaac2e26d7ff7c8f339f4",
-        "knowledge-4062041db2098962125207e1",
-        "knowledge-fa0ab2a4b5f6f2acc42718fd"
+        "knowledge-60d40621076379b720e10a65",
+        "knowledge-1d3e238bdf200c79bfdee3e3",
+        "knowledge-aa1e99fd25b5dc9729d792d8"
       ]
     },
     {
@@ -21861,12 +21855,12 @@
         "corpus-file",
         "kg-directory:input/idaten-corpus/repo-docs"
       ],
-      "source_sha256": "4deb6e4174606f90ca377f0cfa86a49423ff4c5ba7f5d35be3c546c476fce25e",
-      "normalized_sha256": "4deb6e4174606f90ca377f0cfa86a49423ff4c5ba7f5d35be3c546c476fce25e",
+      "source_sha256": "fa2eb8e5abbad2457390403f7fec247efba4e86fa95b0bc4f92366d5023c216d",
+      "normalized_sha256": "fa2eb8e5abbad2457390403f7fec247efba4e86fa95b0bc4f92366d5023c216d",
       "disposition": "identical-alias",
       "canonical": "docs/adr/056-aragyoku-sb-preview.md",
       "chunk_ids": [
-        "knowledge-f2b7fe5f8cd8e6ad9574b9a8"
+        "knowledge-0ee7e397457331ec83e48d79"
       ]
     },
     {
@@ -25336,12 +25330,12 @@
       "routes": [
         "kg-reference"
       ],
-      "source_sha256": "88da68f4972ca63916d996eec281dcdc43169d526980918146f4854fd33b0505",
-      "normalized_sha256": "88da68f4972ca63916d996eec281dcdc43169d526980918146f4854fd33b0505",
+      "source_sha256": "1dd620f4220a9fc75e661d064aa03ddacf2bc231b142cc17e740a59fef6069ca",
+      "normalized_sha256": "1dd620f4220a9fc75e661d064aa03ddacf2bc231b142cc17e740a59fef6069ca",
       "disposition": "canonical",
       "canonical": "out/analysis/2026-09-29_aragyoku_trial_results.md",
       "chunk_ids": [
-        "knowledge-961deb5d2e63ac62f0835470"
+        "knowledge-852e3f956ed15eca610621ef"
       ]
     },
     {
@@ -25967,14 +25961,14 @@
       "routes": [
         "kg-reference"
       ],
-      "source_sha256": "b162f8e45c432043f17273fd077e4e0cd85943077cba4ac282b4906a9c1d0de3",
-      "normalized_sha256": "b162f8e45c432043f17273fd077e4e0cd85943077cba4ac282b4906a9c1d0de3",
+      "source_sha256": "3da0f95a614c33957a6efd1ffca9803cdcae51de80f488cf09a243b8fb946e16",
+      "normalized_sha256": "3da0f95a614c33957a6efd1ffca9803cdcae51de80f488cf09a243b8fb946e16",
       "disposition": "canonical",
       "canonical": "out/analysis/aragyoku_2026_formula_report.md",
       "chunk_ids": [
-        "knowledge-a77eaac2e26d7ff7c8f339f4",
-        "knowledge-4062041db2098962125207e1",
-        "knowledge-fa0ab2a4b5f6f2acc42718fd"
+        "knowledge-60d40621076379b720e10a65",
+        "knowledge-1d3e238bdf200c79bfdee3e3",
+        "knowledge-aa1e99fd25b5dc9729d792d8"
       ]
     },
     {
@@ -26911,12 +26905,12 @@
       ]
     }
   ],
-  "baseline_prepared_qa_count": 38447,
-  "baseline_prepared_qa_sha256": "1ed6522199f91ff6f5cb6d6a6709c48a26ef01aef65d027de2bd7508dcef0075",
+  "baseline_prepared_qa_count": 39011,
+  "baseline_prepared_qa_sha256": "39fdfaa1a1b67c7ee4c274076dfb271141a205e1d60ffdf65066703d9d5f1ab9",
   "chunk_kinds": {
-    "text": 1150,
-    "structured": 993,
-    "csv": 639
+    "text": 1148,
+    "structured": 992,
+    "csv": 638
   },
   "canonical_suffixes": {
     ".md": 581,
@@ -26925,8 +26919,8 @@
     ".csv": 49,
     ".txt": 2
   },
-  "chunk_count": 2782,
-  "required_new_qa": 8346,
+  "chunk_count": 2778,
+  "required_new_qa": 8334,
   "dispositions": {
     "canonical": 893,
     "nontext-asset-or-implementation": 44,
@@ -27047,7 +27041,7 @@
     },
     {
       "path": "out/qa-chunks/chunks-0028.jsonl",
-      "chunks": 43
+      "chunks": 42
     },
     {
       "path": "out/qa-chunks/chunks-0029.jsonl",
@@ -27079,15 +27073,15 @@
     },
     {
       "path": "out/qa-chunks/chunks-0036.jsonl",
-      "chunks": 33
+      "chunks": 39
     },
     {
       "path": "out/qa-chunks/chunks-0037.jsonl",
-      "chunks": 88
+      "chunks": 84
     },
     {
       "path": "out/qa-chunks/chunks-0038.jsonl",
-      "chunks": 58
+      "chunks": 57
     },
     {
       "path": "out/qa-chunks/chunks-0039.jsonl",
@@ -27095,15 +27089,15 @@
     },
     {
       "path": "out/qa-chunks/chunks-0040.jsonl",
-      "chunks": 36
+      "chunks": 37
     },
     {
       "path": "out/qa-chunks/chunks-0041.jsonl",
-      "chunks": 41
+      "chunks": 40
     },
     {
       "path": "out/qa-chunks/chunks-0042.jsonl",
-      "chunks": 40
+      "chunks": 41
     },
     {
       "path": "out/qa-chunks/chunks-0043.jsonl",
@@ -27111,7 +27105,7 @@
     },
     {
       "path": "out/qa-chunks/chunks-0044.jsonl",
-      "chunks": 38
+      "chunks": 37
     },
     {
       "path": "out/qa-chunks/chunks-0045.jsonl",
@@ -27123,7 +27117,7 @@
     },
     {
       "path": "out/qa-chunks/chunks-0047.jsonl",
-      "chunks": 38
+      "chunks": 37
     },
     {
       "path": "out/qa-chunks/chunks-0048.jsonl",
@@ -27139,11 +27133,11 @@
     },
     {
       "path": "out/qa-chunks/chunks-0051.jsonl",
-      "chunks": 36
+      "chunks": 35
     },
     {
       "path": "out/qa-chunks/chunks-0052.jsonl",
-      "chunks": 34
+      "chunks": 35
     },
     {
       "path": "out/qa-chunks/chunks-0053.jsonl",
@@ -27151,11 +27145,11 @@
     },
     {
       "path": "out/qa-chunks/chunks-0054.jsonl",
-      "chunks": 30
+      "chunks": 32
     },
     {
       "path": "out/qa-chunks/chunks-0055.jsonl",
-      "chunks": 40
+      "chunks": 39
     },
     {
       "path": "out/qa-chunks/chunks-0056.jsonl",
@@ -27171,19 +27165,19 @@
     },
     {
       "path": "out/qa-chunks/chunks-0059.jsonl",
-      "chunks": 39
+      "chunks": 40
     },
     {
       "path": "out/qa-chunks/chunks-0060.jsonl",
-      "chunks": 43
+      "chunks": 42
     },
     {
       "path": "out/qa-chunks/chunks-0061.jsonl",
-      "chunks": 41
+      "chunks": 43
     },
     {
       "path": "out/qa-chunks/chunks-0062.jsonl",
-      "chunks": 46
+      "chunks": 43
     },
     {
       "path": "out/qa-chunks/chunks-0063.jsonl",
@@ -27191,7 +27185,7 @@
     },
     {
       "path": "out/qa-chunks/chunks-0064.jsonl",
-      "chunks": 23
+      "chunks": 20
     }
   ]
 }

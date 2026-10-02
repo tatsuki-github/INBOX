@@ -7,7 +7,7 @@ import json
 import re
 from prepare_knowledge_qa_chunks import resolve_pointer
 
-TEAM_POINTER = re.compile(r'^/years/(20\d{2})/teams/(\d+)$')
+TEAM_POINTER = re.compile(r'^(?:/years/(20\d{2}))?/teams/(\d+)$')
 
 
 def render_movement(unit, from_leg, to_leg):
@@ -15,10 +15,14 @@ def render_movement(unit, from_leg, to_leg):
     team = unit['value']; context = unit['context']
     if not match or not isinstance(team, dict) or not team.get('team'):
         raise ValueError('unsupported team record')
-    year = int(match[1]); gender = context.get('gender')
+    year = int(match[1]) if match[1] else context.get('year'); gender = context.get('gender')
+    if type(year) is not int or not 2012 <= year <= 2025:
+        raise ValueError('unsupported historical year')
     if context.get('year') != year or gender not in ('男子', '女子'):
         raise ValueError('year or gender context differs')
     legs = {r['leg']: r for r in team.get('legs', [])}
+    if len(legs) != len(team.get('legs', [])) or any(type(n) is not int or not 1 <= n <= 6 for n in legs):
+        raise ValueError('duplicate or invalid leg numbers')
     if from_leg >= to_leg or from_leg not in legs or to_leg not in legs:
         raise ValueError('invalid leg sequence')
     a, b = legs[from_leg], legs[to_leg]
@@ -39,7 +43,10 @@ def render_movement(unit, from_leg, to_leg):
 def expand_team_units(unit):
     if TEAM_POINTER.fullmatch(unit['pointer']):
         return [unit]
-    if not re.fullmatch(r'/years/20\d{2}', unit['pointer']) or not isinstance(unit['value'], dict):
+    if unit['pointer'] == '/teams' and isinstance(unit['value'], list):
+        return [{'pointer': '/teams/' + str(i), 'value': team, 'context': unit['context']}
+                for i, team in enumerate(unit['value'])]
+    if not (re.fullmatch(r'/years/20\d{2}', unit['pointer']) or unit['pointer'] == '') or not isinstance(unit['value'], dict):
         return []
     year = unit['value']
     labels = {k:v for k,v in year.items() if not isinstance(v,(dict,list)) and len(str(v))<=160}
@@ -68,8 +75,8 @@ def validate_movement(entry, chunk, source_text):
     match = TEAM_POINTER.fullmatch(pointer)
     if not match:
         raise ValueError('unsupported JSON pointer')
-    year_record = source['years'][match[1]]
-    expected_year = year_record.get('year', int(match[1]))
+    year_record = source['years'][match[1]] if match[1] else source
+    expected_year = year_record.get('year', int(match[1]) if match[1] else None)
     expected_gender = year_record.get('gender', source.get('meta', {}).get('gender'))
     if unit['context'].get('year') != expected_year or unit['context'].get('gender') != expected_gender:
         raise ValueError('source context drift')

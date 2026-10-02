@@ -1,0 +1,353 @@
+{
+  "version": 1,
+  "entries": [
+    {
+      "id": "fullchunkqa-1c29886913bce4c74d59c2f7-1",
+      "chunk_id": "knowledge-1c29886913bce4c74d59c2f7",
+      "questions": [
+        "BakkenのEnergy Balanceでは、正しい閾値練習や回復用具があれば、食事が不足しても適応できる？"
+      ],
+      "answer": "できるとはしていません。練習ストレスを受け止めるにはエネルギー源が必要で、不足が慢性化すると回復だけでなく免疫、練習意欲、ホルモンにも影響するという説明です。カロリーや理想体重を追い続けるより必要な補給を理解する方針で、個人の摂取量を処方しません。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "but it cannot create energy from nothing. Fuel has to come from somewhere."
+        },
+        {
+          "kind": "quote",
+          "text": "You don't need to obsess over calories or chase an ideal weight."
+        },
+        {
+          "kind": "quote",
+          "text": "Chronic under-fueling doesn't just slow recovery between sessions. It weakens immunity, saps motivation to train, disrupts hormone production"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Author-qualified energy, rest and warning-sign descriptions; uncertain prevalence is not universal; no target weight, calorie restriction, individual diagnosis or personality evaluation."
+      }
+    },
+    {
+      "id": "fullchunkqa-1c29886913bce4c74d59c2f7-2",
+      "chunk_id": "knowledge-1c29886913bce4c74d59c2f7",
+      "questions": [
+        "BakkenのThe Weight Questionでは、競技時と練習時の最適な体重は必ず同じ？"
+      ],
+      "answer": "必ず同じではないと述べています。著者は冬の高い負荷を支える余裕を保つ経験を説明し、極端な方法や最小の体重を追うより、長く続けられ十分に練習を支える補給を重視しています。個人の減量目標を示すものではありません。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "Optimal race weight and optimal training weight aren't necessarily the same."
+        },
+        {
+          "kind": "quote",
+          "text": "Extreme tactics rarely translate into better performance over the long haul."
+        },
+        {
+          "kind": "quote",
+          "text": "They're the ones who fuel the work."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Author-qualified energy, rest and warning-sign descriptions; uncertain prevalence is not universal; no target weight, calorie restriction, individual diagnosis or personality evaluation."
+      }
+    },
+    {
+      "id": "fullchunkqa-1c29886913bce4c74d59c2f7-3",
+      "chunk_id": "knowledge-1c29886913bce4c74d59c2f7",
+      "questions": [
+        "BakkenのDynamic Rest Daysは、休む曜日を必ず固定する考え？"
+      ],
+      "answer": "生活上の予測可能性を認めつつ、身体が休息を求める兆候に応じて休む考えです。筋緊張、小さな痛み、心拍・HRVのずれ、説明のつかない重さなどを例にしています。書籍の調整方針で、各兆候から病気やけがを確定しません。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "fixed rest days often make sense."
+        },
+        {
+          "kind": "quote",
+          "text": "instead of locking in which days you rest, you take time off when your body signals it needs a break."
+        },
+        {
+          "kind": "quote",
+          "text": "If resting heart rate, HRV, or warm-up heart rate are off, that may be your cue."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Author-qualified energy, rest and warning-sign descriptions; uncertain prevalence is not universal; no target weight, calorie restriction, individual diagnosis or personality evaluation."
+      }
+    },
+    {
+      "id": "fullchunkqa-ce73d2311aebc1cf3bc1ba85-1",
+      "chunk_id": "knowledge-ce73d2311aebc1cf3bc1ba85",
+      "questions": [
+        "Bakkenは普通の日々の調子の揺れと、過負荷へ向かう継続的な低下をどう区別して説明している？"
+      ],
+      "answer": "普通の揺れでは楽な日や重い日があっても練習を受け止め適応すると説明しています。一方、イージージョグもつらく通常の回復手段に反応しなくなるような低下は、負荷を受け止める能力の低下として扱っています。例の区別で、個人の診断基準ではありません。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "Some days feel effortless, others heavy. But the body responds and adapts."
+        },
+        {
+          "kind": "quote",
+          "text": "Even easy jogs feel labored. Sessions that should be routine turn into battles. The body stops responding to the usual recovery measures."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Author-qualified energy, rest and warning-sign descriptions; uncertain prevalence is not universal; no target weight, calorie restriction, individual diagnosis or personality evaluation."
+      }
+    },
+    {
+      "id": "fullchunkqa-ce73d2311aebc1cf3bc1ba85-2",
+      "chunk_id": "knowledge-ce73d2311aebc1cf3bc1ba85",
+      "questions": [
+        "Bakkenが挙げる「エリートランナーの最大3分の2がオーバートレーニングを経験」の数値は、確定した普遍的な割合？"
+      ],
+      "answer": "一部の研究による推定として挙げ、数値には不確実性があると明記しています。まれではないという著者の説明で、全ランナーに共通する確定割合や個人の発症確率ではありません。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "Some studies estimate that up to two-thirds of all elite runners experience overtraining at some point in their careers. Even if the numbers are uncertain"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Author-qualified energy, rest and warning-sign descriptions; uncertain prevalence is not universal; no target weight, calorie restriction, individual diagnosis or personality evaluation."
+      }
+    },
+    {
+      "id": "fullchunkqa-ce73d2311aebc1cf3bc1ba85-3",
+      "chunk_id": "knowledge-ce73d2311aebc1cf3bc1ba85",
+      "questions": [
+        "Bakkenはオーバーロードの問題を、週に大量の練習をするエリートだけのものとしている？"
+      ],
+      "answer": "エリートだけではないとしています。市民ランナーで週3〜4回でも見られ、やや強すぎる練習が睡眠不足、始まりかけの感染、生活ストレスと重なると、少ない回数でも過負荷へ傾く可能性を説明しています。特定の人の状態をこの記述から判断しません。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "it doesn't only strike the elite."
+        },
+        {
+          "kind": "quote",
+          "text": "people training three or four times a week"
+        },
+        {
+          "kind": "quote",
+          "text": "Just a few sessions per week can tip you into overload if slightly too demanding training coincides with poor sleep, a brewing infection, or other life stress."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Author-qualified energy, rest and warning-sign descriptions; uncertain prevalence is not universal; no target weight, calorie restriction, individual diagnosis or personality evaluation."
+      }
+    },
+    {
+      "id": "fullchunkqa-a5366f632bb16c95a1c8bee5-1",
+      "chunk_id": "knowledge-a5366f632bb16c95a1c8bee5",
+      "questions": [
+        "BakkenのEarly Warningsでは、オーバートレーニングを一つの正確な客観指標で判断できるとしている？"
+      ],
+      "answer": "正確な客観マーカーがないと述べ、感覚と合わせて少数の客観的な測定を追う案です。数字だけで練習を決めることは好まず、数日続くパターンを無視しないという説明です。個人の診断を代替するものではありません。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "Overtraining is feared by athletes—yet it lacks precise objective markers."
+        },
+        {
+          "kind": "quote",
+          "text": "tracking a few objective measures alongside your feel."
+        },
+        {
+          "kind": "quote",
+          "text": "I am not a fan of letting numbers alone dictate training, but when these patterns persist over several days, they should not be ignored."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Author-qualified energy, rest and warning-sign descriptions; uncertain prevalence is not universal; no target weight, calorie restriction, individual diagnosis or personality evaluation."
+      }
+    },
+    {
+      "id": "fullchunkqa-a5366f632bb16c95a1c8bee5-2",
+      "chunk_id": "knowledge-a5366f632bb16c95a1c8bee5",
+      "questions": [
+        "Bakkenが安静時心拍を記録する手順として挙げる、測る時点・姿勢・期間は？"
+      ],
+      "answer": "起床直後で起き上がる前に、横になって完全にリラックスし、30秒数えて2倍するか心拍計を使います。練習日誌に記録して7〜14日の傾向を見ます。本書の観察手順で、値だけから病気や過負荷を確定しません。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "Measure immediately after waking, before getting up"
+        },
+        {
+          "kind": "quote",
+          "text": "Lie still, completely relaxed"
+        },
+        {
+          "kind": "quote",
+          "text": "Count heart rate for 30 seconds × 2, or use a heart rate monitor"
+        },
+        {
+          "kind": "quote",
+          "text": "Log the value in your training diary"
+        },
+        {
+          "kind": "quote",
+          "text": "Watch for trends over 7-14 days"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Author-qualified energy, rest and warning-sign descriptions; uncertain prevalence is not universal; no target weight, calorie restriction, individual diagnosis or personality evaluation."
+      }
+    },
+    {
+      "id": "fullchunkqa-a5366f632bb16c95a1c8bee5-3",
+      "chunk_id": "knowledge-a5366f632bb16c95a1c8bee5",
+      "questions": [
+        "BakkenがSleep Symptomsで勧める簡単な睡眠日誌は、何を記録する？"
+      ],
+      "answer": "毎朝の睡眠の質を1〜10で評価し、目覚めた時間と感覚を記録する案です。強い練習と結び付くパターンを見て、必要なら夜か朝のHRVも客観データとして考慮しています。睡眠の変化だけでオーバートレーニングを診断するものではありません。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "keep a simple sleep diary, rate quality from 1 to 10 each morning, note waking times and how you feel."
+        },
+        {
+          "kind": "quote",
+          "text": "Look for patterns that track with hard training, and consider HRV measurement at night or in the morning for objective data."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Author-qualified energy, rest and warning-sign descriptions; uncertain prevalence is not universal; no target weight, calorie restriction, individual diagnosis or personality evaluation."
+      }
+    },
+    {
+      "id": "fullchunkqa-f4c533e4bd3098a2fae876dd-1",
+      "chunk_id": "knowledge-f4c533e4bd3098a2fae876dd",
+      "questions": [
+        "BakkenのPerformance Stagnationでは、結果が停滞したらまず練習を強くすることを勧めている？"
+      ],
+      "answer": "それを大きな落とし穴としています。オーバートレーニングと単なる結果の不足を取り違え、さらに練習する誤りを説明しています。閾値ペースが重くなる、心拍や速度を上げにくい、回復や階段動作が重くなる例を挙げますが、これだけで個人の原因を診断しません。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "When results plateau, the first impulse is often to train harder. A common mistake is confusing overtraining\nwith underperformance."
+        },
+        {
+          "kind": "quote",
+          "text": "threshold pace feels progressively heavier."
+        },
+        {
+          "kind": "quote",
+          "text": "Recovery drags on longer than normal"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Author-qualified energy, rest and warning-sign descriptions; uncertain prevalence is not universal; no target weight, calorie restriction, individual diagnosis or personality evaluation."
+      }
+    },
+    {
+      "id": "fullchunkqa-f4c533e4bd3098a2fae876dd-2",
+      "chunk_id": "knowledge-f4c533e4bd3098a2fae876dd",
+      "questions": [
+        "BakkenがMental warning signalsとして挙げる、練習への気持ちの変化には何がある？"
+      ],
+      "answer": "質の高い練習前の不安、量への絶え間ない考え込み、楽しさより義務感になること、競争意欲の低下、感情の揺れを例にしています。注意すべき兆候という本書の説明で、性格の評価や個人の精神状態の診断ではありません。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "anxiety before planned quality sessions, constant rumination over training volume, the sense that training has become obligation rather than joy, fading competitive drive, and heightened emotional volatility."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Author-qualified energy, rest and warning-sign descriptions; uncertain prevalence is not universal; no target weight, calorie restriction, individual diagnosis or personality evaluation."
+      }
+    },
+    {
+      "id": "fullchunkqa-f4c533e4bd3098a2fae876dd-3",
+      "chunk_id": "knowledge-f4c533e4bd3098a2fae876dd",
+      "questions": [
+        "BakkenのPerformance Stagnationの10日間の目安では、どんな練習の感覚が一度も来なければ負荷を見直す？"
+      ],
+      "answer": "軽い脚で、さらに練習を足したくなるような、明らかに良いセッションの感覚です。10日間に一度も来なければブレーキをかけるという著者の実用的な目安で、医学的な診断基準ではありません。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "During any ten-day training stretch, at least one session should feel genuinely good, light legs, the temptation to pile on more work. If that feeling never arrives within that window, it's time to hit the brakes."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Author-qualified energy, rest and warning-sign descriptions; uncertain prevalence is not universal; no target weight, calorie restriction, individual diagnosis or personality evaluation."
+      }
+    }
+  ]
+}

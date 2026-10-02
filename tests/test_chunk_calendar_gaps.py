@@ -2,7 +2,7 @@ import copy,csv,io,json,sys
 from pathlib import Path
 import pytest
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'scripts'))
-from chunk_calendar_gaps import render_gap,validate_gap
+from chunk_calendar_gaps import render_gap,validate_gap,markdown_events
 
 def fixture(start='2024-02-28',end='2024-03-01'):
  units=[{'pointer':'/events/0','value':{'title':'合同練習会','date':start},'context':{'year':2024}},{'pointer':'/events/1','value':{'title':'県陸上選手権','date':end},'context':{'year':2024}}]
@@ -40,3 +40,26 @@ def test_google_csv_dates_and_cell_alignment():
  h=['Subject','Start Date','Private'];rows=[{'row':1,'cells':['合同練習会','02/28/2024','False']},{'row':2,'cells':['県陸上選手権','03/01/2024','False']}];q,a,calc=render_gap(rows,h);e={'sources':['out/2024/google.csv'],'questions':[q],'answer':a,'calculation':calc,'evidence':[{'kind':'csv-rows','header':h,'rows':rows}]};c={'evidence':{'header':h,'units':copy.deepcopy(rows)}};f=io.StringIO();w=csv.writer(f);w.writerow(h);w.writerows(r['cells'] for r in rows);s=f.getvalue();validate_gap(e,c,s)
  with pytest.raises(ValueError,match='source row'):validate_gap(e,c,s.replace('03/01/2024','03/02/2024'))
  with pytest.raises(ValueError,match='column'):render_gap([{'cells':['broken']},rows[1]],h)
+
+def markdown_fixture():
+ s=''.join(f'<details>\n<summary>{title}</summary>\n\n- **件名**: {title}\n- **開始日**: {day}\n- **非公開**: いいえ\n\n</details>\n' for title,day in [('合同練習会','2024-02-28'),('県陸上選手権','2024-03-01')])
+ units=markdown_events(s);q,a,calc=render_gap(units)
+ e={'sources':['out/2024/calendar.md'],'questions':[q],'answer':a,'calculation':calc,'evidence':[{'kind':'calendar-markdown-events','units':units}]}
+ return e,{'evidence':{'kind':'text','text':s}},s
+
+def test_complete_markdown_blocks_preserve_event_date_association():
+ e,c,s=markdown_fixture();validate_gap(e,c,s)
+ assert e['calculation']['days']==2
+ e['evidence'][0]['units'][0]['value']['title']='他の大会'
+ with pytest.raises(ValueError,match='outside'):validate_gap(e,c,s)
+
+def test_partial_markdown_blocks_cannot_join_with_next_chunk():
+ e,c,s=markdown_fixture();first=e['evidence'][0]['units'][0]['quote']
+ assert markdown_events(first[:first.index('- **開始日**')])==[]
+ c['evidence']['text']=first
+ with pytest.raises(ValueError,match='outside'):validate_gap(e,c,s)
+
+def test_markdown_private_flag_and_duplicate_fields_are_rejected():
+ e,c,s=markdown_fixture()
+ assert len(markdown_events(s.replace('非公開**: いいえ','非公開**: はい')))==0
+ assert len(markdown_events(s.replace('- **開始日**:', '- **開始日**: 2024-02-20\n- **開始日**:')))==0

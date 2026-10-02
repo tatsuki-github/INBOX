@@ -48,3 +48,24 @@ def test_nested_pointer_cannot_escape_the_evidence_year():
     e,c,s=fixture();parent={'pointer':'/years/2020','value':s['years']['2020'],'context':{}}
     e['evidence']=[{'kind':'json-unit','unit':parent}];c['evidence']['units']=[parent];e['calculation']['pointer']='/years/2019/teams/0'
     with pytest.raises(ValueError,match='outside evidence'):validate_movement(e,c,json.dumps(s))
+
+def transcript_fixture():
+    e,c,s=fixture();s=s['years']['2020'];u=e['evidence'][0]['unit'];u['pointer']='/teams/0'
+    q,a,calc=render_movement(u,1,2);e.update(questions=[q],answer=a,calculation=calc)
+    return e,c,s
+
+def test_transcript_root_preserves_printed_year_gender_and_ranks():
+    e,c,s=transcript_fixture();validate_movement(e,c,json.dumps(s));assert e['calculation']['places_gained']==3
+    s['gender']='女子'
+    with pytest.raises(ValueError,match='context'):validate_movement(e,c,json.dumps(s))
+
+def test_transcript_teams_list_unit_expands_with_source_context():
+    from chunk_rank_movements import expand_team_units
+    e,c,s=transcript_fixture();p={'pointer':'/teams','value':s['teams'],'context':{'year':2020,'gender':'男子'}}
+    e['evidence']=[{'kind':'json-unit','unit':p}];c['evidence']['units']=[p]
+    assert expand_team_units(p)[0]['pointer']=='/teams/0'
+    validate_movement(e,c,json.dumps(s))
+
+def test_duplicate_legs_cannot_be_silently_collapsed():
+    e,c,s=fixture();u=e['evidence'][0]['unit'];u['value']['legs'].append(copy.deepcopy(u['value']['legs'][0]))
+    with pytest.raises(ValueError,match='duplicate'):render_movement(u,1,2)

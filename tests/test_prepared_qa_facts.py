@@ -13,6 +13,17 @@ import generate_prepared_qa_athlete_all_records as records
 import generate_prepared_qa_aragyoku_3000 as aragyoku
 import generate_prepared_qa_knowledge_1000 as knowledge
 import gap_crush_prepared_1000 as gap
+import improve_prepared_qa_accuracy as preview
+
+
+def test_preview_summary_keeps_both_gender_sections(tmp_path, monkeypatch):
+    (tmp_path / "校別展開_数式予想.md").write_text(
+        "## 男子\n| 1 | 男子校 | 56:01 |\n"
+        "## 女子\n| 1 | 女子校 | 42:53 |\n")
+    monkeypatch.setattr(preview, "MEET_DIR", tmp_path)
+    entry = preview.rebuild_preview_entries([])[0]
+    assert "男子上位: 1位男子校（56:01）" in entry["answer"]
+    assert "女子上位: 1位女子校（42:53）" in entry["answer"]
 
 
 @pytest.mark.parametrize("line, name, mark", [
