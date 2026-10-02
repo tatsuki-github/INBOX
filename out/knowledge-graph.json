@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated_at": "2026-10-02T01:37:13Z",
+  "generated_at": "2026-10-02T07:24:42Z",
   "nodes": [
     {
       "id": "corpus:analysis-ocr",
@@ -26,7 +26,7 @@
       "refs": [
         "input/idaten-corpus/aragyoku"
       ],
-      "hint": "荒玉駅伝の構造化 JSON/MD・transcripts・winners-by-year・course-videos. 例: course-points.json, course-points.md, course-videos.md, men_full_2012_2025.json, men_full_athletes.csv, ocr_raw, quiz, taimei-records-2012-2025.md, transcripts, winners-by-year.md, women_full_2012_2025.json, women_top4_2012_2025.json"
+      "hint": "荒玉駅伝の構造化 JSON/MD・transcripts・winners-by-year・course-videos. 例: course-points.json, course-points.md, course-videos.md, men_full_2012_2025.json, ocr_raw, quiz, taimei-records-2012-2025.md, transcripts, winners-by-year.md, women_full_2012_2025.json, women_top4_2012_2025.json, women_top6_2012_2025.json"
     },
     {
       "id": "corpus:calendar",
@@ -17518,9 +17518,9 @@
         "practice"
       ],
       "refs": [
+        "out/2025/practice_absentees.csv",
         "input/events.2025.yaml",
-        "out/analysis/notion_records_2026.json",
-        "out/2025/practice_absentees.csv"
+        "out/analysis/notion_records_2026.json"
       ],
       "hint": "部員エンティティ"
     },
@@ -17554,9 +17554,9 @@
         "practice"
       ],
       "refs": [
+        "out/2025/practice_absentees.csv",
         "input/events.2025.yaml",
-        "out/analysis/notion_records_2026.json",
-        "out/2025/practice_absentees.csv"
+        "out/analysis/notion_records_2026.json"
       ],
       "hint": "部員エンティティ"
     },
@@ -17590,9 +17590,9 @@
         "practice"
       ],
       "refs": [
+        "out/2025/practice_absentees.csv",
         "input/events.2025.yaml",
-        "out/analysis/notion_records_2026.json",
-        "out/2025/practice_absentees.csv"
+        "out/analysis/notion_records_2026.json"
       ],
       "hint": "部員エンティティ"
     },
@@ -17662,9 +17662,9 @@
         "practice"
       ],
       "refs": [
+        "out/2025/practice_absentees.csv",
         "input/events.2025.yaml",
-        "out/analysis/notion_records_2026.json",
-        "out/2025/practice_absentees.csv"
+        "out/analysis/notion_records_2026.json"
       ],
       "hint": "部員エンティティ"
     },
@@ -17698,8 +17698,8 @@
         "practice"
       ],
       "refs": [
-        "input/events.2025.yaml",
-        "out/2025/practice_absentees.csv"
+        "out/2025/practice_absentees.csv",
+        "input/events.2025.yaml"
       ],
       "hint": "部員エンティティ"
     },
@@ -17713,9 +17713,9 @@
         "practice"
       ],
       "refs": [
+        "out/2025/practice_absentees.csv",
         "input/events.2025.yaml",
-        "out/analysis/notion_records_2026.json",
-        "out/2025/practice_absentees.csv"
+        "out/analysis/notion_records_2026.json"
       ],
       "hint": "部員エンティティ"
     },
@@ -17749,9 +17749,9 @@
         "practice"
       ],
       "refs": [
+        "out/2025/practice_absentees.csv",
         "input/events.2025.yaml",
-        "out/analysis/notion_records_2026.json",
-        "out/2025/practice_absentees.csv"
+        "out/analysis/notion_records_2026.json"
       ],
       "hint": "部員エンティティ"
     },
@@ -17800,9 +17800,9 @@
         "practice"
       ],
       "refs": [
+        "out/2025/practice_absentees.csv",
         "input/events.2025.yaml",
-        "out/analysis/notion_records_2026.json",
-        "out/2025/practice_absentees.csv"
+        "out/analysis/notion_records_2026.json"
       ],
       "hint": "部員エンティティ"
     },
@@ -17836,9 +17836,9 @@
         "practice"
       ],
       "refs": [
-        "input/events.2026.yaml",
+        "out/2026/practice_absentees.csv",
         "out/analysis/notion_records_2026.json",
-        "out/2026/practice_absentees.csv"
+        "input/events.2026.yaml"
       ],
       "hint": "部員エンティティ"
     },
@@ -17872,9 +17872,9 @@
         "practice"
       ],
       "refs": [
+        "out/2025/practice_absentees.csv",
         "input/events.2025.yaml",
-        "out/analysis/notion_records_2026.json",
-        "out/2025/practice_absentees.csv"
+        "out/analysis/notion_records_2026.json"
       ],
       "hint": "部員エンティティ"
     },
@@ -17908,11 +17908,11 @@
         "practice"
       ],
       "refs": [
-        "input/events.2025.yaml",
-        "out/analysis/notion_records_2026.json",
+        "out/2025/practice_absentees.csv",
         "out/2026/practice_absentees.csv",
+        "input/events.2025.yaml",
         "input/events.2026.yaml",
-        "out/2025/practice_absentees.csv"
+        "out/analysis/notion_records_2026.json"
       ],
       "hint": "部員エンティティ"
     },
@@ -23295,7 +23295,7 @@
       "refs": [
         "input/idaten-corpus/aragyoku"
       ],
-      "hint": "荒玉駅伝の構造化 JSON/MD・transcripts・winners-by-year・course-videos. 例: course-points.json, course-points.md, course-videos.md, men_full_2012_2025.json, men_full_athletes.csv, ocr_raw, quiz, taimei-records-2012-2025.md, transcripts, winners-by-year.md, women_full_2012_2025.json, women_top4_2012_2025.json"
+      "hint": "荒玉駅伝の構造化 JSON/MD・transcripts・winners-by-year・course-videos. 例: course-points.json, course-points.md, course-videos.md, men_full_2012_2025.json, ocr_raw, quiz, taimei-records-2012-2025.md, transcripts, winners-by-year.md, women_full_2012_2025.json, women_top4_2012_2025.json, women_top6_2012_2025.json"
     },
     {
       "id": "source:input/idaten-corpus/aragyoku/course-videos.md",

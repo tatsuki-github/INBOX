@@ -2,2153 +2,380 @@
   "version": 1,
   "entries": [
     {
-      "id": "fullchunkqa-903e39ad9e224089f265d998-5",
-      "chunk_id": "knowledge-903e39ad9e224089f265d998",
-      "sources": [
-        "projects/running-injury-research/rri-risk-factors-memo.md"
-      ],
-      "source_sha256": "5be468a89f7d52057f8f5f785154fe688853dc14323493d7c9b8495570d2f105",
-      "review": {
-        "method": "manual-context-review",
-        "status": "manual-context-reviewed"
-      },
+      "id": "fullchunkqa-bfbbcc410c69a94e1896c42e-1",
+      "chunk_id": "knowledge-bfbbcc410c69a94e1896c42e",
       "questions": [
-        "「1.4 高強度トレーニング / インターバル」で触れている「レース準備は負荷増・スパイク・心理ストレスと」の要点は？"
+        "Bakkenは30/30と60/20を試した際、45/15と比べてどんな問題を感じたと述べている？"
       ],
-      "answer": "レース準備は負荷増・スパイク・心理ストレスと",
+      "answer": "30/30は仕事時間が短く切り替えが多いため、乳酸で見た強度を均一に保ちにくかったと述べています。60/20は仕事時間が長く、乳酸蓄積と筋負荷が大きくなり速度維持と総仕事時間が難しくなったという自身の観察です。45/15が全員に最適という比較試験の結論ではありません。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
       "evidence": [
         {
           "kind": "quote",
-          "text": "レース準備は負荷増・スパイク・心理ストレスと"
+          "text": "With 30/30, the work period felt too short."
+        },
+        {
+          "kind": "quote",
+          "text": "There were too many transitions, and it was dificult to maintain even intensity as measured by lactate."
+        },
+        {
+          "kind": "quote",
+          "text": "With 60/20, the work period became too long and lactate accumulation too high."
+        },
+        {
+          "kind": "quote",
+          "text": "Muscular load became excessive, and total work time dropped due to accumulated fatigue."
         }
-      ]
-    },
-    {
-      "id": "fullchunkqa-aa225ed0a0fd7b1f64f83056-1",
-      "chunk_id": "knowledge-aa225ed0a0fd7b1f64f83056",
-      "sources": [
-        "projects/running-injury-research/rri-risk-factors-memo.md"
       ],
-      "source_sha256": "5be468a89f7d52057f8f5f785154fe688853dc14323493d7c9b8495570d2f105",
       "review": {
         "method": "manual-context-review",
-        "status": "manual-context-reviewed"
-      },
+        "status": "manual-context-reviewed",
+        "scope": "Author-qualified 45/15 examples and conceptual explanation; no specific physiological efficacy or individualized training/return-to-sport clearance inferred."
+      }
+    },
+    {
+      "id": "fullchunkqa-bfbbcc410c69a94e1896c42e-2",
+      "chunk_id": "knowledge-bfbbcc410c69a94e1896c42e",
       "questions": [
-        "「リスク因子ランキング（Level 1のみ、エビデンスに基づく）」で触れている「研究により大きく変動」の要点は？"
+        "Bakkenの45/15は、閾値の練習専用の配分？"
       ],
-      "answer": "研究により大きく変動",
+      "answer": "閾値の練習にも、閾値を上回る高強度のXセッションにも使えると説明しています。同じ45秒・15秒の配分でも強度の設定は異なります。本書の使い分けの説明です。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
       "evidence": [
         {
           "kind": "quote",
-          "text": "研究により大きく変動"
+          "text": "45/15 sessions can be used both as pure threshold sessions and as high-intensity sessions above the threshold."
         }
-      ]
-    },
-    {
-      "id": "fullchunkqa-aa225ed0a0fd7b1f64f83056-3",
-      "chunk_id": "knowledge-aa225ed0a0fd7b1f64f83056",
-      "sources": [
-        "projects/running-injury-research/rri-risk-factors-memo.md"
       ],
-      "source_sha256": "5be468a89f7d52057f8f5f785154fe688853dc14323493d7c9b8495570d2f105",
       "review": {
         "method": "manual-context-review",
-        "status": "manual-context-reviewed"
-      },
+        "status": "manual-context-reviewed",
+        "scope": "Author-qualified 45/15 examples and conceptual explanation; no specific physiological efficacy or individualized training/return-to-sport clearance inferred."
+      }
+    },
+    {
+      "id": "fullchunkqa-bfbbcc410c69a94e1896c42e-3",
+      "chunk_id": "knowledge-bfbbcc410c69a94e1896c42e",
       "questions": [
-        "「リスク因子ランキング（Level 1のみ、エビデンスに基づく）」で触れている「単一セッション走行距離スパイク」の要点は？"
+        "Bakkenの45/15の説明でいうmetabolic flexibilityは、何を意味している？"
       ],
-      "answer": "単一セッション走行距離スパイク",
+      "answer": "状況の要求に応じてエネルギー源を速く効率よく切り替える身体の能力という定義です。本書が45/15に関連付ける概念であり、この記述だけで45/15の固有効果や個人の代謝能力を証明するものではありません。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
       "evidence": [
         {
           "kind": "quote",
-          "text": "単一セッション走行距離スパイク"
+          "text": "metabolic flexibility: the body's ability to quickly and efficiently switch between different energy sources depending on what the situation demands."
         }
-      ]
-    },
-    {
-      "id": "fullchunkqa-aa225ed0a0fd7b1f64f83056-5",
-      "chunk_id": "knowledge-aa225ed0a0fd7b1f64f83056",
-      "sources": [
-        "projects/running-injury-research/rri-risk-factors-memo.md"
       ],
-      "source_sha256": "5be468a89f7d52057f8f5f785154fe688853dc14323493d7c9b8495570d2f105",
       "review": {
         "method": "manual-context-review",
-        "status": "manual-context-reviewed"
-      },
+        "status": "manual-context-reviewed",
+        "scope": "Author-qualified 45/15 examples and conceptual explanation; no specific physiological efficacy or individualized training/return-to-sport clearance inferred."
+      }
+    },
+    {
+      "id": "fullchunkqa-12c66b95822d8296045ccac0-1",
+      "chunk_id": "knowledge-12c66b95822d8296045ccac0",
       "questions": [
-        "「リスク因子ランキング（Level 1のみ、エビデンスに基づく）」で触れている「ミニマリストシューズ」の要点は？"
+        "Bakkenの45/15のVolume Progression例では、最初の8週間の反復数をどう増やす？"
       ],
-      "answer": "ミニマリストシューズ",
+      "answer": "1〜2週は15本、3〜4週は20本、5〜6週は25本、7〜8週は30本または15本を2セットとし、セット間は1〜2分の回復という例です。段階的に量を増やす案で、各人がこの速度で増やせる保証ではありません。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
       "evidence": [
         {
           "kind": "quote",
-          "text": "ミニマリストシューズ"
+          "text": "Week 1-2: 15 repetitions"
+        },
+        {
+          "kind": "quote",
+          "text": "Week 3-4: 20 repetitions"
+        },
+        {
+          "kind": "quote",
+          "text": "Week 5-6: 25 repetitions"
+        },
+        {
+          "kind": "quote",
+          "text": "Week 7-8: 30 repetitions or 2 sets of 15 with 1-2 min rest between"
         }
-      ]
-    },
-    {
-      "id": "fullchunkqa-5de4d4930f8ba844bac384d0-1",
-      "chunk_id": "knowledge-5de4d4930f8ba844bac384d0",
-      "sources": [
-        "projects/running-injury-research/stamina-determinants-memo.md"
       ],
-      "source_sha256": "c793f3c593bcd82b55a1ea48ac567c219259535bc0c35e3c5a5635d5c9d648ef",
       "review": {
         "method": "manual-context-review",
-        "status": "manual-context-reviewed"
-      },
+        "status": "manual-context-reviewed",
+        "scope": "Author-qualified 45/15 examples and conceptual explanation; no specific physiological efficacy or individualized training/return-to-sport clearance inferred."
+      }
+    },
+    {
+      "id": "fullchunkqa-12c66b95822d8296045ccac0-2",
+      "chunk_id": "knowledge-12c66b95822d8296045ccac0",
       "questions": [
-        "「ランニング「スタミナ」の決定因子：エビデンスベース調査メモ」で触れている「ランニング「スタミナ」の決定因子」の要点は？"
+        "Bakkenの45/15のPyramid Variantは、仕事時間と回復をどう組み合わせる？"
       ],
-      "answer": "ランニング「スタミナ」の決定因子",
+      "answer": "30秒を3本、45秒を3本、60秒を3本、45秒を3本、30秒を3本の順で、すべて回復15秒の例です。短い反復は高めの強度、長い反復はやや高い負荷という使い分けを説明しています。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
       "evidence": [
         {
           "kind": "quote",
-          "text": "ランニング「スタミナ」の決定因子"
+          "text": "3 × 30 sec"
+        },
+        {
+          "kind": "quote",
+          "text": "3 × 45 sec"
+        },
+        {
+          "kind": "quote",
+          "text": "3 × 60 sec"
+        },
+        {
+          "kind": "quote",
+          "text": "3x45 sec"
+        },
+        {
+          "kind": "quote",
+          "text": "(All with 15 seconds rest)"
         }
-      ]
-    },
-    {
-      "id": "fullchunkqa-5de4d4930f8ba844bac384d0-3",
-      "chunk_id": "knowledge-5de4d4930f8ba844bac384d0",
-      "sources": [
-        "projects/running-injury-research/stamina-determinants-memo.md"
       ],
-      "source_sha256": "c793f3c593bcd82b55a1ea48ac567c219259535bc0c35e3c5a5635d5c9d648ef",
       "review": {
         "method": "manual-context-review",
-        "status": "manual-context-reviewed"
-      },
+        "status": "manual-context-reviewed",
+        "scope": "Author-qualified 45/15 examples and conceptual explanation; no specific physiological efficacy or individualized training/return-to-sport clearance inferred."
+      }
+    },
+    {
+      "id": "fullchunkqa-12c66b95822d8296045ccac0-3",
+      "chunk_id": "knowledge-12c66b95822d8296045ccac0",
       "questions": [
-        "「ランニング「スタミナ」の決定因子：エビデンスベース調査メモ」で触れている「エビデンスベース調査メモ」の要点は？"
+        "Bakkenの45/15のCombination Variantでは、2分休んだ後の5本の速度をどう設定する？"
       ],
-      "answer": "エビデンスベース調査メモ",
+      "answer": "トレッドミルで15〜20本を1本あたり0.1km/hずつ上げ、2分休んだ後の5本は、休む直前の最後の反復と同じ速度にする例です。終盤は厳しい設定で、閾値と閾値より上を合わせる著者の案です。万人向けの処方ではありません。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
       "evidence": [
         {
           "kind": "quote",
-          "text": "エビデンスベース調査メモ"
+          "text": "15-20 progressive 45/15 intervals on the treadmill, increasing speed by 0.1 km/h for each interval."
+        },
+        {
+          "kind": "quote",
+          "text": "After two minutes of rest, you continue with five more intervals."
+        },
+        {
+          "kind": "quote",
+          "text": "at the same speed you held on the last interval before the pause."
         }
-      ]
-    },
-    {
-      "id": "fullchunkqa-5de4d4930f8ba844bac384d0-5",
-      "chunk_id": "knowledge-5de4d4930f8ba844bac384d0",
-      "sources": [
-        "projects/running-injury-research/stamina-determinants-memo.md"
       ],
-      "source_sha256": "c793f3c593bcd82b55a1ea48ac567c219259535bc0c35e3c5a5635d5c9d648ef",
       "review": {
         "method": "manual-context-review",
-        "status": "manual-context-reviewed"
-      },
+        "status": "manual-context-reviewed",
+        "scope": "Author-qualified 45/15 examples and conceptual explanation; no specific physiological efficacy or individualized training/return-to-sport clearance inferred."
+      }
+    },
+    {
+      "id": "fullchunkqa-4e8835400b120d771be87cf0-1",
+      "chunk_id": "knowledge-4e8835400b120d771be87cf0",
       "questions": [
-        "「ランニング「スタミナ」の決定因子：エビデンスベース調査メモ」で触れている「Systematic」の要点は？"
+        "BakkenのCombination Runのプロトコルでは、長いイージー走から45/15へどうつなぐ？"
       ],
-      "answer": "Systematic",
+      "answer": "最大心拍の70%未満の完全なイージー走を1〜2時間行い、間を空けず閾値付近の45秒へ移ります。15秒は軽いジョグで回復し、10〜15回、できれば少しずつ速くする例です。最後にイージーのクールダウンを置きます。著者のマラソン向け構成例です。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
       "evidence": [
         {
           "kind": "quote",
-          "text": "Systematic"
+          "text": "1-2 hours of completely easy running under 70% of max heart rate"
+        },
+        {
+          "kind": "quote",
+          "text": "Without any pause, straight into the first 45-second interval at intensity right around your threshold"
+        },
+        {
+          "kind": "quote",
+          "text": "Light jogging pause of 15 seconds"
+        },
+        {
+          "kind": "quote",
+          "text": "Repeat 10-15 times, preferably slightly progressive"
+        },
+        {
+          "kind": "quote",
+          "text": "Easy cool-down"
         }
-      ]
-    },
-    {
-      "id": "fullchunkqa-1f1522382f965c4df9db2929-1",
-      "chunk_id": "knowledge-1f1522382f965c4df9db2929",
-      "sources": [
-        "projects/running-injury-research/stamina-determinants-memo.md"
       ],
-      "source_sha256": "c793f3c593bcd82b55a1ea48ac567c219259535bc0c35e3c5a5635d5c9d648ef",
       "review": {
         "method": "manual-context-review",
-        "status": "manual-context-reviewed"
-      },
+        "status": "manual-context-reviewed",
+        "scope": "Author-qualified 45/15 examples and conceptual explanation; no specific physiological efficacy or individualized training/return-to-sport clearance inferred."
+      }
+    },
+    {
+      "id": "fullchunkqa-4e8835400b120d771be87cf0-2",
+      "chunk_id": "knowledge-4e8835400b120d771be87cf0",
       "questions": [
-        "「5.1 HIIT / インターバル（VO₂max 向上）」で触れている「。閾値・TT性能は差小」の要点は？"
+        "Bakkenは長いイージー走に45/15を加えたCombination Runの翌日をどうする？"
       ],
-      "answer": "。閾値・TT性能は差小",
+      "answer": "完全にイージーな練習日にする方針です。長い走りの後に数本足すだけで軽く見えても、その組み合わせ自体が特異的で負荷があるためと説明しています。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
       "evidence": [
         {
           "kind": "quote",
-          "text": "。閾値・TT性能は差小"
+          "text": "This is a session that should be followed by completely easy training the next day."
+        },
+        {
+          "kind": "quote",
+          "text": "the combination is sufficiently specific and loading in itself that it should always be followed by a completely easy training day."
         }
-      ]
-    },
-    {
-      "id": "fullchunkqa-1f1522382f965c4df9db2929-3",
-      "chunk_id": "knowledge-1f1522382f965c4df9db2929",
-      "sources": [
-        "projects/running-injury-research/stamina-determinants-memo.md"
       ],
-      "source_sha256": "c793f3c593bcd82b55a1ea48ac567c219259535bc0c35e3c5a5635d5c9d648ef",
       "review": {
         "method": "manual-context-review",
-        "status": "manual-context-reviewed"
-      },
+        "status": "manual-context-reviewed",
+        "scope": "Author-qualified 45/15 examples and conceptual explanation; no specific physiological efficacy or individualized training/return-to-sport clearance inferred."
+      }
+    },
+    {
+      "id": "fullchunkqa-4e8835400b120d771be87cf0-3",
+      "chunk_id": "knowledge-4e8835400b120d771be87cf0",
       "questions": [
-        "「5.1 HIIT / インターバル（VO₂max 向上）」で触れている「トレーニ済みアスリート」の要点は？"
+        "Bakkenの45/15の期分け例では、基礎期と競技期で頻度・本数・追い込み方はどう変える？"
       ],
-      "answer": "トレーニ済みアスリート",
+      "answer": "基礎期は週1〜2回、15〜20本、穏やかな増速です。競技期は10〜14日ごと、12〜15本を高めの強度で、疲労困憊まで追い込まない例です。本書の期分け案です。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
       "evidence": [
         {
           "kind": "quote",
-          "text": "トレーニ済みアスリート"
+          "text": "Base training\n*   1-2 times per week\n*   15-20 repetitions\n*   Moderate progression"
+        },
+        {
+          "kind": "quote",
+          "text": "Every 10-14 days"
+        },
+        {
+          "kind": "quote",
+          "text": "12-15 repetitions at high intensity"
+        },
+        {
+          "kind": "quote",
+          "text": "Not to exhaustion"
         }
-      ]
-    },
-    {
-      "id": "fullchunkqa-1f1522382f965c4df9db2929-5",
-      "chunk_id": "knowledge-1f1522382f965c4df9db2929",
-      "sources": [
-        "projects/running-injury-research/stamina-determinants-memo.md"
       ],
-      "source_sha256": "c793f3c593bcd82b55a1ea48ac567c219259535bc0c35e3c5a5635d5c9d648ef",
       "review": {
         "method": "manual-context-review",
-        "status": "manual-context-reviewed"
-      },
+        "status": "manual-context-reviewed",
+        "scope": "Author-qualified 45/15 examples and conceptual explanation; no specific physiological efficacy or individualized training/return-to-sport clearance inferred."
+      }
+    },
+    {
+      "id": "fullchunkqa-3902e13d0dbd76fb3845a144-1",
+      "chunk_id": "knowledge-3902e13d0dbd76fb3845a144",
       "questions": [
-        "「5.1 HIIT / インターバル（VO₂max 向上）」で触れている「CRF。全集団で一貫」の要点は？"
+        "Bakkenが45/15とダブル閾値を組み合わせる例では、朝夕をどう分ける？"
       ],
-      "answer": "CRF。全集団で一貫",
+      "answer": "朝は長めの閾値インターバル5×6分、夕方は20〜25×45/15という例です。朝の長い反復と夕方の短い反復を組み合わせ、筋肉の動作パターンを分ける構成として説明しています。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
       "evidence": [
         {
           "kind": "quote",
-          "text": "CRF。全集団で一貫"
+          "text": "Morning: 5 × 6 minutes threshold"
+        },
+        {
+          "kind": "quote",
+          "text": "Evening: 20-25 × 45/15"
+        },
+        {
+          "kind": "quote",
+          "text": "break up the muscular pattern before the next training session."
         }
-      ]
-    },
-    {
-      "id": "fullchunkqa-5bdac34fbdb5ba0ca52bbcc1-1",
-      "chunk_id": "knowledge-5bdac34fbdb5ba0ca52bbcc1",
-      "sources": [
-        "projects/running-injury-research/stamina-determinants-memo.md"
       ],
-      "source_sha256": "c793f3c593bcd82b55a1ea48ac567c219259535bc0c35e3c5a5635d5c9d648ef",
       "review": {
         "method": "manual-context-review",
-        "status": "manual-context-reviewed"
-      },
+        "status": "manual-context-reviewed",
+        "scope": "Author-qualified 45/15 examples and conceptual explanation; no specific physiological efficacy or individualized training/return-to-sport clearance inferred."
+      }
+    },
+    {
+      "id": "fullchunkqa-3902e13d0dbd76fb3845a144-2",
+      "chunk_id": "knowledge-3902e13d0dbd76fb3845a144",
       "questions": [
-        "「パフォーマンス予測の目安」で触れている「McLaughlin」の要点は？"
+        "Bakkenの800〜1500m向けの高強度45/15案では、総量とセット間の回復は？"
       ],
-      "answer": "McLaughlin",
+      "answer": "総量を12〜15本と短めにし、セット間2〜3分の回復を挙げています。60/20や75/25も試す余地があるとしますが、800〜1500m向けの最も強い案はけがのリスクがやや高く慎重に扱うと明記しています。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
       "evidence": [
         {
           "kind": "quote",
-          "text": "McLaughlin"
+          "text": "The most intensive variants toward 800-1500 meters should nevertheless be used with caution, due to somewhat higher injury risk."
+        },
+        {
+          "kind": "quote",
+          "text": "shorter total volume of 12-15 repetitions. Set breaks of 2-3 minutes work well here"
+        },
+        {
+          "kind": "quote",
+          "text": "60/20 or 75/25"
         }
-      ]
-    },
-    {
-      "id": "fullchunkqa-5bdac34fbdb5ba0ca52bbcc1-3",
-      "chunk_id": "knowledge-5bdac34fbdb5ba0ca52bbcc1",
-      "sources": [
-        "projects/running-injury-research/stamina-determinants-memo.md"
       ],
-      "source_sha256": "c793f3c593bcd82b55a1ea48ac567c219259535bc0c35e3c5a5635d5c9d648ef",
       "review": {
         "method": "manual-context-review",
-        "status": "manual-context-reviewed"
-      },
+        "status": "manual-context-reviewed",
+        "scope": "Author-qualified 45/15 examples and conceptual explanation; no specific physiological efficacy or individualized training/return-to-sport clearance inferred."
+      }
+    },
+    {
+      "id": "fullchunkqa-3902e13d0dbd76fb3845a144-3",
+      "chunk_id": "knowledge-3902e13d0dbd76fb3845a144",
       "questions": [
-        "「パフォーマンス予測の目安」で触れている「0b013e3181cb0e77」の要点は？"
+        "Bakkenの45/15のPractical Adviceでは、強い練習の翌日や復帰初期にも同じ設定を使う？"
       ],
-      "answer": "0b013e3181cb0e77",
+      "answer": "強い練習の翌日は行わず、新鮮な脚で行う質の高い練習として扱っています。病気の後は反復長を調整し、15秒の仕事・45秒の回復や30/30を検討する案です。復帰の可否をこの記述だけで判断するものではありません。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
       "evidence": [
         {
           "kind": "quote",
-          "text": "0b013e3181cb0e77"
-        }
-      ]
-    },
-    {
-      "id": "fullchunkqa-5bdac34fbdb5ba0ca52bbcc1-5",
-      "chunk_id": "knowledge-5bdac34fbdb5ba0ca52bbcc1",
-      "sources": [
-        "projects/running-injury-research/stamina-determinants-memo.md"
-      ],
-      "source_sha256": "c793f3c593bcd82b55a1ea48ac567c219259535bc0c35e3c5a5635d5c9d648ef",
-      "review": {
-        "method": "manual-context-review",
-        "status": "manual-context-reviewed"
-      },
-      "questions": [
-        "「パフォーマンス予測の目安」で触れている「0000000000002412」の要点は？"
-      ],
-      "answer": "0000000000002412",
-      "evidence": [
+          "text": "Do not do 45/15 the day after hard sessions. This is a quality session that requires fresh legs."
+        },
         {
           "kind": "quote",
-          "text": "0000000000002412"
+          "text": "After illness, adjust interval length. Consider 15 seconds work with 45 seconds rest, or 30/30."
         }
-      ]
-    },
-    {
-      "id": "fullchunkqa-a5aeac5a96fa8eb319ffeec3-1",
-      "chunk_id": "knowledge-a5aeac5a96fa8eb319ffeec3",
-      "sources": [
-        "prompts/few-shot-examples.yaml"
       ],
-      "source_sha256": "b28f5c2daecf198ecd7a5bd7a97da9d1f5a7f71587565dc966d0112e244cfe09",
       "review": {
         "method": "manual-context-review",
-        "status": "manual-context-reviewed"
-      },
-      "questions": [
-        "設定項目「examples.0.input」の内容は？"
-      ],
-      "answer": "examples.0.inputは夕練、600m×2、軽めです。",
-      "evidence": [
-        {
-          "kind": "json-unit",
-          "unit": {
-            "pointer": "",
-            "value": {
-              "examples": [
-                {
-                  "input": "夕練、600m×2、軽め",
-                  "template_id": "evening-light-600x2",
-                  "notes": "軽いポイント。1本目は設定より遅めでOK。"
-                },
-                {
-                  "input": "45/15 基本",
-                  "template_id": "norwegian-45-15-base",
-                  "notes": "15–30本。45秒走/15秒休。Tペース付近。"
-                }
-              ]
-            },
-            "context": {}
-          }
-        }
-      ]
-    },
-    {
-      "id": "fullchunkqa-a5aeac5a96fa8eb319ffeec3-3",
-      "chunk_id": "knowledge-a5aeac5a96fa8eb319ffeec3",
-      "sources": [
-        "prompts/few-shot-examples.yaml"
-      ],
-      "source_sha256": "b28f5c2daecf198ecd7a5bd7a97da9d1f5a7f71587565dc966d0112e244cfe09",
-      "review": {
-        "method": "manual-context-review",
-        "status": "manual-context-reviewed"
-      },
-      "questions": [
-        "設定項目「examples.0.template_id」の内容は？"
-      ],
-      "answer": "examples.0.template_idはevening-light-600x2です。",
-      "evidence": [
-        {
-          "kind": "json-unit",
-          "unit": {
-            "pointer": "",
-            "value": {
-              "examples": [
-                {
-                  "input": "夕練、600m×2、軽め",
-                  "template_id": "evening-light-600x2",
-                  "notes": "軽いポイント。1本目は設定より遅めでOK。"
-                },
-                {
-                  "input": "45/15 基本",
-                  "template_id": "norwegian-45-15-base",
-                  "notes": "15–30本。45秒走/15秒休。Tペース付近。"
-                }
-              ]
-            },
-            "context": {}
-          }
-        }
-      ]
-    },
-    {
-      "id": "fullchunkqa-a5aeac5a96fa8eb319ffeec3-5",
-      "chunk_id": "knowledge-a5aeac5a96fa8eb319ffeec3",
-      "sources": [
-        "prompts/few-shot-examples.yaml"
-      ],
-      "source_sha256": "b28f5c2daecf198ecd7a5bd7a97da9d1f5a7f71587565dc966d0112e244cfe09",
-      "review": {
-        "method": "manual-context-review",
-        "status": "manual-context-reviewed"
-      },
-      "questions": [
-        "設定項目「examples.0.notes」の内容は？"
-      ],
-      "answer": "examples.0.notesは軽いポイント。1本目は設定より遅めでOK。です。",
-      "evidence": [
-        {
-          "kind": "json-unit",
-          "unit": {
-            "pointer": "",
-            "value": {
-              "examples": [
-                {
-                  "input": "夕練、600m×2、軽め",
-                  "template_id": "evening-light-600x2",
-                  "notes": "軽いポイント。1本目は設定より遅めでOK。"
-                },
-                {
-                  "input": "45/15 基本",
-                  "template_id": "norwegian-45-15-base",
-                  "notes": "15–30本。45秒走/15秒休。Tペース付近。"
-                }
-              ]
-            },
-            "context": {}
-          }
-        }
-      ]
-    },
-    {
-      "id": "fullchunkqa-369b428504bc987423947156-1",
-      "chunk_id": "knowledge-369b428504bc987423947156",
-      "sources": [
-        "prompts/system-explain.md"
-      ],
-      "source_sha256": "d5815e4724b9114d3329d7cc3577b8b18066a7d3580dc5bbe78c9e60c0ad2781",
-      "review": {
-        "method": "manual-context-review",
-        "status": "manual-context-reviewed"
-      },
-      "questions": [
-        "次の記述の要点は？「principles」（出典:7423947156-r1）"
-      ],
-      "answer": "principles",
-      "evidence": [
-        {
-          "kind": "quote",
-          "text": "principles"
-        }
-      ]
-    },
-    {
-      "id": "fullchunkqa-369b428504bc987423947156-3",
-      "chunk_id": "knowledge-369b428504bc987423947156",
-      "sources": [
-        "prompts/system-explain.md"
-      ],
-      "source_sha256": "d5815e4724b9114d3329d7cc3577b8b18066a7d3580dc5bbe78c9e60c0ad2781",
-      "review": {
-        "method": "manual-context-review",
-        "status": "manual-context-reviewed"
-      },
-      "questions": [
-        "次の記述の要点は？「insufficient」"
-      ],
-      "answer": "insufficient",
-      "evidence": [
-        {
-          "kind": "quote",
-          "text": "insufficient"
-        }
-      ]
-    },
-    {
-      "id": "fullchunkqa-369b428504bc987423947156-5",
-      "chunk_id": "knowledge-369b428504bc987423947156",
-      "sources": [
-        "prompts/system-explain.md"
-      ],
-      "source_sha256": "d5815e4724b9114d3329d7cc3577b8b18066a7d3580dc5bbe78c9e60c0ad2781",
-      "review": {
-        "method": "manual-context-review",
-        "status": "manual-context-reviewed"
-      },
-      "questions": [
-        "次の記述の要点は？「physiology」（23947156-1）"
-      ],
-      "answer": "physiology",
-      "evidence": [
-        {
-          "kind": "quote",
-          "text": "physiology"
-        }
-      ]
-    },
-    {
-      "id": "fullchunkqa-aa6aa0a87de6bc649bd3d7b1-1",
-      "chunk_id": "knowledge-aa6aa0a87de6bc649bd3d7b1",
-      "sources": [
-        "prompts/system-practice-gen.md"
-      ],
-      "source_sha256": "35b44c93393865fdf9346c31fbe296c25ef23d2acd23a9d87af9b16e4eb6a3ef",
-      "review": {
-        "method": "manual-context-review",
-        "status": "manual-context-reviewed"
-      },
-      "questions": [
-        "次の記述の要点は？「structured」"
-      ],
-      "answer": "structured",
-      "evidence": [
-        {
-          "kind": "quote",
-          "text": "structured"
-        }
-      ]
-    },
-    {
-      "id": "fullchunkqa-aa6aa0a87de6bc649bd3d7b1-3",
-      "chunk_id": "knowledge-aa6aa0a87de6bc649bd3d7b1",
-      "sources": [
-        "prompts/system-practice-gen.md"
-      ],
-      "source_sha256": "35b44c93393865fdf9346c31fbe296c25ef23d2acd23a9d87af9b16e4eb6a3ef",
-      "review": {
-        "method": "manual-context-review",
-        "status": "manual-context-reviewed"
-      },
-      "questions": [
-        "次の記述の要点は？「expressive」"
-      ],
-      "answer": "expressive",
-      "evidence": [
-        {
-          "kind": "quote",
-          "text": "expressive"
-        }
-      ]
-    },
-    {
-      "id": "fullchunkqa-aa6aa0a87de6bc649bd3d7b1-5",
-      "chunk_id": "knowledge-aa6aa0a87de6bc649bd3d7b1",
-      "sources": [
-        "prompts/system-practice-gen.md"
-      ],
-      "source_sha256": "35b44c93393865fdf9346c31fbe296c25ef23d2acd23a9d87af9b16e4eb6a3ef",
-      "review": {
-        "method": "manual-context-review",
-        "status": "manual-context-reviewed"
-      },
-      "questions": [
-        "次の記述の要点は？「instructions」（9bd3d7b1-1）"
-      ],
-      "answer": "instructions",
-      "evidence": [
-        {
-          "kind": "quote",
-          "text": "instructions"
-        }
-      ]
-    },
-    {
-      "id": "fullchunkqa-5e6c80b795a94ce922701cfd-1",
-      "chunk_id": "knowledge-5e6c80b795a94ce922701cfd",
-      "sources": [
-        "prompts/system-weekly-plan.md"
-      ],
-      "source_sha256": "21e91c82bb51eb29759ab381cd1af42c93caebe010d1a7adbe74e644a797bdbf",
-      "review": {
-        "method": "manual-context-review",
-        "status": "manual-context-reviewed"
-      },
-      "questions": [
-        "次の記述の要点は？「distribution」（22701cfd-1）"
-      ],
-      "answer": "distribution",
-      "evidence": [
-        {
-          "kind": "quote",
-          "text": "distribution"
-        }
-      ]
-    },
-    {
-      "id": "fullchunkqa-5e6c80b795a94ce922701cfd-3",
-      "chunk_id": "knowledge-5e6c80b795a94ce922701cfd",
-      "sources": [
-        "prompts/system-weekly-plan.md"
-      ],
-      "source_sha256": "21e91c82bb51eb29759ab381cd1af42c93caebe010d1a7adbe74e644a797bdbf",
-      "review": {
-        "method": "manual-context-review",
-        "status": "manual-context-reviewed"
-      },
-      "questions": [
-        "次の記述の要点は？「experiment」"
-      ],
-      "answer": "experiment",
-      "evidence": [
-        {
-          "kind": "quote",
-          "text": "experiment"
-        }
-      ]
-    },
-    {
-      "id": "fullchunkqa-5e6c80b795a94ce922701cfd-5",
-      "chunk_id": "knowledge-5e6c80b795a94ce922701cfd",
-      "sources": [
-        "prompts/system-weekly-plan.md"
-      ],
-      "source_sha256": "21e91c82bb51eb29759ab381cd1af42c93caebe010d1a7adbe74e644a797bdbf",
-      "review": {
-        "method": "manual-context-review",
-        "status": "manual-context-reviewed"
-      },
-      "questions": [
-        "次の記述の要点は？「experiments」"
-      ],
-      "answer": "experiments",
-      "evidence": [
-        {
-          "kind": "quote",
-          "text": "experiments"
-        }
-      ]
-    },
-    {
-      "id": "fullchunkqa-d984e4739817548ecf0fd253-1",
-      "chunk_id": "knowledge-d984e4739817548ecf0fd253",
-      "sources": [
-        "schemas/event.schema.json"
-      ],
-      "source_sha256": "ef58b67ae8b72aa6e0fda90ad9975d6a47e1727fc210a32f0a4a713547d94a85",
-      "review": {
-        "method": "manual-context-review",
-        "status": "manual-context-reviewed"
-      },
-      "questions": [
-        "このデータの$schemaの値は？"
-      ],
-      "answer": "$schemaはhttps://json-schema.org/draft/2020-12/schemaです。",
-      "evidence": [
-        {
-          "kind": "json-unit",
-          "unit": {
-            "pointer": "",
-            "value": {
-              "$schema": "https://json-schema.org/draft/2020-12/schema",
-              "$id": "https://github.com/tatsuki-github/INBOX/schemas/event.schema.json",
-              "title": "CalendarEvent",
-              "type": "object",
-              "additionalProperties": true,
-              "required": [
-                "title"
-              ],
-              "properties": {
-                "title": {
-                  "type": "string",
-                  "minLength": 1
-                },
-                "date": {
-                  "type": "string",
-                  "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
-                },
-                "end_date": {
-                  "type": "string",
-                  "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
-                },
-                "all_day": {
-                  "type": "boolean"
-                },
-                "start_time": {
-                  "type": "string",
-                  "pattern": "^\\d{2}:\\d{2}$"
-                },
-                "end_time": {
-                  "type": "string",
-                  "pattern": "^\\d{2}:\\d{2}$"
-                },
-                "category": {
-                  "type": "string"
-                },
-                "status": {
-                  "type": "string"
-                },
-                "tags": {
-                  "oneOf": [
-                    {
-                      "type": "array",
-                      "items": {
-                        "type": "string"
-                      }
-                    },
-                    {
-                      "type": "string"
-                    }
-                  ]
-                },
-                "urls": {
-                  "oneOf": [
-                    {
-                      "type": "array",
-                      "items": {
-                        "type": "string"
-                      }
-                    },
-                    {
-                      "type": "string"
-                    }
-                  ]
-                },
-                "url": {
-                  "type": "string"
-                },
-                "description": {
-                  "type": "string"
-                },
-                "description_file": {
-                  "type": "string"
-                },
-                "location": {
-                  "type": "string"
-                },
-                "private": {
-                  "type": "boolean"
-                },
-                "template_ref": {
-                  "type": "string"
-                },
-                "practice": {
-                  "type": "object",
-                  "additionalProperties": false,
-                  "properties": {
-                    "warmup": {
-                      "type": "string"
-                    },
-                    "notes": {
-                      "type": "string"
-                    },
-                    "absentees": {
-                      "type": "array",
-                      "items": {
-                        "type": "string",
-                        "minLength": 1
-                      }
-                    },
-                    "abort_if": {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "additionalProperties": false,
-                        "properties": {
-                          "when": {
-                            "type": "string"
-                          },
-                          "then": {
-                            "type": "string"
-                          }
-                        },
-                        "required": [
-                          "when",
-                          "then"
-                        ]
-                      }
-                    },
-                    "items": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "practice-item.schema.json"
-                      }
-                    }
-                  },
-                  "required": [
-                    "items"
-                  ]
-                },
-                "weather": {
-                  "type": "object",
-                  "additionalProperties": true,
-                  "properties": {
-                    "location": {
-                      "type": "string"
-                    },
-                    "observed_at": {
-                      "type": "string"
-                    },
-                    "condition": {
-                      "type": "string"
-                    },
-                    "temperature_c": {
-                      "type": "number"
-                    },
-                    "humidity_pct": {
-                      "type": "integer"
-                    },
-                    "wind_direction": {
-                      "type": "string"
-                    },
-                    "wind_speed_kmh": {
-                      "type": "number"
-                    },
-                    "precipitation_mm": {
-                      "type": "number"
-                    },
-                    "source": {
-                      "type": "string"
-                    },
-                    "fetched_at": {
-                      "type": "string"
-                    }
-                  }
-                }
-              }
-            },
-            "context": {}
-          }
-        }
-      ]
-    },
-    {
-      "id": "fullchunkqa-d984e4739817548ecf0fd253-3",
-      "chunk_id": "knowledge-d984e4739817548ecf0fd253",
-      "sources": [
-        "schemas/event.schema.json"
-      ],
-      "source_sha256": "ef58b67ae8b72aa6e0fda90ad9975d6a47e1727fc210a32f0a4a713547d94a85",
-      "review": {
-        "method": "manual-context-review",
-        "status": "manual-context-reviewed"
-      },
-      "questions": [
-        "設定項目「$schema」の内容は？"
-      ],
-      "answer": "$schemaはhttps://json-schema.org/draft/2020-12/schemaです。",
-      "evidence": [
-        {
-          "kind": "json-unit",
-          "unit": {
-            "pointer": "",
-            "value": {
-              "$schema": "https://json-schema.org/draft/2020-12/schema",
-              "$id": "https://github.com/tatsuki-github/INBOX/schemas/event.schema.json",
-              "title": "CalendarEvent",
-              "type": "object",
-              "additionalProperties": true,
-              "required": [
-                "title"
-              ],
-              "properties": {
-                "title": {
-                  "type": "string",
-                  "minLength": 1
-                },
-                "date": {
-                  "type": "string",
-                  "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
-                },
-                "end_date": {
-                  "type": "string",
-                  "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
-                },
-                "all_day": {
-                  "type": "boolean"
-                },
-                "start_time": {
-                  "type": "string",
-                  "pattern": "^\\d{2}:\\d{2}$"
-                },
-                "end_time": {
-                  "type": "string",
-                  "pattern": "^\\d{2}:\\d{2}$"
-                },
-                "category": {
-                  "type": "string"
-                },
-                "status": {
-                  "type": "string"
-                },
-                "tags": {
-                  "oneOf": [
-                    {
-                      "type": "array",
-                      "items": {
-                        "type": "string"
-                      }
-                    },
-                    {
-                      "type": "string"
-                    }
-                  ]
-                },
-                "urls": {
-                  "oneOf": [
-                    {
-                      "type": "array",
-                      "items": {
-                        "type": "string"
-                      }
-                    },
-                    {
-                      "type": "string"
-                    }
-                  ]
-                },
-                "url": {
-                  "type": "string"
-                },
-                "description": {
-                  "type": "string"
-                },
-                "description_file": {
-                  "type": "string"
-                },
-                "location": {
-                  "type": "string"
-                },
-                "private": {
-                  "type": "boolean"
-                },
-                "template_ref": {
-                  "type": "string"
-                },
-                "practice": {
-                  "type": "object",
-                  "additionalProperties": false,
-                  "properties": {
-                    "warmup": {
-                      "type": "string"
-                    },
-                    "notes": {
-                      "type": "string"
-                    },
-                    "absentees": {
-                      "type": "array",
-                      "items": {
-                        "type": "string",
-                        "minLength": 1
-                      }
-                    },
-                    "abort_if": {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "additionalProperties": false,
-                        "properties": {
-                          "when": {
-                            "type": "string"
-                          },
-                          "then": {
-                            "type": "string"
-                          }
-                        },
-                        "required": [
-                          "when",
-                          "then"
-                        ]
-                      }
-                    },
-                    "items": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "practice-item.schema.json"
-                      }
-                    }
-                  },
-                  "required": [
-                    "items"
-                  ]
-                },
-                "weather": {
-                  "type": "object",
-                  "additionalProperties": true,
-                  "properties": {
-                    "location": {
-                      "type": "string"
-                    },
-                    "observed_at": {
-                      "type": "string"
-                    },
-                    "condition": {
-                      "type": "string"
-                    },
-                    "temperature_c": {
-                      "type": "number"
-                    },
-                    "humidity_pct": {
-                      "type": "integer"
-                    },
-                    "wind_direction": {
-                      "type": "string"
-                    },
-                    "wind_speed_kmh": {
-                      "type": "number"
-                    },
-                    "precipitation_mm": {
-                      "type": "number"
-                    },
-                    "source": {
-                      "type": "string"
-                    },
-                    "fetched_at": {
-                      "type": "string"
-                    }
-                  }
-                }
-              }
-            },
-            "context": {}
-          }
-        }
-      ]
-    },
-    {
-      "id": "fullchunkqa-d984e4739817548ecf0fd253-5",
-      "chunk_id": "knowledge-d984e4739817548ecf0fd253",
-      "sources": [
-        "schemas/event.schema.json"
-      ],
-      "source_sha256": "ef58b67ae8b72aa6e0fda90ad9975d6a47e1727fc210a32f0a4a713547d94a85",
-      "review": {
-        "method": "manual-context-review",
-        "status": "manual-context-reviewed"
-      },
-      "questions": [
-        "設定項目「$id」の内容は？"
-      ],
-      "answer": "$idはhttps://github.com/tatsuki-github/INBOX/schemas/event.schema.jsonです。",
-      "evidence": [
-        {
-          "kind": "json-unit",
-          "unit": {
-            "pointer": "",
-            "value": {
-              "$schema": "https://json-schema.org/draft/2020-12/schema",
-              "$id": "https://github.com/tatsuki-github/INBOX/schemas/event.schema.json",
-              "title": "CalendarEvent",
-              "type": "object",
-              "additionalProperties": true,
-              "required": [
-                "title"
-              ],
-              "properties": {
-                "title": {
-                  "type": "string",
-                  "minLength": 1
-                },
-                "date": {
-                  "type": "string",
-                  "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
-                },
-                "end_date": {
-                  "type": "string",
-                  "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
-                },
-                "all_day": {
-                  "type": "boolean"
-                },
-                "start_time": {
-                  "type": "string",
-                  "pattern": "^\\d{2}:\\d{2}$"
-                },
-                "end_time": {
-                  "type": "string",
-                  "pattern": "^\\d{2}:\\d{2}$"
-                },
-                "category": {
-                  "type": "string"
-                },
-                "status": {
-                  "type": "string"
-                },
-                "tags": {
-                  "oneOf": [
-                    {
-                      "type": "array",
-                      "items": {
-                        "type": "string"
-                      }
-                    },
-                    {
-                      "type": "string"
-                    }
-                  ]
-                },
-                "urls": {
-                  "oneOf": [
-                    {
-                      "type": "array",
-                      "items": {
-                        "type": "string"
-                      }
-                    },
-                    {
-                      "type": "string"
-                    }
-                  ]
-                },
-                "url": {
-                  "type": "string"
-                },
-                "description": {
-                  "type": "string"
-                },
-                "description_file": {
-                  "type": "string"
-                },
-                "location": {
-                  "type": "string"
-                },
-                "private": {
-                  "type": "boolean"
-                },
-                "template_ref": {
-                  "type": "string"
-                },
-                "practice": {
-                  "type": "object",
-                  "additionalProperties": false,
-                  "properties": {
-                    "warmup": {
-                      "type": "string"
-                    },
-                    "notes": {
-                      "type": "string"
-                    },
-                    "absentees": {
-                      "type": "array",
-                      "items": {
-                        "type": "string",
-                        "minLength": 1
-                      }
-                    },
-                    "abort_if": {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "additionalProperties": false,
-                        "properties": {
-                          "when": {
-                            "type": "string"
-                          },
-                          "then": {
-                            "type": "string"
-                          }
-                        },
-                        "required": [
-                          "when",
-                          "then"
-                        ]
-                      }
-                    },
-                    "items": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "practice-item.schema.json"
-                      }
-                    }
-                  },
-                  "required": [
-                    "items"
-                  ]
-                },
-                "weather": {
-                  "type": "object",
-                  "additionalProperties": true,
-                  "properties": {
-                    "location": {
-                      "type": "string"
-                    },
-                    "observed_at": {
-                      "type": "string"
-                    },
-                    "condition": {
-                      "type": "string"
-                    },
-                    "temperature_c": {
-                      "type": "number"
-                    },
-                    "humidity_pct": {
-                      "type": "integer"
-                    },
-                    "wind_direction": {
-                      "type": "string"
-                    },
-                    "wind_speed_kmh": {
-                      "type": "number"
-                    },
-                    "precipitation_mm": {
-                      "type": "number"
-                    },
-                    "source": {
-                      "type": "string"
-                    },
-                    "fetched_at": {
-                      "type": "string"
-                    }
-                  }
-                }
-              }
-            },
-            "context": {}
-          }
-        }
-      ]
-    },
-    {
-      "id": "fullchunkqa-c0e15253fa98dc90f6297297-1",
-      "chunk_id": "knowledge-c0e15253fa98dc90f6297297",
-      "sources": [
-        "schemas/knowledge-graph.schema.json"
-      ],
-      "source_sha256": "7f97869399d2185ec3bfdbd2cba920ff874a4c3ff89aa531ad68b2780cdd5da4",
-      "review": {
-        "method": "manual-context-review",
-        "status": "manual-context-reviewed"
-      },
-      "questions": [
-        "このデータの$schemaの値は？（f6297297-1）"
-      ],
-      "answer": "$schemaはhttps://json-schema.org/draft/2020-12/schemaです。",
-      "evidence": [
-        {
-          "kind": "json-unit",
-          "unit": {
-            "pointer": "",
-            "value": {
-              "$schema": "https://json-schema.org/draft/2020-12/schema",
-              "$id": "https://github.com/tatsuki-github/INBOX/schemas/knowledge-graph.schema.json",
-              "title": "RepoKnowledgeGraph",
-              "description": "Repository routing map for LLM retrieval (hints + refs, not full content).",
-              "type": "object",
-              "additionalProperties": false,
-              "required": [
-                "version",
-                "generated_at",
-                "nodes",
-                "edges"
-              ],
-              "properties": {
-                "version": {
-                  "type": "integer",
-                  "const": 1
-                },
-                "generated_at": {
-                  "type": "string",
-                  "minLength": 1
-                },
-                "nodes": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/$defs/node"
-                  }
-                },
-                "edges": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/$defs/edge"
-                  }
-                }
-              },
-              "$defs": {
-                "node": {
-                  "type": "object",
-                  "additionalProperties": false,
-                  "required": [
-                    "id",
-                    "type",
-                    "label",
-                    "topics",
-                    "refs",
-                    "hint"
-                  ],
-                  "properties": {
-                    "id": {
-                      "type": "string",
-                      "minLength": 1
-                    },
-                    "type": {
-                      "type": "string",
-                      "enum": [
-                        "Source",
-                        "Topic",
-                        "Entity",
-                        "QueryHint",
-                        "Athlete",
-                        "Team",
-                        "Year",
-                        "Template",
-                        "MediaAsset",
-                        "RelayLegResult"
-                      ]
-                    },
-                    "label": {
-                      "type": "string"
-                    },
-                    "topics": {
-                      "type": "array",
-                      "items": {
-                        "type": "string"
-                      }
-                    },
-                    "refs": {
-                      "type": "array",
-                      "items": {
-                        "type": "string"
-                      }
-                    },
-                    "hint": {
-                      "type": "string"
-                    }
-                  }
-                },
-                "edge": {
-                  "type": "object",
-                  "additionalProperties": false,
-                  "required": [
-                    "from",
-                    "to",
-                    "rel"
-                  ],
-                  "properties": {
-                    "from": {
-                      "type": "string",
-                      "minLength": 1
-                    },
-                    "to": {
-                      "type": "string",
-                      "minLength": 1
-                    },
-                    "rel": {
-                      "type": "string",
-                      "enum": [
-                        "search_here",
-                        "derived_from",
-                        "mentioned_in",
-                        "related_to",
-                        "see_also",
-                        "documented_in",
-                        "member_of",
-                        "has_record_in"
-                      ]
-                    }
-                  }
-                }
-              }
-            },
-            "context": {}
-          }
-        }
-      ]
-    },
-    {
-      "id": "fullchunkqa-c0e15253fa98dc90f6297297-3",
-      "chunk_id": "knowledge-c0e15253fa98dc90f6297297",
-      "sources": [
-        "schemas/knowledge-graph.schema.json"
-      ],
-      "source_sha256": "7f97869399d2185ec3bfdbd2cba920ff874a4c3ff89aa531ad68b2780cdd5da4",
-      "review": {
-        "method": "manual-context-review",
-        "status": "manual-context-reviewed"
-      },
-      "questions": [
-        "設定項目「$schema」の内容は？（f6297297-$schema-1-1）"
-      ],
-      "answer": "$schemaはhttps://json-schema.org/draft/2020-12/schemaです。",
-      "evidence": [
-        {
-          "kind": "json-unit",
-          "unit": {
-            "pointer": "",
-            "value": {
-              "$schema": "https://json-schema.org/draft/2020-12/schema",
-              "$id": "https://github.com/tatsuki-github/INBOX/schemas/knowledge-graph.schema.json",
-              "title": "RepoKnowledgeGraph",
-              "description": "Repository routing map for LLM retrieval (hints + refs, not full content).",
-              "type": "object",
-              "additionalProperties": false,
-              "required": [
-                "version",
-                "generated_at",
-                "nodes",
-                "edges"
-              ],
-              "properties": {
-                "version": {
-                  "type": "integer",
-                  "const": 1
-                },
-                "generated_at": {
-                  "type": "string",
-                  "minLength": 1
-                },
-                "nodes": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/$defs/node"
-                  }
-                },
-                "edges": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/$defs/edge"
-                  }
-                }
-              },
-              "$defs": {
-                "node": {
-                  "type": "object",
-                  "additionalProperties": false,
-                  "required": [
-                    "id",
-                    "type",
-                    "label",
-                    "topics",
-                    "refs",
-                    "hint"
-                  ],
-                  "properties": {
-                    "id": {
-                      "type": "string",
-                      "minLength": 1
-                    },
-                    "type": {
-                      "type": "string",
-                      "enum": [
-                        "Source",
-                        "Topic",
-                        "Entity",
-                        "QueryHint",
-                        "Athlete",
-                        "Team",
-                        "Year",
-                        "Template",
-                        "MediaAsset",
-                        "RelayLegResult"
-                      ]
-                    },
-                    "label": {
-                      "type": "string"
-                    },
-                    "topics": {
-                      "type": "array",
-                      "items": {
-                        "type": "string"
-                      }
-                    },
-                    "refs": {
-                      "type": "array",
-                      "items": {
-                        "type": "string"
-                      }
-                    },
-                    "hint": {
-                      "type": "string"
-                    }
-                  }
-                },
-                "edge": {
-                  "type": "object",
-                  "additionalProperties": false,
-                  "required": [
-                    "from",
-                    "to",
-                    "rel"
-                  ],
-                  "properties": {
-                    "from": {
-                      "type": "string",
-                      "minLength": 1
-                    },
-                    "to": {
-                      "type": "string",
-                      "minLength": 1
-                    },
-                    "rel": {
-                      "type": "string",
-                      "enum": [
-                        "search_here",
-                        "derived_from",
-                        "mentioned_in",
-                        "related_to",
-                        "see_also",
-                        "documented_in",
-                        "member_of",
-                        "has_record_in"
-                      ]
-                    }
-                  }
-                }
-              }
-            },
-            "context": {}
-          }
-        }
-      ]
-    },
-    {
-      "id": "fullchunkqa-c0e15253fa98dc90f6297297-5",
-      "chunk_id": "knowledge-c0e15253fa98dc90f6297297",
-      "sources": [
-        "schemas/knowledge-graph.schema.json"
-      ],
-      "source_sha256": "7f97869399d2185ec3bfdbd2cba920ff874a4c3ff89aa531ad68b2780cdd5da4",
-      "review": {
-        "method": "manual-context-review",
-        "status": "manual-context-reviewed"
-      },
-      "questions": [
-        "設定項目「$id」の内容は？（f6297297-$id-2-1）"
-      ],
-      "answer": "$idはhttps://github.com/tatsuki-github/INBOX/schemas/knowledge-graph.schema.jsonです。",
-      "evidence": [
-        {
-          "kind": "json-unit",
-          "unit": {
-            "pointer": "",
-            "value": {
-              "$schema": "https://json-schema.org/draft/2020-12/schema",
-              "$id": "https://github.com/tatsuki-github/INBOX/schemas/knowledge-graph.schema.json",
-              "title": "RepoKnowledgeGraph",
-              "description": "Repository routing map for LLM retrieval (hints + refs, not full content).",
-              "type": "object",
-              "additionalProperties": false,
-              "required": [
-                "version",
-                "generated_at",
-                "nodes",
-                "edges"
-              ],
-              "properties": {
-                "version": {
-                  "type": "integer",
-                  "const": 1
-                },
-                "generated_at": {
-                  "type": "string",
-                  "minLength": 1
-                },
-                "nodes": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/$defs/node"
-                  }
-                },
-                "edges": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/$defs/edge"
-                  }
-                }
-              },
-              "$defs": {
-                "node": {
-                  "type": "object",
-                  "additionalProperties": false,
-                  "required": [
-                    "id",
-                    "type",
-                    "label",
-                    "topics",
-                    "refs",
-                    "hint"
-                  ],
-                  "properties": {
-                    "id": {
-                      "type": "string",
-                      "minLength": 1
-                    },
-                    "type": {
-                      "type": "string",
-                      "enum": [
-                        "Source",
-                        "Topic",
-                        "Entity",
-                        "QueryHint",
-                        "Athlete",
-                        "Team",
-                        "Year",
-                        "Template",
-                        "MediaAsset",
-                        "RelayLegResult"
-                      ]
-                    },
-                    "label": {
-                      "type": "string"
-                    },
-                    "topics": {
-                      "type": "array",
-                      "items": {
-                        "type": "string"
-                      }
-                    },
-                    "refs": {
-                      "type": "array",
-                      "items": {
-                        "type": "string"
-                      }
-                    },
-                    "hint": {
-                      "type": "string"
-                    }
-                  }
-                },
-                "edge": {
-                  "type": "object",
-                  "additionalProperties": false,
-                  "required": [
-                    "from",
-                    "to",
-                    "rel"
-                  ],
-                  "properties": {
-                    "from": {
-                      "type": "string",
-                      "minLength": 1
-                    },
-                    "to": {
-                      "type": "string",
-                      "minLength": 1
-                    },
-                    "rel": {
-                      "type": "string",
-                      "enum": [
-                        "search_here",
-                        "derived_from",
-                        "mentioned_in",
-                        "related_to",
-                        "see_also",
-                        "documented_in",
-                        "member_of",
-                        "has_record_in"
-                      ]
-                    }
-                  }
-                }
-              }
-            },
-            "context": {}
-          }
-        }
-      ]
-    },
-    {
-      "id": "fullchunkqa-f6dac9425d79eef3291026be-1",
-      "chunk_id": "knowledge-f6dac9425d79eef3291026be",
-      "sources": [
-        "schemas/practice-item.schema.json"
-      ],
-      "source_sha256": "a42dff0dbb8066264b6a4654f0a9b4a156983754e940c1a6978744c004e7806c",
-      "review": {
-        "method": "manual-context-review",
-        "status": "manual-context-reviewed"
-      },
-      "questions": [
-        "このデータの$schemaの値は？（291026be-1）"
-      ],
-      "answer": "$schemaはhttps://json-schema.org/draft/2020-12/schemaです。",
-      "evidence": [
-        {
-          "kind": "json-unit",
-          "unit": {
-            "pointer": "",
-            "value": {
-              "$schema": "https://json-schema.org/draft/2020-12/schema",
-              "$id": "https://github.com/tatsuki-github/INBOX/schemas/practice-item.schema.json",
-              "title": "PracticeItem",
-              "type": "object",
-              "additionalProperties": false,
-              "properties": {
-                "type": {
-                  "type": "string",
-                  "enum": [
-                    "jog",
-                    "interval",
-                    "set",
-                    "strides",
-                    "warmup",
-                    "rest",
-                    "other"
-                  ]
-                },
-                "group": {
-                  "type": [
-                    "string",
-                    "null"
-                  ]
-                },
-                "label": {
-                  "type": "string"
-                },
-                "distance_m": {
-                  "type": [
-                    "number",
-                    "null"
-                  ]
-                },
-                "distance_km": {
-                  "type": [
-                    "number",
-                    "null"
-                  ]
-                },
-                "distance_km_min": {
-                  "type": [
-                    "number",
-                    "null"
-                  ]
-                },
-                "distance_km_max": {
-                  "type": [
-                    "number",
-                    "null"
-                  ]
-                },
-                "laps": {
-                  "type": [
-                    "integer",
-                    "null"
-                  ]
-                },
-                "reps": {
-                  "oneOf": [
-                    {
-                      "type": "integer",
-                      "minimum": 1
-                    },
-                    {
-                      "type": "string"
-                    }
-                  ]
-                },
-                "pace": {
-                  "type": [
-                    "string",
-                    "null"
-                  ],
-                  "pattern": "^k/\\d+:\\d{2}$"
-                },
-                "pace_min": {
-                  "type": [
-                    "string",
-                    "null"
-                  ],
-                  "pattern": "^k/\\d+:\\d{2}$"
-                },
-                "pace_max": {
-                  "type": [
-                    "string",
-                    "null"
-                  ],
-                  "pattern": "^k/\\d+:\\d{2}$"
-                },
-                "intensity": {
-                  "type": [
-                    "string",
-                    "null"
-                  ],
-                  "enum": [
-                    "E",
-                    "T",
-                    "I",
-                    "R",
-                    "RP",
-                    "1500mRP",
-                    "3000mRP",
-                    "GZ",
-                    null
-                  ]
-                },
-                "rest_sec": {
-                  "type": [
-                    "integer",
-                    "null"
-                  ],
-                  "minimum": 0
-                },
-                "rest": {
-                  "type": [
-                    "string",
-                    "null"
-                  ]
-                },
-                "segments": {
-                  "type": "array",
-                  "items": {
-                    "type": "object",
-                    "additionalProperties": false,
-                    "properties": {
-                      "distance_m": {
-                        "type": "number"
-                      },
-                      "pace": {
-                        "type": [
-                          "string",
-                          "null"
-                        ]
-                      },
-                      "intensity": {
-                        "type": [
-                          "string",
-                          "null"
-                        ]
-                      }
-                    },
-                    "required": [
-                      "distance_m"
-                    ]
-                  }
-                }
-              },
-              "required": [
-                "type"
-              ]
-            },
-            "context": {}
-          }
-        }
-      ]
-    },
-    {
-      "id": "fullchunkqa-f6dac9425d79eef3291026be-3",
-      "chunk_id": "knowledge-f6dac9425d79eef3291026be",
-      "sources": [
-        "schemas/practice-item.schema.json"
-      ],
-      "source_sha256": "a42dff0dbb8066264b6a4654f0a9b4a156983754e940c1a6978744c004e7806c",
-      "review": {
-        "method": "manual-context-review",
-        "status": "manual-context-reviewed"
-      },
-      "questions": [
-        "設定項目「$schema」の内容は？（291026be-$schema-1-1）"
-      ],
-      "answer": "$schemaはhttps://json-schema.org/draft/2020-12/schemaです。",
-      "evidence": [
-        {
-          "kind": "json-unit",
-          "unit": {
-            "pointer": "",
-            "value": {
-              "$schema": "https://json-schema.org/draft/2020-12/schema",
-              "$id": "https://github.com/tatsuki-github/INBOX/schemas/practice-item.schema.json",
-              "title": "PracticeItem",
-              "type": "object",
-              "additionalProperties": false,
-              "properties": {
-                "type": {
-                  "type": "string",
-                  "enum": [
-                    "jog",
-                    "interval",
-                    "set",
-                    "strides",
-                    "warmup",
-                    "rest",
-                    "other"
-                  ]
-                },
-                "group": {
-                  "type": [
-                    "string",
-                    "null"
-                  ]
-                },
-                "label": {
-                  "type": "string"
-                },
-                "distance_m": {
-                  "type": [
-                    "number",
-                    "null"
-                  ]
-                },
-                "distance_km": {
-                  "type": [
-                    "number",
-                    "null"
-                  ]
-                },
-                "distance_km_min": {
-                  "type": [
-                    "number",
-                    "null"
-                  ]
-                },
-                "distance_km_max": {
-                  "type": [
-                    "number",
-                    "null"
-                  ]
-                },
-                "laps": {
-                  "type": [
-                    "integer",
-                    "null"
-                  ]
-                },
-                "reps": {
-                  "oneOf": [
-                    {
-                      "type": "integer",
-                      "minimum": 1
-                    },
-                    {
-                      "type": "string"
-                    }
-                  ]
-                },
-                "pace": {
-                  "type": [
-                    "string",
-                    "null"
-                  ],
-                  "pattern": "^k/\\d+:\\d{2}$"
-                },
-                "pace_min": {
-                  "type": [
-                    "string",
-                    "null"
-                  ],
-                  "pattern": "^k/\\d+:\\d{2}$"
-                },
-                "pace_max": {
-                  "type": [
-                    "string",
-                    "null"
-                  ],
-                  "pattern": "^k/\\d+:\\d{2}$"
-                },
-                "intensity": {
-                  "type": [
-                    "string",
-                    "null"
-                  ],
-                  "enum": [
-                    "E",
-                    "T",
-                    "I",
-                    "R",
-                    "RP",
-                    "1500mRP",
-                    "3000mRP",
-                    "GZ",
-                    null
-                  ]
-                },
-                "rest_sec": {
-                  "type": [
-                    "integer",
-                    "null"
-                  ],
-                  "minimum": 0
-                },
-                "rest": {
-                  "type": [
-                    "string",
-                    "null"
-                  ]
-                },
-                "segments": {
-                  "type": "array",
-                  "items": {
-                    "type": "object",
-                    "additionalProperties": false,
-                    "properties": {
-                      "distance_m": {
-                        "type": "number"
-                      },
-                      "pace": {
-                        "type": [
-                          "string",
-                          "null"
-                        ]
-                      },
-                      "intensity": {
-                        "type": [
-                          "string",
-                          "null"
-                        ]
-                      }
-                    },
-                    "required": [
-                      "distance_m"
-                    ]
-                  }
-                }
-              },
-              "required": [
-                "type"
-              ]
-            },
-            "context": {}
-          }
-        }
-      ]
-    },
-    {
-      "id": "fullchunkqa-f6dac9425d79eef3291026be-5",
-      "chunk_id": "knowledge-f6dac9425d79eef3291026be",
-      "sources": [
-        "schemas/practice-item.schema.json"
-      ],
-      "source_sha256": "a42dff0dbb8066264b6a4654f0a9b4a156983754e940c1a6978744c004e7806c",
-      "review": {
-        "method": "manual-context-review",
-        "status": "manual-context-reviewed"
-      },
-      "questions": [
-        "設定項目「$id」の内容は？（291026be-$id-2-1）"
-      ],
-      "answer": "$idはhttps://github.com/tatsuki-github/INBOX/schemas/practice-item.schema.jsonです。",
-      "evidence": [
-        {
-          "kind": "json-unit",
-          "unit": {
-            "pointer": "",
-            "value": {
-              "$schema": "https://json-schema.org/draft/2020-12/schema",
-              "$id": "https://github.com/tatsuki-github/INBOX/schemas/practice-item.schema.json",
-              "title": "PracticeItem",
-              "type": "object",
-              "additionalProperties": false,
-              "properties": {
-                "type": {
-                  "type": "string",
-                  "enum": [
-                    "jog",
-                    "interval",
-                    "set",
-                    "strides",
-                    "warmup",
-                    "rest",
-                    "other"
-                  ]
-                },
-                "group": {
-                  "type": [
-                    "string",
-                    "null"
-                  ]
-                },
-                "label": {
-                  "type": "string"
-                },
-                "distance_m": {
-                  "type": [
-                    "number",
-                    "null"
-                  ]
-                },
-                "distance_km": {
-                  "type": [
-                    "number",
-                    "null"
-                  ]
-                },
-                "distance_km_min": {
-                  "type": [
-                    "number",
-                    "null"
-                  ]
-                },
-                "distance_km_max": {
-                  "type": [
-                    "number",
-                    "null"
-                  ]
-                },
-                "laps": {
-                  "type": [
-                    "integer",
-                    "null"
-                  ]
-                },
-                "reps": {
-                  "oneOf": [
-                    {
-                      "type": "integer",
-                      "minimum": 1
-                    },
-                    {
-                      "type": "string"
-                    }
-                  ]
-                },
-                "pace": {
-                  "type": [
-                    "string",
-                    "null"
-                  ],
-                  "pattern": "^k/\\d+:\\d{2}$"
-                },
-                "pace_min": {
-                  "type": [
-                    "string",
-                    "null"
-                  ],
-                  "pattern": "^k/\\d+:\\d{2}$"
-                },
-                "pace_max": {
-                  "type": [
-                    "string",
-                    "null"
-                  ],
-                  "pattern": "^k/\\d+:\\d{2}$"
-                },
-                "intensity": {
-                  "type": [
-                    "string",
-                    "null"
-                  ],
-                  "enum": [
-                    "E",
-                    "T",
-                    "I",
-                    "R",
-                    "RP",
-                    "1500mRP",
-                    "3000mRP",
-                    "GZ",
-                    null
-                  ]
-                },
-                "rest_sec": {
-                  "type": [
-                    "integer",
-                    "null"
-                  ],
-                  "minimum": 0
-                },
-                "rest": {
-                  "type": [
-                    "string",
-                    "null"
-                  ]
-                },
-                "segments": {
-                  "type": "array",
-                  "items": {
-                    "type": "object",
-                    "additionalProperties": false,
-                    "properties": {
-                      "distance_m": {
-                        "type": "number"
-                      },
-                      "pace": {
-                        "type": [
-                          "string",
-                          "null"
-                        ]
-                      },
-                      "intensity": {
-                        "type": [
-                          "string",
-                          "null"
-                        ]
-                      }
-                    },
-                    "required": [
-                      "distance_m"
-                    ]
-                  }
-                }
-              },
-              "required": [
-                "type"
-              ]
-            },
-            "context": {}
-          }
-        }
-      ]
+        "status": "manual-context-reviewed",
+        "scope": "Author-qualified 45/15 examples and conceptual explanation; no specific physiological efficacy or individualized training/return-to-sport clearance inferred."
+      }
     }
   ]
 }

@@ -25,7 +25,7 @@ def _load_yaml(path: Path) -> dict:
         import yaml  # type: ignore
     except ImportError as exc:  # pragma: no cover
         raise SystemExit("PyYAML is required: pip install pyyaml") from exc
-    data = yaml.safe_load(path.read_text(encoding="utf-8"))
+    data = yaml.load(path.read_text(encoding="utf-8"), Loader=getattr(yaml, "CSafeLoader", yaml.SafeLoader))
     if not isinstance(data, dict):
         raise SystemExit(f"invalid YAML root in {path}")
     return data

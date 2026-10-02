@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-"""Author manual-context-reviewed QAs for chunks not covered by schema generators.
+"""Draft unreviewed candidates for chunks not covered by schema generators.
 
-Reads pending chunks from out/qa-chunks, writes reviewed batch JSON under
-input/faq/full-knowledge-qa/. Does not publish; run validate_full_knowledge_qa.py after.
+Reads pending chunks from out/qa-chunks, writes candidate JSON under
+out/qa-candidates/. Does not publish or certify review; candidates require contextual review before promotion.
 """
 from __future__ import annotations
 
@@ -12,7 +12,6 @@ import io
 import json
 import re
 import unicodedata
-import uuid
 from collections import Counter
 from pathlib import Path
 
@@ -21,6 +20,7 @@ import yaml
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "out/qa-chunks"
 BATCH_DIR = ROOT / "input/faq/full-knowledge-qa"
+CANDIDATE_DIR = ROOT / "out/qa-candidates"
 PREPARED = ROOT / "backend/data/prepared-qa.json"
 
 PATH_IN_ANSWER = re.compile(
@@ -81,21 +81,11 @@ def strip_for_user(text: str) -> str:
 
 
 def unique_question(base: str, keys: set[str], salt: str = "") -> str | None:
-    for n in range(0, 16):
-        if n == 0:
-            q = base
-        elif salt:
-            q = f"{base}（{salt}-{n}）"
-        else:
-            q = f"{base}（出典区分{n}）"
-        k = normalize_question_key(q)
-        if k and k not in keys:
-            keys.add(k)
-            return q
-    tail = uuid.uuid4().hex[:8]
-    q = f"{base}（{salt or 'uniq'}-{tail}）"
-    keys.add(normalize_question_key(q))
-    return q
+    key = normalize_question_key(base)
+    if not key or key in keys:
+        return None
+    keys.add(key)
+    return base
 
 
 def entry_id(chunk_id: str, ordinal: int) -> str:
@@ -108,7 +98,7 @@ def base_entry(chunk: dict, ordinal: int) -> dict:
         "chunk_id": chunk["id"],
         "sources": [chunk["source"]],
         "source_sha256": chunk["source_sha256"],
-        "review": {"method": "manual-context-review", "status": "manual-context-reviewed"},
+        "review": {"method": "automatic-candidate", "status": "pending-context-review"},
     }
 
 
@@ -527,7 +517,8 @@ def write_batches(entries: list[dict], start_index: int, per_file: int) -> list[
     for offset in range(0, len(entries), per_file):
         batch = entries[offset : offset + per_file]
         num = start_index + offset // per_file
-        path = BATCH_DIR / f"reviewed-{num:04d}.json"
+        CANDIDATE_DIR.mkdir(parents=True, exist_ok=True)
+        path = CANDIDATE_DIR / f"candidate-{num:04d}.json"
         path.write_text(json.dumps({"version": 1, "entries": batch}, ensure_ascii=False, indent=2) + "\n")
         written.append(str(path.relative_to(ROOT)))
     return written
@@ -565,7 +556,7 @@ def main() -> None:
 
     report = {
         "pending_chunks": len(pending),
-        "authored_qa": len(new_entries),
+        "unreviewed_candidates": len(new_entries),
         "unresolved_chunks": len(unresolved),
         "dry_run": args.dry_run,
     }

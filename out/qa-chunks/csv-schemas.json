@@ -346,7 +346,6 @@
   {
     "source": "input/external/drive/shared/名簿/2025年度.csv",
     "header": [
-      "登録番号",
       "姓",
       "名",
       "姓（カナ）",
@@ -369,14 +368,13 @@
       "3000mPBURL"
     ],
     "chunk_ids": [
-      "knowledge-1e9d7052c2131d60d638023d"
+      "knowledge-26f62f4d19883bbe84816bf7"
     ],
     "rows": 18,
     "sample_units": [
       {
         "row": 1,
         "cells": [
-          "52",
           "案浦",
           "竜士",
           "アンノウラ",
@@ -402,7 +400,6 @@
       {
         "row": 2,
         "cells": [
-          "51",
           "倉田",
           "裕斗",
           "クラタ",
@@ -430,7 +427,6 @@
   {
     "source": "input/external/drive/shared/名簿/2025年度_岱明中学校陸上競技部_部員名簿.csv",
     "header": [
-      "登録番号",
       "姓",
       "名",
       "姓（カナ）",
@@ -441,14 +437,13 @@
       "小学校"
     ],
     "chunk_ids": [
-      "knowledge-4c59d5964c3b944c5e55336a"
+      "knowledge-2dd886fa3038aa6cafeffe1f"
     ],
     "rows": 18,
     "sample_units": [
       {
         "row": 1,
         "cells": [
-          "52",
           "案浦",
           "竜士",
           "アンノウラ",
@@ -462,7 +457,6 @@
       {
         "row": 2,
         "cells": [
-          "51",
           "倉田",
           "裕斗",
           "クラタ",
@@ -1961,7 +1955,6 @@
   {
     "source": "input/idaten-corpus/drive-text/名簿/2025年度.csv",
     "header": [
-      "登録番号",
       "姓",
       "名",
       "姓（カナ）",
@@ -1984,14 +1977,13 @@
       "3000mPBURL"
     ],
     "chunk_ids": [
-      "knowledge-25d21e79e39a26e0aaefeea1"
+      "knowledge-8a1b64e8e654278ffa169270"
     ],
     "rows": 18,
     "sample_units": [
       {
         "row": 1,
         "cells": [
-          "52",
           "案浦",
           "竜士",
           "アンノウラ",
@@ -2017,7 +2009,6 @@
       {
         "row": 2,
         "cells": [
-          "51",
           "倉田",
           "裕斗",
           "クラタ",

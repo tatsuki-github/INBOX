@@ -25,7 +25,7 @@ def load_structured_source(source_text: str, source_path: str):
 
 
 def validate_manual_json(entry, chunk, source_text):
-    source = load_structured_source(source_text, chunk["source"])
+    source = load_structured_source(source_text, chunk.get("source") or entry.get("sources", ["source.json"])[0])
     units={u['pointer']:u for u in chunk['evidence']['units']}
     for evidence in entry.get('evidence',[]):
         if evidence.get('kind')!='json-unit':raise ValueError('typed JSON evidence required')
@@ -50,7 +50,7 @@ def validate_manual_json(entry, chunk, source_text):
 
 
 def validate_string_span_quotes(entry, chunk, source_text):
-    source = load_structured_source(source_text, chunk["source"])
+    source = load_structured_source(source_text, chunk.get("source") or entry.get("sources", ["source.json"])[0])
     span_units = [u for u in chunk["evidence"]["units"] if u.get("string_span")]
     if not span_units:
         raise ValueError("missing string span units")
