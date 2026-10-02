@@ -26,7 +26,7 @@ def check_reviewed_entry(entry, reviewed, root=ROOT):
         if entry.get(field) != reviewed.get(field):
             problems.append('reviewed_' + field + '_drift')
     method = reviewed.get('review', {}).get('method')
-    if method not in ('manual-context-review', 'schema-reviewed-time-comparison', 'schema-reviewed-passing-rank-change', 'schema-reviewed-dated-meet-comparison', 'schema-reviewed-within-athlete-meet-change', 'schema-reviewed-record-vs-saved-sb'):
+    if method not in ('manual-context-review', 'schema-reviewed-time-comparison', 'schema-reviewed-passing-rank-change', 'schema-reviewed-dated-meet-comparison', 'schema-reviewed-within-athlete-meet-change', 'schema-reviewed-record-vs-saved-sb', 'schema-reviewed-calendar-gap'):
         problems.append('missing_context_review')
     sources = reviewed.get('sources') or []
     if len(sources) != 1 or 'prepared-qa' in sources[0]:
@@ -36,6 +36,15 @@ def check_reviewed_entry(entry, reviewed, root=ROOT):
         return problems + ['missing_review_source']
     text = path.read_text()
     evidence = reviewed.get('evidence') or []
+    if method == 'schema-reviewed-calendar-gap':
+        from chunk_calendar_gaps import validate_gap
+        try:
+            ev = evidence[0]
+            chunk = {'evidence': {'units': ev.get('units', ev.get('rows')), 'header': ev.get('header')}}
+            validate_gap(reviewed, chunk, text)
+        except (ValueError, KeyError, IndexError, TypeError):
+            problems.append('reviewed_calendar_date_or_arithmetic_drift')
+        return problems
     if method == 'schema-reviewed-time-comparison':
         from chunk_time_comparisons import validate_csv_comparison
         try:

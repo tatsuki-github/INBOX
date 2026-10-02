@@ -1,11 +1,11 @@
 {
   "status": "in_progress",
-  "total_chunks": 2782,
-  "complete_chunks": 787,
-  "authored_qa": 2381,
+  "total_chunks": 2781,
+  "complete_chunks": 963,
+  "authored_qa": 2909,
   "carried_forward_qa": 86,
-  "required_qa": 8346,
-  "remaining_qa": 5965,
+  "required_qa": 8343,
+  "remaining_qa": 5434,
   "pending": [
     {
       "chunk_id": "knowledge-87cf31783baaff56705b784d",
@@ -2390,68 +2390,8 @@
       "remaining_qa": 3
     },
     {
-      "chunk_id": "knowledge-66dd56aa633674174a4224b5",
-      "source": "input/events.2023.yaml",
-      "index": 0,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-1291aa1a71f7bd420f8756d5",
-      "source": "input/events.2023.yaml",
-      "index": 1,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-e10255c3760134e84f15b6b4",
-      "source": "input/events.2023.yaml",
-      "index": 2,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-9210b110b2dfab817dfc3104",
+      "chunk_id": "knowledge-737e6ebea7d24ab87f94500d",
       "source": "input/events.2024.yaml",
-      "index": 0,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-fd96443c412a8e68297163e5",
-      "source": "input/events.2024.yaml",
-      "index": 1,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-e8b158c0dd698865648ec164",
-      "source": "input/events.2024.yaml",
-      "index": 2,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-7a73f81d0ef5eb663f246a94",
-      "source": "input/events.2024.yaml",
-      "index": 3,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-c6fd2507f004b196d5cf33da",
-      "source": "input/events.2025.yaml",
-      "index": 0,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-78dad2ccadc62dc71c89a72b",
-      "source": "input/events.2025.yaml",
-      "index": 1,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-75763e262c0cb6a461cced68",
-      "source": "input/events.2025.yaml",
-      "index": 2,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-ca37103dcc6ea74ac52dc14d",
-      "source": "input/events.2025.yaml",
       "index": 3,
       "remaining_qa": 3
     },
@@ -2462,93 +2402,9 @@
       "remaining_qa": 3
     },
     {
-      "chunk_id": "knowledge-799dbee0d1cb6de7ce52f38e",
-      "source": "input/events.2025.yaml",
-      "index": 5,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-cf19e925c7f65dd0b786f205",
-      "source": "input/events.2025.yaml",
-      "index": 6,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-85ba885212f4b14c7e15c53f",
-      "source": "input/events.2025.yaml",
-      "index": 7,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-96f0f841f8dc8f0a66c46aac",
-      "source": "input/events.2025.yaml",
-      "index": 8,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-74cdc4133bd2025ff84337f6",
-      "source": "input/events.2025.yaml",
-      "index": 9,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-7d00b1e2198ccdd9fe1dcaf0",
-      "source": "input/events.2025.yaml",
-      "index": 10,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-6e0370c8690fda291d208672",
-      "source": "input/events.2025.yaml",
-      "index": 11,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-327cbb1cbe5178afbe227e20",
-      "source": "input/events.2025.yaml",
-      "index": 12,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-cf9ae1dcf2228d1a0d90a5d8",
-      "source": "input/events.2025.yaml",
-      "index": 13,
-      "remaining_qa": 3
-    },
-    {
       "chunk_id": "knowledge-3104e61d07a6897618acda17",
       "source": "input/events.2025.yaml",
       "index": 14,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-7e0ec7160758edd21c5fe30b",
-      "source": "input/events.2026.yaml",
-      "index": 0,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-021b96b15fa056ecff243901",
-      "source": "input/events.2026.yaml",
-      "index": 1,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-7831549782b24dacec9e0a34",
-      "source": "input/events.2026.yaml",
-      "index": 2,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-42f0e9872473feb01e5d3603",
-      "source": "input/events.2026.yaml",
-      "index": 3,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-a2d270e22891d610ebf85d10",
-      "source": "input/events.2026.yaml",
-      "index": 4,
       "remaining_qa": 3
     },
     {
@@ -2642,39 +2498,9 @@
       "remaining_qa": 3
     },
     {
-      "chunk_id": "knowledge-021ee0438bb66ec3c7d308ef",
-      "source": "input/events.2026.yaml",
-      "index": 20,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-d0c1c83f458d49fecc0efac6",
-      "source": "input/events.2026.yaml",
-      "index": 21,
-      "remaining_qa": 3
-    },
-    {
       "chunk_id": "knowledge-8d6add58a4be6962a83eb023",
       "source": "input/events.2026.yaml",
       "index": 22,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-d7b602ef2529dd69e819c653",
-      "source": "input/events.2026.yaml",
-      "index": 23,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-a4252bb37dd7a9b59a8bdaa3",
-      "source": "input/events.2026.yaml",
-      "index": 24,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-43a9356fb54491bc1e4ed463",
-      "source": "input/events.2026.yaml",
-      "index": 25,
       "remaining_qa": 3
     },
     {
@@ -7484,90 +7310,6 @@
       "remaining_qa": 3
     },
     {
-      "chunk_id": "knowledge-d27aaf13f4d35cb2f9d2887e",
-      "source": "input/memos/norwegian_method_applied_full.txt",
-      "index": 10,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-5644973c2336562092bfc200",
-      "source": "input/memos/norwegian_method_applied_full.txt",
-      "index": 11,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-f80d8b8a3cb7697c1ddc9b6f",
-      "source": "input/memos/norwegian_method_applied_full.txt",
-      "index": 12,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-7abfafad019c3682a741594e",
-      "source": "input/memos/norwegian_method_applied_full.txt",
-      "index": 13,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-e63f4cf9d56736082a014cf5",
-      "source": "input/memos/norwegian_method_applied_full.txt",
-      "index": 14,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-c66fd4dfb09b98e5cefee41a",
-      "source": "input/memos/norwegian_method_applied_full.txt",
-      "index": 15,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-594323cfc31ed34089c525c0",
-      "source": "input/memos/norwegian_method_applied_full.txt",
-      "index": 16,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-50f763c85fd78bfa6ebb1179",
-      "source": "input/memos/norwegian_method_applied_full.txt",
-      "index": 17,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-be0e24a1ddadbac7c6b294ba",
-      "source": "input/memos/norwegian_method_applied_full.txt",
-      "index": 18,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-30c2ffe58ffc04cbee00e677",
-      "source": "input/memos/norwegian_method_applied_full.txt",
-      "index": 19,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-57de14863a029695cc947a84",
-      "source": "input/memos/norwegian_method_applied_full.txt",
-      "index": 20,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-8601ef82fe226f3d6800479a",
-      "source": "input/memos/norwegian_method_applied_full.txt",
-      "index": 21,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-9fe040b05e4185b907cdd6fb",
-      "source": "input/memos/norwegian_method_applied_full.txt",
-      "index": 22,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-44404edf70c13b3c8889bd09",
-      "source": "input/memos/norwegian_method_applied_full.txt",
-      "index": 23,
-      "remaining_qa": 3
-    },
-    {
       "chunk_id": "knowledge-6c6d9139fb7b0342dda3d6e6",
       "source": "input/memos/norwegian_method_applied_full.txt",
       "index": 24,
@@ -8234,38 +7976,8 @@
       "remaining_qa": 3
     },
     {
-      "chunk_id": "knowledge-c0e72dad6f0b8d92bd55c6bc",
-      "source": "out/2020/events.json",
-      "index": 0,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-84c6799d2558c9e026a1fcfd",
-      "source": "out/2020/events.json",
-      "index": 1,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-f363ac1186e70065cb850088",
-      "source": "out/2020/google.csv",
-      "index": 0,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-844294f68623623187075f5a",
-      "source": "out/2020/notion.csv",
-      "index": 0,
-      "remaining_qa": 3
-    },
-    {
       "chunk_id": "knowledge-03051b115b7ee476eed3f47f",
       "source": "out/2020/practice-summary.md",
-      "index": 0,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-5d3f7701357a4d43b744a56e",
-      "source": "out/2020/source.csv",
       "index": 0,
       "remaining_qa": 3
     },
@@ -8282,27 +7994,9 @@
       "remaining_qa": 3
     },
     {
-      "chunk_id": "knowledge-4cda18f029174e7328571483",
-      "source": "out/2022/events.json",
-      "index": 0,
-      "remaining_qa": 3
-    },
-    {
       "chunk_id": "knowledge-b4c15865a13298a406b84537",
       "source": "out/2022/events.json",
       "index": 1,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-21debfa77a30337d7c402015",
-      "source": "out/2022/google.csv",
-      "index": 0,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-53980f48aed9a8ba1ab28e22",
-      "source": "out/2022/notion.csv",
-      "index": 0,
       "remaining_qa": 3
     },
     {
@@ -8318,133 +8012,55 @@
       "remaining_qa": 3
     },
     {
-      "chunk_id": "knowledge-359720913eace5afe34ee538",
-      "source": "out/2022/source.csv",
-      "index": 0,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-2872ccb5c2d12c470eed918d",
+      "chunk_id": "knowledge-44d355966df9f00aa6903c64",
       "source": "out/2023/calendar.md",
       "index": 0,
       "remaining_qa": 3
     },
     {
-      "chunk_id": "knowledge-1189a69ff16c42a16250c648",
+      "chunk_id": "knowledge-02f6bb833eaa5c559db22cf6",
       "source": "out/2023/calendar.md",
       "index": 1,
       "remaining_qa": 3
     },
     {
-      "chunk_id": "knowledge-4994821152f15ab5717a2d8f",
+      "chunk_id": "knowledge-c51fa331ff4b5731b920ba72",
       "source": "out/2023/calendar.md",
       "index": 2,
       "remaining_qa": 3
     },
     {
-      "chunk_id": "knowledge-8116296efb92f58bce0bb129",
+      "chunk_id": "knowledge-5206f6b14a837491a62dfae1",
       "source": "out/2023/calendar.md",
       "index": 3,
       "remaining_qa": 3
     },
     {
-      "chunk_id": "knowledge-d2ae721b7da1397384164ca7",
+      "chunk_id": "knowledge-a81057e683c952f15a536ede",
       "source": "out/2023/calendar.md",
       "index": 4,
       "remaining_qa": 3
     },
     {
-      "chunk_id": "knowledge-be268eec003eec77c9808778",
+      "chunk_id": "knowledge-da3971f27e3be001164e6843",
       "source": "out/2023/calendar.md",
       "index": 5,
       "remaining_qa": 3
     },
     {
-      "chunk_id": "knowledge-1a4f7d3fc25e19285822c0a4",
+      "chunk_id": "knowledge-728cebe416680e5e85161402",
       "source": "out/2023/calendar.md",
       "index": 6,
       "remaining_qa": 3
     },
     {
-      "chunk_id": "knowledge-9fa32d8e6658401112d39144",
+      "chunk_id": "knowledge-3f49d03c5588dabcec177e7f",
       "source": "out/2023/calendar.md",
       "index": 7,
       "remaining_qa": 3
     },
     {
-      "chunk_id": "knowledge-ab41f19c8b40c7b311791dab",
-      "source": "out/2023/events.json",
-      "index": 0,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-9fcaa9f8dea3880eb60a23bb",
-      "source": "out/2023/events.json",
-      "index": 1,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-f3aa7d69f81e474a302706ac",
-      "source": "out/2023/events.json",
-      "index": 2,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-3b4d97a20af8c762b493c844",
-      "source": "out/2023/events.json",
-      "index": 3,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-ceeac69d86b9493609cc51fd",
-      "source": "out/2023/events.json",
-      "index": 4,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-d9e898d399edde2fb3f898e9",
-      "source": "out/2023/events.json",
-      "index": 5,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-431f4e2939fab10cfd35b1d7",
-      "source": "out/2023/events.json",
-      "index": 6,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-757efdfa356347a42b6a9299",
-      "source": "out/2023/google.csv",
-      "index": 0,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-69ed8154de62bd0bd2fde2cb",
-      "source": "out/2023/google.csv",
-      "index": 1,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-6645208f5f9e07c0c9cf171c",
-      "source": "out/2023/google.csv",
-      "index": 2,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-8563b8c682a255f177756884",
-      "source": "out/2023/notion.csv",
-      "index": 0,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-75af0ef5a2a8523037dd0606",
-      "source": "out/2023/notion.csv",
-      "index": 1,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-4de3f2910b0cb00c01ce0357",
+      "chunk_id": "knowledge-b08427effca1f018a424c57e",
       "source": "out/2023/notion.csv",
       "index": 2,
       "remaining_qa": 3
@@ -8462,171 +8078,63 @@
       "remaining_qa": 3
     },
     {
-      "chunk_id": "knowledge-d6d910e45e8b8f17489b071a",
-      "source": "out/2023/source.csv",
-      "index": 0,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-86347bef4416fb0b4999eb19",
-      "source": "out/2023/source.csv",
-      "index": 1,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-aa2933d72131025867bfead5",
-      "source": "out/2023/source.csv",
-      "index": 2,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-2a491a19d5d3872dc03abb17",
+      "chunk_id": "knowledge-a02bc979f09b3565d77028ac",
       "source": "out/2024/calendar.md",
       "index": 0,
       "remaining_qa": 3
     },
     {
-      "chunk_id": "knowledge-001649f9e4c3244c87532ccc",
+      "chunk_id": "knowledge-e156db393a3bf4253eb9e694",
       "source": "out/2024/calendar.md",
       "index": 1,
       "remaining_qa": 3
     },
     {
-      "chunk_id": "knowledge-132a4d358d3482c42ac21c4b",
+      "chunk_id": "knowledge-917b832417006e5198041e6c",
       "source": "out/2024/calendar.md",
       "index": 2,
       "remaining_qa": 3
     },
     {
-      "chunk_id": "knowledge-d8f866d6e22d45c3630bf07e",
+      "chunk_id": "knowledge-e526be8a32346f5af7417d56",
       "source": "out/2024/calendar.md",
       "index": 3,
       "remaining_qa": 3
     },
     {
-      "chunk_id": "knowledge-b3b88685915b9e4714132fe8",
+      "chunk_id": "knowledge-708367ca6f0063b7ac282620",
       "source": "out/2024/calendar.md",
       "index": 4,
       "remaining_qa": 3
     },
     {
-      "chunk_id": "knowledge-fdebc7824bb3f263843e6d9b",
+      "chunk_id": "knowledge-deb77bcddd29dd901bc58c5b",
       "source": "out/2024/calendar.md",
       "index": 5,
       "remaining_qa": 3
     },
     {
-      "chunk_id": "knowledge-310dabc3a41d138d674a124d",
+      "chunk_id": "knowledge-4ae7c2c8fd24279fd3ff7773",
       "source": "out/2024/calendar.md",
       "index": 6,
       "remaining_qa": 3
     },
     {
-      "chunk_id": "knowledge-8c8b74ce6f06f75b0480abc2",
+      "chunk_id": "knowledge-7e555067e95f5a16f62a7a08",
       "source": "out/2024/calendar.md",
       "index": 7,
       "remaining_qa": 3
     },
     {
-      "chunk_id": "knowledge-dcbdaa5704b22f471f64e262",
+      "chunk_id": "knowledge-75a0e5a0c2c2467294d20209",
       "source": "out/2024/calendar.md",
       "index": 8,
       "remaining_qa": 3
     },
     {
-      "chunk_id": "knowledge-2eb0d1e0eea35a6b05dbf05b",
+      "chunk_id": "knowledge-e7783e2d2533d60ac87e381f",
       "source": "out/2024/calendar.md",
       "index": 9,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-869218db545417f751aa8e2f",
-      "source": "out/2024/events.json",
-      "index": 0,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-5cc631c4d87f27b4aa5e3704",
-      "source": "out/2024/events.json",
-      "index": 1,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-9287d6934a447924c6b3c066",
-      "source": "out/2024/events.json",
-      "index": 2,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-d91b8fb55ab670b29823acfc",
-      "source": "out/2024/events.json",
-      "index": 3,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-d46092b8e10915aa2a436e38",
-      "source": "out/2024/events.json",
-      "index": 4,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-658873e0128761a50a4edef8",
-      "source": "out/2024/events.json",
-      "index": 5,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-a1d006c606890ef8c319f221",
-      "source": "out/2024/events.json",
-      "index": 6,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-caaf4dc4c9a9933922a07fff",
-      "source": "out/2024/events.json",
-      "index": 7,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-e33eec4563e6c8cb50c67418",
-      "source": "out/2024/events.json",
-      "index": 8,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-9ec119aef27f2832b6c27c33",
-      "source": "out/2024/google.csv",
-      "index": 0,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-b27305c03df052985ffe496d",
-      "source": "out/2024/google.csv",
-      "index": 1,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-e753d13a5043a14504f21392",
-      "source": "out/2024/google.csv",
-      "index": 2,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-dbb492a578dd377be9ef0aa6",
-      "source": "out/2024/notion.csv",
-      "index": 0,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-7fed5e645259fadd10e3ae44",
-      "source": "out/2024/notion.csv",
-      "index": 1,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-a47aa8f94e595fe725464b0e",
-      "source": "out/2024/notion.csv",
-      "index": 2,
       "remaining_qa": 3
     },
     {
@@ -8642,25 +8150,7 @@
       "remaining_qa": 3
     },
     {
-      "chunk_id": "knowledge-d36b7ff9b215d86e0c00d2c5",
-      "source": "out/2024/source.csv",
-      "index": 0,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-fae1ecc741a04e0e6da076bf",
-      "source": "out/2024/source.csv",
-      "index": 1,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-fff17e42743276864bbc89d9",
-      "source": "out/2024/source.csv",
-      "index": 2,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-ed16e91a2750ded2bdd38f5b",
+      "chunk_id": "knowledge-56bb99c88e73c259df279b12",
       "source": "out/2024/source.csv",
       "index": 3,
       "remaining_qa": 3
@@ -8792,24 +8282,6 @@
       "remaining_qa": 3
     },
     {
-      "chunk_id": "knowledge-d42a79d5e7502cc7fb4bae3f",
-      "source": "out/2025/events.json",
-      "index": 0,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-630b5450dcbc631fe73026da",
-      "source": "out/2025/events.json",
-      "index": 1,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-c2648cac2e2d3bb72210229f",
-      "source": "out/2025/events.json",
-      "index": 2,
-      "remaining_qa": 3
-    },
-    {
       "chunk_id": "knowledge-1cbbf5aa0525178351735ee5",
       "source": "out/2025/events.json",
       "index": 3,
@@ -8840,21 +8312,9 @@
       "remaining_qa": 3
     },
     {
-      "chunk_id": "knowledge-75d4c00ee1ef6914e478e2a6",
-      "source": "out/2025/events.json",
-      "index": 8,
-      "remaining_qa": 3
-    },
-    {
       "chunk_id": "knowledge-af2ae33ff6f04abda44ae743",
       "source": "out/2025/events.json",
       "index": 9,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-d3eaea5c8f09796553623ed5",
-      "source": "out/2025/events.json",
-      "index": 10,
       "remaining_qa": 3
     },
     {
@@ -8864,183 +8324,15 @@
       "remaining_qa": 3
     },
     {
-      "chunk_id": "knowledge-9d8bbb1d245652481e1fdfcf",
-      "source": "out/2025/events.json",
-      "index": 12,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-4306331f09d82a3acc880dbd",
-      "source": "out/2025/events.json",
-      "index": 13,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-70dc01c69e6243c9f1983dc6",
-      "source": "out/2025/events.json",
-      "index": 14,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-febb6cf948736db38a7de123",
-      "source": "out/2025/events.json",
-      "index": 15,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-0c3ba7f3d7d48e4c5e5ca861",
-      "source": "out/2025/events.json",
-      "index": 16,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-5489a3128cd65850572c74a5",
-      "source": "out/2025/events.json",
-      "index": 17,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-04b79b8461d8a6859e1b0b29",
-      "source": "out/2025/events.json",
-      "index": 18,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-d2d91ca53e353bcdb39ec524",
-      "source": "out/2025/events.json",
-      "index": 19,
-      "remaining_qa": 3
-    },
-    {
       "chunk_id": "knowledge-630b594570233afe63fd3568",
       "source": "out/2025/events.json",
       "index": 20,
       "remaining_qa": 3
     },
     {
-      "chunk_id": "knowledge-b974cce9db480de0257abce8",
-      "source": "out/2025/events.json",
-      "index": 21,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-615f1f39aa0dc24744c8a2b3",
-      "source": "out/2025/events.json",
-      "index": 22,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-5398e5521ec8276067b837f1",
-      "source": "out/2025/google.csv",
-      "index": 0,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-787f4647e6687409a9294342",
-      "source": "out/2025/google.csv",
-      "index": 1,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-2a0e32665a64ed171838084d",
-      "source": "out/2025/google.csv",
-      "index": 2,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-4f0be496741785a60cc41994",
-      "source": "out/2025/google.csv",
-      "index": 3,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-99faa3ee56430cf9afd3916c",
-      "source": "out/2025/google.csv",
-      "index": 4,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-9181f9b5a08fb157faa66ceb",
-      "source": "out/2025/google.csv",
-      "index": 5,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-7ff05f7f29a091e8b6957f63",
-      "source": "out/2025/google.csv",
-      "index": 6,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-7bed79bc8c52dcbac3f6c153",
-      "source": "out/2025/google.csv",
-      "index": 7,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-093478bcc7e317c1b33990db",
-      "source": "out/2025/google.csv",
-      "index": 8,
-      "remaining_qa": 3
-    },
-    {
       "chunk_id": "knowledge-76d499b82031cd9fb4ae64ca",
       "source": "out/2025/google.csv",
       "index": 9,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-6121de0c928e2962566a20c0",
-      "source": "out/2025/notion.csv",
-      "index": 0,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-90734437f47c21720257d424",
-      "source": "out/2025/notion.csv",
-      "index": 1,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-5b1949cbafedc6eb211f53bd",
-      "source": "out/2025/notion.csv",
-      "index": 2,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-062d4db45266523dad136dbf",
-      "source": "out/2025/notion.csv",
-      "index": 3,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-cf50a2d947f76dc4ffae8ebd",
-      "source": "out/2025/notion.csv",
-      "index": 4,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-6df86932d07e80a69d19b0ba",
-      "source": "out/2025/notion.csv",
-      "index": 5,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-4460231b2a60cb2f8ef65d1d",
-      "source": "out/2025/notion.csv",
-      "index": 6,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-dc59a0a1a6ec5aa149275802",
-      "source": "out/2025/notion.csv",
-      "index": 7,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-e48773fe6bb77ba441c1e2ab",
-      "source": "out/2025/notion.csv",
-      "index": 8,
       "remaining_qa": 3
     },
     {
@@ -9110,129 +8402,15 @@
       "remaining_qa": 3
     },
     {
-      "chunk_id": "knowledge-f705263e35ff4a40785449c3",
-      "source": "out/2025/source.csv",
-      "index": 0,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-6a14c58c314733bbe50f1e89",
-      "source": "out/2025/source.csv",
-      "index": 1,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-f6022704a0cd49aa7b49c73f",
-      "source": "out/2025/source.csv",
-      "index": 2,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-7c1a25c4ff6dcadb425039d7",
-      "source": "out/2025/source.csv",
-      "index": 3,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-205092d63bd0c7308b0f22dd",
-      "source": "out/2025/source.csv",
-      "index": 4,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-fb9a3fdcebe8b10dffc4d49a",
-      "source": "out/2025/source.csv",
-      "index": 5,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-db0635fea8e50735978bfb49",
-      "source": "out/2025/source.csv",
-      "index": 6,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-799a2550552f85192af84a5c",
-      "source": "out/2025/source.csv",
-      "index": 7,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-0de5d9d120e2dd99c0f1f2c4",
-      "source": "out/2025/source.csv",
-      "index": 8,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-dffab302cea751e3e82ef8b1",
-      "source": "out/2025/source.csv",
-      "index": 9,
-      "remaining_qa": 3
-    },
-    {
       "chunk_id": "knowledge-16552deafe96f8ef6233b378",
       "source": "out/2025/source.csv",
       "index": 10,
       "remaining_qa": 3
     },
     {
-      "chunk_id": "knowledge-78d16ccd2487f201014c3e78",
-      "source": "out/2026/events.json",
-      "index": 0,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-8e75695108d978651ffcbb0b",
-      "source": "out/2026/events.json",
-      "index": 1,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-6e387195761ea3a13cd26e3f",
-      "source": "out/2026/events.json",
-      "index": 2,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-fb3321f268d18631ce0b3f2c",
-      "source": "out/2026/events.json",
-      "index": 3,
-      "remaining_qa": 3
-    },
-    {
       "chunk_id": "knowledge-56b4f09bdb2e2f59b36ef81c",
       "source": "out/2026/events.json",
       "index": 4,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-a8889c9c0922a6e2950facaa",
-      "source": "out/2026/events.json",
-      "index": 5,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-b49ce03065f132d94fb23bf6",
-      "source": "out/2026/events.json",
-      "index": 6,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-5750f7cb30751a5457171b6e",
-      "source": "out/2026/events.json",
-      "index": 7,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-3b0ba871f38a3dfd72798b42",
-      "source": "out/2026/events.json",
-      "index": 8,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-bb8a1d711b2ee2895ff59415",
-      "source": "out/2026/events.json",
-      "index": 9,
       "remaining_qa": 3
     },
     {
@@ -9368,12 +8546,6 @@
       "remaining_qa": 3
     },
     {
-      "chunk_id": "knowledge-e21aa9387b3f1b35d72e2156",
-      "source": "out/2026/events.json",
-      "index": 32,
-      "remaining_qa": 3
-    },
-    {
       "chunk_id": "knowledge-90fc2f13257b544625ab53e2",
       "source": "out/2026/events.json",
       "index": 33,
@@ -9386,33 +8558,9 @@
       "remaining_qa": 3
     },
     {
-      "chunk_id": "knowledge-fafb57de6655beb0764412de",
-      "source": "out/2026/events.json",
-      "index": 35,
-      "remaining_qa": 3
-    },
-    {
       "chunk_id": "knowledge-10e7a63dad9cfdb6dfacb163",
       "source": "out/2026/events.json",
       "index": 36,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-84f8a9961b050938741b0acb",
-      "source": "out/2026/events.json",
-      "index": 37,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-40f7cc2c09c9bd801ffb863b",
-      "source": "out/2026/events.json",
-      "index": 38,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-d5e3efb122cf91be7e327a55",
-      "source": "out/2026/events.json",
-      "index": 39,
       "remaining_qa": 3
     },
     {
@@ -9530,36 +8678,6 @@
       "remaining_qa": 3
     },
     {
-      "chunk_id": "knowledge-4753f705e861491e9b70e349",
-      "source": "out/2026/google.csv",
-      "index": 0,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-265d7c2b825a2b4203fa4fbb",
-      "source": "out/2026/google.csv",
-      "index": 1,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-1f5f8dc3e1b039c2081ed884",
-      "source": "out/2026/google.csv",
-      "index": 2,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-014a261e53125b2691a2aa24",
-      "source": "out/2026/google.csv",
-      "index": 3,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-25b0e9cad79903f38e384ed6",
-      "source": "out/2026/google.csv",
-      "index": 4,
-      "remaining_qa": 3
-    },
-    {
       "chunk_id": "knowledge-cbb7513d88338289cd2dba9e",
       "source": "out/2026/google.csv",
       "index": 5,
@@ -9590,63 +8708,9 @@
       "remaining_qa": 3
     },
     {
-      "chunk_id": "knowledge-806fa4bc35bdf25de113242a",
-      "source": "out/2026/google.csv",
-      "index": 10,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-9668bab7250b35f6b81658d0",
-      "source": "out/2026/google.csv",
-      "index": 11,
-      "remaining_qa": 3
-    },
-    {
       "chunk_id": "knowledge-9a0ce4da0b2e97b2556ed439",
       "source": "out/2026/google.csv",
       "index": 12,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-ad80052a0bba95492a7f50cb",
-      "source": "out/2026/google.csv",
-      "index": 13,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-2aaa5a99016a1f41da91dbba",
-      "source": "out/2026/google.csv",
-      "index": 14,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-c6faa0682fa7771698086f01",
-      "source": "out/2026/google.csv",
-      "index": 15,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-faacc0c07a1be1332442087f",
-      "source": "out/2026/notion.csv",
-      "index": 0,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-0d96cf5d70ed38305afb722f",
-      "source": "out/2026/notion.csv",
-      "index": 1,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-04472e721f549afbc6e742db",
-      "source": "out/2026/notion.csv",
-      "index": 2,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-13341db85693fc6ba33fe1af",
-      "source": "out/2026/notion.csv",
-      "index": 3,
       "remaining_qa": 3
     },
     {
@@ -9689,24 +8753,6 @@
       "chunk_id": "knowledge-0ee861d0e3d1a7e5ded345da",
       "source": "out/2026/notion.csv",
       "index": 10,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-aeadaf8164f845ffbe66edd7",
-      "source": "out/2026/notion.csv",
-      "index": 11,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-50ba43424e1638649829d868",
-      "source": "out/2026/notion.csv",
-      "index": 12,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-4a22a23ae7f89e2d38ee5a6c",
-      "source": "out/2026/notion.csv",
-      "index": 13,
       "remaining_qa": 3
     },
     {
@@ -9824,36 +8870,6 @@
       "remaining_qa": 3
     },
     {
-      "chunk_id": "knowledge-85663a57ddc0c4023754bbd8",
-      "source": "out/2026/source.csv",
-      "index": 0,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-859013e680401896472d06d1",
-      "source": "out/2026/source.csv",
-      "index": 1,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-5e846afb2e672932478d6b65",
-      "source": "out/2026/source.csv",
-      "index": 2,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-41435a114ff49789a699a334",
-      "source": "out/2026/source.csv",
-      "index": 3,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-802571bbfaa47db7521ac986",
-      "source": "out/2026/source.csv",
-      "index": 4,
-      "remaining_qa": 3
-    },
-    {
       "chunk_id": "knowledge-a91172637987910ae93f4194",
       "source": "out/2026/source.csv",
       "index": 5,
@@ -9878,45 +8894,9 @@
       "remaining_qa": 3
     },
     {
-      "chunk_id": "knowledge-8fcbb7bad89eb2fdba755f19",
-      "source": "out/2026/source.csv",
-      "index": 9,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-ab32e098f5dc0d8b1ba912f2",
-      "source": "out/2026/source.csv",
-      "index": 10,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-1eefdca88bd571c0ab2451c0",
-      "source": "out/2026/source.csv",
-      "index": 11,
-      "remaining_qa": 3
-    },
-    {
       "chunk_id": "knowledge-17a4604e1a0f68082a62ac1d",
       "source": "out/2026/source.csv",
       "index": 12,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-eabe0d0509a9dc2226c9fd6d",
-      "source": "out/2026/source.csv",
-      "index": 13,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-ab40d2955c910de62df141ea",
-      "source": "out/2026/source.csv",
-      "index": 14,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-850ff73d6da4f426cb6d9f47",
-      "source": "out/2026/source.csv",
-      "index": 15,
       "remaining_qa": 3
     },
     {
@@ -9992,57 +8972,15 @@
       "remaining_qa": 3
     },
     {
-      "chunk_id": "knowledge-4c815f8499935d3a1fc1e39a",
-      "source": "out/2027/events.json",
-      "index": 0,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-0c7d75a63f34a66bd6fa0587",
-      "source": "out/2027/events.json",
-      "index": 1,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-82fe48c5175abffd9350042a",
-      "source": "out/2027/events.json",
-      "index": 2,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-6f6ffb303c8299268764b4ba",
-      "source": "out/2027/google.csv",
-      "index": 0,
-      "remaining_qa": 3
-    },
-    {
       "chunk_id": "knowledge-c91cc3df9efe0ba73af84272",
       "source": "out/2027/google.csv",
       "index": 1,
       "remaining_qa": 3
     },
     {
-      "chunk_id": "knowledge-31b6ff83813ddeb3c337786b",
-      "source": "out/2027/notion.csv",
-      "index": 0,
-      "remaining_qa": 3
-    },
-    {
       "chunk_id": "knowledge-682ec989a2e4e2aa83497bbd",
       "source": "out/2027/practice-summary.md",
       "index": 0,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-dcc725053f4066bae31859e1",
-      "source": "out/2027/source.csv",
-      "index": 0,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-37d75c84d8cfde92302259ce",
-      "source": "out/2027/source.csv",
-      "index": 1,
       "remaining_qa": 3
     },
     {
@@ -11981,6 +10919,6 @@
   "limitations": [
     "Literal grounding and manual review records are checked; not automatic semantic proof."
   ],
-  "checkpoint": "Second reviewed checkpoint; full goal remains in progress.",
+  "checkpoint": "Third reviewed checkpoint; full goal remains in progress.",
   "media_remaining": "44 media assets still need verified textual equivalents or visual review before full coverage can be claimed."
 }

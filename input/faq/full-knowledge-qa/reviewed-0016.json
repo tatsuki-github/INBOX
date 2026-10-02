@@ -1,0 +1,353 @@
+{
+  "version": 1,
+  "entries": [
+    {
+      "id": "fullchunkqa-57de14863a029695cc947a84-1",
+      "chunk_id": "knowledge-57de14863a029695cc947a84",
+      "questions": [
+        "Bakkenのmicro-recoveryの説明では、インターバルの短い休止を何秒とし、どのような回復を挙げている？"
+      ],
+      "answer": "30〜90秒とし、筋緊張の部分的な正常化、pHバランスの改善、神経系の短い休息を挙げています。これは本書の説明で、練習後の回復も速いという部分は著者の経験として述べられています。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "In just 30-90 seconds, a cascade of adaptations occurs: muscle tone partially normalizes, pH balance improves, and the nervous system gets a brief rest."
+        },
+        {
+          "kind": "quote",
+          "text": "In my experience, post-workout recovery is also faster because of this."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Author-specific examples and theory, preserving uncertainty and experiential qualifications."
+      }
+    },
+    {
+      "id": "fullchunkqa-57de14863a029695cc947a84-2",
+      "chunk_id": "knowledge-57de14863a029695cc947a84",
+      "questions": [
+        "Bakkenは連続した速い走りを単発でも禁止している？インターバル重視は何を基準にしている？"
+      ],
+      "answer": "単発の連続した速い走りを禁止していません。個々のセッションだけでなく、モデル全体が組み合う構造としてインターバルを重視し、連続走を長期的に採用するなら十分な理由が必要という方針です。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "It's a structural framework for getting all the parts to fit together."
+        },
+        {
+          "kind": "quote",
+          "text": "Individual sessions with continuous faster runs don't hurt, but there should be good reasons for doing this over the long term."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Author-specific examples and theory, preserving uncertainty and experiential qualifications."
+      }
+    },
+    {
+      "id": "fullchunkqa-57de14863a029695cc947a84-3",
+      "chunk_id": "knowledge-57de14863a029695cc947a84",
+      "questions": [
+        "Bakkenはprogressive 45/15を、閾値練習の目的とどう両立させる例として挙げている？"
+      ],
+      "answer": "閾値練習の制御や目的を保ちながら、より高い速度の要素を含める例です。短い反復で速く走れたことだけを、閾値の制御を外す理由とはしていません。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "Interval-based threshold training provides a speed element without sacrificing control or effectiveness, and it allows more total training."
+        },
+        {
+          "kind": "quote",
+          "text": "you can include sessions such as progressive 45/15 intervals to achieve even higher speeds while maintaining the focus on threshold training."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Author-specific examples and theory, preserving uncertainty and experiential qualifications."
+      }
+    },
+    {
+      "id": "fullchunkqa-8601ef82fe226f3d6800479a-1",
+      "chunk_id": "knowledge-8601ef82fe226f3d6800479a",
+      "questions": [
+        "Bakkenが2025年にCarl Fosterと共著したインターバルトレーニングのレビューは、どの雑誌に掲載されたと本に書かれている？"
+      ],
+      "answer": "Applied Physiology, Nutrition, and Metabolismです。記事名は「History and perspectives on interval training in sport, health, and disease」と記載されています。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "In 2025, I had the opportunity to write about this topic together with the physiologist Carl Foster."
+        },
+        {
+          "kind": "quote",
+          "text": "\"History and perspectives on interval training in sport, health, and disease,\" published in Applied Physiology, Nutrition, and Metabolism."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Author-specific examples and theory, preserving uncertainty and experiential qualifications."
+      }
+    },
+    {
+      "id": "fullchunkqa-8601ef82fe226f3d6800479a-2",
+      "chunk_id": "knowledge-8601ef82fe226f3d6800479a",
+      "questions": [
+        "Bakkenのマラソンの例外では、20〜40分の連続走にどんな狙いを挙げている？"
+      ],
+      "answer": "ハーフマラソンとマラソンでは、一定ペースの精神的持久力、脂肪酸化、競技でのペース判断、マラソン終盤に必要な特異的持久力を挙げています。インターバルだけでは得にくい適応を補う位置付けです。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "For the half marathon and marathon, longer continuous running efforts of 20-40 minutes can provide adaptations difficult to achieve through intervals alone."
+        },
+        {
+          "kind": "quote",
+          "text": "You develop mental endurance at a constant pace, improve fat oxidation, train pace judgment for competition, and build the specific endurance required toward the end of a marathon."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Author-specific examples and theory, preserving uncertainty and experiential qualifications."
+      }
+    },
+    {
+      "id": "fullchunkqa-8601ef82fe226f3d6800479a-3",
+      "chunk_id": "knowledge-8601ef82fe226f3d6800479a",
+      "questions": [
+        "Bakkenの1分反復で維持できたペースを6分×6本へそのまま移してよい？本人の例はどう説明されている？"
+      ],
+      "answer": "そのまま移す案内ではありません。好調時の1分反復20〜25本では5kmペースに近くても閾値付近の負荷を保てた一方、同じペースの6分×6本では乳酸が反復ごとに上がり、目的に反すると述べています。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "When I ran 20-25 times one-minute intervals, in peak form I could often hold a pace not far from 5K pace while the effort level stayed stable near the threshold."
+        },
+        {
+          "kind": "quote",
+          "text": "Had I tried to hold the same pace in 6 × 6 minutes, lactate would have crept upward with each interval and the session would have worked against its purpose."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Author-specific examples and theory, preserving uncertainty and experiential qualifications."
+      }
+    },
+    {
+      "id": "fullchunkqa-9fe040b05e4185b907cdd6fb-1",
+      "chunk_id": "knowledge-9fe040b05e4185b907cdd6fb",
+      "questions": [
+        "Bakkenの長い反復11〜20分は、本人はどの程度の頻度で使い、連続負担を分ける例は？"
+      ],
+      "answer": "本人は控えめに、10〜14日に1回程度使ったと述べています。分ける例は閾値8分、ジョグ回復4分、再び閾値8分です。普遍的な頻度の指定ではなく、本書の実施経験と例です。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "Long intervals (11-20 minutes) teach the body to maintain a stable pace over longer periods. I used these sparingly, perhaps once every 10-14 days."
+        },
+        {
+          "kind": "quote",
+          "text": "8 minutes threshold, 4 minutes jogging recov-ery, then 8 minutes threshold again."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Author-specific examples and theory, preserving uncertainty and experiential qualifications."
+      }
+    },
+    {
+      "id": "fullchunkqa-9fe040b05e4185b907cdd6fb-2",
+      "chunk_id": "knowledge-9fe040b05e4185b907cdd6fb",
+      "questions": [
+        "BakkenのMixed Sessionsで、3分・6分・9分・6分・3分のピラミッドの休止と、終了後の追加例は？"
+      ],
+      "answer": "反復間の休止は20秒で、最後に20秒走・20秒休息を5〜10本行う例が挙げられています。途中で最長になってから短くする構造です。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "pyramid sessions such as 3-6-9-6-3 minutes with 20 seconds rest, ideally finished with 5-10 × 20/20. The session builds up, peaks in the middle, then steps down."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Author-specific examples and theory, preserving uncertainty and experiential qualifications."
+      }
+    },
+    {
+      "id": "fullchunkqa-9fe040b05e4185b907cdd6fb-3",
+      "chunk_id": "knowledge-9fe040b05e4185b907cdd6fb",
+      "questions": [
+        "BakkenのMixed Sessionsは、最後の反復だけ限界まで強くして締める案内？"
+      ],
+      "answer": "そうではありません。最初と最後を強くしすぎず、穏やかな開始と終了を求めています。開始が強すぎると負荷が準備前に蓄積し、終了が強すぎると翌日の休息日に不要な筋緊張と消耗を持ち込むという説明です。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "Make sure the first and last intervals are not too intense."
+        },
+        {
+          "kind": "quote",
+          "text": "You want a soft start and a soft landing."
+        },
+        {
+          "kind": "quote",
+          "text": "Start too hard and the load accumulates before the body is ready"
+        },
+        {
+          "kind": "quote",
+          "text": "Finish too hard and you go into the next rest day with unnecessarily high muscle tone and wear."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Author-specific examples and theory, preserving uncertainty and experiential qualifications."
+      }
+    },
+    {
+      "id": "fullchunkqa-44404edf70c13b3c8889bd09-1",
+      "chunk_id": "knowledge-44404edf70c13b3c8889bd09",
+      "questions": [
+        "Bakkenの6つの柱を自分の練習へ取り入れる際、最初から全てを変えるよう勧めている？"
+      ],
+      "answer": "全てを一度に変えるのではなく、今の自分に関係が深い1〜2の原則を選んで一貫して実施し、その後に広げるよう勧めています。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "The point is not to overhaul everything at once."
+        },
+        {
+          "kind": "quote",
+          "text": "Pick one or two principles that feels most relevant to where you are now, and apply it consistently, before expanding."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Author-specific examples and theory, preserving uncertainty and experiential qualifications."
+      }
+    },
+    {
+      "id": "fullchunkqa-44404edf70c13b3c8889bd09-2",
+      "chunk_id": "knowledge-44404edf70c13b3c8889bd09",
+      "questions": [
+        "Bakkenは6つの柱のうち最も見落とされがちなものを何とし、次章の開始テーマにしている？"
+      ],
+      "answer": "著者の経験では筋系です。肺・心拍・乳酸に注目する一方、各歩の負担を受け止める脚が制約になることを過小評価しがちだとし、次章はインターバルや乳酸値ではなく筋系と耐久性から始めると説明しています。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "The most overlooked of the six pillars, in my experience, is the muscular system."
+        },
+        {
+          "kind": "quote",
+          "text": "They underestimate how often the legs are the limiting factor"
+        },
+        {
+          "kind": "quote",
+          "text": "That is why the next chapter starts there, not with intervals or lactate values, but with the muscular system and what it means for durability in particular."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Author-specific examples and theory, preserving uncertainty and experiential qualifications."
+      }
+    },
+    {
+      "id": "fullchunkqa-44404edf70c13b3c8889bd09-3",
+      "chunk_id": "knowledge-44404edf70c13b3c8889bd09",
+      "questions": [
+        "Bakkenが16歳のBislettの800m前夜に脚の弾みを感じた話は、その時すでに筋緊張の仕組みを理解していたという話？"
+      ],
+      "answer": "その時点では筋緊張や弾性の概念を理解していなかったと述べています。翌日に自己ベストを出した経験を、長年の触診・実験・乳酸テストを通じて後から理解していったという本人の回想です。一般的な因果関係の証明としては扱えません。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "I was sixteen the first time I felt it"
+        },
+        {
+          "kind": "quote",
+          "text": "It was the evening before an 800 meters race at Bislett stadion."
+        },
+        {
+          "kind": "quote",
+          "text": "The next day I ran a personal best."
+        },
+        {
+          "kind": "quote",
+          "text": "I had no framework for it—no knowledge of muscle tone, no concept of baseline tension or elasticity."
+        },
+        {
+          "kind": "quote",
+          "text": "It took years of palpating my own muscles, of deliberate experimentation"
+        },
+        {
+          "kind": "quote",
+          "text": "and thousands of lactate tests, before I could explain what I had felt that evening."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Author-specific examples and theory, preserving uncertainty and experiential qualifications."
+      }
+    }
+  ]
+}
