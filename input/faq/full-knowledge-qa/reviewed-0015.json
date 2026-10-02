@@ -1,0 +1,353 @@
+{
+  "version": 1,
+  "entries": [
+    {
+      "id": "fullchunkqa-594323cfc31ed34089c525c0-1",
+      "chunk_id": "knowledge-594323cfc31ed34089c525c0",
+      "questions": [
+        "BakkenのGeneral Loadでは、エリート向けのダブル閾値練習の頻度を、忙しい一般ランナーにも一律に適用する？"
+      ],
+      "answer": "一律には適用していません。著者の経験ではエリートは週2〜3回のダブル閾値練習が必要量に近い一方、それより下の水準では忙しい生活の中で確保できる時間によると説明しています。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "Sufficient volume varies from athlete to athlete."
+        },
+        {
+          "kind": "quote",
+          "text": "My experience is that by running two to three double threshold sessions per week, you are very close to what you need if you are elite. At all levels below that, it comes down to how much time allows in a busy daily life."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Author-specific training theory; preserve level dependence, uncertainty, and experiential qualifications."
+      }
+    },
+    {
+      "id": "fullchunkqa-594323cfc31ed34089c525c0-2",
+      "chunk_id": "knowledge-594323cfc31ed34089c525c0",
+      "questions": [
+        "BakkenのGolden Zone内の変化には、反復時間以外に何が挙げられ、負荷の移行はどう扱う？"
+      ],
+      "answer": "強度、休息時間、路面の変化も挙げています。ただし負荷の移行はけがの危険が高いとして、閾値練習以外の要素へは滑らかで段階的かつ制御した移行を勧めています。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "Rest: rest duration affects how the body responds, especially in shorter intervals"
+        },
+        {
+          "kind": "quote",
+          "text": "Surface: vary between track, asphalt, gravel, and treadmill"
+        },
+        {
+          "kind": "quote",
+          "text": "Transitions in load are high-risk for injuries. I always recommend smooth and gradual, controlled transitions to all training elements other than threshold training."
+        },
+        {
+          "kind": "quote",
+          "text": "Intensity: from below threshold"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Author-specific training theory; preserve level dependence, uncertainty, and experiential qualifications."
+      }
+    },
+    {
+      "id": "fullchunkqa-594323cfc31ed34089c525c0-3",
+      "chunk_id": "knowledge-594323cfc31ed34089c525c0",
+      "questions": [
+        "BakkenのSpecific Loadでは、週4時間の一般ランナーにも閾値超の練習を必須としている？"
+      ],
+      "answer": "必須とはしていません。強い練習の最小量は水準と個人に応じて慎重に判断するとし、週4時間の一般ランナーでは、イージー走、適切に調整した閾値練習、時々のテストレースや競技会以外が必要かは確実ではないと説明しています。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "A minimum of more intense work must be weighed carefully. It's both level-specific and individual."
+        },
+        {
+          "kind": "quote",
+          "text": "For recreational runners who train four hours per week, it's not certain that anything other than easy running, well-regulated threshold training, and occasional test races and competitions is needed."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Author-specific training theory; preserve level dependence, uncertainty, and experiential qualifications."
+      }
+    },
+    {
+      "id": "fullchunkqa-50f763c85fd78bfa6ebb1179-1",
+      "chunk_id": "knowledge-50f763c85fd78bfa6ebb1179",
+      "questions": [
+        "Bakkenの坂練習の説明で、自転車・水泳・スキーを多く入れない理由は？代替練習を完全に禁止している？"
+      ],
+      "answer": "走動作に固有の運動単位と適応を重視するためです。代替練習が合う人もいると認めていますが、採用する場合は練習構造全体との関係を慎重に検討する方針です。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "the model has few elements of alternative training with other movement forms such as cycling, swimming, or skiing."
+        },
+        {
+          "kind": "quote",
+          "text": "Adaptation to load is running-specific."
+        },
+        {
+          "kind": "quote",
+          "text": "For some, alternative training can work. If done, it must be weighed carefully against the structure as a whole."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Author-specific training theory; preserve level dependence, uncertainty, and experiential qualifications."
+      }
+    },
+    {
+      "id": "fullchunkqa-50f763c85fd78bfa6ebb1179-2",
+      "chunk_id": "knowledge-50f763c85fd78bfa6ebb1179",
+      "questions": [
+        "BakkenのOptimized Loadのdrip loadは、複数の新要素を一度に追加して判定する方法？"
+      ],
+      "answer": "一度に1要素を、期間を定めて試し、モデルの中心へ及ぼす影響を観察する方法です。最小有効量を少しずつ追加し、有酸素の土台を大きく、または長く損なわない範囲で効果と負担を検討します。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "Test one element at a time for a defined period, and monitor whether it affects the center of the model."
+        },
+        {
+          "kind": "quote",
+          "text": "No training elements are permitted to degrade the aerobic base too much or for too long"
+        },
+        {
+          "kind": "quote",
+          "text": "Then you drip in the minimum effective dose and weigh it against positive and negative effects around the center."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Author-specific training theory; preserve level dependence, uncertainty, and experiential qualifications."
+      }
+    },
+    {
+      "id": "fullchunkqa-50f763c85fd78bfa6ebb1179-3",
+      "chunk_id": "knowledge-50f763c85fd78bfa6ebb1179",
+      "questions": [
+        "BakkenのOptimized Loadで、得意な能力をX-sessionで伸ばすとき、週の基本負荷も増やしてよい？"
+      ],
+      "answer": "週の基本負荷を上げないことが条件です。週1回の変化を持つX-sessionを範囲内に収めたうえで、既に得意な能力をさらに伸ばす機会として説明しています。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "A third option is to reinforce qualities that are already strong, without raising the baseline load of the model."
+        },
+        {
+          "kind": "quote",
+          "text": "the single varying session each week in the Norwegian Method."
+        },
+        {
+          "kind": "quote",
+          "text": "as long as it stays bounded and does not raise the baseline load of the week."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Author-specific training theory; preserve level dependence, uncertainty, and experiential qualifications."
+      }
+    },
+    {
+      "id": "fullchunkqa-be0e24a1ddadbac7c6b294ba-1",
+      "chunk_id": "knowledge-be0e24a1ddadbac7c6b294ba",
+      "questions": [
+        "Bakkenの第3の柱でいうmuscle toneとは何を指し、高い場合と低い場合をどう説明している？"
+      ],
+      "answer": "安静時と負荷時の筋の基礎的な緊張、つまりどの程度張っているかを指します。本書では高いと内部抵抗と硬さが大きく、低いと柔軟性が高いと説明しています。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "Muscle tone means the baseline tension level—how \"tight\" a muscle is at rest and under load. High muscle tone means more internal resistance and stiffer muscles. Low muscle tone means more pliability."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Author-specific training theory; preserve level dependence, uncertainty, and experiential qualifications."
+      }
+    },
+    {
+      "id": "fullchunkqa-be0e24a1ddadbac7c6b294ba-2",
+      "chunk_id": "knowledge-be0e24a1ddadbac7c6b294ba",
+      "questions": [
+        "Bakkenは24時間のブロック化と、きつい練習の間のイージー日をどのように関連付けている？"
+      ],
+      "answer": "負荷をかけた翌日に筋緊張が高まり弾性が低下するという考えから、24時間内への練習の集約を説明しています。一方、きつい日の間は筋緊張を下げるため完全に保護し、イージー日のスピード・筋力などの負荷を制限する方針です。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "within a 24-hour window, you can often include a lot of training because muscle tone mainly increases and elasticity decreases the day after these loading periods."
+        },
+        {
+          "kind": "quote",
+          "text": "The days between hard training days should be completely protected to achieve this."
+        },
+        {
+          "kind": "quote",
+          "text": "Limit speed, strength, or other types of load on the easy days."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Author-specific training theory; preserve level dependence, uncertainty, and experiential qualifications."
+      }
+    },
+    {
+      "id": "fullchunkqa-be0e24a1ddadbac7c6b294ba-3",
+      "chunk_id": "knowledge-be0e24a1ddadbac7c6b294ba",
+      "questions": [
+        "Bakkenのイージー走の説明では、その日調子がよくてペースが上がった場合、翌日はどうする案内？"
+      ],
+      "answer": "翌日はイージー練習か休息を選ぶ案内です。調子がよい日も、閾値練習との負荷の差を保つため、イージー走を始めから終わりまで一貫して抑える方針です。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "You want distance and variation in load between threshold sessions and easy runs."
+        },
+        {
+          "kind": "quote",
+          "text": "You get this by being completely consistent on this point, the entire run from beginning to end."
+        },
+        {
+          "kind": "quote",
+          "text": "If you drift up in pace because that particular day was the day you felt like it, choose easy training or rest the following day."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Author-specific training theory; preserve level dependence, uncertainty, and experiential qualifications."
+      }
+    },
+    {
+      "id": "fullchunkqa-30c2ffe58ffc04cbee00e677-1",
+      "chunk_id": "knowledge-30c2ffe58ffc04cbee00e677",
+      "questions": [
+        "Bakkenは多様な練習で直ちに反応が出ることを、長期的に最も有効な練習の証明と扱っている？"
+      ],
+      "answer": "直ちに反応が出ることを、そのまま長期的な最適性の証明とは扱っていません。多様性で負荷を複数の系統へ薄く配分すると、Golden Zoneで必要量を確保する余地を失うと考え、最小限の変化と精密な監視を重視しています。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "This type of variety often produces immediate effects, which gives many a kind of \"proof\" that the training is most effective."
+        },
+        {
+          "kind": "quote",
+          "text": "Add too much else, and you lose the capacity to train enough in the zone that actually moves you forward."
+        },
+        {
+          "kind": "quote",
+          "text": "variety is used to a necessary minimum, but with an utterly extreme focus on precise monitoring to never stray too far from center."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Author-specific training theory; preserve level dependence, uncertainty, and experiential qualifications."
+      }
+    },
+    {
+      "id": "fullchunkqa-30c2ffe58ffc04cbee00e677-2",
+      "chunk_id": "knowledge-30c2ffe58ffc04cbee00e677",
+      "questions": [
+        "BakkenのDurabilityの説明で、ほぼ最大能力のインターバル後の回復期間は一定？それが継続性にどう関係する？"
+      ],
+      "answer": "一定ではなく、2日から1週間まで変わり得ると説明しています。閾値練習では回復を予測しやすいという著者の考えに基づき、過負荷で適切な練習が長く途切れることを避ける継続性を重視しています。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "after a hard interval session near maximum capacity, recovery needs can vary from two days to a week."
+        },
+        {
+          "kind": "quote",
+          "text": "The direct result of predictable recovery is continuity over time, where you never have extended periods of suboptimal load due to overload."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Author-specific training theory; preserve level dependence, uncertainty, and experiential qualifications."
+      }
+    },
+    {
+      "id": "fullchunkqa-30c2ffe58ffc04cbee00e677-3",
+      "chunk_id": "knowledge-30c2ffe58ffc04cbee00e677",
+      "questions": [
+        "Bakkenの長期向上の説明にあるエピジェネティックな適応は、実証済みの結論として書かれている？"
+      ],
+      "answer": "この箇所では著者の推測として書かれています。長期のエピジェネティックな適応とレースに似た負荷の大きな量が、毎季の向上を可能にするのではないかと述べており、この文章だけで実証済みとは言えません。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "I suspect that epigenetic adaptations over time, combined with the large volume of race-similar load, make it possible to improve season after season."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Author-specific training theory; preserve level dependence, uncertainty, and experiential qualifications."
+      }
+    }
+  ]
+}

@@ -1,19 +1,22 @@
 {
-  "removed_records": 14,
+  "removed_records": 16,
   "scrubbed_personal_memos": 14,
-  "removed_prepared_ids": [
-    "cal-2026-20260801-玉名選手権参加料返金口座の連絡メールの送信",
-    "calx-2026-20260801-玉名選手権参加料返金口座の連絡メールの送信",
-    "cal-2026-20260101-資産",
-    "cal-2026-20260201-資産",
-    "cal-2026-20260302-資産",
-    "cal-2026-20260401-資産",
-    "cal-2026-20260412-資産",
-    "cal-2026-20260724-給与振り込み",
-    "guide-2026-p36",
-    "cal-2025-20251201-資産",
-    "chunkqa-d01160152e9d34859c0842a7-2"
-  ],
   "scrubbed_prepared_ids": [],
-  "policy": "No account credentials, identity numbers, private salary or asset amounts, remuneration, private individual health or personality evaluations in source knowledge or QAs."
+  "policy": "No account credentials, identity numbers, private salary or asset amounts, remuneration, private individual health or personality evaluations in source knowledge or QAs.",
+  "removed_prepared_id_hashes": [
+    "1929b74b487c8160cbb28ecefa4a49593a97b7df379835277c5293c5403a963e",
+    "62112af1d0eb60b6eaa2721c32c5f2b4c49396d7ae7da2b2487c1d5fac393343",
+    "d6b9e97594eb4089df562f4b9a11e6a86ca8786d10a1a5cc3247f86f49031f6c",
+    "e07d8c2e735e46d19eeee2dd7b3c8dcedb6168ef2b7d49e16cf8cc38593b5a14",
+    "0c174e8827244a6cab22c716fcd4b5163a0e5d5a81e61367e3c443917a415afa",
+    "d86e6c8e9f9c43eeb77ba50cde5711872b9b5e5b55c2a2bcdbb98980469aee01",
+    "2fbf3e371e31377d901ae009863c6d8b723b732a410368e2a2de6ee147ec0e65",
+    "45f21068aea55ca6fe431b9b2f15cc28cae521ea32d3321cd1fc33b3fbb8e317",
+    "d70e93969f230421138ca777d3aaee4121789711cebdcc639e59cb6855d869a9",
+    "12608c1de15fad4d0615cfec6d24b238e6c549bf523dfa39e5b714bf486192c5",
+    "6665d0782a23da7e2d9013d4557781bf69a9a67fff329b2256cca41be23b1a3e",
+    "ac5651b2d93df9aa527c6f7f4c7bb5bf0f6408bbb3704cfed4af30f84f94e09d"
+  ],
+  "removed_prepared_count": 12,
+  "scrubbed_booking_credentials": 3
 }
