@@ -1,0 +1,321 @@
+{
+  "version": 1,
+  "entries": [
+    {
+      "id": "fullchunkqa-bae04bb2c93f754c7677acc3-1",
+      "chunk_id": "knowledge-bae04bb2c93f754c7677acc3",
+      "questions": [
+        "RRI治癒エビデンス調査メモは、PRISMA準拠の正式なシステマティックレビュー？"
+      ],
+      "answer": "正式なレビューではなく、AIエージェントによる迅速なエビデンス・スコーピングレビューと自己位置付けています。検索の網羅性は保証せず、見つけていない重要研究の可能性を認めています。メモが引用の実在確認を述べていても、正式な体系的検索や質評価と同一にはしません。",
+      "sources": [
+        "input/memos/rri_healing_evidence_review.md"
+      ],
+      "source_sha256": "f237f7958e8cb292080527154763d2093a54fc4f248c3e1c0cd69f1161c0e79e",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "rapid evidence scoping review）であり、PRISMA準拠の正式なシステマティックレビューではない。"
+        },
+        {
+          "kind": "quote",
+          "text": "網羅的な文献検索ではないため"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Repository rapid scoping memo, not an independent systematic review; prevention versus healing, proxy versus clinical outcomes and methodological limitations retained, no individual treatment or clearance."
+      }
+    },
+    {
+      "id": "fullchunkqa-bae04bb2c93f754c7677acc3-2",
+      "chunk_id": "knowledge-bae04bb2c93f754c7677acc3",
+      "questions": [
+        "RRI治癒エビデンス調査メモのA・B・C・D区分は、何を測った研究を区別する？"
+      ],
+      "answer": "Aは実際の治癒・競技復帰、Bは疼痛、Cは筋力・可動域などの機能、Dは生体力学のみです。代理指標の改善だけから治癒期間や復帰率が良くなったとはしないための区分です。",
+      "sources": [
+        "input/memos/rri_healing_evidence_review.md"
+      ],
+      "source_sha256": "f237f7958e8cb292080527154763d2093a54fc4f248c3e1c0cd69f1161c0e79e",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "A（実際の治癒・競技復帰を測定）／B（疼痛を測定）／C（筋力・ROM等の機能を測定）／D（生体力学のみ）"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Repository rapid scoping memo, not an independent systematic review; prevention versus healing, proxy versus clinical outcomes and methodological limitations retained, no individual treatment or clearance."
+      }
+    },
+    {
+      "id": "fullchunkqa-bae04bb2c93f754c7677acc3-3",
+      "chunk_id": "knowledge-bae04bb2c93f754c7677acc3",
+      "questions": [
+        "RRI調査メモの治癒7段階では、痛みが消えることと長期再発なしの継続をどう区別する？"
+      ],
+      "answer": "疼痛消失は段階①、1年以上再発せず競技を継続するのは⑦です。間に日常動作、ランニング再開、元の量、元の成績、組織治癒の段階があり、痛みの消失で全てを達成したと判断しない整理です。",
+      "sources": [
+        "input/memos/rri_healing_evidence_review.md"
+      ],
+      "source_sha256": "f237f7958e8cb292080527154763d2093a54fc4f248c3e1c0cd69f1161c0e79e",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "① 疼痛消失"
+        },
+        {
+          "kind": "quote",
+          "text": "⑦ 長期的な再発なき競技継続"
+        },
+        {
+          "kind": "quote",
+          "text": "1年以上再発せず競技を継続できる"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Repository rapid scoping memo, not an independent systematic review; prevention versus healing, proxy versus clinical outcomes and methodological limitations retained, no individual treatment or clearance."
+      }
+    },
+    {
+      "id": "fullchunkqa-2cfbd0cd38ebffb8c05e2215-1",
+      "chunk_id": "knowledge-2cfbd0cd38ebffb8c05e2215",
+      "questions": [
+        "RRI調査メモが紹介するRio 2015のアイソメトリック研究は、長期の治癒促進を証明した？"
+      ],
+      "answer": "メモはn=6の小規模クロスオーバー研究による即時的な鎮痛と機能の結果で、長期の治癒促進を示さないと区別しています。痛みの一時的低下を競技復帰や組織治癒の証明と読み替えません。",
+      "sources": [
+        "input/memos/rri_healing_evidence_review.md"
+      ],
+      "source_sha256": "f237f7958e8cb292080527154763d2093a54fc4f248c3e1c0cd69f1161c0e79e",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "小規模クロスオーバー研究（n=6）であり、長期的な治癒促進を示すものではない"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Repository rapid scoping memo, not an independent systematic review; prevention versus healing, proxy versus clinical outcomes and methodological limitations retained, no individual treatment or clearance."
+      }
+    },
+    {
+      "id": "fullchunkqa-2cfbd0cd38ebffb8c05e2215-2",
+      "chunk_id": "knowledge-2cfbd0cd38ebffb8c05e2215",
+      "questions": [
+        "RRI調査メモでは、クロストレーニングによる心肺機能維持と、治癒が早まることを同じ証拠としている？"
+      ],
+      "answer": "同じにはしていません。患部への負荷を減らしながら心肺機能などを保つ合理性を述べる一方、治癒促進を直接検証した高品質RCTは本調査で見つからなかったとしています。個別の傷害にどの運動が適切かをこの回答だけで決めません。",
+      "sources": [
+        "input/memos/rri_healing_evidence_review.md"
+      ],
+      "source_sha256": "f237f7958e8cb292080527154763d2093a54fc4f248c3e1c0cd69f1161c0e79e",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "「クロストレーニングが治癒を早める」ことを直接RCTで検証した高品質研究は本調査では見つからなかった"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Repository rapid scoping memo, not an independent systematic review; prevention versus healing, proxy versus clinical outcomes and methodological limitations retained, no individual treatment or clearance."
+      }
+    },
+    {
+      "id": "fullchunkqa-2cfbd0cd38ebffb8c05e2215-3",
+      "chunk_id": "knowledge-2cfbd0cd38ebffb8c05e2215",
+      "questions": [
+        "RRI調査メモのPEACE & LOVEは、直接の比較RCTによる決定的な結論として扱われている？"
+      ],
+      "answer": "専門家の提言であるeditorialとして扱い、直接の比較試験ではなく、炎症と修復の理論的根拠に基づくが決定的なRCT証拠ではないとしています。薬やアイスを個人が一律にやめる指示にしません。",
+      "sources": [
+        "input/memos/rri_healing_evidence_review.md"
+      ],
+      "source_sha256": "f237f7958e8cb292080527154763d2093a54fc4f248c3e1c0cd69f1161c0e79e",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "editorial（専門家の意見、エビデンス：弱、区分：主張のみ・直接の比較試験ではない）"
+        },
+        {
+          "kind": "quote",
+          "text": "決定的なRCTエビデンスに基づくものではなく"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Repository rapid scoping memo, not an independent systematic review; prevention versus healing, proxy versus clinical outcomes and methodological limitations retained, no individual treatment or clearance."
+      }
+    },
+    {
+      "id": "fullchunkqa-9cb033e087d41997cb3e9c55-1",
+      "chunk_id": "knowledge-9cb033e087d41997cb3e9c55",
+      "questions": [
+        "RRI調査メモは、睡眠不足による傷害発生リスクと受傷後の治癒速度を同じアウトカムとする？"
+      ],
+      "answer": "区別しています。睡眠不足と発生リスクの研究を紹介しますが、睡眠延長と通常睡眠で受傷後の治癒期間を比較する高品質介入研究は本調査で確認できなかったとしています。発生との関連を治療効果に読み替えません。",
+      "sources": [
+        "input/memos/rri_healing_evidence_review.md"
+      ],
+      "source_sha256": "f237f7958e8cb292080527154763d2093a54fc4f248c3e1c0cd69f1161c0e79e",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "「傷害の発生リスク」に関するエビデンス"
+        },
+        {
+          "kind": "quote",
+          "text": "睡眠延長 vs 通常睡眠でのRRI治癒期間比較RCT"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Repository rapid scoping memo, not an independent systematic review; prevention versus healing, proxy versus clinical outcomes and methodological limitations retained, no individual treatment or clearance."
+      }
+    },
+    {
+      "id": "fullchunkqa-9cb033e087d41997cb3e9c55-2",
+      "chunk_id": "knowledge-9cb033e087d41997cb3e9c55",
+      "questions": [
+        "RRI調査メモで、ACWRの数値目標を傷害リスク低減の臨床判断に使う際の問題は？"
+      ],
+      "answer": "数学的結合による疑似相関、因果関係の未証明、離散化バイアスなどの方法論的批判を紹介しています。ACWRや10%ルールの厳密な数値を、傷害を防ぐ保証として扱わない整理です。",
+      "sources": [
+        "input/memos/rri_healing_evidence_review.md"
+      ],
+      "source_sha256": "f237f7958e8cb292080527154763d2093a54fc4f248c3e1c0cd69f1161c0e79e",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "数学的結合（mathematical coupling）による疑似相関、因果関係の未証明、離散化バイアス"
+        },
+        {
+          "kind": "quote",
+          "text": "「ACWRを傷害リスク低減のための臨床判断に用いる根拠はない」"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Repository rapid scoping memo, not an independent systematic review; prevention versus healing, proxy versus clinical outcomes and methodological limitations retained, no individual treatment or clearance."
+      }
+    },
+    {
+      "id": "fullchunkqa-9cb033e087d41997cb3e9c55-3",
+      "chunk_id": "knowledge-9cb033e087d41997cb3e9c55",
+      "questions": [
+        "RRI調査メモが紹介するShaw 2017のゼラチン・ビタミンC試験は、腱症の競技復帰を測った？"
+      ],
+      "answer": "メモでは健康な男性8名のクロスオーバー試験で、血中PINPというコラーゲン合成マーカーを測った研究として紹介しています。生化学的な代理指標であり、腱症治癒や競技復帰を直接改善した証拠ではありません。摂取量の個別推奨にはしません。",
+      "sources": [
+        "input/memos/rri_healing_evidence_review.md"
+      ],
+      "source_sha256": "f237f7958e8cb292080527154763d2093a54fc4f248c3e1c0cd69f1161c0e79e",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "健康な男性8名のクロスオーバー試験"
+        },
+        {
+          "kind": "quote",
+          "text": "区分C：生化学的マーカーであり臨床的治癒アウトカムではない"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Repository rapid scoping memo, not an independent systematic review; prevention versus healing, proxy versus clinical outcomes and methodological limitations retained, no individual treatment or clearance."
+      }
+    },
+    {
+      "id": "fullchunkqa-fae314bf94adb9fc90b1a599-1",
+      "chunk_id": "knowledge-fae314bf94adb9fc90b1a599",
+      "questions": [
+        "RRI調査メモが紹介する脛骨BSIの2024スコーピングレビューは、50研究全てが質の高いRCT？"
+      ],
+      "answer": "そうではなく、39件はレビュー・臨床コメンタリーで、質の高い直接比較RCTは2件と紹介しています。推奨の多くがレベルIVの専門家意見である点を認め、推奨の存在と比較試験の強さを区別しています。",
+      "sources": [
+        "input/memos/rri_healing_evidence_review.md"
+      ],
+      "source_sha256": "f237f7958e8cb292080527154763d2093a54fc4f248c3e1c0cd69f1161c0e79e",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "50研究のうち大半（39件）はレビュー・臨床コメンタリー"
+        },
+        {
+          "kind": "quote",
+          "text": "（RCT）はわずか2件"
+        },
+        {
+          "kind": "quote",
+          "text": "レベルIVエビデンス（専門家意見）"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Repository rapid scoping memo, not an independent systematic review; prevention versus healing, proxy versus clinical outcomes and methodological limitations retained, no individual treatment or clearance."
+      }
+    },
+    {
+      "id": "fullchunkqa-fae314bf94adb9fc90b1a599-2",
+      "chunk_id": "knowledge-fae314bf94adb9fc90b1a599",
+      "questions": [
+        "RRI調査メモでは、PFPのガイドラインをITBS単独の確立したガイドラインとして使う？"
+      ],
+      "answer": "区別しています。JOSPTのCPGはPFPを対象とし、ITBS単独のCPGは本調査で確認できなかったと述べています。ITBSの観察・専門家意見による知見を、PFPと同じ根拠の強さにはしません。",
+      "sources": [
+        "input/memos/rri_healing_evidence_review.md"
+      ],
+      "source_sha256": "f237f7958e8cb292080527154763d2093a54fc4f248c3e1c0cd69f1161c0e79e",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "正式なJOSPT CPGはPFPのみを対象としており、ITBS単独のCPGは本調査で確認できなかった。"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Repository rapid scoping memo, not an independent systematic review; prevention versus healing, proxy versus clinical outcomes and methodological limitations retained, no individual treatment or clearance."
+      }
+    },
+    {
+      "id": "fullchunkqa-fae314bf94adb9fc90b1a599-3",
+      "chunk_id": "knowledge-fae314bf94adb9fc90b1a599",
+      "questions": [
+        "RRI調査メモのランニング再開基準では、画像所見を全障害で必須としている？"
+      ],
+      "answer": "全てに必須とはせず、高リスク骨ストレス障害では画像での治癒確認を重視し、低リスクなどでは症状や機能を中心に整理しています。一般的な合意の紹介で、特定の人へ検査不要や復帰可能と判断する回答ではありません。",
+      "sources": [
+        "input/memos/rri_healing_evidence_review.md"
+      ],
+      "source_sha256": "f237f7958e8cb292080527154763d2093a54fc4f248c3e1c0cd69f1161c0e79e",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "MRIなどの画像は高リスクの骨ストレス障害を除き必須とはされていない"
+        },
+        {
+          "kind": "quote",
+          "text": "（低リスク部位では症状ベースの判断が中心）"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Repository rapid scoping memo, not an independent systematic review; prevention versus healing, proxy versus clinical outcomes and methodological limitations retained, no individual treatment or clearance."
+      }
+    }
+  ]
+}

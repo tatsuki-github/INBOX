@@ -1,0 +1,297 @@
+{
+  "version": 1,
+  "entries": [
+    {
+      "id": "fullchunkqa-6ad58ace4fc6f452fddaeae0-1",
+      "chunk_id": "knowledge-6ad58ace4fc6f452fddaeae0",
+      "questions": [
+        "Bakkenの2003〜2004年の最終構造づくりで、Alnesの短距離指導経験は何に役立った？"
+      ],
+      "answer": "一回の閾値練習の総負荷を減らし、少し短いセッションによるダブル閾値へ集中することと、集中した負荷と回復の週内の釣り合いに役立ったと述べています。著者の協働の経緯です。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "His experience with sprinters helped me cut total threshold load per session and instead focus on double threshold with somewhat shorter sessions."
+        },
+        {
+          "kind": "quote",
+          "text": "balance concentrated load with recovery"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Historical examples and author explanations; lactate speculation distinguished from measured data, no universal prescription or guaranteed benefit."
+      }
+    },
+    {
+      "id": "fullchunkqa-6ad58ace4fc6f452fddaeae0-2",
+      "chunk_id": "knowledge-6ad58ace4fc6f452fddaeae0",
+      "questions": [
+        "Bakkenの2004年2月Dullstroomの記録では、火曜朝と木曜朝の反復はそれぞれ何？"
+      ],
+      "answer": "火曜朝は6×2000m、木曜朝は4×10分で、いずれも乳酸2〜3mmol/Lという表です。高度での著者の基礎期の記録で、読者への個別の本数・乳酸値の指定ではありません。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "Tuesday AM\tLong intervals (6 × 2000m, lactate 2-3 mmol/L)"
+        },
+        {
+          "kind": "quote",
+          "text": "Thursday AM\t4 × 10-minute intervals (lactate 2-3 mmol/L)"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Historical examples and author explanations; lactate speculation distinguished from measured data, no universal prescription or guaranteed benefit."
+      }
+    },
+    {
+      "id": "fullchunkqa-6ad58ace4fc6f452fddaeae0-3",
+      "chunk_id": "knowledge-6ad58ace4fc6f452fddaeae0",
+      "questions": [
+        "Bakkenが2004〜2006年の他選手への移転を説明する際、ToogoodがHenrikに導入したX-sessionの違いは？"
+      ],
+      "answer": "平地でなくCoe式の短い坂のスプリントです。Eric ToogoodがHenrik Ingebrigtsenへモデルとセッションを伝えた経緯で、その変更点として述べています。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "The X-session element he introduced was Coe-style short hill sprints instead of flat ground."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Historical examples and author explanations; lactate speculation distinguished from measured data, no universal prescription or guaranteed benefit."
+      }
+    },
+    {
+      "id": "fullchunkqa-7910bf26e52f8eb4cd73868d-1",
+      "chunk_id": "knowledge-7910bf26e52f8eb4cd73868d",
+      "questions": [
+        "Bakkenの普及の歴史で、米国の大規模大学プログラムとして早くダブル閾値を体系的に取り入れた例は？"
+      ],
+      "answer": "Mike SmithのNorthern Arizona University（NAU）を挙げています。著者はNAUを、体系的に実装した米国の主要大学プログラムの最初の例と説明しています。導入だけで優勝が保証されるという意味ではありません。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "Mike Smith at Northern Arizona University was one of the first in the\nUSA. NAU became the first major American college program to systematically implement double threshold"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Historical examples and author explanations; lactate speculation distinguished from measured data, no universal prescription or guaranteed benefit."
+      }
+    },
+    {
+      "id": "fullchunkqa-7910bf26e52f8eb4cd73868d-2",
+      "chunk_id": "knowledge-7910bf26e52f8eb4cd73868d",
+      "questions": [
+        "Bakkenが引用するGeorge Millsの週構成で、2回のイージー走を置く曜日は？"
+      ],
+      "answer": "月・水・金です。火・木はダブル閾値、土曜はより強いセッションとその後のジョグ、日曜はロング走という本人の週構成として紹介しています。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "Monday, Wednesday, and Friday are two easy runs, morning and evening; Tuesday and Thursday are double threshold; Saturday is a harder session with jogging afterward; Sunday is a long run."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Historical examples and author explanations; lactate speculation distinguished from measured data, no universal prescription or guaranteed benefit."
+      }
+    },
+    {
+      "id": "fullchunkqa-7910bf26e52f8eb4cd73868d-3",
+      "chunk_id": "knowledge-7910bf26e52f8eb4cd73868d",
+      "questions": [
+        "Bakkenが引用するTveitenのトライアスロンの4日高度サイクルで、2日目と4日目はどう違う？"
+      ],
+      "answer": "2日目は5〜8時間の長いイージー練習、4日目は選択した種目で約2時間の非常に楽な練習です。1・3日目は閾値2回とイージー1回という引用例で、一般のランナーが時間をそのまま写す提案ではありません。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "Day 1: two threshold sessions/double threshold running, one easy session. Day 2: long easy (5-8 hours workout). Day 3: two threshold sessions, one easy. Day 4: very easy training of about 2 hours easy training of choice."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Historical examples and author explanations; lactate speculation distinguished from measured data, no universal prescription or guaranteed benefit."
+      }
+    },
+    {
+      "id": "fullchunkqa-ac8ba39e09a635cdf8941a16-1",
+      "chunk_id": "knowledge-ac8ba39e09a635cdf8941a16",
+      "questions": [
+        "Bakkenは歴史の章で、現代のシューズが負荷を軽くしても残る条件を何と述べる？"
+      ],
+      "answer": "練習負荷の間に筋緊張が下がる必要があるという条件です。現代の靴で急性の負荷が減り、質的な練習量を増やせる場合があっても、この基本条件は消えないという著者の説明です。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "Modern footwear reduces much of the acute load and can make higher volumes of quality work possible. But they do not remove the funda mental law: muscle tone must still drop between training loads."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Historical examples and author explanations; lactate speculation distinguished from measured data, no universal prescription or guaranteed benefit."
+      }
+    },
+    {
+      "id": "fullchunkqa-ac8ba39e09a635cdf8941a16-2",
+      "chunk_id": "knowledge-ac8ba39e09a635cdf8941a16",
+      "questions": [
+        "Bakkenが歴史の章でAlmgrenの高強度1000m反復に触れるとき、乳酸5〜7（8）mmol/Lは実測値として示している？"
+      ],
+      "answer": "実測値としては示していません。著者が自身の2003年以前の経験に対応するのではと推測した値です。Almgren本人の測定値や、全員に有効な目標値と読み替えません。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "I suspect his lactate corresponds to what I experienced on my 1000-meter sessions before the change I made in 2003"
+        },
+        {
+          "kind": "quote",
+          "text": "concentrating on lactate from 5-7 (8) mmol/L."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Historical examples and author explanations; lactate speculation distinguished from measured data, no universal prescription or guaranteed benefit."
+      }
+    },
+    {
+      "id": "fullchunkqa-ac8ba39e09a635cdf8941a16-3",
+      "chunk_id": "knowledge-ac8ba39e09a635cdf8941a16",
+      "questions": [
+        "Bakkenの乳酸の技術章への導入では、心拍・自覚的努力・乳酸の役割をどう区別する？"
+      ],
+      "answer": "心拍は循環器系の働きの強さ、自覚的努力はセッションの感覚、乳酸は筋での強度が意図した範囲にあるか、見た目の似た別の領域へずれたかを見る情報という説明です。著者が長期の小さなずれを捉える意義を示す文脈です。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "Heart rate tells you how hard the cardiovascular system is working. Perceived effort tells you how the session feels. Lactate tells you what is actually happening in the muscle"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Historical examples and author explanations; lactate speculation distinguished from measured data, no universal prescription or guaranteed benefit."
+      }
+    },
+    {
+      "id": "fullchunkqa-f406e44636f6b16f587d0c66-1",
+      "chunk_id": "knowledge-f406e44636f6b16f587d0c66",
+      "questions": [
+        "Bakkenの乳酸技術章導入でいう精密さは、「今日の正しいペース」だけを指す？"
+      ],
+      "answer": "それだけではなく、週ごとに身体が耐えられる内的負荷を保ち、筋が徐々に制約にならず能力を高めることを指すとしています。ペース表を写すだけで成立するという説明ではありません。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "Not precision in the sense of \"correct pace today,\" but precision in the sense that week after week you hit an internal load the body can tolerate"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Historical examples and author explanations; lactate speculation distinguished from measured data, no universal prescription or guaranteed benefit."
+      }
+    },
+    {
+      "id": "fullchunkqa-f406e44636f6b16f587d0c66-2",
+      "chunk_id": "knowledge-f406e44636f6b16f587d0c66",
+      "questions": [
+        "Bakkenは乳酸技術章の導入で、高い精密さと低い精密さのリスクと利益をどう対比する？"
+      ],
+      "answer": "高い精密さでは低いリスクで高い利益、低い精密さでは高いリスクで低い利益と表現しています。長期の強度管理の重要さを述べる著者の対比で、利益や無傷を保証する数値ではありません。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "With high precision, the method yields high reward at low risk.\nWith low precision, high risk and low reward."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Historical examples and author explanations; lactate speculation distinguished from measured data, no universal prescription or guaranteed benefit."
+      }
+    },
+    {
+      "id": "fullchunkqa-f406e44636f6b16f587d0c66-3",
+      "chunk_id": "knowledge-f406e44636f6b16f587d0c66",
+      "questions": [
+        "Bakkenの乳酸技術章導入が扱う技術上の論点には、閾値の発見以外に何がある？"
+      ],
+      "answer": "曲線、傾き、ドリフト、誤差要因、逸脱パターンです。セッション中に判断して、週のリズムを失う前に調整することが章の目的とされています。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "not merely by finding the threshold, but by understanding curves, slopes, drift, error sources, and deviation patterns."
+        },
+        {
+          "kind": "quote",
+          "text": "make decisions in real time during sessions and adjust correctly before you lose the rhythm of the week."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Historical examples and author explanations; lactate speculation distinguished from measured data, no universal prescription or guaranteed benefit."
+      }
+    }
+  ]
+}

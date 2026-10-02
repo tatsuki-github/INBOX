@@ -1,0 +1,305 @@
+{
+  "version": 1,
+  "entries": [
+    {
+      "id": "fullchunkqa-3ac25cb28b98321f0998f965-1",
+      "chunk_id": "knowledge-3ac25cb28b98321f0998f965",
+      "questions": [
+        "RRI調査メモの負荷の戻し方で、心肺的な楽さだけを組織回復のガイドにしない理由は？"
+      ],
+      "answer": "自覚的な楽さや心肺機能は組織の回復速度より速く改善するためと説明しています。症状の再燃を進行のガイドにするという一般的な原則の紹介で、特定の人が走ってよいと判断する回答ではありません。",
+      "sources": [
+        "input/memos/rri_healing_evidence_review.md"
+      ],
+      "source_sha256": "f237f7958e8cb292080527154763d2093a54fc4f248c3e1c0cd69f1161c0e79e",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "心肺的な「楽さ」（自覚的運動強度）は組織の回復速度より速く改善する"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Study scope, bias, population and follow-up limits retained; memo ranking is synthesis rather than comparative trial, no personal diagnosis or return-to-sport clearance."
+      }
+    },
+    {
+      "id": "fullchunkqa-3ac25cb28b98321f0998f965-2",
+      "chunk_id": "knowledge-3ac25cb28b98321f0998f965",
+      "questions": [
+        "RRI調査メモの心理的readinessのメタ分析は、RRI固有の研究として確認されている？"
+      ],
+      "answer": "メモが挙げるのはACL術後領域の研究で、RRI固有ではありません。心理的準備の重要さを考える外挿であり、ランニング障害に同じ効果量や因果関係を直接当てはめません。",
+      "sources": [
+        "input/memos/rri_healing_evidence_review.md"
+      ],
+      "source_sha256": "f237f7958e8cb292080527154763d2093a54fc4f248c3e1c0cd69f1161c0e79e",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "これはRRI固有の研究ではなくACL術後領域のエビデンス"
+        },
+        {
+          "kind": "quote",
+          "text": "他疾患からの外挿であることに留意"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Study scope, bias, population and follow-up limits retained; memo ranking is synthesis rather than comparative trial, no personal diagnosis or return-to-sport clearance."
+      }
+    },
+    {
+      "id": "fullchunkqa-3ac25cb28b98321f0998f965-3",
+      "chunk_id": "knowledge-3ac25cb28b98321f0998f965",
+      "questions": [
+        "RRI調査メモの再発予防表で、cadence再訓練によるリスク低下を再受傷者へそのまま適用できる？"
+      ],
+      "answer": "表は新人ランナーの一次予防研究で、既往患者の再発予防への直接の外挿は限定的としています。初回発生の予防と再発予防は別の対象・アウトカムです。",
+      "sources": [
+        "input/memos/rri_healing_evidence_review.md"
+      ],
+      "source_sha256": "f237f7958e8cb292080527154763d2093a54fc4f248c3e1c0cd69f1161c0e79e",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "主に新人ランナーの一次予防研究であり、既往患者の再発予防への直接の外挿は限定的"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Study scope, bias, population and follow-up limits retained; memo ranking is synthesis rather than comparative trial, no personal diagnosis or return-to-sport clearance."
+      }
+    },
+    {
+      "id": "fullchunkqa-90f1368dd1304e0c5c2ff74e-1",
+      "chunk_id": "knowledge-90f1368dd1304e0c5c2ff74e",
+      "questions": [
+        "RRI調査メモの主要研究表で、van der VlistのNMAの研究数以外に何の限界が載る？"
+      ],
+      "answer": "29RCTのLiving NMAであることに加え、全RCTが高バイアスリスクという限界を載せています。多数の試験を統合していることだけで、個々の試験の質が保証されるとはしません。",
+      "sources": [
+        "input/memos/rri_healing_evidence_review.md"
+      ],
+      "source_sha256": "f237f7958e8cb292080527154763d2093a54fc4f248c3e1c0cd69f1161c0e79e",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "Living NMA(29RCT)"
+        },
+        {
+          "kind": "quote",
+          "text": "全RCTが高バイアスリスク"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Study scope, bias, population and follow-up limits retained; memo ranking is synthesis rather than comparative trial, no personal diagnosis or return-to-sport clearance."
+      }
+    },
+    {
+      "id": "fullchunkqa-90f1368dd1304e0c5c2ff74e-2",
+      "chunk_id": "knowledge-90f1368dd1304e0c5c2ff74e",
+      "questions": [
+        "RRI調査メモの主要研究表で、Kongsgaard 2009の参加者の一般化の限界は？"
+      ],
+      "answer": "男性のみ、単一施設と記載しています。膝蓋腱症のHSR・エキセントリック・ステロイドの比較結果を、年齢・性別や障害の違う全員へそのまま適用しないための限界です。",
+      "sources": [
+        "input/memos/rri_healing_evidence_review.md"
+      ],
+      "source_sha256": "f237f7958e8cb292080527154763d2093a54fc4f248c3e1c0cd69f1161c0e79e",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "Kongsgaard 2009 | HSR vs ECC vs CORT"
+        },
+        {
+          "kind": "quote",
+          "text": "男性のみ、単一施設"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Study scope, bias, population and follow-up limits retained; memo ranking is synthesis rather than comparative trial, no personal diagnosis or return-to-sport clearance."
+      }
+    },
+    {
+      "id": "fullchunkqa-90f1368dd1304e0c5c2ff74e-3",
+      "chunk_id": "knowledge-90f1368dd1304e0c5c2ff74e",
+      "questions": [
+        "RRI調査メモのRathleff 2015の表で、3か月の差は12か月にも残る？"
+      ],
+      "answer": "表では3か月時点は高負荷筋力訓練がストレッチより良好、12か月では群間差が消失としています。短期時点の優位を長期の差として読み替えません。",
+      "sources": [
+        "input/memos/rri_healing_evidence_review.md"
+      ],
+      "source_sha256": "f237f7958e8cb292080527154763d2093a54fc4f248c3e1c0cd69f1161c0e79e",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "3ヵ月時点で有意優位、12ヵ月で消失"
+        },
+        {
+          "kind": "quote",
+          "text": "12ヵ月で群間差消失"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Study scope, bias, population and follow-up limits retained; memo ranking is synthesis rather than comparative trial, no personal diagnosis or return-to-sport clearance."
+      }
+    },
+    {
+      "id": "fullchunkqa-353bb38dec574931f45f6182-1",
+      "chunk_id": "knowledge-353bb38dec574931f45f6182",
+      "questions": [
+        "RRI調査メモのトップ10は、項目間の直接比較試験で付いた順位として読むべき？"
+      ],
+      "answer": "メモはエビデンスの強さと疼痛・機能・競技復帰・再発率の臨床効果を踏まえたランキングと説明しています。異なる障害やアウトカムを含むメモの整理で、全項目を同一条件で比較した普遍的な効果順位とは読めません。",
+      "sources": [
+        "input/memos/rri_healing_evidence_review.md"
+      ],
+      "source_sha256": "f237f7958e8cb292080527154763d2093a54fc4f248c3e1c0cd69f1161c0e79e",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "エビデンスの強さと実際の臨床効果（疼痛・機能・競技復帰・再発率）を踏まえたランキング。"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Study scope, bias, population and follow-up limits retained; memo ranking is synthesis rather than comparative trial, no personal diagnosis or return-to-sport clearance."
+      }
+    },
+    {
+      "id": "fullchunkqa-353bb38dec574931f45f6182-2",
+      "chunk_id": "knowledge-353bb38dec574931f45f6182",
+      "questions": [
+        "RRI調査メモのトップ10のエネルギー可用性項目では、LEA/RED-Sの評価にどんな専門家を挙げる？"
+      ],
+      "answer": "自覚しにくいことを理由に、スポーツ医・栄養士による評価が望ましいとしています。体重や成績だけで個人のLEA/RED-SをこのQAが診断するものではありません。",
+      "sources": [
+        "input/memos/rri_healing_evidence_review.md"
+      ],
+      "source_sha256": "f237f7958e8cb292080527154763d2093a54fc4f248c3e1c0cd69f1161c0e79e",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "LEA/RED-Sは自覚しにくく、専門家（スポーツ医・栄養士）による評価が望ましい"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Study scope, bias, population and follow-up limits retained; memo ranking is synthesis rather than comparative trial, no personal diagnosis or return-to-sport clearance."
+      }
+    },
+    {
+      "id": "fullchunkqa-353bb38dec574931f45f6182-3",
+      "chunk_id": "knowledge-353bb38dec574931f45f6182",
+      "questions": [
+        "RRI調査メモの最終戦略で、再発予防を競技復帰後にどう位置付ける？"
+      ],
+      "answer": "治療の延長として捉え、復帰後も一定期間、負荷管理と患部の筋力維持を継続する案です。元の量への復帰を急がず、段階的に戻す時間を許容するという一般的な整理で、特定の人の期間は決めません。",
+      "sources": [
+        "input/memos/rri_healing_evidence_review.md"
+      ],
+      "source_sha256": "f237f7958e8cb292080527154763d2093a54fc4f248c3e1c0cd69f1161c0e79e",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "再発予防を「治療の延長」として捉える"
+        },
+        {
+          "kind": "quote",
+          "text": "復帰後も一定期間、負荷管理・患部の筋力維持エクササイズを継続する"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Study scope, bias, population and follow-up limits retained; memo ranking is synthesis rather than comparative trial, no personal diagnosis or return-to-sport clearance."
+      }
+    },
+    {
+      "id": "fullchunkqa-84fde55b742243904430247c-1",
+      "chunk_id": "knowledge-84fde55b742243904430247c",
+      "questions": [
+        "RRI調査メモの限界として、出版バイアス評価と重複研究統合は保証されている？"
+      ],
+      "answer": "保証されていません。付記は文献の網羅性、出版バイアス評価、重複研究統合など正式なシステマティックレビューの厳密さが担保されないと明示しています。",
+      "sources": [
+        "input/memos/rri_healing_evidence_review.md"
+      ],
+      "source_sha256": "f237f7958e8cb292080527154763d2093a54fc4f248c3e1c0cd69f1161c0e79e",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "文献の網羅性・出版バイアスの評価・重複研究の統合等、正式なシステマティックレビューの厳密性は担保されていない。"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Study scope, bias, population and follow-up limits retained; memo ranking is synthesis rather than comparative trial, no personal diagnosis or return-to-sport clearance."
+      }
+    },
+    {
+      "id": "fullchunkqa-84fde55b742243904430247c-2",
+      "chunk_id": "knowledge-84fde55b742243904430247c",
+      "questions": [
+        "RRI調査メモの付記で、検索が浅かった領域をどう挙げている？"
+      ],
+      "answer": "MTSS、股関節障害、足関節捻挫、クロストレーニングの直接効果などを挙げます。確認した証拠の量に偏りがあるため、少ないというだけで効果がないと結論しません。",
+      "sources": [
+        "input/memos/rri_healing_evidence_review.md"
+      ],
+      "source_sha256": "f237f7958e8cb292080527154763d2093a54fc4f248c3e1c0cd69f1161c0e79e",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "MTSS・股関節障害・足関節捻挫・クロストレーニングの直接効果等"
+        },
+        {
+          "kind": "quote",
+          "text": "確認できたエビデンスの量に偏りがある。"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Study scope, bias, population and follow-up limits retained; memo ranking is synthesis rather than comparative trial, no personal diagnosis or return-to-sport clearance."
+      }
+    },
+    {
+      "id": "fullchunkqa-84fde55b742243904430247c-3",
+      "chunk_id": "knowledge-84fde55b742243904430247c",
+      "questions": [
+        "RRI調査メモの付記では、研究の日数や割合を個々のランナーへどう適用するとしている？"
+      ],
+      "answer": "研究間で年齢、競技レベル、性別などの集団特性が異なり、個々への直接適用には臨床的判断が必要としています。数字だけで本人の治癒日数や復帰時期を確定する回答にはしません。",
+      "sources": [
+        "input/memos/rri_healing_evidence_review.md"
+      ],
+      "source_sha256": "f237f7958e8cb292080527154763d2093a54fc4f248c3e1c0cd69f1161c0e79e",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "集団特性（年齢・競技レベル・性別等）が研究間で異なるため、個々のランナーへの直接適用には臨床的判断が必要である。"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Study scope, bias, population and follow-up limits retained; memo ranking is synthesis rather than comparative trial, no personal diagnosis or return-to-sport clearance."
+      }
+    }
+  ]
+}

@@ -1,0 +1,321 @@
+{
+  "version": 1,
+  "entries": [
+    {
+      "id": "fullchunkqa-49df3ab2115bbc273b0293c2-1",
+      "chunk_id": "knowledge-49df3ab2115bbc273b0293c2",
+      "questions": [
+        "BakkenのThree Core Conceptsで、安静時筋緊張は随意的に力を入れた状態を指す？"
+      ],
+      "answer": "随意的に活動させていない時の基準の緊張で、受動的な動きへの抵抗として感じるとしています。低い神経活動、粘弾性、組織の構造的要素の相互作用で決まり、一要因だけではないという説明です。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "Resting muscle tone is the baseline tension when the muscle is not voluntarily activated."
+        },
+        {
+          "kind": "quote",
+          "text": "the interplay between low-grade neural activity, the muscle's viscoelastic properties, and structural components of the tissue."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Muscle mechanisms, author observations and supplementary tools qualified; no diagnosis by palpation, treatment guarantee or novel pre-race load prescription."
+      }
+    },
+    {
+      "id": "fullchunkqa-49df3ab2115bbc273b0293c2-2",
+      "chunk_id": "knowledge-49df3ab2115bbc273b0293c2",
+      "questions": [
+        "BakkenのThree Core Conceptsで、弾性に関わるtitin・結合組織とactin/myosinの役割は？"
+      ],
+      "answer": "弾性は特に筋線維のtitinと周囲のコラーゲンに富む結合組織に由来すると説明しています。actinとmyosinの架橋は力を作り、筋の活動時の剛性を増します。いずれも筋腱の伸張短縮での働きの説明です。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "Elasticity comes especially from titin in the muscle fibers and collagen-rich connective tissue surrounding them."
+        },
+        {
+          "kind": "quote",
+          "text": "The cross-bridges between actin and myosin create force and increase active stiffness when the muscle engages."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Muscle mechanisms, author observations and supplementary tools qualified; no diagnosis by palpation, treatment guarantee or novel pre-race load prescription."
+      }
+    },
+    {
+      "id": "fullchunkqa-49df3ab2115bbc273b0293c2-3",
+      "chunk_id": "knowledge-49df3ab2115bbc273b0293c2",
+      "questions": [
+        "BakkenのThree Core Conceptsでは、筋の剛性を高くすれば常に良いとしている？"
+      ],
+      "answer": "高い剛性は速い伸張短縮や高速動作の力の伝達に役立つ一方、回復なしに長期に高まりすぎると傷害のリスク要因とも説明しています。目標は釣り合いであり、硬さだけを上げることではありません。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "Higher stiffness benefits rapid stretch-shortening cycles and high-velocity movements"
+        },
+        {
+          "kind": "quote",
+          "text": "stiffness is also a risk factor for injury, especially when it climbs too high over time without\nadequate recovery."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Muscle mechanisms, author observations and supplementary tools qualified; no diagnosis by palpation, treatment guarantee or novel pre-race load prescription."
+      }
+    },
+    {
+      "id": "fullchunkqa-a9977213689c8b93c39ee28c-1",
+      "chunk_id": "knowledge-a9977213689c8b93c39ee28c",
+      "questions": [
+        "BakkenのActive Influenceで、高強度練習の隠れたコストとして挙げる、筋緊張の回復窓の問題は？"
+      ],
+      "answer": "筋緊張が高くなるだけでなく正常へ戻る時間が長くなり、その時間が予測しにくいことです。次の強い練習まで一日イージーで足りる時も足りない時もあるという著者の観察です。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "higher intensity doesn't just raise muscle tone more—it also extends the time required for tone to return to normal."
+        },
+        {
+          "kind": "quote",
+          "text": "Sometimes an easy day before the next hard session works fine, while other times it doesn't."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Muscle mechanisms, author observations and supplementary tools qualified; no diagnosis by palpation, treatment guarantee or novel pre-race load prescription."
+      }
+    },
+    {
+      "id": "fullchunkqa-a9977213689c8b93c39ee28c-2",
+      "chunk_id": "knowledge-a9977213689c8b93c39ee28c",
+      "questions": [
+        "BakkenのThe Original Setupで、週で最も長い閾値反復を木曜へ置く説明は？"
+      ],
+      "answer": "週末に入る時点で筋緊張が高くなりすぎないようにするためと述べています。その後にX-session、翌日のやや長いイージー、さらに月曜イージーを置き、強い練習後の回復を2日取る構造です。著者の基礎期の構成例です。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "The longest threshold intervals of the week are placed on Thursday, precisely so that tone is not already elevated going into the weekend."
+        },
+        {
+          "kind": "quote",
+          "text": "Monday adds another easy day, meaning total muscular recovery time is two days, not one."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Muscle mechanisms, author observations and supplementary tools qualified; no diagnosis by palpation, treatment guarantee or novel pre-race load prescription."
+      }
+    },
+    {
+      "id": "fullchunkqa-a9977213689c8b93c39ee28c-3",
+      "chunk_id": "knowledge-a9977213689c8b93c39ee28c",
+      "questions": [
+        "BakkenのThe Muscular Reference Pointで、ピークへ向かうエリートの筋はどう共通化すると述べる？"
+      ],
+      "answer": "ピークへ向かうほど均質になり、長期に通常の練習をした最大パフォーマンスでは最適な筋状態が決定的な要因として現れやすいと述べています。触診経験からの著者の見解で、触るだけで誰の成績も予測できる客観的診断ではありません。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "As elite athletes approach peak form, their muscles become increasingly homogeneous."
+        },
+        {
+          "kind": "quote",
+          "text": "it's almost always optimal muscular condition that emerges as the deciding factor."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Muscle mechanisms, author observations and supplementary tools qualified; no diagnosis by palpation, treatment guarantee or novel pre-race load prescription."
+      }
+    },
+    {
+      "id": "fullchunkqa-78be121bfca4df071d225811-1",
+      "chunk_id": "knowledge-78be121bfca4df071d225811",
+      "questions": [
+        "BakkenのWhat the Muscles Needで、不慣れな動きを急に導入する際の注意は？"
+      ],
+      "answer": "不慣れな動きは相対的な負荷を大きくし、筋緊張を速く高めるため、急な移行に注意するという説明です。負荷、日ごとの自然な上下、異なる運動単位を使うセッション変化を合わせて考えます。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "Caution with abrupt transitions. Unfamiliar movements create greater relative load and therefore faster increases in tone."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Muscle mechanisms, author observations and supplementary tools qualified; no diagnosis by palpation, treatment guarantee or novel pre-race load prescription."
+      }
+    },
+    {
+      "id": "fullchunkqa-78be121bfca4df071d225811-2",
+      "chunk_id": "knowledge-78be121bfca4df071d225811",
+      "questions": [
+        "BakkenのHot Bathsでは、温熱による変化を神経的な筋緊張だけと説明する？"
+      ],
+      "answer": "神経的な筋緊張だけでなく、結合組織の柔らかさや粘弾性など機械的な性質に関わると区別しています。筋紡錘感度や伸張反射の低下も述べますが、実践ではこれらが重なって感じられるという説明です。安全や個人の治療効果を保証しません。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "The tissues viscoelastic properties change when temperature rises"
+        },
+        {
+          "kind": "quote",
+          "text": "Strictly speaking, this concerns mechanical properties rather than active tone alone, but in practice they blend together."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Muscle mechanisms, author observations and supplementary tools qualified; no diagnosis by palpation, treatment guarantee or novel pre-race load prescription."
+      }
+    },
+    {
+      "id": "fullchunkqa-78be121bfca4df071d225811-3",
+      "chunk_id": "knowledge-78be121bfca4df071d225811",
+      "questions": [
+        "BakkenのPassive Influenceで、マッサージ・温浴・静的負荷回避は練習構造より重要？"
+      ],
+      "answer": "いずれも役立つ補助ですが、練習構造ほど重要でも効果的でもないとしています。補助的な方法で不適切な練習負荷を相殺できるという説明ではありません。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "None are as important or effective as the training structure itself, but they help."
+        },
+        {
+          "kind": "quote",
+          "text": "The three most valuable are massage, hot baths, and avoidance of static load."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Muscle mechanisms, author observations and supplementary tools qualified; no diagnosis by palpation, treatment guarantee or novel pre-race load prescription."
+      }
+    },
+    {
+      "id": "fullchunkqa-48cbc84fc001eaf10417a3eb-1",
+      "chunk_id": "knowledge-48cbc84fc001eaf10417a3eb",
+      "questions": [
+        "Bakkenのピーキングで、軽いプライオメトリクスや速い短い走りを入れる前提は？"
+      ],
+      "answer": "その負荷に前もって慣れていることです。不慣れな動きや負荷は、良い状態の筋でも筋痛や競技成績低下につながり得ると述べています。試合直前に新しい動きを試す提案ではありません。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "The key: you must be accustomed to the load beforehand. Unfamiliar movements and loads on muscles otherwise in peak condition risk causing soreness and hurting performance."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Muscle mechanisms, author observations and supplementary tools qualified; no diagnosis by palpation, treatment guarantee or novel pre-race load prescription."
+      }
+    },
+    {
+      "id": "fullchunkqa-48cbc84fc001eaf10417a3eb-2",
+      "chunk_id": "knowledge-48cbc84fc001eaf10417a3eb",
+      "questions": [
+        "BakkenのHow to Peakで、筋の活動と全身の休みを両立する最終2週間の案は？"
+      ],
+      "answer": "強いセッションの頻度は保ちつつ、速く・強くしすぎず、各セッションの総量を減らす案です。筋を活動させる必要と全身の休みを釣り合わせる著者の考え方で、個別の大会日程や回復を無視する固定処方ではありません。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "maintaining the frequency of hard sessions but not running them faster or harder in the final two weeks."
+        },
+        {
+          "kind": "quote",
+          "text": "reduce the total volume of sessions."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Muscle mechanisms, author observations and supplementary tools qualified; no diagnosis by palpation, treatment guarantee or novel pre-race load prescription."
+      }
+    },
+    {
+      "id": "fullchunkqa-48cbc84fc001eaf10417a3eb-3",
+      "chunk_id": "knowledge-48cbc84fc001eaf10417a3eb",
+      "questions": [
+        "Bakkenの筋緊張章から次章への導入では、高地と暑熱の練習をどう位置付ける？"
+      ],
+      "answer": "閾値練習を置き換える近道ではなく、その原理を増幅する補助的な環境の道具です。誤って使えば練習を壊すとも述べ、何をし、なぜ機能し、いつ使わないかを理解する必要があるとしています。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "something that does not replace threshold training but amplifies it."
+        },
+        {
+          "kind": "quote",
+          "text": "They are not shortcuts, but supplementary tools that require you to understand what they do, why they work, and when to leave them alone."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Muscle mechanisms, author observations and supplementary tools qualified; no diagnosis by palpation, treatment guarantee or novel pre-race load prescription."
+      }
+    }
+  ]
+}

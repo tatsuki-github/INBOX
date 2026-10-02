@@ -1,0 +1,260 @@
+{
+  "version": 1,
+  "entries": [
+    {
+      "id": "fullchunkqa-5c728eceb61b35ed5dac5025-1",
+      "chunk_id": "knowledge-5c728eceb61b35ed5dac5025",
+      "questions": [
+        "BakkenのContinuous Lactate Measurementで、連続センサーは既に十分正確で普及済みと説明している？"
+      ],
+      "answer": "この本では皮下や非侵襲の光学方式が開発中とし、十分な精度と利用可能性に達した時の変化を論じています。より狭い範囲の制御が良い適応につながるかも未確定としています。本書執筆時の見通しで、現在の製品の性能や入手可否は断定しません。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "Continuous lactate monitors, whether subcutaneous sensors or noninvasive\noptical solutions, are under development"
+        },
+        {
+          "kind": "quote",
+          "text": "When these become sufficiently accurate and available"
+        },
+        {
+          "kind": "quote",
+          "text": "Whether this produces better adaptations we don't yet know"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Future sensing and shoe hypotheses distinguished from available validated technology; overspeed mixed outcomes and metabolic/mechanical distinction retained."
+      }
+    },
+    {
+      "id": "fullchunkqa-5c728eceb61b35ed5dac5025-2",
+      "chunk_id": "knowledge-5c728eceb61b35ed5dac5025",
+      "questions": [
+        "BakkenのLinking to Heart Rate and Potentially Ventilationで、換気閾値と乳酸の対応は完全？"
+      ],
+      "answer": "多くのランナーでよく対応するが完全ではなく、ずれにも情報があるとしています。換気は呼吸の速さと深さで、強度以外の要因にも影響されるため、乳酸と一対一の換算にはしません。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "ventilatory thresholds (VT1 and VTZ), correlates well with lactate behavior in most runners, but not perfectly"
+        },
+        {
+          "kind": "quote",
+          "text": "Ventilation-breathing rate and depth"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Future sensing and shoe hypotheses distinguished from available validated technology; overspeed mixed outcomes and metabolic/mechanical distinction retained."
+      }
+    },
+    {
+      "id": "fullchunkqa-5c728eceb61b35ed5dac5025-3",
+      "chunk_id": "knowledge-5c728eceb61b35ed5dac5025",
+      "questions": [
+        "BakkenのLinking to Heart Rate and Potentially Ventilationで、連続的に見る三つの組み合わせと比較する期間は？"
+      ],
+      "answer": "乳酸・心拍・換気の組み合わせを、セッションの初めと終わり、日ごと・週ごとの変化で比べる見通しです。単一指標では見えないパターンへの期待で、個人の過負荷を確定する完成した診断技術ではありません。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "the triplet (lactate, heart rate, ventilation) relate at the start of a session versus the end"
+        },
+        {
+          "kind": "quote",
+          "text": "from day to day, week to week?"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Future sensing and shoe hypotheses distinguished from available validated technology; overspeed mixed outcomes and metabolic/mechanical distinction retained."
+      }
+    },
+    {
+      "id": "fullchunkqa-3d82955af036c427178dca3a-1",
+      "chunk_id": "knowledge-3d82955af036c427178dca3a",
+      "questions": [
+        "BakkenのNew Possibilities for Training Formatsで、連続乳酸測定がファルトレクに役立つと考える理由は？"
+      ],
+      "answer": "不規則なペース変化で気付きにくい代謝負荷をリアルタイムで見て、目標範囲の上限に近づく感覚を校正できる可能性です。本書は現在の課題と将来の見通しとして説明しており、変化走の全てが閾値内に収まるとはしません。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "When pace varies continuously and unpredictably, it's hard to know what metabolic load"
+        },
+        {
+          "kind": "quote",
+          "text": "Continuous lactate measurement could make fartlek a controllable training format."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Future sensing and shoe hypotheses distinguished from available validated technology; overspeed mixed outcomes and metabolic/mechanical distinction retained."
+      }
+    },
+    {
+      "id": "fullchunkqa-3d82955af036c427178dca3a-2",
+      "chunk_id": "knowledge-3d82955af036c427178dca3a",
+      "questions": [
+        "BakkenのNew Possibilitiesで、乳酸3.8から2.5mmol/Lになるまで休む例は、現在の固定休息の処方？"
+      ],
+      "answer": "連続測定が可能になった時の動的な休息の実験例です。実際の応答で休息を個別化する構想として述べており、今すぐ誰もがその数値を守るべきという処方ではありません。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "Continuous measurement would allow experimentation with more dynamic rest periods."
+        },
+        {
+          "kind": "quote",
+          "text": "lactate is 3.8 mmol/L, and wait until it has dropped to 2.5 mmol/L"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Future sensing and shoe hypotheses distinguished from available validated technology; overspeed mixed outcomes and metabolic/mechanical distinction retained."
+      }
+    },
+    {
+      "id": "fullchunkqa-3d82955af036c427178dca3a-3",
+      "chunk_id": "knowledge-3d82955af036c427178dca3a",
+      "questions": [
+        "BakkenのObjectifying Muscular Factorsで、現在のmyotonometerの測定限界は？"
+      ],
+      "answer": "筋の特定の一点の剛性を数値化しても、筋は隣接する構造と鎖として働く全体であり、局所の一数値だけでは全体の状態を表し切れないとしています。日々反復できる全体的な測定への要望の文脈です。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "A myotonometer can give you a number for stiffness at a specific point on the muscle"
+        },
+        {
+          "kind": "quote",
+          "text": "They function as complete structures that work with neighboring structures in complex chains."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Future sensing and shoe hypotheses distinguished from available validated technology; overspeed mixed outcomes and metabolic/mechanical distinction retained."
+      }
+    },
+    {
+      "id": "fullchunkqa-a7cff672d60b18a52d812607-1",
+      "chunk_id": "knowledge-a7cff672d60b18a52d812607",
+      "questions": [
+        "BakkenのShoesで、将来の靴選びをハード用とイージー用の2種類だけに分ける？"
+      ],
+      "answer": "その二分を粗いものとして、セッションの長さ、速度、路面、個人の特性に応じた使い分けや周期化を予想しています。将来への考察で、足首などの個人の健康状態を診断したり特定の靴を処方したりする回答ではありません。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "It's a crude division. The future will probably bring more nuanced use, tailored to the specific load in each session."
+        },
+        {
+          "kind": "quote",
+          "text": "individualization and periodization."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Future sensing and shoe hypotheses distinguished from available validated technology; overspeed mixed outcomes and metabolic/mechanical distinction retained."
+      }
+    },
+    {
+      "id": "fullchunkqa-a7cff672d60b18a52d812607-2",
+      "chunk_id": "knowledge-a7cff672d60b18a52d812607",
+      "questions": [
+        "BakkenのAn Experience with Overspeedで、腰を引く実験は何をそろえ、何を増やそうとした？"
+      ],
+      "answer": "Alnesが腰を引き、乳酸2.5〜3.0mmol/Lを保ちながら通常より1〜2km/h速くして、同じ代謝負荷で機械的な刺激を増やそうとしました。結果は混在した著者の実験で、牽引走を一般に勧める説明ではありません。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "a steady pull around my waist, applied by coach Alnes"
+        },
+        {
+          "kind": "quote",
+          "text": "threshold sessions 1-2 km/h"
+        },
+        {
+          "kind": "quote",
+          "text": "lactate still stayed at 2.5-3.0 mmol/L"
+        },
+        {
+          "kind": "quote",
+          "text": "The experiences were mixed."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Future sensing and shoe hypotheses distinguished from available validated technology; overspeed mixed outcomes and metabolic/mechanical distinction retained."
+      }
+    },
+    {
+      "id": "fullchunkqa-a7cff672d60b18a52d812607-3",
+      "chunk_id": "knowledge-a7cff672d60b18a52d812607",
+      "questions": [
+        "BakkenのOverspeed実験では、乳酸が望む範囲なら機械的な負担も小さいと結論している？"
+      ],
+      "answer": "その結論ではありません。乳酸が同じでも速度で衝撃力や筋腱・結合組織の機械的負荷が増すと振り返っています。現代の靴なら結果が違った可能性も述べますが、その後系統的に試したわけではないとしています。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "Higher speed produces higher impact forces, regardless of what the lactate shows."
+        },
+        {
+          "kind": "quote",
+          "text": "I haven't tested it systematically since"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Future sensing and shoe hypotheses distinguished from available validated technology; overspeed mixed outcomes and metabolic/mechanical distinction retained."
+      }
+    }
+  ]
+}

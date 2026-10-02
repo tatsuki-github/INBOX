@@ -1,0 +1,349 @@
+{
+  "version": 1,
+  "entries": [
+    {
+      "id": "fullchunkqa-bb60420026030dbf68fb3de3-1",
+      "chunk_id": "knowledge-bb60420026030dbf68fb3de3",
+      "questions": [
+        "BakkenのBreakpoint versus Zoneで、乳酸から一つの確実な境界点を決めにくい理由は？"
+      ],
+      "answer": "乳酸が間接的な指標で、暑さ、グリコーゲンの利用可能性、測定の不確かさに影響されるためです。本書も閾値という語は簡略化と認め、Golden Zoneを余裕のある範囲として扱っています。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "Lactate is an indirect measure influenced by factors such as heat, glycogen availability, and measurement uncertainty."
+        },
+        {
+          "kind": "quote",
+          "text": "We cannot really speak of one certain breakpoint"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Author-qualified curve interpretation with methodological limits; no disease diagnosis, universal lactate targets or guaranteed-safe workouts."
+      }
+    },
+    {
+      "id": "fullchunkqa-bb60420026030dbf68fb3de3-2",
+      "chunk_id": "knowledge-bb60420026030dbf68fb3de3",
+      "questions": [
+        "BakkenのAdaptation Periodでは、ラボで4.0mmol/Lでも閾値練習経験が乏しい人への導入例は？"
+      ],
+      "answer": "著者は典型的なGolden Zoneの2.3〜3.0mmol/Lを4〜6か月続けてから再検査する例を示しています。実践的な経験による調整で、その生理学的説明や研究検証は十分でないとも述べています。万人の診断値や個別の処方にはしません。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "typical Golden Zone of 2.3-3.0 mmol/L for four to six months before retesting."
+        },
+        {
+          "kind": "quote",
+          "text": "Ir is a purcly practical adjustment, withour being able to fully explain it physiologically"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Author-qualified curve interpretation with methodological limits; no disease diagnosis, universal lactate targets or guaranteed-safe workouts."
+      }
+    },
+    {
+      "id": "fullchunkqa-bb60420026030dbf68fb3de3-3",
+      "chunk_id": "knowledge-bb60420026030dbf68fb3de3",
+      "questions": [
+        "BakkenのBasic Session Managementで、作業範囲の上限と下限は目指して押す数値？"
+      ],
+      "answer": "押し付けて目指す値ではなく、調整の信号として扱います。著者はよく鍛えられた選手に2.3〜3.0mmol/Lとよく述べ、事前に十分回復している条件では2.1〜3.3mmol/Lにも広がり得るとしています。個々の許容範囲を確かめる説明です。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "this can easily extend to 2.1-3.3 mmol/L, as long as you are well recovered beforehand"
+        },
+        {
+          "kind": "quote",
+          "text": "treat the ceiling and floor as signals to adjust, not targets to push against."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Author-qualified curve interpretation with methodological limits; no disease diagnosis, universal lactate targets or guaranteed-safe workouts."
+      }
+    },
+    {
+      "id": "fullchunkqa-06b528d8ed508ea063810baf-1",
+      "chunk_id": "knowledge-06b528d8ed508ea063810baf",
+      "questions": [
+        "Bakkenの乳酸曲線の説明で、序盤の値が予想より高くなる例は何？"
+      ],
+      "answer": "短すぎるウォームアップ、強すぎる入り、ストレス・カフェイン・睡眠不足で高ぶった状態を挙げています。著者はメイン前の5分の閾値反復を1〜2本、管理と適応のために提案しています。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "warm-up is too short, if they start too aggressively"
+        },
+        {
+          "kind": "quote",
+          "text": "stress, caffeine, poor sleep."
+        },
+        {
+          "kind": "quote",
+          "text": "one to two threshold efforts of five minutes before sessions"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Author-qualified curve interpretation with methodological limits; no disease diagnosis, universal lactate targets or guaranteed-safe workouts."
+      }
+    },
+    {
+      "id": "fullchunkqa-06b528d8ed508ea063810baf-2",
+      "chunk_id": "knowledge-06b528d8ed508ea063810baf",
+      "questions": [
+        "Bakkenの乳酸曲線の説明で、境界点より傾きを重視する理由は？"
+      ],
+      "answer": "傾きが急になる範囲では、わずかなペース増に不釣り合いに大きな無酸素性の支えが必要になるためです。感覚では大丈夫でも後日の負担になるという説明で、最初は急でもすぐ平らになる例外は心拍と対応させて見るとしています。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "When the slope becomes steeper, you are in a range where a small pace increase requires disproportionately greater anaerobic support."
+        },
+        {
+          "kind": "quote",
+          "text": "an initially steep curve that quickly normalizes and flattens. Compare this against heart rate"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Author-qualified curve interpretation with methodological limits; no disease diagnosis, universal lactate targets or guaranteed-safe workouts."
+      }
+    },
+    {
+      "id": "fullchunkqa-06b528d8ed508ea063810baf-3",
+      "chunk_id": "knowledge-06b528d8ed508ea063810baf",
+      "questions": [
+        "BakkenのDrift through the sessionでは、ドリフトをどう定義し、何が赤信号になる？"
+      ],
+      "answer": "同じペースでも乳酸が徐々に上がることです。暑さ、脱水、筋の燃料不足、重い路面、硬い筋、短すぎる休息などを挙げます。中程度は許容される場合があっても、同じペースで急な上昇は強度が高いか、その日に受け入れられない赤信号という著者の解釈です。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "Drift means lactate gradually rises even though pace remains the same."
+        },
+        {
+          "kind": "quote",
+          "text": "heat, fluid loss, low fuel in the muscles, heavy surface, stiff muscles, or pauses that are too short."
+        },
+        {
+          "kind": "quote",
+          "text": "Steep drift at the same pace is a red flag"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Author-qualified curve interpretation with methodological limits; no disease diagnosis, universal lactate targets or guaranteed-safe workouts."
+      }
+    },
+    {
+      "id": "fullchunkqa-513b1c03af95b8043186733d-1",
+      "chunk_id": "knowledge-513b1c03af95b8043186733d",
+      "questions": [
+        "BakkenのFive Session Typesで、血中乳酸はどんな2過程の差し引きとして説明される？"
+      ],
+      "answer": "乳酸の出現と除去の同時進行の結果です。筋での生成に加え、心臓や酸化的な筋での取り込み・酸化、肝臓での糖への変換を挙げています。値を練習の強さだけで説明しない文脈です。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "What we see is the net result of two simultaneous processes: lactate appearance and lactate removal."
+        },
+        {
+          "kind": "quote",
+          "text": "uptake and oxidation in the heart and oxidative muscle"
+        },
+        {
+          "kind": "quote",
+          "text": "conversion to glucose in the liver."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Author-qualified curve interpretation with methodological limits; no disease diagnosis, universal lactate targets or guaranteed-safe workouts."
+      }
+    },
+    {
+      "id": "fullchunkqa-513b1c03af95b8043186733d-2",
+      "chunk_id": "knowledge-513b1c03af95b8043186733d",
+      "questions": [
+        "BakkenのFive Session Typesの分類では、測定の標準化をどう行う？"
+      ],
+      "answer": "一点でなく目標範囲を選び、一定のペースを保った後の固定した時点で採血して、同じ負荷での経時変化を見る案です。実験室そのものより一貫した方法が必要としています。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "Choose a target range rather than a single value."
+        },
+        {
+          "kind": "quote",
+          "text": "Take samples at fixed time points after maintaining a steady pace."
+        },
+        {
+          "kind": "quote",
+          "text": "Look at change over time at the same load."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Author-qualified curve interpretation with methodological limits; no disease diagnosis, universal lactate targets or guaranteed-safe workouts."
+      }
+    },
+    {
+      "id": "fullchunkqa-513b1c03af95b8043186733d-3",
+      "chunk_id": "knowledge-513b1c03af95b8043186733d",
+      "questions": [
+        "BakkenのType 2はType 1とどう違い、どんな小さな調整を示す？"
+      ],
+      "answer": "どちらも平らに安定しますが、Type 2は望む範囲より少し高く負担が余分です。少し遅くする、総時間を少し減らす、条件を整えるなど一つを変えてType 1へ近づける案です。全条件を一度に変える説明ではありません。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "Lactate sits a bit higher than desired but is stable. The slope is flat, but the level is elevated."
+        },
+        {
+          "kind": "quote",
+          "text": "slightly lower pace, slightly fewer total minutes, or better conditions."
+        },
+        {
+          "kind": "quote",
+          "text": "The goal is to shift Type 2 back toward Type 1."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Author-qualified curve interpretation with methodological limits; no disease diagnosis, universal lactate targets or guaranteed-safe workouts."
+      }
+    },
+    {
+      "id": "fullchunkqa-ee1c2f338eda0a95fa28335e-1",
+      "chunk_id": "knowledge-ee1c2f338eda0a95fa28335e",
+      "questions": [
+        "BakkenのType 3の乳酸曲線では、最後の反復まで待つよう勧める？"
+      ],
+      "answer": "待たずに早くペースを落とし、量を減らす案です。同じペースで徐々に上がる曲線を早く捉えるほどセッションを保ちやすく、翌日の質や継続性を優先する著者の説明です。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "Reduce pace early—do not wait until the last effort. Cut volume."
+        },
+        {
+          "kind": "quote",
+          "text": "The earlier you adjust, the more of the session you retain."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Author-qualified curve interpretation with methodological limits; no disease diagnosis, universal lactate targets or guaranteed-safe workouts."
+      }
+    },
+    {
+      "id": "fullchunkqa-ee1c2f338eda0a95fa28335e-2",
+      "chunk_id": "knowledge-ee1c2f338eda0a95fa28335e",
+      "questions": [
+        "BakkenのType 4がダブル閾値の最初のブロックの早い段階で起きたら、2回目をどう扱う？"
+      ],
+      "answer": "2回目を中止する案です。急で速い乳酸上昇はもはや閾値練習ではないとして、閾値の作業を止め、イージーや厳密に低強度管理した短い反復へ変えるとしています。個人の病気の診断ではありません。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "If this happens early in the first block of a double threshold day, cancel session number two."
+        },
+        {
+          "kind": "quote",
+          "text": "Stop the threshold work. Convert the session to easy volume or shorter, controlled efforts at much lower intensity"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Author-qualified curve interpretation with methodological limits; no disease diagnosis, universal lactate targets or guaranteed-safe workouts."
+      }
+    },
+    {
+      "id": "fullchunkqa-ee1c2f338eda0a95fa28335e-3",
+      "chunk_id": "knowledge-ee1c2f338eda0a95fa28335e",
+      "questions": [
+        "BakkenのType 5で指標の組み合わせが不自然なとき、乳酸値だけに従う前に何を確かめる？"
+      ],
+      "answer": "測定誤差、冷たい指、汚染、採血間隔が不通常に長くないかを確認します。それでも不自然なら、感覚・呼吸・動作を組み合わせて保守的に強度を下げ、管理しやすくする案です。本文の短い反復への言及を、誰にでも常に安全という保証にはしません。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "Is there measurement error, a cold finger, contamination, or an unusually long time between samples?"
+        },
+        {
+          "kind": "quote",
+          "text": "feel, breathing, and mechanics, plus a conservative intensity choice."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Author-qualified curve interpretation with methodological limits; no disease diagnosis, universal lactate targets or guaranteed-safe workouts."
+      }
+    }
+  ]
+}
