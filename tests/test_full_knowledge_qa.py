@@ -48,3 +48,17 @@ def test_duplicate_qa_ids_cannot_fill_coverage(tmp_path):
     chunk, entry = fixture(tmp_path)
     with pytest.raises(ValueError, match='duplicate authored QA ids'):
         v.check_coverage([entry, entry, entry], [chunk])
+
+
+def test_automatic_candidates_cannot_certify_review(tmp_path):
+    chunk, entry = fixture(tmp_path)
+    entry['review'] = {'method': 'automatic-candidate', 'status': 'pending-context-review'}
+    with pytest.raises(ValueError, match='missing manual context review'):
+        v.validate_entry(entry, chunk, tmp_path)
+
+
+def test_csv_source_quote_requires_a_typed_validator(tmp_path):
+    chunk, entry = fixture(tmp_path)
+    chunk['evidence'] = {'kind': 'csv', 'rows': []}
+    with pytest.raises(ValueError, match='typed evidence validator required'):
+        v.validate_entry(entry, chunk, tmp_path)

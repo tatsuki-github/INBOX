@@ -6,7 +6,7 @@ from pathlib import Path
 from chunk_calendar_gaps import PATH,event,render_gap
 ROOT=Path(__file__).resolve().parents[1]
 def main():
- ap=argparse.ArgumentParser();ap.add_argument('--output',default='input/faq/full-knowledge-qa/reviewed-0017.json');args=ap.parse_args();out=ROOT/args.output
+ ap=argparse.ArgumentParser();ap.add_argument('--output',default=str(ROOT/'input/faq/full-knowledge-qa/reviewed-0017.json'));args=ap.parse_args();out=Path(args.output)
  old=json.loads(out.read_text())['entries'] if out.is_file() else [];old_ids={e['id'] for e in old};entries=list(old);claimed={(e['calculation']['from_date'],e['calculation']['to_date']) for e in old};counts=Counter(e['chunk_id'] for e in old)
  for p in (ROOT/'input/faq/full-knowledge-qa').glob('*.json'):
   for e in json.loads(p.read_text()).get('entries',[]):

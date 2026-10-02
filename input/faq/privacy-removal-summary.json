@@ -1,5 +1,5 @@
 {
-  "removed_records": 16,
+  "removed_records": 17,
   "scrubbed_personal_memos": 14,
   "scrubbed_prepared_ids": [],
   "policy": "No account credentials, identity numbers, private salary or asset amounts, remuneration, private individual health or personality evaluations in source knowledge or QAs.",
@@ -18,5 +18,6 @@
     "ac5651b2d93df9aa527c6f7f4c7bb5bf0f6408bbb3704cfed4af30f84f94e09d"
   ],
   "removed_prepared_count": 12,
-  "scrubbed_booking_credentials": 3
+  "scrubbed_booking_credentials": 3,
+  "scrubbed_registration_cells_including_mirrors": 42
 }

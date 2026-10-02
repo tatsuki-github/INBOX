@@ -1,11 +1,11 @@
 {
   "status": "in_progress",
-  "total_chunks": 2781,
-  "complete_chunks": 963,
-  "authored_qa": 2909,
+  "total_chunks": 2782,
+  "complete_chunks": 1077,
+  "authored_qa": 3251,
   "carried_forward_qa": 86,
-  "required_qa": 8343,
-  "remaining_qa": 5434,
+  "required_qa": 8346,
+  "remaining_qa": 5095,
   "pending": [
     {
       "chunk_id": "knowledge-87cf31783baaff56705b784d",
@@ -1184,6 +1184,12 @@
       "remaining_qa": 3
     },
     {
+      "chunk_id": "knowledge-270c516cb3213ae9b5ba9c36",
+      "source": "input/aragyoku/men_full_2012_2025.json",
+      "index": 91,
+      "remaining_qa": 3
+    },
+    {
       "chunk_id": "knowledge-bb90359e7f10cca0bcfe402f",
       "source": "input/aragyoku/ocr_raw/2012-女子.md",
       "index": 0,
@@ -2282,37 +2288,37 @@
       "remaining_qa": 3
     },
     {
-      "chunk_id": "knowledge-cb163670cc4291a939d83ad9",
+      "chunk_id": "knowledge-9ca35d43b09aa6dde9c38ed2",
       "source": "input/aragyoku/transcripts/2025-男子.json",
       "index": 0,
       "remaining_qa": 3
     },
     {
-      "chunk_id": "knowledge-c4207ede7fa3a7c7d5c358af",
+      "chunk_id": "knowledge-261a64feec54f6cea1e9bfa9",
       "source": "input/aragyoku/transcripts/2025-男子.json",
       "index": 1,
       "remaining_qa": 3
     },
     {
-      "chunk_id": "knowledge-1e7857f9abb26ea7f9b8f007",
+      "chunk_id": "knowledge-20719db9f928e1204788e32b",
       "source": "input/aragyoku/transcripts/2025-男子.json",
       "index": 2,
       "remaining_qa": 3
     },
     {
-      "chunk_id": "knowledge-ce24442d215fb4ee363535e5",
+      "chunk_id": "knowledge-f8f0cef980017eed3adcc36e",
       "source": "input/aragyoku/transcripts/2025-男子.json",
       "index": 3,
       "remaining_qa": 3
     },
     {
-      "chunk_id": "knowledge-61e1a8b889f48b0eb405811a",
+      "chunk_id": "knowledge-4bd94a569e2054877ac3b202",
       "source": "input/aragyoku/transcripts/2025-男子.json",
       "index": 4,
       "remaining_qa": 3
     },
     {
-      "chunk_id": "knowledge-4c1b78cbcd8b8e11313003f0",
+      "chunk_id": "knowledge-be5dd98fc8563c5b9a03ecc0",
       "source": "input/aragyoku/transcripts/2025-男子.json",
       "index": 5,
       "remaining_qa": 3
@@ -3230,7 +3236,7 @@
       "remaining_qa": 3
     },
     {
-      "chunk_id": "knowledge-1e9d7052c2131d60d638023d",
+      "chunk_id": "knowledge-26f62f4d19883bbe84816bf7",
       "source": "input/external/drive/shared/名簿/2025年度.csv",
       "index": 0,
       "remaining_qa": 3
@@ -3242,7 +3248,7 @@
       "remaining_qa": 3
     },
     {
-      "chunk_id": "knowledge-4c59d5964c3b944c5e55336a",
+      "chunk_id": "knowledge-2dd886fa3038aa6cafeffe1f",
       "source": "input/external/drive/shared/名簿/2025年度_岱明中学校陸上競技部_部員名簿.csv",
       "index": 0,
       "remaining_qa": 3
@@ -5660,96 +5666,6 @@
       "remaining_qa": 3
     },
     {
-      "chunk_id": "knowledge-778bd5ab6500a77d5fdc8563",
-      "source": "input/external/drive/shared/記録データベース/2025年度/3000m予想タイムランキング.csv",
-      "index": 0,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-79d370dafe9b4e86857378f1",
-      "source": "input/external/drive/shared/記録データベース/2025年度/3000m予想タイムランキング.csv",
-      "index": 1,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-ca179e47db1936552635234b",
-      "source": "input/external/drive/shared/記録データベース/2025年度/3000m予想タイムランキング.csv",
-      "index": 2,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-7674b30b0414fae2d15d4b56",
-      "source": "input/external/drive/shared/記録データベース/2025年度/3000m予想タイムランキング.csv",
-      "index": 3,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-dd29ec91ef9cefade8f9a1b0",
-      "source": "input/external/drive/shared/記録データベース/2025年度/3000m予想タイムランキング.csv",
-      "index": 4,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-b30d00c2cfc4e398b3112a07",
-      "source": "input/external/drive/shared/記録データベース/2025年度/3000m予想タイムランキング.csv",
-      "index": 5,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-17d17f2f1b86340db4ba4d11",
-      "source": "input/external/drive/shared/記録データベース/2025年度/3000m予想タイムランキング.csv",
-      "index": 6,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-909b11af7ad5b159c6bbe65c",
-      "source": "input/external/drive/shared/記録データベース/2025年度/3000m予想タイムランキング.csv",
-      "index": 7,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-51f2b75a724700e0f03ce639",
-      "source": "input/external/drive/shared/記録データベース/2025年度/3000m予想タイムランキング.csv",
-      "index": 8,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-e8f722643a83028b6064e7b9",
-      "source": "input/external/drive/shared/記録データベース/2025年度/3000m予想タイムランキング.csv",
-      "index": 9,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-ff24f79396aa263d98aa1f7a",
-      "source": "input/external/drive/shared/記録データベース/2025年度/3000m予想タイムランキング.csv",
-      "index": 10,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-7e7460802c943d1fa0f1b144",
-      "source": "input/external/drive/shared/記録データベース/2025年度/3000m予想タイムランキング.csv",
-      "index": 11,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-f1a464b4bc4092b8749ee1c7",
-      "source": "input/external/drive/shared/記録データベース/2025年度/3000m予想タイムランキング.csv",
-      "index": 12,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-4a1b30b9965fe2302cbe602a",
-      "source": "input/external/drive/shared/記録データベース/2025年度/3000m予想タイムランキング.csv",
-      "index": 13,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-7d8e527748d1d5f0716c8aef",
-      "source": "input/external/drive/shared/記録データベース/2025年度/3000m予想タイムランキング.csv",
-      "index": 14,
-      "remaining_qa": 3
-    },
-    {
       "chunk_id": "knowledge-b194fcaf8a5cef1db1935250",
       "source": "input/external/drive/shared/記録データベース/2025年度/3000m予想タイムランキング.csv.meta.json",
       "index": 0,
@@ -6842,7 +6758,7 @@
       "remaining_qa": 3
     },
     {
-      "chunk_id": "knowledge-25d21e79e39a26e0aaefeea1",
+      "chunk_id": "knowledge-8a1b64e8e654278ffa169270",
       "source": "input/idaten-corpus/drive-text/名簿/2025年度.csv",
       "index": 0,
       "remaining_qa": 3
@@ -7307,246 +7223,6 @@
       "chunk_id": "knowledge-aa7cae802c417257688da671",
       "source": "input/idaten-corpus/repo-docs/adr/059-prepared-qa-answers.md",
       "index": 0,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-6c6d9139fb7b0342dda3d6e6",
-      "source": "input/memos/norwegian_method_applied_full.txt",
-      "index": 24,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-9acd28d710fc326aa7340cdf",
-      "source": "input/memos/norwegian_method_applied_full.txt",
-      "index": 25,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-dbe5a5e2ec783c565badeb65",
-      "source": "input/memos/norwegian_method_applied_full.txt",
-      "index": 26,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-72d92a909bd39df00334ce4e",
-      "source": "input/memos/norwegian_method_applied_full.txt",
-      "index": 27,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-e7c07dbe6766991acab341a1",
-      "source": "input/memos/norwegian_method_applied_full.txt",
-      "index": 28,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-9c79146a8b851a9a52286229",
-      "source": "input/memos/norwegian_method_applied_full.txt",
-      "index": 29,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-637cba45db504f8ba7f34b95",
-      "source": "input/memos/norwegian_method_applied_full.txt",
-      "index": 30,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-3064ce1e960f995a7c5f6f41",
-      "source": "input/memos/norwegian_method_applied_full.txt",
-      "index": 31,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-cc932407188eadc37d2519ea",
-      "source": "input/memos/norwegian_method_applied_full.txt",
-      "index": 32,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-f9a869e499e6ed6fc8f8e0ac",
-      "source": "input/memos/norwegian_method_applied_full.txt",
-      "index": 33,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-26af75c551d6c613da3586b1",
-      "source": "input/memos/norwegian_method_applied_full.txt",
-      "index": 34,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-71b949b24a16ec0dbdf804bd",
-      "source": "input/memos/norwegian_method_applied_full.txt",
-      "index": 35,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-79630ad0b1ea40e7be51d6d8",
-      "source": "input/memos/norwegian_method_applied_full.txt",
-      "index": 36,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-a7e76596752ced6cc30ff004",
-      "source": "input/memos/norwegian_method_applied_full.txt",
-      "index": 37,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-30fa0386fb1f6b6102ebecc6",
-      "source": "input/memos/norwegian_method_applied_full.txt",
-      "index": 38,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-e124e29f8a28dc977a9c631d",
-      "source": "input/memos/norwegian_method_applied_full.txt",
-      "index": 39,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-75bb28db2051b7951e5e433c",
-      "source": "input/memos/norwegian_method_applied_full.txt",
-      "index": 40,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-8b5595616f22b38ceb6777ac",
-      "source": "input/memos/norwegian_method_applied_full.txt",
-      "index": 41,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-a39c05821e3aa8b179f4dacc",
-      "source": "input/memos/norwegian_method_applied_full.txt",
-      "index": 42,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-8237034aea094be943c6c698",
-      "source": "input/memos/norwegian_method_applied_full.txt",
-      "index": 43,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-4afaa146f3881d1ae372b656",
-      "source": "input/memos/norwegian_method_applied_full.txt",
-      "index": 44,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-53d2188af51a31c9ebf8a96d",
-      "source": "input/memos/norwegian_method_applied_full.txt",
-      "index": 45,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-f1f82a648fcdfa08a40ef188",
-      "source": "input/memos/norwegian_method_applied_full.txt",
-      "index": 46,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-4016004b7e80368938e9ef51",
-      "source": "input/memos/norwegian_method_applied_full.txt",
-      "index": 47,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-1ae14cdc7208f3e66012461e",
-      "source": "input/memos/norwegian_method_applied_full.txt",
-      "index": 48,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-6e31fa4fea8192867b0820e8",
-      "source": "input/memos/norwegian_method_applied_full.txt",
-      "index": 49,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-8ccfdb47c133a719b73ed747",
-      "source": "input/memos/norwegian_method_applied_full.txt",
-      "index": 50,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-450385d563345c736a483ed0",
-      "source": "input/memos/norwegian_method_applied_full.txt",
-      "index": 51,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-eedcb550d348c8400af909e2",
-      "source": "input/memos/norwegian_method_applied_full.txt",
-      "index": 52,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-9f46413c5819077b6df5c343",
-      "source": "input/memos/norwegian_method_applied_full.txt",
-      "index": 53,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-c07d219d90bf811e9dd454c4",
-      "source": "input/memos/norwegian_method_applied_full.txt",
-      "index": 54,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-08ef5e69197d08a603a1baaf",
-      "source": "input/memos/norwegian_method_applied_full.txt",
-      "index": 55,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-09b386d45b46796b34abcedc",
-      "source": "input/memos/norwegian_method_applied_full.txt",
-      "index": 56,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-e1ff4def432e480e96c1f33c",
-      "source": "input/memos/norwegian_method_applied_full.txt",
-      "index": 57,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-675c5f754d313f7e8b17b8d8",
-      "source": "input/memos/norwegian_method_applied_full.txt",
-      "index": 58,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-0b982b3727e0126a83911500",
-      "source": "input/memos/norwegian_method_applied_full.txt",
-      "index": 59,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-bfbbcc410c69a94e1896c42e",
-      "source": "input/memos/norwegian_method_applied_full.txt",
-      "index": 60,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-12c66b95822d8296045ccac0",
-      "source": "input/memos/norwegian_method_applied_full.txt",
-      "index": 61,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-4e8835400b120d771be87cf0",
-      "source": "input/memos/norwegian_method_applied_full.txt",
-      "index": 62,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-3902e13d0dbd76fb3845a144",
-      "source": "input/memos/norwegian_method_applied_full.txt",
-      "index": 63,
       "remaining_qa": 3
     },
     {
@@ -9104,25 +8780,25 @@
       "remaining_qa": 3
     },
     {
-      "chunk_id": "knowledge-7166f1b4e6d1bf87d7bd7f29",
+      "chunk_id": "knowledge-dd7fc9ca3b96787a301e7706",
       "source": "out/analysis/aragyoku-teams/玉南.md",
       "index": 0,
       "remaining_qa": 3
     },
     {
-      "chunk_id": "knowledge-d13ceb130079e6f8b7936aa2",
+      "chunk_id": "knowledge-274cbbad5fecfe3f525ae924",
       "source": "out/analysis/aragyoku-teams/玉南.md",
       "index": 1,
       "remaining_qa": 3
     },
     {
-      "chunk_id": "knowledge-ef3b37583a63b6293e5aabf7",
+      "chunk_id": "knowledge-5cb6f1f51a5738a232727937",
       "source": "out/analysis/aragyoku-teams/玉名.md",
       "index": 0,
       "remaining_qa": 3
     },
     {
-      "chunk_id": "knowledge-8eceec0c49f0ef199db58da9",
+      "chunk_id": "knowledge-8ae0ceff9b54ce86869b24dc",
       "source": "out/analysis/aragyoku-teams/玉名.md",
       "index": 1,
       "remaining_qa": 3
@@ -9152,13 +8828,13 @@
       "remaining_qa": 3
     },
     {
-      "chunk_id": "knowledge-1df3471c7ad402992a6a2110",
+      "chunk_id": "knowledge-ede3e39e63e512b874378cf5",
       "source": "out/analysis/aragyoku-teams/玉高附属.md",
       "index": 0,
       "remaining_qa": 3
     },
     {
-      "chunk_id": "knowledge-4bdae2ca3e1498de7728cf74",
+      "chunk_id": "knowledge-65c104270a5f8f6640617025",
       "source": "out/analysis/aragyoku-teams/玉高附属.md",
       "index": 1,
       "remaining_qa": 3
@@ -9230,13 +8906,13 @@
       "remaining_qa": 3
     },
     {
-      "chunk_id": "knowledge-df73c5158a03d55d7bc8e2a4",
+      "chunk_id": "knowledge-6e673cf649c114071298d88b",
       "source": "out/analysis/aragyoku-teams/長洲.md",
       "index": 0,
       "remaining_qa": 3
     },
     {
-      "chunk_id": "knowledge-a3ae7cc708d5ecc58cc4c36e",
+      "chunk_id": "knowledge-a791ab48b99156bb629706dc",
       "source": "out/analysis/aragyoku-teams/長洲.md",
       "index": 1,
       "remaining_qa": 3
@@ -9542,25 +9218,25 @@
       "remaining_qa": 3
     },
     {
-      "chunk_id": "knowledge-a4c8868ce0bd6ee33ac76743",
+      "chunk_id": "knowledge-fcfee7f66540b495ad5293c3",
       "source": "out/analysis/aragyoku-years/2025.md",
       "index": 0,
       "remaining_qa": 3
     },
     {
-      "chunk_id": "knowledge-7474d5263f55a6f76d8e6934",
+      "chunk_id": "knowledge-6a55912a8b63e95804959fa0",
       "source": "out/analysis/aragyoku-years/2025.md",
       "index": 1,
       "remaining_qa": 3
     },
     {
-      "chunk_id": "knowledge-5b853bc652b6b678425b001e",
+      "chunk_id": "knowledge-67f5d8a7e1a0d63ff99e0d01",
       "source": "out/analysis/aragyoku-years/2025.md",
       "index": 2,
       "remaining_qa": 3
     },
     {
-      "chunk_id": "knowledge-0b20c8c866e86f760cca335a",
+      "chunk_id": "knowledge-4e2f423c5b676814b5ed31f6",
       "source": "out/analysis/aragyoku-years/2025.md",
       "index": 3,
       "remaining_qa": 3
@@ -9572,19 +9248,19 @@
       "remaining_qa": 3
     },
     {
-      "chunk_id": "knowledge-ef6daf55f34932e1c6c254f8",
+      "chunk_id": "knowledge-7961830d4fba80daa9b9afbc",
       "source": "out/analysis/aragyoku_2024_2025_focus_teams.md",
       "index": 0,
       "remaining_qa": 3
     },
     {
-      "chunk_id": "knowledge-78e05251747c4833939db44c",
+      "chunk_id": "knowledge-fcb501b4a7610cca853192d6",
       "source": "out/analysis/aragyoku_2024_2025_focus_teams.md",
       "index": 1,
       "remaining_qa": 3
     },
     {
-      "chunk_id": "knowledge-142621e7743a30682d3267e7",
+      "chunk_id": "knowledge-1717c03cd62bd251befa1b7f",
       "source": "out/analysis/aragyoku_2024_2025_focus_teams.md",
       "index": 2,
       "remaining_qa": 3
@@ -10094,360 +9770,6 @@
       "remaining_qa": 3
     },
     {
-      "chunk_id": "knowledge-0455984d98bcf8f29ce14657",
-      "source": "out/analysis/aragyoku_women_track_joined.json",
-      "index": 0,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-98a6797f516add500e4088bd",
-      "source": "out/analysis/aragyoku_women_track_joined.json",
-      "index": 1,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-05183e5e9b99c12b5330c313",
-      "source": "out/analysis/aragyoku_women_track_joined.json",
-      "index": 2,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-3a2c7698db165a67be1109ec",
-      "source": "out/analysis/aragyoku_women_track_joined.json",
-      "index": 3,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-e1158a618bb78760b8f84743",
-      "source": "out/analysis/aragyoku_women_track_joined.json",
-      "index": 4,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-8ba8f29d203964496b69893a",
-      "source": "out/analysis/aragyoku_women_track_joined.json",
-      "index": 5,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-fe02a9b0433044ebcd7a3d22",
-      "source": "out/analysis/aragyoku_women_track_joined.json",
-      "index": 6,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-cc95c09878b3391f4230dd1c",
-      "source": "out/analysis/aragyoku_women_track_joined.json",
-      "index": 7,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-01febceccee1286ba92786a3",
-      "source": "out/analysis/aragyoku_women_track_joined.json",
-      "index": 8,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-82b65b67a1df81ca183c2e4c",
-      "source": "out/analysis/aragyoku_women_track_joined.json",
-      "index": 9,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-e50bec5e500657e36018ab70",
-      "source": "out/analysis/aragyoku_women_track_joined.json",
-      "index": 10,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-4aa76d4f00d77bb44e9889ce",
-      "source": "out/analysis/aragyoku_women_track_joined.json",
-      "index": 11,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-cd5ab9c1b3d76282b633b277",
-      "source": "out/analysis/aragyoku_women_track_joined.json",
-      "index": 12,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-7d597d381fdf626367415221",
-      "source": "out/analysis/aragyoku_women_track_joined.json",
-      "index": 13,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-f45d302b2c1cc005641e1057",
-      "source": "out/analysis/aragyoku_women_track_joined.json",
-      "index": 14,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-7c134c0f6a8786d7cfe4a8d2",
-      "source": "out/analysis/aragyoku_women_track_joined.json",
-      "index": 15,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-072e836a5d024340134d8e7a",
-      "source": "out/analysis/aragyoku_women_track_joined.json",
-      "index": 16,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-1c5af32625cd8e6de8a4bcb1",
-      "source": "out/analysis/aragyoku_women_track_joined.json",
-      "index": 17,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-644237b10105492adf08e56a",
-      "source": "out/analysis/aragyoku_women_track_joined.json",
-      "index": 18,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-54d76eaa4d96849cf536b811",
-      "source": "out/analysis/aragyoku_women_track_joined.json",
-      "index": 19,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-2e0906fdf5c9d37c80d71a69",
-      "source": "out/analysis/aragyoku_women_track_joined.json",
-      "index": 20,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-484a05b9c221ad7cdf7146c1",
-      "source": "out/analysis/aragyoku_women_track_joined.json",
-      "index": 21,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-cd46be37a79e82e6da908a74",
-      "source": "out/analysis/aragyoku_women_track_joined.json",
-      "index": 22,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-462f55667b347aa70d534d1e",
-      "source": "out/analysis/aragyoku_women_track_joined.json",
-      "index": 23,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-7be4cdb7c196fa59bcf6994e",
-      "source": "out/analysis/aragyoku_women_track_joined.json",
-      "index": 24,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-264095afc862d3727fab0772",
-      "source": "out/analysis/aragyoku_women_track_joined.json",
-      "index": 25,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-0fc37e67056c13e3fb94379c",
-      "source": "out/analysis/aragyoku_women_track_joined.json",
-      "index": 26,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-425895b0973267f61c7cf3d7",
-      "source": "out/analysis/aragyoku_women_track_joined.json",
-      "index": 27,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-a5f5f6884a7f1bd82555332a",
-      "source": "out/analysis/aragyoku_women_track_joined.json",
-      "index": 28,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-398bc8cdec45220e3a276151",
-      "source": "out/analysis/aragyoku_women_track_joined.json",
-      "index": 29,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-a03e45bcac3873857b482301",
-      "source": "out/analysis/aragyoku_women_track_joined.json",
-      "index": 30,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-698e74c9e77aeb277c2c1d62",
-      "source": "out/analysis/aragyoku_women_track_joined.json",
-      "index": 31,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-423918b05fa930f344a39dcf",
-      "source": "out/analysis/aragyoku_women_track_joined.json",
-      "index": 32,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-786d57ce9ea15c80dcc33d5d",
-      "source": "out/analysis/aragyoku_women_track_joined.json",
-      "index": 33,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-19e15c691d1bed8eb7a0c968",
-      "source": "out/analysis/aragyoku_women_track_joined.json",
-      "index": 34,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-c10dd6bcc2f685cdbb5c9864",
-      "source": "out/analysis/aragyoku_women_track_joined.json",
-      "index": 35,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-ddeb6afa2945786bca514abb",
-      "source": "out/analysis/aragyoku_women_track_joined.json",
-      "index": 36,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-bbdad3386aedb5992bb8a91c",
-      "source": "out/analysis/aragyoku_women_track_joined.json",
-      "index": 37,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-29058605cbe6de06ea920c05",
-      "source": "out/analysis/aragyoku_women_track_joined.json",
-      "index": 38,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-e57667e7e06a41b3692486ad",
-      "source": "out/analysis/aragyoku_women_track_joined.json",
-      "index": 39,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-a04c92a03af76a84a2ea3dc2",
-      "source": "out/analysis/aragyoku_women_track_joined.json",
-      "index": 40,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-980c77a4075d851c54d9fc1c",
-      "source": "out/analysis/aragyoku_women_track_joined.json",
-      "index": 41,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-ddfb0aab02632d76b1ae8fdb",
-      "source": "out/analysis/aragyoku_women_track_joined.json",
-      "index": 42,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-74ef36ec79b831214367f8dd",
-      "source": "out/analysis/aragyoku_women_track_joined.json",
-      "index": 43,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-90ea88a009f35c09a10dee83",
-      "source": "out/analysis/aragyoku_women_track_joined.json",
-      "index": 44,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-58f997f452e1240e6240d8ac",
-      "source": "out/analysis/aragyoku_women_track_joined.json",
-      "index": 45,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-97fd980e62decf34385d5c13",
-      "source": "out/analysis/aragyoku_women_track_joined.json",
-      "index": 46,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-231b6b528b6c204cf50c1e76",
-      "source": "out/analysis/aragyoku_women_track_joined.json",
-      "index": 47,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-67f7b0e75aa35ca6f7f156ee",
-      "source": "out/analysis/aragyoku_women_track_joined.json",
-      "index": 48,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-009b9c4c2121daee52d23939",
-      "source": "out/analysis/aragyoku_women_track_joined.json",
-      "index": 49,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-480e663703e9fa515ece501a",
-      "source": "out/analysis/aragyoku_women_track_joined.json",
-      "index": 50,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-9c2c4f6db430c60d1bcaaa94",
-      "source": "out/analysis/aragyoku_women_track_joined.json",
-      "index": 51,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-56d245e35aa6a231f76562cc",
-      "source": "out/analysis/aragyoku_women_track_joined.json",
-      "index": 52,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-5b452472cde227d3a1a2f7a0",
-      "source": "out/analysis/aragyoku_women_track_joined.json",
-      "index": 53,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-9b9bab3c9782276727c080ff",
-      "source": "out/analysis/aragyoku_women_track_joined.json",
-      "index": 54,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-e478330f263c87a856179d86",
-      "source": "out/analysis/aragyoku_women_track_joined.json",
-      "index": 55,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-69049ee60492d44523eb1fac",
-      "source": "out/analysis/aragyoku_women_track_joined.json",
-      "index": 56,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-1b9ad66f3339af83200f39fb",
-      "source": "out/analysis/aragyoku_women_track_joined.json",
-      "index": 57,
-      "remaining_qa": 3
-    },
-    {
-      "chunk_id": "knowledge-9baf4ea22dc9da4130f3e493",
-      "source": "out/analysis/aragyoku_women_track_joined.json",
-      "index": 58,
-      "remaining_qa": 3
-    },
-    {
       "chunk_id": "knowledge-d504d322940a7008c2568476",
       "source": "out/analysis/arato-tamana-teams/ATRC.md",
       "index": 0,
@@ -10918,7 +10240,5 @@
   ],
   "limitations": [
     "Literal grounding and manual review records are checked; not automatic semantic proof."
-  ],
-  "checkpoint": "Third reviewed checkpoint; full goal remains in progress.",
-  "media_remaining": "44 media assets still need verified textual equivalents or visual review before full coverage can be claimed."
+  ]
 }
