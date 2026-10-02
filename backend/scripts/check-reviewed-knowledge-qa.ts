@@ -25,14 +25,18 @@ if (process.argv.includes("--answers")) {
   if (!published) throw new Error("Answer checks require --published");
   const failures: string[] = [];
   for (const e of candidates) for (const q of e.questions) {
-    const result = await answerQuestion(q, {
-      skipRouter: true,
-      retrieve: () => { throw new Error("Unexpected retrieval: " + e.id); },
-      kgQuery: () => { throw new Error("Unexpected KG fallback: " + e.id); },
-      llm: { complete: async () => { throw new Error("Unexpected LLM: " + e.id); } },
-    });
-    if (result.kind !== "answered" || !result.sources.includes("prepared:" + e.id))
-      failures.push(e.id + " " + result.kind + " " + ("sources" in result ? result.sources.join(",") : ""));
+    try {
+      const result = await answerQuestion(q, {
+        skipRouter: true,
+        retrieve: () => { throw new Error("Unexpected retrieval: " + e.id); },
+        kgQuery: () => { throw new Error("Unexpected KG fallback: " + e.id); },
+        llm: { complete: async () => { throw new Error("Unexpected LLM: " + e.id); } },
+      });
+      if (result.kind !== "answered" || !result.sources.includes("prepared:" + e.id))
+        failures.push(e.id + " " + result.kind + " " + ("sources" in result ? result.sources.join(",") : ""));
+    } catch (error) {
+      failures.push(e.id + " " + (error instanceof Error ? error.message : String(error)));
+    }
   }
   if (failures.length) throw new Error("Answer path mismatches: " + failures.length + "\n" + failures.join("\n"));
   console.log(JSON.stringify({ answered: candidates.length, answerPathErrors: 0 }));

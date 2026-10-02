@@ -1,0 +1,244 @@
+{
+  "version": 1,
+  "entries": [
+    {
+      "id": "fullchunkqa-db0cba767ba7c3070e014806-1",
+      "chunk_id": "knowledge-db0cba767ba7c3070e014806",
+      "questions": [
+        "BakkenのIndividual Differencesで、筋生検から筋線維構成の全体像が直接分かる？"
+      ],
+      "answer": "直接の情報は得られますが、侵襲的で医療の専門性が必要であり、一つの筋の一点だけです。筋間・筋内でも分布が違うため、外側広筋の試料で全てを分かったとはしません。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "it's invasive, it requires medical expertise, and it only measures one point in one muscle."
+        },
+        {
+          "kind": "quote",
+          "text": "Muscle fiber distribution varies both between muscles and within the same muscle."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Fiber assessment uncertainty and closing practical reading guidance; probable phenotype is not diagnosis and tested populations are not trial proof of uniform outcomes."
+      }
+    },
+    {
+      "id": "fullchunkqa-db0cba767ba7c3070e014806-2",
+      "chunk_id": "knowledge-db0cba767ba7c3070e014806",
+      "questions": [
+        "BakkenのIndividual Differencesでは、MRI・遺伝子・フィールドテストで筋線維を精密に非侵襲で地図化できると確定している？"
+      ],
+      "answer": "確定していません。候補が研究されているが結果は決定的でなく、必要な精密な非侵襲マッピングを提供する方法はまだないという本書時点の説明です。現在の製品性能はこの本だけで判断しません。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "Results so far are not conclusive. None of the methods provide the precise, non-invasive mapping we really need."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Fiber assessment uncertainty and closing practical reading guidance; probable phenotype is not diagnosis and tested populations are not trial proof of uniform outcomes."
+      }
+    },
+    {
+      "id": "fullchunkqa-db0cba767ba7c3070e014806-3",
+      "chunk_id": "knowledge-db0cba767ba7c3070e014806",
+      "questions": [
+        "BakkenのPractical Consequencesでいうprobable phenotypeは、選手の筋線維タイプの確定診断？"
+      ],
+      "answer": "確定診断ではなく、長期の練習応答や耐性、速さと持久性への適性、運動歴から可能性を考えながら扱うことです。個人の病歴・遺伝情報を推測したり、運動歴だけで構成を決めたりする回答ではありません。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "working with a probable phenotype. Observe how a runner responds to training over time."
+        },
+        {
+          "kind": "quote",
+          "text": "Arhletic background matters too."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Fiber assessment uncertainty and closing practical reading guidance; probable phenotype is not diagnosis and tested populations are not trial proof of uniform outcomes."
+      }
+    },
+    {
+      "id": "fullchunkqa-228fff554fe207e493be7106-1",
+      "chunk_id": "knowledge-228fff554fe207e493be7106",
+      "questions": [
+        "Bakkenの結論で、閾値付近のセッションが適切に管理できているときの外から分かる進行は？"
+      ],
+      "answer": "管理された始まりから同じ質を保ち、最後を無理に救済せず終わるという描写です。続く週でも耐えられ、高すぎた負荷を余分なイージー週で埋め合わせず継続できることを挙げています。無条件の増量保証ではありません。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "They start controlled, maintain the same quality throughout, and finish without needing to \"rescue\" the final portion."
+        },
+        {
+          "kind": "quote",
+          "text": "without having to compensate with extra easy weeks because the load\nbecame too high."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Fiber assessment uncertainty and closing practical reading guidance; probable phenotype is not diagnosis and tested populations are not trial proof of uniform outcomes."
+      }
+    },
+    {
+      "id": "fullchunkqa-228fff554fe207e493be7106-2",
+      "chunk_id": "knowledge-228fff554fe207e493be7106",
+      "questions": [
+        "Bakkenの結論のRespect for transitionsで、注意する変更の具体例は？"
+      ],
+      "answer": "新しい靴、新しい路面、量の増加、筋力練習追加、トレッドミルからアスファルトへの移行を挙げます。変化時は段階的に適応する時間と慎重さが必要という説明で、安定した練習期なら傷害が起こらないという保証ではありません。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "new shoes, new surface, increased volume, added strength training, transition from treadmill to asphalt."
+        },
+        {
+          "kind": "quote",
+          "text": "The body needs gradual adaptation to new loads."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Fiber assessment uncertainty and closing practical reading guidance; probable phenotype is not diagnosis and tested populations are not trial proof of uniform outcomes."
+      }
+    },
+    {
+      "id": "fullchunkqa-228fff554fe207e493be7106-3",
+      "chunk_id": "knowledge-228fff554fe207e493be7106",
+      "questions": [
+        "Bakkenの結論のWhat the Method Requiresで、実践に必要な3つの態度は？"
+      ],
+      "answer": "強く感じる日も抑える規律、すぐ結果が出なくても過程を信じる忍耐、練習しすぎた時に認めて調整する正直さです。著者が単純だが容易ではないと説明する文脈です。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "discipline to hold back when the body feels strong."
+        },
+        {
+          "kind": "quote",
+          "text": "patience to trust the process when results don't come immediately."
+        },
+        {
+          "kind": "quote",
+          "text": "honesty to admit when you've trained too hard and need to adjust."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Fiber assessment uncertainty and closing practical reading guidance; probable phenotype is not diagnosis and tested populations are not trial proof of uniform outcomes."
+      }
+    },
+    {
+      "id": "fullchunkqa-fbfe94ab4f46b102530763db-1",
+      "chunk_id": "knowledge-fbfe94ab4f46b102530763db",
+      "questions": [
+        "Bakkenの結びで、ドリフト・安定した週・負担増大に応じて読み返す章や原理は？"
+      ],
+      "answer": "ドリフトが出たら強度管理の章へ戻り、週が安定したら進行の原理を使い、負担が上がり始めたら早く調整する案です。読み終えた計画を固定せず、継続した管理のガイドにする説明です。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "Return to the chapters on intensity control when you notice drift. Use the progression principles when you have stable weeks. Adjust early when the cost begins to rise."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Fiber assessment uncertainty and closing practical reading guidance; probable phenotype is not diagnosis and tested populations are not trial proof of uniform outcomes."
+      }
+    },
+    {
+      "id": "fullchunkqa-fbfe94ab4f46b102530763db-2",
+      "chunk_id": "knowledge-fbfe94ab4f46b102530763db",
+      "questions": [
+        "Bakkenの結びで、モデルを試した集団としてどんな2種類を挙げている？"
+      ],
+      "answer": "世界のトップランナーと、仕事・家族があり時間が限られる市民ランナーです。著者が適用の幅を述べる箇所で、全員に同じ練習量や効果があるという比較試験の証明にはしません。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "The model has been tested on the world's best runners. It has been tested\non recreational runners with jobs and families and limited time."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Fiber assessment uncertainty and closing practical reading guidance; probable phenotype is not diagnosis and tested populations are not trial proof of uniform outcomes."
+      }
+    },
+    {
+      "id": "fullchunkqa-fbfe94ab4f46b102530763db-3",
+      "chunk_id": "knowledge-fbfe94ab4f46b102530763db",
+      "questions": [
+        "BakkenのStart Where You Areで、複雑なプログラムや高度な機器より先に挙げる取り組みは？"
+      ],
+      "answer": "自分のGolden Zoneを見つけ定期的に練習し、イージーの日を楽に保ち、忍耐強く原理を週ごと・月ごとに守ることです。高度な道具を買うことを開始条件にせず、乳酸計を使わない場合は特に保守的にするという結びです。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "Find your Golden Zone. Train there regularly. Keep the easy days easy.\nBe patient."
+        },
+        {
+          "kind": "quote",
+          "text": "You don't need advanced equipment to start. You don't need complicated Programs."
+        },
+        {
+          "kind": "quote",
+          "text": "Be conservative, especially if you're not using a lactate meter."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Fiber assessment uncertainty and closing practical reading guidance; probable phenotype is not diagnosis and tested populations are not trial proof of uniform outcomes."
+      }
+    }
+  ]
+}

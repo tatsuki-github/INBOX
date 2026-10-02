@@ -1,0 +1,301 @@
+{
+  "version": 1,
+  "entries": [
+    {
+      "id": "fullchunkqa-39c42a82656baa222be837de-1",
+      "chunk_id": "knowledge-39c42a82656baa222be837de",
+      "questions": [
+        "Bakkenの技術編の導入は、どんな読者を想定している？"
+      ],
+      "answer": "方法だけでなく理由を知りたいコーチ、精密な道具を求めるランナー、全体像に関心がある読者を想定しています。原理・構造・セッションを示した前の部分から、歴史、乳酸測定、生理学的な理由、筋緊張、今後の技術へ進む構成です。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "This part is for coaches who need to know why, not just how. For runners who want precise tools. And for the simply curious who want the full picture."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Historical account and technical-section reading guidance; not individualized load prescription or ethnic generalization."
+      }
+    },
+    {
+      "id": "fullchunkqa-39c42a82656baa222be837de-2",
+      "chunk_id": "knowledge-39c42a82656baa222be837de",
+      "questions": [
+        "Bakkenは技術編導入で、乳酸計を使わない読者にどう読む案を示している？"
+      ],
+      "answer": "原理は適用されるので、技術的な節は流し読みして要約に注目する案を示しています。乳酸計の所持を本全体の理解の条件にはしていません。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "If you do not use a lactate meter, the principles still apply; skim the technical sections and focus on the summaries."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Historical account and technical-section reading guidance; not individualized load prescription or ethnic generalization."
+      }
+    },
+    {
+      "id": "fullchunkqa-39c42a82656baa222be837de-3",
+      "chunk_id": "knowledge-39c42a82656baa222be837de",
+      "questions": [
+        "Bakkenは技術編導入で、乳酸測定を単なる採血以外のどんな判断に結び付ける？"
+      ],
+      "answer": "曲線を読むことに結び付けます。平らなプロファイル、ドリフトの意味、ペースを調整する時とセッションを終える時を見分ける、具体的な判断規則として説明しています。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "Lactate measurement in practice is more than taking a sample. It is learning to read a curve: what a flat profile tells you, what drift means, when to adjust pace and when to end the session."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Historical account and technical-section reading guidance; not individualized load prescription or ethnic generalization."
+      }
+    },
+    {
+      "id": "fullchunkqa-6c910f00791b3129ade2fc8d-1",
+      "chunk_id": "knowledge-6c910f00791b3129ade2fc8d",
+      "questions": [
+        "Bakkenが1996年春のElmhurstのトラックで描く、2つの指導思想の組み合わせは？"
+      ],
+      "answer": "Lydiardに由来する量と忍耐の考え方と、Coeの精密さを求める考え方です。著者は、その精密さを強度管理へ向け直すことがNorwegian Methodに影響したと振り返っています。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "taking Lydiard's patience and Coe's demand for precision, but redirecting that precision toward intensity control."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Historical account and technical-section reading guidance; not individualized load prescription or ethnic generalization."
+      }
+    },
+    {
+      "id": "fullchunkqa-6c910f00791b3129ade2fc8d-2",
+      "chunk_id": "knowledge-6c910f00791b3129ade2fc8d",
+      "questions": [
+        "Bakkenの方法の歴史の章で、完成した体系より先にあった問いは何？"
+      ],
+      "answer": "際立った生まれつきの能力がなくても、壊れずにもっと多く、より良く練習できるかという問いです。完成品を一度に設計したのではなく、試行・失敗・測定・調整を重ねた経緯として述べています。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "How can a runner without extreme innate abilities train more and better without breaking down?"
+        },
+        {
+          "kind": "quote",
+          "text": "What is described in this book grew in waves of trial, error, measurement, and adjustment."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Historical account and technical-section reading guidance; not individualized load prescription or ethnic generalization."
+      }
+    },
+    {
+      "id": "fullchunkqa-6c910f00791b3129ade2fc8d-3",
+      "chunk_id": "knowledge-6c910f00791b3129ade2fc8d",
+      "questions": [
+        "Bakkenが方法の歴史の章で、読者自身の実験に求める進め方は？"
+      ],
+      "answer": "他人に効いた方法をそのまま写すのではなく、一度に一つの変数を、答えが得られる測定を伴って管理しながら変えることです。方法は完成しておらず、今後も進化すると述べています。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "Ask questions and experiment, but don't blindly copy what worked for someone else."
+        },
+        {
+          "kind": "quote",
+          "text": "one variable at a time, with measurements that give you answers."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Historical account and technical-section reading guidance; not individualized load prescription or ethnic generalization."
+      }
+    },
+    {
+      "id": "fullchunkqa-bbdc0aff159ffbd16bdb0830-1",
+      "chunk_id": "knowledge-bbdc0aff159ffbd16bdb0830",
+      "questions": [
+        "BakkenがYork High SchoolのJoe Newtonの練習で覚えた、水曜の定例セッションは？"
+      ],
+      "answer": "毎週水曜の25×400mです。著者は、量だけでなくインターバルを週の固定したリズムに組み込む環境で学び、後に自身の方法の主要セッションの一つになったと述べています。一般の読者への本数指定ではありません。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "Every Wednesday:\n25x400 meters."
+        },
+        {
+          "kind": "quote",
+          "text": "it later became one of the central quality sessions in the Norwegian Method."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Historical account and technical-section reading guidance; not individualized load prescription or ethnic generalization."
+      }
+    },
+    {
+      "id": "fullchunkqa-bbdc0aff159ffbd16bdb0830-2",
+      "chunk_id": "knowledge-bbdc0aff159ffbd16bdb0830",
+      "questions": [
+        "BakkenがPeter Coeとの練習の歴史で挙げる、2種類の坂の距離は？"
+      ],
+      "answer": "長い反復は600〜800m、短く急な坂のスプリントは180〜200mです。著者自身が経験した練習形式の説明で、短い坂の練習は後の典型的な冬の週にも入ったと述べています。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "Peter used two formats: long efforts of 600-800 meters and shorter, steeper sprints of 180-200 meters."
+        },
+        {
+          "kind": "quote",
+          "text": "The short hill workout is now a standard element in a typical winter week of the Norwegian Method."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Historical account and technical-section reading guidance; not individualized load prescription or ethnic generalization."
+      }
+    },
+    {
+      "id": "fullchunkqa-bbdc0aff159ffbd16bdb0830-3",
+      "chunk_id": "knowledge-bbdc0aff159ffbd16bdb0830",
+      "questions": [
+        "Bakkenが1998〜1999年のPer Halleとの再出発で行った、練習日誌の実験は？"
+      ],
+      "answer": "Halleの1972年の練習日誌を、1999年シーズンにセッションごとに写すという実験です。著者の歴史上の試みで、読者全員に過去の高負荷をそのまま写すことを勧める説明ではありません。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "would copy his training diary from 1972 for the 1999 season. Session by session."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Historical account and technical-section reading guidance; not individualized load prescription or ethnic generalization."
+      }
+    },
+    {
+      "id": "fullchunkqa-55502dd8a8577c158efe8bff-1",
+      "chunk_id": "knowledge-55502dd8a8577c158efe8bff",
+      "questions": [
+        "Bakkenの1999〜2002年Lactate Projectでは、測定目的と日々の使用はどう変わった？"
+      ],
+      "answer": "当初は3回の週末合宿で、意図した負荷と実際を照合するために測定しました。2000年までには各質的セッションで使い、セッションの管理・評価を精密にして固定原理に沿って動的に調整するようになったとしています。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "lactate was measured during three weekend training camps, not yet as a steering tool, but to check actual load against intention. By 2000, I was using it on every quality session."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Historical account and technical-section reading guidance; not individualized load prescription or ethnic generalization."
+      }
+    },
+    {
+      "id": "fullchunkqa-55502dd8a8577c158efe8bff-2",
+      "chunk_id": "knowledge-55502dd8a8577c158efe8bff",
+      "questions": [
+        "Bakkenがケニアでの観察から得たという、閾値を超える強い練習の乳酸曲線の特徴は？"
+      ],
+      "answer": "著者が一緒に練習したランナーは、ノルウェーのランナーに典型的だった高さまで乳酸を上げず、そこでも平らで管理された曲線に抑えていたと述べています。観察した集団の説明で、全てのケニア人の特性を断定するものではありません。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "on hard sessions above threshold, the same runners did not push lactate as high as Norwegians typically did. They held back there too, with a flat, controlled curve."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Historical account and technical-section reading guidance; not individualized load prescription or ethnic generalization."
+      }
+    },
+    {
+      "id": "fullchunkqa-55502dd8a8577c158efe8bff-3",
+      "chunk_id": "knowledge-55502dd8a8577c158efe8bff",
+      "questions": [
+        "Bakkenの2002〜2003年の構造化で、強弱の週の並びはどう変わった？"
+      ],
+      "answer": "強い2週と楽な1週の周期から、構造的に平らな週へ移りました。単に同日に閾値練習を2回行うだけでなく、それを可能にする週の構造が重要だったと振り返っています。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "I shifted from two hard weeks followed by one easier week to structurally flat weeks."
+        },
+        {
+          "kind": "quote",
+          "text": "It was also the weekly structure that made it possible."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Historical account and technical-section reading guidance; not individualized load prescription or ethnic generalization."
+      }
+    }
+  ]
+}

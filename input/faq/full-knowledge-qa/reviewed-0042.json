@@ -1,0 +1,313 @@
+{
+  "version": 1,
+  "entries": [
+    {
+      "id": "fullchunkqa-120627d4defad86de0eb3b6f-1",
+      "chunk_id": "knowledge-120627d4defad86de0eb3b6f",
+      "questions": [
+        "Bakkenのダブル閾値の理論章は、Chapter 7のどんな読者向け説明から深めている？"
+      ],
+      "answer": "週4〜6時間練習するランナー向けのダブル閾値導入と、意欲的なランナー向けの具体的な週構成を前提に、実施方法より機能する理由を深める章です。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "In Chapter 7, I introduced double threshold for runners training four to six hours per week."
+        },
+        {
+          "kind": "quote",
+          "text": "This chapter goes deeper, not into how you do it, but into why it works."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Author mechanisms distinguished from hypotheses and acute study evidence; recovery scale polarity and distinct Radcliffe speeds checked against prose."
+      }
+    },
+    {
+      "id": "fullchunkqa-120627d4defad86de0eb3b6f-2",
+      "chunk_id": "knowledge-120627d4defad86de0eb3b6f",
+      "questions": [
+        "Bakkenのダブル閾値の理論章導入で、説明する仕組みは単一の要因？"
+      ],
+      "answer": "単一ではなく、身体のストレス応答の時刻、数時間にわたる筋緊張の振る舞い、閾値ペースの特異性を組み合わせた説明です。著者の経験から組み立てた機序で、全体を一つの研究で証明したとはしていません。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "The mechanism is not one single thing."
+        },
+        {
+          "kind": "quote",
+          "text": "the timing of the body's stress response, the behavior of muscle tone across hours, and the specificity of threshold-pace running"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Author mechanisms distinguished from hypotheses and acute study evidence; recovery scale polarity and distinct Radcliffe speeds checked against prose."
+      }
+    },
+    {
+      "id": "fullchunkqa-120627d4defad86de0eb3b6f-3",
+      "chunk_id": "knowledge-120627d4defad86de0eb3b6f",
+      "questions": [
+        "Bakkenのダブル閾値の理論章導入では、朝を強くしすぎる失敗をどう説明する？"
+      ],
+      "answer": "夕方に消耗した状態で入り、別々の強い2日分を一日に圧縮したようなストレスを蓄積するため、モデルの意図と逆になると述べています。朝の強度管理を失ったまま形式だけ2回にしても同じとはしません。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "They run too hard in the morning session, arrive depleted for the evening, and accumulate a stress load that looks like two separate hard days compressed into one."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Author mechanisms distinguished from hypotheses and acute study evidence; recovery scale polarity and distinct Radcliffe speeds checked against prose."
+      }
+    },
+    {
+      "id": "fullchunkqa-c3bca80d5434558d6bcb2916-1",
+      "chunk_id": "knowledge-c3bca80d5434558d6bcb2916",
+      "questions": [
+        "Bakkenのダブル閾値の理論章で、3本の柱として挙げる項目は？"
+      ],
+      "answer": "練習負荷の限界、パフォーマンスの限界、適応と特異性の原理です。章では負荷の式と筋緊張との関係を掘り下げ、基礎を学ぶ読者は前の章へ戻れる構成です。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "Double threshold rests on three pillars:\n*   The limitations in training load\n*   The limitations in performance\n*   The principles of adaptation and specificity"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Author mechanisms distinguished from hypotheses and acute study evidence; recovery scale polarity and distinct Radcliffe speeds checked against prose."
+      }
+    },
+    {
+      "id": "fullchunkqa-c3bca80d5434558d6bcb2916-2",
+      "chunk_id": "knowledge-c3bca80d5434558d6bcb2916",
+      "questions": [
+        "BakkenのLimitations in Training Loadでは、走る練習負荷の上限に関わる2つの応答を何とする？"
+      ],
+      "answer": "循環・ホルモン・神経系に関わる全身のストレス応答と、筋のストレス応答です。ダブル閾値は両方に対応するが、著者は筋の要素が決定的だと考えるとしています。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "the general stress response (cardiovascular, hormonal, nervous system) and the muscular stress response."
+        },
+        {
+          "kind": "quote",
+          "text": "I have come to believe the muscular component is the decisive factor."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Author mechanisms distinguished from hypotheses and acute study evidence; recovery scale polarity and distinct Radcliffe speeds checked against prose."
+      }
+    },
+    {
+      "id": "fullchunkqa-c3bca80d5434558d6bcb2916-3",
+      "chunk_id": "knowledge-c3bca80d5434558d6bcb2916",
+      "questions": [
+        "BakkenのWhy the Stress Response Comes Lateで、遅発性筋痛とCK・ミオグロビンの時間経過は？"
+      ],
+      "answer": "筋痛は通常24〜72時間にピーク、5〜7日で軽くなり、CKとミオグロビンは24〜48時間にピークで時に48〜72時間高いままという記述です。遅れた応答の一般的な説明で、個人の回復日数を確定する値ではありません。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "Delayed onset muscle soreness typically peaks around 24-72 hours and subsides over 5-7 days."
+        },
+        {
+          "kind": "quote",
+          "text": "creatine kinase and myoglobin peak within 24-48 hours, sometimes remaining clevated 48-72 hours after the effort."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Author mechanisms distinguished from hypotheses and acute study evidence; recovery scale polarity and distinct Radcliffe speeds checked against prose."
+      }
+    },
+    {
+      "id": "fullchunkqa-499b350d39cd79e676ff00da-1",
+      "chunk_id": "knowledge-499b350d39cd79e676ff00da",
+      "questions": [
+        "BakkenがLoad Equationで紹介するNTNU研究では、単独と分割の乳酸の絶対値はどう変わった？"
+      ],
+      "answer": "単独条件は前半約2.60から後半3.01mmol/Lへ、分割条件は朝約2.72から夕方2.14mmol/Lへという値です。同じ総仕事量の急性応答の紹介で、全員の目標値や長期効果の証明にはしません。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "from around 2.60 mmol/L in the first half to 3.01 mmol/L in the second half."
+        },
+        {
+          "kind": "quote",
+          "text": "around 2.72 mmol/L, while the evening session dropped to 2.14 mmol/L"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Author mechanisms distinguished from hypotheses and acute study evidence; recovery scale polarity and distinct Radcliffe speeds checked against prose."
+      }
+    },
+    {
+      "id": "fullchunkqa-499b350d39cd79e676ff00da-2",
+      "chunk_id": "knowledge-499b350d39cd79e676ff00da",
+      "questions": [
+        "BakkenがLoad Equationで紹介するNTNU研究では、最後の30分を対応させた心拍差は？"
+      ],
+      "answer": "単独の後半30分に対して、分割の2回目が6〜8拍/分低かったという記述です。単独条件内では前半から後半へ約5拍/分上がったとしています。参加者集団の急性反応の紹介です。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "heart rate climbed by approximately 5 beats per minute from first to second half"
+        },
+        {
+          "kind": "quote",
+          "text": "the difference reached 6-8 beats per minute lower with the split approach."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Author mechanisms distinguished from hypotheses and acute study evidence; recovery scale polarity and distinct Radcliffe speeds checked against prose."
+      }
+    },
+    {
+      "id": "fullchunkqa-499b350d39cd79e676ff00da-3",
+      "chunk_id": "knowledge-499b350d39cd79e676ff00da",
+      "questions": [
+        "BakkenのNTNU研究紹介で、翌朝の疲労8対7、筋痛7対6は分割条件のほうが悪い点数？"
+      ],
+      "answer": "この紹介では高いほど良く回復したという1〜10尺度なので、8対7と7対6は分割条件を支持する向きです。ラベルだけで高得点を悪化と読み替えません。翌朝の主観評価で長期の優越性を証明するものではありません。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "8 versus 7 on the study's I-to-10 scale, where higher means better recovered."
+        },
+        {
+          "kind": "quote",
+          "text": "Muscle soreness followed the same pattern, 7 versus 6, again favoring the split approach."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Author mechanisms distinguished from hypotheses and acute study evidence; recovery scale polarity and distinct Radcliffe speeds checked against prose."
+      }
+    },
+    {
+      "id": "fullchunkqa-25903c30a7e2957870dc9c79-1",
+      "chunk_id": "knowledge-25903c30a7e2957870dc9c79",
+      "questions": [
+        "BakkenのThe Research Perspectiveで、vLT2付近の練習が高めるとする乳酸の適応は何？"
+      ],
+      "answer": "乳酸の生成を減らすより、筋に特異的な適応として除去を高めるという仮説です。動員された運動単位のミトコンドリアや毛細血管の増加を挙げますが、章はこの機序を仮説として述べています。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "The hypothesis is that training near vLT2 improves muscle-specific adap-tations, including lactate clearance as opposed to reduced lactate production."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Author mechanisms distinguished from hypotheses and acute study evidence; recovery scale polarity and distinct Radcliffe speeds checked against prose."
+      }
+    },
+    {
+      "id": "fullchunkqa-25903c30a7e2957870dc9c79-2",
+      "chunk_id": "knowledge-25903c30a7e2957870dc9c79",
+      "questions": [
+        "BakkenのThe Radcliffe Caseで、16km/h走の酸素コストは1992年から2003年にどう変わった？"
+      ],
+      "answer": "約205から175ml/kg/kmへ、約15%改善したという記述です。後の測定では約165ml/kg/kmとも報告されたとしています。酸素コストの低下であり、VO2maxが15%上がったという意味ではありません。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "approximately 205 ml/kg/km in 1992 to approximately 175 ml/kg/ km in 2003, an improvement of around 15 percent."
+        },
+        {
+          "kind": "quote",
+          "text": "around 165ml/kg/km."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Author mechanisms distinguished from hypotheses and acute study evidence; recovery scale polarity and distinct Radcliffe speeds checked against prose."
+      }
+    },
+    {
+      "id": "fullchunkqa-25903c30a7e2957870dc9c79-3",
+      "chunk_id": "knowledge-25903c30a7e2957870dc9c79",
+      "questions": [
+        "BakkenのThe Radcliffe Caseで、3mmol/Lでの速度と閾値速度の1992〜2003年の変化は同じ数値？"
+      ],
+      "answer": "本文では3mmol/Lの速度は16から21km/h、閾値速度は16から20km/hと区別しています。図の崩れた文字から両者を一つにせず、本文の説明を使います。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "Speed at 3 mmol/L went from 16 km/h in 1992 to 21 km/h in 2003, while her threshold speed rose from 16 km/h to 20 km/h."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Author mechanisms distinguished from hypotheses and acute study evidence; recovery scale polarity and distinct Radcliffe speeds checked against prose."
+      }
+    }
+  ]
+}
