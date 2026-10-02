@@ -1,0 +1,575 @@
+{
+  "version": 1,
+  "entries": [
+    {
+      "id": "fullchunkqa-d27aaf13f4d35cb2f9d2887e-1",
+      "chunk_id": "knowledge-d27aaf13f4d35cb2f9d2887e",
+      "questions": [
+        "Bakkenの拡張会話テストでは、短い段階のインターバルで判定してよい？発話する時点は？"
+      ],
+      "answer": "各段階を少なくとも3分にし、終盤で発話する案内です。実施例は3分を5〜8本、間は1分の軽いジョグ、最後の30〜40秒で発話します。VT1を超えてから会話テストが陰性になるまで2分以上かかる場合があり、短い段階は誤解を招くと説明しています。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "it can take more than two minutes before the talk test turns negative after you pass VT1. Short intervals give misleading results."
+        },
+        {
+          "kind": "quote",
+          "text": "Each step should last at least three minutes"
+        },
+        {
+          "kind": "quote",
+          "text": "Run 5-8 intervals of 3 minutes"
+        },
+        {
+          "kind": "quote",
+          "text": "Take 1 minute of easy jogging"
+        },
+        {
+          "kind": "quote",
+          "text": "In the final 30-40 seconds"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Source-specific training theory and protocols with author qualifications; no universal physiological guarantee."
+      }
+    },
+    {
+      "id": "fullchunkqa-d27aaf13f4d35cb2f9d2887e-2",
+      "chunk_id": "knowledge-d27aaf13f4d35cb2f9d2887e",
+      "questions": [
+        "Bakkenの拡張会話テストのyes・yes but・noは、VT1・VT2とどう対応すると説明されている？"
+      ],
+      "answer": "yesからyes butへの移行はVT1と一致することが多く、noへの移行はVT2/RCT付近と説明しています。Golden Zoneは通常VT1とVT2より下の点の間で、短い文は話せても自由な会話はできない範囲という説明です。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "transition from \"yes\" to \"yes, but..\" often coincides with the first ventilatory threshold (VT1)"
+        },
+        {
+          "kind": "quote",
+          "text": "transition to \"no\" lies near the second threshold (VT2/RCT)."
+        },
+        {
+          "kind": "quote",
+          "text": "Your Golden Zone typically falls between VT1 and a point below VT2"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Source-specific training theory and protocols with author qualifications; no universal physiological guarantee."
+      }
+    },
+    {
+      "id": "fullchunkqa-d27aaf13f4d35cb2f9d2887e-3",
+      "chunk_id": "knowledge-d27aaf13f4d35cb2f9d2887e",
+      "questions": [
+        "Bakkenの30分タイムトライアルで閾値心拍を推定する際、30分全体の平均を使う？Golden Zoneへの調整は？"
+      ],
+      "answer": "最初の10分でリズムを整え、最後の20分の平均心拍を閾値心拍の推定値として使う案内です。Golden Zoneの心拍はそこから4〜7拍引くと説明しています。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "Use the first 10 minutes to settle into rhythm"
+        },
+        {
+          "kind": "quote",
+          "text": "Take the average heart rate from the final 20 minutes as your estimated threshold heart rate"
+        },
+        {
+          "kind": "quote",
+          "text": "To find your Golden Zone, subtract 4-7 beats"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Source-specific training theory and protocols with author qualifications; no universal physiological guarantee."
+      }
+    },
+    {
+      "id": "fullchunkqa-5644973c2336562092bfc200-1",
+      "chunk_id": "knowledge-5644973c2336562092bfc200",
+      "questions": [
+        "Bakkenの心拍変動の説明では、疲労時とピークに近い時で閾値心拍は同じ方向へ変わる？"
+      ],
+      "answer": "疲労時は通常より低くなり、ピークへ近づくと高くなると説明しています。同じペース・同じ乳酸値でも心拍は変わるため、会話テストを補正として使う理由にしています。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "When you are fatigued, threshold heart rate runs lower than normal, and when you approach peak htness, ir runs higher."
+        },
+        {
+          "kind": "quote",
+          "text": "Same pace, same lactate, but heart rate tells a ditterent story."
+        },
+        {
+          "kind": "quote",
+          "text": "the talk test remains useful as a corrective"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Source-specific training theory and protocols with author qualifications; no universal physiological guarantee."
+      }
+    },
+    {
+      "id": "fullchunkqa-5644973c2336562092bfc200-2",
+      "chunk_id": "knowledge-5644973c2336562092bfc200",
+      "questions": [
+        "Bakkenの心拍変動リストには、朝の低下と23度の反復中の上昇についてどんな目安が載っている？"
+      ],
+      "answer": "朝の閾値心拍は通常5〜7拍低いという目安です。23度で6分を6本行う例では、同じ乳酸値でも最初と最後の反復に7〜10拍の幅があると説明しています。いずれも本書の目安です。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "Threshold heart rate runs lower in the morning, typically by 5-7 beats"
+        },
+        {
+          "kind": "quote",
+          "text": "for 6x6 minutes at 23°C (73°F), expect 7-10 beats of spread from first to last interval at identical lactate"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Source-specific training theory and protocols with author qualifications; no universal physiological guarantee."
+      }
+    },
+    {
+      "id": "fullchunkqa-5644973c2336562092bfc200-3",
+      "chunk_id": "knowledge-5644973c2336562092bfc200",
+      "questions": [
+        "Bakkenのthree-point methodは、何週間でどの3種類を照合し、どの程度の一致を目安にする？"
+      ],
+      "answer": "1〜2週間で3つの検証テストを行い、通常はフィールドテスト・拡張会話テスト・心拍ベースの方法を組み合わせます。3〜5拍、または1km当たり5〜7秒程度の範囲で同じ強度を示せば、閾値を見つけた可能性が高いとする案内です。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "Complete three validation tests over one to two weeks"
+        },
+        {
+          "kind": "quote",
+          "text": "a field test, an extended talk test, and a heart rate-based method"
+        },
+        {
+          "kind": "quote",
+          "text": "within 3 to 5 heartbeats or 5 to 7 seconds per kilometer"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Source-specific training theory and protocols with author qualifications; no universal physiological guarantee."
+      }
+    },
+    {
+      "id": "fullchunkqa-f80d8b8a3cb7697c1ddc9b6f-1",
+      "chunk_id": "knowledge-f80d8b8a3cb7697c1ddc9b6f",
+      "questions": [
+        "Bakkenの乳酸プロファイルを比較可能にするには、コース・ウォームアップ・直前の閾値超練習をどう揃える？"
+      ],
+      "answer": "同じトレッドミルまたは同じ平坦なコースと、同じウォームアップに揃えます。最後の閾値を超える練習は少なくとも4日前にする案内です。睡眠不足・ストレス・暑さも反応を変え得るとしています。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "Use a treadmill or the same flat route, with identical warm-up."
+        },
+        {
+          "kind": "quote",
+          "text": "Your last session above the threshold should be at least four days prior."
+        },
+        {
+          "kind": "quote",
+          "text": "poor sleep, stress, or heat can all shift the lactate response."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Source-specific training theory and protocols with author qualifications; no universal physiological guarantee."
+      }
+    },
+    {
+      "id": "fullchunkqa-f80d8b8a3cb7697c1ddc9b6f-2",
+      "chunk_id": "knowledge-f80d8b8a3cb7697c1ddc9b6f",
+      "questions": [
+        "Bakkenの乳酸プロファイルの段階テストは、各段階と休止が何分で、速度をどう上げる？"
+      ],
+      "answer": "各段階を5分、間の休止を30秒として乳酸を測り、軽い速度から小さく均等に上げます。通常6〜10段階で曲線の形が明確になり、閾値付近の速度増加は特に慎重に調整する案内です。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "run five minutes at a set pace, pause for thirty seconds, measure lactate, increase pace slightly, repeat."
+        },
+        {
+          "kind": "quote",
+          "text": "Begin at an easy pace"
+        },
+        {
+          "kind": "quote",
+          "text": "typically 6-10 steps are needed"
+        },
+        {
+          "kind": "quote",
+          "text": "Take particular care with pace increases near the threshold"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Source-specific training theory and protocols with author qualifications; no universal physiological guarantee."
+      }
+    },
+    {
+      "id": "fullchunkqa-f80d8b8a3cb7697c1ddc9b6f-3",
+      "chunk_id": "knowledge-f80d8b8a3cb7697c1ddc9b6f",
+      "questions": [
+        "Bakkenの本では、ラボで測った乳酸の結果を屋外でもそのまま使ってよい？"
+      ],
+      "answer": "数日以内に屋外のフィールドテストで確認する案内です。トレッドミルと屋外の差は個人差が大きく、数値を歪めていないか確かめるためです。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "A lab test should be verified against a field test outdoors within a few days"
+        },
+        {
+          "kind": "quote",
+          "text": "treadmill-to-outdoor variation"
+        },
+        {
+          "kind": "quote",
+          "text": "This difference can be highly individual."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Source-specific training theory and protocols with author qualifications; no universal physiological guarantee."
+      }
+    },
+    {
+      "id": "fullchunkqa-7abfafad019c3682a741594e-1",
+      "chunk_id": "knowledge-7abfafad019c3682a741594e",
+      "questions": [
+        "BakkenのCommon Mistakesでは、GPS時計の閾値推定をそのままGolden Zoneの目標にする？"
+      ],
+      "answer": "高すぎる推定があるため、そのまま目標にせず余裕を設けると説明しています。本書では、時計の提案より心拍を通常3〜5%低くする目安を挙げています。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "Modern GPS watches often estimate threshold values that are too high for Golden Zone training."
+        },
+        {
+          "kind": "quote",
+          "text": "typically 3-5 percent lower heart rate than the watch suggests."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Source-specific training theory and protocols with author qualifications; no universal physiological guarantee."
+      }
+    },
+    {
+      "id": "fullchunkqa-7abfafad019c3682a741594e-2",
+      "chunk_id": "knowledge-7abfafad019c3682a741594e",
+      "questions": [
+        "BakkenのCommon Mistakesでは、数値が目標内なら会話テストやきつさの感覚を無視してよい？"
+      ],
+      "answer": "無視しない方針です。会話テストと主観的負荷には情報があり、きつすぎるなら数値にかかわらずきつすぎる可能性があるとします。乳酸も代謝状態の間接的な指標で、努力感の直接測定ではないという説明です。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "The talk test and perceived exertion carry real information."
+        },
+        {
+          "kind": "quote",
+          "text": "If it feels too hard, it probably is, regardless of what the numbers say."
+        },
+        {
+          "kind": "quote",
+          "text": "Even lactate is an indirect marker of metabolic state, not a direct measure of effort."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Source-specific training theory and protocols with author qualifications; no universal physiological guarantee."
+      }
+    },
+    {
+      "id": "fullchunkqa-7abfafad019c3682a741594e-3",
+      "chunk_id": "knowledge-7abfafad019c3682a741594e",
+      "questions": [
+        "BakkenのCommon Mistakesでは、1年前のレース記録を現在のVDOT推定の根拠として使ってよい？"
+      ],
+      "answer": "最近のパフォーマンスを使う必要があり、1年前のタイムは現在の走力を反映しないと説明しています。昔のベストだけで現在の練習強度を決める案内ではありません。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "VDOT calculations require recent performances. A time from a year ago does not reflect your current fitness."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Source-specific training theory and protocols with author qualifications; no universal physiological guarantee."
+      }
+    },
+    {
+      "id": "fullchunkqa-e63f4cf9d56736082a014cf5-1",
+      "chunk_id": "knowledge-e63f4cf9d56736082a014cf5",
+      "questions": [
+        "Bakkenの第3章で挙げられている、ノルウェーメソッドの6つの柱は？"
+      ],
+      "answer": "特異性、負荷、筋系、多様性より精度、継続できる耐久性、インターバルトレーニングの6つです。閾値トレーニングを中心に、それらを位置付けています。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "Specificity (internal versus external)"
+        },
+        {
+          "kind": "quote",
+          "text": "Load (what you can repeat)"
+        },
+        {
+          "kind": "quote",
+          "text": "The muscular system (the true limiter)"
+        },
+        {
+          "kind": "quote",
+          "text": "Accuracy over variety (precision beats novelty)"
+        },
+        {
+          "kind": "quote",
+          "text": "Durability (progress that survives real life)"
+        },
+        {
+          "kind": "quote",
+          "text": "Interval training (split the workouts)"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Source-specific training theory and protocols with author qualifications; no universal physiological guarantee."
+      }
+    },
+    {
+      "id": "fullchunkqa-e63f4cf9d56736082a014cf5-2",
+      "chunk_id": "knowledge-e63f4cf9d56736082a014cf5",
+      "questions": [
+        "Bakkenは1996〜1998年に誰の指導を受け、その後の実験にどの指導者の原則を持ち込んだと述べている？"
+      ],
+      "answer": "1996〜1998年にPeter CoeとSam Bellの指導を受けたと述べています。その2人と、幼少期の指導者Per Halleの原則を、その後の実験へ持ち込んだという説明です。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "From 1996 to 1998, I trained under Peter Coe"
+        },
+        {
+          "kind": "quote",
+          "text": "and Sam Bell"
+        },
+        {
+          "kind": "quote",
+          "text": "I therefore took several core principles from Coe, Bell, and Per Halle-my childhood coach"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Source-specific training theory and protocols with author qualifications; no universal physiological guarantee."
+      }
+    },
+    {
+      "id": "fullchunkqa-e63f4cf9d56736082a014cf5-3",
+      "chunk_id": "knowledge-e63f4cf9d56736082a014cf5",
+      "questions": [
+        "Bakkenの第3章で、モデルがfixedとdynamicの両方だというのは、練習日程を固定して一切調整しない意味？"
+      ],
+      "answer": "その意味ではありません。中心と制御の原則を先に定め、その中心に照らして練習・周期化・負荷を計画し、個々のセッション内でも強度や構造を動的に調整する説明です。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "Training sessions, periodization, and load adjustments are all planned, monitored, and reflected against this center."
+        },
+        {
+          "kind": "quote",
+          "text": "dynamically planned even within individual sessions."
+        },
+        {
+          "kind": "quote",
+          "text": "The model is both fixed and dynamic simultaneously"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Source-specific training theory and protocols with author qualifications; no universal physiological guarantee."
+      }
+    },
+    {
+      "id": "fullchunkqa-c66fd4dfb09b98e5cefee41a-1",
+      "chunk_id": "knowledge-c66fd4dfb09b98e5cefee41a",
+      "questions": [
+        "Bakkenが区別する特異性のmechanical/externalとphysiological/internalは、何が違う？"
+      ],
+      "answer": "外的・機械的な特異性はレースと同じペース・リズム・歩幅・路面などです。内的・生理的な特異性はエネルギー供給・乳酸のバランス・緩衝能力・代謝の安定性など、レースペースを維持する能力を扱います。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "One is mechanical and external:"
+        },
+        {
+          "kind": "quote",
+          "text": "the same pace, the same rhythm, the same stride length, on the same surface"
+        },
+        {
+          "kind": "quote",
+          "text": "The other is physiological and internal:"
+        },
+        {
+          "kind": "quote",
+          "text": "energy delivery, lactate balance, buffering capacity, and metabolic stability."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Source-specific training theory and protocols with author qualifications; no universal physiological guarantee."
+      }
+    },
+    {
+      "id": "fullchunkqa-c66fd4dfb09b98e5cefee41a-2",
+      "chunk_id": "knowledge-c66fd4dfb09b98e5cefee41a",
+      "questions": [
+        "Bakkenの特異性の説明では、レースペース練習を重視するとき、どんな負担との交換関係を考える？"
+      ],
+      "answer": "筋系・神経系・総負荷にコストがかかり、機械的負担が高い一方で量が限られると説明しています。レースペース練習自体を否定せず、その負担が他の代謝的な練習量を制約することを考慮する方針です。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "not because race-pace training is wrong, but because it's costly: high mechanical stress, low volume."
+        },
+        {
+          "kind": "quote",
+          "text": "training above the threshold limits other training that could have provided more metabolic volume."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Source-specific training theory and protocols with author qualifications; no universal physiological guarantee."
+      }
+    },
+    {
+      "id": "fullchunkqa-c66fd4dfb09b98e5cefee41a-3",
+      "chunk_id": "knowledge-c66fd4dfb09b98e5cefee41a",
+      "questions": [
+        "Bakkenの第2の柱Loadでは、負荷管理を分ける3つの要素と、判断する問いは？"
+      ],
+      "answer": "一般的な負荷、特異的な負荷、最適化した負荷の3要素です。要求に対して適切な負荷か、育てる負荷か壊す負荷か、他の練習と構造的な矛盾がないかを問いとして挙げています。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "Three sub-elements define how load is managed: general load, specific load, and optimized load."
+        },
+        {
+          "kind": "quote",
+          "text": "Is this the right load relative to the demands?"
+        },
+        {
+          "kind": "quote",
+          "text": "Is the load building or breaking down?"
+        },
+        {
+          "kind": "quote",
+          "text": "Are there structural contradictions in this session compared to the rest?"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Source-specific training theory and protocols with author qualifications; no universal physiological guarantee."
+      }
+    }
+  ]
+}

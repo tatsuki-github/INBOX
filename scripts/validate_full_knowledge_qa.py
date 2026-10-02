@@ -44,6 +44,7 @@ def validate_entry(entry, chunk, root=ROOT):
         ('schema-reviewed-dated-meet-comparison', 'schema-reviewed'),
         ('schema-reviewed-within-athlete-meet-change', 'schema-reviewed'),
         ('schema-reviewed-record-vs-saved-sb', 'schema-reviewed'),
+        ('schema-reviewed-calendar-gap', 'schema-reviewed'),
     }
     if not allowed_review:
         raise ValueError('missing manual context review')
@@ -51,6 +52,10 @@ def validate_entry(entry, chunk, root=ROOT):
         raise ValueError('missing question or answer')
     if not entry.get('evidence'):
         raise ValueError('missing evidence')
+    if review.get('method') == 'schema-reviewed-calendar-gap':
+        from chunk_calendar_gaps import validate_gap
+        validate_gap(entry, chunk, path.read_text())
+        return
     if chunk['evidence']['kind'] == 'csv' and review.get('method') == 'schema-reviewed-time-comparison':
         from chunk_time_comparisons import validate_csv_comparison
         validate_csv_comparison(entry, chunk, path.read_text())
