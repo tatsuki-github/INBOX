@@ -1,0 +1,353 @@
+{
+  "version": 1,
+  "entries": [
+    {
+      "id": "fullchunkqa-67b7c02e8a34aedad9fe6b2a-1",
+      "chunk_id": "knowledge-67b7c02e8a34aedad9fe6b2a",
+      "questions": [
+        "BakkenのPart III冒頭では、強度が正しくてもその週に合わない練習になり得るのは、どんな場面？"
+      ],
+      "answer": "睡眠不足、新しい筋力練習のブロック、トレッドミルから硬いアスファルトへの移行、小さな痛みで動作が変わる場面を挙げています。ペースだけでなく、その週の総負荷と移行を考える説明です。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "even with correct intensity, the session can be wrong for the week you're in."
+        },
+        {
+          "kind": "quote",
+          "text": "After too little sleep, after a new strength block, after a shift from treadmill to hard asphalt, or after a couple of days with minor aches that change your stride without you noticing."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Author-qualified load proposals and cohort study descriptions; no individual injury risk, diagnosis, rehabilitation prescription or medical clearance."
+      }
+    },
+    {
+      "id": "fullchunkqa-67b7c02e8a34aedad9fe6b2a-2",
+      "chunk_id": "knowledge-67b7c02e8a34aedad9fe6b2a",
+      "questions": [
+        "BakkenのPart III冒頭で、明確に止まるほどではない身体の変化は、同じ練習のどんな違いとして表れ得る？"
+      ],
+      "answer": "呼吸が少し重い、心拍が少し高い、安静時心拍やHRVが少しずれる、といった変化を挙げています。そのまま押し通すと制御を失いやすいという説明で、これらだけで病気やけがを診断するものではありません。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "slightly heavier breathing, slightly higher heart rate, a small drift in resting heart rate or HRV."
+        },
+        {
+          "kind": "quote",
+          "text": "If you respond by pushing through, you get less control, not more."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Author-qualified load proposals and cohort study descriptions; no individual injury risk, diagnosis, rehabilitation prescription or medical clearance."
+      }
+    },
+    {
+      "id": "fullchunkqa-67b7c02e8a34aedad9fe6b2a-3",
+      "chunk_id": "knowledge-67b7c02e8a34aedad9fe6b2a",
+      "questions": [
+        "BakkenのPart IIIは、健康と回復を練習と別枠の助言として扱う？"
+      ],
+      "answer": "総負荷の管理、筋肉の耐性、回復をメソッドの一部として扱います。ペースや回復時間と同じく、移行・耐性・調整も系統的に管理するという説明です。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "Part III covers total load management, muscular tolerance, and recovery in Practical terms."
+        },
+        {
+          "kind": "quote",
+          "text": "as an integrated part of the method."
+        },
+        {
+          "kind": "quote",
+          "text": "manage transitions, tolerance, and adjustments just as systematically as you manage pace and rests."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Author-qualified load proposals and cohort study descriptions; no individual injury risk, diagnosis, rehabilitation prescription or medical clearance."
+      }
+    },
+    {
+      "id": "fullchunkqa-0f274d9ea6dd6fddeec92b4a-1",
+      "chunk_id": "knowledge-0f274d9ea6dd6fddeec92b4a",
+      "questions": [
+        "Bakkenが「走り続けられる状態」を支える4つの領域として挙げるものは？"
+      ],
+      "answer": "負荷と適応、けがの予防、練習への復帰、健康チェックです。移行を尊重し、小さな問題を長い休止にしないこと、同じ問題を繰り返さない復帰、重要な指標の追跡という枠組みです。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "FOUR AREAS KEEP YOU RUNNABLE:"
+        },
+        {
+          "kind": "quote",
+          "text": "Load and adaptation: Respect transitions."
+        },
+        {
+          "kind": "quote",
+          "text": "Injury prevention: Stop small issues from becoming layoffs."
+        },
+        {
+          "kind": "quote",
+          "text": "Return to training: Come back without restarting the cycle."
+        },
+        {
+          "kind": "quote",
+          "text": "Health checks: Track the few markers that actually matter."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Author-qualified load proposals and cohort study descriptions; no individual injury risk, diagnosis, rehabilitation prescription or medical clearance."
+      }
+    },
+    {
+      "id": "fullchunkqa-0f274d9ea6dd6fddeec92b4a-2",
+      "chunk_id": "knowledge-0f274d9ea6dd6fddeec92b4a",
+      "questions": [
+        "BakkenのLoad and Adaptationでいう「移行」には、練習量の増加以外に何が含まれる？"
+      ],
+      "answer": "トレッドミルから屋外へ、新しい靴、未経験のインターバル、急な高速走、段階を設けない筋力・プライオメトリクス、路面の変更などです。負荷の受け方が変わり、適応は即座に起こらないという説明です。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "The shift from treadmill to outdoor running. New shoes. A new interval format you have not done before. A sudden move to faster running. Strength or plyometrics introduced without a ramp. Even a surface change can be enough"
+        },
+        {
+          "kind": "quote",
+          "text": "Adaptation is real, but it is not instant."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Author-qualified load proposals and cohort study descriptions; no individual injury risk, diagnosis, rehabilitation prescription or medical clearance."
+      }
+    },
+    {
+      "id": "fullchunkqa-0f274d9ea6dd6fddeec92b4a-3",
+      "chunk_id": "knowledge-0f274d9ea6dd6fddeec92b4a",
+      "questions": [
+        "Bakkenが負荷と回復の交渉で重視する、練習強度の判断の問いは？"
+      ],
+      "answer": "週ごとに繰り返しても後で代償を払わずに済む最高の強度はどこか、という問いです。数週間だけ成功して崩れるより、保守的な進め方で月単位の総負荷を伸ばす考えとして説明しています。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "what is the highest intensity I can repeat, week after week, without paying for it later?"
+        },
+        {
+          "kind": "quote",
+          "text": "the conservative approach is often the only one that lets total load rise over months instead of collapsing after a few good weeks."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Author-qualified load proposals and cohort study descriptions; no individual injury risk, diagnosis, rehabilitation prescription or medical clearance."
+      }
+    },
+    {
+      "id": "fullchunkqa-be8b952bade838a878fac317-1",
+      "chunk_id": "knowledge-be8b952bade838a878fac317",
+      "questions": [
+        "BakkenのManaging Transitionsでは、新しい靴やスピード練習をどう小さく試す例を挙げる？"
+      ],
+      "answer": "新しい靴は最初の日に室内で歩き、数日後にウォームアップのジョグだけに使う例です。スピード練習は本格的なセッションの前に1〜2週間、速い流しを1本ずつ継続して加える案です。著者の移行例です。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "Walk the first day indoors with new shoes, then a few days later jog only the warm-up with them."
+        },
+        {
+          "kind": "quote",
+          "text": "consistently adding one fast stride over one to two weeks before full sessions begin."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Author-qualified load proposals and cohort study descriptions; no individual injury risk, diagnosis, rehabilitation prescription or medical clearance."
+      }
+    },
+    {
+      "id": "fullchunkqa-be8b952bade838a878fac317-2",
+      "chunk_id": "knowledge-be8b952bade838a878fac317",
+      "questions": [
+        "Bakkenが紹介する2025年Frandsenらの走行距離とけがの研究は、どんな規模と期間？"
+      ],
+      "answer": "87か国の5,200人超のランナーを18か月追った研究と紹介しています。本書は、週の総量の変化だけでなく、個々のセッションで距離を急増させることとの関係を説明しています。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "Over 5,200 runners from 87 countries were followed over 18 months"
+        },
+        {
+          "kind": "quote",
+          "text": "injury risk was largely linked to single sessions with too abrupt an increase in length, not just gradual changes in weekly volume."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Author-qualified load proposals and cohort study descriptions; no individual injury risk, diagnosis, rehabilitation prescription or medical clearance."
+      }
+    },
+    {
+      "id": "fullchunkqa-be8b952bade838a878fac317-3",
+      "chunk_id": "knowledge-be8b952bade838a878fac317",
+      "questions": [
+        "Bakkenが紹介するFrandsen研究の距離増加の基準と、記載された相対リスクの数値は？"
+      ],
+      "answer": "直近30日の最長走に対する増加を基準にしています。本文は10〜30%長い場合64%高い、30〜100%長い場合52%高い、距離を倍にした場合128%高いと記載しています。研究紹介の相対的な数値で、個人がけがをする確率や直線的な増加を意味しません。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "Run 10-30% longer than your longest run in the last 30 days: injury risk was 64 % higher"
+        },
+        {
+          "kind": "quote",
+          "text": "Run 30-100% longer: risk was 52% higher"
+        },
+        {
+          "kind": "quote",
+          "text": "Double the distance: risk was 128% higher"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Author-qualified load proposals and cohort study descriptions; no individual injury risk, diagnosis, rehabilitation prescription or medical clearance."
+      }
+    },
+    {
+      "id": "fullchunkqa-675d7b40a68a7069d6fa4070-1",
+      "chunk_id": "knowledge-675d7b40a68a7069d6fa4070",
+      "questions": [
+        "BakkenのInjury Prevention Staircaseにあるsuper-easy weekは、頻度と減らす項目をどう説明している？"
+      ],
+      "answer": "3〜4週ごとに設け、強度・量・頻度のすべてを減らし、その週の前後も段階的に移行する案です。著者の予防案で、個人のけが予防効果を保証するものではありません。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "Systematic super-easy week every third to fourth week. Reduce everything: intensity, volume, and frequency. Combine with gradual transitions into and out of this week"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Author-qualified load proposals and cohort study descriptions; no individual injury risk, diagnosis, rehabilitation prescription or medical clearance."
+      }
+    },
+    {
+      "id": "fullchunkqa-675d7b40a68a7069d6fa4070-2",
+      "chunk_id": "knowledge-675d7b40a68a7069d6fa4070",
+      "questions": [
+        "BakkenのInjury Prevention Staircaseでいうflat training model over timeは、何を安定させる案？"
+      ],
+      "answer": "週ごとの構成を似た形に保ち、週2〜3回の閾値練習の間をイージー走で埋め、移行と変動を小さくする案です。4〜8か月ほどの周期も挙げています。著者は筋系に適応の時間を与える説明をしており、全員への固定処方ではありません。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "A flat structure where each week is relatively similar to the next"
+        },
+        {
+          "kind": "quote",
+          "text": "two to three threshold sessions per week, with minimal transitions and variation, where only easy sessions fill the gaps, for as long as four to eight months."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Author-qualified load proposals and cohort study descriptions; no individual injury risk, diagnosis, rehabilitation prescription or medical clearance."
+      }
+    },
+    {
+      "id": "fullchunkqa-675d7b40a68a7069d6fa4070-3",
+      "chunk_id": "knowledge-675d7b40a68a7069d6fa4070",
+      "questions": [
+        "BakkenのReturn to Trainingの記述は、風邪の症状があっても無条件に走ることを勧めている？"
+      ],
+      "answer": "無条件ではありません。休息を勧める考えを尊重するとし、自身の経験として軽い風邪で慎重に行う可能性を述べつつ、症状が悪化したら止め、迷う場合は休んで臨床家へ相談するとしています。個人の運動可否をこの記述から判断しません。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "Many recommend complete rest for all forms of illness"
+        },
+        {
+          "kind": "quote",
+          "text": "That should be respected."
+        },
+        {
+          "kind": "quote",
+          "text": "stop if symptoms worsen."
+        },
+        {
+          "kind": "quote",
+          "text": "doubt, rest and consult a clinician."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Author-qualified load proposals and cohort study descriptions; no individual injury risk, diagnosis, rehabilitation prescription or medical clearance."
+      }
+    }
+  ]
+}

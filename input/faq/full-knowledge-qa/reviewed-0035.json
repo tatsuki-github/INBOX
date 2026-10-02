@@ -1,0 +1,357 @@
+{
+  "version": 1,
+  "entries": [
+    {
+      "id": "fullchunkqa-3832bcc1f64c33c2bf8eb35b-1",
+      "chunk_id": "knowledge-3832bcc1f64c33c2bf8eb35b",
+      "questions": [
+        "BakkenのMinimum Effective Doseでいう筋力・スピード練習の「80%」は、1RMの80%を意味する？"
+      ],
+      "answer": "ここでは1RMの値ではなく、理想的に行いたい仕事量や取り組みを約80%に抑え、最小限のコストで有効な量を狙う考えです。筋力練習を主練習と競わせず補助として位置付けています。著者の目安です。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "doing your strength and speed work at perhaps 80% of what you'd ideally like."
+        },
+        {
+          "kind": "quote",
+          "text": "supplements should support the main work, not compete with it."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Source-qualified reviews and author proposals; associations are not causation; no individual injury diagnosis, therapeutic guarantee or mechanically inferred race-time improvement."
+      }
+    },
+    {
+      "id": "fullchunkqa-3832bcc1f64c33c2bf8eb35b-2",
+      "chunk_id": "knowledge-3832bcc1f64c33c2bf8eb35b",
+      "questions": [
+        "Bakkenはベテラン、特に50歳以上の筋力練習を、どんな目的で位置付けている？"
+      ],
+      "answer": "パフォーマンス向上だけでなく筋量などの維持の道具として位置付けています。必ずしも重いセッションでなく、年間を通した系統的な維持練習で走る練習を受け止める身体を保つ案です。年齢だけで個人への必要性を判断するものではありません。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "For veteran runners, especially those over 50, strength training becomes a tool for preservation rather than performance."
+        },
+        {
+          "kind": "quote",
+          "text": "Were not necessarily talking about heavy sessions. Systematic maintenance work, performed consistently across the year"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Source-qualified reviews and author proposals; associations are not causation; no individual injury diagnosis, therapeutic guarantee or mechanically inferred race-time improvement."
+      }
+    },
+    {
+      "id": "fullchunkqa-3832bcc1f64c33c2bf8eb35b-3",
+      "chunk_id": "knowledge-3832bcc1f64c33c2bf8eb35b",
+      "questions": [
+        "Bakkenは繰り返す左右非対称のけがや弱さがあれば、まず筋力練習を足せばよいとしている？"
+      ],
+      "answer": "まず本当の筋力の弱さなのか、不均衡な練習構成の結果なのかを問うとしています。量や強度の急増、急な移行が原因なら、筋力練習で問題を覆い隠し筋緊張を増やす場合があるという見解です。個人の原因をこの記述から診断しません。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "is this genuine muscle weakness, or is it the product of an unbalanced training structure?"
+        },
+        {
+          "kind": "quote",
+          "text": "Many asymmetric injuries stem from volume or intensity that ramped up too fast, or from transitions that were too abrupt."
+        },
+        {
+          "kind": "quote",
+          "text": "strength work will only mask the real problem, and may make things worse by driving up muscle tone."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Source-qualified reviews and author proposals; associations are not causation; no individual injury diagnosis, therapeutic guarantee or mechanically inferred race-time improvement."
+      }
+    },
+    {
+      "id": "fullchunkqa-c154a5f408e4d5a2e6d55ed3-1",
+      "chunk_id": "knowledge-c154a5f408e4d5a2e6d55ed3",
+      "questions": [
+        "Bakkenが紹介するWarnekeらの2025年ストレッチ分析は、どんな研究数・参加者数とランニングエコノミーの結果？"
+      ],
+      "answer": "直前のストレッチの急性研究15件と長期研究2件、合計181人をまとめたと紹介しています。静的ストレッチはランニングエコノミーへの急性効果がなく、長期の利益の根拠も薄いという説明です。書籍による研究紹介です。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "fifteen acute studies (stretching right before running) and two long-term studies (stretching programs over time), totaling 181 participants (Warneke et al., 2025)."
+        },
+        {
+          "kind": "quote",
+          "text": "static stretching, where you hold a position for 15-60 seconds, had no acute effect on running economy. Evidence for long-term benefit was thin."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Source-qualified reviews and author proposals; associations are not causation; no individual injury diagnosis, therapeutic guarantee or mechanically inferred race-time improvement."
+      }
+    },
+    {
+      "id": "fullchunkqa-c154a5f408e4d5a2e6d55ed3-2",
+      "chunk_id": "knowledge-c154a5f408e4d5a2e6d55ed3",
+      "questions": [
+        "Bakkenはdynamic warm-upの利点を、筋肉を長くすることとして説明している？"
+      ],
+      "answer": "主に神経筋の活性化と組織の温度を上げることとして説明しています。性能への測定上の利益は控えめとも述べ、速い練習や重い筋力練習の前に身体と気持ちを準備し、注意すべき兆候を確認する機会として位置付けています。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "The benefit has more to do with neuromuscular activation and raising tissue temperature than with lengthening muscle."
+        },
+        {
+          "kind": "quote",
+          "text": "the measurable payoff for performance is modest."
+        },
+        {
+          "kind": "quote",
+          "text": "a chance to scan for any warning signs before loading up."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Source-qualified reviews and author proposals; associations are not causation; no individual injury diagnosis, therapeutic guarantee or mechanically inferred race-time improvement."
+      }
+    },
+    {
+      "id": "fullchunkqa-c154a5f408e4d5a2e6d55ed3-3",
+      "chunk_id": "knowledge-c154a5f408e4d5a2e6d55ed3",
+      "questions": [
+        "BakkenのTendon Stiffnessでは、柔軟性を大きくするほど走効率もよくなるとしている？"
+      ],
+      "answer": "そうはしていません。腱の硬さ、とくにアキレス腱の硬さと良いランニングエコノミーに相関がある研究を挙げ、適度な硬さが力の伝達とエネルギー蓄積に機能すると説明しています。相関から個人の腱を硬くすべきと決めるものではありません。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "higher tendon stiffness, especially in the Achilles, correlates with better running economy."
+        },
+        {
+          "kind": "quote",
+          "text": "chasing ever-greater general flexibility isn't necessarily a worthy goal for runners."
+        },
+        {
+          "kind": "quote",
+          "text": "A degree of stiffness in the muscle-tendon system is functional"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Source-qualified reviews and author proposals; associations are not causation; no individual injury diagnosis, therapeutic guarantee or mechanically inferred race-time improvement."
+      }
+    },
+    {
+      "id": "fullchunkqa-028081e1bf4b8590f852970d-1",
+      "chunk_id": "knowledge-028081e1bf4b8590f852970d",
+      "questions": [
+        "BakkenのCold Water Protocolでは、冷浴をダブル閾値の朝夕の間に置く？"
+      ],
+      "answer": "間には置かず、その日の最後の強い練習の後にする方針です。ストレスから回復への移行を助ける目的で、まだ続く適応を途中で邪魔しないためと説明しています。著者の配置案です。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "never between double threshold workouts, always after the last hard effort of the day."
+        },
+        {
+          "kind": "quote",
+          "text": "not to interrupt adaptation while it's still happening."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Source-qualified reviews and author proposals; associations are not causation; no individual injury diagnosis, therapeutic guarantee or mechanically inferred race-time improvement."
+      }
+    },
+    {
+      "id": "fullchunkqa-028081e1bf4b8590f852970d-2",
+      "chunk_id": "knowledge-028081e1bf4b8590f852970d",
+      "questions": [
+        "Bakkenが紹介する冷水浸漬のメタ分析の利点は、どんな指標・時間帯で、どの程度と説明されている？"
+      ],
+      "answer": "強いセッション後の特に24〜48時間で、筋肉痛と主観的な回復に小さいが実際の改善があると説明しています。大きな効果とはせず、長期の練習適応や個人の回復の保証ではありません。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "Meta-analyses show small but real improvements in muscle soreness and perceived recovery after cold-water immersion, particularly in the 24 48 hours following a hard session"
+        },
+        {
+          "kind": "quote",
+          "text": "The effect isn't dramatic, but it's consistent"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Source-qualified reviews and author proposals; associations are not causation; no individual injury diagnosis, therapeutic guarantee or mechanically inferred race-time improvement."
+      }
+    },
+    {
+      "id": "fullchunkqa-028081e1bf4b8590f852970d-3",
+      "chunk_id": "knowledge-028081e1bf4b8590f852970d",
+      "questions": [
+        "BakkenのThe Thermal Dialでは、冷浴と温浴をどんな練習日に分ける？"
+      ],
+      "answer": "冷浴は強い練習の日の後、温浴はイージーの日や負担の大きいブロックという配置です。冷浴を痛みや炎症の軽減、温浴を緊張の解放へ位置付ける著者の使い分けで、治療効果を保証するものではありません。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "Cold after hard days to limit inflammation and soreness. Hot on easy days to release tension and restore elasticity."
+        },
+        {
+          "kind": "quote",
+          "text": "Hot baths work best on easy training days and especially during demanding training blocks"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Source-qualified reviews and author proposals; associations are not causation; no individual injury diagnosis, therapeutic guarantee or mechanically inferred race-time improvement."
+      }
+    },
+    {
+      "id": "fullchunkqa-f4a78df41d57e2e1a0f5ba44-1",
+      "chunk_id": "knowledge-f4a78df41d57e2e1a0f5ba44",
+      "questions": [
+        "Bakkenが近年のカーボンシューズで挙げる2〜4%は、レースタイムが必ず同じ割合で縮まる意味？"
+      ],
+      "answer": "代謝コスト、つまり単位距離あたりのエネルギー支出が2〜4%低いという研究紹介です。効果は直線的でも全員共通でもなく、速度や技術・接地で変わり、長期の適応はまだ十分分かっていないと説明しています。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "roughly 2-4% lower metabolic cost"
+        },
+        {
+          "kind": "quote",
+          "text": "Metabolic cost is energy expenditure per unit of distance"
+        },
+        {
+          "kind": "quote",
+          "text": "the effect is neither linear nor universal."
+        },
+        {
+          "kind": "quote",
+          "text": "It varies with individual technique and foot strike."
+        },
+        {
+          "kind": "quote",
+          "text": "We still know relatively little about how the body adjusts over months and years of consistent use."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Source-qualified reviews and author proposals; associations are not causation; no individual injury diagnosis, therapeutic guarantee or mechanically inferred race-time improvement."
+      }
+    },
+    {
+      "id": "fullchunkqa-f4a78df41d57e2e1a0f5ba44-2",
+      "chunk_id": "knowledge-f4a78df41d57e2e1a0f5ba44",
+      "questions": [
+        "Bakkenはけがの予防を、シューズの種類だけでよく予測できるとしている？"
+      ],
+      "answer": "種類だけでは弱い予測要因とし、練習負荷、総量とその変化速度の方が重要と説明しています。自身の臨床上の観察についても、相関は因果ではないと明記しています。シューズだけで個人のけがを防げるという回答ではありません。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "shoe type alone is a weak predictor of injury. Training load, total volume and how quickly it changes, matters far more."
+        },
+        {
+          "kind": "quote",
+          "text": "Correlation isn't causation"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Source-qualified reviews and author proposals; associations are not causation; no individual injury diagnosis, therapeutic guarantee or mechanically inferred race-time improvement."
+      }
+    },
+    {
+      "id": "fullchunkqa-f4a78df41d57e2e1a0f5ba44-3",
+      "chunk_id": "knowledge-f4a78df41d57e2e1a0f5ba44",
+      "questions": [
+        "BakkenのRotation and Phasing Inでは、シューズをどう使い分け、今の靴でうまく走れている人に何と述べている？"
+      ],
+      "answer": "異なる特徴の2〜3足をローテーションする案です。少し低く反発のよい靴、クッションの多い靴、質の高い練習用のカーボンを例にし、徐々に導入します。現在の靴でうまくいき、けががなければ替えないと述べています。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "Rotate between two or three pairs with different profiles."
+        },
+        {
+          "kind": "quote",
+          "text": "One pair slightly lower and more responsive, one more cushioned, one carbon pair for quality sessions. Phase in gradually."
+        },
+        {
+          "kind": "quote",
+          "text": "Don't swap shoes if your current ones are working and you're injury-free."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Source-qualified reviews and author proposals; associations are not causation; no individual injury diagnosis, therapeutic guarantee or mechanically inferred race-time improvement."
+      }
+    }
+  ]
+}

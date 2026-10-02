@@ -797,14 +797,14 @@
       "freshness_days"
     ],
     "chunk_ids": [
-      "knowledge-0c67c701e423e0114fc64be1",
-      "knowledge-1d9d1fb37bc4f56215813f28",
-      "knowledge-2f0c25449ae38c903b185f41",
-      "knowledge-077e8408cbf207cdcfc85701",
-      "knowledge-c295e01a020319c0a3dfaafd",
-      "knowledge-2c7728fad59ec0ae1a88c30a",
-      "knowledge-e91e7bdd2bb89b520026588d",
-      "knowledge-56d75f3790be3079bc61d3a8"
+      "knowledge-192ce57c10dfdb1f01a3df5b",
+      "knowledge-874c35aa6da9868b4369c011",
+      "knowledge-ff536f86da47f30ec139c1b3",
+      "knowledge-e523f20fe58044a8b103b2c0",
+      "knowledge-9f02209c2b662e581f406156",
+      "knowledge-67d6498d6abd1f3c9fbe6054",
+      "knowledge-2724d0ec9922a4b500b5c794",
+      "knowledge-7159d549e5198bd12b2caa63"
     ],
     "rows": 110,
     "sample_units": [
@@ -933,11 +933,11 @@
       "freshness_days"
     ],
     "chunk_ids": [
-      "knowledge-78c9271aa92faf71b4e4e99c",
-      "knowledge-027ff18e0113e0af464c1692",
-      "knowledge-c9ab24391b7e4a19ee838b54",
-      "knowledge-4ff35dd01ab9d8f0fe6670bc",
-      "knowledge-220f4040f99d9232747a21b3"
+      "knowledge-ec834dbcf57fd14e4c8bc7fd",
+      "knowledge-8ad4d6b9d2dcf9b99979c2d3",
+      "knowledge-48df3783048d441126b6e6f0",
+      "knowledge-a5ee518169ab9ee3774101d0",
+      "knowledge-42286e2a6e44b1124117f9b4"
     ],
     "rows": 60,
     "sample_units": [
@@ -2059,13 +2059,12 @@
       "as_of"
     ],
     "chunk_ids": [
-      "knowledge-7b40d057ba6aed393d065acf",
-      "knowledge-119ac9911e142b87e9781537",
-      "knowledge-d3d16c55e1ed368a90df0702",
-      "knowledge-839141401020bd5e6af29220",
-      "knowledge-7189092f58737991a51afa79",
-      "knowledge-50755c979770eb59dc501041",
-      "knowledge-a75ea83d364a467bbe66d484"
+      "knowledge-0438e01ecfee6d02ecd6dbac",
+      "knowledge-9e369eb2fc0f517c3b967bb3",
+      "knowledge-f1e0ed2eeed035f4b491e569",
+      "knowledge-f06e20d2de24822dba120309",
+      "knowledge-8cbc535736344a90d2b8777b",
+      "knowledge-09e881e49a6afe0b21b0bbb5"
     ],
     "rows": 110,
     "sample_units": [
@@ -2087,7 +2086,7 @@
           "2026-09-26",
           "aragyoku_prior,road_ekiden,track",
           "race_records",
-          "2026-09-29ユーザー指示により現行の数式予想を5秒速める",
+          "",
           "2:28.50 @2026/07/19",
           "—",
           "—",
@@ -2149,9 +2148,9 @@
       "as_of"
     ],
     "chunk_ids": [
-      "knowledge-dca52a83e57b82add597c7d7",
-      "knowledge-9f5b62270599fc7789da0bb7",
-      "knowledge-523a65d547ee3f5409136a8f"
+      "knowledge-0853216aa6505fc65b04a7a9",
+      "knowledge-e2507fe7d77024c1b75eb833",
+      "knowledge-cc2b13e6789473f4a5d155c6"
     ],
     "rows": 50,
     "sample_units": [
@@ -2173,7 +2172,7 @@
           "2026-09-26",
           "aragyoku_prior,road_ekiden,track",
           "race_records",
-          "2026-09-29ユーザー指示により現行の数式予想を5秒速める",
+          "",
           "2:28.50 @2026/07/19",
           "—",
           "—",
@@ -2235,10 +2234,10 @@
       "as_of"
     ],
     "chunk_ids": [
-      "knowledge-b821afef2ed55fafbe5e163b",
-      "knowledge-3fca313743abf3ce11ad4c2d",
-      "knowledge-20e652e3613fec498523e5e9",
-      "knowledge-318d0e5148b3b23c23e040ed"
+      "knowledge-27798381ee3aa33ec8b174df",
+      "knowledge-bec4979379465a833e667949",
+      "knowledge-d132126692dc9d021724147f",
+      "knowledge-ee69de1b3841fbaa9254bcf7"
     ],
     "rows": 60,
     "sample_units": [
@@ -2260,7 +2259,7 @@
           "2026-09-26",
           "aragyoku_prior,road_ekiden,track",
           "race_records",
-          "ユーザーの追加評価を反映し、5秒速めて柿本より下位を維持（9:28）",
+          "",
           "—",
           "4:21.99 @2026/05/24",
           "9:28.13 @2026/06/13",

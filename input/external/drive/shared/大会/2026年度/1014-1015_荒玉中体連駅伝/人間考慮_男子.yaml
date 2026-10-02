@@ -1,24 +1,6 @@
-# 荒玉2026 男子 — 人間の考慮事項（編集可）
-# adjustments: athlete または team+leg を指定。
-#   delta_sec: 秒の加減（負=速く / 正=遅く）
-#   set_sec: 絶対秒で上書き
-#   min_sec / max_sec: 下限・上限
-# order_exclusions: team と athlete を自動作成オーダーから除き、校内次点を繰り上げる。
-# lineup_overrides: team + leg + athlete で仮オーダーを直接差し替える。
-# formula_adjustments: 数式予測への set_sec / delta_sec（氏名未確定の枠も team+leg で指定可）。
-# formula_observation_weights: team/athlete/meet/date に一致する実績の信頼度 weight（1=通常）。
-# 再生成時、既存ファイルは上書きされない。
 gender: 男子
 updated: '2026-09-29'
-memo: |
-  Jr実績は総合ほぼ一致。松野凛空のJr駅伝は気管支炎回復期の影響があったため、通常より低く評価する。
-  玉陵の内野翼は不出走情報に基づき仮オーダーから除外し、校内SB次点で補充。
-  荒尾第四の本戸優貴はユーザー確認で昨年中学3年・高校進学済み。ATRCの宮崎晃仁を2区へ置換。
-  松野は本番9:20線。田上4区は9:40線。今村は昨年9:38以上を期待しつつプレッシャーは掛けない。
-  5–6人目は厳しい。菊水1区はトラック楽観を抑え、現実的な下限感を維持。
-  玉名高附・小倉由宇: なごみ2区10:30は不調のみ。Jr CS 4区8:48を実力線（なごみはRECENT非注入）。
-  南関男子は直近フォームが上がらず、校単位で+20s。
-  男子1区はユーザー指摘を反映し、隈部を8:58、柿本を9:15、小倉を9:28に調整。柿本を小倉より上位、隈部との区間差を保ちつつ、二人を各5秒速める。
+memo: 個人の健康状態・主観評価に関するメモは削除済み。
 order_exclusions:
 - team: 菊水中
   athlete: 福原 雅史
@@ -53,93 +35,93 @@ adjustments:
   reason: 4区は9:40でいける
 - athlete: 今村 昇磨
   delta_sec: -8
-  reason: 本番覚醒・殻破り期待（昨年9:38以上）
+  reason: ''
 - athlete: 山本 哲瑠
   delta_sec: -3
-  reason: なごみより上向き・競り合いで燃える
+  reason: ''
 - team: 菊水中
   leg: 1
   min_sec: 530
   reason: 1区はどんなに速くても8:50前後が現実線
 - team: 南関中
   delta_sec: 20
-  reason: 直近フォーム上がらず。Jr以降も調子が乗りきれていない
+  reason: ''
 formula_observation_weights:
-  - team: 玉陵中
-    meet: なごみ中学駅伝
-    weight: 0.15
-    reason: 練習参加とみなし、競技会実績より低い重み
-  - athlete: 松野 凛空
-    meet: 熊本県ジュニア駅伝
-    date: '2026-09-26'
-    weight: 0.25
-    reason: 気管支炎からの回復期。今回のJr記録は通常の競技力指標より低く評価
+- team: 玉陵中
+  meet: なごみ中学駅伝
+  weight: 0.15
+  reason: 練習参加とみなし、競技会実績より低い重み
+- athlete: 松野 凛空
+  meet: 熊本県ジュニア駅伝
+  date: '2026-09-26'
+  weight: 0.25
+  reason: ''
 formula_adjustments:
-  - team: 南関中
-    leg: 1
-    delta_sec: 10
-    reason: ジュニア男子で玉名高附43:11・南関44:15・岱明44:23。現行予想では南関が玉名高附とほぼ同タイムのため、地区比較を反映して各区+10秒
-  - team: 南関中
-    leg: 2
-    delta_sec: 10
-    reason: ジュニア男子の学校間比較を反映する南関チーム補正
-  - team: 南関中
-    leg: 3
-    delta_sec: 10
-    reason: ジュニア男子の学校間比較を反映する南関チーム補正
-  - team: 南関中
-    leg: 4
-    delta_sec: 10
-    reason: ジュニア男子の学校間比較を反映する南関チーム補正
-  - team: 南関中
-    leg: 5
-    delta_sec: 10
-    reason: ジュニア男子の学校間比較を反映する南関チーム補正
-  - team: 南関中
-    leg: 6
-    delta_sec: 10
-    reason: ジュニア男子の学校間比較を反映する南関チーム補正
-  - team: 菊水中
-    athlete: 隈部侑成
-    set_sec: 538
-    reason: ユーザーの1区評価を反映。区間1位とし、柿本・小倉との差を明確化（8:58）
-  - team: 玉陵中
-    athlete: 柿本晴仁
-    set_sec: 555
-    reason: ユーザーの追加評価を反映し、5秒速めて小倉より上位を維持（9:15）
-  - team: 玉名高附
-    athlete: 小倉 十和
-    set_sec: 568
-    reason: ユーザーの追加評価を反映し、5秒速めて柿本より下位を維持（9:28）
-  - team: 菊水中
-    athlete: 明瀬七跳
-    set_sec: 600
-    reason: なごみ駅伝で明瀬七跳が10:58、中尾快叶が11:03。中尾の現行予測10:02とほぼ同等か少し速い評価を反映し、10:00に設定
-  - team: 菊水中
-    athlete: 松山哲丈
-    set_sec: 595
-    reason: 2026-09-21の3000m SB 9:54.85を本人記録として反映。SBは所属変更により自動観測から外れていたため、3km予測を9:55に設定
-  - team: 南関中
-    athlete: 田中 翔大
-    set_sec: 583
-    reason: 2026年ジュニア駅伝で田中翔大・田上颯人はともに2.6km 8:26、山本哲瑠は8:34。田上と同等で山本より速い評価を保持。2区2.855kmの9:12を6区3kmへ距離指数1.116866で換算し9:43に設定
-  - team: 岱明中
-    athlete: 松本 空羽
-    set_sec: 640
-    reason: 2026-09-29荒玉駅伝試走で5区2.855km 10:11。伸びてきたとのユーザー評価を反映。本番6区3kmは距離差を踏まえ10:55から10:40へ15秒速める
-  - team: 岱明中
-    athlete: 中尾 快叶
-    set_sec: 595
-    reason: 2026-09-29荒玉駅伝試走で5区2.855km 10:12。伸びてきたとのユーザー評価を反映し、本番予想を10:02から9:55へ7秒速める
-  - team: 岱明中
-    athlete: 山本 哲瑠
-    delta_sec: 7
-    reason: 2026-09-29ユーザー指示により当初の数式予想へ計7秒加算（9:15→9:20→9:22）
-  - team: 岱明中
-    athlete: 今村 昇磨
-    set_sec: 585
-    reason: 2026-09-29ユーザー指示により本番予想を9:45に設定
-  - team: 岱明中
-    athlete: 田上 颯人
-    set_sec: 585
-    reason: 2026-09-29ユーザー指示により本番予想を9:45に設定
+- team: 南関中
+  leg: 1
+  delta_sec: 10
+  reason: ジュニア男子で玉名高附43:11・南関44:15・岱明44:23。現行予想では南関が玉名高附とほぼ同タイムのため、地区比較を反映して各区+10秒
+- team: 南関中
+  leg: 2
+  delta_sec: 10
+  reason: ジュニア男子の学校間比較を反映する南関チーム補正
+- team: 南関中
+  leg: 3
+  delta_sec: 10
+  reason: ジュニア男子の学校間比較を反映する南関チーム補正
+- team: 南関中
+  leg: 4
+  delta_sec: 10
+  reason: ジュニア男子の学校間比較を反映する南関チーム補正
+- team: 南関中
+  leg: 5
+  delta_sec: 10
+  reason: ジュニア男子の学校間比較を反映する南関チーム補正
+- team: 南関中
+  leg: 6
+  delta_sec: 10
+  reason: ジュニア男子の学校間比較を反映する南関チーム補正
+- team: 菊水中
+  athlete: 隈部侑成
+  set_sec: 538
+  reason: ''
+- team: 玉陵中
+  athlete: 柿本晴仁
+  set_sec: 555
+  reason: ''
+- team: 玉名高附
+  athlete: 小倉 十和
+  set_sec: 568
+  reason: ''
+- team: 菊水中
+  athlete: 明瀬七跳
+  set_sec: 600
+  reason: なごみ駅伝で明瀬七跳が10:58、中尾快叶が11:03。中尾の現行予測10:02とほぼ同等か少し速い評価を反映し、10:00に設定
+- team: 菊水中
+  athlete: 松山哲丈
+  set_sec: 595
+  reason: 2026-09-21の3000m SB 9:54.85を本人記録として反映。SBは所属変更により自動観測から外れていたため、3km予測を9:55に設定
+- team: 南関中
+  athlete: 田中 翔大
+  set_sec: 583
+  reason: 2026年ジュニア駅伝で田中翔大・田上颯人はともに2.6km 8:26、山本哲瑠は8:34。田上と同等で山本より速い評価を保持。2区2.855kmの9:12を6区3kmへ距離指数1.116866で換算し9:43に設定
+- team: 岱明中
+  athlete: 松本 空羽
+  set_sec: 640
+  reason: ''
+- team: 岱明中
+  athlete: 中尾 快叶
+  set_sec: 595
+  reason: ''
+- team: 岱明中
+  athlete: 山本 哲瑠
+  delta_sec: 7
+  reason: 2026-09-29ユーザー指示により当初の数式予想へ計7秒加算（9:15→9:20→9:22）
+- team: 岱明中
+  athlete: 今村 昇磨
+  set_sec: 585
+  reason: 2026-09-29ユーザー指示により本番予想を9:45に設定
+- team: 岱明中
+  athlete: 田上 颯人
+  set_sec: 585
+  reason: 2026-09-29ユーザー指示により本番予想を9:45に設定

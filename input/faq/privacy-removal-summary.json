@@ -19,5 +19,24 @@
   ],
   "removed_prepared_count": 12,
   "scrubbed_booking_credentials": 3,
-  "scrubbed_registration_cells_including_mirrors": 42
+  "scrubbed_registration_cells_including_mirrors": 42,
+  "scrubbed_prediction_and_training_note_files": 18,
+  "scrubbed_prediction_note_fields_and_mirrors": {
+    "private_health_annotations": 8,
+    "private_reason_strings": 22,
+    "private_memo_blocks": 2,
+    "private_adjustment_strings": 58
+  },
+  "scrubbed_prediction_reason_cells_including_mirrors": 30,
+  "scrubbed_additional_subjective_notes": {
+    "subjective_notes": 44,
+    "baseline_note_segments": 16
+  },
+  "scrubbed_private_prediction_csv_files": 13,
+  "scrubbed_private_prediction_csv_cells": {
+    "private_adjustment_cells": 174,
+    "private_note_cells": 40
+  },
+  "updated_private_note_answers": 47,
+  "scrubbed_prediction_design_documents_including_mirrors": 2
 }

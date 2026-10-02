@@ -135,6 +135,11 @@ def source_projection() -> dict[str, dict]:
     course = importlib.import_module("generate_prepared_qa_course_points")
     for e in course.build_entries(json.loads(course.COURSE_JSON.read_text())):
         out[e["id"]] = e
+    # The generic document excerpt stops in the men's section. Preserve the
+    # gender-aware projection used by the public preview questions.
+    preview = importlib.import_module("improve_prepared_qa_accuracy")
+    for e in preview.rebuild_preview_entries([]):
+        out[e["id"]] = e
     nagomi = importlib.import_module("generate_prepared_qa_nagomi_team_results")
     for year in nagomi.MEET_DIRS:
         for e in nagomi.collect_year(year):

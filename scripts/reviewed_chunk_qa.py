@@ -56,6 +56,8 @@ def check_reviewed_entry(entry, reviewed, root=ROOT):
         try:
             ev = evidence[0]
             chunk = {'evidence': {'units': ev.get('units', ev.get('rows')), 'header': ev.get('header')}}
+            if ev.get('kind') == 'calendar-markdown-events':
+                chunk = {'evidence': {'kind': 'text', 'text': '\n'.join(u['quote'] for u in ev['units'])}}
             validate_gap(reviewed, chunk, text)
         except (ValueError, KeyError, IndexError, TypeError):
             problems.append('reviewed_calendar_date_or_arithmetic_drift')
