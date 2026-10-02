@@ -23,6 +23,7 @@ console.log(JSON.stringify({reviewed:candidates.length,pending:pending.length,no
 
 if (process.argv.includes("--answers")) {
   if (!published) throw new Error("Answer checks require --published");
+  const failures: string[] = [];
   for (const e of candidates) for (const q of e.questions) {
     const result = await answerQuestion(q, {
       skipRouter: true,
@@ -31,7 +32,8 @@ if (process.argv.includes("--answers")) {
       llm: { complete: async () => { throw new Error("Unexpected LLM: " + e.id); } },
     });
     if (result.kind !== "answered" || !result.sources.includes("prepared:" + e.id))
-      throw new Error("Answer path mismatch: " + e.id + " " + JSON.stringify(result));
+      failures.push(e.id + " " + result.kind + " " + ("sources" in result ? result.sources.join(",") : ""));
   }
+  if (failures.length) throw new Error("Answer path mismatches: " + failures.length + "\n" + failures.join("\n"));
   console.log(JSON.stringify({ answered: candidates.length, answerPathErrors: 0 }));
 }

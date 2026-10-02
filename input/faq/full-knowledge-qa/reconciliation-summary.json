@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "base_commit": "b0622b1422846fc6ed07fe9ec72c6385a0ebfee7",
+  "withdrawn_unreviewed_automatic_qa": 5434,
+  "source_reviewed_new_qa": 342,
+  "revalidated_reviews_after_runner_name_corrections": 276,
+  "updated_athlete_record_answers": 2,
+  "status": "in_progress",
+  "complete_chunks": 1077,
+  "total_chunks": 2782,
+  "remaining_qa": 5095,
+  "media_assets_pending_review": 44,
+  "reason": "Automatic extraction had certified manual review without contextual checks, used identifier suffixes to evade duplicate questions, and accepted evidence outside the assigned chunk. Candidates now remain unpublished until review."
+}
