@@ -117,8 +117,20 @@ def chunk_source(raw, suffix):
                 raw, Loader=getattr(yaml, "CSafeLoader", yaml.SafeLoader))
             # YAML dates are rendered with default=str, and pointer checks retain
             # the same parsing; no dates or fields are inferred from filenames.
-            return [{"kind": "structured", "units": units}
-                    for units in pack_units(object_units(value))]
+            units = list(object_units(value))
+            # Some historical exports store gender only in the document header
+            # and year only as a dictionary key. Repeat this verified context,
+            # as we repeat CSV headers, so individual team chunks are unambiguous.
+            if isinstance(value, dict) and isinstance(value.get("meta"), dict):
+                gender = value["meta"].get("gender")
+                for unit in units:
+                    m = re.match(r"^/years/(20\d{2})(?:/|$)", unit["pointer"])
+                    if m and gender in ("男子", "女子"):
+                        year_record = value["years"][m[1]]
+                        if isinstance(year_record, dict) and "gender" not in year_record:
+                            unit["context"] = {**unit["context"], "year": int(m[1]), "gender": gender}
+            return [{"kind": "structured", "units": group}
+                    for group in pack_units(units)]
         except (ValueError, TypeError, yaml.YAMLError):
             # Invalid imported JSON is retained as text, not silently discarded.
             pass
