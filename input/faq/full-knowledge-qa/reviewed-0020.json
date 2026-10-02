@@ -1,0 +1,365 @@
+{
+  "version": 1,
+  "entries": [
+    {
+      "id": "fullchunkqa-cc932407188eadc37d2519ea-1",
+      "chunk_id": "knowledge-cc932407188eadc37d2519ea",
+      "questions": [
+        "Bakkenのcombination sessionの例では、45/15の前に何をどのくらい行い、間に休止を入れる？"
+      ],
+      "answer": "まずイージー走を60〜90分行い、休止を挟まず直接45/15へ移る例です。既知の要素をつないで負荷や焦点を変える特別なバリエーションとして挙げています。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "you first run easy for sixty to ninety minutes and then, without pause, go directly into 45/15."
+        },
+        {
+          "kind": "quote",
+          "text": "It is therefore a special variant that can be tried for variation and to increase load in periods when you want it."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Book-specific scheduling, variations and periodization; gradual and individual application, no guarantee."
+      }
+    },
+    {
+      "id": "fullchunkqa-cc932407188eadc37d2519ea-2",
+      "chunk_id": "knowledge-cc932407188eadc37d2519ea",
+      "questions": [
+        "Bakkenの時間不足時の優先順位は？時間不足が続く場合のsafety planは？"
+      ],
+      "answer": "main quality、support quality、短縮できるロング走、減らせるイージー練習の順です。時間不足が続く場合には最低週1回の閾値練習に絞る安全プランを検討し、セッション間を1週間より長くしないという維持方針を示しています。本書の案内です。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "Main quality session - always protected"
+        },
+        {
+          "kind": "quote",
+          "text": "Support quality session"
+        },
+        {
+          "kind": "quote",
+          "text": "Long run (can be shortened)"
+        },
+        {
+          "kind": "quote",
+          "text": "Easy sessions (can be reduced)"
+        },
+        {
+          "kind": "quote",
+          "text": "minimum one single threshold session per week, but never more than a week between sessions."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Book-specific scheduling, variations and periodization; gradual and individual application, no guarantee."
+      }
+    },
+    {
+      "id": "fullchunkqa-cc932407188eadc37d2519ea-3",
+      "chunk_id": "knowledge-cc932407188eadc37d2519ea",
+      "questions": [
+        "BakkenのWhen a session falls throughでは、抜けた練習を後日に埋め合わせる？複数回抜けた場合は？"
+      ],
+      "answer": "後日に取り戻そうとせず、次に予定している練習に沿って先へ進む案内です。複数回抜けた場合は45/15を使いながら、イージー走の量も段階的に戻すことを検討します。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "Do not try to make up the session later"
+        },
+        {
+          "kind": "quote",
+          "text": "Stick to the next planned session"
+        },
+        {
+          "kind": "quote",
+          "text": "Steer forward; do not chase missed sessions"
+        },
+        {
+          "kind": "quote",
+          "text": "If multiple sessions fall through, consider a gradual approach back to normal training with frequent use of 45/15 alongside gradual progression of easy runs"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Book-specific scheduling, variations and periodization; gradual and individual application, no guarantee."
+      }
+    },
+    {
+      "id": "fullchunkqa-f9a869e499e6ed6fc8f8e0ac-1",
+      "chunk_id": "knowledge-f9a869e499e6ed6fc8f8e0ac",
+      "questions": [
+        "BakkenのPrecise Intensity Controlで、短い反復ほど速く走れるとしても、計算ペースだけで決めてよい？"
+      ],
+      "answer": "計算ペースだけで決める方針ではありません。短い反復ほど閾値を超えず速く走れるという原則を、心拍や会話テストで確認し、計算ペースで走る場合も反復時間の影響を意識するよう求めています。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "the shorter each interval, the faster you can run without exceeding the threshold. You will be able to detect this with heart rate measurement or talk test"
+        },
+        {
+          "kind": "quote",
+          "text": "be aware of it nonetheless if you choose to run primarily based on calculated pace."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Book-specific scheduling, variations and periodization; gradual and individual application, no guarantee."
+      }
+    },
+    {
+      "id": "fullchunkqa-f9a869e499e6ed6fc8f8e0ac-2",
+      "chunk_id": "knowledge-f9a869e499e6ed6fc8f8e0ac",
+      "questions": [
+        "Bakkenの週4〜6時間の強度調整では、主観と心拍・ペースが合わないとき、どうする方針？"
+      ],
+      "answer": "本書では強度を下げ、わずかに閾値を超えるよりも、そのゾーンの下側を選ぶよう勧めています。反復が進むにつれ、感覚や簡単なテストを心拍・ペースと照合する方針です。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "eventually subjective feel and simple tests should align with measurements like heart rate or pace. If not? Then I clearly recommend adjusting down, to rather be in the lower area of this zone than to tip just over."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Book-specific scheduling, variations and periodization; gradual and individual application, no guarantee."
+      }
+    },
+    {
+      "id": "fullchunkqa-f9a869e499e6ed6fc8f8e0ac-3",
+      "chunk_id": "knowledge-f9a869e499e6ed6fc8f8e0ac",
+      "questions": [
+        "BakkenのPeriodization Explainedでは、周期化を毎週できるだけ強く練習することと説明している？"
+      ],
+      "answer": "そうではありません。過負荷を避けながら適応を得るために週・月・年を通して戦略的に負荷を変える計画です。異なる時期の目的はあっても、基本原則から離れず、移行を急にしないと説明しています。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "planning training over weeks, months, and years so that the body gets the best possible adaptation without overload."
+        },
+        {
+          "kind": "quote",
+          "text": "periodization means varying the load strategically."
+        },
+        {
+          "kind": "quote",
+          "text": "no transitions should be too abrupt and never far from the basic principles."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Book-specific scheduling, variations and periodization; gradual and individual application, no guarantee."
+      }
+    },
+    {
+      "id": "fullchunkqa-26af75c551d6c613da3586b1-1",
+      "chunk_id": "knowledge-26af75c551d6c613da3586b1",
+      "questions": [
+        "Bakkenのvariation principleでは、頭打ちになる前から周期化を最初の手段にする？挙げている順序は？"
+      ],
+      "answer": "練習配分を選ぶ、各セッション内で休止・反復長・構成・路面を変える、適切な強度の制御を続ける、そのうえで頭打ちになったら周期化を選ぶという順序です。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "Choose your training distribution."
+        },
+        {
+          "kind": "quote",
+          "text": "Vary within each session. Adjust rests, interval length, composition, and surface around sessions. This comes first."
+        },
+        {
+          "kind": "quote",
+          "text": "Practice intensity control."
+        },
+        {
+          "kind": "quote",
+          "text": "Periodize when progress plateaus."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Book-specific scheduling, variations and periodization; gradual and individual application, no guarantee."
+      }
+    },
+    {
+      "id": "fullchunkqa-26af75c551d6c613da3586b1-2",
+      "chunk_id": "knowledge-26af75c551d6c613da3586b1",
+      "questions": [
+        "Bakkenは全員に最適な周期化モデルが1つあるとしている？安定した構造と変化のある時期をどう扱う？"
+      ],
+      "answer": "全員に完璧な1つのモデルはないと述べています。年間を通した平坦で安定した構造が合う人も、変化のある期間が合う人もおり、いずれも急な移行を避けて徐々に次の段階へ移る方針です。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "there is no completely perfect periodization model for absolutely everyone. Some thrive best with a flat, stable structure through the year"
+        },
+        {
+          "kind": "quote",
+          "text": "Others respond better to more varied training periods."
+        },
+        {
+          "kind": "quote",
+          "text": "always glide gradually from one phase to another, always with gradual transitions"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Book-specific scheduling, variations and periodization; gradual and individual application, no guarantee."
+      }
+    },
+    {
+      "id": "fullchunkqa-26af75c551d6c613da3586b1-3",
+      "chunk_id": "knowledge-26af75c551d6c613da3586b1",
+      "questions": [
+        "Bakkenのflat structureから競技へ近づけるモデルでは、mainとsupportの質練習も毎週大きく入れ替える？"
+      ],
+      "answer": "mainとsupportは残し、X-sessionの方を徐々に競技の要求へ近づける説明です。基礎期の比較的似た週を保ちながらX-sessionを尖らせ、競技が高強度練習を引き継ぐ位置付けです。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "a flat training structure through base training, with an X-session that progressively becomes more and more sharpened toward com-petitions. Competitions eventually take over for intensive training."
+        },
+        {
+          "kind": "quote",
+          "text": "The main quality session and support quality session stay in place. The X-session is where progression happens"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Book-specific scheduling, variations and periodization; gradual and individual application, no guarantee."
+      }
+    },
+    {
+      "id": "fullchunkqa-71b949b24a16ec0dbdf804bd-1",
+      "chunk_id": "knowledge-71b949b24a16ec0dbdf804bd",
+      "questions": [
+        "BakkenのX-session progressionの説明では、イージー日を2日置くなら前後のどちらを特に重視している？"
+      ],
+      "answer": "X-session前の2日を勧め、著者の経験では後に2日置くことよりも前の配置を重視しています。これは本書の経験に基づく案内で、けがを必ず防ぐ保証ではありません。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "ideally add two easy days before the X-session to ensure you do not get injured. My experience is that this is much more important than possibly two easy days afterward."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Book-specific scheduling, variations and periodization; gradual and individual application, no guarantee."
+      }
+    },
+    {
+      "id": "fullchunkqa-71b949b24a16ec0dbdf804bd-2",
+      "chunk_id": "knowledge-71b949b24a16ec0dbdf804bd",
+      "questions": [
+        "BakkenのKristoffer Ingebrigtsen・James Copelandに触れる簡略化モデルは、週の閾値・イージー走とテスト走をどう組む？"
+      ],
+      "answer": "基本は週3回のsub-thresholdとイージー走3回で、4〜6週ごとにテスト走による少し強い負荷を入れると説明しています。Kristofferが忙しい生活で試し、James Copelandが発展させたバリエーションとして紹介しています。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "Kristoffer Ingebrigtsen, trying it out to get in shape in a busy daily life. The variant has been further developed by Englishman James Copeland."
+        },
+        {
+          "kind": "quote",
+          "text": "three threshold sessions per week (that is, sub-threshold"
+        },
+        {
+          "kind": "quote",
+          "text": "three easy runs, and a slightly harder load approximately every fourth to sixth week in the form of a test run."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Book-specific scheduling, variations and periodization; gradual and individual application, no guarantee."
+      }
+    },
+    {
+      "id": "fullchunkqa-71b949b24a16ec0dbdf804bd-3",
+      "chunk_id": "knowledge-71b949b24a16ec0dbdf804bd",
+      "questions": [
+        "BakkenのBlock Periodizationで、2週高負荷・1週軽めの基本例と、3週目にX-sessionへ寄せる代案の注意点は？"
+      ],
+      "answer": "基本例は2週の高めの練習量と一部のダブル閾値の後、1週の総量と負荷を減らした練習です。3週目に量を大きく落として閾値の一部を中程度のX-session2回へ置き換える代案もありますが、こちらは危険が高く慎重に試すとしています。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "2 weeks with higher training volume and some double threshold days"
+        },
+        {
+          "kind": "quote",
+          "text": "1 week with light training and reduced total volume"
+        },
+        {
+          "kind": "quote",
+          "text": "replacing some of the threshold work with two moderately intense X-sessions. The risk is higher, so this approach should be tried with caution."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Book-specific scheduling, variations and periodization; gradual and individual application, no guarantee."
+      }
+    }
+  ]
+}

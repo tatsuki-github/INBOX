@@ -1,0 +1,325 @@
+{
+  "version": 1,
+  "entries": [
+    {
+      "id": "fullchunkqa-e7c07dbe6766991acab341a1-1",
+      "chunk_id": "knowledge-e7c07dbe6766991acab341a1",
+      "questions": [
+        "Bakkenの実践編の冒頭では、週の練習量をどの2区分に分けている？両者で基本原則は変わる？"
+      ],
+      "answer": "週4〜6時間と、週6〜8時間以上です。Part Iの原則は共通で、どれだけ追加できるか、頻度や組み合わせなどの適用が違うという説明です。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "The material is built around two training volumes: 4 to 6 hours per week, and 6 to 8 hours or more."
+        },
+        {
+          "kind": "quote",
+          "text": "Both rest on the same principles from Part I. The difference is application— how much can be added, how often, and in what combinations."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Book-specific volume, observations and structures; preserve eligibility and gradual progression; not universal prescriptions."
+      }
+    },
+    {
+      "id": "fullchunkqa-e7c07dbe6766991acab341a1-2",
+      "chunk_id": "knowledge-e7c07dbe6766991acab341a1",
+      "questions": [
+        "Bakkenの実践編の導入で、ダブル閾値の理解に必要とする3点は？"
+      ],
+      "answer": "各セッションの強度、長さ、そしてダブルの日と週の残りの練習とのバランスです。単に同日に2回行うという回数だけの説明ではなく、これらの調整を必要としています。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "it requires understanding the nuances: how hard each session should be, how long, and how you balance double days with the rest of your week."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Book-specific volume, observations and structures; preserve eligibility and gradual progression; not universal prescriptions."
+      }
+    },
+    {
+      "id": "fullchunkqa-e7c07dbe6766991acab341a1-3",
+      "chunk_id": "knowledge-e7c07dbe6766991acab341a1",
+      "questions": [
+        "BakkenのPart IVは、Part II・IIIの内容を実施する前に必ず読まなければならない？"
+      ],
+      "answer": "必須ではないと述べています。主にエリート選手と指導者向けに仕組みを掘り下げる章ですが、理解を深めたい他の読者にも開かれています。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "Part IV goes deeper, written primarily for elite athletes and coaches, but open to anyone who wants to understand why the method works, not just how. It is not required reading to benefit from Parts Il and III."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Book-specific volume, observations and structures; preserve eligibility and gradual progression; not universal prescriptions."
+      }
+    },
+    {
+      "id": "fullchunkqa-9c79146a8b851a9a52286229-1",
+      "chunk_id": "knowledge-9c79146a8b851a9a52286229",
+      "questions": [
+        "Bakkenが週4〜6時間向けに示す調整済み配分では、閾値練習と高強度・レースペースをそれぞれ何%とする？"
+      ],
+      "answer": "本書の目安は閾値練習20〜30%、高強度またはレースペース5〜10%です。限られた時間に80/20の配分をそのまま縮小しないという説明の中で示しています。個人の許容負荷を無視して一律に処方するものではありません。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "THE ADJUSTED FORMULA FOR 4-6 HOURS WEEKLY VOLUME"
+        },
+        {
+          "kind": "quote",
+          "text": "20-30% threshold work"
+        },
+        {
+          "kind": "quote",
+          "text": "5-10% high intensity or race pace"
+        },
+        {
+          "kind": "quote",
+          "text": "The much-discussed 80/20 rulewhere 80 percent of training is easy and 20 percent is hard-does not translate well to limited hours."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Book-specific volume, observations and structures; preserve eligibility and gradual progression; not universal prescriptions."
+      }
+    },
+    {
+      "id": "fullchunkqa-9c79146a8b851a9a52286229-2",
+      "chunk_id": "knowledge-9c79146a8b851a9a52286229",
+      "questions": [
+        "Bakkenの週4〜6時間の章で紹介するStrava分析は、何週間の練習を何件のマラソン完走・何人について調べたもの？"
+      ],
+      "answer": "完走前の最後の16週間で、151,813件のマラソン完走、119,452人の練習を調べた分析と記載しています。この資料の紹介値であり、走行距離だけの因果効果を証明する質問ではありません。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "A comprehensive Strava analysis examined all training sessions in the final sixteen weeks before 151,813 marathon finishes by 119,452 runners (Muniz-Pumares et al., 2025)."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Book-specific volume, observations and structures; preserve eligibility and gradual progression; not universal prescriptions."
+      }
+    },
+    {
+      "id": "fullchunkqa-9c79146a8b851a9a52286229-3",
+      "chunk_id": "knowledge-9c79146a8b851a9a52286229",
+      "questions": [
+        "Bakkenは週4〜6時間の水準で、向上が続いていても必ず強い練習を追加するよう勧めている？"
+      ],
+      "answer": "必ず追加する方針ではありません。負荷のバランスが取れていれば、向上が頭打ちになるまで強い練習を遅らせることも可能とし、時期はかなり異なると説明しています。著者が閾値中心だけで1〜2年向上した例を見たという経験も述べています。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "it is entirely possible to postpone more intensive training until improvement plateaus. The timing for this actually varies considerably. I have seen runners with steady improvement for one to two years on a completely threshold-oriented focus alone."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Book-specific volume, observations and structures; preserve eligibility and gradual progression; not universal prescriptions."
+      }
+    },
+    {
+      "id": "fullchunkqa-637cba45db504f8ba7f34b95-1",
+      "chunk_id": "knowledge-637cba45db504f8ba7f34b95",
+      "questions": [
+        "Bakkenの限られた時間向けWeekly Structureで、main qualityとsupport qualityの反復の長さはどう区別されている？"
+      ],
+      "answer": "main qualityは10分以上の長めの反復を勧め、より負担が大きいので週1回に制限する説明です。support qualityは基本的に最大3分、場合により6分までの短めの反復で、45/15も例に挙げています。これは本書の構造例です。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "Here I recommend longer intervals, ten minutes or more"
+        },
+        {
+          "kind": "quote",
+          "text": "should therefore be limited to once per week."
+        },
+        {
+          "kind": "quote",
+          "text": "maximum duration of three minutes, perhaps up to six. These can easily take the form of 45/15."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Book-specific volume, observations and structures; preserve eligibility and gradual progression; not universal prescriptions."
+      }
+    },
+    {
+      "id": "fullchunkqa-637cba45db504f8ba7f34b95-2",
+      "chunk_id": "knowledge-637cba45db504f8ba7f34b95",
+      "questions": [
+        "BakkenのWeekly StructureのX-sessionは、常に閾値より高い強度で実施しなければならない？"
+      ],
+      "answer": "常に高強度である必要はありません。必要に応じて加える要素で、少し変化を付けた通常の閾値練習にもでき、過負荷やけがの兆候では調整・縮小・完全な除外もできると説明しています。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "It can be adjusted, reduced, or removed entirely at signs of overload or injury."
+        },
+        {
+          "kind": "quote",
+          "text": "It is added on top when you need it, but can also be a completely normal threshold session with some variation."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Book-specific volume, observations and structures; preserve eligibility and gradual progression; not universal prescriptions."
+      }
+    },
+    {
+      "id": "fullchunkqa-637cba45db504f8ba7f34b95-3",
+      "chunk_id": "knowledge-637cba45db504f8ba7f34b95",
+      "questions": [
+        "Bakkenの隔週ダブル閾値の導入説明では、一般ランナーのどんな条件と準備段階を挙げている？"
+      ],
+      "answer": "希望があり余裕があり、けがのない一般ランナーを対象に、段階的な導入を求めています。本格的なダブル閾値の前に、同日にイージー練習と閾値練習を組み合わせる準備も挙げています。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "for recreational runners who want to, who have surplus, and who are completely injury-free."
+        },
+        {
+          "kind": "quote",
+          "text": "gradual entry, including running an easy session and a threshold session on the same day before attempting true double threshold."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Book-specific volume, observations and structures; preserve eligibility and gradual progression; not universal prescriptions."
+      }
+    },
+    {
+      "id": "fullchunkqa-3064ce1e960f995a7c5f6f41-1",
+      "chunk_id": "knowledge-3064ce1e960f995a7c5f6f41",
+      "questions": [
+        "Bakkenの5時間週の構造へ慎重に入る場合、質の高い練習の閾値時間と増やす順序をどう案内している？"
+      ],
+      "answer": "まず各閾値セッションの合計を20〜25分に抑えて週のリズムに慣れ、その後、体が適応するにつれて徐々に量を増やす案内です。構造を先に選び、量は後から段階的に増やします。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "Keep total time on threshold sessions at twenty to twenty-five minutes while you get used to the rhythm. Then gradually increase volume as the body adapts."
+        },
+        {
+          "kind": "quote",
+          "text": "Choose structure first, then gradually increase volume as the body adapts."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Book-specific volume, observations and structures; preserve eligibility and gradual progression; not universal prescriptions."
+      }
+    },
+    {
+      "id": "fullchunkqa-3064ce1e960f995a7c5f6f41-2",
+      "chunk_id": "knowledge-3064ce1e960f995a7c5f6f41",
+      "questions": [
+        "BakkenのPure volume increaseでは、イージー練習の量を増やす方法を、どんな優先順で紹介している？"
+      ],
+      "answer": "著者の経験では、最優先はイージー走の回数を増やすこと、次は既存のイージー走を長くすること、3番目はウォームアップやクールダウンを長くすることです。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "The very best approach, in my experience, is to increase the number of easy runs. The second best is to increase the length of already existing easy runs. The third best is longer warm-ups or cool-downs."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Book-specific volume, observations and structures; preserve eligibility and gradual progression; not universal prescriptions."
+      }
+    },
+    {
+      "id": "fullchunkqa-3064ce1e960f995a7c5f6f41-3",
+      "chunk_id": "knowledge-3064ce1e960f995a7c5f6f41",
+      "questions": [
+        "Bakkenはtraffic light modelで良好な期間にgreenが繰り返し出たとき、反復の追加と強度の上昇を同じように勧めている？"
+      ],
+      "answer": "同じではありません。追加の閾値反復で長さを増やす機会としていますが、強度を上げる誘惑に乗らないことを条件にしています。安静時心拍・HRV・階段テスト・ウォームアップ心拍などで負担を評価する説明です。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "resting heart rate, HRV, the stair test, and warm-up heart rate"
+        },
+        {
+          "kind": "quote",
+          "text": "If you have an especially good training period and get repeated green signals, do not be afraid to add extra threshold intervals to sessions."
+        },
+        {
+          "kind": "quote",
+          "text": "as long as you are not tempted to increase intensity, take advantage of it."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Book-specific volume, observations and structures; preserve eligibility and gradual progression; not universal prescriptions."
+      }
+    }
+  ]
+}

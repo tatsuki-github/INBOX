@@ -208,7 +208,7 @@ def check_entry(e: dict, projected: dict | None) -> dict:
         reviewed = reviewed_entries().get(e["id"])
         problems.extend(check_reviewed_entry(e, reviewed))
         method = reviewed.get("review", {}).get("method") if reviewed else None
-        mode = {"schema-reviewed-time-comparison": "validated_csv_clock_comparison", "schema-reviewed-passing-rank-change": "validated_json_passing_rank_change", "schema-reviewed-dated-meet-comparison": "validated_csv_dated_meet_comparison", "schema-reviewed-within-athlete-meet-change": "validated_csv_within_athlete_meet_change", "schema-reviewed-record-vs-saved-sb": "validated_json_record_saved_sb_gap", "schema-reviewed-calendar-gap": "validated_calendar_elapsed_days"}.get(method, "manual_context_review_and_source_quote_check")
+        mode = {"schema-reviewed-time-comparison": "validated_csv_clock_comparison", "schema-reviewed-passing-rank-change": "validated_json_passing_rank_change", "schema-reviewed-dated-meet-comparison": "validated_csv_dated_meet_comparison", "schema-reviewed-within-athlete-meet-change": "validated_csv_within_athlete_meet_change", "schema-reviewed-record-vs-saved-sb": "validated_json_record_saved_sb_gap", "schema-reviewed-calendar-gap": "validated_calendar_elapsed_days", "schema-reviewed-track-coverage": "validated_saved_track_sb_coverage", "schema-reviewed-prediction-columns": "validated_saved_prediction_columns"}.get(method, "manual_context_review_and_source_quote_check")
         return {"id": e["id"], "check": mode, "problems": problems}
     mode = "source_text_time_check"
     if projected:

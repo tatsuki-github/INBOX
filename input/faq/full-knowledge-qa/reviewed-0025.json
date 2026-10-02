@@ -1,0 +1,341 @@
+{
+  "version": 1,
+  "entries": [
+    {
+      "id": "fullchunkqa-75bb28db2051b7951e5e433c-1",
+      "chunk_id": "knowledge-75bb28db2051b7951e5e433c",
+      "questions": [
+        "Bakkenのmiddle modelの週例では、月曜を完全休養にすると鈍くなる人にも必ず休養を指定する？"
+      ],
+      "answer": "必ず完全休養とはしていません。休養日、または完全休養で鈍くなる場合には非常に軽い30分走という選択肢を示しています。この週例の調整です。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "Monday\tRest day, or 30 min very easy if complete rest leaves you sluggish"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Book-specific adjustment rules, protocols, and examples; preserve limits and individual variation; no inferred personal physiological values."
+      }
+    },
+    {
+      "id": "fullchunkqa-75bb28db2051b7951e5e433c-2",
+      "chunk_id": "knowledge-75bb28db2051b7951e5e433c",
+      "questions": [
+        "Bakkenの隔週ダブル閾値の週例で、火曜にダブルを入れた後の木曜は、通常のまま増量する？"
+      ],
+      "answer": "木曜は短縮する例です。たとえば8分×3本として、週全体の閾値量を制御します。火曜だけ追加して他の日も増量する案内ではありません。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "Tuesday\tMorning: 6-8 × 5 min threshold, 1 min rest. Evening: 15-20 × 45/15"
+        },
+        {
+          "kind": "quote",
+          "text": "Thursday\tShortened session (e.g., 3 × 8 min) - keeps total threshold volume in check"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Book-specific adjustment rules, protocols, and examples; preserve limits and individual variation; no inferred personal physiological values."
+      }
+    },
+    {
+      "id": "fullchunkqa-75bb28db2051b7951e5e433c-3",
+      "chunk_id": "knowledge-75bb28db2051b7951e5e433c",
+      "questions": [
+        "Bakkenのmiddle modelのGround Rulesでは、高強度の週合計と実施条件は？"
+      ],
+      "answer": "週30分未満で、完全に回復しているときだけとしています。イージー日は最大心拍の70%未満を保ち、抜けた質練習を取り戻そうとしないことも、この週例のルールです。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "High intensity stays under 30 minutes per week, and only when fully recovered"
+        },
+        {
+          "kind": "quote",
+          "text": "Easy means easy: <70% of max heart rate"
+        },
+        {
+          "kind": "quote",
+          "text": "Never attempt to make up missed quality work"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Book-specific adjustment rules, protocols, and examples; preserve limits and individual variation; no inferred personal physiological values."
+      }
+    },
+    {
+      "id": "fullchunkqa-8b5595616f22b38ceb6777ac-1",
+      "chunk_id": "knowledge-8b5595616f22b38ceb6777ac",
+      "questions": [
+        "Bakkenのtop-up mileage blockは、増やした走行距離を競技本番まで維持する案内？"
+      ],
+      "answer": "本番前には通常の週の量へ戻す案内です。増量はイージー練習の長さと頻度だけに適用し、質の高い練習は同じ水準を保つことを求めています。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "After the block, return to normal weekly volume before competition"
+        },
+        {
+          "kind": "quote",
+          "text": "The increase applies only to easy sessions, both length and frequency"
+        },
+        {
+          "kind": "quote",
+          "text": "Quality sessions remain at the same level"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Book-specific adjustment rules, protocols, and examples; preserve limits and individual variation; no inferred personal physiological values."
+      }
+    },
+    {
+      "id": "fullchunkqa-8b5595616f22b38ceb6777ac-2",
+      "chunk_id": "knowledge-8b5595616f22b38ceb6777ac",
+      "questions": [
+        "Bakkenの70km週からのtop-upの具体例では、第1〜3週の距離と増加率の表記は？"
+      ],
+      "answer": "第1週77km（+10%）、第2週84km（+20%）、第3週91km（+30%）です。元の70km週を基準にした表記の例で、前週から毎回10%増やす複利計算の表ではありません。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "Practical Example from 70 km/week"
+        },
+        {
+          "kind": "quote",
+          "text": "Week 1\t77 km (48 miles, +10 %)"
+        },
+        {
+          "kind": "quote",
+          "text": "Week 2\t84 km (52 miles, +20 %)"
+        },
+        {
+          "kind": "quote",
+          "text": "Week 3\t91 km (57 miles, +30 %)"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Book-specific adjustment rules, protocols, and examples; preserve limits and individual variation; no inferred personal physiological values."
+      }
+    },
+    {
+      "id": "fullchunkqa-8b5595616f22b38ceb6777ac-3",
+      "chunk_id": "knowledge-8b5595616f22b38ceb6777ac",
+      "questions": [
+        "Bakkenはtop-up mileage weeksの考えを、いつ誰から紹介されたと述べている？"
+      ],
+      "answer": "1995年にPeter Coeから紹介されたと述べています。若い中距離選手だった頃に、既にある安定した土台へ戦術的な増量期間を重ねる考えを学んだという回想です。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "Peter Coe introduced this concept to me in 1995, when I was still a young middle-distance runner."
+        },
+        {
+          "kind": "quote",
+          "text": "When this adaptation is layered onto an already solid foundation"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Book-specific adjustment rules, protocols, and examples; preserve limits and individual variation; no inferred personal physiological values."
+      }
+    },
+    {
+      "id": "fullchunkqa-a39c05821e3aa8b179f4dacc-1",
+      "chunk_id": "knowledge-a39c05821e3aa8b179f4dacc",
+      "questions": [
+        "Bakkenの週6〜8時間以上のPrecise Intensity Controlでは、実際の閾値をどの頻度で確認し、乳酸プロファイルがない場合には何を挙げる？"
+      ],
+      "answer": "4週ごとの確認を勧めています。乳酸プロファイルがない場合は第2章のテスト、特に30分テストやタイムトライアルを挙げています。本書の測定頻度の案内です。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "I recommend checking where your actual threshold lies every fourth week."
+        },
+        {
+          "kind": "quote",
+          "text": "The 30-minute test works well it you do not have access to lactate profiling. A pure time trial is another option."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Book-specific adjustment rules, protocols, and examples; preserve limits and individual variation; no inferred personal physiological values."
+      }
+    },
+    {
+      "id": "fullchunkqa-a39c05821e3aa8b179f4dacc-2",
+      "chunk_id": "knowledge-a39c05821e3aa8b179f4dacc",
+      "questions": [
+        "BakkenのLactate節は、乳酸計がない読者も数値を推測して必ず実施する必要がある？"
+      ],
+      "answer": "乳酸計がなければこの節は飛ばすよう書かれています。多くのランナーにはペース・心拍・会話テストで十分という案内で、測っていない乳酸値を推測して実施する必要はありません。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "This section assumes you have a lactate meter. If you do not, skip it. Pace, heart rate, and the talk test are sufficient for most runners."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Book-specific adjustment rules, protocols, and examples; preserve limits and individual variation; no inferred personal physiological values."
+      }
+    },
+    {
+      "id": "fullchunkqa-a39c05821e3aa8b179f4dacc-3",
+      "chunk_id": "knowledge-a39c05821e3aa8b179f4dacc",
+      "questions": [
+        "Bakkenは乳酸計を入手した際、心拍と乳酸の関係をどんな条件差について体系的に記録するよう勧めている？"
+      ],
+      "answer": "セッション内の変化に加え、朝と夕方、トレッドミルと屋外、同じ週の先行する強い練習との関係を記録する案内です。基準点を蓄えることで、将来の測定頻度を減らせるようにする狙いです。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "systematically map the variation in heart rate versus lactate, both within sessions and across different conditions: morning versus evening, treadmill versus outdoor, and in relation to harder sessions earlier in the week."
+        },
+        {
+          "kind": "quote",
+          "text": "an arsenal of reference points that eventually lets you reduce how often you need to test"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Book-specific adjustment rules, protocols, and examples; preserve limits and individual variation; no inferred personal physiological values."
+      }
+    },
+    {
+      "id": "fullchunkqa-8237034aea094be943c6c698-1",
+      "chunk_id": "knowledge-8237034aea094be943c6c698",
+      "questions": [
+        "Bakkenがラボと屋外の差を照合するために用いた固定プロトコルは、どんな順序？"
+      ],
+      "answer": "トレッドミルで乳酸テスト、イージー2日、軽い閾値練習、イージー2日、その後に屋外の確認テストという順序です。著者自身が使ったプロトコルとして書かれています。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "My fixed protocol was: lactate test on treadmill, two days easy, light threshold session, two days easy, then control test outdoors."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Book-specific adjustment rules, protocols, and examples; preserve limits and individual variation; no inferred personal physiological values."
+      }
+    },
+    {
+      "id": "fullchunkqa-8237034aea094be943c6c698-2",
+      "chunk_id": "knowledge-8237034aea094be943c6c698",
+      "questions": [
+        "Bakkenの閾値超の乳酸ゾーン5〜9・7〜11・11以上は、全員にそのまま適用する固定基準？"
+      ],
+      "answer": "固定基準とはしていません。最大乳酸が約15mmol/Lの場合のテンプレートで、個人差があり、より爆発的なタイプでは同じ負荷でも乳酸がもっと高くなり得ると説明しています。反復の長さにも違いがあるため、単一の値だけで同じ負担とは判断できません。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "At a maximum lactate of around 15 mmol/L"
+        },
+        {
+          "kind": "quote",
+          "text": "Individual differences exist here. More explosive runners, for example, will see lactate rise far higher than the values below at a given effort. Treat this as a template, with room for personal variation."
+        },
+        {
+          "kind": "quote",
+          "text": "there is a fundamental difference between short and long inter-vals."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Book-specific adjustment rules, protocols, and examples; preserve limits and individual variation; no inferred personal physiological values."
+      }
+    },
+    {
+      "id": "fullchunkqa-8237034aea094be943c6c698-3",
+      "chunk_id": "knowledge-8237034aea094be943c6c698",
+      "questions": [
+        "BakkenのHeart Rate Monitor節では、手首式と胸ストラップをどんな練習で使い分ける案内？"
+      ],
+      "answer": "イージー練習や安静時心拍の追跡には手首式で十分なことが多く、強いセッションには必要な精度を得るため胸ストラップを使う案内です。この練習量の水準ではペースと併せて心拍を測ることを勧めています。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "During easy sessions and when tracking resting heart rate, a wrist-based monitor is often sufficient"
+        },
+        {
+          "kind": "quote",
+          "text": "For harder sessions, use a chest strap to get the accuracy you need."
+        },
+        {
+          "kind": "quote",
+          "text": "always measuring heart rate alongside pace."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Book-specific adjustment rules, protocols, and examples; preserve limits and individual variation; no inferred personal physiological values."
+      }
+    }
+  ]
+}

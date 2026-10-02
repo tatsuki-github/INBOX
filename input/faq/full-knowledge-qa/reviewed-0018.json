@@ -1,0 +1,333 @@
+{
+  "version": 1,
+  "entries": [
+    {
+      "id": "fullchunkqa-6c6d9139fb7b0342dda3d6e6-1",
+      "chunk_id": "knowledge-6c6d9139fb7b0342dda3d6e6",
+      "questions": [
+        "BakkenのThe Real Bottleneckでは、心肺と筋・腱・結合組織の回復の非対称性をどう説明している？"
+      ],
+      "answer": "本書では、心肺よりも着地ごとの機械的負荷を受ける筋・腱・結合組織の修復と適応に時間がかかり、心肺が準備できても筋が追いつかないことが問題になると説明しています。個人の回復時間を判定するものではありません。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "impact forces of two to four times body weight, absorbed by muscle, tendon, and connective tissue"
+        },
+        {
+          "kind": "quote",
+          "text": "This accumulated mechanical load takes time to repair and adapt—far more time than the cardiovascular system requires."
+        },
+        {
+          "kind": "quote",
+          "text": "between a heart that's ready and muscles that aren't"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Book-specific theory and terminology; no diagnosis, causality proof, or individual recovery prescription."
+      }
+    },
+    {
+      "id": "fullchunkqa-6c6d9139fb7b0342dda3d6e6-2",
+      "chunk_id": "knowledge-6c6d9139fb7b0342dda3d6e6",
+      "questions": [
+        "BakkenのThe Reference Pointでは、筋が正常化した状態を意図的に経験することに、どんな意味を持たせている？"
+      ],
+      "answer": "本書では、その軽さを自分の内的な基準として知ることで、筋の状態が大きく崩れて止まらざるを得なくなるより前に、変化の信号を拾えるようになると説明しています。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "Once you've felt it, you develop an internal calibration, and you know what you're aiming for. You start picking up the signals much earlier, long before the muscles are so compromised that they force you to stop."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Book-specific theory and terminology; no diagnosis, causality proof, or individual recovery prescription."
+      }
+    },
+    {
+      "id": "fullchunkqa-6c6d9139fb7b0342dda3d6e6-3",
+      "chunk_id": "knowledge-6c6d9139fb7b0342dda3d6e6",
+      "questions": [
+        "BakkenのElasticityの説明では、着地と蹴り出しでの弾性エネルギーと筋線維の役割をどう区別している？"
+      ],
+      "answer": "筋・腱を一つの機能単位として見て、着地で弾性エネルギーを蓄え、蹴り出しで解放すると説明しています。筋線維は主に力を発揮し、張力とタイミングを調整するという区別です。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "what matters in running is how the muscle-tendon unit functions as a whole."
+        },
+        {
+          "kind": "quote",
+          "text": "Elastic energy stores when you land and releases during push-off, while the muscle fibers primarily produce force and regulate tension and timing."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Book-specific theory and terminology; no diagnosis, causality proof, or individual recovery prescription."
+      }
+    },
+    {
+      "id": "fullchunkqa-9acd28d710fc326aa7340cdf-1",
+      "chunk_id": "knowledge-9acd28d710fc326aa7340cdf",
+      "questions": [
+        "Bakkenが並べるmuscle tone・elasticity・stiffnessは、同じ量の別名？"
+      ],
+      "answer": "別名ではありません。本書ではmuscle toneを安静時の基礎的緊張、elasticityを伸びた後に元の長さへ戻る能力、stiffnessを負荷下での変形への抵抗として区別しています。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "Muscle tone - baseline tension at rest"
+        },
+        {
+          "kind": "quote",
+          "text": "Elasticity - ability to return to original length after stretch"
+        },
+        {
+          "kind": "quote",
+          "text": "Stiffness - resistance to deformation under load"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Book-specific theory and terminology; no diagnosis, causality proof, or individual recovery prescription."
+      }
+    },
+    {
+      "id": "fullchunkqa-9acd28d710fc326aa7340cdf-2",
+      "chunk_id": "knowledge-9acd28d710fc326aa7340cdf",
+      "questions": [
+        "BakkenのWhy Rest Doesn’t Always Workでは、よく寝て食事も十分なら脚の重さは必ず消えるとしている？"
+      ],
+      "answer": "必ず消えるとはしていません。疲労と筋緊張の上昇は同じではなく、十分に休み、睡眠や食事を取っても、筋が正常化していなければ重く感じ得るという本書の説明です。症状の原因をこの資料だけで診断するものではありません。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "fatigue and elevated muscle tone aren't the same thing."
+        },
+        {
+          "kind": "quote",
+          "text": "You can be completely rested, fully slept, well-fed and still have heavy legs because the muscles haven't normalized."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Book-specific theory and terminology; no diagnosis, causality proof, or individual recovery prescription."
+      }
+    },
+    {
+      "id": "fullchunkqa-9acd28d710fc326aa7340cdf-3",
+      "chunk_id": "knowledge-9acd28d710fc326aa7340cdf",
+      "questions": [
+        "BakkenのActive Recoveryで、回復走のつもりが中程度の強度になった場合の落とし穴は？"
+      ],
+      "answer": "本書では、回復のために十分低い強度を保てず中程度へ上げると、休息にも正常化にもならず負荷を重ねると説明しています。回復走という名称だけで回復効果が決まるのではなく、強度の制御を重視しています。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "They head out for an \"easy\" run but let the pace drift to moderate intensity because it feels natural. They neither rest nor normalize, they just pile on more load."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Book-specific theory and terminology; no diagnosis, causality proof, or individual recovery prescription."
+      }
+    },
+    {
+      "id": "fullchunkqa-dbe5a5e2ec783c565badeb65-1",
+      "chunk_id": "knowledge-dbe5a5e2ec783c565badeb65",
+      "questions": [
+        "BakkenのInflection Pointは、全選手で毎日同じ固定点として扱われている？"
+      ],
+      "answer": "固定点とはしていません。筋の反応が不釣り合いに大きくなる点は、選手ごとにも日ごとにも変わるという説明です。本書の経験に基づく考えで、個人の数値を断定するものではありません。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "There's a point and it varies from athlete to athlete and from day to day where the response becomes disproportionately large."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Book-specific theory and terminology; no diagnosis, causality proof, or individual recovery prescription."
+      }
+    },
+    {
+      "id": "fullchunkqa-dbe5a5e2ec783c565badeb65-2",
+      "chunk_id": "knowledge-dbe5a5e2ec783c565badeb65",
+      "questions": [
+        "Bakkenは筋反応のinflection pointが起きる原因を、特定の運動単位の動員だと確定している？"
+      ],
+      "answer": "確定していません。納得できる説明を見つけていないと述べ、特定の運動単位の動員、代謝産物の蓄積、まだ理解されていない要因を可能性として挙げています。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "I've never found a satisfying explanation for why this inflection point exists"
+        },
+        {
+          "kind": "quote",
+          "text": "Perhaps it's about recruitment of specific motor units. Perhaps accumulation of metabolites. Perhaps something we don't yet understand."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Book-specific theory and terminology; no diagnosis, causality proof, or individual recovery prescription."
+      }
+    },
+    {
+      "id": "fullchunkqa-dbe5a5e2ec783c565badeb65-3",
+      "chunk_id": "knowledge-dbe5a5e2ec783c565badeb65",
+      "questions": [
+        "Bakkenが3K・5Kペースの高強度反復を基本練習にする際の危険として挙げているのは、強度そのものだけ？"
+      ],
+      "answer": "本書では、強度そのものが危険というより、誤差の余地が非常に小さい点を問題にしています。強すぎる・長すぎる・筋が正常化していない日の実施などで、1回だけでなく翌週全体の回復の制御を失い得るという説明です。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "Not that the intensity itself is dangerous, but that you're operating in a zone where the margin for error is extremely small."
+        },
+        {
+          "kind": "quote",
+          "text": "One session a bit too hard, a bit too long, or conducted on a day when your muscles weren't fully normalized-and you've lost control. Not just of that session, but of the entire following week."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Book-specific theory and terminology; no diagnosis, causality proof, or individual recovery prescription."
+      }
+    },
+    {
+      "id": "fullchunkqa-72d92a909bd39df00334ce4e-1",
+      "chunk_id": "knowledge-72d92a909bd39df00334ce4e",
+      "questions": [
+        "BakkenのImplications for Youでは、練習を計画する際に強度以外のどの状態を考えるよう求めている？"
+      ],
+      "answer": "開始時と終了後の筋の状態を考えるよう求めています。本書では走力だけでなく筋の状態を計画上同等に重視し、次の質の高い練習を繰り返せる状態へ向けて調整する考えです。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "When you plan your training, you must think about muscular state at least as much as you think about fitness."
+        },
+        {
+          "kind": "quote",
+          "text": "what state will I be in afterward?"
+        },
+        {
+          "kind": "quote",
+          "text": "what muscular state am I starting this session in"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Book-specific theory and terminology; no diagnosis, causality proof, or individual recovery prescription."
+      }
+    },
+    {
+      "id": "fullchunkqa-72d92a909bd39df00334ce4e-2",
+      "chunk_id": "knowledge-72d92a909bd39df00334ce4e",
+      "questions": [
+        "BakkenのPart IIへの導入は、計画を完璧に守ることを最終目標としている？"
+      ],
+      "answer": "最終目標は、時間を通じて方向を保つこととしています。原則を週の配置や負荷・正常化のルールに落とし込み、実行しやすく、修正もしやすい枠組みにする説明です。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "Frameworks that make execution easier, but also easier to correct. Because the goal isn't to follow a plan \"perfectly.\""
+        },
+        {
+          "kind": "quote",
+          "text": "The goal is to hold a direction over time."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Book-specific theory and terminology; no diagnosis, causality proof, or individual recovery prescription."
+      }
+    },
+    {
+      "id": "fullchunkqa-72d92a909bd39df00334ce4e-3",
+      "chunk_id": "knowledge-72d92a909bd39df00334ce4e",
+      "questions": [
+        "Bakkenは実践編を練習量別に分ける理由として、限られた時間と多くの時間にどんな違いを挙げている？"
+      ],
+      "answer": "限られた時間では精度と低い危険を保ちながら効果を最大化し、多くの時間では主要な練習や細かな調整を増やして全体の質を高める機会があると説明しています。どちらも筋の状態が扱える範囲を越えて崩れないことを前提にしています。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "I've divided this section by training volume, because volume creates two distinct daily realities and two distinct opportunity spaces."
+        },
+        {
+          "kind": "quote",
+          "text": "For some, it's about extracting maximum effect from limited hours, with high precision and low risk."
+        },
+        {
+          "kind": "quote",
+          "text": "more key sessions and finer adjustment—without your muscles gradually drifting beyond what you can handle."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Book-specific theory and terminology; no diagnosis, causality proof, or individual recovery prescription."
+      }
+    }
+  ]
+}
