@@ -1,0 +1,4173 @@
+{
+  "version": 1,
+  "entries": [
+    {
+      "id": "fullchunkqa-c8c67411c20e711bb9cc142c-1",
+      "chunk_id": "knowledge-c8c67411c20e711bb9cc142c",
+      "questions": [
+        "2019年荒玉駅伝男子の玉名は、保存資料で総合順位と総合・区間タイムの両方を確認できる？"
+      ],
+      "answer": "総合順位は1位と記録されていますが、総合タイムと全6区の区間タイムは不明値です。順位からタイムを補完することはできません。",
+      "sources": [
+        "input/aragyoku/men_full_2012_2025.json"
+      ],
+      "source_sha256": "686073a97d949b97da6a0320a5b61fc1281db61df3f6c553b20a73f7d5392e04",
+      "evidence": [
+        {
+          "kind": "json-unit",
+          "unit": {
+            "pointer": "/years/2019/teams/0",
+            "value": {
+              "rank": 1,
+              "team": "玉名",
+              "total": null,
+              "legs": [
+                {
+                  "leg": 1,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 2,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 3,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 4,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 5,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 6,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                }
+              ]
+            },
+            "context": {
+              "year": 2019,
+              "gender": "男子",
+              "date": "2019-10-16",
+              "source_drive_id": "13Mr2rUaOW3hCoYf5FPiA_zHMssTswZ2K",
+              "team_count": 16
+            }
+          }
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Manually checked 2019 missing values; printed overall ranks do not determine times or athlete identities."
+      }
+    },
+    {
+      "id": "fullchunkqa-c8c67411c20e711bb9cc142c-2",
+      "chunk_id": "knowledge-c8c67411c20e711bb9cc142c",
+      "questions": [
+        "2019年荒玉駅伝男子の玉東の全6区の氏名と学年は、保存資料で確定している？"
+      ],
+      "answer": "全6区で氏名はunknown、学年は不明値です。保存資料だけでは選手名や学年を確定できません。",
+      "sources": [
+        "input/aragyoku/men_full_2012_2025.json"
+      ],
+      "source_sha256": "686073a97d949b97da6a0320a5b61fc1281db61df3f6c553b20a73f7d5392e04",
+      "evidence": [
+        {
+          "kind": "json-unit",
+          "unit": {
+            "pointer": "/years/2019/teams/1",
+            "value": {
+              "rank": 2,
+              "team": "玉東",
+              "total": null,
+              "legs": [
+                {
+                  "leg": 1,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 2,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 3,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 4,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 5,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 6,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                }
+              ]
+            },
+            "context": {
+              "year": 2019,
+              "gender": "男子",
+              "date": "2019-10-16",
+              "source_drive_id": "13Mr2rUaOW3hCoYf5FPiA_zHMssTswZ2K",
+              "team_count": 16
+            }
+          }
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Manually checked 2019 missing values; printed overall ranks do not determine times or athlete identities."
+      }
+    },
+    {
+      "id": "fullchunkqa-c8c67411c20e711bb9cc142c-3",
+      "chunk_id": "knowledge-c8c67411c20e711bb9cc142c",
+      "questions": [
+        "2019年荒玉駅伝男子の玉名と玉東は、総合順位差と総合タイム差をどちらも計算できる？"
+      ],
+      "answer": "総合順位は1位と2位なので順位差は1つです。両校の総合タイムが不明のため、総合タイム差は計算できません。",
+      "sources": [
+        "input/aragyoku/men_full_2012_2025.json"
+      ],
+      "source_sha256": "686073a97d949b97da6a0320a5b61fc1281db61df3f6c553b20a73f7d5392e04",
+      "evidence": [
+        {
+          "kind": "json-unit",
+          "unit": {
+            "pointer": "/years/2019/teams/0",
+            "value": {
+              "rank": 1,
+              "team": "玉名",
+              "total": null,
+              "legs": [
+                {
+                  "leg": 1,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 2,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 3,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 4,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 5,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 6,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                }
+              ]
+            },
+            "context": {
+              "year": 2019,
+              "gender": "男子",
+              "date": "2019-10-16",
+              "source_drive_id": "13Mr2rUaOW3hCoYf5FPiA_zHMssTswZ2K",
+              "team_count": 16
+            }
+          }
+        },
+        {
+          "kind": "json-unit",
+          "unit": {
+            "pointer": "/years/2019/teams/1",
+            "value": {
+              "rank": 2,
+              "team": "玉東",
+              "total": null,
+              "legs": [
+                {
+                  "leg": 1,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 2,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 3,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 4,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 5,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 6,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                }
+              ]
+            },
+            "context": {
+              "year": 2019,
+              "gender": "男子",
+              "date": "2019-10-16",
+              "source_drive_id": "13Mr2rUaOW3hCoYf5FPiA_zHMssTswZ2K",
+              "team_count": 16
+            }
+          }
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Manually checked 2019 missing values; printed overall ranks do not determine times or athlete identities."
+      }
+    },
+    {
+      "id": "fullchunkqa-814ef19652cc5f98be6d5518-1",
+      "chunk_id": "knowledge-814ef19652cc5f98be6d5518",
+      "questions": [
+        "2019年荒玉駅伝男子の天水は、保存資料で総合順位と総合・区間タイムの両方を確認できる？"
+      ],
+      "answer": "総合順位は3位と記録されていますが、総合タイムと全6区の区間タイムは不明値です。順位からタイムを補完することはできません。",
+      "sources": [
+        "input/aragyoku/men_full_2012_2025.json"
+      ],
+      "source_sha256": "686073a97d949b97da6a0320a5b61fc1281db61df3f6c553b20a73f7d5392e04",
+      "evidence": [
+        {
+          "kind": "json-unit",
+          "unit": {
+            "pointer": "/years/2019/teams/2",
+            "value": {
+              "rank": 3,
+              "team": "天水",
+              "total": null,
+              "legs": [
+                {
+                  "leg": 1,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 2,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 3,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 4,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 5,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 6,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                }
+              ]
+            },
+            "context": {
+              "year": 2019,
+              "gender": "男子",
+              "date": "2019-10-16",
+              "source_drive_id": "13Mr2rUaOW3hCoYf5FPiA_zHMssTswZ2K",
+              "team_count": 16
+            }
+          }
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Manually checked 2019 missing values; printed overall ranks do not determine times or athlete identities."
+      }
+    },
+    {
+      "id": "fullchunkqa-814ef19652cc5f98be6d5518-2",
+      "chunk_id": "knowledge-814ef19652cc5f98be6d5518",
+      "questions": [
+        "2019年荒玉駅伝男子の岱明の全6区の氏名と学年は、保存資料で確定している？"
+      ],
+      "answer": "全6区で氏名はunknown、学年は不明値です。保存資料だけでは選手名や学年を確定できません。",
+      "sources": [
+        "input/aragyoku/men_full_2012_2025.json"
+      ],
+      "source_sha256": "686073a97d949b97da6a0320a5b61fc1281db61df3f6c553b20a73f7d5392e04",
+      "evidence": [
+        {
+          "kind": "json-unit",
+          "unit": {
+            "pointer": "/years/2019/teams/3",
+            "value": {
+              "rank": 4,
+              "team": "岱明",
+              "total": null,
+              "legs": [
+                {
+                  "leg": 1,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 2,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 3,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 4,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 5,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 6,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                }
+              ]
+            },
+            "context": {
+              "year": 2019,
+              "gender": "男子",
+              "date": "2019-10-16",
+              "source_drive_id": "13Mr2rUaOW3hCoYf5FPiA_zHMssTswZ2K",
+              "team_count": 16
+            }
+          }
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Manually checked 2019 missing values; printed overall ranks do not determine times or athlete identities."
+      }
+    },
+    {
+      "id": "fullchunkqa-814ef19652cc5f98be6d5518-3",
+      "chunk_id": "knowledge-814ef19652cc5f98be6d5518",
+      "questions": [
+        "2019年荒玉駅伝男子の天水と岱明は、総合順位差と総合タイム差をどちらも計算できる？"
+      ],
+      "answer": "総合順位は3位と4位なので順位差は1つです。両校の総合タイムが不明のため、総合タイム差は計算できません。",
+      "sources": [
+        "input/aragyoku/men_full_2012_2025.json"
+      ],
+      "source_sha256": "686073a97d949b97da6a0320a5b61fc1281db61df3f6c553b20a73f7d5392e04",
+      "evidence": [
+        {
+          "kind": "json-unit",
+          "unit": {
+            "pointer": "/years/2019/teams/2",
+            "value": {
+              "rank": 3,
+              "team": "天水",
+              "total": null,
+              "legs": [
+                {
+                  "leg": 1,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 2,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 3,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 4,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 5,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 6,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                }
+              ]
+            },
+            "context": {
+              "year": 2019,
+              "gender": "男子",
+              "date": "2019-10-16",
+              "source_drive_id": "13Mr2rUaOW3hCoYf5FPiA_zHMssTswZ2K",
+              "team_count": 16
+            }
+          }
+        },
+        {
+          "kind": "json-unit",
+          "unit": {
+            "pointer": "/years/2019/teams/3",
+            "value": {
+              "rank": 4,
+              "team": "岱明",
+              "total": null,
+              "legs": [
+                {
+                  "leg": 1,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 2,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 3,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 4,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 5,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 6,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                }
+              ]
+            },
+            "context": {
+              "year": 2019,
+              "gender": "男子",
+              "date": "2019-10-16",
+              "source_drive_id": "13Mr2rUaOW3hCoYf5FPiA_zHMssTswZ2K",
+              "team_count": 16
+            }
+          }
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Manually checked 2019 missing values; printed overall ranks do not determine times or athlete identities."
+      }
+    },
+    {
+      "id": "fullchunkqa-f6729b2e9ab2a0d5dc445f50-1",
+      "chunk_id": "knowledge-f6729b2e9ab2a0d5dc445f50",
+      "questions": [
+        "2019年荒玉駅伝男子の荒尾四は、保存資料で総合順位と総合・区間タイムの両方を確認できる？"
+      ],
+      "answer": "総合順位は5位と記録されていますが、総合タイムと全6区の区間タイムは不明値です。順位からタイムを補完することはできません。",
+      "sources": [
+        "input/aragyoku/men_full_2012_2025.json"
+      ],
+      "source_sha256": "686073a97d949b97da6a0320a5b61fc1281db61df3f6c553b20a73f7d5392e04",
+      "evidence": [
+        {
+          "kind": "json-unit",
+          "unit": {
+            "pointer": "/years/2019/teams/4",
+            "value": {
+              "rank": 5,
+              "team": "荒尾四",
+              "total": null,
+              "legs": [
+                {
+                  "leg": 1,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 2,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 3,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 4,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 5,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 6,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                }
+              ]
+            },
+            "context": {
+              "year": 2019,
+              "gender": "男子",
+              "date": "2019-10-16",
+              "source_drive_id": "13Mr2rUaOW3hCoYf5FPiA_zHMssTswZ2K",
+              "team_count": 16
+            }
+          }
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Manually checked 2019 missing values; printed overall ranks do not determine times or athlete identities."
+      }
+    },
+    {
+      "id": "fullchunkqa-f6729b2e9ab2a0d5dc445f50-2",
+      "chunk_id": "knowledge-f6729b2e9ab2a0d5dc445f50",
+      "questions": [
+        "2019年荒玉駅伝男子の南関の全6区の氏名と学年は、保存資料で確定している？"
+      ],
+      "answer": "全6区で氏名はunknown、学年は不明値です。保存資料だけでは選手名や学年を確定できません。",
+      "sources": [
+        "input/aragyoku/men_full_2012_2025.json"
+      ],
+      "source_sha256": "686073a97d949b97da6a0320a5b61fc1281db61df3f6c553b20a73f7d5392e04",
+      "evidence": [
+        {
+          "kind": "json-unit",
+          "unit": {
+            "pointer": "/years/2019/teams/5",
+            "value": {
+              "rank": 6,
+              "team": "南関",
+              "total": null,
+              "legs": [
+                {
+                  "leg": 1,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 2,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 3,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 4,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 5,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 6,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                }
+              ]
+            },
+            "context": {
+              "year": 2019,
+              "gender": "男子",
+              "date": "2019-10-16",
+              "source_drive_id": "13Mr2rUaOW3hCoYf5FPiA_zHMssTswZ2K",
+              "team_count": 16
+            }
+          }
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Manually checked 2019 missing values; printed overall ranks do not determine times or athlete identities."
+      }
+    },
+    {
+      "id": "fullchunkqa-f6729b2e9ab2a0d5dc445f50-3",
+      "chunk_id": "knowledge-f6729b2e9ab2a0d5dc445f50",
+      "questions": [
+        "2019年荒玉駅伝男子の荒尾四と南関は、総合順位差と総合タイム差をどちらも計算できる？"
+      ],
+      "answer": "総合順位は5位と6位なので順位差は1つです。両校の総合タイムが不明のため、総合タイム差は計算できません。",
+      "sources": [
+        "input/aragyoku/men_full_2012_2025.json"
+      ],
+      "source_sha256": "686073a97d949b97da6a0320a5b61fc1281db61df3f6c553b20a73f7d5392e04",
+      "evidence": [
+        {
+          "kind": "json-unit",
+          "unit": {
+            "pointer": "/years/2019/teams/4",
+            "value": {
+              "rank": 5,
+              "team": "荒尾四",
+              "total": null,
+              "legs": [
+                {
+                  "leg": 1,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 2,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 3,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 4,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 5,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 6,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                }
+              ]
+            },
+            "context": {
+              "year": 2019,
+              "gender": "男子",
+              "date": "2019-10-16",
+              "source_drive_id": "13Mr2rUaOW3hCoYf5FPiA_zHMssTswZ2K",
+              "team_count": 16
+            }
+          }
+        },
+        {
+          "kind": "json-unit",
+          "unit": {
+            "pointer": "/years/2019/teams/5",
+            "value": {
+              "rank": 6,
+              "team": "南関",
+              "total": null,
+              "legs": [
+                {
+                  "leg": 1,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 2,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 3,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 4,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 5,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 6,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                }
+              ]
+            },
+            "context": {
+              "year": 2019,
+              "gender": "男子",
+              "date": "2019-10-16",
+              "source_drive_id": "13Mr2rUaOW3hCoYf5FPiA_zHMssTswZ2K",
+              "team_count": 16
+            }
+          }
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Manually checked 2019 missing values; printed overall ranks do not determine times or athlete identities."
+      }
+    },
+    {
+      "id": "fullchunkqa-d277b70e51c3faeab3d14788-1",
+      "chunk_id": "knowledge-d277b70e51c3faeab3d14788",
+      "questions": [
+        "2019年荒玉駅伝男子の荒尾海陽は、保存資料で総合順位と総合・区間タイムの両方を確認できる？"
+      ],
+      "answer": "総合順位は7位と記録されていますが、総合タイムと全6区の区間タイムは不明値です。順位からタイムを補完することはできません。",
+      "sources": [
+        "input/aragyoku/men_full_2012_2025.json"
+      ],
+      "source_sha256": "686073a97d949b97da6a0320a5b61fc1281db61df3f6c553b20a73f7d5392e04",
+      "evidence": [
+        {
+          "kind": "json-unit",
+          "unit": {
+            "pointer": "/years/2019/teams/6",
+            "value": {
+              "rank": 7,
+              "team": "荒尾海陽",
+              "total": null,
+              "legs": [
+                {
+                  "leg": 1,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 2,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 3,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 4,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 5,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 6,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                }
+              ]
+            },
+            "context": {
+              "year": 2019,
+              "gender": "男子",
+              "date": "2019-10-16",
+              "source_drive_id": "13Mr2rUaOW3hCoYf5FPiA_zHMssTswZ2K",
+              "team_count": 16
+            }
+          }
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Manually checked 2019 missing values; printed overall ranks do not determine times or athlete identities."
+      }
+    },
+    {
+      "id": "fullchunkqa-d277b70e51c3faeab3d14788-2",
+      "chunk_id": "knowledge-d277b70e51c3faeab3d14788",
+      "questions": [
+        "2019年荒玉駅伝男子の荒尾三の全6区の氏名と学年は、保存資料で確定している？"
+      ],
+      "answer": "全6区で氏名はunknown、学年は不明値です。保存資料だけでは選手名や学年を確定できません。",
+      "sources": [
+        "input/aragyoku/men_full_2012_2025.json"
+      ],
+      "source_sha256": "686073a97d949b97da6a0320a5b61fc1281db61df3f6c553b20a73f7d5392e04",
+      "evidence": [
+        {
+          "kind": "json-unit",
+          "unit": {
+            "pointer": "/years/2019/teams/7",
+            "value": {
+              "rank": 8,
+              "team": "荒尾三",
+              "total": null,
+              "legs": [
+                {
+                  "leg": 1,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 2,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 3,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 4,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 5,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 6,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                }
+              ]
+            },
+            "context": {
+              "year": 2019,
+              "gender": "男子",
+              "date": "2019-10-16",
+              "source_drive_id": "13Mr2rUaOW3hCoYf5FPiA_zHMssTswZ2K",
+              "team_count": 16
+            }
+          }
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Manually checked 2019 missing values; printed overall ranks do not determine times or athlete identities."
+      }
+    },
+    {
+      "id": "fullchunkqa-d277b70e51c3faeab3d14788-3",
+      "chunk_id": "knowledge-d277b70e51c3faeab3d14788",
+      "questions": [
+        "2019年荒玉駅伝男子の荒尾海陽と荒尾三は、総合順位差と総合タイム差をどちらも計算できる？"
+      ],
+      "answer": "総合順位は7位と8位なので順位差は1つです。両校の総合タイムが不明のため、総合タイム差は計算できません。",
+      "sources": [
+        "input/aragyoku/men_full_2012_2025.json"
+      ],
+      "source_sha256": "686073a97d949b97da6a0320a5b61fc1281db61df3f6c553b20a73f7d5392e04",
+      "evidence": [
+        {
+          "kind": "json-unit",
+          "unit": {
+            "pointer": "/years/2019/teams/6",
+            "value": {
+              "rank": 7,
+              "team": "荒尾海陽",
+              "total": null,
+              "legs": [
+                {
+                  "leg": 1,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 2,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 3,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 4,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 5,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 6,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                }
+              ]
+            },
+            "context": {
+              "year": 2019,
+              "gender": "男子",
+              "date": "2019-10-16",
+              "source_drive_id": "13Mr2rUaOW3hCoYf5FPiA_zHMssTswZ2K",
+              "team_count": 16
+            }
+          }
+        },
+        {
+          "kind": "json-unit",
+          "unit": {
+            "pointer": "/years/2019/teams/7",
+            "value": {
+              "rank": 8,
+              "team": "荒尾三",
+              "total": null,
+              "legs": [
+                {
+                  "leg": 1,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 2,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 3,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 4,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 5,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 6,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                }
+              ]
+            },
+            "context": {
+              "year": 2019,
+              "gender": "男子",
+              "date": "2019-10-16",
+              "source_drive_id": "13Mr2rUaOW3hCoYf5FPiA_zHMssTswZ2K",
+              "team_count": 16
+            }
+          }
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Manually checked 2019 missing values; printed overall ranks do not determine times or athlete identities."
+      }
+    },
+    {
+      "id": "fullchunkqa-9fec9c0c135558dda2421080-1",
+      "chunk_id": "knowledge-9fec9c0c135558dda2421080",
+      "questions": [
+        "2019年荒玉駅伝男子の玉陵は、保存資料で総合順位と総合・区間タイムの両方を確認できる？"
+      ],
+      "answer": "総合順位は9位と記録されていますが、総合タイムと全6区の区間タイムは不明値です。順位からタイムを補完することはできません。",
+      "sources": [
+        "input/aragyoku/men_full_2012_2025.json"
+      ],
+      "source_sha256": "686073a97d949b97da6a0320a5b61fc1281db61df3f6c553b20a73f7d5392e04",
+      "evidence": [
+        {
+          "kind": "json-unit",
+          "unit": {
+            "pointer": "/years/2019/teams/8",
+            "value": {
+              "rank": 9,
+              "team": "玉陵",
+              "total": null,
+              "legs": [
+                {
+                  "leg": 1,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 2,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 3,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 4,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 5,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 6,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                }
+              ]
+            },
+            "context": {
+              "year": 2019,
+              "gender": "男子",
+              "date": "2019-10-16",
+              "source_drive_id": "13Mr2rUaOW3hCoYf5FPiA_zHMssTswZ2K",
+              "team_count": 16
+            }
+          }
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Manually checked 2019 missing values; printed overall ranks do not determine times or athlete identities."
+      }
+    },
+    {
+      "id": "fullchunkqa-9fec9c0c135558dda2421080-2",
+      "chunk_id": "knowledge-9fec9c0c135558dda2421080",
+      "questions": [
+        "2019年荒玉駅伝男子の長洲の全6区の氏名と学年は、保存資料で確定している？"
+      ],
+      "answer": "全6区で氏名はunknown、学年は不明値です。保存資料だけでは選手名や学年を確定できません。",
+      "sources": [
+        "input/aragyoku/men_full_2012_2025.json"
+      ],
+      "source_sha256": "686073a97d949b97da6a0320a5b61fc1281db61df3f6c553b20a73f7d5392e04",
+      "evidence": [
+        {
+          "kind": "json-unit",
+          "unit": {
+            "pointer": "/years/2019/teams/9",
+            "value": {
+              "rank": 10,
+              "team": "長洲",
+              "total": null,
+              "legs": [
+                {
+                  "leg": 1,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 2,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 3,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 4,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 5,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 6,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                }
+              ]
+            },
+            "context": {
+              "year": 2019,
+              "gender": "男子",
+              "date": "2019-10-16",
+              "source_drive_id": "13Mr2rUaOW3hCoYf5FPiA_zHMssTswZ2K",
+              "team_count": 16
+            }
+          }
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Manually checked 2019 missing values; printed overall ranks do not determine times or athlete identities."
+      }
+    },
+    {
+      "id": "fullchunkqa-9fec9c0c135558dda2421080-3",
+      "chunk_id": "knowledge-9fec9c0c135558dda2421080",
+      "questions": [
+        "2019年荒玉駅伝男子の玉陵と長洲は、総合順位差と総合タイム差をどちらも計算できる？"
+      ],
+      "answer": "総合順位は9位と10位なので順位差は1つです。両校の総合タイムが不明のため、総合タイム差は計算できません。",
+      "sources": [
+        "input/aragyoku/men_full_2012_2025.json"
+      ],
+      "source_sha256": "686073a97d949b97da6a0320a5b61fc1281db61df3f6c553b20a73f7d5392e04",
+      "evidence": [
+        {
+          "kind": "json-unit",
+          "unit": {
+            "pointer": "/years/2019/teams/8",
+            "value": {
+              "rank": 9,
+              "team": "玉陵",
+              "total": null,
+              "legs": [
+                {
+                  "leg": 1,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 2,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 3,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 4,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 5,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 6,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                }
+              ]
+            },
+            "context": {
+              "year": 2019,
+              "gender": "男子",
+              "date": "2019-10-16",
+              "source_drive_id": "13Mr2rUaOW3hCoYf5FPiA_zHMssTswZ2K",
+              "team_count": 16
+            }
+          }
+        },
+        {
+          "kind": "json-unit",
+          "unit": {
+            "pointer": "/years/2019/teams/9",
+            "value": {
+              "rank": 10,
+              "team": "長洲",
+              "total": null,
+              "legs": [
+                {
+                  "leg": 1,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 2,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 3,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 4,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 5,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 6,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                }
+              ]
+            },
+            "context": {
+              "year": 2019,
+              "gender": "男子",
+              "date": "2019-10-16",
+              "source_drive_id": "13Mr2rUaOW3hCoYf5FPiA_zHMssTswZ2K",
+              "team_count": 16
+            }
+          }
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Manually checked 2019 missing values; printed overall ranks do not determine times or athlete identities."
+      }
+    },
+    {
+      "id": "fullchunkqa-c768e2971c140baa7f5c80be-1",
+      "chunk_id": "knowledge-c768e2971c140baa7f5c80be",
+      "questions": [
+        "2019年荒玉駅伝男子の菊水は、保存資料で総合順位と総合・区間タイムの両方を確認できる？"
+      ],
+      "answer": "総合順位は11位と記録されていますが、総合タイムと全6区の区間タイムは不明値です。順位からタイムを補完することはできません。",
+      "sources": [
+        "input/aragyoku/men_full_2012_2025.json"
+      ],
+      "source_sha256": "686073a97d949b97da6a0320a5b61fc1281db61df3f6c553b20a73f7d5392e04",
+      "evidence": [
+        {
+          "kind": "json-unit",
+          "unit": {
+            "pointer": "/years/2019/teams/10",
+            "value": {
+              "rank": 11,
+              "team": "菊水",
+              "total": null,
+              "legs": [
+                {
+                  "leg": 1,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 2,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 3,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 4,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 5,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 6,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                }
+              ]
+            },
+            "context": {
+              "year": 2019,
+              "gender": "男子",
+              "date": "2019-10-16",
+              "source_drive_id": "13Mr2rUaOW3hCoYf5FPiA_zHMssTswZ2K",
+              "team_count": 16
+            }
+          }
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Manually checked 2019 missing values; printed overall ranks do not determine times or athlete identities."
+      }
+    },
+    {
+      "id": "fullchunkqa-c768e2971c140baa7f5c80be-2",
+      "chunk_id": "knowledge-c768e2971c140baa7f5c80be",
+      "questions": [
+        "2019年荒玉駅伝男子の玉南の全6区の氏名と学年は、保存資料で確定している？"
+      ],
+      "answer": "全6区で氏名はunknown、学年は不明値です。保存資料だけでは選手名や学年を確定できません。",
+      "sources": [
+        "input/aragyoku/men_full_2012_2025.json"
+      ],
+      "source_sha256": "686073a97d949b97da6a0320a5b61fc1281db61df3f6c553b20a73f7d5392e04",
+      "evidence": [
+        {
+          "kind": "json-unit",
+          "unit": {
+            "pointer": "/years/2019/teams/11",
+            "value": {
+              "rank": 12,
+              "team": "玉南",
+              "total": null,
+              "legs": [
+                {
+                  "leg": 1,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 2,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 3,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 4,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 5,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 6,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                }
+              ]
+            },
+            "context": {
+              "year": 2019,
+              "gender": "男子",
+              "date": "2019-10-16",
+              "source_drive_id": "13Mr2rUaOW3hCoYf5FPiA_zHMssTswZ2K",
+              "team_count": 16
+            }
+          }
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Manually checked 2019 missing values; printed overall ranks do not determine times or athlete identities."
+      }
+    },
+    {
+      "id": "fullchunkqa-c768e2971c140baa7f5c80be-3",
+      "chunk_id": "knowledge-c768e2971c140baa7f5c80be",
+      "questions": [
+        "2019年荒玉駅伝男子の菊水と玉南は、総合順位差と総合タイム差をどちらも計算できる？"
+      ],
+      "answer": "総合順位は11位と12位なので順位差は1つです。両校の総合タイムが不明のため、総合タイム差は計算できません。",
+      "sources": [
+        "input/aragyoku/men_full_2012_2025.json"
+      ],
+      "source_sha256": "686073a97d949b97da6a0320a5b61fc1281db61df3f6c553b20a73f7d5392e04",
+      "evidence": [
+        {
+          "kind": "json-unit",
+          "unit": {
+            "pointer": "/years/2019/teams/10",
+            "value": {
+              "rank": 11,
+              "team": "菊水",
+              "total": null,
+              "legs": [
+                {
+                  "leg": 1,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 2,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 3,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 4,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 5,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 6,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                }
+              ]
+            },
+            "context": {
+              "year": 2019,
+              "gender": "男子",
+              "date": "2019-10-16",
+              "source_drive_id": "13Mr2rUaOW3hCoYf5FPiA_zHMssTswZ2K",
+              "team_count": 16
+            }
+          }
+        },
+        {
+          "kind": "json-unit",
+          "unit": {
+            "pointer": "/years/2019/teams/11",
+            "value": {
+              "rank": 12,
+              "team": "玉南",
+              "total": null,
+              "legs": [
+                {
+                  "leg": 1,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 2,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 3,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 4,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 5,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 6,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                }
+              ]
+            },
+            "context": {
+              "year": 2019,
+              "gender": "男子",
+              "date": "2019-10-16",
+              "source_drive_id": "13Mr2rUaOW3hCoYf5FPiA_zHMssTswZ2K",
+              "team_count": 16
+            }
+          }
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Manually checked 2019 missing values; printed overall ranks do not determine times or athlete identities."
+      }
+    },
+    {
+      "id": "fullchunkqa-3b311ef392f55e2bc8110756-1",
+      "chunk_id": "knowledge-3b311ef392f55e2bc8110756",
+      "questions": [
+        "2019年荒玉駅伝男子の有明は、保存資料で総合順位と総合・区間タイムの両方を確認できる？"
+      ],
+      "answer": "総合順位は13位と記録されていますが、総合タイムと全6区の区間タイムは不明値です。順位からタイムを補完することはできません。",
+      "sources": [
+        "input/aragyoku/men_full_2012_2025.json"
+      ],
+      "source_sha256": "686073a97d949b97da6a0320a5b61fc1281db61df3f6c553b20a73f7d5392e04",
+      "evidence": [
+        {
+          "kind": "json-unit",
+          "unit": {
+            "pointer": "/years/2019/teams/12",
+            "value": {
+              "rank": 13,
+              "team": "有明",
+              "total": null,
+              "legs": [
+                {
+                  "leg": 1,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 2,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 3,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 4,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 5,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 6,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                }
+              ]
+            },
+            "context": {
+              "year": 2019,
+              "gender": "男子",
+              "date": "2019-10-16",
+              "source_drive_id": "13Mr2rUaOW3hCoYf5FPiA_zHMssTswZ2K",
+              "team_count": 16
+            }
+          }
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Manually checked 2019 missing values; printed overall ranks do not determine times or athlete identities."
+      }
+    },
+    {
+      "id": "fullchunkqa-3b311ef392f55e2bc8110756-2",
+      "chunk_id": "knowledge-3b311ef392f55e2bc8110756",
+      "questions": [
+        "2019年荒玉駅伝男子の三加和の全6区の氏名と学年は、保存資料で確定している？"
+      ],
+      "answer": "全6区で氏名はunknown、学年は不明値です。保存資料だけでは選手名や学年を確定できません。",
+      "sources": [
+        "input/aragyoku/men_full_2012_2025.json"
+      ],
+      "source_sha256": "686073a97d949b97da6a0320a5b61fc1281db61df3f6c553b20a73f7d5392e04",
+      "evidence": [
+        {
+          "kind": "json-unit",
+          "unit": {
+            "pointer": "/years/2019/teams/13",
+            "value": {
+              "rank": 14,
+              "team": "三加和",
+              "total": null,
+              "legs": [
+                {
+                  "leg": 1,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 2,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 3,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 4,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 5,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 6,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                }
+              ]
+            },
+            "context": {
+              "year": 2019,
+              "gender": "男子",
+              "date": "2019-10-16",
+              "source_drive_id": "13Mr2rUaOW3hCoYf5FPiA_zHMssTswZ2K",
+              "team_count": 16
+            }
+          }
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Manually checked 2019 missing values; printed overall ranks do not determine times or athlete identities."
+      }
+    },
+    {
+      "id": "fullchunkqa-3b311ef392f55e2bc8110756-3",
+      "chunk_id": "knowledge-3b311ef392f55e2bc8110756",
+      "questions": [
+        "2019年荒玉駅伝男子の有明と三加和は、総合順位差と総合タイム差をどちらも計算できる？"
+      ],
+      "answer": "総合順位は13位と14位なので順位差は1つです。両校の総合タイムが不明のため、総合タイム差は計算できません。",
+      "sources": [
+        "input/aragyoku/men_full_2012_2025.json"
+      ],
+      "source_sha256": "686073a97d949b97da6a0320a5b61fc1281db61df3f6c553b20a73f7d5392e04",
+      "evidence": [
+        {
+          "kind": "json-unit",
+          "unit": {
+            "pointer": "/years/2019/teams/12",
+            "value": {
+              "rank": 13,
+              "team": "有明",
+              "total": null,
+              "legs": [
+                {
+                  "leg": 1,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 2,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 3,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 4,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 5,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 6,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                }
+              ]
+            },
+            "context": {
+              "year": 2019,
+              "gender": "男子",
+              "date": "2019-10-16",
+              "source_drive_id": "13Mr2rUaOW3hCoYf5FPiA_zHMssTswZ2K",
+              "team_count": 16
+            }
+          }
+        },
+        {
+          "kind": "json-unit",
+          "unit": {
+            "pointer": "/years/2019/teams/13",
+            "value": {
+              "rank": 14,
+              "team": "三加和",
+              "total": null,
+              "legs": [
+                {
+                  "leg": 1,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 2,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 3,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 4,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 5,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 6,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                }
+              ]
+            },
+            "context": {
+              "year": 2019,
+              "gender": "男子",
+              "date": "2019-10-16",
+              "source_drive_id": "13Mr2rUaOW3hCoYf5FPiA_zHMssTswZ2K",
+              "team_count": 16
+            }
+          }
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Manually checked 2019 missing values; printed overall ranks do not determine times or athlete identities."
+      }
+    },
+    {
+      "id": "fullchunkqa-42214a1dd01bf8f1209c7baf-1",
+      "chunk_id": "knowledge-42214a1dd01bf8f1209c7baf",
+      "questions": [
+        "2019年荒玉駅伝男子の腹栄は、保存資料で総合順位と総合・区間タイムの両方を確認できる？"
+      ],
+      "answer": "総合順位は15位と記録されていますが、総合タイムと全6区の区間タイムは不明値です。順位からタイムを補完することはできません。",
+      "sources": [
+        "input/aragyoku/men_full_2012_2025.json"
+      ],
+      "source_sha256": "686073a97d949b97da6a0320a5b61fc1281db61df3f6c553b20a73f7d5392e04",
+      "evidence": [
+        {
+          "kind": "json-unit",
+          "unit": {
+            "pointer": "/years/2019/teams/14",
+            "value": {
+              "rank": 15,
+              "team": "腹栄",
+              "total": null,
+              "legs": [
+                {
+                  "leg": 1,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 2,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 3,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 4,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 5,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 6,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                }
+              ]
+            },
+            "context": {
+              "year": 2019,
+              "gender": "男子",
+              "date": "2019-10-16",
+              "source_drive_id": "13Mr2rUaOW3hCoYf5FPiA_zHMssTswZ2K",
+              "team_count": 16
+            }
+          }
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Manually checked 2019 missing values; printed overall ranks do not determine times or athlete identities."
+      }
+    },
+    {
+      "id": "fullchunkqa-42214a1dd01bf8f1209c7baf-2",
+      "chunk_id": "knowledge-42214a1dd01bf8f1209c7baf",
+      "questions": [
+        "2019年荒玉駅伝男子の玉高附属の全6区の氏名と学年は、保存資料で確定している？"
+      ],
+      "answer": "全6区で氏名はunknown、学年は不明値です。保存資料だけでは選手名や学年を確定できません。",
+      "sources": [
+        "input/aragyoku/men_full_2012_2025.json"
+      ],
+      "source_sha256": "686073a97d949b97da6a0320a5b61fc1281db61df3f6c553b20a73f7d5392e04",
+      "evidence": [
+        {
+          "kind": "json-unit",
+          "unit": {
+            "pointer": "/years/2019/teams/15",
+            "value": {
+              "rank": 16,
+              "team": "玉高附属",
+              "total": null,
+              "legs": [
+                {
+                  "leg": 1,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 2,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 3,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 4,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 5,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 6,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                }
+              ]
+            },
+            "context": {
+              "year": 2019,
+              "gender": "男子",
+              "date": "2019-10-16",
+              "source_drive_id": "13Mr2rUaOW3hCoYf5FPiA_zHMssTswZ2K",
+              "team_count": 16
+            }
+          }
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Manually checked 2019 missing values; printed overall ranks do not determine times or athlete identities."
+      }
+    },
+    {
+      "id": "fullchunkqa-42214a1dd01bf8f1209c7baf-3",
+      "chunk_id": "knowledge-42214a1dd01bf8f1209c7baf",
+      "questions": [
+        "2019年荒玉駅伝男子の腹栄と玉高附属は、総合順位差と総合タイム差をどちらも計算できる？"
+      ],
+      "answer": "総合順位は15位と16位なので順位差は1つです。両校の総合タイムが不明のため、総合タイム差は計算できません。",
+      "sources": [
+        "input/aragyoku/men_full_2012_2025.json"
+      ],
+      "source_sha256": "686073a97d949b97da6a0320a5b61fc1281db61df3f6c553b20a73f7d5392e04",
+      "evidence": [
+        {
+          "kind": "json-unit",
+          "unit": {
+            "pointer": "/years/2019/teams/14",
+            "value": {
+              "rank": 15,
+              "team": "腹栄",
+              "total": null,
+              "legs": [
+                {
+                  "leg": 1,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 2,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 3,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 4,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 5,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 6,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                }
+              ]
+            },
+            "context": {
+              "year": 2019,
+              "gender": "男子",
+              "date": "2019-10-16",
+              "source_drive_id": "13Mr2rUaOW3hCoYf5FPiA_zHMssTswZ2K",
+              "team_count": 16
+            }
+          }
+        },
+        {
+          "kind": "json-unit",
+          "unit": {
+            "pointer": "/years/2019/teams/15",
+            "value": {
+              "rank": 16,
+              "team": "玉高附属",
+              "total": null,
+              "legs": [
+                {
+                  "leg": 1,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 2,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 3,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 4,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 5,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                },
+                {
+                  "leg": 6,
+                  "name": "unknown",
+                  "grade": null,
+                  "split": null,
+                  "cumulative": null,
+                  "passing_rank": null,
+                  "split_rank": null,
+                  "split_record": false,
+                  "status": "unknown",
+                  "raw_name_grade": "unknown",
+                  "computed": {
+                    "split_rank": null,
+                    "passing_rank": null
+                  }
+                }
+              ]
+            },
+            "context": {
+              "year": 2019,
+              "gender": "男子",
+              "date": "2019-10-16",
+              "source_drive_id": "13Mr2rUaOW3hCoYf5FPiA_zHMssTswZ2K",
+              "team_count": 16
+            }
+          }
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Manually checked 2019 missing values; printed overall ranks do not determine times or athlete identities."
+      }
+    }
+  ]
+}

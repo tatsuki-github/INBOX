@@ -1,0 +1,749 @@
+{
+  "version": 1,
+  "entries": [
+    {
+      "id": "fullchunkqa-ee335903053d334c25ca9c73-1",
+      "chunk_id": "knowledge-ee335903053d334c25ca9c73",
+      "questions": [
+        "LINEで「自分の自己ベストは？」と聞いた際、送信者を選手マスタから特定して答える？"
+      ],
+      "answer": "送信者と選手マスタは紐付けていません。名前のない自己ベスト質問には、選手名と距離を含む具体的な質問例を返します。",
+      "sources": [
+        "docs/adr/021-clarify-concrete-examples.md"
+      ],
+      "source_sha256": "6a4569dde30609d3bb52353b22f0890e3f777da7a73fcf73caf6db1f2d673b9a",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "LINE では送信者を選手マスタに紐づけていない。「自分の自己ベストは？」は誰の・どの距離かが不明なため、"
+        },
+        {
+          "kind": "quote",
+          "text": "2. LLM・検索の前に短文で具体例（名前＋距離付きの質問文）を返す。"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      }
+    },
+    {
+      "id": "fullchunkqa-ee335903053d334c25ca9c73-2",
+      "chunk_id": "knowledge-ee335903053d334c25ca9c73",
+      "questions": [
+        "選手名のないSB質問の聞き直し例は、LLMに生成させてから返信する？"
+      ],
+      "answer": "LLMや検索より先に、テンプレートの具体例を返します。LLMで例を生成する案は遅延・幻覚を理由に採用していません。",
+      "sources": [
+        "docs/adr/021-clarify-concrete-examples.md"
+      ],
+      "source_sha256": "6a4569dde30609d3bb52353b22f0890e3f777da7a73fcf73caf6db1f2d673b9a",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "2. LLM・検索の前に短文で具体例（名前＋距離付きの質問文）を返す。"
+        },
+        {
+          "kind": "quote",
+          "text": "| LLM に例を生成させる | 遅延・幻覚。テンプレで十分 |"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      }
+    },
+    {
+      "id": "fullchunkqa-ee335903053d334c25ca9c73-3",
+      "chunk_id": "knowledge-ee335903053d334c25ca9c73",
+      "questions": [
+        "名前と距離を指定した自己ベスト質問も、名前のない質問と同じ聞き直しにする？"
+      ],
+      "answer": "名前を指定した具体質問は通常の検索へ進みます。聞き直しの対象は選手名のない自己ベスト・SB・PB系の質問です。",
+      "sources": [
+        "docs/adr/021-clarify-concrete-examples.md"
+      ],
+      "source_sha256": "6a4569dde30609d3bb52353b22f0890e3f777da7a73fcf73caf6db1f2d673b9a",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "1. `matchClarifyAnswer` が自己ベスト／SB／PB 系で **選手名が無い** 質問を検出する。"
+        },
+        {
+          "kind": "quote",
+          "text": "3. 名前付きの具体質問（例:「今村昇磨の1500m自己ベストは？」）は通常の RAG へ進む。"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      }
+    },
+    {
+      "id": "fullchunkqa-c1472c83b035ddb1d1c57f33-1",
+      "chunk_id": "knowledge-c1472c83b035ddb1d1c57f33",
+      "questions": [
+        "SB表を900字で機械分割する方法には、選手名と記録の対応にどんな問題があった？"
+      ],
+      "answer": "行の途中で切れると、選手名と記録が別チャンクになりました。対策として、ヘッダを繰り返した1行1チャンクで索引化します。",
+      "sources": [
+        "docs/adr/022-sb-csv-row-qa.md"
+      ],
+      "source_sha256": "bc916ae2674a4fcceea6c923b9105da78af8b0ab0166737326ca6e4a9f701990",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "そのため他校選手の SB が答えられず、行の途中で切れて選手名と記録が別チャンクに分かれることがあった。"
+        },
+        {
+          "kind": "quote",
+          "text": "2. `sb/` と `drive-text/記録データベース/` の CSV は **1 行 = 1 チャンク**（ヘッダ繰り返し）で索引化する。"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      }
+    },
+    {
+      "id": "fullchunkqa-c1472c83b035ddb1d1c57f33-2",
+      "chunk_id": "knowledge-c1472c83b035ddb1d1c57f33",
+      "questions": [
+        "SBのLINE回答対象を全所属に広げるとき、年度別の全CSVもまとめて同梱する方針だった？"
+      ],
+      "answer": "ADR022では、全所属のワイド表は全行同梱しますが、年度別の全年度同梱は約25MBになるため採用しません。年度横断は別の対応範囲です。",
+      "sources": [
+        "docs/adr/022-sb-csv-row-qa.md"
+      ],
+      "source_sha256": "bc916ae2674a4fcceea6c923b9105da78af8b0ab0166737326ca6e4a9f701990",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "1. `scripts/build_idaten_corpus.py` は `input/external/sb/middle-school/wide/中学生SB.csv` を **全行** `sb/中学生SB.csv` として同梱する（岱明限定をやめる）。"
+        },
+        {
+          "kind": "quote",
+          "text": "| by-year 全年度を同梱 | 約 25MB。現行シーズン wide で十分。年度横断は別スライス |"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      }
+    },
+    {
+      "id": "fullchunkqa-c1472c83b035ddb1d1c57f33-3",
+      "chunk_id": "knowledge-c1472c83b035ddb1d1c57f33",
+      "questions": [
+        "SB検索の改善で、CSV全体をLLMに渡す案が見送られた理由は？"
+      ],
+      "answer": "トークン上限を超えるためです。行ごとのチャンクとBM25検索を使い、記録質問ではSBと記録データベースを優先します。",
+      "sources": [
+        "docs/adr/022-sb-csv-row-qa.md"
+      ],
+      "source_sha256": "bc916ae2674a4fcceea6c923b9105da78af8b0ab0166737326ca6e4a9f701990",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "| LLM に CSV 全体を渡す | トークン超過。行チャンク + BM25 で足りる |"
+        },
+        {
+          "kind": "quote",
+          "text": "3. 記録質問では `answer.ts` が `sb/`・記録データベースを preferred sources にブーストする。"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      }
+    },
+    {
+      "id": "fullchunkqa-33ce4c0284ab32e6c3d1e645-1",
+      "chunk_id": "knowledge-33ce4c0284ab32e6c3d1e645",
+      "questions": [
+        "想定質問の評価は、回答の文字列だけを調べる？返答種別や根拠ソースも確認する？"
+      ],
+      "answer": "ADR023の評価ランナーはanswerQuestionを呼び、any_of・forbid・kinds・sources_anyで判定します。返答種別や根拠ソースも判定条件にできます。",
+      "sources": [
+        "docs/adr/023-eval-200q-repo-grounding.md"
+      ],
+      "source_sha256": "b92e048b6163cce48669e713bc1785fdcc0a2e4b7e31fda869671dfbefc88de3",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "2. **ランナー**: `backend/scripts/eval-1000q/run.ts`（および 200q 版）が `answerQuestion` を呼び、`any_of` / `forbid` / `kinds` / `sources_any` で合否判定する。"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      }
+    },
+    {
+      "id": "fullchunkqa-33ce4c0284ab32e6c3d1e645-2",
+      "chunk_id": "knowledge-33ce4c0284ab32e6c3d1e645",
+      "questions": [
+        "200問・1000問評価の既定モードはLLMを使った自然文の検証？"
+      ],
+      "answer": "既定はオフラインでの根拠検証です。取得抜粋に事実が含まれることを確認し、LLMでの自然文検証は--llmで指定します。",
+      "sources": [
+        "docs/adr/023-eval-200q-repo-grounding.md"
+      ],
+      "source_sha256": "b92e048b6163cce48669e713bc1785fdcc0a2e4b7e31fda869671dfbefc88de3",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "3. **既定モードはオフライン根拠検証**（取得抜粋が事実を含むこと）。Gemini 無料枠の 429 を避ける。`--llm` で本番相当の自然文も検証可能。"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      }
+    },
+    {
+      "id": "fullchunkqa-33ce4c0284ab32e6c3d1e645-3",
+      "chunk_id": "knowledge-33ce4c0284ab32e6c3d1e645",
+      "questions": [
+        "カレンダー回答の評価には、正本にある全予定を無条件で使う？"
+      ],
+      "answer": "ADR023では、岱明でフィルタされたコーパスに存在する予定だけを評価に使います。元の予定が検索対象に入っていないケースを正解として求める方針ではありません。",
+      "sources": [
+        "docs/adr/023-eval-200q-repo-grounding.md"
+      ],
+      "source_sha256": "b92e048b6163cce48669e713bc1785fdcc0a2e4b7e31fda869671dfbefc88de3",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "   - カレンダー評価はコーパス（daiming フィルタ済み）に存在する予定のみを使う"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      }
+    },
+    {
+      "id": "fullchunkqa-7610df9c1fcba08517918101-1",
+      "chunk_id": "knowledge-7610df9c1fcba08517918101",
+      "questions": [
+        "1000問評価を通過した後、さらにユニーク質問の評価を増やした理由は？"
+      ],
+      "answer": "1000問のバンク内でユニークな質問は約684件にとどまり、SB・日程・大会URL・荒玉などの事実を出し切れていなかったためです。",
+      "sources": [
+        "docs/adr/024-eval-unique-exhausted-qa.md"
+      ],
+      "source_sha256": "962d22a2edbe1c08bbeb03f00a1f00a68a18663234ce57c0ba8bafdc187c6d2e",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "ADR 023 の 10×100（1000問）評価は通過したが、バンク内のユニーク質問は約 684 件に留まり、コーパス事実（SB 行×距離・日程・大会 URL・荒玉など）を出し切れていなかった。"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      }
+    },
+    {
+      "id": "fullchunkqa-7610df9c1fcba08517918101-2",
+      "chunk_id": "knowledge-7610df9c1fcba08517918101",
+      "questions": [
+        "選手名の検索で、森と森本のような別人を区別するため何を優先した？"
+      ],
+      "answer": "SB CSVの行頭で名前が完全一致する行を強くブーストします。部分一致だけに頼らないようにした改善です。",
+      "sources": [
+        "docs/adr/024-eval-unique-exhausted-qa.md"
+      ],
+      "source_sha256": "962d22a2edbe1c08bbeb03f00a1f00a68a18663234ce57c0ba8bafdc187c6d2e",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "   - 検索: SB CSV は `名前,` 行頭完全一致を強くブースト（森 vs 森本）"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      }
+    },
+    {
+      "id": "fullchunkqa-7610df9c1fcba08517918101-3",
+      "chunk_id": "knowledge-7610df9c1fcba08517918101",
+      "questions": [
+        "指名付きPB質問でも3000m予想ランキングを優先してよい？"
+      ],
+      "answer": "ADR024の改善では、指名付きPB質問から3000m予想ランキングなどを優先ソースから外し、SBを優先します。予想値と実記録を取り違えないための取得方針です。",
+      "sources": [
+        "docs/adr/024-eval-unique-exhausted-qa.md"
+      ],
+      "source_sha256": "962d22a2edbe1c08bbeb03f00a1f00a68a18663234ce57c0ba8bafdc187c6d2e",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "   - 指名付き PB では 3000m 予想ランキング等の drive-text を preferred から外し、SB を優先"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      }
+    },
+    {
+      "id": "fullchunkqa-4bd54fe3bdfae1cd8b384780-1",
+      "chunk_id": "knowledge-4bd54fe3bdfae1cd8b384780",
+      "questions": [
+        "検索資料を外している場合、LLMモデルだけを変える対策は採用した？"
+      ],
+      "answer": "採用していません。根拠抜粋が外れているとモデル変更だけでは効かないため、KGとBM25の検索精度を改善する方針です。",
+      "sources": [
+        "docs/adr/025-retrieval-precision.md"
+      ],
+      "source_sha256": "7fe4634801cf7488f0ef29e46958f4fa87c64b28a17d2dc358b497e36ae1e866",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "| LLM モデル乗せ替え単体 | 抜粋が外れると効かない |"
+        },
+        {
+          "kind": "quote",
+          "text": "| 埋め込みベクトル DB | 運用コスト。KG + BM25 の精度改善で足りる |"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      }
+    },
+    {
+      "id": "fullchunkqa-4bd54fe3bdfae1cd8b384780-2",
+      "chunk_id": "knowledge-4bd54fe3bdfae1cd8b384780",
+      "questions": [
+        "優先ソースなら一律1000点を加算する検索方針は維持された？"
+      ],
+      "answer": "一律加点は廃止しました。スコアを融合し、弱い優先ソースは小さなボーナスにとどめ、日付・名前や大会・SB・カレンダーのパス一致を優遇します。",
+      "sources": [
+        "docs/adr/025-retrieval-precision.md"
+      ],
+      "source_sha256": "7fe4634801cf7488f0ef29e46958f4fa87c64b28a17d2dc358b497e36ae1e866",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "1. **`mergeRetrieved`**: 一律 +1000 を廃止。スコア融合 + 弱い preferred は微小ボーナスのみ。日付/名前の強いシグナルとパス一致（ジュニア・なごみ・SB・calendar）で優遇。meet 質問では `repo-docs/` / 誤 aragyoku を減点。"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      }
+    },
+    {
+      "id": "fullchunkqa-4bd54fe3bdfae1cd8b384780-3",
+      "chunk_id": "knowledge-4bd54fe3bdfae1cd8b384780",
+      "questions": [
+        "検索評価に追加したmissingInfoは、単に合格数を数える指標？"
+      ],
+      "answer": "定型拒否率の集計です。通常の合否に加えて、根拠があるのに「コーチに直接聞いてください」となる偽陰性の確認に使います。",
+      "sources": [
+        "docs/adr/025-retrieval-precision.md"
+      ],
+      "source_sha256": "7fe4634801cf7488f0ef29e46958f4fa87c64b28a17d2dc358b497e36ae1e866",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "6. **評価**: `eval-1000q` / `eval-unique` に `missingInfo`（定型拒否率）集計を追加。オフライン回帰は必須。"
+        },
+        {
+          "kind": "quote",
+          "text": "リポジトリに事実があっても、誤 preferred の一律加点（+1000）や選手名ヒット不足、ADR 文書の BM25 汚染などで正解チャンクがコンテキストに載らず、「コーチに直接聞いてください」になる偽陰性が起きうる。"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      }
+    },
+    {
+      "id": "fullchunkqa-67ee00a1c213f401fbb29391-1",
+      "chunk_id": "knowledge-67ee00a1c213f401fbb29391",
+      "questions": [
+        "LLMに渡す抜粋を100k字に増やす際、文字数上限だけ変えて取得幅は据え置いた？"
+      ],
+      "answer": "取得幅も増やしました。上限だけ変えても供給チャンクが不足して枠が空くため、topK64、ルートソース24などに拡大しています。",
+      "sources": [
+        "docs/adr/026-context-100k.md"
+      ],
+      "source_sha256": "7346e7ea209c3b6438b39ec9e716e345baab56bb7f5ff296670700b502f01f5a",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "2. **取得幅も合わせて拡大**し、100k 枠を実質埋められるようにする:"
+        },
+        {
+          "kind": "quote",
+          "text": "   - topK **64**"
+        },
+        {
+          "kind": "quote",
+          "text": "   - routeSources **24**"
+        },
+        {
+          "kind": "quote",
+          "text": "| 上限だけ 100k にして topK 据え置き | 供給チャンク不足で枠が空く |"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      }
+    },
+    {
+      "id": "fullchunkqa-67ee00a1c213f401fbb29391-2",
+      "chunk_id": "knowledge-67ee00a1c213f401fbb29391",
+      "questions": [
+        "100k字への取得幅拡大で、ジュニアやなごみ質問にも荒玉の近傍チャンクを混ぜる？"
+      ],
+      "answer": "混ぜない方針です。ジュニア・なごみ・金栗の質問では、誤った大会や荒玉、駅伝OCR、文書のノイズを統合・近傍拡張で除外します。",
+      "sources": [
+        "docs/adr/026-context-100k.md"
+      ],
+      "source_sha256": "7346e7ea209c3b6438b39ec9e716e345baab56bb7f5ff296670700b502f01f5a",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "4. **幅拡大に伴うノイズ対策**: ジュニア/なごみ/金栗質問では aragyoku・ekiden-ocr・docs・誤大会フォルダ・荒玉本文チャンクを merge / 近傍拡張で除外（ADR 017 維持）"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      }
+    },
+    {
+      "id": "fullchunkqa-67ee00a1c213f401fbb29391-3",
+      "chunk_id": "knowledge-67ee00a1c213f401fbb29391",
+      "questions": [
+        "100k字の回答コンテキストに、資料中の「コーチに直接聞いてください」という引用も残す？"
+      ],
+      "answer": "その引用チャンクはコンテキストから除外します。資料中の定型文を、根拠のない回答拒否として混入させないためです。",
+      "sources": [
+        "docs/adr/026-context-100k.md"
+      ],
+      "source_sha256": "7346e7ea209c3b6438b39ec9e716e345baab56bb7f5ff296670700b502f01f5a",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "5. **定型拒否文の混入防止**: コーパス内の「コーチに直接聞いてください」引用チャンクはコンテキストから除外（システムプロンプト側で指示済み）"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      }
+    },
+    {
+      "id": "fullchunkqa-2fe137f3f01c32d6fad7e624-1",
+      "chunk_id": "knowledge-2fe137f3f01c32d6fad7e624",
+      "questions": [
+        "荒玉のチーム別検索強化では、上位8校だけを要約に残した？"
+      ],
+      "answer": "上位8校までの制限を廃止し、全チームを日本語の区間説明に含めます。チーム別の歴代記録Markdownも生成する方針です。",
+      "sources": [
+        "docs/adr/027-aragyoku-arato-team-markdowns.md"
+      ],
+      "source_sha256": "855e88e8850741d8dbbd43886b53794b9e75f078340540cc910ac98fa5c4b6b0",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "3. **transcript チャンク**を JSON dump から日本語の区間説明に変更し、全チームを要約に含める（上位8止めを廃止）"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      }
+    },
+    {
+      "id": "fullchunkqa-2fe137f3f01c32d6fad7e624-2",
+      "chunk_id": "knowledge-2fe137f3f01c32d6fad7e624",
+      "questions": [
+        "荒尾玉名の所属別トラック記録表と荒玉チーム別駅伝表は、同じ元データから作る？"
+      ],
+      "answer": "元データは異なります。所属別のトラック表は2024〜2026年のNotion中学生記録、チーム別駅伝表はtranscriptsから生成します。",
+      "sources": [
+        "docs/adr/027-aragyoku-arato-team-markdowns.md"
+      ],
+      "source_sha256": "855e88e8850741d8dbbd43886b53794b9e75f078340540cc910ac98fa5c4b6b0",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "   - `out/analysis/arato-tamana-teams/{所属}.md` … Notion 中学生記録（2024–2026）を所属別・年度別に全件表"
+        },
+        {
+          "kind": "quote",
+          "text": "   - `out/analysis/aragyoku-teams/{チーム}.md` … transcripts から荒玉駅伝のチーム別歴代（区間付き）"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      }
+    },
+    {
+      "id": "fullchunkqa-2fe137f3f01c32d6fad7e624-3",
+      "chunk_id": "knowledge-2fe137f3f01c32d6fad7e624",
+      "questions": [
+        "チーム別記録の検索強化でPDFだけを追加する案を採用しなかった理由は？"
+      ],
+      "answer": "PDFだけではテキスト検索に弱いためです。チーム単位のMarkdownとBM25を使い、検索・取得でもその資料を優先します。",
+      "sources": [
+        "docs/adr/027-aragyoku-arato-team-markdowns.md"
+      ],
+      "source_sha256": "855e88e8850741d8dbbd43886b53794b9e75f078340540cc910ac98fa5c4b6b0",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "| PDF のみ追加 | テキスト検索に弱い |"
+        },
+        {
+          "kind": "quote",
+          "text": "| ベクトル DB | 運用コスト。チーム単位 Markdown + BM25 で足りる |"
+        },
+        {
+          "kind": "quote",
+          "text": "4. **Router / preferred / path bonus** で `out-analysis/aragyoku-teams`・`arato-tamana-teams` を優先"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      }
+    },
+    {
+      "id": "fullchunkqa-2862e69c20fa25d87178d5f8-1",
+      "chunk_id": "knowledge-2862e69c20fa25d87178d5f8",
+      "questions": [
+        "荒玉駅伝概要は、選手名や順位を問う全質問でも常に優先する資料？"
+      ],
+      "answer": "距離・ペース系の質問のときだけ先頭で優先します。全質問で常時優先すると、順位・選手質問のコンテキストを圧迫するためです。",
+      "sources": [
+        "docs/adr/028-aragyoku-overview-pace.md"
+      ],
+      "source_sha256": "e2688946ed70f8b19220dd760715611abfcf59c54297b4e721bb8177ed3a7e35",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "3. **距離・ペース系クエリ**（`ペース|距離|区間|コース|/km|分でいく|分で走`）のときだけ"
+        },
+        {
+          "kind": "quote",
+          "text": "| 全荒玉質問で overview を常時 preferred | 順位・選手質問のコンテキストを圧迫し、オフライン抜粋にパス文字列が混入しやすい |"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      }
+    },
+    {
+      "id": "fullchunkqa-2862e69c20fa25d87178d5f8-2",
+      "chunk_id": "knowledge-2862e69c20fa25d87178d5f8",
+      "questions": [
+        "荒玉の区間ペース計算で、LLMに距離を暗記させる案を見送った理由は？"
+      ],
+      "answer": "2023年以前と2024年以降の年度差で誤答しやすいためです。距離定義と同じ定数による概要・換算表を渡す方針です。",
+      "sources": [
+        "docs/adr/028-aragyoku-overview-pace.md"
+      ],
+      "source_sha256": "e2688946ed70f8b19220dd760715611abfcf59c54297b4e721bb8177ed3a7e35",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "| LLM に距離を暗記させて算数させる | 年度差（2023以前 vs 2024以降）で誤答しやすい。表を渡す |"
+        },
+        {
+          "kind": "quote",
+          "text": "   - 生成: `scripts/generate_aragyoku_overview.py`（距離は距離定義ドキュメントと同一定数）"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      }
+    },
+    {
+      "id": "fullchunkqa-2862e69c20fa25d87178d5f8-3",
+      "chunk_id": "knowledge-2862e69c20fa25d87178d5f8",
+      "questions": [
+        "荒玉の距離定義が検索で当たっても、ペース回答の根拠を取りこぼした原因は？"
+      ],
+      "answer": "優先取得が結果板・transcriptに偏り、コンテキスト先頭がノイズで埋まっていたためです。概要にペース換算表とFAQを置き、距離・ペース質問で先頭に取得する対策です。",
+      "sources": [
+        "docs/adr/028-aragyoku-overview-pace.md"
+      ],
+      "source_sha256": "e2688946ed70f8b19220dd760715611abfcf59c54297b4e721bb8177ed3a7e35",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "preferred 取得が結果板・transcript に偏り、コンテキスト先頭がノイズで埋まった。"
+        },
+        {
+          "kind": "quote",
+          "text": "   - 大会の位置づけ、男女・年度別の区間距離、ペース換算表、FAQ（男子2区 9:00 等）"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      }
+    },
+    {
+      "id": "fullchunkqa-87eb5e552093c295e9f751eb-1",
+      "chunk_id": "knowledge-87eb5e552093c295e9f751eb",
+      "questions": [
+        "LINEトークの生ログ全文をGitに残す運用は採用した？"
+      ],
+      "answer": "採用していません。個人情報や人物評価のリスクがあるため、検索用には衛生化したMarkdownを使います。",
+      "sources": [
+        "docs/adr/029-daiming-line-chat-corpus.md"
+      ],
+      "source_sha256": "86a9174f83af5f388f4925c19f6a7fd3bbeb9b132031e7a59c55d187490d61ec",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "1. **衛生化 Markdown** を `out/analysis/line-chats/` に置く"
+        },
+        {
+          "kind": "quote",
+          "text": "| 生トーク全文をコミット | PII・人物評リスク |"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      }
+    },
+    {
+      "id": "fullchunkqa-87eb5e552093c295e9f751eb-2",
+      "chunk_id": "knowledge-87eb5e552093c295e9f751eb",
+      "questions": [
+        "有田大将との指導相談メモは、生ログがないと再生成で削除する？"
+      ],
+      "answer": "キュレーションを優先し、生ログがなくても整理済みMarkdownを保持する方針です。",
+      "sources": [
+        "docs/adr/029-daiming-line-chat-corpus.md"
+      ],
+      "source_sha256": "86a9174f83af5f388f4925c19f6a7fd3bbeb9b132031e7a59c55d187490d61ec",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "   - 有田メモはキュレーション優先（生ログが無くても curated MD を保持）"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      }
+    },
+    {
+      "id": "fullchunkqa-87eb5e552093c295e9f751eb-3",
+      "chunk_id": "knowledge-87eb5e552093c295e9f751eb",
+      "questions": [
+        "LINEトークの生ログを取り込む際、電話番号・郵便番号・住所をそのまま検索資料にする？"
+      ],
+      "answer": "取り込みスクリプトでマスクしてから再生成します。任意の生ログはGitの対象外に置く方針です。",
+      "sources": [
+        "docs/adr/029-daiming-line-chat-corpus.md"
+      ],
+      "source_sha256": "86a9174f83af5f388f4925c19f6a7fd3bbeb9b132031e7a59c55d187490d61ec",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "   `scripts/ingest_line_exports.py` で電話番号・郵便番号・住所をマスクして再生成できる"
+        },
+        {
+          "kind": "quote",
+          "text": "2. **任意の生ログ**は `input/external/line/raw/`（`.gitignore`）に置き、"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      }
+    },
+    {
+      "id": "fullchunkqa-49f87a404ffe0491ea539478-1",
+      "chunk_id": "knowledge-49f87a404ffe0491ea539478",
+      "questions": [
+        "玉名の天気データ運用の質問を回答可能にしたら、「今日の天気」の拒否も解除した？"
+      ],
+      "answer": "ライブ天気の拒否は維持しています。天気データの更新・保存先・取得間隔など、リポジトリ内の運用質問だけを対象にした改善です。",
+      "sources": [
+        "docs/adr/030-cross-corpus-gap-crush.md"
+      ],
+      "source_sha256": "595bee2247f64f68e29e51210f9bad61eefc6322115182b737429a6b3609a24d",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "1. **Scope**: 天気 hard refuse は維持しつつ、`天気データ` / `1時間間隔` / `保存先` / `Open-Meteo` 等の **repo weather ops** は in_scope"
+        },
+        {
+          "kind": "quote",
+          "text": "- 「今日の天気は？」は引き続き拒否"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      }
+    },
+    {
+      "id": "fullchunkqa-49f87a404ffe0491ea539478-2",
+      "chunk_id": "knowledge-49f87a404ffe0491ea539478",
+      "questions": [
+        "LINEの整形処理では、practice_meets_affect_loadの下線も斜体記号として除去する？"
+      ],
+      "answer": "設定キーなどのsnake_case識別子は、斜体置換から保護します。以前は下線による整形が設定名を壊す問題がありました。",
+      "sources": [
+        "docs/adr/030-cross-corpus-gap-crush.md"
+      ],
+      "source_sha256": "595bee2247f64f68e29e51210f9bad61eefc6322115182b737429a6b3609a24d",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "3. **formatForLine**: snake_case 識別子を italic 置換から保護する"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      }
+    },
+    {
+      "id": "fullchunkqa-49f87a404ffe0491ea539478-3",
+      "chunk_id": "knowledge-49f87a404ffe0491ea539478",
+      "questions": [
+        "オフライン抜粋で年度付きのペース表が切れていた問題には、どの行を優先する対策をした？"
+      ],
+      "answer": "ISO日付を優先する窓に続いて、2023などの年度行を優先します。プレビューが表の先頭に固定され、指定年度の行が落ちる問題への対策です。",
+      "sources": [
+        "docs/adr/030-cross-corpus-gap-crush.md"
+      ],
+      "source_sha256": "595bee2247f64f68e29e51210f9bad61eefc6322115182b737429a6b3609a24d",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "2. **previewForOffline**: ISO 日付の次に `20xx` 年行（`| 2023 |` 等）を優先窓にする"
+        },
+        {
+          "kind": "quote",
+          "text": "2. オフライン preview が表の先頭に張り付き、`2023` 年のペース行を切り落す"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      }
+    }
+  ]
+}

@@ -1,0 +1,617 @@
+{
+  "version": 1,
+  "entries": [
+    {
+      "id": "fullchunkqa-1731a20fa3d13f402d8d90d6-1",
+      "chunk_id": "knowledge-1731a20fa3d13f402d8d90d6",
+      "questions": [
+        "荒玉女子の氏名がCSVに載っていないときは、駅伝の記録から削除する？"
+      ],
+      "answer": "削除しません。CSVに氏名がないだけでは駅伝側を変更せず、トラック大会への不参加は駅伝記録の誤りを意味しないとしています。",
+      "sources": [
+        "docs/adr/013-aragyoku-csv-name-reconciliation.md"
+      ],
+      "source_sha256": "36a4d831dfdd6e344afedc1356785b38db93ac80c15415dcc4ebbafd6c1ca0b4",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "2. CSVに氏名がないだけでは駅伝側を変更しない。"
+        },
+        {
+          "kind": "quote",
+          "text": "| CSVにない駅伝選手を削除 | トラック大会への不参加は駅伝記録の誤りを意味しない |"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      }
+    },
+    {
+      "id": "fullchunkqa-1731a20fa3d13f402d8d90d6-2",
+      "chunk_id": "knowledge-1731a20fa3d13f402d8d90d6",
+      "questions": [
+        "荒玉女子の似た漢字の氏名は編集距離だけで自動修正できる？"
+      ],
+      "answer": "編集距離だけでは修正しません。学校・学年・前後年度・走力から同一選手と一意に判断できるときにCSV表記を優先します。置換文字を含むCSV行は補正根拠に使いません。",
+      "sources": [
+        "docs/adr/013-aragyoku-csv-name-reconciliation.md"
+      ],
+      "source_sha256": "36a4d831dfdd6e344afedc1356785b38db93ac80c15415dcc4ebbafd6c1ca0b4",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "1. 駅伝画像と同年度CSVの表記が競合し、学校・学年・前後年度・走力から"
+        },
+        {
+          "kind": "quote",
+          "text": "   一意に同一選手と判断できる場合はCSV表記を優先する。"
+        },
+        {
+          "kind": "quote",
+          "text": "3. Unicode置換文字 `�` を含むCSV行は補正根拠に使わない。"
+        },
+        {
+          "kind": "quote",
+          "text": "| 編集距離だけで自動補正 | 同校・同学年に複数候補がいる場合に別人へ誤補正する |"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      }
+    },
+    {
+      "id": "fullchunkqa-1731a20fa3d13f402d8d90d6-3",
+      "chunk_id": "knowledge-1731a20fa3d13f402d8d90d6",
+      "questions": [
+        "荒玉女子の年度CSV照合で修正された氏名と学年の件数は、それぞれ何件？"
+      ],
+      "answer": "氏名27件、学年6件で、合計33セルです。",
+      "sources": [
+        "docs/adr/013-aragyoku-csv-name-reconciliation.md"
+      ],
+      "source_sha256": "36a4d831dfdd6e344afedc1356785b38db93ac80c15415dcc4ebbafd6c1ca0b4",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "- 氏名27件: 2012年8件、2013年5件、2015年3件、2016年2件、"
+        },
+        {
+          "kind": "quote",
+          "text": "- 学年6件: 2013年1件、2016年2件、2019年1件、2024年1件、2025年1件（計33セル）"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      }
+    },
+    {
+      "id": "fullchunkqa-c2c6d8ec9c03435ac4e7e048-1",
+      "chunk_id": "knowledge-c2c6d8ec9c03435ac4e7e048",
+      "questions": [
+        "荒玉駅伝のボード値とNotionの値が異なる場合、どちらを採用して差異を残す？"
+      ],
+      "answer": "ボードを正本として採用し、差異はocr_notesに記録します。Notionの値でtranscriptを上書きする案は採用していません。",
+      "sources": [
+        "docs/adr/014-aragyoku-full-transcript-schema.md"
+      ],
+      "source_sha256": "fd9f11fff5a33251aa8159361ac5ad21fd180509fcbe24af6babf1d6c59bbf93",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "ボード値と Notion が不一致の場合は **ボードを正本** とし、`ocr_notes` に記録する。"
+        },
+        {
+          "kind": "quote",
+          "text": "| Notion 順位を transcript 上書き | ボードが正本である方針と矛盾 |"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      }
+    },
+    {
+      "id": "fullchunkqa-c2c6d8ec9c03435ac4e7e048-2",
+      "chunk_id": "knowledge-c2c6d8ec9c03435ac4e7e048",
+      "questions": [
+        "荒玉駅伝の全順位データでは、区間順位の計算値だけを保存する？"
+      ],
+      "answer": "ボード印刷値と計算値を区別して残します。計算値だけではボード印刷値を検証できないため、その案は採用していません。",
+      "sources": [
+        "docs/adr/014-aragyoku-full-transcript-schema.md"
+      ],
+      "source_sha256": "fd9f11fff5a33251aa8159361ac5ad21fd180509fcbe24af6babf1d6c59bbf93",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "     `split_record`, `status`, `raw_name_grade`, `computed.{split_rank,passing_rank}`"
+        },
+        {
+          "kind": "quote",
+          "text": "| 区間順位の計算値のみ保存 | ボード印刷値の検証ができない |"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      }
+    },
+    {
+      "id": "fullchunkqa-c2c6d8ec9c03435ac4e7e048-3",
+      "chunk_id": "knowledge-c2c6d8ec9c03435ac4e7e048",
+      "questions": [
+        "荒玉駅伝の全順位文字起こしは男女それぞれ何年分で、女子2014年はどう扱う？"
+      ],
+      "answer": "女子13年分、男子14年分の計27件です。女子2014年は除外し、missing_yearsに残します。",
+      "sources": [
+        "docs/adr/014-aragyoku-full-transcript-schema.md"
+      ],
+      "source_sha256": "fd9f11fff5a33251aa8159361ac5ad21fd180509fcbe24af6babf1d6c59bbf93",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "3. **女子13年（2014除く）+ 男子14年 = 27件**を対象とする。女子2014は `missing_years` に残す。"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      }
+    },
+    {
+      "id": "fullchunkqa-5450a57a68d131d5197ea67e-1",
+      "chunk_id": "knowledge-5450a57a68d131d5197ea67e",
+      "questions": [
+        "LINEバックエンドは既存Webと同じVercelプロジェクトで動かす設計？"
+      ],
+      "answer": "別のVercelプロジェクトで、Root Directoryをbackendとしてデプロイする設計です。既存Webと同居させる案はRoot Directoryの衝突もあるため採用していません。",
+      "sources": [
+        "docs/adr/015-line-idaten-qa-backend.md"
+      ],
+      "source_sha256": "840094f930c2f45deb2d4bfea555a66f87bf46017728867b0cc4c91b7c09252a",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "1. **新規 `backend/`** を Express + TypeScript で実装し、**別 Vercel プロジェクト**（Root Directory = `backend`）としてデプロイする。既存 `web/` は変更しない。"
+        },
+        {
+          "kind": "quote",
+          "text": "| `web/` に Route Handler で同居 | ユーザー要求は Express。Root Directory=`web` と衝突 |"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      }
+    },
+    {
+      "id": "fullchunkqa-5450a57a68d131d5197ea67e-2",
+      "chunk_id": "knowledge-5450a57a68d131d5197ea67e",
+      "questions": [
+        "LINEバックエンドのLLM用APIキーが未設定なら、回答機能は停止する？"
+      ],
+      "answer": "ADR015では、LLM未設定時はオフライン抜粋で回答する方針です。LLMのプロバイダは切り替え可能です。",
+      "sources": [
+        "docs/adr/015-line-idaten-qa-backend.md"
+      ],
+      "source_sha256": "840094f930c2f45deb2d4bfea555a66f87bf46017728867b0cc4c91b7c09252a",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "5. LLM は既定で **Gemini Developer API（無料枠）** — `AI_PROVIDER=gemini`、モデル `gemini-3.5-flash-lite`、`GEMINI_API_KEY`（Google AI Studio）。未設定時はオフライン抜粋。`openai` / `anthropic` も切替可能。"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      }
+    },
+    {
+      "id": "fullchunkqa-5450a57a68d131d5197ea67e-3",
+      "chunk_id": "knowledge-5450a57a68d131d5197ea67e",
+      "questions": [
+        "LINEのWebhookは署名確認前に回答する？テキスト以外のメッセージはどう扱う設計？"
+      ],
+      "answer": "HMAC-SHA256で署名を検証してから同期返信します。非テキストのメッセージには定型案内を返す設計です。",
+      "sources": [
+        "docs/adr/015-line-idaten-qa-backend.md"
+      ],
+      "source_sha256": "840094f930c2f45deb2d4bfea555a66f87bf46017728867b0cc4c91b7c09252a",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "4. LINE Messaging API: `POST /webhook` で署名検証（HMAC-SHA256）後、同期 reply。非テキストは定型案内。"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      }
+    },
+    {
+      "id": "fullchunkqa-1b213605bc90902e223a4f0b-1",
+      "chunk_id": "knowledge-1b213605bc90902e223a4f0b",
+      "questions": [
+        "KG先行のLINE回答で、日付質問はベクトルDBを新設して検索する方針？"
+      ],
+      "answer": "ベクトルDBは導入しません。日付を正規化してKGで探索先を決め、本文取得を行い、BM25を補助に使います。",
+      "sources": [
+        "docs/adr/016-kg-first-idaten-qa.md"
+      ],
+      "source_sha256": "31b18361a4b7065adb30610bc7f8bf18a3081b2a407fd32b68258a805d0db21d",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "1. **パイプライン**: Scope → 日付正規化 → KG スコアリング（TypeScript）→ Router LLM（任意）→ `rag_index` から source 指定取得 + BM25 補助 → Answer LLM。"
+        },
+        {
+          "kind": "quote",
+          "text": "5. **ベクトル DB は導入しない**。KG が探索地図、BM25 は保険。"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      }
+    },
+    {
+      "id": "fullchunkqa-1b213605bc90902e223a4f0b-2",
+      "chunk_id": "knowledge-1b213605bc90902e223a4f0b",
+      "questions": [
+        "LINE回答の「今日」「明日」はUTCの日付で展開する？"
+      ],
+      "answer": "実行時の日本時間Asia/Tokyoを基準に、具体的なISO日付とMMDDに展開します。昨日・一昨日・明後日も同様です。",
+      "sources": [
+        "docs/adr/016-kg-first-idaten-qa.md"
+      ],
+      "source_sha256": "31b18361a4b7065adb30610bc7f8bf18a3081b2a407fd32b68258a805d0db21d",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "4. **日付質問**: `9/20` / `9月20日` を `YYYY-MM-DD` + `MMDD` に展開し、`drive-text/大会/` のフォルダ名マッチと calendar チャンクを優先。**相対年**（`去年`/`今年`/`おととし`）も西暦トークンへ展開する。`今日` / `明日` / `明後日` / `昨日` / `一昨日` は実行時の日本時間（`Asia/Tokyo`）の日付から具体的なISO日付と `MMDD` に展開する。"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      }
+    },
+    {
+      "id": "fullchunkqa-1b213605bc90902e223a4f0b-3",
+      "chunk_id": "knowledge-1b213605bc90902e223a4f0b",
+      "questions": [
+        "KGの参照パスがコーパスに対応しない場合や、パストラバーサルの場合は読む？"
+      ],
+      "answer": "対応付けできない参照やパストラバーサルは破棄します。ランタイムは同梱データだけを読み、リポジトリ直下の入力ファイルを直接読む設計ではありません。",
+      "sources": [
+        "docs/adr/016-kg-first-idaten-qa.md"
+      ],
+      "source_sha256": "31b18361a4b7065adb30610bc7f8bf18a3081b2a407fd32b68258a805d0db21d",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "2. **ランタイム読取は `backend/data/*` のみ**（ADR 015 維持）。KG は `scripts/sync_backend_kg.py` で `backend/data/knowledge-graph.json` に同梱。本文は引き続き `rag_index.json`。repo 直下 `input/` は読まない。"
+        },
+        {
+          "kind": "quote",
+          "text": "3. **refs → corpus source マッピング**（例: `input/events.YYYY.yaml` → `calendar/events.daiming.yaml`）。マッピング不能・パストラバーサルは破棄。"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      }
+    },
+    {
+      "id": "fullchunkqa-47e10d44ccc89e328cca9ddb-1",
+      "chunk_id": "knowledge-47e10d44ccc89e328cca9ddb",
+      "questions": [
+        "ジュニア駅伝やなごみ駅伝の検索では、荒玉OCRも優先ソースに含める？"
+      ],
+      "answer": "含めません。該当大会のパスだけを先頭にし、荒玉・駅伝OCRを優先ソースから除外します。KGでも該当大会を加点し、荒玉ハブを減点します。",
+      "sources": [
+        "docs/adr/017-meet-disambiguation-kg.md"
+      ],
+      "source_sha256": "50949d9012207022424f242f61026174b390cf9926567662923fc0f88f0f2e42",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "   - `junior` / `nagomi` → `drive-text/大会/` の該大会パスのみ先頭。`aragyoku/*`・`ekiden-ocr/*` は preferred から除外"
+        },
+        {
+          "kind": "quote",
+          "text": "3. **KG スコア**で質問に `ジュニア` / `なごみ` があるとき、該当 meet ノードを加点し aragyoku ハブを減点"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      }
+    },
+    {
+      "id": "fullchunkqa-47e10d44ccc89e328cca9ddb-2",
+      "chunk_id": "knowledge-47e10d44ccc89e328cca9ddb",
+      "questions": [
+        "大会名を区別できない問題への対策として、駅伝の検索ブーストをすべて廃止した？"
+      ],
+      "answer": "廃止していません。荒玉の「去年の優勝校」などが退行するため、ブーストは大会種別ごとに分ける方針です。",
+      "sources": [
+        "docs/adr/017-meet-disambiguation-kg.md"
+      ],
+      "source_sha256": "50949d9012207022424f242f61026174b390cf9926567662923fc0f88f0f2e42",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "2. **ソースブースト**は種別ごと:"
+        },
+        {
+          "kind": "quote",
+          "text": "| 駅伝ブーストを全廃 | 荒玉の「去年の優勝校」等が退行する |"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      }
+    },
+    {
+      "id": "fullchunkqa-47e10d44ccc89e328cca9ddb-3",
+      "chunk_id": "knowledge-47e10d44ccc89e328cca9ddb",
+      "questions": [
+        "大会種別の誤回答対策で、結果を大会名ごとの固定返信に置き換える案を採用した？"
+      ],
+      "answer": "採用していません。結果は年次で変わるため、正本のコーパスを使う方針です。Routerのプロンプトとfallbackスコアも大会種別の判定規則に合わせます。",
+      "sources": [
+        "docs/adr/017-meet-disambiguation-kg.md"
+      ],
+      "source_sha256": "50949d9012207022424f242f61026174b390cf9926567662923fc0f88f0f2e42",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "| 大会名ごとにハードコード canned 回答 | 結果は年次で変わり、コーパス正本を活かせない |"
+        },
+        {
+          "kind": "quote",
+          "text": "5. **Router** プロンプトと fallback スコアも同ルールに合わせる"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      }
+    },
+    {
+      "id": "fullchunkqa-7a7404df9fd5d6ea399bbb37-1",
+      "chunk_id": "knowledge-7a7404df9fd5d6ea399bbb37",
+      "questions": [
+        "LINE拒否リストに入った利用者へは、拒否の定型文を返す？WebhookのHTTP応答は？"
+      ],
+      "answer": "メッセージを返信せず、LLMやRAGも呼びません。WebhookのHTTP応答は200です。",
+      "sources": [
+        "docs/adr/018-line-denied-user-ids.md"
+      ],
+      "source_sha256": "22ffda64bf6400e4ece676616e6d8bcc1bf37cd3eb9fcaf76c90bf5a19877d07",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "2. **拒否時は無応答**（`replyMessage` しない・LLM/RAG も呼ばない）。Webhook HTTP は 200。"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      }
+    },
+    {
+      "id": "fullchunkqa-7a7404df9fd5d6ea399bbb37-2",
+      "chunk_id": "knowledge-7a7404df9fd5d6ea399bbb37",
+      "questions": [
+        "LINEの拒否リストは利用者IDをGitのJSONに保存する運用？"
+      ],
+      "answer": "Gitには利用者IDを置かず、カンマ区切りの環境変数LINE_DENIED_USER_IDSをVercelのProduction環境で管理します。個人識別子のコミットとPR履歴汚染を避ける方針です。",
+      "sources": [
+        "docs/adr/018-line-denied-user-ids.md"
+      ],
+      "source_sha256": "22ffda64bf6400e4ece676616e6d8bcc1bf37cd3eb9fcaf76c90bf5a19877d07",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "1. **拒否リスト**は環境変数 `LINE_DENIED_USER_IDS`（カンマ区切り）。Git に userId を置かない。Vercel Project Env（Production）で管理する。"
+        },
+        {
+          "kind": "quote",
+          "text": "| リポジトリ内 JSON の拒否リスト | 個人識別子のコミットと PR 履歴汚染 |"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      }
+    },
+    {
+      "id": "fullchunkqa-7a7404df9fd5d6ea399bbb37-3",
+      "chunk_id": "knowledge-7a7404df9fd5d6ea399bbb37",
+      "questions": [
+        "LINEで送信元のuserIdが欠落しているときも拒否扱いにする？メッセージ本文はログに残す？"
+      ],
+      "answer": "ID欠落時は誤拒否せず従来どおり応答します。メッセージ本文はログに出さず、受信・拒否のログはuserIdを使います。",
+      "sources": [
+        "docs/adr/018-line-denied-user-ids.md"
+      ],
+      "source_sha256": "22ffda64bf6400e4ece676616e6d8bcc1bf37cd3eb9fcaf76c90bf5a19877d07",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "4. `event.source.userId` 欠落時は誤拒否しない（従来どおり応答）。"
+        },
+        {
+          "kind": "quote",
+          "text": "3. **ログ**: メッセージ受信時に `line message userId=U...`、拒否時に `line denied userId=U...` を `console` 出力し、Vercel Runtime Logs で検索可能にする。**メッセージ本文はログに出さない**。"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      }
+    },
+    {
+      "id": "fullchunkqa-cba27559b01e868f6d8c7e4e-1",
+      "chunk_id": "knowledge-cba27559b01e868f6d8c7e4e",
+      "questions": [
+        "大会のクラブ結果を「岱明の結果」に統一する作業は、Google Drive本体の改名も含む？"
+      ],
+      "answer": "リポジトリ内の外部スナップショットを改名し、コーパスを同期する方針です。Google Drive本体の改名は別運用です。",
+      "sources": [
+        "docs/adr/019-meet-naming-convention.md"
+      ],
+      "source_sha256": "81d89387c857a4ba11aec5cc8da18dcb3ec7db68ee08cea880ce41a770c2280d",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "4. **正本**: `input/external/drive/shared/大会/` をリネームし、corpus を同期。Google Drive 本体の改名は別運用。"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      }
+    },
+    {
+      "id": "fullchunkqa-cba27559b01e868f6d8c7e4e-2",
+      "chunk_id": "knowledge-cba27559b01e868f6d8c7e4e",
+      "questions": [
+        "大会結果ファイル名へ大会名を毎回付ける案を採用しなかった理由は？"
+      ],
+      "answer": "フォルダ名と二重になり、正規名が分かれやすくなるためです。クラブ結果は大会フォルダ直下の「岱明の結果.md」に統一します。",
+      "sources": [
+        "docs/adr/019-meet-naming-convention.md"
+      ],
+      "source_sha256": "81d89387c857a4ba11aec5cc8da18dcb3ec7db68ee08cea880ce41a770c2280d",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "1. **正規名**: クラブ結果は大会フォルダ直下の `岱明の結果.md` のみ。出場・計画も `岱明の*` に統一。"
+        },
+        {
+          "kind": "quote",
+          "text": "| ファイル名に大会名を毎回プレフィックス | フォルダ名と二重になり、正規名が割れやすい |"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      }
+    },
+    {
+      "id": "fullchunkqa-cba27559b01e868f6d8c7e4e-3",
+      "chunk_id": "knowledge-cba27559b01e868f6d8c7e4e",
+      "questions": [
+        "大会フォルダの命名統一では、公式PDFの名前もすべて改名する？"
+      ],
+      "answer": "すべては改名しません。公式OCR名は外部由来なので、クラブ要約を正規化する方針です。大会フォルダには検索トークンと別名を括弧併記で含めます。",
+      "sources": [
+        "docs/adr/019-meet-naming-convention.md"
+      ],
+      "source_sha256": "81d89387c857a4ba11aec5cc8da18dcb3ec7db68ee08cea880ce41a770c2280d",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "2. **フォルダ**: `{MMDD}_{大会名}` を維持し、検索トークン（荒玉など）と別名を括弧併記で含める。"
+        },
+        {
+          "kind": "quote",
+          "text": "| Drive 上の全 PDF 名まで改名 | 公式 OCR 名は外部由来。クラブ要約だけ正規化する方が費用対効果が高い |"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      }
+    },
+    {
+      "id": "fullchunkqa-e99ff67848957c86a6c454e7-1",
+      "chunk_id": "knowledge-e99ff67848957c86a6c454e7",
+      "questions": [
+        "LINE回答に公式結果URLを付けるのは、LLMにURLを書かせる方式？"
+      ],
+      "answer": "LLMには任せず、ビルド時のURL索引と回答後処理で付けます。本文をLINE向けに整形した後、結果ページとして素のURLを追記します。",
+      "sources": [
+        "docs/adr/020-meet-result-urls.md"
+      ],
+      "source_sha256": "0b7fab31ae1bbed9859acf401e98ff39cfe1fa612fc70fc7d77067daa74060e5",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "1. **ビルド時索引**: `scripts/build_meet_result_urls.py` が記録 CSV + `out/*/source.csv`（公式ホストのみ）から"
+        },
+        {
+          "kind": "quote",
+          "text": "2. **回答後処理**: LLM／オフライン本文を `formatForLine` したあと、`withMeetResultUrls` が大会名スコアで"
+        },
+        {
+          "kind": "quote",
+          "text": "| LLM に URL を書かせる | 幻覚・format 剥がしで不安定 |"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      }
+    },
+    {
+      "id": "fullchunkqa-e99ff67848957c86a6c454e7-2",
+      "chunk_id": "knowledge-e99ff67848957c86a6c454e7",
+      "questions": [
+        "大会の集合時間を聞いたときも公式結果URLを自動で付ける？"
+      ],
+      "answer": "無差別には付けません。結果・順位・タイムなどの結果系質問で、大会のスコアが閾値以上の場合だけ付与します。集合時間などへの誤誘導を避けるためです。",
+      "sources": [
+        "docs/adr/020-meet-result-urls.md"
+      ],
+      "source_sha256": "0b7fab31ae1bbed9859acf401e98ff39cfe1fa612fc70fc7d77067daa74060e5",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "3. **付与条件**: クエリが結果系（結果／順位／タイム等）かつ大会キューのスコアが閾値以上のときのみ。"
+        },
+        {
+          "kind": "quote",
+          "text": "| 全質問に無差別付与 | 集合時間などの誤誘導になる |"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      }
+    },
+    {
+      "id": "fullchunkqa-e99ff67848957c86a6c454e7-3",
+      "chunk_id": "knowledge-e99ff67848957c86a6c454e7",
+      "questions": [
+        "LINEへの公式結果URL追記は最大何件で、URLが見つからない場合はどうする？"
+      ],
+      "answer": "最大3件です。ヒットがなければ本文だけを返し、URLは作りません。",
+      "sources": [
+        "docs/adr/020-meet-result-urls.md"
+      ],
+      "source_sha256": "0b7fab31ae1bbed9859acf401e98ff39cfe1fa612fc70fc7d77067daa74060e5",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "   URL を最大 3 件、末尾に `結果ページ:` 付きの素の http(s) 行として追記する（プロンプトに頼らない）。"
+        },
+        {
+          "kind": "quote",
+          "text": "   ヒットが無ければ本文のみ（偽 URL 禁止）。"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      }
+    }
+  ]
+}

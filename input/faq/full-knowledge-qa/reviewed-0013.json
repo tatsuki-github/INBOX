@@ -1,0 +1,499 @@
+{
+  "version": 1,
+  "entries": [
+    {
+      "id": "fullchunkqa-be6ab90bb3e19014d5c77701-1",
+      "chunk_id": "knowledge-be6ab90bb3e19014d5c77701",
+      "questions": [
+        "Bakkenの本では、閾値ペースを「どんな日に、どのくらい持続できるペース」と説明している？"
+      ],
+      "answer": "すべてがうまくいく日に、約1時間維持できるペースと説明しています。本書が閾値トレーニングと呼ぶ練習は、その閾値そのものではなく、少し下の強度です。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "Your threshold pace is the pace you can hold for about an hour on a day when"
+        },
+        {
+          "kind": "quote",
+          "text": "everything clicks."
+        },
+        {
+          "kind": "quote",
+          "text": "training just below the threshold, never right at it."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Paraphrase of the book with its conditions; author experiences and proposed mechanisms not recast as universal guarantees."
+      }
+    },
+    {
+      "id": "fullchunkqa-be6ab90bb3e19014d5c77701-2",
+      "chunk_id": "knowledge-be6ab90bb3e19014d5c77701",
+      "questions": [
+        "BakkenのGolden Zoneの説明で、よく鍛えられたランナーの心拍と会話の目安は？"
+      ],
+      "answer": "本書では最大心拍の約80〜87%で、短いフレーズは話せても、完全な文で会話する状態ではないと説明しています。よく鍛えられたランナーについての目安で、全員の固定値ではありません。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "In this zone, you can speak in short phrases, not full sentences. For well-trained runners, it typically lands around 80-87% of max heart rate."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Paraphrase of the book with its conditions; author experiences and proposed mechanisms not recast as universal guarantees."
+      }
+    },
+    {
+      "id": "fullchunkqa-be6ab90bb3e19014d5c77701-3",
+      "chunk_id": "knowledge-be6ab90bb3e19014d5c77701",
+      "questions": [
+        "Bakkenは1998年のFrogner Parkの集団練習で、集団の先頭へ出ずに何を重視したと述べている？"
+      ],
+      "answer": "著者は意図的に集団の中ほどにとどまり、練習が身体を育てる負荷から壊す負荷へ変わる境界を見ていたと述べています。週ごとに繰り返せる強度を重視した経験談です。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "I stayed in the middle of the pack, by choice,"
+        },
+        {
+          "kind": "quote",
+          "text": "the line where training stops building you up and starts breaking you down."
+        },
+        {
+          "kind": "quote",
+          "text": "training at an intensity I could repeat, week after week"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Paraphrase of the book with its conditions; author experiences and proposed mechanisms not recast as universal guarantees."
+      }
+    },
+    {
+      "id": "fullchunkqa-6385b93d8fa71854c54538c8-1",
+      "chunk_id": "knowledge-6385b93d8fa71854c54538c8",
+      "questions": [
+        "Bakkenが2000年に公開した記事では、セッション中の乳酸値をLTに対してどう抑えると述べた？"
+      ],
+      "answer": "セッションの大部分をLTより約0.3〜0.5mmol/L下に抑え、LTへ届くとしても最後のインターバルで、という説明です。2000年の記事として引用された記述です。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "In 2000, I published an article"
+        },
+        {
+          "kind": "quote",
+          "text": "run most of the session about 0.3-0.5 mmol/L below the lactate threshold, and perhaps reach the threshold only on the final interval."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Paraphrase of the book with its conditions; author experiences and proposed mechanisms not recast as universal guarantees."
+      }
+    },
+    {
+      "id": "fullchunkqa-6385b93d8fa71854c54538c8-2",
+      "chunk_id": "knowledge-6385b93d8fa71854c54538c8",
+      "questions": [
+        "Bakkenの本では、自転車のsweet spotとランニングのGolden Zoneは同じ測定基準・同じ高さのゾーン？"
+      ],
+      "answer": "同じとはしていません。自転車のsweet spotはやや低い位置にあることが多く、Golden Zoneは乳酸を基準に閾値の近くの狭い範囲へ調整する説明です。共通原理があっても競技ごとに調整が異なります。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "sweet spot in cycling often sits slightly lower than the Golden Zone in running."
+        },
+        {
+          "kind": "quote",
+          "text": "the Golden Zone is lactate-anchored, threshold-adjacent, stable within a narrow window."
+        },
+        {
+          "kind": "quote",
+          "text": "Same logic, calibrated differently for the demands of each sport."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Paraphrase of the book with its conditions; author experiences and proposed mechanisms not recast as universal guarantees."
+      }
+    },
+    {
+      "id": "fullchunkqa-6385b93d8fa71854c54538c8-3",
+      "chunk_id": "knowledge-6385b93d8fa71854c54538c8",
+      "questions": [
+        "Bakkenが例示する自身のダブル閾値の日は、朝と夕にどんな時間の反復を行い、質的練習は合計どれくらい？"
+      ],
+      "answer": "例は朝に3〜5分を6〜8本、夕に1分を30本で、質的練習は合計約50〜70分を2回に分けます。著者自身の経験例で、初心者全員への指定ではありません。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "A typical day in my training: six to eight intervals of three to five minutes in the morning, then thirty times one-minute intervals in the evening, perhaps 50-70 minutes of quality work total"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Paraphrase of the book with its conditions; author experiences and proposed mechanisms not recast as universal guarantees."
+      }
+    },
+    {
+      "id": "fullchunkqa-b4c26b633589dab643b83b93-1",
+      "chunk_id": "knowledge-b4c26b633589dab643b83b93",
+      "questions": [
+        "Bakkenが乳酸4.0mmol/Lを全員共通の閾値にしない理由と、示している個人差の例は？"
+      ],
+      "answer": "個人差を無視する簡略化になるためです。本書では閾値が3.2mmol/Lの人も4.5mmol/Lの人もいると例示し、平均的な靴のサイズを全員に使うようなものだと説明しています。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "a simplification that ignores individual variation."
+        },
+        {
+          "kind": "quote",
+          "text": "Some runners sit at 3.2 mmol/L, others at 4.5."
+        },
+        {
+          "kind": "quote",
+          "text": "Using 4.0 as a universal marker is like using average shoe size for everyone"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Paraphrase of the book with its conditions; author experiences and proposed mechanisms not recast as universal guarantees."
+      }
+    },
+    {
+      "id": "fullchunkqa-b4c26b633589dab643b83b93-2",
+      "chunk_id": "knowledge-b4c26b633589dab643b83b93",
+      "questions": [
+        "Bakkenの4.0mmol/Lを固定しない説明では、個別に定めた閾値からどの程度下で練習するとしている？"
+      ],
+      "answer": "その説明部分では、個別に定めた閾値そのものではなく、0.3〜0.6mmol/L下としています。一律4.0mmol/Lを境界にする説明ではありません。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "not 4.0 as a fixed boundary, but an individually defined point, and not at that point, but 0.3-0.6 mmol/L below it."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Paraphrase of the book with its conditions; author experiences and proposed mechanisms not recast as universal guarantees."
+      }
+    },
+    {
+      "id": "fullchunkqa-b4c26b633589dab643b83b93-3",
+      "chunk_id": "knowledge-b4c26b633589dab643b83b93",
+      "questions": [
+        "Bakkenの「The center holds」という説明では、ジョグ・補強・ファルトレクも独立に最大化する？"
+      ],
+      "answer": "閾値トレーニングを固定した中心とし、ジョグ・補強・ファルトレクなど他の負荷はその中心を損なわないよう調整すると説明しています。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "threshold training as the fixed center. All other loads—the easy runs, the strength work, the fartleks-must be adapted so they never compromise that center."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Paraphrase of the book with its conditions; author experiences and proposed mechanisms not recast as universal guarantees."
+      }
+    },
+    {
+      "id": "fullchunkqa-bf5876c8bb2d48da9c8be781-1",
+      "chunk_id": "knowledge-bf5876c8bb2d48da9c8be781",
+      "questions": [
+        "Bakkenのミトコンドリア形成の説明では、閾値練習はどの2つの経路を組み合わせるとしている？"
+      ],
+      "answer": "長い運動によるカルシウムシグナルと、エネルギー需要の増加に反応するAMPK経路を挙げています。本書では閾値の強度と、その強度での運動量が両経路を同時に刺激すると説明しています。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "one activates during prolonged effort through calcium signaling"
+        },
+        {
+          "kind": "quote",
+          "text": "the AMP-activated protein kinase (AMPK) pathway."
+        },
+        {
+          "kind": "quote",
+          "text": "Threshold training hits both"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Paraphrase of the book with its conditions; author experiences and proposed mechanisms not recast as universal guarantees."
+      }
+    },
+    {
+      "id": "fullchunkqa-bf5876c8bb2d48da9c8be781-2",
+      "chunk_id": "knowledge-bf5876c8bb2d48da9c8be781",
+      "questions": [
+        "Bakkenの本で、乳酸―ペース曲線が右へ移動することは、実際の走りでは何を意味すると説明されている？"
+      ],
+      "answer": "同じ乳酸値でより速く走れる、または同じペースで乳酸がより低くなることと説明しています。変化は数週から数か月かけて徐々に進むという記述です。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "you run faster at the same lactate, or produce less lactate at the same pace."
+        },
+        {
+          "kind": "quote",
+          "text": "This shift happens gradually, over weeks and months"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Paraphrase of the book with its conditions; author experiences and proposed mechanisms not recast as universal guarantees."
+      }
+    },
+    {
+      "id": "fullchunkqa-bf5876c8bb2d48da9c8be781-3",
+      "chunk_id": "knowledge-bf5876c8bb2d48da9c8be781",
+      "questions": [
+        "Bakkenの筋線維動員の説明で、X-sessionは閾値練習を高強度練習に置き換えるもの？"
+      ],
+      "answer": "置き換える説明ではありません。より速い速度で働く線維のための短く制御した高強度への接触で、閾値練習を圧倒せず補うものとしています。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "the X-session: brief, controlled exposures to higher intensity that complement threshold work without overwhelming it."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Paraphrase of the book with its conditions; author experiences and proposed mechanisms not recast as universal guarantees."
+      }
+    },
+    {
+      "id": "fullchunkqa-c29298da86c99c797d3cc6a5-1",
+      "chunk_id": "knowledge-c29298da86c99c797d3cc6a5",
+      "questions": [
+        "Bakkenが初めての乳酸曲線を見た経験談では、何歳で、どんな走行と採血を行った？"
+      ],
+      "answer": "14歳のときの経験として、トレッドミルの速度を段階的に上げ、段階の間に耳たぶから採血して乳酸を測ったと述べています。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "I was fourteen the first time I saw my own lactate curve."
+        },
+        {
+          "kind": "quote",
+          "text": "After a few minutes he increased the speed. Then again."
+        },
+        {
+          "kind": "quote",
+          "text": "he pricked my earlobe with a lancet, collected a drop of blood"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Paraphrase of the book with its conditions; author experiences and proposed mechanisms not recast as universal guarantees."
+      }
+    },
+    {
+      "id": "fullchunkqa-c29298da86c99c797d3cc6a5-2",
+      "chunk_id": "knowledge-c29298da86c99c797d3cc6a5",
+      "questions": [
+        "Bakkenの初めての乳酸検査の経験談では、最後の測定値だけをそのまま閾値とした？"
+      ],
+      "answer": "最後の値だけではなく、測定値から曲線を描き、その曲がりに沿った点を示して閾値と説明した経験談です。最終測定値と閾値を同一にする記述ではありません。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "Moser noted the final reading and began drawing a curve"
+        },
+        {
+          "kind": "quote",
+          "text": "He marked a point along the bend."
+        },
+        {
+          "kind": "quote",
+          "text": "\"There. That's your threshold.\""
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Paraphrase of the book with its conditions; author experiences and proposed mechanisms not recast as universal guarantees."
+      }
+    },
+    {
+      "id": "fullchunkqa-c29298da86c99c797d3cc6a5-3",
+      "chunk_id": "knowledge-c29298da86c99c797d3cc6a5",
+      "questions": [
+        "Bakkenの本では、機器がない場合の複数の閾値推定法は、乳酸プロファイルを完全に置き換えるとしている？"
+      ],
+      "answer": "組み合わせて正しく解釈すれば実用には十分な方法がある一方、乳酸プロファイルを完全には置き換えないと説明しています。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "when combined and interpreted correctly, they're sufficient for practical use. But nothing fully replaces a lactate profile."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Paraphrase of the book with its conditions; author experiences and proposed mechanisms not recast as universal guarantees."
+      }
+    },
+    {
+      "id": "fullchunkqa-214bc8becc1158f4ded18444-1",
+      "chunk_id": "knowledge-214bc8becc1158f4ded18444",
+      "questions": [
+        "Bakkenの本では、週4〜6時間の一般ランナーは、どの方法から閾値の推定を始め、何で照合する？"
+      ],
+      "answer": "直近レースからの保守的なVDOT計算と30分の心拍テストから始め、会話テスト・主観的負荷・胸ストラップの心拍で練習中に照合する案内です。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "Recreational (4-6 hours per week) Start with a conservative VDOT calculation from a recent race, combined with a 30-minute heart rate test. Use the talk test, perceived exertion, and a chest strap"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Paraphrase of the book with its conditions; author experiences and proposed mechanisms not recast as universal guarantees."
+      }
+    },
+    {
+      "id": "fullchunkqa-214bc8becc1158f4ded18444-2",
+      "chunk_id": "knowledge-214bc8becc1158f4ded18444",
+      "questions": [
+        "Bakkenの閾値推定の案内で、テスト精度が低い場合や、複数のテスト結果が食い違う場合はどうする？"
+      ],
+      "answer": "精度が低いほど閾値より下へ大きめの余裕を設けます。結果が食い違うときは、低い方の保守的な結果を使う案内です。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "Use the lower (more conservative) result when tests disagree"
+        },
+        {
+          "kind": "quote",
+          "text": "the lower the accuracy of the test, the greater the margin you must build in."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Paraphrase of the book with its conditions; author experiences and proposed mechanisms not recast as universal guarantees."
+      }
+    },
+    {
+      "id": "fullchunkqa-214bc8becc1158f4ded18444-3",
+      "chunk_id": "knowledge-214bc8becc1158f4ded18444",
+      "questions": [
+        "Bakkenの単純な会話テストでは、文・短いフレーズ・単語しか話せない状態をどう区別し、再現性をどう保つ？"
+      ],
+      "answer": "一息で完全な文を話せる状態は通常閾値以下、短いフレーズがまだ可能なら通常閾値付近、呼吸の合間に単語だけなら通常かなり上とします。同じ話や歌詞と同じ話すテンポを使う案内です。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "Complete sentence on one breath: usually below the threshold"
+        },
+        {
+          "kind": "quote",
+          "text": "short phrases stil possible: usually around the threshold"
+        },
+        {
+          "kind": "quote",
+          "text": "Single words between breaths: usually well above the threshold"
+        },
+        {
+          "kind": "quote",
+          "text": "Use the same fixed story or song lyrics every time. With identical text and speaking tempo"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Paraphrase of the book with its conditions; author experiences and proposed mechanisms not recast as universal guarantees."
+      }
+    }
+  ]
+}
