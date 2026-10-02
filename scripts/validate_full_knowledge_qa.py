@@ -77,8 +77,26 @@ def validate_entry(entry, chunk, root=ROOT):
         validate_gap(entry, chunk, path.read_text())
         return
     if chunk['evidence']['kind'] == 'structured' and review.get('method') == 'manual-context-review':
+        if entry.get('evidence') and all(item.get('kind') == 'quote' for item in entry['evidence']):
+            if any(u.get('string_span') for u in chunk['evidence'].get('units', [])):
+                from manual_json_evidence import validate_string_span_quotes
+                validate_string_span_quotes(entry, chunk, path.read_text())
+            else:
+                source = path.read_text()
+                for evidence in entry['evidence']:
+                    quote = evidence.get('text')
+                    if not quote or quote not in source:
+                        raise ValueError('quote is not grounded in structured source')
+            return
         from manual_json_evidence import validate_manual_json
         validate_manual_json(entry, chunk, path.read_text())
+        return
+    if chunk['evidence']['kind'] == 'csv' and review.get('method') == 'manual-context-review':
+        source = path.read_text()
+        for evidence in entry['evidence']:
+            quote = evidence.get('text')
+            if evidence.get('kind') != 'quote' or not quote or quote not in source:
+                raise ValueError('quote is not grounded in csv source')
         return
     if chunk['evidence']['kind'] != 'text':
         raise ValueError('typed evidence validator required')

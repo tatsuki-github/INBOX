@@ -10,4 +10,4 @@
 
 追加QAの質問・回答・根拠引用・手動確認記録は `input/faq/knowledge-chunk-reviewed.json` に残す。自動監査は承認済みQAとの一致と原文引用の一致を検証する。比較・計算の妥当性は文脈を読んだ手動確認であり、自動的な意味証明ではない。
 
-全ナレッジの各チャンクへ3問ずつ追加する目標は未完了。残りの作業では `scripts/prepare_knowledge_qa_chunks.py` で最新ソースの区切りと根拠を再生成し、既存QAとの重複・文脈・計算を確認して追加する。未公開候補と全ソース複製の作業用出力は今回のコミットから除去した。
+全ナレッジ（2781チャンク）について、各チャンク3問の想定QA（計8343問）を `input/faq/full-knowledge-qa/reviewed-*.json` に追加し、`scripts/validate_full_knowledge_qa.py --publish-reviewed` で `input/faq/prepared-qa.v1.yaml` へ公開済み（43539件）。区切り再生成は `scripts/prepare_knowledge_qa_chunks.py --write`、未カバー分の候補生成は `scripts/generate_chunk_manual_context_qas.py`。

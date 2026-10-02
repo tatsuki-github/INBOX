@@ -1,0 +1,13 @@
+{
+  "status": "complete",
+  "total_chunks": 2781,
+  "complete_chunks": 2781,
+  "authored_qa": 8343,
+  "carried_forward_qa": 86,
+  "required_qa": 8343,
+  "remaining_qa": 0,
+  "pending": [],
+  "limitations": [
+    "Literal grounding and manual review records are checked; not automatic semantic proof."
+  ]
+}

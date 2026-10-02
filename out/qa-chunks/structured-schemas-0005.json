@@ -1,0 +1,376 @@
+[
+  {
+    "source": "out/2022/events.json",
+    "chunk_ids": [
+      "knowledge-4cda18f029174e7328571483",
+      "knowledge-b4c15865a13298a406b84537"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"/0\", \"value\": {\"all_day\": true, \"category\": \"祝日\", \"date\": \"2022-01-01\", \"description\": \"日本の祝日\", \"end_date\": \"2022-01-01\", \"end_time\": null, \"kind\": \"event\", \"location\": \"\", \"practice\": null, \"private\": false, \"start_time\": null, \"status\": \"\", \"tags\": [\"holiday\"], \"template_ref\": null, \"title\": \"元日\", \"urls\": []}}"
+  },
+  {
+    "source": "out/2022/practice.json",
+    "chunk_ids": [
+      "knowledge-c2cc62ee38f438a02a190e6f"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": [{\"date\": \"2022-12-18\", \"end_time\": null, \"parse\": {\"confidence\": \"none\", \"skipped\": [], \"source\": \"description\"}, \"practice\": {\"items\": []}, \"start_time\": null, \"status\": \"done\", \"tags\": [\"自分の練習\"], \"template_ref\": null, \"title\": \"遅めの400mインターバル\", \"year\": 2022}, {\"date\": \"2022-12-24\", \"end_time\": null, \"parse\": {\"confidence\": \"none\", \"skipped\": [], \"source\": \"description\"}, \"practice\": {\"items\": []}, \"start_time\": null, \"status\": \"done\", \"tags\": [\"自分の練習\"], \"template_ref\": null, \"title\": \"遅めの400mインターバル\", \"year\": 2022}, {\"date\": \"2022-11-20\", \"end_time\": null, \"parse\": {\"confidence\": \"none\", \"skipped\": [], \"source\": \"description\"}, \"practice\": {\"items\": []}, \"start_time\": null, \"status\": \"done\", \"tags\": [\"自分の練習\"], \"template_ref\": null, \"title\": \"遅めの400mインターバル\", \"year\": 2022}]}"
+  },
+  {
+    "source": "out/2023/events.json",
+    "chunk_ids": [
+      "knowledge-fcc4de03908509a30d96bd24",
+      "knowledge-fc40471a165b77452a5f22aa",
+      "knowledge-463db410666558965ddfc2d8",
+      "knowledge-b327c4de43ba684cd4905e1a",
+      "knowledge-777c487a4c24b53bad574e49",
+      "knowledge-0e036f9ffb432c40fbcb326c",
+      "knowledge-e156b9b4435f3db900beaa9e"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"/0\", \"value\": {\"all_day\": true, \"category\": \"祝日\", \"date\": \"2023-01-01\", \"description\": \"日本の祝日\", \"end_date\": \"2023-01-01\", \"end_time\": null, \"kind\": \"event\", \"location\": \"\", \"practice\": null, \"private\": false, \"start_time\": null, \"status\": \"\", \"tags\": [\"holiday\"], \"template_ref\": null, \"title\": \"元日\", \"urls\": []}}"
+  },
+  {
+    "source": "out/2023/practice.json",
+    "chunk_ids": [
+      "knowledge-6d176357503a48f3cd3a26d0"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": [{\"date\": \"2023-01-03\", \"end_time\": null, \"parse\": {\"confidence\": \"none\", \"skipped\": [], \"source\": \"description\"}, \"practice\": {\"items\": []}, \"start_time\": null, \"status\": \"done\", \"tags\": [\"ランニング\", \"自分の練習\"], \"template_ref\": null, \"title\": \"自分の練習\", \"year\": 2023}, {\"date\": \"2023-09-13\", \"end_time\": null, \"parse\": {\"confidence\": \"none\", \"skipped\": [], \"source\": \"description\"}, \"practice\": {\"items\": []}, \"start_time\": null, \"status\": \"done\", \"tags\": [\"自分の練習\"], \"template_ref\": null, \"title\": \"遅めの400mインターバル\", \"year\": 2023}, {\"date\": \"2023-09-22\", \"end_time\": null, \"parse\": {\"confidence\": \"none\", \"skipped\": [], \"source\": \"description\"}, \"practice\": {\"items\": []}, \"start_time\": null, \"status\": \"done\", \"tags\": [\"ランニング\", \"自分の練習\"], \"template_ref\": null, \"title\": \"自分の練習\", \"year\": 2023}, {\"date\": \"2023-09-27\", \"end_time\": null, \"parse\": {\"confidence\": \"none\", \"skipped\": [], \"source\": \"description\"}, \"practice\": {\"items\": []}, \"start_time\": null, \"status\": \"done\", \"tags\": [\"自分の練習\"], \"template_ref\": null, \"title\": \"遅めの400mインターバル\", \"year\": 2023}, {\"date\": \"2023-12-11\", \"end_time\": null, \"parse\": {\"confidence\": \"none\", \"skipped\": [], \"source\": \"description\"}, \"practice\": {\"items\": []}, \"start_time\": null, \"status\": \"done\", \"tags\": [\"ランニング\", \"自分の練習\"], \"template_ref\": null, \"title\": \"自分の練習\", \"year\": 2023}, {\"date\": \"2023-12-22\", \"end_time\": null, \"parse\": {\"confidence\": \"none\", \"skipped\": [], \"source\": \"description\"}, \"practice\": {\"items\": []}, \"start_time\": null, \"status\": \"done\", \"tags\": [\"ランニング\", \"自分の練習\"], \"template_ref\": null, \"title\": \"自分の練習\", \"year\": 2023}]}"
+  },
+  {
+    "source": "out/2024/events.json",
+    "chunk_ids": [
+      "knowledge-a35d3258babd19e7b32c3ac1",
+      "knowledge-84952968df11c799e1542368",
+      "knowledge-e612efee9674541bc2294f61",
+      "knowledge-d1477c98936c50492a992f56",
+      "knowledge-80e62bc1f78fa714c4bbcd9b",
+      "knowledge-746193412469eb58963d3328",
+      "knowledge-6549f5d12062c8517f8b16af",
+      "knowledge-ffe3d911c9f00fdbc9f85a34"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"/0\", \"value\": {\"all_day\": true, \"category\": \"祝日\", \"date\": \"2024-01-01\", \"description\": \"日本の祝日\", \"end_date\": \"2024-01-01\", \"end_time\": null, \"kind\": \"event\", \"location\": \"\", \"practice\": null, \"private\": false, \"start_time\": null, \"status\": \"\", \"tags\": [\"holiday\"], \"template_ref\": null, \"title\": \"元日\", \"urls\": []}}"
+  },
+  {
+    "source": "out/2024/practice.json",
+    "chunk_ids": [
+      "knowledge-8b776e9319c1abf2cf0f603e"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": [{\"date\": \"2024-03-30\", \"end_time\": null, \"parse\": {\"confidence\": \"none\", \"skipped\": [], \"source\": \"description\"}, \"practice\": {\"items\": []}, \"start_time\": null, \"status\": \"done\", \"tags\": [\"自分の練習\"], \"template_ref\": null, \"title\": \"遅めの400mインターバル\", \"year\": 2024}, {\"date\": \"2024-04-14\", \"end_time\": null, \"parse\": {\"confidence\": \"none\", \"skipped\": [], \"source\": \"description\"}, \"practice\": {\"items\": []}, \"start_time\": null, \"status\": \"done\", \"tags\": [\"ランニング\", \"自分の練習\"], \"template_ref\": null, \"title\": \"自分の練習\", \"year\": 2024}, {\"date\": \"2024-04-27\", \"end_time\": null, \"parse\": {\"confidence\": \"none\", \"skipped\": [], \"source\": \"description\"}, \"practice\": {\"items\": []}, \"start_time\": null, \"status\": \"done\", \"tags\": [\"自分の練習\"], \"template_ref\": null, \"title\": \"遅めの400mインターバル\", \"year\": 2024}, {\"date\": \"2024-05-29\", \"end_time\": null, \"parse\": {\"confidence\": \"none\", \"skipped\": [], \"source\": \"description\"}, \"practice\": {\"items\": []}, \"start_time\": null, \"status\": \"done\", \"tags\": [\"自分の練習\"], \"template_ref\": null, \"title\": \"遅めの400mインターバル\", \"year\": 2024}, {\"date\": \"2024-06-02\", \"end_time\": null, \"parse\": {\"confidence\": \"none\", \"skipped\": [], \"source\": \"description\"}, \"practice\": {\"items\": []}, \"start_time\": null, \"status\": \"done\", \"tags\": [\"自分の練習\"], \"template_ref\": null, \"title\": \"遅めの400mインターバル\", \"year\": 2024}, {\"date\": \"2024-06-05\", \"end_time\": null, \"parse\": {\"confidence\": \"none\", \"skipped\": [], \"source\": \"description\"}, \"practice\": {\"items\": []}, \"start_time\": null, \"status\": \"done\", \"tags\": [\"自分の練習\"], \"template_ref\": null, \"title\": \"遅めの400mインターバル\", \"year\": 2024}, {\"date\": \"2024-12-15\", \"end_time\": null, \"parse\": {\"confidence\": \"none\", \"skipped\": [], \"source\": \"description\"}, \"practice\": {\"items\": []}, \"start_time\": null, \"status\": \"done\", \"tags\": [\"自分の練習\"], \"template_ref\": null, \"title\": \"遅めの400mインターバル\", \"year\": 2024}, {\"date\": \"2024-12-24\", \"end_time\": null, \"parse\": {\"confidence\": \"none\", \"skipped\": [], \"source\": \"description\"}, \"practice\": {\"ite"
+  },
+  {
+    "source": "out/2025/events.json",
+    "chunk_ids": [
+      "knowledge-d42a79d5e7502cc7fb4bae3f",
+      "knowledge-630b5450dcbc631fe73026da",
+      "knowledge-c2648cac2e2d3bb72210229f",
+      "knowledge-1cbbf5aa0525178351735ee5",
+      "knowledge-f3b9c284e730333ce9562964",
+      "knowledge-39cbe37ebd270a0922a9e1fd",
+      "knowledge-38f415b665987c1b9f1b35c8",
+      "knowledge-3956b0582f37b93116f65fb0",
+      "knowledge-75d4c00ee1ef6914e478e2a6",
+      "knowledge-af2ae33ff6f04abda44ae743",
+      "knowledge-d3eaea5c8f09796553623ed5",
+      "knowledge-6ad15bd6a42e27306644f1c9",
+      "knowledge-9d8bbb1d245652481e1fdfcf",
+      "knowledge-4306331f09d82a3acc880dbd",
+      "knowledge-70dc01c69e6243c9f1983dc6",
+      "knowledge-febb6cf948736db38a7de123",
+      "knowledge-0c3ba7f3d7d48e4c5e5ca861",
+      "knowledge-5489a3128cd65850572c74a5",
+      "knowledge-04b79b8461d8a6859e1b0b29",
+      "knowledge-d2d91ca53e353bcdb39ec524",
+      "knowledge-630b594570233afe63fd3568",
+      "knowledge-b974cce9db480de0257abce8",
+      "knowledge-615f1f39aa0dc24744c8a2b3"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"/0\", \"value\": {\"all_day\": true, \"category\": \"祝日\", \"date\": \"2025-01-01\", \"description\": \"日本の祝日\", \"end_date\": \"2025-01-01\", \"end_time\": null, \"kind\": \"event\", \"location\": \"\", \"practice\": null, \"private\": false, \"start_time\": null, \"status\": \"\", \"tags\": [\"holiday\"], \"template_ref\": null, \"title\": \"元日\", \"urls\": [], \"weather\": null}}"
+  },
+  {
+    "source": "out/2025/practice.json",
+    "chunk_ids": [
+      "knowledge-63ed1e557a89ffe6fb38643d",
+      "knowledge-96f501d69c77482f11d166fd",
+      "knowledge-9154466acc300b5c3b0ebd76",
+      "knowledge-a40e969571925636f8cd7cb1",
+      "knowledge-318a2a7d75b023f99b6cb602",
+      "knowledge-bb241496e924721e73a41e7f"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"/0\", \"value\": {\"date\": \"2025-01-01\", \"end_time\": null, \"parse\": {\"confidence\": \"none\", \"skipped\": [], \"source\": \"description\"}, \"practice\": {\"items\": []}, \"start_time\": null, \"status\": \"done\", \"tags\": [\"ランニング\", \"自分の練習\", \"practice:personal\"], \"template_ref\": null, \"title\": \"自分の練習\", \"year\": 2025}}"
+  },
+  {
+    "source": "out/2026/events.json",
+    "chunk_ids": [
+      "knowledge-78d16ccd2487f201014c3e78",
+      "knowledge-8e75695108d978651ffcbb0b",
+      "knowledge-6e387195761ea3a13cd26e3f",
+      "knowledge-fb3321f268d18631ce0b3f2c",
+      "knowledge-56b4f09bdb2e2f59b36ef81c",
+      "knowledge-a8889c9c0922a6e2950facaa",
+      "knowledge-b49ce03065f132d94fb23bf6",
+      "knowledge-5750f7cb30751a5457171b6e",
+      "knowledge-3b0ba871f38a3dfd72798b42",
+      "knowledge-bb8a1d711b2ee2895ff59415",
+      "knowledge-b11eec54dc05b11deaf0d514",
+      "knowledge-a20f663334c4834329daf6ed",
+      "knowledge-d6b8edf6c735a641f6f1b6dd",
+      "knowledge-6a35831457069848af9e576b",
+      "knowledge-e1097c9df3638d670501c38a",
+      "knowledge-a06640fb58447075a72a4b92",
+      "knowledge-5474ba9c9bd2fff0b8c03599",
+      "knowledge-760d2c892f73465981e1f4af",
+      "knowledge-343b1629ad9da58edfac5ad6",
+      "knowledge-f476cb19691963251be2a2d4",
+      "knowledge-c0634df79ad2b2583b33ef21",
+      "knowledge-57764e7b9d554433682bfd54",
+      "knowledge-cc011605fba632f3cbf838c2",
+      "knowledge-5e4e73a69e7152cc21a26e51",
+      "knowledge-f3d65aeddbd3f192021748fe",
+      "knowledge-f0b9517c0a449ae7e11f9d70",
+      "knowledge-18b78743ee6c8f7f685b803e",
+      "knowledge-b9fd574cabb9f5690a1bf7ca",
+      "knowledge-b4247418b592a8397206fce7",
+      "knowledge-fed75630125a63e104160852",
+      "knowledge-ef4f82e3a80d06245d5efcd8",
+      "knowledge-a5306ee89428f4554d3f64cb",
+      "knowledge-e21aa9387b3f1b35d72e2156",
+      "knowledge-90fc2f13257b544625ab53e2",
+      "knowledge-4649cce54340788b304405f8",
+      "knowledge-fafb57de6655beb0764412de",
+      "knowledge-10e7a63dad9cfdb6dfacb163",
+      "knowledge-84f8a9961b050938741b0acb",
+      "knowledge-40f7cc2c09c9bd801ffb863b",
+      "knowledge-d5e3efb122cf91be7e327a55",
+      "knowledge-af4b8874c0223b62396a0148",
+      "knowledge-2198d69c23aa2a4ebef43996",
+      "knowledge-8b6f12efb066255053b93397",
+      "knowledge-55b1ddd02ba7f7db4a6ac849",
+      "knowledge-34ca5c46952ad1c9c0c8d087",
+      "knowledge-a5e2ea4190ebeeb524058b46",
+      "knowledge-d023f956bb03f176e36db9dc",
+      "knowledge-34bc5bdd72339de6521fc050",
+      "knowledge-f58fd1d5c0e1204413198c71",
+      "knowledge-b983d372899a90dccf8afe32",
+      "knowledge-7f63e5e81e6ace911bb2f1c0",
+      "knowledge-e9f9702882e761042b2a604f",
+      "knowledge-2145fb3f34200dfd0e4d5eb8",
+      "knowledge-3885901e22dafc16e0215694",
+      "knowledge-2d525f1f2caf15caf0c46dbf",
+      "knowledge-a8fe7819f17c1a9992288170",
+      "knowledge-02d913f66c16253d400cd171",
+      "knowledge-c0cd824f2d3b3ed37cd417e7",
+      "knowledge-261e07f298fb990c23a3f97e"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"/0\", \"value\": {\"all_day\": true, \"category\": \"予定\", \"date\": \"2026-01-01\", \"description\": \"\", \"end_date\": \"2026-01-01\", \"end_time\": null, \"kind\": \"event\", \"location\": \"\", \"practice\": null, \"private\": false, \"start_time\": null, \"status\": \"done\", \"tags\": [\"タスク\", \"交通費\"], \"template_ref\": null, \"title\": \"交通費申請\", \"urls\": [], \"weather\": null}}"
+  },
+  {
+    "source": "out/2026/practice.json",
+    "chunk_ids": [
+      "knowledge-c20c936a1f5b71755d37c8bf",
+      "knowledge-df74c4b3a796b6db80c6add1",
+      "knowledge-a37f8c37383996ed447c1b6a",
+      "knowledge-bb9c6c4ed40f62e029c7f5e4",
+      "knowledge-dc8dd0d8361f467e22041963",
+      "knowledge-08ee0cf653b8d0f848e5179f"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"/0\", \"value\": {\"date\": \"2026-07-21\", \"end_time\": \"09:30\", \"parse\": {\"confidence\": \"full\", \"skipped\": [], \"source\": \"practice_field\"}, \"practice\": {\"items\": [{\"distance_km\": 2.5, \"group\": \"男子\", \"reps\": 2, \"type\": \"interval\"}, {\"distance_km\": 2.0, \"group\": \"女子\", \"reps\": 2, \"type\": \"interval\"}], \"warmup\": \"動きづくり\"}, \"start_time\": \"08:00\", \"status\": \"scheduled\", \"tags\": [\"ランニング\", \"いだてん岱明練習\", \"practice:daiming\", \"session:morning\"], \"template_ref\": null, \"title\": \"いだてん岱明朝練\", \"year\": 2026}}"
+  },
+  {
+    "source": "out/2027/events.json",
+    "chunk_ids": [
+      "knowledge-4c815f8499935d3a1fc1e39a",
+      "knowledge-0c7d75a63f34a66bd6fa0587",
+      "knowledge-82fe48c5175abffd9350042a"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"/0\", \"value\": {\"all_day\": true, \"category\": \"予定\", \"date\": \"2026-12-25\", \"description\": \"\", \"end_date\": \"2027-01-07\", \"end_time\": null, \"kind\": \"event\", \"location\": \"\", \"practice\": null, \"private\": false, \"start_time\": null, \"status\": \"scheduled\", \"tags\": [], \"template_ref\": null, \"title\": \"岱明中冬休み\", \"urls\": []}}"
+  },
+  {
+    "source": "input/idaten-corpus/out-analysis/2026-09-29_aragyoku_trial_results.json",
+    "chunk_ids": [
+      "knowledge-63afe028a3cc25a2063ebaed"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": {\"date\": \"2026-09-29\", \"event\": \"岱明中 荒玉駅伝試走\", \"notes\": [\"総タイム・ラップはユーザー報告を保持。今村はラップ合計10:14／総タイム10:15、田上は10:13／10:14。\", \"中尾10:12は現在の予想オーダーの中尾快叶と照合。中尾12:13と、フルネームを確認できない選手は姓のみで保存。\", \"1–4区は区間別試走、5区は2.855km一斉走。試走記録は大会結果・トラックSBとは区別する。\"], \"record_type\": \"course_trial\", \"records\": [{\"distance_km\": 3, \"identity_status\": \"context_matched\", \"lap_sum_sec\": 588, \"laps\": [\"3:12\", \"3:16\", \"3:20\"], \"leg\": 1, \"name\": \"松野凛空\", \"reported_name\": \"松野\", \"time\": \"9:48\", \"time_sec\": 588, \"total_minus_lap_sum_sec\": 0}, {\"distance_km\": 2.855, \"identity_status\": \"context_matched\", \"lap_sum_sec\": 592, \"laps\": [\"3:20\", \"3:31\", \"3:01\"], \"leg\": 2, \"name\": \"山本哲瑠\", \"reported_name\": \"山本\", \"time\": \"9:52\", \"time_sec\": 592, \"total_minus_lap_sum_sec\": 0}, {\"distance_km\": 3, \"identity_status\": \"context_matched\", \"lap_sum_sec\": 614, \"laps\": [\"3:11\", \"3:29\", \"3:34\"], \"leg\": 3, \"name\": \"今村昇磨\", \"reported_name\": \"今村\", \"time\": \"10:15\", \"time_sec\": 615, \"total_minus_lap_sum_sec\": 1}, {\"distance_km\": 3, \"identity_status\": \"context_matched\", \"lap_sum_sec\": 613, \"laps\": [\"3:23\", \"3:29\", \"3:21\"], \"leg\": 4, \"name\": \"田上颯人\", \"reported_name\": \"田上\", \"time\": \"10:14\", \"time_sec\": 614, \"total_minus_lap_sum_sec\": 1}, {\"display_order\": 1, \"distance_km\": 2.855, \"identity_status\": \"context_matched\", \"leg\": 5, \"name\": \"松本空羽\", \"reported_name\": \"松本\", \"start\": \"一斉\", \"time\": \"10:11\", \"time_sec\": 611}, {\"display_order\": 2, \"distance_km\": 2.855, \"identity_status\": \"context_matched\", \"leg\": 5, \"name\": \"中尾快叶\", \"reported_name\": \"中尾\", \"start\": \"一斉\", \"time\": \"10:12\", \"time_sec\": 612}, {\"display_order\": 3, \"distance_km\": 2.855, \"identity_status\": \"unconfirmed\", \"leg\": 5, \"name\": null, \"reported_name\": \"西村\", \"start\": \"一斉\", \"time\": \"10:22\", \"time_sec\": 622}, {\"display_order\": 4, \"distance_km\": 2.855, \"identity_status\": \"context_matched\", \"leg\": 5, \"name\": \"南本幸治郎\", \"reported_name\": \"南本\", \"start\": \"一斉\", \"time\": \"10:42\", \"time_sec\": 642}, {\"display_order\": 5, \"distance_km\": 2.855, \"identity_status\": \"uncon"
+  },
+  {
+    "source": "input/idaten-corpus/out-analysis/aragyoku_2026_formula_coefficients.json",
+    "chunk_ids": [
+      "knowledge-b8cd9bea8aac392e42200eb6"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": {\"as_of\": \"2026-09-27\", \"historical_track_backtest\": {\"女子\": {\"by_year\": {\"2024\": 38, \"2025\": 38}, \"mae_sec\": 20.088723400207098, \"median_actual_over_raw\": 1.0101228206128228, \"n\": 76, \"rmse_sec\": 26.329081621529642}, \"男子\": {\"by_year\": {\"2024\": 37, \"2025\": 35}, \"mae_sec\": 21.269962777600764, \"median_actual_over_raw\": 0.9925365644653918, \"n\": 72, \"rmse_sec\": 37.203526672422115}}, \"observations\": 1189, \"params\": {\"女子\": {\"baseline_scale\": 0.9860736188843046, \"baseline_scale_source\": \"v1 median alignment, held fixed\", \"best_share\": 0.3, \"distance_exponent\": 1.11410746162166, \"distance_pairs\": 15, \"distance_raw_median\": 1.1104385301321984, \"junior_course_factor\": 1.0, \"junior_pairs\": 0, \"leg_effect\": {\"leg4_minus_leg3_median_sec\": 19.0, \"leg_offsets_sec\": {\"3\": -9.5, \"4\": 9.5}, \"season_count\": 13, \"season_medians_sec\": {\"2012\": 12.0, \"2013\": 28.0, \"2015\": 17.0, \"2016\": 10.5, \"2017\": 21.5, \"2018\": 21.5, \"2019\": 18.5, \"2020\": 20.5, \"2021\": 19.0, \"2022\": 9.0, \"2023\": 19.0, \"2024\": 10.0, \"2025\": 19.0}, \"team_pairs\": 204, \"years\": [2012, 2013, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025]}, \"nagomi_pairs\": 0, \"observation_weight_rules\": [{\"meet\": \"なごみ中学駅伝\", \"reason\": \"練習参加とみなし、競技会実績より低い重み\", \"team\": \"玉陵中\", \"weight\": 0.15}], \"other_feature\": \"typical\", \"peak_factor\": 1.0, \"recent_half_life_days\": 21, \"recent_road_weight\": 2.0, \"recent_track_weight\": 0.5, \"recent_window_days\": 45, \"road_factor\": 0.9924667003145493, \"road_pairs\": 10, \"road_raw_median\": 0.9736334511009226, \"short_exponent\": 1.1557583458106997, \"short_pairs\": 404, \"short_raw_median\": 1.1557583458106997}, \"男子\": {\"baseline_scale\": 1.0051284240243719, \"baseline_scale_source\": \"v1 median alignment, held fixed\", \"best_share\": 0.3, \"distance_exponent\": 1.11686608267681, \"distance_pairs\": 474, \"distance_raw_median\": 1.1168663747628038, \"junior_course_factor\": 1.01, \"junior_course_factor_source\": \"rolling-course scenario assumption; elevation not measured\", \"junior"
+  },
+  {
+    "source": "input/idaten-corpus/out-analysis/aragyoku_2026_recent_results.json",
+    "chunk_ids": [
+      "knowledge-c08fb5638e64ae12938728d9",
+      "knowledge-4aecb8f373f8568f75257d6a",
+      "knowledge-13f0f79077cb8aefa7a8af96",
+      "knowledge-56a485ac3d156f60993af1c2",
+      "knowledge-fac1afe3580534000f075d49",
+      "knowledge-3f30cb3538753e3d60eeb6b7",
+      "knowledge-c0e93e8f77a4e65f6336e7e5",
+      "knowledge-d62a2900109de3554d9e10f3",
+      "knowledge-acddfc2841819bfec0cbbcd8",
+      "knowledge-95a801883b0204f44f21869f",
+      "knowledge-91bec3576d5906379bbe9a5c",
+      "knowledge-740087ccf08ea0a85d23ba07",
+      "knowledge-f58956ffceb4fe7566bb8462",
+      "knowledge-052a2e78b4a472f7e74be9f0",
+      "knowledge-f110f68ad98b63935350a78d",
+      "knowledge-a74a61769828ab7cf1413523"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"/0\", \"value\": {\"affiliation\": \"南関β\", \"date\": \"2026-09-20\", \"discipline\": \"2区\", \"distance_km\": 2.0, \"event\": \"第12回 中学駅伝金栗四三生誕の地なごみ大会\", \"gender\": \"女子\", \"identity_confirmed\": true, \"kind\": \"competition\", \"name\": \"原賀 美和\", \"note\": \"区間11位／チーム19位 33:38\", \"result\": \"7:53\", \"source\": \"input/external/drive/shared/大会/2026年度/0920_中学駅伝金栗四三生誕の地なごみ大会/成績表.json\", \"team\": \"南関中\", \"url\": \"\"}}"
+  },
+  {
+    "source": "out/analysis/aragyoku_sb_calibration.json",
+    "chunk_ids": [
+      "knowledge-c96a5366fa7e73424f5d9d1f"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": {\"freshness_days\": 152, \"recommended_leg_bias_sec\": {\"女子\": [20.8, 1.9, -11.2, 7.8, 37.1], \"男子\": [-5.8, 14.4, 9.9, 35.5, 17.7, 15.2]}, \"years\": [{\"as_of\": \"2024-10-15\", \"genders\": {\"女子\": {\"distances_km\": [3.0, 1.855, 2.0, 2.0, 3.0], \"legs\": {\"1\": {\"mae_sec\": 29.7, \"mean_gap_sec\": 22.6, \"median_gap_sec\": 20.9, \"n\": 12}, \"2\": {\"mae_sec\": 17.7, \"mean_gap_sec\": -5.0, \"median_gap_sec\": -6.4, \"n\": 11}, \"3\": {\"mae_sec\": 24.5, \"mean_gap_sec\": -10.8, \"median_gap_sec\": -6.9, \"n\": 10}, \"4\": {\"mae_sec\": 14.5, \"mean_gap_sec\": 8.8, \"median_gap_sec\": 9.4, \"n\": 6}, \"5\": {\"mae_sec\": 34.0, \"mean_gap_sec\": 34.0, \"median_gap_sec\": 36.5, \"n\": 11}}, \"matched_legs\": 50}, \"男子\": {\"distances_km\": [3.0, 2.855, 3.0, 3.0, 2.855, 3.0], \"legs\": {\"1\": {\"mae_sec\": 17.8, \"mean_gap_sec\": 2.3, \"median_gap_sec\": -2.7, \"n\": 8}, \"2\": {\"mae_sec\": 19.5, \"mean_gap_sec\": 14.5, \"median_gap_sec\": 20.3, \"n\": 3}, \"3\": {\"mae_sec\": 14.8, \"mean_gap_sec\": 9.7, \"median_gap_sec\": 9.0, \"n\": 4}, \"4\": {\"mae_sec\": 89.1, \"mean_gap_sec\": 89.1, \"median_gap_sec\": 48.0, \"n\": 5}, \"5\": {\"mae_sec\": 32.3, \"mean_gap_sec\": 11.3, \"median_gap_sec\": 21.4, \"n\": 6}, \"6\": {\"mae_sec\": 20.2, \"mean_gap_sec\": 10.7, \"median_gap_sec\": 15.2, \"n\": 10}}, \"matched_legs\": 36}}, \"year\": 2024}, {\"as_of\": \"2025-10-14\", \"genders\": {\"女子\": {\"distances_km\": [3.0, 1.855, 2.0, 2.0, 3.0], \"legs\": {\"1\": {\"mae_sec\": 25.6, \"mean_gap_sec\": 18.1, \"median_gap_sec\": 20.7, \"n\": 13}, \"2\": {\"mae_sec\": 22.6, \"mean_gap_sec\": 11.0, \"median_gap_sec\": 10.2, \"n\": 5}, \"3\": {\"mae_sec\": 15.0, \"mean_gap_sec\": -14.4, \"median_gap_sec\": -15.6, \"n\": 4}, \"4\": {\"mae_sec\": 16.9, \"mean_gap_sec\": 5.4, \"median_gap_sec\": 6.3, \"n\": 8}, \"5\": {\"mae_sec\": 34.5, \"mean_gap_sec\": 33.8, \"median_gap_sec\": 37.7, \"n\": 8}}, \"matched_legs\": 38}, \"男子\": {\"distances_km\": [3.0, 2.855, 3.0, 3.0, 2.855, 3.0], \"legs\": {\"1\": {\"mae_sec\": 13.8, \"mean_gap_sec\": -13.8, \"median_gap_sec\": -9.0, \"n\": 7}, \"2\": {\"mae_sec\": 17.1, \"mean_gap_sec\": 17.1, \"median_gap_sec\": 8.6, \"n\": 5}"
+  },
+  {
+    "source": "out/analysis/aragyoku_women_track_joined.json",
+    "chunk_ids": [
+      "knowledge-0455984d98bcf8f29ce14657",
+      "knowledge-98a6797f516add500e4088bd",
+      "knowledge-05183e5e9b99c12b5330c313",
+      "knowledge-3a2c7698db165a67be1109ec",
+      "knowledge-e1158a618bb78760b8f84743",
+      "knowledge-8ba8f29d203964496b69893a",
+      "knowledge-fe02a9b0433044ebcd7a3d22",
+      "knowledge-cc95c09878b3391f4230dd1c",
+      "knowledge-01febceccee1286ba92786a3",
+      "knowledge-82b65b67a1df81ca183c2e4c",
+      "knowledge-e50bec5e500657e36018ab70",
+      "knowledge-4aa76d4f00d77bb44e9889ce",
+      "knowledge-cd5ab9c1b3d76282b633b277",
+      "knowledge-7d597d381fdf626367415221",
+      "knowledge-f45d302b2c1cc005641e1057",
+      "knowledge-7c134c0f6a8786d7cfe4a8d2",
+      "knowledge-072e836a5d024340134d8e7a",
+      "knowledge-1c5af32625cd8e6de8a4bcb1",
+      "knowledge-644237b10105492adf08e56a",
+      "knowledge-54d76eaa4d96849cf536b811",
+      "knowledge-2e0906fdf5c9d37c80d71a69",
+      "knowledge-484a05b9c221ad7cdf7146c1",
+      "knowledge-cd46be37a79e82e6da908a74",
+      "knowledge-462f55667b347aa70d534d1e",
+      "knowledge-7be4cdb7c196fa59bcf6994e",
+      "knowledge-264095afc862d3727fab0772",
+      "knowledge-0fc37e67056c13e3fb94379c",
+      "knowledge-425895b0973267f61c7cf3d7",
+      "knowledge-a5f5f6884a7f1bd82555332a",
+      "knowledge-398bc8cdec45220e3a276151",
+      "knowledge-a03e45bcac3873857b482301",
+      "knowledge-698e74c9e77aeb277c2c1d62",
+      "knowledge-423918b05fa930f344a39dcf",
+      "knowledge-786d57ce9ea15c80dcc33d5d",
+      "knowledge-19e15c691d1bed8eb7a0c968",
+      "knowledge-c10dd6bcc2f685cdbb5c9864",
+      "knowledge-ddeb6afa2945786bca514abb",
+      "knowledge-bbdad3386aedb5992bb8a91c",
+      "knowledge-29058605cbe6de06ea920c05",
+      "knowledge-e57667e7e06a41b3692486ad",
+      "knowledge-a04c92a03af76a84a2ea3dc2",
+      "knowledge-980c77a4075d851c54d9fc1c",
+      "knowledge-ddfb0aab02632d76b1ae8fdb",
+      "knowledge-74ef36ec79b831214367f8dd",
+      "knowledge-90ea88a009f35c09a10dee83",
+      "knowledge-58f997f452e1240e6240d8ac",
+      "knowledge-97fd980e62decf34385d5c13",
+      "knowledge-231b6b528b6c204cf50c1e76",
+      "knowledge-67f7b0e75aa35ca6f7f156ee",
+      "knowledge-009b9c4c2121daee52d23939",
+      "knowledge-480e663703e9fa515ece501a",
+      "knowledge-9c2c4f6db430c60d1bcaaa94",
+      "knowledge-56d245e35aa6a231f76562cc",
+      "knowledge-5b452472cde227d3a1a2f7a0",
+      "knowledge-9b9bab3c9782276727c080ff",
+      "knowledge-e478330f263c87a856179d86",
+      "knowledge-69049ee60492d44523eb1fac",
+      "knowledge-1b9ad66f3339af83200f39fb",
+      "knowledge-9baf4ea22dc9da4130f3e493"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"/meta\", \"value\": {\"drive_source_note\": \"駅伝記録は Google Drive「荒玉駅伝歴代」の結果画像と全セルを目視照合済み。ただし2014年女子の原画像は同フォルダ内で確認できず、未掲載。選手名は同年度の中学生女子トラック記録CSVと照合し、表記が競合する場合はCSVを優先。トラック記録は2012〜2026年度CSVのうち、駅伝と同じ年度だけを参照。学校以外のクラブ所属（ATRC, NJAC, 長洲JRC, 金栗PROJECT 等）も、駅伝選手と同姓同名かつ学年が矛盾しない場合は同一人物として取り込む。\", \"guide_note\": \"「駅伝」は大会当日の区間走結果（道路コース）です。女子は1〜5区がそれぞれ約3.0km・1.855km・2.0km・2.0km・3.0kmで、トラック種目（800m/1500m/3000m）とは距離・路面・気象・タスキ条件が異なります。トラックSB/直近は同年の走力指標として並記していますが、短い種目が強い選手ほど長い区間では相対的に伸び、逆も起こります。数式による換算ではなく、実際の駅伝タイムとトラック走力の両方を見て判断してください。\", \"missing_years\": [2014], \"sources\": {\"by_year\": \"input/external/sb/middle-school/by-year\", \"ekiden\": \"input/aragyoku/women_top6_2012_2025.json\", \"notion\": [\"input/external/notion/databases/2024年度中学生/rows.json\", \"input/external/notion/databases/2025年度中学生記録/rows.json\", \"input/external/notion/databases/2026年度中学生記録/rows.json\"], \"output_reg\": \"input/external/drive/personal/t-tsuchiyama/sb/output_reg_中学生_女子.csv\", \"wide_sb\": \"input/external/sb/middle-school/wide/中学生SB.csv\"}, \"stats\": {\"athletes\": 390, \"with_any_track\": 230, \"with_sb\": 230, \"with_url\": 230}, \"title\": \"荒玉（玉名荒尾）中体連駅伝・女子・上位6校 トラック走力突合\", \"verification\": {\"cells_per_year\": 138, \"checked_cells\": 1794, \"corrected_cells\": 9, \"csv_reconciled_cells\": 33, \"csv_reconciliation_rule\": \"同年度CSVの女子・中学生を学校・学年・継続年度・走力で照合し、一意に本人と判断できる表記はCSVを優先\", \"csv_reconciliation_source\": \"input/aragyoku/reconciliations/women_csv_reconciliations.json\", \"method\": \"原画像との全セル目視照合\", \"unreadable_cells\": 0, \"verified_years\": [2012, 2013, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025]}, \"years\": [2025, 2024, 2023, 2022, 2021, 2020, 2019, 2018, 2017, 2016, 2015, 2013, 2012]}}"
+  },
+  {
+    "source": "out/analysis/notion_records_2026.json",
+    "chunk_ids": [
+      "knowledge-b693cceb46607341bb996c59",
+      "knowledge-c8bdc2db4b621d036e6a1c35",
+      "knowledge-32313d71b82ae892c143c3d5",
+      "knowledge-5e408b67aa95a37ef6a5a259",
+      "knowledge-39a69c7634413c23dcd79f45",
+      "knowledge-458f936c5ce24e80c423fa76",
+      "knowledge-9193924665eb9e632c5fc5ad",
+      "knowledge-585374604adaa08c8ab97bff",
+      "knowledge-b12635a516b28499ae5eda23",
+      "knowledge-b72ecfb276ef5d71992e51ad",
+      "knowledge-726404db59e4ce4be9862189",
+      "knowledge-d2bb7f9090580424ddb7fe40",
+      "knowledge-55ec61cccf8d5d5b8fb3b33d",
+      "knowledge-5eb4923ae9a46b2e142baf04",
+      "knowledge-e0a64e36b5cafdd6fd5efaff",
+      "knowledge-61294d6e172226bc063e098a",
+      "knowledge-8365d6ce4cbc626967b2cc76",
+      "knowledge-42ac89e09cfea6241117a500",
+      "knowledge-dac3b26d18e2405372e3e45a",
+      "knowledge-a095c37b958f73b182b51bc8",
+      "knowledge-3e7a11005cf979708d45e7f7",
+      "knowledge-859d2fa13ebdf08b0c589d35",
+      "knowledge-726fa09bc50a52d4d9bb7808",
+      "knowledge-1662aa9e46e1ab75944fd497",
+      "knowledge-1a88465386dc6fda57ec1a8c",
+      "knowledge-074827672ba59bc9a3119f00",
+      "knowledge-a434e2327a43a26d8ce9a981",
+      "knowledge-3e400b18ab27bb5f39ab6d7a",
+      "knowledge-62361139bd481c46bd9f5c9c",
+      "knowledge-b9839b568ab6ece9d11fd254",
+      "knowledge-4f775f5dd21a3e2d4559b083",
+      "knowledge-eaef9526a737cd441ee10b92",
+      "knowledge-a0f5290fa7a46cbac81348a1",
+      "knowledge-e5615e8231834e286786e4a7",
+      "knowledge-628f7314dafd62773021d9b3",
+      "knowledge-ae0aba6cd3a387d4d301650b",
+      "knowledge-9f9f0370f4da340ac4e2bb03",
+      "knowledge-8200f7d870e3c8178527fad8",
+      "knowledge-b8720ce308f1d7073af383c1",
+      "knowledge-2b87bd10fb2afe79cae8876b",
+      "knowledge-2027b7470a94c814704a67bd",
+      "knowledge-2f1536a8e6d838da9e1e227e",
+      "knowledge-b273ba40310fa22315407366",
+      "knowledge-d5ac6ee216e5b962db2b3b5e",
+      "knowledge-462062a0bf946da6b7c23bde",
+      "knowledge-76586346b39d6bf7bcee7fe6",
+      "knowledge-a41a3b0bf50041d74ab4fccd",
+      "knowledge-ee641df238d0a306fb46dfb6",
+      "knowledge-77c6d76f6ff44b7b3c8d1f92"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"/0\", \"value\": {\"affiliation\": \"金栗PROJECT\", \"date\": \"2026/08/20\", \"distance\": \"3000m\", \"gender\": \"男子\", \"grade\": 3, \"name\": \"隈部侑成\", \"record_seconds\": 539.54, \"sb_adopted\": false, \"sb_text\": \"8:54.61\", \"time_text\": \"8:59.54\", \"url\": \"https://yaaf.jp/mob/11/nans21v/shtml/result/track/20260820_1-108001-7-0-4-3-3-0-5_ResultTrackA.html\"}}"
+  },
+  {
+    "source": "prompts/few-shot-examples.yaml",
+    "chunk_ids": [
+      "knowledge-a5aeac5a96fa8eb319ffeec3"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": {\"examples\": [{\"input\": \"夕練、600m×2、軽め\", \"notes\": \"軽いポイント。1本目は設定より遅めでOK。\", \"template_id\": \"evening-light-600x2\"}, {\"input\": \"45/15 基本\", \"notes\": \"15–30本。45秒走/15秒休。Tペース付近。\", \"template_id\": \"norwegian-45-15-base\"}]}}"
+  },
+  {
+    "source": "schemas/event.schema.json",
+    "chunk_ids": [
+      "knowledge-d984e4739817548ecf0fd253"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": {\"$id\": \"https://github.com/tatsuki-github/INBOX/schemas/event.schema.json\", \"$schema\": \"https://json-schema.org/draft/2020-12/schema\", \"additionalProperties\": true, \"properties\": {\"all_day\": {\"type\": \"boolean\"}, \"category\": {\"type\": \"string\"}, \"date\": {\"pattern\": \"^\\\\d{4}-\\\\d{2}-\\\\d{2}$\", \"type\": \"string\"}, \"description\": {\"type\": \"string\"}, \"description_file\": {\"type\": \"string\"}, \"end_date\": {\"pattern\": \"^\\\\d{4}-\\\\d{2}-\\\\d{2}$\", \"type\": \"string\"}, \"end_time\": {\"pattern\": \"^\\\\d{2}:\\\\d{2}$\", \"type\": \"string\"}, \"location\": {\"type\": \"string\"}, \"practice\": {\"additionalProperties\": false, \"properties\": {\"abort_if\": {\"items\": {\"additionalProperties\": false, \"properties\": {\"then\": {\"type\": \"string\"}, \"when\": {\"type\": \"string\"}}, \"required\": [\"when\", \"then\"], \"type\": \"object\"}, \"type\": \"array\"}, \"absentees\": {\"items\": {\"minLength\": 1, \"type\": \"string\"}, \"type\": \"array\"}, \"items\": {\"items\": {\"$ref\": \"practice-item.schema.json\"}, \"type\": \"array\"}, \"notes\": {\"type\": \"string\"}, \"warmup\": {\"type\": \"string\"}}, \"required\": [\"items\"], \"type\": \"object\"}, \"private\": {\"type\": \"boolean\"}, \"start_time\": {\"pattern\": \"^\\\\d{2}:\\\\d{2}$\", \"type\": \"string\"}, \"status\": {\"type\": \"string\"}, \"tags\": {\"oneOf\": [{\"items\": {\"type\": \"string\"}, \"type\": \"array\"}, {\"type\": \"string\"}]}, \"template_ref\": {\"type\": \"string\"}, \"title\": {\"minLength\": 1, \"type\": \"string\"}, \"url\": {\"type\": \"string\"}, \"urls\": {\"oneOf\": [{\"items\": {\"type\": \"string\"}, \"type\": \"array\"}, {\"type\": \"string\"}]}, \"weather\": {\"additionalProperties\": true, \"properties\": {\"condition\": {\"type\": \"string\"}, \"fetched_at\": {\"type\": \"string\"}, \"humidity_pct\": {\"type\": \"integer\"}, \"location\": {\"type\": \"string\"}, \"observed_at\": {\"type\": \"string\"}, \"precipitation_mm\": {\"type\": \"number\"}, \"source\": {\"type\": \"string\"}, \"temperature_c\": {\"type\": \"number\"}, \"wind_direction\": {\"type\": \"string\"}, \"wind_speed_kmh\": {\"type\": \"number\"}}, \"type\": \"object\"}}, \"required\": [\"title\"], \"title\": \"CalendarEvent\", \"type\": \"obj"
+  },
+  {
+    "source": "schemas/knowledge-graph.schema.json",
+    "chunk_ids": [
+      "knowledge-c0e15253fa98dc90f6297297"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": {\"$defs\": {\"edge\": {\"additionalProperties\": false, \"properties\": {\"from\": {\"minLength\": 1, \"type\": \"string\"}, \"rel\": {\"enum\": [\"search_here\", \"derived_from\", \"mentioned_in\", \"related_to\", \"see_also\", \"documented_in\", \"member_of\", \"has_record_in\"], \"type\": \"string\"}, \"to\": {\"minLength\": 1, \"type\": \"string\"}}, \"required\": [\"from\", \"to\", \"rel\"], \"type\": \"object\"}, \"node\": {\"additionalProperties\": false, \"properties\": {\"hint\": {\"type\": \"string\"}, \"id\": {\"minLength\": 1, \"type\": \"string\"}, \"label\": {\"type\": \"string\"}, \"refs\": {\"items\": {\"type\": \"string\"}, \"type\": \"array\"}, \"topics\": {\"items\": {\"type\": \"string\"}, \"type\": \"array\"}, \"type\": {\"enum\": [\"Source\", \"Topic\", \"Entity\", \"QueryHint\", \"Athlete\", \"Team\", \"Year\", \"Template\", \"MediaAsset\", \"RelayLegResult\"], \"type\": \"string\"}}, \"required\": [\"id\", \"type\", \"label\", \"topics\", \"refs\", \"hint\"], \"type\": \"object\"}}, \"$id\": \"https://github.com/tatsuki-github/INBOX/schemas/knowledge-graph.schema.json\", \"$schema\": \"https://json-schema.org/draft/2020-12/schema\", \"additionalProperties\": false, \"description\": \"Repository routing map for LLM retrieval (hints + refs, not full content).\", \"properties\": {\"edges\": {\"items\": {\"$ref\": \"#/$defs/edge\"}, \"type\": \"array\"}, \"generated_at\": {\"minLength\": 1, \"type\": \"string\"}, \"nodes\": {\"items\": {\"$ref\": \"#/$defs/node\"}, \"type\": \"array\"}, \"version\": {\"const\": 1, \"type\": \"integer\"}}, \"required\": [\"version\", \"generated_at\", \"nodes\", \"edges\"], \"title\": \"RepoKnowledgeGraph\", \"type\": \"object\"}}"
+  },
+  {
+    "source": "schemas/practice-item.schema.json",
+    "chunk_ids": [
+      "knowledge-f6dac9425d79eef3291026be"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": {\"$id\": \"https://github.com/tatsuki-github/INBOX/schemas/practice-item.schema.json\", \"$schema\": \"https://json-schema.org/draft/2020-12/schema\", \"additionalProperties\": false, \"properties\": {\"distance_km\": {\"type\": [\"number\", \"null\"]}, \"distance_km_max\": {\"type\": [\"number\", \"null\"]}, \"distance_km_min\": {\"type\": [\"number\", \"null\"]}, \"distance_m\": {\"type\": [\"number\", \"null\"]}, \"group\": {\"type\": [\"string\", \"null\"]}, \"intensity\": {\"enum\": [\"E\", \"T\", \"I\", \"R\", \"RP\", \"1500mRP\", \"3000mRP\", \"GZ\", null], \"type\": [\"string\", \"null\"]}, \"label\": {\"type\": \"string\"}, \"laps\": {\"type\": [\"integer\", \"null\"]}, \"pace\": {\"pattern\": \"^k/\\\\d+:\\\\d{2}$\", \"type\": [\"string\", \"null\"]}, \"pace_max\": {\"pattern\": \"^k/\\\\d+:\\\\d{2}$\", \"type\": [\"string\", \"null\"]}, \"pace_min\": {\"pattern\": \"^k/\\\\d+:\\\\d{2}$\", \"type\": [\"string\", \"null\"]}, \"reps\": {\"oneOf\": [{\"minimum\": 1, \"type\": \"integer\"}, {\"type\": \"string\"}]}, \"rest\": {\"type\": [\"string\", \"null\"]}, \"rest_sec\": {\"minimum\": 0, \"type\": [\"integer\", \"null\"]}, \"segments\": {\"items\": {\"additionalProperties\": false, \"properties\": {\"distance_m\": {\"type\": \"number\"}, \"intensity\": {\"type\": [\"string\", \"null\"]}, \"pace\": {\"type\": [\"string\", \"null\"]}}, \"required\": [\"distance_m\"], \"type\": \"object\"}, \"type\": \"array\"}, \"type\": {\"enum\": [\"jog\", \"interval\", \"set\", \"strides\", \"warmup\", \"rest\", \"other\"], \"type\": \"string\"}}, \"required\": [\"type\"], \"title\": \"PracticeItem\", \"type\": \"object\"}}"
+  }
+]

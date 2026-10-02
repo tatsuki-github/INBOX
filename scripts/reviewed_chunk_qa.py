@@ -84,12 +84,24 @@ def check_reviewed_entry(entry, reviewed, root=ROOT):
         except (ValueError, KeyError, IndexError):
             problems.append('reviewed_record_saved_sb_gap_drift')
         return problems
+    if method == 'manual-context-review' and evidence and all(e.get('kind') == 'quote' for e in evidence):
+        if not evidence or any(v.get('kind') != 'quote' or not v.get('text') or v['text'] not in text for v in evidence):
+            problems.append('reviewed_source_quote_drift')
+        return problems
     if method == 'manual-context-review' and evidence and all(e.get('kind') == 'json-unit' for e in evidence):
         from manual_json_evidence import validate_manual_json
         try:
-            validate_manual_json(reviewed, {'evidence': {'units': [e['unit'] for e in evidence]}}, text)
+            validate_manual_json(
+                reviewed,
+                {'source': reviewed['sources'][0], 'evidence': {'units': [e['unit'] for e in evidence]}},
+                text,
+            )
         except (ValueError, KeyError, IndexError):
             problems.append('reviewed_json_record_or_context_drift')
+        return problems
+    if method == 'manual-context-review' and sources[0].endswith('.csv'):
+        if not evidence or any(v.get('kind') != 'quote' or not v.get('text') or v['text'] not in text for v in evidence):
+            problems.append('reviewed_source_quote_drift')
         return problems
     if not evidence or any(v.get('kind') != 'quote' or not v.get('text') or v['text'] not in text for v in evidence):
         problems.append('reviewed_source_quote_drift')

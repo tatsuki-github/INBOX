@@ -1,0 +1,30 @@
+{
+  "version": 1,
+  "max_chunk_chars": 5000,
+  "baseline_prepared_qa_count": 38105,
+  "baseline_prepared_qa_sha256": "7b36039fcd2d16a0fa1f04407ae6d255e97228feefe5a9f8cf925c2c64f1a015",
+  "chunk_kinds": {
+    "text": 1150,
+    "structured": 992,
+    "csv": 639
+  },
+  "canonical_suffixes": {
+    ".md": 581,
+    ".yaml": 16,
+    ".json": 245,
+    ".csv": 49,
+    ".txt": 2
+  },
+  "chunk_count": 2781,
+  "required_new_qa": 8343,
+  "dispositions": {
+    "canonical": 893,
+    "nontext-asset-or-implementation": 44,
+    "empty-record-export": 14,
+    "derived-index-or-existing-qa": 4,
+    "identical-alias": 725,
+    "virtual-filtered-calendar-route": 2
+  },
+  "missing_routes": [],
+  "batches": 64
+}

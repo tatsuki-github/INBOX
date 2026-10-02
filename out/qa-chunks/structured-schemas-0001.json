@@ -1,0 +1,806 @@
+[
+  {
+    "source": "input/ai_generation_rules.yaml",
+    "chunk_ids": [
+      "knowledge-0cc091afbdb235cb0e17f85a"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": {\"abort\": {\"humidity_pct\": 85, \"late_split_sec\": 8, \"precipitation_mm\": 1.0, \"temperature_c\": 32}, \"creative\": {\"fields\": [\"warmup\", \"notes\", \"weekly_theme\"], \"weekly_experiment\": {\"forbidden_intensities\": [\"I\", \"R\"], \"max_new_items\": 2, \"max_per_week\": 1, \"require_notes_prefix\": \"【実験】\"}}, \"daiming\": {\"post_race\": {\"enabled\": true, \"self_practice_max\": \"E\", \"team_practice\": \"rest\"}, \"practice_meets_affect_load\": false}, \"fixed\": {\"female_jog_distance_m\": 2800, \"female_jog_laps\": 5, \"male_jog_distance_m\": 3360, \"male_jog_laps\": 6, \"pace_format\": \"k/M:SS\", \"track_lap_m\": 560}, \"template_required_intensities\": [\"I\", \"R\"], \"variable\": {\"pace_delta_sec_per_km\": 10, \"reps_delta\": 2, \"rest_sec_delta\": 30}}}"
+  },
+  {
+    "source": "input/aragyoku/course-points.json",
+    "chunk_ids": [
+      "knowledge-e4795cdfedb146cc65c6a7a3"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": {\"distance_note\": \"1周4.855kmと各区間距離を基準にした目安。道路は模式図。GPSの補正値を小数2桁へ丸めた旧図から、区間距離に整合する値へ統一。\", \"drive_file_id\": \"1j9iRk5WAnNVdMyO_fDJX5MaMAVDrESzG\", \"drive_parent_folder_id\": \"1hR2ouziPiuo6wg7Z0WWJgDuieYakkd9k\", \"drive_url\": \"https://drive.google.com/file/d/1j9iRk5WAnNVdMyO_fDJX5MaMAVDrESzG/view?usp=drivesdk\", \"generation\": {\"last_image_edit\": \"女子5区・男子6区の動画全体図に合わせ、ゴールへの道を分岐から直線化。橋の1km丸も南西角の直前へ寄せた。\", \"method\": \"built-in image_gen\", \"prompt_path\": \"output/imagegen/aragyoku-course-common-points-final-prompt.txt\", \"style\": \"simple 2D road schematic; no satellite photos, farmland or waterways\"}, \"image_path\": \"input/aragyoku/course-points/aragyoku-course-common-points.png\", \"image_sha256\": \"d7e61945ace24fb8f36c21ce18562e4b02678156adbb694a107da1c291f3ffdf\", \"lap_metres\": 4855, \"men_start_before_C_metres\": 145, \"overview_goal\": {\"detail_card\": false, \"label\": \"ゴール\", \"latitude\": 32.850179, \"location_note\": \"EとAの間で南へ曲がる。コース動画の全体図に合わせ、分岐からゴールまで南向きの直線として表示。全体図のみに表示。\", \"longitude\": 130.536632, \"men_leg\": 6, \"source\": \"女子5区GPX終点。scripts/build_aragyoku_men_gpx_from_women.py では男子6区に女子5区GPXを使用。\", \"turn_latitude\": 32.8541, \"turn_longitude\": 130.537978, \"turn_reference_path\": \"input/aragyoku/course-points/goal-turn-gpx-reference.png\", \"turn_women_leg_km_approx\": 2.54, \"video_reference_path\": \"input/aragyoku/course-points/women5-video-overview-goal.png\", \"women_leg\": 5}, \"points\": [{\"id\": \"bridge_1km\", \"label\": \"女子1区の1km地点（橋の上）\", \"location_note\": \"南西の曲がり角のすぐ手前の直線が橋。その直線上の1km地点。全体図の点も角のすぐ手前に表示。\", \"men\": {\"1\": \"2.0km地点\", \"3\": \"1.0km地点\", \"4\": \"2.855km地点\", \"6\": \"1.855km地点\"}, \"women\": {\"1\": \"1.0km地点\", \"3\": \"1.0km地点\", \"5\": \"1.855km地点\"}}, {\"id\": \"D\", \"label\": \"D地点\", \"location_note\": \"北西の曲がり角より南側の直線上\", \"men\": {\"1\": \"1.0km地点\", \"2\": \"2.855km・中継\", \"3\": \"スタート\", \"4\": \"1.855km地点\", \"6\": \"0.855km地点\"}, \"women\": {\"1\": \"スタート\", \"2\": \"1.855km・中継\", \"3\": \"スタート\", \"5\": \"0.855km地点\"}}, {\"id\": \"B\", \"label\": \"B地点\", \"location_note\": \"東側の直線上\", \"men\": {\"2\": \"1.0km地点\", \"3\": \"3.0km・中継\""
+  },
+  {
+    "source": "input/aragyoku/men_full_2012_2025.json",
+    "chunk_ids": [
+      "knowledge-479fddb08835e98074350eb8",
+      "knowledge-e00b19a773b9c14c90e54817",
+      "knowledge-c68e2b8a1cdf3fc137653408",
+      "knowledge-396b97d696a265d06aaa4a4a",
+      "knowledge-f996b3b3c722670f82aa1448",
+      "knowledge-6f87e5569bdb01a93cea38e5",
+      "knowledge-1e2c7ac1265efb93ee438d65",
+      "knowledge-25a8b2eab7472c2986159093",
+      "knowledge-660d37e1beab9a171d089816",
+      "knowledge-e3a784f0b3e1b465fdb7bb0a",
+      "knowledge-22bb806761fc2140203cd144",
+      "knowledge-3e6a7237f280cf84fcb89676",
+      "knowledge-6dba933cc4ede2185d506952",
+      "knowledge-7d6cee4e35685e07d448d3bf",
+      "knowledge-c184809971f0cfe7a06a4eba",
+      "knowledge-348ef2363a20219d4c769ae6",
+      "knowledge-f20551c41822fde7cf8f5dfa",
+      "knowledge-b4fa42eefb6727519528b2cb",
+      "knowledge-bb1edc4ed947606f0893d11f",
+      "knowledge-f7c5c02836c69835235e92d6",
+      "knowledge-81f280a024180ab44219b4dd",
+      "knowledge-ae1058d666e5d09ddcf513ed",
+      "knowledge-4a828b71ba35b08b8f1fa38e",
+      "knowledge-4649b6b2f8dc9dd5cb70611b",
+      "knowledge-86ba0da186c87a7544a3718f",
+      "knowledge-f05beea1cdf03c71f765eef6",
+      "knowledge-1f12767d1d3f4f6d7f1b1914",
+      "knowledge-438626e51d21c190d4c56bf3",
+      "knowledge-1e5cee498b78e429ffa3c4fb",
+      "knowledge-1f68a0df7257dc2afd7ffbb7",
+      "knowledge-4f440319bf8f8e1bb69e105f",
+      "knowledge-77562694fde616a3030b9f64",
+      "knowledge-a572388b8c80a926cd47ee47",
+      "knowledge-d0b6d69c9d06991a638fd505",
+      "knowledge-d92f03eb2fe41f9df2a5c0a2",
+      "knowledge-593d427393c10787c889fc4b",
+      "knowledge-12558a353342b30865ca3d6b",
+      "knowledge-6c63dedfc039eced933b17ab",
+      "knowledge-e5fd921e95166973a758584b",
+      "knowledge-c20cdb78bed65a04a98ed28a",
+      "knowledge-0309423312c76cf00f870bae",
+      "knowledge-8ed13456163e7957ddcf7acc",
+      "knowledge-2e4bc3fec6a7096e96f76a75",
+      "knowledge-fe447537ff7d807949ecf456",
+      "knowledge-301778d74a6d829f24f3bf8d",
+      "knowledge-fdfc8d75ad4114cbc69407dc",
+      "knowledge-a8c808d66857bdcb6cb97698",
+      "knowledge-0162ae9d98eb9c45f93d7b37",
+      "knowledge-b9bc06475cfcea5ffbf7c12a",
+      "knowledge-c8c67411c20e711bb9cc142c",
+      "knowledge-814ef19652cc5f98be6d5518",
+      "knowledge-f6729b2e9ab2a0d5dc445f50",
+      "knowledge-d277b70e51c3faeab3d14788",
+      "knowledge-9fec9c0c135558dda2421080",
+      "knowledge-c768e2971c140baa7f5c80be",
+      "knowledge-3b311ef392f55e2bc8110756",
+      "knowledge-42214a1dd01bf8f1209c7baf",
+      "knowledge-102c95eb1762853c68583942",
+      "knowledge-17e8520529f0328e0b042ba2",
+      "knowledge-44447bae562b3bc2a0553b6c",
+      "knowledge-d8610dfced9318865b21b1fc",
+      "knowledge-779970814985b82c8058f558",
+      "knowledge-d8fa92a7f25afc4b7a92843d",
+      "knowledge-f08da3829d86446aa4db4cdd",
+      "knowledge-3ec0628094576eed8ad9bad8",
+      "knowledge-b207dc41cd688696f11bd6e6",
+      "knowledge-8e0086f03647d90e898853da",
+      "knowledge-010ee77c13775a10050260d4",
+      "knowledge-3d71371b8d8e2006a2a2f569",
+      "knowledge-1196615087655ac88a61a48f",
+      "knowledge-4d90d4271d8a901a532ae673",
+      "knowledge-0f021ba90bd641d6a640004c",
+      "knowledge-976c91ab58883f1c2b5db61e",
+      "knowledge-e275ecb977893e749e5b2fa0",
+      "knowledge-e4827728dbf449e83cae7236",
+      "knowledge-abfe09b2c76f84f12e1d911a",
+      "knowledge-998c79c70506fa594527c096",
+      "knowledge-8f8f7b5476757b791f6e0f3b",
+      "knowledge-d3b4a8f230cfea45dca9d59f",
+      "knowledge-ff28240a1df8ffa50a8faf17",
+      "knowledge-73c02efc80ec315d6e85c931",
+      "knowledge-42917a0b1c56a5450f379b97",
+      "knowledge-dbcde18c3b2750cd3c5edf46",
+      "knowledge-c17013be9eacff85a1d55de3",
+      "knowledge-e71691a0d28ce0782185d185",
+      "knowledge-2b3f76f2b2c3bc08b19a7e40",
+      "knowledge-ef0c7ab0793b752af89b0f53",
+      "knowledge-1c2d23d71c3aad5011835026",
+      "knowledge-c3dd391cdf16aefd155943f4",
+      "knowledge-0d5b20c682bab9541d94db2d",
+      "knowledge-1865053be4227414184361d8",
+      "knowledge-a31db522872bbb851902d222"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"/meta\", \"value\": {\"event\": \"玉名荒尾中体連駅伝\", \"gender\": \"男子\", \"legs\": [{\"distance_km\": 3.95, \"leg\": 1}, {\"distance_km\": 3.05, \"leg\": 2}, {\"distance_km\": 2.855, \"leg\": 3}, {\"distance_km\": 2.855, \"leg\": 4}, {\"distance_km\": 3.0, \"leg\": 5}, {\"distance_km\": 4.0, \"leg\": 6}], \"schema\": \"full-transcript-v1\"}}"
+  },
+  {
+    "source": "input/aragyoku/transcripts/2012-女子.json",
+    "chunk_ids": [
+      "knowledge-79e33e9da7ed22b2c929f9ac",
+      "knowledge-920315ca69f3c72f4ab897a1",
+      "knowledge-c46c9282329f87b08dc1aa8a",
+      "knowledge-e0c3e74478a535d992fca256",
+      "knowledge-7d57739ed9a96a0b1b89ffba"
+    ],
+    "sample_json": "{\"context\": {\"date\": \"2012-10-24\", \"gender\": \"女子\", \"source_drive_id\": \"1AONIAmzyv-oVZ8RI1x4gIOtBkQVNgEts\", \"year\": 2012}, \"pointer\": \"/year\", \"value\": 2012}"
+  },
+  {
+    "source": "input/aragyoku/transcripts/2012-男子.json",
+    "chunk_ids": [
+      "knowledge-754fa901d3e6248566df7ae7",
+      "knowledge-37c60f882c4dabf7c6f6fdcd",
+      "knowledge-aec379075bfa102d87976280",
+      "knowledge-37496ba7bbd1710e1b250944",
+      "knowledge-06aa4116de445ff1b9a44535",
+      "knowledge-a76c6c0417e62c02ceed109f"
+    ],
+    "sample_json": "{\"context\": {\"date\": \"2012-10-24\", \"gender\": \"男子\", \"source_drive_id\": \"15dRgSdWM6dOBkX-batIvOEignRDJ9vTP\", \"year\": 2012}, \"pointer\": \"/year\", \"value\": 2012}"
+  },
+  {
+    "source": "input/aragyoku/transcripts/2013-女子.json",
+    "chunk_ids": [
+      "knowledge-03e748aa11ad701501a71bc7",
+      "knowledge-469afa425be53f09479608dd",
+      "knowledge-73b7ca103e8fa250ef860097",
+      "knowledge-fc94bd4f79d0e11ee63b0ec7",
+      "knowledge-6fa7b60f46cce47413b9b297"
+    ],
+    "sample_json": "{\"context\": {\"date\": \"2013-10-23\", \"gender\": \"女子\", \"source_drive_id\": \"1YFXOLciLrpuMD8lvGVQ0oImq1uZLg1Ep\", \"year\": 2013}, \"pointer\": \"/year\", \"value\": 2013}"
+  },
+  {
+    "source": "input/aragyoku/transcripts/2013-男子.json",
+    "chunk_ids": [
+      "knowledge-9987bd7bfc85c22abd81ee45",
+      "knowledge-fe83ae24cf925b3b8df55e0b",
+      "knowledge-5b45083d79a396063a8c9606",
+      "knowledge-a2f420c502617df6f4b90565",
+      "knowledge-a691e2930782bbc3af0df458",
+      "knowledge-d8bc72347eb1f4b17182a57c"
+    ],
+    "sample_json": "{\"context\": {\"date\": \"2013-10-23\", \"gender\": \"男子\", \"source_drive_id\": \"1SxCLZVuz-FeLKzsjsMCfPZhTj4GAtFuR\", \"year\": 2013}, \"pointer\": \"/year\", \"value\": 2013}"
+  },
+  {
+    "source": "input/aragyoku/transcripts/2014-男子.json",
+    "chunk_ids": [
+      "knowledge-9e320fba456287e9d0b13b8d",
+      "knowledge-b7ebce69991a5362ce03887c",
+      "knowledge-6f2736156e5a57de685cc1f2",
+      "knowledge-38e53541e8671992920d2b21",
+      "knowledge-679b1af6612ab1b70dd7e110",
+      "knowledge-742f82b2d3bfd0e47999f3c1"
+    ],
+    "sample_json": "{\"context\": {\"date\": \"2014-10-22\", \"gender\": \"男子\", \"source_drive_id\": \"1PsRvWmJMYr3BT6BnRkxzsFvJqS2Cc5du\", \"year\": 2014}, \"pointer\": \"/year\", \"value\": 2014}"
+  },
+  {
+    "source": "input/aragyoku/transcripts/2015-女子.json",
+    "chunk_ids": [
+      "knowledge-7ee4e693b3164257efb2750e",
+      "knowledge-ad0aad22f7493f0132d47f55",
+      "knowledge-6796784a7972dfc323c96278",
+      "knowledge-2f339a13d9e48ca2d28ad57d",
+      "knowledge-75c3526aa9f5a60fa728c7ba"
+    ],
+    "sample_json": "{\"context\": {\"date\": \"2015-10-21\", \"gender\": \"女子\", \"source_drive_id\": \"17gakFQA2vfltUyFgLkmy0FrWC8NnKdYv\", \"year\": 2015}, \"pointer\": \"/year\", \"value\": 2015}"
+  },
+  {
+    "source": "input/aragyoku/transcripts/2015-男子.json",
+    "chunk_ids": [
+      "knowledge-cacfde438720b699f7ad7741",
+      "knowledge-402d9e68ccd20ea8034b8f4a",
+      "knowledge-e22c6a2dcfeb6f176ff91e19",
+      "knowledge-8fa0502646cba42f999ec711",
+      "knowledge-6685112eb61f2b0e0e8399ed",
+      "knowledge-62fad6ebfee025108010d50f"
+    ],
+    "sample_json": "{\"context\": {\"date\": \"2015-10-21\", \"gender\": \"男子\", \"source_drive_id\": \"1cs3-zzGVkVcqWENzjBRK1VUSQ84KV8I2\", \"year\": 2015}, \"pointer\": \"/year\", \"value\": 2015}"
+  },
+  {
+    "source": "input/aragyoku/transcripts/2016-女子.json",
+    "chunk_ids": [
+      "knowledge-9344ef14e8eaadd78ab5b64a",
+      "knowledge-59495e13610cd24c115ec69d",
+      "knowledge-a2c878d2b63ad2413810199a",
+      "knowledge-95642e4e0e7a14959a35fcc0",
+      "knowledge-cafd67cd2f33cf294f05305a"
+    ],
+    "sample_json": "{\"context\": {\"date\": \"2016-10-19\", \"gender\": \"女子\", \"source_drive_id\": \"1LhUyOckCQI2Ne3OEOIbQmMq4tZf5KzeR\", \"year\": 2016}, \"pointer\": \"/year\", \"value\": 2016}"
+  },
+  {
+    "source": "input/aragyoku/transcripts/2016-男子.json",
+    "chunk_ids": [
+      "knowledge-dccfe97da1f2e9c1e6d84735",
+      "knowledge-ac61739986ac6acc520dd7fe",
+      "knowledge-7f14f8bd50d273fac95b8a30",
+      "knowledge-2dfb087a0d0e63f248d29a64",
+      "knowledge-3f3ee600971921bd83477654",
+      "knowledge-33b9dce662099f87da1346e6"
+    ],
+    "sample_json": "{\"context\": {\"date\": \"2016-10-19\", \"gender\": \"男子\", \"source_drive_id\": \"1yq9bXt48tgdXfAO7GcrGmNGXAGXL1n9G\", \"year\": 2016}, \"pointer\": \"/year\", \"value\": 2016}"
+  },
+  {
+    "source": "input/aragyoku/transcripts/2017-女子.json",
+    "chunk_ids": [
+      "knowledge-a00e17b58da9eebe766e6230",
+      "knowledge-14d03ea50d41f1b17fe1fb32",
+      "knowledge-33fcc99762ab2c4996fd829e",
+      "knowledge-2c800ebd5141e5057aa214cf",
+      "knowledge-a25749fdcf2567fdd1758d8c"
+    ],
+    "sample_json": "{\"context\": {\"date\": \"2017-10-18\", \"gender\": \"女子\", \"source_drive_id\": \"1txCmMkoQMiayxCCaH9iUm5LyDcM-zZ5u\", \"year\": 2017}, \"pointer\": \"/year\", \"value\": 2017}"
+  },
+  {
+    "source": "input/aragyoku/transcripts/2017-男子.json",
+    "chunk_ids": [
+      "knowledge-3ceba779e1517c4c79bf0b06",
+      "knowledge-6c17c5a7a7de93270d6e0746",
+      "knowledge-f4d973c06f2f3d8784d4cc14",
+      "knowledge-eb9c7adfcb8641c22f6952a0",
+      "knowledge-fc2491293d90292709257bac",
+      "knowledge-019cc33d1e4811547589a5df"
+    ],
+    "sample_json": "{\"context\": {\"date\": \"2017-10-18\", \"gender\": \"男子\", \"source_drive_id\": \"166D0h_QMSc8__Bp6sti5Y4BpUbRq7jj2\", \"year\": 2017}, \"pointer\": \"/year\", \"value\": 2017}"
+  },
+  {
+    "source": "input/aragyoku/transcripts/2018-女子.json",
+    "chunk_ids": [
+      "knowledge-ff9f7e96c656bfaae951df31",
+      "knowledge-91d0fcb369d3a8ed76cb2a66",
+      "knowledge-b5e77983f54603dcb42c71d1",
+      "knowledge-303e8cf5377003d28018ad2a",
+      "knowledge-aa3199306c4da62659a4415f"
+    ],
+    "sample_json": "{\"context\": {\"date\": \"2018-10-17\", \"gender\": \"女子\", \"source_drive_id\": \"1SpSxcvlMeVJ_w9sV1D559ki112DVfvII\", \"year\": 2018}, \"pointer\": \"/year\", \"value\": 2018}"
+  },
+  {
+    "source": "input/aragyoku/transcripts/2018-男子.json",
+    "chunk_ids": [
+      "knowledge-525f48efa4391604eb839937",
+      "knowledge-90112b43d33eed3f420285a9",
+      "knowledge-b767259c39432c6e002d3a00",
+      "knowledge-69a1ad657125d55d83e284ef",
+      "knowledge-c008c17ae589936bb141fb45",
+      "knowledge-31328e27181c21cfd807f53f"
+    ],
+    "sample_json": "{\"context\": {\"date\": \"2018-10-17\", \"gender\": \"男子\", \"source_drive_id\": \"12HQC3VWqldTdM7lZirfZ5ttwFUHQbSxM\", \"year\": 2018}, \"pointer\": \"/year\", \"value\": 2018}"
+  },
+  {
+    "source": "input/aragyoku/transcripts/2019-女子.json",
+    "chunk_ids": [
+      "knowledge-c785fb2d17ac8c1555e2fb83",
+      "knowledge-90a15939823ce927f44e936c",
+      "knowledge-96dce4de176af958381a5e7f",
+      "knowledge-b3108a537db979aa68ecc270",
+      "knowledge-4c9cbbf535d8210902080aa2"
+    ],
+    "sample_json": "{\"context\": {\"date\": \"2019-10-16\", \"gender\": \"女子\", \"source_drive_id\": \"1-m4jAOxnRixZLOkolym7idoBH7S6WBTN\", \"year\": 2019}, \"pointer\": \"/year\", \"value\": 2019}"
+  },
+  {
+    "source": "input/aragyoku/transcripts/2019-男子.json",
+    "chunk_ids": [
+      "knowledge-a238c490a2c38363979333e3",
+      "knowledge-265388de5929fd92c1e6ece4",
+      "knowledge-d9aab08eef888f881fcc1ea5",
+      "knowledge-00fcd47b9d7f07a27dc976cf",
+      "knowledge-bb6bced4e1a541e1592844b1",
+      "knowledge-27624af5ae6e526fe0a0d624"
+    ],
+    "sample_json": "{\"context\": {\"date\": \"2019-10-16\", \"gender\": \"男子\", \"source_drive_id\": \"13Mr2rUaOW3hCoYf5FPiA_zHMssTswZ2K\", \"year\": 2019}, \"pointer\": \"/year\", \"value\": 2019}"
+  },
+  {
+    "source": "input/aragyoku/transcripts/2020-女子.json",
+    "chunk_ids": [
+      "knowledge-2ad410f725f4bc95b3b3a396",
+      "knowledge-6eddc946b4b04b7b584d6841",
+      "knowledge-552c129b78c5400806b0e65a",
+      "knowledge-1f4b8f0e2e0a6c660ec0cc20",
+      "knowledge-5577dda5d809b7fd9629ee90"
+    ],
+    "sample_json": "{\"context\": {\"date\": \"2020-10-21\", \"gender\": \"女子\", \"source_drive_id\": \"1pbX4GwUm7_TebtyZZlMo4U8BHu_OPWmP\", \"year\": 2020}, \"pointer\": \"/year\", \"value\": 2020}"
+  },
+  {
+    "source": "input/aragyoku/transcripts/2020-男子.json",
+    "chunk_ids": [
+      "knowledge-1209f467c37b1cec352b82c0",
+      "knowledge-08c160e2aee7f2d145a20851",
+      "knowledge-e8b913928d3100fcffbd9781",
+      "knowledge-97ca144b03c27d216f83b2a8",
+      "knowledge-e67029b2b2ea73d39f95e653",
+      "knowledge-a613498de071fc955d4ba185"
+    ],
+    "sample_json": "{\"context\": {\"date\": \"2020-10-21\", \"gender\": \"男子\", \"source_drive_id\": \"15uHGQSpOnTq-bilRrV8pa9A4dE_rBe10\", \"year\": 2020}, \"pointer\": \"/year\", \"value\": 2020}"
+  },
+  {
+    "source": "input/aragyoku/transcripts/2021-女子.json",
+    "chunk_ids": [
+      "knowledge-7fd7c34d37d25ab9e085f85c",
+      "knowledge-6a4f07c6d911868273b6be61",
+      "knowledge-afa8da9efa201a10f5ebde17",
+      "knowledge-45e58a4c08400432bab40adf",
+      "knowledge-c2419dc970bcfaea00cbad22"
+    ],
+    "sample_json": "{\"context\": {\"date\": \"2021-10-20\", \"gender\": \"女子\", \"source_drive_id\": \"1t4xKLNQph4mcdKzdXj3NqGxmKG-Y8PPo\", \"year\": 2021}, \"pointer\": \"/year\", \"value\": 2021}"
+  },
+  {
+    "source": "input/aragyoku/transcripts/2021-男子.json",
+    "chunk_ids": [
+      "knowledge-a1ef7494168a3599c20dae61",
+      "knowledge-f08b6dd788608aff0260f139",
+      "knowledge-119ae4555bad51d5442f7578",
+      "knowledge-8adc0193228be14a47fbd59f",
+      "knowledge-867d6863ffd5cb43fe7877c3",
+      "knowledge-db01ab1007792f9c86bfec02"
+    ],
+    "sample_json": "{\"context\": {\"date\": \"2021-10-20\", \"gender\": \"男子\", \"source_drive_id\": \"1bQ5ap_Q02bzsnSrbTBhZg19BjsAxmGFy\", \"year\": 2021}, \"pointer\": \"/year\", \"value\": 2021}"
+  },
+  {
+    "source": "input/aragyoku/transcripts/2022-女子.json",
+    "chunk_ids": [
+      "knowledge-8a1f65313d0e806f2f74440b",
+      "knowledge-d4fcc3811566ad1a7d03e761",
+      "knowledge-64c2fdf22de70836d7149f7b",
+      "knowledge-db401b2ccfcd0be9055122c0",
+      "knowledge-43917400b0a96c23c68d99ff"
+    ],
+    "sample_json": "{\"context\": {\"date\": \"2022-10-19\", \"gender\": \"女子\", \"source_drive_id\": \"1LdY-YqIIx-57im7jTSTud5qzEBIm0hkA\", \"year\": 2022}, \"pointer\": \"/year\", \"value\": 2022}"
+  },
+  {
+    "source": "input/aragyoku/transcripts/2022-男子.json",
+    "chunk_ids": [
+      "knowledge-eedf24722c206751558c1d4c",
+      "knowledge-5875dfa33da08e4c6f25cd8d",
+      "knowledge-41da990bb9eb7443476dd435",
+      "knowledge-747459d2714fa445279ea1a1",
+      "knowledge-8040abfca2dc1446684fbed6"
+    ],
+    "sample_json": "{\"context\": {\"date\": \"2022-10-19\", \"gender\": \"男子\", \"source_drive_id\": \"1Oe-lkWKsDBjYi1FIGh4S-el3OVPtd0-Y\", \"year\": 2022}, \"pointer\": \"/year\", \"value\": 2022}"
+  },
+  {
+    "source": "input/aragyoku/transcripts/2023-女子.json",
+    "chunk_ids": [
+      "knowledge-4c75b2ed3c52fad9fa25f039",
+      "knowledge-c8070a8f56e5127b966675a4",
+      "knowledge-31441ec3ef222e1d5e36e6a0",
+      "knowledge-7de832a6e656107dd7dfe356",
+      "knowledge-ccfa9d2b8d2dc83d8d6e2960"
+    ],
+    "sample_json": "{\"context\": {\"date\": \"2023-10-18\", \"gender\": \"女子\", \"source_drive_id\": \"1FEhuWOmRsolozWeSkP4KPDTh68-MwpyV\", \"year\": 2023}, \"pointer\": \"/year\", \"value\": 2023}"
+  },
+  {
+    "source": "input/aragyoku/transcripts/2023-男子.json",
+    "chunk_ids": [
+      "knowledge-e62f545570c88e5e6cf5c338",
+      "knowledge-6e1317965745d0d6b0d5d940",
+      "knowledge-064c62958203cac798b66270",
+      "knowledge-503b61c4c8b4d7722e92fff2",
+      "knowledge-153e375faa860f5fdb96185a",
+      "knowledge-2284f7f69858135b8da55d61"
+    ],
+    "sample_json": "{\"context\": {\"date\": \"2023-10-18\", \"gender\": \"男子\", \"source_drive_id\": \"1rRcKJy64GTA1a9Y_l9MSmixYZ8hXKFOX\", \"year\": 2023}, \"pointer\": \"/year\", \"value\": 2023}"
+  },
+  {
+    "source": "input/aragyoku/transcripts/2024-女子.json",
+    "chunk_ids": [
+      "knowledge-eb9f561888b126421c8d68bd",
+      "knowledge-7d79bb831c1c4d6ca778cbd8",
+      "knowledge-100fd0d0a29096d8507b0b60",
+      "knowledge-741e19614dca9ec8ad299fdb",
+      "knowledge-f09167378914a3709fd861f1"
+    ],
+    "sample_json": "{\"context\": {\"date\": \"2024-10-18\", \"gender\": \"女子\", \"source_drive_id\": \"1WDoNUHfL23mTudpm_-eUIbyeMn3EGtZg\", \"year\": 2024}, \"pointer\": \"/year\", \"value\": 2024}"
+  },
+  {
+    "source": "input/aragyoku/transcripts/2024-男子.json",
+    "chunk_ids": [
+      "knowledge-c105f9ee77765148dbb5bf24",
+      "knowledge-7c039bbbbfd0050664047cb6",
+      "knowledge-d31efa07ee7e2006779000b0",
+      "knowledge-afadecdb01269bd321b6d3e9",
+      "knowledge-0a580a6a1483e8f18b8851bd",
+      "knowledge-6e52bdc067741fb28241cefb"
+    ],
+    "sample_json": "{\"context\": {\"date\": \"2024-10-16\", \"gender\": \"男子\", \"source_drive_id\": \"1alWK5XLEUuv0YXM_KLNg9NHfhi_5sYxI\", \"year\": 2024}, \"pointer\": \"/year\", \"value\": 2024}"
+  },
+  {
+    "source": "input/aragyoku/transcripts/2025-女子.json",
+    "chunk_ids": [
+      "knowledge-6510c60f0b27ee34dbcb69db",
+      "knowledge-1b2f6a52d18f6443d50dadf3",
+      "knowledge-9d89bbb5487333a2608bf076",
+      "knowledge-03fc98a43ccf61aee3f3a4f8",
+      "knowledge-c9d2964b4071044762745286"
+    ],
+    "sample_json": "{\"context\": {\"date\": \"2025-10-15\", \"gender\": \"女子\", \"source_drive_id\": \"1-qackGYGwVuX6LikAryfiCLRmwgNVkWK\", \"year\": 2025}, \"pointer\": \"/year\", \"value\": 2025}"
+  },
+  {
+    "source": "input/aragyoku/transcripts/2025-男子.json",
+    "chunk_ids": [
+      "knowledge-cb163670cc4291a939d83ad9",
+      "knowledge-c4207ede7fa3a7c7d5c358af",
+      "knowledge-1e7857f9abb26ea7f9b8f007",
+      "knowledge-ce24442d215fb4ee363535e5",
+      "knowledge-61e1a8b889f48b0eb405811a",
+      "knowledge-4c1b78cbcd8b8e11313003f0"
+    ],
+    "sample_json": "{\"context\": {\"date\": \"2025-10-15\", \"gender\": \"男子\", \"source_drive_id\": \"19vNfBOKKX0dnx2RZM_iBJdnH04N97JBy\", \"year\": 2025}, \"pointer\": \"/year\", \"value\": 2025}"
+  },
+  {
+    "source": "input/aragyoku/women_full_2012_2025.json",
+    "chunk_ids": [
+      "knowledge-8ae09de45e0869b296a5275c",
+      "knowledge-6a01e288b4e88ead1a12066f",
+      "knowledge-342fcad0b1668253371473b4",
+      "knowledge-6e1cfbf0c9087fa690171d47",
+      "knowledge-8ce05cb223ec7d53d559bc1c",
+      "knowledge-fe7399d9d410d6ce6881a7ea",
+      "knowledge-3479c7b67142a5e3cea2450b",
+      "knowledge-90a1a301c0499f86dc425f6e",
+      "knowledge-6aeadd6db283604c955bcf7a",
+      "knowledge-11b077b55495b342ea42b250",
+      "knowledge-3a5ebd9ec75dbc6fdc8b5a70",
+      "knowledge-284593f6f7c38c6aaca22608",
+      "knowledge-170886e96327af95baa746b2",
+      "knowledge-51d50c729397032adcc12993",
+      "knowledge-27c5ba532001e0cdd59d1aa0",
+      "knowledge-23f5e54c603c69558d95c473",
+      "knowledge-1052ca1ba2d341d7dd6af1b9",
+      "knowledge-9d2554710019e0c774206caf",
+      "knowledge-28d199922be6e31e48219352",
+      "knowledge-19f4b7cb1b909ae048761571",
+      "knowledge-fc0b5277dc8323a1b2731676",
+      "knowledge-5d45beddf4516944139bc8cb",
+      "knowledge-0bd45efafaba13d194d6bcb0",
+      "knowledge-192cdcc5530959c58b6dd004",
+      "knowledge-91018c2fa7b9ab9d4e9d9e97",
+      "knowledge-824205ba0598695e5b8f01c4",
+      "knowledge-8af2bd6da03ee2af07e22c2e",
+      "knowledge-441882e0b83c43e16f55857e",
+      "knowledge-92367bedd4fa44d1114b2055",
+      "knowledge-3bf6e1ae18e9d0f1f5b44ff9",
+      "knowledge-f8a378f4ac0d9d630e2ff87a",
+      "knowledge-2c736a5e7c0da4bdde3a1f4f",
+      "knowledge-7ca49ba465b31bdd38f30bf7",
+      "knowledge-7d06a07ff5023c65100f5634",
+      "knowledge-d5c699c65f521dabb73e0aec",
+      "knowledge-4086721ff5999d47f3b62eaf",
+      "knowledge-756a851dd18af44147d8553c",
+      "knowledge-4543808e2063e0a29a6b7e85",
+      "knowledge-635e0f5633cef6699eb021ef",
+      "knowledge-280dd92596174f0043d415cc",
+      "knowledge-b96b5543b3b50a026bd04d91",
+      "knowledge-6cc8465b1faa9587a22aac10",
+      "knowledge-359ff30547db2c0f47a64d80",
+      "knowledge-5c583e8c76c42bc891844afd",
+      "knowledge-23760e63381aa6fc30ce204f",
+      "knowledge-e3db39da7bfd1a3fd2a5cf8a",
+      "knowledge-918006c321092d59ecbb0805",
+      "knowledge-a8ec5f7d9c62e22550a6d867",
+      "knowledge-972d1e021b0ba2e4aef39c61",
+      "knowledge-a47b75b3a622cad50cc855a7",
+      "knowledge-0d14f4ec25c52ba55d4d88bc",
+      "knowledge-2c8686bb1f2f310b5ca23971",
+      "knowledge-df5fff63a855ed8144976a05",
+      "knowledge-57dae71c7017b94f563ebe5a",
+      "knowledge-c734622d4d48af85d96c8b7d",
+      "knowledge-b00c547f17afd1e1adddb583",
+      "knowledge-c23b54ffbeaa381ca0ddcd29",
+      "knowledge-66fdda988a76ce4ec19fe9dd",
+      "knowledge-20048a9517b88234d2b8aef3",
+      "knowledge-8fca94d384fb28da1e721815",
+      "knowledge-243d8c801b78c6d4bb7d37e9",
+      "knowledge-0cc78240fe3bd83804811614",
+      "knowledge-1f56fd39fcf8f3546b027332",
+      "knowledge-3f2fc31400a0ee6c5c209817",
+      "knowledge-2f77650f741c98ac62fb8b2e",
+      "knowledge-a2cbaea020f61e21db3911a2",
+      "knowledge-eefc373d8ae04e4e363cd35f",
+      "knowledge-3c93b85589b06ec2ec5f43ea",
+      "knowledge-dfc6d0dd262bbffc7c9c3e0e",
+      "knowledge-f9d1cd6d14b156c72149947f",
+      "knowledge-9dd4dc768596917eb35cff25",
+      "knowledge-9573b717f06f5f3b76a0c56d",
+      "knowledge-81cd6a7b883dfcf54b9d8d51"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"/meta\", \"value\": {\"event\": \"玉名荒尾中体連駅伝\", \"gender\": \"女子\", \"legs\": [{\"distance_km\": 3.0, \"leg\": 1}, {\"distance_km\": 1.855, \"leg\": 2}, {\"distance_km\": 2.0, \"leg\": 3}, {\"distance_km\": 2.0, \"leg\": 4}, {\"distance_km\": 3.0, \"leg\": 5}], \"schema\": \"full-transcript-v1\"}}"
+  },
+  {
+    "source": "input/aragyoku/women_top4_2012_2025.json",
+    "chunk_ids": [
+      "knowledge-0db5ab884cf28ce992c1036d",
+      "knowledge-d335103f43c3d2fb9338a0ed",
+      "knowledge-3eb4c48e7f88ab03640a4110",
+      "knowledge-59a8b9c1795d5fb99dadeb63",
+      "knowledge-4182fc6437eb49fc4208f6e5",
+      "knowledge-2db3130f14808bd284bc6971",
+      "knowledge-82d60588484af44ea1d48255",
+      "knowledge-5df34462c622c0bb7b573d63",
+      "knowledge-cecd7e2e8cb8286f64b3b9e6",
+      "knowledge-91449c7064bbcb321c244711",
+      "knowledge-3ae9371bbb26775dcdc6d629",
+      "knowledge-bfe7c367e6100df4eea307f0",
+      "knowledge-b6c565b282393141288e79cb"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"/meta\", \"value\": {\"event\": \"玉名荒尾中体連駅伝\", \"gender\": \"女子\", \"legs\": [{\"distance_km\": 3.0, \"leg\": 1}, {\"distance_km\": 1.855, \"leg\": 2}, {\"distance_km\": 2.0, \"leg\": 3}, {\"distance_km\": 2.0, \"leg\": 4}, {\"distance_km\": 3.0, \"leg\": 5}], \"note\": \"Google Drive「荒玉駅伝歴代」の各年結果画像を、順位・校名・総合・選手名・学年・区間・累積の全セルで目視照合\", \"schema\": \"full-transcript-v1\", \"verification\": {\"cells_per_year\": 138, \"checked_cells\": 1794, \"corrected_cells\": 9, \"csv_reconciled_cells\": 33, \"csv_reconciliation_rule\": \"同年度CSVの女子・中学生を学校・学年・継続年度・走力で照合し、一意に本人と判断できる表記はCSVを優先\", \"csv_reconciliation_source\": \"input/aragyoku/reconciliations/women_csv_reconciliations.json\", \"method\": \"原画像との全セル目視照合\", \"unreadable_cells\": 0, \"verified_years\": [2012, 2013, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025]}}}"
+  },
+  {
+    "source": "input/aragyoku/women_top6_2012_2025.json",
+    "chunk_ids": [
+      "knowledge-7639a6b1879ba9712ed1e66e",
+      "knowledge-5aef95a7fd383fdc70a7e161",
+      "knowledge-1a1729d52314d4479cf215ff",
+      "knowledge-49ea3b73c2770b0fb501449c",
+      "knowledge-1facad916b6b0e4d88c9530f",
+      "knowledge-4fb9db6cd7d059df7f4a4fbb",
+      "knowledge-ee84bee8660c5d58eb5a51c8",
+      "knowledge-e5288e3ac85dc7f7d2a92978",
+      "knowledge-9408436146d02e32915579e5",
+      "knowledge-c7f52489d86152c7a99b3b8d",
+      "knowledge-6a0c84f014a61fb897744de8",
+      "knowledge-67fde80565bc1d0f8050c538",
+      "knowledge-5f1ec469d949cb8309d48513",
+      "knowledge-4da7047b8e6cb43ed7a9cd79",
+      "knowledge-5c3a2f15fe1f57c6f90feea7",
+      "knowledge-51b99e4afc6486d255fafaff",
+      "knowledge-fe08a4fe0a3a513d9c254cbc",
+      "knowledge-4d60fd8fc30a0472dd144b9c",
+      "knowledge-c0093ab29156987c0c7a2c95",
+      "knowledge-fe56e53f8201e2fa62c2f419",
+      "knowledge-ddab616b792a9270c0906191",
+      "knowledge-6fb3291bda8087102bd48202",
+      "knowledge-ae69dfb40404dc625f88512f"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"/meta\", \"value\": {\"event\": \"玉名荒尾中体連駅伝\", \"gender\": \"女子\", \"legs\": [{\"distance_km\": 3.0, \"leg\": 1}, {\"distance_km\": 1.855, \"leg\": 2}, {\"distance_km\": 2.0, \"leg\": 3}, {\"distance_km\": 2.0, \"leg\": 4}, {\"distance_km\": 3.0, \"leg\": 5}], \"note\": \"Google Drive「荒玉駅伝歴代」の各年結果画像を、順位・校名・総合・選手名・学年・区間・累積の全セルで目視照合\", \"schema\": \"full-transcript-v1\", \"verification\": {\"cells_per_year\": 138, \"checked_cells\": 1794, \"corrected_cells\": 9, \"csv_reconciled_cells\": 33, \"csv_reconciliation_rule\": \"同年度CSVの女子・中学生を学校・学年・継続年度・走力で照合し、一意に本人と判断できる表記はCSVを優先\", \"csv_reconciliation_source\": \"input/aragyoku/reconciliations/women_csv_reconciliations.json\", \"method\": \"原画像との全セル目視照合\", \"unreadable_cells\": 0, \"verified_years\": [2012, 2013, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025]}}}"
+  },
+  {
+    "source": "input/arato_tamana_report.yaml",
+    "chunk_ids": [
+      "knowledge-ddacbcc6edfd0771e864acc7"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": {\"affiliation_keywords\": [\"岱明\", \"玉名\", \"ATRC\", \"天水\", \"金栗\", \"附\", \"長洲\", \"南関\", \"玉東クラブ\", \"有明\", \"荒尾\", \"玉陵\", \"玉南\"], \"columns\": [\"名前\", \"学年\", \"性別\", \"距離\", \"記録\", \"日付\", \"URL\"], \"exclude_name_keywords\": [\"有尾明莉\", \"秀島恋莉\", \"竹熊紗良\"], \"exclude_when_affiliation_contains\": \"金栗\", \"extra_names\": [\"濱北愛\", \"福島志帆\", \"内野沙笑\", \"戸谷美月\", \"清藤結唯\", \"居石華音\", \"今村昇磨\", \"邊春共弥\", \"草野瑠唯\"], \"include_empty_prefecture\": true, \"notion_database_id\": \"3bca38e8-3034-839c-b6b6-0106bd5eb1da\", \"output\": {\"cache\": \"out/analysis/notion_records_2026.json\", \"pdf\": \"out/analysis/2026年度_荒尾玉名中学生記録一覧.pdf\", \"ranking_pdf\": \"out/analysis/2026年度_荒尾玉名中学生_所属別ランキング.pdf\"}, \"prefecture\": \"熊本県\", \"ranking_title\": \"2026年度 荒尾玉名中学生 所属別ランキング\", \"school_analysis_affiliation_overrides\": {\"玉名アスリーツ\": \"玉陵中\", \"玉東クラブ\": \"玉東中\", \"金栗PROJECT\": \"菊水中\"}, \"school_analysis_athlete_affiliation_overrides\": {\"ATRC\": {\"athletes\": {\"今村昇磨\": \"岱明中\", \"山川綾\": \"長洲中\", \"清藤結唯\": \"玉名中\", \"猿渡愛梨\": \"長洲中\", \"石川隼\": \"長洲中\", \"米谷慶吾\": \"長洲中\"}, \"default\": \"荒尾第四中\"}, \"NJAC\": {\"athletes\": {\"濱北愛\": \"長洲中\"}}, \"金栗PROJECT\": {\"athletes\": {\"居石華音\": \"玉陵中\", \"庄山瑠那\": \"荒尾三中\"}}}, \"title\": \"2026年度 荒尾玉名中学生 記録一覧\", \"year\": 2026}}"
+  },
+  {
+    "source": "input/athlete-team-profiles.json",
+    "chunk_ids": [
+      "knowledge-739cc96a081c6fc5334f8aa4",
+      "knowledge-1283a5d6517e28c2807a083e",
+      "knowledge-9ed7189ef85a22d88e16f4ab",
+      "knowledge-9f72a4080016eea367c04529",
+      "knowledge-a2bb2e60d83a4adc73c7262d",
+      "knowledge-a0c95bff8208bd9724c1cddf",
+      "knowledge-6b2420de0d049b142f857646",
+      "knowledge-cbbed4b07a0e4217129319da"
+    ],
+    "sample_json": "{\"context\": {\"schema_version\": 1}, \"pointer\": \"/schema_version\", \"value\": 1}"
+  },
+  {
+    "source": "input/daniels_vdot_paces.yaml",
+    "chunk_ids": [
+      "knowledge-13f06f495b6453a4620a6d14"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": {\"vdot_paces_sec_per_mile\": {\"30\": {\"e_hi\": 823, \"e_lo\": 739, \"i\": 565, \"m\": 649, \"r\": 523, \"t\": 619}, \"35\": {\"e_hi\": 744, \"e_lo\": 667, \"i\": 511, \"m\": 586, \"r\": 472, \"t\": 559}, \"40\": {\"e_hi\": 681, \"e_lo\": 610, \"i\": 467, \"m\": 537, \"r\": 431, \"t\": 511}, \"45\": {\"e_hi\": 618, \"e_lo\": 554, \"i\": 424, \"m\": 487, \"r\": 392, \"t\": 465}, \"50\": {\"e_hi\": 549, \"e_lo\": 494, \"i\": 376, \"m\": 426, \"r\": 356, \"t\": 411}, \"55\": {\"e_hi\": 509, \"e_lo\": 458, \"i\": 348, \"m\": 395, \"r\": 328, \"t\": 380}, \"60\": {\"e_hi\": 474, \"e_lo\": 426, \"i\": 325, \"m\": 366, \"r\": 305, \"t\": 354}, \"65\": {\"e_hi\": 444, \"e_lo\": 400, \"i\": 304, \"m\": 344, \"r\": 284, \"t\": 332}, \"70\": {\"e_hi\": 418, \"e_lo\": 376, \"i\": 283, \"m\": 322, \"r\": 263, \"t\": 310}, \"75\": {\"e_hi\": 394, \"e_lo\": 354, \"i\": 266, \"m\": 302, \"r\": 247, \"t\": 291}, \"80\": {\"e_hi\": 372, \"e_lo\": 334, \"i\": 251, \"m\": 285, \"r\": 233, \"t\": 274}}}}"
+  },
+  {
+    "source": "input/events.2020.yaml",
+    "chunk_ids": [
+      "knowledge-07cc04a23c20b322306d4762"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": {\"events\": [{\"all_day\": true, \"category\": \"予定\", \"date\": \"2020-11-15\", \"status\": \"scheduled\", \"tags\": [\"ランニング\"], \"title\": \"800mPB\", \"urls\": [\"http://www.kumariku.org/20/kekka/20201115rikkyou/rel235.html\"]}], \"year\": 2020}}"
+  },
+  {
+    "source": "input/events.2022.yaml",
+    "chunk_ids": [
+      "knowledge-6fa26ef09803173bb8031924"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": {\"events\": [{\"all_day\": true, \"category\": \"予定\", \"date\": \"2022-12-18\", \"description\": \"400m80〜82で15本　間140m40〜45\", \"status\": \"done\", \"tags\": [\"自分の練習\"], \"title\": \"遅めの400mインターバル\"}, {\"all_day\": true, \"category\": \"予定\", \"date\": \"2022-12-24\", \"description\": \"400m80〜82で15本　間140m40〜45\", \"status\": \"done\", \"tags\": [\"自分の練習\"], \"title\": \"遅めの400mインターバル\"}, {\"all_day\": true, \"category\": \"予定\", \"date\": \"2022-11-20\", \"description\": \"80〜82で12本　間140m45秒前後\", \"status\": \"done\", \"tags\": [\"自分の練習\"], \"title\": \"遅めの400mインターバル\"}], \"year\": 2022}}"
+  },
+  {
+    "source": "input/events.2023.yaml",
+    "chunk_ids": [
+      "knowledge-735b1b98481ec3bf32883b7a",
+      "knowledge-2865b889096a95d7716eb998",
+      "knowledge-25d14ef24d8f2b5e5d13b2f9"
+    ],
+    "sample_json": "{\"context\": {\"year\": 2023}, \"pointer\": \"/year\", \"value\": 2023}"
+  },
+  {
+    "source": "input/events.2024.yaml",
+    "chunk_ids": [
+      "knowledge-3267b520e7017ebd6d01b615",
+      "knowledge-20cd7de2c4b0e1f09da0c8f2",
+      "knowledge-37949dbaff59ec83846e8ee9",
+      "knowledge-737e6ebea7d24ab87f94500d"
+    ],
+    "sample_json": "{\"context\": {\"year\": 2024}, \"pointer\": \"/year\", \"value\": 2024}"
+  },
+  {
+    "source": "input/events.2025.yaml",
+    "chunk_ids": [
+      "knowledge-c6fd2507f004b196d5cf33da",
+      "knowledge-78dad2ccadc62dc71c89a72b",
+      "knowledge-75763e262c0cb6a461cced68",
+      "knowledge-ca37103dcc6ea74ac52dc14d",
+      "knowledge-6565ccf6d2f8b5180e99424d",
+      "knowledge-799dbee0d1cb6de7ce52f38e",
+      "knowledge-cf19e925c7f65dd0b786f205",
+      "knowledge-85ba885212f4b14c7e15c53f",
+      "knowledge-96f0f841f8dc8f0a66c46aac",
+      "knowledge-74cdc4133bd2025ff84337f6",
+      "knowledge-7d00b1e2198ccdd9fe1dcaf0",
+      "knowledge-6e0370c8690fda291d208672",
+      "knowledge-327cbb1cbe5178afbe227e20",
+      "knowledge-cf9ae1dcf2228d1a0d90a5d8",
+      "knowledge-3104e61d07a6897618acda17"
+    ],
+    "sample_json": "{\"context\": {\"year\": 2025}, \"pointer\": \"/year\", \"value\": 2025}"
+  },
+  {
+    "source": "input/events.2026.yaml",
+    "chunk_ids": [
+      "knowledge-7e0ec7160758edd21c5fe30b",
+      "knowledge-021b96b15fa056ecff243901",
+      "knowledge-7831549782b24dacec9e0a34",
+      "knowledge-42f0e9872473feb01e5d3603",
+      "knowledge-a2d270e22891d610ebf85d10",
+      "knowledge-0a65a17155038a13df26ff35",
+      "knowledge-dd6a24e506a6d4632f88130e",
+      "knowledge-89e6bc15ee7aa9b6c618f5b5",
+      "knowledge-03c5b4298ec4ec542a554df1",
+      "knowledge-72cc8f4baf451165f29ce3e5",
+      "knowledge-91c54961aa0310287204e0fc",
+      "knowledge-01492ee0065114f6818b7945",
+      "knowledge-77e0d88f1be82e663b37510b",
+      "knowledge-ffd7a58f5e3cddb05aeb865d",
+      "knowledge-4b7a56677f7c836e23d557df",
+      "knowledge-91638c7053f92812d54497d8",
+      "knowledge-7a93383f2e023a2bc8df1529",
+      "knowledge-2e4ba3fec11efaf0be9b38a6",
+      "knowledge-d34754ea3b5e118506081a01",
+      "knowledge-1726519726c9090eb8a2206a",
+      "knowledge-021ee0438bb66ec3c7d308ef",
+      "knowledge-d0c1c83f458d49fecc0efac6",
+      "knowledge-8d6add58a4be6962a83eb023",
+      "knowledge-d7b602ef2529dd69e819c653",
+      "knowledge-a4252bb37dd7a9b59a8bdaa3",
+      "knowledge-43a9356fb54491bc1e4ed463",
+      "knowledge-a131a8582bb098b3df796c2d",
+      "knowledge-52f59c8dc0a70daa5347dfce",
+      "knowledge-9cb0d3c3070468b629cd6435",
+      "knowledge-aa96b40730e1f1e0938df069",
+      "knowledge-4616a14d391d6560f9b57798",
+      "knowledge-94f1e2416996e572aa3db55a",
+      "knowledge-3f9a4edbe6e67007cc67ede5",
+      "knowledge-fe7efb50a33049f1dfcbb28c",
+      "knowledge-ec5a6faeec7b8c8426d5858d",
+      "knowledge-53815c287efb41fb04bd1567",
+      "knowledge-7052dda8aa7cc94ec77679c7",
+      "knowledge-ab238c77bf6566f8222e0b8c",
+      "knowledge-3c4639b7519be8940de97288",
+      "knowledge-af0c5f7e63e68fee9abd5abc",
+      "knowledge-5f348049703bfcc67bf68433"
+    ],
+    "sample_json": "{\"context\": {\"year\": 2026}, \"pointer\": \"/year\", \"value\": 2026}"
+  },
+  {
+    "source": "input/events.2027.yaml",
+    "chunk_ids": [
+      "knowledge-4bf2bbd77f705ab411dc3dfc"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": {\"events\": [{\"all_day\": true, \"category\": \"予定\", \"date\": \"2026-12-25\", \"end_date\": \"2027-01-07\", \"status\": \"scheduled\", \"title\": \"岱明中冬休み\"}, {\"all_day\": true, \"category\": \"予定\", \"date\": \"2027-01-30\", \"description\": \"熊本県陸上競技大会一覧（2026/5/31版）より追加\", \"location\": \"えがお健康スタジアム\", \"status\": \"scheduled\", \"tags\": [\"ランニング\", \"県大会一覧\"], \"title\": \"第５回 熊本県高校新人駅伝競走大会（男女）\", \"urls\": [\"http://kumariku.com/info/wp-content/uploads/2026/04/b652729b4a1eecb47ebc1e6e01321a6e.pdf\"]}, {\"all_day\": true, \"category\": \"予定\", \"date\": \"2027-02-01\", \"status\": \"scheduled\", \"title\": \"3年公立前期選抜入試\"}, {\"all_day\": true, \"category\": \"予定\", \"date\": \"2027-02-07\", \"status\": \"scheduled\", \"title\": \"Long-Distance in Omuta\"}, {\"all_day\": true, \"category\": \"予定\", \"date\": \"2027-02-08\", \"status\": \"scheduled\", \"title\": \"3年後期期末テスト\"}, {\"all_day\": true, \"category\": \"予定\", \"date\": \"2027-02-10\", \"status\": \"scheduled\", \"title\": \"1・2年後期期末テスト\"}, {\"all_day\": true, \"category\": \"予定\", \"date\": \"2027-02-12\", \"status\": \"scheduled\", \"title\": \"1・2年後期期末テスト\"}, {\"all_day\": true, \"category\": \"予定\", \"date\": \"2027-02-14\", \"status\": \"scheduled\", \"title\": \"第５３回 熊日郡市対抗駅伝\"}, {\"all_day\": true, \"category\": \"予定\", \"date\": \"2027-02-21\", \"status\": \"scheduled\", \"title\": \"熊本城マラソン\"}, {\"all_day\": true, \"category\": \"予定\", \"date\": \"2027-02-21\", \"description\": \"熊本県陸上競技大会一覧（2026/5/31版）より追加\", \"location\": \"熊本城マラソンコース\", \"status\": \"scheduled\", \"tags\": [\"ランニング\", \"県大会一覧\"], \"title\": \"第６９回 金栗記念熊日３０Ｋロードレース（３０ｋｍ）\", \"urls\": [\"http://kumariku.com/info/wp-content/uploads/2026/04/b652729b4a1eecb47ebc1e6e01321a6e.pdf\"]}, {\"all_day\": true, \"category\": \"予定\", \"date\": \"2027-02-27\", \"status\": \"scheduled\", \"title\": \"第８０回 熊本市民駅伝大会\"}, {\"all_day\": true, \"category\": \"予定\", \"date\": \"2027-03-02\", \"status\": \"scheduled\", \"title\": \"岱明中振替休業日\"}, {\"all_day\": true, \"category\": \"予定\", \"date\": \"2027-03-03\", \"end_date\": \"2027-03-04\", \"status\": \"scheduled\", \"title\": \"公立後期入試\"}, {\"all_day\": true, \"category\": \"予定\", \"date\": \"2027-03-06\", \"status\": \"scheduled\", \"title\": \"岱明中"
+  },
+  {
+    "source": "input/external/drive/shared/名簿/2025年度.csv.meta.json",
+    "chunk_ids": [
+      "knowledge-d26580869168507798b99e18"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": {\"id\": \"1-KfsP4tl_igL8lFsiNY9AOyUJtXhOBiFGYN0qXTlETY\", \"importedAs\": \"csv\", \"mimeType\": \"application/vnd.google-apps.spreadsheet\", \"modifiedTime\": \"2025-07-12T08:12:58.946Z\", \"parentId\": \"1ajGYzyHmDqAOxQ4x_b5noTMtHOMrkt41\", \"skipReason\": null, \"status\": \"imported\", \"title\": \"2025年度\", \"viewUrl\": \"https://docs.google.com/spreadsheets/d/1-KfsP4tl_igL8lFsiNY9AOyUJtXhOBiFGYN0qXTlETY/edit?usp=drivesdk&ouid=112681577980405057294\"}}"
+  },
+  {
+    "source": "input/external/drive/shared/名簿/2025年度_岱明中学校陸上競技部_部員名簿.csv.meta.json",
+    "chunk_ids": [
+      "knowledge-42e061ddc73936e6ebf51ab2"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": {\"id\": \"1DGST4sWNCzH3C7i4mMZiIkSpYeGdaag7\", \"importedAs\": \"csv\", \"mimeType\": \"text/csv\", \"skipReason\": null, \"source\": \"drive\", \"status\": \"imported\", \"title\": \"2025年度_岱明中学校陸上競技部_部員名簿.csv\", \"viewUrl\": \"https://drive.google.com/file/d/1DGST4sWNCzH3C7i4mMZiIkSpYeGdaag7/view\"}}"
+  },
+  {
+    "source": "input/external/drive/shared/大会/2025年度/0228_熊本市駅伝/岱明の結果.md.meta.json",
+    "chunk_ids": [
+      "knowledge-ae3be6114b8c8302827df961"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": {\"id\": \"1DvqlKfQq-gKwb-F4csQnhCeI1fQiWYpUBkPMKGrLWsA\", \"importedAs\": \"markdown\", \"localName\": \"岱明の結果.md\", \"mimeType\": \"application/vnd.google-apps.document\", \"modifiedTime\": \"2026-03-01T06:25:58.143Z\", \"parentId\": \"1QiPTHuqd06GZicpmjemrgRDmEDb9ZAVv\", \"skipReason\": null, \"status\": \"imported\", \"title\": \"結果\", \"viewUrl\": \"https://docs.google.com/document/d/1DvqlKfQq-gKwb-F4csQnhCeI1fQiWYpUBkPMKGrLWsA/edit\"}}"
+  },
+  {
+    "source": "input/external/drive/shared/大会/2025年度/0315_金栗駅伝/記録.md.meta.json",
+    "chunk_ids": [
+      "knowledge-0bf71e0fd1bdbf4261cb385f"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": {\"id\": \"1F8dweyCH3SCM2FooiQVRQjwYLgn2vp8bA5hWBfY4Nd0\", \"importedAs\": \"markdown\", \"mimeType\": \"application/vnd.google-apps.document\", \"modifiedTime\": \"2026-03-15T07:02:24.260Z\", \"parentId\": \"1ZJkAViOP_Na4hb3fyznfPJqY_r6i1RXh\", \"skipReason\": null, \"status\": \"imported\", \"title\": \"記録\", \"viewUrl\": \"https://docs.google.com/document/d/1F8dweyCH3SCM2FooiQVRQjwYLgn2vp8bA5hWBfY4Nd0/edit\"}}"
+  },
+  {
+    "source": "input/external/drive/shared/大会/2025年度/0419_第４４回熊本市陸上競技選手権/女子中学1500m結果.mht.md.meta.json",
+    "chunk_ids": [
+      "knowledge-3b587c377abbdeb3ba19b6fa"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": {\"fileSize\": \"16586\", \"id\": \"1LXazqRV54XFAkCJtLd_TkVE09eVb0DRL\", \"mimeType\": \"multipart/related\", \"modifiedTime\": \"\", \"parentId\": \"1uWt8u7xz4htlaAaE_LXrMHqE6wJHkKeM\", \"stubReason\": \"binary deferred; use viewUrl\", \"title\": \"女子中学 １５００ｍ ﾀｲﾑﾚｰｽ総合結果.mht\", \"viewUrl\": \"https://drive.google.com/file/d/1LXazqRV54XFAkCJtLd_TkVE09eVb0DRL/view?usp=drivesdk\"}}"
+  },
+  {
+    "source": "input/external/drive/shared/大会/2025年度/0419_第４４回熊本市陸上競技選手権/男子中学1500m結果.mht.md.meta.json",
+    "chunk_ids": [
+      "knowledge-b5a4f4b2c16915810e5889db"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": {\"fileSize\": \"41493\", \"id\": \"1eBB9aO6JwJkQmb8eooitSF2JRGPr_Bza\", \"mimeType\": \"multipart/related\", \"modifiedTime\": \"\", \"parentId\": \"1uWt8u7xz4htlaAaE_LXrMHqE6wJHkKeM\", \"stubReason\": \"binary deferred; use viewUrl\", \"title\": \"男子中学 １５００ｍ ﾀｲﾑﾚｰｽ総合結果.mht\", \"viewUrl\": \"https://drive.google.com/file/d/1eBB9aO6JwJkQmb8eooitSF2JRGPr_Bza/view?usp=drivesdk\"}}"
+  },
+  {
+    "source": "input/external/drive/shared/大会/2025年度/0419_第４４回熊本市陸上競技選手権/要項.pdf.md.meta.json",
+    "chunk_ids": [
+      "knowledge-f5876ff3f4e600f9a7c06d48"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": {\"fileSize\": \"324370\", \"id\": \"1zSTHvlCMTUsImKGAc-tQlATrEbktEx9Z\", \"mimeType\": \"application/pdf\", \"modifiedTime\": \"\", \"parentId\": \"1uWt8u7xz4htlaAaE_LXrMHqE6wJHkKeM\", \"stubReason\": \"binary deferred; use viewUrl\", \"title\": \"要項.pdf\", \"viewUrl\": \"https://drive.google.com/file/d/1zSTHvlCMTUsImKGAc-tQlATrEbktEx9Z/view?usp=drivesdk\"}}"
+  },
+  {
+    "source": "input/external/drive/shared/大会/2025年度/0607-0608_熊本県中学生陸上競技選手権/スタートリスト.pdf.md.meta.json",
+    "chunk_ids": [
+      "knowledge-3282cd26cf052da65dcf5fed"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": {\"fileSize\": 1977370, \"id\": \"1Dtsw33QtmwK92I_VHiVLZmb2_Cy1znG2\", \"importedAs\": null, \"mimeType\": \"application/pdf\", \"parentId\": \"1PT_antiggHN2a3Pmoze4xS1VTMMpD2e1\", \"skipReason\": \"PDF binary not imported; meta+viewUrl only (ADR 010)\", \"status\": \"stub\", \"stubReason\": \"binary deferred; use viewUrl\", \"title\": \"スタートリスト.pdf\", \"viewUrl\": \"https://drive.google.com/file/d/1Dtsw33QtmwK92I_VHiVLZmb2_Cy1znG2/view\"}}"
+  },
+  {
+    "source": "input/external/drive/shared/大会/2025年度/0607-0608_熊本県中学生陸上競技選手権/タイムテーブル.pdf.md.meta.json",
+    "chunk_ids": [
+      "knowledge-72df8824072ebff35018f76a"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": {\"fileSize\": \"129281\", \"id\": \"1Vrq0zcbzS3qJiY_VRosV6cMinll17zqU\", \"mimeType\": \"application/pdf\", \"modifiedTime\": \"\", \"parentId\": \"1PT_antiggHN2a3Pmoze4xS1VTMMpD2e1\", \"stubReason\": \"binary deferred; use viewUrl\", \"title\": \"タイムテーブル.pdf\", \"viewUrl\": \"https://drive.google.com/file/d/1Vrq0zcbzS3qJiY_VRosV6cMinll17zqU/view?usp=drivesdk\"}}"
+  },
+  {
+    "source": "input/external/drive/shared/大会/2025年度/0607-0608_熊本県中学生陸上競技選手権/実施要項.pdf.md.meta.json",
+    "chunk_ids": [
+      "knowledge-446a40ed28ddd02d1f0d20df"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": {\"fileSize\": 197094, \"id\": \"1rfFXTtjVYZtnzcfxg9UVZWvGGNgblrH7\", \"importedAs\": null, \"mimeType\": \"application/pdf\", \"parentId\": \"1PT_antiggHN2a3Pmoze4xS1VTMMpD2e1\", \"skipReason\": \"PDF binary not imported; meta+viewUrl only (ADR 010)\", \"status\": \"stub\", \"stubReason\": \"binary deferred; use viewUrl\", \"title\": \"実施要項.pdf\", \"viewUrl\": \"https://drive.google.com/file/d/1rfFXTtjVYZtnzcfxg9UVZWvGGNgblrH7/view\"}}"
+  },
+  {
+    "source": "input/external/drive/shared/大会/2025年度/0607-0608_熊本県中学生陸上競技選手権/岱明の出場予定.pdf.md.meta.json",
+    "chunk_ids": [
+      "knowledge-0ba2b2636167dc0b0bc06dc5"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": {\"fileSize\": 34636, \"id\": \"13SW2mg8VIqNtC9TYKJxjD2NXag0nO0G-\", \"importedAs\": \"いだてん岱明出場予定.pdf.md\", \"localName\": \"岱明の出場予定.pdf.md\", \"mimeType\": \"application/pdf\", \"modifiedTime\": \"2025-06-07T02:53:57.515Z\", \"parentId\": \"1PT_antiggHN2a3Pmoze4xS1VTMMpD2e1\", \"skipReason\": \"PDF binary not imported; searchable stub + viewUrl (ADR 010)\", \"status\": \"stub\", \"title\": \"いだてん岱明出場予定.pdf\", \"viewUrl\": \"https://drive.google.com/file/d/13SW2mg8VIqNtC9TYKJxjD2NXag0nO0G-/view?usp=drivesdk\"}}"
+  },
+  {
+    "source": "input/external/drive/shared/大会/2025年度/0607-0608_熊本県中学生陸上競技選手権/岱明の参加計画.pdf.md.meta.json",
+    "chunk_ids": [
+      "knowledge-b80113860cf8c917ec5e3b62"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": {\"fileSize\": \"765968\", \"id\": \"1OZwA87li4tAzsFzokDnpLKtMhzZVLkS0\", \"localName\": \"岱明の参加計画.pdf.md\", \"mimeType\": \"application/pdf\", \"modifiedTime\": \"\", \"parentId\": \"1PT_antiggHN2a3Pmoze4xS1VTMMpD2e1\", \"stubReason\": \"binary deferred; use viewUrl\", \"title\": \"岱明中参加計画.pdf\", \"viewUrl\": \"https://drive.google.com/file/d/1OZwA87li4tAzsFzokDnpLKtMhzZVLkS0/view?usp=drivesdk\"}}"
+  },
+  {
+    "source": "input/external/drive/shared/大会/2025年度/0607-0608_熊本県中学生陸上競技選手権/岱明の結果.md.meta.json",
+    "chunk_ids": [
+      "knowledge-2dec8e0334a4a026b7862645"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": {\"id\": \"1euiCKHe_h6_52fBryEE1TVwyVeTzmOM-PWku9FBYh2A\", \"importedAs\": \"markdown\", \"localName\": \"岱明の結果.md\", \"mimeType\": \"application/vnd.google-apps.document\", \"parentId\": \"1QFb0oxK7Tt0_r_Ef43KsUHBehGJ1L0JA\", \"skipReason\": null, \"status\": \"imported\", \"title\": \"いだてん岱明の結果\", \"viewUrl\": \"https://docs.google.com/document/d/1euiCKHe_h6_52fBryEE1TVwyVeTzmOM-PWku9FBYh2A/edit\"}}"
+  },
+  {
+    "source": "input/external/drive/shared/大会/2025年度/0607-0608_熊本県中学生陸上競技選手権/撮影に関する注意事項.pdf.md.meta.json",
+    "chunk_ids": [
+      "knowledge-d871efec1c27c552c908c5a8"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": {\"fileSize\": \"306820\", \"id\": \"1zSQhEj8fIP2JDGabr0x31lLBHrRuR3s5\", \"mimeType\": \"application/pdf\", \"modifiedTime\": \"\", \"parentId\": \"1PT_antiggHN2a3Pmoze4xS1VTMMpD2e1\", \"stubReason\": \"binary deferred; use viewUrl\", \"title\": \"撮影に関する注意事項.pdf\", \"viewUrl\": \"https://drive.google.com/file/d/1zSQhEj8fIP2JDGabr0x31lLBHrRuR3s5/view?usp=drivesdk\"}}"
+  },
+  {
+    "source": "input/external/drive/shared/大会/2025年度/0607-0608_熊本県中学生陸上競技選手権/申し合わせ事項.pdf.md.meta.json",
+    "chunk_ids": [
+      "knowledge-ae407855e69df5cf1cbf0c4f"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": {\"fileSize\": \"680073\", \"id\": \"1_yQc2AYJK1qNFFJyepD5Rze8ffLv8198\", \"mimeType\": \"application/pdf\", \"modifiedTime\": \"\", \"parentId\": \"1PT_antiggHN2a3Pmoze4xS1VTMMpD2e1\", \"stubReason\": \"binary deferred; use viewUrl\", \"title\": \"申し合わせ事項.pdf\", \"viewUrl\": \"https://drive.google.com/file/d/1_yQc2AYJK1qNFFJyepD5Rze8ffLv8198/view?usp=drivesdk\"}}"
+  },
+  {
+    "source": "input/external/drive/shared/大会/2025年度/0607-0608_熊本県中学生陸上競技選手権/競技注意事項.pdf.md.meta.json",
+    "chunk_ids": [
+      "knowledge-f675baa1466ddf67e6064dc0"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": {\"fileSize\": \"225702\", \"id\": \"1A7C9Fk5YhGBBY-6E_f2S9uOoe-kFAM5u\", \"mimeType\": \"application/pdf\", \"modifiedTime\": \"\", \"parentId\": \"1PT_antiggHN2a3Pmoze4xS1VTMMpD2e1\", \"stubReason\": \"binary deferred; use viewUrl\", \"title\": \"競技注意事項.pdf\", \"viewUrl\": \"https://drive.google.com/file/d/1A7C9Fk5YhGBBY-6E_f2S9uOoe-kFAM5u/view?usp=drivesdk\"}}"
+  },
+  {
+    "source": "input/external/drive/shared/大会/2025年度/0607-0608_熊本県中学生陸上競技選手権/結果/女子1年800mタイムレース総合結果.png.md.meta.json",
+    "chunk_ids": [
+      "knowledge-111d0938b9f67c599313eadf"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": {\"fileSize\": \"628155\", \"id\": \"1RVz5erukARNbRk5JoNeC3IJnmCLoyqq7\", \"mimeType\": \"image/png\", \"modifiedTime\": \"\", \"parentId\": \"1QFb0oxK7Tt0_r_Ef43KsUHBehGJ1L0JA\", \"stubReason\": \"image stub; Google Doc result preferred\", \"title\": \"女子1年800mタイムレース総合結果.png\", \"viewUrl\": \"https://drive.google.com/file/d/1RVz5erukARNbRk5JoNeC3IJnmCLoyqq7/view?usp=drivesdk\"}}"
+  }
+]
