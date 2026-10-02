@@ -1,0 +1,337 @@
+{
+  "version": 1,
+  "entries": [
+    {
+      "id": "fullchunkqa-52345d8f17316f281b2a60bc-1",
+      "chunk_id": "knowledge-52345d8f17316f281b2a60bc",
+      "questions": [
+        "Bakkenが2002年のボリビア実験で、高さだけでなく平らな場所を求めた理由は？"
+      ],
+      "answer": "地形にセッションを乱されず閾値走を行うためです。4,000m超のAltiplanoと5,300mのChacaltayaを試しましたが、標高だけを最大化すればよいという結論ではありません。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "high enough to provide real physiological stress, but flat enough to run at the threshold without the terrain ruining the session."
+        },
+        {
+          "kind": "quote",
+          "text": "at the ski resort Chacaltaya at 5,300 meters"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Author altitude experiments, physiology explanations and uncertain heat hypotheses; individual timing and mechanical-load limits retained, no universal safety or performance guarantee."
+      }
+    },
+    {
+      "id": "fullchunkqa-52345d8f17316f281b2a60bc-2",
+      "chunk_id": "knowledge-52345d8f17316f281b2a60bc",
+      "questions": [
+        "BakkenのThe Balancing Actでは、5,300mで閾値強度に達していても何が不足した？"
+      ],
+      "answer": "速度が落ち、競技に必要な神経筋の準備を保つ機械的な刺激が低くなりすぎたとしています。緩い下りの200mやエルゴメーターも望む効果にならなかった著者の実験で、内的負荷だけで競技の特異性を満たすとはしていません。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "At 5,300 meters, the mechanical load became too low"
+        },
+        {
+          "kind": "quote",
+          "text": "The body needs a certain mechanical load"
+        },
+        {
+          "kind": "quote",
+          "text": "I tried ergometer cycling at high altitude as well, both continuous and in short intervals, without getting the desired effect."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Author altitude experiments, physiology explanations and uncertain heat hypotheses; individual timing and mechanical-load limits retained, no universal safety or performance guarantee."
+      }
+    },
+    {
+      "id": "fullchunkqa-52345d8f17316f281b2a60bc-3",
+      "chunk_id": "knowledge-52345d8f17316f281b2a60bc",
+      "questions": [
+        "Bakkenの高地の生理機序の説明で、EPO増加の開始と赤血球増加は同時と述べている？"
+      ],
+      "answer": "この本文が2〜4時間で始まると述べるのは、赤血球産生を促すホルモンEPOの増加です。その時間内に赤血球増加や競技成績向上が完成すると読み替えません。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "Within 2-4 hours, the body begins producing more erythropoietin, the hormone that stimulates bone marrow to produce red blood cells."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Author altitude experiments, physiology explanations and uncertain heat hypotheses; individual timing and mechanical-load limits retained, no universal safety or performance guarantee."
+      }
+    },
+    {
+      "id": "fullchunkqa-d7968d5bbfb1a65c3d00171b-1",
+      "chunk_id": "knowledge-d7968d5bbfb1a65c3d00171b",
+      "questions": [
+        "Bakkenの高地章本文では、最適な高さの候補をどう限定している？"
+      ],
+      "answer": "この方法を使う多くのランナーでは1,800〜3,000m、広くは約2,000mと考える一方、個人差と種目差があり得るとしています。低酸素刺激と練習の機械的な質の釣り合いの候補で、全員の安全な標高を決める値ではありません。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "between 1,800 and 3,000 meters"
+        },
+        {
+          "kind": "quote",
+          "text": "around 2,000 meters"
+        },
+        {
+          "kind": "quote",
+          "text": "The range is somewhat individual and probably distance-specific."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Author altitude experiments, physiology explanations and uncertain heat hypotheses; individual timing and mechanical-load limits retained, no universal safety or performance guarantee."
+      }
+    },
+    {
+      "id": "fullchunkqa-d7968d5bbfb1a65c3d00171b-2",
+      "chunk_id": "knowledge-d7968d5bbfb1a65c3d00171b",
+      "questions": [
+        "BakkenのWhy Altitude Training Fitsで、高地を周期化に使う際、変えるものと保つものは？"
+      ],
+      "answer": "環境を変え、セッションを保つとしています。安定した方法に全身負荷の変化を加え、週ごとに急に強度を上げる周期化の代わりにする著者の構成上の説明です。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "You use it specifically for periodiza-tion"
+        },
+        {
+          "kind": "quote",
+          "text": "The environment changes. The session stays the same."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Author altitude experiments, physiology explanations and uncertain heat hypotheses; individual timing and mechanical-load limits retained, no universal safety or performance guarantee."
+      }
+    },
+    {
+      "id": "fullchunkqa-d7968d5bbfb1a65c3d00171b-3",
+      "chunk_id": "knowledge-d7968d5bbfb1a65c3d00171b",
+      "questions": [
+        "BakkenがSpecific Load Over Timeで、早い時期の高地滞在の効果の理由として挙げる2つの考えは？"
+      ],
+      "answer": "繰り返した高地曝露による代謝の記憶というエピジェネティクスの考えと、前の閾値練習や休みで筋の状態が整っていることです。著者は理由を考察しており、章の図の線だけで因果や全員の効果を確定しません。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "The first is epigenetics"
+        },
+        {
+          "kind": "quote",
+          "text": "The second is that muscular factors are already in balance from preceding threshold training and an easier period of rest or off-season."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Author altitude experiments, physiology explanations and uncertain heat hypotheses; individual timing and mechanical-load limits retained, no universal safety or performance guarantee."
+      }
+    },
+    {
+      "id": "fullchunkqa-9053fd7494d06e7e4dde7309-1",
+      "chunk_id": "knowledge-9053fd7494d06e7e4dde7309",
+      "questions": [
+        "BakkenのPeriodization Breaksの短い高地滞在と海面での練習の組み合わせは？"
+      ],
+      "answer": "著者は南アフリカで6〜7日高地練習し、ノルウェーで3〜4週練習して次の滞在へ、という例を述べます。5〜7日で適応の開始信号が出て以後も続くという解釈で、短期滞在だけの効果を全員に保証するものではありません。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "trained for six to seven days with intense altitude work and heavy double threshold sessions, then returned to Norway for three to four weeks before the next stay."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Author altitude experiments, physiology explanations and uncertain heat hypotheses; individual timing and mechanical-load limits retained, no universal safety or performance guarantee."
+      }
+    },
+    {
+      "id": "fullchunkqa-9053fd7494d06e7e4dde7309-2",
+      "chunk_id": "knowledge-9053fd7494d06e7e4dde7309",
+      "questions": [
+        "BakkenのRe-activationでは、閾値能力が落ちた時の高地をどんな役割と期間の例にする？"
+      ],
+      "answer": "有酸素系を再調整する7〜14日の滞在という例です。無酸素性へ傾きすぎたバランスを戻す意図で、夏に閾値が落ちた際の再活性化とピーキングの両方にも使うとしています。個人の復調日数や治療法ではありません。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "A stay of seven to fourteen days"
+        },
+        {
+          "kind": "quote",
+          "text": "a natural recalibration of the entire aerobic machinery."
+        },
+        {
+          "kind": "quote",
+          "text": "This type of reactivation can also be used in summer"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Author altitude experiments, physiology explanations and uncertain heat hypotheses; individual timing and mechanical-load limits retained, no universal safety or performance guarantee."
+      }
+    },
+    {
+      "id": "fullchunkqa-9053fd7494d06e7e4dde7309-3",
+      "chunk_id": "knowledge-9053fd7494d06e7e4dde7309",
+      "questions": [
+        "Bakkenの高地後のピーク日数は、全員に同じ日として示される？"
+      ],
+      "answer": "同じではありません。著者は一般的に自身の10〜18日、繰り返したピークは11〜13日または15〜18日と述べ、個人差や下降直後の競技にも触れています。誰もが同じ日に最高成績になるという日程の保証ではありません。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "typically days 10-18 for me"
+        },
+        {
+          "kind": "quote",
+          "text": "My own post-altitude peaks fell consistently on days 11-13 or days 15-18."
+        },
+        {
+          "kind": "quote",
+          "text": "The pattern is somewhat individual"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Author altitude experiments, physiology explanations and uncertain heat hypotheses; individual timing and mechanical-load limits retained, no universal safety or performance guarantee."
+      }
+    },
+    {
+      "id": "fullchunkqa-366f404b35584db8cf410af0-1",
+      "chunk_id": "knowledge-366f404b35584db8cf410af0",
+      "questions": [
+        "BakkenのDynamic Adaptation at Altitudeでは、初めの10日間の個人ごとの変動をどう捉える？"
+      ],
+      "answer": "同じ選手で滞在ごとに再現するか測定して追い、負荷を調整する案です。正確な日は個人差があり、著者の初日、5〜6日、10日前後の例を全員へそのまま当てはめません。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "The exact days are somewhat individual."
+        },
+        {
+          "kind": "quote",
+          "text": "the pattern appears to be reproducible from stay to stay for a given athlete."
+        },
+        {
+          "kind": "quote",
+          "text": "By tracking this pattern through measurement, you can balance the load even better."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Author altitude experiments, physiology explanations and uncertain heat hypotheses; individual timing and mechanical-load limits retained, no universal safety or performance guarantee."
+      }
+    },
+    {
+      "id": "fullchunkqa-366f404b35584db8cf410af0-2",
+      "chunk_id": "knowledge-366f404b35584db8cf410af0",
+      "questions": [
+        "BakkenのHeat Training: A Possible Parallelでは、暑熱と低酸素の反応が重なることを、同じものとする？"
+      ],
+      "answer": "同じとはしていません。暑熱馴化による血漿量増加、熱ショック蛋白、HSPやHIF系などの重なる経路を挙げますが、暑熱と高地の同一性や効果の等価を意味しないと明示しています。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "Heat acclimatization often increases plasma volume"
+        },
+        {
+          "kind": "quote",
+          "text": "This doesn't mean heat and altitude are the same"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Author altitude experiments, physiology explanations and uncertain heat hypotheses; individual timing and mechanical-load limits retained, no universal safety or performance guarantee."
+      }
+    },
+    {
+      "id": "fullchunkqa-366f404b35584db8cf410af0-3",
+      "chunk_id": "knowledge-366f404b35584db8cf410af0",
+      "questions": [
+        "Bakkenは高地の代替や併用としての暑熱練習を、十分な自身の系統的実験で確定したとしている？"
+      ],
+      "answer": "確定していません。十分に系統的に試して確信するところまでは至らなかったと述べ、代替の可能性や併用への自身の考えを示しています。暑い環境なら無条件に有利、または安全という推奨にはしません。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "I never tested this systematically enough to be certain, but heat may be a practical alternative for runners without access to altitude."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Author altitude experiments, physiology explanations and uncertain heat hypotheses; individual timing and mechanical-load limits retained, no universal safety or performance guarantee."
+      }
+    }
+  ]
+}

@@ -1,0 +1,357 @@
+{
+  "version": 1,
+  "entries": [
+    {
+      "id": "fullchunkqa-601607ad5b2408bc8695ebd3-1",
+      "chunk_id": "knowledge-601607ad5b2408bc8695ebd3",
+      "questions": [
+        "BakkenのDecision Rules in Practiceで、長い閾値反復の最初に確認する測定は？"
+      ],
+      "answer": "例えば6×2000mでは最初の2〜3本以上を測り、正しい範囲で安定したことを確かめる案です。継続測定が望ましく、費用制約があれば最初を優先し、できれば終盤も補うとしています。範囲を確認する前の増量を勧める説明ではありません。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "measure at least the fist two to three efforts to ensure you are in the right range."
+        },
+        {
+          "kind": "quote",
+          "text": "if cost is a concern, choose to measure at the very start. Supplement ideally with measurements toward the end."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Source-qualified session decisions and measurement methodology, no individualized medical procedure, uniform workload or numerical guarantee."
+      }
+    },
+    {
+      "id": "fullchunkqa-601607ad5b2408bc8695ebd3-2",
+      "chunk_id": "knowledge-601607ad5b2408bc8695ebd3",
+      "questions": [
+        "BakkenのAdjust pace cautiouslyで、乳酸管理時の小さなペース調整は何秒程度の例？"
+      ],
+      "answer": "通常は1kmあたり2〜5秒、または休息やリズムの小さな調整という例です。適正な乳酸に大きな変更が必要なら、その日の状態や標準化を疑い、型に無理に合わせるよりセッション自体を変える案です。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "It is often about two to five seconds per kilometer (3-8 seconds per mile)"
+        },
+        {
+          "kind": "quote",
+          "text": "it is often better to modify the session rather than force it into a template."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Source-qualified session decisions and measurement methodology, no individualized medical procedure, uniform workload or numerical guarantee."
+      }
+    },
+    {
+      "id": "fullchunkqa-601607ad5b2408bc8695ebd3-3",
+      "chunk_id": "knowledge-601607ad5b2408bc8695ebd3",
+      "questions": [
+        "BakkenのDecision Rules in Practiceでは、RPEやトークテストをどんな信号として使う？"
+      ],
+      "answer": "三次の信号として、練習中に積極的に併用する案です。測定やモデルは完全ではないため不均衡を捉える補助にし、階段テストや信号モデルも合わせるとしています。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "5. Use perception as a tertiary signal"
+        },
+        {
+          "kind": "quote",
+          "text": "Subjective perception, whether RPE or the extended talk test as described in Chapter 2, should be used actively throughout."
+        },
+        {
+          "kind": "quote",
+          "text": "no measurements or models are completely accurate."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Source-qualified session decisions and measurement methodology, no individualized medical procedure, uniform workload or numerical guarantee."
+      }
+    },
+    {
+      "id": "fullchunkqa-b1d9746c205343f4d4815467-1",
+      "chunk_id": "knowledge-b1d9746c205343f4d4815467",
+      "questions": [
+        "BakkenのVariation within the Lactate Rangeで、長い反復を短い反復より保守的にする理由は？"
+      ],
+      "answer": "競技ペースから既に離れていてそこへ近づける重要さが小さく、反復時間が長いほどリスクが増えるためと説明しています。長い反復は徐々にペースへ入り、乳酸計なしなら特に慎重にする案です。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "getting as close as possible to race pace matters less than with shorter efforts."
+        },
+        {
+          "kind": "quote",
+          "text": "the risk is greater due to the length of the efforts."
+        },
+        {
+          "kind": "quote",
+          "text": "This applies especially if you train without a lactate meter"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Source-qualified session decisions and measurement methodology, no individualized medical procedure, uniform workload or numerical guarantee."
+      }
+    },
+    {
+      "id": "fullchunkqa-b1d9746c205343f4d4815467-2",
+      "chunk_id": "knowledge-b1d9746c205343f4d4815467",
+      "questions": [
+        "BakkenのAdjusting Long Intervalsで、長い反復の乳酸が数本続けて高すぎる場合の3つの選択肢は？"
+      ],
+      "answer": "終了する、負荷を大きく下げて曲線を再開する、短い反復へ切り替える、の3つです。事前の信号モデルと季節によって選び、開始前から境界的なら終了を勧める説明です。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "three choices: end the session, markedly reduce the load and restart the curve, or switch to shorter intervals."
+        },
+        {
+          "kind": "quote",
+          "text": "If you were borderline and start missing on the curve, I recommend ending the session."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Source-qualified session decisions and measurement methodology, no individualized medical procedure, uniform workload or numerical guarantee."
+      }
+    },
+    {
+      "id": "fullchunkqa-b1d9746c205343f4d4815467-3",
+      "chunk_id": "knowledge-b1d9746c205343f4d4815467",
+      "questions": [
+        "BakkenのAdjusting Long Intervalsで、事前指標が良くても季節によって選択が変わる例は？"
+      ],
+      "answer": "より厳しい練習期や競技期が近ければ短い反復へ、冬の積み上げ期なら低い開始ペースで曲線を再開する案です。再開する場合も、その後はやや低い乳酸で平らな曲線を受け入れるとしています。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "If you are approaching a tougher training period or the competition season, I recommend switching to shorter intervals."
+        },
+        {
+          "kind": "quote",
+          "text": "If you are in the middle of winter in a buildup phase, the alternative may instead be to restart the curve with a lower starting pace."
+        },
+        {
+          "kind": "quote",
+          "text": "a flat curve for the rest of the session, at a slightly lower lactate level"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Source-qualified session decisions and measurement methodology, no individualized medical procedure, uniform workload or numerical guarantee."
+      }
+    },
+    {
+      "id": "fullchunkqa-b3d99a2dd397927cc18a34e5-1",
+      "chunk_id": "knowledge-b3d99a2dd397927cc18a34e5",
+      "questions": [
+        "Bakkenの競技期のon/off練習の説明で、乳酸採血のタイミングをどうそろえる？"
+      ],
+      "answer": "練習中に、補助を受けながら、動いている休息区間の毎回同じ地点で測るとしています。変化を実験する場合も、選手と目的に合わせて核心の原理とリスクを考える文脈です。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "If an on/off model is used, lactate should be measured during the session."
+        },
+        {
+          "kind": "quote",
+          "text": "with assistance, and always at the same point in the active pauses."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Source-qualified session decisions and measurement methodology, no individualized medical procedure, uniform workload or numerical guarantee."
+      }
+    },
+    {
+      "id": "fullchunkqa-b3d99a2dd397927cc18a34e5-2",
+      "chunk_id": "knowledge-b3d99a2dd397927cc18a34e5",
+      "questions": [
+        "Bakkenはクロスカントリースキーの強度変化を純粋なランニングへそのまま移せるとしている？"
+      ],
+      "answer": "そのまま移す説明ではありません。地形や上半身使用が違い、同じ強度変化をランニングに当てはめると回復にずっと長くかかると述べています。走る際の衝撃負荷と狭い余裕を考える著者の説明です。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "if we applied the same intensity variation to a pure running session, the recovery time would be far longer."
+        },
+        {
+          "kind": "quote",
+          "text": "We must always keep in mind the specific demands that running presents."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Source-qualified session decisions and measurement methodology, no individualized medical procedure, uniform workload or numerical guarantee."
+      }
+    },
+    {
+      "id": "fullchunkqa-b3d99a2dd397927cc18a34e5-3",
+      "chunk_id": "knowledge-b3d99a2dd397927cc18a34e5",
+      "questions": [
+        "BakkenのLong-Term Thinking on More Intensive Trainingでは、強い練習の固定要素の頻度を一律に定めている？"
+      ],
+      "answer": "個別の計画に開かれています。市民ランナーでは数週間空く場合も、よく鍛えられた選手では週1回をひな型にする場合も挙げます。速度・筋力や追加の高強度も個人と時期で決め、急な導入より徐々の適応を重視しています。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "For some recreational runners, this can actually be done with weeks between sessions"
+        },
+        {
+          "kind": "quote",
+          "text": "for well-trained athletes, once a week as a template of sorts."
+        },
+        {
+          "kind": "quote",
+          "text": "The fixed intensive element is thus fully open to individual planning."
+        },
+        {
+          "kind": "quote",
+          "text": "gradual adaptation over time builds tolerance far better than abrupt integration."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Source-qualified session decisions and measurement methodology, no individualized medical procedure, uniform workload or numerical guarantee."
+      }
+    },
+    {
+      "id": "fullchunkqa-904cba2a262988f5afd51e8f-1",
+      "chunk_id": "knowledge-904cba2a262988f5afd51e8f",
+      "questions": [
+        "Bakkenが高強度練習の変数を変える際に、反復する週を通じて確認する2点は？"
+      ],
+      "answer": "そのセッション中の乳酸曲線がどの系を刺激するかと、週ごとに繰り返した時の適応および同時期の閾値練習への影響です。単発の良い値だけではなく継続した反応を評価する文脈です。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "The lactate curve within the intensive session—which systems does it trigger?"
+        },
+        {
+          "kind": "quote",
+          "text": "how the body responds when you repeat it over weeks, and how it affects threshold sessions in the same period."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Source-qualified session decisions and measurement methodology, no individualized medical procedure, uniform workload or numerical guarantee."
+      }
+    },
+    {
+      "id": "fullchunkqa-904cba2a262988f5afd51e8f-2",
+      "chunk_id": "knowledge-904cba2a262988f5afd51e8f",
+      "questions": [
+        "BakkenのPractical Sample Collectionで、指先と耳たぶの値を日替わりで比較してよい？"
+      ],
+      "answer": "同じ値とは限らないため、一つの部位を選んで続けるとしています。同時採血では指先が一貫して高いという研究紹介です。耳たぶには補助者が必要で、著者は一人では指先を使ったと述べています。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "Both work, but they do not give identical values."
+        },
+        {
+          "kind": "quote",
+          "text": "Do not compare values from the finger one day with the ear the next."
+        },
+        {
+          "kind": "quote",
+          "text": "The problem with the earlobe is that it requires a helper."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Source-qualified session decisions and measurement methodology, no individualized medical procedure, uniform workload or numerical guarantee."
+      }
+    },
+    {
+      "id": "fullchunkqa-904cba2a262988f5afd51e8f-3",
+      "chunk_id": "knowledge-904cba2a262988f5afd51e8f",
+      "questions": [
+        "BakkenのCorrect drop sizeで、採血量が足りない時に指を強く絞るよう勧める？"
+      ],
+      "answer": "強く絞ると組織液が出て試料が薄まるため勧めていません。10秒で足りなければ元の場所の隣を刺すという本書の採取法です。丸く盛り上がる直径2〜3mmの滴を例示し、薄く水っぽい試料は使わないとしています。個人への医療手技の指示ではありません。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "The drop should be 2-3 mm in diameter."
+        },
+        {
+          "kind": "quote",
+          "text": "If you do not get enough blood after ten seconds, prick again next to the original site instead of squeezing hard. Squeezing presses out tissue fluid that dilutes the sample."
+        },
+        {
+          "kind": "quote",
+          "text": "If the sample is thin and watery, do not use it."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Source-qualified session decisions and measurement methodology, no individualized medical procedure, uniform workload or numerical guarantee."
+      }
+    }
+  ]
+}

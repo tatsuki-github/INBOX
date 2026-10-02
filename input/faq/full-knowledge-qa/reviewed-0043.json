@@ -1,0 +1,317 @@
+{
+  "version": 1,
+  "entries": [
+    {
+      "id": "fullchunkqa-b545d206732d69295775d25a-1",
+      "chunk_id": "knowledge-b545d206732d69295775d25a",
+      "questions": [
+        "BakkenのAdaptation and Specificityで、閾値付近の量が持つ2つの利点は？"
+      ],
+      "answer": "競技に必要な広い範囲の筋線維を動員し、その運動単位を十分練習することと、競技に近い動作を管理された速度で長く重ねて効率を高めることです。著者の特異性の説明で、どの量でも安全という意味ではありません。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "the recruitment pattern at the threshold captures a broad spectrum of fibers needed for racing"
+        },
+        {
+          "kind": "quote",
+          "text": "you accumulate far more time at controlled speeds resembling race-pace movement"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Author examples and pilot study proposal distinguished from general prescription, fuel depletion advice and established treatment results."
+      }
+    },
+    {
+      "id": "fullchunkqa-b545d206732d69295775d25a-2",
+      "chunk_id": "knowledge-b545d206732d69295775d25a",
+      "questions": [
+        "BakkenのThe Pace Spread Advantage本文で、朝夕の速度差はどんな数値と組み合わせで示される？"
+      ],
+      "answer": "朝の閾値セッションが通常1〜2%遅く、朝の長い反復と夕方の短い反復の差も加わると同じ日の閾値範囲でも15〜20秒/kmの幅になるとしています。著者の構成上の例で、乳酸管理をせず夕方のペースだけを上げる指示ではありません。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "Morning sessions at the threshold are typically 1-2 percent slower than evening sessions."
+        },
+        {
+          "kind": "quote",
+          "text": "the range can reach 15-20 seconds per kilometer (24-32 seconds per mile)"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Author examples and pilot study proposal distinguished from general prescription, fuel depletion advice and established treatment results."
+      }
+    },
+    {
+      "id": "fullchunkqa-b545d206732d69295775d25a-3",
+      "chunk_id": "knowledge-b545d206732d69295775d25a",
+      "questions": [
+        "BakkenのAdditional Adaptive Benefitsで、冬と夏の朝夕の補給をどう対比している？"
+      ],
+      "answer": "冬は朝の軽いグリコーゲン低下による追加適応の可能性を述べ、夏は維持が目的なので2回目の前に十分補給する方向を示しています。追加適応は可能性としての説明で、読者や成長期の選手へ燃料不足を勧める回答にはしません。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "There is also a possibility that this type of training concentration produces additional adaptive effects."
+        },
+        {
+          "kind": "quote",
+          "text": "In summer, I would aim for the opposite. Be as fully fueled as possible before the second session, since the goal shifts from building to sustaining."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Author examples and pilot study proposal distinguished from general prescription, fuel depletion advice and established treatment results."
+      }
+    },
+    {
+      "id": "fullchunkqa-4e77debdadfd964b3d1fef47-1",
+      "chunk_id": "knowledge-4e77debdadfd964b3d1fef47",
+      "questions": [
+        "BakkenのAdditional Specific Variationsでは、朝が低い閾値域で夕方が高強度の例は、通常のダブル閾値と同じ強度？"
+      ],
+      "answer": "同じではありません。競技期前に夕方5〜8mmol/Lを狙う場合、朝1.7〜2.5mmol/Lという低い側で準備効果を使う変形例です。夕方もGolden Zoneに保つ通常の2回の閾値セッションと区別します。個人にこの値を指定する回答ではありません。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "evening session targets a lactate range of 5-8 mmol/L in the weeks before the racing season."
+        },
+        {
+          "kind": "quote",
+          "text": "say 1.7-2.5 mmol/L"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Author examples and pilot study proposal distinguished from general prescription, fuel depletion advice and established treatment results."
+      }
+    },
+    {
+      "id": "fullchunkqa-4e77debdadfd964b3d1fef47-2",
+      "chunk_id": "knowledge-4e77debdadfd964b3d1fef47",
+      "questions": [
+        "BakkenがMaximum Build versus Minimum Sustainで紹介するAlmgrenの夏の分割例は？"
+      ],
+      "answer": "単独の6〜7×6分の代わりに、朝4〜5×6分、夕方15〜20×1分という例を挙げています。短いセッションと低めの強度で維持と調整に使う紹介で、冬の最大負荷をそのまま維持する説明ではありません。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "he runs perhaps 4-5x6 minutes in the morning and 15-20x1 minute in the evening."
+        },
+        {
+          "kind": "quote",
+          "text": "He uses double threshold to sustain and sharpen simultaneously."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Author examples and pilot study proposal distinguished from general prescription, fuel depletion advice and established treatment results."
+      }
+    },
+    {
+      "id": "fullchunkqa-4e77debdadfd964b3d1fef47-3",
+      "chunk_id": "knowledge-4e77debdadfd964b3d1fef47",
+      "questions": [
+        "BakkenのSplitting Weekly Intensive Loadで、仕事中の静的姿勢を週の配置にどう含める？"
+      ],
+      "answer": "走る以外の筋の負荷も全体に含めます。長い静的姿勢が続く仕事なら週末のダブルと平日のイージー走が、疲れた平日に質的セッションを分散するより合うことがあるという著者の観察です。万人の曜日指定ではありません。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "extended static postures during the day, placing double threshold on weekends"
+        },
+        {
+          "kind": "quote",
+          "text": "overall muscular load, and that includes demands outside of running."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Author examples and pilot study proposal distinguished from general prescription, fuel depletion advice and established treatment results."
+      }
+    },
+    {
+      "id": "fullchunkqa-ccb7c227c402ffcfc7788b2c-1",
+      "chunk_id": "knowledge-ccb7c227c402ffcfc7788b2c",
+      "questions": [
+        "Bakkenが追加の回復日を置く例で、火曜のダブルから土曜の質的練習までの配置は？"
+      ],
+      "answer": "水曜イージー、木曜休み、金曜イージーです。土曜はダブル閾値か朝閾値と夕方X-session、日曜は長めのイージー、月曜もイージーという観察例で、個人に必要な休みを広く取る構成です。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "double threshold Tuesday, easy Wednesday, rest Thursday, easy Friday"
+        },
+        {
+          "kind": "quote",
+          "text": "double threshold or threshold morning plus X-session evening on Saturday, followed by longer easy runs Sunday and easy Monday."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Author examples and pilot study proposal distinguished from general prescription, fuel depletion advice and established treatment results."
+      }
+    },
+    {
+      "id": "fullchunkqa-ccb7c227c402ffcfc7788b2c-2",
+      "chunk_id": "knowledge-ccb7c227c402ffcfc7788b2c",
+      "questions": [
+        "BakkenのPractical Implicationsで、夕方に同じ自覚的努力の乳酸が低いことを、負荷を上げる合図とする？"
+      ],
+      "answer": "負荷を上げる合図とはしません。受け入れやすい状態を示すのであって、気分が良くても規律を保つと述べています。夕方の感覚だけで強くすることを勧める説明ではありません。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "Lower lactate at the same subjective effort means the system is receptive, not that you should increase the load."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Author examples and pilot study proposal distinguished from general prescription, fuel depletion advice and established treatment results."
+      }
+    },
+    {
+      "id": "fullchunkqa-ccb7c227c402ffcfc7788b2c-3",
+      "chunk_id": "knowledge-ccb7c227c402ffcfc7788b2c",
+      "questions": [
+        "BakkenのPractical Implicationsで、朝夕の間隔が短すぎる場合と10〜12時間を超える場合の違いは？"
+      ],
+      "answer": "好む間隔は6〜8時間です。より短いと筋の適応の利益の一部を失い、10〜12時間を超えると一つのブロックより別々のセッションに近づくと説明しています。著者の経験に基づく窓で、全員の回復時間を保証しません。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "Six to eight hours between sessions is my preferred window."
+        },
+        {
+          "kind": "quote",
+          "text": "Shorter can work, but you lose some of the benefits of muscle adaptation."
+        },
+        {
+          "kind": "quote",
+          "text": "Longer than ten to twelve hours, and you begin approaching two separate sessions rather than one block."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Author examples and pilot study proposal distinguished from general prescription, fuel depletion advice and established treatment results."
+      }
+    },
+    {
+      "id": "fullchunkqa-8b848a1a76988bbcb40c8380-1",
+      "chunk_id": "knowledge-8b848a1a76988bbcb40c8380",
+      "questions": [
+        "Bakkenの筋緊張の技術章導入で、より精密な理解へのきっかけとなった理学療法士は？"
+      ],
+      "answer": "Johnny Høgsethです。著者は早期から筋の役割を感じていたが、この理学療法士がより精密な理解への扉を開いたと述べています。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "it was physiotherapist Johnny\nHøgseth who opened the door to something more precise."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Author examples and pilot study proposal distinguished from general prescription, fuel depletion advice and established treatment results."
+      }
+    },
+    {
+      "id": "fullchunkqa-8b848a1a76988bbcb40c8380-2",
+      "chunk_id": "knowledge-8b848a1a76988bbcb40c8380",
+      "questions": [
+        "Bakkenの筋緊張の技術章導入で、求心性と遠心性の神経はどちら向きと説明される？"
+      ],
+      "answer": "求心性は感覚情報を脳・脊髄へ、遠心性は信号を筋や他の器官へ運ぶと説明しています。Per Brodalの教科書の記述に触れる文脈で、単一の神経信号だけで筋緊張を説明し切るとはしていません。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "Afferent nerves carry sensory information into the brain and spinal cord. Efferent nerves carry signals out to muscles and other organs."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Author examples and pilot study proposal distinguished from general prescription, fuel depletion advice and established treatment results."
+      }
+    },
+    {
+      "id": "fullchunkqa-8b848a1a76988bbcb40c8380-3",
+      "chunk_id": "knowledge-8b848a1a76988bbcb40c8380",
+      "questions": [
+        "Bakkenの筋緊張の技術章導入で、Brodalへ依頼した修士論文の内容は？"
+      ],
+      "answer": "マッサージ後の筋緊張をmyotonometerで客観測定するパイロット研究と文献レビューです。同級生と指導を依頼した経緯で、章のこの時点でマッサージの効果が確立したという結果ではありません。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "a pilot study measuring muscle tone objectively with a myotonometer after massage, combined with a literature review."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Author examples and pilot study proposal distinguished from general prescription, fuel depletion advice and established treatment results."
+      }
+    }
+  ]
+}

@@ -1,0 +1,341 @@
+{
+  "version": 1,
+  "entries": [
+    {
+      "id": "fullchunkqa-eafe5d95968bc94f5077f1d4-1",
+      "chunk_id": "knowledge-eafe5d95968bc94f5077f1d4",
+      "questions": [
+        "BakkenのDaily execution of the stair testでは、比較しやすくするために何をそろえる？"
+      ],
+      "answer": "毎日登れる同じ短い階段、同じ段数、できれば同じ時間帯をそろえます。登っている時と上に着いた時の太ももの筋の感覚へ注意を向け、普段の変動への感度を育てるという本書の観察案です。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "same stairs, same number of steps, ideally at the same time of day"
+        },
+        {
+          "kind": "quote",
+          "text": "how the thigh muscles feel on the way up and when you reach the top"
+        },
+        {
+          "kind": "quote",
+          "text": "Over time, you'll develop sensitivity to your normal variations"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Author-qualified observation frameworks and study descriptions; no single-metric diagnosis, medical clearance or automatic load increase. Text narrative is distinguished from figure shorthand."
+      }
+    },
+    {
+      "id": "fullchunkqa-eafe5d95968bc94f5077f1d4-2",
+      "chunk_id": "knowledge-eafe5d95968bc94f5077f1d4",
+      "questions": [
+        "Bakkenの階段テストで、普段より重い・硬い・動きにくい太ももは、何を示す可能性として扱われる？"
+      ],
+      "answer": "回復が負荷に追い付いていない早期の信号かもしれない、と扱っています。普段の状態との比較を重視する観察で、一回の重さだけでオーバートレーニングや病気を確定するテストではありません。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "Days when the stairs feel unusually heavy, when the thighs seem stiff or sluggish, may be an early signal that recovery isn't keeping pace with load"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Author-qualified observation frameworks and study descriptions; no single-metric diagnosis, medical clearance or automatic load increase. Text narrative is distinguished from figure shorthand."
+      }
+    },
+    {
+      "id": "fullchunkqa-eafe5d95968bc94f5077f1d4-3",
+      "chunk_id": "knowledge-eafe5d95968bc94f5077f1d4",
+      "questions": [
+        "Bakkenが筋を直接観察する説明では、横へ動かしにくさと、離した後に戻る速さを何に対応させている？"
+      ],
+      "answer": "横へ動かせる範囲は筋緊張の観察で、高い緊張では動きが制限されると説明しています。離した後に戻る速さは弾性に対応させています。著者の感覚的な観察案で、触るだけで個人の病気や練習可否を決めるものではありません。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "Shift the muscle sideways and feel how freely it moves; high tone limits displacement."
+        },
+        {
+          "kind": "quote",
+          "text": "Then release. The speed at which it springs back is the elasticity."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Author-qualified observation frameworks and study descriptions; no single-metric diagnosis, medical clearance or automatic load increase. Text narrative is distinguished from figure shorthand."
+      }
+    },
+    {
+      "id": "fullchunkqa-44ecc0bcd6dd15b26bb771ad-1",
+      "chunk_id": "knowledge-44ecc0bcd6dd15b26bb771ad",
+      "questions": [
+        "BakkenのHRV Measurementでは、過負荷ならHRVは必ず低くなるとしている？"
+      ],
+      "answer": "必ずではありません。よく見られる反応は徐々に低下することですが、過負荷の持久系アスリートで上がる傾向も報告されたと説明しています。交感神経優位と副交感神経過活動の2つの表れ方を挙げ、研究は混在するとしています。HRV単独の診断を勧める説明ではありません。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "The most common response to overload is a progressive drop in HRV. Yet several studies have reported rising HRV trends in overtrained endurance athletes."
+        },
+        {
+          "kind": "quote",
+          "text": "The research is mixed."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Author-qualified observation frameworks and study descriptions; no single-metric diagnosis, medical clearance or automatic load increase. Text narrative is distinguished from figure shorthand."
+      }
+    },
+    {
+      "id": "fullchunkqa-44ecc0bcd6dd15b26bb771ad-2",
+      "chunk_id": "knowledge-44ecc0bcd6dd15b26bb771ad",
+      "questions": [
+        "BakkenがHRVを使う時に勧める、測定条件と傾向を見る期間は？"
+      ],
+      "answer": "同じ時間、同じ姿勢、同じ条件で測定し、7日間の移動平均を追い、上がる方向も下がる方向も見る案です。主観的な指標と組み合わせ、一回の読み値に過剰に反応しないよう説明しています。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "same time, same position, same conditions. Track seven-day rolling averages and stay alert to both increases and decreases. Always pair HRV with subjective markers, and resist overreacting to single readings."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Author-qualified observation frameworks and study descriptions; no single-metric diagnosis, medical clearance or automatic load increase. Text narrative is distinguished from figure shorthand."
+      }
+    },
+    {
+      "id": "fullchunkqa-44ecc0bcd6dd15b26bb771ad-3",
+      "chunk_id": "knowledge-44ecc0bcd6dd15b26bb771ad",
+      "questions": [
+        "Bakkenが紹介するAlfonsoらの2025年研究では、日々のHRVと一緒に読む指標は？"
+      ],
+      "answer": "安静時心拍と主観的な健康感です。睡眠の質、活力、気分も一緒に捉える図が示されています。一つの数値だけで全体を判断しないという研究紹介で、個人の健康状態を判定する回答ではありません。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "daily HRV should be read alongside resting heart rate and perceived well-being."
+        },
+        {
+          "kind": "quote",
+          "text": "No single metric tells the full picture. Read all three together."
+        },
+        {
+          "kind": "quote",
+          "text": "Sleep quality, energy, mood"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Author-qualified observation frameworks and study descriptions; no single-metric diagnosis, medical clearance or automatic load increase. Text narrative is distinguished from figure shorthand."
+      }
+    },
+    {
+      "id": "fullchunkqa-52d82f982535ab233edc5fc2-1",
+      "chunk_id": "knowledge-52d82f982535ab233edc5fc2",
+      "questions": [
+        "BakkenのPerformance Tests Every Fourth Weekでは、乳酸を使った定期テストをどうそろえて比較する？"
+      ],
+      "answer": "4週ごとの最大下の標準テストで、10分のウォームアップの後、固定ペースの5分を3〜5本とする案です。乳酸・心拍・ペースを前のテストと対応させ、パターンを比較します。個人の診断や運動許可の検査ではありません。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "a submaximal standard test every four weeks. Begin with 10 minutes of warm-up, then run 3-5 x 5 minutes at fixed paces. Compare against previous tests by correlating lactate with heart rate and pace; look for patterns."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Author-qualified observation frameworks and study descriptions; no single-metric diagnosis, medical clearance or automatic load increase. Text narrative is distinguished from figure shorthand."
+      }
+    },
+    {
+      "id": "fullchunkqa-52d82f982535ab233edc5fc2-2",
+      "chunk_id": "knowledge-52d82f982535ab233edc5fc2",
+      "questions": [
+        "BakkenのBlood Workでは、CKに一つの正しい判定値を設けている？"
+      ],
+      "answer": "一つの正しいカットオフはないとしています。基準値には大きな個人差があり、強い練習で1〜3日上がることもあるため、症状や回復と合わせた経時的な傾向が重要という説明です。検査値だけで過負荷や病気を診断しません。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "For CK, there is no single \"right\" cutoff. Baselines vary widely, hard training can elevate CK for 1 to 3 days"
+        },
+        {
+          "kind": "quote",
+          "text": "the most useful signal is the trend over time together with symptoms and recovery."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Author-qualified observation frameworks and study descriptions; no single-metric diagnosis, medical clearance or automatic load increase. Text narrative is distinguished from figure shorthand."
+      }
+    },
+    {
+      "id": "fullchunkqa-52d82f982535ab233edc5fc2-3",
+      "chunk_id": "knowledge-52d82f982535ab233edc5fc2",
+      "questions": [
+        "BakkenのBuffer Weeksのsuper-easy week例は、通常の量・閾値練習・短い反復をどう扱う？"
+      ],
+      "answer": "およそ4週ごとに、通常の量の60〜70%、閾値ペースのセッションは最大1回、質の要素は45/15など短い反復を中心にする例です。イージー練習を非常に楽にし、再び機能してから過負荷へ戻らないための緩衝週として示しています。個人向けの復帰処方ではありません。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "roughly every fourth week once you're functioning again."
+        },
+        {
+          "kind": "quote",
+          "text": "Volume: 60-70% of normal"
+        },
+        {
+          "kind": "quote",
+          "text": "Intensity: At most one threshold-pace session"
+        },
+        {
+          "kind": "quote",
+          "text": "Quality emphasis: Shorter intervals like 45/15"
+        },
+        {
+          "kind": "quote",
+          "text": "Easy sessions: Very easy"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Author-qualified observation frameworks and study descriptions; no single-metric diagnosis, medical clearance or automatic load increase. Text narrative is distinguished from figure shorthand."
+      }
+    },
+    {
+      "id": "fullchunkqa-9a0304b59ae30dbeb30ed5b3-1",
+      "chunk_id": "knowledge-9a0304b59ae30dbeb30ed5b3",
+      "questions": [
+        "BakkenのTraffic Light Modelの本文で、緑・黄・赤はどんな判断と練習変更に対応する？"
+      ],
+      "answer": "緑はウォームアップ心拍が低く乳酸で確認した閾値心拍が高く、安静時心拍と筋の感覚も合う日に拡大する判断です。黄は通常値で予定通り、赤は高いウォームアップ心拍または低い閾値心拍と早い段階の高い乳酸で中止かウォームアップまでという説明です。著者のモデルで、緑でも一律に増量する指示ではありません。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "Green light: Low warm-up heart rate and high heart rate at the threshold (confirmed by lactate). If resting heart rate and muscular feel aligned"
+        },
+        {
+          "kind": "quote",
+          "text": "Yellow light: Normal values = complete as planned."
+        },
+        {
+          "kind": "quote",
+          "text": "Red light: High warm-up heart rate or low threshold heart rate combined with\nelevated lactate early in the session = abort the workout or stop after warm-up."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Author-qualified observation frameworks and study descriptions; no single-metric diagnosis, medical clearance or automatic load increase. Text narrative is distinguished from figure shorthand."
+      }
+    },
+    {
+      "id": "fullchunkqa-9a0304b59ae30dbeb30ed5b3-2",
+      "chunk_id": "knowledge-9a0304b59ae30dbeb30ed5b3",
+      "questions": [
+        "BakkenのTraffic Light Model本文では、赤で練習を中止した後の負荷をどう戻す例？"
+      ],
+      "answer": "1日休み、次の1日をイージーにしてから通常の負荷へ戻す例です。日々の測定と感覚に応じて引くモデルの手順で、病気やけががあってもこの日数で戻れるという医学的な許可ではありません。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "Then one day off, one day easy, before resuming normal load."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Author-qualified observation frameworks and study descriptions; no single-metric diagnosis, medical clearance or automatic load increase. Text narrative is distinguished from figure shorthand."
+      }
+    },
+    {
+      "id": "fullchunkqa-9a0304b59ae30dbeb30ed5b3-3",
+      "chunk_id": "knowledge-9a0304b59ae30dbeb30ed5b3",
+      "questions": [
+        "BakkenがTraffic Light Modelの簡単な実践として挙げる、インターバル前の固定した反復は？"
+      ],
+      "answer": "標準的なウォームアップの後、毎回3〜6分の固定した閾値反復を行う案です。継続してその日の感覚と測定に基づくデータを蓄積し、柔軟な判断の枠組みを作る目的です。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "run a fixed threshold rep of 3-6 minutes before every interval session, following a standard warm-up."
+        },
+        {
+          "kind": "quote",
+          "text": "Done consistently, this yields valuable data."
+        },
+        {
+          "kind": "quote",
+          "text": "a flexible framework grounded in how the body is actually functioning that day"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Author-qualified observation frameworks and study descriptions; no single-metric diagnosis, medical clearance or automatic load increase. Text narrative is distinguished from figure shorthand."
+      }
+    }
+  ]
+}

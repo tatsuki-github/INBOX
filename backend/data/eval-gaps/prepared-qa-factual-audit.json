@@ -1,10 +1,10 @@
 {
-  "catalog_sha256": "51a2191f6090ce3293cedd70e25e3bd94bd11e4e689343b65bb7465ea7f415e6",
-  "total": 39011,
+  "catalog_sha256": "098bbb326a1820f039bcbffbe8da71836b38777c346946e94aa02a99666b110f",
+  "total": 39161,
   "checks": {
     "source_text_time_check": 5041,
     "source_projection_claim_check": 30136,
-    "manual_context_review_and_source_quote_check": 471,
+    "manual_context_review_and_source_quote_check": 621,
     "validated_csv_clock_comparison": 807,
     "validated_json_passing_rank_change": 987,
     "validated_csv_dated_meet_comparison": 438,
@@ -187,7 +187,7 @@
     "input/external/sb/middle-school/by-year/2025-sb-adopted.json": "dc4291a27d46dcbbf6e54d616215f65b23b7a25dd6aee313da82345ad150e4ad",
     "input/external/sb/middle-school/by-year/2026-sb-adopted.json": "8caaf624b7e0153435113cd31b5f68dfad842ead7d31bb95d1399f549ada2dbc",
     "input/external/sb/middle-school/wide/中学生SB.csv": "4d002dab9b220b639d7d1cba4c97e4f239b4ddfd2b286b7e3666a753083fa0a3",
-    "input/faq/prepared-qa.v1.yaml": "51a2191f6090ce3293cedd70e25e3bd94bd11e4e689343b65bb7465ea7f415e6",
+    "input/faq/prepared-qa.v1.yaml": "098bbb326a1820f039bcbffbe8da71836b38777c346946e94aa02a99666b110f",
     "input/idaten-corpus/aragyoku/men_full_2012_2025.json": "22ef3aa633a050fe2547148d61e0e59d083391c39ebb64400296413197ec8eaa",
     "input/idaten-corpus/aragyoku/quiz/荒玉駅伝○×クイズ.csv": "98ff94e5397ac63df6dd3b27de26805affb810b659ee0bbda33fe8d1acd6548a",
     "input/idaten-corpus/aragyoku/winners-by-year.md": "7d048472790b4503a92796c9391f1eb32ee54a0041395de9e1bbae2eef57196f",
@@ -362,6 +362,7 @@
     "input/idaten-corpus/drive-text/練習/駅伝試走/2025.pdf.md": "0ab86880883b23b7b234ed131743e83beca003ffc4f567c0761c3cf671632bb8",
     "input/idaten-corpus/drive-text/記録データベース/2026年度/中学生記録.csv": "09c368fb404d5a00077e642799813e2fee6768a88600ba5bb6955beaa607aa43",
     "input/memos/norwegian_method_applied_full.txt": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+    "input/memos/rri_healing_evidence_review.md": "f237f7958e8cb292080527154763d2093a54fc4f248c3e1c0cd69f1161c0e79e",
     "out/2020/calendar.md": "2d4c2fefcdbca987a451a21e6658920d6c25a4e07559746598d756658f475f54",
     "out/2020/events.json": "91e48e43e6b88a0dd59400f7b8be4c3ab38316c2c5e336a1f548919849c3df24",
     "out/2020/google.csv": "c49ec35ac5d82b8c95d449fe6e400040ff220f36facea168053ec9ccaca75161",
@@ -482,7 +483,7 @@
     "out/analysis/arato-tamana-teams/ﾀﾏﾅﾁｭｳ玉名中.md": "d56544d05ffc45d98a81caf0212f7f0fcc33d0ed286999cdec019050ed6150b8",
     "out/analysis/athletes/takada-mana.md": "aec07e6f4e13e523be93996bb141d5a658441e4671ed462f13fbad13ba8169f8",
     "out/analysis/notion_records_2026.json": "554879640ef341eb82825a9418c27be4ee272f72912e86118a93b43fb6f20c44",
-    "out/knowledge-graph.json": "0a1c747464bba930d88e2d0d7f0bbf73863df739b17d866c55fc3e59126dd2a9",
+    "out/knowledge-graph.json": "b6234e40548632f1ff60bfea0ec6a7552b7c6978c3f1d9b131b52ccb53960dcc",
     "outputs/荒玉駅伝2026徹底対策.pdf": "3a409e93f73b78907eb8066c34394ad6f1a0dcaf87fe7ca9c169bc8a2e7e67ef",
     "scripts/generate_prepared_qa_prefectural_top2.py": "9a03bd2f563fd5496c7a8a6d406e487f36d77715d9f50f35d6f955a9b1d88fcb",
     "work/build_aragyoku_2026_pdf.py": "9ef2faaf5fd67cd6e9447d8ec7e7d24f7d6d799157b04043dbcd2a4be471077c"
@@ -195540,6 +195541,756 @@
     },
     {
       "id": "fullchunkqa-f4c533e4bd3098a2fae876dd-3",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "fullchunkqa-eafe5d95968bc94f5077f1d4-1",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "fullchunkqa-eafe5d95968bc94f5077f1d4-2",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "fullchunkqa-eafe5d95968bc94f5077f1d4-3",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "fullchunkqa-44ecc0bcd6dd15b26bb771ad-1",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "fullchunkqa-44ecc0bcd6dd15b26bb771ad-2",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "fullchunkqa-44ecc0bcd6dd15b26bb771ad-3",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "fullchunkqa-52d82f982535ab233edc5fc2-1",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "fullchunkqa-52d82f982535ab233edc5fc2-2",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "fullchunkqa-52d82f982535ab233edc5fc2-3",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "fullchunkqa-9a0304b59ae30dbeb30ed5b3-1",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "fullchunkqa-9a0304b59ae30dbeb30ed5b3-2",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "fullchunkqa-9a0304b59ae30dbeb30ed5b3-3",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "fullchunkqa-39c42a82656baa222be837de-1",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "fullchunkqa-39c42a82656baa222be837de-2",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "fullchunkqa-39c42a82656baa222be837de-3",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "fullchunkqa-6c910f00791b3129ade2fc8d-1",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "fullchunkqa-6c910f00791b3129ade2fc8d-2",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "fullchunkqa-6c910f00791b3129ade2fc8d-3",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "fullchunkqa-bbdc0aff159ffbd16bdb0830-1",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "fullchunkqa-bbdc0aff159ffbd16bdb0830-2",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "fullchunkqa-bbdc0aff159ffbd16bdb0830-3",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "fullchunkqa-55502dd8a8577c158efe8bff-1",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "fullchunkqa-55502dd8a8577c158efe8bff-2",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "fullchunkqa-55502dd8a8577c158efe8bff-3",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "fullchunkqa-6ad58ace4fc6f452fddaeae0-1",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "fullchunkqa-6ad58ace4fc6f452fddaeae0-2",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "fullchunkqa-6ad58ace4fc6f452fddaeae0-3",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "fullchunkqa-7910bf26e52f8eb4cd73868d-1",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "fullchunkqa-7910bf26e52f8eb4cd73868d-2",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "fullchunkqa-7910bf26e52f8eb4cd73868d-3",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "fullchunkqa-ac8ba39e09a635cdf8941a16-1",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "fullchunkqa-ac8ba39e09a635cdf8941a16-2",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "fullchunkqa-ac8ba39e09a635cdf8941a16-3",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "fullchunkqa-f406e44636f6b16f587d0c66-1",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "fullchunkqa-f406e44636f6b16f587d0c66-2",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "fullchunkqa-f406e44636f6b16f587d0c66-3",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "fullchunkqa-bb60420026030dbf68fb3de3-1",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "fullchunkqa-bb60420026030dbf68fb3de3-2",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "fullchunkqa-bb60420026030dbf68fb3de3-3",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "fullchunkqa-06b528d8ed508ea063810baf-1",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "fullchunkqa-06b528d8ed508ea063810baf-2",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "fullchunkqa-06b528d8ed508ea063810baf-3",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "fullchunkqa-513b1c03af95b8043186733d-1",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "fullchunkqa-513b1c03af95b8043186733d-2",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "fullchunkqa-513b1c03af95b8043186733d-3",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "fullchunkqa-ee1c2f338eda0a95fa28335e-1",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "fullchunkqa-ee1c2f338eda0a95fa28335e-2",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "fullchunkqa-ee1c2f338eda0a95fa28335e-3",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "fullchunkqa-601607ad5b2408bc8695ebd3-1",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "fullchunkqa-601607ad5b2408bc8695ebd3-2",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "fullchunkqa-601607ad5b2408bc8695ebd3-3",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "fullchunkqa-b1d9746c205343f4d4815467-1",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "fullchunkqa-b1d9746c205343f4d4815467-2",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "fullchunkqa-b1d9746c205343f4d4815467-3",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "fullchunkqa-b3d99a2dd397927cc18a34e5-1",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "fullchunkqa-b3d99a2dd397927cc18a34e5-2",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "fullchunkqa-b3d99a2dd397927cc18a34e5-3",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "fullchunkqa-904cba2a262988f5afd51e8f-1",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "fullchunkqa-904cba2a262988f5afd51e8f-2",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "fullchunkqa-904cba2a262988f5afd51e8f-3",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "fullchunkqa-120627d4defad86de0eb3b6f-1",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "fullchunkqa-120627d4defad86de0eb3b6f-2",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "fullchunkqa-120627d4defad86de0eb3b6f-3",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "fullchunkqa-c3bca80d5434558d6bcb2916-1",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "fullchunkqa-c3bca80d5434558d6bcb2916-2",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "fullchunkqa-c3bca80d5434558d6bcb2916-3",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "fullchunkqa-499b350d39cd79e676ff00da-1",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "fullchunkqa-499b350d39cd79e676ff00da-2",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "fullchunkqa-499b350d39cd79e676ff00da-3",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "fullchunkqa-25903c30a7e2957870dc9c79-1",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "fullchunkqa-25903c30a7e2957870dc9c79-2",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "fullchunkqa-25903c30a7e2957870dc9c79-3",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "fullchunkqa-b545d206732d69295775d25a-1",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "fullchunkqa-b545d206732d69295775d25a-2",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "fullchunkqa-b545d206732d69295775d25a-3",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "fullchunkqa-4e77debdadfd964b3d1fef47-1",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "fullchunkqa-4e77debdadfd964b3d1fef47-2",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "fullchunkqa-4e77debdadfd964b3d1fef47-3",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "fullchunkqa-ccb7c227c402ffcfc7788b2c-1",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "fullchunkqa-ccb7c227c402ffcfc7788b2c-2",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "fullchunkqa-ccb7c227c402ffcfc7788b2c-3",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "fullchunkqa-8b848a1a76988bbcb40c8380-1",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "fullchunkqa-8b848a1a76988bbcb40c8380-2",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "fullchunkqa-8b848a1a76988bbcb40c8380-3",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "fullchunkqa-49df3ab2115bbc273b0293c2-1",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "fullchunkqa-49df3ab2115bbc273b0293c2-2",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "fullchunkqa-49df3ab2115bbc273b0293c2-3",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "fullchunkqa-a9977213689c8b93c39ee28c-1",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "fullchunkqa-a9977213689c8b93c39ee28c-2",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "fullchunkqa-a9977213689c8b93c39ee28c-3",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "fullchunkqa-78be121bfca4df071d225811-1",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "fullchunkqa-78be121bfca4df071d225811-2",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "fullchunkqa-78be121bfca4df071d225811-3",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "fullchunkqa-48cbc84fc001eaf10417a3eb-1",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "fullchunkqa-48cbc84fc001eaf10417a3eb-2",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "fullchunkqa-48cbc84fc001eaf10417a3eb-3",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "fullchunkqa-52345d8f17316f281b2a60bc-1",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "fullchunkqa-52345d8f17316f281b2a60bc-2",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "fullchunkqa-52345d8f17316f281b2a60bc-3",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "fullchunkqa-d7968d5bbfb1a65c3d00171b-1",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "fullchunkqa-d7968d5bbfb1a65c3d00171b-2",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "fullchunkqa-d7968d5bbfb1a65c3d00171b-3",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "fullchunkqa-9053fd7494d06e7e4dde7309-1",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "fullchunkqa-9053fd7494d06e7e4dde7309-2",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "fullchunkqa-9053fd7494d06e7e4dde7309-3",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "fullchunkqa-366f404b35584db8cf410af0-1",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "fullchunkqa-366f404b35584db8cf410af0-2",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "fullchunkqa-366f404b35584db8cf410af0-3",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "fullchunkqa-5c728eceb61b35ed5dac5025-1",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "fullchunkqa-5c728eceb61b35ed5dac5025-2",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "fullchunkqa-5c728eceb61b35ed5dac5025-3",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "fullchunkqa-3d82955af036c427178dca3a-1",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "fullchunkqa-3d82955af036c427178dca3a-2",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "fullchunkqa-3d82955af036c427178dca3a-3",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "fullchunkqa-a7cff672d60b18a52d812607-1",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "fullchunkqa-a7cff672d60b18a52d812607-2",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "fullchunkqa-a7cff672d60b18a52d812607-3",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "fullchunkqa-db0cba767ba7c3070e014806-1",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "fullchunkqa-db0cba767ba7c3070e014806-2",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "fullchunkqa-db0cba767ba7c3070e014806-3",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "fullchunkqa-228fff554fe207e493be7106-1",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "fullchunkqa-228fff554fe207e493be7106-2",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "fullchunkqa-228fff554fe207e493be7106-3",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "fullchunkqa-fbfe94ab4f46b102530763db-1",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "fullchunkqa-fbfe94ab4f46b102530763db-2",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "fullchunkqa-fbfe94ab4f46b102530763db-3",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "fullchunkqa-bae04bb2c93f754c7677acc3-1",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "fullchunkqa-bae04bb2c93f754c7677acc3-2",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "fullchunkqa-bae04bb2c93f754c7677acc3-3",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "fullchunkqa-2cfbd0cd38ebffb8c05e2215-1",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "fullchunkqa-2cfbd0cd38ebffb8c05e2215-2",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "fullchunkqa-2cfbd0cd38ebffb8c05e2215-3",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "fullchunkqa-9cb033e087d41997cb3e9c55-1",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "fullchunkqa-9cb033e087d41997cb3e9c55-2",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "fullchunkqa-9cb033e087d41997cb3e9c55-3",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "fullchunkqa-fae314bf94adb9fc90b1a599-1",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "fullchunkqa-fae314bf94adb9fc90b1a599-2",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "fullchunkqa-fae314bf94adb9fc90b1a599-3",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "fullchunkqa-3ac25cb28b98321f0998f965-1",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "fullchunkqa-3ac25cb28b98321f0998f965-2",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "fullchunkqa-3ac25cb28b98321f0998f965-3",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "fullchunkqa-90f1368dd1304e0c5c2ff74e-1",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "fullchunkqa-90f1368dd1304e0c5c2ff74e-2",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "fullchunkqa-90f1368dd1304e0c5c2ff74e-3",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "fullchunkqa-353bb38dec574931f45f6182-1",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "fullchunkqa-353bb38dec574931f45f6182-2",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "fullchunkqa-353bb38dec574931f45f6182-3",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "fullchunkqa-84fde55b742243904430247c-1",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "fullchunkqa-84fde55b742243904430247c-2",
+      "check": "manual_context_review_and_source_quote_check",
+      "problems": []
+    },
+    {
+      "id": "fullchunkqa-84fde55b742243904430247c-3",
       "check": "manual_context_review_and_source_quote_check",
       "problems": []
     }
