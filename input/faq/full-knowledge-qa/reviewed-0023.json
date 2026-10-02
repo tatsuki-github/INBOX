@@ -1,0 +1,1205 @@
+{
+  "version": 1,
+  "entries": [
+    {
+      "id": "fullchunkqa-0455984d98bcf8f29ce14657-1",
+      "chunk_id": "knowledge-0455984d98bcf8f29ce14657",
+      "questions": [
+        "女子駅伝トラック突合資料で、原画像と同年度CSVの選手名が競合した場合、どんな照合条件でCSV表記を優先する？"
+      ],
+      "answer": "同年度CSVの女子・中学生を学校・学年・継続年度・走力で照合し、一意に本人と判断できる表記をCSV優先にするルールが記載されています。単に同姓同名というだけで無条件に変更するルールではありません。",
+      "sources": [
+        "out/analysis/aragyoku_women_track_joined.json"
+      ],
+      "source_sha256": "1807570e93837c9e1fa446341c1ec4d8f980f4e5d321657a95127712d08f58d9",
+      "evidence": [
+        {
+          "kind": "json-unit",
+          "unit": {
+            "pointer": "/meta",
+            "value": {
+              "title": "荒玉（玉名荒尾）中体連駅伝・女子・上位6校 トラック走力突合",
+              "years": [
+                2025,
+                2024,
+                2023,
+                2022,
+                2021,
+                2020,
+                2019,
+                2018,
+                2017,
+                2016,
+                2015,
+                2013,
+                2012
+              ],
+              "missing_years": [
+                2014
+              ],
+              "verification": {
+                "method": "原画像との全セル目視照合",
+                "verified_years": [
+                  2012,
+                  2013,
+                  2015,
+                  2016,
+                  2017,
+                  2018,
+                  2019,
+                  2020,
+                  2021,
+                  2022,
+                  2023,
+                  2024,
+                  2025
+                ],
+                "cells_per_year": 138,
+                "checked_cells": 1794,
+                "unreadable_cells": 0,
+                "corrected_cells": 9,
+                "csv_reconciled_cells": 33,
+                "csv_reconciliation_rule": "同年度CSVの女子・中学生を学校・学年・継続年度・走力で照合し、一意に本人と判断できる表記はCSVを優先",
+                "csv_reconciliation_source": "input/aragyoku/reconciliations/women_csv_reconciliations.json"
+              },
+              "stats": {
+                "athletes": 390,
+                "with_any_track": 230,
+                "with_sb": 230,
+                "with_url": 230
+              },
+              "guide_note": "「駅伝」は大会当日の区間走結果（道路コース）です。女子は1〜5区がそれぞれ約3.0km・1.855km・2.0km・2.0km・3.0kmで、トラック種目（800m/1500m/3000m）とは距離・路面・気象・タスキ条件が異なります。トラックSB/直近は同年の走力指標として並記していますが、短い種目が強い選手ほど長い区間では相対的に伸び、逆も起こります。数式による換算ではなく、実際の駅伝タイムとトラック走力の両方を見て判断してください。",
+              "drive_source_note": "駅伝記録は Google Drive「荒玉駅伝歴代」の結果画像と全セルを目視照合済み。ただし2014年女子の原画像は同フォルダ内で確認できず、未掲載。選手名は同年度の中学生女子トラック記録CSVと照合し、表記が競合する場合はCSVを優先。トラック記録は2012〜2026年度CSVのうち、駅伝と同じ年度だけを参照。学校以外のクラブ所属（ATRC, NJAC, 長洲JRC, 金栗PROJECT 等）も、駅伝選手と同姓同名かつ学年が矛盾しない場合は同一人物として取り込む。",
+              "sources": {
+                "ekiden": "input/aragyoku/women_top6_2012_2025.json",
+                "wide_sb": "input/external/sb/middle-school/wide/中学生SB.csv",
+                "output_reg": "input/external/drive/personal/t-tsuchiyama/sb/output_reg_中学生_女子.csv",
+                "by_year": "input/external/sb/middle-school/by-year",
+                "notion": [
+                  "input/external/notion/databases/2024年度中学生/rows.json",
+                  "input/external/notion/databases/2025年度中学生記録/rows.json",
+                  "input/external/notion/databases/2026年度中学生記録/rows.json"
+                ]
+              }
+            },
+            "context": {}
+          }
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Reviewed exact year/team/athlete, source selection and meet dates; saved SB/recent fields can be after the ekiden date, never silently used as race-day or current performance."
+      }
+    },
+    {
+      "id": "fullchunkqa-0455984d98bcf8f29ce14657-2",
+      "chunk_id": "knowledge-0455984d98bcf8f29ce14657",
+      "questions": [
+        "女子駅伝トラック突合資料は、学校と違うクラブ所属のトラック記録を、どんな条件で同一人物として取り込む？"
+      ],
+      "answer": "ATRC、NJAC、長洲JRC、金栗PROJECTなどのクラブ所属も、駅伝選手と同姓同名で、学年が矛盾しない場合に取り込む方針です。これは保存資料の突合ルールです。",
+      "sources": [
+        "out/analysis/aragyoku_women_track_joined.json"
+      ],
+      "source_sha256": "1807570e93837c9e1fa446341c1ec4d8f980f4e5d321657a95127712d08f58d9",
+      "evidence": [
+        {
+          "kind": "json-unit",
+          "unit": {
+            "pointer": "/meta",
+            "value": {
+              "title": "荒玉（玉名荒尾）中体連駅伝・女子・上位6校 トラック走力突合",
+              "years": [
+                2025,
+                2024,
+                2023,
+                2022,
+                2021,
+                2020,
+                2019,
+                2018,
+                2017,
+                2016,
+                2015,
+                2013,
+                2012
+              ],
+              "missing_years": [
+                2014
+              ],
+              "verification": {
+                "method": "原画像との全セル目視照合",
+                "verified_years": [
+                  2012,
+                  2013,
+                  2015,
+                  2016,
+                  2017,
+                  2018,
+                  2019,
+                  2020,
+                  2021,
+                  2022,
+                  2023,
+                  2024,
+                  2025
+                ],
+                "cells_per_year": 138,
+                "checked_cells": 1794,
+                "unreadable_cells": 0,
+                "corrected_cells": 9,
+                "csv_reconciled_cells": 33,
+                "csv_reconciliation_rule": "同年度CSVの女子・中学生を学校・学年・継続年度・走力で照合し、一意に本人と判断できる表記はCSVを優先",
+                "csv_reconciliation_source": "input/aragyoku/reconciliations/women_csv_reconciliations.json"
+              },
+              "stats": {
+                "athletes": 390,
+                "with_any_track": 230,
+                "with_sb": 230,
+                "with_url": 230
+              },
+              "guide_note": "「駅伝」は大会当日の区間走結果（道路コース）です。女子は1〜5区がそれぞれ約3.0km・1.855km・2.0km・2.0km・3.0kmで、トラック種目（800m/1500m/3000m）とは距離・路面・気象・タスキ条件が異なります。トラックSB/直近は同年の走力指標として並記していますが、短い種目が強い選手ほど長い区間では相対的に伸び、逆も起こります。数式による換算ではなく、実際の駅伝タイムとトラック走力の両方を見て判断してください。",
+              "drive_source_note": "駅伝記録は Google Drive「荒玉駅伝歴代」の結果画像と全セルを目視照合済み。ただし2014年女子の原画像は同フォルダ内で確認できず、未掲載。選手名は同年度の中学生女子トラック記録CSVと照合し、表記が競合する場合はCSVを優先。トラック記録は2012〜2026年度CSVのうち、駅伝と同じ年度だけを参照。学校以外のクラブ所属（ATRC, NJAC, 長洲JRC, 金栗PROJECT 等）も、駅伝選手と同姓同名かつ学年が矛盾しない場合は同一人物として取り込む。",
+              "sources": {
+                "ekiden": "input/aragyoku/women_top6_2012_2025.json",
+                "wide_sb": "input/external/sb/middle-school/wide/中学生SB.csv",
+                "output_reg": "input/external/drive/personal/t-tsuchiyama/sb/output_reg_中学生_女子.csv",
+                "by_year": "input/external/sb/middle-school/by-year",
+                "notion": [
+                  "input/external/notion/databases/2024年度中学生/rows.json",
+                  "input/external/notion/databases/2025年度中学生記録/rows.json",
+                  "input/external/notion/databases/2026年度中学生記録/rows.json"
+                ]
+              }
+            },
+            "context": {}
+          }
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Reviewed exact year/team/athlete, source selection and meet dates; saved SB/recent fields can be after the ekiden date, never silently used as race-day or current performance."
+      }
+    },
+    {
+      "id": "fullchunkqa-0455984d98bcf8f29ce14657-3",
+      "chunk_id": "knowledge-0455984d98bcf8f29ce14657",
+      "questions": [
+        "女子駅伝トラック突合資料では、2012〜2026年度CSVのすべての年を各駅伝選手の走力として混ぜている？"
+      ],
+      "answer": "混ぜていません。CSVのうち駅伝と同じ年度だけを参照するルールです。その年度の記録という範囲であり、駅伝当日以前の記録だけを使う、または現在のSBであるという意味ではありません。",
+      "sources": [
+        "out/analysis/aragyoku_women_track_joined.json"
+      ],
+      "source_sha256": "1807570e93837c9e1fa446341c1ec4d8f980f4e5d321657a95127712d08f58d9",
+      "evidence": [
+        {
+          "kind": "json-unit",
+          "unit": {
+            "pointer": "/meta",
+            "value": {
+              "title": "荒玉（玉名荒尾）中体連駅伝・女子・上位6校 トラック走力突合",
+              "years": [
+                2025,
+                2024,
+                2023,
+                2022,
+                2021,
+                2020,
+                2019,
+                2018,
+                2017,
+                2016,
+                2015,
+                2013,
+                2012
+              ],
+              "missing_years": [
+                2014
+              ],
+              "verification": {
+                "method": "原画像との全セル目視照合",
+                "verified_years": [
+                  2012,
+                  2013,
+                  2015,
+                  2016,
+                  2017,
+                  2018,
+                  2019,
+                  2020,
+                  2021,
+                  2022,
+                  2023,
+                  2024,
+                  2025
+                ],
+                "cells_per_year": 138,
+                "checked_cells": 1794,
+                "unreadable_cells": 0,
+                "corrected_cells": 9,
+                "csv_reconciled_cells": 33,
+                "csv_reconciliation_rule": "同年度CSVの女子・中学生を学校・学年・継続年度・走力で照合し、一意に本人と判断できる表記はCSVを優先",
+                "csv_reconciliation_source": "input/aragyoku/reconciliations/women_csv_reconciliations.json"
+              },
+              "stats": {
+                "athletes": 390,
+                "with_any_track": 230,
+                "with_sb": 230,
+                "with_url": 230
+              },
+              "guide_note": "「駅伝」は大会当日の区間走結果（道路コース）です。女子は1〜5区がそれぞれ約3.0km・1.855km・2.0km・2.0km・3.0kmで、トラック種目（800m/1500m/3000m）とは距離・路面・気象・タスキ条件が異なります。トラックSB/直近は同年の走力指標として並記していますが、短い種目が強い選手ほど長い区間では相対的に伸び、逆も起こります。数式による換算ではなく、実際の駅伝タイムとトラック走力の両方を見て判断してください。",
+              "drive_source_note": "駅伝記録は Google Drive「荒玉駅伝歴代」の結果画像と全セルを目視照合済み。ただし2014年女子の原画像は同フォルダ内で確認できず、未掲載。選手名は同年度の中学生女子トラック記録CSVと照合し、表記が競合する場合はCSVを優先。トラック記録は2012〜2026年度CSVのうち、駅伝と同じ年度だけを参照。学校以外のクラブ所属（ATRC, NJAC, 長洲JRC, 金栗PROJECT 等）も、駅伝選手と同姓同名かつ学年が矛盾しない場合は同一人物として取り込む。",
+              "sources": {
+                "ekiden": "input/aragyoku/women_top6_2012_2025.json",
+                "wide_sb": "input/external/sb/middle-school/wide/中学生SB.csv",
+                "output_reg": "input/external/drive/personal/t-tsuchiyama/sb/output_reg_中学生_女子.csv",
+                "by_year": "input/external/sb/middle-school/by-year",
+                "notion": [
+                  "input/external/notion/databases/2024年度中学生/rows.json",
+                  "input/external/notion/databases/2025年度中学生記録/rows.json",
+                  "input/external/notion/databases/2026年度中学生記録/rows.json"
+                ]
+              }
+            },
+            "context": {}
+          }
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Reviewed exact year/team/athlete, source selection and meet dates; saved SB/recent fields can be after the ekiden date, never silently used as race-day or current performance."
+      }
+    },
+    {
+      "id": "fullchunkqa-fe02a9b0433044ebcd7a3d22-1",
+      "chunk_id": "knowledge-fe02a9b0433044ebcd7a3d22",
+      "questions": [
+        "2024年女子南関の田畑結愛の3000m掲載SBは、保存された駅伝日より前の記録？"
+      ],
+      "answer": "駅伝日は2024-10-18ですが、3000mの掲載SBは2024/12/07の第四回熊本県長距離記録会、10:28.83です。駅伝日より後の記録で、駅伝当日時点のSBとは扱えません。",
+      "sources": [
+        "out/analysis/aragyoku_women_track_joined.json"
+      ],
+      "source_sha256": "1807570e93837c9e1fa446341c1ec4d8f980f4e5d321657a95127712d08f58d9",
+      "evidence": [
+        {
+          "kind": "json-unit",
+          "unit": {
+            "pointer": "/years/1/teams/0/athletes/0",
+            "value": {
+              "leg": 1,
+              "name": "田畑結愛",
+              "grade": 3,
+              "ekiden_mark": "11:01",
+              "ekiden_seconds": 661.0,
+              "cumulative": "11:01",
+              "track_events": {
+                "800m": {
+                  "sb": {
+                    "mark": "2:26.80",
+                    "seconds": 146.8,
+                    "meet": "令和6年度　第38回熊本県中学校陸上競技選手権大会",
+                    "meet_date": "2024/06/09",
+                    "url": "http://www.kumariku.org/24/24,6,08chugaku/rel127.html",
+                    "season": "2024",
+                    "source": "by_year_2024",
+                    "school": "南関中",
+                    "grade": "3"
+                  },
+                  "recent": {
+                    "mark": "2:28.81",
+                    "seconds": 148.81,
+                    "meet": "第70回全日本中学校通信陸上競技大会熊本県大会",
+                    "meet_date": "2024/06/23",
+                    "url": "http://www.kumariku.org/24/24,6,22tsushin/rel185.html",
+                    "season": "2024",
+                    "source": "notion_2024",
+                    "school": "南関中",
+                    "grade": "3"
+                  }
+                },
+                "1500m": {
+                  "sb": {
+                    "mark": "4:51.75",
+                    "seconds": 291.75,
+                    "meet": "令和6年度　熊本県中学校総合体育大会　陸上競技大会",
+                    "meet_date": "2024/07/20",
+                    "url": "http://www.kumariku.org/24/24,7,20chutairen/rel155.html",
+                    "season": "2024",
+                    "source": "by_year_2024",
+                    "school": "南関中",
+                    "grade": "3"
+                  },
+                  "recent": {
+                    "mark": "4:51.75",
+                    "seconds": 291.75,
+                    "meet": "令和6年度　熊本県中学校総合体育大会　陸上競技大会",
+                    "meet_date": "2024/07/20",
+                    "url": "http://www.kumariku.org/24/24,7,20chutairen/rel155.html",
+                    "season": "2024",
+                    "source": "notion_2024",
+                    "school": "南関中",
+                    "grade": "3"
+                  }
+                },
+                "3000m": {
+                  "sb": {
+                    "mark": "10:28.83",
+                    "seconds": 628.83,
+                    "meet": "2024.12.7　第四回熊本県長距離記録会",
+                    "meet_date": "2024/12/07",
+                    "url": "http://www.kumariku.org/24/24,12,7long/rel024.html",
+                    "season": "2024",
+                    "source": "by_year_2024",
+                    "school": "南関中",
+                    "grade": "3"
+                  },
+                  "recent": {
+                    "mark": "10:28.83",
+                    "seconds": 628.83,
+                    "meet": "2024.12.7　第四回熊本県長距離記録会",
+                    "meet_date": "2024/12/07",
+                    "url": "http://www.kumariku.org/24/24,12,7long/rel024.html",
+                    "season": "2024",
+                    "source": "notion_2024",
+                    "school": "南関中",
+                    "grade": "3"
+                  }
+                }
+              },
+              "match_count": 11
+            },
+            "context": {
+              "year": 2024,
+              "date": "2024-10-18",
+              "venue": null,
+              "source_file_id": "1WDoNUHfL23mTudpm_-eUIbyeMn3EGtZg",
+              "source_confidence": "verified",
+              "rank": 1,
+              "school": "南関",
+              "total_mark": "42:25",
+              "total_seconds": 2545.0
+            }
+          }
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Reviewed exact year/team/athlete, source selection and meet dates; saved SB/recent fields can be after the ekiden date, never silently used as race-day or current performance."
+      }
+    },
+    {
+      "id": "fullchunkqa-fe02a9b0433044ebcd7a3d22-2",
+      "chunk_id": "knowledge-fe02a9b0433044ebcd7a3d22",
+      "questions": [
+        "2024年女子南関の田畑結愛の800m突合で、SB欄と直近欄の大会日・大会名は同じ？"
+      ],
+      "answer": "同じではありません。SB欄は2024/06/09の第38回熊本県中学校陸上競技選手権大会、直近欄は2024/06/23の第70回全日本中学校通信陸上競技大会熊本県大会です。保存資料の各欄の比較です。",
+      "sources": [
+        "out/analysis/aragyoku_women_track_joined.json"
+      ],
+      "source_sha256": "1807570e93837c9e1fa446341c1ec4d8f980f4e5d321657a95127712d08f58d9",
+      "evidence": [
+        {
+          "kind": "json-unit",
+          "unit": {
+            "pointer": "/years/1/teams/0/athletes/0",
+            "value": {
+              "leg": 1,
+              "name": "田畑結愛",
+              "grade": 3,
+              "ekiden_mark": "11:01",
+              "ekiden_seconds": 661.0,
+              "cumulative": "11:01",
+              "track_events": {
+                "800m": {
+                  "sb": {
+                    "mark": "2:26.80",
+                    "seconds": 146.8,
+                    "meet": "令和6年度　第38回熊本県中学校陸上競技選手権大会",
+                    "meet_date": "2024/06/09",
+                    "url": "http://www.kumariku.org/24/24,6,08chugaku/rel127.html",
+                    "season": "2024",
+                    "source": "by_year_2024",
+                    "school": "南関中",
+                    "grade": "3"
+                  },
+                  "recent": {
+                    "mark": "2:28.81",
+                    "seconds": 148.81,
+                    "meet": "第70回全日本中学校通信陸上競技大会熊本県大会",
+                    "meet_date": "2024/06/23",
+                    "url": "http://www.kumariku.org/24/24,6,22tsushin/rel185.html",
+                    "season": "2024",
+                    "source": "notion_2024",
+                    "school": "南関中",
+                    "grade": "3"
+                  }
+                },
+                "1500m": {
+                  "sb": {
+                    "mark": "4:51.75",
+                    "seconds": 291.75,
+                    "meet": "令和6年度　熊本県中学校総合体育大会　陸上競技大会",
+                    "meet_date": "2024/07/20",
+                    "url": "http://www.kumariku.org/24/24,7,20chutairen/rel155.html",
+                    "season": "2024",
+                    "source": "by_year_2024",
+                    "school": "南関中",
+                    "grade": "3"
+                  },
+                  "recent": {
+                    "mark": "4:51.75",
+                    "seconds": 291.75,
+                    "meet": "令和6年度　熊本県中学校総合体育大会　陸上競技大会",
+                    "meet_date": "2024/07/20",
+                    "url": "http://www.kumariku.org/24/24,7,20chutairen/rel155.html",
+                    "season": "2024",
+                    "source": "notion_2024",
+                    "school": "南関中",
+                    "grade": "3"
+                  }
+                },
+                "3000m": {
+                  "sb": {
+                    "mark": "10:28.83",
+                    "seconds": 628.83,
+                    "meet": "2024.12.7　第四回熊本県長距離記録会",
+                    "meet_date": "2024/12/07",
+                    "url": "http://www.kumariku.org/24/24,12,7long/rel024.html",
+                    "season": "2024",
+                    "source": "by_year_2024",
+                    "school": "南関中",
+                    "grade": "3"
+                  },
+                  "recent": {
+                    "mark": "10:28.83",
+                    "seconds": 628.83,
+                    "meet": "2024.12.7　第四回熊本県長距離記録会",
+                    "meet_date": "2024/12/07",
+                    "url": "http://www.kumariku.org/24/24,12,7long/rel024.html",
+                    "season": "2024",
+                    "source": "notion_2024",
+                    "school": "南関中",
+                    "grade": "3"
+                  }
+                }
+              },
+              "match_count": 11
+            },
+            "context": {
+              "year": 2024,
+              "date": "2024-10-18",
+              "venue": null,
+              "source_file_id": "1WDoNUHfL23mTudpm_-eUIbyeMn3EGtZg",
+              "source_confidence": "verified",
+              "rank": 1,
+              "school": "南関",
+              "total_mark": "42:25",
+              "total_seconds": 2545.0
+            }
+          }
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Reviewed exact year/team/athlete, source selection and meet dates; saved SB/recent fields can be after the ekiden date, never silently used as race-day or current performance."
+      }
+    },
+    {
+      "id": "fullchunkqa-fe02a9b0433044ebcd7a3d22-3",
+      "chunk_id": "knowledge-fe02a9b0433044ebcd7a3d22",
+      "questions": [
+        "2024年女子南関の米田美空について、800mと1500mの掲載SBは同じ日に同じ大会で出た記録？"
+      ],
+      "answer": "同じではありません。800m欄は2024/07/21の熊本県中学校総合体育大会、1500m欄は2024/07/06の第二回熊本県長距離記録会を掲載しています。種目ごとに保存された日付と大会が異なります。",
+      "sources": [
+        "out/analysis/aragyoku_women_track_joined.json"
+      ],
+      "source_sha256": "1807570e93837c9e1fa446341c1ec4d8f980f4e5d321657a95127712d08f58d9",
+      "evidence": [
+        {
+          "kind": "json-unit",
+          "unit": {
+            "pointer": "/years/1/teams/0/athletes/1",
+            "value": {
+              "leg": 2,
+              "name": "米田美空",
+              "grade": 1,
+              "ekiden_mark": "6:49",
+              "ekiden_seconds": 409.0,
+              "cumulative": "17:50",
+              "track_events": {
+                "800m": {
+                  "sb": {
+                    "mark": "2:33.55",
+                    "seconds": 153.55,
+                    "meet": "令和6年度　熊本県中学校総合体育大会　陸上競技大会",
+                    "meet_date": "2024/07/21",
+                    "url": "http://www.kumariku.org/24/24,7,20chutairen/rel146.html",
+                    "season": "2024",
+                    "source": "by_year_2024",
+                    "school": "南関中",
+                    "grade": "1"
+                  },
+                  "recent": {
+                    "mark": "2:33.55",
+                    "seconds": 153.55,
+                    "meet": "令和6年度　熊本県中学校総合体育大会　陸上競技大会",
+                    "meet_date": "2024/07/21",
+                    "url": "http://www.kumariku.org/24/24,7,20chutairen/rel146.html",
+                    "season": "2024",
+                    "source": "notion_2024",
+                    "school": "南関中",
+                    "grade": "1"
+                  }
+                },
+                "1500m": {
+                  "sb": {
+                    "mark": "5:24.65",
+                    "seconds": 324.65,
+                    "meet": "2024.7.6　第二回熊本県長距離記録会",
+                    "meet_date": "2024/07/06",
+                    "url": "http://www.kumariku.org/24/24,7,6long&jump/rel019.html",
+                    "season": "2024",
+                    "source": "by_year_2024",
+                    "school": "南関中",
+                    "grade": "1"
+                  },
+                  "recent": {
+                    "mark": "5:24.65",
+                    "seconds": 324.65,
+                    "meet": "2024.7.6　第二回熊本県長距離記録会",
+                    "meet_date": "2024/07/06",
+                    "url": "http://www.kumariku.org/24/24,7,6long&jump/rel019.html",
+                    "season": "2024",
+                    "source": "notion_2024",
+                    "school": "南関中",
+                    "grade": "1"
+                  }
+                }
+              },
+              "match_count": 7
+            },
+            "context": {
+              "year": 2024,
+              "date": "2024-10-18",
+              "venue": null,
+              "source_file_id": "1WDoNUHfL23mTudpm_-eUIbyeMn3EGtZg",
+              "source_confidence": "verified",
+              "rank": 1,
+              "school": "南関",
+              "total_mark": "42:25",
+              "total_seconds": 2545.0
+            }
+          }
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Reviewed exact year/team/athlete, source selection and meet dates; saved SB/recent fields can be after the ekiden date, never silently used as race-day or current performance."
+      }
+    },
+    {
+      "id": "fullchunkqa-cc95c09878b3391f4230dd1c-1",
+      "chunk_id": "knowledge-cc95c09878b3391f4230dd1c",
+      "questions": [
+        "2024年女子南関の川下結音の1500m直近欄は、保存資料の駅伝日より後の大会も含んでいる？"
+      ],
+      "answer": "含んでいます。駅伝日は2024-10-18ですが、1500m直近欄は2024/12/07の第四回熊本県長距離記録会、5:16.34です。駅伝当日前の直近記録としては扱えません。",
+      "sources": [
+        "out/analysis/aragyoku_women_track_joined.json"
+      ],
+      "source_sha256": "1807570e93837c9e1fa446341c1ec4d8f980f4e5d321657a95127712d08f58d9",
+      "evidence": [
+        {
+          "kind": "json-unit",
+          "unit": {
+            "pointer": "/years/1/teams/0/athletes/2",
+            "value": {
+              "leg": 3,
+              "name": "川下結音",
+              "grade": 3,
+              "ekiden_mark": "7:02",
+              "ekiden_seconds": 422.0,
+              "cumulative": "24:52",
+              "track_events": {
+                "800m": {
+                  "sb": {
+                    "mark": "2:32.98",
+                    "seconds": 152.98,
+                    "meet": "令和6年度　第38回熊本県中学校陸上競技選手権大会",
+                    "meet_date": "2024/06/09",
+                    "url": "http://www.kumariku.org/24/24,6,08chugaku/rel127.html",
+                    "season": "2024",
+                    "source": "by_year_2024",
+                    "school": "南関中",
+                    "grade": "3"
+                  },
+                  "recent": {
+                    "mark": "2:32.98",
+                    "seconds": 152.98,
+                    "meet": "令和6年度　第38回熊本県中学校陸上競技選手権大会",
+                    "meet_date": "2024/06/09",
+                    "url": "http://www.kumariku.org/24/24,6,08chugaku/rel127.html",
+                    "season": "2024",
+                    "source": "notion_2024",
+                    "school": "南関中",
+                    "grade": "3"
+                  }
+                },
+                "1500m": {
+                  "sb": {
+                    "mark": "5:10.27",
+                    "seconds": 310.27,
+                    "meet": "２０２４年度　第４３回熊本市陸上競技選手権大会",
+                    "meet_date": "2024/05/04",
+                    "url": "http://www.kcrk.jp/i-mode/kiroku/sisen_i/43/PC/rel157.html",
+                    "season": "2024",
+                    "source": "by_year_2024",
+                    "school": "南関中",
+                    "grade": "3"
+                  },
+                  "recent": {
+                    "mark": "5:16.34",
+                    "seconds": 316.34,
+                    "meet": "2024.12.7　第四回熊本県長距離記録会",
+                    "meet_date": "2024/12/07",
+                    "url": "http://www.kumariku.org/24/24,12,7long/rel022.html",
+                    "season": "2024",
+                    "source": "notion_2024",
+                    "school": "南関中",
+                    "grade": "3"
+                  }
+                }
+              },
+              "match_count": 7
+            },
+            "context": {
+              "year": 2024,
+              "date": "2024-10-18",
+              "venue": null,
+              "source_file_id": "1WDoNUHfL23mTudpm_-eUIbyeMn3EGtZg",
+              "source_confidence": "verified",
+              "rank": 1,
+              "school": "南関",
+              "total_mark": "42:25",
+              "total_seconds": 2545.0
+            }
+          }
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Reviewed exact year/team/athlete, source selection and meet dates; saved SB/recent fields can be after the ekiden date, never silently used as race-day or current performance."
+      }
+    },
+    {
+      "id": "fullchunkqa-cc95c09878b3391f4230dd1c-2",
+      "chunk_id": "knowledge-cc95c09878b3391f4230dd1c",
+      "questions": [
+        "2024年女子南関の稗島葵音の1500mで、SB欄と直近欄は同じ大会を参照している？"
+      ],
+      "answer": "別の大会です。SB欄は2024/07/06の第二回熊本県長距離記録会、直近欄は2024/07/20の熊本県中学校総合体育大会を参照しています。欄名だけで同一の大会記録と判断できません。",
+      "sources": [
+        "out/analysis/aragyoku_women_track_joined.json"
+      ],
+      "source_sha256": "1807570e93837c9e1fa446341c1ec4d8f980f4e5d321657a95127712d08f58d9",
+      "evidence": [
+        {
+          "kind": "json-unit",
+          "unit": {
+            "pointer": "/years/1/teams/0/athletes/3",
+            "value": {
+              "leg": 4,
+              "name": "稗島葵音",
+              "grade": 2,
+              "ekiden_mark": "6:58",
+              "ekiden_seconds": 418.0,
+              "cumulative": "31:50",
+              "track_events": {
+                "800m": {
+                  "sb": {
+                    "mark": "2:35.52",
+                    "seconds": 155.52,
+                    "meet": "第２５回谷口睦生杯八代選手権大会",
+                    "meet_date": "2024/04/28",
+                    "url": "http://www.kumariku.org/24/24,4,28yatsushiro/rel115.html",
+                    "season": "2024",
+                    "source": "by_year_2024",
+                    "school": "南関中",
+                    "grade": "2"
+                  },
+                  "recent": {
+                    "mark": "2:35.52",
+                    "seconds": 155.52,
+                    "meet": "第２５回谷口睦生杯八代選手権大会",
+                    "meet_date": "2024/04/28",
+                    "url": "http://www.kumariku.org/24/24,4,28yatsushiro/rel115.html",
+                    "season": "2024",
+                    "source": "notion_2024",
+                    "school": "南関中",
+                    "grade": "2"
+                  }
+                },
+                "1500m": {
+                  "sb": {
+                    "mark": "4:53.03",
+                    "seconds": 293.03,
+                    "meet": "2024.7.6　第二回熊本県長距離記録会",
+                    "meet_date": "2024/07/06",
+                    "url": "http://www.kumariku.org/24/24,7,6long&jump/rel020.html",
+                    "season": "2024",
+                    "source": "by_year_2024",
+                    "school": "南関中",
+                    "grade": "2"
+                  },
+                  "recent": {
+                    "mark": "4:58.78",
+                    "seconds": 298.78,
+                    "meet": "令和6年度　熊本県中学校総合体育大会　陸上競技大会",
+                    "meet_date": "2024/07/20",
+                    "url": "http://www.kumariku.org/24/24,7,20chutairen/rel155.html",
+                    "season": "2024",
+                    "source": "notion_2024",
+                    "school": "南関中",
+                    "grade": "2"
+                  }
+                },
+                "3000m": {
+                  "sb": {
+                    "mark": "10:44.15",
+                    "seconds": 644.15,
+                    "meet": "2024.12.7　第四回熊本県長距離記録会",
+                    "meet_date": "2024/12/07",
+                    "url": "http://www.kumariku.org/24/24,12,7long/rel024.html",
+                    "season": "2024",
+                    "source": "by_year_2024",
+                    "school": "南関中",
+                    "grade": "2"
+                  },
+                  "recent": {
+                    "mark": "10:44.15",
+                    "seconds": 644.15,
+                    "meet": "2024.12.7　第四回熊本県長距離記録会",
+                    "meet_date": "2024/12/07",
+                    "url": "http://www.kumariku.org/24/24,12,7long/rel024.html",
+                    "season": "2024",
+                    "source": "notion_2024",
+                    "school": "南関中",
+                    "grade": "2"
+                  }
+                }
+              },
+              "match_count": 11
+            },
+            "context": {
+              "year": 2024,
+              "date": "2024-10-18",
+              "venue": null,
+              "source_file_id": "1WDoNUHfL23mTudpm_-eUIbyeMn3EGtZg",
+              "source_confidence": "verified",
+              "rank": 1,
+              "school": "南関",
+              "total_mark": "42:25",
+              "total_seconds": 2545.0
+            }
+          }
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Reviewed exact year/team/athlete, source selection and meet dates; saved SB/recent fields can be after the ekiden date, never silently used as race-day or current performance."
+      }
+    },
+    {
+      "id": "fullchunkqa-cc95c09878b3391f4230dd1c-3",
+      "chunk_id": "knowledge-cc95c09878b3391f4230dd1c",
+      "questions": [
+        "2024年女子南関の平山果朋の1500mは、SB欄と直近欄で日付・タイムが違う？取り込み元は？"
+      ],
+      "answer": "両方とも2024/07/20で5:01.59を掲載しています。ただし取り込み元のsourceは、SB欄がby_year_2024、直近欄がnotion_2024です。同じ掲載値でも参照する取り込み元の欄は異なります。",
+      "sources": [
+        "out/analysis/aragyoku_women_track_joined.json"
+      ],
+      "source_sha256": "1807570e93837c9e1fa446341c1ec4d8f980f4e5d321657a95127712d08f58d9",
+      "evidence": [
+        {
+          "kind": "json-unit",
+          "unit": {
+            "pointer": "/years/1/teams/0/athletes/4",
+            "value": {
+              "leg": 5,
+              "name": "平山果朋",
+              "grade": 2,
+              "ekiden_mark": "10:35",
+              "ekiden_seconds": 635.0,
+              "cumulative": "42:25",
+              "track_events": {
+                "800m": {
+                  "sb": {
+                    "mark": "2:34.12",
+                    "seconds": 154.12,
+                    "meet": "第２５回谷口睦生杯八代選手権大会",
+                    "meet_date": "2024/04/28",
+                    "url": "http://www.kumariku.org/24/24,4,28yatsushiro/rel115.html",
+                    "season": "2024",
+                    "source": "by_year_2024",
+                    "school": "南関中",
+                    "grade": "2"
+                  },
+                  "recent": {
+                    "mark": "2:34.12",
+                    "seconds": 154.12,
+                    "meet": "第２５回谷口睦生杯八代選手権大会",
+                    "meet_date": "2024/04/28",
+                    "url": "http://www.kumariku.org/24/24,4,28yatsushiro/rel115.html",
+                    "season": "2024",
+                    "source": "notion_2024",
+                    "school": "南関中",
+                    "grade": "2"
+                  }
+                },
+                "1500m": {
+                  "sb": {
+                    "mark": "5:01.59",
+                    "seconds": 301.59,
+                    "meet": "令和6年度　熊本県中学校総合体育大会　陸上競技大会",
+                    "meet_date": "2024/07/20",
+                    "url": "http://www.kumariku.org/24/24,7,20chutairen/rel155.html",
+                    "season": "2024",
+                    "source": "by_year_2024",
+                    "school": "南関中",
+                    "grade": "2"
+                  },
+                  "recent": {
+                    "mark": "5:01.59",
+                    "seconds": 301.59,
+                    "meet": "令和6年度　熊本県中学校総合体育大会　陸上競技大会",
+                    "meet_date": "2024/07/20",
+                    "url": "http://www.kumariku.org/24/24,7,20chutairen/rel155.html",
+                    "season": "2024",
+                    "source": "notion_2024",
+                    "school": "南関中",
+                    "grade": "2"
+                  }
+                }
+              },
+              "match_count": 9
+            },
+            "context": {
+              "year": 2024,
+              "date": "2024-10-18",
+              "venue": null,
+              "source_file_id": "1WDoNUHfL23mTudpm_-eUIbyeMn3EGtZg",
+              "source_confidence": "verified",
+              "rank": 1,
+              "school": "南関",
+              "total_mark": "42:25",
+              "total_seconds": 2545.0
+            }
+          }
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Reviewed exact year/team/athlete, source selection and meet dates; saved SB/recent fields can be after the ekiden date, never silently used as race-day or current performance."
+      }
+    },
+    {
+      "id": "fullchunkqa-e50bec5e500657e36018ab70-1",
+      "chunk_id": "knowledge-e50bec5e500657e36018ab70",
+      "questions": [
+        "2024年女子玉名の堺菜々美の1500mで、SB欄と直近欄はどの大会を参照している？"
+      ],
+      "answer": "SB欄は2024/06/22の第70回全日本中学校通信陸上競技大会熊本県大会、直近欄は2024/09/22のMiddle Distnce in Omutaを参照しています。大会名は保存資料の表記です。",
+      "sources": [
+        "out/analysis/aragyoku_women_track_joined.json"
+      ],
+      "source_sha256": "1807570e93837c9e1fa446341c1ec4d8f980f4e5d321657a95127712d08f58d9",
+      "evidence": [
+        {
+          "kind": "json-unit",
+          "unit": {
+            "pointer": "/years/1/teams/2/athletes/3",
+            "value": {
+              "leg": 4,
+              "name": "堺菜々美",
+              "grade": 3,
+              "ekiden_mark": "7:32",
+              "ekiden_seconds": 452.0,
+              "cumulative": "31:43",
+              "track_events": {
+                "800m": {
+                  "sb": {
+                    "mark": "2:46.05",
+                    "seconds": 166.05,
+                    "meet": "2024　大牟田陸上競技大会",
+                    "meet_date": "2024/04/29",
+                    "url": "https://omuta.meet7.org/cgi/menu.cgi?menu=2&base=20240429&mode=\"_5_4_4_4_3__5_\"&r_n=豎ｺ蜍�&dopt=1&cs=2&exit=0",
+                    "season": "2024",
+                    "source": "by_year_2024",
+                    "school": "玉名中",
+                    "grade": "3"
+                  },
+                  "recent": {
+                    "mark": "2:46.05",
+                    "seconds": 166.05,
+                    "meet": "2024　大牟田陸上競技大会",
+                    "meet_date": "2024/04/29",
+                    "url": "https://omuta.meet7.org/cgi/menu.cgi?menu=2&base=20240429&mode=\"_5_4_4_4_3__5_\"&r_n=豎ｺ蜍�&dopt=1&cs=2&exit=0",
+                    "season": "2024",
+                    "source": "notion_2024",
+                    "school": "玉名中",
+                    "grade": "3"
+                  }
+                },
+                "1500m": {
+                  "sb": {
+                    "mark": "5:19.90",
+                    "seconds": 319.9,
+                    "meet": "第70回全日本中学校通信陸上競技大会熊本県大会",
+                    "meet_date": "2024/06/22",
+                    "url": "http://www.kumariku.org/24/24,6,22tsushin/rel189.html",
+                    "season": "2024",
+                    "source": "by_year_2024",
+                    "school": "玉名中",
+                    "grade": "3"
+                  },
+                  "recent": {
+                    "mark": "5:22.47",
+                    "seconds": 322.47,
+                    "meet": "Middle Distnce in Omuta",
+                    "meet_date": "2024/09/22",
+                    "url": "https://omuta.meet7.org/cgi/menu.cgi?menu=2&base=20240922&mode=\"_2_8_4_1_3__5_\"&r_n=豎ｺ蜍�&dopt=1&cs=2&exit=0",
+                    "season": "2024",
+                    "source": "notion_2024",
+                    "school": "玉名中",
+                    "grade": "3"
+                  }
+                }
+              },
+              "match_count": 10
+            },
+            "context": {
+              "year": 2024,
+              "date": "2024-10-18",
+              "venue": null,
+              "source_file_id": "1WDoNUHfL23mTudpm_-eUIbyeMn3EGtZg",
+              "source_confidence": "verified",
+              "rank": 3,
+              "school": "玉名",
+              "total_mark": "43:02",
+              "total_seconds": 2582.0
+            }
+          }
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Reviewed exact year/team/athlete, source selection and meet dates; saved SB/recent fields can be after the ekiden date, never silently used as race-day or current performance."
+      }
+    },
+    {
+      "id": "fullchunkqa-e50bec5e500657e36018ab70-2",
+      "chunk_id": "knowledge-e50bec5e500657e36018ab70",
+      "questions": [
+        "2024年女子玉名の内田愛祐の1500m直近欄を、2024年の駅伝前の直近記録として扱ってよい？"
+      ],
+      "answer": "その扱いはできません。保存資料の駅伝日は2024-10-18ですが、1500m直近欄は2024/12/07の第四回熊本県長距離記録会、5:13.82です。駅伝後の大会を含む保存値です。",
+      "sources": [
+        "out/analysis/aragyoku_women_track_joined.json"
+      ],
+      "source_sha256": "1807570e93837c9e1fa446341c1ec4d8f980f4e5d321657a95127712d08f58d9",
+      "evidence": [
+        {
+          "kind": "json-unit",
+          "unit": {
+            "pointer": "/years/1/teams/2/athletes/4",
+            "value": {
+              "leg": 5,
+              "name": "内田愛祐",
+              "grade": 2,
+              "ekiden_mark": "11:19",
+              "ekiden_seconds": 679.0,
+              "cumulative": "43:02",
+              "track_events": {
+                "800m": {
+                  "sb": {
+                    "mark": "2:31.58",
+                    "seconds": 151.58,
+                    "meet": "第２６７回　熊本市陸上競技記録会",
+                    "meet_date": "2024/07/27",
+                    "url": "http://www.kcrk.jp/i-mode/kiroku/267/PC/rel127.html",
+                    "season": "2024",
+                    "source": "by_year_2024",
+                    "school": "玉名中",
+                    "grade": "2"
+                  },
+                  "recent": {
+                    "mark": "2:31.58",
+                    "seconds": 151.58,
+                    "meet": "第２６７回　熊本市陸上競技記録会",
+                    "meet_date": "2024/07/27",
+                    "url": "http://www.kcrk.jp/i-mode/kiroku/267/PC/rel127.html",
+                    "season": "2024",
+                    "source": "notion_2024",
+                    "school": "玉名中",
+                    "grade": "2"
+                  }
+                },
+                "1500m": {
+                  "sb": {
+                    "mark": "5:03.48",
+                    "seconds": 303.48,
+                    "meet": "Middle Distnce in Omuta",
+                    "meet_date": "2024/09/22",
+                    "url": "https://omuta.meet7.org/cgi/menu.cgi?menu=2&base=20240922&mode=\"_2_8_4_2_3__5_\"&r_n=豎ｺ蜍�&dopt=1&cs=2&exit=0",
+                    "season": "2024",
+                    "source": "by_year_2024",
+                    "school": "玉名中",
+                    "grade": "2"
+                  },
+                  "recent": {
+                    "mark": "5:13.82",
+                    "seconds": 313.82,
+                    "meet": "2024.12.7　第四回熊本県長距離記録会",
+                    "meet_date": "2024/12/07",
+                    "url": "http://www.kumariku.org/24/24,12,7long/rel022.html",
+                    "season": "2024",
+                    "source": "notion_2024",
+                    "school": "玉名中",
+                    "grade": "2"
+                  }
+                }
+              },
+              "match_count": 12
+            },
+            "context": {
+              "year": 2024,
+              "date": "2024-10-18",
+              "venue": null,
+              "source_file_id": "1WDoNUHfL23mTudpm_-eUIbyeMn3EGtZg",
+              "source_confidence": "verified",
+              "rank": 3,
+              "school": "玉名",
+              "total_mark": "43:02",
+              "total_seconds": 2582.0
+            }
+          }
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Reviewed exact year/team/athlete, source selection and meet dates; saved SB/recent fields can be after the ekiden date, never silently used as race-day or current performance."
+      }
+    },
+    {
+      "id": "fullchunkqa-e50bec5e500657e36018ab70-3",
+      "chunk_id": "knowledge-e50bec5e500657e36018ab70",
+      "questions": [
+        "2024年女子玉名の内田愛祐の800mで、SB欄と直近欄の記録は異なる？掲載日は？"
+      ],
+      "answer": "両方とも2024/07/27、2:31.58です。大会は第267回熊本市陸上競技記録会で、SB欄の取り込み元はby_year_2024、直近欄はnotion_2024です。保存資料の欄の照合で、現在のSBの判定ではありません。",
+      "sources": [
+        "out/analysis/aragyoku_women_track_joined.json"
+      ],
+      "source_sha256": "1807570e93837c9e1fa446341c1ec4d8f980f4e5d321657a95127712d08f58d9",
+      "evidence": [
+        {
+          "kind": "json-unit",
+          "unit": {
+            "pointer": "/years/1/teams/2/athletes/4",
+            "value": {
+              "leg": 5,
+              "name": "内田愛祐",
+              "grade": 2,
+              "ekiden_mark": "11:19",
+              "ekiden_seconds": 679.0,
+              "cumulative": "43:02",
+              "track_events": {
+                "800m": {
+                  "sb": {
+                    "mark": "2:31.58",
+                    "seconds": 151.58,
+                    "meet": "第２６７回　熊本市陸上競技記録会",
+                    "meet_date": "2024/07/27",
+                    "url": "http://www.kcrk.jp/i-mode/kiroku/267/PC/rel127.html",
+                    "season": "2024",
+                    "source": "by_year_2024",
+                    "school": "玉名中",
+                    "grade": "2"
+                  },
+                  "recent": {
+                    "mark": "2:31.58",
+                    "seconds": 151.58,
+                    "meet": "第２６７回　熊本市陸上競技記録会",
+                    "meet_date": "2024/07/27",
+                    "url": "http://www.kcrk.jp/i-mode/kiroku/267/PC/rel127.html",
+                    "season": "2024",
+                    "source": "notion_2024",
+                    "school": "玉名中",
+                    "grade": "2"
+                  }
+                },
+                "1500m": {
+                  "sb": {
+                    "mark": "5:03.48",
+                    "seconds": 303.48,
+                    "meet": "Middle Distnce in Omuta",
+                    "meet_date": "2024/09/22",
+                    "url": "https://omuta.meet7.org/cgi/menu.cgi?menu=2&base=20240922&mode=\"_2_8_4_2_3__5_\"&r_n=豎ｺ蜍�&dopt=1&cs=2&exit=0",
+                    "season": "2024",
+                    "source": "by_year_2024",
+                    "school": "玉名中",
+                    "grade": "2"
+                  },
+                  "recent": {
+                    "mark": "5:13.82",
+                    "seconds": 313.82,
+                    "meet": "2024.12.7　第四回熊本県長距離記録会",
+                    "meet_date": "2024/12/07",
+                    "url": "http://www.kumariku.org/24/24,12,7long/rel022.html",
+                    "season": "2024",
+                    "source": "notion_2024",
+                    "school": "玉名中",
+                    "grade": "2"
+                  }
+                }
+              },
+              "match_count": 12
+            },
+            "context": {
+              "year": 2024,
+              "date": "2024-10-18",
+              "venue": null,
+              "source_file_id": "1WDoNUHfL23mTudpm_-eUIbyeMn3EGtZg",
+              "source_confidence": "verified",
+              "rank": 3,
+              "school": "玉名",
+              "total_mark": "43:02",
+              "total_seconds": 2582.0
+            }
+          }
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Reviewed exact year/team/athlete, source selection and meet dates; saved SB/recent fields can be after the ekiden date, never silently used as race-day or current performance."
+      }
+    }
+  ]
+}

@@ -1,0 +1,337 @@
+{
+  "version": 1,
+  "entries": [
+    {
+      "id": "fullchunkqa-79630ad0b1ea40e7be51d6d8-1",
+      "chunk_id": "knowledge-79630ad0b1ea40e7be51d6d8",
+      "questions": [
+        "Bakkenのblock periodizationの階段テストは、いつ・どの階段で何を観察する？"
+      ],
+      "answer": "毎朝同じ時刻、できれば朝食前に同じ階段を上り、太ももが重く鈍いか、軽く反応がよいかを記録する案内です。著者は時間を通したパターンを過負荷の警告として使うと説明しています。診断の確定方法ではありません。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "Walk up the same stairs every morning at the same time, preferably before breakfast. Register how your thigh muscles feel, heavy and sluggish, or light and responsive?"
+        },
+        {
+          "kind": "quote",
+          "text": "Over time, this pattern provides a reliable warning signal about overload."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Book-specific monitoring and progression, historical anecdotes, and model eligibility; no individual diagnosis or guarantee."
+      }
+    },
+    {
+      "id": "fullchunkqa-79630ad0b1ea40e7be51d6d8-2",
+      "chunk_id": "knowledge-79630ad0b1ea40e7be51d6d8",
+      "questions": [
+        "Bakkenのblock periodizationでは、軽い週が終わっても能力が上がらず、重い週にも向上しないならどう評価する？"
+      ],
+      "answer": "戦略を再検討するよう求めています。重い週が強すぎるか、軽い週の設計が不適切かもしれないという評価です。軽い週は単なる休みではなく、通常週だけの場合より能力が上がることを求めています。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "The lighter week is not just a break. It should provide a lift beyond what the normal training weeks provide alone."
+        },
+        {
+          "kind": "quote",
+          "text": "If you do not experience performance building through the weeks and coming back stronger after lighter weeks, you should reconsider the strategy. Then either the harder weeks are too hard, or the light weeks are wrongly designed."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Book-specific monitoring and progression, historical anecdotes, and model eligibility; no individual diagnosis or guarantee."
+      }
+    },
+    {
+      "id": "fullchunkqa-79630ad0b1ea40e7be51d6d8-3",
+      "chunk_id": "knowledge-79630ad0b1ea40e7be51d6d8",
+      "questions": [
+        "BakkenのChoice of Modelでは、平坦な構造・短いブロック・数か月の長い周期化をどんな条件に対応させている？"
+      ],
+      "answer": "平坦な構造は予測可能性が必要、時間が通年限られる、安定負荷が必要な人に、短い2〜3週ブロックは変化によく反応する経験者に、数か月の長い周期化は生活が年間で変わる人や遠い具体的目標へ向かう人に紹介しています。本書の選択の目安です。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "Flat structure: Best for those who need predictability, have limited training time all year, or are injury-prone and need stable load."
+        },
+        {
+          "kind": "quote",
+          "text": "Short periodization (2-3 week blocks): Suits experienced runners who respond well to variation"
+        },
+        {
+          "kind": "quote",
+          "text": "Long periodization (several months): Ideal when life situation varies through the year, or when you train toward specific goals far in the future"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Book-specific monitoring and progression, historical anecdotes, and model eligibility; no individual diagnosis or guarantee."
+      }
+    },
+    {
+      "id": "fullchunkqa-a7e76596752ced6cc30ff004-1",
+      "chunk_id": "knowledge-a7e76596752ced6cc30ff004",
+      "questions": [
+        "Bakkenは競技期に調子が重くなった自分の例から、さらに強度を上げることを解決策として勧めている？"
+      ],
+      "answer": "むしろ一段戻り、閾値練習とイージー練習を増やし、強く尖らせた練習を少し減らすことが多いと説明しています。自分の例では競技期に閾値の基礎を早く急に放棄した点を問題にしています。本書の経験談です。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "I had abandoned it too early and too abruptly when competition season started."
+        },
+        {
+          "kind": "quote",
+          "text": "When you notice that everything suddenly gets a bit heavier, the solution is rarely to turn up the intensity even more. Often it is to take one step back to more threshold, more easy, and a few fewer intensively sharpened sessions."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Book-specific monitoring and progression, historical anecdotes, and model eligibility; no individual diagnosis or guarantee."
+      }
+    },
+    {
+      "id": "fullchunkqa-a7e76596752ced6cc30ff004-2",
+      "chunk_id": "knowledge-a7e76596752ced6cc30ff004",
+      "questions": [
+        "Bakkenのperiodization staircaseの最初の段階は、どのくらいの期間に何をして、何を目指す？"
+      ],
+      "answer": "4〜8か月、閾値練習と間のイージー練習による平坦な構造を保ち、変化は閾値範囲内に置く案内です。最良の筋の出発状態を作ることが目的です。本書の段階例であり、全員に同じ所要期間を保証するものではありません。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "four to eight months with threshold training up toward the threshold point, with easy training in between."
+        },
+        {
+          "kind": "quote",
+          "text": "The variation is there, but it lies within the threshold range. The goal is to build the best possible muscular starting point."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Book-specific monitoring and progression, historical anecdotes, and model eligibility; no individual diagnosis or guarantee."
+      }
+    },
+    {
+      "id": "fullchunkqa-a7e76596752ced6cc30ff004-3",
+      "chunk_id": "knowledge-a7e76596752ced6cc30ff004",
+      "questions": [
+        "Bakkenのperiodization staircaseでは、45/15導入の次にどんな実験をし、何と比較してモデルを選ぶ？"
+      ],
+      "answer": "より変化のあるX-sessionを体系的に試し、特定の周期化を慎重に試します。完全に平坦な構造との比較から自分がよく反応するものを見つけ、長期にけがなく続けられる、自分に合うモデルを選ぶ案内です。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "Begin systematic experiments with a more varied X-session, and cautiously try specific periodization. The point is to compare this with the completely flat structure and see what you actually respond best to."
+        },
+        {
+          "kind": "quote",
+          "text": "Choose the model that suits you best and that keeps you injury-free over time."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Book-specific monitoring and progression, historical anecdotes, and model eligibility; no individual diagnosis or guarantee."
+      }
+    },
+    {
+      "id": "fullchunkqa-30fa0386fb1f6b6102ebecc6-1",
+      "chunk_id": "knowledge-30fa0386fb1f6b6102ebecc6",
+      "questions": [
+        "BakkenのReflection and the Way Forwardでは、週4〜6時間を続けるのは一時的な段階に限られる？"
+      ],
+      "answer": "一時的に限らず、多くの人には毎年続ける適切な水準になり得ると述べています。閾値を優先し、イージーと閾値の間のグレーゾーンを減らし、イージー日を十分軽くすることを条件に説明しています。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "Four to six hours is enough if you prioritize threshold work over everything else, reduce gray-zone training between completely easy training and threshold training, and accept that easy days must be easy."
+        },
+        {
+          "kind": "quote",
+          "text": "For many, this i the right level, year after year."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Book-specific monitoring and progression, historical anecdotes, and model eligibility; no individual diagnosis or guarantee."
+      }
+    },
+    {
+      "id": "fullchunkqa-30fa0386fb1f6b6102ebecc6-2",
+      "chunk_id": "knowledge-30fa0386fb1f6b6102ebecc6",
+      "questions": [
+        "Bakkenの次の練習量の章へ進む読者として、現在週6〜8時間の人以外にどんな状態を挙げている？"
+      ],
+      "answer": "回復が速くなり、負荷への反応がよくなり、さらに練習する余裕と意欲があると感じる人も挙げています。すでにその量で練習する人と、そこへ移行中の人の両方に向けた章です。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "recovery goes faster, the body responds better to load, and you notice that you actually have surplus and desire to train more?"
+        },
+        {
+          "kind": "quote",
+          "text": "The chapter is written both for those who already train at this level and for those who are in the process of getting there."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Book-specific monitoring and progression, historical anecdotes, and model eligibility; no individual diagnosis or guarantee."
+      }
+    },
+    {
+      "id": "fullchunkqa-30fa0386fb1f6b6102ebecc6-3",
+      "chunk_id": "knowledge-30fa0386fb1f6b6102ebecc6",
+      "questions": [
+        "Bakkenが1996年にPeter Coeの練習日誌を読んだ回想では、Sebastianの週の距離と、重視された点をどう述べている？"
+      ],
+      "answer": "Sebastianが週90kmを超えることはまれだったと述べています。著者は量そのものよりも、各セッションの理由と各負荷の意図的な配置という調整の精密さが印象的だったとしています。個人の適切な走行距離を指定する数値ではありません。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "Sebastian rarely exceeded 90 kilometers a week (56 miles)."
+        },
+        {
+          "kind": "quote",
+          "text": "What mattered was not the volume but the calibration: every session justified, every load placed with intention, nothing left to chance or habit."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Book-specific monitoring and progression, historical anecdotes, and model eligibility; no individual diagnosis or guarantee."
+      }
+    },
+    {
+      "id": "fullchunkqa-e124e29f8a28dc977a9c631d-1",
+      "chunk_id": "knowledge-e124e29f8a28dc977a9c631d",
+      "questions": [
+        "Bakkenの週6〜8時間以上の章は、どの2つのセクションに分かれる？"
+      ],
+      "answer": "Section 1は実践の枠組みで、ダブル閾値の構造、精密な強度制御、年間周期化、目標種目への調整です。Section 2は個別化で、体が期待通り反応しない場合の対応と、準備できたときにさらに進む方法です。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "Section 1: The Practical Framework. How to structure double threshold sessions, control intensity with precision, periodize your training year, and adapt the model to your target event."
+        },
+        {
+          "kind": "quote",
+          "text": "Section 2: Individualization. What to do when your body does not respond as expected, and how to push further when you are ready."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Book-specific monitoring and progression, historical anecdotes, and model eligibility; no individual diagnosis or guarantee."
+      }
+    },
+    {
+      "id": "fullchunkqa-e124e29f8a28dc977a9c631d-2",
+      "chunk_id": "knowledge-e124e29f8a28dc977a9c631d",
+      "questions": [
+        "Bakkenのfull double thresholdとmiddle modelは、週のダブル閾値日とシングル・強い練習をどう組み合わせる？"
+      ],
+      "answer": "fullは週2日のダブル閾値と、任意の強い練習1回です。middleはダブル1日とシングル閾値2回、またはダブル1日・シングル1回・強い練習1回の組み合わせです。いずれも本書の構造案です。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "Two double-threshold days per week, plus one optional harder session."
+        },
+        {
+          "kind": "quote",
+          "text": "One double-threshold day plus two single-threshold sessions, or one double, one single, and one harder session."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Book-specific monitoring and progression, historical anecdotes, and model eligibility; no individual diagnosis or guarantee."
+      }
+    },
+    {
+      "id": "fullchunkqa-e124e29f8a28dc977a9c631d-3",
+      "chunk_id": "knowledge-e124e29f8a28dc977a9c631d",
+      "questions": [
+        "Bakkenはダブル閾値の2つのモデルのどちらから始め、どのくらい後に再評価するよう勧めている？"
+      ],
+      "answer": "middle modelから始め、8〜12週間後に再評価するよう勧めています。fullは生活の柔軟性を要し強度制御が外れると負荷超過の危険が高い一方、middleは継続しやすく仕事や家庭に合わせやすいという本書の説明です。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "Start with the middle model and reassess after eight to\ntwelve weeks."
+        },
+        {
+          "kind": "quote",
+          "text": "Requires flexibility in daily life. Higher risk of overreaching if intensity control slips."
+        },
+        {
+          "kind": "quote",
+          "text": "More sustainable over time. Easier to fit around work and family. Lower injury risk."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Book-specific monitoring and progression, historical anecdotes, and model eligibility; no individual diagnosis or guarantee."
+      }
+    }
+  ]
+}

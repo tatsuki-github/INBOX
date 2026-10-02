@@ -45,6 +45,8 @@ def validate_entry(entry, chunk, root=ROOT):
         ('schema-reviewed-within-athlete-meet-change', 'schema-reviewed'),
         ('schema-reviewed-record-vs-saved-sb', 'schema-reviewed'),
         ('schema-reviewed-calendar-gap', 'schema-reviewed'),
+        ('schema-reviewed-track-coverage', 'schema-reviewed'),
+        ('schema-reviewed-prediction-columns', 'schema-reviewed'),
     }
     if not allowed_review:
         raise ValueError('missing manual context review')
@@ -52,6 +54,14 @@ def validate_entry(entry, chunk, root=ROOT):
         raise ValueError('missing question or answer')
     if not entry.get('evidence'):
         raise ValueError('missing evidence')
+    if review.get('method') == 'schema-reviewed-prediction-columns':
+        from chunk_prediction_columns import validate_columns
+        validate_columns(entry, chunk, path.read_text())
+        return
+    if review.get('method') == 'schema-reviewed-track-coverage':
+        from chunk_track_coverage import validate_coverage
+        validate_coverage(entry, chunk, path.read_text())
+        return
     if review.get('method') == 'schema-reviewed-calendar-gap':
         from chunk_calendar_gaps import validate_gap
         validate_gap(entry, chunk, path.read_text())

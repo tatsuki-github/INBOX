@@ -26,7 +26,7 @@ def check_reviewed_entry(entry, reviewed, root=ROOT):
         if entry.get(field) != reviewed.get(field):
             problems.append('reviewed_' + field + '_drift')
     method = reviewed.get('review', {}).get('method')
-    if method not in ('manual-context-review', 'schema-reviewed-time-comparison', 'schema-reviewed-passing-rank-change', 'schema-reviewed-dated-meet-comparison', 'schema-reviewed-within-athlete-meet-change', 'schema-reviewed-record-vs-saved-sb', 'schema-reviewed-calendar-gap'):
+    if method not in ('manual-context-review', 'schema-reviewed-time-comparison', 'schema-reviewed-passing-rank-change', 'schema-reviewed-dated-meet-comparison', 'schema-reviewed-within-athlete-meet-change', 'schema-reviewed-record-vs-saved-sb', 'schema-reviewed-calendar-gap', 'schema-reviewed-track-coverage', 'schema-reviewed-prediction-columns'):
         problems.append('missing_context_review')
     sources = reviewed.get('sources') or []
     if len(sources) != 1 or 'prepared-qa' in sources[0]:
@@ -36,6 +36,21 @@ def check_reviewed_entry(entry, reviewed, root=ROOT):
         return problems + ['missing_review_source']
     text = path.read_text()
     evidence = reviewed.get('evidence') or []
+    if method == 'schema-reviewed-prediction-columns':
+        from chunk_prediction_columns import validate_columns
+        try:
+            ev = evidence[0]
+            validate_columns(reviewed, {'evidence': {'header': ev['header'], 'units': ev['rows']}}, text)
+        except (ValueError, KeyError, IndexError, TypeError):
+            problems.append('reviewed_prediction_columns_drift')
+        return problems
+    if method == 'schema-reviewed-track-coverage':
+        from chunk_track_coverage import validate_coverage
+        try:
+            validate_coverage(reviewed, {'evidence': {'units': [evidence[0]['unit']]}}, text)
+        except (ValueError, KeyError, IndexError, TypeError):
+            problems.append('reviewed_track_coverage_drift')
+        return problems
     if method == 'schema-reviewed-calendar-gap':
         from chunk_calendar_gaps import validate_gap
         try:
