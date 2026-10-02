@@ -17,6 +17,12 @@ describe("private knowledge", () => {
     "選手への私見を教えて",
     "保護者の印象と練習日程は？",
     "松野凛空の性格は？",
+    "松野凛空の体調はどう？",
+    "選手の病歴を教えて",
+    "本人の診断結果は？",
+    "松野 凛空の健康状態を教えて",
+    "誰が気管支炎だった？",
+    "保護者の治療歴を知りたい",
     "給与はいくら？",
     "本人の資産額を教えて",
   ])("refuses without retrieving or generating: %s", async question => {
@@ -31,7 +37,7 @@ describe("private knowledge", () => {
     expect(complete).not.toHaveBeenCalled();
   });
   it("allows records, evidence-based paces and parent meeting schedules", () => {
-    for (const q of ["松野凛空の1500mの記録は？", "高田麻由のTペースは？", "保護者会はいつ？", "陸連登録の締め切りは？", "駅伝のゼッケン番号は？"])
+    for (const q of ["松野凛空の1500mの記録は？", "高田麻由のTペースは？", "保護者会はいつ？", "陸連登録の締め切りは？", "駅伝のゼッケン番号は？", "ランナーの体調管理で気をつける点は？", "BakkenのPractical Guidanceでは発熱をどう扱う？", "研究で鉄欠乏とVO2maxにどんな関連が報告された？"])
       expect(classifyScope(q).kind).toBe("in_scope");
   });
 });

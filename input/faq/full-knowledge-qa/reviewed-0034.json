@@ -1,0 +1,333 @@
+{
+  "version": 1,
+  "entries": [
+    {
+      "id": "fullchunkqa-8a78aded9f29a54be8bf243d-1",
+      "chunk_id": "knowledge-8a78aded9f29a54be8bf243d",
+      "questions": [
+        "BakkenのPractical Guidanceでは、発熱や胸部の症状がある場合も短いジョグの例を使う？"
+      ],
+      "answer": "同じ扱いではありません。咳や胸痛など首より下の症状は通常休息を要し、38℃を超える発熱は完全な休息と追加の1〜2日、悪化したら中止して休むと記載しています。書籍の記述で、個人の運動再開の可否を決めるものではありません。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "Symptoms below the neck (cough, chest pain) usually require rest. Fever above 38.0°C (100.4°F) means absolute rest plus one to two extra days. If symptoms worsen, stop and rest."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Author-qualified medical/training descriptions and cited study observations; no individual diagnosis, supplement or rehabilitation prescription, clinical clearance, or misread OCR units."
+      }
+    },
+    {
+      "id": "fullchunkqa-8a78aded9f29a54be8bf243d-2",
+      "chunk_id": "knowledge-8a78aded9f29a54be8bf243d",
+      "questions": [
+        "BakkenのRETURN CRITERIA TO NORMAL TRAININGは、日数だけで通常練習へ戻す条件？"
+      ],
+      "answer": "日数だけではありません。安静時心拍が3日連続で通常、良い睡眠、残る症状がない、日中の活力、朝の階段が普段通り、練習への前向きな気持ちを挙げています。本書の確認項目で、医学的な再開許可を代替しません。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "Normal resting heart rate 3 days in a row"
+        },
+        {
+          "kind": "quote",
+          "text": "Good sleep quality"
+        },
+        {
+          "kind": "quote",
+          "text": "No residual symptoms"
+        },
+        {
+          "kind": "quote",
+          "text": "Energy throughout the day"
+        },
+        {
+          "kind": "quote",
+          "text": "Climbing stairs in the morning feels normal"
+        },
+        {
+          "kind": "quote",
+          "text": "Positive attitude toward training"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Author-qualified medical/training descriptions and cited study observations; no individual diagnosis, supplement or rehabilitation prescription, clinical clearance, or misread OCR units."
+      }
+    },
+    {
+      "id": "fullchunkqa-8a78aded9f29a54be8bf243d-3",
+      "chunk_id": "knowledge-8a78aded9f29a54be8bf243d",
+      "questions": [
+        "Bakkenが紹介するKellerらの2024年研究では、鉄欠乏とVO2maxの関係をどう記載している？"
+      ],
+      "answer": "アスリート1,190人の約20%に鉄欠乏があり、その人たちはVO2maxが有意に低く、50ml/kg/分を超える可能性も低かったと紹介しています。紹介された集団での関係で、個人の鉄欠乏の診断や補充効果をこの数値だけで決めるものではありません。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "A study of 1,190 athletes showed that nearly 20% had iron deficiency, and these athletes had significantly lower VO, max values and a lower probability of reaching a VO_max above 50 ml/kg/min (Keller et al., 2024)."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Author-qualified medical/training descriptions and cited study observations; no individual diagnosis, supplement or rehabilitation prescription, clinical clearance, or misread OCR units."
+      }
+    },
+    {
+      "id": "fullchunkqa-22cb89813465c6bda8c93eed-1",
+      "chunk_id": "knowledge-22cb89813465c6bda8c93eed",
+      "questions": [
+        "BakkenはビタミンDと筋緊張・筋回復の広い関係を、十分な研究で確立したものとして述べている？"
+      ],
+      "answer": "確立したものとしては述べていません。関連すると自分は考えると述べる一方、良い研究がまだ行われていないと明記しています。著者の見解と研究で確認された範囲を区別する必要があります。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "I believe it can also affect muscle tone and muscle recovery more broadly, although good studies have not been done on this."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Author-qualified medical/training descriptions and cited study observations; no individual diagnosis, supplement or rehabilitation prescription, clinical clearance, or misread OCR units."
+      }
+    },
+    {
+      "id": "fullchunkqa-22cb89813465c6bda8c93eed-2",
+      "chunk_id": "knowledge-22cb89813465c6bda8c93eed",
+      "questions": [
+        "BakkenのB12の説明では、境界域の血清値が十分に見えても、組織で不足する可能性をどう確認する案？"
+      ],
+      "answer": "血清値だけでは組織での利用可能量が需要に足りない場合があるとし、ホモシステインと、可能ならメチルマロン酸（MMA）も加えて状態を明らかにする案です。検査や補充の必要性を個人に決める回答ではなく、本書の説明です。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "serum B12 may appear adequate while tissue availability is insufficient relative to demand."
+        },
+        {
+          "kind": "quote",
+          "text": "add homocysteine and, when available, methyl-malonic acid (MMA) to clarify status."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Author-qualified medical/training descriptions and cited study observations; no individual diagnosis, supplement or rehabilitation prescription, clinical clearance, or misread OCR units."
+      }
+    },
+    {
+      "id": "fullchunkqa-22cb89813465c6bda8c93eed-3",
+      "chunk_id": "knowledge-22cb89813465c6bda8c93eed",
+      "questions": [
+        "BakkenのRecommended Targetsでは、B12のチェックをどんな状況で挙げている？"
+      ],
+      "answer": "疲労がある、食事のリスク要因がある、低い活力が続く場合を挙げています。本文は菜食、特に完全菜食や、強い練習と偏った食事の組み合わせをリスクとして挙げています。個人の症状の原因を断定するものではありません。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "Check if you experience fatigue, have dietary risk factors, or persistent low energy."
+        },
+        {
+          "kind": "quote",
+          "text": "Vegetarians and especially vegans have increased risk, but runners who train hard and eat a narrow diet can also be vulnerable."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Author-qualified medical/training descriptions and cited study observations; no individual diagnosis, supplement or rehabilitation prescription, clinical clearance, or misread OCR units."
+      }
+    },
+    {
+      "id": "fullchunkqa-5853071aab82f00c0fb9cae1-1",
+      "chunk_id": "knowledge-5853071aab82f00c0fb9cae1",
+      "questions": [
+        "Bakkenの回復と予防の章で扱う5つの主な領域は？"
+      ],
+      "answer": "筋力練習とランニングでの位置付け、ストレッチと柔軟性、温熱療法、現代のランニングシューズ、エネルギーバランスです。重要な練習を継続できる身体の能力を保護する仕組みとして扱っています。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "We cover five main areas: strength training and its place in running, stretching and flexibility, thermal therapy, modern running shoes, and energy balance."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Author-qualified medical/training descriptions and cited study observations; no individual diagnosis, supplement or rehabilitation prescription, clinical clearance, or misread OCR units."
+      }
+    },
+    {
+      "id": "fullchunkqa-5853071aab82f00c0fb9cae1-2",
+      "chunk_id": "knowledge-5853071aab82f00c0fb9cae1",
+      "questions": [
+        "Bakkenが紹介する筋力・プライオメトリクス研究では、ランニングエコノミーの変化をどの程度と説明している？"
+      ],
+      "answer": "6〜12週間で通常2〜8%の小〜中程度の改善と紹介しています。新しい研究では1RMの80%以上という高い負荷、特に高い走速度で効果が大きいと説明しています。引用研究の紹介で、各人に同じ改善が出る保証や重量の処方ではありません。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "Meta-analyses on runners show small to moderate improvements in running economy, typically 2-8% after six to twelve weeks of strength or plyometric training"
+        },
+        {
+          "kind": "quote",
+          "text": "the effect is greatest at high loads (80% of one-rep max or above) and particularly at higher running speeds."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Author-qualified medical/training descriptions and cited study observations; no individual diagnosis, supplement or rehabilitation prescription, clinical clearance, or misread OCR units."
+      }
+    },
+    {
+      "id": "fullchunkqa-5853071aab82f00c0fb9cae1-3",
+      "chunk_id": "knowledge-5853071aab82f00c0fb9cae1",
+      "questions": [
+        "Bakkenが筋力練習の隠れたコストとして挙げる、閾値練習との交換関係は？"
+      ],
+      "answer": "重い筋力練習で回復の間隔が長く必要になると、質の高い閾値練習の回数とその域での総量が減る、という交換関係です。著者自身の経験と見解から慎重さを求めており、筋力練習の効果を一般的に否定した比較試験の結論ではありません。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "When you're lifting heavy, you need more recovery between hard running sessions. More recovery means fewer quality threshold workouts. Fewer threshold workouts means reduced total volume in the zone that actually drives endurance adaptation."
+        },
+        {
+          "kind": "quote",
+          "text": "I don't have all the answers, but I've seen this pattern often enough to urge caution."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Author-qualified medical/training descriptions and cited study observations; no individual diagnosis, supplement or rehabilitation prescription, clinical clearance, or misread OCR units."
+      }
+    },
+    {
+      "id": "fullchunkqa-e9652dee573a359d01ff07d6-1",
+      "chunk_id": "knowledge-e9652dee573a359d01ff07d6",
+      "questions": [
+        "Bakkenが筋力・スピード練習を置くModel A・B・Cを試した経緯では、どれが自分に最も合ったと述べている？"
+      ],
+      "answer": "Aは閾値の日の後、Bは閾値の日の前夜、CはXセッションの直後か同日の夜です。自身にはCが最も合い、強い負荷を集中して閾値の日へ影響を持ち込まなかったと述べています。著者の経験で、全員に同じ配置が最適という意味ではありません。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "Model A: After a threshold day."
+        },
+        {
+          "kind": "quote",
+          "text": "Model B: Before a threshold day."
+        },
+        {
+          "kind": "quote",
+          "text": "Model C: After the X-session."
+        },
+        {
+          "kind": "quote",
+          "text": "Model C worked best for me"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Author-qualified medical/training descriptions and cited study observations; no individual diagnosis, supplement or rehabilitation prescription, clinical clearance, or misread OCR units."
+      }
+    },
+    {
+      "id": "fullchunkqa-e9652dee573a359d01ff07d6-2",
+      "chunk_id": "knowledge-e9652dee573a359d01ff07d6",
+      "questions": [
+        "Bakkenの筋力練習の維持と競技ピークへの調整例は？"
+      ],
+      "answer": "ブロックの後は週1回を維持とし、年間計画の固定要素として扱いつつ、競技ピークには減らすか休むことを検討する案です。突然始めることを避ける方針と合わせた著者の構成例です。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "One session per week for maintenance once the block is complete"
+        },
+        {
+          "kind": "quote",
+          "text": "Consider tapering or pausing during peak competition periods, but otherwise keep it as a fixed element in the annual plan"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Author-qualified medical/training descriptions and cited study observations; no individual diagnosis, supplement or rehabilitation prescription, clinical clearance, or misread OCR units."
+      }
+    },
+    {
+      "id": "fullchunkqa-e9652dee573a359d01ff07d6-3",
+      "chunk_id": "knowledge-e9652dee573a359d01ff07d6",
+      "questions": [
+        "Bakkenが筋力練習で挙げるeccentric workは、どんな筋の働きで、どの部位を例にしている？"
+      ],
+      "answer": "筋肉が伸びながら力を発揮する働きで、特にハムストリングスとふくらはぎを挙げています。ランニングの要求へ対応し、けがのリスクを減らす可能性を説明しています。個人の治療や予防効果の保証ではありません。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "Emphasize eccentric work, particularly for hamstrings and calves, the muscle works while lengthening, which transfers well to the demands of running and may reduce injury risk"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed",
+        "scope": "Author-qualified medical/training descriptions and cited study observations; no individual diagnosis, supplement or rehabilitation prescription, clinical clearance, or misread OCR units."
+      }
+    }
+  ]
+}

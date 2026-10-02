@@ -3,7 +3,7 @@
 import argparse,itertools,json,re
 from collections import Counter
 from pathlib import Path
-from chunk_calendar_gaps import PATH,event,render_gap
+from chunk_calendar_gaps import PATH,event,render_gap,markdown_events
 ROOT=Path(__file__).resolve().parents[1]
 def main():
  ap=argparse.ArgumentParser();ap.add_argument('--output',default=str(ROOT/'input/faq/full-knowledge-qa/reviewed-0017.json'));args=ap.parse_args();out=Path(args.output)
@@ -23,7 +23,8 @@ def main():
  for c in chunks:
   if not PATH.fullmatch(c['source']) or counts[c['id']]>=3:continue
   header=c['evidence'].get('header');valid=[]
-  for u in c['evidence']['units']:
+  units=markdown_events(c['evidence']['text']) if c['evidence']['kind']=='text' else c['evidence']['units']
+  for u in units:
    try:label,day=event(u,header)
    except (ValueError,KeyError,TypeError):continue
    valid.append((day,label,u))
@@ -38,7 +39,7 @@ def main():
   if len(candidates)<needed:pending.append({'chunk_id':c['id'],'available':len(candidates)});continue
   for q,answer,calc,units,key in candidates[:needed]:
    i=counts[c['id']]+1;counts[c['id']]+=1;claimed.add(key)
-   ev={'kind':'csv-rows','header':header,'rows':units} if header else {'kind':'calendar-json-units','units':units}
+   ev={'kind':'csv-rows','header':header,'rows':units} if header else {'kind':'calendar-markdown-events' if c['evidence']['kind']=='text' else 'calendar-json-units','units':units}
    entries.append({'id':'fullchunkqa-'+c['id'].removeprefix('knowledge-')+'-'+str(i),'chunk_id':c['id'],'questions':[q],'answer':answer,'sources':[c['source']],'source_sha256':c['source_sha256'],'evidence':[ev],'calculation':calc,'review':{'method':'schema-reviewed-calendar-gap','status':'schema-reviewed','scope':'Public event title and saved start date only; elapsed days, no inferred completion or private personal events.'}})
  out.write_text(json.dumps({'version':1,'entries':entries,'unresolved_chunks':pending},ensure_ascii=False,indent=2)+'\n');print('authored',len(entries),'unresolved',len(pending))
 if __name__=='__main__':main()
