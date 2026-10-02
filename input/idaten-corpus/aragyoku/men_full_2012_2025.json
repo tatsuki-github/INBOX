@@ -21385,7 +21385,11 @@
               "split_rank": 5,
               "split_record": false,
               "status": "ok",
-              "raw_name_grade": "松浦眞大(3)"
+              "raw_name_grade": "松浦眞大(3)",
+              "computed": {
+                "split_rank": 5,
+                "passing_rank": 5
+              }
             },
             {
               "leg": 2,
@@ -21397,7 +21401,11 @@
               "split_rank": 2,
               "split_record": false,
               "status": "ok",
-              "raw_name_grade": "丸山白虎(3)"
+              "raw_name_grade": "丸山白虎(3)",
+              "computed": {
+                "split_rank": 2,
+                "passing_rank": 3
+              }
             },
             {
               "leg": 3,
@@ -21409,7 +21417,11 @@
               "split_rank": 2,
               "split_record": false,
               "status": "ok",
-              "raw_name_grade": "石原佳維斗(3)"
+              "raw_name_grade": "石原佳維斗(3)",
+              "computed": {
+                "split_rank": 2,
+                "passing_rank": 1
+              }
             },
             {
               "leg": 4,
@@ -21421,7 +21433,11 @@
               "split_rank": 1,
               "split_record": true,
               "status": "ok",
-              "raw_name_grade": "辻本愛琉(3)"
+              "raw_name_grade": "辻本愛琉(3)",
+              "computed": {
+                "split_rank": 1,
+                "passing_rank": 1
+              }
             },
             {
               "leg": 5,
@@ -21433,7 +21449,11 @@
               "split_rank": 7,
               "split_record": false,
               "status": "ok",
-              "raw_name_grade": "田中元稀(2)"
+              "raw_name_grade": "田中元稀(2)",
+              "computed": {
+                "split_rank": 7,
+                "passing_rank": 1
+              }
             },
             {
               "leg": 6,
@@ -21445,7 +21465,11 @@
               "split_rank": 1,
               "split_record": true,
               "status": "ok",
-              "raw_name_grade": "unknown(2)"
+              "raw_name_grade": "隈部侑成(2)",
+              "computed": {
+                "split_rank": 1,
+                "passing_rank": 1
+              }
             }
           ]
         },
@@ -21464,7 +21488,11 @@
               "split_rank": 5,
               "split_record": false,
               "status": "ok",
-              "raw_name_grade": "永田來夢(2)"
+              "raw_name_grade": "永田來夢(2)",
+              "computed": {
+                "split_rank": 5,
+                "passing_rank": 5
+              }
             },
             {
               "leg": 2,
@@ -21476,7 +21504,11 @@
               "split_rank": 5,
               "split_record": false,
               "status": "ok",
-              "raw_name_grade": "辛嶋大宙(2)"
+              "raw_name_grade": "辛嶋大宙(2)",
+              "computed": {
+                "split_rank": 5,
+                "passing_rank": 5
+              }
             },
             {
               "leg": 3,
@@ -21488,7 +21520,11 @@
               "split_rank": 3,
               "split_record": false,
               "status": "ok",
-              "raw_name_grade": "一瀬彪眞(3)"
+              "raw_name_grade": "一瀬彪眞(3)",
+              "computed": {
+                "split_rank": 3,
+                "passing_rank": 2
+              }
             },
             {
               "leg": 4,
@@ -21500,7 +21536,11 @@
               "split_rank": 2,
               "split_record": false,
               "status": "ok",
-              "raw_name_grade": "居石楓摩(3)"
+              "raw_name_grade": "居石楓摩(3)",
+              "computed": {
+                "split_rank": 2,
+                "passing_rank": 2
+              }
             },
             {
               "leg": 5,
@@ -21512,7 +21552,11 @@
               "split_rank": 1,
               "split_record": true,
               "status": "ok",
-              "raw_name_grade": "柿本晴仁(1)"
+              "raw_name_grade": "柿本晴仁(1)",
+              "computed": {
+                "split_rank": 1,
+                "passing_rank": 2
+              }
             },
             {
               "leg": 6,
@@ -21524,7 +21568,11 @@
               "split_rank": 7,
               "split_record": false,
               "status": "ok",
-              "raw_name_grade": "松島颯希(2)"
+              "raw_name_grade": "松島颯希(2)",
+              "computed": {
+                "split_rank": 7,
+                "passing_rank": 2
+              }
             }
           ]
         },
@@ -21543,11 +21591,15 @@
               "split_rank": 11,
               "split_record": false,
               "status": "ok",
-              "raw_name_grade": "小倉十和(1)"
+              "raw_name_grade": "小倉十和(1)",
+              "computed": {
+                "split_rank": 11,
+                "passing_rank": 11
+              }
             },
             {
               "leg": 2,
-              "name": "unknown",
+              "name": "中岡謙太",
               "grade": 2,
               "split": "9:31",
               "cumulative": "19:13",
@@ -21555,7 +21607,11 @@
               "split_rank": 8,
               "split_record": false,
               "status": "ok",
-              "raw_name_grade": "unknown(2)"
+              "raw_name_grade": "中岡謙太(2)",
+              "computed": {
+                "split_rank": 8,
+                "passing_rank": 8
+              }
             },
             {
               "leg": 3,
@@ -21567,7 +21623,11 @@
               "split_rank": 1,
               "split_record": true,
               "status": "ok",
-              "raw_name_grade": "草野瑠唯(2)"
+              "raw_name_grade": "草野瑠唯(2)",
+              "computed": {
+                "split_rank": 1,
+                "passing_rank": 3
+              }
             },
             {
               "leg": 4,
@@ -21579,7 +21639,11 @@
               "split_rank": 6,
               "split_record": false,
               "status": "ok",
-              "raw_name_grade": "秋原康秀(2)"
+              "raw_name_grade": "秋原康秀(2)",
+              "computed": {
+                "split_rank": 6,
+                "passing_rank": 3
+              }
             },
             {
               "leg": 5,
@@ -21591,7 +21655,11 @@
               "split_rank": 4,
               "split_record": false,
               "status": "ok",
-              "raw_name_grade": "田辺友翔(2)"
+              "raw_name_grade": "田辺友翔(2)",
+              "computed": {
+                "split_rank": 4,
+                "passing_rank": 3
+              }
             },
             {
               "leg": 6,
@@ -21603,7 +21671,11 @@
               "split_rank": 5,
               "split_record": false,
               "status": "ok",
-              "raw_name_grade": "坂上蒼空(2)"
+              "raw_name_grade": "坂上蒼空(2)",
+              "computed": {
+                "split_rank": 5,
+                "passing_rank": 3
+              }
             }
           ]
         },
@@ -21622,7 +21694,11 @@
               "split_rank": 3,
               "split_record": false,
               "status": "ok",
-              "raw_name_grade": "濵北佑斗(3)"
+              "raw_name_grade": "濵北佑斗(3)",
+              "computed": {
+                "split_rank": 3,
+                "passing_rank": 3
+              }
             },
             {
               "leg": 2,
@@ -21634,7 +21710,11 @@
               "split_rank": 7,
               "split_record": false,
               "status": "ok",
-              "raw_name_grade": "福田虎之助(3)"
+              "raw_name_grade": "福田虎之助(3)",
+              "computed": {
+                "split_rank": 7,
+                "passing_rank": 6
+              }
             },
             {
               "leg": 3,
@@ -21646,7 +21726,11 @@
               "split_rank": 6,
               "split_record": false,
               "status": "ok",
-              "raw_name_grade": "石川隼(2)"
+              "raw_name_grade": "石川隼(2)",
+              "computed": {
+                "split_rank": 6,
+                "passing_rank": 6
+              }
             },
             {
               "leg": 4,
@@ -21658,7 +21742,11 @@
               "split_rank": 4,
               "split_record": false,
               "status": "ok",
-              "raw_name_grade": "前畑春馬(3)"
+              "raw_name_grade": "前畑春馬(3)",
+              "computed": {
+                "split_rank": 4,
+                "passing_rank": 4
+              }
             },
             {
               "leg": 5,
@@ -21670,11 +21758,15 @@
               "split_rank": 4,
               "split_record": false,
               "status": "ok",
-              "raw_name_grade": "米谷慶吾(3)"
+              "raw_name_grade": "米谷慶吾(3)",
+              "computed": {
+                "split_rank": 4,
+                "passing_rank": 4
+              }
             },
             {
               "leg": 6,
-              "name": "unknown",
+              "name": "清田雅翔",
               "grade": 3,
               "split": "10:14",
               "cumulative": "58:49",
@@ -21682,7 +21774,11 @@
               "split_rank": 4,
               "split_record": false,
               "status": "ok",
-              "raw_name_grade": "unknown(3)"
+              "raw_name_grade": "清田雅翔(3)",
+              "computed": {
+                "split_rank": 4,
+                "passing_rank": 4
+              }
             }
           ]
         },
@@ -21701,7 +21797,11 @@
               "split_rank": 1,
               "split_record": true,
               "status": "ok",
-              "raw_name_grade": "江口大尊(3)"
+              "raw_name_grade": "江口大尊(3)",
+              "computed": {
+                "split_rank": 1,
+                "passing_rank": 1
+              }
             },
             {
               "leg": 2,
@@ -21713,7 +21813,11 @@
               "split_rank": 3,
               "split_record": false,
               "status": "ok",
-              "raw_name_grade": "牛山拓哉(3)"
+              "raw_name_grade": "牛山拓哉(3)",
+              "computed": {
+                "split_rank": 3,
+                "passing_rank": 2
+              }
             },
             {
               "leg": 3,
@@ -21725,7 +21829,11 @@
               "split_rank": 8,
               "split_record": false,
               "status": "ok",
-              "raw_name_grade": "中川晃(3)"
+              "raw_name_grade": "中川晃(3)",
+              "computed": {
+                "split_rank": 8,
+                "passing_rank": 4
+              }
             },
             {
               "leg": 4,
@@ -21737,7 +21845,11 @@
               "split_rank": 9,
               "split_record": false,
               "status": "ok",
-              "raw_name_grade": "中村大翔(2)"
+              "raw_name_grade": "中村大翔(2)",
+              "computed": {
+                "split_rank": 9,
+                "passing_rank": 5
+              }
             },
             {
               "leg": 5,
@@ -21749,7 +21861,11 @@
               "split_rank": 3,
               "split_record": false,
               "status": "ok",
-              "raw_name_grade": "野口徹吾(3)"
+              "raw_name_grade": "野口徹吾(3)",
+              "computed": {
+                "split_rank": 3,
+                "passing_rank": 5
+              }
             },
             {
               "leg": 6,
@@ -21761,7 +21877,11 @@
               "split_rank": 6,
               "split_record": false,
               "status": "ok",
-              "raw_name_grade": "永尾海斗(2)"
+              "raw_name_grade": "永尾海斗(2)",
+              "computed": {
+                "split_rank": 6,
+                "passing_rank": 5
+              }
             }
           ]
         },
@@ -21780,7 +21900,11 @@
               "split_rank": 7,
               "split_record": false,
               "status": "ok",
-              "raw_name_grade": "倉田裕斗(3)"
+              "raw_name_grade": "倉田裕斗(3)",
+              "computed": {
+                "split_rank": 7,
+                "passing_rank": 7
+              }
             },
             {
               "leg": 2,
@@ -21792,7 +21916,11 @@
               "split_rank": 6,
               "split_record": false,
               "status": "ok",
-              "raw_name_grade": "松野凛空(2)"
+              "raw_name_grade": "松野凛空(2)",
+              "computed": {
+                "split_rank": 6,
+                "passing_rank": 7
+              }
             },
             {
               "leg": 3,
@@ -21804,7 +21932,11 @@
               "split_rank": 4,
               "split_record": false,
               "status": "ok",
-              "raw_name_grade": "今村昇磨(2)"
+              "raw_name_grade": "今村昇磨(2)",
+              "computed": {
+                "split_rank": 4,
+                "passing_rank": 5
+              }
             },
             {
               "leg": 4,
@@ -21816,7 +21948,11 @@
               "split_rank": 8,
               "split_record": false,
               "status": "ok",
-              "raw_name_grade": "佐藤央琉(3)"
+              "raw_name_grade": "佐藤央琉(3)",
+              "computed": {
+                "split_rank": 8,
+                "passing_rank": 6
+              }
             },
             {
               "leg": 5,
@@ -21828,7 +21964,11 @@
               "split_rank": 2,
               "split_record": false,
               "status": "ok",
-              "raw_name_grade": "山本哲瑠(1)"
+              "raw_name_grade": "山本哲瑠(1)",
+              "computed": {
+                "split_rank": 2,
+                "passing_rank": 5
+              }
             },
             {
               "leg": 6,
@@ -21840,7 +21980,11 @@
               "split_rank": 9,
               "split_record": false,
               "status": "ok",
-              "raw_name_grade": "案浦竜士(3)"
+              "raw_name_grade": "案浦竜士(3)",
+              "computed": {
+                "split_rank": 9,
+                "passing_rank": 6
+              }
             }
           ]
         },
@@ -21859,7 +22003,11 @@
               "split_rank": 4,
               "split_record": false,
               "status": "ok",
-              "raw_name_grade": "村上葉侑(2)"
+              "raw_name_grade": "村上葉侑(2)",
+              "computed": {
+                "split_rank": 4,
+                "passing_rank": 4
+              }
             },
             {
               "leg": 2,
@@ -21871,7 +22019,11 @@
               "split_rank": 11,
               "split_record": false,
               "status": "ok",
-              "raw_name_grade": "木村仁(3)"
+              "raw_name_grade": "木村仁(3)",
+              "computed": {
+                "split_rank": 11,
+                "passing_rank": 10
+              }
             },
             {
               "leg": 3,
@@ -21883,7 +22035,11 @@
               "split_rank": 5,
               "split_record": false,
               "status": "ok",
-              "raw_name_grade": "塚川流星(3)"
+              "raw_name_grade": "塚川流星(3)",
+              "computed": {
+                "split_rank": 5,
+                "passing_rank": 8
+              }
             },
             {
               "leg": 4,
@@ -21895,7 +22051,11 @@
               "split_rank": 7,
               "split_record": false,
               "status": "ok",
-              "raw_name_grade": "永清芯(3)"
+              "raw_name_grade": "永清芯(3)",
+              "computed": {
+                "split_rank": 7,
+                "passing_rank": 8
+              }
             },
             {
               "leg": 5,
@@ -21907,7 +22067,11 @@
               "split_rank": 8,
               "split_record": false,
               "status": "ok",
-              "raw_name_grade": "本多蒼(3)"
+              "raw_name_grade": "本多蒼(3)",
+              "computed": {
+                "split_rank": 8,
+                "passing_rank": 8
+              }
             },
             {
               "leg": 6,
@@ -21919,7 +22083,11 @@
               "split_rank": 3,
               "split_record": false,
               "status": "ok",
-              "raw_name_grade": "田中翔大(2)"
+              "raw_name_grade": "田中翔大(2)",
+              "computed": {
+                "split_rank": 3,
+                "passing_rank": 7
+              }
             }
           ]
         },
@@ -21938,7 +22106,11 @@
               "split_rank": 2,
               "split_record": false,
               "status": "ok",
-              "raw_name_grade": "山戸耀輝(3)"
+              "raw_name_grade": "山戸耀輝(3)",
+              "computed": {
+                "split_rank": 2,
+                "passing_rank": 2
+              }
             },
             {
               "leg": 2,
@@ -21950,7 +22122,11 @@
               "split_rank": 4,
               "split_record": false,
               "status": "ok",
-              "raw_name_grade": "大城戸秀亮(3)"
+              "raw_name_grade": "大城戸秀亮(3)",
+              "computed": {
+                "split_rank": 4,
+                "passing_rank": 4
+              }
             },
             {
               "leg": 3,
@@ -21962,7 +22138,11 @@
               "split_rank": 10,
               "split_record": false,
               "status": "ok",
-              "raw_name_grade": "大塚正統(3)"
+              "raw_name_grade": "大塚正統(3)",
+              "computed": {
+                "split_rank": 10,
+                "passing_rank": 9
+              }
             },
             {
               "leg": 4,
@@ -21974,7 +22154,11 @@
               "split_rank": 3,
               "split_record": false,
               "status": "ok",
-              "raw_name_grade": "原田慶大(2)"
+              "raw_name_grade": "原田慶大(2)",
+              "computed": {
+                "split_rank": 3,
+                "passing_rank": 7
+              }
             },
             {
               "leg": 5,
@@ -21986,7 +22170,11 @@
               "split_rank": 6,
               "split_record": false,
               "status": "ok",
-              "raw_name_grade": "牧野圭汰(2)"
+              "raw_name_grade": "牧野圭汰(2)",
+              "computed": {
+                "split_rank": 6,
+                "passing_rank": 7
+              }
             },
             {
               "leg": 6,
@@ -21998,7 +22186,11 @@
               "split_rank": 10,
               "split_record": false,
               "status": "ok",
-              "raw_name_grade": "福幸太郎(3)"
+              "raw_name_grade": "福幸太郎(3)",
+              "computed": {
+                "split_rank": 10,
+                "passing_rank": 8
+              }
             }
           ]
         },
@@ -22017,7 +22209,11 @@
               "split_rank": 8,
               "split_record": false,
               "status": "ok",
-              "raw_name_grade": "河野壮大(2)"
+              "raw_name_grade": "河野壮大(2)",
+              "computed": {
+                "split_rank": 8,
+                "passing_rank": 8
+              }
             },
             {
               "leg": 2,
@@ -22029,7 +22225,11 @@
               "split_rank": 13,
               "split_record": false,
               "status": "ok",
-              "raw_name_grade": "三井大夢(3)"
+              "raw_name_grade": "三井大夢(3)",
+              "computed": {
+                "split_rank": 13,
+                "passing_rank": 13
+              }
             },
             {
               "leg": 3,
@@ -22041,11 +22241,15 @@
               "split_rank": 10,
               "split_record": false,
               "status": "ok",
-              "raw_name_grade": "川口瑞夢(3)"
+              "raw_name_grade": "川口瑞夢(3)",
+              "computed": {
+                "split_rank": 10,
+                "passing_rank": 13
+              }
             },
             {
               "leg": 4,
-              "name": "unknown",
+              "name": "西村隆",
               "grade": 2,
               "split": "10:10",
               "cumulative": "40:16",
@@ -22053,7 +22257,11 @@
               "split_rank": 5,
               "split_record": false,
               "status": "ok",
-              "raw_name_grade": "unknown(2)"
+              "raw_name_grade": "西村隆(2)",
+              "computed": {
+                "split_rank": 5,
+                "passing_rank": 9
+              }
             },
             {
               "leg": 5,
@@ -22065,7 +22273,11 @@
               "split_rank": 10,
               "split_record": false,
               "status": "ok",
-              "raw_name_grade": "江藤澄人(2)"
+              "raw_name_grade": "江藤澄人(2)",
+              "computed": {
+                "split_rank": 10,
+                "passing_rank": 10
+              }
             },
             {
               "leg": 6,
@@ -22077,7 +22289,11 @@
               "split_rank": 8,
               "split_record": false,
               "status": "ok",
-              "raw_name_grade": "隈元陽太(3)"
+              "raw_name_grade": "隈元陽太(3)",
+              "computed": {
+                "split_rank": 8,
+                "passing_rank": 9
+              }
             }
           ]
         },
@@ -22096,7 +22312,11 @@
               "split_rank": 15,
               "split_record": false,
               "status": "ok",
-              "raw_name_grade": "松村颯汰(3)"
+              "raw_name_grade": "松村颯汰(3)",
+              "computed": {
+                "split_rank": 15,
+                "passing_rank": 15
+              }
             },
             {
               "leg": 2,
@@ -22108,7 +22328,11 @@
               "split_rank": 9,
               "split_record": false,
               "status": "ok",
-              "raw_name_grade": "藤原尚己(2)"
+              "raw_name_grade": "藤原尚己(2)",
+              "computed": {
+                "split_rank": 9,
+                "passing_rank": 11
+              }
             },
             {
               "leg": 3,
@@ -22120,7 +22344,11 @@
               "split_rank": 10,
               "split_record": false,
               "status": "ok",
-              "raw_name_grade": "北村政人(3)"
+              "raw_name_grade": "北村政人(3)",
+              "computed": {
+                "split_rank": 10,
+                "passing_rank": 12
+              }
             },
             {
               "leg": 4,
@@ -22132,7 +22360,11 @@
               "split_rank": 12,
               "split_record": false,
               "status": "ok",
-              "raw_name_grade": "谷平陽生(2)"
+              "raw_name_grade": "谷平陽生(2)",
+              "computed": {
+                "split_rank": 12,
+                "passing_rank": 13
+              }
             },
             {
               "leg": 5,
@@ -22144,7 +22376,11 @@
               "split_rank": 11,
               "split_record": false,
               "status": "ok",
-              "raw_name_grade": "中田透和(2)"
+              "raw_name_grade": "中田透和(2)",
+              "computed": {
+                "split_rank": 11,
+                "passing_rank": 11
+              }
             },
             {
               "leg": 6,
@@ -22156,7 +22392,11 @@
               "split_rank": 2,
               "split_record": false,
               "status": "ok",
-              "raw_name_grade": "本戸優貴(3)"
+              "raw_name_grade": "本戸優貴(3)",
+              "computed": {
+                "split_rank": 2,
+                "passing_rank": 10
+              }
             }
           ]
         },
@@ -22175,7 +22415,11 @@
               "split_rank": 10,
               "split_record": false,
               "status": "ok",
-              "raw_name_grade": "上田慶太郎(2)"
+              "raw_name_grade": "上田慶太郎(2)",
+              "computed": {
+                "split_rank": 10,
+                "passing_rank": 10
+              }
             },
             {
               "leg": 2,
@@ -22187,7 +22431,11 @@
               "split_rank": 12,
               "split_record": false,
               "status": "ok",
-              "raw_name_grade": "多田隈空翔(3)"
+              "raw_name_grade": "多田隈空翔(3)",
+              "computed": {
+                "split_rank": 12,
+                "passing_rank": 12
+              }
             },
             {
               "leg": 3,
@@ -22199,7 +22447,11 @@
               "split_rank": 7,
               "split_record": false,
               "status": "ok",
-              "raw_name_grade": "林田流音(2)"
+              "raw_name_grade": "林田流音(2)",
+              "computed": {
+                "split_rank": 7,
+                "passing_rank": 10
+              }
             },
             {
               "leg": 4,
@@ -22211,7 +22463,11 @@
               "split_rank": 11,
               "split_record": false,
               "status": "ok",
-              "raw_name_grade": "松本颯斗(2)"
+              "raw_name_grade": "松本颯斗(2)",
+              "computed": {
+                "split_rank": 11,
+                "passing_rank": 10
+              }
             },
             {
               "leg": 5,
@@ -22223,7 +22479,11 @@
               "split_rank": 9,
               "split_record": false,
               "status": "ok",
-              "raw_name_grade": "川添阿空(2)"
+              "raw_name_grade": "川添阿空(2)",
+              "computed": {
+                "split_rank": 9,
+                "passing_rank": 9
+              }
             },
             {
               "leg": 6,
@@ -22235,7 +22495,11 @@
               "split_rank": 13,
               "split_record": false,
               "status": "ok",
-              "raw_name_grade": "吉田理人(1)"
+              "raw_name_grade": "吉田理人(1)",
+              "computed": {
+                "split_rank": 13,
+                "passing_rank": 10
+              }
             }
           ]
         },
@@ -22254,7 +22518,11 @@
               "split_rank": 9,
               "split_record": false,
               "status": "ok",
-              "raw_name_grade": "竹下響佑(3)"
+              "raw_name_grade": "竹下響佑(3)",
+              "computed": {
+                "split_rank": 9,
+                "passing_rank": 9
+              }
             },
             {
               "leg": 2,
@@ -22266,7 +22534,11 @@
               "split_rank": 10,
               "split_record": false,
               "status": "ok",
-              "raw_name_grade": "山本穂也(3)"
+              "raw_name_grade": "山本穂也(3)",
+              "computed": {
+                "split_rank": 10,
+                "passing_rank": 9
+              }
             },
             {
               "leg": 3,
@@ -22278,7 +22550,11 @@
               "split_rank": 14,
               "split_record": false,
               "status": "ok",
-              "raw_name_grade": "伊藤倖(2)"
+              "raw_name_grade": "伊藤倖(2)",
+              "computed": {
+                "split_rank": 14,
+                "passing_rank": 11
+              }
             },
             {
               "leg": 4,
@@ -22290,7 +22566,11 @@
               "split_rank": 10,
               "split_record": false,
               "status": "ok",
-              "raw_name_grade": "永田哲聖(2)"
+              "raw_name_grade": "永田哲聖(2)",
+              "computed": {
+                "split_rank": 10,
+                "passing_rank": 11
+              }
             },
             {
               "leg": 5,
@@ -22302,7 +22582,11 @@
               "split_rank": 13,
               "split_record": false,
               "status": "ok",
-              "raw_name_grade": "田中翔大(3)"
+              "raw_name_grade": "田中翔大(3)",
+              "computed": {
+                "split_rank": 13,
+                "passing_rank": 12
+              }
             },
             {
               "leg": 6,
@@ -22314,7 +22598,11 @@
               "split_rank": 14,
               "split_record": false,
               "status": "ok",
-              "raw_name_grade": "木下蓮士(3)"
+              "raw_name_grade": "木下蓮士(3)",
+              "computed": {
+                "split_rank": 14,
+                "passing_rank": 12
+              }
             }
           ]
         },
@@ -22333,7 +22621,11 @@
               "split_rank": 12,
               "split_record": false,
               "status": "ok",
-              "raw_name_grade": "unknown(3)"
+              "raw_name_grade": "unknown(3)",
+              "computed": {
+                "split_rank": 12,
+                "passing_rank": 12
+              }
             },
             {
               "leg": 2,
@@ -22345,7 +22637,11 @@
               "split_rank": 14,
               "split_record": false,
               "status": "ok",
-              "raw_name_grade": "木村天優(2)"
+              "raw_name_grade": "木村天優(2)",
+              "computed": {
+                "split_rank": 14,
+                "passing_rank": 14
+              }
             },
             {
               "leg": 3,
@@ -22357,7 +22653,11 @@
               "split_rank": 9,
               "split_record": false,
               "status": "ok",
-              "raw_name_grade": "山内理登(3)"
+              "raw_name_grade": "山内理登(3)",
+              "computed": {
+                "split_rank": 9,
+                "passing_rank": 14
+              }
             },
             {
               "leg": 4,
@@ -22369,7 +22669,11 @@
               "split_rank": 13,
               "split_record": false,
               "status": "ok",
-              "raw_name_grade": "木下幹都(3)"
+              "raw_name_grade": "木下幹都(3)",
+              "computed": {
+                "split_rank": 13,
+                "passing_rank": 14
+              }
             },
             {
               "leg": 5,
@@ -22381,11 +22685,15 @@
               "split_rank": 12,
               "split_record": false,
               "status": "ok",
-              "raw_name_grade": "野口慎太郎(3)"
+              "raw_name_grade": "野口慎太郎(3)",
+              "computed": {
+                "split_rank": 12,
+                "passing_rank": 13
+              }
             },
             {
               "leg": 6,
-              "name": "unknown",
+              "name": "村上稀琉",
               "grade": 3,
               "split": "10:53",
               "cumulative": "62:41",
@@ -22393,7 +22701,11 @@
               "split_rank": 12,
               "split_record": false,
               "status": "ok",
-              "raw_name_grade": "unknown(3)"
+              "raw_name_grade": "村上稀琉(3)",
+              "computed": {
+                "split_rank": 12,
+                "passing_rank": 13
+              }
             }
           ]
         },
@@ -22412,7 +22724,11 @@
               "split_rank": 14,
               "split_record": false,
               "status": "ok",
-              "raw_name_grade": "木村幹太(2)"
+              "raw_name_grade": "木村幹太(2)",
+              "computed": {
+                "split_rank": 14,
+                "passing_rank": 14
+              }
             },
             {
               "leg": 2,
@@ -22424,7 +22740,11 @@
               "split_rank": 1,
               "split_record": true,
               "status": "ok",
-              "raw_name_grade": "山本悠斗(1)"
+              "raw_name_grade": "山本悠斗(1)",
+              "computed": {
+                "split_rank": 1,
+                "passing_rank": 1
+              }
             },
             {
               "leg": 3,
@@ -22436,7 +22756,11 @@
               "split_rank": 13,
               "split_record": false,
               "status": "ok",
-              "raw_name_grade": "坂口昂輝(2)"
+              "raw_name_grade": "坂口昂輝(2)",
+              "computed": {
+                "split_rank": 13,
+                "passing_rank": 7
+              }
             },
             {
               "leg": 4,
@@ -22448,7 +22772,11 @@
               "split_rank": 15,
               "split_record": false,
               "status": "ok",
-              "raw_name_grade": "花谷勇輝(3)"
+              "raw_name_grade": "花谷勇輝(3)",
+              "computed": {
+                "split_rank": 15,
+                "passing_rank": 12
+              }
             },
             {
               "leg": 5,
@@ -22460,7 +22788,11 @@
               "split_rank": 14,
               "split_record": false,
               "status": "ok",
-              "raw_name_grade": "村上史晃(3)"
+              "raw_name_grade": "村上史晃(3)",
+              "computed": {
+                "split_rank": 14,
+                "passing_rank": 14
+              }
             },
             {
               "leg": 6,
@@ -22472,7 +22804,11 @@
               "split_rank": 11,
               "split_record": false,
               "status": "ok",
-              "raw_name_grade": "田上遥睦(3)"
+              "raw_name_grade": "田上遥睦(3)",
+              "computed": {
+                "split_rank": 11,
+                "passing_rank": 14
+              }
             }
           ]
         },
@@ -22491,7 +22827,11 @@
               "split_rank": 12,
               "split_record": false,
               "status": "ok",
-              "raw_name_grade": "山下隼大(3)"
+              "raw_name_grade": "山下隼大(3)",
+              "computed": {
+                "split_rank": 12,
+                "passing_rank": 12
+              }
             },
             {
               "leg": 2,
@@ -22503,7 +22843,11 @@
               "split_rank": 15,
               "split_record": false,
               "status": "ok",
-              "raw_name_grade": "川﨑大芽(2)"
+              "raw_name_grade": "川﨑大芽(2)",
+              "computed": {
+                "split_rank": 15,
+                "passing_rank": 15
+              }
             },
             {
               "leg": 3,
@@ -22515,7 +22859,11 @@
               "split_rank": 15,
               "split_record": false,
               "status": "ok",
-              "raw_name_grade": "井上太汰(3)"
+              "raw_name_grade": "井上太汰(3)",
+              "computed": {
+                "split_rank": 15,
+                "passing_rank": 15
+              }
             },
             {
               "leg": 4,
@@ -22527,7 +22875,11 @@
               "split_rank": 14,
               "split_record": false,
               "status": "ok",
-              "raw_name_grade": "明瀬七絃(2)"
+              "raw_name_grade": "明瀬七絃(2)",
+              "computed": {
+                "split_rank": 14,
+                "passing_rank": 15
+              }
             },
             {
               "leg": 5,
@@ -22539,7 +22891,11 @@
               "split_rank": null,
               "split_record": false,
               "status": "dnf",
-              "raw_name_grade": "unknown(None)"
+              "raw_name_grade": "unknown(None)",
+              "computed": {
+                "split_rank": null,
+                "passing_rank": null
+              }
             },
             {
               "leg": 6,
@@ -22551,7 +22907,11 @@
               "split_rank": null,
               "split_record": false,
               "status": "dnf",
-              "raw_name_grade": "unknown(None)"
+              "raw_name_grade": "unknown(None)",
+              "computed": {
+                "split_rank": null,
+                "passing_rank": null
+              }
             }
           ]
         }
@@ -22572,7 +22932,12 @@
         "南関男子3区はユーザー確認により塚川流星（3年）に修正。",
         "荒尾海陽男子3区はユーザー確認により林田流音（2年）に修正。",
         "有明男子3区はユーザー確認により伊藤倖（2年）に修正。",
-        "岱明4区・佐藤央琉の学年を成績表画像と卒業年度に合わせて3年へ修正"
+        "岱明4区・佐藤央琉の学年を成績表画像と卒業年度に合わせて3年へ修正",
+        "玉高附属男子2区は成績表確認により中岡謙太（2年）に修正（旧: unknown）。",
+        "長洲男子6区は成績表確認により清田雅翔（3年）に修正（旧: unknown）。",
+        "玉名男子4区は西村隆（2年）の可能性が高いが表記判読に余白あり（旧: unknown）。",
+        "玉南男子6区は成績表確認により村上稀琉（3年）に修正（旧: unknown）。",
+        "玉南男子1区は現時点で氏名未確認（unknownのまま）。"
       ]
     }
   },

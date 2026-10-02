@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated_at": "2026-10-02T00:42:20Z",
+  "generated_at": "2026-10-02T01:37:13Z",
   "nodes": [
     {
       "id": "corpus:analysis-ocr",
@@ -26,7 +26,7 @@
       "refs": [
         "input/idaten-corpus/aragyoku"
       ],
-      "hint": "荒玉駅伝の構造化 JSON/MD・transcripts・winners-by-year・course-videos. 例: course-points.json, course-points.md, course-videos.md, men_full_2012_2025.json, ocr_raw, quiz, taimei-records-2012-2025.md, transcripts, winners-by-year.md, women_full_2012_2025.json, women_top4_2012_2025.json, women_top6_2012_2025.json"
+      "hint": "荒玉駅伝の構造化 JSON/MD・transcripts・winners-by-year・course-videos. 例: course-points.json, course-points.md, course-videos.md, men_full_2012_2025.json, men_full_athletes.csv, ocr_raw, quiz, taimei-records-2012-2025.md, transcripts, winners-by-year.md, women_full_2012_2025.json, women_top4_2012_2025.json"
     },
     {
       "id": "corpus:calendar",
@@ -16768,7 +16768,7 @@
       "refs": [
         "out/analysis/aragyoku-years/2025.md"
       ],
-      "hint": "男子 unknown 学年3 10:53 区間12位 総合13位"
+      "hint": "男子 村上稀琉 学年3 10:53 区間12位 総合13位"
     },
     {
       "id": "entity:aragyoku-leg:2025:玉名:1",
@@ -16820,7 +16820,7 @@
       "refs": [
         "out/analysis/aragyoku-years/2025.md"
       ],
-      "hint": "女子 内田千惺 学年3 6:56 区間1位 総合1位 / 男子 unknown 学年2 10:10 区間5位 総合9位"
+      "hint": "女子 内田千惺 学年3 6:56 区間1位 総合1位 / 男子 西村隆 学年2 10:10 区間5位 総合9位"
     },
     {
       "id": "entity:aragyoku-leg:2025:玉名:5",
@@ -17028,7 +17028,7 @@
       "refs": [
         "out/analysis/aragyoku-years/2025.md"
       ],
-      "hint": "女子 三吉悠日 学年1 8:39 区間14位 総合10位 / 男子 unknown 学年2 9:31 区間8位 総合3位"
+      "hint": "女子 三吉悠日 学年1 8:39 区間14位 総合10位 / 男子 中岡謙太 学年2 9:31 区間8位 総合3位"
     },
     {
       "id": "entity:aragyoku-leg:2025:玉高附属:3",
@@ -17470,7 +17470,7 @@
       "refs": [
         "out/analysis/aragyoku-years/2025.md"
       ],
-      "hint": "男子 unknown 学年3 10:14 区間4位 総合4位"
+      "hint": "男子 清田雅翔 学年3 10:14 区間4位 総合4位"
     },
     {
       "id": "entity:athlete:中尾快叶",
@@ -17518,9 +17518,9 @@
         "practice"
       ],
       "refs": [
-        "out/2025/practice_absentees.csv",
+        "input/events.2025.yaml",
         "out/analysis/notion_records_2026.json",
-        "input/events.2025.yaml"
+        "out/2025/practice_absentees.csv"
       ],
       "hint": "部員エンティティ"
     },
@@ -17554,9 +17554,9 @@
         "practice"
       ],
       "refs": [
-        "out/2025/practice_absentees.csv",
+        "input/events.2025.yaml",
         "out/analysis/notion_records_2026.json",
-        "input/events.2025.yaml"
+        "out/2025/practice_absentees.csv"
       ],
       "hint": "部員エンティティ"
     },
@@ -17590,9 +17590,9 @@
         "practice"
       ],
       "refs": [
-        "out/2025/practice_absentees.csv",
+        "input/events.2025.yaml",
         "out/analysis/notion_records_2026.json",
-        "input/events.2025.yaml"
+        "out/2025/practice_absentees.csv"
       ],
       "hint": "部員エンティティ"
     },
@@ -17662,9 +17662,9 @@
         "practice"
       ],
       "refs": [
-        "out/2025/practice_absentees.csv",
+        "input/events.2025.yaml",
         "out/analysis/notion_records_2026.json",
-        "input/events.2025.yaml"
+        "out/2025/practice_absentees.csv"
       ],
       "hint": "部員エンティティ"
     },
@@ -17698,8 +17698,8 @@
         "practice"
       ],
       "refs": [
-        "out/2025/practice_absentees.csv",
-        "input/events.2025.yaml"
+        "input/events.2025.yaml",
+        "out/2025/practice_absentees.csv"
       ],
       "hint": "部員エンティティ"
     },
@@ -17713,9 +17713,9 @@
         "practice"
       ],
       "refs": [
-        "out/2025/practice_absentees.csv",
+        "input/events.2025.yaml",
         "out/analysis/notion_records_2026.json",
-        "input/events.2025.yaml"
+        "out/2025/practice_absentees.csv"
       ],
       "hint": "部員エンティティ"
     },
@@ -17749,9 +17749,9 @@
         "practice"
       ],
       "refs": [
-        "out/2025/practice_absentees.csv",
+        "input/events.2025.yaml",
         "out/analysis/notion_records_2026.json",
-        "input/events.2025.yaml"
+        "out/2025/practice_absentees.csv"
       ],
       "hint": "部員エンティティ"
     },
@@ -17800,9 +17800,9 @@
         "practice"
       ],
       "refs": [
-        "out/2025/practice_absentees.csv",
+        "input/events.2025.yaml",
         "out/analysis/notion_records_2026.json",
-        "input/events.2025.yaml"
+        "out/2025/practice_absentees.csv"
       ],
       "hint": "部員エンティティ"
     },
@@ -17837,8 +17837,8 @@
       ],
       "refs": [
         "input/events.2026.yaml",
-        "out/2026/practice_absentees.csv",
-        "out/analysis/notion_records_2026.json"
+        "out/analysis/notion_records_2026.json",
+        "out/2026/practice_absentees.csv"
       ],
       "hint": "部員エンティティ"
     },
@@ -17872,9 +17872,9 @@
         "practice"
       ],
       "refs": [
-        "out/2025/practice_absentees.csv",
+        "input/events.2025.yaml",
         "out/analysis/notion_records_2026.json",
-        "input/events.2025.yaml"
+        "out/2025/practice_absentees.csv"
       ],
       "hint": "部員エンティティ"
     },
@@ -17908,11 +17908,11 @@
         "practice"
       ],
       "refs": [
-        "out/2025/practice_absentees.csv",
+        "input/events.2025.yaml",
         "out/analysis/notion_records_2026.json",
         "out/2026/practice_absentees.csv",
         "input/events.2026.yaml",
-        "input/events.2025.yaml"
+        "out/2025/practice_absentees.csv"
       ],
       "hint": "部員エンティティ"
     },
@@ -23295,7 +23295,7 @@
       "refs": [
         "input/idaten-corpus/aragyoku"
       ],
-      "hint": "荒玉駅伝の構造化 JSON/MD・transcripts・winners-by-year・course-videos. 例: course-points.json, course-points.md, course-videos.md, men_full_2012_2025.json, ocr_raw, quiz, taimei-records-2012-2025.md, transcripts, winners-by-year.md, women_full_2012_2025.json, women_top4_2012_2025.json, women_top6_2012_2025.json"
+      "hint": "荒玉駅伝の構造化 JSON/MD・transcripts・winners-by-year・course-videos. 例: course-points.json, course-points.md, course-videos.md, men_full_2012_2025.json, men_full_athletes.csv, ocr_raw, quiz, taimei-records-2012-2025.md, transcripts, winners-by-year.md, women_full_2012_2025.json, women_top4_2012_2025.json"
     },
     {
       "id": "source:input/idaten-corpus/aragyoku/course-videos.md",

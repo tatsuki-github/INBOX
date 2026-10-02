@@ -105,7 +105,7 @@
           "split_rank": 1,
           "split_record": true,
           "status": "ok",
-          "raw_name_grade": "unknown(2)"
+          "raw_name_grade": "隈部侑成(2)"
         }
       ]
     },
@@ -207,7 +207,7 @@
         },
         {
           "leg": 2,
-          "name": "unknown",
+          "name": "中岡謙太",
           "grade": 2,
           "split": "9:31",
           "cumulative": "19:13",
@@ -215,7 +215,7 @@
           "split_rank": 8,
           "split_record": false,
           "status": "ok",
-          "raw_name_grade": "unknown(2)"
+          "raw_name_grade": "中岡謙太(2)"
         },
         {
           "leg": 3,
@@ -334,7 +334,7 @@
         },
         {
           "leg": 6,
-          "name": "unknown",
+          "name": "清田雅翔",
           "grade": 3,
           "split": "10:14",
           "cumulative": "58:49",
@@ -342,7 +342,7 @@
           "split_rank": 4,
           "split_record": false,
           "status": "ok",
-          "raw_name_grade": "unknown(3)"
+          "raw_name_grade": "清田雅翔(3)"
         }
       ]
     },
@@ -705,7 +705,7 @@
         },
         {
           "leg": 4,
-          "name": "unknown",
+          "name": "西村隆",
           "grade": 2,
           "split": "10:10",
           "cumulative": "40:16",
@@ -713,7 +713,7 @@
           "split_rank": 5,
           "split_record": false,
           "status": "ok",
-          "raw_name_grade": "unknown(2)"
+          "raw_name_grade": "西村隆(2)"
         },
         {
           "leg": 5,
@@ -1045,7 +1045,7 @@
         },
         {
           "leg": 6,
-          "name": "unknown",
+          "name": "村上稀琉",
           "grade": 3,
           "split": "10:53",
           "cumulative": "62:41",
@@ -1053,7 +1053,7 @@
           "split_rank": 12,
           "split_record": false,
           "status": "ok",
-          "raw_name_grade": "unknown(3)"
+          "raw_name_grade": "村上稀琉(3)"
         }
       ]
     },
@@ -1222,7 +1222,12 @@
     "南関男子3区はユーザー確認により塚川流星（3年）に修正。",
     "荒尾海陽男子3区はユーザー確認により林田流音（2年）に修正。",
     "有明男子3区はユーザー確認により伊藤倖（2年）に修正。",
-    "岱明4区・佐藤央琉の学年を成績表画像と卒業年度に合わせて3年へ修正"
+    "岱明4区・佐藤央琉の学年を成績表画像と卒業年度に合わせて3年へ修正",
+    "玉高附属男子2区は成績表確認により中岡謙太（2年）に修正（旧: unknown）。",
+    "長洲男子6区は成績表確認により清田雅翔（3年）に修正（旧: unknown）。",
+    "玉名男子4区は西村隆（2年）の可能性が高いが表記判読に余白あり（旧: unknown）。",
+    "玉南男子6区は成績表確認により村上稀琉（3年）に修正（旧: unknown）。",
+    "玉南男子1区は現時点で氏名未確認（unknownのまま）。"
   ],
   "daimyo": {
     "rank": 6,
