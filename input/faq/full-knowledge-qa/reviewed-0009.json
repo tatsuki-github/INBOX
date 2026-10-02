@@ -1,0 +1,325 @@
+{
+  "version": 1,
+  "entries": [
+    {
+      "id": "fullchunkqa-b55908d7079b9a00e8bdcbc0-1",
+      "chunk_id": "knowledge-b55908d7079b9a00e8bdcbc0",
+      "questions": [
+        "『The Norwegian Method Applied』の序文では、ダブル閾値の練習日程をそのままコピーするだけでよいとしている？"
+      ],
+      "answer": "序文では、日程の模倣だけでなく、成り立ち・原則・生理学や筋系の理解を通じて、自分の環境に応用する必要があると説明しています。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "Too often, when new training systems emerge, the default is to just copy them."
+        },
+        {
+          "kind": "quote",
+          "text": "it peels back how and why it was developed"
+        },
+        {
+          "kind": "quote",
+          "text": "understanding the physiology and muscular system so that we can apply these concepts in our own environment."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      }
+    },
+    {
+      "id": "fullchunkqa-b55908d7079b9a00e8bdcbc0-2",
+      "chunk_id": "knowledge-b55908d7079b9a00e8bdcbc0",
+      "questions": [
+        "Bakkenの本の序文で、Lydiardの走行距離だけを覚えると見落とす要素として挙げられているのは？"
+      ],
+      "answer": "坂、インターバルの多様性、スピードの維持が挙げられています。週100マイルやロングランだけを模倣すると、これらを忘れがちだという例です。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "100 miles per week and long runs from Lydiard"
+        },
+        {
+          "kind": "quote",
+          "text": "forgets the hills, the variety of intervals, and even speed maintenance."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      }
+    },
+    {
+      "id": "fullchunkqa-b55908d7079b9a00e8bdcbc0-3",
+      "chunk_id": "knowledge-b55908d7079b9a00e8bdcbc0",
+      "questions": [
+        "『The Norwegian Method Applied』に保存されている序文の署名者・場所・年月は？"
+      ],
+      "answer": "Steve Magnessによる序文で、Austin, Texas、2026年3月と記されています。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "Steve Magness\nCoach and author of the Science of Running and Win the Inside Game\nAustin, Texas\nMarch 2026"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      }
+    },
+    {
+      "id": "fullchunkqa-e62fa1e6e7b1026ce879f354-1",
+      "chunk_id": "knowledge-e62fa1e6e7b1026ce879f354",
+      "questions": [
+        "Bakkenはノルウェーメソッドの導入で、方法を形作った乳酸測定を何回以上行ったと述べている？対象は本人だけ？"
+      ],
+      "answer": "著者は5,500回以上と述べています。本人だけでなく、練習仲間やケニアのランナーも対象に含めています。これは著者自身の実験経験としての説明です。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "more than 5,500 lactate tests on myself, on training partners, on runners in Kenya"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      }
+    },
+    {
+      "id": "fullchunkqa-e62fa1e6e7b1026ce879f354-2",
+      "chunk_id": "knowledge-e62fa1e6e7b1026ce879f354",
+      "questions": [
+        "Bakkenの導入説明では、仕事や家庭があるランナーは必ず長いセッション1回を選ぶべき？"
+      ],
+      "answer": "著者は、よく計画した短いセッション2回が、長い1回より有効な場合もあると述べています。すべての人に必ず2回を指定する規則ではなく、仕事や家庭のあるランナーへの適用例です。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "For the runner with a job and a family, two shorter, well-planned sessions can often do more than one longer one."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      }
+    },
+    {
+      "id": "fullchunkqa-e62fa1e6e7b1026ce879f354-3",
+      "chunk_id": "knowledge-e62fa1e6e7b1026ce879f354",
+      "questions": [
+        "Bakkenが1995年からの探究で立てた、持続可能な練習強度についての中心的な問いは？"
+      ],
+      "answer": "最大限追い込むことではなく、できるだけ低い負担で、週ごとに持続可能な最大の量を繰り返せる強度は何か、という問いです。精度・抑制・継続性を重視する説明につながっています。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "What is the highest intensity you can repeat, at the bighest sustainable volume, week after week, for the lowest possible cost?"
+        },
+        {
+          "kind": "quote",
+          "text": "What makes it work is not complexity. It is precision, restraint, and continuity."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      }
+    },
+    {
+      "id": "fullchunkqa-e0b0d69d92e326ca030e5155-1",
+      "chunk_id": "knowledge-e0b0d69d92e326ca030e5155",
+      "questions": [
+        "『The Norwegian Method Applied』の著者は、本書のすべての考察が研究で実証済みだと主張している？"
+      ],
+      "answer": "そうは主張していません。研究で示されていない考察も含むと明記し、研究が役立つときは取り入れ、経験が研究に先行する部分ではその旨を示す方針です。本書を科学論文として位置付けていません。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "even when not everything has been demonstrated in studies."
+        },
+        {
+          "kind": "quote",
+          "text": "This is not a scientific paper"
+        },
+        {
+          "kind": "quote",
+          "text": "Where my experience points in a direction the studies haven't reached yet,\nI say so."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      }
+    },
+    {
+      "id": "fullchunkqa-e0b0d69d92e326ca030e5155-2",
+      "chunk_id": "knowledge-e0b0d69d92e326ca030e5155",
+      "questions": [
+        "Bakkenの本は、初心者と上級者で練習量を増やすだけの同じ適用法を示している？"
+      ],
+      "answer": "本書では、ランナーの段階によって原則の適用が異なり、複雑さが増すことはセッション数や量を足すだけではないと説明しています。固定した原則に基づく考え方が中心です。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "the principles apply differently depending on where you are in your running."
+        },
+        {
+          "kind": "quote",
+          "text": "Complexity increases with level, but it involves more than adding sessions or volume."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      }
+    },
+    {
+      "id": "fullchunkqa-e0b0d69d92e326ca030e5155-3",
+      "chunk_id": "knowledge-e0b0d69d92e326ca030e5155",
+      "questions": [
+        "『The Norwegian Method Applied』のPart IIIは、著者のどのような臨床経験を背景に書かれている？"
+      ],
+      "answer": "著者は、13年間の臨床経験を背景に、回復、トレーニング期間の移行、筋への負荷など、医学と練習が交わる内容を扱うと説明しています。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "Here I draw on thirteen years of clinical experience."
+        },
+        {
+          "kind": "quote",
+          "text": "This section addresses recovery protocols, transitions between training periods, and muscular load"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      }
+    },
+    {
+      "id": "fullchunkqa-c9ce36413c8a707818bb47c7-1",
+      "chunk_id": "knowledge-c9ce36413c8a707818bb47c7",
+      "questions": [
+        "Bakkenの本で、45/15プロトコルと個人の閾値の見つけ方を読む章はそれぞれどこ？"
+      ],
+      "answer": "45/15プロトコルは第8章、個人の閾値の見つけ方は第2章と案内されています。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "How to find your personal threshold (Chapter 2)."
+        },
+        {
+          "kind": "quote",
+          "text": "The 45/15 protocol that delivers maximum results in minimum time\n(Chapter 8)."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      }
+    },
+    {
+      "id": "fullchunkqa-c9ce36413c8a707818bb47c7-2",
+      "chunk_id": "knowledge-c9ce36413c8a707818bb47c7",
+      "questions": [
+        "『The Norwegian Method Applied』の4部は、それぞれどの章と内容に分かれている？"
+      ],
+      "answer": "Part Iは第1〜4章の方法・原則、Part IIは第5〜8章の実践、Part IIIは第9〜11章の傷害・過負荷・長期的な発達、Part IVは第12〜17章の指導者など向けの詳しい説明です。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "Part I: The Method (Chapters 1-4)"
+        },
+        {
+          "kind": "quote",
+          "text": "(Chapters 5-8)-Practical training programs for different levels"
+        },
+        {
+          "kind": "quote",
+          "text": "(Chapters 9-11)—Guidance on injuries, overload, and long-term development"
+        },
+        {
+          "kind": "quote",
+          "text": "(Chapters 12-17) -For coaches and those who want the full picture"
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      }
+    },
+    {
+      "id": "fullchunkqa-c9ce36413c8a707818bb47c7-3",
+      "chunk_id": "knowledge-c9ce36413c8a707818bb47c7",
+      "questions": [
+        "Bakkenの本の読書案内では、一般ランナー・指導者・傷害から戻る人にどの部を勧めている？"
+      ],
+      "answer": "一般ランナーはPart I・IIから始め、必要時にPart III、後からPart IVを参照する案内です。指導者には深い説明のあるPart IV、傷害からの復帰や停滞にはPart IIIが当面役立つ場合があるとしています。",
+      "sources": [
+        "input/memos/norwegian_method_applied_full.txt"
+      ],
+      "source_sha256": "7aaff30aa2d66bcc13d1372e55d220c78b7f7a83c07d98299a7e3f48be1ebc13",
+      "evidence": [
+        {
+          "kind": "quote",
+          "text": "If you're a recreational runner who wants to get going, start with Parts I and II"
+        },
+        {
+          "kind": "quote",
+          "text": "If you're a coach, Part IV is where the deeper reasoning lives."
+        },
+        {
+          "kind": "quote",
+          "text": "If you're coming back from injury or feeling stuck, Part III may be the most immediate help."
+        }
+      ],
+      "review": {
+        "method": "manual-context-review",
+        "status": "manual-context-reviewed"
+      }
+    }
+  ]
+}

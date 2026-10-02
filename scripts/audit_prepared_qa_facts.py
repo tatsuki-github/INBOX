@@ -207,7 +207,8 @@ def check_entry(e: dict, projected: dict | None) -> dict:
         from reviewed_chunk_qa import reviewed_entries, check_reviewed_entry
         reviewed = reviewed_entries().get(e["id"])
         problems.extend(check_reviewed_entry(e, reviewed))
-        mode = "validated_csv_clock_comparison" if reviewed and reviewed.get("review", {}).get("method") == "schema-reviewed-time-comparison" else "manual_context_review_and_source_quote_check"
+        method = reviewed.get("review", {}).get("method") if reviewed else None
+        mode = {"schema-reviewed-time-comparison": "validated_csv_clock_comparison", "schema-reviewed-passing-rank-change": "validated_json_passing_rank_change", "schema-reviewed-dated-meet-comparison": "validated_csv_dated_meet_comparison", "schema-reviewed-within-athlete-meet-change": "validated_csv_within_athlete_meet_change", "schema-reviewed-record-vs-saved-sb": "validated_json_record_saved_sb_gap"}.get(method, "manual_context_review_and_source_quote_check")
         return {"id": e["id"], "check": mode, "problems": problems}
     mode = "source_text_time_check"
     if projected:

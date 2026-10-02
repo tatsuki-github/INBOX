@@ -40,6 +40,10 @@ def validate_entry(entry, chunk, root=ROOT):
     allowed_review = (review.get('method'), review.get('status')) in {
         ('manual-context-review', 'manual-context-reviewed'),
         ('schema-reviewed-time-comparison', 'schema-reviewed'),
+        ('schema-reviewed-passing-rank-change', 'schema-reviewed'),
+        ('schema-reviewed-dated-meet-comparison', 'schema-reviewed'),
+        ('schema-reviewed-within-athlete-meet-change', 'schema-reviewed'),
+        ('schema-reviewed-record-vs-saved-sb', 'schema-reviewed'),
     }
     if not allowed_review:
         raise ValueError('missing manual context review')
@@ -50,6 +54,26 @@ def validate_entry(entry, chunk, root=ROOT):
     if chunk['evidence']['kind'] == 'csv' and review.get('method') == 'schema-reviewed-time-comparison':
         from chunk_time_comparisons import validate_csv_comparison
         validate_csv_comparison(entry, chunk, path.read_text())
+        return
+    if chunk['evidence']['kind'] == 'csv' and review.get('method') == 'schema-reviewed-within-athlete-meet-change':
+        from chunk_meet_changes import validate_change
+        validate_change(entry, chunk, path.read_text())
+        return
+    if chunk['evidence']['kind'] == 'csv' and review.get('method') == 'schema-reviewed-dated-meet-comparison':
+        from chunk_meet_comparisons import validate_meet_comparison
+        validate_meet_comparison(entry, chunk, path.read_text())
+        return
+    if chunk['evidence']['kind'] == 'structured' and review.get('method') == 'schema-reviewed-passing-rank-change':
+        from chunk_rank_movements import validate_movement
+        validate_movement(entry, chunk, path.read_text())
+        return
+    if chunk['evidence']['kind'] == 'structured' and review.get('method') == 'schema-reviewed-record-vs-saved-sb':
+        from chunk_record_sb_gaps import validate_gap
+        validate_gap(entry, chunk, path.read_text())
+        return
+    if chunk['evidence']['kind'] == 'structured' and review.get('method') == 'manual-context-review':
+        from manual_json_evidence import validate_manual_json
+        validate_manual_json(entry, chunk, path.read_text())
         return
     if chunk['evidence']['kind'] != 'text':
         raise ValueError('typed evidence validator required')
@@ -92,7 +116,7 @@ def publish(entries):
     added = []
     for e in entries:
         plain = {k: e[k] for k in ('id', 'questions', 'answer', 'sources')}
-        plain['tags'] = ['knowledge-chunk', 'validated-time-comparison'] if e.get('calculation') else ['knowledge-chunk', 'manual-context-reviewed']
+        plain['tags'] = ['knowledge-chunk', 'validated-' + e['calculation']['operation']] if e.get('calculation') else ['knowledge-chunk', 'manual-context-reviewed']
         if e['id'] in existing:
             if any(existing[e['id']].get(k) != e[k] for k in ('questions', 'answer', 'sources')):
                 raise ValueError('published entry drift: ' + e['id'])

@@ -62,3 +62,10 @@ def test_mirror_ownership_does_not_guess_unrelated_documents():
     assert c.inferred_original("out/2026/calendar.md") == "calendar.md"
     assert c.inferred_original("input/idaten-corpus/out-analysis/race.md") == "out/analysis/race.md"
     assert c.inferred_original("input/other-year/race.md") == "input/other-year/race.md"
+
+def test_historical_header_gender_and_year_are_retained_in_team_context():
+    import json
+    value={'meta':{'gender':'女子'},'years':{'2020':{'date':'2020-10-14','teams':[{'team':str(i),'legs':[{'leg':j,'name':'甲'*100,'passing_rank':j} for j in range(1,6)]} for i in range(12)]}}}
+    raw=json.dumps(value,ensure_ascii=False);parts=c.chunk_source(raw,'.json');c.verify_partition(raw,'.json',parts)
+    teams=[u for p in parts for u in p['units'] if '/years/2020/teams/' in u['pointer']]
+    assert teams and all(u['context']['year']==2020 and u['context']['gender']=='女子' for u in teams)
