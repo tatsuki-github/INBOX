@@ -185,6 +185,8 @@ def source_projection() -> dict[str, dict]:
         "answer": "玉名荒尾中体連駅伝大会は2025-10-15に実施済みです。岱明の結果は、" + "、".join(bits) + "です。",
         "sources": result_sources,
     }
+    from prepared_qa_source_checks import supplementary_projections
+    out.update(supplementary_projections())
     return out
 
 
@@ -197,8 +199,12 @@ def check_entry(e: dict, projected: dict | None) -> dict:
     # Do not use the FAQ itself as evidence for its own claims.
     evidence_times = set().union(*(source_clocks(s) for s in sources if "prepared-qa" not in s))
     answer = e.get("answer") or ""
+    from prepared_qa_source_checks import check_source_semantics
+    problems.extend(check_source_semantics(e, projected))
     if re.search(r"\b(?:mimeType|fileSize|parentId|modifiedTime)\b", answer):
         problems.append("drive_metadata_leak")
+    if re.search(r"総合(?:\d+区|None)?位・[。（]|[男女]子・は", answer):
+        problems.append("invalid_team_result_row")
     # Hollow answers after path/link stripping no longer address the question.
     if "「」" in answer or re.search(r"詳細表は\s*です", answer):
         problems.append("hollow_answer_template")
@@ -271,10 +277,12 @@ def refresh_family(eid: str) -> bool:
 
 
 def apply_source_fixes(entries: list[dict], projected: dict[str, dict]) -> list[dict]:
+    from prepared_qa_source_checks import repair_source_semantics
     changes: list[dict] = []
     for e in entries:
         before = json.loads(json.dumps(e, ensure_ascii=False))
         fresh = projected.get(e["id"])
+        repair_source_semantics(e, fresh)
         if fresh and refresh_family(e["id"]):
             e["answer"] = fresh["answer"].strip() + "\n"
             e["sources"] = fresh["sources"]
@@ -301,13 +309,13 @@ def main() -> int:
     args = ap.parse_args()
     if args.fix and args.check:
         ap.error("--fix and --check are mutually exclusive")
-    data = yaml.safe_load(FAQ.read_text())
+    data = yaml.load(FAQ.read_text(), Loader=yaml.CSafeLoader)
     entries = data["entries"]
     projected = source_projection()
     changes = apply_source_fixes(entries, projected) if args.fix else []
     if args.fix:
         data["total"] = len(entries)
-        FAQ.write_text(yaml.safe_dump(data, allow_unicode=True, sort_keys=False, width=120))
+        FAQ.write_text(yaml.dump(data, Dumper=yaml.CSafeDumper, allow_unicode=True, sort_keys=False, width=120))
         log = REPORT.with_name("prepared-qa-factual-corrections.jsonl")
         if changes:
             with log.open("a") as stream:
