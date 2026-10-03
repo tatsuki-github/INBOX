@@ -135,6 +135,7 @@ def school_sb_projections() -> dict[str, dict]:
 
 
 def supplementary_projections() -> dict[str, dict]:
+    verify_photo_reconciliations()
     import generate_prepared_qa_edge_5000 as edge
     import generate_prepared_qa_coach_analysis as coach
     out = {}
@@ -154,6 +155,7 @@ def supplementary_projections() -> dict[str, dict]:
     out.update(calendar_projections())
     out.update(complete_list_projections())
     out.update(nagomi_projections())
+    out.update(photo_reviewed_projections())
     return out
 
 
@@ -161,6 +163,10 @@ def check_source_semantics(entry: dict, fresh: dict | None) -> list[str]:
     if not fresh:
         return []
     eid, answer = entry["id"], entry.get("answer") or ""
+    if eid.startswith(("edgecmp-", "aragyoku-rank-benchmark-")):
+        return [] if normalized_answer(answer) == normalized_answer(fresh["answer"]) else ["structured_comparison_or_benchmark_drift"]
+    if eid in {"aragyoku-2024-女子-岱明-leg-detail", "aragyoku-2024-女子-team-岱明-rank"}:
+        return [] if normalized_answer(answer) == normalized_answer(fresh["answer"]) else ["photo_reviewed_leg_identity_drift"]
     if eid in complete_list_projections() or eid in nagomi_projections():
         return [] if normalized_answer(answer) == normalized_answer(fresh["answer"]) else ["incomplete_or_broken_source_answer"]
     if eid.startswith("aragyoku-career-") and eid != "aragyoku-career-unknown":
@@ -210,7 +216,7 @@ def repair_source_semantics(entry: dict, fresh: dict | None) -> None:
     if eid in calendar_projections():
         entry["questions"] = dated_practice_questions(entry, fresh)
         entry["sources"] = fresh["sources"]
-    elif eid.startswith("sb-school-") or eid in complete_list_projections() or eid in nagomi_projections():
+    elif eid.startswith("sb-school-") or eid in complete_list_projections() or eid in nagomi_projections() or eid in photo_reviewed_projections():
         entry["sources"] = fresh["sources"]
         if fresh.get("questions"):
             entry["questions"] = fresh["questions"]
@@ -297,3 +303,38 @@ def nagomi_projections() -> dict[str, dict]:
         f"{leg}区終了時点は通過{passing}位・累計{cumulative.strip()}。チームは総合{team['rank']}位・{team['total']}です。"
         f" 成績表: {nagomi.DRIVE[2026]}\n", "sources": [rel]}
     return out
+
+
+def verify_photo_reconciliations() -> None:
+    """An independently reviewed photo row must agree before projecting answers.
+
+    This verifies the recorded transcription, not automatic image recognition.
+    """
+    import hashlib
+    rel = 'input/aragyoku/reconciliations/2024-women-daimei-photo.json'
+    expected = json.loads((ROOT / rel).read_text())
+    if hashlib.sha256((ROOT / expected['image']).read_bytes()).hexdigest() != expected['image_sha256']:
+        raise ValueError('photo evidence changed: ' + rel)
+    for path in ('input/aragyoku/transcripts/2024-女子.json',
+                 'input/aragyoku/women_full_2012_2025.json',
+                 'input/aragyoku/women_top6_2012_2025.json'):
+        data = json.loads((ROOT / path).read_text())
+        block = data if 'teams' in data else data['years']['2024']
+        team = next(t for t in block['teams'] if t['team'] == expected['team'])
+        if (team['rank'], team['total']) != (expected['rank'], expected['total']):
+            raise ValueError('photo team result drift: ' + path)
+        for actual, verified in zip(team['legs'], expected['legs'], strict=True):
+            if any(actual.get(key) != value for key, value in verified.items()):
+                raise ValueError(f"photo leg identity/grade/result drift: {path} leg {verified['leg']}")
+
+
+
+def photo_reviewed_projections() -> dict[str, dict]:
+    rel = 'input/aragyoku/reconciliations/2024-women-daimei-photo.json'
+    row = json.loads((ROOT / rel).read_text())
+    answer = f"2024年の岱明女子の区間詳細\n順位: {row['rank']}位\n総合: {row['total']}\n"
+    for leg in row['legs']:
+        answer += (f"・{leg['leg']}区: {leg['name']}（{leg['grade']}年） 区間 {leg['split']} / 累計 {leg['cumulative']} "
+                   f"(通過順{leg['passing_rank']} / 区間順{leg['split_rank']})\n")
+    return {'aragyoku-2024-女子-岱明-leg-detail': {'answer': answer,
+        'sources': ['input/aragyoku/transcripts/2024-女子.json', rel, row['image']]}}

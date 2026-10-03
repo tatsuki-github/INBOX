@@ -1,0 +1,58 @@
+{
+  "year": 2024,
+  "gender": "女子",
+  "team": "岱明",
+  "rank": 6,
+  "total": "45:06",
+  "image": "input/aragyoku/images/2024_female_tamana-aragyochu-ekiden_overall-results_01.jpg",
+  "image_sha256": "0840d491927646dd9a6530f7b12d245e2d4590d9a3bdd20db0727c680f923036",
+  "source_url": "https://drive.google.com/file/d/1WDoNUHfL23mTudpm_-eUIbyeMn3EGtZg/view",
+  "review": "2026-10-03: user correction followed by visual verification of the Daimei row; names, grades, splits, cumulative times and both rank fields checked against the original photograph.",
+  "legs": [
+    {
+      "leg": 1,
+      "name": "村上咲稀",
+      "grade": 1,
+      "split": "10:43",
+      "cumulative": "10:43",
+      "passing_rank": 6,
+      "split_rank": 6
+    },
+    {
+      "leg": 2,
+      "name": "角田里奈",
+      "grade": 2,
+      "split": "6:59",
+      "cumulative": "17:42",
+      "passing_rank": 5,
+      "split_rank": 7
+    },
+    {
+      "leg": 3,
+      "name": "瀧下那奈",
+      "grade": 3,
+      "split": "7:40",
+      "cumulative": "25:22",
+      "passing_rank": 6,
+      "split_rank": 5
+    },
+    {
+      "leg": 4,
+      "name": "田上陽那多",
+      "grade": 2,
+      "split": "7:50",
+      "cumulative": "33:12",
+      "passing_rank": 6,
+      "split_rank": 8
+    },
+    {
+      "leg": 5,
+      "name": "高田麻由",
+      "grade": 1,
+      "split": "11:54",
+      "cumulative": "45:06",
+      "passing_rank": 6,
+      "split_rank": 7
+    }
+  ]
+}
