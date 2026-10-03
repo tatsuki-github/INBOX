@@ -2575,6 +2575,63 @@ function previewForOffline(text: string, question: string, maxChars?: number): s
   return flat.slice(0, budget);
 }
 
+function datedDaimingPracticeAnswer(
+  question: string,
+  dateQuery: string,
+  retrieved: RetrievedChunk[],
+): string | undefined {
+  if (!/練習|朝練|夕練/.test(question) || !/いだてん岱明|岱明/.test(question)) {
+    return undefined;
+  }
+  const practiceDate = parseDateMentions(dateQuery)[0];
+  if (
+    !practiceDate ||
+    !retrieved.some((row) => row.chunk.source === "calendar/events.daiming.yaml")
+  ) {
+    return undefined;
+  }
+
+  const calendarChunks = [...new Map(
+    retrieved
+    .filter((row) => row.chunk.source === "calendar/events.daiming.yaml")
+      .map((row) => [row.chunk.id, row.chunk] as const),
+  ).values()].sort((a, b) => {
+    const aIndex = Number(a.id.match(/:(\d+)$/)?.[1] ?? 0);
+    const bIndex = Number(b.id.match(/:(\d+)$/)?.[1] ?? 0);
+    return aIndex - bIndex;
+  });
+  const calendarText = calendarChunks.map((chunk) => chunk.text).join("\n");
+  const practiceEvent = calendarText
+    .split(/(?=^\s*- title:\s*)/m)
+    .find((event) =>
+      new RegExp(`date:\\s*['\"]?${practiceDate.iso}['\"]?`).test(event) &&
+      /title:\s*[^\n]*(?:いだてん岱明(?:朝|夕)?練習|岱明(?:朝|夕)練)/.test(event),
+    );
+  if (!practiceEvent) {
+    const actualsModeFrom = calendarText.match(
+      /actuals_mode_from:\s*["']?(20\d{2}-\d{2}-\d{2})/,
+    )?.[1];
+    const dateLabel = `${practiceDate.year}年${practiceDate.month}月${practiceDate.day}日`;
+    if (actualsModeFrom && practiceDate.iso >= actualsModeFrom) {
+      const [cutoffYear, cutoffMonth, cutoffDay] = actualsModeFrom.split("-").map(Number);
+      return `${dateLabel}の練習メニューは、カレンダーに登録されていません。${cutoffYear}年${cutoffMonth}月${cutoffDay}日以降は、事前にメニューを予定登録せず、実施後に練習実績を記録する運用です。`;
+    }
+    return `${dateLabel}のいだてん岱明の練習は、カレンダーに記載されていません。`;
+  }
+
+  const title = practiceEvent.match(/title:\s*([^\n]+)/)?.[1]?.trim() ?? "いだてん岱明練習";
+  const status = practiceEvent.match(/status:\s*([^\n]+)/)?.[1]?.trim();
+  const description = practiceEvent
+    .match(/description:\s*'([\s\S]*?)'\s*(?=\n\s*(?:practice:|tags:|-\s+title:)|$)/)?.[1]
+    ?.replace(/''/g, "'")
+    .replace(/\\n/g, "\n")
+    .replace(/[ \t]+\n/g, "\n")
+    .trim();
+  const dateLabel = `${practiceDate.year}年${practiceDate.month}月${practiceDate.day}日`;
+  const resultLabel = status?.includes("done") ? "実績" : "予定";
+  return `${dateLabel}の${title}（${resultLabel}）: ${description || "メニューの詳細は記載されていません。"}`;
+}
+
 function offlineAnswer(
   question: string,
   retrieved: RetrievedChunk[],
@@ -2582,6 +2639,11 @@ function offlineAnswer(
   missingInfoMessage = MISSING_INFO_MESSAGE,
 ): string {
   const lines = ["（オフライン回答）", "", `Q: ${question}`, ""];
+  const practiceAnswer = datedDaimingPracticeAnswer(question, previewQuery ?? question, retrieved);
+  if (practiceAnswer) {
+    lines.push(practiceAnswer);
+    return lines.join("\n");
+  }
   const requestedYear = question.match(/20\d{2}/)?.[0];
   const requestedGender = /女子/.test(question) ? "女子" : /男子/.test(question) ? "男子" : undefined;
   const requestedLeg = question.match(/(?<!\d)([1-9])区/)?.[1];
@@ -4818,7 +4880,11 @@ export async function answerQuestion(
     defaultYear: deps.defaultYear,
     now: deps.now,
   });
-  if (prepared && !technicalDocQuestion && !deps.llm) {
+  const datedDaimingPracticeQuery =
+    /練習|朝練|夕練/.test(question) &&
+    /いだてん岱明|岱明/.test(question) &&
+    parseDateMentions(expanded).length > 0;
+  if (prepared && !technicalDocQuestion && !datedDaimingPracticeQuery && !deps.llm) {
     return {
       kind: "answered",
       text: formatForLine(prepared.text),
@@ -4843,7 +4909,7 @@ export async function answerQuestion(
   // not drown a topic-specific KG hint (for example, a generic pace query).
   const kg = kgQuery(question);
 
-  if (prepared && !technicalDocQuestion && deps.llm) {
+  if (prepared && !technicalDocQuestion && !datedDaimingPracticeQuery && deps.llm) {
     const evidence = retrievePreparedEvidence(expanded, prepared, kg, deps.retrieve);
     const sources = [
       `prepared:${prepared.id}`,
@@ -6829,6 +6895,26 @@ export async function answerQuestion(
     !sources.includes("drive-text/大会/2026年度/1014-1015_荒玉中体連駅伝/概要.md")
   ) {
     sources.unshift("drive-text/大会/2026年度/1014-1015_荒玉中体連駅伝/概要.md");
+  }
+
+  const datedPracticeChunks =
+    /練習|朝練|夕練/.test(question) && /いだてん岱明|岱明/.test(question)
+      ? retrieveBySources(["calendar/events.daiming.yaml"], {
+          query: expanded,
+          perSource: 200,
+          maxChunks: 200,
+        })
+      : [];
+  const datedPracticeAnswer = datedDaimingPracticeAnswer(question, expanded, [
+    ...datedPracticeChunks,
+    ...merged,
+  ]);
+  if (datedPracticeAnswer) {
+    return {
+      kind: deps.llm ? "answered" : "offline",
+      text: finalizeAnswerText(datedPracticeAnswer, question, deps, sources),
+      sources,
+    };
   }
 
   if (daimingRosterQ && !deps.llm) {
