@@ -4943,7 +4943,7 @@
     },
     {
       "id": "fullchunkqa-7e0ec7160758edd21c5fe30b-1",
-      "chunk_id": "knowledge-7e0ec7160758edd21c5fe30b",
+      "chunk_id": "knowledge-128188a97fa32e794199c8ba",
       "questions": [
         "保存カレンダーで、2026-01-12の「長洲マラソン」から2026-01-21の「岱明中2年修学旅行」まで、予定日の日付差は何日？"
       ],
@@ -4951,7 +4951,7 @@
       "sources": [
         "input/events.2026.yaml"
       ],
-      "source_sha256": "b935264bdd067669220941c3d0eeedec2afb33f228aed4a71e588518d4383057",
+      "source_sha256": "571e8e31f5ec05e0e716c12b53a769ac8dbdd2570f7f32f4b83d83e4bed5e3a7",
       "evidence": [
         {
           "kind": "calendar-json-units",
@@ -4999,7 +4999,7 @@
     },
     {
       "id": "fullchunkqa-7e0ec7160758edd21c5fe30b-2",
-      "chunk_id": "knowledge-7e0ec7160758edd21c5fe30b",
+      "chunk_id": "knowledge-128188a97fa32e794199c8ba",
       "questions": [
         "保存カレンダーで、2026-01-12の「長洲マラソン」から2026-01-25の「玉名駅伝」まで、予定日の日付差は何日？"
       ],
@@ -5007,7 +5007,7 @@
       "sources": [
         "input/events.2026.yaml"
       ],
-      "source_sha256": "b935264bdd067669220941c3d0eeedec2afb33f228aed4a71e588518d4383057",
+      "source_sha256": "571e8e31f5ec05e0e716c12b53a769ac8dbdd2570f7f32f4b83d83e4bed5e3a7",
       "evidence": [
         {
           "kind": "calendar-json-units",
@@ -5055,7 +5055,7 @@
     },
     {
       "id": "fullchunkqa-7e0ec7160758edd21c5fe30b-3",
-      "chunk_id": "knowledge-7e0ec7160758edd21c5fe30b",
+      "chunk_id": "knowledge-128188a97fa32e794199c8ba",
       "questions": [
         "保存カレンダーで、2026-01-12の「長洲マラソン」から2026-01-31の「合同練習会」まで、予定日の日付差は何日？"
       ],
@@ -5063,7 +5063,7 @@
       "sources": [
         "input/events.2026.yaml"
       ],
-      "source_sha256": "b935264bdd067669220941c3d0eeedec2afb33f228aed4a71e588518d4383057",
+      "source_sha256": "571e8e31f5ec05e0e716c12b53a769ac8dbdd2570f7f32f4b83d83e4bed5e3a7",
       "evidence": [
         {
           "kind": "calendar-json-units",
@@ -5111,7 +5111,7 @@
     },
     {
       "id": "fullchunkqa-021b96b15fa056ecff243901-1",
-      "chunk_id": "knowledge-021b96b15fa056ecff243901",
+      "chunk_id": "knowledge-b7877492808394faee89ff1d",
       "questions": [
         "保存カレンダーで、2026-02-21の「熊日駅伝テレビ放送」から2026-02-22の「玉名いだてんマラソン」まで、予定日の日付差は何日？"
       ],
@@ -5119,7 +5119,7 @@
       "sources": [
         "input/events.2026.yaml"
       ],
-      "source_sha256": "b935264bdd067669220941c3d0eeedec2afb33f228aed4a71e588518d4383057",
+      "source_sha256": "571e8e31f5ec05e0e716c12b53a769ac8dbdd2570f7f32f4b83d83e4bed5e3a7",
       "evidence": [
         {
           "kind": "calendar-json-units",
@@ -5168,7 +5168,7 @@
     },
     {
       "id": "fullchunkqa-021b96b15fa056ecff243901-2",
-      "chunk_id": "knowledge-021b96b15fa056ecff243901",
+      "chunk_id": "knowledge-b7877492808394faee89ff1d",
       "questions": [
         "保存カレンダーで、2026-02-21の「熊日駅伝テレビ放送」から2026-03-03の「中学3年公立後期選抜入試」まで、予定日の日付差は何日？"
       ],
@@ -5176,7 +5176,7 @@
       "sources": [
         "input/events.2026.yaml"
       ],
-      "source_sha256": "b935264bdd067669220941c3d0eeedec2afb33f228aed4a71e588518d4383057",
+      "source_sha256": "571e8e31f5ec05e0e716c12b53a769ac8dbdd2570f7f32f4b83d83e4bed5e3a7",
       "evidence": [
         {
           "kind": "calendar-json-units",
@@ -5225,7 +5225,7 @@
     },
     {
       "id": "fullchunkqa-021b96b15fa056ecff243901-3",
-      "chunk_id": "knowledge-021b96b15fa056ecff243901",
+      "chunk_id": "knowledge-b7877492808394faee89ff1d",
       "questions": [
         "保存カレンダーで、2026-02-21の「熊日駅伝テレビ放送」から2026-03-06の「岱明中卒業式」まで、予定日の日付差は何日？"
       ],
@@ -5233,7 +5233,7 @@
       "sources": [
         "input/events.2026.yaml"
       ],
-      "source_sha256": "b935264bdd067669220941c3d0eeedec2afb33f228aed4a71e588518d4383057",
+      "source_sha256": "571e8e31f5ec05e0e716c12b53a769ac8dbdd2570f7f32f4b83d83e4bed5e3a7",
       "evidence": [
         {
           "kind": "calendar-json-units",
@@ -5282,7 +5282,7 @@
     },
     {
       "id": "fullchunkqa-7831549782b24dacec9e0a34-1",
-      "chunk_id": "knowledge-7831549782b24dacec9e0a34",
+      "chunk_id": "knowledge-dc3e68b3acacaa7371d45d87",
       "questions": [
         "保存カレンダーで、2026-04-04の「第２７２回熊本市陸上競技記録会R8」から2026-04-11の「第３４回 金栗記念選抜陸上中長距離熊本大会」まで、予定日の日付差は何日？"
       ],
@@ -5290,7 +5290,7 @@
       "sources": [
         "input/events.2026.yaml"
       ],
-      "source_sha256": "b935264bdd067669220941c3d0eeedec2afb33f228aed4a71e588518d4383057",
+      "source_sha256": "571e8e31f5ec05e0e716c12b53a769ac8dbdd2570f7f32f4b83d83e4bed5e3a7",
       "evidence": [
         {
           "kind": "calendar-json-units",
@@ -5339,7 +5339,7 @@
     },
     {
       "id": "fullchunkqa-7831549782b24dacec9e0a34-2",
-      "chunk_id": "knowledge-7831549782b24dacec9e0a34",
+      "chunk_id": "knowledge-dc3e68b3acacaa7371d45d87",
       "questions": [
         "保存カレンダーで、2026-04-04の「第２７２回熊本市陸上競技記録会R8」から2026-04-18の「第４５回 熊本市陸上競技選手権大会」まで、予定日の日付差は何日？"
       ],
@@ -5347,7 +5347,7 @@
       "sources": [
         "input/events.2026.yaml"
       ],
-      "source_sha256": "b935264bdd067669220941c3d0eeedec2afb33f228aed4a71e588518d4383057",
+      "source_sha256": "571e8e31f5ec05e0e716c12b53a769ac8dbdd2570f7f32f4b83d83e4bed5e3a7",
       "evidence": [
         {
           "kind": "calendar-json-units",
@@ -5403,7 +5403,7 @@
     },
     {
       "id": "fullchunkqa-7831549782b24dacec9e0a34-3",
-      "chunk_id": "knowledge-7831549782b24dacec9e0a34",
+      "chunk_id": "knowledge-dc3e68b3acacaa7371d45d87",
       "questions": [
         "保存カレンダーで、2026-04-04の「第２７２回熊本市陸上競技記録会R8」から2026-04-19の「第２７回 谷口睦生杯八代陸上選手権大会」まで、予定日の日付差は何日？"
       ],
@@ -5411,7 +5411,7 @@
       "sources": [
         "input/events.2026.yaml"
       ],
-      "source_sha256": "b935264bdd067669220941c3d0eeedec2afb33f228aed4a71e588518d4383057",
+      "source_sha256": "571e8e31f5ec05e0e716c12b53a769ac8dbdd2570f7f32f4b83d83e4bed5e3a7",
       "evidence": [
         {
           "kind": "calendar-json-units",
@@ -5468,7 +5468,7 @@
     },
     {
       "id": "fullchunkqa-42f0e9872473feb01e5d3603-1",
-      "chunk_id": "knowledge-42f0e9872473feb01e5d3603",
+      "chunk_id": "knowledge-418d5d67cd3f9f81f12a050f",
       "questions": [
         "保存カレンダーで、2026-05-09の「第 １ 回 熊本県長距離記録会」から2026-05-10の「荒尾記録会」まで、予定日の日付差は何日？"
       ],
@@ -5476,7 +5476,7 @@
       "sources": [
         "input/events.2026.yaml"
       ],
-      "source_sha256": "b935264bdd067669220941c3d0eeedec2afb33f228aed4a71e588518d4383057",
+      "source_sha256": "571e8e31f5ec05e0e716c12b53a769ac8dbdd2570f7f32f4b83d83e4bed5e3a7",
       "evidence": [
         {
           "kind": "calendar-json-units",
@@ -5528,7 +5528,7 @@
     },
     {
       "id": "fullchunkqa-42f0e9872473feb01e5d3603-2",
-      "chunk_id": "knowledge-42f0e9872473feb01e5d3603",
+      "chunk_id": "knowledge-418d5d67cd3f9f81f12a050f",
       "questions": [
         "保存カレンダーで、2026-05-09の「第 １ 回 熊本県長距離記録会」から2026-05-16の「第２５回 くまもと障がい者スポーツ大会」まで、予定日の日付差は何日？"
       ],
@@ -5536,7 +5536,7 @@
       "sources": [
         "input/events.2026.yaml"
       ],
-      "source_sha256": "b935264bdd067669220941c3d0eeedec2afb33f228aed4a71e588518d4383057",
+      "source_sha256": "571e8e31f5ec05e0e716c12b53a769ac8dbdd2570f7f32f4b83d83e4bed5e3a7",
       "evidence": [
         {
           "kind": "calendar-json-units",
@@ -5597,7 +5597,7 @@
     },
     {
       "id": "fullchunkqa-42f0e9872473feb01e5d3603-3",
-      "chunk_id": "knowledge-42f0e9872473feb01e5d3603",
+      "chunk_id": "knowledge-418d5d67cd3f9f81f12a050f",
       "questions": [
         "保存カレンダーで、2026-05-09の「第 １ 回 熊本県長距離記録会」から2026-05-17の「岱明中体育大会」まで、予定日の日付差は何日？"
       ],
@@ -5605,7 +5605,7 @@
       "sources": [
         "input/events.2026.yaml"
       ],
-      "source_sha256": "b935264bdd067669220941c3d0eeedec2afb33f228aed4a71e588518d4383057",
+      "source_sha256": "571e8e31f5ec05e0e716c12b53a769ac8dbdd2570f7f32f4b83d83e4bed5e3a7",
       "evidence": [
         {
           "kind": "calendar-json-units",
@@ -5657,7 +5657,7 @@
     },
     {
       "id": "fullchunkqa-a2d270e22891d610ebf85d10-1",
-      "chunk_id": "knowledge-a2d270e22891d610ebf85d10",
+      "chunk_id": "knowledge-6dba21b34cf5c59175cc63d0",
       "questions": [
         "保存カレンダーで、2026-05-29の「令和８年度 熊本県高等学校総合体育大会陸上競技大会」から2026-06-06の「第２７３回 熊本市陸上競技記録会」まで、予定日の日付差は何日？"
       ],
@@ -5665,7 +5665,7 @@
       "sources": [
         "input/events.2026.yaml"
       ],
-      "source_sha256": "b935264bdd067669220941c3d0eeedec2afb33f228aed4a71e588518d4383057",
+      "source_sha256": "571e8e31f5ec05e0e716c12b53a769ac8dbdd2570f7f32f4b83d83e4bed5e3a7",
       "evidence": [
         {
           "kind": "calendar-json-units",
@@ -5723,7 +5723,7 @@
     },
     {
       "id": "fullchunkqa-a2d270e22891d610ebf85d10-2",
-      "chunk_id": "knowledge-a2d270e22891d610ebf85d10",
+      "chunk_id": "knowledge-6dba21b34cf5c59175cc63d0",
       "questions": [
         "保存カレンダーで、2026-05-29の「令和８年度 熊本県高等学校総合体育大会陸上競技大会」から2026-06-13の「第７２回 全日本中学校通信陸上競技大会熊本県大会」まで、予定日の日付差は何日？"
       ],
@@ -5731,7 +5731,7 @@
       "sources": [
         "input/events.2026.yaml"
       ],
-      "source_sha256": "b935264bdd067669220941c3d0eeedec2afb33f228aed4a71e588518d4383057",
+      "source_sha256": "571e8e31f5ec05e0e716c12b53a769ac8dbdd2570f7f32f4b83d83e4bed5e3a7",
       "evidence": [
         {
           "kind": "calendar-json-units",
@@ -5794,7 +5794,7 @@
     },
     {
       "id": "fullchunkqa-a2d270e22891d610ebf85d10-3",
-      "chunk_id": "knowledge-a2d270e22891d610ebf85d10",
+      "chunk_id": "knowledge-6dba21b34cf5c59175cc63d0",
       "questions": [
         "保存カレンダーで、2026-05-29の「令和８年度 熊本県高等学校総合体育大会陸上競技大会」から2026-06-20の「第４２回 日清カップ全国小学生陸上競技交流大会県予選会」まで、予定日の日付差は何日？"
       ],
@@ -5802,7 +5802,7 @@
       "sources": [
         "input/events.2026.yaml"
       ],
-      "source_sha256": "b935264bdd067669220941c3d0eeedec2afb33f228aed4a71e588518d4383057",
+      "source_sha256": "571e8e31f5ec05e0e716c12b53a769ac8dbdd2570f7f32f4b83d83e4bed5e3a7",
       "evidence": [
         {
           "kind": "calendar-json-units",
@@ -5869,7 +5869,7 @@
     },
     {
       "id": "fullchunkqa-021ee0438bb66ec3c7d308ef-1",
-      "chunk_id": "knowledge-021ee0438bb66ec3c7d308ef",
+      "chunk_id": "knowledge-fd12ec6cdb1579647d6eb4f4",
       "questions": [
         "保存カレンダーで、2026-09-03の「練習会（桃田）（県民スポーツ大会中止に伴い中止）」から2026-09-05の「いだてん岱明練習」まで、予定日の日付差は何日？"
       ],
@@ -5877,7 +5877,7 @@
       "sources": [
         "input/events.2026.yaml"
       ],
-      "source_sha256": "b935264bdd067669220941c3d0eeedec2afb33f228aed4a71e588518d4383057",
+      "source_sha256": "571e8e31f5ec05e0e716c12b53a769ac8dbdd2570f7f32f4b83d83e4bed5e3a7",
       "evidence": [
         {
           "kind": "calendar-json-units",
@@ -5996,7 +5996,7 @@
     },
     {
       "id": "fullchunkqa-021ee0438bb66ec3c7d308ef-2",
-      "chunk_id": "knowledge-021ee0438bb66ec3c7d308ef",
+      "chunk_id": "knowledge-fd12ec6cdb1579647d6eb4f4",
       "questions": [
         "保存カレンダーで、2026-09-03の「練習会（桃田）（県民スポーツ大会中止に伴い中止）」から2026-09-06の「第３４回 熊本マスターズ選手権大会」まで、予定日の日付差は何日？"
       ],
@@ -6004,7 +6004,7 @@
       "sources": [
         "input/events.2026.yaml"
       ],
-      "source_sha256": "b935264bdd067669220941c3d0eeedec2afb33f228aed4a71e588518d4383057",
+      "source_sha256": "571e8e31f5ec05e0e716c12b53a769ac8dbdd2570f7f32f4b83d83e4bed5e3a7",
       "evidence": [
         {
           "kind": "calendar-json-units",
@@ -6067,7 +6067,7 @@
     },
     {
       "id": "fullchunkqa-021ee0438bb66ec3c7d308ef-3",
-      "chunk_id": "knowledge-021ee0438bb66ec3c7d308ef",
+      "chunk_id": "knowledge-fd12ec6cdb1579647d6eb4f4",
       "questions": [
         "保存カレンダーで、2026-09-05の「いだてん岱明練習」から2026-09-06の「第３４回 熊本マスターズ選手権大会」まで、予定日の日付差は何日？"
       ],
@@ -6075,7 +6075,7 @@
       "sources": [
         "input/events.2026.yaml"
       ],
-      "source_sha256": "b935264bdd067669220941c3d0eeedec2afb33f228aed4a71e588518d4383057",
+      "source_sha256": "571e8e31f5ec05e0e716c12b53a769ac8dbdd2570f7f32f4b83d83e4bed5e3a7",
       "evidence": [
         {
           "kind": "calendar-json-units",
@@ -6197,7 +6197,7 @@
     },
     {
       "id": "fullchunkqa-d0c1c83f458d49fecc0efac6-1",
-      "chunk_id": "knowledge-d0c1c83f458d49fecc0efac6",
+      "chunk_id": "knowledge-a3eb74e577d1bedbeceb82d6",
       "questions": [
         "保存カレンダーで、2026-09-08の「練習会（岱明）（県民スポーツ大会中止に伴い中止）」から2026-09-09の「岱明中前期期末テスト」まで、予定日の日付差は何日？"
       ],
@@ -6205,7 +6205,7 @@
       "sources": [
         "input/events.2026.yaml"
       ],
-      "source_sha256": "b935264bdd067669220941c3d0eeedec2afb33f228aed4a71e588518d4383057",
+      "source_sha256": "571e8e31f5ec05e0e716c12b53a769ac8dbdd2570f7f32f4b83d83e4bed5e3a7",
       "evidence": [
         {
           "kind": "calendar-json-units",
@@ -6260,7 +6260,7 @@
     },
     {
       "id": "fullchunkqa-d0c1c83f458d49fecc0efac6-2",
-      "chunk_id": "knowledge-d0c1c83f458d49fecc0efac6",
+      "chunk_id": "knowledge-a3eb74e577d1bedbeceb82d6",
       "questions": [
         "保存カレンダーで、2026-09-08の「練習会（岱明）（県民スポーツ大会中止に伴い中止）」から2026-09-10の「練習会（岱明）（県民スポーツ大会中止に伴い中止）」まで、予定日の日付差は何日？"
       ],
@@ -6268,7 +6268,7 @@
       "sources": [
         "input/events.2026.yaml"
       ],
-      "source_sha256": "b935264bdd067669220941c3d0eeedec2afb33f228aed4a71e588518d4383057",
+      "source_sha256": "571e8e31f5ec05e0e716c12b53a769ac8dbdd2570f7f32f4b83d83e4bed5e3a7",
       "evidence": [
         {
           "kind": "calendar-json-units",
@@ -6328,7 +6328,7 @@
     },
     {
       "id": "fullchunkqa-d0c1c83f458d49fecc0efac6-3",
-      "chunk_id": "knowledge-d0c1c83f458d49fecc0efac6",
+      "chunk_id": "knowledge-a3eb74e577d1bedbeceb82d6",
       "questions": [
         "保存カレンダーで、2026-09-08の「練習会（岱明）（県民スポーツ大会中止に伴い中止）」から2026-09-11の「第４４回 全九州高校新人陸上大会熊本県予選」まで、予定日の日付差は何日？"
       ],
@@ -6336,7 +6336,7 @@
       "sources": [
         "input/events.2026.yaml"
       ],
-      "source_sha256": "b935264bdd067669220941c3d0eeedec2afb33f228aed4a71e588518d4383057",
+      "source_sha256": "571e8e31f5ec05e0e716c12b53a769ac8dbdd2570f7f32f4b83d83e4bed5e3a7",
       "evidence": [
         {
           "kind": "calendar-json-units",
@@ -6400,7 +6400,7 @@
     },
     {
       "id": "fullchunkqa-d7b602ef2529dd69e819c653-1",
-      "chunk_id": "knowledge-d7b602ef2529dd69e819c653",
+      "chunk_id": "knowledge-afb442fa373ec2a4896df7c3",
       "questions": [
         "保存カレンダーで、2026-09-21の「第３回 熊本県長距離記録会」から2026-09-22の「玉名市練習会&BBQ」まで、予定日の日付差は何日？"
       ],
@@ -6408,7 +6408,7 @@
       "sources": [
         "input/events.2026.yaml"
       ],
-      "source_sha256": "b935264bdd067669220941c3d0eeedec2afb33f228aed4a71e588518d4383057",
+      "source_sha256": "571e8e31f5ec05e0e716c12b53a769ac8dbdd2570f7f32f4b83d83e4bed5e3a7",
       "evidence": [
         {
           "kind": "calendar-json-units",
@@ -6468,7 +6468,7 @@
     },
     {
       "id": "fullchunkqa-d7b602ef2529dd69e819c653-2",
-      "chunk_id": "knowledge-d7b602ef2529dd69e819c653",
+      "chunk_id": "knowledge-afb442fa373ec2a4896df7c3",
       "questions": [
         "保存カレンダーで、2026-09-21の「第３回 熊本県長距離記録会」から2026-09-24の「いだてん岱明練習」まで、予定日の日付差は何日？"
       ],
@@ -6476,7 +6476,7 @@
       "sources": [
         "input/events.2026.yaml"
       ],
-      "source_sha256": "b935264bdd067669220941c3d0eeedec2afb33f228aed4a71e588518d4383057",
+      "source_sha256": "571e8e31f5ec05e0e716c12b53a769ac8dbdd2570f7f32f4b83d83e4bed5e3a7",
       "evidence": [
         {
           "kind": "calendar-json-units",
@@ -6558,7 +6558,7 @@
     },
     {
       "id": "fullchunkqa-d7b602ef2529dd69e819c653-3",
-      "chunk_id": "knowledge-d7b602ef2529dd69e819c653",
+      "chunk_id": "knowledge-afb442fa373ec2a4896df7c3",
       "questions": [
         "保存カレンダーで、2026-09-21の「第３回 熊本県長距離記録会」から2026-09-26の「第４回 熊本県中学生ジュニア陸上大会（第３回県ジュニア駅伝大会）」まで、予定日の日付差は何日？"
       ],
@@ -6566,7 +6566,7 @@
       "sources": [
         "input/events.2026.yaml"
       ],
-      "source_sha256": "b935264bdd067669220941c3d0eeedec2afb33f228aed4a71e588518d4383057",
+      "source_sha256": "571e8e31f5ec05e0e716c12b53a769ac8dbdd2570f7f32f4b83d83e4bed5e3a7",
       "evidence": [
         {
           "kind": "calendar-json-units",
@@ -6620,7 +6620,7 @@
     },
     {
       "id": "fullchunkqa-a4252bb37dd7a9b59a8bdaa3-1",
-      "chunk_id": "knowledge-a4252bb37dd7a9b59a8bdaa3",
+      "chunk_id": "knowledge-5f3478b37b7289568a0955ea",
       "questions": [
         "保存カレンダーで、2026-10-03の「第４回 九州小学生交流大会」から2026-10-04の「第５回 奥球磨駅伝大会」まで、予定日の日付差は何日？"
       ],
@@ -6628,13 +6628,13 @@
       "sources": [
         "input/events.2026.yaml"
       ],
-      "source_sha256": "b935264bdd067669220941c3d0eeedec2afb33f228aed4a71e588518d4383057",
+      "source_sha256": "571e8e31f5ec05e0e716c12b53a769ac8dbdd2570f7f32f4b83d83e4bed5e3a7",
       "evidence": [
         {
           "kind": "calendar-json-units",
           "units": [
             {
-              "pointer": "/events/317",
+              "pointer": "/events/319",
               "value": {
                 "title": "第４回 九州小学生交流大会",
                 "date": "2026-10-03",
@@ -6656,7 +6656,7 @@
               }
             },
             {
-              "pointer": "/events/318",
+              "pointer": "/events/320",
               "value": {
                 "title": "第５回 奥球磨駅伝大会",
                 "date": "2026-10-04",
@@ -6694,7 +6694,7 @@
     },
     {
       "id": "fullchunkqa-a4252bb37dd7a9b59a8bdaa3-2",
-      "chunk_id": "knowledge-a4252bb37dd7a9b59a8bdaa3",
+      "chunk_id": "knowledge-5f3478b37b7289568a0955ea",
       "questions": [
         "保存カレンダーで、2026-10-03の「第４回 九州小学生交流大会」から2026-10-10の「第 ４回 熊本県長距離記録会」まで、予定日の日付差は何日？"
       ],
@@ -6702,13 +6702,13 @@
       "sources": [
         "input/events.2026.yaml"
       ],
-      "source_sha256": "b935264bdd067669220941c3d0eeedec2afb33f228aed4a71e588518d4383057",
+      "source_sha256": "571e8e31f5ec05e0e716c12b53a769ac8dbdd2570f7f32f4b83d83e4bed5e3a7",
       "evidence": [
         {
           "kind": "calendar-json-units",
           "units": [
             {
-              "pointer": "/events/317",
+              "pointer": "/events/319",
               "value": {
                 "title": "第４回 九州小学生交流大会",
                 "date": "2026-10-03",
@@ -6730,7 +6730,7 @@
               }
             },
             {
-              "pointer": "/events/319",
+              "pointer": "/events/321",
               "value": {
                 "title": "第 ４回 熊本県長距離記録会",
                 "date": "2026-10-10",
@@ -6759,7 +6759,7 @@
     },
     {
       "id": "fullchunkqa-a4252bb37dd7a9b59a8bdaa3-3",
-      "chunk_id": "knowledge-a4252bb37dd7a9b59a8bdaa3",
+      "chunk_id": "knowledge-5f3478b37b7289568a0955ea",
       "questions": [
         "保存カレンダーで、2026-10-03の「第４回 九州小学生交流大会」から2026-10-14の「荒玉中体連駅伝」まで、予定日の日付差は何日？"
       ],
@@ -6767,13 +6767,13 @@
       "sources": [
         "input/events.2026.yaml"
       ],
-      "source_sha256": "b935264bdd067669220941c3d0eeedec2afb33f228aed4a71e588518d4383057",
+      "source_sha256": "571e8e31f5ec05e0e716c12b53a769ac8dbdd2570f7f32f4b83d83e4bed5e3a7",
       "evidence": [
         {
           "kind": "calendar-json-units",
           "units": [
             {
-              "pointer": "/events/317",
+              "pointer": "/events/319",
               "value": {
                 "title": "第４回 九州小学生交流大会",
                 "date": "2026-10-03",
@@ -6795,7 +6795,7 @@
               }
             },
             {
-              "pointer": "/events/321",
+              "pointer": "/events/323",
               "value": {
                 "title": "荒玉中体連駅伝",
                 "date": "2026-10-14",
@@ -6825,7 +6825,7 @@
     },
     {
       "id": "fullchunkqa-43a9356fb54491bc1e4ed463-1",
-      "chunk_id": "knowledge-43a9356fb54491bc1e4ed463",
+      "chunk_id": "knowledge-93fe7d5df8ce3ddbf1e37221",
       "questions": [
         "保存カレンダーで、2026-11-14の「第４回 熊本チャレンジ陸上大会」から2026-11-21の「第７９回 熊本市中長距離選手権大会」まで、予定日の日付差は何日？"
       ],
@@ -6833,13 +6833,13 @@
       "sources": [
         "input/events.2026.yaml"
       ],
-      "source_sha256": "b935264bdd067669220941c3d0eeedec2afb33f228aed4a71e588518d4383057",
+      "source_sha256": "571e8e31f5ec05e0e716c12b53a769ac8dbdd2570f7f32f4b83d83e4bed5e3a7",
       "evidence": [
         {
           "kind": "calendar-json-units",
           "units": [
             {
-              "pointer": "/events/334",
+              "pointer": "/events/336",
               "value": {
                 "title": "第４回 熊本チャレンジ陸上大会",
                 "date": "2026-11-14",
@@ -6861,7 +6861,7 @@
               }
             },
             {
-              "pointer": "/events/335",
+              "pointer": "/events/337",
               "value": {
                 "title": "第７９回 熊本市中長距離選手権大会",
                 "date": "2026-11-21",
@@ -6890,7 +6890,7 @@
     },
     {
       "id": "fullchunkqa-43a9356fb54491bc1e4ed463-2",
-      "chunk_id": "knowledge-43a9356fb54491bc1e4ed463",
+      "chunk_id": "knowledge-93fe7d5df8ce3ddbf1e37221",
       "questions": [
         "保存カレンダーで、2026-11-14の「第４回 熊本チャレンジ陸上大会」から2026-11-29の「玉名市民マラソン」まで、予定日の日付差は何日？"
       ],
@@ -6898,13 +6898,13 @@
       "sources": [
         "input/events.2026.yaml"
       ],
-      "source_sha256": "b935264bdd067669220941c3d0eeedec2afb33f228aed4a71e588518d4383057",
+      "source_sha256": "571e8e31f5ec05e0e716c12b53a769ac8dbdd2570f7f32f4b83d83e4bed5e3a7",
       "evidence": [
         {
           "kind": "calendar-json-units",
           "units": [
             {
-              "pointer": "/events/334",
+              "pointer": "/events/336",
               "value": {
                 "title": "第４回 熊本チャレンジ陸上大会",
                 "date": "2026-11-14",
@@ -6926,7 +6926,7 @@
               }
             },
             {
-              "pointer": "/events/336",
+              "pointer": "/events/338",
               "value": {
                 "title": "玉名市民マラソン",
                 "date": "2026-11-29",
@@ -6955,7 +6955,7 @@
     },
     {
       "id": "fullchunkqa-43a9356fb54491bc1e4ed463-3",
-      "chunk_id": "knowledge-43a9356fb54491bc1e4ed463",
+      "chunk_id": "knowledge-93fe7d5df8ce3ddbf1e37221",
       "questions": [
         "保存カレンダーで、2026-11-14の「第４回 熊本チャレンジ陸上大会」から2026-12-06の「第５１回 熊本甲佐１０マイル公認ロードレース大会（１０マイル・１０ｋｍ・５ｋｍ）」まで、予定日の日付差は何日？"
       ],
@@ -6963,13 +6963,13 @@
       "sources": [
         "input/events.2026.yaml"
       ],
-      "source_sha256": "b935264bdd067669220941c3d0eeedec2afb33f228aed4a71e588518d4383057",
+      "source_sha256": "571e8e31f5ec05e0e716c12b53a769ac8dbdd2570f7f32f4b83d83e4bed5e3a7",
       "evidence": [
         {
           "kind": "calendar-json-units",
           "units": [
             {
-              "pointer": "/events/334",
+              "pointer": "/events/336",
               "value": {
                 "title": "第４回 熊本チャレンジ陸上大会",
                 "date": "2026-11-14",
@@ -6991,7 +6991,7 @@
               }
             },
             {
-              "pointer": "/events/339",
+              "pointer": "/events/341",
               "value": {
                 "title": "第５１回 熊本甲佐１０マイル公認ロードレース大会（１０マイル・１０ｋｍ・５ｋｍ）",
                 "date": "2026-12-06",
@@ -27001,35 +27001,33 @@
     },
     {
       "id": "fullchunkqa-78d16ccd2487f201014c3e78-1",
-      "chunk_id": "knowledge-78d16ccd2487f201014c3e78",
+      "chunk_id": "knowledge-c2a9ebee5bb8089b67779eab",
       "questions": [
-        "保存カレンダーで、2026-01-01の「元日」から2026-01-12の「成人の日」まで、予定日の日付差は何日？"
+        "保存カレンダーで、2026-03-29の「さくら記録会」から2026-04-04の「第２７２回熊本市陸上競技記録会R8」まで、予定日の日付差は何日？"
       ],
-      "answer": "予定日の差は11日です。2026-01-01から2026-01-12までの日付差で、両端の日を含めた日数ではありません。保存された予定日を比較しており、実施済みかどうかを示すものではありません。",
+      "answer": "予定日の差は6日です。2026-03-29から2026-04-04までの日付差で、両端の日を含めた日数ではありません。保存された予定日を比較しており、実施済みかどうかを示すものではありません。",
       "sources": [
         "out/2026/events.json"
       ],
-      "source_sha256": "6e4eb87d7401110bd2cc94975902508fc3e1d1e3a72a55a678a1d32aeb989f53",
+      "source_sha256": "d0a7bf194a6794f0711148be238c828e5f30d1be7163cb123e44639eb7268544",
       "evidence": [
         {
           "kind": "calendar-json-units",
           "units": [
             {
-              "pointer": "/1",
+              "pointer": "/56",
               "value": {
-                "title": "元日",
-                "date": "2026-01-01",
-                "end_date": "2026-01-01",
+                "title": "さくら記録会",
+                "date": "2026-03-29",
+                "end_date": "2026-03-29",
                 "all_day": true,
                 "start_time": null,
                 "end_time": null,
-                "category": "祝日",
-                "status": "",
-                "tags": [
-                  "holiday"
-                ],
+                "category": "予定",
+                "status": "scheduled",
+                "tags": [],
                 "urls": [],
-                "description": "日本の祝日",
+                "description": "",
                 "location": "",
                 "private": false,
                 "kind": "event",
@@ -27040,21 +27038,19 @@
               "context": {}
             },
             {
-              "pointer": "/4",
+              "pointer": "/63",
               "value": {
-                "title": "成人の日",
-                "date": "2026-01-12",
-                "end_date": "2026-01-12",
+                "title": "第２７２回熊本市陸上競技記録会R8",
+                "date": "2026-04-04",
+                "end_date": "2026-04-04",
                 "all_day": true,
                 "start_time": null,
                 "end_time": null,
-                "category": "祝日",
-                "status": "",
-                "tags": [
-                  "holiday"
-                ],
+                "category": "予定",
+                "status": "scheduled",
+                "tags": [],
                 "urls": [],
-                "description": "日本の祝日",
+                "description": "",
                 "location": "",
                 "private": false,
                 "kind": "event",
@@ -27069,9 +27065,9 @@
       ],
       "calculation": {
         "operation": "calendar_elapsed_days",
-        "from_date": "2026-01-01",
-        "to_date": "2026-01-12",
-        "days": 11
+        "from_date": "2026-03-29",
+        "to_date": "2026-04-04",
+        "days": 6
       },
       "review": {
         "method": "schema-reviewed-calendar-gap",
@@ -27081,7 +27077,7 @@
     },
     {
       "id": "fullchunkqa-78d16ccd2487f201014c3e78-2",
-      "chunk_id": "knowledge-78d16ccd2487f201014c3e78",
+      "chunk_id": "knowledge-92e25d58c6ec54c8195f4048",
       "questions": [
         "保存カレンダーで、2026-01-01の「元日」から2026-01-21の「岱明中2年修学旅行」まで、予定日の日付差は何日？"
       ],
@@ -27089,7 +27085,7 @@
       "sources": [
         "out/2026/events.json"
       ],
-      "source_sha256": "6e4eb87d7401110bd2cc94975902508fc3e1d1e3a72a55a678a1d32aeb989f53",
+      "source_sha256": "d0a7bf194a6794f0711148be238c828e5f30d1be7163cb123e44639eb7268544",
       "evidence": [
         {
           "kind": "calendar-json-units",
@@ -27159,7 +27155,7 @@
     },
     {
       "id": "fullchunkqa-78d16ccd2487f201014c3e78-3",
-      "chunk_id": "knowledge-78d16ccd2487f201014c3e78",
+      "chunk_id": "knowledge-92e25d58c6ec54c8195f4048",
       "questions": [
         "保存カレンダーで、2026-01-01の「元日」から2026-01-25の「玉名駅伝」まで、予定日の日付差は何日？"
       ],
@@ -27167,7 +27163,7 @@
       "sources": [
         "out/2026/events.json"
       ],
-      "source_sha256": "6e4eb87d7401110bd2cc94975902508fc3e1d1e3a72a55a678a1d32aeb989f53",
+      "source_sha256": "d0a7bf194a6794f0711148be238c828e5f30d1be7163cb123e44639eb7268544",
       "evidence": [
         {
           "kind": "calendar-json-units",
@@ -27237,25 +27233,25 @@
     },
     {
       "id": "fullchunkqa-8e75695108d978651ffcbb0b-1",
-      "chunk_id": "knowledge-8e75695108d978651ffcbb0b",
+      "chunk_id": "knowledge-c2a9ebee5bb8089b67779eab",
       "questions": [
-        "保存カレンダーで、2026-01-31の「合同練習会」から2026-02-02の「中学3年公立前期選抜入試」まで、予定日の日付差は何日？"
+        "保存カレンダーで、2026-03-29の「さくら記録会」から2026-04-11の「第３４回 金栗記念選抜陸上中長距離熊本大会」まで、予定日の日付差は何日？"
       ],
-      "answer": "予定日の差は2日です。2026-01-31から2026-02-02までの日付差で、両端の日を含めた日数ではありません。保存された予定日を比較しており、実施済みかどうかを示すものではありません。",
+      "answer": "予定日の差は13日です。2026-03-29から2026-04-11までの日付差で、両端の日を含めた日数ではありません。保存された予定日を比較しており、実施済みかどうかを示すものではありません。",
       "sources": [
         "out/2026/events.json"
       ],
-      "source_sha256": "6e4eb87d7401110bd2cc94975902508fc3e1d1e3a72a55a678a1d32aeb989f53",
+      "source_sha256": "d0a7bf194a6794f0711148be238c828e5f30d1be7163cb123e44639eb7268544",
       "evidence": [
         {
           "kind": "calendar-json-units",
           "units": [
             {
-              "pointer": "/16",
+              "pointer": "/56",
               "value": {
-                "title": "合同練習会",
-                "date": "2026-01-31",
-                "end_date": "2026-01-31",
+                "title": "さくら記録会",
+                "date": "2026-03-29",
+                "end_date": "2026-03-29",
                 "all_day": true,
                 "start_time": null,
                 "end_time": null,
@@ -27274,11 +27270,11 @@
               "context": {}
             },
             {
-              "pointer": "/18",
+              "pointer": "/64",
               "value": {
-                "title": "中学3年公立前期選抜入試",
-                "date": "2026-02-02",
-                "end_date": "2026-02-02",
+                "title": "第３４回 金栗記念選抜陸上中長距離熊本大会",
+                "date": "2026-04-11",
+                "end_date": "2026-04-11",
                 "all_day": true,
                 "start_time": null,
                 "end_time": null,
@@ -27286,7 +27282,7 @@
                 "status": "scheduled",
                 "tags": [],
                 "urls": [],
-                "description": "",
+                "description": "http://kumariku.com/competition/?id=8968",
                 "location": "",
                 "private": false,
                 "kind": "event",
@@ -27301,9 +27297,9 @@
       ],
       "calculation": {
         "operation": "calendar_elapsed_days",
-        "from_date": "2026-01-31",
-        "to_date": "2026-02-02",
-        "days": 2
+        "from_date": "2026-03-29",
+        "to_date": "2026-04-11",
+        "days": 13
       },
       "review": {
         "method": "schema-reviewed-calendar-gap",
@@ -27313,25 +27309,25 @@
     },
     {
       "id": "fullchunkqa-8e75695108d978651ffcbb0b-2",
-      "chunk_id": "knowledge-8e75695108d978651ffcbb0b",
+      "chunk_id": "knowledge-cae7482953ace007eb82a67b",
       "questions": [
-        "保存カレンダーで、2026-01-31の「合同練習会」から2026-02-05の「岱明中3年後期期末テスト」まで、予定日の日付差は何日？"
+        "保存カレンダーで、2026-10-14の「荒玉中体連駅伝」から2026-10-15の「荒玉中体連駅伝予備日」まで、予定日の日付差は何日？"
       ],
-      "answer": "予定日の差は5日です。2026-01-31から2026-02-05までの日付差で、両端の日を含めた日数ではありません。保存された予定日を比較しており、実施済みかどうかを示すものではありません。",
+      "answer": "予定日の差は1日です。2026-10-14から2026-10-15までの日付差で、両端の日を含めた日数ではありません。保存された予定日を比較しており、実施済みかどうかを示すものではありません。",
       "sources": [
         "out/2026/events.json"
       ],
-      "source_sha256": "6e4eb87d7401110bd2cc94975902508fc3e1d1e3a72a55a678a1d32aeb989f53",
+      "source_sha256": "d0a7bf194a6794f0711148be238c828e5f30d1be7163cb123e44639eb7268544",
       "evidence": [
         {
           "kind": "calendar-json-units",
           "units": [
             {
-              "pointer": "/16",
+              "pointer": "/340",
               "value": {
-                "title": "合同練習会",
-                "date": "2026-01-31",
-                "end_date": "2026-01-31",
+                "title": "荒玉中体連駅伝",
+                "date": "2026-10-14",
+                "end_date": "2026-10-14",
                 "all_day": true,
                 "start_time": null,
                 "end_time": null,
@@ -27339,7 +27335,7 @@
                 "status": "scheduled",
                 "tags": [],
                 "urls": [],
-                "description": "",
+                "description": "玉名荒尾中体連駅伝（荒玉）\n岱明確定オーダー・現行数式予想・校別展開: input/idaten-corpus/drive-text/大会/2026年度/1014-1015_荒玉中体連駅伝/\n現行予測: 区間オーダー_数式予想.md / 区間オーダー_数式予想_coverage.csv / 区間オーダー_数式予想.json\n旧SB予測: 区間オーダー_SB予想.md（比較用）\n距離正本: docs/aragyoku-ekiden-distance-definitions.md\n生成: python3 scripts/generate_aragyoku_ekiden_sb_preview.py → /opt/miniconda3/bin/python scripts/model_aragyoku_2026_formula.py\n",
                 "location": "",
                 "private": false,
                 "kind": "event",
@@ -27350,11 +27346,11 @@
               "context": {}
             },
             {
-              "pointer": "/21",
+              "pointer": "/341",
               "value": {
-                "title": "岱明中3年後期期末テスト",
-                "date": "2026-02-05",
-                "end_date": "2026-02-05",
+                "title": "荒玉中体連駅伝予備日",
+                "date": "2026-10-15",
+                "end_date": "2026-10-15",
                 "all_day": true,
                 "start_time": null,
                 "end_time": null,
@@ -27362,7 +27358,7 @@
                 "status": "scheduled",
                 "tags": [],
                 "urls": [],
-                "description": "",
+                "description": "荒玉中体連駅伝の予備日（本大会 2026-10-14）\n",
                 "location": "",
                 "private": false,
                 "kind": "event",
@@ -27377,9 +27373,9 @@
       ],
       "calculation": {
         "operation": "calendar_elapsed_days",
-        "from_date": "2026-01-31",
-        "to_date": "2026-02-05",
-        "days": 5
+        "from_date": "2026-10-14",
+        "to_date": "2026-10-15",
+        "days": 1
       },
       "review": {
         "method": "schema-reviewed-calendar-gap",
@@ -27389,25 +27385,25 @@
     },
     {
       "id": "fullchunkqa-8e75695108d978651ffcbb0b-3",
-      "chunk_id": "knowledge-8e75695108d978651ffcbb0b",
+      "chunk_id": "knowledge-cae7482953ace007eb82a67b",
       "questions": [
-        "保存カレンダーで、2026-01-31の「合同練習会」から2026-02-08の「熊日駅伝」まで、予定日の日付差は何日？"
+        "保存カレンダーで、2026-10-14の「荒玉中体連駅伝」から2026-10-24の「秋季熊本陸協記録会」まで、予定日の日付差は何日？"
       ],
-      "answer": "予定日の差は8日です。2026-01-31から2026-02-08までの日付差で、両端の日を含めた日数ではありません。保存された予定日を比較しており、実施済みかどうかを示すものではありません。",
+      "answer": "予定日の差は10日です。2026-10-14から2026-10-24までの日付差で、両端の日を含めた日数ではありません。保存された予定日を比較しており、実施済みかどうかを示すものではありません。",
       "sources": [
         "out/2026/events.json"
       ],
-      "source_sha256": "6e4eb87d7401110bd2cc94975902508fc3e1d1e3a72a55a678a1d32aeb989f53",
+      "source_sha256": "d0a7bf194a6794f0711148be238c828e5f30d1be7163cb123e44639eb7268544",
       "evidence": [
         {
           "kind": "calendar-json-units",
           "units": [
             {
-              "pointer": "/16",
+              "pointer": "/340",
               "value": {
-                "title": "合同練習会",
-                "date": "2026-01-31",
-                "end_date": "2026-01-31",
+                "title": "荒玉中体連駅伝",
+                "date": "2026-10-14",
+                "end_date": "2026-10-14",
                 "all_day": true,
                 "start_time": null,
                 "end_time": null,
@@ -27415,7 +27411,7 @@
                 "status": "scheduled",
                 "tags": [],
                 "urls": [],
-                "description": "",
+                "description": "玉名荒尾中体連駅伝（荒玉）\n岱明確定オーダー・現行数式予想・校別展開: input/idaten-corpus/drive-text/大会/2026年度/1014-1015_荒玉中体連駅伝/\n現行予測: 区間オーダー_数式予想.md / 区間オーダー_数式予想_coverage.csv / 区間オーダー_数式予想.json\n旧SB予測: 区間オーダー_SB予想.md（比較用）\n距離正本: docs/aragyoku-ekiden-distance-definitions.md\n生成: python3 scripts/generate_aragyoku_ekiden_sb_preview.py → /opt/miniconda3/bin/python scripts/model_aragyoku_2026_formula.py\n",
                 "location": "",
                 "private": false,
                 "kind": "event",
@@ -27426,20 +27422,25 @@
               "context": {}
             },
             {
-              "pointer": "/22",
+              "pointer": "/345",
               "value": {
-                "title": "熊日駅伝",
-                "date": "2026-02-08",
-                "end_date": "2026-02-08",
+                "title": "秋季熊本陸協記録会",
+                "date": "2026-10-24",
+                "end_date": "2026-10-24",
                 "all_day": true,
                 "start_time": null,
                 "end_time": null,
                 "category": "予定",
                 "status": "scheduled",
-                "tags": [],
-                "urls": [],
-                "description": "",
-                "location": "",
+                "tags": [
+                  "ランニング",
+                  "県大会一覧"
+                ],
+                "urls": [
+                  "http://kumariku.com/info/wp-content/uploads/2026/04/b652729b4a1eecb47ebc1e6e01321a6e.pdf"
+                ],
+                "description": "熊本県陸上競技大会一覧（2026/5/31版）より追加",
+                "location": "えがお健康スタジアム",
                 "private": false,
                 "kind": "event",
                 "practice": null,
@@ -27453,9 +27454,9 @@
       ],
       "calculation": {
         "operation": "calendar_elapsed_days",
-        "from_date": "2026-01-31",
-        "to_date": "2026-02-08",
-        "days": 8
+        "from_date": "2026-10-14",
+        "to_date": "2026-10-24",
+        "days": 10
       },
       "review": {
         "method": "schema-reviewed-calendar-gap",
@@ -27465,25 +27466,25 @@
     },
     {
       "id": "fullchunkqa-6e387195761ea3a13cd26e3f-1",
-      "chunk_id": "knowledge-6e387195761ea3a13cd26e3f",
+      "chunk_id": "knowledge-c0e929553bcba3f74dfef170",
       "questions": [
-        "保存カレンダーで、2026-02-11の「建国記念の日」から2026-02-12の「岱明中1・2年後期期末テスト」まで、予定日の日付差は何日？"
+        "保存カレンダーで、2026-11-03の「文化の日」から2026-11-06の「熊本県中学男子･女子駅伝大会」まで、予定日の日付差は何日？"
       ],
-      "answer": "予定日の差は1日です。2026-02-11から2026-02-12までの日付差で、両端の日を含めた日数ではありません。保存された予定日を比較しており、実施済みかどうかを示すものではありません。",
+      "answer": "予定日の差は3日です。2026-11-03から2026-11-06までの日付差で、両端の日を含めた日数ではありません。保存された予定日を比較しており、実施済みかどうかを示すものではありません。",
       "sources": [
         "out/2026/events.json"
       ],
-      "source_sha256": "6e4eb87d7401110bd2cc94975902508fc3e1d1e3a72a55a678a1d32aeb989f53",
+      "source_sha256": "d0a7bf194a6794f0711148be238c828e5f30d1be7163cb123e44639eb7268544",
       "evidence": [
         {
           "kind": "calendar-json-units",
           "units": [
             {
-              "pointer": "/27",
+              "pointer": "/350",
               "value": {
-                "title": "建国記念の日",
-                "date": "2026-02-11",
-                "end_date": "2026-02-11",
+                "title": "文化の日",
+                "date": "2026-11-03",
+                "end_date": "2026-11-03",
                 "all_day": true,
                 "start_time": null,
                 "end_time": null,
@@ -27504,11 +27505,11 @@
               "context": {}
             },
             {
-              "pointer": "/28",
+              "pointer": "/351",
               "value": {
-                "title": "岱明中1・2年後期期末テスト",
-                "date": "2026-02-12",
-                "end_date": "2026-02-12",
+                "title": "熊本県中学男子･女子駅伝大会",
+                "date": "2026-11-06",
+                "end_date": "2026-11-06",
                 "all_day": true,
                 "start_time": null,
                 "end_time": null,
@@ -27531,9 +27532,9 @@
       ],
       "calculation": {
         "operation": "calendar_elapsed_days",
-        "from_date": "2026-02-11",
-        "to_date": "2026-02-12",
-        "days": 1
+        "from_date": "2026-11-03",
+        "to_date": "2026-11-06",
+        "days": 3
       },
       "review": {
         "method": "schema-reviewed-calendar-gap",
@@ -27543,7 +27544,7 @@
     },
     {
       "id": "fullchunkqa-6e387195761ea3a13cd26e3f-2",
-      "chunk_id": "knowledge-6e387195761ea3a13cd26e3f",
+      "chunk_id": "knowledge-7f325f3fe2c53dcaf32845e1",
       "questions": [
         "保存カレンダーで、2026-02-11の「建国記念の日」から2026-02-15の「熊本城マラソン」まで、予定日の日付差は何日？"
       ],
@@ -27551,7 +27552,7 @@
       "sources": [
         "out/2026/events.json"
       ],
-      "source_sha256": "6e4eb87d7401110bd2cc94975902508fc3e1d1e3a72a55a678a1d32aeb989f53",
+      "source_sha256": "d0a7bf194a6794f0711148be238c828e5f30d1be7163cb123e44639eb7268544",
       "evidence": [
         {
           "kind": "calendar-json-units",
@@ -27621,7 +27622,7 @@
     },
     {
       "id": "fullchunkqa-6e387195761ea3a13cd26e3f-3",
-      "chunk_id": "knowledge-6e387195761ea3a13cd26e3f",
+      "chunk_id": "knowledge-7f325f3fe2c53dcaf32845e1",
       "questions": [
         "保存カレンダーで、2026-02-11の「建国記念の日」から2026-02-21の「熊日駅伝テレビ放送」まで、予定日の日付差は何日？"
       ],
@@ -27629,7 +27630,7 @@
       "sources": [
         "out/2026/events.json"
       ],
-      "source_sha256": "6e4eb87d7401110bd2cc94975902508fc3e1d1e3a72a55a678a1d32aeb989f53",
+      "source_sha256": "d0a7bf194a6794f0711148be238c828e5f30d1be7163cb123e44639eb7268544",
       "evidence": [
         {
           "kind": "calendar-json-units",
@@ -27699,7 +27700,7 @@
     },
     {
       "id": "fullchunkqa-fb3321f268d18631ce0b3f2c-1",
-      "chunk_id": "knowledge-fb3321f268d18631ce0b3f2c",
+      "chunk_id": "knowledge-549745032310454fb37fb086",
       "questions": [
         "保存カレンダーで、2026-03-03の「中学3年公立後期選抜入試」から2026-03-06の「岱明中卒業式」まで、予定日の日付差は何日？"
       ],
@@ -27707,7 +27708,7 @@
       "sources": [
         "out/2026/events.json"
       ],
-      "source_sha256": "6e4eb87d7401110bd2cc94975902508fc3e1d1e3a72a55a678a1d32aeb989f53",
+      "source_sha256": "d0a7bf194a6794f0711148be238c828e5f30d1be7163cb123e44639eb7268544",
       "evidence": [
         {
           "kind": "calendar-json-units",
@@ -27775,7 +27776,7 @@
     },
     {
       "id": "fullchunkqa-fb3321f268d18631ce0b3f2c-2",
-      "chunk_id": "knowledge-fb3321f268d18631ce0b3f2c",
+      "chunk_id": "knowledge-549745032310454fb37fb086",
       "questions": [
         "保存カレンダーで、2026-03-03の「中学3年公立後期選抜入試」から2026-03-08の「玉名ハーフマラソン」まで、予定日の日付差は何日？"
       ],
@@ -27783,7 +27784,7 @@
       "sources": [
         "out/2026/events.json"
       ],
-      "source_sha256": "6e4eb87d7401110bd2cc94975902508fc3e1d1e3a72a55a678a1d32aeb989f53",
+      "source_sha256": "d0a7bf194a6794f0711148be238c828e5f30d1be7163cb123e44639eb7268544",
       "evidence": [
         {
           "kind": "calendar-json-units",
@@ -27851,7 +27852,7 @@
     },
     {
       "id": "fullchunkqa-fb3321f268d18631ce0b3f2c-3",
-      "chunk_id": "knowledge-fb3321f268d18631ce0b3f2c",
+      "chunk_id": "knowledge-549745032310454fb37fb086",
       "questions": [
         "保存カレンダーで、2026-03-03の「中学3年公立後期選抜入試」から2026-03-15の「岱明中陸上部お別れ会」まで、予定日の日付差は何日？"
       ],
@@ -27859,7 +27860,7 @@
       "sources": [
         "out/2026/events.json"
       ],
-      "source_sha256": "6e4eb87d7401110bd2cc94975902508fc3e1d1e3a72a55a678a1d32aeb989f53",
+      "source_sha256": "d0a7bf194a6794f0711148be238c828e5f30d1be7163cb123e44639eb7268544",
       "evidence": [
         {
           "kind": "calendar-json-units",
@@ -27927,7 +27928,7 @@
     },
     {
       "id": "fullchunkqa-a8889c9c0922a6e2950facaa-1",
-      "chunk_id": "knowledge-a8889c9c0922a6e2950facaa",
+      "chunk_id": "knowledge-7ee992b283b290ccf0eae17a",
       "questions": [
         "保存カレンダーで、2026-04-18の「第４５回 熊本市陸上競技選手権大会」から2026-04-19の「第２７回 谷口睦生杯八代陸上選手権大会」まで、予定日の日付差は何日？"
       ],
@@ -27935,7 +27936,7 @@
       "sources": [
         "out/2026/events.json"
       ],
-      "source_sha256": "6e4eb87d7401110bd2cc94975902508fc3e1d1e3a72a55a678a1d32aeb989f53",
+      "source_sha256": "d0a7bf194a6794f0711148be238c828e5f30d1be7163cb123e44639eb7268544",
       "evidence": [
         {
           "kind": "calendar-json-units",
@@ -28012,7 +28013,7 @@
     },
     {
       "id": "fullchunkqa-a8889c9c0922a6e2950facaa-2",
-      "chunk_id": "knowledge-a8889c9c0922a6e2950facaa",
+      "chunk_id": "knowledge-7ee992b283b290ccf0eae17a",
       "questions": [
         "保存カレンダーで、2026-04-18の「第４５回 熊本市陸上競技選手権大会」から2026-04-25の「令和８年度 熊本県陸上競技選手権兼国スポ一次予選」まで、予定日の日付差は何日？"
       ],
@@ -28020,7 +28021,7 @@
       "sources": [
         "out/2026/events.json"
       ],
-      "source_sha256": "6e4eb87d7401110bd2cc94975902508fc3e1d1e3a72a55a678a1d32aeb989f53",
+      "source_sha256": "d0a7bf194a6794f0711148be238c828e5f30d1be7163cb123e44639eb7268544",
       "evidence": [
         {
           "kind": "calendar-json-units",
@@ -28092,7 +28093,7 @@
     },
     {
       "id": "fullchunkqa-a8889c9c0922a6e2950facaa-3",
-      "chunk_id": "knowledge-a8889c9c0922a6e2950facaa",
+      "chunk_id": "knowledge-7ee992b283b290ccf0eae17a",
       "questions": [
         "保存カレンダーで、2026-04-18の「第４５回 熊本市陸上競技選手権大会」から2026-04-29の「大牟田陸上」まで、予定日の日付差は何日？"
       ],
@@ -28100,7 +28101,7 @@
       "sources": [
         "out/2026/events.json"
       ],
-      "source_sha256": "6e4eb87d7401110bd2cc94975902508fc3e1d1e3a72a55a678a1d32aeb989f53",
+      "source_sha256": "d0a7bf194a6794f0711148be238c828e5f30d1be7163cb123e44639eb7268544",
       "evidence": [
         {
           "kind": "calendar-json-units",
@@ -28172,7 +28173,7 @@
     },
     {
       "id": "fullchunkqa-b49ce03065f132d94fb23bf6-1",
-      "chunk_id": "knowledge-b49ce03065f132d94fb23bf6",
+      "chunk_id": "knowledge-1ac1c1a43d86e226cd3ce923",
       "questions": [
         "保存カレンダーで、2026-05-02の「第４５回 熊本市陸上競技選手権大会（長距離種目以外）」から2026-05-03の「憲法記念日」まで、予定日の日付差は何日？"
       ],
@@ -28180,7 +28181,7 @@
       "sources": [
         "out/2026/events.json"
       ],
-      "source_sha256": "6e4eb87d7401110bd2cc94975902508fc3e1d1e3a72a55a678a1d32aeb989f53",
+      "source_sha256": "d0a7bf194a6794f0711148be238c828e5f30d1be7163cb123e44639eb7268544",
       "evidence": [
         {
           "kind": "calendar-json-units",
@@ -28255,7 +28256,7 @@
     },
     {
       "id": "fullchunkqa-b49ce03065f132d94fb23bf6-2",
-      "chunk_id": "knowledge-b49ce03065f132d94fb23bf6",
+      "chunk_id": "knowledge-1ac1c1a43d86e226cd3ce923",
       "questions": [
         "保存カレンダーで、2026-05-02の「第４５回 熊本市陸上競技選手権大会（長距離種目以外）」から2026-05-04の「みどりの日」まで、予定日の日付差は何日？"
       ],
@@ -28263,7 +28264,7 @@
       "sources": [
         "out/2026/events.json"
       ],
-      "source_sha256": "6e4eb87d7401110bd2cc94975902508fc3e1d1e3a72a55a678a1d32aeb989f53",
+      "source_sha256": "d0a7bf194a6794f0711148be238c828e5f30d1be7163cb123e44639eb7268544",
       "evidence": [
         {
           "kind": "calendar-json-units",
@@ -28338,7 +28339,7 @@
     },
     {
       "id": "fullchunkqa-b49ce03065f132d94fb23bf6-3",
-      "chunk_id": "knowledge-b49ce03065f132d94fb23bf6",
+      "chunk_id": "knowledge-1ac1c1a43d86e226cd3ce923",
       "questions": [
         "保存カレンダーで、2026-05-02の「第４５回 熊本市陸上競技選手権大会（長距離種目以外）」から2026-05-05の「こどもの日」まで、予定日の日付差は何日？"
       ],
@@ -28346,7 +28347,7 @@
       "sources": [
         "out/2026/events.json"
       ],
-      "source_sha256": "6e4eb87d7401110bd2cc94975902508fc3e1d1e3a72a55a678a1d32aeb989f53",
+      "source_sha256": "d0a7bf194a6794f0711148be238c828e5f30d1be7163cb123e44639eb7268544",
       "evidence": [
         {
           "kind": "calendar-json-units",
@@ -28421,7 +28422,7 @@
     },
     {
       "id": "fullchunkqa-5750f7cb30751a5457171b6e-1",
-      "chunk_id": "knowledge-5750f7cb30751a5457171b6e",
+      "chunk_id": "knowledge-8935adf291b313a324d755c5",
       "questions": [
         "保存カレンダーで、2026-05-16の「第２５回 くまもと障がい者スポーツ大会」から2026-05-17の「岱明中体育大会」まで、予定日の日付差は何日？"
       ],
@@ -28429,7 +28430,7 @@
       "sources": [
         "out/2026/events.json"
       ],
-      "source_sha256": "6e4eb87d7401110bd2cc94975902508fc3e1d1e3a72a55a678a1d32aeb989f53",
+      "source_sha256": "d0a7bf194a6794f0711148be238c828e5f30d1be7163cb123e44639eb7268544",
       "evidence": [
         {
           "kind": "calendar-json-units",
@@ -28502,7 +28503,7 @@
     },
     {
       "id": "fullchunkqa-5750f7cb30751a5457171b6e-2",
-      "chunk_id": "knowledge-5750f7cb30751a5457171b6e",
+      "chunk_id": "knowledge-8935adf291b313a324d755c5",
       "questions": [
         "保存カレンダーで、2026-05-16の「第２５回 くまもと障がい者スポーツ大会」から2026-05-23の「第４１回 熊本県中学校陸上選手権・第２４回中学校混成競技大会」まで、予定日の日付差は何日？"
       ],
@@ -28510,7 +28511,7 @@
       "sources": [
         "out/2026/events.json"
       ],
-      "source_sha256": "6e4eb87d7401110bd2cc94975902508fc3e1d1e3a72a55a678a1d32aeb989f53",
+      "source_sha256": "d0a7bf194a6794f0711148be238c828e5f30d1be7163cb123e44639eb7268544",
       "evidence": [
         {
           "kind": "calendar-json-units",
@@ -28587,7 +28588,7 @@
     },
     {
       "id": "fullchunkqa-5750f7cb30751a5457171b6e-3",
-      "chunk_id": "knowledge-5750f7cb30751a5457171b6e",
+      "chunk_id": "knowledge-8935adf291b313a324d755c5",
       "questions": [
         "保存カレンダーで、2026-05-17の「岱明中体育大会」から2026-05-23の「第４１回 熊本県中学校陸上選手権・第２４回中学校混成競技大会」まで、予定日の日付差は何日？"
       ],
@@ -28595,7 +28596,7 @@
       "sources": [
         "out/2026/events.json"
       ],
-      "source_sha256": "6e4eb87d7401110bd2cc94975902508fc3e1d1e3a72a55a678a1d32aeb989f53",
+      "source_sha256": "d0a7bf194a6794f0711148be238c828e5f30d1be7163cb123e44639eb7268544",
       "evidence": [
         {
           "kind": "calendar-json-units",
@@ -28667,7 +28668,7 @@
     },
     {
       "id": "fullchunkqa-3b0ba871f38a3dfd72798b42-1",
-      "chunk_id": "knowledge-3b0ba871f38a3dfd72798b42",
+      "chunk_id": "knowledge-1dc0e2cf0167b38c328f702b",
       "questions": [
         "保存カレンダーで、2026-05-24の「さつき記録会」から2026-05-26の「岱明中前期確認テスト」まで、予定日の日付差は何日？"
       ],
@@ -28675,7 +28676,7 @@
       "sources": [
         "out/2026/events.json"
       ],
-      "source_sha256": "6e4eb87d7401110bd2cc94975902508fc3e1d1e3a72a55a678a1d32aeb989f53",
+      "source_sha256": "d0a7bf194a6794f0711148be238c828e5f30d1be7163cb123e44639eb7268544",
       "evidence": [
         {
           "kind": "calendar-json-units",
@@ -28743,7 +28744,7 @@
     },
     {
       "id": "fullchunkqa-3b0ba871f38a3dfd72798b42-2",
-      "chunk_id": "knowledge-3b0ba871f38a3dfd72798b42",
+      "chunk_id": "knowledge-1dc0e2cf0167b38c328f702b",
       "questions": [
         "保存カレンダーで、2026-05-24の「さつき記録会」から2026-05-29の「令和８年度 熊本県高等学校総合体育大会陸上競技大会」まで、予定日の日付差は何日？"
       ],
@@ -28751,7 +28752,7 @@
       "sources": [
         "out/2026/events.json"
       ],
-      "source_sha256": "6e4eb87d7401110bd2cc94975902508fc3e1d1e3a72a55a678a1d32aeb989f53",
+      "source_sha256": "d0a7bf194a6794f0711148be238c828e5f30d1be7163cb123e44639eb7268544",
       "evidence": [
         {
           "kind": "calendar-json-units",
@@ -28824,7 +28825,7 @@
     },
     {
       "id": "fullchunkqa-3b0ba871f38a3dfd72798b42-3",
-      "chunk_id": "knowledge-3b0ba871f38a3dfd72798b42",
+      "chunk_id": "knowledge-1dc0e2cf0167b38c328f702b",
       "questions": [
         "保存カレンダーで、2026-05-24の「さつき記録会」から2026-06-06の「第２７３回 熊本市陸上競技記録会」まで、予定日の日付差は何日？"
       ],
@@ -28832,7 +28833,7 @@
       "sources": [
         "out/2026/events.json"
       ],
-      "source_sha256": "6e4eb87d7401110bd2cc94975902508fc3e1d1e3a72a55a678a1d32aeb989f53",
+      "source_sha256": "d0a7bf194a6794f0711148be238c828e5f30d1be7163cb123e44639eb7268544",
       "evidence": [
         {
           "kind": "calendar-json-units",
@@ -28900,7 +28901,7 @@
     },
     {
       "id": "fullchunkqa-bb8a1d711b2ee2895ff59415-1",
-      "chunk_id": "knowledge-bb8a1d711b2ee2895ff59415",
+      "chunk_id": "knowledge-aea1845a601b93ede9bd8fb4",
       "questions": [
         "保存カレンダーで、2026-06-13の「第７２回 全日本中学校通信陸上競技大会熊本県大会」から2026-06-20の「第４２回 日清カップ全国小学生陸上競技交流大会県予選会」まで、予定日の日付差は何日？"
       ],
@@ -28908,7 +28909,7 @@
       "sources": [
         "out/2026/events.json"
       ],
-      "source_sha256": "6e4eb87d7401110bd2cc94975902508fc3e1d1e3a72a55a678a1d32aeb989f53",
+      "source_sha256": "d0a7bf194a6794f0711148be238c828e5f30d1be7163cb123e44639eb7268544",
       "evidence": [
         {
           "kind": "calendar-json-units",
@@ -28983,7 +28984,7 @@
     },
     {
       "id": "fullchunkqa-bb8a1d711b2ee2895ff59415-2",
-      "chunk_id": "knowledge-bb8a1d711b2ee2895ff59415",
+      "chunk_id": "knowledge-aea1845a601b93ede9bd8fb4",
       "questions": [
         "保存カレンダーで、2026-06-13の「第７２回 全日本中学校通信陸上競技大会熊本県大会」から2026-06-25の「長距離記録会参加費締切」まで、予定日の日付差は何日？"
       ],
@@ -28991,7 +28992,7 @@
       "sources": [
         "out/2026/events.json"
       ],
-      "source_sha256": "6e4eb87d7401110bd2cc94975902508fc3e1d1e3a72a55a678a1d32aeb989f53",
+      "source_sha256": "d0a7bf194a6794f0711148be238c828e5f30d1be7163cb123e44639eb7268544",
       "evidence": [
         {
           "kind": "calendar-json-units",
@@ -29061,7 +29062,7 @@
     },
     {
       "id": "fullchunkqa-bb8a1d711b2ee2895ff59415-3",
-      "chunk_id": "knowledge-bb8a1d711b2ee2895ff59415",
+      "chunk_id": "knowledge-aea1845a601b93ede9bd8fb4",
       "questions": [
         "保存カレンダーで、2026-06-13の「第７２回 全日本中学校通信陸上競技大会熊本県大会」から2026-06-27の「第６回 天草市陸上競技記録会」まで、予定日の日付差は何日？"
       ],
@@ -29069,7 +29070,7 @@
       "sources": [
         "out/2026/events.json"
       ],
-      "source_sha256": "6e4eb87d7401110bd2cc94975902508fc3e1d1e3a72a55a678a1d32aeb989f53",
+      "source_sha256": "d0a7bf194a6794f0711148be238c828e5f30d1be7163cb123e44639eb7268544",
       "evidence": [
         {
           "kind": "calendar-json-units",
@@ -29144,7 +29145,7 @@
     },
     {
       "id": "fullchunkqa-e21aa9387b3f1b35d72e2156-1",
-      "chunk_id": "knowledge-e21aa9387b3f1b35d72e2156",
+      "chunk_id": "knowledge-62c2446c5a0455531cb30b61",
       "questions": [
         "保存カレンダーで、2026-09-08の「練習会（岱明）（県民スポーツ大会中止に伴い中止）」から2026-09-13の「練習会（桃田）（県民スポーツ大会中止に伴い中止）」まで、予定日の日付差は何日？"
       ],
@@ -29152,7 +29153,7 @@
       "sources": [
         "out/2026/events.json"
       ],
-      "source_sha256": "6e4eb87d7401110bd2cc94975902508fc3e1d1e3a72a55a678a1d32aeb989f53",
+      "source_sha256": "d0a7bf194a6794f0711148be238c828e5f30d1be7163cb123e44639eb7268544",
       "evidence": [
         {
           "kind": "calendar-json-units",
@@ -29224,7 +29225,7 @@
     },
     {
       "id": "fullchunkqa-e21aa9387b3f1b35d72e2156-2",
-      "chunk_id": "knowledge-e21aa9387b3f1b35d72e2156",
+      "chunk_id": "knowledge-62c2446c5a0455531cb30b61",
       "questions": [
         "保存カレンダーで、2026-09-09の「岱明中前期期末テスト」から2026-09-10の「練習会（岱明）（県民スポーツ大会中止に伴い中止）」まで、予定日の日付差は何日？"
       ],
@@ -29232,7 +29233,7 @@
       "sources": [
         "out/2026/events.json"
       ],
-      "source_sha256": "6e4eb87d7401110bd2cc94975902508fc3e1d1e3a72a55a678a1d32aeb989f53",
+      "source_sha256": "d0a7bf194a6794f0711148be238c828e5f30d1be7163cb123e44639eb7268544",
       "evidence": [
         {
           "kind": "calendar-json-units",
@@ -29302,7 +29303,7 @@
     },
     {
       "id": "fullchunkqa-e21aa9387b3f1b35d72e2156-3",
-      "chunk_id": "knowledge-e21aa9387b3f1b35d72e2156",
+      "chunk_id": "knowledge-62c2446c5a0455531cb30b61",
       "questions": [
         "保存カレンダーで、2026-09-09の「岱明中前期期末テスト」から2026-09-11の「第４４回 全九州高校新人陸上大会熊本県予選」まで、予定日の日付差は何日？"
       ],
@@ -29310,7 +29311,7 @@
       "sources": [
         "out/2026/events.json"
       ],
-      "source_sha256": "6e4eb87d7401110bd2cc94975902508fc3e1d1e3a72a55a678a1d32aeb989f53",
+      "source_sha256": "d0a7bf194a6794f0711148be238c828e5f30d1be7163cb123e44639eb7268544",
       "evidence": [
         {
           "kind": "calendar-json-units",
@@ -29383,7 +29384,7 @@
     },
     {
       "id": "fullchunkqa-fafb57de6655beb0764412de-1",
-      "chunk_id": "knowledge-fafb57de6655beb0764412de",
+      "chunk_id": "knowledge-9a3966ae153edec642ec5e5f",
       "questions": [
         "保存カレンダーで、2026-09-22の「玉名市練習会&BBQ」から2026-09-23の「秋分の日」まで、予定日の日付差は何日？"
       ],
@@ -29391,7 +29392,7 @@
       "sources": [
         "out/2026/events.json"
       ],
-      "source_sha256": "6e4eb87d7401110bd2cc94975902508fc3e1d1e3a72a55a678a1d32aeb989f53",
+      "source_sha256": "d0a7bf194a6794f0711148be238c828e5f30d1be7163cb123e44639eb7268544",
       "evidence": [
         {
           "kind": "calendar-json-units",
@@ -29464,7 +29465,7 @@
     },
     {
       "id": "fullchunkqa-fafb57de6655beb0764412de-2",
-      "chunk_id": "knowledge-fafb57de6655beb0764412de",
+      "chunk_id": "knowledge-9a3966ae153edec642ec5e5f",
       "questions": [
         "保存カレンダーで、2026-09-22の「玉名市練習会&BBQ」から2026-09-24の「いだてん岱明練習」まで、予定日の日付差は何日？"
       ],
@@ -29472,7 +29473,7 @@
       "sources": [
         "out/2026/events.json"
       ],
-      "source_sha256": "6e4eb87d7401110bd2cc94975902508fc3e1d1e3a72a55a678a1d32aeb989f53",
+      "source_sha256": "d0a7bf194a6794f0711148be238c828e5f30d1be7163cb123e44639eb7268544",
       "evidence": [
         {
           "kind": "calendar-json-units",
@@ -29569,7 +29570,7 @@
     },
     {
       "id": "fullchunkqa-fafb57de6655beb0764412de-3",
-      "chunk_id": "knowledge-fafb57de6655beb0764412de",
+      "chunk_id": "knowledge-9a3966ae153edec642ec5e5f",
       "questions": [
         "保存カレンダーで、2026-09-22の「玉名市練習会&BBQ」から2026-09-26の「第４回 熊本県中学生ジュニア陸上大会（第３回県ジュニア駅伝大会）」まで、予定日の日付差は何日？"
       ],
@@ -29577,7 +29578,7 @@
       "sources": [
         "out/2026/events.json"
       ],
-      "source_sha256": "6e4eb87d7401110bd2cc94975902508fc3e1d1e3a72a55a678a1d32aeb989f53",
+      "source_sha256": "d0a7bf194a6794f0711148be238c828e5f30d1be7163cb123e44639eb7268544",
       "evidence": [
         {
           "kind": "calendar-json-units",
@@ -29648,7 +29649,7 @@
     },
     {
       "id": "fullchunkqa-84f8a9961b050938741b0acb-1",
-      "chunk_id": "knowledge-84f8a9961b050938741b0acb",
+      "chunk_id": "knowledge-193358e15749c836e3286eff",
       "questions": [
         "保存カレンダーで、2026-10-04の「第５回 奥球磨駅伝大会」から2026-10-10の「第 ４回 熊本県長距離記録会」まで、予定日の日付差は何日？"
       ],
@@ -29656,13 +29657,13 @@
       "sources": [
         "out/2026/events.json"
       ],
-      "source_sha256": "6e4eb87d7401110bd2cc94975902508fc3e1d1e3a72a55a678a1d32aeb989f53",
+      "source_sha256": "d0a7bf194a6794f0711148be238c828e5f30d1be7163cb123e44639eb7268544",
       "evidence": [
         {
           "kind": "calendar-json-units",
           "units": [
             {
-              "pointer": "/334",
+              "pointer": "/336",
               "value": {
                 "title": "第５回 奥球磨駅伝大会",
                 "date": "2026-10-04",
@@ -29690,7 +29691,7 @@
               "context": {}
             },
             {
-              "pointer": "/335",
+              "pointer": "/337",
               "value": {
                 "title": "第 ４回 熊本県長距離記録会",
                 "date": "2026-10-10",
@@ -29729,7 +29730,7 @@
     },
     {
       "id": "fullchunkqa-84f8a9961b050938741b0acb-2",
-      "chunk_id": "knowledge-84f8a9961b050938741b0acb",
+      "chunk_id": "knowledge-193358e15749c836e3286eff",
       "questions": [
         "保存カレンダーで、2026-10-04の「第５回 奥球磨駅伝大会」から2026-10-12の「スポーツの日」まで、予定日の日付差は何日？"
       ],
@@ -29737,13 +29738,13 @@
       "sources": [
         "out/2026/events.json"
       ],
-      "source_sha256": "6e4eb87d7401110bd2cc94975902508fc3e1d1e3a72a55a678a1d32aeb989f53",
+      "source_sha256": "d0a7bf194a6794f0711148be238c828e5f30d1be7163cb123e44639eb7268544",
       "evidence": [
         {
           "kind": "calendar-json-units",
           "units": [
             {
-              "pointer": "/334",
+              "pointer": "/336",
               "value": {
                 "title": "第５回 奥球磨駅伝大会",
                 "date": "2026-10-04",
@@ -29771,7 +29772,7 @@
               "context": {}
             },
             {
-              "pointer": "/336",
+              "pointer": "/338",
               "value": {
                 "title": "スポーツの日",
                 "date": "2026-10-12",
@@ -29812,39 +29813,34 @@
     },
     {
       "id": "fullchunkqa-84f8a9961b050938741b0acb-3",
-      "chunk_id": "knowledge-84f8a9961b050938741b0acb",
+      "chunk_id": "knowledge-92e25d58c6ec54c8195f4048",
       "questions": [
-        "保存カレンダーで、2026-10-04の「第５回 奥球磨駅伝大会」から2026-10-14の「荒玉中体連駅伝」まで、予定日の日付差は何日？"
+        "保存カレンダーで、2026-01-21の「岱明中2年修学旅行」から2026-01-25の「玉名駅伝」まで、予定日の日付差は何日？"
       ],
-      "answer": "予定日の差は10日です。2026-10-04から2026-10-14までの日付差で、両端の日を含めた日数ではありません。保存された予定日を比較しており、実施済みかどうかを示すものではありません。",
+      "answer": "予定日の差は4日です。2026-01-21から2026-01-25までの日付差で、両端の日を含めた日数ではありません。保存された予定日を比較しており、実施済みかどうかを示すものではありません。",
       "sources": [
         "out/2026/events.json"
       ],
-      "source_sha256": "6e4eb87d7401110bd2cc94975902508fc3e1d1e3a72a55a678a1d32aeb989f53",
+      "source_sha256": "d0a7bf194a6794f0711148be238c828e5f30d1be7163cb123e44639eb7268544",
       "evidence": [
         {
           "kind": "calendar-json-units",
           "units": [
             {
-              "pointer": "/334",
+              "pointer": "/10",
               "value": {
-                "title": "第５回 奥球磨駅伝大会",
-                "date": "2026-10-04",
-                "end_date": "2026-10-04",
+                "title": "岱明中2年修学旅行",
+                "date": "2026-01-21",
+                "end_date": "2026-01-21",
                 "all_day": true,
                 "start_time": null,
                 "end_time": null,
                 "category": "予定",
                 "status": "scheduled",
-                "tags": [
-                  "ランニング",
-                  "県大会一覧"
-                ],
-                "urls": [
-                  "http://kumariku.com/info/wp-content/uploads/2026/04/b652729b4a1eecb47ebc1e6e01321a6e.pdf"
-                ],
-                "description": "熊本県陸上競技大会一覧（2026/5/31版）より追加",
-                "location": "奥球磨",
+                "tags": [],
+                "urls": [],
+                "description": "",
+                "location": "",
                 "private": false,
                 "kind": "event",
                 "practice": null,
@@ -29854,11 +29850,11 @@
               "context": {}
             },
             {
-              "pointer": "/338",
+              "pointer": "/12",
               "value": {
-                "title": "荒玉中体連駅伝",
-                "date": "2026-10-14",
-                "end_date": "2026-10-14",
+                "title": "玉名駅伝",
+                "date": "2026-01-25",
+                "end_date": "2026-01-25",
                 "all_day": true,
                 "start_time": null,
                 "end_time": null,
@@ -29866,7 +29862,7 @@
                 "status": "scheduled",
                 "tags": [],
                 "urls": [],
-                "description": "玉名荒尾中体連駅伝（荒玉）\n岱明確定オーダー・現行数式予想・校別展開: input/idaten-corpus/drive-text/大会/2026年度/1014-1015_荒玉中体連駅伝/\n現行予測: 区間オーダー_数式予想.md / 区間オーダー_数式予想_coverage.csv / 区間オーダー_数式予想.json\n旧SB予測: 区間オーダー_SB予想.md（比較用）\n距離正本: docs/aragyoku-ekiden-distance-definitions.md\n生成: python3 scripts/generate_aragyoku_ekiden_sb_preview.py → /opt/miniconda3/bin/python scripts/model_aragyoku_2026_formula.py\n",
+                "description": "",
                 "location": "",
                 "private": false,
                 "kind": "event",
@@ -29881,9 +29877,9 @@
       ],
       "calculation": {
         "operation": "calendar_elapsed_days",
-        "from_date": "2026-10-04",
-        "to_date": "2026-10-14",
-        "days": 10
+        "from_date": "2026-01-21",
+        "to_date": "2026-01-25",
+        "days": 4
       },
       "review": {
         "method": "schema-reviewed-calendar-gap",
@@ -29893,7 +29889,7 @@
     },
     {
       "id": "fullchunkqa-40f7cc2c09c9bd801ffb863b-1",
-      "chunk_id": "knowledge-40f7cc2c09c9bd801ffb863b",
+      "chunk_id": "knowledge-cae7482953ace007eb82a67b",
       "questions": [
         "保存カレンダーで、2026-10-31の「第７９回 熊本県高等学校駅伝競走大会（男女）」から2026-11-01の「金栗マラソン」まで、予定日の日付差は何日？"
       ],
@@ -29901,13 +29897,13 @@
       "sources": [
         "out/2026/events.json"
       ],
-      "source_sha256": "6e4eb87d7401110bd2cc94975902508fc3e1d1e3a72a55a678a1d32aeb989f53",
+      "source_sha256": "d0a7bf194a6794f0711148be238c828e5f30d1be7163cb123e44639eb7268544",
       "evidence": [
         {
           "kind": "calendar-json-units",
           "units": [
             {
-              "pointer": "/345",
+              "pointer": "/347",
               "value": {
                 "title": "第７９回 熊本県高等学校駅伝競走大会（男女）",
                 "date": "2026-10-31",
@@ -29930,7 +29926,7 @@
               "context": {}
             },
             {
-              "pointer": "/347",
+              "pointer": "/349",
               "value": {
                 "title": "金栗マラソン",
                 "date": "2026-11-01",
@@ -29969,25 +29965,25 @@
     },
     {
       "id": "fullchunkqa-40f7cc2c09c9bd801ffb863b-2",
-      "chunk_id": "knowledge-40f7cc2c09c9bd801ffb863b",
+      "chunk_id": "knowledge-79d67ad9d845086189352028",
       "questions": [
-        "保存カレンダーで、2026-10-31の「第７９回 熊本県高等学校駅伝競走大会（男女）」から2026-11-03の「文化の日」まで、予定日の日付差は何日？"
+        "保存カレンダーで、2026-02-02の「中学3年公立前期選抜入試」から2026-02-05の「岱明中3年後期期末テスト」まで、予定日の日付差は何日？"
       ],
-      "answer": "予定日の差は3日です。2026-10-31から2026-11-03までの日付差で、両端の日を含めた日数ではありません。保存された予定日を比較しており、実施済みかどうかを示すものではありません。",
+      "answer": "予定日の差は3日です。2026-02-02から2026-02-05までの日付差で、両端の日を含めた日数ではありません。保存された予定日を比較しており、実施済みかどうかを示すものではありません。",
       "sources": [
         "out/2026/events.json"
       ],
-      "source_sha256": "6e4eb87d7401110bd2cc94975902508fc3e1d1e3a72a55a678a1d32aeb989f53",
+      "source_sha256": "d0a7bf194a6794f0711148be238c828e5f30d1be7163cb123e44639eb7268544",
       "evidence": [
         {
           "kind": "calendar-json-units",
           "units": [
             {
-              "pointer": "/345",
+              "pointer": "/18",
               "value": {
-                "title": "第７９回 熊本県高等学校駅伝競走大会（男女）",
-                "date": "2026-10-31",
-                "end_date": "2026-10-31",
+                "title": "中学3年公立前期選抜入試",
+                "date": "2026-02-02",
+                "end_date": "2026-02-02",
                 "all_day": true,
                 "start_time": null,
                 "end_time": null,
@@ -30006,21 +30002,19 @@
               "context": {}
             },
             {
-              "pointer": "/348",
+              "pointer": "/21",
               "value": {
-                "title": "文化の日",
-                "date": "2026-11-03",
-                "end_date": "2026-11-03",
+                "title": "岱明中3年後期期末テスト",
+                "date": "2026-02-05",
+                "end_date": "2026-02-05",
                 "all_day": true,
                 "start_time": null,
                 "end_time": null,
-                "category": "祝日",
-                "status": "",
-                "tags": [
-                  "holiday"
-                ],
+                "category": "予定",
+                "status": "scheduled",
+                "tags": [],
                 "urls": [],
-                "description": "日本の祝日",
+                "description": "",
                 "location": "",
                 "private": false,
                 "kind": "event",
@@ -30035,8 +30029,8 @@
       ],
       "calculation": {
         "operation": "calendar_elapsed_days",
-        "from_date": "2026-10-31",
-        "to_date": "2026-11-03",
+        "from_date": "2026-02-02",
+        "to_date": "2026-02-05",
         "days": 3
       },
       "review": {
@@ -30047,25 +30041,25 @@
     },
     {
       "id": "fullchunkqa-40f7cc2c09c9bd801ffb863b-3",
-      "chunk_id": "knowledge-40f7cc2c09c9bd801ffb863b",
+      "chunk_id": "knowledge-79d67ad9d845086189352028",
       "questions": [
-        "保存カレンダーで、2026-10-31の「第７９回 熊本県高等学校駅伝競走大会（男女）」から2026-11-06の「熊本県中学男子･女子駅伝大会」まで、予定日の日付差は何日？"
+        "保存カレンダーで、2026-02-02の「中学3年公立前期選抜入試」から2026-02-08の「熊日駅伝」まで、予定日の日付差は何日？"
       ],
-      "answer": "予定日の差は6日です。2026-10-31から2026-11-06までの日付差で、両端の日を含めた日数ではありません。保存された予定日を比較しており、実施済みかどうかを示すものではありません。",
+      "answer": "予定日の差は6日です。2026-02-02から2026-02-08までの日付差で、両端の日を含めた日数ではありません。保存された予定日を比較しており、実施済みかどうかを示すものではありません。",
       "sources": [
         "out/2026/events.json"
       ],
-      "source_sha256": "6e4eb87d7401110bd2cc94975902508fc3e1d1e3a72a55a678a1d32aeb989f53",
+      "source_sha256": "d0a7bf194a6794f0711148be238c828e5f30d1be7163cb123e44639eb7268544",
       "evidence": [
         {
           "kind": "calendar-json-units",
           "units": [
             {
-              "pointer": "/345",
+              "pointer": "/18",
               "value": {
-                "title": "第７９回 熊本県高等学校駅伝競走大会（男女）",
-                "date": "2026-10-31",
-                "end_date": "2026-10-31",
+                "title": "中学3年公立前期選抜入試",
+                "date": "2026-02-02",
+                "end_date": "2026-02-02",
                 "all_day": true,
                 "start_time": null,
                 "end_time": null,
@@ -30084,11 +30078,11 @@
               "context": {}
             },
             {
-              "pointer": "/349",
+              "pointer": "/22",
               "value": {
-                "title": "熊本県中学男子･女子駅伝大会",
-                "date": "2026-11-06",
-                "end_date": "2026-11-06",
+                "title": "熊日駅伝",
+                "date": "2026-02-08",
+                "end_date": "2026-02-08",
                 "all_day": true,
                 "start_time": null,
                 "end_time": null,
@@ -30111,8 +30105,8 @@
       ],
       "calculation": {
         "operation": "calendar_elapsed_days",
-        "from_date": "2026-10-31",
-        "to_date": "2026-11-06",
+        "from_date": "2026-02-02",
+        "to_date": "2026-02-08",
         "days": 6
       },
       "review": {
@@ -30123,7 +30117,7 @@
     },
     {
       "id": "fullchunkqa-d5e3efb122cf91be7e327a55-1",
-      "chunk_id": "knowledge-d5e3efb122cf91be7e327a55",
+      "chunk_id": "knowledge-c0e929553bcba3f74dfef170",
       "questions": [
         "保存カレンダーで、2026-12-06の「第５１回 熊本甲佐１０マイル公認ロードレース大会（１０マイル・１０ｋｍ・５ｋｍ）」から2026-12-11の「岱明中校内駅伝大会」まで、予定日の日付差は何日？"
       ],
@@ -30131,13 +30125,13 @@
       "sources": [
         "out/2026/events.json"
       ],
-      "source_sha256": "6e4eb87d7401110bd2cc94975902508fc3e1d1e3a72a55a678a1d32aeb989f53",
+      "source_sha256": "d0a7bf194a6794f0711148be238c828e5f30d1be7163cb123e44639eb7268544",
       "evidence": [
         {
           "kind": "calendar-json-units",
           "units": [
             {
-              "pointer": "/358",
+              "pointer": "/360",
               "value": {
                 "title": "第５１回 熊本甲佐１０マイル公認ロードレース大会（１０マイル・１０ｋｍ・５ｋｍ）",
                 "date": "2026-12-06",
@@ -30165,7 +30159,7 @@
               "context": {}
             },
             {
-              "pointer": "/359",
+              "pointer": "/361",
               "value": {
                 "title": "岱明中校内駅伝大会",
                 "date": "2026-12-11",
@@ -30204,39 +30198,34 @@
     },
     {
       "id": "fullchunkqa-d5e3efb122cf91be7e327a55-2",
-      "chunk_id": "knowledge-d5e3efb122cf91be7e327a55",
+      "chunk_id": "knowledge-79d67ad9d845086189352028",
       "questions": [
-        "保存カレンダーで、2026-12-06の「第５１回 熊本甲佐１０マイル公認ロードレース大会（１０マイル・１０ｋｍ・５ｋｍ）」から2026-12-12の「第 ５回 熊本県長距離記録会」まで、予定日の日付差は何日？"
+        "保存カレンダーで、2026-02-05の「岱明中3年後期期末テスト」から2026-02-08の「熊日駅伝」まで、予定日の日付差は何日？"
       ],
-      "answer": "予定日の差は6日です。2026-12-06から2026-12-12までの日付差で、両端の日を含めた日数ではありません。保存された予定日を比較しており、実施済みかどうかを示すものではありません。",
+      "answer": "予定日の差は3日です。2026-02-05から2026-02-08までの日付差で、両端の日を含めた日数ではありません。保存された予定日を比較しており、実施済みかどうかを示すものではありません。",
       "sources": [
         "out/2026/events.json"
       ],
-      "source_sha256": "6e4eb87d7401110bd2cc94975902508fc3e1d1e3a72a55a678a1d32aeb989f53",
+      "source_sha256": "d0a7bf194a6794f0711148be238c828e5f30d1be7163cb123e44639eb7268544",
       "evidence": [
         {
           "kind": "calendar-json-units",
           "units": [
             {
-              "pointer": "/358",
+              "pointer": "/21",
               "value": {
-                "title": "第５１回 熊本甲佐１０マイル公認ロードレース大会（１０マイル・１０ｋｍ・５ｋｍ）",
-                "date": "2026-12-06",
-                "end_date": "2026-12-06",
+                "title": "岱明中3年後期期末テスト",
+                "date": "2026-02-05",
+                "end_date": "2026-02-05",
                 "all_day": true,
                 "start_time": null,
                 "end_time": null,
                 "category": "予定",
                 "status": "scheduled",
-                "tags": [
-                  "ランニング",
-                  "県大会一覧"
-                ],
-                "urls": [
-                  "http://kumariku.com/info/wp-content/uploads/2026/04/b652729b4a1eecb47ebc1e6e01321a6e.pdf"
-                ],
-                "description": "熊本県陸上競技大会一覧（2026/5/31版）より追加",
-                "location": "熊本甲佐",
+                "tags": [],
+                "urls": [],
+                "description": "",
+                "location": "",
                 "private": false,
                 "kind": "event",
                 "practice": null,
@@ -30246,11 +30235,11 @@
               "context": {}
             },
             {
-              "pointer": "/360",
+              "pointer": "/22",
               "value": {
-                "title": "第 ５回 熊本県長距離記録会",
-                "date": "2026-12-12",
-                "end_date": "2026-12-12",
+                "title": "熊日駅伝",
+                "date": "2026-02-08",
+                "end_date": "2026-02-08",
                 "all_day": true,
                 "start_time": null,
                 "end_time": null,
@@ -30273,9 +30262,9 @@
       ],
       "calculation": {
         "operation": "calendar_elapsed_days",
-        "from_date": "2026-12-06",
-        "to_date": "2026-12-12",
-        "days": 6
+        "from_date": "2026-02-05",
+        "to_date": "2026-02-08",
+        "days": 3
       },
       "review": {
         "method": "schema-reviewed-calendar-gap",
@@ -30285,39 +30274,34 @@
     },
     {
       "id": "fullchunkqa-d5e3efb122cf91be7e327a55-3",
-      "chunk_id": "knowledge-d5e3efb122cf91be7e327a55",
+      "chunk_id": "knowledge-7f325f3fe2c53dcaf32845e1",
       "questions": [
-        "保存カレンダーで、2026-12-06の「第５１回 熊本甲佐１０マイル公認ロードレース大会（１０マイル・１０ｋｍ・５ｋｍ）」から2026-12-15の「岱明中2年生修学旅行」まで、予定日の日付差は何日？"
+        "保存カレンダーで、2026-02-12の「岱明中1・2年後期期末テスト」から2026-02-15の「熊本城マラソン」まで、予定日の日付差は何日？"
       ],
-      "answer": "予定日の差は9日です。2026-12-06から2026-12-15までの日付差で、両端の日を含めた日数ではありません。保存された予定日を比較しており、実施済みかどうかを示すものではありません。",
+      "answer": "予定日の差は3日です。2026-02-12から2026-02-15までの日付差で、両端の日を含めた日数ではありません。保存された予定日を比較しており、実施済みかどうかを示すものではありません。",
       "sources": [
         "out/2026/events.json"
       ],
-      "source_sha256": "6e4eb87d7401110bd2cc94975902508fc3e1d1e3a72a55a678a1d32aeb989f53",
+      "source_sha256": "d0a7bf194a6794f0711148be238c828e5f30d1be7163cb123e44639eb7268544",
       "evidence": [
         {
           "kind": "calendar-json-units",
           "units": [
             {
-              "pointer": "/358",
+              "pointer": "/28",
               "value": {
-                "title": "第５１回 熊本甲佐１０マイル公認ロードレース大会（１０マイル・１０ｋｍ・５ｋｍ）",
-                "date": "2026-12-06",
-                "end_date": "2026-12-06",
+                "title": "岱明中1・2年後期期末テスト",
+                "date": "2026-02-12",
+                "end_date": "2026-02-12",
                 "all_day": true,
                 "start_time": null,
                 "end_time": null,
                 "category": "予定",
                 "status": "scheduled",
-                "tags": [
-                  "ランニング",
-                  "県大会一覧"
-                ],
-                "urls": [
-                  "http://kumariku.com/info/wp-content/uploads/2026/04/b652729b4a1eecb47ebc1e6e01321a6e.pdf"
-                ],
-                "description": "熊本県陸上競技大会一覧（2026/5/31版）より追加",
-                "location": "熊本甲佐",
+                "tags": [],
+                "urls": [],
+                "description": "",
+                "location": "",
                 "private": false,
                 "kind": "event",
                 "practice": null,
@@ -30327,11 +30311,11 @@
               "context": {}
             },
             {
-              "pointer": "/361",
+              "pointer": "/29",
               "value": {
-                "title": "岱明中2年生修学旅行",
-                "date": "2026-12-15",
-                "end_date": "2026-12-17",
+                "title": "熊本城マラソン",
+                "date": "2026-02-15",
+                "end_date": "2026-02-15",
                 "all_day": true,
                 "start_time": null,
                 "end_time": null,
@@ -30354,9 +30338,9 @@
       ],
       "calculation": {
         "operation": "calendar_elapsed_days",
-        "from_date": "2026-12-06",
-        "to_date": "2026-12-15",
-        "days": 9
+        "from_date": "2026-02-12",
+        "to_date": "2026-02-15",
+        "days": 3
       },
       "review": {
         "method": "schema-reviewed-calendar-gap",
@@ -30366,7 +30350,7 @@
     },
     {
       "id": "fullchunkqa-4753f705e861491e9b70e349-1",
-      "chunk_id": "knowledge-4753f705e861491e9b70e349",
+      "chunk_id": "knowledge-c26b076c970da707550e0779",
       "questions": [
         "保存カレンダーで、2026-01-01の「元日」から2026-01-31の「合同練習会」まで、予定日の日付差は何日？"
       ],
@@ -30374,7 +30358,7 @@
       "sources": [
         "out/2026/google.csv"
       ],
-      "source_sha256": "c03a89b44f17172365f968bbb60b2b1cb72567306993f4773304f0c2dba16080",
+      "source_sha256": "550408d89db4c9d5ce8e270e007fcb69ffd8b9f9a617dcb336d1e7c555221637",
       "evidence": [
         {
           "kind": "csv-rows",
@@ -30435,7 +30419,7 @@
     },
     {
       "id": "fullchunkqa-4753f705e861491e9b70e349-2",
-      "chunk_id": "knowledge-4753f705e861491e9b70e349",
+      "chunk_id": "knowledge-c26b076c970da707550e0779",
       "questions": [
         "保存カレンダーで、2026-01-01の「元日」から2026-02-02の「中学3年公立前期選抜入試」まで、予定日の日付差は何日？"
       ],
@@ -30443,7 +30427,7 @@
       "sources": [
         "out/2026/google.csv"
       ],
-      "source_sha256": "c03a89b44f17172365f968bbb60b2b1cb72567306993f4773304f0c2dba16080",
+      "source_sha256": "550408d89db4c9d5ce8e270e007fcb69ffd8b9f9a617dcb336d1e7c555221637",
       "evidence": [
         {
           "kind": "csv-rows",
@@ -30504,7 +30488,7 @@
     },
     {
       "id": "fullchunkqa-4753f705e861491e9b70e349-3",
-      "chunk_id": "knowledge-4753f705e861491e9b70e349",
+      "chunk_id": "knowledge-c26b076c970da707550e0779",
       "questions": [
         "保存カレンダーで、2026-01-01の「元日」から2026-02-05の「岱明中3年後期期末テスト」まで、予定日の日付差は何日？"
       ],
@@ -30512,7 +30496,7 @@
       "sources": [
         "out/2026/google.csv"
       ],
-      "source_sha256": "c03a89b44f17172365f968bbb60b2b1cb72567306993f4773304f0c2dba16080",
+      "source_sha256": "550408d89db4c9d5ce8e270e007fcb69ffd8b9f9a617dcb336d1e7c555221637",
       "evidence": [
         {
           "kind": "csv-rows",
@@ -30573,7 +30557,7 @@
     },
     {
       "id": "fullchunkqa-265d7c2b825a2b4203fa4fbb-1",
-      "chunk_id": "knowledge-265d7c2b825a2b4203fa4fbb",
+      "chunk_id": "knowledge-a9ec2f51c7f36e304392c612",
       "questions": [
         "保存カレンダーで、2026-03-06の「岱明中卒業式」から2026-03-08の「玉名ハーフマラソン」まで、予定日の日付差は何日？"
       ],
@@ -30581,7 +30565,7 @@
       "sources": [
         "out/2026/google.csv"
       ],
-      "source_sha256": "c03a89b44f17172365f968bbb60b2b1cb72567306993f4773304f0c2dba16080",
+      "source_sha256": "550408d89db4c9d5ce8e270e007fcb69ffd8b9f9a617dcb336d1e7c555221637",
       "evidence": [
         {
           "kind": "csv-rows",
@@ -30642,7 +30626,7 @@
     },
     {
       "id": "fullchunkqa-265d7c2b825a2b4203fa4fbb-2",
-      "chunk_id": "knowledge-265d7c2b825a2b4203fa4fbb",
+      "chunk_id": "knowledge-a9ec2f51c7f36e304392c612",
       "questions": [
         "保存カレンダーで、2026-03-06の「岱明中卒業式」から2026-03-15の「岱明中陸上部お別れ会」まで、予定日の日付差は何日？"
       ],
@@ -30650,7 +30634,7 @@
       "sources": [
         "out/2026/google.csv"
       ],
-      "source_sha256": "c03a89b44f17172365f968bbb60b2b1cb72567306993f4773304f0c2dba16080",
+      "source_sha256": "550408d89db4c9d5ce8e270e007fcb69ffd8b9f9a617dcb336d1e7c555221637",
       "evidence": [
         {
           "kind": "csv-rows",
@@ -30711,7 +30695,7 @@
     },
     {
       "id": "fullchunkqa-265d7c2b825a2b4203fa4fbb-3",
-      "chunk_id": "knowledge-265d7c2b825a2b4203fa4fbb",
+      "chunk_id": "knowledge-a9ec2f51c7f36e304392c612",
       "questions": [
         "保存カレンダーで、2026-03-06の「岱明中卒業式」から2026-03-20の「春分の日」まで、予定日の日付差は何日？"
       ],
@@ -30719,7 +30703,7 @@
       "sources": [
         "out/2026/google.csv"
       ],
-      "source_sha256": "c03a89b44f17172365f968bbb60b2b1cb72567306993f4773304f0c2dba16080",
+      "source_sha256": "550408d89db4c9d5ce8e270e007fcb69ffd8b9f9a617dcb336d1e7c555221637",
       "evidence": [
         {
           "kind": "csv-rows",
@@ -30780,7 +30764,7 @@
     },
     {
       "id": "fullchunkqa-1f5f8dc3e1b039c2081ed884-1",
-      "chunk_id": "knowledge-1f5f8dc3e1b039c2081ed884",
+      "chunk_id": "knowledge-18ba8259a1f97608406eeeb6",
       "questions": [
         "保存カレンダーで、2026-05-02の「第４５回 熊本市陸上競技選手権大会（長距離種目以外）」から2026-05-06の「憲法記念日 振替休日」まで、予定日の日付差は何日？"
       ],
@@ -30788,7 +30772,7 @@
       "sources": [
         "out/2026/google.csv"
       ],
-      "source_sha256": "c03a89b44f17172365f968bbb60b2b1cb72567306993f4773304f0c2dba16080",
+      "source_sha256": "550408d89db4c9d5ce8e270e007fcb69ffd8b9f9a617dcb336d1e7c555221637",
       "evidence": [
         {
           "kind": "csv-rows",
@@ -30849,7 +30833,7 @@
     },
     {
       "id": "fullchunkqa-1f5f8dc3e1b039c2081ed884-2",
-      "chunk_id": "knowledge-1f5f8dc3e1b039c2081ed884",
+      "chunk_id": "knowledge-18ba8259a1f97608406eeeb6",
       "questions": [
         "保存カレンダーで、2026-05-02の「第４５回 熊本市陸上競技選手権大会（長距離種目以外）」から2026-05-08の「第９６回 九州学生陸上競技対抗選手権大会」まで、予定日の日付差は何日？"
       ],
@@ -30857,7 +30841,7 @@
       "sources": [
         "out/2026/google.csv"
       ],
-      "source_sha256": "c03a89b44f17172365f968bbb60b2b1cb72567306993f4773304f0c2dba16080",
+      "source_sha256": "550408d89db4c9d5ce8e270e007fcb69ffd8b9f9a617dcb336d1e7c555221637",
       "evidence": [
         {
           "kind": "csv-rows",
@@ -30918,7 +30902,7 @@
     },
     {
       "id": "fullchunkqa-1f5f8dc3e1b039c2081ed884-3",
-      "chunk_id": "knowledge-1f5f8dc3e1b039c2081ed884",
+      "chunk_id": "knowledge-18ba8259a1f97608406eeeb6",
       "questions": [
         "保存カレンダーで、2026-05-02の「第４５回 熊本市陸上競技選手権大会（長距離種目以外）」から2026-05-09の「第 １ 回 熊本県長距離記録会」まで、予定日の日付差は何日？"
       ],
@@ -30926,7 +30910,7 @@
       "sources": [
         "out/2026/google.csv"
       ],
-      "source_sha256": "c03a89b44f17172365f968bbb60b2b1cb72567306993f4773304f0c2dba16080",
+      "source_sha256": "550408d89db4c9d5ce8e270e007fcb69ffd8b9f9a617dcb336d1e7c555221637",
       "evidence": [
         {
           "kind": "csv-rows",
@@ -30987,7 +30971,7 @@
     },
     {
       "id": "fullchunkqa-014a261e53125b2691a2aa24-1",
-      "chunk_id": "knowledge-014a261e53125b2691a2aa24",
+      "chunk_id": "knowledge-15d7b02da397306762073adf",
       "questions": [
         "保存カレンダーで、2026-05-29の「令和８年度 熊本県高等学校総合体育大会陸上競技大会」から2026-06-25の「長距離記録会参加費締切」まで、予定日の日付差は何日？"
       ],
@@ -30995,7 +30979,7 @@
       "sources": [
         "out/2026/google.csv"
       ],
-      "source_sha256": "c03a89b44f17172365f968bbb60b2b1cb72567306993f4773304f0c2dba16080",
+      "source_sha256": "550408d89db4c9d5ce8e270e007fcb69ffd8b9f9a617dcb336d1e7c555221637",
       "evidence": [
         {
           "kind": "csv-rows",
@@ -31056,7 +31040,7 @@
     },
     {
       "id": "fullchunkqa-014a261e53125b2691a2aa24-2",
-      "chunk_id": "knowledge-014a261e53125b2691a2aa24",
+      "chunk_id": "knowledge-15d7b02da397306762073adf",
       "questions": [
         "保存カレンダーで、2026-05-29の「令和８年度 熊本県高等学校総合体育大会陸上競技大会」から2026-06-27の「第６回 天草市陸上競技記録会」まで、予定日の日付差は何日？"
       ],
@@ -31064,7 +31048,7 @@
       "sources": [
         "out/2026/google.csv"
       ],
-      "source_sha256": "c03a89b44f17172365f968bbb60b2b1cb72567306993f4773304f0c2dba16080",
+      "source_sha256": "550408d89db4c9d5ce8e270e007fcb69ffd8b9f9a617dcb336d1e7c555221637",
       "evidence": [
         {
           "kind": "csv-rows",
@@ -31125,7 +31109,7 @@
     },
     {
       "id": "fullchunkqa-014a261e53125b2691a2aa24-3",
-      "chunk_id": "knowledge-014a261e53125b2691a2aa24",
+      "chunk_id": "knowledge-15d7b02da397306762073adf",
       "questions": [
         "保存カレンダーで、2026-05-29の「令和８年度 熊本県高等学校総合体育大会陸上競技大会」から2026-06-28の「荒尾選手権」まで、予定日の日付差は何日？"
       ],
@@ -31133,7 +31117,7 @@
       "sources": [
         "out/2026/google.csv"
       ],
-      "source_sha256": "c03a89b44f17172365f968bbb60b2b1cb72567306993f4773304f0c2dba16080",
+      "source_sha256": "550408d89db4c9d5ce8e270e007fcb69ffd8b9f9a617dcb336d1e7c555221637",
       "evidence": [
         {
           "kind": "csv-rows",
@@ -31194,7 +31178,7 @@
     },
     {
       "id": "fullchunkqa-25b0e9cad79903f38e384ed6-1",
-      "chunk_id": "knowledge-25b0e9cad79903f38e384ed6",
+      "chunk_id": "knowledge-d52022df370d1d0a762fef84",
       "questions": [
         "保存カレンダーで、2026-07-18の「岱明中夏休み開始」から2026-07-20の「海の日」まで、予定日の日付差は何日？"
       ],
@@ -31202,7 +31186,7 @@
       "sources": [
         "out/2026/google.csv"
       ],
-      "source_sha256": "c03a89b44f17172365f968bbb60b2b1cb72567306993f4773304f0c2dba16080",
+      "source_sha256": "550408d89db4c9d5ce8e270e007fcb69ffd8b9f9a617dcb336d1e7c555221637",
       "evidence": [
         {
           "kind": "csv-rows",
@@ -31263,7 +31247,7 @@
     },
     {
       "id": "fullchunkqa-25b0e9cad79903f38e384ed6-2",
-      "chunk_id": "knowledge-25b0e9cad79903f38e384ed6",
+      "chunk_id": "knowledge-d52022df370d1d0a762fef84",
       "questions": [
         "保存カレンダーで、2026-07-18の「岱明中夏休み開始」から2026-07-22の「玉名選手権参加費振込」まで、予定日の日付差は何日？"
       ],
@@ -31271,7 +31255,7 @@
       "sources": [
         "out/2026/google.csv"
       ],
-      "source_sha256": "c03a89b44f17172365f968bbb60b2b1cb72567306993f4773304f0c2dba16080",
+      "source_sha256": "550408d89db4c9d5ce8e270e007fcb69ffd8b9f9a617dcb336d1e7c555221637",
       "evidence": [
         {
           "kind": "csv-rows",
@@ -31332,7 +31316,7 @@
     },
     {
       "id": "fullchunkqa-25b0e9cad79903f38e384ed6-3",
-      "chunk_id": "knowledge-25b0e9cad79903f38e384ed6",
+      "chunk_id": "knowledge-d52022df370d1d0a762fef84",
       "questions": [
         "保存カレンダーで、2026-07-20の「海の日」から2026-07-22の「玉名選手権参加費振込」まで、予定日の日付差は何日？"
       ],
@@ -31340,7 +31324,7 @@
       "sources": [
         "out/2026/google.csv"
       ],
-      "source_sha256": "c03a89b44f17172365f968bbb60b2b1cb72567306993f4773304f0c2dba16080",
+      "source_sha256": "550408d89db4c9d5ce8e270e007fcb69ffd8b9f9a617dcb336d1e7c555221637",
       "evidence": [
         {
           "kind": "csv-rows",
@@ -31401,7 +31385,7 @@
     },
     {
       "id": "fullchunkqa-806fa4bc35bdf25de113242a-1",
-      "chunk_id": "knowledge-806fa4bc35bdf25de113242a",
+      "chunk_id": "knowledge-5dd5b448f86cbf416ee96246",
       "questions": [
         "保存カレンダーで、2026-08-27の「練習会（岱明）（県民スポーツ大会中止に伴い中止）」から2026-08-29の「玉名郡ナイター中・長距離記録会」まで、予定日の日付差は何日？"
       ],
@@ -31409,7 +31393,7 @@
       "sources": [
         "out/2026/google.csv"
       ],
-      "source_sha256": "c03a89b44f17172365f968bbb60b2b1cb72567306993f4773304f0c2dba16080",
+      "source_sha256": "550408d89db4c9d5ce8e270e007fcb69ffd8b9f9a617dcb336d1e7c555221637",
       "evidence": [
         {
           "kind": "csv-rows",
@@ -31470,7 +31454,7 @@
     },
     {
       "id": "fullchunkqa-806fa4bc35bdf25de113242a-2",
-      "chunk_id": "knowledge-806fa4bc35bdf25de113242a",
+      "chunk_id": "knowledge-5dd5b448f86cbf416ee96246",
       "questions": [
         "保存カレンダーで、2026-08-27の「練習会（岱明）（県民スポーツ大会中止に伴い中止）」から2026-08-30の「第５４回 熊本県高校学年別陸上競技大会」まで、予定日の日付差は何日？"
       ],
@@ -31478,7 +31462,7 @@
       "sources": [
         "out/2026/google.csv"
       ],
-      "source_sha256": "c03a89b44f17172365f968bbb60b2b1cb72567306993f4773304f0c2dba16080",
+      "source_sha256": "550408d89db4c9d5ce8e270e007fcb69ffd8b9f9a617dcb336d1e7c555221637",
       "evidence": [
         {
           "kind": "csv-rows",
@@ -31539,7 +31523,7 @@
     },
     {
       "id": "fullchunkqa-806fa4bc35bdf25de113242a-3",
-      "chunk_id": "knowledge-806fa4bc35bdf25de113242a",
+      "chunk_id": "knowledge-5dd5b448f86cbf416ee96246",
       "questions": [
         "保存カレンダーで、2026-08-27の「練習会（岱明）（県民スポーツ大会中止に伴い中止）」から2026-09-03の「練習会（桃田）（県民スポーツ大会中止に伴い中止）」まで、予定日の日付差は何日？"
       ],
@@ -31547,7 +31531,7 @@
       "sources": [
         "out/2026/google.csv"
       ],
-      "source_sha256": "c03a89b44f17172365f968bbb60b2b1cb72567306993f4773304f0c2dba16080",
+      "source_sha256": "550408d89db4c9d5ce8e270e007fcb69ffd8b9f9a617dcb336d1e7c555221637",
       "evidence": [
         {
           "kind": "csv-rows",
@@ -31608,7 +31592,7 @@
     },
     {
       "id": "fullchunkqa-9668bab7250b35f6b81658d0-1",
-      "chunk_id": "knowledge-9668bab7250b35f6b81658d0",
+      "chunk_id": "knowledge-e7dbe355eda3aa355a35c4e7",
       "questions": [
         "保存カレンダーで、2026-09-05の「いだてん岱明練習」から2026-09-08の「練習会（岱明）（県民スポーツ大会中止に伴い中止）」まで、予定日の日付差は何日？"
       ],
@@ -31616,7 +31600,7 @@
       "sources": [
         "out/2026/google.csv"
       ],
-      "source_sha256": "c03a89b44f17172365f968bbb60b2b1cb72567306993f4773304f0c2dba16080",
+      "source_sha256": "550408d89db4c9d5ce8e270e007fcb69ffd8b9f9a617dcb336d1e7c555221637",
       "evidence": [
         {
           "kind": "csv-rows",
@@ -31677,7 +31661,7 @@
     },
     {
       "id": "fullchunkqa-9668bab7250b35f6b81658d0-2",
-      "chunk_id": "knowledge-9668bab7250b35f6b81658d0",
+      "chunk_id": "knowledge-e7dbe355eda3aa355a35c4e7",
       "questions": [
         "保存カレンダーで、2026-09-05の「いだてん岱明練習」から2026-09-09の「岱明中前期期末テスト」まで、予定日の日付差は何日？"
       ],
@@ -31685,7 +31669,7 @@
       "sources": [
         "out/2026/google.csv"
       ],
-      "source_sha256": "c03a89b44f17172365f968bbb60b2b1cb72567306993f4773304f0c2dba16080",
+      "source_sha256": "550408d89db4c9d5ce8e270e007fcb69ffd8b9f9a617dcb336d1e7c555221637",
       "evidence": [
         {
           "kind": "csv-rows",
@@ -31746,7 +31730,7 @@
     },
     {
       "id": "fullchunkqa-9668bab7250b35f6b81658d0-3",
-      "chunk_id": "knowledge-9668bab7250b35f6b81658d0",
+      "chunk_id": "knowledge-e7dbe355eda3aa355a35c4e7",
       "questions": [
         "保存カレンダーで、2026-09-05の「いだてん岱明練習」から2026-09-10の「練習会（岱明）（県民スポーツ大会中止に伴い中止）」まで、予定日の日付差は何日？"
       ],
@@ -31754,7 +31738,7 @@
       "sources": [
         "out/2026/google.csv"
       ],
-      "source_sha256": "c03a89b44f17172365f968bbb60b2b1cb72567306993f4773304f0c2dba16080",
+      "source_sha256": "550408d89db4c9d5ce8e270e007fcb69ffd8b9f9a617dcb336d1e7c555221637",
       "evidence": [
         {
           "kind": "csv-rows",
@@ -31815,7 +31799,7 @@
     },
     {
       "id": "fullchunkqa-ad80052a0bba95492a7f50cb-1",
-      "chunk_id": "knowledge-ad80052a0bba95492a7f50cb",
+      "chunk_id": "knowledge-d5015b249223e06841feb15b",
       "questions": [
         "保存カレンダーで、2026-09-21の「敬老の日」から2026-09-23の「秋分の日」まで、予定日の日付差は何日？"
       ],
@@ -31823,7 +31807,7 @@
       "sources": [
         "out/2026/google.csv"
       ],
-      "source_sha256": "c03a89b44f17172365f968bbb60b2b1cb72567306993f4773304f0c2dba16080",
+      "source_sha256": "550408d89db4c9d5ce8e270e007fcb69ffd8b9f9a617dcb336d1e7c555221637",
       "evidence": [
         {
           "kind": "csv-rows",
@@ -31884,7 +31868,7 @@
     },
     {
       "id": "fullchunkqa-ad80052a0bba95492a7f50cb-2",
-      "chunk_id": "knowledge-ad80052a0bba95492a7f50cb",
+      "chunk_id": "knowledge-d5015b249223e06841feb15b",
       "questions": [
         "保存カレンダーで、2026-09-21の「敬老の日」から2026-09-29の「岱明中 荒玉駅伝試走結果」まで、予定日の日付差は何日？"
       ],
@@ -31892,7 +31876,7 @@
       "sources": [
         "out/2026/google.csv"
       ],
-      "source_sha256": "c03a89b44f17172365f968bbb60b2b1cb72567306993f4773304f0c2dba16080",
+      "source_sha256": "550408d89db4c9d5ce8e270e007fcb69ffd8b9f9a617dcb336d1e7c555221637",
       "evidence": [
         {
           "kind": "csv-rows",
@@ -31953,7 +31937,7 @@
     },
     {
       "id": "fullchunkqa-ad80052a0bba95492a7f50cb-3",
-      "chunk_id": "knowledge-ad80052a0bba95492a7f50cb",
+      "chunk_id": "knowledge-d5015b249223e06841feb15b",
       "questions": [
         "保存カレンダーで、2026-09-22の「玉名市練習会&BBQ」から2026-09-29の「岱明中 荒玉駅伝試走結果」まで、予定日の日付差は何日？"
       ],
@@ -31961,7 +31945,7 @@
       "sources": [
         "out/2026/google.csv"
       ],
-      "source_sha256": "c03a89b44f17172365f968bbb60b2b1cb72567306993f4773304f0c2dba16080",
+      "source_sha256": "550408d89db4c9d5ce8e270e007fcb69ffd8b9f9a617dcb336d1e7c555221637",
       "evidence": [
         {
           "kind": "csv-rows",
@@ -32022,7 +32006,7 @@
     },
     {
       "id": "fullchunkqa-2aaa5a99016a1f41da91dbba-1",
-      "chunk_id": "knowledge-2aaa5a99016a1f41da91dbba",
+      "chunk_id": "knowledge-00ac231158fcac1436e65abb",
       "questions": [
         "保存カレンダーで、2026-10-03の「第４回 九州小学生交流大会」から2026-10-12の「スポーツの日」まで、予定日の日付差は何日？"
       ],
@@ -32030,7 +32014,7 @@
       "sources": [
         "out/2026/google.csv"
       ],
-      "source_sha256": "c03a89b44f17172365f968bbb60b2b1cb72567306993f4773304f0c2dba16080",
+      "source_sha256": "550408d89db4c9d5ce8e270e007fcb69ffd8b9f9a617dcb336d1e7c555221637",
       "evidence": [
         {
           "kind": "csv-rows",
@@ -32047,7 +32031,7 @@
           ],
           "rows": [
             {
-              "row": 334,
+              "row": 335,
               "cells": [
                 "第４回 九州小学生交流大会",
                 "10/03/2026",
@@ -32061,7 +32045,7 @@
               ]
             },
             {
-              "row": 337,
+              "row": 339,
               "cells": [
                 "スポーツの日",
                 "10/12/2026",
@@ -32091,7 +32075,7 @@
     },
     {
       "id": "fullchunkqa-2aaa5a99016a1f41da91dbba-2",
-      "chunk_id": "knowledge-2aaa5a99016a1f41da91dbba",
+      "chunk_id": "knowledge-00ac231158fcac1436e65abb",
       "questions": [
         "保存カレンダーで、2026-10-03の「第４回 九州小学生交流大会」から2026-10-15の「荒玉中体連駅伝予備日」まで、予定日の日付差は何日？"
       ],
@@ -32099,7 +32083,7 @@
       "sources": [
         "out/2026/google.csv"
       ],
-      "source_sha256": "c03a89b44f17172365f968bbb60b2b1cb72567306993f4773304f0c2dba16080",
+      "source_sha256": "550408d89db4c9d5ce8e270e007fcb69ffd8b9f9a617dcb336d1e7c555221637",
       "evidence": [
         {
           "kind": "csv-rows",
@@ -32116,7 +32100,7 @@
           ],
           "rows": [
             {
-              "row": 334,
+              "row": 335,
               "cells": [
                 "第４回 九州小学生交流大会",
                 "10/03/2026",
@@ -32130,7 +32114,7 @@
               ]
             },
             {
-              "row": 340,
+              "row": 342,
               "cells": [
                 "荒玉中体連駅伝予備日",
                 "10/15/2026",
@@ -32160,7 +32144,7 @@
     },
     {
       "id": "fullchunkqa-2aaa5a99016a1f41da91dbba-3",
-      "chunk_id": "knowledge-2aaa5a99016a1f41da91dbba",
+      "chunk_id": "knowledge-00ac231158fcac1436e65abb",
       "questions": [
         "保存カレンダーで、2026-10-03の「第４回 九州小学生交流大会」から2026-10-24の「秋季熊本陸協記録会」まで、予定日の日付差は何日？"
       ],
@@ -32168,7 +32152,7 @@
       "sources": [
         "out/2026/google.csv"
       ],
-      "source_sha256": "c03a89b44f17172365f968bbb60b2b1cb72567306993f4773304f0c2dba16080",
+      "source_sha256": "550408d89db4c9d5ce8e270e007fcb69ffd8b9f9a617dcb336d1e7c555221637",
       "evidence": [
         {
           "kind": "csv-rows",
@@ -32185,7 +32169,7 @@
           ],
           "rows": [
             {
-              "row": 334,
+              "row": 335,
               "cells": [
                 "第４回 九州小学生交流大会",
                 "10/03/2026",
@@ -32199,7 +32183,7 @@
               ]
             },
             {
-              "row": 344,
+              "row": 346,
               "cells": [
                 "秋季熊本陸協記録会",
                 "10/24/2026",
@@ -32229,7 +32213,7 @@
     },
     {
       "id": "fullchunkqa-c6faa0682fa7771698086f01-1",
-      "chunk_id": "knowledge-c6faa0682fa7771698086f01",
+      "chunk_id": "knowledge-0eb2a9fe348604310c04714f",
       "questions": [
         "保存カレンダーで、2026-12-11の「岱明中校内駅伝大会」から2026-12-12の「第 ５回 熊本県長距離記録会」まで、予定日の日付差は何日？"
       ],
@@ -32237,7 +32221,7 @@
       "sources": [
         "out/2026/google.csv"
       ],
-      "source_sha256": "c03a89b44f17172365f968bbb60b2b1cb72567306993f4773304f0c2dba16080",
+      "source_sha256": "550408d89db4c9d5ce8e270e007fcb69ffd8b9f9a617dcb336d1e7c555221637",
       "evidence": [
         {
           "kind": "csv-rows",
@@ -32254,7 +32238,7 @@
           ],
           "rows": [
             {
-              "row": 360,
+              "row": 362,
               "cells": [
                 "岱明中校内駅伝大会",
                 "12/11/2026",
@@ -32268,7 +32252,7 @@
               ]
             },
             {
-              "row": 361,
+              "row": 363,
               "cells": [
                 "第 ５回 熊本県長距離記録会",
                 "12/12/2026",
@@ -32298,7 +32282,7 @@
     },
     {
       "id": "fullchunkqa-c6faa0682fa7771698086f01-2",
-      "chunk_id": "knowledge-c6faa0682fa7771698086f01",
+      "chunk_id": "knowledge-0eb2a9fe348604310c04714f",
       "questions": [
         "保存カレンダーで、2026-12-11の「岱明中校内駅伝大会」から2026-12-15の「岱明中2年生修学旅行」まで、予定日の日付差は何日？"
       ],
@@ -32306,7 +32290,7 @@
       "sources": [
         "out/2026/google.csv"
       ],
-      "source_sha256": "c03a89b44f17172365f968bbb60b2b1cb72567306993f4773304f0c2dba16080",
+      "source_sha256": "550408d89db4c9d5ce8e270e007fcb69ffd8b9f9a617dcb336d1e7c555221637",
       "evidence": [
         {
           "kind": "csv-rows",
@@ -32323,7 +32307,7 @@
           ],
           "rows": [
             {
-              "row": 360,
+              "row": 362,
               "cells": [
                 "岱明中校内駅伝大会",
                 "12/11/2026",
@@ -32337,7 +32321,7 @@
               ]
             },
             {
-              "row": 362,
+              "row": 364,
               "cells": [
                 "岱明中2年生修学旅行",
                 "12/15/2026",
@@ -32367,7 +32351,7 @@
     },
     {
       "id": "fullchunkqa-c6faa0682fa7771698086f01-3",
-      "chunk_id": "knowledge-c6faa0682fa7771698086f01",
+      "chunk_id": "knowledge-0eb2a9fe348604310c04714f",
       "questions": [
         "保存カレンダーで、2026-12-11の「岱明中校内駅伝大会」から2026-12-19の「第７９回 熊本市ロードレース大会」まで、予定日の日付差は何日？"
       ],
@@ -32375,7 +32359,7 @@
       "sources": [
         "out/2026/google.csv"
       ],
-      "source_sha256": "c03a89b44f17172365f968bbb60b2b1cb72567306993f4773304f0c2dba16080",
+      "source_sha256": "550408d89db4c9d5ce8e270e007fcb69ffd8b9f9a617dcb336d1e7c555221637",
       "evidence": [
         {
           "kind": "csv-rows",
@@ -32392,7 +32376,7 @@
           ],
           "rows": [
             {
-              "row": 360,
+              "row": 362,
               "cells": [
                 "岱明中校内駅伝大会",
                 "12/11/2026",
@@ -32406,7 +32390,7 @@
               ]
             },
             {
-              "row": 363,
+              "row": 365,
               "cells": [
                 "第７９回 熊本市ロードレース大会",
                 "12/19/2026",
@@ -32436,7 +32420,7 @@
     },
     {
       "id": "fullchunkqa-faacc0c07a1be1332442087f-1",
-      "chunk_id": "knowledge-faacc0c07a1be1332442087f",
+      "chunk_id": "knowledge-b13be751a5ba6ee2ad9dd47a",
       "questions": [
         "保存カレンダーで、2026-01-01の「元日」から2026-02-08の「熊日駅伝」まで、予定日の日付差は何日？"
       ],
@@ -32444,7 +32428,7 @@
       "sources": [
         "out/2026/notion.csv"
       ],
-      "source_sha256": "36a81f99e15239ef0d3cad9e315620a0de3935c73e0056aad6e3318b75736fea",
+      "source_sha256": "ad3f77d73c13f8589e527037fb1f1fadefe73f41df218370b268da46165fb8f2",
       "evidence": [
         {
           "kind": "csv-rows",
@@ -32508,7 +32492,7 @@
     },
     {
       "id": "fullchunkqa-faacc0c07a1be1332442087f-2",
-      "chunk_id": "knowledge-faacc0c07a1be1332442087f",
+      "chunk_id": "knowledge-b13be751a5ba6ee2ad9dd47a",
       "questions": [
         "保存カレンダーで、2026-01-01の「元日」から2026-02-11の「建国記念の日」まで、予定日の日付差は何日？"
       ],
@@ -32516,7 +32500,7 @@
       "sources": [
         "out/2026/notion.csv"
       ],
-      "source_sha256": "36a81f99e15239ef0d3cad9e315620a0de3935c73e0056aad6e3318b75736fea",
+      "source_sha256": "ad3f77d73c13f8589e527037fb1f1fadefe73f41df218370b268da46165fb8f2",
       "evidence": [
         {
           "kind": "csv-rows",
@@ -32580,7 +32564,7 @@
     },
     {
       "id": "fullchunkqa-faacc0c07a1be1332442087f-3",
-      "chunk_id": "knowledge-faacc0c07a1be1332442087f",
+      "chunk_id": "knowledge-b13be751a5ba6ee2ad9dd47a",
       "questions": [
         "保存カレンダーで、2026-01-01の「元日」から2026-02-12の「岱明中1・2年後期期末テスト」まで、予定日の日付差は何日？"
       ],
@@ -32588,7 +32572,7 @@
       "sources": [
         "out/2026/notion.csv"
       ],
-      "source_sha256": "36a81f99e15239ef0d3cad9e315620a0de3935c73e0056aad6e3318b75736fea",
+      "source_sha256": "ad3f77d73c13f8589e527037fb1f1fadefe73f41df218370b268da46165fb8f2",
       "evidence": [
         {
           "kind": "csv-rows",
@@ -32652,7 +32636,7 @@
     },
     {
       "id": "fullchunkqa-0d96cf5d70ed38305afb722f-1",
-      "chunk_id": "knowledge-0d96cf5d70ed38305afb722f",
+      "chunk_id": "knowledge-46e254234103b3a76fe71d77",
       "questions": [
         "保存カレンダーで、2026-03-15の「岱明中陸上部お別れ会」から2026-03-20の「春分の日」まで、予定日の日付差は何日？"
       ],
@@ -32660,7 +32644,7 @@
       "sources": [
         "out/2026/notion.csv"
       ],
-      "source_sha256": "36a81f99e15239ef0d3cad9e315620a0de3935c73e0056aad6e3318b75736fea",
+      "source_sha256": "ad3f77d73c13f8589e527037fb1f1fadefe73f41df218370b268da46165fb8f2",
       "evidence": [
         {
           "kind": "csv-rows",
@@ -32724,7 +32708,7 @@
     },
     {
       "id": "fullchunkqa-0d96cf5d70ed38305afb722f-2",
-      "chunk_id": "knowledge-0d96cf5d70ed38305afb722f",
+      "chunk_id": "knowledge-46e254234103b3a76fe71d77",
       "questions": [
         "保存カレンダーで、2026-03-15の「岱明中陸上部お別れ会」から2026-03-29の「さくら記録会」まで、予定日の日付差は何日？"
       ],
@@ -32732,7 +32716,7 @@
       "sources": [
         "out/2026/notion.csv"
       ],
-      "source_sha256": "36a81f99e15239ef0d3cad9e315620a0de3935c73e0056aad6e3318b75736fea",
+      "source_sha256": "ad3f77d73c13f8589e527037fb1f1fadefe73f41df218370b268da46165fb8f2",
       "evidence": [
         {
           "kind": "csv-rows",
@@ -32796,7 +32780,7 @@
     },
     {
       "id": "fullchunkqa-0d96cf5d70ed38305afb722f-3",
-      "chunk_id": "knowledge-0d96cf5d70ed38305afb722f",
+      "chunk_id": "knowledge-46e254234103b3a76fe71d77",
       "questions": [
         "保存カレンダーで、2026-03-15の「岱明中陸上部お別れ会」から2026-04-04の「第２７２回熊本市陸上競技記録会R8」まで、予定日の日付差は何日？"
       ],
@@ -32804,7 +32788,7 @@
       "sources": [
         "out/2026/notion.csv"
       ],
-      "source_sha256": "36a81f99e15239ef0d3cad9e315620a0de3935c73e0056aad6e3318b75736fea",
+      "source_sha256": "ad3f77d73c13f8589e527037fb1f1fadefe73f41df218370b268da46165fb8f2",
       "evidence": [
         {
           "kind": "csv-rows",
@@ -32868,7 +32852,7 @@
     },
     {
       "id": "fullchunkqa-04472e721f549afbc6e742db-1",
-      "chunk_id": "knowledge-04472e721f549afbc6e742db",
+      "chunk_id": "knowledge-ba680f64520729f5f7ea6ff9",
       "questions": [
         "保存カレンダーで、2026-05-06の「憲法記念日 振替休日」から2026-05-08の「第９６回 九州学生陸上競技対抗選手権大会」まで、予定日の日付差は何日？"
       ],
@@ -32876,7 +32860,7 @@
       "sources": [
         "out/2026/notion.csv"
       ],
-      "source_sha256": "36a81f99e15239ef0d3cad9e315620a0de3935c73e0056aad6e3318b75736fea",
+      "source_sha256": "ad3f77d73c13f8589e527037fb1f1fadefe73f41df218370b268da46165fb8f2",
       "evidence": [
         {
           "kind": "csv-rows",
@@ -32940,7 +32924,7 @@
     },
     {
       "id": "fullchunkqa-04472e721f549afbc6e742db-2",
-      "chunk_id": "knowledge-04472e721f549afbc6e742db",
+      "chunk_id": "knowledge-ba680f64520729f5f7ea6ff9",
       "questions": [
         "保存カレンダーで、2026-05-06の「憲法記念日 振替休日」から2026-05-09の「第 １ 回 熊本県長距離記録会」まで、予定日の日付差は何日？"
       ],
@@ -32948,7 +32932,7 @@
       "sources": [
         "out/2026/notion.csv"
       ],
-      "source_sha256": "36a81f99e15239ef0d3cad9e315620a0de3935c73e0056aad6e3318b75736fea",
+      "source_sha256": "ad3f77d73c13f8589e527037fb1f1fadefe73f41df218370b268da46165fb8f2",
       "evidence": [
         {
           "kind": "csv-rows",
@@ -33012,7 +32996,7 @@
     },
     {
       "id": "fullchunkqa-04472e721f549afbc6e742db-3",
-      "chunk_id": "knowledge-04472e721f549afbc6e742db",
+      "chunk_id": "knowledge-ba680f64520729f5f7ea6ff9",
       "questions": [
         "保存カレンダーで、2026-05-06の「憲法記念日 振替休日」から2026-05-10の「荒尾記録会」まで、予定日の日付差は何日？"
       ],
@@ -33020,7 +33004,7 @@
       "sources": [
         "out/2026/notion.csv"
       ],
-      "source_sha256": "36a81f99e15239ef0d3cad9e315620a0de3935c73e0056aad6e3318b75736fea",
+      "source_sha256": "ad3f77d73c13f8589e527037fb1f1fadefe73f41df218370b268da46165fb8f2",
       "evidence": [
         {
           "kind": "csv-rows",
@@ -33084,7 +33068,7 @@
     },
     {
       "id": "fullchunkqa-13341db85693fc6ba33fe1af-1",
-      "chunk_id": "knowledge-13341db85693fc6ba33fe1af",
+      "chunk_id": "knowledge-edda6559f55ae377c65bf0c9",
       "questions": [
         "保存カレンダーで、2026-06-13の「第７２回 全日本中学校通信陸上競技大会熊本県大会」から2026-06-28の「荒尾選手権」まで、予定日の日付差は何日？"
       ],
@@ -33092,7 +33076,7 @@
       "sources": [
         "out/2026/notion.csv"
       ],
-      "source_sha256": "36a81f99e15239ef0d3cad9e315620a0de3935c73e0056aad6e3318b75736fea",
+      "source_sha256": "ad3f77d73c13f8589e527037fb1f1fadefe73f41df218370b268da46165fb8f2",
       "evidence": [
         {
           "kind": "csv-rows",
@@ -33156,7 +33140,7 @@
     },
     {
       "id": "fullchunkqa-13341db85693fc6ba33fe1af-2",
-      "chunk_id": "knowledge-13341db85693fc6ba33fe1af",
+      "chunk_id": "knowledge-edda6559f55ae377c65bf0c9",
       "questions": [
         "保存カレンダーで、2026-06-13の「第７２回 全日本中学校通信陸上競技大会熊本県大会」から2026-07-04の「2026年度第２回熊本県長距離記録会」まで、予定日の日付差は何日？"
       ],
@@ -33164,7 +33148,7 @@
       "sources": [
         "out/2026/notion.csv"
       ],
-      "source_sha256": "36a81f99e15239ef0d3cad9e315620a0de3935c73e0056aad6e3318b75736fea",
+      "source_sha256": "ad3f77d73c13f8589e527037fb1f1fadefe73f41df218370b268da46165fb8f2",
       "evidence": [
         {
           "kind": "csv-rows",
@@ -33228,7 +33212,7 @@
     },
     {
       "id": "fullchunkqa-13341db85693fc6ba33fe1af-3",
-      "chunk_id": "knowledge-13341db85693fc6ba33fe1af",
+      "chunk_id": "knowledge-edda6559f55ae377c65bf0c9",
       "questions": [
         "保存カレンダーで、2026-06-13の「第７２回 全日本中学校通信陸上競技大会熊本県大会」から2026-07-18の「岱明中夏休み開始」まで、予定日の日付差は何日？"
       ],
@@ -33236,7 +33220,7 @@
       "sources": [
         "out/2026/notion.csv"
       ],
-      "source_sha256": "36a81f99e15239ef0d3cad9e315620a0de3935c73e0056aad6e3318b75736fea",
+      "source_sha256": "ad3f77d73c13f8589e527037fb1f1fadefe73f41df218370b268da46165fb8f2",
       "evidence": [
         {
           "kind": "csv-rows",
@@ -33300,7 +33284,7 @@
     },
     {
       "id": "fullchunkqa-aeadaf8164f845ffbe66edd7-1",
-      "chunk_id": "knowledge-aeadaf8164f845ffbe66edd7",
+      "chunk_id": "knowledge-67b714c7fe8acc09fe352e8b",
       "questions": [
         "保存カレンダーで、2026-09-20の「第12回　中学駅伝金栗四三生誕の地なごみ大会」から2026-09-21の「敬老の日」まで、予定日の日付差は何日？"
       ],
@@ -33308,7 +33292,7 @@
       "sources": [
         "out/2026/notion.csv"
       ],
-      "source_sha256": "36a81f99e15239ef0d3cad9e315620a0de3935c73e0056aad6e3318b75736fea",
+      "source_sha256": "ad3f77d73c13f8589e527037fb1f1fadefe73f41df218370b268da46165fb8f2",
       "evidence": [
         {
           "kind": "csv-rows",
@@ -33372,7 +33356,7 @@
     },
     {
       "id": "fullchunkqa-aeadaf8164f845ffbe66edd7-2",
-      "chunk_id": "knowledge-aeadaf8164f845ffbe66edd7",
+      "chunk_id": "knowledge-67b714c7fe8acc09fe352e8b",
       "questions": [
         "保存カレンダーで、2026-09-20の「第12回　中学駅伝金栗四三生誕の地なごみ大会」から2026-09-23の「秋分の日」まで、予定日の日付差は何日？"
       ],
@@ -33380,7 +33364,7 @@
       "sources": [
         "out/2026/notion.csv"
       ],
-      "source_sha256": "36a81f99e15239ef0d3cad9e315620a0de3935c73e0056aad6e3318b75736fea",
+      "source_sha256": "ad3f77d73c13f8589e527037fb1f1fadefe73f41df218370b268da46165fb8f2",
       "evidence": [
         {
           "kind": "csv-rows",
@@ -33444,7 +33428,7 @@
     },
     {
       "id": "fullchunkqa-aeadaf8164f845ffbe66edd7-3",
-      "chunk_id": "knowledge-aeadaf8164f845ffbe66edd7",
+      "chunk_id": "knowledge-67b714c7fe8acc09fe352e8b",
       "questions": [
         "保存カレンダーで、2026-09-20の「第12回　中学駅伝金栗四三生誕の地なごみ大会」から2026-09-24の「いだてん岱明練習」まで、予定日の日付差は何日？"
       ],
@@ -33452,7 +33436,7 @@
       "sources": [
         "out/2026/notion.csv"
       ],
-      "source_sha256": "36a81f99e15239ef0d3cad9e315620a0de3935c73e0056aad6e3318b75736fea",
+      "source_sha256": "ad3f77d73c13f8589e527037fb1f1fadefe73f41df218370b268da46165fb8f2",
       "evidence": [
         {
           "kind": "csv-rows",
@@ -33516,7 +33500,7 @@
     },
     {
       "id": "fullchunkqa-50ba43424e1638649829d868-1",
-      "chunk_id": "knowledge-50ba43424e1638649829d868",
+      "chunk_id": "knowledge-1b71f9c870cfad67dd536cb3",
       "questions": [
         "保存カレンダーで、2026-09-26の「第４回 熊本県中学生ジュニア陸上大会（第３回県ジュニア駅伝大会）」から2026-09-29の「岱明中 荒玉駅伝試走結果」まで、予定日の日付差は何日？"
       ],
@@ -33524,7 +33508,7 @@
       "sources": [
         "out/2026/notion.csv"
       ],
-      "source_sha256": "36a81f99e15239ef0d3cad9e315620a0de3935c73e0056aad6e3318b75736fea",
+      "source_sha256": "ad3f77d73c13f8589e527037fb1f1fadefe73f41df218370b268da46165fb8f2",
       "evidence": [
         {
           "kind": "csv-rows",
@@ -33588,7 +33572,7 @@
     },
     {
       "id": "fullchunkqa-50ba43424e1638649829d868-2",
-      "chunk_id": "knowledge-50ba43424e1638649829d868",
+      "chunk_id": "knowledge-1b71f9c870cfad67dd536cb3",
       "questions": [
         "保存カレンダーで、2026-09-26の「第４回 熊本県中学生ジュニア陸上大会（第３回県ジュニア駅伝大会）」から2026-10-03の「第４回 九州小学生交流大会」まで、予定日の日付差は何日？"
       ],
@@ -33596,79 +33580,7 @@
       "sources": [
         "out/2026/notion.csv"
       ],
-      "source_sha256": "36a81f99e15239ef0d3cad9e315620a0de3935c73e0056aad6e3318b75736fea",
-      "evidence": [
-        {
-          "kind": "csv-rows",
-          "header": [
-            "Name",
-            "Date",
-            "End Date",
-            "Category",
-            "Status",
-            "Tags",
-            "URLs",
-            "Description",
-            "Location",
-            "All Day"
-          ],
-          "rows": [
-            {
-              "row": 325,
-              "cells": [
-                "第４回 熊本県中学生ジュニア陸上大会（第３回県ジュニア駅伝大会）",
-                "2026-09-26",
-                "2026-09-26",
-                "予定",
-                "done",
-                "",
-                "",
-                "第3回 熊本県ジュニア駅伝競走大会\n岱明の結果: input/idaten-corpus/drive-text/大会/2026年度/0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）/岱明の結果.md\n荒玉地区の全選手・全カテゴリ結果: input/idaten-corpus/drive-text/大会/2026年度/0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）/荒玉地区の結果.md\n結果PDF索引・照合メモ: input/idaten-corpus/drive-text/大会/2026年度/0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）/荒玉地区_ジュニア結果抜粋.md\n公式大会ページ: http://kumariku.com/competition/?id=9730\n結果・地区抜粋・SB予想: input/idaten-corpus/drive-text/大会/2026年度/0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）/\n",
-                "",
-                "true"
-              ]
-            },
-            {
-              "row": 334,
-              "cells": [
-                "第４回 九州小学生交流大会",
-                "2026-10-03",
-                "2026-10-03",
-                "予定",
-                "scheduled",
-                "ランニング, 県大会一覧",
-                "http://kumariku.com/info/wp-content/uploads/2026/04/b652729b4a1eecb47ebc1e6e01321a6e.pdf",
-                "熊本県陸上競技大会一覧（2026/5/31版）より追加",
-                "えがお健康スタジアム",
-                "true"
-              ]
-            }
-          ]
-        }
-      ],
-      "calculation": {
-        "operation": "calendar_elapsed_days",
-        "from_date": "2026-09-26",
-        "to_date": "2026-10-03",
-        "days": 7
-      },
-      "review": {
-        "method": "schema-reviewed-calendar-gap",
-        "status": "schema-reviewed",
-        "scope": "Public event title and saved start date only; elapsed days, no inferred completion or private personal events."
-      }
-    },
-    {
-      "id": "fullchunkqa-50ba43424e1638649829d868-3",
-      "chunk_id": "knowledge-50ba43424e1638649829d868",
-      "questions": [
-        "保存カレンダーで、2026-09-26の「第４回 熊本県中学生ジュニア陸上大会（第３回県ジュニア駅伝大会）」から2026-10-04の「第５回 奥球磨駅伝大会」まで、予定日の日付差は何日？"
-      ],
-      "answer": "予定日の差は8日です。2026-09-26から2026-10-04までの日付差で、両端の日を含めた日数ではありません。保存された予定日を比較しており、実施済みかどうかを示すものではありません。",
-      "sources": [
-        "out/2026/notion.csv"
-      ],
-      "source_sha256": "36a81f99e15239ef0d3cad9e315620a0de3935c73e0056aad6e3318b75736fea",
+      "source_sha256": "ad3f77d73c13f8589e527037fb1f1fadefe73f41df218370b268da46165fb8f2",
       "evidence": [
         {
           "kind": "csv-rows",
@@ -33703,6 +33615,78 @@
             {
               "row": 335,
               "cells": [
+                "第４回 九州小学生交流大会",
+                "2026-10-03",
+                "2026-10-03",
+                "予定",
+                "scheduled",
+                "ランニング, 県大会一覧",
+                "http://kumariku.com/info/wp-content/uploads/2026/04/b652729b4a1eecb47ebc1e6e01321a6e.pdf",
+                "熊本県陸上競技大会一覧（2026/5/31版）より追加",
+                "えがお健康スタジアム",
+                "true"
+              ]
+            }
+          ]
+        }
+      ],
+      "calculation": {
+        "operation": "calendar_elapsed_days",
+        "from_date": "2026-09-26",
+        "to_date": "2026-10-03",
+        "days": 7
+      },
+      "review": {
+        "method": "schema-reviewed-calendar-gap",
+        "status": "schema-reviewed",
+        "scope": "Public event title and saved start date only; elapsed days, no inferred completion or private personal events."
+      }
+    },
+    {
+      "id": "fullchunkqa-50ba43424e1638649829d868-3",
+      "chunk_id": "knowledge-1b71f9c870cfad67dd536cb3",
+      "questions": [
+        "保存カレンダーで、2026-09-26の「第４回 熊本県中学生ジュニア陸上大会（第３回県ジュニア駅伝大会）」から2026-10-04の「第５回 奥球磨駅伝大会」まで、予定日の日付差は何日？"
+      ],
+      "answer": "予定日の差は8日です。2026-09-26から2026-10-04までの日付差で、両端の日を含めた日数ではありません。保存された予定日を比較しており、実施済みかどうかを示すものではありません。",
+      "sources": [
+        "out/2026/notion.csv"
+      ],
+      "source_sha256": "ad3f77d73c13f8589e527037fb1f1fadefe73f41df218370b268da46165fb8f2",
+      "evidence": [
+        {
+          "kind": "csv-rows",
+          "header": [
+            "Name",
+            "Date",
+            "End Date",
+            "Category",
+            "Status",
+            "Tags",
+            "URLs",
+            "Description",
+            "Location",
+            "All Day"
+          ],
+          "rows": [
+            {
+              "row": 325,
+              "cells": [
+                "第４回 熊本県中学生ジュニア陸上大会（第３回県ジュニア駅伝大会）",
+                "2026-09-26",
+                "2026-09-26",
+                "予定",
+                "done",
+                "",
+                "",
+                "第3回 熊本県ジュニア駅伝競走大会\n岱明の結果: input/idaten-corpus/drive-text/大会/2026年度/0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）/岱明の結果.md\n荒玉地区の全選手・全カテゴリ結果: input/idaten-corpus/drive-text/大会/2026年度/0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）/荒玉地区の結果.md\n結果PDF索引・照合メモ: input/idaten-corpus/drive-text/大会/2026年度/0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）/荒玉地区_ジュニア結果抜粋.md\n公式大会ページ: http://kumariku.com/competition/?id=9730\n結果・地区抜粋・SB予想: input/idaten-corpus/drive-text/大会/2026年度/0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）/\n",
+                "",
+                "true"
+              ]
+            },
+            {
+              "row": 337,
+              "cells": [
                 "第５回 奥球磨駅伝大会",
                 "2026-10-04",
                 "2026-10-04",
@@ -33732,7 +33716,7 @@
     },
     {
       "id": "fullchunkqa-4a22a23ae7f89e2d38ee5a6c-1",
-      "chunk_id": "knowledge-4a22a23ae7f89e2d38ee5a6c",
+      "chunk_id": "knowledge-7664e71683bd91b53edea097",
       "questions": [
         "保存カレンダーで、2026-10-24の「秋季熊本陸協記録会」から2026-10-27の「3年間共通テスト」まで、予定日の日付差は何日？"
       ],
@@ -33740,7 +33724,7 @@
       "sources": [
         "out/2026/notion.csv"
       ],
-      "source_sha256": "36a81f99e15239ef0d3cad9e315620a0de3935c73e0056aad6e3318b75736fea",
+      "source_sha256": "ad3f77d73c13f8589e527037fb1f1fadefe73f41df218370b268da46165fb8f2",
       "evidence": [
         {
           "kind": "csv-rows",
@@ -33758,7 +33742,7 @@
           ],
           "rows": [
             {
-              "row": 344,
+              "row": 346,
               "cells": [
                 "秋季熊本陸協記録会",
                 "2026-10-24",
@@ -33773,7 +33757,7 @@
               ]
             },
             {
-              "row": 345,
+              "row": 347,
               "cells": [
                 "3年間共通テスト",
                 "2026-10-27",
@@ -33804,7 +33788,7 @@
     },
     {
       "id": "fullchunkqa-4a22a23ae7f89e2d38ee5a6c-2",
-      "chunk_id": "knowledge-4a22a23ae7f89e2d38ee5a6c",
+      "chunk_id": "knowledge-7664e71683bd91b53edea097",
       "questions": [
         "保存カレンダーで、2026-10-24の「秋季熊本陸協記録会」から2026-10-31の「第７９回 熊本県高等学校駅伝競走大会（男女）」まで、予定日の日付差は何日？"
       ],
@@ -33812,7 +33796,7 @@
       "sources": [
         "out/2026/notion.csv"
       ],
-      "source_sha256": "36a81f99e15239ef0d3cad9e315620a0de3935c73e0056aad6e3318b75736fea",
+      "source_sha256": "ad3f77d73c13f8589e527037fb1f1fadefe73f41df218370b268da46165fb8f2",
       "evidence": [
         {
           "kind": "csv-rows",
@@ -33830,7 +33814,7 @@
           ],
           "rows": [
             {
-              "row": 344,
+              "row": 346,
               "cells": [
                 "秋季熊本陸協記録会",
                 "2026-10-24",
@@ -33845,7 +33829,7 @@
               ]
             },
             {
-              "row": 346,
+              "row": 348,
               "cells": [
                 "第７９回 熊本県高等学校駅伝競走大会（男女）",
                 "2026-10-31",
@@ -33876,7 +33860,7 @@
     },
     {
       "id": "fullchunkqa-4a22a23ae7f89e2d38ee5a6c-3",
-      "chunk_id": "knowledge-4a22a23ae7f89e2d38ee5a6c",
+      "chunk_id": "knowledge-7664e71683bd91b53edea097",
       "questions": [
         "保存カレンダーで、2026-10-24の「秋季熊本陸協記録会」から2026-11-01の「金栗マラソン」まで、予定日の日付差は何日？"
       ],
@@ -33884,7 +33868,7 @@
       "sources": [
         "out/2026/notion.csv"
       ],
-      "source_sha256": "36a81f99e15239ef0d3cad9e315620a0de3935c73e0056aad6e3318b75736fea",
+      "source_sha256": "ad3f77d73c13f8589e527037fb1f1fadefe73f41df218370b268da46165fb8f2",
       "evidence": [
         {
           "kind": "csv-rows",
@@ -33902,7 +33886,7 @@
           ],
           "rows": [
             {
-              "row": 344,
+              "row": 346,
               "cells": [
                 "秋季熊本陸協記録会",
                 "2026-10-24",
@@ -33917,7 +33901,7 @@
               ]
             },
             {
-              "row": 348,
+              "row": 350,
               "cells": [
                 "金栗マラソン",
                 "2026-11-01",
@@ -33948,7 +33932,7 @@
     },
     {
       "id": "fullchunkqa-85663a57ddc0c4023754bbd8-1",
-      "chunk_id": "knowledge-85663a57ddc0c4023754bbd8",
+      "chunk_id": "knowledge-a5b3570558ea806f251a1e36",
       "questions": [
         "保存カレンダーで、2026-01-01の「元日」から2026-02-15の「熊本城マラソン」まで、予定日の日付差は何日？"
       ],
@@ -33956,7 +33940,7 @@
       "sources": [
         "out/2026/source.csv"
       ],
-      "source_sha256": "18f8c98233c1849d7109247d04512200891b625f1da38a1d5a95f9a25e077616",
+      "source_sha256": "b9595a14636574f05a26dc757eafcc2d3b36b663295aac34abf0e42553fb6146",
       "evidence": [
         {
           "kind": "csv-rows",
@@ -34032,7 +34016,7 @@
     },
     {
       "id": "fullchunkqa-85663a57ddc0c4023754bbd8-2",
-      "chunk_id": "knowledge-85663a57ddc0c4023754bbd8",
+      "chunk_id": "knowledge-a5b3570558ea806f251a1e36",
       "questions": [
         "保存カレンダーで、2026-01-01の「元日」から2026-02-21の「熊日駅伝テレビ放送」まで、予定日の日付差は何日？"
       ],
@@ -34040,7 +34024,7 @@
       "sources": [
         "out/2026/source.csv"
       ],
-      "source_sha256": "18f8c98233c1849d7109247d04512200891b625f1da38a1d5a95f9a25e077616",
+      "source_sha256": "b9595a14636574f05a26dc757eafcc2d3b36b663295aac34abf0e42553fb6146",
       "evidence": [
         {
           "kind": "csv-rows",
@@ -34116,7 +34100,7 @@
     },
     {
       "id": "fullchunkqa-85663a57ddc0c4023754bbd8-3",
-      "chunk_id": "knowledge-85663a57ddc0c4023754bbd8",
+      "chunk_id": "knowledge-a5b3570558ea806f251a1e36",
       "questions": [
         "保存カレンダーで、2026-01-01の「元日」から2026-02-22の「玉名いだてんマラソン」まで、予定日の日付差は何日？"
       ],
@@ -34124,7 +34108,7 @@
       "sources": [
         "out/2026/source.csv"
       ],
-      "source_sha256": "18f8c98233c1849d7109247d04512200891b625f1da38a1d5a95f9a25e077616",
+      "source_sha256": "b9595a14636574f05a26dc757eafcc2d3b36b663295aac34abf0e42553fb6146",
       "evidence": [
         {
           "kind": "csv-rows",
@@ -34200,7 +34184,7 @@
     },
     {
       "id": "fullchunkqa-859013e680401896472d06d1-1",
-      "chunk_id": "knowledge-859013e680401896472d06d1",
+      "chunk_id": "knowledge-0452cf5ad3b9510392693a19",
       "questions": [
         "保存カレンダーで、2026-03-03の「中学3年公立後期選抜入試」から2026-03-20の「春分の日」まで、予定日の日付差は何日？"
       ],
@@ -34208,7 +34192,7 @@
       "sources": [
         "out/2026/source.csv"
       ],
-      "source_sha256": "18f8c98233c1849d7109247d04512200891b625f1da38a1d5a95f9a25e077616",
+      "source_sha256": "b9595a14636574f05a26dc757eafcc2d3b36b663295aac34abf0e42553fb6146",
       "evidence": [
         {
           "kind": "csv-rows",
@@ -34284,7 +34268,7 @@
     },
     {
       "id": "fullchunkqa-859013e680401896472d06d1-2",
-      "chunk_id": "knowledge-859013e680401896472d06d1",
+      "chunk_id": "knowledge-0452cf5ad3b9510392693a19",
       "questions": [
         "保存カレンダーで、2026-03-03の「中学3年公立後期選抜入試」から2026-03-29の「さくら記録会」まで、予定日の日付差は何日？"
       ],
@@ -34292,7 +34276,7 @@
       "sources": [
         "out/2026/source.csv"
       ],
-      "source_sha256": "18f8c98233c1849d7109247d04512200891b625f1da38a1d5a95f9a25e077616",
+      "source_sha256": "b9595a14636574f05a26dc757eafcc2d3b36b663295aac34abf0e42553fb6146",
       "evidence": [
         {
           "kind": "csv-rows",
@@ -34368,7 +34352,7 @@
     },
     {
       "id": "fullchunkqa-859013e680401896472d06d1-3",
-      "chunk_id": "knowledge-859013e680401896472d06d1",
+      "chunk_id": "knowledge-0452cf5ad3b9510392693a19",
       "questions": [
         "保存カレンダーで、2026-03-03の「中学3年公立後期選抜入試」から2026-04-04の「第２７２回熊本市陸上競技記録会R8」まで、予定日の日付差は何日？"
       ],
@@ -34376,7 +34360,7 @@
       "sources": [
         "out/2026/source.csv"
       ],
-      "source_sha256": "18f8c98233c1849d7109247d04512200891b625f1da38a1d5a95f9a25e077616",
+      "source_sha256": "b9595a14636574f05a26dc757eafcc2d3b36b663295aac34abf0e42553fb6146",
       "evidence": [
         {
           "kind": "csv-rows",
@@ -34452,7 +34436,7 @@
     },
     {
       "id": "fullchunkqa-5e846afb2e672932478d6b65-1",
-      "chunk_id": "knowledge-5e846afb2e672932478d6b65",
+      "chunk_id": "knowledge-4cc8c0137c95641986f9bd4c",
       "questions": [
         "保存カレンダーで、2026-04-19の「第２７回 谷口睦生杯八代陸上選手権大会」から2026-04-25の「令和８年度 熊本県陸上競技選手権兼国スポ一次予選」まで、予定日の日付差は何日？"
       ],
@@ -34460,7 +34444,7 @@
       "sources": [
         "out/2026/source.csv"
       ],
-      "source_sha256": "18f8c98233c1849d7109247d04512200891b625f1da38a1d5a95f9a25e077616",
+      "source_sha256": "b9595a14636574f05a26dc757eafcc2d3b36b663295aac34abf0e42553fb6146",
       "evidence": [
         {
           "kind": "csv-rows",
@@ -34536,7 +34520,7 @@
     },
     {
       "id": "fullchunkqa-5e846afb2e672932478d6b65-2",
-      "chunk_id": "knowledge-5e846afb2e672932478d6b65",
+      "chunk_id": "knowledge-4cc8c0137c95641986f9bd4c",
       "questions": [
         "保存カレンダーで、2026-04-19の「第２７回 谷口睦生杯八代陸上選手権大会」から2026-04-29の「大牟田陸上」まで、予定日の日付差は何日？"
       ],
@@ -34544,7 +34528,7 @@
       "sources": [
         "out/2026/source.csv"
       ],
-      "source_sha256": "18f8c98233c1849d7109247d04512200891b625f1da38a1d5a95f9a25e077616",
+      "source_sha256": "b9595a14636574f05a26dc757eafcc2d3b36b663295aac34abf0e42553fb6146",
       "evidence": [
         {
           "kind": "csv-rows",
@@ -34620,7 +34604,7 @@
     },
     {
       "id": "fullchunkqa-5e846afb2e672932478d6b65-3",
-      "chunk_id": "knowledge-5e846afb2e672932478d6b65",
+      "chunk_id": "knowledge-4cc8c0137c95641986f9bd4c",
       "questions": [
         "保存カレンダーで、2026-04-19の「第２７回 谷口睦生杯八代陸上選手権大会」から2026-05-02の「第４５回 熊本市陸上競技選手権大会（長距離種目以外）」まで、予定日の日付差は何日？"
       ],
@@ -34628,7 +34612,7 @@
       "sources": [
         "out/2026/source.csv"
       ],
-      "source_sha256": "18f8c98233c1849d7109247d04512200891b625f1da38a1d5a95f9a25e077616",
+      "source_sha256": "b9595a14636574f05a26dc757eafcc2d3b36b663295aac34abf0e42553fb6146",
       "evidence": [
         {
           "kind": "csv-rows",
@@ -34704,7 +34688,7 @@
     },
     {
       "id": "fullchunkqa-41435a114ff49789a699a334-1",
-      "chunk_id": "knowledge-41435a114ff49789a699a334",
+      "chunk_id": "knowledge-97319de038f49e19cf30914c",
       "questions": [
         "保存カレンダーで、2026-05-23の「第４１回 熊本県中学校陸上選手権・第２４回中学校混成競技大会」から2026-05-24の「さつき記録会」まで、予定日の日付差は何日？"
       ],
@@ -34712,7 +34696,7 @@
       "sources": [
         "out/2026/source.csv"
       ],
-      "source_sha256": "18f8c98233c1849d7109247d04512200891b625f1da38a1d5a95f9a25e077616",
+      "source_sha256": "b9595a14636574f05a26dc757eafcc2d3b36b663295aac34abf0e42553fb6146",
       "evidence": [
         {
           "kind": "csv-rows",
@@ -34788,7 +34772,7 @@
     },
     {
       "id": "fullchunkqa-41435a114ff49789a699a334-2",
-      "chunk_id": "knowledge-41435a114ff49789a699a334",
+      "chunk_id": "knowledge-97319de038f49e19cf30914c",
       "questions": [
         "保存カレンダーで、2026-05-23の「第４１回 熊本県中学校陸上選手権・第２４回中学校混成競技大会」から2026-05-26の「岱明中前期確認テスト」まで、予定日の日付差は何日？"
       ],
@@ -34796,7 +34780,7 @@
       "sources": [
         "out/2026/source.csv"
       ],
-      "source_sha256": "18f8c98233c1849d7109247d04512200891b625f1da38a1d5a95f9a25e077616",
+      "source_sha256": "b9595a14636574f05a26dc757eafcc2d3b36b663295aac34abf0e42553fb6146",
       "evidence": [
         {
           "kind": "csv-rows",
@@ -34872,7 +34856,7 @@
     },
     {
       "id": "fullchunkqa-41435a114ff49789a699a334-3",
-      "chunk_id": "knowledge-41435a114ff49789a699a334",
+      "chunk_id": "knowledge-97319de038f49e19cf30914c",
       "questions": [
         "保存カレンダーで、2026-05-23の「第４１回 熊本県中学校陸上選手権・第２４回中学校混成競技大会」から2026-05-29の「令和８年度 熊本県高等学校総合体育大会陸上競技大会」まで、予定日の日付差は何日？"
       ],
@@ -34880,7 +34864,7 @@
       "sources": [
         "out/2026/source.csv"
       ],
-      "source_sha256": "18f8c98233c1849d7109247d04512200891b625f1da38a1d5a95f9a25e077616",
+      "source_sha256": "b9595a14636574f05a26dc757eafcc2d3b36b663295aac34abf0e42553fb6146",
       "evidence": [
         {
           "kind": "csv-rows",
@@ -34956,7 +34940,7 @@
     },
     {
       "id": "fullchunkqa-802571bbfaa47db7521ac986-1",
-      "chunk_id": "knowledge-802571bbfaa47db7521ac986",
+      "chunk_id": "knowledge-521189114d33da9c677b0acc",
       "questions": [
         "保存カレンダーで、2026-07-04の「2026年度第２回熊本県長距離記録会」から2026-07-18の「岱明中夏休み開始」まで、予定日の日付差は何日？"
       ],
@@ -34964,7 +34948,7 @@
       "sources": [
         "out/2026/source.csv"
       ],
-      "source_sha256": "18f8c98233c1849d7109247d04512200891b625f1da38a1d5a95f9a25e077616",
+      "source_sha256": "b9595a14636574f05a26dc757eafcc2d3b36b663295aac34abf0e42553fb6146",
       "evidence": [
         {
           "kind": "csv-rows",
@@ -35040,7 +35024,7 @@
     },
     {
       "id": "fullchunkqa-802571bbfaa47db7521ac986-2",
-      "chunk_id": "knowledge-802571bbfaa47db7521ac986",
+      "chunk_id": "knowledge-521189114d33da9c677b0acc",
       "questions": [
         "保存カレンダーで、2026-07-04の「2026年度第２回熊本県長距離記録会」から2026-07-20の「海の日」まで、予定日の日付差は何日？"
       ],
@@ -35048,7 +35032,7 @@
       "sources": [
         "out/2026/source.csv"
       ],
-      "source_sha256": "18f8c98233c1849d7109247d04512200891b625f1da38a1d5a95f9a25e077616",
+      "source_sha256": "b9595a14636574f05a26dc757eafcc2d3b36b663295aac34abf0e42553fb6146",
       "evidence": [
         {
           "kind": "csv-rows",
@@ -35124,7 +35108,7 @@
     },
     {
       "id": "fullchunkqa-802571bbfaa47db7521ac986-3",
-      "chunk_id": "knowledge-802571bbfaa47db7521ac986",
+      "chunk_id": "knowledge-521189114d33da9c677b0acc",
       "questions": [
         "保存カレンダーで、2026-07-04の「2026年度第２回熊本県長距離記録会」から2026-07-22の「玉名選手権参加費振込」まで、予定日の日付差は何日？"
       ],
@@ -35132,7 +35116,7 @@
       "sources": [
         "out/2026/source.csv"
       ],
-      "source_sha256": "18f8c98233c1849d7109247d04512200891b625f1da38a1d5a95f9a25e077616",
+      "source_sha256": "b9595a14636574f05a26dc757eafcc2d3b36b663295aac34abf0e42553fb6146",
       "evidence": [
         {
           "kind": "csv-rows",
@@ -35208,7 +35192,7 @@
     },
     {
       "id": "fullchunkqa-8fcbb7bad89eb2fdba755f19-1",
-      "chunk_id": "knowledge-8fcbb7bad89eb2fdba755f19",
+      "chunk_id": "knowledge-f732e30a41dbf09b3b6d41fd",
       "questions": [
         "保存カレンダーで、2026-08-22の「玉名市人権教育研究大会」から2026-08-23の「サマー記録会100m（薄暮開催予定）」まで、予定日の日付差は何日？"
       ],
@@ -35216,7 +35200,7 @@
       "sources": [
         "out/2026/source.csv"
       ],
-      "source_sha256": "18f8c98233c1849d7109247d04512200891b625f1da38a1d5a95f9a25e077616",
+      "source_sha256": "b9595a14636574f05a26dc757eafcc2d3b36b663295aac34abf0e42553fb6146",
       "evidence": [
         {
           "kind": "csv-rows",
@@ -35292,7 +35276,7 @@
     },
     {
       "id": "fullchunkqa-8fcbb7bad89eb2fdba755f19-2",
-      "chunk_id": "knowledge-8fcbb7bad89eb2fdba755f19",
+      "chunk_id": "knowledge-f732e30a41dbf09b3b6d41fd",
       "questions": [
         "保存カレンダーで、2026-08-22の「玉名市人権教育研究大会」から2026-08-27の「練習会（岱明）（県民スポーツ大会中止に伴い中止）」まで、予定日の日付差は何日？"
       ],
@@ -35300,7 +35284,7 @@
       "sources": [
         "out/2026/source.csv"
       ],
-      "source_sha256": "18f8c98233c1849d7109247d04512200891b625f1da38a1d5a95f9a25e077616",
+      "source_sha256": "b9595a14636574f05a26dc757eafcc2d3b36b663295aac34abf0e42553fb6146",
       "evidence": [
         {
           "kind": "csv-rows",
@@ -35376,7 +35360,7 @@
     },
     {
       "id": "fullchunkqa-8fcbb7bad89eb2fdba755f19-3",
-      "chunk_id": "knowledge-8fcbb7bad89eb2fdba755f19",
+      "chunk_id": "knowledge-f732e30a41dbf09b3b6d41fd",
       "questions": [
         "保存カレンダーで、2026-08-23の「サマー記録会100m（薄暮開催予定）」から2026-08-27の「練習会（岱明）（県民スポーツ大会中止に伴い中止）」まで、予定日の日付差は何日？"
       ],
@@ -35384,7 +35368,7 @@
       "sources": [
         "out/2026/source.csv"
       ],
-      "source_sha256": "18f8c98233c1849d7109247d04512200891b625f1da38a1d5a95f9a25e077616",
+      "source_sha256": "b9595a14636574f05a26dc757eafcc2d3b36b663295aac34abf0e42553fb6146",
       "evidence": [
         {
           "kind": "csv-rows",
@@ -35460,7 +35444,7 @@
     },
     {
       "id": "fullchunkqa-ab32e098f5dc0d8b1ba912f2-1",
-      "chunk_id": "knowledge-ab32e098f5dc0d8b1ba912f2",
+      "chunk_id": "knowledge-a720918019b4a1a33379191c",
       "questions": [
         "保存カレンダーで、2026-08-29の「玉名郡ナイター中・長距離記録会」から2026-08-30の「第５４回 熊本県高校学年別陸上競技大会」まで、予定日の日付差は何日？"
       ],
@@ -35468,7 +35452,7 @@
       "sources": [
         "out/2026/source.csv"
       ],
-      "source_sha256": "18f8c98233c1849d7109247d04512200891b625f1da38a1d5a95f9a25e077616",
+      "source_sha256": "b9595a14636574f05a26dc757eafcc2d3b36b663295aac34abf0e42553fb6146",
       "evidence": [
         {
           "kind": "csv-rows",
@@ -35544,7 +35528,7 @@
     },
     {
       "id": "fullchunkqa-ab32e098f5dc0d8b1ba912f2-2",
-      "chunk_id": "knowledge-ab32e098f5dc0d8b1ba912f2",
+      "chunk_id": "knowledge-a720918019b4a1a33379191c",
       "questions": [
         "保存カレンダーで、2026-08-29の「玉名郡ナイター中・長距離記録会」から2026-09-03の「練習会（桃田）（県民スポーツ大会中止に伴い中止）」まで、予定日の日付差は何日？"
       ],
@@ -35552,7 +35536,7 @@
       "sources": [
         "out/2026/source.csv"
       ],
-      "source_sha256": "18f8c98233c1849d7109247d04512200891b625f1da38a1d5a95f9a25e077616",
+      "source_sha256": "b9595a14636574f05a26dc757eafcc2d3b36b663295aac34abf0e42553fb6146",
       "evidence": [
         {
           "kind": "csv-rows",
@@ -35628,7 +35612,7 @@
     },
     {
       "id": "fullchunkqa-ab32e098f5dc0d8b1ba912f2-3",
-      "chunk_id": "knowledge-ab32e098f5dc0d8b1ba912f2",
+      "chunk_id": "knowledge-a720918019b4a1a33379191c",
       "questions": [
         "保存カレンダーで、2026-08-30の「第５４回 熊本県高校学年別陸上競技大会」から2026-09-03の「練習会（桃田）（県民スポーツ大会中止に伴い中止）」まで、予定日の日付差は何日？"
       ],
@@ -35636,7 +35620,7 @@
       "sources": [
         "out/2026/source.csv"
       ],
-      "source_sha256": "18f8c98233c1849d7109247d04512200891b625f1da38a1d5a95f9a25e077616",
+      "source_sha256": "b9595a14636574f05a26dc757eafcc2d3b36b663295aac34abf0e42553fb6146",
       "evidence": [
         {
           "kind": "csv-rows",
@@ -35712,7 +35696,7 @@
     },
     {
       "id": "fullchunkqa-1eefdca88bd571c0ab2451c0-1",
-      "chunk_id": "knowledge-1eefdca88bd571c0ab2451c0",
+      "chunk_id": "knowledge-99e6fff529942d94f110f273",
       "questions": [
         "保存カレンダーで、2026-09-05の「いだてん岱明練習」から2026-09-11の「第４４回 全九州高校新人陸上大会熊本県予選」まで、予定日の日付差は何日？"
       ],
@@ -35720,7 +35704,7 @@
       "sources": [
         "out/2026/source.csv"
       ],
-      "source_sha256": "18f8c98233c1849d7109247d04512200891b625f1da38a1d5a95f9a25e077616",
+      "source_sha256": "b9595a14636574f05a26dc757eafcc2d3b36b663295aac34abf0e42553fb6146",
       "evidence": [
         {
           "kind": "csv-rows",
@@ -35796,7 +35780,7 @@
     },
     {
       "id": "fullchunkqa-1eefdca88bd571c0ab2451c0-2",
-      "chunk_id": "knowledge-1eefdca88bd571c0ab2451c0",
+      "chunk_id": "knowledge-99e6fff529942d94f110f273",
       "questions": [
         "保存カレンダーで、2026-09-05の「いだてん岱明練習」から2026-09-13の「練習会（桃田）（県民スポーツ大会中止に伴い中止）」まで、予定日の日付差は何日？"
       ],
@@ -35804,7 +35788,7 @@
       "sources": [
         "out/2026/source.csv"
       ],
-      "source_sha256": "18f8c98233c1849d7109247d04512200891b625f1da38a1d5a95f9a25e077616",
+      "source_sha256": "b9595a14636574f05a26dc757eafcc2d3b36b663295aac34abf0e42553fb6146",
       "evidence": [
         {
           "kind": "csv-rows",
@@ -35880,7 +35864,7 @@
     },
     {
       "id": "fullchunkqa-1eefdca88bd571c0ab2451c0-3",
-      "chunk_id": "knowledge-1eefdca88bd571c0ab2451c0",
+      "chunk_id": "knowledge-99e6fff529942d94f110f273",
       "questions": [
         "保存カレンダーで、2026-09-06の「第３４回 熊本マスターズ選手権大会」から2026-09-08の「練習会（岱明）（県民スポーツ大会中止に伴い中止）」まで、予定日の日付差は何日？"
       ],
@@ -35888,7 +35872,7 @@
       "sources": [
         "out/2026/source.csv"
       ],
-      "source_sha256": "18f8c98233c1849d7109247d04512200891b625f1da38a1d5a95f9a25e077616",
+      "source_sha256": "b9595a14636574f05a26dc757eafcc2d3b36b663295aac34abf0e42553fb6146",
       "evidence": [
         {
           "kind": "csv-rows",
@@ -35964,7 +35948,7 @@
     },
     {
       "id": "fullchunkqa-eabe0d0509a9dc2226c9fd6d-1",
-      "chunk_id": "knowledge-eabe0d0509a9dc2226c9fd6d",
+      "chunk_id": "knowledge-65e2f199195356cc5fe695f3",
       "questions": [
         "保存カレンダーで、2026-09-23の「秋分の日」から2026-09-24の「いだてん岱明練習」まで、予定日の日付差は何日？"
       ],
@@ -35972,7 +35956,7 @@
       "sources": [
         "out/2026/source.csv"
       ],
-      "source_sha256": "18f8c98233c1849d7109247d04512200891b625f1da38a1d5a95f9a25e077616",
+      "source_sha256": "b9595a14636574f05a26dc757eafcc2d3b36b663295aac34abf0e42553fb6146",
       "evidence": [
         {
           "kind": "csv-rows",
@@ -36048,7 +36032,7 @@
     },
     {
       "id": "fullchunkqa-eabe0d0509a9dc2226c9fd6d-2",
-      "chunk_id": "knowledge-eabe0d0509a9dc2226c9fd6d",
+      "chunk_id": "knowledge-65e2f199195356cc5fe695f3",
       "questions": [
         "保存カレンダーで、2026-09-23の「秋分の日」から2026-09-26の「第４回 熊本県中学生ジュニア陸上大会（第３回県ジュニア駅伝大会）」まで、予定日の日付差は何日？"
       ],
@@ -36056,7 +36040,7 @@
       "sources": [
         "out/2026/source.csv"
       ],
-      "source_sha256": "18f8c98233c1849d7109247d04512200891b625f1da38a1d5a95f9a25e077616",
+      "source_sha256": "b9595a14636574f05a26dc757eafcc2d3b36b663295aac34abf0e42553fb6146",
       "evidence": [
         {
           "kind": "csv-rows",
@@ -36132,7 +36116,7 @@
     },
     {
       "id": "fullchunkqa-eabe0d0509a9dc2226c9fd6d-3",
-      "chunk_id": "knowledge-eabe0d0509a9dc2226c9fd6d",
+      "chunk_id": "knowledge-65e2f199195356cc5fe695f3",
       "questions": [
         "保存カレンダーで、2026-09-24の「いだてん岱明練習」から2026-09-26の「第４回 熊本県中学生ジュニア陸上大会（第３回県ジュニア駅伝大会）」まで、予定日の日付差は何日？"
       ],
@@ -36140,7 +36124,7 @@
       "sources": [
         "out/2026/source.csv"
       ],
-      "source_sha256": "18f8c98233c1849d7109247d04512200891b625f1da38a1d5a95f9a25e077616",
+      "source_sha256": "b9595a14636574f05a26dc757eafcc2d3b36b663295aac34abf0e42553fb6146",
       "evidence": [
         {
           "kind": "csv-rows",
@@ -36216,7 +36200,7 @@
     },
     {
       "id": "fullchunkqa-ab40d2955c910de62df141ea-1",
-      "chunk_id": "knowledge-ab40d2955c910de62df141ea",
+      "chunk_id": "knowledge-67ee6d35eb6bd471aeba6b56",
       "questions": [
         "保存カレンダーで、2026-09-29の「岱明中 荒玉駅伝試走結果」から2026-10-03の「第４回 九州小学生交流大会」まで、予定日の日付差は何日？"
       ],
@@ -36224,91 +36208,7 @@
       "sources": [
         "out/2026/source.csv"
       ],
-      "source_sha256": "18f8c98233c1849d7109247d04512200891b625f1da38a1d5a95f9a25e077616",
-      "evidence": [
-        {
-          "kind": "csv-rows",
-          "header": [
-            "title",
-            "date",
-            "end_date",
-            "all_day",
-            "start_time",
-            "end_time",
-            "category",
-            "status",
-            "tags",
-            "urls",
-            "description",
-            "location",
-            "private",
-            "kind"
-          ],
-          "rows": [
-            {
-              "row": 330,
-              "cells": [
-                "岱明中 荒玉駅伝試走結果",
-                "2026-09-29",
-                "2026-09-29",
-                "true",
-                "",
-                "",
-                "練習",
-                "done",
-                "岱明中, いだてん岱明練習, practice:daiming, 駅伝, 荒玉駅伝, 試走, 結果",
-                "",
-                "岱明の結果: 松野1区3km 9:48、山本2区2.855km 9:52、今村3区3km 10:15、田上4区3km 10:14。5区一斉2.855kmは松本10:11・中尾快叶10:12。成績表: out/analysis/2026-09-29_aragyoku_trial_results.md\n\n1区 3km 松野　3:12　3:16　3:20　9:48\n2区 2.855km 山本　3:20　3:31　3:01　9:52\n3区 3km 今村　3:11　3:29　3:34　10:15\n4区 3km 田上　3:23　3:29　3:21　10:14\n\n5区 2.855km 一斉\n松本　10:11\n中尾　10:12\n西村　10:22\n南本　10:42\n永田　10:47\n鍋島　10:49\n田中　11:25\n池田　11:38\n中尾　12:13\n本田　12:13\n嶋田　12:26\n菱沼　12:58\n\n今村と田上の総タイムはラップ合計より各1秒多い報告値を保持。中尾12:13は氏名未確認の別選手。\n本番予想: 松本空羽6区3km 10:55→10:40、中尾快叶5区2.855km 10:02→9:55。",
-                "",
-                "false",
-                "event"
-              ]
-            },
-            {
-              "row": 334,
-              "cells": [
-                "第４回 九州小学生交流大会",
-                "2026-10-03",
-                "2026-10-03",
-                "true",
-                "",
-                "",
-                "予定",
-                "scheduled",
-                "ランニング, 県大会一覧",
-                "http://kumariku.com/info/wp-content/uploads/2026/04/b652729b4a1eecb47ebc1e6e01321a6e.pdf",
-                "熊本県陸上競技大会一覧（2026/5/31版）より追加",
-                "えがお健康スタジアム",
-                "false",
-                "event"
-              ]
-            }
-          ]
-        }
-      ],
-      "calculation": {
-        "operation": "calendar_elapsed_days",
-        "from_date": "2026-09-29",
-        "to_date": "2026-10-03",
-        "days": 4
-      },
-      "review": {
-        "method": "schema-reviewed-calendar-gap",
-        "status": "schema-reviewed",
-        "scope": "Public event title and saved start date only; elapsed days, no inferred completion or private personal events."
-      }
-    },
-    {
-      "id": "fullchunkqa-ab40d2955c910de62df141ea-2",
-      "chunk_id": "knowledge-ab40d2955c910de62df141ea",
-      "questions": [
-        "保存カレンダーで、2026-09-29の「岱明中 荒玉駅伝試走結果」から2026-10-04の「第５回 奥球磨駅伝大会」まで、予定日の日付差は何日？"
-      ],
-      "answer": "予定日の差は5日です。2026-09-29から2026-10-04までの日付差で、両端の日を含めた日数ではありません。保存された予定日を比較しており、実施済みかどうかを示すものではありません。",
-      "sources": [
-        "out/2026/source.csv"
-      ],
-      "source_sha256": "18f8c98233c1849d7109247d04512200891b625f1da38a1d5a95f9a25e077616",
+      "source_sha256": "b9595a14636574f05a26dc757eafcc2d3b36b663295aac34abf0e42553fb6146",
       "evidence": [
         {
           "kind": "csv-rows",
@@ -36351,9 +36251,9 @@
             {
               "row": 335,
               "cells": [
-                "第５回 奥球磨駅伝大会",
-                "2026-10-04",
-                "2026-10-04",
+                "第４回 九州小学生交流大会",
+                "2026-10-03",
+                "2026-10-03",
                 "true",
                 "",
                 "",
@@ -36362,7 +36262,7 @@
                 "ランニング, 県大会一覧",
                 "http://kumariku.com/info/wp-content/uploads/2026/04/b652729b4a1eecb47ebc1e6e01321a6e.pdf",
                 "熊本県陸上競技大会一覧（2026/5/31版）より追加",
-                "奥球磨",
+                "えがお健康スタジアム",
                 "false",
                 "event"
               ]
@@ -36373,8 +36273,8 @@
       "calculation": {
         "operation": "calendar_elapsed_days",
         "from_date": "2026-09-29",
-        "to_date": "2026-10-04",
-        "days": 5
+        "to_date": "2026-10-03",
+        "days": 4
       },
       "review": {
         "method": "schema-reviewed-calendar-gap",
@@ -36383,16 +36283,16 @@
       }
     },
     {
-      "id": "fullchunkqa-ab40d2955c910de62df141ea-3",
-      "chunk_id": "knowledge-ab40d2955c910de62df141ea",
+      "id": "fullchunkqa-ab40d2955c910de62df141ea-2",
+      "chunk_id": "knowledge-67ee6d35eb6bd471aeba6b56",
       "questions": [
-        "保存カレンダーで、2026-09-29の「岱明中 荒玉駅伝試走結果」から2026-10-10の「第 ４回 熊本県長距離記録会」まで、予定日の日付差は何日？"
+        "保存カレンダーで、2026-09-29の「岱明中 荒玉駅伝試走結果」から2026-10-04の「第５回 奥球磨駅伝大会」まで、予定日の日付差は何日？"
       ],
-      "answer": "予定日の差は11日です。2026-09-29から2026-10-10までの日付差で、両端の日を含めた日数ではありません。保存された予定日を比較しており、実施済みかどうかを示すものではありません。",
+      "answer": "予定日の差は5日です。2026-09-29から2026-10-04までの日付差で、両端の日を含めた日数ではありません。保存された予定日を比較しており、実施済みかどうかを示すものではありません。",
       "sources": [
         "out/2026/source.csv"
       ],
-      "source_sha256": "18f8c98233c1849d7109247d04512200891b625f1da38a1d5a95f9a25e077616",
+      "source_sha256": "b9595a14636574f05a26dc757eafcc2d3b36b663295aac34abf0e42553fb6146",
       "evidence": [
         {
           "kind": "csv-rows",
@@ -36433,7 +36333,91 @@
               ]
             },
             {
-              "row": 336,
+              "row": 337,
+              "cells": [
+                "第５回 奥球磨駅伝大会",
+                "2026-10-04",
+                "2026-10-04",
+                "true",
+                "",
+                "",
+                "予定",
+                "scheduled",
+                "ランニング, 県大会一覧",
+                "http://kumariku.com/info/wp-content/uploads/2026/04/b652729b4a1eecb47ebc1e6e01321a6e.pdf",
+                "熊本県陸上競技大会一覧（2026/5/31版）より追加",
+                "奥球磨",
+                "false",
+                "event"
+              ]
+            }
+          ]
+        }
+      ],
+      "calculation": {
+        "operation": "calendar_elapsed_days",
+        "from_date": "2026-09-29",
+        "to_date": "2026-10-04",
+        "days": 5
+      },
+      "review": {
+        "method": "schema-reviewed-calendar-gap",
+        "status": "schema-reviewed",
+        "scope": "Public event title and saved start date only; elapsed days, no inferred completion or private personal events."
+      }
+    },
+    {
+      "id": "fullchunkqa-ab40d2955c910de62df141ea-3",
+      "chunk_id": "knowledge-67ee6d35eb6bd471aeba6b56",
+      "questions": [
+        "保存カレンダーで、2026-09-29の「岱明中 荒玉駅伝試走結果」から2026-10-10の「第 ４回 熊本県長距離記録会」まで、予定日の日付差は何日？"
+      ],
+      "answer": "予定日の差は11日です。2026-09-29から2026-10-10までの日付差で、両端の日を含めた日数ではありません。保存された予定日を比較しており、実施済みかどうかを示すものではありません。",
+      "sources": [
+        "out/2026/source.csv"
+      ],
+      "source_sha256": "b9595a14636574f05a26dc757eafcc2d3b36b663295aac34abf0e42553fb6146",
+      "evidence": [
+        {
+          "kind": "csv-rows",
+          "header": [
+            "title",
+            "date",
+            "end_date",
+            "all_day",
+            "start_time",
+            "end_time",
+            "category",
+            "status",
+            "tags",
+            "urls",
+            "description",
+            "location",
+            "private",
+            "kind"
+          ],
+          "rows": [
+            {
+              "row": 330,
+              "cells": [
+                "岱明中 荒玉駅伝試走結果",
+                "2026-09-29",
+                "2026-09-29",
+                "true",
+                "",
+                "",
+                "練習",
+                "done",
+                "岱明中, いだてん岱明練習, practice:daiming, 駅伝, 荒玉駅伝, 試走, 結果",
+                "",
+                "岱明の結果: 松野1区3km 9:48、山本2区2.855km 9:52、今村3区3km 10:15、田上4区3km 10:14。5区一斉2.855kmは松本10:11・中尾快叶10:12。成績表: out/analysis/2026-09-29_aragyoku_trial_results.md\n\n1区 3km 松野　3:12　3:16　3:20　9:48\n2区 2.855km 山本　3:20　3:31　3:01　9:52\n3区 3km 今村　3:11　3:29　3:34　10:15\n4区 3km 田上　3:23　3:29　3:21　10:14\n\n5区 2.855km 一斉\n松本　10:11\n中尾　10:12\n西村　10:22\n南本　10:42\n永田　10:47\n鍋島　10:49\n田中　11:25\n池田　11:38\n中尾　12:13\n本田　12:13\n嶋田　12:26\n菱沼　12:58\n\n今村と田上の総タイムはラップ合計より各1秒多い報告値を保持。中尾12:13は氏名未確認の別選手。\n本番予想: 松本空羽6区3km 10:55→10:40、中尾快叶5区2.855km 10:02→9:55。",
+                "",
+                "false",
+                "event"
+              ]
+            },
+            {
+              "row": 338,
               "cells": [
                 "第 ４回 熊本県長距離記録会",
                 "2026-10-10",
@@ -36468,7 +36452,7 @@
     },
     {
       "id": "fullchunkqa-850ff73d6da4f426cb6d9f47-1",
-      "chunk_id": "knowledge-850ff73d6da4f426cb6d9f47",
+      "chunk_id": "knowledge-c4866faa0e2b6ecb5aeafc05",
       "questions": [
         "保存カレンダーで、2026-11-14の「第４回 熊本チャレンジ陸上大会」から2026-11-23の「勤労感謝の日」まで、予定日の日付差は何日？"
       ],
@@ -36476,7 +36460,7 @@
       "sources": [
         "out/2026/source.csv"
       ],
-      "source_sha256": "18f8c98233c1849d7109247d04512200891b625f1da38a1d5a95f9a25e077616",
+      "source_sha256": "b9595a14636574f05a26dc757eafcc2d3b36b663295aac34abf0e42553fb6146",
       "evidence": [
         {
           "kind": "csv-rows",
@@ -36498,7 +36482,7 @@
           ],
           "rows": [
             {
-              "row": 353,
+              "row": 355,
               "cells": [
                 "第４回 熊本チャレンジ陸上大会",
                 "2026-11-14",
@@ -36517,7 +36501,7 @@
               ]
             },
             {
-              "row": 355,
+              "row": 357,
               "cells": [
                 "勤労感謝の日",
                 "2026-11-23",
@@ -36552,7 +36536,7 @@
     },
     {
       "id": "fullchunkqa-850ff73d6da4f426cb6d9f47-2",
-      "chunk_id": "knowledge-850ff73d6da4f426cb6d9f47",
+      "chunk_id": "knowledge-c4866faa0e2b6ecb5aeafc05",
       "questions": [
         "保存カレンダーで、2026-11-14の「第４回 熊本チャレンジ陸上大会」から2026-12-11の「岱明中校内駅伝大会」まで、予定日の日付差は何日？"
       ],
@@ -36560,7 +36544,7 @@
       "sources": [
         "out/2026/source.csv"
       ],
-      "source_sha256": "18f8c98233c1849d7109247d04512200891b625f1da38a1d5a95f9a25e077616",
+      "source_sha256": "b9595a14636574f05a26dc757eafcc2d3b36b663295aac34abf0e42553fb6146",
       "evidence": [
         {
           "kind": "csv-rows",
@@ -36582,7 +36566,7 @@
           ],
           "rows": [
             {
-              "row": 353,
+              "row": 355,
               "cells": [
                 "第４回 熊本チャレンジ陸上大会",
                 "2026-11-14",
@@ -36601,7 +36585,7 @@
               ]
             },
             {
-              "row": 360,
+              "row": 362,
               "cells": [
                 "岱明中校内駅伝大会",
                 "2026-12-11",
@@ -36636,7 +36620,7 @@
     },
     {
       "id": "fullchunkqa-850ff73d6da4f426cb6d9f47-3",
-      "chunk_id": "knowledge-850ff73d6da4f426cb6d9f47",
+      "chunk_id": "knowledge-c4866faa0e2b6ecb5aeafc05",
       "questions": [
         "保存カレンダーで、2026-11-14の「第４回 熊本チャレンジ陸上大会」から2026-12-12の「第 ５回 熊本県長距離記録会」まで、予定日の日付差は何日？"
       ],
@@ -36644,7 +36628,7 @@
       "sources": [
         "out/2026/source.csv"
       ],
-      "source_sha256": "18f8c98233c1849d7109247d04512200891b625f1da38a1d5a95f9a25e077616",
+      "source_sha256": "b9595a14636574f05a26dc757eafcc2d3b36b663295aac34abf0e42553fb6146",
       "evidence": [
         {
           "kind": "csv-rows",
@@ -36666,7 +36650,7 @@
           ],
           "rows": [
             {
-              "row": 353,
+              "row": 355,
               "cells": [
                 "第４回 熊本チャレンジ陸上大会",
                 "2026-11-14",
@@ -36685,7 +36669,7 @@
               ]
             },
             {
-              "row": 361,
+              "row": 363,
               "cells": [
                 "第 ５回 熊本県長距離記録会",
                 "2026-12-12",

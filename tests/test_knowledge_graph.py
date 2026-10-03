@@ -480,7 +480,8 @@ def test_english_next_month_without_sessions_returns_no_other_months():
         graph=graph,
         include_context=False,
         top_k=30,
-        as_of_date=date(2026, 9, 24),
+        # as_of の翌月に実績がないこと（2026-10 に実績追加後は 11 月を対象にする）
+        as_of_date=date(2026, 10, 3),
     )
     assert result["matched_nodes"] == []
     assert result["refs"] == []
@@ -507,7 +508,8 @@ def test_period_without_practice_returns_no_unrelated_fallback():
         graph=graph,
         include_context=False,
         top_k=10,
-        as_of_date=date(2026, 9, 24),
+        # as_of の翌月に実績がないこと（2026-10 に実績追加後は 11 月を対象にする）
+        as_of_date=date(2026, 10, 3),
     )
     assert result["matched_nodes"] == []
     assert result["refs"] == []
