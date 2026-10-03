@@ -1,5 +1,26 @@
 [
   {
+    "source": "input/external/drive/shared/記録データベース/印刷用/中学選手権.md.meta.json",
+    "chunk_ids": [
+      "knowledge-4aabca3ebdde2352f0597964"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": {\"id\": \"1I7QT4i5wm9OvcfuYTn3OzimpXK2xC_VB\", \"importedAs\": \"markdown\", \"mimeType\": \"application/pdf\", \"modifiedTime\": \"2025-07-13T12:37:01.078Z\", \"parentId\": \"1hNqnqcGmO77H8sXZZThuTg1oAjzC2cSR\", \"skipReason\": null, \"status\": \"imported\", \"title\": \"中学選手権.pdf\", \"viewUrl\": \"https://drive.google.com/file/d/1I7QT4i5wm9OvcfuYTn3OzimpXK2xC_VB/view?usp=drivesdk\"}}"
+  },
+  {
+    "source": "input/external/drive/shared/記録データベース/印刷用/通信陸上.md.meta.json",
+    "chunk_ids": [
+      "knowledge-d4f2064066b2c2c5dc8b0d4f"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": {\"id\": \"1sxpVLWCg5TRRWq0N_pSJBIlreecMfaUY\", \"importedAs\": \"markdown\", \"mimeType\": \"application/pdf\", \"modifiedTime\": \"2025-07-13T12:39:12.570Z\", \"parentId\": \"1hNqnqcGmO77H8sXZZThuTg1oAjzC2cSR\", \"skipReason\": null, \"status\": \"imported\", \"title\": \"通信陸上.pdf\", \"viewUrl\": \"https://drive.google.com/file/d/1sxpVLWCg5TRRWq0N_pSJBIlreecMfaUY/view?usp=drivesdk\"}}"
+  },
+  {
+    "source": "input/external/drive/shared/記録データベース/印刷用/選手権と通信のタイム差.md.meta.json",
+    "chunk_ids": [
+      "knowledge-646834df9bbb0077239b01df"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": {\"id\": \"1Sav31Rh_MQPm0dKD4ed-RYlc2OAH7s84\", \"importedAs\": \"markdown\", \"mimeType\": \"application/pdf\", \"modifiedTime\": \"2025-07-13T12:36:43.103Z\", \"parentId\": \"1hNqnqcGmO77H8sXZZThuTg1oAjzC2cSR\", \"skipReason\": null, \"status\": \"imported\", \"title\": \"選手権と通信のタイム差 .pdf\", \"viewUrl\": \"https://drive.google.com/file/d/1Sav31Rh_MQPm0dKD4ed-RYlc2OAH7s84/view?usp=drivesdk\"}}"
+  },
+  {
     "source": "input/external/media-manifest.json",
     "chunk_ids": [
       "knowledge-ab226d8aee979e692560ebf2",
@@ -436,52 +457,11 @@
     "sample_json": "{\"context\": {\"filter\": \"daiming\"}, \"pointer\": \"/events/0\", \"value\": {\"all_day\": true, \"category\": \"予定\", \"date\": \"2025-03-08\", \"status\": \"scheduled\", \"title\": \"岱明中陸上部お別れ会\"}}"
   },
   {
-    "source": "input/idaten-corpus/drive-text/大会/2026年度/0920_中学駅伝金栗四三生誕の地なごみ大会/荒玉地区の結果.md.meta.json",
-    "chunk_ids": [
-      "knowledge-d8d8a554d1161be6da53715f"
-    ],
-    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": {\"id\": \"1TujEJG7vAeyQCWqZ5735CIHu69H0e3zyPkFgytpHgJ0\", \"importedAs\": \"markdown\", \"mimeType\": \"application/vnd.google-apps.document\", \"modifiedTime\": \"2026-09-27T13:54:49.724Z\", \"parentId\": \"1k-zW0irJ-OjDjqQwUQLZIs4C6PfuR211\", \"size\": 1277, \"skipReason\": null, \"status\": \"imported\", \"title\": \"荒玉地区の結果\", \"viewUrl\": \"https://docs.google.com/document/d/1TujEJG7vAeyQCWqZ5735CIHu69H0e3zyPkFgytpHgJ0/edit\"}}"
-  },
-  {
-    "source": "input/idaten-corpus/drive-text/大会/2026年度/0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）/荒玉地区の結果.md.meta.json",
-    "chunk_ids": [
-      "knowledge-03722df31c35b3f5ad3f259e"
-    ],
-    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": {\"id\": \"1XcNm5Sx6qSVyUy6F9ujYfiAmPXifzBTkyug4aYkrvGo\", \"importedAs\": \"markdown\", \"mimeType\": \"application/vnd.google-apps.document\", \"modifiedTime\": \"2026-09-27T13:54:46.248Z\", \"parentId\": \"1pUww3wPlyy4IoSNUy58qK9yhCRzeU_-2\", \"size\": 1607, \"skipReason\": null, \"status\": \"imported\", \"title\": \"荒玉地区の結果\", \"viewUrl\": \"https://docs.google.com/document/d/1XcNm5Sx6qSVyUy6F9ujYfiAmPXifzBTkyug4aYkrvGo/edit\"}}"
-  },
-  {
-    "source": "input/idaten-corpus/drive-text/大会/2026年度/1014-1015_荒玉中体連駅伝/区間オーダー_数式予想.json",
-    "chunk_ids": [
-      "knowledge-4aed2dd1f6fe4471ed3b2c64",
-      "knowledge-1cc7b933a074b7eba892f4fd",
-      "knowledge-bd7409f9b993a70e5846a67c",
-      "knowledge-45de254b04f0f2ca272aba07",
-      "knowledge-e77b7ae8732cdec0c6ae95fb",
-      "knowledge-c1b3f2222021e89553eba526",
-      "knowledge-17a04b03dd33d6fb58639c85",
-      "knowledge-423123e5b63da3ba17a0f0e2",
-      "knowledge-4f68b4f7588ab1d976fdb1f8",
-      "knowledge-3036bb53c2ba4058c503afbb",
-      "knowledge-9106881d23e789ae35cb6bea",
-      "knowledge-e3e4ae061fb1ce992a36f17b",
-      "knowledge-2df512a38e707c82c36641d7",
-      "knowledge-80b97f511b00267e40c8ee49",
-      "knowledge-80f670a0056573996e8f23e6",
-      "knowledge-662eeadbc4b41ae45ef78a1b",
-      "knowledge-94deaa7f61cbbfde73679413",
-      "knowledge-1fc0474609e52112d745ba7e",
-      "knowledge-ced90e17238d1a3d9fe176a6",
-      "knowledge-f7827f6ead6c2e0e72d6ab07",
-      "knowledge-907c7f5d235e2372c4bc9362"
-    ],
-    "sample_json": "{\"context\": {\"as_of\": \"2026-09-27\", \"event\": \"荒玉中体連駅伝\", \"event_date\": \"2026-10-14\", \"model\": \"aragyoku_2026_formula_v6_context\"}, \"pointer\": \"/event\", \"value\": \"荒玉中体連駅伝\"}"
-  },
-  {
     "source": "input/idaten-corpus/media-manifest.slim.json",
     "chunk_ids": [
-      "knowledge-a663779dd8fdc2d5a156eea0"
+      "knowledge-b770fbca6b13f57bdebc1360"
     ],
-    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": [{\"binary_saved\": false, \"topic\": \"ekiden\"}, {\"binary_saved\": false, \"topic\": \"ekiden\"}, {\"binary_saved\": false, \"topic\": \"ekiden\"}, {\"binary_saved\": false, \"topic\": \"ekiden\"}, {\"binary_saved\": false, \"topic\": \"ekiden\"}, {\"binary_saved\": false, \"topic\": \"ekiden\"}, {\"binary_saved\": false, \"topic\": \"ekiden\"}, {\"binary_saved\": false, \"topic\": \"ekiden\"}, {\"binary_saved\": false, \"topic\": \"ekiden\"}, {\"binary_saved\": false, \"topic\": \"ekiden\"}, {\"binary_saved\": false, \"topic\": \"ekiden\"}, {\"binary_saved\": false, \"topic\": \"ekiden\"}, {\"binary_saved\": false, \"topic\": \"ekiden\"}, {\"binary_saved\": false, \"topic\": \"ekiden\"}, {\"binary_saved\": false, \"topic\": \"ekiden\"}, {\"binary_saved\": false, \"topic\": \"ekiden\"}, {\"binary_saved\": false, \"topic\": \"ekiden\"}, {\"binary_saved\": false, \"topic\": \"ekiden\"}, {\"binary_saved\": false, \"topic\": \"ekiden\"}, {\"binary_saved\": false, \"topic\": \"ekiden\"}, {\"binary_saved\": false, \"topic\": \"ekiden\"}, {\"binary_saved\": false, \"topic\": \"ekiden\"}, {\"binary_saved\": false, \"topic\": \"ekiden\"}, {\"binary_saved\": false, \"topic\": \"ekiden\"}, {\"binary_saved\": false, \"topic\": \"ekiden\"}, {\"binary_saved\": false, \"topic\": \"ekiden\"}, {\"binary_saved\": false, \"topic\": \"ekiden\"}, {\"binary_saved\": true, \"topic\": \"analysis\"}, {\"binary_saved\": true, \"topic\": \"analysis\"}, {\"binary_saved\": true, \"topic\": \"analysis\"}]}"
+    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": [{\"binary_saved\": false, \"topic\": \"ekiden\"}, {\"binary_saved\": false, \"topic\": \"ekiden\"}, {\"binary_saved\": false, \"topic\": \"ekiden\"}, {\"binary_saved\": false, \"topic\": \"ekiden\"}, {\"binary_saved\": false, \"topic\": \"ekiden\"}, {\"binary_saved\": false, \"topic\": \"ekiden\"}, {\"binary_saved\": false, \"topic\": \"ekiden\"}, {\"binary_saved\": false, \"topic\": \"ekiden\"}, {\"binary_saved\": false, \"topic\": \"ekiden\"}, {\"binary_saved\": false, \"topic\": \"ekiden\"}, {\"binary_saved\": false, \"topic\": \"ekiden\"}, {\"binary_saved\": false, \"topic\": \"ekiden\"}, {\"binary_saved\": false, \"topic\": \"ekiden\"}, {\"binary_saved\": false, \"topic\": \"ekiden\"}, {\"binary_saved\": false, \"topic\": \"ekiden\"}, {\"binary_saved\": false, \"topic\": \"ekiden\"}, {\"binary_saved\": false, \"topic\": \"ekiden\"}, {\"binary_saved\": false, \"topic\": \"ekiden\"}, {\"binary_saved\": false, \"topic\": \"ekiden\"}, {\"binary_saved\": false, \"topic\": \"ekiden\"}, {\"binary_saved\": false, \"topic\": \"ekiden\"}, {\"binary_saved\": false, \"topic\": \"ekiden\"}, {\"binary_saved\": false, \"topic\": \"ekiden\"}, {\"binary_saved\": false, \"topic\": \"ekiden\"}, {\"binary_saved\": false, \"topic\": \"ekiden\"}, {\"binary_saved\": false, \"topic\": \"ekiden\"}, {\"binary_saved\": false, \"topic\": \"ekiden\"}, {\"binary_saved\": true, \"topic\": \"analysis\"}, {\"binary_saved\": true, \"topic\": \"analysis\"}, {\"binary_saved\": true, \"topic\": \"analysis\"}, {\"binary_saved\": true, \"id\": \"aragyoku-course-common-points\", \"ocr\": \"input/aragyoku/course-points.md\", \"path\": \"input/aragyoku/course-points/aragyoku-course-common-points.png\", \"title\": \"荒玉駅伝 男女コース共通ポイント（橋の上）\", \"topic\": \"ekiden\"}]}"
   },
   {
     "source": "input/idaten-corpus/practice/practice.2025.json",

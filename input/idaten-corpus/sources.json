@@ -144,6 +144,14 @@
     "corpus": "aragyoku/course-videos.md"
   },
   {
+    "source": "input/aragyoku/course-points.md",
+    "corpus": "aragyoku/course-points.md"
+  },
+  {
+    "source": "input/aragyoku/course-points.json",
+    "corpus": "aragyoku/course-points.json"
+  },
+  {
     "source": "input/aragyoku/transcripts/2012-女子.json",
     "corpus": "aragyoku/transcripts/2012-女子.json"
   },
@@ -373,6 +381,14 @@
     "corpus": "out-analysis/2026-09-21_arato-tamana_middle_school_sb_updates.md"
   },
   {
+    "source": "out/analysis/2026-09-29_aragyoku_trial_results.json",
+    "corpus": "out-analysis/2026-09-29_aragyoku_trial_results.json"
+  },
+  {
+    "source": "out/analysis/2026-09-29_aragyoku_trial_results.md",
+    "corpus": "out-analysis/2026-09-29_aragyoku_trial_results.md"
+  },
+  {
     "source": "out/analysis/2026_aragyoku_men_1500m_sb_individual_top20.md",
     "corpus": "out-analysis/2026_aragyoku_men_1500m_sb_individual_top20.md"
   },
@@ -529,16 +545,40 @@
     "corpus": "out-analysis/aragyoku_2024_2025_focus_teams.md"
   },
   {
+    "source": "out/analysis/aragyoku_2026_formula_coefficients.json",
+    "corpus": "out-analysis/aragyoku_2026_formula_coefficients.json"
+  },
+  {
+    "source": "out/analysis/aragyoku_2026_formula_report.md",
+    "corpus": "out-analysis/aragyoku_2026_formula_report.md"
+  },
+  {
+    "source": "out/analysis/aragyoku_2026_recent_results.json",
+    "corpus": "out-analysis/aragyoku_2026_recent_results.json"
+  },
+  {
     "source": "out/analysis/aragyoku_all_teams_average_pace.md",
     "corpus": "out-analysis/aragyoku_all_teams_average_pace.md"
+  },
+  {
+    "source": "out/analysis/aragyoku_daiming_rivals.md",
+    "corpus": "out-analysis/aragyoku_daiming_rivals.md"
   },
   {
     "source": "out/analysis/aragyoku_leg_awards.md",
     "corpus": "out-analysis/aragyoku_leg_awards.md"
   },
   {
+    "source": "out/analysis/aragyoku_leg_time_rank_guide.md",
+    "corpus": "out-analysis/aragyoku_leg_time_rank_guide.md"
+  },
+  {
     "source": "out/analysis/aragyoku_meet_records.md",
     "corpus": "out-analysis/aragyoku_meet_records.md"
+  },
+  {
+    "source": "out/analysis/aragyoku_rank_benchmark_guide.md",
+    "corpus": "out-analysis/aragyoku_rank_benchmark_guide.md"
   },
   {
     "source": "out/analysis/aragyoku_sb_calibration.json",
@@ -895,6 +935,18 @@
   {
     "source": "docs/adr/057-athlete-team-profiles.md",
     "corpus": "repo-docs/adr/057-athlete-team-profiles.md"
+  },
+  {
+    "source": "docs/adr/058-aragyoku-line-course-images.md",
+    "corpus": "repo-docs/adr/058-aragyoku-line-course-images.md"
+  },
+  {
+    "source": "docs/adr/059-prepared-qa-answers.md",
+    "corpus": "repo-docs/adr/059-prepared-qa-answers.md"
+  },
+  {
+    "source": "docs/adr/060-prepared-qa-grounded-synthesis.md",
+    "corpus": "repo-docs/adr/060-prepared-qa-grounded-synthesis.md"
   },
   {
     "source": "docs/idaten-import/phase0-media-ocr.md",
@@ -1383,6 +1435,10 @@
   {
     "source": "docs/kg-html-phase1.md",
     "corpus": "repo-docs/kg-html-phase1.md"
+  },
+  {
+    "source": "docs/knowledge-qa-checkpoint.md",
+    "corpus": "repo-docs/knowledge-qa-checkpoint.md"
   },
   {
     "source": "docs/tamana-weather.md",
@@ -2649,6 +2705,14 @@
     "corpus": "drive-text/大会/2026年度/0920_中学駅伝金栗四三生誕の地なごみ大会/男子成績表.md"
   },
   {
+    "source": "input/external/drive/shared/大会/2026年度/0920_中学駅伝金栗四三生誕の地なごみ大会/荒玉地区の結果.md",
+    "corpus": "drive-text/大会/2026年度/0920_中学駅伝金栗四三生誕の地なごみ大会/荒玉地区の結果.md"
+  },
+  {
+    "source": "input/external/drive/shared/大会/2026年度/0920_中学駅伝金栗四三生誕の地なごみ大会/荒玉地区の結果.md.meta.json",
+    "corpus": "drive-text/大会/2026年度/0920_中学駅伝金栗四三生誕の地なごみ大会/荒玉地区の結果.md.meta.json"
+  },
+  {
     "source": "input/external/drive/shared/大会/2026年度/0920_中学駅伝金栗四三生誕の地なごみ大会/開催要項.md",
     "corpus": "drive-text/大会/2026年度/0920_中学駅伝金栗四三生誕の地なごみ大会/開催要項.md"
   },
@@ -2717,6 +2781,14 @@
     "corpus": "drive-text/大会/2026年度/0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）/荒玉地区_ジュニア結果抜粋.md"
   },
   {
+    "source": "input/external/drive/shared/大会/2026年度/0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）/荒玉地区の結果.md",
+    "corpus": "drive-text/大会/2026年度/0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）/荒玉地区の結果.md"
+  },
+  {
+    "source": "input/external/drive/shared/大会/2026年度/0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）/荒玉地区の結果.md.meta.json",
+    "corpus": "drive-text/大会/2026年度/0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）/荒玉地区の結果.md.meta.json"
+  },
+  {
     "source": "input/external/drive/shared/大会/2026年度/1010_第４回熊本県長距離記録会/概要.md",
     "corpus": "drive-text/大会/2026年度/1010_第４回熊本県長距離記録会/概要.md"
   },
@@ -2753,6 +2825,18 @@
     "corpus": "drive-text/大会/2026年度/1014-1015_荒玉中体連駅伝/区間オーダー_SB予想_coverage.csv"
   },
   {
+    "source": "input/external/drive/shared/大会/2026年度/1014-1015_荒玉中体連駅伝/区間オーダー_数式予想.json",
+    "corpus": "drive-text/大会/2026年度/1014-1015_荒玉中体連駅伝/区間オーダー_数式予想.json"
+  },
+  {
+    "source": "input/external/drive/shared/大会/2026年度/1014-1015_荒玉中体連駅伝/区間オーダー_数式予想.md",
+    "corpus": "drive-text/大会/2026年度/1014-1015_荒玉中体連駅伝/区間オーダー_数式予想.md"
+  },
+  {
+    "source": "input/external/drive/shared/大会/2026年度/1014-1015_荒玉中体連駅伝/区間オーダー_数式予想_coverage.csv",
+    "corpus": "drive-text/大会/2026年度/1014-1015_荒玉中体連駅伝/区間オーダー_数式予想_coverage.csv"
+  },
+  {
     "source": "input/external/drive/shared/大会/2026年度/1014-1015_荒玉中体連駅伝/女子区間オーダー_SB予想.md",
     "corpus": "drive-text/大会/2026年度/1014-1015_荒玉中体連駅伝/女子区間オーダー_SB予想.md"
   },
@@ -2761,8 +2845,20 @@
     "corpus": "drive-text/大会/2026年度/1014-1015_荒玉中体連駅伝/女子区間オーダー_SB予想_coverage.csv"
   },
   {
+    "source": "input/external/drive/shared/大会/2026年度/1014-1015_荒玉中体連駅伝/女子区間オーダー_数式予想.md",
+    "corpus": "drive-text/大会/2026年度/1014-1015_荒玉中体連駅伝/女子区間オーダー_数式予想.md"
+  },
+  {
+    "source": "input/external/drive/shared/大会/2026年度/1014-1015_荒玉中体連駅伝/女子区間オーダー_数式予想_coverage.csv",
+    "corpus": "drive-text/大会/2026年度/1014-1015_荒玉中体連駅伝/女子区間オーダー_数式予想_coverage.csv"
+  },
+  {
     "source": "input/external/drive/shared/大会/2026年度/1014-1015_荒玉中体連駅伝/岱明_暫定区間オーダー.md",
     "corpus": "drive-text/大会/2026年度/1014-1015_荒玉中体連駅伝/岱明_暫定区間オーダー.md"
+  },
+  {
+    "source": "input/external/drive/shared/大会/2026年度/1014-1015_荒玉中体連駅伝/校別展開_数式予想.md",
+    "corpus": "drive-text/大会/2026年度/1014-1015_荒玉中体連駅伝/校別展開_数式予想.md"
   },
   {
     "source": "input/external/drive/shared/大会/2026年度/1014-1015_荒玉中体連駅伝/校別展開予想.md",
@@ -2783,6 +2879,14 @@
   {
     "source": "input/external/drive/shared/大会/2026年度/1014-1015_荒玉中体連駅伝/男子区間オーダー_SB予想_coverage.csv",
     "corpus": "drive-text/大会/2026年度/1014-1015_荒玉中体連駅伝/男子区間オーダー_SB予想_coverage.csv"
+  },
+  {
+    "source": "input/external/drive/shared/大会/2026年度/1014-1015_荒玉中体連駅伝/男子区間オーダー_数式予想.md",
+    "corpus": "drive-text/大会/2026年度/1014-1015_荒玉中体連駅伝/男子区間オーダー_数式予想.md"
+  },
+  {
+    "source": "input/external/drive/shared/大会/2026年度/1014-1015_荒玉中体連駅伝/男子区間オーダー_数式予想_coverage.csv",
+    "corpus": "drive-text/大会/2026年度/1014-1015_荒玉中体連駅伝/男子区間オーダー_数式予想_coverage.csv"
   },
   {
     "source": "input/external/drive/shared/大会/2026年度/1211_岱明中校内駅伝大会/概要.md",
@@ -2854,7 +2958,7 @@
   {
     "source": "out/2026/practice.json",
     "corpus": "practice/practice.2026.json",
-    "note": "filtered 42 items"
+    "note": "filtered 45 items"
   },
   {
     "source": "out/daiming-practice-menus-kpace.md",
@@ -2913,14 +3017,6 @@
   {
     "source": "input/external/media-manifest.json",
     "corpus": "media-manifest.slim.json",
-    "note": "ekiden+analysis 30 items"
-  },
-  {
-    "source": "input/aragyoku/course-points.md",
-    "corpus": "aragyoku/course-points.md"
-  },
-  {
-    "source": "input/aragyoku/course-points.json",
-    "corpus": "aragyoku/course-points.json"
+    "note": "ekiden+analysis 31 items"
   }
 ]

@@ -4426,6 +4426,18 @@ events:
   tags:
   - 岱明中
   - 学校行事
+- title: 第３回佐賀長距離記録会
+  date: '2026-09-26'
+  all_day: true
+  category: 大会
+  status: done
+  description: |
+    佐賀県陸上競技協会の競技別結果一覧を公開。
+    中学生記録データ: input/external/drive/personal/t-tsuchiyama/sb/by-year/2026-single-table.csv
+    公式結果: http://breaking.sagarikujyo.jp/R08/R0803_sagakirokukai/tt.html
+  tags:
+  - 陸上競技
+  - 大会結果
 - title: 第４回 熊本県中学生ジュニア陸上大会（第３回県ジュニア駅伝大会）
   date: '2026-09-26'
   all_day: true

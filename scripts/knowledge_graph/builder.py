@@ -106,6 +106,11 @@ SOURCE_GLOBS: list[tuple[str, list[str], str]] = [
         "t-tsuchiyama 中学生 SB（ワイド＋年度別）目録",
     ),
     (
+        "input/external/drive/personal/t-tsuchiyama/sb/by-year/2026-single-table.csv",
+        ["athlete_records", "calendar"],
+        "2026年度 中学生大会記録（第３回佐賀長距離記録会を含む）",
+    ),
+    (
         "input/external/sb/middle-school/wide/中学生SB.csv",
         ["athlete_records"],
         "中学生ワイド SB（Drive SBデータベース）",
@@ -317,6 +322,17 @@ QUERY_HINTS: list[tuple[str, str, list[str]]] = [
             "corpus:notion-db",
             "corpus:analysis-ocr",
             "source:input/external/sb/middle-school/wide/中学生SB.csv",
+        ],
+    ),
+    (
+        "第３回佐賀長距離記録会の結果は？",
+        "2026-09-26開催。大会別結果は佐賀県陸上競技協会の公式結果一覧、選手の2026年度SB採用記録は年度別single-table CSVとPrepared Q&Aを確認",
+        [
+            "topic:athlete_records",
+            "topic:calendar",
+            "source:input/events.2026.yaml",
+            "source:input/external/drive/personal/t-tsuchiyama/sb/by-year/2026-single-table.csv",
+            "source:input/faq/prepared-qa.v1.yaml",
         ],
     ),
     (

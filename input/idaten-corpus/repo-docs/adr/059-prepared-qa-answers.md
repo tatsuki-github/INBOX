@@ -63,12 +63,20 @@ LINE Q&A は RAG / LLM で都度組み立てると、ぶれ・コーチ誘導・
   `scripts/refresh_prepared_qa_team_results.py`（荒玉チーム結果・去年/結果は？）/
   `scripts/refresh_prepared_qa_leg_boards.py`（区間順位ボード・去年語順）/
   `scripts/expand_prepared_qa_question_variants.py`（質問表記ゆれの一括拡充）/
-  `scripts/generate_prepared_qa_coach_analysis.py`（指導者向け分析Q&A・前年比/区間/SB等）→
+  `scripts/generate_prepared_qa_coach_analysis.py`（指導者向け分析Q&A・前年比/区間/SB等）/
+  `scripts/generate_prepared_qa_aragyoku_pass_rank.py`（2026数式予想のN区まで通過順位・総合順位）/
+  `scripts/generate_prepared_qa_aragyoku_leg_time_rank.py`（区間タイム→区間順位目安・男女全区間・2024-2025）/
+  `scripts/generate_prepared_qa_aragyoku_rank_benchmark.py`（区間N位基準タイム・男女全区間・1–15位・2024-2025）/
+  `scripts/improve_prepared_qa_accuracy.py`（OCR誤吸抑制・数式/校別優先・区間距離取りこぼし回収）/
+  `scripts/generate_prepared_qa_edge_5000.py`（重箱の隅向け+5000: 2012–2023大会別記録・
+  区間上位・通過順位・学年・平均ペース等）→
   `scripts/sync_prepared_qa.py`。
   大会名正規化: `backend/src/domain/aragyokuAliases.ts`
   （荒玉中体連駅伝 / 郡市駅伝 / 玉名荒尾中体連駅伝 → 荒玉）。
   マッチ時の同義語: `preparedQa.ts` の `SYNONYM_GROUPS`
   （自己ベスト/ベストタイム、優勝校/優勝チーム、地図/画像、出れる/出場できる 等）。
+  「距離」単独は区間距離へ潰さない。数式予想／校別展開質問では `analysis-ocr` を減点し
+  school-expand / formula / preview を加点する。
 
 ## Test strategy
 
@@ -87,3 +95,12 @@ LINE Q&A は RAG / LLM で都度組み立てると、ぶれ・コーチ誘導・
 - `backend/tests/preparedQaConstraints.test.ts`: 男女・区間・距離の矛盾除外、複数区間、距離単位の同値性
 - `answerQuestion` 代表問で `prepared:` ソース
 - KG Source 登録と `--check`
+
+## Additional comparison batch (2026-10-01)
+
+- `scripts/generate_prepared_qa_edge_comparisons.py` adds **5000 new entries** on top of the existing 29,995, for a total of 34,995.
+- Coverage: total-time gaps (800), same-leg split gaps (2400), intermediate cumulative gaps (1200), and relative gains/losses from an intermediate checkpoint to the finish (600). Selection rotates across 2012–2025, both sexes and applicable legs, prioritizing 岱明 comparisons within each group. These are separate factual questions, not extra aliases counted as entries.
+- Only two schools in the same year, sex and leg are compared. Cumulative/total claims require all splits to have `status: ok`, all cumulative sums to agree, and the last sum to equal the total. Missing/uncertain names are excluded from split answers. Same times are reported as ties without inferring official ranks. No cross-course/year performance conclusions are drawn.
+- `backend/data/eval-gaps/edge-comparisons-5000.jsonl` stores each answer's two JSON pointers and source SHA-256. `--check` reconstructs all 5000 entries, checks identity/question/answer/source equality and detects source drift. Running the generator again verifies the existing batch without adding duplicates.
+- The general factual auditor also reconstructs the comparison family and requires exact answer equality. Independent regression fixtures cover tie times, opposite split/cumulative leaders, overtaking, invalid seconds, missing names and inconsistent sums. The backend catalog test checks every new question for normalized collisions and an exact prepared-answer hit.
+- The source snapshots are transcribed race records, not independently reverified official originals. Arithmetic checks do not establish that the upstream transcription is error-free or that live external results are current.

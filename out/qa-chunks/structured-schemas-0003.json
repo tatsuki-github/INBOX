@@ -244,6 +244,13 @@
     "sample_json": "{\"context\": {}, \"pointer\": \"/event\", \"value\": {\"date\": \"2026-09-20\", \"sources\": [\"女子成績表.pdf\", \"男子成績表.pdf\", \"女子成績表.jpg\", \"男子成績表_1.jpg\", \"男子成績表_2.jpg\"], \"title\": \"第12回 中学駅伝金栗四三生誕の地なごみ大会\", \"venue\": \"和水町三加和公民館前発着周回コース\"}}"
   },
   {
+    "source": "input/external/drive/shared/大会/2026年度/0920_中学駅伝金栗四三生誕の地なごみ大会/荒玉地区の結果.md.meta.json",
+    "chunk_ids": [
+      "knowledge-dce2e0137d787868088d2d57"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": {\"id\": \"1TujEJG7vAeyQCWqZ5735CIHu69H0e3zyPkFgytpHgJ0\", \"importedAs\": \"markdown\", \"mimeType\": \"application/vnd.google-apps.document\", \"modifiedTime\": \"2026-09-27T13:54:49.724Z\", \"parentId\": \"1k-zW0irJ-OjDjqQwUQLZIs4C6PfuR211\", \"size\": 1277, \"skipReason\": null, \"status\": \"imported\", \"title\": \"荒玉地区の結果\", \"viewUrl\": \"https://docs.google.com/document/d/1TujEJG7vAeyQCWqZ5735CIHu69H0e3zyPkFgytpHgJ0/edit\"}}"
+  },
+  {
     "source": "input/external/drive/shared/大会/2026年度/0920_中学駅伝金栗四三生誕の地なごみ大会/開催要項.md.meta.json",
     "chunk_ids": [
       "knowledge-7aeaa60abb4dc09c0fd79076"
@@ -286,6 +293,13 @@
     "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": {\"id\": \"1oCaamGYThaERXPUKW5KryMPtR-iwdllxxbtiZi5JeAw\", \"mimeType\": \"application/vnd.google-apps.document\", \"modifiedTime\": \"2026-09-08T12:18:19.780Z\", \"parentId\": \"1pUww3wPlyy4IoSNUy58qK9yhCRzeU_-2\", \"title\": \"概要\", \"viewUrl\": \"https://docs.google.com/document/d/1oCaamGYThaERXPUKW5KryMPtR-iwdllxxbtiZi5JeAw/edit\"}}"
   },
   {
+    "source": "input/external/drive/shared/大会/2026年度/0926_第４回県ジュニア陸上（第３回県ジュニア駅伝）/荒玉地区の結果.md.meta.json",
+    "chunk_ids": [
+      "knowledge-1fc5baac1875df9239a712a5"
+    ],
+    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": {\"id\": \"1XcNm5Sx6qSVyUy6F9ujYfiAmPXifzBTkyug4aYkrvGo\", \"importedAs\": \"markdown\", \"mimeType\": \"application/vnd.google-apps.document\", \"modifiedTime\": \"2026-09-27T13:54:46.248Z\", \"parentId\": \"1pUww3wPlyy4IoSNUy58qK9yhCRzeU_-2\", \"size\": 1607, \"skipReason\": null, \"status\": \"imported\", \"title\": \"荒玉地区の結果\", \"viewUrl\": \"https://docs.google.com/document/d/1XcNm5Sx6qSVyUy6F9ujYfiAmPXifzBTkyug4aYkrvGo/edit\"}}"
+  },
+  {
     "source": "input/external/drive/shared/大会/2026年度/1010_第４回熊本県長距離記録会/概要.md.meta.json",
     "chunk_ids": [
       "knowledge-98c9aaa12e7e3bd8b9bc6030"
@@ -305,6 +319,33 @@
       "knowledge-f5b4c2a8c20871ea1331f549"
     ],
     "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": {\"adjustments\": [{\"athlete\": \"松野 凛空\", \"reason\": \"本番1区は9:20でいける\", \"set_sec\": 560}, {\"athlete\": \"田上 颯人\", \"leg\": 4, \"reason\": \"4区は9:40でいける\", \"set_sec\": 580, \"team\": \"岱明中\"}, {\"athlete\": \"今村 昇磨\", \"delta_sec\": -8, \"reason\": \"\"}, {\"athlete\": \"山本 哲瑠\", \"delta_sec\": -3, \"reason\": \"\"}, {\"leg\": 1, \"min_sec\": 530, \"reason\": \"1区はどんなに速くても8:50前後が現実線\", \"team\": \"菊水中\"}, {\"delta_sec\": 20, \"reason\": \"\", \"team\": \"南関中\"}], \"formula_adjustments\": [{\"delta_sec\": 10, \"leg\": 1, \"reason\": \"ジュニア男子で玉名高附43:11・南関44:15・岱明44:23。現行予想では南関が玉名高附とほぼ同タイムのため、地区比較を反映して各区+10秒\", \"team\": \"南関中\"}, {\"delta_sec\": 10, \"leg\": 2, \"reason\": \"ジュニア男子の学校間比較を反映する南関チーム補正\", \"team\": \"南関中\"}, {\"delta_sec\": 10, \"leg\": 3, \"reason\": \"ジュニア男子の学校間比較を反映する南関チーム補正\", \"team\": \"南関中\"}, {\"delta_sec\": 10, \"leg\": 4, \"reason\": \"ジュニア男子の学校間比較を反映する南関チーム補正\", \"team\": \"南関中\"}, {\"delta_sec\": 10, \"leg\": 5, \"reason\": \"ジュニア男子の学校間比較を反映する南関チーム補正\", \"team\": \"南関中\"}, {\"delta_sec\": 10, \"leg\": 6, \"reason\": \"ジュニア男子の学校間比較を反映する南関チーム補正\", \"team\": \"南関中\"}, {\"athlete\": \"隈部侑成\", \"reason\": \"\", \"set_sec\": 538, \"team\": \"菊水中\"}, {\"athlete\": \"柿本晴仁\", \"reason\": \"\", \"set_sec\": 555, \"team\": \"玉陵中\"}, {\"athlete\": \"小倉 十和\", \"reason\": \"\", \"set_sec\": 568, \"team\": \"玉名高附\"}, {\"athlete\": \"明瀬七跳\", \"reason\": \"なごみ駅伝で明瀬七跳が10:58、中尾快叶が11:03。中尾の現行予測10:02とほぼ同等か少し速い評価を反映し、10:00に設定\", \"set_sec\": 600, \"team\": \"菊水中\"}, {\"athlete\": \"松山哲丈\", \"reason\": \"2026-09-21の3000m SB 9:54.85を本人記録として反映。SBは所属変更により自動観測から外れていたため、3km予測を9:55に設定\", \"set_sec\": 595, \"team\": \"菊水中\"}, {\"athlete\": \"田中 翔大\", \"reason\": \"2026年ジュニア駅伝で田中翔大・田上颯人はともに2.6km 8:26、山本哲瑠は8:34。田上と同等で山本より速い評価を保持。2区2.855kmの9:12を6区3kmへ距離指数1.116866で換算し9:43に設定\", \"set_sec\": 583, \"team\": \"南関中\"}, {\"athlete\": \"松本 空羽\", \"reason\": \"\", \"set_sec\": 640, \"team\": \"岱明中\"}, {\"athlete\": \"中尾 快叶\", \"reason\": \"\", \"set_sec\": 595, \"team\": \"岱明中\"}, {\"athlete\": \"山本 哲瑠\", \"delta_sec\": 7, \"reason\": \"2026-09-29ユーザー指示により当初の数式予想へ計7秒加算（9:15→9:20→9:22）\", \"team\": \"岱明中\"}, {\"athlete\": \"今村 昇磨\", \"reason\": \"2026-09-29ユーザー指示により本番予想を9:45に設定\", \"set_sec\": 585, \"team\": \"岱明中\"},"
+  },
+  {
+    "source": "input/external/drive/shared/大会/2026年度/1014-1015_荒玉中体連駅伝/区間オーダー_数式予想.json",
+    "chunk_ids": [
+      "knowledge-8fa93fb1eb08f7c070933800",
+      "knowledge-19e63c824043d73af7e1ea38",
+      "knowledge-97cb5af98828e0276c6f9990",
+      "knowledge-c56bac187901bdab7c60aaac",
+      "knowledge-aad9210297bb70cb7bb522ed",
+      "knowledge-e5e512f37427668810344e4a",
+      "knowledge-3c3bd92fdc35bfece54092c9",
+      "knowledge-ac1ae543e302ab9a1cc9fc06",
+      "knowledge-8cddfaa385b94b389b2af751",
+      "knowledge-97abd419a56f9fb7978ba65f",
+      "knowledge-3a0550631de4e4b54144f4fc",
+      "knowledge-847ebd448548196ed6c84be7",
+      "knowledge-80b39c6205f0c9708706c233",
+      "knowledge-b1b9fb9f325a9a3a567c09e0",
+      "knowledge-50e3ef28af40853abf1c539e",
+      "knowledge-73f55fb4bf9b7b0c34271696",
+      "knowledge-d8f1dd8cd09e53df63a9b4f4",
+      "knowledge-297af9764fef32bc4688da8d",
+      "knowledge-77947c2972e6970a2bd9de23",
+      "knowledge-98e08e97ba03f48ae9754a8c",
+      "knowledge-3b41e51a7f905b13561dd57a"
+    ],
+    "sample_json": "{\"context\": {\"as_of\": \"2026-09-27\", \"event\": \"荒玉中体連駅伝\", \"event_date\": \"2026-10-14\", \"model\": \"aragyoku_2026_formula_v6_context\"}, \"pointer\": \"/event\", \"value\": \"荒玉中体連駅伝\"}"
   },
   {
     "source": "input/external/drive/shared/大会/2026年度/1014-1015_荒玉中体連駅伝/概要.md.meta.json",
@@ -403,26 +444,5 @@
       "knowledge-edcfc7e1e0ed17f5d84f3a13"
     ],
     "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": {\"bytes\": 170668, \"id\": \"1JTy7bHPLOTD3rwteRhEQCxdlyKlVMxeccqrb8PYDXfc\", \"importedAs\": \"csv\", \"lines\": 643, \"mimeType\": \"application/vnd.google-apps.spreadsheet\", \"status\": \"imported\", \"title\": \"中学生記録\", \"viewUrl\": \"https://docs.google.com/spreadsheets/d/1JTy7bHPLOTD3rwteRhEQCxdlyKlVMxeccqrb8PYDXfc/edit\"}}"
-  },
-  {
-    "source": "input/external/drive/shared/記録データベース/印刷用/中学選手権.md.meta.json",
-    "chunk_ids": [
-      "knowledge-4aabca3ebdde2352f0597964"
-    ],
-    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": {\"id\": \"1I7QT4i5wm9OvcfuYTn3OzimpXK2xC_VB\", \"importedAs\": \"markdown\", \"mimeType\": \"application/pdf\", \"modifiedTime\": \"2025-07-13T12:37:01.078Z\", \"parentId\": \"1hNqnqcGmO77H8sXZZThuTg1oAjzC2cSR\", \"skipReason\": null, \"status\": \"imported\", \"title\": \"中学選手権.pdf\", \"viewUrl\": \"https://drive.google.com/file/d/1I7QT4i5wm9OvcfuYTn3OzimpXK2xC_VB/view?usp=drivesdk\"}}"
-  },
-  {
-    "source": "input/external/drive/shared/記録データベース/印刷用/通信陸上.md.meta.json",
-    "chunk_ids": [
-      "knowledge-d4f2064066b2c2c5dc8b0d4f"
-    ],
-    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": {\"id\": \"1sxpVLWCg5TRRWq0N_pSJBIlreecMfaUY\", \"importedAs\": \"markdown\", \"mimeType\": \"application/pdf\", \"modifiedTime\": \"2025-07-13T12:39:12.570Z\", \"parentId\": \"1hNqnqcGmO77H8sXZZThuTg1oAjzC2cSR\", \"skipReason\": null, \"status\": \"imported\", \"title\": \"通信陸上.pdf\", \"viewUrl\": \"https://drive.google.com/file/d/1sxpVLWCg5TRRWq0N_pSJBIlreecMfaUY/view?usp=drivesdk\"}}"
-  },
-  {
-    "source": "input/external/drive/shared/記録データベース/印刷用/選手権と通信のタイム差.md.meta.json",
-    "chunk_ids": [
-      "knowledge-646834df9bbb0077239b01df"
-    ],
-    "sample_json": "{\"context\": {}, \"pointer\": \"\", \"value\": {\"id\": \"1Sav31Rh_MQPm0dKD4ed-RYlc2OAH7s84\", \"importedAs\": \"markdown\", \"mimeType\": \"application/pdf\", \"modifiedTime\": \"2025-07-13T12:36:43.103Z\", \"parentId\": \"1hNqnqcGmO77H8sXZZThuTg1oAjzC2cSR\", \"skipReason\": null, \"status\": \"imported\", \"title\": \"選手権と通信のタイム差 .pdf\", \"viewUrl\": \"https://drive.google.com/file/d/1Sav31Rh_MQPm0dKD4ed-RYlc2OAH7s84/view?usp=drivesdk\"}}"
   }
 ]

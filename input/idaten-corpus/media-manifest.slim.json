@@ -118,5 +118,13 @@
   {
     "topic": "analysis",
     "binary_saved": true
+  },
+  {
+    "id": "aragyoku-course-common-points",
+    "title": "荒玉駅伝 男女コース共通ポイント（橋の上）",
+    "topic": "ekiden",
+    "ocr": "input/aragyoku/course-points.md",
+    "path": "input/aragyoku/course-points/aragyoku-course-common-points.png",
+    "binary_saved": true
   }
 ]
