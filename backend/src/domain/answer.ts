@@ -12,6 +12,7 @@ import { canonicalizeAragyokuNames } from "./aragyokuAliases.js";
 import { canonicalizeSchoolNames, resolveSchoolRecordName } from "./schoolAliases.js";
 import { matchCannedAnswer } from "./canned.js";
 import { matchPreparedAnswer } from "./preparedQa.js";
+import { retrievePreparedEvidence } from "./preparedQaEvidence.js";
 import { matchClarifyAnswer } from "./clarify.js";
 import { isLegAthleteQuestion } from "./legs.js";
 import {
@@ -4817,7 +4818,7 @@ export async function answerQuestion(
     defaultYear: deps.defaultYear,
     now: deps.now,
   });
-  if (prepared && !technicalDocQuestion) {
+  if (prepared && !technicalDocQuestion && !deps.llm) {
     return {
       kind: "answered",
       text: formatForLine(prepared.text),
@@ -4841,6 +4842,26 @@ export async function answerQuestion(
   // current-fiscal-year retrieval anchor, but its synthetic year token should
   // not drown a topic-specific KG hint (for example, a generic pace query).
   const kg = kgQuery(question);
+
+  if (prepared && !technicalDocQuestion && deps.llm) {
+    const evidence = retrievePreparedEvidence(expanded, prepared, kg, deps.retrieve);
+    const sources = [
+      `prepared:${prepared.id}`,
+      ...prepared.sources.map((source) => `ref:${source}`),
+      ...new Set(evidence.map((row) => row.chunk.source.replace(/:\d+$/, ""))),
+    ];
+    try {
+      const text = await deps.llm.complete(
+        buildSystemPrompt({ exhaustive }),
+        buildUserPrompt(question, evidence, { exhaustive, prepared }),
+      );
+      return { kind: "answered", text: finalizeAnswerText(text, question, deps, sources), sources };
+    } catch (err) {
+      const msg = err instanceof Error ? err.message : String(err);
+      console.error("answerQuestion prepared synthesis failed:", msg.slice(0, 300));
+      return { kind: "error", text: "回答生成中にエラーが起きました。しばらくしてから、もう一度短い質問で試してください。" };
+    }
+  }
 
   let scope = classifyScope(question);
   if (

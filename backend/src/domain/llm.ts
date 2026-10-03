@@ -77,7 +77,7 @@ function createOpenAiClient(apiKey: string): LlmClient {
         body: JSON.stringify({
           model: "gpt-4o-mini",
           temperature: 0.2,
-          max_tokens: 700,
+          max_tokens: 1200,
           messages: [
             { role: "system", content: system },
             { role: "user", content: user },
@@ -108,7 +108,7 @@ function createAnthropicClient(apiKey: string): LlmClient {
         },
         body: JSON.stringify({
           model: "claude-3-5-haiku-latest",
-          max_tokens: 700,
+          max_tokens: 1200,
           system,
           messages: [{ role: "user", content: user }],
         }),

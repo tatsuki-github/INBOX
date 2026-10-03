@@ -1,6 +1,7 @@
 /**
  * Prepared FAQ answers (ADR 059).
- * Hit → return canned text almost as-is; miss → fall through to RAG/LLM.
+ * Hit → supply an answer candidate and primary refs to KG-grounded LLM synthesis.
+ * Without an LLM, return the source-audited prepared answer.
  */
 
 import { readFileSync } from "node:fs";
@@ -537,6 +538,22 @@ export function matchPreparedAnswer(
   const loaded = loadPreparedQaNormalized(defaultYear, opts?.entries);
   const catalog = loaded.rows;
   if (catalog.length === 0) return null;
+
+  // Full relay details must not be intercepted by a shorter overall-result QA.
+  const wantsRelayDetails = /詳細|区間タイム.*区間順位|区間順位.*通過/.test(q);
+  if (wantsRelayDetails && /荒玉|中体連|玉名荒尾/.test(canonicalizeAragyokuNames(q))) {
+    const details = catalog.filter((row) => {
+      const parts = row.entry.id.match(/^aragyoku-(20\d{2})-(男子|女子)-(.+)-leg-detail$/);
+      if (!parts) return false;
+      return nq.includes(parts[1]!) && nq.includes(parts[2]!) &&
+        nq.includes(normalizePreparedQuestion(parts[3]!, opts));
+    });
+    if (details.length === 1) {
+      const entry = details[0]!.entry;
+      return { id: entry.id, text: entry.answer.trim(), score: 1,
+        matchedQuestion: entry.questions[0]!, sources: entry.sources };
+    }
+  }
 
   // 正規化後の完全一致は O(1)（表記ゆれを同義語で潰したあと）
   const exactHit = loaded.exact.get(nq);

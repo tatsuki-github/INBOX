@@ -330,11 +330,9 @@ def verify_photo_reconciliations() -> None:
 
 
 def photo_reviewed_projections() -> dict[str, dict]:
+    from generate_prepared_qa_bulk import format_team_result_answer
     rel = 'input/aragyoku/reconciliations/2024-women-daimei-photo.json'
     row = json.loads((ROOT / rel).read_text())
-    answer = f"2024年の岱明女子の区間詳細\n順位: {row['rank']}位\n総合: {row['total']}\n"
-    for leg in row['legs']:
-        answer += (f"・{leg['leg']}区: {leg['name']}（{leg['grade']}年） 区間 {leg['split']} / 累計 {leg['cumulative']} "
-                   f"(通過順{leg['passing_rank']} / 区間順{leg['split_rank']})\n")
+    answer = format_team_result_answer(2024, '女子', row) + '\n'
     return {'aragyoku-2024-女子-岱明-leg-detail': {'answer': answer,
         'sources': ['input/aragyoku/transcripts/2024-女子.json', rel, row['image']]}}

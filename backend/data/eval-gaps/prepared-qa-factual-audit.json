@@ -1,5 +1,5 @@
 {
-  "catalog_sha256": "1369fa22a19b6b3afb4ee095a072c207897c2c60d021cfb2220ee36ca1ec817a",
+  "catalog_sha256": "fc50229d540f898e7dcabbcabb5d33f78e5b6591b3a0455f5a8adc77f0cdad1a",
   "total": 39164,
   "checks": {
     "source_text_time_check": 264,
@@ -191,7 +191,7 @@
     "input/external/sb/middle-school/by-year/2025-sb-adopted.json": "dc4291a27d46dcbbf6e54d616215f65b23b7a25dd6aee313da82345ad150e4ad",
     "input/external/sb/middle-school/by-year/2026-sb-adopted.json": "8caaf624b7e0153435113cd31b5f68dfad842ead7d31bb95d1399f549ada2dbc",
     "input/external/sb/middle-school/wide/中学生SB.csv": "4d002dab9b220b639d7d1cba4c97e4f239b4ddfd2b286b7e3666a753083fa0a3",
-    "input/faq/prepared-qa.v1.yaml": "1369fa22a19b6b3afb4ee095a072c207897c2c60d021cfb2220ee36ca1ec817a",
+    "input/faq/prepared-qa.v1.yaml": "fc50229d540f898e7dcabbcabb5d33f78e5b6591b3a0455f5a8adc77f0cdad1a",
     "input/idaten-corpus/aragyoku/men_full_2012_2025.json": "22ef3aa633a050fe2547148d61e0e59d083391c39ebb64400296413197ec8eaa",
     "input/idaten-corpus/aragyoku/quiz/荒玉駅伝○×クイズ.csv": "98ff94e5397ac63df6dd3b27de26805affb810b659ee0bbda33fe8d1acd6548a",
     "input/idaten-corpus/aragyoku/winners-by-year.md": "7d048472790b4503a92796c9391f1eb32ee54a0041395de9e1bbae2eef57196f",
@@ -487,7 +487,7 @@
     "out/analysis/arato-tamana-teams/ﾀﾏﾅﾁｭｳ玉名中.md": "d56544d05ffc45d98a81caf0212f7f0fcc33d0ed286999cdec019050ed6150b8",
     "out/analysis/athletes/takada-mana.md": "aec07e6f4e13e523be93996bb141d5a658441e4671ed462f13fbad13ba8169f8",
     "out/analysis/notion_records_2026.json": "554879640ef341eb82825a9418c27be4ee272f72912e86118a93b43fb6f20c44",
-    "out/knowledge-graph.json": "4d746359ac13e5eb79650c74de68381efd30ecf31b32393adb678641785e88e8",
+    "out/knowledge-graph.json": "2910c40941e5531d06ff2f1731647f6b83f2e5b6296b19cee30924d6fc17f9ef",
     "outputs/荒玉駅伝2026徹底対策.pdf": "3a409e93f73b78907eb8066c34394ad6f1a0dcaf87fe7ca9c169bc8a2e7e67ef",
     "scripts/generate_prepared_qa_prefectural_top2.py": "9a03bd2f563fd5496c7a8a6d406e487f36d77715d9f50f35d6f955a9b1d88fcb",
     "scripts/practice_models.py": "afb4c0c63bb472c8179780ab852b8a600bdf33c6791193072e629403e2d35f25",

@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated_at": "2026-10-02T09:07:18Z",
+  "generated_at": "2026-10-03T07:14:03Z",
   "nodes": [
     {
       "id": "corpus:analysis-ocr",
@@ -15377,7 +15377,7 @@
       "refs": [
         "out/analysis/aragyoku-years/2024.md"
       ],
-      "hint": "女子 角田里奈 学年3 10:43 区間6位 総合6位 / 男子 南本和顕 学年3 9:17 区間3位 総合15位"
+      "hint": "女子 村上咲稀 学年1 10:43 区間6位 総合6位 / 男子 南本和顕 学年3 9:17 区間3位 総合15位"
     },
     {
       "id": "entity:aragyoku-leg:2024:岱明:2",
@@ -15390,7 +15390,7 @@
       "refs": [
         "out/analysis/aragyoku-years/2024.md"
       ],
-      "hint": "女子 瀧下那奈 学年3 6:59 区間7位 総合6位 / 男子 浦田桐生 学年3 10:04 区間13位 総合15位"
+      "hint": "女子 角田里奈 学年2 6:59 区間7位 総合6位 / 男子 浦田桐生 学年3 10:04 区間13位 総合15位"
     },
     {
       "id": "entity:aragyoku-leg:2024:岱明:3",
@@ -15403,7 +15403,7 @@
       "refs": [
         "out/analysis/aragyoku-years/2024.md"
       ],
-      "hint": "女子 高田麻由 学年2 7:40 区間5位 総合6位 / 男子 今村昇磨 学年1 10:17 区間8位 総合15位"
+      "hint": "女子 瀧下那奈 学年3 7:40 区間5位 総合6位 / 男子 今村昇磨 学年1 10:17 区間8位 総合15位"
     },
     {
       "id": "entity:aragyoku-leg:2024:岱明:4",
@@ -15416,7 +15416,7 @@
       "refs": [
         "out/analysis/aragyoku-years/2024.md"
       ],
-      "hint": "女子 村上咲稀 学年2 7:50 区間8位 総合6位 / 男子 田上侑蕾 学年3 14:55 区間15位 総合15位"
+      "hint": "女子 田上陽那多 学年2 7:50 区間8位 総合6位 / 男子 田上侑蕾 学年3 14:55 区間15位 総合15位"
     },
     {
       "id": "entity:aragyoku-leg:2024:岱明:5",
@@ -15429,7 +15429,7 @@
       "refs": [
         "out/analysis/aragyoku-years/2024.md"
       ],
-      "hint": "女子 福島まりん 学年2 11:54 区間7位 総合6位 / 男子 松野凛空 学年3 10:22 区間10位 総合15位"
+      "hint": "女子 高田麻由 学年1 11:54 区間7位 総合6位 / 男子 松野凛空 学年3 10:22 区間10位 総合15位"
     },
     {
       "id": "entity:aragyoku-leg:2024:岱明:6",
@@ -17518,9 +17518,9 @@
         "practice"
       ],
       "refs": [
-        "out/2025/practice_absentees.csv",
+        "input/events.2025.yaml",
         "out/analysis/notion_records_2026.json",
-        "input/events.2025.yaml"
+        "out/2025/practice_absentees.csv"
       ],
       "hint": "部員エンティティ"
     },
@@ -17554,9 +17554,9 @@
         "practice"
       ],
       "refs": [
-        "out/2025/practice_absentees.csv",
+        "input/events.2025.yaml",
         "out/analysis/notion_records_2026.json",
-        "input/events.2025.yaml"
+        "out/2025/practice_absentees.csv"
       ],
       "hint": "部員エンティティ"
     },
@@ -17590,9 +17590,9 @@
         "practice"
       ],
       "refs": [
-        "out/2025/practice_absentees.csv",
+        "input/events.2025.yaml",
         "out/analysis/notion_records_2026.json",
-        "input/events.2025.yaml"
+        "out/2025/practice_absentees.csv"
       ],
       "hint": "部員エンティティ"
     },
@@ -17662,9 +17662,9 @@
         "practice"
       ],
       "refs": [
-        "out/2025/practice_absentees.csv",
+        "input/events.2025.yaml",
         "out/analysis/notion_records_2026.json",
-        "input/events.2025.yaml"
+        "out/2025/practice_absentees.csv"
       ],
       "hint": "部員エンティティ"
     },
@@ -17698,8 +17698,8 @@
         "practice"
       ],
       "refs": [
-        "out/2025/practice_absentees.csv",
-        "input/events.2025.yaml"
+        "input/events.2025.yaml",
+        "out/2025/practice_absentees.csv"
       ],
       "hint": "部員エンティティ"
     },
@@ -17713,9 +17713,9 @@
         "practice"
       ],
       "refs": [
-        "out/2025/practice_absentees.csv",
+        "input/events.2025.yaml",
         "out/analysis/notion_records_2026.json",
-        "input/events.2025.yaml"
+        "out/2025/practice_absentees.csv"
       ],
       "hint": "部員エンティティ"
     },
@@ -17749,9 +17749,9 @@
         "practice"
       ],
       "refs": [
-        "out/2025/practice_absentees.csv",
+        "input/events.2025.yaml",
         "out/analysis/notion_records_2026.json",
-        "input/events.2025.yaml"
+        "out/2025/practice_absentees.csv"
       ],
       "hint": "部員エンティティ"
     },
@@ -17800,9 +17800,9 @@
         "practice"
       ],
       "refs": [
-        "out/2025/practice_absentees.csv",
+        "input/events.2025.yaml",
         "out/analysis/notion_records_2026.json",
-        "input/events.2025.yaml"
+        "out/2025/practice_absentees.csv"
       ],
       "hint": "部員エンティティ"
     },
@@ -17836,9 +17836,9 @@
         "practice"
       ],
       "refs": [
-        "input/events.2026.yaml",
         "out/analysis/notion_records_2026.json",
-        "out/2026/practice_absentees.csv"
+        "out/2026/practice_absentees.csv",
+        "input/events.2026.yaml"
       ],
       "hint": "部員エンティティ"
     },
@@ -17872,9 +17872,9 @@
         "practice"
       ],
       "refs": [
-        "out/2025/practice_absentees.csv",
+        "input/events.2025.yaml",
         "out/analysis/notion_records_2026.json",
-        "input/events.2025.yaml"
+        "out/2025/practice_absentees.csv"
       ],
       "hint": "部員エンティティ"
     },
@@ -17908,11 +17908,11 @@
         "practice"
       ],
       "refs": [
+        "out/analysis/notion_records_2026.json",
         "out/2025/practice_absentees.csv",
-        "out/2026/practice_absentees.csv",
         "input/events.2025.yaml",
-        "input/events.2026.yaml",
-        "out/analysis/notion_records_2026.json"
+        "out/2026/practice_absentees.csv",
+        "input/events.2026.yaml"
       ],
       "hint": "部員エンティティ"
     },
@@ -18763,6 +18763,34 @@
         "out/2026/practice.json"
       ],
       "hint": "岱明練習実績 2026-09-24 (input/events.2026.yaml:L4387): 動きづくり\n女子 3360m（560m×6周相当。内回りのため実走距離は短い）\n男子 4480m（560m×8周）、1周560mを2:40\n流し2本 / 女子 3360 laps=6 / 男子 4480 laps=8 / 流し2本 reps=2"
+    },
+    {
+      "id": "entity:practice:2026-10-02:317",
+      "type": "Entity",
+      "label": "2026-10-02 いだてん岱明夕練",
+      "topics": [
+        "calendar",
+        "practice"
+      ],
+      "refs": [
+        "input/events.2026.yaml",
+        "out/2026/practice.json"
+      ],
+      "hint": "岱明練習実績 2026-10-02 (input/events.2026.yaml:L4520): 動きづくり\n\nジョグ 男子 3.36km (6周)\nジョグ 女子 2.80km (5周)\n\n変化走\n- 3km組: 600-300-600\n- 2km組: 600-300-300\n疾走ペース（300m換算）57 / 63 / 66（k/3:10・k/3:30・k/3:40）\n繋ぎ300m 72 / 75 / 78（k/4:00・k/4:10・k/4:20） / 男子 3360 laps=6 / 女子 2800 laps=5 / 3km組（57） 3km組 変化走 600-300-600 疾走57/繋ぎ72 / 3km組（63） 3km組 変化走 600-300-600 疾走63/繋ぎ75 / 3km組（66） 3km組 変化走 600-300-600 疾走66/繋ぎ78 / 2km組（57） 2km組 変化走 600-300-300 疾走57/繋ぎ72 / 2km組（63） 2km組 変化走 600-300-300 疾走63/繋ぎ75 / 2km組（66） 2km組 変化走 600-300-300 疾走66/繋ぎ78"
+    },
+    {
+      "id": "entity:practice:2026-10-03:318",
+      "type": "Entity",
+      "label": "2026-10-03 いだてん岱明練習",
+      "topics": [
+        "calendar",
+        "practice"
+      ],
+      "refs": [
+        "input/events.2026.yaml",
+        "out/2026/practice.json"
+      ],
+      "hint": "岱明練習実績 2026-10-03 (input/events.2026.yaml:L4617): 動きづくり\n\nジョグ 男子 3.20km k/3:55\nジョグ 村上 2.60km\nジョグ 村上以外の女子 2.60km k/4:10\n流し2本 / 男子 3200 pace=k/3:55 / 村上 2600 / 村上以外の女子 2600 pace=k/4:10 / 流し2本 reps=2"
     },
     {
       "id": "entity:tag:BBQ",
@@ -22820,6 +22848,20 @@
         "docs/adr/059-prepared-qa-answers.md"
       ],
       "hint": "ADR: 059-prepared-qa-answers"
+    },
+    {
+      "id": "source:docs/adr/060-prepared-qa-grounded-synthesis.md",
+      "type": "Source",
+      "label": "060-prepared-qa-grounded-synthesis.md",
+      "topics": [
+        "ai",
+        "meta",
+        "practice"
+      ],
+      "refs": [
+        "docs/adr/060-prepared-qa-grounded-synthesis.md"
+      ],
+      "hint": "ADR: 060-prepared-qa-grounded-synthesis"
     },
     {
       "id": "source:docs/ai-practice-generation.md",
@@ -33440,6 +33482,16 @@
       "rel": "documented_in"
     },
     {
+      "from": "entity:practice:2026-10-02:317",
+      "to": "source:input/events.2026.yaml",
+      "rel": "documented_in"
+    },
+    {
+      "from": "entity:practice:2026-10-03:318",
+      "to": "source:input/events.2026.yaml",
+      "rel": "documented_in"
+    },
+    {
       "from": "entity:tag:BBQ",
       "to": "source:input/events.2026.yaml",
       "rel": "mentioned_in"
@@ -34427,6 +34479,16 @@
     {
       "from": "entity:year:2026",
       "to": "entity:practice:2026-09-24:306",
+      "rel": "search_here"
+    },
+    {
+      "from": "entity:year:2026",
+      "to": "entity:practice:2026-10-02:317",
+      "rel": "search_here"
+    },
+    {
+      "from": "entity:year:2026",
+      "to": "entity:practice:2026-10-03:318",
       "rel": "search_here"
     },
     {
@@ -36870,6 +36932,11 @@
       "rel": "see_also"
     },
     {
+      "from": "source:docs/ai-practice-generation.md",
+      "to": "source:docs/adr/060-prepared-qa-grounded-synthesis.md",
+      "rel": "see_also"
+    },
+    {
       "from": "source:out/2020/calendar.md",
       "to": "source:input/events.2020.yaml",
       "rel": "derived_from"
@@ -37482,6 +37549,11 @@
     {
       "from": "topic:ai",
       "to": "source:docs/adr/059-prepared-qa-answers.md",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:ai",
+      "to": "source:docs/adr/060-prepared-qa-grounded-synthesis.md",
       "rel": "search_here"
     },
     {
@@ -46616,6 +46688,11 @@
     },
     {
       "from": "topic:meta",
+      "to": "source:docs/adr/060-prepared-qa-grounded-synthesis.md",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:meta",
       "to": "source:docs/tamana-weather.md",
       "rel": "documented_in"
     },
@@ -47512,6 +47589,11 @@
     {
       "from": "topic:practice",
       "to": "source:docs/adr/059-prepared-qa-answers.md",
+      "rel": "search_here"
+    },
+    {
+      "from": "topic:practice",
+      "to": "source:docs/adr/060-prepared-qa-grounded-synthesis.md",
       "rel": "search_here"
     },
     {
