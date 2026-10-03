@@ -305,6 +305,49 @@ describe("matchPreparedAnswer", { timeout: 30_000 }, () => {
     120_000,
   );
 
+  it(
+    "returns 2024 Daimei women detailed results from the result board",
+    () => {
+      for (const q of [
+        "2024年岱明女子の荒玉駅伝詳細結果",
+        "2024年の岱明女子の区間詳細",
+        "2024年荒玉駅伝の岱明女子の詳細結果",
+      ]) {
+        const hit = matchPreparedAnswer(q, { defaultYear: 2026 });
+        expect(hit?.id, q).toBe("aragyoku-2024-女子-岱明-leg-detail");
+        expect(hit?.text, q).toContain("6位");
+        expect(hit?.text, q).toContain("45:06");
+        expect(hit?.text, q).toContain("角田里奈");
+        expect(hit?.text, q).toContain("瀧下那奈");
+        expect(hit?.text, q).toContain("高田麻由");
+        expect(hit?.text, q).toContain("村上咲稀");
+        expect(hit?.text, q).toContain("福島まりん");
+        expect(hit?.text, q).toContain("10:43");
+        expect(hit?.text, q).toContain("11:54");
+        expect(hit?.text, q).not.toContain("増岡里俐");
+        expect(hit?.text, q).not.toContain("45:22");
+      }
+    },
+    120_000,
+  );
+
+  it(
+    "maps 去年 Daimei leg-detail to 2025, not 2024",
+    () => {
+      const women = matchPreparedAnswer("去年の岱明女子の区間詳細", { defaultYear: 2026 });
+      expect(women?.id).toBe("aragyoku-2025-女子-岱明-leg-detail");
+      expect(women?.text).toContain("45:22");
+      expect(women?.text).toContain("増岡里俐");
+      expect(women?.text).not.toContain("角田里奈");
+      const men = matchPreparedAnswer("去年の岱明男子の区間詳細", { defaultYear: 2026 });
+      expect(men?.id).toBe("aragyoku-2025-男子-岱明-leg-detail");
+      expect(men?.text).toContain("59:08");
+      expect(men?.text).toContain("山本哲瑠");
+      expect(men?.text).not.toContain("南本和顕");
+    },
+    120_000,
+  );
+
 
   it(
     "routes formula/preview away from OCR dumps and hits per-leg distances",
