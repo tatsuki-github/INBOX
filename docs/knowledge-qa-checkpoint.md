@@ -10,4 +10,6 @@
 
 追加QAの質問・回答・根拠引用・手動確認記録は `input/faq/knowledge-chunk-reviewed.json` に残す。自動監査は承認済みQAとの一致と原文引用の一致を検証する。比較・計算の妥当性は文脈を読んだ手動確認であり、自動的な意味証明ではない。
 
-全ナレッジ（2781チャンク）について、各チャンク3問の想定QA（計8343問）を `input/faq/full-knowledge-qa/reviewed-*.json` に追加し、`scripts/validate_full_knowledge_qa.py --publish-reviewed` で `input/faq/prepared-qa.v1.yaml` へ公開済み（43539件）。区切り再生成は `scripts/prepare_knowledge_qa_chunks.py --write`、未カバー分の候補生成は `scripts/generate_chunk_manual_context_qas.py`。
+2026-10-03時点の公開済み想定QAは39,164件。全ナレッジ追加の進捗は2,779チャンク中1,315チャンク完了、確認済み追加QAは3,965問（既存分86問を含む）で、全チャンク完了には4,372問が残る。全ナレッジ追加が完了したという旧記載は実データと一致しないため訂正した。区切り再生成は `scripts/prepare_knowledge_qa_chunks.py --write`、進捗確認は `scripts/validate_full_knowledge_qa.py`。
+
+2026-10-03の既存QA全件監査では39,164件を照合し、235件の回答を修正した。人物・所属・出走回数・学年・区間順位、朝夕の練習枠、保存距離、全件一覧の欠落を修正し、曖昧な日付なし質問を特定日の回答から外した。旧監査で未投影だったエッジQA・コーチ分析も正本との照合に追加した。監査記録は `backend/data/eval-gaps/prepared-qa-factual-audit.json`、変更履歴は `backend/data/eval-gaps/prepared-qa-factual-corrections.jsonl`。この監査はリポジトリ内の保存ナレッジとの整合を確認するもので、外部の最新結果や全文章の意味を自動的に証明するものではない。

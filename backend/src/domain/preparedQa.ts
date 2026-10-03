@@ -56,7 +56,7 @@ const SYNONYM_GROUPS: string[][] = [
   // 長い表記を先に置換（コース図→画像 など）
   ["画像", "コース図", "図解", "地図", "図", "写真"],
   // 「区間順位」を先に正規化（「区間順」は接頭辞衝突するので入れない）
-  ["区間順位", "通過順位", "区間結果"],
+  ["区間順位", "区間結果"],
   ["結果", "成績", "どうだった"],
   // 優勝表現のゆれ（長い語を先に）
   ["優勝", "優勝チーム", "優勝校", "誰が勝った", "1位", "一位"],
@@ -66,7 +66,7 @@ const SYNONYM_GROUPS: string[][] = [
   ...schoolSynonymGroups(),
   // 荒玉大会名は aragyokuAliases.ts で longest-first 正規化（ここでは同義語置換しない）
   ["ジュニア", "県ジュニア", "ジュニア駅伝"],
-  ["なごみ", "なごみ駅伝", "金栗"],
+  ["なごみ", "なごみ駅伝"],
   // SB 言い換え（長い語優先）
   ["自己ベスト", "ベストタイム", "自己記録", "ベスト記録", "sb", "SB"],
   ["全ての記録", "全記録", "記録一覧", "レース結果一覧"],
@@ -329,6 +329,29 @@ function comparisonEntities(normalized: string): Set<string> {
 
 function scorePair(nq: string, nCand: string): number {
   if (!nq || !nCand) return 0;
+  // A leg's individual rank and a team's rank at the exchange are different
+  // facts. Keep them distinct before either exact or fuzzy containment.
+  const qPassing = /通過順位|通過何位|中継順位/.test(nq);
+  const cPassing = /通過順位|通過何位|中継順位/.test(nCand);
+  const qSplit = /区間順位|区間\d+位|区間賞/.test(nq);
+  const cSplit = /区間順位|区間\d+位|区間賞/.test(nCand);
+  if ((qPassing && !qSplit && cSplit && !cPassing) ||
+      (qSplit && !qPassing && cPassing && !cSplit)) return 0;
+  // The なごみ大会's long title includes 金栗四三, but 金栗駅伝 is a
+  // separate meet. A bare 金栗 question must not inherit なごみ's results.
+  if ((nq.includes("なごみ") && /金栗駅伝|金栗記念/.test(nCand) && !nCand.includes("なごみ")) ||
+      (nCand.includes("なごみ") && /金栗駅伝|金栗記念/.test(nq) && !nq.includes("なごみ"))) return 0;
+  const days = (text: string) => new Set([
+    ...Array.from(text.matchAll(/(?:20\d{2}[-/])?(\d{1,2})[-/](\d{1,2})|(?:20\d{2}年)?(\d{1,2})月(\d{1,2})日/g),
+      m => `${Number(m[1] ?? m[3])}/${Number(m[2] ?? m[4])}`),
+  ]);
+  if (/月|[-/]/.test(nq) && /月|[-/]/.test(nCand)) {
+    const qDays = days(nq), cDays = days(nCand);
+    if (qDays.size && cDays.size &&
+        (qDays.size !== cDays.size || [...qDays].some(day => !cDays.has(day)))) return 0;
+  }
+  if ((nq.includes("朝練") && nCand.includes("夕練") && !nCand.includes("朝練")) ||
+      (nq.includes("夕練") && nCand.includes("朝練") && !nCand.includes("夕練"))) return 0;
   // Similar wording is not evidence that gender, race leg or event agrees.
   // Reject explicit conflicts before containment / similarity bonuses. When
   // either side omits a dimension, leave confidence to the existing scorer.
@@ -543,6 +566,12 @@ export function matchPreparedAnswer(
   const scored: Cand[] = [];
 
   for (const row of catalog) {
+    // A static help answer must not intercept a request for today's events.
+    if (row.entry.id === "calendar-today" && !/方法|聞き方/.test(q)) continue;
+    // A dated practice answer cannot answer an unspecified/relative day.
+    if (/^(?:calx?-|practice-)/.test(row.entry.id) &&
+        row.norms.every((cand) => /20\d{2}[-/]\d{1,2}[-/]\d{1,2}|\d{1,2}月\d{1,2}日/.test(cand.raw)) &&
+        !/20\d{2}[-/]\d{1,2}[-/]\d{1,2}|\d{1,2}月\d{1,2}日/.test(q)) continue;
     // A historical entry whose aliases are all explicitly dated must not turn
     // into this year's result through fuzzy containment of a yearless query.
     // Intentionally yearless history/latest-known answers retain their aliases.

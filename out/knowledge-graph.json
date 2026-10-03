@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated_at": "2026-10-03T02:18:14Z",
+  "generated_at": "2026-10-03T06:15:24Z",
   "nodes": [
     {
       "id": "corpus:analysis-ocr",
@@ -17836,9 +17836,9 @@
         "practice"
       ],
       "refs": [
-        "input/events.2026.yaml",
         "out/2026/practice_absentees.csv",
-        "out/analysis/notion_records_2026.json"
+        "out/analysis/notion_records_2026.json",
+        "input/events.2026.yaml"
       ],
       "hint": "部員エンティティ"
     },
@@ -17908,11 +17908,11 @@
         "practice"
       ],
       "refs": [
-        "input/events.2026.yaml",
         "input/events.2025.yaml",
-        "out/2025/practice_absentees.csv",
         "out/2026/practice_absentees.csv",
-        "out/analysis/notion_records_2026.json"
+        "out/2025/practice_absentees.csv",
+        "out/analysis/notion_records_2026.json",
+        "input/events.2026.yaml"
       ],
       "hint": "部員エンティティ"
     },

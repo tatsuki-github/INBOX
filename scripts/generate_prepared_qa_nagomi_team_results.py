@@ -102,7 +102,7 @@ def parse_results_md(path: Path) -> list[dict]:
             leg_cells = [m7.group(i) for i in range(4, 8)]
         else:
             continue
-        if rank in {"順位", "---"} or team in {"チーム", "---"}:
+        if not re.fullmatch(r"[0-9]+|OP", rank) or not team or team in {"チーム", "---"}:
             continue
         if not re.search(r"\d+:\d{2}", total) and total not in {"—", "-", ""}:
             continue
