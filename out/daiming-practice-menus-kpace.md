@@ -411,6 +411,32 @@
 
 （換算対象なし）
 
+### 2026-10-02 いだてん岱明夕練
+
+- **parsed**: full (practice_field)
+
+| type | group | detail | pace |
+|---|---|---|---|
+| jog | 男子 | 3360m |  |
+| jog | 女子 | 2800m |  |
+| set | 3km組（57） | 600m+300m+600m |  |
+| set | 3km組（63） | 600m+300m+600m |  |
+| set | 3km組（66） | 600m+300m+600m |  |
+| set | 2km組（57） | 600m+300m+300m |  |
+| set | 2km組（63） | 600m+300m+300m |  |
+| set | 2km組（66） | 600m+300m+300m |  |
+
+### 2026-10-03 いだてん岱明練習
+
+- **parsed**: full (practice_field)
+
+| type | group | detail | pace |
+|---|---|---|---|
+| jog | 男子 | 3200m | k/3:55 |
+| jog | 村上 | 2600m |  |
+| jog | 村上以外の女子 | 2600m | k/4:10 |
+| strides |  | 流し2本 |  |
+
 ### （日付なし） 岱明中 荒玉中体連駅伝（2026-10-14）残り練習計画【部活カレンダー準拠】
 
 - **parsed**: none (description)

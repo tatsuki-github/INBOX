@@ -1458,6 +1458,209 @@
   },
   {
     "year": 2026,
+    "date": "2026-10-02",
+    "title": "いだてん岱明夕練",
+    "start_time": "17:00",
+    "end_time": "18:30",
+    "status": "done",
+    "tags": [
+      "ランニング",
+      "いだてん岱明練習",
+      "practice:daiming",
+      "session:evening"
+    ],
+    "practice": {
+      "warmup": "動きづくり",
+      "notes": "疾走ペースは300m換算57/63/66、繋ぎ300mは72/75/78。",
+      "items": [
+        {
+          "type": "jog",
+          "group": "男子",
+          "laps": 6,
+          "distance_m": 3360,
+          "distance_km": 3.36
+        },
+        {
+          "type": "jog",
+          "group": "女子",
+          "laps": 5,
+          "distance_m": 2800,
+          "distance_km": 2.8
+        },
+        {
+          "type": "set",
+          "group": "3km組（57）",
+          "segments": [
+            {
+              "distance_m": 600,
+              "pace": "k/3:10"
+            },
+            {
+              "distance_m": 300,
+              "pace": "k/4:00"
+            },
+            {
+              "distance_m": 600,
+              "pace": "k/3:10"
+            }
+          ],
+          "label": "3km組 変化走 600-300-600 疾走57/繋ぎ72"
+        },
+        {
+          "type": "set",
+          "group": "3km組（63）",
+          "segments": [
+            {
+              "distance_m": 600,
+              "pace": "k/3:30"
+            },
+            {
+              "distance_m": 300,
+              "pace": "k/4:10"
+            },
+            {
+              "distance_m": 600,
+              "pace": "k/3:30"
+            }
+          ],
+          "label": "3km組 変化走 600-300-600 疾走63/繋ぎ75"
+        },
+        {
+          "type": "set",
+          "group": "3km組（66）",
+          "segments": [
+            {
+              "distance_m": 600,
+              "pace": "k/3:40"
+            },
+            {
+              "distance_m": 300,
+              "pace": "k/4:20"
+            },
+            {
+              "distance_m": 600,
+              "pace": "k/3:40"
+            }
+          ],
+          "label": "3km組 変化走 600-300-600 疾走66/繋ぎ78"
+        },
+        {
+          "type": "set",
+          "group": "2km組（57）",
+          "segments": [
+            {
+              "distance_m": 600,
+              "pace": "k/3:10"
+            },
+            {
+              "distance_m": 300,
+              "pace": "k/4:00"
+            },
+            {
+              "distance_m": 300,
+              "pace": "k/4:00"
+            }
+          ],
+          "label": "2km組 変化走 600-300-300 疾走57/繋ぎ72"
+        },
+        {
+          "type": "set",
+          "group": "2km組（63）",
+          "segments": [
+            {
+              "distance_m": 600,
+              "pace": "k/3:30"
+            },
+            {
+              "distance_m": 300,
+              "pace": "k/4:10"
+            },
+            {
+              "distance_m": 300,
+              "pace": "k/4:10"
+            }
+          ],
+          "label": "2km組 変化走 600-300-300 疾走63/繋ぎ75"
+        },
+        {
+          "type": "set",
+          "group": "2km組（66）",
+          "segments": [
+            {
+              "distance_m": 600,
+              "pace": "k/3:40"
+            },
+            {
+              "distance_m": 300,
+              "pace": "k/4:20"
+            },
+            {
+              "distance_m": 300,
+              "pace": "k/4:20"
+            }
+          ],
+          "label": "2km組 変化走 600-300-300 疾走66/繋ぎ78"
+        }
+      ]
+    },
+    "parse": {
+      "source": "practice_field",
+      "confidence": "full",
+      "skipped": []
+    },
+    "template_ref": null
+  },
+  {
+    "year": 2026,
+    "date": "2026-10-03",
+    "title": "いだてん岱明練習",
+    "start_time": "09:00",
+    "end_time": "10:30",
+    "status": "done",
+    "tags": [
+      "ランニング",
+      "いだてん岱明練習",
+      "practice:daiming"
+    ],
+    "practice": {
+      "warmup": "動きづくり",
+      "items": [
+        {
+          "type": "jog",
+          "group": "男子",
+          "distance_m": 3200,
+          "distance_km": 3.2,
+          "pace": "k/3:55"
+        },
+        {
+          "type": "jog",
+          "group": "村上",
+          "distance_m": 2600,
+          "distance_km": 2.6
+        },
+        {
+          "type": "jog",
+          "group": "村上以外の女子",
+          "distance_m": 2600,
+          "distance_km": 2.6,
+          "pace": "k/4:10"
+        },
+        {
+          "type": "strides",
+          "reps": 2,
+          "label": "流し2本"
+        }
+      ]
+    },
+    "parse": {
+      "source": "practice_field",
+      "confidence": "full",
+      "skipped": []
+    },
+    "template_ref": null
+  },
+  {
+    "year": 2026,
     "date": null,
     "title": "練習のバリエーション",
     "start_time": null,
@@ -1577,6 +1780,32 @@
       "ランニング",
       "いだてん岱明練習",
       "practice:daiming"
+    ],
+    "practice": {
+      "items": []
+    },
+    "parse": {
+      "source": "description",
+      "confidence": "none",
+      "skipped": []
+    },
+    "template_ref": null
+  },
+  {
+    "year": 2026,
+    "date": "2026-09-29",
+    "title": "岱明中 荒玉駅伝試走結果",
+    "start_time": null,
+    "end_time": null,
+    "status": "done",
+    "tags": [
+      "岱明中",
+      "いだてん岱明練習",
+      "practice:daiming",
+      "駅伝",
+      "荒玉駅伝",
+      "試走",
+      "結果"
     ],
     "practice": {
       "items": []
