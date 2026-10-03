@@ -321,7 +321,10 @@ describe("matchPreparedAnswer", { timeout: 30_000 }, () => {
         expect(hit?.text, q).toContain("瀧下那奈");
         expect(hit?.text, q).toContain("高田麻由");
         expect(hit?.text, q).toContain("村上咲稀");
-        expect(hit?.text, q).toContain("福島まりん");
+        for (const fact of ["1区: 村上咲稀（1年）", "2区: 角田里奈（2年）", "3区: 瀧下那奈（3年）", "4区: 田上陽那多（2年）", "5区: 高田麻由（1年）"]) {
+          expect(hit?.text, q).toContain(fact);
+        }
+        expect(hit?.text, q).not.toContain("福島まりん");
         expect(hit?.text, q).toContain("10:43");
         expect(hit?.text, q).toContain("11:54");
         expect(hit?.text, q).not.toContain("増岡里俐");

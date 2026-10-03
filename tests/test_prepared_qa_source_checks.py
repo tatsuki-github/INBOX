@@ -85,3 +85,36 @@ def test_audit_rejects_a_leg_label_used_as_overall_rank():
     import audit_prepared_qa_facts as audit
     entry = {'id': 'fixture', 'answer': '男子・は総合4区位・。', 'sources': []}
     assert 'invalid_team_result_row' in audit.check_entry(entry, None)['problems']
+
+
+def test_2024_women_daimei_transcriptions_match_independently_reviewed_photo():
+    checks.verify_photo_reconciliations()
+
+
+def test_2024_women_daimei_wrong_leg_order_cannot_pass_numeric_overlap():
+    wrong = {'id': 'aragyoku-2024-女子-岱明-leg-detail', 'answer': '1区: 角田里奈（3年）10:43'}
+    expected = {'answer': '1区: 村上咲稀（1年）10:43'}
+    assert checks.check_source_semantics(wrong, expected) == ['photo_reviewed_leg_identity_drift']
+
+
+def test_photo_review_rejects_corrupted_canonical_identity(tmp_path, monkeypatch):
+    import json
+    import shutil
+    import pytest
+    root = checks.ROOT
+    for rel in ('input/aragyoku/reconciliations/2024-women-daimei-photo.json',
+                'input/aragyoku/images/2024_female_tamana-aragyochu-ekiden_overall-results_01.jpg',
+                'input/aragyoku/transcripts/2024-女子.json',
+                'input/aragyoku/women_full_2012_2025.json',
+                'input/aragyoku/women_top6_2012_2025.json'):
+        dest = tmp_path / rel
+        dest.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copyfile(root / rel, dest)
+    path = tmp_path / 'input/aragyoku/transcripts/2024-女子.json'
+    source = json.loads(path.read_text())
+    team = next(t for t in source['teams'] if t['team'] == '岱明')
+    team['legs'][0]['name'] = '角田里奈'  # Same clocks; wrong athlete for this leg.
+    path.write_text(json.dumps(source, ensure_ascii=False))
+    monkeypatch.setattr(checks, 'ROOT', tmp_path)
+    with pytest.raises(ValueError, match='photo leg identity/grade/result drift'):
+        checks.verify_photo_reconciliations()
