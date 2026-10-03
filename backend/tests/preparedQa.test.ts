@@ -982,21 +982,14 @@ describe("matchPreparedAnswer", { timeout: 30_000 }, () => {
 });
 
 describe("answerQuestion prepared path", () => {
-  it("short-circuits without LLM for prepared FAQ", async () => {
-    let llmCalled = false;
+  it("uses audited prepared FAQ when no LLM is configured", async () => {
     const result = await answerQuestion("2025年荒玉駅伝の岱明男子は何位？", {
       defaultYear: 2026,
-      llm: {
-        complete: async () => {
-          llmCalled = true;
-          return "should not run";
-        },
-      },
+      llm: null,
       retrieve: () => {
         throw new Error("retrieve should not run");
       },
     });
-    expect(llmCalled).toBe(false);
     expect(result.kind).toBe("answered");
     if (result.kind === "answered") {
       expect(result.sources[0]).toBe("prepared:aragyoku-2025-daiming-men");

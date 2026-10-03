@@ -923,6 +923,19 @@
       ]
     },
     {
+      "path": "docs/adr/060-prepared-qa-grounded-synthesis.md",
+      "routes": [
+        "kg-reference"
+      ],
+      "source_sha256": "6e5a12e6925d71fb074275acb2d8581786e2237047e9360166532719dc0f9537",
+      "normalized_sha256": "6e5a12e6925d71fb074275acb2d8581786e2237047e9360166532719dc0f9537",
+      "disposition": "canonical",
+      "canonical": "docs/adr/060-prepared-qa-grounded-synthesis.md",
+      "chunk_ids": [
+        "knowledge-5c493724b53fb650a48c749f"
+      ]
+    },
+    {
       "path": "docs/ai-practice-generation.md",
       "routes": [
         "corpus-original",
@@ -21908,6 +21921,20 @@
       ]
     },
     {
+      "path": "input/idaten-corpus/repo-docs/adr/060-prepared-qa-grounded-synthesis.md",
+      "routes": [
+        "corpus-file",
+        "kg-directory:input/idaten-corpus/repo-docs"
+      ],
+      "source_sha256": "6e5a12e6925d71fb074275acb2d8581786e2237047e9360166532719dc0f9537",
+      "normalized_sha256": "6e5a12e6925d71fb074275acb2d8581786e2237047e9360166532719dc0f9537",
+      "disposition": "identical-alias",
+      "canonical": "docs/adr/060-prepared-qa-grounded-synthesis.md",
+      "chunk_ids": [
+        "knowledge-5c493724b53fb650a48c749f"
+      ]
+    },
+    {
       "path": "input/idaten-corpus/repo-docs/idaten-import/phase0-media-ocr.md",
       "routes": [
         "corpus-copy",
@@ -26909,27 +26936,27 @@
     }
   ],
   "baseline_prepared_qa_count": 39164,
-  "baseline_prepared_qa_sha256": "1369fa22a19b6b3afb4ee095a072c207897c2c60d021cfb2220ee36ca1ec817a",
+  "baseline_prepared_qa_sha256": "fc50229d540f898e7dcabbcabb5d33f78e5b6591b3a0455f5a8adc77f0cdad1a",
   "chunk_kinds": {
-    "text": 1146,
+    "text": 1147,
     "structured": 994,
     "csv": 639
   },
   "canonical_suffixes": {
-    ".md": 580,
+    ".md": 581,
     ".yaml": 16,
     ".json": 245,
     ".csv": 49,
     ".txt": 2
   },
-  "chunk_count": 2779,
-  "required_new_qa": 8337,
+  "chunk_count": 2780,
+  "required_new_qa": 8340,
   "dispositions": {
-    "canonical": 892,
+    "canonical": 893,
     "nontext-asset-or-implementation": 44,
     "empty-record-export": 14,
     "derived-index-or-existing-qa": 4,
-    "identical-alias": 726,
+    "identical-alias": 727,
     "virtual-filtered-calendar-route": 2
   },
   "missing_routes": [],
@@ -26952,7 +26979,7 @@
     },
     {
       "path": "out/qa-chunks/chunks-0005.jsonl",
-      "chunks": 38
+      "chunks": 39
     },
     {
       "path": "out/qa-chunks/chunks-0006.jsonl",

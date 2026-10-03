@@ -361,10 +361,14 @@ def format_team_result_answer(year: int, gender: str, team: dict) -> str:
     name = team.get("team") or ""
     rank = team.get("rank")
     total = team.get("total") or "?"
-    legs = _leg_bits(team)
     ans = f"{year}年荒玉駅伝{gender}の{name}は{rank}位・総合{total}です。"
-    if legs:
-        ans += " 区間選手: " + "、".join(legs[:6]) + "。"
+    for leg in team.get("legs") or []:
+        grade = f"（{leg['grade']}年）" if leg.get("grade") is not None else ""
+        split_rank = f"{leg['split_rank']}位" if leg.get("split_rank") is not None else "未確認"
+        passing_rank = f"{leg['passing_rank']}位" if leg.get("passing_rank") is not None else "未確認"
+        ans += (f"\n・{leg['leg']}区: {leg.get('name') or '未確認'}{grade} "
+                f"区間タイム {leg.get('split') or '未確認'}（区間順位 {split_rank}） / "
+                f"通過タイム {leg.get('cumulative') or '未確認'}（通過順位 {passing_rank}）")
     return ans
 
 

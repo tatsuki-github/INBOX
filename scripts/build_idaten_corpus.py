@@ -497,7 +497,10 @@ def _chunk_aragyoku_transcript(path: Path, rel: str) -> list[dict[str, Any]]:
                 continue
             leg_lines.append(
                 f"{L.get('leg')}区 {L.get('name') or '?'}({L.get('grade') or '?'}) "
-                f"区間{L.get('split') or ''} 累計{L.get('cumulative') or ''}"
+                f"区間タイム{L.get('split') or '未確認'} "
+                f"区間順位{str(L['split_rank']) + '位' if L.get('split_rank') is not None else '未確認'} "
+                f"通過タイム（累計）{L.get('cumulative') or '未確認'} "
+                f"通過順位{str(L['passing_rank']) + '位' if L.get('passing_rank') is not None else '未確認'}"
             )
         names = "、".join(
             str(L.get("name") or "")

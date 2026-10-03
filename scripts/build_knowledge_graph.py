@@ -61,6 +61,7 @@ def main(argv: list[str] | None = None) -> int:
         help="Override generated_at timestamp (testing / stable builds)",
     )
     args = parser.parse_args(argv)
+    backend_path = ROOT / "backend/data/knowledge-graph.json"
 
     if args.check:
         if not args.out.exists():
@@ -81,6 +82,12 @@ def main(argv: list[str] | None = None) -> int:
                 file=sys.stderr,
             )
             return 1
+        if args.out == KG_PATH:
+            if not backend_path.exists() or normalize_graph_for_compare(
+                json.loads(backend_path.read_text(encoding="utf-8"))
+            ) != normalize_graph_for_compare(fresh):
+                print("Backend knowledge graph is stale. Run: python3 scripts/build_knowledge_graph.py", file=sys.stderr)
+                return 1
         if not args.html_out.exists():
             print(f"Missing visualization HTML: {args.html_out}", file=sys.stderr)
             return 1
@@ -104,6 +111,9 @@ def main(argv: list[str] | None = None) -> int:
         pdf_path=args.pdf_out,
         generated_at=args.generated_at,
     )
+    if args.out == KG_PATH:
+        backend_path.parent.mkdir(parents=True, exist_ok=True)
+        backend_path.write_bytes(path.read_bytes())
     print(f"Wrote {path.relative_to(ROOT)} ({len(graph['nodes'])} nodes, {len(graph['edges'])} edges)")
     print(f"Wrote {min_path.relative_to(ROOT)}")
     print(f"Wrote {html_path.relative_to(ROOT)}")

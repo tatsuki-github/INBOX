@@ -44,7 +44,7 @@ jobs:
           python3 scripts/sync_prepared_qa.py --check
           python3 scripts/audit_prepared_qa_facts.py --check
           python3 scripts/generate_prepared_qa_edge_comparisons.py --check
-          python3 -m pytest tests/test_prepared_qa_facts.py tests/test_prepared_qa_source_checks.py tests/test_prepared_qa_edge_comparisons.py tests/test_knowledge_qa_chunks.py tests/test_reviewed_chunk_qa.py tests/test_full_knowledge_qa.py tests/test_chunk_time_comparisons.py tests/test_chunk_rank_movements.py tests/test_chunk_meet_comparisons.py tests/test_manual_json_evidence.py tests/test_chunk_meet_changes.py tests/test_chunk_record_sb_gaps.py tests/test_chunk_calendar_gaps.py tests/test_chunk_track_coverage.py tests/test_chunk_prediction_columns.py -q
+          python3 -m pytest tests/test_prepared_qa_facts.py tests/test_aragyoku_rag_fields.py tests/test_prepared_qa_source_checks.py tests/test_prepared_qa_edge_comparisons.py tests/test_knowledge_qa_chunks.py tests/test_reviewed_chunk_qa.py tests/test_full_knowledge_qa.py tests/test_chunk_time_comparisons.py tests/test_chunk_rank_movements.py tests/test_chunk_meet_comparisons.py tests/test_manual_json_evidence.py tests/test_chunk_meet_changes.py tests/test_chunk_record_sb_gaps.py tests/test_chunk_calendar_gaps.py tests/test_chunk_track_coverage.py tests/test_chunk_prediction_columns.py -q
           python3 scripts/prepare_knowledge_qa_chunks.py --write
           python3 scripts/validate_full_knowledge_qa.py
 
@@ -61,7 +61,7 @@ jobs:
         working-directory: backend
       - run: npm run lint
         working-directory: backend
-      - run: npm test -- --run tests/preparedQa.test.ts tests/preparedQaConstraints.test.ts tests/preparedQaEdgeComparisons.test.ts tests/remunerationPrivacy.test.ts tests/privateKnowledge.test.ts tests/scope.test.ts
+      - run: npm test -- --run tests/preparedQa.test.ts tests/preparedQaGrounding.test.ts tests/preparedQaConstraints.test.ts tests/preparedQaEdgeComparisons.test.ts tests/remunerationPrivacy.test.ts tests/privateKnowledge.test.ts tests/scope.test.ts
         working-directory: backend
 
       - name: Verify reviewed QA routing and answers

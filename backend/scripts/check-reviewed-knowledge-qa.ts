@@ -30,7 +30,9 @@ if (process.argv.includes("--answers")) {
         skipRouter: true,
         retrieve: () => { throw new Error("Unexpected retrieval: " + e.id); },
         kgQuery: () => { throw new Error("Unexpected KG fallback: " + e.id); },
-        llm: { complete: async () => { throw new Error("Unexpected LLM: " + e.id); } },
+        // Check catalog routing in the supported unconfigured-LLM mode.
+        // Online QA + KG synthesis is covered by preparedQaGrounding.test.ts.
+        llm: null,
       });
       if (result.kind !== "answered" || !result.sources.includes("prepared:" + e.id))
         failures.push(e.id + " " + result.kind + " " + ("sources" in result ? result.sources.join(",") : ""));
@@ -39,5 +41,5 @@ if (process.argv.includes("--answers")) {
     }
   }
   if (failures.length) throw new Error("Answer path mismatches: " + failures.length + "\n" + failures.join("\n"));
-  console.log(JSON.stringify({ answered: candidates.length, answerPathErrors: 0 }));
+  console.log(JSON.stringify({ answered: candidates.length, answerPathErrors: 0, mode: "llm_unconfigured" }));
 }

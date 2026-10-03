@@ -1,11 +1,11 @@
 {
   "status": "in_progress",
-  "total_chunks": 2779,
+  "total_chunks": 2780,
   "complete_chunks": 1315,
   "authored_qa": 3965,
   "carried_forward_qa": 86,
-  "required_qa": 8337,
-  "remaining_qa": 4372,
+  "required_qa": 8340,
+  "remaining_qa": 4375,
   "pending": [
     {
       "chunk_id": "knowledge-aa787d5b62215c5539f28ef0",
@@ -353,6 +353,12 @@
       "chunk_id": "knowledge-06e92ec22b068801e45797e6",
       "source": "docs/adr/059-prepared-qa-answers.md",
       "index": 1,
+      "remaining_qa": 3
+    },
+    {
+      "chunk_id": "knowledge-5c493724b53fb650a48c749f",
+      "source": "docs/adr/060-prepared-qa-grounded-synthesis.md",
+      "index": 0,
       "remaining_qa": 3
     },
     {
